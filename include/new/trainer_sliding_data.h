@@ -14,14 +14,33 @@ extern const u8 BattleScript_TrainerSlideMsgEnd2[];
 extern const u8 gText_DefaultTrainerDynamaxMsg[];
 extern const u8 gText_TestTrainerDynamaxMsg[];
 
-//For Unbound
+// Rival battle 1
+extern const u8 sText_Rival1LastSwitchIn[];
+extern const u8 sText_Rival1LowHP[];
 
-extern const u8 sText_MirskleFirstMonDown[];
-extern const u8 sText_VegaLastSwitchIn[];
-extern const u8 sText_AliceLastSwitchIn[];
-extern const u8 sText_MelLastSwitchIn[];
-extern const u8 sText_GalavanLastSwitchIn[];
-extern const u8 sText_TessyLastSwitchIn[];
-extern const u8 sText_Zeph1LowHP[];
-extern const u8 sText_Zeph2LowHP[];
-extern const u8 sText_MaximaLastSwitchIn[];
+// Rival battle n
+
+// Gym Leader 1 (Terrence)
+
+// Gym Leader 2 ()
+
+// Gym Leader 3
+
+// Gym Leader 4
+
+// Gym Leader 5
+
+// Gym Leader 6
+
+// Gym Leader 7
+
+// Gym Leader 8
+
+// Team Pluto n
+
+// Pokemon Trainer Alistair
+
+// Champion Selene
+extern const u8 sText_ChampionFirstMonDown[];
+extern const u8 sText_ChampionLastSwitchIn[];
+extern const u8 sText_ChampionLowHP[];
