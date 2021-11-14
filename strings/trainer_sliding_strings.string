@@ -1,6 +1,10 @@
 #include "src/config.h"
 
-//Notice the extra whitespace character after the "\p"s. Without it, the message won't disappear from the screen when the player presses A.
+// Notice the extra whitespace character after the "\p"s. Without it, the message won't disappear from the screen when the player presses A.
+// Note the 34 character limit per line!
+
+// The following replacement text is used:
+//      [FD][06] - The pokemon's name (taken from original Unbound text)
 
 #org @gText_DefaultTrainerDynamaxMsg
 Time to Dynamax!\p 
@@ -8,17 +12,191 @@ Time to Dynamax!\p
 #org @gText_TestTrainerDynamaxMsg
 I now shall unleash the power\nof Dynamax!\p 
 
-#org @sText_Rival1LastSwitchIn
-Alright, [FD][06]! Let's do this!\p 
+// Rival 1
+#org @sText_Rival1_LastSwitchIn
+Okay, [FD][06]! Let's do this!\p 
 
-#org @sText_Rival1LowHP
-No way! [FD][06] and I are\n aren't done yet!\p 
+#org @sText_Rival1_LowHP
+No way! [FD][06] and I\naren't done yet!\p 
 
-#org @sText_ChampionFirstMonDown
+// Rival n here!
+
+// Leader 1
+#org @sText_Leader1_FirstMonDown
+Not bad, not bad at all!\p 
+
+#org @sText_Leader1_LastSwitchIn
+Excellent! I see you understand\nyour Pokémon well.\p 
+
+#org @sText_Leader1_LowHP
+Don't give up! You're doing great!\p 
+
+// Leader 2
+#org @sText_Leader2_FirstMonDown
+Don't assume I'll let you do that\nagain!\p 
+
+#org @sText_Leader2_LastSwitchIn
+Hmph! We'll stop you in your\ntracks.\p 
+
+#org @sText_Leader2_LowHP
+This battle isn't over yet!\p 
+
+// Leader 3
+#org @sText_Leader3_FirstMonDown
+No way! You got through our\nstrategy? It was foolproof!\p 
+
+#org @sText_Leader3_LastSwitchIn
+You'd better keep your eyes up!\nThe weather can change quickly.\p 
+
+#org @sText_Leader3_LowHP
+A storm is brewing...\p 
+
+// Leader 4
+#org @sText_Leader4_FirstMonDown
+Whoa dude, you're like super strong!\p 
+
+#org @sText_Leader4_LastSwitchIn
+This is no problem at all,\njust have to go with the flow.\p 
+
+#org @sText_Leader4_LowHP
+Uh oh, this is looking bad.\p 
+
+// Leader 5
+#org @sText_Leader5_FirstMonDown
+You're quite skilled, aren't you?\nI'll have to take you seriously.\p 
+
+#org @sText_Leader5_LastSwitchIn
+I didn't anticipate you'd pressure\nmy team this much. Fascinating.\p 
+
+#org @sText_Leader5_LowHP
+Impressive. Seems you might've\noutplayed me.\p 
+
+// Leader 6
+#org @sText_Leader6_FirstMonDown
+Don't get cocky, this battle is\nfar from over.\p 
+
+#org @sText_Leader6_LastSwitchIn
+Your gym challenge ends here.\p 
+
+#org @sText_Leader6_LowHP
+You should know a cornered\nbeast is most dangerous!\p 
+
+// Leader 7
+#org @sText_Leader7_FirstMonDown
+Not bad, but can you handle this?\p 
+
+#org @sText_Leader7_LastSwitchIn
+You're pretty good! But the right\nitem at the right time can make\nall the difference.\p 
+
+#org @sText_Leader7_LowHP
+Time for a trademark last-minute\nchange-up! Get ready!\p 
+
+// Leader 8
+#org @sText_Leader8_FirstMonDown
+How're you holding up over there?\nWe're doing great!\p 
+
+#org @sText_Leader8_LastSwitchIn
+Uh oh, that was our last Pokéball!\p 
+
+#org @sText_Leader8_LowHP
+This is fine... This is fine...\nWe'll pull through this together!\p 
+
+// Team Pluto Irene
+#org @sText_Irene_FirstMonDown
+Hmph. Don't think you're hot stuff\njust because you got lucky this\ntime.\p 
+
+#org @sText_Irene_LastSwitchIn
+I'll prove to you why I'm one of\nTeam Pluto's elite!\p 
+
+#org @sText_Irene_LowHP
+Don't assume you've backed me into\na corner.\p 
+
+// Team Pluto Ronald
+#org @sText_Roland_FirstMonDown
+Ohoho! Your Pokémon are going to\npay for that.\p 
+
+#org @sText_Roland_LastSwitchIn
+You brat! Just for that, I'll lay\non an extra beating!\p 
+
+#org @sText_Roland_LowHP
+Ngh. My perfect world...\p 
+
+// Team Pluto Kurtis
+#org @sText_Kurtis_FirstMonDown
+I can see why you defeated Irene\nand Roland. You'd best not\nunderestimate me, though.\p 
+
+#org @sText_Kurtis_LastSwitchIn
+Team Pluto won't fall to the likes\nof you. Not now, not ever.\p 
+
+#org @sText_Kurtis_LowHP
+Now you're making me angry!\p 
+
+// Alistair
+#org @sText_Alistair_FirstMonDown
+Impressive. But you can't win.\p 
+
+#org @sText_Alistair_LastSwitchIn
+Don't try to stop me! I'm doing\nthis for everyone's benefit!\p 
+
+#org @sText_Alistair_LowHP
+Ngh. My perfect world... I can't\nlose like this!\p 
+
+// E4 Hannah
+#org @sText_Hannah_FirstMonDown
+Impressive, trainer! But you'll\nfind the Elite Four are a cut\nabove regular Gym Leaders!\p 
+
+#org @sText_Hannah_LastSwitchIn
+You really are something, I'll\ngive you that!\p 
+
+#org @sText_Hannah_LowHP
+We're not done yet!\p 
+
+// E4 Liam
+#org @sText_Liam_FirstMonDown
+Woo, look at you go! I'm just\ngetting started, though.\p 
+
+#org @sText_Liam_LastSwitchIn
+Your challenge ends here! It's\nnothing personal, just my job.\p 
+
+#org @sText_Liam_LowHP
+Unbelievable! It's been ages since\na challenger has done this well.\p 
+
+// E4 Jasmine
+#org @sText_Jasmine_FirstMonDown
+We're just getting warmed up. Are\nyou ready?\p 
+
+#org @sText_Jasmine_LastSwitchIn
+The battle's really heating up\nnow, wouldn't you agree?\p 
+
+#org @sText_Jasmine_LowHP
+Oh no! We've really slipped up,\nhaven't we?\p 
+
+// E4 Thomas
+#org @sText_Thomas_FirstMonDown
+You've defeated my first Pokémon?\nI won't let it happen again!\p 
+
+#org @sText_Thomas_LastSwitchIn
+It's over now! I won't allow you\nto waste Miss Selene's time.\p 
+
+#org @sText_Thomas_LowHP
+Miss Selene, forgive me.\p 
+
+// Champion
+#org @sText_Champion_FirstMonDown
 Impressive. I feel we're going to have\na really exciting battle today!\p 
 
-#org @sText_ChampionLastSwitchIn
+#org @sText_Champion_LastSwitchIn
 It's been a long time since I've had a\nbattle this close!\p 
 
-#org @sText_ChampionLowHP
+#org @sText_Champion_LowHP
 We won't give up until the very end!\nYou'd better give it your all too!\p 
+
+// Champion Rematch
+#org @sText_ChampionRematch_FirstMonDown
+This really takes me back to our\nfirst battle. Do you remember it,\ntoo?\p 
+
+#org @sText_ChampionRematch_LastSwitchIn
+It's quite refreshing to see how\nstrong a bond you share with your\nPokémon.\p 
+
+#org @sText_ChampionRematch_LowHP
+I may not be the champion any\nlonger, but it wouldn't be very\nsporting for me to give up now!\p 
