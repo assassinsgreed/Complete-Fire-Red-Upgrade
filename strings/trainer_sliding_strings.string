@@ -21,7 +21,7 @@ No way! [FD][06] and I\naren't done yet!\p
 
 // Rival n here!
 
-// Leader 1
+// Leader 1 (Terrence)
 #org @sText_Leader1_FirstMonDown
 Not bad, not bad at all!\p 
 
@@ -31,7 +31,7 @@ Excellent! I see you understand\nyour Pokémon well.\p
 #org @sText_Leader1_LowHP
 Don't give up! You're doing great!\p 
 
-// Leader 2
+// Leader 2 (Stacy)
 #org @sText_Leader2_FirstMonDown
 Don't assume I'll let you do that\nagain!\p 
 
@@ -41,7 +41,7 @@ Hmph! We'll stop you in your\ntracks.\p
 #org @sText_Leader2_LowHP
 This battle isn't over yet!\p 
 
-// Leader 3
+// Leader 3 (Wendy)
 #org @sText_Leader3_FirstMonDown
 No way! You got through our\nstrategy? It was foolproof!\p 
 
@@ -51,7 +51,7 @@ You'd better keep your eyes up!\nThe weather can change quickly.\p
 #org @sText_Leader3_LowHP
 A storm is brewing...\p 
 
-// Leader 4
+// Leader 4 (Monty)
 #org @sText_Leader4_FirstMonDown
 Whoa dude, you're like super strong!\p 
 
@@ -61,7 +61,7 @@ This is no problem at all,\njust have to go with the flow.\p
 #org @sText_Leader4_LowHP
 Uh oh, this is looking bad.\p 
 
-// Leader 5
+// Leader 5 (Chandler)
 #org @sText_Leader5_FirstMonDown
 You're quite skilled, aren't you?\nI'll have to take you seriously.\p 
 
@@ -71,7 +71,7 @@ I didn't anticipate you'd pressure\nmy team this much. Fascinating.\p
 #org @sText_Leader5_LowHP
 Impressive. Seems you might've\noutplayed me.\p 
 
-// Leader 6
+// Leader 6 (Abby)
 #org @sText_Leader6_FirstMonDown
 Don't get cocky, this battle is\nfar from over.\p 
 
@@ -81,7 +81,7 @@ Your gym challenge ends here.\p
 #org @sText_Leader6_LowHP
 You should know a cornered\nbeast is most dangerous!\p 
 
-// Leader 7
+// Leader 7 (Iris)
 #org @sText_Leader7_FirstMonDown
 Not bad, but can you handle this?\p 
 
@@ -91,7 +91,7 @@ You're pretty good! But the right\nitem at the right time can make\nall the diff
 #org @sText_Leader7_LowHP
 Time for a trademark last-minute\nchange-up! Get ready!\p 
 
-// Leader 8
+// Leader 8 (Dennis & Dee)
 #org @sText_Leader8_FirstMonDown
 How're you holding up over there?\nWe're doing great!\p 
 
@@ -101,7 +101,7 @@ Uh oh, that was our last Pokéball!\p
 #org @sText_Leader8_LowHP
 This is fine... This is fine...\nWe'll pull through this together!\p 
 
-// Team Pluto Irene
+// Team Pluto Admin Irene
 #org @sText_Irene_FirstMonDown
 Hmph. Don't think you're hot stuff\njust because you got lucky this\ntime.\p 
 
@@ -111,7 +111,7 @@ I'll prove to you why I'm one of\nTeam Pluto's elite!\p
 #org @sText_Irene_LowHP
 Don't assume you've backed me into\na corner.\p 
 
-// Team Pluto Ronald
+// Team Pluto Admin Ronald
 #org @sText_Roland_FirstMonDown
 Ohoho! Your Pokémon are going to\npay for that.\p 
 
@@ -121,7 +121,7 @@ You brat! Just for that, I'll lay\non an extra beating!\p
 #org @sText_Roland_LowHP
 Ngh. My perfect world...\p 
 
-// Team Pluto Kurtis
+// Team Pluto Leader Kurtis
 #org @sText_Kurtis_FirstMonDown
 I can see why you defeated Irene\nand Roland. You'd best not\nunderestimate me, though.\p 
 
@@ -131,7 +131,7 @@ Team Pluto won't fall to the likes\nof you. Not now, not ever.\p
 #org @sText_Kurtis_LowHP
 Now you're making me angry!\p 
 
-// Alistair
+// Pokemon Trainer Alistair
 #org @sText_Alistair_FirstMonDown
 Impressive. But you can't win.\p 
 
@@ -141,7 +141,7 @@ Don't try to stop me! I'm doing\nthis for everyone's benefit!\p
 #org @sText_Alistair_LowHP
 Ngh. My perfect world... I can't\nlose like this!\p 
 
-// E4 Hannah
+// Elite Four Hannah
 #org @sText_Hannah_FirstMonDown
 Impressive, trainer! But you'll\nfind the Elite Four are a cut\nabove regular Gym Leaders!\p 
 
@@ -151,7 +151,7 @@ You really are something, I'll\ngive you that!\p
 #org @sText_Hannah_LowHP
 We're not done yet!\p 
 
-// E4 Liam
+// Elite Four Liam
 #org @sText_Liam_FirstMonDown
 Woo, look at you go! I'm just\ngetting started, though.\p 
 
@@ -161,7 +161,7 @@ Your challenge ends here! It's\nnothing personal, just my job.\p
 #org @sText_Liam_LowHP
 Unbelievable! It's been ages since\na challenger has done this well.\p 
 
-// E4 Jasmine
+// Elite Four Jasmine
 #org @sText_Jasmine_FirstMonDown
 We're just getting warmed up. Are\nyou ready?\p 
 
@@ -171,7 +171,7 @@ The battle's really heating up\nnow, wouldn't you agree?\p
 #org @sText_Jasmine_LowHP
 Oh no! We've really slipped up,\nhaven't we?\p 
 
-// E4 Thomas
+// Elite Four Thomas
 #org @sText_Thomas_FirstMonDown
 You've defeated my first Pokémon?\nI won't let it happen again!\p 
 
@@ -181,7 +181,7 @@ It's over now! I won't allow you\nto waste Miss Selene's time.\p
 #org @sText_Thomas_LowHP
 Miss Selene, forgive me.\p 
 
-// Champion
+// Champion Selene
 #org @sText_Champion_FirstMonDown
 Impressive. I feel we're going to have\na really exciting battle today!\p 
 
@@ -191,7 +191,7 @@ It's been a long time since I've had a\nbattle this close!\p
 #org @sText_Champion_LowHP
 We won't give up until the very end!\nYou'd better give it your all too!\p 
 
-// Champion Rematch
+// Champion Selene Rematch
 #org @sText_ChampionRematch_FirstMonDown
 This really takes me back to our\nfirst battle. Do you remember it,\ntoo?\p 
 
@@ -199,4 +199,4 @@ This really takes me back to our\nfirst battle. Do you remember it,\ntoo?\p
 It's quite refreshing to see how\nstrong a bond you share with your\nPokémon.\p 
 
 #org @sText_ChampionRematch_LowHP
-I may not be the champion any\nlonger, but it wouldn't be very\nsporting for me to give up now!\p 
+I may not be the champion any\nlonger, but that doesn't mean I'll\ngo down easily!\p 
