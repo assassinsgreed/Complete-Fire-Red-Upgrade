@@ -26,48 +26,11 @@ struct DynamaxTrainerSlide
 
 static const struct TrainerSlide sTrainerSlides[] =
 {
-	{},
-
-	#ifdef UNBOUND //For Pokemon Unbound - Feel free to remove
-	{0x6, sText_MirskleFirstMonDown, NULL, NULL},
-	{0x2CF, sText_MirskleFirstMonDown, NULL, NULL},
-	{0x2D0, sText_MirskleFirstMonDown, NULL, NULL},
-	{0x2D1, sText_MirskleFirstMonDown, NULL, NULL},
-	{0x19F, NULL, sText_VegaLastSwitchIn, NULL},
-	{0x2D2, NULL, sText_VegaLastSwitchIn, NULL},
-	{0x2D3, NULL, sText_VegaLastSwitchIn, NULL},
-	{0x2D4, NULL, sText_VegaLastSwitchIn, NULL},
-	{0x14, NULL, sText_AliceLastSwitchIn, NULL},
-	{0x2D5, NULL, sText_AliceLastSwitchIn, NULL},
-	{0x2D6, NULL, sText_AliceLastSwitchIn, NULL},
-	{0x2D7, NULL, sText_AliceLastSwitchIn, NULL},
-	{0x18, NULL, sText_MelLastSwitchIn, NULL},
-	{0x2D8, NULL, sText_MelLastSwitchIn, NULL},
-	{0x2D9, NULL, sText_MelLastSwitchIn, NULL},
-	{0x2DA, NULL, sText_MelLastSwitchIn, NULL},
-	{0x1A2, NULL, sText_GalavanLastSwitchIn, NULL},
-	{0x2DB, NULL, sText_GalavanLastSwitchIn, NULL},
-	{0x2DC, NULL, sText_GalavanLastSwitchIn, NULL},
-	{0x2DD, NULL, sText_GalavanLastSwitchIn, NULL},
-	{0x1A1, NULL, sText_TessyLastSwitchIn, NULL},
-	{0x2DE, NULL, sText_TessyLastSwitchIn, NULL},
-	{0x2DF, NULL, sText_TessyLastSwitchIn, NULL},
-	{0x2E0, NULL, sText_TessyLastSwitchIn, NULL},
-
-	{0x15C, NULL, NULL, sText_Zeph1LowHP},
-	{0x2AB, NULL, NULL, sText_Zeph1LowHP},
-	{0x2AC, NULL, NULL, sText_Zeph1LowHP},
-	{0x2AD, NULL, NULL, sText_Zeph1LowHP},
-	{0x15E, NULL, NULL, sText_Zeph2LowHP},
-	{0x2B7, NULL, NULL, sText_Zeph2LowHP},
-	{0x2B8, NULL, NULL, sText_Zeph2LowHP},
-	{0x2B9, NULL, NULL, sText_Zeph2LowHP},
-
-	{0x19, NULL, sText_MaximaLastSwitchIn, NULL},
-	{0x2BD, NULL, sText_MaximaLastSwitchIn, NULL},
-	{0x2BE, NULL, sText_MaximaLastSwitchIn, NULL},
-	{0x2BF, NULL, sText_MaximaLastSwitchIn, NULL},
-	#endif
+	// Format {Trainer hex index, msg on first faint, msg on last switch in, msg on last pkmn low hp}
+	{}, // Rival battle 1
+	{}, // 
+	{}, // 
+	{}, // Champion Selene
 };
 
 static const struct DynamaxTrainerSlide sDynamaxTrainerSlides[] =
