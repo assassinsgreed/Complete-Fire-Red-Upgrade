@@ -1,1 +1,3 @@
 ##
+# (Event Type: npc, sign, tile, map) (Map Bank) (Map Number) ("no:" in Advance Map, not "Person Event no:") (Event name)
+npc 6 0 0 EventScript_RhodanziTrainerSchool_Receptionist
