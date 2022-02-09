@@ -219,3 +219,9 @@
 .equ MAP_SCRIPT_ON_DIVE_WARP, 6
 .equ MAP_SCRIPT_ON_RETURN_TO_FIELD, 7
 .equ LEVEL_SCRIPT_TERMIN, 0
+
+@ Common movements to apply
+m_LookDown: .byte look_down, end_m
+m_LookUp: .byte look_up, end_m
+m_LookLeft: .byte look_left, end_m
+m_LookRight: .byte look_right, end_m
