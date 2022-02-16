@@ -1,0 +1,63 @@
+#org @gText_Modifiers_OptionInverse
+Inverse Battles
+
+#org @gText_Modifiers_OptionCatchTrainer
+Catch Trainer Pokemon
+
+#org @gText_Modifiers_OptionScaleWild
+Scale Wild Pokemon Levels
+
+#org @gText_Modifiers_OptionScaleTrainer
+Scale Trainer Pokemon Levels
+
+#org @gText_Modifiers_OptionHiddenAbilities
+Hidden Abilities
+
+#org @gText_Modifiers_OptionShinies
+Shiny Pokemon
+
+#org @gText_Modifiers_OptionRandomizer
+Randomize Pokemon
+
+#org @gText_Modifiers_Msginteract
+This terminal allows you to set\ngame modifiers.\l[RED]WARNING: It is recommended to only\lset these after completing the game\las it was intended.\l[BLACK]Please make a selection.
+
+#org @gText_Modifiers_Msginverse
+Type effectiveness will be\nreversed in battle.
+
+#org @gText_Modifiers_Foo
+Allows you to capture Pok\emon\nin trainer battles.
+
+#org @gText_Modifiers_Msgcatchtrainer
+Allows you to capture Pok\emon\nin trainer battles.
+
+#org @gText_Modifiers_Msgscalewild
+All wild Pok\emon's levels will be\nscaled to the lowest level in your\lparty.
+
+#org @gText_Modifiers_Msgscaletrainer
+All trainers' Pok\emon's levels\nwill be scaled to the highest\llevel in your party.
+
+#org @gText_Modifiers_Msghiddenability
+All wild pokemon will have their\nhidden abilities.
+
+#org @gText_Modifiers_Msgshiny
+All wild Pok\emon will be shiny.
+
+#org @gText_Modifiers_Msgrandomizer
+All wild and trainer Pok\emon are\nrandomized.
+
+#org @gText_Modifiers_Msgflagisoff
+The modifier is currently off.\nWould you like to turn it on?
+
+#org @gText_Modifiers_Msgflagison
+The modifier is currently on.\nWould you like to turn it off?
+
+#org @gText_Modifiers_Msgflagnowoff
+The modifier has been disabled.
+
+#org @gText_Modifiers_Msgflagnowon
+The modifier has been enabled.
+
+#org @gText_Modifiers_Msgend
+Logging off...
+

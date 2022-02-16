@@ -1,3 +1,20 @@
 ##
 # (Event Type: npc, sign, tile, map) (Map Bank) (Map Number) ("no:" in Advance Map, not "Person Event no:") (Event name)
+# Note: "no." param not used by map type.
+
+# Debug Scripts - Only uncomment when debugging
+# Populate the Pokedex, give pokemon and default items
+# npc 3 0 2 EventScript_DebugMode_Main
+
+# Simple snippet for detecting player's starter choice. Demos how to read flags
+# npc 3 0 3 EventScript_StarterChoice_Main
+
+# Allows player to turn on game modifier settings. Should ideally be locked behind NG+
+# npc 3 0 3 EventScript_Modifiers_Main
+
+# Startup
+# Prompts the player to enter their generation choice
+map 4 1 gMapScripts_GenChoice
+
+# Rhodanzi City
 npc 6 0 0 EventScript_RhodanziTrainerSchool_Receptionist
