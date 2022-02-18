@@ -40,17 +40,19 @@ print("Copying edited GBA ROM to DPE directory...")
 shutil.copy(EDITED_GBA_PATH, DPE_PATH + "/BPRE0.gba")
 
 print("Applying DPE...")
-result = call(["python", DPE_PATH + "/scripts/make.py"])
+os.chdir(DPE_PATH) # Make script must be run in home directory!
+result = call(["python", "./scripts/make.py"])
 if (result != 0):
     print(ERROR_COLOR + "Error applying DPE. See output for details. Exiting with status code: 3")
     exit(3)
 
 print("Copying built GBA ROM to CFRU directory...")
-shutil.copy(DPE_PATH + "/test.gba", CFRU_PATH + "./BPRE0.gba")
+shutil.copy(DPE_PATH + "/test.gba", CFRU_PATH + "/BPRE0.gba")
 
 print("Appyling CFRU...")
+os.chdir(CFRU_PATH) # Make script must be run in home directory!
 # TODO: Add clean.py script as an optional command?
-result = call(["python", CFRU_PATH + "/scripts/make.py"])
+result = call(["python", "./scripts/make.py"])
 if (result != 0):
     print(ERROR_COLOR + "Error applying CFRU. See output for details. Exiting with status code: 4")
     exit(4)
