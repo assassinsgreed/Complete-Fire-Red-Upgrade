@@ -7,14 +7,14 @@
 
 .global EventScript_DebugMode_Main
 EventScript_DebugMode_Main:
-	givepokemon SPECIES_BULBASAUR 0x32 0x0 0x0 0x0 0x0 @lv 50 Bulbasaur
-	givepokemon SPECIES_CHARMANDER 0x32 0x0 0x0 0x0 0x0 @lv 50 Charmander
-	givepokemon SPECIES_SQUIRTLE 0x32 0x0 0x0 0x0 0x0 @lv 50 Squirtle
-	givepokemon SPECIES_GROOKEY 0x32 0x0 0x0 0x0 0x0 @lv 50 Grookey
-	givepokemon SPECIES_SCORBUNNY 0x32 0x0 0x0 0x0 0x0 @lv 50 Scorbunny
-	givepokemon SPECIES_SOBBLE 0x32 0x0 0x0 0x0 0x0 @lv 50 Sobble
+	givepokemon SPECIES_BULBASAUR 0x32 0x0 0x0 0x0 0x0 @ lv 50 Bulbasaur
+	givepokemon SPECIES_CHARMANDER 0x32 0x0 0x0 0x0 0x0 @ lv 50 Charmander
+	givepokemon SPECIES_SQUIRTLE 0x32 0x0 0x0 0x0 0x0 @ lv 50 Squirtle
+	givepokemon SPECIES_GROOKEY 0x32 0x0 0x0 0x0 0x0 @ lv 50 Grookey
+	givepokemon SPECIES_SCORBUNNY 0x32 0x0 0x0 0x0 0x0 @ lv 50 Scorbunny
+	givepokemon SPECIES_SOBBLE 0x32 0x0 0x0 0x0 0x0 @ lv 50 Sobble
 
-	@mark all pokemon in the dex as seen
+	@ mark all pokemon in the dex as seen
 	setvar 0x8004 SPECIES_BIDOOF
 	special 0x163
 
@@ -1374,7 +1374,7 @@ EventScript_DebugMode_Main:
 	@ Give the player certain key items, like mega/primal reversion/ultra burst items
 	setflag 0x828 @ Enable Pokemon Menu
 	setflag 0x829 @ Enable Pokedex Menu
-	giveitem ITEM_POKE_BALL 0x32 MSG_FIND @Give 50 pokeballs
-	giveitem ITEM_RARE_CANDY 0x1E MSG_FIND @Give 30 rare candies
+	giveitem ITEM_POKE_BALL 0x32 MSG_FIND @ Give 50 pokeballs
+	giveitem ITEM_RARE_CANDY 0x1E MSG_FIND @ Give 30 rare candies
 	additem ITEM_TOWN_MAP 0x1 @ Give town map
 	@ giveitem2 0x169 0x1 0x13E @ Give town map with fanfare (base game uses both)
