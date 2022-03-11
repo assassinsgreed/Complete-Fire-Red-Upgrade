@@ -2,22 +2,22 @@
 Inverse Battles
 
 #org @gText_Modifiers_OptionCatchTrainer
-Catch Trainer Pokemon
+Catch Trainer Pok\emon
 
 #org @gText_Modifiers_OptionScaleWild
-Scale Wild Pokemon Levels
+Scale Wild Pok\emon Levels
 
 #org @gText_Modifiers_OptionScaleTrainer
-Scale Trainer Pokemon Levels
+Scale Trainer Pok\emon Levels
 
 #org @gText_Modifiers_OptionHiddenAbilities
 Hidden Abilities
 
 #org @gText_Modifiers_OptionShinies
-Shiny Pokemon
+Shiny Pok\emon
 
 #org @gText_Modifiers_OptionRandomizer
-Randomize Pokemon
+Randomize Pok\emon
 
 #org @gText_Modifiers_Msginteract
 This terminal allows you to set\ngame modifiers.\l[RED]WARNING: It is recommended to only\lset these after completing the game\las it was intended.\l[BLACK]Please make a selection.
@@ -38,7 +38,7 @@ All wild Pok\emon's levels will be\nscaled to the lowest level in your\lparty.
 All trainers' Pok\emon's levels\nwill be scaled to the highest\llevel in your party.
 
 #org @gText_Modifiers_Msghiddenability
-All wild pokemon will have their\nhidden abilities.
+All wild pok\emon will have their\nhidden abilities.
 
 #org @gText_Modifiers_Msgshiny
 All wild Pok\emon will be shiny.
