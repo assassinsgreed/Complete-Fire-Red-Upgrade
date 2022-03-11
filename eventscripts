@@ -16,5 +16,9 @@
 # Prompts the player to enter their generation choice
 map 4 1 gMapScripts_GenChoice
 
+# Anthra Town
+npc 3 0 0 EventScript_AnthraTown_FlowerGirl
+npc 4 3 0 EventScript_AnthraTown_OldMan
+
 # Rhodanzi City
 npc 6 0 0 EventScript_RhodanziTrainerSchool_Receptionist
