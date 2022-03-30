@@ -11,6 +11,7 @@
 .equ CAMERA_END, 0x114
 .equ SetUpTrainerMovement, 0x13A
 
+.equ ALLEVENTS, 0x0
 .equ CAMERA, 0x7F
 .equ FOLLOWER, 0xFE
 .equ PLAYER, 0xFF

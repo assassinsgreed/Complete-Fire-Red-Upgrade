@@ -1,11 +1,53 @@
-#org @gText_RhodanziTrainerSchool_Receptionist
+#org @gText_RhodanziTrainerSchool_MainRoom_Receptionist_GoToDesk
+Oh, hello trainer! Please go to\nthe front of the desk and I'll\lbe happy to help you.
+
+#org @gText_RhodanziTrainerSchool_MainRoom_Receptionist
 Hello, and welcome to the\nRhodanzi Trainer School.\pWe are a non-profit educational\nfacility that aims to educate new\land experienced trainers.
 
-#org @gText_RhodanziTrainerSchool_Receptionist_Basic
+#org @gText_RhodanziTrainerSchool_MainRoom_Receptionist_Basic
 On the left, you'll find our Basic\nCourse. This course is ideal for\lnew trainers.
 
-#org @gText_RhodanziTrainerSchool_Receptionist_Advanced
+#org @gText_RhodanziTrainerSchool_MainRoom_Receptionist_Advanced
 On the right, you'll find our\nAdvanced Course. This course is\lideal for experienced trainers who\lwant to learn the CFRU features.
 
-#org @gText_RhodanziTrainerSchool_Receptionist_Conclude
+#org @gText_RhodanziTrainerSchool_MainRoom_Receptionist_Conclude
 We hope you enjoy the courses we\nprovide. At the Rhodanzi Trainer\lSchool, your success is our\lsuccess!
+
+#org @gText_RhodanziTrainerSchool_MainRoom_FossilStudent
+My professor said these Pok\emon\nfossils were imported from the\lKanto region across the sea.
+
+#org @gText_RhodanziTrainerSchool_MainRoom_Librarian
+We have many books on Pok\emon and\nPok\emon battles. You can learn a\llot from reading!
+
+#org @gText_RhodanziTrainerSchool_MainRoom_Professor
+I'm reviewing our students' test\nscores to see how effective our\lcourses are.
+
+#org @gText_RhodanziTrainerSchool_BasicCourse_TypeStudent_QuizIntro
+I'm a quiz fanatic, and I love\nquizzing new trainers. If you can\lanswer my question correctly, I'll\lgive you a prize!\pWhat do you say?
+
+#org @gText_RhodanziTrainerSchool_BasicCourse_TypeStudent_QuizRejected
+Aww, that's too bad. If you change\nyour mind, come see me again.
+
+#org @gText_RhodanziTrainerSchool_BasicCourse_TypeStudent_QuizAccepted
+Great! This will be fun.
+
+#org @gText_RhodanziTrainerSchool_BasicCourse_TypeStudent_GrassQuestion
+You chose a [GREEN]grass[BLACK]type starter.\nWhich type is it strong against?
+
+#org @gText_RhodanziTrainerSchool_BasicCourse_TypeStudent_FireQuestion
+You chose a [RED]fire[BLACK]type starter.\nWhich type is it strong against?
+
+#org @gText_RhodanziTrainerSchool_BasicCourse_TypeStudent_WaterQuestion
+You chose a [BLUE]water[BLACK]type starter.\nWhich type is it strong against?
+
+#org @gText_TypeGrass
+[GREEN]Grass
+
+#org @gText_TypeFire
+[RED]Fire
+
+#org @gText_TypeWater
+[BLUE]Water
+
+#org @gText_RhodanziTrainerSchool_BasicCourse_TypeStudent_QuizComplete
+Good luck, trainer! Believe in\nyour Pok\emon and you'll do great.
