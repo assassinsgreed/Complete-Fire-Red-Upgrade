@@ -32,13 +32,13 @@ Aww, that's too bad. If you change\nyour mind, come see me again.
 Great! This will be fun.
 
 #org @gText_RhodanziTrainerSchool_BasicCourse_TypeStudent_GrassQuestion
-You chose a [GREEN]grass[BLACK]type starter.\nWhich type is it strong against?
+You chose a [GREEN]grass[BLUE] type starter.\nWhich type is it strong against?
 
 #org @gText_RhodanziTrainerSchool_BasicCourse_TypeStudent_FireQuestion
-You chose a [RED]fire[BLACK]type starter.\nWhich type is it strong against?
+You chose a [RED]fire[BLUE] type starter.\nWhich type is it strong against?
 
 #org @gText_RhodanziTrainerSchool_BasicCourse_TypeStudent_WaterQuestion
-You chose a [BLUE]water[BLACK]type starter.\nWhich type is it strong against?
+You chose a [BLUE]water[BLUE] type starter.\nWhich type is it strong against?
 
 #org @gText_TypeGrass
 [GREEN]Grass
@@ -48,6 +48,15 @@ You chose a [BLUE]water[BLACK]type starter.\nWhich type is it strong against?
 
 #org @gText_TypeWater
 [BLUE]Water
+
+#org @gText_RhodanziTrainerSchool_BasicCourse_TypeStudent_QuizSuccess
+Yes, that's correct! A smart\ntrainer like you deserves a reward.
+
+#org @gText_RhodanziTrainerSchool_BasicCourse_TypeStudent_QuizFail
+I'm sorry, that isn't correct.\nRead up on Pok\emon type advantages\land come see me again, okay?
+
+#org @gText_RhodanziTrainerSchool_BasicCourse_TypeStudent_ItemInfo
+Give that to your Pok\emon to\nmake their moves stronger!
 
 #org @gText_RhodanziTrainerSchool_BasicCourse_TypeStudent_QuizComplete
 Good luck, trainer! Believe in\nyour Pok\emon and you'll do great.
