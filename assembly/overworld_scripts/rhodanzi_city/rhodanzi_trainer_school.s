@@ -56,7 +56,6 @@ EventScript_RhodanziTrainerSchool_MainRoom_Professor:
 
 .global EventScript_RhodanziTrainerSchool_BasicCourse_TypeStudent
 EventScript_RhodanziTrainerSchool_BasicCourse_TypeStudent:
-    @ TODO: Document flag usage. Reference this script. We can overwrite some FR flags since they're not used
     lock
     faceplayer
     checkflag 0x230
