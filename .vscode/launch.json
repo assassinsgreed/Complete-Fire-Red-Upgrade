@@ -5,13 +5,12 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "type": "pwa-node",
+            "name": "Build and launch Test",
+            "type": "python",
             "request": "launch",
-            "name": "Run",
-            "skipFiles": [
-                "<node_internals>/**"
-            ],
-            "preLaunchTask": "Build and Launch Test"
+            "program": "./automation/BuildTest.py",
+            "console": "integratedTerminal",
+            "justMyCode": true
         }
     ]
 }

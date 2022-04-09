@@ -99,7 +99,6 @@ EventScript_RhodanziTrainerSchool_BasicCourse_TypeStudent_QuizQuestionGrass:
     compare LASTRESULT 2
     if notequal _goto EventScript_RhodanziTrainerSchool_BasicCourse_TypeStudent_QuizFail
     if equal _call EventScript_RhodanziTrainerSchool_BasicCourse_TypeStudent_QuizSuccess
-    @ TODO: Obtain item textboxes are a little broken
     obtainitem ITEM_MIRACLE_SEED 0x1
     msgbox gText_RhodanziTrainerSchool_BasicCourse_TypeStudent_ItemInfo MSG_FACE
     return
@@ -125,16 +124,11 @@ EventScript_RhodanziTrainerSchool_BasicCourse_TypeStudent_QuizQuestionWater:
     return
 
 EventScript_RhodanziTrainerSchool_BasicCourse_TypeStudent_QuizSuccess:
-    @ TODO: Sound effects aren't playing in these functions for some reason
-    playse 0x19 @ SE_CORRECT
-    waitse
     msgbox gText_RhodanziTrainerSchool_BasicCourse_TypeStudent_QuizSuccess MSG_FACE
     setflag 0x230
     return
 
 EventScript_RhodanziTrainerSchool_BasicCourse_TypeStudent_QuizFail:
-    playse 0x1A @ SE_ERROR
-    waitse
     msgbox gText_RhodanziTrainerSchool_BasicCourse_TypeStudent_QuizFail MSG_FACE
     return
 
