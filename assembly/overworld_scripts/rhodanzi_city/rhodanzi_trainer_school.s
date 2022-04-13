@@ -70,7 +70,7 @@ EventScript_RhodanziTrainerSchool_BasicCourse_TypeStudent:
 EventScript_TypeStudentQuiz:
     msgbox gText_RhodanziTrainerSchool_BasicCourse_TypeStudent_QuizIntro MSG_YESNO
     compare LASTRESULT YES
-    if NO _goto EventScript_RhodanziTrainerSchool_BasicCourse_TypeStudent_QuizRejected
+    if FALSE _goto EventScript_RhodanziTrainerSchool_BasicCourse_TypeStudent_QuizRejected
     call EventScript_RhodanziTrainerSchool_BasicCourse_TypeStudent_QuizQuestion
     return
 
@@ -86,8 +86,8 @@ EventScript_RhodanziTrainerSchool_BasicCourse_TypeStudent_QuizQuestion:
 
 EventScript_RhodanziTrainerSchool_BasicCourse_TypeStudent_QuizChoices:
     multichoiceoption gText_TypeGrass 0
-	multichoiceoption gText_TypeFire 1
-	multichoiceoption gText_TypeWater 2
+    multichoiceoption gText_TypeFire 1
+    multichoiceoption gText_TypeWater 2
     multichoice 0x60 0x0 THREE_MULTICHOICE_OPTIONS 0x1
     copyvar 0x40FE LASTRESULT
     return
@@ -115,7 +115,7 @@ EventScript_RhodanziTrainerSchool_BasicCourse_TypeStudent_QuizQuestionFire:
 EventScript_RhodanziTrainerSchool_BasicCourse_TypeStudent_QuizQuestionWater:
     msgbox gText_RhodanziTrainerSchool_BasicCourse_TypeStudent_WaterQuestion MSG_KEEPOPEN
     call EventScript_RhodanziTrainerSchool_BasicCourse_TypeStudent_QuizChoices
-    compare LASTRESULT 0
+    compare LASTRESULT 1
     if notequal _goto EventScript_RhodanziTrainerSchool_BasicCourse_TypeStudent_QuizFail
     if equal _call EventScript_RhodanziTrainerSchool_BasicCourse_TypeStudent_QuizSuccess
     obtainitem ITEM_MYSTIC_WATER 0x1
@@ -134,9 +134,7 @@ EventScript_RhodanziTrainerSchool_BasicCourse_TypeStudent_QuizFail:
 EventScript_RhodanziTrainerSchool_BasicCourse_TypeStudent_QuizRejected:
     msgbox gText_RhodanziTrainerSchool_BasicCourse_TypeStudent_QuizRejected MSG_FACE
     applymovement 0x1 m_LookUp
-    waitmovement ALLEVENTS
-    release
-    end
+    goto EndMovementAndEvent
 
 EventScript_TypeStudentQuizComplete:
     msgbox gText_RhodanziTrainerSchool_BasicCourse_TypeStudent_QuizComplete MSG_FACE
