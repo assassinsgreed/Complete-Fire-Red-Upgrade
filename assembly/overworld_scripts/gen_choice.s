@@ -18,8 +18,8 @@ LevelScript_GenChoice_Main:
 	spriteface PLAYER look_down
 	setvar 0x4056 0x1
 	msgbox gText_GenChoice_Msgwelcome MSG_YESNO
-	compare LASTRESULT 0x1
-	if 0x1 _call EventScript_GenChoice_Favoritegen
+	compare LASTRESULT YES
+	if TRUE _call EventScript_GenChoice_Favoritegen
 	call EventScript_GenChoice_Shuffle
 	end
 
@@ -28,21 +28,21 @@ EventScript_GenChoice_Favoritegen:
 	multichoice 0x60 0x0 0x1 0x1
 	copyvar 0x4011 LASTRESULT
 	compare 0x4011 0x0
-	if 0x1 _call EventScript_GenChoice_Kantoconfirm
+	if TRUE _call EventScript_GenChoice_Kantoconfirm
 	compare 0x4011 0x1
-	if 0x1 _call EventScript_GenChoice_Johtoconfirm
+	if TRUE _call EventScript_GenChoice_Johtoconfirm
 	compare 0x4011 0x2
-	if 0x1 _call EventScript_GenChoice_Hoennconfirm
+	if TRUE _call EventScript_GenChoice_Hoennconfirm
 	compare 0x4011 0x3
-	if 0x1 _call EventScript_GenChoice_Sinnohconfirm
+	if TRUE _call EventScript_GenChoice_Sinnohconfirm
 	compare 0x4011 0x4
-	if 0x1 _call EventScript_GenChoice_Unovaconfirm
+	if TRUE _call EventScript_GenChoice_Unovaconfirm
 	compare 0x4011 0x5
-	if 0x1 _call EventScript_GenChoice_Kalosconfirm
+	if TRUE _call EventScript_GenChoice_Kalosconfirm
 	compare 0x4011 0x6
-	if 0x1 _call EventScript_GenChoice_Alolaconfirm
+	if TRUE _call EventScript_GenChoice_Alolaconfirm
 	compare 0x4011 0x7
-	if 0x1 _call EventScript_GenChoice_Galarconfirm
+	if TRUE _call EventScript_GenChoice_Galarconfirm
 	end
 
 EventScript_GenChoice_Shuffle:

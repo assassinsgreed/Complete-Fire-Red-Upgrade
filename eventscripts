@@ -21,4 +21,11 @@ npc 3 0 0 EventScript_AnthraTown_FlowerGirl
 npc 4 3 0 EventScript_AnthraTown_OldMan
 
 # Rhodanzi City
-npc 6 0 0 EventScript_RhodanziTrainerSchool_Receptionist
+## Trainer School main room
+npc 6 0 0 EventScript_RhodanziTrainerSchool_MainRoom_Receptionist
+npc 6 0 1 EventScript_RhodanziTrainerSchool_MainRoom_FossilStudent
+npc 6 0 2 EventScript_RhodanziTrainerSchool_MainRoom_Librarian
+npc 6 0 3 EventScript_RhodanziTrainerSchool_MainRoom_Professor
+
+## Trainer School basic course
+npc 6 1 0 EventScript_RhodanziTrainerSchool_BasicCourse_TypeStudent
