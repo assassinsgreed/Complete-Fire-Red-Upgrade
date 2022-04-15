@@ -158,14 +158,14 @@ enum //These vars need to be one after the other (hence the enum)
 #define MAX_COINS_DIGITS 9	//Max number of digits for game corner coins (eg. 4 = 9999, 9 = 999,999,999). maximum of 9
 
 /*===== Badge Obedience Options =====*/
-#define BASE_OBEDIENCE_LEVEL	10
-#define BADGE_1_OBEDIENCE_LEVEL	20
-#define BADGE_2_OBEDIENCE_LEVEL 30
-#define BADGE_3_OBEDIENCE_LEVEL 40
-#define BADGE_4_OBEDIENCE_LEVEL 50
-#define BADGE_5_OBEDIENCE_LEVEL 60
-#define BADGE_6_OBEDIENCE_LEVEL 70
-#define BADGE_7_OBEDIENCE_LEVEL 80
+#define BASE_OBEDIENCE_LEVEL	15
+#define BADGE_1_OBEDIENCE_LEVEL	25
+#define BADGE_2_OBEDIENCE_LEVEL 35
+#define BADGE_3_OBEDIENCE_LEVEL 45
+#define BADGE_4_OBEDIENCE_LEVEL 55
+#define BADGE_5_OBEDIENCE_LEVEL 65
+#define BADGE_6_OBEDIENCE_LEVEL 75
+#define BADGE_7_OBEDIENCE_LEVEL 85
 
 /*===== OW Palette Options =====*/
 #define TREE_DISGUISE_PAL_ID 0x1105 //The NPC palette id of the tree disguise movement permission.
@@ -312,7 +312,7 @@ enum //These vars need to be one after the other (hence the enum)
 //#define DONT_HIDE_HEALTHBOXES_ATTACKER_STATUS_MOVES //Uncommenting this line doesn't hide the healthboxes when the attacker is using a status move that targets itself (Gen 4).
 //#define ENCOUNTER_MUSIC_BY_CLASS //Plays music when a trainer spots the player based on the trainer class rather than the value set in the trainer data.
 #define OKAY_WITH_AI_SUICIDE //The AI is allowed to use self-destructing moves
-//#define HEALTHBAR_TYPE_ICONS //Pokemon types will always be shown next to the healthbar
+#define HEALTHBAR_TYPE_ICONS //Pokemon types will always be shown next to the healthbar
 
 /* DexNav Options */
 //See "include/new/dexnav_config.h"

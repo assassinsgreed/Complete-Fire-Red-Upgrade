@@ -17,7 +17,9 @@ LevelScript_GenChoice_Main:
 	lock
 	spriteface PLAYER look_down
 	setvar 0x4056 0x1
-	sethealingplace 0x01 // Player's house
+	sethealingplace 0x01 @ Player's house
+	@ TODO: Only set this when the player is given running shoes in game
+	setflag 0x914 @ Enable auto-run toggleable on L press. Running shoes always enabled
 	msgbox gText_GenChoice_Msgwelcome MSG_YESNO
 	compare LASTRESULT YES
 	if TRUE _call EventScript_GenChoice_Favoritegen
