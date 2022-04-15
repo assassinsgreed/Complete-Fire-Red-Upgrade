@@ -4,7 +4,7 @@
 
 # Debug Scripts - Only uncomment when debugging
 # Populate the Pokedex, give pokemon and default items
-# npc 3 0 2 EventScript_DebugMode_Main
+npc 3 0 2 EventScript_DebugMode_Main
 
 # Simple snippet for detecting player's starter choice. Demos how to read flags
 # npc 3 0 3 EventScript_StarterChoice_Main
@@ -19,6 +19,9 @@ map 4 1 gMapScripts_GenChoice
 # Anthra Town
 npc 3 0 0 EventScript_AnthraTown_FlowerGirl
 npc 4 3 0 EventScript_AnthraTown_OldMan
+
+# Route 1
+npc 3 19 0 EventScript_Route1_YoungsterPeter
 
 # Rhodanzi City
 ## Trainer School main room
