@@ -17,6 +17,7 @@ LevelScript_GenChoice_Main:
 	lock
 	spriteface PLAYER look_down
 	setvar 0x4056 0x1
+	sethealingplace 0x01 // Player's house
 	msgbox gText_GenChoice_Msgwelcome MSG_YESNO
 	compare LASTRESULT YES
 	if TRUE _call EventScript_GenChoice_Favoritegen

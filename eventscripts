@@ -17,6 +17,7 @@
 map 4 1 gMapScripts_GenChoice
 
 # Anthra Town
+npc 4 0 0 EventScript_AnthraTown_MomMain
 npc 3 0 0 EventScript_AnthraTown_FlowerGirl
 npc 4 3 0 EventScript_AnthraTown_OldMan
 
