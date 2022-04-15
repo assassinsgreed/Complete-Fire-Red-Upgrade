@@ -176,3 +176,8 @@ EventScript_RhodanziTrainerSchool_AdvancedCourse_HMsStudent:
 EventScript_RhodanziTrainerSchool_AdvancedCourse_DexNavStudent:
     npcchat2 0x8 m_LookUp gText_RhodanziTrainerSchool_AdvancedCourse_DexNavStudent
     end
+
+.global EventScript_RhodanziTrainerSchool_AdvancedCourse_BadgeObedienceStudent
+EventScript_RhodanziTrainerSchool_AdvancedCourse_BadgeObedienceStudent:
+    npcchat2 0x9 m_LookUp gText_RhodanziTrainerSchool_AdvancedCourse_BadgeObedienceStudent
+    end
