@@ -195,7 +195,7 @@ u32 MultiMoneyCalc(void)
 static u32 CalcMultiMoneyForTrainer(u16 trainerId)
 {
 	int i;
-	struct Trainer trainer = gTrainers[trainerId];
+	struct Trainer trainer = GET_TRAINER(trainerId);
 	u8 rate = 0;
 
 	/* Find level of the last Pokemon in trainer's party */

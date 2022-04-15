@@ -252,8 +252,8 @@ static item_t FindTrainerKeystone(u16 trainerId)
 
 	for (u8 i = 0; i < TRAINER_ITEM_COUNT; ++i)
 	{
-		if (IsItemKeystone(gTrainers[trainerId].items[i]))
-			return gTrainers[trainerId].items[i];
+		if (IsItemKeystone(GET_TRAINER(trainerId).items[i]))
+			return GET_TRAINER(trainerId).items[i];
 	}
 
 	return ITEM_NONE;
@@ -515,7 +515,7 @@ const u8* GetTrainerName(u8 bank)
 	}
 	else
 	{
-		u8 class = gTrainers[trainerId].trainerClass;
+		u8 class = GET_TRAINER(trainerId).trainerClass;
 		u8* name = NULL;
 
 		if (trainerId < RAID_BATTLE_MULTI_TRAINER_TID)
@@ -527,7 +527,7 @@ const u8* GetTrainerName(u8 bank)
 			|| IsFrontierTrainerId(trainerId))
 				return GetFrontierTrainerName(trainerId, battlerNum);
 
-			return gTrainers[trainerId].trainerName;
+			return GET_TRAINER(trainerId).trainerName;
 		}
 
 		return name;

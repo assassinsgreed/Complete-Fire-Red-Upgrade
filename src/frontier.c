@@ -258,7 +258,7 @@ u8 GetFrontierTrainerClassId(u16 trainerId, u8 battlerNum)
 		case RAID_BATTLE_MULTI_TRAINER_TID:
 			return gRaidPartners[VarGet(VAR_FACILITY_TRAINER_ID_PARTNER)].trainerClass;
 		default:
-			return gTrainers[trainerId].trainerClass;
+			return GET_TRAINER(trainerId).trainerClass;
 	}
 }
 
@@ -337,9 +337,9 @@ const u8* GetFrontierTrainerName(u16 trainerId, u8 battlerNum)
 				name = gRaidPartners[partnerId].name;
 			break;
 		default:
-			name = TryGetRivalNameByTrainerClass(gTrainers[trainerId].trainerClass);
+			name = TryGetRivalNameByTrainerClass(GET_TRAINER(trainerId).trainerClass);
 			if (name == NULL) //Rival name isn't tied to a trainer class
-				name = gTrainers[trainerId].trainerName;
+				name = GET_TRAINER(trainerId).trainerName;
 			break;
 	}
 
@@ -412,7 +412,7 @@ u8 GetFrontierTrainerFrontSpriteId(u16 trainerId, u8 battlerNum)
 		case FRONTIER_BRAIN_TID:
 			return gFrontierBrains[VarGet(VAR_FACILITY_TRAINER_ID + battlerNum)].trainerSprite;
 		default:
-			return gTrainers[trainerId].trainerPic;
+			return GET_TRAINER(trainerId).trainerPic;
 	}
 }
 
