@@ -1960,3 +1960,19 @@ map \map
 .hword \var, \val
 .word \script
 .endm
+
+@ Manages an npc chat event, where an npc will continue to face the player afterward
+.macro npcchat textpointer:req
+	lock
+	msgbox \textpointer MSG_FACE
+	release
+.endm
+
+@ Manages an npc chat event, where an npc will speak to the player before executing the provided movement
+.macro npcchat2 index:req movements:req textpointer:req
+	lock
+	msgbox \textpointer MSG_FACE
+	applymovement \index \movements
+	waitmovement ALLEVENTS
+	release
+.endm

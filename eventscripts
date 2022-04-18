@@ -30,3 +30,14 @@ npc 6 0 3 EventScript_RhodanziTrainerSchool_MainRoom_Professor
 
 ## Trainer School basic course
 npc 6 1 0 EventScript_RhodanziTrainerSchool_BasicCourse_TypeStudent
+
+## Trainer School advanced course
+# npc 6 2 0 EventScript_RhodanziTrainerSchool_AdvancedCourse_Professor
+# npc 6 2 1 EventScript_RhodanziTrainerSchool_AdvancedCourse_BattleMovesStudent
+# npc 6 2 2 EventScript_RhodanziTrainerSchool_AdvancedCourse_AutoRunStudent
+# npc 6 2 3 EventScript_RhodanziTrainerSchool_AdvancedCourse_PokemonTypeStudent
+# npc 6 2 4 EventScript_RhodanziTrainerSchool_AdvancedCourse_MegaEvolutionStudent
+# npc 6 2 5 EventScript_RhodanziTrainerSchool_AdvancedCourse_TMsStudent
+# npc 6 2 6 EventScript_RhodanziTrainerSchool_AdvancedCourse_HMsStudent
+# npc 6 2 7 EventScript_RhodanziTrainerSchool_AdvancedCourse_DexNavStudent
+# npc 6 2 8 EventScript_RhodanziTrainerSchool_AdvancedCourse_BadgeObedienceStudent

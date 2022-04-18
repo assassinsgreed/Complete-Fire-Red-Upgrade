@@ -35,24 +35,18 @@ ReceptionistHelp:
 
 .global EventScript_RhodanziTrainerSchool_MainRoom_FossilStudent
 EventScript_RhodanziTrainerSchool_MainRoom_FossilStudent:
-    lock
-    msgbox gText_RhodanziTrainerSchool_MainRoom_FossilStudent MSG_FACE
-    applymovement 0x2 m_LookUp
-    goto EndMovementAndEvent
+    npcchat2 0x2 m_LookUp gText_RhodanziTrainerSchool_MainRoom_FossilStudent
+    end
 
 .global EventScript_RhodanziTrainerSchool_MainRoom_Librarian
 EventScript_RhodanziTrainerSchool_MainRoom_Librarian:
-    lock
-    msgbox gText_RhodanziTrainerSchool_MainRoom_Librarian MSG_FACE
-    applymovement 0x3 m_LookUp
-    goto EndMovementAndEvent
+    npcchat2 0x3 m_LookUp gText_RhodanziTrainerSchool_MainRoom_Librarian
+    end
 
 .global EventScript_RhodanziTrainerSchool_MainRoom_Professor
 EventScript_RhodanziTrainerSchool_MainRoom_Professor:
-    lock
-    msgbox gText_RhodanziTrainerSchool_MainRoom_Professor MSG_FACE
-    applymovement 0x4 m_LookRight
-    goto EndMovementAndEvent
+    npcchat2 0x4 m_LookRight gText_RhodanziTrainerSchool_MainRoom_Professor
+    end
 
 .global EventScript_RhodanziTrainerSchool_BasicCourse_TypeStudent
 EventScript_RhodanziTrainerSchool_BasicCourse_TypeStudent:
@@ -139,3 +133,51 @@ EventScript_RhodanziTrainerSchool_BasicCourse_TypeStudent_QuizRejected:
 EventScript_TypeStudentQuizComplete:
     msgbox gText_RhodanziTrainerSchool_BasicCourse_TypeStudent_QuizComplete MSG_FACE
     return
+
+# TODO: Basic course dialog
+
+# Advanced Course
+.global EventScript_RhodanziTrainerSchool_AdvancedCourse_Professor
+EventScript_RhodanziTrainerSchool_AdvancedCourse_Professor:
+    npcchat2 0x1 m_LookDown gText_RhodanziTrainerSchool_AdvancedCourse_Professor
+    end
+
+.global EventScript_RhodanziTrainerSchool_AdvancedCourse_BattleMovesStudent
+EventScript_RhodanziTrainerSchool_AdvancedCourse_BattleMovesStudent:
+    npcchat2 0x2 m_LookUp gText_RhodanziTrainerSchool_AdvancedCourse_BattleMovesStudent
+    end
+
+.global EventScript_RhodanziTrainerSchool_AdvancedCourse_AutoRunStudent
+EventScript_RhodanziTrainerSchool_AdvancedCourse_AutoRunStudent:
+    npcchat2 0x3 m_LookUp gText_RhodanziTrainerSchool_AdvancedCourse_AutoRunStudent
+    end
+
+.global EventScript_RhodanziTrainerSchool_AdvancedCourse_PokemonTypeStudent
+EventScript_RhodanziTrainerSchool_AdvancedCourse_PokemonTypeStudent:
+    npcchat2 0x4 m_LookUp gText_RhodanziTrainerSchool_AdvancedCourse_PokemonTypeStudent
+    end
+
+.global EventScript_RhodanziTrainerSchool_AdvancedCourse_MegaEvolutionStudent
+EventScript_RhodanziTrainerSchool_AdvancedCourse_MegaEvolutionStudent:
+    npcchat2 0x5 m_LookUp gText_RhodanziTrainerSchool_AdvancedCourse_MegaEvolutionStudent
+    end
+
+.global EventScript_RhodanziTrainerSchool_AdvancedCourse_TMsStudent
+EventScript_RhodanziTrainerSchool_AdvancedCourse_TMsStudent:
+    npcchat2 0x6 m_LookUp gText_RhodanziTrainerSchool_AdvancedCourse_TMsStudent
+    end
+
+.global EventScript_RhodanziTrainerSchool_AdvancedCourse_HMsStudent
+EventScript_RhodanziTrainerSchool_AdvancedCourse_HMsStudent:
+    npcchat2 0x7 m_LookUp gText_RhodanziTrainerSchool_AdvancedCourse_HMsStudent
+    end
+
+.global EventScript_RhodanziTrainerSchool_AdvancedCourse_DexNavStudent
+EventScript_RhodanziTrainerSchool_AdvancedCourse_DexNavStudent:
+    npcchat2 0x8 m_LookUp gText_RhodanziTrainerSchool_AdvancedCourse_DexNavStudent
+    end
+
+.global EventScript_RhodanziTrainerSchool_AdvancedCourse_BadgeObedienceStudent
+EventScript_RhodanziTrainerSchool_AdvancedCourse_BadgeObedienceStudent:
+    npcchat2 0x9 m_LookUp gText_RhodanziTrainerSchool_AdvancedCourse_BadgeObedienceStudent
+    end
