@@ -1,5 +1,9 @@
 # Complete Fire Red Upgrade
 
+## Dynamic Palette Tables
+This branch let's you define new palette tables in CFRU in `src\character_customization.c`. Most likely these palettes will come from imported spritesheets.
+As an example if you imported `gEventObjectPic_JohnDoe.png` you'll want to get a reference to the palette by adding `extern const u8 gEventObjectPic_JohnDoePal[];` to `src\character_customization.c`. Then you will need to add that reference to a palette table with a unique palette tag. Let's say we want to use palette tag `0x1201`. Find the table associated with the high byte (0x12 in this case), there's already a table set up `sObjectEventSpritePalettes12`. Add an entry for the palette to the table associating it with the chosen ID `{gEventObjectPic_JohnDoePal, 0x1201}` before the NULL entry. At this point a sprite pointing to palette tag `0x1201` should use your palette!
+
 ## What is this?
 A complete upgrade for FireRed, including an upgraded Battle Engine. By using this or any assets from this repository, you consent to never making money off your game (unless you have my explicit permission). That includes both pay-walls **as well as optional donations** (which includes ko-fi, Patreon, etc.). If you have a problem with this, feel free to send me a Discord message (Skeli#3917) and I will give you my PayPal so you can pay me $100000 for the hundreds if not thousands of hours I poured into this for **free** (I don't actually want your money - I'm trying to make a point). Not to mention it's illegal to profit off of an IP you don't own.
 
