@@ -17,8 +17,8 @@ EventScript_Modifiers_Main:
 	multichoiceoption gText_Modifiers_OptionHiddenAbilities 4
 	multichoiceoption gText_Modifiers_OptionShinies 5
 	multichoiceoption gText_Modifiers_OptionRandomizer 6
-	multichoice 0x60 0x0 SEVEN_MULTICHOICE_OPTIONS 0x0
-	copyvar 0x40FE LASTRESULT
+	multichoice 0x60 0x0 SEVEN_MULTICHOICE_OPTIONS FALSE
+	copyvar MULTICHOICE_SELECTION LASTRESULT
 	switch LASTRESULT
 	case 0, EventScript_Modifiers_Inversebattle
 	case 1, EventScript_Modifiers_Catchtrainer
@@ -104,7 +104,7 @@ EventScript_Modifiers_Flagison:
 EventScript_Modifiers_Flagnowoff:
 	sound 0x30 @Save
 	msgbox gText_Modifiers_Msgflagnowoff MSG_KEEPOPEN
-	switch 0x40FE
+	switch MULTICHOICE_SELECTION
 	case 0, EventScript_Modifiers_Clearinverse
 	case 1, EventScript_Modifiers_Clearcatchtrainer
 	case 2, EventScript_Modifiers_Clearscalewild
@@ -118,7 +118,7 @@ EventScript_Modifiers_Flagnowoff:
 EventScript_Modifiers_Flagnowon:
 	sound 0x30 @Save
 	msgbox gText_Modifiers_Msgflagnowon MSG_KEEPOPEN
-	switch 0x40FE
+	switch MULTICHOICE_SELECTION
 	case 0, EventScript_Modifiers_Setinverse
 	case 1, EventScript_Modifiers_Setcatchtrainer
 	case 2, EventScript_Modifiers_Setscalewild
@@ -187,7 +187,7 @@ EventScript_Modifiers_Setrandomizer:
 
 .global EventScript_Modifiers_End
 EventScript_Modifiers_End:
-	setvar 0x40FE 0x0
+	setvar MULTICHOICE_SELECTION 0x0
 	sound 0x4 @Log off SE
 	msgbox gText_Modifiers_Msgend MSG_KEEPOPEN
 	release
