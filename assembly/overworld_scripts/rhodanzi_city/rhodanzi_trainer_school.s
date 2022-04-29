@@ -10,6 +10,7 @@ EndMovementAndEvent:
     release
     end
 
+@ Main room events
 .global EventScript_RhodanziTrainerSchool_MainRoom_Receptionist
 EventScript_RhodanziTrainerSchool_MainRoom_Receptionist:
     lock
@@ -83,7 +84,7 @@ EventScript_RhodanziTrainerSchool_BasicCourse_TypeStudent_QuizChoices:
     multichoiceoption gText_TypeFire 1
     multichoiceoption gText_TypeWater 2
     multichoice 0x60 0x0 THREE_MULTICHOICE_OPTIONS 0x1
-    copyvar 0x40FE LASTRESULT
+    copyvar MULTICHOICE_SELECTION LASTRESULT
     return
 
 EventScript_RhodanziTrainerSchool_BasicCourse_TypeStudent_QuizQuestionGrass:
@@ -134,9 +135,79 @@ EventScript_TypeStudentQuizComplete:
     msgbox gText_RhodanziTrainerSchool_BasicCourse_TypeStudent_QuizComplete MSG_FACE
     return
 
-# TODO: Basic course dialog
+@ Basic Course
+.global EventScript_RhodanziTrainerSchool_BasicCourse_Professor
+EventScript_RhodanziTrainerSchool_BasicCourse_Professor:
+    npcchat2 0x1 m_LookDown gText_RhodanziTrainerSchool_BasicCourse_Professor
+    end
 
-# Advanced Course
+.global EventScript_RhodanziTrainerSchool_BasicCourse_AbilitiesStudent
+EventScript_RhodanziTrainerSchool_AdvancedCourse_AbilitiesStudent:
+    npcchat2 0x2 m_LookUp gText_RhodanziTrainerSchool_BasicCourse_AbilitiesStudent
+    end
+
+.global EventScript_RhodanziTrainerSchool_BasicCourse_KOStudent
+EventScript_RhodanziTrainerSchool_AdvancedCourse_KOStudent:
+    npcchat2 0x3 m_LookUp gText_RhodanziTrainerSchool_BasicCourse_KOStudent
+    end
+
+.global EventScript_RhodanziTrainerSchool_BasicCourse_HeldItemsStudent
+EventScript_RhodanziTrainerSchool_AdvancedCourse_HeldItemsStudent:
+    npcchat2 0x4 m_LookUp gText_RhodanziTrainerSchool_BasicCourse_HeldItemsStudent
+    end
+
+.global EventScript_RhodanziTrainerSchool_BasicCourse_StatusStudent
+EventScript_RhodanziTrainerSchool_BasicCourse_StatusStudent:
+    lock
+    msgbox gText_RhodanziTrainerSchool_BasicCourse_StatusStudent MSG_FACE
+    goto EventScript_RhodanziTrainerSchool_BasicCourse_StatusStudent_Question
+    end
+
+EventScript_RhodanziTrainerSchool_BasicCourse_StatusStudent_Question:
+    msgbox gText_RhodanziTrainerSchool_BasicCourse_StatusStudent_Question MSG_KEEPOPEN
+    multichoiceoption gText_Burn 0
+    multichoiceoption gText_Freeze 1
+    multichoiceoption gText_Paralysis 2
+    multichoiceoption gText_Poison 3
+    multichoiceoption gText_Sleep 4
+    multichoiceoption gText_End 5
+    multichoice 0x60 0x0 SIX_MULTICHOICE_OPTIONS TRUE
+    copyvar MULTICHOICE_SELECTION LASTRESULT
+    switch LASTRESULT
+    case 0, EventScript_RhodanziTrainerSchool_BasicCourse_StatusStudent_Burn
+    case 1, EventScript_RhodanziTrainerSchool_BasicCourse_StatusStudent_Freeze
+    case 2, EventScript_RhodanziTrainerSchool_BasicCourse_StatusStudent_Paralysis
+    case 3, EventScript_RhodanziTrainerSchool_BasicCourse_StatusStudent_Poison
+    case 4, EventScript_RhodanziTrainerSchool_BasicCourse_StatusStudent_Sleep
+    case 5, EventScript_RhodanziTrainerSchool_BasicCourse_StatusStudent_Done
+    end
+
+EventScript_RhodanziTrainerSchool_BasicCourse_StatusStudent_Burn:
+    msgbox gText_BurnDetails MSG_NORMAL
+    goto EventScript_RhodanziTrainerSchool_BasicCourse_StatusStudent_Question
+
+EventScript_RhodanziTrainerSchool_BasicCourse_StatusStudent_Freeze:
+    msgbox gText_FreezeDetails MSG_NORMAL
+    goto EventScript_RhodanziTrainerSchool_BasicCourse_StatusStudent_Question
+
+EventScript_RhodanziTrainerSchool_BasicCourse_StatusStudent_Paralysis:
+    msgbox gText_ParalysisDetails MSG_NORMAL
+    goto EventScript_RhodanziTrainerSchool_BasicCourse_StatusStudent_Question
+
+EventScript_RhodanziTrainerSchool_BasicCourse_StatusStudent_Poison:
+    msgbox gText_PoisonDetails MSG_NORMAL
+    goto EventScript_RhodanziTrainerSchool_BasicCourse_StatusStudent_Question
+
+EventScript_RhodanziTrainerSchool_BasicCourse_StatusStudent_Sleep:
+    msgbox gText_SleepDetails MSG_NORMAL
+    goto EventScript_RhodanziTrainerSchool_BasicCourse_StatusStudent_Question
+
+EventScript_RhodanziTrainerSchool_BasicCourse_StatusStudent_Done:
+    msgbox gText_RhodanziTrainerSchool_BasicCourse_StatusStudent_Done MSG_NORMAL
+    applymovement 0x6 m_LookUp
+    goto EndMovementAndEvent
+
+@ Advanced Course
 .global EventScript_RhodanziTrainerSchool_AdvancedCourse_Professor
 EventScript_RhodanziTrainerSchool_AdvancedCourse_Professor:
     npcchat2 0x1 m_LookDown gText_RhodanziTrainerSchool_AdvancedCourse_Professor
