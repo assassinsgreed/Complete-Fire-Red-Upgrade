@@ -34,56 +34,56 @@ EventScript_Modifiers_Main:
 EventScript_Modifiers_Inversebattle:
 	msgbox gText_Modifiers_Msginverse MSG_KEEPOPEN
 	checkflag 0x900
-	if 0x0 _call EventScript_Modifiers_Flagisoff
-	if 0x1 _call EventScript_Modifiers_Flagison
+	if NOT_SET _call EventScript_Modifiers_Flagisoff
+	call EventScript_Modifiers_Flagison
 	end
 
 .global EventScript_Modifiers_Catchtrainer
 EventScript_Modifiers_Catchtrainer:
 	msgbox gText_Modifiers_Msgcatchtrainer MSG_KEEPOPEN
 	checkflag 0x905
-	if 0x0 _call EventScript_Modifiers_Flagisoff
-	if 0x1 _call EventScript_Modifiers_Flagison
+	if NOT_SET _call EventScript_Modifiers_Flagisoff
+	call EventScript_Modifiers_Flagison
 	end
 
 .global EventScript_Modifiers_Scalewild
 EventScript_Modifiers_Scalewild:
 	msgbox gText_Modifiers_Msgscalewild MSG_KEEPOPEN
 	checkflag 0x90D
-	if 0x0 _call EventScript_Modifiers_Flagisoff
-	if 0x1 _call EventScript_Modifiers_Flagison
+	if NOT_SET _call EventScript_Modifiers_Flagisoff
+	call EventScript_Modifiers_Flagison
 	end
 
 .global EventScript_Modifiers_Scaletrainer
 EventScript_Modifiers_Scaletrainer:
 	msgbox gText_Modifiers_Msgscaletrainer MSG_KEEPOPEN
 	checkflag 0x90E
-	if 0x0 _call EventScript_Modifiers_Flagisoff
-	if 0x1 _call EventScript_Modifiers_Flagison
+	if NOT_SET _call EventScript_Modifiers_Flagisoff
+	call EventScript_Modifiers_Flagison
 	end
 
 .global EventScript_Modifiers_Hiddenability
 EventScript_Modifiers_Hiddenability:
 	msgbox gText_Modifiers_Msghiddenability MSG_KEEPOPEN
 	checkflag 0x90F
-	if 0x0 _call EventScript_Modifiers_Flagisoff
-	if 0x1 _call EventScript_Modifiers_Flagison
+	if NOT_SET _call EventScript_Modifiers_Flagisoff
+	call EventScript_Modifiers_Flagison
 	end
 
 .global EventScript_Modifiers_Shiny
 EventScript_Modifiers_Shiny:
 	msgbox gText_Modifiers_Msgshiny MSG_KEEPOPEN
 	checkflag 0x913
-	if 0x0 _call EventScript_Modifiers_Flagisoff
-	if 0x1 _call EventScript_Modifiers_Flagison
+	if NOT_SET _call EventScript_Modifiers_Flagisoff
+	call EventScript_Modifiers_Flagison
 	end
 
 .global EventScript_Modifiers_Randomizer
 EventScript_Modifiers_Randomizer:
 	msgbox gText_Modifiers_Msgrandomizer MSG_KEEPOPEN
 	checkflag 0x940
-	if 0x0 _call EventScript_Modifiers_Flagisoff
-	if 0x1 _call EventScript_Modifiers_Flagison
+	if NOT_SET _call EventScript_Modifiers_Flagisoff
+	call EventScript_Modifiers_Flagison
 	end
 
 .global EventScript_Modifiers_Flagisoff
