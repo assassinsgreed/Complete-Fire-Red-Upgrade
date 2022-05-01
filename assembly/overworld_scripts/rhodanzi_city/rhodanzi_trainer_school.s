@@ -54,9 +54,9 @@ EventScript_RhodanziTrainerSchool_BasicCourse_TypeStudent:
     lock
     faceplayer
     checkflag 0x230
-    if FALSE _call EventScript_TypeStudentQuiz
+    if NOT_SET _call EventScript_TypeStudentQuiz
     checkflag 0x230
-    if TRUE _call EventScript_TypeStudentQuizComplete
+    if SET _call EventScript_TypeStudentQuizComplete
     applymovement 0x1 m_LookUp
     waitmovement ALLEVENTS
     release

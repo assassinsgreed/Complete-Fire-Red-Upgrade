@@ -16,6 +16,9 @@
 # Prompts the player to enter their generation choice
 map 4 1 gMapScripts_GenChoice
 
+# General
+# npc 6 3 0 EventScript_Pokemart
+
 # Anthra Town
 npc 4 0 0 EventScript_AnthraTown_MomMain
 npc 3 0 0 EventScript_AnthraTown_FlowerGirl
