@@ -49,20 +49,26 @@ EventScript_RhodanziTrainerSchool_MainRoom_Professor:
     npcchat2 0x4 m_LookRight gText_RhodanziTrainerSchool_MainRoom_Professor
     end
 
+@ Basic Course
+.global EventScript_RhodanziTrainerSchool_BasicCourse_Professor
+EventScript_RhodanziTrainerSchool_BasicCourse_Professor:
+    npcchat2 0x1 m_LookDown gText_RhodanziTrainerSchool_BasicCourse_Professor
+    end
+
 .global EventScript_RhodanziTrainerSchool_BasicCourse_TypeStudent
 EventScript_RhodanziTrainerSchool_BasicCourse_TypeStudent:
     lock
     faceplayer
     checkflag 0x230
-    if NOT_SET _call EventScript_TypeStudentQuiz
+    if NOT_SET _call EventScript_RhodanziTrainerSchool_BasicCourse_TypeStudentQuiz
     checkflag 0x230
-    if SET _call EventScript_TypeStudentQuizComplete
-    applymovement 0x1 m_LookUp
+    if SET _call EventScript_RhodanziTrainerSchool_BasicCourse_TypeStudentQuizComplete
+    applymovement 0x2 m_LookUp
     waitmovement ALLEVENTS
     release
     end
 
-EventScript_TypeStudentQuiz:
+EventScript_RhodanziTrainerSchool_BasicCourse_TypeStudentQuiz:
     msgbox gText_RhodanziTrainerSchool_BasicCourse_TypeStudent_QuizIntro MSG_YESNO
     compare LASTRESULT YES
     if FALSE _goto EventScript_RhodanziTrainerSchool_BasicCourse_TypeStudent_QuizRejected
@@ -131,29 +137,23 @@ EventScript_RhodanziTrainerSchool_BasicCourse_TypeStudent_QuizRejected:
     applymovement 0x1 m_LookUp
     goto EndMovementAndEvent
 
-EventScript_TypeStudentQuizComplete:
+EventScript_RhodanziTrainerSchool_BasicCourse_TypeStudentQuizComplete:
     msgbox gText_RhodanziTrainerSchool_BasicCourse_TypeStudent_QuizComplete MSG_FACE
     return
 
-@ Basic Course
-.global EventScript_RhodanziTrainerSchool_BasicCourse_Professor
-EventScript_RhodanziTrainerSchool_BasicCourse_Professor:
-    npcchat2 0x1 m_LookDown gText_RhodanziTrainerSchool_BasicCourse_Professor
-    end
-
 .global EventScript_RhodanziTrainerSchool_BasicCourse_AbilitiesStudent
-EventScript_RhodanziTrainerSchool_AdvancedCourse_AbilitiesStudent:
-    npcchat2 0x2 m_LookUp gText_RhodanziTrainerSchool_BasicCourse_AbilitiesStudent
+EventScript_RhodanziTrainerSchool_BasicCourse_AbilitiesStudent:
+    npcchat2 0x3 m_LookUp gText_RhodanziTrainerSchool_BasicCourse_AbilitiesStudent
     end
 
 .global EventScript_RhodanziTrainerSchool_BasicCourse_KOStudent
-EventScript_RhodanziTrainerSchool_AdvancedCourse_KOStudent:
-    npcchat2 0x3 m_LookUp gText_RhodanziTrainerSchool_BasicCourse_KOStudent
+EventScript_RhodanziTrainerSchool_BasicCourse_KOStudent:
+    npcchat2 0x4 m_LookUp gText_RhodanziTrainerSchool_BasicCourse_KOStudent
     end
 
 .global EventScript_RhodanziTrainerSchool_BasicCourse_HeldItemsStudent
-EventScript_RhodanziTrainerSchool_AdvancedCourse_HeldItemsStudent:
-    npcchat2 0x4 m_LookUp gText_RhodanziTrainerSchool_BasicCourse_HeldItemsStudent
+EventScript_RhodanziTrainerSchool_BasicCourse_HeldItemsStudent:
+    npcchat2 0x5 m_LookUp gText_RhodanziTrainerSchool_BasicCourse_HeldItemsStudent
     end
 
 .global EventScript_RhodanziTrainerSchool_BasicCourse_StatusStudent
