@@ -13,7 +13,7 @@ EventScript_Pokemart:
     special 0x187
     compare LASTRESULT 0x2
     if 0x1 _goto EventScript_End
-    msgbox gText_Pokemart_Intro MSG_KEEPOPEN
+    msgbox gText_Common_PokemartIntro MSG_KEEPOPEN
     checkflag 0x827 @ Eight Badges
     if SET _goto EventScript_EightBadges
     checkflag 0x826 @ Seven Badges
@@ -81,7 +81,6 @@ NoBadges_Stock:
 
 OneBadge_Stock:
     .hword ITEM_POKE_BALL
-    .hword ITEM_GREAT_BALL
     .hword ITEM_POTION
     .hword ITEM_SUPER_POTION
     .hword ITEM_ANTIDOTE
@@ -90,6 +89,7 @@ OneBadge_Stock:
     .hword ITEM_AWAKENING
     .hword ITEM_PARALYZE_HEAL
     .hword ITEM_REVIVE
+    .hword ITEM_ESCAPE_ROPE
     .hword ITEM_NONE
 
 TwoBadges_Stock:
@@ -104,6 +104,7 @@ TwoBadges_Stock:
     .hword ITEM_AWAKENING
     .hword ITEM_PARALYZE_HEAL
     .hword ITEM_REVIVE
+    .hword ITEM_ESCAPE_ROPE
     .hword ITEM_NONE
 
 ThreeBadges_Stock:
@@ -119,6 +120,7 @@ ThreeBadges_Stock:
     .hword ITEM_PARALYZE_HEAL
     .hword ITEM_REPEL
     .hword ITEM_REVIVE
+    .hword ITEM_ESCAPE_ROPE
     .hword ITEM_NONE
 
 FourBadges_Stock:
@@ -135,6 +137,7 @@ FourBadges_Stock:
     .hword ITEM_PARALYZE_HEAL
     .hword ITEM_REPEL
     .hword ITEM_REVIVE
+    .hword ITEM_ESCAPE_ROPE
     .hword ITEM_NONE
 
 FiveBadges_Stock:
@@ -153,6 +156,7 @@ FiveBadges_Stock:
     .hword ITEM_REPEL
     .hword ITEM_SUPER_REPEL
     .hword ITEM_REVIVE
+    .hword ITEM_ESCAPE_ROPE
     .hword ITEM_NONE
 
 SixBadges_Stock:
@@ -172,6 +176,7 @@ SixBadges_Stock:
     .hword ITEM_REPEL
     .hword ITEM_SUPER_REPEL
     .hword ITEM_REVIVE
+    .hword ITEM_ESCAPE_ROPE
     .hword ITEM_NONE
 
 SevenBadges_Stock:
@@ -193,6 +198,7 @@ SevenBadges_Stock:
     .hword ITEM_SUPER_REPEL
     .hword ITEM_MAX_REPEL
     .hword ITEM_REVIVE
+    .hword ITEM_ESCAPE_ROPE
     .hword ITEM_NONE
 
 EightBadges_Stock:
@@ -215,10 +221,11 @@ EightBadges_Stock:
     .hword ITEM_SUPER_REPEL
     .hword ITEM_MAX_REPEL
     .hword ITEM_REVIVE
+    .hword ITEM_ESCAPE_ROPE
     .hword ITEM_NONE
     
 EventScript_EndMart:
-    msgbox gText_Pokemart_End MSG_NORMAL
+    msgbox gText_Common_PokemartEnd MSG_NORMAL
     goto EventScript_End
 
 EventScript_End:

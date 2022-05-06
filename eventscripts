@@ -4,7 +4,7 @@
 
 # Debug Scripts - Only uncomment when debugging
 # Populate the Pokedex, give pokemon and default items
-# npc 3 0 2 EventScript_DebugMode_Main
+npc 3 0 2 EventScript_DebugMode_Main
 
 # Simple snippet for detecting player's starter choice. Demos how to read flags
 # npc 3 0 3 EventScript_StarterChoice_Main
@@ -16,15 +16,14 @@
 # Prompts the player to enter their generation choice
 map 4 1 gMapScripts_GenChoice
 
-# General
-npc 6 3 0 EventScript_Pokemart
-
 # Anthra Town
 npc 4 0 0 EventScript_AnthraTown_MomMain
 npc 3 0 0 EventScript_AnthraTown_FlowerGirl
 npc 4 3 0 EventScript_AnthraTown_OldMan
 
 # Rhodanzi City
+## Overworld
+
 ## Trainer School main room
 npc 6 0 0 EventScript_RhodanziTrainerSchool_MainRoom_Receptionist
 npc 6 0 1 EventScript_RhodanziTrainerSchool_MainRoom_FossilStudent
@@ -49,3 +48,14 @@ npc 6 2 5 EventScript_RhodanziTrainerSchool_AdvancedCourse_TMsStudent
 npc 6 2 6 EventScript_RhodanziTrainerSchool_AdvancedCourse_HMsStudent
 npc 6 2 7 EventScript_RhodanziTrainerSchool_AdvancedCourse_DexNavStudent
 npc 6 2 8 EventScript_RhodanziTrainerSchool_AdvancedCourse_BadgeObedienceStudent
+
+## NPC Houses
+
+## Facilities
+npc 6 3 0 EventScript_Pokemart
+npc 6 3 1 EventScript_RhodanziFacilities_Mart_BadgeStock
+npc 6 3 2 EventScript_RhodanziFacilities_Mart_EscapeRope
+npc 6 5 0 EventScript_PokemonCenter_Main
+npc 6 5 1 EventScript_RhodanziFacilities_Center_UsingFacility
+npc 6 5 2 EventScript_RhodanziFacilities_Center_Trade
+npc 6 5 3 EventScript_RhodanziFacilities_Center_PokemonTreatment
