@@ -4,6 +4,15 @@
 .include "../xse_commands.s"
 .include "../xse_defines.s"
 
+.global MapScript_AnthraTown_FlightSpot
+MapScript_AnthraTown_FlightSpot:
+	mapscript MAP_SCRIPT_ON_TRANSITION MapEntryScript_AnthraTown_FlightFlag
+	.byte MAP_SCRIPT_TERMIN
+
+MapEntryScript_AnthraTown_FlightFlag:
+    setworldmapflag 0x890
+    end
+
 .global EventScript_AnthraTown_FlowerGirl
 EventScript_AnthraTown_FlowerGirl:
     msgbox gText_AnthraTown_FlowerGirl MSG_FACE

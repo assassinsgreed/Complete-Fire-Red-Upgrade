@@ -1374,7 +1374,21 @@ EventScript_DebugMode_Main:
 	@ Give the player certain key items, like mega/primal reversion/ultra burst items
 	setflag 0x828 @ Enable Pokemon Menu
 	setflag 0x829 @ Enable Pokedex Menu
-	giveitem ITEM_POKE_BALL 0x32 MSG_FIND @ Give 50 pokeballs
-	giveitem ITEM_RARE_CANDY 0x1E MSG_FIND @ Give 30 rare candies
+	additem ITEM_POKE_BALL 0x32 @ Give 50 pokeballs
+	additem ITEM_RARE_CANDY 0x1E @ Give 30 rare candies
 	additem ITEM_TOWN_MAP 0x1 @ Give town map
 	@ giveitem2 0x169 0x1 0x13E @ Give town map with fanfare (base game uses both)
+	additem ITEM_HM01 0x1 @ Cut
+	additem ITEM_HM01 0x2 @ Fly
+	additem ITEM_HM01 0x3 @ Surf
+	additem ITEM_HM01 0x4 @ Strength
+	additem ITEM_HM01 0x5 @ Rock Smash
+	setflag 0x820 @ Badge 1, Field Badge
+	setflag 0x821 @ Badge 2, Patch Badge
+	setflag 0x822 @ Badge 3, Stormcloud Badge
+	setflag 0x823 @ Badge 4, Roundabout Badge
+	setflag 0x824 @ Badge 5, Tactician Badge
+	setflag 0x825 @ Badge 6, Talent Badge
+	setflag 0x826 @ Badge 7, Support Badge
+	setflag 0x827 @ Badge 8, Double Badge
+

@@ -5,6 +5,15 @@
 .include "../xse_defines.s"
 .include "../asm_defines.s"
 
+.global MapScript_RhodanziFacilities_PokemonCenter
+MapScript_RhodanziFacilities_PokemonCenter:
+	mapscript MAP_SCRIPT_ON_TRANSITION MapScript_RhodanziFacilities_PokemonCenter_SetHealingSpot
+	.byte MAP_SCRIPT_TERMIN
+
+MapScript_RhodanziFacilities_PokemonCenter_SetHealingSpot:
+    sethealingplace 0x03 @ Originally Pewter City
+    end
+
 .global EventScript_RhodanziFacilities_Mart_BadgeStock
 EventScript_RhodanziFacilities_Mart_BadgeStock:
     npcchat gText_RhodanziFacilities_Mart_BadgeStock

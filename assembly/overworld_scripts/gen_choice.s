@@ -4,8 +4,8 @@
 .include "../xse_commands.s"
 .include "../xse_defines.s"
 
-.global gMapScripts_GenChoice
-gMapScripts_GenChoice:
+.global MapScript_GenChoice
+MapScript_GenChoice:
 	mapscript MAP_SCRIPT_ON_FRAME_TABLE LevelScripts_GenChoice
 	.byte MAP_SCRIPT_TERMIN
 
