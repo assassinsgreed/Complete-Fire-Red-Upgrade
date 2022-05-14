@@ -14,15 +14,27 @@ npc 3 0 2 EventScript_DebugMode_Main
 
 # Startup
 # Prompts the player to enter their generation choice
-map 4 1 gMapScripts_GenChoice
+map 4 1 MapScript_GenChoice
 
 # Anthra Town
+map 3 0 MapScript_AnthraTown_FlightSpot
 npc 4 0 0 EventScript_AnthraTown_MomMain
 npc 3 0 0 EventScript_AnthraTown_FlowerGirl
 npc 4 3 0 EventScript_AnthraTown_OldMan
 
 # Rhodanzi City
 ## Overworld
+map 3 2 MapScript_RhodanziOverworld_FlightSpot
+npc 3 2 0 EventScript_RhodanziOverworld_SunSightMan
+npc 3 2 1 EventScript_RhodanziOverworld_FirstStop
+npc 3 2 2 EventScript_RhodanziOverworld_PokemonVariety
+npc 3 2 3 EventScript_RhodanziOverworld_TreeGuy
+npc 3 2 4 EventScript_Common_Cut
+npc 3 2 5 EventScript_RhodanziOverworld_ThugBottomSpokenTo
+npc 3 2 6 EventScript_RhodanziOverworld_ThugTopSpokenTo
+sign 3 2 3 SignScript_RhodanziCity_FishermanSign
+tile 3 2 0 TileScript_RhodanziOverworld_ThugsCaught
+tile 3 2 1 TileScript_RhodanziOverworld_ThugsCaught
 
 ## Trainer School main room
 npc 6 0 0 EventScript_RhodanziTrainerSchool_MainRoom_Receptionist
@@ -50,8 +62,18 @@ npc 6 2 7 EventScript_RhodanziTrainerSchool_AdvancedCourse_DexNavStudent
 npc 6 2 8 EventScript_RhodanziTrainerSchool_AdvancedCourse_BadgeObedienceStudent
 
 ## NPC Houses
+npc 6 7 0 EventScript_RhodanziNPCHouses_TerrenceSister
+npc 6 7 1 EventScript_RhodanziNPCHouses_TerrenceLittleBrother
+npc 6 8 0 EventScript_RhodanziNPCHouses_Evolution
+npc 6 8 1 EventScript_RhodanziNPCHouses_OldTrainer
+npc 6 9 0 EventScript_RhodanziNPCHouses_NidoranTrainer
+npc 6 9 1 EventScript_RhodanziNPCHouses_Nidoran
+npc 6 10 0 EventScript_RhodanziNPCHouses_PokedexTrainer
+npc 6 12 0 EventScript_RhodanziNPCHouses_PlantGirl
+npc 6 13 0 EventScript_RhodanziNPCHouses_MailTrainer 
 
 ## Facilities
+map 6 5 MapScript_RhodanziFacilities_PokemonCenter
 npc 6 3 0 EventScript_Pokemart
 npc 6 3 1 EventScript_RhodanziFacilities_Mart_BadgeStock
 npc 6 3 2 EventScript_RhodanziFacilities_Mart_EscapeRope
