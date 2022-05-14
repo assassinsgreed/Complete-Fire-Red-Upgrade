@@ -10,11 +10,11 @@ EventScript_Common_Cut:
     lockall
     checkflag 0x821 @ Patch Badge, Gym 2
     if FALSE _goto EventScript_Common_CutFillerText
-    special 0x10A @ Check if party Pokemon can learn Cut 
-    compare LASTRESULT NO
-    IF NO _goto EventScript_Common_CutFillerText
-    setanimation 0x0 LASTRESULT @ Show Pokeball raising animation
-    bufferpartypokemon 0x0 LASTRESULT @ Store first Pokemon compatible with Cut
+    special 0x10A @ Check if party Pokemon can learn Cut
+    compare 0x8004 0x6 @TODO: Requires HM01 in bag, but will currently fail because additional TMs and HMs are not configured
+    IF equal _goto EventScript_Common_CutFillerText
+    setanimation 0x0 0x8004 @ Show Pokeball raising animation
+    bufferpartypokemon 0x0 0x8004 @ Store first Pokemon compatible with Cut
     bufferattack 0x1 0xF @ Store Cut attack name
     msgbox gText_Common_PokemonUsedHM MSG_KEEPOPEN
     closeonkeypress

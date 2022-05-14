@@ -1379,10 +1379,10 @@ EventScript_DebugMode_Main:
 	additem ITEM_TOWN_MAP 0x1 @ Give town map
 	@ giveitem2 0x169 0x1 0x13E @ Give town map with fanfare (base game uses both)
 	additem ITEM_HM01 0x1 @ Cut
-	additem ITEM_HM01 0x2 @ Fly
-	additem ITEM_HM01 0x3 @ Surf
-	additem ITEM_HM01 0x4 @ Strength
-	additem ITEM_HM01 0x5 @ Rock Smash
+	additem ITEM_HM02 0x1 @ Fly
+	additem ITEM_HM03 0x1 @ Surf
+	additem ITEM_HM04 0x1 @ Strength
+	additem ITEM_HM05 0x1 @ Rock Smash
 	setflag 0x820 @ Badge 1, Field Badge
 	setflag 0x821 @ Badge 2, Patch Badge
 	setflag 0x822 @ Badge 3, Stormcloud Badge

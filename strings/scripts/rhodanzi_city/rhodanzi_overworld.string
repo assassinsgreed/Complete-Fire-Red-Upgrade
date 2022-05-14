@@ -10,8 +10,14 @@ There are a lot of unique Pok\emon\nspecies around Rhodanzi City.\pBe sure to ca
 #org @gText_RhodanziOverworld_TreeGuy
 A Pok\emon can cut this tree down,\nbut you'd need to have HM01 and\lthe badge from Ferrox Village\lfirst.\pThen your Pok\emon will understand\nhow to cut this tree down, even if\lthey don't know the move itself.
 
-#org @gText_RhodanziOverworld_ThugsRumour
-Once that scientist comes along,\nwe'll[.]
+#org @gText_RhodanziCity_FishermanSign
+Rhodanzi Fishing Committee
 
-#org @gText_RhodanziOverworld_ThugsCaught
-Hey! We're having an important\nmeeting here, can't you see that?\lScram, kid!
+#org @gText_RhodanziOverworld_ThugsRumour
+[BLUE]Once that scientist comes along,\nwe'll[.]
+
+#org @gText_RhodanziOverworld_Thugs
+[BLUE]Hey! We're having an important\nmeeting here, can't you see that?\lScram, kid!
+
+#org @gText_RhodanziOverworld_ThugsThreat
+[BLUE]Don't get in our way, kid. We're\nbusy here!\pKids like you should be at home,\nplaying their Gameboys, anyways.

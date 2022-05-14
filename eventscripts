@@ -30,8 +30,11 @@ npc 3 2 1 EventScript_RhodanziOverworld_FirstStop
 npc 3 2 2 EventScript_RhodanziOverworld_PokemonVariety
 npc 3 2 3 EventScript_RhodanziOverworld_TreeGuy
 npc 3 2 4 EventScript_Common_Cut
-npc 3 2 5 EventScript_RhodanziOverworld_ThugsCaught
-npc 3 2 6 EventScript_RhodanziOverworld_ThugsCaught
+npc 3 2 5 EventScript_RhodanziOverworld_ThugBottomSpokenTo
+npc 3 2 6 EventScript_RhodanziOverworld_ThugTopSpokenTo
+sign 3 2 3 SignScript_RhodanziCity_FishermanSign
+tile 3 2 0 TileScript_RhodanziOverworld_ThugsCaught
+tile 3 2 1 TileScript_RhodanziOverworld_ThugsCaught
 
 ## Trainer School main room
 npc 6 0 0 EventScript_RhodanziTrainerSchool_MainRoom_Receptionist
