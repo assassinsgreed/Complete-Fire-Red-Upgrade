@@ -1,3 +1,18 @@
+#org @gText_RhodanziNPCHouses_FishermanIntro
+Why, hello there, my young friend.\pTell me, do you like to fish?
+
+#org @gText_RhodanziNPCHouses_FishermanYes
+Grand! I like your style.\nHere, take this OLD ROD of mine!
+
+#org @gText_RhodanziNPCHouses_FishermanNo
+I'm very sorry to hear that!\pPerhaps one day you'll come to\ndiscover the joy that can only be\lfound when a big one is on the\lline.
+
+#org @gText_RhodanziNPCHouses_FishermanTip
+Different rods can catch different\nfish.\pTry casting your rod in my pond,\nand see what you can find!
+
+#org @gText_RhodanziNPCHouses_FishermanFarewell
+Go, my young friend, and catch all\nthe fish you can find, from the\lsmallest river to the widest sea.\pOnly then will you be a master\nfisherman.\pWah-hah-hah!
+
 #org @gText_RhodanziNPCHouses_TerrenceSister
 Oh, you're a new Pok\emon Trainer?\pYou'll want to challenge my brother\nbefore you leave town; he's\lRhodanzi's Gym Leader!
 

@@ -62,6 +62,7 @@ npc 6 2 7 EventScript_RhodanziTrainerSchool_AdvancedCourse_DexNavStudent
 npc 6 2 8 EventScript_RhodanziTrainerSchool_AdvancedCourse_BadgeObedienceStudent
 
 ## NPC Houses
+npc 6 4 0 EventScript_RhodanziNPCHouses_Fisherman
 npc 6 7 0 EventScript_RhodanziNPCHouses_TerrenceSister
 npc 6 7 1 EventScript_RhodanziNPCHouses_TerrenceLittleBrother
 npc 6 8 0 EventScript_RhodanziNPCHouses_Evolution
@@ -70,7 +71,7 @@ npc 6 9 0 EventScript_RhodanziNPCHouses_NidoranTrainer
 npc 6 9 1 EventScript_RhodanziNPCHouses_Nidoran
 npc 6 10 0 EventScript_RhodanziNPCHouses_PokedexTrainer
 npc 6 12 0 EventScript_RhodanziNPCHouses_PlantGirl
-npc 6 13 0 EventScript_RhodanziNPCHouses_MailTrainer 
+npc 6 13 0 EventScript_RhodanziNPCHouses_MailTrainer
 
 ## Facilities
 map 6 5 MapScript_RhodanziFacilities_PokemonCenter
