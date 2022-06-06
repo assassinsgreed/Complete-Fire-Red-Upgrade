@@ -532,7 +532,7 @@ static u8 CreateNPCTrainerParty(struct Pokemon* const party, const u16 trainerId
 {
 	u32 i, j, nameHash;
 	u8 monsCount, baseIV, setMonGender, trainerNameLengthOddness, minPartyLevel, maxPartyLevel, modifiedAveragePlayerLevel, highestPlayerLevel, canEvolveMon, levelScaling;
-	struct Trainer* trainer;
+	const struct Trainer* trainer;
 	u32 otid = 0;
 	u8 otIdType = OT_ID_RANDOM_NO_SHINY;
 
@@ -549,7 +549,7 @@ static u8 CreateNPCTrainerParty(struct Pokemon* const party, const u16 trainerId
 			ZeroEnemyPartyMons();
 
 		//Set up necessary data
-		trainer = &gTrainers[trainerId];
+		trainer = GET_TRAINER_PTR(trainerId);
 
 		//Choose Trainer IVs
 		#ifdef VAR_GAME_DIFFICULTY
@@ -743,7 +743,7 @@ static u8 CreateNPCTrainerParty(struct Pokemon* const party, const u16 trainerId
 
 			//Assign Trainer information to mon
 			u8 otGender = trainer->gender;
-			const u8* name = TryGetRivalNameByTrainerClass(gTrainers[trainerId].trainerClass);
+			const u8* name = TryGetRivalNameByTrainerClass(GET_TRAINER(trainerId).trainerClass);
 			if (name == NULL) //Not Rival or Rival name isn't tied to Trainer class
 				SetMonData(&party[i], MON_DATA_OT_NAME, &trainer->trainerName);
 			else
@@ -758,7 +758,7 @@ static u8 CreateNPCTrainerParty(struct Pokemon* const party, const u16 trainerId
 			//Give EVs
 			#ifdef TRAINERS_WITH_EVS
 			u8 spreadNum = trainer->party.NoItemCustomMoves[i].iv;
-			if (gTrainers[trainerId].partyFlags == (PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM)
+			if (GET_TRAINER(trainerId).partyFlags == (PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM)
 			&& trainer->aiFlags > 1
 			#ifdef VAR_GAME_DIFFICULTY
 			&& gameDifficulty != OPTIONS_EASY_DIFFICULTY
@@ -920,7 +920,7 @@ static bool8 IsPseudoBossTrainerPartyForLevelScaling(u8 trainerPartyFlags)
 
 static bool8 IsBossTrainerClassForLevelScaling(u16 trainerId)
 {
-	switch (gTrainers[trainerId].trainerClass) {
+	switch (GET_TRAINER(trainerId).trainerClass) {
 		case CLASS_LEADER:
 		case CLASS_ELITE_4:
 		case CLASS_CHAMPION:

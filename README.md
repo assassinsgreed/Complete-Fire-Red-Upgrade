@@ -1,5 +1,8 @@
 # Complete Fire Red Upgrade
 
+## Trainer Tables
+This branch let's you define trainer battles in CFRU in `src\Tables\trainer_tables.c`. You will need to add the trainer ID to `include\constants\opponents.h`.
+
 ## What is this?
 A complete upgrade for FireRed, including an upgraded Battle Engine. By using this or any assets from this repository, you consent to never making money off your game (unless you have my explicit permission). That includes both pay-walls **as well as optional donations** (which includes ko-fi, Patreon, etc.). If you have a problem with this, feel free to send me a Discord message (Skeli#3917) and I will give you my PayPal so you can pay me $100000 for the hundreds if not thousands of hours I poured into this for **free** (I don't actually want your money - I'm trying to make a point). Not to mention it's illegal to profit off of an IP you don't own.
 

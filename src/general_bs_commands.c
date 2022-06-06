@@ -1438,7 +1438,7 @@ void atk1B_cleareffectsonfaint(void) {
 				#ifdef BGM_BATTLE_GYM_LEADER_LAST_POKEMON
 				if ((gBattleTypeFlags & (BATTLE_TYPE_TRAINER | BATTLE_TYPE_DOUBLE)) == (BATTLE_TYPE_TRAINER | BATTLE_TYPE_DOUBLE) //Double Gym battle
 				&& !(gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_FRONTIER | BATTLE_TYPE_TRAINER_TOWER))
-				&& gTrainers[gTrainerBattleOpponent_A].trainerClass == CLASS_LEADER
+				&& GET_TRAINER(gTrainerBattleOpponent_A).trainerClass == CLASS_LEADER
 				&& ViableMonCount(gEnemyParty) <= 1)
 				{
 					PlayBGM(BGM_BATTLE_GYM_LEADER_LAST_POKEMON);

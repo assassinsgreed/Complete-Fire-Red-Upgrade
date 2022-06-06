@@ -1,0 +1,3 @@
+#define TRAINER_NONE 0
+
+#define TRAINER_ROUTE_1_YOUNGSTER_PETER          1

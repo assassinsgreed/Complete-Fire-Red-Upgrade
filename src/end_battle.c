@@ -130,7 +130,7 @@ void HandleEndTurn_BattleWon(void)
 		u8 loop = FALSE;
 
 	VICTORY_MUSIC_SELECTION:
-		switch (gTrainers[id].trainerClass) {
+		switch (GET_TRAINER(id).trainerClass) {
 		#ifndef UNBOUND //Change this part
 			case CLASS_LEADER:
 			case CLASS_ELITE_4:

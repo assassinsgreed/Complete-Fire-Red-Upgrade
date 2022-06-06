@@ -22,6 +22,9 @@ npc 4 0 0 EventScript_AnthraTown_MomMain
 npc 3 0 0 EventScript_AnthraTown_FlowerGirl
 npc 4 3 0 EventScript_AnthraTown_OldMan
 
+# Route 1
+npc 3 19 0 EventScript_Route1_YoungsterPeter
+
 # Rhodanzi City
 ## Overworld
 map 3 2 MapScript_RhodanziOverworld_FlightSpot
