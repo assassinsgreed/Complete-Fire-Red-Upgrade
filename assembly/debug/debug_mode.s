@@ -5,14 +5,16 @@
 .include "../xse_defines.s"
 .include "../asm_defines.s"
 
+@ TODO: Replace with calls to `callasm DebugMenu_ProcessSetFlag`
+
 .global EventScript_DebugMode_Main
 EventScript_DebugMode_Main:
-	givepokemon SPECIES_BULBASAUR 0x32 0x0 0x0 0x0 0x0 @ lv 50 Bulbasaur
-	givepokemon SPECIES_CHARMANDER 0x32 0x0 0x0 0x0 0x0 @ lv 50 Charmander
-	givepokemon SPECIES_SQUIRTLE 0x32 0x0 0x0 0x0 0x0 @ lv 50 Squirtle
-	givepokemon SPECIES_GROOKEY 0x32 0x0 0x0 0x0 0x0 @ lv 50 Grookey
-	givepokemon SPECIES_SCORBUNNY 0x32 0x0 0x0 0x0 0x0 @ lv 50 Scorbunny
-	givepokemon SPECIES_SOBBLE 0x32 0x0 0x0 0x0 0x0 @ lv 50 Sobble
+	givepokemon SPECIES_BULBASAUR 0x32 0x0 0x0 0x0 0x0 @ lv 50
+	givepokemon SPECIES_KYOGRE 0x32 0x0 0x0 0x0 0x0 @ lv 50
+	givepokemon SPECIES_SOLGALEO 0x32 0x0 0x0 0x0 0x0 @ lv 50
+	givepokemon SPECIES_SHAYMIN 0x32 0x0 0x0 0x0 0x0 @ lv 50
+	givepokemon SPECIES_BIBAREL 0x32 0x0 0x0 0x0 0x0 @ lv 50
+	givepokemon SPECIES_NECROZMA 0x32 0x0 0x0 0x0 0x0 @ lv 50
 
 	@ mark all pokemon in the dex as seen
 	setvar 0x8004 SPECIES_BIDOOF
@@ -1392,3 +1394,97 @@ EventScript_DebugMode_Main:
 	setflag 0x826 @ Badge 7, Support Badge
 	setflag 0x827 @ Badge 8, Double Badge
 
+	@ Give new items for testing
+	@@ Evolution Stones
+	additem ITEM_DAWN_STONE 0x1
+	additem ITEM_DUSK_STONE 0x1
+	additem ITEM_ICE_STONE 0x1
+	additem ITEM_LINK_STONE 0x1
+	additem ITEM_OVAL_STONE 0x1
+	additem ITEM_RAZOR_CLAW 0x1
+	additem ITEM_REAPER_CLOTH 0x1
+	additem ITEM_SHINY_STONE 0x1
+
+	@@ Incenses
+	additem ITEM_LUCK_INCENSE 0x1
+	additem ITEM_ODD_INCENSE 0x1
+	additem ITEM_ROCK_INCENSE 0x1
+	additem ITEM_ROSE_INCENSE 0x1
+
+	@@ Pokeballs
+	additem ITEM_BEAST_BALL 0x32
+	additem ITEM_CHERISH_BALL 0x32
+	additem ITEM_DUSK_BALL 0x32
+	additem ITEM_HEAL_BALL 0x32
+	additem ITEM_QUICK_BALL 0x32
+
+	@@ "Other" Items
+	additem ITEM_ABILITY_CAPSULE 0x1
+	additem ITEM_BOTTLE_CAP 0xA
+	additem ITEM_GOLD_BOTTLE_CAP 0xA
+	additem ITEM_POWER_BRACER 0x1
+	additem ITEM_POWER_BELT 0x1
+	additem ITEM_POWER_LENS 0x1
+	additem ITEM_POWER_BAND 0x1
+	additem ITEM_POWER_ANKLET 0x1
+	additem ITEM_POWER_WEIGHT 0x1
+
+	@@ Mega Items & Ultranecrozium Z
+	additem ITEM_MEGA_RING 0x1
+	additem ITEM_ULTRANECROZIUM_Z 0x1
+	additem ITEM_AMPHAROSITE 0x1
+	additem ITEM_BLASTOISINITE 0x1
+	additem ITEM_BLAZIKENITE 0x1
+	additem ITEM_BLUE_ORB 0x1
+	additem ITEM_CHARIZARDITE_X 0x1
+	additem ITEM_CHARIZARDITE_Y 0x1
+	additem ITEM_GALLADITE 0x1
+	additem ITEM_GARCHOMPITE 0x1
+	additem ITEM_GARDEVOIRITE 0x1
+	additem ITEM_GLALITITE 0x1
+	additem ITEM_GYARADOSITE 0x1
+	additem ITEM_HERACRONITE 0x1
+	additem ITEM_HOUNDOOMINITE 0x1
+	additem ITEM_KANGASKHANITE 0x1
+	additem ITEM_LOPUNNITE 0x1
+	additem ITEM_LUCARIONITE 0x1
+	additem ITEM_MAWILITE 0x1
+	additem ITEM_RED_ORB 0x1
+	additem ITEM_SABLENITE 0x1
+	additem ITEM_SCEPTILITE 0x1
+	additem ITEM_SHARPEDONITE 0x1
+	additem ITEM_SLOWBRONITE 0x1
+	additem ITEM_SWAMPERTITE 0x1
+	additem ITEM_VENUSAURITE 0x1
+
+	@@ Key Items
+	additem ITEM_GRACIDEA 0x1
+	additem ITEM_N_SOLARIZER 0x1
+	additem ITEM_N_LUNARIZER 0x1
+	additem ITEM_OVAL_CHARM 0x1
+	additem ITEM_SHINY_CHARM 0x1
+
+	@@ Held Items
+	additem ITEM_ABSORB_BULB 0x1
+	additem ITEM_AIR_BALLOON 0x1
+	additem ITEM_ASSAULT_VEST 0x1
+	additem ITEM_BLACK_SLUDGE 0x1
+	additem ITEM_CHOICE_SPECS 0x1
+	additem ITEM_CHOICE_SCARF 0x1
+	additem ITEM_DAMP_ROCK 0x1
+	additem ITEM_EJECT_BUTTON 0x1
+	additem ITEM_EVIOLITE 0x1
+	additem ITEM_FLAME_ORB 0x1
+	additem ITEM_FOCUS_SASH 0x1
+	additem ITEM_HEAT_ROCK 0x1
+	additem ITEM_HEAVY_DUTY_BOOTS 0x1
+	additem ITEM_ICY_ROCK 0x1
+	additem ITEM_LAGGING_TAIL 0x1
+	additem ITEM_LIFE_ORB 0x1
+	additem ITEM_LIGHT_CLAY 0x1
+	additem ITEM_RED_CARD 0x1
+	additem ITEM_ROCKY_HELMET 0x1
+	additem ITEM_SMOOTH_ROCK 0x1
+	additem ITEM_TERRAIN_EXTENDER 0x1
+	additem ITEM_TOXIC_ORB 0x1
+	additem ITEM_WEAKNESS_POLICY 0x1

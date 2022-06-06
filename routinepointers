@@ -251,3 +251,9 @@ FieldUseFunc_FormChangeItem 887D334
 FieldUseFunc_AbilityCapsule 8877168
 FieldUseFunc_AbilityCapsule 887CA9C
 #endif
+
+##Enable Ability Capusle, pointing to location in our ROM
+FieldUseFunc_AbilityCapsule 87343A8
+FieldUseFunc_FormChangeItem 873371C
+FieldUseFunc_FormChangeItem 8734C14
+FieldUseFunc_FormChangeItem 8734C40
