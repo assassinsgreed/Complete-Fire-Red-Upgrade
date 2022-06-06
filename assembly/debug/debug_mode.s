@@ -1405,8 +1405,6 @@ EventScript_DebugMode_Main:
 	additem ITEM_REAPER_CLOTH 0x1
 	additem ITEM_SHINY_STONE 0x1
 
-	@@ Held Items
-
 	@@ Incenses
 	additem ITEM_LUCK_INCENSE 0x1
 	additem ITEM_ODD_INCENSE 0x1
