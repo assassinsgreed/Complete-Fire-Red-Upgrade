@@ -11,7 +11,7 @@
 EventScript_DebugMode_Main:
 	givepokemon SPECIES_BULBASAUR 0x32 0x0 0x0 0x0 0x0 @ lv 50
 	givepokemon SPECIES_KYOGRE 0x32 0x0 0x0 0x0 0x0 @ lv 50
-	givepokemon SPECIES_SOLGALEO 0x32 0x0 0x0 0x0 0x0 @ lv 50
+	givepokemon SPECIES_CORVIKNIGHT 0x32 0x0 0x0 0x0 0x0 @ lv 50
 	givepokemon SPECIES_SHAYMIN 0x32 0x0 0x0 0x0 0x0 @ lv 50
 	givepokemon SPECIES_BIBAREL 0x32 0x0 0x0 0x0 0x0 @ lv 50
 	givepokemon SPECIES_NECROZMA 0x32 0x0 0x0 0x0 0x0 @ lv 50
@@ -1380,11 +1380,6 @@ EventScript_DebugMode_Main:
 	additem ITEM_RARE_CANDY 0x1E @ Give 30 rare candies
 	additem ITEM_TOWN_MAP 0x1 @ Give town map
 	@ giveitem2 0x169 0x1 0x13E @ Give town map with fanfare (base game uses both)
-	additem ITEM_HM01 0x1 @ Cut
-	additem ITEM_HM02 0x1 @ Fly
-	additem ITEM_HM03 0x1 @ Surf
-	additem ITEM_HM04 0x1 @ Strength
-	additem ITEM_HM05 0x1 @ Rock Smash
 	setflag 0x820 @ Badge 1, Field Badge
 	setflag 0x821 @ Badge 2, Patch Badge
 	setflag 0x822 @ Badge 3, Stormcloud Badge
@@ -1393,6 +1388,115 @@ EventScript_DebugMode_Main:
 	setflag 0x825 @ Badge 6, Talent Badge
 	setflag 0x826 @ Badge 7, Support Badge
 	setflag 0x827 @ Badge 8, Double Badge
+
+	@ Give TMs and HMs
+	additem ITEM_TM01 0x1 @ Work Up
+	additem ITEM_TM02 0x1 @ Dragon Claw
+	additem ITEM_TM03 0x1 @ Psyshock
+	additem ITEM_TM04 0x1 @ Calm Mind
+	additem ITEM_TM05 0x1 @ Terrain Pulse
+	additem ITEM_TM06 0x1 @ Toxic
+	additem ITEM_TM07 0x1 @ Hail
+	additem ITEM_TM08 0x1 @ Bulk Up
+	additem ITEM_TM09 0x1 @ Venoshock
+	additem ITEM_TM10 0x1 @ Hidden Power
+	additem ITEM_TM11 0x1 @ Sunny Day
+	additem ITEM_TM12 0x1 @ Taunt
+	additem ITEM_TM13 0x1 @ Ice Beam
+	additem ITEM_TM14 0x1 @ Blizzard
+	additem ITEM_TM15 0x1 @ Hyper Beam
+	additem ITEM_TM16 0x1 @ Light Screen
+	additem ITEM_TM17 0x1 @ Protect
+	additem ITEM_TM18 0x1 @ Rain Dance
+	additem ITEM_TM19 0x1 @ Roost
+	additem ITEM_TM20 0x1 @ Safeguard
+	additem ITEM_TM21 0x1 @ Knock Off
+	additem ITEM_TM22 0x1 @ Solar Beam
+	additem ITEM_TM23 0x1 @ Smack Down
+	additem ITEM_TM24 0x1 @ Thunderbolt
+	additem ITEM_TM25 0x1 @ Thunder
+	additem ITEM_TM26 0x1 @ Earthquake
+	additem ITEM_TM27 0x1 @ Return
+	additem ITEM_TM28 0x1 @ Leech Life
+	additem ITEM_TM29 0x1 @ Psychic
+	additem ITEM_TM30 0x1 @ Shadow Ball
+	additem ITEM_TM31 0x1 @ Brick Break
+	additem ITEM_TM32 0x1 @ Double Team
+	additem ITEM_TM33 0x1 @ Reflect
+	additem ITEM_TM34 0x1 @ Sludge Wave
+	additem ITEM_TM35 0x1 @ Flamethrower
+	additem ITEM_TM36 0x1 @ Sludge Bomb
+	additem ITEM_TM37 0x1 @ Sandstorm
+	additem ITEM_TM38 0x1 @ Fire Blast
+	additem ITEM_TM39 0x1 @ Rock Tomb
+	additem ITEM_TM40 0x1 @ Aerial Ace
+	additem ITEM_TM41 0x1 @ Torment
+	additem ITEM_TM42 0x1 @ Facade
+	additem ITEM_TM43 0x1 @ Flame Charge
+	additem ITEM_TM44 0x1 @ Rest
+	additem ITEM_TM45 0x1 @ Attract
+	additem ITEM_TM46 0x1 @ Thief
+	additem ITEM_TM47 0x1 @ Low Sweep
+	additem ITEM_TM48 0x1 @ Round
+	additem ITEM_TM49 0x1 @ Echoed Voice
+	additem ITEM_TM50 0x1 @ Overheat
+	additem ITEM_TM51 0x1 @ Steel Wing
+	additem ITEM_TM52 0x1 @ Focus Blast
+	additem ITEM_TM53 0x1 @ Energy Ball
+	additem ITEM_TM54 0x1 @ False Swipe
+	additem ITEM_TM55 0x1 @ Scald
+	additem ITEM_TM56 0x1 @ Fling
+	additem ITEM_TM57 0x1 @ Charge Beam
+	additem ITEM_TM58 0x1 @ Endure
+	additem ITEM_TM59 0x1 @ Brutal Swing
+	additem ITEM_TM60 0x1 @ Hex
+	additem ITEM_TM61 0x1 @ Will-O-Wisp
+	additem ITEM_TM62 0x1 @ Acrobatics
+	additem ITEM_TM63 0x1 @ Drain Punch
+	additem ITEM_TM64 0x1 @ Explosion
+	additem ITEM_TM65 0x1 @ Shadow Claw
+	additem ITEM_TM66 0x1 @ Payback
+	additem ITEM_TM67 0x1 @ Smart Strike
+	additem ITEM_TM68 0x1 @ Giga Impact
+	additem ITEM_TM69 0x1 @ Rock Polish
+	additem ITEM_TM70 0x1 @ Aurora Veil
+	additem ITEM_TM71 0x1 @ Stone Edge
+	additem ITEM_TM72 0x1 @ Volt Switch
+	additem ITEM_TM73 0x1 @ Thunder Wave
+	additem ITEM_TM74 0x1 @ Gyro Ball
+	additem ITEM_TM75 0x1 @ Swords Dance
+	additem ITEM_TM76 0x1 @ Role Play
+	additem ITEM_TM77 0x1 @ Psych Up
+	additem ITEM_TM78 0x1 @ Bulldoze
+	additem ITEM_TM79 0x1 @ Frost Breath
+	additem ITEM_TM80 0x1 @ Rock Slide
+	additem ITEM_TM81 0x1 @ X-Scissor
+	additem ITEM_TM82 0x1 @ Dragon Tail
+	additem ITEM_TM83 0x1 @ Infestation
+	additem ITEM_TM84 0x1 @ Poison Jab
+	additem ITEM_TM85 0x1 @ Dream Eater
+	additem ITEM_TM86 0x1 @ Grass Knot
+	additem ITEM_TM87 0x1 @ Swagger
+	additem ITEM_TM88 0x1 @ Stealth Rock
+	additem ITEM_TM89 0x1 @ U-Turn
+	additem ITEM_TM90 0x1 @ Substitute
+	additem ITEM_TM91 0x1 @ Flash Cannon
+	additem ITEM_TM92 0x1 @ Trick Room
+	additem ITEM_TM93 0x1 @ Wild Charge
+	additem ITEM_TM94 0x1 @ Flip Turn
+	additem ITEM_TM95 0x1 @ Snarl
+	additem ITEM_TM96 0x1 @ Nature Power
+	additem ITEM_TM97 0x1 @ Dark Pulse
+	additem ITEM_TM98 0x1 @ Waterfall
+	additem ITEM_TM99 0x1 @ Dazzling Gleam
+	additem ITEM_TM100 0x1 @ Confide
+
+	additem ITEM_HM01 0x1 @ Cut
+	additem ITEM_HM02 0x1 @ Fly
+	additem ITEM_HM03 0x1 @ Surf
+	additem ITEM_HM04 0x1 @ Strength
+	additem ITEM_HM05 0x1 @ Rock Smash
+	additem ITEM_HM06 0x1 @ Rock Climb
 
 	@ Give new items for testing
 	@@ Evolution Stones
