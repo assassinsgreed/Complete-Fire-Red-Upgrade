@@ -45,6 +45,42 @@ const struct TrainerMonNoItemDefaultMoves sParty_Route1_YoungsterHarlan[] = {
 // #endregion
 // #endregion
 
+// #region Route 2
+const struct TrainerMonNoItemDefaultMoves sParty_Route2_YoungsterJoey[] = {
+        {
+            .iv = 0,
+            .lvl = 7,
+            .species = SPECIES_RATTATA_A,
+        },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route2_LassKimberly[] = {
+        {
+            .iv = 0,
+            .lvl = 6,
+            .species = SPECIES_RALTS,
+        },
+        {
+            .iv = 0,
+            .lvl = 6,
+            .species = SPECIES_CUTIEFLY,
+        },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route2_LassRikki[] = {
+        {
+            .iv = 0,
+            .lvl = 6,
+            .species = SPECIES_FLABEBE_BLUE,
+        },
+        {
+            .iv = 0,
+            .lvl = 6,
+            .species = SPECIES_FLABEBE_YELLOW,
+        },
+};
+// #endregion
+
 #define NO_NAME                                                                                      \
     {                                                                                                \
         _END, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE \
@@ -102,6 +138,44 @@ const struct Trainer gTrainers[] = {
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE,
         .partySize = NELEMS(sParty_Route1_YoungsterHarlan),
         .party = {.NoItemDefaultMoves = sParty_Route1_YoungsterHarlan}
+    },
+    // #endregion
+    // #region Route 2
+    [TRAINER_ROUTE_2_YOUNGSTER_JOEY] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_YOUNGSTER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_YOUNGSTER,
+        .trainerName = {_J, _o, _e, _y, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE,
+        .partySize = NELEMS(sParty_Route2_YoungsterJoey),
+        .party = {.NoItemDefaultMoves = sParty_Route2_YoungsterJoey}
+    },
+    [TRAINER_ROUTE_2_LASS_KIMBERLY] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_LASS,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .trainerPic = TRAINER_PIC_LASS,
+        .trainerName = {_K, _i, _m, _b, _e, _r, _l, _y, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE,
+        .partySize = NELEMS(sParty_Route2_LassKimberly),
+        .party = {.NoItemDefaultMoves = sParty_Route2_LassKimberly}
+    },
+    [TRAINER_ROUTE_2_LASS_RIKKI] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_LASS,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .trainerPic = TRAINER_PIC_LASS,
+        .trainerName = {_R, _i, _k, _k, _i, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE,
+        .partySize = NELEMS(sParty_Route2_LassRikki),
+        .party = {.NoItemDefaultMoves = sParty_Route2_LassRikki}
     },
     // #endregion
 };
