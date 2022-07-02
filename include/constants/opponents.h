@@ -13,7 +13,8 @@
 #define TRAINER_VARISI_FOREST_BUG_CATCHER_KENDELL    8
 #define TRAINER_VARISI_FOREST_BUG_CATCHER_BRADEN     9
 #define TRAINER_VARISI_FOREST_LASS_BREANNA           10
+#define TRAINER_VARISI_FOREST_LASS_MIMI              11
 // Rhodanzi City
-#define TRAINER_RHODANZI_GYM_ROWAN                   11
-#define TRAINER_RHODANZI_GYM_WESLEY                  12
-#define TRAINER_RHODANZI_GYM_TERRENCE                13
+#define TRAINER_RHODANZI_GYM_ALONSO                  12
+#define TRAINER_RHODANZI_GYM_BRANDON                 13
+#define TRAINER_RHODANZI_GYM_TERRENCE                14
