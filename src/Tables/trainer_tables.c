@@ -334,7 +334,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_A, _l, _o, _n, _s, _o, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_SETUP_FIRST_TURN,
+        .aiFlags = AI_SCRIPT_CHECK_GOOD_MOVE,
         .partySize = NELEMS(sParty_RhodanziCity_Alonso),
         .party = {.NoItemCustomMoves = sParty_RhodanziCity_Alonso}
     },
