@@ -5,6 +5,7 @@
 #include "../../include/constants/opponents.h"
 #include "../../include/constants/battle_ai.h"
 #include "../../include/easy_text.h"
+#include "../../include/new/build_pokemon_2.h"
 
 // See battle.h for a list of struct types that can be used
 // #region Trainer Structs
@@ -156,7 +157,7 @@ const struct TrainerMonNoItemCustomMoves sParty_RhodanziCity_Alonso[] = {
                 MOVE_CONFUSION,
                 MOVE_NONE
             },
-            // .ability = ABILITY_SOUNDPROOF   // TODO: Can this be supported?
+            .ability = ABILITY_SOUNDPROOF
         },
         {
             .iv = 10,
@@ -168,8 +169,23 @@ const struct TrainerMonNoItemCustomMoves sParty_RhodanziCity_Alonso[] = {
                 MOVE_MUDSLAP,
                 MOVE_NONE
             },
-            // .ability = ABILITY_MIMICRY
+            .ability = ABILITY_MIMICRY
         },
+};
+
+const struct TrainerMonNoItemCustomMoves sParty_RhodanziCity_Brandon[] = {
+        {
+            .iv = 10,
+            .lvl = 12,
+            .species = SPECIES_PINCURCHIN,
+            .moves = {
+                MOVE_CHARGE,
+                MOVE_THUNDERSHOCK,
+                MOVE_PECK,
+                MOVE_NONE
+            },
+            .ability = Ability_Hidden
+        }
 };
 // #endregion
 
@@ -338,7 +354,18 @@ const struct Trainer gTrainers[] = {
         .partySize = NELEMS(sParty_RhodanziCity_Alonso),
         .party = {.NoItemCustomMoves = sParty_RhodanziCity_Alonso}
     },
-
+    [TRAINER_RHODANZI_GYM_BRANDON] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .trainerClass = CLASS_CAMPER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_CAMPER,
+        .trainerName = {_B, _r, _a, _n, _d, _o, _n, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_SETUP_FIRST_TURN,
+        .partySize = NELEMS(sParty_RhodanziCity_Brandon),
+        .party = {.NoItemCustomMoves = sParty_RhodanziCity_Brandon}
+    },
     // TODO: Continue adding trainers, fixing maps as needed
     // #endregion
 };
