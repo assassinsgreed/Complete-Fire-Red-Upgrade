@@ -17,4 +17,4 @@
 // Rhodanzi City
 #define TRAINER_RHODANZI_GYM_ALONSO                  12
 #define TRAINER_RHODANZI_GYM_BRANDON                 13
-#define TRAINER_RHODANZI_GYM_TERRENCE                14
+#define TRAINER_RHODANZI_GYM_LEADER_TERRENCE         14

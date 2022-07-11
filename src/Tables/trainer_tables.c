@@ -4,6 +4,7 @@
 #include "../../include/constants/trainers.h"
 #include "../../include/constants/opponents.h"
 #include "../../include/constants/battle_ai.h"
+#include "../../include/constants/items.h"
 #include "../../include/easy_text.h"
 #include "../../include/new/build_pokemon_2.h"
 
@@ -187,6 +188,34 @@ const struct TrainerMonNoItemCustomMoves sParty_RhodanziCity_Brandon[] = {
             .ability = Ability_Hidden
         }
 };
+
+const struct TrainerMonItemCustomMoves sParty_RhodanziCity_LeaderTerrence[] = {
+    {
+        .iv = 20,
+        .lvl = 12,
+        .species = SPECIES_GROOKEY,
+        .moves = {
+            MOVE_SCRATCH,
+            MOVE_BRANCHPOKE,
+            MOVE_NONE,
+            MOVE_NONE
+        },
+        .heldItem = ITEM_TERRAIN_EXTENDER,
+        .ability = Ability_Hidden
+    },
+    {
+        .iv = 20,
+        .lvl = 14,
+        .species = SPECIES_SKIDDO,
+        .moves = {
+            MOVE_LEECHSEED,
+            MOVE_VINEWHIP,
+            MOVE_TAILWHIP,
+            MOVE_NONE
+        },
+        .ability = Ability_Hidden
+    }
+};
 // #endregion
 
 // #endregion
@@ -338,8 +367,6 @@ const struct Trainer gTrainers[] = {
         .party = {.NoItemDefaultMoves = sParty_VarisiForest_LassMimi}
     },
 
-    // TODO: Additional trainers in Varisi?
-
     // #endregion
     // #region Rhodanzi City
     [TRAINER_RHODANZI_GYM_ALONSO] = {
@@ -366,6 +393,17 @@ const struct Trainer gTrainers[] = {
         .partySize = NELEMS(sParty_RhodanziCity_Brandon),
         .party = {.NoItemCustomMoves = sParty_RhodanziCity_Brandon}
     },
-    // TODO: Continue adding trainers, fixing maps as needed
+    [TRAINER_RHODANZI_GYM_LEADER_TERRENCE] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_LEADER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_BROCK,
+        .trainerName = {_T, _e, _r, _r, _e, _n, _c, _e, _END},
+        .items = { ITEM_POTION },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_SEMI_SMART,
+        .partySize = NELEMS(sParty_RhodanziCity_LeaderTerrence),
+        .party = {.ItemCustomMoves = sParty_RhodanziCity_LeaderTerrence}
+    },
     // #endregion
 };

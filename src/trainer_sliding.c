@@ -28,7 +28,7 @@ static const struct TrainerSlide sTrainerSlides[] =
 {
 	// Format {Trainer hex index, msg on first faint, msg on last switch in, msg on last pkmn low hp}
 	{}, // Rival battle 1
-	{}, // 
+	{0xE, NULL /*sText_Leader1_FirstMonDown*/, sText_Leader1_LastSwitchIn, sText_Leader1_LowHP}, // Gym Leader Terrence
 	{}, // 
 	{}, // Champion Selene
 };
