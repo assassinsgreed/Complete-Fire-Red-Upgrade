@@ -240,6 +240,7 @@ struct TrainerMonNoItemCustomMoves
     u16 species;
     u16 moves[4];
 	u16 _; // 0x0000
+	u8 ability; //0 = Hidden, 1 = Ability_1, 2 = Ability_2, 3 = Random Ability 1 & 2, 4 = Random Any Ability
 };
 
 struct TrainerMonItemCustomMoves
@@ -249,6 +250,7 @@ struct TrainerMonItemCustomMoves
     u16 species;
     u16 heldItem;
     u16 moves[4];
+	u8 ability; //0 = Hidden, 1 = Ability_1, 2 = Ability_2, 3 = Random Ability 1 & 2, 4 = Random Any Ability
 };
 
 union TrainerMonPtr

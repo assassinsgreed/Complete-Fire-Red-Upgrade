@@ -24,6 +24,19 @@ npc 4 3 0 EventScript_AnthraTown_OldMan
 
 # Route 1
 npc 3 19 0 EventScript_Route1_YoungsterPeter
+npc 3 19 1 EventScript_Route1_LassHelena
+npc 3 19 2 EventScript_Route1_YoungsterHarlan
+
+# Route 2
+npc 3 20 0 EventScript_Route2_YoungsterJoey
+npc 3 20 1 EventScript_Route2_LassKimberly
+npc 3 20 2 EventScript_Route2_LassRikki
+
+# Varisi Forest
+npc 1 0 0 EventScript_VarisiForest_BugCatcherKendell
+npc 1 0 1 EventScript_VarisiForest_BugCatcherBraden
+npc 1 0 2 EventScript_VarisiForest_LassBreanna
+npc 1 0 3 EventScript_VarisiForest_LassMimi
 
 # Rhodanzi City
 ## Overworld
@@ -85,3 +98,9 @@ npc 6 5 0 EventScript_PokemonCenter_Main
 npc 6 5 1 EventScript_RhodanziFacilities_Center_UsingFacility
 npc 6 5 2 EventScript_RhodanziFacilities_Center_Trade
 npc 6 5 3 EventScript_RhodanziFacilities_Center_PokemonTreatment
+
+## Gym
+npc 6 6 0 EventScript_RhodanziGym_GymExpert
+npc 6 6 1 EventScript_RhodanziGym_Alonso
+npc 6 6 2 EventScript_RhodanziGym_Brandon
+npc 6 6 3 EventScript_RhodanziGym_Leader_Terrence

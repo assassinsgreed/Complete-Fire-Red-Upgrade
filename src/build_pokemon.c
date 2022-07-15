@@ -171,6 +171,7 @@ static void PostProcessTeam(struct Pokemon* party, struct TeamBuilder* builder);
 static void TryShuffleMovesForCamomons(struct Pokemon* party, u8 tier, u16 trainerId);
 static u8 GetPartyIdFromPartyData(struct Pokemon* mon);
 static u8 GetHighestMonLevel(const struct Pokemon* const party);
+static void SetAbilityFromEnum(struct Pokemon* mon, u8 abilityNum);
 
 #ifdef OPEN_WORLD_TRAINERS
 
@@ -726,6 +727,7 @@ static u8 CreateNPCTrainerParty(struct Pokemon* const party, const u16 trainerId
 					case PARTY_FLAG_CUSTOM_MOVES:
 						MAKE_POKEMON(trainer->party.NoItemCustomMoves);
 						SET_MOVES(trainer->party.NoItemCustomMoves);
+						SetAbilityFromEnum(&party[i], trainer->party.NoItemCustomMoves[i].ability);
 						break;
 
 					case PARTY_FLAG_HAS_ITEM:
@@ -737,6 +739,7 @@ static u8 CreateNPCTrainerParty(struct Pokemon* const party, const u16 trainerId
 						MAKE_POKEMON(trainer->party.ItemCustomMoves);
 						SET_MOVES(trainer->party.ItemCustomMoves);
 						SetMonData(&party[i], MON_DATA_HELD_ITEM, &trainer->party.ItemCustomMoves[i].heldItem);
+						SetAbilityFromEnum(&party[i], trainer->party.ItemCustomMoves[i].ability);
 						break;
 				}
 			}
@@ -844,6 +847,30 @@ static u8 CreateNPCTrainerParty(struct Pokemon* const party, const u16 trainerId
 		monsCount = 1;
 
 	return monsCount;
+}
+
+static void SetAbilityFromEnum(struct Pokemon* mon, u8 abilityNum) {
+	switch(abilityNum) {
+		case Ability_Hidden:
+		GIVE_HIDDEN_ABILITY:
+			GiveMonNatureAndAbility(mon, GetNature(mon), 0xFF, FALSE, TRUE, FALSE); //Give Hidden Ability
+			break;
+		case Ability_1:
+		case Ability_2:
+			GiveMonNatureAndAbility(mon, GetNature(mon), MathMin(1, abilityNum - 1), FALSE, TRUE, FALSE);
+			break;
+		case Ability_Random_1_2:
+		GIVE_RANDOM_ABILITY:
+			GiveMonNatureAndAbility(mon, GetNature(mon), Random() % 2, FALSE, TRUE, FALSE);
+			break;
+		case Ability_RandomAll: ;
+			u8 random = Random() % 3;
+
+			if (random == 2)
+				goto GIVE_HIDDEN_ABILITY;
+
+			goto GIVE_RANDOM_ABILITY;
+	}
 }
 
 //These next few functions are related to scaling a Trainer's team dynamically based the player's strength

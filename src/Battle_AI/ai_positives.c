@@ -2050,6 +2050,11 @@ u8 AIScript_Positives(const u8 bankAtk, const u8 bankDef, const u16 originalMove
 				}
 			}
 
+			if (gTerrainType) {
+				DECREASE_VIABILITY(8); // Terrain already set; don't recommend setting another
+				break;
+			}
+
 			INCREASE_STATUS_VIABILITY(2);
 		break;
 
