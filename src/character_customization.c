@@ -100,6 +100,13 @@ static const struct CharacterCustomizationPaletteSwitch sCharacterPalSwitchTable
 		// etc...
 		// please note that this method makes compatability with OW Manager challenging
 	};
+	static const struct SpritePalette sObjectEventSpritePalettes12[] = {
+		{ NULL, 0x11FF }
+	};
+	const struct SpritePalette* const gObjectEventSpritePalettesSwitcher[255] = {
+		[0x11] = (const struct SpritePalette*) 0x84097AC,
+		[0x12] = sObjectEventSpritePalettes12
+	};
 #endif
 
 struct PlayerGraphics
