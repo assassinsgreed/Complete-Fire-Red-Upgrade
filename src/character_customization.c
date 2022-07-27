@@ -24,7 +24,7 @@ tables to edit:
 
 */
 
-extern const u16 PlutoGruntMalePal[];
+extern const unsigned short PlutoGruntMalePal[256];
 
 #define PLUTO_PALETTE 0x1201 // Used by all Pluto Grunts
 
