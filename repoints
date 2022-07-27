@@ -270,3 +270,6 @@ gText_TextSpeedMid 083cc330
 gText_TextSpeedFast 083cc334
 gText_TextSpeedInstant 083cc338
 #endif
+
+# Custom Spritework
+GraphicsInfo_PlutoGruntMale 839FED4
