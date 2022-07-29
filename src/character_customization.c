@@ -24,9 +24,7 @@ tables to edit:
 
 */
 
-extern const unsigned short PlutoGruntMalePal[256];
-
-#define PLUTO_PALETTE 0x1201 // Used by all Pluto Grunts
+extern const u8 PlutoGruntMalePal[];
 
 #ifdef UNBOUND
 extern const u8 TS_Male_Player_White_Brunette_BlackPal[];
@@ -105,7 +103,7 @@ static const struct CharacterCustomizationPaletteSwitch sCharacterPalSwitchTable
 		// please note that this method makes compatability with OW Manager challenging
 	};
 	static const struct SpritePalette sObjectEventSpritePalettes12[] = {
-		{ PlutoGruntMalePal, PLUTO_PALETTE },
+		{ PlutoGruntMalePal, 0x1201 },
 		{ NULL, 0x11FF }
 	};
 	const struct SpritePalette* const gObjectEventSpritePalettesSwitcher[255] = {

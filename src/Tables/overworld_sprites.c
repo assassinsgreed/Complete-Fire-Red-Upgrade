@@ -21,15 +21,15 @@ extern const u8 PlutoGruntMaleTiles[];
 
 static const struct SpriteFrameImage Table_PlutoGruntMale[] =
 {
-    overworld_frame(PlutoGruntMaleTiles, 4, 8, 0),
-    overworld_frame(PlutoGruntMaleTiles, 4, 8, 1),
-    overworld_frame(PlutoGruntMaleTiles, 4, 8, 2),
-    overworld_frame(PlutoGruntMaleTiles, 4, 8, 3),
-    overworld_frame(PlutoGruntMaleTiles, 4, 8, 4),
-    overworld_frame(PlutoGruntMaleTiles, 4, 8, 5),
-    overworld_frame(PlutoGruntMaleTiles, 4, 8, 6),
-    overworld_frame(PlutoGruntMaleTiles, 4, 8, 7),
-    overworld_frame(PlutoGruntMaleTiles, 4, 8, 8),
+    overworld_frame(PlutoGruntMaleTiles, 2, 4, 0),
+    overworld_frame(PlutoGruntMaleTiles, 2, 4, 1),
+    overworld_frame(PlutoGruntMaleTiles, 2, 4, 2),
+    overworld_frame(PlutoGruntMaleTiles, 2, 4, 3),
+    overworld_frame(PlutoGruntMaleTiles, 2, 4, 4),
+    overworld_frame(PlutoGruntMaleTiles, 2, 4, 5),
+    overworld_frame(PlutoGruntMaleTiles, 2, 4, 6),
+    overworld_frame(PlutoGruntMaleTiles, 2, 4, 7),
+    overworld_frame(PlutoGruntMaleTiles, 2, 4, 8),
     // overworld_frame(PlutoGruntMaleTiles, 4, 4, 9),  // Pluto Grunts do not have a VS Seeker option
 };
 
