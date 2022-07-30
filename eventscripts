@@ -38,6 +38,10 @@ npc 1 0 1 EventScript_VarisiForest_BugCatcherBraden
 npc 1 0 2 EventScript_VarisiForest_LassBreanna
 npc 1 0 3 EventScript_VarisiForest_LassMimi
 
+# Route 17
+npc 3 35 0 ItemScript_Common_Potion
+sign 3 35 0 SignScript_Route17_CaveSign
+
 # Rhodanzi City
 ## Overworld
 map 3 2 MapScript_RhodanziOverworld_FlightSpot
