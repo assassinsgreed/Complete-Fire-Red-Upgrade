@@ -24,6 +24,8 @@ tables to edit:
 
 */
 
+extern const u16 PlutoGruntMalePal[];
+
 #ifdef UNBOUND
 extern const u8 TS_Male_Player_White_Brunette_BlackPal[];
 extern const u8 TS_Male_Player_White_Silver_RedPal[];
@@ -99,6 +101,14 @@ static const struct CharacterCustomizationPaletteSwitch sCharacterPalSwitchTable
 		(NPCPtr*) 0x0,
 		// etc...
 		// please note that this method makes compatability with OW Manager challenging
+	};
+	static const struct SpritePalette sObjectEventSpritePalettes12[] = {
+		{ PlutoGruntMalePal, 0x1201 },
+		{ NULL, 0x11FF }
+	};
+	const struct SpritePalette* const gObjectEventSpritePalettesSwitcher[255] = {
+		[0x11] = (const struct SpritePalette*) 0x83A5158,
+		[0x12] = sObjectEventSpritePalettes12
 	};
 #endif
 
