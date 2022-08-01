@@ -50,7 +50,7 @@ SignScript_RhodanziCity_FishermanSign:
 .global TileScript_RhodanziOverworld_ThugsCaught
 TileScript_RhodanziOverworld_ThugsCaught:
     checkflag 0x820
-    @ if SET _goto End
+    if SET _goto End
     lock @ TODO: Fix bug!  Event should not do anything when flag set
     msgbox gText_RhodanziOverworld_ThugsRumour MSG_NORMAL
     applymovement 0x6 m_ThugSurprise

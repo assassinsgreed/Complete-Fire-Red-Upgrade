@@ -272,5 +272,5 @@ gText_TextSpeedInstant 083cc338
 #endif
 
 # Custom Spritework
-GraphicsInfo_PlutoGruntMale 839FE74
-# PlutoGruntMalePal ???
+GraphicsInfo_PlutoGruntMale 839FE74 # Replace Rocket Grunt Male (49)
+GraphicsInfo_ChampionSelene 839FED8 # Replace Lance (74)

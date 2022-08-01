@@ -25,6 +25,7 @@ tables to edit:
 */
 
 extern const u16 PlutoGruntMalePal[];
+extern const u16 ChampionSelenePal[];
 
 #ifdef UNBOUND
 extern const u8 TS_Male_Player_White_Brunette_BlackPal[];
@@ -104,6 +105,7 @@ static const struct CharacterCustomizationPaletteSwitch sCharacterPalSwitchTable
 	};
 	static const struct SpritePalette sObjectEventSpritePalettes12[] = {
 		{ PlutoGruntMalePal, 0x1201 },
+		{ ChampionSelenePal, 0x1202 },
 		{ NULL, 0x11FF }
 	};
 	const struct SpritePalette* const gObjectEventSpritePalettesSwitcher[255] = {
