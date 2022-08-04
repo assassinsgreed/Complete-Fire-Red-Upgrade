@@ -575,7 +575,7 @@
 /*
 #define STORY_FLAGS_START 0x230
 #define FLAG_COMPLETED_TYPE_TRAINER_QUIZ                 0x230
-#define FLAG_GOT_TM34_FROM_SURGE                         0x231
+#define FLAG_RECEIVED_ANTIDOTE_GIFT                      0x231
 #define FLAG_GOT_FOSSIL_FROM_MT_MOON                     0x232
 #define FLAG_HELPED_BILL_IN_SEA_COTTAGE                  0x233
 #define FLAG_GOT_SS_TICKET                               0x234

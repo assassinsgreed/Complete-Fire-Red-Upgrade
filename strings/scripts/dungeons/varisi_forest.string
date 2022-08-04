@@ -33,3 +33,21 @@ Well, it was peaceful[.]
 
 #org @gText_VarisiForest_LassMimi_Chat
 I love coming here to listen to the\nbirds, don't you?
+
+#org @gText_VarisiForest_TrainerTip
+If you lock eyes with a Trainer,\nyou'll have to battle them.\pMake sure you're prepared before\ngoing out!
+
+#org @gText_VarisiForest_PoisonWarning
+Some Pok\emon in Varisi Forest can\npoison your Pok\emon. Bring\lantidotes before going in there!
+
+#org @gText_VarisiForest_AntidoteGift
+Here, I have a spare. Take it!
+
+#org @gText_VarisiForest_SurprisedTrainer
+I'm surprised to see you here.\nMost trainers don't come this way.\pTheir loss though!\nIt's a nice shortcut.
+
+#org @gText_VarisiForest_TimeOfDay
+Some Pok\emon only appear during\ncertain times of day.\pFor example, you'll only find\nPikipek in Varisi Forest during the\lday.
+
+#org @gText_VarisiForest_FriendlyTrainer
+Oh, you're going on an adventure with\nyour friend? How nice! Make sure\lyou enjoy it.
