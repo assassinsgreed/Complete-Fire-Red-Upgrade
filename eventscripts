@@ -37,6 +37,11 @@ npc 1 0 0 EventScript_VarisiForest_BugCatcherKendell
 npc 1 0 1 EventScript_VarisiForest_BugCatcherBraden
 npc 1 0 2 EventScript_VarisiForest_LassBreanna
 npc 1 0 3 EventScript_VarisiForest_LassMimi
+npc 15 0 0 EventScript_VarisiForest_PoisonWarning
+npc 15 0 1 EventScript_VarisiForest_TrainerTip
+npc 15 2 0 EventScript_VarisiForest_SurprisedTrainer
+npc 15 3 0 EventScript_VarisiForest_TimeOfDay
+npc 15 3 1 EventScript_VarisiForest_FriendlyTrainer
 
 # Route 17
 npc 3 35 0 ItemScript_Common_Potion
