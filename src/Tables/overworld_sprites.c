@@ -1,9 +1,15 @@
 #include "../defines.h"
 #include "../../include/constants/event_objects.h"
 
+// Characters
 extern const u8 PlutoGruntMaleTiles[];
 extern const u8 ChampionSeleneTiles[];
+
+// Overworld Events
 extern const u8 SandygastTiles[];
+extern const u8 FoongusTiles[];
+extern const u8 StunfiskTiles[];
+extern const u8 TMPokeballTiles[];
 
 #define EVENT_OBJ_PAL_TAG_NONE 0x1102
 #define gEventObjectBaseOam_16x16 ((const struct OamData*) 0x83A36F8)
@@ -60,6 +66,21 @@ static const struct SpriteFrameImage Table_Sandygast[] =
     overworld_frame(SandygastTiles, 2, 2, 8),
 };
 
+static const struct SpriteFrameImage Table_Foongus[] =
+{
+    overworld_frame(FoongusTiles, 2, 2, 0),
+};
+
+static const struct SpriteFrameImage Table_Stunfisk[] =
+{
+    overworld_frame(StunfiskTiles, 2, 2, 0),
+};
+
+static const struct SpriteFrameImage Table_TMPokeball[] =
+{
+    overworld_frame(TMPokeballTiles, 2, 2, 0),
+};
+
 const struct EventObjectGraphicsInfo GraphicsInfo_PlutoGruntMale =
 {
     .tileTag = 0xFFFF,
@@ -111,11 +132,71 @@ const struct EventObjectGraphicsInfo GraphicsInfo_Sandygast =
     .shadowSize = SHADOW_SIZE_S,
     .inanimate = TRUE,
     .disableReflectionPaletteLoad = FALSE,
-    .tracks = TRACKS_FOOT,
+    .tracks = TRACKS_NONE,
     .gender = MALE,
     .oam = gEventObjectBaseOam_16x16,
     .subspriteTables = gEventObjectSpriteOamTables_16x16,
     .anims = gEventObjectImageAnimTable_Standard,
     .images = Table_Sandygast,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+const struct EventObjectGraphicsInfo GraphicsInfo_Foongus =
+{
+    .tileTag = 0xFFFF,
+    .paletteTag1 = 0x1204,
+    .paletteTag2 = EVENT_OBJ_PAL_TAG_NONE,
+    .size = (16 * 16) / 2,
+    .width = 16,
+    .height = 16,
+    .shadowSize = SHADOW_SIZE_S,
+    .inanimate = TRUE,
+    .disableReflectionPaletteLoad = FALSE,
+    .tracks = TRACKS_NONE,
+    .gender = MALE,
+    .oam = gEventObjectBaseOam_16x16,
+    .subspriteTables = gEventObjectSpriteOamTables_16x16,
+    .anims = gEventObjectImageAnimTable_Standard,
+    .images = Table_Foongus,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+const struct EventObjectGraphicsInfo GraphicsInfo_Stunfisk =
+{
+    .tileTag = 0xFFFF,
+    .paletteTag1 = 0x1204,
+    .paletteTag2 = EVENT_OBJ_PAL_TAG_NONE,
+    .size = (16 * 16) / 2,
+    .width = 16,
+    .height = 16,
+    .shadowSize = SHADOW_SIZE_S,
+    .inanimate = TRUE,
+    .disableReflectionPaletteLoad = FALSE,
+    .tracks = TRACKS_NONE,
+    .gender = MALE,
+    .oam = gEventObjectBaseOam_16x16,
+    .subspriteTables = gEventObjectSpriteOamTables_16x16,
+    .anims = gEventObjectImageAnimTable_Standard,
+    .images = Table_Stunfisk,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+const struct EventObjectGraphicsInfo GraphicsInfo_TMPokeball =
+{
+    .tileTag = 0xFFFF,
+    .paletteTag1 = 0x1205,
+    .paletteTag2 = EVENT_OBJ_PAL_TAG_NONE,
+    .size = (16 * 16) / 2,
+    .width = 16,
+    .height = 16,
+    .shadowSize = SHADOW_SIZE_S,
+    .inanimate = TRUE,
+    .disableReflectionPaletteLoad = FALSE,
+    .tracks = TRACKS_NONE,
+    .gender = MALE,
+    .oam = gEventObjectBaseOam_16x16,
+    .subspriteTables = gEventObjectSpriteOamTables_16x16,
+    .anims = gEventObjectImageAnimTable_Standard,
+    .images = Table_TMPokeball,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
