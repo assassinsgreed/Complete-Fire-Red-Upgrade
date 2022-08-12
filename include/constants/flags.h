@@ -87,7 +87,7 @@
 #define FLAG_HIDE_TOWER_RIVAL                              0x051
 #define FLAG_HIDE_MOLTRES                                  0x052
 #define FLAG_HIDE_SILPH_ROCKETS                            0x053
-#define FLAG_HIDE_ROUTE_12_SNORLAX                         0x054
+#define FLAG_HIDE_ROUTE_1_SANDYGAST                        0x054
 #define FLAG_HIDE_VIRIDIAN_GIOVANNI                        0x055
 #define FLAG_HIDE_OLD_AMBER                                0x056
 #define FLAG_HIDE_EEVEE_BALL                               0x057

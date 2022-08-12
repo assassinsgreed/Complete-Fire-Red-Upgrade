@@ -53,8 +53,8 @@ TileScript_RhodanziOverworld_ThugsCaught:
     if SET _goto End
     lock @ TODO: Fix bug!  Event should not do anything when flag set
     msgbox gText_RhodanziOverworld_ThugsRumour MSG_NORMAL
-    applymovement 0x6 m_ThugSurprise
-    applymovement 0x7 m_ThugSurprise
+    applymovement 0x6 m_Surprise
+    applymovement 0x7 m_Surprise
     waitmovement ALLEVENTS
     msgbox gText_RhodanziOverworld_Thugs MSG_NORMAL
     applymovement 0x6 m_ThugBottomMoveToPush
@@ -85,9 +85,6 @@ EventScript_RhodanziOverworld_ThugTopSpokenTo:
 End:
     release
     end
-
-m_ThugSurprise:
-    .byte exclaim, end_m
 
 m_ThugTopMoveToPush:
     .byte run_right, run_down, look_left, end_m

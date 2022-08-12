@@ -26,6 +26,8 @@ npc 4 3 0 EventScript_AnthraTown_OldMan
 npc 3 19 0 EventScript_Route1_YoungsterPeter
 npc 3 19 1 EventScript_Route1_LassHelena
 npc 3 19 2 EventScript_Route1_YoungsterHarlan
+npc 3 19 3 EventScript_Route1_LonelyMan
+npc 3 19 4 EventScript_Route1_SandygastEncounter
 
 # Route 2
 npc 3 20 0 EventScript_Route2_YoungsterJoey

@@ -227,3 +227,4 @@ m_LookDown: .byte look_down, end_m
 m_LookUp: .byte look_up, end_m
 m_LookLeft: .byte look_left, end_m
 m_LookRight: .byte look_right, end_m
+m_Surprise: .byte exclaim, end_m
