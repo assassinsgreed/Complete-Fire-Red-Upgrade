@@ -27,6 +27,11 @@ tables to edit:
 extern const u16 PlutoGruntMalePal[];
 extern const u16 ChampionSelenePal[];
 extern const u16 SandygastPal[];
+extern const u16 FoongusPal[];
+extern const u16 StunfiskPal[];
+extern const u16 TMPokeballPal[];
+
+extern const struct EventObjectGraphicsInfo GraphicsInfo_TMPokeball;
 
 #ifdef UNBOUND
 extern const u8 TS_Male_Player_White_Brunette_BlackPal[];
@@ -108,6 +113,9 @@ static const struct CharacterCustomizationPaletteSwitch sCharacterPalSwitchTable
 		{ PlutoGruntMalePal, 0x1201 },
 		{ ChampionSelenePal, 0x1202 },
 		{ SandygastPal, 0x1203 },
+		{ FoongusPal, 0x1204 },
+		{ StunfiskPal, 0x1204 },
+		{ TMPokeballPal, 0x1205 },
 		{ NULL, 0x11FF }
 	};
 	const struct SpritePalette* const gObjectEventSpritePalettesSwitcher[255] = {
