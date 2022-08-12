@@ -91,9 +91,9 @@ const struct WildPokemon gRoute17_LandMons[] =
 	{2, 3, SPECIES_CUTIEFLY},
 	{2, 3, SPECIES_GRUBBIN},
 	{2, 4, SPECIES_GRUBBIN},
-	{2, 4, SPECIES_FLABEBE},
+	{2, 4, SPECIES_FLABEBE_BLUE},
 	{3, 3, SPECIES_GRUBBIN},
-	{3, 3, SPECIES_FLABEBE},
+	{3, 3, SPECIES_FLABEBE_YELLOW},
 };
 
 const struct WildPokemon gRoute17_Cave1F_LandMons[] =
