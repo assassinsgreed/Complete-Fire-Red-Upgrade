@@ -1818,7 +1818,6 @@ LoadCompressedSpriteSheetUsingHeap = 0x800F034 | 1;
 CreateHiddenSpriteWithCallback = 0x8044EF8 | 1;
 something_08050969 = 0x8050968 | 1;
 LoadSpriteSheetsForSummaryScreen = 0x8050DE0 | 1;
-PatchObjectPalette = 0x805F538 | 1;
 SetAffineData = 0x8075858 | 1;
 SpawnPokeOrTrainerPic = 0x810BDAC | 1;
 
@@ -1860,6 +1859,8 @@ sub_8071898 = 0x8071898 | 1;
 UpdateSpritePaletteWithWeather = 0x807AA8C | 1;
 FadeSelectedPals = 0x807A944 | 1;
 PreservePaletteInWeather = 0x807B084 | 1;
+TryLoadObjectPalette = 0x805F510 | 1;
+ApplyGlobalFieldPaletteTint = 0x8083598 | 1;
 
 /* Palette Util Functions */
 InitPulseBlend = 0x80D90A8 | 1;
@@ -1879,7 +1880,6 @@ GetEventObjectIdByLocalIdAndMapInternal = 0x805DFF4 | 1;
 GetEventObjectIdByLocalId = 0x805E044 | 1;
 MakeObjectTemplateFromEventObjectGraphicsInfo = 0x805E8E8 | 1;
 MakeObjectTemplateFromEventObjectTemplate = 0x805E960 | 1;
-FindEventObjectPaletteIndexByTag = 0x805F5A0 | 1;
 GetEventObjectScriptPointerByEventObjectId = 0x805FC38 | 1;
 GetRunningDirectionAnimNum = 0x8063520 | 1;
 npc_apply_anim_looping = 0x8063554 | 1;

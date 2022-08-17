@@ -1,0 +1,11 @@
+#org @gText_Common_PokemonCenterHealChoice
+Welcome to our Pok\emon Center!\pWould you like me to heal your\nPok\emon back to perfect health?
+
+#org @gText_Common_PokemonCenterTakePokemon
+Okay, I'll take your Pok\emon for a\nfew seconds.
+
+#org @gText_Common_PokemonFarewell
+We hope to see you again!
+
+#org @gText_Common_PokemonCenterHealed
+Thank you for waiting.\nWe've restored your Pok\emon to\lfull health.

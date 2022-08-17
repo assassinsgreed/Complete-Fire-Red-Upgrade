@@ -204,6 +204,7 @@ extern void TryGiveSpecialTrainerHiddenPower(u16 trainerId, struct Pokemon* mon)
 extern void TryGiveSpecialTrainerStatusCondition(u16 trainerId, struct Pokemon* mon);
 extern u8 GetCurrentLevelCap(void); //Must be implemented yourself
 #endif
+static void SetAbilityFromEnum(struct Pokemon* mon, u8 abilityNum);
 
 #ifdef OPEN_WORLD_TRAINERS
 
@@ -748,7 +749,7 @@ static u8 CreateNPCTrainerParty(struct Pokemon* const party, const u16 trainerId
 			ZeroEnemyPartyMons();
 
 		//Set up necessary data
-		trainer = &gTrainers[trainerId];
+		trainer = GET_TRAINER_PTR(trainerId);
 
 		//Choose Trainer IVs
 		#ifdef VAR_GAME_DIFFICULTY
@@ -945,6 +946,7 @@ static u8 CreateNPCTrainerParty(struct Pokemon* const party, const u16 trainerId
 						MAKE_POKEMON(trainer->party.NoItemCustomMoves);
 						if (setCustomMoves)
 							SET_MOVES(trainer->party.NoItemCustomMoves);
+						SetAbilityFromEnum(&party[i], trainer->party.NoItemCustomMoves[i].ability);
 						break;
 
 					case PARTY_FLAG_HAS_ITEM: ;
@@ -976,13 +978,14 @@ static u8 CreateNPCTrainerParty(struct Pokemon* const party, const u16 trainerId
 						if (setCustomMoves)
 							SET_MOVES(trainer->party.ItemCustomMoves);
 						SetMonData(mon, MON_DATA_HELD_ITEM, &trainer->party.ItemCustomMoves[i].heldItem);
+						SetAbilityFromEnum(&party[i], trainer->party.ItemCustomMoves[i].ability);
 						break;
 				}
 			}
 
 			//Assign Trainer information to mon
 			u8 otGender = trainer->gender;
-			const u8* name = TryGetRivalNameByTrainerClass(gTrainers[trainerId].trainerClass);
+			const u8* name = TryGetRivalNameByTrainerClass(GET_TRAINER(trainerId).trainerClass);
 			if (name == NULL) //Not Rival or Rival name isn't tied to Trainer class
 				SetMonData(mon, MON_DATA_OT_NAME, &trainer->trainerName);
 			else
@@ -1201,6 +1204,31 @@ static u8 GetTrainerMonMovePPBonus(void)
 static u8 GetTrainerMonMovePP(u16 move, u8 index)
 {
 	return CalculatePPWithBonus(move, GetTrainerMonMovePPBonus(), index);
+}
+
+static void SetAbilityFromEnum(struct Pokemon* mon, u8 abilityNum)
+{
+	switch(abilityNum) {
+		case Ability_Hidden:
+		GIVE_HIDDEN_ABILITY:
+			GiveMonNatureAndAbility(mon, GetNature(mon), 0xFF, FALSE, TRUE, FALSE); //Give Hidden Ability
+			break;
+		case Ability_1:
+		case Ability_2:
+			GiveMonNatureAndAbility(mon, GetNature(mon), MathMin(1, abilityNum - 1), FALSE, TRUE, FALSE);
+			break;
+		case Ability_Random_1_2:
+		GIVE_RANDOM_ABILITY:
+			GiveMonNatureAndAbility(mon, GetNature(mon), Random() % 2, FALSE, TRUE, FALSE);
+			break;
+		case Ability_RandomAll: ;
+			u8 random = Random() % 3;
+
+			if (random == 2)
+				goto GIVE_HIDDEN_ABILITY;
+
+			goto GIVE_RANDOM_ABILITY;
+	}
 }
 
 //These next few functions are related to scaling a Trainer's team dynamically based the player's strength

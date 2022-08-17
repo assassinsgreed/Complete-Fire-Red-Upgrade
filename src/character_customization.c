@@ -29,6 +29,13 @@ tables to edit:
 
 */
 
+extern const u16 PlutoGruntMalePal[];
+extern const u16 ChampionSelenePal[];
+extern const u16 SandygastPal[];
+extern const u16 FoongusPal[];
+extern const u16 StunfiskPal[];
+extern const u16 TMPokeballPal[];
+
 #ifdef UNBOUND
 //extern const u16 MalePlayer_Trainer_Outfit_RedPal[];
 extern const u16 MalePlayer_Trainer_Outfit_BlackPal[];
@@ -266,6 +273,19 @@ static const u16* sPlayerMarlonOutfitColours[] =
 		(NPCPtr*) 0x0,
 		// etc...
 		// please note that this method makes compatability with OW Manager challenging
+	};
+	static const struct SpritePalette sObjectEventSpritePalettes12[] = {
+		{ PlutoGruntMalePal, 0x1201 },
+		{ ChampionSelenePal, 0x1202 },
+		{ SandygastPal, 0x1203 },
+		{ FoongusPal, 0x1204 },
+		{ StunfiskPal, 0x1204 },
+		{ TMPokeballPal, 0x1205 },
+		{ NULL, 0x11FF }
+	};
+	const struct SpritePalette* const gObjectEventSpritePalettesSwitcher[255] = {
+		[0x11] = (const struct SpritePalette*) 0x83A5158,
+		[0x12] = sObjectEventSpritePalettes12
 	};
 #endif
 

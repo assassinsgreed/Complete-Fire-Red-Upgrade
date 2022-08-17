@@ -87,7 +87,7 @@
 #define FLAG_HIDE_TOWER_RIVAL                              0x051
 #define FLAG_HIDE_MOLTRES                                  0x052
 #define FLAG_HIDE_SILPH_ROCKETS                            0x053
-#define FLAG_HIDE_ROUTE_12_SNORLAX                         0x054
+#define FLAG_HIDE_ROUTE_1_SANDYGAST                        0x054
 #define FLAG_HIDE_VIRIDIAN_GIOVANNI                        0x055
 #define FLAG_HIDE_OLD_AMBER                                0x056
 #define FLAG_HIDE_EEVEE_BALL                               0x057
@@ -574,8 +574,8 @@
 // Story flags
 /*
 #define STORY_FLAGS_START 0x230
-#define FLAG_GOT_POTION_ON_ROUTE_1                       0x230
-#define FLAG_GOT_TM34_FROM_SURGE                         0x231
+#define FLAG_COMPLETED_TYPE_TRAINER_QUIZ                 0x230
+#define FLAG_RECEIVED_ANTIDOTE_GIFT                      0x231
 #define FLAG_GOT_FOSSIL_FROM_MT_MOON                     0x232
 #define FLAG_HELPED_BILL_IN_SEA_COTTAGE                  0x233
 #define FLAG_GOT_SS_TICKET                               0x234
@@ -1383,7 +1383,7 @@
 /*
 #define FLAG_WORLD_MAP_PALLET_TOWN                                  (SYS_FLAGS + 0x90)
 #define FLAG_WORLD_MAP_VIRIDIAN_CITY                                (SYS_FLAGS + 0x91)
-#define FLAG_WORLD_MAP_PEWTER_CITY                                  (SYS_FLAGS + 0x92)
+#define FLAG_WORLD_MAP_RHODANZI_CITY                                  (SYS_FLAGS + 0x92)
 #define FLAG_WORLD_MAP_CERULEAN_CITY                                (SYS_FLAGS + 0x93)
 #define FLAG_WORLD_MAP_LAVENDER_TOWN                                (SYS_FLAGS + 0x94)
 #define FLAG_WORLD_MAP_VERMILION_CITY                               (SYS_FLAGS + 0x95)
@@ -1401,7 +1401,7 @@
 #define FLAG_WORLD_MAP_SIX_ISLAND                                   (SYS_FLAGS + 0xA1)
 #define FLAG_WORLD_MAP_ROUTE4_POKEMON_CENTER_1F                     (SYS_FLAGS + 0xA2)
 #define FLAG_WORLD_MAP_ROUTE10_POKEMON_CENTER_1F                    (SYS_FLAGS + 0xA3)
-#define FLAG_WORLD_MAP_VIRIDIAN_FOREST                              (SYS_FLAGS + 0xA4)
+#define FLAG_WORLD_MAP_VARISI_FOREST                                (SYS_FLAGS + 0xA4)
 #define FLAG_WORLD_MAP_MT_MOON_1F                                   (SYS_FLAGS + 0xA5)
 #define FLAG_WORLD_MAP_SSANNE_EXTERIOR                              (SYS_FLAGS + 0xA6)
 #define FLAG_WORLD_MAP_UNDERGROUND_PATH_NORTH_SOUTH_TUNNEL          (SYS_FLAGS + 0xA7)

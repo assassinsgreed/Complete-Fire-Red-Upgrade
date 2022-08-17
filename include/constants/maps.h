@@ -21,7 +21,7 @@
 #define MAP_UNKNOWN_MAP_00_04 (4 | (0 << 8))
 
 // Map Group 1
-#define MAP_VIRIDIAN_FOREST                      (0 | (1 << 8))
+#define MAP_VARISI_FOREST                        (0 | (1 << 8))
 #define MAP_MT_MOON_1F                           (1 | (1 << 8))
 #define MAP_MT_MOON_B1F                          (2 | (1 << 8))
 #define MAP_MT_MOON_B2F                          (3 | (1 << 8))
@@ -210,7 +210,7 @@
 // Map Group 3
 #define MAP_PALLET_TOWN                          (0 | (3 << 8))
 #define MAP_VIRIDIAN_CITY                        (1 | (3 << 8))
-#define MAP_PEWTER_CITY                          (2 | (3 << 8))
+#define MAP_RHODANZI_CITY                        (2 | (3 << 8))
 #define MAP_CERULEAN_CITY                        (3 | (3 << 8))
 #define MAP_LAVENDER_TOWN                        (4 | (3 << 8))
 #define MAP_VERMILION_CITY                       (5 | (3 << 8))
@@ -449,7 +449,7 @@
 #define MAP_UNUSED_HOUSE_29_00 (0 | (29 << 8))
 
 // Map Group 30
-#define MAP_ROUTE25_SEA_COTTAGE (0 | (30 << 8))
+#define MAP_ROUTE17_CAVE_1F (0 | (30 << 8))
 
 // Map Group 31
 #define MAP_SEVEN_ISLAND_HOUSE_ROOM1       (0 | (31 << 8))

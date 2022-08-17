@@ -1200,7 +1200,7 @@ void SetUpTrainerEncounterMusic(void)
 				break;
 		}
 		#else //ENCOUNTER_MUSIC_BY_CLASS
-			music = gClassBasedTrainerEncounterBGM[gTrainers[trainerId].trainerClass];
+			music = gClassBasedTrainerEncounterBGM[GET_TRAINER(trainerId).trainerClass];
 
 			if (music == 0)
 				music = BGM_EYE_BOY;

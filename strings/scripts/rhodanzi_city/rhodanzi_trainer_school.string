@@ -1,0 +1,143 @@
+#org @gText_RhodanziTrainerSchool_MainRoom_Receptionist_GoToDesk
+Oh, hello trainer! Please go to\nthe front of the desk and I'll\lbe happy to help you.
+
+#org @gText_RhodanziTrainerSchool_MainRoom_Receptionist
+Hello, and welcome to the\nRhodanzi Trainer School.\pWe are a non-profit educational\nfacility that aims to educate new\land experienced trainers.
+
+#org @gText_RhodanziTrainerSchool_MainRoom_Receptionist_Basic
+On the left, you'll find our Basic\nCourse. This course is ideal for\lnew trainers.
+
+#org @gText_RhodanziTrainerSchool_MainRoom_Receptionist_Advanced
+On the right, you'll find our\nAdvanced Course. This course is\lideal for experienced trainers who\lwant to learn the CFRU features.
+
+#org @gText_RhodanziTrainerSchool_MainRoom_Receptionist_Conclude
+We hope you enjoy the courses we\nprovide. At the Rhodanzi Trainer\lSchool, your success is our\lsuccess!
+
+#org @gText_RhodanziTrainerSchool_MainRoom_FossilStudent
+My professor said these Pok\emon\nfossils were imported from the\lKanto region across the sea.
+
+#org @gText_RhodanziTrainerSchool_MainRoom_Librarian
+We have many books on Pok\emon and\nPok\emon battles. You can learn a\llot from reading!
+
+#org @gText_RhodanziTrainerSchool_MainRoom_Professor
+I'm reviewing our students' test\nscores to see how effective our\lcourses are.
+
+#org @gText_RhodanziTrainerSchool_BasicCourse_Professor
+Welcome to the Rhodanzi Trainer\nSchool's Basic Course.\pNew trainers can learn the basics\nbefore departing on their Pok\emon\ljourneys.
+
+#org @gText_RhodanziTrainerSchool_BasicCourse_AbilitiesStudent
+Abilities are passive effects a\nPok\emon can have that impacts how\lthey perform in battle or in the\lfield. All Pok\emon have an ability!
+
+#org @gText_RhodanziTrainerSchool_BasicCourse_KOStudent
+When a Pok\emon's HP reaches 0, it\ngets knocked out.\pIf all of a trainer's Pok\emon are\nknocked out, they'll black out and\llose money.\pBe careful not to let that happen\nto your Pok\emon!
+
+#org @gText_RhodanziTrainerSchool_BasicCourse_HeldItemsStudent
+A Pok\emon can hold one item in\nbattle, which may activate when\lcertain conditions are met.\pPok\emon can't use man-made items\nthough.
+
+#org @gText_RhodanziTrainerSchool_BasicCourse_StatusStudent
+I'm the smartest in my class, when it\ncomes to status effects!
+
+#org @gText_RhodanziTrainerSchool_BasicCourse_StatusStudent_Question
+Which status effect would you like\nto learn about?
+
+#org @gText_Burn
+Burn
+
+#org @gText_BurnDetails
+Burned Pok\emon will take damage\neach turn. Their attack stat will\lalso be halved.
+
+#org @gText_Freeze
+Freeze
+
+#org @gText_FreezeDetails
+Frozen Pok\emon can't act until\nthey've thawed out. Fire moves will\lmake them thaw out right away.
+
+#org @gText_Paralysis
+Paralysis
+
+#org @gText_ParalysisDetails
+Paralyzed Pok\emon have a fifty\npercent chance of being unable to\lmove. Their speed is also reduced\lto half.
+
+#org @gText_Poison
+Poison
+
+#org @gText_PoisonDetails
+Poisoned Pok\emon take damage each\nturn. Some moves, like Toxic, will\leven apply Bad Poison which makes\lthe Pok\emon take more damage on\leach turn.
+
+#org @gText_Sleep
+Sleep
+
+#org @gText_SleepDetails
+Sleeping Pok\emon can't act until\nthey've woken up. Some moves can\lonly be used while asleep, or only\lon sleeping Pok\emon.
+
+#org @gText_End
+End
+
+#org @gText_RhodanziTrainerSchool_BasicCourse_StatusStudent_Done
+I hope this information was\nhelpful!\pThere are also a lot of temporary\nstatuses, but I don't know them all\lyet.
+
+#org @gText_RhodanziTrainerSchool_BasicCourse_TypeStudent_QuizIntro
+I'm a quiz fanatic, and I love\nquizzing new trainers. If you can\lanswer my question correctly, I'll\lgive you a prize!\pWhat do you say?
+
+#org @gText_RhodanziTrainerSchool_BasicCourse_TypeStudent_QuizRejected
+Aww, that's too bad. If you change\nyour mind, come see me again.
+
+#org @gText_RhodanziTrainerSchool_BasicCourse_TypeStudent_QuizAccepted
+Great! This will be fun.
+
+#org @gText_RhodanziTrainerSchool_BasicCourse_TypeStudent_GrassQuestion
+You chose a [GREEN]grass[BLUE] type starter.\nWhich type is it strong against?
+
+#org @gText_RhodanziTrainerSchool_BasicCourse_TypeStudent_FireQuestion
+You chose a [RED]fire[BLUE] type starter.\nWhich type is it strong against?
+
+#org @gText_RhodanziTrainerSchool_BasicCourse_TypeStudent_WaterQuestion
+You chose a water type starter.\nWhich type is it strong against?
+
+#org @gText_TypeGrass
+[GREEN]Grass
+
+#org @gText_TypeFire
+[RED]Fire
+
+#org @gText_TypeWater
+[BLUE]Water
+
+#org @gText_RhodanziTrainerSchool_BasicCourse_TypeStudent_QuizSuccess
+Yes, that's correct! A smart\ntrainer like you deserves a reward.
+
+#org @gText_RhodanziTrainerSchool_BasicCourse_TypeStudent_QuizFail
+I'm sorry, that isn't correct.\nRead up on Pok\emon type advantages\land come see me again, okay?
+
+#org @gText_RhodanziTrainerSchool_BasicCourse_TypeStudent_ItemInfo
+Give that to your Pok\emon to\nmake their moves stronger!
+
+#org @gText_RhodanziTrainerSchool_BasicCourse_TypeStudent_QuizComplete
+Good luck, trainer! Believe in\nyour Pok\emon and you'll do great.
+
+#org @gText_RhodanziTrainerSchool_AdvancedCourse_Professor
+All the students here are well\nversed in CFRU features.\pI'd suggest talking with them to\nlearn about the new features\lavailable.
+
+#org @gText_RhodanziTrainerSchool_AdvancedCourse_BattleMovesStudent
+You can check the effects of your\nmoves more easily in battle now!\pIf a move is super effective, it\nwill appear in [GREEN]green[BLUE], and if it's\lineffective it will appear in\l[ORANGE]yellow[BLUE].\pIf the move is bolded, it benefits\nfrom the Same Type Attack Boost,\lor STAB.\pPressing L will show you the move's\ndetails and effective power and\laccuracy.
+
+#org @gText_RhodanziTrainerSchool_AdvancedCourse_AutoRunStudent
+Do you like going fast?\pYou can hold B while biking to go\nextra fast.\pIf you're on foot, you can press L\nto turn on auto-run.\pIt won't work if you have the L=A\nsetting turned on though[.]
+
+#org @gText_RhodanziTrainerSchool_AdvancedCourse_PokemonTypeStudent
+While in battle, colored icons will\nappear beside each Pok\emon's\lhealth bars.\pThese icons show the Pok\emon's\ntypes!
+
+#org @gText_RhodanziTrainerSchool_AdvancedCourse_MegaEvolutionStudent
+Researchers from the\nInterdimensional Research Facility\lhave been working closely with\lKalosian scientists to bring the\lpower of Mega Evolution to Kulure!\pThis allows trainers with strong\nbonds to their Pok\emon to push\lpast their limits.
+
+#org @gText_RhodanziTrainerSchool_AdvancedCourse_TMsStudent
+Scientists from the Unova region\nrecently discovered how to make\lTMs reusable!
+
+#org @gText_RhodanziTrainerSchool_AdvancedCourse_HMsStudent
+Did you know?\pHMs can now be used without being\ntaught, as long as you have the\lnecessary badge and a Pok\emon\lcompatible with the move!\pBecause of this, HMs can be\nreplaced in a Pok\emon's moveset\lwithout seeing the Move Deleter.\pHow handy!
+
+#org @gText_RhodanziTrainerSchool_AdvancedCourse_DexNavStudent
+Professor Hawthorn has been\ncollaborating with researchers from\lHoenn to bring their DexNav\linvention over to Kulure. Using one\lmakes it easier to find rare or\lpowerful Pok\emon, but I heard the\ldevices are very hard to come by.
+
+#org @gText_RhodanziTrainerSchool_AdvancedCourse_BadgeObedienceStudent
+Pok\emon can sense the strength of\ntheir trainers, and may not obey if\lthey don't trust them.\pA Pok\emon trusts any trainer, as long\nas it's below level 15. After that,\lthey will trust their trainers for\lthe next 10 levels, for each badge\learned.

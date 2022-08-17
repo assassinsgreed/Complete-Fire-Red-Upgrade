@@ -256,6 +256,7 @@ struct TrainerMonNoItemCustomMoves
     u16 species;
     u16 moves[4];
 	u16 _; // 0x0000
+	u8 ability; //0 = Hidden, 1 = Ability_1, 2 = Ability_2, 3 = Random Ability 1 & 2, 4 = Random Any Ability
 };
 
 struct TrainerMonItemCustomMoves
@@ -265,14 +266,15 @@ struct TrainerMonItemCustomMoves
     u16 species;
     u16 heldItem;
     u16 moves[4];
+	u8 ability; //0 = Hidden, 1 = Ability_1, 2 = Ability_2, 3 = Random Ability 1 & 2, 4 = Random Any Ability
 };
 
 union TrainerMonPtr
 {
-    struct TrainerMonNoItemDefaultMoves* NoItemDefaultMoves;
-    struct TrainerMonNoItemCustomMoves* NoItemCustomMoves;
-    struct TrainerMonItemDefaultMoves* ItemDefaultMoves;
-    struct TrainerMonItemCustomMoves* ItemCustomMoves;
+    const struct TrainerMonNoItemDefaultMoves *NoItemDefaultMoves;
+    const struct TrainerMonNoItemCustomMoves *NoItemCustomMoves;
+    const struct TrainerMonItemDefaultMoves *ItemDefaultMoves;
+    const struct TrainerMonItemCustomMoves *ItemCustomMoves;
 };
 
 struct Trainer
@@ -287,16 +289,16 @@ struct Trainer
     /*0x18*/ bool8 doubleBattle;
     /*0x1C*/ u32 aiFlags;
     /*0x20*/ u8 partySize;
-    /*0x24*/ union TrainerMonPtr party;
+    /*0x24*/ const union TrainerMonPtr party;
 };
 
 #define PARTY_FLAG_CUSTOM_MOVES     0x1
 #define PARTY_FLAG_HAS_ITEM         0x2
 
-/*
+
 extern const struct Trainer gTrainers[];
-*/
-#define TRAINER_ENCOUNTER_MUSIC(trainer)((gTrainers[trainer].encounterMusic_gender & 0x7F))
+
+#define TRAINER_ENCOUNTER_MUSIC(trainer)((GET_TRAINER(trainer).encounterMusic_gender & 0x7F))
 
 struct UnknownFlags
 {

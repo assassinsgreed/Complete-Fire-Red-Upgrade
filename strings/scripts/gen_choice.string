@@ -1,0 +1,36 @@
+#org @gText_GenChoice_Msgwelcome
+Welcome to Pok\emon Shooting Stars!\pWe have a couple questions to help\ncustomize your experience.\pFirst of all, do you have a\nfavorite Pok\emon generation?
+
+#org @gText_GenChoice_Msgfavoritegen
+Please select your favorite\ngeneration.
+
+#org @gText_GenChoice_Msgshuffleconfirm
+The game will be set in shuffle\nmode. This will choose random\lstarters from across all 8\lgenerations.\pDo you want to start in shuffle\nmode?
+
+#org @gText_GenChoice_Msgkantoconfirm
+Your favorite generation is 1\n(Kanto)?
+
+#org @gText_GenChoice_Msgjohtoconfirm
+Your favorite generation is 2\n(Johto)?
+
+#org @gText_GenChoice_Msghoennconfirm
+Your favorite generation is 3\n(Hoenn)?
+
+#org @gText_GenChoice_Msgsinnohconfirm
+Your favorite generation is 4\n(Sinnoh)?
+
+#org @gText_GenChoice_Msgunovaconfirm
+Your favorite generation is 5\n(Unova)?
+
+#org @gText_GenChoice_Msgkalosconfirm
+Your favorite generation is 6\n(Kalos)?
+
+#org @gText_GenChoice_Msgalolaconfirm
+Your favorite generation is 7\n(Alola)?
+
+#org @gText_GenChoice_Msggalarconfirm
+Your favorite generation is 8\n(Galar)?
+
+#org @gText_GenChoice_Msgcomplete
+Selection confirmed. We hope you\nenjoy Pok\emon Shooting Stars!
+

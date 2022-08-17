@@ -304,9 +304,6 @@ const u8* GetAbilityNameOverride(const u8 ability, const u16 species) //Bypasses
 			{
 				default:
 					break;
-				#ifdef NATIONAL_DEX_GLACEON
-				case NATIONAL_DEX_GLACEON:
-				#endif
 				#if (defined NATIONAL_DEX_SMOOCHUM && defined NATIONAL_DEX_JYNX)
 				case NATIONAL_DEX_SMOOCHUM:
 				case NATIONAL_DEX_JYNX:

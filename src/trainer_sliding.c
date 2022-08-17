@@ -28,124 +28,11 @@ struct DynamaxTrainerSlide
 
 static const struct TrainerSlide sTrainerSlides[] =
 {
-	{},
-
-	#ifdef UNBOUND //For Pokemon Unbound - Feel free to remove
-	{0x6, sText_MirskleFirstMonDown, NULL, NULL},
-	{0x2CF, sText_MirskleFirstMonDown, NULL, NULL},
-	{0x2D0, sText_MirskleFirstMonDown, NULL, NULL},
-	{0x2D1, sText_MirskleFirstMonDown, NULL, NULL},
-	{0x36, sText_MirskleFirstMonDown, NULL, NULL}, //Post Game
-	{0x48, sText_MirskleFirstMonDown, NULL, NULL}, //Battleground
-	{0x49, sText_MirskleFirstMonDown, NULL, NULL}, //Battleground
-	{0x19F, NULL, sText_VegaLastSwitchIn, NULL},
-	{0x2D2, NULL, sText_VegaLastSwitchIn, NULL},
-	{0x2D3, NULL, sText_VegaLastSwitchIn, NULL},
-	{0x2D4, NULL, sText_VegaLastSwitchIn, NULL},
-	{0x4A, NULL, sText_VegaLastSwitchIn, NULL}, //Battleground
-	{0x4B, NULL, sText_VegaLastSwitchIn, NULL}, //Battleground
-	{0x14, NULL, sText_AliceLastSwitchIn, NULL},
-	{0x2D5, NULL, sText_AliceLastSwitchIn, NULL},
-	{0x2D6, NULL, sText_AliceLastSwitchIn, NULL},
-	{0x2D7, NULL, sText_AliceLastSwitchIn, NULL},
-	{0x4C, NULL, sText_AliceLastSwitchIn, NULL}, //Battleground
-	{0x4D, NULL, sText_AliceLastSwitchIn, NULL}, //Battleground
-	{0x1A0, NULL, sText_MelLastSwitchIn, NULL},
-	{0x2D8, NULL, sText_MelLastSwitchIn, NULL},
-	{0x2D9, NULL, sText_MelLastSwitchIn, NULL},
-	{0x2DA, NULL, sText_MelLastSwitchIn, NULL},
-	{0x4E, NULL, sText_MelLastSwitchIn, NULL}, //Battleground
-	{0x4F, NULL, sText_MelLastSwitchIn, NULL}, //Battleground
-	{0x1A2, NULL, NULL, sText_GalavanLastLowHP},
-	{0x2DB, NULL, NULL, sText_GalavanLastLowHP},
-	{0x2DC, NULL, NULL, sText_GalavanLastLowHP},
-	{0x2DD, NULL, NULL, sText_GalavanLastLowHP},
-	{0x50, NULL, NULL, sText_GalavanLastLowHP}, //Battleground
-	{0x51, NULL, NULL, sText_GalavanLastLowHP}, //Battleground
-	{0x1A3, NULL, sText_BigMoLastSwitchIn, NULL},
-	{0x2E1, NULL, sText_BigMoLastSwitchIn, NULL},
-	{0x2E2, NULL, sText_BigMoLastSwitchIn, NULL},
-	{0x2E3, NULL, sText_BigMoLastSwitchIn, NULL},
-	{0x52, NULL, sText_BigMoLastSwitchIn, NULL}, //Battleground
-	{0x53, NULL, sText_BigMoLastSwitchIn, NULL}, //Battleground
-	{0x54, NULL, sText_BigMoLastSwitchIn, NULL}, //Battleground
-	{0x1A1, NULL, sText_TessyLastSwitchIn, NULL},
-	{0x2DE, NULL, sText_TessyLastSwitchIn, NULL},
-	{0x2DF, NULL, sText_TessyLastSwitchIn, NULL},
-	{0x2E0, NULL, sText_TessyLastSwitchIn, NULL},
-	{0x55, NULL, sText_TessyLastSwitchIn, NULL}, //Battleground
-	{0x56, NULL, sText_TessyLastSwitchIn, NULL}, //Battleground
-	{0x1A4, NULL, sText_BenjaminLastSwitchIn, NULL},
-	{0x2E4, NULL, sText_BenjaminLastSwitchIn, NULL},
-	{0x2E5, NULL, sText_BenjaminLastSwitchIn, NULL},
-	{0x2E6, NULL, sText_BenjaminLastSwitchIn, NULL},
-	{0x57, NULL, sText_BenjaminLastSwitchIn, NULL}, //Battleground
-	{0x58, NULL, sText_BenjaminLastSwitchIn, NULL}, //Battleground
-	{0x19A, NULL, NULL, sText_MolemanLastLowHP},
-	{0x2C0, NULL, NULL, sText_MolemanLastLowHP},
-	{0x2C1, NULL, NULL, sText_MolemanLastLowHP},
-	{0x2C2, NULL, NULL, sText_MolemanLastLowHP},
-	{0x19B, NULL, sText_EliasLastSwitchIn, NULL},
-	{0x2C3, NULL, sText_EliasLastSwitchIn, NULL},
-	{0x2C4, NULL, sText_EliasLastSwitchIn, NULL},
-	{0x2C5, NULL, sText_EliasLastSwitchIn, NULL},
-	{0x19C, NULL, sText_AnabelleLastSwitchIn, NULL},
-	{0x2C6, NULL, sText_AnabelleLastSwitchIn, NULL},
-	{0x2C7, NULL, sText_AnabelleLastSwitchIn, NULL},
-	{0x2C8, NULL, sText_AnabelleLastSwitchIn, NULL},
-	{0x19D, NULL, NULL, sText_PennyLastLowHP},
-	{0x2C9, NULL, NULL, sText_PennyLastLowHP},
-	{0x2CA, NULL, NULL, sText_PennyLastLowHP},
-	{0x2CB, NULL, NULL, sText_PennyLastLowHP},
-	{0x19E, NULL, NULL, sText_JaxLastLowHP},
-	{0x2CC, NULL, NULL, sText_JaxLastLowHP},
-	{0x2CD, NULL, NULL, sText_JaxLastLowHP},
-	{0x2CE, NULL, NULL, sText_JaxLastLowHP},
-
-	{0x15C, NULL, NULL, sText_Zeph1LowHP},
-	{0x2A2, NULL, NULL, sText_Zeph1LowHP},
-	{0x2A3, NULL, NULL, sText_Zeph1LowHP},
-	{0x2A4, NULL, NULL, sText_Zeph1LowHP},
-	{0x15E, NULL, sText_Zeph2LastSwitchIn, NULL},
-	{0x2B1, NULL, sText_Zeph2LastSwitchIn, NULL},
-	{0x2B2, NULL, sText_Zeph2LastSwitchIn, NULL},
-	{0x2B3, NULL, sText_Zeph2LastSwitchIn, NULL},
-	{0x38, NULL, sText_Zeph3LastSwitchIn, NULL},
-	{0x39, NULL, sText_Zeph3LastSwitchIn, NULL},
-	{0x3A, NULL, sText_Zeph3LastSwitchIn, NULL},
-	{0x180, NULL, NULL, sText_Aklove1LowHP},
-	{0x2B4, NULL, NULL, sText_Aklove1LowHP},
-	{0x2B5, NULL, NULL, sText_Aklove1LowHP},
-	{0x2B6, NULL, NULL, sText_Aklove1LowHP},
-	{0x1B, NULL, NULL, sText_Aklove2LowHP},
-	{0x2BA, NULL, NULL, sText_Aklove2LowHP},
-	{0x2BB, NULL, NULL, sText_Aklove2LowHP},
-	{0x2BC, NULL, NULL, sText_Aklove2LowHP},
-	{0x33, NULL, NULL, sText_Aklove3LowHP},
-	{0x34, NULL, NULL, sText_Aklove3LowHP},
-	{0x18, NULL, sText_MaximaLastSwitchIn, NULL},
-	{0x2AB, NULL, sText_MaximaLastSwitchIn, NULL},
-	{0x2AC, NULL, sText_MaximaLastSwitchIn, NULL},
-	{0x2AD, NULL, sText_MaximaLastSwitchIn, NULL},
-
-	//Title Defense
-	{0x3B, NULL, sText_IvoryLeagueLastSwitchIn, NULL},
-	{0x3C, NULL, sText_IvoryLeagueLastSwitchIn, NULL},
-	{0x3D, NULL, sText_MarlonLeagueLastSwitchIn, NULL},
-	{0x3E, NULL, sText_MarlonLeagueLastSwitchIn, NULL},
-	{0x3F, NULL, sText_YoungsterLeagueLastSwitchIn, NULL},
-	{0x40, NULL, sText_YoungsterLeagueLastSwitchIn, NULL},
-	{0x41, NULL, NULL, sText_MiloLeagueLastLowHP},
-	{0x42, NULL, NULL, sText_MiloLeagueLastLowHP},
-	{0x43, NULL, NULL, sText_JaxPostGameLastLowHP},
-	{0x44, NULL, NULL, sText_JaxPostGameLastLowHP},
-	{0x45, NULL, sText_RivalLeagueLastSwitchIn, NULL},
-	{0x46, NULL, sText_RivalLeagueLastSwitchIn, NULL},
-	{0x47, NULL, sText_RivalLeagueLastSwitchIn, NULL},
-	{0x1B0, NULL, sText_RivalLeagueLastSwitchIn, NULL},
-	{0x1B1, NULL, sText_RivalLeagueLastSwitchIn, NULL},
-	{0x1B2, NULL, sText_RivalLeagueLastSwitchIn, NULL},
-	#endif
+	// Format {Trainer hex index, msg on first faint, msg on last switch in, msg on last pkmn low hp}
+	{}, // Rival battle 1
+	{0xE, NULL /*sText_Leader1_FirstMonDown*/, sText_Leader1_LastSwitchIn, sText_Leader1_LowHP}, // Gym Leader Terrence
+	{}, // 
+	{}, // Champion Selene
 };
 
 static const struct DynamaxTrainerSlide sDynamaxTrainerSlides[] =
@@ -319,14 +206,14 @@ void TryDoDynamaxTrainerSlide(void)
 			gBattleStringLoader = sDynamaxTrainerSlides[i].dynamaxMsg;
 	}
 
-	//Try giving any Trainer named "Red" a special string
-	if (i >= NELEMS(sDynamaxTrainerSlides))
-	{
-		u8 redName[] = {CHAR_R, CHAR_e, CHAR_d, EOS};
+	// //Try giving any Trainer named "Red" a special string
+	// if (i >= NELEMS(sDynamaxTrainerSlides))
+	// {
+	// 	u8 redName[] = {CHAR_R, CHAR_e, CHAR_d, EOS};
 
-		if (StringCompare(GetTrainerName(gBattleScripting.bank), redName) == 0) //Trainer's name is "Red"
-			gBattleStringLoader = gText_RedDynamaxMsg;
-	}
+	// 	if (StringCompare(GetTrainerName(gBattleScripting.bank), redName) == 0) //Trainer's name is "Red"
+	// 		gBattleStringLoader = gText_RedDynamaxMsg;
+	// }
 
 	BattleScriptPush(gBattlescriptCurrInstr + 5); //After callasm
 	gBattlescriptCurrInstr = BattleScript_TrainerSlideMsgRet - 5;

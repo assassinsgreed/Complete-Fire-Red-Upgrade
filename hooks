@@ -448,6 +448,9 @@ FindPalette 080089E8 1
 FindOrLoadPalette 08008928 1
 PaletteNeedsFogBrightening 0807A748 1
 LoadCloudOrSandstormPalette 0807ABC0 1
+LoadObjectEventPalette 0805F4B0 1
+PatchObjectPalette 0805F538 1
+FindObjectEventPaletteIndexByTag 0805F5A0 1
 
 ##Whiteout Hack
 DynamicWhiteoutMap 080BFD54 0

@@ -306,3 +306,17 @@ gText_TextSpeedMid 083cc330
 gText_TextSpeedFast 083cc334
 gText_TextSpeedInstant 083cc338
 #endif
+
+# Custom Spritework
+## Replace Rocket Grunt (49)
+GraphicsInfo_PlutoGruntMale 839FE74
+## Replace Lance (74)
+GraphicsInfo_ChampionSelene 839FED8
+## Replace Town Map (93)
+GraphicsInfo_TMPokeball 839FF24
+## Replace Spearow (110)
+GraphicsInfo_Sandygast 839FF68
+## Replace Marowak (111)
+GraphicsInfo_Foongus 839FF6C
+## Replace Poliwrath (112)
+GraphicsInfo_Stunfisk 839FF70

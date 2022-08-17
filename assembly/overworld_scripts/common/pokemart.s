@@ -1,0 +1,233 @@
+.thumb
+.align 2
+
+.include "../xse_commands.s"
+.include "../xse_defines.s"
+.include "../asm_defines.s"
+
+@ Pokemart stock is based on Gen 8 SW/SH list
+.global EventScript_Pokemart
+EventScript_Pokemart:
+    lock
+    faceplayer
+    special 0x187
+    compare LASTRESULT 0x2
+    if 0x1 _goto EventScript_End
+    msgbox gText_Common_PokemartIntro MSG_KEEPOPEN
+    checkflag 0x827 @ Eight Badges
+    if SET _goto EventScript_EightBadges
+    checkflag 0x826 @ Seven Badges
+    if SET _goto EventScript_SevenBadges
+    checkflag 0x825 @ Six Badges
+    if SET _goto EventScript_SixBadges
+    checkflag 0x824 @ Five Badges
+    if SET _goto EventScript_FiveBadges
+    checkflag 0x823 @ Four Badges
+    if SET _goto EventScript_FourBadges
+    checkflag 0x822 @ Three Badges
+    if SET _goto EventScript_ThreeBadges
+    checkflag 0x821 @ Two Badges
+    if SET _goto EventScript_TwoBadges
+    checkflag 0x820 @ One Badge
+    if SET _goto EventScript_OneBadge
+    goto EventScript_NoBadges @ No badges
+
+EventScript_NoBadges:
+    pokemart NoBadges_Stock
+    goto EventScript_EndMart
+
+EventScript_OneBadge:
+    pokemart OneBadge_Stock
+    goto EventScript_EndMart
+
+EventScript_TwoBadges:
+    pokemart TwoBadges_Stock
+    goto EventScript_EndMart
+
+EventScript_ThreeBadges:
+    pokemart ThreeBadges_Stock
+    goto EventScript_EndMart
+
+EventScript_FourBadges:
+    pokemart FourBadges_Stock
+    goto EventScript_EndMart
+
+EventScript_FiveBadges:
+    pokemart FiveBadges_Stock
+    goto EventScript_EndMart
+
+EventScript_SixBadges:
+    pokemart SixBadges_Stock
+    goto EventScript_EndMart
+
+EventScript_SevenBadges:
+    pokemart SevenBadges_Stock
+    goto EventScript_EndMart
+
+EventScript_EightBadges:
+    pokemart EightBadges_Stock
+    goto EventScript_EndMart
+
+NoBadges_Stock:
+    .hword ITEM_POKE_BALL
+    .hword ITEM_POTION
+    .hword ITEM_ANTIDOTE
+    .hword ITEM_BURN_HEAL
+    .hword ITEM_ICE_HEAL
+    .hword ITEM_AWAKENING
+    .hword ITEM_PARALYZE_HEAL
+    .hword ITEM_REVIVE
+    .hword ITEM_NONE
+
+OneBadge_Stock:
+    .hword ITEM_POKE_BALL
+    .hword ITEM_POTION
+    .hword ITEM_SUPER_POTION
+    .hword ITEM_ANTIDOTE
+    .hword ITEM_BURN_HEAL
+    .hword ITEM_ICE_HEAL
+    .hword ITEM_AWAKENING
+    .hword ITEM_PARALYZE_HEAL
+    .hword ITEM_REVIVE
+    .hword ITEM_ESCAPE_ROPE
+    .hword ITEM_NONE
+
+TwoBadges_Stock:
+    .hword ITEM_POKE_BALL
+    .hword ITEM_GREAT_BALL
+    .hword ITEM_POTION
+    .hword ITEM_SUPER_POTION
+    .hword ITEM_POKE_DOLL
+    .hword ITEM_ANTIDOTE
+    .hword ITEM_BURN_HEAL
+    .hword ITEM_ICE_HEAL
+    .hword ITEM_AWAKENING
+    .hword ITEM_PARALYZE_HEAL
+    .hword ITEM_REVIVE
+    .hword ITEM_ESCAPE_ROPE
+    .hword ITEM_NONE
+
+ThreeBadges_Stock:
+    .hword ITEM_POKE_BALL
+    .hword ITEM_GREAT_BALL
+    .hword ITEM_POTION
+    .hword ITEM_SUPER_POTION
+    .hword ITEM_POKE_DOLL
+    .hword ITEM_ANTIDOTE
+    .hword ITEM_BURN_HEAL
+    .hword ITEM_ICE_HEAL
+    .hword ITEM_AWAKENING
+    .hword ITEM_PARALYZE_HEAL
+    .hword ITEM_REPEL
+    .hword ITEM_REVIVE
+    .hword ITEM_ESCAPE_ROPE
+    .hword ITEM_NONE
+
+FourBadges_Stock:
+    .hword ITEM_POKE_BALL
+    .hword ITEM_GREAT_BALL
+    .hword ITEM_POTION
+    .hword ITEM_SUPER_POTION
+    .hword ITEM_HYPER_POTION
+    .hword ITEM_POKE_DOLL
+    .hword ITEM_ANTIDOTE
+    .hword ITEM_BURN_HEAL
+    .hword ITEM_ICE_HEAL
+    .hword ITEM_AWAKENING
+    .hword ITEM_PARALYZE_HEAL
+    .hword ITEM_REPEL
+    .hword ITEM_REVIVE
+    .hword ITEM_ESCAPE_ROPE
+    .hword ITEM_NONE
+
+FiveBadges_Stock:
+    .hword ITEM_POKE_BALL
+    .hword ITEM_GREAT_BALL
+    .hword ITEM_ULTRA_BALL
+    .hword ITEM_POTION
+    .hword ITEM_SUPER_POTION
+    .hword ITEM_HYPER_POTION
+    .hword ITEM_POKE_DOLL
+    .hword ITEM_ANTIDOTE
+    .hword ITEM_BURN_HEAL
+    .hword ITEM_ICE_HEAL
+    .hword ITEM_AWAKENING
+    .hword ITEM_PARALYZE_HEAL
+    .hword ITEM_REPEL
+    .hword ITEM_SUPER_REPEL
+    .hword ITEM_REVIVE
+    .hword ITEM_ESCAPE_ROPE
+    .hword ITEM_NONE
+
+SixBadges_Stock:
+    .hword ITEM_POKE_BALL
+    .hword ITEM_GREAT_BALL
+    .hword ITEM_ULTRA_BALL
+    .hword ITEM_POTION
+    .hword ITEM_SUPER_POTION
+    .hword ITEM_HYPER_POTION
+    .hword ITEM_POKE_DOLL
+    .hword ITEM_ANTIDOTE
+    .hword ITEM_BURN_HEAL
+    .hword ITEM_ICE_HEAL
+    .hword ITEM_AWAKENING
+    .hword ITEM_PARALYZE_HEAL
+    .hword ITEM_FULL_HEAL
+    .hword ITEM_REPEL
+    .hword ITEM_SUPER_REPEL
+    .hword ITEM_REVIVE
+    .hword ITEM_ESCAPE_ROPE
+    .hword ITEM_NONE
+
+SevenBadges_Stock:
+    .hword ITEM_POKE_BALL
+    .hword ITEM_GREAT_BALL
+    .hword ITEM_ULTRA_BALL
+    .hword ITEM_POTION
+    .hword ITEM_SUPER_POTION
+    .hword ITEM_HYPER_POTION
+    .hword ITEM_MAX_POTION
+    .hword ITEM_POKE_DOLL
+    .hword ITEM_ANTIDOTE
+    .hword ITEM_BURN_HEAL
+    .hword ITEM_ICE_HEAL
+    .hword ITEM_AWAKENING
+    .hword ITEM_PARALYZE_HEAL
+    .hword ITEM_FULL_HEAL
+    .hword ITEM_REPEL
+    .hword ITEM_SUPER_REPEL
+    .hword ITEM_MAX_REPEL
+    .hword ITEM_REVIVE
+    .hword ITEM_ESCAPE_ROPE
+    .hword ITEM_NONE
+
+EightBadges_Stock:
+    .hword ITEM_POKE_BALL
+    .hword ITEM_GREAT_BALL
+    .hword ITEM_ULTRA_BALL
+    .hword ITEM_POTION
+    .hword ITEM_SUPER_POTION
+    .hword ITEM_HYPER_POTION
+    .hword ITEM_MAX_POTION
+    .hword ITEM_FULL_RESTORE
+    .hword ITEM_POKE_DOLL
+    .hword ITEM_ANTIDOTE
+    .hword ITEM_BURN_HEAL
+    .hword ITEM_ICE_HEAL
+    .hword ITEM_AWAKENING
+    .hword ITEM_PARALYZE_HEAL
+    .hword ITEM_FULL_HEAL
+    .hword ITEM_REPEL
+    .hword ITEM_SUPER_REPEL
+    .hword ITEM_MAX_REPEL
+    .hword ITEM_REVIVE
+    .hword ITEM_ESCAPE_ROPE
+    .hword ITEM_NONE
+    
+EventScript_EndMart:
+    msgbox gText_Common_PokemartEnd MSG_NORMAL
+    goto EventScript_End
+
+EventScript_End:
+    release
+    end

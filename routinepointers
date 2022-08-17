@@ -272,3 +272,12 @@ FieldUseFunc_VsSeeker 887A054
 CB2_PartyMenuFromField 801D7FC
 CB2_ItemMenuFromField 801D800
 #endif
+
+##Enable Ability Capusle, pointing to location in our ROM
+FieldUseFunc_AbilityCapsule 87343A8
+FieldUseFunc_FormChangeItem 873371C
+FieldUseFunc_FormChangeItem 8734C14
+FieldUseFunc_FormChangeItem 8734C40
+
+##HQ Sound Mixer
+SoundMainRAM 81DD0B4

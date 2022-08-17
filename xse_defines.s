@@ -11,6 +11,7 @@
 .equ CAMERA_END, 0x114
 .equ SetUpTrainerMovement, 0x13A
 
+.equ ALLEVENTS, 0x0
 .equ CAMERA, 0x7F
 .equ FOLLOWER, 0xFE
 .equ PLAYER, 0xFF
@@ -173,6 +174,7 @@
 .equ FIVE_MULTICHOICE_OPTIONS, 0x23
 .equ SIX_MULTICHOICE_OPTIONS, 0x24
 .equ SEVEN_MULTICHOICE_OPTIONS, 0x25
+.equ MULTICHOICE_SELECTION, 0x40FE
 
 .equ SCROLL_MULTICHOICE_NUM, 0x8000
 .equ SCROLL_MULTICHOICE_HEIGHT, 0x8001
@@ -220,3 +222,10 @@
 .equ MAP_SCRIPT_ON_DIVE_WARP, 6
 .equ MAP_SCRIPT_ON_RETURN_TO_FIELD, 7
 .equ LEVEL_SCRIPT_TERMIN, 0
+
+@ Common movements to apply
+m_LookDown: .byte look_down, end_m
+m_LookUp: .byte look_up, end_m
+m_LookLeft: .byte look_left, end_m
+m_LookRight: .byte look_right, end_m
+m_Surprise: .byte exclaim, end_m

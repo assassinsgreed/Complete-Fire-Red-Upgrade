@@ -99,8 +99,6 @@ void __attribute__((long_call)) MakeObjectTemplateFromEventObjectGraphicsInfo(u1
 u8 __attribute__((long_call)) GetMoveDirectionAnimNum(u8 direction);
 u8 __attribute__((long_call)) GetMoveDirectionFastAnimNum(u8 direction);
 void __attribute__((long_call)) InitEventObjectPalettes(u8 palSlot);
-void __attribute__((long_call)) PatchObjectPalette(u16, u8);
-u8 __attribute__((long_call)) FindEventObjectPaletteIndexByTag(u16 tag);
 struct EventObjectTemplate* __attribute__((long_call)) FindEventObjectTemplateByLocalId(u8 localId, struct EventObjectTemplate* templates, u8 count);
 u8 __attribute__((long_call)) AddPseudoEventObject(u16, void (*)(struct Sprite *), s16 x, s16 y, u8 subpriority);
 void __attribute__((long_call)) SetObjectSubpriorityByZCoord(u8, struct Sprite *, u8);
@@ -131,6 +129,8 @@ void __attribute__((long_call)) DoShadowFieldEffect(struct EventObject*);
 void __attribute__((long_call)) DoGroundEffects_OnBeginStep(struct EventObject* eventObject, struct Sprite *sprite);
 void __attribute__((long_call)) DoGroundEffects_OnFinishStep(struct EventObject* eventObject, struct Sprite *sprite);
 
+u8 __attribute__((long_call)) TryLoadObjectPalette(const struct SpritePalette* spritePalette);
+void __attribute__((long_call)) ApplyGlobalFieldPaletteTint(u8 paletteIdx);
 /*
 extern const struct SpriteFrameImage gEventObjectPicTable_PechaBerryTree[];
 extern const struct OamData gEventObjectBaseOam_32x8;

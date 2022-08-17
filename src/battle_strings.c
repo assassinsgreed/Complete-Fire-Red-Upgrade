@@ -669,12 +669,12 @@ u32 BattleStringExpandPlaceholders(const u8* src, u8* dst)
 				}
 				else
 				{
-					u8 class = gTrainers[gTrainerBattleOpponent_A].trainerClass;
+					u8 class = GET_TRAINER(gTrainerBattleOpponent_A).trainerClass;
 					class += 0; //So no unusued variable is displayed
 					#ifdef OPEN_WORLD_TRAINERS
 						if (gTrainerBattleOpponent_A < DYNAMIC_TRAINER_LIMIT && class != CLASS_TEAM_ROCKET)
 						{
-							toCpy = GetOpenWorldTrainerName(gTrainers[gTrainerBattleOpponent_A].gender);
+							toCpy = GetOpenWorldTrainerName(GET_TRAINER(gTrainerBattleOpponent_A).gender);
 							break;
 						}
 					#endif
@@ -689,7 +689,7 @@ u32 BattleStringExpandPlaceholders(const u8* src, u8* dst)
 						else
 					#endif
 
-					toCpy = gTrainers[gTrainerBattleOpponent_A].trainerName;
+					toCpy = GET_TRAINER(gTrainerBattleOpponent_A).trainerName;
 				}
 				break;
 			case B_TXT_LINK_PLAYER_NAME: // link player name
@@ -809,7 +809,6 @@ u32 BattleStringExpandPlaceholders(const u8* src, u8* dst)
 				else
 					toCpy = GetTrainerClassName(gTrainers[VarGet(VAR_SECOND_OPPONENT)].trainerClass, text);
 
-
 				if (toCpy[3] == 0x8 || toCpy[3] == 0x9) //Expanded Trainer Class Names
 					toCpy = T1_READ_PTR(toCpy);
 
@@ -828,12 +827,12 @@ u32 BattleStringExpandPlaceholders(const u8* src, u8* dst)
 				}
 				else
 				{
-					u8 class = gTrainers[VarGet(VAR_SECOND_OPPONENT)].trainerClass;
+					u8 class = GET_TRAINER(VarGet(VAR_SECOND_OPPONENT)).trainerClass;
 					class += 0;
 					#ifdef OPEN_WORLD_TRAINERS
 						if (VarGet(VAR_SECOND_OPPONENT) < DYNAMIC_TRAINER_LIMIT && class != CLASS_TEAM_ROCKET)
 						{
-							toCpy = GetOpenWorldTrainerName(gTrainers[VarGet(VAR_SECOND_OPPONENT)].gender);
+							toCpy = GetOpenWorldTrainerName(GET_TRAINER(VarGet(VAR_SECOND_OPPONENT)).gender);
 							break;
 						}
 					#endif
@@ -848,7 +847,7 @@ u32 BattleStringExpandPlaceholders(const u8* src, u8* dst)
 						else
 					#endif
 
-					toCpy = gTrainers[VarGet(VAR_SECOND_OPPONENT)].trainerName;
+					toCpy = GET_TRAINER(VarGet(VAR_SECOND_OPPONENT)).trainerName;
 				}
 				break;
 			case B_TXT_TRAINER2_LOSE_TEXT:

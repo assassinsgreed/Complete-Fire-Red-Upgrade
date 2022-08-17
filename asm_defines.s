@@ -3400,14 +3400,14 @@
 .equ ITEM_TM48, 336
 .equ ITEM_TM49, 337
 .equ ITEM_TM50, 338
-.equ ITEM_HM01, 339
-.equ ITEM_HM02, 340
-.equ ITEM_HM03, 341
-.equ ITEM_HM04, 342
-.equ ITEM_HM05, 343
-.equ ITEM_HM06, 344
-.equ ITEM_HM07, 345
-.equ ITEM_HM08, 346
+.equ ITEM_HM01, 437
+.equ ITEM_HM02, 438
+.equ ITEM_HM03, 439
+.equ ITEM_HM04, 440
+.equ ITEM_HM05, 442
+.equ ITEM_HM06, 444
+.equ ITEM_HM07, 441 // Was Flash originally
+.equ ITEM_HM08, 443 // Was Dive originally
 
 @;New TMs
 .equ ITEM_TM51, 339

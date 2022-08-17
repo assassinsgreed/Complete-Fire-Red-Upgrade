@@ -31,15 +31,15 @@ end_battle.c
 
 const u16 gEndBattleFlagClearTable[] =
 {
-#ifdef FLAG_CATCH_TRAINERS_POKEMON
-	FLAG_CATCH_TRAINERS_POKEMON,
-#endif
+// #ifdef FLAG_CATCH_TRAINERS_POKEMON
+// 	FLAG_CATCH_TRAINERS_POKEMON,
+// #endif
 #ifdef FLAG_ACTIVATE_TUTORIAL
 	FLAG_ACTIVATE_TUTORIAL,
 #endif
-#ifdef FLAG_INVERSE
-	FLAG_INVERSE,
-#endif
+// #ifdef FLAG_INVERSE
+// 	FLAG_INVERSE,
+// #endif
 #ifdef FLAG_SKY_BATTLE
 	FLAG_SKY_BATTLE,
 #endif
@@ -67,9 +67,9 @@ const u16 gEndBattleFlagClearTable[] =
 #ifdef FLAG_DOUBLE_WILD_BATTLE
 	FLAG_DOUBLE_WILD_BATTLE,
 #endif
-#ifdef FLAG_SHINY_CREATION
-	FLAG_SHINY_CREATION,
-#endif
+// #ifdef FLAG_SHINY_CREATION
+// 	FLAG_SHINY_CREATION,
+// #endif
 #ifdef FLAG_CAMOMONS_BATTLE
 	FLAG_CAMOMONS_BATTLE,
 #endif
@@ -142,9 +142,9 @@ const u16 gEndBattleFlagClearTable[] =
 #ifdef FLAG_KEEP_CONSUMABLE_ITEMS
 	FLAG_KEEP_CONSUMABLE_ITEMS,
 #endif
-#ifdef FLAG_HIDDEN_ABILITY
-	FLAG_HIDDEN_ABILITY,
-#endif
+// #ifdef FLAG_HIDDEN_ABILITY
+// 	FLAG_HIDDEN_ABILITY,
+// #endif
 #ifdef FLAG_GIGANTAMAXABLE
 	FLAG_GIGANTAMAXABLE,
 #endif
@@ -218,7 +218,7 @@ void HandleEndTurn_BattleWon(void)
 		}
 
 	VICTORY_MUSIC_SELECTION:
-		switch (gTrainers[id].trainerClass) {
+		switch (GET_TRAINER(id).trainerClass) {
 		#ifndef UNBOUND //Change this part
 			case CLASS_LEADER:
 			case CLASS_ELITE_4:
