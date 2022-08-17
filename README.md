@@ -1,5 +1,7 @@
 # Complete Fire Red Upgrade
 
+# This branch is deprecated, please use the dev branch
+
 ## Fork Notes
 ### Trainer Tables & Palette Swapper Feature Branch
 This fork makes use of feature branches from Stevebel's fork for dynamically inserting trainers and overworld palettes.
