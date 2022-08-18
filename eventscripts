@@ -87,6 +87,9 @@ npc 6 2 5 EventScript_RhodanziTrainerSchool_AdvancedCourse_TMsStudent
 npc 6 2 6 EventScript_RhodanziTrainerSchool_AdvancedCourse_HMsStudent
 npc 6 2 7 EventScript_RhodanziTrainerSchool_AdvancedCourse_DexNavStudent
 npc 6 2 8 EventScript_RhodanziTrainerSchool_AdvancedCourse_BadgeObedienceStudent
+npc 6 2 9 EventScript_RhodanziTrainerSchool_AdvancedCourse_LastPokeball
+npc 6 2 10 EventScript_RhodanziTrainerSchool_AdvancedCourse_QuickRun
+npc 6 2 11 EventScript_RhodanziTrainerSchool_AdvancedCourse_RegisterMultipleItems
 
 ## NPC Houses
 npc 6 4 0 EventScript_RhodanziNPCHouses_Fisherman
