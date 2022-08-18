@@ -252,3 +252,18 @@ EventScript_RhodanziTrainerSchool_AdvancedCourse_DexNavStudent:
 EventScript_RhodanziTrainerSchool_AdvancedCourse_BadgeObedienceStudent:
     npcchat2 0x9 m_LookUp gText_RhodanziTrainerSchool_AdvancedCourse_BadgeObedienceStudent
     end
+
+.global EventScript_RhodanziTrainerSchool_AdvancedCourse_LastPokeball
+EventScript_RhodanziTrainerSchool_AdvancedCourse_LastPokeball:
+    npcchat2 0xA m_LookUp gText_RhodanziTrainerSchool_AdvancedCourse_LastPokeball
+    end
+
+.global EventScript_RhodanziTrainerSchool_AdvancedCourse_QuickRun
+EventScript_RhodanziTrainerSchool_AdvancedCourse_QuickRun:
+    npcchat2 0xB m_LookUp gText_RhodanziTrainerSchool_AdvancedCourse_QuickRun
+    end
+
+.global EventScript_RhodanziTrainerSchool_AdvancedCourse_RegisterMultipleItems
+EventScript_RhodanziTrainerSchool_AdvancedCourse_RegisterMultipleItems:
+    npcchat gText_RhodanziTrainerSchool_AdvancedCourse_RegisterMultipleItems
+    end
