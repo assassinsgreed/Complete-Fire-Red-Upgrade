@@ -24,7 +24,7 @@ if (not ("paths" in config) or not (config["paths"])) \
     or (not ("CFRUDir" in config["paths"]) or not (os.path.isdir(config["paths"]["CFRUDir"]))) \
     or (not ("DPEDir" in config["paths"]) or not (os.path.isdir(config["paths"]["DPEDir"]))) \
     or (not ("EditedGbaRom" in config["paths"]) or not (os.path.isfile(config["paths"]["EditedGbaRom"]))) \
-    or (not ("VisualBoyAdvanceExe" in config["paths"]) or not (os.path.isfile(config["paths"]["VisualBoyAdvanceExe"]))):
+    or (not ("MGBAExe" in config["paths"]) or not (os.path.isfile(config["paths"]["MGBAExe"]))):
     print(ERROR_COLOR + "config.json is poorly formatted, or missing values required for script! Exiting with status code: 2")
     exit (1)
 
@@ -32,7 +32,7 @@ configFile.close()
 CFRU_PATH = config["paths"]["CFRUDir"]
 DPE_PATH = config["paths"]["DPEDir"]
 EDITED_GBA_PATH = config["paths"]["EditedGbaRom"]
-VBA_PATH = config["paths"]["VisualBoyAdvanceExe"]
+MGBA_PATH = config["paths"]["MGBAExe"]
 
 # Begin build process
 print("Config found! Proceeding to build Test.gba...")
@@ -58,4 +58,4 @@ if (result != 0):
     exit(4)
 
 print(SUCCESS_COLOR + "Success! Launching built Test.gba in VBA. Happy Testing :)")
-call([VBA_PATH, CFRU_PATH + "/test.gba"])
+call([MGBA_PATH, CFRU_PATH + "/test.gba"])
