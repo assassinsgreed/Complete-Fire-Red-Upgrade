@@ -181,15 +181,15 @@ static bool8 ItemAlreadyOnTeam(const u16 item, const u8 partySize, const item_t*
 static void AdjustTypesForMegas(const u16 species, const u16 item, u8* const type1, u8* const type2);
 static bool8 TeamNotAllSameType(const u16 species, const u16 item, const u8 partySize, const species_t* const speciesArray, const item_t* const itemArray);
 static bool8 TooManyLegendariesOnGSCupTeam(const u16 species, const u8 partySize, const species_t* const speciesArray);
-static bool8 PokemonTierBan(const u16 species, const u16 item, const struct BattleTowerSpread* const spread, const struct Pokemon* const mon, const u8 tier, const u8 checkFromLocationType);
 static bool8 IsPokemonBannedBasedOnStreak(u16 species, u16 item, u16* speciesArray, u8 monsCount, u16 trainerId, u8 tier, bool8 forPlayer);
 static bool8 TeamDoesntHaveSynergy(const struct BattleTowerSpread* const spread, const struct TeamBuilder* const builder, bool8 forPlayer);
 static void AddPlayerMoveTypesToBuilder(struct TeamBuilder* builder, u8 monsCount);
 static void UpdateBuilderAfterSpread(struct TeamBuilder* builder, const struct BattleTowerSpread* spread, u16 species, u8 ability, u16 item, u8 itemEffect, u32 partyId);
 static bool8 CareAboutTeamWeaknessesInTier(u8 tier);
 static bool8 IsSpreadWeakToType(u8 moveType, u8 defType1, u8 defType2, u8 ability);
-static u16 GivePlayerFrontierMonGivenSpecies(const u16 species, const struct BattleTowerSpread* const spreadTable, const u16 numSpreads);
-static const struct BattleTowerSpread* GetSpreadBySpecies(const u16 species, const struct BattleTowerSpread* const spreads, const u16 numSpreads);
+static u16 GivePlayerFrontierMonGivenSpecies(const u16 species, const struct BattleTowerSpread* const spreadTable, const u16 spreadCount);
+static const struct BattleTowerSpread* GetSpreadBySpecies(const u16 species, const struct BattleTowerSpread* const spreads, const u16 spreadCount);
+static void TryGetSpecialSpeciesSpreadTable(u16 species, const struct BattleTowerSpread** table, u16* spreadCount);
 static const struct BattleTowerSpread* TryAdjustSpreadForSpecies(const struct BattleTowerSpread* originalSpread);
 static u16 TryAdjustAestheticSpecies(u16 species);
 static void SwapMons(struct Pokemon* party, u8 i, u8 j);
@@ -556,58 +556,61 @@ void sp067_GenerateRandomBattleTowerTeam(void)
 //@Returns: If the Pokemon was added or not.
 u16 sp068_GivePlayerFrontierMonGivenSpecies(void)
 {
-	u16 numSpreads;
-	u16 val;
-	const struct BattleTowerSpread* spreads;
-
 	u16 species = Var8000;
 
-	switch (Var8001) {
-		case 0:
-		default:
-			numSpreads = TOTAL_SPREADS;
-			spreads = gFrontierSpreads;
-			break;
-		case 1:
-			numSpreads = TOTAL_LITTLE_CUP_SPREADS;
-			spreads = gLittleCupSpreads;
-			break;
-		case 2:
-			numSpreads = TOTAL_MIDDLE_CUP_SPREADS;
-			spreads = gMiddleCupSpreads;
-			break;
-		case 3:
-			numSpreads = TOTAL_LEGENDARY_SPREADS;
-			spreads = gFrontierLegendarySpreads;
-			break;
-		case 4: //Any Spread
-			numSpreads = TOTAL_SPREADS;
-			spreads = gFrontierSpreads;
-			val = GivePlayerFrontierMonGivenSpecies(species, spreads, numSpreads);
+	u16 spreadCount = 0;
+	const struct BattleTowerSpread* spreads = NULL;
+	TryGetSpecialSpeciesSpreadTable(species, &spreads, &spreadCount);
 
-			if (val != 0xFFFF)
-				return val;
+	if (spreads == NULL) //No special table like Arceus or Pikachu was found
+	{
+		switch (Var8001) {
+			case 0:
+			default:
+				spreadCount = TOTAL_SPREADS;
+				spreads = gFrontierSpreads;
+				break;
+			case 1:
+				spreadCount = TOTAL_LITTLE_CUP_SPREADS;
+				spreads = gLittleCupSpreads;
+				break;
+			case 2:
+				spreadCount = TOTAL_MIDDLE_CUP_SPREADS;
+				spreads = gMiddleCupSpreads;
+				break;
+			case 3:
+				spreadCount = TOTAL_LEGENDARY_SPREADS;
+				spreads = gFrontierLegendarySpreads;
+				break;
+			case 4: //Any Spread
+				spreadCount = TOTAL_SPREADS;
+				spreads = gFrontierSpreads;
+				u16 val = GivePlayerFrontierMonGivenSpecies(species, spreads, spreadCount);
 
-			numSpreads = TOTAL_LEGENDARY_SPREADS;
-			spreads = gFrontierLegendarySpreads;
-			val = GivePlayerFrontierMonGivenSpecies(species, spreads, numSpreads);
+				if (val != 0xFFFF)
+					return val;
 
-			if (val != 0xFFFF)
-				return val;
+				spreadCount = TOTAL_LEGENDARY_SPREADS;
+				spreads = gFrontierLegendarySpreads;
+				val = GivePlayerFrontierMonGivenSpecies(species, spreads, spreadCount);
 
-			numSpreads = TOTAL_MIDDLE_CUP_SPREADS;
-			spreads = gMiddleCupSpreads;
-			val = GivePlayerFrontierMonGivenSpecies(species, spreads, numSpreads);
+				if (val != 0xFFFF)
+					return val;
 
-			if (val != 0xFFFF)
-				return val;
+				spreadCount = TOTAL_MIDDLE_CUP_SPREADS;
+				spreads = gMiddleCupSpreads;
+				val = GivePlayerFrontierMonGivenSpecies(species, spreads, spreadCount);
 
-			numSpreads = TOTAL_LITTLE_CUP_SPREADS;
-			spreads = gLittleCupSpreads;
-			break;
+				if (val != 0xFFFF)
+					return val;
+
+				spreadCount = TOTAL_LITTLE_CUP_SPREADS;
+				spreads = gLittleCupSpreads;
+				break;
+		}
 	}
 
-	return GivePlayerFrontierMonGivenSpecies(species, spreads, numSpreads);
+	return GivePlayerFrontierMonGivenSpecies(species, spreads, spreadCount);
 }
 
 //@Details: Add a random Pokemon battleable in the given tier.
@@ -631,7 +634,7 @@ void sp0E7_CreateFrontierOpponentTeamBeforeBattle(void)
 u16 GiveRandomFrontierMonByTier(u8 side, u8 tier, u16 spreadType)
 {
 	u8 level;
-	u16 numSpreads;
+	u16 spreadCount;
 	struct Pokemon mon;
 	const struct BattleTowerSpread* spread;
 	const struct BattleTowerSpread* spreads;
@@ -640,28 +643,28 @@ u16 GiveRandomFrontierMonByTier(u8 side, u8 tier, u16 spreadType)
 		case 0:
 		default:
 			level = 50;
-			numSpreads = TOTAL_SPREADS;
+			spreadCount = TOTAL_SPREADS;
 			spreads = gFrontierSpreads;
 			tier = BATTLE_FACILITY_STANDARD;
 			break;
 
 		case 1: //Legendary Pokemon
 			level = 50;
-			numSpreads = TOTAL_LEGENDARY_SPREADS;
+			spreadCount = TOTAL_LEGENDARY_SPREADS;
 			spreads = gFrontierLegendarySpreads;
 			tier = BATTLE_FACILITY_NO_RESTRICTIONS;
 			break;
 
 		case 2: //Little Cup
 			level = 5;
-			numSpreads = TOTAL_LITTLE_CUP_SPREADS;
+			spreadCount = TOTAL_LITTLE_CUP_SPREADS;
 			spreads = gLittleCupSpreads;
 			tier = BATTLE_FACILITY_LITTLE_CUP;
 			break;
 
 		case 3: //Middle Cup
 			level = 50;
-			numSpreads = TOTAL_MIDDLE_CUP_SPREADS;
+			spreadCount = TOTAL_MIDDLE_CUP_SPREADS;
 			spreads = gMiddleCupSpreads;
 			tier = BATTLE_FACILITY_MIDDLE_CUP;
 			break;
@@ -669,7 +672,7 @@ u16 GiveRandomFrontierMonByTier(u8 side, u8 tier, u16 spreadType)
 
 	do
 	{
-		spread = TryAdjustSpreadForSpecies(&spreads[Random() % numSpreads]);
+		spread = TryAdjustSpreadForSpecies(&spreads[Random() % spreadCount]);
 	} while (IsPokemonBannedBasedOnStreak(spread->species, spread->item, NULL, 0, 0, tier, TRUE)
 		  || PokemonTierBan(spread->species, spread->item, spread, NULL, tier, CHECK_BATTLE_TOWER_SPREADS));
 
@@ -2081,7 +2084,7 @@ static u8 BuildFrontierParty(struct Pokemon* const party, const u16 trainerId, c
 			if (ability == ABILITY_WONDERGUARD && IsRandomBattleTowerBattle())
 				continue; //Don't allow Wonder Guard to appear when you have no control over the Pokemon you get
 
-			#if (!defined BATTLE_TOWER_DEMO && defined FLAG_GEN_8_PLACED_IN_GAME)
+			#ifdef FLAG_GEN_8_PLACED_IN_GAME
 			if (species >= SPECIES_GROOKEY && species < NUM_SPECIES_GEN_8
 			&& !FlagGet(FLAG_GEN_8_PLACED_IN_GAME))
 				continue; //Only allow Gen 8 if they've been unlocked
@@ -2107,11 +2110,7 @@ static u8 BuildFrontierParty(struct Pokemon* const party, const u16 trainerId, c
 		CreateFrontierMon(&party[i], level, spread, trainerId, firstTrainer ^ 1, trainerGender, forPlayer);
 	}
 
-	if (forPlayer)
-		PostProcessTeam(gPlayerParty, builder);
-	else
-		PostProcessTeam(gEnemyParty, builder);
-
+	PostProcessTeam(party, builder);
 	Free(builder);
 
 	if (!forPlayer) //Probably best to put these checks somewhere else
@@ -2646,452 +2645,6 @@ static bool8 TooManyLegendariesOnGSCupTeam(const u16 species, const u8 partySize
 	}
 
 	return FALSE;
-}
-
-static bool8 PokemonTierBan(const u16 species, const u16 item, const struct BattleTowerSpread* const spread, const struct Pokemon* const mon, const u8 tier, const u8 checkFromLocationType)
-{
-	u32 i;
-	u8 ability;
-	const u16* moveLoc;
-
-	if (species == SPECIES_EGG
-	#ifdef SPECIES_ETERNATUS_ETERNAMAX
-	|| species == SPECIES_ETERNATUS_ETERNAMAX
-	#endif
-	) //Hackmon
-		return TRUE;
-
-	u16 battleFormat = VarGet(VAR_BATTLE_FACILITY_BATTLE_TYPE);
-
-	switch (tier) {
-		case BATTLE_FACILITY_STANDARD:
-		case BATTLE_FACILITY_MEGA_BRAWL:
-		case BATTLE_FACILITY_DYNAMAX_STANDARD:
-			//Load correct ability
-			switch (checkFromLocationType) {
-				case CHECK_BATTLE_TOWER_SPREADS:
-					moveLoc = spread->moves;
-					LOAD_TIER_CHECKING_ABILITY;
-					break;
-				default:
-					moveLoc = mon->moves;
-					ability = GetMonAbility(mon);
-			}
-
-			if (gSpecialSpeciesFlags[species].battleTowerStandardBan
-			||  CheckTableForItem(item, gBattleTowerStandard_ItemBanList)
-			|| (ability == ABILITY_BATTLEBOND && tier != BATTLE_FACILITY_MEGA_BRAWL && BATTLE_FACILITY_NUM != IN_RING_CHALLENGE)) //Battle Bond is banned in Standard
-				return TRUE;
-
-			if (BATTLE_FACILITY_NUM == IN_RING_CHALLENGE) //1v1
-			{
-				#ifdef UNBOUND
-				if (species == SPECIES_REGIGIGAS && ability == ABILITY_STALL && !FlagGet(FLAG_ABILITY_RANDOMIZER)) //Too OP 1v1
-					return TRUE;
-				#endif
-
-				if (item == ITEM_FOCUS_SASH) //No Focus Sash in Ring Challenge
-					return TRUE;
-
-				//Check Banned Moves
-				for (i = 0; i < MAX_MON_MOVES; ++i)
-				{
-					if (CheckTableForMove(moveLoc[i], gRingChallenge_MoveBanList))
-						return TRUE;
-				}
-			}
-			break;
-
-		case BATTLE_FACILITY_OU:
-		case BATTLE_FACILITY_NATIONAL_DEX_OU:
-		STANDARD_OU_CHECK:
-		//For OU, there's a species, item, ability, and move ban list
-			//Load correct ability and moves
-			switch (checkFromLocationType) {
-				case CHECK_BATTLE_TOWER_SPREADS:
-					moveLoc = spread->moves;
-					LOAD_TIER_CHECKING_ABILITY;
-					break;
-				default:
-					moveLoc = mon->moves;
-					ability = GetMonAbility(mon);
-			}
-
-			if (IsFrontierSingles(battleFormat))
-			{
-				if (tier == BATTLE_FACILITY_NATIONAL_DEX_OU)
-				{
-					if (gSpecialSpeciesFlags[species].smogonNationalDexOUBan
-					||  CheckTableForItem(item, gSmogonNationalDexOU_ItemBanList))
-						return TRUE;
-				}
-				else //Gen 7 OU
-				{
-					if (gSpecialSpeciesFlags[species].smogonOUBan
-					||  CheckTableForItem(item, gSmogonOU_ItemBanList))
-						return TRUE;
-				}
-
-				//Check Banned Abilities
-				if (CheckTableForAbility(ability, gSmogonOU_AbilityBanList))
-					return TRUE;
-
-				//Check Banned Moves
-				for (i = 0; i < MAX_MON_MOVES; ++i)
-				{
-					if (CheckTableForMove(moveLoc[i], gSmogon_MoveBanList)
-					|| moveLoc[i] == MOVE_BATONPASS)
-						return TRUE;
-				}
-			}
-			else //Double Battles
-			{
-				bool8 knowsRecycle = FALSE;
-				bool8 knowsPainSplit = FALSE;
-				bool8 knowsFling = FALSE;
-				bool8 knowsHealingMove = FALSE;
-
-				if (gSpecialSpeciesFlags[species].smogonOUDoublesBan
-				||  CheckTableForItem(item, gSmogonOUDoubles_ItemBanList))
-					return TRUE;
-
-				//Check Banned Abilities
-				if (CheckTableForAbility(ability, gSmogonOUDoubles_AbilityBanList))
-					return TRUE;
-
-				//Check Banned Moves
-				for (i = 0; i < MAX_MON_MOVES; ++i)
-				{
-					if (CheckTableForMove(moveLoc[i], gSmogon_MoveBanList)
-					||  CheckTableForMove(moveLoc[i], gSmogonOUDoubles_MoveBanList))
-						return TRUE;
-
-					switch (moveLoc[i]) {
-						case MOVE_HEALPULSE:
-						case MOVE_MILKDRINK:
-						case MOVE_MOONLIGHT:
-						case MOVE_MORNINGSUN:
-						case MOVE_RECOVER:
-						case MOVE_ROOST:
-						case MOVE_SLACKOFF:
-						case MOVE_SOFTBOILED:
-						case MOVE_WISH:
-							knowsHealingMove = TRUE;
-							break;
-						case MOVE_RECYCLE:
-							knowsRecycle = TRUE;
-							break;
-						case MOVE_PAINSPLIT:
-							knowsPainSplit = TRUE;
-							break;
-						case MOVE_FLING:
-							knowsFling = TRUE;
-							break;
-					}
-
-					if (knowsRecycle && ItemId_GetHoldEffect(item) == ITEM_EFFECT_RESTORE_PP) //Leppa Berry
-					{
-						if (knowsHealingMove
-						||  knowsPainSplit
-						||  knowsFling)
-							return TRUE;
-					}
-				}
-			}
-			break;
-
-		case BATTLE_FACILITY_UBER:
-		case BATTLE_FACILITY_UBER_CAMOMONS:
-		STANDARD_UBER_CHECK:
-		//For Ubers ban Rayquaza with Dragon Ascent (handled in mega.c), Moody, and some moves
-			switch (checkFromLocationType) {
-				case CHECK_BATTLE_TOWER_SPREADS:
-					moveLoc = spread->moves;
-					LOAD_TIER_CHECKING_ABILITY;
-					break;
-				default:
-					moveLoc = mon->moves;
-					ability = GetMonAbility(mon);
-			}
-
-			//Check Banned Abilities
-			if (ability == ABILITY_MOODY)
-				return 1;
-
-			//Check Banned Moves
-			for (i = 0; i < MAX_MON_MOVES; ++i)
-			{
-				if (CheckTableForMove(moveLoc[i], gSmogon_MoveBanList))
-					return TRUE;
-			}
-			break;
-
-		case BATTLE_FACILITY_LITTLE_CUP:
-		case BATTLE_FACILITY_LC_CAMOMONS:
-			if (!gSpecialSpeciesFlags[species].smogonLittleCup
-			||  CheckTableForItem(item, gSmogonLittleCup_ItemBanList))
-				return TRUE; //Banned
-
-			if (checkFromLocationType == CHECK_BATTLE_TOWER_SPREADS)
-				moveLoc = spread->moves;
-			else
-				moveLoc = mon->moves;
-
-			for (i = 0; i < MAX_MON_MOVES; ++i)
-			{
-				if (CheckTableForMove(moveLoc[i], gSmogonLittleCup_MoveBanList))
-					return TRUE;
-			}
-			break;
-
-		case BATTLE_FACILITY_MIDDLE_CUP:
-		case BATTLE_FACILITY_MC_CAMOMONS:
-			if (IsFrontierSingles(battleFormat)) //Middle Cup in Singles
-			{
-				if (!gSpecialSpeciesFlags[species].middleCup
-				||   CheckTableForItem(item, gMiddleCup_ItemBanList))
-					return TRUE; //Banned
-
-				//Load correct ability and moves
-				switch (checkFromLocationType) {
-					case CHECK_BATTLE_TOWER_SPREADS:
-						LOAD_TIER_CHECKING_ABILITY;
-						break;
-					default:
-						ability = GetMonAbility(mon);
-				}
-
-				//Check Banned Abilities
-				if (CheckTableForAbility(ability, gMiddleCup_AbilityBanList))
-					return TRUE;
-			}
-			else //GS Cup
-			{
-				if (CheckTableForItem(item, gBattleTowerStandard_ItemBanList))
-					return TRUE;
-
-				if (gSpecialSpeciesFlags[species].battleTowerStandardBan
-				&& !gSpecialSpeciesFlags[species].gsCupLegendaries)
-					return TRUE;
-			}
-			break;
-
-		case BATTLE_FACILITY_MONOTYPE:
-		//For Monotype, there's a species, item, ability, and move ban list
-			if (gSpecialSpeciesFlags[species].smogonMonotypeBan
-			||  CheckTableForItem(item, gSmogonMonotype_ItemBanList))
-				return TRUE;
-
-			//Load correct ability and moves
-			switch (checkFromLocationType) {
-				case CHECK_BATTLE_TOWER_SPREADS:
-					moveLoc = spread->moves;
-					LOAD_TIER_CHECKING_ABILITY;
-					break;
-				default:
-					moveLoc = mon->moves;
-					ability = GetMonAbility(mon);
-			}
-
-			//Check Banned Abilities
-			if (CheckTableForAbility(ability, gSmogonMonotype_AbilityBanList))
-				return TRUE;
-
-			//Check Banned Moves
-			for (i = 0; i < MAX_MON_MOVES; ++i)
-			{
-				if (CheckTableForMove(moveLoc[i], gSmogon_MoveBanList)
-				|| moveLoc[i] == MOVE_BATONPASS
-				|| moveLoc[i] == MOVE_SWAGGER)
-					return TRUE;
-			}
-			break;
-
-		case BATTLE_FACILITY_CAMOMONS:
-			if (gSpecialSpeciesFlags[species].smogonCamomonsBan)
-				return TRUE;
-
-			goto STANDARD_OU_CHECK;
-
-		case BATTLE_FACILITY_SCALEMONS:
-			if (gSpecialSpeciesFlags[species].smogonScalemonsBan
-			||  CheckTableForItem(item, gSmogonScalemons_ItemBanList))
-				return TRUE;
-
-			//Load correct ability and moves
-			switch (checkFromLocationType) {
-				case CHECK_BATTLE_TOWER_SPREADS:
-					LOAD_TIER_CHECKING_ABILITY;
-					break;
-				default:
-					ability = GetMonAbility(mon);
-			}
-
-			//Check Banned Abilities
-			if (CheckTableForAbility(ability, gSmogonScalemons_AbilityBanList))
-				return TRUE;
-
-			goto STANDARD_UBER_CHECK;
-
-		case BATTLE_FACILITY_350_CUP:
-			if (gSpecialSpeciesFlags[species].smogon350CupBan
-			||  CheckTableForItem(item, gSmogon350Cup_ItemBanList))
-				return TRUE;
-
-			//Load correct ability and moves
-			switch (checkFromLocationType) {
-				case CHECK_BATTLE_TOWER_SPREADS:
-					LOAD_TIER_CHECKING_ABILITY;
-					break;
-				default:
-					ability = GetMonAbility(mon);
-			}
-
-			//Check Banned Abilities
-			if (CheckTableForAbility(ability, gSmogon350Cup_AbilityBanList))
-				return TRUE;
-
-			goto STANDARD_UBER_CHECK;
-
-		case BATTLE_FACILITY_AVERAGE_MONS:
-			if (gSpecialSpeciesFlags[species].smogonAverageMonsBan
-			||  CheckTableForItem(item, gSmogonAverageMons_ItemBanList))
-				return TRUE;
-
-			//Load correct ability and moves
-			switch (checkFromLocationType) {
-				case CHECK_BATTLE_TOWER_SPREADS:
-					LOAD_TIER_CHECKING_ABILITY;
-					break;
-				default:
-					ability = GetMonAbility(mon);
-			}
-
-			//Check Banned Abilities
-			if (CheckTableForAbility(ability, gSmogonAverageMons_AbilityBanList))
-				return TRUE;
-			break;
-
-		case BATTLE_FACILITY_BENJAMIN_BUTTERFREE:
-			if (gSpecialSpeciesFlags[species].smogonBenjaminButterfreeBan)
-				return TRUE;
-
-			goto STANDARD_OU_CHECK;
-
-		case BATTLE_FACILITY_METRONOME:
-			//No Steel Types, Pokemon with BST > 625 (including Megas), and banned items or abilities
-			if (gBaseStats[species].type1 == TYPE_STEEL
-			||  gBaseStats[species].type2 == TYPE_STEEL
-			||  GetBaseStatsTotal(species) > 625)
-				return TRUE;
-
-			//Check banned items
-			if (CheckTableForItem(item, gSmogonMetronome_ItemBanList))
-				return TRUE;
-
-			//Load correct ability and moves
-			switch (checkFromLocationType) {
-				case CHECK_BATTLE_TOWER_SPREADS:
-					moveLoc = spread->moves;
-					LOAD_TIER_CHECKING_ABILITY;
-					break;
-				default:
-					moveLoc = mon->moves;
-					ability = GetMonAbility(mon);
-			}
-
-			//Check if can Mega Evolve and if that species should be banned
-			u16 megaSpecies = GetMegaSpecies(species, item, moveLoc);
-			if (megaSpecies != SPECIES_NONE)
-			{
-				if (gBaseStats[megaSpecies].type1 == TYPE_STEEL
-				||  gBaseStats[megaSpecies].type2 == TYPE_STEEL
-				||  GetBaseStatsTotal(megaSpecies) > 625)
-					return TRUE;
-			}
-
-			//Check banned abilities
-			if (CheckTableForAbility(ability, gSmogonMetronome_AbilityBanList))
-				return TRUE;
-
-			//Check specific item-ability combination
-			if (ability == ABILITY_HARVEST
-			&& (item == ITEM_JABOCA_BERRY || item == ITEM_ROWAP_BERRY))
-				return TRUE;
-			break;
-
-		case BATTLE_FACILITY_UU:
-			if (gSpecialSpeciesFlags[species].smogonUUBan
-			||  CheckTableForItem(item, gSmogonUU_ItemBanList))
-				return TRUE;
-
-			//Load correct ability and moves
-			switch (checkFromLocationType) {
-				case CHECK_BATTLE_TOWER_SPREADS:
-					LOAD_TIER_CHECKING_ABILITY;
-					break;
-				default:
-					ability = GetMonAbility(mon);
-			}
-
-			//Check Banned Abilities
-			if (CheckTableForAbility(ability, gSmogonUU_AbilityBanList))
-				return TRUE;
-
-			goto STANDARD_OU_CHECK;
-
-		case BATTLE_FACILITY_RU:
-			if (gSpecialSpeciesFlags[species].smogonRUBan
-			||  gSpecialSpeciesFlags[species].smogonUUBan
-			||  CheckTableForItem(item, gSmogonRU_ItemBanList)
-			||  CheckTableForItem(item, gSmogonUU_ItemBanList))
-				return TRUE;
-
-			//Load correct ability and moves
-			switch (checkFromLocationType) {
-				case CHECK_BATTLE_TOWER_SPREADS:
-					moveLoc = spread->moves;
-					LOAD_TIER_CHECKING_ABILITY;
-					break;
-				default:
-					moveLoc = mon->moves;
-					ability = GetMonAbility(mon);
-			}
-
-			//Check Banned Abilities
-			if (CheckTableForAbility(ability, gSmogonRU_AbilityBanList))
-				return TRUE;
-
-			//Check Banned Moves
-			for (i = 0; i < MAX_MON_MOVES; ++i)
-			{
-				if (moveLoc[i] == MOVE_AURORAVEIL)
-					return TRUE;
-			}
-
-			goto STANDARD_OU_CHECK;
-	
-		case BATTLE_FACILITY_NU:
-			if (gSpecialSpeciesFlags[species].smogonNUBan
-			||  gSpecialSpeciesFlags[species].smogonRUBan
-			||  gSpecialSpeciesFlags[species].smogonUUBan
-			||  CheckTableForItem(item, gSmogonNU_ItemBanList)
-			||  CheckTableForItem(item, gSmogonRU_ItemBanList)
-			||  CheckTableForItem(item, gSmogonUU_ItemBanList))
-				return TRUE;
-
-			goto STANDARD_OU_CHECK;
-	}
-
-	return FALSE; //Not banned
-}
-
-bool8 IsMonBannedInTier(struct Pokemon* mon, u8 tier)
-{
-	u16 species = GetMonData(mon, MON_DATA_SPECIES, NULL);
-	u16 item = GetMonData(mon, MON_DATA_HELD_ITEM, NULL);
-
-	return PokemonTierBan(species, item, NULL, mon, tier, CHECK_PARTY_OFFSET);
 }
 
 static bool8 IsPokemonBannedBasedOnStreak(u16 species, u16 item, u16* speciesArray, u8 monsCount, u16 trainerId, u8 tier, bool8 forPlayer)
@@ -3676,10 +3229,10 @@ static bool8 IsSpreadWeakToType(u8 moveType, u8 defType1, u8 defType2, u8 abilit
 	return typeDmg >= 20; //Super effective
 }
 
-static u16 GivePlayerFrontierMonGivenSpecies(const u16 species, const struct BattleTowerSpread* const spreadTable, const u16 numSpreads)
+static u16 GivePlayerFrontierMonGivenSpecies(const u16 species, const struct BattleTowerSpread* const spreadTable, const u16 spreadCount)
 {
 	struct Pokemon mon;
-	const struct BattleTowerSpread* spread = GetSpreadBySpecies(species, spreadTable, numSpreads);
+	const struct BattleTowerSpread* spread = GetSpreadBySpecies(species, spreadTable, spreadCount);
 
 	if (spread == NULL)
 		return 0xFFFF;
@@ -3713,22 +3266,32 @@ void CreateFrontierRaidMon(u16 originalSpecies)
 	}
 
 	CreateFrontierMon(&mon, 50, &spread, 0, 0, 0, TRUE);
+
+	#ifdef SPECIES_ETERNATUS_ETERNAMAX
+	if (originalSpecies == SPECIES_ETERNATUS_ETERNAMAX) //Reverted to SPECIES_ETERNATUS in CreateFrontierMon so set down here
+	{
+		mon.species = SPECIES_ETERNATUS_ETERNAMAX;
+		CalculateMonStatsNew(&mon);
+		HealMon(&mon);
+	}
+	#endif
+
 	ZeroEnemyPartyMons();
 	gEnemyParty[0] = mon;
 	gPokeBackupPtr = NULL;
 }
 
-static const struct BattleTowerSpread* GetSpreadBySpecies(const u16 species, const struct BattleTowerSpread* const spreads, const u16 numSpreads)
+static const struct BattleTowerSpread* GetSpreadBySpecies(const u16 species, const struct BattleTowerSpread* const spreads, const u16 spreadCount)
 {
 	u32 i;
 
-	for (i = 0; i < numSpreads; ++i)
+	for (i = 0; i < spreadCount; ++i)
 	{
 		if (spreads[i].species == species)
 			break;
 	}
 
-	if (i == numSpreads)
+	if (i == spreadCount)
 		return NULL; //Species not found
 
 	u8 offset = Random() % 5; //Max number of possible spreads for a given Pokemon
@@ -3739,35 +3302,55 @@ static const struct BattleTowerSpread* GetSpreadBySpecies(const u16 species, con
 	return &spreads[i + offset];
 }
 
+static void TryGetSpecialSpeciesSpreadTable(u16 species, const struct BattleTowerSpread** table, u16* spreadCount)
+{
+	switch (SpeciesToNationalPokedexNum(species))
+	{
+		#ifdef NATIONAL_DEX_PIKACHU
+		case NATIONAL_DEX_PIKACHU:
+			*table = gPikachuSpreads; //Sooo many different forms of Pikachu
+			*spreadCount = TOTAL_PIKACHU_SPREADS;
+			break;
+		#endif
+		#ifdef NATIONAL_DEX_WORMADAM
+		case NATIONAL_DEX_WORMADAM:
+			*table = gWormadamSpreads;
+			*spreadCount = TOTAL_WORMADAM_SPREADS;
+			break;
+		#endif
+		#ifdef NATIONAL_DEX_ROTOM
+		case NATIONAL_DEX_ROTOM:
+			*table = gRotomSpreads;
+			*spreadCount = TOTAL_ROTOM_SPREADS;
+			break;
+		#endif
+		#ifdef NATIONAL_DEX_ARCEUS
+		case NATIONAL_DEX_ARCEUS:
+			*table = gArceusSpreads;
+			*spreadCount = TOTAL_ARCEUS_SPREADS;
+			break;
+		#endif
+		#ifdef NATIONAL_DEX_ORICORIO
+		case NATIONAL_DEX_ORICORIO:
+			*table = gOricorioSpreads;
+			*spreadCount = TOTAL_ORICORIO_SPREADS;
+			break;
+		#endif
+	}
+}
+
 static const struct BattleTowerSpread* TryAdjustSpreadForSpecies(const struct BattleTowerSpread* originalSpread)
 {
 	u16 species = originalSpread->species;
 
-	switch (species) {
-		#ifdef SPECIES_PIKACHU
-		case SPECIES_PIKACHU:
-			return &gPikachuSpreads[Random() % TOTAL_PIKACHU_SPREADS]; //Sooo many different forms of Pikachu
-		#endif
-		#ifdef SPECIES_WORMADAM
-		case SPECIES_WORMADAM:
-			return &gWormadamSpreads[Random() % TOTAL_WORMADAM_SPREADS];
-		#endif
-		#ifdef SPECIES_ROTOM
-		case SPECIES_ROTOM:
-			return &gRotomSpreads[Random() % TOTAL_ROTOM_SPREADS]; //All the Rotom forms
-		#endif
-		#ifdef SPECIES_ARCEUS
-		case SPECIES_ARCEUS:
-			return &gArceusSpreads[Random() % TOTAL_ARCEUS_SPREADS]; //There are more Arceus spreads than any other Pokemon,
-																	 //so they're held seperately to keep things fresh.
-		#endif
-		#ifdef SPECIES_ORICORIO
-		case SPECIES_ORICORIO:
-			return &gOricorioSpreads[Random() % TOTAL_ORICORIO_SPREADS];
-		#endif
-	}
+	const struct BattleTowerSpread* spreadTable = NULL;
+	u16 spreadCount = 0;	
+	TryGetSpecialSpeciesSpreadTable(species, &spreadTable, &spreadCount);
 
-	return originalSpread;
+	if (spreadTable == NULL)
+		return originalSpread;
+	
+	return &spreadTable[Random() % spreadCount];
 }
 
 static u16 TryAdjustAestheticSpecies(u16 species)
@@ -4217,7 +3800,8 @@ static void PostProcessTeam(struct Pokemon* party, struct TeamBuilder* builder)
 	//Try change last mon
 	if (builder->monsCount >= 3 && GetMonAbility(&party[builder->monsCount - 1]) == ABILITY_ILLUSION)
 	{
-		for (i = IS_SINGLE_BATTLE ? 1 : 2; i < ((u32) builder->monsCount - 1); ++i)
+		bool8 onePartyMonOnField = IsFrontierSingles(builder->battleType) || IsFrontierMulti(builder->battleType); //Only one mon from the specific team is on the field at a time
+		for (i = onePartyMonOnField ? 1 : 2; i < (u32) (builder->monsCount - 1); ++i) //-1 because we already know the last mon has Illusion and wants to leave that slot
 		{
 			if (GetMonAbility(&party[i]) != ABILITY_ILLUSION)
 			{
@@ -4225,7 +3809,7 @@ static void PostProcessTeam(struct Pokemon* party, struct TeamBuilder* builder)
 				break;
 			}
 		}
-	}	
+	}
 }
 
 static void TryShuffleMovesForCamomons(struct Pokemon* party, u8 tier, u16 trainerId)

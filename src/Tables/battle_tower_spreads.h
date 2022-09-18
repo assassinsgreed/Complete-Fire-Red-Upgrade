@@ -29840,7 +29840,7 @@ const struct BattleTowerSpread gFrontierSpreads[] =
 	},
 	{
 		.species = SPECIES_WHIMSICOTT,
-		.nature = NATURE_BOLD,
+		.nature = NATURE_IMPISH,
 		.hpIv = 31,
 		.atkIv = 31,
 		.defIv = 31,
@@ -32175,7 +32175,7 @@ const struct BattleTowerSpread gFrontierSpreads[] =
 		{
 			MOVE_XSCISSOR,
 			MOVE_PURSUIT,
-			MOVE_COUNTER,
+			MOVE_METALBURST,
 			MOVE_SWAGGER,
 		},
 		.ball = BALL_TYPE_RANDOM,
@@ -39967,7 +39967,7 @@ const struct BattleTowerSpread gFrontierSpreads[] =
 	},
 	{
 		.species = SPECIES_RIBOMBEE,
-		.nature = NATURE_TIMID,
+		.nature = NATURE_JOLLY,
 		.hpIv = 31,
 		.atkIv = 31,
 		.defIv = 31,
@@ -46332,7 +46332,7 @@ const struct BattleTowerSpread gFrontierSpreads[] =
 		.moves =
 		{
 			MOVE_FIRELASH,
-			MOVE_LEECHLIFE,
+			MOVE_LEECHFANG,
 			MOVE_POWERWHIP,
 			MOVE_COIL,
 		},
@@ -46358,7 +46358,7 @@ const struct BattleTowerSpread gFrontierSpreads[] =
 		.moves =
 		{
 			MOVE_RAGINGFURY,
-			MOVE_LEECHLIFE,
+			MOVE_LEECHFANG,
 			MOVE_THUNDERFANG,
 			MOVE_KNOCKOFF,
 		},
@@ -50434,7 +50434,7 @@ const struct BattleTowerSpread gFrontierSpreads[] =
 	},
 	{
 		.species = SPECIES_WYRDEER,
-		.nature = NATURE_TIMID,
+		.nature = NATURE_JOLLY,
 		.hpIv = 31,
 		.atkIv = 31,
 		.defIv = 31,
@@ -51110,7 +51110,7 @@ const struct BattleTowerSpread gFrontierSpreads[] =
 	},
 	{
 		.species = SPECIES_ELECTRODE_H,
-		.nature = NATURE_TIMID,
+		.nature = NATURE_JOLLY,
 		.hpIv = 31,
 		.atkIv = 31,
 		.defIv = 31,
@@ -56625,7 +56625,7 @@ const struct BattleTowerSpread gFrontierLegendarySpreads[] =
 		.hpIv = 31,
 		.atkIv = 0,
 		.defIv = 31,
-		.spAtkIv = 0,
+		.spAtkIv = 31,
 		.spDefIv = 31,
 		.spdIv = 31,
 		.hpEv = 252,
@@ -82219,7 +82219,7 @@ const struct BattleTowerSpread gLittleCupSpreads[] =
 		.moves =
 		{
 			MOVE_FIRELASH,
-			MOVE_LEECHLIFE,
+			MOVE_LEECHFANG,
 			MOVE_CRUNCH,
 			MOVE_COIL,
 		},
@@ -83225,6 +83225,32 @@ const struct BattleTowerSpread gLittleCupSpreads[] =
 			MOVE_POISONJAB,
 			MOVE_THROATCHOP,
 			MOVE_SWORDSDANCE,
+		},
+		.ball = BALL_TYPE_RANDOM,
+		.forSingles = TRUE,
+		.forDoubles = TRUE,
+		.modifyMovesDoubles = TRUE,
+	},
+	{
+		.species = SPECIES_BASCULIN_H,
+		.nature = NATURE_ADAMANT,
+		.hpIv = 31,
+		.atkIv = 31,
+		.defIv = 31,
+		.spAtkIv = 0,
+		.spDefIv = 31,
+		.spdIv = 31,
+		.hpEv = 4,
+		.atkEv = 252,
+		.spdEv = 252,
+		.ability = FRONTIER_ABILITY_2, //ABILITY_ADAPTABILITY
+		.item = ITEM_CHOICE_BAND,
+		.moves =
+		{
+			MOVE_WAVECRASH,
+			MOVE_SUPERPOWER,
+			MOVE_HEADSMASH,
+			MOVE_FLIPTURN,
 		},
 		.ball = BALL_TYPE_RANDOM,
 		.forSingles = TRUE,
