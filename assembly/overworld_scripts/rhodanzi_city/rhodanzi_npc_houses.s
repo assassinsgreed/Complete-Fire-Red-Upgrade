@@ -13,7 +13,7 @@ EventScript_RhodanziNPCHouses_Fisherman:
     faceplayer
     msgbox gText_RhodanziNPCHouses_FishermanIntro MSG_YESNO
     compare LASTRESULT YES
-    IF YES _goto EventScript_RhodanziNPCHouses_FishermanYes
+    IF TRUE _goto EventScript_RhodanziNPCHouses_FishermanYes
     msgbox gText_RhodanziNPCHouses_FishermanNo MSG_NORMAL
     release
     end
@@ -41,7 +41,7 @@ EventScript_RhodanziNPCHouses_TerrenceLittleBrother:
     faceplayer
     msgbox gText_RhodanziNPCHouses_TerrenceLittleBrotherQuestion MSG_YESNO
     compare LASTRESULT YES
-    if YES _goto EventScript_RhodanziNPCHouses_TerrenceLittleBrotherYes
+    if TRUE _goto EventScript_RhodanziNPCHouses_TerrenceLittleBrotherYes
     msgbox gText_RhodanziNPCHouses_TerrenceLittleBrotherQuestionNo MSG_NORMAL
     release
     end
@@ -86,7 +86,7 @@ EventScript_RhodanziNPCHouses_PokedexTrainer:
     faceplayer
     msgbox gText_RhodanziNPCHouses_PokedexTrainerQuestion MSG_YESNO
     compare LASTRESULT YES
-    if YES _goto EventScript_RhodanziNPCHouses_PokedexTrainerYes
+    if TRUE _goto EventScript_RhodanziNPCHouses_PokedexTrainerYes
     goto EventScript_RhodanziNPCHouses_PokedexTrainerNo
 
 EventScript_RhodanziNPCHouses_PokedexTrainerYes:
