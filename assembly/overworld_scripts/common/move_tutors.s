@@ -21,9 +21,6 @@ EventScript_Tutors_Terrain:
     case 4, cancelled
     compare LASTRESULT FALSE
     if TRUE _goto cancelled
-    removemoney 0x3E8 @ 1000 Pokedollars
-    sound 0x40 @ Cash Register SE
-    @TODO: Tutor moves don't seem to be referencing learnset table in the way I expect
     return
 
 grassyterrain:
@@ -49,6 +46,10 @@ psychicterrain:
 teachmove:
     special 0x18D
     waitstate
+    compare LASTRESULT NO
+    if TRUE _goto cancelled @ Pokemon couldn't learn move, or player cancelled
+    removemoney 0x3E8 @ 1000 Pokedollars
+    sound 0x40 @ Cash Register SE
     return
 
 cancelled:

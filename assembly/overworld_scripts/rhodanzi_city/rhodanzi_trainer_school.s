@@ -71,7 +71,6 @@ TerrainTutor:
     if FALSE _goto NotEnoughMoney
     msgbox gText_RhodanziTrainerSchool_MainRoom_TerrainTutor_ConfirmationAccepted MSG_KEEPOPEN
     call EventScript_Tutors_Terrain
-    
     msgbox gText_RhodanziTrainerSchool_MainRoom_TerrainTutor_Complete MSG_NORMAL
     release
     end
