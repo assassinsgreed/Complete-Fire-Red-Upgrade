@@ -61,38 +61,20 @@ I'm the smartest in my class, when it\ncomes to status effects!
 #org @gText_RhodanziTrainerSchool_BasicCourse_StatusStudent_Question
 Which status effect would you like\nto learn about?
 
-#org @gText_Burn
-Burn
-
 #org @gText_BurnDetails
 Burned Pok\emon will take damage\neach turn. Their attack stat will\lalso be halved.
-
-#org @gText_Freeze
-Freeze
 
 #org @gText_FreezeDetails
 Frozen Pok\emon can't act until\nthey've thawed out. Fire moves will\lmake them thaw out right away.
 
-#org @gText_Paralysis
-Paralysis
-
 #org @gText_ParalysisDetails
 Paralyzed Pok\emon have a fifty\npercent chance of being unable to\lmove. Their speed is also reduced\lto half.
-
-#org @gText_Poison
-Poison
 
 #org @gText_PoisonDetails
 Poisoned Pok\emon take damage each\nturn. Some moves, like Toxic, will\leven apply Bad Poison which makes\lthe Pok\emon take more damage on\leach turn.
 
-#org @gText_Sleep
-Sleep
-
 #org @gText_SleepDetails
 Sleeping Pok\emon can't act until\nthey've woken up. Some moves can\lonly be used while asleep, or only\lon sleeping Pok\emon.
-
-#org @gText_End
-End
 
 #org @gText_RhodanziTrainerSchool_BasicCourse_StatusStudent_Done
 I hope this information was\nhelpful!\pThere are also a lot of temporary\nstatuses, but I don't know them all\lyet.
@@ -114,15 +96,6 @@ You chose a [RED]fire[BLUE] type starter.\nWhich type is it strong against?
 
 #org @gText_RhodanziTrainerSchool_BasicCourse_TypeStudent_WaterQuestion
 You chose a water type starter.\nWhich type is it strong against?
-
-#org @gText_TypeGrass
-[GREEN]Grass
-
-#org @gText_TypeFire
-[RED]Fire
-
-#org @gText_TypeWater
-[BLUE]Water
 
 #org @gText_RhodanziTrainerSchool_BasicCourse_TypeStudent_QuizSuccess
 Yes, that's correct! A smart\ntrainer like you deserves a reward.

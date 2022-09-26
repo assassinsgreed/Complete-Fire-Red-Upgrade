@@ -71,8 +71,7 @@ TerrainTutor:
     if FALSE _goto NotEnoughMoney
     msgbox gText_RhodanziTrainerSchool_MainRoom_TerrainTutor_ConfirmationAccepted MSG_KEEPOPEN
     call EventScript_Tutors_Terrain
-    removemoney 0x3E8 @ 1000 Pokedollars
-    sound 0x40 @ Cash Register SE
+    
     msgbox gText_RhodanziTrainerSchool_MainRoom_TerrainTutor_Complete MSG_NORMAL
     release
     end

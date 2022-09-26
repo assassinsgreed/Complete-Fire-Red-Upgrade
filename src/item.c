@@ -380,7 +380,7 @@ u8 ReformatItemDescription(u16 itemId, u8* dest, u8 maxWidth)
 #endif
 
 #define gTMHMLearnsets ((TM_HM_T*) *((u32*) 0x8043C68))
-#define gTutorLearnsets ((ExpandedTutor_T*) *((u32*) 0x8120C30))
+#define gTutorLearnsets ((ExpandedTutor_T*) *((u32*) 0x98051F4))
 
 u32 CanMonLearnTMHM(struct Pokemon* mon, u8 tm)
 {
