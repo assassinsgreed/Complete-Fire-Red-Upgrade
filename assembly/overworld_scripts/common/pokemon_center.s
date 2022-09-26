@@ -13,7 +13,7 @@ EventScript_PokemonCenter_Main:
 	if TRUE _goto EventScript_PokemonCenter_End
     msgbox gText_Common_PokemonCenterHealChoice MSG_YESNO
 	compare LASTRESULT YES
-	if YES _goto EventScript_PokemonCenter_Heal
+	if TRUE _goto EventScript_PokemonCenter_Heal
 	goto EventScript_PokemonCenter_Farewell
 	goto EventScript_PokemonCenter_End
 

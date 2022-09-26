@@ -49,6 +49,42 @@ EventScript_RhodanziTrainerSchool_MainRoom_Professor:
     npcchat2 0x4 m_LookRight gText_RhodanziTrainerSchool_MainRoom_Professor
     end
 
+.global EventScript_RhodanziTrainerSchool_TerrainTutor
+EventScript_RhodanziTrainerSchool_TerrainTutor:
+    lock
+    faceplayer
+    msgbox gText_RhodanziTrainerSchool_MainRoom_TerrainTutor_Intro MSG_NORMAL
+    checkflag 0x820 @ Has Terrain Badge
+    IF SET _goto TerrainTutor
+    msgbox gText_RhodanziTrainerSchool_MainRoom_TerrainTutor_DoesNotHaveBadge MSG_NORMAL
+    release
+    end
+
+TerrainTutor:
+    showmoney 0x0 0x0
+    msgbox gText_RhodanziTrainerSchool_MainRoom_TerrainTutor_Confirmation MSG_YESNO
+    hidemoney
+    compare LASTRESULT YES
+    IF FALSE _goto TutoringRejected
+    checkmoney 0x3E8 @ 1000 Pokedollars
+    compare LASTRESULT TRUE
+    if FALSE _goto NotEnoughMoney
+    msgbox gText_RhodanziTrainerSchool_MainRoom_TerrainTutor_ConfirmationAccepted MSG_KEEPOPEN
+    call EventScript_Tutors_Terrain
+    msgbox gText_RhodanziTrainerSchool_MainRoom_TerrainTutor_Complete MSG_NORMAL
+    release
+    end
+
+TutoringRejected:
+    msgbox gText_RhodanziTrainerSchool_MainRoom_TerrainTutor_ConfirmationRejected MSG_NORMAL
+    release
+    end
+
+NotEnoughMoney:
+    msgbox gText_RhodanziTrainerSchool_MainRoom_TerrainTutor_NotEnoughMoney MSG_NORMAL
+    release
+    end
+
 @ Basic Course
 .global EventScript_RhodanziTrainerSchool_BasicCourse_Professor
 EventScript_RhodanziTrainerSchool_BasicCourse_Professor:
