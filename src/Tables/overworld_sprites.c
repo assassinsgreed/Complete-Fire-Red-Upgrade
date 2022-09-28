@@ -3,6 +3,7 @@
 
 // Characters
 extern const u8 PlutoGruntMaleTiles[];
+extern const u8 LeaderTerrenceTiles[];
 extern const u8 ChampionSeleneTiles[];
 
 // Overworld Events
@@ -38,6 +39,19 @@ static const struct SpriteFrameImage Table_PlutoGruntMale[] =
     overworld_frame(PlutoGruntMaleTiles, 2, 4, 6),
     overworld_frame(PlutoGruntMaleTiles, 2, 4, 7),
     overworld_frame(PlutoGruntMaleTiles, 2, 4, 8),
+};
+
+static const struct SpriteFrameImage Table_LeaderTerrence[] =
+{
+    overworld_frame(LeaderTerrenceTiles, 2, 4, 0),
+    overworld_frame(LeaderTerrenceTiles, 2, 4, 1),
+    overworld_frame(LeaderTerrenceTiles, 2, 4, 2),
+    overworld_frame(LeaderTerrenceTiles, 2, 4, 3),
+    overworld_frame(LeaderTerrenceTiles, 2, 4, 4),
+    overworld_frame(LeaderTerrenceTiles, 2, 4, 5),
+    overworld_frame(LeaderTerrenceTiles, 2, 4, 6),
+    overworld_frame(LeaderTerrenceTiles, 2, 4, 7),
+    overworld_frame(LeaderTerrenceTiles, 2, 4, 8),
 };
 
 static const struct SpriteFrameImage Table_ChampionSelene[] =
@@ -98,6 +112,26 @@ const struct EventObjectGraphicsInfo GraphicsInfo_PlutoGruntMale =
     .subspriteTables = gEventObjectSpriteOamTables_16x32,
     .anims = gEventObjectImageAnimTable_Standard,
     .images = Table_PlutoGruntMale,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+const struct EventObjectGraphicsInfo GraphicsInfo_LeaderTerrence =
+{
+    .tileTag = 0xFFFF,
+    .paletteTag1 = 0x1206,
+    .paletteTag2 = EVENT_OBJ_PAL_TAG_NONE,
+    .size = (16 * 32) / 2,
+    .width = 16,
+    .height = 32,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .disableReflectionPaletteLoad = FALSE,
+    .tracks = TRACKS_FOOT,
+    .gender = MALE,
+    .oam = gEventObjectBaseOam_16x32,
+    .subspriteTables = gEventObjectSpriteOamTables_16x32,
+    .anims = gEventObjectImageAnimTable_Standard,
+    .images = Table_LeaderTerrence,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 

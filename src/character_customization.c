@@ -31,6 +31,7 @@ tables to edit:
 
 extern const u16 PlutoGruntMalePal[];
 extern const u16 ChampionSelenePal[];
+extern const u16 LeaderTerrencePal[];
 extern const u16 SandygastPal[];
 extern const u16 FoongusPal[];
 extern const u16 StunfiskPal[];
@@ -281,6 +282,7 @@ static const u16* sPlayerMarlonOutfitColours[] =
 		{ FoongusPal, 0x1204 },
 		{ StunfiskPal, 0x1204 },
 		{ TMPokeballPal, 0x1205 },
+		{ LeaderTerrencePal, 0x1206 },
 		{ NULL, 0x11FF }
 	};
 	const struct SpritePalette* const gObjectEventSpritePalettesSwitcher[255] = {
