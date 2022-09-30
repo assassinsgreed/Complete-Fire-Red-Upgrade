@@ -115,6 +115,8 @@ npc 6 5 2 EventScript_RhodanziFacilities_Center_Trade
 npc 6 5 3 EventScript_RhodanziFacilities_Center_PokemonTreatment
 
 ## Gym
+sign 6 6 0 SignScript_RhodanziGym_Placard
+sign 6 6 1 SignScript_RhodanziGym_Placard
 npc 6 6 0 EventScript_RhodanziGym_GymExpert
 npc 6 6 1 EventScript_RhodanziGym_Alonso
 npc 6 6 2 EventScript_RhodanziGym_Brandon
