@@ -576,7 +576,7 @@
 #define STORY_FLAGS_START 0x230
 #define FLAG_COMPLETED_TYPE_TRAINER_QUIZ                 0x230
 #define FLAG_RECEIVED_ANTIDOTE_GIFT                      0x231
-#define FLAG_GOT_FOSSIL_FROM_MT_MOON                     0x232
+#define FLAG_INITIATED_DEXNAV_EVENT                      0x232
 #define FLAG_HELPED_BILL_IN_SEA_COTTAGE                  0x233
 #define FLAG_GOT_SS_TICKET                               0x234
 #define FLAG_GOT_SS_TICKET_DUP                           0x235
@@ -610,7 +610,7 @@
 #define FLAG_DID_NINA_TRADE                              0x251
 #define FLAG_GOT_ITEMFINDER                              0x252
 #define FLAG_WOKE_UP_ROUTE_12_SNORLAX                    0x253
-#define FLAG_GOT_TM39_FROM_BROCK                         0x254
+#define FLAG_GOT_TM05_FROM_TERRENCE                      0x254
 #define FLAG_GOT_SUPER_ROD                               0x255
 #define FLAG_GOT_EXP_SHARE_FROM_OAKS_AIDE                0x256
 #define FLAG_DID_MARC_TRADE                              0x257
