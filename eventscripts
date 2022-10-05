@@ -35,6 +35,7 @@ npc 3 20 1 EventScript_Route2_LassKimberly
 npc 3 20 2 EventScript_Route2_LassRikki
 
 # Varisi Forest
+map 1 0 MapScript_VarisiForest_FlightSpot
 npc 1 0 0 EventScript_VarisiForest_BugCatcherKendell
 npc 1 0 1 EventScript_VarisiForest_BugCatcherBraden
 npc 1 0 2 EventScript_VarisiForest_LassBreanna

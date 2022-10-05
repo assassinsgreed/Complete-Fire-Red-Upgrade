@@ -5,6 +5,15 @@
 .include "../xse_defines.s"
 .include "../asm_defines.s"
 
+.global MapScript_VarisiForest_FlightSpot
+MapScript_VarisiForest_FlightSpot:
+	mapscript MAP_SCRIPT_ON_TRANSITION MapEntryScript_VarisiForest_FlightFlag
+	.byte MAP_SCRIPT_TERMIN
+
+MapEntryScript_VarisiForest_FlightFlag:
+    setworldmapflag 0x8A4
+    end
+
 .global EventScript_VarisiForest_BugCatcherKendell
 EventScript_VarisiForest_BugCatcherKendell:
     trainerbattle0 0x0 0x8 0x0 gText_VarisiForest_BugCatcherKendell_Intro gText_VarisiForest_BugCatcherKendell_Defeat
