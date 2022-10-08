@@ -2,6 +2,7 @@
 #include "../../include/constants/event_objects.h"
 
 // Characters
+extern const u8 MCStandingTiles[];
 extern const u8 PlutoGruntMaleTiles[];
 extern const u8 LeaderTerrenceTiles[];
 extern const u8 ChampionSeleneTiles[];
@@ -27,6 +28,30 @@ extern const u8 TMPokeballTiles[];
 #define gEventObjectImageAnimTable_FieldMove ((const union AnimCmd* const*) 0x83A3638)
 #define gEventObjectImageAnimTable_Fishing ((const union AnimCmd* const*) 0x83A3668)
 #define gEventObjectImageAnimTable_VsSeekerBike ((const union AnimCmd* const*) 0x83A3640)
+
+static const struct SpriteFrameImage Table_MCStanding[] =
+{
+    overworld_frame(MCStandingTiles, 2, 4, 0),
+    overworld_frame(MCStandingTiles, 2, 4, 1),
+    overworld_frame(MCStandingTiles, 2, 4, 2),
+    overworld_frame(MCStandingTiles, 2, 4, 3),
+    overworld_frame(MCStandingTiles, 2, 4, 4),
+    overworld_frame(MCStandingTiles, 2, 4, 5),
+    overworld_frame(MCStandingTiles, 2, 4, 6),
+    overworld_frame(MCStandingTiles, 2, 4, 7),
+    overworld_frame(MCStandingTiles, 2, 4, 8),
+    overworld_frame(MCStandingTiles, 2, 4, 9),
+    overworld_frame(MCStandingTiles, 2, 4, 10),
+    overworld_frame(MCStandingTiles, 2, 4, 11),
+    overworld_frame(MCStandingTiles, 2, 4, 12),
+    overworld_frame(MCStandingTiles, 2, 4, 13),
+    overworld_frame(MCStandingTiles, 2, 4, 14),
+    overworld_frame(MCStandingTiles, 2, 4, 15),
+    overworld_frame(MCStandingTiles, 2, 4, 16),
+    overworld_frame(MCStandingTiles, 2, 4, 17),
+    overworld_frame(MCStandingTiles, 2, 4, 18),
+    overworld_frame(MCStandingTiles, 2, 4, 19),
+};
 
 static const struct SpriteFrameImage Table_PlutoGruntMale[] =
 {
@@ -93,6 +118,26 @@ static const struct SpriteFrameImage Table_Stunfisk[] =
 static const struct SpriteFrameImage Table_TMPokeball[] =
 {
     overworld_frame(TMPokeballTiles, 2, 2, 0),
+};
+
+const struct EventObjectGraphicsInfo GraphicsInfo_MCStanding =
+{
+    .tileTag = 0xFFFF,
+    .paletteTag1 = 0x1207,
+    .paletteTag2 = EVENT_OBJ_PAL_TAG_NONE,
+    .size = (16 * 32) / 2,
+    .width = 16,
+    .height = 32,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .disableReflectionPaletteLoad = FALSE,
+    .tracks = TRACKS_FOOT,
+    .gender = MALE,
+    .oam = gEventObjectBaseOam_16x32,
+    .subspriteTables = gEventObjectSpriteOamTables_16x32,
+    .anims = gEventObjectImageAnimTable_PlayerNormal,
+    .images = Table_MCStanding,
+    .affineAnims = gDummySpriteAffineAnimTable,
 };
 
 const struct EventObjectGraphicsInfo GraphicsInfo_PlutoGruntMale =

@@ -308,6 +308,8 @@ gText_TextSpeedInstant 083cc338
 #endif
 
 # Custom Overworld Spritework
+## Replace Red Standing & Moving (1)
+GraphicsInfo_MCStanding 839FDB0
 ## Replace Rocket Grunt (49)
 GraphicsInfo_PlutoGruntMale 839FE74
 ## Replace Lance (74)
