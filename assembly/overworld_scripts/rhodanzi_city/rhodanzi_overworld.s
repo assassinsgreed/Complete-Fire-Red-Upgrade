@@ -3,7 +3,6 @@
 
 .include "../xse_commands.s"
 .include "../xse_defines.s"
-.include "../asm_defines.s"
 
 .global MapScript_RhodanziOverworld_FlightSpot
 MapScript_RhodanziOverworld_FlightSpot:
@@ -14,7 +13,6 @@ MapEntryScript_RhodanziOverworld_FlightFlag:
     setworldmapflag 0x892
     sethealingplace 0x03 @ Originally Pewter City
     checkflag 0x820
-    additem ITEM_MACH_BIKE
     IF SET _call HideThugs
     end
 
