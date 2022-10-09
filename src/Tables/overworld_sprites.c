@@ -4,6 +4,7 @@
 // Characters
 extern const u8 MCStandingTiles[];
 extern const u8 MCCyclingTiles[];
+extern const u8 MCSurfingTiles[];
 extern const u8 PlutoGruntMaleTiles[];
 extern const u8 LeaderTerrenceTiles[];
 extern const u8 ChampionSeleneTiles[];
@@ -30,6 +31,7 @@ extern const u8 TMPokeballTiles[];
 #define gEventObjectImageAnimTable_Fishing ((const union AnimCmd* const*) 0x83A3668)
 #define gEventObjectImageAnimTable_VsSeekerBike ((const union AnimCmd* const*) 0x83A3640)
 
+// #region MC
 static const struct SpriteFrameImage Table_MCStanding[] =
 {
     overworld_frame(MCStandingTiles, 2, 4, 0),
@@ -66,6 +68,24 @@ static const struct SpriteFrameImage Table_MCCycling[] =
     overworld_frame(MCCyclingTiles, 4, 4, 7),
     overworld_frame(MCCyclingTiles, 4, 4, 8),
 };
+
+static const struct SpriteFrameImage Table_MCSurfing[] =
+{
+    overworld_frame(MCSurfingTiles, 2, 4, 0),
+    overworld_frame(MCSurfingTiles, 2, 4, 1),
+    overworld_frame(MCSurfingTiles, 2, 4, 2),
+    overworld_frame(MCSurfingTiles, 2, 4, 3),
+    overworld_frame(MCSurfingTiles, 2, 4, 4),
+    overworld_frame(MCSurfingTiles, 2, 4, 5),
+    overworld_frame(MCSurfingTiles, 2, 4, 6),
+    overworld_frame(MCSurfingTiles, 2, 4, 7),
+    overworld_frame(MCSurfingTiles, 2, 4, 8),
+    overworld_frame(MCSurfingTiles, 2, 4, 9),
+    overworld_frame(MCSurfingTiles, 2, 4, 10),
+    overworld_frame(MCSurfingTiles, 2, 4, 11),
+
+};
+// #endregion MC
 
 static const struct SpriteFrameImage Table_PlutoGruntMale[] =
 {
@@ -134,6 +154,7 @@ static const struct SpriteFrameImage Table_TMPokeball[] =
     overworld_frame(TMPokeballTiles, 2, 2, 0),
 };
 
+// #region MC
 const struct EventObjectGraphicsInfo GraphicsInfo_MCStanding =
 {
     .tileTag = 0xFFFF,
@@ -173,6 +194,27 @@ const struct EventObjectGraphicsInfo GraphicsInfo_MCCycling =
     .images = Table_MCCycling,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
+
+const struct EventObjectGraphicsInfo GraphicsInfo_MCSurfing =
+{
+    .tileTag = 0xFFFF,
+    .paletteTag1 = 0x1207,
+    .paletteTag2 = EVENT_OBJ_PAL_TAG_NONE,
+    .size = (16 * 32) / 2,
+    .width = 16,
+    .height = 32,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .disableReflectionPaletteLoad = FALSE,
+    .tracks = TRACKS_NONE,
+    .gender = MALE,
+    .oam = gEventObjectBaseOam_16x32,
+    .subspriteTables = gEventObjectSpriteOamTables_16x32,
+    .anims = gEventObjectImageAnimTable_Surfing,
+    .images = Table_MCSurfing,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+// #endregion MC
 
 const struct EventObjectGraphicsInfo GraphicsInfo_PlutoGruntMale =
 {
