@@ -3,6 +3,7 @@
 
 // Characters
 extern const u8 MCStandingTiles[];
+extern const u8 MCCyclingTiles[];
 extern const u8 PlutoGruntMaleTiles[];
 extern const u8 LeaderTerrenceTiles[];
 extern const u8 ChampionSeleneTiles[];
@@ -51,6 +52,19 @@ static const struct SpriteFrameImage Table_MCStanding[] =
     overworld_frame(MCStandingTiles, 2, 4, 17),
     overworld_frame(MCStandingTiles, 2, 4, 18),
     overworld_frame(MCStandingTiles, 2, 4, 19),
+};
+
+static const struct SpriteFrameImage Table_MCCycling[] =
+{
+    overworld_frame(MCCyclingTiles, 4, 4, 0),
+    overworld_frame(MCCyclingTiles, 4, 4, 1),
+    overworld_frame(MCCyclingTiles, 4, 4, 2),
+    overworld_frame(MCCyclingTiles, 4, 4, 3),
+    overworld_frame(MCCyclingTiles, 4, 4, 4),
+    overworld_frame(MCCyclingTiles, 4, 4, 5),
+    overworld_frame(MCCyclingTiles, 4, 4, 6),
+    overworld_frame(MCCyclingTiles, 4, 4, 7),
+    overworld_frame(MCCyclingTiles, 4, 4, 8),
 };
 
 static const struct SpriteFrameImage Table_PlutoGruntMale[] =
@@ -137,6 +151,26 @@ const struct EventObjectGraphicsInfo GraphicsInfo_MCStanding =
     .subspriteTables = gEventObjectSpriteOamTables_16x32,
     .anims = gEventObjectImageAnimTable_PlayerNormal,
     .images = Table_MCStanding,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+const struct EventObjectGraphicsInfo GraphicsInfo_MCCycling =
+{
+    .tileTag = 0xFFFF,
+    .paletteTag1 = 0x1207,
+    .paletteTag2 = EVENT_OBJ_PAL_TAG_NONE,
+    .size = (32 * 32) / 2,
+    .width = 32,
+    .height = 32,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .disableReflectionPaletteLoad = FALSE,
+    .tracks = TRACKS_BIKE_TIRE,
+    .gender = MALE,
+    .oam = gEventObjectBaseOam_32x32,
+    .subspriteTables = gEventObjectSpriteOamTables_32x32,
+    .anims = gEventObjectImageAnimTable_Standard,
+    .images = Table_MCCycling,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 

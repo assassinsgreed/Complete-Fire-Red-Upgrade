@@ -29,10 +29,10 @@ tables to edit:
 
 */
 
+extern const u16 MCStandingPal[];
 extern const u16 PlutoGruntMalePal[];
 extern const u16 ChampionSelenePal[];
 extern const u16 LeaderTerrencePal[];
-extern const u16 MCStandingPal[];
 extern const u16 SandygastPal[];
 extern const u16 FoongusPal[];
 extern const u16 StunfiskPal[];
