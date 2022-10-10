@@ -1,11 +1,15 @@
 #include "../defines.h"
 #include "../../include/constants/event_objects.h"
 
-// Characters
+// MC
 extern const u8 MCStandingTiles[];
 extern const u8 MCCyclingTiles[];
 extern const u8 MCSurfingTiles[];
 extern const u8 MCFieldMoveTiles[];
+extern const u8 MCFishingTiles[];
+extern const u8 MCVSSeekerBikeTiles[];
+
+// Characters
 extern const u8 PlutoGruntMaleTiles[];
 extern const u8 LeaderTerrenceTiles[];
 extern const u8 ChampionSeleneTiles[];
@@ -97,6 +101,32 @@ static const struct SpriteFrameImage Table_MCFieldMove[] =
     overworld_frame(MCFieldMoveTiles, 4, 4, 6),
     overworld_frame(MCFieldMoveTiles, 4, 4, 7),
     overworld_frame(MCFieldMoveTiles, 4, 4, 8),
+};
+
+static const struct SpriteFrameImage Table_MCFishing[] =
+{
+    overworld_frame(MCFishingTiles, 4, 4, 0),
+    overworld_frame(MCFishingTiles, 4, 4, 1),
+    overworld_frame(MCFishingTiles, 4, 4, 2),
+    overworld_frame(MCFishingTiles, 4, 4, 3),
+    overworld_frame(MCFishingTiles, 4, 4, 4),
+    overworld_frame(MCFishingTiles, 4, 4, 5),
+    overworld_frame(MCFishingTiles, 4, 4, 6),
+    overworld_frame(MCFishingTiles, 4, 4, 7),
+    overworld_frame(MCFishingTiles, 4, 4, 8),
+    overworld_frame(MCFishingTiles, 4, 4, 9),
+    overworld_frame(MCFishingTiles, 4, 4, 10),
+    overworld_frame(MCFishingTiles, 4, 4, 11),
+};
+
+static const struct SpriteFrameImage Table_MCVSSeekerBike[] =
+{
+    overworld_frame(MCVSSeekerBikeTiles, 4, 4, 0),
+    overworld_frame(MCVSSeekerBikeTiles, 4, 4, 1),
+    overworld_frame(MCVSSeekerBikeTiles, 4, 4, 2),
+    overworld_frame(MCVSSeekerBikeTiles, 4, 4, 3),
+    overworld_frame(MCVSSeekerBikeTiles, 4, 4, 4),
+    overworld_frame(MCVSSeekerBikeTiles, 4, 4, 5),
 };
 // #endregion MC
 
@@ -245,6 +275,46 @@ const struct EventObjectGraphicsInfo GraphicsInfo_MCFieldMove =
     .subspriteTables = gEventObjectSpriteOamTables_16x32,
     .anims = gEventObjectImageAnimTable_FieldMove,
     .images = Table_MCFieldMove,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+const struct EventObjectGraphicsInfo GraphicsInfo_MCFishing =
+{
+    .tileTag = 0xFFFF,
+    .paletteTag1 = 0x1207,
+    .paletteTag2 = EVENT_OBJ_PAL_TAG_NONE,
+    .size = (32 * 32) / 2,
+    .width = 32,
+    .height = 32,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .disableReflectionPaletteLoad = FALSE,
+    .tracks = TRACKS_NONE,
+    .gender = MALE,
+    .oam = gEventObjectBaseOam_32x32,
+    .subspriteTables = gEventObjectSpriteOamTables_32x32,
+    .anims = gEventObjectImageAnimTable_Fishing,
+    .images = Table_MCFishing,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+const struct EventObjectGraphicsInfo GraphicsInfo_MCVSSeekerBike =
+{
+    .tileTag = 0xFFFF,
+    .paletteTag1 = 0x1207,
+    .paletteTag2 = EVENT_OBJ_PAL_TAG_NONE,
+    .size = (32 * 32) / 2,
+    .width = 32,
+    .height = 32,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .disableReflectionPaletteLoad = FALSE,
+    .tracks = TRACKS_NONE,
+    .gender = MALE,
+    .oam = gEventObjectBaseOam_32x32,
+    .subspriteTables = gEventObjectSpriteOamTables_32x32,
+    .anims = gEventObjectImageAnimTable_VsSeekerBike,
+    .images = Table_MCVSSeekerBike,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 // #endregion MC

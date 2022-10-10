@@ -1378,8 +1378,12 @@ EventScript_DebugMode_Main:
 	setflag 0x829 @ Enable Pokedex Menu
 	additem ITEM_POKE_BALL 0x32 @ Give 50 pokeballs
 	additem ITEM_RARE_CANDY 0x1E @ Give 30 rare candies
-	additem ITEM_TOWN_MAP 0x1 @ Give town map
-	additem ITEM_MACH_BIKE @ Give bike
+	additem ITEM_TOWN_MAP 0x1
+	additem ITEM_MACH_BIKE
+	additem ITEM_OLD_ROD
+	additem ITEM_GOOD_ROD
+	additem ITEM_SUPER_ROD
+	additem ITEM_VS_SEEKER
 	@ giveitem2 0x169 0x1 0x13E @ Give town map with fanfare (base game uses both)
 	setflag 0x820 @ Badge 1, Field Badge
 	setflag 0x821 @ Badge 2, Patch Badge

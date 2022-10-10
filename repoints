@@ -313,9 +313,9 @@ GraphicsInfo_MCStanding 839FDB0
 GraphicsInfo_MCCycling 839FDB4
 GraphicsInfo_MCSurfing 839FDB8
 GraphicsInfo_MCFieldMove 839FDBC
-# GraphicsInfo_MCFishing 839FDC0
+GraphicsInfo_MCFishing 839FDC0
 GraphicsInfo_MCFieldMove 839FDC4
-# GraphicsInfo_MCVSSeekerBike 839FDC8
+GraphicsInfo_MCVSSeekerBike 839FDC8
 ## Replace Rocket Grunt (49)
 GraphicsInfo_PlutoGruntMale 839FE74
 ## Replace Lance (74)
