@@ -5,6 +5,7 @@
 extern const u8 MCStandingTiles[];
 extern const u8 MCCyclingTiles[];
 extern const u8 MCSurfingTiles[];
+extern const u8 MCFieldMoveTiles[];
 extern const u8 PlutoGruntMaleTiles[];
 extern const u8 LeaderTerrenceTiles[];
 extern const u8 ChampionSeleneTiles[];
@@ -83,7 +84,19 @@ static const struct SpriteFrameImage Table_MCSurfing[] =
     overworld_frame(MCSurfingTiles, 2, 4, 9),
     overworld_frame(MCSurfingTiles, 2, 4, 10),
     overworld_frame(MCSurfingTiles, 2, 4, 11),
+};
 
+static const struct SpriteFrameImage Table_MCFieldMove[] =
+{
+    overworld_frame(MCFieldMoveTiles, 4, 4, 0),
+    overworld_frame(MCFieldMoveTiles, 4, 4, 1),
+    overworld_frame(MCFieldMoveTiles, 4, 4, 2),
+    overworld_frame(MCFieldMoveTiles, 4, 4, 3),
+    overworld_frame(MCFieldMoveTiles, 4, 4, 4),
+    overworld_frame(MCFieldMoveTiles, 4, 4, 5),
+    overworld_frame(MCFieldMoveTiles, 4, 4, 6),
+    overworld_frame(MCFieldMoveTiles, 4, 4, 7),
+    overworld_frame(MCFieldMoveTiles, 4, 4, 8),
 };
 // #endregion MC
 
@@ -212,6 +225,26 @@ const struct EventObjectGraphicsInfo GraphicsInfo_MCSurfing =
     .subspriteTables = gEventObjectSpriteOamTables_16x32,
     .anims = gEventObjectImageAnimTable_Surfing,
     .images = Table_MCSurfing,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+const struct EventObjectGraphicsInfo GraphicsInfo_MCFieldMove =
+{
+    .tileTag = 0xFFFF,
+    .paletteTag1 = 0x1207,
+    .paletteTag2 = EVENT_OBJ_PAL_TAG_NONE,
+    .size = (16 * 32) / 2,
+    .width = 16,
+    .height = 32,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .disableReflectionPaletteLoad = FALSE,
+    .tracks = TRACKS_NONE,
+    .gender = MALE,
+    .oam = gEventObjectBaseOam_16x32,
+    .subspriteTables = gEventObjectSpriteOamTables_16x32,
+    .anims = gEventObjectImageAnimTable_FieldMove,
+    .images = Table_MCFieldMove,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 // #endregion MC
