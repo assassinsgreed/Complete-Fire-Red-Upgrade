@@ -9,6 +9,8 @@ extern const u8 MCFieldMoveTiles[];
 extern const u8 MCFishingTiles[];
 extern const u8 MCVSSeekerBikeTiles[];
 
+extern const u8 FeMCStandingTiles[];
+
 // Characters
 extern const u8 PlutoGruntMaleTiles[];
 extern const u8 LeaderTerrenceTiles[];
@@ -127,6 +129,30 @@ static const struct SpriteFrameImage Table_MCVSSeekerBike[] =
     overworld_frame(MCVSSeekerBikeTiles, 4, 4, 3),
     overworld_frame(MCVSSeekerBikeTiles, 4, 4, 4),
     overworld_frame(MCVSSeekerBikeTiles, 4, 4, 5),
+};
+
+static const struct SpriteFrameImage Table_FeMCStanding[] =
+{
+    overworld_frame(FeMCStandingTiles, 2, 4, 0),
+    overworld_frame(FeMCStandingTiles, 2, 4, 1),
+    overworld_frame(FeMCStandingTiles, 2, 4, 2),
+    overworld_frame(FeMCStandingTiles, 2, 4, 3),
+    overworld_frame(FeMCStandingTiles, 2, 4, 4),
+    overworld_frame(FeMCStandingTiles, 2, 4, 5),
+    overworld_frame(FeMCStandingTiles, 2, 4, 6),
+    overworld_frame(FeMCStandingTiles, 2, 4, 7),
+    overworld_frame(FeMCStandingTiles, 2, 4, 8),
+    overworld_frame(FeMCStandingTiles, 2, 4, 9),
+    overworld_frame(FeMCStandingTiles, 2, 4, 10),
+    overworld_frame(FeMCStandingTiles, 2, 4, 11),
+    overworld_frame(FeMCStandingTiles, 2, 4, 12),
+    overworld_frame(FeMCStandingTiles, 2, 4, 13),
+    overworld_frame(FeMCStandingTiles, 2, 4, 14),
+    overworld_frame(FeMCStandingTiles, 2, 4, 15),
+    overworld_frame(FeMCStandingTiles, 2, 4, 16),
+    overworld_frame(FeMCStandingTiles, 2, 4, 17),
+    overworld_frame(FeMCStandingTiles, 2, 4, 18),
+    overworld_frame(FeMCStandingTiles, 2, 4, 19),
 };
 // #endregion MC
 
@@ -315,6 +341,26 @@ const struct EventObjectGraphicsInfo GraphicsInfo_MCVSSeekerBike =
     .subspriteTables = gEventObjectSpriteOamTables_32x32,
     .anims = gEventObjectImageAnimTable_VsSeekerBike,
     .images = Table_MCVSSeekerBike,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+const struct EventObjectGraphicsInfo GraphicsInfo_FeMCStanding =
+{
+    .tileTag = 0xFFFF,
+    .paletteTag1 = 0x1208,
+    .paletteTag2 = EVENT_OBJ_PAL_TAG_NONE,
+    .size = (16 * 32) / 2,
+    .width = 16,
+    .height = 32,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .disableReflectionPaletteLoad = FALSE,
+    .tracks = TRACKS_FOOT,
+    .gender = FEMALE,
+    .oam = gEventObjectBaseOam_16x32,
+    .subspriteTables = gEventObjectSpriteOamTables_16x32,
+    .anims = gEventObjectImageAnimTable_PlayerNormal,
+    .images = Table_FeMCStanding,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 // #endregion MC
