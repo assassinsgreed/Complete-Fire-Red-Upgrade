@@ -308,6 +308,22 @@ gText_TextSpeedInstant 083cc338
 #endif
 
 # Custom Overworld Spritework
+## Replace Red Movement sprites (0-6)
+GraphicsInfo_MCStanding 839FDB0
+GraphicsInfo_MCCycling 839FDB4
+GraphicsInfo_MCSurfing 839FDB8
+GraphicsInfo_MCFieldMove 839FDBC
+GraphicsInfo_MCFishing 839FDC0
+GraphicsInfo_MCFieldMove 839FDC4
+GraphicsInfo_MCVSSeekerBike 839FDC8
+## Replace Leaf Movement sprites (7-13)
+GraphicsInfo_FeMCStanding 839FDCC
+GraphicsInfo_FeMCCycling 839FDD0
+GraphicsInfo_FeMCSurfing 839FDD4
+GraphicsInfo_FeMCFieldMove 839FDD8
+GraphicsInfo_FeMCFishing 839FDDC
+GraphicsInfo_FeMCFieldMove 839FDE0
+GraphicsInfo_FeMCVSSeekerBike 839FDE4
 ## Replace Rocket Grunt (49)
 GraphicsInfo_PlutoGruntMale 839FE74
 ## Replace Lance (74)

@@ -29,6 +29,8 @@ tables to edit:
 
 */
 
+extern const u16 MCStandingPal[];
+extern const u16 FeMCStandingPal[];
 extern const u16 PlutoGruntMalePal[];
 extern const u16 ChampionSelenePal[];
 extern const u16 LeaderTerrencePal[];
@@ -283,6 +285,8 @@ static const u16* sPlayerMarlonOutfitColours[] =
 		{ StunfiskPal, 0x1204 },
 		{ TMPokeballPal, 0x1205 },
 		{ LeaderTerrencePal, 0x1206 },
+		{ MCStandingPal, 0x1207 },
+		{ FeMCStandingPal, 0x1208 },
 		{ NULL, 0x11FF }
 	};
 	const struct SpritePalette* const gObjectEventSpritePalettesSwitcher[255] = {
