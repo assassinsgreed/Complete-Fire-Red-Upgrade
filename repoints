@@ -320,9 +320,9 @@ GraphicsInfo_MCVSSeekerBike 839FDC8
 GraphicsInfo_FeMCStanding 839FDCC
 GraphicsInfo_FeMCCycling 839FDD0
 GraphicsInfo_FeMCSurfing 839FDD4
-#GraphicsInfo_FeMCFieldMove 839FDD8
+GraphicsInfo_FeMCFieldMove 839FDD8
 #GraphicsInfo_FeMCFishing 839FDDC
-#GraphicsInfo_FeMCFieldMove 839FDE0
+GraphicsInfo_FeMCFieldMove 839FDE0
 #GraphicsInfo_FeMCVSSeekerBike 839FDE4
 ## Replace Rocket Grunt (49)
 GraphicsInfo_PlutoGruntMale 839FE74
