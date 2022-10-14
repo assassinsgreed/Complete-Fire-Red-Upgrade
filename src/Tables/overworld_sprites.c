@@ -14,6 +14,7 @@ extern const u8 FeMCCyclingTiles[];
 extern const u8 FeMCSurfingTiles[];
 extern const u8 FeMCFieldMoveTiles[];
 extern const u8 FeMCFishingTiles[];
+extern const u8 FeMCVSSeekerBikeTiles[];
 
 // Characters
 extern const u8 PlutoGruntMaleTiles[];
@@ -215,6 +216,16 @@ static const struct SpriteFrameImage Table_FeMCFishing[] =
     overworld_frame(FeMCFishingTiles, 4, 4, 9),
     overworld_frame(FeMCFishingTiles, 4, 4, 10),
     overworld_frame(FeMCFishingTiles, 4, 4, 11),
+};
+
+static const struct SpriteFrameImage Table_FeMCVSSeekerBike[] =
+{
+    overworld_frame(FeMCVSSeekerBikeTiles, 4, 4, 0),
+    overworld_frame(FeMCVSSeekerBikeTiles, 4, 4, 1),
+    overworld_frame(FeMCVSSeekerBikeTiles, 4, 4, 2),
+    overworld_frame(FeMCVSSeekerBikeTiles, 4, 4, 3),
+    overworld_frame(FeMCVSSeekerBikeTiles, 4, 4, 4),
+    overworld_frame(FeMCVSSeekerBikeTiles, 4, 4, 5),
 };
 // #endregion MC
 
@@ -503,6 +514,26 @@ const struct EventObjectGraphicsInfo GraphicsInfo_FeMCFishing =
     .subspriteTables = gEventObjectSpriteOamTables_32x32,
     .anims = gEventObjectImageAnimTable_Fishing,
     .images = Table_FeMCFishing,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+const struct EventObjectGraphicsInfo GraphicsInfo_FeMCVSSeekerBike =
+{
+    .tileTag = 0xFFFF,
+    .paletteTag1 = 0x1207,
+    .paletteTag2 = EVENT_OBJ_PAL_TAG_NONE,
+    .size = (32 * 32) / 2,
+    .width = 32,
+    .height = 32,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .disableReflectionPaletteLoad = FALSE,
+    .tracks = TRACKS_NONE,
+    .gender = FEMALE,
+    .oam = gEventObjectBaseOam_32x32,
+    .subspriteTables = gEventObjectSpriteOamTables_32x32,
+    .anims = gEventObjectImageAnimTable_VsSeekerBike,
+    .images = Table_FeMCVSSeekerBike,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 // #endregion MC
