@@ -11,6 +11,7 @@ extern const u8 MCVSSeekerBikeTiles[];
 
 extern const u8 FeMCStandingTiles[];
 extern const u8 FeMCCyclingTiles[];
+extern const u8 FeMCSurfingTiles[];
 
 // Characters
 extern const u8 PlutoGruntMaleTiles[];
@@ -167,6 +168,22 @@ static const struct SpriteFrameImage Table_FeMCCycling[] =
     overworld_frame(FeMCCyclingTiles, 4, 4, 6),
     overworld_frame(FeMCCyclingTiles, 4, 4, 7),
     overworld_frame(FeMCCyclingTiles, 4, 4, 8),
+};
+
+static const struct SpriteFrameImage Table_FeMCSurfing[] =
+{
+    overworld_frame(FeMCSurfingTiles, 2, 4, 0),
+    overworld_frame(FeMCSurfingTiles, 2, 4, 1),
+    overworld_frame(FeMCSurfingTiles, 2, 4, 2),
+    overworld_frame(FeMCSurfingTiles, 2, 4, 3),
+    overworld_frame(FeMCSurfingTiles, 2, 4, 4),
+    overworld_frame(FeMCSurfingTiles, 2, 4, 5),
+    overworld_frame(FeMCSurfingTiles, 2, 4, 6),
+    overworld_frame(FeMCSurfingTiles, 2, 4, 7),
+    overworld_frame(FeMCSurfingTiles, 2, 4, 8),
+    overworld_frame(FeMCSurfingTiles, 2, 4, 9),
+    overworld_frame(FeMCSurfingTiles, 2, 4, 10),
+    overworld_frame(FeMCSurfingTiles, 2, 4, 11),
 };
 // #endregion MC
 
@@ -395,6 +412,26 @@ const struct EventObjectGraphicsInfo GraphicsInfo_FeMCCycling =
     .subspriteTables = gEventObjectSpriteOamTables_32x32,
     .anims = gEventObjectImageAnimTable_Standard,
     .images = Table_FeMCCycling,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+const struct EventObjectGraphicsInfo GraphicsInfo_FeMCSurfing =
+{
+    .tileTag = 0xFFFF,
+    .paletteTag1 = 0x1207,
+    .paletteTag2 = EVENT_OBJ_PAL_TAG_NONE,
+    .size = (16 * 32) / 2,
+    .width = 16,
+    .height = 32,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .disableReflectionPaletteLoad = FALSE,
+    .tracks = TRACKS_NONE,
+    .gender = FEMALE,
+    .oam = gEventObjectBaseOam_16x32,
+    .subspriteTables = gEventObjectSpriteOamTables_16x32,
+    .anims = gEventObjectImageAnimTable_Surfing,
+    .images = Table_FeMCSurfing,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 // #endregion MC
