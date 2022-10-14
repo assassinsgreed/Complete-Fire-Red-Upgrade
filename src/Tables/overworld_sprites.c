@@ -13,6 +13,7 @@ extern const u8 FeMCStandingTiles[];
 extern const u8 FeMCCyclingTiles[];
 extern const u8 FeMCSurfingTiles[];
 extern const u8 FeMCFieldMoveTiles[];
+extern const u8 FeMCFishingTiles[];
 
 // Characters
 extern const u8 PlutoGruntMaleTiles[];
@@ -198,6 +199,22 @@ static const struct SpriteFrameImage Table_FeMCFieldMove[] =
     overworld_frame(FeMCFieldMoveTiles, 4, 4, 6),
     overworld_frame(FeMCFieldMoveTiles, 4, 4, 7),
     overworld_frame(FeMCFieldMoveTiles, 4, 4, 8),
+};
+
+static const struct SpriteFrameImage Table_FeMCFishing[] =
+{
+    overworld_frame(FeMCFishingTiles, 4, 4, 0),
+    overworld_frame(FeMCFishingTiles, 4, 4, 1),
+    overworld_frame(FeMCFishingTiles, 4, 4, 2),
+    overworld_frame(FeMCFishingTiles, 4, 4, 3),
+    overworld_frame(FeMCFishingTiles, 4, 4, 4),
+    overworld_frame(FeMCFishingTiles, 4, 4, 5),
+    overworld_frame(FeMCFishingTiles, 4, 4, 6),
+    overworld_frame(FeMCFishingTiles, 4, 4, 7),
+    overworld_frame(FeMCFishingTiles, 4, 4, 8),
+    overworld_frame(FeMCFishingTiles, 4, 4, 9),
+    overworld_frame(FeMCFishingTiles, 4, 4, 10),
+    overworld_frame(FeMCFishingTiles, 4, 4, 11),
 };
 // #endregion MC
 
@@ -466,6 +483,26 @@ const struct EventObjectGraphicsInfo GraphicsInfo_FeMCFieldMove =
     .subspriteTables = gEventObjectSpriteOamTables_16x32,
     .anims = gEventObjectImageAnimTable_FieldMove,
     .images = Table_FeMCFieldMove,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+const struct EventObjectGraphicsInfo GraphicsInfo_FeMCFishing =
+{
+    .tileTag = 0xFFFF,
+    .paletteTag1 = 0x1207,
+    .paletteTag2 = EVENT_OBJ_PAL_TAG_NONE,
+    .size = (32 * 32) / 2,
+    .width = 32,
+    .height = 32,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .disableReflectionPaletteLoad = FALSE,
+    .tracks = TRACKS_NONE,
+    .gender = FEMALE,
+    .oam = gEventObjectBaseOam_32x32,
+    .subspriteTables = gEventObjectSpriteOamTables_32x32,
+    .anims = gEventObjectImageAnimTable_Fishing,
+    .images = Table_FeMCFishing,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 // #endregion MC
