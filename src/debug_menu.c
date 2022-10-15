@@ -177,7 +177,7 @@ void DebugMenu_ShinyTeam(void)
 
 void DebugMenu_SetAllPokemonCaught(void)
 {
-	for (u32 i = 0; i <= (NATIONAL_DEX_COUNT); ++i)
+	for (u32 i = 0; i <= NATIONAL_DEX_COUNT; ++i)
 	{
 		GetSetPokedexFlag(i, FLAG_SET_SEEN);
 		if (gSpecialVar_LastResult == 1)
