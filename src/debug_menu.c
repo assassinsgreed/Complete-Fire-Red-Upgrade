@@ -174,3 +174,15 @@ void DebugMenu_ShinyTeam(void)
 			ForceMonShiny(&gPlayerParty[i]);
 	}
 }
+
+void DebugMenu_SetAllPokemonCaught(void)
+{
+	for (u32 i = 0; i <= NATIONAL_DEX_COUNT; ++i)
+	{
+		GetSetPokedexFlag(i, FLAG_SET_SEEN);
+		if (gSpecialVar_LastResult == 1)
+		{
+			GetSetPokedexFlag(i, FLAG_SET_CAUGHT);
+		}
+	}
+}
