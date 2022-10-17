@@ -176,7 +176,7 @@
 #define FLAG_HIDE_LORELEIS_HOUSE_FEAROW_DOLL               0x0AA
 #define FLAG_HIDE_LORELEIS_HOUSE_PIDGEOT_DOLL              0x0AB
 #define FLAG_HIDE_LORELEIS_HOUSE_LAPRAS_DOLL               0x0AC
-#define FLAG_HIDE_MISC_KANTO_ROCKETS                       0x0AD
+#define FLAG_HIDE_MISC_PLUTO_GRUNTS                        0x0AD
 #define FLAG_HIDE_SAFFRON_CITY_POKECENTER_SABRINA_JOURNALS 0x0AE
 
 // Unused?
@@ -720,16 +720,16 @@
 #define FLAG_FOUGHT_MOLTRES                              0x2BD
 #define FLAG_FOUGHT_ARTICUNO                             0x2BE
 #define FLAG_FOUGHT_ZAPDOS                               0x2BF
-#define FLAG_TUTOR_DOUBLE_EDGE                           0x2C0
-#define FLAG_TUTOR_THUNDER_WAVE                          0x2C1
-#define FLAG_TUTOR_ROCK_SLIDE                            0x2C2
-#define FLAG_TUTOR_EXPLOSION                             0x2C3
-#define FLAG_TUTOR_MEGA_PUNCH                            0x2C4
-#define FLAG_TUTOR_MEGA_KICK                             0x2C5
-#define FLAG_TUTOR_DREAM_EATER                           0x2C6
-#define FLAG_TUTOR_SOFT_BOILED                           0x2C7
-#define FLAG_TUTOR_SUBSTITUTE                            0x2C8
-#define FLAG_TUTOR_SWORDS_DANCE                          0x2C9
+#define FLAG_RIVAL_EVENT_1                               0x2C0
+#define FLAG_RIVAL_EVENT_2                               0x2C1
+#define FLAG_RIVAL_EVENT_3                               0x2C2
+#define FLAG_RIVAL_EVENT_4                               0x2C3
+#define FLAG_RIVAL_EVENT_5                               0x2C4
+#define FLAG_RIVAL_EVENT_6                               0x2C5
+#define FLAG_RIVAL_EVENT_7                               0x2C6
+#define FLAG_RIVAL_EVENT_8                               0x2C7
+#define FLAG_RIVAL_EVENT_9                               0x2C8
+#define FLAG_RIVAL_EVENT_10                              0x2C9
 #define FLAG_TUTOR_SEISMIC_TOSS                          0x2CA
 #define FLAG_TUTOR_COUNTER                               0x2CB
 #define FLAG_TUTOR_METRONOME                             0x2CC

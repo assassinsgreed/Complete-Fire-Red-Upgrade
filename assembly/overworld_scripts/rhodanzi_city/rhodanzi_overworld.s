@@ -12,14 +12,13 @@ MapScript_RhodanziOverworld_FlightSpot:
 MapEntryScript_RhodanziOverworld_FlightFlag:
     setworldmapflag 0x892
     sethealingplace 0x03 @ Originally Pewter City
-    checkflag 0x820
+    checkflag 0x820 @ Obtained Rhodanzi City Gym
     IF SET _call HideThugs
     end
 
 HideThugs:
     hidesprite 0x6
     hidesprite 0x7
-    setflag 0x00AD
     return
 
 .global EventScript_RhodanziOverworld_SunSightMan
