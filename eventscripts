@@ -33,6 +33,7 @@ npc 3 19 4 EventScript_Route1_SandygastEncounter
 npc 3 20 0 EventScript_Route2_YoungsterJoey
 npc 3 20 1 EventScript_Route2_LassKimberly
 npc 3 20 2 EventScript_Route2_LassRikki
+npc 3 20 3 EventScript_RivalEvent1
 
 # Varisi Forest
 map 1 0 MapScript_VarisiForest_FlightSpot

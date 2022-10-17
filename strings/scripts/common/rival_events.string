@@ -1,0 +1,14 @@
+#org @gText_RivalEvent1_RequestPokeballs
+Oh, [PLAYER], perfect timing! I found\na rare Pok\emon but I'm having a\lhard time catching it.\pCan I have 5 Pok\eballs? I'll make it\nworth your while! Please?
+
+#org @gText_RivalEvent1_Declined
+Aww, that's too bad, but I get it!\nIf you change your mind, I'll be\lhere for a while longer.
+
+#org @gText_RivalEvent1_NotEnoughPokeballs
+I appreciate the offer, but it looks\nlike you're a little short! I really\lneed 5, just in case it breaks out.
+
+#org @gText_RivalEvent1_ThankPlayer
+Thanks, [PLAYER]! You're a real life\nsaver. I can totally catch this\lPok\emon now!
+
+#org @gText_RivalEvent1_GiveMoney
+Here, take this. It's the least I can\ndo!

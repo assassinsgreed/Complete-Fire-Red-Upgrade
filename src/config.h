@@ -52,7 +52,7 @@
 #define FLAG_REMOVE_EVO_ITEM 0x912  //Flag to toggle item removal after leveling up (set by the engine)
 #define FLAG_SHINY_CREATION 0x913 //Flag to cause next battle to be against a shiny Pokemon
 #define FLAG_AUTO_RUN 0x914 //Flag to enable auto-run (toggled by L-button). If this feature is used, L=A will not work. Comment out this line for it to work again.
-#define FLAG_RUNNING_ENABLED 0x82F //The player can only run if this flag is set. If commented, the player will start the game with running shoes.
+//#define FLAG_RUNNING_ENABLED 0x82F //The player can only run if this flag is set. If commented, the player will start the game with running shoes.
 #define FLAG_BIKE_TURBO_BOOST 0x91F //The bike moves extra fast if this flag is set or if the player holds B.
 #define FLAG_SURF_TURBO_BOOST 0x929 //The Surf blob moves extra fast if set
 #define FLAG_DISABLE_BAG 0x915 //The bag can't be used in-battle if this flag is set
