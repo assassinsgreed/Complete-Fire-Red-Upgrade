@@ -340,5 +340,7 @@ GraphicsInfo_Stunfisk 839FF70
 GraphicsInfo_LeaderTerrence 839FEF0
 
 # Custom Battle Spritework
+Rival1Tiles 82398CC
+Rival1Pal 8239D6C
 LeaderTerrenceBTiles 823991C
 LeaderTerrenceBPal 8239DBC
