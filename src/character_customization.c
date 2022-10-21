@@ -32,6 +32,7 @@ tables to edit:
 extern const u16 MCStandingPal[];
 extern const u16 FeMCStandingPal[];
 extern const u16 PlutoGruntMalePal[];
+extern const u16 RivalPal[];
 extern const u16 ChampionSelenePal[];
 extern const u16 LeaderTerrencePal[];
 extern const u16 SandygastPal[];
@@ -287,6 +288,7 @@ static const u16* sPlayerMarlonOutfitColours[] =
 		{ LeaderTerrencePal, 0x1206 },
 		{ MCStandingPal, 0x1207 },
 		{ FeMCStandingPal, 0x1208 },
+		{ RivalPal, 0x1209 },
 		{ NULL, 0x11FF }
 	};
 	const struct SpritePalette* const gObjectEventSpritePalettesSwitcher[255] = {
