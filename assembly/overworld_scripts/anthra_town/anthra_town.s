@@ -27,7 +27,7 @@ EventScript_AnthraTown_OldMan:
 EventScript_AnthraTown_MomMain:
 	lock
 	faceplayer
-	checkflag 0x258
+	checkflag 0x258 @ First rival battle completed
 	if SET _goto EventScript_AnthraTown_MomRestPrompt
 	msgbox gText_AnthraTown_MomLeaveHome MSG_KEEPOPEN
 	closeonkeypress

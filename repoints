@@ -326,6 +326,10 @@ GraphicsInfo_FeMCFieldMove 839FDE0
 GraphicsInfo_FeMCVSSeekerBike 839FDE4
 ## Replace Rocket Grunt (49)
 GraphicsInfo_PlutoGruntMale 839FE74
+## Replace Rival (72)
+GraphicsInfo_Rival 839FED0
+## Replace Brock (80)
+GraphicsInfo_LeaderTerrence 839FEF0
 ## Replace Lance (74)
 GraphicsInfo_ChampionSelene 839FED8
 ## Replace Town Map (93)
@@ -336,9 +340,9 @@ GraphicsInfo_Sandygast 839FF68
 GraphicsInfo_Foongus 839FF6C
 ## Replace Poliwrath (112)
 GraphicsInfo_Stunfisk 839FF70
-## Replace Brock (80)
-GraphicsInfo_LeaderTerrence 839FEF0
 
 # Custom Battle Spritework
+Rival1Tiles 82398CC
+Rival1Pal 8239D6C
 LeaderTerrenceBTiles 823991C
 LeaderTerrenceBPal 8239DBC
