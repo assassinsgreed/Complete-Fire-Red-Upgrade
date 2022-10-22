@@ -204,6 +204,30 @@ const struct WildPokemonInfo gRhodanziCity_FishingMonsInfo = {20, gRhodanziCity_
 const struct WildPokemonHeader gWildMonRegularHeaders[] =
 {
 	{
+		.mapGroup = MAP_GROUP(ANTHRA_TOWN),
+		.mapNum = MAP_NUM(ANTHRA_TOWN),
+		.landMonsInfo = NULL,
+		.waterMonsInfo = NULL,
+		.rockSmashMonsInfo = NULL,
+		.fishingMonsInfo = NULL,
+	},
+	{
+		.mapGroup = MAP_GROUP(OLENIC_TOWN),
+		.mapNum = MAP_NUM(OLENIC_TOWN),
+		.landMonsInfo = NULL,
+		.waterMonsInfo = NULL,
+		.rockSmashMonsInfo = NULL,
+		.fishingMonsInfo = NULL,
+	},
+	{
+		.mapGroup = MAP_GROUP(RHODANZI_CITY),
+		.mapNum = MAP_NUM(RHODANZI_CITY),
+		.landMonsInfo = NULL,
+		.waterMonsInfo = &gRhodanziCity_WaterMonsInfo,
+		.rockSmashMonsInfo = NULL,
+		.fishingMonsInfo = &gRhodanziCity_FishingMonsInfo,
+	},
+	{
 		.mapGroup = MAP_GROUP(ROUTE_1),
 		.mapNum = MAP_NUM(ROUTE_1),
 		.landMonsInfo = &gRoute1_LandMonsInfo,
@@ -242,14 +266,6 @@ const struct WildPokemonHeader gWildMonRegularHeaders[] =
 		.waterMonsInfo = NULL,
 		.rockSmashMonsInfo = NULL,
 		.fishingMonsInfo = NULL,
-	},
-	{
-		.mapGroup = MAP_GROUP(RHODANZI_CITY),
-		.mapNum = MAP_NUM(RHODANZI_CITY),
-		.landMonsInfo = NULL,
-		.waterMonsInfo = &gRhodanziCity_WaterMonsInfo,
-		.rockSmashMonsInfo = NULL,
-		.fishingMonsInfo = &gRhodanziCity_FishingMonsInfo,
 	},
 	{
 		.mapGroup = 0xFF,
