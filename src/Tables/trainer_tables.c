@@ -142,6 +142,13 @@ const struct TrainerMonItemCustomMoves sParty_RhodanziCity_LeaderTerrence[] = {
 };
 // #endregion
 
+// #region Route 7
+const struct TrainerMonNoItemDefaultMoves sParty_Route7_CamperCarlisle[] = {
+    { .iv = 0, .lvl = 9, .species = SPECIES_NIDORAN_M },
+    { .iv = 0, .lvl = 10, .species = SPECIES_DOTTLER },
+};
+// endregion
+
 // #endregion
 
 #define NO_NAME                                                                                      \
@@ -290,7 +297,6 @@ const struct Trainer gTrainers[] = {
         .partySize = NELEMS(sParty_VarisiForest_LassMimi),
         .party = {.NoItemDefaultMoves = sParty_VarisiForest_LassMimi}
     },
-
     // #endregion
     // #region Rhodanzi City
     [TRAINER_RHODANZI_GYM_ALONSO] = {
@@ -328,6 +334,20 @@ const struct Trainer gTrainers[] = {
         .aiFlags = AI_SCRIPT_SEMI_SMART,
         .partySize = NELEMS(sParty_RhodanziCity_LeaderTerrence),
         .party = {.ItemCustomMoves = sParty_RhodanziCity_LeaderTerrence}
+    },
+    // #endregion
+    // #region Route 7
+    [TRAINER_ROUTE_7_CAMPER_CARLISLE] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_CAMPER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_CAMPER,
+        .trainerName = {_C, _a, _r, _l, _i, _s, _l, _e, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = NELEMS(sParty_Route7_CamperCarlisle),
+        .party = {.NoItemDefaultMoves = sParty_Route7_CamperCarlisle}
     },
     // #endregion
 };

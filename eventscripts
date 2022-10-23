@@ -123,3 +123,8 @@ npc 6 6 0 EventScript_RhodanziGym_GymExpert
 npc 6 6 1 EventScript_RhodanziGym_Alonso
 npc 6 6 2 EventScript_RhodanziGym_Brandon
 npc 6 6 3 EventScript_RhodanziGym_Leader_Terrence
+
+# Route 7
+npc 3 25 0 EventScript_Route7_CamperCarlisle
+npc 3 25 1 EventScript_Common_Cut
+sign 3 25 1 SignScript_Route7_TrainerTips

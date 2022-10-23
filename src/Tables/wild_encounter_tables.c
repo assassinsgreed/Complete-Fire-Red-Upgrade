@@ -80,6 +80,22 @@ const struct WildPokemon gRoute2_FishingMons[] =
 	{1, 1, SPECIES_NONE},		// Super Rod
 };
 
+const struct WildPokemon gRoute7_LandMons[] =
+{
+	{6, 9, SPECIES_LILLIPUP},
+	{6, 8, SPECIES_FLETCHLING},
+	{6, 9, SPECIES_FARFETCHD_G},
+	{6, 8, SPECIES_FARFETCHD_G},
+	{7, 9, SPECIES_NIDORAN_M},
+	{6, 9, SPECIES_FERROSEED},
+	{7, 9, SPECIES_FERROSEED},
+	{7, 9, SPECIES_NIDORAN_M},
+	{6, 8, SPECIES_NIDORAN_M},
+	{6, 8, SPECIES_BONSLY},
+	{7, 9, SPECIES_NIDORAN_M},
+	{7, 9, SPECIES_BONSLY},
+};
+
 const struct WildPokemon gRoute17_LandMons[] =
 {
 	{2, 3, SPECIES_FLABEBE},
@@ -192,6 +208,7 @@ const struct WildPokemonInfo gRoute1_LandMonsInfo = {21, gRoute1_LandMons};
 const struct WildPokemonInfo gRoute1_FishingMonsInfo = {20, gRoute1_FishingMons};
 const struct WildPokemonInfo gRoute2_LandMonsInfo = {21, gRoute2_LandMons};
 const struct WildPokemonInfo gRoute2_FishingMonsInfo = {20, gRoute2_FishingMons};
+const struct WildPokemonInfo gRoute7_LandMonsInfo = {21, gRoute7_LandMons};
 const struct WildPokemonInfo gRoute17_LandMonsInfo = {21, gRoute17_LandMons};
 const struct WildPokemonInfo gRoute17_Cave1F_LandMonsInfo = {21, gRoute17_Cave1F_LandMons};
 const struct WildPokemonInfo gRoute17_FishingMonsInfo = {20, gRoute17_FishingMons};
@@ -242,6 +259,14 @@ const struct WildPokemonHeader gWildMonRegularHeaders[] =
 		.waterMonsInfo = NULL,
 		.rockSmashMonsInfo = NULL,
 		.fishingMonsInfo = &gRoute2_FishingMonsInfo,
+	},
+	{
+		.mapGroup = MAP_GROUP(ROUTE_7),
+		.mapNum = MAP_NUM(ROUTE_7),
+		.landMonsInfo = &gRoute7_LandMonsInfo,
+		.waterMonsInfo = NULL,
+		.rockSmashMonsInfo = NULL,
+		.fishingMonsInfo = NULL,
 	},
 	{
 		.mapGroup = MAP_GROUP(ROUTE_17),
