@@ -208,8 +208,8 @@
 #define MAP_NAVEL_ROCK_HARBOR                         (59 | (2 << 8))
 
 // Map Group 3
-#define MAP_PALLET_TOWN                          (0 | (3 << 8))
-#define MAP_VIRIDIAN_CITY                        (1 | (3 << 8))
+#define MAP_ANTHRA_TOWN                          (0 | (3 << 8))
+#define MAP_OLENIC_TOWN                          (1 | (3 << 8))
 #define MAP_RHODANZI_CITY                        (2 | (3 << 8))
 #define MAP_CERULEAN_CITY                        (3 | (3 << 8))
 #define MAP_LAVENDER_TOWN                        (4 | (3 << 8))

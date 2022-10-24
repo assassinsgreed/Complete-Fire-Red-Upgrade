@@ -18,3 +18,5 @@
 #define TRAINER_RHODANZI_GYM_ALONSO                  12
 #define TRAINER_RHODANZI_GYM_BRANDON                 13
 #define TRAINER_RHODANZI_GYM_LEADER_TERRENCE         14
+// Route 7
+#define TRAINER_ROUTE_7_CAMPER_CARLISLE              15
