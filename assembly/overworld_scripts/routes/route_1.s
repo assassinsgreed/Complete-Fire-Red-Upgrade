@@ -40,3 +40,9 @@ EventScript_Route1_SandygastEncounter:
     setflag 0x054
     release
     end
+
+.global ItemScript_Route1_FindTMEnergyBall
+ItemScript_Route1_FindTMEnergyBall:
+    setvar CHOSEN_ITEM ITEM_TM53
+    call ItemScript_Common_FindTM
+    end

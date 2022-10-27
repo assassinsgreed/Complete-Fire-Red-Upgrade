@@ -1,45 +1,45 @@
 #pragma once
 
-#define FLAG_TEMP_1              0x001
-#define FLAG_TEMP_2              0x002
-#define FLAG_TEMP_3              0x003
-#define FLAG_TEMP_4              0x004
-#define FLAG_TEMP_5              0x005
-#define FLAG_TEMP_6              0x006
-#define FLAG_TEMP_7              0x007
-#define FLAG_TEMP_8              0x008
-#define FLAG_TEMP_9              0x009
-#define FLAG_TEMP_A              0x00A
-#define FLAG_TEMP_B              0x00B
-#define FLAG_TEMP_C              0x00C
-#define FLAG_TEMP_D              0x00D
-#define FLAG_TEMP_E              0x00E
-#define FLAG_TEMP_F              0x00F
-#define FLAG_TEMP_10             0x010
-#define FLAG_TEMP_11             0x011
-#define FLAG_TEMP_12             0x012
-#define FLAG_TEMP_13             0x013
-#define FLAG_TEMP_14             0x014
-#define FLAG_TEMP_15             0x015
-#define FLAG_TEMP_16             0x016
-#define FLAG_TEMP_17             0x017
-#define FLAG_TEMP_18             0x018
-#define FLAG_TEMP_19             0x019
-#define FLAG_TEMP_1A             0x01A
-#define FLAG_TEMP_1B             0x01B
-#define FLAG_TEMP_1C             0x01C
-#define FLAG_TEMP_1D             0x01D
-#define FLAG_TEMP_1E             0x01E
-#define FLAG_TEMP_1F             0x01F
+#define FLAG_TEMP_1 0x001
+#define FLAG_TEMP_2 0x002
+#define FLAG_TEMP_3 0x003
+#define FLAG_TEMP_4 0x004
+#define FLAG_TEMP_5 0x005
+#define FLAG_TEMP_6 0x006
+#define FLAG_TEMP_7 0x007
+#define FLAG_TEMP_8 0x008
+#define FLAG_TEMP_9 0x009
+#define FLAG_TEMP_A 0x00A
+#define FLAG_TEMP_B 0x00B
+#define FLAG_TEMP_C 0x00C
+#define FLAG_TEMP_D 0x00D
+#define FLAG_TEMP_E 0x00E
+#define FLAG_TEMP_F 0x00F
+#define FLAG_TEMP_10 0x010
+#define FLAG_TEMP_11 0x011
+#define FLAG_TEMP_12 0x012
+#define FLAG_TEMP_13 0x013
+#define FLAG_TEMP_14 0x014
+#define FLAG_TEMP_15 0x015
+#define FLAG_TEMP_16 0x016
+#define FLAG_TEMP_17 0x017
+#define FLAG_TEMP_18 0x018
+#define FLAG_TEMP_19 0x019
+#define FLAG_TEMP_1A 0x01A
+#define FLAG_TEMP_1B 0x01B
+#define FLAG_TEMP_1C 0x01C
+#define FLAG_TEMP_1D 0x01D
+#define FLAG_TEMP_1E 0x01E
+#define FLAG_TEMP_1F 0x01F
 
-#define FLAG_0x020               0x020
-#define FLAG_0x021               0x021
-#define FLAG_0x022               0x022
-#define FLAG_0x023               0x023
-#define FLAG_0x024               0x024
-#define FLAG_0x025               0x025
-#define FLAG_0x026               0x026
-#define FLAG_0x027               0x027
+#define FLAG_0x020 0x020
+#define FLAG_0x021 0x021
+#define FLAG_0x022 0x022
+#define FLAG_0x023 0x023
+#define FLAG_0x024 0x024
+#define FLAG_0x025 0x025
+#define FLAG_0x026 0x026
+#define FLAG_0x027 0x027
 
 // Hide/show flags
 /*
@@ -88,8 +88,8 @@
 #define FLAG_HIDE_MOLTRES                                  0x052
 #define FLAG_HIDE_SILPH_ROCKETS                            0x053
 #define FLAG_HIDE_ROUTE_1_SANDYGAST                        0x054
-#define FLAG_HIDE_VIRIDIAN_GIOVANNI                        0x055
-#define FLAG_HIDE_OLD_AMBER                                0x056
+#define FLAG_HIDE_VARISI_FOONGUS_1                         0x055
+#define FLAG_HIDE_VARISI_FOONGUS_2                         0x056
 #define FLAG_HIDE_EEVEE_BALL                               0x057
 #define FLAG_HIDE_VICTORY_ROAD_2F_BOULDER                  0x058
 #define FLAG_HIDE_VICTORY_ROAD_3F_BOULDER                  0x059
@@ -347,19 +347,19 @@
 #define FLAG_0x153               0x153
 
 // Item ball hide/show
-#define FLAG_HIDE_ROUTE2_ETHER                                  0x154
-#define FLAG_HIDE_ROUTE2_PARALYZE_HEAL                          0x155
-#define FLAG_HIDE_VIRIDIAN_FOREST_POKE_BALL                     0x156
-#define FLAG_HIDE_VIRIDIAN_FOREST_ANTIDOTE                      0x157
-#define FLAG_HIDE_VIRIDIAN_FOREST_POTION                        0x158
-#define FLAG_HIDE_MT_MOON_1F_PARALYZE_HEAL                      0x159
-#define FLAG_HIDE_MT_MOON_1F_TM09                               0x15A
-#define FLAG_HIDE_MT_MOON_1F_POTION                             0x15B
-#define FLAG_HIDE_MT_MOON_1F_RARE_CANDY                         0x15C
-#define FLAG_HIDE_MT_MOON_1F_ESCAPE_ROPE                        0x15D
-#define FLAG_HIDE_MT_MOON_1F_MOON_STONE                         0x15E
-#define FLAG_HIDE_MT_MOON_B2F_STAR_PIECE                        0x15F
-#define FLAG_HIDE_MT_MOON_B2F_TM46                              0x160
+#define FLAG_HIDE_ROUTE1_POKEBALL                               0x154
+#define FLAG_HIDE_ROUTE1_TM53_ENERGY_BALL                       0x155
+#define FLAG_HIDE_ROUTE17_POTION                                0x156
+#define FLAG_HIDE_ROUTE_2_ANTIDOTE                              0x157
+#define FLAG_HIDE_ROUTE_2_TM83_INFESTATION                      0x158
+#define FLAG_HIDE_ROUTE_2_NUGGET                                0x159
+#define FLAG_HIDE_ROUTE_2_TM96_NATURE_POWER                     0x15A
+#define FLAG_HIDE_ROUTE_2_CHOICE_SCARF                          0x15B
+#define FLAG_HIDE_ROUTE_2_LAX_INCENSE                           0x15C
+#define FLAG_HIDE_ANTHRA_TOWN_POTION                            0x15D
+#define FLAG_HIDE_VARISI_FOREST_TINYMUSHROOM                    0x15E
+#define FLAG_HIDE_VARISI_FOREST_ANTIDOTE                        0x15F
+#define FLAG_HIDE_VARISI_FOREST_POKEBALL                        0x160
 #define FLAG_HIDE_ROUTE4_TM05                                   0x161
 #define FLAG_HIDE_ROUTE24_TM45                                  0x162
 #define FLAG_HIDE_ROUTE25_TM43                                  0x163
@@ -629,7 +629,7 @@
 #define FLAG_FOUND_BOTH_VERMILION_GYM_SWITCHES           0x264
 #define FLAG_CINNABAR_GYM_QUIZ_1                         0x265
 */
-#define FLAG_PENDING_DAYCARE_EGG                         0x266
+#define FLAG_PENDING_DAYCARE_EGG 0x266
 /*
 #define FLAG_CINNABAR_GYM_QUIZ_2                         0x267
 #define FLAG_CINNABAR_GYM_QUIZ_3                         0x268
@@ -784,7 +784,7 @@
 #define FLAG_GOT_AMULET_COIN_FROM_OAKS_AIDE              0x2FD
 #define FLAG_NO_ROOM_FOR_JOYFUL_GAME_CORNER_MOON_STONE   0x2FE
 */
-#define FLAG_OAKS_RATING_IS_VIA_PC                       0x2FF
+#define FLAG_OAKS_RATING_IS_VIA_PC 0x2FF
 
 // Unused?
 /*
@@ -1026,12 +1026,12 @@
 #define FLAG_HIDDEN_ITEM(map, item) (FLAG_HIDDEN_ITEMS_START + HIDDEN_ITEM_##map##_##item)
 
 /*
-#define HIDDEN_ITEM_VIRIDIAN_FOREST_POTION                              0
-#define HIDDEN_ITEM_VIRIDIAN_FOREST_ANTIDOTE                            1
-#define HIDDEN_ITEM_MT_MOON_B2F_MOON_STONE                              2
-#define HIDDEN_ITEM_MT_MOON_B2F_ETHER                                   3
-#define HIDDEN_ITEM_ROUTE25_ELIXIR                                      4
-#define HIDDEN_ITEM_ROUTE25_ETHER                                       5
+#define HIDDEN_ITEM_ROUTE_1_PECHA_BERRY                                 0
+#define HIDDEN_ITEM_ROUTE_17_ORAN_BERRY                                 1
+#define HIDDEN_ITEM_ROUTE_2_CHESTO_BERRY                                2
+#define HIDDEN_ITEM_RHODANZI_CITY_RARE_CANDY                            3
+#define HIDDEN_ITEM_VARISI_FOREST_CHERI_BERRY                           4
+#define HIDDEN_ITEM_VARISI_FOREST_RAWST_BERRY                           5
 #define HIDDEN_ITEM_ROUTE9_ETHER                                        6
 #define HIDDEN_ITEM_UNUSED_0x07                                         7
 #define HIDDEN_ITEM_SSANNE_B1F_CORRIDOR_HYPER_POTION                    8
@@ -1314,7 +1314,7 @@
 #define FLAG_0x4FF               0x4FF
 */
 
-#define FLAG_TRAINER_FLAG_START  0x500
+#define FLAG_TRAINER_FLAG_START 0x500
 
 // Vanilla: SYS_FLAGS = 0x800
 //#define SYS_FLAGS (FLAG_TRAINER_FLAG_START + ((NUM_TRAINERS) + 31) / 32 * 32)
@@ -1442,8 +1442,8 @@
 // SPECIAL FLAGS (unknown purpose)
 #define SPECIAL_FLAGS_START 0x4000
 #define SPECIAL_FLAGS_COUNT 16
-#define FLAG_HIDE_MAP_NAME_POPUP    0x4000
-#define FLAG_DONT_TRANSITION_MUSIC  0x4001
-#define FLAG_SPECIAL_FLAG_0x4002    0x4002
-#define FLAG_SPECIAL_FLAG_0x4003    0x4003
-#define FLAG_SPECIAL_FLAG_0x4004    0x4004
+#define FLAG_HIDE_MAP_NAME_POPUP 0x4000
+#define FLAG_DONT_TRANSITION_MUSIC 0x4001
+#define FLAG_SPECIAL_FLAG_0x4002 0x4002
+#define FLAG_SPECIAL_FLAG_0x4003 0x4003
+#define FLAG_SPECIAL_FLAG_0x4004 0x4004

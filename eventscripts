@@ -18,8 +18,10 @@ map 4 1 MapScript_GenChoice
 
 # Anthra Town
 map 3 0 MapScript_AnthraTown_FlightSpot
-npc 4 0 0 EventScript_AnthraTown_MomMain
 npc 3 0 0 EventScript_AnthraTown_FlowerGirl
+npc 3 0 1 EventScript_AnthraTown_TechnologyMan
+npc 3 0 3 ItemScript_Common_Potion
+npc 4 0 0 EventScript_AnthraTown_MomMain
 npc 4 3 0 EventScript_AnthraTown_OldMan
 
 # Route 1
@@ -28,12 +30,21 @@ npc 3 19 1 EventScript_Route1_LassHelena
 npc 3 19 2 EventScript_Route1_YoungsterHarlan
 npc 3 19 3 EventScript_Route1_LonelyMan
 npc 3 19 4 EventScript_Route1_SandygastEncounter
+npc 3 19 5 ItemScript_Common_Pokeball
+npc 3 19 6 ItemScript_Route1_FindTMEnergyBall
 
 # Route 2
 npc 3 20 0 EventScript_Route2_YoungsterJoey
 npc 3 20 1 EventScript_Route2_LassKimberly
 npc 3 20 2 EventScript_Route2_LassRikki
 npc 3 20 3 EventScript_RivalEvent1
+npc 3 20 4 EventScript_Route2_FindTMInfestation
+npc 3 20 5 ItemScript_Common_Antidote
+npc 3 20 6 EventScript_Route2_FindTMNaturePower
+npc 3 20 7 ItemScript_Common_Nugget
+npc 3 20 8 ItemScript_Common_ChoiceScarf
+npc 3 20 9 EventScript_Route2_CoolTrainerAndy
+npc 3 20 10 ItemScript_Common_LaxIncense
 
 # Varisi Forest
 map 1 0 MapScript_VarisiForest_FlightSpot
@@ -41,11 +52,18 @@ npc 1 0 0 EventScript_VarisiForest_BugCatcherKendell
 npc 1 0 1 EventScript_VarisiForest_BugCatcherBraden
 npc 1 0 2 EventScript_VarisiForest_LassBreanna
 npc 1 0 3 EventScript_VarisiForest_LassMimi
+npc 1 0 4 ItemScript_Common_TinyMushroom
+npc 1 0 5 ItemScript_Common_Antidote
+npc 1 0 6 ItemScript_Common_Pokeball
+npc 1 0 7 EventScript_VarisiForest_FoongusEncounter1
+npc 1 0 8 EventScript_VarisiForest_FoongusEncounter2
 npc 15 0 0 EventScript_VarisiForest_PoisonWarning
 npc 15 0 1 EventScript_VarisiForest_TrainerTip
 npc 15 2 0 EventScript_VarisiForest_SurprisedTrainer
 npc 15 3 0 EventScript_VarisiForest_TimeOfDay
 npc 15 3 1 EventScript_VarisiForest_FriendlyTrainer
+sign 1 0 0 SignScript_VarisiForest_AntidoteSign
+sign 1 0 1 SignScript_VarisiForest_RhodanziSign
 
 # Route 17
 npc 3 35 0 ItemScript_Common_Potion
@@ -61,6 +79,8 @@ npc 3 2 3 EventScript_RhodanziOverworld_TreeGuy
 npc 3 2 4 EventScript_Common_Cut
 npc 3 2 5 EventScript_RhodanziOverworld_ThugBottomSpokenTo
 npc 3 2 6 EventScript_RhodanziOverworld_ThugTopSpokenTo
+npc 3 2 7 ItemScript_Common_SodaPop
+npc 3 2 8 EventScript_RhodanziOverworld_FindTMEchoedVoice
 sign 3 2 3 SignScript_RhodanziCity_FishermanSign
 tile 3 2 0 TileScript_RhodanziOverworld_ThugsCaught
 tile 3 2 1 TileScript_RhodanziOverworld_ThugsCaught
@@ -127,4 +147,5 @@ npc 6 6 3 EventScript_RhodanziGym_Leader_Terrence
 # Route 7
 npc 3 25 0 EventScript_Route7_CamperCarlisle
 npc 3 25 1 EventScript_Common_Cut
+npc 3 25 2 ItemScript_Common_Stick
 sign 3 25 1 SignScript_Route7_TrainerTips

@@ -3,6 +3,7 @@
 
 .include "../xse_commands.s"
 .include "../xse_defines.s"
+.include "../asm_defines.s"
 
 .global MapScript_RhodanziOverworld_FlightSpot
 MapScript_RhodanziOverworld_FlightSpot:
@@ -79,6 +80,12 @@ EventScript_RhodanziOverworld_ThugBottomSpokenTo:
 .global EventScript_RhodanziOverworld_ThugTopSpokenTo
 EventScript_RhodanziOverworld_ThugTopSpokenTo:
     npcchat2 0x7 m_LookDown gText_RhodanziOverworld_Thugs
+    end
+
+.global EventScript_RhodanziOverworld_FindTMEchoedVoice
+EventScript_RhodanziOverworld_FindTMEchoedVoice:
+    setvar CHOSEN_ITEM ITEM_TM49
+    call ItemScript_Common_FindTM
     end
 
 End:

@@ -2424,7 +2424,7 @@ static void ShowItemSpriteOnFind(unusedArg u16 itemId, unusedArg u8* spriteId)
 	}
 
 	//Fix the item that replaced the close bag arrow sprite
-	if (itemId == ITEM_TM59_DRAGON_PULSE && ITEM_TM59_DRAGON_PULSE == 0x177) //Replaced the arrow
+	if (itemId == ITEM_TM59_BRUTAL_SWING && ITEM_TM59_BRUTAL_SWING == 0x177) //Replaced the arrow
 		itemPicId = ITEM_TM02_DRAGON_CLAW; //Replace the close bag arrow with a Dragon TM sprite
 	else
 		itemPicId = itemId;

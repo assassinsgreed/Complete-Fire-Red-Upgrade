@@ -9,6 +9,7 @@
 #define TRAINER_ROUTE_2_YOUNGSTER_JOEY               5
 #define TRAINER_ROUTE_2_LASS_KIMBERLY                6
 #define TRAINER_ROUTE_2_LASS_RIKKI                   7
+#define TRAINER_ROUTE_2_COOL_TRAINER_ANDY            16
 // Varisi Forest
 #define TRAINER_VARISI_FOREST_BUG_CATCHER_KENDELL    8
 #define TRAINER_VARISI_FOREST_BUG_CATCHER_BRADEN     9
