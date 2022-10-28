@@ -34,17 +34,17 @@ npc 3 19 5 ItemScript_Common_Pokeball
 npc 3 19 6 ItemScript_Route1_FindTMEnergyBall
 
 # Route 2
-npc 3 20 0 EventScript_Route2_YoungsterJoey
-npc 3 20 1 EventScript_Route2_LassKimberly
-npc 3 20 2 EventScript_Route2_LassRikki
-npc 3 20 3 EventScript_RivalEvent1
-npc 3 20 4 EventScript_Route2_FindTMInfestation
-npc 3 20 5 ItemScript_Common_Antidote
-npc 3 20 6 EventScript_Route2_FindTMNaturePower
-npc 3 20 7 ItemScript_Common_Nugget
-npc 3 20 8 ItemScript_Common_ChoiceScarf
-npc 3 20 9 EventScript_Route2_CoolTrainerAndy
-npc 3 20 10 ItemScript_Common_LaxIncense
+npc 3 20 0 EventScript_Route2_LassKimberly
+npc 3 20 1 EventScript_Route2_LassRikki
+npc 3 20 2 EventScript_RivalEvent1
+npc 3 20 3 EventScript_Route2_FindTMInfestation
+npc 3 20 4 ItemScript_Common_Antidote
+npc 3 20 5 EventScript_Route2_FindTMNaturePower
+npc 3 20 6 ItemScript_Common_Nugget
+npc 3 20 7 ItemScript_Common_ChoiceScarf
+npc 3 20 8 EventScript_Route2_CoolTrainerAndy
+npc 3 20 9 ItemScript_Common_LaxIncense
+npc 3 20 10 EventScript_Route2_YoungsterJoey
 
 # Varisi Forest
 map 1 0 MapScript_VarisiForest_FlightSpot
