@@ -83,11 +83,13 @@ EventScript_VarisiForest_FriendlyTrainer:
 EventScript_VarisiForest_FoongusEncounter1:
     call FoongusEncounter
     setflag 0x055
+    end
 
 .global EventScript_VarisiForest_FoongusEncounter2
 EventScript_VarisiForest_FoongusEncounter2:
     call FoongusEncounter
     setflag 0x056
+    end
 
 FoongusEncounter:
     lock
@@ -98,7 +100,7 @@ FoongusEncounter:
     wildbattle SPECIES_FOONGUS 0x8 0x0
     hidesprite LASTTALKED
     release
-    end
+    return
 
 .global SignScript_VarisiForest_AntidoteSign
 SignScript_VarisiForest_AntidoteSign:

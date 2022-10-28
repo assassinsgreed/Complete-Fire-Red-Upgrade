@@ -46,10 +46,9 @@ const struct TrainerMonNoItemDefaultMoves sParty_Route2_LassRikki[] = {
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_Route2_CoolTrainerAndy[] = {
-    // 41, 41, 40
-    { .iv = 41, .lvl = 40, .species = SPECIES_TORKOAL },
-    { .iv = 41, .lvl = 40, .species = SPECIES_CRAWDAUNT },
-    { .iv = 40, .lvl = 40, .species = SPECIES_SLAKING },
+    { .iv = 15, .lvl = 40, .species = SPECIES_TORKOAL },
+    { .iv = 15, .lvl = 40, .species = SPECIES_CRAWDAUNT },
+    { .iv = 15, .lvl = 40, .species = SPECIES_SLAKING },
 };
 // #endregion
 
