@@ -78,3 +78,36 @@ EventScript_VarisiForest_TimeOfDay:
 EventScript_VarisiForest_FriendlyTrainer:
     npcchat2 0x2 m_LookUp gText_VarisiForest_FriendlyTrainer
     end
+
+.global EventScript_VarisiForest_FoongusEncounter1
+EventScript_VarisiForest_FoongusEncounter1:
+    call FoongusEncounter
+    setflag 0x055
+    end
+
+.global EventScript_VarisiForest_FoongusEncounter2
+EventScript_VarisiForest_FoongusEncounter2:
+    call FoongusEncounter
+    setflag 0x056
+    end
+
+FoongusEncounter:
+    lock
+    checksound
+    cry SPECIES_FOONGUS 0x0
+    applymovement PLAYER m_Surprise
+    msgbox gText_VarisiForest_FoongusEncounter MSG_KEEPOPEN
+    wildbattle SPECIES_FOONGUS 0x8 0x0
+    hidesprite LASTTALKED
+    release
+    return
+
+.global SignScript_VarisiForest_AntidoteSign
+SignScript_VarisiForest_AntidoteSign:
+    msgbox gText_VarisiForest_AntidoteSign MSG_SIGN
+    end
+
+.global SignScript_VarisiForest_RhodanziSign
+SignScript_VarisiForest_RhodanziSign:
+    msgbox gText_VarisiForest_RhodanziSign MSG_SIGN
+    end

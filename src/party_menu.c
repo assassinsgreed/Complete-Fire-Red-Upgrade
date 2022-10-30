@@ -1051,14 +1051,14 @@ void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
 			if (CanUseEscapeRopeOnCurrMap() //Only add if usable
 			#ifndef DEBUG_HMS
 			&& HasBadgeToUseFieldMove(FIELD_MOVE_DIG)
-			&& (
-			 #ifdef FLAG_BOUGHT_ADM
-			 FlagGet(FLAG_BOUGHT_ADM) ||
-			 #endif
-			 #ifdef FLAG_SANDBOX_MODE
-			 FlagGet(FLAG_SANDBOX_MODE) ||
-			 #endif
-			 (CheckBagHasItem(ITEM_TM28_DIG, 1) > 0 && CanMonLearnTMTutor(&mons[slotId], ITEM_TM28_DIG, 0) == CAN_LEARN_MOVE))
+			// && (
+			//  #ifdef FLAG_BOUGHT_ADM
+			//  FlagGet(FLAG_BOUGHT_ADM) ||
+			//  #endif
+			//  #ifdef FLAG_SANDBOX_MODE
+			//  FlagGet(FLAG_SANDBOX_MODE) ||
+			//  #endif
+			//  (CheckBagHasItem(ITEM_TM28_DIG, 1) > 0 && CanMonLearnTMTutor(&mons[slotId], ITEM_TM28_DIG, 0) == CAN_LEARN_MOVE))
 			#endif
 			)
 			{

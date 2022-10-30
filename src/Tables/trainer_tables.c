@@ -44,6 +44,12 @@ const struct TrainerMonNoItemDefaultMoves sParty_Route2_LassRikki[] = {
     { .iv = 0, .lvl = 8, .species = SPECIES_FLABEBE_BLUE },
     { .iv = 0, .lvl = 8, .species = SPECIES_FLABEBE_YELLOW },
 };
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route2_CoolTrainerAndy[] = {
+    { .iv = 15, .lvl = 40, .species = SPECIES_TORKOAL },
+    { .iv = 15, .lvl = 40, .species = SPECIES_CRAWDAUNT },
+    { .iv = 15, .lvl = 40, .species = SPECIES_SLAKING },
+};
 // #endregion
 
 // #region Varisi Forest
@@ -246,6 +252,18 @@ const struct Trainer gTrainers[] = {
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
         .partySize = NELEMS(sParty_Route2_LassRikki),
         .party = {.NoItemDefaultMoves = sParty_Route2_LassRikki}
+    },
+    [TRAINER_ROUTE_2_COOL_TRAINER_ANDY] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_COOLTRAINER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
+        .trainerPic = TRAINER_PIC_COOLTRAINER_M,
+        .trainerName = {_A, _n, _d, _y, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = NELEMS(sParty_Route2_CoolTrainerAndy),
+        .party = {.NoItemDefaultMoves = sParty_Route2_CoolTrainerAndy}
     },
     // #endregion
     // #region Varisi Forest

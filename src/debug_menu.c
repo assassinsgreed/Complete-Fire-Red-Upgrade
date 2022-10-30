@@ -119,19 +119,19 @@ void DebugMenu_ProcessGiveItem(void)
 			AddBagItem(ITEM_MARANGA_BERRY, 100);
 			break;
 		case 4: //TMs & HMs
-			#ifdef UNBOUND //Remove if you want this, enums can't be #ifdefed
-			for (i = ITEM_TM01_FOCUS_PUNCH; i <= ITEM_TM50_OVERHEAT; ++i)
+			// #ifdef UNBOUND //Remove if you want this, enums can't be #ifdefed
+			for (i = ITEM_TM01_WORK_UP; i <= ITEM_TM50_OVERHEAT; ++i)
 				AddBagItem(i, 1);
 
-			for (i = ITEM_TM51_ROOST; i <= ITEM_TM58_ENDURE; ++i)
+			for (i = ITEM_TM51_STEEL_WING; i <= ITEM_TM58_ENDURE; ++i)
 				AddBagItem(i, 1);
 
-			for (i = ITEM_TM59_DRAGON_PULSE; i <= ITEM_TM120_NATURE_POWER; ++i)
+			for (i = ITEM_TM59_BRUTAL_SWING; i <= ITEM_TM100_CONFIDE; ++i)
 				AddBagItem(i, 1);
 
 			for (i = ITEM_HM01_CUT; i <= ITEM_HM08_ROCK_CLIMB; ++i)
 				AddBagItem(i, 1);
-			#endif
+			// #endif
 			break;
 		case 5: //All items
 			for (i = 0; i < ITEMS_COUNT; ++i)

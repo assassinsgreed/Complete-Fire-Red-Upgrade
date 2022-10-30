@@ -18,6 +18,11 @@ EventScript_AnthraTown_FlowerGirl:
     msgbox gText_AnthraTown_FlowerGirl MSG_FACE
     end
 
+.global EventScript_AnthraTown_TechnologyMan
+EventScript_AnthraTown_TechnologyMan:
+	npcchat gText_AnthraTown_TechnologyMan
+	end
+
 .global EventScript_AnthraTown_OldMan
 EventScript_AnthraTown_OldMan:
     msgbox gText_AnthraTown_OldMan MSG_FACE
