@@ -20,6 +20,11 @@ tables to edit:
 #ifndef UNBOUND //Modify this section
 
 // #region Route structs
+const struct WildPokemon gNoEncounters_LandMons[12];
+const struct WildPokemon gNoEncounters_WaterMons[5];
+const struct WildPokemon gNoEncounters_RocksMons[5];
+const struct WildPokemon gNoEncounters_FishingMons[10];
+
 const struct WildPokemon gRoute1_LandMons[] =
 {
 	{2, 3, SPECIES_BIDOOF},
@@ -204,6 +209,11 @@ const struct WildPokemon gRhodanziCity_FishingMons[] =
 // #endregion
 
 // #region Encounter Rate Structs
+const struct WildPokemonInfo gNull_LandMonsInfo = {0, gNoEncounters_LandMons};
+const struct WildPokemonInfo gNull_WaterMonsInfo = {0, gNoEncounters_WaterMons};
+const struct WildPokemonInfo gNull_RocksMonsInfo = {0, gNoEncounters_RocksMons};
+const struct WildPokemonInfo gNull_FishingMonsInfo = {0, gNoEncounters_FishingMons};
+
 const struct WildPokemonInfo gRoute1_LandMonsInfo = {21, gRoute1_LandMons};
 const struct WildPokemonInfo gRoute1_FishingMonsInfo = {20, gRoute1_FishingMons};
 const struct WildPokemonInfo gRoute2_LandMonsInfo = {21, gRoute2_LandMons};
@@ -223,74 +233,74 @@ const struct WildPokemonHeader gWildMonRegularHeaders[] =
 	{
 		.mapGroup = MAP_GROUP(ANTHRA_TOWN),
 		.mapNum = MAP_NUM(ANTHRA_TOWN),
-		.landMonsInfo = NULL,
-		.waterMonsInfo = NULL,
-		.rockSmashMonsInfo = NULL,
-		.fishingMonsInfo = NULL,
+		.landMonsInfo = &gNull_LandMonsInfo,
+		.waterMonsInfo = &gNull_WaterMonsInfo,
+		.rockSmashMonsInfo = &gNull_RocksMonsInfo,
+		.fishingMonsInfo = &gNull_FishingMonsInfo,
 	},
 	{
 		.mapGroup = MAP_GROUP(OLENIC_TOWN),
 		.mapNum = MAP_NUM(OLENIC_TOWN),
-		.landMonsInfo = NULL,
-		.waterMonsInfo = NULL,
-		.rockSmashMonsInfo = NULL,
-		.fishingMonsInfo = NULL,
+		.landMonsInfo = &gNull_LandMonsInfo,
+		.waterMonsInfo = &gNull_WaterMonsInfo,
+		.rockSmashMonsInfo = &gNull_RocksMonsInfo,
+		.fishingMonsInfo = &gNull_FishingMonsInfo,
 	},
 	{
 		.mapGroup = MAP_GROUP(RHODANZI_CITY),
 		.mapNum = MAP_NUM(RHODANZI_CITY),
-		.landMonsInfo = NULL,
+		.landMonsInfo = &gNull_LandMonsInfo,
 		.waterMonsInfo = &gRhodanziCity_WaterMonsInfo,
-		.rockSmashMonsInfo = NULL,
+		.rockSmashMonsInfo = &gNull_RocksMonsInfo,
 		.fishingMonsInfo = &gRhodanziCity_FishingMonsInfo,
 	},
 	{
 		.mapGroup = MAP_GROUP(ROUTE_1),
 		.mapNum = MAP_NUM(ROUTE_1),
 		.landMonsInfo = &gRoute1_LandMonsInfo,
-		.waterMonsInfo = NULL,
-		.rockSmashMonsInfo = NULL,
+		.waterMonsInfo = &gNull_WaterMonsInfo,
+		.rockSmashMonsInfo = &gNull_RocksMonsInfo,
 		.fishingMonsInfo = &gRoute1_FishingMonsInfo,
 	},
 	{
 		.mapGroup = MAP_GROUP(ROUTE_2),
 		.mapNum = MAP_NUM(ROUTE_2),
 		.landMonsInfo = &gRoute2_LandMonsInfo,
-		.waterMonsInfo = NULL,
-		.rockSmashMonsInfo = NULL,
+		.waterMonsInfo = &gNull_WaterMonsInfo,
+		.rockSmashMonsInfo = &gNull_RocksMonsInfo,
 		.fishingMonsInfo = &gRoute2_FishingMonsInfo,
 	},
 	{
 		.mapGroup = MAP_GROUP(ROUTE_7),
 		.mapNum = MAP_NUM(ROUTE_7),
 		.landMonsInfo = &gRoute7_LandMonsInfo,
-		.waterMonsInfo = NULL,
-		.rockSmashMonsInfo = NULL,
-		.fishingMonsInfo = NULL,
+		.waterMonsInfo = &gNull_WaterMonsInfo,
+		.rockSmashMonsInfo = &gNull_RocksMonsInfo,
+		.fishingMonsInfo = &gNull_FishingMonsInfo,
 	},
 	{
 		.mapGroup = MAP_GROUP(ROUTE_17),
 		.mapNum = MAP_NUM(ROUTE_17),
 		.landMonsInfo = &gRoute17_LandMonsInfo,
-		.waterMonsInfo = NULL,
-		.rockSmashMonsInfo = NULL,
+		.waterMonsInfo = &gNull_WaterMonsInfo,
+		.rockSmashMonsInfo = &gNull_RocksMonsInfo,
 		.fishingMonsInfo = &gRoute17_FishingMonsInfo,
 	},
 	{
 		.mapGroup = MAP_GROUP(ROUTE17_CAVE_1F),
 		.mapNum = MAP_NUM(ROUTE17_CAVE_1F),
 		.landMonsInfo = &gRoute17_Cave1F_LandMonsInfo,
-		.waterMonsInfo = NULL,
-		.rockSmashMonsInfo = NULL,
-		.fishingMonsInfo = NULL,
+		.waterMonsInfo = &gNull_WaterMonsInfo,
+		.rockSmashMonsInfo = &gNull_RocksMonsInfo,
+		.fishingMonsInfo = &gNull_FishingMonsInfo,
 	},
 	{
 		.mapGroup = MAP_GROUP(VARISI_FOREST),
 		.mapNum = MAP_NUM(VARISI_FOREST),
 		.landMonsInfo = &gVarisiForest_LandMonsInfo,
-		.waterMonsInfo = NULL,
-		.rockSmashMonsInfo = NULL,
-		.fishingMonsInfo = NULL,
+		.waterMonsInfo = &gNull_WaterMonsInfo,
+		.rockSmashMonsInfo = &gNull_RocksMonsInfo,
+		.fishingMonsInfo = &gNull_FishingMonsInfo,
 	},
 	{
 		.mapGroup = 0xFF,
@@ -320,9 +330,9 @@ const struct WildPokemonHeader gWildMonEveningHeaders[] =
 		.mapGroup = MAP_GROUP(VARISI_FOREST),
 		.mapNum = MAP_NUM(VARISI_FOREST),
 		.landMonsInfo = &gVarisiForest_LandMonsNightInfo,
-		.waterMonsInfo = NULL,
-		.rockSmashMonsInfo = NULL,
-		.fishingMonsInfo = NULL,
+		.waterMonsInfo = &gNull_WaterMonsInfo,
+		.rockSmashMonsInfo = &gNull_RocksMonsInfo,
+		.fishingMonsInfo = &gNull_FishingMonsInfo,
 	},
 	{
 		.mapGroup = 0xFF,
@@ -340,9 +350,9 @@ const struct WildPokemonHeader gWildMonNightHeaders[] =
 		.mapGroup = MAP_GROUP(VARISI_FOREST),
 		.mapNum = MAP_NUM(VARISI_FOREST),
 		.landMonsInfo = &gVarisiForest_LandMonsNightInfo,
-		.waterMonsInfo = NULL,
-		.rockSmashMonsInfo = NULL,
-		.fishingMonsInfo = NULL,
+		.waterMonsInfo = &gNull_WaterMonsInfo,
+		.rockSmashMonsInfo = &gNull_RocksMonsInfo,
+		.fishingMonsInfo = &gNull_FishingMonsInfo,
 	},
 	{
 		.mapGroup = 0xFF,
