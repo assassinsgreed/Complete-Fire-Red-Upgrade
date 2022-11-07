@@ -90,6 +90,15 @@ def InsertCode():
         os.system("python scripts/insert.py")
 
 
+def InjectWildEncounters():
+    print("Injecting wild encounter data...")
+    if shutil.which('python3') is not None:
+        os.system("python3 scripts/inject_wild_encounters.py")
+    else:
+        os.system("python scripts/inject_wild_encounters.py")
+    print("Done!")
+
+
 def ClearFromTo(rom, from_: int, to_: int):
     rom.seek(from_)
     for i in range(0, to_ - from_):
@@ -111,6 +120,7 @@ def main():
             EditInsert(offset)
             BuildCode()
             InsertCode()
+            InjectWildEncounters()
             rom.close()
 
     except FileNotFoundError:
