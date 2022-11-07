@@ -19,153 +19,6 @@ tables to edit:
 
 #ifndef UNBOUND //Modify this section
 
-// #region Route structs
-const struct WildPokemon gNoEncounters_LandMons[12];
-const struct WildPokemon gNoEncounters_WaterMons[5];
-const struct WildPokemon gNoEncounters_RocksMons[5];
-const struct WildPokemon gNoEncounters_FishingMons[10];
-
-const struct WildPokemon gRoute1_LandMons[] =
-{
-	{2, 3, SPECIES_BIDOOF},
-	{2, 3, SPECIES_WINGULL},
-	{2, 4, SPECIES_BIDOOF},
-	{2, 4, SPECIES_WINGULL},
-	{2, 3, SPECIES_SUNKERN},
-	{2, 3, SPECIES_SUNKERN},
-	{2, 4, SPECIES_YAMPER},
-	{2, 4, SPECIES_YAMPER},
-	{3, 4, SPECIES_BIDOOF},
-	{3, 4, SPECIES_WINGULL},
-	{4, 4, SPECIES_BIDOOF},
-	{4, 4, SPECIES_WINGULL},
-};
-
-const struct WildPokemon gRoute1_FishingMons[] = 
-{
-	{8, 10, SPECIES_MAGIKARP}, 	// Old Rod
-	{8, 11, SPECIES_MAGIKARP}, 	// Old Rod
-	{1, 1, SPECIES_NONE},		// Good Rod
-	{1, 1, SPECIES_NONE},		// Good Rod
-	{1, 1, SPECIES_NONE},		// Good Rod
-	{1, 1, SPECIES_NONE},		// Super Rod
-	{1, 1, SPECIES_NONE},		// Super Rod
-	{1, 1, SPECIES_NONE},		// Super Rod
-	{1, 1, SPECIES_NONE},		// Super Rod
-	{1, 1, SPECIES_NONE},		// Super Rod
-};
-
-const struct WildPokemon gRoute2_LandMons[] =
-{
-	{3, 5, SPECIES_BUDEW},
-	{2, 4, SPECIES_GRUBBIN},
-	{3, 6, SPECIES_ROCKRUFF},
-	{2, 6, SPECIES_NICKIT},
-	{3, 6, SPECIES_NIDORAN_M},
-	{3, 5, SPECIES_ROOKIDEE},
-	{2, 5, SPECIES_NICKIT},
-	{3, 6, SPECIES_NIDORAN_M},
-	{2, 4, SPECIES_ROCKRUFF},
-	{3, 5, SPECIES_ROOKIDEE},
-	{3, 5, SPECIES_ROCKRUFF},
-	{3, 5, SPECIES_ROOKIDEE},
-};
-
-const struct WildPokemon gRoute2_FishingMons[] = 
-{
-	{8, 10, SPECIES_MAGIKARP}, 	// Old Rod
-	{8, 11, SPECIES_MAGIKARP}, 	// Old Rod
-	{1, 1, SPECIES_NONE},		// Good Rod
-	{1, 1, SPECIES_NONE},		// Good Rod
-	{1, 1, SPECIES_NONE},		// Good Rod
-	{1, 1, SPECIES_NONE},		// Super Rod
-	{1, 1, SPECIES_NONE},		// Super Rod
-	{1, 1, SPECIES_NONE},		// Super Rod
-	{1, 1, SPECIES_NONE},		// Super Rod
-	{1, 1, SPECIES_NONE},		// Super Rod
-};
-
-const struct WildPokemon gRoute7_LandMons[] =
-{
-	{6, 9, SPECIES_LILLIPUP},
-	{6, 8, SPECIES_FLETCHLING},
-	{6, 9, SPECIES_FARFETCHD_G},
-	{6, 8, SPECIES_FARFETCHD_G},
-	{7, 9, SPECIES_NIDORAN_M},
-	{6, 9, SPECIES_FERROSEED},
-	{7, 9, SPECIES_FERROSEED},
-	{7, 9, SPECIES_NIDORAN_M},
-	{6, 8, SPECIES_NIDORAN_M},
-	{6, 8, SPECIES_BONSLY},
-	{7, 9, SPECIES_NIDORAN_M},
-	{7, 9, SPECIES_BONSLY},
-};
-
-const struct WildPokemon gRoute17_LandMons[] =
-{
-	{2, 3, SPECIES_FLABEBE},
-	{2, 4, SPECIES_FLETCHLING},
-	{2, 3, SPECIES_RALTS},
-	{3, 4, SPECIES_RALTS},
-	{2, 3, SPECIES_FLETCHLING},
-	{2, 4, SPECIES_CUTIEFLY},
-	{2, 3, SPECIES_CUTIEFLY},
-	{2, 3, SPECIES_GRUBBIN},
-	{2, 4, SPECIES_GRUBBIN},
-	{2, 4, SPECIES_FLABEBE_BLUE},
-	{3, 3, SPECIES_GRUBBIN},
-	{3, 3, SPECIES_FLABEBE_YELLOW},
-};
-
-const struct WildPokemon gRoute17_Cave1F_LandMons[] =
-{
-	{3, 4, SPECIES_DRILBUR},
-	{3, 3, SPECIES_DRILBUR},
-	{2, 3, SPECIES_ZUBAT},
-	{3, 3, SPECIES_ZUBAT},
-	{2, 4, SPECIES_ROGGENROLA},
-	{3, 4, SPECIES_BONSLY},
-	{2, 4, SPECIES_ZUBAT},
-	{3, 4, SPECIES_NOIBAT},
-	{3, 4, SPECIES_ZUBAT},
-	{3, 4, SPECIES_ROGGENROLA},
-	{2, 4, SPECIES_ZUBAT},
-	{2, 4, SPECIES_ROGGENROLA},
-};
-
-const struct WildPokemon gRoute17_FishingMons[] = 
-{
-	{8, 10, SPECIES_MAGIKARP}, 	// Old Rod
-	{8, 11, SPECIES_MAGIKARP}, 	// Old Rod
-	{1, 1, SPECIES_NONE},		// Good Rod
-	{1, 1, SPECIES_NONE},		// Good Rod
-	{1, 1, SPECIES_NONE},		// Good Rod
-	{1, 1, SPECIES_NONE},		// Super Rod
-	{1, 1, SPECIES_NONE},		// Super Rod
-	{1, 1, SPECIES_NONE},		// Super Rod
-	{1, 1, SPECIES_NONE},		// Super Rod
-	{1, 1, SPECIES_NONE},		// Super Rod
-};
-
-// #endregion
-
-// #region Dungeon Structs
-const struct WildPokemon gVarisiForest_LandMons[] =
-{
-	{3, 6, SPECIES_BLIPBUG},
-	{3, 6, SPECIES_PIKIPEK},
-	{3, 7, SPECIES_MORELULL},
-	{2, 6, SPECIES_PICHU},
-	{3, 6, SPECIES_BUNEARY},
-	{3, 7, SPECIES_SHROOMISH},
-	{3, 7, SPECIES_BUDEW},
-	{4, 7, SPECIES_BONSLY},
-	{3, 6, SPECIES_VENIPEDE},
-	{3, 7, SPECIES_VENIPEDE},
-	{4, 6, SPECIES_SLAKOTH},
-	{4, 7, SPECIES_SLAKOTH},
-};
-
 const struct WildPokemon gVarisiForest_LandMonsNight[] =
 {
 	{3, 6, SPECIES_BLIPBUG},
@@ -181,136 +34,8 @@ const struct WildPokemon gVarisiForest_LandMonsNight[] =
 	{4, 6, SPECIES_SLAKOTH},
 	{4, 7, SPECIES_SLAKOTH},
 };
-// #endregion
 
-// #region Town Structs
-const struct WildPokemon gRhodanziCity_WaterMons[] =
-{
-	{5, 15, SPECIES_CHINCHOU},
-	{5, 20, SPECIES_CHINCHOU},
-	{20, 35, SPECIES_LANTURN},
-	{10, 30, SPECIES_CHINCHOU},
-	{10, 30, SPECIES_CHINCHOU},
-};
-
-const struct WildPokemon gRhodanziCity_FishingMons[] = 
-{
-	{3, 7, SPECIES_MAGIKARP}, 		// Old Rod
-	{4, 8, SPECIES_CORPHISH}, 		// Old Rod
-	{20, 25, SPECIES_CORPHISH},		// Good Rod
-	{20, 25, SPECIES_MAGIKARP},		// Good Rod
-	{19, 26, SPECIES_MAGIKARP},		// Good Rod
-	{35, 40, SPECIES_GYARADOS},		// Super Rod
-	{33, 41, SPECIES_CRAWDAUNT},	// Super Rod
-	{35, 40, SPECIES_SLOWPOKE},		// Super Rod
-	{36, 42, SPECIES_SLOWPOKE},		// Super Rod
-	{38, 44, SPECIES_SLOWBRO},		// Super Rod
-};
-// #endregion
-
-// #region Encounter Rate Structs
-const struct WildPokemonInfo gNull_LandMonsInfo = {0, gNoEncounters_LandMons};
-const struct WildPokemonInfo gNull_WaterMonsInfo = {0, gNoEncounters_WaterMons};
-const struct WildPokemonInfo gNull_RocksMonsInfo = {0, gNoEncounters_RocksMons};
-const struct WildPokemonInfo gNull_FishingMonsInfo = {0, gNoEncounters_FishingMons};
-
-const struct WildPokemonInfo gRoute1_LandMonsInfo = {21, gRoute1_LandMons};
-const struct WildPokemonInfo gRoute1_FishingMonsInfo = {20, gRoute1_FishingMons};
-const struct WildPokemonInfo gRoute2_LandMonsInfo = {21, gRoute2_LandMons};
-const struct WildPokemonInfo gRoute2_FishingMonsInfo = {20, gRoute2_FishingMons};
-const struct WildPokemonInfo gRoute7_LandMonsInfo = {21, gRoute7_LandMons};
-const struct WildPokemonInfo gRoute17_LandMonsInfo = {21, gRoute17_LandMons};
-const struct WildPokemonInfo gRoute17_Cave1F_LandMonsInfo = {21, gRoute17_Cave1F_LandMons};
-const struct WildPokemonInfo gRoute17_FishingMonsInfo = {20, gRoute17_FishingMons};
-const struct WildPokemonInfo gVarisiForest_LandMonsInfo = {21, gVarisiForest_LandMons};
 const struct WildPokemonInfo gVarisiForest_LandMonsNightInfo = {21, gVarisiForest_LandMonsNight};
-const struct WildPokemonInfo gRhodanziCity_WaterMonsInfo = {21, gRhodanziCity_WaterMons};
-const struct WildPokemonInfo gRhodanziCity_FishingMonsInfo = {20, gRhodanziCity_FishingMons};
-// #endregion
-
-const struct WildPokemonHeader gWildMonRegularHeaders[] =
-{
-	{
-		.mapGroup = MAP_GROUP(ANTHRA_TOWN),
-		.mapNum = MAP_NUM(ANTHRA_TOWN),
-		.landMonsInfo = &gNull_LandMonsInfo,
-		.waterMonsInfo = &gNull_WaterMonsInfo,
-		.rockSmashMonsInfo = &gNull_RocksMonsInfo,
-		.fishingMonsInfo = &gNull_FishingMonsInfo,
-	},
-	{
-		.mapGroup = MAP_GROUP(OLENIC_TOWN),
-		.mapNum = MAP_NUM(OLENIC_TOWN),
-		.landMonsInfo = &gNull_LandMonsInfo,
-		.waterMonsInfo = &gNull_WaterMonsInfo,
-		.rockSmashMonsInfo = &gNull_RocksMonsInfo,
-		.fishingMonsInfo = &gNull_FishingMonsInfo,
-	},
-	{
-		.mapGroup = MAP_GROUP(RHODANZI_CITY),
-		.mapNum = MAP_NUM(RHODANZI_CITY),
-		.landMonsInfo = &gNull_LandMonsInfo,
-		.waterMonsInfo = &gRhodanziCity_WaterMonsInfo,
-		.rockSmashMonsInfo = &gNull_RocksMonsInfo,
-		.fishingMonsInfo = &gRhodanziCity_FishingMonsInfo,
-	},
-	{
-		.mapGroup = MAP_GROUP(ROUTE_1),
-		.mapNum = MAP_NUM(ROUTE_1),
-		.landMonsInfo = &gRoute1_LandMonsInfo,
-		.waterMonsInfo = &gNull_WaterMonsInfo,
-		.rockSmashMonsInfo = &gNull_RocksMonsInfo,
-		.fishingMonsInfo = &gRoute1_FishingMonsInfo,
-	},
-	{
-		.mapGroup = MAP_GROUP(ROUTE_2),
-		.mapNum = MAP_NUM(ROUTE_2),
-		.landMonsInfo = &gRoute2_LandMonsInfo,
-		.waterMonsInfo = &gNull_WaterMonsInfo,
-		.rockSmashMonsInfo = &gNull_RocksMonsInfo,
-		.fishingMonsInfo = &gRoute2_FishingMonsInfo,
-	},
-	{
-		.mapGroup = MAP_GROUP(ROUTE_7),
-		.mapNum = MAP_NUM(ROUTE_7),
-		.landMonsInfo = &gRoute7_LandMonsInfo,
-		.waterMonsInfo = &gNull_WaterMonsInfo,
-		.rockSmashMonsInfo = &gNull_RocksMonsInfo,
-		.fishingMonsInfo = &gNull_FishingMonsInfo,
-	},
-	{
-		.mapGroup = MAP_GROUP(ROUTE_17),
-		.mapNum = MAP_NUM(ROUTE_17),
-		.landMonsInfo = &gRoute17_LandMonsInfo,
-		.waterMonsInfo = &gNull_WaterMonsInfo,
-		.rockSmashMonsInfo = &gNull_RocksMonsInfo,
-		.fishingMonsInfo = &gRoute17_FishingMonsInfo,
-	},
-	{
-		.mapGroup = MAP_GROUP(ROUTE17_CAVE_1F),
-		.mapNum = MAP_NUM(ROUTE17_CAVE_1F),
-		.landMonsInfo = &gRoute17_Cave1F_LandMonsInfo,
-		.waterMonsInfo = &gNull_WaterMonsInfo,
-		.rockSmashMonsInfo = &gNull_RocksMonsInfo,
-		.fishingMonsInfo = &gNull_FishingMonsInfo,
-	},
-	{
-		.mapGroup = MAP_GROUP(VARISI_FOREST),
-		.mapNum = MAP_NUM(VARISI_FOREST),
-		.landMonsInfo = &gVarisiForest_LandMonsInfo,
-		.waterMonsInfo = &gNull_WaterMonsInfo,
-		.rockSmashMonsInfo = &gNull_RocksMonsInfo,
-		.fishingMonsInfo = &gNull_FishingMonsInfo,
-	},
-	{
-		.mapGroup = 0xFF,
-		.mapNum = 0xFF,
-		.landMonsInfo = NULL,
-		.waterMonsInfo = NULL,
-		.rockSmashMonsInfo = NULL,
-		.fishingMonsInfo = NULL,
-	}
-};
 
 const struct WildPokemonHeader gWildMonMorningHeaders[] =
 {
@@ -330,9 +55,9 @@ const struct WildPokemonHeader gWildMonEveningHeaders[] =
 		.mapGroup = MAP_GROUP(VARISI_FOREST),
 		.mapNum = MAP_NUM(VARISI_FOREST),
 		.landMonsInfo = &gVarisiForest_LandMonsNightInfo,
-		.waterMonsInfo = &gNull_WaterMonsInfo,
-		.rockSmashMonsInfo = &gNull_RocksMonsInfo,
-		.fishingMonsInfo = &gNull_FishingMonsInfo,
+		.waterMonsInfo = NULL,
+		.rockSmashMonsInfo = NULL,
+		.fishingMonsInfo = NULL,
 	},
 	{
 		.mapGroup = 0xFF,
@@ -350,9 +75,9 @@ const struct WildPokemonHeader gWildMonNightHeaders[] =
 		.mapGroup = MAP_GROUP(VARISI_FOREST),
 		.mapNum = MAP_NUM(VARISI_FOREST),
 		.landMonsInfo = &gVarisiForest_LandMonsNightInfo,
-		.waterMonsInfo = &gNull_WaterMonsInfo,
-		.rockSmashMonsInfo = &gNull_RocksMonsInfo,
-		.fishingMonsInfo = &gNull_FishingMonsInfo,
+		.waterMonsInfo = NULL,
+		.rockSmashMonsInfo = NULL,
+		.fishingMonsInfo = NULL,
 	},
 	{
 		.mapGroup = 0xFF,
