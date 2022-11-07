@@ -56,7 +56,6 @@ extern u8 sSavedWildDataMapNum;
 extern struct EncounterRate sWildEncounterData;
 
 extern u8 sUnownLetterSlots[NUM_TANOBY_CHAMBERS][12]; //[NUM_ROOMS][NUM_WILD_INDEXES]
-extern const struct WildPokemonHeader gWildMonRegularHeaders[];
 extern const struct WildPokemonHeader gWildMonMorningHeaders[];
 extern const struct WildPokemonHeader gWildMonEveningHeaders[];
 extern const struct WildPokemonHeader gWildMonNightHeaders[];
@@ -197,8 +196,7 @@ static const struct WildPokemonHeader* GetCurrentMapWildMonHeader(void)
 	#ifdef TIME_ENABLED
 		u32 i;
 
-		// Set default encounter table
-		const struct WildPokemonHeader* headerTable = gWildMonRegularHeaders;
+		const struct WildPokemonHeader* headerTable = NULL;
 
 		if (IsNightTime())
 			headerTable = gWildMonNightHeaders;
@@ -207,24 +205,17 @@ static const struct WildPokemonHeader* GetCurrentMapWildMonHeader(void)
 		else if (IsEvening())
 			headerTable = gWildMonEveningHeaders;
 
-		// Search the time of day table
-		for (i = 0; headerTable[i].mapGroup != 0xFF; ++i)
+		if (headerTable != NULL) //Not Daytime
 		{
-			if (headerTable[i].mapGroup == gSaveBlock1->location.mapGroup
-			&&  headerTable[i].mapNum == gSaveBlock1->location.mapNum)
-				return &headerTable[i];
+			for (i = 0; headerTable[i].mapGroup != 0xFF; ++i)
+			{
+				if (headerTable[i].mapGroup == gSaveBlock1->location.mapGroup
+				&&  headerTable[i].mapNum == gSaveBlock1->location.mapNum)
+					return &headerTable[i];
+			}
 		}
 	#endif
 
-	// If not found, or time is disabled, search in the regular table
-	for (i = 0; gWildMonRegularHeaders[i].mapGroup != 0xFF; ++i)
-	{
-		if (gWildMonRegularHeaders[i].mapGroup == gSaveBlock1->location.mapGroup
-		&&  gWildMonRegularHeaders[i].mapNum == gSaveBlock1->location.mapNum)
-			return &gWildMonRegularHeaders[i];
-	}
-
-	// Default to binary content
 	return GetCurrentMapWildMonDaytimeHeader();
 }
 
