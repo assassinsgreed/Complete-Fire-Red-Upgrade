@@ -7,11 +7,11 @@
 
 .global EventScript_DebugMode_Main
 EventScript_DebugMode_Main:
-	givepokemon SPECIES_BULBASAUR 0x32 0x0 0x0 0x0 0x0 @ lv 50
+	givepokemon SPECIES_VENUSAUR 0x32 0x0 0x0 0x0 0x0 @ lv 50
 	givepokemon SPECIES_KYOGRE 0x32 0x0 0x0 0x0 0x0 @ lv 50
 	givepokemon SPECIES_CORVIKNIGHT 0x32 0x0 0x0 0x0 0x0 @ lv 50
 	givepokemon SPECIES_SHAYMIN 0x32 0x0 0x0 0x0 0x0 @ lv 50
-	givepokemon SPECIES_BIBAREL 0x32 0x0 0x0 0x0 0x0 @ lv 50
+	givepokemon SPECIES_SOLGALEO 0x32 0x0 0x0 0x0 0x0 @ lv 50
 	givepokemon SPECIES_NECROZMA 0x32 0x0 0x0 0x0 0x0 @ lv 50
 
 	@ Mark Pokemon as seen/caught (0 - Seen, 1 - Caught)
@@ -33,3 +33,4 @@ EventScript_DebugMode_Main:
 	@ Give Items: (0 - useful key items, 1 - useful consumables, 2 - Pokeballs, 3 - Berries, 4 - TMs & HMs, 5 - All)
 	setvar LASTRESULT 0x5
 	callasm DebugMenu_ProcessGiveItem
+	AddItem ITEM_RARE_CANDY 0x32

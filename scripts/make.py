@@ -93,9 +93,26 @@ def InsertCode():
 def InjectWildEncounters():
     print("Injecting wild encounter data...")
     if shutil.which('python3') is not None:
-        os.system("python3 scripts/inject_wild_encounters.py")
+        result = os.system("python3 scripts/inject_wild_encounters.py")
     else:
-        os.system("python scripts/inject_wild_encounters.py")
+        result = os.system("python scripts/inject_wild_encounters.py")
+
+    if result != 0:  # Build wasn't sucessful
+        sys.exit(1)
+
+    print("Done!")
+
+
+def ApplyPatches():
+    print("Applying additional patch files...")
+    if shutil.which('python3') is not None:
+        result = os.system("python3 scripts/patches.py")
+    else:
+        result = os.system("python scripts/patches.py")
+
+    if result != 0:  # Build wasn't sucessful
+        sys.exit(1)
+
     print("Done!")
 
 
@@ -121,6 +138,7 @@ def main():
             BuildCode()
             InsertCode()
             InjectWildEncounters()
+            ApplyPatches()
             rom.close()
 
     except FileNotFoundError:
