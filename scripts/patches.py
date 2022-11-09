@@ -13,11 +13,20 @@ def main():
             exit(1)
 
     # If the patch is the BW Music patch, we need to apply additional logic
-    # if "BW-Music" in file: ApplyBWMusicPatch()
-    # TODO: The bw hp bars will require the type icons to be moved!!
+    if "B2W2 Music Patch" in file: ApplyBWMusicPatch()
 
-# def ApplyBWMusicPatch():
+def ApplyBWMusicPatch():
+    # Open BW/B2W2 Music Patch hex
+    with open(".\\automation\\B2W2 Music Patch v1.5.1.bit", 'rb') as musicpatch:
+        bytes = bytearray(musicpatch.read())
 
+    with open(ROM_NAME, 'rb+') as romfile:
+        romfile.seek(0x1200000)
+        romfile.write(bytes)
+
+        # Update bytes recommended by CFRU docs
+        romfile.seek(0x4A32A0)
+        romfile.write(b'\xA0\xFA\x03\x02')
 
 
 if __name__ == '__main__':
