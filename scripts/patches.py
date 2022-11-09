@@ -2,7 +2,7 @@ import glob
 from subprocess import call
 
 ERROR_COLOR = "\033[1;31m"
-ROM_NAME = 'test.gba'
+ROM_NAME = 'BPRE0.gba'
 
 def main():
     """ Load all .ips patches from patches subdirectory and apply them """
@@ -17,8 +17,9 @@ def main():
 
 def ApplyBWMusicPatch():
     # Open BW/B2W2 Music Patch hex
-    with open(".\\automation\\B2W2 Music Patch v1.5.1.bit", 'rb') as musicpatch:
+    with open(".\\automation\\B2W2 Music Patch v1.4.1b.bit", 'rb') as musicpatch:
         bytes = bytearray(musicpatch.read())
+        musicpatch.close()
 
     with open(ROM_NAME, 'rb+') as romfile:
         romfile.seek(0x1200000)
@@ -27,7 +28,8 @@ def ApplyBWMusicPatch():
         # Update bytes recommended by CFRU docs
         romfile.seek(0x4A32A0)
         romfile.write(b'\xA0\xFA\x03\x02')
-
+        
+        romfile.close()
 
 if __name__ == '__main__':
     main()

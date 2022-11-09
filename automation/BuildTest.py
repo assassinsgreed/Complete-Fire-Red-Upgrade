@@ -51,11 +51,18 @@ shutil.copy(DPE_PATH + "/test.gba", CFRU_PATH + "/BPRE0.gba")
 
 print("Appyling CFRU...")
 os.chdir(CFRU_PATH) # Make script must be run in home directory!
+
+print("Applying additional patch files...")
+result = call(["python", "./scripts/patches.py"])
+if (result != 0):
+    print(ERROR_COLOR + "Error applying additional patch files. See output for details. Exiting with status code: 4")
+    exit(4)
+
 # TODO: Add clean.py script as an optional command?
 result = call(["python", "./scripts/make.py"])
 if (result != 0):
-    print(ERROR_COLOR + "Error applying CFRU. See output for details. Exiting with status code: 4")
-    exit(4)
+    print(ERROR_COLOR + "Error applying CFRU. See output for details. Exiting with status code: 5")
+    exit(5)
 
 print(SUCCESS_COLOR + "Success! Launching built Test.gba in VBA. Happy Testing :)")
 call([MGBA_PATH, CFRU_PATH + "/test.gba"])
