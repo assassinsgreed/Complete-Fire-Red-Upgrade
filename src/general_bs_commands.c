@@ -1640,6 +1640,8 @@ void atk1B_cleareffectsonfaint(void) {
 			#endif
 				//Fallthrough
 			case Faint_LastPokemonMusic:
+				// Not using; being done at the time of trainer text slide in
+				/*
 				#ifdef BGM_BATTLE_GYM_LEADER_LAST_POKEMON
 				if ((gBattleTypeFlags & (BATTLE_TYPE_TRAINER | BATTLE_TYPE_DOUBLE)) == (BATTLE_TYPE_TRAINER | BATTLE_TYPE_DOUBLE) //Double Gym battle
 				&& !(gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_FRONTIER | BATTLE_TYPE_TRAINER_TOWER))
@@ -1650,6 +1652,7 @@ void atk1B_cleareffectsonfaint(void) {
 					PlayBGM(BGM_BATTLE_GYM_LEADER_LAST_POKEMON);
 				}
 				#endif
+				*/
 				++gNewBS->faintEffectsState;
 				//Fallthrough
 
