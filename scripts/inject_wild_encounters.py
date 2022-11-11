@@ -130,6 +130,7 @@ def main():
     try:
         with open(ENCOUNTERS_FILE, 'r') as f:
             encounterdata = json.loads(f.read())
+            f.close()
 
     except FileNotFoundError:
         print('Error: Could not find encounters file: "' + ENCOUNTERS_FILE + '"')

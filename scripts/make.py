@@ -9,7 +9,7 @@ import sys
 ############
 
 ROM_NAME = "BPRE0.gba"  # The name of your rom
-OFFSET_TO_PUT = 0x900000
+OFFSET_TO_PUT = 0x810000
 SEARCH_FREE_SPACE = False  # Set to True if you want the script to search for free space
                            # Set to False if you don't want to search for free space as you for example update the engine
 
@@ -93,9 +93,26 @@ def InsertCode():
 def InjectWildEncounters():
     print("Injecting wild encounter data...")
     if shutil.which('python3') is not None:
-        os.system("python3 scripts/inject_wild_encounters.py")
+        result = os.system("python3 scripts/inject_wild_encounters.py")
     else:
-        os.system("python scripts/inject_wild_encounters.py")
+        result = os.system("python scripts/inject_wild_encounters.py")
+
+    if result != 0:  # Build wasn't sucessful
+        sys.exit(1)
+
+    print("Done!")
+
+
+def ApplyPatches():
+    print("Applying additional patch files...")
+    if shutil.which('python3') is not None:
+        result = os.system("python3 scripts/patches.py")
+    else:
+        result = os.system("python scripts/patches.py")
+
+    if result != 0:  # Build wasn't sucessful
+        sys.exit(1)
+
     print("Done!")
 
 
@@ -121,6 +138,7 @@ def main():
             BuildCode()
             InsertCode()
             InjectWildEncounters()
+            # ApplyPatches()
             rom.close()
 
     except FileNotFoundError:

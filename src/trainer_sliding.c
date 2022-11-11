@@ -7,6 +7,9 @@
 #include "../include/new/multi.h"
 #include "../include/new/trainer_sliding.h"
 #include "../include/new/trainer_sliding_data.h"
+
+#include "../include/constants/songs.h"
+#include "../include/constants/trainer_classes.h"
 /*
 trainer_sliding.c
 	handles mid-battle trainer sliding and related message.
@@ -155,6 +158,16 @@ bool8 ShouldDoTrainerSlide(u8 bank, u16 trainerId, u8 caseId)
 					 || (IS_DOUBLE_BATTLE && GetEnemyMonCount(TRUE) <= 2)))
 					{
 						gBattleStringLoader = sTrainerSlides[i].msgLastSwitchIn;
+
+						// If the player is challenging a gym leader and they've switched in their last pokemon, change the music when their slide in text displays
+						u8 class = gTrainers[gTrainerBattleOpponent_A].trainerClass;
+						if ((gBattleTypeFlags & BATTLE_TYPE_TRAINER) == (BATTLE_TYPE_TRAINER)
+							&& !(gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_FRONTIER | BATTLE_TYPE_TRAINER_TOWER))
+							&& (class == CLASS_LEADER || class == CLASS_ELITE_4 || class == CLASS_CHAMPION ))
+							{
+								PlayBGM(BGM_BATTLE_GYM_LEADER_LAST_POKEMON);
+							}
+
 						return TRUE;
 					}
 					break;

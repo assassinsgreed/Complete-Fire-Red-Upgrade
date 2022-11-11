@@ -118,26 +118,30 @@ enum
 	MegaTriggerGrayscale,
 };
 
+/* TODO:
+		Validate Double battle positions
+		Fix positioning of mega/primal icon
+*/
 static const struct Coords16 sTypeIconPositions[][/*IS_SINGLE_BATTLE*/2] =
 {
 #ifndef UNBOUND //MODIFY THIS
 	[B_POSITION_PLAYER_LEFT] =
 	{
-		[TRUE] = {221, 86}, 	//Single Battle
-		[FALSE] = {144, 70},	//Double Battle
+		[TRUE] = {225, 94}, 	//Single Battle
+		[FALSE] = {225, 80},	//Double Battle
 	},
 	[B_POSITION_OPPONENT_LEFT] =
 	{
-		[TRUE] = {20, 26}, 		//Single Battle
-		[FALSE] = {97, 14},		//Double Battle
+		[TRUE] = {100, 36}, 		//Single Battle
+		[FALSE] = {100, 24},		//Double Battle
 	},
 	[B_POSITION_PLAYER_RIGHT] =
 	{
-		[FALSE] = {156, 96},	//Double Battle
+		[FALSE] = {225, 106},	//Double Battle
 	},
 	[B_POSITION_OPPONENT_RIGHT] =
 	{
-		[FALSE] = {85, 39},		//Double Battle
+		[FALSE] = {100, 50},		//Double Battle
 	},
 #else //For Pokemon Unbound
 	[B_POSITION_PLAYER_LEFT] =
@@ -722,7 +726,7 @@ static void SpriteCB_MegaIndicator(struct Sprite* self)
 
 		// Figure out the X position for the indicator - it differs depending on
 		// the battle type and the side the healthbox represents.
-		s16 shift = 64; // Halfway point for OAM
+		s16 shift = 51; // Halfway point for OAM, adjusted for BW battle hud
 
 		if (SIDE(INDICATOR_BANK) == B_SIDE_OPPONENT)
 			shift += 18;
@@ -1043,68 +1047,22 @@ static void SpriteCB_CamomonsTypeIcon(struct Sprite* sprite)
 	//Type icons should prepare to destroy themselves if the Player is not choosing an action
 	if (ShouldHideTypeIconSprite(bank))
 	{
-		if (IS_SINGLE_BATTLE)
-		{
-			switch (position) {
-				case B_POSITION_PLAYER_LEFT:
-					sprite->pos1.x -= 1;
-					break;
-				case B_POSITION_OPPONENT_LEFT:
-					sprite->pos1.x += 1;
-					break;
-			}
-		}
-		else //Double Battle
-		{
-			switch (position) {
-				case B_POSITION_PLAYER_LEFT:
-				case B_POSITION_PLAYER_RIGHT:
-					sprite->pos1.x += 1;
-					break;
-				case B_POSITION_OPPONENT_LEFT:
-				case B_POSITION_OPPONENT_RIGHT:
-					sprite->pos1.x -= 1;
-					break;
-			}
-		}
+		sprite->pos1.y += 1;
 
 		++sprite->data[2];
 		return;
 	}
 
-	if (IS_SINGLE_BATTLE)
-	{
-		switch (position) {
-			case B_POSITION_PLAYER_LEFT:
-				if (sprite->pos1.x < sTypeIconPositions[position][TRUE].x + 10)
-					sprite->pos1.x += 1;
-				break;
-			case B_POSITION_OPPONENT_LEFT:
-				if (sprite->pos1.x > sTypeIconPositions[position][TRUE].x - 10)
-					sprite->pos1.x -= 1;
-				break;
-		}
-	}
-	else //Double Battle
-	{
-		switch (position) {
-			case B_POSITION_PLAYER_LEFT:
-			case B_POSITION_PLAYER_RIGHT:
-				if (sprite->pos1.x > sTypeIconPositions[position][FALSE].x - 10)
-					sprite->pos1.x -= 1;
-				break;
-			case B_POSITION_OPPONENT_LEFT:
-			case B_POSITION_OPPONENT_RIGHT:
-				if (sprite->pos1.x < sTypeIconPositions[position][FALSE].x + 10)
-					sprite->pos1.x += 1;
-				break;
-		}
-	}
+	bool8 posToCheck = IS_SINGLE_BATTLE ? TRUE : FALSE; 
+	if (sprite->pos1.y > sTypeIconPositions[position][posToCheck].y - 10)
+		sprite-> pos1.y -= 1;
 
-	//Deal with bouncing player healthbox
-	s16 originalY = sprite->data[3];
-	struct Sprite* healthbox = &gSprites[gHealthboxSpriteIds[GetBattlerAtPosition(position)]];
-	sprite->pos1.y = originalY + healthbox->pos2.y;
+	//Deal with bouncing player healthbox, after it has finished animating
+	if (sprite->pos1.y <= sTypeIconPositions[position][posToCheck].y - 10)
+	{
+		struct Sprite* healthbox = &gSprites[gHealthboxSpriteIds[GetBattlerAtPosition(position)]];
+		sprite->pos1.y += healthbox->pos2.y;
+	}
 }
 
 void LoadRaidShieldGfx(void)
@@ -1470,8 +1428,8 @@ void TryLoadTypeIcons(void)
 			for (u8 typeNum = 0; typeNum < 2; ++typeNum) //Load each type
 			{
 				u8 spriteId;
-				s16 x = sTypeIconPositions[position][IS_SINGLE_BATTLE].x;
-				s16 y = sTypeIconPositions[position][IS_SINGLE_BATTLE].y + (11 * typeNum); //2nd type is 13px below
+				s16 x = sTypeIconPositions[position][IS_SINGLE_BATTLE].x + (9 * typeNum); //Calculate pos for second type icon
+				s16 y = sTypeIconPositions[position][IS_SINGLE_BATTLE].y;
 
 				u8 type = (typeNum == 0) ? type1 : type2;
 
@@ -1496,18 +1454,6 @@ void TryLoadTypeIcons(void)
 					sprite->data[0] = position;
 					sprite->data[1] = gActiveBattler;
 					sprite->data[3] = y; //Save original y-value for bouncing
-
-					if (IS_SINGLE_BATTLE)
-					{
-						if (SIDE(GetBattlerAtPosition(position)) == B_SIDE_PLAYER)
-							SetSpriteOamFlipBits(sprite, TRUE, FALSE); //Flip horizontally
-					}
-					else //Double Battle
-					{
-						if (SIDE(GetBattlerAtPosition(position)) == B_SIDE_OPPONENT)
-							SetSpriteOamFlipBits(sprite, TRUE, FALSE); //Flip horizontally
-					}
-
 					RequestSpriteFrameImageCopy(type, sprite->oam.tileNum, sprite->images);
 				}
 			}
