@@ -103,19 +103,6 @@ def InjectWildEncounters():
     print("Done!")
 
 
-def ApplyPatches():
-    print("Applying additional patch files...")
-    if shutil.which('python3') is not None:
-        result = os.system("python3 scripts/patches.py")
-    else:
-        result = os.system("python scripts/patches.py")
-
-    if result != 0:  # Build wasn't sucessful
-        sys.exit(1)
-
-    print("Done!")
-
-
 def ClearFromTo(rom, from_: int, to_: int):
     rom.seek(from_)
     for i in range(0, to_ - from_):
@@ -138,7 +125,6 @@ def main():
             BuildCode()
             InsertCode()
             InjectWildEncounters()
-            # ApplyPatches()
             rom.close()
 
     except FileNotFoundError:

@@ -88,10 +88,6 @@ EventScript_RhodanziOverworld_FindTMEchoedVoice:
     call ItemScript_Common_FindTM
     end
 
-End:
-    release
-    end
-
 m_ThugTopMoveToPush:
     .byte run_right, run_down, look_left, end_m
 

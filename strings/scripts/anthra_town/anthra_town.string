@@ -14,4 +14,67 @@ Mom: [PLAYER]!\nYou should take a quick rest.
 Oh, good! You and your\nPok\emon are looking great.\lTake care now!
 
 #org @gText_AnthraTown_MomLeaveHome
-Take care on your journey,\nsweetie.\pOh yes, [RIVAL] came by earlier to\nsee you.\pYou shouldn't keep him waiting!
+[RED][RIVAL] was looking for you dear.\nDon't keep him waiting, okay?
+
+#org @gText_GenChoice_Msgwelcome
+Welcome to Pok\emon Shooting Stars!\pWe have a couple questions to help\ncustomize your experience.\pFirst of all, do you have a\nfavorite Pok\emon generation?
+
+#org @gText_GenChoice_Msgfavoritegen
+Please select your favorite\ngeneration.
+
+#org @gText_GenChoice_Msgshuffleconfirm
+The game will be set in shuffle\nmode. This will choose random\lstarters from across all 8\lgenerations.\pDo you want to start in shuffle\nmode?
+
+#org @gText_GenChoice_Msgkantoconfirm
+Your favorite generation is 1\n(Kanto)?
+
+#org @gText_GenChoice_Msgjohtoconfirm
+Your favorite generation is 2\n(Johto)?
+
+#org @gText_GenChoice_Msghoennconfirm
+Your favorite generation is 3\n(Hoenn)?
+
+#org @gText_GenChoice_Msgsinnohconfirm
+Your favorite generation is 4\n(Sinnoh)?
+
+#org @gText_GenChoice_Msgunovaconfirm
+Your favorite generation is 5\n(Unova)?
+
+#org @gText_GenChoice_Msgkalosconfirm
+Your favorite generation is 6\n(Kalos)?
+
+#org @gText_GenChoice_Msgalolaconfirm
+Your favorite generation is 7\n(Alola)?
+
+#org @gText_GenChoice_Msggalarconfirm
+Your favorite generation is 8\n(Galar)?
+
+#org @gText_GenChoice_Msgcomplete
+Selection confirmed. We hope you\nenjoy Pok\emon Shooting Stars!
+
+#org @gText_AnthraTown_RivalArrival
+[RED][PLAYER], sweetie, please come\ndownstairs. [RIVAL] is here to see\lyou!
+
+#org @gText_AnthraTown_MeetingRival
+[BLUE][PLAYER], there you are! I was\nwondering if you were ever going to\lcome downstairs.\pYou know what today is, right?
+
+#org @gText_AnthraTown_RivalRememberingToday
+[BLUE]Of course you do! It's all we've\ntalked about for ages now.
+
+#org @gText_AnthraTown_RivalNotRememberingToday
+[BLUE]Whaaaat? We've been planning this for\nages! How could you forget?
+
+#org @gText_AnthraTown_RivalExplainingChampionSeleneComing
+[BLUE]Champion Selene is coming to Anthra\nTown today to do field research\lwith Professor Hawthorne!\pToday is our best chance to get\nher autograph. Can you believe our\lluck?\pI already talked to your mom, and\nyou're covered. Come on, let's\lgo! Last one there is a rotten\lTogepi!
+
+#org @gText_AnthraTown_RivalPause
+[BLUE]Oh!
+
+#org @gText_AnthraTown_RivalThanksMom
+[BLUE]Thanks again for breakfast, ma'am! It\nwas delicious.
+
+#org @gText_AnthraTown_RivalUrgesPlayer
+[BLUE]Hurry up, [PLAYER], we can't miss her!
+
+#org @gText_AnthraTown_MomEncouragesPlayer
+[RED][RIVAL] sure is in a hurry, isn't he?\nToday means a lot to him, you\lshouldn't keep him waiting.

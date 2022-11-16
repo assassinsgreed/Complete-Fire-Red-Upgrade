@@ -33,6 +33,7 @@ extern const u16 MCStandingPal[];
 extern const u16 FeMCStandingPal[];
 extern const u16 PlutoGruntMalePal[];
 extern const u16 RivalPal[];
+extern const u16 ProfessorHawthornePal[];
 extern const u16 ChampionSelenePal[];
 extern const u16 LeaderTerrencePal[];
 extern const u16 SandygastPal[];
@@ -289,6 +290,7 @@ static const u16* sPlayerMarlonOutfitColours[] =
 		{ MCStandingPal, 0x1207 },
 		{ FeMCStandingPal, 0x1208 },
 		{ RivalPal, 0x1209 },
+		{ ProfessorHawthornePal, 0x1210 },
 		{ NULL, 0x11FF }
 	};
 	const struct SpritePalette* const gObjectEventSpritePalettesSwitcher[255] = {
