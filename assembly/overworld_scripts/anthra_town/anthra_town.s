@@ -47,6 +47,29 @@ EventScript_AnthraTown_FootprintGuy:
 	applymovement PLAYER m_WalkRight
 	end
 
+.global EventScript_AnthraTown_RivalMom
+EventScript_AnthraTown_RivalMom:
+	lock
+	compare 0x4055 0x2
+	if lessorequal _goto EventScript_AnthraTown_RivalMomBeforeProfessor
+	compare 0x4055 0x4
+	if lessorequal _goto EventScript_AnthraTown_RivalMomPersuaded
+	faceplayer
+	msgbox gText_AnthraTown_RivalMomAfterJourneyStarts MSG_NORMAL
+	release
+	end
+
+EventScript_AnthraTown_RivalMomBeforeProfessor:
+	faceplayer
+	msgbox gText_AnthraTown_RivalMom MSG_NORMAL
+	release
+	end
+
+EventScript_AnthraTown_RivalMomPersuaded:
+	msgbox gText_AnthraTown_RivalMomBeingPersuaded MSG_NORMAL
+	release
+	end
+
 .global EventScript_AnthraTown_MomMain
 EventScript_AnthraTown_MomMain:
 	lock

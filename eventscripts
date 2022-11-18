@@ -20,6 +20,7 @@ tile 3 0 0 EventScript_AnthraTown_FootprintGuy
 tile 3 0 1 EventScript_AnthraTown_FootprintGuy
 tile 3 0 2 EventScript_AnthraTown_FootprintGuy
 npc 4 0 0 EventScript_AnthraTown_MomMain
+npc 4 2 0 EventScript_AnthraTown_RivalMom
 npc 4 3 0 EventScript_AnthraTown_OldMan
 tile 4 1 0 TileScript_AnthraTown_RivalArrival
 

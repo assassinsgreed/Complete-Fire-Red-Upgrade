@@ -34,7 +34,7 @@ EventScript_StarterChoice_Main:
 	IF FALSE _call EventScript_StarterChoice_Declined
 	givepokemon 0x4000 0x5 0x0 0x0 0x0 0x0
 	msgbox gText_StarterChoice_Confirmed MSG_KEEPOPEN
-	@ Hide corresponding pokeball
+	@ TODO: Hide corresponding pokeball
 	waitmsg
 	fanfare 0x13E
 	waitfanfare
@@ -44,6 +44,7 @@ EventScript_StarterChoice_Main:
 	bufferpartypokemon 0x0 0x0
 	msgbox gText_StarterChoice_Finalized MSG_NORMAL
 	setflag 0x828 @ Enable Pokemon Menu
+	clearflag 0x911 @ Enable wild encounters
 	release
 	end
 

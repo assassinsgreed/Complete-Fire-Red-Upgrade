@@ -87,3 +87,12 @@ Selection confirmed. We hope you\nenjoy Pok\emon Shooting Stars!
 
 #org @gText_AnthraTown_FootprintGuy
 [BLUE]Hey, I'm busy recording the\nfootprints of a Pok\emon that passed\lthrough here. Can you come back\llater?
+
+#org @gText_AnthraTown_RivalMom
+Oh, [PLAYER], what a pleasant\nsurprise! [RIVAL] was looking for\lyou earlier, did he find you? He\lsaid something about the Champion\land ran off.
+
+#org @gText_AnthraTown_RivalMomBeingPersuaded
+Well[.] I don't know, dear. It sounds\nlike it could be awfully dangerous.
+
+#org @gText_AnthraTown_RivalMomAfterJourneyStarts
+I'm a little hesitant to let [RIVAL]\ngo on a Pok\emon journey, but I'm\lsure it'll be alright if you're with\lhim, [PLAYER].\pTake care of each other and have\nfun. And remember, you can always\lcome home.
