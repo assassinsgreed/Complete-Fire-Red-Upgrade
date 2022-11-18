@@ -12,8 +12,13 @@ map 4 0 MapScript_AnthraTown_MeetingRival
 map 4 1 MapScript_AnthraTown_GameStartup
 npc 3 0 0 EventScript_AnthraTown_FlowerGirl
 npc 3 0 1 EventScript_AnthraTown_TechnologyMan
-npc 3 0 2 EventScript_DebugMode_Main
-npc 3 0 3 ItemScript_Common_Potion
+npc 3 0 2 EventScript_AnthraTown_Gabby
+npc 3 0 3 EventScript_AnthraTown_Ty
+npc 3 0 4 ItemScript_Common_Potion
+npc 3 0 5 EventScript_AnthraTown_FootprintGuy
+tile 3 0 0 EventScript_AnthraTown_FootprintGuy
+tile 3 0 1 EventScript_AnthraTown_FootprintGuy
+tile 3 0 2 EventScript_AnthraTown_FootprintGuy
 npc 4 0 0 EventScript_AnthraTown_MomMain
 npc 4 3 0 EventScript_AnthraTown_OldMan
 tile 4 1 0 TileScript_AnthraTown_RivalArrival

@@ -46,7 +46,7 @@
 #define FLAG_HIDE_BULBASAUR_BALL                           0x028
 #define FLAG_HIDE_SQUIRTLE_BALL                            0x029
 #define FLAG_HIDE_CHARMANDER_BALL                          0x02A
-#define FLAG_HIDE_OAK_IN_HIS_LAB                           0x02B
+#define FLAG_HIDE_PEOPLE_IN_ROUTE_17_AND_ANTHRA            0x02B
 #define FLAG_HIDE_RIVAL_IN_PLAYERS_HOUSE                   0x02C
 #define FLAG_HIDE_RIVAL_IN_LAB                             0x02D
 #define FLAG_HIDE_PEWTER_CITY_GYM_GUIDE                    0x02E

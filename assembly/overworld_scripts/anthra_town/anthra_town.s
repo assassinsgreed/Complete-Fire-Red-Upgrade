@@ -31,6 +31,22 @@ EventScript_AnthraTown_OldMan:
     msgbox gText_AnthraTown_OldMan MSG_FACE
     end
 
+.global EventScript_AnthraTown_Gabby
+EventScript_AnthraTown_Gabby:
+	npcchat gText_AnthraTown_Gabby
+	end
+
+.global EventScript_AnthraTown_Ty
+EventScript_AnthraTown_Ty:
+	npcchat gText_AnthraTown_Ty
+	end
+
+.global EventScript_AnthraTown_FootprintGuy
+EventScript_AnthraTown_FootprintGuy:
+	npcchat2 0x6 m_LookUp gText_AnthraTown_FootprintGuy
+	applymovement PLAYER m_WalkRight
+	end
+
 .global EventScript_AnthraTown_MomMain
 EventScript_AnthraTown_MomMain:
 	lock
@@ -194,6 +210,7 @@ TileScript_AnthraTown_RivalArrival:
 	applymovement PLAYER m_Surprise
 	msgbox gText_AnthraTown_RivalArrival MSG_NORMAL
 	setvar 0x4055 0x1
+	clearflag 0x02B @ Show the professor, champion, and tv crew from this point forward (hidden by default by game setup)
 	clearflag 0x02C @ Show the rival from this point forward (hidden by default by game startup)
 	goto End
 

@@ -28,6 +28,9 @@ extern const u8 SandygastTiles[];
 extern const u8 FoongusTiles[];
 extern const u8 StunfiskTiles[];
 extern const u8 TMPokeballTiles[];
+extern const u8 TruckTiles[];
+extern const u8 InterviewerTiles[];
+extern const u8 CameramanTiles[];
 
 #define EVENT_OBJ_PAL_TAG_NONE 0x1102
 #define gEventObjectBaseOam_16x16 ((const struct OamData*) 0x83A36F8)
@@ -322,6 +325,37 @@ static const struct SpriteFrameImage Table_Stunfisk[] =
 static const struct SpriteFrameImage Table_TMPokeball[] =
 {
     overworld_frame(TMPokeballTiles, 2, 2, 0),
+};
+
+static const struct SpriteFrameImage Table_Truck[] =
+{
+    overworld_frame(TruckTiles, 16, 16, 0),
+};
+
+static const struct SpriteFrameImage Table_Interviewer[] =
+{
+    overworld_frame(InterviewerTiles, 2, 4, 0),
+    overworld_frame(InterviewerTiles, 2, 4, 1),
+    overworld_frame(InterviewerTiles, 2, 4, 2),
+    overworld_frame(InterviewerTiles, 2, 4, 3),
+    overworld_frame(InterviewerTiles, 2, 4, 4),
+    overworld_frame(InterviewerTiles, 2, 4, 5),
+    overworld_frame(InterviewerTiles, 2, 4, 6),
+    overworld_frame(InterviewerTiles, 2, 4, 7),
+    overworld_frame(InterviewerTiles, 2, 4, 8),
+};
+
+static const struct SpriteFrameImage Table_Cameraman[] =
+{
+    overworld_frame(CameramanTiles, 2, 4, 0),
+    overworld_frame(CameramanTiles, 2, 4, 1),
+    overworld_frame(CameramanTiles, 2, 4, 2),
+    overworld_frame(CameramanTiles, 2, 4, 3),
+    overworld_frame(CameramanTiles, 2, 4, 4),
+    overworld_frame(CameramanTiles, 2, 4, 5),
+    overworld_frame(CameramanTiles, 2, 4, 6),
+    overworld_frame(CameramanTiles, 2, 4, 7),
+    overworld_frame(CameramanTiles, 2, 4, 8),
 };
 
 // #region MC
@@ -743,5 +777,65 @@ const struct EventObjectGraphicsInfo GraphicsInfo_TMPokeball =
     .subspriteTables = gEventObjectSpriteOamTables_16x16,
     .anims = gEventObjectImageAnimTable_Standard,
     .images = Table_TMPokeball,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+const struct EventObjectGraphicsInfo GraphicsInfo_Truck =
+{
+    .tileTag = 0xFFFF,
+    .paletteTag1 = 0x1211,
+    .paletteTag2 = EVENT_OBJ_PAL_TAG_NONE,
+    .size = (64 * 64) / 2,
+    .width = 64,
+    .height = 64,
+    .shadowSize = SHADOW_SIZE_L,
+    .inanimate = TRUE,
+    .disableReflectionPaletteLoad = FALSE,
+    .tracks = TRACKS_NONE,
+    .gender = MALE,
+    .oam = gEventObjectBaseOam_64x64,
+    .subspriteTables = gEventObjectSpriteOamTables_64x64,
+    .anims = gEventObjectImageAnimTable_Standard,
+    .images = Table_Truck,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+const struct EventObjectGraphicsInfo GraphicsInfo_Interviewer =
+{
+    .tileTag = 0xFFFF,
+    .paletteTag1 = 0x1212,
+    .paletteTag2 = EVENT_OBJ_PAL_TAG_NONE,
+    .size = (16 * 32) / 2,
+    .width = 16,
+    .height = 32,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .disableReflectionPaletteLoad = FALSE,
+    .tracks = TRACKS_FOOT,
+    .gender = FEMALE,
+    .oam = gEventObjectBaseOam_16x32,
+    .subspriteTables = gEventObjectSpriteOamTables_16x32,
+    .anims = gEventObjectImageAnimTable_Standard,
+    .images = Table_Interviewer,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+const struct EventObjectGraphicsInfo GraphicsInfo_Cameraman =
+{
+    .tileTag = 0xFFFF,
+    .paletteTag1 = 0x1212,
+    .paletteTag2 = EVENT_OBJ_PAL_TAG_NONE,
+    .size = (16 * 32) / 2,
+    .width = 16,
+    .height = 32,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .disableReflectionPaletteLoad = FALSE,
+    .tracks = TRACKS_FOOT,
+    .gender = MALE,
+    .oam = gEventObjectBaseOam_16x32,
+    .subspriteTables = gEventObjectSpriteOamTables_16x32,
+    .anims = gEventObjectImageAnimTable_Standard,
+    .images = Table_Cameraman,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
