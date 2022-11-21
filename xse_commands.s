@@ -1881,9 +1881,9 @@ map \map
 	copyvar 0x8000, \var
 .endm
 
-.macro case condition:req, dest:req
+.macro case condition:req, dest:req goto_or_call=_goto
 	compare 0x8000, \condition
-	if equal _goto \dest
+	if equal \goto_or_call \dest
 .endm
 
 .macro giveitem item:req amount:req msgtype:req

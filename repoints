@@ -326,6 +326,8 @@ GraphicsInfo_FeMCFieldMove 839FDE0
 GraphicsInfo_FeMCVSSeekerBike 839FDE4
 ## Replace Rocket Grunt (49)
 GraphicsInfo_PlutoGruntMale 839FE74
+## Replace Prof Oak (71)
+GraphicsInfo_ProfessorHawthorne 839FECC
 ## Replace Rival (72)
 GraphicsInfo_Rival 839FED0
 ## Replace Brock (80)
@@ -334,12 +336,18 @@ GraphicsInfo_LeaderTerrence 839FEF0
 GraphicsInfo_ChampionSelene 839FED8
 ## Replace Town Map (93)
 GraphicsInfo_TMPokeball 839FF24
+## Replace SS Anne (108)
+GraphicsInfo_Truck 839FF60
 ## Replace Spearow (110)
 GraphicsInfo_Sandygast 839FF68
 ## Replace Marowak (111)
 GraphicsInfo_Foongus 839FF6C
 ## Replace Poliwrath (112)
 GraphicsInfo_Stunfisk 839FF70
+## Replace Clefairy (113)
+GraphicsInfo_Interviewer 839FF74
+## Replace Pidgeot (114)
+GraphicsInfo_Cameraman 839FF78
 
 # Custom Battle Spritework
 Rival1Tiles 82398CC
