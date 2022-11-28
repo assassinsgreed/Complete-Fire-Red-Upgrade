@@ -1,2 +1,92 @@
 #org @gText_Route17_CaveSign
 Danger! Wild Pokemon have been\nsighted. Please be careful.
+
+#org @gText_Route17_MetWithRival
+[BLUE]There you are, [PLAYER]. Look!\nChampion Selene is right there!
+
+#org @gText_Route17_RivalCallingToChampion
+[BLUE]Um[.] Excuse me, Champion Selene?
+
+#org @gText_Route17_ChampionResponse
+[RED]Oh? Who's this?
+
+#org @gText_Route17_RivalStammer
+[BLUE]I[.] uh[.] I'm[.]
+
+#org @gText_Route17_HawthorneDismisses
+[BLUE]Excuse me, young man. We're\nperforming some important field\lresearch and I must ask you to\lleave.
+
+#org @gText_Route17_RivalProtest
+[BLUE]But[.]
+
+#org @gText_Route17_SeleneInterjection
+[RED]Now, now. We aren't that busy, right?\nSurely we can hear him out.
+
+#org @gText_Route17_HawthorneYields
+[BLUE]Harrumph. As you wish, Selene.
+
+#org @gText_Route17_HawthornePromptsRival
+[BLUE]Young man, you may speak.
+
+#org @gText_Route17_RivalGratitude
+[BLUE]Oh[.] Oh! Thank you Mister, um[.]
+
+#org @gText_Route17_HawthorneIntroduction
+[BLUE]Professor Hawthorne, my child.
+
+#org @gText_Route17_RivalStartsExplanation
+[BLUE]Well, you see, Professor Hawthorne[.]
+
+#org @gText_Route17_UrgePlayerToJoin
+[BLUE]Hey, [PLAYER], you should introduce\nyourself too!
+
+#org @gText_Route17_RivalsRequest
+[BLUE]My friend, [PLAYER], and I have been\nbig fans of Champion Selene ever\lsince she became champion.\pShe's really nice, and strong, and\nhas never lost a fight. She's so\lcool!\pWe saw her crowning match, and ever\nsince then we've been dying to get\lher autograph.\pSo[.] if it isn't too much trouble[.]\ncould we get one?
+
+#org @gText_Route17_SelenesResponse
+[RED]That's all?
+
+#org @gText_Route17_RivalEmbarrassed
+[BLUE]Uh, well[.] Yeah, sorry. I know you're\nreally busy and it's a dumb thing\lto ask[.]
+
+#org @gText_Route17_SeleneFollowUp
+[RED]No, not at all! I just assumed\nthat you would ask for an\lendorsement to take the Pok\emon\lLeague challenge.
+
+#org @gText_Route17_RivalTrainerInterest
+[BLUE]I wish! That would be so cool.\pBut[.] we aren't Pok\emon rainers. Not\nyet, at least. Our moms won't let\lus go on a journey yet.
+
+#org @gText_Route17_SeleneProposesStarterPokemon
+[RED]Hey, Professor Hawthorne, how about\nwe give them some starter Pok\emon?
+
+#org @gText_Route17_HawthorneHesitant
+[BLUE]I don't know, they're awfully young,\nSelene.
+
+#org @gText_Route17_SeleneRespondsToHesitation
+[RED]I was younger than they are, when\nI started my journey 7 years ago.
+
+#org @gText_Route17_HawthorneDigsIn
+[BLUE]You were, and still are, an\nexceptional trainer, Selene. Not\lall trainers can achieve what you\lhave.
+
+#org @gText_Route17_SelenesProposal
+[RED]I've got a good feeling about\nthem!\pHow about this? If their parents\nallow them to have a Pok\emon,\lwould that be okay with you?
+
+#org @gText_Route17_HawthorneAccepts
+[BLUE]Well[.] Alright. But only if their\nmothers are okay with it.
+
+#org @gText_Route17_SeleneSendsPlayerOff
+[RED]Well, that's that! If you're serious\nabout becoming trainers, you'd\lbetter talk to your moms soon.
+
+#org @gText_Route17_RivalExcited
+[BLUE]Oh! Oh! Okay! I'll be right back!
+
+#org @gText_Route17_RivalHeadsOut
+[BLUE][PLAYER], you'd better hurry up too.\nWe don't want to miss out on this\lopportunity.
+
+#org @gText_Route17_HawthorneChat
+Run along and speak with your\nmothers. But do hurry, we must be\lleaving soon.
+
+#org @gText_Route17_SeleneChat
+You must be excited to start your\nPok\emon journey!
+
+#org @gText_Route17_HawthorneBlocker
+[BLUE]That cave is dangerous! I would\nadvise you not to go in there\lwithout having a Pok\emon.

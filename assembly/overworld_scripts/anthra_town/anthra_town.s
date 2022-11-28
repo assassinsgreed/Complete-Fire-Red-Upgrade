@@ -43,9 +43,17 @@ EventScript_AnthraTown_Ty:
 
 .global EventScript_AnthraTown_FootprintGuy
 EventScript_AnthraTown_FootprintGuy:
+	compare LASTTALKED 0x6
+	if equal _call LookDown
 	npcchat2 0x6 m_LookUp gText_AnthraTown_FootprintGuy
-	applymovement PLAYER m_WalkRight
+	compare LASTTALKED 0x6
+	if notequal _call PlayerWalkBack
+	setvar LASTTALKED 0xFF
 	end
+
+PlayerWalkBack:
+	applymovement PLAYER m_WalkRight
+	return
 
 .global EventScript_AnthraTown_RivalMom
 EventScript_AnthraTown_RivalMom:
@@ -123,22 +131,22 @@ LevelScript_GenChoice_Main:
 EventScript_GenChoice_Favoritegen:
 	msgbox gText_GenChoice_Msgfavoritegen MSG_KEEPOPEN
 	multichoice 0x60 0x0 0x1 0x1
-	copyvar 0x4011 LASTRESULT
-	compare 0x4011 0x0
+	copyvar 0x408C LASTRESULT
+	compare 0x408C 0x0
 	if TRUE _call EventScript_GenChoice_Kantoconfirm
-	compare 0x4011 0x1
+	compare 0x408C 0x1
 	if TRUE _call EventScript_GenChoice_Johtoconfirm
-	compare 0x4011 0x2
+	compare 0x408C 0x2
 	if TRUE _call EventScript_GenChoice_Hoennconfirm
-	compare 0x4011 0x3
+	compare 0x408C 0x3
 	if TRUE _call EventScript_GenChoice_Sinnohconfirm
-	compare 0x4011 0x4
+	compare 0x408C 0x4
 	if TRUE _call EventScript_GenChoice_Unovaconfirm
-	compare 0x4011 0x5
+	compare 0x408C 0x5
 	if TRUE _call EventScript_GenChoice_Kalosconfirm
-	compare 0x4011 0x6
+	compare 0x408C 0x6
 	if TRUE _call EventScript_GenChoice_Alolaconfirm
-	compare 0x4011 0x7
+	compare 0x408C 0x7
 	if TRUE _call EventScript_GenChoice_Galarconfirm
 	end
 
@@ -147,68 +155,68 @@ EventScript_GenChoice_Shuffle:
 	compare LASTRESULT 0x1
 	if 0x0 _call LevelScript_GenChoice_Main
 	random 0x8
-	copyvar 0x4011 LASTRESULT
+	copyvar 0x408C LASTRESULT
 	random 0x8
-	copyvar 0x4012 LASTRESULT
+	copyvar 0x408D LASTRESULT
 	random 0x8
-	copyvar 0x4013 LASTRESULT
+	copyvar 0x408E LASTRESULT
 	call EventScript_GenChoice_End
 	end
 
 EventScript_GenChoice_Kantoconfirm:
 	msgbox gText_GenChoice_Msgkantoconfirm MSG_YESNO
 	call EventScript_GenChoice_Genchoiceconfirm
-	setvar 0x4012 0x0
-	setvar 0x4013 0x0
+	setvar 0x408D 0x0
+	setvar 0x408E 0x0
 	call EventScript_GenChoice_End
 
 EventScript_GenChoice_Johtoconfirm:
 	msgbox gText_GenChoice_Msgjohtoconfirm MSG_YESNO
 	call EventScript_GenChoice_Genchoiceconfirm
-	setvar 0x4012 0x1
-	setvar 0x4013 0x1
+	setvar 0x408D 0x1
+	setvar 0x408E 0x1
 	call EventScript_GenChoice_End
 
 EventScript_GenChoice_Hoennconfirm:
 	msgbox gText_GenChoice_Msghoennconfirm MSG_YESNO
 	call EventScript_GenChoice_Genchoiceconfirm
-	setvar 0x4012 0x2
-	setvar 0x4013 0x2
+	setvar 0x408D 0x2
+	setvar 0x408E 0x2
 	call EventScript_GenChoice_End
 
 EventScript_GenChoice_Sinnohconfirm:
 	msgbox gText_GenChoice_Msgsinnohconfirm MSG_YESNO
 	call EventScript_GenChoice_Genchoiceconfirm
-	setvar 0x4012 0x3
-	setvar 0x4013 0x3
+	setvar 0x408D 0x3
+	setvar 0x408E 0x3
 	call EventScript_GenChoice_End
 
 EventScript_GenChoice_Unovaconfirm:
 	msgbox gText_GenChoice_Msgunovaconfirm MSG_YESNO
 	call EventScript_GenChoice_Genchoiceconfirm
-	setvar 0x4012 0x4
-	setvar 0x4013 0x4
+	setvar 0x408D 0x4
+	setvar 0x408E 0x4
 	call EventScript_GenChoice_End
 
 EventScript_GenChoice_Kalosconfirm:
 	msgbox gText_GenChoice_Msgkalosconfirm MSG_YESNO
 	call EventScript_GenChoice_Genchoiceconfirm
-	setvar 0x4012 0x5
-	setvar 0x4013 0x5
+	setvar 0x408D 0x5
+	setvar 0x408E 0x5
 	call EventScript_GenChoice_End
 
 EventScript_GenChoice_Alolaconfirm:
 	msgbox gText_GenChoice_Msgalolaconfirm MSG_YESNO
 	call EventScript_GenChoice_Genchoiceconfirm
-	setvar 0x4012 0x6
-	setvar 0x4013 0x6
+	setvar 0x408D 0x6
+	setvar 0x408E 0x6
 	call EventScript_GenChoice_End
 
 EventScript_GenChoice_Galarconfirm:
 	msgbox gText_GenChoice_Msggalarconfirm MSG_YESNO
 	call EventScript_GenChoice_Genchoiceconfirm
-	setvar 0x4012 0x7
-	setvar 0x4013 0x7
+	setvar 0x408D 0x7
+	setvar 0x408E 0x7
 	call EventScript_GenChoice_End
 
 EventScript_GenChoice_Genchoiceconfirm:
@@ -217,7 +225,7 @@ EventScript_GenChoice_Genchoiceconfirm:
 	return
 
 EventScript_GenChoice_Reset:
-	setvar 0x4011 0x0
+	setvar 0x408C 0x0
 	call LevelScript_GenChoice_Main
 
 EventScript_GenChoice_End:
@@ -252,6 +260,7 @@ LevelScript_AnthraTown_MeetingRival:
 	sound 0x15 @ Exclaim
 	applymovement Rival m_Surprise
 	pause DELAY_HALFSECOND
+	playbgm 0x195 @ Encounter Cheren
 	applymovement Rival m_RivalWalkUp
 	waitmovement ALLEVENTS
 	msgbox gText_AnthraTown_MeetingRival MSG_YESNO
@@ -277,6 +286,7 @@ LevelScript_AnthraTown_MeetingRival:
 	sound 0x8 @ Door opening
 	pause DELAY_HALFSECOND
 	hidesprite Rival
+	fadedefaultbgm
 	pause DELAY_HALFSECOND
 	applymovement Mom m_LookUp
 	applymovement PLAYER m_LookDown
@@ -285,6 +295,7 @@ LevelScript_AnthraTown_MeetingRival:
 	applymovement Mom m_LookLeft
 	setvar 0x4055 0x2
 	setflag 0x02C @ Hide the rival from this point forward
+	setflag 0x02E @ Hide rival in their house
 	end
 
 RememberingToday:

@@ -9,21 +9,21 @@
 EventScript_StarterChoice_Main:
 	lock
 	@ Grass starter
-	compare 0x4011 0x0
+	compare 0x408C 0x0
 	if equal _call EventScript_StarterChoice_SetBulbasaur
-	compare 0x4011 0x1
+	compare 0x408C 0x1
 	if equal _call EventScript_StarterChoice_SetChikorita
-	compare 0x4011 0x2
+	compare 0x408C 0x2
 	if equal _call EventScript_StarterChoice_SetTreecko
-	compare 0x4011 0x3
+	compare 0x408C 0x3
 	if equal _call EventScript_StarterChoice_SetTurtwig
-	compare 0x4011 0x4
+	compare 0x408C 0x4
 	if equal _call EventScript_StarterChoice_SetSnivy
-	compare 0x4011 0x5
+	compare 0x408C 0x5
 	if equal _call EventScript_StarterChoice_SetChespin
-	compare 0x4011 0x6
+	compare 0x408C 0x6
 	if equal _call EventScript_StarterChoice_SetRowlet
-	compare 0x4011 0x7
+	compare 0x408C 0x7
 	if equal _call EventScript_StarterChoice_SetGrookey
 
 	bufferpokemon 0x0 0x4000
@@ -49,39 +49,39 @@ EventScript_StarterChoice_Main:
 	end
 
 	@@ Fire starter
-	@ compare 0x4012 0x0
+	@ compare 0x408D 0x0
 	@ if equal _call EventScript_StarterChoice_SetCharmander
-	@ compare 0x4012 0x1
+	@ compare 0x408D 0x1
 	@ if equal _call EventScript_StarterChoice_SetCyndaquil
-	@ compare 0x4012 0x2
+	@ compare 0x408D 0x2
 	@ if equal _call EventScript_StarterChoice_SetTorchic
-	@ compare 0x4012 0x3
+	@ compare 0x408D 0x3
 	@ if equal _call EventScript_StarterChoice_SetChimchar
-	@ compare 0x4012 0x4
+	@ compare 0x408D 0x4
 	@ if equal _call EventScript_StarterChoice_SetTepig
-	@ compare 0x4012 0x5
+	@ compare 0x408D 0x5
 	@ if equal _call EventScript_StarterChoice_SetFennekin
-	@ compare 0x4012 0x6
+	@ compare 0x408D 0x6
 	@ if equal _call EventScript_StarterChoice_SetLitten
-	@ compare 0x4012 0x7
+	@ compare 0x408D 0x7
 	@ if equal _call EventScript_StarterChoice_SetScorbunny
 
 	@ @ Water starter
-	@ compare 0x4013 0x0
+	@ compare 0x408E 0x0
 	@ if equal _call EventScript_StarterChoice_SetSquirtle
-	@ compare 0x4013 0x1
+	@ compare 0x408E 0x1
 	@ if equal _call EventScript_StarterChoice_SetTotodile
-	@ compare 0x4013 0x2
+	@ compare 0x408E 0x2
 	@ if equal _call EventScript_StarterChoice_SetMudkip
-	@ compare 0x4013 0x3
+	@ compare 0x408E 0x3
 	@ if equal _call EventScript_StarterChoice_SetPiplup
-	@ compare 0x4013 0x4
+	@ compare 0x408E 0x4
 	@ if equal _call EventScript_StarterChoice_SetOshawott
-	@ compare 0x4013 0x5
+	@ compare 0x408E 0x5
 	@ if equal _call EventScript_StarterChoice_SetFroakie
-	@ compare 0x4013 0x6
+	@ compare 0x408E 0x6
 	@ if equal _call EventScript_StarterChoice_SetPopplio
-	@ compare 0x4013 0x7
+	@ compare 0x408E 0x7
 	@ if equal _call EventScript_StarterChoice_SetSobble
 
 	@ showpokepic 0x4001
