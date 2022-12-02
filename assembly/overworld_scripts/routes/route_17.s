@@ -8,7 +8,7 @@
 .equ Selene, 0x03
 .equ Rival, 0x04
 .equ StoryEventVar, 0x4055
-.equ PlayerHasNotMetWithRival, 0x2
+.equ PlayerMetWithRivalAtHouse, 0x2
 .equ PlayerMetWithRival, 0x3
 
 .global SignScript_Route17_CaveSign
@@ -32,7 +32,7 @@ TileScript_Route17_StoryBlockersNorth:
 
 .global TileScript_Route17_StoryBlockersSouth
 TileScript_Route17_StoryBlockersSouth:
-    compare StoryEventVar PlayerHasNotMetWithRival
+    compare StoryEventVar PlayerMetWithRivalAtHouse
     if equal _goto TileEvent_MeetingRival
     compare StoryEventVar PlayerMetWithRival
     if equal _goto PlayerMustChooseStarter

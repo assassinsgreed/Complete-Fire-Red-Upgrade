@@ -6,15 +6,43 @@
 
 .equ Mom, 0x1
 .equ Rival, 0x2
+.equ RivalInAnthraOverworld, 0x8
+.equ StoryEventVar, 0x4055
+.equ PlayerCalledDownstairs, 0x1
+.equ PlayerMetWithRivalAtHouse, 0x2
+.equ PlayerMetWithRival, 0x3
+.equ PlayerAllowedToGoOnJourney, 0x4
+.equ PlayerAndRivalCanGoOnJourney, 0x5
 
-.global MapScript_AnthraTown_FlightSpot
-MapScript_AnthraTown_FlightSpot:
-	mapscript MAP_SCRIPT_ON_TRANSITION MapEntryScript_AnthraTown_FlightFlag
+.global MapScript_AnthraTown
+MapScript_AnthraTown:
+	mapscript MAP_SCRIPT_ON_TRANSITION MapEntryScript_AnthraTown_FlightSpot
+	mapscript MAP_SCRIPT_ON_FRAME_TABLE LevelScripts_AnthraTown_MeetingWithRival
 	.byte MAP_SCRIPT_TERMIN
 
-MapEntryScript_AnthraTown_FlightFlag:
+MapEntryScript_AnthraTown_FlightSpot:
     setworldmapflag 0x890
     end
+
+LevelScripts_AnthraTown_MeetingWithRival:
+	levelscript StoryEventVar PlayerAllowedToGoOnJourney LevelScript_DepartingWithRival
+	.hword LEVEL_SCRIPT_TERMIN
+
+LevelScript_DepartingWithRival:
+	pause DELAY_HALFSECOND
+	playbgm 0x195 @ Encounter Cheren
+	applymovement RivalInAnthraOverworld m_RivalMeetPlayerAtJourneyStart
+	waitmovement ALLEVENTS
+	msgbox gText_AnthraTown_RivalCanGoOnJourney MSG_NORMAL
+	applymovement RivalInAnthraOverworld m_Surprise
+	msgbox gText_AnthraTown_ReturnToSeleneAndHawthorne MSG_NORMAL
+	applymovement RivalInAnthraOverworld m_RivalReturnsToRoute17
+	waitmovement ALLEVENTS
+	hidesprite RivalInAnthraOverworld
+	setflag 0x02F @ Hide rival in overworld
+	setvar StoryEventVar PlayerAndRivalCanGoOnJourney
+	fadedefaultbgm
+	end
 
 .global EventScript_AnthraTown_FlowerGirl
 EventScript_AnthraTown_FlowerGirl:
@@ -58,9 +86,9 @@ PlayerWalkBack:
 .global EventScript_AnthraTown_RivalMom
 EventScript_AnthraTown_RivalMom:
 	lock
-	compare 0x4055 0x2
+	compare StoryEventVar PlayerMetWithRivalAtHouse
 	if lessorequal _goto EventScript_AnthraTown_RivalMomBeforeProfessor
-	compare 0x4055 0x4
+	compare StoryEventVar PlayerMetWithRival
 	if lessorequal _goto EventScript_AnthraTown_RivalMomPersuaded
 	faceplayer
 	msgbox gText_AnthraTown_RivalMomAfterJourneyStarts MSG_NORMAL
@@ -78,12 +106,20 @@ EventScript_AnthraTown_RivalMomPersuaded:
 	release
 	end
 
+.global EventScript_AnthraTown_RivalInTheirHome
+EventScript_AnthraTown_RivalInTheirHome:
+	msgbox gText_AnthraTown_RivalPersuadingMom MSG_NORMAL
+	release
+	end
+
 .global EventScript_AnthraTown_MomMain
 EventScript_AnthraTown_MomMain:
 	lock
 	faceplayer
 	checkflag 0x258 @ First rival battle completed
 	if SET _goto EventScript_AnthraTown_MomRestPrompt
+	compare StoryEventVar PlayerMetWithRival
+	if equal _goto EventScript_AnthraTown_PersuadingMomToGoOnJourney
 	msgbox gText_AnthraTown_MomLeaveHome MSG_KEEPOPEN
 	closeonkeypress
 	applymovement Mom m_LookLeft
@@ -96,6 +132,23 @@ EventScript_AnthraTown_MomRestPrompt:
 	call EventScript_AnthraTown_MomRestAnimation
 	msgbox gText_AnthraTown_MomPokemonAreHealthy MSG_KEEPOPEN
 	release
+	end
+
+EventScript_AnthraTown_PersuadingMomToGoOnJourney:
+	msgbox gText_AnthraTown_ConvincingPlayerMom MSG_YESNO
+	compare LASTRESULT YES
+	if notequal _goto EventScript_AnthraTown_MomPlayerSaidNoToAccompanyingRival
+	msgbox gText_AnthraTown_MomGivesRunningShoes MSG_NORMAL
+	call EnableRunningShoes
+	msgbox gText_AnthraTown_MomSendsPlayerOff MSG_NORMAL
+	setvar StoryEventVar PlayerAllowedToGoOnJourney
+	setflag 0x002E @ Hide rival in their home
+	clearflag 0x02F @ Show rival in Anthra Overworld
+	end
+
+EventScript_AnthraTown_MomPlayerSaidNoToAccompanyingRival:
+	msgbox gText_AnthraTown_ConvincingPlayerMom_PlayerDeclined MSG_NORMAL
+	applymovement Mom m_LookLeft
 	end
 
 EventScript_AnthraTown_MomRestAnimation:
@@ -235,12 +288,12 @@ EventScript_GenChoice_End:
 	end
 
 TileScript_AnthraTown_RivalArrival:
-	compare 0x4055 0x1
+	compare StoryEventVar PlayerCalledDownstairs
 	IF greaterorequal _goto End
 	sound 0x15 @ Exclaim
 	applymovement PLAYER m_Surprise
 	msgbox gText_AnthraTown_RivalArrival MSG_NORMAL
-	setvar 0x4055 0x1
+	setvar StoryEventVar PlayerCalledDownstairs
 	clearflag 0x02B @ Show the professor, champion, and tv crew from this point forward (hidden by default by game setup)
 	clearflag 0x02C @ Show the rival from this point forward (hidden by default by game startup)
 	goto End
@@ -251,11 +304,11 @@ MapScript_AnthraTown_MeetingRival:
 	.byte MAP_SCRIPT_TERMIN
 
 LevelScripts_AnthraTown_MeetingRival:
-	levelscript 0x4055 1 LevelScript_AnthraTown_MeetingRival
+	levelscript StoryEventVar PlayerCalledDownstairs LevelScript_AnthraTown_MeetingRival
 	.hword LEVEL_SCRIPT_TERMIN
 
 LevelScript_AnthraTown_MeetingRival:
-	compare 0x4055 0x2
+	compare StoryEventVar PlayerMetWithRivalAtHouse
 	if equal _goto End
 	sound 0x15 @ Exclaim
 	applymovement Rival m_Surprise
@@ -293,9 +346,10 @@ LevelScript_AnthraTown_MeetingRival:
 	pause DELAY_HALFSECOND
 	msgbox gText_AnthraTown_MomEncouragesPlayer MSG_NORMAL
 	applymovement Mom m_LookLeft
-	setvar 0x4055 0x2
+	setvar StoryEventVar PlayerMetWithRivalAtHouse
 	setflag 0x02C @ Hide the rival from this point forward
 	setflag 0x02E @ Hide rival in their house
+	setflag 0x02F @ Hide rival in Anthra Town overworld
 	end
 
 RememberingToday:
@@ -306,14 +360,9 @@ NotRememberingToday:
 	msgbox gText_AnthraTown_RivalNotRememberingToday MSG_NORMAL
 	return
 
-m_RivalWalkUp:
-	.byte walk_up, walk_up, walk_right, walk_right, walk_right, walk_up, look_right, end_m
-
-m_RivalRunOut:
-	.byte run_left, run_down, run_left, run_left, run_left, run_left, run_down, run_down, run_down, run_down, end_m
-
-m_RivalReturn:
-	.byte walk_up, walk_up, look_right, end_m
-
-m_RivalRunOutAgain:
-	.byte run_down, run_down, run_down, end_m
+m_RivalWalkUp: .byte walk_up, walk_up, walk_right, walk_right, walk_right, walk_up, look_right, end_m
+m_RivalRunOut: .byte run_left, run_down, run_left, run_left, run_left, run_left, run_down, run_down, run_down, run_down, end_m
+m_RivalReturn: .byte walk_up, walk_up, look_right, end_m
+m_RivalRunOutAgain: .byte run_down, run_down, run_down, end_m
+m_RivalMeetPlayerAtJourneyStart: .byte walk_left, walk_left, walk_left, walk_left, walk_left, walk_left, walk_left, walk_left, look_up, end_m
+m_RivalReturnsToRoute17: .byte walk_right, walk_right, walk_right, walk_right, walk_right, walk_right, walk_right, walk_right, end_m

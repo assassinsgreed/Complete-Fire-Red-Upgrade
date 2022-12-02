@@ -50,7 +50,7 @@
 #define FLAG_HIDE_RIVAL_IN_PLAYERS_HOUSE                   0x02C
 #define FLAG_HIDE_RIVAL_ON_ROUTE_17                        0x02D
 #define FLAG_HIDE_RIVAL_IN_THEIR_HOUSE                     0x02E
-#define FLAG_HIDE_DOME_FOSSIL                              0x02F
+#define FLAG_HIDE_RIVAL_IN_ANTHRA                          0x02F
 #define FLAG_HIDE_HELIX_FOSSIL                             0x030
 #define FLAG_HIDE_NUGGET_BRIDGE_ROCKET                     0x031
 #define FLAG_HIDE_BILL_CLEFAIRY                            0x032

@@ -7,7 +7,7 @@
 # npc 3 0 3 EventScript_Modifiers_Main
 
 # Anthra Town
-map 3 0 MapScript_AnthraTown_FlightSpot
+map 3 0 MapScript_AnthraTown
 map 4 0 MapScript_AnthraTown_MeetingRival
 map 4 1 MapScript_AnthraTown_GameStartup
 npc 3 0 0 EventScript_AnthraTown_FlowerGirl
@@ -21,6 +21,7 @@ tile 3 0 1 EventScript_AnthraTown_FootprintGuy
 tile 3 0 2 EventScript_AnthraTown_FootprintGuy
 npc 4 0 0 EventScript_AnthraTown_MomMain
 npc 4 2 0 EventScript_AnthraTown_RivalMom
+npc 4 2 1 EventScript_AnthraTown_RivalInTheirHome
 npc 4 3 0 EventScript_AnthraTown_OldMan
 tile 4 1 0 TileScript_AnthraTown_RivalArrival
 

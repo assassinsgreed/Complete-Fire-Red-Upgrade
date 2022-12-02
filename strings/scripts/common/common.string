@@ -24,3 +24,18 @@ Sleep
 
 #org @gText_End
 End
+
+#org @gText_ReceiveRunningShoes
+[BLACK][PLAYER] obtained the Running Shoes!
+
+#org @gText_AutomaticallyEnableRunningShoes
+[BLACK]Would you like to automatically use\nyour running shoes?
+
+#org @gText_RunningShoesOn
+[BLACK]Running shoes are now always\nactive. You can hold B to walk.
+
+#org @gText_RunningShoesOff
+[BLACK]Running shoes are now always\ninactive. You can hold B to run.
+
+#org @gText_RunningShoesToggle
+[BLACK]This setting can be changed by\npressing L.
