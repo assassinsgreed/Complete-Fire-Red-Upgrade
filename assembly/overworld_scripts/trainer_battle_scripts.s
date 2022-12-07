@@ -226,8 +226,3 @@ Var8005WalkRight:
 	applymovement 0x8005 m_WalkRight
 	waitmovement 0x0
 	return
-
-m_WalkDown: .byte walk_down, end_m 
-m_WalkUp: .byte walk_up, end_m
-m_WalkLeft: .byte walk_left, end_m
-m_WalkRight: .byte walk_right, end_m

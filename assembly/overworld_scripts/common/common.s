@@ -31,12 +31,14 @@ TurnRunningShoesOff:
 .global WalkUp
 WalkUp:
     applymovement PLAYER m_WalkUp
-    return
+    waitmovement ALLEVENTS
+    end
 
 .global WalkDown
 WalkDown:
     applymovement PLAYER m_WalkDown
-    return
+    waitmovement ALLEVENTS
+    end
 
 .global LookDown
 LookDown:

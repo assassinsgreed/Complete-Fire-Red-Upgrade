@@ -86,7 +86,59 @@ Danger! Wild Pokemon have been\nsighted. Please be careful.
 Run along and speak with your\nmothers. But do hurry, we must be\lleaving soon.
 
 #org @gText_Route17_SeleneChat
-You must be excited to start your\nPok\emon journey!
+[RED]You must be excited to start your\nPok\emon journey!
 
 #org @gText_Route17_HawthorneBlocker
 [BLUE]That cave is dangerous! I would\nadvise you not to go in there\lwithout having a Pok\emon.
+
+#org @gText_Route17_RivalExcitedToBecomeTrainer
+[BLUE]I'm so excited, [PLAYER]! We're going\nto be Pok\emon trainers after today!
+
+#org @gText_Route17_SeleneBeforeChoosingStarter
+[RED]It's always exciting to see a new\ntrainer start their journey!
+
+#org @gText_Route17_ChooseAStarterWarning
+You should choose a Pok\emon while\nyou have the chance[.]
+
+#org @gText_Route17_HawthorneDialogWhenChoosingStarter
+You were able to get your mothers'\nblessing, yes?\pVery well, then I shall not object\nto you going on a Pok\emon journey.
+
+#org @gText_Route17_HawthorneChooseAPokemon
+I have 3 Pok\emon with me today. You\nmay both choose one to take as\lyour companion.
+
+#org @gText_Route17_HawthorneAsksPlayerToMove
+[BLUE]Please excuse me for a moment,\n[PLAYER].
+
+#org @gText_Route17_RivalWantsToTakeEevee 
+[BLUE]Oh, thank you, Professor Hawthorne.\pBut[.] I've been thinking for a bit,\nand I'd like to travel with my\lEevee.
+
+#org @gText_Route17_HawthorneRespondsToRivalsEeveeChoice
+[BLUE]Are you certain, [RIVAL]? You could\ntravel with your Eevee and one of\lthese Pok\emon, if you'd like.
+
+#org @gText_Route17_RivalWillTakeEevee
+[BLUE]Yeah, I've made up my mind. I think\nit'll make my journey more special.
+
+#org @gText_Route17_HawthorneAcceptsRivalsEeveeChoice
+[BLUE]Hohoho, very well. I can respect\nthat decision.
+
+#org @gText_Route17_HawthorneInvitesPlayerToChooseStarter
+[BLUE][PLAYER], you may choose any Pok\emon\nyou like. Think over your decision\lcarefully.
+
+#org @gText_Route17_SeleneAdviceOnChoosingPartner
+[RED]The Pok\emon you choose will be\nyour partner throughout your\ljourney.
+
+#org @gText_StarterChoice_Confirmation
+[BLUE]Ah, so you'd like to choose\n[BUFFER1] as your partner?
+
+#org @gText_StarterChoice_Decline
+[BLUE]Take your time! This is an important\ndecision.
+
+#org @gText_StarterChoice_Confirmed
+[PLAYER] chose to start their journey\nwith [BUFFER1]!
+
+#org @gText_StarterChoice_Nickname
+[BLUE]That's a fine choice! Would you like\nto give your new partner a\lnickname?
+
+#org @gText_StarterChoice_Finalized
+[BLUE]That settles it. You and [BUFFER1]\nare now partners.
+

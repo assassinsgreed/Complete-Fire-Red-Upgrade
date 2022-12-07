@@ -67,10 +67,14 @@ sign 1 0 0 SignScript_VarisiForest_AntidoteSign
 sign 1 0 1 SignScript_VarisiForest_RhodanziSign
 
 # Route 17
+map 3 35 MapScript_Route17
 npc 3 35 0 ItemScript_Common_Potion
 npc 3 35 1 EventScript_Route17_ProfessorHawthorne
 npc 3 35 2 EventScript_Route17_ChampionSelene
-npc 3 35 3 EventScript_Route17_MeetingRival
+npc 3 35 3 EventScript_Route17_Rival
+npc 3 35 4 EventScript_StarterChoice_Grass
+npc 3 35 5 EventScript_StarterChoice_Fire
+npc 3 35 6 EventScript_StarterChoice_Water
 sign 3 35 0 SignScript_Route17_CaveSign
 tile 3 35 0 TileScript_Route17_StoryBlockersSouth
 tile 3 35 1 TileScript_Route17_StoryBlockersSouth
@@ -81,6 +85,13 @@ tile 3 35 5 TileScript_Route17_StoryBlockersNorth
 tile 3 35 6 TileScript_Route17_StoryBlockersNorth
 tile 3 35 7 TileScript_Route17_StoryBlockersNorth
 tile 3 35 8 TileScript_Route17_StoryCaveBlocker
+tile 3 35 9 TileScript_Route17_StoryCaveBlocker
+tile 3 35 10 TileScript_Route17_StoryCaveBlocker
+tile 3 35 11 TileScript_Route17_StoryBlockersSouth
+tile 3 35 12 TileScript_Route17_StoryBlockersSouth
+tile 3 35 13 TileScript_Route17_StoryBlockersSouth
+tile 3 35 14 TileScript_Route17_StoryBlockersSouth
+tile 3 35 15 TileScript_Route17_StoryBlockersSouth
 
 # Rhodanzi City
 ## Overworld

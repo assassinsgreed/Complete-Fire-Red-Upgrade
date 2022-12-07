@@ -1939,6 +1939,13 @@ map \map
 	comparefarbytetobyte 0x3005EA6 \hour
 .endm
 
+@ PLAYERFACING only holds the direction from the last time A was pressed, which can cause it to be inaccurate in script tiles
+@ This compares the byte representing the player's current position, but needs to be compared against INTERNAL_<DIR> vars
+@ See here: https://www.pokecommunity.com/showthread.php?t=365942
+.macro compareplayerfacing num:req
+	comparefarbytetobyte 0x2036E50 \num
+.endm
+
 .macro candodailyevent var:req
 	setvar 0x8000 \var
 	setvar 0x8001 0x0

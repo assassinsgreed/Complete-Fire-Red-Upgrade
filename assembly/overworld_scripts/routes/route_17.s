@@ -3,6 +3,7 @@
 
 .include "../xse_commands.s"
 .include "../xse_defines.s"
+.include "../asm_defines.s"
 
 .equ Hawthorne, 0x02
 .equ Selene, 0x03
@@ -10,14 +11,32 @@
 .equ StoryEventVar, 0x4055
 .equ PlayerMetWithRivalAtHouse, 0x2
 .equ PlayerMetWithRival, 0x3
+.equ PlayerAndRivalCanGoOnJourney, 0x5
+.equ PlayerChoosingStarter, 0x6
+.equ PlayerJourneyHasStarted, 0x7
+
+.global MapScript_Route17
+MapScript_Route17:
+	mapscript MAP_SCRIPT_ON_TRANSITION MapEntryScript_Route17
+	.byte MAP_SCRIPT_TERMIN
+
+MapEntryScript_Route17:
+    compare StoryEventVar PlayerAndRivalCanGoOnJourney
+    if notequal _goto End
+    movesprite2 Rival 0x12 0x0A @ Facing Selene
+    setobjectmovementtype Selene look_down
+    setobjectmovementtype Hawthorne look_down
+	end
 
 .global SignScript_Route17_CaveSign
 SignScript_Route17_CaveSign:
     msgbox gText_Route17_CaveSign MSG_SIGN
     end
 
-.global EventScript_Route17_MeetingRival
-EventScript_Route17_MeetingRival:
+.global EventScript_Route17_Rival
+EventScript_Route17_Rival:
+    compare StoryEventVar PlayerAndRivalCanGoOnJourney
+    if greaterorequal _goto EventScript_Route17_Rival_BeforeChoosingStarter
     lock
     faceplayer
     msgbox gText_Route17_MetWithRival MSG_NORMAL
@@ -26,42 +45,108 @@ EventScript_Route17_MeetingRival:
     waitmovement ALLEVENTS
     goto StoryEvents_TalkingWithHawthorneAndSelene
 
+EventScript_Route17_Rival_BeforeChoosingStarter:
+    npcchat2 Rival m_LookUp gText_Route17_RivalExcitedToBecomeTrainer
+    end
+
 .global TileScript_Route17_StoryBlockersNorth
 TileScript_Route17_StoryBlockersNorth:
+    goto PlayerMustChooseStarter
     end
 
 .global TileScript_Route17_StoryBlockersSouth
 TileScript_Route17_StoryBlockersSouth:
     compare StoryEventVar PlayerMetWithRivalAtHouse
     if equal _goto TileEvent_MeetingRival
-    compare StoryEventVar PlayerMetWithRival
+    compare StoryEventVar PlayerChoosingStarter
     if equal _goto PlayerMustChooseStarter
     @ Else, do nothing
     end
 
 .global TileScript_Route17_StoryCaveBlocker
 TileScript_Route17_StoryCaveBlocker:
-    @ TODO: Don't run this script if the player has chosen their starter!
+    compare StoryEventVar PlayerJourneyHasStarted
+    if equal _goto End @ Do not block the player if they have chosen a starter
     applymovement Hawthorne m_LookUp
     msgbox gText_Route17_HawthorneBlocker MSG_NORMAL
     applymovement PLAYER m_WalkDown
+    compare StoryEventVar PlayerAndRivalCanGoOnJourney
+    if greaterorequal _goto HawthorneLookDown
     applymovement Hawthorne m_LookRight
+    end
+
+HawthorneLookDown:
+    applymovement Hawthorne m_LookDown
     end
 
 .global EventScript_Route17_ProfessorHawthorne
 EventScript_Route17_ProfessorHawthorne:
-    npcchat2 Hawthorne m_LookRight gText_Route17_HawthorneChat
-    @ TODO: Call starter choice script, if the correct var is set 
+    compare StoryEventVar PlayerAndRivalCanGoOnJourney
+    if equal _goto EventScript_Route17_HawthorneChooseStarter
+    compare StoryEventVar PlayerChoosingStarter
+    if equal _goto EventScript_Route17_PlayerChoosingStarter
+    npcchat2 Hawthorne m_LookRight gText_Route17_HawthorneChat 
     end
+
+EventScript_Route17_HawthorneChooseStarter:
+    setvar StoryEventVar PlayerChoosingStarter
+    lock
+    faceplayer
+    msgbox gText_Route17_HawthorneDialogWhenChoosingStarter MSG_NORMAL
+    compareplayerfacing INTERNAL_RIGHT
+    if equal _call EventScript_Route17_PlayerMovesForHawthornePokeballs
+    applymovement Hawthorne m_WalkLeft
+    waitmovement ALLEVENTS
+    playse 0x17 @ Ball shake sound
+    pause DELAY_HALFSECOND
+    clearflag 0x028
+    showsprite 0x5 @ Show grass starter ball on route 17
+	clearflag 0x029
+    showsprite 0x6 @ Show water starter ball on route 17
+	clearflag 0x02A
+    showsprite 0x7 @ Show fire starter ball on route 17
+    applymovement Hawthorne m_WalkRight
+    waitmovement Hawthorne
+    faceplayer
+    playbgm 0x180 @ Let's go together!
+    msgbox gText_Route17_HawthorneChooseAPokemon MSG_NORMAL
+    applymovement Rival m_LookLeft
+    applymovement Hawthorne m_LookRight
+    msgbox gText_Route17_RivalWantsToTakeEevee MSG_NORMAL
+    msgbox gText_Route17_HawthorneRespondsToRivalsEeveeChoice MSG_NORMAL
+    msgbox gText_Route17_RivalWillTakeEevee MSG_NORMAL
+    msgbox gText_Route17_HawthorneAcceptsRivalsEeveeChoice MSG_NORMAL
+    applymovement Rival m_LookUp
+    msgbox gText_Route17_SeleneAdviceOnChoosingPartner MSG_NORMAL
+    goto EventScript_Route17_PlayerChoosingStarter
+    release
+    end
+
+EventScript_Route17_PlayerChoosingStarter:
+    lock
+    faceplayer
+    msgbox gText_Route17_HawthorneInvitesPlayerToChooseStarter MSG_NORMAL
+    release
+    end
+
+EventScript_Route17_PlayerMovesForHawthornePokeballs:
+    msgbox gText_Route17_HawthorneAsksPlayerToMove MSG_NORMAL
+    applymovement PLAYER m_PlayerMoveOutOfHawthornesWay
+    waitmovement PLAYER
+    return
 
 .global EventScript_Route17_ChampionSelene
 EventScript_Route17_ChampionSelene:
-    npcchat2 Selene m_LookLeft gText_Route17_SeleneChat
+    compare StoryEventVar PlayerAndRivalCanGoOnJourney
+    if equal _goto EventScript_Route17_ChampionSelene_BeforeChoosingStarter 
+    npcchat2 Selene m_LookDown gText_Route17_SeleneChat
+    end
+
+EventScript_Route17_ChampionSelene_BeforeChoosingStarter:
+    npcchat2 Selene m_LookDown gText_Route17_SeleneBeforeChoosingStarter
     end
 
 TileEvent_MeetingRival:
-    compare StoryEventVar PlayerMetWithRival
-    if equal _goto PlayerMustChooseStarter
     getplayerpos 0x4000 0x4001 @ Get player x and y in throwaway vars
     lock
     compare 0x4000 0x11
@@ -102,7 +187,7 @@ StoryEvents_TalkingWithHawthorneAndSelene:
     applymovement Rival m_LookDown
     msgbox gText_Route17_UrgePlayerToJoin MSG_NORMAL
     compare 0x4000 0x11
-    if notequal _call WalkUp
+    if notequal _call PlayerWalkUp
     compare 0x4000 0x11
     if equal _call PlayerWalkToFaceHawthorne
     applymovement Rival m_LookUp
@@ -166,14 +251,249 @@ WalkRightTwice:
     waitmovement ALLEVENTS
     return
 
+PlayerWalkUp:
+    applymovement PLAYER m_WalkUp
+    return
+
 PlayerWalkToFaceHawthorne:
     applymovement PLAYER m_PlayerFaceHawthorne
     return
 
 PlayerMustChooseStarter:
-    compare PLAYERFACING look_down
+    msgbox gText_Route17_ChooseAStarterWarning MSG_NORMAL
+    special 0x1AA @ Get player facing
+    compareplayerfacing INTERNAL_DOWN
     if equal _goto WalkUp
-    goto WalkDown
+    compareplayerfacing INTERNAL_UP
+    if equal _goto WalkDown
+    end
+
+.global EventScript_StarterChoice_Grass
+EventScript_StarterChoice_Grass:
+	lock
+	@ Grass starter
+	compare 0x408C 0x0
+	if equal _call EventScript_StarterChoice_SetBulbasaur
+	compare 0x408C 0x1
+	if equal _call EventScript_StarterChoice_SetChikorita
+	compare 0x408C 0x2
+	if equal _call EventScript_StarterChoice_SetTreecko
+	compare 0x408C 0x3
+	if equal _call EventScript_StarterChoice_SetTurtwig
+	compare 0x408C 0x4
+	if equal _call EventScript_StarterChoice_SetSnivy
+	compare 0x408C 0x5
+	if equal _call EventScript_StarterChoice_SetChespin
+	compare 0x408C 0x6
+	if equal _call EventScript_StarterChoice_SetRowlet
+	compare 0x408C 0x7
+	if equal _call EventScript_StarterChoice_SetGrookey
+
+	bufferpokemon 0x0 0x4000
+	showpokepic 0x4000
+    applymovement Hawthorne m_LookLeft
+	msgbox gText_StarterChoice_Confirmation MSG_YESNO
+	hidepokepic
+	compare LASTRESULT YES
+	IF FALSE _call EventScript_StarterChoice_Declined
+	givepokemon 0x4000 0x5 0x0 0x0 0x0 0x0
+	msgbox gText_StarterChoice_Confirmed MSG_KEEPOPEN
+	setflag 0x028 @ Hide Grass Pokeball
+    hidesprite 0x5 @ Hide Grass starter ball on route 17
+    goto EventScript_StarterChoice_SelectionMade
+	end
+
+.global EventScript_StarterChoice_Fire
+EventScript_StarterChoice_Fire:
+	@ Fire starter
+	compare 0x408D 0x0
+	if equal _call EventScript_StarterChoice_SetCharmander
+	compare 0x408D 0x1
+	if equal _call EventScript_StarterChoice_SetCyndaquil
+	compare 0x408D 0x2
+	if equal _call EventScript_StarterChoice_SetTorchic
+	compare 0x408D 0x3
+	if equal _call EventScript_StarterChoice_SetChimchar
+	compare 0x408D 0x4
+	if equal _call EventScript_StarterChoice_SetTepig
+	compare 0x408D 0x5
+	if equal _call EventScript_StarterChoice_SetFennekin
+	compare 0x408D 0x6
+	if equal _call EventScript_StarterChoice_SetLitten
+	compare 0x408D 0x7
+	if equal _call EventScript_StarterChoice_SetScorbunny
+	
+    bufferpokemon 0x0 0x4001
+	showpokepic 0x4001
+    applymovement Hawthorne m_LookLeft
+	msgbox gText_StarterChoice_Confirmation MSG_YESNO
+	hidepokepic
+	compare LASTRESULT YES
+	IF FALSE _call EventScript_StarterChoice_Declined
+	givepokemon 0x4001 0x5 0x0 0x0 0x0 0x0
+	msgbox gText_StarterChoice_Confirmed MSG_KEEPOPEN
+	setflag 0x02A @ Hide Fire Pokeball
+    hidesprite 0x6 @ Hide Fire starter ball on route 17
+    goto EventScript_StarterChoice_SelectionMade
+	end
+
+.global EventScript_StarterChoice_Water
+EventScript_StarterChoice_Water:
+	@ Water starter
+	compare 0x408E 0x0
+	if equal _call EventScript_StarterChoice_SetSquirtle
+	compare 0x408E 0x1
+	if equal _call EventScript_StarterChoice_SetTotodile
+	compare 0x408E 0x2
+	if equal _call EventScript_StarterChoice_SetMudkip
+	compare 0x408E 0x3
+	if equal _call EventScript_StarterChoice_SetPiplup
+	compare 0x408E 0x4
+	if equal _call EventScript_StarterChoice_SetOshawott
+	compare 0x408E 0x5
+	if equal _call EventScript_StarterChoice_SetFroakie
+	compare 0x408E 0x6
+	if equal _call EventScript_StarterChoice_SetPopplio
+	compare 0x408E 0x7
+	if equal _call EventScript_StarterChoice_SetSobble
+	
+    bufferpokemon 0x0 0x4002
+	showpokepic 0x4002
+    applymovement Hawthorne m_LookLeft
+	msgbox gText_StarterChoice_Confirmation MSG_YESNO
+	hidepokepic
+	compare LASTRESULT YES
+	IF FALSE _call EventScript_StarterChoice_Declined
+	givepokemon 0x4002 0x5 0x0 0x0 0x0 0x0
+	msgbox gText_StarterChoice_Confirmed MSG_KEEPOPEN
+	setflag 0x029 @ Hide Water Pokeball
+    hidesprite 0x7 @ Hide Water starter ball on route 17
+    goto EventScript_StarterChoice_SelectionMade
+	end
+
+EventScript_StarterChoice_SelectionMade:
+    waitmsg
+	fanfare 0x13E
+	waitfanfare
+	msgbox gText_StarterChoice_Nickname MSG_YESNO
+	compare LASTRESULT YES
+	if TRUE _call EventScript_StarterChoice_Nickname
+	bufferpartypokemon 0x0 0x0
+	msgbox gText_StarterChoice_Finalized MSG_NORMAL
+	setflag 0x828 @ Enable Pokemon Menu
+	clearflag 0x911 @ Enable wild encounters
+	release
+    @ TODO: Hawthorne get balls, battle rival, everyone leaves
+    end
+
+EventScript_StarterChoice_Declined:
+	msgbox gText_StarterChoice_Decline MSG_NORMAL
+    applymovement Hawthorne m_LookDown
+	release
+	end
+
+EventScript_StarterChoice_Nickname:
+	setvar 0x8004 0x0
+	fadescreen 0x1
+	special 0x9E
+	waitstate
+	return
+
+EventScript_StarterChoice_SetBulbasaur:
+	setvar 0x4000 SPECIES_BULBASAUR
+	return
+
+EventScript_StarterChoice_SetChikorita:
+	setvar 0x4000 SPECIES_CHIKORITA
+	return
+
+EventScript_StarterChoice_SetTreecko:
+	setvar 0x4000 SPECIES_TREECKO
+	return
+
+EventScript_StarterChoice_SetTurtwig:
+	setvar 0x4000 SPECIES_TURTWIG
+	return
+
+EventScript_StarterChoice_SetSnivy:
+	setvar 0x4000 SPECIES_SNIVY
+	return
+
+EventScript_StarterChoice_SetChespin:
+	setvar 0x4000 SPECIES_CHESPIN
+	return
+
+EventScript_StarterChoice_SetRowlet:
+	setvar 0x4000 SPECIES_ROWLET
+	return
+
+EventScript_StarterChoice_SetGrookey:
+	setvar 0x4000 SPECIES_GROOKEY
+	return
+
+EventScript_StarterChoice_SetCharmander:
+	setvar 0x4001 SPECIES_CHARMANDER
+	return
+
+EventScript_StarterChoice_SetCyndaquil:
+	setvar 0x4001 SPECIES_CYNDAQUIL
+	return
+
+EventScript_StarterChoice_SetTorchic:
+	setvar 0x4001 SPECIES_TORCHIC
+	return
+
+EventScript_StarterChoice_SetChimchar:
+	setvar 0x4001 SPECIES_CHIMCHAR
+	return
+
+EventScript_StarterChoice_SetTepig:
+	setvar 0x4001 SPECIES_TEPIG
+	return
+
+EventScript_StarterChoice_SetFennekin:
+	setvar 0x4001 SPECIES_FENNEKIN
+	return
+
+EventScript_StarterChoice_SetLitten:
+	setvar 0x4001 SPECIES_LITTEN
+	return
+
+EventScript_StarterChoice_SetScorbunny:
+	setvar 0x4001 SPECIES_SCORBUNNY
+	return
+
+EventScript_StarterChoice_SetSquirtle:
+	setvar 0x4002 SPECIES_SQUIRTLE
+	return
+
+EventScript_StarterChoice_SetTotodile:
+	setvar 0x4002 SPECIES_TOTODILE
+	return
+
+EventScript_StarterChoice_SetMudkip:
+	setvar 0x4002 SPECIES_MUDKIP
+	return
+
+EventScript_StarterChoice_SetPiplup:
+	setvar 0x4002 SPECIES_PIPLUP
+	return
+
+EventScript_StarterChoice_SetOshawott:
+	setvar 0x4002 SPECIES_OSHAWOTT
+	return
+
+EventScript_StarterChoice_SetFroakie:
+	setvar 0x4002 SPECIES_FROAKIE
+	return
+
+EventScript_StarterChoice_SetPopplio:
+	setvar 0x4002 SPECIES_POPPLIO
+	return
+
+EventScript_StarterChoice_SetSobble:
+	setvar 0x4002 SPECIES_SOBBLE
+	return
 
 m_JoinRivalBelow: .byte walk_left, walk_up, end_m
 m_FacePlayer: .byte exclaim, look_down, end_m
@@ -182,3 +502,4 @@ m_JoinHawthorne: .byte walk_down, walk_left, walk_left, look_left, end_m
 m_PlayerFaceHawthorne: .byte walk_left, walk_left, walk_up, end_m
 m_RivalStartsToLeave: .byte run_down, run_down, run_left, run_left, look_right, end_m
 m_RivalLeavesToTalkToMom: .byte run_left, run_left, run_left, run_left, run_left, run_left, run_left, end_m
+m_PlayerMoveOutOfHawthornesWay: .byte walk_down, walk_right, look_up, end_m

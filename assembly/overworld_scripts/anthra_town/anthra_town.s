@@ -39,7 +39,8 @@ LevelScript_DepartingWithRival:
 	applymovement RivalInAnthraOverworld m_RivalReturnsToRoute17
 	waitmovement ALLEVENTS
 	hidesprite RivalInAnthraOverworld
-	setflag 0x02F @ Hide rival in overworld
+	setflag 0x02F @ Hide rival in Anthra overworld
+	clearflag 0x02D @ Show rival on route 17
 	setvar StoryEventVar PlayerAndRivalCanGoOnJourney
 	fadedefaultbgm
 	end
@@ -173,7 +174,6 @@ LevelScript_GenChoice_Main:
 	spriteface PLAYER look_down
 	setvar 0x4056 0x1
 	sethealingplace 0x01 @ Player's house
-	setflag 0x911 @ Disable wild encounters
 	clearflag 0x82F @ Ability to run
 	msgbox gText_GenChoice_Msgwelcome MSG_YESNO
 	compare LASTRESULT YES
@@ -350,6 +350,10 @@ LevelScript_AnthraTown_MeetingRival:
 	setflag 0x02C @ Hide the rival from this point forward
 	setflag 0x02E @ Hide rival in their house
 	setflag 0x02F @ Hide rival in Anthra Town overworld
+	setflag 0x028 @ Hide grass starter ball on route 17
+	setflag 0x029 @ Hide water starter ball on route 17
+	setflag 0x02A @ Hide fire starter ball on route 17
+	setflag 0x911 @ Disable wild encounters
 	end
 
 RememberingToday:

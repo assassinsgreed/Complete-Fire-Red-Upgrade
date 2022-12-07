@@ -43,9 +43,9 @@
 
 // Hide/show flags
 /*
-#define FLAG_HIDE_BULBASAUR_BALL                           0x028
-#define FLAG_HIDE_SQUIRTLE_BALL                            0x029
-#define FLAG_HIDE_CHARMANDER_BALL                          0x02A
+#define FLAG_HIDE_GRASS_STARTER_BALL                       0x028
+#define FLAG_HIDE_WATER_STARTER_BALL                       0x029
+#define FLAG_HIDE_FIRE_STARTER_BALL                        0x02A
 #define FLAG_HIDE_PEOPLE_IN_ROUTE_17_AND_ANTHRA            0x02B
 #define FLAG_HIDE_RIVAL_IN_PLAYERS_HOUSE                   0x02C
 #define FLAG_HIDE_RIVAL_ON_ROUTE_17                        0x02D
