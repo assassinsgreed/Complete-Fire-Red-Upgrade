@@ -51,7 +51,7 @@
 #define FLAG_HIDE_RIVAL_ON_ROUTE_17                        0x02D
 #define FLAG_HIDE_RIVAL_IN_THEIR_HOUSE                     0x02E
 #define FLAG_HIDE_RIVAL_IN_ANTHRA                          0x02F
-#define FLAG_HIDE_HELIX_FOSSIL                             0x030
+#define FLAG_HIDE_REPORTERS_IN_ANTHRA                      0x030
 #define FLAG_HIDE_NUGGET_BRIDGE_ROCKET                     0x031
 #define FLAG_HIDE_BILL_CLEFAIRY                            0x032
 #define FLAG_HIDE_BILL_HUMAN_SEA_COTTAGE                   0x033
@@ -614,7 +614,7 @@
 #define FLAG_GOT_SUPER_ROD                               0x255
 #define FLAG_GOT_EXP_SHARE_FROM_OAKS_AIDE                0x256
 #define FLAG_DID_MARC_TRADE                              0x257
-#define FLAG_BEAT_RIVAL_IN_OAKS_LAB                      0x258
+#define FLAG_BEAT_RIVAL_ON_ROUTE_17                      0x258
 #define FLAG_GOT_TM06_FROM_KOGA                          0x259
 #define FLAG_0x25A                                       0x25A
 #define FLAG_GOT_TM27                                    0x25B

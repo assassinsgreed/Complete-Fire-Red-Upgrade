@@ -142,3 +142,44 @@ I have 3 Pok\emon with me today. You\nmay both choose one to take as\lyour compa
 #org @gText_StarterChoice_Finalized
 [BLUE]That settles it. You and [BUFFER1]\nare now partners.
 
+#org @gText_Route17_HawthorneGettingPokeballs
+[BLUE]I'll just collect these[.]
+
+#org @gText_Route17_HawthornePreparingToLeave
+[BLUE]My, my[.] Look at the time.
+
+#org @gText_Route17_HawthorneThankingSeleneForTime
+[BLUE]I must be going. Selene, thank you\nfor your time today.
+
+#org @gText_Route17_SeleneRespondingToHawthornesThanks
+[RED]Oh, don't sweat it, it was a lot of\nfun!
+
+#org @gText_Route17_HawthorneRespondingToSelene
+[BLUE]The pleasure is all mine.
+
+#org @gText_Route17_HawthorneDeparts
+[BLUE][PLAYER], [RIVAL], I'm sure you must\nbe excited to start your\ljourneys.\pI'd like to ask you to first meet me\nat my lab in Olenic Town first. I\lhave a gift I'd like to give you.\pAnd with that, I must be off.
+
+#org @gText_Route17_SeleneSuggestsBattle
+[RED]Why don't you two try a Pok\emon\nbattle to get used to your new\lpartners?
+
+#org @gText_Route17_RivalWantsToBattle
+[BLUE]That sounds fun! Come on, [PLAYER],\nlet's battle. Show me what you've\lgot!
+
+#org @gText_Route17_RivalBattleConcludes
+That was a lot of fun! You're a good\nbattler, [PLAYER].
+
+#org @gText_Route17_SeleneCommentsOnBattle
+[RED]A battle between two friends[.] You\ntwo are officially rivals now! Push\leach other to become the best\ltrainers you can be.
+
+#org @gText_Route17_SeleneGivesPokeballs
+[RED]I have something for you both as\nwell. Consider it a gift to help\lyou get started in your journeys!
+
+#org @gText_Route17_PokeballExplanationAndSeleneDeparture
+[RED]Use those to catch Pok\emon, but\nremember to weaken them first.\pI have to go now too, but I expect\nto see you both again someday,\lmaybe even in a championship\lbattle!\pGood luck, trainers.
+
+#org @gText_Route17_RivalThanksSeleneForGift
+[BLUE]Gee, thanks Miss Selene! This is very\nnice of you!
+
+#org @gText_Route17_RivalDepartsForHawthornesLab
+[BLUE]We're Pok\emon trainers, [PLAYER]. I\ncan't believe it!\pI'm gonna catch some Pok\emon before\ngoing to Professor Hawthorne's lab.\lI'll see you there.

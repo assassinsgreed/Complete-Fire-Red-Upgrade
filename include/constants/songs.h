@@ -24,6 +24,8 @@
 
 #define BGM_RANDOM_BATTLE_MUSIC 0xFEFE
 #define BGM_BATTLE_GYM_LEADER_LAST_POKEMON 0x166
+#define BGM_BATTLE_RIVAL 0x10A // Rival battle BW
+#define BGM_BATTLE_RIVAL_2 0x18E // Rival Hugh battle BW2 
 
 #define MUS_DUMMY 0
 #define SE_STOP 0

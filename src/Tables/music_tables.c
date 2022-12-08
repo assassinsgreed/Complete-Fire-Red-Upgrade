@@ -82,6 +82,8 @@ const u16 gClassBasedBattleBGM[NUM_TRAINER_CLASSES] =
 	[CLASS_CHAMPION] = BGM_BATTLE_CHAMPION,
 	[CLASS_LEADER] = BGM_BATTLE_GYM_LEADER,
 	[CLASS_ELITE_4] = BGM_BATTLE_GYM_LEADER,
+	[CLASS_RIVAL] = BGM_BATTLE_RIVAL, // More lighthearted
+	[CLASS_RIVAL_2] = BGM_BATTLE_RIVAL_2, // More serious
 };
 
 const u16 gWildSpeciesBasedBattleBGM[] =

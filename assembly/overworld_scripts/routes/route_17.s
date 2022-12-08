@@ -382,9 +382,90 @@ EventScript_StarterChoice_SelectionMade:
 	msgbox gText_StarterChoice_Finalized MSG_NORMAL
 	setflag 0x828 @ Enable Pokemon Menu
 	clearflag 0x911 @ Enable wild encounters
-	release
-    @ TODO: Hawthorne get balls, battle rival, everyone leaves
+    msgbox gText_Route17_HawthorneGettingPokeballs MSG_NORMAL
+    getplayerpos 0x4000 0x4001 @ Get player x and y in throwaway vars
+    compare 0x4000 0x10 @ Beside middle ball
+    if equal _call MovePlayerToRejoinRival
+    applymovement Hawthorne m_WalkLeft
+    playse 0x17 @ Ball shake sound
+    pause DELAY_HALFSECOND
+    setflag 0x028
+    hidesprite 0x5 @ Hide grass starter ball on route 17
+	setflag 0x029
+    hidesprite 0x6 @ Hide water starter ball on route 17
+	setflag 0x02A
+    hidesprite 0x7 @ Hide fire starter ball on route 17
+    applymovement Hawthorne m_WalkRight
+    waitmovement Hawthorne
+    applymovement Hawthorne m_LookDown
+    goto EventScript_Route17_PlayerHasChosenStarter
     end
+
+EventScript_Route17_PlayerHasChosenStarter:
+    msgbox gText_Route17_HawthornePreparingToLeave MSG_NORMAL
+    applymovement Hawthorne m_LookRight
+    applymovement Selene m_LookLeft
+    msgbox gText_Route17_HawthorneThankingSeleneForTime MSG_NORMAL
+    msgbox gText_Route17_SeleneRespondingToHawthornesThanks MSG_NORMAL
+    msgbox gText_Route17_HawthorneRespondingToSelene MSG_NORMAL
+    applymovement Hawthorne m_LookDown
+    applymovement Selene m_LookDown
+    msgbox gText_Route17_HawthorneDeparts MSG_NORMAL
+    applymovement Hawthorne m_NPCLeavesRoute17
+    waitmovement Hawthorne
+    msgbox gText_Route17_SeleneSuggestsBattle MSG_NORMAL
+    applymovement PLAYER m_LookRight
+    applymovement Rival m_LookLeft
+    msgbox gText_Route17_RivalWantsToBattle MSG_NORMAL
+    @ Set up environment to continue game if battle is lost
+    setvar 0x8000 0xFEFE
+    setvar 0x503A 0x2
+    setvar 0x503B 0x0
+    trainerbattle9 0x1 0x1 0x100 gText_Route17_RivalBattleConcludes gText_Route17_RivalBattleConcludes
+    setvar 0x8000 0x0
+    applymovement PLAYER m_LookUp
+    applymovement Rival m_LookUp
+    special 0x0 @ Heal player party
+    msgbox gText_Route17_SeleneCommentsOnBattle MSG_NORMAL
+    msgbox gText_Route17_SeleneGivesPokeballs MSG_NORMAL
+    obtainitem ITEM_POKE_BALL 0xA @ Get 10 Pokeballs
+    msgbox gText_Route17_PokeballExplanationAndSeleneDeparture MSG_NORMAL
+    msgbox gText_Route17_RivalThanksSeleneForGift MSG_NORMAL
+    applymovement Selene m_NPCLeavesRoute17
+    waitmovement Selene
+    setflag 0x02B @ Hide Hawthorne, Selene, and Footprint kid in Anthra
+    hidesprite Hawthorne
+    hidesprite Selene
+    applymovement Rival m_LookLeft
+    applymovement PLAYER m_LookRight
+    msgbox gText_Route17_RivalDepartsForHawthornesLab MSG_NORMAL
+    applymovement PLAYER m_LookDown
+    applymovement Rival m_RivalLeavesRoute17
+    waitmovement ALLEVENTS
+    setflag 0x258 @ Rival beaten on Route 17
+    setflag 0x02D @ Hide Rival on Route 17
+    hidesprite Rival
+    setvar StoryEventVar PlayerJourneyHasStarted
+    fadedefaultbgm
+    release
+    end
+
+MovePlayerToRejoinRival:
+    getplayerpos 0x4000 0x4001 @ Get player x and y in throwaway vars
+    compare 0x4001 0x0A
+    if lessthan _call PlayerWalkDown
+    getplayerpos 0x4000 0x4001 @ If player still isn't in correct location, keep moving
+    compare 0x4001 0x0A
+    if lessthan _call PlayerWalkDown
+    applymovement PLAYER m_WalkRight
+    waitmovement PLAYER
+    applymovement PLAYER m_LookUp
+    return
+
+PlayerWalkDown:
+    applymovement PLAYER m_WalkDown
+    waitmovement PLAYER
+    return
 
 EventScript_StarterChoice_Declined:
 	msgbox gText_StarterChoice_Decline MSG_NORMAL
@@ -503,3 +584,5 @@ m_PlayerFaceHawthorne: .byte walk_left, walk_left, walk_up, end_m
 m_RivalStartsToLeave: .byte run_down, run_down, run_left, run_left, look_right, end_m
 m_RivalLeavesToTalkToMom: .byte run_left, run_left, run_left, run_left, run_left, run_left, run_left, end_m
 m_PlayerMoveOutOfHawthornesWay: .byte walk_down, walk_right, look_up, end_m
+m_NPCLeavesRoute17: .byte walk_left, walk_left, walk_down, walk_down, walk_down, walk_down, walk_down, walk_down, walk_down, end_m
+m_RivalLeavesRoute17: .byte walk_down, walk_left, walk_down, walk_down, walk_down, walk_down, walk_down, walk_down, end_m
