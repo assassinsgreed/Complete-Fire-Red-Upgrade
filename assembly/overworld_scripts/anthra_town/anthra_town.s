@@ -141,6 +141,7 @@ EventScript_AnthraTown_PersuadingMomToGoOnJourney:
 	if notequal _goto EventScript_AnthraTown_MomPlayerSaidNoToAccompanyingRival
 	msgbox gText_AnthraTown_MomGivesRunningShoes MSG_NORMAL
 	call EnableRunningShoes
+	normalmsg
 	msgbox gText_AnthraTown_MomSendsPlayerOff MSG_NORMAL
 	setvar StoryEventVar PlayerAllowedToGoOnJourney
 	setflag 0x002E @ Hide rival in their home
@@ -175,6 +176,7 @@ LevelScript_GenChoice_Main:
 	setvar 0x4056 0x1
 	sethealingplace 0x01 @ Player's house
 	clearflag 0x82F @ Ability to run
+	msgboxsign
 	msgbox gText_GenChoice_Msgwelcome MSG_YESNO
 	compare LASTRESULT YES
 	if TRUE _call EventScript_GenChoice_Favoritegen
@@ -284,6 +286,7 @@ EventScript_GenChoice_Reset:
 EventScript_GenChoice_End:
 	sound 0x30 @Save
 	msgbox gText_GenChoice_Msgcomplete MSG_KEEPOPEN
+	normalmsg
 	release
 	end
 

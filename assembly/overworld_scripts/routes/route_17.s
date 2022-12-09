@@ -139,7 +139,7 @@ EventScript_Route17_PlayerMovesForHawthornePokeballs:
 EventScript_Route17_ChampionSelene:
     compare StoryEventVar PlayerAndRivalCanGoOnJourney
     if equal _goto EventScript_Route17_ChampionSelene_BeforeChoosingStarter 
-    npcchat2 Selene m_LookDown gText_Route17_SeleneChat
+    npcchat2 Selene m_LookLeft gText_Route17_SeleneChat
     end
 
 EventScript_Route17_ChampionSelene_BeforeChoosingStarter:
@@ -187,7 +187,7 @@ StoryEvents_TalkingWithHawthorneAndSelene:
     applymovement Rival m_LookDown
     msgbox gText_Route17_UrgePlayerToJoin MSG_NORMAL
     compare 0x4000 0x11
-    if notequal _call PlayerWalkUp
+    if notequal _call PlayerWalkUp_Return
     compare 0x4000 0x11
     if equal _call PlayerWalkToFaceHawthorne
     applymovement Rival m_LookUp
@@ -234,25 +234,15 @@ SetPlayerFacingLeft:
 SetPlayerFacingRight:
     applymovement Rival m_LookLeft
     compare 0x4000 0x0E
-    if equal _call WalkRightOnce
+    if equal _call PlayerWalkRight_Return
     compare 0x4000 0x0D
     if equal _call WalkRightTwice
     applymovement PLAYER m_LookRight
     return
 
-WalkRightOnce:
-    applymovement PLAYER m_WalkRight
-    return
-
 WalkRightTwice:
-    call WalkRightOnce
-    waitmovement ALLEVENTS
-    call WalkRightOnce
-    waitmovement ALLEVENTS
-    return
-
-PlayerWalkUp:
-    applymovement PLAYER m_WalkUp
+    call PlayerWalkRight_Return
+    call PlayerWalkRight_Return
     return
 
 PlayerWalkToFaceHawthorne:
@@ -263,9 +253,9 @@ PlayerMustChooseStarter:
     msgbox gText_Route17_ChooseAStarterWarning MSG_NORMAL
     special 0x1AA @ Get player facing
     compareplayerfacing INTERNAL_DOWN
-    if equal _goto WalkUp
+    if equal _goto PlayerWalkUp
     compareplayerfacing INTERNAL_UP
-    if equal _goto WalkDown
+    if equal _goto PlayerWalkDown
     end
 
 .global EventScript_StarterChoice_Grass
@@ -384,8 +374,10 @@ EventScript_StarterChoice_SelectionMade:
 	clearflag 0x911 @ Enable wild encounters
     msgbox gText_Route17_HawthorneGettingPokeballs MSG_NORMAL
     getplayerpos 0x4000 0x4001 @ Get player x and y in throwaway vars
-    compare 0x4000 0x10 @ Beside middle ball
-    if equal _call MovePlayerToRejoinRival
+    compare 0x4000 0x0F @ Above, below, or to the left of pokeballs
+    if lessorequal _call MovePlayerToRejoinRival
+    compare 0x4000 0x10 @ To the right of pokeballs
+    if equal _call MovePlayerToRejoinRival_Right
     applymovement Hawthorne m_WalkLeft
     playse 0x17 @ Ball shake sound
     pause DELAY_HALFSECOND
@@ -452,19 +444,26 @@ EventScript_Route17_PlayerHasChosenStarter:
 
 MovePlayerToRejoinRival:
     getplayerpos 0x4000 0x4001 @ Get player x and y in throwaway vars
+    compare 0x4000 0x10
+    if lessthan _call PlayerWalkRight_Return
+    getplayerpos 0x4000 0x4001 @ Get player x and y in throwaway vars
+    compare 0x4000 0x10
+    if lessthan _call PlayerWalkRight_Return
+    compare 0x4001 0x0B @ Below Pokeball
+    if equal _call PlayerWalkUp_Return
+    call MovePlayerToRejoinRival_Right
+    return
+
+MovePlayerToRejoinRival_Right:
+    getplayerpos 0x4000 0x4001 @ Get player x and y in throwaway vars
     compare 0x4001 0x0A
-    if lessthan _call PlayerWalkDown
+    if lessthan _call PlayerWalkDown_Return
     getplayerpos 0x4000 0x4001 @ If player still isn't in correct location, keep moving
     compare 0x4001 0x0A
-    if lessthan _call PlayerWalkDown
+    if lessthan _call PlayerWalkDown_Return
     applymovement PLAYER m_WalkRight
     waitmovement PLAYER
     applymovement PLAYER m_LookUp
-    return
-
-PlayerWalkDown:
-    applymovement PLAYER m_WalkDown
-    waitmovement PLAYER
     return
 
 EventScript_StarterChoice_Declined:
