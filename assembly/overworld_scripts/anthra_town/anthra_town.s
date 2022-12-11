@@ -6,15 +6,44 @@
 
 .equ Mom, 0x1
 .equ Rival, 0x2
+.equ RivalInAnthraOverworld, 0x8
+.equ StoryEventVar, 0x4055
+.equ PlayerCalledDownstairs, 0x1
+.equ PlayerMetWithRivalAtHouse, 0x2
+.equ PlayerMetWithRival, 0x3
+.equ PlayerAllowedToGoOnJourney, 0x4
+.equ PlayerAndRivalCanGoOnJourney, 0x5
 
-.global MapScript_AnthraTown_FlightSpot
-MapScript_AnthraTown_FlightSpot:
-	mapscript MAP_SCRIPT_ON_TRANSITION MapEntryScript_AnthraTown_FlightFlag
+.global MapScript_AnthraTown
+MapScript_AnthraTown:
+	mapscript MAP_SCRIPT_ON_TRANSITION MapEntryScript_AnthraTown_FlightSpot
+	mapscript MAP_SCRIPT_ON_FRAME_TABLE LevelScripts_AnthraTown_MeetingWithRival
 	.byte MAP_SCRIPT_TERMIN
 
-MapEntryScript_AnthraTown_FlightFlag:
+MapEntryScript_AnthraTown_FlightSpot:
     setworldmapflag 0x890
     end
+
+LevelScripts_AnthraTown_MeetingWithRival:
+	levelscript StoryEventVar PlayerAllowedToGoOnJourney LevelScript_DepartingWithRival
+	.hword LEVEL_SCRIPT_TERMIN
+
+LevelScript_DepartingWithRival:
+	pause DELAY_HALFSECOND
+	playbgm 0x195 @ Encounter Cheren
+	applymovement RivalInAnthraOverworld m_RivalMeetPlayerAtJourneyStart
+	waitmovement ALLEVENTS
+	msgbox gText_AnthraTown_RivalCanGoOnJourney MSG_NORMAL
+	applymovement RivalInAnthraOverworld m_Surprise
+	msgbox gText_AnthraTown_ReturnToSeleneAndHawthorne MSG_NORMAL
+	applymovement RivalInAnthraOverworld m_RivalReturnsToRoute17
+	waitmovement ALLEVENTS
+	hidesprite RivalInAnthraOverworld
+	setflag 0x02F @ Hide rival in Anthra overworld
+	clearflag 0x02D @ Show rival on route 17
+	setvar StoryEventVar PlayerAndRivalCanGoOnJourney
+	fadedefaultbgm
+	end
 
 .global EventScript_AnthraTown_FlowerGirl
 EventScript_AnthraTown_FlowerGirl:
@@ -43,16 +72,24 @@ EventScript_AnthraTown_Ty:
 
 .global EventScript_AnthraTown_FootprintGuy
 EventScript_AnthraTown_FootprintGuy:
+	compare LASTTALKED 0x6
+	if equal _call LookDown
 	npcchat2 0x6 m_LookUp gText_AnthraTown_FootprintGuy
-	applymovement PLAYER m_WalkRight
+	compare LASTTALKED 0x6
+	if notequal _call PlayerWalkBack
+	setvar LASTTALKED 0xFF
 	end
+
+PlayerWalkBack:
+	applymovement PLAYER m_WalkRight
+	return
 
 .global EventScript_AnthraTown_RivalMom
 EventScript_AnthraTown_RivalMom:
 	lock
-	compare 0x4055 0x2
+	compare StoryEventVar PlayerMetWithRivalAtHouse
 	if lessorequal _goto EventScript_AnthraTown_RivalMomBeforeProfessor
-	compare 0x4055 0x4
+	compare StoryEventVar PlayerMetWithRival
 	if lessorequal _goto EventScript_AnthraTown_RivalMomPersuaded
 	faceplayer
 	msgbox gText_AnthraTown_RivalMomAfterJourneyStarts MSG_NORMAL
@@ -70,12 +107,20 @@ EventScript_AnthraTown_RivalMomPersuaded:
 	release
 	end
 
+.global EventScript_AnthraTown_RivalInTheirHome
+EventScript_AnthraTown_RivalInTheirHome:
+	msgbox gText_AnthraTown_RivalPersuadingMom MSG_NORMAL
+	release
+	end
+
 .global EventScript_AnthraTown_MomMain
 EventScript_AnthraTown_MomMain:
 	lock
 	faceplayer
 	checkflag 0x258 @ First rival battle completed
 	if SET _goto EventScript_AnthraTown_MomRestPrompt
+	compare StoryEventVar PlayerMetWithRival
+	if equal _goto EventScript_AnthraTown_PersuadingMomToGoOnJourney
 	msgbox gText_AnthraTown_MomLeaveHome MSG_KEEPOPEN
 	closeonkeypress
 	applymovement Mom m_LookLeft
@@ -88,6 +133,24 @@ EventScript_AnthraTown_MomRestPrompt:
 	call EventScript_AnthraTown_MomRestAnimation
 	msgbox gText_AnthraTown_MomPokemonAreHealthy MSG_KEEPOPEN
 	release
+	end
+
+EventScript_AnthraTown_PersuadingMomToGoOnJourney:
+	msgbox gText_AnthraTown_ConvincingPlayerMom MSG_YESNO
+	compare LASTRESULT YES
+	if notequal _goto EventScript_AnthraTown_MomPlayerSaidNoToAccompanyingRival
+	msgbox gText_AnthraTown_MomGivesRunningShoes MSG_NORMAL
+	call EnableRunningShoes
+	normalmsg
+	msgbox gText_AnthraTown_MomSendsPlayerOff MSG_NORMAL
+	setvar StoryEventVar PlayerAllowedToGoOnJourney
+	setflag 0x002E @ Hide rival in their home
+	clearflag 0x02F @ Show rival in Anthra Overworld
+	end
+
+EventScript_AnthraTown_MomPlayerSaidNoToAccompanyingRival:
+	msgbox gText_AnthraTown_ConvincingPlayerMom_PlayerDeclined MSG_NORMAL
+	applymovement Mom m_LookLeft
 	end
 
 EventScript_AnthraTown_MomRestAnimation:
@@ -112,8 +175,8 @@ LevelScript_GenChoice_Main:
 	spriteface PLAYER look_down
 	setvar 0x4056 0x1
 	sethealingplace 0x01 @ Player's house
-	setflag 0x911 @ Disable wild encounters
 	clearflag 0x82F @ Ability to run
+	msgboxsign
 	msgbox gText_GenChoice_Msgwelcome MSG_YESNO
 	compare LASTRESULT YES
 	if TRUE _call EventScript_GenChoice_Favoritegen
@@ -123,22 +186,22 @@ LevelScript_GenChoice_Main:
 EventScript_GenChoice_Favoritegen:
 	msgbox gText_GenChoice_Msgfavoritegen MSG_KEEPOPEN
 	multichoice 0x60 0x0 0x1 0x1
-	copyvar 0x4011 LASTRESULT
-	compare 0x4011 0x0
+	copyvar 0x408C LASTRESULT
+	compare 0x408C 0x0
 	if TRUE _call EventScript_GenChoice_Kantoconfirm
-	compare 0x4011 0x1
+	compare 0x408C 0x1
 	if TRUE _call EventScript_GenChoice_Johtoconfirm
-	compare 0x4011 0x2
+	compare 0x408C 0x2
 	if TRUE _call EventScript_GenChoice_Hoennconfirm
-	compare 0x4011 0x3
+	compare 0x408C 0x3
 	if TRUE _call EventScript_GenChoice_Sinnohconfirm
-	compare 0x4011 0x4
+	compare 0x408C 0x4
 	if TRUE _call EventScript_GenChoice_Unovaconfirm
-	compare 0x4011 0x5
+	compare 0x408C 0x5
 	if TRUE _call EventScript_GenChoice_Kalosconfirm
-	compare 0x4011 0x6
+	compare 0x408C 0x6
 	if TRUE _call EventScript_GenChoice_Alolaconfirm
-	compare 0x4011 0x7
+	compare 0x408C 0x7
 	if TRUE _call EventScript_GenChoice_Galarconfirm
 	end
 
@@ -147,68 +210,68 @@ EventScript_GenChoice_Shuffle:
 	compare LASTRESULT 0x1
 	if 0x0 _call LevelScript_GenChoice_Main
 	random 0x8
-	copyvar 0x4011 LASTRESULT
+	copyvar 0x408C LASTRESULT
 	random 0x8
-	copyvar 0x4012 LASTRESULT
+	copyvar 0x408D LASTRESULT
 	random 0x8
-	copyvar 0x4013 LASTRESULT
+	copyvar 0x408E LASTRESULT
 	call EventScript_GenChoice_End
 	end
 
 EventScript_GenChoice_Kantoconfirm:
 	msgbox gText_GenChoice_Msgkantoconfirm MSG_YESNO
 	call EventScript_GenChoice_Genchoiceconfirm
-	setvar 0x4012 0x0
-	setvar 0x4013 0x0
+	setvar 0x408D 0x0
+	setvar 0x408E 0x0
 	call EventScript_GenChoice_End
 
 EventScript_GenChoice_Johtoconfirm:
 	msgbox gText_GenChoice_Msgjohtoconfirm MSG_YESNO
 	call EventScript_GenChoice_Genchoiceconfirm
-	setvar 0x4012 0x1
-	setvar 0x4013 0x1
+	setvar 0x408D 0x1
+	setvar 0x408E 0x1
 	call EventScript_GenChoice_End
 
 EventScript_GenChoice_Hoennconfirm:
 	msgbox gText_GenChoice_Msghoennconfirm MSG_YESNO
 	call EventScript_GenChoice_Genchoiceconfirm
-	setvar 0x4012 0x2
-	setvar 0x4013 0x2
+	setvar 0x408D 0x2
+	setvar 0x408E 0x2
 	call EventScript_GenChoice_End
 
 EventScript_GenChoice_Sinnohconfirm:
 	msgbox gText_GenChoice_Msgsinnohconfirm MSG_YESNO
 	call EventScript_GenChoice_Genchoiceconfirm
-	setvar 0x4012 0x3
-	setvar 0x4013 0x3
+	setvar 0x408D 0x3
+	setvar 0x408E 0x3
 	call EventScript_GenChoice_End
 
 EventScript_GenChoice_Unovaconfirm:
 	msgbox gText_GenChoice_Msgunovaconfirm MSG_YESNO
 	call EventScript_GenChoice_Genchoiceconfirm
-	setvar 0x4012 0x4
-	setvar 0x4013 0x4
+	setvar 0x408D 0x4
+	setvar 0x408E 0x4
 	call EventScript_GenChoice_End
 
 EventScript_GenChoice_Kalosconfirm:
 	msgbox gText_GenChoice_Msgkalosconfirm MSG_YESNO
 	call EventScript_GenChoice_Genchoiceconfirm
-	setvar 0x4012 0x5
-	setvar 0x4013 0x5
+	setvar 0x408D 0x5
+	setvar 0x408E 0x5
 	call EventScript_GenChoice_End
 
 EventScript_GenChoice_Alolaconfirm:
 	msgbox gText_GenChoice_Msgalolaconfirm MSG_YESNO
 	call EventScript_GenChoice_Genchoiceconfirm
-	setvar 0x4012 0x6
-	setvar 0x4013 0x6
+	setvar 0x408D 0x6
+	setvar 0x408E 0x6
 	call EventScript_GenChoice_End
 
 EventScript_GenChoice_Galarconfirm:
 	msgbox gText_GenChoice_Msggalarconfirm MSG_YESNO
 	call EventScript_GenChoice_Genchoiceconfirm
-	setvar 0x4012 0x7
-	setvar 0x4013 0x7
+	setvar 0x408D 0x7
+	setvar 0x408E 0x7
 	call EventScript_GenChoice_End
 
 EventScript_GenChoice_Genchoiceconfirm:
@@ -217,22 +280,23 @@ EventScript_GenChoice_Genchoiceconfirm:
 	return
 
 EventScript_GenChoice_Reset:
-	setvar 0x4011 0x0
+	setvar 0x408C 0x0
 	call LevelScript_GenChoice_Main
 
 EventScript_GenChoice_End:
 	sound 0x30 @Save
 	msgbox gText_GenChoice_Msgcomplete MSG_KEEPOPEN
+	normalmsg
 	release
 	end
 
 TileScript_AnthraTown_RivalArrival:
-	compare 0x4055 0x1
+	compare StoryEventVar PlayerCalledDownstairs
 	IF greaterorequal _goto End
 	sound 0x15 @ Exclaim
 	applymovement PLAYER m_Surprise
 	msgbox gText_AnthraTown_RivalArrival MSG_NORMAL
-	setvar 0x4055 0x1
+	setvar StoryEventVar PlayerCalledDownstairs
 	clearflag 0x02B @ Show the professor, champion, and tv crew from this point forward (hidden by default by game setup)
 	clearflag 0x02C @ Show the rival from this point forward (hidden by default by game startup)
 	goto End
@@ -243,15 +307,16 @@ MapScript_AnthraTown_MeetingRival:
 	.byte MAP_SCRIPT_TERMIN
 
 LevelScripts_AnthraTown_MeetingRival:
-	levelscript 0x4055 1 LevelScript_AnthraTown_MeetingRival
+	levelscript StoryEventVar PlayerCalledDownstairs LevelScript_AnthraTown_MeetingRival
 	.hword LEVEL_SCRIPT_TERMIN
 
 LevelScript_AnthraTown_MeetingRival:
-	compare 0x4055 0x2
+	compare StoryEventVar PlayerMetWithRivalAtHouse
 	if equal _goto End
 	sound 0x15 @ Exclaim
 	applymovement Rival m_Surprise
 	pause DELAY_HALFSECOND
+	playbgm 0x195 @ Encounter Cheren
 	applymovement Rival m_RivalWalkUp
 	waitmovement ALLEVENTS
 	msgbox gText_AnthraTown_MeetingRival MSG_YESNO
@@ -277,14 +342,21 @@ LevelScript_AnthraTown_MeetingRival:
 	sound 0x8 @ Door opening
 	pause DELAY_HALFSECOND
 	hidesprite Rival
+	fadedefaultbgm
 	pause DELAY_HALFSECOND
 	applymovement Mom m_LookUp
 	applymovement PLAYER m_LookDown
 	pause DELAY_HALFSECOND
 	msgbox gText_AnthraTown_MomEncouragesPlayer MSG_NORMAL
 	applymovement Mom m_LookLeft
-	setvar 0x4055 0x2
+	setvar StoryEventVar PlayerMetWithRivalAtHouse
 	setflag 0x02C @ Hide the rival from this point forward
+	setflag 0x02E @ Hide rival in their house
+	setflag 0x02F @ Hide rival in Anthra Town overworld
+	setflag 0x028 @ Hide grass starter ball on route 17
+	setflag 0x029 @ Hide water starter ball on route 17
+	setflag 0x02A @ Hide fire starter ball on route 17
+	setflag 0x911 @ Disable wild encounters
 	end
 
 RememberingToday:
@@ -295,14 +367,9 @@ NotRememberingToday:
 	msgbox gText_AnthraTown_RivalNotRememberingToday MSG_NORMAL
 	return
 
-m_RivalWalkUp:
-	.byte walk_up, walk_up, walk_right, walk_right, walk_right, walk_up, look_right, end_m
-
-m_RivalRunOut:
-	.byte run_left, run_down, run_left, run_left, run_left, run_left, run_down, run_down, run_down, run_down, end_m
-
-m_RivalReturn:
-	.byte walk_up, walk_up, look_right, end_m
-
-m_RivalRunOutAgain:
-	.byte run_down, run_down, run_down, end_m
+m_RivalWalkUp: .byte walk_up, walk_up, walk_right, walk_right, walk_right, walk_up, look_right, end_m
+m_RivalRunOut: .byte run_left, run_down, run_left, run_left, run_left, run_left, run_down, run_down, run_down, run_down, end_m
+m_RivalReturn: .byte walk_up, walk_up, look_right, end_m
+m_RivalRunOutAgain: .byte run_down, run_down, run_down, end_m
+m_RivalMeetPlayerAtJourneyStart: .byte walk_left, walk_left, walk_left, walk_left, walk_left, walk_left, walk_left, walk_left, look_up, end_m
+m_RivalReturnsToRoute17: .byte walk_right, walk_right, walk_right, walk_right, walk_right, walk_right, walk_right, walk_right, end_m

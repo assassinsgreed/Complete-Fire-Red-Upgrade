@@ -20,10 +20,10 @@ WARNING!\pRTC tampering has been detected\nin your save file!\pThe current ingam
 A second item in the Cube can be\nregistered to [L_BUTTON] for easy use.
 
 #org @gText_AutoRunEnable
-Auto-run has been [GREEN]enabled[BLACK].
+[BLACK]Auto-run has been [GREEN]enabled[BLACK].
 
 #org @gText_AutoRunDisable
-Auto-run has been [GREEN]disabled[BLACK].
+[BLACK]Auto-run has been [GREEN]disabled[BLACK].
 
 #org @gText_BikeTurboBoostEnable
 Turbo boost has been [GREEN]activated[BLACK].

@@ -185,9 +185,9 @@
 #define VAR_MAP_SCENE_MT_MOON_B2F                                              0x408B
 
 
-#define VAR_0x408C                 0x408C
-#define VAR_0x408D                 0x408D
-#define VAR_0x408E                 0x408E
+#define VAR_GRASS_STARTER_GEN      0x408C
+#define VAR_FIRE_STARTER_GEN       0x408D
+#define VAR_WATER_STARTER_GEN      0x408E
 #define VAR_0x408F                 0x408F
 #define VAR_0x4090                 0x4090
 #define VAR_0x4091                 0x4091
@@ -299,7 +299,7 @@
 #define VAR_0x40FB                 0x40FB
 #define VAR_0x40FC                 0x40FC
 #define VAR_0x40FD                 0x40FD
-#define VAR_0x40FE                 0x40FE
+#define VAR_GAME_MODIFIER_CHOICE   0x40FE
 #define VAR_0x40FF                 0x40FF
 
 #define VARS_END                   0x40FF

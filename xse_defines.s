@@ -156,6 +156,11 @@
 .equ LEFT, 0x3
 .equ RIGHT, 0x4
 
+.equ INTERNAL_DOWN, 0x11
+.equ INTERNAL_UP, 0x22
+.equ INTERNAL_LEFT, 0x33
+.equ INTERNAL_RIGHT, 0x44
+
 .equ PARTY_SIZE, 0x6
 .equ MAX_MON_MOVES, 0x4
 .equ NUM_STATS, 0x6
@@ -233,3 +238,5 @@ m_WalkUp: .byte walk_up, end_m
 m_WalkLeft: .byte walk_left, end_m
 m_WalkRight: .byte walk_right, end_m
 m_Surprise: .byte exclaim, end_m
+m_Question: .byte say_question, end_m
+m_Joy: .byte say_smile, end_m

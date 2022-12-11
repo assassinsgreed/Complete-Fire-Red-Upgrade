@@ -24,3 +24,12 @@ Sleep
 
 #org @gText_End
 End
+
+#org @gText_ReceiveRunningShoes
+[BLACK][PLAYER] obtained the Running Shoes!
+
+#org @gText_AutomaticallyEnableRunningShoes
+[BLACK]Would you like to automatically use\nyour running shoes?
+
+#org @gText_RunningShoesToggle
+[BLACK]This setting can be changed by\npressing L.

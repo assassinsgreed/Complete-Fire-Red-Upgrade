@@ -94,5 +94,26 @@ Oh, [PLAYER], what a pleasant\nsurprise! [RIVAL] was looking for\lyou earlier, d
 #org @gText_AnthraTown_RivalMomBeingPersuaded
 Well[.] I don't know, dear. It sounds\nlike it could be awfully dangerous.
 
+#org @gText_AnthraTown_RivalPersuadingMom
+[BLUE]Pleeeease, mom! I promise I'll be\ncareful. I'll call you every week\ltoo!
+
 #org @gText_AnthraTown_RivalMomAfterJourneyStarts
 I'm a little hesitant to let [RIVAL]\ngo on a Pok\emon journey, but I'm\lsure it'll be alright if you're with\lhim, [PLAYER].\pTake care of each other and have\nfun. And remember, you can always\lcome home.
+
+#org @gText_AnthraTown_ConvincingPlayerMom
+You want to depart on a Pok\emon\njourney?\pI assumed the day would come where\nyou would want to follow in your\lfather's footsteps[.]\pVery well, I'll allow it, but on one\ncondition.\pYou and [RIVAL] have to take care\nof each other. The world can be a\ldangerous place at times.
+
+#org @gText_AnthraTown_ConvincingPlayerMom_PlayerDeclined
+I'll give you time to think about it,\nbut that is my condition.
+
+#org @gText_AnthraTown_MomGivesRunningShoes
+Then you go with my\nblessing.\pBefore you go, make sure you take\nyour Running Shoes with you.
+
+#org @gText_AnthraTown_MomSendsPlayerOff
+[RED]The road ahead will be long, but\nremember, you can always come\lhome.\pNow go, and make some wonderful\nmemories with [RIVAL]!
+
+#org @gText_AnthraTown_RivalCanGoOnJourney
+[BLUE]Hey [PLAYER], you'll never believe\nit.\pMy mom said I could go on a journey\nif I went with you!
+
+#org @gText_AnthraTown_ReturnToSeleneAndHawthorne
+[BLUE]Whaaaat? You too? Awesome!\pC'mon, let's go tell Miss Selene and\nthe Professor the good news!

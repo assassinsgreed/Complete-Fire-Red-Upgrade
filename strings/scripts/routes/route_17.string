@@ -1,2 +1,185 @@
 #org @gText_Route17_CaveSign
 Danger! Wild Pokemon have been\nsighted. Please be careful.
+
+#org @gText_Route17_MetWithRival
+[BLUE]There you are, [PLAYER]. Look!\nChampion Selene is right there!
+
+#org @gText_Route17_RivalCallingToChampion
+[BLUE]Um[.] Excuse me, Champion Selene?
+
+#org @gText_Route17_ChampionResponse
+[RED]Oh? Who's this?
+
+#org @gText_Route17_RivalStammer
+[BLUE]I[.] uh[.] I'm[.]
+
+#org @gText_Route17_HawthorneDismisses
+[BLUE]Excuse me, young man. We're\nperforming some important field\lresearch and I must ask you to\lleave.
+
+#org @gText_Route17_RivalProtest
+[BLUE]But[.]
+
+#org @gText_Route17_SeleneInterjection
+[RED]Now, now. We aren't that busy, right?\nSurely we can hear him out.
+
+#org @gText_Route17_HawthorneYields
+[BLUE]Harrumph. As you wish, Selene.
+
+#org @gText_Route17_HawthornePromptsRival
+[BLUE]Young man, you may speak.
+
+#org @gText_Route17_RivalGratitude
+[BLUE]Oh[.] Oh! Thank you Mister, um[.]
+
+#org @gText_Route17_HawthorneIntroduction
+[BLUE]Professor Hawthorne, my child.
+
+#org @gText_Route17_RivalStartsExplanation
+[BLUE]Well, you see, Professor Hawthorne[.]
+
+#org @gText_Route17_UrgePlayerToJoin
+[BLUE]Hey, [PLAYER], you should introduce\nyourself too!
+
+#org @gText_Route17_RivalsRequest
+[BLUE]My friend, [PLAYER], and I have been\nbig fans of Champion Selene ever\lsince she became champion.\pShe's really nice, and strong, and\nhas never lost a fight. She's so\lcool!\pWe saw her crowning match, and ever\nsince then we've been dying to get\lher autograph.\pSo[.] if it isn't too much trouble[.]\ncould we get one?
+
+#org @gText_Route17_SelenesResponse
+[RED]That's all?
+
+#org @gText_Route17_RivalEmbarrassed
+[BLUE]Uh, well[.] Yeah, sorry. I know you're\nreally busy and it's a dumb thing\lto ask[.]
+
+#org @gText_Route17_SeleneFollowUp
+[RED]No, not at all! I just assumed\nthat you would ask for an\lendorsement to take the Pok\emon\lLeague challenge.
+
+#org @gText_Route17_RivalTrainerInterest
+[BLUE]I wish! That would be so cool.\pBut[.] we aren't Pok\emon trainers. Not\nyet, at least. Our moms won't let\lus go on a journey yet.
+
+#org @gText_Route17_SeleneProposesStarterPokemon
+[RED]Hey, Professor Hawthorne, how about\nwe give them some starter Pok\emon?
+
+#org @gText_Route17_HawthorneHesitant
+[BLUE]I don't know, they're awfully young,\nSelene.
+
+#org @gText_Route17_SeleneRespondsToHesitation
+[RED]I was younger than they are, when\nI started my journey 7 years ago.
+
+#org @gText_Route17_HawthorneDigsIn
+[BLUE]You were, and still are, an\nexceptional trainer, Selene. Not\lall trainers can achieve what you\lhave.
+
+#org @gText_Route17_SelenesProposal
+[RED]I've got a good feeling about\nthem!\pHow about this? If their parents\nallow them to have a Pok\emon,\lwould that be okay with you?
+
+#org @gText_Route17_HawthorneAccepts
+[BLUE]Well[.] Alright. But only if their\nmothers are okay with it.
+
+#org @gText_Route17_SeleneSendsPlayerOff
+[RED]Well, that's that! If you're serious\nabout becoming trainers, you'd\lbetter talk to your moms soon.
+
+#org @gText_Route17_RivalExcited
+[BLUE]Oh! Oh! Okay! I'll be right back!
+
+#org @gText_Route17_RivalHeadsOut
+[BLUE][PLAYER], you'd better hurry up too.\nWe don't want to miss out on this\lopportunity.
+
+#org @gText_Route17_HawthorneChat
+Run along and speak with your\nmothers. But do hurry, we must be\lleaving soon.
+
+#org @gText_Route17_SeleneChat
+[RED]You must be excited to start your\nPok\emon journey!
+
+#org @gText_Route17_HawthorneBlocker
+[BLUE]That cave is dangerous! I would\nadvise you not to go in there\lwithout having a Pok\emon.
+
+#org @gText_Route17_RivalExcitedToBecomeTrainer
+[BLUE]I'm so excited, [PLAYER]! We're going\nto be Pok\emon trainers after today!
+
+#org @gText_Route17_SeleneBeforeChoosingStarter
+[RED]It's always exciting to see a new\ntrainer start their journey!
+
+#org @gText_Route17_ChooseAStarterWarning
+You should choose a Pok\emon while\nyou have the chance[.]
+
+#org @gText_Route17_HawthorneDialogWhenChoosingStarter
+You were able to get your mothers'\nblessing, yes?\pVery well, then I shall not object\nto you going on a Pok\emon journey.
+
+#org @gText_Route17_HawthorneChooseAPokemon
+I have 3 Pok\emon with me today. You\nmay both choose one to take as\lyour companion.
+
+#org @gText_Route17_HawthorneAsksPlayerToMove
+[BLUE]Please excuse me for a moment,\n[PLAYER].
+
+#org @gText_Route17_RivalWantsToTakeEevee 
+[BLUE]Oh, thank you, Professor Hawthorne.\pBut[.] I've been thinking for a bit,\nand I'd like to travel with my\lEevee.
+
+#org @gText_Route17_HawthorneRespondsToRivalsEeveeChoice
+[BLUE]Are you certain, [RIVAL]? You could\ntravel with your Eevee and one of\lthese Pok\emon, if you'd like.
+
+#org @gText_Route17_RivalWillTakeEevee
+[BLUE]Yeah, I've made up my mind. I think\nit'll make my journey more special.
+
+#org @gText_Route17_HawthorneAcceptsRivalsEeveeChoice
+[BLUE]Hohoho, very well. I can respect\nthat decision.
+
+#org @gText_Route17_HawthorneInvitesPlayerToChooseStarter
+[BLUE][PLAYER], you may choose any Pok\emon\nyou like. Think over your decision\lcarefully.
+
+#org @gText_Route17_SeleneAdviceOnChoosingPartner
+[RED]The Pok\emon you choose will be\nyour partner throughout your\ljourney.
+
+#org @gText_StarterChoice_Confirmation
+[BLUE]Ah, so you'd like to choose\n[BUFFER1] as your partner?
+
+#org @gText_StarterChoice_Decline
+[BLUE]Take your time! This is an important\ndecision.
+
+#org @gText_StarterChoice_Confirmed
+[PLAYER] chose to start their journey\nwith [BUFFER1]!
+
+#org @gText_StarterChoice_Nickname
+[BLUE]That's a fine choice! Would you like\nto give your new partner a\lnickname?
+
+#org @gText_StarterChoice_Finalized
+[BLUE]That settles it. You and [BUFFER1]\nare now partners.
+
+#org @gText_Route17_HawthorneGettingPokeballs
+[BLUE]I'll just collect these[.]
+
+#org @gText_Route17_HawthornePreparingToLeave
+[BLUE]My, my[.] Look at the time.
+
+#org @gText_Route17_HawthorneThankingSeleneForTime
+[BLUE]I must be going. Selene, thank you\nfor your time today.
+
+#org @gText_Route17_SeleneRespondingToHawthornesThanks
+[RED]Oh, don't sweat it, it was a lot of\nfun!
+
+#org @gText_Route17_HawthorneRespondingToSelene
+[BLUE]The pleasure is all mine.
+
+#org @gText_Route17_HawthorneDeparts
+[BLUE][PLAYER], [RIVAL], I'm sure you must\nbe excited to start your\ljourneys.\pI'd like to ask you to first meet me\nat my lab in Olenic Town first. I\lhave a gift I'd like to give you.\pAnd with that, I must be off.
+
+#org @gText_Route17_SeleneSuggestsBattle
+[RED]Why don't you two try a Pok\emon\nbattle to get used to your new\lpartners?
+
+#org @gText_Route17_RivalWantsToBattle
+[BLUE]That sounds fun! Come on, [PLAYER],\nlet's battle. Show me what you've\lgot!
+
+#org @gText_Route17_RivalBattleConcludes
+That was a lot of fun! You're a good\nbattler, [PLAYER].
+
+#org @gText_Route17_SeleneCommentsOnBattle
+[RED]A battle between two friends[.] You\ntwo are officially rivals now! Push\leach other to become the best\ltrainers you can be.
+
+#org @gText_Route17_SeleneGivesPokeballs
+[RED]I have something for you both as\nwell. Consider it a gift to help\lyou get started in your journeys!
+
+#org @gText_Route17_PokeballExplanationAndSeleneDeparture
+[RED]Use those to catch Pok\emon, but\nremember to weaken them first.\pI have to go now too, but I expect\nto see you both again someday,\lmaybe even in a championship\lbattle!\pGood luck, trainers.
+
+#org @gText_Route17_RivalThanksSeleneForGift
+[BLUE]Gee, thanks Miss Selene! This is very\nnice of you!
+
+#org @gText_Route17_RivalDepartsForHawthornesLab
+[BLUE]We're Pok\emon trainers, [PLAYER]. I\ncan't believe it!\pI'm gonna catch some Pok\emon before\ngoing to Professor Hawthorne's lab.\lI'll see you there.
