@@ -419,10 +419,7 @@ EventScript_Route17_PlayerHasChosenStarter:
     applymovement Rival m_LookUp
     special 0x0 @ Heal player party
     msgbox gText_Route17_SeleneCommentsOnBattle MSG_NORMAL
-    msgbox gText_Route17_SeleneGivesPokeballs MSG_NORMAL
-    obtainitem ITEM_POKE_BALL 0xA @ Get 10 Pokeballs
-    msgbox gText_Route17_PokeballExplanationAndSeleneDeparture MSG_NORMAL
-    msgbox gText_Route17_RivalThanksSeleneForGift MSG_NORMAL
+    msgbox gText_Route17_SeleneDeparture MSG_NORMAL
     applymovement Selene m_NPCLeavesRoute17
     waitmovement Selene
     setflag 0x02B @ Hide Hawthorne, Selene, and Footprint kid in Anthra

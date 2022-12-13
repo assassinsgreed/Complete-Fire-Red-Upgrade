@@ -12,7 +12,9 @@ EventScript_Pokemart:
     faceplayer
     special 0x187
     compare LASTRESULT 0x2
-    if 0x1 _goto EventScript_End
+    if 0x1 _goto End
+    checkflag 0x829 @ Has Pokedex
+    if NOT_SET _goto EventScript_PokemartNotReady
     msgbox gText_Common_PokemartIntro MSG_KEEPOPEN
     checkflag 0x827 @ Eight Badges
     if SET _goto EventScript_EightBadges
@@ -226,8 +228,8 @@ EightBadges_Stock:
     
 EventScript_EndMart:
     msgbox gText_Common_PokemartEnd MSG_NORMAL
-    goto EventScript_End
+    goto End
 
-EventScript_End:
-    release
-    end
+EventScript_PokemartNotReady:
+    msgbox gText_Common_PokemartNotReady MSG_NORMAL
+    goto End
