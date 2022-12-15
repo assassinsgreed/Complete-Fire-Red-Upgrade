@@ -66,6 +66,8 @@ PlayerWalkDown_Return:
 
 .global PokedexEvaluation_Introduction
 PokedexEvaluation_Introduction:
+    @ Note: This script is also located at 0x81A73E0 for ratings from the PC.
+    @ Not ideal, but worth keeping separately while these are actively developed
     setvar 0x8004 0x1F
     special 0x17E
     special 0x17D
