@@ -3,6 +3,7 @@
 
 .include "../xse_commands.s"
 .include "../xse_defines.s"
+.include "../asm_defines.s"
 
 .equ Mom, 0x1
 .equ Rival, 0x2
@@ -155,6 +156,8 @@ EventScript_AnthraTown_PersuadingMomToGoOnJourney:
 	msgbox gText_AnthraTown_MomGivesRunningShoes MSG_NORMAL
 	call EnableRunningShoes
 	normalmsg
+	msgbox gText_AnthraTown_MomGivesTownMap MSG_NORMAL
+	obtainitem ITEM_TOWN_MAP 0x1
 	msgbox gText_AnthraTown_MomSendsPlayerOff MSG_NORMAL
 	setvar StoryEventVar PlayerAllowedToGoOnJourney
 	setflag 0x002E @ Hide rival in their home

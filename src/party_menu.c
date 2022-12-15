@@ -1046,7 +1046,7 @@ void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
 			}
 		}
 
-		if (k < MAX_MON_MOVES && !knowsDig) //Doesn't know 4 field moves
+		if (knowsDig) //Doesn't know 4 field moves
 		{
 			if (CanUseEscapeRopeOnCurrMap() //Only add if usable
 			#ifndef DEBUG_HMS
