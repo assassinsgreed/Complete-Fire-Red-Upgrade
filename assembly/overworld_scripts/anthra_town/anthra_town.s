@@ -46,6 +46,16 @@ LevelScript_DepartingWithRival:
 	fadedefaultbgm
 	end
 
+.global EventScript_AnthraTown_PlayersPoster
+EventScript_AnthraTown_PlayersPoster:
+	msgbox gText_AnthraTown_PlayersPoster MSG_NORMAL
+	end
+
+.global EventScript_AnthraTown_NESClassic
+EventScript_AnthraTown_NESClassic:
+	msgbox gText_AnthraTown_NESClassic MSG_NORMAL
+	end
+
 .global EventScript_AnthraTown_FlowerGirl
 EventScript_AnthraTown_FlowerGirl:
     msgbox gText_AnthraTown_FlowerGirl MSG_FACE
@@ -73,6 +83,8 @@ EventScript_AnthraTown_Ty:
 
 .global EventScript_AnthraTown_FootprintGuy
 EventScript_AnthraTown_FootprintGuy:
+	compare StoryEventVar 0x7 @ Player can go on journey
+	if equal _goto End
 	compare LASTTALKED 0x6
 	if equal _call LookDown
 	npcchat2 0x6 m_LookUp gText_AnthraTown_FootprintGuy

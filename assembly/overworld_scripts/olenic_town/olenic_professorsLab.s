@@ -37,8 +37,8 @@ LevelScript_ReceivingPokedex:
     applymovement Hawthorne m_HawthorneReturnsToPlayer
     waitmovement Hawthorne
     fanfare 0x13E
-	waitfanfare
     msgbox gText_OlenicProfessorsLab_PlayerGetsPokedex MSG_NORMAL
+	waitfanfare
     msgbox gText_OlenicProfessorsLab_HawthorneExplainsPokedex MSG_NORMAL
     msgbox gText_OlenicProfessorsLab_HawthorneFillingPokedexRequest MSG_NORMAL
     applymovement Hawthorne m_Surprise

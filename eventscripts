@@ -19,10 +19,9 @@ npc 3 0 5 EventScript_AnthraTown_FootprintGuy
 tile 3 0 0 EventScript_AnthraTown_FootprintGuy
 tile 3 0 1 EventScript_AnthraTown_FootprintGuy
 tile 3 0 2 EventScript_AnthraTown_FootprintGuy
-tile 3 0 3 EventScript_AnthraTown_FootprintGuy
-tile 3 0 4 EventScript_AnthraTown_FootprintGuy
-tile 3 0 5 EventScript_AnthraTown_FootprintGuy
 npc 4 0 0 EventScript_AnthraTown_MomMain
+sign 4 1 2 EventScript_AnthraTown_PlayersPoster
+sign 4 1 3 EventScript_AnthraTown_NESClassic
 npc 4 2 0 EventScript_AnthraTown_RivalMom
 npc 4 2 1 EventScript_AnthraTown_RivalInTheirHome
 npc 4 3 0 EventScript_AnthraTown_OldMan

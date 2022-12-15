@@ -220,6 +220,8 @@ StoryEvents_TalkingWithHawthorneAndSelene:
     hidesprite Rival
     setflag 0x02D @ Hide rival on route 17
     clearflag 0x02E @ Show rival in their house
+    movesprite2 Hawthorne 0x0F 0x0A @ Update position of Hawthorne while on the route
+    movesprite2 Selene 0x10 0x0A @ Update position of Selene while on the route
     setvar StoryEventVar PlayerMetWithRival
     applymovement Hawthorne m_LookRight
     applymovement Selene m_LookLeft
@@ -286,7 +288,7 @@ EventScript_StarterChoice_Grass:
 	hidepokepic
 	compare LASTRESULT YES
 	IF FALSE _call EventScript_StarterChoice_Declined
-	givepokemon 0x4000 0x5 0x0 0x0 0x0 0x0
+	givepokemon 0x4000 0x5 0x8B 0x0 0x0 0x0
 	msgbox gText_StarterChoice_Confirmed MSG_KEEPOPEN
 	setflag 0x028 @ Hide Grass Pokeball
     hidesprite 0x5 @ Hide Grass starter ball on route 17
@@ -320,7 +322,7 @@ EventScript_StarterChoice_Fire:
 	hidepokepic
 	compare LASTRESULT YES
 	IF FALSE _call EventScript_StarterChoice_Declined
-	givepokemon 0x4001 0x5 0x0 0x0 0x0 0x0
+	givepokemon 0x4001 0x5 0x8B 0x0 0x0 0x0
 	msgbox gText_StarterChoice_Confirmed MSG_KEEPOPEN
 	setflag 0x02A @ Hide Fire Pokeball
     hidesprite 0x6 @ Hide Fire starter ball on route 17
@@ -354,7 +356,7 @@ EventScript_StarterChoice_Water:
 	hidepokepic
 	compare LASTRESULT YES
 	IF FALSE _call EventScript_StarterChoice_Declined
-	givepokemon 0x4002 0x5 0x0 0x0 0x0 0x0
+	givepokemon 0x4002 0x5 0x8B 0x0 0x0 0x0
 	msgbox gText_StarterChoice_Confirmed MSG_KEEPOPEN
 	setflag 0x029 @ Hide Water Pokeball
     hidesprite 0x7 @ Hide Water starter ball on route 17
