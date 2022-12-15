@@ -290,6 +290,7 @@ EventScript_StarterChoice_Grass:
 	IF FALSE _call EventScript_StarterChoice_Declined
 	givepokemon 0x4000 0x5 0x8B 0x0 0x0 0x0
 	msgbox gText_StarterChoice_Confirmed MSG_KEEPOPEN
+    setvar 0x4031 0x0 @ Grass starter chosen
 	setflag 0x028 @ Hide Grass Pokeball
     hidesprite 0x5 @ Hide Grass starter ball on route 17
     goto EventScript_StarterChoice_SelectionMade
@@ -324,6 +325,7 @@ EventScript_StarterChoice_Fire:
 	IF FALSE _call EventScript_StarterChoice_Declined
 	givepokemon 0x4001 0x5 0x8B 0x0 0x0 0x0
 	msgbox gText_StarterChoice_Confirmed MSG_KEEPOPEN
+    setvar 0x4031 0x1 @ Fire starter chosen
 	setflag 0x02A @ Hide Fire Pokeball
     hidesprite 0x6 @ Hide Fire starter ball on route 17
     goto EventScript_StarterChoice_SelectionMade
@@ -358,6 +360,7 @@ EventScript_StarterChoice_Water:
 	IF FALSE _call EventScript_StarterChoice_Declined
 	givepokemon 0x4002 0x5 0x8B 0x0 0x0 0x0
 	msgbox gText_StarterChoice_Confirmed MSG_KEEPOPEN
+    setvar 0x4031 0x2 @ Water starter chosen
 	setflag 0x029 @ Hide Water Pokeball
     hidesprite 0x7 @ Hide Water starter ball on route 17
     goto EventScript_StarterChoice_SelectionMade

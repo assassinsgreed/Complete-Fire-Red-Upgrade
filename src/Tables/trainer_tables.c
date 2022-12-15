@@ -18,11 +18,11 @@ const struct TrainerMonNoItemDefaultMoves sParty_Rival1[] = {
 
 // #region Route 1 
 const struct TrainerMonNoItemDefaultMoves sParty_Route1_YoungsterPeter[] = {
-    { .iv = 0, .lvl = 4, .species = SPECIES_BIDOOF },
+    { .iv = 0, .lvl = 3, .species = SPECIES_BIDOOF },
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_Route1_LassHelena[] = {
-    { .iv = 0, .lvl = 4, .species = SPECIES_FLETCHLING },
+    { .iv = 0, .lvl = 3, .species = SPECIES_FLETCHLING },
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_Route1_YoungsterHarlan[] = {
@@ -32,17 +32,17 @@ const struct TrainerMonNoItemDefaultMoves sParty_Route1_YoungsterHarlan[] = {
 
 // #region Route 2
 const struct TrainerMonNoItemDefaultMoves sParty_Route2_YoungsterJoey[] = {
-    { .iv = 0, .lvl = 7, .species = SPECIES_RATTATA_A },
+    { .iv = 0, .lvl = 6, .species = SPECIES_RATTATA_A },
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_Route2_LassKimberly[] = {
-    { .iv = 0, .lvl = 6, .species = SPECIES_RALTS },
-    { .iv = 0, .lvl = 6, .species = SPECIES_CUTIEFLY },
+    { .iv = 0, .lvl = 5, .species = SPECIES_RALTS },
+    { .iv = 0, .lvl = 5, .species = SPECIES_CUTIEFLY },
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_Route2_LassRikki[] = {
-    { .iv = 0, .lvl = 8, .species = SPECIES_FLABEBE_BLUE },
-    { .iv = 0, .lvl = 8, .species = SPECIES_FLABEBE_YELLOW },
+    { .iv = 0, .lvl = 7, .species = SPECIES_FLABEBE_BLUE },
+    { .iv = 0, .lvl = 7, .species = SPECIES_FLABEBE_YELLOW },
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_Route2_CoolTrainerAndy[] = {
@@ -54,24 +54,24 @@ const struct TrainerMonNoItemDefaultMoves sParty_Route2_CoolTrainerAndy[] = {
 
 // #region Varisi Forest
 const struct TrainerMonNoItemDefaultMoves sParty_VarisiForest_BugCatcherKendell[] = {
-    { .iv = 0, .lvl = 6, .species = SPECIES_BLIPBUG },
+    { .iv = 0, .lvl = 5, .species = SPECIES_BLIPBUG },
     { .iv = 0, .lvl = 6, .species = SPECIES_BLIPBUG },
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_VarisiForest_BugCatcherBraden[] = {
-    { .iv = 0, .lvl = 6, .species = SPECIES_BLIPBUG },
-    { .iv = 0, .lvl = 6, .species = SPECIES_VENIPEDE },
-    { .iv = 0, .lvl = 6, .species = SPECIES_VENIPEDE },
+    { .iv = 0, .lvl = 4, .species = SPECIES_BLIPBUG },
+    { .iv = 0, .lvl = 5, .species = SPECIES_VENIPEDE },
+    { .iv = 0, .lvl = 5, .species = SPECIES_VENIPEDE },
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_VarisiForest_LassBreanna[] = {
-    { .iv = 0, .lvl = 7, .species = SPECIES_PICHU },
-    { .iv = 0, .lvl = 7, .species = SPECIES_BUDEW },
+    { .iv = 0, .lvl = 6, .species = SPECIES_PICHU },
+    { .iv = 0, .lvl = 6, .species = SPECIES_BUDEW },
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_VarisiForest_LassMimi[] = {
-    { .iv = 0, .lvl = 6, .species = SPECIES_BUNEARY },
-    { .iv = 0, .lvl = 7, .species = SPECIES_PIKIPEK },
+    { .iv = 0, .lvl = 5, .species = SPECIES_BUNEARY },
+    { .iv = 0, .lvl = 6, .species = SPECIES_PIKIPEK },
     { .iv = 0, .lvl = 7, .species = SPECIES_SHROOMISH },
 };
 // #endregion
@@ -80,7 +80,7 @@ const struct TrainerMonNoItemDefaultMoves sParty_VarisiForest_LassMimi[] = {
 const struct TrainerMonNoItemCustomMoves sParty_RhodanziCity_Alonso[] = {
     {
         .iv = 10,
-        .lvl = 10,
+        .lvl = 9,
         .species = SPECIES_MIME_JR_G,
         .moves = {
             MOVE_MISTYTERRAIN,
@@ -92,7 +92,7 @@ const struct TrainerMonNoItemCustomMoves sParty_RhodanziCity_Alonso[] = {
     },
     {
         .iv = 10,
-        .lvl = 9,
+        .lvl = 8,
         .species = SPECIES_STUNFISK_G,
         .moves = {
             MOVE_TERRAINPULSE,
@@ -107,7 +107,7 @@ const struct TrainerMonNoItemCustomMoves sParty_RhodanziCity_Alonso[] = {
 const struct TrainerMonNoItemCustomMoves sParty_RhodanziCity_Brandon[] = {
     {
         .iv = 10,
-        .lvl = 12,
+        .lvl = 10,
         .species = SPECIES_PINCURCHIN,
         .moves = {
             MOVE_CHARGE,
@@ -122,7 +122,7 @@ const struct TrainerMonNoItemCustomMoves sParty_RhodanziCity_Brandon[] = {
 const struct TrainerMonItemCustomMoves sParty_RhodanziCity_LeaderTerrence[] = {
     {
         .iv = 20,
-        .lvl = 12,
+        .lvl = 10,
         .species = SPECIES_GROOKEY,
         .moves = {
             MOVE_SCRATCH,
@@ -135,7 +135,7 @@ const struct TrainerMonItemCustomMoves sParty_RhodanziCity_LeaderTerrence[] = {
     },
     {
         .iv = 20,
-        .lvl = 14,
+        .lvl = 12,
         .species = SPECIES_SKIDDO,
         .moves = {
             MOVE_LEECHSEED,
@@ -150,7 +150,7 @@ const struct TrainerMonItemCustomMoves sParty_RhodanziCity_LeaderTerrence[] = {
 
 // #region Route 7
 const struct TrainerMonNoItemDefaultMoves sParty_Route7_CamperCarlisle[] = {
-    { .iv = 0, .lvl = 9, .species = SPECIES_NIDORAN_M },
+    { .iv = 0, .lvl = 8, .species = SPECIES_NIDORAN_M },
     { .iv = 0, .lvl = 10, .species = SPECIES_DOTTLER },
 };
 // endregion

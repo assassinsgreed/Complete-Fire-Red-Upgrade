@@ -48,14 +48,14 @@ EventScript_VarisiForest_PoisonWarning:
     lock
     faceplayer
     msgbox gText_VarisiForest_PoisonWarning MSG_NORMAL
-    checkflag 0x230 @ Has received Antidote gift
+    checkflag 0x231 @ Has received Antidote gift
     if NOT_SET _goto EventScript_VarisiForest_AntidoteGift
     goto EventScript_VarisiForest_PoisonWarningEnd
 
 EventScript_VarisiForest_AntidoteGift:
     msgbox gText_VarisiForest_AntidoteGift MSG_NORMAL
     obtainitem ITEM_ANTIDOTE 0x1
-    setflag 0x230 @ Has received Antidote gift
+    setflag 0x231 @ Has received Antidote gift
     goto EventScript_VarisiForest_PoisonWarningEnd
     
 EventScript_VarisiForest_PoisonWarningEnd:
