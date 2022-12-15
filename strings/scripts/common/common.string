@@ -33,3 +33,15 @@ End
 
 #org @gText_RunningShoesToggle
 [BLACK]This setting can be changed by\npressing L.
+
+#org @gText_PokedexAssessment_Introduction
+Now, let me review the data in your\nPok\edex for a moment[.]
+
+#org @gText_PokedexAssessment_SeenCaughtLeft
+You have seen [BUFFER1] Pok\emon, and\ncaught [BUFFER2]. That leaves [BUFFER3] left\lto catch. My rating is[.]
+
+#org @gText_PokedexAssessment_IncompletePokedex
+Come see me once you have\ncompleted your Pok\edex. I'll have\lsomething nice to give you.
+
+#org @gText_PokedexAssessment_EvaluationComplete
+Thank you for showing me your\nPok\edex, [PLAYER]. You've made\lgreat progress.

@@ -26,7 +26,7 @@ EventScript_OlenicOverworld_NewTrainers:
 
 .global EventScript_OlenicOverworld_GameKid
 EventScript_OlenicOverworld_GameKid:
-    npcchat gText_OlenicOverworld_GameKid
+    npcchat2 0x2 m_LookDown gText_OlenicOverworld_GameKid
     end
 
 .global EventScript_OlenicOverworld_OldLady

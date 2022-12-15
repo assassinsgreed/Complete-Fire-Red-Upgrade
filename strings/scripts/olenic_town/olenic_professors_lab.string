@@ -9,3 +9,36 @@ I'm sorry, but the conservatory is a\nsensitive area. Only the professor\land ch
 
 #org @gText_OlenicProfessorsLab_Researcher
 We're hard at work researching the\nhabitats of Pok\emon.
+
+#org @gText_OlenicProfessorsLab_MeetingHawthorne
+[BLUE]Ah, [PLAYER], you arrived sooner than\nexpected! Please wait there a\lmoment.
+
+#org @gText_OlenicProfessorsLab_HawthorneAsksAboutStarter
+[BLUE]How are you and [BUFFER1] getting\nalong? Swimmingly, I hope?\pBeing a Pok\emon trainer is a big\nresponsibility. I trust you will\ltake it seriously.
+
+#org @gText_OlenicProfessorsLab_HawthorneMentionsGift
+[BLUE]Hohoho, don't worry. I didn't call\nyou here to lecture you. I have a\lgift I'd like to impart upon you.
+
+#org @gText_OlenicProfessorsLab_PlayerGetsPokedex
+[PLAYER] obtained the Pok\edex!
+
+#org @gText_OlenicProfessorsLab_HawthorneExplainsPokedex
+[BLUE]This fancy device was created by a\nfriend of mine in another region.\lIt's called the Pok\edex.\pIt automatically records data about\nPok\emon you capture or evolve. It\lwill also identify Pok\emon you have\lseen but haven't captured yet.\pI have modified this device to\nrecord additional data on the\lhabitats Pok\emon live in.
+
+#org @gText_OlenicProfessorsLab_HawthorneFillingPokedexRequest
+[BLUE]There are many interesting Pok\emon in\nthe Kulure region. I'm sure my\lfriend would appreciate any data\lyou could obtain.\pI would like to ask for your\nassistance in this. Simply capture\las many Pok\emon as you can, and\lreturn to me to share your\lfindings.
+
+#org @gText_OlenicProfessorsLab_HawthorneGivesPokeballs
+[BLUE]Oh, but I am getting ahead of\nmyself. You will need Pok\e balls to\lcapture wild Pok\emon. Please take\lthese.
+
+#org @gText_OlenicProfessorsLab_HawthornePokeballExplanation
+[BLUE]Simply throw a Pok\e ball at a\nwild Pok\emon you'd like to try and\lcapture.\pRemember, you'll be more\nsuccessful if the Pok\emon is\lweakened or has a status effect.
+
+#org @gText_OlenicProfessorsLab_HawthorneUsePC
+[BLUE]If you need, you may use the PC in\nmy lab to manage the Pok\emon\lyou've caught.
+
+#org @gText_OlenicProfessorsLab_HawthorneExplainsGyms
+[BLUE]Now, I shouldn't keep you[.]\pYou and [RIVAL] wished to challenge\nSelene, yes? To do so, you will\lneed to prove your capabilities as\la trainer by challenging\lPok\emon gyms to earn all 8 gym\lbadges.\pThe closest gym would be in Rhodanzi\nCity, to the north of your\lhometown. It is a suitable gym for\lnew trainers to challenge.
+
+#org @gText_OlenicProfessorsLab_HawthorneBidsFarewell
+[BLUE]To have a dream is a wonderful\nthing, especially when shared by\lfriends[.] But I am rambling on.\p[PLAYER]! I wish you the best in your\njourney. You are welcome to visit\lme whenever you'd like.

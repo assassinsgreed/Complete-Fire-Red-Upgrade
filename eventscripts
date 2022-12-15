@@ -51,7 +51,7 @@ npc 3 1 5 EventScript_OlenicOverworld_FindTMSwagger
 ## Facilities
 npc 5 6 0 EventScript_Pokemart
 npc 5 6 1 EventScript_OlenicFacilities_Mart_StockUp
-map 5 7 MapScript_HawthornesLab
+map 5 7 MapScript_OlenicLab
 sign 5 7 0 SignScript_OlenicLab_Conservatory
 npc 5 7 0 EventScript_OlenicLab_Hawthorne
 npc 5 7 2 EventScript_OlenicLab_HawthornesConservatoryAide

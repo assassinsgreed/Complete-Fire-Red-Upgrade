@@ -34,6 +34,7 @@ LevelScript_DepartingWithRival:
 	applymovement RivalInAnthraOverworld m_RivalMeetPlayerAtJourneyStart
 	waitmovement ALLEVENTS
 	msgbox gText_AnthraTown_RivalCanGoOnJourney MSG_NORMAL
+	sound 0x15 @ Exclaim
 	applymovement RivalInAnthraOverworld m_Surprise
 	msgbox gText_AnthraTown_ReturnToSeleneAndHawthorne MSG_NORMAL
 	applymovement RivalInAnthraOverworld m_RivalReturnsToRoute17

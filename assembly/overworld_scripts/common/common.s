@@ -64,8 +64,8 @@ PlayerWalkDown_Return:
     waitmovement PLAYER
     return
 
-.global Pokedex_Evaluation
-Pokedex_Evaluation:
+.global PokedexEvaluation_Introduction
+PokedexEvaluation_Introduction:
     setvar 0x8004 0x1F
     special 0x17E
     special 0x17D
@@ -73,30 +73,47 @@ Pokedex_Evaluation:
     special2 LASTRESULT 0xD4
     copyvar 0x8008 0x8005
     copyvar 0x8009 0x8006
-    copyvar 0x800A LASTRESULT
+    setvar 0x800A 0x184 @ 388 Pokemon
+    subvar 0x800A 0x8009 @ Subtract caught pokemon from total
+    copyvar 0x800B LASTRESULT
     buffernumber 0x0 0x8008
     buffernumber 0x1 0x8009
+    buffernumber 0x2 0x800A
+    msgbox gText_PokedexAssessment_Introduction MSG_KEEPOPEN
+    checkflag 0x2FF @ Assessment is from PC
+    if TRUE _call SetTextColor_Black
+    msgbox gText_PokedexAssessment_SeenCaughtLeft MSG_KEEPOPEN
+    call PokedexEvaluation_Rating
+    compare 0x800A 0x0
+    if notequal _call PokedexEvaluation_PokedexIncomplete
+    msgbox gText_PokedexAssessment_EvaluationComplete MSG_NORMAL
+    end
 
-/*
-msgbox 0x81A6CA3 MSG_KEEPOPEN '"The amount of progress you've made..."
-checkflag 0x2FF
-if 0x0 call 0x81A746D
-call 0x81A73B6
-compare 0x800A 0x0
-if 0x1 goto 0x81A748F
-setvar 0x8004 0x1
-special2 LASTRESULT 0xD4
-copyvar 0x8008 0x8005
-copyvar 0x8009 0x8006
-buffernumber 0x0 0x8008
-buffernumber 0x1 0x8009
-msgbox 0x81A71AA MSG_KEEPOPEN '"And your NATIONAL POKéDEX is:\p[bu..."
-special2 LASTRESULT 0x1B0
-compare LASTRESULT 0x0
-if 0x1 goto 0x81A7470
-compare LASTRESULT 0x1
-if 0x1 goto 0x81A747E
- */
+PokedexEvaluation_Rating:
+    copyvar 0x8004 0x8009
+    special 0xD5
+    waitmsg
+    compare LASTRESULT 0x0
+    if TRUE _call PokedexEvaluationFanfare1
+    compare LASTRESULT 0x1
+    if TRUE _call PokedexEvaluationFanfare2
+    waitfanfare
+    return
+
+PokedexEvaluationFanfare1:
+    fanfare 0x13D
+    return
+
+PokedexEvaluationFanfare2:
+    fanfare 0x103
+    return
+
+PokedexEvaluation_PokedexIncomplete:
+    msgbox gText_PokedexAssessment_IncompletePokedex MSG_KEEPOPEN
+    return
+
+SetTextColor_Black:
+    textcolor 0x2
     return
 
 .global End
