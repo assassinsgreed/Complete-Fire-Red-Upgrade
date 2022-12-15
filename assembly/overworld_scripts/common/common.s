@@ -64,6 +64,60 @@ PlayerWalkDown_Return:
     waitmovement PLAYER
     return
 
+.global PokedexEvaluation_Introduction
+PokedexEvaluation_Introduction:
+    @ Note: This script is also located at 0x81A73E0 for ratings from the PC.
+    @ Not ideal, but worth keeping separately while these are actively developed
+    setvar 0x8004 0x1F
+    special 0x17E
+    special 0x17D
+    setvar 0x8004 0x0
+    special2 LASTRESULT 0xD4
+    copyvar 0x8008 0x8005
+    copyvar 0x8009 0x8006
+    setvar 0x800A 0x184 @ 388 Pokemon
+    subvar 0x800A 0x8009 @ Subtract caught pokemon from total
+    copyvar 0x800B LASTRESULT
+    buffernumber 0x0 0x8008
+    buffernumber 0x1 0x8009
+    buffernumber 0x2 0x800A
+    msgbox gText_PokedexAssessment_Introduction MSG_KEEPOPEN
+    checkflag 0x2FF @ Assessment is from PC
+    if TRUE _call SetTextColor_Black
+    msgbox gText_PokedexAssessment_SeenCaughtLeft MSG_KEEPOPEN
+    call PokedexEvaluation_Rating
+    compare 0x800A 0x0
+    if notequal _call PokedexEvaluation_PokedexIncomplete
+    msgbox gText_PokedexAssessment_EvaluationComplete MSG_NORMAL
+    end
+
+PokedexEvaluation_Rating:
+    copyvar 0x8004 0x8009
+    special 0xD5
+    waitmsg
+    compare LASTRESULT 0x0
+    if TRUE _call PokedexEvaluationFanfare1
+    compare LASTRESULT 0x1
+    if TRUE _call PokedexEvaluationFanfare2
+    waitfanfare
+    return
+
+PokedexEvaluationFanfare1:
+    fanfare 0x13D
+    return
+
+PokedexEvaluationFanfare2:
+    fanfare 0x103
+    return
+
+PokedexEvaluation_PokedexIncomplete:
+    msgbox gText_PokedexAssessment_IncompletePokedex MSG_KEEPOPEN
+    return
+
+SetTextColor_Black:
+    textcolor 0x2
+    return
+
 .global End
 End:
     release

@@ -3,6 +3,7 @@
 
 .include "../xse_commands.s"
 .include "../xse_defines.s"
+.include "../asm_defines.s"
 
 .equ Mom, 0x1
 .equ Rival, 0x2
@@ -34,6 +35,7 @@ LevelScript_DepartingWithRival:
 	applymovement RivalInAnthraOverworld m_RivalMeetPlayerAtJourneyStart
 	waitmovement ALLEVENTS
 	msgbox gText_AnthraTown_RivalCanGoOnJourney MSG_NORMAL
+	sound 0x15 @ Exclaim
 	applymovement RivalInAnthraOverworld m_Surprise
 	msgbox gText_AnthraTown_ReturnToSeleneAndHawthorne MSG_NORMAL
 	applymovement RivalInAnthraOverworld m_RivalReturnsToRoute17
@@ -43,6 +45,16 @@ LevelScript_DepartingWithRival:
 	clearflag 0x02D @ Show rival on route 17
 	setvar StoryEventVar PlayerAndRivalCanGoOnJourney
 	fadedefaultbgm
+	end
+
+.global EventScript_AnthraTown_PlayersPoster
+EventScript_AnthraTown_PlayersPoster:
+	msgbox gText_AnthraTown_PlayersPoster MSG_NORMAL
+	end
+
+.global EventScript_AnthraTown_NESClassic
+EventScript_AnthraTown_NESClassic:
+	msgbox gText_AnthraTown_NESClassic MSG_NORMAL
 	end
 
 .global EventScript_AnthraTown_FlowerGirl
@@ -72,6 +84,8 @@ EventScript_AnthraTown_Ty:
 
 .global EventScript_AnthraTown_FootprintGuy
 EventScript_AnthraTown_FootprintGuy:
+	compare StoryEventVar 0x7 @ Player can go on journey
+	if equal _goto End
 	compare LASTTALKED 0x6
 	if equal _call LookDown
 	npcchat2 0x6 m_LookUp gText_AnthraTown_FootprintGuy
@@ -142,6 +156,8 @@ EventScript_AnthraTown_PersuadingMomToGoOnJourney:
 	msgbox gText_AnthraTown_MomGivesRunningShoes MSG_NORMAL
 	call EnableRunningShoes
 	normalmsg
+	msgbox gText_AnthraTown_MomGivesTownMap MSG_NORMAL
+	obtainitem ITEM_TOWN_MAP 0x1
 	msgbox gText_AnthraTown_MomSendsPlayerOff MSG_NORMAL
 	setvar StoryEventVar PlayerAllowedToGoOnJourney
 	setflag 0x002E @ Hide rival in their home

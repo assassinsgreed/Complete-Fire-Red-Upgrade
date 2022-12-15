@@ -360,9 +360,9 @@
 #define FLAG_HIDE_VARISI_FOREST_TINYMUSHROOM                    0x15E
 #define FLAG_HIDE_VARISI_FOREST_ANTIDOTE                        0x15F
 #define FLAG_HIDE_VARISI_FOREST_POKEBALL                        0x160
-#define FLAG_HIDE_ROUTE4_TM05                                   0x161
-#define FLAG_HIDE_ROUTE24_TM45                                  0x162
-#define FLAG_HIDE_ROUTE25_TM43                                  0x163
+#define FLAG_HIDE_RHODANZI_CITY_TM49_ECHOEDVOICE                0x161
+#define FLAG_HIDE_RHODANZI_CITY_SODA_POP                        0x162
+#define FLAG_HIDE_OLENIC_TOWN_TM87_SWAGGER                      0x163
 #define FLAG_HIDE_SSANNE_1F_ROOM2_TM31                          0x164
 #define FLAG_HIDE_SSANNE_2F_ROOM2_STARDUST                      0x165
 #define FLAG_HIDE_SSANNE_2F_ROOM4_X_ATTACK                      0x166
@@ -1032,7 +1032,7 @@
 #define HIDDEN_ITEM_RHODANZI_CITY_RARE_CANDY                            3
 #define HIDDEN_ITEM_VARISI_FOREST_CHERI_BERRY                           4
 #define HIDDEN_ITEM_VARISI_FOREST_RAWST_BERRY                           5
-#define HIDDEN_ITEM_ROUTE9_ETHER                                        6
+#define HIDDEN_ITEM_OLENIC_TOWN_ASPEAR_BERRY                            6
 #define HIDDEN_ITEM_UNUSED_0x07                                         7
 #define HIDDEN_ITEM_SSANNE_B1F_CORRIDOR_HYPER_POTION                    8
 #define HIDDEN_ITEM_ROUTE10_SUPER_POTION                                9
@@ -1381,9 +1381,9 @@
 
 // World Map Flags
 /*
-#define FLAG_WORLD_MAP_PALLET_TOWN                                  (SYS_FLAGS + 0x90)
-#define FLAG_WORLD_MAP_VIRIDIAN_CITY                                (SYS_FLAGS + 0x91)
-#define FLAG_WORLD_MAP_RHODANZI_CITY                                  (SYS_FLAGS + 0x92)
+#define FLAG_WORLD_MAP_ANTHRA_TOWN                                  (SYS_FLAGS + 0x90)
+#define FLAG_WORLD_MAP_OLENIC_TOWN                                  (SYS_FLAGS + 0x91)
+#define FLAG_WORLD_MAP_RHODANZI_CITY                                (SYS_FLAGS + 0x92)
 #define FLAG_WORLD_MAP_CERULEAN_CITY                                (SYS_FLAGS + 0x93)
 #define FLAG_WORLD_MAP_LAVENDER_TOWN                                (SYS_FLAGS + 0x94)
 #define FLAG_WORLD_MAP_VERMILION_CITY                               (SYS_FLAGS + 0x95)

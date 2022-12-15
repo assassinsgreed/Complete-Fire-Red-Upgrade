@@ -172,14 +172,8 @@ That was a lot of fun! You're a good\nbattler, [PLAYER].
 #org @gText_Route17_SeleneCommentsOnBattle
 [RED]A battle between two friends[.] You\ntwo are officially rivals now! Push\leach other to become the best\ltrainers you can be.
 
-#org @gText_Route17_SeleneGivesPokeballs
-[RED]I have something for you both as\nwell. Consider it a gift to help\lyou get started in your journeys!
-
-#org @gText_Route17_PokeballExplanationAndSeleneDeparture
-[RED]Use those to catch Pok\emon, but\nremember to weaken them first.\pI have to go now too, but I expect\nto see you both again someday,\lmaybe even in a championship\lbattle!\pGood luck, trainers.
-
-#org @gText_Route17_RivalThanksSeleneForGift
-[BLUE]Gee, thanks Miss Selene! This is very\nnice of you!
+#org @gText_Route17_SeleneDeparture
+[RED]I have to go now too, but I expect\nto see you both again someday,\lmaybe even in a championship\lbattle!\pGood luck, trainers.
 
 #org @gText_Route17_RivalDepartsForHawthornesLab
 [BLUE]We're Pok\emon trainers, [PLAYER]. I\ncan't believe it!\pI'm gonna catch some Pok\emon before\ngoing to Professor Hawthorne's lab.\lI'll see you there.
