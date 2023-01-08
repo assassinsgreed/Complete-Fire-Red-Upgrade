@@ -141,6 +141,16 @@
                     { "low": 7, "high": 10, "species": "SPECIES_NICKIT" }, 
                     { "low": 5, "high": 8, "species": "SPECIES_RALTS" }
                 ]
+            },
+            "rocks": {
+                "rate": 50,
+                "pokemon": [
+                    { "low": 10, "high": 15, "species": "SPECIES_ROGGENROLA" },
+                    { "low": 10, "high": 15, "species": "SPECIES_ROLYCOLY" },
+                    { "low": 10, "high": 15, "species": "SPECIES_ROGGENROLA" },
+                    { "low": 10, "high": 15, "species": "SPECIES_CARBINK" },
+                    { "low": 10, "high": 15, "species": "SPECIES_CARBINK" }
+                ]
             }
         },
         {
