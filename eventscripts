@@ -219,13 +219,13 @@ npc 3 21 7 ItemScript_Common_EscapeRope
 npc 3 21 8 ItemScript_Common_DireHit
 npc 3 21 9 ItemScript_Common_Pokeball
 # TODO: Trainers
-# 10 Camper
-# 11 Bug Catcher
-# 12 Running boy
-# 13 Twin left
-# 14 Twin right
-# 15 Kid in the grass
-# 16 Rocker
+npc 3 21 10 EventScript_Route3_PicknickerTana
+npc 3 21 11 EventScript_Route3_BugCatcherIrwin
+npc 3 21 12 EventScript_Route3_YoungsterLogan
+npc 3 21 13 EventScript_Route3_TwinsNinaAndMeg_Nina
+npc 3 21 14 EventScript_Route3_TwinsNinaAndMeg_Meg
+npc 3 21 15 EventScript_Route3_NinjaBoyBotan
+npc 3 21 16 EventScript_Route3_RockerJude
 
 sign 3 21 0 SignScript_Route3_TrainerTips
 sign 3 21 1 SignScript_Route3_Navigation

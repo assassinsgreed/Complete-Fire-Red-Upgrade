@@ -3,3 +3,66 @@ Trainer Tips!\nAggressive Pok\emon live in dark\lgrass, and may attack in pairs.
 
 #org @gText_Route3_Navigation
 North: Route 4\nSouth: Rubarr Desert
+
+#org @gText_Route3_PicknickerTana_Intro
+I've been a camper since I was a\nbaby!
+
+#org @gText_Route3_PicknickerTana_Defeat
+Whoa!
+
+#org @gText_Route3_PicknickerTana_Chat
+Even if I'm close to the city, I'm\nstill camping.
+
+#org @gText_Route3_BugCatcherIrwin_Intro
+My bug Pok\emon evolved. Do you know\nwhat that means?
+
+#org @gText_Route3_BugCatcherIrwin_Defeat
+But[.] My Pok\emon evolved!
+
+#org @gText_Route3_BugCatcherIrwin_Chat
+Pok\emon get stronger when they\nevolve.
+
+#org @gText_Route3_YoungsterLogan_Intro
+Want to go for a jog with me?
+
+#org @gText_Route3_YoungsterLogan_Defeat
+Guess not.
+
+#org @gText_Route3_YoungsterLogan_Chat
+Exercise is good for you and your\nPok\emon.
+
+#org @gText_Route3_TwinsNinaAndMeg_Nina_Intro
+We're twins! Do you know what that\nmeans?
+
+#org @gText_Route3_TwinsNinaAndMeg_Nina_Defeat
+We couldn't even beat you when\nbattling together[.]
+
+#org @gText_Route3_TwinsNinaAndMeg_Nina_Chat
+Double battles are interesting,\nright? There are so many strategies\lto try out!
+
+#org @gText_Route3_TwinsNinaAndMeg_Meg_Intro
+I-I'll do my best, for Nina!
+
+#org @gText_Route3_TwinsNinaAndMeg_Meg_Defeat
+Oooh, I'm sorry Nina[.]
+
+#org @gText_Route3_TwinsNinaAndMeg_Meg_Chat
+I like battling with Nina, but she's\nmuch better than me.
+
+#org @gText_Route3_NinjaBoyBotan_Intro
+Aha! Got you!
+
+#org @gText_Route3_NinjaBoyBotan_Defeat
+My sneak attack didn't work?
+
+#org @gText_Route3_NinjaBoyBotan_Chat
+I'm short, so it's easy to ambush\npeople by hiding in the grass.
+
+#org @gText_Route3_RockerJude_Intro
+My guitar cries out in anguish.\nBattle me, trainer.
+
+#org @gText_Route3_RockerJude_Defeat
+Rock on, dude.
+
+#org @gText_Route3_RockerJude_Chat
+I recently got dumped, so I'm\nfeeling a bit gloomy.
