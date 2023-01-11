@@ -148,6 +148,40 @@ const struct TrainerMonItemCustomMoves sParty_RhodanziCity_LeaderTerrence[] = {
 };
 // #endregion
 
+// #region Route 3
+const struct TrainerMonNoItemDefaultMoves sParty_Route3_PicknickerTana[] = {
+    { .iv = 0, .lvl = 9, .species = SPECIES_NIDORAN_M },
+    { .iv = 0, .lvl = 10, .species = SPECIES_PIKIPEK }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route3_BugCatcherIrwin[] = {
+    { .iv = 0, .lvl = 8, .species = SPECIES_GRUBBIN },
+    { .iv = 0, .lvl = 8, .species = SPECIES_BLIPBUG },
+    { .iv = 0, .lvl = 10, .species = SPECIES_DOTTLER }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route3_YoungsterLogan[] = {
+    { .iv = 0, .lvl = 10, .species = SPECIES_DRILBUR },
+    { .iv = 0, .lvl = 11, .species = SPECIES_ROCKRUFF }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route3_TwinsNinaAndMeg[] = {
+    { .iv = 0, .lvl = 12, .species = SPECIES_MORELULL },
+    { .iv = 0, .lvl = 10, .species = SPECIES_COMBEE }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route3_NinjaBoyBotan[] = {
+    { .iv = 0, .lvl = 11, .species = SPECIES_NINCADA },
+    { .iv = 0, .lvl = 11, .species = SPECIES_FERROSEED },
+    { .iv = 0, .lvl = 11, .species = SPECIES_FARFETCHD_G }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route3_RockerJude[] = {
+    { .iv = 0, .lvl = 13, .species = SPECIES_GROOKEY},
+    { .iv = 0, .lvl = 14, .species = SPECIES_TOXEL }
+};
+// #endregion
+
 // #region Route 7
 const struct TrainerMonNoItemDefaultMoves sParty_Route7_CamperCarlisle[] = {
     { .iv = 0, .lvl = 8, .species = SPECIES_NIDORAN_M },
@@ -352,6 +386,80 @@ const struct Trainer gTrainers[] = {
         .aiFlags = AI_SCRIPT_SEMI_SMART,
         .partySize = NELEMS(sParty_RhodanziCity_LeaderTerrence),
         .party = {.ItemCustomMoves = sParty_RhodanziCity_LeaderTerrence}
+    },
+    // #endregion
+    // #region Route 3
+    [TRAINER_ROUTE_3_PICKNICKER_TANA] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_PICNICKER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .trainerPic = TRAINER_PIC_PICNICKER,
+        .trainerName = {_T, _a, _n, _a, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = NELEMS(sParty_Route3_PicknickerTana),
+        .party = {.NoItemDefaultMoves = sParty_Route3_PicknickerTana}
+    },
+    [TRAINER_ROUTE_3_BUG_CATCHER_IRWIN] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_BUG_CATCHER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_BUG_CATCHER,
+        .trainerName = {_I, _r, _w, _i, _n, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = NELEMS(sParty_Route3_BugCatcherIrwin),
+        .party = {.NoItemDefaultMoves = sParty_Route3_BugCatcherIrwin}
+    },
+    [TRAINER_ROUTE_3_YOUNGSTER_LOGAN] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_YOUNGSTER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_YOUNGSTER,
+        .trainerName = {_L, _o, _g, _a, _n, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = NELEMS(sParty_Route3_YoungsterLogan),
+        .party = {.NoItemDefaultMoves = sParty_Route3_YoungsterLogan}
+    },
+    [TRAINER_ROUTE_3_TWINS_NINA_AND_MEG] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_SR_AND_JR,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_TWINS,
+        .trainerPic = TRAINER_PIC_SR_AND_JR,
+        .trainerName = {_N, _i, _n, _a, _SPACE, _AMPERSAND, _SPACE, _M, _e, _g, _END},
+        .items = {},
+        .doubleBattle = TRUE,
+        .aiFlags = AI_SCRIPT_DOUBLE_BATTLE,
+        .partySize = NELEMS(sParty_Route3_TwinsNinaAndMeg),
+        .party = {.NoItemDefaultMoves = sParty_Route3_TwinsNinaAndMeg}
+    },
+    [TRAINER_ROUTE_3_NINJA_BOY_BOTAN] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_NINJA_BOY,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_NINJA_BOY,
+        .trainerName = {_B, _o, _t, _a, _n, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_RISKY,
+        .partySize = NELEMS(sParty_Route3_NinjaBoyBotan),
+        .party = {.NoItemDefaultMoves = sParty_Route3_NinjaBoyBotan}
+    },
+    [TRAINER_ROUTE_3_ROCKER_JUDE] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_GUITARIST_RS,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
+        .trainerPic = TRAINER_PIC_GUITARIST,
+        .trainerName = {_J, _u, _d, _e, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_TRY_TO_FAINT,
+        .partySize = NELEMS(sParty_Route3_RockerJude),
+        .party = {.NoItemDefaultMoves = sParty_Route3_RockerJude}
     },
     // #endregion
     // #region Route 7

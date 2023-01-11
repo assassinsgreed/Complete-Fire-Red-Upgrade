@@ -26,9 +26,19 @@ ItemScript_Common_SodaPop:
     finditem ITEM_SODA_POP 0x1
     end
 
+.global ItemScript_Common_EscapeRope
+ItemScript_Common_EscapeRope:
+    finditem ITEM_ESCAPE_ROPE 0x1
+    end
+
 .global ItemScript_Common_TinyMushroom
 ItemScript_Common_TinyMushroom:
     finditem ITEM_TINY_MUSHROOM 0x1
+    end
+
+.global ItemScript_Common_CometShard
+ItemScript_Common_CometShard:
+    finditem ITEM_COMET_SHARD 0x1
     end
 
 .global ItemScript_Common_Nugget
@@ -49,6 +59,11 @@ ItemScript_Common_Stick:
 .global ItemScript_Common_LaxIncense
 ItemScript_Common_LaxIncense:
     finditem ITEM_LAX_INCENSE 0x1
+    end
+
+.global ItemScript_Common_DireHit
+ItemScript_Common_DireHit:
+    finditem ITEM_DIRE_HIT 0x1
     end
 
 .global ItemScript_Common_Pokeball
