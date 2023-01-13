@@ -350,7 +350,15 @@ GraphicsInfo_Interviewer 839FF74
 GraphicsInfo_Cameraman 839FF78
 
 # Custom Battle Spritework
+## Replace Rival 1 (106)
 Rival1Tiles 82398CC
 Rival1Pal 8239D6C
+## Replace Brock (116)
 LeaderTerrenceBTiles 823991C
 LeaderTerrenceBPal 8239DBC
+## Replace Male Rocket Grunt (109)
+PlutoGruntMTiles 82398E4
+PlutoGruntMPal 8239D84
+## Replace Female Rocket Grunt (137)
+PlutoGruntFTiles 82399C4
+PlutoGruntFPal 8239E64
