@@ -672,7 +672,7 @@ u32 BattleStringExpandPlaceholders(const u8* src, u8* dst)
 					u8 class = GET_TRAINER(gTrainerBattleOpponent_A).trainerClass;
 					class += 0; //So no unusued variable is displayed
 					#ifdef OPEN_WORLD_TRAINERS
-						if (gTrainerBattleOpponent_A < DYNAMIC_TRAINER_LIMIT && class != CLASS_TEAM_ROCKET)
+						if (gTrainerBattleOpponent_A < DYNAMIC_TRAINER_LIMIT && class != CLASS_TEAM_PLUTO)
 						{
 							toCpy = GetOpenWorldTrainerName(GET_TRAINER(gTrainerBattleOpponent_A).gender);
 							break;
@@ -830,7 +830,7 @@ u32 BattleStringExpandPlaceholders(const u8* src, u8* dst)
 					u8 class = GET_TRAINER(VarGet(VAR_SECOND_OPPONENT)).trainerClass;
 					class += 0;
 					#ifdef OPEN_WORLD_TRAINERS
-						if (VarGet(VAR_SECOND_OPPONENT) < DYNAMIC_TRAINER_LIMIT && class != CLASS_TEAM_ROCKET)
+						if (VarGet(VAR_SECOND_OPPONENT) < DYNAMIC_TRAINER_LIMIT && class != CLASS_TEAM_PLUTO)
 						{
 							toCpy = GetOpenWorldTrainerName(GET_TRAINER(VarGet(VAR_SECOND_OPPONENT)).gender);
 							break;

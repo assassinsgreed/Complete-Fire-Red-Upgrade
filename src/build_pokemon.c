@@ -1173,7 +1173,7 @@ static u8 GetTrainerMonGender(struct Trainer* trainer)
 {
 	switch (trainer->trainerClass)
 	{
-		case CLASS_TEAM_ROCKET: //Otherwise all Grunts have the same genders
+		case CLASS_TEAM_PLUTO: //Otherwise all Grunts have the same genders
 		case CLASS_LEADER:
 		case CLASS_ELITE_4:
 		case CLASS_CHAMPION:
