@@ -228,6 +228,23 @@
 .equ MAP_SCRIPT_ON_RETURN_TO_FIELD, 7
 .equ LEVEL_SCRIPT_TERMIN, 0
 
+@ Weather
+.equ WEATHER_NONE, 0
+.equ WEATHER_REFLECTED_CLOUDS, 1
+.equ WEATHER_NORMAL, 2
+.equ WEATHER_RAIN, 3
+.equ WEATHER_THREE_SNOWFLAKES, 4
+.equ WEATHER_THUNDERSTORM, 5
+.equ WEATHER_FOG, 6
+.equ WEATHER_SNOW, 7
+.equ WEATHER_SANDSTORM, 8
+.equ WEATHER_DIAGONAL_FOG, 9
+.equ WEATHER_THIN_FOG, 0xA
+.equ WEATHER_BIT_DARK, 0xB
+.equ WEATHER_HARSH_SUNLIGHT, 0xC @ Requires "Fire Red Sun Fix.ips" or will black screen after battle
+.equ WEATHER_THUNDERSTORM_2, 0xD
+.equ WEATHER_NONE, 0xE
+
 @ Common movements to apply
 m_LookDown: .byte look_down, end_m
 m_LookUp: .byte look_up, end_m

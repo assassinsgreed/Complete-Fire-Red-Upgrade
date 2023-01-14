@@ -35,7 +35,24 @@ const struct WildPokemon gVarisiForest_LandMonsNight[] =
 	{4, 7, SPECIES_SLAKOTH},
 };
 
+const struct WildPokemon gRubarrDesert_LandMonsNight[] =
+{
+	{8, 10, SPECIES_CACNEA},
+	{8, 10, SPECIES_VULLABY},
+	{8, 11, SPECIES_TRAPINCH},
+	{9, 11, SPECIES_SANDILE},
+	{8, 11, SPECIES_VULLABY},
+	{10, 12, SPECIES_CASTFORM},
+	{9, 12, SPECIES_TRAPINCH},
+	{8, 12, SPECIES_SANDILE},
+	{9, 11, SPECIES_VULLABY},
+	{10, 13, SPECIES_HIPPOPOTAS},
+	{11, 13, SPECIES_MANDIBUZZ}, 
+	{10, 13, SPECIES_MANDIBUZZ}
+};
+
 const struct WildPokemonInfo gVarisiForest_LandMonsNightInfo = {21, gVarisiForest_LandMonsNight};
+const struct WildPokemonInfo gRubarrDesert_LandMonsNightInfo = {5, gRubarrDesert_LandMonsNight};
 
 const struct WildPokemonHeader gWildMonMorningHeaders[] =
 {
@@ -59,6 +76,14 @@ const struct WildPokemonHeader gWildMonEveningHeaders[] =
 		.rockSmashMonsInfo = NULL,
 		.fishingMonsInfo = NULL,
 	},
+	{
+		.mapGroup = MAP_GROUP(RUBARR_DESERT),
+		.mapNum = MAP_NUM(RUBARR_DESERT),
+		.landMonsInfo = &gRubarrDesert_LandMonsNightInfo,
+		.waterMonsInfo = NULL, // Keep regular encounters
+		.rockSmashMonsInfo = NULL,
+		.fishingMonsInfo = NULL, // Keep regular encounters
+	}
 	{
 		.mapGroup = 0xFF,
 		.mapNum = 0xFF,

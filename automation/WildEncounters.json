@@ -22,6 +22,52 @@
             }
         },
         {
+            "mapgroup": 1,
+            "mapnum": 1,
+            "grass": {
+                "rate": 5,
+                "pokemon": [
+                    { "low": 8, "high": 10, "species": "SPECIES_CACNEA" },
+                    { "low": 8, "high": 10, "species": "SPECIES_HELIOPTILE" },
+                    { "low": 8, "high": 11, "species": "SPECIES_TRAPINCH" },
+                    { "low": 9, "high": 11, "species": "SPECIES_SANDILE" },
+                    { "low": 8, "high": 11, "species": "SPECIES_HELIOPTILE" },
+                    { "low": 10, "high": 12, "species": "SPECIES_CASTFORM" },
+                    { "low": 9, "high": 12, "species": "SPECIES_TRAPINCH" },
+                    { "low": 8, "high": 12, "species": "SPECIES_SANDILE" },
+                    { "low": 9, "high": 11, "species": "SPECIES_HELIOPTILE" },
+                    { "low": 10, "high": 13, "species": "SPECIES_HIPPOPOTAS" },
+                    { "low": 11, "high": 13, "species": "SPECIES_HELIOLISK" }, 
+                    { "low": 10, "high": 13, "species": "SPECIES_HELIOLISK" }
+                ]
+            },
+            "surfing": {
+                "rate": 1,
+                "pokemon": [
+                    { "low": 15, "high": 25, "species": "SPECIES_HIPPOPOTAS" },
+                    { "low": 25, "high": 30, "species": "SPECIES_HIPPOWDON" },
+                    { "low": 20, "high": 25, "species": "SPECIES_HIPPOPOTAS" },
+                    { "low": 20, "high": 30, "species": "SPECIES_HIPPOPOTAS" },
+                    { "low": 23, "high": 27, "species": "SPECIES_HIPPOPOTAS" }
+                ]
+            },
+            "fishing": {
+                "rate": 20,
+                "pokemon": [
+                    { "low": 3, "high": 7, "species": "SPECIES_MAGIKARP" },
+                    { "low": 4, "high": 8, "species": "SPECIES_CORPHISH" },
+                    { "low": 20, "high": 25, "species": "SPECIES_CORPHISH" },
+                    { "low": 20, "high": 25, "species": "SPECIES_MAGIKARP" },
+                    { "low": 19, "high": 26, "species": "SPECIES_MAGIKARP" },
+                    { "low": 35, "high": 40, "species": "SPECIES_CRAWDAUNT" },
+                    { "low": 33, "high": 41, "species": "SPECIES_CRAWDAUNT" },
+                    { "low": 35, "high": 40, "species": "SPECIES_CORPHISH" },
+                    { "low": 36, "high": 42, "species": "SPECIES_CORPHISH" },
+                    { "low": 38, "high": 44, "species": "SPECIES_CRAWDAUNT" }
+                ]
+            }
+        },
+        {
             "mapgroup": 3,
             "mapnum": 2,
             "surfing": {

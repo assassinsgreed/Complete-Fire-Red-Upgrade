@@ -4,6 +4,24 @@
 .include "../xse_commands.s"
 .include "../xse_defines.s"
 
+.global SetWeatherClear
+SetWeatherClear:
+    setweather WEATHER_NORMAL
+    doweather
+    end
+
+.global SetWeatherSunny
+SetWeatherSunny:
+    setweather WEATHER_HARSH_SUNLIGHT
+    doweather
+    end
+
+.global SetWeatherSandstorm
+SetWeatherSandstorm:
+    setweather WEATHER_SANDSTORM
+    doweather
+    end
+
 .global EnableRunningShoes
 EnableRunningShoes:
     setflag 0x82F @ Enable running shoes
