@@ -229,4 +229,5 @@ sign 3 21 0 SignScript_Route3_TrainerTips
 sign 3 21 1 SignScript_Route3_Navigation
 
 # Rubarr Desert
+### NPCS 1-10 (indexes 0-9) are cacti with no events
 map 1 1 MapScript_RubarrDesert
