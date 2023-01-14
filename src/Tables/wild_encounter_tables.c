@@ -83,7 +83,7 @@ const struct WildPokemonHeader gWildMonEveningHeaders[] =
 		.waterMonsInfo = NULL, // Keep regular encounters
 		.rockSmashMonsInfo = NULL,
 		.fishingMonsInfo = NULL, // Keep regular encounters
-	}
+	},
 	{
 		.mapGroup = 0xFF,
 		.mapNum = 0xFF,
