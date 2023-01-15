@@ -105,6 +105,14 @@ const struct WildPokemonHeader gWildMonNightHeaders[] =
 		.fishingMonsInfo = NULL,
 	},
 	{
+		.mapGroup = MAP_GROUP(RUBARR_DESERT),
+		.mapNum = MAP_NUM(RUBARR_DESERT),
+		.landMonsInfo = &gRubarrDesert_LandMonsNightInfo,
+		.waterMonsInfo = NULL, // Keep regular encounters
+		.rockSmashMonsInfo = NULL,
+		.fishingMonsInfo = NULL, // Keep regular encounters
+	},
+	{
 		.mapGroup = 0xFF,
 		.mapNum = 0xFF,
 		.landMonsInfo = NULL,

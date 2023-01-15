@@ -15,7 +15,6 @@ MapEntryScript_RubarrDesert_FlightFlag:
     end
 
 MapEntryScript_RubarrDesert_SetWeather:
-    @ TODO: Setting weather breaks DNS for some reason
     @ Check time of day
     special2 LASTRESULT 0xAD
     compare LASTRESULT 0x02 @ Evening
