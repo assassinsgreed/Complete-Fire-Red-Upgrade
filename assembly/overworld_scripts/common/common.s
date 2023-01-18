@@ -82,6 +82,15 @@ PlayerWalkDown_Return:
     waitmovement PLAYER
     return
 
+.global PlayerHeal
+PlayerHeal:
+    fadescreen 0x1
+	fanfare 0x100
+	waitfanfare
+	special 0x0
+	fadescreen 0x0
+    return
+
 .global PokedexEvaluation_Introduction
 PokedexEvaluation_Introduction:
     @ Note: This script is also located at 0x81A73E0 for ratings from the PC.

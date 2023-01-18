@@ -144,7 +144,7 @@ EventScript_AnthraTown_MomMain:
 EventScript_AnthraTown_MomRestPrompt:
 	msgbox gText_AnthraTown_MomRestPrompt MSG_KEEPOPEN
 	closeonkeypress
-	call EventScript_AnthraTown_MomRestAnimation
+	call PlayerHeal
 	msgbox gText_AnthraTown_MomPokemonAreHealthy MSG_KEEPOPEN
 	release
 	end
@@ -168,14 +168,6 @@ EventScript_AnthraTown_MomPlayerSaidNoToAccompanyingRival:
 	msgbox gText_AnthraTown_ConvincingPlayerMom_PlayerDeclined MSG_NORMAL
 	applymovement Mom m_LookLeft
 	end
-
-EventScript_AnthraTown_MomRestAnimation:
-	fadescreen 0x1
-	fanfare 0x100
-	waitfanfare
-	special 0x0
-	fadescreen 0x0
-	return
 
 .global MapScript_AnthraTown_GameStartup
 MapScript_AnthraTown_GameStartup:

@@ -3,6 +3,7 @@
 
 .include "../xse_commands.s"
 .include "../xse_defines.s"
+.include "../asm_defines.s"
 
 .global MapScript_RubarrDesert
 MapScript_RubarrDesert:
@@ -35,3 +36,48 @@ SetAllWeatherTypes:
     if greaterorequal _call SetWeatherSandstorm
     @ Otherwise, leave as regular weather
     end
+
+.global EventScript_RubarrDesert_NurseJaina
+EventScript_RubarrDesert_NurseJaina:
+    faceplayer
+    checktrainerflag 0x517
+    if SET _goto NurseJainaHeal
+    trainerbattle1 0x0 0x17 0x0 gText_RubarrDesert_NurseJaina_Intro gText_RubarrDesert_NurseJaina_Defeat NurseJainaHeal
+    call NurseJainaHeal
+
+NurseJainaHeal:
+    msgbox gText_RubarrDesert_NurseJaina_Chat MSG_NORMAL
+    call PlayerHeal
+    msgbox gText_RubarrDesert_NurseJaina_HealingComplete MSG_NORMAL
+    end
+
+.global EventScript_RubarrDesert_BirdKeeperNolan
+EventScript_RubarrDesert_BirdKeeperNolan:
+    trainerbattle0 0x0 0x18 0x0 gText_RubarrDesert_BirdKeeperNolan_Intro gText_RubarrDesert_BirdKeeperNolan_Defeat
+    msgbox gText_RubarrDesert_BirdKeeperNolan_Chat MSG_NORMAL
+    end
+
+.global EventScript_RubarrDesert_RuinManiacKent
+EventScript_RubarrDesert_RuinManiacKent:
+    trainerbattle0 0x0 0x19 0x0 gText_RubarrDesert_RuinManiacKent_Intro gText_RubarrDesert_RuinManiacKent_Defeat
+    msgbox gText_RubarrDesert_RuinManiacKent_Chat MSG_NORMAL
+    end
+
+.global EventScript_RubarrDesert_BlackBeltKobiyashi
+EventScript_RubarrDesert_BlackBeltKobiyashi:
+    trainerbattle0 0x0 0x1A 0x0 gText_RubarrDesert_BlackBeltKobiyashi_Intro gText_RubarrDesert_BlackBeltKobiyashi_Defeat
+    msgbox gText_RubarrDesert_BlackBeltKobiyashi_Chat MSG_NORMAL
+    end
+
+.global EventScript_RubarrDesert_RuinManiacAlbert
+EventScript_RubarrDesert_RuinManiacAlbert:
+    trainerbattle0 0x0 0x1B 0x0 gText_RubarrDesert_RuinManiacAlbert_Intro gText_RubarrDesert_RuinManiacAlbert_Defeat
+    msgbox gText_RubarrDesert_RuinManiacAlbert_Chat MSG_NORMAL
+    end
+
+.global EventScript_RubarrDesert_TMFlameCharge
+EventScript_RubarrDesert_TMFlameCharge:
+    setvar CHOSEN_ITEM ITEM_TM43
+    call ItemScript_Common_FindTM
+    end
+

@@ -212,7 +212,7 @@ npc 3 21 0 EventScript_Common_Cut
 npc 3 21 1 EventScript_Common_Cut
 npc 3 21 2 EventScript_Common_RockSmash
 npc 3 21 3 EventScript_Common_RockSmash
-npc 3 21 4 ItemScript_Common_CometShard
+npc 3 21 4 ItemScript_Common_StarPiece
 npc 3 21 5 EventScript_Route3_FindTMTaunt
 npc 3 21 6 ItemScript_Common_Potion
 npc 3 21 7 ItemScript_Common_EscapeRope
@@ -231,3 +231,13 @@ sign 3 21 1 SignScript_Route3_Navigation
 # Rubarr Desert
 ### NPCS 1-10 (indexes 0-9) are cacti with no events
 map 1 1 MapScript_RubarrDesert
+npc 1 1 10 EventScript_RubarrDesert_NurseJaina
+npc 1 1 11 EventScript_RubarrDesert_BirdKeeperNolan
+npc 1 1 12 EventScript_RubarrDesert_RuinManiacKent
+npc 1 1 13 EventScript_RubarrDesert_BlackBeltKobiyashi
+npc 1 1 14 EventScript_RubarrDesert_RuinManiacAlbert
+npc 1 1 15 ItemScript_Common_MysticWater
+npc 1 1 16 EventScript_RubarrDesert_TMFlameCharge
+npc 1 1 17 ItemScript_Common_Greatball
+npc 1 1 18 ItemScript_Common_SoftSand
+npc 1 1 19 ItemScript_Common_StarPiece

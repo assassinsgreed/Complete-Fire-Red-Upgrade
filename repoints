@@ -352,6 +352,9 @@ GraphicsInfo_Interviewer 839FF74
 GraphicsInfo_Cameraman 839FF78
 
 # Custom Battle Spritework
+## Replace Cue Ball (96)
+NurseTiles 823987C
+NursePal 8239D1C
 ## Replace Rival 1 (106)
 Rival1Tiles 82398CC
 Rival1Pal 8239D6C
