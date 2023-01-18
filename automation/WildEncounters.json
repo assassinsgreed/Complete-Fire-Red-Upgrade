@@ -27,18 +27,18 @@
             "grass": {
                 "rate": 5,
                 "pokemon": [
-                    { "low": 8, "high": 10, "species": "SPECIES_CACNEA" },
-                    { "low": 8, "high": 10, "species": "SPECIES_HELIOPTILE" },
+                    { "low": 7, "high": 9, "species": "SPECIES_CACNEA" },
+                    { "low": 7, "high": 9, "species": "SPECIES_HELIOPTILE" },
+                    { "low": 7, "high": 10, "species": "SPECIES_TRAPINCH" },
+                    { "low": 8, "high": 10, "species": "SPECIES_SANDILE" },
+                    { "low": 7, "high": 10, "species": "SPECIES_HELIOPTILE" },
+                    { "low": 9, "high": 11, "species": "SPECIES_CASTFORM" },
                     { "low": 8, "high": 11, "species": "SPECIES_TRAPINCH" },
-                    { "low": 9, "high": 11, "species": "SPECIES_SANDILE" },
-                    { "low": 8, "high": 11, "species": "SPECIES_HELIOPTILE" },
-                    { "low": 10, "high": 12, "species": "SPECIES_CASTFORM" },
-                    { "low": 9, "high": 12, "species": "SPECIES_TRAPINCH" },
-                    { "low": 8, "high": 12, "species": "SPECIES_SANDILE" },
-                    { "low": 9, "high": 11, "species": "SPECIES_HELIOPTILE" },
-                    { "low": 10, "high": 13, "species": "SPECIES_HIPPOPOTAS" },
-                    { "low": 11, "high": 13, "species": "SPECIES_HELIOLISK" }, 
-                    { "low": 10, "high": 13, "species": "SPECIES_HELIOLISK" }
+                    { "low": 7, "high": 11, "species": "SPECIES_SANDILE" },
+                    { "low": 8, "high": 10, "species": "SPECIES_HELIOPTILE" },
+                    { "low": 9, "high": 12, "species": "SPECIES_HIPPOPOTAS" },
+                    { "low": 10, "high": 12, "species": "SPECIES_HELIOLISK" }, 
+                    { "low": 9, "high": 12, "species": "SPECIES_HELIOLISK" }
                 ]
             },
             "surfing": {
