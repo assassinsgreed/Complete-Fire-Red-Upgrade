@@ -22,9 +22,9 @@
 
 // Map Group 1
 #define MAP_VARISI_FOREST                        (0 | (1 << 8))
-#define MAP_MT_MOON_1F                           (1 | (1 << 8))
-#define MAP_MT_MOON_B1F                          (2 | (1 << 8))
-#define MAP_MT_MOON_B2F                          (3 | (1 << 8))
+#define MAP_RUBARR_DESERT                        (1 | (1 << 8))
+#define MAP_RUBARR_DESERT_B1F                    (2 | (1 << 8))
+#define MAP_RUBARR_DESERT_B2F                    (3 | (1 << 8))
 #define MAP_SSANNE_EXTERIOR                      (4 | (1 << 8))
 #define MAP_SSANNE_1F_CORRIDOR                   (5 | (1 << 8))
 #define MAP_SSANNE_2F_CORRIDOR                   (6 | (1 << 8))

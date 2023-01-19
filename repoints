@@ -336,6 +336,8 @@ GraphicsInfo_LeaderTerrence 839FEF0
 GraphicsInfo_ChampionSelene 839FED8
 ## Replace Town Map (93)
 GraphicsInfo_TMPokeball 839FF24
+## Replace Deoxys Triangle (106)
+GraphicsInfo_Cactus 839FF58
 ## Replace SS Anne (108)
 GraphicsInfo_Truck 839FF60
 ## Replace Spearow (110)
@@ -350,6 +352,9 @@ GraphicsInfo_Interviewer 839FF74
 GraphicsInfo_Cameraman 839FF78
 
 # Custom Battle Spritework
+## Replace Cue Ball (96)
+NurseTiles 823987C
+NursePal 8239D1C
 ## Replace Rival 1 (106)
 Rival1Tiles 82398CC
 Rival1Pal 8239D6C

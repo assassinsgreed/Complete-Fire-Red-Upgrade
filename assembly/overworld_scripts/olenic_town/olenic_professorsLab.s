@@ -7,7 +7,6 @@
 
 .equ Hawthorne, 0x1
 
-@ TODO: PC somewhere before Rhodanzi for the player to use; make sure it also refers to Hawthorne and not Oak
 .global MapScript_OlenicLab
 MapScript_OlenicLab:
 	mapscript MAP_SCRIPT_ON_FRAME_TABLE LevelScripts_OlenicLab_ObtainingPokedex

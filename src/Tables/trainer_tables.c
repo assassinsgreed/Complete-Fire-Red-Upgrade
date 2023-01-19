@@ -177,6 +177,34 @@ const struct TrainerMonNoItemDefaultMoves sParty_Route3_RockerJude[] = {
 };
 // #endregion
 
+// #region Rubarr Desert
+const struct TrainerMonNoItemDefaultMoves sParty_RubarrDesert_NurseJaina[] = {
+    { .lvl = 12, .species = SPECIES_HAPPINY },
+    { .lvl = 13, .species = SPECIES_TOGEPI },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_RubarrDesert_BirdKeeperNolan[] = {
+    { .lvl = 13, .species = SPECIES_ROOKIDEE },
+    { .lvl = 13, .species = SPECIES_VULLABY },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_RubarrDesert_RuinManiacKent[] = {
+    { .lvl = 12, .species = SPECIES_ROGGENROLA },
+    { .lvl = 12, .species = SPECIES_ROGGENROLA },
+    { .lvl = 13, .species = SPECIES_ROGGENROLA }
+};
+
+const struct TrainerMonItemDefaultMoves sParty_RubarrDesert_BlackbeltKobiyashi[] = {
+    { .lvl = 13, .species = SPECIES_FARFETCHD_G },
+    { .lvl = 14, .species = SPECIES_SCRAGGY },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_RubarrDesert_RuinManiacAlbert[] = {
+    { .lvl = 14, .species = SPECIES_BONSLY },
+    { .lvl = 14, .species = SPECIES_YAMASK_G },
+};
+// #endregion
+
 // #region Route 7
 const struct TrainerMonNoItemDefaultMoves sParty_Route7_CamperCarlisle[] = {
     { .lvl = 8, .species = SPECIES_NIDORAN_M },
@@ -455,6 +483,68 @@ const struct Trainer gTrainers[] = {
         .aiFlags = AI_SCRIPT_TRY_TO_FAINT,
         .partySize = NELEMS(sParty_Route3_RockerJude),
         .party = {.NoItemDefaultMoves = sParty_Route3_RockerJude}
+    },
+    // #endregion
+    // #region Rubarr Desert
+    [TRAINER_RUBARR_DESERT_NURSE_JAINA] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_NURSE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .trainerPic = TRAINER_PIC_NURSE,
+        .trainerName = {_J, _a, _i, _n, _a, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_HP_AWARE,
+        .partySize = NELEMS(sParty_RubarrDesert_NurseJaina),
+        .party = {.NoItemDefaultMoves = sParty_RubarrDesert_NurseJaina}
+    },
+    [TRAINER_RUBARR_DESERT_BIRD_KEEPER_NOLAN] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_BIRD_KEEPER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_BIRD_KEEPER,
+        .trainerName = {_N, _o, _l, _a, _n, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_TRY_TO_FAINT,
+        .partySize = NELEMS(sParty_RubarrDesert_BirdKeeperNolan),
+        .party = {.NoItemDefaultMoves = sParty_RubarrDesert_BirdKeeperNolan}
+    },
+    [TRAINER_RUBARR_DESERT_RUIN_MANIAC_KENT] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_RUIN_MANIAC,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_RUIN_MANIAC,
+        .trainerName = {_K, _e, _n, _t, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = NELEMS(sParty_RubarrDesert_RuinManiacKent),
+        .party = {.NoItemDefaultMoves = sParty_RubarrDesert_RuinManiacKent}
+    },
+    [TRAINER_RUBARR_DESERT_BLACK_BELT_KOBIYASHI] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_BLACK_BELT,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_BLACK_BELT,
+        .trainerName = {_K, _o, _b, _i, _y, _a, _s, _h, _i, _END},
+        .items = { ITEM_X_ATTACK },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_RISKY,
+        .partySize = NELEMS(sParty_RubarrDesert_BlackbeltKobiyashi),
+        .party = {.NoItemDefaultMoves = sParty_RubarrDesert_BlackbeltKobiyashi}
+    },
+    [TRAINER_RUBARR_DESERT_RUIN_MANIAC_ALBERT] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_RUIN_MANIAC,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_RUIN_MANIAC,
+        .trainerName = {_A, _l, _b, _e, _r, _t, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = NELEMS(sParty_RubarrDesert_RuinManiacAlbert),
+        .party = {.NoItemDefaultMoves = sParty_RubarrDesert_RuinManiacAlbert}
     },
     // #endregion
     // #region Route 7

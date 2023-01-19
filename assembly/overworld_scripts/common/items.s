@@ -36,14 +36,24 @@ ItemScript_Common_TinyMushroom:
     finditem ITEM_TINY_MUSHROOM 0x1
     end
 
-.global ItemScript_Common_CometShard
-ItemScript_Common_CometShard:
-    finditem ITEM_COMET_SHARD 0x1
+.global ItemScript_Common_StarPiece
+ItemScript_Common_StarPiece:
+    finditem ITEM_STAR_PIECE 0x1
     end
 
 .global ItemScript_Common_Nugget
 ItemScript_Common_Nugget:
     finditem ITEM_NUGGET 0x1
+    end
+
+.global ItemScript_Common_MysticWater
+ItemScript_Common_MysticWater:
+    finditem ITEM_MYSTIC_WATER 0x1
+    end
+
+.global ItemScript_Common_SoftSand
+ItemScript_Common_SoftSand:
+    finditem ITEM_SOFT_SAND 0x1
     end
 
 .global ItemScript_Common_ChoiceScarf
@@ -69,4 +79,9 @@ ItemScript_Common_DireHit:
 .global ItemScript_Common_Pokeball
 ItemScript_Common_Pokeball:
     finditem ITEM_POKE_BALL 0x1
+    end
+
+.global ItemScript_Common_Greatball
+ItemScript_Common_Greatball:
+    finditem ITEM_GREAT_BALL 0x1
     end
