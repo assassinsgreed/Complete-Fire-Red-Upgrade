@@ -56,6 +56,11 @@ ItemScript_Common_SoftSand:
     finditem ITEM_SOFT_SAND 0x1
     end
 
+.global ItemScript_Common_FocusSash
+ItemScript_Common_FocusSash:
+    finditem ITEM_FOCUS_SASH 0x1
+    end
+
 .global ItemScript_Common_ChoiceScarf
 ItemScript_Common_ChoiceScarf:
     finditem ITEM_CHOICE_SCARF 0x1

@@ -241,3 +241,9 @@ npc 1 1 16 EventScript_RubarrDesert_TMFlameCharge
 npc 1 1 17 ItemScript_Common_Greatball
 npc 1 1 18 ItemScript_Common_SoftSand
 npc 1 1 19 ItemScript_Common_StarPiece
+npc 1 1 20 EventScript_Common_Strength
+npc 1 1 21 EventScript_Common_Strength
+npc 1 1 22 EventScript_Common_Strength
+npc 1 1 23 EventScript_Common_Strength
+npc 1 1 24 ItemScript_Common_FocusSash
+sign 1 1 0 SignScript_RubarrDesert_Oasis

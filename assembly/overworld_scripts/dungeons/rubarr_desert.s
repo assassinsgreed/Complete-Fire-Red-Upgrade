@@ -81,3 +81,7 @@ EventScript_RubarrDesert_TMFlameCharge:
     call ItemScript_Common_FindTM
     end
 
+.global SignScript_RubarrDesert_Oasis
+SignScript_RubarrDesert_Oasis:
+    msgbox gText_RubarrDesert_OasisSign MSG_SIGN
+    end
