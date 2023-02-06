@@ -36,7 +36,7 @@ EventScript_Common_CutFillerText:
     goto ReleaseAll
 
 EventScript_Common_CutTree:
-    applymovement LASTTALKED 0x81BDF85 @ Cut animation
+    applymovement LASTTALKED m_CutTree
     waitmovement ALLEVENTS
     hidesprite LASTTALKED
     goto ReleaseAll
@@ -64,15 +64,15 @@ EventScript_Common_RockFillerText:
     goto ReleaseAll
 
 EventScript_Common_SmashRock:
-    @ TODO: Not working properly...
-    applymovement LASTTALKED 0x81BE08F @ Rock Smash animation
+    applymovement LASTTALKED m_SmashRock
     waitmovement ALLEVENTS
     hidesprite LASTTALKED
+    special 0xAB
+    waitstate
     goto ReleaseAll
 
 .global EventScript_Common_Strength
 EventScript_Common_Strength:
-    @ TODO: Not working properly...
     checkflag 0x805
     if SET _goto ReleaseAll
     lockall
@@ -89,6 +89,7 @@ EventScript_Common_Strength:
     doanimation 0x28
     waitstate
     setflag 0x805 @ Can now push boulders while on this map
+    goto ReleaseAll
 
 EventScript_Common_StrengthFillerText:
     msgbox gText_Common_PushableRock MSG_SIGN
@@ -97,3 +98,6 @@ EventScript_Common_StrengthFillerText:
 ReleaseAll:
     releaseall
     end
+
+m_CutTree: .byte cut_tree, end_m
+m_SmashRock: .byte smash_rock, end_m

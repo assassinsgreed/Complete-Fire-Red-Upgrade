@@ -81,3 +81,22 @@ EventScript_RubarrDesert_TMFlameCharge:
     call ItemScript_Common_FindTM
     end
 
+.global EventScript_RubarrDesert_CaveGuide
+EventScript_RubarrDesert_CaveGuide:
+    faceplayer
+    lockall    
+    msgbox gText_RubarrDesert_TourGuideIntro MSG_YESNO
+    compare LASTRESULT YES
+    if true _call EventScript_RubarrDesert_CaveGuide_Info
+    msgbox gText_RubarrDesert_TourGuideFarewell MSG_NORMAL
+    release
+    end
+
+EventScript_RubarrDesert_CaveGuide_Info:
+    msgbox gText_RubarrDesert_TourGuideDetails MSG_NORMAL
+    return
+
+.global SignScript_RubarrDesert_Oasis
+SignScript_RubarrDesert_Oasis:
+    msgbox gText_RubarrDesert_OasisSign MSG_SIGN
+    end

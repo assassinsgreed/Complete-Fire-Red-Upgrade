@@ -374,7 +374,7 @@
 #define FLAG_HIDE_RUBARR_DESERT_GREAT_BALL                      0x16C
 #define FLAG_HIDE_RUBARR_DESERT_SOFT_SAND                       0x16D
 #define FLAG_HIDE_RUBARR_DESERT_STAR_PIECE                      0x16E
-#define FLAG_HIDE_ROCKET_HIDEOUT_B2F_MOON_STONE                 0x16F
+#define FLAG_HIDE_RUBARR_DESERT_FOCUS_SASH                      0x16F
 #define FLAG_HIDE_ROCKET_HIDEOUT_B2F_TM12                       0x170
 #define FLAG_HIDE_ROCKET_HIDEOUT_B2F_SUPER_POTION               0x171
 #define FLAG_HIDE_ROCKET_HIDEOUT_B3F_RARE_CANDY                 0x172

@@ -34,3 +34,4 @@ EventScript_DebugMode_Main:
 	setvar LASTRESULT 0x5
 	callasm DebugMenu_ProcessGiveItem
 	AddItem ITEM_RARE_CANDY 0x32
+	end
