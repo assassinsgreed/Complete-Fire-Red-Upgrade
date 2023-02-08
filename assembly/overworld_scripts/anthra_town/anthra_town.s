@@ -32,7 +32,7 @@ LevelScripts_AnthraTown_MeetingWithRival:
 
 LevelScript_DepartingWithRival:
 	pause DELAY_HALFSECOND
-	playbgm BGM_RIVAL_AIDEN_THEME
+	playbgm 0x195
 	applymovement RivalInAnthraOverworld m_RivalMeetPlayerAtJourneyStart
 	waitmovement ALLEVENTS
 	msgbox gText_AnthraTown_RivalCanGoOnJourney MSG_NORMAL
@@ -325,7 +325,7 @@ LevelScript_AnthraTown_MeetingRival:
 	sound 0x15 @ Exclaim
 	applymovement Rival m_Surprise
 	pause DELAY_HALFSECOND
-	playbgm BGM_RIVAL_AIDEN_THEME
+	playbgm 0x195
 	applymovement Rival m_RivalWalkUp
 	waitmovement ALLEVENTS
 	msgbox gText_AnthraTown_MeetingRival MSG_YESNO

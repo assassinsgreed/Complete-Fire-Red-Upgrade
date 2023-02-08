@@ -353,8 +353,8 @@ GraphicsInfo_Cameraman 839FF78
 
 # Custom Battle Spritework
 ## Replace Aqua Admin Shelly (72)
-PlutoAdminIreneTiles 82397BC
-PlutoAdminIrenePal 8239C5C
+PlutoAdminIreneBTiles 82397BC
+PlutoAdminIreneBPal 8239C5C
 ## Replace Cue Ball (96)
 NurseTiles 823987C
 NursePal 8239D1C
