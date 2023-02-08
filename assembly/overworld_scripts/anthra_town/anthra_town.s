@@ -4,6 +4,7 @@
 .include "../xse_commands.s"
 .include "../xse_defines.s"
 .include "../asm_defines.s"
+#include "../include/constants/songs.h"
 
 .equ Mom, 0x1
 .equ Rival, 0x2
@@ -31,7 +32,7 @@ LevelScripts_AnthraTown_MeetingWithRival:
 
 LevelScript_DepartingWithRival:
 	pause DELAY_HALFSECOND
-	playbgm 0x195 @ Encounter Cheren
+	playbgm BGM_RIVAL_AIDEN_THEME
 	applymovement RivalInAnthraOverworld m_RivalMeetPlayerAtJourneyStart
 	waitmovement ALLEVENTS
 	msgbox gText_AnthraTown_RivalCanGoOnJourney MSG_NORMAL
@@ -324,7 +325,7 @@ LevelScript_AnthraTown_MeetingRival:
 	sound 0x15 @ Exclaim
 	applymovement Rival m_Surprise
 	pause DELAY_HALFSECOND
-	playbgm 0x195 @ Encounter Cheren
+	playbgm BGM_RIVAL_AIDEN_THEME
 	applymovement Rival m_RivalWalkUp
 	waitmovement ALLEVENTS
 	msgbox gText_AnthraTown_MeetingRival MSG_YESNO
