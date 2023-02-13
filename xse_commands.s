@@ -966,7 +966,7 @@ map \map
 .2byte \trainer
 .endm
 
-@ Sets the specified (Object's saved position on the current map.
+@ Sets the specified (Object's saved position) on the current map.
 .macro movesprite2 localId:req, x:req, y:req
 .byte 0x63
 .2byte \localId

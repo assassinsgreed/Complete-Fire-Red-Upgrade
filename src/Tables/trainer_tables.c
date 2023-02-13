@@ -10,9 +10,14 @@
 
 // See battle.h for a list of struct types that can be used
 // #region Trainer Structs
-// #region Important
+// #region Important trainers
 const struct TrainerMonNoItemDefaultMoves sParty_Rival1[] = {
     { .iv = 0, .lvl = 5, .species = SPECIES_EEVEE },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Rival2[] = {
+    { .iv = 25, .lvl = 12, .species = SPECIES_ROOKIDEE },
+    { .iv = 25, .lvl = 14, .species = SPECIES_EEVEE },
 };
 // #endregion
 
@@ -191,7 +196,7 @@ const struct TrainerMonNoItemDefaultMoves sParty_RubarrDesert_BirdKeeperNolan[] 
 const struct TrainerMonNoItemDefaultMoves sParty_RubarrDesert_RuinManiacKent[] = {
     { .lvl = 12, .species = SPECIES_ROGGENROLA },
     { .lvl = 12, .species = SPECIES_ROGGENROLA },
-    { .lvl = 13, .species = SPECIES_ROGGENROLA }
+    { .lvl = 13, .species = SPECIES_ROGGENROLA },
 };
 
 const struct TrainerMonItemDefaultMoves sParty_RubarrDesert_BlackbeltKobiyashi[] = {
@@ -223,6 +228,7 @@ const struct Trainer gTrainers[] = {
     [TRAINER_NONE] = {
         .trainerName = NO_NAME,
     },
+    // #region Important trainers
     [TRAINER_RIVAL1] = {
         .partyFlags = 0,
         .trainerClass = CLASS_RIVAL,
@@ -235,6 +241,19 @@ const struct Trainer gTrainers[] = {
         .partySize = NELEMS(sParty_Rival1),
         .party = {.NoItemDefaultMoves = sParty_Rival1}
     },
+    [TRAINER_RIVAL2] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_RIVAL,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_BLUE,
+        .trainerName = NO_NAME, // Name replaced from RIVAL trainer classes
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_TRY_TO_FAINT,
+        .partySize = NELEMS(sParty_Rival2),
+        .party = {.NoItemDefaultMoves = sParty_Rival2}
+    },
+    // #endregion
     // #region Route 1
     [TRAINER_ROUTE_1_YOUNGSTER_PETER] = {
         .partyFlags = 0,

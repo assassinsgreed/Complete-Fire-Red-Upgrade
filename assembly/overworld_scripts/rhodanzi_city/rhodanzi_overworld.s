@@ -12,6 +12,7 @@ MapScript_RhodanziOverworld_FlightSpot:
 
 MapEntryScript_RhodanziOverworld_FlightFlag:
     setworldmapflag 0x892
+    setflag 0x31 @ Hide Rival and Team Pluto on route 3 
     sethealingplace 0x03 @ Originally Pewter City
     checkflag 0x820 @ Obtained Rhodanzi City Gym
     IF SET _call HideThugs

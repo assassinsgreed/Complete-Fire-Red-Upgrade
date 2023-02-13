@@ -66,3 +66,90 @@ Rock on, dude.
 
 #org @gText_Route3_RockerJude_Chat
 I recently got dumped, so I'm\nfeeling a bit gloomy.
+
+#org @gText_Route3_RivalArrives
+[BLUE]Oh, [PLAYER]! I finally caught up to\nyou!
+
+#org @gText_Route3_RivalGymBadgeAcknowledgement
+[BLUE]I just beat the Rhodanzi City gym.\nTerrence was tougher than I\lthought!\pI couldn't help but notice\nyou got the badge before me.\pI guess you know why I'm here,\nright?
+
+#org @gText_Route3_PlayerKnowsWhyRivalIsHere
+[BLUE]That's right! It's time for a Pok\emon\nbattle!
+
+#org @gText_Route3_PlayerDoesNotKnowWhyRivalIsHere
+[BLUE]We've both beaten Terrence, so now\nwe have to see who's actually\lstronger! Get ready, [PLAYER], it's\ltime for a Pok\emon battle!
+
+#org @gText_Route3_RivalInitiatesBattle
+[BLUE]I'm much tougher than I used to be,\nso don't think I'll go easy on you.\lLet's go!
+
+#org @gText_Route3_BeatRival
+I guess it was no fluke you beat\nTerrence before me!
+
+#org @gText_Route3_RivalAcceptsDefeat
+[BLUE]Wow, you're much stronger already.\nI'll have to step my game up for\lour next battle.\pAnd to do that, I'll need to\nchallenge the Ferrox Village gym.\pYou're headed there too, right?\nLet's go together.
+
+#org @gText_Route3_PlutoGruntStopsAssistant
+[BLACK]Clancy: [BLUE]Hold it, chump!
+
+#org @gText_Route3_AssistantQuestioningAmbush
+[BLACK]Assistant: [BLUE]Oh my! What's the meaning\nof this?
+
+#org @gText_Route3_PlutoThreat
+[BLACK]Ena: [RED]We're with Team Pluto, and we\nknow you're transporting DexNavs.\pFork 'em over and we won't have to\nhurt you.
+
+#org @gText_Route3_AssistantRecognizesPluto
+[BLACK]Assistant: [BLUE]T-Team Pluto? You're those\nthugs that everybody's talking\labout[.]
+
+#org @gText_Route3_PlutoThreat2
+[BLACK]Clancy: [BLUE]So you've heard of us, eh?\nThen you know not to mess with us.\pHand them over and you won't have\nto get hurt.
+
+#org @gText_Route3_AssistantSurrenders
+[BLUE]Y-yikes! Take them, just don't hurt\nme!
+
+#org @gText_Route3_PlutoDeparts
+[BLACK]Ena: [RED]Heh heh, wise move, old man.\nYou didn't see us here, got it?\lNow scram, before we change our\lminds.
+
+#org @gText_Route3_RivalCommentsOnPluto
+[BLACK][RIVAL]: [BLUE]Team Pluto[.] I've heard of\nthem.\pThey say they're a ruthless gang\nwho'll stop at nothing to get\lpowerful Pok\emon.\lA lot of people try to steer clear\lof them.\pBut enough about that, we have to\nhelp that guy! Let's go, [PLAYER].
+
+#org @gText_Route3_RivalSpeaksToAssistant
+[BLACK][RIVAL]: [BLUE]Hey, are you okay? We saw\nwhat happened. They said they were\lfrom Team Pluto, right?
+
+#org @gText_Route3_AssistantRespondsToRival
+[BLACK]Assistant: [BLUE]Y-yes, they did. They\nmust've known I was delivering them\lto Professor Hawthorne and planned\lto jump me.
+
+#org @gText_Route3_RivalRecruitsPlayer
+[BLACK][RIVAL]: [BLUE]Those scoundrels[.] We're\ngoing after them, right?
+
+#org @gText_Route3_PlayerDoesNotAgreeToChallengePluto
+[BLACK][RIVAL]: [BLUE]Aw, come on, the gym\nchallenge can wait. This guy needs\lour help.
+
+#org @gText_Route3_PlayerAgreesToChallengePluto
+[BLACK][RIVAL]: [BLUE]That's the spirit!
+
+#org @gText_Route3_RivalTracksPluto
+[BLACK][RIVAL]: [BLUE]They ran off that way\nright?
+
+#org @gText_Route3_AssistantConfirms
+[BLACK]Assistant: [BLUE]Y-yes, they did[.]\nAre you certain you want to help?\pTeam Pluto is dangerous, you know.\pI'm not a trainer, but I can go\nfind some.
+
+#org @gText_Route3_RivalSaysYoureTrainers
+[BLACK][RIVAL]: [BLUE]Hey, we're trainers too!\nYou don't have to worry about us,\lwe're really strong.\lJust wait here, alright?
+
+#org @gText_Route3_AssistantExplainsRubarrDesert
+[BLACK]Assistant: [BLUE]Alright, if you're certain,\nthen I suppose I can't stop you.\lPlease be careful though.\pThey ran into Rubarr Desert.\nIt's known to be an inhospitable\lplace.\pI'd suggest you're fully prepared\nbefore going there.
+
+#org @gText_Route3_RivalThanksAssistant
+[BLACK][RIVAL]: [BLUE]Got it, thanks!
+
+#org @gText_Route3_RivalUrgesPlayerToHurry
+[BLACK][RIVAL]: [BLUE]Let's hurry! We have to\ncatch up to them before we lose\lthem.
+
+#org @gText_Route3_Assistant
+I'll wait here for you to retrieve\nthe DexNav shipment from Team\lPluto, but please be careful.
+
+#org @gText_Route3_AssistantWhenPlayerHasToBeatPluto
+[BLUE]H-hey, you aren't going to leave me\nhigh and dry, are you?\pTeam Pluto took the DexNavs and\nescaped into Rubarr Desert.
+
+// Assistant realizes player and rival are two of the recipients, gives to them
+// Rival: You know what happens next, right? A Pok\emon battle!  Haha, just kidding! Fighting Team Pluto took a lot out of me. Let's meet up again in Ferrox Village ok?

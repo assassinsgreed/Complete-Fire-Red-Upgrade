@@ -52,8 +52,8 @@
 #define FLAG_HIDE_RIVAL_IN_THEIR_HOUSE                     0x02E
 #define FLAG_HIDE_RIVAL_IN_ANTHRA                          0x02F
 #define FLAG_HIDE_REPORTERS_IN_ANTHRA                      0x030
-#define FLAG_HIDE_NUGGET_BRIDGE_ROCKET                     0x031
-#define FLAG_HIDE_BILL_CLEFAIRY                            0x032
+#define FLAG_HIDE_RIVAL_AND_THUGS_ON_ROUTE_3               0x031
+#define FLAG_HIDE_AIDE_ON_ROUTE_3                          0x032
 #define FLAG_HIDE_BILL_HUMAN_SEA_COTTAGE                   0x033
 #define FLAG_HIDE_TOWER_FUJI                               0x034
 #define FLAG_HIDE_POKEHOUSE_FUJI                           0x035

@@ -21,13 +21,14 @@
 #define TRAINER_RHODANZI_GYM_LEADER_TERRENCE         14
 // Route 7
 #define TRAINER_ROUTE_7_CAMPER_CARLISLE              15
-// Route 8
+// Route 3
 #define TRAINER_ROUTE_3_PICKNICKER_TANA              17
 #define TRAINER_ROUTE_3_BUG_CATCHER_IRWIN            18
 #define TRAINER_ROUTE_3_YOUNGSTER_LOGAN              19
 #define TRAINER_ROUTE_3_TWINS_NINA_AND_MEG           20
 #define TRAINER_ROUTE_3_NINJA_BOY_BOTAN              21
 #define TRAINER_ROUTE_3_ROCKER_JUDE                  22
+#define TRAINER_RIVAL2                               28
 // Rubarr Desert
 #define TRAINER_RUBARR_DESERT_NURSE_JAINA            23
 #define TRAINER_RUBARR_DESERT_BIRD_KEEPER_NOLAN      24

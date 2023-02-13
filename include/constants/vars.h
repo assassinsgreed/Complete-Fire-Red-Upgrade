@@ -130,7 +130,7 @@
 #define VAR_MAP_SCENE_ROUTE22                                                  0x4054
 #define VAR_MAP_SCENE_ANTHRA_TOWN_STARTING_EVENTS                              0x4055
 #define VAR_MAP_SCENE_PALLET_TOWN_PLAYERS_HOUSE_2F                             0x4056
-#define VAR_MAP_SCENE_VIRIDIAN_CITY_MART                                       0x4057
+#define VAR_MAP_SCENE_ROUTE_3_AND_RUBARR_EVENTS                                0x4057
 #define VAR_MAP_SCENE_PALLET_TOWN_GARYS_HOUSE                                  0x4058
 #define VAR_MAP_SCENE_POKEMON_TOWER_6F                                         0x4059
 #define VAR_MAP_SCENE_VIRIDIAN_CITY_GYM_DOOR                                   0x405A
