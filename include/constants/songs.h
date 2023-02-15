@@ -33,11 +33,11 @@
 // Battle (Custom)
 #define BGM_BATTLE_RIVAL 0x10A // Rival battle BW
 #define BGM_BATTLE_RIVAL_2 0x18E // Rival Hugh battle BW2
-#define BGM_BATTLE_TEAM_PLUTO_GRUNTS 0x18A // Neo Plasma Battle BW2
-#define BGM_BATTLE_TEAM_PLUTO_ADMINS 0x17C // N Battle BW
+#define BGM_BATTLE_TEAM_PLUTO_GRUNTS 0x1A5 // Plasma Battle BW1
+#define BGM_BATTLE_TEAM_PLUTO_ADMINS 0x18A // Neo Plasma Battle BW2
 #define BGM_BATTLE_TEAM_PLUTO_ADMINS_FINAL 0x15C // N final battle theme BW
 #define BGM_BATTLE_TEAM_PLUTO_KURTIS 0x15D // Ghetsis battle theme BW
-#define BGM_BATTLE_ALISTAIR // Colress Battle Theme BW2
+#define BGM_BATTLE_ALISTAIR 0x17C // N Battle BW
 
 #define MUS_DUMMY 0
 #define SE_STOP 0

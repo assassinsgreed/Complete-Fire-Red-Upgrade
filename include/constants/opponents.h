@@ -29,6 +29,7 @@
 #define TRAINER_ROUTE_3_NINJA_BOY_BOTAN              21
 #define TRAINER_ROUTE_3_ROCKER_JUDE                  22
 #define TRAINER_RIVAL2                               28
+#define TRAINER_ROUTE_3_TEAM_PLUTO_RAUL              29
 // Rubarr Desert
 #define TRAINER_RUBARR_DESERT_NURSE_JAINA            23
 #define TRAINER_RUBARR_DESERT_BIRD_KEEPER_NOLAN      24

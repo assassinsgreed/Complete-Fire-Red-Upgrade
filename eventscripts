@@ -226,6 +226,7 @@ npc 3 21 13 EventScript_Route3_TwinsNinaAndMeg_Nina
 npc 3 21 14 EventScript_Route3_TwinsNinaAndMeg_Meg
 npc 3 21 15 EventScript_Route3_NinjaBoyBotan
 npc 3 21 16 EventScript_Route3_RockerJude
+npc 3 21 20 EventScript_Route3_TeamPlutoRaul
 npc 3 21 21 EventScript_Route3_Assistant
 sign 3 21 0 SignScript_Route3_TrainerTips
 sign 3 21 1 SignScript_Route3_Navigation

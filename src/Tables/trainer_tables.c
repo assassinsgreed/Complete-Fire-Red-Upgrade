@@ -177,8 +177,13 @@ const struct TrainerMonNoItemDefaultMoves sParty_Route3_NinjaBoyBotan[] = {
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_Route3_RockerJude[] = {
-    { .lvl = 13, .species = SPECIES_GROOKEY},
+    { .lvl = 13, .species = SPECIES_GROOKEY },
     { .lvl = 14, .species = SPECIES_TOXEL }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route3_TeamPlutoRaul[] = {
+    { .lvl = 12, .species = SPECIES_NICKIT },
+    { .lvl = 13, .species = SPECIES_ZUBAT }
 };
 // #endregion
 
@@ -503,6 +508,17 @@ const struct Trainer gTrainers[] = {
         .partySize = NELEMS(sParty_Route3_RockerJude),
         .party = {.NoItemDefaultMoves = sParty_Route3_RockerJude}
     },
+    [TRAINER_ROUTE_3_TEAM_PLUTO_RAUL] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_TEAM_PLUTO,
+        .trainerPic = TRAINER_PIC_PLUTO_GRUNT_M,
+        .trainerName = {_R, _a, _u, _l, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = NELEMS(sParty_Route3_TeamPlutoRaul),
+        .party = {.NoItemDefaultMoves = sParty_Route3_TeamPlutoRaul}
+    },
     // #endregion
     // #region Rubarr Desert
     [TRAINER_RUBARR_DESERT_NURSE_JAINA] = {
@@ -551,7 +567,7 @@ const struct Trainer gTrainers[] = {
         .doubleBattle = FALSE,
         .aiFlags = AI_SCRIPT_RISKY,
         .partySize = NELEMS(sParty_RubarrDesert_BlackbeltKobiyashi),
-        .party = {.NoItemDefaultMoves = sParty_RubarrDesert_BlackbeltKobiyashi}
+        .party = {.ItemDefaultMoves = sParty_RubarrDesert_BlackbeltKobiyashi}
     },
     [TRAINER_RUBARR_DESERT_RUIN_MANIAC_ALBERT] = {
         .partyFlags = 0,

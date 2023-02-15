@@ -8,6 +8,7 @@
 .equ Rival, 0x12 @ Person # 18
 .equ PlutoGruntA, 0x13 @ Person # 19
 .equ PlutoGruntB, 0x14 @ Person # 20
+.equ PlutoGruntTrainer, 0x15 @ Person # 21
 .equ Assistant, 0x16 @ Person # 22
 .equ Route3RubarrStoryEventVar, 0x4057
 
@@ -101,6 +102,12 @@ EventScript_Route3_NinjaBoyBotan:
 EventScript_Route3_RockerJude:
     trainerbattle0 0x0 0x16 0x0 gText_Route3_RockerJude_Intro gText_Route3_RockerJude_Defeat
     msgbox gText_Route3_RockerJude_Chat MSG_NORMAL
+    end
+
+.global EventScript_Route3_TeamPlutoRaul
+EventScript_Route3_TeamPlutoRaul:
+    trainerbattle0 0x0 0x1D 0x0 gText_Route3_TeamPlutoRaul_Intro gText_Route3_TeamPlutoRaul_Defeat
+    msgbox gText_Route3_TeamPlutoRaul_Chat MSG_NORMAL
     end
 
 .global EventScript_Route3_Assistant
