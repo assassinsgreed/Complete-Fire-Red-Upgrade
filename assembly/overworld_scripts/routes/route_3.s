@@ -22,9 +22,16 @@ MapScript_Route3:
 
 MapEntryScript_Route3:
     compare Route3RubarrStoryEventVar VarStoryMetAssistant
+    if lessthan _goto HideAssistant
+    movesprite2 Assistant 0x04A 0x000E @ Update position of Assistant permanently
+    compare Route3RubarrStoryEventVar VarStoryMetAssistant
     if greaterorequal _goto End
     setflag 0x32 @ Hide Assistant
     end
+
+HideAssistant:
+    setflag 0x32 @ hide assistant
+    goto End
 
 .global SignScript_Route3_TrainerTips
 SignScript_Route3_TrainerTips:
@@ -120,10 +127,7 @@ TileScript_Route3_InitiateDexNavEvent:
     msgbox gText_Route3_RivalInitiatesBattle MSG_NORMAL
     setvar 0x503A 0x2
     setvar 0x503B 0x0
-    trainerbattle3 0x0 0x1 0x100 gText_Route3_BeatRival
-    @ trainerbattle3 0x0 0x1C 0x100 gText_Route3_BeatRival
-    showsprite PlutoGruntA
-    showsprite PlutoGruntB
+    trainerbattle3 0x0 0x1C 0x100 gText_Route3_BeatRival
     pause DELAY_HALFSECOND
     clearflag 0x32 @ Show Assistant
     showsprite Assistant
@@ -203,8 +207,7 @@ TileScript_Route3_InitiateDexNavEvent:
     applymovement Rival m_PlutoRunsAway
     waitmovement ALLEVENTS
     hidesprite Rival
-    movesprite2 Assistant 0x04A 0x000E @ Update position of Assistant permanently  TODO: Not working >:(
-    hidesprite Rival
+    movesprite2 Assistant 0x04A 0x000E @ Update position of Assistant permanently
     setflag 0x31 @ Hide rival on Route 3
     setvar Route3RubarrStoryEventVar VarStoryMetAssistant
     release
