@@ -19,6 +19,7 @@ extern const u8 FeMCVSSeekerBikeTiles[];
 // Characters
 extern const u8 PlutoGruntMaleTiles[];
 extern const u8 PlutoGruntFemaleTiles[];
+extern const u8 PlutoAdminIreneTiles[];
 extern const u8 RivalTiles[];
 extern const u8 ProfessorHawthorneTiles[];
 extern const u8 LeaderTerrenceTiles[];
@@ -260,6 +261,19 @@ static const struct SpriteFrameImage Table_PlutoGruntFemale[] =
     overworld_frame(PlutoGruntFemaleTiles, 2, 4, 6),
     overworld_frame(PlutoGruntFemaleTiles, 2, 4, 7),
     overworld_frame(PlutoGruntFemaleTiles, 2, 4, 8),
+};
+
+static const struct SpriteFrameImage Table_PlutoAdminIrene[] =
+{
+    overworld_frame(PlutoAdminIreneTiles, 2, 4, 0),
+    overworld_frame(PlutoAdminIreneTiles, 2, 4, 1),
+    overworld_frame(PlutoAdminIreneTiles, 2, 4, 2),
+    overworld_frame(PlutoAdminIreneTiles, 2, 4, 3),
+    overworld_frame(PlutoAdminIreneTiles, 2, 4, 4),
+    overworld_frame(PlutoAdminIreneTiles, 2, 4, 5),
+    overworld_frame(PlutoAdminIreneTiles, 2, 4, 6),
+    overworld_frame(PlutoAdminIreneTiles, 2, 4, 7),
+    overworld_frame(PlutoAdminIreneTiles, 2, 4, 8),
 };
 
 static const struct SpriteFrameImage Table_Rival[] =
@@ -657,6 +671,26 @@ const struct EventObjectGraphicsInfo GraphicsInfo_PlutoGruntFemale =
     .subspriteTables = gEventObjectSpriteOamTables_16x32,
     .anims = gEventObjectImageAnimTable_Standard,
     .images = Table_PlutoGruntFemale,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+const struct EventObjectGraphicsInfo GraphicsInfo_PlutoAdminIrene =
+{
+    .tileTag = 0xFFFF,
+    .paletteTag1 = 0x1201,
+    .paletteTag2 = EVENT_OBJ_PAL_TAG_NONE,
+    .size = (16 * 32) / 2,
+    .width = 16,
+    .height = 32,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .disableReflectionPaletteLoad = FALSE,
+    .tracks = TRACKS_FOOT,
+    .gender = FEMALE,
+    .oam = gEventObjectBaseOam_16x32,
+    .subspriteTables = gEventObjectSpriteOamTables_16x32,
+    .anims = gEventObjectImageAnimTable_Standard,
+    .images = Table_PlutoAdminIrene,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 

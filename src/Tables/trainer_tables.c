@@ -213,6 +213,63 @@ const struct TrainerMonNoItemDefaultMoves sParty_RubarrDesert_RuinManiacAlbert[]
     { .lvl = 14, .species = SPECIES_BONSLY },
     { .lvl = 14, .species = SPECIES_YAMASK_G },
 };
+
+const struct TrainerMonNoItemDefaultMoves sParty_RubarrDesert_TeamPlutoMika[] = {
+    { .lvl = 12, .species = SPECIES_NICKIT },
+    { .lvl = 12, .species = SPECIES_NICKIT },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_RubarrDesert_TeamPlutoMarcel[] = {
+    { .lvl = 11, .species = SPECIES_ZUBAT },
+    { .lvl = 11, .species = SPECIES_ZUBAT },
+    { .lvl = 13, .species = SPECIES_SANDILE },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_RubarrDesert_TeamPlutoTana[] = {
+    { .lvl = 12, .species = SPECIES_SANDILE },
+    { .lvl = 12, .species = SPECIES_KOFFING_G },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_RubarrDesert_TeamPlutoEna[] = {
+    { .lvl = 13, .species = SPECIES_ZUBAT },
+    { .lvl = 13, .species = SPECIES_VENIPEDE },
+};
+
+const struct TrainerMonNoItemCustomMoves sParty_RubarrDesert_TeamPlutoAdminIrene[] = {
+    {
+        .lvl = 13,
+        .species = SPECIES_NICKIT,
+        .moves = {
+            MOVE_SNARL,
+            MOVE_BEATUP,
+            MOVE_HONECLAWS,
+            MOVE_QUICKATTACK
+        },
+        .ability = ABILITY_STAKEOUT
+    },
+    {
+        .lvl = 13,
+        .species = SPECIES_SANDILE,
+        .moves = {
+            MOVE_SCARYFACE,
+            MOVE_HONECLAWS,
+            MOVE_POWERTRIP,
+            MOVE_MEANLOOK
+        },
+        .ability = ABILITY_INTIMIDATE
+    },
+    {
+        .lvl = 15,
+        .species = SPECIES_SALANDIT,
+        .moves = {
+            MOVE_EMBER,
+            MOVE_SMOG,
+            MOVE_FAKEOUT,
+            MOVE_SCRATCH
+        },
+        .ability = ABILITY_CORROSION
+    },
+};
 // #endregion
 
 // #region Route 7
@@ -580,6 +637,61 @@ const struct Trainer gTrainers[] = {
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
         .partySize = NELEMS(sParty_RubarrDesert_RuinManiacAlbert),
         .party = {.NoItemDefaultMoves = sParty_RubarrDesert_RuinManiacAlbert}
+    },
+    [TRAINER_RUBARR_DESERT_TEAM_PLUTO_MIKA] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_TEAM_PLUTO,
+        .trainerPic = TRAINER_PIC_PLUTO_GRUNT_F,
+        .trainerName = {_M, _i, _k, _a, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = NELEMS(sParty_RubarrDesert_TeamPlutoMika),
+        .party = {.NoItemDefaultMoves = sParty_RubarrDesert_TeamPlutoMika}
+    },
+    [TRAINER_RUBARR_DESERT_TEAM_PLUTO_MARCEL] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_TEAM_PLUTO,
+        .trainerPic = TRAINER_PIC_PLUTO_GRUNT_M,
+        .trainerName = {_M, _a, _r, _c, _e, _l, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = NELEMS(sParty_RubarrDesert_TeamPlutoMarcel),
+        .party = {.NoItemDefaultMoves = sParty_RubarrDesert_TeamPlutoMarcel}
+    },
+    [TRAINER_RUBARR_DESERT_TEAM_PLUTO_TANA] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_TEAM_PLUTO,
+        .trainerPic = TRAINER_PIC_PLUTO_GRUNT_F,
+        .trainerName = {_T, _a, _n, _a, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = NELEMS(sParty_RubarrDesert_TeamPlutoTana),
+        .party = {.NoItemDefaultMoves = sParty_RubarrDesert_TeamPlutoTana}
+    },
+    [TRAINER_RUBARR_DESERT_TEAM_PLUTO_ENA] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_TEAM_PLUTO,
+        .trainerPic = TRAINER_PIC_PLUTO_GRUNT_F,
+        .trainerName = {_E, _n, _a, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = NELEMS(sParty_RubarrDesert_TeamPlutoEna),
+        .party = {.NoItemDefaultMoves = sParty_RubarrDesert_TeamPlutoEna}
+    },
+    [TRAINER_RUBARR_DESERT_TEAM_PLUTO_ADMIN_IRENE] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_TEAM_PLUTO_ADMIN,
+        .trainerPic = TRAINER_PIC_PLUTO_ADMIN_IRENE,
+        .trainerName = {_I, _r, _e, _n, _e, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_TRY_TO_FAINT,
+        .partySize = NELEMS(sParty_RubarrDesert_TeamPlutoAdminIrene),
+        .party = {.NoItemCustomMoves = sParty_RubarrDesert_TeamPlutoAdminIrene}
     },
     // #endregion
     // #region Route 7

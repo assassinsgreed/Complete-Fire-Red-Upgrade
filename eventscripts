@@ -259,6 +259,11 @@ npc 1 1 22 EventScript_Common_Strength
 npc 1 1 23 EventScript_Common_Strength
 npc 1 1 24 ItemScript_Common_FocusSash
 npc 1 1 25 EventScript_RubarrDesert_CaveGuide
+npc 1 1 26 EventScript_RubarrDesert_TeamPlutoMika
+npc 1 1 27 EventScript_RubarrDesert_TeamPlutoMarcel
+npc 1 1 28 EventScript_RubarrDesert_TeamPlutoTana
+npc 1 1 29 EventScript_RubarrDesert_TeamPlutoClancy
+npc 1 1 30 EventScript_RubarrDesert_TeamPlutoEna
 sign 1 1 0 SignScript_RubarrDesert_Oasis
 
 ## Cave BF1

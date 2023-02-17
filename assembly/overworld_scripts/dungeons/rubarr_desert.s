@@ -100,3 +100,21 @@ EventScript_RubarrDesert_CaveGuide_Info:
 SignScript_RubarrDesert_Oasis:
     msgbox gText_RubarrDesert_OasisSign MSG_SIGN
     end
+
+.global EventScript_RubarrDesert_TeamPlutoMika
+EventScript_RubarrDesert_TeamPlutoMika:
+    trainerbattle0 0x0 0x1E 0x0 gText_RubarrDesert_TeamPlutoMika_Intro gText_RubarrDesert_TeamPlutoMika_Defeat
+    msgbox gText_RubarrDesert_TeamPlutoMika_Chat MSG_NORMAL
+    end
+
+.global EventScript_RubarrDesert_TeamPlutoMarcel
+EventScript_RubarrDesert_TeamPlutoMarcel:
+    trainerbattle0 0x0 0x1F 0x0 gText_RubarrDesert_TeamPlutoMarcel_Intro gText_RubarrDesert_TeamPlutoMarcel_Defeat
+    msgbox gText_RubarrDesert_TeamPlutoMarcel_Chat MSG_NORMAL
+    end
+
+.global EventScript_RubarrDesert_TeamPlutoTana
+EventScript_RubarrDesert_TeamPlutoTana:
+    trainerbattle0 0x0 0x20 0x0 gText_RubarrDesert_TeamPlutoTana_Intro gText_RubarrDesert_TeamPlutoTana_Defeat
+    msgbox gText_RubarrDesert_TeamPlutoTana_Chat MSG_NORMAL
+    end
