@@ -57,12 +57,16 @@ PAL_DEFINE(Galavan)
 PAL_DEFINE(BigMo)
 PAL_DEFINE(Tessy)
 
+extern const u8 gTrainerBackPic_RivalPal[];
+#define gTrainerPalette_Rival gTrainerBackPic_RivalPal
+
 const struct CompressedSpritePalette gTrainerBackPicPaletteTable[] =
 {
 	PAL_ENTRY(BRENDAN, Brendan)
 	PAL_ENTRY(MAY, May)
 	PAL_ENTRY(POKE_DUDE, PokeDude)
 	PAL_ENTRY(OLD_MAN, OldMan)
+	PAL_ENTRY(RIVAL, Rival)
 
 #ifndef UNBOUND
 	PAL_ENTRY(RED, Red)
@@ -106,8 +110,9 @@ const struct CompressedSpritePalette gTrainerBackPicPaletteTable[] =
 #define gTrainerBackAnims_May (const union AnimCmd* const*) 0x8239F54
 #define gTrainerBackAnims_PokeDude (const union AnimCmd* const*) 0x8239F54
 #define gTrainerBackAnims_OldMan (const union AnimCmd* const*) 0x8239F5C
+#define gTrainerBackAnims_Rival (const union AnimCmd* const*) 0x8239F54
 #define gTrainerBackAnims_PokeKid (const union AnimCmd* const*) 0x8239F54
-#define gTrainerBackAnims_Rival (const union AnimCmd* const*) 0x8239F44
+// #define gTrainerBackAnims_Rival (const union AnimCmd* const*) 0x8239F44
 #define gTrainerBackAnims_Jax (const union AnimCmd* const*) 0x8239F44
 #define gTrainerBackAnims_RedNew (const union AnimCmd* const*) 0x8239F54
 #define gTrainerBackAnims_EthanLyra (const union AnimCmd* const*) 0x8239F44
@@ -148,6 +153,7 @@ const union AnimCmd* const* const gTrainerBackAnimsPtrTable[] =
 	[TRAINER_BACK_PIC_MAY] = gTrainerBackAnims_May,
 	[TRAINER_BACK_PIC_POKE_DUDE] = gTrainerBackAnims_PokeDude,
 	[TRAINER_BACK_PIC_OLD_MAN] = gTrainerBackAnims_OldMan,
+	[TRAINER_BACK_PIC_RIVAL] = gTrainerBackAnims_Rival,
 
 #ifdef UNBOUND
 	[TRAINER_BACK_PIC_MARLON] = gTrainerBackAnims_Marlon,
@@ -188,6 +194,7 @@ const struct MonCoords gTrainerBackPicCoords[] =
 	[TRAINER_BACK_PIC_MAY] = 		{.coords = 8, .y_offset = 4},
 	[TRAINER_BACK_PIC_POKE_DUDE] = 	{.coords = 8, .y_offset = 4},
 	[TRAINER_BACK_PIC_OLD_MAN] = 	{.coords = 8, .y_offset = 4},
+	[TRAINER_BACK_PIC_RIVAL] =      {.coords = 8, .y_offset = 4},
 
 #ifdef UNBOUND
 	[TRAINER_BACK_PIC_MARLON] =            {.coords = 8, .y_offset = 4},
@@ -254,6 +261,7 @@ const struct MonCoords gTrainerBackPicCoords[] =
 
 FOUR_FRAME_TABLE(Brendan)
 FOUR_FRAME_TABLE(May)
+FOUR_FRAME_TABLE(Rival)
 
 #ifdef UNBOUND
 
@@ -338,6 +346,7 @@ const struct SpriteTemplate gSpriteTemplateTable_TrainerBackSprites[] =
 	[TRAINER_BACK_PIC_MAY] = BACK_TEMPLATE(May)
 	[TRAINER_BACK_PIC_POKE_DUDE] = BACK_TEMPLATE(PokeDude)
 	[TRAINER_BACK_PIC_OLD_MAN] = BACK_TEMPLATE(OldMan)
+	[TRAINER_BACK_PIC_RIVAL] = BACK_TEMPLATE(Rival)
 
 #ifdef UNBOUND
 	[TRAINER_BACK_PIC_MARLON] = BACK_TEMPLATE(Marlon)
