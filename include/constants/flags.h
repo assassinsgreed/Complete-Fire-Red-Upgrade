@@ -54,7 +54,7 @@
 #define FLAG_HIDE_REPORTERS_IN_ANTHRA                      0x030
 #define FLAG_HIDE_RIVAL_AND_THUGS_ON_ROUTE_3               0x031
 #define FLAG_HIDE_AIDE_ON_ROUTE_3                          0x032
-#define FLAG_HIDE_BILL_HUMAN_SEA_COTTAGE                   0x033
+#define FLAG_HIDE_RIVAL_AND_IRENE_IN_RUBARR_DESRT          0x033
 #define FLAG_HIDE_TOWER_FUJI                               0x034
 #define FLAG_HIDE_POKEHOUSE_FUJI                           0x035
 #define FLAG_HIDE_LIFT_KEY                                 0x036

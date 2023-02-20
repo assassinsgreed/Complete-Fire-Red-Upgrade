@@ -92,7 +92,7 @@ const struct TrainerMonNoItemCustomMoves sParty_RhodanziCity_Alonso[] = {
             MOVE_CONFUSION,
             MOVE_NONE
         },
-        .ability = ABILITY_SOUNDPROOF
+        .ability = Ability_1 // Soundproof
     },
     {
         .lvl = 8,
@@ -103,7 +103,7 @@ const struct TrainerMonNoItemCustomMoves sParty_RhodanziCity_Alonso[] = {
             MOVE_MUDSLAP,
             MOVE_NONE
         },
-        .ability = ABILITY_MIMICRY
+        .ability = Ability_1 // Mimicry
     },
 };
 
@@ -117,7 +117,7 @@ const struct TrainerMonNoItemCustomMoves sParty_RhodanziCity_Brandon[] = {
             MOVE_PECK,
             MOVE_NONE
         },
-        .ability = Ability_Hidden
+        .ability = Ability_Hidden // Electric Surge
     }
 };
 
@@ -132,7 +132,7 @@ const struct TrainerMonItemCustomMoves sParty_RhodanziCity_LeaderTerrence[] = {
             MOVE_NONE
         },
         .heldItem = ITEM_TERRAIN_EXTENDER,
-        .ability = Ability_Hidden
+        .ability = Ability_Hidden // Grassy Surge
     },
     {
         .lvl = 12,
@@ -143,7 +143,7 @@ const struct TrainerMonItemCustomMoves sParty_RhodanziCity_LeaderTerrence[] = {
             MOVE_TAILWHIP,
             MOVE_NONE
         },
-        .ability = Ability_Hidden
+        .ability = Ability_Hidden // Grass Pelt
     }
 };
 // #endregion
@@ -230,8 +230,13 @@ const struct TrainerMonNoItemDefaultMoves sParty_RubarrDesert_TeamPlutoTana[] = 
     { .lvl = 12, .species = SPECIES_KOFFING_G },
 };
 
+const struct TrainerMonNoItemDefaultMoves sParty_RubarrDesert_TeamPlutoClancy[] = {
+    { .lvl = 12, .species = SPECIES_NICKIT },
+    { .lvl = 13, .species = SPECIES_CROAGUNK },
+};
+
 const struct TrainerMonNoItemDefaultMoves sParty_RubarrDesert_TeamPlutoEna[] = {
-    { .lvl = 13, .species = SPECIES_ZUBAT },
+    { .lvl = 12, .species = SPECIES_ZUBAT },
     { .lvl = 13, .species = SPECIES_VENIPEDE },
 };
 
@@ -245,7 +250,7 @@ const struct TrainerMonNoItemCustomMoves sParty_RubarrDesert_TeamPlutoAdminIrene
             MOVE_HONECLAWS,
             MOVE_QUICKATTACK
         },
-        .ability = ABILITY_STAKEOUT
+        .ability = Ability_Hidden // Stakeout
     },
     {
         .lvl = 13,
@@ -256,7 +261,7 @@ const struct TrainerMonNoItemCustomMoves sParty_RubarrDesert_TeamPlutoAdminIrene
             MOVE_POWERTRIP,
             MOVE_MEANLOOK
         },
-        .ability = ABILITY_INTIMIDATE
+        .ability = Ability_1 // Intimidate
     },
     {
         .lvl = 15,
@@ -267,7 +272,7 @@ const struct TrainerMonNoItemCustomMoves sParty_RubarrDesert_TeamPlutoAdminIrene
             MOVE_FAKEOUT,
             MOVE_SCRATCH
         },
-        .ability = ABILITY_CORROSION
+        .ability = Ability_1 // Corrosion
     },
 };
 // #endregion
@@ -671,19 +676,30 @@ const struct Trainer gTrainers[] = {
         .partySize = NELEMS(sParty_RubarrDesert_TeamPlutoTana),
         .party = {.NoItemDefaultMoves = sParty_RubarrDesert_TeamPlutoTana}
     },
+    [TRAINER_RUBARR_DESERT_TEAM_PLUTO_CLANCY] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_TEAM_PLUTO,
+        .trainerPic = TRAINER_PIC_PLUTO_GRUNT_M,
+        .trainerName = {_C, _l, _a, _n, _c, _y, _END},
+        .items = {},
+        .doubleBattle = TRUE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = NELEMS(sParty_RubarrDesert_TeamPlutoClancy),
+        .party = {.NoItemDefaultMoves = sParty_RubarrDesert_TeamPlutoClancy}
+    },
     [TRAINER_RUBARR_DESERT_TEAM_PLUTO_ENA] = {
         .partyFlags = 0,
         .trainerClass = CLASS_TEAM_PLUTO,
         .trainerPic = TRAINER_PIC_PLUTO_GRUNT_F,
         .trainerName = {_E, _n, _a, _END},
         .items = {},
-        .doubleBattle = FALSE,
+        .doubleBattle = TRUE,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
         .partySize = NELEMS(sParty_RubarrDesert_TeamPlutoEna),
         .party = {.NoItemDefaultMoves = sParty_RubarrDesert_TeamPlutoEna}
     },
     [TRAINER_RUBARR_DESERT_TEAM_PLUTO_ADMIN_IRENE] = {
-        .partyFlags = 0,
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
         .trainerClass = CLASS_TEAM_PLUTO_ADMIN,
         .trainerPic = TRAINER_PIC_PLUTO_ADMIN_IRENE,
         .trainerName = {_I, _r, _e, _n, _e, _END},
