@@ -217,6 +217,7 @@ EventScript_RubarrDesert_StoryEvents:
     setvar 0x503B 0x1
     @ Start a tag battle against Admin Irene
     trainerbattle12 0x0 0x23 0x1C 0x6 0x100 gText_RubarrDesert_IreneBattleDefeat
+    playbgm 0x19A @ Encounter Team Pluto
     msgbox gText_RubarrDesert_IreneSurprisedByPlayer MSG_NORMAL
     applymovement PlutoAdminIrene m_LookRight
     applymovement PlutoGruntClancy m_LookLeft
@@ -316,7 +317,6 @@ PlayerTakesTheBlame:
     applymovement PlutoAdminIrene m_Joy
     msgbox gText_RubarrDesert_IreneAcceptsBlame MSG_NORMAL
     applymovement Rival m_Surprise
-    applymovement Rival m_LookRight
     msgbox gText_RubarrDesert_RivalCritizesPlayer MSG_NORMAL
     applymovement Rival m_LookUp
     return
@@ -328,6 +328,6 @@ PlayerDeflectsTheBlame:
 m_RivalRunsToMeetPlayer: .byte run_right, run_up, run_up, run_up, run_right, run_right, run_right, run_up, run_up, run_right, run_right, run_right, end_m 
 m_ClancyAngry: .byte jump_onspot_down, pause_short, jump_onspot_down, end_m
 m_IreneWalksUp: .byte walk_up, walk_up, walk_up, walk_up, walk_right, walk_right, walk_right, walk_up, walk_up, walk_right, walk_up, walk_right, walk_right, end_m 
-m_IreneApproachesPlayer: b.yte walk_right, walk_right, look_down, end_m
-m_IreneLeaves: .byte walk_left, walk_left, walk_down, walk_down, walk_down, walk_left, walk_left, walk_left, walk_left, walk_left, end_m 
+m_IreneApproachesPlayer: .byte walk_right, walk_right, look_down, end_m
+m_IreneLeaves: .byte walk_left, walk_left, walk_down, walk_down, walk_left, walk_left, walk_left, walk_left, walk_left, walk_left, end_m 
 m_RivalLeaves: .byte walk_left, walk_left, walk_left, walk_left, walk_left, walk_left, walk_left, end_m
