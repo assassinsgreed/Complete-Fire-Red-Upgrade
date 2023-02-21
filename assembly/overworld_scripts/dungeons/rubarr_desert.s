@@ -20,7 +20,7 @@ MapScript_RubarrDesert:
 
 MapEntryScript_RubarrDesert_FlightFlag:
     setworldmapflag 0x8A5
-    setflag 0x33 @ Hide Rival and Irene
+    setflag 0x34 @ Hide Rival and Irene
     end
 
 MapEntryScript_RubarrDesert_SetWeather:
@@ -143,7 +143,7 @@ EventScript_RubarrDesert_StoryEvents:
     applymovement PlutoGruntEna m_LookDown
     msgbox gText_RubarrDersert_ClancyCommentsOnPlayer MSG_NORMAL
     msgbox gText_RubarrDersert_EnaCommentsOnPlayer MSG_NORMAL
-    clearflag 0x33 @ Show Rival and Irene
+    clearflag 0x34 @ Show Rival and Irene
     showsprite Rival
     showsprite PlutoAdminIrene
     movesprite Rival 0x30 0x1B
@@ -271,8 +271,8 @@ EventScript_RubarrDesert_StoryEvents:
     waitmovement ALLEVENTS
     hidesprite Rival
     hidesprite PlutoAdminIrene
-    setflag 0x32 @ Hide Team Pluto
-    setflag 0x33 @ Hide Rival and Irene
+    setflag 0x33 @ Hide Team Pluto
+    setflag 0x34 @ Hide Rival and Irene
     setvar Route3RubarrStoryEventVar VarStoryPlayerBeatPluto
     end
 

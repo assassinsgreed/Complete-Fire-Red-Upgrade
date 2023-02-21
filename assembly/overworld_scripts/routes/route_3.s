@@ -27,8 +27,7 @@ MapEntryScript_Route3:
     movesprite2 Assistant 0x04A 0x000E @ Update position of Assistant permanently
     compare Route3RubarrStoryEventVar VarStoryMetAssistant
     if greaterorequal _goto End
-    setflag 0x32 @ Hide Assistant
-    end
+    goto HideAssistant
 
 HideAssistant:
     setflag 0x32 @ hide assistant
@@ -216,6 +215,7 @@ TileScript_Route3_InitiateDexNavEvent:
     hidesprite Rival
     movesprite2 Assistant 0x04A 0x000E @ Update position of Assistant permanently
     setflag 0x31 @ Hide rival on Route 3
+    clearflag 0x33 @ Show Pluto grunts on route 3 & Rubarr Desert
     setvar Route3RubarrStoryEventVar VarStoryMetAssistant
     release
     end
