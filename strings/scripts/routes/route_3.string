@@ -160,5 +160,47 @@ I'll wait here for you to retrieve\nthe DexNav shipment from Team\lPluto, but pl
 #org @gText_Route3_AssistantWhenPlayerHasToBeatPluto
 [BLUE]H-hey, you aren't going to leave me\nhigh and dry, are you?\pTeam Pluto took the DexNavs and\nescaped into Rubarr Desert.
 
-// Assistant realizes player and rival are two of the recipients, gives to them
-// Rival: You know what happens next, right? A Pok\emon battle!  Haha, just kidding! Fighting Team Pluto took a lot out of me. Let's meet up again in Ferrox Village ok?
+#org @gText_Route3_AssistantWelcomesPlayerBack
+[BLACK]Assistant: [BLUE]Ah, you're back, and\nunharmed at that! But where is\lyour friend?
+
+#org @gText_Route3_RivalJoinsPlayer
+[BLACK][RIVAL]: [BLUE]Perfect timing, [PLAYER]!\nLet's return the DexNavs and get\lmoving.
+
+#org @gText_Route3_ReturningDexNavs
+[BLACK]Returned the DexNavs to the\nassistant.
+
+#org @gText_Route3_AssistantThanksPlayer
+[BLACK]Assistant: [BLUE]Why, thank you.
+
+#org @gText_Route3_AssistantClarifiesNames
+[BLACK]Assistant: [BLUE]Wait[.] Did you say\n"[PLAYER]\" just now? Would that\lmean you are [RIVAL], then?
+
+#org @gText_Route3_RivalConfirmsNames
+[BLACK][RIVAL]: [BLUE]Yep, that's us! I'm\nsurprised you know about us\lalready.
+
+#org @gText_Route3_AssistantGivesDexNavs
+[BLACK]Assistant: [BLUE]Oh, what fortuitous luck!\nIt just so happens that two of\lthese DexNavs were meant for you.\pWhy don't you take them, with my\nthanks.
+
+#org @gText_Route3_ReceiveDexNav
+[BLACK]You received a DexNav!
+
+#org @gText_Route3_RivalCommentsOnDexNav
+[BLACK][RIVAL]: [BLUE]Wow, we really lucked out!
+
+#org @gText_Route3_AssistantAsksIfYouNeedDexNavInstructions
+[BLACK]Assistant: [BLUE]Would you like me to\nexplain how it works?
+
+#org @gText_Route3_AssistantGivesDexNavInstructions
+[BLACK]Assistant: [BLUE]Ahem. Let me just pull out\nthe instructions[.]\p"To use the DexNav, open your Start\nmenu and press Right, then select\lDexNav.\"\p"The interface will show Pok\emon\nyou've seen or caught that are\lfound nearby, and which habitat\lthey can be found in.\"\p"Simply select a Pok\emon to begin\nsearching for it. You may see\lrustling grass, bubbling water, or\ldust clouds nearby, depending on\lwhere you are.\lSimply walk to one of those spaces\lto encounter the Pok\emon you are\lsearching for.\"\p"If you search for the same Pok\emon\noften, you may find stronger\lPok\emon, indicated by their star\llevel. You may also find Pok\emon\lwith rare moves or held items.\"\p"If you can't find a Pok\emon, move\nto an open area and try again.\"\pWhew, that's a lot! But I'm sure\nyou'll get the hang of it as you\luse it.
+
+#org @gText_Route3_AssistantNoDexNavInstructions
+[BLACK]Assistant: [BLUE]Very well. It's easy\nenough to pick up by using.
+
+#org @gText_Route3_AssistantContinuesOn
+[BLACK]Assistant: [BLUE]Now then, I must be off to\ndeliver the rest of these DexNavs.\pThanks again, and safe travels young\nones.
+
+#org @gText_Route3_RivalWantsToBattleAgain
+[BLACK][RIVAL]: [BLUE]You know what happens next,\nright? A Pok\emon battle!
+
+#org @gText_Route3_RivalContinuesOn
+[BLACK][RIVAL]: [BLUE]Haha, just kidding!\pFighting Team Pluto took a lot out\nof me. Let's meet up again in\lFerrox Village okay?

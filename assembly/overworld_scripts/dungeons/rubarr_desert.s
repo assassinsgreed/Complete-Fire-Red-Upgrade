@@ -249,7 +249,7 @@ EventScript_RubarrDesert_StoryEvents:
     applymovement Rival m_LookUp
     msgbox gText_RubarrDesert_ClancyGivesUpDexNavs MSG_NORMAL
     fanfare 0x13E
-    msgbox gText_RubarrDesert_GetDexNavs MSG_NORMAL
+    msgbox gText_RubarrDesert_GetDexNavs MSG_KEEPOPEN
     waitfanfare
     applymovement PlutoGruntClancy m_LookRight
     applymovement PlutoGruntEna m_LookLeft

@@ -111,9 +111,89 @@ EventScript_Route3_TeamPlutoRaul:
 
 .global EventScript_Route3_Assistant
 EventScript_Route3_Assistant:
-    @ TODO: event for when the dex navs are retrieved
+    compare Route3RubarrStoryEventVar VarStoryPlayerBeatPluto
+    if equal _goto ReturningDexNavs
     npcchat gText_Route3_Assistant
     end
+
+ReturningDexNavs:
+    compareplayerfacing INTERNAL_LEFT
+    if equal _call MovePlayerBelowAssistantRight
+    compareplayerfacing INTERNAL_RIGHT
+    if equal _call MovePlayerBelowAssistantLeft
+    waitmovement ALLEVENTS
+    faceplayer
+    msgbox gText_Route3_AssistantWelcomesPlayerBack MSG_NORMAL
+    showsprite Rival
+    movesprite Rival 0x49 0x14
+    applymovement Rival m_RivalWalksUp
+    waitmovement ALLEVENTS
+    applymovement PLAYER m_LookLeft
+    msgbox gText_Route3_RivalJoinsPlayer MSG_NORMAL
+    applymovement Rival m_LookUp
+    applymovement PLAYER m_LookUp
+    fanfare 0x13E
+    msgbox gText_Route3_ReturningDexNavs MSG_KEEPOPEN
+    waitfanfare
+    msgbox gText_Route3_AssistantThanksPlayer MSG_NORMAL
+    applymovement Assistant m_Question
+    msgbox gText_Route3_AssistantClarifiesNames MSG_NORMAL
+    applymovement Rival m_Joy
+    msgbox gText_Route3_RivalConfirmsNames MSG_NORMAL
+    applymovement Assistant m_Surprise
+    msgbox gText_Route3_AssistantGivesDexNavs MSG_NORMAL
+    fanfare 0x13E
+    msgbox gText_Route3_ReceiveDexNav MSG_KEEPOPEN
+    waitfanfare
+    setflag 0x91E @ Show DexNav
+    setflag 0x92A @ Show held items in DexNav UI
+    applymovement Rival m_LookRight
+    applymovement PLAYER m_LookLeft
+    msgbox gText_Route3_RivalCommentsOnDexNav MSG_NORMAL
+    applymovement Rival m_LookUp
+    applymovement PLAYER m_LookUp
+    msgbox gText_Route3_AssistantAsksIfYouNeedDexNavInstructions MSG_YESNO
+    compare LASTRESULT YES
+    if equal _call DexNavInstructions
+    if notequal _call NoDexNavInstructions
+    msgbox gText_Route3_AssistantContinuesOn MSG_NORMAL
+    applymovement Assistant m_WalkRight
+    waitmovement ALLEVENTS
+    applymovement Assistant m_AssistantLeaves
+    waitmovement ALLEVENTS
+    applymovement Rival m_LookRight
+    applymovement PLAYER m_LookLeft
+    playbgm 0x195 @ Rival theme
+    msgbox gText_Route3_RivalWantsToBattleAgain MSG_NORMAL
+    fadedefaultbgm
+    msgbox gText_Route3_RivalContinuesOn MSG_NORMAL
+    applymovement PLAYER m_LookUp
+    applymovement Rival m_WalkUp
+    waitmovement ALLEVENTS
+    applymovement Rival m_RivalWalksUp
+    waitmovement ALLEVENTS
+    setvar Route3RubarrStoryEventVar VarStoryPlayerGotDexNav
+    hidesprite Rival
+    hidesprite Assistant
+    setflag 0x32 @ Hide assistant
+    end
+
+MovePlayerBelowAssistantRight:
+    applymovement PLAYER m_TalkWithAssistantRight
+    return
+
+MovePlayerBelowAssistantLeft:
+    applymovement PLAYER m_TalkWithAssistantLeft
+    return
+
+DexNavInstructions:
+    playbgm 0x110 @ Follow me (instructions)
+    msgbox gText_Route3_AssistantGivesDexNavInstructions MSG_NORMAL
+    return
+
+NoDexNavInstructions:
+    msgbox gText_Route3_AssistantNoDexNavInstructions MSG_NORMAL
+    return
 
 .global TileScript_Route3_InitiateDexNavEvent
 TileScript_Route3_InitiateDexNavEvent:
@@ -286,3 +366,7 @@ m_AssistantWalkToAmbush: .byte walk_down, walk_down, walk_down, walk_down, walk_
 m_AssistantQuestioningAmbush: .byte look_left, pause_long, pause_long, look_right, end_m
 m_PlutoRunsAway: .byte run_down, run_down, run_down, run_down, run_down, run_down, end_m
 m_MeetAssistant: .byte walk_up, walk_up, walk_left, walk_up, look_right, end_m
+m_TalkWithAssistantRight: .byte walk_down, walk_left, look_up, end_m
+m_TalkWithAssistantLeft: .byte walk_down, walk_right, look_up, end_m
+m_RivalWalksUp: .byte walk_up, walk_up, walk_up, walk_up, walk_up, look_right, end_m
+m_AssistantLeaves: .byte walk_down, walk_down, walk_down, walk_down, walk_down, walk_down, walk_down, end_m
