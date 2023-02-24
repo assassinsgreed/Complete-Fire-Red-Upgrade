@@ -70,6 +70,12 @@ PlayerWalkUp_Return:
     waitmovement PLAYER
     return
 
+.global PlayerWalkLeft_Return
+PlayerWalkLeft_Return:
+    applymovement PLAYER m_WalkLeft
+    waitmovement PLAYER
+    return
+
 .global PlayerWalkRight_Return
 PlayerWalkRight_Return:
     applymovement PLAYER m_WalkRight

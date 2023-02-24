@@ -57,3 +57,206 @@ Take care out there, trainer!
 
 #org @gText_RubarrDesert_OasisSign
 Rubarr Desert Oasis\nPlease keep our water clean!
+
+#org @gText_RubarrDesert_TeamPlutoMika_Intro
+Where were we meeting again? The\noasis?
+
+#org @gText_RubarrDesert_TeamPlutoMika_Defeat
+I only lost because I was\ndistracted!
+
+#org @gText_RubarrDesert_TeamPlutoMika_Chat
+Oh yeah! The oasis is nearby.\pIt doesn't matter if I tell you\nthis; you'll never beat Team Pluto.
+
+#org @gText_RubarrDesert_TeamPlutoMarcel_Intro
+Hey, watch it! We're performing a,\nuh, "special mining operation\" out\lhere.
+
+#org @gText_RubarrDesert_TeamPlutoMarcel_Defeat
+N-no way!
+
+#org @gText_RubarrDesert_TeamPlutoMarcel_Chat
+Kids like you shouldn't be out here\nanyways.
+
+#org @gText_RubarrDesert_TeamPlutoTana_Intro
+Whew, it's hot out here. Why did we\nhave to pull this heist off in a\lfreaking desert?
+
+#org @gText_RubarrDesert_TeamPlutoTana_Defeat
+You aren't bothered by this heat?
+
+#org @gText_RubarrDesert_TeamPlutoTana_Chat
+I should've brought water before\ncoming out here[.]
+
+#org @gText_RubarrDesert_ClancyIntro
+[BLACK]Clancy: [BLUE]Hehehe! Looks like that\npowerful Pok\emon is close by.
+
+#org @gText_RubarrDesert_EnaIntro
+[BLACK]Ena: [RED]Good. Let's snag it and get out\nof here.
+
+#org @gText_RubarrDesert_ClancyRecognizesPlayer
+[BLACK]Clancy: [BLUE]Hey, I think I recognize\nyou[.]
+
+#org @gText_RubarrDesert_EnaRecognizesPlayer
+[BLACK]Ena: [RED]Why do I feel like I've seen\nyou before[.]
+
+#org @gText_RubarrDersert_ClancyCommentsOnPlayer
+[BLACK]Clancy: [BLUE]Tch, it's that kid we ran\npast after nabbing the DexNav.
+
+#org @gText_RubarrDersert_EnaCommentsOnPlayer
+[BLACK]Ena: [RED]You made a big mistake by\nfollowing us out here.
+
+#org @gText_RubarrDesert_RivalArrives
+[BLACK][RIVAL]: [BLUE](Huff[.] Huff[.])\n[PLAYER]! I finally found out where\lthose punks went.
+
+#org @gText_RubarrDesert_RivalNoticesThugs
+[BLACK][RIVAL]: [BLUE]Oh, looks like you found\nthem too. Nice work!
+
+#org @gText_RubarrDesert_ClancyBeratesRival
+[BLACK]Clancy: [BLUE]It's a little too early to be\ncelebrating, kiddo.
+
+#org @gText_RubarrDesert_RivalDemandsDexNavs
+[BLACK][RIVAL]: [BLUE]Yeah, guess so, huh?\pWe still have to get the DexNavs you\nstole. Give them back!
+
+#org @gText_RubarrDesert_EnaBeratesRival
+[BLACK]Ena: [RED]Ha, like we're going to hand\nover the DexNavs.\pHow about we give you a thrashing\ninstead?
+
+#org @gText_RubarrDesert_RivalReadyToFight
+[BLACK][RIVAL]: [BLUE]Alright, [PLAYER], they\nwon't listen to reason. We'll have\lto fight to get them back.\pHere, I'll heal you up[.]
+
+#org @gText_RubarrDesert_RivalStartsFight
+[BLACK][RIVAL]: [BLUE]Okay, let's do this! There's\nno way they can stop both of us.
+
+#org @gText_RubarrDesert_ClancyLoses
+Aw, give me a break. We lost to some\nmeddling kids?
+
+#org @gText_RubarrDesert_EnaLoses
+Unbelievable[.] We're really gonna get\nan earful when we get back.
+
+#org @gText_RubarrDesert_ClancyPoorLoser
+[BLACK]Clancy: [BLUE]Yeah, we lost, whatever.\nWe're still not giving you the\lDexNavs.
+
+#org @gText_RubarrDesert_IreneArrives
+[BLACK]???: [RED]Clancy! Ena!\nWhat's taking you so long?
+
+#org @gText_RubarrDesert_ClancyScared
+[BLACK]Clancy: [BLUE]Y-yipes! It's the boss!
+
+#org @gText_RubarrDesert_EnaScared
+[BLACK]Ena: [RED]Oooh! We really screwed up this\ntime[.]
+
+#org @gText_RubarrDesert_RivalConfused
+[BLACK][RIVAL]: [BLUE]The boss? Screwed up? What\nare you talking about?
+
+#org @gText_RubarrDesert_ClancyHushesRival
+[BLACK]Clancy: [BLUE]Shhh, shut it, kid!
+
+#org @gText_RubarrDesert_IreneDemandsReport
+[BLACK]???: [RED]Clancy. Ena. Status report.\nWhere is the rare Pok\emon?
+
+#org @gText_RubarrDesert_ClancyBootlicks
+[BLACK]Clancy: [BLUE]M-miss Irene, what a\npleasure to see you. You are\llooking positively radiant today.
+
+#org @gText_RubarrDesert_IreneRepeats
+[BLACK]Irene: [RED]Oh, Clancy[.] Flattery will get\nyou nowhere. Now, report.
+
+#org @gText_RubarrDesert_ClancyReport
+[BLACK]Clancy: [BLUE]W-we tracked it here. Let me\njust check it's current location[.]
+
+#org @gText_RubarrDesert_ClancySurprise
+[BLACK]Clancy: [BLUE]W-what? No way[.]
+
+#org @gText_RubarrDesert_EnaResponse
+[BLACK]Ena: [RED]Clancy? What is it?
+
+#org @gText_RubarrDesert_IreneFollowsUpEnasQuestion
+[BLACK]Irene: [RED]Yes, Clancy, what is it? Go\non.
+
+#org @gText_RubarrDesert_ClancyMentionsPokemonIsGone
+[BLACK]Clancy: [BLUE]It's[.] Gone.
+
+#org @gText_RubarrDesert_IreneClarifies
+[BLACK]Irene: [RED]Clancy, dear? Do speak up. It\nsounded like you said it was\l"gone.\"
+
+#org @gText_RubarrDesert_ClancyBlamesThePlayer
+[BLACK]Clancy: [BLUE]I am sorry, Miss Irene[.] We\nwere battling these kids and it\lmust've slipped away[.]
+
+#org @gText_RubarrDesert_IreneAlsoBlamesThePlayer
+[BLACK]Irene: [RED]These kids, you say?
+
+#org @gText_RubarrDesert_IreneDemandsGruntsMove
+[BLACK]Irene: [RED]Move aside.
+
+#org @gText_RubarrDesert_ClancyAndEnaMove
+[BLACK]Ena: [RED]Y-yes ma'am.
+
+#org @gText_RubarrDesert_IreneIntroduction
+[BLACK]Irene: [RED]I am Admin Irene, of Team\nPluto.\pMy subordinates say you are to blame\nfor the rare Pok\emon getting away.\pTell me, is this true?
+
+#org @gText_RubarrDesert_IreneAcceptsBlame
+[BLACK]Irene: [RED]So very bold of you, to admit\nfault. I like that.
+
+#org @gText_RubarrDesert_RivalCritizesPlayer
+[BLACK][RIVAL]: [BLUE][PLAYER], what're you\nsaying?? This woman is scary!
+
+#org @gText_RubarrDesert_IreneRejectsBlameDeflection
+[BLACK]Irene: [RED]You say that, and yet here\nyou are, pestering my subordinates.
+
+#org @gText_RubarrDesert_IreneBattles
+[BLACK]Irene: [RED]Regardless of whether you\naccept the blame or not, there is\la simple truth at play here.\pWe were close to locating a rare\nPok\emon, and lost it when you\linterfered.\pYou've caused us a lot of grief, and\nwe can't take that lightly. Child\lor not, you must be punished.\pI, Irene of Team Pluto, shall\ncrush you in battle.
+
+#org @gText_RubarrDesert_RivalFightsWithPlayer
+[BLACK][RIVAL]: [BLUE]Come on, [PLAYER], we can't\nlose now!
+
+#org @gText_RubarrDesert_IreneBattleDefeat
+Hmph. I see why my subordinates\nstruggled so much with you.
+
+#org @gText_RubarrDesert_IreneSurprisedByPlayer
+[BLACK]Irene: [RED]Well, that certainly was a\nsurprise.
+
+#org @gText_RubarrDesert_IreneConfirmsPokemonIsGone
+[BLACK]Irene: [RED]Clancy, you said the Pok\emon\nhas disappeared, yes?
+
+#org @gText_RubarrDesert_ClancyConfirmsPokemonIsGone
+[BLACK]Clancy: [BLUE]Yes, Miss Irene[.] It has not\nreturned since we lost track of it.
+
+#org @gText_RubarrDesert_IreneTellsGruntsTheyAreLeaving
+[BLACK]Irene: [RED]Understood. You two, come\nwith me. We will take our leave,\land you will report to the boss on\lthis utter failure.
+
+#org @gText_RubarrDesert_IreneThreatensPlayer
+[BLACK]Irene: [RED]As for you two, I am feeling[.]\ngenerous today.\pI will let you leave, but know this[.]\nShould you meddle in our affairs\lagain, I will not be lenient with\lyou.
+
+#org @gText_RubarrDesert_RivalCommentsOnBattle
+[BLACK][RIVAL]: [BLUE]Good battling, [PLAYER], but\nI hope we never see her again.
+
+#org @gText_RubarrDesert_ClancyCommentsOnDay
+[BLACK]Clancy: [BLUE]Agh, of all the rotten[.]
+
+#org @gText_RubarrDesert_EnaCallsDexNavsDefects
+[BLACK]Ena: [RED]These DexNavs worked fine until\nthese two showed up. They must be\ldefects.
+
+#org @gText_RubarrDesert_ClancyAgreesAboutDefects
+[BLACK]Clancy: [BLUE]Yeah, that must be it! Ena,\nyou're a genius!
+
+#org @gText_RubarrDesert_EnaAcceptsCompliment
+[BLACK]Ena: [RED]I know.
+
+#org @gText_RubarrDesert_ClancyGivesUpDexNavs
+[BLACK]Clancy: [BLUE]Listen up, losers! The only\nreason you thwarted us is because\lthese hunks of junk failed. That's\lall!\pYou know what? Junk belongs with\njunk, so you can deal with throwing\lthese things in the trash.
+
+#org @gText_RubarrDesert_GetDexNavs
+[BLACK]You reclaimed the stolen DexNavs!
+
+#org @gText_RubarrDesert_ClancyLeaves
+[BLACK]Clancy: [BLUE]Alright, Ena, let's skedaddle.
+
+#org @gText_RubarrDesert_EnaLeaves
+[BLACK]Ena: [RED]Yes[.] We have a lot of\npaperwork waiting for us[.]
+
+#org @gText_RubarrDesert_RivalCommentsOnDexNavs
+[BLACK][RIVAL]: [BLUE]And the gold medal for\nmental gymnastics goes to[.]
+
+#org @gText_RubarrDesert_RivalHealsAgain
+[BLACK][RIVAL]: [BLUE]I guess that doesn't matter\nthough. We got the DexNavs back,\l[PLAYER]!\pIt was tough, but we were able\nto fight off Team Pluto.\pOh, your Pok\emon! Here, I'll heal\nyou up again[.]
+
+#org @gText_RubarrDesert_RivalLeaves
+[BLACK][RIVAL]: [BLUE]There, good as new. I'm\ngoing to look around the desert\lsome more.\pDon't worry, I'll be there when you\nreturn these to that man.\pSee ya, [PLAYER]!
+
+// TODO: Post battle, Irene appearing, battling Irene, after Pluto leaves...

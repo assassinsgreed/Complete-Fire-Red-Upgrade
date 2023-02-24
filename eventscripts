@@ -208,6 +208,7 @@ npc 3 25 2 ItemScript_Common_Stick
 sign 3 25 1 SignScript_Route7_TrainerTips
 
 # Route 3
+map 3 21 MapScript_Route3
 npc 3 21 0 EventScript_Common_Cut
 npc 3 21 1 EventScript_Common_Cut
 npc 3 21 2 EventScript_Common_RockSmash
@@ -225,8 +226,19 @@ npc 3 21 13 EventScript_Route3_TwinsNinaAndMeg_Nina
 npc 3 21 14 EventScript_Route3_TwinsNinaAndMeg_Meg
 npc 3 21 15 EventScript_Route3_NinjaBoyBotan
 npc 3 21 16 EventScript_Route3_RockerJude
+npc 3 21 20 EventScript_Route3_TeamPlutoRaul
+npc 3 21 21 EventScript_Route3_Assistant
 sign 3 21 0 SignScript_Route3_TrainerTips
 sign 3 21 1 SignScript_Route3_Navigation
+tile 3 21 0 TileScript_Route3_InitiateDexNavEvent
+tile 3 21 1 TileScript_Route3_InitiateDexNavEvent
+tile 3 21 2 TileScript_Route3_InitiateDexNavEvent
+tile 3 21 3 TileScript_Route3_InitiateDexNavEvent
+tile 3 21 4 TileScript_Route3_PlayerHasNotDefeatedPluto
+tile 3 21 5 TileScript_Route3_PlayerHasNotDefeatedPluto
+tile 3 21 6 TileScript_Route3_PlayerHasNotDefeatedPluto
+tile 3 21 7 TileScript_Route3_PlayerHasNotDefeatedPluto
+tile 3 21 8 TileScript_Route3_PlayerHasNotDefeatedPluto
 
 # Rubarr Desert
 ### NPCS 1-10 (indexes 0-9) are cacti with no events
@@ -247,6 +259,11 @@ npc 1 1 22 EventScript_Common_Strength
 npc 1 1 23 EventScript_Common_Strength
 npc 1 1 24 ItemScript_Common_FocusSash
 npc 1 1 25 EventScript_RubarrDesert_CaveGuide
+npc 1 1 26 EventScript_RubarrDesert_TeamPlutoMika
+npc 1 1 27 EventScript_RubarrDesert_TeamPlutoMarcel
+npc 1 1 28 EventScript_RubarrDesert_TeamPlutoTana
+npc 1 1 29 EventScript_RubarrDesert_StoryEvents
+npc 1 1 30 EventScript_RubarrDesert_StoryEvents
 sign 1 1 0 SignScript_RubarrDesert_Oasis
 
 ## Cave BF1

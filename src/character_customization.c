@@ -283,7 +283,7 @@ static const u16* sPlayerMarlonOutfitColours[] =
 		// please note that this method makes compatability with OW Manager challenging
 	};
 	static const struct SpritePalette sObjectEventSpritePalettes12[] = {
-		{ PlutoGruntMalePal, 0x1201 },
+		{ PlutoGruntMalePal, 0x1201 },  // Applies to both grunt genders, but must match one of their filenames
 		{ ChampionSelenePal, 0x1202 },
 		{ SandygastPal, 0x1203 },
 		{ FoongusPal, 0x1204 },

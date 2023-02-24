@@ -10,9 +10,14 @@
 
 // See battle.h for a list of struct types that can be used
 // #region Trainer Structs
-// #region Important
+// #region Important trainers
 const struct TrainerMonNoItemDefaultMoves sParty_Rival1[] = {
     { .iv = 0, .lvl = 5, .species = SPECIES_EEVEE },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Rival2[] = {
+    { .iv = 25, .lvl = 12, .species = SPECIES_ROOKIDEE },
+    { .iv = 25, .lvl = 14, .species = SPECIES_EEVEE },
 };
 // #endregion
 
@@ -87,7 +92,7 @@ const struct TrainerMonNoItemCustomMoves sParty_RhodanziCity_Alonso[] = {
             MOVE_CONFUSION,
             MOVE_NONE
         },
-        .ability = ABILITY_SOUNDPROOF
+        .ability = Ability_1 // Soundproof
     },
     {
         .lvl = 8,
@@ -98,7 +103,7 @@ const struct TrainerMonNoItemCustomMoves sParty_RhodanziCity_Alonso[] = {
             MOVE_MUDSLAP,
             MOVE_NONE
         },
-        .ability = ABILITY_MIMICRY
+        .ability = Ability_1 // Mimicry
     },
 };
 
@@ -112,7 +117,7 @@ const struct TrainerMonNoItemCustomMoves sParty_RhodanziCity_Brandon[] = {
             MOVE_PECK,
             MOVE_NONE
         },
-        .ability = Ability_Hidden
+        .ability = Ability_Hidden // Electric Surge
     }
 };
 
@@ -127,7 +132,7 @@ const struct TrainerMonItemCustomMoves sParty_RhodanziCity_LeaderTerrence[] = {
             MOVE_NONE
         },
         .heldItem = ITEM_TERRAIN_EXTENDER,
-        .ability = Ability_Hidden
+        .ability = Ability_Hidden // Grassy Surge
     },
     {
         .lvl = 12,
@@ -138,7 +143,7 @@ const struct TrainerMonItemCustomMoves sParty_RhodanziCity_LeaderTerrence[] = {
             MOVE_TAILWHIP,
             MOVE_NONE
         },
-        .ability = Ability_Hidden
+        .ability = Ability_Hidden // Grass Pelt
     }
 };
 // #endregion
@@ -172,8 +177,13 @@ const struct TrainerMonNoItemDefaultMoves sParty_Route3_NinjaBoyBotan[] = {
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_Route3_RockerJude[] = {
-    { .lvl = 13, .species = SPECIES_GROOKEY},
+    { .lvl = 13, .species = SPECIES_GROOKEY },
     { .lvl = 14, .species = SPECIES_TOXEL }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route3_TeamPlutoRaul[] = {
+    { .lvl = 12, .species = SPECIES_NICKIT },
+    { .lvl = 13, .species = SPECIES_ZUBAT }
 };
 // #endregion
 
@@ -191,7 +201,7 @@ const struct TrainerMonNoItemDefaultMoves sParty_RubarrDesert_BirdKeeperNolan[] 
 const struct TrainerMonNoItemDefaultMoves sParty_RubarrDesert_RuinManiacKent[] = {
     { .lvl = 12, .species = SPECIES_ROGGENROLA },
     { .lvl = 12, .species = SPECIES_ROGGENROLA },
-    { .lvl = 13, .species = SPECIES_ROGGENROLA }
+    { .lvl = 13, .species = SPECIES_ROGGENROLA },
 };
 
 const struct TrainerMonItemDefaultMoves sParty_RubarrDesert_BlackbeltKobiyashi[] = {
@@ -202,6 +212,68 @@ const struct TrainerMonItemDefaultMoves sParty_RubarrDesert_BlackbeltKobiyashi[]
 const struct TrainerMonNoItemDefaultMoves sParty_RubarrDesert_RuinManiacAlbert[] = {
     { .lvl = 14, .species = SPECIES_BONSLY },
     { .lvl = 14, .species = SPECIES_YAMASK_G },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_RubarrDesert_TeamPlutoMika[] = {
+    { .lvl = 12, .species = SPECIES_NICKIT },
+    { .lvl = 12, .species = SPECIES_NICKIT },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_RubarrDesert_TeamPlutoMarcel[] = {
+    { .lvl = 11, .species = SPECIES_ZUBAT },
+    { .lvl = 11, .species = SPECIES_ZUBAT },
+    { .lvl = 13, .species = SPECIES_SANDILE },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_RubarrDesert_TeamPlutoTana[] = {
+    { .lvl = 12, .species = SPECIES_SANDILE },
+    { .lvl = 12, .species = SPECIES_KOFFING_G },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_RubarrDesert_TeamPlutoClancy[] = {
+    { .lvl = 12, .species = SPECIES_NICKIT },
+    { .lvl = 13, .species = SPECIES_CROAGUNK },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_RubarrDesert_TeamPlutoEna[] = {
+    { .lvl = 12, .species = SPECIES_ZUBAT },
+    { .lvl = 13, .species = SPECIES_VENIPEDE },
+};
+
+const struct TrainerMonNoItemCustomMoves sParty_RubarrDesert_TeamPlutoAdminIrene[] = {
+    {
+        .lvl = 13,
+        .species = SPECIES_NICKIT,
+        .moves = {
+            MOVE_SNARL,
+            MOVE_BEATUP,
+            MOVE_HONECLAWS,
+            MOVE_QUICKATTACK
+        },
+        .ability = Ability_Hidden // Stakeout
+    },
+    {
+        .lvl = 13,
+        .species = SPECIES_SANDILE,
+        .moves = {
+            MOVE_SCARYFACE,
+            MOVE_HONECLAWS,
+            MOVE_POWERTRIP,
+            MOVE_MEANLOOK
+        },
+        .ability = Ability_1 // Intimidate
+    },
+    {
+        .lvl = 15,
+        .species = SPECIES_SALANDIT,
+        .moves = {
+            MOVE_EMBER,
+            MOVE_SMOG,
+            MOVE_FAKEOUT,
+            MOVE_SCRATCH
+        },
+        .ability = Ability_1 // Corrosion
+    },
 };
 // #endregion
 
@@ -223,6 +295,7 @@ const struct Trainer gTrainers[] = {
     [TRAINER_NONE] = {
         .trainerName = NO_NAME,
     },
+    // #region Important trainers
     [TRAINER_RIVAL1] = {
         .partyFlags = 0,
         .trainerClass = CLASS_RIVAL,
@@ -235,6 +308,19 @@ const struct Trainer gTrainers[] = {
         .partySize = NELEMS(sParty_Rival1),
         .party = {.NoItemDefaultMoves = sParty_Rival1}
     },
+    [TRAINER_RIVAL2] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_RIVAL,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_BLUE,
+        .trainerName = NO_NAME, // Name replaced from RIVAL trainer classes
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_TRY_TO_FAINT,
+        .partySize = NELEMS(sParty_Rival2),
+        .party = {.NoItemDefaultMoves = sParty_Rival2}
+    },
+    // #endregion
     // #region Route 1
     [TRAINER_ROUTE_1_YOUNGSTER_PETER] = {
         .partyFlags = 0,
@@ -484,6 +570,17 @@ const struct Trainer gTrainers[] = {
         .partySize = NELEMS(sParty_Route3_RockerJude),
         .party = {.NoItemDefaultMoves = sParty_Route3_RockerJude}
     },
+    [TRAINER_ROUTE_3_TEAM_PLUTO_RAUL] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_TEAM_PLUTO,
+        .trainerPic = TRAINER_PIC_PLUTO_GRUNT_M,
+        .trainerName = {_R, _a, _u, _l, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = NELEMS(sParty_Route3_TeamPlutoRaul),
+        .party = {.NoItemDefaultMoves = sParty_Route3_TeamPlutoRaul}
+    },
     // #endregion
     // #region Rubarr Desert
     [TRAINER_RUBARR_DESERT_NURSE_JAINA] = {
@@ -532,7 +629,7 @@ const struct Trainer gTrainers[] = {
         .doubleBattle = FALSE,
         .aiFlags = AI_SCRIPT_RISKY,
         .partySize = NELEMS(sParty_RubarrDesert_BlackbeltKobiyashi),
-        .party = {.NoItemDefaultMoves = sParty_RubarrDesert_BlackbeltKobiyashi}
+        .party = {.ItemDefaultMoves = sParty_RubarrDesert_BlackbeltKobiyashi}
     },
     [TRAINER_RUBARR_DESERT_RUIN_MANIAC_ALBERT] = {
         .partyFlags = 0,
@@ -545,6 +642,72 @@ const struct Trainer gTrainers[] = {
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
         .partySize = NELEMS(sParty_RubarrDesert_RuinManiacAlbert),
         .party = {.NoItemDefaultMoves = sParty_RubarrDesert_RuinManiacAlbert}
+    },
+    [TRAINER_RUBARR_DESERT_TEAM_PLUTO_MIKA] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_TEAM_PLUTO,
+        .trainerPic = TRAINER_PIC_PLUTO_GRUNT_F,
+        .trainerName = {_M, _i, _k, _a, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = NELEMS(sParty_RubarrDesert_TeamPlutoMika),
+        .party = {.NoItemDefaultMoves = sParty_RubarrDesert_TeamPlutoMika}
+    },
+    [TRAINER_RUBARR_DESERT_TEAM_PLUTO_MARCEL] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_TEAM_PLUTO,
+        .trainerPic = TRAINER_PIC_PLUTO_GRUNT_M,
+        .trainerName = {_M, _a, _r, _c, _e, _l, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = NELEMS(sParty_RubarrDesert_TeamPlutoMarcel),
+        .party = {.NoItemDefaultMoves = sParty_RubarrDesert_TeamPlutoMarcel}
+    },
+    [TRAINER_RUBARR_DESERT_TEAM_PLUTO_TANA] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_TEAM_PLUTO,
+        .trainerPic = TRAINER_PIC_PLUTO_GRUNT_F,
+        .trainerName = {_T, _a, _n, _a, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = NELEMS(sParty_RubarrDesert_TeamPlutoTana),
+        .party = {.NoItemDefaultMoves = sParty_RubarrDesert_TeamPlutoTana}
+    },
+    [TRAINER_RUBARR_DESERT_TEAM_PLUTO_CLANCY] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_TEAM_PLUTO,
+        .trainerPic = TRAINER_PIC_PLUTO_GRUNT_M,
+        .trainerName = {_C, _l, _a, _n, _c, _y, _END},
+        .items = {},
+        .doubleBattle = TRUE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = NELEMS(sParty_RubarrDesert_TeamPlutoClancy),
+        .party = {.NoItemDefaultMoves = sParty_RubarrDesert_TeamPlutoClancy}
+    },
+    [TRAINER_RUBARR_DESERT_TEAM_PLUTO_ENA] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_TEAM_PLUTO,
+        .trainerPic = TRAINER_PIC_PLUTO_GRUNT_F,
+        .trainerName = {_E, _n, _a, _END},
+        .items = {},
+        .doubleBattle = TRUE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = NELEMS(sParty_RubarrDesert_TeamPlutoEna),
+        .party = {.NoItemDefaultMoves = sParty_RubarrDesert_TeamPlutoEna}
+    },
+    [TRAINER_RUBARR_DESERT_TEAM_PLUTO_ADMIN_IRENE] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .trainerClass = CLASS_TEAM_PLUTO_ADMIN,
+        .trainerPic = TRAINER_PIC_PLUTO_ADMIN_IRENE,
+        .trainerName = {_I, _r, _e, _n, _e, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_TRY_TO_FAINT,
+        .partySize = NELEMS(sParty_RubarrDesert_TeamPlutoAdminIrene),
+        .party = {.NoItemCustomMoves = sParty_RubarrDesert_TeamPlutoAdminIrene}
     },
     // #endregion
     // #region Route 7

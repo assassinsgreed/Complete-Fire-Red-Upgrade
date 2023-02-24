@@ -254,6 +254,10 @@ m_WalkDown: .byte walk_down, end_m
 m_WalkUp: .byte walk_up, end_m
 m_WalkLeft: .byte walk_left, end_m
 m_WalkRight: .byte walk_right, end_m
+m_RunDown: .byte run_down, end_m
+m_RunUp: .byte run_up, end_m
+m_RunLeft: .byte run_left, end_m
+m_RunRight: .byte run_right, end_m
 m_Surprise: .byte exclaim, end_m
 m_Question: .byte say_question, end_m
 m_Joy: .byte say_smile, end_m

@@ -19,5 +19,8 @@ Rhodanzi Fishing Committee
 #org @gText_RhodanziOverworld_Thugs
 [BLUE]Hey! We're having an important\nmeeting here, can't you see that?\lScram, kid!
 
+#org @gText_RhodanziOverworld_ThugsEna
+[RED]Hey! We're having an important\nmeeting here, can't you see that?\lScram, kid!
+
 #org @gText_RhodanziOverworld_ThugsThreat
-[BLUE]Don't get in our way, kid. We're\nbusy here!\pKids like you should be at home,\nplaying their Gameboys, anyways.
+[RED]Don't get in our way, kid. We're\nbusy here!\pKids like you should be at home,\nplaying their Gameboys, anyways.
