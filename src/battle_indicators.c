@@ -118,30 +118,26 @@ enum
 	MegaTriggerGrayscale,
 };
 
-/* TODO:
-		Validate Double battle positions
-		Fix positioning of mega/primal icon
-*/
 static const struct Coords16 sTypeIconPositions[][/*IS_SINGLE_BATTLE*/2] =
 {
 #ifndef UNBOUND //MODIFY THIS
 	[B_POSITION_PLAYER_LEFT] =
 	{
-		[TRUE] = {225, 94}, 	//Single Battle
-		[FALSE] = {225, 80},	//Double Battle
+		[TRUE] = {210, 80}, 	//Single Battle
+		[FALSE] = {142, 71},	//Double Battle
 	},
 	[B_POSITION_OPPONENT_LEFT] =
 	{
-		[TRUE] = {100, 36}, 		//Single Battle
-		[FALSE] = {100, 24},		//Double Battle
+		[TRUE] = {89, 22}, 		//Single Battle
+		[FALSE] = {103, 15},	//Double Battle
 	},
 	[B_POSITION_PLAYER_RIGHT] =
 	{
-		[FALSE] = {225, 106},	//Double Battle
+		[FALSE] = {154, 97},	//Double Battle
 	},
 	[B_POSITION_OPPONENT_RIGHT] =
 	{
-		[FALSE] = {100, 50},		//Double Battle
+		[FALSE] = {91, 40},		//Double Battle
 	},
 #else //For Pokemon Unbound
 	[B_POSITION_PLAYER_LEFT] =
@@ -1047,21 +1043,61 @@ static void SpriteCB_CamomonsTypeIcon(struct Sprite* sprite)
 	//Type icons should prepare to destroy themselves if the Player is not choosing an action
 	if (ShouldHideTypeIconSprite(bank))
 	{
-		sprite->pos1.y += 1;
+		if (IS_SINGLE_BATTLE)
+		{
+			sprite->pos1.y += 1;
+		}
+		else //Double Battle
+		{
+			switch (position) {
+				case B_POSITION_PLAYER_LEFT:
+				case B_POSITION_PLAYER_RIGHT:
+					sprite->pos1.x += 1;
+					break;
+				case B_POSITION_OPPONENT_LEFT:
+				case B_POSITION_OPPONENT_RIGHT:
+					sprite->pos1.x -= 1;
+					break;
+			}
+		}
 
 		++sprite->data[2];
 		return;
 	}
 
-	bool8 posToCheck = IS_SINGLE_BATTLE ? TRUE : FALSE; 
-	if (sprite->pos1.y > sTypeIconPositions[position][posToCheck].y - 10)
-		sprite-> pos1.y -= 1;
+	bool8 posToCheck = IS_SINGLE_BATTLE ? TRUE : FALSE;
+	if (IS_SINGLE_BATTLE)
+	{
+		if (sprite->pos1.y > sTypeIconPositions[position][posToCheck].y - 10)
+			sprite-> pos1.y -= 1;
+	}
+	else //Double Battle
+	{
+		switch (position) {
+			case B_POSITION_PLAYER_LEFT:
+			case B_POSITION_PLAYER_RIGHT:
+				if (sprite->pos1.x > sTypeIconPositions[position][posToCheck].x - 10)
+					sprite->pos1.x -= 1;
+				break;
+			case B_POSITION_OPPONENT_LEFT:
+			case B_POSITION_OPPONENT_RIGHT:
+				if (sprite->pos1.x < sTypeIconPositions[position][posToCheck].x + 10)
+					sprite->pos1.x += 1;
+				break;
+		}
+	}
 
 	//Deal with bouncing player healthbox, after it has finished animating
-	if (sprite->pos1.y <= sTypeIconPositions[position][posToCheck].y - 10)
+	if (IS_SINGLE_BATTLE && sprite->pos1.y <= sTypeIconPositions[position][posToCheck].y - 10)
 	{
 		struct Sprite* healthbox = &gSprites[gHealthboxSpriteIds[GetBattlerAtPosition(position)]];
 		sprite->pos1.y += healthbox->pos2.y;
+	}
+	else if (!IS_SINGLE_BATTLE && sprite->pos1.x <= sTypeIconPositions[position][posToCheck].x - 10) // Double Battle
+	{
+		s16 originalY = sprite->data[3];
+		struct Sprite* healthbox = &gSprites[gHealthboxSpriteIds[GetBattlerAtPosition(position)]];
+		sprite->pos1.y = originalY + healthbox->pos2.y;
 	}
 }
 
@@ -1428,8 +1464,17 @@ void TryLoadTypeIcons(void)
 			for (u8 typeNum = 0; typeNum < 2; ++typeNum) //Load each type
 			{
 				u8 spriteId;
-				s16 x = sTypeIconPositions[position][IS_SINGLE_BATTLE].x + (9 * typeNum); //Calculate pos for second type icon
-				s16 y = sTypeIconPositions[position][IS_SINGLE_BATTLE].y;
+				s16 x, y;
+				if (IS_SINGLE_BATTLE)
+				{
+					x = sTypeIconPositions[position][IS_SINGLE_BATTLE].x + (9 * typeNum); //Calculate pos for second type icon
+					y = sTypeIconPositions[position][IS_SINGLE_BATTLE].y;
+				}
+				else // Double Battle
+				{
+					x = sTypeIconPositions[position][IS_SINGLE_BATTLE].x;
+					y = sTypeIconPositions[position][IS_SINGLE_BATTLE].y + (11 * typeNum); //2nd type is 13px below
+				}
 
 				u8 type = (typeNum == 0) ? type1 : type2;
 
