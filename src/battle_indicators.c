@@ -1495,11 +1495,11 @@ bool8 CantLoadLastBallTrigger(void)
 
 	return (gBattleTypeFlags & BATTLE_TYPE_TRAINER)
 		|| CantCatchPokemonRightNow()
-		|| (!gNewBS->threwBall //Haven't thrown a ball
-		 #ifdef FLAG_ALWAYS_SHOW_LAST_BALL
-		 && !FlagGet(FLAG_ALWAYS_SHOW_LAST_BALL) //And the ball shouldn't show until the player has
-		 #endif
-		)
+		// || (!gNewBS->threwBall //Haven't thrown a ball
+		//  #ifdef FLAG_ALWAYS_SHOW_LAST_BALL
+		//  && !FlagGet(FLAG_ALWAYS_SHOW_LAST_BALL) //And the ball shouldn't show until the player has
+		//  #endif
+		// )
 		|| GetPocketByItemId(lastUsedBall) != POCKET_POKEBALLS
 		|| !CheckBagHasItem(lastUsedBall, 1);
 }
