@@ -43,6 +43,11 @@ EventScript_RhodanziOverworld_TreeGuy:
     npcchat gText_RhodanziOverworld_TreeGuy
     end
 
+.global SignScript_RhodanziCity_EntranceSign
+SignScript_RhodanziCity_EntranceSign:
+    msgbox gText_RhodanziCity_EntranceSign MSG_SIGN
+    end
+
 .global SignScript_RhodanziCity_FishermanSign
 SignScript_RhodanziCity_FishermanSign:
     msgbox gText_RhodanziCity_FishermanSign MSG_SIGN

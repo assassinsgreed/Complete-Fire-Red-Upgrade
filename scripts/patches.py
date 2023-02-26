@@ -28,6 +28,10 @@ def ApplyBWMusicPatch():
         # Update bytes recommended by CFRU docs
         romfile.seek(0x4A32A0)
         romfile.write(b'\xA0\xFA\x03\x02')
+
+        # Set obtained Item fanfare duration to 0s, to avoid awkward silence when learning a new move. This is to bypass a problem with the music patch
+        romfile.seek(0x3AC992)
+        romfile.write(b'\x00\x00')
         
         romfile.close()
 

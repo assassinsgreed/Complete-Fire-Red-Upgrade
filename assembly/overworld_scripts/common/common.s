@@ -90,11 +90,11 @@ PlayerWalkDown_Return:
 
 .global PlayerHeal
 PlayerHeal:
-    fadescreen 0x1
+    fadescreenswapbuffers 0x1
 	fanfare 0x100
 	waitfanfare
 	special 0x0
-	fadescreen 0x0
+    fadescreenswapbuffers 0x0
     return
 
 .global PokedexEvaluation_Introduction
