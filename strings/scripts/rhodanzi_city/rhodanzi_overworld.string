@@ -10,6 +10,9 @@ There are a lot of unique Pok\emon\nspecies around Rhodanzi City.\pBe sure to ca
 #org @gText_RhodanziOverworld_TreeGuy
 A Pok\emon can cut this tree down,\nbut you'd need to have HM01 and\lthe badge from Ferrox Village\lfirst.\pThen your Pok\emon will understand\nhow to cut this tree down, even if\lthey don't know the move itself.
 
+#org @gText_RhodanziCity_EntranceSign
+Rhodanzi City: The evergreen plains\ncity
+
 #org @gText_RhodanziCity_FishermanSign
 Rhodanzi Fishing Committee
 
