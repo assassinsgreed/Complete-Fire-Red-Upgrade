@@ -37,12 +37,12 @@ const struct TrainerMonNoItemDefaultMoves sParty_Route1_YoungsterHarlan[] = {
 
 // #region Route 2
 const struct TrainerMonNoItemDefaultMoves sParty_Route2_YoungsterJoey[] = {
-    { .lvl = 6, .species = SPECIES_RATTATA_A },
+    { .lvl = 5, .species = SPECIES_RATTATA_A },
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_Route2_LassKimberly[] = {
-    { .lvl = 5, .species = SPECIES_RALTS },
-    { .lvl = 5, .species = SPECIES_CUTIEFLY },
+    { .lvl = 4, .species = SPECIES_RALTS },
+    { .lvl = 4, .species = SPECIES_CUTIEFLY },
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_Route2_LassRikki[] = {
@@ -59,8 +59,8 @@ const struct TrainerMonNoItemDefaultMoves sParty_Route2_CoolTrainerAndy[] = {
 
 // #region Varisi Forest
 const struct TrainerMonNoItemDefaultMoves sParty_VarisiForest_BugCatcherKendell[] = {
+    { .lvl = 4, .species = SPECIES_BLIPBUG },
     { .lvl = 5, .species = SPECIES_BLIPBUG },
-    { .lvl = 6, .species = SPECIES_BLIPBUG },
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_VarisiForest_BugCatcherBraden[] = {
@@ -70,7 +70,7 @@ const struct TrainerMonNoItemDefaultMoves sParty_VarisiForest_BugCatcherBraden[]
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_VarisiForest_LassBreanna[] = {
-    { .lvl = 6, .species = SPECIES_PICHU },
+    { .lvl = 5, .species = SPECIES_PICHU },
     { .lvl = 6, .species = SPECIES_BUDEW },
 };
 
@@ -123,7 +123,7 @@ const struct TrainerMonNoItemCustomMoves sParty_RhodanziCity_Brandon[] = {
 
 const struct TrainerMonItemCustomMoves sParty_RhodanziCity_LeaderTerrence[] = {
     {
-        .lvl = 10,
+        .lvl = 11,
         .species = SPECIES_GROOKEY,
         .moves = {
             MOVE_SCRATCH,
@@ -135,7 +135,7 @@ const struct TrainerMonItemCustomMoves sParty_RhodanziCity_LeaderTerrence[] = {
         .ability = Ability_Hidden // Grassy Surge
     },
     {
-        .lvl = 12,
+        .lvl = 13,
         .species = SPECIES_SKIDDO,
         .moves = {
             MOVE_LEECHSEED,

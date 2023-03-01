@@ -63,8 +63,9 @@ EventScript_RhodanziGym_Leader_Terrence:
 
 EventScript_RhodanziGym_Leader_TerrenceDefeated:
     msgbox gText_RhodanziGym_Leader_Terrence_BadgeAwarded MSG_NORMAL
-    playfanfare 0x138 @ Gym victory
-    msgbox gText_RhodanziGym_BadgeReceived MSG_NORMAL
+    fanfare 0x13D @ Gym victory
+    msgbox gText_RhodanziGym_BadgeReceived MSG_KEEPOPEN
+    waitfanfare
     setflag 0x820 @ Rhodanzi gym badge
     settrainerflag 0xC @ Alonso cannot be battled now
     settrainerflag 0xD @ Brandon cannot be battled now
@@ -74,7 +75,8 @@ EventScript_RhodanziGym_Leader_TerrenceDefeated:
     additem ITEM_TM05 0x1
     giveitemwithfanfare ITEM_TM05 0x1 0x101 @ MUS_FANFA1
     setflag 0x254 @ Received TM 05 from Terrence
-    release
+    msgbox gText_RhodanziGym_Leader_Terrence_Chat MSG_KEEPOPEN
+    releaseall
     end
 
 EventScript_RhodanziGym_Leader_TerrenceChat:

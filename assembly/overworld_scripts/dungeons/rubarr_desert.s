@@ -255,12 +255,12 @@ EventScript_RubarrDesert_StoryEvents:
     applymovement PlutoGruntEna m_LookLeft
     msgbox gText_RubarrDesert_ClancyLeaves MSG_NORMAL
     msgbox gText_RubarrDesert_EnaLeaves MSG_NORMAL
-    fadescreen 0x01 @ Fade out
+    fadescreenswapbuffers 0x01 @ Fade out
     playse 0x11 @ SE Flee
     hidesprite PlutoGruntClancy
     hidesprite PlutoGruntEna
     fadedefaultbgm
-    fadescreen 0x00 @ Fade in
+    fadescreenswapbuffers 0x00 @ Fade in
     msgbox gText_RubarrDesert_RivalCommentsOnDexNavs MSG_NORMAL
     applymovement Rival m_LookRight
     applymovement PLAYER m_LookLeft
