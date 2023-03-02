@@ -170,7 +170,7 @@ EventScript_RhodanziTrainerSchool_BasicCourse_TypeStudent_QuizFail:
 
 EventScript_RhodanziTrainerSchool_BasicCourse_TypeStudent_QuizRejected:
     msgbox gText_RhodanziTrainerSchool_BasicCourse_TypeStudent_QuizRejected MSG_FACE
-    applymovement 0x1 m_LookUp
+    applymovement 0x2 m_LookUp
     goto EndMovementAndEvent
 
 EventScript_RhodanziTrainerSchool_BasicCourse_TypeStudentQuizComplete:
@@ -301,5 +301,5 @@ EventScript_RhodanziTrainerSchool_AdvancedCourse_QuickRun:
 
 .global EventScript_RhodanziTrainerSchool_AdvancedCourse_RegisterMultipleItems
 EventScript_RhodanziTrainerSchool_AdvancedCourse_RegisterMultipleItems:
-    npcchat gText_RhodanziTrainerSchool_AdvancedCourse_RegisterMultipleItems
+    npcchat2 0xC m_LookDown gText_RhodanziTrainerSchool_AdvancedCourse_RegisterMultipleItems
     end

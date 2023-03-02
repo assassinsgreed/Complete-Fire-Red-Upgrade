@@ -33,7 +33,7 @@ npc 3 19 1 EventScript_Route1_LassHelena
 npc 3 19 2 EventScript_Route1_YoungsterHarlan
 npc 3 19 3 EventScript_Route1_LonelyMan
 npc 3 19 4 EventScript_Route1_SandygastEncounter
-npc 3 19 5 ItemScript_Common_Pokeball
+npc 3 19 5 ItemScript_Common_Antidote
 npc 3 19 6 ItemScript_Route1_FindTMEnergyBall
 
 # Olenic Town
