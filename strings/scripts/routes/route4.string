@@ -1,0 +1,17 @@
+#org @gText_Route4_ForemanChat
+A recent landslide has blocked the\npath to Ferrox Village.\pPlease be patient with us while we\nclear the way, and do not enter\lTorma Cave.
+
+#org @gText_Route4_WorkerChat
+Huagh! These rocks sure are heavy.\nIt will take some time to get these\lcleared[.]
+
+#org @gText_Route4_LargeManChat
+The road is blocked? I can't believe\nmy bad luck.
+
+#org @gText_Route4_LassChat
+I was supposed to meet my boyfriend\ntoday. I hope it won't take long to\lclear the path[.]
+
+#org @gText_Route4_TormaCaveSign
+Torma Cave
+
+#org @gText_Route4_TrainerTipsSign
+Trainer Tips!\nSome routes have paths that are\lonly accessible when your Pok\emon\lcan use HM moves. Return often to\ldiscover new things!
