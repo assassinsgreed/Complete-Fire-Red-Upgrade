@@ -277,6 +277,55 @@ const struct TrainerMonNoItemCustomMoves sParty_RubarrDesert_TeamPlutoAdminIrene
 };
 // #endregion
 
+// #region Route 4
+const struct TrainerMonNoItemDefaultMoves sParty_Route4_Camper_Pietro[] = {
+    { .lvl = 12, .species = SPECIES_FLETCHLING },
+    { .lvl = 12, .species = SPECIES_NIDORAN_M },
+    { .lvl = 13, .species = SPECIES_WYNAUT },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route4_Psychic_Adriano[] = {
+    { .lvl = 13, .species = SPECIES_RALTS },
+    { .lvl = 13, .species = SPECIES_INKAY },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route4_Beauty_Beatrice[] = {
+    { .lvl = 13, .species = SPECIES_CUTIEFLY },
+    { .lvl = 14, .species = SPECIES_BUNEARY },
+};
+
+const struct TrainerMonItemDefaultMoves sParty_Route4_Lady_Alda[] = {
+    { .lvl = 14, .species = SPECIES_BUDEW },
+    { .lvl = 14, .species = SPECIES_COMBEE },
+    { .lvl = 14, .species = SPECIES_FLABEBE_YELLOW },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route4_Lass_Isabela[] = {
+    { .lvl = 15, .species = SPECIES_YAMPER },
+    { .lvl = 15, .species = SPECIES_SLAKOTH },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route4_Bird_Keeper_Rowley[] = {
+    { .lvl = 17, .species = SPECIES_DARTRIX }
+};
+
+const struct TrainerMonItemDefaultMoves sParty_Route4_Crush_Girl_Elise[] = {
+    { .lvl = 14, .species = SPECIES_CROAGUNK },
+    { .lvl = 15, .species = SPECIES_FARFETCHD_G },
+    { .lvl = 15, .species = SPECIES_TIMBURR }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route4_Gentleman_Porter[] = {
+    { .lvl = 15, .species = SPECIES_MIME_JR_G },
+    { .lvl = 16, .species = SPECIES_HERDIER }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route4_Bird_Keeper_Luca[] = {
+    { .lvl = 15, .species = SPECIES_HOOTHOOT },
+    { .lvl = 17, .species = SPECIES_FLETCHINDER },
+};
+// #endregion
+
 // #region Route 7
 const struct TrainerMonNoItemDefaultMoves sParty_Route7_CamperCarlisle[] = {
     { .lvl = 8, .species = SPECIES_NIDORAN_M },
@@ -708,6 +757,116 @@ const struct Trainer gTrainers[] = {
         .aiFlags = AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_TRY_TO_FAINT,
         .partySize = NELEMS(sParty_RubarrDesert_TeamPlutoAdminIrene),
         .party = {.NoItemCustomMoves = sParty_RubarrDesert_TeamPlutoAdminIrene}
+    },
+    // #endregion
+    // #region Route 4
+    [TRAINER_ROUTE_4_CAMPER_PIETRO] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_CAMPER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_CAMPER,
+        .trainerName = {_P, _i, _e, _t, _r, _o, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = NELEMS(sParty_Route4_Camper_Pietro),
+        .party = {.NoItemDefaultMoves = sParty_Route4_Camper_Pietro}
+    },
+    [TRAINER_ROUTE_4_PSYCHIC_ADRIANO] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_PSYCHIC,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_PSYCHIC_M,
+        .trainerName = {_A, _d, _r, _i, _a, _n, _o, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = NELEMS(sParty_Route4_Psychic_Adriano),
+        .party = {.NoItemDefaultMoves = sParty_Route4_Psychic_Adriano}
+    },
+    [TRAINER_ROUTE_4_BEAUTY_BEATRICE] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_BEAUTY,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .trainerPic = TRAINER_PIC_BEAUTY,
+        .trainerName = {_B, _e, _a, _t, _r, _i, _c, _e, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = NELEMS(sParty_Route4_Beauty_Beatrice),
+        .party = {.NoItemDefaultMoves = sParty_Route4_Beauty_Beatrice}
+    },
+    [TRAINER_ROUTE_4_LADY_ALDA] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_LADY,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .trainerPic = TRAINER_PIC_PARASOL_LADY,
+        .trainerName = {_A, _l, _d, _a, _END},
+        .items = { ITEM_POTION },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = NELEMS(sParty_Route4_Lady_Alda),
+        .party = {.ItemDefaultMoves = sParty_Route4_Lady_Alda}
+    },
+    [TRAINER_ROUTE_4_LASS_ISABELA] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_LASS,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_GIRL,
+        .trainerPic = TRAINER_PIC_LASS,
+        .trainerName = {_I, _s, _a, _b, _e, _l, _a, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = NELEMS(sParty_Route4_Lass_Isabela),
+        .party = {.NoItemDefaultMoves = sParty_Route4_Lass_Isabela}
+    },
+    [TRAINER_ROUTE_4_BIRD_KEEPER_ROWLEY] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_BIRD_KEEPER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_BIRD_KEEPER,
+        .trainerName = {_R, _o, _w, _l, _e, _y, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = NELEMS(sParty_Route4_Bird_Keeper_Rowley),
+        .party = {.NoItemDefaultMoves = sParty_Route4_Bird_Keeper_Rowley}
+    },
+    [TRAINER_ROUTE_4_CRUSH_GIRL_ELISE] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_CRUSH_GIRL,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .trainerPic = TRAINER_PIC_CRUSH_GIRL,
+        .trainerName = {_E, _l, _i, _s, _e, _END},
+        .items = { ITEM_X_ATTACK },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = NELEMS(sParty_Route4_Crush_Girl_Elise),
+        .party = {.ItemDefaultMoves = sParty_Route4_Crush_Girl_Elise}
+    },
+    [TRAINER_ROUTE_4_GENTLEMAN_PORTER] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_GENTLEMAN,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_GENTLEMAN,
+        .trainerName = {_P, _o, _r, _t, _e, _r, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = NELEMS(sParty_Route4_Gentleman_Porter),
+        .party = {.NoItemDefaultMoves = sParty_Route4_Gentleman_Porter}
+    },
+    [TRAINER_ROUTE_4_BIRD_KEEPER_LUCA] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_BIRD_KEEPER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_BIRD_KEEPER,
+        .trainerName = {_L, _u, _c, _a, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = NELEMS(sParty_Route4_Bird_Keeper_Luca),
+        .party = {.NoItemDefaultMoves = sParty_Route4_Bird_Keeper_Luca}
     },
     // #endregion
     // #region Route 7

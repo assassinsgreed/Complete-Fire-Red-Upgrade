@@ -267,18 +267,18 @@
             "grass": {
                 "rate": 21,
                 "pokemon": [
-                    { "low": 9, "high": 11, "species": "SPECIES_INKAY" },
-                    { "low": 8, "high": 12, "species": "SPECIES_NINCADA" },
-                    { "low": 9, "high": 13, "species": "SPECIES_RATTATA_A" },
-                    { "low": 10, "high": 13, "species": "SPECIES_ROOKIDEE" },
-                    { "low": 10, "high": 12, "species": "SPECIES_INKAY" },
-                    { "low": 11, "high": 14, "species": "SPECIES_ROOKIDEE" },
-                    { "low": 9, "high": 13, "species": "SPECIES_ROOKIDEE" },
-                    { "low": 11, "high": 14, "species": "SPECIES_RATTATA_A" },
-                    { "low": 10, "high": 13, "species": "SPECIES_WYNAUT" },
-                    { "low": 11, "high": 12, "species": "SPECIES_RALTS" },
-                    { "low": 9, "high": 12, "species": "SPECIES_WYNAUT" }, 
-                    { "low": 10, "high": 13, "species": "SPECIES_RALTS" }
+                    { "low": 9, "high": 10, "species": "SPECIES_INKAY" },
+                    { "low": 8, "high": 11, "species": "SPECIES_NINCADA" },
+                    { "low": 9, "high": 12, "species": "SPECIES_RATTATA_A" },
+                    { "low": 10, "high": 12, "species": "SPECIES_ROOKIDEE" },
+                    { "low": 10, "high": 11, "species": "SPECIES_INKAY" },
+                    { "low": 11, "high": 13, "species": "SPECIES_ROOKIDEE" },
+                    { "low": 9, "high": 12, "species": "SPECIES_ROOKIDEE" },
+                    { "low": 11, "high": 13, "species": "SPECIES_RATTATA_A" },
+                    { "low": 10, "high": 12, "species": "SPECIES_WYNAUT" },
+                    { "low": 11, "high": 11, "species": "SPECIES_RALTS" },
+                    { "low": 9, "high": 11, "species": "SPECIES_WYNAUT" }, 
+                    { "low": 10, "high": 12, "species": "SPECIES_RALTS" }
                 ]
             },
             "rocks": {
