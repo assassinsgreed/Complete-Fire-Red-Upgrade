@@ -16,6 +16,11 @@ ItemScript_Common_Potion:
     finditem ITEM_POTION 0x1
     end
 
+.global ItemScript_Common_SuperPotion
+ItemScript_Common_SuperPotion:
+    finditem ITEM_SUPER_POTION 0x1
+    end
+
 .global ItemScript_Common_Antidote
 ItemScript_Common_Antidote:
     finditem ITEM_ANTIDOTE 0x1
@@ -56,6 +61,11 @@ ItemScript_Common_SoftSand:
     finditem ITEM_SOFT_SAND 0x1
     end
 
+.global ItemScript_Common_QuickClaw
+ItemScript_Common_QuickClaw:
+    finditem ITEM_QUICK_CLAW 0x1
+    end
+
 .global ItemScript_Common_FocusSash
 ItemScript_Common_FocusSash:
     finditem ITEM_FOCUS_SASH 0x1
@@ -76,6 +86,11 @@ ItemScript_Common_LaxIncense:
     finditem ITEM_LAX_INCENSE 0x1
     end
 
+.global ItemScript_Common_RoseIncense
+ItemScript_Common_RoseIncense:
+    finditem ITEM_ROSE_INCENSE 0x1
+    end
+
 .global ItemScript_Common_DireHit
 ItemScript_Common_DireHit:
     finditem ITEM_DIRE_HIT 0x1
@@ -89,4 +104,9 @@ ItemScript_Common_Pokeball:
 .global ItemScript_Common_Greatball
 ItemScript_Common_Greatball:
     finditem ITEM_GREAT_BALL 0x1
+    end
+
+.global ItemScript_Common_GrassySeed
+ItemScript_Common_GrassySeed:
+    finditem ITEM_GRASSY_SEED 0x1
     end

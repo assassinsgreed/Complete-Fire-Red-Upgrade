@@ -138,7 +138,7 @@ const u8* const sStartMenuDescPointers[] =
 	gText_RetireDescription,
 	gText_PlayerDescription,
 	gText_DexNavDescription,
-	NULL,
+	// NULL,
 	gText_ExitDescription,
 	gText_ExitDescription,
 };

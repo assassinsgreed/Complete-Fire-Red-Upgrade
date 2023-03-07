@@ -1,0 +1,98 @@
+#org @gText_Route4_ForemanChat
+A recent landslide has blocked the\npath to Ferrox Village.\pPlease be patient with us while we\nclear the way, and do not enter\lTorma Cave.
+
+#org @gText_Route4_WorkerChat
+Huagh! These rocks sure are heavy.\nIt will take some time to get these\lcleared[.]
+
+#org @gText_Route4_LargeManChat
+The road is blocked? I can't believe\nmy bad luck.
+
+#org @gText_Route4_LassChat
+I was supposed to meet my boyfriend\ntoday. I hope it won't take long to\lclear the path[.]
+
+#org @gText_Route4_TormaCaveSign
+Torma Cave
+
+#org @gText_Route4_TrainerTipsSign
+Trainer Tips!\nSome routes have paths that are\lonly accessible when your Pok\emon\lcan use HM moves. Return often to\ldiscover new things!
+
+#org @gText_Route4_CamperPietro_Intro
+We may be camping, but my Pok\emon\nare always ready to battle.
+
+#org @gText_Route4_CamperPietro_Defeat
+You must've been ready to battle\ntoo!
+
+#org @gText_Route4_CamperPietro_Chat
+I love to go camping with my\nPok\emon!
+
+#org @gText_Route4_PsychicAdriano_Intro
+I predicted you would come here.
+
+#org @gText_Route4_PsychicAdriano_Defeat
+I predicted you would win, too.
+
+#org @gText_Route4_PsychicAdriano_Chat
+My predictions are never wrong.
+
+#org @gText_Route4_BeautyBeatrice_Intro
+Do you prefer cute Pok\emon, or\nstrong ones?
+
+#org @gText_Route4_BeautyBeatrice_Defeat
+Oh, your Pok\emon are cute and\nstrong!
+
+#org @gText_Route4_BeautyBeatrice_Chat
+I like using cute Pok\emon, and I\ndon't care if I lose battles\lbecause of that.
+
+#org @gText_Route4_LadyAlda_Intro
+Spin, my beautiful umbrella!
+
+#org @gText_Route4_LadyAlda_Defeat
+Hm, you're quite strong.
+
+#org @gText_Route4_LadyAlda_Chat
+There's nothing quite like an\numbrella to shade you from the\lsun. Do you not agree?
+
+#org @gText_Route4_LassIsabela_Intro
+What kind of trainer are you?
+
+#org @gText_Route4_LassIsabela_Defeat
+Oh, you're one of those, huh?
+
+#org @gText_Route4_LassIsabela_Chat
+There are a lot of different trainer\ntypes out there, hey?
+
+#org @gText_Route4_BirdKeeperRowley_Intro
+My Pok\emon can fly at mach 3. No,\nmach 4!
+
+#org @gText_Route4_BirdKeeperRowley_Defeat
+Weren't you impressed by our speed?
+
+#org @gText_Route4_BirdKeeperRowley_Chat
+Flying type Pok\emon are great!
+
+#org @gText_Route4_CrushGirlElise_Intro
+My Pok\emon and I train our bodies\nevery day. Do you think you can\lchallenge us?
+
+#org @gText_Route4_CrushGirlElise_Defeat
+So formidable[.]
+
+#org @gText_Route4_CrushGirlElise_Chat
+A good training regime is important\nto bringing out your inner strength.
+
+#org @gText_Route4_GentlemanPorter_Intro
+Why, hello there, young trainer.\nMight I interest you in a battle\lwith a gentleman like me?
+
+#org @gText_Route4_GentlemanPorter_Defeat
+You are quite gifted!
+
+#org @gText_Route4_GentlemanPorter_Chat
+I daresay, I did not expect your\nPok\emon to be so strong.
+
+#org @gText_Route4_BirdKeeperLuca_Intro
+Fufufufu[.] Go, my precious birds!
+
+#org @gText_Route4_BirdKeeperLuca_Defeat
+Ahhh, my bird Pok\emon!
+
+#org @gText_Route4_BirdKeeperLuca_Chat
+Birds need special care. They're a\nlot more complex than other\lPok\emon.

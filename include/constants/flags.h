@@ -56,7 +56,7 @@
 #define FLAG_HIDE_AIDE_ON_ROUTE_3                          0x032
 #define FLAG_HIDE_PLUTO_GRUNTS_ON_ROUTE_3_AND_RUBARR       0x033
 #define FLAG_HIDE_RIVAL_AND_IRENE_IN_RUBARR                0x034
-#define FLAG_HIDE_POKEHOUSE_FUJI                           0x035
+#define FLAG_HIDE_ROUTE_4_BOULDERS_AND_NPCS                0x035
 #define FLAG_HIDE_LIFT_KEY                                 0x036
 #define FLAG_HIDE_SILPH_SCOPE                              0x037
 #define FLAG_HIDE_HIDEOUT_GIOVANNI                         0x038
@@ -375,11 +375,11 @@
 #define FLAG_HIDE_RUBARR_DESERT_SOFT_SAND                       0x16D
 #define FLAG_HIDE_RUBARR_DESERT_STAR_PIECE                      0x16E
 #define FLAG_HIDE_RUBARR_DESERT_FOCUS_SASH                      0x16F
-#define FLAG_HIDE_ROCKET_HIDEOUT_B2F_TM12                       0x170
-#define FLAG_HIDE_ROCKET_HIDEOUT_B2F_SUPER_POTION               0x171
-#define FLAG_HIDE_ROCKET_HIDEOUT_B3F_RARE_CANDY                 0x172
-#define FLAG_HIDE_ROCKET_HIDEOUT_B3F_TM21                       0x173
-#define FLAG_HIDE_ROCKET_HIDEOUT_B4F_TM49                       0x174
+#define FLAG_HIDE_ROUTE_4_SUPER_POTION                          0x170
+#define FLAG_HIDE_ROUTE_4_QUICK_CLAW                            0x171
+#define FLAG_HIDE_ROUTE_4_TM01_WORK_UP                          0x172
+#define FLAG_HIDE_ROUTE_4_GRASSY_SEED                           0x173
+#define FLAG_HIDE_ROUTE_4_ROSE_INCENSE                          0x174
 #define FLAG_HIDE_ROCKET_HIDEOUT_B4F_MAX_ETHER                  0x175
 #define FLAG_HIDE_ROCKET_HIDEOUT_B4F_CALCIUM                    0x176
 #define FLAG_HIDE_POKEMON_TOWER_3F_ESCAPE_ROPE                  0x177
@@ -1035,8 +1035,8 @@
 #define HIDDEN_ITEM_OLENIC_TOWN_ASPEAR_BERRY                            6
 #define HIDDEN_ITEM_ROUTE_3_ETHER                                       7
 #define HIDDEN_ITEM_ROUTE_3_MOON_STONE                                  8
-#define HIDDEN_ITEM_ROUTE10_SUPER_POTION                                9
-#define HIDDEN_ITEM_ROUTE10_MAX_ETHER                                  10
+#define HIDDEN_ITEM_ROUTE_4_ESCAPE_ROPE                                 9
+#define HIDDEN_ITEM_ROUTE_4_REVIVE                                     10
 #define HIDDEN_ITEM_ROCKET_HIDEOUT_B1F_PP_UP                           11
 #define HIDDEN_ITEM_ROCKET_HIDEOUT_B3F_NUGGET                          12
 #define HIDDEN_ITEM_ROCKET_HIDEOUT_B4F_NEST_BALL                       13
