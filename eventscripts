@@ -315,3 +315,13 @@ npc 3 22 21 ItemScript_Common_GrassySeed
 npc 3 22 22 ItemScript_Common_RoseIncense
 sign 3 22 0 SignScript_Route4_TormaCaveSign
 sign 3 22 1 SignScript_Route4_TrainerTips
+
+# Torma Cave
+## BF1
+map 1 4 MapScript_TormaCave
+
+## BF2
+npc 1 5 0 EventScript_Common_Strength
+# TODO: Trainers, items
+# TODO: Update text for map screen
+# TODO: Wild Pokemon tables
