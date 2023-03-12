@@ -19,6 +19,11 @@ EventScript_TormaCave_RockyHelmet:
     finditem ITEM_ROCKY_HELMET 0x1
     end
 
+.global EventScript_TormaCave_Glalitite
+EventScript_TormaCave_Glalitite:
+    finditem ITEM_GLALITITE 0x1
+    end
+
 .global EventScript_TormaCave_FishermanAlfie
 EventScript_TormaCave_FishermanAlfie:
     trainerbattle0 0x0 0x2D 0x0 gText_TormaCave_FishermanAlfie_Intro gText_TormaCave_FishermanAlfie_Defeat

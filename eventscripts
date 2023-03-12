@@ -324,7 +324,7 @@ npc 1 4 1 ItemScript_Common_SmoothRock
 npc 1 4 2 EventScript_TormaCave_Glalitite
 npc 1 4 3 ItemScript_Common_SuperPotion
 npc 1 4 4 EventScript_TormaCave_RockyHelmet
-npc 1 4 5 ItemScript_Common_GreatBall
+npc 1 4 5 ItemScript_Common_Greatball
 npc 1 4 6 ItemScript_Common_EscapeRope
 npc 1 4 7 EventScript_TormaCave_FishermanAlfie
 npc 1 4 8 EventScript_TormaCave_HikerNob
