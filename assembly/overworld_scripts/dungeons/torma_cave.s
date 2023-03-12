@@ -58,11 +58,13 @@ EventScript_TormaCave_EngineerShane:
 EventScript_TormaCave_PokefanCorey:
     trainerbattle0 0x0 0x32 0x0 gText_TormaCave_PokefanCorey_Intro gText_TormaCave_PokefanCorey_Defeat
     msgbox gText_TormaCave_PokefanCorey_Chat MSG_NORMAL
+    end
 
 .global EventScript_TormaCave_LassHarmony
 EventScript_TormaCave_LassHarmony:
     trainerbattle0 0x0 0x33 0x0 gText_TormaCave_LassHarmony_Intro gText_TormaCave_LassHarmony_Defeat
     msgbox gText_TormaCave_LassHarmony_Chat MSG_NORMAL
+    end
 
 .global SignScript_TormaCave_TrainerTips
 SignScript_TormaCave_TrainerTips:
