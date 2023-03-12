@@ -25,7 +25,7 @@ MapEntryScript_RubarrDesert_FlightFlag:
 
 MapEntryScript_RubarrDesert_SetWeather:
     @ Check time of day
-    setvar 0x8001 0x0 @ Return distinct times of day
+    setvar 0x8000 0x0 @ Return distinct times of day
     special2 LASTRESULT 0xAD
     compare LASTRESULT 0x2 @ Evening
     if lessthan _goto SetAllWeatherTypes @ Is morning or day, set clear, sandstorm, or sunny
