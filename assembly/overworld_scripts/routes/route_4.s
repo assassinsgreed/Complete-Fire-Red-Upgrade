@@ -5,6 +5,59 @@
 .include "../xse_defines.s"
 .include "../asm_defines.s"
 
+.equ Foreman, 0x1
+.equ FormanEventVar, 0x4051
+
+.global MapScript_Route4
+MapScript_Route4:
+    mapscript MAP_SCRIPT_ON_FRAME_TABLE LevelScripts_Route4
+	.byte MAP_SCRIPT_TERMIN
+
+LevelScripts_Route4:
+	levelscript FormanEventVar 0x0 LevelScript_Rotue4_ForemanEvent
+	.hword LEVEL_SCRIPT_TERMIN
+
+LevelScript_Rotue4_ForemanEvent:
+    checkflag 0x35 @ Boulders are cleared
+    if NOT_SET _goto ClearForemanEvent
+    checkflag 0x36 @ Foreman has left
+    if SET _goto ClearForemanEvent
+    lock
+    sound 0x15 @ Exclaim
+    applymovement Foreman m_Surprise
+    waitmovement ALLEVENTS
+    applymovement Foreman m_MeetPlayer
+    waitmovement ALLEVENTS
+    msgbox gText_Route4_ForemanConfrontsPlayer MSG_YESNO
+    compare LASTRESULT YES
+    if equal _call PlayerHonest
+    compare LASTRESULT NO
+    if equal _call PlayerDishonest
+    msgbox gText_Route4_ForemanBeratesPlayer MSG_NORMAL
+    applymovement Foreman m_LookDown
+    msgbox gText_Route4_ForemanConcedes MSG_NORMAL
+    applymovement Foreman m_LookUp
+    msgbox gText_Route4_ForemanLeaves MSG_NORMAL
+    applymovement Foreman m_ForemanLeaves
+    waitmovement ALLEVENTS
+    hidesprite Foreman
+    setvar FormanEventVar 0x1
+    setflag 0x36 @ Foreman has left
+    release
+    end
+
+PlayerHonest:
+    msgbox gText_Route4_PlayerHonest MSG_NORMAL
+    return
+
+PlayerDishonest:
+    msgbox gText_Route4_PlayerDishonest MSG_NORMAL
+    return
+
+ClearForemanEvent:
+    setvar FormanEventVar 0x1
+    end
+
 .global EventScript_Route4_Foreman
 EventScript_Route4_Foreman:
     npcchat2 0x1 m_LookUp gText_Route4_ForemanChat
@@ -94,3 +147,6 @@ EventScript_Route4_BirdKeeperLuca:
     trainerbattle0 0x0 0x2C 0x0 gText_Route4_BirdKeeperLuca_Intro gText_Route4_BirdKeeperLuca_Defeat
     msgbox gText_Route4_BirdKeeperLuca_Chat MSG_NORMAL
     end
+
+m_MeetPlayer: .byte walk_up, walk_up, walk_up, walk_up, walk_right, walk_right, walk_right, walk_right, look_up, end_m
+m_ForemanLeaves: .byte walk_left, walk_left, walk_left, walk_left, walk_left, walk_left, walk_up, walk_up, walk_up, walk_up, walk_up, walk_up, walk_up, end_m

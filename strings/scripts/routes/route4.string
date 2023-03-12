@@ -96,3 +96,21 @@ Ahhh, my bird Pok\emon!
 
 #org @gText_Route4_BirdKeeperLuca_Chat
 Birds need special care. They're a\nlot more complex than other\lPok\emon.
+
+#org @gText_Route4_ForemanConfrontsPlayer
+[BLUE]Hey! Did you just come from Torma\nCave?
+
+#org @gText_Route4_PlayerHonest
+[BLUE]I see[.] At least you fessed up.
+
+#org @gText_Route4_PlayerDishonest
+[BLUE]Don't lie to me[.] I just saw you\nwalk out!
+
+#org @gText_Route4_ForemanBeratesPlayer
+[BLUE]Listen, kid.\pI know you're impatient, but you\nshould've just waited for us to\lfinish clearing the way.\pTorma Cave is dangerous, and I\ncould've gotten in a lot of trouble\lif you'd gotten hurt.
+
+#org @gText_Route4_ForemanConcedes
+[BLUE]Sigh[.] But what's done is done, I\nsuppose. You're no worse for wear.
+
+#org @gText_Route4_ForemanLeaves
+[BLUE]Look, the way is clear now, so\nthere's no need to put yourself in\ldanger, you hear?\pI'll be leaving to reunite with my\ncrew in Heleo City now. Stay out\lof trouble, alright?

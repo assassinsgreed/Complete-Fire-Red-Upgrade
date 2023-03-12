@@ -5,6 +5,8 @@
 .include "../xse_defines.s"
 .include "../asm_defines.s"
 
+.equ FormanEventVar, 0x4051
+
 .global MapScript_TormaCave
 MapScript_TormaCave:
     mapscript MAP_SCRIPT_ON_TRANSITION MapEntryScript_TormaCave_FlightFlag
@@ -12,6 +14,7 @@ MapScript_TormaCave:
 
 MapEntryScript_TormaCave_FlightFlag:
     setworldmapflag 0x8A6
+    setvar FormanEventVar 0x0
     end
 
 .global EventScript_TormaCave_RockyHelmet
@@ -73,14 +76,20 @@ SignScript_TormaCave_TrainerTips:
 
 .global EventScript_TormaCave_SetPathCleared
 EventScript_TormaCave_SetPathCleared:
-    setflag 0x035 @ Cleared Torma Cave
+    setflag 0x35 @ Cleared Torma Cave
+    @ Set the other tile event up to execute
+    setvar 0x4000 0x1
+    setvar 0x4001 0x0
     end
 
 .global EventScript_TormaCave_ClearPathCleared
 EventScript_TormaCave_ClearPathCleared:
     # Only clear the flag indicating that Torma Cave has been cleared if the player hasn't spoken with the Foreman upon leaving
     # This avoids a case where the player goes to the end of the cave, leaves from the start, and breaks the cutscene
-    checkflag 0x036 @ Met with Foreman
+    checkflag 0x36 @ Met with Foreman
     if SET _goto End
-    clearflag 0x035 @ Cleared Torma Cave
+    clearflag 0x35 @ Cleared Torma Cave
+    @ Set the other tile event up to execute
+    setvar 0x4000 0x0
+    setvar 0x4001 0x1
     end
