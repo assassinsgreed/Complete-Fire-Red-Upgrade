@@ -43,6 +43,7 @@ extern const u16 TMPokeballPal[];
 extern const u16 TruckPal[];
 extern const u16 InterviewerPal[];
 extern const u16 CactusPal[];
+extern const u16 MegaStonePal[];
 
 #ifdef UNBOUND
 //extern const u16 MalePlayer_Trainer_Outfit_RedPal[];
@@ -297,6 +298,7 @@ static const u16* sPlayerMarlonOutfitColours[] =
 		{ TruckPal, 0x1211 },
 		{ InterviewerPal, 0x1212 },
 		{ CactusPal, 0x1213 },
+		{ MegaStonePal, 0x1214 },
 		{ NULL, 0x11FF }
 	};
 	const struct SpritePalette* const gObjectEventSpritePalettesSwitcher[255] = {

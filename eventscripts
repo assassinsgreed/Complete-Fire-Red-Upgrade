@@ -319,9 +319,41 @@ sign 3 22 1 SignScript_Route4_TrainerTips
 # Torma Cave
 ## BF1
 map 1 4 MapScript_TormaCave
+npc 1 4 0 ItemScript_Common_Repel
+npc 1 4 1 ItemScript_Common_SmoothRock
+npc 1 4 2 EventScript_TormaCave_Glalitite
+npc 1 4 3 ItemScript_Common_SuperPotion
+npc 1 4 4 EventScript_TormaCave_RockyHelmet
+npc 1 4 5 ItemScript_Common_GreatBall
+npc 1 4 6 ItemScript_Common_EscapeRope
+npc 1 4 7 EventScript_TormaCave_FishermanAlfie
+npc 1 4 8 EventScript_TormaCave_HikerNob
+npc 1 4 9 EventScript_TormaCave_HikerSaul
+npc 1 4 10 EventScript_TormaCave_EngineerWyatt
+npc 1 4 11 EventScript_TormaCave_EngineerShane
+npc 1 4 12 EventScript_Common_RockSmash
+npc 1 4 13 EventScript_Common_RockSmash
+npc 1 4 14 EventScript_Common_RockSmash
+npc 1 4 15 EventScript_Common_RockSmash
+npc 1 4 16 EventScript_Common_RockSmash
+npc 1 4 17 EventScript_Common_RockSmash
+npc 1 4 18 EventScript_Common_RockSmash
+tile 1 4 0 EventScript_TormaCave_SetPathCleared
+tile 1 4 1 EventScript_TormaCave_ClearPathCleared
 
 ## BF2
 npc 1 5 0 EventScript_Common_Strength
-# TODO: Trainers, items
-# TODO: Update text for map screen
-# TODO: Wild Pokemon tables
+npc 1 5 1 ItemScript_Common_Snowball
+npc 1 5 2 ItemScript_Common_Calcium
+npc 1 5 3 ItemScript_Common_NeverMeltIce
+npc 1 5 4 ItemScript_Common_IceStone
+npc 1 5 5 EventScript_TormaCave_PokefanCorey
+npc 1 5 6 EventScript_TormaCave_LassHarmony
+npc 1 5 7 EventScript_RivalEvent2
+npc 1 5 8 EventScript_Common_RockSmash
+npc 1 5 9 EventScript_Common_RockSmash
+npc 1 5 10 EventScript_Common_RockSmash
+npc 1 5 11 EventScript_Common_RockSmash
+npc 1 5 12 EventScript_Common_RockSmash
+npc 1 5 13 EventScript_Common_RockSmash
+sign 1 5 0 SignScript_TormaCave_TrainerTips

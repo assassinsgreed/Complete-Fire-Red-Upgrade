@@ -130,6 +130,93 @@
             }
         },
         {
+            "mapgroup": 1,
+            "mapnum": 4,
+            "grass": {
+                "rate": 5,
+                "pokemon": [
+                    { "low": 9, "high": 13, "species": "SPECIES_DRILBUR" },
+                    { "low": 10, "high": 12, "species": "SPECIES_KLINK" },
+                    { "low": 11, "high": 14, "species": "SPECIES_ZUBAT" },
+                    { "low": 8, "high": 13, "species": "SPECIES_CARBINK" },
+                    { "low": 9, "high": 14, "species": "SPECIES_MAWILE" },
+                    { "low": 10, "high": 13, "species": "SPECIES_SABLEYE" },
+                    { "low": 11, "high": 14, "species": "SPECIES_MAWILE" },
+                    { "low": 9, "high": 14, "species": "SPECIES_SABLEYE" },
+                    { "low": 10, "high": 12, "species": "SPECIES_GIBLE" },
+                    { "low": 9, "high": 13, "species": "SPECIES_TYRUNT" },
+                    { "low": 11, "high": 14, "species": "SPECIES_NOIBAT" }, 
+                    { "low": 12, "high": 13, "species": "SPECIES_NOIBAT" }
+                ]
+            },
+            "rocks": {
+                "rate": 50,
+                "pokemon": [
+                    { "low": 10, "high": 15, "species": "SPECIES_ROGGENROLA" },
+                    { "low": 10, "high": 15, "species": "SPECIES_ROLYCOLY" },
+                    { "low": 10, "high": 15, "species": "SPECIES_ROGGENROLA" },
+                    { "low": 10, "high": 15, "species": "SPECIES_CARBINK" },
+                    { "low": 10, "high": 15, "species": "SPECIES_CARBINK" }
+                ]
+            },
+            "surfing": {
+                "rate": 1,
+                "pokemon": [
+                    { "low": 15, "high": 25, "species": "SPECIES_SLOWPOKE" },
+                    { "low": 25, "high": 30, "species": "SPECIES_SHELLOS_EAST" },
+                    { "low": 20, "high": 25, "species": "SPECIES_SHELLOS_EAST" },
+                    { "low": 20, "high": 30, "species": "SPECIES_SLOWPOKE" },
+                    { "low": 23, "high": 27, "species": "SPECIES_SLOWPOKE" }
+                ]
+            },
+            "fishing": {
+                "rate": 20,
+                "pokemon": [
+                    { "low": 3, "high": 7, "species": "SPECIES_MAGIKARP" },
+                    { "low": 4, "high": 8, "species": "SPECIES_HORSEA" },
+                    { "low": 20, "high": 25, "species": "SPECIES_HORSEA" },
+                    { "low": 20, "high": 25, "species": "SPECIES_MAGIKARP" },
+                    { "low": 19, "high": 26, "species": "SPECIES_MAGIKARP" },
+                    { "low": 35, "high": 40, "species": "SPECIES_SEADRA" },
+                    { "low": 33, "high": 41, "species": "SPECIES_SEADRA" },
+                    { "low": 35, "high": 40, "species": "SPECIES_HORSEA" },
+                    { "low": 36, "high": 42, "species": "SPECIES_HORSEA" },
+                    { "low": 38, "high": 44, "species": "SPECIES_SEADRA" }
+                ]
+            }
+        },
+        {
+            "mapgroup": 1,
+            "mapnum": 5,
+            "grass": {
+                "rate": 5,
+                "pokemon": [
+                    { "low": 9, "high": 13, "species": "SPECIES_CUBCHOO" },
+                    { "low": 10, "high": 12, "species": "SPECIES_SNORUNT" },
+                    { "low": 11, "high": 14, "species": "SPECIES_SWINUB" },
+                    { "low": 8, "high": 13, "species": "SPECIES_SWINUB" },
+                    { "low": 9, "high": 14, "species": "SPECIES_DARUMAKA_G" },
+                    { "low": 10, "high": 13, "species": "SPECIES_SNEASEL" },
+                    { "low": 11, "high": 14, "species": "SPECIES_SNORUNT" },
+                    { "low": 9, "high": 14, "species": "SPECIES_SNOM" },
+                    { "low": 10, "high": 12, "species": "SPECIES_SWINUB" },
+                    { "low": 9, "high": 13, "species": "SPECIES_SNOM" },
+                    { "low": 11, "high": 14, "species": "SPECIES_SWINUB" }, 
+                    { "low": 12, "high": 13, "species": "SPECIES_SNOM" }
+                ]
+            },
+            "rocks": {
+                "rate": 50,
+                "pokemon": [
+                    { "low": 10, "high": 15, "species": "SPECIES_ROGGENROLA" },
+                    { "low": 10, "high": 15, "species": "SPECIES_ROLYCOLY" },
+                    { "low": 10, "high": 15, "species": "SPECIES_ROGGENROLA" },
+                    { "low": 10, "high": 15, "species": "SPECIES_CARBINK" },
+                    { "low": 10, "high": 15, "species": "SPECIES_CARBINK" }
+                ]
+            }
+        },
+        {
             "mapgroup": 3,
             "mapnum": 2,
             "surfing": {
