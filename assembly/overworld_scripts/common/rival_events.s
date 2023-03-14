@@ -44,3 +44,36 @@ RivalEvent1_ResetPosition:
     applymovement LASTTALKED m_LookRight
     release
     end
+
+.global EventScript_RivalEvent2
+EventScript_RivalEvent2:
+    lock
+    faceplayer
+    checkflag 0x2C1
+    if SET _goto RivalEvent2_ThankPlayer
+    msgbox gText_RivalEvent2_RequestRevive MSG_YESNO
+    compare LASTRESULT YES
+    IF FALSE _goto RivalEvent2_Declined
+    checkitem ITEM_REVIVE 0x1
+    compare LASTRESULT TRUE
+    IF FALSE _goto RivalEvent2_NotEnoughRevives
+    removeitem ITEM_REVIVE 0x1
+    msgbox gText_RivalEvent2_GiveRevive MSG_NORMAL
+    obtainitem ITEM_ULTRA_BALL 0x3
+    setflag 0x2C1
+    goto RivalEvent2_ThankPlayer
+
+RivalEvent2_Declined:
+    msgbox gText_RivalEvent2_Declined MSG_NORMAL
+    release
+    end
+
+RivalEvent2_NotEnoughRevives:
+    msgbox gText_RivalEvent2_NotEnoughRevives MSG_NORMAL
+    release
+    end
+
+RivalEvent2_ThankPlayer:
+    msgbox gText_RivalEvent2_EventComplete MSG_NORMAL
+    release
+    end

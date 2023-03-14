@@ -34,6 +34,7 @@ extern const u8 TruckTiles[];
 extern const u8 InterviewerTiles[];
 extern const u8 CameramanTiles[];
 extern const u8 CactusTiles[];
+extern const u8 MegaStoneTiles[];
 
 #define EVENT_OBJ_PAL_TAG_NONE 0x1102
 #define gEventObjectBaseOam_16x16 ((const struct OamData*) 0x83A36F8)
@@ -390,6 +391,11 @@ static const struct SpriteFrameImage Table_Cameraman[] =
 static const struct SpriteFrameImage Table_Cactus[] =
 {
     overworld_frame(CactusTiles, 2, 4, 0),
+};
+
+static const struct SpriteFrameImage Table_MegaStone[] =
+{
+    overworld_frame(MegaStoneTiles, 2, 2, 0),
 };
 
 // #region MC
@@ -931,5 +937,25 @@ const struct EventObjectGraphicsInfo GraphicsInfo_Cactus =
     .subspriteTables = gEventObjectSpriteOamTables_16x32,
     .anims = gEventObjectImageAnimTable_Standard,
     .images = Table_Cactus,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+const struct EventObjectGraphicsInfo GraphicsInfo_MegaStone =
+{
+    .tileTag = 0xFFFF,
+    .paletteTag1 = 0x1214,
+    .paletteTag2 = EVENT_OBJ_PAL_TAG_NONE,
+    .size = (16 * 16) / 2,
+    .width = 16,
+    .height = 16,
+    .shadowSize = SHADOW_SIZE_S,
+    .inanimate = TRUE,
+    .disableReflectionPaletteLoad = FALSE,
+    .tracks = TRACKS_NONE,
+    .gender = MALE,
+    .oam = gEventObjectBaseOam_16x16,
+    .subspriteTables = gEventObjectSpriteOamTables_16x16,
+    .anims = gEventObjectImageAnimTable_Standard,
+    .images = Table_MegaStone,
     .affineAnims = gDummySpriteAffineAnimTable,
 };

@@ -326,6 +326,47 @@ const struct TrainerMonNoItemDefaultMoves sParty_Route4_Bird_Keeper_Luca[] = {
 };
 // #endregion
 
+// #region Torma Cave
+const struct TrainerMonNoItemDefaultMoves sParty_TormaCave_Fisherman_Alfie[] = {
+    { .lvl = 15, .species = SPECIES_MAGIKARP },
+    { .lvl = 15, .species = SPECIES_MAGIKARP },
+    { .lvl = 15, .species = SPECIES_MAGIKARP },
+    { .lvl = 15, .species = SPECIES_MAGIKARP },
+    { .lvl = 15, .species = SPECIES_MAGIKARP },
+    { .lvl = 15, .species = SPECIES_MAGIKARP }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_TormaCave_Hiker_Nob[] = {
+    { .lvl = 13, .species = SPECIES_BONSLY },
+    { .lvl = 14, .species = SPECIES_SHUCKLE },
+    { .lvl = 15, .species = SPECIES_RIOLU }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_TormaCave_Hiker_Saul[] = {
+    { .lvl = 16, .species = SPECIES_ROLYCOLY }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_TormaCave_Engineer_Wyatt[] = {
+    { .lvl = 14, .species = SPECIES_PIKACHU },
+    { .lvl = 14, .species = SPECIES_CHINCHOU }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_TormaCave_Engineer_Shane[] = {
+    { .lvl = 14, .species = SPECIES_PINCURCHIN },
+    { .lvl = 14, .species = SPECIES_KLINK },
+    { .lvl = 14, .species = SPECIES_MAWILE },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_TormaCave_Pokefan_Corey[] = {
+    { .lvl = 16, .species = SPECIES_DITTO }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_TormaCave_Lass_Harmony[] = {
+    { .lvl = 15, .species = SPECIES_BUNEARY },
+    { .lvl = 15, .species = SPECIES_ROSELIA },
+};
+// #endregion
+
 // #region Route 7
 const struct TrainerMonNoItemDefaultMoves sParty_Route7_CamperCarlisle[] = {
     { .lvl = 8, .species = SPECIES_NIDORAN_M },
@@ -867,6 +908,92 @@ const struct Trainer gTrainers[] = {
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
         .partySize = NELEMS(sParty_Route4_Bird_Keeper_Luca),
         .party = {.NoItemDefaultMoves = sParty_Route4_Bird_Keeper_Luca}
+    },
+    // #endregion
+    // #region Torma Cave
+    [TRAINER_TORMA_CAVE_FISHERMAN_ALFIE] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_FISHERMAN,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_FISHERMAN,
+        .trainerName = {_A, _l, _f, _i, _e, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = NELEMS(sParty_TormaCave_Fisherman_Alfie),
+        .party = {.NoItemDefaultMoves = sParty_TormaCave_Fisherman_Alfie}
+    },
+    [TRAINER_TORMA_CAVE_HIKER_NOB] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_HIKER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
+        .trainerPic = TRAINER_PIC_HIKER,
+        .trainerName = {_N, _o, _b, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = NELEMS(sParty_TormaCave_Hiker_Nob),
+        .party = {.NoItemDefaultMoves = sParty_TormaCave_Hiker_Nob}
+    },
+    [TRAINER_TORMA_CAVE_HIKER_SAUL] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_HIKER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
+        .trainerPic = TRAINER_PIC_HIKER,
+        .trainerName = {_S, _a, _u, _l, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = NELEMS(sParty_TormaCave_Hiker_Saul),
+        .party = {.NoItemDefaultMoves = sParty_TormaCave_Hiker_Saul}
+    },
+    [TRAINER_TORMA_CAVE_ENGINEER_WYATT] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_ENGINEER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_WORKER,
+        .trainerName = {_W, _y, _a, _t, _t, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = NELEMS(sParty_TormaCave_Engineer_Wyatt),
+        .party = {.NoItemDefaultMoves = sParty_TormaCave_Engineer_Wyatt}
+    },
+    [TRAINER_TORMA_CAVE_ENGINEER_SHANE] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_ENGINEER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_WORKER,
+        .trainerName = {_S, _h, _a, _n, _e, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = NELEMS(sParty_TormaCave_Engineer_Shane),
+        .party = {.NoItemDefaultMoves = sParty_TormaCave_Engineer_Shane}
+    },
+    [TRAINER_TORMA_CAVE_POKEFAN_COREY] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_POKEFAN,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_POKEFAN_M,
+        .trainerName = {_C, _o, _r, _e, _y, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = NELEMS(sParty_TormaCave_Pokefan_Corey),
+        .party = {.NoItemDefaultMoves = sParty_TormaCave_Pokefan_Corey}
+    },
+    [TRAINER_TORMA_CAVE_LASS_HARMONY] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_LASS,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .trainerPic = TRAINER_PIC_LASS,
+        .trainerName = {_H, _a, _r, _m, _o, _n, _y, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = NELEMS(sParty_TormaCave_Lass_Harmony),
+        .party = {.NoItemDefaultMoves = sParty_TormaCave_Lass_Harmony}
     },
     // #endregion
     // #region Route 7

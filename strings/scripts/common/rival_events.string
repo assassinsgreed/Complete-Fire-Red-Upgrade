@@ -12,3 +12,18 @@ Thanks, [PLAYER]! You're a real life\nsaver. I can totally catch this\lPok\emon 
 
 #org @gText_RivalEvent1_GiveMoney
 Here, take this. It's the least I can\ndo!
+
+#org @gText_RivalEvent2_RequestRevive
+Oh, [PLAYER], perfect timing! I've run\ninto another bind.\pI was training up for the Ferrox\nGym, and my Eevee fainted. It's\ltotally my fault too[.]\pCould you do me a favor and give me\na Revive?
+
+#org @gText_RivalEvent2_Declined
+Yeah, I understand. It's totally my\nfault that Eevee got hurt.\pTry not to worry about it, okay?\nEevee and I will get out of here\lsoon enough.
+
+#org @gText_RivalEvent2_NotEnoughRevives
+That's awfully kind of you, [PLAYER],\nbut it looks like you don't have\lany on you right now.
+
+#org @gText_RivalEvent2_GiveRevive
+You're the best friend a guy could\nask for!\pHere, [PLAYER], these are for you. I\nfound them while exploring and I'd\llike you to have them.
+
+#org @gText_RivalEvent2_EventComplete
+Thanks, [PLAYER]! We'll catch up at\nthe gym later.
