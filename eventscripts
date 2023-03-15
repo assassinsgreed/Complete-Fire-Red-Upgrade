@@ -314,6 +314,7 @@ npc 3 22 19 ItemScript_Common_QuickClaw
 npc 3 22 20 ItemScript_Route4_FindTM01WorkUp
 npc 3 22 21 ItemScript_Common_GrassySeed
 npc 3 22 22 ItemScript_Common_RoseIncense
+npc 3 22 23 ItemScript_Route4_FindTM71StoneEdge
 sign 3 22 0 SignScript_Route4_TormaCaveSign
 sign 3 22 1 SignScript_Route4_TrainerTips
 
