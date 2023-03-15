@@ -87,9 +87,9 @@
 #define FLAG_HIDE_TOWER_RIVAL                              0x051
 #define FLAG_HIDE_MOLTRES                                  0x052
 #define FLAG_HIDE_SILPH_ROCKETS                            0x053
-#define FLAG_HIDE_ROUTE_1_SANDYGAST                        0x054
-#define FLAG_HIDE_VARISI_FOONGUS_1                         0x055
-#define FLAG_HIDE_VARISI_FOONGUS_2                         0x056
+#define FLAG_HIDE_ROUTE_12_SNORLAX                         0x054
+#define FLAG_HIDE_VIRIDIAN_GIOVANNI                        0x055
+#define FLAG_HIDE_OLD_AMBER                                0x056
 #define FLAG_HIDE_EEVEE_BALL                               0x057
 #define FLAG_HIDE_VICTORY_ROAD_2F_BOULDER                  0x058
 #define FLAG_HIDE_VICTORY_ROAD_3F_BOULDER                  0x059
@@ -1312,6 +1312,16 @@
 #define FLAG_0x4FD               0x4FD
 #define FLAG_0x4FE               0x4FE
 #define FLAG_0x4FF               0x4FF
+*/
+
+/*
+Daily Flags, cleared at the start of each day.  Goes up to 0xEFF
+#define FLAG_ROUTE_1_SANDYGAST                0xE00
+#define FLAG_VARISI_FOREST_FOONGUS_1          0xE01
+#define FLAG_VARISI_FOREST_FOONGUS_2          0xE02
+#define FLAG_TORMA_CAVE_STUNFISK_G_1          0xE03
+#define FLAG_TORMA_CAVE_STUNFISK_G_2          0xE04
+#define FLAG_TORMA_CAVE_STUNFISK_G_3          0xE05
 */
 
 #define FLAG_TRAINER_FLAG_START 0x500

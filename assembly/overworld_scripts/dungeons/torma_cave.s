@@ -10,12 +10,52 @@
 .global MapScript_TormaCave
 MapScript_TormaCave:
     mapscript MAP_SCRIPT_ON_TRANSITION MapEntryScript_TormaCave_FlightFlag
+    mapscript MAP_SCRIPT_ON_LOAD SetStunfiskTrapsVisbility
 	.byte MAP_SCRIPT_TERMIN
 
 MapEntryScript_TormaCave_FlightFlag:
     setworldmapflag 0x8A6
     setvar FormanEventVar 0x0
     end
+
+SetStunfiskTrapsVisbility:
+    checkflag 0xE03
+    if NOT_SET _call SetStunfisk1Visibility
+    if SET _call HideStunfisk1
+    checkflag 0xE04
+    if NOT_SET _call SetStunfisk2Visibility
+    if SET _call HideStunfisk2
+    checkflag 0xE05
+    if NOT_SET _call SetStunfisk3Visibility
+    if SET _call HideStunfisk3
+    end
+
+SetStunfisk1Visibility:
+    setmaptile 0x10 0x20 0x30B 0x0
+    return
+
+HideStunfisk1:
+    setmaptile 0x10 0x20 0x281 0x0
+    special 0x8E
+    return
+
+HideStunfisk2:
+    setmaptile 0x2F 0x11 0x281 0x0
+    special 0x8E
+    return
+
+HideStunfisk3:
+    setmaptile 0x1C 0xA 0x281 0x0
+    special 0x8E
+    return
+
+SetStunfisk2Visibility:
+    setmaptile 0x2F 0x11 0x30B 0x0
+    return
+
+SetStunfisk3Visibility:
+    setmaptile 0x1C 0xA 0x30B 0x0
+    return
 
 .global EventScript_TormaCave_RockyHelmet
 EventScript_TormaCave_RockyHelmet:
@@ -74,16 +114,54 @@ SignScript_TormaCave_TrainerTips:
     msgbox gText_TormaCave_TrainerTips MSG_SIGN
     end
 
-.global EventScript_TormaCave_SetPathCleared
-EventScript_TormaCave_SetPathCleared:
+.global TileScript_TormaCave_StunfiskEncounter1
+TileScript_TormaCave_StunfiskEncounter1:
+    checkflag 0xE03
+    if SET _goto End
+    call StunfiskEncounter
+    setflag 0xE03
+    call HideStunfisk1
+    end
+
+.global TileScript_TormaCave_StunfiskEncounter2
+TileScript_TormaCave_StunfiskEncounter2:
+    checkflag 0xE04
+    if SET _goto End
+    call StunfiskEncounter
+    setflag 0xE04
+    call HideStunfisk2
+    end
+
+.global TileScript_TormaCave_StunfiskEncounter3
+TileScript_TormaCave_StunfiskEncounter3:
+    checkflag 0xE05
+    if SET _goto End
+    call StunfiskEncounter
+    setflag 0xE05
+    call HideStunfisk3
+    end
+
+StunfiskEncounter:
+    lock
+    checksound
+    cry SPECIES_STUNFISK_G 0x0
+    applymovement PLAYER m_Surprise
+    msgbox gText_TormaCave_StunfiskEncounter MSG_KEEPOPEN
+    wildbattle SPECIES_STUNFISK_G 0xE 0x0
+    hidesprite LASTTALKED
+    release
+    return
+
+.global TileScript_TormaCave_SetPathCleared
+TileScript_TormaCave_SetPathCleared:
     setflag 0x35 @ Cleared Torma Cave
     @ Set the other tile event up to execute
     setvar 0x4000 0x1
     setvar 0x4001 0x0
     end
 
-.global EventScript_TormaCave_ClearPathCleared
-EventScript_TormaCave_ClearPathCleared:
+.global TileScript_TormaCave_ClearPathCleared
+TileScript_TormaCave_ClearPathCleared:
     # Only clear the flag indicating that Torma Cave has been cleared if the player hasn't spoken with the Foreman upon leaving
     # This avoids a case where the player goes to the end of the cave, leaves from the start, and breaks the cutscene
     checkflag 0x36 @ Met with Foreman
