@@ -391,7 +391,7 @@
 #define FLAG_HIDE_TORMA_CAVE_BF2_CALCIUM                        0x17D
 #define FLAG_HIDE_TORMA_CAVE_BF2_NEVERMELTICE                   0x17E
 #define FLAG_HIDE_TORMA_CAVE_BF2_ICE_STONE                      0x17F
-#define FLAG_HIDE_ROUTE15_TM18                                  0x180
+#define FLAG_HIDE_ROUTE_4_TM71_STONE_EDGE                       0x180
 #define FLAG_HIDE_SAFARI_ZONE_CENTER_NUGGET                     0x181
 #define FLAG_HIDE_SAFARI_ZONE_EAST_MAX_POTION                   0x182
 #define FLAG_HIDE_SAFARI_ZONE_EAST_FULL_RESTORE                 0x183

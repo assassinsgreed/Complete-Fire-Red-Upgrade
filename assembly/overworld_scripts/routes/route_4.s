@@ -94,6 +94,12 @@ ItemScript_Route4_FindTM01WorkUp:
     call ItemScript_Common_FindTM
     end
 
+.global ItemScript_Route4_FindTM71StoneEdge
+ItemScript_Route4_FindTM71StoneEdge:
+    setvar CHOSEN_ITEM ITEM_TM71
+    call ItemScript_Common_FindTM
+    end
+
 .global EventScript_Route4_CamperPietro
 EventScript_Route4_CamperPietro:
     trainerbattle0 0x0 0x24 0x0 gText_Route4_CamperPietro_Intro gText_Route4_CamperPietro_Defeat
