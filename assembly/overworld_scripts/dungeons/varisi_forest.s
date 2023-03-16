@@ -82,13 +82,13 @@ EventScript_VarisiForest_FriendlyTrainer:
 .global EventScript_VarisiForest_FoongusEncounter1
 EventScript_VarisiForest_FoongusEncounter1:
     call FoongusEncounter
-    setflag 0x055
+    setflag 0xE01
     end
 
 .global EventScript_VarisiForest_FoongusEncounter2
 EventScript_VarisiForest_FoongusEncounter2:
     call FoongusEncounter
-    setflag 0x056
+    setflag 0xE02
     end
 
 FoongusEncounter:

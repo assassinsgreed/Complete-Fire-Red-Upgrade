@@ -37,7 +37,7 @@ EventScript_Route1_SandygastEncounter:
     msgbox gText_Route1_SandygastEncounter MSG_KEEPOPEN
     wildbattle SPECIES_SANDYGAST 0x5 0x0
     hidesprite LASTTALKED
-    setflag 0x054
+    setflag 0xE00
     release
     end
 
