@@ -381,3 +381,5 @@ npc 3 31 13 EventScript_Route13_CharizarditeY
 npc 3 31 14 EventScript_Route13_FindTM39RockTomb
 npc 3 31 15 ItemScript_Common_Protein
 npc 3 31 16 ItemScript_Common_HeavyDutyBoots
+sign 3 31 0 SignScript_Route13_RestHouse
+sign 3 31 1 SignScript_Route13_TrainerTips

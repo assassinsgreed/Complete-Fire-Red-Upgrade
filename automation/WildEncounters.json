@@ -414,7 +414,7 @@
                     { "low": 9, "high": 13, "species": "SPECIES_ROLYCOLY" },
                     { "low": 10, "high": 14, "species": "SPECIES_ROLYCOLY" },
                     { "low": 10, "high": 13, "species": "SPECIES_ROGGENROLA" },
-                    { "low": 17, "high": 17, "species": "SPECIES_FLETCHINDER" },
+                    { "low": 15, "high": 15, "species": "SPECIES_FLETCHINDER" },
                     { "low": 13, "high": 15, "species": "SPECIES_HOUNDOUR" },
                     { "low": 13, "high": 15, "species": "SPECIES_LARVESTA" }, 
                     { "low": 13, "high": 16, "species": "SPECIES_LARVESTA" }

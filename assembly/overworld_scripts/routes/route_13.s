@@ -15,3 +15,13 @@ EventScript_Route13_FindTM39RockTomb:
     setvar CHOSEN_ITEM ITEM_TM39
     call ItemScript_Common_FindTM
     end
+
+.global SignScript_Route13_RestHouse
+SignScript_Route13_RestHouse:
+    msgbox gText_Route13_RestHouse MSG_SIGN
+    end
+
+.global SignScript_Route13_TrainerTips
+SignScript_Route13_TrainerTips:
+    msgbox gText_Route13_TrainerTips MSG_SIGN
+    end
