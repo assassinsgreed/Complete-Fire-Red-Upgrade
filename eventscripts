@@ -311,10 +311,10 @@ npc 3 22 16 EventScript_Route4_GentlemanPorter
 npc 3 22 17 EventScript_Route4_BirdKeeperLuca
 npc 3 22 18 ItemScript_Common_SuperPotion
 npc 3 22 19 ItemScript_Common_QuickClaw
-npc 3 22 20 ItemScript_Route4_FindTM01WorkUp
+npc 3 22 20 EventScript_Route4_FindTM01WorkUp
 npc 3 22 21 ItemScript_Common_GrassySeed
 npc 3 22 22 ItemScript_Common_RoseIncense
-npc 3 22 23 ItemScript_Route4_FindTM71StoneEdge
+npc 3 22 23 EventScript_Route4_FindTM71StoneEdge
 sign 3 22 0 SignScript_Route4_TormaCaveSign
 sign 3 22 1 SignScript_Route4_TrainerTips
 
@@ -362,3 +362,22 @@ npc 1 5 11 EventScript_Common_RockSmash
 npc 1 5 12 EventScript_Common_RockSmash
 npc 1 5 13 EventScript_Common_RockSmash
 sign 1 5 0 SignScript_TormaCave_TrainerTips
+
+# Route 13
+npc 3 31 0 EventScript_Common_RockSmash
+npc 3 31 1 EventScript_Common_RockSmash
+npc 3 31 2 EventScript_Common_RockSmash
+npc 3 31 3 EventScript_Common_RockSmash
+npc 3 31 4 EventScript_Common_RockSmash
+npc 3 31 5 EventScript_Common_RockSmash
+npc 3 31 6 EventScript_Common_RockSmash
+npc 3 31 7 EventScript_Common_RockSmash
+npc 3 31 8 EventScript_Common_Strength
+npc 3 31 9 EventScript_Common_Strength
+npc 3 31 10 ItemScript_Common_MetalCoat
+npc 3 31 11 ItemScript_Common_HyperPotion
+npc 3 31 12 ItemScript_Common_MaxElixir
+npc 3 31 13 EventScript_Route13_CharizarditeY
+npc 3 31 14 EventScript_Route13_FindTM39RockTomb
+npc 3 31 15 ItemScript_Common_Protein
+npc 3 31 16 ItemScript_Common_HeavyDutyBoots
