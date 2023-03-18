@@ -68,8 +68,8 @@ EventScript_Route13_GamblerOwain:
     msgbox gText_Route13_GamblerOwain_Chat MSG_NORMAL
     end
 
-.global EventScript_Route13_ColectorBenji
-EventScript_Route13_ColectorBenji:
-    trainerbattle0 0x0 0x3B 0x0 gText_Route13_ColectorBenji_Intro gText_Route13_ColectorBenji_Defeat
-    msgbox gText_Route13_ColectorBenji_Chat MSG_NORMAL
+.global EventScript_Route13_CollectorBenji
+EventScript_Route13_CollectorBenji:
+    trainerbattle0 0x0 0x3B 0x0 gText_Route13_CollectorBenji_Intro gText_Route13_CollectorBenji_Defeat
+    msgbox gText_Route13_CollectorBenji_Chat MSG_NORMAL
     end

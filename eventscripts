@@ -393,4 +393,4 @@ npc 3 31 21 EventScript_Route13_CamperEtie
 npc 3 31 22 EventScript_Route13_BeautyCandice
 npc 3 31 23 EventScript_Route13_GamblerOwain
 ## Requires Surf
-npc 3 31 24 EventScript_Route13_ColectorBenji
+npc 3 31 24 EventScript_Route13_CollectorBenji
