@@ -376,6 +376,48 @@ const struct TrainerMonNoItemDefaultMoves sParty_Route7_CamperCarlisle[] = {
 
 // #endregion
 
+// #region Route 13
+const struct TrainerMonNoItemDefaultMoves sParty_Route13_GamblerDalton[] = {
+    { .lvl = 14, .species = SPECIES_ZORUA },
+    { .lvl = 14, .species = SPECIES_TOXEL },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route13_CollectorCharlie[] = {
+    { .lvl = 16, .species = SPECIES_LARVESTA }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route13_HikerDwayne[] = {
+    { .lvl = 15, .species = SPECIES_ROLYCOLY },
+    { .lvl = 16, .species = SPECIES_PIGNITE },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route13_BlackBeltHector[] = {
+    { .lvl = 14, .species = SPECIES_TIMBURR },
+    { .lvl = 14, .species = SPECIES_TIMBURR },
+    { .lvl = 15, .species = SPECIES_MIENFOO },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route13_PicknickerEtie[] = {
+    { .lvl = 16, .species = SPECIES_SKIDDO },
+    { .lvl = 16, .species = SPECIES_NIDORINO },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route13_BeautyCandice[] = {
+    { .lvl = 28, .species = SPECIES_LYCANROC_DUSK }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route13_GamblerOwain[] = {
+    { .lvl = 26, .species = SPECIES_PIKACHU },
+    { .lvl = 27, .species = SPECIES_LUCARIO },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route13_CollectorBenji[] = {
+    { .lvl = 37, .species = SPECIES_HAKAMO_O },
+    { .lvl = 38, .species = SPECIES_SABLEYE },
+    { .lvl = 40, .species = SPECIES_SHEDINJA },
+};
+// #endregion
+
 #define NO_NAME                                                                                      \
     {                                                                                                \
         _END, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE \
@@ -1008,6 +1050,104 @@ const struct Trainer gTrainers[] = {
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
         .partySize = NELEMS(sParty_Route7_CamperCarlisle),
         .party = {.NoItemDefaultMoves = sParty_Route7_CamperCarlisle}
+    },
+    // #endregion
+    // #region
+    [TRAINER_ROUTE_13_GAMBLER_DALTON] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_GAMBLER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_GAMBLER,
+        .trainerName = {_D, _a, _l, _t, _o, _n, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_RISKY,
+        .partySize = NELEMS(sParty_Route13_GamblerDalton),
+        .party = {.NoItemDefaultMoves = sParty_Route13_GamblerDalton}
+    },
+    [TRAINER_ROUTE_13_COLLECTOR_CHARLIE] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_COLLECTOR,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_COLLECTOR,
+        .trainerName = {_C, _h, _a, _r, _l, _i, _e, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = NELEMS(sParty_Route13_CollectorCharlie),
+        .party = {.NoItemDefaultMoves = sParty_Route13_CollectorCharlie}
+    },
+    [TRAINER_ROUTE_13_HIKER_DWAYNE] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_HIKER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
+        .trainerPic = TRAINER_PIC_HIKER,
+        .trainerName = {_D, _w, _a, _y, _n, _e, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = NELEMS(sParty_Route13_HikerDwayne),
+        .party = {.NoItemDefaultMoves = sParty_Route13_HikerDwayne}
+    },
+    [TRAINER_ROUTE_13_BLACK_BELT_HECTOR] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_BLACK_BELT,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_BLACK_BELT,
+        .trainerName = {_H, _e, _c, _t, _o, _r, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_TRY_TO_FAINT,
+        .partySize = NELEMS(sParty_Route13_BlackBeltHector),
+        .party = {.NoItemDefaultMoves = sParty_Route13_BlackBeltHector}
+    },
+    [TRAINER_ROUTE_13_PICKNICKER_ETIE] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_PICNICKER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .trainerPic = TRAINER_PIC_PICNICKER,
+        .trainerName = {_E, _t, _i, _e, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = NELEMS(sParty_Route13_PicknickerEtie),
+        .party = {.NoItemDefaultMoves = sParty_Route13_PicknickerEtie}
+    },
+    [TRAINER_ROUTE_13_BEAUTY_CANDICE] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_BEAUTY,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .trainerPic = TRAINER_PIC_BEAUTY,
+        .trainerName = {_C, _a, _n, _d, _i, _c, _e, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = NELEMS(sParty_Route13_BeautyCandice),
+        .party = {.NoItemDefaultMoves = sParty_Route13_BeautyCandice}
+    },
+    [TRAINER_ROUTE_13_GAMBLER_OWAIN] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_GAMBLER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_GAMBLER,
+        .trainerName = {_O, _w, _a, _i, _n, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_RISKY,
+        .partySize = NELEMS(sParty_Route13_GamblerOwain),
+        .party = {.NoItemDefaultMoves = sParty_Route13_GamblerOwain}
+    },
+    [TRAINER_ROUTE_13_COLLECTOR_BENJI] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_COLLECTOR,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_COLLECTOR,
+        .trainerName = {_B, _e, _n, _j, _i, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_SEMI_SMART,
+        .partySize = NELEMS(sParty_Route13_CollectorBenji),
+        .party = {.NoItemDefaultMoves = sParty_Route13_CollectorBenji}
     },
     // #endregion
 };

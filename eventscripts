@@ -383,3 +383,14 @@ npc 3 31 15 ItemScript_Common_Protein
 npc 3 31 16 ItemScript_Common_HeavyDutyBoots
 sign 3 31 0 SignScript_Route13_RestHouse
 sign 3 31 1 SignScript_Route13_TrainerTips
+## Accessible any time
+npc 3 31 17 EventScript_Route13_GamblerDalton
+npc 3 31 18 EventScript_Route13_CollectorCharlie
+npc 3 31 19 EventScript_Route13_HikerDwayne
+npc 3 31 20 EventScript_Route13_BlackBeltHector
+npc 3 31 21 EventScript_Route13_CamperEtie
+## Requires rock smash
+npc 3 31 22 EventScript_Route13_BeautyCandice
+npc 3 31 23 EventScript_Route13_GamblerOwain
+## Requires Surf
+npc 3 31 24 EventScript_Route13_ColectorBenji

@@ -3,3 +3,75 @@ Mount Carnelidge Rest House\pRest up and restock before pushing\nfor the mountai
 
 #org @gText_Route13_TrainerTips
 Trainer Tips!\nCertain locations can be returned\lto with Fly, even if they don't\lhave a Pok\emon Center.
+
+#org @gText_Route13_GamblerDalton_Intro
+Let's toss a coin. Heads, I win.\nTails, you win.
+
+#org @gText_Route13_GamblerDalton_Defeat
+Tails[.] I lose.
+
+#org @gText_Route13_GamblerDalton_Chat
+What is life without a bit of risk?
+
+#org @gText_Route13_CollectorCharlie_Intro
+Ehehehehe! I found a rare Pok\emon\nnearby. Here, I'll show you!
+
+#org @gText_Route13_CollectorCharlie_Defeat
+H-how? It was rare[.]
+
+#org @gText_Route13_CollectorCharlie_Chat
+I don't care that I lost. I still\nhave a Pok\emon most people don't.
+
+#org @gText_Route13_HikerDwayne_Intro
+I have a dream to climb every\nmountain in Kulure.
+
+#org @gText_Route13_HikerDwayne_Defeat
+What's your dream, I wonder?
+
+#org @gText_Route13_HikerDwayne_Chat
+I'd better get back to hiking. There\nare still mountains out there that\lremain unclimbed!
+
+#org @gText_Route13_BlackBeltHector_Intro
+Swift as a coursing river[.]\nStrength of a raging fire[.]
+
+#org @gText_Route13_BlackBeltHector_Defeat
+Mysterious, like the dark side of the\nmoon[.]
+
+#org @gText_Route13_BlackBeltHector_Chat
+I repeat affirmations to myself while\nI train, to help me focus on my\lgoals.
+
+#org @gText_Route13_CamperEtie_Intro
+Hi there! My Pok\emon and I are\nhaving a picnic. Would you like to\ljoin us?
+
+#org @gText_Route13_CamperEtie_Defeat
+Oh! You wanted to battle?
+
+#org @gText_Route13_CamperEtie_Chat
+That was fun, but we're going to go\nback to picknicking now.
+
+#org @gText_Route13_BeautyCandice_Intro
+I'm out for a jog with my pet\nLycanroc.
+
+#org @gText_Route13_BeautyCandice_Defeat
+Oh dear!
+
+#org @gText_Route13_BeautyCandice_Chat
+My Lycanroc isn't used to battling.
+
+#org @gText_Route13_GamblerOwain_Intro
+Want to play a game?
+
+#org @gText_Route13_GamblerOwain_Defeat
+Heh, you have some skill!
+
+#org @gText_Route13_GamblerOwain_Chat
+Everyone is so serious these days.\nWhy not play a game once in a\lwhile?
+
+#org @gText_Route13_ColectorBenji_Intro
+Fufufufu, you found my secret place.
+
+#org @gText_Route13_ColectorBenji_Defeat
+Aaah, and you're strong too!
+
+#org @gText_Route13_ColectorBenji_Chat
+Go away! This is my secret place.\nYou can't have it.
