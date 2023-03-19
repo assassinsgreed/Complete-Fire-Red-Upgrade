@@ -21,6 +21,11 @@ ItemScript_Common_SuperPotion:
     finditem ITEM_SUPER_POTION 0x1
     end
 
+.global ItemScript_Common_HyperPotion
+ItemScript_Common_HyperPotion:
+    finditem ITEM_HYPER_POTION 0x1
+    end
+
 .global ItemScript_Common_Antidote
 ItemScript_Common_Antidote:
     finditem ITEM_ANTIDOTE 0x1
@@ -29,6 +34,11 @@ ItemScript_Common_Antidote:
 .global ItemScript_Common_SodaPop
 ItemScript_Common_SodaPop:
     finditem ITEM_SODA_POP 0x1
+    end
+
+.global ItemScript_Common_MaxElixir
+ItemScript_Common_MaxElixir:
+    finditem ITEM_MAX_ELIXIR 0x1
     end
 
 .global ItemScript_Common_Repel
@@ -54,6 +64,11 @@ ItemScript_Common_StarPiece:
 .global ItemScript_Common_Nugget
 ItemScript_Common_Nugget:
     finditem ITEM_NUGGET 0x1
+    end
+
+.global ItemScript_Common_SunStone
+ItemScript_Common_SunStone:
+    finditem ITEM_SUN_STONE 0x1
     end
 
 .global ItemScript_Common_IceStone
@@ -116,9 +131,19 @@ ItemScript_Common_RoseIncense:
     finditem ITEM_ROSE_INCENSE 0x1
     end
 
+.global ItemScript_Common_MetalCoat
+ItemScript_Common_MetalCoat:
+    finditem ITEM_METAL_COAT 0x1
+    end
+
 .global ItemScript_Common_DireHit
 ItemScript_Common_DireHit:
     finditem ITEM_DIRE_HIT 0x1
+    end
+
+.global ItemScript_Common_Protein
+ItemScript_Common_Protein:
+    finditem ITEM_PROTEIN 0x1
     end
 
 .global ItemScript_Common_Calcium
@@ -139,4 +164,9 @@ ItemScript_Common_Greatball:
 .global ItemScript_Common_GrassySeed
 ItemScript_Common_GrassySeed:
     finditem ITEM_GRASSY_SEED 0x1
+    end
+
+.global ItemScript_Common_HeavyDutyBoots
+ItemScript_Common_HeavyDutyBoots:
+    finditem ITEM_HEAVY_DUTY_BOOTS 0x1
     end

@@ -88,14 +88,14 @@ SignScript_Route4_TrainerTips:
     msgbox gText_Route4_TormaCaveSign MSG_NORMAL
     end
 
-.global ItemScript_Route4_FindTM01WorkUp
-ItemScript_Route4_FindTM01WorkUp:
+.global EventScript_Route4_FindTM01WorkUp
+EventScript_Route4_FindTM01WorkUp:
     setvar CHOSEN_ITEM ITEM_TM01
     call ItemScript_Common_FindTM
     end
 
-.global ItemScript_Route4_FindTM71StoneEdge
-ItemScript_Route4_FindTM71StoneEdge:
+.global EventScript_Route4_FindTM71StoneEdge
+EventScript_Route4_FindTM71StoneEdge:
     setvar CHOSEN_ITEM ITEM_TM71
     call ItemScript_Common_FindTM
     end

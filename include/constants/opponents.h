@@ -1,5 +1,5 @@
-#define TRAINER_NONE 0
-
+// Vanilla FR has 742 Trainer slots
+#define TRAINER_NONE                                 0
 #define TRAINER_RIVAL1                               1
 // Route 1
 #define TRAINER_ROUTE_1_YOUNGSTER_PETER              2
@@ -60,3 +60,12 @@
 #define TRAINER_TORMA_CAVE_ENGINEER_SHANE            49
 #define TRAINER_TORMA_CAVE_POKEFAN_COREY             50
 #define TRAINER_TORMA_CAVE_LASS_HARMONY              51
+// Route 13
+#define TRAINER_ROUTE_13_GAMBLER_DALTON              52
+#define TRAINER_ROUTE_13_COLLECTOR_CHARLIE           53
+#define TRAINER_ROUTE_13_HIKER_DWAYNE                54
+#define TRAINER_ROUTE_13_BLACK_BELT_HECTOR           55
+#define TRAINER_ROUTE_13_PICKNICKER_ETIE             56
+#define TRAINER_ROUTE_13_BEAUTY_CANDICE              57
+#define TRAINER_ROUTE_13_GAMBLER_OWAIN               58
+#define TRAINER_ROUTE_13_COLLECTOR_BENJI             59
