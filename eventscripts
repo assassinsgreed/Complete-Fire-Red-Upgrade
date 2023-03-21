@@ -394,3 +394,11 @@ npc 3 31 22 EventScript_Route13_BeautyCandice
 npc 3 31 23 EventScript_Route13_GamblerOwain
 ## Requires Surf
 npc 3 31 24 EventScript_Route13_CollectorBenji
+## Route 13 Rest House
+map 15 1 MapScript_Route13_RestHouse
+npc 15 1 0 EventScript_Route13_RestHouse_PCGuy
+npc 15 1 1 EventScript_Route13_RestHouse_Hiker
+npc 15 1 2 EventScript_Route13_RestHouse_Merchant
+npc 15 1 3 EventScript_Route13_RestHouse_Nurse
+npc 15 1 4 EventScript_Route13_RestHouse_GuestBookGirl
+npc 15 1 5 EventScript_Route13_RestHouse_RestHouseRep

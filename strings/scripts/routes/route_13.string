@@ -75,3 +75,30 @@ Aaah, and you're strong too!
 
 #org @gText_Route13_CollectorBenji_Chat
 Go away! This is my secret place.\nYou can't have it.
+
+#org @gText_Route13_RestHouse_PCGuy
+The PC to my left will allow you to\naccess your Pok\emon and items.
+
+#org @gText_Route13_RestHouse_Hiker
+I make a point to return to Mount\nCarnelidge every year.\lIt's become something of a\ltradition now, hohoho!
+
+#org @gText_Route13_RestHouse_Merchant
+Why, hello! I've brought supplies\nfrom the Ferrox Village Pok\eMart.\pWould you like to buy something\nbefore you go?
+
+#org @gText_Route13_RestHouse_MerchantOpensShop
+Here's what I've got today[.]
+
+#org @gText_Route13_RestHouse_MerchantFarewell
+Good luck, and remember to pace\nyourself out there!
+
+#org @gText_Route13_RestHouse_Nurse
+You and your Pok\emon look tired.\nYou should rest!
+
+#org @gText_Route13_RestHouse_NurseHealed
+Ah, much better! It's important to be\nwell rested before climbing Mount\lCarnelidge.
+
+#org @gText_Route13_RestHouse_GuestBookGirl
+Wow, there are so many names in this\nguest book!\lI had no idea so many people came\lout this way.
+
+#org @gText_Route13_RestHouse_RestHouseRep
+Hello, trainer! Mount Carnelidge is\nquite dangerous.\pWe've set up this rest house to give\naspiring mountain climbers the\lopportunity to rest and refresh\lbefore tackling the mountain.\pNow that you've visited us, you'll\nbe able to return here by having\lyour Pok\emon use Fly. Provided you\lhave the necessary badge and HM,\lof course!\pPlease feel free to use any of\nthe amenities you find at the rest\lhouse!
