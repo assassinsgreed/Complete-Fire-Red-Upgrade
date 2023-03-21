@@ -73,3 +73,66 @@ EventScript_Route13_CollectorBenji:
     trainerbattle0 0x0 0x3B 0x0 gText_Route13_CollectorBenji_Intro gText_Route13_CollectorBenji_Defeat
     msgbox gText_Route13_CollectorBenji_Chat MSG_NORMAL
     end
+
+@@@@@@@@@@ Route 13 Rest House @@@@@@@@@@
+.global MapScript_Route13_RestHouse
+MapScript_Route13_RestHouse:
+    mapscript MAP_SCRIPT_ON_TRANSITION MapEntryScript_Route13_RestHouse_FlightFlag
+    .byte MAP_SCRIPT_TERMIN
+
+MapEntryScript_Route13_RestHouse_FlightFlag:
+    setworldmapflag 0x089C
+    end
+
+.global EventScript_Route13_RestHouse_PCGuy
+EventScript_Route13_RestHouse_PCGuy:
+    npcchat2 0x1 m_LookDown gText_Route13_RestHouse_PCGuy
+    end
+
+.global EventScript_Route13_RestHouse_Hiker
+EventScript_Route13_RestHouse_Hiker:
+    npcchat2 0x2 m_LookLeft gText_Route13_RestHouse_Hiker
+    end
+
+.global EventScript_Route13_RestHouse_Merchant
+EventScript_Route13_RestHouse_Merchant:
+    faceplayer
+    msgbox gText_Route13_RestHouse_Merchant MSG_YESNO
+    compare LASTRESULT YES
+    If equal _call MerchantShop
+    msgbox gText_Route13_RestHouse_MerchantFarewell MSG_NORMAL
+    applymovement 0x3 m_LookRight
+    end
+
+MerchantShop:
+    msgbox gText_Route13_RestHouse_MerchantOpensShop MSG_KEEPOPEN
+    pokemart RestHouseItems
+    return
+
+RestHouseItems:
+    .hword ITEM_POKE_BALL
+    .hword ITEM_FRESH_WATER
+    .hword ITEM_FULL_HEAL
+    .hword ITEM_REVIVE
+    .hword ITEM_REPEL
+    .hword ITEM_ESCAPE_ROPE
+    .hword ITEM_NONE
+
+.global EventScript_Route13_RestHouse_Nurse
+EventScript_Route13_RestHouse_Nurse:
+    faceplayer
+    msgbox gText_Route13_RestHouse_Nurse MSG_NORMAL
+    call PlayerHeal
+    msgbox gText_Route13_RestHouse_NurseHealed MSG_NORMAL
+    applymovement 0x4 m_LookDown
+    end
+
+.global EventScript_Route13_RestHouse_GuestBookGirl
+EventScript_Route13_RestHouse_GuestBookGirl:
+    npcchat2 0x5 m_LookUp gText_Route13_RestHouse_GuestBookGirl
+    end
+
+.global EventScript_Route13_RestHouse_RestHouseRep
+EventScript_Route13_RestHouse_RestHouseRep:
+    npcchat2 0x6 m_LookLeft gText_Route13_RestHouse_RestHouseRep
+    end
