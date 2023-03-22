@@ -1230,19 +1230,19 @@
 #define FLAG_0x4AF               0x4AF
 
 // Boss clear flags, 1200
-#define FLAG_DEFEATED_BROCK           0x4B0
-#define FLAG_DEFEATED_MISTY           0x4B1
-#define FLAG_DEFEATED_LT_SURGE        0x4B2
-#define FLAG_DEFEATED_ERIKA           0x4B3
-#define FLAG_DEFEATED_KOGA            0x4B4
-#define FLAG_DEFEATED_SABRINA         0x4B5
-#define FLAG_DEFEATED_BLAINE          0x4B6
-#define FLAG_DEFEATED_LEADER_GIOVANNI 0x4B7
-#define FLAG_DEFEATED_LORELEI         0x4B8
-#define FLAG_DEFEATED_BRUNO           0x4B9
-#define FLAG_DEFEATED_AGATHA          0x4BA
-#define FLAG_DEFEATED_LANCE           0x4BB
-#define FLAG_DEFEATED_CHAMP           0x4BC
+#define FLAG_DEFEATED_TERRENCE        0x4B0
+#define FLAG_DEFEATED_STACY           0x4B1
+#define FLAG_DEFEATED_WENDY           0x4B2
+#define FLAG_DEFEATED_MONTY           0x4B3
+#define FLAG_DEFEATED_CHANDLER        0x4B4
+#define FLAG_DEFEATED_ABBY            0x4B5
+#define FLAG_DEFEATED_IRIS            0x4B6
+#define FLAG_DEFEATED_DENNIS_AND_DEE  0x4B7
+#define FLAG_DEFEATED_E4_HANNAH       0x4B8
+#define FLAG_DEFEATED_E4_LIAM         0x4B9
+#define FLAG_DEFEATED_E4_JASMINE      0x4BA
+#define FLAG_DEFEATED_E4_THOMAS       0x4BB
+#define FLAG_DEFEATED_CHAMPION_SELENE 0x4BC
 
 // Unused?
 #define FLAG_0x4BD               0x4BD

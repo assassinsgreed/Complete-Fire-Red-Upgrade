@@ -48,6 +48,10 @@ LevelScript_DepartingWithRival:
 	fadedefaultbgm
 	end
 
+MapEntryScript_PlayersHouse_HealingSpot:
+    sethealingplace 0x01 @ Player's House
+    end
+
 .global EventScript_AnthraTown_PlayersPoster
 EventScript_AnthraTown_PlayersPoster:
 	msgbox gText_AnthraTown_PlayersPoster MSG_NORMAL
@@ -312,6 +316,7 @@ TileScript_AnthraTown_RivalArrival:
 
 .global MapScript_AnthraTown_MeetingRival
 MapScript_AnthraTown_MeetingRival:
+	mapscript MAP_SCRIPT_ON_TRANSITION MapEntryScript_PlayersHouse_HealingSpot
 	mapscript MAP_SCRIPT_ON_FRAME_TABLE LevelScripts_AnthraTown_MeetingRival
 	.byte MAP_SCRIPT_TERMIN
 
