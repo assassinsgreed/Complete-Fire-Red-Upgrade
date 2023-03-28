@@ -404,8 +404,19 @@ npc 15 1 4 EventScript_Route13_RestHouse_GuestBookGirl
 npc 15 1 5 EventScript_Route13_RestHouse_RestHouseRep
 
 # Ferrox Village
-
 ## Overworld
+map 3 3 MapScript_FerroxOverworld_FlightSpot
+npc 3 3 0 EventScript_Common_RockSmash
+npc 3 3 1 EventScript_FerroxVillage_AngryLibraryVisitor
+npc 3 3 2 EventScript_FerroxVillage_EggFan
+npc 3 3 3 EventScript_FerroxVillage_FlowerKid
+npc 3 3 4 EventScript_FerroxVillage_AppleMan
+npc 3 3 5 EventScript_FerroxVillage_Policeman
+npc 3 3 6 ItemScript_Common_AbsorbBulb
+npc 3 3 7 ItemScript_Common_FullHeal
+sign 3 3 0 SignScript_FerroxVillage_Library
+sign 3 3 1 SignScript_FerroxVillage_Gym
+sign 3 3 2 SignScript_FerroxVillage_TownEntrance
 
 ## Facilities
 map 7 8 MapScript_FerroxFacilities_PokemonCenter

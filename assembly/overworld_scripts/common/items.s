@@ -31,6 +31,11 @@ ItemScript_Common_Antidote:
     finditem ITEM_ANTIDOTE 0x1
     end
 
+.global ItemScript_Common_FullHeal
+ItemScript_Common_FullHeal:
+    finditem ITEM_FULL_HEAL 0x1
+    end
+
 .global ItemScript_Common_SodaPop
 ItemScript_Common_SodaPop:
     finditem ITEM_SODA_POP 0x1
@@ -84,6 +89,11 @@ ItemScript_Common_SmoothRock:
 .global ItemScript_Common_Snowball
 ItemScript_Common_Snowball:
     finditem ITEM_SNOWBALL 0x1
+    end
+
+.global ItemScript_Common_AbsorbBulb
+ItemScript_Common_AbsorbBulb:
+    finditem ITEM_ABSORB_BULB 0x1
     end
 
 .global ItemScript_Common_MysticWater
