@@ -26,7 +26,9 @@ extern const u8 BattleScript_RanAwayUsingMonAbility[];
 extern const u8 BattleScript_RaidMonRanAway[];
 extern const u8 BattleScript_TryTakeWildMonItem[];
 extern const u8 BattleScript_TakeWildMonItem[];
+extern const u8 BattleScript_CheckPokeChip[];
 
 //Strings
 extern const u8 gText_TookCaughtItemToCube[];
 extern const u8 gText_TookCaughtItemToBag[];
+extern const u8 gText_HoldingPokeChip[];

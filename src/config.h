@@ -151,6 +151,8 @@ enum //These vars need to be one after the other (hence the enum)
 #define EGG_HATCH_LEVEL 1 //The level eggs hatch at
 #define AI_TRY_TO_KILL_RATE 50 //In battles against a trainer with AI flags of 1, the AI will try to use a move to knock out the opponents XX percent of the time
 #define BIKE_ENCOUNTER_PERCENT 60 //Biking through grass or in caves only has this percentage of the encounter rate (vanilla FR is 80)
+#define BASE_POKE_CHIP_RATE 15 //The rate at which PokeChips can be found on wild Pokemon, when defeated
+#define ENHANCED_POKE_CHIP_RATE 40 //The rate at which PokeChips can be found on wild Pokemon, when defeated and while holding the PokeChip Charm
 
 /*===== Metatile Behaviours =====*/
 #define MB_OMNIDIRECTIONAL_JUMP 0x7F //The tile behaviour byte that can be jumped over in all directions

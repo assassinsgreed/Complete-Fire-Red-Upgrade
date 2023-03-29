@@ -23,6 +23,7 @@ end_battle_battle_scripts.s
 .global BattleScript_RanAwayUsingMonAbility
 .global BattleScript_TryTakeWildMonItem
 .global BattleScript_TakeWildMonItem
+.global BattleScript_CheckPokeChip
 
 @;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
@@ -206,6 +207,15 @@ BattleScript_TakeWildMonItem:
 	waitmessage DELAY_1SECOND
 testaassd:
 	return
+
+@;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+BattleScript_CheckPokeChip:
+	callasm WipeYesNoBattleBoxes
+	callasm HandlePokeChip
+	printstring 0x184
+	waitmessage DELAY_1SECOND
+	end2
 
 @;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
