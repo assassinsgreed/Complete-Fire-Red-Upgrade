@@ -213,8 +213,11 @@ testaassd:
 BattleScript_CheckPokeChip:
 	callasm WipeYesNoBattleBoxes
 	callasm HandlePokeChip
+	jumpifword NOTEQUALS BATTLE_STRING_LOADER gText_HoldingPokeChip BattleScript_ExitFromPokeChipEarly
 	printstring 0x184
 	waitmessage DELAY_1SECOND
+	end2
+BattleScript_ExitFromPokeChipEarly:
 	end2
 
 @;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@

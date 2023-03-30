@@ -381,7 +381,7 @@ The mysterious strong winds\ncontinue to blow.
 One [LAST_ITEM] was taken from\n[BUFFER][00] and placed in the Bag.
 
 #org @gText_HoldingPokeChip
-[TARGET] was holding a\nPok\eChip! Took the Pok\eChip.
+[TARGET] was holding a\nPok\eChip! Placed it in the Bag.
 
 #org @gText_TookCaughtItemToCube
 One [LAST_ITEM] was taken from\n[BUFFER][00] and placed in the Cube.

@@ -941,12 +941,12 @@ bool8 IsConsumable(u16 item)
 
 void HandlePokeChip()
 {
-	bool8 hasPokeChipCharm = CheckBagHasItem(ITEM_SHINY_CHARM, 1) > 0;
+	bool8 hasPokeChipCharm = CheckBagHasItem(ITEM_POKE_CHIP_CHARM, 1) > 0;
 	bool8 foundPokeChip = Random() % 100 < (hasPokeChipCharm ? ENHANCED_POKE_CHIP_RATE : BASE_POKE_CHIP_RATE) + 1;
 	if (foundPokeChip)
 	{
-		AddBagItem(ITEM_MASTER_BALL, 1);
+		AddBagItem(ITEM_POKE_CHIP, 1);
 		gBattleStringLoader = gText_HoldingPokeChip;
+		PlaySE(MUS_FANFA1);
 	}
-	// TODO: Better handle when a PokeChip is not received
 }
