@@ -399,8 +399,8 @@
 #define FLAG_HIDE_ROUTE_13_TM39_ROCK_TOMB                       0x185
 #define FLAG_HIDE_ROUTE_13_PROTEIN                              0x186
 #define FLAG_HIDE_ROUTE_13_HEAVY_DUTY_BOOTS                     0x187
-#define FLAG_HIDE_SAFARI_ZONE_WEST_TM32                         0x188
-#define FLAG_HIDE_SAFARI_ZONE_WEST_GOLD_TEETH                   0x189
+#define FLAG_HIDE_FERROX_VILLAGE_ABSORB_BULB                    0x188
+#define FLAG_HIDE_FERROX_VILLAGE_FULL_HEAL                      0x189
 #define FLAG_HIDE_SAFARI_ZONE_WEST_MAX_POTION                   0x18A
 #define FLAG_HIDE_SAFARI_ZONE_WEST_MAX_REVIVE                   0x18B
 #define FLAG_HIDE_SILPH_CO_3F_HYPER_POTION                      0x18C
@@ -1040,7 +1040,7 @@
 #define HIDDEN_ITEM_ROUTE_13_SITRUS_BERRY                              11
 #define HIDDEN_ITEM_ROUTE_13_SHINY_STONE                               12
 #define HIDDEN_ITEM_ROUTE_13_NUGGET                                    13
-#define HIDDEN_ITEM_POKEMON_TOWER_5F_BIG_MUSHROOM                      14
+#define HIDDEN_ITEM_FERROX_VILLAGE_PP_UP                               14
 #define HIDDEN_ITEM_ROUTE13_PP_UP                                      15
 #define HIDDEN_ITEM_UNUSED_0x10                                        16
 #define HIDDEN_ITEM_ROUTE17_RARE_CANDY                                 17

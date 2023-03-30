@@ -225,7 +225,8 @@ EightBadges_Stock:
     .hword ITEM_REVIVE
     .hword ITEM_ESCAPE_ROPE
     .hword ITEM_NONE
-    
+
+.global EventScript_EndMart    
 EventScript_EndMart:
     msgbox gText_Common_PokemartEnd MSG_NORMAL
     goto End
