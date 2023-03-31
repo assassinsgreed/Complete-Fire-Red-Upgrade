@@ -93,6 +93,11 @@ EventScript_RhodanziOverworld_FindTMEchoedVoice:
     call ItemScript_Common_FindTM
     end
 
+.global EventScript_RhodanziOverworld_PokeChipMan
+EventScript_RhodanziOverworld_PokeChipMan:
+    npcchat gText_RhodanziOverworld_PokeChipMan
+    end
+
 m_ThugTopMoveToPush:
     .byte run_right, run_down, look_left, end_m
 

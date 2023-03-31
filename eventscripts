@@ -138,6 +138,7 @@ npc 3 2 5 EventScript_RhodanziOverworld_ThugBottomSpokenTo
 npc 3 2 6 EventScript_RhodanziOverworld_ThugTopSpokenTo
 npc 3 2 7 ItemScript_Common_SodaPop
 npc 3 2 8 EventScript_RhodanziOverworld_FindTMEchoedVoice
+npc 3 2 9 EventScript_RhodanziOverworld_PokeChipMan
 sign 3 2 1 SignScript_RhodanziCity_EntranceSign
 sign 3 2 3 SignScript_RhodanziCity_FishermanSign
 tile 3 2 0 TileScript_RhodanziOverworld_ThugsCaught
@@ -431,4 +432,6 @@ npc 7 8 2 EventScript_FerroxFacilities_Center_StellaSibling
 npc 7 8 3 EventScript_FerroxFacilities_Center_FerroxBadge
 
 ## NPC Houses
-
+npc 7 0 0 EventScript_FerroxNPCHouses_SmallestVillage
+npc 7 1 0 EventScript_FerroxNPCHouses_MoveTutor
+npc 7 1 1 EventScript_FerroxNPCHouses_TutorsInTowns
