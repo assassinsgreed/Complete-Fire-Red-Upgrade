@@ -1322,6 +1322,7 @@ Daily Flags, cleared at the start of each day.  Goes up to 0xEFF
 #define FLAG_TORMA_CAVE_STUNFISK_G_1          0xE03
 #define FLAG_TORMA_CAVE_STUNFISK_G_2          0xE04
 #define FLAG_TORMA_CAVE_STUNFISK_G_3          0xE05
+#define FLAG_FERROX_VILLAGE_BERRY             0xE06
 */
 
 #define FLAG_TRAINER_FLAG_START 0x500

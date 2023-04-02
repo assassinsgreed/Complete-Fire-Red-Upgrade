@@ -421,7 +421,6 @@ sign 3 3 2 SignScript_FerroxVillage_TownEntrance
 
 ## Facilities
 map 7 8 MapScript_FerroxFacilities_PokemonCenter
-npc 7 0 0 EventScript_FerroxNPCHouses_SmallestVillage
 npc 7 6 0 EventScript_Pokemart
 npc 7 6 1 EventScript_FerroxFacilities_Mart_BerryShop
 npc 7 6 2 EventScript_FerroxFacilities_Mart_UniqueShops
@@ -433,5 +432,6 @@ npc 7 8 3 EventScript_FerroxFacilities_Center_FerroxBadge
 
 ## NPC Houses
 npc 7 0 0 EventScript_FerroxNPCHouses_SmallestVillage
+npc 7 0 1 EventScript_FerroxNPCHouses_DailyBerry
 npc 7 1 0 EventScript_FerroxNPCHouses_MoveTutor
 npc 7 1 1 EventScript_FerroxNPCHouses_TutorsInTowns
