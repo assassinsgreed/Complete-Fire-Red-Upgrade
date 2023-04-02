@@ -33,7 +33,10 @@ static const struct TrainerSlide sTrainerSlides[] =
 {
 	// Format {Trainer hex index, msg on first faint, msg on last switch in, msg on last pkmn low hp}
 	{}, // Rival battle 1
+	{0x1, NULL, sText_Rival1_LastSwitchIn, sText_Rival1_LowHP}, // First rival battle
 	{0xE, NULL /*sText_Leader1_FirstMonDown*/, sText_Leader1_LastSwitchIn, sText_Leader1_LowHP}, // Gym Leader Terrence
+	{0x1C, NULL, sText_Rival2_LastSwitchIn, sText_Rival2_LowHP}, // Second rival battle
+	{0x23, NULL, sText_Irene_LastSwitchIn, sText_Irene_LowHP}, // Pluto Admin Irene (double battle)
 	{}, // 
 	{}, // Champion Selene
 };
