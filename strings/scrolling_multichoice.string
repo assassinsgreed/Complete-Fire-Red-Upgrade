@@ -2,34 +2,29 @@
 
 #ifdef SCROLLING_MULTICHOICE
 
-#org @sExampleText_1
-Example 1
+#org @gText_Snore
+Snore
 
-#org @sExampleText_2
-Example 2
+#org @gText_WorrySeed
+Worry Seed
 
-#org @sExampleText_3
-Example 3
+#org @gText_Covet
+Covet
 
-#org @sExampleText_4
-Example 4
+#org @gText_Gravity
+Gravity
 
-#org @sExampleText_5
-Example 5
+#org @gText_Telekinesis
+Telekinesis
 
-#org @sExampleText_6
-Example 6
+#org @gText_IcyWind
+Icy Wind
 
-#org @sExampleText_7
-Example 7
+#org @gText_GastroAcid
+Gastro Acid
 
-#org @sExampleText_8
-Example 8
+#org @gText_AfterYou
+After You
 
-#org @sExampleText_9
-Example 9
-
-#org @sExampleText_10
-Example 10
 
 #endif

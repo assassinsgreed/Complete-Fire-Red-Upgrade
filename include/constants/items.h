@@ -440,8 +440,8 @@ enum
 #define ITEM_15C 348
 
 // FireRed/LeafGreen
-#define ITEM_OAKS_PARCEL 349
-#define ITEM_POKE_FLUTE 350
+#define ITEM_POKE_CHIP 349
+#define ITEM_POKE_CHIP_CHARM 350
 #define ITEM_SECRET_KEY 351
 #define ITEM_BIKE_VOUCHER 352
 #define ITEM_GOLD_TEETH 353

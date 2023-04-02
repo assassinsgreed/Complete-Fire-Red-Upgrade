@@ -2931,67 +2931,35 @@ void ConvertCoinInt(u32 coinAmount)
 //waitstate
 
 //Text Declarations
-extern const u8 sExampleText_1[];
-extern const u8 sExampleText_2[];
-extern const u8 sExampleText_3[];
-extern const u8 sExampleText_4[];
-extern const u8 sExampleText_5[];
-extern const u8 sExampleText_6[];
-extern const u8 sExampleText_7[];
-extern const u8 sExampleText_8[];
-extern const u8 sExampleText_9[];
-extern const u8 sExampleText_10[];
+extern const u8 gText_Snore[];
+extern const u8 gText_WorrySeed[];
+extern const u8 gText_Covet[];
+extern const u8 gText_Gravity[];
+extern const u8 gText_Telekinesis[];
+extern const u8 gText_IcyWind[];
+extern const u8 gText_GastroAcid[];
+extern const u8 gText_AfterYou[];
+extern const u8 gText_End[];
 
-extern const u8 sText_1[];
-extern const u8 sText_2[];
-extern const u8 sText_3[];
-extern const u8 sText_4[];
-extern const u8 sText_5[];
-extern const u8 sText_6[];
-extern const u8 sText_7[];
-extern const u8 sText_8[];
-extern const u8 sText_9[];
-extern const u8 sText_10[];
-extern const u8 sText_11[];
-extern const u8 sText_12[];
-extern const u8 sText_13[];
-extern const u8 sText_14[];
-extern const u8 sText_15[];
 
 //Scrolling Lists
 static const u8* sMultichoiceSet1[] =
 {
-	sExampleText_1,
-	sExampleText_2,
-	sExampleText_3,
-	sExampleText_4,
-	sExampleText_5,
-	sExampleText_6,
-	sExampleText_7,
-	sExampleText_8,
-	sExampleText_9,
-	sExampleText_10,
-};
-
-static const u8* sMultichoiceSet2[] =
-{
-	sExampleText_1,
-	sExampleText_2,
-	sExampleText_3,
-	sExampleText_4,
-	sExampleText_5,
-	sExampleText_6,
-	sExampleText_7,
-	sExampleText_8,
-	sExampleText_9,
-	sExampleText_10,
+	gText_Snore,
+	gText_WorrySeed,
+	gText_Covet,
+	gText_Gravity,
+	gText_Telekinesis,
+	gText_IcyWind,
+	gText_GastroAcid,
+	gText_AfterYou,
+	gText_End,
 };
 
 // Multichoice Lists
 const struct ScrollingMulti gScrollingSets[] =
 {
 	{sMultichoiceSet1, ARRAY_COUNT(sMultichoiceSet1)},
-	{sMultichoiceSet2, ARRAY_COUNT(sMultichoiceSet2)},
 };
 
 //Link number of opts shown at once to the box height

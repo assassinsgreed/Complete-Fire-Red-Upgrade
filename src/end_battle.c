@@ -10,6 +10,7 @@
 #include "../include/constants/maps.h"
 #include "../include/constants/songs.h"
 #include "../include/constants/trainer_classes.h"
+#include "../include/constants/items.h"
 
 #include "../include/new/battle_start_turn_start.h"
 #include "../include/new/battle_util.h"
@@ -289,7 +290,7 @@ void HandleEndTurn_BattleWon(void)
 	}
 	else //Wild - Music played in Exp.C
 	{
-		gBattlescriptCurrInstr = BattleScript_PayDayMoneyAndPickUpItems;
+		gBattlescriptCurrInstr = BattleScript_CheckPokeChip;
 	}
 
 	gSpecialVar_LastResult = 0;
@@ -936,4 +937,16 @@ bool8 IsConsumable(u16 item)
 	}
 
 	return FALSE;
+}
+
+void HandlePokeChip()
+{
+	bool8 hasPokeChipCharm = CheckBagHasItem(ITEM_POKE_CHIP_CHARM, 1) > 0;
+	bool8 foundPokeChip = Random() % 100 < (hasPokeChipCharm ? ENHANCED_POKE_CHIP_RATE : BASE_POKE_CHIP_RATE) + 1;
+	if (foundPokeChip)
+	{
+		AddBagItem(ITEM_POKE_CHIP, 1);
+		gBattleStringLoader = gText_HoldingPokeChip;
+		PlaySE(MUS_FANFA1);
+	}
 }

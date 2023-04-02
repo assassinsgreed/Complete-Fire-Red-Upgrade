@@ -61,14 +61,12 @@ EventScript_RhodanziTrainerSchool_TerrainTutor:
     end
 
 TerrainTutor:
-    showmoney 0x0 0x0
     msgbox gText_RhodanziTrainerSchool_MainRoom_TerrainTutor_Confirmation MSG_YESNO
-    hidemoney
     compare LASTRESULT YES
     IF FALSE _goto TutoringRejected
-    checkmoney 0x3E8 @ 1000 Pokedollars
+    checkitem ITEM_POKE_CHIP 0x5
     compare LASTRESULT TRUE
-    if FALSE _goto NotEnoughMoney
+    if FALSE _goto NotEnoughPokeChips
     msgbox gText_RhodanziTrainerSchool_MainRoom_TerrainTutor_ConfirmationAccepted MSG_KEEPOPEN
     call EventScript_Tutors_Terrain
     msgbox gText_RhodanziTrainerSchool_MainRoom_TerrainTutor_Complete MSG_NORMAL
@@ -80,8 +78,8 @@ TutoringRejected:
     release
     end
 
-NotEnoughMoney:
-    msgbox gText_RhodanziTrainerSchool_MainRoom_TerrainTutor_NotEnoughMoney MSG_NORMAL
+NotEnoughPokeChips:
+    msgbox gText_RhodanziTrainerSchool_MainRoom_TerrainTutor_NotEnoughPokeChips MSG_NORMAL
     release
     end
 
