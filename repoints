@@ -337,6 +337,8 @@ GraphicsInfo_Rival 839FED0
 GraphicsInfo_Alistair 839FEE8 # Why the fuck is this asshole replacing the FeMC sprite, even if everything is removed??
 ## Replace Brock (80)
 GraphicsInfo_LeaderTerrence 839FEF0
+## Replace Misty (81)
+GraphicsInfo_LeaderStella 839FEF4
 ## Replace Lance (74)
 GraphicsInfo_ChampionSelene 839FED8
 ## Replace Town Map (93)
@@ -371,6 +373,9 @@ Rival1Pal 8239D6C
 ## Replace Brock (116)
 LeaderTerrenceBTiles 823991C
 LeaderTerrenceBPal 8239DBC
+## Replace Misty (117)
+LeaderStellaBTiles 8239924
+LeaderStellaBPal 8239DC4
 ## Replace Male Rocket Grunt (109)
 PlutoGruntMTiles 82398E4
 PlutoGruntMPal 8239D84
