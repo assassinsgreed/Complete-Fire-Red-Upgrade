@@ -45,6 +45,7 @@ extern const u16 InterviewerPal[];
 extern const u16 CactusPal[];
 extern const u16 MegaStonePal[];
 extern const u16 AlistairPal[];
+extern const u16 LeaderStellaPal[];
 
 #ifdef UNBOUND
 //extern const u16 MalePlayer_Trainer_Outfit_RedPal[];
@@ -301,6 +302,7 @@ static const u16* sPlayerMarlonOutfitColours[] =
 		{ CactusPal, 0x1213 },
 		{ MegaStonePal, 0x1214 },
 		{ AlistairPal, 0x1215 },
+		{ LeaderStellaPal, 0x1216 },
 		{ NULL, 0x11FF }
 	};
 	const struct SpritePalette* const gObjectEventSpritePalettesSwitcher[255] = {

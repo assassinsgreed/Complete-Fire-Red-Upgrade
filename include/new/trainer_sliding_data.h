@@ -26,7 +26,7 @@ extern const u8 sText_Leader1_FirstMonDown[];
 extern const u8 sText_Leader1_LastSwitchIn[];
 extern const u8 sText_Leader1_LowHP[];
 
-// Gym Leader 2 (Stacy)
+// Gym Leader 2 (Stella)
 extern const u8 sText_Leader2_FirstMonDown[];
 extern const u8 sText_Leader2_LastSwitchIn[];
 extern const u8 sText_Leader2_LowHP[];

@@ -31,15 +31,15 @@ Excellent! I see you understand\nyour Pokemon well.\p
 #org @sText_Leader1_LowHP
 Don't give up! You're doing great!\p 
 
-// Leader 2 (Stacy)
+// Leader 2 (Stella)
 #org @sText_Leader2_FirstMonDown
-Don't assume I'll let you do that\nagain!\p 
+Not bad, but the first act has just\nconcluded.\p 
 
 #org @sText_Leader2_LastSwitchIn
-Hmph! We'll stop you in your\ntracks.\p 
+Time for a well placed plot twist.\p
 
 #org @sText_Leader2_LowHP
-This battle isn't over yet!\p 
+We've really been backed into a\ncorner.\p 
 
 // Leader 3 (Wendy)
 #org @sText_Leader3_FirstMonDown
