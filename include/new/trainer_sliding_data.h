@@ -19,6 +19,10 @@ extern const u8 gText_RedDynamaxMsg[];
 extern const u8 sText_Rival1_LastSwitchIn[];
 extern const u8 sText_Rival1_LowHP[];
 
+// Rival battle 2
+extern const u8 sText_Rival2_LastSwitchIn[];
+extern const u8 sText_Rival2_LowHP[];
+
 // Rival battle n
 
 // Gym Leader 1 (Terrence)
