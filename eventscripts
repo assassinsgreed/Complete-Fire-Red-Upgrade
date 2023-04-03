@@ -435,3 +435,12 @@ npc 7 0 0 EventScript_FerroxNPCHouses_SmallestVillage
 npc 7 0 1 EventScript_FerroxNPCHouses_DailyBerry
 npc 7 1 0 EventScript_FerroxNPCHouses_MoveTutor
 npc 7 1 1 EventScript_FerroxNPCHouses_TutorsInTowns
+
+# Route 5
+npc 3 23 0 EventScript_Route5_Biker
+npc 3 23 1 EventScript_Route5_Biker
+npc 3 23 2 EventScript_Route5_Biker
+npc 3 23 3 EventScript_Route5_Biker
+npc 3 23 4 EventScript_Route5_BikerLeader
+npc 3 23 5 EventScript_Common_Cut
+npc 3 23 6 EventScript_Common_Cut
