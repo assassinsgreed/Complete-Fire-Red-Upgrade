@@ -435,3 +435,5 @@ npc 7 8 3 EventScript_FerroxFacilities_Center_FerroxBadge
 npc 7 0 0 EventScript_FerroxNPCHouses_SmallestVillage
 npc 7 1 0 EventScript_FerroxNPCHouses_MoveTutor
 npc 7 1 1 EventScript_FerroxNPCHouses_TutorsInTowns
+npc 7 10 0 EventScript_FerroxNPCHouses_TradeGirlDad
+npc 7 10 1 EventScript_FerroxNPCHouses_ChinchouTrade
