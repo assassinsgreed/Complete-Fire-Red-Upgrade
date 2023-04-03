@@ -421,7 +421,6 @@ sign 3 3 2 SignScript_FerroxVillage_TownEntrance
 
 ## Facilities
 map 7 8 MapScript_FerroxFacilities_PokemonCenter
-npc 7 0 0 EventScript_FerroxNPCHouses_SmallestVillage
 npc 7 6 0 EventScript_Pokemart
 npc 7 6 1 EventScript_FerroxFacilities_Mart_BerryShop
 npc 7 6 2 EventScript_FerroxFacilities_Mart_UniqueShops
@@ -433,5 +432,15 @@ npc 7 8 3 EventScript_FerroxFacilities_Center_FerroxBadge
 
 ## NPC Houses
 npc 7 0 0 EventScript_FerroxNPCHouses_SmallestVillage
+npc 7 0 1 EventScript_FerroxNPCHouses_DailyBerry
 npc 7 1 0 EventScript_FerroxNPCHouses_MoveTutor
 npc 7 1 1 EventScript_FerroxNPCHouses_TutorsInTowns
+
+# Route 5
+npc 3 23 0 EventScript_Route5_Biker
+npc 3 23 1 EventScript_Route5_Biker
+npc 3 23 2 EventScript_Route5_Biker
+npc 3 23 3 EventScript_Route5_Biker
+npc 3 23 4 EventScript_Route5_BikerLeader
+npc 3 23 5 EventScript_Common_Cut
+npc 3 23 6 EventScript_Common_Cut

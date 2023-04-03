@@ -381,6 +381,27 @@
         },
         {
             "mapgroup": 3,
+            "mapnum": 23,
+            "grass": {
+                "rate": 21,
+                "pokemon": [
+                    { "low": 12, "high": 15, "species": "SPECIES_PACHIRISU" },
+                    { "low": 11, "high": 14, "species": "SPECIES_TIMBURR" },
+                    { "low": 12, "high": 14, "species": "SPECIES_COTTONEE" },
+                    { "low": 10, "high": 13, "species": "SPECIES_COTTONEE" },
+                    { "low": 12, "high": 15, "species": "SPECIES_TIMBURR" },
+                    { "low": 11, "high": 14, "species": "SPECIES_RATTATA_A" },
+                    { "low": 10, "high": 14, "species": "SPECIES_COTTONEE" },
+                    { "low": 11, "high": 15, "species": "SPECIES_NIDORAN_M" },
+                    { "low": 11, "high": 15, "species": "SPECIES_GIBLE" },
+                    { "low": 12, "high": 14, "species": "SPECIES_JANGMO_O" },
+                    { "low": 10, "high": 14, "species": "SPECIES_GIBLE" }, 
+                    { "low": 11, "high": 15, "species": "SPECIES_JANGMO_O" }
+                ]
+            }
+        },
+        {
+            "mapgroup": 3,
             "mapnum": 25,
             "grass": {
                 "rate": 21,
