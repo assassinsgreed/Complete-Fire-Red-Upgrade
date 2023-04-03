@@ -10,6 +10,24 @@ EventScript_FerroxNPCHouses_SmallestVillage:
     npcchat2 0x1 m_LookRight gText_FerroxNPCHouses_SmallestVillage
     end
 
+.global EventScript_FerroxNPCHouses_DailyBerry
+EventScript_FerroxNPCHouses_DailyBerry:
+    lock
+    faceplayer
+    checkflag 0xE06
+    if SET _goto BerryGirlEnd
+    msgbox gText_FerroxNPCHouses_BerryGirl_FreeBerry MSG_NORMAL
+    random 0xA
+    addvar LASTRESULT 0x85 @ Cheri Berry to Sitrus Berry
+    obtainitem LASTRESULT 0x1 
+    setflag 0xE06
+    goto BerryGirlEnd
+
+BerryGirlEnd:
+    msgbox gText_FerroxNPCHouses_BerryGirl_ComeBackTomorrow MSG_NORMAL
+    release
+    end
+
 .global EventScript_FerroxNPCHouses_MoveTutor
 EventScript_FerroxNPCHouses_MoveTutor:
     lock

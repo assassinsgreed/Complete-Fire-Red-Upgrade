@@ -58,8 +58,8 @@
 #define FLAG_HIDE_RIVAL_AND_IRENE_IN_RUBARR                0x034
 #define FLAG_HIDE_ROUTE_4_BOULDERS_AND_NPCS                0x035
 #define FLAG_HIDE_ROUTE_4_FOREMAN                          0x036
-#define FLAG_HIDE_SILPH_SCOPE                              0x037
-#define FLAG_HIDE_HIDEOUT_GIOVANNI                         0x038
+#define FLAG_USED_ALREADY???                               0x037
+#define FLAG_HIDE_ROUTE_5_BIKERS                           0x038
 #define FLAG_HIDE_TOWN_MAP                                 0x039
 #define FLAG_HIDE_POKEDEX                                  0x03A
 #define FLAG_HIDE_CERULEAN_ROCKET                          0x03B
@@ -1322,6 +1322,7 @@ Daily Flags, cleared at the start of each day.  Goes up to 0xEFF
 #define FLAG_TORMA_CAVE_STUNFISK_G_1          0xE03
 #define FLAG_TORMA_CAVE_STUNFISK_G_2          0xE04
 #define FLAG_TORMA_CAVE_STUNFISK_G_3          0xE05
+#define FLAG_FERROX_VILLAGE_BERRY             0xE06
 */
 
 #define FLAG_TRAINER_FLAG_START 0x500
