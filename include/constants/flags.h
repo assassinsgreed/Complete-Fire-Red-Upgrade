@@ -1041,11 +1041,11 @@
 #define HIDDEN_ITEM_ROUTE_13_SHINY_STONE                               12
 #define HIDDEN_ITEM_ROUTE_13_NUGGET                                    13
 #define HIDDEN_ITEM_FERROX_VILLAGE_PP_UP                               14
-#define HIDDEN_ITEM_ROUTE13_PP_UP                                      15
-#define HIDDEN_ITEM_UNUSED_0x10                                        16
-#define HIDDEN_ITEM_ROUTE17_RARE_CANDY                                 17
-#define HIDDEN_ITEM_ROUTE17_FULL_RESTORE                               18
-#define HIDDEN_ITEM_ROUTE17_PP_UP                                      19
+#define HIDDEN_ITEM_ROUTE3_IRON                                        15
+#define HIDDEN_ITEM_ROUTE2_X_SPECIAL                                   16
+#define HIDDEN_ITEM_ROUTE4_SUPER_POTION                                17
+#define HIDDEN_ITEM_TORMA_CAVE_EVERSTONE                               18
+#define HIDDEN_ITEM_RUBARR_DESERT_SUN_STONE                            19
 #define HIDDEN_ITEM_ROUTE17_MAX_REVIVE                                 20
 #define HIDDEN_ITEM_ROUTE17_MAX_ELIXIR                                 21
 #define HIDDEN_ITEM_SAFARI_ZONE_CENTER_LEAF_STONE                      22
