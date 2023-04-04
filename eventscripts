@@ -435,6 +435,8 @@ npc 7 0 0 EventScript_FerroxNPCHouses_SmallestVillage
 npc 7 0 1 EventScript_FerroxNPCHouses_DailyBerry
 npc 7 1 0 EventScript_FerroxNPCHouses_MoveTutor
 npc 7 1 1 EventScript_FerroxNPCHouses_TutorsInTowns
+npc 7 10 0 EventScript_FerroxNPCHouses_TradeGirlDad
+npc 7 10 1 EventScript_FerroxNPCHouses_ChinchouTrade
 
 # Route 5
 npc 3 23 0 EventScript_Route5_Biker

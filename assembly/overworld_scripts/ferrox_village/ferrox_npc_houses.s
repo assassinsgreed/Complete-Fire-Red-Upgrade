@@ -58,3 +58,45 @@ NotEnoughPokeChips:
 EventScript_FerroxNPCHouses_TutorsInTowns:
     npcchat gText_FerroxNPCHouses_TutorsInTowns
     end
+
+.global EventScript_FerroxNPCHouses_TradeGirlDad
+EventScript_FerroxNPCHouses_TradeGirlDad:
+    npcchat2 0x1 m_LookRight gText_FerroxNPCHouses_TradeGirlDad
+    end
+
+.global EventScript_FerroxNPCHouses_ChinchouTrade
+EventScript_FerroxNPCHouses_ChinchouTrade:
+    lock
+    faceplayer
+    checkflag 0x248
+    if SET _goto EventScript_ChinchouTradeComplete
+    msgbox gText_FerroxNPCHouses_ChinchouTrade_Request MSG_YESNO
+    compare LASTRESULT NO
+    if TRUE _goto EventScript_ChinchouTradeDeclined
+    // Set up vars needed for trade
+    copyvar 0x8004 0x8008
+    special2 LASTRESULT 0xFC // Checks the trade set in 0x8004 and buffers the name of the Pokemon wanted and the given Pokemon
+    copyvar 0x8009 LASTRESULT
+    setvar 0x8004 0x0 @ Set Trade #0 (Chinchou)
+    call SelectTradePokemon
+    compare 0x8004 0x6
+    if greaterorequal _goto EventScript_ChinchouTradeDeclined
+    call CheckTradePokemonSelected
+    comparevars LASTRESULT 0x8009
+    if notequal _goto EventScript_ChinchouTradeWrongPokemon
+    msgbox gText_FerroxNPCHouses_ChinchouTrade_InitiatingTrade MSG_NORMAL
+    call InitiateTrade
+    setflag 0x248
+    goto EventScript_ChinchouTradeComplete
+
+EventScript_ChinchouTradeDeclined:
+    msgbox gText_FerroxNPCHouses_ChinchouTrade_Declined MSG_NORMAL
+    goto End
+
+EventScript_ChinchouTradeWrongPokemon:
+    msgbox gText_FerroxNPCHouses_ChinchouTrade_WrongPokemon MSG_NORMAL
+    goto End
+
+EventScript_ChinchouTradeComplete:
+    msgbox gText_FerroxNPCHouses_ChinchouTrade_Complete MSG_NORMAL
+    goto End

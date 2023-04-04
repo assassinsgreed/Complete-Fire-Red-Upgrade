@@ -151,6 +151,29 @@ SetTextColor_Black:
     textcolor 0x2
     return
 
+.global SelectTradePokemon
+SelectTradePokemon:
+    special 0x9F
+    waitstate
+    copyvar 0x800A 0x8004
+    return
+
+.global CheckTradePokemonSelected
+CheckTradePokemonSelected:
+    copyvar 0x8005 0x800A
+    special2 LASTRESULT 0xFF
+    copyvar 0x800B LASTRESULT
+    return
+
+.global InitiateTrade
+InitiateTrade:
+    copyvar 0x8004 0x8008
+    copyvar 0x8005 0x800A
+    special 0xFD
+    special 0xFE
+    waitstate
+    return
+
 .global End
 End:
     release
