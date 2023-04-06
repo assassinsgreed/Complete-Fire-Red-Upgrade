@@ -85,7 +85,7 @@ SignScript_Route4_TormaCaveSign:
 
 .global SignScript_Route4_TrainerTips
 SignScript_Route4_TrainerTips:
-    msgbox gText_Route4_TormaCaveSign MSG_NORMAL
+    msgbox gText_Route4_TrainerTipsSign MSG_NORMAL
     end
 
 .global EventScript_Route4_FindTM01WorkUp

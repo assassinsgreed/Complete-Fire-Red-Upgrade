@@ -406,7 +406,7 @@ npc 15 1 5 EventScript_Route13_RestHouse_RestHouseRep
 
 # Ferrox Village
 ## Overworld
-map 3 3 MapScript_FerroxOverworld_FlightSpot
+map 3 3 MapScript_FerroxOverworld
 npc 3 3 0 EventScript_Common_RockSmash
 npc 3 3 1 EventScript_FerroxVillage_AngryLibraryVisitor
 npc 3 3 2 EventScript_FerroxVillage_EggFan
@@ -418,6 +418,7 @@ npc 3 3 7 ItemScript_Common_FullHeal
 sign 3 3 0 SignScript_FerroxVillage_Library
 sign 3 3 1 SignScript_FerroxVillage_Gym
 sign 3 3 2 SignScript_FerroxVillage_TownEntrance
+tile 3 3 0 TileScript_FerroxVillage_ApproachedGym 
 
 ## Facilities
 map 7 8 MapScript_FerroxFacilities_PokemonCenter
@@ -437,6 +438,12 @@ npc 7 1 0 EventScript_FerroxNPCHouses_MoveTutor
 npc 7 1 1 EventScript_FerroxNPCHouses_TutorsInTowns
 npc 7 10 0 EventScript_FerroxNPCHouses_TradeGirlDad
 npc 7 10 1 EventScript_FerroxNPCHouses_ChinchouTrade
+
+## Gym
+sign 7 5 0 SignScript_FerroxGym_Placard
+sign 7 5 1 SignScript_FerroxGym_Placard
+npc 7 5 0 EventScript_FerroxGym_GymExpert
+npc 7 5 1 EventScript_FerroxGym_LeaderStella
 
 # Route 5
 npc 3 23 0 EventScript_Route5_Biker
