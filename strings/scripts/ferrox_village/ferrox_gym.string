@@ -15,3 +15,81 @@ Superstar, you found the gym leader!\nNow you can challenge her for her\lbadge.\
 
 #org @gText_FerroxGym_ExpertBadgeObtained
 Congratulations, superstar! That's\nanother badge down.\pNow you can use Cut outside of\nbattle. Use it to reach new places\land we may meet again soon!
+
+#org @gText_FerroxLibrary_ReadBookPrompt
+A book is lying on the ground. You\nread it[.]
+
+#org @gText_FerroxLibrary_ReadBookPrompt_L
+It is said that many mythical Pok\emon\ninhabit the Ku[GREEN]l[BLACK]ure Region, though\lthis has often been disputed by\lresearchers.
+
+#org @gText_FerroxLibrary_ReadBookPrompt_I
+Experts agree there are traces of\nunknown Pok\emon with[GREEN]i[BLACK]n the region,\lthough their origins remain under\lscrutiny.
+
+#org @gText_FerroxLibrary_ReadBookPrompt_B
+While searching for mythical Pok\emon\nwithin the region, a group of\lscientists made a [GREEN]b[BLACK]reakthrough into\la new field of study:\linterdimensional travel.
+
+#org @gText_FerroxLibrary_ReadBookPrompt_R
+To further their research into\ninterdimensional spaces, the\l[GREEN]r[BLACK]esearchers founded the\lInterdimensional Research Facility,\llocated in Daimyn City.
+
+#org @gText_FerroxLibrary_ReadBookPrompt_A
+Interdimensional study has lead to\npromising results. Scientists can\lnow ascertain that interdimensional\lsp[GREEN]a[BLACK]ces do exist, though their\lcontents remain unknown.
+
+#org @gText_FerroxLibrary_ReadBookPrompt_R2
+Researches have yet to find\nconclusive p[GREEN]r[BLACK]oof, but have reason\lto believe interdimensional space\lcould sustain human-like\lpopulations of people and Pok\emon-\llike species.
+
+#org @gText_FerroxLibrary_ReadBookPrompt_Y
+Due to interdimensional research\ngripping the region's interests, the\lm[GREEN]y[BLACK]stery of whether mythical\lPok\emon within the region has\ldiminished significantly.
+
+#org @gText_FerroxLibrary_Receiptionist1
+Welcome to the Ferrox Village\nlibrary!\lYou're free to read any books in\lthe library, free of charge.\pSome visitors may seek a battle with\nyou. If you choose to do so,\lplease battle quietly to be\lrespectful to our other guests.
+
+#org @gText_FerroxLibrary_Receiptionist2
+Do you have any books to return?\nNo? Very well.
+
+#org @gText_FerroxLibrary_PCUser
+Wow you can even use the computers\nat the library? I've been missing\lout.
+
+#org @gText_FerroxLibrary_TableReader1
+Having fun isn't hard, when you have\na library card.
+
+#org @gText_FerroxLibrary_TableReader2
+I've been really pushing myself to\nread more often. I've come here\levery week for the past year.
+
+#org @gText_FerroxLibrary_RiddleMan_RiddlePrompt
+Wait! This is the VIP reading lounge.\nIt's only available to the Ferrox\lGym Leader's inner circle.\pTo get in, you need to solve a\nriddle. Are you interested?
+
+#org @gText_FerroxLibrary_RiddleMan_RiddleGiven
+Okay, here's the riddle:\p"What is the Ferrox Gym Leader's\ngreatest treasure?\"\pWell? What do you say?
+
+#org @gText_FerroxGym_RiddleMan_RiddleAnswer
+Library
+
+#org @gText_FerroxGym_RiddleMan_RiddleAnswer_Lowercase
+library
+
+#org @gText_FerroxGym_RiddleMan_RiddleAnswer_Uppercase
+LIBRARY
+
+#org @gText_FerroxGym_RiddleMan_GotRiddleAnswerWrong
+No, that's wrong. I suggest you go\nback to the common reading area.
+
+#org @gText_FerroxGym_RiddleMan_GotRiddleAnswerRight
+Yes, that's right! You're one of us\nafter all.\pHere, let me get out of your way[.]
+
+#org @gText_FerroxGym_RiddleMan_AfterSuccessfulRiddle
+You've solved my riddle, so you can\nfreely come and go from the VIP\lreading lounge whenever you want.
+
+#org @gText_FerroxLibrary_RiddleMan_RiddleDeclined
+Well, you aren't getting in here\nwithout solving the riddle.
+
+#org @gText_FerroxLibrary_RiddleHintMan
+That guy[.] He said he wouldn't let me\nin if I didn't know the password.\pWhat did he say? "Read the books on\nthe floor and pay attention to\lanything that stands out?\"\pAnd he also said something about\n"reading them in the same order as\lyou'd read words in a book.\"\pWhatever that means[.] I think I'll\njust go to the common reading\lareas.
+
+#org @gText_FerroxLibrary_DateBoy
+I'm a cool guy! I brought my\ngirlfriend to the library for our\ldate.
+
+#org @gText_FerroxLibrary_DateGirl
+They should clean up the books all\nover the floor[.]\lSomeone could trip and get hurt.
+
+#org @gText_FerroxLibrary_StellaChat
+[BLACK]She's too busy reading her book to\nnotice you.

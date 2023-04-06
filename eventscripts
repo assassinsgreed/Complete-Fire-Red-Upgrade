@@ -445,6 +445,31 @@ sign 7 5 1 SignScript_FerroxGym_Placard
 npc 7 5 0 EventScript_FerroxGym_GymExpert
 npc 7 5 1 EventScript_FerroxGym_LeaderStella
 
+## Library
+map 7 9 MapScript_FerroxLibrary
+npc 7 9 0 EventScript_FerroxLibrary_Receiptionist1
+npc 7 9 1 EventScript_FerroxLibrary_Receiptionist2
+npc 7 9 2 EventScript_FerroxLibrary_PCUser
+npc 7 9 3 EventScript_FerroxLibrary_TableReader1
+npc 7 9 4 EventScript_FerroxLibrary_TableReader2
+npc 7 9 5 EventScript_FerroxLibrary_PokemonTrainerLaurena
+npc 7 9 6 EventScript_FerroxLibrary_PokemonTrainerLona
+npc 7 9 7 EventScript_FerroxLibrary_PokemonTrainerChet
+npc 7 9 8 EventScript_FerroxLibrary_PokemonTrainerVincent
+npc 7 9 9 EventScript_FerroxLibrary_RiddleMan
+npc 7 9 10 EventScript_FerroxLibrary_Stella
+npc 7 9 11 EventScript_FerroxLibrary_Alistair
+npc 7 9 12 EventScript_FerroxLibrary_RiddleHintMan
+npc 7 9 13 EventScript_FerroxLibrary_DateBoy
+npc 7 9 14 EventScript_FerroxLibrary_DateGirl
+sign 7 9 0 EventScript_FerroxLibrary_ReadBookPromptL
+sign 7 9 1 EventScript_FerroxLibrary_ReadBookPromptI
+sign 7 9 2 EventScript_FerroxLibrary_ReadBookPromptB
+sign 7 9 3 EventScript_FerroxLibrary_ReadBookPromptR
+sign 7 9 4 EventScript_FerroxLibrary_ReadBookPromptA
+sign 7 9 5 EventScript_FerroxLibrary_ReadBookPromptR2
+sign 7 9 6 EventScript_FerroxLibrary_ReadBookPromptY
+
 # Route 5
 npc 3 23 0 EventScript_Route5_Biker
 npc 3 23 1 EventScript_Route5_Biker
