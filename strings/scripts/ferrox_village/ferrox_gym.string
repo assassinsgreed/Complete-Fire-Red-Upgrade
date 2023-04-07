@@ -93,3 +93,39 @@ They should clean up the books all\nover the floor[.]\lSomeone could trip and ge
 
 #org @gText_FerroxLibrary_StellaChat
 [BLACK]She's too busy reading her book to\nnotice you.
+
+#org @gText_FerroxLibrary_PokemonTrainerLaurena_Intro
+Hey, no running in the library!
+
+#org @gText_FerroxLibrary_PokemonTrainerLaurena_Defeat
+You ended up stopping me in my\ntracks.
+
+#org @gText_FerroxLibrary_PokemonTrainerLaurena_Chat
+Remember that the library is a\nshared space for everyone to use.
+
+#org @gText_FerroxLibrary_PokemonTrainerLona_Intro
+Like a foreshadowed plot point, I\nanticipated we would meet.
+
+#org @gText_FerroxLibrary_PokemonTrainerLona_Defeat
+What a twist!
+
+#org @gText_FerroxLibrary_PokemonTrainerLona_Chat
+I like to predict what will happen\nnext, both in my books and in my\llife.
+
+#org @gText_FerroxLibrary_PokemonTrainerChet_Intro
+Hey! This is my hallway. If you want\nto get through, you have to beat\lme.
+
+#org @gText_FerroxLibrary_PokemonTrainerChet_Defeat
+Hmph.
+
+#org @gText_FerroxLibrary_PokemonTrainerChet_Chat
+My favorite books are in this\nhallway, so I make sure that\lonly worthy readers come through\lhere.
+
+#org @gText_FerroxLibrary_PokemonTrainerVincent_Intro
+Excuse me. Would you like to have a\nbattle with a refined gentleman?
+
+#org @gText_FerroxLibrary_PokemonTrainerVincent_Defeat
+Exceptional, exquisite!
+
+#org @gText_FerroxLibrary_PokemonTrainerVincent_Chat
+I've been a trainer for 60 years\nand still find battling to be quite\lthrilling.

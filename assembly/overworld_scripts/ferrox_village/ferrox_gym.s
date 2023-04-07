@@ -199,22 +199,31 @@ EventScript_FerroxLibrary_Stella:
 
 .global EventScript_FerroxLibrary_PokemonTrainerLaurena
 EventScript_FerroxLibrary_PokemonTrainerLaurena:
+    trainerbattle0 0x0 0x3C 0x0 gText_FerroxLibrary_PokemonTrainerLaurena_Intro gText_FerroxLibrary_PokemonTrainerLaurena_Defeat
+    msgbox gText_FerroxLibrary_PokemonTrainerLaurena_Chat MSG_NORMAL
     end
 
 .global EventScript_FerroxLibrary_PokemonTrainerLona
 EventScript_FerroxLibrary_PokemonTrainerLona:
+    trainerbattle0 0x0 0x3D 0x0 gText_FerroxLibrary_PokemonTrainerLona_Intro gText_FerroxLibrary_PokemonTrainerLona_Defeat
+    msgbox gText_FerroxLibrary_PokemonTrainerLona_Chat MSG_NORMAL
     end
 
 .global EventScript_FerroxLibrary_PokemonTrainerChet
 EventScript_FerroxLibrary_PokemonTrainerChet:
+    trainerbattle0 0x0 0x3E 0x0 gText_FerroxLibrary_PokemonTrainerChet_Intro gText_FerroxLibrary_PokemonTrainerChet_Defeat
+    msgbox gText_FerroxLibrary_PokemonTrainerChet_Chat MSG_NORMAL
     end
 
 .global EventScript_FerroxLibrary_PokemonTrainerVincent
 EventScript_FerroxLibrary_PokemonTrainerVincent:
+    trainerbattle0 0x0 0x3F 0x0 gText_FerroxLibrary_PokemonTrainerVincent_Intro gText_FerroxLibrary_PokemonTrainerVincent_Defeat
+    msgbox gText_FerroxLibrary_PokemonTrainerVincent_Chat MSG_NORMAL
     end
 
 .global EventScript_FerroxLibrary_Alistair
 EventScript_FerroxLibrary_Alistair:
+    @ TODO: Populate
     end
 
 m_MoveOutOfRiddleMansWay: .byte slide_down, end_m
