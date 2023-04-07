@@ -1345,7 +1345,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_S, _t, _e, _l, _l, _a, _END},
         .items = { ITEM_POTION },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_SEMI_SMART,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_SEMI_SMART,
         .partySize = NELEMS(sParty_FerroxGym_GymLeaderStella),
         .party = {.ItemCustomMoves = sParty_FerroxGym_GymLeaderStella}
     },
