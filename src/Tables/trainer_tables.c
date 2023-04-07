@@ -544,7 +544,7 @@ const struct TrainerMonItemCustomMoves sParty_FerroxGym_GymLeaderStella[] = {
     },
     {
         .lvl = 22,
-        .species = SPECIES_TOGEKISS,
+        .species = SPECIES_TOGETIC,
         .moves = {
             MOVE_THUNDERWAVE,
             MOVE_AIRSLASH,

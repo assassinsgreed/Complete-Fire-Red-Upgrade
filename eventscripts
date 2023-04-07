@@ -459,7 +459,7 @@ npc 7 9 8 EventScript_FerroxLibrary_PokemonTrainerVincent
 npc 7 9 9 EventScript_FerroxLibrary_RiddleMan
 npc 7 9 10 EventScript_FerroxLibrary_Stella
 npc 7 9 11 EventScript_FerroxLibrary_Alistair
-npc 7 9 12 EventScript_FerroxLibrary_RiddleHintMan
+npc 7 9 12 EventScript_FerroxLibrary_RiddleHintGirl
 npc 7 9 13 EventScript_FerroxLibrary_DateBoy
 npc 7 9 14 EventScript_FerroxLibrary_DateGirl
 sign 7 9 0 EventScript_FerroxLibrary_ReadBookPromptL
