@@ -60,9 +60,9 @@
 #define FLAG_HIDE_ROUTE_4_FOREMAN                          0x036
 #define FLAG_USED_ALREADY???                               0x037
 #define FLAG_HIDE_ROUTE_5_BIKERS                           0x038
-#define FLAG_HIDE_TOWN_MAP                                 0x039
-#define FLAG_HIDE_POKEDEX                                  0x03A
-#define FLAG_HIDE_CERULEAN_ROCKET                          0x03B
+#define FLAG_HIDE_STELLA_AND_ALISTAIR_IN_FERROX_LIBRARY    0x039
+#define FLAG_HIDE_POKEDEX_SPRITE_IN_HAWTHORNES_LAB         0x03A
+#define FLAG_HIDE_STELLA_IN_FERROX_GYM                     0x03B
 #define FLAG_HIDE_CERULEAN_RIVAL                           0x03C
 #define FLAG_HIDE_SS_ANNE_RIVAL                            0x03D
 #define FLAG_HIDE_SAFFRON_ROCKETS                          0x03E
@@ -679,7 +679,7 @@
 #define FLAG_GOT_TM33_FROM_THIRSTY_GIRL                  0x294
 #define FLAG_GOT_TM20_FROM_THIRSTY_GIRL                  0x295
 #define FLAG_GOT_TM16_FROM_THIRSTY_GIRL                  0x296
-#define FLAG_GOT_TM03_FROM_MISTY                         0x297
+#define FLAG_GOT_TM06_FROM_STELLA                        0x297
 #define FLAG_GOT_TM26_FROM_GIOVANNI                      0x298
 #define FLAG_0x299                                       0x299
 #define FLAG_GOT_TM04_FROM_SABRINA                       0x29A

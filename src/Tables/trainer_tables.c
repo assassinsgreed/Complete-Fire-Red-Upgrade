@@ -418,6 +418,144 @@ const struct TrainerMonNoItemDefaultMoves sParty_Route13_CollectorBenji[] = {
 };
 // #endregion
 
+// #region Ferrox Village
+const struct TrainerMonNoItemCustomMoves sParty_FerroxGym_PokemonTrainerLaurena[] = {
+    {
+        .lvl = 17,
+        .species = SPECIES_FLABEBE_ORANGE,
+        .moves = {
+            MOVE_FAIRYWIND,
+            MOVE_LUCKYCHANT,
+            MOVE_RAZORLEAF,
+            MOVE_ATTRACT
+        },
+        .ability = Ability_1 // Flower Veil
+    },
+    {
+        .lvl = 17,
+        .species = SPECIES_PHANTUMP,
+        .moves = {
+            MOVE_ASTONISH,
+            MOVE_CONFUSERAY,
+            MOVE_BRANCHPOKE,
+            MOVE_NONE
+        },
+        .ability = Ability_1 // Natural Cure
+    }
+};
+
+const struct TrainerMonNoItemCustomMoves sParty_FerroxGym_PokemonTrainerLona[] = {
+    {
+        .lvl = 19,
+        .species = SPECIES_MORELULL,
+        .moves = {
+            MOVE_CONFUSERAY,
+            MOVE_ASTONISH,
+            MOVE_ABSORB,
+            MOVE_SLEEPPOWDER
+        },
+        .ability = Ability_2 // Effect Spore
+    }
+};
+
+const struct TrainerMonNoItemCustomMoves sParty_FerroxGym_PokemonTrainerChet[] = {
+    {
+        .lvl = 17,
+        .species = SPECIES_PIKACHU,
+        .moves = {
+            MOVE_NUZZLE,
+            MOVE_THUNDERSHOCK,
+            MOVE_SWEETKISS,
+            MOVE_QUICKATTACK
+        },
+        .ability = Ability_1 // Static
+    },
+    {
+        .lvl = 18,
+        .species = SPECIES_NIDORINO,
+        .moves = {
+            MOVE_POISONTAIL,
+            MOVE_PECK,
+            MOVE_FOCUSENERGY,
+            MOVE_LEER
+        },
+        .ability = Ability_1 // Poison Point
+    }
+};
+
+const struct TrainerMonNoItemCustomMoves sParty_FerroxGym_PokemonTrainerVincent[] = {
+    {
+        .lvl = 17,
+        .species = SPECIES_DUSKULL,
+        .moves = {
+            MOVE_ASTONISH,
+            MOVE_DISABLE,
+            MOVE_CONFUSERAY,
+            MOVE_CURSE
+        },
+        .ability = Ability_1 // Levitate
+    },
+    {
+        .lvl = 17,
+        .species = SPECIES_SHROOMISH,
+        .moves = {
+            MOVE_ABSORB,
+            MOVE_LEECHSEED,
+            MOVE_STUNSPORE,
+            MOVE_HEADBUTT
+        },
+        .ability = Ability_1 // Effect Spore
+    },
+    {
+        .lvl = 18,
+        .species = SPECIES_JOLTIK,
+        .moves = {
+            MOVE_ELECTROWEB,
+            MOVE_BUGBITE,
+            MOVE_THUNDERWAVE,
+            MOVE_ABSORB
+        },
+        .ability = Ability_1 // Compound Eyes
+    }
+};
+
+const struct TrainerMonItemCustomMoves sParty_FerroxGym_GymLeaderStella[] = {
+    {
+        .lvl = 20,
+        .species = SPECIES_MAREANIE,
+        .moves = {
+            MOVE_TOXIC,
+            MOVE_TOXICSPIKES,
+            MOVE_VENOSHOCK,
+            MOVE_SCALD
+        },
+        .ability = Ability_1 // Merciless
+    },
+    {
+        .lvl = 20,
+        .species = SPECIES_CARKOL,
+        .moves = {
+            MOVE_WILLOWISP,
+            MOVE_STEALTHROCK,
+            MOVE_FLAMECHARGE,
+            MOVE_ANCIENTPOWER
+        },
+        .ability = Ability_2 // Flame Body
+    },
+    {
+        .lvl = 22,
+        .species = SPECIES_TOGETIC,
+        .moves = {
+            MOVE_THUNDERWAVE,
+            MOVE_AIRSLASH,
+            MOVE_FAIRYWIND,
+            MOVE_MAGICALLEAF
+        },
+        .ability = Ability_2 // Serene Grace
+    }
+};
+// #endregion
+
 #define NO_NAME                                                                                      \
     {                                                                                                \
         _END, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE \
@@ -620,7 +758,7 @@ const struct Trainer gTrainers[] = {
         .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
         .trainerClass = CLASS_LEADER,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
-        .trainerPic = TRAINER_PIC_BROCK,
+        .trainerPic = TRAINER_PIC_TERRENCE,
         .trainerName = {_T, _e, _r, _r, _e, _n, _c, _e, _END},
         .items = { ITEM_POTION },
         .doubleBattle = FALSE,
@@ -1052,7 +1190,7 @@ const struct Trainer gTrainers[] = {
         .party = {.NoItemDefaultMoves = sParty_Route7_CamperCarlisle}
     },
     // #endregion
-    // #region
+    // #region Route 13
     [TRAINER_ROUTE_13_GAMBLER_DALTON] = {
         .partyFlags = 0,
         .trainerClass = CLASS_GAMBLER,
@@ -1150,4 +1288,65 @@ const struct Trainer gTrainers[] = {
         .party = {.NoItemDefaultMoves = sParty_Route13_CollectorBenji}
     },
     // #endregion
+    // #region Ferrox Village
+    [TRAINER_FERROX_LIBRARY_LAURENA] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .trainerClass = CLASS_PKMN_TRAINER_1,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .trainerPic = TRAINER_PIC_BEAUTY,
+        .trainerName = {_L, _a, _u, _r, _e, _n, _a, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_GOOD_MOVE,
+        .partySize = NELEMS(sParty_FerroxGym_PokemonTrainerLaurena),
+        .party = {.NoItemCustomMoves = sParty_FerroxGym_PokemonTrainerLaurena}
+    },
+    [TRAINER_FERROX_LIBRARY_LONA] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .trainerClass = CLASS_PKMN_TRAINER_1,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .trainerPic = TRAINER_PIC_PSYCHIC_F,
+        .trainerName = {_L, _o, _n, _a, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_GOOD_MOVE,
+        .partySize = NELEMS(sParty_FerroxGym_PokemonTrainerLona),
+        .party = {.NoItemCustomMoves = sParty_FerroxGym_PokemonTrainerLona}
+    },
+    [TRAINER_FERROX_LIBRARY_CHET] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .trainerClass = CLASS_PKMN_TRAINER_1,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_COOLTRAINER_M,
+        .trainerName = {_C, _h, _e, _t, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_GOOD_MOVE,
+        .partySize = NELEMS(sParty_FerroxGym_PokemonTrainerChet),
+        .party = {.NoItemCustomMoves = sParty_FerroxGym_PokemonTrainerChet}
+    },
+    [TRAINER_FERROX_LIBRARY_VINCENT] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .trainerClass = CLASS_PKMN_TRAINER_1,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_GENTLEMAN,
+        .trainerName = {_V, _i, _n, _c, _e, _n, _t, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_GOOD_MOVE,
+        .partySize = NELEMS(sParty_FerroxGym_PokemonTrainerVincent),
+        .party = {.NoItemCustomMoves = sParty_FerroxGym_PokemonTrainerVincent}
+    },
+    [TRAINER_FERROX_GYM_LEADER_STELLA] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_LEADER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_STELLA,
+        .trainerName = {_S, _t, _e, _l, _l, _a, _END},
+        .items = { ITEM_POTION },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_SEMI_SMART,
+        .partySize = NELEMS(sParty_FerroxGym_GymLeaderStella),
+        .party = {.ItemCustomMoves = sParty_FerroxGym_GymLeaderStella}
+    },
 };

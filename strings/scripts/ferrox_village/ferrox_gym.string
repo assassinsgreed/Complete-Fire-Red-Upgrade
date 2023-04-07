@@ -1,0 +1,239 @@
+#org @gText_FerroxGym_Winners
+Ferrox Village Gym\nVictors:
+
+#org @gText_FerroxGym_WinnersAfterLibrary
+Ferrox Village Gym\nVictors: [RIVAL]
+
+#org @gText_FerroxGym_WinnersWithBadge
+Ferrox Village Gym\nVictors: [RIVAL], [PLAYER]
+
+#org @gText_FerroxGym_ExpertLeaderOut
+What's up, superstar? Ready for\nanother gym challenge?\l[.]That's what I'd say, if the gym\lleader was in, at least!\pShe hasn't been by in a while. I\nheard she likes to spend her time\lat the Ferrox Library. Maybe she's\lthere now?\pNo gym leader equals no gym\nchallenge, which then equals no\lbadge. Ya dig, superstar?
+
+#org @gText_FerroxGym_ExpertTips
+Superstar, you found the gym leader!\nNow you can challenge her for her\lbadge.\pLet me give you some tips before you\nsquare up. Stella is a tactical\lgenius and uses status effects to\lher advantage.\pI recommend paying attention to your\nteam composition to keep the upper\lhand. For example, a poison type\lcan't be poisoned.\pThe Ferrox Village Pok\eMart also\ncarries status curing berries you\lcan give your Pok\emon.\pDon't let her catch you off guard,\nand you'll come out on top. Good\lluck, superstar!
+
+#org @gText_FerroxGym_ExpertBadgeObtained
+Congratulations, superstar! That's\nanother badge down.\pNow you can use Cut outside of\nbattle. Use it to reach new places\land we may meet again soon!
+
+#org @gText_FerroxLibrary_ReadBookPrompt
+A book is lying on the ground. You\nread it[.]
+
+#org @gText_FerroxGym_LeaderStella_Talk
+So you came after all, huh?\pI suppose that means you were\nserious about challenging me.\pI am quite experienced with status\neffects. Do you think you can\lsurvive my onslaught of attacks,\lwhen you're crippled by them?
+
+#org @gText_FerroxGym_LeaderStella_Intro
+[RED]I may be shy, but I won't hold\nanything back!
+
+#org @gText_FerroxGym_LeaderStella_Defeat
+Oh my[.] I didn't expect you to battle\nso fiercely.
+
+#org @gText_FerroxGym_LeaderStella_BadgeAwarded
+[RED]You performed quite well today. It\nis my pleasure to award you the\lPatch Badge.
+
+#org @gText_FerroxGym_BadgeReceived
+[PLAYER] received the Patch Badge!
+
+#org @gText_FerroxGym_TMReceived
+[PLAYER] received TM06 from Stella!
+
+#org @gText_FerroxGym_LeaderStella_BadgeDescription
+[RED]This badge represents what you've\naccomplished today. Your Pok\emon\lwill surely have taken note of it\las well.\pSimply by holding this badge, all\nPok\emon up to level 35 will obey\lyour commands.\pYou'll also be able to use the move\nCut outside of battle.
+
+#org @gText_FerroxGym_LeaderStella_TMReceived
+[RED]Please also take this TM, which\nis a favorite of mine.\pThis TM teaches your Pok\emon the\nmove Toxic. It causes your foe to\ltake additional poison damage for\leach consecutive turn in battle.\pUsing it strategically will surely\nlead you to more victories.
+
+#org @gText_FerroxGym_LeaderStella_Chat
+It was a pleasure battling with you.\nI wish you luck in your gym\lchallenge.
+
+#org @gText_FerroxLibrary_ReadBookPrompt_L
+It is said that many mythical Pok\emon\ninhabit the Ku[GREEN]l[BLACK]ure Region, though\lthis has often been disputed by\lresearchers.
+
+#org @gText_FerroxLibrary_ReadBookPrompt_I
+Experts agree there are traces of\nunknown Pok\emon with[GREEN]i[BLACK]n the region,\lthough their origins remain under\lscrutiny.
+
+#org @gText_FerroxLibrary_ReadBookPrompt_B
+While searching for mythical Pok\emon\nwithin the region, a group of\lscientists made a [GREEN]b[BLACK]reakthrough into\la new field of study:\linterdimensional spaces.
+
+#org @gText_FerroxLibrary_ReadBookPrompt_R
+To further their research into\ninterdimensional spaces, the\l[GREEN]r[BLACK]esearchers founded the\lInterdimensional Research Facility,\llocated in Daimyn City.
+
+#org @gText_FerroxLibrary_ReadBookPrompt_A
+Interdimensional study has lead to\npromising results. Scientists can\lnow ascertain that interdimensional\lsp[GREEN]a[BLACK]ces do exist, though their\lcontents remain unknown.
+
+#org @gText_FerroxLibrary_ReadBookPrompt_R2
+Researches have yet to find\nconclusive p[GREEN]r[BLACK]oof, but have reason\lto believe interdimensional space\lcould sustain human-like\lpopulations of people and Pok\emon-\llike species.
+
+#org @gText_FerroxLibrary_ReadBookPrompt_Y
+Due to interdimensional research\ngripping the region's interests, the\lm[GREEN]y[BLACK]stery of whether mythical\lPok\emon within the region actually\lexist has diminished significantly.
+
+#org @gText_FerroxLibrary_Receiptionist1
+Welcome to the Ferrox Village\nlibrary!\lYou're free to read any books in\lthe library, free of charge.\pSome visitors may seek a battle with\nyou. If you choose to do so,\lplease battle quietly to be\lrespectful to our other guests.
+
+#org @gText_FerroxLibrary_Receiptionist2
+Do you have any books to return?\nNo? Very well.
+
+#org @gText_FerroxLibrary_PCUser
+Wow you can even use the computers\nat the library? I've been missing\lout.
+
+#org @gText_FerroxLibrary_TableReader1
+Having fun isn't hard, when you have\na library card.
+
+#org @gText_FerroxLibrary_TableReader2
+I've been really pushing myself to\nread more often. I've come here\levery week for the past year.
+
+#org @gText_FerroxLibrary_RiddleMan_RiddlePrompt
+Wait! This is the VIP reading lounge.\nIt's only available to the Ferrox\lGym Leader's inner circle.\pTo get in, you need to solve a\nriddle. Are you interested?
+
+#org @gText_FerroxLibrary_RiddleMan_RiddleGiven
+Okay, here's the riddle:\p"What is the Ferrox Gym Leader's\ngreatest treasure?\"\pWell? What do you say?
+
+#org @gText_FerroxGym_RiddleMan_RiddleAnswer
+Library
+
+#org @gText_FerroxGym_RiddleMan_RiddleAnswer_Lowercase
+library
+
+#org @gText_FerroxGym_RiddleMan_RiddleAnswer_Uppercase
+LIBRARY
+
+#org @gText_FerroxGym_RiddleMan_GotRiddleAnswerWrong
+No, that's wrong. I suggest you go\nback to the common reading area.
+
+#org @gText_FerroxGym_RiddleMan_GotRiddleAnswerRight
+Yes, that's right! You're one of us\nafter all.\pHere, let me get out of your way[.]
+
+#org @gText_FerroxGym_RiddleMan_AfterSuccessfulRiddle
+You've solved my riddle, so you can\nfreely come and go from the VIP\lreading lounge whenever you want.
+
+#org @gText_FerroxLibrary_RiddleMan_RiddleDeclined
+Well, you aren't getting in here\nwithout solving the riddle.
+
+#org @gText_FerroxLibrary_RiddleHintGirl
+That guy[.] He said he wouldn't let me\nin if I didn't know the password.\pWhat did he say? "Read the books on\nthe floor and pay attention to\lanything that stands out?\"\pAnd he also said something about\n"reading them in the same order as\lyou'd read words in a book.\"\pWhatever that means[.] I think I'll\njust go to the common reading\lareas.
+
+#org @gText_FerroxLibrary_RiddleHintGirl_RiddleSolved
+Oh, did you solve his riddle? Don't\ntell me the answer.\pI want to solve it for myself and\nshow him that he isn't better than\lme.
+
+#org @gText_FerroxLibrary_DateBoy
+I'm a cool guy! I brought my\ngirlfriend to the library for our\ldate.
+
+#org @gText_FerroxLibrary_DateGirl
+They should clean up the books all\nover the floor[.]\lSomeone could trip and get hurt.
+
+#org @gText_FerroxLibrary_StellaChat
+[BLACK]She's too busy reading her book to\nnotice you.
+
+#org @gText_FerroxLibrary_PokemonTrainerLaurena_Intro
+Hey, no running in the library!
+
+#org @gText_FerroxLibrary_PokemonTrainerLaurena_Defeat
+You ended up stopping me in my\ntracks.
+
+#org @gText_FerroxLibrary_PokemonTrainerLaurena_Chat
+Remember that the library is a\nshared space for everyone to use.
+
+#org @gText_FerroxLibrary_PokemonTrainerLona_Intro
+Like a foreshadowed plot point, I\nanticipated we would meet.
+
+#org @gText_FerroxLibrary_PokemonTrainerLona_Defeat
+What a twist!
+
+#org @gText_FerroxLibrary_PokemonTrainerLona_Chat
+I like to predict what will happen\nnext, both in my books and in my\llife.
+
+#org @gText_FerroxLibrary_PokemonTrainerChet_Intro
+Hey! This is my hallway. If you want\nto get through, you have to beat\lme.
+
+#org @gText_FerroxLibrary_PokemonTrainerChet_Defeat
+Hmph.
+
+#org @gText_FerroxLibrary_PokemonTrainerChet_Chat
+My favorite books are in this\nhallway, so I make sure that\lonly worthy readers come through\lhere.
+
+#org @gText_FerroxLibrary_PokemonTrainerVincent_Intro
+Excuse me. Would you like to have a\nbattle with a refined gentleman?
+
+#org @gText_FerroxLibrary_PokemonTrainerVincent_Defeat
+Exceptional, exquisite!
+
+#org @gText_FerroxLibrary_PokemonTrainerVincent_Chat
+I've been a trainer for 60 years\nand still find battling to be quite\lthrilling.
+
+#org @gText_FerroxLibrary_Plot_RivalMeetsPlayer
+Hey, [PLAYER], I figured we'd run\ninto each other again here.\pI searched all over the library but\ncouldn't find the gym leader. They\lmust be in this VIP section then,\lright?
+
+#org @gText_FerroxLibrary_Plot_AgreeWithRival
+Yeah totally! Let's ask around.
+
+#org @gText_FerroxLibrary_Plot_DisagreeWithRival
+I'm pretty sure I didn't see anyone\nleave. They have to be here still.
+
+#org @gText_FerroxLibrary_Plot_RivalApproachesAlistair
+[BLACK][RIVAL]: [BLUE]Excuse me. Could we talk\nto you for a moment?
+
+#org @gText_FerroxLibrary_Plot_AlistairResponds
+[BLACK]???: [BLUE]Hmmm?
+
+#org @gText_FerroxLibrary_Plot_AlistairAsksWhatHeCanHelpWith
+[BLACK]???: [BLUE]Oh, hello. I didn't notice\nyou there.\pCan I help you with something?
+
+#org @gText_FerroxLibrary_Plot_RivalAsksIfAlistairIsGymLeader
+[BLACK][RIVAL]: [BLUE]We're looking for the\nFerrox Gym Leader, so we can\lchallenge them for their badge. Is\lthat you?
+
+#org @gText_FerroxLibrary_Plot_AlistairSaysNo
+[BLACK]???: [BLUE]Ohoho, I'm afraid not. Allow me\nto introduce myself.
+
+#org @gText_FerroxLibrary_Plot_AlistairIntroducesHimself
+[BLACK]Alistair: [BLUE]I am Alistair. I am a\nPok\emon Researcher. I've come to\lthis library to study Pok\emon\lmythology to help me with my\lstudies.
+
+#org @gText_FerroxLibrary_Plot_RivalAsksWhatAlistairIsStudying
+[BLACK][RIVAL]: [BLUE]Oh, that's pretty cool!\nHave you been able to prove\lanything yet?
+
+#org @gText_FerroxLibrary_Plot_AlistairDeadEnds
+[BLACK]Alistair: [BLUE]I'm afraid not. Most myths\nhave led to dead ends.\pAlthough, there is this interesting\nrumour about a Pok\emon that can\leject steam from it's cannons[.]
+
+#org @gText_FerroxLibrary_Plot_AlistairNoticesTheTime
+[BLACK]Alistair: [BLUE]Oh my! I just noticed the\ntime. Please excuse me, I have an\lappointment with an old colleague\lof mine and must go.
+
+#org @gText_FerroxLibrary_Plot_RivalRespondsToAlistairLeaving
+[BLACK][RIVAL]: [BLUE]Oh sorry! Don't let us keep\nyou.
+
+#org @gText_FerroxLibrary_Plot_AlistairAsksAboutGymChallenge
+[BLACK]Alistair: [BLUE]Before I go, I have a\nquestion for you.\pYou said you were looking for the\ngym leader, yes? Is it right to\lassume you are taking the gym\lchallenge then?
+
+#org @gText_FerroxLibrary_Plot_RivalRespondsToGymChallengeQuestion
+[BLACK][RIVAL]: [BLUE]Yep, that's right! We're\ngoing to get every gym badge and\lchallenge Champion Selene.
+
+#org @gText_FerroxLibrary_Plot_AlistairGivesCutGift
+[BLACK]Alistair: [BLUE]Ah, very good. She\ncertainly has been champion for a\llong time[.] But I digress.\pIt has been lovely talking with you\nboth. Your energy is infectious,\land I'd like to give you both a\lgift before I go.
+
+#org @gText_FerroxLibrary_Plot_AlistairExplainsCut
+[BLACK]Alistair: [BLUE]That is the HM for the move\nCut.\pUsing it will allow you to cut down\nsmall trees in your path. It will\lsurely allow you to reach new\lareas.\pOh, but you'll require the gym badge\nfrom the Ferrox Village gym before\lyou can use it.
+
+#org @gText_FerroxLibrary_Plot_RivalThanksAlistair
+[BLACK][RIVAL]: [BLUE]Wow, thank you Alistair!\nThat's very nice of you.
+
+#org @gText_FerroxLibrary_Plot_AlistairLeaves
+[BLACK][RIVAL]: [BLUE]The pleasure is all mine.\pI used to be a trainer myself,\nactually, and I have a soft spot\lfor those that want to become\lchampions.\pThat being said, I must bid you both\nadieu now.\pGood luck in your pursuit of the\ngym leader, and your gym\lchallenge.\pPerhaps we will meet again someday.
+
+#org @gText_FerroxLibrary_Plot_RivalCommentsOnAlistair
+[BLACK][RIVAL]: [BLUE]He was a nice guy.\pBut[.] we still haven't found the gym\nleader. I have to be honest, I'm\lrunning out of ideas[.]
+
+#org @gText_FerroxLibrary_Plot_StellaConfirmsPlayersGoal
+[BLACK]???: [RED]Umm[.] Excuse me?\pI didn't mean to eavesdrop, but did\nI hear that you're looking for the\lgym leader?
+
+#org @gText_FerroxLibrary_Plot_RivalWhenPlayerSaysNo
+[BLACK][RIVAL]: [BLUE][PLAYER], have you already\nforgotten? We are looking for the\lgym leader!
+
+#org @gText_FerroxLibrary_Plot_StellaIntroducesHerself
+[BLACK]Stella: [RED]Yeah[.] That's me. I am Gym\nLeader Stella.\pIt seems I've been away for too\nlong. Please accept my apologies[.]\pIf you'd like to challenge me for my\nbadge, I'll meet you at the gym.\lPlease excuse me.
+
+#org @gText_FerroxLibrary_Plot_RivalCommentsOnLuck
+[BLACK][RIVAL]: [BLUE]Wow, we really lucked out,\nhuh [PLAYER]?
+
+#org @gText_FerroxLibrary_Plot_RivalCommentsOnStella
+[BLACK][RIVAL]: [BLUE]Stella[.] She's very polite,\nbut also very quiet. I wonder what\lkind of trainer she is.
+
+#org @gText_FerroxLibrary_Plot_RivalLeaves
+[BLACK][RIVAL]: [BLUE]But I guess there's only\none way to find out, right?\pI'm going to challenge the gym. I'll\ncatch you later, [PLAYER].

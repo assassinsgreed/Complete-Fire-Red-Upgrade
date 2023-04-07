@@ -69,3 +69,9 @@
 #define TRAINER_ROUTE_13_BEAUTY_CANDICE              57
 #define TRAINER_ROUTE_13_GAMBLER_OWAIN               58
 #define TRAINER_ROUTE_13_COLLECTOR_BENJI             59
+// Ferrox Village
+#define TRAINER_FERROX_LIBRARY_LAURENA               60
+#define TRAINER_FERROX_LIBRARY_LONA                  61
+#define TRAINER_FERROX_LIBRARY_CHET                  62
+#define TRAINER_FERROX_LIBRARY_VINCENT               63
+#define TRAINER_FERROX_GYM_LEADER_STELLA             64

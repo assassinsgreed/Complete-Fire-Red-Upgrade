@@ -406,7 +406,7 @@ npc 15 1 5 EventScript_Route13_RestHouse_RestHouseRep
 
 # Ferrox Village
 ## Overworld
-map 3 3 MapScript_FerroxOverworld_FlightSpot
+map 3 3 MapScript_FerroxOverworld
 npc 3 3 0 EventScript_Common_RockSmash
 npc 3 3 1 EventScript_FerroxVillage_AngryLibraryVisitor
 npc 3 3 2 EventScript_FerroxVillage_EggFan
@@ -418,6 +418,7 @@ npc 3 3 7 ItemScript_Common_FullHeal
 sign 3 3 0 SignScript_FerroxVillage_Library
 sign 3 3 1 SignScript_FerroxVillage_Gym
 sign 3 3 2 SignScript_FerroxVillage_TownEntrance
+tile 3 3 0 TileScript_FerroxVillage_ApproachedGym 
 
 ## Facilities
 map 7 8 MapScript_FerroxFacilities_PokemonCenter
@@ -437,6 +438,37 @@ npc 7 1 0 EventScript_FerroxNPCHouses_MoveTutor
 npc 7 1 1 EventScript_FerroxNPCHouses_TutorsInTowns
 npc 7 10 0 EventScript_FerroxNPCHouses_TradeGirlDad
 npc 7 10 1 EventScript_FerroxNPCHouses_ChinchouTrade
+
+## Gym
+sign 7 5 0 SignScript_FerroxGym_Placard
+sign 7 5 1 SignScript_FerroxGym_Placard
+npc 7 5 0 EventScript_FerroxGym_GymExpert
+npc 7 5 1 EventScript_FerroxGym_LeaderStella
+
+## Library
+map 7 9 MapScript_FerroxLibrary
+npc 7 9 0 EventScript_FerroxLibrary_Receiptionist1
+npc 7 9 1 EventScript_FerroxLibrary_Receiptionist2
+npc 7 9 2 EventScript_FerroxLibrary_PCUser
+npc 7 9 3 EventScript_FerroxLibrary_TableReader1
+npc 7 9 4 EventScript_FerroxLibrary_TableReader2
+npc 7 9 5 EventScript_FerroxLibrary_PokemonTrainerLaurena
+npc 7 9 6 EventScript_FerroxLibrary_PokemonTrainerLona
+npc 7 9 7 EventScript_FerroxLibrary_PokemonTrainerChet
+npc 7 9 8 EventScript_FerroxLibrary_PokemonTrainerVincent
+npc 7 9 9 EventScript_FerroxLibrary_RiddleMan
+npc 7 9 10 EventScript_FerroxLibrary_Stella
+npc 7 9 11 EventScript_FerroxLibrary_Alistair
+npc 7 9 12 EventScript_FerroxLibrary_RiddleHintGirl
+npc 7 9 13 EventScript_FerroxLibrary_DateBoy
+npc 7 9 14 EventScript_FerroxLibrary_DateGirl
+sign 7 9 0 EventScript_FerroxLibrary_ReadBookPromptL
+sign 7 9 1 EventScript_FerroxLibrary_ReadBookPromptI
+sign 7 9 2 EventScript_FerroxLibrary_ReadBookPromptB
+sign 7 9 3 EventScript_FerroxLibrary_ReadBookPromptR
+sign 7 9 4 EventScript_FerroxLibrary_ReadBookPromptA
+sign 7 9 5 EventScript_FerroxLibrary_ReadBookPromptR2
+sign 7 9 6 EventScript_FerroxLibrary_ReadBookPromptY
 
 # Route 5
 npc 3 23 0 EventScript_Route5_Biker
