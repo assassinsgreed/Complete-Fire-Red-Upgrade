@@ -145,14 +145,14 @@ EventScript_FerroxLibrary_ReadBookPromptY:
     msgbox gText_FerroxLibrary_ReadBookPrompt_Y MSG_SIGN
     end
 
-.global EventScript_FerroxLibrary_Receiptionist1
-EventScript_FerroxLibrary_Receiptionist1:
-    npcchat gText_FerroxLibrary_Receiptionist1
+.global EventScript_FerroxLibrary_Receptionist1
+EventScript_FerroxLibrary_Receptionist1:
+    npcchat gText_FerroxLibrary_Receptionist1
     end
 
-.global EventScript_FerroxLibrary_Receiptionist2
-EventScript_FerroxLibrary_Receiptionist2:
-    npcchat gText_FerroxLibrary_Receiptionist2
+.global EventScript_FerroxLibrary_Receptionist2
+EventScript_FerroxLibrary_Receptionist2:
+    npcchat gText_FerroxLibrary_Receptionist2
     end
 
 .global EventScript_FerroxLibrary_PCUser

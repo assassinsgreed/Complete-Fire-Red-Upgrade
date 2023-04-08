@@ -447,8 +447,8 @@ npc 7 5 1 EventScript_FerroxGym_LeaderStella
 
 ## Library
 map 7 9 MapScript_FerroxLibrary
-npc 7 9 0 EventScript_FerroxLibrary_Receiptionist1
-npc 7 9 1 EventScript_FerroxLibrary_Receiptionist2
+npc 7 9 0 EventScript_FerroxLibrary_Receptionist1
+npc 7 9 1 EventScript_FerroxLibrary_Receptionist2
 npc 7 9 2 EventScript_FerroxLibrary_PCUser
 npc 7 9 3 EventScript_FerroxLibrary_TableReader1
 npc 7 9 4 EventScript_FerroxLibrary_TableReader2

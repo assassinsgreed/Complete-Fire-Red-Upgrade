@@ -1048,3 +1048,78 @@ bool8 ShouldSkipOfferEggHatchNickname(void)
 	return FALSE;
 	#endif
 }
+
+void GiveCustomEgg()
+{
+    u16 species = Var8005;
+    u16 customEggIndex = Var8006;
+    struct Pokemon *mon = AllocZeroed(sizeof(struct Pokemon));
+    bool8 isEgg;
+    bool8 sentToPc;
+
+    CreateEgg(mon, species);
+    isEgg = TRUE;
+    SetMonData(mon, MON_DATA_IS_EGG, &isEgg);
+    switch(customEggIndex)
+    {
+		// Note: Starter vars are 0 based (ex. 0x408C for grass)
+        case 0: // Starter Event Gen 1 (Pichu)
+            SetMonMoveSlot(mon, MOVE_THUNDERSHOCK, 0);
+            SetMonMoveSlot(mon, MOVE_CHARM, 1);
+            SetMonMoveSlot(mon, MOVE_FAKEOUT, 2);
+            SetMonMoveSlot(mon, MOVE_NONE, 3);
+            break;
+
+		case 1: // Starter Event Gen 2 (Togepi)
+            SetMonMoveSlot(mon, MOVE_GROWL, 0);
+            SetMonMoveSlot(mon, MOVE_CHARM, 1);
+            SetMonMoveSlot(mon, MOVE_MORNINGSUN, 2);
+            SetMonMoveSlot(mon, MOVE_NONE, 3);
+            break;
+
+		case 2: // Starter Event Gen 3 (Wynaut)
+            SetMonMoveSlot(mon, MOVE_SPLASH, 0);
+            SetMonMoveSlot(mon, MOVE_CHARM, 1);
+            SetMonMoveSlot(mon, MOVE_ENCORE, 2);
+            SetMonMoveSlot(mon, MOVE_NONE, 3);
+            break;
+
+		case 3: // Starter Event Gen 4 (Riolu)
+            SetMonMoveSlot(mon, MOVE_FORESIGHT, 0);
+            SetMonMoveSlot(mon, MOVE_QUICKATTACK, 1);
+            SetMonMoveSlot(mon, MOVE_ENDURE, 2);
+            SetMonMoveSlot(mon, MOVE_BULLETPUNCH, 3);
+            break;
+
+		case 4: // Starter Event Gen 5 (Larvesta)
+            SetMonMoveSlot(mon, MOVE_EMBER, 0);
+            SetMonMoveSlot(mon, MOVE_STRINGSHOT, 1);
+            SetMonMoveSlot(mon, MOVE_MORNINGSUN, 2);
+            SetMonMoveSlot(mon, MOVE_NONE, 3);
+            break;
+
+		case 5: // Starter Event Gen 6 (Happiny)
+            SetMonMoveSlot(mon, MOVE_POUND, 0);
+            SetMonMoveSlot(mon, MOVE_CHARM, 1);
+            SetMonMoveSlot(mon, MOVE_METRONOME, 2);
+            SetMonMoveSlot(mon, MOVE_NONE, 3);
+            break;
+
+		case 6: // Starter Event Gen 7 (Eevee)
+            SetMonMoveSlot(mon, MOVE_HELPINGHAND, 0);
+            SetMonMoveSlot(mon, MOVE_GROWL, 1);
+            SetMonMoveSlot(mon, MOVE_TACKLE, 2);
+            SetMonMoveSlot(mon, MOVE_YAWN, 3);
+            break;
+
+		case 7: // Starter Event Gen 8 (Toxel)
+            SetMonMoveSlot(mon, MOVE_ACID, 0);
+            SetMonMoveSlot(mon, MOVE_TEARFULLOOK, 1);
+            SetMonMoveSlot(mon, MOVE_NUZZLE, 2);
+            SetMonMoveSlot(mon, MOVE_POWERUPPUNCH, 3);
+            break;
+    }
+
+    sentToPc = GiveMonToPlayer(mon);
+    Free(mon);
+}
