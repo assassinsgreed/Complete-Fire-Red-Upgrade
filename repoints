@@ -359,6 +359,10 @@ GraphicsInfo_Stunfisk 839FF70
 GraphicsInfo_Interviewer 839FF74
 ## Replace Pidgeot (114)
 GraphicsInfo_Cameraman 839FF78
+## Replace Jigglypuff (115)
+GraphicsInfo_Ditto 839FF7C
+## Replace Pidgey (116)
+GraphicsInfo_Ampharos 839FF80
 
 # Custom Battle Spritework
 ## Replace Aqua Admin Shelly (72)
