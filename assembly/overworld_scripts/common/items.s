@@ -106,6 +106,11 @@ ItemScript_Common_SoftSand:
     finditem ITEM_SOFT_SAND 0x1
     end
 
+.global ItemScript_Common_SilverPowder
+ItemScript_Common_SilverPowder:
+    finditem ITEM_SILVER_POWDER 0x1
+    end
+
 .global ItemScript_Common_NeverMeltIce
 ItemScript_Common_NeverMeltIce:
     finditem ITEM_NEVER_MELT_ICE 0x1
@@ -129,6 +134,11 @@ ItemScript_Common_ChoiceScarf:
 .global ItemScript_Common_Stick
 ItemScript_Common_Stick:
     finditem ITEM_STICK 0x1
+    end
+
+.global ItemScript_Common_MetalPowder
+ItemScript_Common_MetalPowder:
+    finditem ITEM_METAL_POWDER 0x1
     end
 
 .global ItemScript_Common_LaxIncense
@@ -169,6 +179,11 @@ ItemScript_Common_Pokeball:
 .global ItemScript_Common_Greatball
 ItemScript_Common_Greatball:
     finditem ITEM_GREAT_BALL 0x1
+    end
+
+.global ItemScript_Common_Healball
+ItemScript_Common_Healball:
+    finditem ITEM_HEAL_BALL 0x1
     end
 
 .global ItemScript_Common_GrassySeed

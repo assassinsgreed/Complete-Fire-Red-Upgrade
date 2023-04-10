@@ -75,3 +75,12 @@
 #define TRAINER_FERROX_LIBRARY_CHET                  62
 #define TRAINER_FERROX_LIBRARY_VINCENT               63
 #define TRAINER_FERROX_GYM_LEADER_STELLA             64
+// Route 5
+#define TRAINER_ROUTE_5_LADY_FAITH                   65
+#define TRAINER_ROUTE_5_BUG_CATCHER_BEN              66
+#define TRAINER_ROUTE_5_PSYCHIC_ALYSSIA              67
+#define TRAINER_ROUTE_5_BREEDER_BRENDA               68
+#define TRAINER_ROUTE_5_BLACKBELT_RAHEEM             69
+#define TRAINER_ROUTE_5_GAMBLER_DOMINIK              70
+#define TRAINER_ROUTE_5_LADY_JULIET                  71
+#define TRAINER_ROUTE_5_GENTLEMAN_MARCUS             72
