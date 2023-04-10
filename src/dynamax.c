@@ -1501,8 +1501,8 @@ void CreateSummaryScreenGigantamaxIcon(void)
 		s16 x = ballSprite->pos1.x - 78;
 		s16 y = ballSprite->pos1.y - 12;
 		#else
-		s16 x = ballSprite->pos1.x - 12;
-		s16 y = ballSprite->pos1.y + 2;
+		s16 x = ballSprite->pos1.x - 34;
+		s16 y = ballSprite->pos1.y;
 		#endif
 
 		ballSprite->data[1] = CreateSprite(&sSummaryScreenMaxFriendshipIconTemplate, x, y, 0);

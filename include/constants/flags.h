@@ -401,10 +401,10 @@
 #define FLAG_HIDE_ROUTE_13_HEAVY_DUTY_BOOTS                     0x187
 #define FLAG_HIDE_FERROX_VILLAGE_ABSORB_BULB                    0x188
 #define FLAG_HIDE_FERROX_VILLAGE_FULL_HEAL                      0x189
-#define FLAG_HIDE_SAFARI_ZONE_WEST_MAX_POTION                   0x18A
-#define FLAG_HIDE_SAFARI_ZONE_WEST_MAX_REVIVE                   0x18B
-#define FLAG_HIDE_SILPH_CO_3F_HYPER_POTION                      0x18C
-#define FLAG_HIDE_SILPH_CO_4F_MAX_REVIVE                        0x18D
+#define FLAG_HIDE_ROUTE_5_TM58_ENDURE                           0x18A
+#define FLAG_HIDE_ROUTE_5_HEAL_BALL                             0x18B
+#define FLAG_HIDE_ROUTE_5_METAL_POWDER                          0x18C
+#define FLAG_HIDE_ROUTE_5_SILVER_POWDER                         0x18D
 #define FLAG_HIDE_SILPH_CO_4F_ESCAPE_ROPE                       0x18E
 #define FLAG_HIDE_SILPH_CO_4F_FULL_HEAL                         0x18F
 #define FLAG_HIDE_SILPH_CO_5F_PROTEIN                           0x190
@@ -1046,9 +1046,9 @@
 #define HIDDEN_ITEM_ROUTE4_SUPER_POTION                                17
 #define HIDDEN_ITEM_TORMA_CAVE_EVERSTONE                               18
 #define HIDDEN_ITEM_RUBARR_DESERT_SUN_STONE                            19
-#define HIDDEN_ITEM_ROUTE17_MAX_REVIVE                                 20
-#define HIDDEN_ITEM_ROUTE17_MAX_ELIXIR                                 21
-#define HIDDEN_ITEM_SAFARI_ZONE_CENTER_LEAF_STONE                      22
+#define HIDDEN_ITEM_ROUTE5_GREAT_BALL                                  20
+#define HIDDEN_ITEM_ROUTE5_CARBOS                                      21
+#define HIDDEN_ITEM_ROUTE5_LEAF_STONE                                  22
 #define HIDDEN_ITEM_SAFARI_ZONE_WEST_REVIVE                            23
 #define HIDDEN_ITEM_SILPH_CO_5F_ELIXIR                                 24
 #define HIDDEN_ITEM_SILPH_CO_9F_MAX_POTION                             25
