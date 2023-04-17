@@ -19,6 +19,24 @@ MapEntryScript_HeleoRanch_HandleMareepVisibility:
     setflag 0xE07 @ Evenining or night, hide all mareeps on field and Moomoo Milk seller, by setting daily flag
     end
 
+.global MapScript_HeleoRanchInterior
+MapScript_HeleoRanchInterior:
+    mapscript MAP_SCRIPT_ON_LOAD MapEntryScript_HeleoRanch_HandleMomVisibility
+	.byte MAP_SCRIPT_TERMIN
+
+MapEntryScript_HeleoRanch_HandleMomVisibility:
+    @ Check time of day
+    setvar 0x8000 0x0 @ Return distinct times of day
+    special2 LASTRESULT 0xAD
+    compare LASTRESULT 0x2 @ Evening
+    if lessthan _goto HideMom
+    clearflag 0xE08 
+    end
+
+HideMom:
+    setflag 0xE08 @ Hide mom in house during morning and day
+    end
+
 .global EvenScript_HeleoRanch_Mareep
 EvenScript_HeleoRanch_Mareep:
     lock
@@ -153,5 +171,22 @@ SignScript_HeleoRanch_RanchEntrance:
     msgbox gText_HeleoRanch_EntranceSign MSG_SIGN
     end
 
-@ events inside house (including moomoo milk mom)
-@ wild encounters (will require binary tweaks)
+.global EventScript_HeleoRanch_Dad
+EventScript_HeleoRanch_Dad:
+    npcchat gText_HeleoRanch_Dad
+    end
+
+.global EventScript_HeleoRanch_Daughter
+EventScript_HeleoRanch_Daughter:
+    npcchat2 0x2 m_LookUp gText_HeleoRanch_Daughter
+    end
+
+.global EventScript_HeleoRanch_Mom
+EventScript_HeleoRanch_Mom:
+    npcchat gText_HeleoRanch_Mom
+    end
+
+.global EventScript_HeleoRanch_Son
+EventScript_HeleoRanch_Son:
+    npcchat gText_HeleoRanch_Son
+    end
