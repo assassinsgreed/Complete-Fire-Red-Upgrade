@@ -51,8 +51,25 @@ const struct WildPokemon gRubarrDesert_LandMonsNight[] =
 	{10, 13, SPECIES_MANDIBUZZ}
 };
 
+const struct WildPokemon gHeleoRanch_LandMonsNight[] =
+{
+	{15, 18, SPECIES_LILLIPUP},
+	{15, 18, SPECIES_SKIDDO},
+	{16, 19, SPECIES_EEVEE},
+	{16, 18, SPECIES_HERDIER},
+	{16, 18, SPECIES_RIOLU},
+	{16, 18, SPECIES_PIKACHU},
+	{15, 17, SPECIES_ROCKRUFF},
+	{13, 16, SPECIES_TOGEPI},
+	{15, 18, SPECIES_TOGEPI},
+	{15, 18, SPECIES_CUTIEFLY},
+	{16, 19, SPECIES_HAPPINY}, 
+	{15, 18, SPECIES_HAPPINY}
+};
+
 const struct WildPokemonInfo gVarisiForest_LandMonsNightInfo = {21, gVarisiForest_LandMonsNight};
 const struct WildPokemonInfo gRubarrDesert_LandMonsNightInfo = {5, gRubarrDesert_LandMonsNight};
+const struct WildPokemonInfo gHeleoRanch_LandMonsNightInfo = {21, gHeleoRanch_LandMonsNight};
 
 const struct WildPokemonHeader gWildMonMorningHeaders[] =
 {
@@ -68,6 +85,7 @@ const struct WildPokemonHeader gWildMonMorningHeaders[] =
 
 const struct WildPokemonHeader gWildMonEveningHeaders[] =
 {
+	// Null entries will keep regular encounters defined in WildEncounters.json
 	{
 		.mapGroup = MAP_GROUP(VARISI_FOREST),
 		.mapNum = MAP_NUM(VARISI_FOREST),
@@ -80,9 +98,17 @@ const struct WildPokemonHeader gWildMonEveningHeaders[] =
 		.mapGroup = MAP_GROUP(RUBARR_DESERT),
 		.mapNum = MAP_NUM(RUBARR_DESERT),
 		.landMonsInfo = &gRubarrDesert_LandMonsNightInfo,
-		.waterMonsInfo = NULL, // Keep regular encounters
+		.waterMonsInfo = NULL,
 		.rockSmashMonsInfo = NULL,
-		.fishingMonsInfo = NULL, // Keep regular encounters
+		.fishingMonsInfo = NULL,
+	},
+	{
+		.mapGroup = MAP_GROUP(HELEO_RANCH_EXTERIOR),
+		.mapNum = MAP_NUM(HELEO_RANCH_EXTERIOR),
+		.landMonsInfo = &gHeleoRanch_LandMonsNightInfo,
+		.waterMonsInfo = NULL,
+		.rockSmashMonsInfo = NULL,
+		.fishingMonsInfo = NULL,
 	},
 	{
 		.mapGroup = 0xFF,
@@ -108,9 +134,17 @@ const struct WildPokemonHeader gWildMonNightHeaders[] =
 		.mapGroup = MAP_GROUP(RUBARR_DESERT),
 		.mapNum = MAP_NUM(RUBARR_DESERT),
 		.landMonsInfo = &gRubarrDesert_LandMonsNightInfo,
-		.waterMonsInfo = NULL, // Keep regular encounters
+		.waterMonsInfo = NULL,
 		.rockSmashMonsInfo = NULL,
-		.fishingMonsInfo = NULL, // Keep regular encounters
+		.fishingMonsInfo = NULL,
+	},
+	{
+		.mapGroup = MAP_GROUP(HELEO_RANCH_EXTERIOR),
+		.mapNum = MAP_NUM(HELEO_RANCH_EXTERIOR),
+		.landMonsInfo = &gHeleoRanch_LandMonsNightInfo,
+		.waterMonsInfo = NULL,
+		.rockSmashMonsInfo = NULL,
+		.fishingMonsInfo = NULL,
 	},
 	{
 		.mapGroup = 0xFF,

@@ -246,6 +246,83 @@
             }
         },
         {
+            "mapgroup": 1,
+            "mapnum": 2,
+            "grass": {
+                "rate": 5,
+                "pokemon": [
+                    { "low": 21, "high": 23, "species": "SPECIES_ZUBAT" },
+                    { "low": 20, "high": 23, "species": "SPECIES_TRAPINCH" },
+                    { "low": 22, "high": 25, "species": "SPECIES_SANDILE" },
+                    { "low": 21, "high": 23, "species": "SPECIES_ZUBAT" },
+                    { "low": 20, "high": 24, "species": "SPECIES_SANDILE" },
+                    { "low": 21, "high": 25, "species": "SPECIES_TRAPINCH" },
+                    { "low": 22, "high": 25, "species": "SPECIES_TRAPINCH" },
+                    { "low": 19, "high": 23, "species": "SPECIES_SANDILE" },
+                    { "low": 22, "high": 24, "species": "SPECIES_GOLBAT" },
+                    { "low": 20, "high": 24, "species": "SPECIES_SANDILE" },
+                    { "low": 22, "high": 25, "species": "SPECIES_GOLBAT" }, 
+                    { "low": 23, "high": 26, "species": "SPECIES_TRAPINCH" }
+                ]
+            },
+            "rocks": {
+                "rate": 50,
+                "pokemon": [
+                    { "low": 25, "high": 35, "species": "SPECIES_BOLDORE" },
+                    { "low": 23, "high": 35, "species": "SPECIES_CARKOL" },
+                    { "low": 27, "high": 37, "species": "SPECIES_BOLDORE" },
+                    { "low": 30, "high": 37, "species": "SPECIES_CARBINK" },
+                    { "low": 33, "high": 38, "species": "SPECIES_BOLDORE" }
+                ]
+            }
+        },
+        {
+            "mapgroup": 1,
+            "mapnum": 6,
+            "grass": {
+                "rate": 5,
+                "pokemon": [
+                    { "low": 15, "high": 18, "species": "SPECIES_MAREEP" },
+                    { "low": 15, "high": 18, "species": "SPECIES_SKIDDO" },
+                    { "low": 16, "high": 19, "species": "SPECIES_EEVEE" },
+                    { "low": 16, "high": 18, "species": "SPECIES_HERDIER" },
+                    { "low": 16, "high": 18, "species": "SPECIES_RIOLU" },
+                    { "low": 16, "high": 18, "species": "SPECIES_PIKACHU" },
+                    { "low": 15, "high": 17, "species": "SPECIES_ROCKRUFF" },
+                    { "low": 13, "high": 16, "species": "SPECIES_TOGEPI" },
+                    { "low": 15, "high": 18, "species": "SPECIES_FLAAFFY" },
+                    { "low": 15, "high": 18, "species": "SPECIES_CUTIEFLY" },
+                    { "low": 16, "high": 19, "species": "SPECIES_HAPPINY" }, 
+                    { "low": 15, "high": 18, "species": "SPECIES_HAPPINY" }
+                ]
+            },
+            "surfing": {
+                "rate": 1,
+                "pokemon": [
+                    { "low": 5, "high": 15, "species": "SPECIES_CORPHISH" },
+                    { "low": 5, "high": 20, "species": "SPECIES_CORPHISH" },
+                    { "low": 30, "high": 35, "species": "SPECIES_CRAWDAUNT" },
+                    { "low": 10, "high": 30, "species": "SPECIES_CORPHISH" },
+                    { "low": 10, "high": 30, "species": "SPECIES_CHINCHOU" }
+                ]
+            },
+            "fishing": {
+                "rate": 20,
+                "pokemon": [
+                    { "low": 3, "high": 7, "species": "SPECIES_MAGIKARP" },
+                    { "low": 4, "high": 8, "species": "SPECIES_CORPHISH" },
+                    { "low": 20, "high": 25, "species": "SPECIES_CORPHISH" },
+                    { "low": 20, "high": 25, "species": "SPECIES_MAGIKARP" },
+                    { "low": 19, "high": 26, "species": "SPECIES_MAGIKARP" },
+                    { "low": 35, "high": 40, "species": "SPECIES_GYARADOS" },
+                    { "low": 33, "high": 41, "species": "SPECIES_CRAWDAUNT" },
+                    { "low": 35, "high": 40, "species": "SPECIES_SLOWPOKE" },
+                    { "low": 36, "high": 42, "species": "SPECIES_SLOWPOKE" },
+                    { "low": 38, "high": 44, "species": "SPECIES_SLOWBRO" }
+                ]
+            }
+        },
+        {
             "mapgroup": 3,
             "mapnum": 19,
             "grass": {
