@@ -494,3 +494,27 @@ npc 3 23 19 ItemScript_Common_Healball
 npc 3 23 20 ItemScript_Common_MetalPowder
 npc 3 23 21 ItemScript_Common_SilverPowder
 sign 3 23 0 SignScript_Route5_Daycare
+
+# Heleo Ranch
+map 1 6 MapScript_HeleoRanchExterior
+npc 1 6 0 EventScript_Common_RockSmash
+npc 1 6 1 EvenScript_HeleoRanch_Mareep
+npc 1 6 2 EvenScript_HeleoRanch_Mareep
+npc 1 6 3 EvenScript_HeleoRanch_Mareep
+npc 1 6 4 EvenScript_HeleoRanch_Mareep
+npc 1 6 5 EvenScript_HeleoRanch_Mareep
+npc 1 6 6 EvenScript_HeleoRanch_Mareep
+npc 1 6 7 EvenScript_HeleoRanch_Mareep
+npc 1 6 8 EvenScript_HeleoRanch_MoomooMilkSeller
+npc 1 6 9 EvenScript_HeleoRanch_Ampharos
+npc 1 6 10 EvenScript_HeleoRanch_BurglarCole
+npc 1 6 11 EvenScript_HeleoRanch_CamperTroy
+npc 1 6 12 EvenScript_HeleoRanch_BreederLaura
+npc 1 6 13 EvenScript_HeleoRanch_PicknickerCasey
+npc 1 6 14 ItemScript_Common_MiracleSeed
+npc 1 6 15 ItemScript_Common_Nestball
+npc 1 6 16 EventScript_HeleoRanch_FindTM45Attract
+npc 1 6 17 ItemScript_Common_TerrainExtender
+npc 1 6 18 EventScript_HeleoRanch_Ampharosite
+sign 1 6 0 SignScript_HeleoRanch_RanchGlade
+sign 1 6 1 SignScript_HeleoRanch_RanchEntrance

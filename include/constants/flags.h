@@ -63,9 +63,9 @@
 #define FLAG_HIDE_STELLA_AND_ALISTAIR_IN_FERROX_LIBRARY    0x039
 #define FLAG_HIDE_POKEDEX_SPRITE_IN_HAWTHORNES_LAB         0x03A
 #define FLAG_HIDE_STELLA_IN_FERROX_GYM                     0x03B
-#define FLAG_HIDE_CERULEAN_RIVAL                           0x03C
-#define FLAG_HIDE_SS_ANNE_RIVAL                            0x03D
-#define FLAG_HIDE_SAFFRON_ROCKETS                          0x03E
+#define FLAG_USED_ALREADY???                               0x03C
+#define FLAG_USED_ALREADY???                               0x03D
+#define FLAG_HIDE_HELEO_RANCH_AMPHAROS                     0x03E
 #define FLAG_HIDE_SAFFRON_CIVILIANS                        0x03F
 #define FLAG_HIDE_SEAFOAM_1F_BOULDER_1                     0x040
 #define FLAG_HIDE_SEAFOAM_1F_BOULDER_2                     0x041
@@ -405,11 +405,11 @@
 #define FLAG_HIDE_ROUTE_5_HEAL_BALL                             0x18B
 #define FLAG_HIDE_ROUTE_5_METAL_POWDER                          0x18C
 #define FLAG_HIDE_ROUTE_5_SILVER_POWDER                         0x18D
-#define FLAG_HIDE_SILPH_CO_4F_ESCAPE_ROPE                       0x18E
-#define FLAG_HIDE_SILPH_CO_4F_FULL_HEAL                         0x18F
-#define FLAG_HIDE_SILPH_CO_5F_PROTEIN                           0x190
-#define FLAG_HIDE_SILPH_CO_5F_TM01                              0x191
-#define FLAG_HIDE_SILPH_CO_5F_CARD_KEY                          0x192
+#define FLAG_HIDE_HELEO_RANCH_MIRACLE_SEED                      0x18E
+#define FLAG_HIDE_HELEO_RANCH_NEST_BALL                         0x18F
+#define FLAG_HIDE_HELEO_RANCH_TM45_ATTRACT                      0x190
+#define FLAG_HIDE_HELEO_RANCH_TERRAIN_EXTENDER                  0x191
+#define FLAG_HIDE_HELEO_RANCH_AMPHAROSITE                       0x192
 #define FLAG_HIDE_SILPH_CO_6F_HP_UP                             0x193
 #define FLAG_HIDE_SILPH_CO_6F_X_SPECIAL                         0x194
 #define FLAG_HIDE_SILPH_CO_7F_CALCIUM                           0x195
@@ -1323,6 +1323,7 @@ Daily Flags, cleared at the start of each day.  Goes up to 0xEFF
 #define FLAG_TORMA_CAVE_STUNFISK_G_2          0xE04
 #define FLAG_TORMA_CAVE_STUNFISK_G_3          0xE05
 #define FLAG_FERROX_VILLAGE_BERRY             0xE06
+#define FLAG_HELEO_RANCH_MAREEP_VISIBILITY    0xE07
 */
 
 #define FLAG_TRAINER_FLAG_START 0x500

@@ -96,6 +96,11 @@ ItemScript_Common_AbsorbBulb:
     finditem ITEM_ABSORB_BULB 0x1
     end
 
+.global ItemScript_Common_MiracleSeed
+ItemScript_Common_MiracleSeed:
+    finditem ITEM_MIRACLE_SEED 0x1
+    end
+
 .global ItemScript_Common_MysticWater
 ItemScript_Common_MysticWater:
     finditem ITEM_MYSTIC_WATER 0x1
@@ -186,9 +191,19 @@ ItemScript_Common_Healball:
     finditem ITEM_HEAL_BALL 0x1
     end
 
+.global ItemScript_Common_Nestball
+ItemScript_Common_Nestball:
+    finditem ITEM_NEST_BALL 0x1
+    end
+
 .global ItemScript_Common_GrassySeed
 ItemScript_Common_GrassySeed:
     finditem ITEM_GRASSY_SEED 0x1
+    end
+
+.global ItemScript_Common_TerrainExtender
+ItemScript_Common_TerrainExtender:
+    finditem ITEM_TERRAIN_EXTENDER 0x1
     end
 
 .global ItemScript_Common_HeavyDutyBoots

@@ -39,6 +39,7 @@ extern const u8 CactusTiles[];
 extern const u8 MegaStoneTiles[];
 extern const u8 DittoTiles[];
 extern const u8 AmpharosTiles[];
+extern const u8 MareepTiles[];
 
 #define EVENT_OBJ_PAL_TAG_NONE 0x1102
 #define gEventObjectBaseOam_16x16 ((const struct OamData*) 0x83A36F8)
@@ -452,6 +453,19 @@ static const struct SpriteFrameImage Table_Ampharos[] =
     overworld_frame(AmpharosTiles, 2, 2, 6),
     overworld_frame(AmpharosTiles, 2, 2, 7),
     overworld_frame(AmpharosTiles, 2, 2, 8),
+};
+
+static const struct SpriteFrameImage Table_Mareep[] =
+{
+    overworld_frame(MareepTiles, 2, 2, 0),
+    overworld_frame(MareepTiles, 2, 2, 1),
+    overworld_frame(MareepTiles, 2, 2, 2),
+    overworld_frame(MareepTiles, 2, 2, 3),
+    overworld_frame(MareepTiles, 2, 2, 4),
+    overworld_frame(MareepTiles, 2, 2, 5),
+    overworld_frame(MareepTiles, 2, 2, 6),
+    overworld_frame(MareepTiles, 2, 2, 7),
+    overworld_frame(MareepTiles, 2, 2, 8),
 };
 
 // #region MC
@@ -1093,5 +1107,25 @@ const struct EventObjectGraphicsInfo GraphicsInfo_Ampharos =
     .subspriteTables = gEventObjectSpriteOamTables_16x16,
     .anims = gEventObjectImageAnimTable_Standard,
     .images = Table_Ampharos,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+const struct EventObjectGraphicsInfo GraphicsInfo_Mareep =
+{
+    .tileTag = 0xFFFF,
+    .paletteTag1 = 0x1219,
+    .paletteTag2 = EVENT_OBJ_PAL_TAG_NONE,
+    .size = (16 * 16) / 2,
+    .width = 16,
+    .height = 16,
+    .shadowSize = SHADOW_SIZE_S,
+    .inanimate = FALSE,
+    .disableReflectionPaletteLoad = FALSE,
+    .tracks = TRACKS_NONE,
+    .gender = MALE,
+    .oam = gEventObjectBaseOam_16x16,
+    .subspriteTables = gEventObjectSpriteOamTables_16x16,
+    .anims = gEventObjectImageAnimTable_Standard,
+    .images = Table_Mareep,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
