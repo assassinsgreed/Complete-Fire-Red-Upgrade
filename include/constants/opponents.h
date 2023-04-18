@@ -84,3 +84,8 @@
 #define TRAINER_ROUTE_5_GAMBLER_DOMINIK              70
 #define TRAINER_ROUTE_5_LADY_JULIET                  71
 #define TRAINER_ROUTE_5_GENTLEMAN_MARCUS             72
+// Heleo Ranch
+#define TRAINER_HELEO_RANCH_BURGLAR_COLE             73
+#define TRAINER_HELEO_RANCH_CAMPER_TROY              74
+#define TRAINER_HELEO_RANCH_BREEDER_LAURA            75
+#define TRAINER_HELEO_RANCH_PICKNICKER_CASEY         76

@@ -603,6 +603,31 @@ const struct TrainerMonNoItemDefaultMoves sParty_Route5_Gentleman_Marcus[] = {
 };
 // #endregion
 
+// #region Heleo Ranch
+const struct TrainerMonNoItemDefaultMoves sParty_HeleoRanch_Burglar_Cole[] = {
+    { .lvl = 18, .species = SPECIES_KOFFING_G },
+    { .lvl = 17, .species = SPECIES_NICKIT },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_HeleoRanch_Camper_Troy[] = {
+    { .lvl = 17, .species = SPECIES_LILLIPUP },
+    { .lvl = 17, .species = SPECIES_BIBAREL },
+    { .lvl = 18, .species = SPECIES_CORVISQUIRE },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_HeleoRanch_Breeder_Laura[] = {
+    { .lvl = 14, .species = SPECIES_SUNKERN },
+    { .lvl = 14, .species = SPECIES_RALTS },
+    { .lvl = 14, .species = SPECIES_TOGEPI },
+    { .lvl = 14, .species = SPECIES_PICHU },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_HeleoRanch_Picknicker_Casey[] = {
+    { .lvl = 18, .species = SPECIES_FLETCHLING },
+    { .lvl = 18, .species = SPECIES_CACNEA },
+    { .lvl = 19, .species = SPECIES_FLOETTE_WHITE }
+};
+
 #define NO_NAME                                                                                      \
     {                                                                                                \
         _END, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE \
@@ -1478,7 +1503,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_J, _u, _l, _i, _e, _t, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_DOUBLE_BATTLE,
         .partySize = NELEMS(sParty_Route5_Lady_Juliet),
         .party = {.NoItemDefaultMoves = sParty_Route5_Lady_Juliet}
     },
@@ -1490,10 +1515,59 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_M, _a, _r, _c, _u, _s, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_DOUBLE_BATTLE,
         .partySize = NELEMS(sParty_Route5_Gentleman_Marcus),
         .party = {.NoItemDefaultMoves = sParty_Route5_Gentleman_Marcus}
     },
-    // TODO: Continue this
+    // #endregion
+    // #region Heleo Ranch
+    [TRAINER_HELEO_RANCH_BURGLAR_COLE] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_BURGLAR,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_BURGLAR,
+        .trainerName = {_C, _o, _l, _e, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT,
+        .partySize = NELEMS(sParty_HeleoRanch_Burglar_Cole),
+        .party = {.NoItemDefaultMoves = sParty_HeleoRanch_Burglar_Cole}
+    },
+    [TRAINER_HELEO_RANCH_CAMPER_TROY] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_CAMPER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_CAMPER,
+        .trainerName = {_T, _r, _o, _y, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = NELEMS(sParty_HeleoRanch_Camper_Troy),
+        .party = {.NoItemDefaultMoves = sParty_HeleoRanch_Camper_Troy}
+    },
+    [TRAINER_HELEO_RANCH_BREEDER_LAURA] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_PKMN_BREEDER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .trainerPic = TRAINER_PIC_PKMN_BREEDER_F,
+        .trainerName = {_L, _a, _u, _r, _a, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = NELEMS(sParty_HeleoRanch_Breeder_Laura),
+        .party = {.NoItemDefaultMoves = sParty_HeleoRanch_Breeder_Laura}
+    },
+    [TRAINER_HELEO_RANCH_PICKNICKER_CASEY] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_PICNICKER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .trainerPic = TRAINER_PIC_PICNICKER,
+        .trainerName = {_C, _a, _s, _e, _y, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = NELEMS(sParty_HeleoRanch_Picknicker_Casey),
+        .party = {.NoItemDefaultMoves = sParty_HeleoRanch_Picknicker_Casey}
+    },
     // #endregion
 };

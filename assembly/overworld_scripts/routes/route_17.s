@@ -370,6 +370,7 @@ EventScript_StarterChoice_SelectionMade:
     waitmsg
 	fanfare 0x13E
 	waitfanfare
+    setmonobedient 0x0 @ Starter should never disobey
 	msgbox gText_StarterChoice_Nickname MSG_YESNO
 	compare LASTRESULT YES
 	if TRUE _call EventScript_StarterChoice_Nickname
