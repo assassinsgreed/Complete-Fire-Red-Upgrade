@@ -81,3 +81,42 @@ Indeed, this outcome was inevitable.
 
 #org @gText_Route5_DaycareSign
 Heleo Ranch Daycare\nDrop off your Pok\emon any time!
+
+#org @gText_Route5_AffectionGirl
+Did you know you can check your\nPok\emon's affection toward you in\lthe Summary screen?\pAffectionate Pok\emon will gain more\nEXP in battle, and may even\levolve!
+
+#org @gText_Route5_EggGiver_Introduction
+Oh, a young Pok\emon trainer!\pAt the Heleo Ranch Daycare, we raise\nPok\emon. Sometimes, we find eggs\lafterward.
+
+#org @gText_Route5_EggGiver_Prompt
+We actually have extra eggs right\nnow. Would you like one?
+
+#org @gText_Route5_EggGiver_EggRejected
+Oh, very well[.] Come see me if you\nchange your mind.
+
+#org @gText_Route5_EggGiver_EggPun
+Excellent! Or should I say\neggcelent?
+
+#org @gText_Route5_EggGiver_NoRoomForEgg
+You don't have room to carry this\negg. Come back when you do, okay?
+
+#org @gText_Route5_EggGiver_ReceivedEgg
+[BLACK]Received a Pok\emon egg from the\nDaycare Man.
+
+#org @gText_Route5_EggGiver_ReceiveEggComment
+[BLUE]I wonder what will hatch from this\negg.\pTake good care of it, okay?
+
+#org @gText_Route5_EggGiver_EggInstructions
+[BLUE]Eggs take time to hatch. It's best to\nwalk with them until they do.\pIf you have a Pok\emon with the\nFlame Body ability at the front of\lyour party, it's warmth will make\leggs hatch faster!
+
+#org @gText_Route5_EggGiver_TenEggGiftComment
+I'll have a gift for you once you've\nhatched 10 eggs.
+
+#org @gText_Route5_EggGiver_HatchedAtLeastTenEggs
+Well look at that! You've hatched\n[BUFFER1] eggs. I have a gift for\lyou.
+
+#org @gText_Route5_EggGiver_ReceivedOvalCharm
+[BLACK]Received the Oval Charm!
+
+#org @gText_Route5_EggGiver_TenEggGiftReceived
+[BLUE]Just by having this charm, you'll be\nmore likely to find eggs at the\ldaycare.\pIsn't that handy?

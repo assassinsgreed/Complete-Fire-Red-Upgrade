@@ -74,6 +74,119 @@ EventScript_Route5_GentlemanMarcus:
     msgbox gText_Route5_GentlemanMarcus_Chat MSG_NORMAL
     end
 
+.global EventScript_Route5_AffectionGirl
+EventScript_Route5_AffectionGirl:
+    npcchat2 0x2 m_LookRight gText_Route5_AffectionGirl
+    end
+
+.global EventScript_Route5_EggGiver
+EventScript_Route5_EggGiver:
+    lock
+    faceplayer
+    msgbox gText_Route5_EggGiver_Introduction MSG_NORMAL
+    checkflag 0x233 @ Received custom egg
+    if NOT_SET _call ReceivePokemonEgg
+    msgbox gText_Route5_EggGiver_EggInstructions MSG_NORMAL
+    checkflag 0x234 @ Received oval charm
+    if NOT_SET _goto CheckForOvalCharmGift
+    goto ResetEggMan
+
+ReceivePokemonEgg:
+    msgbox gText_Route5_EggGiver_Prompt MSG_YESNO
+    compare LASTRESULT YES
+    if FALSE _goto EggRejection
+    msgbox gText_Route5_EggGiver_EggPun MSG_NORMAL
+    countpokemon
+    compare LASTRESULT 0x6
+    if equal _goto PartyFull
+    fanfare 0x10D @ Fanfare 2
+    msgbox gText_Route5_EggGiver_ReceivedEgg MSG_NORMAL
+    waitfanfare
+    msgbox gText_Route5_EggGiver_ReceiveEggComment MSG_NORMAL
+    copyvar 0x8006 0x408C @ Copy index of the player's grass starter gen into egg var
+    compare 0x8006 0x0
+    if equal _call SetPichu
+    compare 0x8006 0x1
+    if equal _call SetTogepi
+    compare 0x8006 0x2
+    if equal _call SetWynaut
+    compare 0x8006 0x3
+    if equal _call SetRiolu
+    compare 0x8006 0x4
+    if equal _call SetLarvesta
+    compare 0x8006 0x5
+    if equal _call SetHappiny
+    compare 0x8006 0x6
+    if equal _call SetEevee
+    compare 0x8006 0x7
+    if equal _call SetToxel
+    callasm GiveCustomEgg
+    setflag 0x233 @ Received custom egg
+    return
+
+EggRejection:
+    msgbox gText_Route5_EggGiver_EggRejected MSG_NORMAL
+    goto ResetEggMan
+
+PartyFull:
+    msgbox gText_Route5_EggGiver_NoRoomForEgg MSG_NORMAL
+    goto ResetEggMan
+
+SetPichu:
+    setvar 0x8005 SPECIES_PICHU
+    return
+
+SetTogepi:
+    setvar 0x8005 SPECIES_TOGEPI
+    return
+
+SetWynaut:
+    setvar 0x8005 SPECIES_WYNAUT
+    return
+
+SetRiolu:
+    setvar 0x8005 SPECIES_RIOLU
+    return
+
+SetLarvesta:
+    setvar 0x8005 SPECIES_LARVESTA
+    return
+
+SetHappiny:
+    setvar 0x8005 SPECIES_HAPPINY
+    return
+
+SetEevee:
+    setvar 0x8005 SPECIES_EEVEE
+    return
+
+SetToxel:
+    setvar 0x8005 SPECIES_TOXEL
+    return
+
+CheckForOvalCharmGift:
+    setvar 0x8004 0xD @ Number of eggs hatched
+    callasm StoreGameStat
+    buffernumber 0x0 LASTRESULT
+    compare LASTRESULT 0xA
+    if lessthan _goto NotEnoughEggsHatched
+    msgbox gText_Route5_EggGiver_HatchedAtLeastTenEggs MSG_NORMAL
+    loadpointer 0x0 gText_Route5_EggGiver_ReceivedOvalCharm
+    obtainitem ITEM_OVAL_CHARM 0x1
+    msgbox gText_Route5_EggGiver_TenEggGiftReceived MSG_NORMAL
+    setflag 0x234 @ Oval charm received
+    goto ResetEggMan
+
+NotEnoughEggsHatched:
+    msgbox gText_Route5_EggGiver_TenEggGiftComment MSG_NORMAL
+    goto ResetEggMan
+
+ResetEggMan:
+    applymovement 0x3 m_LookLeft
+    waitmovement ALLEVENTS
+    release
+    end
+
 .global EventScript_Route5_FindTM58Endure
 EventScript_Route5_FindTM58Endure:
     setvar CHOSEN_ITEM ITEM_TM58
