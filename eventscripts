@@ -495,6 +495,11 @@ npc 3 23 20 ItemScript_Common_MetalPowder
 npc 3 23 21 ItemScript_Common_SilverPowder
 sign 3 23 0 SignScript_Route5_Daycare
 
+## Heleo Ranch Daycare (Route 5)
+npc 17 0 1 EventScript_Route5_AffectionGirl
+npc 17 0 2 EventScript_Route5_EggGiver
+## npc 17 0 3 EventScript_RivalEvent3
+
 # Heleo Ranch
 map 1 6 MapScript_HeleoRanchExterior
 map 1 7 MapScript_HeleoRanchInterior

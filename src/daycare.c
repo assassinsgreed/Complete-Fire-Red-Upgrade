@@ -1049,10 +1049,10 @@ bool8 ShouldSkipOfferEggHatchNickname(void)
 	#endif
 }
 
-void GiveCustomEgg()
+void GiveCustomEgg(void)
 {
     u16 species = Var8005;
-    u16 customEggIndex = Var8006;
+	u16 customEggIndex = Var8006;
     struct Pokemon *mon = AllocZeroed(sizeof(struct Pokemon));
     bool8 isEgg;
     bool8 sentToPc;
@@ -1060,7 +1060,7 @@ void GiveCustomEgg()
     CreateEgg(mon, species);
     isEgg = TRUE;
     SetMonData(mon, MON_DATA_IS_EGG, &isEgg);
-    switch(customEggIndex)
+	switch(customEggIndex)
     {
 		// Note: Starter vars are 0 based (ex. 0x408C for grass)
         case 0: // Starter Event Gen 1 (Pichu)
