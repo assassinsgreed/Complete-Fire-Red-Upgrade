@@ -677,7 +677,7 @@ static void SetInitialEggData(struct Pokemon* mon, u16 species, u32 personality)
 void CreateEgg(struct Pokemon *mon, u16 species) //The function used by the giveegg scripting command
 {
 	u8 metLevel = 0;
-	u8 metLocation = METLOC_SPECIAL_EGG;
+	u8 metLocation = METLOC_IN_GAME_TRADE; // Found in daycare
 	u8 language = GAME_LANGUAGE;
 	u16 ball = BALL_TYPE_POKE_BALL;
 	bool8 isEgg = TRUE;
@@ -1068,6 +1068,7 @@ void GiveCustomEgg(void)
             SetMonMoveSlot(mon, MOVE_CHARM, 1);
             SetMonMoveSlot(mon, MOVE_FAKEOUT, 2);
             SetMonMoveSlot(mon, MOVE_NONE, 3);
+			mon->metLocation = METLOC_SPECIAL_EGG; // From traveling man
             break;
 
 		case 1: // Starter Event Gen 2 (Togepi)
@@ -1075,6 +1076,7 @@ void GiveCustomEgg(void)
             SetMonMoveSlot(mon, MOVE_CHARM, 1);
             SetMonMoveSlot(mon, MOVE_MORNINGSUN, 2);
             SetMonMoveSlot(mon, MOVE_NONE, 3);
+			mon->metLocation = METLOC_SPECIAL_EGG; // From traveling man
             break;
 
 		case 2: // Starter Event Gen 3 (Wynaut)
@@ -1082,6 +1084,7 @@ void GiveCustomEgg(void)
             SetMonMoveSlot(mon, MOVE_CHARM, 1);
             SetMonMoveSlot(mon, MOVE_ENCORE, 2);
             SetMonMoveSlot(mon, MOVE_NONE, 3);
+			mon->metLocation = METLOC_SPECIAL_EGG; // From traveling man
             break;
 
 		case 3: // Starter Event Gen 4 (Riolu)
@@ -1089,6 +1092,7 @@ void GiveCustomEgg(void)
             SetMonMoveSlot(mon, MOVE_QUICKATTACK, 1);
             SetMonMoveSlot(mon, MOVE_ENDURE, 2);
             SetMonMoveSlot(mon, MOVE_BULLETPUNCH, 3);
+			mon->metLocation = METLOC_SPECIAL_EGG; // From traveling man
             break;
 
 		case 4: // Starter Event Gen 5 (Larvesta)
@@ -1096,6 +1100,7 @@ void GiveCustomEgg(void)
             SetMonMoveSlot(mon, MOVE_STRINGSHOT, 1);
             SetMonMoveSlot(mon, MOVE_MORNINGSUN, 2);
             SetMonMoveSlot(mon, MOVE_NONE, 3);
+			mon->metLocation = METLOC_SPECIAL_EGG; // From traveling man
             break;
 
 		case 5: // Starter Event Gen 6 (Happiny)
@@ -1103,6 +1108,7 @@ void GiveCustomEgg(void)
             SetMonMoveSlot(mon, MOVE_CHARM, 1);
             SetMonMoveSlot(mon, MOVE_METRONOME, 2);
             SetMonMoveSlot(mon, MOVE_NONE, 3);
+			mon->metLocation = METLOC_SPECIAL_EGG; // From traveling man
             break;
 
 		case 6: // Starter Event Gen 7 (Eevee)
@@ -1110,6 +1116,7 @@ void GiveCustomEgg(void)
             SetMonMoveSlot(mon, MOVE_GROWL, 1);
             SetMonMoveSlot(mon, MOVE_TACKLE, 2);
             SetMonMoveSlot(mon, MOVE_YAWN, 3);
+			mon->metLocation = METLOC_SPECIAL_EGG; // From traveling man
             break;
 
 		case 7: // Starter Event Gen 8 (Toxel)
@@ -1117,6 +1124,40 @@ void GiveCustomEgg(void)
             SetMonMoveSlot(mon, MOVE_TEARFULLOOK, 1);
             SetMonMoveSlot(mon, MOVE_NUZZLE, 2);
             SetMonMoveSlot(mon, MOVE_POWERUPPUNCH, 3);
+			mon->metLocation = METLOC_SPECIAL_EGG; // From traveling man
+            break;
+
+		case 8: // Rival Event 3, #1 (Litleo)
+            SetMonMoveSlot(mon, MOVE_TACKLE, 0);
+            SetMonMoveSlot(mon, MOVE_LEER, 1);
+            SetMonMoveSlot(mon, MOVE_FIRESPIN, 2);
+            SetMonMoveSlot(mon, MOVE_NONE, 3);
+			GiveMonNatureAndAbility(mon, NATURE_MODEST, 1, IsMonShiny(mon), TRUE, FALSE);
+			mon->hiddenAbility = FALSE; // Rivalry
+			mon->pokeball = BALL_TYPE_LUXURY_BALL;
+			mon->metLocation = METLOC_FATEFUL_ENCOUNTER; // Found in a nice place
+            break;
+
+		case 9: // Rival Event 3, #2 (Shellos West)
+            SetMonMoveSlot(mon, MOVE_WATERGUN, 0);
+            SetMonMoveSlot(mon, MOVE_MUDSLAP, 1);
+            SetMonMoveSlot(mon, MOVE_ACIDARMOR, 2);
+            SetMonMoveSlot(mon, MOVE_NONE, 3);
+			GiveMonNatureAndAbility(mon, NATURE_SASSY, 2, IsMonShiny(mon), TRUE, FALSE);
+			mon->hiddenAbility = FALSE; // Storm Drain
+			mon->pokeball = BALL_TYPE_LUXURY_BALL;
+			mon->metLocation = METLOC_FATEFUL_ENCOUNTER; // Found in a nice place
+            break;
+
+		case 0xA: // // Rival Event 3, #3 (Scraggy)
+            SetMonMoveSlot(mon, MOVE_LOWKICK, 0);
+            SetMonMoveSlot(mon, MOVE_LEER, 1);
+            SetMonMoveSlot(mon, MOVE_POWERUPPUNCH, 2);
+            SetMonMoveSlot(mon, MOVE_NONE, 3);
+			GiveMonNatureAndAbility(mon, NATURE_IMPISH, 3, IsMonShiny(mon), TRUE, FALSE);
+			mon->hiddenAbility = TRUE; // Intimidate
+			mon->pokeball = BALL_TYPE_LUXURY_BALL;
+			mon->metLocation = METLOC_FATEFUL_ENCOUNTER; // Found in a nice place
             break;
     }
 

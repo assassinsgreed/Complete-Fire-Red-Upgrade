@@ -110,7 +110,7 @@ You don't have room to carry this\negg. Come back when you do, okay?
 [BLUE]Eggs take time to hatch. It's best to\nwalk with them until they do.\pIf you have a Pok\emon with the\nFlame Body ability at the front of\lyour party, it's warmth will make\leggs hatch faster!
 
 #org @gText_Route5_EggGiver_TenEggGiftComment
-I'll have a gift for you once you've\nhatched 10 eggs.
+So far you've hatched [BUFFER1]\neggs.\pOnce you've hatched 10, come see\nme. I'll have a gift for you.
 
 #org @gText_Route5_EggGiver_HatchedAtLeastTenEggs
 Well look at that! You've hatched\n[BUFFER1] eggs. I have a gift for\lyou.

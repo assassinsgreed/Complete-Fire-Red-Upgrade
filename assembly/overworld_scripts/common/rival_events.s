@@ -65,15 +65,81 @@ EventScript_RivalEvent2:
 
 RivalEvent2_Declined:
     msgbox gText_RivalEvent2_Declined MSG_NORMAL
-    release
-    end
+    goto End
 
 RivalEvent2_NotEnoughRevives:
     msgbox gText_RivalEvent2_NotEnoughRevives MSG_NORMAL
-    release
-    end
+    goto End
 
 RivalEvent2_ThankPlayer:
     msgbox gText_RivalEvent2_EventComplete MSG_NORMAL
-    release
-    end
+    goto End
+
+.global EventScript_RivalEvent3
+EventScript_RivalEvent3:
+    lock
+    faceplayer
+    checkflag 0x2C2 @ Traded with Rival
+    if SET _goto RivalEvent3_TradeConcluded
+    msgbox gText_RivalEvent3_RequestEgg MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto RivalEvent3_Declined
+    msgbox gText_RivalEvent3_ChooseEgg MSG_NORMAL
+    special 0x9F @ Select a Pokemon and store it's position in 0x8004
+    waitstate
+    callasm StoreIsPartyMonEgg
+    compare LASTRESULT TRUE
+    if FALSE _goto RivalEvent3_DidNotSelectEgg
+    msgbox gText_RivalEvent3_ConfirmEggChoice MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto RivalEvent3_BackedOutOnEgg
+    special 0x62 @ Remove egg from party
+    msgbox gText_RivalEvent3_AcceptedEggChoice MSG_NORMAL
+    pause DELAY_1SECOND
+    playse 0x35 @ SE Pokeball trade
+    pause DELAY_1SECOND
+    fanfare 0x101 @ Fanfare 1
+    msgbox gText_RivalEvent3_EggTradeCompleted MSG_NORMAL
+    waitfanfare
+    random 0x2 @ Random between 0 and 2
+    compare LASTRESULT 0x0
+    if equal _call RivalEvent3_SetLitleoEgg
+    compare LASTRESULT 0x1
+    if equal _call RivalEvent3_SetShellosEgg
+    compare LASTRESULT 0x2
+    if equal _call RivalEvent3_SetScraggyEgg
+    callasm GiveCustomEgg
+    setflag 0x2C2 @ Traded with Rival
+    goto RivalEvent3_TradeConcluded
+
+RivalEvent3_Declined:
+    msgbox gText_RivalEvent3_Declined MSG_NORMAL
+    goto End
+
+RivalEvent3_DidNotSelectEgg:
+    msgbox gText_RivalEvent3_DidNotChooseEgg MSG_NORMAL
+    goto End
+
+RivalEvent3_BackedOutOnEgg:
+    msgbox gText_RivalEvent3_RejectedEggChoice MSG_NORMAL
+    goto End
+
+RivalEvent3_SetLitleoEgg:
+    setvar 0x8005 SPECIES_LITLEO
+    setvar 0x8006 0x8
+    return
+
+RivalEvent3_SetShellosEgg:
+    setvar 0x8005 SPECIES_SHELLOS
+    setvar 0x8006 0x9
+    return
+
+RivalEvent3_SetScraggyEgg:
+    setvar 0x8005 SPECIES_SCRAGGY
+    setvar 0x8006 0xA
+    return
+
+RivalEvent3_TradeConcluded:
+    applymovement 0x4 m_Joy
+    msgbox gText_RivalEvent3_EggTradeConcluded MSG_NORMAL
+    goto End
