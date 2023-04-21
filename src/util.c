@@ -547,3 +547,9 @@ bool8 CanPartyMonBeFrozen(struct Pokemon* mon)
 
 	return TRUE;
 }
+
+// Stores the requested game stat in var 800D (LASTRESULT) based on the value in var 8004
+void StoreGameStat()
+{
+	Var800D = GetGameStat(Var8004);
+}

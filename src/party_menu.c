@@ -2721,6 +2721,17 @@ void ItemUseCB_RareCandy(u8 taskId, TaskFunc func)
 	}
 }
 
+// Checks if party Pokemon in var 0x8004 is an egg and stores it in LASTRESULT (0x800D)
+void StoreIsPartyMonEgg()
+{
+	u16 partyId = Var8004;
+	if (partyId >= PARTY_SIZE)
+		Var800D = FALSE;
+
+	Var800D = GetMonData(&gPlayerParty[Var8004], MON_DATA_IS_EGG, NULL);
+}
+
+
 #ifdef UNBOUND
 void FieldUseFunc_VsSeeker(u8 taskId)
 {

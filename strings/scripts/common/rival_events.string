@@ -27,3 +27,30 @@ You're the best friend a guy could\nask for!\pHere, [PLAYER], these are for you.
 
 #org @gText_RivalEvent2_EventComplete
 Thanks, [PLAYER]! We'll catch up at\nthe gym later.
+
+#org @gText_RivalEvent3_RequestEgg
+Hey, check it out [PLAYER]! My\nPok\emon laid an egg!\pThat's so cool isn't it?\pHey, I have an idea[.] Want to trade\none of your eggs for mine? We\lcould keep what's in them a secret\luntil they hatch.
+
+#org @gText_RivalEvent3_Declined
+No worries. I'll be sticking around\nhere for a while, if you change\lyour mind.
+
+#org @gText_RivalEvent3_ChooseEgg
+Aw yeah! This'll be fun, you'll see.\nPick whichever egg you'd like, and\lI'll do the same.
+
+#org @gText_RivalEvent3_DidNotChooseEgg
+Aw, c'mon, [PLAYER]! We can trade\nregular Pok\emon any time.\lLet's trade eggs instead!
+
+#org @gText_RivalEvent3_ConfirmEggChoice
+Are you sure that's the one you want\nto trade? There are no take-backs.
+
+#org @gText_RivalEvent3_RejectedEggChoice
+Don't sweat it. We can trade later if\nyou're still interested.\pI'll be here for a while.
+
+#org @gText_RivalEvent3_AcceptedEggChoice
+Alright, let's swap!
+
+#org @gText_RivalEvent3_EggTradeCompleted
+[BLACK]Traded eggs with [RIVAL]!
+
+#org @gText_RivalEvent3_EggTradeConcluded
+[BLUE]This was really fun, [PLAYER]! I\ncan't wait to see what your egg\lhatches into.
