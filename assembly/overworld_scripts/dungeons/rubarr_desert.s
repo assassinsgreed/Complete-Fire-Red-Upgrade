@@ -30,7 +30,7 @@ MapEntryScript_RubarrDesert_SetWeather:
     compare LASTRESULT 0x2 @ Evening
     if lessthan _goto SetAllWeatherTypes @ Is morning or day, set clear, sandstorm, or sunny
     @ Is evening or night, set clear skies or sandstorm only
-    random 0x9 @ Between 0 and 9
+    random 0xA @ Between 0 and 10
     compare 0x800D 0x5 @ "6"
     if lessthan _call SetWeatherClear
     compare 0x800D 0x5 @ "6"
@@ -38,7 +38,7 @@ MapEntryScript_RubarrDesert_SetWeather:
     end
 
 SetAllWeatherTypes:
-    random 0x9 @ Between 0 and 9
+    random 0xA @ Between 0 and 10
     compare 0x800D 0x4 @ "5"
     if lessthan _call SetWeatherSunny
     compare 0x800D 0x5 @ "6"
