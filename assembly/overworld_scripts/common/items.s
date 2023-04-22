@@ -201,6 +201,11 @@ ItemScript_Common_GrassySeed:
     finditem ITEM_GRASSY_SEED 0x1
     end
 
+.global ItemScript_Common_ElectricSeed
+ItemScript_Common_ElectricSeed:
+    finditem ITEM_ELECTRIC_SEED 0x1
+    end
+
 .global ItemScript_Common_TerrainExtender
 ItemScript_Common_TerrainExtender:
     finditem ITEM_TERRAIN_EXTENDER 0x1

@@ -529,3 +529,7 @@ npc 1 7 2 EventScript_HeleoRanch_Mom
 npc 1 7 3 EventScript_HeleoRanch_Son
 sign 1 6 0 SignScript_HeleoRanch_RanchGlade
 sign 1 6 1 SignScript_HeleoRanch_RanchEntrance
+
+# Route 11
+npc 3 29 0 EventScript_Common_Strength
+npc 3 29 1 ItemScript_Common_ElectricSeed

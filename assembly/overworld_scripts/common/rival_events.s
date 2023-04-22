@@ -87,6 +87,8 @@ EventScript_RivalEvent3:
     msgbox gText_RivalEvent3_ChooseEgg MSG_NORMAL
     special 0x9F @ Select a Pokemon and store it's position in 0x8004
     waitstate
+    compare 0x8004 0x6 @ Don't continue if user backed out
+    if greaterorequal _goto RivalEvent3_BackedOutOnEgg
     callasm StoreIsPartyMonEgg
     compare LASTRESULT TRUE
     if FALSE _goto RivalEvent3_DidNotSelectEgg
@@ -101,7 +103,7 @@ EventScript_RivalEvent3:
     fanfare 0x101 @ Fanfare 1
     msgbox gText_RivalEvent3_EggTradeCompleted MSG_NORMAL
     waitfanfare
-    random 0x2 @ Random between 0 and 2
+    random 0x3 @ Random between 0 and 3
     compare LASTRESULT 0x0
     if equal _call RivalEvent3_SetLitleoEgg
     compare LASTRESULT 0x1
