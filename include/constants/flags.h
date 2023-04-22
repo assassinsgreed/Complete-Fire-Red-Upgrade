@@ -410,7 +410,7 @@
 #define FLAG_HIDE_HELEO_RANCH_TM45_ATTRACT                      0x190
 #define FLAG_HIDE_HELEO_RANCH_TERRAIN_EXTENDER                  0x191
 #define FLAG_HIDE_HELEO_RANCH_AMPHAROSITE                       0x192
-#define FLAG_HIDE_SILPH_CO_6F_HP_UP                             0x193
+#define FLAG_HIDE_ROUTE_11_ELECTRIC_SEED                        0x193
 #define FLAG_HIDE_SILPH_CO_6F_X_SPECIAL                         0x194
 #define FLAG_HIDE_SILPH_CO_7F_CALCIUM                           0x195
 #define FLAG_HIDE_SILPH_CO_7F_TM08                              0x196
