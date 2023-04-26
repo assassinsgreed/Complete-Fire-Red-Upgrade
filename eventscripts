@@ -207,7 +207,15 @@ npc 6 6 3 EventScript_RhodanziGym_Leader_Terrence
 npc 3 25 0 EventScript_Route7_CamperCarlisle
 npc 3 25 1 EventScript_Common_Cut
 npc 3 25 2 ItemScript_Common_Stick
-sign 3 25 1 SignScript_Route7_TrainerTips
+npc 3 25 3 EventScript_Route7_RockerJonas
+npc 3 25 4 EventScript_Route7_LassEden
+npc 3 25 5 EventScript_Route7_HikerDanny
+npc 3 25 6 EventScript_Route7_CrushGirlErin
+npc 3 25 7 EventScript_Route7_PsychicIshaan
+npc 3 25 8 ItemScript_Common_Greatball
+npc 3 25 9 ItemScript_Common_BlackBelt
+npc 3 25 10 EventScript_Route7_FindTM09Venoshock
+sign 3 25 0 SignScript_Route7_TrainerTips
 
 # Route 3
 map 3 21 MapScript_Route3

@@ -411,10 +411,10 @@
 #define FLAG_HIDE_HELEO_RANCH_TERRAIN_EXTENDER                  0x191
 #define FLAG_HIDE_HELEO_RANCH_AMPHAROSITE                       0x192
 #define FLAG_HIDE_ROUTE_11_ELECTRIC_SEED                        0x193
-#define FLAG_HIDE_SILPH_CO_6F_X_SPECIAL                         0x194
-#define FLAG_HIDE_SILPH_CO_7F_CALCIUM                           0x195
-#define FLAG_HIDE_SILPH_CO_7F_TM08                              0x196
-#define FLAG_HIDE_SILPH_CO_10F_CARBOS                           0x197
+#define FLAG_HIDE_ROUTE_7_STICK                                 0x194
+#define FLAG_HIDE_ROUTE_7_GREAT_BALL                            0x195
+#define FLAG_HIDE_ROUTE_7_BLACK_BELT                            0x196
+#define FLAG_HIDE_ROUTE_7_TM09_VENOSHOCK                        0x197
 #define FLAG_HIDE_SILPH_CO_10F_ULTRA_BALL                       0x198
 #define FLAG_HIDE_SILPH_CO_10F_RARE_CANDY                       0x199
 #define FLAG_HIDE_POWER_PLANT_MAX_POTION                        0x19A
@@ -1049,7 +1049,7 @@
 #define HIDDEN_ITEM_ROUTE5_GREAT_BALL                                  20
 #define HIDDEN_ITEM_ROUTE5_CARBOS                                      21
 #define HIDDEN_ITEM_ROUTE5_LEAF_STONE                                  22
-#define HIDDEN_ITEM_SAFARI_ZONE_WEST_REVIVE                            23
+#define HIDDEN_ITEM_ROUTE7_REPEAT_BALL                                 23
 #define HIDDEN_ITEM_SILPH_CO_5F_ELIXIR                                 24
 #define HIDDEN_ITEM_SILPH_CO_9F_MAX_POTION                             25
 #define HIDDEN_ITEM_SAFFRON_CITY_HOUSE1_2F_NUGGET                      26

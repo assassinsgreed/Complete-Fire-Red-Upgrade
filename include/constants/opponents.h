@@ -21,6 +21,12 @@
 #define TRAINER_RHODANZI_GYM_LEADER_TERRENCE         14
 // Route 7
 #define TRAINER_ROUTE_7_CAMPER_CARLISLE              15
+#define TRAINER_ROUTE_7_ROCKER_JONAS                 77
+#define TRAINER_ROUTE_7_LASS_EDEN                    78
+#define TRAINER_ROUTE_7_HIKER_DANNY                  79
+#define TRAINER_ROUTE_7_CRUSH_GIRL_ERIN              80
+#define TRAINER_ROUTE_7_PSYCHIC_ISHAAN               81
+
 // Route 3
 #define TRAINER_ROUTE_3_PICKNICKER_TANA              17
 #define TRAINER_ROUTE_3_BUG_CATCHER_IRWIN            18
