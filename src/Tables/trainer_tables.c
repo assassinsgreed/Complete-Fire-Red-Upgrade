@@ -372,6 +372,32 @@ const struct TrainerMonNoItemDefaultMoves sParty_Route7_CamperCarlisle[] = {
     { .lvl = 8, .species = SPECIES_NIDORAN_M },
     { .lvl = 10, .species = SPECIES_DOTTLER },
 };
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route7_RockerJonas[] = {
+    { .lvl = 17, .species = SPECIES_TOXEL },
+    { .lvl = 18, .species = SPECIES_TRAPINCH },
+    { .lvl = 19, .species = SPECIES_THWACKEY },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route7_LassEden[] = {
+    { .lvl = 17, .species = SPECIES_HATENNA },
+    { .lvl = 18, .species = SPECIES_SLOWPOKE },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route7_HikerDanny[] = {
+    { .lvl = 18, .species = SPECIES_TYRUNT },
+    { .lvl = 18, .species = SPECIES_MUDBRAY },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route7_CrushGirlEden[] = {
+    { .lvl = 18, .species = SPECIES_COMBUSKEN },
+    { .lvl = 19, .species = SPECIES_TIMBURR },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route7_PsychicIshaan[] = {
+    { .lvl = 19, .species = SPECIES_ELGYEM },
+    { .lvl = 19, .species = SPECIES_INKAY },
+};
 // endregion
 
 // #endregion
@@ -1260,6 +1286,66 @@ const struct Trainer gTrainers[] = {
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
         .partySize = NELEMS(sParty_Route7_CamperCarlisle),
         .party = {.NoItemDefaultMoves = sParty_Route7_CamperCarlisle}
+    },
+    [TRAINER_ROUTE_7_ROCKER_JONAS] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_GUITARIST_RS,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_GUITARIST,
+        .trainerName = {_J, _o, _n, _a, _s, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_TRY_TO_FAINT,
+        .partySize = NELEMS(sParty_Route7_RockerJonas),
+        .party = {.NoItemDefaultMoves = sParty_Route7_RockerJonas}
+    },
+    [TRAINER_ROUTE_7_LASS_EDEN] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_LASS,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .trainerPic = TRAINER_PIC_LASS,
+        .trainerName = {_E, _d, _e, _n, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = NELEMS(sParty_Route7_LassEden),
+        .party = {.NoItemDefaultMoves = sParty_Route7_LassEden}
+    },
+    [TRAINER_ROUTE_7_HIKER_DANNY] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_HIKER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
+        .trainerPic = TRAINER_PIC_HIKER,
+        .trainerName = {_D, _a, _n, _n, _y, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = NELEMS(sParty_Route7_HikerDanny),
+        .party = {.NoItemDefaultMoves = sParty_Route7_HikerDanny}
+    },
+    [TRAINER_ROUTE_7_CRUSH_GIRL_ERIN] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_CRUSH_GIRL,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_CRUSH_GIRL,
+        .trainerName = {_E, _r, _i, _n, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_TRY_TO_FAINT,
+        .partySize = NELEMS(sParty_Route7_CrushGirlEden),
+        .party = {.NoItemDefaultMoves = sParty_Route7_CrushGirlEden}
+    },
+    [TRAINER_ROUTE_7_PSYCHIC_ISHAAN] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_PSYCHIC,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_PSYCHIC_M,
+        .trainerName = {_I, _s, _h, _a, _a, _n, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = NELEMS(sParty_Route7_PsychicIshaan),
+        .party = {.NoItemDefaultMoves = sParty_Route7_PsychicIshaan}
     },
     // #endregion
     // #region Route 13
