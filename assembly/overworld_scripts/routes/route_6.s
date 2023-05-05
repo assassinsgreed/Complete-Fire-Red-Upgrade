@@ -123,6 +123,23 @@ EventScript_Route6_HikerDarryl:
     msgbox gText_Route6_HikerDarryl_Chat MSG_NORMAL
     end
 
+.global EventScript_Route6_Blastoisinite
+EventScript_Route6_Blastoisinite:
+    finditem ITEM_BLASTOISINITE 0x1
+    end
+
+.global EventScript_Route6_FindTM78Bulldoze
+EventScript_Route6_FindTM78Bulldoze:
+    setvar CHOSEN_ITEM ITEM_TM78
+    call ItemScript_Common_FindTM
+    end
+
+.global EventScript_Route6_FindTM88StealthRock
+EventScript_Route6_FindTM88StealthRock:
+    setvar CHOSEN_ITEM ITEM_TM88
+    call ItemScript_Common_FindTM
+    end
+
 .global SignScript_Route6_Directions
 SignScript_Route6_Directions:
     msgbox gText_Route6_DirectionsSign MSG_SIGN

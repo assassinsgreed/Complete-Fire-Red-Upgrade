@@ -567,7 +567,16 @@ npc 3 24 24 EventScript_Route6_SwimmerDanika
 npc 3 24 25 EventScript_Route6_SrAndJr_Sue
 npc 3 24 26 EventScript_Route6_SrAndJr_Kat
 npc 3 24 27 EventScript_Route6_HikerDarryl
-## TODO: Add trainer event scripts, add Items to map and events
+npc 3 24 28 EventScript_Route6_Blastoisinite
+npc 3 24 29 EventScript_Route6_FindTM78Bulldoze
+npc 3 24 30 ItemScript_Common_FreshWater
+npc 3 24 31 ItemScript_Common_LinkCord
+npc 3 24 32 ItemScript_Common_DampRock
+npc 3 24 33 ItemScript_Common_ChoiceBand
+npc 3 24 34 EventScript_Route6_FindTM88StealthRock
+npc 3 24 35 ItemScript_Common_Iron
+npc 3 24 36 ItemScript_Common_RareCandy
+npc 3 24 37 ItemScript_Common_Nugget
 sign 3 24 0 SignScript_Route6_Directions
 sign 3 24 1 SignScript_Route6_ItemFinder
 sign 3 24 2 SignScript_Route6_WrongWay

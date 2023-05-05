@@ -11,6 +11,11 @@ ItemScript_Common_FindTM:
     finditem CHOSEN_ITEM 0x1
     return
 
+.global ItemScript_Common_RareCandy
+ItemScript_Common_RareCandy:
+    finditem ITEM_RARE_CANDY 0x1
+    end
+
 .global ItemScript_Common_Potion
 ItemScript_Common_Potion:
     finditem ITEM_POTION 0x1
@@ -34,6 +39,11 @@ ItemScript_Common_Antidote:
 .global ItemScript_Common_FullHeal
 ItemScript_Common_FullHeal:
     finditem ITEM_FULL_HEAL 0x1
+    end
+
+.global ItemScript_Common_FreshWater
+ItemScript_Common_FreshWater:
+    finditem ITEM_FRESH_WATER 0x1
     end
 
 .global ItemScript_Common_SodaPop
@@ -81,9 +91,20 @@ ItemScript_Common_IceStone:
     finditem ITEM_ICE_STONE 0x1
     end
 
+.global ItemScript_Common_LinkCord
+ItemScript_Common_LinkCord:
+    // CFRU labels this as Link Stone, but we call it Link Cord to align with Pokemon Legends Arceus
+    finditem ITEM_LINK_STONE 0x1
+    end
+
 .global ItemScript_Common_SmoothRock
 ItemScript_Common_SmoothRock:
     finditem ITEM_SMOOTH_ROCK 0x1
+    end
+
+.global ItemScript_Common_DampRock
+ItemScript_Common_DampRock:
+    finditem ITEM_DAMP_ROCK 0x1
     end
 
 .global ItemScript_Common_Snowball
@@ -136,6 +157,11 @@ ItemScript_Common_FocusSash:
     finditem ITEM_FOCUS_SASH 0x1
     end
 
+.global ItemScript_Common_ChoiceBand
+ItemScript_Common_ChoiceBand:
+    finditem ITEM_CHOICE_BAND 0x1
+    end
+
 .global ItemScript_Common_ChoiceScarf
 ItemScript_Common_ChoiceScarf:
     finditem ITEM_CHOICE_SCARF 0x1
@@ -174,6 +200,11 @@ ItemScript_Common_DireHit:
 .global ItemScript_Common_Protein
 ItemScript_Common_Protein:
     finditem ITEM_PROTEIN 0x1
+    end
+
+.global ItemScript_Common_Iron
+ItemScript_Common_Iron:
+    finditem ITEM_IRON 0x1
     end
 
 .global ItemScript_Common_Calcium
