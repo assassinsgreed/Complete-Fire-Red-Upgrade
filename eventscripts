@@ -205,7 +205,7 @@ npc 6 6 3 EventScript_RhodanziGym_Leader_Terrence
 
 # Route 7
 npc 3 25 0 EventScript_Route7_CamperCarlisle
-npc 3 25 1 EventScript_Common_Cut
+npc 3 25 1 EventScript_Route5And7_Cut
 npc 3 25 2 ItemScript_Common_Stick
 npc 3 25 3 EventScript_Route7_RockerJonas
 npc 3 25 4 EventScript_Route7_LassEden
@@ -537,6 +537,40 @@ npc 1 7 2 EventScript_HeleoRanch_Mom
 npc 1 7 3 EventScript_HeleoRanch_Son
 sign 1 6 0 SignScript_HeleoRanch_RanchGlade
 sign 1 6 1 SignScript_HeleoRanch_RanchEntrance
+
+# Route 6
+npc 3 24 0 EventScript_Common_RockSmash
+npc 3 24 1 EventScript_Common_RockSmash
+npc 3 24 2 EventScript_Common_Strength
+npc 3 24 3 EventScript_Common_Strength
+npc 3 24 4 EventScript_Common_Cut
+npc 3 24 5 EventScript_Common_RockSmash
+npc 3 24 6 EventScript_Common_RockSmash
+npc 3 24 7 EventScript_Common_RockSmash
+npc 3 24 8 EventScript_Common_RockSmash
+npc 3 24 9 EventScript_Common_Strength
+npc 3 24 10 EventScript_Route6_DirectionsGirl
+npc 3 24 11 EventScript_Route6_YoungsterNed
+npc 3 24 12 EventScript_Route6_NinjaBoyRajan
+npc 3 24 13 EventScript_Route6_HikerRomero
+npc 3 24 14 EventScript_Route6_SuperNerdEstevan
+npc 3 24 15 EventScript_Route6_EngineerHarry
+npc 3 24 16 EventScript_Route6_GamblerMick
+npc 3 24 17 EventScript_Route6_FishermanTaylor
+npc 3 24 18 EventScript_Route6_NurseLeanne
+npc 3 24 19 EventScript_Route6_SuperNerdDante
+npc 3 24 20 EventScript_Route6_BugCatcherBillie
+npc 3 24 21 EventScript_Route6_GentlemanLincoln
+npc 3 24 22 EventScript_Route6_BlackbeltRafael
+npc 3 24 23 EventScript_Route6_LassAnna
+npc 3 24 24 EventScript_Route6_SwimmerDanika
+npc 3 24 25 EventScript_Route6_SrAndJr_Sue
+npc 3 24 26 EventScript_Route6_SrAndJr_Kat
+npc 3 24 27 EventScript_Route6_HikerDarryl
+## TODO: Add trainer event scripts, add Items to map and events
+sign 3 24 0 SignScript_Route6_Directions
+sign 3 24 1 SignScript_Route6_ItemFinder
+sign 3 24 2 SignScript_Route6_WrongWay
 
 # Route 11
 npc 3 29 0 EventScript_Common_Strength

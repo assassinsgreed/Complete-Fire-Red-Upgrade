@@ -21,12 +21,6 @@
 #define TRAINER_RHODANZI_GYM_LEADER_TERRENCE         14
 // Route 7
 #define TRAINER_ROUTE_7_CAMPER_CARLISLE              15
-#define TRAINER_ROUTE_7_ROCKER_JONAS                 77
-#define TRAINER_ROUTE_7_LASS_EDEN                    78
-#define TRAINER_ROUTE_7_HIKER_DANNY                  79
-#define TRAINER_ROUTE_7_CRUSH_GIRL_ERIN              80
-#define TRAINER_ROUTE_7_PSYCHIC_ISHAAN               81
-
 // Route 3
 #define TRAINER_ROUTE_3_PICKNICKER_TANA              17
 #define TRAINER_ROUTE_3_BUG_CATCHER_IRWIN            18
@@ -95,3 +89,26 @@
 #define TRAINER_HELEO_RANCH_CAMPER_TROY              74
 #define TRAINER_HELEO_RANCH_BREEDER_LAURA            75
 #define TRAINER_HELEO_RANCH_PICKNICKER_CASEY         76
+// Route 7 (Continued)
+#define TRAINER_ROUTE_7_ROCKER_JONAS                 77
+#define TRAINER_ROUTE_7_LASS_EDEN                    78
+#define TRAINER_ROUTE_7_HIKER_DANNY                  79
+#define TRAINER_ROUTE_7_CRUSH_GIRL_ERIN              80
+#define TRAINER_ROUTE_7_PSYCHIC_ISHAAN               81
+// Route 6
+#define TRAINER_ROUTE_6_YOUNGSTER_NED                82
+#define TRAINER_ROUTE_6_NINJABOY_RAJAN               83
+#define TRAINER_ROUTE_6_HIKER_ROMERO                 84
+#define TRAINER_ROUTE_6_SUPERNERD_ESTEVAN            85
+#define TRAINER_ROUTE_6_ENGINEER_HARRY               86
+#define TRAINER_ROUTE_6_GAMBLER_MICK                 87
+#define TRAINER_ROUTE_6_FISHERMAN_TAYLOR             88
+#define TRAINER_ROUTE_6_NURSE_LEANNE                 89
+#define TRAINER_ROUTE_6_SUPERNERD_DANTE              90
+#define TRAINER_ROUTE_6_BUGCATCHER_BILIE             91
+#define TRAINER_ROUTE_6_GENTLEMAN_LINCOLN            92
+#define TRAINER_ROUTE_6_BLACKBELT_RAFAEL             93
+#define TRAINER_ROUTE_6_LASS_ANNA                    94
+#define TRAINER_ROUTE_6_SWIMMER_DANIKA               95
+#define TRAINER_ROUTE_6_SRANDJR_SUEANDKAT            96
+#define TRAINER_ROUTE_6_HIKER_DARRYL                 97

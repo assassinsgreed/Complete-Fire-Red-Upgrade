@@ -69,10 +69,10 @@ EventScript_Route3_YoungsterLogan:
 
 .global EventScript_Route3_TwinsNinaAndMeg_Nina
 EventScript_Route3_TwinsNinaAndMeg_Nina:
-    checktrainerflag 0x513 @ 500 + 13
+    checktrainerflag 0x514 @ 500 + 14
     if SET _goto NinaDefeated
     trainerbattle0 0x0 0x14 0x0 gText_Route3_TwinsNinaAndMeg_Nina_Intro gText_Route3_TwinsNinaAndMeg_Nina_Defeat
-    settrainerflag 0x513
+    settrainerflag 0x514
     goto NinaDefeated
 
 NinaDefeated:
@@ -81,10 +81,10 @@ NinaDefeated:
 
 .global EventScript_Route3_TwinsNinaAndMeg_Meg
 EventScript_Route3_TwinsNinaAndMeg_Meg:
-    checktrainerflag 0x513 @ 500 + 13
+    checktrainerflag 0x514 @ 500 + 14
     if SET _goto MegDefeated
     trainerbattle0 0x0 0x14 0x0 gText_Route3_TwinsNinaAndMeg_Meg_Intro gText_Route3_TwinsNinaAndMeg_Meg_Defeat
-    settrainerflag 0x513
+    settrainerflag 0x514
     goto MegDefeated
 
 MegDefeated:

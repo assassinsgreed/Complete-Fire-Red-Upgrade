@@ -67,8 +67,6 @@ EventScript_Common_SmashRock:
     applymovement LASTTALKED m_SmashRock
     waitmovement ALLEVENTS
     hidesprite LASTTALKED
-    special 0xAB
-    waitstate
     goto ReleaseAll
 
 .global EventScript_Common_Strength
