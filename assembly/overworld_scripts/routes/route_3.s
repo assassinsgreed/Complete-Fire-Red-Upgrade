@@ -295,6 +295,7 @@ TileScript_Route3_InitiateDexNavEvent:
     hidesprite Rival
     movesprite2 Assistant 0x04A 0x000E @ Update position of Assistant permanently
     setflag 0x31 @ Hide rival on Route 3
+    setflag 0x232 @ Initiated DexNav event (for Rhodanzi Gym placard)
     clearflag 0x33 @ Show Pluto grunts on route 3 & Rubarr Desert
     setvar Route3RubarrStoryEventVar VarStoryMetAssistant
     release
