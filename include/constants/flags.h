@@ -579,7 +579,7 @@
 #define FLAG_INITIATED_DEXNAV_EVENT                      0x232
 #define FLAG_GOT_POKEMON_EGG_FROM_DAYCARE                0x233
 #define FLAG_GOT_OVAL_CHARM                              0x234
-#define FLAG_GOT_SS_TICKET_DUP                           0x235
+#define FLAG_GOT_ROCK_SMASH_HM                           0x235
 #define FLAG_GOT_TM42_AT_MEMORIAL_PILLAR                 0x236
 #define FLAG_GOT_HM01                                    0x237
 #define FLAG_GOT_HM02                                    0x238

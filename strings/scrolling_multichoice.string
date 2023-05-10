@@ -26,5 +26,28 @@ Gastro Acid
 #org @gText_AfterYou
 After You
 
+#org @gText_GrassPledge
+Grass Pledge
+
+#org @gText_FirePledge
+Fire Pledge
+
+#org @gText_WaterPledge
+Water Pledge
+
+#org @gText_LowKick
+Low Kick
+
+#org @gText_Bind
+Bind
+
+#org @gText_Block
+Block
+
+#org @gText_LaserFocus
+Laser Focus
+
+#org @gText_Uproar
+Uproar
 
 #endif

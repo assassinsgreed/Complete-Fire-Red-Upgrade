@@ -1,0 +1,26 @@
+#org @gText_HeleoCity_ForemanHMGift
+Hey, I recognize you!\pYou're that kid that insisted on going\nthrough Torma Cave, instead of\lwaiting for us to finish clearing\lRoute 4.\pYou're really reckless, you know\nthat? But[.] I can't help but like\lyou.\pHere, take this HM! Think of it as a\ngift from your friendly\lneighborhood foreman.
+
+#org @gText_HeleoCity_ForemanBadgeComment
+With that HM, you'll be able to\nbreak any rocks in your path.\pNo more detouring into dangerous\ncaves, eh? Gwahahaha!\pYou'll need the Heleo City gym badge\nbefore you can use it, though.
+
+#org @gText_HeleoCity_ForemanAssistant
+The foreman seems like a scary guy,\nbut he actually has a heart of\lgold.
+
+#org @gText_HeleoCity_MoveTutorSon
+My daddy taught my Pok\emon a lot of\nreally cool moves! He's so smart!
+
+#org @gText_HeleoNPCHouses_TutorConfirmation
+Hello! I'm an experienced move\ntutor.\pI can teach your Pok\emon new and\nexciting moves, in exchange for 5\lPok\eChips! What do you say?
+
+#org @gText_HeleoNPCHouses_ConfirmationAccepted
+Great! These are the moves I can\nteach. Which interests you?
+
+#org @gText_HeleoNPCHouses_Complete
+That concludes our session.\pCome see me if you'd like to have\nyour Pok\emon learn more moves!
+
+#org @gText_HeleoNPCHouses_TutoringRejected
+Okay! Come see me if you change\nyour mind. I'll be here.
+
+#org @gText_HeleoNPCHouses_NotEnoughPokeChips
+I'd love to teach your Pok\emon, but\nyou don't have enough Pok\eChips to\lcover my fee[.]
