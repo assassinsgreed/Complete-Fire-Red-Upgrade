@@ -101,8 +101,68 @@ afteryou:
     call teach5ChipMove
     return
 
+.global EventScript_Tutors_Heleo
+EventScript_Tutors_Heleo:
+    setvar 0x8000 0x1
+    setvar 0x8001 0x5
+	special 0x158
+    waitstate
+    switch LASTRESULT
+	case 0, grasspledge
+	case 1, firepledge
+	case 2, waterpledge
+	case 3, lowkick
+    case 4, bind
+	case 5, block
+	case 6, laserfocus
+	case 7, uproar
+    case 8, cancelled
+
+grasspledge:
+    setvar 0x8005 0x35
+    call teach5ChipMove
+    return
+
+firepledge:
+    setvar 0x8005 0x36
+    call teach5ChipMove
+    return
+
+waterpledge:
+    setvar 0x8005 0x37
+    call teach5ChipMove
+    return
+
+lowkick:
+    setvar 0x8005 0x6
+    call teach5ChipMove
+    return
+
+bind:
+    setvar 0x8005 0x8
+    call teach5ChipMove
+    return
+
+block:
+    setvar 0x8005 0xA
+    call teach5ChipMove
+    return
+
+laserfocus:
+    setvar 0x8005 0x21
+    call teach5ChipMove
+    return
+
+uproar:
+    setvar 0x8005 0x7
+    call teach5ChipMove
+    return
+
 teach5ChipMove:
     call teachmove
+    setvar 0x8004 0x0 @ Ensure multiselect doesn't blow up when reopened
+    compare LASTRESULT NO
+    if true _goto cancelled
     removeitem ITEM_POKE_CHIP 0x5
     return
 
@@ -111,7 +171,8 @@ teachmove:
     waitstate
     compare LASTRESULT NO
     if TRUE _goto cancelled @ Pokemon couldn't learn move, or player cancelled
-    sound 0x40 @ Cash Register SE
+    sound 0xF8 @ Money SE
+    waitse
     return
 
 cancelled:

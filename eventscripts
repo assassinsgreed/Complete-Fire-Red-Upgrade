@@ -584,3 +584,14 @@ sign 3 24 2 SignScript_Route6_WrongWay
 # Route 11
 npc 3 29 0 EventScript_Common_Strength
 npc 3 29 1 ItemScript_Common_ElectricSeed
+
+# Heleo City
+## Overworld
+## Facilities
+npc 8 3 0 EventScript_HeleoFacilities_Mart_PokeballShop
+## Gym
+## NPC Houses
+npc 1 89 0 EventScript_HeleoCity_Foreman
+npc 1 89 1 EventScript_HeleoCity_ForemanAssistant
+npc 8 0 0 EventScript_HeleoCity_MoveTutor
+npc 8 0 1 EventScript_HeleoCity_MoveTutorSon
