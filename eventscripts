@@ -186,22 +186,22 @@ npc 6 12 0 EventScript_RhodanziNPCHouses_PlantGirl
 npc 6 13 0 EventScript_RhodanziNPCHouses_MailTrainer
 
 ## Facilities
-map 6 5 MapScript_RhodanziFacilities_PokemonCenter
-npc 6 3 0 EventScript_Pokemart
-npc 6 3 1 EventScript_RhodanziFacilities_Mart_BadgeStock
-npc 6 3 2 EventScript_RhodanziFacilities_Mart_EscapeRope
-npc 6 5 0 EventScript_PokemonCenter_Main
-npc 6 5 1 EventScript_RhodanziFacilities_Center_UsingFacility
-npc 6 5 2 EventScript_RhodanziFacilities_Center_Trade
-npc 6 5 3 EventScript_RhodanziFacilities_Center_PokemonTreatment
+npc 6 14 0 EventScript_Pokemart
+npc 6 14 1 EventScript_RhodanziFacilities_Mart_BadgeStock
+npc 6 14 2 EventScript_RhodanziFacilities_Mart_EscapeRope
+map 6 15 MapScript_RhodanziFacilities_PokemonCenter
+npc 6 15 0 EventScript_PokemonCenter_Main
+npc 6 15 1 EventScript_RhodanziFacilities_Center_UsingFacility
+npc 6 15 2 EventScript_RhodanziFacilities_Center_Trade
+npc 6 15 3 EventScript_RhodanziFacilities_Center_PokemonTreatment
 
 ## Gym
-sign 6 6 0 SignScript_RhodanziGym_Placard
-sign 6 6 1 SignScript_RhodanziGym_Placard
-npc 6 6 0 EventScript_RhodanziGym_GymExpert
-npc 6 6 1 EventScript_RhodanziGym_Alonso
-npc 6 6 2 EventScript_RhodanziGym_Brandon
-npc 6 6 3 EventScript_RhodanziGym_Leader_Terrence
+sign 6 16 0 SignScript_RhodanziGym_Placard
+sign 6 16 1 SignScript_RhodanziGym_Placard
+npc 6 16 0 EventScript_RhodanziGym_GymExpert
+npc 6 16 1 EventScript_RhodanziGym_Alonso
+npc 6 16 2 EventScript_RhodanziGym_Brandon
+npc 6 16 3 EventScript_RhodanziGym_Leader_Terrence
 
 # Route 7
 npc 3 25 0 EventScript_Route7_CamperCarlisle
