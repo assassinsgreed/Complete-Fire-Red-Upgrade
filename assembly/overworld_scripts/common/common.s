@@ -8,19 +8,25 @@
 SetWeatherClear:
     setweather WEATHER_NORMAL
     doweather
-    end
+    return
 
 .global SetWeatherSunny
 SetWeatherSunny:
     setweather WEATHER_HARSH_SUNLIGHT
     doweather
-    end
+    return
+
+.global SetWeatherRain
+SetWeatherRain:
+    setweather WEATHER_RAIN
+    doweather
+    return
 
 .global SetWeatherSandstorm
 SetWeatherSandstorm:
     setweather WEATHER_SANDSTORM
     doweather
-    end
+    return
 
 .global EnableRunningShoes
 EnableRunningShoes:

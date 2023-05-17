@@ -586,10 +586,25 @@ npc 3 29 0 EventScript_Common_Strength
 npc 3 29 1 ItemScript_Common_ElectricSeed
 
 # Heleo City
+map 3 4 MapScript_HeleoCity
+
 ## Overworld
 ## Facilities
 npc 8 3 0 EventScript_HeleoFacilities_Mart_PokeballShop
 ## Gym
+map 1 92 MapScript_HeleoCityGym
+map 1 93 MapScript_HeleoCityGym
+npc 1 92 0 EventScript_HeleoGym_CastformWater
+npc 1 92 1 EventScript_HeleoGym_CastformWater
+npc 1 92 2 EventScript_HeleoGym_CastformWater
+npc 1 92 3 EventScript_HeleoGym_CastformWater
+npc 1 92 4 EventScript_HeleoGym_CastformWater
+npc 1 93 0 EventScript_HeleoGym_CastformDrained
+npc 1 93 1 EventScript_HeleoGym_CastformDrained
+npc 1 93 2 EventScript_HeleoGym_CastformDrained
+npc 1 93 3 EventScript_HeleoGym_CastformDrained
+npc 1 93 4 EventScript_HeleoGym_CastformDrained
+
 ## NPC Houses
 npc 1 89 0 EventScript_HeleoCity_Foreman
 npc 1 89 1 EventScript_HeleoCity_ForemanAssistant
