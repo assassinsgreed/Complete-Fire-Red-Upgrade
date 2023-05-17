@@ -84,6 +84,7 @@ extern const u8 gText_DexNav_Locked[];
 extern const u8 gText_DexNav_NeedRod[];
 extern const u8 gText_DexNav_TooDark[];
 extern const u8 gText_DexNav_NoPokemonHere[];
+extern const u8 gText_DexNav_Unregistered[];
 extern const u8 gText_DexNav_UpArrow[];
 extern const u8 gText_DexNav_DownArrow[];
 extern const u8 gText_DexNav_LeftArrow[];
@@ -175,6 +176,7 @@ enum DexNavMessages
 	MESSAGE_NO_DATA,
 	MESSAGE_TOO_DARK,
 	MESSAGE_NO_POKEMON_HERE,
+	MESSAGE_UNREGISTERED
 };
 
 enum EncounterTypes

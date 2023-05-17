@@ -2314,27 +2314,42 @@ static void DexNavPopulateEncounterList(void)
 
 static void RegisterSpecies(u16 species, u8 taskId)
 {
-	//Species was valid
-	DexNavDisplaySpeciesData();
+	// Disable selection if toggled again
+	u16 dexNavSpecies = VarGet(VAR_DEXNAV);
+	if (dexNavSpecies != SPECIES_NONE)
+	{
+		// Turn off the registered icon and print
+		sDexNavGUIPtr->registeredIconVisible = FALSE;
+		VarSet(VAR_DEXNAV, SPECIES_NONE);
+		StringCopy(gStringVar1, gSpeciesNames[species]);
+		PrintDexNavMessage(MESSAGE_UNREGISTERED);
+		PlaySE(SE_POKENAV_OFF);
+	}
+	else
+	{
+		//Species was valid
+		DexNavDisplaySpeciesData();
 
-	//Create value to store in a var
-	u16 varStore = (sDexNavGUIPtr->selectedArea << 15) | species;
-	VarSet(VAR_DEXNAV, varStore);
+		//Create value to store in a var
+		u16 varStore = (sDexNavGUIPtr->selectedArea << 15) | species;
+		VarSet(VAR_DEXNAV, varStore);
 
-	//Update R-Button mode if applicable
-	#ifdef VAR_R_BUTTON_MODE
-	VarSet(VAR_R_BUTTON_MODE, OPTIONS_R_BUTTON_MODE_DEXNAV);
-	#endif
+		//Update R-Button mode if applicable
+		#ifdef VAR_R_BUTTON_MODE
+		VarSet(VAR_R_BUTTON_MODE, OPTIONS_R_BUTTON_MODE_DEXNAV);
+		#endif
+		
+		//Update registered icon details
+		sDexNavGUIPtr->registeredIndex = sDexNavGUIPtr->selectedIndex;
+		sDexNavGUIPtr->registeredArea = sDexNavGUIPtr->selectedArea;
+		sDexNavGUIPtr->registeredIconVisible = TRUE;
+
+		TryRandomizeSpecies(&species);
+		StringCopy(gStringVar1, gSpeciesNames[species]);
+		PrintDexNavMessage(MESSAGE_REGISTERED);
+		PlaySE(SE_POKENAV_SEARCHING);
+	}
 	
-	//Update registered icon details
-	sDexNavGUIPtr->registeredIndex = sDexNavGUIPtr->selectedIndex;
-	sDexNavGUIPtr->registeredArea = sDexNavGUIPtr->selectedArea;
-	sDexNavGUIPtr->registeredIconVisible = TRUE;
-
-	TryRandomizeSpecies(&species);
-	StringCopy(gStringVar1, gSpeciesNames[species]);
-	PrintDexNavMessage(MESSAGE_REGISTERED);
-	PlaySE(SE_POKENAV_SEARCHING);
 	gTasks[taskId].func = Task_WaitForErrorMessage;
 }
 
@@ -2413,6 +2428,9 @@ static void PrintDexNavMessage(u8 messageId)
 			break;
 		case MESSAGE_NO_POKEMON_HERE:
 			text = gText_DexNav_NoPokemonHere;
+			break;
+		case MESSAGE_UNREGISTERED:
+			text = gText_DexNav_Unregistered;
 			break;
 		default:
 			text = NULL;

@@ -273,6 +273,12 @@ bool8 StartRButtonFunc(void)
 			return TRUE; //HUD wasn't enabled and a script was started instead
 		return FALSE; //Don't enable the script context
 	}
+	else if (!gPaletteFade->active && FlagGet(FLAG_SYS_POKEMON_GET))
+	{
+		ScriptContext2_Enable();
+		ScriptContext1_SetupScript(SystemScript_PartyMenuFromField);
+		return TRUE;
+	}
 	#else
 	switch (VarGet(VAR_R_BUTTON_MODE)) {
 		case OPTIONS_R_BUTTON_MODE_DEXNAV:
