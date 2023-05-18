@@ -26,6 +26,7 @@ extern const u8 LeaderTerrenceTiles[];
 extern const u8 ChampionSeleneTiles[];
 extern const u8 AlistairTiles[];
 extern const u8 LeaderStellaTiles[];
+extern const u8 TrainerHouseHostTiles[];
 
 // Overworld Events
 extern const u8 SandygastTiles[];
@@ -359,6 +360,19 @@ static const struct SpriteFrameImage Table_LeaderStella[] =
     overworld_frame(LeaderStellaTiles, 2, 4, 6),
     overworld_frame(LeaderStellaTiles, 2, 4, 7),
     overworld_frame(LeaderStellaTiles, 2, 4, 8),
+};
+
+static const struct SpriteFrameImage Table_TrainerHouseHost[] =
+{
+    overworld_frame(TrainerHouseHostTiles, 2, 4, 0),
+    overworld_frame(TrainerHouseHostTiles, 2, 4, 1),
+    overworld_frame(TrainerHouseHostTiles, 2, 4, 2),
+    overworld_frame(TrainerHouseHostTiles, 2, 4, 3),
+    overworld_frame(TrainerHouseHostTiles, 2, 4, 4),
+    overworld_frame(TrainerHouseHostTiles, 2, 4, 5),
+    overworld_frame(TrainerHouseHostTiles, 2, 4, 6),
+    overworld_frame(TrainerHouseHostTiles, 2, 4, 7),
+    overworld_frame(TrainerHouseHostTiles, 2, 4, 8),
 };
 
 static const struct SpriteFrameImage Table_Sandygast[] =
@@ -901,6 +915,26 @@ const struct EventObjectGraphicsInfo GraphicsInfo_LeaderStella =
     .subspriteTables = gEventObjectSpriteOamTables_16x32,
     .anims = gEventObjectImageAnimTable_Standard,
     .images = Table_LeaderStella,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+const struct EventObjectGraphicsInfo GraphicsInfo_TrainerHouseHost =
+{
+    .tileTag = 0xFFFF,
+    .paletteTag1 = 0x121B,
+    .paletteTag2 = EVENT_OBJ_PAL_TAG_NONE,
+    .size = (16 * 32) / 2,
+    .width = 16,
+    .height = 32,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .disableReflectionPaletteLoad = FALSE,
+    .tracks = TRACKS_FOOT,
+    .gender = MALE,
+    .oam = gEventObjectBaseOam_16x32,
+    .subspriteTables = gEventObjectSpriteOamTables_16x32,
+    .anims = gEventObjectImageAnimTable_Standard,
+    .images = Table_TrainerHouseHost,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 
