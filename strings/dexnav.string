@@ -108,6 +108,8 @@ It's too dark to search for a Pok\emon![PAUSE_UNTIL_PRESS]
 #org @gText_DexNav_NoPokemonHere
 No Pok\emon can be found here.[PAUSE_UNTIL_PRESS]
 
+#org @gText_DexNav_Unregistered
+Stopped searching for [BUFFER1]\nvia [R_BUTTON]![PAUSE_UNTIL_PRESS]
 
 //Field Strings
 

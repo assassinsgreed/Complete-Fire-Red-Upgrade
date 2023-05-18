@@ -113,10 +113,10 @@ Good luck, trainer! Believe in\nyour Pok\emon and you'll do great.
 All the students here are well\nversed in CFRU features.\pI'd suggest talking with them to\nlearn about the new features\lavailable.
 
 #org @gText_RhodanziTrainerSchool_AdvancedCourse_BattleMovesStudent
-You can check the effects of your\nmoves more easily in battle now!\pIf a move is super effective, it\nwill appear in [GREEN]green[BLUE], and if it's\lineffective it will appear in\l[ORANGE]yellow[BLUE].\pIf the move is bolded, it benefits\nfrom the Same Type Attack Boost,\lor STAB.\pPressing L will show you the move's\ndetails and effective power and\laccuracy.
+You can check the effects of your\nmoves more easily in battle now!\pIf a move is super effective, it\nwill appear in [GREEN]green[BLUE], and if it's\lineffective it will appear in\l[ORANGE]yellow[BLUE].\pIf the move is bolded, it benefits\nfrom the Same Type Attack Boost,\lor STAB.\pPressing [L_BUTTON] will show you the move's\ndetails and effective power and\laccuracy.
 
 #org @gText_RhodanziTrainerSchool_AdvancedCourse_AutoRunStudent
-Do you like going fast?\pYou can hold B while biking to go\nextra fast.\pIf you're on foot, you can press L\nto turn on auto-run.\pIt won't work if you have the L=A\nsetting turned on though[.]
+Do you like going fast?\pYou can hold [B_BUTTON] while biking to go\nextra fast.\pIf you're on foot, you can press [L_BUTTON]\nto turn on auto-run.\pIt won't work if you have the L=A\nsetting turned on though[.]
 
 #org @gText_RhodanziTrainerSchool_AdvancedCourse_PokemonTypeStudent
 While in battle, colored icons will\nappear beside each Pok\emon's\lhealth bars.\pThese icons show the Pok\emon's\ntypes!
@@ -137,10 +137,10 @@ Professor Hawthorn has been\ncollaborating with researchers from\lHoenn to bring
 Pok\emon can sense the strength of\ntheir trainers, and may not obey if\lthey don't trust them.\pA Pok\emon trusts any trainer, as long\nas it's below level 15. After that,\lthey will trust their trainers for\lthe next 10 levels, for each badge\learned.
 
 #org @gText_RhodanziTrainerSchool_AdvancedCourse_LastPokeball
-While in battle, you can press L\nto throw the last Pok\eball you\lused. Handy, right?
+While in battle, you can press [L_BUTTON]\nto throw the last Pok\eball you\lused. Handy, right?
 
 #org @gText_RhodanziTrainerSchool_AdvancedCourse_QuickRun
-Tired of selecting the Run option in\nbattle? Just press R!
+Tired of selecting the Run option in\nbattle? Just press [R_BUTTON]!
 
 #org @gText_RhodanziTrainerSchool_AdvancedCourse_RegisterMultipleItems
-You can register multiple key items\nto the Select button. If you do,\lyou'll be asked which one you want\lto use.
+You can register multiple key items\nto the [SELECT_BUTTON]. If you do,\lyou'll be asked which one you want\lto use.
