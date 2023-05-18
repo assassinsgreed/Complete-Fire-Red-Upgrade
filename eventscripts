@@ -591,6 +591,9 @@ npc 3 29 1 ItemScript_Common_ElectricSeed
 npc 8 3 0 EventScript_HeleoFacilities_Mart_PokeballShop
 ## Gym
 ## NPC Houses
+npc 1 88 0 EventScript_HeleoCity_SwarmSwami
+npc 1 88 1 EventScript_HeleoCity_SwamiFan
+npc 1 88 2 EventScript_HeleoCity_SwamiResearcher
 npc 1 89 0 EventScript_HeleoCity_Foreman
 npc 1 89 1 EventScript_HeleoCity_ForemanAssistant
 npc 8 0 0 EventScript_HeleoCity_MoveTutor

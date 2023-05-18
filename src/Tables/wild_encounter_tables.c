@@ -158,10 +158,74 @@ const struct WildPokemonHeader gWildMonNightHeaders[] =
 
 const struct SwarmData gSwarmTable[] =
 {
-	/*{
-		.mapName = 0xFF,
-		.species = 0xFFFF,
-	},*/
+	{
+		.mapName = MAPSEC_ROUTE_3,
+		.species = SPECIES_RATTATA,
+	},
+	{
+		.mapName = MAPSEC_FORGOTTEN_MANSE,
+		.species = SPECIES_RATICATE,
+	},
+	{
+		.mapName = MAPSEC_ROUTE_15,
+		.species = SPECIES_RAICHU_A,
+	},
+	{
+		.mapName = MAPSEC_DAIMYN_CITY,
+		.species = SPECIES_GRIMER,
+	},
+	{
+		.mapName = MAPSEC_ROUTE_24,
+		.species = SPECIES_MUK,
+	},
+	{
+		.mapName = MAPSEC_ROUTE_8,
+		.species = SPECIES_SLOWPOKE_G,
+	},
+	{
+		.mapName = MAPSEC_ROUTE_22,
+		.species = SPECIES_SLOWBRO_G,
+	},
+	{
+		.mapName = MAPSEC_SEPPIRE_COVE,
+		.species = SPECIES_SLOWKING_G,
+	},
+	{
+		.mapName = MAPSEC_ROUTE_7,
+		.species = SPECIES_FARFETCHD,
+	},
+	{
+		.mapName = MAPSEC_DAIMYN_CITY,
+		.species = SPECIES_KOFFING,
+	},
+	{
+		.mapName = MAPSEC_VICTORY_ROAD,
+		.species = SPECIES_WEEZING,
+	},
+	{
+		.mapName = MAPSEC_ROUTE_6,
+		.species = SPECIES_MIME_JR,
+	},
+	{
+		.mapName = MAPSEC_ROUTE_9,
+		.species = SPECIES_MR_MIME,
+	},
+	{
+		.mapName = MAPSEC_ROUTE_16,
+		.species = SPECIES_CORSOLA,
+	},
+	{
+		.mapName = MAPSEC_TORMA_CAVE,
+		.species = SPECIES_DARUMAKA,
+	},
+	{
+		.mapName = MAPSEC_ROUTE_12,
+		.species = SPECIES_DARMANITAN,
+	},
+	{
+		.mapName = MAPSEC_ROUTE_11,
+		.species = SPECIES_STUNFISK,
+	},
 };
 
 #else //Below is for Pokemon Unbound. Feel free to remove.

@@ -580,23 +580,23 @@
 #define FLAG_GOT_POKEMON_EGG_FROM_DAYCARE                0x233
 #define FLAG_GOT_OVAL_CHARM                              0x234
 #define FLAG_GOT_ROCK_SMASH_HM                           0x235
-#define FLAG_GOT_TM42_AT_MEMORIAL_PILLAR                 0x236
-#define FLAG_GOT_HM01                                    0x237
-#define FLAG_GOT_HM02                                    0x238
-#define FLAG_GOT_HM03                                    0x239
-#define FLAG_GOT_HM04                                    0x23A
-#define FLAG_GOT_HM05                                    0x23B
-#define FLAG_RESCUED_MR_FUJI                             0x23C
-#define FLAG_GOT_POKE_FLUTE                              0x23D
-#define FLAG_0x23E                                       0x23E
-#define FLAG_GOT_TM28_FROM_ROCKET                        0x23F
-#define FLAG_GOT_OLD_ROD                                 0x240
-#define FLAG_GOT_BIKE_VOUCHER                            0x241
-#define FLAG_0x242                                       0x242
-#define FLAG_GOT_COIN_CASE                               0x243
-#define FLAG_GOT_GOOD_ROD                                0x244
-#define FLAG_GOT_TM29_FROM_MR_PSYCHIC                    0x245
-#define FLAG_GOT_LAPRAS_FROM_SILPH                       0x246
+#define FLAG_GOT_SWARM_GIFT_RATTATA                      0x236
+#define FLAG_GOT_SWARM_GIFT_RATICATE                     0x237
+#define FLAG_GOT_SWARM_GIFT_RAICHU_A                     0x238
+#define FLAG_GOT_SWARM_GIFT_GRIMER                       0x239
+#define FLAG_GOT_SWARM_GIFT_MUK                          0x23A
+#define FLAG_GOT_SWARM_GIFT_SLOWPOKE_G                   0x23B
+#define FLAG_GOT_SWARM_GIFT_SLOWBRO_G                    0x23C
+#define FLAG_GOT_SWARM_GIFT_SLOWKING_G                   0x23D
+#define FLAG_GOT_SWARM_GIFT_FARFETCHD                    0x23E
+#define FLAG_GOT_SWARM_GIFT_KOFFING                      0x23F
+#define FLAG_GOT_SWARM_GIFT_WEEZING                      0x240
+#define FLAG_GOT_SWARM_GIFT_MIME_JR                      0x241
+#define FLAG_GOT_SWARM_GIFT_MR_MIME                      0x242
+#define FLAG_GOT_SWARM_GIFT_CORSOLA                      0x243
+#define FLAG_GOT_SWARM_GIFT_DARUMAKA                     0x244
+#define FLAG_GOT_SWARM_GIFT_DARMANITAN                   0x245
+#define FLAG_GOT_SWARM_GIFT_STUNFISK                     0x246
 #define FLAG_GOT_POKEBALLS_FROM_OAK_AFTER_22_RIVAL       0x247
 #define FLAG_DID_COSMO_TRADE                             0x248
 #define FLAG_BOUGHT_MAGIKARP                             0x249
@@ -1412,7 +1412,7 @@ Daily Flags, cleared at the start of each day.  Goes up to 0xEFF
 #define FLAG_WORLD_MAP_FIVE_ISLAND                                  (SYS_FLAGS + 0x9F)
 #define FLAG_WORLD_MAP_SEVEN_ISLAND                                 (SYS_FLAGS + 0xA0)
 #define FLAG_WORLD_MAP_SIX_ISLAND                                   (SYS_FLAGS + 0xA1)
-#define FLAG_WORLD_MAP_ROUTE4_POKEMON_CENTER_1F                     (SYS_FLAGS + 0xA2)
+#define FLAG_WORLD_MAP_ROUTE13_REST_HOUSE                           (SYS_FLAGS + 0xA2)
 #define FLAG_WORLD_MAP_ROUTE10_POKEMON_CENTER_1F                    (SYS_FLAGS + 0xA3)
 #define FLAG_WORLD_MAP_VARISI_FOREST                                (SYS_FLAGS + 0xA4)
 #define FLAG_WORLD_MAP_MT_MOON_1F                                   (SYS_FLAGS + 0xA5)
