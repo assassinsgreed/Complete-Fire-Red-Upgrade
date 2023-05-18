@@ -24,3 +24,45 @@ Okay! Come see me if you change\nyour mind. I'll be here.
 
 #org @gText_HeleoNPCHouses_NotEnoughPokeChips
 I'd love to teach your Pok\emon, but\nyou don't have enough Pok\eChips to\lcover my fee[.]
+
+#org @gText_HeleoNPCHouses_SwarmSwamiIntro
+I am known as the Swarm Swami.\pI have been blessed with the\nincredible gift of foresight.\pMy specialty is seeing places where\nunusual Pok\emon swarm, with my\lmind's eye.\pWould you like me to use my gift to\nfind where Pok\emon are swarming?
+
+#org @gText_HeleoNPCHouses_SwarmSwamiRejected
+Hmm! In time, you will find yourself\nin need of my gift. I can sense it.
+
+#org @gText_HeleoNPCHouses_SwarmSwamiStarting
+Very well[.] Close your eyes with me a\nmoment, and let us focus on\lprojecting our minds[.]
+
+#org @gText_HeleoNPCHouses_SwarmSwamiComplete
+I see it! There are a number of\nunusual [BUFFER2] swarming at\l[BUFFER1] right now.\pYou should hurry[.] I foresee them\nclearing out before the day is\lover.
+
+#org @gText_HeleoNPCHouses_SwamiFan
+Isn't the swami just the coolest?\nThey say his predictions are never\lwrong!
+
+#org @gText_HeleoNPCHouses_SwamiResearcher
+I've been studying the unusual\nPok\emon that swarm to the Kulure\lregion with the swami's help.\pDespite our best efforts, we don't\nknow where they come from or why.\pAll we know is that they have a\nstriking resemblance to Pok\emon\lnative to the region[.]
+
+#org @gText_HeleoNPCHouses_SwamiResearcherRequest
+Please, if you have one of these\nunusual Pok\emon with you, could\lyou put it at the front of\lyour party and show it to me?\pI promise to make it worth your\nwhile.
+
+#org @gText_HeleoNPCHouses_SwamiResearcherRequestDenied
+I understand[.] Possessing such a\nfascinating creature would indeed\lbe a treat worth savoring.\pPerhaps someday, I will be able to\nobserve such a creature myself[.]
+
+#org @gText_HeleoNPCHouses_SwamiResearcherRequestWrongPokemon
+This isn't a Pok\emon I'm interested in\nseeing[.]
+
+#org @gText_HeleoNPCHouses_SwamiResearcherRequestShownPokemon
+What an exquisite [BUFFER1]!\pA Pok\emon that special deserves a\nreward. Here, for you.
+
+#org @gText_HeleoNPCHouses_SwamiResearcherRequestShownPokemonConclusion
+That may look like an ordinary bottle\ncap, but I hear there are people\lacross the sea that can make your\lPok\emon quite powerful with that!\pCome see me again, if you find more\nunusual Pok\emon.
+
+#org @gText_HeleoNPCHouses_SwamiResearcherRequestAlreadyShown
+That certainly is a great Pok\emon,\nbut[.] you've already shown me one\lalready.
+
+#org @gText_HeleoNPCHouses_SwamiResearcherRequestAllSwarmPokemonShown
+I-incredible! With this, you've shown\nme every unusual Pok\emon we've\lbeen tracking.\pI have a special gift to share with\nsuch an incredible trainer!
+
+#org @gText_HeleoNPCHouses_SwamiResearcherRequestGratitude
+Thank you for showing me your\ncollection of unusual Pok\emon.

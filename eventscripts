@@ -606,6 +606,9 @@ npc 1 93 3 EventScript_HeleoGym_CastformDrained
 npc 1 93 4 EventScript_HeleoGym_CastformDrained
 
 ## NPC Houses
+npc 1 88 0 EventScript_HeleoCity_SwarmSwami
+npc 1 88 1 EventScript_HeleoCity_SwamiFan
+npc 1 88 2 EventScript_HeleoCity_SwamiResearcher
 npc 1 89 0 EventScript_HeleoCity_Foreman
 npc 1 89 1 EventScript_HeleoCity_ForemanAssistant
 npc 8 0 0 EventScript_HeleoCity_MoveTutor

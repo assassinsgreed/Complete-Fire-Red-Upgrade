@@ -81,7 +81,7 @@ MapScript_Route13_RestHouse:
     .byte MAP_SCRIPT_TERMIN
 
 MapEntryScript_Route13_RestHouse_FlightFlag:
-    setworldmapflag 0x089C
+    setworldmapflag 0x8A2
     end
 
 .global EventScript_Route13_RestHouse_PCGuy

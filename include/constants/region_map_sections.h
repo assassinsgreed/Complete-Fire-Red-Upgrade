@@ -10,7 +10,7 @@ u8 __attribute__((long_call)) GetCurrentRegionMapSectionId(void);
 #define MAPSEC_PEWTER_CITY                  0x5A
 #define MAPSEC_CERULEAN_CITY                0x5B
 #define MAPSEC_LAVENDER_TOWN                0x5C
-#define MAPSEC_VERMILION_CITY               0x5D
+#define MAPSEC_DAIMYN_CITY                  0x5D
 #define MAPSEC_CELADON_CITY                 0x5E
 #define MAPSEC_FUCHSIA_CITY                 0x5F
 #define MAPSEC_CINNABAR_ISLAND              0x60
@@ -45,13 +45,13 @@ u8 __attribute__((long_call)) GetCurrentRegionMapSectionId(void);
 #define MAPSEC_ROUTE_25                     0x7D
 #define MAPSEC_VIRIDIAN_FOREST              0x7E
 #define MAPSEC_MT_MOON                      0x7F
-#define MAPSEC_S_S_ANNE                     0x80
+#define MAPSEC_TORMA_CAVE                   0x80
 #define MAPSEC_UNDERGROUND_PATH             0x81
-#define MAPSEC_UNDERGROUND_PATH_2           0x82
+#define MAPSEC_FORGOTTEN_MANSE              0x82
 #define MAPSEC_DIGLETTS_CAVE                0x83
-#define MAPSEC_KANTO_VICTORY_ROAD           0x84
+#define MAPSEC_VICTORY_ROAD                 0x84
 #define MAPSEC_ROCKET_HIDEOUT               0x85
-#define MAPSEC_SILPH_CO                     0x86
+#define MAPSEC_SEPPIRE_COVE                 0x86
 #define MAPSEC_POKEMON_MANSION              0x87
 #define MAPSEC_KANTO_SAFARI_ZONE            0x88
 #define MAPSEC_POKEMON_LEAGUE               0x89

@@ -126,7 +126,7 @@
 #define VAR_MAP_SCENE_OLENIC_TOWN_HAWTHORNE_GIVES_POKEDEX                      0x4050
 #define VAR_MAP_SCENE_ROUTE_4_FOREMAN_ENCOUNTER                                0x4051
 #define VAR_MAP_SCENE_FERROX_VILLAGE_GYM_EVENTS                                0x4052
-#define VAR_VERMILION_CITY_TICKET_CHECK_TRIGGER                                0x4053
+#define VAR_SWARM_POKEMON_SHOWN                                                0x4053
 #define VAR_MAP_SCENE_ROUTE22                                                  0x4054
 #define VAR_MAP_SCENE_ANTHRA_TOWN_STARTING_EVENTS                              0x4055
 #define VAR_MAP_SCENE_PALLET_TOWN_PLAYERS_HOUSE_2F                             0x4056
