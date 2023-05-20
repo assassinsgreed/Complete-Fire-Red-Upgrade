@@ -180,6 +180,70 @@ InitiateTrade:
     waitstate
     return
 
+.global EventScript_Common_VendingMachine
+EventScript_Common_VendingMachine:
+    preparemsg gText_VendingMachinesChoice
+    waitmsg
+    showmoney 0x0 0x0 0x0
+    multichoice 0xC 0x0 0x1A 0x0 @ Vanilla vending machine multichoice
+    copyvar 0x4001 LASTRESULT
+    copyvar 0x8000 0x4001
+    compare 0x8000 0x0
+    if equal _goto FreshWater
+    compare 0x8000 0x1
+    if equal _goto SodaPop
+    compare 0x8000 0x2
+    if equal _goto Lemonade
+    msgbox gText_VendingMachinesChoseNotTo MSG_NORMAL
+    goto StopVending
+
+FreshWater:
+    setvar 0x4000 0x1A @ Fresh Water
+    checkmoney 0xC8 0x0 @ 200
+    compare LASTRESULT 0x0
+    if equal _goto NotEnoughMoney
+    removemoney 0xC8
+    goto CompleteTransaction
+
+SodaPop:
+    setvar 0x4000 0x1B @ Soda Pop
+    checkmoney 0x12C 0x0 @ 300
+    compare LASTRESULT 0x0
+    if equal _goto NotEnoughMoney
+    removemoney 0x12C
+    goto CompleteTransaction
+
+Lemonade:
+    setvar 0x4000 0x1C @ Lemonade
+    checkmoney 0x15E 0x0 @ 350
+    compare LASTRESULT 0x0
+    if equal _goto NotEnoughMoney
+    removemoney 0x15E
+    goto CompleteTransaction
+
+CompleteTransaction:
+    sound 0xF8 @ Money SE
+    bufferitem 0x0 0x4000
+    random 0x3 @ 1 in 3
+    compare LASTRESULT 0x0
+    if equal _goto GiveDoubleItem
+    msgbox gText_VendingMachinesOneItem MSG_NORMAL
+    additem 0x4000 0x1
+    goto StopVending
+
+NotEnoughMoney:
+    msgbox gText_VendingMachinesNotEnoughMoney MSG_NORMAL
+    goto StopVending
+
+GiveDoubleItem:
+    msgbox gText_VendingMachinesTwoItems MSG_NORMAL
+    additem 0x4000 0x2
+    goto StopVending
+
+StopVending:
+    hidemoney
+    goto End
+
 .global End
 End:
     release

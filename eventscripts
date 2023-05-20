@@ -586,11 +586,28 @@ npc 3 29 0 EventScript_Common_Strength
 npc 3 29 1 ItemScript_Common_ElectricSeed
 
 # Heleo City
-map 3 4 MapScript_HeleoCity
-
 ## Overworld
+map 3 4 MapScript_HeleoCity
+npc 3 4 0 EventScript_HeleoCity_JumpingKid
+npc 3 4 1 EventScript_HeleoCity_ShadyDealer
+npc 3 4 2 EventScript_HeleoCity_Route8Girl
+npc 3 4 3 EventScript_HeleoCity_FountainKid
+npc 3 4 4 EventScript_HeleoCity_BigGuy
+npc 3 4 5 EventScript_HeleoCity_TrainerHouseGirl
+npc 3 4 6 EventScript_HeleoCity_RaineFan
+sign 3 4 0 SignScript_HeleoCity_CitySign
+sign 3 4 1 SignScript_HeleoCity_GymSign
+sign 3 4 2 SignScript_HeleoCity_TrainerHouseSign
+
 ## Facilities
+map 8 2 MapScript_HeleoFacilities_PokemonCenter
+npc 8 2 0 EventScript_PokemonCenter_Main
+npc 8 2 1 EventScript_HeleoFacilities_BoredKid
+npc 8 2 2 EventScript_HeleoFacilities_KidsMom
 npc 8 3 0 EventScript_HeleoFacilities_Mart_PokeballShop
+npc 8 3 1 EventScript_Pokemart
+npc 8 3 2 EventScript_HeleoFacilities_Mart_QuickTimerBallQuiz
+
 ## Gym
 map 1 92 MapScript_HeleoCityGym
 map 1 93 MapScript_HeleoCityGym
@@ -611,5 +628,24 @@ npc 1 88 1 EventScript_HeleoCity_SwamiFan
 npc 1 88 2 EventScript_HeleoCity_SwamiResearcher
 npc 1 89 0 EventScript_HeleoCity_Foreman
 npc 1 89 1 EventScript_HeleoCity_ForemanAssistant
+npc 1 90 0 EventScript_HeleoCity_PokemonFanClubChairman
+npc 1 90 1 EventScript_HeleoCity_PokemonGroomer
+npc 1 90 2 EventScript_HeleoCity_PokemonFanClubSuperfan
+npc 1 90 3 EventScript_HeleoCity_PokemonFanClubSwimmer
+npc 1 90 4 EventScript_HeleoCity_PokemonFanClubMother
+npc 1 90 5 EventScript_HeleoCity_HallwayBoy
+npc 1 91 0 EventScript_HeleoCity_TerraceDad
+npc 1 91 1 EventScript_HeleoCity_TerraceMom
+npc 1 91 2 EventScript_HeleoCity_TerraceSon
+npc 1 91 3 EventScript_HeleoCity_SodaMachineGirl
+sign 1 91 0 EventScript_Common_VendingMachine
+sign 1 91 1 EventScript_Common_VendingMachine
+sign 1 91 2 EventScript_Common_VendingMachine
+sign 1 91 3 EventScript_Common_VendingMachine
 npc 8 0 0 EventScript_HeleoCity_MoveTutor
 npc 8 0 1 EventScript_HeleoCity_MoveTutorSon
+npc 8 1 0 EventScript_HeleoCity_TrainersMom
+npc 8 1 1 EventScript_HeleoCity_TrainersYoungKid
+npc 8 1 2 EventScript_HeleoCity_TrainersKid
+npc 8 5 0 EventScript_HeleoCity_RainesGrandfather
+npc 8 5 1 EventScript_HeleoCity_RainesCastform

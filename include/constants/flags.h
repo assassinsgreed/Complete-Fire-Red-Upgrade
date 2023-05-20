@@ -597,9 +597,9 @@
 #define FLAG_GOT_SWARM_GIFT_DARUMAKA                     0x244
 #define FLAG_GOT_SWARM_GIFT_DARMANITAN                   0x245
 #define FLAG_GOT_SWARM_GIFT_STUNFISK                     0x246
-#define FLAG_GOT_POKEBALLS_FROM_OAK_AFTER_22_RIVAL       0x247
+#define FLAG_GOT_QUICK_TIMER_BALL_GIFT_IN_HELEO_CITY     0x247
 #define FLAG_DID_COSMO_TRADE                             0x248
-#define FLAG_BOUGHT_MAGIKARP                             0x249
+#define FLAG_GOT_AIR_BALLOON_IN_HELEO_CITY               0x249
 #define FLAG_DID_ZYNX_TRADE                              0x24A
 #define FLAG_DID_MS_NIDO_TRADE                           0x24B
 #define FLAG_0x24C                                       0x24C
@@ -1325,6 +1325,7 @@ Daily Flags, cleared at the start of each day.  Goes up to 0xEFF
 #define FLAG_FERROX_VILLAGE_BERRY             0xE06
 #define FLAG_HELEO_RANCH_MAREEP_VISIBILITY    0xE07
 #define FLAG_HELEO_RANCH_MOM_VISIBILITY       0xE08
+#define FLAG_HELEO_CITY_SHADY_DEALER          0xE09
 */
 
 #define FLAG_TRAINER_FLAG_START 0x500

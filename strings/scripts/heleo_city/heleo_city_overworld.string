@@ -1,0 +1,56 @@
+#org @gText_HeleoCityOverworld_JumpingKidPrompt
+Yaay! Jumping is so much fun!\pYou like jumping too, right?
+
+#org @gText_HeleoCityOverworld_JumpingKidHateJumping
+What? You're dumb. Everyone likes\njumping.
+
+#org @gText_HeleoCityOverworld_JumpingKidLikeJumping
+Right?! Jumping is the best! I bet\nyou can't jump 100 times. That's my\lrecord.
+
+#org @gText_HeleoCityOverworld_JumpingKidCount
+Hmm[.] You've only jumped [BUFFER1]\ntimes. I'm not impressed!\pCome back when you've jumped at\nleast 100 times, then we'll talk.\pYou can jump here or somewhere\nelse. It doesn't matter to me!
+
+#org @gText_HeleoCityOverworld_JumpingKidCountExceeded
+Wow! You've jumped [BUFFER1] times!\nYou're the Jumping Master!
+
+#org @gText_HeleoCityOverworld_JumpingKidGift
+I have a gift for you[.] Doesn't it\nmake you feel like you're walking\lon air?
+
+#org @gText_HeleoCityOverworld_JumpingKidDone
+Well, I'd better get back to jumping.\nYou should too!
+
+#org @gText_HeleoCityOverworld_ShadyDealerProposition
+Psst! You - yeah, you!\pI got ahold of something rare,\nstranger, but I need to get rid of\lit before the fuzz catch up to me.\pYou look like a smart kid[.] It can be\nyours, for 1 Pok\eChip.
+
+#org @gText_HeleoCityOverworld_ShadyDealerDeclined
+Heh heh, tryin' to keep your nose\nclean, eh?\pThat's fine with me. Someone else'll\nbe interested in what I've got.
+
+#org @gText_HeleoCityOverworld_ShadyDealerNotEnoughChips
+Oy, what gives? You don't even have\na single Pok\eChip?\pScram! This isn't a charity.
+
+#org @gText_HeleoCityOverworld_ShadyDealerTradeComplete
+Heheheh, wise move, kiddo.\pI gotta scram. I'll be back with\nmore procured goods tomorrow,\lcapiche?
+
+#org @gText_HeleoCityOverworld_Route8Girl
+A lot of trainers choose to follow\nRoute 8 to Daimyn City.\pIt's longer than Route 6, but doesn't\nattract serious trainers like Route\l6 does.
+
+#org @gText_HeleoCityOverworld_FountainKid
+Wow! I can see coins at the bottom\nof this fountain.\pIf I can just find a way to reach\nthem, I'll be rich[.]
+
+#org @gText_HeleoCityOverworld_BigGuy
+For most trainers, Heleo City is their\nthird stop on their journies.\pSome like to come here after\nchallenging the Daimyn City and\lLaplaz Town gyms.\pI suppose they like the challenge?
+
+#org @gText_HeleoCityOverworld_TrainerHouseGirl
+The trainer house is so cool! You\ncan battle it every day for\lexperience, money, and items!\pThe host is kind of mysterious too,\ndon't you think?
+
+#org @gText_HeleoCityOverworld_RaineFan
+Raine is the coolest gym leader,\nhands down! She has a soft side\land a tough side too.\pYou'd better be good if you're\nthinking of challenging her for her\lbadge!
+
+#org @gText_HeleoCityOverworld_HeleoCitySign
+Heleo City: The hardy plains city
+
+#org @gText_HeleoCityOverworld_GymSign
+Heleo City Pok\emon Gym\nLeader: Raine\lThe Weather Expert!
+
+#org @gText_HeleoCityOverworld_TrainerHouseSign
+Heleo City Trainer House\nSpecialty: Inverse Battles
