@@ -65,6 +65,7 @@ EventScript_HeleoCity_SwarmSwami:
     msgbox gText_HeleoNPCHouses_SwarmSwamiStarting MSG_NORMAL
     pause DELAY_1SECOND
     special 0x58 @ Buffer the location (buffer1) and pokemon (buffer2) swarming now
+    sound 0x15 @ Exclaim
     applymovement 0x1 m_Surprise
     msgbox gText_HeleoNPCHouses_SwarmSwamiComplete MSG_NORMAL
     goto End
@@ -254,3 +255,94 @@ AllSwarmPokemonShown:
     obtainitem ITEM_GOLD_BOTTLE_CAP 0x1
     msgbox gText_HeleoNPCHouses_SwamiResearcherRequestGratitude MSG_NORMAL
     goto End
+
+.global EventScript_HeleoCity_RainesGrandfather
+EventScript_HeleoCity_RainesGrandfather:
+    npcchat2 0x1 m_LookLeft gText_HeleoNPCHouses_RainesGrandfather
+    end
+
+.global EventScript_HeleoCity_RainesCastform
+EventScript_HeleoCity_RainesCastform:
+    lock
+    faceplayer
+    checksound
+    cry SPECIES_CASTFORM 0x0
+    msgbox gText_HeleoNPCHouses_RainesCastform MSG_NORMAL
+    waitcry
+    goto End
+
+.global EventScript_HeleoCity_TrainersMom
+EventScript_HeleoCity_TrainersMom:
+    npcchat2 0x1 m_LookLeft gText_HeleoNPCHouses_TrainersMom
+    end
+
+.global EventScript_HeleoCity_TrainersYoungKid
+EventScript_HeleoCity_TrainersYoungKid:
+    npcchat2 0x2 m_LookUp gText_HeleoNPCHouses_TrainersYoungKid
+    end
+
+.global EventScript_HeleoCity_TrainersKid
+EventScript_HeleoCity_TrainersKid:
+    npcchat gText_HeleoNPCHouses_TrainersKid
+    end
+
+.global EventScript_HeleoCity_PokemonFanClubChairman
+EventScript_HeleoCity_PokemonFanClubChairman:
+    lock
+    faceplayer
+    msgbox gText_HeleoNPCHouses_PokemonFanClubChairman MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto PokemonAreLame
+    msgbox gText_HeleoNPCHouses_PokemonFanClubChairman_PokemonAreGood MSG_NORMAL
+    applymovement 0x1 m_LookDown
+    goto End
+
+PokemonAreLame:
+    msgbox gText_HeleoNPCHouses_PokemonFanClubChairman_PokemonAreLame MSG_NORMAL
+    applymovement 0x1 m_LookDown
+    goto End
+
+.global EventScript_HeleoCity_PokemonGroomer
+EventScript_HeleoCity_PokemonGroomer:
+    @ TODO: Upcoming ticket!
+    end
+
+.global EventScript_HeleoCity_PokemonFanClubSuperfan
+EventScript_HeleoCity_PokemonFanClubSuperfan:
+    npcchat2 0x3 m_LookUp gText_HeleoNPCHouses_PokemonFanClubSuperfan
+    end
+
+.global EventScript_HeleoCity_PokemonFanClubSwimmer
+EventScript_HeleoCity_PokemonFanClubSwimmer:
+    npcchat2 0x4 m_LookRight gText_HeleoNPCHouses_PokemonFanClubSwimmer
+    end
+
+.global EventScript_HeleoCity_PokemonFanClubMother
+EventScript_HeleoCity_PokemonFanClubMother:
+    npcchat2 0x5 m_LookLeft gText_HeleoNPCHouses_PokemonFanClubMother
+    end
+
+.global EventScript_HeleoCity_HallwayBoy
+EventScript_HeleoCity_HallwayBoy:
+    npcchat2 0x6 m_LookLeft gText_HeleoNPCHouses_PokemonFanClubHallwayBoy
+    end
+
+.global EventScript_HeleoCity_TerraceDad
+EventScript_HeleoCity_TerraceDad:
+    npcchat2 0x0 m_LookLeft gText_HeleoNPCHouses_TerraceDad
+    end
+
+.global EventScript_HeleoCity_TerraceMom
+EventScript_HeleoCity_TerraceMom:
+    npcchat2 0x1 m_LookLeft gText_HeleoNPCHouses_TerraceMom
+    end
+
+.global EventScript_HeleoCity_TerraceSon
+EventScript_HeleoCity_TerraceSon:
+    npcchat2 0x2 m_LookRight gText_HeleoNPCHouses_TerraceSon
+    end
+
+.global EventScript_HeleoCity_SodaMachineGirl
+EventScript_HeleoCity_SodaMachineGirl:
+    npcchat gText_HeleoNPCHouses_VendingMachineGirl
+    end

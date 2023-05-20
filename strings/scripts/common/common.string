@@ -45,3 +45,18 @@ Come see me once you have\ncompleted your Pok\edex. I'll have\lsomething nice to
 
 #org @gText_PokedexAssessment_EvaluationComplete
 Thank you for showing me your\nPok\edex, [PLAYER]. You've made\lgreat progress.
+
+#org @gText_VendingMachinesChoice
+A vending machine! What would you\nlike?
+
+#org @gText_VendingMachinesNotEnoughMoney
+You don't have enough money[.]
+
+#org @gText_VendingMachinesChoseNotTo
+Changed your mind!
+
+#org @gText_VendingMachinesOneItem
+Got a can of [BUFFER1]!
+
+#org @gText_VendingMachinesTwoItems
+Got a can of [BUFFER1]! A freebie\npopped out too!
