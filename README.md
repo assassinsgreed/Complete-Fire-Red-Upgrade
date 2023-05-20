@@ -4,6 +4,9 @@
 ### Trainer Tables & Palette Swapper Feature Branch
 This fork makes use of feature branches from Stevebel's fork for dynamically inserting trainers and overworld palettes.
 
+This fork also pulls in DPE and the Continue Screen Icon branch of the [FireGold repo](https://github.com/BluRosie/firegold-code/tree/continue-screen-icons).  
+If either of these are not used, the corresponding lines in `./automation/BuildTest.py` need to be commented out.
+
 To use some personal tools which apply ips patches at the time of compilation, you will also need to install docopt: `pip install docopt`.
 
 ## What is this?
