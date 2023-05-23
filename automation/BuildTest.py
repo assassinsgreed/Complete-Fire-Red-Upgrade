@@ -37,6 +37,7 @@ MGBA_PATH = config["paths"]["MGBAExe"]
 
 # Begin build process
 print("Config found! Proceeding to build Test.gba...")
+shutil.copy(EDITED_GBA_PATH, DPE_PATH + "/BPRE0.gba")
 
 print("Applying DPE...")
 os.chdir(DPE_PATH) # Make script must be run in home directory!
