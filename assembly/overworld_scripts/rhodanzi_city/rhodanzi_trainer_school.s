@@ -61,6 +61,8 @@ EventScript_RhodanziTrainerSchool_TerrainTutor:
     end
 
 TerrainTutor:
+    callasm StorePokeChipCount
+	buffernumber 0x0 0x8005 @ Take stored PokeChip count
     msgbox gText_RhodanziTrainerSchool_MainRoom_TerrainTutor_Confirmation MSG_YESNO
     compare LASTRESULT YES
     IF FALSE _goto TutoringRejected

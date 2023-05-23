@@ -56,6 +56,8 @@ JumpingKidDone:
 EventScript_HeleoCity_ShadyDealer:
     lock
     faceplayer
+    callasm StorePokeChipCount
+	buffernumber 0x0 0x8005 @ Take stored PokeChip count
     msgbox gText_HeleoCityOverworld_ShadyDealerProposition MSG_YESNO
     compare LASTRESULT NO
     if equal _goto ShadyDealerRejected

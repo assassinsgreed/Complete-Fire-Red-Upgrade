@@ -29,7 +29,7 @@ In my time, I have become a\nproficient Pok\emon move tutor. I\lcan teach your P
 Unfortunately, I cannot teach you\nuntil you have acquired the Terrain\lBadge from the Rhodanzi City Gym.\pPlease come back once you have it,\nand I'll be happy to teach your\lPok\emon!
 
 #org @gText_RhodanziTrainerSchool_MainRoom_TerrainTutor_Confirmation
-To teach your Pok\emon, I will\nrequire 5 Pok\eChips. Is this\lacceptable?
+To teach your Pok\emon, I will\nrequire 5 Pok\eChips as payment. Is\lthis acceptable? (Held: [BUFFER1])
 
 #org @gText_RhodanziTrainerSchool_MainRoom_TerrainTutor_NotEnoughPokeChips
 I'm sorry, but you don't have enough\nPok\eChips to cover my fee.
