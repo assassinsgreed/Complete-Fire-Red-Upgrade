@@ -11,7 +11,7 @@ The foreman seems like a scary guy,\nbut he actually has a heart of\lgold.
 My daddy taught my Pok\emon a lot of\nreally cool moves! He's so smart!
 
 #org @gText_HeleoNPCHouses_TutorConfirmation
-Hello! I'm an experienced move\ntutor.\pI can teach your Pok\emon new and\nexciting moves, in exchange for 5\lPok\eChips! What do you say?
+Hello! I'm an experienced move\ntutor. I can teach your Pok\emon\lnew moves.\pMy fee is 5 Pok\eChips. What\ndo you say? (Held: [BUFFER1])
 
 #org @gText_HeleoNPCHouses_ConfirmationAccepted
 Great! These are the moves I can\nteach. Which interests you?

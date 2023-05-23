@@ -30,6 +30,8 @@ EventScript_HeleoCity_ForemanAssistant:
 EventScript_HeleoCity_MoveTutor:
     lock
     faceplayer
+    callasm StorePokeChipCount
+	buffernumber 0x0 0x8005 @ Take stored PokeChip count
     msgbox gText_HeleoNPCHouses_TutorConfirmation MSG_YESNO
     compare LASTRESULT YES
     IF FALSE _goto TutoringRejected

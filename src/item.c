@@ -2185,3 +2185,8 @@ u16 GetBestBallInBag(void)
 
 	return bestBall;
 }
+
+void StorePokeChipCount(void)
+{
+	VarSet(0x8005, CountTotalItemQuantityInBag(ITEM_POKE_CHIP));
+}
