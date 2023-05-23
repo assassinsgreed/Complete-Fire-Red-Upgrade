@@ -116,3 +116,33 @@ My mom's really upset about my\ndecision to move.\pIt's not like I'll never see 
 
 #org @gText_HeleoNPCHouses_VendingMachineGirl
 Sometimes these vending machines mess\nup and spit out a second drink for\lfree. You might get lucky!
+
+#org @gText_HeleoCityNpcHouses_GroomerIntro
+Hello! I am a Pok\emon groomer. The\nprocedure I use can help your\lPok\emon grow closer to you.
+
+#org @gText_HeleoCityNpcHouses_GroomerAlreadyGroomedToday
+I'm sorry, but I need to restock and\nclean my tools.\pIf you come back tomorrow, I'd be\nhappy to groom your Pok\emon again.
+
+#org @gText_HeleoCityNpcHouses_GroomerConfirmation
+My services cost \$1,000. Would you\nlike me to groom your Pok\emon?
+
+#org @gText_HeleoCityNpcHouses_GroomerDenied
+I understand. If you change your\nmind, come see me any time.
+
+#org @gText_HeleoCityNpcHouses_GroomerNotEnoughMoney
+I'm sorry, but you don't have enough\nmoney.\pI'll be happy to groom your Pok\emon\nonce you can cover my fee though.
+
+#org @gText_HeleoCityNpcHouses_GroomerCannotGroomEgg
+I'm sorry, but I can't groom an\negg.\pI'll be happy to groom your Pok\emon\nonce it hatches though.
+
+#org @gText_HeleoCityNpcHouses_GroomerStarting
+Okay! I'll start grooming [BUFFER1].
+
+#org @gText_HeleoCityNpcHouses_GroomerGroomAgainTomorrow
+If you're satisfied with my service,\nplease visit me again tomorrow.
+
+#org @gText_HeleoCityNpcHouses_GroomerPokemonFriendshipThresholdMet
+Oh! Your [BUFFER1][.]\pIt's so close to you. How wonderful!\nA trainer like you deserves a gift.
+
+#org @gText_HeleoCityNpcHouses_GroomerSootheBellExplained
+If you give that to a Pok\emon to\nhold, it will grow closer to you\leven faster.

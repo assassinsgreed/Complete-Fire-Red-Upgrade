@@ -604,7 +604,7 @@
 #define FLAG_DID_MS_NIDO_TRADE                           0x24B
 #define FLAG_0x24C                                       0x24C
 #define FLAG_DID_CH_DING_TRADE                           0x24D
-#define FLAG_GOT_TM38_FROM_BLAINE                        0x24E
+#define FLAG_GOT_SOOTHE_BELL_GIFT                        0x24E
 #define FLAG_OAK_SKIP_22_RIVAL_CHECK                     0x24F
 #define FLAG_GOT_MASTER_BALL_FROM_SILPH                  0x250
 #define FLAG_DID_NINA_TRADE                              0x251
@@ -1326,6 +1326,7 @@ Daily Flags, cleared at the start of each day.  Goes up to 0xEFF
 #define FLAG_HELEO_RANCH_MAREEP_VISIBILITY    0xE07
 #define FLAG_HELEO_RANCH_MOM_VISIBILITY       0xE08
 #define FLAG_HELEO_CITY_SHADY_DEALER          0xE09
+#define FLAG_HELEO_CITY_POKEMON_GROOMER       0xE0A
 */
 
 #define FLAG_TRAINER_FLAG_START 0x500

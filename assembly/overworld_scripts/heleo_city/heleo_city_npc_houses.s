@@ -304,8 +304,81 @@ PokemonAreLame:
 
 .global EventScript_HeleoCity_PokemonGroomer
 EventScript_HeleoCity_PokemonGroomer:
-    @ TODO: Upcoming ticket!
-    end
+    lock
+    faceplayer
+    msgbox gText_HeleoCityNpcHouses_GroomerIntro MSG_NORMAL
+    checkflag 0xE0A @ Has groomed today
+    if SET _goto PokemonGroomer_AlreadyGroomed
+    showmoney 0x0 0x0
+    msgbox gText_HeleoCityNpcHouses_GroomerConfirmation MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto PokemonGroomer_Denied
+    checkmoney 0x3E8 @ 1000
+    compare LASTRESULT TRUE
+    if FALSE _goto PokemonGroomer_NotEnoughMoney
+    special 0x9F @ Select a Pokemon and store it's position in 0x8004
+    waitstate
+    compare 0x8004 0x6 @ Don't continue if user backed out
+    if greaterorequal _goto PokemonGroomer_Denied
+    callasm StoreIsPartyMonEgg
+    compare LASTRESULT TRUE
+    if TRUE _goto PokemonGroomer_InvalidPokemon
+    removemoney 0x3E8
+    sound 0xF8 @ Money SE
+    waitse
+    updatemoney
+    pause DELAY_HALFSECOND
+    hidemoney
+    bufferpartypokemon 0x0 0x8004
+    msgbox gText_HeleoCityNpcHouses_GroomerStarting MSG_NORMAL
+    setvar 0x8003 0x0 @ Apply happiness to party pokemon, 0x8004 already holds index
+    setvar 0x8005 0x0032 @ Add 50 (out of 255) friendship points (00xx adds, 01xx subtracts)
+    fadescreen FADEOUT_BLACK
+    fanfare 0x100
+	waitfanfare
+    special 0x13
+    fadescreen FADEIN_BLACK
+    setflag 0xE0A @ Daily grooming complete
+    checkflag 0x24E @ Got soothe bell gift
+    if NOT_SET _call PokemonGroomer_FriendshipAssessment
+    msgbox gText_HeleoCityNpcHouses_GroomerGroomAgainTomorrow MSG_NORMAL
+    goto PokemonGroomer_End
+
+PokemonGroomer_AlreadyGroomed:
+    msgbox gText_HeleoCityNpcHouses_GroomerAlreadyGroomedToday MSG_NORMAL
+    goto PokemonGroomer_End
+
+PokemonGroomer_Denied:
+    hidemoney
+    msgbox gText_HeleoCityNpcHouses_GroomerDenied MSG_NORMAL
+    goto PokemonGroomer_End
+
+PokemonGroomer_NotEnoughMoney:
+    hidemoney
+    msgbox gText_HeleoCityNpcHouses_GroomerNotEnoughMoney MSG_NORMAL
+    goto PokemonGroomer_End
+
+PokemonGroomer_InvalidPokemon:
+    hidemoney
+    msgbox gText_HeleoCityNpcHouses_GroomerCannotGroomEgg MSG_NORMAL
+    goto PokemonGroomer_End
+
+PokemonGroomer_FriendshipAssessment:
+    special2 LASTRESULT 0xD @ Check if selected Pokemon has at least 175 happiness. (0x8003 already set to select from party, and 0x8004 the selected index)
+    compare LASTRESULT 175
+    if greaterorequal _call PokemonGroomer_GiveSootheBell
+    return
+
+PokemonGroomer_GiveSootheBell:
+    msgbox gText_HeleoCityNpcHouses_GroomerPokemonFriendshipThresholdMet MSG_NORMAL
+    obtainitem ITEM_SOOTHE_BELL 0x1
+    msgbox gText_HeleoCityNpcHouses_GroomerSootheBellExplained MSG_NORMAL
+    setflag 0x24E @ Got soothe bell gift
+    return
+
+PokemonGroomer_End:
+    applymovement 0x2 m_LookDown
+    goto End
 
 .global EventScript_HeleoCity_PokemonFanClubSuperfan
 EventScript_HeleoCity_PokemonFanClubSuperfan:
