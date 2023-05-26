@@ -131,6 +131,7 @@ EventScript_Modifiers_Flagnowon:
 .global EventScript_Modifiers_Clearinverse
 EventScript_Modifiers_Clearinverse:
 	clearflag 0x900 @ Turn off inverse
+	clearflag 0x4FE @ Do not turn off inverse battles in trainer houses
 	return
 
 .global EventScript_Modifiers_Clearcatchtrainer
@@ -167,6 +168,7 @@ EventScript_Modifiers_Clearrandomizer:
 .global EventScript_Modifiers_Setinverse
 EventScript_Modifiers_Setinverse:
 	setflag 0x900 @ Turn on inverse
+	setflag 0x4FE @ Do not turn off inverse battles in trainer houses
 	return
 
 .global EventScript_Modifiers_Setcatchtrainer

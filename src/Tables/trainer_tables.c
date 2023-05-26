@@ -1969,7 +1969,7 @@ const struct Trainer gTrainers[] = {
     // #region Heleo City
     [TRAINER_HELEO_TRAINER_HOUSE_PSYCHIC_BIANCA] = {
         .partyFlags = 0,
-        .trainerClass = CLASS_PSYCHIC,
+        .trainerClass = CLASS_PKMN_TRAINER_3,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
         .trainerPic = TRAINER_PIC_PSYCHIC_F,
         .trainerName = {_B, _i, _a, _n, _c, _a, _END},
@@ -1981,7 +1981,7 @@ const struct Trainer gTrainers[] = {
     },
     [TRAINER_HELEO_TRAINER_HOUSE_SUPERNERD_GALEN] = {
         .partyFlags = 0,
-        .trainerClass = CLASS_SUPER_NERD,
+        .trainerClass = CLASS_PKMN_TRAINER_3,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
         .trainerPic = TRAINER_PIC_SUPER_NERD,
         .trainerName = {_G, _a, _l, _e, _n, _END},
@@ -1993,7 +1993,7 @@ const struct Trainer gTrainers[] = {
     },
     [TRAINER_HELEO_TRAINER_HOUSE_COOL_TRAINER_JET] = {
         .partyFlags = 0,
-        .trainerClass = CLASS_COOLTRAINER,
+        .trainerClass = CLASS_PKMN_TRAINER_3,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
         .trainerPic = TRAINER_PIC_COOLTRAINER_M,
         .trainerName = {_J, _e, _t, _END},

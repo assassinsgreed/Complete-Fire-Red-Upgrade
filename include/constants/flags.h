@@ -1310,7 +1310,7 @@
 #define FLAG_0x4FB                            0x4FB
 #define FLAG_0x4FC                            0x4FC
 #define FLAG_0x4FD                            0x4FD
-#define FLAG_0x4FE                            0x4FE
+#define FLAG_DO_NOT_RESET_INVERSE_BATTLES     0x4FE
 #define FLAG_DO_NOT_RESET_TRAINER_SCALING     0x4FF
 */
 
