@@ -87,7 +87,7 @@ EventScript_FerroxGym_LeaderStella_Defeated:
     additem ITEM_TM06 0x1
     giveitemwithfanfare ITEM_TM06 0x1 0x101 @ MUS_FANFA1
     setflag 0x297 @ Received TM 06 from Stella
-    setflag 0x4B1 @ Defeated Terrence
+    setflag 0x4B1 @ Defeated Stella
     msgbox gText_FerroxGym_LeaderStella_Chat MSG_KEEPOPEN
     releaseall
     end

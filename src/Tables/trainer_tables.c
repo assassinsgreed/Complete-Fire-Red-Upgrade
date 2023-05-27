@@ -699,32 +699,32 @@ const struct TrainerMonNoItemDefaultMoves sParty_Route6_Nurse_Leanne[] = {
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_Route6_SuperNerd_Dante[] = {
-    { .lvl = 25, .species = SPECIES_DEWOTT },
-    { .lvl = 25, .species = SPECIES_MAWILE },
-    { .lvl = 25, .species = SPECIES_FARFETCHD }
+    { .lvl = 26, .species = SPECIES_DEWOTT },
+    { .lvl = 26, .species = SPECIES_MAWILE },
+    { .lvl = 26, .species = SPECIES_FARFETCHD }
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_Route6_BugCatcher_Billie[] = {
-    { .lvl = 26, .species = SPECIES_WHIRLIPEDE },
-    { .lvl = 26, .species = SPECIES_VESPIQUEN }
+    { .lvl = 28, .species = SPECIES_WHIRLIPEDE },
+    { .lvl = 28, .species = SPECIES_VESPIQUEN }
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_Route6_Gentleman_Lincoln[] = {
-    { .lvl = 25, .species = SPECIES_LYCANROC_N },
-    { .lvl = 26, .species = SPECIES_HERDIER },
-    { .lvl = 26, .species = SPECIES_QUILAVA }
+    { .lvl = 26, .species = SPECIES_LYCANROC_N },
+    { .lvl = 27, .species = SPECIES_HERDIER },
+    { .lvl = 27, .species = SPECIES_QUILAVA }
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_Route6_BlackBelt_Raphael[] = {
-    { .lvl = 26, .species = SPECIES_PIGNITE },
-    { .lvl = 27, .species = SPECIES_GURDURR }
+    { .lvl = 28, .species = SPECIES_PIGNITE },
+    { .lvl = 29, .species = SPECIES_GURDURR }
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_Route6_Lass_Anna[] = {
-    { .lvl = 26, .species = SPECIES_RIOLU },
-    { .lvl = 26, .species = SPECIES_TOGETIC },
-    { .lvl = 26, .species = SPECIES_COTTONEE },
-    { .lvl = 27, .species = SPECIES_RIBOMBEE }
+    { .lvl = 27, .species = SPECIES_RIOLU },
+    { .lvl = 27, .species = SPECIES_TOGETIC },
+    { .lvl = 27, .species = SPECIES_COTTONEE },
+    { .lvl = 28, .species = SPECIES_RIBOMBEE }
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_Route6_Swimmer_Danika[] = {
@@ -734,10 +734,10 @@ const struct TrainerMonNoItemDefaultMoves sParty_Route6_Swimmer_Danika[] = {
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_Route6_SrAndJr_SueAndKat[] = {
-    { .lvl = 25, .species = SPECIES_EEVEE },
-    { .lvl = 26, .species = SPECIES_BRELOOM },
-    { .lvl = 25, .species = SPECIES_MISDREAVUS },
-    { .lvl = 26, .species = SPECIES_LOPUNNY }
+    { .lvl = 27, .species = SPECIES_EEVEE },
+    { .lvl = 28, .species = SPECIES_BRELOOM },
+    { .lvl = 27, .species = SPECIES_MISDREAVUS },
+    { .lvl = 28, .species = SPECIES_LOPUNNY }
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_Route6_HikerDarryl[] = {
@@ -764,6 +764,157 @@ const struct TrainerMonNoItemDefaultMoves sParty_HeleoCity_CoolTrainerJet[] = {
     { .lvl = 1, .species = SPECIES_DARUMAKA_G },
     { .lvl = 1, .species = SPECIES_RALTS },
     { .lvl = 1, .species = SPECIES_BLIPBUG }
+};
+
+const struct TrainerMonNoItemCustomMoves sParty_HeleoCityGym_SwimmerTessa[] = {
+    {
+        .lvl = 25,
+        .species = SPECIES_CASTFORM,
+        .moves = {
+            MOVE_RAINDANCE,
+            MOVE_SUNNYDAY,
+            MOVE_HAIL,
+            MOVE_WEATHERBALL
+        },
+        .ability = Ability_1 // Forecast
+    }
+};
+
+const struct TrainerMonItemCustomMoves sParty_HeleoCityGym_SwimmerByron[] = {
+    {
+        .lvl = 23,
+        .species = SPECIES_TORKOAL,
+        .moves = {
+            MOVE_SMOG,
+            MOVE_FLAMEWHEEL,
+            MOVE_WITHDRAW,
+            MOVE_SMOKESCREEN
+        },
+        .heldItem = ITEM_HEAT_ROCK,
+        .ability = Ability_2 // Drought
+    },
+    {
+        .lvl = 23,
+        .species = SPECIES_SUNFLORA,
+        .moves = {
+            MOVE_GROWTH,
+            MOVE_SYNTHESIS,
+            MOVE_RAZORLEAF,
+            MOVE_GIGADRAIN
+        },
+        .ability = Ability_2 // Solar Power
+    }
+};
+
+const struct TrainerMonItemCustomMoves sParty_HeleoCityGym_SwimmerDanette[] = {
+    {
+        .lvl = 22,
+        .species = SPECIES_AMAURA,
+        .moves = {
+            MOVE_ICYWIND,
+            MOVE_ANCIENTPOWER,
+            MOVE_AURORAVEIL,
+            MOVE_ROUND
+        },
+        .heldItem = ITEM_ICY_ROCK,
+        .ability = Ability_Hidden // Snow Warning
+    },
+    {
+        .lvl = 23,
+        .species = SPECIES_BERGMITE,
+        .moves = {
+            MOVE_CURSE,
+            MOVE_AVALANCHE,
+            MOVE_POWDERSNOW,
+            MOVE_HAIL
+        },
+        .ability = Ability_2 // Ice Body
+    },
+    {
+        .lvl = 23,
+        .species = SPECIES_CUBCHOO,
+        .moves = {
+            MOVE_BRINE,
+            MOVE_FROSTBREATH,
+            MOVE_CHARM,
+            MOVE_HAIL
+        },
+        .ability = Ability_2 // Slush Rush
+    }
+};
+
+const struct TrainerMonItemCustomMoves sParty_HeleoCityGym_SwimmerMaisey[] = {
+    {
+        .lvl = 23,
+        .species = SPECIES_HIPPOPOTAS_F,
+        .moves = {
+            MOVE_CRUNCH,
+            MOVE_SANDTOMB,
+            MOVE_YAWN,
+            MOVE_DIG
+        },
+        .heldItem = ITEM_SMOOTH_ROCK,
+        .ability = Ability_1 // Sand Stream
+    },
+    {
+        .lvl = 23,
+        .species = SPECIES_HERDIER,
+        .moves = {
+            MOVE_FIREFANG,
+            MOVE_THUNDERFANG,
+            MOVE_RETALIATE,
+            MOVE_WORKUP
+        },
+        .ability = Ability_2 // Sand Rush
+    },
+    {
+        .lvl = 23,
+        .species = SPECIES_CACNEA,
+        .moves = {
+            MOVE_NEEDLEARM,
+            MOVE_FEINTATTACK,
+            MOVE_INGRAIN,
+            MOVE_SANDSTORM
+        },
+        .ability = Ability_1 // Sand Veil
+    }
+};
+
+const struct TrainerMonItemCustomMoves sParty_HeleoCityGym_LeaderRaine[] = {
+    {
+        .lvl = 25,
+        .species = SPECIES_PELIPPER,
+        .moves = {
+            MOVE_WINGATTACK,
+            MOVE_WATERPULSE,
+            MOVE_SUPERSONIC,
+            MOVE_PROTECT
+        },
+        .heldItem = ITEM_DAMP_ROCK,
+        .ability = Ability_2 // Drizzle
+    },
+    {
+        .lvl = 24,
+        .species = SPECIES_FERROSEED,
+        .moves = {
+            MOVE_HARDEN,
+            MOVE_INGRAIN,
+            MOVE_PINMISSILE,
+            MOVE_METALCLAW
+        },
+        .ability = Ability_1 // Iron Barbs
+    },
+    {
+        .lvl = 26,
+        .species = SPECIES_HELIOLISK,
+        .moves = {
+            MOVE_BULLDOZE,
+            MOVE_THUNDER,
+            MOVE_THUNDERWAVE,
+            MOVE_RAINDANCE
+        },
+        .ability = Ability_1 // Dry Skin
+    }
 };
 // #endregion
 
@@ -2002,6 +2153,66 @@ const struct Trainer gTrainers[] = {
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE,
         .partySize = NELEMS(sParty_HeleoCity_CoolTrainerJet),
         .party = {.NoItemDefaultMoves = sParty_HeleoCity_CoolTrainerJet}
+    },
+    [TRAINER_HELEO_CITY_GYM_TESSA] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .trainerClass = CLASS_SWIMMER_F,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
+        .trainerPic = TRAINER_PIC_SWIMMER_F,
+        .trainerName = {_T, _e, _s, _s, _a, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_GOOD_MOVE,
+        .partySize = NELEMS(sParty_HeleoCityGym_SwimmerTessa),
+        .party = {.NoItemCustomMoves = sParty_HeleoCityGym_SwimmerTessa}
+    },
+    [TRAINER_HELEO_CITY_GYM_BYRON] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .trainerClass = CLASS_SWIMMER_M,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
+        .trainerPic = TRAINER_PIC_SWIMMER_M,
+        .trainerName = {_B, _y, _r, _o, _n, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_GOOD_MOVE,
+        .partySize = NELEMS(sParty_HeleoCityGym_SwimmerByron),
+        .party = {.ItemCustomMoves = sParty_HeleoCityGym_SwimmerByron}
+    },
+    [TRAINER_HELEO_CITY_GYM_DANETTE] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .trainerClass = CLASS_SWIMMER_F,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
+        .trainerPic = TRAINER_PIC_SWIMMER_F,
+        .trainerName = {_D, _a, _n, _e, _t, _t, _e, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_GOOD_MOVE,
+        .partySize = NELEMS(sParty_HeleoCityGym_SwimmerDanette),
+        .party = {.ItemCustomMoves = sParty_HeleoCityGym_SwimmerDanette}
+    },
+    [TRAINER_HELEO_CITY_GYM_MAISEY] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .trainerClass = CLASS_SWIMMER_F,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
+        .trainerPic = TRAINER_PIC_SWIMMER_F,
+        .trainerName = {_M, _a, _i, _s, _e, _y, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_GOOD_MOVE,
+        .partySize = NELEMS(sParty_HeleoCityGym_SwimmerMaisey),
+        .party = {.ItemCustomMoves = sParty_HeleoCityGym_SwimmerMaisey}
+    },
+    [TRAINER_HELEO_CITY_GYM_LEADER_RAINE] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_LEADER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_RAINE,
+        .trainerName = {_R, _a, _i, _n, _e, _END},
+        .items = { ITEM_SUPER_POTION },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_SEMI_SMART,
+        .partySize = NELEMS(sParty_HeleoCityGym_LeaderRaine),
+        .party = {.ItemCustomMoves = sParty_HeleoCityGym_LeaderRaine}
     },
     // #endregion
 };

@@ -620,11 +620,27 @@ npc 1 92 1 EventScript_HeleoGym_CastformWater
 npc 1 92 2 EventScript_HeleoGym_CastformWater
 npc 1 92 3 EventScript_HeleoGym_CastformWater
 npc 1 92 4 EventScript_HeleoGym_CastformWater
+npc 1 92 5 EventScript_HeleoGym_LeaderRaine
+npc 1 92 6 EventScript_HeleoGym_SwimmerTessa
+npc 1 92 7 EventScript_HeleoGym_SwimmerByron
+npc 1 92 8 EventScript_HeleoGym_SwimmerDanette
+npc 1 92 9 EventScript_HeleoGym_SwimmerMaisey
+npc 1 92 10 EventScript_HeleoGym_GymExpert
+sign 1 92 0 SignScript_HeleoGym_Placard
+sign 1 92 1 SignScript_HeleoGym_Placard
 npc 1 93 0 EventScript_HeleoGym_CastformDrained
 npc 1 93 1 EventScript_HeleoGym_CastformDrained
 npc 1 93 2 EventScript_HeleoGym_CastformDrained
 npc 1 93 3 EventScript_HeleoGym_CastformDrained
 npc 1 93 4 EventScript_HeleoGym_CastformDrained
+npc 1 93 5 EventScript_HeleoGym_LeaderRaine
+npc 1 93 6 EventScript_HeleoGym_SwimmerTessa
+npc 1 93 7 EventScript_HeleoGym_SwimmerByron
+npc 1 93 8 EventScript_HeleoGym_SwimmerDanette
+npc 1 93 9 EventScript_HeleoGym_SwimmerMaisey
+npc 1 93 10 EventScript_HeleoGym_GymExpert
+sign 1 93 0 SignScript_HeleoGym_Placard
+sign 1 93 1 SignScript_HeleoGym_Placard
 
 ## NPC Houses
 npc 1 88 0 EventScript_HeleoCity_SwarmSwami
