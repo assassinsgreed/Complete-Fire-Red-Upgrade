@@ -77,3 +77,88 @@ CastformCommon_WeatherChanging:
     fadescreenswapbuffers 0x1
     getplayerpos 0x4000 0x4001 @ Get player x and y in throwaway vars
     return
+
+.global EventScript_HeleoGym_SwimmerTessa
+EventScript_HeleoGym_SwimmerTessa:
+    trainerbattle0 0x0 0x65 0x0 gText_HeleoCityGym_SwimmerTessaIntro gText_HeleoCityGym_SwimmerTessaDefeat
+    msgbox gText_HeleoCityGym_SwimmerTessaChat MSG_NORMAL
+    end
+
+.global EventScript_HeleoGym_SwimmerByron
+EventScript_HeleoGym_SwimmerByron:
+    trainerbattle0 0x0 0x66 0x0 gText_HeleoCityGym_SwimmerByronIntro gText_HeleoCityGym_SwimmerByronDefeat
+    msgbox gText_HeleoCityGym_SwimmerByronChat MSG_NORMAL
+    end
+
+.global EventScript_HeleoGym_SwimmerDanette
+EventScript_HeleoGym_SwimmerDanette:
+    trainerbattle0 0x0 0x67 0x0 gText_HeleoCityGym_SwimmerDanetteIntro gText_HeleoCityGym_SwimmerDanetteDefeat
+    msgbox gText_HeleoCityGym_SwimmerDanetteChat MSG_NORMAL
+    end
+
+.global EventScript_HeleoGym_SwimmerMaisey
+EventScript_HeleoGym_SwimmerMaisey:
+    trainerbattle0 0x0 0x68 0x0 gText_HeleoCityGym_SwimmerMaiseyIntro gText_HeleoCityGym_SwimmerMaiseyDefeat
+    msgbox gText_HeleoCityGym_SwimmerMaiseyChat MSG_NORMAL
+    end
+
+.global EventScript_HeleoGym_LeaderRaine
+EventScript_HeleoGym_LeaderRaine:
+    lockall
+    faceplayer
+    checkflag 0x822 @ Heleo gym badge
+    if SET _goto EventScript_HeleoGym_LeaderRaine_Chat
+    msgbox gText_HeleoGym_LeaderRaine_Talk MSG_NORMAL
+    setvar 0x503A 0x1
+    setvar 0x503B 0x1
+    trainerbattle1 0x1 0x69 0x100 gText_HeleoGym_LeaderRaine_Intro gText_HeleoGym_LeaderRaine_Defeat EventScript_HeleoGym_LeaderRaine_Defeated
+    end
+
+EventScript_HeleoGym_LeaderRaine_Defeated:
+    msgbox gText_HeleoGym_LeaderRaine_BadgeAwarded MSG_NORMAL
+    fanfare 0x13D @ Gym victory
+    msgbox gText_HeleoGym_BadgeReceived MSG_KEEPOPEN
+    waitfanfare
+    setflag 0x822 @ Heleo gym badge
+    settrainerflag 0x65 @ Tessa cannot be battled now
+    settrainerflag 0x66 @ Byron cannot be battled now
+    settrainerflag 0x67 @ Danette cannot be battled now
+    settrainerflag 0x68 @ Maisey cannot be battled now
+    msgbox gText_HeleoGym_LeaderRaine_BadgeDescription MSG_NORMAL
+    msgbox gText_HeleoGym_LeaderRaine_TMReceived MSG_NORMAL
+    fanfare 0x101
+    additem ITEM_TM07 0x1 @ Hail
+    additem ITEM_TM11 0x1 @ Sunny Day
+    additem ITEM_TM18 0x1 @ Rain Dance
+    additem ITEM_TM37 0x1 @ Sandstorm
+    msgbox gText_HeleoGym_TMReceived MSG_KEEPOPEN
+    setflag 0x4B2 @ Defeated Raine
+    msgbox gText_HeleoGym_LeaderRaine_Chat MSG_KEEPOPEN
+    releaseall
+    end
+
+EventScript_HeleoGym_LeaderRaine_Chat:
+    npcchat gText_HeleoGym_LeaderRaine_Chat
+    end
+
+.global EventScript_HeleoGym_GymExpert
+EventScript_HeleoGym_GymExpert:
+    checkflag 0x822 @ Heleo gym badge
+    if SET _goto EventScript_HeleoGym_GymExpertBadgeObtained
+    npcchat gText_HeleoGym_ExpertTips
+    end
+
+EventScript_HeleoGym_GymExpertBadgeObtained:
+    npcchat gText_HeleoGym_ExpertBadgeObtained
+    end
+
+.global SignScript_HeleoGym_Placard
+SignScript_HeleoGym_Placard:
+    checkflag 0x822 @ Heleo gym badge
+    if SET _goto SignScript_HeleoGym_PlacardWithBadge
+    msgbox gText_HeleoGym_Winners MSG_SIGN
+    end
+
+SignScript_HeleoGym_PlacardWithBadge:
+    msgbox gText_HeleoGym_WinnersWithBadge MSG_SIGN
+    end

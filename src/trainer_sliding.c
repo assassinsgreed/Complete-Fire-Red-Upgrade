@@ -38,6 +38,7 @@ static const struct TrainerSlide sTrainerSlides[] =
 	{0x1C, NULL, sText_Rival2_LastSwitchIn, sText_Rival2_LowHP}, // Second rival battle
 	{0x23, NULL, sText_Irene_LastSwitchIn, sText_Irene_LowHP}, // Pluto Admin Irene (double battle)
 	{0x40, sText_Leader2_FirstMonDown, sText_Leader2_LastSwitchIn, sText_Leader2_LowHP}, // Gym Leader Stella
+	{0x69, sText_Leader3_FirstMonDown, sText_Leader3_LastSwitchIn, sText_Leader3_LowHP}, // Gym Leader Raine
 	{}, // Champion Selene
 };
 

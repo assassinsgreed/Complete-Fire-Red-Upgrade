@@ -339,6 +339,8 @@ GraphicsInfo_Alistair 839FEE8
 GraphicsInfo_LeaderTerrence 839FEF0
 ## Replace Misty (81)
 GraphicsInfo_LeaderStella 839FEF4
+## Replace Lt. Surge (82)
+GraphicsInfo_LeaderRaine 839FEF8
 ## Replace Lance (74)
 GraphicsInfo_ChampionSelene 839FED8
 ## Replace Daisy (Blue's Sister) (76)
@@ -386,6 +388,9 @@ LeaderTerrenceBPal 8239DBC
 ## Replace Misty (117)
 LeaderStellaBTiles 8239924
 LeaderStellaBPal 8239DC4
+## Replace Lt. Surge (118)
+LeaderRaineBTiles 823992C
+LeaderRaineBPal 8239DCC
 ## Replace Male Rocket Grunt (109)
 PlutoGruntMTiles 82398E4
 PlutoGruntMPal 8239D84

@@ -82,7 +82,7 @@ TrainerHouse_Menu:
 	case 0, Trainerhouse_battle
 	case 1, Trainerhouse_trainerhouserules
 	case 2, Trainerhouse_ruleset
-    case 3, Trainerhouse_grandprize
+	case 3, Trainerhouse_grandprize
 	case 4, Trainerhouse_end
     goto Trainerhouse_end @ Cancelled with B
 
