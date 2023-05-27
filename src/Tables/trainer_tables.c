@@ -747,6 +747,25 @@ const struct TrainerMonNoItemDefaultMoves sParty_Route6_HikerDarryl[] = {
     { .lvl = 46, .species = SPECIES_CONKELDURR }
 };
 // #endregion
+// #region Heleo City
+const struct TrainerMonNoItemDefaultMoves sParty_HeleoCity_PsychicBianca[] = {
+    { .lvl = 1, .species = SPECIES_BULBASAUR },
+    { .lvl = 1, .species = SPECIES_CHARMANDER },
+    { .lvl = 1, .species = SPECIES_SQUIRTLE }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_HeleoCity_SupernerdGalen[] = {
+    { .lvl = 1, .species = SPECIES_TIMBURR },
+    { .lvl = 1, .species = SPECIES_HOOTHOOT },
+    { .lvl = 1, .species = SPECIES_HOUNDOUR }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_HeleoCity_CoolTrainerJet[] = {
+    { .lvl = 1, .species = SPECIES_DARUMAKA_G },
+    { .lvl = 1, .species = SPECIES_RALTS },
+    { .lvl = 1, .species = SPECIES_BLIPBUG }
+};
+// #endregion
 
 #define NO_NAME                                                                                      \
     {                                                                                                \
@@ -1945,6 +1964,44 @@ const struct Trainer gTrainers[] = {
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
         .partySize = NELEMS(sParty_Route6_HikerDarryl),
         .party = {.NoItemDefaultMoves = sParty_Route6_HikerDarryl}
+    },
+    // #endregion
+    // #region Heleo City
+    [TRAINER_HELEO_TRAINER_HOUSE_PSYCHIC_BIANCA] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_PKMN_TRAINER_3,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
+        .trainerPic = TRAINER_PIC_PSYCHIC_F,
+        .trainerName = {_B, _i, _a, _n, _c, _a, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE,
+        .partySize = NELEMS(sParty_HeleoCity_PsychicBianca),
+        .party = {.NoItemDefaultMoves = sParty_HeleoCity_PsychicBianca}
+    },
+    [TRAINER_HELEO_TRAINER_HOUSE_SUPERNERD_GALEN] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_PKMN_TRAINER_3,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
+        .trainerPic = TRAINER_PIC_SUPER_NERD,
+        .trainerName = {_G, _a, _l, _e, _n, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE,
+        .partySize = NELEMS(sParty_HeleoCity_SupernerdGalen),
+        .party = {.NoItemDefaultMoves = sParty_HeleoCity_SupernerdGalen}
+    },
+    [TRAINER_HELEO_TRAINER_HOUSE_COOL_TRAINER_JET] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_PKMN_TRAINER_3,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
+        .trainerPic = TRAINER_PIC_COOLTRAINER_M,
+        .trainerName = {_J, _e, _t, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE,
+        .partySize = NELEMS(sParty_HeleoCity_CoolTrainerJet),
+        .party = {.NoItemDefaultMoves = sParty_HeleoCity_CoolTrainerJet}
     },
     // #endregion
 };

@@ -131,59 +131,77 @@ EventScript_Modifiers_Flagnowon:
 .global EventScript_Modifiers_Clearinverse
 EventScript_Modifiers_Clearinverse:
 	clearflag 0x900 @ Turn off inverse
+	clearflag 0x4FE @ Do not turn off inverse battles in trainer houses
+	return
 
 .global EventScript_Modifiers_Clearcatchtrainer
 EventScript_Modifiers_Clearcatchtrainer:
 	clearflag 0x905 @ Turn off catch trainer
+	return
 
 .global EventScript_Modifiers_Clearscalewild
 EventScript_Modifiers_Clearscalewild:
 	clearflag 0x90D @ Turn off scale wild
+	return
 
 .global EventScript_Modifiers_Clearscaletrainer
 EventScript_Modifiers_Clearscaletrainer:
 	clearflag 0x90E @ Turn off scale trainer
+	clearflag 0x4FF @ Do not turn off level scaling in trainer houses
+	return
 
 .global EventScript_Modifiers_Clearhiddenability
 EventScript_Modifiers_Clearhiddenability:
 	clearflag 0x90F @ Turn off hidden ability
+	return
 
 .global EventScript_Modifiers_Clearshiny
 EventScript_Modifiers_Clearshiny:
 	clearflag 0x913 @ Turn off shiny
+	return
 
 .global EventScript_Modifiers_Clearrandomizer
 EventScript_Modifiers_Clearrandomizer:
 	clearflag 0x940 @ Turn off randomizer
+	return
 
 .global EventScript_Modifiers_Setinverse
 EventScript_Modifiers_Setinverse:
 	setflag 0x900 @ Turn on inverse
+	setflag 0x4FE @ Do not turn off inverse battles in trainer houses
+	return
 
 .global EventScript_Modifiers_Setcatchtrainer
 EventScript_Modifiers_Setcatchtrainer:
 	setflag 0x905 @ Turn on catch trainer
+	return
 
 .global EventScript_Modifiers_Setscalewild
 EventScript_Modifiers_Setscalewild:
 	setflag 0x90D @ Turn on scale wild
+	return
 
 .global EventScript_Modifiers_Setscaletrainer
 EventScript_Modifiers_Setscaletrainer:
 	setflag 0x90E @ Turn on scale trainer
+	setflag 0x4FF @ Do not turn off level scaling in trainer houses
+	return
 
 .global EventScript_Modifiers_Sethiddenability
 EventScript_Modifiers_Sethiddenability:
 	setflag 0x90F @ Turn on hidden ability
+	return
 
 .global EventScript_Modifiers_Setshiny
 EventScript_Modifiers_Setshiny:
 	setflag 0x913 @ Turn on shiny
+	return
 
 .global EventScript_Modifiers_Setrandomizer
 EventScript_Modifiers_Setrandomizer:
 	setflag 0x940 @ Turn on randomizer
 	clearflag 0x930 @ Hack: turn off the battle facility (which disables randomizer)
+	return
 
 .global EventScript_Modifiers_End
 EventScript_Modifiers_End:

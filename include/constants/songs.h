@@ -38,6 +38,7 @@
 #define BGM_BATTLE_TEAM_PLUTO_ADMINS_FINAL 0x15C // N final battle theme BW
 #define BGM_BATTLE_TEAM_PLUTO_KURTIS 0x15D // Ghetsis battle theme BW
 #define BGM_BATTLE_ALISTAIR 0x17C // N Battle BW
+#define BGM_BATTLE_TRAINER_HOUSE 0x12B // Champion Iris battle theme 
 
 #define MUS_DUMMY 0
 #define SE_STOP 0

@@ -189,7 +189,7 @@
 #define VAR_FIRE_STARTER_GEN       0x408D
 #define VAR_WATER_STARTER_GEN      0x408E
 #define VAR_BATTLE_TRANSITION_LOGO 0x408F
-#define VAR_0x4090                 0x4090
+#define VAR_TRAINER_HOUSE_STREAK   0x4090
 #define VAR_0x4091                 0x4091
 #define VAR_0x4092                 0x4092
 #define VAR_0x4093                 0x4093

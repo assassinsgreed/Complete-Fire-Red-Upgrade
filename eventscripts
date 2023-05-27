@@ -607,6 +607,10 @@ npc 8 2 2 EventScript_HeleoFacilities_KidsMom
 npc 8 3 0 EventScript_HeleoFacilities_Mart_PokeballShop
 npc 8 3 1 EventScript_Pokemart
 npc 8 3 2 EventScript_HeleoFacilities_Mart_QuickTimerBallQuiz
+npc 1 94 0 EventScript_HeleoFacilities_TrainerHouse_Host
+# Event #2 (index 1) is a hidden oppenent that becomes visible and changes as the player's challenge progresses
+npc 1 94 2 EventScript_HeleoFacilities_TrainerHouse_Boy
+npc 1 94 3 EventScript_HeleoFacilities_TrainerHouse_Girl
 
 ## Gym
 map 1 92 MapScript_HeleoCityGym
