@@ -1665,12 +1665,12 @@ static s8 CompareTMs(struct ItemSlot* itemSlot1, struct ItemSlot* itemSlot2)
 	else if (id2 <= NUM_TMS && id1 > NUM_TMS)
 		return 1;
 	#else
-	if (id2 <= NUM_TMS && id1 > NUM_TMS)
-		return -1;
-	else if (id1 <= NUM_TMS && id2 > NUM_TMS)
-		return 1;
+	// if (id2 <= NUM_TMS && id1 > NUM_TMS)
+	// 	return -1;
+	// else if (id1 <= NUM_TMS && id2 > NUM_TMS)
+	// 	return 1;
 	#endif
-	else if (id1 < id2)
+	if (id1 < id2)
 		return -1;
 	else if (id2 > id1)
 		return 1;
