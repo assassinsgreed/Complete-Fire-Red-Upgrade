@@ -14,7 +14,7 @@ MapScript_TormaCave:
 	.byte MAP_SCRIPT_TERMIN
 
 MapEntryScript_TormaCave_FlightFlag:
-    setworldmapflag 0x8A6
+    setworldmapflag 0x8A6 @ Been to Torma Cave
     setvar FormanEventVar 0x0
     end
 

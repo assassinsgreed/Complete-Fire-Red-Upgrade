@@ -19,7 +19,7 @@ MapScript_RubarrDesert:
 	.byte MAP_SCRIPT_TERMIN
 
 MapEntryScript_RubarrDesert_FlightFlag:
-    setworldmapflag 0x8A5
+    setworldmapflag 0x8A5 @ Been to Rubarr Desert
     setflag 0x34 @ Hide Rival and Irene
     end
 

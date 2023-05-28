@@ -404,17 +404,17 @@ EventScript_HeleoCity_HallwayBoy:
 
 .global EventScript_HeleoCity_TerraceDad
 EventScript_HeleoCity_TerraceDad:
-    npcchat2 0x0 m_LookLeft gText_HeleoNPCHouses_TerraceDad
+    npcchat2 0x1 m_LookLeft gText_HeleoNPCHouses_TerraceDad
     end
 
 .global EventScript_HeleoCity_TerraceMom
 EventScript_HeleoCity_TerraceMom:
-    npcchat2 0x1 m_LookLeft gText_HeleoNPCHouses_TerraceMom
+    npcchat2 0x2 m_LookLeft gText_HeleoNPCHouses_TerraceMom
     end
 
 .global EventScript_HeleoCity_TerraceSon
 EventScript_HeleoCity_TerraceSon:
-    npcchat2 0x2 m_LookRight gText_HeleoNPCHouses_TerraceSon
+    npcchat2 0x3 m_LookRight gText_HeleoNPCHouses_TerraceSon
     end
 
 .global EventScript_HeleoCity_SodaMachineGirl

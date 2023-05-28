@@ -117,6 +117,11 @@ ItemScript_Common_AbsorbBulb:
     finditem ITEM_ABSORB_BULB 0x1
     end
 
+.global ItemScript_Common_CellBattery
+ItemScript_Common_CellBattery:
+    finditem ITEM_CELL_BATTERY 0x1
+    end
+
 .global ItemScript_Common_MiracleSeed
 ItemScript_Common_MiracleSeed:
     finditem ITEM_MIRACLE_SEED 0x1

@@ -7,8 +7,13 @@
 
 .global MapScript_HeleoRanchExterior
 MapScript_HeleoRanchExterior:
+    mapscript MAP_SCRIPT_ON_TRANSITION MapEntryScript_HeleoRanch_FlightFlag
     mapscript MAP_SCRIPT_ON_LOAD MapEntryScript_HeleoRanch_HandleMareepVisibility
 	.byte MAP_SCRIPT_TERMIN
+
+MapEntryScript_HeleoRanch_FlightFlag:
+    setworldmapflag 0x8A7 @ Been to Heleo Ranch
+    end
 
 MapEntryScript_HeleoRanch_HandleMareepVisibility:
     @ Check time of day
