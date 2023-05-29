@@ -425,7 +425,7 @@
 #define FLAG_HIDE_ROUTE_6_IRON                                  0x19F
 #define FLAG_HIDE_ROUTE_6_RARE_CANDY                            0x1A0
 #define FLAG_HIDE_ROUTE_6_NUGGET                                0x1A1
-#define FLAG_HIDE_POKEMON_MANSION_3F_MAX_POTION                 0x1A2
+#define FLAG_HIDE_HELEO_CITY_CELL_BATTERY                       0x1A2
 #define FLAG_HIDE_POKEMON_MANSION_3F_IRON                       0x1A3
 #define FLAG_HIDE_POKEMON_MANSION_B1F_TM14                      0x1A4
 #define FLAG_HIDE_POKEMON_MANSION_B1F_FULL_RESTORE              0x1A5
@@ -1060,7 +1060,7 @@
 #define HIDDEN_ITEM_ROUTE6_STAR_PIECE                                  31
 #define HIDDEN_ITEM_ROUTE6_HP_UP                                       32
 #define HIDDEN_ITEM_ROUTE6_ELIXIR                                      33
-#define HIDDEN_ITEM_ROUTE23_FULL_RESTORE                               34
+#define HIDDEN_ITEM_HELEO_CITY_FRESH_WATER                             34
 #define HIDDEN_ITEM_ROUTE23_ULTRA_BALL                                 35
 #define HIDDEN_ITEM_ROUTE23_MAX_ETHER                                  36
 #define HIDDEN_ITEM_VICTORY_ROAD_1F_ULTRA_BALL                         37

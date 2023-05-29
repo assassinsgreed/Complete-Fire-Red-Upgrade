@@ -46,7 +46,7 @@ u8 __attribute__((long_call)) GetCurrentRegionMapSectionId(void);
 #define MAPSEC_VIRIDIAN_FOREST              0x7E
 #define MAPSEC_MT_MOON                      0x7F
 #define MAPSEC_TORMA_CAVE                   0x80
-#define MAPSEC_UNDERGROUND_PATH             0x81
+#define MAPSEC_HELEO_RANCH                  0x81
 #define MAPSEC_FORGOTTEN_MANSE              0x82
 #define MAPSEC_DIGLETTS_CAVE                0x83
 #define MAPSEC_VICTORY_ROAD                 0x84
