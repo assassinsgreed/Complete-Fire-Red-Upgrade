@@ -45,6 +45,7 @@
 #include "../include/new/overworld.h"
 #include "../include/new/party_menu.h"
 #include "../include/new/util.h"
+#include "../include/naming_screen.h"
 
 /*
 party_menu.c
@@ -55,6 +56,8 @@ party_menu.c
 #define MENU_DOWN 1
 #define MENU_LEFT -2
 #define MENU_RIGHT 2
+
+#define MENU_NICKNAME 6
 
 struct PartyMenuBoxInfoRects
 {
@@ -132,6 +135,7 @@ static void FieldCallback_Defog(void);
 static bool8 SetUpFieldMove_Defog(void);
 static void CursorCb_MoveItemCallback(u8 taskId);
 static void CursorCb_MoveItem(u8 taskId);
+static void CursorCb_Nickname(u8 taskId);
 
 //*highlightedMon = 0 is Player's Pokemon out
 //*highlightedMon = 1 is Link Partner's Pokemon out
@@ -784,6 +788,9 @@ u8 CanPokemonSelectedBeEnteredInBattleTower(void)
 extern u8 gMoveNames[][MOVE_NAME_LENGTH + 1];
 
 extern const u8 gMenuText_Move[];
+extern const u8 gMenuText_Nickname[];
+extern const u8 gText_NicknameConfirmation[];
+extern const u8 gText_NicknameChanged[];
 extern const u8 gText_FieldMoveDesc_RockClimb[];
 extern const u8 gText_FieldMoveDesc_Defog[];
 extern const u8 gText_FieldMoveDesc_Dive[];
@@ -839,6 +846,7 @@ struct
 	[MENU_TRADE1] =	{(void*) 0x84169bc, (void*) 0x8124491},
 	[MENU_TRADE2] =	{(void*) 0x84169bc, (void*) 0x81245a1},
 	[MENU_MOVE_ITEM] = {gMenuText_Move, CursorCb_MoveItem},
+	[MENU_NICKNAME] = {gMenuText_Nickname, CursorCb_Nickname},
 
 	//Field Moves
 	[MENU_FIELD_MOVES + FIELD_MOVE_FLASH] =	      {gMoveNames[MOVE_FLASH], CursorCb_FieldMove},
@@ -1082,6 +1090,7 @@ SKIP_FIELD_MOVES:
 			AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_ITEM);
 	}
 
+	AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_NICKNAME);
 	AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_CANCEL1);
 }
 
@@ -1560,6 +1569,10 @@ static void ItemUseCB_MaxPowder(u8 taskId, TaskFunc func);
 static void Task_OfferGigantamaxChange(u8 taskId);
 static void Task_HandleGigantamaxChangeYesNoInput(u8 taskId);
 static void Task_ChangeGigantamax(u8 taskId);
+static void Task_OfferNicknameChange(u8 taskId);
+static void Task_HandleNicknameChangeYesNoInput(u8 taskId);
+static void Task_ChangeNickname(u8 taskId);
+static void Task_NicknameChangedMsg(u8 taskId);
 
 void Task_ClosePartyMenuAfterText(u8 taskId)
 {
@@ -2719,6 +2732,72 @@ void ItemUseCB_RareCandy(u8 taskId, TaskFunc func)
 	{
 		ItemUseCB_RareCandyStep(taskId, func);
 	}
+}
+
+static void CursorCb_Nickname(u8 taskId)
+{
+	PlaySE(SE_SELECT);
+
+	//Delete old windows
+	PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[1]);
+	PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[0]);
+
+	// Prompt for nickname change confirmation
+	StringExpandPlaceholders(gStringVar4, gText_NicknameConfirmation);
+	DisplayPartyMenuMessage(gStringVar4, TRUE);
+	ScheduleBgCopyTilemapToVram(2);
+	gTasks[taskId].func = Task_OfferNicknameChange;
+}
+
+static void Task_OfferNicknameChange(u8 taskId)
+{
+	if (IsPartyMenuTextPrinterActive() != TRUE)
+	{
+		PartyMenuDisplayYesNoMenu();
+		gTasks[taskId].func = Task_HandleNicknameChangeYesNoInput;
+	}
+}
+
+static void Task_HandleNicknameChangeYesNoInput(u8 taskId)
+{
+	switch (Menu_ProcessInputNoWrapClearOnChoose())
+	{
+		case 0:
+			gTasks[taskId].func = Task_ChangeNickname;
+			break;
+		case MENU_B_PRESSED:
+			PlaySE(SE_SELECT);
+			// Fallthrough
+		case 1:
+			gTasks[taskId].func = Task_ReturnToChooseMonAfterText;
+			break;
+	}
+}
+
+void NicknameMon()
+{
+	SetMonData(&gPlayerParty[gPartyMenu.slotId], MON_DATA_NICKNAME, gStringVar3);
+	InitPartyMenu(PARTY_MENU_TYPE_FIELD, PARTY_LAYOUT_SINGLE, PARTY_ACTION_CHOOSE_MON, TRUE, 0, Task_NicknameChangedMsg, CB2_ReturnToFieldContinueScriptPlayMapMusic);
+}
+
+static void Task_NicknameChangedMsg(u8 taskId)
+{
+	GetMonData(&gPlayerParty[gPartyMenu.slotId], MON_DATA_NICKNAME, gStringVar1);
+	StringExpandPlaceholders(gStringVar4, gText_NicknameChanged);
+	DisplayPartyMenuMessage(gStringVar4, TRUE);
+	ScheduleBgCopyTilemapToVram(2);
+	gTasks[taskId].func = Task_ReturnToChooseMonAfterText;
+}
+
+static void Task_ChangeNickname(u8 taskId)
+{
+	void* src =  &gPlayerParty[gPartyMenu.slotId];
+
+	u16 species = GetMonData(src, MON_DATA_SPECIES, 0);
+	u8 gender = GetMonGender(src);
+	u16 PID = GetMonData(src, MON_DATA_PERSONALITY, 0);
+	DoNamingScreen(3, gStringVar3, species, gender, PID, (void*) NicknameMon);
+	DestroyTask(taskId);
 }
 
 // Checks if party Pokemon in var 0x8004 is an egg and stores it in LASTRESULT (0x800D)
