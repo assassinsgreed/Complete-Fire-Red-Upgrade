@@ -603,8 +603,9 @@ sign 3 4 2 SignScript_HeleoCity_TrainerHouseSign
 ## Facilities
 map 8 2 MapScript_HeleoFacilities_PokemonCenter
 npc 8 2 0 EventScript_PokemonCenter_Main
-npc 8 2 1 EventScript_HeleoFacilities_BoredKid
-npc 8 2 2 EventScript_HeleoFacilities_KidsMom
+npc 8 2 1 EventScript_HeleoFacilities_PokemonCenter_BoredKid
+npc 8 2 2 EventScript_HeleoFacilities_PokemonCenter_KidsMom
+npc 8 2 3 EventScript_HeleoFacilities_PokemonCenter_CriticalCapture
 npc 8 3 0 EventScript_HeleoFacilities_Mart_PokeballShop
 npc 8 3 1 EventScript_Pokemart
 npc 8 3 2 EventScript_HeleoFacilities_Mart_QuickTimerBallQuiz

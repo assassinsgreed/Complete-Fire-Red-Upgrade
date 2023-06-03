@@ -524,11 +524,12 @@ struct CriticalCaptureOdds
 static const struct CriticalCaptureOdds sCriticalCaptureSpeciesCounts[] =
 {
 	{30,      0}, //x0.0
-	{150,     5}, //x0.5
-	{300,    10}, //x1.0
-	{450,    15}, //x1.5
-	{600,    20}, //x2.0
-	{0xFFFF, 25}, //x2.5 default
+	{75,      5}, //x0.5
+	{150,    10}, //x1.0
+	{225,    15}, //x1.5
+	{300,    20}, //x2.0
+	{350,    25}, //x2.5
+	{0xFFFF, 30}, //x3.0 default
 };
 #endif
 
