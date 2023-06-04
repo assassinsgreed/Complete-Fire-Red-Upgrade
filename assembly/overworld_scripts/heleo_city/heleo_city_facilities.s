@@ -14,14 +14,19 @@ MapScript_HeleoFacilities_PokemonCenter_SetHealingSpot:
     sethealingplace 0x05 @ Originally Lavender Town
     end
 
-.global EventScript_HeleoFacilities_BoredKid
-EventScript_HeleoFacilities_BoredKid:
+.global EventScript_HeleoFacilities_PokemonCenter_BoredKid
+EventScript_HeleoFacilities_PokemonCenter_BoredKid:
     msgbox gText_HeleoCityFacilities_BoredKid MSG_NORMAL
     end
 
-.global EventScript_HeleoFacilities_KidsMom
-EventScript_HeleoFacilities_KidsMom:
+.global EventScript_HeleoFacilities_PokemonCenter_KidsMom
+EventScript_HeleoFacilities_PokemonCenter_KidsMom:
     npcchat gText_HeleoCityFacilities_KidsMom
+    end
+
+.global EventScript_HeleoFacilities_PokemonCenter_CriticalCapture
+EventScript_HeleoFacilities_PokemonCenter_CriticalCapture:
+    npcchat gText_HeleoCityFacilities_CriticalCapture
     end
 
 .global EventScript_HeleoFacilities_Mart_PokeballShop
