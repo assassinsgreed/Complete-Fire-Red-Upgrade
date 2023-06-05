@@ -106,7 +106,7 @@ PlayerHeal:
 .global PokedexEvaluation_Introduction
 PokedexEvaluation_Introduction:
     @ Note: This script is also located at 0x81A73E0 for ratings from the PC.
-    @ Not ideal, but worth keeping separately while these are actively developed
+    @ Not ideal, but worth keeping separately while these are actively developed, and until repointing effectively can be figured out
     setvar 0x8004 0x1F
     special 0x17E
     special 0x17D
@@ -124,22 +124,80 @@ PokedexEvaluation_Introduction:
     checkflag 0x2FF @ Assessment is from PC
     if TRUE _call SetTextColor_Black
     msgbox gText_PokedexAssessment_SeenCaughtLeft MSG_KEEPOPEN
-    call PokedexEvaluation_Rating
+    goto PokedexEvaluation_Rating
+
+PokedexEvaluation_Rating:
+    copyvar 0x8004 0x8009
+    comparevartovalue 0x8009 0x32 @ 50
+    if lessorequal _goto FiftyOrLessCaught
+    comparevartovalue 0x8009 0x64 @ OneHundred
+    if lessorequal _goto OneHundredOrLessCaught
+    comparevartovalue 0x8009 0x96 @ 150
+    if lessorequal _goto OneHundredFiftyOrLessCaught
+    comparevartovalue 0x8009 0xC8 @ 200
+    if lessorequal _goto TwoHundredOrLessCaught
+    comparevartovalue 0x8009 0xFA @ 250
+    if lessorequal _goto TwoHundredFiftyOrLessCaught
+    comparevartovalue 0x8009 0x12C @ 300
+    if lessorequal _goto ThreeHundredOrLessCaught
+    comparevartovalue 0x8009 0x15E @ 350
+    if lessorequal _goto ThreeHundredFiftyOrLessCaught
+    comparevartovar 0x8009 0x800A @ All Pokemon
+    if equal _goto AllCaught
+
+PokedexEvaluation_Conclusion:
     compare 0x800A 0x0
     if notequal _call PokedexEvaluation_PokedexIncomplete
     msgbox gText_PokedexAssessment_EvaluationComplete MSG_NORMAL
     end
 
-PokedexEvaluation_Rating:
-    copyvar 0x8004 0x8009
-    special 0xD5
-    waitmsg
-    compare LASTRESULT 0x0
-    if TRUE _call PokedexEvaluationFanfare1
-    compare LASTRESULT 0x1
-    if TRUE _call PokedexEvaluationFanfare2
+FiftyOrLessCaught:
+    call PokedexEvaluationFanfare1
+    msgbox gText_PokedexAssessment_FiftyOrLessCaught MSG_NORMAL
     waitfanfare
-    return
+    goto PokedexEvaluation_Conclusion
+
+OneHundredOrLessCaught:
+    call PokedexEvaluationFanfare1
+    msgbox gText_PokedexAssessment_OneHundredOrLessCaught MSG_NORMAL
+    waitfanfare
+    goto PokedexEvaluation_Conclusion
+
+OneHundredFiftyOrLessCaught:
+    call PokedexEvaluationFanfare1
+    msgbox gText_PokedexAssessment_OneHundredFiftyOrLessCaught MSG_NORMAL
+    waitfanfare
+    goto PokedexEvaluation_Conclusion
+
+TwoHundredOrLessCaught:
+    call PokedexEvaluationFanfare1
+    msgbox gText_PokedexAssessment_TwoHundredOrLessCaught MSG_NORMAL
+    waitfanfare
+    goto PokedexEvaluation_Conclusion
+
+TwoHundredFiftyOrLessCaught:
+    call PokedexEvaluationFanfare1
+    msgbox gText_PokedexAssessment_TwoHundredFiftyOrLessCaught MSG_NORMAL
+    waitfanfare
+    goto PokedexEvaluation_Conclusion
+
+ThreeHundredOrLessCaught:
+    call PokedexEvaluationFanfare1
+    msgbox gText_PokedexAssessment_ThreeHundredOrLessCaught MSG_NORMAL
+    waitfanfare
+    goto PokedexEvaluation_Conclusion
+
+ThreeHundredFiftyOrLessCaught:
+    call PokedexEvaluationFanfare1
+    msgbox gText_PokedexAssessment_ThreeHundredFiftyOrLessCaught MSG_NORMAL
+    waitfanfare
+    goto PokedexEvaluation_Conclusion
+
+AllCaught:
+    call PokedexEvaluationFanfare2
+    msgbox gText_PokedexAssessment_AllCaught MSG_NORMAL
+    waitfanfare
+    goto PokedexEvaluation_Conclusion
 
 PokedexEvaluationFanfare1:
     fanfare 0x13D
