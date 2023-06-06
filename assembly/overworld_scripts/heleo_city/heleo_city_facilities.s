@@ -354,6 +354,49 @@ EventScript_HeleoFacilities_TrainerHouse_Girl:
     npcchat gText_HeleoCityFacilities_TrainerHouse_Girl
     end
 
+.global EventScript_HeleoGuardHouse_Guard
+EventScript_HeleoGuardHouse_Guard:
+    npcchat gText_HeleoCityFacilities_GuardHouse_Guard
+    end
+
+.global EventScript_HeleoGuardHouse_DateBoy
+EventScript_HeleoGuardHouse_DateBoy:
+    npcchat gText_HeleoCityFacilities_GuardHouse_DateBoy
+    end
+
+.global EventScript_HeleoGuardHouse_DateGirl
+EventScript_HeleoGuardHouse_DateGirl:
+    npcchat gText_HeleoCityFacilities_GuardHouse_DateGirl
+    end
+
+.global EventScript_HeleoGuardHouse_Camper
+EventScript_HeleoGuardHouse_Camper:
+    npcchat gText_HeleoCityFacilities_GuardHouse_Camper
+    end
+
+.global SignScript_HeleoGuardHouse_ForgottenManseBinoculars
+SignScript_HeleoGuardHouse_ForgottenManseBinoculars:
+    msgbox gText_GuardHouseBinoculars MSG_NORMAL
+    msgbox gText_HeleoCityFacilities_GuardHouse_ForgottenManseBinoculars MSG_NORMAL
+    end
+
+.global SignScript_HeleoGuardHouse_DaimynCityBinoculars
+SignScript_HeleoGuardHouse_DaimynCityBinoculars:
+    msgbox gText_GuardHouseBinoculars MSG_NORMAL
+    setvar 0x8000 0x0 @ Return distinct times of day
+    special2 LASTRESULT 0xAD
+    compare LASTRESULT 0x2 @ Evening
+    if lessthan _goto BinocularsDay
+    goto BinocularsNight
+
+BinocularsDay:
+    msgbox gText_HeleoCityFacilities_GuardHouse_DaimynCityBinocularsDay MSG_NORMAL
+    end
+
+BinocularsNight:
+    msgbox gText_HeleoCityFacilities_GuardHouse_DaimynCityBinocularsNight MSG_NORMAL
+    end
+
 m_WalkFromRight: .byte walk_down, walk_left, end_m
 m_WalkFromBelow: .byte walk_left, walk_up, end_m
 m_WalkToBattlefield: .byte walk_up, walk_up, walk_left, walk_left, walk_left, walk_left, walk_up, walk_up, look_right, end_m

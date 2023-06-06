@@ -613,6 +613,12 @@ npc 1 94 0 EventScript_HeleoFacilities_TrainerHouse_Host
 # Event #2 (index 1) is a hidden oppenent that becomes visible and changes as the player's challenge progresses
 npc 1 94 2 EventScript_HeleoFacilities_TrainerHouse_Boy
 npc 1 94 3 EventScript_HeleoFacilities_TrainerHouse_Girl
+npc 25 1 0 EventScript_HeleoGuardHouse_Guard
+npc 25 2 0 EventScript_HeleoGuardHouse_DateBoy
+npc 25 2 1 EventScript_HeleoGuardHouse_DateGirl
+npc 25 2 2 EventScript_HeleoGuardHouse_Camper
+sign 25 2 0 SignScript_HeleoGuardHouse_ForgottenManseBinoculars
+sign 25 2 1 SignScript_HeleoGuardHouse_DaimynCityBinoculars
 
 ## Gym
 map 1 92 MapScript_HeleoCityGym
