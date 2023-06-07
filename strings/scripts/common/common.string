@@ -84,3 +84,6 @@ Got a can of [BUFFER1]! A freebie\npopped out too!
 
 #org @gText_PokedexAssessment_AllCaught
 [BLUE]Incredible! You've captured every\nPok\emon in the region. You are a\ltruly special trainer, [PLAYER]!
+
+#org @gText_GuardHouseBinoculars
+A pair of binoculars! What can be\nseen[.]

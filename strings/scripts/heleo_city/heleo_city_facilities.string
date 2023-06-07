@@ -129,3 +129,24 @@ Impressive! You've mastered Inverse\nBattles.
 
 #org @gText_HeleoCityFacilities_TrainerHouse_CooltrainerJetLose
 My hard work has paid off, I see.
+
+#org @gText_HeleoCityFacilities_GuardHouse_Guard
+You're a Pok\emon trainer, yes?\pTo the west lies Route 8. It's a\nroundabout path to Daimyn City,\lbut a safer one.\pThere is an abandoned building along\nthe way. I'd urge you not to go\lthere; it could be dangerous.
+
+#org @gText_HeleoCityFacilities_GuardHouse_DateBoy
+I'm such a cool guy. I'm on a date\nwith my girlfriend!
+
+#org @gText_HeleoCityFacilities_GuardHouse_DateGirl
+I'm visiting Heleo City with my best\nfriend. He's such a reliable guy!
+
+#org @gText_HeleoCityFacilities_GuardHouse_Camper
+Whew, I should take a break[.]\pGuard houses like these are great\nplaces to take a breather at,\lwhile travelling.\pYou might hear some interesting\ngossip from the people around you\ltoo!
+
+#org @gText_HeleoCityFacilities_GuardHouse_ForgottenManseBinoculars
+Oh! It's a creepy, run-down\nbuilding in a secluded forest.
+
+#org @gText_HeleoCityFacilities_GuardHouse_DaimynCityBinocularsDay
+Oh! It's Daimyn City! The sun is\nshining off of it's towering\lskyscrapers.
+
+#org @gText_HeleoCityFacilities_GuardHouse_DaimynCityBinocularsNight
+Oh! It's Daimyn City! It's all lit up!
