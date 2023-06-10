@@ -677,3 +677,37 @@ npc 8 1 1 EventScript_HeleoCity_TrainersYoungKid
 npc 8 1 2 EventScript_HeleoCity_TrainersKid
 npc 8 5 0 EventScript_HeleoCity_RainesGrandfather
 npc 8 5 1 EventScript_HeleoCity_RainesCastform
+
+# Route 8
+map 3 26 MapScript_Route8
+npc 3 26 0 EventScript_Common_Cut
+npc 3 26 1 EventScript_Common_Cut
+npc 3 26 2 EventScript_Common_Cut
+npc 3 26 3 EventScript_Common_Strength
+npc 3 26 4 EventScript_Common_RockSmash
+npc 3 26 5 EventScript_Common_RockSmash
+npc 3 26 6 EventScript_Common_RockSmash
+npc 3 26 7 EventScript_Common_RockSmash
+npc 3 26 8 EventScript_Common_RockSmash
+npc 3 26 9 EventScript_Common_RockSmash
+npc 3 26 10 EventScript_Common_RockSmash
+npc 3 26 11 EventScript_Common_RockSmash
+npc 3 26 12 EventScript_Common_RockSmash
+npc 3 26 13 EventScript_Route8_SandygastEncounter1
+npc 3 26 14 EventScript_Route8_SandygastEncounter2
+npc 3 26 15 EventScript_Route8_Swampertite
+npc 3 26 16 EventScript_Route8_FindTM40AerialAce
+npc 3 26 17 EventScript_Route8_FindTM48Round
+npc 3 26 18 EventScript_Route8_FindTM34SludgeWave
+sign 3 26 0 SignScript_Route8_FishermanCommittee
+sign 3 26 1 SignScript_Route8_TrainerTips_FoggyWeather
+sign 3 26 2 SignScript_Route8_TrainerTips_LongGrass
+tile 3 26 0 TileScript_Route8_ClearWeather
+tile 3 26 1 TileScript_Route8_ClearWeather
+tile 3 26 2 TileScript_Route8_ClearWeather
+tile 3 26 3 TileScript_Route8_SetWeather
+tile 3 26 4 TileScript_Route8_SetWeather
+tile 3 26 5 TileScript_Route8_SetWeather
+# TODO: Trainers and regular items (Damp rock + others)
+## Should have a few swimming trainers, some kids on the beach, an ace trainer by swampertite
+## Stuff in the github ticket

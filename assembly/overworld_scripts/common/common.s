@@ -28,6 +28,12 @@ SetWeatherSandstorm:
     doweather
     return
 
+.global SetWeatherFog
+SetWeatherFog:
+    setweather WEATHER_FOG
+    doweather
+    return
+
 .global EnableRunningShoes
 EnableRunningShoes:
     setflag 0x82F @ Enable running shoes
