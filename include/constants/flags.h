@@ -426,9 +426,9 @@
 #define FLAG_HIDE_ROUTE_6_RARE_CANDY                            0x1A0
 #define FLAG_HIDE_ROUTE_6_NUGGET                                0x1A1
 #define FLAG_HIDE_HELEO_CITY_CELL_BATTERY                       0x1A2
-#define FLAG_HIDE_POKEMON_MANSION_3F_IRON                       0x1A3
-#define FLAG_HIDE_POKEMON_MANSION_B1F_TM14                      0x1A4
-#define FLAG_HIDE_POKEMON_MANSION_B1F_FULL_RESTORE              0x1A5
+#define FLAG_HIDE_ROUTE_8_TM40_AERIAL_ACE                       0x1A3
+#define FLAG_HIDE_ROUTE_8_TM48_ROUND                            0x1A4
+#define FLAG_HIDE_ROUTE_8_TM34_SLUDGE_WAVE                      0x1A5
 #define FLAG_0x1A6                                              0x1A6
 #define FLAG_HIDE_POKEMON_MANSION_B1F_TM22                      0x1A7
 #define FLAG_HIDE_POKEMON_MANSION_B1F_SECRET_KEY                0x1A8
@@ -1061,11 +1061,11 @@
 #define HIDDEN_ITEM_ROUTE6_HP_UP                                       32
 #define HIDDEN_ITEM_ROUTE6_ELIXIR                                      33
 #define HIDDEN_ITEM_HELEO_CITY_FRESH_WATER                             34
-#define HIDDEN_ITEM_ROUTE23_ULTRA_BALL                                 35
-#define HIDDEN_ITEM_ROUTE23_MAX_ETHER                                  36
-#define HIDDEN_ITEM_VICTORY_ROAD_1F_ULTRA_BALL                         37
-#define HIDDEN_ITEM_VICTORY_ROAD_1F_FULL_RESTORE                       38
-#define HIDDEN_ITEM_CERULEAN_CAVE_1F_ULTRA_BALL                        39
+#define HIDDEN_ITEM_ROUTE8_NET_BALL                                    35
+#define HIDDEN_ITEM_ROUTE8_RARE_CANDY                                  36
+#define HIDDEN_ITEM_ROUTE8_ETHER                                       37
+#define HIDDEN_ITEM_ROUTE8_STAR_PIECE                                  38
+#define HIDDEN_ITEM_ROUTE8_ENERGY_ROOT                                 39
 #define HIDDEN_ITEM_UNUSED_0x28                                        40
 #define HIDDEN_ITEM_ROUTE11_ESCAPE_ROPE                                41
 #define HIDDEN_ITEM_ROUTE12_HYPER_POTION                               42
@@ -1328,6 +1328,8 @@ Daily Flags, cleared at the start of each day.  Goes up to 0xEFF
 #define FLAG_HELEO_CITY_SHADY_DEALER          0xE09
 #define FLAG_HELEO_CITY_POKEMON_GROOMER       0xE0A
 #define FLAG_HELEO_CITY_TRAINER_HOUSE         0xE0B
+#define FLAG_ROUTE_8_SANDYGAST_1              0xE0C
+#define FLAG_ROUTE_8_SANDYGAST_2              0xE0D
 */
 
 #define FLAG_TRAINER_FLAG_START 0x500
