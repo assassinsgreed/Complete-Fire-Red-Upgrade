@@ -699,6 +699,27 @@ npc 3 26 15 EventScript_Route8_Swampertite
 npc 3 26 16 EventScript_Route8_FindTM40AerialAce
 npc 3 26 17 EventScript_Route8_FindTM48Round
 npc 3 26 18 EventScript_Route8_FindTM34SludgeWave
+npc 3 26 19 ItemScript_Common_ShellBell
+npc 3 26 20 ItemScript_Common_SuperPotion
+npc 3 26 21 ItemScript_Common_KingsRock
+npc 3 26 22 ItemScript_Common_PoisonBarb
+npc 3 26 23 ItemScript_Common_Greatball
+npc 3 26 24 ItemScript_Common_MistySeed
+npc 3 26 25 EventScript_Route8_CamperCasey
+npc 3 26 26 EventScript_Route8_NinjaBoyZeke
+npc 3 26 27 EventScript_Route8_SuperNerdSaul
+npc 3 26 28 EventScript_Route8_RockerParker
+npc 3 26 29 EventScript_Route8_ParasolLadyAnnabelle
+npc 3 26 30 EventScript_Route8_ChannelerMorgan
+npc 3 26 31 EventScript_Route8_BugCatcherArnold
+npc 3 26 32 EventScript_Route8_LassLilian
+npc 3 26 33 EventScript_Route8_NinjaBoyNatto
+npc 3 26 34 EventScript_Route8_TuberMicah
+npc 3 26 35 EventScript_Route8_TuberNancy
+npc 3 26 36 EventScript_Route8_SwimmerMaya
+npc 3 26 37 EventScript_Route8_SwimmerHuey
+npc 3 26 38 EventScript_Route8_SwimmerBob
+npc 3 26 39 EventScript_Route8_CoolTrainerHarriet
 sign 3 26 0 SignScript_Route8_FishermanCommittee
 sign 3 26 1 SignScript_Route8_TrainerTips_FoggyWeather
 sign 3 26 2 SignScript_Route8_TrainerTips_LongGrass
@@ -708,6 +729,3 @@ tile 3 26 2 TileScript_Route8_ClearWeather
 tile 3 26 3 TileScript_Route8_SetWeather
 tile 3 26 4 TileScript_Route8_SetWeather
 tile 3 26 5 TileScript_Route8_SetWeather
-# TODO: Trainers and regular items (Damp rock + others)
-## Should have a few swimming trainers, some kids on the beach, an ace trainer by swampertite
-## Stuff in the github ticket

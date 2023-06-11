@@ -556,6 +556,62 @@
         },
         {
             "mapgroup": 3,
+            "mapnum": 26,
+            "grass": {
+                "rate": 21,
+                "pokemon": [
+                    { "low": 17, "high": 22, "species": "SPECIES_BIBAREL" },
+                    { "low": 16, "high": 21, "species": "SPECIES_CROAGUNK" },
+                    { "low": 16, "high": 22, "species": "SPECIES_SHELLOS_EAST" },
+                    { "low": 17, "high": 21, "species": "SPECIES_SHELLOS_EAST" },
+                    { "low": 17, "high": 22, "species": "SPECIES_GOOMY" },
+                    { "low": 17, "high": 22, "species": "SPECIES_CASTFORM" },
+                    { "low": 18, "high": 22, "species": "SPECIES_SLOWPOKE" },
+                    { "low": 17, "high": 23, "species": "SPECIES_SLOWPOKE" },
+                    { "low": 20, "high": 24, "species": "SPECIES_SLIGGOO" },
+                    { "low": 20, "high": 24, "species": "SPECIES_GASTRODON_EAST" },
+                    { "low": 18, "high": 22, "species": "SPECIES_SLIGGOO" }, 
+                    { "low": 21, "high": 24, "species": "SPECIES_GASTRODON_EAST" }
+                ]
+            },
+            "rocks": {
+                "rate": 50,
+                "pokemon": [
+                    { "low": 15, "high": 25, "species": "SPECIES_SHUCKLE" },
+                    { "low": 17, "high": 24, "species": "SPECIES_ROGGENROLA" },
+                    { "low": 17, "high": 23, "species": "SPECIES_SHUCKLE" },
+                    { "low": 25, "high": 26, "species": "SPECIES_BOLDORE" },
+                    { "low": 25, "high": 27, "species": "SPECIES_BOLDORE" }
+                ]
+            },
+            "surfing": {
+                "rate": 1,
+                "pokemon": [
+                    { "low": 28, "high": 31, "species": "SPECIES_WINGULL" },
+                    { "low": 27, "high": 33, "species": "SPECIES_BINACLE" },
+                    { "low": 27, "high": 31, "species": "SPECIES_SHELLDER" },
+                    { "low": 28, "high": 31, "species": "SPECIES_SHELLDER" },
+                    { "low": 29, "high": 33, "species": "SPECIES_SHELLDER" }
+                ]
+            },
+            "fishing": {
+                "rate": 20,
+                "pokemon": [
+                    { "low": 5, "high": 20, "species": "SPECIES_MAGIKARP" },
+                    { "low": 5, "high": 20, "species": "SPECIES_CHINCHOU" },
+                    { "low": 18, "high": 23, "species": "SPECIES_HORSEA" },
+                    { "low": 18, "high": 24, "species": "SPECIES_SHELLDER" },
+                    { "low": 19, "high": 24, "species": "SPECIES_BINACLE" },
+                    { "low": 34, "high": 37, "species": "SPECIES_LANTURN" },
+                    { "low": 33, "high": 36, "species": "SPECIES_SEADRA" },
+                    { "low": 34, "high": 38, "species": "SPECIES_BARBARACLE" },
+                    { "low": 32, "high": 37, "species": "SPECIES_SEADRA" },
+                    { "low": 34, "high": 38, "species": "SPECIES_BARBARACLE" }
+                ]
+            }
+        },
+        {
+            "mapgroup": 3,
             "mapnum": 29,
             "grass": {
                 "rate": 21,

@@ -152,6 +152,11 @@ ItemScript_Common_NeverMeltIce:
     finditem ITEM_NEVER_MELT_ICE 0x1
     end
 
+.global ItemScript_Common_PoisonBarb
+ItemScript_Common_PoisonBarb:
+    finditem ITEM_POISON_BARB 0x1
+    end
+
 .global ItemScript_Common_QuickClaw
 ItemScript_Common_QuickClaw:
     finditem ITEM_QUICK_CLAW 0x1
@@ -247,6 +252,11 @@ ItemScript_Common_ElectricSeed:
     finditem ITEM_ELECTRIC_SEED 0x1
     end
 
+.global ItemScript_Common_MistySeed
+ItemScript_Common_MistySeed:
+    finditem ITEM_MISTY_SEED 0x1
+    end
+
 .global ItemScript_Common_TerrainExtender
 ItemScript_Common_TerrainExtender:
     finditem ITEM_TERRAIN_EXTENDER 0x1
@@ -255,4 +265,14 @@ ItemScript_Common_TerrainExtender:
 .global ItemScript_Common_HeavyDutyBoots
 ItemScript_Common_HeavyDutyBoots:
     finditem ITEM_HEAVY_DUTY_BOOTS 0x1
+    end
+
+.global ItemScript_Common_ShellBell
+ItemScript_Common_ShellBell:
+    finditem ITEM_SHELL_BELL 0x1
+    end
+
+.global ItemScript_Common_KingsRock
+ItemScript_Common_KingsRock:
+    finditem ITEM_KINGS_ROCK 0x1
     end

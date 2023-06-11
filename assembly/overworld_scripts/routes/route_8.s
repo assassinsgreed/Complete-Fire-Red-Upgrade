@@ -19,16 +19,20 @@ MapEntryScript_Route8_SetWeather:
 
 .global TileScript_Route8_ClearWeather
 TileScript_Route8_ClearWeather:
+    setvar 0x400F 0x0 @ Enable weather setting again
     call SetWeatherClear
     End
 
 .global TileScript_Route8_SetWeather
 TileScript_Route8_SetWeather:
+    compare 0x400F 0x1
+    if equal _goto End
+    setvar 0x400F 0x1 @ Prevent future weather until var is cleared
     call SetWeatherFog
     random 0x64 @ Between 0 and 100
     compare LASTRESULT 0xF @ "15"
     if lessorequal _goto SetWeatherMistyAndEnd
-    compare LASTRESULT 0x32 @ "50"
+    compare LASTRESULT 0x2D @ "45"
     if greaterorequal _goto SetWeatherRainyAndEnd
     goto TileScript_Route8_ClearWeather
 
@@ -99,4 +103,94 @@ EventScript_Route8_FindTM48Round:
 EventScript_Route8_FindTM34SludgeWave:
     setvar CHOSEN_ITEM ITEM_TM34
     call ItemScript_Common_FindTM
+    end
+
+.global EventScript_Route8_CamperCasey
+EventScript_Route8_CamperCasey:
+    trainerbattle0 0x0 0x6A 0x0 gText_Route8_CamperCasey_Intro gText_Route8_CamperCasey_Defeat
+    msgbox gText_Route8_CamperCasey_Chat MSG_NORMAL
+    end
+
+.global EventScript_Route8_NinjaBoyZeke
+EventScript_Route8_NinjaBoyZeke:
+    trainerbattle0 0x0 0x6B 0x0 gText_Route8_NinjaBoyZeke_Intro gText_Route8_NinjaBoyZeke_Defeat
+    msgbox gText_Route8_NinjaBoyZeke_Chat MSG_NORMAL
+    end
+
+.global EventScript_Route8_SuperNerdSaul
+EventScript_Route8_SuperNerdSaul:
+    trainerbattle0 0x0 0x6C 0x0 gText_Route8_SuperNerdSaul_Intro gText_Route8_SuperNerdSaul_Defeat
+    msgbox gText_Route8_SuperNerdSaul_Chat MSG_NORMAL
+    end
+
+.global EventScript_Route8_RockerParker
+EventScript_Route8_RockerParker:
+    trainerbattle0 0x0 0x6D 0x0 gText_Route8_RockerParker_Intro gText_Route8_RockerParker_Defeat
+    msgbox gText_Route8_RockerParker_Chat MSG_NORMAL
+    end
+
+.global EventScript_Route8_ParasolLadyAnnabelle
+EventScript_Route8_ParasolLadyAnnabelle:
+    trainerbattle0 0x0 0x6E 0x0 gText_Route8_ParasolLadyAnnabelle_Intro gText_Route8_ParasolLadyAnnabelle_Defeat
+    msgbox gText_Route8_ParasolLadyAnnabelle_Chat MSG_NORMAL
+    end
+
+.global EventScript_Route8_ChannelerMorgan
+EventScript_Route8_ChannelerMorgan:
+    trainerbattle0 0x0 0x6F 0x0 gText_Route8_ChannelerMorgan_Intro gText_Route8_ChannelerMorgan_Defeat
+    msgbox gText_Route8_ChannelerMorgan_Chat MSG_NORMAL
+    end
+
+.global EventScript_Route8_BugCatcherArnold
+EventScript_Route8_BugCatcherArnold:
+    trainerbattle0 0x0 0x70 0x0 gText_Route8_BugCatcherArnold_Intro gText_Route8_BugCatcherArnold_Defeat
+    msgbox gText_Route8_BugCatcherArnold_Chat MSG_NORMAL
+    end
+
+.global EventScript_Route8_LassLilian
+EventScript_Route8_LassLilian:
+    trainerbattle0 0x0 0x71 0x0 gText_Route8_LassLilian_Intro gText_Route8_LassLilian_Defeat
+    msgbox gText_Route8_LassLilian_Chat MSG_NORMAL
+    end
+
+.global EventScript_Route8_NinjaBoyNatto
+EventScript_Route8_NinjaBoyNatto:
+    trainerbattle0 0x0 0x72 0x0 gText_Route8_NinjaBoyNatto_Intro gText_Route8_NinjaBoyNatto_Defeat
+    msgbox gText_Route8_NinjaBoyNatto_Chat MSG_NORMAL
+    end
+
+.global EventScript_Route8_TuberMicah
+EventScript_Route8_TuberMicah:
+    trainerbattle0 0x0 0x73 0x0 gText_Route8_TuberMicah_Intro gText_Route8_TuberMicah_Defeat
+    msgbox gText_Route8_TuberMicah_Chat MSG_NORMAL
+    end
+
+.global EventScript_Route8_TuberNancy
+EventScript_Route8_TuberNancy:
+    trainerbattle0 0x0 0x74 0x0 gText_Route8_TuberNancy_Intro gText_Route8_TuberNancy_Defeat
+    msgbox gText_Route8_TuberNancy_Chat MSG_NORMAL
+    end
+
+.global EventScript_Route8_SwimmerMaya
+EventScript_Route8_SwimmerMaya:
+    trainerbattle0 0x0 0x75 0x0 gText_Route8_SwimmerMaya_Intro gText_Route8_SwimmerMaya_Defeat
+    msgbox gText_Route8_SwimmerMaya_Chat MSG_NORMAL
+    end
+
+.global EventScript_Route8_SwimmerHuey
+EventScript_Route8_SwimmerHuey:
+    trainerbattle0 0x0 0x76 0x0 gText_Route8_SwimmerHuey_Intro gText_Route8_SwimmerHuey_Defeat
+    msgbox gText_Route8_SwimmerHuey_Chat MSG_NORMAL
+    end
+
+.global EventScript_Route8_SwimmerBob
+EventScript_Route8_SwimmerBob:
+    trainerbattle0 0x0 0x77 0x0 gText_Route8_SwimmerBob_Intro gText_Route8_SwimmerBob_Defeat
+    msgbox gText_Route8_SwimmerBob_Chat MSG_NORMAL
+    end
+
+.global EventScript_Route8_CoolTrainerHarriet
+EventScript_Route8_CoolTrainerHarriet:
+    trainerbattle0 0x0 0x78 0x0 gText_Route8_CoolTrainerHarriet_Intro gText_Route8_CoolTrainerHarriet_Defeat
+    msgbox gText_Route8_CoolTrainerHarriet_Chat MSG_NORMAL
     end
