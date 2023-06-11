@@ -1066,7 +1066,7 @@
 #define HIDDEN_ITEM_ROUTE8_ETHER                                       37
 #define HIDDEN_ITEM_ROUTE8_STAR_PIECE                                  38
 #define HIDDEN_ITEM_ROUTE8_ENERGY_ROOT                                 39
-#define HIDDEN_ITEM_UNUSED_0x28                                        40
+#define HIDDEN_ITEM_ROUTE8_EVERSTONE                                   40
 #define HIDDEN_ITEM_ROUTE11_ESCAPE_ROPE                                41
 #define HIDDEN_ITEM_ROUTE12_HYPER_POTION                               42
 #define HIDDEN_ITEM_UNUSED_0x2B                                        43
