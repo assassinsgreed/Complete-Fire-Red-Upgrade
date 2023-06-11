@@ -38,11 +38,11 @@ TileScript_Route8_SetWeather:
 
 SetWeatherMistyAndEnd:
     call SetWeatherFog
-    goto End
+    end
 
 SetWeatherRainyAndEnd:
     call SetWeatherRain
-    goto End
+    end
 
 .global SignScript_Route8_FishermanCommittee
 SignScript_Route8_FishermanCommittee:
