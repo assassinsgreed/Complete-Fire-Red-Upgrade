@@ -600,9 +600,9 @@
 #define FLAG_GOT_QUICK_TIMER_BALL_GIFT_IN_HELEO_CITY     0x247
 #define FLAG_DID_COSMO_TRADE                             0x248
 #define FLAG_GOT_AIR_BALLOON_IN_HELEO_CITY               0x249
-#define FLAG_DID_ZYNX_TRADE                              0x24A
-#define FLAG_DID_MS_NIDO_TRADE                           0x24B
-#define FLAG_0x24C                                       0x24C
+#define FLAG_GOT_OLD_ROD                                 0x24A
+#define FLAG_GOT_GOOD_ROD                                0x24B
+#define FLAG_GOT_SUPER_ROD                               0x24C
 #define FLAG_DID_CH_DING_TRADE                           0x24D
 #define FLAG_GOT_SOOTHE_BELL_GIFT                        0x24E
 #define FLAG_GOT_BIKE                                    0x24F

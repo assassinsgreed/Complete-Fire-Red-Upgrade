@@ -7,10 +7,10 @@
 
 .global EventScript_RhodanziNPCHouses_Fisherman
 EventScript_RhodanziNPCHouses_Fisherman:
-    checkflag 0x240 @ Has Old Rod?
-    if SET _goto EventScript_RhodanziNPCHouses_FishermanFarewell
     lock
     faceplayer
+    checkflag 0x24A @ Has Old Rod?
+    if SET _goto EventScript_RhodanziNPCHouses_FishermanFarewell
     msgbox gText_RhodanziNPCHouses_FishermanIntro MSG_YESNO
     compare LASTRESULT YES
     IF TRUE _goto EventScript_RhodanziNPCHouses_FishermanYes
@@ -21,7 +21,7 @@ EventScript_RhodanziNPCHouses_Fisherman:
 EventScript_RhodanziNPCHouses_FishermanYes:
     msgbox gText_RhodanziNPCHouses_FishermanYes MSG_NORMAL
     obtainitem ITEM_OLD_ROD 0x1
-    setflag 0x240 @ Has Old Rod?
+    setflag 0x24A @ Has Old Rod?
     msgbox gText_RhodanziNPCHouses_FishermanTip MSG_NORMAL
     goto EventScript_RhodanziNPCHouses_FishermanFarewell
 

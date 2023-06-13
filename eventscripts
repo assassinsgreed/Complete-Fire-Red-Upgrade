@@ -729,3 +729,6 @@ tile 3 26 2 TileScript_Route8_ClearWeather
 tile 3 26 3 TileScript_Route8_SetWeather
 tile 3 26 4 TileScript_Route8_SetWeather
 tile 3 26 5 TileScript_Route8_SetWeather
+
+## Fisherman's Hut & Rival Event
+npc 25 0 0 EventScript_Route8_FishermansHut_Fisherman

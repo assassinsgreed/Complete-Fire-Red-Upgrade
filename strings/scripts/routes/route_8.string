@@ -141,3 +141,18 @@ Mmm! Strong indeed!
 
 #org @gText_Route8_CoolTrainerHarriet_Chat
 I like waiting in isolated places.\pSomething about them just draws\npowerful Pok\emon trainers to them.
+
+#org @gText_Route8_FishermansHut_FishermanIntro
+Ah, a young trainer! Tell me the\ntruth[.]\pDo you get a thrill out of hooking a\nhuge fish on your line?
+
+#org @gText_Route8_FishermansHut_FishermanYes
+Grand! You and I are the same,\nthen.\pHere, young friend, a gift from me to\nyou.
+
+#org @gText_Route8_FishermansHut_FishermanGift
+That right there is a Good Rod! Use\nit to reel in even better fish than\lthe Old Rod.
+
+#org @gText_Route8_FishermansHut_FishermanFarewell
+My young friend, I hope you go out\nthere and catch the biggest fish\lpossible.
+
+#org @gText_Route8_FishermansHut_FishermanNo
+That is heartbreaking, but I'm not\ngoing to try and convince you\lotherwise.
