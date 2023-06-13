@@ -194,3 +194,28 @@ EventScript_Route8_CoolTrainerHarriet:
     trainerbattle0 0x0 0x78 0x0 gText_Route8_CoolTrainerHarriet_Intro gText_Route8_CoolTrainerHarriet_Defeat
     msgbox gText_Route8_CoolTrainerHarriet_Chat MSG_NORMAL
     end
+
+.global EventScript_Route8_FishermansHut_Fisherman
+EventScript_Route8_FishermansHut_Fisherman:
+    lock
+    faceplayer
+    checkflag 0x24B @ Got Good Rod
+    if SET _goto FishermanFarewell
+    msgbox gText_Route8_FishermansHut_FishermanIntro MSG_YESNO
+    compare LASTRESULT YES
+    IF TRUE _goto FishermanYes
+    msgbox gText_Route8_FishermansHut_FishermanNo MSG_NORMAL
+    release
+    end
+
+FishermanYes:
+    msgbox gText_Route8_FishermansHut_FishermanYes MSG_NORMAL
+    obtainitem ITEM_GOOD_ROD 0x1
+    setflag 0x24B @ Got Good Rod
+    msgbox gText_Route8_FishermansHut_FishermanGift MSG_NORMAL
+    goto FishermanFarewell
+
+FishermanFarewell:
+    msgbox gText_Route8_FishermansHut_FishermanFarewell MSG_NORMAL
+    release
+    end
