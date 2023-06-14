@@ -700,32 +700,32 @@ const struct TrainerMonNoItemDefaultMoves sParty_Route6_Nurse_Leanne[] = {
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_Route6_SuperNerd_Dante[] = {
-    { .lvl = 26, .species = SPECIES_DEWOTT },
-    { .lvl = 26, .species = SPECIES_MAWILE },
-    { .lvl = 26, .species = SPECIES_FARFETCHD }
+    { .lvl = 28, .species = SPECIES_DEWOTT },
+    { .lvl = 28, .species = SPECIES_MAWILE },
+    { .lvl = 28, .species = SPECIES_FARFETCHD }
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_Route6_BugCatcher_Billie[] = {
-    { .lvl = 28, .species = SPECIES_WHIRLIPEDE },
-    { .lvl = 28, .species = SPECIES_VESPIQUEN }
+    { .lvl = 30, .species = SPECIES_WHIRLIPEDE },
+    { .lvl = 30, .species = SPECIES_VESPIQUEN }
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_Route6_Gentleman_Lincoln[] = {
-    { .lvl = 26, .species = SPECIES_LYCANROC_N },
-    { .lvl = 27, .species = SPECIES_HERDIER },
-    { .lvl = 27, .species = SPECIES_QUILAVA }
+    { .lvl = 28, .species = SPECIES_LYCANROC_N },
+    { .lvl = 29, .species = SPECIES_HERDIER },
+    { .lvl = 29, .species = SPECIES_QUILAVA }
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_Route6_BlackBelt_Raphael[] = {
-    { .lvl = 28, .species = SPECIES_PIGNITE },
-    { .lvl = 29, .species = SPECIES_GURDURR }
+    { .lvl = 30, .species = SPECIES_PIGNITE },
+    { .lvl = 31, .species = SPECIES_GURDURR }
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_Route6_Lass_Anna[] = {
-    { .lvl = 27, .species = SPECIES_RIOLU },
-    { .lvl = 27, .species = SPECIES_TOGETIC },
-    { .lvl = 27, .species = SPECIES_COTTONEE },
-    { .lvl = 28, .species = SPECIES_RIBOMBEE }
+    { .lvl = 29, .species = SPECIES_RIOLU },
+    { .lvl = 29, .species = SPECIES_TOGETIC },
+    { .lvl = 29, .species = SPECIES_COTTONEE },
+    { .lvl = 30, .species = SPECIES_RIBOMBEE }
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_Route6_Swimmer_Danika[] = {
@@ -735,10 +735,10 @@ const struct TrainerMonNoItemDefaultMoves sParty_Route6_Swimmer_Danika[] = {
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_Route6_SrAndJr_SueAndKat[] = {
-    { .lvl = 27, .species = SPECIES_EEVEE },
-    { .lvl = 28, .species = SPECIES_BRELOOM },
-    { .lvl = 27, .species = SPECIES_MISDREAVUS },
-    { .lvl = 28, .species = SPECIES_LOPUNNY }
+    { .lvl = 29, .species = SPECIES_EEVEE },
+    { .lvl = 30, .species = SPECIES_BRELOOM },
+    { .lvl = 29, .species = SPECIES_MISDREAVUS },
+    { .lvl = 30, .species = SPECIES_LOPUNNY }
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_Route6_HikerDarryl[] = {
@@ -922,67 +922,67 @@ const struct TrainerMonItemCustomMoves sParty_HeleoCityGym_LeaderRaine[] = {
 
 // #region Route 8
 const struct TrainerMonNoItemDefaultMoves sParty_Route8_CamperCasey[] = {
-    { .lvl = 23, .species = SPECIES_EMOLGA },
-    { .lvl = 23, .species = SPECIES_BIBAREL }
+    { .lvl = 25, .species = SPECIES_EMOLGA },
+    { .lvl = 25, .species = SPECIES_BIBAREL }
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_Route8_NinjaBoyZeke[] = {
-    { .lvl = 21, .species = SPECIES_NINCADA },
-    { .lvl = 22, .species = SPECIES_NINJASK },
-    { .lvl = 23, .species = SPECIES_SHEDINJA }
+    { .lvl = 23, .species = SPECIES_NINCADA },
+    { .lvl = 24, .species = SPECIES_NINJASK },
+    { .lvl = 25, .species = SPECIES_SHEDINJA }
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_Route8_SuperNerdSaul[] = {
-    { .lvl = 22, .species = SPECIES_DRILBUR },
-    { .lvl = 22, .species = SPECIES_MINIOR_INDIGO },
-    { .lvl = 23, .species = SPECIES_CRABRAWLER }
+    { .lvl = 24, .species = SPECIES_DRILBUR },
+    { .lvl = 24, .species = SPECIES_MINIOR_INDIGO },
+    { .lvl = 25, .species = SPECIES_CRABRAWLER }
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_Route8_RockerParker[] = {
-    { .lvl = 23, .species = SPECIES_CASTFORM },
-    { .lvl = 24, .species = SPECIES_KLINK }
+    { .lvl = 25, .species = SPECIES_CASTFORM },
+    { .lvl = 26, .species = SPECIES_KLINK }
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_Route8_ParasolLadyAnnabelle[] = {
-    { .lvl = 26, .species = SPECIES_KIRLIA }
+    { .lvl = 28, .species = SPECIES_KIRLIA }
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_Route8_ChannelerMorgan[] = {
-    { .lvl = 23, .species = SPECIES_DUSKULL },
-    { .lvl = 23, .species = SPECIES_YAMASK },
-    { .lvl = 24, .species = SPECIES_YAMASK_G }
+    { .lvl = 25, .species = SPECIES_DUSKULL },
+    { .lvl = 25, .species = SPECIES_YAMASK },
+    { .lvl = 26, .species = SPECIES_YAMASK_G }
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_Route8_BugCatcherArnold[] = {
-    { .lvl = 22, .species = SPECIES_SNOM },
-    { .lvl = 24, .species = SPECIES_LARVESTA },
-    { .lvl = 24, .species = SPECIES_CHARJABUG }
+    { .lvl = 24, .species = SPECIES_SNOM },
+    { .lvl = 26, .species = SPECIES_LARVESTA },
+    { .lvl = 26, .species = SPECIES_CHARJABUG }
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_Route8_LassLilian[] = {
-    { .lvl = 24, .species = SPECIES_COTTONEE },
-    { .lvl = 25, .species = SPECIES_BAYLEEF }
+    { .lvl = 26, .species = SPECIES_COTTONEE },
+    { .lvl = 27, .species = SPECIES_BAYLEEF }
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_Route8_NinjaBoyNatto[] = {
-    { .lvl = 22, .species = SPECIES_STUNFISK_G },
-    { .lvl = 23, .species = SPECIES_SNEASEL }
+    { .lvl = 24, .species = SPECIES_STUNFISK_G },
+    { .lvl = 25, .species = SPECIES_SNEASEL }
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_Route8_TuberMicah[] = {
-    { .lvl = 23, .species = SPECIES_PICHU },
-    { .lvl = 23, .species = SPECIES_EEVEE }
+    { .lvl = 25, .species = SPECIES_PICHU },
+    { .lvl = 25, .species = SPECIES_EEVEE }
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_Route8_TuberNancy[] = {
-    { .lvl = 23, .species = SPECIES_SANDYGAST },
-    { .lvl = 23, .species = SPECIES_COMBEE }
+    { .lvl = 25, .species = SPECIES_SANDYGAST },
+    { .lvl = 25, .species = SPECIES_COMBEE }
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_Route8_SwimmerMaya[] = {
-    { .lvl = 24, .species = SPECIES_SHELLDER },
-    { .lvl = 24, .species = SPECIES_HORSEA },
-    { .lvl = 24, .species = SPECIES_HORSEA }
+    { .lvl = 26, .species = SPECIES_SHELLDER },
+    { .lvl = 26, .species = SPECIES_HORSEA },
+    { .lvl = 26, .species = SPECIES_HORSEA }
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_Route8_SwimmerHuey[] = {
