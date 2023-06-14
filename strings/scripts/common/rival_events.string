@@ -1,5 +1,5 @@
 #org @gText_RivalEvent1_RequestPokeballs
-Oh, [PLAYER], perfect timing! I found\na rare Pok\emon but I'm having a\lhard time catching it.\pCan I have 5 Pok\eballs? I'll make it\nworth your while! Please?
+Oh, [PLAYER], perfect timing! I found\na rare Pok\emon but I'm having a\lhard time catching it.\pCan I have 5 Pok\e Balls? I'll make it\nworth your while! Please?
 
 #org @gText_RivalEvent1_Declined
 Aww, that's too bad, but I get it!\nIf you change your mind, I'll be\lhere for a while longer.
@@ -54,3 +54,15 @@ Alright, let's swap!
 
 #org @gText_RivalEvent3_EggTradeConcluded
 [BLUE]This was really fun, [PLAYER]! I\ncan't wait to see what your egg\lhatches into.
+
+#org @gText_RivalEvent4_FishingRecordChallenge
+Hey, [PLAYER]! Fancy running into you\nhere.\pI was just taking a break with some\nfishing. I don't mean to brag, but\lI'm pretty good at it!\pMy record is reeling in 10 Pok\emon in\na single day! Think you can beat\lthat?
+
+#org @gText_RivalEvent4_NotEnoughFishCaught
+Hmm[.] Looks like you only caught\n[BUFFER1] Pok\emon today.\pYou haven't beaten my record, but I\nthink you can do it.\pRemember, you don't have to catch\nthe Pok\emon in a Pok\e Ball for it\lto count. You just have to get it\lon the line.\pI'll be hanging around for a while,\nin case you want to try again.
+
+#org @gText_RivalEvent4_EnoughFishCaught
+Wow, you've caught [BUFFER1] Pok\emon\ntoday, [PLAYER]! Incredible!\pWell, you beat me fair and square,\nso I think it's only fair that I\lgive you these.
+
+#org @gText_RivalEvent4_ChallengeOvercome
+That was fun, [PLAYER]! We should\nhave a fishing competition again\lsometime.\pI won't lose next time, though! Haha!
