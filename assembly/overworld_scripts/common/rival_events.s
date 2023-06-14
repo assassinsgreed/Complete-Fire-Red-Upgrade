@@ -145,3 +145,34 @@ RivalEvent3_TradeConcluded:
     applymovement 0x4 m_Joy
     msgbox gText_RivalEvent3_EggTradeConcluded MSG_NORMAL
     goto End
+
+.global EventScript_RivalEvent4
+EventScript_RivalEvent4:
+    lock
+    faceplayer
+    checkflag 0x2C3
+    IF SET _goto RivalEvent4_CongratulatePlayer
+    msgbox gText_RivalEvent4_FishingRecordChallenge MSG_NORMAL
+    setvar 0x8004 0xC @ Number of fish caught
+    callasm StoreGameStat
+    buffernumber 0x0 LASTRESULT
+    compare LASTRESULT 0xA @ 10
+    if lessthan _goto RivalEvent4_NotEnoughFishCaught
+    msgbox gText_RivalEvent4_EnoughFishCaught MSG_NORMAL
+    obtainitem ITEM_NET_BALL 0x5
+    setflag 0x2C3
+    goto RivalEvent4_CongratulatePlayer
+
+RivalEvent4_NotEnoughFishCaught:
+    msgbox gText_RivalEvent4_NotEnoughFishCaught MSG_NORMAL
+    goto RivalEvent4_ResetPosition
+
+RivalEvent4_CongratulatePlayer:
+    msgbox gText_RivalEvent4_ChallengeOvercome MSG_NORMAL
+    goto RivalEvent4_ResetPosition
+
+RivalEvent4_ResetPosition:
+    applymovement 0x29 m_LookLeft
+    waitmovement ALLEVENTS
+    release
+    end

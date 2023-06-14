@@ -720,6 +720,7 @@ npc 3 26 36 EventScript_Route8_SwimmerMaya
 npc 3 26 37 EventScript_Route8_SwimmerHuey
 npc 3 26 38 EventScript_Route8_SwimmerBob
 npc 3 26 39 EventScript_Route8_CoolTrainerHarriet
+npc 3 26 40 EventScript_RivalEvent4
 sign 3 26 0 SignScript_Route8_FishermanCommittee
 sign 3 26 1 SignScript_Route8_TrainerTips_FoggyWeather
 sign 3 26 2 SignScript_Route8_TrainerTips_LongGrass
