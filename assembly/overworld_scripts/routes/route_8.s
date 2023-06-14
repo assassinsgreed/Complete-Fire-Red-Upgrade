@@ -77,7 +77,7 @@ SandygastEncounter:
     cry SPECIES_SANDYGAST 0x0
     applymovement PLAYER m_Surprise
     msgbox gText_Route1_SandygastEncounter MSG_KEEPOPEN
-    wildbattle SPECIES_SANDYGAST 0x14 0x0 @ Level 20
+    wildbattle SPECIES_SANDYGAST 0x19 0x0 @ Level 25
     hidesprite LASTTALKED
     release
     return
