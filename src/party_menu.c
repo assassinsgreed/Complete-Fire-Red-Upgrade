@@ -2776,16 +2776,22 @@ static void Task_HandleNicknameChangeYesNoInput(u8 taskId)
 
 void NicknameMon()
 {
-	SetMonData(&gPlayerParty[gPartyMenu.slotId], MON_DATA_NICKNAME, gStringVar3);
-	InitPartyMenu(PARTY_MENU_TYPE_FIELD, PARTY_LAYOUT_SINGLE, PARTY_ACTION_CHOOSE_MON, TRUE, 0, Task_NicknameChangedMsg, CB2_ReturnToFieldContinueScriptPlayMapMusic);
+	if (gStringVar3[0] != '\0')
+	{
+		SetMonData(&gPlayerParty[gPartyMenu.slotId], MON_DATA_NICKNAME, gStringVar3);
+	}
+	InitPartyMenu(PARTY_MENU_TYPE_FIELD, PARTY_LAYOUT_SINGLE, PARTY_ACTION_CHOOSE_MON, TRUE, PARTY_MSG_NONE, Task_NicknameChangedMsg, gPartyMenu.exitCallback);
 }
 
 static void Task_NicknameChangedMsg(u8 taskId)
 {
-	GetMonData(&gPlayerParty[gPartyMenu.slotId], MON_DATA_NICKNAME, gStringVar1);
-	StringExpandPlaceholders(gStringVar4, gText_NicknameChanged);
-	DisplayPartyMenuMessage(gStringVar4, TRUE);
-	ScheduleBgCopyTilemapToVram(2);
+	if (gStringVar3[0] != '\0')
+	{
+		GetMonData(&gPlayerParty[gPartyMenu.slotId], MON_DATA_NICKNAME, gStringVar1);
+		StringExpandPlaceholders(gStringVar4, gText_NicknameChanged);
+		DisplayPartyMenuMessage(gStringVar4, TRUE);
+		ScheduleBgCopyTilemapToVram(2);
+	}
 	gTasks[taskId].func = Task_ReturnToChooseMonAfterText;
 }
 
@@ -2793,10 +2799,10 @@ static void Task_ChangeNickname(u8 taskId)
 {
 	void* src =  &gPlayerParty[gPartyMenu.slotId];
 
-	u16 species = GetMonData(src, MON_DATA_SPECIES, 0);
+	u16 species = GetMonData(src, MON_DATA_SPECIES, NULL);
 	u8 gender = GetMonGender(src);
-	u16 PID = GetMonData(src, MON_DATA_PERSONALITY, 0);
-	DoNamingScreen(3, gStringVar3, species, gender, PID, (void*) NicknameMon);
+	u16 PID = GetMonData(src, MON_DATA_PERSONALITY, NULL);
+	DoNamingScreen(NAMING_SCREEN_NAME_RATER, gStringVar3, species, gender, PID, (void*) NicknameMon);
 	DestroyTask(taskId);
 }
 
