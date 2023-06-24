@@ -64,8 +64,8 @@ Which status effect would you like\nto learn about?
 #org @gText_BurnDetails
 Burned Pok\emon will take damage\neach turn. Their attack stat will\lalso be halved.
 
-#org @gText_FreezeDetails
-Frozen Pok\emon can't act until\nthey've thawed out. Fire moves will\lmake them thaw out right away.
+#org @gText_FrostbiteDetails
+Frostbitten Pok\emon will take damage\neach turn. Their special attack\lstat will also be cut in half.\pUsing certain fire type moves will\ncure the Pok\emon's frostbite\lthough!
 
 #org @gText_ParalysisDetails
 Paralyzed Pok\emon have a fifty\npercent chance of being unable to\lmove. Their speed is also reduced\lto half.
