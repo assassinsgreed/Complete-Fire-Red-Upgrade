@@ -30,7 +30,7 @@
 #define MAP_HELEO_RANCH_EXTERIOR                 (6 | (1 << 8))
 #define MAP_HELEO_RANCH_INTERIOR                 (7 | (1 << 8))
 #define MAP_SSANNE_B1F_CORRIDOR                  (8 | (1 << 8))
-#define MAP_SSANNE_DECK                          (9 | (1 << 8))
+#define MAP_FORGOTTEN_MANSE_EXTERIOR             (9 | (1 << 8))
 #define MAP_SSANNE_KITCHEN                       (10 | (1 << 8))
 #define MAP_SSANNE_CAPTAINS_OFFICE               (11 | (1 << 8))
 #define MAP_SSANNE_1F_ROOM1                      (12 | (1 << 8))
