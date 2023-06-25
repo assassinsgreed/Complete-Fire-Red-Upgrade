@@ -336,7 +336,7 @@ enum //These vars need to be one after the other (hence the enum)
 #define TAKE_WILD_MON_ITEM_ON_CAPTURE //Items held by Wild Pokemon when caught can be placed in the bag at the player's request
 //#define PAYDAY_MONEY_CAP //Pay Day and G-Max Gold Rush should cap at $99999 per battle
 //#define QUICK_CLAW_PROCING_ALWAYS_ALLOWS_FLEEING //Fleeing from wild battles will never fail the turn a Quick Claw activates
-//#define FROSTBITE //Replaces the Freeze status condition with the Frostbite status condition from PLA
+#define FROSTBITE //Replaces the Freeze status condition with the Frostbite status condition from PLA
 
 /* DexNav Options */
 //See "include/new/dexnav_config.h"

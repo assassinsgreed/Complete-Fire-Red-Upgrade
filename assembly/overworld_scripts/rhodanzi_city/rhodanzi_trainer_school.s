@@ -202,7 +202,7 @@ EventScript_RhodanziTrainerSchool_BasicCourse_StatusStudent:
 EventScript_RhodanziTrainerSchool_BasicCourse_StatusStudent_Question:
     msgbox gText_RhodanziTrainerSchool_BasicCourse_StatusStudent_Question MSG_KEEPOPEN
     multichoiceoption gText_Burn 0
-    multichoiceoption gText_Freeze 1
+    multichoiceoption gText_Frostbite 1
     multichoiceoption gText_Paralysis 2
     multichoiceoption gText_Poison 3
     multichoiceoption gText_Sleep 4
@@ -211,7 +211,7 @@ EventScript_RhodanziTrainerSchool_BasicCourse_StatusStudent_Question:
     copyvar MULTICHOICE_SELECTION LASTRESULT
     switch LASTRESULT
     case 0, EventScript_RhodanziTrainerSchool_BasicCourse_StatusStudent_Burn
-    case 1, EventScript_RhodanziTrainerSchool_BasicCourse_StatusStudent_Freeze
+    case 1, EventScript_RhodanziTrainerSchool_BasicCourse_StatusStudent_Frostbite
     case 2, EventScript_RhodanziTrainerSchool_BasicCourse_StatusStudent_Paralysis
     case 3, EventScript_RhodanziTrainerSchool_BasicCourse_StatusStudent_Poison
     case 4, EventScript_RhodanziTrainerSchool_BasicCourse_StatusStudent_Sleep
@@ -222,8 +222,8 @@ EventScript_RhodanziTrainerSchool_BasicCourse_StatusStudent_Burn:
     msgbox gText_BurnDetails MSG_NORMAL
     goto EventScript_RhodanziTrainerSchool_BasicCourse_StatusStudent_Question
 
-EventScript_RhodanziTrainerSchool_BasicCourse_StatusStudent_Freeze:
-    msgbox gText_FreezeDetails MSG_NORMAL
+EventScript_RhodanziTrainerSchool_BasicCourse_StatusStudent_Frostbite:
+    msgbox gText_FrostbiteDetails MSG_NORMAL
     goto EventScript_RhodanziTrainerSchool_BasicCourse_StatusStudent_Question
 
 EventScript_RhodanziTrainerSchool_BasicCourse_StatusStudent_Paralysis:
