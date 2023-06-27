@@ -220,7 +220,7 @@
             "mapgroup": 1,
             "mapnum": 8,
             "grass": {
-                "rate": 21,
+                "rate": 10,
                 "pokemon": [
                     { "low": 19, "high": 23, "species": "SPECIES_NOIBAT" },
                     { "low": 18, "high": 22, "species": "SPECIES_DRILBUR" },
@@ -266,9 +266,9 @@
                     { "low": 19, "high": 24, "species": "SPECIES_RATTATA_A" },
                     { "low": 20, "high": 24, "species": "SPECIES_YAMASK" },
                     { "low": 20, "high": 24, "species": "SPECIES_PHANTUMP" },
-                    { "low": 20, "high": 24, "species": "SPECIES_RATTATA_A" },
+                    { "low": 20, "high": 24, "species": "SPECIES_RATICATE_A" },
                     { "low": 20, "high": 23, "species": "SPECIES_SHEDINJA" },
-                    { "low": 20, "high": 25, "species": "SPECIES_RATTATA_A" }, 
+                    { "low": 20, "high": 25, "species": "SPECIES_RATICATE_A" }, 
                     { "low": 20, "high": 24, "species": "SPECIES_SHEDINJA" }
                 ]
             }
@@ -286,7 +286,7 @@
                     { "low": 21, "high": 26, "species": "SPECIES_MISDREAVUS" },
                     { "low": 22, "high": 26, "species": "SPECIES_MIMIKYU" },
                     { "low": 22, "high": 25, "species": "SPECIES_ROTOM" },
-                    { "low": 21, "high": 24, "species": "SPECIES_RATTATA_A" },
+                    { "low": 21, "high": 24, "species": "SPECIES_RATICATE_A" },
                     { "low": 21, "high": 25, "species": "SPECIES_YAMASK" },
                     { "low": 22, "high": 26, "species": "SPECIES_SABLEYE" },
                     { "low": 23, "high": 25, "species": "SPECIES_YAMASK" }, 

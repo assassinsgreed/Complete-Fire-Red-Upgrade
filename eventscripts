@@ -733,3 +733,7 @@ tile 3 26 5 TileScript_Route8_SetWeather
 
 ## Fisherman's Hut & Rival Event
 npc 25 3 0 EventScript_Route8_FishermansHut_Fisherman
+
+# Forgotten Manse
+map 1 9 MapScript_ForgottenManse_Exterior
+map 1 12 MapScript_ForgottenManse_Basement
