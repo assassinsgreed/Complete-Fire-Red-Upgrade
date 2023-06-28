@@ -1004,6 +1004,25 @@ const struct TrainerMonNoItemDefaultMoves sParty_Route8_CoolTrainerHarriet[] = {
 };
 // #endregion
 
+// #region Forgotten Manse
+const struct TrainerMonNoItemDefaultMoves sParty_ForgottenManse_ChannelerMona[] = {
+    { .lvl = 25, .species = SPECIES_HATENNA },
+    { .lvl = 25, .species = SPECIES_DUSKULL },
+    { .lvl = 25, .species = SPECIES_MISDREAVUS }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_ForgottenManse_BurglarChad[] = {
+    { .lvl = 27, .species = SPECIES_SNEASEL },
+    { .lvl = 27, .species = SPECIES_BOLTUND },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_ForgottenManse_NurseLucy[] = {
+    { .lvl = 25, .species = SPECIES_TOGETIC },
+    { .lvl = 25, .species = SPECIES_COMFEY },
+    { .lvl = 26, .species = SPECIES_FLOETTE_YELLOW }
+};
+// #endregion
+
 #define NO_NAME                                                                                      \
     {                                                                                                \
         _END, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE \
@@ -2481,6 +2500,44 @@ const struct Trainer gTrainers[] = {
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE,
         .partySize = NELEMS(sParty_Route8_CoolTrainerHarriet),
         .party = {.NoItemDefaultMoves = sParty_Route8_CoolTrainerHarriet}
+    },
+    // #endregion
+    // #region Forgotten Manse
+    [TRAINER_FORGOTTEN_MANSE_CHANNELER_MONA] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_CHANNELER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_CHANNELER,
+        .trainerName = {_M, _o, _n, _a, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = NELEMS(sParty_ForgottenManse_ChannelerMona),
+        .party = {.NoItemDefaultMoves = sParty_ForgottenManse_ChannelerMona}
+    },
+    [TRAINER_FORGOTTEN_MANSE_BURGLAR_CHAD] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_BURGLAR,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_BURGLAR,
+        .trainerName = {_C, _h, _a, _d, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT,
+        .partySize = NELEMS(sParty_ForgottenManse_BurglarChad),
+        .party = {.NoItemDefaultMoves = sParty_ForgottenManse_BurglarChad}
+    },
+    [TRAINER_FORGOTTEN_MANSE_NURSE_LUCY] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_NURSE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .trainerPic = TRAINER_PIC_NURSE,
+        .trainerName = {_L, _u, _c, _y, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_HP_AWARE,
+        .partySize = NELEMS(sParty_ForgottenManse_NurseLucy),
+        .party = {.NoItemDefaultMoves = sParty_ForgottenManse_NurseLucy}
     },
     // #endregion
 };

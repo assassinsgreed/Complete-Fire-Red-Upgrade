@@ -197,6 +197,11 @@ ItemScript_Common_RoseIncense:
     finditem ITEM_ROSE_INCENSE 0x1
     end
 
+.global ItemScript_Common_OddIncense
+ItemScript_Common_OddIncense:
+    finditem ITEM_ODD_INCENSE 0x1
+    end
+
 .global ItemScript_Common_MetalCoat
 ItemScript_Common_MetalCoat:
     finditem ITEM_METAL_COAT 0x1

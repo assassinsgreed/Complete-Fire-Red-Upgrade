@@ -436,9 +436,9 @@
 #define FLAG_HIDE_ROUTE_8_POISON_BARB                           0x1AA
 #define FLAG_HIDE_ROUTE_8_GREAT_BALL                            0x1AB
 #define FLAG_HIDE_ROUTE_8_MISTY_SEED                            0x1AC
-#define FLAG_HIDE_VICTORY_ROAD_2F_FULL_HEAL                     0x1AD
-#define FLAG_HIDE_VICTORY_ROAD_2F_TM37                          0x1AE
-#define FLAG_HIDE_VICTORY_ROAD_3F_MAX_REVIVE                    0x1AF
+#define FLAG_HIDE_FORGOTTEN_MANSE_RARE_CANDY                    0x1AD
+#define FLAG_HIDE_FORGOTTEN_MANSE_ODD_INCENSE                   0x1AE
+#define FLAG_HIDE_FORGOTTEN_MANSE_FRONT_DOOR_KEY                0x1AF
 #define FLAG_HIDE_VICTORY_ROAD_3F_TM50                          0x1B0
 #define FLAG_HIDE_CERULEAN_CAVE_1F_MAX_ELIXIR                   0x1B1
 #define FLAG_HIDE_CERULEAN_CAVE_1F_NUGGET                       0x1B2
@@ -1067,9 +1067,9 @@
 #define HIDDEN_ITEM_ROUTE8_STAR_PIECE                                  38
 #define HIDDEN_ITEM_ROUTE8_ENERGY_ROOT                                 39
 #define HIDDEN_ITEM_ROUTE8_EVERSTONE                                   40
-#define HIDDEN_ITEM_ROUTE11_ESCAPE_ROPE                                41
-#define HIDDEN_ITEM_ROUTE12_HYPER_POTION                               42
-#define HIDDEN_ITEM_UNUSED_0x2B                                        43
+#define HIDDEN_ITEM_FORGOTTEN_MANSE_AGUAV_BERRY                        41
+#define HIDDEN_ITEM_FORGOTTEN_MANSE_SMOKE_BALL                         42
+#define HIDDEN_ITEM_FORGOTTEN_MANSE_ESCAPE_ROPE                        43
 #define HIDDEN_ITEM_UNUSED_0x2C                                        44
 #define HIDDEN_ITEM_UNUSED_0x2D                                        45
 #define HIDDEN_ITEM_UNUSED_0x2E                                        46

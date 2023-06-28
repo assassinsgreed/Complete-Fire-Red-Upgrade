@@ -737,3 +737,15 @@ npc 25 3 0 EventScript_Route8_FishermansHut_Fisherman
 # Forgotten Manse
 map 1 9 MapScript_ForgottenManse_Exterior
 map 1 12 MapScript_ForgottenManse_Basement
+npc 1 8 0 ItemScript_Common_RareCandy
+npc 1 9 0 ItemScript_Common_OddIncense
+npc 1 9 1 EventScript_ForgottenManseExterior_FrontDoorKey
+npc 1 9 2 EventScript_ForgottenManseExterior_ChannelerMona
+npc 1 9 3 EventScript_ForgottenManseExterior_BurglarChad
+npc 1 9 4 EventScript_ForgottenManseExterior_NurseLucy
+sign 1 9 0 SignScript_ForgottenManseExterior_MansePlacard
+# TODO: Don't forget to add the door script
+# Add Door Key item script & update an item in HMA
+# Make map backups
+
+# TODO: Add a set of trainers that can trigger a double battle inside, if they both look the right way
