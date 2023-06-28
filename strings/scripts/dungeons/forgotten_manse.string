@@ -1,6 +1,9 @@
 #org @gText_ForgottenManseExterior_Sign
 Property of Professor Inkberry.\nDo not trespass!
 
+#org @gText_ForgottenManse_DoorLocked
+The door is locked[.]
+
 #org @gText_ForgottenManseExterior_ChannelerMona_Intro
 Eheheheh, I sense a powerful\npresence draws near.
 

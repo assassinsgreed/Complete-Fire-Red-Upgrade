@@ -19,6 +19,9 @@ MapEntryScript_ForgottenManseExterior_SetWeather:
     random 0xA @ Between 0 and 10
     compare LASTRESULT 0x8
     if lessorequal _call SetWeatherFog
+    getplayerpos 0x4003 0x4004
+    compare 0x4003 0xA @ On Manse door
+    if equal _goto SetDoorOpen
     end
 
 .global MapScript_ForgottenManse_Basement
@@ -29,6 +32,46 @@ MapScript_ForgottenManse_Basement:
 MapEntryScript_ForgottenManseBasement_SetTerrain:
     call SetWeatherThinFog @ No battle effect, just visual
     call SetMistyTerrain
+    end
+
+.global SignScript_ForgottenManseExterior_MansePlacard
+SignScript_ForgottenManseExterior_MansePlacard:
+    msgbox gText_ForgottenManseExterior_Sign MSG_SIGN
+    end
+
+.global EventScript_ForgottenManseExterior_FrontDoorKey
+EventScript_ForgottenManseExterior_FrontDoorKey:
+    finditem ITEM_MANSE_KEY 0x1
+    end
+
+.global TileScript_ForgottenManseExterior_FrontDoor
+TileScript_ForgottenManseExterior_FrontDoor:
+    lock
+    compareplayerfacing INTERNAL_DOWN @ Exiting the Manse
+    if equal _goto End
+    applymovement PLAYER m_LookUp
+    waitmovement ALLEVENTS
+    checkitem ITEM_MANSE_KEY 0x1
+    compare LASTRESULT TRUE
+    if equal _goto OpenDoor
+    pause 0x14
+    msgbox gText_ForgottenManse_DoorLocked MSG_NORMAL
+    applymovement PLAYER m_WalkDown
+    waitmovement ALLEVENTS
+    release
+    end
+
+OpenDoor:
+    playse 0x8 @ Door opening
+    waitse
+    pause 0x14
+    goto SetDoorOpen
+
+SetDoorOpen:
+    setmaptile 0xA 0x9 0x293 0x0 @ set to open door sprite
+    special 0x8E
+    setvar 0x4001 0x1 @ Stop this event from firing again until the player revisits the map
+    release
     end
 
 .global EventScript_ForgottenManseExterior_ChannelerMona

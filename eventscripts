@@ -744,8 +744,8 @@ npc 1 9 2 EventScript_ForgottenManseExterior_ChannelerMona
 npc 1 9 3 EventScript_ForgottenManseExterior_BurglarChad
 npc 1 9 4 EventScript_ForgottenManseExterior_NurseLucy
 sign 1 9 0 SignScript_ForgottenManseExterior_MansePlacard
-# TODO: Don't forget to add the door script
-# Add Door Key item script & update an item in HMA
-# Make map backups
-
+tile 1 9 0 TileScript_ForgottenManseExterior_FrontDoor
+# TODO: Indoor TMs (Hex & Will-o-wisp)
+# TODO: Indoor trainers, items, switch events
+# TODO: Indoor Rotom event (Requires key update in HMA)
 # TODO: Add a set of trainers that can trigger a double battle inside, if they both look the right way
