@@ -97,6 +97,11 @@ ItemScript_Common_LinkCord:
     finditem ITEM_LINK_STONE 0x1
     end
 
+.global ItemScript_Common_CleanseTag
+ItemScript_Common_CleanseTag:
+    finditem ITEM_CLEANSE_TAG 0x1
+    end
+
 .global ItemScript_Common_SmoothRock
 ItemScript_Common_SmoothRock:
     finditem ITEM_SMOOTH_ROCK 0x1

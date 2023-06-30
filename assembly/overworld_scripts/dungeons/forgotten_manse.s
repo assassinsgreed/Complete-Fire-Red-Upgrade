@@ -99,3 +99,43 @@ NurseLucyHeal:
     call PlayerHeal
     msgbox gText_ForgottenManseExterior_NurseLucy_HealingComplete MSG_NORMAL
     end
+
+.global EventScript_ForgottenManse1F_Sablenite
+EventScript_ForgottenManse1F_Sablenite:
+    finditem ITEM_SABLENITE 0x1
+    end
+
+.global EventScript_ForgottenManse1F_BeautyLulu
+EventScript_ForgottenManse1F_BeautyLulu:
+    trainerbattle0 0x0 0x7C 0x0 gText_ForgottenManse1F_BeautyLulu_Intro gText_ForgottenManse1F_BeautyLulu_Defeat
+    msgbox gText_ForgottenManse1F_BeautyLulu_Chat MSG_NORMAL
+    end
+
+.global EventScript_ForgottenManse1F_ChannelerEsther
+EventScript_ForgottenManse1F_ChannelerEsther:
+    trainerbattle0 0x0 0x7D 0x0 gText_ForgottenManse1F_ChannelerEsther_Intro gText_ForgottenManse1F_ChannelerEsther_Defeat
+    msgbox gText_ForgottenManse1F_ChannelerEsther_Chat MSG_NORMAL
+    end
+
+.global EventScript_ForgottenManse1F_SuperNerdAustin
+EventScript_ForgottenManse1F_SuperNerdAustin:
+    trainerbattle0 0x0 0x7E 0x0 gText_ForgottenManse1F_SuperNerdAustin_Intro gText_ForgottenManse1F_SuperNerdAustin_Defeat
+    msgbox gText_ForgottenManse1F_SuperNerdAustin_Chat MSG_NORMAL
+    end
+
+.global EventScript_ForgottenManse1F_BurglarJacques
+EventScript_ForgottenManse1F_BurglarJacques:
+    trainerbattle0 0x0 0x7F 0x0 gText_ForgottenManse1F_BurglarJacques_Intro gText_ForgottenManse1F_BurglarJacques_Defeat
+    msgbox gText_ForgottenManse1F_BurglarJacques_Chat MSG_NORMAL
+    end
+
+.global EventScript_ForgottenManse1F_PsychicCorbin
+EventScript_ForgottenManse1F_PsychicCorbin:
+    trainerbattle0 0x0 0x80 0x0 gText_ForgottenManse1F_PsychicCorbin_Intro gText_ForgottenManse1F_PsychicCorbin_Defeat
+    msgbox gText_ForgottenManse1F_PsychicCorbin_Chat MSG_NORMAL
+    end
+
+.global EventScript_ForgottenManse1F_StorageKey
+EventScript_ForgottenManse1F_StorageKey:
+    finditem ITEM_STORAGE_KEY 0x1
+    end

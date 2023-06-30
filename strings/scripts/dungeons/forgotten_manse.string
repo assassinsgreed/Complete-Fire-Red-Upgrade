@@ -4,6 +4,24 @@ Property of Professor Inkberry.\nDo not trespass!
 #org @gText_ForgottenManse_DoorLocked
 The door is locked[.]
 
+#org @gText_ForgottenManse_Journal1
+Professor Inkberry's Log, March\n12th\pMy research into Pok\emon that can\ntemporarily change forms has\lproven fruitless.\pI am alone in my endeavor, as the\nscientific community is more\linterested in studying the Mega\lphenomenon first seen in the Kalos\lregion.\pI came to the Kulure region seeking\na fresh start, but I fear it was a\lmistake.
+
+#org @gText_ForgottenManse_Journal2
+Professor Inkberry's Log, March\n27th\pIt has been roughly two weeks since\nmy last entry and I am no closer\lto understanding the form changing\lphenomenon.\pMy spirits are falling by the day,\nand I find myself becoming\lincreasingly frustrated.\pFurthermore, I occasionally hear a\nbuzzing sound from within the walls\lthat I cannot pinpoint.\pI fear it will drive me mad[.]
+
+#org @gText_ForgottenManse_Journal3
+Professor Inkberry's Log, April 3rd\pI am certain I am going mad now.\pNo more than twenty minutes ago, I\nheard that infernal buzzing again,\llouder than ever before.\pAs I rose, the sound[.] moved down\nthe hall. I pursued it, shouting it\las my frustration got the better of\lme.\pAs I turned the corner, I saw\nsomething most unusual! It was a\lslender blue light, flowing freely\lwith a twitching motion.\pIt disappeared just as quickly as it\nappeared. I am not certain I saw\lit correctly, but I've made a\ldecision.\pI'm putting my form research on hold\nuntil I can solve this mystery.
+
+#org @gText_ForgottenManse_Journal4
+Professor Inkberry's Log, April 21st\pAfter an agonizing twenty odd days,\nI finally encountered the strange\lblue light again!\pOr rather[.] it encountered me.\pI must admit, I could not keep\nmyself from pursuing my form\lresearch. In a fit of frustration, I\lbroke down.\pWhile I wept, I felt a sensation draw\nnear. When I lifted my head, I saw\lit.\pIt was a Rotom, the rare Pok\emon\nfirst sighted in the Sinnoh region.
+
+#org @gText_ForgottenManse_Journal5
+Professor Inkberry's Log, May 9th\pRotom has revealed itself more\nfrequently to me in the past two\lweeks. It is playful, and seems to\lalso enjoy my company.\pAs time has passed, other Rotom\nhave started to appear, albeit\lbriefly. If only the researchers in\lSinnoh could see this!\pWith so many Rotoms gathered, we\ncould make significant progress into\ltheir study!\pHowever, I will not consult the\nother researchers[.]\pRotom is[.] shy, and I have grown too\nattached to it to subject it to\lbeing studied.
+
+#org @gText_ForgottenManse_Journal6
+Professor Inkberry's Log, May 28th\pThe most incredible thing happened\nthe other day!\pI had left an appliance magazine out\nand it caught Rotom's attention.\pI asked it about it's fascination, and\nin a flash of light it had\ltransformed into an oven before my\lvery eyes!\pTo think, the Pok\emon that had\nfrustrated me would have been\lcrucial to my research into Pok\emon\lforms[.]\pI have decided to halt my research\nindefinitely. I find myself enjoying\lRotom's company more than my\lstudies, and have decided to\ldepart the mansion with it.\pI will leave the catalogue in my\nstorage closet, for those that may\lfind themselves with a Rotom\lcompanion as curious as my own.
+
 #org @gText_ForgottenManseExterior_ChannelerMona_Intro
 Eheheheh, I sense a powerful\npresence draws near.
 
@@ -33,3 +51,48 @@ I am so sorry! I don't know what\ncame over me[.] It must be the\ldreary atmosph
 
 #org @gText_ForgottenManseExterior_NurseLucy_HealingComplete
 There! They're looking much better.\pPlease come see me again if your\nPok\emon are feeling worn out.
+
+#org @gText_ForgottenManse1F_BeautyLulu_Intro
+I came here on a dare, but I didn't\nthink it would ACTUALLY be\lhaunted!\pBattle me to take my mind off things,\nplease.
+
+#org @gText_ForgottenManse1F_BeautyLulu_Defeat
+Whew, that helped calm me down[.]
+
+#org @gText_ForgottenManse1F_BeautyLulu_Chat
+I should leave[.] I'm getting really\ncreeped out.
+
+#org @gText_ForgottenManse1F_ChannelerEsther_Intro
+You will spend eternity here[.] The\nspirits will it!
+
+#org @gText_ForgottenManse1F_ChannelerEsther_Defeat
+Gah!
+
+#org @gText_ForgottenManse1F_ChannelerEsther_Chat
+The spirits that were looming over\nyou[.] They've disappeared!
+
+#org @gText_ForgottenManse1F_SuperNerdAustin_Intro
+Your weak Pok\emon can't possibly\ncompare to mine! Let's battle!
+
+#org @gText_ForgottenManse1F_SuperNerdAustin_Defeat
+Y-you just got lucky!
+
+#org @gText_ForgottenManse1F_SuperNerdAustin_Chat
+I like having my Dittos transform into\nwild Pok\emon, so I can judge\lwhether they're worth catching or\lnot!
+
+#org @gText_ForgottenManse1F_BurglarJacques_Intro
+Ah, the fuzz!\pEh? It's just some kid! I'll beat you\nin battle for scaring me!
+
+#org @gText_ForgottenManse1F_BurglarJacques_Defeat
+That battle just stressed me out\neven more!
+
+#org @gText_ForgottenManse1F_BurglarJacques_Chat
+I swear I wasn't trying to steal\nanything. You believe me, right?
+
+#org @gText_ForgottenManse1F_PsychicCorbin_Intro
+Have you solved the mystery of this\nmansion yet?
+
+#org @gText_ForgottenManse1F_PsychicCorbin_Defeat
+I wonder[.]
+
+#org @gText_ForgottenManse1F_PsychicCorbin_Chat
+They say Professor Inkberry was\ninvestigating a special Pok\emon.\pHe was on the verge of a\nbreakthrough, then he just\ldisappeared!\pSpooky, right?\pI wonder if the journals he's left\naround here could help explain\lwhere he went[.]
