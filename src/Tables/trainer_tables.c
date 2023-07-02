@@ -1065,7 +1065,7 @@ const struct TrainerMonNoItemDefaultMoves sParty_ForgottenManse_1F_BurglarJacque
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_ForgottenManse_1F_PsychicCorbin[] = {
-    { .lvl = 30, .species = SPECIES_GALLADE }
+    { .lvl = 27, .species = SPECIES_GALLADE }
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_ForgottenManse_2F_BurglarBarry[] = {

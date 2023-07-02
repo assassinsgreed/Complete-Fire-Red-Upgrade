@@ -22,6 +22,39 @@ Professor Inkberry's Log, May 9th\pRotom has revealed itself more\nfrequently to
 #org @gText_ForgottenManse_Journal6
 Professor Inkberry's Log, May 28th\pThe most incredible thing happened\nthe other day!\pI had left an appliance magazine out\nand it caught Rotom's attention.\pI asked it about it's fascination, and\nin a flash of light it had\ltransformed into an oven before my\lvery eyes!\pTo think, the Pok\emon that had\nfrustrated me would have been\lcrucial to my research into Pok\emon\lforms[.]\pI have decided to halt my research\nindefinitely. I find myself enjoying\lRotom's company more than my\lstudies, and have decided to\ldepart the mansion with it.\pI will leave the catalogue in my\nstorage closet, for those that may\lfind themselves with a Rotom\lcompanion as curious as my own.
 
+#org @gText_ForgottenManse_Switch1
+The switch is labelled "2F Hallway.\"
+
+#org @gText_ForgottenManse_Switch2
+The switch is labelled "1F Hallway.\"
+
+#org @gText_ForgottenManse_Switch3
+The switch is labelled "2F Balcony.\"
+
+#org @gText_ForgottenManse_Switch4
+The switch is labelled "1F\nEntrance.\"
+
+#org @gText_ForgottenManse_Switch5
+The switch is labelled "BF1\nCorridor.\"
+
+#org @gText_ForgottenManse_Switch6
+The switch is labelled "1F\nStairwell.\"
+
+#org @gText_ForgottenManse_FlipSwitchConfirmPrompt
+Flip the switch?
+
+#org @gText_ForgottenManse_FlipSwitchConfirmed
+Who wouldn't?
+
+#org @gText_ForgottenManse_FlipSwitchGateOpened
+A gate opened somewhere!
+
+#org @gText_ForgottenManse_FlipSwitchDenied
+Better not.
+
+#org @gText_ForgottenManse_SwitchAlreadyFlipped
+The switch has already been flipped.
+
 #org @gText_ForgottenManseExterior_ChannelerMona_Intro
 Eheheheh, I sense a powerful\npresence draws near.
 

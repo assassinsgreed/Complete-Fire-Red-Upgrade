@@ -24,6 +24,47 @@ MapEntryScript_ForgottenManseExterior_SetWeather:
     if equal _goto SetDoorOpen
     end
 
+.global MapScript_ForgottenManse_1F
+MapScript_ForgottenManse_1F:
+    mapscript MAP_SCRIPT_ON_LOAD MapEntryScript_ForgottenManse1F_SecurityGates
+    .byte MAP_SCRIPT_TERMIN
+
+MapEntryScript_ForgottenManse1F_SecurityGates:
+    checkflag 0x267 @ Switch 2 has been flipped
+    if NOT_SET _goto End
+    call SetSwitch2Tiles
+    checkflag 0x269 @ Switch 4 has been flipped
+    if NOT_SET _goto End
+    call SetSwitch4Tiles
+    checkflag 0x26B @ Switch 6 has been flipped
+    if NOT_SET _goto End
+    call SetSwitch6Tiles
+    end
+
+.global MapScript_ForgottenManse_2F
+MapScript_ForgottenManse_2F:
+    mapscript MAP_SCRIPT_ON_LOAD MapEntryScript_ForgottenManse2F_SecurityGates
+    .byte MAP_SCRIPT_TERMIN
+
+MapEntryScript_ForgottenManse2F_SecurityGates:
+    checkflag 0x265 @ Switch 1 has been flipped
+    if NOT_SET _goto End
+    setmaptile 0x1F 0x7 0x284 0x0 @ Floor
+    setmaptile 0x20 0x7 0x284 0x0 @ Floor
+    setmaptile 0x21 0x7 0x284 0x0 @ Floor
+    setmaptile 0x1F 0x8 0x284 0x0 @ Floor
+    setmaptile 0x20 0x8 0x284 0x0 @ Floor
+    setmaptile 0x21 0x8 0x284 0x0 @ Floor
+    checkflag 0x268 @ Switch 3 has been flipped
+    if NOT_SET _goto End
+    setmaptile 0x8 0x10 0x2AA 0x1 @ Upper wall
+    setmaptile 0x8 0x11 0x2B2 0x1 @ Lower wall
+    setmaptile 0x8 0x12 0x284 0x0 @ Floor
+    setmaptile 0x8 0x13 0x284 0x0 @ Floor
+    setmaptile 0x8 0x14 0x284 0x0 @ Floor
+    setmaptile 0x8 0x15 0x2B5 0x0 @ Floor & top of wall
+    end
+
 .global MapScript_ForgottenManse_Basement
 MapScript_ForgottenManse_Basement:
     mapscript MAP_SCRIPT_ON_LOAD MapEntryScript_ForgottenManseBasement_SetTerrain
@@ -32,6 +73,9 @@ MapScript_ForgottenManse_Basement:
 MapEntryScript_ForgottenManseBasement_SetTerrain:
     call SetWeatherThinFog @ No battle effect, just visual
     call SetMistyTerrain
+    checkflag 0x26A @ Switch 5 has been flipped
+    if NOT_SET _goto End
+    call SetSwitch5Tiles
     end
 
 .global SignScript_ForgottenManseExterior_MansePlacard
@@ -222,4 +266,165 @@ EventScript_ForgottenManseBF1_ChannelerSana:
 .global EventScript_ForgottenManse1F_StorageKey
 EventScript_ForgottenManse1F_StorageKey:
     finditem ITEM_STORAGE_KEY 0x1
+    end
+
+.global SignScript_ForgottenManse_Gate1Switch
+SignScript_ForgottenManse_Gate1Switch:
+    lock
+    msgbox gText_ForgottenManse_Switch1 MSG_NORMAL
+    checkflag 0x265 @ Switch 1 has been flipped
+    if SET _goto SecurityGate_SwitchAlreadyFlipped
+    call SecurityGate_FlipSwitchConfirmPrompt
+    @ Tiles changed in map script
+    call SecurityGate_FlipSwitchComplete
+    setflag 0x265 @ Switch 1 has been flipped
+    release
+    end
+
+.global SignScript_ForgottenManse_Gate2Switch
+SignScript_ForgottenManse_Gate2Switch:
+    lock
+    msgbox gText_ForgottenManse_Switch2 MSG_NORMAL
+    checkflag 0x267 @ Switch 2 has been flipped
+    if SET _goto SecurityGate_SwitchAlreadyFlipped
+    call SecurityGate_FlipSwitchConfirmPrompt
+    call SetSwitch2Tiles
+    call SecurityGate_FlipSwitchComplete
+    setflag 0x267 @ Switch 2 has been flipped
+    release
+    end
+
+SetSwitch2Tiles:
+    @ By dining room
+    setmaptile 0xD 0x1 0x2AA 0x1 @ Upper wall
+    setmaptile 0xD 0x2 0x2B2 0x1 @ Lower wall
+    setmaptile 0xD 0x3 0x285 0x0 @ Shadowed Floor
+    setmaptile 0xD 0x4 0x284 0x0 @ Floor
+    setmaptile 0xD 0x5 0x29C 0x0 @ Flat wall
+    @ By switch
+    setmaptile 0x21 0x8 0x284 0x0 @ Floor
+    setmaptile 0x22 0x8 0x284 0x0 @ Floor
+    setmaptile 0x23 0x8 0x284 0x0 @ Floor
+    setmaptile 0x21 0x9 0x284 0x0 @ Floor
+    setmaptile 0x22 0x9 0x284 0x0 @ Floor
+    setmaptile 0x23 0x9 0x284 0x0 @ Floor
+    @ Upper hall
+    setmaptile 0x1B 0x8 0x2C8 0x0 @ Floor, with cracked floor tiles
+    setmaptile 0x1C 0x8 0x2C9 0x0 @ Floor, with cracked floor tiles
+    setmaptile 0x1D 0x8 0x2CA 0x0 @ Floor, with cracked floor tiles
+    setmaptile 0x1B 0x9 0x284 0x0 @ Floor
+    setmaptile 0x1C 0x9 0x284 0x0 @ Floor
+    setmaptile 0x1D 0x9 0x284 0x0 @ Floor
+    @ Lower hall
+    setmaptile 0x1B 0x10 0x284 0x0 @ Floor
+    setmaptile 0x1C 0x10 0x284 0x0 @ Floor
+    setmaptile 0x1D 0x10 0x284 0x0 @ Floor
+    setmaptile 0x1B 0x11 0x284 0x0 @ Floor
+    setmaptile 0x1C 0x11 0x284 0x0 @ Floor
+    setmaptile 0x1D 0x11 0x284 0x0 @ Floor
+    return
+
+.global SignScript_ForgottenManse_Gate3Switch
+SignScript_ForgottenManse_Gate3Switch:
+    lock
+    msgbox gText_ForgottenManse_Switch3 MSG_NORMAL
+    checkflag 0x268 @ Switch 3 has been flipped
+    if SET _goto SecurityGate_SwitchAlreadyFlipped
+    call SecurityGate_FlipSwitchConfirmPrompt
+    @ Tiles changed in map script
+    call SecurityGate_FlipSwitchComplete
+    setflag 0x268 @ Switch 3 has been flipped
+    release
+    end
+
+.global SignScript_ForgottenManse_Gate4Switch
+SignScript_ForgottenManse_Gate4Switch:
+    lock
+    msgbox gText_ForgottenManse_Switch4 MSG_NORMAL
+    checkflag 0x269 @ Switch 4 has been flipped
+    if SET _goto SecurityGate_SwitchAlreadyFlipped
+    call SecurityGate_FlipSwitchConfirmPrompt
+    call SetSwitch4Tiles
+    call SecurityGate_FlipSwitchComplete
+    setflag 0x269 @ Switch 4 has been flipped
+    release
+    end
+
+SetSwitch4Tiles:
+    setmaptile 0xC 0xA 0x2AA 0x1 @ Upper wall
+    setmaptile 0xC 0xB 0x2B2 0x1 @ Lower wall
+    setmaptile 0xC 0xC 0x284 0x0 @ Floor
+    setmaptile 0xC 0xD 0x284 0x0 @ Floor
+    setmaptile 0xC 0xE 0x2B5 0x0 @ Floor & top of wall
+    return
+
+.global SignScript_ForgottenManse_Gate5Switch
+SignScript_ForgottenManse_Gate5Switch:
+    lock
+    msgbox gText_ForgottenManse_Switch5 MSG_NORMAL
+    checkflag 0x26A @ Switch 5 has been flipped
+    if SET _goto SecurityGate_SwitchAlreadyFlipped
+    call SecurityGate_FlipSwitchConfirmPrompt
+    call SetSwitch5Tiles
+    call SecurityGate_FlipSwitchComplete
+    setflag 0x26A @ Switch 5 has been flipped
+    release
+    end
+
+SetSwitch5Tiles:
+    setmaptile 0x10 0xF 0x28E 0x0 @ Floor
+    setmaptile 0x11 0xF 0x286 0x0 @ Floor
+    setmaptile 0x12 0xF 0x286 0x0 @ Floor
+    setmaptile 0x10 0x10 0x28E 0x0 @ Floor
+    setmaptile 0x11 0x10 0x286 0x0 @ Floor
+    setmaptile 0x12 0x10 0x286 0x0 @ Floor
+    return
+
+.global SignScript_ForgottenManse_Gate6Switch
+SignScript_ForgottenManse_Gate6Switch:
+    lock
+    msgbox gText_ForgottenManse_Switch6 MSG_NORMAL
+    checkflag 0x26B @ Switch 6 has been flipped
+    if SET _goto SecurityGate_SwitchAlreadyFlipped
+    call SecurityGate_FlipSwitchConfirmPrompt
+    call SetSwitch6Tiles
+    call SecurityGate_FlipSwitchComplete
+    setflag 0x26B @ Switch 6 has been flipped
+    release
+    end
+
+SetSwitch6Tiles:
+    setmaptile 0x21 0xF 0x284 0x0 @ Floor
+    setmaptile 0x22 0xF 0x284 0x0 @ Floor
+    setmaptile 0x23 0xF 0x284 0x0 @ Floor
+    setmaptile 0x21 0x10 0x284 0x0 @ Floor
+    setmaptile 0x22 0x10 0x284 0x0 @ Floor
+    setmaptile 0x23 0x10 0x284 0x0 @ Floor
+    return
+
+SecurityGate_FlipSwitchConfirmPrompt:
+    msgbox gText_ForgottenManse_FlipSwitchConfirmPrompt MSG_YESNO
+    compare LASTRESULT YES
+    if notequal _goto SecurityGate_FlipSwitchDenied
+    return
+
+SecurityGate_FlipSwitchConfirmed:
+    msgbox gText_ForgottenManse_FlipSwitchConfirmed MSG_NORMAL
+    return
+
+SecurityGate_FlipSwitchComplete:
+    playse 0x8 @ Door open
+    waitse
+    special 0x8E
+    msgbox gText_ForgottenManse_FlipSwitchGateOpened MSG_NORMAL
+    return
+
+SecurityGate_FlipSwitchDenied:
+    msgbox gText_ForgottenManse_FlipSwitchDenied MSG_NORMAL
+    release
+    end
+
+SecurityGate_SwitchAlreadyFlipped:
+    msgbox gText_ForgottenManse_SwitchAlreadyFlipped MSG_NORMAL
+    release
     end
