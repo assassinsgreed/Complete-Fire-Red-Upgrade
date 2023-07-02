@@ -74,6 +74,36 @@ SetDoorOpen:
     release
     end
 
+.global SignScript_ForgottenManse_Journal1
+SignScript_ForgottenManse_Journal1:
+    msgbox gText_ForgottenManse_Journal1 MSG_SIGN
+    end
+
+.global SignScript_ForgottenManse_Journal2
+SignScript_ForgottenManse_Journal2:
+    msgbox gText_ForgottenManse_Journal2 MSG_SIGN
+    end
+
+.global SignScript_ForgottenManse_Journal3
+SignScript_ForgottenManse_Journal3:
+    msgbox gText_ForgottenManse_Journal3 MSG_SIGN
+    end
+
+.global SignScript_ForgottenManse_Journal4
+SignScript_ForgottenManse_Journal4:
+    msgbox gText_ForgottenManse_Journal4 MSG_SIGN
+    end
+
+.global SignScript_ForgottenManse_Journal5
+SignScript_ForgottenManse_Journal5:
+    msgbox gText_ForgottenManse_Journal5 MSG_SIGN
+    end
+
+.global SignScript_ForgottenManse_Journal6
+SignScript_ForgottenManse_Journal6:
+    msgbox gText_ForgottenManse_Journal6 MSG_SIGN
+    end
+
 .global EventScript_ForgottenManseExterior_ChannelerMona
 EventScript_ForgottenManseExterior_ChannelerMona:
     trainerbattle0 0x0 0x79 0x0 gText_ForgottenManseExterior_ChannelerMona_Intro gText_ForgottenManseExterior_ChannelerMona_Defeat
@@ -105,6 +135,18 @@ EventScript_ForgottenManse1F_Sablenite:
     finditem ITEM_SABLENITE 0x1
     end
 
+.global EventScript_ForgottenManse2F_TM60Hex
+EventScript_ForgottenManse2F_TM60Hex:
+    setvar CHOSEN_ITEM ITEM_TM60
+    call ItemScript_Common_FindTM
+    end
+
+.global EventScript_ForgottenManseBF1_TM61WillOWisp
+EventScript_ForgottenManseBF1_TM61WillOWisp:
+    setvar CHOSEN_ITEM ITEM_TM61
+    call ItemScript_Common_FindTM
+    end
+
 .global EventScript_ForgottenManse1F_BeautyLulu
 EventScript_ForgottenManse1F_BeautyLulu:
     trainerbattle0 0x0 0x7C 0x0 gText_ForgottenManse1F_BeautyLulu_Intro gText_ForgottenManse1F_BeautyLulu_Defeat
@@ -133,6 +175,48 @@ EventScript_ForgottenManse1F_BurglarJacques:
 EventScript_ForgottenManse1F_PsychicCorbin:
     trainerbattle0 0x0 0x80 0x0 gText_ForgottenManse1F_PsychicCorbin_Intro gText_ForgottenManse1F_PsychicCorbin_Defeat
     msgbox gText_ForgottenManse1F_PsychicCorbin_Chat MSG_NORMAL
+    end
+
+.global EventScript_ForgottenManse2F_BurglarBarry
+EventScript_ForgottenManse2F_BurglarBarry:
+    trainerbattle0 0x0 0x81 0x0 gText_ForgottenManse2F_BurglarBarry_Intro gText_ForgottenManse2F_BurglarBarry_Defeat
+    msgbox gText_ForgottenManse2F_BurglarBarry_Chat MSG_NORMAL
+    end
+
+.global EventScript_ForgottenManse2F_YoungsterChester
+EventScript_ForgottenManse2F_YoungsterChester:
+    trainerbattle0 0x0 0x82 0x0 gText_ForgottenManse2F_YoungsterChester_Intro gText_ForgottenManse2F_YoungsterChester_Defeat
+    msgbox gText_ForgottenManse2F_YoungsterChester_Chat MSG_NORMAL
+    end
+
+.global EventScript_ForgottenManse2F_ChannelerElaine
+EventScript_ForgottenManse2F_ChannelerElaine:
+    trainerbattle0 0x0 0x83 0x0 gText_ForgottenManse2F_ChannelerElaine_Intro gText_ForgottenManse2F_ChannelerElaine_Defeat
+    msgbox gText_ForgottenManse2F_ChannelerElaine_Chat MSG_NORMAL
+    end
+
+.global EventScript_ForgottenManseBF1_SuperNerdGlenn
+EventScript_ForgottenManseBF1_SuperNerdGlenn:
+    trainerbattle0 0x0 0x84 0x0 gText_ForgottenManseBF1_SuperNerdGlenn_Intro gText_ForgottenManseBF1_SuperNerdGlenn_Defeat
+    msgbox gText_ForgottenManseBF1_SuperNerdGlenn_Chat MSG_NORMAL
+    end
+
+.global EventScript_ForgottenManseBF1_BurglarPeter
+EventScript_ForgottenManseBF1_BurglarPeter:
+    trainerbattle0 0x0 0x85 0x0 gText_ForgottenManseBF1_BurglarPeter_Intro gText_ForgottenManseBF1_BurglarPeter_Defeat
+    msgbox gText_ForgottenManseBF1_BurglarPeter_Chat MSG_NORMAL
+    end
+
+.global EventScript_ForgottenManseBF1_PsychicNoelle
+EventScript_ForgottenManseBF1_PsychicNoelle:
+    trainerbattle0 0x0 0x86 0x0 gText_ForgottenManseBF1_PsychicNoelle_Intro gText_ForgottenManseBF1_PsychicNoelle_Defeat
+    msgbox gText_ForgottenManseBF1_PsychicNoelle_Chat MSG_NORMAL
+    end
+
+.global EventScript_ForgottenManseBF1_ChannelerSana
+EventScript_ForgottenManseBF1_ChannelerSana:
+    trainerbattle0 0x0 0x87 0x0 gText_ForgottenManseBF1_ChannelerSana_Intro gText_ForgottenManseBF1_ChannelerSana_Defeat
+    msgbox gText_ForgottenManseBF1_ChannelerSana_Chat MSG_NORMAL
     end
 
 .global EventScript_ForgottenManse1F_StorageKey

@@ -758,13 +758,36 @@ npc 1 10 8 EventScript_ForgottenManse1F_PsychicCorbin
 npc 1 10 9 ItemScript_Common_CleanseTag
 npc 1 10 10 ItemScript_Common_Greatball
 npc 1 10 11 EventScript_ForgottenManse1F_StorageKey
-### TODO: Add storage room events & security gates & journals
+sign 1 10 0 SignScript_ForgottenManse_Journal1
+sign 1 10 1 SignScript_ForgottenManse_Journal6
+### TODO: Add storage room events & security gates
 ## 2F
+npc 1 11 0 EventScript_Common_RockSmash
+npc 1 11 1 EventScript_Common_Strength
+npc 1 11 2 EventScript_Common_Strength
+npc 1 11 3 EventScript_Common_RockSmash
+npc 1 11 4 EventScript_Common_RockSmash
+npc 1 11 5 EventScript_ForgottenManse2F_BurglarBarry
+npc 1 11 6 EventScript_ForgottenManse2F_YoungsterChester
+npc 1 11 7 EventScript_ForgottenManse2F_ChannelerElaine
+npc 1 11 8 ItemScript_Common_SpellTag
+npc 1 11 9 ItemScript_Common_DuskStone
+npc 1 11 10 EventScript_ForgottenManse2F_TM60Hex
+sign 1 11 0 SignScript_ForgottenManse_Journal3
+sign 1 11 1 SignScript_ForgottenManse_Journal4
+## TODO: Security gates
 ## BF1
 map 1 12 MapScript_ForgottenManse_Basement
+npc 1 12 0 EventScript_ForgottenManseBF1_SuperNerdGlenn
+npc 1 12 1 EventScript_ForgottenManseBF1_BurglarPeter
+npc 1 12 2 EventScript_ForgottenManseBF1_PsychicNoelle
+npc 1 12 3 EventScript_ForgottenManseBF1_ChannelerSana
+npc 1 12 4 ItemScript_Common_EscapeRope
+npc 1 12 5 ItemScript_Common_DestinyKnot
+npc 1 12 6 EventScript_ForgottenManseBF1_TM61WillOWisp
+sign 1 12 0 SignScript_ForgottenManse_Journal2
+sign 1 12 1 SignScript_ForgottenManse_Journal5
 ## Storage Closet
 
-# TODO: Indoor TMs (Hex & Will-o-wisp)
-# TODO: Indoor 2f bf1 trainers, items, switch events
+# TODO: Indoor switch events
 # TODO: Indoor Rotom event (Requires storage key description update in HMA)
-# TODO: Add a set of trainers that can trigger a double battle inside, if they both look the right way

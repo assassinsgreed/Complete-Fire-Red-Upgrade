@@ -1058,14 +1058,49 @@ const struct TrainerMonNoItemCustomMoves sParty_ForgottenManse_1F_SuperNerdAusti
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_ForgottenManse_1F_BurglarJacques[] = {
-    { .lvl = 24, .species = SPECIES_NICKIT },
-    { .lvl = 24, .species = SPECIES_NICKIT },
-    { .lvl = 24, .species = SPECIES_TIMBURR },
-    { .lvl = 25, .species = SPECIES_THIEVUL }
+    { .lvl = 25, .species = SPECIES_NICKIT },
+    { .lvl = 25, .species = SPECIES_NICKIT },
+    { .lvl = 26, .species = SPECIES_TIMBURR },
+    { .lvl = 26, .species = SPECIES_THIEVUL }
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_ForgottenManse_1F_PsychicCorbin[] = {
     { .lvl = 30, .species = SPECIES_GALLADE }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_ForgottenManse_2F_BurglarBarry[] = {
+    { .lvl = 27, .species = SPECIES_CROAGUNK },
+    { .lvl = 28, .species = SPECIES_GRIMER_A },
+    { .lvl = 29, .species = SPECIES_SCRAGGY }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_ForgottenManse_2F_YoungsterChester[] = {
+    { .lvl = 27, .species = SPECIES_CORSOLA_G },
+    { .lvl = 27, .species = SPECIES_CORSOLA_G }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_ForgottenManse_2F_ChannelerElaine[] = {
+    { .lvl = 32, .species = SPECIES_SABLEYE }
+};
+
+
+// todo: make teams and implement below, then add to events and put text on them
+const struct TrainerMonNoItemDefaultMoves sParty_ForgottenManse_BF1_SuperNerdGlenn[] = {
+    { .lvl = 27, .species = SPECIES_SLOWPOKE },
+    { .lvl = 27, .species = SPECIES_SLOWPOKE_G }
+};
+const struct TrainerMonNoItemDefaultMoves sParty_ForgottenManse_BF1_BurglarPeter[] = {
+    { .lvl = 25, .species = SPECIES_NICKIT },
+    { .lvl = 31, .species = SPECIES_THIEVUL }
+};
+const struct TrainerMonNoItemDefaultMoves sParty_ForgottenManse_BF1_PsychicNoelle[] = {
+    { .lvl = 27, .species = SPECIES_HATENNA },
+    { .lvl = 28, .species = SPECIES_KIRLIA },
+    { .lvl = 28, .species = SPECIES_BRAIXEN },
+};
+const struct TrainerMonNoItemDefaultMoves sParty_ForgottenManse_BF1_ChannelerSana[] = {
+    { .lvl = 30, .species = SPECIES_PHANTUMP },
+    { .lvl = 30, .species = SPECIES_SANDYGAST },
 };
 // #endregion
 
@@ -2644,6 +2679,90 @@ const struct Trainer gTrainers[] = {
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE,
         .partySize = NELEMS(sParty_ForgottenManse_1F_PsychicCorbin),
         .party = {.NoItemDefaultMoves = sParty_ForgottenManse_1F_PsychicCorbin}
+    },
+    [TRAINER_FORGOTTEN_MANSE_2F_BURGLAR_BARRY] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_BURGLAR,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_BURGLAR,
+        .trainerName = {_B, _a, _r, _r, _y, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT,
+        .partySize = NELEMS(sParty_ForgottenManse_2F_BurglarBarry),
+        .party = {.NoItemDefaultMoves = sParty_ForgottenManse_2F_BurglarBarry}
+    },
+    [TRAINER_FORGOTTEN_MANSE_2F_YOUNGSTER_CHESTER] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_YOUNGSTER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_YOUNGSTER,
+        .trainerName = {_C, _h, _e, _s, _t, _e, _r, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = NELEMS(sParty_ForgottenManse_2F_YoungsterChester),
+        .party = {.NoItemDefaultMoves = sParty_ForgottenManse_2F_YoungsterChester}
+    },
+    [TRAINER_FORGOTTEN_MANSE_2F_CHANNELER_ELAINE] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_CHANNELER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_CHANNELER,
+        .trainerName = {_E, _l, _a, _i, _n, _e, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = NELEMS(sParty_ForgottenManse_2F_ChannelerElaine),
+        .party = {.NoItemDefaultMoves = sParty_ForgottenManse_2F_ChannelerElaine}
+    },
+    [TRAINER_FORGOTTEN_MANSE_BF1_SUPERNERD_GLENN] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_SUPER_NERD,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_SUPER_NERD,
+        .trainerName = {_G, _l, _e, _n, _n, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_SEMI_SMART,
+        .partySize = NELEMS(sParty_ForgottenManse_BF1_SuperNerdGlenn),
+        .party = {.NoItemDefaultMoves = sParty_ForgottenManse_BF1_SuperNerdGlenn}
+    },
+    [TRAINER_FORGOTTEN_MANSE_BF1_BURGLAR_PETER] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_BURGLAR,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_BURGLAR,
+        .trainerName = {_P, _e, _t, _e, _r, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT,
+        .partySize = NELEMS(sParty_ForgottenManse_BF1_BurglarPeter),
+        .party = {.NoItemDefaultMoves = sParty_ForgottenManse_BF1_BurglarPeter}
+    },
+    [TRAINER_FORGOTTEN_MANSE_BF1_PSYCHIC_NOELLE] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_PSYCHIC,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_PSYCHIC_F,
+        .trainerName = {_N, _o, _e, _l, _l, _e, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE,
+        .partySize = NELEMS(sParty_ForgottenManse_BF1_PsychicNoelle),
+        .party = {.NoItemDefaultMoves = sParty_ForgottenManse_BF1_PsychicNoelle}
+    },
+    [TRAINER_FORGOTTEN_MANSE_BF1_CHANNELER_SANA] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_CHANNELER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_CHANNELER,
+        .trainerName = {_S, _a, _n, _a, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = NELEMS(sParty_ForgottenManse_BF1_ChannelerSana),
+        .party = {.NoItemDefaultMoves = sParty_ForgottenManse_BF1_ChannelerSana}
     },
     // #endregion
 };

@@ -91,6 +91,11 @@ ItemScript_Common_IceStone:
     finditem ITEM_ICE_STONE 0x1
     end
 
+.global ItemScript_Common_DuskStone
+ItemScript_Common_DuskStone:
+    finditem ITEM_DUSK_STONE 0x1
+    end
+
 .global ItemScript_Common_LinkCord
 ItemScript_Common_LinkCord:
     // CFRU labels this as Link Stone, but we call it Link Cord to align with Pokemon Legends Arceus
@@ -160,6 +165,16 @@ ItemScript_Common_NeverMeltIce:
 .global ItemScript_Common_PoisonBarb
 ItemScript_Common_PoisonBarb:
     finditem ITEM_POISON_BARB 0x1
+    end
+
+.global ItemScript_Common_SpellTag
+ItemScript_Common_SpellTag:
+    finditem ITEM_SPELL_TAG 0x1
+    end
+
+.global ItemScript_Common_DestinyKnot
+ItemScript_Common_DestinyKnot:
+    finditem ITEM_DESTINY_KNOT 0x1
     end
 
 .global ItemScript_Common_QuickClaw
