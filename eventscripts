@@ -765,7 +765,7 @@ sign 1 10 2 SignScript_ForgottenManse_Gate2Switch
 sign 1 10 3 SignScript_ForgottenManse_Gate4Switch
 sign 1 10 4 SignScript_ForgottenManse_Gate6Switch
 sign 1 10 5 SignScript_ForgottenManse_Gate3Switch
-### TODO: Add storage room events
+tile 1 10 0 TileScript_ForgottenManse1F_StorageDoor
 ## 2F
 map 1 11 MapScript_ForgottenManse_2F
 npc 1 11 0 EventScript_Common_RockSmash
@@ -795,4 +795,4 @@ sign 1 12 1 SignScript_ForgottenManse_Journal5
 sign 1 12 2 SignScript_ForgottenManse_Gate1Switch
 sign 1 12 3 SignScript_ForgottenManse_Gate5Switch
 ## Storage Closet
-# TODO: Indoor Rotom event (Requires storage key description update in HMA)
+sign 1 28 0 SignScript_ForgottenManseStorage_ApplianceCatalog

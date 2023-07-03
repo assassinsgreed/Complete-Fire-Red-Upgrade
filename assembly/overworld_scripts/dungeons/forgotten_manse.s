@@ -39,6 +39,9 @@ MapEntryScript_ForgottenManse1F_SecurityGates:
     checkflag 0x26B @ Switch 6 has been flipped
     if NOT_SET _goto End
     call SetSwitch6Tiles
+    getplayerpos 0x4003 0x4004
+    compare 0x4003 0x19 @ On storage door
+    if equal _goto SetDoorOpenInterior
     end
 
 .global MapScript_ForgottenManse_2F
@@ -113,6 +116,36 @@ OpenDoor:
 
 SetDoorOpen:
     setmaptile 0xA 0x9 0x293 0x0 @ set to open door sprite
+    special 0x8E
+    setvar 0x4001 0x1 @ Stop this event from firing again until the player revisits the map
+    release
+    end
+
+.global TileScript_ForgottenManse1F_StorageDoor
+TileScript_ForgottenManse1F_StorageDoor:
+    lock
+    compareplayerfacing INTERNAL_DOWN @ Exiting the Manse
+    if equal _goto End
+    applymovement PLAYER m_LookUp
+    waitmovement ALLEVENTS
+    checkitem ITEM_STORAGE_KEY 0x1
+    compare LASTRESULT TRUE
+    if equal _goto OpenDoorInterior
+    pause 0x14
+    msgbox gText_ForgottenManse_DoorLocked MSG_NORMAL
+    applymovement PLAYER m_WalkDown
+    waitmovement ALLEVENTS
+    release
+    end
+
+OpenDoorInterior:
+    playse 0x8 @ Door opening
+    waitse
+    pause 0x14
+    goto SetDoorOpenInterior
+
+SetDoorOpenInterior:
+    setmaptile 0x19 0x12 0x16B 0x0 @ set to open door sprite
     special 0x8E
     setvar 0x4001 0x1 @ Stop this event from firing again until the player revisits the map
     release
@@ -351,8 +384,8 @@ SignScript_ForgottenManse_Gate4Switch:
     end
 
 SetSwitch4Tiles:
-    setmaptile 0xC 0xA 0x2AA 0x1 @ Upper wall
-    setmaptile 0xC 0xB 0x2B2 0x1 @ Lower wall
+    setmaptile 0xC 0xA 0x2FC 0x1 @ Upper wall, angled
+    setmaptile 0xC 0xB 0x304 0x1 @ Lower wall, angled
     setmaptile 0xC 0xC 0x284 0x0 @ Floor
     setmaptile 0xC 0xD 0x284 0x0 @ Floor
     setmaptile 0xC 0xE 0x2B5 0x0 @ Floor & top of wall
@@ -428,3 +461,95 @@ SecurityGate_SwitchAlreadyFlipped:
     msgbox gText_ForgottenManse_SwitchAlreadyFlipped MSG_NORMAL
     release
     end
+
+.global SignScript_ForgottenManseStorage_ApplianceCatalog
+SignScript_ForgottenManseStorage_ApplianceCatalog:
+    lock
+    msgbox gText_ForgottenManse_ApplianceCatalog MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto ApplianceCatalog_ChoseNo
+    special 0x9F @ Select a Pokemon and store it's position in 0x8004
+    waitstate
+    compare 0x8004 0x6 @ Don't continue if user backed out
+    if greaterorequal _goto ApplianceCatalog_ChoseNo
+    bufferpartypokemon 0x0 0x8004
+    callasm StoreIsPartyMonRotom
+    compare LASTRESULT TRUE
+    if FALSE _goto ApplianceCatalog_WrongPokemon
+    msgbox gText_ForgottenManse_ApplianceCatalog_ChooseAppliance MSG_KEEPOPEN
+    multichoiceoption gText_ForgottenManse_ApplianceCatalog_Revert 0
+	multichoiceoption gText_ForgottenManse_ApplianceCatalog_Fan 1
+	multichoiceoption gText_ForgottenManse_ApplianceCatalog_Refrigerator 2
+	multichoiceoption gText_ForgottenManse_ApplianceCatalog_Oven 3
+    multichoiceoption gText_ForgottenManse_ApplianceCatalog_Mower 4
+    multichoiceoption gText_ForgottenManse_ApplianceCatalog_Washer 5
+    multichoiceoption gText_End 6
+	multichoice 0x0 0x0 SEVEN_MULTICHOICE_OPTIONS TRUE
+	switch LASTRESULT
+	case 0, RevertRotom
+	case 1, SetRotomFan
+	case 2, SetRotomFrost
+	case 3, SetRotomHeat
+    case 4, SetRotomMow
+    case 5, SetRotomWash
+    case 6, Cancelled
+    end
+
+ApplianceCatalog_ChoseNo:
+    msgbox gText_ForgottenManse_ApplianceCatalog_ChoseNo MSG_NORMAL
+    release
+    end
+
+ApplianceCatalog_WrongPokemon:
+    msgbox gText_ForgottenManse_ApplianceCatalog_WrongPokemon MSG_NORMAL
+    release
+    end
+
+RevertRotom:
+    checksound
+    cry SPECIES_ROTOM 0x0
+    msgbox gText_ForgottenManse_ApplianceCatalog_RotomReverting MSG_NORMAL
+    setvar 0x8005 SPECIES_ROTOM
+    goto FinalizeRotomFormChange
+
+SetRotomFan:
+    call ChangeRotomFormCommon
+    setvar 0x8005 SPECIES_ROTOM_FAN
+    goto FinalizeRotomFormChange
+
+SetRotomFrost:
+    call ChangeRotomFormCommon
+    setvar 0x8005 SPECIES_ROTOM_FROST
+    goto FinalizeRotomFormChange
+
+SetRotomHeat:
+    call ChangeRotomFormCommon
+    setvar 0x8005 SPECIES_ROTOM_HEAT
+    goto FinalizeRotomFormChange
+
+SetRotomMow:
+    call ChangeRotomFormCommon
+    setvar 0x8005 SPECIES_ROTOM_MOW
+    goto FinalizeRotomFormChange
+
+SetRotomWash:
+    call ChangeRotomFormCommon
+    setvar 0x8005 SPECIES_ROTOM_WASH
+    goto FinalizeRotomFormChange
+
+ChangeRotomFormCommon:
+    checksound
+    cry SPECIES_ROTOM 0x0
+    fanfare 0x101 @ Get Item / Level Up
+    msgbox gText_ForgottenManse_ApplianceCatalog_RotomChanging MSG_NORMAL
+    waitfanfare
+    return
+
+FinalizeRotomFormChange:
+    callasm ChangeRotomFormInOverworld
+    release
+    end
+
+Cancelled:
+    msgbox gText_ForgottenManse_ApplianceCatalog_ChoseNo MSG_NORMAL
+    return
