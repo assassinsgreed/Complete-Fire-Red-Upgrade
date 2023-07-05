@@ -34,6 +34,38 @@ SetWeatherFog:
     doweather
     return
 
+.global SetWeatherThinFog
+SetWeatherThinFog:
+    @ Weather intentionally does not have battle effect
+    setweather WEATHER_THIN_FOG
+    doweather
+    return
+
+.global ClearTerrain
+ClearTerrain:
+    setvar 0x5000 0x0
+    return
+
+.global SetElectricTerrain
+SetElectricTerrain:
+    setvar 0x5000 0x1
+    return
+
+.global SetGrassyTerrain
+SetGrassyTerrain:
+    setvar 0x5000 0x2
+    return
+
+.global SetMistyTerrain
+SetMistyTerrain:
+    setvar 0x5000 0x3
+    return
+
+.global SetPsychicTerrain
+SetPsychicTerrain:
+    setvar 0x5000 0x4
+    return
+
 .global EnableRunningShoes
 EnableRunningShoes:
     setflag 0x82F @ Enable running shoes

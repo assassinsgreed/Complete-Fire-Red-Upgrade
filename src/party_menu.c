@@ -2367,6 +2367,21 @@ static void Task_TryLearnPostFormeChangeMove(u8 taskId)
 			case SPECIES_NECROZMA_DAWN_WINGS:
 				gMoveToLearn = MOVE_MOONGEISTBEAM;
 				break;
+			case SPECIES_ROTOM_FAN:
+				gMoveToLearn = MOVE_AIRSLASH;
+				break;
+			case SPECIES_ROTOM_FROST:
+				gMoveToLearn = MOVE_BLIZZARD;
+				break;
+			case SPECIES_ROTOM_HEAT:
+				gMoveToLearn = MOVE_OVERHEAT;
+				break;
+			case SPECIES_ROTOM_MOW:
+				gMoveToLearn = MOVE_LEAFSTORM;
+				break;
+			case SPECIES_ROTOM_WASH:
+				gMoveToLearn = MOVE_HYDROPUMP;
+				break;
 		}
 
 		if (gMoveToLearn != MOVE_NONE)
@@ -2816,6 +2831,63 @@ void StoreIsPartyMonEgg()
 	Var800D = GetMonData(&gPlayerParty[Var8004], MON_DATA_IS_EGG, NULL);
 }
 
+// Checks if party Pokemon in var 0x8004 is any Rotom form, and stores it in LASTRESULT (0x800D)
+void StoreIsPartyMonRotom()
+{
+	u16 partyId = Var8004;
+	if (partyId >= PARTY_SIZE)
+		Var800D = FALSE;
+
+	u16 species = GetMonData(&gPlayerParty[Var8004], MON_DATA_SPECIES, NULL);
+	switch (species)
+	{
+		case SPECIES_ROTOM:
+		case SPECIES_ROTOM_FAN:
+		case SPECIES_ROTOM_FROST:
+		case SPECIES_ROTOM_HEAT:
+		case SPECIES_ROTOM_MOW:
+		case SPECIES_ROTOM_WASH:
+			Var800D = TRUE;
+			break;
+
+		default:
+			Var800D = FALSE;
+			break;
+	}
+}
+
+// Changes the Pokemon at var 0x8004 to the Rotom species in var 0x8005, handling form-specific moves in the process
+void ChangeRotomFormInOverworld()
+{
+	if (Var8004 >= PARTY_SIZE)
+		return;
+
+	u16 newSpecies = Var8005;
+	void* src =  &gPlayerParty[Var8004];
+
+	if (newSpecies != GetMonData(src, MON_DATA_SPECIES, NULL))
+	{
+		SetMonData(src, MON_DATA_SPECIES, &Var8005);
+		CalculateMonStats(&gPlayerParty[Var8004]);
+
+		u16 rotomMoves[] = { MOVE_OVERHEAT, MOVE_BLIZZARD, MOVE_HYDROPUMP, MOVE_AIRSLASH, MOVE_LEAFSTORM };
+		for (u8 i = 0; i < MAX_MON_MOVES; ++i)
+		{
+			u8 moveIndex = FindMovePositionInMonMoveset(rotomMoves[i], src);
+			if (moveIndex < MAX_MON_MOVES)
+			{
+				Var8005 = moveIndex;
+				Var8006 = 0x0;
+				Special_0DD_DeleteMove();
+			}
+		}
+
+		if (newSpecies != SPECIES_ROTOM)
+		{
+			InitPartyMenu(PARTY_MENU_TYPE_FIELD, PARTY_LAYOUT_SINGLE, PARTY_ACTION_CHOOSE_AND_CLOSE, TRUE, PARTY_MSG_NONE, Task_TryLearnPostFormeChangeMove, CB2_ReturnToFieldContinueScript);
+		}
+	}
+}
 
 #ifdef UNBOUND
 void FieldUseFunc_VsSeeker(u8 taskId)

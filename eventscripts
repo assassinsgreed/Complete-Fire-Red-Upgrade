@@ -733,3 +733,66 @@ tile 3 26 5 TileScript_Route8_SetWeather
 
 ## Fisherman's Hut & Rival Event
 npc 25 3 0 EventScript_Route8_FishermansHut_Fisherman
+
+# Forgotten Manse
+## Exterior
+map 1 9 MapScript_ForgottenManse_Exterior
+npc 1 8 0 ItemScript_Common_RareCandy
+npc 1 9 0 ItemScript_Common_OddIncense
+npc 1 9 1 EventScript_ForgottenManseExterior_FrontDoorKey
+npc 1 9 2 EventScript_ForgottenManseExterior_ChannelerMona
+npc 1 9 3 EventScript_ForgottenManseExterior_BurglarChad
+npc 1 9 4 EventScript_ForgottenManseExterior_NurseLucy
+sign 1 9 0 SignScript_ForgottenManseExterior_MansePlacard
+tile 1 9 0 TileScript_ForgottenManseExterior_FrontDoor
+## 1F
+map 1 10 MapScript_ForgottenManse_1F
+npc 1 10 0 EventScript_ForgottenManse1F_Sablenite
+npc 1 10 1 EventScript_Common_Strength
+npc 1 10 2 EventScript_Common_Strength
+npc 1 10 3 EventScript_Common_Strength
+npc 1 10 4 EventScript_ForgottenManse1F_BeautyLulu
+npc 1 10 5 EventScript_ForgottenManse1F_ChannelerEsther
+npc 1 10 6 EventScript_ForgottenManse1F_SuperNerdAustin
+npc 1 10 7 EventScript_ForgottenManse1F_BurglarJacques
+npc 1 10 8 EventScript_ForgottenManse1F_PsychicCorbin
+npc 1 10 9 ItemScript_Common_CleanseTag
+npc 1 10 10 ItemScript_Common_Greatball
+npc 1 10 11 EventScript_ForgottenManse1F_StorageKey
+sign 1 10 0 SignScript_ForgottenManse_Journal1
+sign 1 10 1 SignScript_ForgottenManse_Journal6
+sign 1 10 2 SignScript_ForgottenManse_Gate2Switch
+sign 1 10 3 SignScript_ForgottenManse_Gate4Switch
+sign 1 10 4 SignScript_ForgottenManse_Gate6Switch
+sign 1 10 5 SignScript_ForgottenManse_Gate3Switch
+tile 1 10 0 TileScript_ForgottenManse1F_StorageDoor
+## 2F
+map 1 11 MapScript_ForgottenManse_2F
+npc 1 11 0 EventScript_Common_RockSmash
+npc 1 11 1 EventScript_Common_Strength
+npc 1 11 2 EventScript_Common_Strength
+npc 1 11 3 EventScript_Common_RockSmash
+npc 1 11 4 EventScript_Common_RockSmash
+npc 1 11 5 EventScript_ForgottenManse2F_BurglarBarry
+npc 1 11 6 EventScript_ForgottenManse2F_YoungsterChester
+npc 1 11 7 EventScript_ForgottenManse2F_ChannelerElaine
+npc 1 11 8 ItemScript_Common_SpellTag
+npc 1 11 9 ItemScript_Common_DuskStone
+npc 1 11 10 EventScript_ForgottenManse2F_TM60Hex
+sign 1 11 0 SignScript_ForgottenManse_Journal3
+sign 1 11 1 SignScript_ForgottenManse_Journal4
+## BF1
+map 1 12 MapScript_ForgottenManse_Basement
+npc 1 12 0 EventScript_ForgottenManseBF1_SuperNerdGlenn
+npc 1 12 1 EventScript_ForgottenManseBF1_BurglarPeter
+npc 1 12 2 EventScript_ForgottenManseBF1_PsychicNoelle
+npc 1 12 3 EventScript_ForgottenManseBF1_ChannelerSana
+npc 1 12 4 ItemScript_Common_EscapeRope
+npc 1 12 5 ItemScript_Common_DestinyKnot
+npc 1 12 6 EventScript_ForgottenManseBF1_TM61WillOWisp
+sign 1 12 0 SignScript_ForgottenManse_Journal2
+sign 1 12 1 SignScript_ForgottenManse_Journal5
+sign 1 12 2 SignScript_ForgottenManse_Gate1Switch
+sign 1 12 3 SignScript_ForgottenManse_Gate5Switch
+## Storage Closet
+sign 1 28 0 SignScript_ForgottenManseStorage_ApplianceCatalog

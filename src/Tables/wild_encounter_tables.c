@@ -67,9 +67,26 @@ const struct WildPokemon gHeleoRanch_LandMonsNight[] =
 	{15, 18, SPECIES_HAPPINY}
 };
 
+const struct WildPokemon gForgottenManseExterior_LandMonsNight[] =
+{
+	{19, 23, SPECIES_YAMASK},
+	{19, 23, SPECIES_PHANTUMP},
+	{19, 23, SPECIES_DUSKULL},
+	{20, 24, SPECIES_DUSKULL},
+	{19, 25, SPECIES_DUSKULL},
+	{19, 24, SPECIES_RATTATA_A},
+	{20, 24, SPECIES_YAMASK},
+	{20, 24, SPECIES_PHANTUMP},
+	{20, 24, SPECIES_RATTATA_A},
+	{20, 23, SPECIES_SHEDINJA},
+	{20, 25, SPECIES_RATTATA_A}, 
+	{20, 24, SPECIES_SHEDINJA}
+};
+
 const struct WildPokemonInfo gVarisiForest_LandMonsNightInfo = {21, gVarisiForest_LandMonsNight};
 const struct WildPokemonInfo gRubarrDesert_LandMonsNightInfo = {5, gRubarrDesert_LandMonsNight};
 const struct WildPokemonInfo gHeleoRanch_LandMonsNightInfo = {21, gHeleoRanch_LandMonsNight};
+const struct WildPokemonInfo gForgottenManseExterior_LandMonsNightInfo = {21, gForgottenManseExterior_LandMonsNight};
 
 const struct WildPokemonHeader gWildMonMorningHeaders[] =
 {
@@ -111,6 +128,14 @@ const struct WildPokemonHeader gWildMonEveningHeaders[] =
 		.fishingMonsInfo = NULL,
 	},
 	{
+		.mapGroup = MAP_GROUP(FORGOTTEN_MANSE_EXTERIOR),
+		.mapNum = MAP_NUM(FORGOTTEN_MANSE_EXTERIOR),
+		.landMonsInfo = &gForgottenManseExterior_LandMonsNightInfo,
+		.waterMonsInfo = NULL,
+		.rockSmashMonsInfo = NULL,
+		.fishingMonsInfo = NULL,
+	},
+	{
 		.mapGroup = 0xFF,
 		.mapNum = 0xFF,
 		.landMonsInfo = NULL,
@@ -142,6 +167,14 @@ const struct WildPokemonHeader gWildMonNightHeaders[] =
 		.mapGroup = MAP_GROUP(HELEO_RANCH_EXTERIOR),
 		.mapNum = MAP_NUM(HELEO_RANCH_EXTERIOR),
 		.landMonsInfo = &gHeleoRanch_LandMonsNightInfo,
+		.waterMonsInfo = NULL,
+		.rockSmashMonsInfo = NULL,
+		.fishingMonsInfo = NULL,
+	},
+	{
+		.mapGroup = MAP_GROUP(FORGOTTEN_MANSE_EXTERIOR),
+		.mapNum = MAP_NUM(FORGOTTEN_MANSE_EXTERIOR),
+		.landMonsInfo = &gForgottenManseExterior_LandMonsNightInfo,
 		.waterMonsInfo = NULL,
 		.rockSmashMonsInfo = NULL,
 		.fishingMonsInfo = NULL,
