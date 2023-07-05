@@ -1013,7 +1013,7 @@ const struct TrainerMonNoItemDefaultMoves sParty_ForgottenManse_ChannelerMona[] 
 
 const struct TrainerMonNoItemDefaultMoves sParty_ForgottenManse_BurglarChad[] = {
     { .lvl = 27, .species = SPECIES_SNEASEL },
-    { .lvl = 27, .species = SPECIES_BOLTUND },
+    { .lvl = 27, .species = SPECIES_BOLTUND }
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_ForgottenManse_NurseLucy[] = {
@@ -1100,7 +1100,7 @@ const struct TrainerMonNoItemDefaultMoves sParty_ForgottenManse_BF1_PsychicNoell
 };
 const struct TrainerMonNoItemDefaultMoves sParty_ForgottenManse_BF1_ChannelerSana[] = {
     { .lvl = 30, .species = SPECIES_PHANTUMP },
-    { .lvl = 30, .species = SPECIES_SANDYGAST },
+    { .lvl = 30, .species = SPECIES_SANDYGAST }
 };
 // #endregion
 
