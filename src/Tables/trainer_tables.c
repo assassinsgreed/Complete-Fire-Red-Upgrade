@@ -16,8 +16,45 @@ const struct TrainerMonNoItemDefaultMoves sParty_Rival1[] = {
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_Rival2[] = {
-    { .iv = 25, .lvl = 12, .species = SPECIES_ROOKIDEE },
-    { .iv = 25, .lvl = 14, .species = SPECIES_EEVEE },
+    { .lvl = 12, .species = SPECIES_ROOKIDEE },
+    { .lvl = 14, .species = SPECIES_EEVEE },
+};
+
+const struct TrainerMonItemCustomMoves sParty_Rival3[] = {
+    {
+        .lvl = 30,
+        .species = SPECIES_CORVISQUIRE,
+        .moves = {
+            MOVE_TAUNT,
+            MOVE_PLUCK,
+            MOVE_TAILWIND,
+            MOVE_FURYATTACK
+        },
+        .ability = Ability_1 // Keen Eye 
+    },
+    {
+        .lvl = 30,
+        .species = SPECIES_FLAAFFY,
+        .moves = {
+            MOVE_ELECTROBALL,
+            MOVE_THUNDERWAVE,
+            MOVE_FIREPUNCH,
+            MOVE_TAKEDOWN
+        },
+        .ability = Ability_1 // Static 
+    },
+    {
+        .lvl = 32,
+        .species = SPECIES_EEVEE,
+        .moves = {
+            MOVE_BITE,
+            MOVE_COVET,
+            MOVE_DOUBLEKICK,
+            MOVE_BABYDOLLEYES
+        },
+        .heldItem = ITEM_BERRY_JUICE,
+        .ability = Ability_2 // Adaptability
+    }
 };
 // #endregion
 
@@ -1118,7 +1155,7 @@ const struct Trainer gTrainers[] = {
         .partyFlags = 0,
         .trainerClass = CLASS_RIVAL,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
-        .trainerPic = TRAINER_PIC_BLUE,
+        .trainerPic = TRAINER_PIC_RIVAL,
         .trainerName = NO_NAME, // Name replaced from RIVAL trainer classes
         .items = {},
         .doubleBattle = FALSE,
@@ -1130,13 +1167,25 @@ const struct Trainer gTrainers[] = {
         .partyFlags = 0,
         .trainerClass = CLASS_RIVAL,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
-        .trainerPic = TRAINER_PIC_BLUE,
+        .trainerPic = TRAINER_PIC_RIVAL,
         .trainerName = NO_NAME, // Name replaced from RIVAL trainer classes
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_SCRIPT_TRY_TO_FAINT,
         .partySize = NELEMS(sParty_Rival2),
         .party = {.NoItemDefaultMoves = sParty_Rival2}
+    },
+    [TRAINER_RIVAL3] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_RIVAL,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_RIVAL,
+        .trainerName = NO_NAME, // Name replaced from RIVAL trainer classes
+        .items = { ITEM_SUPER_POTION },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_TRY_TO_FAINT,
+        .partySize = NELEMS(sParty_Rival3),
+        .party = {.ItemCustomMoves = sParty_Rival3}
     },
     // #endregion
     // #region Route 1

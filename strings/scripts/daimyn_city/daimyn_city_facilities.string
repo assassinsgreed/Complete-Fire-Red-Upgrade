@@ -1,0 +1,26 @@
+#org @gText_DaimynCityFacilities_GuardHouseWest_Guard
+Daimyn City lies just beyond this\ngate. You may pass.
+
+#org @gText_DaimynCityFacilities_GuardHouseSouth_Guard
+Welcome to Daimyn City!
+
+#org @gText_DaimynCityFacilities_GuardHouse_RivalIntroduction
+[BLUE]Hey [PLAYER]! I finally caught up to\nyou. Wait up!
+
+#org @gText_DaimynCityFacilities_GuardHouse_RivalExplainsDaimynCity
+[BLUE]Daimyn City is just ahead, and it's\nwhere Ascension Tower is!\pPowerful trainers come from all over\nthe Kulure region to challenge\lChampion Selene there.
+
+#org @gText_DaimynCityFacilities_GuardHouse_RivalInitiatesBattle
+[BLUE]Oh, I have a great idea!\pPowerful trainers come to Daimyn\nCity, right?\pWell[.] It only makes sense that we\nbattle to show off our powerful\lPok\emon, right?\pCome on, let's battle! I won't take\nno for an answer.
+
+#org @gText_DaimynCityFacilities_GuardHouse_RivalLoses
+Aw, that's another loss for me.
+
+#org @gText_DaimynCityFacilities_GuardHouse_RivalConcludesBattle
+[BLUE]Looks like you win again, [PLAYER]!\nYou and your Pok\emon are so\lstrong!\pHere, let me heal up your[.] Huh?
+
+#org @gText_DaimynCityFacilities_GuardHouse_RivalNoItems
+[BLUE]Um[.] Oops! I don't have any items\nleft! Sorry about that.
+
+#org @gText_DaimynCityFacilities_GuardHouse_RivalOffersTourOfDaimynCity
+[BLUE]Hey, I have an idea. We're right\noutside Daimyn City, right?\pWhy don't we walk through the city\ntogether to the Pok\emon Center?\pI know a lot about the city.\nIt'll be fun! Let's go!
