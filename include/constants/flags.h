@@ -63,7 +63,7 @@
 #define FLAG_HIDE_STELLA_AND_ALISTAIR_IN_FERROX_LIBRARY    0x039
 #define FLAG_HIDE_POKEDEX_SPRITE_IN_HAWTHORNES_LAB         0x03A
 #define FLAG_HIDE_STELLA_IN_FERROX_GYM                     0x03B
-#define FLAG_USED_ALREADY???                               0x03C
+#define FLAG_HIDE_RIVAL_IN_DAIMYN_GUARDHOUSES_ON_BY_DEFAULT 0x03C
 #define FLAG_USED_ALREADY???                               0x03D
 #define FLAG_HIDE_HELEO_RANCH_AMPHAROS                     0x03E
 #define FLAG_HIDE_SAFFRON_CIVILIANS                        0x03F
