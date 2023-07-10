@@ -23,7 +23,7 @@ Oh, good! You and your\nPok\emon are looking great.\lTake care now!
 [RED][RIVAL] was looking for you dear.\nDon't keep him waiting, okay?
 
 #org @gText_GenChoice_Msgwelcome
-Welcome to Pok\emon Shooting Stars!\pWe have a couple questions to help\ncustomize your experience.\pFirst of all, do you have a\nfavorite Pok\emon generation?
+Welcome to Pok\emon Amethyst!\pWe have a couple questions to help\ncustomize your experience.\pFirst of all, do you have a\nfavorite Pok\emon generation?
 
 #org @gText_GenChoice_Msgfavoritegen
 Please select your favorite\ngeneration.
@@ -56,7 +56,7 @@ Your favorite generation is 7\n(Alola)?
 Your favorite generation is 8\n(Galar)?
 
 #org @gText_GenChoice_Msgcomplete
-Selection confirmed. We hope you\nenjoy Pok\emon Shooting Stars!
+Selection confirmed. We hope you\nenjoy Pok\emon Amethyst!
 
 #org @gText_AnthraTown_RivalArrival
 [RED][PLAYER], sweetie, please come\ndownstairs. [RIVAL] is here to see\lyou!
