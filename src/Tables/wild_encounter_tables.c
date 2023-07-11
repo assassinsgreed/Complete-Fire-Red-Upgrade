@@ -83,10 +83,27 @@ const struct WildPokemon gForgottenManseExterior_LandMonsNight[] =
 	{20, 24, SPECIES_SHEDINJA}
 };
 
+const struct WildPokemon gDaimynCity_LandMonsNight[] =
+{
+	{25, 27, SPECIES_YAMPER},
+	{24, 28, SPECIES_GRUBBIN},
+	{25, 28, SPECIES_BOLTUND},
+	{24, 27, SPECIES_CHARJABUG},
+	{25, 28, SPECIES_GRIMER_A},
+	{25, 28, SPECIES_GURDURR},
+	{24, 27, SPECIES_KOFFING_G},
+	{25, 28, SPECIES_KOFFING_G},
+	{24, 27, SPECIES_MIMIKYU},
+	{25, 28, SPECIES_MIMIKYU},
+	{24, 28, SPECIES_MIMIKYU}, 
+	{25, 28, SPECIES_MIMIKYU}
+};
+
 const struct WildPokemonInfo gVarisiForest_LandMonsNightInfo = {21, gVarisiForest_LandMonsNight};
 const struct WildPokemonInfo gRubarrDesert_LandMonsNightInfo = {5, gRubarrDesert_LandMonsNight};
 const struct WildPokemonInfo gHeleoRanch_LandMonsNightInfo = {21, gHeleoRanch_LandMonsNight};
 const struct WildPokemonInfo gForgottenManseExterior_LandMonsNightInfo = {21, gForgottenManseExterior_LandMonsNight};
+const struct WildPokemonInfo gDaimynCity_LandMonsNightInfo = {21, gDaimynCity_LandMonsNight};
 
 const struct WildPokemonHeader gWildMonMorningHeaders[] =
 {
@@ -136,6 +153,14 @@ const struct WildPokemonHeader gWildMonEveningHeaders[] =
 		.fishingMonsInfo = NULL,
 	},
 	{
+		.mapGroup = MAP_GROUP(DAIMYN_CITY),
+		.mapNum = MAP_NUM(DAIMYN_CITY),
+		.landMonsInfo = &gDaimynCity_LandMonsNightInfo,
+		.waterMonsInfo = NULL,
+		.rockSmashMonsInfo = NULL,
+		.fishingMonsInfo = NULL,
+	},
+	{
 		.mapGroup = 0xFF,
 		.mapNum = 0xFF,
 		.landMonsInfo = NULL,
@@ -175,6 +200,14 @@ const struct WildPokemonHeader gWildMonNightHeaders[] =
 		.mapGroup = MAP_GROUP(FORGOTTEN_MANSE_EXTERIOR),
 		.mapNum = MAP_NUM(FORGOTTEN_MANSE_EXTERIOR),
 		.landMonsInfo = &gForgottenManseExterior_LandMonsNightInfo,
+		.waterMonsInfo = NULL,
+		.rockSmashMonsInfo = NULL,
+		.fishingMonsInfo = NULL,
+	},
+	{
+		.mapGroup = MAP_GROUP(DAIMYN_CITY),
+		.mapNum = MAP_NUM(DAIMYN_CITY),
+		.landMonsInfo = &gDaimynCity_LandMonsNightInfo,
 		.waterMonsInfo = NULL,
 		.rockSmashMonsInfo = NULL,
 		.fishingMonsInfo = NULL,
