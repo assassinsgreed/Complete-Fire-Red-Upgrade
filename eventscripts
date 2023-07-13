@@ -800,6 +800,14 @@ sign 1 28 0 SignScript_ForgottenManseStorage_ApplianceCatalog
 # Daimyn City
 ## Guard Houses
 npc 9 3 0 EventScript_DaimynCity_GuardHouseWest_Guard
-tile 9 3 0 TileScript_DaimynCity_GuardHouseWest_TriggerRival
+tile 9 3 0 EventScript_DaimynCityFacilities_RestaurauntChef
 npc 9 6 0 EventScript_DaimynCity_GuardHouseSouth_Guard
 tile 9 6 0 TileScript_DaimynCity_GuardHouseSouth_TriggerRival
+## Overworld
+sign 3 5 0 SignScript_DaimynCityOverworld_Restaurant
+## Facilities
+npc 9 8 0 EventScript_DaimynCityFacilities_RestaurauntChef
+npc 9 8 1 EventScript_DaimynCityFacilities_RestaurauntBoy
+npc 9 8 2 EventScript_DaimynCityFacilities_RestaurauntBigMan
+npc 9 8 3 EventScript_DaimynCityFacilities_RestaurauntGentleman
+npc 9 8 4 EventScript_DaimynCityFacilities_RestaurauntGirl

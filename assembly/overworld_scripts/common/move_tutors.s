@@ -59,6 +59,7 @@ EventScript_Tutors_Ferrox:
 	case 6, gastroacid
 	case 7, afteryou
     case 8, cancelled
+    case 0x7F, cancelled @ When player hit B to close
     return
 
 snore:
@@ -117,6 +118,7 @@ EventScript_Tutors_Heleo:
 	case 6, laserfocus
 	case 7, uproar
     case 8, cancelled
+    case 0x7F, cancelled @ When player hit B to close
 
 grasspledge:
     setvar 0x8005 0x35

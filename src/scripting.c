@@ -2949,6 +2949,16 @@ extern const u8 gText_LaserFocus[];
 extern const u8 gText_Uproar[];
 extern const u8 gText_End[];
 
+// Restaurant Options
+extern const u8 gText_FoodAttack[];
+extern const u8 gText_FoodDefense[];
+extern const u8 gText_FoodSpAttack[];
+extern const u8 gText_FoodSpDefense[];
+extern const u8 gText_FoodSpeed[];
+extern const u8 gText_FoodAccuracy[];
+extern const u8 gText_FoodEvasion[];
+extern const u8 gText_FoodAll[];
+
 //Scrolling Lists
 static const u8* sMultichoiceSet1[] =
 {
@@ -2976,11 +2986,38 @@ static const u8* sMultichoiceSet2[] =
 	gText_End,
 };
 
+static const u8* sMultichoiceSet3[] =
+{
+	gText_FoodAttack,
+	gText_FoodDefense,
+	gText_FoodSpAttack,
+	gText_FoodSpDefense,
+	gText_FoodSpeed,
+	gText_FoodAccuracy,
+	gText_FoodEvasion,
+	gText_End,  
+};
+
+static const u8* sMultichoiceSet4[] =
+{
+	gText_FoodAttack,
+	gText_FoodDefense,
+	gText_FoodSpAttack,
+	gText_FoodSpDefense,
+	gText_FoodSpeed,
+	gText_FoodAccuracy,
+	gText_FoodEvasion,
+	gText_FoodAll,
+	gText_End,  
+};
+
 // Multichoice Lists
 const struct ScrollingMulti gScrollingSets[] =
 {
 	{sMultichoiceSet1, ARRAY_COUNT(sMultichoiceSet1)},
-	{sMultichoiceSet2, ARRAY_COUNT(sMultichoiceSet2)}
+	{sMultichoiceSet2, ARRAY_COUNT(sMultichoiceSet2)},
+	{sMultichoiceSet3, ARRAY_COUNT(sMultichoiceSet3)},
+	{sMultichoiceSet4, ARRAY_COUNT(sMultichoiceSet4)},
 };
 
 //Link number of opts shown at once to the box height

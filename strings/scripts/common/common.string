@@ -87,3 +87,15 @@ Got a can of [BUFFER1]! A freebie\npopped out too!
 
 #org @gText_GuardHouseBinoculars
 A pair of binoculars! What can be\nseen[.]
+
+#org @gText_Level1
+Level 1
+
+#org @gText_Level2
+Level 2
+
+#org @gText_Level3
+Level 3
+
+#org @gText_ChangeMind
+Nevermind

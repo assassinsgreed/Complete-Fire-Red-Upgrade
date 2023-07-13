@@ -8,6 +8,7 @@
 #include "../include/new/frontier.h"
 #include "../include/new/mega.h"
 #include "../include/new/util.h"
+#include "../include/money.h"
 
 /*
 util.c
@@ -552,4 +553,16 @@ bool8 CanPartyMonBeFrozen(struct Pokemon* mon)
 void StoreGameStat()
 {
 	Var800D = GetGameStat(Var8004);
+}
+
+// Checks if the player has enough money from var 0x8004 and stores the result in 0x800D (LASTRESULT)
+void CheckMoneyFromVar()
+{
+	Var800D = Var8004 <= GetMoney(&gSaveBlock1->money);
+}
+
+// Removes money from the player, based on the value in var 0x8004
+void RemoveMoneyFromVar()
+{
+	RemoveMoney(&gSaveBlock1->money, Var8004);
 }

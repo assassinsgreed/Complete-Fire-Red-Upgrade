@@ -876,10 +876,19 @@ static void EndBattleFlagClear(void)
 	}
 
 	//Reset Totem Vars
-	VarSet(VAR_TOTEM + 0, 0);	//Bank B_POSITION_PLAYER_LEFT's Stat
-	VarSet(VAR_TOTEM + 1, 0);	//Bank B_POSITION_OPPONENT_LEFT's Stat
-	VarSet(VAR_TOTEM + 2, 0);	//Bank B_POSITION_PLAYER_RIGHT's Stat
-	VarSet(VAR_TOTEM + 3, 0);	//Bank B_POSITION_OPPONENT_RIGHT's Stat
+	int mealBuffDurationRemaining = VarGet(0x4095);
+	if (mealBuffDurationRemaining > 0)
+	{
+		VarSet(0x4095, mealBuffDurationRemaining -= 1);
+	}
+
+	if (mealBuffDurationRemaining == 0)
+	{
+		VarSet(VAR_TOTEM + 0, 0);	//Bank B_POSITION_PLAYER_LEFT's Stat
+		VarSet(VAR_TOTEM + 1, 0);	//Bank B_POSITION_OPPONENT_LEFT's Stat
+		VarSet(VAR_TOTEM + 2, 0);	//Bank B_POSITION_PLAYER_RIGHT's Stat
+		VarSet(VAR_TOTEM + 3, 0);	//Bank B_POSITION_OPPONENT_RIGHT's Stat
+	}
 
 	VarSet(VAR_TERRAIN, 0);
 	VarSet(VAR_BATTLE_FACILITY_TRAINER1_NAME, 0xFFFF);

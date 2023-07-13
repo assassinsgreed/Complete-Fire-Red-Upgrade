@@ -190,11 +190,11 @@
 #define VAR_WATER_STARTER_GEN      0x408E
 #define VAR_BATTLE_TRANSITION_LOGO 0x408F
 #define VAR_TRAINER_HOUSE_STREAK   0x4090
-#define VAR_0x4091                 0x4091
-#define VAR_0x4092                 0x4092
-#define VAR_0x4093                 0x4093
-#define VAR_0x4094                 0x4094
-#define VAR_0x4095                 0x4095
+#define VAR_RESTAURANT_CHIPS_TOTAL 0x4091
+#define VAR_RESTAURANT_MONEY_TOTAL 0x4092
+#define VAR_RESTAURANT_CHIPS_NEXT  0x4093
+#define VAR_RESTAURANT_MONEY_NEXT  0x4094
+#define VAR_RESTAURANT_BATTLE_DUR  0x4095
 #define VAR_0x4096                 0x4096
 #define VAR_0x4097                 0x4097
 #define VAR_0x4098                 0x4098
