@@ -35,7 +35,6 @@ FirstRestaurantVisit:
     return
 
 @ TODOs:
-@   Investigate a message when the effect wears off
 @   Implement sound effects and fanfares
 @   Implement remaining meals and cleanup
 @   Test

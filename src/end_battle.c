@@ -24,6 +24,7 @@
 #include "../include/new/util.h"
 #include "../include/new/mega.h"
 #include "../include/new/multi.h"
+#include "../include/new/battle_strings.h"
 
 /*
 end_battle.c
@@ -957,5 +958,15 @@ void HandlePokeChip()
 		AddBagItem(ITEM_POKE_CHIP, 1);
 		gBattleStringLoader = gText_HoldingPokeChip;
 		PlaySE(MUS_FANFA1);
+	}
+}
+
+void CheckForMealEffectEnd(void)
+{
+	// Check if the active meal effect is about to conclude; don't want to display this message every time the player doesn't have an active meal
+	if (VarGet(VAR_RESTAURANT_BATTLE_DUR) == 1)
+	{
+		gBattleStringLoader = BattleText_MealEffectEnded;
+		PrepareStringBattle(0x184, 0);
 	}
 }

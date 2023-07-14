@@ -45,10 +45,17 @@ EndBattleFlagClearHook: @Not really a BS but whatever
 @;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 BattleScript_Victory:
+	callasm CheckForMealEffectEnd
+	jumpifword NOTEQUALS BATTLE_STRING_LOADER BattleText_MealEffectEnded BattleScript_VictoryContinued
+	printstring 0x184
+	waitmessage DELAY_1SECOND
+	goto BattleScript_VictoryContinued
+	
+BattleScript_VictoryContinued:
 	jumpifword ANDS BATTLE_TYPE BATTLE_TWO_OPPONENTS BeatTwoPeeps
 	printstring 0x141
 	goto PostBeatString
-	
+
 BeatTwoPeeps:
 	setword BATTLE_STRING_LOADER BattleText_TwoInGameTrainersDefeated
 	printstring 0x184
@@ -211,6 +218,13 @@ testaassd:
 @;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 BattleScript_CheckPokeChip:
+	callasm CheckForMealEffectEnd
+	jumpifword NOTEQUALS BATTLE_STRING_LOADER BattleText_MealEffectEnded BattleScript_CheckPokeChipContinued
+	printstring 0x184
+	waitmessage DELAY_1SECOND
+	goto BattleScript_CheckPokeChipContinued
+
+BattleScript_CheckPokeChipContinued:
 	callasm WipeYesNoBattleBoxes
 	callasm HandlePokeChip
 	jumpifword NOTEQUALS BATTLE_STRING_LOADER gText_HoldingPokeChip BattleScript_ExitFromPokeChipEarly
