@@ -797,8 +797,9 @@ u8 CanActivateTotemBoost(u8 bank)
 			)
 				VarSet(VAR_TOTEM + bank, 0); //Only first Pokemon gets boost in battle sands
 
-			// if (IS_DOUBLE_BATTLE && VarGet(VAR_TOTEM + PARTNER(bank)) != 0) //Second stat is stored in partner's var
-			// 	return TOTEM_MULTI_BOOST;
+			if (VarGet(VAR_TOTEM + PARTNER(bank)) != 0 && // Second stat is stored in partner's var
+				VarGet(VAR_TOTEM + bank) != VarGet(VAR_TOTEM + PARTNER(bank))) // Stat changes are unique & we're in a single battle
+			 	return TOTEM_MULTI_BOOST;
 
 			return TOTEM_SINGLE_BOOST;
 		}

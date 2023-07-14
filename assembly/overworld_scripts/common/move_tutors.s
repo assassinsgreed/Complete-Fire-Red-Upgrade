@@ -47,6 +47,7 @@ psychicterrain:
 EventScript_Tutors_Ferrox:
     setvar 0x8000 0x0
     setvar 0x8001 0x5
+    setvar 0x8004 0x0
 	special 0x158
     waitstate
     switch LASTRESULT
@@ -106,6 +107,7 @@ afteryou:
 EventScript_Tutors_Heleo:
     setvar 0x8000 0x1
     setvar 0x8001 0x5
+    setvar 0x8004 0x0
 	special 0x158
     waitstate
     switch LASTRESULT
@@ -162,7 +164,6 @@ uproar:
 
 teach5ChipMove:
     call teachmove
-    setvar 0x8004 0x0 @ Ensure multiselect doesn't blow up when reopened
     compare LASTRESULT NO
     if true _goto cancelled
     removeitem ITEM_POKE_CHIP 0x5

@@ -1,0 +1,122 @@
+#org @gText_Restaurant_FirstVisit
+Ah, 'ello! Welcome to my\nrestaurant!\pI see you are a new customer! What\nis your name?\p[PLAYER]?\pWelcome, Master [PLAYER]! Please,\nindulge me a moment while I\lexplain ze services I provide.
+
+#org @gText_Restaurant_Explaination
+Zis is ze Pok\emon Restaurant, with\ndishes tailored to a Pok\emon's\lunique palate.\lI am ze head chef, Francois.\pZe dishes served 'ere help bring\nout a Pok\emon's true potential,\lhelping zem perform better in\lbattle for a short time.\pBut, it is not a one way\nrelationship, non. We can benefit\lfrom you, too!\pIf you were to donate some Pok\eChips\nto us, we could put zem into our\ldishes to make zem even more\limpactful. Pow!\pAlso, we will be able to buy fresher\ningredients, ze more money you\lspend here.\pC'est magnifique, non? I am sure you\nwill find zis most agreeable.
+
+#org @gText_Restaurant_Intro
+Master [PLAYER], what can I get for\nyou?
+
+#org @gText_Restaurant_OptionOrder
+Order a Meal
+
+#org @gText_Restaurant_OptionProgress
+Progress
+
+#org @gText_Restaurant_OptionDonate
+Donate Pok\eChips
+
+#org @gText_Restaurant_OptionExplaination
+What is this?
+
+#org @gText_Restaurant_OptionEnd
+Nothing
+
+#org @gText_Restaurant_End
+Very well. We hope to see you again\nsoon, Master [PLAYER].
+
+#org @gText_Restaurant_MenuPresented
+What would you like to order, Master\n[PLAYER]?
+
+#org @gText_Restaurant_MenuLevelPrompt
+Which level would you like to\nprepare zis dish at?
+
+#org @gText_Restaurant_MealLevelAndCostPrompt
+Zis meal will be prepared at [GREEN]Lvl [BUFFER2][BLUE]\nand will cost \$[BUFFER3].\lIs this acceptable?
+
+#org @gText_Restaurant_MoneySpent
+So far you have spent \$[BUFFER1]\nat our establishment.\pWe'll be able to provide better\ningredients after you've spent \l\$[BUFFER2] more.
+
+#org @gText_Restaurant_MoneyRemaining
+So far you have spent \$[BUFFER1]\nat our establishment.\pYou have spent enough to get access\nto our freshest ingredients!
+
+#org @gText_Restaurant_ChipsDonated
+So far you have donated [BUFFER1]\nPok\eChips. We require [BUFFER2] more\lto provide ze next dish.
+
+#org @gText_Restaurant_DonationRequirement
+Would you like to donate Pok\eChips?
+
+#org @gText_Restaurant_DonationRequest
+How many would you like to donate?\n(Held: [BUFFER3])
+
+#org @gText_Restaurant_DonationNoPokeChips
+My apologies, Master [PLAYER].\nYou do not have any Pok\eChips.
+
+#org @gText_Restaurant_DonationTooManyPokeChips
+My apologies, Master [PLAYER].\nYou do not have zat\lmany Pok\eChips.
+
+#org @gText_Restaurant_DonationMorePokeChipsThanNeeded
+I appreciate your generosity, mon\nami, but we do not need zat many\lPok\eChips!
+
+#org @gText_Restaurant_DonationLevel2Unlocked
+You've now unlocked [GREEN]Lvl 2[BLUE]\ndishes!\pZese dishes are more delicious than\nLvl 1 ones, and will raise stats by\l2 stages!\pYou can unlock our final level,\n[GREEN]Lvl 3[BLUE], by donating [BUFFER2] more\lPok\eChips.
+
+#org @gText_Restaurant_DonationLevel3Unlocked
+You've now unlocked [GREEN]Lvl 3[BLUE]\ndishes!\pZese dishes provide large stat\nbuffs, but come with a cost -\lanother stat will be lowered!\pI've also concocted a most wonderful\ndish - ze Rare Candy Cake!\pZis meal raises all Pok\emon's stats\nby 1, but it can only be prepared\lat level 1. Incroyable, non?
+
+#org @gText_Restaurant_DonationMet
+Mon ami, you've met our donation\nincentive! Merci!
+
+#org @gText_Restaurant_ChoseNo
+Understood.
+
+#org @gText_Restaurant_DonationComplete
+Master [PLAYER][.]! Incroyable!\pYou have donated enough Pok\eChips\nto earn our finest dishes.\pMerci, mon ami! I hope you enjoy\nour restaurants offerings.
+
+#org @gText_Restaurant_AttackMealDesc
+Zis meal raises your Pok\emon's Attack\nby one stage per level.\pAt level 3, it will also lower your\nPok\emon's Defense by one stage.
+
+#org @gText_Restaurant_DefenseMealDesc
+Zis meal raises your Pok\emon's\nDefense by one stage per level.\pAt level 3, it will also lower your\nPok\emon's Attack by one stage.
+
+#org @gText_Restaurant_SpAttackMealDesc
+Zis meal raises your Pok\emon's\nSp. Attack by one stage per level.\pAt level 3, it will also lower your\nPok\emon's Sp. Defense by one stage.
+
+#org @gText_Restaurant_SpDefenseMealDesc
+Zis meal raises your Pok\emon's\nSp. Defense by one stage per\llevel.\pAt level 3, it will also lower your\nPok\emon's Sp. Attack by one stage.
+
+#org @gText_Restaurant_SpeedMealDesc
+Zis meal raises your Pok\emon's\nSpeed by one stage per\llevel.\pAt level 3, it will also lower your\nPok\emon's Accuracy by one stage.
+
+#org @gText_Restaurant_AccuracyMealDesc
+Zis meal raises your Pok\emon's\nAccuracy by one stage per\llevel.\pAt level 3, it will also lower your\nPok\emon's Speed by one stage.
+
+#org @gText_Restaurant_EvasionMealDesc
+Zis meal raises your Pok\emon's\nEvasion by one stage per\llevel.\pIt can only be served up to Level 2.
+
+#org @gText_Restaurant_AllMealDesc
+Zis wondrous meal raises each of\nyour Pok\emon's stats by one stage.\pIt can only be served at Level 1.
+
+#org @gText_Restaurant_MealReplacement
+Your Pok\emon are currently full from\nanother meal.\pEating another will replace ze\ncurrent meal's effects. Is zat ok?
+
+#org @gText_Restaurant_PaidForMeal
+Excuse-moi, while I collect your\nmoney[.]
+
+#org @gText_Restaurant_MealConclusion
+Thank you for your patronage, Master\n[PLAYER]. I hope you and your\lPok\emon enjoyed your meal.
+
+#org @gText_Restaurant_NotEnoughMoney
+I am sorry, but you do not have\nenough money, mon ami[.]
+
+#org @gText_Restaurant_IngredientsNextUnlocked
+You've now unlocked [GREEN]Lvl [BUFFER1][BLUE]\ningredients!\pOur dishes are healthier and\ntheir effects will last for [GREEN][BUFFER1]\lbattles[BLUE] now!\pYou can unlock [GREEN]Lvl [BUFFER2][BLUE] ingredients by\ndonating \$[BUFFER3] total.
+
+#org @gText_Restaurant_IngredientsFinalLevelUnlocked
+You've now unlocked [GREEN]Lvl 5[BLUE]\ningredients, our final level!\pOur dishes are ze healthiest they\ncan be, and their effects will\llast for [GREEN]5 battles[BLUE] now!
+
+#org @gText_Restaurant_DurationNotMax
+Zis meal will last for [GREEN][BUFFER1]\nbattle(s)[BLUE].\pYou can unlock our next tier of\ningredients by spending \$[BUFFER2]\lmore.
+
+#org @gText_Restaurant_DurationAtMax
+Zis meal will last for [GREEN][BUFFER1]\nbattles[BLUE], ze most we can offer.

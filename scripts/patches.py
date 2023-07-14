@@ -12,8 +12,14 @@ def main():
             print(ERROR_COLOR + "Error applying patch: {}. See output for details. Exiting with status code: 1".format(file))
             exit(1)
 
-    # If the patch is the BW Music patch, we need to apply additional logic
-    if "B2W2 Music Patch" in file: ApplyBWMusicPatch()
+        # If the patch is the BW Music patch, we need to apply additional logic
+        if "B2W2 Music Patch" in file: ApplyBWMusicPatch()
+
+    # Fix bug in scrolling multichoice windows
+    with open(ROM_NAME, 'rb+') as romfile:
+        romfile.seek(0xCBB84)
+        romfile.write(b'\x00\x00\x00\x00')
+        romfile.close()
 
 def ApplyBWMusicPatch():
     # Open BW/B2W2 Music Patch hex

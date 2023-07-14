@@ -885,9 +885,9 @@ static void EndBattleFlagClear(void)
 	if (mealBuffDurationRemaining == 0)
 	{
 		VarSet(VAR_TOTEM + 0, 0);	//Bank B_POSITION_PLAYER_LEFT's Stat
-		VarSet(VAR_TOTEM + 1, 0);	//Bank B_POSITION_OPPONENT_LEFT's Stat
+		VarSet(VAR_TOTEM + 1, 0);	//Bank B_POSITION_PLAYER_LEFT's Stat
 		VarSet(VAR_TOTEM + 2, 0);	//Bank B_POSITION_PLAYER_RIGHT's Stat
-		VarSet(VAR_TOTEM + 3, 0);	//Bank B_POSITION_OPPONENT_RIGHT's Stat
+		VarSet(VAR_TOTEM + 3, 0);	//Bank B_POSITION_PLAYER_RIGHT's Stat
 	}
 
 	VarSet(VAR_TERRAIN, 0);
