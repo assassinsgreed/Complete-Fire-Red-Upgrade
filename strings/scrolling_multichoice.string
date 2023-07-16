@@ -51,27 +51,27 @@ Laser Focus
 Uproar
 
 #org @gText_FoodAttack
-[GREEN](Attack)[BLACK]       Apricorn Tart
+[GREEN](Attack)[BLACK][ALIGN][50]Apricorn Tart
 
 #org @gText_FoodDefense
-[GREEN](Defense)[BLACK]      Ganlon Berry Cookies
+[GREEN](Defense)[BLACK][ALIGN][50]Ganlon Berry Cookies
 
 #org @gText_FoodSpAttack
-[GREEN](Sp. Attack)[BLACK]   Poffin Parfait
+[GREEN](Sp. Attack)[BLACK][ALIGN][50]Poffin Parfait
 
 #org @gText_FoodSpDefense
-[GREEN](Sp. Defense)[BLACK]  Whipped Ice Dream
+[GREEN](Sp. Defense)[BLACK][ALIGN][50]Whipped Ice Dream
 
 #org @gText_FoodSpeed
-[GREEN](Speed)[BLACK]       Sweet Apple Pie
+[GREEN](Speed)[BLACK][ALIGN][50]Sweet Apple Pie
 
 #org @gText_FoodAccuracy
-[GREEN](Accuracy)[BLACK]    Honey Snaps
+[GREEN](Accuracy)[BLACK][ALIGN][50]Honey Snaps
 
 #org @gText_FoodEvasion
-[GREEN](Evasion)[BLACK]      Clover Sweets
+[GREEN](Evasion)[BLACK][ALIGN][50]Clover Sweets
 
 #org @gText_FoodAll
-[GREEN](All)[BLACK]         Rare Candy Cake
+[GREEN](All)[BLACK][ALIGN][50]Rare Candy Cake
 
 #endif

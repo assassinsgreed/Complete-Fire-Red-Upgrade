@@ -27,18 +27,12 @@ EventScript_DaimynRestaurant_Chef:
 
 FirstRestaurantVisit:
     msgbox gText_Restaurant_FirstVisit MSG_NORMAL
-    setvar RestaurantChipsNextVar 0x1 @ 0x19 @ 25
+    setvar RestaurantChipsNextVar 0x19 @ 25
     setvar RestaurantChipsTotalVar 0x0
     setvar RestaurantMoneyNextVar 0x1388 @ 5000
     setvar RestaurantMoneyTotalVar 0x0
     call RestaurantExplaination
     return
-
-@ TODOs:
-@   Implement sound effects and fanfares
-@   Implement remaining meals and cleanup
-@   Test
-@   Reset test donation costs
 
 RestaurantOptions:
     multichoiceoption gText_Restaurant_OptionOrder 0
@@ -61,7 +55,7 @@ RestaurantMenu:
     setvar 0x8001 0x6 @ Show 6 menu items
     setvar 0x8004 0x0 @ Ensure multiselect doesn't blow up when reopened
     msgbox gText_Restaurant_MenuPresented MSG_KEEPOPEN
-    compare RestaurantChipsTotalVar 0x2 @ 0x32 @ 50
+    compare RestaurantChipsTotalVar 0x32 @ 50
     if equal _goto MenuWithAll
     goto MenuStandard
 
@@ -71,13 +65,13 @@ MenuStandard:
     waitstate
     switch LASTRESULT
 	case 0, MealChoiceAttack
-	@ case 1, MealChoiceDefense
-	@ case 2, MealChoiceSpAttack
-	@ case 3, MealChoiceSpDefense
-    @ case 4, MealChoiceSpeed
-	@ case 5, MealChoiceAccuracy
-	@ case 6, MealChoiceEvasion
-	@ case 7, RestaurantChoseNo
+	case 1, MealChoiceDefense
+	case 2, MealChoiceSpAttack
+	case 3, MealChoiceSpDefense
+    case 4, MealChoiceSpeed
+	case 5, MealChoiceAccuracy
+	case 6, MealChoiceEvasion
+	case 7, RestaurantChoseNo
     case 0x7F, RestaurantChoseNo @ When player hit B to close
     goto FinishMeal
 
@@ -87,14 +81,14 @@ MenuWithAll:
     waitstate
     switch LASTRESULT
     case 0, MealChoiceAttack
-	@ case 1, MealChoiceDefense
-	@ case 2, MealChoiceSpAttack
-	@ case 3, MealChoiceSpDefense
-    @ case 4, MealChoiceSpeed
-	@ case 5, MealChoiceAccuracy
-	@ case 6, MealChoiceEvasion
-    @ case 7, MealChoiceAll
-	@ case 8, RestaurantChoseNo
+	case 1, MealChoiceDefense
+	case 2, MealChoiceSpAttack
+	case 3, MealChoiceSpDefense
+    case 4, MealChoiceSpeed
+	case 5, MealChoiceAccuracy
+	case 6, MealChoiceEvasion
+    case 7, MealChoiceAll
+	case 8, RestaurantChoseNo
     case 0x7F, RestaurantChoseNo @ When player hit B to close
     goto FinishMeal
 
@@ -107,15 +101,103 @@ MealChoiceAttack:
     if equal _call DecreaseDefense
     return
 
+MealChoiceDefense:
+    msgbox gText_Restaurant_DefenseMealDesc MSG_NORMAL
+    setvar MathNum1Var 0x96 @ 150, base cost
+    setvar StatBuffTypeVar 0x2 @ Defense stat buff
+    call HandleMealLevelChoice
+    compare MealLevelChosen 0x3 @ Chose Level 3
+    if equal _call DecreaseAttack
+    return
+
+MealChoiceSpAttack:
+    msgbox gText_Restaurant_SpAttackMealDesc MSG_NORMAL
+    setvar MathNum1Var 0x96 @ 150, base cost
+    setvar StatBuffTypeVar 0x4 @ Special Attack stat buff
+    call HandleMealLevelChoice
+    compare MealLevelChosen 0x3 @ Chose Level 3
+    if equal _call DecreaseSpDefense
+    return
+
+MealChoiceSpDefense:
+    msgbox gText_Restaurant_SpDefenseMealDesc MSG_NORMAL
+    setvar MathNum1Var 0x96 @ 150, base cost
+    setvar StatBuffTypeVar 0x5 @ Special Defense stat buff
+    call HandleMealLevelChoice
+    compare MealLevelChosen 0x3 @ Chose Level 3
+    if equal _call DecreaseSpAttack
+    return
+
+MealChoiceSpeed:
+    msgbox gText_Restaurant_SpeedMealDesc MSG_NORMAL
+    setvar MathNum1Var 0x96 @ 150, base cost
+    setvar StatBuffTypeVar 0x3 @ Speed stat buff
+    call HandleMealLevelChoice
+    compare MealLevelChosen 0x3 @ Chose Level 3
+    if equal _call DecreaseAccuracy
+    return
+
+MealChoiceAccuracy:
+    msgbox gText_Restaurant_AccuracyMealDesc MSG_NORMAL
+    setvar MathNum1Var 0xC8 @ 200, base cost
+    setvar StatBuffTypeVar 0x6 @ Accuracy stat buff
+    call HandleMealLevelChoice
+    compare MealLevelChosen 0x3 @ Chose Level 3
+    if equal _call DecreaseSpeed
+    return
+
+MealChoiceEvasion:
+    msgbox gText_Restaurant_EvasionMealDesc MSG_NORMAL
+    setvar MathNum1Var 0xC8 @ 200, base cost
+    setvar StatBuffTypeVar 0x7 @ Evasion stat buff
+    call SetupLevelOneMeal @ Default level 1
+    compare RestaurantChipsTotalVar 0x19 @ 25
+    if greaterorequal _call PromptForTwoLevels
+    call CalculateAndPresentMealCost
+    return
+
+MealChoiceAll:
+    msgbox gText_Restaurant_AllMealDesc MSG_NORMAL
+    setvar MathNum1Var 0x3E8 @ 1000, base cost
+    setvar StatBuffTypeVar 0xFFFF @ All stats buff
+    call SetupLevelOneMeal @ Default level 1
+    call CalculateAndPresentMealCost
+    return
+
+DecreaseAttack:
+    setvar StatBuffTypeVar 0x1 @ Attack stat debuff
+    call SetStatDebuffVariables
+    return
+
 DecreaseDefense:
     setvar StatBuffTypeVar 0x2 @ Defense stat debuff
     call SetStatDebuffVariables
     return
 
+DecreaseSpAttack:
+    setvar StatBuffTypeVar 0x4 @ Special Attack stat debuff
+    call SetStatDebuffVariables
+    return
+
+DecreaseSpDefense:
+    setvar StatBuffTypeVar 0x5 @ Special Defense stat debuff
+    call SetStatDebuffVariables
+    return
+
+DecreaseSpeed:
+    setvar StatBuffTypeVar 0x3 @ Speed stat debuff
+    call SetStatDebuffVariables
+    return
+
+DecreaseAccuracy:
+    setvar StatBuffTypeVar 0x6 @ Accuracy stat debuff
+    call SetStatDebuffVariables
+    return
+
 HandleMealLevelChoice:
     call SetupLevelOneMeal @ Default level 1
-    compare RestaurantChipsTotalVar 0x1 @ 0x19 @ 25
-    if greaterorequal _call PromptForTwoLevels
+    compare RestaurantChipsTotalVar 0x19 @ 25
+    if greaterorequal _call RedirectMealLevel
     call CalculateAndPresentMealCost
     return
 
@@ -140,9 +222,12 @@ SetupLevelThreeMeal:
     buffernumber 0x1 0x3
     return
 
-PromptForTwoLevels:
-    compare RestaurantChipsTotalVar 0x2 @ 0x32 @ 50
+RedirectMealLevel:
+    compare RestaurantChipsTotalVar 0x32 @ 50
     if equal _goto PromptForThreeLevels
+    goto PromptForTwoLevels
+
+PromptForTwoLevels:
     msgbox gText_Restaurant_MenuLevelPrompt MSG_KEEPOPEN
     multichoiceoption gText_Level1 0
     multichoiceoption gText_Level2 1
@@ -151,7 +236,7 @@ PromptForTwoLevels:
 	switch LASTRESULT
 	case 0, SetupLevelOneMeal
     case 1, SetupLevelTwoMeal
-	case 2, EventScript_DaimynRestaurant_Chef
+	case 2, RestaurantChoseNo
     return
 
 PromptForThreeLevels:
@@ -165,7 +250,7 @@ PromptForThreeLevels:
 	case 0, SetupLevelOneMeal
     case 1, SetupLevelTwoMeal
     case 2, SetupLevelThreeMeal
-	case 3, EventScript_DaimynRestaurant_Chef
+	case 3, RestaurantChoseNo
     return
 
 CalculateAndPresentMealCost:
@@ -203,7 +288,6 @@ HandlePurchase:
     return
 
 MoneyAboveNextThreshold:
-    @ Return if there are no more payment tiers TODO: This likely doesn't work!!
     compare RestaurantMoneyNextVar 0x0
     if equal _goto Return
 
@@ -240,194 +324,15 @@ SetStatDebuffVariables:
     copyvar MealPartySlot2Var MathNum1Var
     return
 
-@ MealLevel12:
-@     msgbox gText_Restaurant_MenuLevelPrompt MSG_KEEPOPEN
-@     multichoiceoption gText_Level1 0
-@     multichoiceoption gText_Level2 1
-@ 	multichoiceoption gText_ChangeMind 2
-@ 	multichoice 0x0 0x0 THREE_MULTICHOICE_OPTIONS TRUE
-@ 	switch LASTRESULT
-@ 	case 0, SetLevelOneMeal
-@     case 1, SetLevelTwoMeal
-@ 	case 2, EventScript_DaimynRestaurant_Chef
-@     return
-
-@ MealLevel123:
-@     msgbox gText_Restaurant_MenuLevelPrompt MSG_KEEPOPEN
-@     multichoiceoption gText_Level1 0
-@     multichoiceoption gText_Level2 1
-@     multichoiceoption gText_Level3 2
-@ 	multichoiceoption gText_ChangeMind 3
-@ 	multichoice 0x0 0x0 FOUR_MULTICHOICE_OPTIONS TRUE
-@ 	switch LASTRESULT
-@ 	case 0, SetLevelOneMeal
-@     case 1, SetLevelTwoMeal
-@     case 2, SetLevelThreeMeal
-@ 	case 3, EventScript_DaimynRestaurant_Chef
-@     return
-
-@ SetLevelOneMeal:
-@     addvar MealPartySlot1Var 0x10 @ 1 stage
-@     addvar MealPartySlot2Var 0x10 @ 1 stage
-@     setvar MathNum2Var 0xA @ Cost multiplier (10x)
-@     return
-
-@ SetLevelTwoMeal:
-@     addvar MealPartySlot1Var 0x20 @ 2 stages
-@     addvar MealPartySlot2Var 0x20 @ 2 stages
-@     setvar MathNum2Var 0x14 @ Cost multiplier (20x)
-@     return
-
-@ SetLevelThreeMeal:
-@     addvar MealPartySlot1Var 0x30 @ 3 stages
-@     addvar MealPartySlot2Var 0x30 @ 3 stages
-@     setvar MathNum2Var 0x1E @ Cost multiplier (30x)
-@     return
-
-@ MealChoiceAttack:
-@     msgbox gText_Restaurant_AttackMealDesc MSG_NORMAL
-@     setvar MathNum1Var 0x96 @ 150, base cost
-@     call HandleMealLevelChoice
-@     addvar MealPartySlot1Var 0x1 @ Attack Stat
-@     addvar MealPartySlot2Var 0x1 @ Attack Stat
-@     return
-
-@ MealChoiceDefense:
-@     msgbox gText_Restaurant_DefenseMealDesc MSG_NORMAL
-@     setvar MathNum1Var 0x96 @ 150, base cost
-@     call HandleMealLevelChoice
-@     addvar MealPartySlot1Var 0x2 @ Defense Stat
-@     addvar MealPartySlot2Var 0x2 @ Defense Stat
-@     return
-
-@ MealChoiceSpAttack:
-@     msgbox gText_Restaurant_SpAttackMealDesc MSG_NORMAL
-@     setvar MathNum1Var 0x96 @ 150, base cost
-@     call HandleMealLevelChoice
-@     addvar MealPartySlot1Var 0x3 @ Special Attack Stat
-@     addvar MealPartySlot2Var 0x3 @ Special Attack Stat
-@     return
-
-@ MealChoiceSpDefense:
-@     msgbox gText_Restaurant_SpDefenseMealDesc MSG_NORMAL
-@     setvar MathNum1Var 0x96 @ 150, base cost
-@     call HandleMealLevelChoice
-@     addvar MealPartySlot1Var 0x4 @ Special Defense Stat
-@     addvar MealPartySlot2Var 0x4 @ Special Defense Stat
-@     return
-
-@ MealChoiceSpeed:
-@     msgbox gText_Restaurant_SpeedMealDesc MSG_NORMAL
-@     setvar MathNum1Var 0x96 @ 150, base cost
-@     call HandleMealLevelChoice
-@     addvar MealPartySlot1Var 0x5 @ Speed Stat
-@     addvar MealPartySlot2Var 0x5 @ Speed Stat
-@     return
-
-@ MealChoiceAccuracy:
-@     msgbox gText_Restaurant_AccuracyMealDesc MSG_NORMAL
-@     setvar MathNum1Var 0xC8 @ 200, base cost
-@     call HandleMealLevelChoice
-@     addvar MealPartySlot1Var 0x6 @ Accuracy Stat
-@     addvar MealPartySlot2Var 0x6 @ Accuracy Stat
-@     return
-
-@ MealChoiceEvasion:
-@     setvar MathNum1Var 0xC8 @ 200, base cost
-@     call InitializeMeal
-@     compare RestaurantChipsTotalVar 0x1 @ 0x19 @ 25
-@     if greaterorequal _call MealLevel12
-@     call HandleMealConfirmationMessage
-@     addvar MealPartySlot1Var 0x7 @ Evasion Stat
-@     addvar MealPartySlot2Var 0x7 @ Evasion Stat
-@     return
-
-@ MealChoiceAll:
-@     setvar MathNum1Var 0x3E8 @ 1000, base cost
-@     call InitializeMeal
-@     call HandleMealConfirmationMessage
-@     setvar MealPartySlot1Var 0xFFFF @ All stats
-@     setvar MealPartySlot2Var 0xFFFF @ All stats
-@     return
-
-@ InitializeMeal:
-@     setvar MealPartySlot1Var 0x0 @ Reset in case a meal is currently active
-@     setvar MealPartySlot2Var 0x0 @ Reset in case a meal is currently active
-@     call SetLevelOneMeal
-@     return
-
-@ HandleMealLevelChoice:
-@     compare RestaurantChipsTotalVar 0x2 @ 0x32 @ 50
-@     if equal _call MealLevel123
-@     if notequal _call HandleMeal12Confirmation
-@     call HandleMealConfirmationMessage
-@     return
-
-@ HandleMealConfirmationMessage:
-@     compare RestaurantBuffBattlesDuration 0x0
-@     if greaterthan _call PromptForCurrentMealReplacement
-@     setvar 0x8004 MathNum1Var
-@     setvar 0x8005 MathNum2Var
-@     special2 LASTRESULT 0x40 @ Calculate the meal cost as (level * base), ie (20 * 150). Result gets stored in first var, so MathNum1Var
-@     showmoney 0x0 0x0
-@     buffernumber 0x0 MathNum1Var @ Have to buffer after showing money, or else BUFFER1 becomes the player's total money...
-@     msgbox gText_Restaurant_MealConfirm MSG_YESNO
-@     compare LASTRESULT NO
-@     if equal _goto RestaurantChoseNo
-@     copyvar 0x8004 MathNum1Var
-@     callasm CheckMoneyFromVar @ Checks if player has enough money based on var 0x8004 value
-@     compare LASTRESULT TRUE
-@     if notequal _goto NotEnoughMoney
-@     playse 0xF8 @ Money
-@     callasm RemoveMoneyFromVar @ Removes based on var 0x8004 value
-@     updatemoney 0x0 0x0
-@     waitse
-@     pause DELAY_1SECOND
-@     hidemoney
-@     msgbox gText_Restaurant_PaidForMeal MSG_NORMAL
-@     call InitializeMeal
-@     call HandleMoneyTotal
-@     call HandleDuration
-@     return
-
 PromptForCurrentMealReplacement:
     msgbox gText_Restaurant_MealReplacement MSG_YESNO
-    compare LASTRESULT NO
-    if equal _goto gText_Restaurant_ChoseNo
+    compare LASTRESULT YES
+    if notequal _goto gText_Restaurant_ChoseNo
     return
-
-@ HandleMeal12Confirmation:
-@     compare RestaurantChipsTotalVar 0x1 @ 0x19 @ 25
-@     if equal _call MealLevel12
-@     return
 
 NotEnoughMoney:
     msgbox gText_Restaurant_NotEnoughMoney MSG_NORMAL
     goto EventScript_DaimynRestaurant_Chef
-
-@ HandleMoneyTotal:
-@     copyvar MathNum1Var 0x8004
-@     setvar 0x8004 RestaurantMoneyTotalVar
-@     setvar 0x8005 MathNum1Var
-@     special 0x3E @ Add two vars above, result stored in RestaurantMoneyTotalVar
-@     comparevars RestaurantMoneyTotalVar RestaurantMoneyNextVar
-@     if greaterorequal _goto MoneyAboveNextThreshold
-@     return
-
-@ MoneyAboveNextThreshold:
-@     @ Return if money is above 0
-@     compare RestaurantMoneyNextVar 0x0
-@     if equal _goto Return
-
-@     compare RestaurantMoneyTotalVar 0xC350 @ 50,000
-@     if greaterorequal _goto MoneyAboveFinalThreshold
-@     compare RestaurantMoneyTotalVar 0x7530 @ 30,000
-@     if greaterorequal _goto MoneyAboveThirdThreshold
-@     compare RestaurantMoneyTotalVar 0x3A98 @ 15,000
-@     if greaterorequal _goto MoneyAboveSecondThreshold
-@     compare RestaurantMoneyTotalVar 0x1388 @ 5,000
-@     if greaterorequal _goto MoneyAboveFirstThreshold
-@     return
 
 MoneyAboveFinalThreshold:
     setvar RestaurantMoneyNextVar 0x0 @ Set to 0, no next
@@ -585,19 +490,18 @@ RestaurantDonate:
     if greaterthan _goto ChoseTooManyChips
     comparevars LASTRESULT RestaurantChipsNextVar
     if greaterthan _goto ChoseMoreChipsThanNeeded
-    removeitem ITEM_POKE_CHIP LASTRESULT
+    copyvar 0x4006 LASTRESULT
+    callasm SubtractPokeChipByVar // Removes pokechip items based on var 0x4006
     setvar 0x8004 RestaurantChipsTotalVar
-    setvar 0x8005 LASTRESULT
+    setvar 0x8005 0x4006
     special 0x3E @ Add two vars above
     setvar 0x8004 RestaurantChipsNextVar
-    setvar 0x8005 LASTRESULT
+    setvar 0x8005 0x4006
     special 0x3F @ Subtract two vars above
     compare RestaurantChipsNextVar 0x0
-    if equal _call RestaurantDonationMet
-    compare RestaurantChipsNextVar 0x0
-    if equal _goto DonationComplete
+    if equal _goto RestaurantDonationMet
     buffernumber 0x1 RestaurantChipsNextVar
-    msgbox gText_Restaurant_DonationLevel2Unlocked MSG_NORMAL
+    call DisplayChipsLeft
     goto EventScript_DaimynRestaurant_Chef
 
 RestaurantNoPokeChips:
@@ -616,10 +520,10 @@ RestaurantDonationMet:
     fanfare 0x102
     msgbox gText_Restaurant_DonationMet MSG_KEEPOPEN
     waitfanfare
-    setvar RestaurantChipsNextVar 0x1 @ 0x32 @ 50 more
-    compare RestaurantChipsTotalVar 0x2 @ 0x32 @ 50
+    setvar RestaurantChipsNextVar 0x32 @ 50 more
+    compare RestaurantChipsTotalVar 0x32 @ 50
     if equal _call SetChipsComplete
-    return
+    goto EventScript_DaimynRestaurant_Chef
 
 SetChipsComplete:
     setvar RestaurantChipsNextVar 0x0 @ 0 more

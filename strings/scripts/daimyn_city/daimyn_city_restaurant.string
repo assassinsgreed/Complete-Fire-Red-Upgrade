@@ -101,7 +101,7 @@ Zis wondrous meal raises each of\nyour Pok\emon's stats by one stage.\pIt can on
 Your Pok\emon are currently full from\nanother meal.\pEating another will replace ze\ncurrent meal's effects. Is zat ok?
 
 #org @gText_Restaurant_PaidForMeal
-Excuse-moi, while I collect your\nmoney[.]
+C'est bon! I will get your meal[.]
 
 #org @gText_Restaurant_MealConclusion
 Thank you for your patronage, Master\n[PLAYER]. I hope you and your\lPok\emon enjoyed your meal.
@@ -110,10 +110,10 @@ Thank you for your patronage, Master\n[PLAYER]. I hope you and your\lPok\emon en
 I am sorry, but you do not have\nenough money, mon ami[.]
 
 #org @gText_Restaurant_IngredientsNextUnlocked
-You've now unlocked [GREEN]Lvl [BUFFER1][BLUE]\ningredients!\pOur dishes are healthier and\ntheir effects will last for [GREEN][BUFFER1]\lbattles[BLUE] now!\pYou can unlock [GREEN]Lvl [BUFFER2][BLUE] ingredients by\ndonating \$[BUFFER3] total.
+You've now unlocked [GREEN]Lvl [BUFFER1][BLUE]\ningredients!\pOur dishes are healthier and\ntheir effects will last for longer!
 
 #org @gText_Restaurant_IngredientsFinalLevelUnlocked
-You've now unlocked [GREEN]Lvl 5[BLUE]\ningredients, our final level!\pOur dishes are ze healthiest they\ncan be, and their effects will\llast for [GREEN]5 battles[BLUE] now!
+You've now unlocked [GREEN]Lvl 5[BLUE]\ningredients, our final level!\pOur dishes are ze healthiest they\ncan be!
 
 #org @gText_Restaurant_DurationNotMax
 Zis meal will last for [GREEN][BUFFER1]\nbattle(s)[BLUE].\pYou can unlock our next tier of\ningredients by spending \$[BUFFER2]\lmore.
