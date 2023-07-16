@@ -13,3 +13,8 @@ MapScript_DaimynCity:
 MapEntryScript_DaimynCity_FlightSpot:
     setworldmapflag 0x895
     end
+
+.global SignScript_DaimynCityOverworld_Restaurant
+SignScript_DaimynCityOverworld_Restaurant:
+    msgbox gText_DaimynCityOverworld_RestaurantSign MSG_SIGN
+    end

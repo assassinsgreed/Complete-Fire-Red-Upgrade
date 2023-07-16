@@ -2949,8 +2949,18 @@ extern const u8 gText_LaserFocus[];
 extern const u8 gText_Uproar[];
 extern const u8 gText_End[];
 
+// Restaurant Options
+extern const u8 gText_FoodAttack[];
+extern const u8 gText_FoodDefense[];
+extern const u8 gText_FoodSpAttack[];
+extern const u8 gText_FoodSpDefense[];
+extern const u8 gText_FoodSpeed[];
+extern const u8 gText_FoodAccuracy[];
+extern const u8 gText_FoodEvasion[];
+extern const u8 gText_FoodAll[];
+
 //Scrolling Lists
-static const u8* sMultichoiceSet1[] =
+static const u8* sTutorFerrox[] =
 {
 	gText_Snore,
 	gText_WorrySeed,
@@ -2963,7 +2973,7 @@ static const u8* sMultichoiceSet1[] =
 	gText_End,
 };
 
-static const u8* sMultichoiceSet2[] =
+static const u8* sTutorHeleo[] =
 {
 	gText_GrassPledge,
 	gText_FirePledge,
@@ -2976,11 +2986,38 @@ static const u8* sMultichoiceSet2[] =
 	gText_End,
 };
 
+static const u8* sMealOptions[] =
+{
+	gText_FoodAttack,
+	gText_FoodDefense,
+	gText_FoodSpAttack,
+	gText_FoodSpDefense,
+	gText_FoodSpeed,
+	gText_FoodAccuracy,
+	gText_FoodEvasion,
+	gText_End,  
+};
+
+static const u8* sMealOptionsWithAll[] =
+{
+	gText_FoodAttack,
+	gText_FoodDefense,
+	gText_FoodSpAttack,
+	gText_FoodSpDefense,
+	gText_FoodSpeed,
+	gText_FoodAccuracy,
+	gText_FoodEvasion,
+	gText_FoodAll,
+	gText_End,  
+};
+
 // Multichoice Lists
 const struct ScrollingMulti gScrollingSets[] =
 {
-	{sMultichoiceSet1, ARRAY_COUNT(sMultichoiceSet1)},
-	{sMultichoiceSet2, ARRAY_COUNT(sMultichoiceSet2)}
+	{sTutorFerrox, ARRAY_COUNT(sTutorFerrox)},
+	{sTutorHeleo, ARRAY_COUNT(sTutorHeleo)},
+	{sMealOptions, ARRAY_COUNT(sMealOptions)},
+	{sMealOptionsWithAll, ARRAY_COUNT(sMealOptionsWithAll)},
 };
 
 //Link number of opts shown at once to the box height

@@ -2190,3 +2190,9 @@ void StorePokeChipCount(void)
 {
 	VarSet(0x8005, CountTotalItemQuantityInBag(ITEM_POKE_CHIP));
 }
+
+// Removes Pokechips by var 0x4006
+void SubtractPokeChipByVar(void)
+{
+	RemoveBagItem(ITEM_POKE_CHIP, VarGet(0x4006));
+}

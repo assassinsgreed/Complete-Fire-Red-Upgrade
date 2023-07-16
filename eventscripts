@@ -805,3 +805,10 @@ npc 9 6 0 EventScript_DaimynCity_GuardHouseSouth_Guard
 tile 9 6 0 TileScript_DaimynCity_GuardHouseSouth_TriggerRival
 ## Overworld
 map 3 5 MapScript_DaimynCity
+sign 3 5 0 SignScript_DaimynCityOverworld_Restaurant
+## Facilities
+npc 9 8 0 EventScript_DaimynRestaurant_Chef
+npc 9 8 1 EventScript_DaimynCityFacilities_RestaurauntBoy
+npc 9 8 2 EventScript_DaimynCityFacilities_RestaurauntBigMan
+npc 9 8 3 EventScript_DaimynCityFacilities_RestaurauntGentleman
+npc 9 8 4 EventScript_DaimynCityFacilities_RestaurauntGirl

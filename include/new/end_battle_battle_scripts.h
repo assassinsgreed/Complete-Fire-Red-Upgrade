@@ -32,3 +32,4 @@ extern const u8 BattleScript_CheckPokeChip[];
 extern const u8 gText_TookCaughtItemToCube[];
 extern const u8 gText_TookCaughtItemToBag[];
 extern const u8 gText_HoldingPokeChip[];
+extern const u8 BattleText_MealEffectEnded[];

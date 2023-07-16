@@ -603,10 +603,10 @@
 #define FLAG_GOT_OLD_ROD                                 0x24A
 #define FLAG_GOT_GOOD_ROD                                0x24B
 #define FLAG_GOT_SUPER_ROD                               0x24C
-#define FLAG_DID_CH_DING_TRADE                           0x24D
+#define FLAG_GOT_LEFTOVERS_GIFT                          0x24D
 #define FLAG_GOT_SOOTHE_BELL_GIFT                        0x24E
 #define FLAG_GOT_BIKE                                    0x24F
-#define FLAG_GOT_MASTER_BALL_FROM_SILPH                  0x250
+#define FLAG_DAIMYN_RESTAURANT_EXPLAINED                 0x250
 #define FLAG_DID_NINA_TRADE                              0x251
 #define FLAG_GOT_ITEMFINDER                              0x252
 #define FLAG_WOKE_UP_ROUTE_12_SNORLAX                    0x253

@@ -24,3 +24,18 @@ Aw, that's another loss for me.
 
 #org @gText_DaimynCityFacilities_GuardHouse_RivalOffersTourOfDaimynCity
 [BLUE]Hey, I have an idea. We're right\noutside Daimyn City, right?\pWhy don't we walk through the city\ntogether to the Pok\emon Center?\pI know a lot about the city.\nIt'll be fun! Let's go!
+
+#org @gText_DaimynCityOverworld_RestaurantBoy
+My grandpa takes me out for lunch\nevery week. It's a nice opportunity\lto catch up and chat!
+
+#org @gText_DaimynCityOverworld_RestaurantBigMan
+Urp[.] I think I ate too much[.]\nMy stomach hurts.\pIf I can't finish my meal, they'll\nmake me pay double!\pHey, you!\pYou'll take my [GREEN]Leftovers[BLUE], won't you?
+
+#org @gText_DaimynCityOverworld_RestaurantBigMan_LeftoversDescription
+If you give your Pok\emon those\nLeftovers to hold, they'll restore\lHP every turn.\pHandy, right?
+
+#org @gText_DaimynCityOverworld_RestaurantGentleman
+You can order what ever you'd like,\nmy boy. Hohoho!
+
+#org @gText_DaimynCityOverworld_RestaurantGirl
+Hmm[.] What should I order? Everything\nlooks so good.

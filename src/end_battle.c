@@ -24,6 +24,7 @@
 #include "../include/new/util.h"
 #include "../include/new/mega.h"
 #include "../include/new/multi.h"
+#include "../include/new/battle_strings.h"
 
 /*
 end_battle.c
@@ -876,10 +877,19 @@ static void EndBattleFlagClear(void)
 	}
 
 	//Reset Totem Vars
-	VarSet(VAR_TOTEM + 0, 0);	//Bank B_POSITION_PLAYER_LEFT's Stat
-	VarSet(VAR_TOTEM + 1, 0);	//Bank B_POSITION_OPPONENT_LEFT's Stat
-	VarSet(VAR_TOTEM + 2, 0);	//Bank B_POSITION_PLAYER_RIGHT's Stat
-	VarSet(VAR_TOTEM + 3, 0);	//Bank B_POSITION_OPPONENT_RIGHT's Stat
+	int mealBuffDurationRemaining = VarGet(0x4095);
+	if (mealBuffDurationRemaining > 0)
+	{
+		VarSet(0x4095, mealBuffDurationRemaining -= 1);
+	}
+
+	if (mealBuffDurationRemaining == 0)
+	{
+		VarSet(VAR_TOTEM + 0, 0);	//Bank B_POSITION_PLAYER_LEFT's Stat
+		VarSet(VAR_TOTEM + 1, 0);	//Bank B_POSITION_PLAYER_LEFT's Stat
+		VarSet(VAR_TOTEM + 2, 0);	//Bank B_POSITION_PLAYER_RIGHT's Stat
+		VarSet(VAR_TOTEM + 3, 0);	//Bank B_POSITION_PLAYER_RIGHT's Stat
+	}
 
 	VarSet(VAR_TERRAIN, 0);
 	VarSet(VAR_BATTLE_FACILITY_TRAINER1_NAME, 0xFFFF);
@@ -948,5 +958,15 @@ void HandlePokeChip()
 		AddBagItem(ITEM_POKE_CHIP, 1);
 		gBattleStringLoader = gText_HoldingPokeChip;
 		PlaySE(MUS_FANFA1);
+	}
+}
+
+void CheckForMealEffectEnd(void)
+{
+	// Check if the active meal effect is about to conclude; don't want to display this message every time the player doesn't have an active meal
+	if (VarGet(VAR_RESTAURANT_BATTLE_DUR) == 1)
+	{
+		gBattleStringLoader = BattleText_MealEffectEnded;
+		PrepareStringBattle(0x184, 0);
 	}
 }

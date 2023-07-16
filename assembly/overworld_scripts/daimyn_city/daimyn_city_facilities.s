@@ -85,6 +85,37 @@ RivalBattleCommon:
     setvar StoryEventVar 0x1 @ Prevent from happening again in either guard house
     return
 
+.global EventScript_DaimynCityFacilities_RestaurauntBoy
+EventScript_DaimynCityFacilities_RestaurauntBoy:
+    npcchat gText_DaimynCityOverworld_RestaurantBoy
+    end
+
+.global EventScript_DaimynCityFacilities_RestaurauntBigMan
+EventScript_DaimynCityFacilities_RestaurauntBigMan:
+    lock
+    faceplayer
+    checkflag 0x24D @ Got leftovers
+    If SET _goto LeftoversDescription
+    msgbox gText_DaimynCityOverworld_RestaurantBigMan MSG_NORMAL
+    obtainitem ITEM_LEFTOVERS 0x1
+    setflag 0x24D @ Got Leftovers
+    goto LeftoversDescription
+
+LeftoversDescription:
+    msgbox gText_DaimynCityOverworld_RestaurantBigMan_LeftoversDescription MSG_NORMAL
+    release
+    end
+
+.global EventScript_DaimynCityFacilities_RestaurauntGentleman
+EventScript_DaimynCityFacilities_RestaurauntGentleman:
+    msgbox gText_DaimynCityOverworld_RestaurantGentleman MSG_NORMAL
+    end
+
+.global EventScript_DaimynCityFacilities_RestaurauntGirl
+EventScript_DaimynCityFacilities_RestaurauntGirl:
+    npcchat gText_DaimynCityOverworld_RestaurantGirl
+    end
+
 m_RivalMeetsPlayer_West: .byte walk_right, walk_right, walk_right, walk_right, walk_right, walk_right, walk_right, end_m
 m_RivalMeetsPlayer_South: .byte walk_up, walk_up, walk_up, walk_up, end_m
 m_PlayerMovesOutOfWay_West: .byte walk_up, look_down, end_m

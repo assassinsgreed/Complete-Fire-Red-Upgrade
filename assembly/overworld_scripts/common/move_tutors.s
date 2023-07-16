@@ -47,6 +47,7 @@ psychicterrain:
 EventScript_Tutors_Ferrox:
     setvar 0x8000 0x0
     setvar 0x8001 0x5
+    setvar 0x8004 0x0
 	special 0x158
     waitstate
     switch LASTRESULT
@@ -59,6 +60,7 @@ EventScript_Tutors_Ferrox:
 	case 6, gastroacid
 	case 7, afteryou
     case 8, cancelled
+    case 0x7F, cancelled @ When player hit B to close
     return
 
 snore:
@@ -105,6 +107,7 @@ afteryou:
 EventScript_Tutors_Heleo:
     setvar 0x8000 0x1
     setvar 0x8001 0x5
+    setvar 0x8004 0x0
 	special 0x158
     waitstate
     switch LASTRESULT
@@ -117,6 +120,7 @@ EventScript_Tutors_Heleo:
 	case 6, laserfocus
 	case 7, uproar
     case 8, cancelled
+    case 0x7F, cancelled @ When player hit B to close
 
 grasspledge:
     setvar 0x8005 0x35
@@ -160,7 +164,6 @@ uproar:
 
 teach5ChipMove:
     call teachmove
-    setvar 0x8004 0x0 @ Ensure multiselect doesn't blow up when reopened
     compare LASTRESULT NO
     if true _goto cancelled
     removeitem ITEM_POKE_CHIP 0x5

@@ -2,6 +2,12 @@
 
 //New Encounter Strings
 
+#org @BattleText_MealActivated
+[FD][13] is benefitting from a meal!
+
+#org @BattleText_MealEffectEnded
+[FD][13]'s meal effect has ended.
+
 #org @BattleText_TwoTrainersWantToBattle
 You are challenged by\n[FD][1C] [FD][1D] and\l[FD][2E] [FD][2F]!\p
 
