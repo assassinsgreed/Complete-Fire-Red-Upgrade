@@ -804,6 +804,7 @@ tile 9 3 0 TileScript_DaimynCity_GuardHouseWest_TriggerRival
 npc 9 6 0 EventScript_DaimynCity_GuardHouseSouth_Guard
 tile 9 6 0 TileScript_DaimynCity_GuardHouseSouth_TriggerRival
 ## Overworld
+map 3 5 MapScript_DaimynCity
 sign 3 5 0 SignScript_DaimynCityOverworld_Restaurant
 ## Facilities
 npc 9 8 0 EventScript_DaimynRestaurant_Chef
