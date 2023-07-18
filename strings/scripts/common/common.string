@@ -99,3 +99,42 @@ Level 3
 
 #org @gText_ChangeMind
 Nevermind
+
+#org @gText_IVRating_F
+F
+
+#org @gText_IVRating_E
+E
+
+#org @gText_IVRating_EPlus
+E+
+
+#org @gText_IVRating_D
+D
+
+#org @gText_IVRating_DPlus
+D+
+
+#org @gText_IVRating_C
+C
+
+#org @gText_IVRating_CPlus
+C+
+
+#org @gText_IVRating_B
+B
+
+#org @gText_IVRating_BPlus
+B+
+
+#org @gText_IVRating_A
+A
+
+#org @gText_IVRating_APlus
+A+
+
+#org @gText_IVRating_S
+S
+
+#org @gText_IVRating_SPlus
+S+

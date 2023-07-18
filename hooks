@@ -778,3 +778,6 @@ NullFunc 081337e4 2
 NullFunc 08133810 1
 CreateTMCaseSpriteHook 8131B94 0
 TMCaseMonIconPalChangeHook 8131E5C 0 
+
+##Colored Natures
+PrintSkillsPage 081370ec 0
