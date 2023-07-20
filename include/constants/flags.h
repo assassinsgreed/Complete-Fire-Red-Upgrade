@@ -449,7 +449,7 @@
 #define FLAG_HIDE_FORGOTTEN_MANSE_2F_TM60_HEX                   0x1B7
 #define FLAG_HIDE_FORGOTTEN_MANSE_BF1_TM61_WILL_O_WISP          0x1B8
 #define FLAG_HIDE_FORGOTTEN_MANSE_1F_SABLENITE                  0x1B9
-#define FLAG_HIDE_TWO_ISLAND_REVIVE                             0x1BA
+#define FLAG_HIDE_DAIMYN_CITY_TM46_THIEF                        0x1BA
 #define FLAG_HIDE_THREE_ISLAND_ZINC                             0x1BB
 #define FLAG_0x1BC                                              0x1BC
 #define FLAG_0x1BD                                              0x1BD
@@ -1070,7 +1070,7 @@
 #define HIDDEN_ITEM_FORGOTTEN_MANSE_AGUAV_BERRY                        41
 #define HIDDEN_ITEM_FORGOTTEN_MANSE_SMOKE_BALL                         42
 #define HIDDEN_ITEM_FORGOTTEN_MANSE_ESCAPE_ROPE                        43
-#define HIDDEN_ITEM_UNUSED_0x2C                                        44
+#define HIDDEN_ITEM_DAIMYN_CITY_ULTRA_BALL                             44
 #define HIDDEN_ITEM_UNUSED_0x2D                                        45
 #define HIDDEN_ITEM_UNUSED_0x2E                                        46
 #define HIDDEN_ITEM_CELADON_CITY_PP_UP                                 47

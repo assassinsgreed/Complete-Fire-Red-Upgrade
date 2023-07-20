@@ -9,6 +9,15 @@
 .equ FlagHideRival, 0x03C
 .equ SpriteRival, 0x2
 
+.global MapScript_DaimynFacilities_PokemonCenter
+MapScript_DaimynFacilities_PokemonCenter:
+    mapscript MAP_SCRIPT_ON_TRANSITION MapScript_DaimynFacilities_PokemonCenter_SetHealingSpot
+	.byte MAP_SCRIPT_TERMIN
+
+MapScript_DaimynFacilities_PokemonCenter_SetHealingSpot:
+    sethealingplace 0x06 @ Originally Vermillion City
+    end
+
 .global EventScript_DaimynCity_GuardHouseWest_Guard
 EventScript_DaimynCity_GuardHouseWest_Guard:
     msgbox gText_DaimynCityFacilities_GuardHouseWest_Guard MSG_NORMAL
@@ -87,7 +96,7 @@ RivalBattleCommon:
 
 .global EventScript_DaimynCityFacilities_RestaurauntBoy
 EventScript_DaimynCityFacilities_RestaurauntBoy:
-    npcchat gText_DaimynCityOverworld_RestaurantBoy
+    npcchat gText_DaimynCityFacilities_RestaurantBoy
     end
 
 .global EventScript_DaimynCityFacilities_RestaurauntBigMan
@@ -96,24 +105,39 @@ EventScript_DaimynCityFacilities_RestaurauntBigMan:
     faceplayer
     checkflag 0x24D @ Got leftovers
     If SET _goto LeftoversDescription
-    msgbox gText_DaimynCityOverworld_RestaurantBigMan MSG_NORMAL
+    msgbox gText_DaimynCityFacilities_RestaurantBigMan MSG_NORMAL
     obtainitem ITEM_LEFTOVERS 0x1
     setflag 0x24D @ Got Leftovers
     goto LeftoversDescription
 
 LeftoversDescription:
-    msgbox gText_DaimynCityOverworld_RestaurantBigMan_LeftoversDescription MSG_NORMAL
+    msgbox gText_DaimynCityFacilities_RestaurantBigMan_LeftoversDescription MSG_NORMAL
     release
     end
 
 .global EventScript_DaimynCityFacilities_RestaurauntGentleman
 EventScript_DaimynCityFacilities_RestaurauntGentleman:
-    msgbox gText_DaimynCityOverworld_RestaurantGentleman MSG_NORMAL
+    msgbox gText_DaimynCityFacilities_RestaurantGentleman MSG_NORMAL
     end
 
 .global EventScript_DaimynCityFacilities_RestaurauntGirl
 EventScript_DaimynCityFacilities_RestaurauntGirl:
-    npcchat gText_DaimynCityOverworld_RestaurantGirl
+    npcchat gText_DaimynCityFacilities_RestaurantGirl
+    end
+
+.global EventScript_DaimynCityFacilities_PokemonCenterOldWoman
+EventScript_DaimynCityFacilities_PokemonCenterOldWoman:
+    npcchat2 0x2 m_LookLeft gText_DaimynCityFacilities_PokemonCenter_OldWoman
+    end
+
+.global EventScript_DaimynCityFacilities_PokemonCenterWoman
+EventScript_DaimynCityFacilities_PokemonCenterWoman:
+    npcchat2 0x3 m_LookLeft gText_DaimynCityFacilities_PokemonCenter_Woman
+    end
+
+.global EventScript_DaimynCityFacilities_PokemonCenterGirl
+EventScript_DaimynCityFacilities_PokemonCenterGirl:
+    npcchat2 0x4 m_LookLeft gText_DaimynCityFacilities_PokemonCenter_Girl
     end
 
 m_RivalMeetsPlayer_West: .byte walk_right, walk_right, walk_right, walk_right, walk_right, walk_right, walk_right, end_m

@@ -803,12 +803,54 @@ npc 9 3 0 EventScript_DaimynCity_GuardHouseWest_Guard
 tile 9 3 0 TileScript_DaimynCity_GuardHouseWest_TriggerRival
 npc 9 6 0 EventScript_DaimynCity_GuardHouseSouth_Guard
 tile 9 6 0 TileScript_DaimynCity_GuardHouseSouth_TriggerRival
+## Ascension Tower
+map 2 10 MapScript_AscensionTower
+npc 2 10 0 EventScript_PokemonCenter_Main
+npc 2 10 1 EventScript_AscensionTower_BattleTowerAttendant
+npc 2 10 2 EventScript_AscensionTower_EliteFourAttendant
+npc 2 10 3 EventScript_AscensionTower_Blackbelt
+npc 2 10 4 EventScript_AscensionTower_Girl
+npc 2 10 5 EventScript_AscensionTower_BigMan
+sign 2 10 0 SignScript_AscensionTower_RecordsBoard
 ## Overworld
 map 3 5 MapScript_DaimynCity
+npc 3 5 0 EventScript_DaimynCityOverworld_GamblingMan
+npc 3 5 1 EventScript_DaimynCityOverworld_Picknicker
+npc 3 5 2 EventScript_DaimynCityOverworld_Hiker
+npc 3 5 3 EventScript_DaimynCityOverworld_SuperNerd
+npc 3 5 4 EventScript_DaimynCityOverworld_OldMan
+npc 3 5 5 EventScript_DaimynCityOverworld_Boy
+npc 3 5 6 EventScript_DaimynCityOverworld_Biker
+npc 3 5 7 EventScript_DaimynCityOverworld_Girl
+npc 3 5 8 EventScript_DaimynCityOverworld_Policeman
+npc 3 5 9 EventScript_DaimynCityOverworld_PlutoNW
+npc 3 5 10 EventScript_DaimynCityOverworld_PlutoSE
+npc 3 5 11 EventScript_DaimynCityOverworld_PlutoSW
+npc 3 5 12 EventScript_Common_Cut
+npc 3 5 13 EventScript_DaimynCity_FindTM46Thief
 sign 3 5 0 SignScript_DaimynCityOverworld_Restaurant
+sign 3 5 1 SignScript_DaimynCityOverworld_AscensionTower
+sign 3 5 2 SignScript_DaimynCityOverworld_ShoppingMall
+sign 3 5 3 SignScript_DaimynCityOverworld_LanasHouse
+sign 3 5 4 SignScript_DaimynCityOverworld_Gym
+sign 3 5 5 SignScript_DaimynCityOverworld_InterdimensionalResearchLab
+sign 3 5 6 SignScript_DaimynCityOverworld_GuardHouseNorth
+sign 3 5 7 SignScript_DaimynCityOverworld_GuardHouseWest
+sign 3 5 8 SignScript_DaimynCityOverworld_GuardHouseEast
+sign 3 5 9 SignScript_DaimynCityOverworld_GuardHouseSouth
+### Sign 10 is a hidden item
+sign 3 5 11 SignScript_DaimynCityOverworld_DaimynCityPlacard
 ## Facilities
+map 9 9 MapScript_DaimynFacilities_PokemonCenter
 npc 9 8 0 EventScript_DaimynRestaurant_Chef
 npc 9 8 1 EventScript_DaimynCityFacilities_RestaurauntBoy
 npc 9 8 2 EventScript_DaimynCityFacilities_RestaurauntBigMan
 npc 9 8 3 EventScript_DaimynCityFacilities_RestaurauntGentleman
 npc 9 8 4 EventScript_DaimynCityFacilities_RestaurauntGirl
+npc 9 9 0 EventScript_PokemonCenter_Main
+npc 9 9 1 EventScript_DaimynCityFacilities_PokemonCenterOldWoman
+npc 9 9 2 EventScript_DaimynCityFacilities_PokemonCenterWoman
+npc 9 9 3 EventScript_DaimynCityFacilities_PokemonCenterGirl
+## NPC Houses
+npc 9 10 0 EventScript_DaimynCityNPCHouses_SuspiciousMan1
+npc 9 10 1 EventScript_DaimynCityNPCHouses_SuspiciousMan2
