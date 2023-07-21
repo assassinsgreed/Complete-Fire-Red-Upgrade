@@ -162,6 +162,65 @@ uproar:
     call teach5ChipMove
     return
 
+.global EventScript_Tutors_Daimyn
+EventScript_Tutors_Daimyn:
+    setvar 0x8000 0x4
+    setvar 0x8001 0x5
+    setvar 0x8004 0x0
+	special 0x158
+    waitstate
+    switch LASTRESULT
+	case 0, FirePunch
+	case 1, IcePunch
+	case 2, ThunderPunch
+	case 3, HealBell
+    case 4, HelpingHand
+	case 5, Spite
+	case 6, PainSplit
+	case 7, MagicRoom
+    case 8, cancelled
+    case 0x7F, cancelled @ When player hit B to close
+
+FirePunch:
+    setvar 0x8005 0x0
+    call teach5ChipMove
+    return
+
+IcePunch:
+    setvar 0x8005 0x1
+    call teach5ChipMove
+    return
+
+ThunderPunch:
+    setvar 0x8005 0x2
+    call teach5ChipMove
+    return
+
+HealBell:
+    setvar 0x8005 0x3
+    call teach5ChipMove
+    return
+
+HelpingHand:
+    setvar 0x8005 0x8
+    call teach5ChipMove
+    return
+
+Spite:
+    setvar 0x8005 0xE
+    call teach5ChipMove
+    return
+
+PainSplit:
+    setvar 0x8005 0x1B
+    call teach5ChipMove
+    return
+
+MagicRoom:
+    setvar 0x8005 0x25
+    call teach5ChipMove
+    return
+
 teach5ChipMove:
     call teachmove
     compare LASTRESULT NO

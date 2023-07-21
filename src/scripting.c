@@ -2947,6 +2947,14 @@ extern const u8 gText_Bind[];
 extern const u8 gText_Block[];
 extern const u8 gText_LaserFocus[];
 extern const u8 gText_Uproar[];
+extern const u8 gText_FirePunch[];
+extern const u8 gText_ThunderPunch[];
+extern const u8 gText_IcePunch[];
+extern const u8 gText_HelpingHand[];
+extern const u8 gText_MagicRoom[];
+extern const u8 gText_Spite[];
+extern const u8 gText_HealBell[];
+extern const u8 gText_PainSplit[];
 extern const u8 gText_End[];
 
 // Restaurant Options
@@ -2986,6 +2994,18 @@ static const u8* sTutorHeleo[] =
 	gText_End,
 };
 
+static const u8* sTutorDaimyn[] =
+{
+	gText_FirePunch,
+	gText_ThunderPunch,
+	gText_IcePunch,
+	gText_HelpingHand,
+	gText_MagicRoom,
+	gText_Spite,
+	gText_HealBell,
+	gText_PainSplit,
+};
+
 static const u8* sMealOptions[] =
 {
 	gText_FoodAttack,
@@ -3018,6 +3038,7 @@ const struct ScrollingMulti gScrollingSets[] =
 	{sTutorHeleo, ARRAY_COUNT(sTutorHeleo)},
 	{sMealOptions, ARRAY_COUNT(sMealOptions)},
 	{sMealOptionsWithAll, ARRAY_COUNT(sMealOptionsWithAll)},
+	{sTutorDaimyn, ARRAY_COUNT(sTutorDaimyn)},
 };
 
 //Link number of opts shown at once to the box height
