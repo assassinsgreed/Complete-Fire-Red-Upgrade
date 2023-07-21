@@ -25,6 +25,15 @@ Sleep
 #org @gText_End
 End
 
+#org @gText_Yes
+Yes
+
+#org @gText_No
+No
+
+#org @gText_Info
+Info
+
 #org @gText_ReceiveRunningShoes
 [BLACK][PLAYER] obtained the Running Shoes!
 
