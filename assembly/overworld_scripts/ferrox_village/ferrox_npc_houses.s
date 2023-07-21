@@ -41,8 +41,8 @@ EventScript_FerroxNPCHouses_MoveTutor:
     compare LASTRESULT TRUE
     if FALSE _goto NotEnoughPokeChips
     msgbox gText_FerroxNPCHouses_ConfirmationAccepted MSG_KEEPOPEN
+    loadpointer 0x0 gText_FerroxNPCHouses_Complete
     call EventScript_Tutors_Ferrox
-    msgbox gText_FerroxNPCHouses_Complete MSG_NORMAL
     release
     end
 

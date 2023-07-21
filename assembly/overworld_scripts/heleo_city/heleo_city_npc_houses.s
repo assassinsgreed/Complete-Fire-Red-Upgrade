@@ -39,8 +39,8 @@ EventScript_HeleoCity_MoveTutor:
     compare LASTRESULT TRUE
     if FALSE _goto NotEnoughPokeChips
     msgbox gText_HeleoNPCHouses_ConfirmationAccepted MSG_KEEPOPEN
+    loadpointer 0x0 gText_HeleoNPCHouses_Complete
     call EventScript_Tutors_Heleo
-    msgbox gText_HeleoNPCHouses_Complete MSG_NORMAL
     release
     end
 

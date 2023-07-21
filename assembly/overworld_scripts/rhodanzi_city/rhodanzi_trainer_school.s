@@ -71,7 +71,7 @@ TerrainTutor:
     if FALSE _goto NotEnoughPokeChips
     msgbox gText_RhodanziTrainerSchool_MainRoom_TerrainTutor_ConfirmationAccepted MSG_KEEPOPEN
     call EventScript_Tutors_Terrain
-    msgbox gText_RhodanziTrainerSchool_MainRoom_TerrainTutor_Complete MSG_NORMAL
+    loadpointer 0x0 gText_RhodanziTrainerSchool_MainRoom_TerrainTutor_Complete
     release
     end
 

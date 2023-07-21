@@ -223,19 +223,25 @@ MagicRoom:
 
 teach5ChipMove:
     call teachmove
-    compare LASTRESULT NO
-    if true _goto cancelled
+    compare LASTRESULT YES
+    if false _goto return
+    preparemsg 0x0
+    waitmsg
     removeitem ITEM_POKE_CHIP 0x5
     return
 
 teachmove:
     special 0x18D
     waitstate
-    compare LASTRESULT NO
-    if TRUE _goto cancelled @ Pokemon couldn't learn move, or player cancelled
+    compare LASTRESULT YES
+    if false _goto cancelled @ Pokemon couldn't learn move, or player cancelled
     sound 0xF8 @ Money SE
     waitse
     return
 
 cancelled:
+    msgbox gText_TutoringRejected MSG_NORMAL
+    return
+
+return:
     return
