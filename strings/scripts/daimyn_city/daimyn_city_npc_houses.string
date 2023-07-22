@@ -3,3 +3,24 @@ We're just minding our own business.\pWhy don't you get lost and play with\nyour
 
 #org @gText_DaimynCity_NPCHouses_SuspiciousMan2
 Our house is really basic. There's\nnothing interesting about it our our\llives.
+
+#org @gText_DaimynNPCHouses_TutorConfirmation
+I am well studied in Pok\emon moves.\pI can tutor your Pok\emon, say, for\n5 Pok\eChips?\pDo we have a deal?\n(Held: [BUFFER1])
+
+#org @gText_DaimynNPCHouses_ConfirmationAccepted
+Excellent. Pick a move and let's\nbegin.
+
+#org @gText_DaimynNPCHouses_Complete
+My lesson is complete. Do return if\nyou would like me to teach\lanother move.
+
+#org @gText_DaimynNPCHouses_TutoringRejected
+Understood. If you change your mind,\nI will be here.
+
+#org @gText_DaimynNPCHouses_NotEnoughPokeChips
+I need 5 Pok\eChips to cover the\nlesson. Come back when you have\lenough.
+
+#org @gText_DaimynCityNPCHouses_TutorsDaughter
+Weak moves[.] Strong moves[.]\nThere is no such thing.\pA truly gifted trainer can find a\nuse for any Pok\emon move.
+
+#org @gText_DaimynCityNPCHouses_TutorsSon
+My daddy teaches moves that no\nother move tutor can!\pYou should learn as many moves from\nhim as you can before you leave\lthe city!
