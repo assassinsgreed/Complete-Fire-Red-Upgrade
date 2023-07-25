@@ -17,13 +17,16 @@ Welcome to Daimyn City!
 Aw, that's another loss for me.
 
 #org @gText_DaimynCityFacilities_GuardHouse_RivalConcludesBattle
-[BLUE]Looks like you win again, [PLAYER]!\nYou and your Pok\emon are so\lstrong!\pHere, let me heal up your[.] Huh?
+[BLUE]Looks like you win again, [PLAYER]!\pYou and your Pok\emon are so\nstrong!\pHey, I've got something for you[.]\pI was shopping in Heleo City and\ngot a couple freebies for being\lthe 100th shopper! Isn't that neat?\pHere you go!
+
+#org @gText_DaimynCityFacilities_GuardHouse_RivalExplainsMachoBrace
+[BLUE]They said that can make your Pok\emon\nstronger as it battles, when held.\pOh, I should heal up your[.] Huh?
 
 #org @gText_DaimynCityFacilities_GuardHouse_RivalNoItems
 [BLUE]Um[.] Oops! I don't have any items\nleft! Sorry about that.
 
 #org @gText_DaimynCityFacilities_GuardHouse_RivalOffersTourOfDaimynCity
-[BLUE]Hey, I have an idea. We're right\noutside Daimyn City, right?\pWhy don't we walk through the city\ntogether to the Pok\emon Center?\pI know a lot about the city.\nIt'll be fun! Let's go!
+[BLUE]Hey, I know! We're right\noutside Daimyn City, right?\pWhy don't we walk through the city\ntogether to the Pok\emon Center?\pI know a lot about the city.\nIt'll be fun! Let's go!
 
 #org @gText_DaimynCityFacilities_RestaurantBoy
 My grandpa takes me out for lunch\nevery week. It's a nice opportunity\lto catch up and chat!
