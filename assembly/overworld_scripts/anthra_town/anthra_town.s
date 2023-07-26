@@ -4,7 +4,6 @@
 .include "../xse_commands.s"
 .include "../xse_defines.s"
 .include "../asm_defines.s"
-#include "../include/constants/songs.h"
 
 .equ Mom, 0x1
 .equ Rival, 0x2

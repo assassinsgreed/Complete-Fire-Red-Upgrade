@@ -22,7 +22,7 @@ const struct TrainerMonNoItemDefaultMoves sParty_Rival2[] = {
 
 const struct TrainerMonItemCustomMoves sParty_Rival3[] = {
     {
-        .lvl = 30,
+        .lvl = 32,
         .species = SPECIES_CORVISQUIRE,
         .moves = {
             MOVE_TAUNT,
@@ -33,7 +33,7 @@ const struct TrainerMonItemCustomMoves sParty_Rival3[] = {
         .ability = Ability_1 // Keen Eye 
     },
     {
-        .lvl = 30,
+        .lvl = 32,
         .species = SPECIES_FLAAFFY,
         .moves = {
             MOVE_ELECTROBALL,
@@ -44,7 +44,7 @@ const struct TrainerMonItemCustomMoves sParty_Rival3[] = {
         .ability = Ability_1 // Static 
     },
     {
-        .lvl = 32,
+        .lvl = 34,
         .species = SPECIES_EEVEE,
         .moves = {
             MOVE_BITE,

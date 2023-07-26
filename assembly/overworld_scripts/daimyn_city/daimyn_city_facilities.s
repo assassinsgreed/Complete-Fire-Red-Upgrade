@@ -45,7 +45,7 @@ TileScript_DaimynCity_GuardHouseWest_TriggerRival:
     applymovement PLAYER m_PlayerLeavesWithRival_West
     waitmovement ALLEVENTS
     playse 0x8 @ door open
-    @ TODO: Warp and continue event in Daimyn City
+    warp 3 5 0 @ West gate
     release
     end
 
@@ -66,7 +66,7 @@ TileScript_DaimynCity_GuardHouseSouth_TriggerRival:
     applymovement PLAYER m_PlayerLeavesWithRival_South
     waitmovement ALLEVENTS
     playse 0x8 @ door open
-    @ TODO: Warp and continue event in Daimyn City
+    warp 3 5 1 @ South gate
     release
     end
 
@@ -86,10 +86,13 @@ RivalBattleCommon:
     setvar 0x503B 0x0
     trainerbattle3 0x0 0x88 0x100 gText_DaimynCityFacilities_GuardHouse_RivalLoses
     msgbox gText_DaimynCityFacilities_GuardHouse_RivalConcludesBattle MSG_NORMAL
+    obtainitem ITEM_MACHO_BRACE 0x1
+    msgbox gText_DaimynCityFacilities_GuardHouse_RivalExplainsMachoBrace MSG_NORMAL
     applymovement SpriteRival m_Surprise
     waitmovement ALLEVENTS
     msgbox gText_DaimynCityFacilities_GuardHouse_RivalNoItems MSG_NORMAL
     pause DELAY_HALFSECOND
+    applymovement SpriteRival m_Joy
     msgbox gText_DaimynCityFacilities_GuardHouse_RivalOffersTourOfDaimynCity MSG_NORMAL
     setvar StoryEventVar 0x1 @ Prevent from happening again in either guard house
     return

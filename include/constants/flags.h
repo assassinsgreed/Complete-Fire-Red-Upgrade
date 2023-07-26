@@ -607,7 +607,7 @@
 #define FLAG_GOT_SOOTHE_BELL_GIFT                        0x24E
 #define FLAG_GOT_BIKE                                    0x24F
 #define FLAG_DAIMYN_RESTAURANT_EXPLAINED                 0x250
-#define FLAG_DID_NINA_TRADE                              0x251
+#define FLAG_HIDE_DAIMYN_CITY_STORY_NPCS                 0x251
 #define FLAG_GOT_ITEMFINDER                              0x252
 #define FLAG_WOKE_UP_ROUTE_12_SNORLAX                    0x253
 #define FLAG_GOT_TM05_FROM_TERRENCE                      0x254
