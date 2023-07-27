@@ -51,6 +51,12 @@ EventScript_DaimynCityNPCHouses_TutorsSon:
     npcchat gText_DaimynCityNPCHouses_TutorsSon
     end
 
+.global EventScript_DaimynCity_FindTM46Thief
+EventScript_DaimynCity_FindTM46Thief:
+    setvar CHOSEN_ITEM ITEM_TM46
+    call ItemScript_Common_FindTM
+    end
+
 .global EventScript_DaimynCityNPCHouses_OldTrainer
 EventScript_DaimynCityNPCHouses_OldTrainer:
     lock
