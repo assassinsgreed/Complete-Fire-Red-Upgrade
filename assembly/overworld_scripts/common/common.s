@@ -103,6 +103,11 @@ PlayerWalkDown:
     waitmovement ALLEVENTS
     end
 
+.global LookUp
+LookUp:
+    applymovement PLAYER m_LookUp
+    return
+
 .global LookDown
 LookDown:
     applymovement PLAYER m_LookDown

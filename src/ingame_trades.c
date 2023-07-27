@@ -4,6 +4,7 @@
 #include "../include/pokemon.h"
 #include "../include/string_util.h"
 #include "../include/trade.h"
+#include "../include/constants/moves.h"
 #include "config.h"
 
 #include "../include/new/build_pokemon.h"
@@ -13,11 +14,15 @@
 #include "../include/constants/region_map_sections.h"
 #include "../include/constants/species.h"
 #include "../include/constants/items.h"
+#include "../include/new/util.h"
+#include "../include/new/catching.h"
 
 extern struct TradeAnimationResources * sTradeData;
 
 extern u8 gText_InGameTrade_Cosmo[];
 extern u8 gText_InGameTrade_OTMillie[];
+extern u8 gText_InGameTrade_Pikachu[];
+extern u8 gText_InGameGift_OTAsh[];
 
 static const struct InGameTrade sInGameTrades[] = {
     [INGAME_TRADE_CHINCHOU] = 
@@ -35,6 +40,24 @@ static const struct InGameTrade sInGameTrades[] = {
         .otGender = FEMALE,
         .nature = NATURE_CALM,
         .requestedSpecies = SPECIES_SNOM
+    }
+};
+
+static const struct InGameTrade sInGameGifts[] = {
+    [INGAME_GIFT_PIKACHU_ORIGINAL_CAP] =
+    {
+        .nickname = gText_InGameTrade_Pikachu,
+        .species = SPECIES_PIKACHU_CAP_ORIGINAL,
+        .ivs = {25, 15, 20, 31, 25, 31},
+        .abilityNum = 0, // Static
+        .otId = 1997,
+        .conditions = {5, 5, 15, 15, 30},
+        .personality = 0x482cac89, // TODO: Investigate this
+        .heldItem = ITEM_LIGHT_BALL,
+        .mailNum = 0,
+        .otName = gText_InGameGift_OTAsh,
+        .otGender = MALE,
+        .nature = NATURE_TIMID
     }
 };
 
@@ -106,8 +129,9 @@ void CreateInGameTradePokemonInternal(u8 playerSlot, u8 inGameTradeIdx)
     u8 level = GetMonData(&gPlayerParty[playerSlot], MON_DATA_LEVEL, 0);
     struct MailStructDaycare mail;
     u8 metLocation = METLOC_IN_GAME_TRADE;
-    struct Pokemon * tradeMon = &gEnemyParty[0];
     u8 mailNum;
+
+    struct Pokemon * tradeMon = &gEnemyParty[0];
     CreateMon(tradeMon, inGameTrade->species, level, 32, TRUE, inGameTrade->personality, TRUE, inGameTrade->otId);
     SetMonData(tradeMon, MON_DATA_HP_IV, &inGameTrade->ivs[0]);
     SetMonData(tradeMon, MON_DATA_ATK_IV, &inGameTrade->ivs[1]);
@@ -141,4 +165,58 @@ void CreateInGameTradePokemonInternal(u8 playerSlot, u8 inGameTradeIdx)
         }
     }
     CalculateMonStats(&gEnemyParty[0]);
+}
+
+void CreateInGameGiftPokemon()
+{
+    const struct InGameTrade * ingameGift = &sInGameGifts[Var8004];
+    struct MailStructDaycare mail;
+    u8 mailNum;
+    u8 metLocation = METLOC_FATEFUL_ENCOUNTER;
+    u16* moves = &Var8000; //-0x8003
+
+    struct Pokemon * giftMon = &gEnemyParty[0];
+    CreateMon(giftMon, ingameGift->species, Var8005, 32, TRUE, ingameGift->personality, TRUE, ingameGift->otId);
+    SetMonData(giftMon, MON_DATA_HP_IV, &ingameGift->ivs[0]);
+    SetMonData(giftMon, MON_DATA_ATK_IV, &ingameGift->ivs[1]);
+    SetMonData(giftMon, MON_DATA_DEF_IV, &ingameGift->ivs[2]);
+    SetMonData(giftMon, MON_DATA_SPEED_IV, &ingameGift->ivs[3]);
+    SetMonData(giftMon, MON_DATA_SPATK_IV, &ingameGift->ivs[4]);
+    SetMonData(giftMon, MON_DATA_SPDEF_IV, &ingameGift->ivs[5]);
+    SetMonData(giftMon, MON_DATA_NICKNAME, ingameGift->nickname);
+    SetMonData(giftMon, MON_DATA_OT_NAME, ingameGift->otName);
+    SetMonData(giftMon, MON_DATA_OT_GENDER, &ingameGift->otGender);
+    SetMonData(giftMon, MON_DATA_BEAUTY, &ingameGift->conditions[1]);
+    SetMonData(giftMon, MON_DATA_CUTE, &ingameGift->conditions[2]);
+    SetMonData(giftMon, MON_DATA_COOL, &ingameGift->conditions[0]);
+    SetMonData(giftMon, MON_DATA_SMART, &ingameGift->conditions[3]);
+    SetMonData(giftMon, MON_DATA_TOUGH, &ingameGift->conditions[4]);
+    SetMonData(giftMon, MON_DATA_MET_LOCATION, &metLocation); // NOTE: When OT Name & ID don't match player, the FR engine will always set a met location of Trade
+    GiveMonNatureAndAbility(giftMon, ingameGift->nature, ingameGift->abilityNum, IsMonShiny(giftMon), TRUE, TRUE);
+    
+    for (u8 i = 0; i < MAX_MON_MOVES; ++i)
+    {
+        if (moves[i] < MOVES_COUNT)
+            SetMonData(giftMon, MON_DATA_MOVE1 + i, &moves[i]);
+    }
+    
+    mailNum = 0;
+    if (ingameGift->heldItem != ITEM_NONE)
+    {
+        if (ItemIsMail(ingameGift->heldItem))
+        {
+            GetInGameTradeMail(&mail, ingameGift);
+            gLinkPartnerMail[0] = mail;
+            SetMonData(giftMon, MON_DATA_MAIL, &mailNum);
+            SetMonData(giftMon, MON_DATA_HELD_ITEM, &ingameGift->heldItem);
+        }
+        else
+        {
+            SetMonData(giftMon, MON_DATA_HELD_ITEM, &ingameGift->heldItem);
+        }
+    }
+    CalculateMonStats(&gEnemyParty[0]);
+    HealMon(giftMon);
+	GiveMonToPlayer(giftMon);
+    SetMonPokedexFlags(giftMon);
 }
