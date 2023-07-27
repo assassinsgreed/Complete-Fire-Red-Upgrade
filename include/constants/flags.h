@@ -66,8 +66,8 @@
 #define FLAG_HIDE_RIVAL_IN_DAIMYN_GUARDHOUSES_ON_BY_DEFAULT 0x03C
 #define FLAG_USED_ALREADY???                               0x03D
 #define FLAG_HIDE_HELEO_RANCH_AMPHAROS                     0x03E
-#define FLAG_HIDE_SAFFRON_CIVILIANS                        0x03F
-#define FLAG_HIDE_SEAFOAM_1F_BOULDER_1                     0x040
+#define FLAG_USED_ALREADY???                               0x03F
+#define FLAG_HIDE_PIKACHU_GIFT_IN_DAIMYN_CTIY              0x040
 #define FLAG_HIDE_SEAFOAM_1F_BOULDER_2                     0x041
 #define FLAG_HIDE_SEAFOAM_B1F_BOULDER_1                    0x042
 #define FLAG_HIDE_SEAFOAM_B1F_BOULDER_2                    0x043

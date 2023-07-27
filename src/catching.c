@@ -604,9 +604,12 @@ u8 GiveMonToPlayer(struct Pokemon* mon) //Hook in
 	TryRevertMega(mon);
 	TryRevertGigantamax(mon);
 
-	SetMonData(mon, MON_DATA_OT_NAME, gSaveBlock2->playerName);
-	SetMonData(mon, MON_DATA_OT_GENDER, &gSaveBlock2->playerGender);
-	SetMonData(mon, MON_DATA_OT_ID, gSaveBlock2->playerTrainerId);
+	if (GetMonData(mon, MON_DATA_OT_NAME, NULL) == '\0')
+	{
+		SetMonData(mon, MON_DATA_OT_NAME, gSaveBlock2->playerName);
+		SetMonData(mon, MON_DATA_OT_GENDER, &gSaveBlock2->playerGender);
+		SetMonData(mon, MON_DATA_OT_ID, gSaveBlock2->playerTrainerId);
+	}
 
 	u8 freeSlot = GetFreeSlotInPartyForMon();
 	if (freeSlot >= PARTY_SIZE) //Can't add mon

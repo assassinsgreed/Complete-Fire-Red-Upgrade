@@ -24,3 +24,30 @@ Weak moves[.] Strong moves[.]\nThere is no such thing.\pA truly gifted trainer c
 
 #org @gText_DaimynCityNPCHouses_TutorsSon
 My daddy teaches moves that no\nother move tutor can!\pYou should learn as many moves from\nhim as you can before you leave\lthe city!
+
+#org @gText_DaimynCityNPCHouses_OldTrainer_Intro
+Oh, hello there! It's been ages since\nI've been visited by a Pok\emon\lTrainer.\pMost days I spend alone, with my\ntrusty Pikachu.\pIt isn't bad company though,\nhohoho!\pIn ages long past, I wanted to be\nthe very best trainer.\pAnd, after years of hard work, I did\nit!\pBut[.] Time has passed and my battling\nskills aren't what they used to be.\pMy partner, Pikachu, still yearns for\nbattle.\pSay, would you consider taking him\nwith you? He's quite strong.
+
+#org @gText_DaimynCityNPCHouses_OldTrainer_Denied
+Very well. If you change your mind,\ndo consider coming back.\pI think Pikachu is bored of spending\nhis days cooped up indoors[.]
+
+#org @gText_DaimynCityNPCHouses_OldTrainer_Grateful
+How wonderful! I'm sure he will be\nquite ecstatic.\pWhat is your name, perchance?\p[PLAYER]? What a wonderful name.
+
+#org @gText_DaimynCityNPCHouses_OldTrainer_NoSpace
+Oh dear. I'm grateful to you,\n[PLAYER], but it seems you don't\lhave space in your party.\pCome back when you do, yes?
+
+#org @gText_DaimynCityNPCHouses_OldTrainer_PikachuGiven
+Pikachu, please go with [PLAYER], and\nshow them what a champion battler\llooks like!
+
+#org @gText_DaimynCityNPCHouses_OldTrainer_PikachuObtained
+[BLACK]Received [GREEN]Pikachu [BLACK]from the old man!
+
+#org @gText_DaimynCityNPCHouses_OldTrainer_PikachuAlreadyGifted
+[BLUE]Take good care of Pikachu, okay?\nHe's a champion battler!
+
+#org @gText_DaimynCityNPCHouses_Pikachu
+[BLUE]Chuu.
+
+#org @gText_DaimynCityNPCHouses_PikachuJoins
+Pikaaaa!

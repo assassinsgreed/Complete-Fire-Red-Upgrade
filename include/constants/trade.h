@@ -20,6 +20,8 @@
 // #define INGAME_TRADE_TANGELA   7
 // #define INGAME_TRADE_SEEL      8
 
+// In-Game Gift IDs
+#define INGAME_GIFT_PIKACHU_ORIGINAL_CAP 0
 
 // Flag IDs for sending link data
 #define INITIATE_TRADE  1
