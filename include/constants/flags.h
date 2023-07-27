@@ -450,7 +450,7 @@
 #define FLAG_HIDE_FORGOTTEN_MANSE_BF1_TM61_WILL_O_WISP          0x1B8
 #define FLAG_HIDE_FORGOTTEN_MANSE_1F_SABLENITE                  0x1B9
 #define FLAG_HIDE_DAIMYN_CITY_TM46_THIEF                        0x1BA
-#define FLAG_HIDE_THREE_ISLAND_ZINC                             0x1BB
+#define FLAG_HIDE_DAIMYN_CITY_TM54_FALSE_SWIPE                  0x1BB
 #define FLAG_0x1BC                                              0x1BC
 #define FLAG_0x1BD                                              0x1BD
 #define FLAG_HIDE_VIRIDIAN_FOREST_POTION_2                      0x1BE

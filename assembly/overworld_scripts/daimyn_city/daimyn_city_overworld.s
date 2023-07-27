@@ -295,9 +295,9 @@ EventScript_DaimynCityOverworld_PlutoSW:
     npcchat gText_DaimynCityOverworld_PlutoSW
     end
 
-.global EventScript_DaimynCity_FindTM46Thief
-EventScript_DaimynCity_FindTM46Thief:
-    setvar CHOSEN_ITEM ITEM_TM46
+.global EventScript_DaimynCity_FindTM54FalseSwipe
+EventScript_DaimynCity_FindTM54FalseSwipe:
+    setvar CHOSEN_ITEM ITEM_TM54
     call ItemScript_Common_FindTM
     end
 

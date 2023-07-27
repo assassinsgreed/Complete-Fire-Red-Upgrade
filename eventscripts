@@ -827,7 +827,7 @@ npc 3 5 9 EventScript_DaimynCityOverworld_PlutoNW
 npc 3 5 10 EventScript_DaimynCityOverworld_PlutoSE
 npc 3 5 11 EventScript_DaimynCityOverworld_PlutoSW
 npc 3 5 12 EventScript_Common_Cut
-npc 3 5 13 EventScript_DaimynCity_FindTM46Thief
+npc 3 5 13 EventScript_DaimynCity_FindTM54FalseSwipe
 sign 3 5 0 SignScript_DaimynCityOverworld_Restaurant
 sign 3 5 1 SignScript_DaimynCityOverworld_AscensionTower
 sign 3 5 2 SignScript_DaimynCityOverworld_ShoppingMall
@@ -854,6 +854,7 @@ npc 9 9 3 EventScript_DaimynCityFacilities_PokemonCenterGirl
 ## NPC Houses
 npc 9 10 0 EventScript_DaimynCityNPCHouses_SuspiciousMan1
 npc 9 10 1 EventScript_DaimynCityNPCHouses_SuspiciousMan2
+npc 9 10 2 EventScript_DaimynCity_FindTM46Thief
 npc 9 12 0 EventScript_DaimynCityNPCHouses_OldTrainer
 npc 9 12 1 EventScript_DaimynCityNPCHouses_Pikachu
 npc 9 13 0 EventScript_DaimynCity_MoveTutor
