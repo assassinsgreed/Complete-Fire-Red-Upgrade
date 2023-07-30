@@ -229,6 +229,7 @@ EightBadges_Stock:
 .global EventScript_EndMart    
 EventScript_EndMart:
     msgbox gText_Common_PokemartEnd MSG_NORMAL
+    textcolor 0xFF @ Reset color to OW default
     goto End
 
 EventScript_PokemartNotReady:

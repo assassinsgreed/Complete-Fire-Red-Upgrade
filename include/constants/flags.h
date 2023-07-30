@@ -1071,10 +1071,10 @@
 #define HIDDEN_ITEM_FORGOTTEN_MANSE_SMOKE_BALL                         42
 #define HIDDEN_ITEM_FORGOTTEN_MANSE_ESCAPE_ROPE                        43
 #define HIDDEN_ITEM_DAIMYN_CITY_ULTRA_BALL                             44
-#define HIDDEN_ITEM_UNUSED_0x2D                                        45
-#define HIDDEN_ITEM_UNUSED_0x2E                                        46
-#define HIDDEN_ITEM_CELADON_CITY_PP_UP                                 47
-#define HIDDEN_ITEM_VERMILION_CITY_MAX_ETHER                           48
+#define HIDDEN_ITEM_DAIMYN_MALL_PEARL                                  45
+#define HIDDEN_ITEM_DAIMYN_MALL_STARDUST                               46
+#define HIDDEN_ITEM_DAIMYN_MALL_GREAT_BALL                             47
+#define HIDDEN_ITEM_DAIMYN_MALL_ELIXER                                 48
 #define HIDDEN_ITEM_CERULEAN_CITY_RARE_CANDY                           49
 #define HIDDEN_ITEM_ROUTE4_GREAT_BALL                                  50
 #define HIDDEN_ITEM_CELADON_CITY_GAME_CORNER_COINS                     51
