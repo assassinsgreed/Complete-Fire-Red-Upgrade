@@ -609,7 +609,7 @@
 #define FLAG_DAIMYN_RESTAURANT_EXPLAINED                 0x250
 #define FLAG_HIDE_DAIMYN_CITY_STORY_NPCS                 0x251
 #define FLAG_GOT_ITEMFINDER                              0x252
-#define FLAG_WOKE_UP_ROUTE_12_SNORLAX                    0x253
+#define FLAG_BOUGHT_CARVANHA                             0x253
 #define FLAG_GOT_TM05_FROM_TERRENCE                      0x254
 #define FLAG_GOT_SUPER_ROD                               0x255
 #define FLAG_GOT_EXP_SHARE_FROM_OAKS_AIDE                0x256
@@ -1330,6 +1330,7 @@ Daily Flags, cleared at the start of each day.  Goes up to 0xEFF
 #define FLAG_HELEO_CITY_TRAINER_HOUSE         0xE0B
 #define FLAG_ROUTE_8_SANDYGAST_1              0xE0C
 #define FLAG_ROUTE_8_SANDYGAST_2              0xE0D
+#define FLAG_DAIMYN_CITY_LUCKY_DRAW_SPECIES   0xE0E
 */
 
 #define FLAG_TRAINER_FLAG_START 0x500

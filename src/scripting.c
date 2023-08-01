@@ -3110,3 +3110,21 @@ void SetScrollingListSize(unusedArg u8 taskId)
 	gTasks[taskId].data[4] = 0xC;	//width?
 #endif
 }
+
+void GetLuckyPokmeonSpecies()
+{
+	// Get random species #, 1 - Nat Dex Count inclusive
+	u16 dexNum = VarGet(gSpecialVar_LastResult);
+	GetSpeciesName(gStringVar1, NationalPokedexNumToSpecies(dexNum));
+
+	// Set Var LASTRESULT to player's seen/caught flag
+	gSpecialVar_LastResult = 0x0;
+	if (GetSetPokedexFlag(dexNum, FLAG_GET_SEEN))
+	{
+		gSpecialVar_LastResult = 0x1;
+	}
+	if (GetSetPokedexFlag(dexNum, FLAG_GET_CAUGHT))
+	{
+		gSpecialVar_LastResult = 0x2;
+	}
+}

@@ -854,7 +854,7 @@ npc 9 9 3 EventScript_DaimynCityFacilities_PokemonCenterGirl
 npc 9 16 0 EventScript_DaimynCityMall_LuckyDrawLady
 npc 9 16 1 EventScript_DaimynCityMall_Greeter
 npc 9 16 2 EventScript_DaimynCityMall_Shop_Herbalist
-npc 9 16 3 EventScript_DaimynCityMall_Shop_Consumables
+npc 9 16 3 EventScript_Pokemart
 npc 9 16 4 EventScript_DaimynCityMall_Shop_DealOfTheDay
 npc 9 16 5 EventScript_DaimynCityMall_MagazineSeller
 npc 9 16 6 EventScript_DaimynCityMall_Shop_Pokeballs
@@ -868,13 +868,13 @@ npc 9 16 13 EventScript_DaimynCityMall_Shop_Gems
 npc 9 16 14 EventScript_DaimynCityMall_RareCollectiblesMan
 npc 9 16 15 EventScript_DaimynCityMall_Shop_TypeBoosterItems
 npc 9 16 16 EventScript_DaimynCityMall_FishSeller
-npc 9 16 17 EventScript_DaimynCityMall_Shop_MoomooMilkDistributor
+npc 9 16 17 EventScript_DaimynCityMall_Shop_Incense
 npc 9 16 18 EventScript_DaimynCityMall_Shop_TypeWeaknessBerries
 npc 9 16 19 EventScript_DaimynCityMall_Fisherman
 npc 9 16 20 EventScript_DaimynCityMall_OldLady
 npc 9 16 21 EventScript_DaimynCityMall_LostPearlsWoman
 npc 9 16 22 EventScript_DaimynCityMall_UndecidedGirl
-npc 9 16 23 EventScript_DaimynCityMall_Picknicker
+npc 9 16 23 EventScript_DaimynCityMall_Camper
 npc 9 16 24 EventScript_DaimynCityMall_Blackbelt
 npc 9 16 25 EventScript_DaimynCityMall_BugCatcher
 npc 9 16 26 EventScript_DaimynCityMall_DateBoy
