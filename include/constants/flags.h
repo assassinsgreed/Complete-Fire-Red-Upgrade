@@ -1331,6 +1331,8 @@ Daily Flags, cleared at the start of each day.  Goes up to 0xEFF
 #define FLAG_ROUTE_8_SANDYGAST_1              0xE0C
 #define FLAG_ROUTE_8_SANDYGAST_2              0xE0D
 #define FLAG_DAIMYN_CITY_LUCKY_DRAW_SPECIES   0xE0E
+#define FLAG_DAIMYN_CITY_DAILY_DEAL_SET       0xE0F
+#define FLAG_DAIMYN_CITY_DAILY_DEAL_BOUGHT    0xE10
 */
 
 #define FLAG_TRAINER_FLAG_START 0x500

@@ -77,7 +77,335 @@ HerbShop:
 
 .global EventScript_DaimynCityMall_Shop_DealOfTheDay
 EventScript_DaimynCityMall_Shop_DealOfTheDay:
+    lock
+    checkflag 0xE10 @ Daily deal bought
+    if SET _goto DealAlreadyBought
+    msgbox gText_DaimynCityMall_DealOfTheDayOffer MSG_NORMAL
+    showmoney 0x0 0x0
+    checkflag 0xE0F @ Daily deal set
+    if NOT_SET _call SetDailyDeal
+    switch 0x40EC
+    case 0, DailyDealPremierBalls
+    case 1, DailyDealSuperPotions
+    case 2, DailyDealBerries
+    case 3, DailyDealSeeds
+    case 4, DailyDealUltraBalls
+    case 5, DailyDealHyperPotions
+    case 6, DailyDealStatusHealers
+    case 7, DailyDealXItems
+    case 8, DailyDealHerbs
+    case 9, DailyDealGreatBalls
+    case 10, DailyDealGems1
+    case 11, DailyDealGems2
+    case 12, DailyDealGems3
+    case 13, DailyDealEvolutionaryStones1
+    case 14, DailyDealEvolutionaryStones2
 
+SetDailyDeal:
+    random 0xE @ 15 Sets
+    copyvar 0x40EC LASTRESULT
+    setflag 0xE0F @ Daily deal set
+    return
+
+HandleDailyDealPurchase:
+    updatemoney 0x0 0x0
+    sound 0xF8 @ Money SE
+    waitse
+    hidemoney
+    msgbox gText_DaimynCityMall_DealOfTheDayPurchasing MSG_KEEPOPEN
+    return
+
+FinishBuyingDailyDeal:
+    setflag 0xE10 @ Daily deal bought
+    msgbox gText_DaimynCityMall_DealOfTheDayBought MSG_NORMAL
+    release
+    end
+
+DailyDealPremierBalls:
+    msgbox gText_DaimynCityMall_DealPremierBalls MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto DailyDealChoseNo
+    checkmoney 0x1F4 @ 500
+    compare LASTRESULT TRUE
+    if notequal _goto DailyDealNotEnoughMoney
+    removemoney 0x1F4
+    call HandleDailyDealPurchase
+    obtainitem ITEM_PREMIER_BALL 0x5
+    goto FinishBuyingDailyDeal
+
+DailyDealSuperPotions:
+    msgbox gText_DaimynCityMall_DealSuperPotions MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto DailyDealChoseNo
+    checkmoney 0x5DC @ 1500
+    compare LASTRESULT TRUE
+    if notequal _goto DailyDealNotEnoughMoney
+    removemoney 0x5DC
+    call HandleDailyDealPurchase
+    obtainitem ITEM_SUPER_POTION 0x3
+    goto FinishBuyingDailyDeal
+
+DailyDealBerries:
+    msgbox gText_DaimynCityMall_DealBerries MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto DailyDealChoseNo
+    checkmoney 0x3E8 @ 1000
+    compare LASTRESULT TRUE
+    if notequal _goto DailyDealNotEnoughMoney
+    removemoney 0x3E8
+    call HandleDailyDealPurchase
+    obtainitem ITEM_ORAN_BERRY 0x2
+    pause DELAY_HALFSECOND
+    obtainitem ITEM_SITRUS_BERRY 0x2
+    pause DELAY_HALFSECOND
+    obtainitem ITEM_CHERI_BERRY 0x1
+    pause DELAY_HALFSECOND
+    obtainitem ITEM_CHESTO_BERRY 0x1
+    pause DELAY_HALFSECOND
+    obtainitem ITEM_RAWST_BERRY 0x1
+    pause DELAY_HALFSECOND
+    obtainitem ITEM_ASPEAR_BERRY 0x1
+    pause DELAY_HALFSECOND
+    obtainitem ITEM_PERSIM_BERRY 0x1
+    pause DELAY_HALFSECOND
+    goto FinishBuyingDailyDeal
+
+DailyDealSeeds:
+    msgbox gText_DaimynCityMall_DealSeeds MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto DailyDealChoseNo
+    checkmoney 0x320 @ 800
+    compare LASTRESULT TRUE
+    if notequal _goto DailyDealNotEnoughMoney
+    removemoney 0x320
+    call HandleDailyDealPurchase
+    obtainitem ITEM_ELECTRIC_SEED 0x2
+    pause DELAY_HALFSECOND
+    obtainitem ITEM_GRASSY_SEED 0x2
+    pause DELAY_HALFSECOND
+    obtainitem ITEM_PSYCHIC_SEED 0x2
+    pause DELAY_HALFSECOND
+    obtainitem ITEM_MISTY_SEED 0x2
+    goto FinishBuyingDailyDeal
+
+DailyDealUltraBalls:
+    msgbox gText_DaimynCityMall_DealUltraBalls MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto DailyDealChoseNo
+    checkmoney 0xBB8 @ 3000
+    compare LASTRESULT TRUE
+    if notequal _goto DailyDealNotEnoughMoney
+    removemoney 0xBB8
+    call HandleDailyDealPurchase
+    obtainitem ITEM_ULTRA_BALL 0x3
+    goto FinishBuyingDailyDeal
+
+DailyDealHyperPotions:
+    msgbox gText_DaimynCityMall_DealHyperPotions MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto DailyDealChoseNo
+    checkmoney 0x9C4 @ 2500
+    compare LASTRESULT TRUE
+    if notequal _goto DailyDealNotEnoughMoney
+    removemoney 0x9C4
+    call HandleDailyDealPurchase
+    obtainitem ITEM_HYPER_POTION 0x2
+    goto FinishBuyingDailyDeal
+
+DailyDealStatusHealers:
+    msgbox gText_DaimynCityMall_DealStatusHealers MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto DailyDealChoseNo
+    checkmoney 0x4B0 @ 1200
+    compare LASTRESULT TRUE
+    if notequal _goto DailyDealNotEnoughMoney
+    removemoney 0x4B0
+    call HandleDailyDealPurchase
+    obtainitem ITEM_ANTIDOTE 0x2
+    pause DELAY_HALFSECOND
+    obtainitem ITEM_BURN_HEAL 0x2
+    pause DELAY_HALFSECOND
+    obtainitem ITEM_ICE_HEAL 0x2
+    pause DELAY_HALFSECOND
+    obtainitem ITEM_AWAKENING 0x2
+    pause DELAY_HALFSECOND
+    obtainitem ITEM_PARALYZE_HEAL 0x2
+    goto FinishBuyingDailyDeal
+
+DailyDealXItems:
+    msgbox gText_DaimynCityMall_DealXItems MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto DailyDealChoseNo
+    checkmoney 0x7D0 @ 2000
+    compare LASTRESULT TRUE
+    if notequal _goto DailyDealNotEnoughMoney
+    removemoney 0x7D0
+    call HandleDailyDealPurchase
+    obtainitem ITEM_X_ATTACK 0x1
+    pause DELAY_HALFSECOND
+    obtainitem ITEM_X_DEFEND 0x1
+    pause DELAY_HALFSECOND
+    obtainitem ITEM_X_SP_ATK 0x1
+    pause DELAY_HALFSECOND
+    obtainitem ITEM_X_SP_DEF 0x1
+    pause DELAY_HALFSECOND
+    obtainitem ITEM_X_SPEED 0x1
+    pause DELAY_HALFSECOND
+    obtainitem ITEM_DIRE_HIT 0x1
+    pause DELAY_HALFSECOND
+    obtainitem ITEM_GUARD_SPEC 0x1
+    goto FinishBuyingDailyDeal
+
+DailyDealHerbs:
+    msgbox gText_DaimynCityMall_DealHerbs MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto DailyDealChoseNo
+    checkmoney 0x5DC @ 1500
+    compare LASTRESULT TRUE
+    if notequal _goto DailyDealNotEnoughMoney
+    removemoney 0x5DC
+    call HandleDailyDealPurchase
+    obtainitem ITEM_ENERGY_POWDER 0x1
+    pause DELAY_HALFSECOND
+    obtainitem ITEM_ENERGY_ROOT 0x1
+    pause DELAY_HALFSECOND
+    obtainitem ITEM_HEAL_POWDER 0x1
+    pause DELAY_HALFSECOND
+    obtainitem ITEM_REVIVAL_HERB 0x1
+    goto FinishBuyingDailyDeal
+
+DailyDealGreatBalls:
+    msgbox gText_DaimynCityMall_DealGreatBalls MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto DailyDealChoseNo
+    checkmoney 0x4E2 @ 1250
+    compare LASTRESULT TRUE
+    if notequal _goto DailyDealNotEnoughMoney
+    removemoney 0x4E2
+    call HandleDailyDealPurchase
+    obtainitem ITEM_GREAT_BALL 0x4
+    goto FinishBuyingDailyDeal
+
+DailyDealGems1:
+    msgbox gText_DaimynCityMall_DealGems MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto DailyDealChoseNo
+    checkmoney 0x1388 @ 5000
+    compare LASTRESULT TRUE
+    if notequal _goto DailyDealNotEnoughMoney
+    removemoney 0x1388
+    call HandleDailyDealPurchase
+    obtainitem ITEM_FIRE_GEM 0x1
+    pause DELAY_HALFSECOND
+    obtainitem ITEM_WATER_GEM 0x1
+    pause DELAY_HALFSECOND
+    obtainitem ITEM_ELECTRIC_GEM 0x1
+    pause DELAY_HALFSECOND
+    obtainitem ITEM_GRASS_GEM 0x1
+    pause DELAY_HALFSECOND
+    obtainitem ITEM_ICE_GEM 0x1
+    pause DELAY_HALFSECOND
+    obtainitem ITEM_FIGHTING_GEM 0x1
+    goto FinishBuyingDailyDeal
+
+DailyDealGems2:
+    msgbox gText_DaimynCityMall_DealGems MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto DailyDealChoseNo
+    checkmoney 0x1388 @ 5000
+    compare LASTRESULT TRUE
+    if notequal _goto DailyDealNotEnoughMoney
+    removemoney 0x1388
+    call HandleDailyDealPurchase
+    obtainitem ITEM_POISON_GEM 0x1
+    pause DELAY_HALFSECOND
+    obtainitem ITEM_GROUND_GEM 0x1
+    pause DELAY_HALFSECOND
+    obtainitem ITEM_FLYING_GEM 0x1
+    pause DELAY_HALFSECOND
+    obtainitem ITEM_PSYCHIC_GEM 0x1
+    pause DELAY_HALFSECOND
+    obtainitem ITEM_BUG_GEM 0x1
+    pause DELAY_HALFSECOND
+    obtainitem ITEM_ROCK_GEM 0x1
+    goto FinishBuyingDailyDeal
+
+DailyDealGems3:
+    msgbox gText_DaimynCityMall_DealGems MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto DailyDealChoseNo
+    checkmoney 0x1388 @ 5000
+    compare LASTRESULT TRUE
+    if notequal _goto DailyDealNotEnoughMoney
+    removemoney 0x1388
+    call HandleDailyDealPurchase
+    obtainitem ITEM_GHOST_GEM 0x1
+    pause DELAY_HALFSECOND
+    obtainitem ITEM_DRAGON_GEM 0x1
+    pause DELAY_HALFSECOND
+    obtainitem ITEM_DARK_GEM 0x1
+    pause DELAY_HALFSECOND
+    obtainitem ITEM_STEEL_GEM 0x1
+    pause DELAY_HALFSECOND
+    obtainitem ITEM_NORMAL_GEM 0x1
+    pause DELAY_HALFSECOND
+    obtainitem ITEM_FAIRY_GEM 0x1
+    goto FinishBuyingDailyDeal
+
+DailyDealEvolutionaryStones1:
+    msgbox gText_DaimynCityMall_DealEvolutionaryStones MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto DailyDealChoseNo
+    checkmoney 0x1770 @ 6000
+    compare LASTRESULT TRUE
+    if notequal _goto DailyDealNotEnoughMoney
+    removemoney 0x1770
+    call HandleDailyDealPurchase
+    obtainitem ITEM_FIRE_STONE 0x1
+    pause DELAY_HALFSECOND
+    obtainitem ITEM_THUNDER_STONE 0x1
+    pause DELAY_HALFSECOND
+    obtainitem ITEM_WATER_STONE 0x1
+    pause DELAY_HALFSECOND
+    obtainitem ITEM_LEAF_STONE 0x1
+    pause DELAY_HALFSECOND
+    obtainitem ITEM_ICE_STONE 0x1
+    goto FinishBuyingDailyDeal
+
+DailyDealEvolutionaryStones2:
+    msgbox gText_DaimynCityMall_DealEvolutionaryStones MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto DailyDealChoseNo
+    checkmoney 0x1770 @ 6000
+    compare LASTRESULT TRUE
+    if notequal _goto DailyDealNotEnoughMoney
+    removemoney 0x1770
+    call HandleDailyDealPurchase
+    obtainitem ITEM_MOON_STONE 0x1
+    pause DELAY_HALFSECOND
+    obtainitem ITEM_SUN_STONE 0x1
+    pause DELAY_HALFSECOND
+    obtainitem ITEM_SHINY_STONE 0x1
+    pause DELAY_HALFSECOND
+    obtainitem ITEM_DUSK_STONE 0x1
+    pause DELAY_HALFSECOND
+    obtainitem ITEM_DAWN_STONE 0x1
+    goto FinishBuyingDailyDeal
+
+DealAlreadyBought:  
+    msgbox gText_DaimynCityMall_DealOfTheDayAlreadyBought MSG_NORMAL
+    release
+    end
+
+DailyDealChoseNo:
+    hidemoney
+    msgbox gText_DaimynCityMall_DealOfTheDayChoseNo MSG_NORMAL
+    end
+
+DailyDealNotEnoughMoney:
+    hidemoney
+    msgbox gText_DaimynCityMall_DealOfTheDayNotEnoughMoney MSG_NORMAL
+    end
 
 .global EventScript_DaimynCityMall_MagazineSeller
 EventScript_DaimynCityMall_MagazineSeller:
@@ -453,19 +781,6 @@ HeldItemShop:
     .hword ITEM_WIDE_LENS
     .hword ITEM_BRIGHT_POWDER
     .hword ITEM_BIG_ROOT
-    .hword ITEM_ABSORB_BULB
-    .hword ITEM_CELL_BATTERY
-    .hword ITEM_SNOWBALL
-    .hword ITEM_AIR_BALLOON
-    .hword ITEM_EJECT_BUTTON
-    .hword ITEM_FOCUS_BAND
-    .hword ITEM_GRIP_CLAW
-    .hword ITEM_LAGGING_TAIL
-    .hword ITEM_RED_CARD
-    .hword ITEM_SHED_SHELL
-    .hword ITEM_STICKY_BARB
-    .hword ITEM_TERRAIN_EXTENDER
-    .hword ITEM_HEAVY_DUTY_BOOTS
     .hword ITEM_NONE
 
 .global EventScript_DaimynCityMall_Rocker

@@ -28,6 +28,60 @@ Welcome to the Daimyn City Mall!\nShop to your heart's content!\pPlease see the 
 #org @gText_DaimynCityMall_HerbSeller
 [BLACK]Ehehehe[.] My herbs heal your Pok\emon\ngreatly[.] If they can handle them!
 
+#org @gText_DaimynCityMall_DealOfTheDayOffer
+Hello! I sell other stores'\noverstock for a reduced price.
+
+#org @gText_DaimynCityMall_DealOfTheDayPurchasing
+Thank you! Here you go!
+
+#org @gText_DaimynCityMall_DealOfTheDayBought
+Thanks! Come back tomorrow for more\nhot deals. And tell your friends!
+
+#org @gText_DaimynCityMall_DealOfTheDayAlreadyBought
+Sorry, friend. I've sold out for the\nday. Come back tomorrow, m'kay?
+
+#org @gText_DaimynCityMall_DealOfTheDayChoseNo
+Alright, I'll be here if you change\nyour mind.\pJust remember, the deal expires at\nthe end of the day!
+
+#org @gText_DaimynCityMall_DealOfTheDayNotEnoughMoney
+Sorry, but you don't have enough\nmoney! Come back when you do.\pJust remember to do it before the\ndeal expires at the end of the\lday!
+
+#org @gText_DaimynCityMall_DealPremierBalls
+Today's deal is [GREEN]5 Premier Balls for\n\$500[BLUE]. Are you interested?
+
+#org @gText_DaimynCityMall_DealSuperPotions
+Today's deal is [GREEN]3 Super Potions for\n\$1500[BLUE]. Are you interested?
+
+#org @gText_DaimynCityMall_DealBerries
+Today's deal is [GREEN]a berry pack for\n\$1000[BLUE]. Are you interested?
+
+#org @gText_DaimynCityMall_DealSeeds
+Today's deal is [GREEN]a seed pack for\n\$800[BLUE]. Are you interested?
+
+#org @gText_DaimynCityMall_DealUltraBalls
+Today's deal is [GREEN]3 Ultra Balls for\n\$3000[BLUE]. Are you interested?
+
+#org @gText_DaimynCityMall_DealHyperPotions
+Today's deal is [GREEN]2 Hyper Potions for\n\$2500[BLUE]. Are you interested?
+
+#org @gText_DaimynCityMall_DealStatusHealers
+Today's deal is [GREEN]status healers for\n\$1200[BLUE]. Are you interested?
+
+#org @gText_DaimynCityMall_DealXItems
+Today's deal is [GREEN]a pack of X Items\nfor \$2000[BLUE]. Are you interested?
+
+#org @gText_DaimynCityMall_DealHerbs
+Today's deal is [GREEN]a pack of herbs\nfor \$1500[BLUE]. Are you interested?
+
+#org @gText_DaimynCityMall_DealGreatBalls
+Today's deal is [GREEN]4 great balls\nfor \$1250[BLUE]. Are you interested?
+
+#org @gText_DaimynCityMall_DealGems
+Today's deal is [GREEN]a pack of gems\nfor \$5000[BLUE]. Are you interested?
+
+#org @gText_DaimynCityMall_DealEvolutionaryStones
+Today's deal is [GREEN]a pack of evolution\nstones for \$6000[BLUE]. Are you\linterested?
+
 #org @gText_DaimynCityMall_MagazineSeller
 Hello! I sell magazines. Can I\ninterest you in one? No?
 
