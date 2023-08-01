@@ -10,13 +10,13 @@
 EventScript_DaimynCityMall_LuckyDrawLady:
     lock
     faceplayer
-    checkflag 0x11F @ Daily lucky species flag, up to #287 to avoid exposing starters and legendaries
+    checkflag 0xE0E @ Daily lucky species flag
     if SET _goto LuckyDrawOver
     msgbox gText_DaimynCityMall_LuckyDrawIntro MSG_YESNO
     compare LASTRESULT NO
     if equal _goto LuckyDrawChoseNo
     msgbox gText_DaimynCityMall_LuckyDrawStarting MSG_NORMAL
-    random 0x184 @ 388 pokemon in NATIONAL_DEX_COUNT, stored in LastResult
+    random 0x11F @ up to #287 to avoid exposing starters and legendaries, stored in LastResult
     callasm GetLuckyPokmeonSpecies
     setflag 0xE0E @ Daily lucky species flag
     msgbox gText_DaimynCityMall_LuckyDrawPokemonChosen MSG_NORMAL

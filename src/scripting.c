@@ -3118,13 +3118,16 @@ void GetLuckyPokmeonSpecies()
 	GetSpeciesName(gStringVar1, NationalPokedexNumToSpecies(dexNum));
 
 	// Set Var LASTRESULT to player's seen/caught flag
-	gSpecialVar_LastResult = 0x0;
-	if (GetSetPokedexFlag(dexNum, FLAG_GET_SEEN))
-	{
-		gSpecialVar_LastResult = 0x1;
-	}
 	if (GetSetPokedexFlag(dexNum, FLAG_GET_CAUGHT))
 	{
 		gSpecialVar_LastResult = 0x2;
+	}
+	else if (GetSetPokedexFlag(dexNum, FLAG_GET_SEEN))
+	{
+		gSpecialVar_LastResult = 0x1;
+	}
+	else
+	{
+		gSpecialVar_LastResult = 0x0;
 	}
 }
