@@ -162,6 +162,101 @@ EventScript_DaimynCityNPCHouses_Pikachu:
     release
     end
 
+.global EventScript_DaimynCityNPCHouses_TradeBuddy
+EventScript_DaimynCityNPCHouses_TradeBuddy:
+    npcchat gText_DaimynCityNPCHouses_TraderBuddy
+    end
+
+.global EventScript_DaimynCityNPCHouses_Trader
+EventScript_DaimynCityNPCHouses_Trader:
+    lock
+    faceplayer
+    checkflag 0x254 @ Did starter based trade
+    if SET _goto DaimynTradeComplete
+    msgbox gText_DaimynCityNPCHouses_TraderIntro MSG_NORMAL
+    switch 0x408D @ Fire starter generation
+    case 0, TradeRequestMrMime
+    case 1, TradeRequestDratini
+    case 2, TradeRequestCorsolaG
+    case 3, TradeRequestFrillishF
+    case 4, TradeRequestEmolga
+    case 5, TradeRequestEevee
+    case 6, TradeRequestNoibat
+    case 7, TradeRequestHatenna
+    end
+
+TradeRequestMrMime:
+    msgbox gText_DaimynCityNPCHouses_TraderRequestMrMime MSG_YESNO
+    setvar 0x8008 0x1 @ Give mon in slot 1 (Mr Mime-G)
+    goto HandleTrade
+
+TradeRequestDratini:
+    msgbox gText_DaimynCityNPCHouses_TraderRequestDratini MSG_YESNO
+    setvar 0x8008 0x2 @ Give mon in slot 2 (Dratini)
+    goto HandleTrade
+
+TradeRequestCorsolaG:
+    msgbox gText_DaimynCityNPCHouses_TraderRequestCorsola MSG_YESNO
+    setvar 0x8008 0x3 @ Give mon in slot 3 (Corsola-G)
+    goto HandleTrade
+
+TradeRequestFrillishF:
+    msgbox gText_DaimynCityNPCHouses_TraderRequestFrillish MSG_YESNO
+    setvar 0x8008 0x4 @ Give mon in slot 4 (Frillish)
+    goto HandleTrade
+
+TradeRequestEmolga:
+    msgbox gText_DaimynCityNPCHouses_TraderRequestEmolga MSG_YESNO
+    setvar 0x8008 0x5 @ Give mon in slot 5 (Emolga)
+    goto HandleTrade
+
+TradeRequestEevee:
+    msgbox gText_DaimynCityNPCHouses_TraderRequestEevee MSG_YESNO
+    setvar 0x8008 0x6 @ Give mon in slot 6 (Eevee)
+    goto HandleTrade
+
+TradeRequestNoibat:
+    msgbox gText_DaimynCityNPCHouses_TraderRequestNoibat MSG_YESNO
+    setvar 0x8008 0x7 @ Give mon in slot 7 (Noibat)
+    goto HandleTrade
+
+TradeRequestHatenna:
+    msgbox gText_DaimynCityNPCHouses_TraderRequestHatenna MSG_YESNO
+    setvar 0x8008 0x8 @ Give mon in slot 8 (Hatenna)
+    goto HandleTrade
+
+HandleTrade:
+    copyvar 0x8004 0x8008 @ Copy expected mon from same trade slot as given mon
+    compare LASTRESULT NO
+    if TRUE _goto TradeRejected
+    special2 LASTRESULT 0xFC // Checks the trade set in 0x8004 and buffers the name of the Pokemon wanted and the given Pokemon
+    copyvar 0x8009 LASTRESULT
+    call SelectTradePokemon
+    compare 0x8004 0x6
+    if greaterorequal _goto TradeRejected
+    call CheckTradePokemonSelected
+    comparevars LASTRESULT 0x8009
+    if notequal _goto TraderWrongPokemon
+    msgbox gText_DaimynCityNPCHouses_TraderTradeInitiated MSG_NORMAL
+    call InitiateTrade
+    goto DaimynTradeComplete
+
+TradeRejected:
+    msgbox gText_DaimynCityNPCHouses_TraderRejected MSG_NORMAL
+    release
+    end
+
+TraderWrongPokemon:
+    msgbox gText_DaimynCityNPCHouses_TraderWrongPokemon MSG_NORMAL
+    release
+    end
+
+DaimynTradeComplete:
+    setflag 0x254 @ Did starter based trade
+    msgbox gText_DaimynCityNPCHouses_TraderTradeComplete MSG_NORMAL
+    release
+    end
+
 m_PikachuWalksToPlayer_Below: .byte walk_down, walk_down, walk_right, walk_right, walk_right, look_up, end_m
 m_PikachuWalksToPlayer_Above: .byte walk_up, walk_right, walk_right, end_m
 m_PikachuWalksToPlayer_Beside: .byte walk_down, walk_down, walk_right, walk_right, walk_right, walk_right, walk_up, end_m

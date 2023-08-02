@@ -23,6 +23,15 @@ extern u8 gText_InGameTrade_Cosmo[];
 extern u8 gText_InGameTrade_OTMillie[];
 extern u8 gText_InGameTrade_Pikachu[];
 extern u8 gText_InGameGift_OTAsh[];
+extern u8 gText_InGameTrade_Mimmers[];
+extern u8 gText_InGameTrade_Drago[];
+extern u8 gText_InGameTrade_Cork[];
+extern u8 gText_InGameTrade_Lacey[];
+extern u8 gText_InGameTrade_Pinky[];
+extern u8 gText_InGameTrade_Pip[];
+extern u8 gText_InGameTrade_Boomer[];
+extern u8 gText_InGameTrade_Strawberry[];
+extern u8 gText_InGameTrade_OTSylvestre[];
 
 static const struct InGameTrade sInGameTrades[] = {
     [INGAME_TRADE_CHINCHOU] = 
@@ -30,7 +39,7 @@ static const struct InGameTrade sInGameTrades[] = {
         .nickname = gText_InGameTrade_Cosmo,
         .species = SPECIES_CHINCHOU,
         .ivs = {20, 15, 18, 25, 23, 22},
-        .abilityNum = 0,
+        .abilityNum = 0, // Volt Absorb
         .otId = 1999,
         .conditions = {5, 5, 5, 30, 5},
         .personality = 0x00009cae,
@@ -40,6 +49,126 @@ static const struct InGameTrade sInGameTrades[] = {
         .otGender = FEMALE,
         .nature = NATURE_CALM,
         .requestedSpecies = SPECIES_SNOM
+    },
+    [INGAME_TRADE_MR_MIME] = {
+        .nickname = gText_InGameTrade_Mimmers,
+        .species = SPECIES_MR_MIME_G,
+        .ivs = {18, 21, 24, 26, 15, 16},
+        .abilityNum = 0, // Screen Cleaner
+        .otId = 90210,
+        .conditions = {10, 15, 10, 30, 5},
+        .personality = 0x498a2e1d,
+        .heldItem = ITEM_SITRUS_BERRY,
+        .mailNum = 0,
+        .otName = gText_InGameTrade_OTSylvestre,
+        .otGender = MALE,
+        .nature = NATURE_BASHFUL,
+        .requestedSpecies = SPECIES_FARFETCHD_G
+    },
+    [INGAME_TRADE_DRATINI] = {
+        .nickname = gText_InGameTrade_Drago,
+        .species = SPECIES_DRATINI,
+        .ivs = {15, 28, 18, 17, 22, 24},
+        .abilityNum = 0, // Shed Skin
+        .otId = 90210,
+        .conditions = {20, 10, 20, 20, 30},
+        .personality = 0x4c970b89,
+        .heldItem = ITEM_SITRUS_BERRY,
+        .mailNum = 0,
+        .otName = gText_InGameTrade_OTSylvestre,
+        .otGender = MALE,
+        .nature = NATURE_JOLLY,
+        .requestedSpecies = SPECIES_BONSLY
+    },
+    [INGAME_TRADE_CORSOLA_G] = {
+        .nickname = gText_InGameTrade_Cork,
+        .species = SPECIES_CORSOLA_G,
+        .ivs = {30, 12, 22, 20, 17, 2},
+        .abilityNum = 0, // Weak Armor
+        .otId = 90210,
+        .conditions = {5, 15, 15, 10, 20},
+        .personality = 0x151943d7,
+        .heldItem = ITEM_SITRUS_BERRY,
+        .mailNum = 0,
+        .otName = gText_InGameTrade_OTSylvestre,
+        .otGender = FEMALE,
+        .nature = NATURE_TIMID,
+        .requestedSpecies = SPECIES_SLAKOTH
+    },
+    [INGAME_TRADE_FRILLISH] = {
+        .nickname = gText_InGameTrade_Lacey,
+        .species = SPECIES_FRILLISH_F,
+        .ivs = {24, 18, 20, 25, 31, 15},
+        .abilityNum = 1, // Cursed body
+        .otId = 90210,
+        .conditions = {10, 10, 5, 10, 15},
+        .personality = 0x00eeca15,
+        .heldItem = ITEM_SITRUS_BERRY,
+        .mailNum = 0,
+        .otName = gText_InGameTrade_OTSylvestre,
+        .otGender = FEMALE,
+        .nature = NATURE_CALM,
+        .requestedSpecies = SPECIES_MAGIKARP
+    },
+    [INGAME_TRADE_EMOLGA] = {
+        .nickname = gText_InGameTrade_Pinky,
+        .species = SPECIES_EMOLGA,
+        .ivs = {12, 18, 15, 27, 22, 30},
+        .abilityNum = 0, // Static
+        .otId = 90210,
+        .conditions = {15, 20, 5, 5, 30},
+        .personality = 0x451308ab,
+        .heldItem = ITEM_SITRUS_BERRY,
+        .mailNum = 0,
+        .otName = gText_InGameTrade_OTSylvestre,
+        .otGender = FEMALE,
+        .nature = NATURE_JOLLY,
+        .requestedSpecies = SPECIES_BOLDORE
+    },
+    [INGAME_TRADE_EEVEE] = {
+        .nickname = gText_InGameTrade_Pip,
+        .species = SPECIES_EEVEE,
+        .ivs = {20, 20, 20, 20, 20, 25},
+        .abilityNum = 1, // Adaptability
+        .otId = 90210,
+        .conditions = {20, 20, 10, 10, 15},
+        .personality = 0x06341016,
+        .heldItem = ITEM_SITRUS_BERRY,
+        .mailNum = 0,
+        .otName = gText_InGameTrade_OTSylvestre,
+        .otGender = FEMALE,
+        .nature = NATURE_IMPISH,
+        .requestedSpecies = SPECIES_RIOLU
+    },
+    [INGAME_TRADE_NOIBAT] = {
+        .nickname = gText_InGameTrade_Boomer,
+        .species = SPECIES_NOIBAT,
+        .ivs = {22, 18, 13, 24, 21, 28},
+        .abilityNum = 0, // Frisk
+        .otId = 90210,
+        .conditions = {5, 5, 25, 20, 15},
+        .personality = 0x5c77ecfa,
+        .heldItem = ITEM_SITRUS_BERRY,
+        .mailNum = 0,
+        .otName = gText_InGameTrade_OTSylvestre,
+        .otGender = MALE,
+        .nature = NATURE_SASSY,
+        .requestedSpecies = SPECIES_LILLIPUP
+    },
+    [INGAME_TRADE_HATENNA] = {
+        .nickname = gText_InGameTrade_Strawberry,
+        .species = SPECIES_HATENNA,
+        .ivs = {28, 7, 14, 23, 26, 12},
+        .abilityNum = 0, // Healer
+        .otId = 90210,
+        .conditions = {10, 5, 10, 15, 30},
+        .personality = 0x5c77ecfa,
+        .heldItem = ITEM_SITRUS_BERRY,
+        .mailNum = 0,
+        .otName = gText_InGameTrade_OTSylvestre,
+        .otGender = FEMALE,
+        .nature = NATURE_MODEST,
+        .requestedSpecies = SPECIES_CACNEA
     }
 };
 

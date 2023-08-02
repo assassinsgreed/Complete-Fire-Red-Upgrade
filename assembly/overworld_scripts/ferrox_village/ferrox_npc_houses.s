@@ -76,10 +76,10 @@ EventScript_FerroxNPCHouses_ChinchouTrade:
     compare LASTRESULT NO
     if TRUE _goto EventScript_ChinchouTradeDeclined
     // Set up vars needed for trade
-    copyvar 0x8004 0x8008
+    setvar 0x8008 0x0 @ Set Trade #0 (Chinchou)
+    copyvar 0x8004 0x8008 @ Set expected mon from Trade #0 (Snom)
     special2 LASTRESULT 0xFC // Checks the trade set in 0x8004 and buffers the name of the Pokemon wanted and the given Pokemon
     copyvar 0x8009 LASTRESULT
-    setvar 0x8004 0x0 @ Set Trade #0 (Chinchou)
     call SelectTradePokemon
     compare 0x8004 0x6
     if greaterorequal _goto EventScript_ChinchouTradeDeclined
