@@ -609,7 +609,7 @@
 #define FLAG_DAIMYN_RESTAURANT_EXPLAINED                 0x250
 #define FLAG_HIDE_DAIMYN_CITY_STORY_NPCS                 0x251
 #define FLAG_GOT_ITEMFINDER                              0x252
-#define FLAG_WOKE_UP_ROUTE_12_SNORLAX                    0x253
+#define FLAG_BOUGHT_CARVANHA                             0x253
 #define FLAG_GOT_TM05_FROM_TERRENCE                      0x254
 #define FLAG_GOT_SUPER_ROD                               0x255
 #define FLAG_GOT_EXP_SHARE_FROM_OAKS_AIDE                0x256
@@ -1071,10 +1071,10 @@
 #define HIDDEN_ITEM_FORGOTTEN_MANSE_SMOKE_BALL                         42
 #define HIDDEN_ITEM_FORGOTTEN_MANSE_ESCAPE_ROPE                        43
 #define HIDDEN_ITEM_DAIMYN_CITY_ULTRA_BALL                             44
-#define HIDDEN_ITEM_UNUSED_0x2D                                        45
-#define HIDDEN_ITEM_UNUSED_0x2E                                        46
-#define HIDDEN_ITEM_CELADON_CITY_PP_UP                                 47
-#define HIDDEN_ITEM_VERMILION_CITY_MAX_ETHER                           48
+#define HIDDEN_ITEM_DAIMYN_MALL_PEARL                                  45
+#define HIDDEN_ITEM_DAIMYN_MALL_STARDUST                               46
+#define HIDDEN_ITEM_DAIMYN_MALL_GREAT_BALL                             47
+#define HIDDEN_ITEM_DAIMYN_MALL_ELIXER                                 48
 #define HIDDEN_ITEM_CERULEAN_CITY_RARE_CANDY                           49
 #define HIDDEN_ITEM_ROUTE4_GREAT_BALL                                  50
 #define HIDDEN_ITEM_CELADON_CITY_GAME_CORNER_COINS                     51
@@ -1330,6 +1330,9 @@ Daily Flags, cleared at the start of each day.  Goes up to 0xEFF
 #define FLAG_HELEO_CITY_TRAINER_HOUSE         0xE0B
 #define FLAG_ROUTE_8_SANDYGAST_1              0xE0C
 #define FLAG_ROUTE_8_SANDYGAST_2              0xE0D
+#define FLAG_DAIMYN_CITY_LUCKY_DRAW_SPECIES   0xE0E
+#define FLAG_DAIMYN_CITY_DAILY_DEAL_SET       0xE0F
+#define FLAG_DAIMYN_CITY_DAILY_DEAL_BOUGHT    0xE10
 */
 
 #define FLAG_TRAINER_FLAG_START 0x500

@@ -273,8 +273,16 @@ CB2_PartyMenuFromField 801D7FC
 CB2_ItemMenuFromField 801D800
 #endif
 
-##Enable Ability Capusle, pointing to location in our ROM
+##Enable Ability Capusle & form change items, pointing to location in our ROM
 FieldUseFunc_AbilityCapsule 87343A8
 FieldUseFunc_FormChangeItem 873371C
 FieldUseFunc_FormChangeItem 8734C14
 FieldUseFunc_FormChangeItem 8734C40
+
+## Stat reducing berries, in stat order (HP, Atk, Def, Sp Atk, Sp Def, Spd)
+FieldUseFunc_EVReducingBerry 872F574
+FieldUseFunc_EVReducingBerry 872F5A0
+FieldUseFunc_EVReducingBerry 872F5CC
+FieldUseFunc_EVReducingBerry 872F5F8
+FieldUseFunc_EVReducingBerry 872F624
+FieldUseFunc_EVReducingBerry 872F650

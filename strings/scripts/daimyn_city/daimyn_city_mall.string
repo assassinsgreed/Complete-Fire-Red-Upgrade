@@ -1,0 +1,216 @@
+#org @gText_DaimynCityMall_LuckyDrawIntro
+Welcome to the Pok\emon Lottery, or\nPok\eLotto for short!\pEvery day, we draw a random\nPok\emon.\pIf you've seen that Pok\emon, you win\na Pearl! If you've caught it, you\lwin a Big Pearl!\pSounds fun, doesn't it? There's\nno entry fee, either.\pWould you like to play?
+
+#org @gText_DaimynCityMall_LuckyDrawStarting
+Great! Let's draw the lucky Pok\emon[.]
+
+#org @gText_DaimynCityMall_LuckyDrawPokemonChosen
+Today's lucky Pok\emon is [BUFFER1].\nPlease let me see your Pok\edex.
+
+#org @gText_DaimynCityMall_LuckyDrawChoseNo
+But[.] It's free. No problem! If you\nchange your mind, just come see\lme!
+
+#org @gText_DaimynCityMall_LuckyDrawLost
+I'm sorry, you have not caught or\nseen a [BUFFER1]. You didn't win.
+
+#org @gText_DaimynCityMall_LuckyDrawWinSeen
+You have seen a [BUFFER1]. That earns\nyou our second place prize.
+
+#org @gText_DaimynCityMall_LuckyDrawWinCaught
+You have caught a [BUFFER1]! You've\nearned our first place prize!
+
+#org @gText_DaimynCityMall_LuckyDrawComeAgainTomorrow
+Thank you for playing, please come\nagain tomorrow.
+
+#org @gText_DaimynCityMall_Greeter
+Welcome to the Daimyn City Mall!\nShop to your heart's content!\pPlease see the store directory\nbeside me if you'd like assistance.\pWe hope you enjoy your time with us!
+
+#org @gText_DaimynCityMall_HerbSeller
+[BLACK]Ehehehe[.] My herbs heal your Pok\emon\ngreatly[.] If they can handle them!
+
+#org @gText_DaimynCityMall_DealOfTheDayOffer
+Hello! I sell other stores'\noverstock for a reduced price.
+
+#org @gText_DaimynCityMall_DealOfTheDayPurchasing
+Thank you! Here you go!
+
+#org @gText_DaimynCityMall_DealOfTheDayBought
+Thanks! Come back tomorrow for more\nhot deals. And tell your friends!
+
+#org @gText_DaimynCityMall_DealOfTheDayAlreadyBought
+Sorry, friend. I've sold out for the\nday. Come back tomorrow, m'kay?
+
+#org @gText_DaimynCityMall_DealOfTheDayChoseNo
+Alright, I'll be here if you change\nyour mind.\pJust remember, the deal expires at\nthe end of the day!
+
+#org @gText_DaimynCityMall_DealOfTheDayNotEnoughMoney
+Sorry, but you don't have enough\nmoney! Come back when you do.\pJust remember to do it before the\ndeal expires at the end of the\lday!
+
+#org @gText_DaimynCityMall_DealPremierBalls
+Today's deal is [GREEN]5 Premier Balls for\n\$500[BLUE]. Are you interested?
+
+#org @gText_DaimynCityMall_DealSuperPotions
+Today's deal is [GREEN]3 Super Potions for\n\$1500[BLUE]. Are you interested?
+
+#org @gText_DaimynCityMall_DealBerries
+Today's deal is [GREEN]a berry pack for\n\$1000[BLUE]. Are you interested?
+
+#org @gText_DaimynCityMall_DealSeeds
+Today's deal is [GREEN]a seed pack for\n\$800[BLUE]. Are you interested?
+
+#org @gText_DaimynCityMall_DealUltraBalls
+Today's deal is [GREEN]3 Ultra Balls for\n\$3000[BLUE]. Are you interested?
+
+#org @gText_DaimynCityMall_DealHyperPotions
+Today's deal is [GREEN]2 Hyper Potions for\n\$2500[BLUE]. Are you interested?
+
+#org @gText_DaimynCityMall_DealStatusHealers
+Today's deal is [GREEN]status healers for\n\$1200[BLUE]. Are you interested?
+
+#org @gText_DaimynCityMall_DealXItems
+Today's deal is [GREEN]a pack of X Items\nfor \$2000[BLUE]. Are you interested?
+
+#org @gText_DaimynCityMall_DealHerbs
+Today's deal is [GREEN]a pack of herbs\nfor \$1500[BLUE]. Are you interested?
+
+#org @gText_DaimynCityMall_DealGreatBalls
+Today's deal is [GREEN]4 great balls\nfor \$1250[BLUE]. Are you interested?
+
+#org @gText_DaimynCityMall_DealGems
+Today's deal is [GREEN]a pack of gems\nfor \$5000[BLUE]. Are you interested?
+
+#org @gText_DaimynCityMall_DealEvolutionaryStones
+Today's deal is [GREEN]a pack of evolution\nstones for \$6000[BLUE]. Are you\linterested?
+
+#org @gText_DaimynCityMall_MagazineSeller
+Hello! I sell magazines. Can I\ninterest you in one? No?
+
+#org @gText_DaimynCityMall_PokeballSeller
+[BLACK]Rare Pok\e Balls! Come get your Rare\nPok\e Balls here!
+
+#org @gText_DaimynCityMall_XItemsSeller
+[BLACK]I sell items that will give your\nPok\emon a serious edge. Buy some!
+
+#org @gText_DaimynCityMall_GarageSaleMan
+The mall rents out stalls to people\nfor a small fee.\pIt's great for people like me, who're\nhoping to sell some of their\lold things.\pSay[.] You wouldn't be in the market\nfor some old tech, would you?\pNo? Okay then.
+
+#org @gText_DaimynCityMall_TMSeller
+[BLACK]Want to teach your Pok\emon new\nmoves? Then you need my TMs!
+
+#org @gText_DaimynCityMall_SeedSeller
+[BLACK]I've got Terrain Seeds, straight from\nHeleo Ranch! You'll love 'em!
+
+#org @gText_DaimynCityMall_EVReducingBerriesSeller
+[BLACK]My berries lower your Pok\emon's EVs,\nbut make them friendly! Want some?
+
+#org @gText_DaimynCityMall_VitaminsSeller
+[BLACK]Your Pok\emon are looking weak[.] Buff\nthem up!
+
+#org @gText_DaimynCityMall_GemsSeller
+[BLACK]I sell rare gems that will strengthen\nyour Pok\emon's moves. Interested?
+
+#org @gText_DaimynCityMall_TypeBoostingItemsSeller
+[BLACK]Could I interest you in trinkets that\nboost your Pok\emon's typed moves?
+
+#org @gText_DaimynCityMall_RareCollectiblesMan
+I'm selling rare trinkets and\nbaubles you can't find elsewhere.\pI don't think you'll have enough\nmoney for them. Ehehehe.\pWindow shopping is free, I guess.
+
+#org @gText_DaimynCityMall_FishSeller_Question
+Hey, trainer! I'm selling a rare and\npowerful fish Pok\emon.\pYou want it, yes? \$2,000, only for\nyou!
+
+#org @gText_DaimynCityMall_FishSeller_SaidNo
+Feh, your loss! It'll go to some\nother kid and you'll miss out.
+
+#org @gText_DaimynCityMall_FishSeller_NotEnoughMoney
+Hey, what gives? You don't have\nenough cash! Come back when you\ldo.
+
+#org @gText_DaimynCityMall_FishSeller_NoRoomInParty
+Wise kid! [.] But you don't have any\nroom. Come back when you do.
+
+#org @gText_DaimynCityMall_FishSeller_BoughtCarvanhaFanfare
+[BLACK]Bought a Carvanha!
+
+#org @gText_DaimynCityMall_FishSeller_BoughtCarvanha
+[BLUE]Wise kid! I'm sure the two of you\nwill have a great time or whatever.
+
+#org @gText_DaimynCityMall_FishSeller_CarvanhaAlreadyBought
+How's that fish treating you? Good?\nYeah, great[.]
+
+#org @gText_DaimynCityMall_IncenseSeller
+[BLACK]*Sniff* Do you smell that? My\nincenses are so wonderful.
+
+#org @gText_DaimynCityMall_TypeWeaknessBerriesSeller
+[BLACK]Want to dull the sting of super\neffective moves? Then I'm your gal!
+
+#org @gText_DaimynCityMall_Fisherman
+I heard someone was selling a rare\nfish Pok\emon around here, but I\lcan't find him.
+
+#org @gText_DaimynCityMall_OldLady
+There's nothing like a little bit of\nshopping to soothe the soul.
+
+#org @gText_DaimynCityMall_LostPearlsWoman
+I lost my Pearl around here\nsomewhere[.]\pIf I just retrace my steps, I'll find\nit eventually.
+
+#org @gText_DaimynCityMall_UndecidedGirl
+Hmm[.] Should I buy one of those, or\none of those?\pOooh! I just can't decide! Maybe I\nshould just get both.
+
+#org @gText_DaimynCityMall_Camper
+I'm stocking up before I go out\ncamping. You should do the same!
+
+#org @gText_DaimynCityMall_Blackbelt
+They sell a lot of great things here\nthat make your Pok\emon stronger.
+
+#org @gText_DaimynCityMall_BugCatcher
+I keep getting poisoned when I find\nBug type Pok\emon.\pMaybe I should buy some Antidotes.
+
+#org @gText_DaimynCityMall_DateBoy
+Wh-what should I say to her? I\ndidn't even think she'd say yes to\lcoming on this date!
+
+#org @gText_DaimynCityMall_DateGirl
+This cool guy asked me out on a\ndate at the mall! We're having so\lmuch fun!
+
+#org @gText_DaimynCityMall_TiredOldMan
+I'm so tired[.] Why does this mall\nhave to be so big?
+
+#org @gText_DaimynCityMall_WaitingGirl
+I'm waiting for my friends to get\nhere so we can go shopping!
+
+#org @gText_DaimynCityMall_EvolutionStonesSeller
+[BLACK]I offer rare stones excavated from\nMount Carnelidge. Want to see?
+
+#org @gText_DaimynCityMall_HeldItemSeller
+[BLACK]My items help your Pok\emon in\nbattle. You'll need these to win!
+
+#org @gText_DaimynCityMall_Rocker
+Whoa, no way! They're having a big\nsale today! Rock on!!
+
+#org @gText_DaimynCityMall_TallTV
+It's a big square TV like the one\nGrandpa has! It looks heavy.
+
+#org @gText_DaimynCityMall_RetroGame
+It's a retro game console with all\nthe classic games. Looks fun!
+
+#org @gText_DaimynCityMall_CampingTV
+It's a portable TV meant for camping.\nDad might like this[.]
+
+#org @gText_DaimynCityMall_PhonePrompt
+It's a phone!\p[.]\pIt's been a while[.] Call mom?
+
+#org @gText_DaimynCityMall_ChoseToCallMom
+Yeah, let's call mom[.]
+
+#org @gText_DaimynCityMall_Mom
+[RED]Hello?\pOh, [PLAYER], is that you?\nIt's so nice to hear from you!\pHow has your journey been? Are you\nand [RIVAL] doing well?\pYou're in Daimyn City? Wow! That's so\nfar from home!\pYou and your Pok\emon must've\ntravelled so far together.\pYou're travelling with [BUFFER1] right\nnow? How wonderful!\pYou'll have to tell me all about\nyour journey and the things you've\lseen when you get home.\pIt sounds like you're having so much\nfun! I'm so happy for you,\l[PLAYER].\pDo your best out there, okay\n[PLAYER]?\pAnd please remember, you can come\nhome any time you need to.\pAlright, [PLAYER], I'll let you get\nback to it. I'll be rooting for you!\pBye bye, sweetie!
+
+#org @gText_DaimynCityMall_PlayerFeelsBetter
+Mom's rooting for me! Time to get out\nthere and make her proud.
+
+#org @gText_DaimynCityMall_ChoseNotToCallMom
+Maybe later.
+
+#org @gText_DaimynCityMall_ChancePoster
+Challenge Chance, the High Roller,\nat Daimyn City gym today!
+
+#org @gText_DaimynCityMall_StoreDirectory
+Store directory:\pHealing Consumables: SW Corner\nTMs: NW Corner\lBerries: N Hall\lStat Boosters: NE Corner\lDeal of the Day: SE Corner\lEvolution Stones: S Hall
+
