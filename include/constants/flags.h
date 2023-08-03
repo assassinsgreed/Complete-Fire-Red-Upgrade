@@ -610,7 +610,7 @@
 #define FLAG_HIDE_DAIMYN_CITY_STORY_NPCS                 0x251
 #define FLAG_GOT_ITEMFINDER                              0x252
 #define FLAG_BOUGHT_CARVANHA                             0x253
-#define FLAG_GOT_TM05_FROM_TERRENCE                      0x254
+#define FLAG_DID_STARTER_BASED_TRADE                     0x254
 #define FLAG_GOT_SUPER_ROD                               0x255
 #define FLAG_GOT_EXP_SHARE_FROM_OAKS_AIDE                0x256
 #define FLAG_DID_MARC_TRADE                              0x257

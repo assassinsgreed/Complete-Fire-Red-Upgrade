@@ -51,3 +51,45 @@ Pikachu, please go with [PLAYER], and\nshow them what a champion battler\llooks 
 
 #org @gText_DaimynCityNPCHouses_PikachuJoins
 Pikaaaa!
+
+#org @gText_DaimynCityNPCHouses_TraderBuddy
+My friend collects rare Pok\emon from\nall over the region.\pIt'd be worth your time to trade with\nhim and add to your own collection.
+
+#org @gText_DaimynCityNPCHouses_TraderIntro
+Hello! I am a world renowned\ntrainer who scours the world in\lsearch of rare Pok\emon.
+
+#org @gText_DaimynCityNPCHouses_TraderRejected
+That's unfortunate, but I\nunderstand.\pPlease, do return if you find\nyourself with one and change your\lmind.
+
+#org @gText_DaimynCityNPCHouses_TraderWrongPokemon
+Oh dear[.] That is not the Pok\emon I\nam looking for.
+
+#org @gText_DaimynCityNPCHouses_TraderTradeInitiated
+Great! Let's begin the trade.
+
+#org @gText_DaimynCityNPCHouses_TraderRequestMrMime
+I have a [GREEN]Mr. Mime[BLUE] in my possession\nand seek a [GREEN]Galarian Farfetch'd[BLUE].\pWould you be interested in trading\nwith me?
+
+#org @gText_DaimynCityNPCHouses_TraderRequestDratini
+I have a [GREEN]Dratini[BLUE] in my possession\nand seek a [GREEN]Bonsly[BLUE].\pWould you be interested in trading\nwith me?
+
+#org @gText_DaimynCityNPCHouses_TraderRequestCorsola
+I have a [GREEN]Galarian Corsola[BLUE] in my\npossession and seek a [GREEN]Slakoth[BLUE].\pWould you be interested in trading\nwith me?
+
+#org @gText_DaimynCityNPCHouses_TraderRequestFrillish
+I have a [GREEN]Frillish[BLUE] in my\npossession and seek a [GREEN]Magikarp[BLUE].\pWould you be interested in trading\nwith me?
+
+#org @gText_DaimynCityNPCHouses_TraderRequestEmolga
+I have an [GREEN]Emolga[BLUE] in my\npossession and seek a [GREEN]Boldore[BLUE].\pWould you be interested in trading\nwith me?
+
+#org @gText_DaimynCityNPCHouses_TraderRequestEevee
+I have an [GREEN]Eevee[BLUE] in my\npossession and seek a [GREEN]Riolu[BLUE].\pWould you be interested in trading\nwith me?
+
+#org @gText_DaimynCityNPCHouses_TraderRequestNoibat
+I have a [GREEN]Noibat[BLUE] in my\npossession and seek a [GREEN]Lillipup[BLUE].\pWould you be interested in trading\nwith me?
+
+#org @gText_DaimynCityNPCHouses_TraderRequestHatenna
+I have a [GREEN]Hatenna[BLUE] in my\npossession and seek a [GREEN]Cacnea[BLUE].\pWould you be interested in trading\nwith me?
+
+#org @gText_DaimynCityNPCHouses_TraderTradeComplete
+Thank you for trading with me.\pI will take good care of your\nPok\emon. Please also do the same.
