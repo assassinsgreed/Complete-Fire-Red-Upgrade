@@ -93,3 +93,45 @@ I have a [GREEN]Hatenna[BLUE] in my\npossession and seek a [GREEN]Cacnea[BLUE].\
 
 #org @gText_DaimynCityNPCHouses_TraderTradeComplete
 Thank you for trading with me.\pI will take good care of your\nPok\emon. Please also do the same.
+
+#org @gText_DaimynCityNPCHouses_LanaIntroduction
+Oh, hey! You're a trainer right?\nThat must mean you're using the PC\lsystem, right?
+
+#org @gText_DaimynCityNPCHouses_LanaIntroductionContinued
+I built the PC system in Kulure, you\nknow. The name's Lana!\pIn fact, any Pok\emon you catch get\nsent to my PC.\pHehe, don't worry! It's free of\ncharge and totally safe.\pI set the PC system up here with a\ngood buddy's help. He set up the\loriginal PC system in the Kanto\lregion.\pI improved his system and added a\nfew quality of life changes.
+
+#org @gText_DaimynCityNPCHouses_LanaRevisited
+Oh hey trainer! Good to see you\nagain.\pYou caught me in the middle of some\ntweaks I've been making to the\lsystem.
+
+#org @gText_DaimynCityNPCHouses_LanaLearnAboutPC
+Would you like to learn more about\nthe Kulure PC system?
+
+#org @gText_DaimynCityNPCHouses_LanaUsesPC
+Awe, super! That's great to hear.
+
+#org @gText_DaimynCityNPCHouses_LanaDoesNotUsePC
+Awe, that's a bummer[.] It's very\nconvenient for trainers.
+
+#org @gText_DaimynCityNPCHouses_DoNotWantToLearnAboutPC
+No sweat! Just swing on by if you\nchange your mind. The lab's always\lopen.
+
+#org @gText_DaimynCityNPCHouses_DoWantToLearnAboutPC
+Alright, that's what I like to\nhear! You'll really love these\lchanges.\pFor example, you can access up to\n32 boxes now! Handy, right?\pDon't worry if you don't see them\nright away; they'll show up as\lyou need them.\pYou can also select multiple Pok\emon\nat once by pressing [SELECT_BUTTON].\pYou'll know it's working if the cursor\nturns yellow.\pThen, click and drag to select\nPok\emon and move them in bulk.\pYou can turn it off again by pressing\n[SELECT_BUTTON]. Easy, right?
+
+#org @gText_DaimynCityNPCHouses_PocketPCHint
+I'm working on something else that's\nreally cool, but it's too early to\lshare.\pMaybe I could be convinced, say[.] if\nyou were the champion?\pHeehee! If you manage to achieve\nthat, come back and I'll show you!
+
+#org @gText_DaimynCityNPCHouses_LanaFarewell
+Come see me again if you want to\nchat, hey?\pAnd tell your friends about my PC\nsystem!
+
+#org @gText_DaimynCityNPCHouses_LanasPCEntrance
+There are many emails sent to and\nfrom other PC System experts.
+
+#org @gText_DaimynCityNPCHouses_TransferPC
+Some windows are open with text that\nis scrolling by very quickly.
+
+#org @gText_DaimynCityNPCHouses_Poster
+It's a complex diagram of a\nprototype called "Cloud System\"
+
+#org @gText_DaimynCityNPCHouses_TransferMachine
+The machine is labelled "Cloud\nTransfer prototype - do not\ltouch!\"
