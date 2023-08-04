@@ -2997,13 +2997,14 @@ static const u8* sTutorHeleo[] =
 static const u8* sTutorDaimyn[] =
 {
 	gText_FirePunch,
-	gText_ThunderPunch,
 	gText_IcePunch,
-	gText_HelpingHand,
-	gText_MagicRoom,
-	gText_Spite,
+	gText_ThunderPunch,
 	gText_HealBell,
+	gText_HelpingHand,
+	gText_Spite,
 	gText_PainSplit,
+	gText_MagicRoom,
+	gText_End,
 };
 
 static const u8* sMealOptions[] =

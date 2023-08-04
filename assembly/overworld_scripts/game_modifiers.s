@@ -17,7 +17,7 @@ EventScript_Modifiers_Main:
 	multichoiceoption gText_Modifiers_OptionHiddenAbilities 4
 	multichoiceoption gText_Modifiers_OptionShinies 5
 	multichoiceoption gText_Modifiers_OptionRandomizer 6
-	multichoice 0x60 0x0 SEVEN_MULTICHOICE_OPTIONS FALSE
+	multichoice 0x0 0x0 SEVEN_MULTICHOICE_OPTIONS FALSE
 	copyvar MULTICHOICE_SELECTION LASTRESULT
 	switch LASTRESULT
 	case 0, EventScript_Modifiers_Inversebattle

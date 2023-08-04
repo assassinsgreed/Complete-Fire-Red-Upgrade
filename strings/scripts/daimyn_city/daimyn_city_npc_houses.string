@@ -135,3 +135,63 @@ It's a complex diagram of a\nprototype called "Cloud System\"
 
 #org @gText_DaimynCityNPCHouses_TransferMachine
 The machine is labelled "Cloud\nTransfer prototype - do not\ltouch!\"
+
+#org @gText_DaimynCityNPCHouses_MoveDeleterReminderSon
+My parents are experts when it comes\nto a Pok\emon's moves.\pMy father is a Move Deleter and can\nhelp your Pok\emon forget moves.\pBut[.] He hasn't seen many customers\nsince HMs could be forgotten.\pMy mother is a Move Reminder. She\ncan teach your Pok\emon any move it\lused to know.\pFor a small fee, she can teach your\nPok\emon Egg Moves.\pPlease spend time with my parents.\nIt'd mean the world to them if\lsomeone had need of their services\lagain.
+
+#org @gText_DaimynCityNPCHouses_MoveDeleterPrompt
+Oooh, uh[.] What am I doing? Oh yeah!\nI'm the Move Deleter!\pI can help your Pok\emon forget\nmoves they don't need anymore.\pWould you like to forget a move?
+
+#org @gText_DaimynCityNPCHouses_MoveDeleter_ChoosePokemon
+Which Pok\emon should forget a\nmove?
+
+#org @gText_DaimynCityNPCHouses_MoveDeleter_ChoiceIsEgg
+That's preposterous! An egg cannot\nforget a move; it hasn't learned\lany!
+
+#org @gText_DaimynCityNPCHouses_MoveDeleter_ChoiceOnlyKnowsOneMove
+Oooh! [BUFFER1] only knows one move.\nIf you forget it, you won't be able\lto battle!
+
+#org @gText_DaimynCityNPCHouses_MoveDeleter_ChooseMove
+And which move would you like to\nforget?
+
+#org @gText_DaimynCityNPCHouses_MoveDeleter_Confirmation
+Hmm hmm! You want [BUFFER1] to forget\n[BUFFER2], is that it?
+
+#org @gText_DaimynCityNPCHouses_MoveDeleter_MoveDeleted
+It worked flawlessly! [BUFFER1] has\nforgotten how to use [BUFFER2].
+
+#org @gText_DaimynCityNPCHouses_MoveDeleter_ComeToForgetMoreMoves
+Come see me again, if you want to\nforget more moves.
+
+#org @gText_DaimynCityNPCHouses_MoveReminderPrompt
+Hello, dearie. I am a Pok\emon\ntutor, but I am quite different\lfrom those you may be familiar\lwith.\pYou see, I remind them of moves\nthey used to know.\pFor 1 Pok\eChip, I can teach a move\nthey learned through levelling up.\pFor 10 Pok\eChips, I can teach an egg\nmove they could have known.\pWould you be interested in learning a\nmove? (Held: [BUFFER1])
+
+#org @gText_DaimynCityNPCHouses_MoveReminder_PastMovesChoice
+Past Moves
+
+#org @gText_DaimynCityNPCHouses_MoveReminder_EggMovesChoice
+Egg Moves
+
+#org @gText_DaimynCityNPCHouses_MoveReminder_CancelChoice
+Nothing for now
+
+#org @gText_DaimynCityNPCHouses_MoveReminder_NotEnoughChips
+I am sorry, but you do not have\nenough Pok\eChips to learn those\lmoves.
+
+#org @gText_DaimynCityNPCHouses_MoveReminder_ChoosePokemon
+Which Pok\emon would you like me to\nteach?
+
+#org @gText_DaimynCityNPCHouses_MoveReminder_ChoseEgg
+Oh, bless your heart, sweetie[.]\nI can't teach a move to an egg.
+
+#org @gText_DaimynCityNPCHouses_MoveReminder_ChoiceIsIneligible
+I am sorry, dearie. That Pok\emon\ncannot learn that type of move.
+
+#org @gText_DaimynCityNPCHouses_MoveReminder_WhichMovePrompt
+Which move would you like to teach?
+
+#org @gText_DaimynCityNPCHouses_MoveReminder_MoveReminderComeAgain
+[RED]It is done. If you wish to learn a\nnew move, come visit again, dearie.
+
+#org @gText_DaimynCityNPCHouses_MoveDeleterReminder_ChangedMind
+Come see me again, if you change\nyour mind later.

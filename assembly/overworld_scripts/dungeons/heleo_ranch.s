@@ -61,7 +61,7 @@ EvenScript_HeleoRanch_MoomooMilkSeller:
     multichoiceoption gText_HeleoRanch_MoomooMilkSeller_PuchaseOne 0
 	multichoiceoption gText_HeleoRanch_MoomooMilkSeller_PuchaseADozen 1
 	multichoiceoption gText_HeleoRanch_MoomooMilkSeller_PuchaseNone 2
-	multichoice 0x60 0x0 THREE_MULTICHOICE_OPTIONS FALSE
+	multichoice 0x0 0x0 THREE_MULTICHOICE_OPTIONS FALSE
 	copyvar MULTICHOICE_SELECTION LASTRESULT
 	switch LASTRESULT
 	case 0, BuyOneMoomooMilk

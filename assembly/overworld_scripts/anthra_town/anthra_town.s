@@ -197,7 +197,7 @@ LevelScript_GenChoice_Main:
 
 EventScript_GenChoice_Favoritegen:
 	msgbox gText_GenChoice_Msgfavoritegen MSG_KEEPOPEN
-	multichoice 0x60 0x0 0x1 0x1
+	multichoice 0x0 0x0 0x1 0x1
 	copyvar 0x408C LASTRESULT
 	compare 0x408C 0x0
 	if TRUE _call EventScript_GenChoice_Kantoconfirm

@@ -327,6 +327,148 @@ SignScript_DaimynCityNPCHouses_TransferMachine:
     msgbox gText_DaimynCityNPCHouses_TransferMachine MSG_SIGN
     end
 
+.global EventScript_DaimynCityNPCHouses_MoveDeleterReminderSon
+EventScript_DaimynCityNPCHouses_MoveDeleterReminderSon:
+    npcchat gText_DaimynCityNPCHouses_MoveDeleterReminderSon
+    applymovement LASTTALKED m_LookRight
+    end
+
+.global EventScript_DaimynCityNPCHouses_MoveDeleter
+EventScript_DaimynCityNPCHouses_MoveDeleter:
+    lock
+    faceplayer
+    msgbox gText_DaimynCityNPCHouses_MoveDeleterPrompt MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto ChangedMindAboutMoveDeleteOrRemember
+    goto ChoosePokemonAndMoveToDelete
+
+ChoosePokemonAndMoveToDelete:
+    msgbox gText_DaimynCityNPCHouses_MoveDeleter_ChoosePokemon MSG_KEEPOPEN
+    special 0x9F @ Choose a Pokemon
+    waitstate
+    compare 0x8004 0x6 @ Cancelled out
+    if greaterorequal _goto ChangedMindAboutMoveDeleteOrRemember
+    special 0x148 @ Check if egg
+    compare LASTRESULT 0x1
+    if equal _goto CannotDeleteEggsMove
+    special 0xDF @ Check how many moves the Pokemon knows
+    compare LASTRESULT 0x1
+    if equal _goto CannotForgetLastMove
+    msgbox gText_DaimynCityNPCHouses_MoveDeleter_ChooseMove MSG_KEEPOPEN
+    fadescreen FADEOUT_BLACK
+    special 0xDC @ Show moves, move choice put in 0x8005
+    fadescreen FADEIN_BLACK
+    compare 0x8005 0x4
+    if 0x1 _goto ChoosePokemonAndMoveToDelete @ If a move wasn't chosen, loop back
+    special 0xDE @ Get Pokemon's name
+    msgbox gText_DaimynCityNPCHouses_MoveDeleter_Confirmation MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto ChangedMindAboutMoveDeleteOrRemember
+    special 0xDD @ Delete chosen move
+    pause DELAY_HALFSECOND
+    fanfare 0x101 @ Got Item / Level up
+    msgbox gText_DaimynCityNPCHouses_MoveDeleter_MoveDeleted MSG_KEEPOPEN
+    waitfanfare
+    msgbox gText_DaimynCityNPCHouses_MoveDeleter_ComeToForgetMoreMoves MSG_NORMAL
+    goto ResetMoveDeleterOrReminder
+
+CannotDeleteEggsMove:
+    msgbox gText_DaimynCityNPCHouses_MoveDeleter_ChoiceIsEgg MSG_NORMAL
+    goto ChangedMindAboutMoveDeleteOrRemember
+
+CannotForgetLastMove:
+    special 0xDE @ Get Pokemon's name
+    msgbox gText_DaimynCityNPCHouses_MoveDeleter_ChoiceOnlyKnowsOneMove MSG_NORMAL
+    goto ChangedMindAboutMoveDeleteOrRemember
+
+.global EventScript_DaimynCityNPCHouses_MoveReminder
+EventScript_DaimynCityNPCHouses_MoveReminder:
+    lock
+    faceplayer
+    callasm StorePokeChipCount
+	buffernumber 0x0 0x8005 @ Take stored PokeChip count
+    msgbox gText_DaimynCityNPCHouses_MoveReminderPrompt MSG_KEEPOPEN
+    multichoiceoption gText_DaimynCityNPCHouses_MoveReminder_PastMovesChoice 0
+	multichoiceoption gText_DaimynCityNPCHouses_MoveReminder_EggMovesChoice 1
+	multichoiceoption gText_DaimynCityNPCHouses_MoveReminder_CancelChoice 2
+    multichoice 0x0 0x0 THREE_MULTICHOICE_OPTIONS FALSE
+    copyvar MULTICHOICE_SELECTION LASTRESULT
+	switch MULTICHOICE_SELECTION
+	case 0, TeachPastMove
+	case 1, TeachEggMove
+	case 2, ChangedMindAboutMoveDeleteOrRemember
+    case 0xF, ChangedMindAboutMoveDeleteOrRemember
+	goto ChangedMindAboutMoveDeleteOrRemember
+
+TeachPastMove:
+    clearflag 0x917 @ Teach regular moves
+    checkitem ITEM_POKE_CHIP 0x1
+    compare LASTRESULT TRUE
+    if FALSE _goto NotEnoughPokeChipsForTutoring
+    goto TeachMove
+
+TeachEggMove:
+    setflag 0x917 @ Teach egg moves
+    checkitem ITEM_POKE_CHIP 0xA
+    compare LASTRESULT TRUE
+    if FALSE _goto NotEnoughPokeChipsForTutoring
+    goto TeachMove
+
+TeachMove:
+    msgbox gText_DaimynCityNPCHouses_MoveReminder_ChoosePokemon MSG_KEEPOPEN
+    special 0x9F @ Choose a Pokemon
+    waitstate
+    compare 0x8004 0x6 @ Cancelled out
+    if greaterorequal _goto ChangedMindAboutMoveDeleteOrRemember
+    special 0x148 @ Check if egg
+    compare LASTRESULT 0x1
+    if equal _goto CannotTeachEgg
+    special 0xDF @ Check how many moves the Pokemon knows
+    compare 0x8005 0x0
+    if equal _goto PokemonCannotLearnMoves
+    msgbox gText_DaimynCityNPCHouses_MoveReminder_WhichMovePrompt MSG_KEEPOPEN
+    special 0xE0 @ Chose move
+    waitstate
+    compare 0x8004 0x0
+    if equal _goto TeachMove @ Loop until selection
+    checkflag 0x917 @ Teaching egg move
+    if NOT_SET _call Remove1Chip
+    if SET _call Remove10Chips
+    playse 0xF8 @ Money SE
+    waitse
+    copyvar 0x8012 0x8013
+    msgbox gText_DaimynCityNPCHouses_MoveReminder_MoveReminderComeAgain MSG_NORMAL
+    goto ResetMoveDeleterOrReminder
+
+Remove1Chip:
+    removeitem ITEM_POKE_CHIP 0x1
+    return
+
+Remove10Chips:
+    removeitem ITEM_POKE_CHIP 0xA
+    return
+
+NotEnoughPokeChipsForTutoring:
+    msgbox gText_DaimynCityNPCHouses_MoveReminder_NotEnoughChips MSG_NORMAL
+    goto ChangedMindAboutMoveDeleteOrRemember
+
+CannotTeachEgg:
+    msgbox gText_DaimynCityNPCHouses_MoveReminder_ChoseEgg MSG_NORMAL
+    goto ChangedMindAboutMoveDeleteOrRemember
+
+PokemonCannotLearnMoves:
+    msgbox gText_DaimynCityNPCHouses_MoveReminder_ChoiceIsIneligible MSG_NORMAL
+    goto ChangedMindAboutMoveDeleteOrRemember
+
+ChangedMindAboutMoveDeleteOrRemember:
+    msgbox gText_DaimynCityNPCHouses_MoveDeleterReminder_ChangedMind MSG_NORMAL
+    goto ResetMoveDeleterOrReminder
+
+ResetMoveDeleterOrReminder:
+    release
+    applymovement LASTTALKED m_LookLeft
+    end
+
 m_PikachuWalksToPlayer_Below: .byte walk_down, walk_down, walk_right, walk_right, walk_right, look_up, end_m
 m_PikachuWalksToPlayer_Above: .byte walk_up, walk_right, walk_right, end_m
 m_PikachuWalksToPlayer_Beside: .byte walk_down, walk_down, walk_right, walk_right, walk_right, walk_right, walk_up, end_m

@@ -125,7 +125,7 @@ EventScript_RhodanziTrainerSchool_BasicCourse_TypeStudent_QuizChoices:
     multichoiceoption gText_TypeGrass 0
     multichoiceoption gText_TypeFire 1
     multichoiceoption gText_TypeWater 2
-    multichoice 0x60 0x0 THREE_MULTICHOICE_OPTIONS 0x1
+    multichoice 0x0 0x0 THREE_MULTICHOICE_OPTIONS 0x1
     copyvar MULTICHOICE_SELECTION LASTRESULT
     return
 
@@ -207,7 +207,7 @@ EventScript_RhodanziTrainerSchool_BasicCourse_StatusStudent_Question:
     multichoiceoption gText_Poison 3
     multichoiceoption gText_Sleep 4
     multichoiceoption gText_End 5
-    multichoice 0x60 0x0 SIX_MULTICHOICE_OPTIONS TRUE
+    multichoice 0x0 0x0 SIX_MULTICHOICE_OPTIONS TRUE
     copyvar MULTICHOICE_SELECTION LASTRESULT
     switch LASTRESULT
     case 0, EventScript_RhodanziTrainerSchool_BasicCourse_StatusStudent_Burn
