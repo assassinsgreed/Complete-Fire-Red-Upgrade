@@ -900,6 +900,7 @@ sign 9 16 11 SignScript_DaimynCityMall_StoreDirectory
 npc 9 10 0 EventScript_DaimynCityNPCHouses_SuspiciousMan1
 npc 9 10 1 EventScript_DaimynCityNPCHouses_SuspiciousMan2
 npc 9 10 2 EventScript_DaimynCity_FindTM46Thief
+npc 9 11 0 EventScript_DaimynCityNPCHouses_Lana
 npc 9 12 0 EventScript_DaimynCityNPCHouses_OldTrainer
 npc 9 12 1 EventScript_DaimynCityNPCHouses_Pikachu
 npc 9 13 0 EventScript_DaimynCity_MoveTutor
@@ -907,3 +908,8 @@ npc 9 13 1 EventScript_DaimynCityNPCHouses_TutorsDaughter
 npc 9 13 2 EventScript_DaimynCityNPCHouses_TutorsSon
 npc 9 15 0 EventScript_DaimynCityNPCHouses_TradeBuddy
 npc 9 15 1 EventScript_DaimynCityNPCHouses_Trader
+sign 9 11 0 SignScript_DaimynCityNPCHouses_EntrancePC
+sign 9 11 1 SignScript_DaimynCityNPCHouses_TransferPC
+sign 9 11 2 SignScript_DaimynCityNPCHouses_Poster
+sign 9 11 3 SignScript_DaimynCityNPCHouses_TransferMachine
+sign 9 11 4 SignScript_DaimynCityNPCHouses_TransferMachine

@@ -257,6 +257,76 @@ DaimynTradeComplete:
     release
     end
 
+.global EventScript_DaimynCityNPCHouses_Lana
+EventScript_DaimynCityNPCHouses_Lana:
+    lock
+    faceplayer
+    checkflag 0x834 @ Renamed Someone's PC to Lana's PC
+    if SET _goto RevisitingLana
+    msgbox gText_DaimynCityNPCHouses_LanaIntroduction MSG_YESNO
+    compare LASTRESULT NO
+    if notequal _call UsesPC
+    if equal _call DoesNotUsePC
+    msgbox gText_DaimynCityNPCHouses_LanaIntroductionContinued MSG_NORMAL
+    setflag 0x834 @ Rename Someone's PC to Lana's PC
+    goto LearnAboutPCPrompt
+    end
+
+UsesPC:
+    msgbox gText_DaimynCityNPCHouses_LanaUsesPC MSG_NORMAL
+    return
+
+DoesNotUsePC:
+    msgbox gText_DaimynCityNPCHouses_LanaDoesNotUsePC MSG_NORMAL
+    return
+
+RevisitingLana:
+    msgbox gText_DaimynCityNPCHouses_LanaRevisited MSG_NORMAL
+    goto LearnAboutPCPrompt
+
+LearnAboutPCPrompt:
+    msgbox gText_DaimynCityNPCHouses_LanaLearnAboutPC MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto ChoseNotToLearnAboutPC
+    msgbox gText_DaimynCityNPCHouses_DoWantToLearnAboutPC MSG_NORMAL
+    checkflag 0x4BC @ Is champion
+    if SET _goto GivePocketPC
+    msgbox gText_DaimynCityNPCHouses_PocketPCHint MSG_NORMAL
+    msgbox gText_DaimynCityNPCHouses_LanaFarewell MSG_NORMAL
+    release
+    applymovement 0x1 m_LookRight
+    end
+
+ChoseNotToLearnAboutPC:
+    msgbox gText_DaimynCityNPCHouses_DoNotWantToLearnAboutPC MSG_NORMAL
+    release
+    applymovement 0x1 m_LookRight
+    end
+
+GivePocketPC:
+    # TODO later: Check if player is champ to give Pocket PC
+    end
+
+.global SignScript_DaimynCityNPCHouses_EntrancePC
+SignScript_DaimynCityNPCHouses_EntrancePC:
+    msgbox gText_DaimynCityNPCHouses_LanasPCEntrance MSG_SIGN
+    end
+
+.global SignScript_DaimynCityNPCHouses_TransferPC
+SignScript_DaimynCityNPCHouses_TransferPC:
+    msgbox gText_DaimynCityNPCHouses_TransferPC MSG_SIGN
+    end
+
+.global SignScript_DaimynCityNPCHouses_Poster
+SignScript_DaimynCityNPCHouses_Poster:
+    msgbox gText_DaimynCityNPCHouses_Poster MSG_SIGN
+    end
+
+.global SignScript_DaimynCityNPCHouses_TransferMachine
+SignScript_DaimynCityNPCHouses_TransferMachine:
+    msgbox gText_DaimynCityNPCHouses_TransferMachine MSG_SIGN
+    end
+
 m_PikachuWalksToPlayer_Below: .byte walk_down, walk_down, walk_right, walk_right, walk_right, look_up, end_m
 m_PikachuWalksToPlayer_Above: .byte walk_up, walk_right, walk_right, end_m
 m_PikachuWalksToPlayer_Beside: .byte walk_down, walk_down, walk_right, walk_right, walk_right, walk_right, walk_up, end_m
