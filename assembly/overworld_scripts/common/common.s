@@ -286,7 +286,7 @@ EventScript_Common_VendingMachine:
     preparemsg gText_VendingMachinesChoice
     waitmsg
     showmoney 0x0 0x0 0x0
-    multichoice 0xC 0x0 0x1A 0x0 @ Vanilla vending machine multichoice
+    multichoice 0x0 0x0 0x1A 0x0 @ Vanilla vending machine multichoice
     copyvar 0x4001 LASTRESULT
     copyvar 0x8000 0x4001
     compare 0x8000 0x0

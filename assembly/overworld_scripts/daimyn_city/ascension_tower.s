@@ -21,7 +21,7 @@ EventScript_AscensionTower_BattleTowerAttendant:
     multichoiceoption gText_Yes 0
 	multichoiceoption gText_Info 1
 	multichoiceoption gText_No 2
-    multichoice 0x60 0x0 THREE_MULTICHOICE_OPTIONS FALSE
+    multichoice 0x0 0x0 THREE_MULTICHOICE_OPTIONS FALSE
 	copyvar MULTICHOICE_SELECTION LASTRESULT
 	switch LASTRESULT
 	case 0, TakeBattleTowerChallenge
@@ -46,7 +46,7 @@ EventScript_AscensionTower_EliteFourAttendant:
     multichoiceoption gText_Yes 0
 	multichoiceoption gText_Info 1
 	multichoiceoption gText_No 2
-    multichoice 0x60 0x0 THREE_MULTICHOICE_OPTIONS FALSE
+    multichoice 0x0 0x0 THREE_MULTICHOICE_OPTIONS FALSE
 	copyvar MULTICHOICE_SELECTION LASTRESULT
 	switch LASTRESULT
 	case 0, TakeEliteFourChallenge

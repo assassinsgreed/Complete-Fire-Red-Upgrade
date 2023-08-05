@@ -906,6 +906,9 @@ npc 9 12 1 EventScript_DaimynCityNPCHouses_Pikachu
 npc 9 13 0 EventScript_DaimynCity_MoveTutor
 npc 9 13 1 EventScript_DaimynCityNPCHouses_TutorsDaughter
 npc 9 13 2 EventScript_DaimynCityNPCHouses_TutorsSon
+npc 9 14 0 EventScript_DaimynCityNPCHouses_MoveDeleterReminderSon
+npc 9 14 1 EventScript_DaimynCityNPCHouses_MoveDeleter
+npc 9 14 2 EventScript_DaimynCityNPCHouses_MoveReminder
 npc 9 15 0 EventScript_DaimynCityNPCHouses_TradeBuddy
 npc 9 15 1 EventScript_DaimynCityNPCHouses_Trader
 sign 9 11 0 SignScript_DaimynCityNPCHouses_EntrancePC

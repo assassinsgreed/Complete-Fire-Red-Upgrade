@@ -197,17 +197,17 @@ ThunderPunch:
     return
 
 HealBell:
-    setvar 0x8005 0x3
+    setvar 0x8005 0x4
     call teach5ChipMove
     return
 
 HelpingHand:
-    setvar 0x8005 0x8
+    setvar 0x8005 0x9
     call teach5ChipMove
     return
 
 Spite:
-    setvar 0x8005 0xE
+    setvar 0x8005 0xF
     call teach5ChipMove
     return
 
