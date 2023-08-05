@@ -2967,6 +2967,16 @@ extern const u8 gText_FoodAccuracy[];
 extern const u8 gText_FoodEvasion[];
 extern const u8 gText_FoodAll[];
 
+// Favorite Regions
+extern const u8 gText_RegionKanto[];
+extern const u8 gText_RegionJohto[];
+extern const u8 gText_RegionHoenn[];
+extern const u8 gText_RegionSinnoh[];
+extern const u8 gText_RegionUnova[];
+extern const u8 gText_RegionKalos[];
+extern const u8 gText_RegionAlola[];
+extern const u8 gText_RegionGalar[];
+
 //Scrolling Lists
 static const u8* sTutorFerrox[] =
 {
@@ -3032,6 +3042,18 @@ static const u8* sMealOptionsWithAll[] =
 	gText_End,  
 };
 
+static const u8* sFavoriteRegion[] =
+{
+	gText_RegionKanto,
+	gText_RegionJohto,
+	gText_RegionHoenn,
+	gText_RegionSinnoh,
+	gText_RegionUnova,
+	gText_RegionKalos,
+	gText_RegionAlola,
+	gText_RegionGalar,
+};
+
 // Multichoice Lists
 const struct ScrollingMulti gScrollingSets[] =
 {
@@ -3040,6 +3062,7 @@ const struct ScrollingMulti gScrollingSets[] =
 	{sMealOptions, ARRAY_COUNT(sMealOptions)},
 	{sMealOptionsWithAll, ARRAY_COUNT(sMealOptionsWithAll)},
 	{sTutorDaimyn, ARRAY_COUNT(sTutorDaimyn)},
+	{sFavoriteRegion, ARRAY_COUNT(sFavoriteRegion)},
 };
 
 //Link number of opts shown at once to the box height

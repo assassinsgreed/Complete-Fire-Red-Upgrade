@@ -98,4 +98,28 @@ Pain Split
 #org @gText_FoodAll
 [GREEN](All)[BLACK][ALIGN][50]Rare Candy Cake
 
+#org @gText_RegionKanto
+Kanto
+
+#org @gText_RegionJohto
+Johto
+
+#org @gText_RegionHoenn
+Hoenn
+
+#org @gText_RegionSinnoh
+Sinnoh
+
+#org @gText_RegionUnova
+Unova
+
+#org @gText_RegionKalos
+Kalos
+
+#org @gText_RegionAlola
+Alola
+
+#org @gText_RegionGalar
+Galar
+
 #endif
