@@ -204,3 +204,6 @@ Daimyn City: The Hustling Metropolis
 
 #org @gText_DaimynCityOverworld_Story_RivalTour43
 [BLACK][RIVAL]: [BLUE]Hey, [PLAYER], I'm going to\ncatch up with him and see if he's\lfeeling okay.\pIn the meantime, why don't you\nchallenge the gym? Then you can\ltell me all the best strategies!\pHaha, I'm kidding, I'm kidding!\nWe'll meet up later, okay?
+
+#org @gText_DaimynCityOverworld_DaimynFactorySign
+Daimyn City Factory ahead

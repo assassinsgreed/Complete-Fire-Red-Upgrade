@@ -337,6 +337,37 @@
             }
         },
         {
+            "mapgroup": 1,
+            "mapnum": 30,
+            "grass": {
+                "rate": 5,
+                "pokemon": [
+                    { "low": 27, "high": 29, "species": "SPECIES_TOXEL" },
+                    { "low": 26, "high": 30, "species": "SPECIES_KLINK" },
+                    { "low": 27, "high": 30, "species": "SPECIES_KOFFING_G" },
+                    { "low": 26, "high": 29, "species": "SPECIES_CHARJABUG" },
+                    { "low": 27, "high": 30, "species": "SPECIES_GRIMER_A" },
+                    { "low": 26, "high": 30, "species": "SPECIES_GURDURR" },
+                    { "low": 26, "high": 29, "species": "SPECIES_KOFFING_G" },
+                    { "low": 27, "high": 30, "species": "SPECIES_KOFFING_G" },
+                    { "low": 26, "high": 29, "species": "SPECIES_MAWILE" },
+                    { "low": 27, "high": 30, "species": "SPECIES_MAWILE" },
+                    { "low": 26, "high": 30, "species": "SPECIES_MAWILE" }, 
+                    { "low": 27, "high": 30, "species": "SPECIES_MAWILE" }
+                ]
+            },
+            "rocks": {
+                "rate": 50,
+                "pokemon": [
+                    { "low": 25, "high": 30, "species": "SPECIES_BOLDORE" },
+                    { "low": 24, "high": 29, "species": "SPECIES_KLINK" },
+                    { "low": 24, "high": 28, "species": "SPECIES_KLINK" },
+                    { "low": 25, "high": 30, "species": "SPECIES_SHUCKLE" },
+                    { "low": 26, "high": 29, "species": "SPECIES_SHUCKLE" }
+                ]
+            }
+        },
+        {
             "mapgroup": 3,
             "mapnum": 2,
             "surfing": {

@@ -5,7 +5,6 @@
 .include "../xse_defines.s"
 .include "../asm_defines.s"
 
-
 .global EventScript_DaimynCityMall_LuckyDrawLady
 EventScript_DaimynCityMall_LuckyDrawLady:
     lock

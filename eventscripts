@@ -838,6 +838,7 @@ sign 3 5 6 SignScript_DaimynCityOverworld_GuardHouseNorth
 sign 3 5 7 SignScript_DaimynCityOverworld_GuardHouseWest
 sign 3 5 8 SignScript_DaimynCityOverworld_GuardHouseEast
 sign 3 5 9 SignScript_DaimynCityOverworld_GuardHouseSouth
+sign 3 5 12 SignScript_DaimynCityOverworld_FactorySign
 ### Sign 10 is a hidden item
 sign 3 5 11 SignScript_DaimynCityOverworld_DaimynCityPlacard
 ## Facilities
@@ -916,3 +917,37 @@ sign 9 11 1 SignScript_DaimynCityNPCHouses_TransferPC
 sign 9 11 2 SignScript_DaimynCityNPCHouses_Poster
 sign 9 11 3 SignScript_DaimynCityNPCHouses_TransferMachine
 sign 9 11 4 SignScript_DaimynCityNPCHouses_TransferMachine
+
+# Daimyn Factory
+## Overworld
+map 1 30 MapScript_DaimynFactoryOverworld
+npc 1 30 0 EventScript_DaimynFactoryOverworld_BirdKeeperMarius
+npc 1 30 1 EventScript_DaimynFactoryOverworld_RockerBenson
+npc 1 30 2 EventScript_DaimynFactoryOverworld_LassNatalie
+npc 1 30 3 EventScript_DaimynFactoryOverworld_EngineerJamison
+npc 1 30 4 EventScript_DaimynFactoryOverworld_HikerMike
+npc 1 30 5 EventScript_DaimynFactoryOverworld_BlackBeltRory
+npc 1 30 6 EventScript_DaimynFactoryOverworld_EngineerWilson
+npc 1 30 7 EventScript_DaimynFactoryOverworld_YoungsterNate
+npc 1 30 8 EventScript_DaimynFactoryOverworld_PicknickerShanna
+npc 1 30 9 EventScript_DaimynFactoryOverworld_EngineerKliff
+npc 1 30 10 ItemScript_Common_SuperPotion
+npc 1 30 11 ItemScript_Common_SuperRepel
+npc 1 30 12 EventScript_DaimynFactoryOverworld_Lucarionite
+npc 1 30 13 EventScript_DaimynFactoryOverworld_FindTM57_WildCharge
+npc 1 30 14 ItemScript_Common_EjectButton
+npc 1 30 15 ItemScript_Common_Magnet
+npc 1 30 16 EventScript_Common_Strength
+npc 1 30 17 EventScript_Common_Cut
+npc 1 30 18 EventScript_Common_RockSmash
+npc 1 30 19 EventScript_Common_RockSmash
+npc 1 30 20 EventScript_Common_RockSmash
+npc 1 30 21 EventScript_Common_RockSmash
+npc 1 30 22 EventScript_DaimynFactoryOverworld_FindTM93_Wild_Charge
+npc 1 30 23 ItemScript_Common_Revive
+npc 1 30 24 EventScript_DaimynFactoryOverworld_ReminiscingOldMan
+npc 1 30 25 EventScript_DaimynFactoryOverworld_StrongTrainersGirl
+sign 1 30 0 SignScript_DaimynFactoryOverworld_EntranceSign
+sign 1 30 1 SignScript_DaimynFactoryOverworld_TrainerTipsStats
+sign 1 30 2 SignScript_DaimynFactoryOverworld_TrainerTipsFriendlyPokemonMoreExp
+tile 1 30 0 TileScript_DaimynFactoryOverworld_DaimynFactoryLocked
