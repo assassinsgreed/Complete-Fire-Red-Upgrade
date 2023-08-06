@@ -950,3 +950,4 @@ npc 1 30 25 EventScript_DaimynFactoryOverworld_StrongTrainersGirl
 sign 1 30 0 SignScript_DaimynFactoryOverworld_EntranceSign
 sign 1 30 1 SignScript_DaimynFactoryOverworld_TrainerTipsStats
 sign 1 30 2 SignScript_DaimynFactoryOverworld_TrainerTipsFriendlyPokemonMoreExp
+tile 1 30 0 TileScript_DaimynFactoryOverworld_DaimynFactoryLocked

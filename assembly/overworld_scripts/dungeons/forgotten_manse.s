@@ -102,7 +102,7 @@ TileScript_ForgottenManseExterior_FrontDoor:
     compare LASTRESULT TRUE
     if equal _goto OpenDoor
     pause 0x14
-    msgbox gText_ForgottenManse_DoorLocked MSG_NORMAL
+    msgbox gText_DoorIsLocked MSG_NORMAL
     applymovement PLAYER m_WalkDown
     waitmovement ALLEVENTS
     release
@@ -132,7 +132,7 @@ TileScript_ForgottenManse1F_StorageDoor:
     compare LASTRESULT TRUE
     if equal _goto OpenDoorInterior
     pause 0x14
-    msgbox gText_ForgottenManse_DoorLocked MSG_NORMAL
+    msgbox gText_DoorIsLocked MSG_NORMAL
     applymovement PLAYER m_WalkDown
     waitmovement ALLEVENTS
     release

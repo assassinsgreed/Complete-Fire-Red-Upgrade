@@ -116,3 +116,12 @@ SignScript_DaimynFactoryOverworld_TrainerTipsStats:
 SignScript_DaimynFactoryOverworld_TrainerTipsFriendlyPokemonMoreExp:
     msgbox gText_DaimynFactoryOverworld_FriendlyPokemonMoreExp MSG_SIGN
     end
+
+.global TileScript_DaimynFactoryOverworld_DaimynFactoryLocked
+TileScript_DaimynFactoryOverworld_DaimynFactoryLocked:
+    # TODO: Someday: check if the player has the factory key
+    applymovement PLAYER m_LookUp
+    msgbox gText_DoorIsLocked MSG_NORMAL
+    applymovement PLAYER m_WalkDown
+    waitmovement PLAYER
+    end
