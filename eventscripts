@@ -923,7 +923,7 @@ sign 9 11 4 SignScript_DaimynCityNPCHouses_TransferMachine
 map 1 30 MapScript_DaimynFactoryOverworld
 npc 1 30 0 EventScript_DaimynFactoryOverworld_BirdKeeperMarius
 npc 1 30 1 EventScript_DaimynFactoryOverworld_RockerBenson
-npc 1 30 2 EventScript_DaimynFactoryOverworld_LassMimi
+npc 1 30 2 EventScript_DaimynFactoryOverworld_LassNatalie
 npc 1 30 3 EventScript_DaimynFactoryOverworld_EngineerJamison
 npc 1 30 4 EventScript_DaimynFactoryOverworld_HikerMike
 npc 1 30 5 EventScript_DaimynFactoryOverworld_BlackBeltRory

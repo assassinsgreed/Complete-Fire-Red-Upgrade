@@ -26,10 +26,10 @@ EventScript_DaimynFactoryOverworld_RockerBenson:
     msgbox gText_DaimynFactoryOverworld_RockerBenson_Chat MSG_NORMAL
     end
 
-.global EventScript_DaimynFactoryOverworld_LassMimi
-EventScript_DaimynFactoryOverworld_LassMimi:
-    trainerbattle0 0x0 0x8B 0x0 gText_DaimynFactoryOverworld_LassMimi_Intro gText_DaimynFactoryOverworld_LassMimi_Defeat
-    msgbox gText_DaimynFactoryOverworld_LassMimi_Chat MSG_NORMAL
+.global EventScript_DaimynFactoryOverworld_LassNatalie
+EventScript_DaimynFactoryOverworld_LassNatalie:
+    trainerbattle0 0x0 0x8B 0x0 gText_DaimynFactoryOverworld_LassNatalie_Intro gText_DaimynFactoryOverworld_LassNatalie_Defeat
+    msgbox gText_DaimynFactoryOverworld_LassNatalie_Chat MSG_NORMAL
     end
 
 .global EventScript_DaimynFactoryOverworld_EngineerJamison

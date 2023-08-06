@@ -1149,7 +1149,7 @@ const struct TrainerMonNoItemDefaultMoves sParty_DaimynFactory_RockerBenson[] = 
     { .lvl = 32, .species = SPECIES_TOXTRICITY_LOW_KEY }
 };
 
-const struct TrainerMonItemCustomMoves sParty_DaimynFactory_LassMimi[] = {
+const struct TrainerMonItemCustomMoves sParty_DaimynFactory_LassNatalie[] = {
     {
         .lvl = 32,
         .species = SPECIES_TORKOAL,
@@ -2913,17 +2913,17 @@ const struct Trainer gTrainers[] = {
         .partySize = NELEMS(sParty_DaimynFactory_RockerBenson),
         .party = {.NoItemDefaultMoves = sParty_DaimynFactory_RockerBenson}
     },
-    [TRAINER_DAIMYN_FACTORY_LASS_MIMI] = {
-        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+    [TRAINER_DAIMYN_FACTORY_LASS_NATALIE] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
         .trainerClass = CLASS_LASS,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .trainerPic = TRAINER_PIC_LASS,
-        .trainerName = {_M, _i, _m, _i, _END},
+        .trainerName = {_N, _a, _t, _a, _l, _i, _e, _END},
         .items = { },
         .doubleBattle = FALSE,
         .aiFlags = AI_SCRIPT_SEMI_SMART,
-        .partySize = NELEMS(sParty_DaimynFactory_LassMimi),
-        .party = {.ItemCustomMoves = sParty_DaimynFactory_LassMimi}
+        .partySize = NELEMS(sParty_DaimynFactory_LassNatalie),
+        .party = {.ItemCustomMoves = sParty_DaimynFactory_LassNatalie}
     },
     [TRAINER_DAIMYN_FACTORY_ENGINEER_JAMISON] = {
         .partyFlags = 0,
