@@ -31,6 +31,11 @@ ItemScript_Common_HyperPotion:
     finditem ITEM_HYPER_POTION 0x1
     end
 
+.global ItemScript_Common_Revive
+ItemScript_Common_Revive:
+    finditem ITEM_REVIVE 0x1
+    end
+
 .global ItemScript_Common_Antidote
 ItemScript_Common_Antidote:
     finditem ITEM_ANTIDOTE 0x1
@@ -59,6 +64,11 @@ ItemScript_Common_MaxElixir:
 .global ItemScript_Common_Repel
 ItemScript_Common_Repel:
     finditem ITEM_REPEL 0x1
+    end
+
+.global ItemScript_Common_SuperRepel
+ItemScript_Common_SuperRepel:
+    finditem ITEM_SUPER_REPEL 0x1
     end
 
 .global ItemScript_Common_EscapeRope
@@ -140,6 +150,11 @@ ItemScript_Common_MiracleSeed:
 .global ItemScript_Common_MysticWater
 ItemScript_Common_MysticWater:
     finditem ITEM_MYSTIC_WATER 0x1
+    end
+
+.global ItemScript_Common_Magnet
+ItemScript_Common_Magnet:
+    finditem ITEM_MAGNET 0x1
     end
 
 .global ItemScript_Common_SoftSand
@@ -290,6 +305,11 @@ ItemScript_Common_TerrainExtender:
 .global ItemScript_Common_HeavyDutyBoots
 ItemScript_Common_HeavyDutyBoots:
     finditem ITEM_HEAVY_DUTY_BOOTS 0x1
+    end
+
+.global ItemScript_Common_EjectButton
+ItemScript_Common_EjectButton:
+    finditem ITEM_EJECT_BUTTON 0x1
     end
 
 .global ItemScript_Common_ShellBell

@@ -1120,8 +1120,6 @@ const struct TrainerMonNoItemDefaultMoves sParty_ForgottenManse_2F_ChannelerElai
     { .lvl = 32, .species = SPECIES_SABLEYE }
 };
 
-
-// todo: make teams and implement below, then add to events and put text on them
 const struct TrainerMonNoItemDefaultMoves sParty_ForgottenManse_BF1_SuperNerdGlenn[] = {
     { .lvl = 27, .species = SPECIES_SLOWPOKE },
     { .lvl = 27, .species = SPECIES_SLOWPOKE_G }
@@ -1138,6 +1136,82 @@ const struct TrainerMonNoItemDefaultMoves sParty_ForgottenManse_BF1_PsychicNoell
 const struct TrainerMonNoItemDefaultMoves sParty_ForgottenManse_BF1_ChannelerSana[] = {
     { .lvl = 30, .species = SPECIES_PHANTUMP },
     { .lvl = 30, .species = SPECIES_SANDYGAST }
+};
+// #endregion
+
+// #region Daimyn Factory
+const struct TrainerMonNoItemDefaultMoves sParty_DaimynFactory_BirdkeeperMarius[] = {
+    { .lvl = 34, .species = SPECIES_NOCTOWL }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_DaimynFactory_RockerBenson[] = {
+    { .lvl = 30, .species = SPECIES_THWACKEY },
+    { .lvl = 32, .species = SPECIES_TOXTRICITY_LOW_KEY }
+};
+
+const struct TrainerMonItemCustomMoves sParty_DaimynFactory_LassMimi[] = {
+    {
+        .lvl = 32,
+        .species = SPECIES_TORKOAL,
+        .moves = {
+            MOVE_CURSE,
+            MOVE_FLAMEWHEEL,
+            MOVE_BODYSLAM,
+            MOVE_PROTECT
+        },
+        .heldItem = ITEM_HEAT_ROCK,
+        .ability = Ability_2 // Drought
+    },
+    {
+        .lvl = 32,
+        .species = SPECIES_SUNFLORA,
+        .moves = {
+            MOVE_GIGADRAIN,
+            MOVE_LEECHSEED,
+            MOVE_INGRAIN,
+            MOVE_TAKEDOWN
+        },
+        .heldItem = ITEM_OCCA_BERRY,
+        .ability = Ability_2 // Solar Power
+    }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_DaimynFactory_EngineerJamison[] = {
+    { .lvl = 30, .species = SPECIES_MAWILE },
+    { .lvl = 29, .species = SPECIES_FLAAFFY },
+    { .lvl = 31, .species = SPECIES_JOLTIK }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_DaimynFactory_HikerMike[] = {
+    { .lvl = 32, .species = SPECIES_CUFANT },
+    { .lvl = 32, .species = SPECIES_DRILBUR },
+    { .lvl = 32, .species = SPECIES_CARBINK }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_DaimynFactory_BlackbeltRory[] = {
+    { .lvl = 34, .species = SPECIES_MIENFOO },
+    { .lvl = 35, .species = SPECIES_HAKAMO_O }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_DaimynFactory_EngineerWilson[] = {
+    { .lvl = 33, .species = SPECIES_PACHIRISU },
+    { .lvl = 35, .species = SPECIES_HELIOPTILE }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_DaimynFactory_YoungsterNate[] = {
+    { .lvl = 33, .species = SPECIES_VIGOROTH },
+    { .lvl = 35, .species = SPECIES_VIBRAVA }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_DaimynFactory_PicknickerShanna[] = {
+    { .lvl = 33, .species = SPECIES_FRILLISH_F },
+    { .lvl = 35, .species = SPECIES_GARDEVOIR }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_DaimynFactory_EngineerKliff[] = {
+    { .lvl = 33, .species = SPECIES_EMOLGA },
+    { .lvl = 35, .species = SPECIES_RAICHU },
+    { .lvl = 35, .species = SPECIES_STUNFISK_G }
 };
 // #endregion
 
@@ -2812,6 +2886,128 @@ const struct Trainer gTrainers[] = {
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
         .partySize = NELEMS(sParty_ForgottenManse_BF1_ChannelerSana),
         .party = {.NoItemDefaultMoves = sParty_ForgottenManse_BF1_ChannelerSana}
+    },
+    // #endregion
+    // #region Daimyn Factory
+    [TRAINER_DAIMYN_FACTORY_BIRDKEEPER_MARIUS] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_BIRD_KEEPER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_BIRD_KEEPER,
+        .trainerName = {_M, _a, _r, _i, _u, _s, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_TRY_TO_FAINT,
+        .partySize = NELEMS(sParty_DaimynFactory_BirdkeeperMarius),
+        .party = {.NoItemDefaultMoves = sParty_DaimynFactory_BirdkeeperMarius}
+    },
+    [TRAINER_DAIMYN_FACTORY_ROCKER_BENSON] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_GUITARIST_RS,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
+        .trainerPic = TRAINER_PIC_GUITARIST,
+        .trainerName = {_B, _e, _n, _s, _o, _n, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_TRY_TO_FAINT,
+        .partySize = NELEMS(sParty_DaimynFactory_RockerBenson),
+        .party = {.NoItemDefaultMoves = sParty_DaimynFactory_RockerBenson}
+    },
+    [TRAINER_DAIMYN_FACTORY_LASS_MIMI] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .trainerClass = CLASS_LASS,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .trainerPic = TRAINER_PIC_LASS,
+        .trainerName = {_M, _i, _m, _i, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_SEMI_SMART,
+        .partySize = NELEMS(sParty_DaimynFactory_LassMimi),
+        .party = {.ItemCustomMoves = sParty_DaimynFactory_LassMimi}
+    },
+    [TRAINER_DAIMYN_FACTORY_ENGINEER_JAMISON] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_ENGINEER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_WORKER,
+        .trainerName = {_J, _a, _m, _i, _s, _o, _n, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = NELEMS(sParty_DaimynFactory_EngineerJamison),
+        .party = {.NoItemDefaultMoves = sParty_DaimynFactory_EngineerJamison}
+    },
+    [TRAINER_DAIMYN_FACTORY_HIKER_MIKE] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_HIKER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
+        .trainerPic = TRAINER_PIC_HIKER,
+        .trainerName = {_M, _i, _k, _e, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = NELEMS(sParty_DaimynFactory_HikerMike),
+        .party = {.NoItemDefaultMoves = sParty_DaimynFactory_HikerMike}
+    },
+    [TRAINER_DAIMYN_FACTORY_BLACKBELT_RORY] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_BLACK_BELT,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_BLACK_BELT,
+        .trainerName = {_R, _o, _r, _y, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_RISKY,
+        .partySize = NELEMS(sParty_DaimynFactory_BlackbeltRory),
+        .party = {.NoItemDefaultMoves = sParty_DaimynFactory_BlackbeltRory}
+    },
+    [TRAINER_DAIMYN_FACTORY_ENGINEER_WILSON] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_ENGINEER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_WORKER,
+        .trainerName = {_W, _i, _l, _s, _o, _n, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = NELEMS(sParty_DaimynFactory_EngineerWilson),
+        .party = {.NoItemDefaultMoves = sParty_DaimynFactory_EngineerWilson}
+    },
+    [TRAINER_DAIMYN_FACTORY_YOUNGSTER_NATE] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_YOUNGSTER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_YOUNGSTER,
+        .trainerName = {_N, _a, _t, _e, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = NELEMS(sParty_DaimynFactory_YoungsterNate),
+        .party = {.NoItemDefaultMoves = sParty_DaimynFactory_YoungsterNate}
+    },
+    [TRAINER_DAIMYN_FACTORY_PICKNICKER_SHANNA] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_PICNICKER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .trainerPic = TRAINER_PIC_PICNICKER,
+        .trainerName = {_S, _h, _a, _n, _n, _a, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = NELEMS(sParty_DaimynFactory_PicknickerShanna),
+        .party = {.NoItemDefaultMoves = sParty_DaimynFactory_PicknickerShanna}
+    },
+    [TRAINER_DAIMYN_FACTORY_ENGINEER_KLIFF] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_ENGINEER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_WORKER,
+        .trainerName = {_K, _l, _i, _f, _f, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = NELEMS(sParty_DaimynFactory_EngineerKliff),
+        .party = {.NoItemDefaultMoves = sParty_DaimynFactory_EngineerKliff}
     },
     // #endregion
 };
