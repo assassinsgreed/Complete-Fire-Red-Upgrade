@@ -76,7 +76,7 @@ EventScript_Route5_GentlemanMarcus:
 
 .global EventScript_Route5_AffectionGirl
 EventScript_Route5_AffectionGirl:
-    npcchat2 0x2 m_LookRight gText_Route5_AffectionGirl
+    npcchatwithmovement gText_Route5_AffectionGirl m_LookRight
     end
 
 .global EventScript_Route5_EggGiver

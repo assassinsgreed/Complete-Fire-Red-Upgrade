@@ -18,7 +18,7 @@ EventScript_HeleoCity_Foreman:
     end
 
 ForemanGiftGiven:
-    npcchat2 0x0 m_LookRight gText_HeleoCity_ForemanBadgeComment 
+    npcchatwithmovement gText_HeleoCity_ForemanBadgeComment m_LookRight 
     goto End
 
 .global EventScript_HeleoCity_ForemanAssistant
@@ -260,7 +260,7 @@ AllSwarmPokemonShown:
 
 .global EventScript_HeleoCity_RainesGrandfather
 EventScript_HeleoCity_RainesGrandfather:
-    npcchat2 0x1 m_LookLeft gText_HeleoNPCHouses_RainesGrandfather
+    npcchatwithmovement gText_HeleoNPCHouses_RainesGrandfather m_LookLeft
     end
 
 .global EventScript_HeleoCity_RainesCastform
@@ -275,12 +275,12 @@ EventScript_HeleoCity_RainesCastform:
 
 .global EventScript_HeleoCity_TrainersMom
 EventScript_HeleoCity_TrainersMom:
-    npcchat2 0x1 m_LookLeft gText_HeleoNPCHouses_TrainersMom
+    npcchatwithmovement gText_HeleoNPCHouses_TrainersMom m_LookLeft
     end
 
 .global EventScript_HeleoCity_TrainersYoungKid
 EventScript_HeleoCity_TrainersYoungKid:
-    npcchat2 0x2 m_LookUp gText_HeleoNPCHouses_TrainersYoungKid
+    npcchatwithmovement gText_HeleoNPCHouses_TrainersYoungKid m_LookUp
     end
 
 .global EventScript_HeleoCity_TrainersKid
@@ -384,37 +384,37 @@ PokemonGroomer_End:
 
 .global EventScript_HeleoCity_PokemonFanClubSuperfan
 EventScript_HeleoCity_PokemonFanClubSuperfan:
-    npcchat2 0x3 m_LookUp gText_HeleoNPCHouses_PokemonFanClubSuperfan
+    npcchatwithmovement gText_HeleoNPCHouses_PokemonFanClubSuperfan m_LookUp
     end
 
 .global EventScript_HeleoCity_PokemonFanClubSwimmer
 EventScript_HeleoCity_PokemonFanClubSwimmer:
-    npcchat2 0x4 m_LookRight gText_HeleoNPCHouses_PokemonFanClubSwimmer
+    npcchatwithmovement gText_HeleoNPCHouses_PokemonFanClubSwimmer m_LookRight
     end
 
 .global EventScript_HeleoCity_PokemonFanClubMother
 EventScript_HeleoCity_PokemonFanClubMother:
-    npcchat2 0x5 m_LookLeft gText_HeleoNPCHouses_PokemonFanClubMother
+    npcchatwithmovement gText_HeleoNPCHouses_PokemonFanClubMother m_LookLeft
     end
 
 .global EventScript_HeleoCity_HallwayBoy
 EventScript_HeleoCity_HallwayBoy:
-    npcchat2 0x6 m_LookLeft gText_HeleoNPCHouses_PokemonFanClubHallwayBoy
+    npcchatwithmovement gText_HeleoNPCHouses_PokemonFanClubHallwayBoy m_LookLeft
     end
 
 .global EventScript_HeleoCity_TerraceDad
 EventScript_HeleoCity_TerraceDad:
-    npcchat2 0x1 m_LookLeft gText_HeleoNPCHouses_TerraceDad
+    npcchatwithmovement gText_HeleoNPCHouses_TerraceDad m_LookLeft
     end
 
 .global EventScript_HeleoCity_TerraceMom
 EventScript_HeleoCity_TerraceMom:
-    npcchat2 0x2 m_LookLeft gText_HeleoNPCHouses_TerraceMom
+    npcchatwithmovement gText_HeleoNPCHouses_TerraceMom m_LookLeft
     end
 
 .global EventScript_HeleoCity_TerraceSon
 EventScript_HeleoCity_TerraceSon:
-    npcchat2 0x3 m_LookRight gText_HeleoNPCHouses_TerraceSon
+    npcchatwithmovement gText_HeleoNPCHouses_TerraceSon m_LookRight
     end
 
 .global EventScript_HeleoCity_SodaMachineGirl

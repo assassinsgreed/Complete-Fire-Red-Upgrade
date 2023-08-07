@@ -161,7 +161,7 @@ EventScript_HeleoCity_Route8Girl:
 
 .global EventScript_HeleoCity_FountainKid
 EventScript_HeleoCity_FountainKid:
-    npcchat2 0x4 m_LookUp gText_HeleoCityOverworld_FountainKid
+    npcchatwithmovement gText_HeleoCityOverworld_FountainKid m_LookUp
     end
 
 .global EventScript_HeleoCity_BigGuy

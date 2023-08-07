@@ -130,17 +130,79 @@ EventScript_DaimynCityFacilities_RestaurauntGirl:
 
 .global EventScript_DaimynCityFacilities_PokemonCenterOldWoman
 EventScript_DaimynCityFacilities_PokemonCenterOldWoman:
-    npcchat2 0x2 m_LookLeft gText_DaimynCityFacilities_PokemonCenter_OldWoman
+    npcchatwithmovement gText_DaimynCityFacilities_PokemonCenter_OldWoman m_LookLeft
     end
 
 .global EventScript_DaimynCityFacilities_PokemonCenterWoman
 EventScript_DaimynCityFacilities_PokemonCenterWoman:
-    npcchat2 0x3 m_LookLeft gText_DaimynCityFacilities_PokemonCenter_Woman
+    npcchatwithmovement gText_DaimynCityFacilities_PokemonCenter_Woman m_LookLeft
     end
 
 .global EventScript_DaimynCityFacilities_PokemonCenterGirl
 EventScript_DaimynCityFacilities_PokemonCenterGirl:
-    npcchat2 0x4 m_LookLeft gText_DaimynCityFacilities_PokemonCenter_Girl
+    npcchatwithmovement gText_DaimynCityFacilities_PokemonCenter_Girl m_LookLeft
+    end
+
+.global EventScript_DaimynCityFacilities_PCResearcher
+EventScript_DaimynCityFacilities_PCResearcher:
+    npcchatwithmovement gText_DaimynCityFacilities_IRF_PCResearcher m_LookUp
+    end
+
+.global EventScript_DaimynCityFacilities_MachineryResearcher
+EventScript_DaimynCityFacilities_MachineryResearcher:
+    npcchatwithmovement gText_DaimynCityFacilities_IRF_MachineryResearcher m_LookUp
+    end
+
+.global EventScript_DaimynCityFacilities_WanderingResearcher
+EventScript_DaimynCityFacilities_WanderingResearcher:
+    npcchat gText_DaimynCityFacilities_IRF_WanderingResearcher
+    end
+
+.global EventScript_DaimynCityFacilities_TableBottomRightResearcher
+EventScript_DaimynCityFacilities_TableBottomRightResearcher:
+    npcchatwithmovement gText_DaimynCityFacilities_IRF_TableBottomRightResearcher m_LookUp
+    end
+
+.global EventScript_DaimynCityFacilities_TableLeftResearcher
+EventScript_DaimynCityFacilities_TableLeftResearcher:
+    npcchatwithmovement gText_DaimynCityFacilities_IRF_TableTopLeftResearcher m_LookRight
+    end
+
+.global EventScript_DaimynCityFacilities_Pokeball
+EventScript_DaimynCityFacilities_Pokeball:
+    msgbox gText_DaimynCityFacilities_IRF_TypeNullPrompt MSG_NORMAL
+    applymovement 0x3 m_LookUp
+    msgbox gText_DaimynCityFacilities_IRF_TypeNullPlayerdenied MSG_NORMAL
+    end
+
+.global EventScript_DaimynCityFacilities_ProfessorSakura
+EventScript_DaimynCityFacilities_ProfessorSakura:
+    msgbox gText_DaimynCityFacilities_IRF_SakuraPreoccupied MSG_NORMAL
+    applymovement 0x7 m_Surprise
+    msgbox gText_DaimynCityFacilities_IRF_SakuraNoticesPlayer MSG_NORMAL
+    faceplayer
+    msgbox gText_DaimynCityFacilities_IRF_SakuraTurnsPlayerDown MSG_NORMAL
+    applymovement 0x7 m_LookLeft
+    end
+
+.global SignScript_DaimynCityFacilities_UltraSpaceMachine
+SignScript_DaimynCityFacilities_UltraSpaceMachine:
+    msgbox gText_DaimynCityFacilities_IRF_UltraMachine MSG_SIGN
+    end
+
+.global SignScript_DaimynCityFacilities_UltraSpaceSafetyTipsSign
+SignScript_DaimynCityFacilities_UltraSpaceSafetyTipsSign:
+    msgbox gText_DaimynCityFacilities_IRF_SafetyTips MSG_SIGN
+    end
+
+.global SignScript_DaimynCityFacilities_BeastBallsCase
+SignScript_DaimynCityFacilities_BeastBallsCase:
+    msgbox gText_DaimynCityFacilities_IRF_BeastBallsShelf MSG_SIGN
+    end
+
+.global SignScript_DaimynCityFacilities_PC
+SignScript_DaimynCityFacilities_PC:
+    msgbox gText_DaimynCityFacilities_IRF_PC MSG_SIGN
     end
 
 m_RivalMeetsPlayer_West: .byte walk_right, walk_right, walk_right, walk_right, walk_right, walk_right, walk_right, end_m

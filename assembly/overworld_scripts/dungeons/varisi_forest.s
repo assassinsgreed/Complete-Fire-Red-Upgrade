@@ -71,12 +71,12 @@ EventScript_VarisiForest_SurprisedTrainer:
 
 .global EventScript_VarisiForest_TimeOfDay
 EventScript_VarisiForest_TimeOfDay:
-    npcchat2 0x1 m_LookRight gText_VarisiForest_TimeOfDay
+    npcchatwithmovement gText_VarisiForest_TimeOfDay m_LookRight
     end
 
 .global EventScript_VarisiForest_FriendlyTrainer
 EventScript_VarisiForest_FriendlyTrainer:
-    npcchat2 0x2 m_LookUp gText_VarisiForest_FriendlyTrainer
+    npcchatwithmovement gText_VarisiForest_FriendlyTrainer m_LookUp
     end
 
 .global EventScript_VarisiForest_FoongusEncounter1

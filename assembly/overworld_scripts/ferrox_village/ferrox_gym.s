@@ -157,17 +157,17 @@ EventScript_FerroxLibrary_Receptionist2:
 
 .global EventScript_FerroxLibrary_PCUser
 EventScript_FerroxLibrary_PCUser:
-    npcchat2 0x3 m_LookRight gText_FerroxLibrary_PCUser
+    npcchatwithmovement gText_FerroxLibrary_PCUser m_LookRight
     end
 
 .global EventScript_FerroxLibrary_TableReader1
 EventScript_FerroxLibrary_TableReader1:
-    npcchat2 0x4 m_LookUp gText_FerroxLibrary_TableReader1
+    npcchatwithmovement gText_FerroxLibrary_TableReader1 m_LookUp
     end
 
 .global EventScript_FerroxLibrary_TableReader2
 EventScript_FerroxLibrary_TableReader2:
-    npcchat2 0x5 m_LookDown gText_FerroxLibrary_TableReader2
+    npcchatwithmovement gText_FerroxLibrary_TableReader2 m_LookDown
     end
 
 .global EventScript_FerroxLibrary_RiddleMan
@@ -232,12 +232,12 @@ RiddleHintGirl_RiddleSolved:
 
 .global EventScript_FerroxLibrary_DateBoy
 EventScript_FerroxLibrary_DateBoy:
-    npcchat2 0xE m_LookDown gText_FerroxLibrary_DateBoy
+    npcchatwithmovement gText_FerroxLibrary_DateBoy m_LookDown
     end
 
 .global EventScript_FerroxLibrary_DateGirl
 EventScript_FerroxLibrary_DateGirl:
-    npcchat2 0xF m_LookUp gText_FerroxLibrary_DateGirl
+    npcchatwithmovement gText_FerroxLibrary_DateGirl m_LookUp
     end
 
 .global EventScript_FerroxLibrary_Stella

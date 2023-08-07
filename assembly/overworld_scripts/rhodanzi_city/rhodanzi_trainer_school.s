@@ -36,17 +36,17 @@ ReceptionistHelp:
 
 .global EventScript_RhodanziTrainerSchool_MainRoom_FossilStudent
 EventScript_RhodanziTrainerSchool_MainRoom_FossilStudent:
-    npcchat2 0x2 m_LookUp gText_RhodanziTrainerSchool_MainRoom_FossilStudent
+    npcchatwithmovement gText_RhodanziTrainerSchool_MainRoom_FossilStudent m_LookUp
     end
 
 .global EventScript_RhodanziTrainerSchool_MainRoom_Librarian
 EventScript_RhodanziTrainerSchool_MainRoom_Librarian:
-    npcchat2 0x3 m_LookUp gText_RhodanziTrainerSchool_MainRoom_Librarian
+    npcchatwithmovement gText_RhodanziTrainerSchool_MainRoom_Librarian m_LookUp
     end
 
 .global EventScript_RhodanziTrainerSchool_MainRoom_Professor
 EventScript_RhodanziTrainerSchool_MainRoom_Professor:
-    npcchat2 0x4 m_LookRight gText_RhodanziTrainerSchool_MainRoom_Professor
+    npcchatwithmovement gText_RhodanziTrainerSchool_MainRoom_Professor m_LookRight
     end
 
 .global EventScript_RhodanziTrainerSchool_TerrainTutor
@@ -88,7 +88,7 @@ NotEnoughPokeChips:
 @ Basic Course
 .global EventScript_RhodanziTrainerSchool_BasicCourse_Professor
 EventScript_RhodanziTrainerSchool_BasicCourse_Professor:
-    npcchat2 0x1 m_LookDown gText_RhodanziTrainerSchool_BasicCourse_Professor
+    npcchatwithmovement gText_RhodanziTrainerSchool_BasicCourse_Professor m_LookDown
     end
 
 .global EventScript_RhodanziTrainerSchool_BasicCourse_TypeStudent
@@ -179,17 +179,17 @@ EventScript_RhodanziTrainerSchool_BasicCourse_TypeStudentQuizComplete:
 
 .global EventScript_RhodanziTrainerSchool_BasicCourse_AbilitiesStudent
 EventScript_RhodanziTrainerSchool_BasicCourse_AbilitiesStudent:
-    npcchat2 0x3 m_LookUp gText_RhodanziTrainerSchool_BasicCourse_AbilitiesStudent
+    npcchatwithmovement gText_RhodanziTrainerSchool_BasicCourse_AbilitiesStudent m_LookUp
     end
 
 .global EventScript_RhodanziTrainerSchool_BasicCourse_KOStudent
 EventScript_RhodanziTrainerSchool_BasicCourse_KOStudent:
-    npcchat2 0x4 m_LookUp gText_RhodanziTrainerSchool_BasicCourse_KOStudent
+    npcchatwithmovement gText_RhodanziTrainerSchool_BasicCourse_KOStudent m_LookUp
     end
 
 .global EventScript_RhodanziTrainerSchool_BasicCourse_HeldItemsStudent
 EventScript_RhodanziTrainerSchool_BasicCourse_HeldItemsStudent:
-    npcchat2 0x5 m_LookUp gText_RhodanziTrainerSchool_BasicCourse_HeldItemsStudent
+    npcchatwithmovement gText_RhodanziTrainerSchool_BasicCourse_HeldItemsStudent m_LookUp
     end
 
 .global EventScript_RhodanziTrainerSchool_BasicCourse_StatusStudent
@@ -246,60 +246,60 @@ EventScript_RhodanziTrainerSchool_BasicCourse_StatusStudent_Done:
 @ Advanced Course
 .global EventScript_RhodanziTrainerSchool_AdvancedCourse_Professor
 EventScript_RhodanziTrainerSchool_AdvancedCourse_Professor:
-    npcchat2 0x1 m_LookDown gText_RhodanziTrainerSchool_AdvancedCourse_Professor
+    npcchatwithmovement gText_RhodanziTrainerSchool_AdvancedCourse_Professor m_LookDown
     end
 
 .global EventScript_RhodanziTrainerSchool_AdvancedCourse_BattleMovesStudent
 EventScript_RhodanziTrainerSchool_AdvancedCourse_BattleMovesStudent:
-    npcchat2 0x2 m_LookUp gText_RhodanziTrainerSchool_AdvancedCourse_BattleMovesStudent
+    npcchatwithmovement gText_RhodanziTrainerSchool_AdvancedCourse_BattleMovesStudent m_LookUp
     end
 
 .global EventScript_RhodanziTrainerSchool_AdvancedCourse_AutoRunStudent
 EventScript_RhodanziTrainerSchool_AdvancedCourse_AutoRunStudent:
-    npcchat2 0x3 m_LookUp gText_RhodanziTrainerSchool_AdvancedCourse_AutoRunStudent
+    npcchatwithmovement gText_RhodanziTrainerSchool_AdvancedCourse_AutoRunStudent m_LookUp
     end
 
 .global EventScript_RhodanziTrainerSchool_AdvancedCourse_PokemonTypeStudent
 EventScript_RhodanziTrainerSchool_AdvancedCourse_PokemonTypeStudent:
-    npcchat2 0x4 m_LookUp gText_RhodanziTrainerSchool_AdvancedCourse_PokemonTypeStudent
+    npcchatwithmovement gText_RhodanziTrainerSchool_AdvancedCourse_PokemonTypeStudent m_LookUp
     end
 
 .global EventScript_RhodanziTrainerSchool_AdvancedCourse_MegaEvolutionStudent
 EventScript_RhodanziTrainerSchool_AdvancedCourse_MegaEvolutionStudent:
-    npcchat2 0x5 m_LookUp gText_RhodanziTrainerSchool_AdvancedCourse_MegaEvolutionStudent
+    npcchatwithmovement gText_RhodanziTrainerSchool_AdvancedCourse_MegaEvolutionStudent m_LookUp
     end
 
 .global EventScript_RhodanziTrainerSchool_AdvancedCourse_TMsStudent
 EventScript_RhodanziTrainerSchool_AdvancedCourse_TMsStudent:
-    npcchat2 0x6 m_LookUp gText_RhodanziTrainerSchool_AdvancedCourse_TMsStudent
+    npcchatwithmovement gText_RhodanziTrainerSchool_AdvancedCourse_TMsStudent m_LookUp
     end
 
 .global EventScript_RhodanziTrainerSchool_AdvancedCourse_HMsStudent
 EventScript_RhodanziTrainerSchool_AdvancedCourse_HMsStudent:
-    npcchat2 0x7 m_LookUp gText_RhodanziTrainerSchool_AdvancedCourse_HMsStudent
+    npcchatwithmovement gText_RhodanziTrainerSchool_AdvancedCourse_HMsStudent m_LookUp
     end
 
 .global EventScript_RhodanziTrainerSchool_AdvancedCourse_DexNavStudent
 EventScript_RhodanziTrainerSchool_AdvancedCourse_DexNavStudent:
-    npcchat2 0x8 m_LookUp gText_RhodanziTrainerSchool_AdvancedCourse_DexNavStudent
+    npcchatwithmovement gText_RhodanziTrainerSchool_AdvancedCourse_DexNavStudent m_LookUp
     end
 
 .global EventScript_RhodanziTrainerSchool_AdvancedCourse_BadgeObedienceStudent
 EventScript_RhodanziTrainerSchool_AdvancedCourse_BadgeObedienceStudent:
-    npcchat2 0x9 m_LookUp gText_RhodanziTrainerSchool_AdvancedCourse_BadgeObedienceStudent
+    npcchatwithmovement gText_RhodanziTrainerSchool_AdvancedCourse_BadgeObedienceStudent m_LookUp
     end
 
 .global EventScript_RhodanziTrainerSchool_AdvancedCourse_LastPokeball
 EventScript_RhodanziTrainerSchool_AdvancedCourse_LastPokeball:
-    npcchat2 0xA m_LookUp gText_RhodanziTrainerSchool_AdvancedCourse_LastPokeball
+    npcchatwithmovement gText_RhodanziTrainerSchool_AdvancedCourse_LastPokeball m_LookUp
     end
 
 .global EventScript_RhodanziTrainerSchool_AdvancedCourse_QuickRun
 EventScript_RhodanziTrainerSchool_AdvancedCourse_QuickRun:
-    npcchat2 0xB m_LookUp gText_RhodanziTrainerSchool_AdvancedCourse_QuickRun
+    npcchatwithmovement gText_RhodanziTrainerSchool_AdvancedCourse_QuickRun m_LookUp
     end
 
 .global EventScript_RhodanziTrainerSchool_AdvancedCourse_RegisterMultipleItems
 EventScript_RhodanziTrainerSchool_AdvancedCourse_RegisterMultipleItems:
-    npcchat2 0xC m_LookDown gText_RhodanziTrainerSchool_AdvancedCourse_RegisterMultipleItems
+    npcchatwithmovement gText_RhodanziTrainerSchool_AdvancedCourse_RegisterMultipleItems m_LookDown
     end

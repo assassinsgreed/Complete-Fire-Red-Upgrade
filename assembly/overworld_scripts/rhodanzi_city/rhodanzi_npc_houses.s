@@ -56,12 +56,12 @@ EventScript_RhodanziNPCHouses_TerrenceLittleBrotherNo:
 
 .global EventScript_RhodanziNPCHouses_Evolution
 EventScript_RhodanziNPCHouses_Evolution:
-    npcchat2 0x1 m_LookRight gText_RhodanziNPCHouses_Evolution
+    npcchatwithmovement gText_RhodanziNPCHouses_Evolution m_LookRight
     end
 
 .global EventScript_RhodanziNPCHouses_OldTrainer
 EventScript_RhodanziNPCHouses_OldTrainer:
-    npcchat2 0x2 m_LookLeft gText_RhodanziNPCHouses_OldTrainer
+    npcchatwithmovement gText_RhodanziNPCHouses_OldTrainer m_LookLeft
     end
 
 .global EventScript_RhodanziNPCHouses_NidoranTrainer
@@ -90,19 +90,19 @@ EventScript_RhodanziNPCHouses_PokedexTrainer:
     goto EventScript_RhodanziNPCHouses_PokedexTrainerNo
 
 EventScript_RhodanziNPCHouses_PokedexTrainerYes:
-    npcchat2 0x1 m_LookRight gText_RhodanziNPCHouses_PokedexTrainerYes
+    npcchatwithmovement gText_RhodanziNPCHouses_PokedexTrainerYes m_LookRight
     end
 
 EventScript_RhodanziNPCHouses_PokedexTrainerNo:
-    npcchat2 0x1 m_LookRight gText_RhodanziNPCHouses_PokedexTrainerNo
+    npcchatwithmovement gText_RhodanziNPCHouses_PokedexTrainerNo m_LookRight
     end
 
 .global EventScript_RhodanziNPCHouses_PlantGirl
 EventScript_RhodanziNPCHouses_PlantGirl:
-    npcchat2 0x1 m_LookLeft gText_RhodanziNPCHouses_PlantGirl
+    npcchatwithmovement gText_RhodanziNPCHouses_PlantGirl m_LookLeft
     end
 
 .global EventScript_RhodanziNPCHouses_MailTrainer
 EventScript_RhodanziNPCHouses_MailTrainer:
-    npcchat2 0x1 m_LookDown gText_RhodanziNPCHouses_MailTrainer
+    npcchatwithmovement gText_RhodanziNPCHouses_MailTrainer m_LookDown
     end
