@@ -60,12 +60,12 @@ ClearForemanEvent:
 
 .global EventScript_Route4_Foreman
 EventScript_Route4_Foreman:
-    npcchat2 0x1 m_LookUp gText_Route4_ForemanChat
+    npcchatwithmovement gText_Route4_ForemanChat m_LookUp
     end
 
 .global EventScript_Route4_Worker
 EventScript_Route4_Worker:
-    npcchat2 0x2 m_LookUp gText_Route4_WorkerChat
+    npcchatwithmovement gText_Route4_WorkerChat m_LookUp
     end
 
 .global EventScript_Route4_LargeMan

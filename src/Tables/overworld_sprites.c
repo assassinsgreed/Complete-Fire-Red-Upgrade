@@ -28,6 +28,7 @@ extern const u8 AlistairTiles[];
 extern const u8 LeaderStellaTiles[];
 extern const u8 TrainerHouseHostTiles[];
 extern const u8 LeaderRaineTiles[];
+extern const u8 ProfessorSakuraTiles[];
 
 // Overworld Events
 extern const u8 SandygastTiles[];
@@ -388,6 +389,20 @@ static const struct SpriteFrameImage Table_LeaderRaine[] =
     overworld_frame(LeaderRaineTiles, 2, 4, 6),
     overworld_frame(LeaderRaineTiles, 2, 4, 7),
     overworld_frame(LeaderRaineTiles, 2, 4, 8),
+};
+
+static const struct SpriteFrameImage Table_ProfessorSakura[] =
+{
+    overworld_frame(ProfessorSakuraTiles, 2, 4, 0),
+    overworld_frame(ProfessorSakuraTiles, 2, 4, 1),
+    overworld_frame(ProfessorSakuraTiles, 2, 4, 2),
+    overworld_frame(ProfessorSakuraTiles, 2, 4, 3),
+    overworld_frame(ProfessorSakuraTiles, 2, 4, 4),
+    overworld_frame(ProfessorSakuraTiles, 2, 4, 5),
+    overworld_frame(ProfessorSakuraTiles, 2, 4, 6),
+    overworld_frame(ProfessorSakuraTiles, 2, 4, 7),
+    overworld_frame(ProfessorSakuraTiles, 2, 4, 8),
+    overworld_frame(ProfessorSakuraTiles, 2, 4, 9), // Unused
 };
 
 static const struct SpriteFrameImage Table_Sandygast[] =
@@ -984,6 +999,26 @@ const struct EventObjectGraphicsInfo GraphicsInfo_LeaderRaine =
     .subspriteTables = gEventObjectSpriteOamTables_16x32,
     .anims = gEventObjectImageAnimTable_Standard,
     .images = Table_LeaderRaine,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+const struct EventObjectGraphicsInfo GraphicsInfo_ProfessorSakura =
+{
+    .tileTag = 0xFFFF,
+    .paletteTag1 = 0x121E,
+    .paletteTag2 = EVENT_OBJ_PAL_TAG_NONE,
+    .size = (16 * 32) / 2,
+    .width = 16,
+    .height = 32,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .disableReflectionPaletteLoad = FALSE,
+    .tracks = TRACKS_FOOT,
+    .gender = FEMALE,
+    .oam = gEventObjectBaseOam_16x32,
+    .subspriteTables = gEventObjectSpriteOamTables_16x32,
+    .anims = gEventObjectImageAnimTable_Standard,
+    .images = Table_ProfessorSakura,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 

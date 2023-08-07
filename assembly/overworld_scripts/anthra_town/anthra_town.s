@@ -92,7 +92,7 @@ EventScript_AnthraTown_FootprintGuy:
 	if equal _goto End
 	compare LASTTALKED 0x6
 	if equal _call LookDown
-	npcchat2 0x6 m_LookUp gText_AnthraTown_FootprintGuy
+	npcchatwithmovement gText_AnthraTown_FootprintGuy m_LookUp
 	compare LASTTALKED 0x6
 	if notequal _call PlayerWalkBack
 	setvar LASTTALKED 0xFF

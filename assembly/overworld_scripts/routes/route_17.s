@@ -46,7 +46,7 @@ EventScript_Route17_Rival:
     goto StoryEvents_TalkingWithHawthorneAndSelene
 
 EventScript_Route17_Rival_BeforeChoosingStarter:
-    npcchat2 Rival m_LookUp gText_Route17_RivalExcitedToBecomeTrainer
+    npcchatwithmovement gText_Route17_RivalExcitedToBecomeTrainer m_LookUp
     end
 
 .global TileScript_Route17_StoryBlockersNorth
@@ -85,7 +85,7 @@ EventScript_Route17_ProfessorHawthorne:
     if equal _goto EventScript_Route17_HawthorneChooseStarter
     compare StoryEventVar PlayerChoosingStarter
     if equal _goto EventScript_Route17_PlayerChoosingStarter
-    npcchat2 Hawthorne m_LookRight gText_Route17_HawthorneChat 
+    npcchatwithmovement gText_Route17_HawthorneChat m_LookRight 
     end
 
 EventScript_Route17_HawthorneChooseStarter:
@@ -139,11 +139,11 @@ EventScript_Route17_PlayerMovesForHawthornePokeballs:
 EventScript_Route17_ChampionSelene:
     compare StoryEventVar PlayerAndRivalCanGoOnJourney
     if equal _goto EventScript_Route17_ChampionSelene_BeforeChoosingStarter 
-    npcchat2 Selene m_LookLeft gText_Route17_SeleneChat
+    npcchatwithmovement gText_Route17_SeleneChat m_LookLeft
     end
 
 EventScript_Route17_ChampionSelene_BeforeChoosingStarter:
-    npcchat2 Selene m_LookDown gText_Route17_SeleneBeforeChoosingStarter
+    npcchatwithmovement gText_Route17_SeleneBeforeChoosingStarter m_LookDown
     end
 
 TileEvent_MeetingRival:

@@ -7,7 +7,7 @@
 
 .global EventScript_FerroxNPCHouses_SmallestVillage
 EventScript_FerroxNPCHouses_SmallestVillage:
-    npcchat2 0x1 m_LookRight gText_FerroxNPCHouses_SmallestVillage
+    npcchatwithmovement gText_FerroxNPCHouses_SmallestVillage m_LookRight
     end
 
 .global EventScript_FerroxNPCHouses_DailyBerry
@@ -63,7 +63,7 @@ EventScript_FerroxNPCHouses_TutorsInTowns:
 
 .global EventScript_FerroxNPCHouses_TradeGirlDad
 EventScript_FerroxNPCHouses_TradeGirlDad:
-    npcchat2 0x1 m_LookRight gText_FerroxNPCHouses_TradeGirlDad
+    npcchatwithmovement gText_FerroxNPCHouses_TradeGirlDad m_LookRight
     end
 
 .global EventScript_FerroxNPCHouses_ChinchouTrade

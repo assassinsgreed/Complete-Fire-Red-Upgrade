@@ -72,7 +72,7 @@ EventScript_OlenicLab_Hawthorne:
 .global EventScript_OlenicLab_HawthornesConservatoryAide
 EventScript_OlenicLab_HawthornesConservatoryAide:
     @ TODO: Check if player has become champion
-    npcchat2 0x2 m_LookDown gText_OlenicProfessorsLab_ConservatoryAide
+    npcchatwithmovement gText_OlenicProfessorsLab_ConservatoryAide m_LookDown
     end
 
 .global EventScript_OlenicLab_Researcher

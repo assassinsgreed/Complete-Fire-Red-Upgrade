@@ -79,12 +79,12 @@ TileScript_RhodanziOverworld_ThugsCaught:
 
 .global EventScript_RhodanziOverworld_ThugBottomSpokenTo
 EventScript_RhodanziOverworld_ThugBottomSpokenTo:
-    npcchat2 0x6 m_LookUp gText_RhodanziOverworld_ThugsEna
+    npcchatwithmovement gText_RhodanziOverworld_ThugsEna m_LookUp
     end
 
 .global EventScript_RhodanziOverworld_ThugTopSpokenTo
 EventScript_RhodanziOverworld_ThugTopSpokenTo:
-    npcchat2 0x7 m_LookDown gText_RhodanziOverworld_Thugs
+    npcchatwithmovement gText_RhodanziOverworld_Thugs m_LookDown
     end
 
 .global EventScript_RhodanziOverworld_FindTMEchoedVoice

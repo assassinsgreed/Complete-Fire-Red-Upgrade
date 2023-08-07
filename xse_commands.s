@@ -1984,10 +1984,10 @@ map \map
 .endm
 
 @ Manages an npc chat event, where an npc will speak to the player before executing the provided movement
-.macro npcchat2 index:req movements:req textpointer:req
+.macro npcchatwithmovement textpointer:req movements:req
 	lock
 	msgbox \textpointer MSG_FACE
-	applymovement \index \movements
+	applymovement 0x800F \movements
 	waitmovement ALLEVENTS
 	release
 .endm

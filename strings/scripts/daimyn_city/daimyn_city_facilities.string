@@ -51,3 +51,45 @@ My husband just disappeared on me\nand left me with our daughter.\pHe better not
 
 #org @gText_DaimynCityFacilities_PokemonCenter_Girl
 My mommy and I are waiting for daddy\nto come back.\pMommy said he's going to bring us\nCastelicones! I can't wait!
+
+#org @gText_DaimynCityFacilities_IRF_PCResearcher
+Please don't distract me.\pI'm tracking peculiar energy signals\nwe've detected out in Ultra Space.
+
+#org @gText_DaimynCityFacilities_IRF_MachineryResearcher
+I'm testing the equipment to make\nsure it's working properly.\pProfessor Sakura has poured a lot of\ntime and effort into our\lUltra Space research.\pI don't want to let her down.
+
+#org @gText_DaimynCityFacilities_IRF_WanderingResearcher
+We've partnered with the Aether\nFoundation in the Alola Region.\pOur goal is to share information and\nresources to help us both further\lour research.\pWe've sent them information on how to\nstabilize a corridor connected to\lUltra Space.\pIn turn, they've lent us one of their\n"Beast Killer\" projects as a safety\lprecaution.\p[.]Oh, sorry. That might've been too\ntechnical for you.
+
+#org @gText_DaimynCityFacilities_IRF_TableBottomRightResearcher
+We've identified strange creatures\nout in Ultra Space.\pThey are like Pok\emon, but [.] not.\nTheir bodies are utterly bizarre.\pWe need to investigate them further\nto understand exactly what they\lare.\pBecause they were found in Ultra\nSpace, they have been titled\l"Ultra Beasts\" by Alolan\lresearchers.
+
+#org @gText_DaimynCityFacilities_IRF_TableTopLeftResearcher
+Professor Sakura is brilliant and\nkind, but[.] I'm worried for her.\pShe spends most of her day working\nin the lab, jumping from one\lbreakthrough to the next.\pWe're grateful for her positive can-\ndo attitude, but as her\lcolleagues, we also worry for her.
+
+#org @gText_DaimynCityFacilities_IRF_TypeNullPrompt
+The ball is labelled "Beast Killer.\"
+
+#org @gText_DaimynCityFacilities_IRF_TypeNullPlayerdenied
+[BLUE]Excuse me[.] The creature in that\nPok\e Ball is pivotal to our\lresearch.\pPlease leave it be.
+
+#org @gText_DaimynCityFacilities_IRF_SakuraPreoccupied
+Hmm[.] Maybe if I adjust these\nsettings, we might[.]
+
+#org @gText_DaimynCityFacilities_IRF_SakuraNoticesPlayer
+Oh! Excuse me!
+
+#org @gText_DaimynCityFacilities_IRF_SakuraTurnsPlayerDown
+I didn't notice you there.\pI'm busy investigating some anomalies\nin our connection to Ultra Space.\pMy apologies, but I need to focus\nnow.
+
+#org @gText_DaimynCityFacilities_IRF_UltraMachine
+The machine is spinning quickly.\pThere's something visible in the\nmachine's core.\pIt looks like an unfamiliar land[.]\nOh! It's gone.
+
+#org @gText_DaimynCityFacilities_IRF_SafetyTips
+SAFETY TIPS WHEN INVESTIGATING\nULTRA SPACE:\p1. Do not interact with anything\nobserved in Ultra Space.\p2. Ensure Beast Killer is on standby,\nin case of emergency.\p3. Always work in pairs, and take\nthorough research notes.
+
+#org @gText_DaimynCityFacilities_IRF_BeastBallsShelf
+There are many peculiar looking\nPok\e Balls lined up on the shelf.
+
+#org @gText_DaimynCityFacilities_IRF_PC
+There are very detailed research\nnotes on the PC.\pBetter leave them alone!

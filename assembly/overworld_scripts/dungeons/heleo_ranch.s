@@ -183,7 +183,7 @@ EventScript_HeleoRanch_Dad:
 
 .global EventScript_HeleoRanch_Daughter
 EventScript_HeleoRanch_Daughter:
-    npcchat2 0x2 m_LookUp gText_HeleoRanch_Daughter
+    npcchatwithmovement gText_HeleoRanch_Daughter m_LookUp
     end
 
 .global EventScript_HeleoRanch_Mom

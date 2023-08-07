@@ -86,12 +86,12 @@ MapEntryScript_Route13_RestHouse_FlightFlag:
 
 .global EventScript_Route13_RestHouse_PCGuy
 EventScript_Route13_RestHouse_PCGuy:
-    npcchat2 0x1 m_LookDown gText_Route13_RestHouse_PCGuy
+    npcchatwithmovement gText_Route13_RestHouse_PCGuy m_LookDown
     end
 
 .global EventScript_Route13_RestHouse_Hiker
 EventScript_Route13_RestHouse_Hiker:
-    npcchat2 0x2 m_LookLeft gText_Route13_RestHouse_Hiker
+    npcchatwithmovement gText_Route13_RestHouse_Hiker m_LookLeft
     end
 
 .global EventScript_Route13_RestHouse_Merchant
@@ -129,10 +129,10 @@ EventScript_Route13_RestHouse_Nurse:
 
 .global EventScript_Route13_RestHouse_GuestBookGirl
 EventScript_Route13_RestHouse_GuestBookGirl:
-    npcchat2 0x5 m_LookUp gText_Route13_RestHouse_GuestBookGirl
+    npcchatwithmovement gText_Route13_RestHouse_GuestBookGirl m_LookUp
     end
 
 .global EventScript_Route13_RestHouse_RestHouseRep
 EventScript_Route13_RestHouse_RestHouseRep:
-    npcchat2 0x6 m_LookLeft gText_Route13_RestHouse_RestHouseRep
+    npcchatwithmovement gText_Route13_RestHouse_RestHouseRep m_LookLeft
     end
