@@ -54,6 +54,7 @@ extern const u16 TrainerHouseHostPal[];
 extern const u16 LeaderRainePal[];
 extern const u16 PikachuPal[];
 extern const u16 ProfessorSakuraPal[];
+extern const u16 LeaderChancePal[];
 
 #ifdef UNBOUND
 //extern const u16 MalePlayer_Trainer_Outfit_RedPal[];
@@ -319,6 +320,7 @@ static const u16* sPlayerMarlonOutfitColours[] =
 		{ LeaderRainePal, 0x121C },
 		{ PikachuPal, 0x121D },
 		{ ProfessorSakuraPal, 0x121E },
+		{ LeaderChancePal, 0x121F },
 		{ NULL, 0x11FF }
 	};
 	const struct SpritePalette* const gObjectEventSpritePalettesSwitcher[255] = {
