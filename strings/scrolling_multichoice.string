@@ -137,6 +137,9 @@ Assault Vest[ALIGN][65]2,000
 #org @gText_ItemExchange_WeaknessPolicy
 Weakness Policy[ALIGN][65]2,000
 
+#org @gText_ItemExchange_FocusSash
+Focus Sash[ALIGN][65]2,000
+
 #org @gText_ItemExchange_ChoiceBand
 Choice Band[ALIGN][65]2,500
 

@@ -135,3 +135,15 @@ Your party is full, so I've sent\n[BUFFER1] to your box.
 
 #org @gText_DaimynCityGym_ItemTrader
 At this counter, I can exchange your\ncoins for rare items.
+
+#org @gText_DaimynCityGym_TrainerCoinPayout
+For defeating me, I'll give you\n[BUFFER1] coins.
+
+#org @gText_DaimynCityGym_YoungsterJacob_Intro
+Hehehe[.] This strategy'll knock you\nflat!
+
+#org @gText_DaimynCityGym_YoungsterJacob_Defeat
+Wha-? I executed my strategy\nflawlessly!
+
+#org @gText_DaimynCityGym_YoungsterJacob_Chat
+That strategy doesn't fool everyone,\nbut when it works, it's so much fun!

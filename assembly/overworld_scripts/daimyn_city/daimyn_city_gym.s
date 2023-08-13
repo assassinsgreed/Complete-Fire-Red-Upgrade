@@ -344,13 +344,14 @@ ItemTraderShopList:
     case 1, FlameOrb
     case 2, LifeOrb
     case 3, AssaultVest
-    case 4, WeaknessPolicy
-    case 5, ChoiceBand
-    case 6, ChoiceSpecs
-    case 7, ChoiceScarf
-    case 8, Leftovers
-    case 9, Eviolite
-    case 10, DeclineTradeExchange
+    case 4, FocusSash
+    case 5, WeaknessPolicy
+    case 6, ChoiceBand
+    case 7, ChoiceSpecs
+    case 8, ChoiceScarf
+    case 9, Leftovers
+    case 10, Eviolite
+    case 11, DeclineTradeExchange
     case 0x7F, DeclineTradeExchange @ When player hits B to close
     end
 
@@ -372,6 +373,11 @@ LifeOrb:
 AssaultVest:
     setvar 0x4001 ITEM_ASSAULT_VEST
     setvar 0x4002 3000
+    goto ItemTrader_AfterChoiceMade
+
+FocusSash:
+    setvar 0x4001 ITEM_FOCUS_SASH
+    setvar 0x4002 2000
     goto ItemTrader_AfterChoiceMade
 
 WeaknessPolicy:
@@ -440,8 +446,28 @@ GeneralTraderDoNotHaveBadge:
     msgbox gText_DaimynCityGym_GenericTrader_DoNotHaveBadge MSG_NORMAL
     end
 
+TrainerCoinPayout:
+    setvar 0x4002 0xA @ mult by 10
+    setvar 0x8004 0x4001
+    setvar 0x8005 0x4002
+    special 0x40 @ Multiply two numbers above
+    showcoins
+    buffernumber 0x0 0x4001
+    msgbox gText_DaimynCityGym_TrainerCoinPayout MSG_KEEPOPEN
+    pause DELAY_HALFSECOND
+    addcoins 0x4001
+    playse 248 @ SE Money
+    updatecoins
+    waitse
+    pause DELAY_HALFSECOND
+    hidecoins
+    end
+
 .global EventScript_DaimynCityGym_YoungsterJacob
 EventScript_DaimynCityGym_YoungsterJacob:
+    setvar 0x4001 23
+    trainerbattle2 0x0 0x93 0x0 gText_DaimynCityGym_YoungsterJacob_Intro gText_DaimynCityGym_YoungsterJacob_Defeat TrainerCoinPayout
+    msgbox gText_DaimynCityGym_YoungsterJacob_Chat MSG_NORMAL
     end
 
 .global EventScript_DaimynCityGym_PokefanKanesha

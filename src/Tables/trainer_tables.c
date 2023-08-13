@@ -1215,6 +1215,23 @@ const struct TrainerMonNoItemDefaultMoves sParty_DaimynFactory_EngineerKliff[] =
 };
 // #endregion
 
+// #region Daimyn City
+const struct TrainerMonItemCustomMoves sParty_DaimynCityGym_YoungsterJacob[] = {
+    {
+        .lvl = 1,
+        .species = SPECIES_RATTATA_A,
+        .moves = {
+            MOVE_ENDEAVOR,
+            MOVE_QUICKATTACK,
+            MOVE_NONE,
+            MOVE_NONE
+        },
+        .heldItem = ITEM_FOCUS_SASH,
+        .ability = Ability_Hidden // Thick Fat
+    },
+};
+// #endregion
+
 #define NO_NAME                                                                                      \
     {                                                                                                \
         _END, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE \
@@ -3008,6 +3025,20 @@ const struct Trainer gTrainers[] = {
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
         .partySize = NELEMS(sParty_DaimynFactory_EngineerKliff),
         .party = {.NoItemDefaultMoves = sParty_DaimynFactory_EngineerKliff}
+    },
+    // #endregion
+    // #region Daimyn City Gym
+    [TRAINER_DAIMYN_CITY_GYM_YOUNGSTER_JACOB] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_YOUNGSTER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_YOUNGSTER,
+        .trainerName = {_J, _a, _c, _o, _b, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_PREFER_STRONGEST_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_SEMI_SMART,
+        .partySize = NELEMS(sParty_DaimynCityGym_YoungsterJacob),
+        .party = {.ItemCustomMoves = sParty_DaimynCityGym_YoungsterJacob}
     },
     // #endregion
 };
