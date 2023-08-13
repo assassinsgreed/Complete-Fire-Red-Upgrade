@@ -171,6 +171,7 @@ EventScript_RubarrDesert_StoryEvents:
     trainerbattle10 0x10 0x21 0x22 0x1C 0x6 0x0 gText_RubarrDesert_ClancyLoses gText_RubarrDesert_EnaLoses
     playbgm 0x19A @ Encounter Team Pluto
     msgbox gText_RubarrDesert_ClancyPoorLoser MSG_NORMAL
+    sound 0x15 @ Exclaim
     applymovement PlutoGruntClancy m_Surprise
     applymovement PlutoGruntEna m_Surprise
     msgbox gText_RubarrDesert_IreneArrives MSG_NORMAL
@@ -178,6 +179,7 @@ EventScript_RubarrDesert_StoryEvents:
     applymovement PlutoGruntEna m_LookLeft
     msgbox gText_RubarrDesert_ClancyScared MSG_NORMAL
     msgbox gText_RubarrDesert_EnaScared MSG_NORMAL
+    sound 0x15 @ Exclaim
     applymovement Rival m_Surprise
     msgbox gText_RubarrDesert_RivalConfused MSG_NORMAL
     applymovement PlutoGruntClancy m_LookDown
@@ -191,6 +193,7 @@ EventScript_RubarrDesert_StoryEvents:
     msgbox gText_RubarrDesert_ClancyBootlicks MSG_NORMAL
     msgbox gText_RubarrDesert_IreneRepeats MSG_NORMAL
     msgbox gText_RubarrDesert_ClancyReport MSG_NORMAL
+    sound 0x15 @ Exclaim
     applymovement PlutoGruntClancy m_Surprise
     msgbox gText_RubarrDesert_ClancySurprise MSG_NORMAL
     msgbox gText_RubarrDesert_EnaResponse MSG_NORMAL
@@ -238,6 +241,7 @@ EventScript_RubarrDesert_StoryEvents:
     applymovement PlutoGruntEna m_LookLeft
     msgbox gText_RubarrDesert_ClancyCommentsOnDay MSG_NORMAL
     msgbox gText_RubarrDesert_EnaCallsDexNavsDefects MSG_NORMAL
+    sound 0x15 @ Exclaim
     applymovement PlutoGruntClancy m_Surprise
     msgbox gText_RubarrDesert_ClancyAgreesAboutDefects MSG_NORMAL
     applymovement PlutoGruntEna m_Joy
@@ -317,6 +321,7 @@ PositionPlayerForRubarrStoryEventsCheckAboveGrunts:
 PlayerTakesTheBlame:
     applymovement PlutoAdminIrene m_Joy
     msgbox gText_RubarrDesert_IreneAcceptsBlame MSG_NORMAL
+    sound 0x15 @ Exclaim
     applymovement Rival m_Surprise
     msgbox gText_RubarrDesert_RivalCritizesPlayer MSG_NORMAL
     applymovement Rival m_LookUp

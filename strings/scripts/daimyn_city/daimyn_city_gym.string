@@ -1,0 +1,98 @@
+#org @gText_DaimynCityGym_Cutscene_ChanceLaughs
+[BLUE]Wahaha! Those are big winnings,\nbaby!
+
+#org @gText_DaimynCityGym_Cutscene_ChanceSpotsPlayer
+[BLUE]Oh. What do I spy but a fresh\nface? Hello there!
+
+#org @gText_DaimynCityGym_Cutscene_ChanceAddressesMalePlayer
+[BLUE]Tell me, laddie[.]
+
+#org @gText_DaimynCityGym_Cutscene_ChanceAddressesFemalePlayer
+[BLUE]Tell me, lassie[.]
+
+#org @gText_DaimynCityGym_Cutscene_ChanceAsksPlayersIntention
+[BLUE]Are you here to challenge the gym\nleader, or play the slots?
+
+#org @gText_DaimynCityGym_Cutscene_ChoiceGym
+The gym
+
+#org @gText_DaimynCityGym_Cutscene_ChoiceSlots
+The slots
+
+#org @gText_DaimynCityGym_Cutscene_ChoiceNeither
+Neither
+
+#org @gText_DaimynCityGym_Cutscene_PlayerChoseGym
+[BLUE]Wahahaha! A challenger, are ye?\nExcellent! I'm sure Chance will be\lpleased.
+
+#org @gText_DaimynCityGym_Cutscene_PlayerChoseSlots
+[BLUE]Wahahaha! Well, you certainly won't\nbe left wanting, in a place like\lthis!
+
+#org @gText_DaimynCityGym_Cutscene_PlayerChoseNeither
+[BLUE]Wahahaha! Keeping your reasons close\nto your chest, eh? I respect that!
+
+#org @gText_DaimynCityGym_Cutscene_ChanceLeadsPlayerToDeskMan
+[BLUE]Well, no matter your reason for\ncoming here, you'll need a Coin\lCase.\pCome with me. I'm friends with the\nowner and can hook you up!
+
+#org @gText_DaimynCityGym_Cutscene_ChanceAsksForCoins
+[BLUE]Hey, my good man! My new friend\nhere would like to spend some time\lat this fine establishment.\pCan you get them set up with a Coin\nCase?
+
+#org @gText_DaimynCityGym_Cutscene_DeskManResponds
+[BLUE]Why, of course, good sir.\pHere, please accept this Coin Case.\nIt will hold the coins you can use\lat this establishment.
+
+#org @gText_DaimynCityGym_Cutscene_ChanceRespondsToDeskMan
+[BLUE]Yer a real champ, mate.
+
+#org @gText_DaimynCityGym_Cutscene_ChanceExplainsTheGymRules
+[BLUE]If yer here to play the slots, then\nyou have everything you need.\pIf yer here for Chance's badge,\nthough, there are some rules you'd\lbest keep in mind[.]\pChance only challenges those that\ncan prove they're saavy gamblers\land can amass a small fortune.\pHow do you do that? Well, there are\n3 ways[.]\p1. Make Your Own Luck - This means\nbuying them from my pal here with\lyour hard earned cash.\p2. Getting Lucky - With a little\nluck, you can win more coins from\lthe slots here. Rumor has it some\lmachines are luckier than others.\p3. Playing the Field - It may not\nlook it, but most people here are\lgym trainers. If you beat them in\lbattle, they'll give you some\lcoins.
+
+#org @gText_DaimynCityGym_Cutscene_ChanceTakesHisLeave
+[BLUE]My, my, look at the time! I gotta\njet. T'was a pleasure, my friend.\pI'm sure we'll see each other around\nreal soon.
+
+#org @gText_DaimynCityGym_Cutscene_DeskManGives500Coins
+[BLUE]Ahem[.] My friend did not explain a\nfew things. Please allow me.\pAt this establishment, fun is\nforemost.\pAs a result, we give all new members\n500 coins, on the house.\pHere, you may store these in your\nCoin Case.
+
+#org @gText_DaimynCityGym_Cutscene_DeskManExplainsCoins
+[BLUE]Furthermore, you may be wondering\nhow coins work at this\lestablishment. Allow me to\lelaborate.\pCoins may be purchased from me for\n\$10 each.\pIf you have run out completely and\ncannot afford more, I will give you\l10, on the house.
+
+#org @gText_DaimynCityGym_Cutscene_DeskManExplainsPrizes
+[BLUE]To your left, you will find our prize\ncorner. You may exchange your\lcoins there for exciting prizes.\pThese prizes include rare Pok\emon,\nas well as hard to find items.
+
+#org @gText_DaimynCityGym_Cutscene_DeskManExplainsPrizesAreLockedByGymLeader
+[BLUE]As with all things in life, there is a\ncatch.\pYou cannot purchase prizes until you\nhave overcome this gym's leader in\lbattle.\pI trust this will incentivize you to\nprove your prowess in battle, yes?
+
+#org @gText_DaimynCityGym_Cutscene_DeskManExplainsCoinMachine
+[BLUE]To challenge the gym leader, you\nwill need to deposit 2,000 coins\linto the machine beside the\lbarrier. Only then will it lower.
+
+#org @gText_DaimynCityGym_Cutscene_DeskManConcludesExplaination
+[BLUE]Now then, I have talked long\nenough.\pPlease, enjoy our fine establishment\nto the fullest!
+
+#org @gText_DaimynCityGym_CoinSeller_Welcome
+Welcome to the Daimyn City Game\nCorner! I sell coins for \$10 each.
+
+#org @gText_DaimynCityGym_CoinSeller_CoinCaseFull
+My apologies, but your Coin Case is\nfull. You can't hold any more!
+
+#org @gText_DaimynCityGym_CoinSeller_BuyCoinsPrompt
+Would you like to buy some?
+
+#org @gText_DaimynCityGym_CoinSeller_CoinCountPrompt
+Very good. How many would you like\nto buy?
+
+#org @gText_DaimynCityGym_CoinSeller_ChoseTooManyCoins
+Oh dear[.] Your Coin Case can't hold\nthat many coins.\pIt can hold [BUFFER1] more. Would you\nlike to buy that many?
+
+#org @gText_DaimynCityGym_CoinSeller_CoinPurchaseConfirmation
+[BUFFER1] coins will cost \$[BUFFER2]. Is\nthat okay?
+
+#org @gText_DaimynCityGym_CoinSeller_NotEnoughMoney
+You don't have enough money[.]
+
+#org @gText_DaimynCityGym_CoinSeller_NoMoney
+What's that? You don't have enough\nmoney to buy any coins?\pHere, I'll give you 10 on the house.
+
+#org @gText_DaimynCityGym_CoinSeller_PurchaseComplete
+Excellent! Thank you for your\npatronage.
+
+#org @gText_DaimynCityGym_CoinSeller_Farewell
+We hope you enjoy your time at the\nDaimyn City Game Corner.

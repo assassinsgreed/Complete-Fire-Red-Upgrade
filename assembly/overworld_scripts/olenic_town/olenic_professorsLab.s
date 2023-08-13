@@ -40,6 +40,7 @@ LevelScript_ReceivingPokedex:
 	waitfanfare
     msgbox gText_OlenicProfessorsLab_HawthorneExplainsPokedex MSG_NORMAL
     msgbox gText_OlenicProfessorsLab_HawthorneFillingPokedexRequest MSG_NORMAL
+    sound 0x15 @ Exclaim
     applymovement Hawthorne m_Surprise
     msgbox gText_OlenicProfessorsLab_HawthorneGivesPokeballs MSG_NORMAL
     obtainitem ITEM_POKE_BALL 0xA @ Get 10 Pokeballs

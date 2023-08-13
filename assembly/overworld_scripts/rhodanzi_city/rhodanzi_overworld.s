@@ -58,6 +58,7 @@ TileScript_RhodanziOverworld_ThugsCaught:
     if SET _goto End
     lock
     msgbox gText_RhodanziOverworld_ThugsRumour MSG_NORMAL
+    sound 0x15 @ Exclaim
     applymovement 0x6 m_Surprise
     applymovement 0x7 m_Surprise
     waitmovement ALLEVENTS

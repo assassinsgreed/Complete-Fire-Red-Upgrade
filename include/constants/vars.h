@@ -129,9 +129,9 @@
 #define VAR_SWARM_POKEMON_SHOWN                                                0x4053
 #define VAR_MAP_SCENE_DAIMYN_CITY_STORY_PROGRESSION                            0x4054
 #define VAR_MAP_SCENE_ANTHRA_TOWN_STARTING_EVENTS                              0x4055
-#define VAR_MAP_SCENE_PALLET_TOWN_PLAYERS_HOUSE_2F                             0x4056
+#define VAR_MAP_SCENE_PLAYERS_FAVORITE_GEN_ON_NEWGAME                          0x4056
 #define VAR_MAP_SCENE_ROUTE_3_AND_RUBARR_EVENTS                                0x4057
-#define VAR_MAP_SCENE_PALLET_TOWN_GARYS_HOUSE                                  0x4058
+#define VAR_MAP_SCENE_DAIMYN_CITY_GYM                                          0x4058
 #define VAR_MAP_SCENE_POKEMON_TOWER_6F                                         0x4059
 #define VAR_MAP_SCENE_VIRIDIAN_CITY_GYM_DOOR                                   0x405A
 #define VAR_MAP_SCENE_S_S_ANNE_2F_CORRIDOR                                     0x405B

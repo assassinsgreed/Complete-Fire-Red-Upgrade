@@ -3155,3 +3155,8 @@ void GetLuckyPokmeonSpecies()
 		gSpecialVar_LastResult = 0x0;
 	}
 }
+
+void CountCoinsIntoVar4002()
+{
+	VarSet(0x4002, GetCoins());
+}

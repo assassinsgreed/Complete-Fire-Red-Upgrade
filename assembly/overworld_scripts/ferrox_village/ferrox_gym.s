@@ -295,6 +295,7 @@ EventScript_FerroxLibrary_Alistair:
     msgbox gText_FerroxLibrary_Plot_AlistairIntroducesHimself MSG_NORMAL
     msgbox gText_FerroxLibrary_Plot_RivalAsksWhatAlistairIsStudying MSG_NORMAL
     msgbox gText_FerroxLibrary_Plot_AlistairDeadEnds MSG_NORMAL
+    sound 0x15 @ Exclaim
     applymovement Alistair m_Surprise
     msgbox gText_FerroxLibrary_Plot_AlistairNoticesTheTime MSG_NORMAL
     msgbox gText_FerroxLibrary_Plot_RivalRespondsToAlistairLeaving MSG_NORMAL

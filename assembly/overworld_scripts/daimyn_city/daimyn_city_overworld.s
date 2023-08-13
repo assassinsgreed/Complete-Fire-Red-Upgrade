@@ -72,6 +72,7 @@ LevelScript_RivalsTour:
     waitmovement Selene
     playbgm 0x196 @ Bianca Encounter
     msgbox gText_DaimynCityOverworld_Story_RivalTour10 MSG_NORMAL
+    sound 0x15 @ Exclaim
     applymovement Rival m_Surprise
     applymovement PLAYER m_Surprise
     msgbox gText_DaimynCityOverworld_Story_RivalTour11 MSG_NORMAL
@@ -144,6 +145,7 @@ LevelScript_RivalsTour:
     closedoor 0x1D 0x9
     waitdooranim
     msgbox gText_DaimynCityOverworld_Story_RivalTour34 MSG_NORMAL
+    sound 0x15 @ Exclaim
     applymovement Selene m_Surprise
     msgbox gText_DaimynCityOverworld_Story_RivalTour35 MSG_NORMAL
     applymovement Selene m_LookUp
