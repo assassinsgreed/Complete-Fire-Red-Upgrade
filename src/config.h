@@ -164,7 +164,7 @@ enum //These vars need to be one after the other (hence the enum)
 #define MAP_PLAYER_HOME ((4 << 8) | 0) //The map bank and map number of the player's home
 
 /*===== Expanded Coins Options =====*/
-#define MAX_COINS_DIGITS 9	//Max number of digits for game corner coins (eg. 4 = 9999, 9 = 999,999,999). maximum of 9
+#define MAX_COINS_DIGITS 4	//Max number of digits for game corner coins (eg. 4 = 9999, 9 = 999,999,999). maximum of 9
 
 /*===== Badge Obedience Options =====*/
 #define BASE_OBEDIENCE_LEVEL	15

@@ -127,6 +127,7 @@ LevelScript_ContinueCutsceneAfterChanceLeaves:
 
 .global EventScript_DaimynCityGym_LeaderChance
 EventScript_DaimynCityGym_LeaderChance:
+    @ TODO
     end
 
 .global EventScript_DaimynCityGym_CoinSeller
@@ -138,7 +139,7 @@ EventScript_DaimynCityGym_CoinSeller:
     compare LASTRESULT FALSE
     if equal _goto CoinSellerGiveCoins
     // Check if player coin count is maxed out
-    checkcoins 9999999
+    checkcoins 9999
     compare LASTRESULT TRUE
     if equal _goto CoinsSellerCaseFull
     msgbox gText_DaimynCityGym_CoinSeller_BuyCoinsPrompt MSG_YESNO
@@ -153,7 +154,7 @@ EventScript_DaimynCityGym_CoinSeller:
     if equal _goto CoinSellerFarewell
     copyvar 0x4001 LASTRESULT @ Selected coin count
     callasm CountCoinsIntoVar4002 @ Coins in players inventory
-    setvar 0x4003 600 @ 9999999 @ Coin Case Limit
+    setvar 0x4003 9999 @ Coin Case Limit
     setvar 0x4004 0xA @ Cost per coin 
     copyvar 0x4005 0x4001 @ The amount the player will buy
     setvar 0x8004 0x4001
@@ -230,10 +231,213 @@ EventScript_DaimynCityGym_GymExpert:
 
 .global EventScript_DaimynCityGym_PokemonTrader
 EventScript_DaimynCityGym_PokemonTrader:
+    msgbox gText_DaimynCityGym_GenericTrader MSG_NORMAL
+    msgbox gText_DaimynCityGym_PokemonTrader MSG_NORMAL
+    @ checkflag 0x823 @ Received Chance's badge
+    @ if NOT_SET _goto GeneralTraderDoNotHaveBadge
+    goto PokemonTraderShopList
+
+PokemonTraderShopList:
+    msgbox gText_DaimynCityGym_GenericTrader_OpenShopPrompt MSG_KEEPOPEN
+    showcoins 0x14 0x0
+    setvar 0x8000 0x7 @ Pokemon exchange list
+    setvar 0x8001 0x6 @ Show 6 at a time
+    setvar 0x8004 0x0
+	special 0x158
+    waitstate
+    switch LASTRESULT
+    case 0, Joltik
+    case 1, Mudbray
+    case 2, Mankey
+    case 3, Minior
+    case 4, Turtonator
+    case 5, Dratini
+    case 6, DeclineTradeExchange
+    case 0x7F, DeclineTradeExchange @ When player hits B to close
     end
+
+Joltik:
+    setvar 0x4001 SPECIES_JOLTIK
+    setvar 0x4002 500
+    goto PokemonTrader_AfterChoiceMade
+
+Mudbray:
+    setvar 0x4001 SPECIES_MUDBRAY
+    setvar 0x4002 500
+    goto PokemonTrader_AfterChoiceMade
+
+Mankey:
+    setvar 0x4001 SPECIES_MANKEY
+    setvar 0x4002 500
+    goto PokemonTrader_AfterChoiceMade
+
+Minior:
+    setvar 0x4001 SPECIES_MINIOR_SHIELD
+    setvar 0x4002 1000
+    goto PokemonTrader_AfterChoiceMade
+
+Turtonator:
+    setvar 0x4001 SPECIES_TURTONATOR
+    setvar 0x4002 2000
+    goto PokemonTrader_AfterChoiceMade
+
+Dratini:
+    setvar 0x4001 SPECIES_DRATINI
+    setvar 0x4002 3000
+    goto PokemonTrader_AfterChoiceMade
+
+PokemonTrader_AfterChoiceMade:
+    bufferpokemon 0x0 0x4001
+    buffernumber 0x1 0x4002
+    msgbox gText_DaimynCityGym_GenericTrader_Confirmation MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto PokemonTraderShopList
+    checkcoins 0x4002
+    compare LASTRESULT FALSE
+    if TRUE _goto ItemTraderNotEnoughCoins
+    playse 0xF8 @ Money
+    removecoins 0x4002
+    updatecoins 0x0 0x0
+    updatecoins
+    waitse
+    pause DELAY_HALFSECOND
+    bufferpokemon 0x0 0x4001
+    msgbox gText_DaimynCityGym_GenericTrader_PurchaseComplete MSG_NORMAL
+    fanfare 0x101 @ Got Item / Level up
+    msgbox gText_DaimynCityGym_PokemonTrader_ReceivedPokemon MSG_KEEPOPEN
+    waitfanfare
+    countpokemon
+    compare LASTRESULT 0x6
+    if equal _call SentToBox
+    if notequal _call SentToPary
+    givepokemon 0x4001 20 ITEM_NONE
+    hidecoins
+    msgbox gText_DaimynCityGym_GenericTrader_ShopClosed MSG_NORMAL
+    end
+
+SentToBox:
+    msgbox gText_DaimynCityGym_PokemonTrader_AddedToBox MSG_NORMAL
+    return
+
+SentToPary:
+    msgbox gText_DaimynCityGym_PokemonTrader_AddedToParty MSG_NORMAL
+    return
 
 .global EventScript_DaimynCityGym_ItemTrader
 EventScript_DaimynCityGym_ItemTrader:
+    msgbox gText_DaimynCityGym_GenericTrader MSG_NORMAL
+    msgbox gText_DaimynCityGym_ItemTrader MSG_NORMAL
+    checkflag 0x823 @ Received Chance's badge
+    if NOT_SET _goto GeneralTraderDoNotHaveBadge
+    goto ItemTraderShopList
+
+ItemTraderShopList:
+    msgbox gText_DaimynCityGym_GenericTrader_OpenShopPrompt MSG_KEEPOPEN
+    showcoins 0x14 0x0
+    setvar 0x8000 0x6 @ Item exchange list
+    setvar 0x8001 0x6 @ Show 6 at a time
+    setvar 0x8004 0x0
+	special 0x158
+    waitstate
+    switch LASTRESULT
+    case 0, ToxicOrb
+    case 1, FlameOrb
+    case 2, LifeOrb
+    case 3, AssaultVest
+    case 4, WeaknessPolicy
+    case 5, ChoiceBand
+    case 6, ChoiceSpecs
+    case 7, ChoiceScarf
+    case 8, Leftovers
+    case 9, Eviolite
+    case 10, DeclineTradeExchange
+    case 0x7F, DeclineTradeExchange @ When player hits B to close
+    end
+
+ToxicOrb:
+    setvar 0x4001 ITEM_TOXIC_ORB
+    setvar 0x4002 1000
+    goto ItemTrader_AfterChoiceMade
+
+FlameOrb:
+    setvar 0x4001 ITEM_FLAME_ORB
+    setvar 0x4002 1000
+    goto ItemTrader_AfterChoiceMade
+
+LifeOrb:
+    setvar 0x4001 ITEM_LIFE_ORB
+    setvar 0x4002 2000
+    goto ItemTrader_AfterChoiceMade
+
+AssaultVest:
+    setvar 0x4001 ITEM_ASSAULT_VEST
+    setvar 0x4002 3000
+    goto ItemTrader_AfterChoiceMade
+
+WeaknessPolicy:
+    setvar 0x4001 ITEM_WEAKNESS_POLICY
+    setvar 0x4002 2000
+    goto ItemTrader_AfterChoiceMade
+
+ChoiceBand:
+    setvar 0x4001 ITEM_CHOICE_BAND
+    setvar 0x4002 2500
+    goto ItemTrader_AfterChoiceMade
+
+ChoiceSpecs:
+    setvar 0x4001 ITEM_CHOICE_SPECS
+    setvar 0x4002 2500
+    goto ItemTrader_AfterChoiceMade
+
+ChoiceScarf:
+    setvar 0x4001 ITEM_CHOICE_SCARF
+    setvar 0x4002 2500
+    goto ItemTrader_AfterChoiceMade
+
+Leftovers:
+    setvar 0x4001 ITEM_LEFTOVERS
+    setvar 0x4002 3000
+    goto ItemTrader_AfterChoiceMade
+
+Eviolite:
+    setvar 0x4001 ITEM_EVIOLITE
+    setvar 0x4002 3000
+    goto ItemTrader_AfterChoiceMade
+
+ItemTrader_AfterChoiceMade:
+    bufferitem 0x0 0x4001
+    buffernumber 0x1 0x4002
+    msgbox gText_DaimynCityGym_GenericTrader_Confirmation MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto ItemTraderShopList
+    checkcoins 0x4002
+    compare LASTRESULT FALSE
+    if TRUE _goto ItemTraderNotEnoughCoins
+    playse 0xF8 @ Money
+    removecoins 0x4002
+    updatecoins 0x0 0x0
+    updatecoins
+    waitse
+    pause DELAY_HALFSECOND
+    bufferitem 0x0 0x4001
+    msgbox gText_DaimynCityGym_GenericTrader_PurchaseComplete MSG_KEEPOPEN
+    fanfare 0x101 @ Got Item / Level up
+    obtainitem 0x4001 0x1
+    hidecoins
+    msgbox gText_DaimynCityGym_GenericTrader_ShopClosed MSG_NORMAL
+    end
+
+ItemTraderNotEnoughCoins:
+    msgbox gText_DaimynCityGym_GenericTrader_NotEnoughCoins MSG_NORMAL
+    goto ItemTraderShopList
+
+DeclineTradeExchange:
+    hidecoins
+    msgbox gText_DaimynCityGym_GenericTrader_Declined MSG_NORMAL
+    end
+
+GeneralTraderDoNotHaveBadge:    
+    msgbox gText_DaimynCityGym_GenericTrader_DoNotHaveBadge MSG_NORMAL
     end
 
 .global EventScript_DaimynCityGym_YoungsterJacob

@@ -96,3 +96,42 @@ Excellent! Thank you for your\npatronage.
 
 #org @gText_DaimynCityGym_CoinSeller_Farewell
 We hope you enjoy your time at the\nDaimyn City Game Corner.
+
+#org @gText_DaimynCityGym_GenericTrader
+Welcome to the Game Corner Exchange\nCounter.
+
+#org @gText_DaimynCityGym_GenericTrader_DoNotHaveBadge
+Oh! I'm sorry. You must have this\ngym's badge before you can\lexchange at this counter.\pPlease return after receiving the\nRoundabout Badge.
+
+#org @gText_DaimynCityGym_GenericTrader_OpenShopPrompt
+What can I get for you?
+
+#org @gText_DaimynCityGym_GenericTrader_Confirmation
+You want [BUFFER1]? That will cost\nyou [BUFFER2] coins.
+
+#org @gText_DaimynCityGym_GenericTrader_NotEnoughCoins
+You don't have enough coins for that\nprize.
+
+#org @gText_DaimynCityGym_GenericTrader_PurchaseComplete
+One [BUFFER1], coming right up!
+
+#org @gText_DaimynCityGym_GenericTrader_ShopClosed
+Come back and exchange more coins\nfor more fabulous prizes!
+
+#org @gText_DaimynCityGym_GenericTrader_Declined
+I hope you have a pleasant day.
+
+#org @gText_DaimynCityGym_PokemonTrader
+At this counter, I can exchange your\ncoins for rare Pok\emon.
+
+#org @gText_DaimynCityGym_PokemonTrader_ReceivedPokemon
+[BLACK]Received [BUFFER1]![BLUE]
+
+#org @gText_DaimynCityGym_PokemonTrader_AddedToParty
+I've added [BUFFER1] to your party.
+
+#org @gText_DaimynCityGym_PokemonTrader_AddedToBox
+Your party is full, so I've sent\n[BUFFER1] to your box.
+
+#org @gText_DaimynCityGym_ItemTrader
+At this counter, I can exchange your\ncoins for rare items.
