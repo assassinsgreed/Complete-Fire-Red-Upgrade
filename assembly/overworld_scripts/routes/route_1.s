@@ -33,6 +33,7 @@ EventScript_Route1_SandygastEncounter:
     lock
     checksound
     cry SPECIES_SANDYGAST 0x0
+    sound 0x15 @ Exclaim
     applymovement PLAYER m_Surprise
     msgbox gText_Route1_SandygastEncounter MSG_KEEPOPEN
     wildbattle SPECIES_SANDYGAST 0x5 0x0

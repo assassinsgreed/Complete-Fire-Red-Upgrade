@@ -486,6 +486,8 @@ RestaurantDonate:
     waitstate
     compare LASTRESULT 0x0
     if equal _goto RestaurantChoseNo
+    compare LASTRESULT 0xFFFF
+    if equal _goto RestaurantChoseNo
     comparevars LASTRESULT 0x8005
     if greaterthan _goto ChoseTooManyChips
     comparevars LASTRESULT RestaurantChipsNextVar

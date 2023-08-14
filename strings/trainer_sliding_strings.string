@@ -68,15 +68,15 @@ You'd better keep your eyes up!\nThe weather can change quickly.\p
 #org @sText_Leader3_LowHP
 A storm is brewing...\p 
 
-// Leader 4 (Monty)
+// Leader 4 (Chance)
 #org @sText_Leader4_FirstMonDown
-Whoa dude, you're like super strong!\p 
+Wahaha! So you aren't bluffing about\nyour skills after all!\p 
 
 #org @sText_Leader4_LastSwitchIn
-This is no problem at all,\njust have to go with the flow.\p 
+You've got me on the back foot. Time\nfor a shake-up!\p 
 
 #org @sText_Leader4_LowHP
-Uh oh, this is looking bad.\p 
+Don't count me out! The game isn't\nover until the last card is played.\p 
 
 // Leader 5 (Chandler)
 #org @sText_Leader5_FirstMonDown

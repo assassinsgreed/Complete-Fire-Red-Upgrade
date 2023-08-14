@@ -140,6 +140,7 @@ ReturningDexNavs:
     msgbox gText_Route3_AssistantClarifiesNames MSG_NORMAL
     applymovement Rival m_Joy
     msgbox gText_Route3_RivalConfirmsNames MSG_NORMAL
+    sound 0x15 @ Exclaim
     applymovement Assistant m_Surprise
     msgbox gText_Route3_AssistantGivesDexNavs MSG_NORMAL
     fanfare 0x13E
@@ -228,6 +229,7 @@ TileScript_Route3_InitiateDexNavEvent:
     applymovement Assistant m_AssistantWalkToAmbush
     waitmovement ALLEVENTS
     playbgm 0x19A @ Team Pluto encounter
+    sound 0x15 @ Exclaim
     applymovement Assistant m_Surprise
     applymovement PLAYER m_Surprise
     applymovement Rival m_Surprise
@@ -334,6 +336,7 @@ TileScript_Route3_PlayerHasNotDefeatedPluto:
     lockall
     compare Route3RubarrStoryEventVar VarStoryPlayerGotDexNav
     if greaterorequal _goto End
+    sound 0x15 @ Exclaim
     applymovement Assistant m_Surprise
     waitmovement ALLEVENTS
     getplayerpos 0x4000 0x4001

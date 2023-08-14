@@ -122,4 +122,55 @@ Alola
 #org @gText_RegionGalar
 Galar
 
+#org @gText_ItemExchange_ToxicOrb
+Toxic Orb[ALIGN][65]1,000
+
+#org @gText_ItemExchange_FlameOrb
+Flame Orb[ALIGN][65]1,000
+
+#org @gText_ItemExchange_LifeOrb
+Life Orb[ALIGN][65]2,000
+
+#org @gText_ItemExchange_AssaultVest
+Assault Vest[ALIGN][65]2,000
+
+#org @gText_ItemExchange_WeaknessPolicy
+Weakness Policy[ALIGN][65]2,000
+
+#org @gText_ItemExchange_FocusSash
+Focus Sash[ALIGN][65]2,000
+
+#org @gText_ItemExchange_ChoiceBand
+Choice Band[ALIGN][65]2,500
+
+#org @gText_ItemExchange_ChoiceSpecs
+Choice Specs[ALIGN][65]2,500
+
+#org @gText_ItemExchange_ChoiceScarf
+ChoiceScarf[ALIGN][65]2,500
+
+#org @gText_ItemExchange_Leftovers
+Leftovers[ALIGN][65]3,000
+
+#org @gText_ItemExchange_Eviolite
+Eviolite[ALIGN][65]3,000
+
+#org @gText_PokemonExchange_Joltik
+Joltik[ALIGN][65]500
+
+#org @gText_PokemonExchange_Mudbray
+Mudbray[ALIGN][65]500
+
+#org @gText_PokemonExchange_Mankey
+Mankey[ALIGN][65]500
+
+#org @gText_PokemonExchange_Minior
+Minior[ALIGN][65]1000
+
+#org @gText_PokemonExchange_Turtonator
+Turtonator[ALIGN][65]2000
+
+#org @gText_PokemonExchange_Dratini
+Dratini[ALIGN][65]3000
+
 #endif

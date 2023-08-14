@@ -145,6 +145,7 @@ StunfiskEncounter:
     lock
     checksound
     cry SPECIES_STUNFISK_G 0x0
+    sound 0x15 @ Exclaim
     applymovement PLAYER m_Surprise
     msgbox gText_TormaCave_StunfiskEncounter MSG_KEEPOPEN
     wildbattle SPECIES_STUNFISK_G 0xE 0x0

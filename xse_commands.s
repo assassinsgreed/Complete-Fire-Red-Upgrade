@@ -759,6 +759,7 @@ map \map
 .word \loss
 .endm
 
+@ Trigger an event after battle. Causes encounter music to not play
 .macro trainerbattle1 type:req index:req filler:req intro:req loss:req extra:req
 .byte 0x5C
 .byte 0x1
@@ -769,6 +770,7 @@ map \map
 .word \extra
 .endm
 
+@ Trigger an event after battle. Encounter music still plays
 .macro trainerbattle2 type:req index:req filler:req intro:req loss:req extra:req
 .byte 0x5C
 .byte 0x2

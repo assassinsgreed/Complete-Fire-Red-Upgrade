@@ -1,0 +1,299 @@
+#org @gText_DaimynCityGym_Cutscene_ChanceLaughs
+[BLUE]Wahaha! Those are big winnings,\nbaby!
+
+#org @gText_DaimynCityGym_Cutscene_ChanceSpotsPlayer
+[BLUE]Oh. What do I spy but a fresh\nface? Hello there!
+
+#org @gText_DaimynCityGym_Cutscene_ChanceAddressesMalePlayer
+[BLUE]Tell me, laddie[.]
+
+#org @gText_DaimynCityGym_Cutscene_ChanceAddressesFemalePlayer
+[BLUE]Tell me, lassie[.]
+
+#org @gText_DaimynCityGym_Cutscene_ChanceAsksPlayersIntention
+[BLUE]Are you here to challenge the gym\nleader, or play the slots?
+
+#org @gText_DaimynCityGym_Cutscene_ChoiceGym
+The gym
+
+#org @gText_DaimynCityGym_Cutscene_ChoiceSlots
+The slots
+
+#org @gText_DaimynCityGym_Cutscene_ChoiceNeither
+Neither
+
+#org @gText_DaimynCityGym_Cutscene_PlayerChoseGym
+[BLUE]Wahahaha! A challenger, are ye?\nExcellent! I'm sure Chance will be\lpleased.
+
+#org @gText_DaimynCityGym_Cutscene_PlayerChoseSlots
+[BLUE]Wahahaha! Well, you certainly won't\nbe left wanting, in a place like\lthis!
+
+#org @gText_DaimynCityGym_Cutscene_PlayerChoseNeither
+[BLUE]Wahahaha! Keeping your reasons close\nto your chest, eh? I respect that!
+
+#org @gText_DaimynCityGym_Cutscene_ChanceLeadsPlayerToDeskMan
+[BLUE]Well, no matter your reason for\ncoming here, you'll need a Coin\lCase.\pCome with me. I'm friends with the\nowner and can hook you up!
+
+#org @gText_DaimynCityGym_Cutscene_ChanceAsksForCoins
+[BLUE]Hey, my good man! My new friend\nhere would like to spend some time\lat this fine establishment.\pCan you get them set up with a Coin\nCase?
+
+#org @gText_DaimynCityGym_Cutscene_DeskManResponds
+[BLUE]Why, of course, good sir.\pHere, please accept this Coin Case.\nIt will hold the coins you can use\lat this establishment.
+
+#org @gText_DaimynCityGym_Cutscene_ChanceRespondsToDeskMan
+[BLUE]Yer a real champ, mate.
+
+#org @gText_DaimynCityGym_Cutscene_ChanceExplainsTheGymRules
+[BLUE]If yer here to play the slots, then\nyou have everything you need.\pIf yer here for Gym Leader Chance's\nbadge, though, there are some\lrules you'd best keep in mind[.]\pChance only challenges those that\ncan prove they're saavy gamblers\land can amass a small fortune.\pHow do you do that? Well, there are\n3 ways[.]\p1. Make Your Own Luck - This means\nbuying them from my pal here with\lyour hard earned cash.\p2. Getting Lucky - With a little\nluck, you can win more coins from\lthe slots here. Rumor has it some\lmachines are luckier than others.\p3. Playing the Field - It may not\nlook it, but most people here are\lgym trainers. If you beat them in\lbattle, they'll give you some\lcoins.
+
+#org @gText_DaimynCityGym_Cutscene_ChanceTakesHisLeave
+[BLUE]My, my, look at the time! I gotta\njet. T'was a pleasure, my friend.\pI'm sure we'll see each other around\nreal soon.
+
+#org @gText_DaimynCityGym_Cutscene_DeskManGives500Coins
+[BLUE]Ahem[.] My friend did not explain a\nfew things. Please allow me.\pAt this establishment, fun is\nforemost.\pAs a result, we give all new members\n500 coins, on the house.
+
+#org @gText_DaimynCityGym_Cutscene_DeskManCoinsHandedOver
+[BLUE]Here, you may store these in your\nCoin Case.
+
+#org @gText_DaimynCityGym_Cutscene_DeskManExplainsCoins
+[BLUE]Furthermore, you may be wondering\nhow coins work at this\lestablishment. Allow me to\lelaborate.\pCoins may be purchased from me for\n\$10 each. I'll cut you a deal if\lyou buy more than 65,530 at a\ltime.\pIf you have run out completely and\ncannot afford more, I will give you\l10, on the house.
+
+#org @gText_DaimynCityGym_Cutscene_DeskManExplainsPrizes
+[BLUE]To your left, you will find our prize\ncorner. You may exchange your\lcoins there for exciting prizes.\pThese prizes include rare Pok\emon,\nas well as hard to find items.
+
+#org @gText_DaimynCityGym_Cutscene_DeskManExplainsPrizesAreLockedByGymLeader
+[BLUE]As with all things in life, there is a\ncatch.\pYou cannot purchase prizes until you\nhave overcome this gym's leader in\lbattle.\pI trust this will incentivize you to\nprove your prowess in battle, yes?
+
+#org @gText_DaimynCityGym_Cutscene_DeskManExplainsCoinMachine
+[BLUE]To challenge the gym leader, you\nwill need to deposit 2,000 coins\linto the machine beside the\lbarrier. Only then will it lower.
+
+#org @gText_DaimynCityGym_Cutscene_DeskManConcludesExplaination
+[BLUE]Now then, I have talked long\nenough.\pPlease, enjoy our fine establishment\nto the fullest!
+
+#org @gText_DaimynCityGym_CoinSeller_Welcome
+Welcome to the Daimyn City Game\nCorner! I sell coins for \$10 each.
+
+#org @gText_DaimynCityGym_CoinSeller_CoinCaseFull
+My apologies, but your Coin Case is\nfull. You can't hold any more!
+
+#org @gText_DaimynCityGym_CoinSeller_BuyCoinsPrompt
+Would you like to buy some?
+
+#org @gText_DaimynCityGym_CoinSeller_CoinCountPrompt
+Very good. How many would you like\nto buy?
+
+#org @gText_DaimynCityGym_CoinSeller_ChoseTooManyCoins
+Oh dear[.] Your Coin Case can't hold\nthat many coins.\pIt can hold [BUFFER1] more. Would you\nlike to buy that many?
+
+#org @gText_DaimynCityGym_CoinSeller_CoinPurchaseConfirmation
+[BUFFER1] coins will cost \$[BUFFER2]. Is\nthat okay?
+
+#org @gText_DaimynCityGym_CoinSeller_NotEnoughMoney
+You don't have enough money[.]
+
+#org @gText_DaimynCityGym_CoinSeller_NoMoney
+What's that? You don't have enough\nmoney to buy any coins?\pHere, I'll give you 10 on the house.
+
+#org @gText_DaimynCityGym_CoinSeller_PurchaseComplete
+Excellent! Thank you for your\npatronage.
+
+#org @gText_DaimynCityGym_CoinSeller_Farewell
+We hope you enjoy your time at the\nDaimyn City Game Corner.
+
+#org @gText_DaimynCityGym_ExpertTips
+Yo, superstar! Good to see you in\nthe capital city.\pThis place doubles as both a gym\nand a game corner. Isn't that\lsomething?\pThe leader, Chance, likes to play\nthe field, both in games of chance\land in Pok\emon battles.\pHe'll use moves that keep his\nmomentum flowing.\pAs a result, you'll often find he\ngives himself the upper hand with\lan advantageous switch up during\lbattle.\pAll that to say, battle smartly and\nprepare to suddenly be put on the\lback foot and you'll be A-okay.\pYou got this, superstar.
+
+#org @gText_DaimynCityGym_ExpertBadgeObtained
+Superstar! I knew you could pull\nthrough.\pAll of Chance's tricks were no match\nfor you, were they?\pCongratulations on your victory.
+
+#org @gText_DaimynCityGym_GenericTrader
+Welcome to the Game Corner Exchange\nCounter.
+
+#org @gText_DaimynCityGym_GenericTrader_DoNotHaveBadge
+Oh! I'm sorry. You must have this\ngym's badge before you can\lexchange at this counter.\pPlease return after receiving the\nRoundabout Badge.
+
+#org @gText_DaimynCityGym_GenericTrader_OpenShopPrompt
+What can I get for you?
+
+#org @gText_DaimynCityGym_GenericTrader_Confirmation
+You want [BUFFER1]? That will cost\nyou [BUFFER2] coins.
+
+#org @gText_DaimynCityGym_GenericTrader_NotEnoughCoins
+You don't have enough coins for that\nprize.
+
+#org @gText_DaimynCityGym_GenericTrader_PurchaseComplete
+One [BUFFER1], coming right up!
+
+#org @gText_DaimynCityGym_GenericTrader_ShopClosed
+Come back and exchange more coins\nfor more fabulous prizes!
+
+#org @gText_DaimynCityGym_GenericTrader_Declined
+I hope you have a pleasant day.
+
+#org @gText_DaimynCityGym_PokemonTrader
+At this counter, I can exchange your\ncoins for rare Pok\emon.
+
+#org @gText_DaimynCityGym_PokemonTrader_ReceivedPokemon
+[BLACK]Received [BUFFER1]![BLUE]
+
+#org @gText_DaimynCityGym_PokemonTrader_AddedToParty
+I've added [BUFFER1] to your party.
+
+#org @gText_DaimynCityGym_PokemonTrader_AddedToBox
+Your party is full, so I've sent\n[BUFFER1] to your box.
+
+#org @gText_DaimynCityGym_ItemTrader
+At this counter, I can exchange your\ncoins for rare items.
+
+#org @gText_DaimynCityGym_TrainerCoinPayout
+For defeating me, I'll give you\n[BUFFER1] coins.
+
+#org @gText_DaimynCityGym_TrainerCoinsGiven
+Good luck, trainer!
+
+#org @gText_DaimynCityGym_YoungsterJacob_Intro
+Hehehe[.] This strategy'll knock you\nflat!
+
+#org @gText_DaimynCityGym_YoungsterJacob_Defeat
+Wha-? I executed my strategy\nflawlessly!
+
+#org @gText_DaimynCityGym_YoungsterJacob_Chat
+That strategy doesn't always work,\nbut when it does, it's so much fun!
+
+#org @gText_DaimynCityGym_PokefanKanesha_Intro
+Don't underestimate my Pok\emon[.]\nIt looks weak but can become quite\lstrong!
+
+#org @gText_DaimynCityGym_PokefanKanesha_Defeat
+Well, what'd you think?
+
+#org @gText_DaimynCityGym_PokefanKanesha_Chat
+Power Trick can make Shuckle really\npowerful! But[.] As a result, it's\ldefense gets much worse.\pIt requires some careful planning to\nmake the most of.
+
+#org @gText_DaimynCityGym_BeautyEmilie_Intro
+Tee hee! Careful; looks can be\ndeceiving!
+
+#org @gText_DaimynCityGym_BeautyEmilie_Defeat
+Were you fooled?
+
+#org @gText_DaimynCityGym_BeautyEmilie_Chat
+The Illusion ability can be used to\ntrick your opponent into making\ldecisions off of incorrect info.
+
+#org @gText_DaimynCityGym_BeautyLeanne_Intro
+My team is like a box of chocolates:\nYou'll never know what you'll get!
+
+#org @gText_DaimynCityGym_BeautyLeanne_Defeat
+Ahahaha, I couldn't have predicted\nthat!
+
+#org @gText_DaimynCityGym_BeautyLeanne_Chat
+Metronome is so unpredictable. You\ncould get very lucky, or very\lunlucky.\pNot knowing is half the fun though!
+
+#org @gText_DaimynCityGym_ChannelerRosita_Intro
+My Pok\emon can turn the tides of\nbattle in an instant. Watch out!
+
+#org @gText_DaimynCityGym_ChannelerRosita_Defeat
+We couldn't shift the tide after all[.]
+
+#org @gText_DaimynCityGym_ChannelerRosita_Chat
+Some powerful Pok\emon are slow, but\nTrick Room can turn that around.
+
+#org @gText_DaimynCityGym_GamblerChuck_Intro
+My team takes their own strengths and\nmakes them even greater. Can you\lhandle it?
+
+#org @gText_DaimynCityGym_GamblerChuck_Defeat
+Perhaps your team had it's own\nstrengths, too.
+
+#org @gText_DaimynCityGym_GamblerChuck_Chat
+Some moves are strengthened based\non the stat difference between\lopponents.\pMy team takes advantage of a high\nspeed stat and elevates it to make\lcertain moves even stronger!
+
+#org @gText_DaimynCityGym_BurglarDexter_Intro
+Ehehehe! Now that our eyes have\nmet, you'll be trapped in a battle\lagainst me. Got you!
+
+#org @gText_DaimynCityGym_BurglarDexter_Defeat
+Wh-? How did you wriggle free?
+
+#org @gText_DaimynCityGym_BurglarDexter_Chat
+Certain moves and abilities can trap\nyour opponent.\pWhen used right, it can set you up\nfor a very easy victory.
+
+#org @gText_DaimynCityGym_NPCWoman
+If I win big, I'm going to put all my\nearnings into a big vacation.\pI guess you could say I'm investing\nin hope.
+
+#org @gText_DaimynCityGym_NPCPsychic
+Hmmm[.] Yes! I predict this is the\nluckiest slot in the building.
+
+#org @gText_DaimynCityGym_NPCPsychicFollowUp
+You can't have it; I'm using it.
+
+#org @gText_DaimynCityGym_NPCFatGuy
+Agh[.] Lost again[.]\pI guess it just goes to show, you\nlose more than you win.\pIn life and the slots[.] Sigh[.]
+
+#org @gText_DaimynCityGym_NPCRocker
+Rock on! All 7's! I'm on a roll.
+
+#org @gText_DaimynCityGym_NPCBlackBelt
+I pulled the lever too hard and now\nit squeaks.\pAhaha! Please don't tell the owner\nabout this.
+
+#org @gText_DaimynCityGym_NPCGentleman
+My granddaughter has wanted a\nDratini for ages.\pBy golly, I'm going to win enough\ncoins to get it for her!
+
+#org @gText_DaimynCityGym_Winners
+Daimyn City Gym:\nVictors: None
+
+#org @gText_DaimynCityGym_WinnersWithBadge
+Daimyn City Gym:\nVictors: [PLAYER]
+
+#org @gText_DaimynCityGym_SlotMachinePrompt
+It's a slot machine! Want to play?
+
+#org @gText_DaimynCityGym_SlotMachineDeclined
+Maybe later.
+
+#org @gText_DaimynCityGym_CoinDepositBox_DebtPaid
+Bzzt! The barrier's toll has been\npaid, and you may freely pass.
+
+#org @gText_DaimynCityGym_CoinDepositBox_DebtRemainingAndPrompt
+Bzzt! You must pay the toll in order\nto access the gym leader.\pYour account has a balance of\n[BUFFER1] coins remaining.\pHow many coins would you like to\ndeposit?
+
+#org @gText_DaimynCityGym_CoinDepositBox_NotEnougCoins
+Bzzt! You do not have that many\ncoins.
+
+#org @gText_DaimynCityGym_CoinDepositBox_TooManyCoins
+Bzzt! That is too many coins.\nReceiving just the required\l[BUFFER1] coins[.]
+
+#org @gText_DaimynCityGym_CoinDepositBox_Processing
+Bzzt! Processing[.]
+
+#org @gText_DaimynCityGym_CoinDepositBox_DebtRemaining
+Bzzt! Your remaining balance is\n[BUFFER1] coins.
+
+#org @gText_DaimynCityGym_CoinDepositBox_DebtFullyPaidOff
+Bzzt! You have fully paid the toll.\nThe way to the gym leader is open.
+
+#org @gText_DaimynCityGym_LeaderChance_Talk
+[BLUE]Wahaha! I just knew we'd see each\nother again before long.\pThat's right! I am this gym's leader.\nThe name's Chance.\pForgive me for not introducing\nmyself earlier.\pA gambling man never reveals his full\nhand, you see.\pI knew from the moment I laid eyes\non you that you had what it took\lto complete my challenge.\pBut you didn't come all this way just\nfor me to talk your ear off, yeah?\pYou're here for the badge, and to\nearn it, you'll need to beat me in\lbattle.
+
+#org @gText_DaimynCityGym_LeaderChance_Intro
+[BLUE]Alright, let's see if you're the real\ndeal, or just bluffing[.] Game on!
+
+#org @gText_DaimynCityGym_LeaderChance_Defeat
+That's the game! A real gambler\nknows when to fold with dignity.
+
+#org @gText_DaimynCityGym_LeaderChance_BadgeAwarded
+[BLUE]You're the real deal, kiddo. You've\nearned this fair and square.\pTake it; the Roundabout Badge.
+
+#org @gText_DaimynCityGym_BadgeReceived
+[PLAYER] received the Roundabout\nBadge!
+
+#org @gText_DaimynCityGym_LeaderChance_BadgeDescription
+[BLUE]That badge is proof of your skills.\pWith it, all Pok\emon up to level 55\nwill obey you.\pAs well, you'll be able to use Fly\noutside of battle now.
+
+#org @gText_DaimynCityGym_LeaderChance_TMReceived
+[BLUE]Please take these TMs as well.\pI'm sure you'll be able to use them\nto keep your opponents on their\ltoes.
+
+#org @gText_DaimynCityGym_TMReceived
+[PLAYER] received TM72, TM89, and\nTM94 from Chance!
+
+#org @gText_DaimynCityGym_LeaderChance_CoinsReturned
+[BLUE]Now, I ain't a stickler. You earned\nyour coins fair and square.\pHere, you may have the 2,000 coins\nyou invested into my gym challenge.
+
+#org @gText_DaimynCityGym_LeaderChance_Chat
+[BLUE]You're planning to go all the way to\nthe top, aren'tcha?\pI'll be keeping my eye on you, kid.

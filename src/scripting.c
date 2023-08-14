@@ -2977,6 +2977,26 @@ extern const u8 gText_RegionKalos[];
 extern const u8 gText_RegionAlola[];
 extern const u8 gText_RegionGalar[];
 
+// Game Corner Prizes
+extern const u8 gText_ItemExchange_ToxicOrb[];
+extern const u8 gText_ItemExchange_FlameOrb[];
+extern const u8 gText_ItemExchange_LifeOrb[];
+extern const u8 gText_ItemExchange_AssaultVest[];
+extern const u8 gText_ItemExchange_WeaknessPolicy[];
+extern const u8 gText_ItemExchange_FocusSash[];
+extern const u8 gText_ItemExchange_ChoiceBand[];
+extern const u8 gText_ItemExchange_ChoiceSpecs[];
+extern const u8 gText_ItemExchange_ChoiceScarf[];
+extern const u8 gText_ItemExchange_Leftovers[];
+extern const u8 gText_ItemExchange_Eviolite[];
+
+extern const u8 gText_PokemonExchange_Joltik[];
+extern const u8 gText_PokemonExchange_Mudbray[];
+extern const u8 gText_PokemonExchange_Mankey[];
+extern const u8 gText_PokemonExchange_Minior[];
+extern const u8 gText_PokemonExchange_Turtonator[];
+extern const u8 gText_PokemonExchange_Dratini[];
+
 //Scrolling Lists
 static const u8* sTutorFerrox[] =
 {
@@ -3054,6 +3074,33 @@ static const u8* sFavoriteRegion[] =
 	gText_RegionGalar,
 };
 
+static const u8* sGameCornerItemExchange[] =
+{
+	gText_ItemExchange_ToxicOrb,
+	gText_ItemExchange_FlameOrb,
+	gText_ItemExchange_LifeOrb,
+	gText_ItemExchange_AssaultVest,
+	gText_ItemExchange_WeaknessPolicy,
+	gText_ItemExchange_FocusSash,
+	gText_ItemExchange_ChoiceBand,
+	gText_ItemExchange_ChoiceSpecs,
+	gText_ItemExchange_ChoiceScarf,
+	gText_ItemExchange_Leftovers,
+	gText_ItemExchange_Eviolite,
+	gText_End,
+};
+
+static const u8* sGameCornerPokemonExchange[] =
+{
+	gText_PokemonExchange_Joltik,
+	gText_PokemonExchange_Mudbray,
+	gText_PokemonExchange_Mankey,
+	gText_PokemonExchange_Minior,
+	gText_PokemonExchange_Turtonator,
+	gText_PokemonExchange_Dratini,
+	gText_End,
+};
+
 // Multichoice Lists
 const struct ScrollingMulti gScrollingSets[] =
 {
@@ -3063,6 +3110,8 @@ const struct ScrollingMulti gScrollingSets[] =
 	{sMealOptionsWithAll, ARRAY_COUNT(sMealOptionsWithAll)},
 	{sTutorDaimyn, ARRAY_COUNT(sTutorDaimyn)},
 	{sFavoriteRegion, ARRAY_COUNT(sFavoriteRegion)},
+	{sGameCornerItemExchange, ARRAY_COUNT(sGameCornerItemExchange)},
+	{sGameCornerPokemonExchange, ARRAY_COUNT(sGameCornerPokemonExchange)},
 };
 
 //Link number of opts shown at once to the box height
@@ -3154,4 +3203,9 @@ void GetLuckyPokmeonSpecies()
 	{
 		gSpecialVar_LastResult = 0x0;
 	}
+}
+
+void CountCoinsIntoVar4002()
+{
+	VarSet(0x4002, GetCoins());
 }

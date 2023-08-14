@@ -74,12 +74,14 @@ RivalBattleCommon_Intro:
     clearflag FlagHideRival
     showsprite SpriteRival
     playbgm 0x195
+    sound 0x15 @ Exclaim
     applymovement PLAYER m_Surprise
     msgbox gText_DaimynCityFacilities_GuardHouse_RivalIntroduction MSG_NORMAL
     return
 
 RivalBattleCommon:
     msgbox gText_DaimynCityFacilities_GuardHouse_RivalExplainsDaimynCity MSG_NORMAL
+    sound 0x15 @ Exclaim
     applymovement SpriteRival m_Surprise
     msgbox gText_DaimynCityFacilities_GuardHouse_RivalInitiatesBattle MSG_NORMAL
     setvar 0x503A 0x2
@@ -88,6 +90,7 @@ RivalBattleCommon:
     msgbox gText_DaimynCityFacilities_GuardHouse_RivalConcludesBattle MSG_NORMAL
     obtainitem ITEM_MACHO_BRACE 0x1
     msgbox gText_DaimynCityFacilities_GuardHouse_RivalExplainsMachoBrace MSG_NORMAL
+    sound 0x15 @ Exclaim
     applymovement SpriteRival m_Surprise
     waitmovement ALLEVENTS
     msgbox gText_DaimynCityFacilities_GuardHouse_RivalNoItems MSG_NORMAL
@@ -178,6 +181,7 @@ EventScript_DaimynCityFacilities_Pokeball:
 .global EventScript_DaimynCityFacilities_ProfessorSakura
 EventScript_DaimynCityFacilities_ProfessorSakura:
     msgbox gText_DaimynCityFacilities_IRF_SakuraPreoccupied MSG_NORMAL
+    sound 0x15 @ Exclaim
     applymovement 0x7 m_Surprise
     msgbox gText_DaimynCityFacilities_IRF_SakuraNoticesPlayer MSG_NORMAL
     faceplayer

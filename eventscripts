@@ -933,6 +933,49 @@ sign 9 11 2 SignScript_DaimynCityNPCHouses_Poster
 sign 9 11 3 SignScript_DaimynCityNPCHouses_TransferMachine
 sign 9 11 4 SignScript_DaimynCityNPCHouses_TransferMachine
 
+## Gym
+map 9 18 MapScript_DaimynCityGym
+npc 9 18 0 EventScript_DaimynCityGym_LeaderChance
+npc 9 18 1 EventScript_DaimynCityGym_CoinSeller
+npc 9 18 2 EventScript_DaimynCityGym_GymExpert
+npc 9 18 3 EventScript_DaimynCityGym_PokemonTrader
+npc 9 18 4 EventScript_DaimynCityGym_ItemTrader
+npc 9 18 5 EventScript_DaimynCityGym_YoungsterJacob
+npc 9 18 6 EventScript_DaimynCityGym_PokefanKanesha
+npc 9 18 7 EventScript_DaimynCityGym_BeautyEmilie
+npc 9 18 8 EventScript_DaimynCityGym_BeautyLeanne
+npc 9 18 9 EventScript_DaimynCityGym_ChanellerRosita
+npc 9 18 10 EventScript_DaimynCityGym_GamblerChuck
+npc 9 18 11 EventScript_DaimynCityGym_BurglarDexter
+npc 9 18 12 EventScript_DaimynCityGym_NPCWoman
+npc 9 18 13 EventScript_DaimynCityGym_NPCPsychic
+npc 9 18 14 EventScript_DaimynCityGym_NPCFatGuy
+npc 9 18 15 EventScript_DaimynCityGym_NPCRocker
+npc 9 18 16 EventScript_DaimynCityGym_NPCBlackBelt
+npc 9 18 17 EventScript_DaimynCityGym_Gentleman
+sign 9 18 0 SignScript_DaimynCityGym_GymPlacard
+sign 9 18 1 SignScript_DaimynCityGym_CoinDepositBox
+## TODO: These should use playslotmachine and use the Vanilla FR script as a reference
+sign 9 18 2 SignScript_DaimynCityGym_SlotMachine_Odds1
+sign 9 18 3 SignScript_DaimynCityGym_SlotMachine_Odds5
+sign 9 18 4 SignScript_DaimynCityGym_SlotMachine_Odds4
+sign 9 18 5 SignScript_DaimynCityGym_SlotMachine_Odds2
+sign 9 18 6 SignScript_DaimynCityGym_SlotMachine_Odds1
+sign 9 18 7 SignScript_DaimynCityGym_SlotMachine_Odds6
+sign 9 18 8 SignScript_DaimynCityGym_SlotMachine_Odds3
+sign 9 18 9 SignScript_DaimynCityGym_SlotMachine_Odds3
+sign 9 18 10 SignScript_DaimynCityGym_SlotMachine_Odds2
+sign 9 18 11 SignScript_DaimynCityGym_SlotMachine_Odds5
+sign 9 18 12 SignScript_DaimynCityGym_SlotMachine_Odds4
+sign 9 18 13 SignScript_DaimynCityGym_SlotMachine_Odds5
+sign 9 18 14 SignScript_DaimynCityGym_SlotMachine_Odds1
+sign 9 18 15 SignScript_DaimynCityGym_SlotMachine_Odds2
+sign 9 18 16 SignScript_DaimynCityGym_SlotMachine_Odds1
+sign 9 18 17 SignScript_DaimynCityGym_SlotMachine_Odds3
+sign 9 18 18 SignScript_DaimynCityGym_SlotMachine_Odds6
+sign 9 18 19 SignScript_DaimynCityGym_SlotMachine_Odds4
+sign 9 18 20 SignScript_DaimynCityGym_SlotMachine_Odds6
+
 # Daimyn Factory
 ## Overworld
 map 1 30 MapScript_DaimynFactoryOverworld
