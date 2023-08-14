@@ -1232,8 +1232,8 @@
 // Boss clear flags, 1200
 #define FLAG_DEFEATED_TERRENCE        0x4B0
 #define FLAG_DEFEATED_STELLA          0x4B1
-#define FLAG_DEFEATED_WENDY           0x4B2
-#define FLAG_DEFEATED_MONTY           0x4B3
+#define FLAG_DEFEATED_RAINE           0x4B2
+#define FLAG_DEFEATED_CHANCE          0x4B3
 #define FLAG_DEFEATED_CHANDLER        0x4B4
 #define FLAG_DEFEATED_ABBY            0x4B5
 #define FLAG_DEFEATED_IRIS            0x4B6

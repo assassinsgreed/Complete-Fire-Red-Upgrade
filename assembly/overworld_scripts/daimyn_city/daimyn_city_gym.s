@@ -12,6 +12,7 @@
 .global MapScript_DaimynCityGym
 MapScript_DaimynCityGym:
     mapscript MAP_SCRIPT_ON_TRANSITION MapEntryScript_DaimynCityGym
+    mapscript MAP_SCRIPT_ON_LOAD MapEntryScript_LowerBarrier
     mapscript MAP_SCRIPT_ON_FRAME_TABLE LevelScripts_DaimynCityGym
     .byte MAP_SCRIPT_TERMIN
 
@@ -20,10 +21,18 @@ MapEntryScript_DaimynCityGym:
     if lessthan _goto End
     movesprite2 Chance 0x10 0x3
     setobjectmovementtype Chance look_down
+    end
+
+MapEntryScript_LowerBarrier:
+    @ Turn off barrier
     compare StoryEventVar 0x3
     if lessthan _goto End
-    @ TODO: Turn off barrier
-    end
+    setmaptile 0xE 0x7 0x28A 0x1 @ Left barrier zapper, impassable
+    setmaptile 0xF 0x7 0x291 0x0 @ Floor, passable
+    setmaptile 0x10 0x7 0x291 0x0 @ Floor, passable5
+    setmaptile 0x11 0x7 0x291 0x0 @ Floor, passable
+    setmaptile 0x12 0x7 0x28B 0x1 @ Right barrier zapper, impassable
+    return
 
 LevelScripts_DaimynCityGym:
     levelscript StoryEventVar 0x0 LevelScript_IntroduceChance
@@ -100,8 +109,9 @@ ChanceContinuesCutscene:
 LevelScript_ContinueCutsceneAfterChanceLeaves:
     pause DELAY_HALFSECOND
     applymovement PLAYER m_LookUp
-    msgbox gText_DaimynCityGym_Cutscene_DeskManGives500Coins MSG_KEEPOPEN
-    showcoins
+    msgbox gText_DaimynCityGym_Cutscene_DeskManGives500Coins MSG_NORMAL
+    showcoins 0x0 0x0
+    msgbox gText_DaimynCityGym_Cutscene_DeskManCoinsHandedOver MSG_KEEPOPEN
     pause DELAY_HALFSECOND
     addcoins 500
     playse 248 @ SE Money
@@ -122,12 +132,59 @@ LevelScript_ContinueCutsceneAfterChanceLeaves:
     applymovement PLAYER m_LookUp
     applymovement DeskMan m_LookDown
     msgbox gText_DaimynCityGym_Cutscene_DeskManConcludesExplaination MSG_NORMAL
+    setvar 0x4096 2000 @ "Coin debt" to be paid before challenging gym leader
     setvar StoryEventVar 0x2
     end
 
 .global EventScript_DaimynCityGym_LeaderChance
 EventScript_DaimynCityGym_LeaderChance:
-    @ TODO
+    lockall
+    faceplayer
+    checkflag 0x823 @ Daimyn gym badge
+    if SET _goto EventScript_DaimynCityGym_LeaderChance_Chat
+    msgbox gText_DaimynCityGym_LeaderChance_Talk MSG_NORMAL
+    setvar 0x503A 0x1
+    setvar 0x503B 0x1
+    trainerbattle1 0x1 0x9A 0x100 gText_DaimynCityGym_LeaderChance_Intro gText_DaimynCityGym_LeaderChance_Defeat EventScript_DaimynCityGym_LeaderChance_Defeated
+    end
+
+EventScript_DaimynCityGym_LeaderChance_Defeated:
+    msgbox gText_DaimynCityGym_LeaderChance_BadgeAwarded MSG_NORMAL
+    fanfare 0x13D @ Gym victory
+    msgbox gText_DaimynCityGym_BadgeReceived MSG_KEEPOPEN
+    waitfanfare
+    setflag 0x823 @ Daimyn gym badge
+    settrainerflag 0x93 @ Jacob cannot be battled now
+    settrainerflag 0x94 @ Kanesha cannot be battled now
+    settrainerflag 0x95 @ Emilie cannot be battled now
+    settrainerflag 0x96 @ Leanne cannot be battled now
+    settrainerflag 0x97 @ Rosita cannot be battled now
+    settrainerflag 0x98 @ Chuck cannot be battled now
+    settrainerflag 0x99 @ Dexter cannot be battled now
+    msgbox gText_DaimynCityGym_LeaderChance_BadgeDescription MSG_NORMAL
+    msgbox gText_DaimynCityGym_LeaderChance_TMReceived MSG_NORMAL
+    fanfare 0x101
+    additem ITEM_TM72 0x1 @ Volt Switch
+    additem ITEM_TM89 0x1 @ U-Turn
+    additem ITEM_TM94 0x1 @ Flip Turn
+    msgbox gText_DaimynCityGym_TMReceived MSG_KEEPOPEN
+    @ Give coins back
+    showcoins 0x0 0x0
+    msgbox gText_DaimynCityGym_LeaderChance_CoinsReturned MSG_KEEPOPEN
+    pause DELAY_HALFSECOND
+    addcoins 2000
+    playse 248 @ SE Money
+    updatecoins
+    waitse
+    pause DELAY_HALFSECOND
+    hidecoins
+    setflag 0x4B3 @ Defeated Chance
+    msgbox gText_DaimynCityGym_LeaderChance_Chat MSG_KEEPOPEN
+    releaseall
+    end
+
+EventScript_DaimynCityGym_LeaderChance_Chat:
+    npcchat gText_DaimynCityGym_LeaderChance_Chat
     end
 
 .global EventScript_DaimynCityGym_CoinSeller
@@ -151,6 +208,8 @@ EventScript_DaimynCityGym_CoinSeller:
     showmoney 0x0 0x0
     showcoins 0x0 0x5
     compare LASTRESULT 0x0
+    if equal _goto CoinSellerFarewell
+    compare LASTRESULT 0xFFFF
     if equal _goto CoinSellerFarewell
     copyvar 0x4001 LASTRESULT @ Selected coin count
     callasm CountCoinsIntoVar4002 @ Coins in players inventory
@@ -227,14 +286,21 @@ CoinSellerFarewell:
 
 .global EventScript_DaimynCityGym_GymExpert
 EventScript_DaimynCityGym_GymExpert:
+    checkflag 0x823 @ Daimyn gym badge
+    if SET _goto EventScript_DaimynCityGym_GymExpertBadgeObtained
+    npcchat gText_DaimynCityGym_ExpertTips
+    end
+
+EventScript_DaimynCityGym_GymExpertBadgeObtained:
+    npcchat gText_DaimynCityGym_ExpertBadgeObtained
     end
 
 .global EventScript_DaimynCityGym_PokemonTrader
 EventScript_DaimynCityGym_PokemonTrader:
     msgbox gText_DaimynCityGym_GenericTrader MSG_NORMAL
     msgbox gText_DaimynCityGym_PokemonTrader MSG_NORMAL
-    @ checkflag 0x823 @ Received Chance's badge
-    @ if NOT_SET _goto GeneralTraderDoNotHaveBadge
+    checkflag 0x823 @ Received Chance's badge
+    if NOT_SET _goto GeneralTraderDoNotHaveBadge
     goto PokemonTraderShopList
 
 PokemonTraderShopList:
@@ -297,7 +363,6 @@ PokemonTrader_AfterChoiceMade:
     if TRUE _goto ItemTraderNotEnoughCoins
     playse 0xF8 @ Money
     removecoins 0x4002
-    updatecoins 0x0 0x0
     updatecoins
     waitse
     pause DELAY_HALFSECOND
@@ -421,7 +486,6 @@ ItemTrader_AfterChoiceMade:
     if TRUE _goto ItemTraderNotEnoughCoins
     playse 0xF8 @ Money
     removecoins 0x4002
-    updatecoins 0x0 0x0
     updatecoins
     waitse
     pause DELAY_HALFSECOND
@@ -451,7 +515,7 @@ TrainerCoinPayout:
     setvar 0x8004 0x4001
     setvar 0x8005 0x4002
     special 0x40 @ Multiply two numbers above
-    showcoins
+    showcoins 0x0 0x0
     buffernumber 0x0 0x4001
     msgbox gText_DaimynCityGym_TrainerCoinPayout MSG_KEEPOPEN
     pause DELAY_HALFSECOND
@@ -461,93 +525,221 @@ TrainerCoinPayout:
     waitse
     pause DELAY_HALFSECOND
     hidecoins
+    msgbox gText_DaimynCityGym_TrainerCoinsGiven MSG_NORMAL
     end
 
 .global EventScript_DaimynCityGym_YoungsterJacob
 EventScript_DaimynCityGym_YoungsterJacob:
-    setvar 0x4001 23
+    setvar 0x4001 17
     trainerbattle2 0x0 0x93 0x0 gText_DaimynCityGym_YoungsterJacob_Intro gText_DaimynCityGym_YoungsterJacob_Defeat TrainerCoinPayout
     msgbox gText_DaimynCityGym_YoungsterJacob_Chat MSG_NORMAL
     end
 
 .global EventScript_DaimynCityGym_PokefanKanesha
 EventScript_DaimynCityGym_PokefanKanesha:
+    setvar 0x4001 22
+    trainerbattle2 0x0 0x94 0x0 gText_DaimynCityGym_PokefanKanesha_Intro gText_DaimynCityGym_PokefanKanesha_Defeat TrainerCoinPayout
+    msgbox gText_DaimynCityGym_PokefanKanesha_Chat MSG_NORMAL
     end
 
 .global EventScript_DaimynCityGym_BeautyEmilie
 EventScript_DaimynCityGym_BeautyEmilie:
+    setvar 0x4001 21
+    trainerbattle2 0x0 0x95 0x0 gText_DaimynCityGym_BeautyEmilie_Intro gText_DaimynCityGym_BeautyEmilie_Defeat TrainerCoinPayout
+    msgbox gText_DaimynCityGym_BeautyEmilie_Chat MSG_NORMAL
     end
 
 .global EventScript_DaimynCityGym_BeautyLeanne
 EventScript_DaimynCityGym_BeautyLeanne:
+    setvar 0x4001 35
+    trainerbattle2 0x0 0x96 0x0 gText_DaimynCityGym_BeautyLeanne_Intro gText_DaimynCityGym_BeautyLeanne_Defeat TrainerCoinPayout
+    msgbox gText_DaimynCityGym_BeautyLeanne_Chat MSG_NORMAL
     end
 
 .global EventScript_DaimynCityGym_ChanellerRosita
 EventScript_DaimynCityGym_ChanellerRosita:
+    setvar 0x4001 32
+    trainerbattle2 0x0 0x97 0x0 gText_DaimynCityGym_ChannelerRosita_Intro gText_DaimynCityGym_ChannelerRosita_Defeat TrainerCoinPayout
+    msgbox gText_DaimynCityGym_ChannelerRosita_Chat MSG_NORMAL
     end
 
 .global EventScript_DaimynCityGym_GamblerChuck
 EventScript_DaimynCityGym_GamblerChuck:
+    setvar 0x4001 43
+    trainerbattle2 0x0 0x98 0x0 gText_DaimynCityGym_GamblerChuck_Intro gText_DaimynCityGym_GamblerChuck_Defeat TrainerCoinPayout
+    msgbox gText_DaimynCityGym_GamblerChuck_Chat MSG_NORMAL
     end
 
 .global EventScript_DaimynCityGym_BurglarDexter
 EventScript_DaimynCityGym_BurglarDexter:
+    setvar 0x4001 30
+    trainerbattle2 0x0 0x99 0x0 gText_DaimynCityGym_BurglarDexter_Intro gText_DaimynCityGym_BurglarDexter_Defeat TrainerCoinPayout
+    msgbox gText_DaimynCityGym_BurglarDexter_Chat MSG_NORMAL
     end
 
 .global EventScript_DaimynCityGym_NPCWoman
 EventScript_DaimynCityGym_NPCWoman:
+    npcchat gText_DaimynCityGym_NPCWoman
     end
 
 .global EventScript_DaimynCityGym_NPCPsychic
 EventScript_DaimynCityGym_NPCPsychic:
+    msgbox gText_DaimynCityGym_NPCPsychic MSG_NORMAL
+    faceplayer
+    msgbox gText_DaimynCityGym_NPCPsychicFollowUp MSG_NORMAL
+    applymovement LASTTALKED m_LookRight
     end
 
 .global EventScript_DaimynCityGym_NPCFatGuy
 EventScript_DaimynCityGym_NPCFatGuy:
+    npcchat gText_DaimynCityGym_NPCFatGuy
     end
 
 .global EventScript_DaimynCityGym_NPCRocker
 EventScript_DaimynCityGym_NPCRocker:
+    msgbox gText_DaimynCityGym_NPCRocker MSG_NORMAL
     end
 
 .global EventScript_DaimynCityGym_NPCBlackBelt
 EventScript_DaimynCityGym_NPCBlackBelt:
+    npcchat gText_DaimynCityGym_NPCBlackBelt
     end
 
 .global EventScript_DaimynCityGym_Gentleman
 EventScript_DaimynCityGym_Gentleman:
+    npcchat gText_DaimynCityGym_NPCGentleman
     end
 
 .global SignScript_DaimynCityGym_GymPlacard
 SignScript_DaimynCityGym_GymPlacard:
+    @ TODO Later: A checkflag here for beating Pluto on route 11, then showing the rival's name on the placard
+    checkflag 0x823 @ Daimyn gym badge
+    if SET _goto SignScript_DaimynCityGym_PlacardWithBadge
+    msgbox gText_DaimynCityGym_Winners MSG_SIGN
+    end
+
+SignScript_DaimynCityGym_PlacardWithBadge:
+    msgbox gText_DaimynCityGym_WinnersWithBadge MSG_SIGN
     end
 
 .global SignScript_DaimynCityGym_CoinDepositBox
 SignScript_DaimynCityGym_CoinDepositBox:
+    compare 0x4096 0x0
+    if equal _goto CoinDepositBox_DebtPaidOff
+    showcoins 0x0 0x0
+    buffernumber 0x0 0x4096
+    msgbox gText_DaimynCityGym_CoinDepositBox_DebtRemainingAndPrompt MSG_SIGN
+    special 0xB3 @ Choose number, stored in LASTRESULT
+    waitstate
+    compare LASTRESULT 0x0
+    if equal _goto CoinDepositBox_RemainingBalance
+    compare LASTRESULT 0xFFFF
+    if equal _goto CoinDepositBox_RemainingBalance
+    copyvar 0x4001 LASTRESULT
+    showcoins 0x0 0x0
+    checkcoins 0x4001
+    compare LASTRESULT FALSE
+    if TRUE _goto CoinDepositBox_NotEnoughCoins
+    comparevars 0x4001 0x4096
+    if greaterthan _call CoinDepositBox_CoinAdjustment
+    setvar 0x8004 0x4096
+    setvar 0x8005 0x4001
+    special 0x3F @ Subtract excess coins from case max to get new total
+    showcoins 0x0 0x0
+    msgbox gText_DaimynCityGym_CoinDepositBox_Processing MSG_SIGN
+    pause DELAY_HALFSECOND
+    playse 0xF8 @ Money
+    removecoins 0x4001
+    updatecoins
+    waitse
+    pause DELAY_HALFSECOND
+    compare 0x4096 0x0
+    if equal _goto CoinDepositBox_DebtFullyPaid
+    goto CoinDepositBox_RemainingBalance
+
+CoinDepositBox_NotEnoughCoins:
+    msgbox gText_DaimynCityGym_CoinDepositBox_NotEnougCoins MSG_SIGN
+    goto CoinDepositBox_RemainingBalance
+
+CoinDepositBox_CoinAdjustment:
+    copyvar 0x4001 0x4096 @ Set invested coins to what remains
+    buffernumber 0x0 0x4001
+    msgbox gText_DaimynCityGym_CoinDepositBox_TooManyCoins MSG_SIGN
+    return
+
+CoinDepositBox_RemainingBalance:
+    showcoins 0x0 0x0
+    buffernumber 0x0 0x4096
+    msgbox gText_DaimynCityGym_CoinDepositBox_DebtRemaining MSG_SIGN
+    hidecoins
+    end
+
+CoinDepositBox_DebtPaidOff:
+    msgbox gText_DaimynCityGym_CoinDepositBox_DebtPaid MSG_SIGN
+    end
+
+CoinDepositBox_DebtFullyPaid:
+    fanfare 0x13D @ Gym victory
+    msgbox gText_DaimynCityGym_CoinDepositBox_DebtFullyPaidOff MSG_SIGN
+    waitfanfare
+    hidecoins
+    fadescreen FADEOUT_BLACK
+    setvar StoryEventVar 0x3 @ Lower barrier
+    call MapEntryScript_LowerBarrier
+    special 0x8E @ Refresh map
+    fadescreen FADEIN_BLACK
     end
 
 .global SignScript_DaimynCityGym_SlotMachine_Odds1
 SignScript_DaimynCityGym_SlotMachine_Odds1:
-    end
+    setvar 0x8004 0x0
+    goto SlotMachineCommon
 
 .global SignScript_DaimynCityGym_SlotMachine_Odds2
 SignScript_DaimynCityGym_SlotMachine_Odds2:
+    setvar 0x8004 0x3
+    goto SlotMachineCommon
     end
 
 .global SignScript_DaimynCityGym_SlotMachine_Odds3
 SignScript_DaimynCityGym_SlotMachine_Odds3:
+    setvar 0x8004 0x5
+    goto SlotMachineCommon
     end
 
 .global SignScript_DaimynCityGym_SlotMachine_Odds4
 SignScript_DaimynCityGym_SlotMachine_Odds4:
+    setvar 0x8004 0x8
+    goto SlotMachineCommon
     end
 
 .global SignScript_DaimynCityGym_SlotMachine_Odds5
 SignScript_DaimynCityGym_SlotMachine_Odds5:
+    setvar 0x8004 0xB
+    goto SlotMachineCommon
     end
 
 .global SignScript_DaimynCityGym_SlotMachine_Odds6
 SignScript_DaimynCityGym_SlotMachine_Odds6:
+    setvar 0x8004 0xE
+    goto SlotMachineCommon
+    end
+
+SlotMachineCommon:
+    msgbox gText_DaimynCityGym_SlotMachinePrompt MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto SlotMachineDeclined
+    setanimation 0x0 0xFF
+    setanimation 0x1 0xA
+    setanimation 0x2 0xE
+    doanimation 0x40
+    waitanimation 0x40
+    special2 LASTRESULT 0x11E
+    playslotmachine LASTRESULT
+    end
+
+SlotMachineDeclined:
+    msgbox gText_DaimynCityGym_SlotMachineDeclined MSG_NORMAL
     end
 
 m_ChanceMovesToMeetPlayer: .byte walk_right, walk_right, walk_down, walk_down, end_m

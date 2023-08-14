@@ -113,6 +113,11 @@ LookDown:
     applymovement PLAYER m_LookDown
     return
 
+.global LookRight
+LookRight:
+    applymovement PLAYER m_LookRight
+    return
+
 .global PlayerWalkUp_Return
 PlayerWalkUp_Return:
     applymovement PLAYER m_WalkUp

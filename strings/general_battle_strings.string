@@ -166,6 +166,9 @@ You paid [B7][BUFFER][00] as the prize\nmoney[.]\p[.] [.] [.] [.]\pYou were over
 #org @sText_BlackedOut
 You were overwhelmed by your\ndefeat![FC][09]
 
+#org @sText_SwitchingMove
+[FD][0F] went back\nto [FD][1C] [FD][1D]!
+
 #ifndef UNBOUND
 
 #org @gText_BattleMenu

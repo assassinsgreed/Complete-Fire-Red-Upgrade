@@ -1230,6 +1230,241 @@ const struct TrainerMonItemCustomMoves sParty_DaimynCityGym_YoungsterJacob[] = {
         .ability = Ability_Hidden // Thick Fat
     },
 };
+
+const struct TrainerMonItemCustomMoves sParty_DaimynCityGym_PokefanKanesha[] = {
+    {
+        .lvl = 34,
+        .species = SPECIES_SHUCKLE,
+        .moves = {
+            MOVE_POWERTRICK,
+            MOVE_ROCKTHROW,
+            MOVE_STRUGGLEBUG,
+            MOVE_NONE
+        },
+        .heldItem = ITEM_QUICK_CLAW,
+        .ability = Ability_1 // Sturdy
+    }
+};
+
+const struct TrainerMonNoItemCustomMoves sParty_DaimynCityGym_BeautyEmilie[] = {
+    {
+        .lvl = 32,
+        .species = SPECIES_ZOROARK,
+        .moves = {
+            MOVE_TAUNT,
+            MOVE_KNOCKOFF,
+            MOVE_DETECT,
+            MOVE_SUCKERPUNCH
+        },
+        .ability = Ability_1 // Illusion
+    },
+    {
+        .lvl = 32,
+        .species = SPECIES_CROAGUNK,
+        .moves = {
+            MOVE_SUCKERPUNCH,
+            MOVE_SWAGGER,
+            MOVE_REVENGE,
+            MOVE_VENOSHOCK
+        },
+        .ability = Ability_Hidden // Poison Touch
+    }
+};
+
+const struct TrainerMonItemCustomMoves sParty_DaimynCityGym_BeautyLeanne[] = {
+    {
+        .lvl = 32,
+        .species = SPECIES_TOGETIC,
+        .moves = {
+            MOVE_METRONOME,
+            MOVE_NONE,
+            MOVE_NONE,
+            MOVE_NONE
+        },
+        .heldItem = ITEM_LEPPA_BERRY,
+        .ability = Ability_2 // Serene Grace
+    },
+    {
+        .lvl = 32,
+        .species = SPECIES_CHANSEY,
+        .moves = {
+            MOVE_METRONOME,
+            MOVE_NONE,
+            MOVE_NONE,
+            MOVE_NONE
+        },
+        .heldItem = ITEM_LEPPA_BERRY,
+        .ability = Ability_2 // Serene Grace
+    },
+    {
+        .lvl = 32,
+        .species = SPECIES_HATTREM,
+        .moves = {
+            MOVE_METRONOME,
+            MOVE_NONE,
+            MOVE_NONE,
+            MOVE_NONE
+        },
+        .heldItem = ITEM_LEPPA_BERRY,
+        .ability = Ability_2 // Anticipation
+    }
+};
+
+const struct TrainerMonNoItemCustomMoves sParty_DaimynCityGym_ChannelerRosita[] = {
+    {
+        .lvl = 30,
+        .species = SPECIES_DOTTLER,
+        .moves = {
+            MOVE_TRICKROOM,
+            MOVE_STRUGGLEBUG,
+            MOVE_CONFUSION,
+            MOVE_LIGHTSCREEN
+        },
+        .ability = Ability_1 // Swarm
+    },
+    {
+        .lvl = 30,
+        .species = SPECIES_CUFANT,
+        .moves = {
+            MOVE_IRONDEFENSE,
+            MOVE_STOMP,
+            MOVE_BULLDOZE,
+            MOVE_ROCKSMASH
+        },
+        .ability = Ability_1 // Sheer Force
+    },
+    {
+        .lvl = 32,
+        .species = SPECIES_GURDURR,
+        .moves = {
+            MOVE_RETALIATE,
+            MOVE_ROCKSLIDE,
+            MOVE_LOWKICK,
+            MOVE_BULKUP
+        },
+        .ability = Ability_1 // Guts
+    },
+    {
+        .lvl = 32,
+        .species = SPECIES_CARBINK,
+        .moves = {
+            MOVE_TRICKROOM,
+            MOVE_ANCIENTPOWER,
+            MOVE_SMACKDOWN,
+            MOVE_DAZZLINGGLEAM
+        },
+        .ability = Ability_1 // Clear body
+    }
+};
+
+const struct TrainerMonNoItemCustomMoves sParty_DaimynCityGym_GamblerChuck[] = {
+    {
+        .lvl = 32,
+        .species = SPECIES_FLETCHINDER,
+        .moves = {
+            MOVE_ACROBATICS,
+            MOVE_TAILWIND,
+            MOVE_FLAMECHARGE,
+            MOVE_UTURN
+        },
+        .ability = Ability_Hidden // Gale Wings
+    },
+    {
+        .lvl = 32,
+        .species = SPECIES_BOLTUND,
+        .moves = {
+            MOVE_ELECTROBALL,
+            MOVE_ROAR,
+            MOVE_BITE,
+            MOVE_FLAMECHARGE
+        },
+        .ability = Ability_Hidden // Competitive
+    },
+    {
+        .lvl = 33,
+        .species = SPECIES_RABOOT,
+        .moves = {
+            MOVE_ELECTROBALL,
+            MOVE_FLAMECHARGE,
+            MOVE_DOUBLEKICK,
+            MOVE_GROWL
+        },
+        .ability = Ability_1 // Blaze
+    }
+};
+
+const struct TrainerMonNoItemCustomMoves sParty_DaimynCityGym_BurglarDexter[] = {
+    {
+        .lvl = 32,
+        .species = SPECIES_MISDREAVUS,
+        .moves = {
+            MOVE_PSYBEAM,
+            MOVE_PERISHSONG,
+            MOVE_MEANLOOK,
+            MOVE_ASTONISH
+        },
+        .ability = Ability_1 // Levitate
+    },
+    {
+        .lvl = 32,
+        .species = SPECIES_UMBREON,
+        .moves = {
+            MOVE_SWAGGER,
+            MOVE_FOULPLAY,
+            MOVE_SANDATTACK,
+            MOVE_ASSURANCE
+        },
+        .ability = Ability_1 // Synchronize
+    },
+    {
+        .lvl = 33,
+        .species = SPECIES_WOBBUFFET,
+        .moves = {
+            MOVE_ENCORE,
+            MOVE_COUNTER,
+            MOVE_MIRRORCOAT,
+            MOVE_DESTINYBOND
+        },
+        .ability = Ability_1 // Shadow Tag
+    }
+};
+
+const struct TrainerMonItemCustomMoves sParty_DaimynCityGym_LeaderChance[] = {
+    {
+        .lvl = 33,
+        .species = SPECIES_MINIOR_SHIELD,
+        .moves = {
+            MOVE_REFLECT,
+            MOVE_LIGHTSCREEN,
+            MOVE_UTURN,
+            MOVE_ANCIENTPOWER
+        },
+        .heldItem = ITEM_LIGHT_CLAY,
+        .ability = Ability_1 // Shields Down
+    },
+    {
+        .lvl = 33,
+        .species = SPECIES_LANTURN,
+        .moves = {
+            MOVE_SOAK,
+            MOVE_SPARK,
+            MOVE_BRINE,
+            MOVE_VOLTSWITCH
+        },
+        .ability = Ability_1 // Volt Absorb
+    },
+    {
+        .lvl = 35,
+        .species = SPECIES_DUSCLOPS,
+        .moves = {
+            MOVE_PAINSPLIT,
+            MOVE_TRICKROOM,
+            MOVE_WILLOWISP,
+            MOVE_HEX
+        },
+        .ability = Ability_1 // Pressure
+    }
+};
 // #endregion
 
 #define NO_NAME                                                                                      \
@@ -3039,6 +3274,90 @@ const struct Trainer gTrainers[] = {
         .aiFlags = AI_SCRIPT_PREFER_STRONGEST_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_SEMI_SMART,
         .partySize = NELEMS(sParty_DaimynCityGym_YoungsterJacob),
         .party = {.ItemCustomMoves = sParty_DaimynCityGym_YoungsterJacob}
+    },
+    [TRAINER_DAIMYN_CITY_GYM_POKEFAN_KANESHA] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_POKEFAN,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .trainerPic = TRAINER_PIC_RS_BREEDER_F,
+        .trainerName = {_K, _a, _n, _e, _s, _h, _a, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_SETUP_FIRST_TURN | AI_SCRIPT_CHECK_GOOD_MOVE,
+        .partySize = NELEMS(sParty_DaimynCityGym_PokefanKanesha),
+        .party = {.ItemCustomMoves = sParty_DaimynCityGym_PokefanKanesha}
+    },
+    [TRAINER_DAIMYN_CITY_GYM_BEAUTY_EMILIE] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .trainerClass = CLASS_BEAUTY,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .trainerPic = TRAINER_PIC_BEAUTY,
+        .trainerName = {_E, _m, _i, _l, _i, _e, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_GOOD_MOVE,
+        .partySize = NELEMS(sParty_DaimynCityGym_BeautyEmilie),
+        .party = {.NoItemCustomMoves = sParty_DaimynCityGym_BeautyEmilie}
+    },
+    [TRAINER_DAIMYN_CITY_GYM_BEAUTY_LEANNE] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_BEAUTY,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .trainerPic = TRAINER_PIC_BEAUTY,
+        .trainerName = {_L, _e, _a, _n, _n, _e, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_GOOD_MOVE,
+        .partySize = NELEMS(sParty_DaimynCityGym_BeautyLeanne),
+        .party = {.ItemCustomMoves = sParty_DaimynCityGym_BeautyLeanne}
+    },
+    [TRAINER_DAIMYN_CITY_GYM_CHANNELER_ROSITA] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .trainerClass = CLASS_CHANNELER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_CHANNELER,
+        .trainerName = {_R, _o, _s, _i, _t, _a, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_GOOD_MOVE,
+        .partySize = NELEMS(sParty_DaimynCityGym_ChannelerRosita),
+        .party = {.NoItemCustomMoves = sParty_DaimynCityGym_ChannelerRosita}
+    },
+    [TRAINER_DAIMYN_CITY_GYM_GAMBLER_CHUCK] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .trainerClass = CLASS_GAMBLER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_GAMBLER,
+        .trainerName = {_C, _h, _u, _c, _k, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_SETUP_FIRST_TURN | AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = NELEMS(sParty_DaimynCityGym_GamblerChuck),
+        .party = {.NoItemCustomMoves = sParty_DaimynCityGym_GamblerChuck}
+    },
+    [TRAINER_DAIMYN_CITY_GYM_BURGLAR_DEXTER] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .trainerClass = CLASS_BURGLAR,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_BURGLAR,
+        .trainerName = {_D, _e, _x, _t, _e, _r, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_TRY_TO_FAINT,
+        .partySize = NELEMS(sParty_DaimynCityGym_BurglarDexter),
+        .party = {.NoItemCustomMoves = sParty_DaimynCityGym_BurglarDexter}
+    },
+    [TRAINER_DAIMYN_CITY_GYM_LEADER_CHANCE] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_LEADER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_CHANCE,
+        .trainerName = {_C, _h, _a, _n, _c, _e, _END},
+        .items = { ITEM_HYPER_POTION },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_SETUP_FIRST_TURN | AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_SEMI_SMART,
+        .partySize = NELEMS(sParty_DaimynCityGym_LeaderChance),
+        .party = {.ItemCustomMoves = sParty_DaimynCityGym_LeaderChance}
     },
     // #endregion
 };
