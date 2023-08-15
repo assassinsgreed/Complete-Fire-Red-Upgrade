@@ -12,6 +12,7 @@ MapScript_AscensionTower:
 
 MapEntryScript_AscensionTower_FlightFlag:
     setworldmapflag 0x8B2 @ Been to Ascension Tower
+    sethealingplace 0xA @ Originally Indigo Plateau
     end
 
 .global EventScript_AscensionTower_BattleTowerAttendant
