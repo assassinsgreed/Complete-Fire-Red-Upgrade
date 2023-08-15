@@ -952,13 +952,25 @@ bool8 IsConsumable(u16 item)
 void HandlePokeChip()
 {
 	bool8 hasPokeChipCharm = CheckBagHasItem(ITEM_POKE_CHIP_CHARM, 1) > 0;
-	bool8 foundPokeChip = Random() % 100 < (hasPokeChipCharm ? ENHANCED_POKE_CHIP_RATE : BASE_POKE_CHIP_RATE) + 1;
+	bool8 isHoneyOrSweetScent = FlagGet(FLAG_TEMP_1);
+
+	u8 baseRate = BASE_POKE_CHIP_RATE;
+	u8 enhancedRate = ENHANCED_POKE_CHIP_RATE;
+
+	if (isHoneyOrSweetScent)
+	{
+		baseRate += 15;
+		enhancedRate += 15;
+	}
+
+	bool8 foundPokeChip = Random() % 100 < (hasPokeChipCharm ? enhancedRate : baseRate) + 1;
 	if (foundPokeChip)
 	{
 		AddBagItem(ITEM_POKE_CHIP, 1);
 		gBattleStringLoader = gText_HoldingPokeChip;
 		PlaySE(MUS_FANFA1);
 	}
+	FlagClear(FLAG_TEMP_1);
 }
 
 void CheckForMealEffectEnd(void)

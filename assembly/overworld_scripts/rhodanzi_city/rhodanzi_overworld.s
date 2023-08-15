@@ -99,6 +99,11 @@ EventScript_RhodanziOverworld_PokeChipMan:
     npcchat gText_RhodanziOverworld_PokeChipMan
     end
 
+.global EventScript_RhodanziOverworld_HoneyMan
+EventScript_RhodanziOverworld_HoneyMan:
+    npcchat gText_RhodanziOverworld_Honey
+    end
+
 m_ThugTopMoveToPush:
     .byte run_right, run_down, look_left, end_m
 
