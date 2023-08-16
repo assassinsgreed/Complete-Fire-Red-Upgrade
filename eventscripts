@@ -139,6 +139,7 @@ npc 3 2 6 EventScript_RhodanziOverworld_ThugTopSpokenTo
 npc 3 2 7 ItemScript_Common_SodaPop
 npc 3 2 8 EventScript_RhodanziOverworld_FindTMEchoedVoice
 npc 3 2 9 EventScript_RhodanziOverworld_PokeChipMan
+npc 3 2 10 EventScript_RhodanziOverworld_HoneyMan
 sign 3 2 1 SignScript_RhodanziCity_EntranceSign
 sign 3 2 3 SignScript_RhodanziCity_FishermanSign
 tile 3 2 0 TileScript_RhodanziOverworld_ThugsCaught

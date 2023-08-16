@@ -2697,6 +2697,7 @@ static void Task_ChangeGigantamax(u8 taskId)
 static void Task_HoneyField(u8 taskId)
 {
 	SetWeatherScreenFadeOut();
+	FlagSet(FLAG_TEMP_1); // Activated Honey or Sweet Scent
 	StartSweetScentFieldEffect();
 	DestroyTask(taskId);	
 }

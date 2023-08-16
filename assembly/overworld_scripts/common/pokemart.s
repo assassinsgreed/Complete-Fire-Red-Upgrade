@@ -78,6 +78,7 @@ NoBadges_Stock:
     .hword ITEM_ICE_HEAL
     .hword ITEM_AWAKENING
     .hword ITEM_PARALYZE_HEAL
+    .hword ITEM_HONEY
     .hword ITEM_REVIVE
     .hword ITEM_NONE
 
@@ -90,6 +91,7 @@ OneBadge_Stock:
     .hword ITEM_ICE_HEAL
     .hword ITEM_AWAKENING
     .hword ITEM_PARALYZE_HEAL
+    .hword ITEM_HONEY
     .hword ITEM_REVIVE
     .hword ITEM_ESCAPE_ROPE
     .hword ITEM_NONE
@@ -105,6 +107,7 @@ TwoBadges_Stock:
     .hword ITEM_ICE_HEAL
     .hword ITEM_AWAKENING
     .hword ITEM_PARALYZE_HEAL
+    .hword ITEM_HONEY
     .hword ITEM_REVIVE
     .hword ITEM_ESCAPE_ROPE
     .hword ITEM_NONE
@@ -121,6 +124,7 @@ ThreeBadges_Stock:
     .hword ITEM_AWAKENING
     .hword ITEM_PARALYZE_HEAL
     .hword ITEM_REPEL
+    .hword ITEM_HONEY
     .hword ITEM_REVIVE
     .hword ITEM_ESCAPE_ROPE
     .hword ITEM_NONE
@@ -138,6 +142,7 @@ FourBadges_Stock:
     .hword ITEM_AWAKENING
     .hword ITEM_PARALYZE_HEAL
     .hword ITEM_REPEL
+    .hword ITEM_HONEY
     .hword ITEM_REVIVE
     .hword ITEM_ESCAPE_ROPE
     .hword ITEM_NONE
@@ -157,6 +162,7 @@ FiveBadges_Stock:
     .hword ITEM_PARALYZE_HEAL
     .hword ITEM_REPEL
     .hword ITEM_SUPER_REPEL
+    .hword ITEM_HONEY
     .hword ITEM_REVIVE
     .hword ITEM_ESCAPE_ROPE
     .hword ITEM_NONE
@@ -177,6 +183,7 @@ SixBadges_Stock:
     .hword ITEM_FULL_HEAL
     .hword ITEM_REPEL
     .hword ITEM_SUPER_REPEL
+    .hword ITEM_HONEY
     .hword ITEM_REVIVE
     .hword ITEM_ESCAPE_ROPE
     .hword ITEM_NONE
@@ -199,6 +206,7 @@ SevenBadges_Stock:
     .hword ITEM_REPEL
     .hword ITEM_SUPER_REPEL
     .hword ITEM_MAX_REPEL
+    .hword ITEM_HONEY
     .hword ITEM_REVIVE
     .hword ITEM_ESCAPE_ROPE
     .hword ITEM_NONE
@@ -222,6 +230,7 @@ EightBadges_Stock:
     .hword ITEM_REPEL
     .hword ITEM_SUPER_REPEL
     .hword ITEM_MAX_REPEL
+    .hword ITEM_HONEY
     .hword ITEM_REVIVE
     .hword ITEM_ESCAPE_ROPE
     .hword ITEM_NONE
