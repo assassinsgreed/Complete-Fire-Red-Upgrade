@@ -67,5 +67,8 @@ Remove the Gigantamax factor from\n[BUFFER1]?
 #org @gText_NicknameConfirmation
 Change [BUFFER1]'s nickname?
 
+#org @gText_CannotNickname
+[BUFFER1]'s nickname is special!\nIt cannot be changed![PAUSE_UNTIL_PRESS]
+
 #org @gText_NicknameChanged
 [BUFFER1]'s nickname has been changed![PAUSE_UNTIL_PRESS]

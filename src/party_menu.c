@@ -790,6 +790,7 @@ extern u8 gMoveNames[][MOVE_NAME_LENGTH + 1];
 extern const u8 gMenuText_Move[];
 extern const u8 gMenuText_Nickname[];
 extern const u8 gText_NicknameConfirmation[];
+extern const u8 gText_CannotNickname[];
 extern const u8 gText_NicknameChanged[];
 extern const u8 gText_FieldMoveDesc_RockClimb[];
 extern const u8 gText_FieldMoveDesc_Defog[];
@@ -2752,17 +2753,28 @@ void ItemUseCB_RareCandy(u8 taskId, TaskFunc func)
 
 static void CursorCb_Nickname(u8 taskId)
 {
-	PlaySE(SE_SELECT);
-
 	//Delete old windows
 	PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[1]);
 	PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[0]);
 
-	// Prompt for nickname change confirmation
-	StringExpandPlaceholders(gStringVar4, gText_NicknameConfirmation);
-	DisplayPartyMenuMessage(gStringVar4, TRUE);
-	ScheduleBgCopyTilemapToVram(2);
-	gTasks[taskId].func = Task_OfferNicknameChange;
+	if (IsTradedMon(&gPlayerParty[gPartyMenu.slotId]))
+	{
+		PlaySE(SE_ERROR);
+		GetMonData(&gPlayerParty[gPartyMenu.slotId], MON_DATA_NICKNAME, gStringVar1);
+		StringExpandPlaceholders(gStringVar4, gText_CannotNickname);
+		DisplayPartyMenuMessage(gStringVar4, TRUE);
+		gTasks[taskId].func = Task_ReturnToChooseMonAfterText;
+	}
+	else
+	{
+		PlaySE(SE_SELECT);
+
+		// Prompt for nickname change confirmation
+		StringExpandPlaceholders(gStringVar4, gText_NicknameConfirmation);
+		DisplayPartyMenuMessage(gStringVar4, TRUE);
+		ScheduleBgCopyTilemapToVram(2);
+		gTasks[taskId].func = Task_OfferNicknameChange;
+	}
 }
 
 static void Task_OfferNicknameChange(u8 taskId)
