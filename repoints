@@ -329,6 +329,8 @@ GraphicsInfo_ProfessorSakura 839FE34
 ## Replace Rocket Grunt Male (49) and Female (50)
 GraphicsInfo_PlutoGruntMale 839FE74
 GraphicsInfo_PlutoGruntFemale 839FE78
+## Replace Sailing Chef (59)
+GraphicsInfo_LeaderCaseyM 839FE9C
 ## Replace Celio (89)
 GraphicsInfo_PlutoAdminIrene 839FF14
 ## Replace Prof Oak (71)
@@ -381,6 +383,9 @@ GraphicsInfo_Pikachu 839FF90
 GraphicsInfo_Castform 839FF94
 
 # Custom Battle Spritework
+## Replace Aqua Boss Archie (0)
+LeaderCaseyFBTiles 823957C
+LeaderCaseyFBPal 8239A1C
 ## Replace Aqua Admin Shelly (72)
 PlutoAdminIreneBTiles 82397BC
 PlutoAdminIreneBPal 8239C5C
