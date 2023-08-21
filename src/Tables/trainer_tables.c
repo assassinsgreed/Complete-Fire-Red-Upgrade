@@ -56,6 +56,32 @@ const struct TrainerMonItemCustomMoves sParty_Rival3[] = {
         .ability = Ability_2 // Adaptability
     }
 };
+
+const struct TrainerMonItemCustomMoves sParty_Casey1[] = {
+    {
+        .lvl = 15,
+        .species = SPECIES_ELGYEM,
+        .moves = {
+            MOVE_CONFUSION,
+            MOVE_GROWL,
+            MOVE_IMPRISON,
+            MOVE_DISABLE
+        },
+        .ability = Ability_2 // Synchronize
+    },
+    {
+        .lvl = 17,
+        .species = SPECIES_HORSEA,
+        .moves = {
+            MOVE_OCTAZOOKA,
+            MOVE_SMOKESCREEN,
+            MOVE_FOCUSENERGY,
+            MOVE_SCALESHOT
+        },
+        .heldItem = ITEM_ORAN_BERRY,
+        .ability = Ability_2 // Sniper
+    }
+};
 // #endregion
 
 // #region Route 1 
@@ -1512,6 +1538,30 @@ const struct Trainer gTrainers[] = {
         .aiFlags = AI_SCRIPT_TRY_TO_FAINT,
         .partySize = NELEMS(sParty_Rival3),
         .party = {.ItemCustomMoves = sParty_Rival3}
+    },
+    [TRAINER_TORMA_CAVE_CASEY_F] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_PKMN_TRAINER_1,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_CASEY_F,
+        .trainerName = {_C, _a, _s, _e, _y, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_SEMI_SMART,
+        .partySize = NELEMS(sParty_Casey1),
+        .party = {.ItemCustomMoves = sParty_Casey1}
+    },
+    [TRAINER_TORMA_CAVE_CASEY_M] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_PKMN_TRAINER_1,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_CASEY_M,
+        .trainerName = {_C, _a, _s, _e, _y, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_SEMI_SMART,
+        .partySize = NELEMS(sParty_Casey1),
+        .party = {.ItemCustomMoves = sParty_Casey1}
     },
     // #endregion
     // #region Route 1

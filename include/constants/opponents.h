@@ -175,3 +175,6 @@
 #define TRAINER_DAIMYN_CITY_GYM_GAMBLER_CHUCK        152
 #define TRAINER_DAIMYN_CITY_GYM_BURGLAR_DEXTER       153
 #define TRAINER_DAIMYN_CITY_GYM_LEADER_CHANCE        154
+// Special - Torma Cave Casey Fight
+#define TRAINER_TORMA_CAVE_CASEY_F                   155
+#define TRAINER_TORMA_CAVE_CASEY_M                   156

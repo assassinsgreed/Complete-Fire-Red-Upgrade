@@ -64,7 +64,7 @@
 #define FLAG_HIDE_POKEDEX_SPRITE_IN_HAWTHORNES_LAB         0x03A
 #define FLAG_HIDE_STELLA_IN_FERROX_GYM                     0x03B
 #define FLAG_HIDE_RIVAL_IN_DAIMYN_GUARDHOUSES_ON_BY_DEFAULT 0x03C
-#define FLAG_USED_ALREADY???                               0x03D
+#define FLAG_HIDE_CASEY_IN_CUTSCENES_ON_BY_DEFAULT         0x03D
 #define FLAG_HIDE_HELEO_RANCH_AMPHAROS                     0x03E
 #define FLAG_USED_ALREADY???                               0x03F
 #define FLAG_HIDE_PIKACHU_GIFT_IN_DAIMYN_CTIY              0x040
@@ -611,7 +611,7 @@
 #define FLAG_GOT_ITEMFINDER                              0x252
 #define FLAG_BOUGHT_CARVANHA                             0x253
 #define FLAG_DID_STARTER_BASED_TRADE                     0x254
-#define FLAG_GOT_SUPER_ROD                               0x255
+#define FLAG_BATTLED_CASEY_IN_TORMA_CAVE                 0x255
 #define FLAG_GOT_EXP_SHARE_FROM_OAKS_AIDE                0x256
 #define FLAG_DID_MARC_TRADE                              0x257
 #define FLAG_BEAT_RIVAL_ON_ROUTE_17                      0x258
