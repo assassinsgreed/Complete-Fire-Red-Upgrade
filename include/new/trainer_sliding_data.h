@@ -28,6 +28,10 @@ extern const u8 sText_Rival3_FirstMonDown[];
 extern const u8 sText_Rival3_LastSwitchIn[];
 extern const u8 sText_Rival3_LowHP[];
 
+// Casey battle 1
+extern const u8 sText_Casey1_LastSwitchIn[];
+extern const u8 sText_Casey1_LowHP[];
+
 // Rival battle n
 
 // Gym Leader 1 (Terrence)

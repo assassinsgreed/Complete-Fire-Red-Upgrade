@@ -66,3 +66,51 @@ Trainer Tips!\nStepping onto a sheet of ice will\lcause you to slide until you\l
 
 #org @gText_TormaCave_StunfiskEncounter
 There was a wild Pok\emon hiding at\nyour feet! The Pok\emon attacked!
+
+#org @gText_TormaCave_MCaseyFirstMessage
+Ugh[.] How can I be lost again?
+
+#org @gText_TormaCave_MCaseyIntroduction
+Oh hey, you're a trainer! I can tell\nby your getup.\pThe name's Casey. I'm a trainer too.\nI'm actually on my gym challenge.\p[.]Oh, you too? Well that settles it;\nwe're gonna have a battle!
+
+#org @gText_TormaCave_MCaseyBattleIntro
+Alright, show me what you've got!
+
+#org @gText_TormaCave_MCaseyBattleDefeat
+You're so strong! Much stronger than\nI expected.
+
+#org @gText_TormaCave_MCaseyCommentsOnBeingLost
+It just isn't my day, huh.\pI got lost on my way to Ferrox\nVillage, and instead I found myself\la strong trainer.
+
+#org @gText_TormaCave_MCaseyLeaves
+Huh? It's actually back the way I\ncame? Well that's embarrassing.\pHey, thanks, uh[.]\p[PLAYER]?\pThanks, [PLAYER]. You're a good\nperson.\pI hope we meet each other again on\nthe road some day.\pTill then, see you.
+
+#org @gText_TormaCave_FCaseyFirstMessage
+Oooohhh, drat! I'm so lost!
+
+#org @gText_TormaCave_FCaseyTrainerQuestion
+Oh, are you a Pok\emon trainer?
+
+#org @gText_TormaCave_FCaseySaidNo
+But[.] You look like a trainer to me.
+
+#org @gText_TormaCave_FCaseySaidYes
+I knew it! You look like a trainer.
+
+#org @gText_TormaCave_FCaseyIntroduction
+The name's Casey. I'm a Pok\emon\ntrainer too!\pI'm on a journey to collect every\ngym badge in the Kulure region.\pThat Terrain Badge[.] You must be\ndoing the same.\pWell, that settles it! We just HAVE\nto battle.
+
+#org @gText_TormaCave_FCaseyBattleIntro
+Come on, I won't take no for an\nanswer. Let's go!
+
+#org @gText_TormaCave_FCaseyBattleDefeat
+Oh, you're very good! I see now how\nyou earned that badge.
+
+#org @gText_TormaCave_FCaseyRecallingWhatTheyAreDoing
+That was a good battle!\p[.]So good I forgot what I was doing,\nhaha[.]
+
+#org @gText_TormaCave_FCaseyRemembers
+Oh yeah! I was trying to get to\nFerrox Village and got lost in this\lcave.
+
+#org @gText_TormaCave_FCaseyLeaves
+[.]Huh? It's actually the way I came\nfrom?\pOh no[.] I must've gotten more lost\nthan I thought.\pThanks, uh[.]\p[PLAYER]?\pThanks, [PLAYER], I owe you one!\nWe're officially friends now.\pWell, I've gotta get going; there are\nmore badges to get.\pI'll see you around, okay?

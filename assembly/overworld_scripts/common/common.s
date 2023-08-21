@@ -350,6 +350,18 @@ StopVending:
     hidemoney
     goto End
 
+.global SetCaseyFemale
+SetCaseyFemale:
+    setvar 0x5029 84
+    textcolor RED
+    return
+
+.global SetCaseyMale
+SetCaseyMale:
+    setvar 0x5029 59
+    textcolor BLUE
+    return
+
 .global End
 End:
     release

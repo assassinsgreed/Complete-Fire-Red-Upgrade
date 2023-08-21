@@ -384,8 +384,8 @@ GraphicsInfo_Castform 839FF94
 
 # Custom Battle Spritework
 ## Replace Aqua Boss Archie (0)
-LeaderCaseyFBTiles 823957C
-LeaderCaseyFBPal 8239A1C
+LeaderCaseyMBTiles 823957C
+LeaderCaseyMBPal 8239A1C
 ## Replace Aqua Admin Shelly (72)
 PlutoAdminIreneBTiles 82397BC
 PlutoAdminIreneBPal 8239C5C

@@ -41,6 +41,8 @@ static const struct TrainerSlide sTrainerSlides[] =
 	{0x69, sText_Leader3_FirstMonDown, sText_Leader3_LastSwitchIn, sText_Leader3_LowHP}, // Gym Leader Raine
 	{0x88, sText_Rival3_FirstMonDown, sText_Rival3_LastSwitchIn, sText_Rival3_LowHP}, // Third rival battle
 	{0x9A, sText_Leader4_FirstMonDown, sText_Leader4_LastSwitchIn, sText_Leader4_LowHP}, // Gym Leader Chance
+	{0x9B, NULL, sText_Casey1_LastSwitchIn, sText_Casey1_LowHP}, // Female Casey battle 1
+	{0x9C, NULL, sText_Casey1_LastSwitchIn, sText_Casey1_LowHP}, // Male Casey battle 1
 	{}, // Champion Selene
 };
 
