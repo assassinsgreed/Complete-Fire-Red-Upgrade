@@ -4,6 +4,12 @@ Daimyn City lies just beyond this\ngate. You may pass.
 #org @gText_DaimynCityFacilities_GuardHouseSouth_Guard
 Welcome to Daimyn City!
 
+#org @gText_DaimynCityFacilities_GuardHouseEast_Guard
+To the west lies Daimyn City.\nTo the east lies Route 10.
+
+#org @gText_DaimynCityFacilities_GuardHouseNorth_Guard
+The passage to the north leads to\nBruccie Village.\pIf you are headed that way, take\ncare to stock up at the rest house\lalong the way; it's a long trek.
+
 #org @gText_DaimynCityFacilities_GuardHouse_RivalIntroduction
 [BLUE]Hey [PLAYER]! I finally caught up to\nyou. Wait up!
 

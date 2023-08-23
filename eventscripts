@@ -807,6 +807,8 @@ npc 9 3 0 EventScript_DaimynCity_GuardHouseWest_Guard
 tile 9 3 0 TileScript_DaimynCity_GuardHouseWest_TriggerRival
 npc 9 6 0 EventScript_DaimynCity_GuardHouseSouth_Guard
 tile 9 6 0 TileScript_DaimynCity_GuardHouseSouth_TriggerRival
+npc 9 19 0 EventScript_DaimynCity_GuardHouseEast_Guard
+npc 9 20 0 EventScript_DaimynCity_GuardHouseNorth_Guard
 ## Ascension Tower
 map 2 10 MapScript_AscensionTower
 npc 2 10 0 EventScript_PokemonCenter_Main

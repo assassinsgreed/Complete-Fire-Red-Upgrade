@@ -28,6 +28,16 @@ EventScript_DaimynCity_GuardHouseSouth_Guard:
     msgbox gText_DaimynCityFacilities_GuardHouseSouth_Guard MSG_NORMAL
     end
 
+.global EventScript_DaimynCity_GuardHouseEast_Guard
+EventScript_DaimynCity_GuardHouseEast_Guard:
+    msgbox gText_DaimynCityFacilities_GuardHouseEast_Guard MSG_NORMAL
+    end
+
+.global EventScript_DaimynCity_GuardHouseNorth_Guard
+EventScript_DaimynCity_GuardHouseNorth_Guard:
+    msgbox gText_DaimynCityFacilities_GuardHouseNorth_Guard MSG_NORMAL
+    end
+
 .global TileScript_DaimynCity_GuardHouseWest_TriggerRival
 TileScript_DaimynCity_GuardHouseWest_TriggerRival:
     lock
