@@ -88,7 +88,7 @@
 #define TRAINER_HELEO_RANCH_BURGLAR_COLE             73
 #define TRAINER_HELEO_RANCH_CAMPER_TROY              74
 #define TRAINER_HELEO_RANCH_BREEDER_LAURA            75
-#define TRAINER_HELEO_RANCH_PICKNICKER_CASEY         76
+#define TRAINER_HELEO_RANCH_PICKNICKER_CARLY         76
 // Route 7 (Continued)
 #define TRAINER_ROUTE_7_ROCKER_JONAS                 77
 #define TRAINER_ROUTE_7_LASS_EDEN                    78
@@ -122,7 +122,7 @@
 #define TRAINER_HELEO_CITY_GYM_MAISEY                104
 #define TRAINER_HELEO_CITY_GYM_LEADER_RAINE          105
 // Route 8
-#define TRAINER_ROUTE_8_CAMPER_CASEY                 106
+#define TRAINER_ROUTE_8_CAMPER_DREW                  106
 #define TRAINER_ROUTE_8_NINJA_BOY_ZEKE               107
 #define TRAINER_ROUTE_8_SUPER_NERD_SAUL              108
 #define TRAINER_ROUTE_8_ROCKER_PARKER                109
@@ -178,3 +178,12 @@
 // Special - Torma Cave Casey Fight
 #define TRAINER_TORMA_CAVE_CASEY_F                   155
 #define TRAINER_TORMA_CAVE_CASEY_M                   156
+// Route 9
+#define TRAINER_ROUTE_9_COLLECTOR_MARSHALL           157
+#define TRAINER_ROUTE_9_COOL_TRAINER_ANDREA          158
+#define TRAINER_ROUTE_9_FISHERMAN_YUSUF              159
+#define TRAINER_ROUTE_9_GENTLEMAN_GAVIN              160
+#define TRAINER_ROUTE_9_NINJA_BOY_AYRTON             161
+#define TRAINER_ROUTE_9_BREEDER_TALIA                162
+#define TRAINER_ROUTE_9_PICKNICKER_ZOE               163
+#define TRAINER_ROUTE_9_COOL_TRAINER_KINGSLEY        164

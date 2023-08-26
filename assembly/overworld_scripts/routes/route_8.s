@@ -106,10 +106,10 @@ EventScript_Route8_FindTM34SludgeWave:
     call ItemScript_Common_FindTM
     end
 
-.global EventScript_Route8_CamperCasey
-EventScript_Route8_CamperCasey:
-    trainerbattle0 0x0 0x6A 0x0 gText_Route8_CamperCasey_Intro gText_Route8_CamperCasey_Defeat
-    msgbox gText_Route8_CamperCasey_Chat MSG_NORMAL
+.global EventScript_Route8_CamperDrew
+EventScript_Route8_CamperDrew:
+    trainerbattle0 0x0 0x6A 0x0 gText_Route8_CamperDrew_Intro gText_Route8_CamperDrew_Defeat
+    msgbox gText_Route8_CamperDrew_Chat MSG_NORMAL
     end
 
 .global EventScript_Route8_NinjaBoyZeke

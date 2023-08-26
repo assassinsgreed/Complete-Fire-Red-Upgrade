@@ -711,7 +711,7 @@ const struct TrainerMonNoItemDefaultMoves sParty_HeleoRanch_Breeder_Laura[] = {
     { .lvl = 14, .species = SPECIES_PICHU },
 };
 
-const struct TrainerMonNoItemDefaultMoves sParty_HeleoRanch_Picknicker_Casey[] = {
+const struct TrainerMonNoItemDefaultMoves sParty_HeleoRanch_Picknicker_Carly[] = {
     { .lvl = 18, .species = SPECIES_FLETCHLING },
     { .lvl = 18, .species = SPECIES_CACNEA },
     { .lvl = 19, .species = SPECIES_FLOETTE_WHITE }
@@ -984,7 +984,7 @@ const struct TrainerMonItemCustomMoves sParty_HeleoCityGym_LeaderRaine[] = {
 // #endregion
 
 // #region Route 8
-const struct TrainerMonNoItemDefaultMoves sParty_Route8_CamperCasey[] = {
+const struct TrainerMonNoItemDefaultMoves sParty_Route8_Camper_Drew[] = {
     { .lvl = 25, .species = SPECIES_EMOLGA },
     { .lvl = 25, .species = SPECIES_BIBAREL }
 };
@@ -1490,6 +1490,73 @@ const struct TrainerMonItemCustomMoves sParty_DaimynCityGym_LeaderChance[] = {
         },
         .ability = Ability_1 // Pressure
     }
+};
+// #endregion
+
+// #region Route 9
+const struct TrainerMonNoItemDefaultMoves sParty_Route9_Collector_Marshall[] = {
+    { .lvl = 32, .species = SPECIES_MR_MIME },
+    { .lvl = 33, .species = SPECIES_MIMIKYU }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route9_CoolTrainer_Andrea[] = {
+    { .lvl = 33, .species = SPECIES_HERACROSS },
+    { .lvl = 33, .species = SPECIES_TOUCANNON },
+    { .lvl = 33, .species = SPECIES_TORRACAT }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route9_Fisherman_Yusuf[] = {
+    { .lvl = 32, .species = SPECIES_GYARADOS },
+    { .lvl = 32, .species = SPECIES_GASTRODON },
+};
+
+const struct TrainerMonNoItemCustomMoves sParty_Route9_Gentleman_Gavin[] = {
+    {
+        .lvl = 33,
+        .species = SPECIES_RAICHU,
+        .moves = {
+            MOVE_HELPINGHAND,
+            MOVE_THUNDERBOLT,
+            MOVE_ELECTROBALL,
+            MOVE_DRAININGKISS
+        },
+        .ability = Ability_Hidden // Lightningrod
+    },
+    {
+        .lvl = 33,
+        .species = SPECIES_LUCARIO,
+        .moves = {
+            MOVE_BULLETPUNCH,
+            MOVE_FORCEPALM,
+            MOVE_QUICKGUARD,
+            MOVE_HELPINGHAND
+        },
+        .ability = Ability_Hidden // Justified
+    }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route9_NinjaBoy_Ayrton[] = {
+    { .lvl = 31, .species = SPECIES_NINJASK },
+    { .lvl = 31, .species = SPECIES_KROKOROK },
+    { .lvl = 33, .species = SPECIES_GOLBAT },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route9_Breeder_Talia[] = {
+    { .lvl = 30, .species = SPECIES_PIKACHU },
+    { .lvl = 30, .species = SPECIES_TOGETIC },
+    { .lvl = 32, .species = SPECIES_ESPEON },
+    { .lvl = 32, .species = SPECIES_UMBREON },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route9_Picknicker_Zoe[] = {
+    { .lvl = 33, .species = SPECIES_VESPIQUEN },
+    { .lvl = 34, .species = SPECIES_VENUSAUR },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route9_CoolTrainer_Kingsley[] = {
+    { .lvl = 35, .species = SPECIES_DECIDUEYE },
+    { .lvl = 35, .species = SPECIES_VIBRAVA },
+    { .lvl = 36, .species = SPECIES_SIRFETCHD },
 };
 // #endregion
 
@@ -2459,17 +2526,17 @@ const struct Trainer gTrainers[] = {
         .partySize = NELEMS(sParty_HeleoRanch_Breeder_Laura),
         .party = {.NoItemDefaultMoves = sParty_HeleoRanch_Breeder_Laura}
     },
-    [TRAINER_HELEO_RANCH_PICKNICKER_CASEY] = {
+    [TRAINER_HELEO_RANCH_PICKNICKER_CARLY] = {
         .partyFlags = 0,
         .trainerClass = CLASS_PICNICKER,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .trainerPic = TRAINER_PIC_PICNICKER,
-        .trainerName = {_C, _a, _s, _e, _y, _END},
+        .trainerName = {_C, _a, _r, _l, _y, _END},
         .items = { },
         .doubleBattle = FALSE,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
-        .partySize = NELEMS(sParty_HeleoRanch_Picknicker_Casey),
-        .party = {.NoItemDefaultMoves = sParty_HeleoRanch_Picknicker_Casey}
+        .partySize = NELEMS(sParty_HeleoRanch_Picknicker_Carly),
+        .party = {.NoItemDefaultMoves = sParty_HeleoRanch_Picknicker_Carly}
     },
     // #endregion
     // #region Route 7 (Continued)
@@ -2827,17 +2894,17 @@ const struct Trainer gTrainers[] = {
     },
     // #endregion
     // #region Route 8
-    [TRAINER_ROUTE_8_CAMPER_CASEY] = {
+    [TRAINER_ROUTE_8_CAMPER_DREW] = {
         .partyFlags = 0,
         .trainerClass = CLASS_CAMPER,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .trainerPic = TRAINER_PIC_CAMPER,
-        .trainerName = {_C, _a, _s, _e, _y, _END},
+        .trainerName = {_D, _r, _e, _w, _END},
         .items = { },
         .doubleBattle = FALSE,
         .aiFlags = AI_SCRIPT_CHECK_GOOD_MOVE,
-        .partySize = NELEMS(sParty_Route8_CamperCasey),
-        .party = {.NoItemDefaultMoves = sParty_Route8_CamperCasey}
+        .partySize = NELEMS(sParty_Route8_Camper_Drew),
+        .party = {.NoItemDefaultMoves = sParty_Route8_Camper_Drew}
     },
     [TRAINER_ROUTE_8_NINJA_BOY_ZEKE] = {
         .partyFlags = 0,
@@ -3408,6 +3475,104 @@ const struct Trainer gTrainers[] = {
         .aiFlags = AI_SCRIPT_SETUP_FIRST_TURN | AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_SEMI_SMART,
         .partySize = NELEMS(sParty_DaimynCityGym_LeaderChance),
         .party = {.ItemCustomMoves = sParty_DaimynCityGym_LeaderChance}
+    },
+    // #endregion
+    // #region Route 9
+    [TRAINER_ROUTE_9_COLLECTOR_MARSHALL] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_COLLECTOR,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_COLLECTOR,
+        .trainerName = {_M, _a, _r, _s, _h, _a, _l, _l, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = NELEMS(sParty_Route9_Collector_Marshall),
+        .party = {.NoItemDefaultMoves = sParty_Route9_Collector_Marshall}
+    },
+    [TRAINER_ROUTE_9_COOL_TRAINER_ANDREA] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_COOLTRAINER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
+        .trainerPic = TRAINER_PIC_COOLTRAINER_F,
+        .trainerName = {_A, _n, _d, _r, _e, _a, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE,
+        .partySize = NELEMS(sParty_Route9_CoolTrainer_Andrea),
+        .party = {.NoItemDefaultMoves = sParty_Route9_CoolTrainer_Andrea}
+    },
+    [TRAINER_ROUTE_9_FISHERMAN_YUSUF] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_FISHERMAN,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_FISHERMAN,
+        .trainerName = {_Y, _u, _s, _u, _f, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = NELEMS(sParty_Route9_Fisherman_Yusuf),
+        .party = {.NoItemDefaultMoves = sParty_Route9_Fisherman_Yusuf}
+    },
+    [TRAINER_ROUTE_9_GENTLEMAN_GAVIN] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .trainerClass = CLASS_GENTLEMAN,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_GENTLEMAN,
+        .trainerName = {_G, _a, _v, _i, _n, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = NELEMS(sParty_Route9_Gentleman_Gavin),
+        .party = {.NoItemCustomMoves = sParty_Route9_Gentleman_Gavin}
+    },
+    [TRAINER_ROUTE_9_NINJA_BOY_AYRTON] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_NINJA_BOY,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_NINJA_BOY,
+        .trainerName = {_A, _y, _r, _t, _o, _n, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_RISKY,
+        .partySize = NELEMS(sParty_Route9_NinjaBoy_Ayrton),
+        .party = {.NoItemDefaultMoves = sParty_Route9_NinjaBoy_Ayrton}
+    },
+    [TRAINER_ROUTE_9_BREEDER_TALIA] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_PKMN_BREEDER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .trainerPic = TRAINER_PIC_PKMN_BREEDER_F,
+        .trainerName = {_T, _a, _l, _i, _a, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = NELEMS(sParty_Route9_Breeder_Talia),
+        .party = {.NoItemDefaultMoves = sParty_Route9_Breeder_Talia}
+    },
+    [TRAINER_ROUTE_9_PICKNICKER_ZOE] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_PICNICKER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .trainerPic = TRAINER_PIC_PICNICKER,
+        .trainerName = {_Z, _o, _e, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = NELEMS(sParty_Route9_Picknicker_Zoe),
+        .party = {.NoItemDefaultMoves = sParty_Route9_Picknicker_Zoe}
+    },
+    [TRAINER_ROUTE_9_COOL_TRAINER_KINGSLEY] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_COOLTRAINER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
+        .trainerPic = TRAINER_PIC_COOLTRAINER_M,
+        .trainerName = {_K, _i, _n, _g, _s, _l, _e, _y, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE,
+        .partySize = NELEMS(sParty_Route9_CoolTrainer_Kingsley),
+        .party = {.NoItemDefaultMoves = sParty_Route9_CoolTrainer_Kingsley}
     },
     // #endregion
 };
