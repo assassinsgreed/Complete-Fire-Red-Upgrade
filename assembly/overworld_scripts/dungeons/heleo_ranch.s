@@ -149,10 +149,10 @@ EvenScript_HeleoRanch_BreederLaura:
     msgbox gText_HeleoRanch_BreederLaura_Chat MSG_NORMAL
     end
 
-.global EvenScript_HeleoRanch_PicknickerCasey
-EvenScript_HeleoRanch_PicknickerCasey:
-    trainerbattle0 0x0 0x4C 0x0 gText_HeleoRanch_PicknickerCasey_Intro gText_HeleoRanch_PicknickerCasey_Defeat
-    msgbox gText_HeleoRanch_PicknickerCasey_Chat MSG_NORMAL
+.global EvenScript_HeleoRanch_PicknickerCarly
+EvenScript_HeleoRanch_PicknickerCarly:
+    trainerbattle0 0x0 0x4C 0x0 gText_HeleoRanch_PicknickerCarly_Intro gText_HeleoRanch_PicknickerCarly_Defeat
+    msgbox gText_HeleoRanch_PicknickerCarly_Chat MSG_NORMAL
     end
 
 .global EventScript_HeleoRanch_FindTM45Attract

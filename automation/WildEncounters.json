@@ -784,6 +784,27 @@
         },
         {
             "mapgroup": 3,
+            "mapnum": 27,
+            "grass": {
+                "rate": 21,
+                "pokemon": [
+                    { "low": 25, "high": 28, "species": "SPECIES_MR_MIME_G" },
+                    { "low": 26, "high": 29, "species": "SPECIES_MIENFOO" },
+                    { "low": 26, "high": 29, "species": "SPECIES_CRABRAWLER" },
+                    { "low": 26, "high": 29, "species": "SPECIES_MR_MIME_G" },
+                    { "low": 25, "high": 28, "species": "SPECIES_EMOLGA" },
+                    { "low": 25, "high": 28, "species": "SPECIES_NIDORINO" },
+                    { "low": 25, "high": 28, "species": "SPECIES_YAMPER" },
+                    { "low": 25, "high": 28, "species": "SPECIES_GRIMER_A" },
+                    { "low": 26, "high": 29, "species": "SPECIES_SNOM" },
+                    { "low": 25, "high": 28, "species": "SPECIES_GRIMER_A" },
+                    { "low": 25, "high": 28, "species": "SPECIES_SNOM" }, 
+                    { "low": 26, "high": 29, "species": "SPECIES_GRIMER_A" }
+                ]
+            }
+        },
+        {
+            "mapgroup": 3,
             "mapnum": 29,
             "grass": {
                 "rate": 21,

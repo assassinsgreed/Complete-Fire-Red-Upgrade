@@ -7,13 +7,13 @@ Trainer Tips!\nPok\emon and trainers may lay in\lwaiting in long grass.\pBe mind
 #org @gText_Route8_FoggyWeather
 Trainer Tips!\nFoggy weather makes it difficult\lfor your Pok\emon to land their\lattacks.\pChoose moves with perfect accuracy\nto come out ahead in battle.
 
-#org @gText_Route8_CamperCasey_Intro
+#org @gText_Route8_CamperDrew_Intro
 Ugh. I wanted to go camping, but it's\nso damp here from all the rain.\pI'm going to take out my frustration\nby battling you!
 
-#org @gText_Route8_CamperCasey_Defeat
+#org @gText_Route8_CamperDrew_Defeat
 Now I'm even more frustrated!
 
-#org @gText_Route8_CamperCasey_Chat
+#org @gText_Route8_CamperDrew_Chat
 I should've checked the weather\nbefore I walked here. What a waste\lof time[.]
 
 #org @gText_Route8_NinjaBoyZeke_Intro

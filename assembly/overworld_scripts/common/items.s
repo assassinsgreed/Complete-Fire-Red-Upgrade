@@ -91,6 +91,11 @@ ItemScript_Common_Nugget:
     finditem ITEM_NUGGET 0x1
     end
 
+.global ItemScript_Common_FireStone
+ItemScript_Common_FireStone:
+    finditem ITEM_FIRE_STONE 0x1
+    end
+
 .global ItemScript_Common_SunStone
 ItemScript_Common_SunStone:
     finditem ITEM_SUN_STONE 0x1
@@ -155,6 +160,11 @@ ItemScript_Common_MysticWater:
 .global ItemScript_Common_Magnet
 ItemScript_Common_Magnet:
     finditem ITEM_MAGNET 0x1
+    end
+
+.global ItemScript_Common_SharpBeak
+ItemScript_Common_SharpBeak:
+    finditem ITEM_SHARP_BEAK 0x1
     end
 
 .global ItemScript_Common_SoftSand

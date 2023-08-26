@@ -529,7 +529,7 @@ npc 1 6 9 EvenScript_HeleoRanch_Ampharos
 npc 1 6 10 EvenScript_HeleoRanch_BurglarCole
 npc 1 6 11 EvenScript_HeleoRanch_CamperTroy
 npc 1 6 12 EvenScript_HeleoRanch_BreederLaura
-npc 1 6 13 EvenScript_HeleoRanch_PicknickerCasey
+npc 1 6 13 EvenScript_HeleoRanch_PicknickerCarly
 npc 1 6 14 ItemScript_Common_MiracleSeed
 npc 1 6 15 ItemScript_Common_Nestball
 npc 1 6 16 EventScript_HeleoRanch_FindTM45Attract
@@ -709,7 +709,7 @@ npc 3 26 21 ItemScript_Common_KingsRock
 npc 3 26 22 ItemScript_Common_PoisonBarb
 npc 3 26 23 ItemScript_Common_Greatball
 npc 3 26 24 ItemScript_Common_MistySeed
-npc 3 26 25 EventScript_Route8_CamperCasey
+npc 3 26 25 EventScript_Route8_CamperDrew
 npc 3 26 26 EventScript_Route8_NinjaBoyZeke
 npc 3 26 27 EventScript_Route8_SuperNerdSaul
 npc 3 26 28 EventScript_Route8_RockerParker
@@ -1017,4 +1017,24 @@ sign 1 30 2 SignScript_DaimynFactoryOverworld_TrainerTipsFriendlyPokemonMoreExp
 tile 1 30 0 TileScript_DaimynFactoryOverworld_DaimynFactoryLocked
 
 # Route 9
+npc 3 27 0 EventScript_Common_Cut
+npc 3 27 1 EventScript_Common_Cut
+npc 3 27 2 EventScript_Route9_Sceptilite
+npc 3 27 3 ItemScript_Common_FireStone
+npc 3 27 4 ItemScript_Common_SharpBeak
+npc 3 27 5 EventScript_Route9_TM62_Acrobatics
+npc 3 27 6 EventScript_Common_Cut
+npc 3 27 7 EventScript_Route9_SlowbroGirl
+npc 3 27 8 EventScript_Route9_Slowbro
+npc 3 27 9 EventScript_Route9_CollectorMarshall
+npc 3 27 10 EventScript_Route9_CoolTrainerAndrea
+npc 3 27 11 EventScript_Route9_FishermanYusuf
+npc 3 27 12 EventScript_Route9_GentlemanGavin
+npc 3 27 13 EventScript_Route9_NinjaBoyAyrton
+npc 3 27 14 EventScript_Route9_BreederTalia
+npc 3 27 15 EventScript_Route9_PicknickerZoe
+npc 3 27 16 EventScript_Route9_CoolTrainerKingsley
+sign 3 27 0 SignScript_Route9_TrainerTips
+sign 3 27 1 SignScript_Route9_FlutistsHouse
+sign 3 27 2 SignScript_Route9_Route12RestHouse
 npc 19 0 0 EventScript_Route9_Flutist

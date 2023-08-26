@@ -68,7 +68,7 @@
 #define FLAG_HIDE_HELEO_RANCH_AMPHAROS                     0x03E
 #define FLAG_USED_ALREADY???                               0x03F
 #define FLAG_HIDE_PIKACHU_GIFT_IN_DAIMYN_CTIY              0x040
-#define FLAG_HIDE_SEAFOAM_1F_BOULDER_2                     0x041
+#define FLAG_HIDE_ROUTE9_SLOWBRO_AND_GIRL                  0x041
 #define FLAG_HIDE_SEAFOAM_B1F_BOULDER_1                    0x042
 #define FLAG_HIDE_SEAFOAM_B1F_BOULDER_2                    0x043
 #define FLAG_HIDE_SEAFOAM_B2F_BOULDER_1                    0x044
@@ -459,10 +459,10 @@
 #define FLAG_HIDE_DAIMYN_FACTORY_OVERWORLD_LUCARIONITE          0x1C1
 #define FLAG_HIDE_DAIMYN_FACTORY_OVERWORLD_TM57_CHARGE_BEAM     0x1C2
 #define FLAG_HIDE_DAIMYN_FACTORY_OVERWORLD_EJECT_BUTTON         0x1C3
-#define FLAG_HIDE_ROCK_TUNNEL_1F_PEARL                          0x1C4
-#define FLAG_HIDE_ROCK_TUNNEL_1F_ESCAPE_ROPE                    0x1C5
-#define FLAG_HIDE_ROCK_TUNNEL_B1F_REVIVE                        0x1C6
-#define FLAG_HIDE_ROCK_TUNNEL_B1F_MAX_ETHER                     0x1C7
+#define FLAG_HIDE_ROUTE9_SCEPTILITE                             0x1C4
+#define FLAG_HIDE_ROUTE9_SHARP_BEAK                             0x1C5
+#define FLAG_HIDE_ROUTE9_FIRE_STONE                             0x1C6
+#define FLAG_HIDE_ROUTE9_TM62_ACROBATICS                        0x1C7
 #define FLAG_HIDE_SILPH_CO_8F_IRON                              0x1C8
 #define FLAG_HIDE_SILPH_CO_11F_ZINC                             0x1C9
 #define FLAG_HIDE_POKEMON_MANSION_1F_PROTEIN                    0x1CA
@@ -1079,8 +1079,8 @@
 #define HIDDEN_ITEM_DAIMYN_FACTORY_OVERWORLD_RARE_CANDY                50
 #define HIDDEN_ITEM_DAIMYN_FACTORY_OVERWORLD_HARD_STONE                51
 #define HIDDEN_ITEM_DAIMYN_FACTORY_OVERWORLD_NUGGET                    52
-#define HIDDEN_ITEM_CELADON_CITY_GAME_CORNER_COINS_3                   53
-#define HIDDEN_ITEM_CELADON_CITY_GAME_CORNER_COINS_4                   54
+#define HIDDEN_ITEM_ROUTE9_NEST_BALL                                   53
+#define HIDDEN_ITEM_ROUTE9_TOXIC_ORB                                   54
 #define HIDDEN_ITEM_CELADON_CITY_GAME_CORNER_COINS_5                   55
 #define HIDDEN_ITEM_CELADON_CITY_GAME_CORNER_COINS_6                   56
 #define HIDDEN_ITEM_CELADON_CITY_GAME_CORNER_COINS_7                   57
