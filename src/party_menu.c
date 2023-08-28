@@ -2710,6 +2710,25 @@ void FieldUseFunc_Honey(u8 taskId)
 	SetUpItemUseOnFieldCallback(taskId);
 }
 
+extern const u8 gText_ExpShareTurnedOff[];
+extern const u8 gText_ExpShareTurnedOn[];
+
+void FieldUseFunc_ExpShare(u8 taskId)
+{
+	if (FlagGet(FLAG_EXP_SHARE))
+	{
+		PlaySE(SE_PC_OFF);
+		FlagClear(FLAG_EXP_SHARE);
+		DisplayItemMessageInBag(taskId, 2, gText_ExpShareTurnedOff, Task_ReturnToBagFromContextMenu);
+	}
+	else
+	{
+		PlaySE(SE_PC_ON);
+		FlagSet(FLAG_EXP_SHARE);
+		DisplayItemMessageInBag(taskId, 2, gText_ExpShareTurnedOn, Task_ReturnToBagFromContextMenu);
+	}	
+}
+
 extern u8 GetCurrentLevelCap(void); //Must be implemented yourself
 void ItemUseCB_RareCandy(u8 taskId, TaskFunc func)
 {

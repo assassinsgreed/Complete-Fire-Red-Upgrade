@@ -72,3 +72,9 @@ Change [BUFFER1]'s nickname?
 
 #org @gText_NicknameChanged
 [BUFFER1]'s nickname has been changed![PAUSE_UNTIL_PRESS]
+
+#org @gText_ExpShareTurnedOff
+The Exp. Share was turned off.[PAUSE_UNTIL_PRESS]
+
+#org @gText_ExpShareTurnedOn
+The Exp. Share was turned on.[PAUSE_UNTIL_PRESS]

@@ -280,6 +280,7 @@ FieldUseFunc_FormChangeItem 8734C14
 FieldUseFunc_FormChangeItem 8734C40
 
 FieldUseFunc_Honey 872E788
+FieldUseFunc_ExpShare 872FA70
 
 ## Stat reducing berries, in stat order (HP, Atk, Def, Sp Atk, Sp Def, Spd)
 FieldUseFunc_EVReducingBerry 872F574
