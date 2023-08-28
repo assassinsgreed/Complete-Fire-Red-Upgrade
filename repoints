@@ -395,6 +395,9 @@ NursePal 8239D1C
 ## Replace Rival 1 (106)
 Rival1Tiles 82398CC
 Rival1Pal 8239D6C
+## Replace Male Rocket Grunt (109)
+PlutoGruntMTiles 82398E4
+PlutoGruntMPal 8239D84
 ## Replace Brock (116)
 LeaderTerrenceBTiles 823991C
 LeaderTerrenceBPal 8239DBC
@@ -410,9 +413,9 @@ LeaderChanceBPal 8239DD4
 ## Replace Koga (120)
 LeaderCaseyFBTiles 823993C
 LeaderCaseyFBPal 8239DDC
-## Replace Male Rocket Grunt (109)
-PlutoGruntMTiles 82398E4
-PlutoGruntMPal 8239D84
+## Replace Rival 2 (124)
+Rival2Tiles 823995C
+Rival2Pal 8239DFC
 ## Replace Female Rocket Grunt (137)
 PlutoGruntFTiles 82399C4
 PlutoGruntFPal 8239E64
