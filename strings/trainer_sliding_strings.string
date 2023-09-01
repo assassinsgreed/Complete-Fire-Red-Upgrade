@@ -42,6 +42,12 @@ Uh oh, I'd better step my game up.
 #org @sText_Casey1_LowHP
 We can still pull through. Come on,\nlet's do this [FD][06]!
 
+#org @sText_Casey2_LastSwitchIn
+Down to my last Pok\emon, huh?
+
+#org @sText_Casey2_LowHP
+We're still in this. Let's go, [FD][06]!
+
 // Rival n here!
 
 // Leader 1 (Terrence)

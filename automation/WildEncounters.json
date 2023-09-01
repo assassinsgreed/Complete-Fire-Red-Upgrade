@@ -340,7 +340,7 @@
             "mapgroup": 1,
             "mapnum": 30,
             "grass": {
-                "rate": 5,
+                "rate": 21,
                 "pokemon": [
                     { "low": 27, "high": 29, "species": "SPECIES_TOXEL" },
                     { "low": 26, "high": 30, "species": "SPECIES_KLINK" },
@@ -364,6 +364,37 @@
                     { "low": 24, "high": 28, "species": "SPECIES_KLINK" },
                     { "low": 25, "high": 30, "species": "SPECIES_SHUCKLE" },
                     { "low": 26, "high": 29, "species": "SPECIES_SHUCKLE" }
+                ]
+            }
+        },
+        {
+            "mapgroup": 1,
+            "mapnum": 31,
+            "grass": {
+                "rate": 5,
+                "pokemon": [
+                    { "low": 25, "high": 28, "species": "SPECIES_ZUBAT" },
+                    { "low": 26, "high": 29, "species": "SPECIES_ZUBAT" },
+                    { "low": 26, "high": 29, "species": "SPECIES_ROCKRUFF" },
+                    { "low": 26, "high": 29, "species": "SPECIES_ROCKRUFF" },
+                    { "low": 26, "high": 29, "species": "SPECIES_ROCKRUFF" },
+                    { "low": 25, "high": 28, "species": "SPECIES_GOLBAT" },
+                    { "low": 25, "high": 28, "species": "SPECIES_LYCANROC" },
+                    { "low": 25, "high": 28, "species": "SPECIES_GOLBAT" },
+                    { "low": 26, "high": 29, "species": "SPECIES_GOLBAT" },
+                    { "low": 25, "high": 28, "species": "SPECIES_LYCANROC" },
+                    { "low": 25, "high": 28, "species": "SPECIES_LYCANROC" }, 
+                    { "low": 26, "high": 29, "species": "SPECIES_GOLBAT" }
+                ]
+            },
+            "rocks": {
+                "rate": 50,
+                "pokemon": [
+                    { "low": 22, "high": 28, "species": "SPECIES_SHUCKLE" },
+                    { "low": 21, "high": 27, "species": "SPECIES_CARBINK" },
+                    { "low": 25, "high": 30, "species": "SPECIES_BOLDORE" },
+                    { "low": 25, "high": 30, "species": "SPECIES_BOLDORE" },
+                    { "low": 25, "high": 30, "species": "SPECIES_BOLDORE" }
                 ]
             }
         },
@@ -800,6 +831,52 @@
                     { "low": 25, "high": 28, "species": "SPECIES_GRIMER_A" },
                     { "low": 25, "high": 28, "species": "SPECIES_SNOM" }, 
                     { "low": 26, "high": 29, "species": "SPECIES_GRIMER_A" }
+                ]
+            },
+            "surfing": {
+                "rate": 1,
+                "pokemon": [
+                    { "low": 33, "high": 37, "species": "SPECIES_CHINCHOU" },
+                    { "low": 30, "high": 35, "species": "SPECIES_MAGIKARP" },
+                    { "low": 32, "high": 38, "species": "SPECIES_CHINCHOU" },
+                    { "low": 33, "high": 38, "species": "SPECIES_HORSEA" },
+                    { "low": 34, "high": 35, "species": "SPECIES_HORSEA" }
+                ]
+            },
+            "fishing": {
+                "rate": 20,
+                "pokemon": [
+                    { "low": 5, "high": 20, "species": "SPECIES_MAGIKARP" },
+                    { "low": 5, "high": 20, "species": "SPECIES_CHINCHOU" },
+                    { "low": 20, "high": 25, "species": "SPECIES_MAGIKARP" },
+                    { "low": 20, "high": 25, "species": "SPECIES_CHINCHOU" },
+                    { "low": 20, "high": 25, "species": "SPECIES_CHINCHOU" },
+                    { "low": 30, "high": 40, "species": "SPECIES_GYARADOS" },
+                    { "low": 30, "high": 40, "species": "SPECIES_LANTURN" },
+                    { "low": 30, "high": 40, "species": "SPECIES_MAGIKARP" },
+                    { "low": 30, "high": 40, "species": "SPECIES_MAGIKARP" },
+                    { "low": 30, "high": 40, "species": "SPECIES_CHINCHOU" }
+                ]
+            }
+        },
+        {
+            "mapgroup": 3,
+            "mapnum": 28,
+            "grass": {
+                "rate": 21,
+                "pokemon": [
+                    { "low": 25, "high": 28, "species": "SPECIES_ELGYEM" },
+                    { "low": 26, "high": 29, "species": "SPECIES_KIRLIA" },
+                    { "low": 26, "high": 29, "species": "SPECIES_CRABRAWLER" },
+                    { "low": 26, "high": 29, "species": "SPECIES_CRABRAWLER" },
+                    { "low": 25, "high": 28, "species": "SPECIES_MIENFOO" },
+                    { "low": 25, "high": 28, "species": "SPECIES_MIENFOO" },
+                    { "low": 25, "high": 28, "species": "SPECIES_MIENFOO" },
+                    { "low": 25, "high": 28, "species": "SPECIES_ELGYEM" },
+                    { "low": 26, "high": 29, "species": "SPECIES_CORVISQUIRE" },
+                    { "low": 25, "high": 28, "species": "SPECIES_ROCKRUFF" },
+                    { "low": 25, "high": 28, "species": "SPECIES_CORVISQUIRE" }, 
+                    { "low": 26, "high": 29, "species": "SPECIES_ROCKRUFF" }
                 ]
             }
         },

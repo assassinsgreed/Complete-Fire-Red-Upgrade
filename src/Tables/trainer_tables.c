@@ -9,7 +9,9 @@
 #include "../../include/new/build_pokemon_2.h"
 
 // See battle.h for a list of struct types that can be used
+
 // #region Trainer Structs
+
 // #region Important trainers
 const struct TrainerMonNoItemDefaultMoves sParty_Rival1[] = {
     { .iv = 0, .lvl = 5, .species = SPECIES_EEVEE },
@@ -79,6 +81,32 @@ const struct TrainerMonItemCustomMoves sParty_Casey1[] = {
             MOVE_SCALESHOT
         },
         .heldItem = ITEM_ORAN_BERRY,
+        .ability = Ability_2 // Sniper
+    }
+};
+
+const struct TrainerMonItemCustomMoves sParty_Casey2[] = {
+    {
+        .lvl = 35,
+        .species = SPECIES_ELGYEM,
+        .moves = {
+            MOVE_THUNDERBOLT,
+            MOVE_PSYCHIC,
+            MOVE_COSMICPOWER,
+            MOVE_AGILITY
+        },
+        .ability = Ability_2 // Synchronize
+    },
+    {
+        .lvl = 37,
+        .species = SPECIES_SEADRA,
+        .moves = {
+            MOVE_FOCUSENERGY,
+            MOVE_MUDDYWATER,
+            MOVE_ICYWIND,
+            MOVE_CLEARSMOG
+        },
+        .heldItem = ITEM_SITRUS_BERRY,
         .ability = Ability_2 // Sniper
     }
 };
@@ -1560,11 +1588,78 @@ const struct TrainerMonNoItemDefaultMoves sParty_Route9_CoolTrainer_Kingsley[] =
 };
 // #endregion
 
+// #region Route 10
+const struct TrainerMonNoItemDefaultMoves sParty_Route10_PsychicDarius[] = {
+    { .lvl = 31, .species = SPECIES_KIRLIA },
+    { .lvl = 32, .species = SPECIES_MR_MIME_G },
+    { .lvl = 32, .species = SPECIES_WOBBUFFET },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route10_BirdKeeperMario[] = {
+    { .lvl = 32, .species = SPECIES_NOCTOWL },
+    { .lvl = 32, .species = SPECIES_PELIPPER },
+    { .lvl = 32, .species = SPECIES_SKARMORY },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route10_GamblerDarren[] = {
+    { .lvl = 34, .species = SPECIES_LILEEP },
+    { .lvl = 34, .species = SPECIES_GLACEON },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route10_ParasolLadyGwen[] = {
+    { .lvl = 36, .species = SPECIES_FLORGES_YELLOW },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route10_CamperJackson[] = {
+    { .lvl = 34, .species = SPECIES_NIDORINO },
+    { .lvl = 36, .species = SPECIES_CHESNAUGHT },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route10_RockerBert[] = {
+    { .lvl = 33, .species = SPECIES_THWACKEY },
+    { .lvl = 33, .species = SPECIES_NOIBAT },
+    { .lvl = 35, .species = SPECIES_TOXTRICITY_LOW_KEY },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route10_SwimmerAlberto[] = {
+    { .lvl = 35, .species = SPECIES_CORSOLA_G },
+    { .lvl = 35, .species = SPECIES_CORPHISH },
+    { .lvl = 38, .species = SPECIES_CURSOLA },
+    { .lvl = 38, .species = SPECIES_CRAWDAUNT },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route10_SwimmerRosie[] = {
+    { .lvl = 40, .species = SPECIES_JELLICENT_F },
+    { .lvl = 42, .species = SPECIES_LAPRAS },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route10_SwimmerDoug[] = {
+    { .lvl = 39, .species = SPECIES_CARVANHA },
+    { .lvl = 39, .species = SPECIES_SLOWBRO },
+    { .lvl = 40, .species = SPECIES_BLASTOISE },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route10Cave_HikerHarley[] = {
+    { .lvl = 32, .species = SPECIES_BOLDORE },
+    { .lvl = 32, .species = SPECIES_CARKOL },
+    { .lvl = 34, .species = SPECIES_GIGALITH },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route10Cave_BlackbeltXavier[] = {
+    { .lvl = 33, .species = SPECIES_MONFERNO },
+    { .lvl = 34, .species = SPECIES_GURDURR },
+};
+
+// #endregion
+
+// #endregion
+
 #define NO_NAME                                                                                      \
     {                                                                                                \
         _END, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE \
     }
 
+// #region Trainer Definitions 
 const struct Trainer gTrainers[] = {
     [TRAINER_NONE] = {
         .trainerName = NO_NAME,
@@ -3574,5 +3669,165 @@ const struct Trainer gTrainers[] = {
         .partySize = NELEMS(sParty_Route9_CoolTrainer_Kingsley),
         .party = {.NoItemDefaultMoves = sParty_Route9_CoolTrainer_Kingsley}
     },
+    // #endregion
+    // #region Route 10
+    [TRAINER_ROUTE_10_PSYCHIC_DARIUS] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_PSYCHIC,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_PSYCHIC_M,
+        .trainerName = {_D, _a, _r, _i, _u, _s, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE,
+        .partySize = NELEMS(sParty_Route10_PsychicDarius),
+        .party = {.NoItemDefaultMoves = sParty_Route10_PsychicDarius}
+    },
+    [TRAINER_ROUTE_10_BIRDKEEPER_MARIO] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_BIRD_KEEPER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_BIRD_KEEPER,
+        .trainerName = {_M, _a, _r, _i, _o, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_TRY_TO_FAINT,
+        .partySize = NELEMS(sParty_Route10_BirdKeeperMario),
+        .party = {.NoItemDefaultMoves = sParty_Route10_BirdKeeperMario}
+    },
+    [TRAINER_ROUTE_10_GAMBLER_DARREN] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_GAMBLER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_GAMBLER,
+        .trainerName = {_D, _a, _r, _r, _e, _n, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_RISKY,
+        .partySize = NELEMS(sParty_Route10_GamblerDarren),
+        .party = {.NoItemDefaultMoves = sParty_Route10_GamblerDarren}
+    },
+    [TRAINER_ROUTE_10_PARASOLLADY_GWEN] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_PARASOL_LADY,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .trainerPic = TRAINER_PIC_PARASOL_LADY,
+        .trainerName = {_G, _w, _e, _n, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE,
+        .partySize = NELEMS(sParty_Route10_ParasolLadyGwen),
+        .party = {.NoItemDefaultMoves = sParty_Route10_ParasolLadyGwen}
+    },
+    [TRAINER_ROUTE_10_CAMPER_JACKSON] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_CAMPER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_CAMPER,
+        .trainerName = {_J, _a, _c, _k, _s, _o, _n, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_GOOD_MOVE,
+        .partySize = NELEMS(sParty_Route10_CamperJackson),
+        .party = {.NoItemDefaultMoves = sParty_Route10_CamperJackson}
+    },
+    [TRAINER_ROUTE_10_ROCKER_BERT] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_GUITARIST_RS,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
+        .trainerPic = TRAINER_PIC_GUITARIST,
+        .trainerName = {_B, _e, _r, _t, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_TRY_TO_FAINT,
+        .partySize = NELEMS(sParty_Route10_RockerBert),
+        .party = {.NoItemDefaultMoves = sParty_Route10_RockerBert}
+    },
+    [TRAINER_ROUTE_10_SWIMMER_ALBERTO] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_SWIMMER_M,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
+        .trainerPic = TRAINER_PIC_SWIMMER_M,
+        .trainerName = {_A, _l, _b, _e, _r, _t, _o, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY,
+        .partySize = NELEMS(sParty_Route10_SwimmerAlberto),
+        .party = {.NoItemDefaultMoves = sParty_Route10_SwimmerAlberto}
+    },
+    [TRAINER_ROUTE_10_SWIMMER_ROSIE] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_SWIMMER_F,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
+        .trainerPic = TRAINER_PIC_SWIMMER_F,
+        .trainerName = {_R, _o, _s, _i, _e, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY,
+        .partySize = NELEMS(sParty_Route10_SwimmerRosie),
+        .party = {.NoItemDefaultMoves = sParty_Route10_SwimmerRosie}
+    },
+    [TRAINER_ROUTE_10_SWIMMER_DOUG] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_SWIMMER_M,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
+        .trainerPic = TRAINER_PIC_SWIMMER_M,
+        .trainerName = {_D, _o, _u, _g, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY,
+        .partySize = NELEMS(sParty_Route10_SwimmerDoug),
+        .party = {.NoItemDefaultMoves = sParty_Route10_SwimmerDoug}
+    },
+    [TRAINER_ROUTE_10_CASEY_F] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_PKMN_TRAINER_1,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_CASEY_M,
+        .trainerName = {_C, _a, _s, _e, _y, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_SEMI_SMART,
+        .partySize = NELEMS(sParty_Casey2),
+        .party = {.ItemCustomMoves = sParty_Casey2}
+    },
+    [TRAINER_ROUTE_10_CASEY_M] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_PKMN_TRAINER_1,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_CASEY_M,
+        .trainerName = {_C, _a, _s, _e, _y, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_SEMI_SMART,
+        .partySize = NELEMS(sParty_Casey2),
+        .party = {.ItemCustomMoves = sParty_Casey2}
+    },
+    [TRAINER_ROUTE_10_CAVE_HIKER_HARLEY] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_HIKER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
+        .trainerPic = TRAINER_PIC_HIKER,
+        .trainerName = {_H, _a, _r, _l, _e, _y, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = NELEMS(sParty_Route10Cave_HikerHarley),
+        .party = {.NoItemDefaultMoves = sParty_Route10Cave_HikerHarley}
+    },
+    [TRAINER_ROUTE_10_CAVE_BLACKBELT_XAVIER] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_BLACK_BELT,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_BLACK_BELT,
+        .trainerName = {_X, _a, _v, _i, _e, _r, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_TRY_TO_FAINT,
+        .partySize = NELEMS(sParty_Route10Cave_BlackbeltXavier),
+        .party = {.NoItemDefaultMoves = sParty_Route10Cave_BlackbeltXavier}
+    },
+    // #endregion
+
     // #endregion
 };

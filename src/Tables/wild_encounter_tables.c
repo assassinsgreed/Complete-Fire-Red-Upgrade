@@ -99,11 +99,28 @@ const struct WildPokemon gDaimynCity_LandMonsNight[] =
 	{25, 28, SPECIES_MIMIKYU}
 };
 
+const struct WildPokemon gRoute10Cave_LandMonsNight[] =
+{
+	{25, 28, SPECIES_ZUBAT},
+	{26, 29, SPECIES_ZUBAT},
+	{26, 29, SPECIES_ROCKRUFF},
+	{26, 29, SPECIES_ROCKRUFF},
+	{26, 29, SPECIES_ROCKRUFF},
+	{25, 28, SPECIES_GOLBAT},
+	{25, 28, SPECIES_LYCANROC_N},
+	{25, 28, SPECIES_GOLBAT},
+	{26, 29, SPECIES_GOLBAT},
+	{25, 28, SPECIES_LYCANROC_N},
+	{25, 28, SPECIES_LYCANROC_N}, 
+	{26, 29, SPECIES_GOLBAT}
+};
+
 const struct WildPokemonInfo gVarisiForest_LandMonsNightInfo = {21, gVarisiForest_LandMonsNight};
 const struct WildPokemonInfo gRubarrDesert_LandMonsNightInfo = {5, gRubarrDesert_LandMonsNight};
 const struct WildPokemonInfo gHeleoRanch_LandMonsNightInfo = {21, gHeleoRanch_LandMonsNight};
 const struct WildPokemonInfo gForgottenManseExterior_LandMonsNightInfo = {21, gForgottenManseExterior_LandMonsNight};
 const struct WildPokemonInfo gDaimynCity_LandMonsNightInfo = {21, gDaimynCity_LandMonsNight};
+const struct WildPokemonInfo gRoute10Cave_LandMonsNightInfo = {5, gRoute10Cave_LandMonsNight};
 
 const struct WildPokemonHeader gWildMonMorningHeaders[] =
 {
@@ -161,6 +178,14 @@ const struct WildPokemonHeader gWildMonEveningHeaders[] =
 		.fishingMonsInfo = NULL,
 	},
 	{
+		.mapGroup = MAP_GROUP(ROUTE10_CAVE),
+		.mapNum = MAP_NUM(ROUTE10_CAVE),
+		.landMonsInfo = &gRoute10Cave_LandMonsNightInfo,
+		.waterMonsInfo = NULL,
+		.rockSmashMonsInfo = NULL,
+		.fishingMonsInfo = NULL,
+	},
+	{
 		.mapGroup = 0xFF,
 		.mapNum = 0xFF,
 		.landMonsInfo = NULL,
@@ -208,6 +233,14 @@ const struct WildPokemonHeader gWildMonNightHeaders[] =
 		.mapGroup = MAP_GROUP(DAIMYN_CITY),
 		.mapNum = MAP_NUM(DAIMYN_CITY),
 		.landMonsInfo = &gDaimynCity_LandMonsNightInfo,
+		.waterMonsInfo = NULL,
+		.rockSmashMonsInfo = NULL,
+		.fishingMonsInfo = NULL,
+	},
+	{
+		.mapGroup = MAP_GROUP(ROUTE10_CAVE),
+		.mapNum = MAP_NUM(ROUTE10_CAVE),
+		.landMonsInfo = &gRoute10Cave_LandMonsNightInfo,
 		.waterMonsInfo = NULL,
 		.rockSmashMonsInfo = NULL,
 		.fishingMonsInfo = NULL,

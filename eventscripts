@@ -1038,3 +1038,37 @@ sign 3 27 0 SignScript_Route9_TrainerTips
 sign 3 27 1 SignScript_Route9_FlutistsHouse
 sign 3 27 2 SignScript_Route9_Route12RestHouse
 npc 19 0 0 EventScript_Route9_Flutist
+
+# Route 10
+npc 3 28 0 ItemScript_Common_RockIncense
+npc 3 28 1 ItemScript_Common_PsychicSeed
+npc 3 28 2 EventScript_Route10_TM64_Explosion
+npc 3 28 3 EventScript_Route10_TM41_Torment
+npc 3 28 4 EventScript_Route10_Lopunnite
+npc 3 28 5 ItemScript_Common_DragonScale
+npc 3 28 6 EventScript_Common_Cut
+npc 3 28 7 EventScript_Route10_PsychicDarius
+npc 3 28 8 EventScript_Route10_BirdKeeperMario
+npc 3 28 9 EventScript_Route10_GamblerDarren
+npc 3 28 10 EventScript_Route10_ParasolLadyGwen
+npc 3 28 11 EventScript_Route10_CamperJackson
+npc 3 28 12 EventScript_Route10_RockerBert
+npc 3 28 13 EventScript_Route10_SwimmerAlberto
+npc 3 28 14 EventScript_Route10_SwimmerRosie
+npc 3 28 15 EventScript_Route10_SwimmerDoug
+## Signs 0 and 1 are hidden items
+sign 3 28 2 SignScript_Route10_TrainerTips_EvolutionTypes
+sign 3 28 3 SignScript_Route10_TrainerTips_TimeOfDay
+sign 3 28 4 SignScript_Route10_Route11Path
+tile 3 28 0 TileScript_Route10_TriggerCaseyBattle_Above
+tile 3 28 1 TileScript_Route10_TriggerCaseyBattle_Below
+npc 1 31 0 EventScript_Route10Cave_HikerHarley
+npc 1 31 1 EventScript_Route10Cave_BlackbeltXavier
+npc 1 31 2 ItemScript_Common_Elixir
+npc 1 31 3 EventScript_Route10Cave_TM23_SmackDown
+npc 1 31 4 EventScript_Common_RockSmash
+npc 1 31 5 EventScript_Common_RockSmash
+npc 1 31 6 EventScript_Common_RockSmash
+npc 1 31 7 EventScript_Common_RockSmash
+npc 1 31 8 EventScript_Common_RockSmash
+npc 1 31 9 EventScript_Common_RockSmash
