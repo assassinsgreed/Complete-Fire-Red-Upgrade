@@ -56,6 +56,11 @@ ItemScript_Common_SodaPop:
     finditem ITEM_SODA_POP 0x1
     end
 
+.global ItemScript_Common_Elixir
+ItemScript_Common_Elixir:
+    finditem ITEM_ELIXIR 0x1
+    end
+
 .global ItemScript_Common_MaxElixir
 ItemScript_Common_MaxElixir:
     finditem ITEM_MAX_ELIXIR 0x1
@@ -247,6 +252,11 @@ ItemScript_Common_OddIncense:
     finditem ITEM_ODD_INCENSE 0x1
     end
 
+.global ItemScript_Common_RockIncense
+ItemScript_Common_RockIncense:
+    finditem ITEM_ROCK_INCENSE 0x1
+    end
+
 .global ItemScript_Common_MetalCoat
 ItemScript_Common_MetalCoat:
     finditem ITEM_METAL_COAT 0x1
@@ -307,6 +317,11 @@ ItemScript_Common_MistySeed:
     finditem ITEM_MISTY_SEED 0x1
     end
 
+.global ItemScript_Common_PsychicSeed
+ItemScript_Common_PsychicSeed:
+    finditem ITEM_PSYCHIC_SEED 0x1
+    end
+
 .global ItemScript_Common_TerrainExtender
 ItemScript_Common_TerrainExtender:
     finditem ITEM_TERRAIN_EXTENDER 0x1
@@ -330,4 +345,9 @@ ItemScript_Common_ShellBell:
 .global ItemScript_Common_KingsRock
 ItemScript_Common_KingsRock:
     finditem ITEM_KINGS_ROCK 0x1
+    end
+
+.global ItemScript_Common_DragonScale
+ItemScript_Common_DragonScale:
+    finditem ITEM_DRAGON_SCALE 0x1
     end
