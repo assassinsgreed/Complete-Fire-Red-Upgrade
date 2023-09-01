@@ -177,6 +177,8 @@ ReturningDexNavs:
     hidesprite Rival
     hidesprite Assistant
     setflag 0x32 @ Hide assistant
+    clearflag 0x35 @ Show NPCs on Route 4
+    clearflag 0x36 @ Show Foreman on Route 4
     end
 
 MovePlayerBelowAssistantRight:
