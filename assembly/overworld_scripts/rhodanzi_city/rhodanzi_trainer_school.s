@@ -70,8 +70,8 @@ TerrainTutor:
     compare LASTRESULT TRUE
     if FALSE _goto NotEnoughPokeChips
     msgbox gText_RhodanziTrainerSchool_MainRoom_TerrainTutor_ConfirmationAccepted MSG_KEEPOPEN
-    call EventScript_Tutors_Terrain
     loadpointer 0x0 gText_RhodanziTrainerSchool_MainRoom_TerrainTutor_Complete
+    call EventScript_Tutors_Terrain
     release
     end
 
@@ -160,11 +160,15 @@ EventScript_RhodanziTrainerSchool_BasicCourse_TypeStudent_QuizQuestionWater:
     return
 
 EventScript_RhodanziTrainerSchool_BasicCourse_TypeStudent_QuizSuccess:
+    applymovement LASTTALKED m_Joy
+    playse 0x19 @ Correct
     msgbox gText_RhodanziTrainerSchool_BasicCourse_TypeStudent_QuizSuccess MSG_FACE
     setflag 0x230
     return
 
 EventScript_RhodanziTrainerSchool_BasicCourse_TypeStudent_QuizFail:
+    applymovement LASTTALKED m_Wrong
+    playse 0x1A @ Error
     msgbox gText_RhodanziTrainerSchool_BasicCourse_TypeStudent_QuizFail MSG_FACE
     return
 

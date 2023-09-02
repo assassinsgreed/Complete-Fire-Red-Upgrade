@@ -22,6 +22,32 @@ const struct TrainerMonNoItemDefaultMoves sParty_Rival2[] = {
     { .lvl = 14, .species = SPECIES_EEVEE },
 };
 
+const struct TrainerMonNoItemCustomMoves sParty_PartnerRival1[] = {
+    {
+        .lvl = 13,
+        .species = SPECIES_ROOKIDEE,
+        .moves = {
+            MOVE_FURYATTACK,
+            MOVE_HONECLAWS,
+            MOVE_POWERTRIP,
+            MOVE_ROCKSMASH
+        },
+        .ability = Ability_1 // Keen Eye
+    },
+    {
+        .lvl = 15,
+        .species = SPECIES_EEVEE,
+        .moves = {
+            MOVE_QUICKATTACK,
+            MOVE_HELPINGHAND,
+            MOVE_BABYDOLLEYES,
+            MOVE_SANDATTACK
+        },
+        .ability = Ability_2 // Adaptability
+    }
+};
+
+
 const struct TrainerMonItemCustomMoves sParty_Rival3[] = {
     {
         .lvl = 32,
@@ -327,13 +353,13 @@ const struct TrainerMonNoItemDefaultMoves sParty_RubarrDesert_TeamPlutoClancy[] 
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_RubarrDesert_TeamPlutoEna[] = {
-    { .lvl = 12, .species = SPECIES_ZUBAT },
+    { .lvl = 13, .species = SPECIES_ZUBAT },
     { .lvl = 13, .species = SPECIES_VENIPEDE },
 };
 
 const struct TrainerMonNoItemCustomMoves sParty_RubarrDesert_TeamPlutoAdminIrene[] = {
     {
-        .lvl = 13,
+        .lvl = 14,
         .species = SPECIES_NICKIT,
         .moves = {
             MOVE_SNARL,
@@ -344,7 +370,7 @@ const struct TrainerMonNoItemCustomMoves sParty_RubarrDesert_TeamPlutoAdminIrene
         .ability = Ability_Hidden // Stakeout
     },
     {
-        .lvl = 13,
+        .lvl = 14,
         .species = SPECIES_SANDILE,
         .moves = {
             MOVE_SCARYFACE,
@@ -1688,6 +1714,18 @@ const struct Trainer gTrainers[] = {
         .aiFlags = AI_SCRIPT_TRY_TO_FAINT,
         .partySize = NELEMS(sParty_Rival2),
         .party = {.NoItemDefaultMoves = sParty_Rival2}
+    },
+    [TRAINER_RUBARR_DESERT_PARTNER_RIVAL] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .trainerClass = CLASS_RIVAL,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_RIVAL,
+        .trainerName = NO_NAME, // Name replaced from RIVAL trainer classes
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_TRY_TO_FAINT,
+        .partySize = NELEMS(sParty_PartnerRival1),
+        .party = {.NoItemCustomMoves = sParty_PartnerRival1}
     },
     [TRAINER_RIVAL3] = {
         .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,

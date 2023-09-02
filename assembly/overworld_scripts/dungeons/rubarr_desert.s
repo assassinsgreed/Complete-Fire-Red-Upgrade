@@ -51,7 +51,7 @@ EventScript_RubarrDesert_NurseJaina:
     faceplayer
     checktrainerflag 0x517
     if SET _goto NurseJainaHeal
-    trainerbattle1 0x0 0x17 0x0 gText_RubarrDesert_NurseJaina_Intro gText_RubarrDesert_NurseJaina_Defeat NurseJainaHeal
+    trainerbattle2 0x0 0x17 0x0 gText_RubarrDesert_NurseJaina_Intro gText_RubarrDesert_NurseJaina_Defeat NurseJainaHeal
     call NurseJainaHeal
 
 NurseJainaHeal:
@@ -163,12 +163,18 @@ EventScript_RubarrDesert_StoryEvents:
     applymovement Rival m_LookRight
     applymovement PLAYER m_LookLeft
     msgbox gText_RubarrDesert_RivalReadyToFight MSG_NORMAL
-    call PlayerHeal
+    call PlayerHeal    
+    signmsg
+    msgbox gText_RubarrDesert_TagBattleExplaination MSG_SIGN
+    callasm InitPartyMenuFromField
+    pause DELAY_HALFSECOND
+    normalmsg
     msgbox gText_RubarrDesert_RivalStartsFight MSG_NORMAL
     applymovement Rival m_LookUp
     applymovement PLAYER m_LookUp
-    @ Start a tag battle (0x10) against Clancy (0x21) and Ena (0x22), with Rival (0x1C) using backsprite (0x6)
-    trainerbattle10 0x10 0x21 0x22 0x1C 0x6 0x0 gText_RubarrDesert_ClancyLoses gText_RubarrDesert_EnaLoses
+    waitmovement PLAYER
+    @ Start a tag battle (0x10) against Clancy (0x21) and Ena (0x22), with Partner Rival (0xB2) using backsprite (0x6)
+    trainerbattle10 0x10 0x21 0x22 0xB2 0x6 0x0 gText_RubarrDesert_ClancyLoses gText_RubarrDesert_EnaLoses
     playbgm 0x19A @ Encounter Team Pluto
     msgbox gText_RubarrDesert_ClancyPoorLoser MSG_NORMAL
     sound 0x15 @ Exclaim
@@ -193,11 +199,19 @@ EventScript_RubarrDesert_StoryEvents:
     msgbox gText_RubarrDesert_ClancyBootlicks MSG_NORMAL
     msgbox gText_RubarrDesert_IreneRepeats MSG_NORMAL
     msgbox gText_RubarrDesert_ClancyReport MSG_NORMAL
+    applymovement PlutoGruntClancy m_LookUp
+    sound 0x69 @ DexNav search
+    waitse
+    pause DELAY_HALFSECOND
+    sound 0x1A @ Error
+    waitse
+    pause DELAY_HALFSECOND
     sound 0x15 @ Exclaim
     applymovement PlutoGruntClancy m_Surprise
     msgbox gText_RubarrDesert_ClancySurprise MSG_NORMAL
     msgbox gText_RubarrDesert_EnaResponse MSG_NORMAL
     msgbox gText_RubarrDesert_IreneFollowsUpEnasQuestion MSG_NORMAL
+    applymovement PlutoGruntClancy m_LookLeft
     msgbox gText_RubarrDesert_ClancyMentionsPokemonIsGone MSG_NORMAL
     msgbox gText_RubarrDesert_IreneClarifies MSG_NORMAL
     msgbox gText_RubarrDesert_ClancyBlamesThePlayer MSG_NORMAL

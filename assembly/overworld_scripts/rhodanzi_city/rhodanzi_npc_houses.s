@@ -32,13 +32,21 @@ EventScript_RhodanziNPCHouses_FishermanFarewell:
 
 .global EventScript_RhodanziNPCHouses_TerrenceSister
 EventScript_RhodanziNPCHouses_TerrenceSister:
+    checkflag 0x820 @ Beat Terrence
+    if SET _goto TerrenceSister_BadgeObtained
     npcchat gText_RhodanziNPCHouses_TerrenceSister
+    end
+
+TerrenceSister_BadgeObtained:
+    npcchat gText_RhodanziNPCHouses_TerrenceSister_BadgeObtained
     end
 
 .global EventScript_RhodanziNPCHouses_TerrenceLittleBrother
 EventScript_RhodanziNPCHouses_TerrenceLittleBrother:
     lock
     faceplayer
+    checkflag 0x820 @ Beat Terrence
+    if SET _goto TerrenceBrother_BadgeObtained
     msgbox gText_RhodanziNPCHouses_TerrenceLittleBrotherQuestion MSG_YESNO
     compare LASTRESULT YES
     if TRUE _goto EventScript_RhodanziNPCHouses_TerrenceLittleBrotherYes
@@ -46,12 +54,19 @@ EventScript_RhodanziNPCHouses_TerrenceLittleBrother:
     release
     end
 
+TerrenceBrother_BadgeObtained:
+    npcchatwithmovement gText_RhodanziNPCHouses_TerrenceBrother_BadgeObtained m_LookUp
+    release
+    end
+
 EventScript_RhodanziNPCHouses_TerrenceLittleBrotherYes:
     npcchat gText_RhodanziNPCHouses_TerrenceLittleBrotherQuestionYes
+    applymovement LASTTALKED m_LookUp
     end
 
 EventScript_RhodanziNPCHouses_TerrenceLittleBrotherNo:
     npcchat gText_RhodanziNPCHouses_TerrenceLittleBrotherQuestionNo
+    applymovement LASTTALKED m_LookUp
     end
 
 .global EventScript_RhodanziNPCHouses_Evolution

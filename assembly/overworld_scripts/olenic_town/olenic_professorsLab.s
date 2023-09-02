@@ -46,7 +46,15 @@ LevelScript_ReceivingPokedex:
     obtainitem ITEM_POKE_BALL 0xA @ Get 10 Pokeballs
     msgbox gText_OlenicProfessorsLab_HawthornePokeballExplanation MSG_NORMAL
     applymovement Hawthorne m_LookUp
+    special CAMERA_START
+    applymovement CAMERA m_CameraPanUp
+    waitmovement CAMERA
+    special CAMERA_END
     msgbox gText_OlenicProfessorsLab_HawthorneUsePC MSG_NORMAL
+    special CAMERA_START
+    applymovement CAMERA m_CameraPanDown
+    waitmovement CAMERA
+    special CAMERA_END
     applymovement Hawthorne m_LookDown
     msgbox gText_OlenicProfessorsLab_HawthorneExplainsGyms MSG_NORMAL
     msgbox gText_OlenicProfessorsLab_HawthorneBidsFarewell MSG_NORMAL
@@ -85,3 +93,5 @@ m_HawthorneMeetsPlayer: .byte walk_up, walk_up, walk_right, walk_right, walk_rig
 m_HawthorneGoesToPokedex: .byte walk_up, walk_right, end_m
 m_HawthorneReturnsToPlayer: .byte walk_left, walk_down, end_m
 m_HawthorneReturnsToDesk: .byte walk_up, walk_up, walk_left, walk_left, walk_left, walk_down, walk_down, look_right, end_m
+m_CameraPanUp: .byte walk_up, walk_up, walk_up, walk_up, end_m
+m_CameraPanDown: .byte walk_down, walk_down, walk_down, walk_down, end_m

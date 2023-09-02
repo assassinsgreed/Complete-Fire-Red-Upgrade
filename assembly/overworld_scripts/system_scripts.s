@@ -283,7 +283,6 @@ SystemScript_PickUpItem:
 	compare 0x8008 0x0
 	if equal _call SystemScript_FindNormalItem
 	waitfanfare
-	waitmsg
 	msgbox 0x81A5218 MSG_KEEPOPEN 
 	special SPECIAL_CLEAR_ITEM_SPRITE_AFTER_FIND_OBTAIN
 	return
@@ -291,13 +290,13 @@ SystemScript_PickUpItem:
 SystemScript_FindNormalItem:
 	compare 0x8005 0x1
 	if greaterthan _goto SystemScript_FindMultipleNormalItems
-	preparemsg 0x81A5231
+	msgbox 0x81A5231 MSG_NORMAL
 	return
 
 SystemScript_FindMultipleNormalItems:
 	buffernumber 0x0 0x8005
 	callasm TryAppendSOntoEndOfItemString
-	preparemsg gText_FoundMultipleItems
+	msgbox gText_FoundMultipleItems MSG_NORMAL
 	return
 
 @;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -321,7 +320,6 @@ SystemScript_ObtainItemMessage:
 	compare 0x8005 1
 	if greaterthan _call ObtainedMultipleItemMsg
 	waitfanfare
-	waitmsg
 	msgbox 0x81A5218 MSG_KEEPOPEN @;[PLAYER] put the item in the...
 	setvar LASTRESULT 0x1
 	special SPECIAL_CLEAR_ITEM_SPRITE_AFTER_FIND_OBTAIN
@@ -336,17 +334,17 @@ ObtainedSingleItemMsg:
 	return
 
 ObtainedTMHM:
-	preparemsg gText_ObtainedTMHM
+	msgbox gText_ObtainedTMHM MSG_NORMAL
 	return
 
 ObtainedRegularItem:
-	preparemsg 0x81A51F6 @;Obtained the item!
+	msgbox 0x81A51F6 MSG_NORMAL @;Obtained the item!
 	return
 	
 ObtainedMultipleItemMsg:
 	buffernumber 0x0 0x8005
 	callasm TryAppendSOntoEndOfItemString
-	preparemsg gText_ObtainedMultipleItems
+	msgbox gText_ObtainedMultipleItems MSG_NORMAL
 	return
 
 @;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@

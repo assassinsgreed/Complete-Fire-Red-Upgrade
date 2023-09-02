@@ -2931,6 +2931,10 @@ void ConvertCoinInt(u32 coinAmount)
 //waitstate
 
 //Text Declarations
+extern const u8 gText_GrassyTerrain[];
+extern const u8 gText_MistyTerrain[];
+extern const u8 gText_ElectricTerrain[];
+extern const u8 gText_PsychicTerrain[];
 extern const u8 gText_Snore[];
 extern const u8 gText_WorrySeed[];
 extern const u8 gText_Covet[];
@@ -3101,6 +3105,15 @@ static const u8* sGameCornerPokemonExchange[] =
 	gText_End,
 };
 
+static const u8* sTutorRhodanzi[] =
+{
+	gText_GrassyTerrain,
+	gText_MistyTerrain,
+	gText_ElectricTerrain,
+	gText_PsychicTerrain,
+	gText_End,
+};
+
 // Multichoice Lists
 const struct ScrollingMulti gScrollingSets[] =
 {
@@ -3112,6 +3125,7 @@ const struct ScrollingMulti gScrollingSets[] =
 	{sFavoriteRegion, ARRAY_COUNT(sFavoriteRegion)},
 	{sGameCornerItemExchange, ARRAY_COUNT(sGameCornerItemExchange)},
 	{sGameCornerPokemonExchange, ARRAY_COUNT(sGameCornerPokemonExchange)},
+	{sTutorRhodanzi, ARRAY_COUNT(sTutorRhodanzi)},
 };
 
 //Link number of opts shown at once to the box height

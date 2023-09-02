@@ -40,3 +40,8 @@ EventScript_Route2_CoolTrainerAndy:
     trainerbattle0 0x0 0x10 0x0 gText_Route2_CoolTrainerAndy_Intro gText_Route2_CoolTrainerAndy_Defeat
     msgbox gText_Route2_CoolTrainerAndy_Chat MSG_NORMAL
     end
+
+.global SignScript_Route2_TrainerTipsFishing
+SignScript_Route2_TrainerTipsFishing:
+    msgbox gText_Route2_TrainerTips MSG_SIGN
+    end

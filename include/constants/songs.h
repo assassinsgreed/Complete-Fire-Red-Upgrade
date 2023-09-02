@@ -177,7 +177,7 @@
 #define SE_RG_EXCELLENT 254
 
 #define SE_CAUGHT_POKEMON 0x16F
-#define MUS_FANFA1 0x101
+#define MUS_FANFA1 0x101 // Got item / level up
 #define MUS_GET_ITEM_2 0x102
 #define MUS_FANFA2 0x10D
 

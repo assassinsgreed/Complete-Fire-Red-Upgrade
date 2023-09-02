@@ -204,6 +204,8 @@ TileScript_Route3_InitiateDexNavEvent:
     clearflag 0x31 @ Show rival and pluto grunts on route 3
     showsprite Rival
     playbgm 0x195
+    sound 0x15 @ Exclaim
+    applymovement PLAYER m_Surprise
     msgbox gText_Route3_RivalArrives MSG_NORMAL
     call MovePlayerToLineUpWithRival
     applymovement Rival m_RivalMeetsPlayer
@@ -363,7 +365,7 @@ AssistantLookUp:
     waitmovement ALLEVENTS
     return
 
-m_RivalMeetsPlayer: .byte walk_right, walk_right, walk_right, walk_right, walk_right, walk_right, end_m
+m_RivalMeetsPlayer: .byte walk_right, walk_right, walk_right, walk_right, walk_right, walk_right, walk_right, end_m
 m_PlayerMoveToEncounterAssistant: .byte walk_right, walk_right, walk_right, walk_right, walk_right, walk_right, end_m
 m_RivalMoveToEncounterAssistant: .byte walk_right, walk_right, walk_right, walk_right, walk_right, walk_right, end_m
 m_PlayerMovesUp: .byte walk_up, walk_up, end_m
