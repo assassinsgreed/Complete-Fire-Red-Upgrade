@@ -16,6 +16,9 @@ Go, my young friend, and catch all\nthe fish you can find, from the\lsmallest ri
 #org @gText_RhodanziNPCHouses_TerrenceSister
 Oh, you're a new Pok\emon Trainer?\pYou'll want to challenge my brother\nbefore you leave town; he's\lRhodanzi's Gym Leader!
 
+#org @gText_RhodanziNPCHouses_TerrenceSister_BadgeObtained
+Oh, that badge! You must've beaten\nTerrence then? Good for you!
+
 #org @gText_RhodanziNPCHouses_TerrenceLittleBrotherQuestion
 Hey, didja know?
 
@@ -23,7 +26,10 @@ Hey, didja know?
 How did you already know? I didn't\neven tell you yet!
 
 #org @gText_RhodanziNPCHouses_TerrenceLittleBrotherQuestionNo
-My brother Terry is the gym\nleader, and he's really strong!\pHis Pok\emon use Grassy Terrain,\nwhich heals Pok\emon on the ground\land makes his grass moves stronger.\pYou can't beat him, even if you\nhad a Flying or Fire type, so don't\leven try!
+My brother Terrence is the gym\nleader, and he's really strong!\pHis Pok\emon use Grassy Terrain,\nwhich heals Pok\emon on the ground\land makes his grass moves stronger.\pYou can't beat him, even if you\nhad a Flying or Fire type, so don't\leven try!
+
+#org @gText_RhodanziNPCHouses_TerrenceBrother_BadgeObtained
+Hey, that's my big brother's gym\nbadge!\pDoes that mean you're stronger than\nhim? No waaaaay!
 
 #org @gText_RhodanziNPCHouses_Evolution
 Some Pok\emon change form as they\nget stronger.\pThis phenomenon is called\nEvolution!\pSome Pok\emon can't evolve, but it\ndoesn't mean they aren't strong.

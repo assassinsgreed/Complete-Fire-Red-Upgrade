@@ -198,7 +198,7 @@ EventScript_ForgottenManseExterior_NurseLucy:
     faceplayer
     checktrainerflag 0x57B
     if SET _goto NurseLucyHeal
-    trainerbattle1 0x0 0x7B 0x0 gText_ForgottenManseExterior_NurseLucy_Intro gText_ForgottenManseExterior_NurseLucy_Defeat NurseLucyHeal
+    trainerbattle2 0x0 0x7B 0x0 gText_ForgottenManseExterior_NurseLucy_Intro gText_ForgottenManseExterior_NurseLucy_Defeat NurseLucyHeal
     goto NurseLucyHeal
 
 NurseLucyHeal:

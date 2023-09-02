@@ -90,13 +90,21 @@ EventScript_AnthraTown_Ty:
 EventScript_AnthraTown_FootprintGuy:
 	compare StoryEventVar 0x7 @ Player can go on journey
 	if equal _goto End
-	compare LASTTALKED 0x6
-	if equal _call LookDown
+	getplayerpos 0x4001 0x4002
+	compare 0x4001 0x1
+	if equal _call PlayerAlarmed
 	npcchatwithmovement gText_AnthraTown_FootprintGuy m_LookUp
-	compare LASTTALKED 0x6
-	if notequal _call PlayerWalkBack
-	setvar LASTTALKED 0xFF
+	compare 0x4001 0x1
+	if equal _call PlayerWalkBack
 	end
+
+PlayerAlarmed:
+	sound 0x15 @ Exclaim
+	applymovement PLAYER m_LookDown
+	waitmovement PLAYER
+	applymovement PLAYER m_Surprise
+	waitmovement PLAYER
+	return
 
 PlayerWalkBack:
 	applymovement PLAYER m_WalkRight
@@ -211,6 +219,7 @@ EventScript_GenChoice_Favoritegen:
 	case 5, EventScript_GenChoice_Kalosconfirm
 	case 6, EventScript_GenChoice_Alolaconfirm
 	case 7, EventScript_GenChoice_Galarconfirm
+	case 0x7F, LevelScript_GenChoice_Main @ Pressed B to quit, goto initial question
 	end
 
 EventScript_GenChoice_Shuffle:

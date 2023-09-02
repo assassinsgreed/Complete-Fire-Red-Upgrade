@@ -25,7 +25,7 @@
             "mapgroup": 1,
             "mapnum": 1,
             "grass": {
-                "rate": 5,
+                "rate": 3,
                 "pokemon": [
                     { "low": 7, "high": 9, "species": "SPECIES_CACNEA" },
                     { "low": 7, "high": 9, "species": "SPECIES_HELIOPTILE" },
@@ -133,7 +133,7 @@
             "mapgroup": 1,
             "mapnum": 4,
             "grass": {
-                "rate": 5,
+                "rate": 3,
                 "pokemon": [
                     { "low": 9, "high": 13, "species": "SPECIES_DRILBUR" },
                     { "low": 10, "high": 12, "species": "SPECIES_KLINK" },

@@ -201,3 +201,5 @@
 #define TRAINER_ROUTE_10_CASEY_M                     175
 #define TRAINER_ROUTE_10_CAVE_HIKER_HARLEY           176
 #define TRAINER_ROUTE_10_CAVE_BLACKBELT_XAVIER       177
+// Battle Partners
+#define TRAINER_RUBARR_DESERT_PARTNER_RIVAL          178

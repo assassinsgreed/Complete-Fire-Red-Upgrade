@@ -57,7 +57,7 @@ EventScript_Route6_NurseLeanne:
     faceplayer
     checktrainerflag 0x559
     if SET _goto NurseLeanneHeal
-    trainerbattle1 0x0 0x59 0x0 gText_Route6_NurseLeanne_Intro gText_Route6_NurseLeanne_Defeat NurseLeanneHeal
+    trainerbattle2 0x0 0x59 0x0 gText_Route6_NurseLeanne_Intro gText_Route6_NurseLeanne_Defeat NurseLeanneHeal
     call NurseLeanneHeal
     end
 
