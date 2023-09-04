@@ -441,6 +441,7 @@ EventScript_Route17_PlayerHasChosenStarter:
     setflag 0x02D @ Hide Rival on Route 17
     hidesprite Rival
     setvar StoryEventVar PlayerJourneyHasStarted
+    setvar 0x4098 0x1 @ Turn off Anthra Tile events
     fadedefaultbgm
     release
     end

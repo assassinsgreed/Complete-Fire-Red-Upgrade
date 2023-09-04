@@ -147,10 +147,16 @@ EventScript_AnthraTown_MomMain:
 	if SET _goto EventScript_AnthraTown_MomRestPrompt
 	compare StoryEventVar PlayerMetWithRival
 	if equal _goto EventScript_AnthraTown_PersuadingMomToGoOnJourney
+	compare StoryEventVar PlayerAllowedToGoOnJourney
+	if equal _goto MomWishesSafeJourney
 	msgbox gText_AnthraTown_MomLeaveHome MSG_KEEPOPEN
 	closeonkeypress
 	applymovement Mom m_LookLeft
 	waitmovement 0x0
+	goto End
+
+MomWishesSafeJourney:
+	npcchatwithmovement gText_AnthraTown_MomLeaveHomeAfterRunningShoes m_LookLeft
 	goto End
 
 EventScript_AnthraTown_MomRestPrompt:

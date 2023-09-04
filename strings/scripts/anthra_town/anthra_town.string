@@ -22,6 +22,9 @@ Oh, good! You and your\nPok\emon are looking great.\lTake care now!
 #org @gText_AnthraTown_MomLeaveHome
 [RED][RIVAL] was looking for you dear.\nDon't keep him waiting, okay?
 
+#org @gText_AnthraTown_MomLeaveHomeAfterRunningShoes
+[RED]Enjoy your journey with [RIVAL] and\nyour Pok\emon, and stay safe!\pAnd remember, you can always come\nhome, whenever you need to.
+
 #org @gText_GenChoice_Msgwelcome
 Welcome to Pok\emon Amethyst!\pWe have a couple questions to help\ncustomize your experience.\pFirst of all, do you have a\nfavorite Pok\emon generation?
 
