@@ -197,7 +197,7 @@
 #define VAR_RESTAURANT_BATTLE_DUR  0x4095
 #define VAR_DAIMYN_GYM_COINS_LEFT  0x4096
 #define VAR_RHODANZI_TILE_EVENT    0x4097
-#define VAR_0x4098                 0x4098
+#define VAR_ANTHRA_TILE_EVENT      0x4098
 #define VAR_0x4099                 0x4099
 #define VAR_0x409A                 0x409A
 #define VAR_0x409B                 0x409B
