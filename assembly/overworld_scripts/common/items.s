@@ -137,6 +137,11 @@ ItemScript_Common_DampRock:
     finditem ITEM_DAMP_ROCK 0x1
     end
 
+.global ItemScript_Common_HeatRock
+ItemScript_Common_HeatRock:
+    finditem ITEM_HEAT_ROCK 0x1
+    end
+
 .global ItemScript_Common_Snowball
 ItemScript_Common_Snowball:
     finditem ITEM_SNOWBALL 0x1
@@ -277,6 +282,11 @@ ItemScript_Common_Iron:
     finditem ITEM_IRON 0x1
     end
 
+.global ItemScript_Common_Carbos
+ItemScript_Common_Carbos:
+    finditem ITEM_CARBOS 0x1
+    end
+
 .global ItemScript_Common_Calcium
 ItemScript_Common_Calcium:
     finditem ITEM_CALCIUM 0x1
@@ -330,6 +340,11 @@ ItemScript_Common_TerrainExtender:
 .global ItemScript_Common_HeavyDutyBoots
 ItemScript_Common_HeavyDutyBoots:
     finditem ITEM_HEAVY_DUTY_BOOTS 0x1
+    end
+
+.global ItemScript_Common_RazorClaw
+ItemScript_Common_RazorClaw:
+    finditem ITEM_RAZOR_CLAW 0x1
     end
 
 .global ItemScript_Common_EjectButton

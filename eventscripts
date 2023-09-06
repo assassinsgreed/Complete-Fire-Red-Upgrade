@@ -589,6 +589,31 @@ sign 3 24 2 SignScript_Route6_WrongWay
 # Route 11
 npc 3 29 0 EventScript_Common_Strength
 npc 3 29 1 ItemScript_Common_ElectricSeed
+npc 3 29 2 ItemScript_Common_RazorClaw
+npc 3 29 3 EventScript_Route11South_TM68GigaImpact
+npc 3 29 4 EventScript_Route11South_TM51SteelWing
+npc 3 29 5 ItemScript_Common_HeatRock
+npc 3 29 6 EventScript_Route11South_Mawilite
+npc 3 29 7 ItemScript_Common_Carbos
+npc 3 29 8 EventScript_Common_RockSmash
+npc 3 29 9 EventScript_Common_RockSmash
+npc 3 29 10 EventScript_Common_RockSmash
+npc 3 29 11 EventScript_Common_RockSmash
+npc 3 29 12 EventScript_Common_RockSmash
+npc 3 29 13 EventScript_Common_RockSmash
+npc 3 29 14 EventScript_Route11South_TeamPlutoRoss
+npc 3 29 15 EventScript_Route11South_TeamPlutoGreta
+npc 3 29 16 EventScript_Route11South_TeamPlutoNellie
+npc 3 29 17 EventScript_Route11South_TeamPlutoHelga
+npc 3 29 18 EventScript_Route11South_TeamPlutoKareem
+npc 3 29 19 EventScript_Route11South_TeamPlutoChung
+npc 3 29 20 EventScript_Route11South_LassTabitha
+npc 3 29 21 EventScript_Route11South_CrushGirlAlisa
+npc 3 29 22 EventScript_Route11South_EngineerDale
+npc 3 29 23 EventScript_Route11South_CollectorOrville
+sign 3 29 0 SignScript_Route11South_HessonPass
+sign 3 29 1 SignScript_Route11South_TrainerTips
+sign 3 29 2 SignScript_Route11South_MegaStoneRefiner
 
 # Heleo City
 ## Overworld
