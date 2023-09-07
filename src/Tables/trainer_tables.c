@@ -1678,6 +1678,63 @@ const struct TrainerMonNoItemDefaultMoves sParty_Route10Cave_BlackbeltXavier[] =
 
 // #endregion
 
+// #region Route 11
+const struct TrainerMonNoItemDefaultMoves sParty_Route11South_TeamPluto_Ross[] = {
+    { .lvl = 35, .species = SPECIES_KOFFING_G },
+    { .lvl = 36, .species = SPECIES_KROKOROK }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route11South_TeamPluto_Greta[] = {
+    { .lvl = 34, .species = SPECIES_SNEASEL },
+    { .lvl = 35, .species = SPECIES_ZUBAT },
+    { .lvl = 35, .species = SPECIES_GOLBAT },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route11South_TeamPluto_Nellie[] = {
+    { .lvl = 33, .species = SPECIES_ZUBAT },
+    { .lvl = 33, .species = SPECIES_SANDILE },
+    { .lvl = 34, .species = SPECIES_KOFFING_G },
+    { .lvl = 35, .species = SPECIES_SNEASEL },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route11South_TeamPluto_Helga[] = {
+    { .lvl = 36, .species = SPECIES_WHIRLIPEDE },
+    { .lvl = 37, .species = SPECIES_WEEZING_G },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route11South_TeamPluto_Kareem[] = {
+    { .lvl = 35, .species = SPECIES_WHIRLIPEDE },
+    { .lvl = 35, .species = SPECIES_CROAGUNK },
+    { .lvl = 37, .species = SPECIES_TOXICROAK },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route11South_TeamPluto_Chung[] = {
+    { .lvl = 37, .species = SPECIES_SCRAGGY },
+    { .lvl = 37, .species = SPECIES_SCOLIPEDE },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route11South_Lass_Tabitha[] = {
+    { .lvl = 36, .species = SPECIES_AMAURA },
+    { .lvl = 37, .species = SPECIES_STOUTLAND },
+    { .lvl = 37, .species = SPECIES_VESPIQUEN },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route11South_CrushGirl_Alisa[] = {
+    { .lvl = 39, .species = SPECIES_SIRFETCHD },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route11South_Engineer_Dale[] = {
+    { .lvl = 38, .species = SPECIES_PINCURCHIN },
+    { .lvl = 38, .species = SPECIES_EMOLGA },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route11South_Collector_Orville[] = {
+    { .lvl = 38, .species = SPECIES_LILEEP },
+    { .lvl = 38, .species = SPECIES_SLIGGOO },
+    { .lvl = 38, .species = SPECIES_LAPRAS },
+};
+// #endregion
+
 // #endregion
 
 #define NO_NAME                                                                                      \
@@ -2229,7 +2286,7 @@ const struct Trainer gTrainers[] = {
     [TRAINER_ROUTE_4_CRUSH_GIRL_ELISE] = {
         .partyFlags = 0,
         .trainerClass = CLASS_CRUSH_GIRL,
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .trainerPic = TRAINER_PIC_CRUSH_GIRL,
         .trainerName = {_E, _l, _i, _s, _e, _END},
         .items = { ITEM_X_ATTACK },
@@ -3864,6 +3921,122 @@ const struct Trainer gTrainers[] = {
         .aiFlags = AI_SCRIPT_TRY_TO_FAINT,
         .partySize = NELEMS(sParty_Route10Cave_BlackbeltXavier),
         .party = {.NoItemDefaultMoves = sParty_Route10Cave_BlackbeltXavier}
+    },
+    // #endregion
+    // #region Route 11 South
+    [TRAINER_ROUTE_11_SOUTH_TEAM_PLUTO_ROSS] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_TEAM_PLUTO,
+        .trainerPic = TRAINER_PIC_PLUTO_GRUNT_M,
+        .trainerName = {_R, _o, _s, _s, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE,
+        .partySize = NELEMS(sParty_Route11South_TeamPluto_Ross),
+        .party = {.NoItemDefaultMoves = sParty_Route11South_TeamPluto_Ross}
+    },
+    [TRAINER_ROUTE_11_SOUTH_TEAM_PLUTO_GRETA] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_TEAM_PLUTO,
+        .trainerPic = TRAINER_PIC_PLUTO_GRUNT_F,
+        .trainerName = {_G, _r, _e, _t, _a, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE,
+        .partySize = NELEMS(sParty_Route11South_TeamPluto_Greta),
+        .party = {.NoItemDefaultMoves = sParty_Route11South_TeamPluto_Greta}
+    },
+    [TRAINER_ROUTE_11_SOUTH_TEAM_PLUTO_NELLIE] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_TEAM_PLUTO,
+        .trainerPic = TRAINER_PIC_PLUTO_GRUNT_F,
+        .trainerName = {_N, _e, _l, _l, _i, _e, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_RISKY,
+        .partySize = NELEMS(sParty_Route11South_TeamPluto_Nellie),
+        .party = {.NoItemDefaultMoves = sParty_Route11South_TeamPluto_Nellie}
+    },
+    [TRAINER_ROUTE_11_SOUTH_TEAM_PLUTO_HELGA] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_TEAM_PLUTO,
+        .trainerPic = TRAINER_PIC_PLUTO_GRUNT_F,
+        .trainerName = {_H, _e, _l, _g, _a, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_HP_AWARE | AI_SCRIPT_CHECK_GOOD_MOVE,
+        .partySize = NELEMS(sParty_Route11South_TeamPluto_Helga),
+        .party = {.NoItemDefaultMoves = sParty_Route11South_TeamPluto_Helga}
+    },
+    [TRAINER_ROUTE_11_SOUTH_TEAM_PLUTO_KAREEM] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_TEAM_PLUTO,
+        .trainerPic = TRAINER_PIC_PLUTO_GRUNT_M,
+        .trainerName = {_K, _a, _r, _e, _e, _m, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE,
+        .partySize = NELEMS(sParty_Route11South_TeamPluto_Kareem),
+        .party = {.NoItemDefaultMoves = sParty_Route11South_TeamPluto_Kareem}
+    },
+    [TRAINER_ROUTE_11_SOUTH_TEAM_PLUTO_CHUNG] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_TEAM_PLUTO,
+        .trainerPic = TRAINER_PIC_PLUTO_GRUNT_M,
+        .trainerName = {_C, _h, _u, _n, _g, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_RISKY,
+        .partySize = NELEMS(sParty_Route11South_TeamPluto_Chung),
+        .party = {.NoItemDefaultMoves = sParty_Route11South_TeamPluto_Chung}
+    },
+    [TRAINER_ROUTE_11_SOUTH_LASS_TABITHA] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_LASS,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .trainerPic = TRAINER_PIC_LASS,
+        .trainerName = {_T, _a, _b, _i, _t, _h, _a, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = NELEMS(sParty_Route11South_Lass_Tabitha),
+        .party = {.NoItemDefaultMoves = sParty_Route11South_Lass_Tabitha}
+    },
+    [TRAINER_ROUTE_11_SOUTH_CRUSH_GIRL_ALISA] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_CRUSH_GIRL,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_CRUSH_GIRL,
+        .trainerName = {_A, _l, _i, _s, _a, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_TRY_TO_FAINT,
+        .partySize = NELEMS(sParty_Route11South_CrushGirl_Alisa),
+        .party = {.NoItemDefaultMoves = sParty_Route11South_CrushGirl_Alisa}
+    },
+    [TRAINER_ROUTE_11_SOUTH_ENGINEER_DALE] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_ENGINEER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_WORKER,
+        .trainerName = {_D, _a, _l, _e, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = NELEMS(sParty_Route11South_Engineer_Dale),
+        .party = {.NoItemDefaultMoves = sParty_Route11South_Engineer_Dale}
+    },
+    [TRAINER_ROUTE_11_SOUTH_COLLECTOR_ORVILLE] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_COLLECTOR,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_COLLECTOR,
+        .trainerName = {_O, _r, _v, _i, _l, _l, _e, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE,
+        .partySize = NELEMS(sParty_Route11South_Collector_Orville),
+        .party = {.NoItemDefaultMoves = sParty_Route11South_Collector_Orville}
     },
     // #endregion
 

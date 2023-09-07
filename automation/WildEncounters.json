@@ -899,6 +899,16 @@
                     { "low": 24, "high": 26, "species": "SPECIES_GABITE" }, 
                     { "low": 23, "high": 26, "species": "SPECIES_JANGMO_O" }
                 ]
+            },
+            "rocks": {
+                "rate": 50,
+                "pokemon": [
+                    { "low": 25, "high": 35, "species": "SPECIES_CARKOL" },
+                    { "low": 25, "high": 30, "species": "SPECIES_LILEEP" },
+                    { "low": 25, "high": 30, "species": "SPECIES_LILEEP" },
+                    { "low": 25, "high": 30, "species": "SPECIES_LILEEP" },
+                    { "low": 25, "high": 30, "species": "SPECIES_LILEEP" }
+                ]
             }
         },
         {
