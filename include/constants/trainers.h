@@ -182,6 +182,7 @@
 #define TRAINER_BACK_PIC_OLD_MAN 			5
 #define TRAINER_BACK_PIC_OLD_MAN 			5
 #define TRAINER_BACK_PIC_RIVAL              6
+#define TRAINER_BACK_PIC_ALISTAIR           7
 
 #ifndef UNBOUND //CHANGE THESE
 
