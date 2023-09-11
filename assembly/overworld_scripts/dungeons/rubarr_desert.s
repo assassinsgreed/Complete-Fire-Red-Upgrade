@@ -173,8 +173,8 @@ EventScript_RubarrDesert_StoryEvents:
     applymovement Rival m_LookUp
     applymovement PLAYER m_LookUp
     waitmovement PLAYER
-    @ Start a tag battle (0x10) against Clancy (0x21) and Ena (0x22), with Partner Rival (0xB2) using backsprite (0x6)
-    trainerbattle10 0x10 0x21 0x22 0xB2 0x6 0x0 gText_RubarrDesert_ClancyLoses gText_RubarrDesert_EnaLoses
+    @ Start a tag battle (0xA) against Clancy (0x21) and Ena (0x22), with Partner Rival (0xB2) using backsprite (0x6)
+    trainerbattle10 0xA 0x21 0x22 0xB2 0x6 0x0 gText_RubarrDesert_ClancyLoses gText_RubarrDesert_EnaLoses
     playbgm 0x19A @ Encounter Team Pluto
     msgbox gText_RubarrDesert_ClancyPoorLoser MSG_NORMAL
     sound 0x15 @ Exclaim
@@ -231,10 +231,8 @@ EventScript_RubarrDesert_StoryEvents:
     if equal _call PlayerDeflectsTheBlame
     msgbox gText_RubarrDesert_IreneBattles MSG_NORMAL
     msgbox gText_RubarrDesert_RivalFightsWithPlayer MSG_NORMAL
-    setvar 0x503A 0x1
-    setvar 0x503B 0x1
     @ Start a tag battle against Admin Irene
-    trainerbattle12 0x0 0x23 0x1C 0x6 0x100 gText_RubarrDesert_IreneBattleDefeat
+    trainerbattle12 0xC 0x23 0x1C 0x6 0x100 gText_RubarrDesert_IreneBattleDefeat
     playbgm 0x19A @ Encounter Team Pluto
     msgbox gText_RubarrDesert_IreneSurprisedByPlayer MSG_NORMAL
     applymovement PlutoAdminIrene m_LookRight

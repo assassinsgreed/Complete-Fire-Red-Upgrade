@@ -112,3 +112,8 @@ SignScript_VarisiForest_AntidoteSign:
 SignScript_VarisiForest_RhodanziSign:
     msgbox gText_VarisiForest_RhodanziSign MSG_SIGN
     end
+
+.global SignScript_VarisiForest_TrainerTips
+SignScript_VarisiForest_TrainerTips:
+    msgbox gText_VarisiForest_TrainerTips MSG_SIGN
+    end
