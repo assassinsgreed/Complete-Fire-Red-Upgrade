@@ -99,6 +99,7 @@ npc 15 3 0 EventScript_VarisiForest_TimeOfDay
 npc 15 3 1 EventScript_VarisiForest_FriendlyTrainer
 sign 1 0 0 SignScript_VarisiForest_AntidoteSign
 sign 1 0 1 SignScript_VarisiForest_RhodanziSign
+sign 1 0 4 SignScript_VarisiForest_TrainerTips
 
 # Route 17
 map 3 35 MapScript_Route17

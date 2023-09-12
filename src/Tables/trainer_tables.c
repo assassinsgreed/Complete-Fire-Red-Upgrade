@@ -29,7 +29,7 @@ const struct TrainerMonNoItemCustomMoves sParty_PartnerRival1[] = {
         .moves = {
             MOVE_FURYATTACK,
             MOVE_HONECLAWS,
-            MOVE_POWERTRIP,
+            MOVE_PECK,
             MOVE_ROCKSMASH
         },
         .ability = Ability_1 // Keen Eye
@@ -40,7 +40,7 @@ const struct TrainerMonNoItemCustomMoves sParty_PartnerRival1[] = {
         .moves = {
             MOVE_QUICKATTACK,
             MOVE_HELPINGHAND,
-            MOVE_BABYDOLLEYES,
+            MOVE_TAILWHIP,
             MOVE_SANDATTACK
         },
         .ability = Ability_2 // Adaptability
@@ -348,12 +348,11 @@ const struct TrainerMonNoItemDefaultMoves sParty_RubarrDesert_TeamPlutoTana[] = 
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_RubarrDesert_TeamPlutoClancy[] = {
-    { .lvl = 12, .species = SPECIES_NICKIT },
-    { .lvl = 13, .species = SPECIES_CROAGUNK },
+    { .lvl = 14, .species = SPECIES_CROAGUNK },
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_RubarrDesert_TeamPlutoEna[] = {
-    { .lvl = 13, .species = SPECIES_ZUBAT },
+    { .lvl = 12, .species = SPECIES_ZUBAT },
     { .lvl = 13, .species = SPECIES_VENIPEDE },
 };
 
@@ -373,9 +372,9 @@ const struct TrainerMonNoItemCustomMoves sParty_RubarrDesert_TeamPlutoAdminIrene
         .lvl = 14,
         .species = SPECIES_SANDILE,
         .moves = {
-            MOVE_SCARYFACE,
+            MOVE_BITE,
             MOVE_HONECLAWS,
-            MOVE_POWERTRIP,
+            MOVE_SANDTOMB,
             MOVE_MEANLOOK
         },
         .ability = Ability_1 // Intimidate

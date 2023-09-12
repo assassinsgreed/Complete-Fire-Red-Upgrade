@@ -7,23 +7,19 @@
 
 .global SignScript_RhodanziGym_Placard
 SignScript_RhodanziGym_Placard:
-    lockall
-    checkflag 0x820 @ Rhodanzi gym badge
-    if SET _goto SignScript_RhodanziGym_PlacardWithBadge
     checkflag 0x232 @ DexNav event triggered
     if SET _goto SignScript_RhodanziGym_PlacardWithBadgeAndDexNavEvent
+    checkflag 0x820 @ Rhodanzi gym badge
+    if SET _goto SignScript_RhodanziGym_PlacardWithBadge
     msgbox gText_RhodanziGym_Winners MSG_SIGN
-    releaseall
     end
 
 SignScript_RhodanziGym_PlacardWithBadge:
     msgbox gText_RhodanziGym_WinnersWithBadge MSG_SIGN
-    releaseall
     end
 
 SignScript_RhodanziGym_PlacardWithBadgeAndDexNavEvent:
     msgbox gText_RhodanziGym_WinnersWithBadgeAndDexNavEvent MSG_SIGN
-    releaseall
     end
 
 .global EventScript_RhodanziGym_GymExpert

@@ -173,7 +173,7 @@ I'll wait here for you to retrieve\nthe DexNav shipment from Team\lPluto, but pl
 [BLACK]Assistant: [BLUE]Why, thank you.
 
 #org @gText_Route3_AssistantClarifiesNames
-[BLACK]Assistant: [BLUE]Wait[.] Did you say\n"[PLAYER]\" just now? Would that\lmean you are [RIVAL], then?
+[BLACK]Assistant: [BLUE]Wait[.] Did you say\n[PLAYER] just now? Would that\lmean you are [RIVAL], then?
 
 #org @gText_Route3_RivalConfirmsNames
 [BLACK][RIVAL]: [BLUE]Yep, that's us! I'm\nsurprised you know about us\lalready.
