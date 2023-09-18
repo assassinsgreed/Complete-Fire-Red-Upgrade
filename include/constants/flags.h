@@ -69,7 +69,7 @@
 #define FLAG_USED_ALREADY???                               0x03F
 #define FLAG_HIDE_PIKACHU_GIFT_IN_DAIMYN_CTIY              0x040
 #define FLAG_HIDE_ROUTE_11_PLUTO_AND_ROUTE_9_SLOWBRO       0x041
-#define FLAG_HIDE_SEAFOAM_B1F_BOULDER_1                    0x042
+#define FLAG_HIDE_ROUTE_11_ALISTAIR_AND_RIVAL              0x042
 #define FLAG_HIDE_SEAFOAM_B1F_BOULDER_2                    0x043
 #define FLAG_HIDE_SEAFOAM_B2F_BOULDER_1                    0x044
 #define FLAG_HIDE_SEAFOAM_B2F_BOULDER_2                    0x045

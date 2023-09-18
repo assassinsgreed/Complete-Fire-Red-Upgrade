@@ -96,3 +96,105 @@ Trainer Tips!\nWild Pok\emon encountered in double\lbattles are harder to catch.
 
 #org @gText_Route11South_MegaStoneRefinerSign
 Richard's Refinery\nHome of Kulure's Mega Stone Refiner
+
+#org @gText_Route11South_PlutoEvent_RivalSpotsPlayer
+[BLUE]Oh, [PLAYER], there you are!
+
+#org @gText_Route11South_PlutoEvent_RivalExplainsPlutoTrouble
+[BLUE]I caught up with Alistair.\pI wanted to ask him about what\nhappened in Daimyn City, but it\lwasn't a good time.\pHe said Team Pluto was in the area\nand was causing trouble.\pHe needs our help! Come on, let's\ngo!
+
+#org @gText_Route11South_PlutoEvent_AlistairAcknowledgesRival
+[BLACK]Alistair:[BLUE] Ah, there you are,\n[RIVAL].
+
+#org @gText_Route11South_PlutoEvent_AlistairAcknowledgesPlayer
+[BLACK]Alistair:[BLUE] And [PLAYER], too. Good.\nI need to ask for your assistance.
+
+#org @gText_Route11South_PlutoEvent_AlistairAsksForHelp
+[BLACK]Alistair:[BLUE] A good friend of mine lives\nto the south, near Ferrox Village.\pI was on my way to visit him when I\nspotted some Team Pluto thugs in\lthe area.\pMy friend is an expert refiner. In\nparticular, he specializes in\lrefining the ashes from Mount\lCarnelidge into mega stones.\pThese mega stones allow certain\nspecies of Pok\emon to Mega Evolve,\lallowing them to tap into their\lfull potential in battle.\pTeam Pluto aims to harass him into\ngiving them mega stones, of that I\lam certain.\pAs gifted as my friend is at refining\nashes, he is not a Pok\emon trainer.\pI am concerned they will take\nadvantage of this, and threaten him\lto get what they want.\pPlease, may I ask you both for\nyour assistance, before they hurt\lhim?
+
+#org @gText_Route11South_PlutoEvent_RivalAgreesToHelp
+[BLACK][RIVAL]:[BLUE] Team Pluto[.] Always stirring\nup trouble for people[.]\pI can't stand them. You can count\nme in!
+
+#org @gText_Route11South_PlutoEvent_RivalAsksPlayerToHelp
+[BLACK][RIVAL]:[BLUE] You'll help too, won't you\n[PLAYER]?
+
+#org @gText_Route11South_PlutoEvent_PlayerAgreedToHelp
+[BLACK][RIVAL]:[BLUE] You're the best, [PLAYER]!
+
+#org @gText_Route11South_PlutoEvent_PlayerDoesNotAgreeToHelp
+[BLACK][RIVAL]:[BLUE] Come on, [PLAYER][.] Alistair\nis our friend and he needs our\lhelp.\pLet's put the gym challenge on hold\nfor a bit, okay?
+
+#org @gText_Route11South_PlutoEvent_RivalFinalizesAgreementToHelp
+[BLACK][RIVAL]:[BLUE] Alistair, what can we do to\nhelp?
+
+#org @gText_Route11South_PlutoEvent_AlistairMakesAPlan
+[BLACK]Alistair:[BLUE] Thank you both. I am in\nyour debt.\pNow, let's come up with a plan[.]\pI saw quite a few Team Pluto thugs\nas I made my way here.\pI propose we team up and work\ntogether to stop them.\pOne of us should stay here,\nhowever, in case they try to\lescape.
+
+#org @gText_Route11South_PlutoEvent_RivalSignsPlayerUpToFight
+[BLACK][RIVAL]:[BLUE] Sounds like a plan. Let's\nget organized.\p[PLAYER], you're a good battler. I\nthink you should be part of the\lgroup that goes after Team Pluto.
+
+#org @gText_Route11South_PlutoEvent_AlistairAgrees
+[BLACK]Alistair:[BLUE] I trust both of your\ncapabilities.\p[RIVAL], let's leave the decision of\nwho to bring along up to [PLAYER].\pWe will wait here. Just speak to us\nto choose who you'll bring with\lyou.
+
+#org @gText_Route11South_PlutoEvent_GameplayTip
+You will team up with [RIVAL] or\nAlistair to defeat Team Pluto.\pSimply speak to either to have them\njoin you. You can change your mind\lat any time.\pYour partner will restore your\nPok\emon after battle.\pIf you get stuck or want to switch\npartners, simply speak to your\lcurrent partner and ask to return\lto this point.
+
+#org @gText_Route11South_PlutoEvent_TeamUpWithRivalPrompt
+You want to team up?
+
+#org @gText_Route11South_PlutoEvent_TeamUpWithRivalYes
+Aw yeah! Let's go kick their butts!
+
+#org @gText_Route11South_PlutoEvent_TeamUpWithRivalNo
+You've got it. I'll keep an eye out\nfor Team Pluto.
+
+#org @gText_Route11South_PlutoEvent_AlistairReturnToStartingPointPrompt
+Yes? Would you like to return to\nwhere [RIVAL] is waiting?
+
+#org @gText_Route11South_PlutoEvent_AlistairReturnToStartingPointYes
+Very well. Let's go now.
+
+#org @gText_Route11South_PlutoEvent_AlistairReturnToStartingPointNo
+[BLUE]Understood. Let's continue on. Team\nPluto must be stopped.
+
+#org @gText_Route11South_PlutoEvent_RivalReturnToStartingPointPrompt
+What's up, [PLAYER]? Do you want to\ngo back to where Alistair is\lwaiting?
+
+#org @gText_Route11South_PlutoEvent_RivalReturnToStartingPointYes
+Okay, let's go!
+
+#org @gText_Route11South_PlutoEvent_RivalReturnToStartingPointNo
+[BLUE]Alright, let's deal with Team Pluto\nquickly.
+
+#org @gText_Route11South_PlutoEvent_LeavingRoute11WithRivalPrompt
+[BLUE]Is there something you have to take\ncare of, [PLAYER]?
+
+#org @gText_Route11South_PlutoEvent_LeavingRoute11WithRivalYes
+[BLUE]Okay, I'll wait here with Alistair.
+
+#org @gText_Route11South_PlutoEvent_TeamUpWithAlistairPrompt
+You wish to battle with me?
+
+#org @gText_Route11South_PlutoEvent_TeamUpWithAlistairYes
+Very well. Let's put an end to Team\nPluto's schemes.
+
+#org @gText_Route11South_PlutoEvent_TeamUpWithAlistairNo
+Understood. I will wait here and\nkeep an eye out for Team Pluto.
+
+#org @gText_Route11South_PlutoEvent_LeavingRoute11WithAlistairPrompt
+[BLUE]Oh, do you have some unfinished\nbusiness to take care of?
+
+#org @gText_Route11South_PlutoEvent_LeavingRoute11WithAlistairYes
+[BLUE]Very well, I will wait here.
+
+#org @gText_Route11South_PlutoEvent_HessonPassWithPartnerCommon
+[BLUE][PLAYER], Team Pluto didn't come this\nway. Let's head further south.
+
+#org @gText_Route11South_PlutoEvent_HeadingNorth_PlutoNotDefeated
+You should stop Team Pluto before\nheading this way[.]
+
+#org @gText_Route11South_PlutoEvent_HeadingSouth_WithoutPartner
+You should ask [RIVAL] or Alistair\nto join you before challenging\lTeam Pluto[.]
+
+#org @gText_Route11South_PlutoEvent_HeadingNorth_RivalNotBattled
+[RIVAL] is expecting a battle.\nBetter not let him down.

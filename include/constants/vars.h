@@ -132,7 +132,7 @@
 #define VAR_MAP_SCENE_PLAYERS_FAVORITE_GEN_ON_NEWGAME                          0x4056
 #define VAR_MAP_SCENE_ROUTE_3_AND_RUBARR_EVENTS                                0x4057
 #define VAR_MAP_SCENE_DAIMYN_CITY_GYM                                          0x4058
-#define VAR_MAP_SCENE_POKEMON_TOWER_6F                                         0x4059
+#define VAR_MAP_SCENE_ROUTE_11_PLUTO_ENCOUNTER                                 0x4059
 #define VAR_MAP_SCENE_VIRIDIAN_CITY_GYM_DOOR                                   0x405A
 #define VAR_MAP_SCENE_S_S_ANNE_2F_CORRIDOR                                     0x405B
 #define VAR_MAP_SCENE_SILPH_CO_7F                                              0x405C
@@ -198,7 +198,7 @@
 #define VAR_DAIMYN_GYM_COINS_LEFT  0x4096
 #define VAR_RHODANZI_TILE_EVENT    0x4097
 #define VAR_ANTHRA_TILE_EVENT      0x4098
-#define VAR_0x4099                 0x4099
+#define VAR_ROUTE_11_PARTNER       0x4099
 #define VAR_0x409A                 0x409A
 #define VAR_0x409B                 0x409B
 #define VAR_0x409C                 0x409C

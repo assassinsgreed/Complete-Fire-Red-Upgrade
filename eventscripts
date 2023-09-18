@@ -587,7 +587,8 @@ sign 3 24 0 SignScript_Route6_Directions
 sign 3 24 1 SignScript_Route6_ItemFinder
 sign 3 24 2 SignScript_Route6_WrongWay
 
-# Route 11
+# Route 11 South
+map 3 29 MapScript_Route11South
 npc 3 29 0 EventScript_Common_Strength
 npc 3 29 1 ItemScript_Common_ElectricSeed
 npc 3 29 2 ItemScript_Common_RazorClaw
@@ -612,9 +613,32 @@ npc 3 29 20 EventScript_Route11South_LassTabitha
 npc 3 29 21 EventScript_Route11South_CrushGirlAlisa
 npc 3 29 22 EventScript_Route11South_EngineerDale
 npc 3 29 23 EventScript_Route11South_CollectorOrville
+npc 3 29 24 EventScript_Route11South_Rival
+npc 3 29 25 EventScript_Route11South_Alistair
 sign 3 29 0 SignScript_Route11South_HessonPass
 sign 3 29 1 SignScript_Route11South_TrainerTips
 sign 3 29 2 SignScript_Route11South_MegaStoneRefiner
+tile 3 29 0 TileScript_Route11South_West
+tile 3 29 1 TileScript_Route11South_West
+tile 3 29 2 TileScript_Route11South_West
+tile 3 29 3 TileScript_Route11South_West
+tile 3 29 4 TileScript_Route11South_West
+tile 3 29 5 TileScript_Route11South_North
+tile 3 29 6 TileScript_Route11South_North
+tile 3 29 7 TileScript_Route11South_North
+tile 3 29 8 TileScript_Route11South_North
+tile 3 29 9 TileScript_Route11South_SouthByFerrox
+tile 3 29 10 TileScript_Route11South_SouthByFerrox
+tile 3 29 11 TileScript_Route11South_SouthByFerrox
+tile 3 29 12 TileScript_Route11South_SouthByFerrox
+tile 3 29 13 TileScript_Route11South_SouthByFerrox
+tile 3 29 14 TileScript_Route11South_HessonPass
+tile 3 29 15 TileScript_Route11South_SouthByHesson
+tile 3 29 16 TileScript_Route11South_SouthByHesson
+tile 3 29 17 TileScript_Route11South_SouthByHesson
+tile 3 29 18 TileScript_Route11South_SouthByHesson
+tile 3 29 19 TileScript_Route11South_SouthByHesson
+tile 3 29 20 TileScript_Route11South_SouthByHesson
 
 # Heleo City
 ## Overworld
