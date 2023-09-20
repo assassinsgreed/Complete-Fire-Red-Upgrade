@@ -445,7 +445,7 @@ const struct TrainerMonItemCustomMoves sParty_Route11_Alistair[] = {
         .lvl = 35,
         .species = SPECIES_GOLBAT,
         .moves = {
-            MOVE_AIRCUTTER,
+            MOVE_WINGATTACK,
             MOVE_POISONFANG,
             MOVE_ROOST,
             MOVE_MEANLOOK
@@ -2071,6 +2071,63 @@ const struct TrainerMonNoItemDefaultMoves sParty_Route11South_Collector_Orville[
     { .lvl = 38, .species = SPECIES_LILEEP },
     { .lvl = 38, .species = SPECIES_SLIGGOO },
     { .lvl = 38, .species = SPECIES_LAPRAS },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route11South_TeamPlutoClancy[] = {
+    { .lvl = 37, .species = SPECIES_THIEVUL },
+    { .lvl = 37, .species = SPECIES_TOXICROAK },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route11South_TeamPlutoEna[] = {
+    { .lvl = 38, .species = SPECIES_GOLBAT },
+    { .lvl = 38, .species = SPECIES_SCOLIPEDE },
+};
+
+const struct TrainerMonNoItemCustomMoves sParty_Route11South_TeamPlutoAdminRonald[] = {
+    {
+        .lvl = 37,
+        .species = SPECIES_KROKOROK,
+        .moves = {
+            MOVE_CRUNCH,
+            MOVE_DIG,
+            MOVE_AQUATAIL,
+            MOVE_TAUNT
+        },
+        .ability = Ability_2 // Moxie
+    },
+    {
+        .lvl = 37,
+        .species = SPECIES_WEAVILE,
+        .moves = {
+            MOVE_ICESHARD,
+            MOVE_METALCLAW,
+            MOVE_FAKEOUT,
+            MOVE_ICICLECRASH
+        },
+        .ability = Ability_1 // Pressure
+    },
+    {
+        .lvl = 38,
+        .species = SPECIES_FERROTHORN,
+        .moves = {
+            MOVE_IRONHEAD,
+            MOVE_CURSE,
+            MOVE_LEECHSEED,
+            MOVE_POWERWHIP
+        },
+        .ability = Ability_1 // Iron Barbs
+    },
+    {
+        .lvl = 39,
+        .species = SPECIES_SCRAFTY,
+        .moves = {
+            MOVE_POWERUPPUNCH,
+            MOVE_SWAGGER,
+            MOVE_SNARL,
+            MOVE_PROTECT
+        },
+        .ability = Ability_1 // Shed Skin
+    }
 };
 // #endregion
 
@@ -4378,7 +4435,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_R, _o, _s, _s, _END},
         .items = { },
         .doubleBattle = TRUE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_DOUBLE_BATTLE,
         .partySize = NELEMS(sParty_Route11South_TeamPluto_Ross),
         .party = {.NoItemDefaultMoves = sParty_Route11South_TeamPluto_Ross}
     },
@@ -4389,7 +4446,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_G, _r, _e, _t, _a, _END},
         .items = { },
         .doubleBattle = TRUE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_DOUBLE_BATTLE,
         .partySize = NELEMS(sParty_Route11South_TeamPluto_Greta),
         .party = {.NoItemDefaultMoves = sParty_Route11South_TeamPluto_Greta}
     },
@@ -4400,7 +4457,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_N, _e, _l, _l, _i, _e, _END},
         .items = { },
         .doubleBattle = TRUE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_RISKY,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_RISKY | AI_SCRIPT_DOUBLE_BATTLE,
         .partySize = NELEMS(sParty_Route11South_TeamPluto_Nellie),
         .party = {.NoItemDefaultMoves = sParty_Route11South_TeamPluto_Nellie}
     },
@@ -4411,7 +4468,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_H, _e, _l, _g, _a, _END},
         .items = { },
         .doubleBattle = TRUE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_HP_AWARE | AI_SCRIPT_CHECK_GOOD_MOVE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_HP_AWARE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_DOUBLE_BATTLE,
         .partySize = NELEMS(sParty_Route11South_TeamPluto_Helga),
         .party = {.NoItemDefaultMoves = sParty_Route11South_TeamPluto_Helga}
     },
@@ -4422,7 +4479,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_K, _a, _r, _e, _e, _m, _END},
         .items = { },
         .doubleBattle = TRUE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_DOUBLE_BATTLE,
         .partySize = NELEMS(sParty_Route11South_TeamPluto_Kareem),
         .party = {.NoItemDefaultMoves = sParty_Route11South_TeamPluto_Kareem}
     },
@@ -4433,7 +4490,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_C, _h, _u, _n, _g, _END},
         .items = { },
         .doubleBattle = TRUE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_RISKY,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_RISKY | AI_SCRIPT_DOUBLE_BATTLE,
         .partySize = NELEMS(sParty_Route11South_TeamPluto_Chung),
         .party = {.NoItemDefaultMoves = sParty_Route11South_TeamPluto_Chung}
     },
@@ -4484,6 +4541,39 @@ const struct Trainer gTrainers[] = {
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE,
         .partySize = NELEMS(sParty_Route11South_Collector_Orville),
         .party = {.NoItemDefaultMoves = sParty_Route11South_Collector_Orville}
+    },
+    [TRAINER_ROUTE_11_SOUTH_TEAM_PLUTO_CLANCY] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_TEAM_PLUTO,
+        .trainerPic = TRAINER_PIC_PLUTO_GRUNT_M,
+        .trainerName = {_C, _l, _a, _n, _c, _y, _END},
+        .items = {},
+        .doubleBattle = TRUE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_RISKY | AI_SCRIPT_DOUBLE_BATTLE,
+        .partySize = NELEMS(sParty_Route11South_TeamPlutoClancy),
+        .party = {.NoItemDefaultMoves = sParty_Route11South_TeamPlutoClancy}
+    },
+    [TRAINER_ROUTE_11_SOUTH_TEAM_PLUTO_ENA] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_TEAM_PLUTO,
+        .trainerPic = TRAINER_PIC_PLUTO_GRUNT_F,
+        .trainerName = {_E, _n, _a, _END},
+        .items = {},
+        .doubleBattle = TRUE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_DOUBLE_BATTLE,
+        .partySize = NELEMS(sParty_Route11South_TeamPlutoEna),
+        .party = {.NoItemDefaultMoves = sParty_Route11South_TeamPlutoEna}
+    },
+    [TRAINER_ROUTE_11_SOUTH_PLUTO_ADMIN_RONALD] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .trainerClass = CLASS_TEAM_PLUTO_ADMIN,
+        .trainerPic = TRAINER_PIC_PLUTO_ADMIN_RONALD,
+        .trainerName = {_R, _o, _n, _a, _l, _d, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_RISKY,
+        .partySize = NELEMS(sParty_Route11South_TeamPlutoAdminRonald),
+        .party = {.NoItemCustomMoves = sParty_Route11South_TeamPlutoAdminRonald}
     },
     // #endregion
 

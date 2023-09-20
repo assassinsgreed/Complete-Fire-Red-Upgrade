@@ -182,6 +182,14 @@ SetupPartner:
     special 0xD1
     return
 
+.global ResetRoute11PlutoEventOnWhiteout
+ResetRoute11PlutoEventOnWhiteout:
+    compare 0x4099 0x0
+    if equal _goto End
+    setvar 0x4099 0x0 @ No follower
+    setvar 0x4059 0x1 @ Need to pick partner
+    return
+
 .global PokedexEvaluation_Introduction
 PokedexEvaluation_Introduction:
     @ Note: This script is also located at 0x81A73E0 for ratings from the PC.

@@ -11,15 +11,17 @@
 .equ PartnerAlistair, 0x2
 .equ Rival, 0x19
 .equ Alistair, 0x1A
-
-# Includes both Route 11 South and North
+.equ Clancy, 0x1B
+.equ Ena, 0x1C
 
 @ TODO: Maybe buff up the pluto trainers since you'll always have a decent partner
+@ TODO: Post Ronald conversation with rival isn't initiating automatically
+@ TODO: Game crashes when returning to refiner after pluto encounter
 
 .global MapScript_Route11South
 MapScript_Route11South:
     mapscript MAP_SCRIPT_ON_LOAD MapEntryScript_SetPartnerPositions
-    mapscript MAP_SCRIPT_ON_RESUME LevelScripts_Route11South_PartnerBattles
+    mapscript MAP_SCRIPT_ON_RESUME LevelScripts_Route11South
     .byte MAP_SCRIPT_TERMIN
 
 MapEntryScript_SetPartnerPositions:
@@ -33,8 +35,9 @@ MapEntryScript_SetPartnerPositions:
     applymovement PLAYER m_LookUp
     end
 
-LevelScripts_Route11South_PartnerBattles:
+LevelScripts_Route11South:
     levelscript PlutoEncounterVar 0x2 LevelScript_PartnerBattles
+    levelscript PlutoEncounterVar 0x3 LevelScript_PlayerReturnsToRivalAndAlistair
     .hword LEVEL_SCRIPT_TERMIN
 
 LevelScript_PartnerBattles:
@@ -55,6 +58,137 @@ SetRivalBacksprite:
 
 SetAlistairBacksprite:
     setvar 0x5012 0x7
+    return
+
+LevelScript_PlayerReturnsToRivalAndAlistair:
+    msgbox gText_Route11SouthHouse_PlutoEvent_RivalCommentsOnPlayersReturn MSG_NORMAL
+    msgbox gText_Route11SouthHouse_PlutoEvent_AlistairCommentsOnPlayersReturn MSG_NORMAL
+    sound 0x15 @ Exclaim
+    applymovement PLAYER m_Surprise
+    msgbox gText_Route11SouthHouse_PlutoEvent_AlistairCommentsOnMegaRing MSG_NORMAL
+    call PlayerWalkLeft_Return
+    applymovement PLAYER m_LookUp
+    fanfare 0x13E
+    msgbox gText_Route11SouthHouse_PlutoEvent_GiveRivalHisMegaStone MSG_KEEPOPEN
+    waitfanfare
+    msgbox gText_Route11SouthHouse_PlutoEvent_RivalAppreciatesMegaRing MSG_NORMAL
+    applymovement Alistair m_LookLeft
+    msgbox gText_Route11SouthHouse_PlutoEvent_AlistairCommentsOnOldMan MSG_NORMAL
+    msgbox gText_Route11SouthHouse_PlutoEvent_RivalWantsToBattle MSG_NORMAL
+    msgbox gText_Route11SouthHouse_PlutoEvent_AlistairWillSuperviseBattle MSG_NORMAL
+    msgbox gText_Route11SouthHouse_PlutoEvent_RivalHealsPlayer MSG_NORMAL
+    call PlayerHeal
+    msgbox gText_Route11SouthHouse_PlutoEvent_RivalWaitsToBattle MSG_NORMAL
+    setvar PlutoEncounterVar 0x4
+    end
+
+.global MapScript_Route11SouthHouse
+MapScript_Route11SouthHouse:
+    mapscript MAP_SCRIPT_ON_FRAME_TABLE LevelScripts_Route11SouthHouse_RonaldCutscene
+    .byte MAP_SCRIPT_TERMIN
+
+LevelScripts_Route11SouthHouse_RonaldCutscene:
+    levelscript PlutoEncounterVar 0x2 LevelScript_RonaldEncounterCutscene
+    .byte MAP_SCRIPT_TERMIN
+
+LevelScript_RonaldEncounterCutscene:
+    setvar PartnerVar 0x0
+    setvar PlutoEncounterVar 0x1
+    call ResetParnerState
+    playbgm 0x19A @ Encounter Team Pluto
+    msgbox gText_Route11SouthHouse_PlutoEvent_RonaldThreatensRefiner MSG_NORMAL
+    msgbox gText_Route11SouthHouse_PlutoEvent_RefinerRefuses MSG_NORMAL
+    msgbox gText_Route11SouthHouse_PlutoEvent_RonaldAccepts MSG_NORMAL
+    applymovement 0x2 m_WalkRight
+    applymovement PLAYER m_ApproachRonald
+    waitmovement PLAYER
+    applymovement 0x2 m_LookDown
+    waitmovement 0x2
+    applymovement 0x2 m_Question
+    msgbox gText_Route11SouthHouse_PlutoEvent_RonaldAccusesPlayer MSG_YESNO
+    compare LASTRESULT YES
+    if equal _call SaidYesToRonald
+    if notequal _call SaidNoToRonald
+    msgbox gText_Route11SouthHouse_PlutoEvent_RonaldStartsToRecognizePlayer MSG_NORMAL
+    checkgender
+    compare LASTRESULT 0x0 @ Male
+    if equal _call RonaldChecksMaleDescription
+    if notequal _call RonaldChecksFemaleDescription
+    applymovement 0x2 m_Joy
+    msgbox gText_Route11SouthHouse_PlutoEvent_RonaldIsReadyToBattle MSG_NORMAL
+    applymovement 0x2 m_LookRight
+    msgbox gText_Route11SouthHouse_PlutoEvent_RonaldTellsRefinerToMove MSG_NORMAL
+    applymovement 0x1 m_LookDown
+    msgbox gText_Route11SouthHouse_PlutoEvent_RefinerWarnsPlayer MSG_NORMAL
+    applymovement 0x1 m_WalkToTheSide
+    msgbox gText_Route11SouthHouse_PlutoEvent_RonaldScoldsRefiner MSG_NORMAL
+    applymovement 0x2 m_LookDown
+    msgbox gText_Route11SouthHouse_PlutoEvent_RonaldChallengesPlayer MSG_NORMAL
+    setvar 0x503A 0x2
+    setvar 0x503B 0x0
+    trainerbattle1 0x1 0xC8 0x100 gText_Route11SouthHouse_PlutoEvent_RonaldBattleIntro gText_Route11SouthHouse_PlutoEvent_RonaldBattleLoss PostRonaldBattle
+    end
+
+SaidYesToRonald:
+    sound 0x15 @ Exclaim
+    applymovement PLAYER m_Surprise
+    msgbox gText_Route11SouthHouse_PlutoEvent_RonaldAppreciatesHonesty MSG_NORMAL
+    return
+
+SaidNoToRonald:
+    msgbox gText_Route11SouthHouse_PlutoEvent_RonaldDoesNotAppreciateDishonesty MSG_NORMAL
+    return
+
+RonaldChecksMaleDescription:
+    msgbox gText_Route11SouthHouse_PlutoEvent_RonaldGivesMaleDescriptor MSG_NORMAL
+    return
+
+RonaldChecksFemaleDescription:
+    msgbox gText_Route11SouthHouse_PlutoEvent_RonaldGivesFemaleDescriptor MSG_NORMAL
+    return
+
+PostRonaldBattle:
+    playbgm 0x19A @ Encounter Team Pluto
+    setvar PlutoEncounterVar 0x3
+    msgbox gText_Route11SouthHouse_PlutoEvent_RonaldAsksPlayerToJoin MSG_YESNO
+    compare LASTRESULT YES
+    if equal _call PlayerSaidYesToJoining
+    if notequal _call PlayerSaidNoToJoining
+    msgbox gText_Route11SouthHouse_PlutoEvent_RonaldThreatensThePlayer MSG_NORMAL
+    applymovement 0x1 m_LookLeft
+    applymovement 0x2 m_LookRight
+    msgbox gText_Route11SouthHouse_PlutoEvent_RonaldThreatensOldMan MSG_NORMAL
+    applymovement 0x2 m_LookDown
+    msgbox gText_Route11SouthHouse_PlutoEvent_RonaldLeaves MSG_NORMAL
+    fadescreen FADEOUT_BLACK
+    setflag 0x41 @ Hide team pluto
+    hidesprite 0x2 @ Ronald leaves
+    playse 0x9 @ Exit room
+    waitse 
+    fadedefaultbgm
+    fadescreen FADEIN_BLACK
+    pause DELAY_HALFSECOND
+    applymovement 0x1 m_RefinerWalksToPlayer
+    waitmovement 0x1
+    msgbox gText_Route11SouthHouse_PlutoEvent_RefinerThanksPlayer MSG_NORMAL
+    sound 0x15 @ Exclaim
+    applymovement 0x1 m_Surprise
+    msgbox gText_Route11SouthHouse_PlutoEvent_RefinerLearnsOfAlistairsInvolvement MSG_NORMAL
+    applymovement 0x1 m_RefinerGetsMegaRing
+    waitmovement 0x1
+    msgbox gText_Route11SouthHouse_PlutoEvent_RefinerGivesMegaRing MSG_NORMAL
+    obtainitem ITEM_MEGA_RING 0x1
+    msgbox gText_Route11SouthHouse_PlutoEvent_RefinerExplainsMegaRing MSG_NORMAL
+    msgbox gText_Route11SouthHouse_PlutoEvent_RefinerBidsPlayerFarewell MSG_NORMAL
+    warp 3 29 0xFF 0x1D 0x2F
+    end
+
+PlayerSaidYesToJoining:
+    msgbox gText_Route11SouthHouse_PlutoEvent_RonaldWhenPlayerSaysYes MSG_NORMAL
+    return
+
+PlayerSaidNoToJoining:
+    msgbox gText_Route11SouthHouse_PlutoEvent_RonaldWhenPlayerSaysNo MSG_NORMAL
     return
 
 .global EventScript_Route11South_TM68GigaImpact
@@ -152,6 +286,8 @@ SignScript_Route11South_MegaStoneRefiner:
 .global EventScript_Route11South_Rival
 EventScript_Route11South_Rival:
     faceplayer
+    compare PlutoEncounterVar 0x4
+    if equal _goto RivalBattlePrompt
     compare PartnerVar PartnerRival
     if equal _goto RivalPromptToReturn
     msgbox gText_Route11South_PlutoEvent_TeamUpWithRivalPrompt MSG_YESNO
@@ -189,9 +325,22 @@ DoNotTeamUpWithRival:
     applymovement LASTTALKED m_LookDown
     end
 
+RivalBattlePrompt:
+    msgbox gText_Route11SouthHouse_PlutoEvent_RivalBattleConfirmation MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto DeniedRivalBattle
+    @ TODO: Battle with rival
+    end
+
+DeniedRivalBattle:
+    msgbox gText_Route11SouthHouse_PlutoEvent_RivalWaitsToBattle MSG_NORMAL
+    end
+
 .global EventScript_Route11South_Alistair
 EventScript_Route11South_Alistair:
     faceplayer
+    compare PlutoEncounterVar 0x4
+    if equal _goto AlistairBattleSupervision
     compare PartnerVar PartnerAlistair
     if equal _goto AlistairPromptToReturn
     msgbox gText_Route11South_PlutoEvent_TeamUpWithAlistairPrompt MSG_YESNO
@@ -229,13 +378,21 @@ DoNotTeamUpWithAlistair:
     applymovement LASTTALKED m_LookDown
     end
 
-RemovePartner:
+AlistairBattleSupervision:
+    msgbox gText_Route11SouthHouse_PlutoEvent_AlistairBattleSupervision MSG_NORMAL
+    end
+
+ResetParnerState:
     clearflag 0x908 @ End tag battles
     clearflag 0x910 @ Do not trigger wild double battles
     setvar 0x5011 0x0 @ Reset partner trainer ID
     setvar 0x5012 0x0 @ Reset partner trainer backsprite
     special 0xD2 @ Remove follower
     clearflag 0x42
+    return
+
+RemovePartner:
+    call ResetParnerState
     compare PartnerVar PartnerRival
     if greaterthan _call MovePlayerInFrontOfRival @ Had Alistair
     if equal _call MovePlayerInFrontOfAlistair @ Had Rival
@@ -446,7 +603,165 @@ PlayerDidNotAgreeToHelp:
     msgbox gText_Route11South_PlutoEvent_PlayerDoesNotAgreeToHelp MSG_NORMAL
     return
 
+.global EventScript_Route11South_TeamPlutoClancy
+EventScript_Route11South_TeamPlutoClancy:
+    faceplayer
+    playbgm 0x19A @ Encounter Team Pluto
+    setflag 0x926 @ Follower will move during active script
+    msgbox gText_Route11South_PlutoEvent_Clancy_InitiateConversationWithClancy MSG_NORMAL
+    applymovement Clancy m_Surprise
+    waitmovement Clancy
+    msgbox gText_Route11South_PlutoEvent_Clancy_ClancySortOfRecognizesThePlayer MSG_NORMAL
+    compare PLAYERFACING RIGHT
+    if equal _call PlayerWalkToInFrontOfClancy
+    call PlayerWalkRight_Return
+    applymovement PLAYER m_LookUp
+    compare PartnerVar PartnerRival
+    if equal _call RivalLookUp
+    if notequal _call AlistairLookUp
+    applymovement Clancy m_LookRight
+    applymovement Ena m_LookLeft
+    msgbox gText_Route11South_PlutoEvent_Clancy_EnaDoesRecognizePlayer MSG_NORMAL
+    goto ClancyAndEnaSharedEvent
+
+PlayerWalkToInFrontOfClancy:
+    call PlayerWalkDown_Return
+    call PlayerWalkRight_Return
+    return
+
+RivalLookUp:
+    applymovement Rival m_LookUp
+    return
+
+AlistairLookUp:
+    applymovement Alistair m_LookUp
+    return
+
+.global EventScript_Route11South_TeamPlutoEna
+EventScript_Route11South_TeamPlutoEna:
+    faceplayer
+    playbgm 0x19A @ Encounter Team Pluto
+    setflag 0x926 @ Follower will move during active script
+    msgbox gText_Route11South_PlutoEvent_Ena_InitiateConversationWithEna MSG_NORMAL
+    compare PLAYERFACING LEFT
+    if equal _call PlayerWalkToInFrontOfEna
+    call PlayerWalkLeft_Return
+    applymovement PLAYER m_LookUp
+    compare PartnerVar PartnerRival
+    if equal _call RivalLookUp
+    if notequal _call AlistairLookUp
+    applymovement Clancy m_LookRight
+    applymovement Ena m_LookLeft
+    msgbox gText_Route11South_PlutoEvent_Ena_ClancyHearsTheCommotion MSG_NORMAL
+    msgbox gText_Route11South_PlutoEvent_Ena_EnaRecognizesThePlayer MSG_NORMAL
+    goto ClancyAndEnaSharedEvent
+
+PlayerWalkToInFrontOfEna:
+    call PlayerWalkDown_Return
+    call PlayerWalkLeft_Return
+    return
+
+ClancyAndEnaSharedEvent:
+    applymovement Clancy m_LookDown
+    pause DELAY_1SECOND
+    pause DELAY_1SECOND
+    applymovement Clancy m_Question
+    pause DELAY_1SECOND
+    pause DELAY_1SECOND
+    sound 0x15 @ Exclaim
+    applymovement Clancy m_Surprise
+    waitmovement Clancy
+    applymovement Clancy m_LookRight
+    msgbox gText_Route11South_PlutoEvent_Clancy_ClancyFinallyRecognizesPlayer MSG_NORMAL
+    applymovement Ena m_Joy
+    msgbox gText_Route11South_PlutoEvent_EnaHappy MSG_NORMAL
+    applymovement Clancy m_LookDown
+    applymovement Ena m_LookDown
+    msgbox gText_Route11South_PlutoEvent_ClancyComplainsAboutPlayer MSG_NORMAL
+    applymovement Clancy m_ClancyFrustratedJumps
+    msgbox gText_Route11South_PlutoEvent_ClancyChallengesPlayer MSG_NORMAL
+    msgbox gText_Route11South_PlutoEvent_EnaAgreesToTheChallenge MSG_NORMAL
+    special 0xD3 @ Face partner
+    compare PartnerVar PartnerRival
+    if equal _call RivalCommentsOnPlutoBeforeBattle
+    if notequal _call AlistairCommentsOnPlutoBeforeBattle
+    applymovement PLAYER m_LookUp
+    clearflag 0x926 @ Follower will not move during active script
+    setflag 0x909 @ Two opponents
+    setvar 0x5010 0xC7 @ Ena
+    loadpointer 0x0 gText_Route11South_PlutoEvent_EnaLoses @ Ena's loss text
+    special 0xAC @ Load second opponent's text into buffer
+    trainerbattle3 0x3 0xC6 0x0 gText_Route11South_PlutoEvent_ClancyLoses @ Tag battle with current partner
+    playbgm 0x19A @ Encounter Team Pluto
+    msgbox gText_Route11South_PlutoEvent_PostBattleClancyComplains MSG_NORMAL
+    msgbox gText_Route11South_PlutoEvent_PostBattleEnaComplains MSG_NORMAL
+    msgbox gText_Route11South_PlutoEvent_ClancyBacksDown MSG_NORMAL
+    applymovement Clancy m_WalkLeft
+    waitmovement Clancy
+    applymovement Clancy m_LookRight
+    applymovement Ena m_WalkRight
+    waitmovement Ena
+    applymovement Ena m_LookLeft
+    special 0xD3 @ Face partner
+    compare PartnerVar PartnerRival
+    if equal _call RivalHealsAfterBattle
+    compare PartnerVar PartnerAlistair
+    if equal _call AlistairHealsAfterBattle
+    applymovement PLAYER m_WalkUp
+    waitmovement PLAYER
+    warpwalk 20 0 0 @ Event continued in house
+    end
+
+RivalCommentsOnPlutoBeforeBattle:
+    msgbox gText_Route11South_PlutoEvent_RivalPreBattle MSG_NORMAL
+    applymovement Rival m_LookUp
+    return
+
+AlistairCommentsOnPlutoBeforeBattle:
+    msgbox gText_Route11South_PlutoEvent_AlistairPreBattle MSG_NORMAL
+    applymovement Alistair m_LookUp
+    return
+
+RivalHealsAfterBattle:
+    msgbox gText_Route11South_PlutoEvent_RivalHealsPlayer MSG_NORMAL
+    call PlayerHeal
+    msgbox gText_Route11South_PlutoEvent_RivalCheersPlayerOn MSG_NORMAL
+    getplayerpos 0x4000 0x4001
+    compare 0x4000 0x24 @ Facing Ena
+    if equal _call MoveRivalAndPlayerAfterClancyAndEna 
+    return
+
+MoveRivalAndPlayerAfterClancyAndEna:
+    applymovement Rival m_WalkLeft
+    waitmovement Rival
+    applymovement Rival m_LookRight
+    applymovement PLAYER m_WalkLeft
+    waitmovement PLAYER
+    return
+
+AlistairHealsAfterBattle:
+    msgbox gText_Route11South_PlutoEvent_AlistairHealsPlayer MSG_NORMAL
+    call PlayerHeal
+    msgbox gText_Route11South_PlutoEvent_AlistairCheersPlayerOn MSG_NORMAL
+    getplayerpos 0x4000 0x4001
+    compare 0x4000 0x24 @ Facing Ena
+    if equal _call MoveAlistairAndPlayerAfterClancyAndEna
+    return
+
+MoveAlistairAndPlayerAfterClancyAndEna:
+    applymovement Alistair m_WalkLeft
+    waitmovement Alistair
+    applymovement Alistair m_LookRight
+    applymovement PLAYER m_WalkLeft
+    waitmovement PLAYER
+    return
+
 m_RivalWalksToMeetPlayer: .byte walk_left, walk_left, walk_left, walk_left, walk_left, walk_left, walk_left, end_m
 m_RivalAndPlayerWalkToAlistair: .byte walk_right, walk_right, walk_right, walk_right, walk_right, walk_right, look_down, end_m
 m_AlistairWalksToMeetingPlace: .byte walk_up, walk_up, walk_up, walk_up, walk_left, walk_left, walk_left, walk_left, walk_up, look_left, end_m
 m_AlistairLinesUpWithRival: .byte walk_up, look_down, end_m
+m_ClancyFrustratedJumps: .byte jump_onspot_down, jump_onspot_down, end_m
+m_ApproachRonald: .byte walk_up, walk_up, end_m
+m_WalkToTheSide: .byte walk_right, walk_right, look_down, end_m
+m_RefinerWalksToPlayer: .byte walk_left, walk_left, walk_left, look_down, end_m
+m_RefinerGetsMegaRing: .byte walk_left, walk_left, walk_left, walk_up, walk_up, pause_long, pause_long, walk_down, walk_down, walk_right, walk_right, walk_right, look_down, end_m

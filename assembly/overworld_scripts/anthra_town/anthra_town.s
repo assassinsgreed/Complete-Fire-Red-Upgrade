@@ -49,6 +49,7 @@ LevelScript_DepartingWithRival:
 
 MapEntryScript_PlayersHouse_HealingSpot:
     sethealingplace 0x01 @ Player's House
+	call ResetRoute11PlutoEventOnWhiteout
     end
 
 .global EventScript_AnthraTown_PlayersPoster
