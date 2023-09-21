@@ -44,7 +44,7 @@ What?! Impossible!
 We're out on an important mission.\nYou'd better get lost!
 
 #org @gText_Route11South_TeamPlutoChung_Intro
-We're going to get ahold of some\nmega stones to become unstoppable.\pWe won't let some kid get in our way!
+We're going to get ahold of some\nMega Stones to become unstoppable.\pWe won't let some kid get in our way!
 
 #org @gText_Route11South_TeamPlutoChung_Defeat
 Don't think this changes anything.
@@ -96,3 +96,360 @@ Trainer Tips!\nWild Pok\emon encountered in double\lbattles are harder to catch.
 
 #org @gText_Route11South_MegaStoneRefinerSign
 Richard's Refinery\nHome of Kulure's Mega Stone Refiner
+
+#org @gText_Route11South_PlutoEvent_RivalSpotsPlayer
+[BLUE]Oh, [PLAYER], there you are!
+
+#org @gText_Route11South_PlutoEvent_RivalExplainsPlutoTrouble
+[BLUE]I caught up with Alistair.\pI wanted to ask him about what\nhappened in Daimyn City, but it\lwasn't a good time.\pHe said Team Pluto was in the area\nand was causing trouble.\pHe needs our help! Come on, let's\ngo!
+
+#org @gText_Route11South_PlutoEvent_AlistairAcknowledgesRival
+[BLACK]Alistair:[BLUE] Ah, there you are,\n[RIVAL].
+
+#org @gText_Route11South_PlutoEvent_AlistairAcknowledgesPlayer
+[BLACK]Alistair:[BLUE] And [PLAYER], too. Good.\nI need to ask for your assistance.
+
+#org @gText_Route11South_PlutoEvent_AlistairAsksForHelp
+[BLACK]Alistair:[BLUE] A good friend of mine lives\nto the south, near Ferrox Village.\pI was on my way to visit him when I\nspotted some Team Pluto thugs in\lthe area.\pMy friend is an expert refiner. In\nparticular, he specializes in\lrefining the ashes from Mount\lCarnelidge into Mega Stones.\pThese Mega Stones allow certain\nspecies of Pok\emon to Mega Evolve,\lallowing them to tap into their\lfull potential in battle.\pTeam Pluto aims to harass him into\ngiving them Mega Stones, of that I\lam certain.\pAs gifted as my friend is at refining\nashes, he is not a Pok\emon trainer.\pI am concerned they will take\nadvantage of this, and threaten him\lto get what they want.\pPlease, may I ask you both for\nyour assistance, before they hurt\lhim?
+
+#org @gText_Route11South_PlutoEvent_RivalAgreesToHelp
+[BLACK][RIVAL]:[BLUE] Team Pluto[.] Always stirring\nup trouble for people[.]\pI can't stand them. You can count\nme in!
+
+#org @gText_Route11South_PlutoEvent_RivalAsksPlayerToHelp
+[BLACK][RIVAL]:[BLUE] You'll help too, won't you\n[PLAYER]?
+
+#org @gText_Route11South_PlutoEvent_PlayerAgreedToHelp
+[BLACK][RIVAL]:[BLUE] You're the best, [PLAYER]!
+
+#org @gText_Route11South_PlutoEvent_PlayerDoesNotAgreeToHelp
+[BLACK][RIVAL]:[BLUE] Come on, [PLAYER][.] Alistair\nis our friend and he needs our\lhelp.\pLet's put the gym challenge on hold\nfor a bit, okay?
+
+#org @gText_Route11South_PlutoEvent_RivalFinalizesAgreementToHelp
+[BLACK][RIVAL]:[BLUE] Alistair, what can we do to\nhelp?
+
+#org @gText_Route11South_PlutoEvent_AlistairMakesAPlan
+[BLACK]Alistair:[BLUE] Thank you both. I am in\nyour debt.\pNow, let's come up with a plan[.]\pI saw quite a few Team Pluto thugs\nas I made my way here.\pI propose we team up and work\ntogether to stop them.\pOne of us should stay here,\nhowever, in case they try to\lescape.
+
+#org @gText_Route11South_PlutoEvent_RivalSignsPlayerUpToFight
+[BLACK][RIVAL]:[BLUE] Sounds like a plan. Let's\nget organized.\p[PLAYER], you're a good battler. I\nthink you should be part of the\lgroup that goes after Team Pluto.
+
+#org @gText_Route11South_PlutoEvent_AlistairAgrees
+[BLACK]Alistair:[BLUE] I trust both of your\ncapabilities.\p[RIVAL], let's leave the decision of\nwho to bring along up to [PLAYER].\pWe will wait here. Just speak to us\nto choose who you'll bring with\lyou.
+
+#org @gText_Route11South_PlutoEvent_GameplayTip
+You will team up with [RIVAL] or\nAlistair to defeat Team Pluto.\pSimply speak to either to have them\njoin you. You can change your mind\lat any time.\pYour partner will restore your\nPok\emon after battle.\pIf you get stuck or want to switch\npartners, simply speak to your\lcurrent partner and ask to return\lto this point.
+
+#org @gText_Route11South_PlutoEvent_TeamUpWithRivalPrompt
+You want to team up?
+
+#org @gText_Route11South_PlutoEvent_TeamUpWithRivalYes
+Aw yeah! Let's go kick their butts!
+
+#org @gText_Route11South_PlutoEvent_TeamUpWithRivalNo
+You've got it. I'll keep an eye out\nfor Team Pluto.
+
+#org @gText_Route11South_PlutoEvent_AlistairReturnToStartingPointPrompt
+Yes? Would you like to return to\nwhere [RIVAL] is waiting?
+
+#org @gText_Route11South_PlutoEvent_AlistairReturnToStartingPointYes
+Very well. Let's go now.
+
+#org @gText_Route11South_PlutoEvent_AlistairReturnToStartingPointNo
+[BLUE]Understood. Let's continue on. Team\nPluto must be stopped.
+
+#org @gText_Route11South_PlutoEvent_RivalReturnToStartingPointPrompt
+What's up, [PLAYER]? Do you want to\ngo back to where Alistair is\lwaiting?
+
+#org @gText_Route11South_PlutoEvent_RivalReturnToStartingPointYes
+Okay, let's go!
+
+#org @gText_Route11South_PlutoEvent_RivalReturnToStartingPointNo
+[BLUE]Alright, let's deal with Team Pluto\nquickly.
+
+#org @gText_Route11South_PlutoEvent_LeavingRoute11WithRivalPrompt
+[BLUE]Is there something you have to take\ncare of, [PLAYER]?
+
+#org @gText_Route11South_PlutoEvent_LeavingRoute11WithRivalYes
+[BLUE]Okay, I'll wait here with Alistair.
+
+#org @gText_Route11South_PlutoEvent_TeamUpWithAlistairPrompt
+You wish to battle alongside me?
+
+#org @gText_Route11South_PlutoEvent_TeamUpWithAlistairYes
+Very well. Let's put an end to Team\nPluto's schemes.
+
+#org @gText_Route11South_PlutoEvent_TeamUpWithAlistairNo
+Understood. I will wait here and\nkeep an eye out for Team Pluto.
+
+#org @gText_Route11South_PlutoEvent_LeavingRoute11WithAlistairPrompt
+[BLUE]Oh, do you have some unfinished\nbusiness to take care of?
+
+#org @gText_Route11South_PlutoEvent_LeavingRoute11WithAlistairYes
+[BLUE]Very well, I will wait here.
+
+#org @gText_Route11South_PlutoEvent_HessonPassWithPartnerCommon
+[BLUE][PLAYER], Team Pluto didn't come this\nway. Let's head further south.
+
+#org @gText_Route11South_PlutoEvent_HeadingNorth_PlutoNotDefeated
+You should stop Team Pluto before\nheading this way[.]
+
+#org @gText_Route11South_PlutoEvent_HeadingSouth_WithoutPartner
+You should ask [RIVAL] or Alistair\nto join you before challenging\lTeam Pluto[.]
+
+#org @gText_Route11South_PlutoEvent_HeadingNorth_RivalNotBattled
+[RIVAL] is expecting a battle.\nBetter not let him down.
+
+#org @gText_Route11South_PlutoEvent_Clancy_InitiateConversationWithClancy
+[BLACK]Clancy: [BLUE]Yeah? Whadda ya want, brat?\nI'm busy guarding this door here.
+
+#org @gText_Route11South_PlutoEvent_Clancy_ClancySortOfRecognizesThePlayer
+[BLACK]Clancy: [BLUE]Wait a minute[.] Something\nabout you looks familiar[.]
+
+#org @gText_Route11South_PlutoEvent_Clancy_EnaDoesRecognizePlayer
+[BLACK]Ena: [RED]Clancy[.] That's that kid from\nthe desert.\pY'know, the one that cause a lot of\ntrouble for us?
+
+#org @gText_Route11South_PlutoEvent_Clancy_ClancyFinallyRecognizesPlayer
+[BLACK]Clancy: [BLUE]Gah! You're totally right,\nEna!\pMan, you're good at recognizing\nfaces.
+
+#org @gText_Route11South_PlutoEvent_EnaHappy
+[BLACK]Ena: [RED]I know.
+
+#org @gText_Route11South_PlutoEvent_Ena_InitiateConversationWithEna
+[BLACK]Ena: [RED]Hey, you have to --\nUh oh. You gotta be kidding me.
+
+#org @gText_Route11South_PlutoEvent_Ena_ClancyHearsTheCommotion
+[BLACK]Clancy: [BLUE]Yo, what's up, Ena?\nI'm trying to relax over here.
+
+#org @gText_Route11South_PlutoEvent_Ena_EnaRecognizesThePlayer
+[BLACK]Ena: [RED]I don't think we'll be relaxing\ntoday, Clancy. Look there[.]\pIt's that brat from the desert op.\nRemember? They caused us a lot of\lheadaches.
+
+#org @gText_Route11South_PlutoEvent_ClancyComplainsAboutPlayer
+[BLACK]Clancy: [BLUE]Ugh[.] I hate this kid.
+
+#org @gText_Route11South_PlutoEvent_ClancyChallengesPlayer
+[BLACK]Clancy: [BLUE]Do you have any idea how\nmuch trouble you caused us?\pWe had to do so much paperwork AND\nwe had our pay docked.\pYou think you can just stroll up to\nus and ruin our day again?\pYou even brought a friend again.\nTalk about unfair!\pJust looking at you makes me angry.\nC'mon, Ena, let's thrash this kid!
+
+#org @gText_Route11South_PlutoEvent_EnaAgreesToTheChallenge
+[BLACK]Ena: [RED]We're supposed to be guarding\nthe door[.]\pBut I guess we can't do that without\nfighting this kid, huh?\pAlright, you're going to regret\nshowing your face near us again.
+
+#org @gText_Route11South_PlutoEvent_RivalPreBattle
+[BLACK][RIVAL]: [BLUE]I never thought I'd see\nthese two jokers again[.]\pC'mon, [PLAYER], let's show them we\nmean business!
+
+#org @gText_Route11South_PlutoEvent_AlistairPreBattle
+[BLACK]Alistair: [BLUE]These two seem to recognize\nyou, [PLAYER].\pIt seems you're no stranger to\ncrossing paths with these thugs.\pVery good. Let's remind them that\nthey can't harass others!
+
+#org @gText_Route11South_PlutoEvent_ClancyBattleStart
+[BLACK]Clancy: [BLUE]Alright, time to get revenge[.]
+
+#org @gText_Route11South_PlutoEvent_ClancyLoses
+N-No! You've gotta be kidding me!
+
+#org @gText_Route11South_PlutoEvent_EnaLoses
+I should've expected this[.]
+
+#org @gText_Route11South_PlutoEvent_PostBattleClancyComplains
+[BLACK]Clancy: [BLUE]Gah, another job botched\nbecause of this twerp. I don't\lbelieve it.
+
+#org @gText_Route11South_PlutoEvent_PostBattleEnaComplains
+[BLACK]Ena: [RED]Looks like we're going to get\nanother earful[.] And more\lpaperwork.
+
+#org @gText_Route11South_PlutoEvent_ClancyBacksDown
+[BLACK]Clancy: [BLUE]Aw, don't look so smug!\pYou beat us, sure, but you won't\nbeat the head of this operation.\pGo on, try. I could use a good\nlaugh.
+
+#org @gText_Route11South_PlutoEvent_RivalHealsPlayer
+[BLACK][RIVAL]: [BLUE]Nice work, [PLAYER]. We're two\nfor two against these guys.\pI'll deal with them; you deal with\nthe leader. Here, I'll heal you\lup[.]
+
+#org @gText_Route11South_PlutoEvent_RivalCheersPlayerOn
+[BLACK][RIVAL]: [BLUE]You've got this.
+
+#org @gText_Route11South_PlutoEvent_AlistairHealsPlayer
+[BLACK]Alistair: [BLUE]They weren't a threat at\nall.\pI'll deal with them. Please,\n[PLAYER], stop their leader.\pI'll heal you before you go.
+
+#org @gText_Route11South_PlutoEvent_AlistairCheersPlayerOn
+[BLACK]Alistair: [BLUE]I'm counting on you.
+
+#org @gText_Route11SouthHouse_PlutoEvent_RonaldThreatensRefiner
+[BLUE]Gyahahaha! C'mon, fork over the Mega\nStones, or else.
+
+#org @gText_Route11SouthHouse_PlutoEvent_RefinerRefuses
+[BLUE]Never. If you want them, you'll have\nto go through me first.
+
+#org @gText_Route11SouthHouse_PlutoEvent_RonaldAccepts
+[BLUE]That can be arranged. C'mere you.
+
+#org @gText_Route11SouthHouse_PlutoEvent_RonaldAccusesPlayer
+[BLUE]Huh? Who're you? You aren't one of\nus.\pUgh, those goons at the door must've\nbeen defeated. Are you to blame?
+
+#org @gText_Route11SouthHouse_PlutoEvent_RonaldAppreciatesHonesty
+[BLUE]Gyahahaha! Well, wouldja look at\nthat?\pAdmitting that to me? I didn't expect\nyou to be so brave.
+
+#org @gText_Route11SouthHouse_PlutoEvent_RonaldDoesNotAppreciateDishonesty
+[BLUE]You think I'm falling for that? What\na load of guff.
+
+#org @gText_Route11SouthHouse_PlutoEvent_RonaldStartsToRecognizePlayer
+[BLUE]Wait[.] Lemme get a good look at you.\nYou seem familiar. Let's see[.]
+
+#org @gText_Route11SouthHouse_PlutoEvent_RonaldGivesMaleDescriptor
+[BLUE]Dark hair, obsession with the colour\nblue, kinda cocky[.]
+
+#org @gText_Route11SouthHouse_PlutoEvent_RonaldGivesFemaleDescriptor
+[BLUE]Red hair, kind of short, kinda\ncocky[.]
+
+#org @gText_Route11SouthHouse_PlutoEvent_RonaldIsReadyToBattle
+[BLUE]I knew it, you're that kid from\nIrene's report!\pYou're the one that caused us all\nthat grief in the Rubarr Desert op.\pGyahahaha, just my luck! I was\nhoping to run into the punk that\lcaused trouble for Irene.
+
+#org @gText_Route11SouthHouse_PlutoEvent_RonaldTellsRefinerToMove
+[BLUE]You there, old fogey.\nBeat it! I'll deal with you later.
+
+#org @gText_Route11SouthHouse_PlutoEvent_RefinerWarnsPlayer
+[BLUE]Young child[.] I don't know who you\nare or why you're here, but I hope\lyou're certain of what you're doing.\pPlease, be careful.
+
+#org @gText_Route11SouthHouse_PlutoEvent_RonaldScoldsRefiner
+[BLUE]Aw, shut up already.
+
+#org @gText_Route11SouthHouse_PlutoEvent_RonaldChallengesPlayer
+[BLUE]Listen up! The name's Ronald. I'm\nTeam Pluto's chief operating\lofficer.\pI do a lot of stuff, but let's cut\nto the chase.\pYou really screwed up our\noperations last time, and I can't\lhave that.
+
+#org @gText_Route11SouthHouse_PlutoEvent_RonaldBattleIntro
+[BLUE]I am Team Pluto's strongest admin,\nand I will crush your Pok\emon!
+
+#org @gText_Route11SouthHouse_PlutoEvent_RonaldBattleLoss
+Heh, so you're the real deal[.]
+
+#org @gText_Route11SouthHouse_PlutoEvent_RonaldAsksPlayerToJoin
+[BLUE]Gyahaha! Now I get it.\pSay, we could use someone like\nyou.\pWhadda ya say? Will you join us?
+
+#org @gText_Route11SouthHouse_PlutoEvent_RonaldWhenPlayerSaysYes
+[BLUE]Heh. You've got a sense of humour\ntoo. The whole package.\pI know you aren't serious.
+
+#org @gText_Route11SouthHouse_PlutoEvent_RonaldWhenPlayerSaysNo
+[BLUE]Heh, I figured you'd say that.
+
+#org @gText_Route11SouthHouse_PlutoEvent_RonaldThreatensThePlayer
+[BLUE]Listen up. I'm a good sport.\pYou won fair and square, so we'll\npull outta this op without fuss.\pBut let me be clear: You cause\ntrouble for us again, and you'll\lseriously regret it.\pJust go back to living your life, and\nput the heroics behind ya. Got it?
+
+#org @gText_Route11SouthHouse_PlutoEvent_RonaldThreatensOldMan
+[BLUE]And you, old man!\pYer lucky this kid was here. Don't\nforget that.
+
+#org @gText_Route11SouthHouse_PlutoEvent_RonaldLeaves
+[BLUE]Alright. I'll make good on my word.\pAnd remember: stay out of our way if\nyou value your safety.
+
+#org @gText_Route11SouthHouse_PlutoEvent_RefinerThanksPlayer
+[BLUE]Young trainer, I must thank you for\nyour help.\pHad you not intervened[.] I shudder to\nthink about it.\pBut tell me, what possessed you to\ndo something so dangerous?
+
+#org @gText_Route11SouthHouse_PlutoEvent_RefinerLearnsOfAlistairsInvolvement
+[BLUE]Alistair put you and your friend up\nto it?\pSo you're acquainted with him[.] I\nsee.\pTell me, what is your name?\p[PLAYER]?\p[PLAYER], please wait here a moment.
+
+#org @gText_Route11SouthHouse_PlutoEvent_RefinerGivesMegaRing
+[BLUE]Those thugs were trying to take my\nMega Stones and Mega Rings.\pI refused, of course. They would use\nthe potential the stones bring\lto harm others.\pYou and your friend are a kind\ntrainers.\pI am sure you can make good use of\nthese to help people instead.\pPlease, take this with my gratitude.\nOne for you, and one for your\lfriend.
+
+#org @gText_Route11SouthHouse_PlutoEvent_RefinerExplainsMegaRing
+[BLUE]That is a Mega Ring.\pIf your Pok\emon holds a suitable\nMega Stone, you can use this ring\lto help it Mega Evolve.\pAs for these stones[.] They can be\nfound all over the region.\pI have also perfected the art of\nmaking new stones, and will sell\lthem to you if you'd like.\pI don't mean to toot my own horn,\nbut I'm quite the gifted refiner.\lHohoho!\p[PLAYER], I trust you will use this\npower to bring out the best in your\lPok\emon.
+
+#org @gText_Route11SouthHouse_PlutoEvent_RefinerBidsPlayerFarewell
+[BLUE]Now[.] I think I've talked your ear\noff long enough. Hohoho!\pI suggest you go and let Alistair\nand your friend know you are safe.
+
+#org @gText_Route11SouthHouse_PlutoEvent_RivalCommentsOnPlayersReturn
+[BLACK][RIVAL]:[BLUE] [PLAYER], you're back! I'm\nglad you're safe.
+
+#org @gText_Route11SouthHouse_PlutoEvent_AlistairCommentsOnPlayersReturn
+[BLACK]Alistair:[BLUE] You've successfully driven\noff Team Pluto, have you?\pThank you, [PLAYER] and [RIVAL]. I\nam in your debt.
+
+#org @gText_Route11SouthHouse_PlutoEvent_AlistairCommentsOnMegaRing
+[BLACK]Alistair:[BLUE] What's that? The old coot\ngave you a Mega Ring?\pAnd there's one for [RIVAL] too?
+
+#org @gText_Route11SouthHouse_PlutoEvent_GiveRivalHisMegaStone
+Gave [RIVAL] his Mega Stone!
+
+#org @gText_Route11SouthHouse_PlutoEvent_RivalAppreciatesMegaRing
+[BLACK][RIVAL]:[BLUE] Wow, thanks [PLAYER]! I\ndon't know what to say!
+
+#org @gText_Route11SouthHouse_PlutoEvent_AlistairCommentsOnOldMan
+[BLACK]Alistair:[BLUE] That old man[.] He must've\nseen something special in you.
+
+#org @gText_Route11SouthHouse_PlutoEvent_RivalWantsToBattle
+[BLACK][RIVAL]:[BLUE] Hey, [PLAYER], I have a\ngreat idea!\pWhy don't we have a battle to try\nthem out?
+
+#org @gText_Route11SouthHouse_PlutoEvent_AlistairWillSuperviseBattle
+[BLACK]Alistair:[BLUE] That's a great idea. You\ntwo are friends, after all.\pMega Evolution can be quite\npowerful.\pI'll supervise to make sure things\ndon't get out of hand.
+
+#org @gText_Route11SouthHouse_PlutoEvent_RivalHealsPlayer
+[BLACK][RIVAL]:[BLUE] [PLAYER], I'll heal your\nPok\emon real quick[.]
+
+#org @gText_Route11SouthHouse_PlutoEvent_RivalWaitsToBattle
+[BLACK][RIVAL]:[BLUE] It's been quite a day. I'll\nunderstand if you want to take a\lbreather first.\pJust talk to me when you're ready to\nbattle.
+
+#org @gText_Route11SouthHouse_PlutoEvent_RivalBattleConfirmation
+[BLACK][RIVAL]:[BLUE] Are you ready to try out\nthese Mega Rings, [PLAYER]?
+
+#org @gText_Route11SouthHouse_PlutoEvent_AlistairBattleSupervision
+[BLACK]Alistair:[BLUE] I'll supervise your battle\nwith [RIVAL], whenever you're\lready.
+
+#org @gText_Route11SouthHouse_PlutoEvent_RivalEagerToBattle
+[BLACK][RIVAL]:[BLUE] Awesome! Let's do this.
+
+#org @gText_Route11SouthHouse_PlutoEvent_AlistairAsksPlayerAndRivalToTakePlaces
+[BLACK]Alistair:[BLUE] Alright, you two. Take your\nplaces and we'll begin.
+
+#org @gText_Route11SouthHouse_PlutoEvent_RivalInitiatesBattle
+[BLACK][RIVAL]: [BLUE]Alright, [PLAYER], you'd\nbetter be ready.\pMy Pok\emon and I have been training\nreally hard lately.\pWe're really strong. We'll show you\nwhat we're made of!
+
+#org @gText_Route11SouthHouse_PlutoEvent_RivalLoses
+No way! Even after all the training\nwe've been doing?
+
+#org @gText_Route11SouthHouse_PlutoEvent_RivalCommentsOnLossAfterBattle
+[BLACK][RIVAL]:[BLUE] Haha, looks like you win,\nagain, [PLAYER][.]\pYou and your Pok\emon sure are tough.
+
+#org @gText_Route11SouthHouse_PlutoEvent_AlistairConcludesBattle
+[BLACK]Alistair: [BLUE]That was wonderful battling,\nyou two.\pThe bonds you share with your\nPok\emon are truly phenomenal.\pI have a gift for each of you, to\ncommemorate this moment.
+
+#org @gText_Route11SouthHouse_PlutoEvent_AlistairExplainsFly
+[BLACK]Alistair: [BLUE]That HM contains the move\nFly.\pWhen used, it will allow you to\nreturn to any town or city\lyou've visited before.\pYou'll require the badge from Daimyn\nCity first, however.
+
+#org @gText_Route11SouthHouse_PlutoEvent_RivalAppreciatesFly
+[BLACK][RIVAL]: [BLUE]Wow, thank you. That's very\ngenerous of you, Alistair.\pI guess I'd better go get that\nbadge.
+
+#org @gText_Route11SouthHouse_PlutoEvent_RivalPreparesToLeave
+[BLACK][RIVAL]: [BLUE]I'll catch you later,\n[PLAYER].
+
+#org @gText_Route11SouthHouse_PlutoEvent_AlistairPreparesToLeave
+[BLACK]Alistair: [BLUE]I must be going as well,\n[PLAYER]. I wish you well.
+
+#org @gText_Route11SouthHouse_PlutoEvent_AlistairPleadsForRivalToStop
+[BLACK]Alistair: [BLUE][RIVAL], please wait a\nmoment.\pThere's something I'd like to ask you.
+
+#org @gText_Route11SouthHouse_PlutoEvent_RivalRespondsToAlistair
+[BLACK][RIVAL]: [BLUE]Alistair? What's up?
+
+#org @gText_Route11SouthHouse_PlutoEvent_AlistairAsksAboutPlayer
+[BLACK]Alistair: [BLUE]You and [PLAYER][.] You\nbattle often, yes?
+
+#org @gText_Route11SouthHouse_PlutoEvent_RivalExplainsRelationship
+[BLACK][RIVAL]: [BLUE]Yeah, we do.\pWe set off on our journeys at the\nsame time and have battled a few\ltimes along the way.
+
+#org @gText_Route11SouthHouse_PlutoEvent_AlistairAsksAboutDream
+[BLACK]Alistair: [BLUE]And I believe you've\nmentioned your dream of challenging\lSelene, when we first met in Ferrox\lVillage.\pI suppose that would mean you and\n[PLAYER] are rivals, then?
+
+#org @gText_Route11SouthHouse_PlutoEvent_RivalCommentsOnFriendship
+[BLACK][RIVAL]: [BLUE]Huh? I[.] guess you could\nsay that.\pIt's true that we both want to\nchallenge Champion Selene, but[.]\pI don't know if rivalry is the right\nway to feel about it.\pIt's been[.] friendlier than that, I\nguess.
+
+#org @gText_Route11SouthHouse_PlutoEvent_AlistairCommentsOnRivalsRelationship
+[BLACK]Alistair: [BLUE][RIVAL][.] I'm sure I don't\nneed to tell you this, but[.]\pThere can be only one champion.\pIf you and [PLAYER] share that\ndream, it is natural that only one\lof you can achieve it.
+
+#org @gText_Route11SouthHouse_PlutoEvent_RivalUpset
+[BLACK][RIVAL]: [BLUE]*Sigh* Yeah[.]
+
+#org @gText_Route11SouthHouse_PlutoEvent_RivalConsideringGivingUp
+[BLACK][RIVAL]: [BLUE]I love travelling around\nthe region with [PLAYER], I really\ldo!\pIt's just that[.] They're so good at\nbattling. It comes so easily to\lthem.\pI don't know if I can keep up.
+
+#org @gText_Route11SouthHouse_PlutoEvent_AlistairRevealsHisHistory
+[BLACK]Alistair: [BLUE][RIVAL], I've mentioned\nbefore that I used to be a\ltrainer, myself.\pThe truth is[.] I used to have dreams\nof becoming the champion as well.
+
+#org @gText_Route11SouthHouse_PlutoEvent_AlistairReallyRevealsHisHistory
+[BLACK]Alistair: [BLUE]I didn't take it seriously\nenough.\pBefore I knew it, my rival had\noutpaced me, securing all the\lglory I had dreamed of.\pIn the end, they forgot about me[.]\nAnd I was left with nothing.
+
+#org @gText_Route11SouthHouse_PlutoEvent_AlistairMakesAnOfferToRival
+[BLACK]Alistair: [BLUE][RIVAL], I don't want to\nsee you experience the same things.\pIf it interests you, I can teach you\nwhat I know of Pok\emon battling.\pIn exchange, I ask for one small\nfavour[.]\pDon't give up on that dream. Rise to\nthe top and knock Selene off her\lthrone.
+
+#org @gText_Route11SouthHouse_PlutoEvent_RivalAcceptsTheOffer
+[BLACK][RIVAL]: [BLUE]You'd do that?\pAlright, Alistair. It's a deal.\pLet's get training[.] There's a lot I\nneed to practice.

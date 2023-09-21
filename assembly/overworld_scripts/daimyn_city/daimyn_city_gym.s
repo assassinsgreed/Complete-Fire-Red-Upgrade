@@ -612,10 +612,15 @@ EventScript_DaimynCityGym_Gentleman:
 
 .global SignScript_DaimynCityGym_GymPlacard
 SignScript_DaimynCityGym_GymPlacard:
-    @ TODO Later: A checkflag here for beating Pluto on route 11, then showing the rival's name on the placard
+    checkflag 0x42 @ Finished Pluto events on route 11
+    if SET _goto SignScript_DaimynCityGym_PlacardWithBadgeAfterPluto
     checkflag 0x823 @ Daimyn gym badge
     if SET _goto SignScript_DaimynCityGym_PlacardWithBadge
     msgbox gText_DaimynCityGym_Winners MSG_SIGN
+    end
+
+SignScript_DaimynCityGym_PlacardWithBadgeAfterPluto:
+    msgbox gText_DaimynCityGym_WinnersWithBadgeAndRival MSG_SIGN
     end
 
 SignScript_DaimynCityGym_PlacardWithBadge:

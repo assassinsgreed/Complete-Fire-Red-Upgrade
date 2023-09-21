@@ -113,6 +113,11 @@ LookDown:
     applymovement PLAYER m_LookDown
     return
 
+.global LookLeft
+LookLeft:
+    applymovement PLAYER m_LookLeft
+    return
+
 .global LookRight
 LookRight:
     applymovement PLAYER m_LookRight
@@ -149,6 +154,40 @@ PlayerHeal:
 	waitfanfare
 	special 0x0
     fadescreenswapbuffers 0x0
+    return
+
+.global SetupRoute11RivalPartner
+SetupRoute11RivalPartner:
+    call SetupPartner
+    copyvar 0x5011 0x408E
+    setvar 0x4002 189 @ trainer ID, which is 189 + 0-7 depending on value in 0x408E
+    setvar 0x8004 0x5011
+    setvar 0x8005 0x4002
+    special 0x3E @ Add two vars above, result stored in 0x5011 which is loaded as trainer ID
+    setvar 0x5012 0x6 @ Set trainer backsprite
+    return
+
+.global SetupRoute11AlistairPartner
+SetupRoute11AlistairPartner:
+    call SetupPartner
+    setvar 0x5011 197 @ Set partner trainer ID
+    setvar 0x5012 0x7 @ Set trainer backsprite
+    return
+
+SetupPartner:
+    setflag 0x908 @ Start tag battles
+    setflag 0x910 @ Initiate wild double battles
+    setvar 0x8000 LASTTALKED @ Team up with whomever was last talked to
+    setvar 0x8001 0x80 @ Return to original spot on whiteout. No special movement animations, cannot use HMs or Fly/Teleport/Dig/Escape Rope
+    special 0xD1
+    return
+
+.global ResetRoute11PlutoEventOnWhiteout
+ResetRoute11PlutoEventOnWhiteout:
+    compare 0x4099 0x0
+    if equal _goto End
+    setvar 0x4099 0x0 @ No follower
+    setvar 0x4059 0x1 @ Need to pick partner
     return
 
 .global PokedexEvaluation_Introduction

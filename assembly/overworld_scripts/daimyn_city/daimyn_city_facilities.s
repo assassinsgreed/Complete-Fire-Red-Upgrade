@@ -16,6 +16,7 @@ MapScript_DaimynFacilities_PokemonCenter:
 
 MapScript_DaimynFacilities_PokemonCenter_SetHealingSpot:
     sethealingplace 0x06 @ Originally Vermillion City
+    call ResetRoute11PlutoEventOnWhiteout
     end
 
 .global EventScript_DaimynCity_GuardHouseWest_Guard

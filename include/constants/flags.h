@@ -68,8 +68,8 @@
 #define FLAG_HIDE_HELEO_RANCH_AMPHAROS                     0x03E
 #define FLAG_USED_ALREADY???                               0x03F
 #define FLAG_HIDE_PIKACHU_GIFT_IN_DAIMYN_CTIY              0x040
-#define FLAG_HIDE_ROUTE_11_PLUTO_AND_ROUTE_9_SLOWBRO       0x041
-#define FLAG_HIDE_SEAFOAM_B1F_BOULDER_1                    0x042
+#define FLAG_HIDE_ROUTE_11_PLUTO                           0x041
+#define FLAG_HIDE_ROUTE_11_ALISTAIR_AND_RIVAL_AND_RT9_BLOCKER 0x042
 #define FLAG_HIDE_SEAFOAM_B1F_BOULDER_2                    0x043
 #define FLAG_HIDE_SEAFOAM_B2F_BOULDER_1                    0x044
 #define FLAG_HIDE_SEAFOAM_B2F_BOULDER_2                    0x045
@@ -1085,7 +1085,7 @@
 #define HIDDEN_ITEM_ROUTE9_DAWN_STONE                                  56
 #define HIDDEN_ITEM_ROUTE11SOUTH_NUGGET                                57
 #define HIDDEN_ITEM_ROUTE11SOUTH_QUICK_BALL                            58
-#define HIDDEN_ITEM_CELADON_CITY_GAME_CORNER_COINS_9                   59
+#define HIDDEN_ITEM_ROUTE11SOUTH_TAMATO_BERRY                          59
 #define HIDDEN_ITEM_CELADON_CITY_GAME_CORNER_COINS_10                  60
 #define HIDDEN_ITEM_CELADON_CITY_GAME_CORNER_COINS_11                  61
 #define HIDDEN_ITEM_CELADON_CITY_GAME_CORNER_COINS_12                  62

@@ -12,6 +12,7 @@ MapScript_HeleoFacilities_PokemonCenter:
 
 MapScript_HeleoFacilities_PokemonCenter_SetHealingSpot:
     sethealingplace 0x05 @ Originally Lavender Town
+    call ResetRoute11PlutoEventOnWhiteout
     end
 
 .global EventScript_HeleoFacilities_PokemonCenter_BoredKid
