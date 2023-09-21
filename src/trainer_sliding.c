@@ -45,6 +45,14 @@ static const struct TrainerSlide sTrainerSlides[] =
 	{0x9C, NULL, sText_Casey1_LastSwitchIn, sText_Casey1_LowHP}, // Male Casey battle 1
 	{0xAE, NULL, sText_Casey2_LastSwitchIn, sText_Casey2_LowHP}, // Female Casey battle 2
 	{0xAF, NULL, sText_Casey2_LastSwitchIn, sText_Casey2_LowHP}, // Female Casey battle 2
+	{0xC9, sText_Rival4_FirstMonDown, sText_Rival4_LastSwitchIn, sText_Rival4_LowHP}, // Fourth rival battle, Vaporeon
+	{0xCA, sText_Rival4_FirstMonDown, sText_Rival4_LastSwitchIn, sText_Rival4_LowHP}, // Fourth rival battle, Jolteon
+	{0xCB, sText_Rival4_FirstMonDown, sText_Rival4_LastSwitchIn, sText_Rival4_LowHP}, // Fourth rival battle, Flareon
+	{0xCC, sText_Rival4_FirstMonDown, sText_Rival4_LastSwitchIn, sText_Rival4_LowHP}, // Fourth rival battle, Espeon
+	{0xCD, sText_Rival4_FirstMonDown, sText_Rival4_LastSwitchIn, sText_Rival4_LowHP}, // Fourth rival battle, Umbreon
+	{0xCE, sText_Rival4_FirstMonDown, sText_Rival4_LastSwitchIn, sText_Rival4_LowHP}, // Fourth rival battle, Leafeon
+	{0xCF, sText_Rival4_FirstMonDown, sText_Rival4_LastSwitchIn, sText_Rival4_LowHP}, // Fourth rival battle, Glaceon
+	{0xD0, sText_Rival4_FirstMonDown, sText_Rival4_LastSwitchIn, sText_Rival4_LowHP}, // Fourth rival battle, Sylveon
 	{}, // Champion Selene
 };
 

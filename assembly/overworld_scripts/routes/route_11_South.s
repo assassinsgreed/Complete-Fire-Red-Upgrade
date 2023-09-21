@@ -14,14 +14,11 @@
 .equ Clancy, 0x1B
 .equ Ena, 0x1C
 
-@ TODO: Maybe buff up the pluto trainers since you'll always have a decent partner
-@ TODO: Post Ronald conversation with rival isn't initiating automatically
-@ TODO: Game crashes when returning to refiner after pluto encounter
-
 .global MapScript_Route11South
 MapScript_Route11South:
     mapscript MAP_SCRIPT_ON_LOAD MapEntryScript_SetPartnerPositions
     mapscript MAP_SCRIPT_ON_RESUME LevelScripts_Route11South
+    mapscript MAP_SCRIPT_ON_FRAME_TABLE LevelScripts_Route11South_PostRonaldBattleCutscenes
     .byte MAP_SCRIPT_TERMIN
 
 MapEntryScript_SetPartnerPositions:
@@ -37,6 +34,9 @@ MapEntryScript_SetPartnerPositions:
 
 LevelScripts_Route11South:
     levelscript PlutoEncounterVar 0x2 LevelScript_PartnerBattles
+    .hword LEVEL_SCRIPT_TERMIN
+
+LevelScripts_Route11South_PostRonaldBattleCutscenes:
     levelscript PlutoEncounterVar 0x3 LevelScript_PlayerReturnsToRivalAndAlistair
     .hword LEVEL_SCRIPT_TERMIN
 
@@ -61,6 +61,7 @@ SetAlistairBacksprite:
     return
 
 LevelScript_PlayerReturnsToRivalAndAlistair:
+    applymovement PLAYER m_LookUp
     msgbox gText_Route11SouthHouse_PlutoEvent_RivalCommentsOnPlayersReturn MSG_NORMAL
     msgbox gText_Route11SouthHouse_PlutoEvent_AlistairCommentsOnPlayersReturn MSG_NORMAL
     sound 0x15 @ Exclaim
@@ -75,6 +76,7 @@ LevelScript_PlayerReturnsToRivalAndAlistair:
     applymovement Alistair m_LookLeft
     msgbox gText_Route11SouthHouse_PlutoEvent_AlistairCommentsOnOldMan MSG_NORMAL
     msgbox gText_Route11SouthHouse_PlutoEvent_RivalWantsToBattle MSG_NORMAL
+    applymovement Alistair m_LookDown
     msgbox gText_Route11SouthHouse_PlutoEvent_AlistairWillSuperviseBattle MSG_NORMAL
     msgbox gText_Route11SouthHouse_PlutoEvent_RivalHealsPlayer MSG_NORMAL
     call PlayerHeal
@@ -89,7 +91,7 @@ MapScript_Route11SouthHouse:
 
 LevelScripts_Route11SouthHouse_RonaldCutscene:
     levelscript PlutoEncounterVar 0x2 LevelScript_RonaldEncounterCutscene
-    .byte MAP_SCRIPT_TERMIN
+    .hword LEVEL_SCRIPT_TERMIN
 
 LevelScript_RonaldEncounterCutscene:
     setvar PartnerVar 0x0
@@ -124,14 +126,14 @@ LevelScript_RonaldEncounterCutscene:
     msgbox gText_Route11SouthHouse_PlutoEvent_RonaldScoldsRefiner MSG_NORMAL
     applymovement 0x2 m_LookDown
     msgbox gText_Route11SouthHouse_PlutoEvent_RonaldChallengesPlayer MSG_NORMAL
-    setvar 0x503A 0x2
-    setvar 0x503B 0x0
+    setvar 0x503A 0x1
+    setvar 0x503B 0x1
     trainerbattle1 0x1 0xC8 0x100 gText_Route11SouthHouse_PlutoEvent_RonaldBattleIntro gText_Route11SouthHouse_PlutoEvent_RonaldBattleLoss PostRonaldBattle
     end
 
 SaidYesToRonald:
     sound 0x15 @ Exclaim
-    applymovement PLAYER m_Surprise
+    applymovement 0x2 m_Surprise
     msgbox gText_Route11SouthHouse_PlutoEvent_RonaldAppreciatesHonesty MSG_NORMAL
     return
 
@@ -180,6 +182,7 @@ PostRonaldBattle:
     obtainitem ITEM_MEGA_RING 0x1
     msgbox gText_Route11SouthHouse_PlutoEvent_RefinerExplainsMegaRing MSG_NORMAL
     msgbox gText_Route11SouthHouse_PlutoEvent_RefinerBidsPlayerFarewell MSG_NORMAL
+    pause DELAY_HALFSECOND
     warp 3 29 0xFF 0x1D 0x2F
     end
 
@@ -329,7 +332,105 @@ RivalBattlePrompt:
     msgbox gText_Route11SouthHouse_PlutoEvent_RivalBattleConfirmation MSG_YESNO
     compare LASTRESULT NO
     if equal _goto DeniedRivalBattle
-    @ TODO: Battle with rival
+    playbgm 0x195
+    msgbox gText_Route11SouthHouse_PlutoEvent_RivalEagerToBattle MSG_NORMAL
+    applymovement Alistair m_LookLeft
+    msgbox gText_Route11SouthHouse_PlutoEvent_AlistairAsksPlayerAndRivalToTakePlaces MSG_NORMAL
+    getplayerpos 0x4000 0x4001
+    compare 0x4000 0x1C
+    if equal _call PlayerWalkLeft_Return
+    compare 0x4001 0x2F
+    if lessthan _call PlayerWalkDown_Return
+    getplayerpos 0x4000 0x4001
+    compare 0x4001 0x2F
+    if lessthan _call PlayerWalkDown_Return
+    call PlayerWalkDown_Return
+    applymovement PLAYER m_LookRight
+    applymovement Rival m_RivalPositionsForBattle
+    waitmovement Rival
+    applymovement Alistair m_AlistairTakesSupervisionPosition
+    waitmovement Alistair
+    msgbox gText_Route11SouthHouse_PlutoEvent_RivalInitiatesBattle MSG_NORMAL
+    setvar 0x503A 0x2
+    setvar 0x503B 0x0
+    copyvar 0x4001 0x408E
+    setvar 0x4000 201 @ trainer ID, which is 201 + 0-7 depending on value in 0x408E
+    setvar 0x8004 0x4000
+    setvar 0x8005 0x4001
+    special 0x3E @ Add two vars above, result stored in 0x5011 which is loaded as trainer ID
+    trainerbattle3 0x0 0x4000 0x100 gText_Route11SouthHouse_PlutoEvent_RivalLoses
+    msgbox gText_Route11SouthHouse_PlutoEvent_RivalCommentsOnLossAfterBattle MSG_NORMAL
+    msgbox gText_Route11SouthHouse_PlutoEvent_AlistairConcludesBattle MSG_NORMAL
+    applymovement Alistair m_AlistairGivesHMFly
+    waitmovement Alistair
+    obtainitem ITEM_HM02 0x1
+    applymovement Rival m_LookUp
+    applymovement PLAYER m_LookUp
+    msgbox gText_Route11SouthHouse_PlutoEvent_AlistairExplainsFly MSG_NORMAL
+    msgbox gText_Route11SouthHouse_PlutoEvent_RivalAppreciatesFly MSG_NORMAL
+    applymovement Rival m_LookLeft
+    applymovement PLAYER m_LookRight
+    msgbox gText_Route11SouthHouse_PlutoEvent_RivalPreparesToLeave MSG_NORMAL
+    applymovement Rival m_RivalLeaves
+    pause DELAY_1SECOND
+    pause DELAY_1SECOND
+    applymovement Alistair m_LookLeft
+    applymovement PLAYER m_LookUp
+    waitmovement Rival
+    applymovement Alistair m_LookDown
+    msgbox gText_Route11SouthHouse_PlutoEvent_AlistairPreparesToLeave MSG_NORMAL
+    applymovement Alistair m_AlistairLeaves
+    pause DELAY_1SECOND
+    pause DELAY_HALFSECOND
+    applymovement PLAYER m_LookLeft
+    waitmovement Alistair
+    applymovement PLAYER m_PlayerLeavingSlow
+    waitmovement PLAYER
+    pause DELAY_HALFSECOND
+    fadescreen FADEOUT_BLACK
+    pause DELAY_HALFSECOND
+    special CAMERA_START
+    applymovement CAMERA m_CameraMovesToAlistairAndRival
+    waitmovement CAMERA
+    special CAMERA_END
+    fadescreen FADEIN_BLACK
+    pause DELAY_HALFSECOND
+    playbgm 0x114 @ Unwavering Emotions
+    msgbox gText_Route11SouthHouse_PlutoEvent_AlistairPleadsForRivalToStop MSG_NORMAL
+    sound 0x15 @ Exclaim
+    applymovement Rival m_Surprise
+    waitmovement Rival
+    applymovement Rival m_LookRight
+    msgbox gText_Route11SouthHouse_PlutoEvent_RivalRespondsToAlistair MSG_NORMAL
+    applymovement Alistair m_WalkLeft
+    msgbox gText_Route11SouthHouse_PlutoEvent_AlistairAsksAboutPlayer MSG_NORMAL
+    msgbox gText_Route11SouthHouse_PlutoEvent_RivalExplainsRelationship MSG_NORMAL
+    msgbox gText_Route11SouthHouse_PlutoEvent_AlistairAsksAboutDream MSG_NORMAL
+    applymovement Rival m_Question
+    msgbox gText_Route11SouthHouse_PlutoEvent_RivalCommentsOnFriendship MSG_NORMAL
+    msgbox gText_Route11SouthHouse_PlutoEvent_AlistairCommentsOnRivalsRelationship MSG_NORMAL
+    msgbox gText_Route11SouthHouse_PlutoEvent_RivalUpset MSG_NORMAL
+    applymovement Rival m_LookDown
+    msgbox gText_Route11SouthHouse_PlutoEvent_RivalConsideringGivingUp MSG_NORMAL
+    msgbox gText_Route11SouthHouse_PlutoEvent_AlistairRevealsHisHistory MSG_NORMAL
+    applymovement Alistair m_LookDown
+    msgbox gText_Route11SouthHouse_PlutoEvent_AlistairReallyRevealsHisHistory MSG_NORMAL
+    applymovement Rival m_LookRight
+    applymovement Alistair m_LookLeft
+    msgbox gText_Route11SouthHouse_PlutoEvent_AlistairMakesAnOfferToRival MSG_NORMAL
+    msgbox gText_Route11SouthHouse_PlutoEvent_RivalAcceptsTheOffer MSG_NORMAL
+    fadescreen FADEOUT_BLACK
+    pause DELAY_HALFSECOND
+    fadedefaultbgm
+    special CAMERA_START
+    applymovement CAMERA m_CameraMovesToPlayer
+    waitmovement CAMERA
+    special CAMERA_END
+    setvar PlutoEncounterVar 0x5
+    hidesprite Rival
+    hidesprite Alistair
+    setflag 0x42 @ Hide Rival and Alistair on Route 11 south
+    fadescreen FADEIN_BLACK
     end
 
 DeniedRivalBattle:
@@ -415,9 +516,9 @@ ResetPlayerOnTileScript:
 .global TileScript_Route11South_North
 TileScript_Route11South_North:
     lock
-    compare PlutoEncounterVar 0xFF @ TODO: Change to real var for event end
+    compare PlutoEncounterVar 0x5
     if equal _goto End
-    compare PlutoEncounterVar 0xFF @ TODO: Change to real var for Rival battle
+    compare PlutoEncounterVar 0x4
     if equal _goto NeedToBattleRivalFirst
     msgbox gText_Route11South_PlutoEvent_HeadingNorth_PlutoNotDefeated MSG_NORMAL
     call PlayerWalksAwayFromHessonAndNorthTiles
@@ -473,7 +574,7 @@ PlayerWalksAwayFromHessonAndNorthTiles:
 
 .global TileScript_Route11South_West
 TileScript_Route11South_West:
-    compare PlutoEncounterVar 0xFF @ TODO: Change to real var
+    compare PlutoEncounterVar 0x5
     if equal _goto End
     compare PlutoEncounterVar 0x0 @ Event hasn't started
     if equal _goto InitiatePlutoEncounter
@@ -765,3 +866,11 @@ m_ApproachRonald: .byte walk_up, walk_up, end_m
 m_WalkToTheSide: .byte walk_right, walk_right, look_down, end_m
 m_RefinerWalksToPlayer: .byte walk_left, walk_left, walk_left, look_down, end_m
 m_RefinerGetsMegaRing: .byte walk_left, walk_left, walk_left, walk_up, walk_up, pause_long, pause_long, walk_down, walk_down, walk_right, walk_right, walk_right, look_down, end_m
+m_RivalPositionsForBattle: .byte walk_down, walk_right, walk_right, walk_down, look_left, end_m
+m_AlistairTakesSupervisionPosition: .byte walk_left, look_down, end_m
+m_AlistairGivesHMFly: .byte walk_right, walk_down, walk_down, look_right, pause_long, walk_left, pause_long, walk_up, walk_up, look_down, end_m
+m_RivalLeaves: .byte walk_up, walk_left, walk_left, walk_left, walk_left, walk_left, walk_left, walk_left, walk_up, walk_left, walk_left, walk_left, walk_left, walk_left, walk_left, end_m
+m_AlistairLeaves: .byte walk_left, walk_left, walk_left, walk_left, walk_left, walk_left, walk_left, walk_left, walk_left, end_m
+m_PlayerLeavingSlow: .byte walk_up, walk_up, walk_right, walk_right, walk_right, end_m
+m_CameraMovesToAlistairAndRival: .byte run_left, run_left, run_left, run_left, run_left, run_left, run_left, run_left, run_left, run_left, run_left, run_left, end_m
+m_CameraMovesToPlayer: .byte run_right, run_right, run_right, run_right, run_right, run_right, run_right, run_right, run_right, run_right, run_right, run_right, end_m

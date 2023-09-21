@@ -48,6 +48,16 @@ Down to my last Pok\emon, huh?
 #org @sText_Casey2_LowHP
 We're still in this. Let's go, [FD][06]!
 
+// Rival 4
+#org @sText_Rival4_FirstMonDown
+That was a pretty good move. We'll\nbring it back though, you'll see!
+
+#org @sText_Rival4_LastSwitchIn
+No way[.] Down to my last Pok\emon\nalready?
+
+#org @sText_Rival4_LowHP
+N-No! We were supposed to win this\ntime[.]
+
 // Rival n here!
 
 // Leader 1 (Terrence)

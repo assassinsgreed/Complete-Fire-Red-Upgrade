@@ -136,7 +136,7 @@ const struct TrainerMonItemCustomMoves sParty_Casey2[] = {
     }
 };
 
-const struct TrainerMonItemCustomMoves sParty_Rival4_Vaporeon[] = {
+const struct TrainerMonItemCustomMoves sParty_Route11RivalPartner_Vaporeon[] = {
     {
         .lvl = 35,
         .species = SPECIES_CORVISQUIRE,
@@ -157,7 +157,6 @@ const struct TrainerMonItemCustomMoves sParty_Rival4_Vaporeon[] = {
             MOVE_POWERGEM,
             MOVE_ELECTROBALL
         },
-        .heldItem = ITEM_AMPHAROSITE,
         .ability = Ability_1 // Static
     },
     {
@@ -174,7 +173,7 @@ const struct TrainerMonItemCustomMoves sParty_Rival4_Vaporeon[] = {
     }
 };
 
-const struct TrainerMonItemCustomMoves sParty_Rival4_Jolteon[] = {
+const struct TrainerMonItemCustomMoves sParty_Route11RivalPartner_Jolteon[] = {
     {
         .lvl = 35,
         .species = SPECIES_CORVISQUIRE,
@@ -212,7 +211,7 @@ const struct TrainerMonItemCustomMoves sParty_Rival4_Jolteon[] = {
     }
 };
 
-const struct TrainerMonItemCustomMoves sParty_Rival4_Flareon[] = {
+const struct TrainerMonItemCustomMoves sParty_Route11RivalPartner_Flareon[] = {
     {
         .lvl = 35,
         .species = SPECIES_CORVISQUIRE,
@@ -233,7 +232,6 @@ const struct TrainerMonItemCustomMoves sParty_Rival4_Flareon[] = {
             MOVE_POWERGEM,
             MOVE_ELECTROBALL
         },
-        .heldItem = ITEM_AMPHAROSITE,
         .ability = Ability_1 // Static
     },
     {
@@ -250,7 +248,7 @@ const struct TrainerMonItemCustomMoves sParty_Rival4_Flareon[] = {
     }
 };
 
-const struct TrainerMonItemCustomMoves sParty_Rival4_Espeon[] = {
+const struct TrainerMonItemCustomMoves sParty_Route11RivalPartner_Espeon[] = {
     {
         .lvl = 35,
         .species = SPECIES_CORVISQUIRE,
@@ -271,7 +269,6 @@ const struct TrainerMonItemCustomMoves sParty_Rival4_Espeon[] = {
             MOVE_POWERGEM,
             MOVE_ELECTROBALL
         },
-        .heldItem = ITEM_AMPHAROSITE,
         .ability = Ability_1 // Static
     },
     {
@@ -288,7 +285,7 @@ const struct TrainerMonItemCustomMoves sParty_Rival4_Espeon[] = {
     }
 };
 
-const struct TrainerMonItemCustomMoves sParty_Rival4_Umbreon[] = {
+const struct TrainerMonItemCustomMoves sParty_Route11RivalPartner_Umbreon[] = {
     {
         .lvl = 35,
         .species = SPECIES_CORVISQUIRE,
@@ -309,7 +306,6 @@ const struct TrainerMonItemCustomMoves sParty_Rival4_Umbreon[] = {
             MOVE_POWERGEM,
             MOVE_ELECTROBALL
         },
-        .heldItem = ITEM_AMPHAROSITE,
         .ability = Ability_1 // Static
     },
     {
@@ -326,7 +322,7 @@ const struct TrainerMonItemCustomMoves sParty_Rival4_Umbreon[] = {
     }
 };
 
-const struct TrainerMonItemCustomMoves sParty_Rival4_Leafeon[] = {
+const struct TrainerMonItemCustomMoves sParty_Route11RivalPartner_Leafeon[] = {
     {
         .lvl = 35,
         .species = SPECIES_CORVISQUIRE,
@@ -347,7 +343,6 @@ const struct TrainerMonItemCustomMoves sParty_Rival4_Leafeon[] = {
             MOVE_POWERGEM,
             MOVE_ELECTROBALL
         },
-        .heldItem = ITEM_AMPHAROSITE,
         .ability = Ability_1 // Static
     },
     {
@@ -364,7 +359,7 @@ const struct TrainerMonItemCustomMoves sParty_Rival4_Leafeon[] = {
     }
 };
 
-const struct TrainerMonItemCustomMoves sParty_Rival4_Glaceon[] = {
+const struct TrainerMonItemCustomMoves sParty_Route11RivalPartner_Glaceon[] = {
     {
         .lvl = 35,
         .species = SPECIES_CORVISQUIRE,
@@ -385,7 +380,6 @@ const struct TrainerMonItemCustomMoves sParty_Rival4_Glaceon[] = {
             MOVE_POWERGEM,
             MOVE_ELECTROBALL
         },
-        .heldItem = ITEM_AMPHAROSITE,
         .ability = Ability_1 // Static
     },
     {
@@ -402,7 +396,7 @@ const struct TrainerMonItemCustomMoves sParty_Rival4_Glaceon[] = {
     }
 };
 
-const struct TrainerMonItemCustomMoves sParty_Rival4_Sylveon[] = {
+const struct TrainerMonItemCustomMoves sParty_Route11RivalPartner_Sylveon[] = {
     {
         .lvl = 35,
         .species = SPECIES_CORVISQUIRE,
@@ -423,7 +417,6 @@ const struct TrainerMonItemCustomMoves sParty_Rival4_Sylveon[] = {
             MOVE_POWERGEM,
             MOVE_ELECTROBALL
         },
-        .heldItem = ITEM_AMPHAROSITE,
         .ability = Ability_1 // Static
     },
     {
@@ -476,6 +469,311 @@ const struct TrainerMonItemCustomMoves sParty_Route11_Alistair[] = {
         .ability = Ability_Hidden // Speed Boost
     }
 };
+
+const struct TrainerMonItemCustomMoves sParty_Rival4_Vaporeon[] = {
+    {
+        .lvl = 38,
+        .species = SPECIES_CORVISQUIRE,
+        .moves = {
+            MOVE_DRILLPECK,
+            MOVE_ROCKSMASH,
+            MOVE_TAILWIND,
+            MOVE_TAUNT
+        },
+        .ability = Ability_1 // Keen Eye
+    },
+    {
+        .lvl = 38,
+        .species = SPECIES_AMPHAROS,
+        .moves = {
+            MOVE_THUNDERWAVE,
+            MOVE_DRAGONPULSE,
+            MOVE_POWERGEM,
+            MOVE_ELECTROBALL
+        },
+        .heldItem = ITEM_AMPHAROSITE,
+        .ability = Ability_1 // Static
+    },
+    {
+        .lvl = 39,
+        .species = SPECIES_VAPOREON,
+        .moves = {
+            MOVE_WATERPULSE,
+            MOVE_AURORABEAM,
+            MOVE_CHARM,
+            MOVE_RAINDANCE
+        },
+        .heldItem = ITEM_SITRUS_BERRY,
+        .ability = Ability_2 // Water Absorb
+    }
+};
+
+const struct TrainerMonItemCustomMoves sParty_Rival4_Jolteon[] = {
+    {
+        .lvl = 38,
+        .species = SPECIES_CORVISQUIRE,
+        .moves = {
+            MOVE_DRILLPECK,
+            MOVE_ROCKSMASH,
+            MOVE_TAILWIND,
+            MOVE_TAUNT
+        },
+        .ability = Ability_1 // Keen Eye
+    },
+    {
+        .lvl = 38,
+        .species = SPECIES_AMPHAROS,
+        .moves = {
+            MOVE_THUNDERWAVE,
+            MOVE_DRAGONPULSE,
+            MOVE_POWERGEM,
+            MOVE_ELECTROBALL
+        },
+        .heldItem = ITEM_AMPHAROSITE,
+        .ability = Ability_1 // Static
+    },
+    {
+        .lvl = 39,
+        .species = SPECIES_JOLTEON,
+        .moves = {
+            MOVE_THUNDERWAVE,
+            MOVE_THUNDERBOLT,
+            MOVE_SHADOWBALL,
+            MOVE_DOUBLEKICK
+        },
+        .heldItem = ITEM_SITRUS_BERRY,
+        .ability = Ability_2 // Volt Absorb
+    }
+};
+
+const struct TrainerMonItemCustomMoves sParty_Rival4_Flareon[] = {
+    {
+        .lvl = 38,
+        .species = SPECIES_CORVISQUIRE,
+        .moves = {
+            MOVE_DRILLPECK,
+            MOVE_ROCKSMASH,
+            MOVE_TAILWIND,
+            MOVE_TAUNT
+        },
+        .ability = Ability_1 // Keen Eye
+    },
+    {
+        .lvl = 38,
+        .species = SPECIES_AMPHAROS,
+        .moves = {
+            MOVE_THUNDERWAVE,
+            MOVE_DRAGONPULSE,
+            MOVE_POWERGEM,
+            MOVE_ELECTROBALL
+        },
+        .heldItem = ITEM_AMPHAROSITE,
+        .ability = Ability_1 // Static
+    },
+    {
+        .lvl = 39,
+        .species = SPECIES_FLAREON,
+        .moves = {
+            MOVE_FIREFANG,
+            MOVE_BITE,
+            MOVE_SUNNYDAY,
+            MOVE_WILLOWISP
+        },
+        .heldItem = ITEM_SITRUS_BERRY,
+        .ability = Ability_2 // Flash Fire
+    }
+};
+
+const struct TrainerMonItemCustomMoves sParty_Rival4_Espeon[] = {
+    {
+        .lvl = 38,
+        .species = SPECIES_CORVISQUIRE,
+        .moves = {
+            MOVE_DRILLPECK,
+            MOVE_ROCKSMASH,
+            MOVE_TAILWIND,
+            MOVE_TAUNT
+        },
+        .ability = Ability_1 // Keen Eye
+    },
+    {
+        .lvl = 38,
+        .species = SPECIES_AMPHAROS,
+        .moves = {
+            MOVE_THUNDERWAVE,
+            MOVE_DRAGONPULSE,
+            MOVE_POWERGEM,
+            MOVE_ELECTROBALL
+        },
+        .heldItem = ITEM_AMPHAROSITE,
+        .ability = Ability_1 // Static
+    },
+    {
+        .lvl = 39,
+        .species = SPECIES_ESPEON,
+        .moves = {
+            MOVE_PSYBEAM,
+            MOVE_MORNINGSUN,
+            MOVE_CALMMIND,
+            MOVE_DAZZLINGGLEAM
+        },
+        .heldItem = ITEM_SITRUS_BERRY,
+        .ability = Ability_2 // Synchronize
+    }
+};
+
+const struct TrainerMonItemCustomMoves sParty_Rival4_Umbreon[] = {
+    {
+        .lvl = 38,
+        .species = SPECIES_CORVISQUIRE,
+        .moves = {
+            MOVE_DRILLPECK,
+            MOVE_ROCKSMASH,
+            MOVE_TAILWIND,
+            MOVE_TAUNT
+        },
+        .ability = Ability_1 // Keen Eye
+    },
+    {
+        .lvl = 38,
+        .species = SPECIES_AMPHAROS,
+        .moves = {
+            MOVE_THUNDERWAVE,
+            MOVE_DRAGONPULSE,
+            MOVE_POWERGEM,
+            MOVE_ELECTROBALL
+        },
+        .heldItem = ITEM_AMPHAROSITE,
+        .ability = Ability_1 // Static
+    },
+    {
+        .lvl = 39,
+        .species = SPECIES_UMBREON,
+        .moves = {
+            MOVE_SNARL,
+            MOVE_MOONLIGHT,
+            MOVE_CONFUSERAY,
+            MOVE_DIG
+        },
+        .heldItem = ITEM_SITRUS_BERRY,
+        .ability = Ability_2 // Synchronize
+    }
+};
+
+const struct TrainerMonItemCustomMoves sParty_Rival4_Leafeon[] = {
+    {
+        .lvl = 38,
+        .species = SPECIES_CORVISQUIRE,
+        .moves = {
+            MOVE_DRILLPECK,
+            MOVE_ROCKSMASH,
+            MOVE_TAILWIND,
+            MOVE_TAUNT
+        },
+        .ability = Ability_1 // Keen Eye
+    },
+    {
+        .lvl = 38,
+        .species = SPECIES_AMPHAROS,
+        .moves = {
+            MOVE_THUNDERWAVE,
+            MOVE_DRAGONPULSE,
+            MOVE_POWERGEM,
+            MOVE_ELECTROBALL
+        },
+        .heldItem = ITEM_AMPHAROSITE,
+        .ability = Ability_1 // Static
+    },
+    {
+        .lvl = 39,
+        .species = SPECIES_LEAFEON,
+        .moves = {
+            MOVE_LEECHSEED,
+            MOVE_RAZORLEAF,
+            MOVE_AERIALACE,
+            MOVE_ATTRACT
+        },
+        .heldItem = ITEM_SITRUS_BERRY,
+        .ability = Ability_2 // Leaf Guard
+    }
+};
+
+const struct TrainerMonItemCustomMoves sParty_Rival4_Glaceon[] = {
+    {
+        .lvl = 38,
+        .species = SPECIES_CORVISQUIRE,
+        .moves = {
+            MOVE_DRILLPECK,
+            MOVE_ROCKSMASH,
+            MOVE_TAILWIND,
+            MOVE_TAUNT
+        },
+        .ability = Ability_1 // Keen Eye
+    },
+    {
+        .lvl = 38,
+        .species = SPECIES_AMPHAROS,
+        .moves = {
+            MOVE_THUNDERWAVE,
+            MOVE_DRAGONPULSE,
+            MOVE_POWERGEM,
+            MOVE_ELECTROBALL
+        },
+        .heldItem = ITEM_AMPHAROSITE,
+        .ability = Ability_1 // Static
+    },
+    {
+        .lvl = 39,
+        .species = SPECIES_GLACEON,
+        .moves = {
+            MOVE_HAIL,
+            MOVE_AURORAVEIL,
+            MOVE_ICEFANG,
+            MOVE_ROCKSMASH
+        },
+        .heldItem = ITEM_SITRUS_BERRY,
+        .ability = Ability_2 // Snow Cloak
+    }
+};
+
+const struct TrainerMonItemCustomMoves sParty_Rival4_Sylveon[] = {
+    {
+        .lvl = 38,
+        .species = SPECIES_CORVISQUIRE,
+        .moves = {
+            MOVE_DRILLPECK,
+            MOVE_ROCKSMASH,
+            MOVE_TAILWIND,
+            MOVE_TAUNT
+        },
+        .ability = Ability_1 // Keen Eye
+    },
+    {
+        .lvl = 38,
+        .species = SPECIES_AMPHAROS,
+        .moves = {
+            MOVE_THUNDERWAVE,
+            MOVE_DRAGONPULSE,
+            MOVE_POWERGEM,
+            MOVE_ELECTROBALL
+        },
+        .heldItem = ITEM_AMPHAROSITE,
+        .ability = Ability_1 // Static
+    },
+    {
+        .lvl = 39,
+        .species = SPECIES_SYLVEON,
+        .moves = {
+            MOVE_DRAININGKISS,
+            MOVE_COVET,
+            MOVE_LIGHTSCREEN,
+            MOVE_ATTRACT
+        },
+        .heldItem = ITEM_SITRUS_BERRY,
+        .ability = Ability_2 // Cute Charm
+    }
+};
+
 // #endregion
 
 // #region Route 1 
@@ -2102,7 +2400,7 @@ const struct TrainerMonNoItemCustomMoves sParty_Route11South_TeamPlutoAdminRonal
             MOVE_ICESHARD,
             MOVE_METALCLAW,
             MOVE_FAKEOUT,
-            MOVE_ICICLECRASH
+            MOVE_ICEPUNCH
         },
         .ability = Ability_1 // Pressure
     },
@@ -2225,8 +2523,8 @@ const struct Trainer gTrainers[] = {
         .items = { },
         .doubleBattle = FALSE,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_SEMI_SMART,
-        .partySize = NELEMS(sParty_Rival4_Vaporeon),
-        .party = {.ItemCustomMoves = sParty_Rival4_Vaporeon}
+        .partySize = NELEMS(sParty_Route11RivalPartner_Vaporeon),
+        .party = {.ItemCustomMoves = sParty_Route11RivalPartner_Vaporeon}
     },
     [TRAINER_ROUTE_11_SOUTH_PARTNER_RIVAL_J] = {
         .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
@@ -2237,8 +2535,8 @@ const struct Trainer gTrainers[] = {
         .items = { },
         .doubleBattle = FALSE,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_SEMI_SMART,
-        .partySize = NELEMS(sParty_Rival4_Jolteon),
-        .party = {.ItemCustomMoves = sParty_Rival4_Jolteon}
+        .partySize = NELEMS(sParty_Route11RivalPartner_Jolteon),
+        .party = {.ItemCustomMoves = sParty_Route11RivalPartner_Jolteon}
     },
     [TRAINER_ROUTE_11_SOUTH_PARTNER_RIVAL_F] = {
         .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
@@ -2249,8 +2547,8 @@ const struct Trainer gTrainers[] = {
         .items = { },
         .doubleBattle = FALSE,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_SEMI_SMART,
-        .partySize = NELEMS(sParty_Rival4_Flareon),
-        .party = {.ItemCustomMoves = sParty_Rival4_Flareon}
+        .partySize = NELEMS(sParty_Route11RivalPartner_Flareon),
+        .party = {.ItemCustomMoves = sParty_Route11RivalPartner_Flareon}
     },
     [TRAINER_ROUTE_11_SOUTH_PARTNER_RIVAL_E] = {
         .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
@@ -2261,8 +2559,8 @@ const struct Trainer gTrainers[] = {
         .items = { },
         .doubleBattle = FALSE,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_SEMI_SMART,
-        .partySize = NELEMS(sParty_Rival4_Espeon),
-        .party = {.ItemCustomMoves = sParty_Rival4_Espeon}
+        .partySize = NELEMS(sParty_Route11RivalPartner_Espeon),
+        .party = {.ItemCustomMoves = sParty_Route11RivalPartner_Espeon}
     },
     [TRAINER_ROUTE_11_SOUTH_PARTNER_RIVAL_U] = {
         .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
@@ -2273,8 +2571,8 @@ const struct Trainer gTrainers[] = {
         .items = { },
         .doubleBattle = FALSE,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_SEMI_SMART,
-        .partySize = NELEMS(sParty_Rival4_Umbreon),
-        .party = {.ItemCustomMoves = sParty_Rival4_Umbreon}
+        .partySize = NELEMS(sParty_Route11RivalPartner_Umbreon),
+        .party = {.ItemCustomMoves = sParty_Route11RivalPartner_Umbreon}
     },
     [TRAINER_ROUTE_11_SOUTH_PARTNER_RIVAL_L] = {
         .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
@@ -2285,8 +2583,8 @@ const struct Trainer gTrainers[] = {
         .items = { },
         .doubleBattle = FALSE,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_SEMI_SMART,
-        .partySize = NELEMS(sParty_Rival4_Leafeon),
-        .party = {.ItemCustomMoves = sParty_Rival4_Leafeon}
+        .partySize = NELEMS(sParty_Route11RivalPartner_Leafeon),
+        .party = {.ItemCustomMoves = sParty_Route11RivalPartner_Leafeon}
     },
     [TRAINER_ROUTE_11_SOUTH_PARTNER_RIVAL_G] = {
         .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
@@ -2297,8 +2595,8 @@ const struct Trainer gTrainers[] = {
         .items = { },
         .doubleBattle = FALSE,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_SEMI_SMART,
-        .partySize = NELEMS(sParty_Rival4_Glaceon),
-        .party = {.ItemCustomMoves = sParty_Rival4_Glaceon}
+        .partySize = NELEMS(sParty_Route11RivalPartner_Glaceon),
+        .party = {.ItemCustomMoves = sParty_Route11RivalPartner_Glaceon}
     },
     [TRAINER_ROUTE_11_SOUTH_PARTNER_RIVAL_S] = {
         .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
@@ -2309,8 +2607,8 @@ const struct Trainer gTrainers[] = {
         .items = { },
         .doubleBattle = FALSE,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_SEMI_SMART,
-        .partySize = NELEMS(sParty_Rival4_Sylveon),
-        .party = {.ItemCustomMoves = sParty_Rival4_Sylveon}
+        .partySize = NELEMS(sParty_Route11RivalPartner_Sylveon),
+        .party = {.ItemCustomMoves = sParty_Route11RivalPartner_Sylveon}
     },
     [TRAINER_ROUTE_11_SOUTH_PARTNER_ALISTAIR] = {
         .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
@@ -2323,6 +2621,102 @@ const struct Trainer gTrainers[] = {
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_RISKY | AI_SCRIPT_TRY_TO_FAINT,
         .partySize = NELEMS(sParty_Route11_Alistair),
         .party = {.ItemCustomMoves = sParty_Route11_Alistair}
+    },
+    [TRAINER_ROUTE_11_SOUTH_RIVAL_V] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_RIVAL_2,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_RIVAL_2,
+        .trainerName = NO_NAME,  // Name replaced from RIVAL trainer classes
+        .items = { ITEM_MEGA_RING, ITEM_HYPER_POTION },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_SEMI_SMART,
+        .partySize = NELEMS(sParty_Rival4_Vaporeon),
+        .party = {.ItemCustomMoves = sParty_Rival4_Vaporeon}
+    },
+    [TRAINER_ROUTE_11_SOUTH_RIVAL_J] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_RIVAL_2,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_RIVAL_2,
+        .trainerName = NO_NAME,  // Name replaced from RIVAL trainer classes
+        .items = { ITEM_MEGA_RING, ITEM_HYPER_POTION },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_SEMI_SMART,
+        .partySize = NELEMS(sParty_Rival4_Jolteon),
+        .party = {.ItemCustomMoves = sParty_Rival4_Jolteon}
+    },
+    [TRAINER_ROUTE_11_SOUTH_RIVAL_F] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_RIVAL_2,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_RIVAL_2,
+        .trainerName = NO_NAME,  // Name replaced from RIVAL trainer classes
+        .items = { ITEM_MEGA_RING, ITEM_HYPER_POTION },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_SEMI_SMART,
+        .partySize = NELEMS(sParty_Rival4_Flareon),
+        .party = {.ItemCustomMoves = sParty_Rival4_Flareon}
+    },
+    [TRAINER_ROUTE_11_SOUTH_RIVAL_E] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_RIVAL_2,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_RIVAL_2,
+        .trainerName = NO_NAME,  // Name replaced from RIVAL trainer classes
+        .items = { ITEM_MEGA_RING, ITEM_HYPER_POTION },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_SEMI_SMART,
+        .partySize = NELEMS(sParty_Rival4_Espeon),
+        .party = {.ItemCustomMoves = sParty_Rival4_Espeon}
+    },
+    [TRAINER_ROUTE_11_SOUTH_RIVAL_U] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_RIVAL_2,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_RIVAL_2,
+        .trainerName = NO_NAME,  // Name replaced from RIVAL trainer classes
+        .items = { ITEM_MEGA_RING, ITEM_HYPER_POTION },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_SEMI_SMART,
+        .partySize = NELEMS(sParty_Rival4_Umbreon),
+        .party = {.ItemCustomMoves = sParty_Rival4_Umbreon}
+    },
+    [TRAINER_ROUTE_11_SOUTH_RIVAL_L] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_RIVAL_2,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_RIVAL_2,
+        .trainerName = NO_NAME,  // Name replaced from RIVAL trainer classes
+        .items = { ITEM_MEGA_RING, ITEM_HYPER_POTION },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_SEMI_SMART,
+        .partySize = NELEMS(sParty_Rival4_Leafeon),
+        .party = {.ItemCustomMoves = sParty_Rival4_Leafeon}
+    },
+    [TRAINER_ROUTE_11_SOUTH_RIVAL_G] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_RIVAL_2,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_RIVAL_2,
+        .trainerName = NO_NAME,  // Name replaced from RIVAL trainer classes
+        .items = { ITEM_MEGA_RING, ITEM_HYPER_POTION },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_SEMI_SMART,
+        .partySize = NELEMS(sParty_Rival4_Glaceon),
+        .party = {.ItemCustomMoves = sParty_Rival4_Glaceon}
+    },
+    [TRAINER_ROUTE_11_SOUTH_RIVAL_S] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_RIVAL_2,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_RIVAL_2,
+        .trainerName = NO_NAME,  // Name replaced from RIVAL trainer classes
+        .items = { ITEM_MEGA_RING, ITEM_HYPER_POTION },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_SEMI_SMART,
+        .partySize = NELEMS(sParty_Rival4_Sylveon),
+        .party = {.ItemCustomMoves = sParty_Rival4_Sylveon}
     },
     // #endregion
     // #region Route 1
@@ -4576,6 +4970,5 @@ const struct Trainer gTrainers[] = {
         .party = {.NoItemCustomMoves = sParty_Route11South_TeamPlutoAdminRonald}
     },
     // #endregion
-
     // #endregion
 };
