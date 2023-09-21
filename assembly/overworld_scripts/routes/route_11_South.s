@@ -65,7 +65,7 @@ LevelScript_PlayerReturnsToRivalAndAlistair:
     msgbox gText_Route11SouthHouse_PlutoEvent_RivalCommentsOnPlayersReturn MSG_NORMAL
     msgbox gText_Route11SouthHouse_PlutoEvent_AlistairCommentsOnPlayersReturn MSG_NORMAL
     sound 0x15 @ Exclaim
-    applymovement PLAYER m_Surprise
+    applymovement Alistair m_Surprise
     msgbox gText_Route11SouthHouse_PlutoEvent_AlistairCommentsOnMegaRing MSG_NORMAL
     call PlayerWalkLeft_Return
     applymovement PLAYER m_LookUp
@@ -384,9 +384,8 @@ RivalBattlePrompt:
     pause DELAY_HALFSECOND
     applymovement PLAYER m_LookLeft
     waitmovement Alistair
-    applymovement PLAYER m_PlayerLeavingSlow
+    applymovement PLAYER m_PlayerLeavingAfterPlutoEvents
     waitmovement PLAYER
-    pause DELAY_HALFSECOND
     fadescreen FADEOUT_BLACK
     pause DELAY_HALFSECOND
     special CAMERA_START
@@ -871,6 +870,6 @@ m_AlistairTakesSupervisionPosition: .byte walk_left, look_down, end_m
 m_AlistairGivesHMFly: .byte walk_right, walk_down, walk_down, look_right, pause_long, walk_left, pause_long, walk_up, walk_up, look_down, end_m
 m_RivalLeaves: .byte walk_up, walk_left, walk_left, walk_left, walk_left, walk_left, walk_left, walk_left, walk_up, walk_left, walk_left, walk_left, walk_left, walk_left, walk_left, end_m
 m_AlistairLeaves: .byte walk_left, walk_left, walk_left, walk_left, walk_left, walk_left, walk_left, walk_left, walk_left, end_m
-m_PlayerLeavingSlow: .byte walk_up, walk_up, walk_right, walk_right, walk_right, end_m
+m_PlayerLeavingAfterPlutoEvents: .byte walk_up, walk_right, walk_right, walk_right, end_m
 m_CameraMovesToAlistairAndRival: .byte run_left, run_left, run_left, run_left, run_left, run_left, run_left, run_left, run_left, run_left, run_left, run_left, end_m
 m_CameraMovesToPlayer: .byte run_right, run_right, run_right, run_right, run_right, run_right, run_right, run_right, run_right, run_right, run_right, run_right, end_m

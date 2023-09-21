@@ -173,7 +173,7 @@ Okay, let's go!
 [BLUE]Okay, I'll wait here with Alistair.
 
 #org @gText_Route11South_PlutoEvent_TeamUpWithAlistairPrompt
-You wish to battle with me?
+You wish to battle alongside me?
 
 #org @gText_Route11South_PlutoEvent_TeamUpWithAlistairYes
 Very well. Let's put an end to Team\nPluto's schemes.
@@ -431,7 +431,7 @@ No way! Even after all the training\nwe've been doing?
 [BLACK]Alistair: [BLUE]And I believe you've\nmentioned your dream of challenging\lSelene, when we first met in Ferrox\lVillage.\pI suppose that would mean you and\n[PLAYER] are rivals, then?
 
 #org @gText_Route11SouthHouse_PlutoEvent_RivalCommentsOnFriendship
-[BLACK][RIVAL]: [BLUE]Huh? I[.] guess you could\nsay that.\pIt's true that we both want to\nchallenge Champion Selene, but[.]\pI don't know if rivals is the right\nway to feel about it.\pIt's been[.] friendlier than that, I\nguess.
+[BLACK][RIVAL]: [BLUE]Huh? I[.] guess you could\nsay that.\pIt's true that we both want to\nchallenge Champion Selene, but[.]\pI don't know if rivalry is the right\nway to feel about it.\pIt's been[.] friendlier than that, I\nguess.
 
 #org @gText_Route11SouthHouse_PlutoEvent_AlistairCommentsOnRivalsRelationship
 [BLACK]Alistair: [BLUE][RIVAL][.] I'm sure I don't\nneed to tell you this, but[.]\pThere can be only one champion.\pIf you and [PLAYER] share that\ndream, it is natural that only one\lof you can achieve it.
