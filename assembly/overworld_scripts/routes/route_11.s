@@ -86,8 +86,15 @@ LevelScript_PlayerReturnsToRivalAndAlistair:
 
 .global MapScript_Route11SouthHouse
 MapScript_Route11SouthHouse:
+    mapscript MAP_SCRIPT_ON_LOAD MapEntryScript_SetRefinerFacing
     mapscript MAP_SCRIPT_ON_FRAME_TABLE LevelScripts_Route11SouthHouse_RonaldCutscene
     .byte MAP_SCRIPT_TERMIN
+
+MapEntryScript_SetRefinerFacing:
+    compare PlutoEncounterVar 0x3
+    if lessthan _goto End
+    setobjectmovementtype 0x1 look_down
+    end
 
 LevelScripts_Route11SouthHouse_RonaldCutscene:
     levelscript PlutoEncounterVar 0x2 LevelScript_RonaldEncounterCutscene
@@ -855,6 +862,33 @@ MoveAlistairAndPlayerAfterClancyAndEna:
     applymovement PLAYER m_WalkLeft
     waitmovement PLAYER
     return
+
+.global EventScript_Route11SouthRefiner_RefinerShop
+EventScript_Route11SouthRefiner_RefinerShop:
+    faceplayer
+    msgbox gText_Route11SouthHouse_RefinerShop MSG_KEEPOPEN
+    pokemart MegaStoneShop
+    msgbox gText_Route11SouthHouse_RefinerFarewell MSG_NORMAL
+    end
+
+MegaStoneShop:
+    .hword ITEM_VENUSAURITE_G
+    .hword ITEM_CHARIZARDITE_G
+    .hword ITEM_BLASTOISINITE_G
+    .hword ITEM_LAPRASITE
+    @ .hword ITEM_MELMETALITE @ TODO: Only when melmetal is captured!
+    .hword ITEM_RILLABITE
+    .hword ITEM_CINDERITE
+    .hword ITEM_INTELLEITE
+    .hword ITEM_CORVIKNITE
+    .hword ITEM_ORBEETLITE
+    .hword ITEM_COALOSSITE
+    .hword ITEM_TOXTRICITE
+    .hword ITEM_CENTISKORITE
+    .hword ITEM_HATTERITE
+    .hword ITEM_COPPERITE
+    .hword ITEM_DURALUDITE
+    .hword ITEM_NONE
 
 m_RivalWalksToMeetPlayer: .byte walk_left, walk_left, walk_left, walk_left, walk_left, walk_left, walk_left, end_m
 m_RivalAndPlayerWalkToAlistair: .byte walk_right, walk_right, walk_right, walk_right, walk_right, walk_right, look_down, end_m

@@ -1126,4 +1126,4 @@ tile 3 29 17 TileScript_Route11South_SouthByHesson
 tile 3 29 18 TileScript_Route11South_SouthByHesson
 tile 3 29 19 TileScript_Route11South_SouthByHesson
 tile 3 29 20 TileScript_Route11South_SouthByHesson
-## TODO: Refiner text after event
+npc 20 0 0 EventScript_Route11SouthRefiner_RefinerShop
