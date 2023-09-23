@@ -69,7 +69,7 @@
         },
         {
             "mapgroup": 1,
-            "mapnum": 2,
+            "mapnum": 123,
             "grass": {
                 "rate": 5,
                 "pokemon": [
@@ -831,31 +831,6 @@
                     { "low": 25, "high": 28, "species": "SPECIES_GRIMER_A" },
                     { "low": 25, "high": 28, "species": "SPECIES_SNOM" }, 
                     { "low": 26, "high": 29, "species": "SPECIES_GRIMER_A" }
-                ]
-            },
-            "surfing": {
-                "rate": 1,
-                "pokemon": [
-                    { "low": 33, "high": 37, "species": "SPECIES_CHINCHOU" },
-                    { "low": 30, "high": 35, "species": "SPECIES_MAGIKARP" },
-                    { "low": 32, "high": 38, "species": "SPECIES_CHINCHOU" },
-                    { "low": 33, "high": 38, "species": "SPECIES_HORSEA" },
-                    { "low": 34, "high": 35, "species": "SPECIES_HORSEA" }
-                ]
-            },
-            "fishing": {
-                "rate": 20,
-                "pokemon": [
-                    { "low": 5, "high": 20, "species": "SPECIES_MAGIKARP" },
-                    { "low": 5, "high": 20, "species": "SPECIES_CHINCHOU" },
-                    { "low": 20, "high": 25, "species": "SPECIES_MAGIKARP" },
-                    { "low": 20, "high": 25, "species": "SPECIES_CHINCHOU" },
-                    { "low": 20, "high": 25, "species": "SPECIES_CHINCHOU" },
-                    { "low": 30, "high": 40, "species": "SPECIES_GYARADOS" },
-                    { "low": 30, "high": 40, "species": "SPECIES_LANTURN" },
-                    { "low": 30, "high": 40, "species": "SPECIES_MAGIKARP" },
-                    { "low": 30, "high": 40, "species": "SPECIES_MAGIKARP" },
-                    { "low": 30, "high": 40, "species": "SPECIES_CHINCHOU" }
                 ]
             }
         },

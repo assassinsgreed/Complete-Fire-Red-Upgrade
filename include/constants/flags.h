@@ -1081,8 +1081,8 @@
 #define HIDDEN_ITEM_DAIMYN_FACTORY_OVERWORLD_NUGGET                    52
 #define HIDDEN_ITEM_ROUTE9_NEST_BALL                                   53
 #define HIDDEN_ITEM_ROUTE9_TOXIC_ORB                                   54
-#define HIDDEN_ITEM_ROUTE9_SITRUS_BERRY                                55
-#define HIDDEN_ITEM_ROUTE9_DAWN_STONE                                  56
+#define HIDDEN_ITEM_ROUTE10_SITRUS_BERRY                               55
+#define HIDDEN_ITEM_ROUTE10_DAWN_STONE                                 56
 #define HIDDEN_ITEM_ROUTE11SOUTH_NUGGET                                57
 #define HIDDEN_ITEM_ROUTE11SOUTH_QUICK_BALL                            58
 #define HIDDEN_ITEM_ROUTE11SOUTH_TAMATO_BERRY                          59

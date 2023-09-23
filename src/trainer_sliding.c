@@ -45,6 +45,7 @@ static const struct TrainerSlide sTrainerSlides[] =
 	{0x9C, NULL, sText_Casey1_LastSwitchIn, sText_Casey1_LowHP}, // Male Casey battle 1
 	{0xAE, NULL, sText_Casey2_LastSwitchIn, sText_Casey2_LowHP}, // Female Casey battle 2
 	{0xAF, NULL, sText_Casey2_LastSwitchIn, sText_Casey2_LowHP}, // Female Casey battle 2
+	{0xC8, sText_Ronald_FirstMonDown, sText_Ronald_LastSwitchIn, sText_Ronald_LowHP}, // Pluto Admin Ronald
 	{0xC9, sText_Rival4_FirstMonDown, sText_Rival4_LastSwitchIn, sText_Rival4_LowHP}, // Fourth rival battle, Vaporeon
 	{0xCA, sText_Rival4_FirstMonDown, sText_Rival4_LastSwitchIn, sText_Rival4_LowHP}, // Fourth rival battle, Jolteon
 	{0xCB, sText_Rival4_FirstMonDown, sText_Rival4_LastSwitchIn, sText_Rival4_LowHP}, // Fourth rival battle, Flareon

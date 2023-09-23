@@ -46,4 +46,8 @@ EventScript_OlenicOverworld_FindTMSwagger:
     setvar CHOSEN_ITEM ITEM_TM87
     call ItemScript_Common_FindTM
     end
-    
+
+.global SignScript_OlenicOverworld_TrainerTips
+SignScript_OlenicOverworld_TrainerTips:
+    msgbox gText_OlenicOverworld_TrainerTips MSG_SIGN
+    end
