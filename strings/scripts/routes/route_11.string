@@ -453,3 +453,9 @@ No way! Even after all the training\nwe've been doing?
 
 #org @gText_Route11SouthHouse_PlutoEvent_RivalAcceptsTheOffer
 [BLACK][RIVAL]: [BLUE]You'd do that?\pAlright, Alistair. It's a deal.\pLet's get training[.] There's a lot I\nneed to practice.
+
+#org @gText_Route11SouthHouse_RefinerShop
+Well, if it isn't [PLAYER]. Would you\nlike to buy some Mega Stones?
+
+#org @gText_Route11SouthHouse_RefinerFarewell
+Take care, and do come by again.

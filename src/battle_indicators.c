@@ -722,7 +722,7 @@ static void SpriteCB_MegaIndicator(struct Sprite* self)
 
 		// Figure out the X position for the indicator - it differs depending on
 		// the battle type and the side the healthbox represents.
-		s16 shift = 51; // Halfway point for OAM, adjusted for BW battle hud
+		s16 shift = 60; // Halfway point for OAM, adjusted for BW battle hud
 
 		if (SIDE(INDICATOR_BANK) == B_SIDE_OPPONENT)
 			shift += 18;
