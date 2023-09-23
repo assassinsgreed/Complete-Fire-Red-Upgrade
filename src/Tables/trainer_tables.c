@@ -3420,7 +3420,7 @@ const struct Trainer gTrainers[] = {
     // #region Ferrox Village
     [TRAINER_FERROX_LIBRARY_LAURENA] = {
         .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
-        .trainerClass = CLASS_PKMN_TRAINER_1,
+        .trainerClass = CLASS_PKMN_TRAINER_2,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .trainerPic = TRAINER_PIC_BEAUTY,
         .trainerName = {_L, _a, _u, _r, _e, _n, _a, _END},
@@ -3432,7 +3432,7 @@ const struct Trainer gTrainers[] = {
     },
     [TRAINER_FERROX_LIBRARY_LONA] = {
         .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
-        .trainerClass = CLASS_PKMN_TRAINER_1,
+        .trainerClass = CLASS_PKMN_TRAINER_2,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .trainerPic = TRAINER_PIC_PSYCHIC_F,
         .trainerName = {_L, _o, _n, _a, _END},
@@ -3444,7 +3444,7 @@ const struct Trainer gTrainers[] = {
     },
     [TRAINER_FERROX_LIBRARY_CHET] = {
         .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
-        .trainerClass = CLASS_PKMN_TRAINER_1,
+        .trainerClass = CLASS_PKMN_TRAINER_2,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .trainerPic = TRAINER_PIC_COOLTRAINER_M,
         .trainerName = {_C, _h, _e, _t, _END},
@@ -3456,7 +3456,7 @@ const struct Trainer gTrainers[] = {
     },
     [TRAINER_FERROX_LIBRARY_VINCENT] = {
         .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
-        .trainerClass = CLASS_PKMN_TRAINER_1,
+        .trainerClass = CLASS_PKMN_TRAINER_2,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .trainerPic = TRAINER_PIC_GENTLEMAN,
         .trainerName = {_V, _i, _n, _c, _e, _n, _t, _END},

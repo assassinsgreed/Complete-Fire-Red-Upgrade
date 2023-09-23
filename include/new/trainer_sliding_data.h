@@ -89,9 +89,9 @@ extern const u8 sText_Irene_LastSwitchIn[];
 extern const u8 sText_Irene_LowHP[];
 
 // Team Pluto Admin Ronald
-extern const u8 sText_Roland_FirstMonDown[];
-extern const u8 sText_Roland_LastSwitchIn[];
-extern const u8 sText_Roland_LowHP[];
+extern const u8 sText_Ronald_FirstMonDown[];
+extern const u8 sText_Ronald_LastSwitchIn[];
+extern const u8 sText_Ronald_LowHP[];
 
 // Team Pluto Leader Kurtis
 extern const u8 sText_Kurtis_FirstMonDown[];
