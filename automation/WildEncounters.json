@@ -399,6 +399,99 @@
             }
         },
         {
+            "mapgroup": 1,
+            "mapnum": 81,
+            "grass": {
+                "rate": 3,
+                "pokemon": [
+                    { "low": 30, "high": 34, "species": "SPECIES_PAWNIARD" },
+                    { "low": 31, "high": 34, "species": "SPECIES_INKAY" },
+                    { "low": 30, "high": 33, "species": "SPECIES_MISDREAVUS" },
+                    { "low": 29, "high": 34, "species": "SPECIES_SHIELDON" },
+                    { "low": 31, "high": 35, "species": "SPECIES_SHIELDON" },
+                    { "low": 30, "high": 34, "species": "SPECIES_SHUCKLE" },
+                    { "low": 31, "high": 33, "species": "SPECIES_SHUCKLE" },
+                    { "low": 30, "high": 34, "species": "SPECIES_LILEEP" },
+                    { "low": 31, "high": 33, "species": "SPECIES_LILEEP" },
+                    { "low": 30, "high": 35, "species": "SPECIES_WOBBUFFET" },
+                    { "low": 31, "high": 34, "species": "SPECIES_TYRUNT" }, 
+                    { "low": 29, "high": 33, "species": "SPECIES_WOBBUFFET" }
+                ]
+            },
+            "rocks": {
+                "rate": 50,
+                "pokemon": [
+                    { "low": 30, "high": 35, "species": "SPECIES_BOLDORE" },
+                    { "low": 30, "high": 35, "species": "SPECIES_CARBINK" },
+                    { "low": 30, "high": 35, "species": "SPECIES_KLINK" },
+                    { "low": 30, "high": 35, "species": "SPECIES_KLINK" },
+                    { "low": 30, "high": 35, "species": "SPECIES_KLINK" }
+                ]
+            }
+        },
+        {
+            "mapgroup": 1,
+            "mapnum": 82,
+            "grass": {
+                "rate": 3,
+                "pokemon": [
+                    { "low": 44, "high": 47, "species": "SPECIES_BISHARP" },
+                    { "low": 43, "high": 48, "species": "SPECIES_KLANG" },
+                    { "low": 42, "high": 45, "species": "SPECIES_WOBBUFFET" },
+                    { "low": 43, "high": 46, "species": "SPECIES_MALAMAR" },
+                    { "low": 44, "high": 47, "species": "SPECIES_SCRAFTY" },
+                    { "low": 42, "high": 47, "species": "SPECIES_MISMAGIUS" },
+                    { "low": 43, "high": 46, "species": "SPECIES_TYRANTRUM" },
+                    { "low": 42, "high": 44, "species": "SPECIES_BASTIODON" },
+                    { "low": 40, "high": 45, "species": "SPECIES_NOIBAT" },
+                    { "low": 42, "high": 46, "species": "SPECIES_BOLDORE" },
+                    { "low": 42, "high": 46, "species": "SPECIES_NOIBAT" }, 
+                    { "low": 41, "high": 45, "species": "SPECIES_NOIVERN" }
+                ]
+            },
+            "rocks": {
+                "rate": 50,
+                "pokemon": [
+                    { "low": 40, "high": 45, "species": "SPECIES_BOLDORE" },
+                    { "low": 40, "high": 45, "species": "SPECIES_KLANG" },
+                    { "low": 40, "high": 45, "species": "SPECIES_GIGALITH" },
+                    { "low": 40, "high": 45, "species": "SPECIES_KLANG" },
+                    { "low": 40, "high": 45, "species": "SPECIES_KLANG" }
+                ]
+            }
+        },
+        {
+            "mapgroup": 1,
+            "mapnum": 83,
+            "grass": {
+                "rate": 3,
+                "pokemon": [
+                    { "low": 30, "high": 34, "species": "SPECIES_PAWNIARD" },
+                    { "low": 31, "high": 34, "species": "SPECIES_INKAY" },
+                    { "low": 30, "high": 33, "species": "SPECIES_MISDREAVUS" },
+                    { "low": 29, "high": 34, "species": "SPECIES_SHIELDON" },
+                    { "low": 31, "high": 35, "species": "SPECIES_SHIELDON" },
+                    { "low": 30, "high": 34, "species": "SPECIES_SHUCKLE" },
+                    { "low": 31, "high": 33, "species": "SPECIES_SHUCKLE" },
+                    { "low": 30, "high": 34, "species": "SPECIES_LILEEP" },
+                    { "low": 31, "high": 33, "species": "SPECIES_LILEEP" },
+                    { "low": 30, "high": 35, "species": "SPECIES_WOBBUFFET" },
+                    { "low": 31, "high": 34, "species": "SPECIES_TYRUNT" }, 
+                    { "low": 29, "high": 33, "species": "SPECIES_WOBBUFFET" }
+                ]
+            },
+            "rocks": {
+                "rate": 50,
+                "pokemon": [
+                    { "low": 30, "high": 35, "species": "SPECIES_BOLDORE" },
+                    { "low": 30, "high": 35, "species": "SPECIES_CARBINK" },
+                    { "low": 30, "high": 35, "species": "SPECIES_KLINK" },
+                    { "low": 30, "high": 35, "species": "SPECIES_KLINK" },
+                    { "low": 30, "high": 35, "species": "SPECIES_KLINK" }
+                ]
+            }
+        },
+        {
             "mapgroup": 3,
             "mapnum": 2,
             "surfing": {

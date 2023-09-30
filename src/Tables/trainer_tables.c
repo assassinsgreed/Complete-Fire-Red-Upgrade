@@ -2429,6 +2429,51 @@ const struct TrainerMonNoItemCustomMoves sParty_Route11South_TeamPlutoAdminRonal
 };
 // #endregion
 
+// #region Hesson Pass
+const struct TrainerMonNoItemDefaultMoves sParty_HessonPass_HikerLuke[] = {
+    { .lvl = 40, .species = SPECIES_GIGALITH }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_HessonPass_ScientistHarvey[] = {
+    { .lvl = 37, .species = SPECIES_BERGMITE },
+    { .lvl = 37, .species = SPECIES_LILEEP },
+    { .lvl = 38, .species = SPECIES_CACTURNE }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_HessonPass_PsychicKimiko[] = {
+    { .lvl = 44, .species = SPECIES_HATTREM },
+    { .lvl = 44, .species = SPECIES_MORPEKO },
+    { .lvl = 46, .species = SPECIES_MANDIBUZZ }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_HessonPass_CoolTrainerColt[] = {
+    { .lvl = 46, .species = SPECIES_GLALIE },
+    { .lvl = 46, .species = SPECIES_TOUCANNON },
+    { .lvl = 48, .species = SPECIES_MAMOSWINE }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_HessonPass_BlackbeltHaytham[] = {
+    { .lvl = 38, .species = SPECIES_CRABRAWLER },
+    { .lvl = 38, .species = SPECIES_BLAZIKEN }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_HessonPass_CollectorZeus[] = {
+    { .lvl = 46, .species = SPECIES_COFAGRIGUS },
+    { .lvl = 46, .species = SPECIES_RUNERIGUS }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_HessonPass_NurseMina[] = {
+    { .lvl = 40, .species = SPECIES_HAPPINY },
+    { .lvl = 42, .species = SPECIES_CHANSEY },
+    { .lvl = 44, .species = SPECIES_BLISSEY }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_HessonPass_GentlemanGordy[] = {
+    { .lvl = 45, .species = SPECIES_BOLTUND },
+    { .lvl = 46, .species = SPECIES_STOUTLAND }
+};
+// #endregion
+
 // #endregion
 
 #define NO_NAME                                                                                      \
@@ -4970,5 +5015,103 @@ const struct Trainer gTrainers[] = {
         .party = {.NoItemCustomMoves = sParty_Route11South_TeamPlutoAdminRonald}
     },
     // #endregion
+    // #region Hesson Pass
+    [TRAINER_HESSON_PASS_HIKER_LUKE] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_HIKER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
+        .trainerPic = TRAINER_PIC_HIKER,
+        .trainerName = {_L, _u, _k, _e, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = NELEMS(sParty_HessonPass_HikerLuke),
+        .party = {.NoItemDefaultMoves = sParty_HessonPass_HikerLuke}
+    },
+    [TRAINER_HESSON_PASS_SCIENTIST_HARVEY] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_SCIENTIST,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_SCIENTIST_M,
+        .trainerName = {_H, _a, _r, _v, _e, _y, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_CHECK_VIABILITY,
+        .partySize = NELEMS(sParty_HessonPass_ScientistHarvey),
+        .party = {.NoItemDefaultMoves = sParty_HessonPass_ScientistHarvey}
+    },
+    [TRAINER_HESSON_PASS_PSYCHIC_KIMIKO] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_PSYCHIC,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_PSYCHIC_F,
+        .trainerName = {_K, _i, _m, _i, _k, _o, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_GOOD_MOVE,
+        .partySize = NELEMS(sParty_HessonPass_PsychicKimiko),
+        .party = {.NoItemDefaultMoves = sParty_HessonPass_PsychicKimiko}
+    },
+    [TRAINER_HESSON_PASS_COOL_TRAINER_COLT] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_COOLTRAINER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
+        .trainerPic = TRAINER_PIC_COOLTRAINER_M,
+        .trainerName = {_C, _o, _l, _t, _END},
+        .items = { ITEM_HYPER_POTION },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE,
+        .partySize = NELEMS(sParty_HessonPass_CoolTrainerColt),
+        .party = {.NoItemDefaultMoves = sParty_HessonPass_CoolTrainerColt}
+    },
+    [TRAINER_HESSON_PASS_BLACK_BELT_HAYTHAM] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_BLACK_BELT,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_BLACK_BELT,
+        .trainerName = {_H, _a, _y, _t, _h, _a, _m, _END},
+        .items = { ITEM_DIRE_HIT },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_RISKY,
+        .partySize = NELEMS(sParty_HessonPass_BlackbeltHaytham),
+        .party = {.NoItemDefaultMoves = sParty_HessonPass_BlackbeltHaytham}
+    },
+    [TRAINER_HESSON_PASS_COLLECTOR_ZEUS] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_COLLECTOR,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_COLLECTOR,
+        .trainerName = {_Z, _e, _u, _s, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE,
+        .partySize = NELEMS(sParty_HessonPass_CollectorZeus),
+        .party = {.NoItemDefaultMoves = sParty_HessonPass_CollectorZeus}
+    },
+    [TRAINER_HESSON_PASS_NURSE_MINA] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_NURSE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .trainerPic = TRAINER_PIC_NURSE,
+        .trainerName = {_M, _i, _n, _a, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_HP_AWARE,
+        .partySize = NELEMS(sParty_HessonPass_NurseMina),
+        .party = {.NoItemDefaultMoves = sParty_HessonPass_NurseMina}
+    },
+    [TRAINER_HESSON_PASS_GENTLEMAN_GORDY] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_GENTLEMAN,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_GENTLEMAN,
+        .trainerName = {_G, _o, _r, _d, _y, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE,
+        .partySize = NELEMS(sParty_HessonPass_GentlemanGordy),
+        .party = {.NoItemDefaultMoves = sParty_HessonPass_GentlemanGordy}
+    },
+    // #endregin
     // #endregion
 };
