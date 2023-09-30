@@ -1128,3 +1128,57 @@ tile 3 29 18 TileScript_Route11South_SouthByHesson
 tile 3 29 19 TileScript_Route11South_SouthByHesson
 tile 3 29 20 TileScript_Route11South_SouthByHesson
 npc 20 0 0 EventScript_Route11SouthRefiner_RefinerShop
+
+# Hesson Pass
+## BF1
+map 1 81 MapScript_HessonPass
+npc 1 81 0 EventScript_Common_RockSmash
+npc 1 81 1 EventScript_Common_RockSmash
+npc 1 81 2 EventScript_Common_RockSmash
+npc 1 81 3 EventScript_Common_RockSmash
+npc 1 81 4 EventScript_Common_RockSmash
+npc 1 81 5 EventScript_Common_Strength
+npc 1 81 6 EventScript_Common_Strength
+npc 1 81 7 EventScript_Common_Strength
+npc 1 81 8 EventScript_Common_Strength
+npc 1 81 9 EventScript_Common_Strength
+npc 1 81 10 ItemScript_Common_HyperPotion
+npc 1 81 11 ItemScript_Common_HpUp
+npc 1 81 12 ItemScript_Common_Ultraball
+npc 1 81 13 EventScript_HessonPass_HikerLuke
+npc 1 81 14 EventScript_HessonPass_ScientistHarvey
+npc 1 81 15 EventSCript_HessonPass_PsychicKimiko
+npc 1 81 16 EventSCript_HessonPass_CoolTrainerColt
+sign 1 81 0 SignScript_HessonPass_HolesInGround
+## F1
+npc 1 82 0 EventScript_Common_Strength
+npc 1 82 1 EventScript_Common_Strength
+npc 1 82 2 EventScript_Common_Strength
+npc 1 82 3 EventScript_Common_Strength
+npc 1 82 4 EventScript_Common_Strength
+npc 1 82 5 EventScript_Common_RockSmash
+npc 1 82 6 EventScript_Common_RockSmash
+npc 1 82 7 EventScript_Common_RockSmash
+npc 1 82 8 EventScript_Common_RockSmash
+npc 1 82 9 EventScript_Common_RockSmash
+npc 1 82 10 EventScript_Common_RockSmash
+npc 1 82 11 EventScript_Common_RockSmash
+npc 1 82 12 EventScript_Common_RockSmash
+npc 1 82 13 EventScript_Common_RockSmash
+npc 1 82 14 EventScript_Common_RockSmash
+npc 1 82 15 EventScript_Common_Strength
+npc 1 82 16 EventScript_HessonPass_TM67SmartStrike
+npc 1 82 17 ItemScript_Common_Elixir
+npc 1 82 18 EventScript_HessonPass_NurseMina
+npc 1 82 19 EventScript_HessonPass_GentlemanGordy
+
+## BF2
+npc 1 83 0 EventScript_Common_RockSmash
+npc 1 83 1 EventScript_Common_RockSmash
+npc 1 83 2 EventScript_Common_RockSmash
+npc 1 83 3 EventScript_Common_RockSmash
+npc 1 83 4 EventScript_Common_RockSmash
+npc 1 83 5 ItemScript_Common_StarPiece
+npc 1 83 6 EventScript_HessonPass_CharizarditeX
+npc 1 83 7 EventScript_HessonPass_BlackbeltHaytham
+npc 1 83 8 EventScript_HessonPass_Collector_Zeus

@@ -272,6 +272,11 @@ ItemScript_Common_DireHit:
     finditem ITEM_DIRE_HIT 0x1
     end
 
+.global ItemScript_Common_HpUp
+ItemScript_Common_HpUp:
+    finditem ITEM_HP_UP 0x1
+    end
+
 .global ItemScript_Common_Protein
 ItemScript_Common_Protein:
     finditem ITEM_PROTEIN 0x1
@@ -300,6 +305,11 @@ ItemScript_Common_Pokeball:
 .global ItemScript_Common_Greatball
 ItemScript_Common_Greatball:
     finditem ITEM_GREAT_BALL 0x1
+    end
+
+.global ItemScript_Common_Ultraball
+ItemScript_Common_Ultraball:
+    finditem ITEM_ULTRA_BALL 0x1
     end
 
 .global ItemScript_Common_Healball
