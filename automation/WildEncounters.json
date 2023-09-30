@@ -436,7 +436,7 @@
                 "rate": 3,
                 "pokemon": [
                     { "low": 44, "high": 47, "species": "SPECIES_BISHARP" },
-                    { "low": 43, "high": 48, "species": "SPECIES_MUK_A" },
+                    { "low": 43, "high": 48, "species": "SPECIES_KLANG" },
                     { "low": 42, "high": 45, "species": "SPECIES_WOBBUFFET" },
                     { "low": 43, "high": 46, "species": "SPECIES_MALAMAR" },
                     { "low": 44, "high": 47, "species": "SPECIES_SCRAFTY" },
