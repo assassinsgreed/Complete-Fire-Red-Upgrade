@@ -1072,6 +1072,27 @@
             }
         },
         {
+            "mapgroup": 3,
+            "mapnum": 54,
+            "grass": {
+                "rate": 21,
+                "pokemon": [
+                    { "low": 31, "high": 34, "species": "SPECIES_STUNFISK_G" },
+                    { "low": 30, "high": 33, "species": "SPECIES_WHIRLIPEDE" },
+                    { "low": 29, "high": 33, "species": "SPECIES_TIMBURR" },
+                    { "low": 32, "high": 33, "species": "SPECIES_HATTREM" },
+                    { "low": 29, "high": 33, "species": "SPECIES_FLOETTE_WHITE" },
+                    { "low": 30, "high": 33, "species": "SPECIES_THIEVUL" },
+                    { "low": 29, "high": 33, "species": "SPECIES_GURDURR" },
+                    { "low": 30, "high": 33, "species": "SPECIES_GURDURR" },
+                    { "low": 29, "high": 32, "species": "SPECIES_HATENNA" },
+                    { "low": 30, "high": 32, "species": "SPECIES_STUNFISK_G" },
+                    { "low": 30, "high": 33, "species": "SPECIES_HATENNA" }, 
+                    { "low": 29, "high": 32, "species": "SPECIES_STUNFISK_G" }
+                ]
+            }
+        },
+        {
             "mapgroup": 30,
             "mapnum": 0,
             "grass": {

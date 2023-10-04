@@ -484,11 +484,11 @@
 #define FLAG_HIDE_HESSON_PASS_BF1_CHARIZARDITE_X                0x1DA
 #define FLAG_HIDE_HESSON_PASS_F2_TM67_SMART_STRIKE              0x1DB
 #define FLAG_HIDE_HESSON_PASS_F2_ELIXIR                         0x1DC
-#define FLAG_HIDE_ONE_ISLAND_KINDLE_ROAD_CARBOS                 0x1DD
-#define FLAG_HIDE_FIVE_ISLAND_MEADOW_MAX_POTION                 0x1DE
-#define FLAG_HIDE_FIVE_ISLAND_MEADOW_PP_UP                      0x1DF
-#define FLAG_HIDE_FIVE_ISLAND_MEMORIAL_PILLAR_METAL_COAT        0x1E0
-#define FLAG_HIDE_SIX_ISLAND_OUTCAST_ISLAND_PP_UP               0x1E1
+#define FLAG_HIDE_ROUTE11_NORTH_TM03_PSYSHOCK                   0x1DD
+#define FLAG_HIDE_ROUTE11_NORTH_REAPER_CLOTH                    0x1DE
+#define FLAG_HIDE_ROUTE11_NORTH_ULTRA_BALL                      0x1DF
+#define FLAG_HIDE_ROUTE11_NORTH_RED_CARD                        0x1E0
+#define FLAG_HIDE_ROUTE11_NORTH_TM47_LOW_SWEEP                  0x1E1
 #define FLAG_HIDE_SIX_ISLAND_WATER_PATH_ELIXIR                  0x1E2
 #define FLAG_HIDE_SIX_ISLAND_WATER_PATH_DRAGON_SCALE            0x1E3
 #define FLAG_HIDE_SIX_ISLAND_RUIN_VALLEY_FULL_RESTORE           0x1E4
@@ -1095,35 +1095,35 @@
 #define HIDDEN_ITEM_HESSON_PASS_F2_FULL_RESTORE                        66
 #define HIDDEN_ITEM_HESSON_PASS_F2_NEST_BALL                           67
 #define HIDDEN_ITEM_HESSON_PASS_F2_NUGGET                              68
-#define HIDDEN_ITEM_FIVE_ISLAND_ROCKET_WAREHOUSE_NET_BALL              69
-#define HIDDEN_ITEM_UNDERGROUND_PATH_NORTH_SOUTH_TUNNEL_POTION         70
-#define HIDDEN_ITEM_UNDERGROUND_PATH_NORTH_SOUTH_TUNNEL_ANTIDOTE       71
-#define HIDDEN_ITEM_UNDERGROUND_PATH_NORTH_SOUTH_TUNNEL_PARALYZE_HEAL  72
-#define HIDDEN_ITEM_UNDERGROUND_PATH_NORTH_SOUTH_TUNNEL_AWAKENING      73
-#define HIDDEN_ITEM_UNDERGROUND_PATH_NORTH_SOUTH_TUNNEL_BURN_HEAL      74
-#define HIDDEN_ITEM_UNDERGROUND_PATH_NORTH_SOUTH_TUNNEL_ICE_HEAL       75
-#define HIDDEN_ITEM_UNDERGROUND_PATH_NORTH_SOUTH_TUNNEL_ETHER          76
-#define HIDDEN_ITEM_UNDERGROUND_PATH_EAST_WEST_TUNNEL_POTION           77
-#define HIDDEN_ITEM_UNDERGROUND_PATH_EAST_WEST_TUNNEL_ANTIDOTE         78
-#define HIDDEN_ITEM_UNDERGROUND_PATH_EAST_WEST_TUNNEL_PARALYZE_HEAL    79
-#define HIDDEN_ITEM_UNDERGROUND_PATH_EAST_WEST_TUNNEL_AWAKENING        80
-#define HIDDEN_ITEM_UNDERGROUND_PATH_EAST_WEST_TUNNEL_BURN_HEAL        81
-#define HIDDEN_ITEM_UNDERGROUND_PATH_EAST_WEST_TUNNEL_ICE_HEAL         82
-#define HIDDEN_ITEM_UNDERGROUND_PATH_EAST_WEST_TUNNEL_ETHER            83
-#define HIDDEN_ITEM_MT_MOON_B1F_TINY_MUSHROOM                          84
-#define HIDDEN_ITEM_MT_MOON_B1F_TINY_MUSHROOM_2                        85
-#define HIDDEN_ITEM_MT_MOON_B1F_TINY_MUSHROOM_3                        86
-#define HIDDEN_ITEM_MT_MOON_B1F_BIG_MUSHROOM                           87
-#define HIDDEN_ITEM_MT_MOON_B1F_BIG_MUSHROOM_2                         88
-#define HIDDEN_ITEM_MT_MOON_B1F_BIG_MUSHROOM_3                         89
-#define HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_RAZZ_BERRY               90
-#define HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_BLUK_BERRY               91
-#define HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_NANAB_BERRY              92
-#define HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_WEPEAR_BERRY             93
-#define HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_ORAN_BERRY               94
-#define HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_CHERI_BERRY              95
-#define HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_CHESTO_BERRY             96
-#define HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_PECHA_BERRY              97
+#define HIDDEN_ITEM_ROUTE11NORTH_QUALOT_BERRY                          69
+#define HIDDEN_ITEM_UNDERGROUND_PATH_NORTH_SOUTH_TUNNEL_POTION         70 // For some reason, cannot be picked up
+#define HIDDEN_ITEM_UNDERGROUND_PATH_NORTH_SOUTH_TUNNEL_ANTIDOTE       71 // For some reason, cannot be picked up
+#define HIDDEN_ITEM_UNDERGROUND_PATH_NORTH_SOUTH_TUNNEL_PARALYZE_HEAL  72 // For some reason, cannot be picked up
+#define HIDDEN_ITEM_UNDERGROUND_PATH_NORTH_SOUTH_TUNNEL_AWAKENING      73 // For some reason, cannot be picked up
+#define HIDDEN_ITEM_UNDERGROUND_PATH_NORTH_SOUTH_TUNNEL_BURN_HEAL      74 // For some reason, cannot be picked up
+#define HIDDEN_ITEM_UNDERGROUND_PATH_NORTH_SOUTH_TUNNEL_ICE_HEAL       75 // For some reason, cannot be picked up
+#define HIDDEN_ITEM_UNDERGROUND_PATH_NORTH_SOUTH_TUNNEL_ETHER          76 // For some reason, cannot be picked up
+#define HIDDEN_ITEM_UNDERGROUND_PATH_EAST_WEST_TUNNEL_POTION           77 // For some reason, cannot be picked up
+#define HIDDEN_ITEM_UNDERGROUND_PATH_EAST_WEST_TUNNEL_ANTIDOTE         78 // For some reason, cannot be picked up
+#define HIDDEN_ITEM_UNDERGROUND_PATH_EAST_WEST_TUNNEL_PARALYZE_HEAL    79 // For some reason, cannot be picked up
+#define HIDDEN_ITEM_UNDERGROUND_PATH_EAST_WEST_TUNNEL_AWAKENING        80 // For some reason, cannot be picked up
+#define HIDDEN_ITEM_UNDERGROUND_PATH_EAST_WEST_TUNNEL_BURN_HEAL        81 // For some reason, cannot be picked up
+#define HIDDEN_ITEM_UNDERGROUND_PATH_EAST_WEST_TUNNEL_ICE_HEAL         82 // For some reason, cannot be picked up
+#define HIDDEN_ITEM_UNDERGROUND_PATH_EAST_WEST_TUNNEL_ETHER            83 // For some reason, cannot be picked up
+#define HIDDEN_ITEM_MT_MOON_B1F_TINY_MUSHROOM                          84 // For some reason, cannot be picked up
+#define HIDDEN_ITEM_MT_MOON_B1F_TINY_MUSHROOM_2                        85 // For some reason, cannot be picked up
+#define HIDDEN_ITEM_MT_MOON_B1F_TINY_MUSHROOM_3                        86 // For some reason, cannot be picked up
+#define HIDDEN_ITEM_MT_MOON_B1F_BIG_MUSHROOM                           87 // For some reason, cannot be picked up
+#define HIDDEN_ITEM_MT_MOON_B1F_BIG_MUSHROOM_2                         88 // For some reason, cannot be picked up
+#define HIDDEN_ITEM_MT_MOON_B1F_BIG_MUSHROOM_3                         89 // For some reason, cannot be picked up
+#define HIDDEN_ITEM_HIDDEN_ITEM_ROUTE11NORTH_REVIVE                    90
+#define HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_BLUK_BERRY               91 // For some reason, cannot be picked up
+#define HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_NANAB_BERRY              92 // For some reason, cannot be picked up
+#define HIDDEN_ITEM_HIDDEN_ITEM_ROUTE11NORTH_SITRUS_BERRY              93
+#define HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_ORAN_BERRY               94 // For some reason, cannot be picked up
+#define HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_CHERI_BERRY              95 // For some reason, cannot be picked up
+#define HIDDEN_ITEM_HIDDEN_ITEM_ROUTE11NORTH_HYPER_POTION              96
+#define HIDDEN_ITEM_HIDDEN_ITEM_ROUTE11NORTH_MAX_ETHER                 97
 #define HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_RAWST_BERRY              98
 #define HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_ASPEAR_BERRY             99
 #define HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_PERSIM_BERRY            100

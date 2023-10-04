@@ -1182,3 +1182,24 @@ npc 1 83 5 ItemScript_Common_StarPiece
 npc 1 83 6 EventScript_HessonPass_CharizarditeX
 npc 1 83 7 EventScript_HessonPass_BlackbeltHaytham
 npc 1 83 8 EventScript_HessonPass_Collector_Zeus
+
+# Route 11 North
+npc 3 54 0 EventScript_Common_Cut
+npc 3 54 1 EventScript_Common_Cut
+npc 3 54 2 EventScript_Common_Cut
+npc 3 54 3 EventScript_Common_Cut
+npc 3 54 4 EventScript_Common_Cut
+npc 3 54 5 EventScript_Route11North_TM03Psyshock
+npc 3 54 6 ItemScript_Common_ReaperCloth
+npc 3 54 7 ItemScript_Common_Ultraball
+npc 3 54 8 ItemScript_Common_RedCard
+npc 3 54 9 EventScript_Route11North_TM47LowSweep
+npc 3 54 10 EventScript_Route11North_PainterIsobel
+npc 3 54 11 EventScript_Route11North_FishermanClint
+npc 3 54 12 EventScript_Route11North_ChannelerKatya
+npc 3 54 13 EventScript_Route11North_RockerNathaniel
+npc 3 54 14 EventScript_Route11North_NinjaBoyYao
+npc 3 54 15 EventScript_Route11North_ParasolLadyTina
+npc 3 54 16 EventScript_Route11North_FishermanJonah
+sign 3 54 0 SignScript_LaplazTown_Entrance
+sign 3 54 1 SignScript_Route11North_LaplazTenets

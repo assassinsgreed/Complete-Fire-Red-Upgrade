@@ -2315,7 +2315,7 @@ const struct TrainerMonNoItemDefaultMoves sParty_Route10Cave_BlackbeltXavier[] =
 
 // #endregion
 
-// #region Route 11
+// #region Route 11 South
 const struct TrainerMonNoItemDefaultMoves sParty_Route11South_TeamPluto_Ross[] = {
     { .lvl = 35, .species = SPECIES_KOFFING_G },
     { .lvl = 36, .species = SPECIES_KROKOROK }
@@ -2472,6 +2472,47 @@ const struct TrainerMonNoItemDefaultMoves sParty_HessonPass_GentlemanGordy[] = {
     { .lvl = 45, .species = SPECIES_BOLTUND },
     { .lvl = 46, .species = SPECIES_STOUTLAND }
 };
+// #endregion
+
+// #region Route 11 North
+const struct TrainerMonNoItemDefaultMoves sParty_Route11North_PainterIsobel[] = {
+    { .lvl = 38, .species = SPECIES_IVYSAUR },
+    { .lvl = 39, .species = SPECIES_GLACEON }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route11North_FishermanClint[] = {
+    { .lvl = 38, .species = SPECIES_HORSEA },
+    { .lvl = 38, .species = SPECIES_WARTORTLE },
+    { .lvl = 39, .species = SPECIES_GASTRODON_EAST }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route11North_ChanellerKatya[] = {
+    { .lvl = 39, .species = SPECIES_SABLEYE },
+    { .lvl = 41, .species = SPECIES_DUSKNOIR }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route11North_RockerNathaniel[] = {
+    { .lvl = 39, .species = SPECIES_VIBRAVA },
+    { .lvl = 39, .species = SPECIES_TOXTRICITY_LOW_KEY },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route11North_NinjaBoyYao[] = {
+    { .lvl = 37, .species = SPECIES_CARVANHA },
+    { .lvl = 37, .species = SPECIES_EMOLGA },
+    { .lvl = 39, .species = SPECIES_MALAMAR }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route11North_ParaoslLadyTina[] = {
+    { .lvl = 37, .species = SPECIES_FLOETTE_ORANGE },
+    { .lvl = 38, .species = SPECIES_BRAIXEN },
+    { .lvl = 38, .species = SPECIES_RIBOMBEE }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route11North_FishermanJonah[] = {
+    { .lvl = 40, .species = SPECIES_MAGIKARP },
+    { .lvl = 42, .species = SPECIES_GYARADOS }
+};
+
 // #endregion
 
 // #endregion
@@ -3676,7 +3717,7 @@ const struct Trainer gTrainers[] = {
     [TRAINER_ROUTE_7_ROCKER_JONAS] = {
         .partyFlags = 0,
         .trainerClass = CLASS_GUITARIST_RS,
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
         .trainerPic = TRAINER_PIC_GUITARIST,
         .trainerName = {_J, _o, _n, _a, _s, _END},
         .items = {},
@@ -5112,6 +5153,92 @@ const struct Trainer gTrainers[] = {
         .partySize = NELEMS(sParty_HessonPass_GentlemanGordy),
         .party = {.NoItemDefaultMoves = sParty_HessonPass_GentlemanGordy}
     },
-    // #endregin
+    // #endregion
+    // #region Route 11 North
+    [TRAINER_ROUTE_11_NORTH_PAINTER_ISOBEL] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_PAINTER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .trainerPic = TRAINER_PIC_PAINTER,
+        .trainerName = {_I, _s, _o, _b, _e, _l, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_SEMI_SMART,
+        .partySize = NELEMS(sParty_Route11North_PainterIsobel),
+        .party = {.NoItemDefaultMoves = sParty_Route11North_PainterIsobel}
+    },
+    [TRAINER_ROUTE_11_NORTH_FISHERMAN_CLINT] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_FISHERMAN,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_FISHERMAN,
+        .trainerName = {_C, _l, _i, _n, _t, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_CHECK_VIABILITY,
+        .partySize = NELEMS(sParty_Route11North_FishermanClint),
+        .party = {.NoItemDefaultMoves = sParty_Route11North_FishermanClint}
+    },
+    [TRAINER_ROUTE_11_NORTH_PARASOL_LADY_TINA] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_PARASOL_LADY,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .trainerPic = TRAINER_PIC_PARASOL_LADY,
+        .trainerName = {_T, _i, _n, _a, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_HP_AWARE,
+        .partySize = NELEMS(sParty_Route11North_ParaoslLadyTina),
+        .party = {.NoItemDefaultMoves = sParty_Route11North_ParaoslLadyTina}
+    },
+    [TRAINER_ROUTE_11_NORTH_CHANNELER_KATYA] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_CHANNELER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_CHANNELER,
+        .trainerName = {_K, _a, _t, _y, _a, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_RISKY,
+        .partySize = NELEMS(sParty_Route11North_ChanellerKatya),
+        .party = {.NoItemDefaultMoves = sParty_Route11North_ChanellerKatya}
+    },
+    [TRAINER_ROUTE_11_NORTH_ROCKER_NATHANIEL] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_GUITARIST_RS,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
+        .trainerPic = TRAINER_PIC_GUITARIST,
+        .trainerName = {_N, _a, _t, _h, _a, _n, _i, _e, _l, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_PREFER_STRONGEST_MOVE | AI_SCRIPT_TRY_TO_FAINT,
+        .partySize = NELEMS(sParty_Route11North_RockerNathaniel),
+        .party = {.NoItemDefaultMoves = sParty_Route11North_RockerNathaniel}
+    },
+    [TRAINER_ROUTE_11_NORTH_NINJA_BOY_YAO] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_NINJA_BOY,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_NINJA_BOY,
+        .trainerName = {_Y, _a, _o, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_RISKY | AI_SCRIPT_TRY_TO_FAINT,
+        .partySize = NELEMS(sParty_Route11North_NinjaBoyYao),
+        .party = {.NoItemDefaultMoves = sParty_Route11North_NinjaBoyYao}
+    },
+    [TRAINER_ROUTE_11_NORTH_FISHERMAN_JONAH] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_FISHERMAN,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_FISHERMAN,
+        .trainerName = {_J, _o, _n, _a, _h, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_CHECK_VIABILITY,
+        .partySize = NELEMS(sParty_Route11North_FishermanJonah),
+        .party = {.NoItemDefaultMoves = sParty_Route11North_FishermanJonah}
+    },
+    // #endregion
     // #endregion
 };

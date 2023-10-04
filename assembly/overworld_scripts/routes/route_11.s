@@ -22,8 +22,10 @@ MapScript_Route11South:
     .byte MAP_SCRIPT_TERMIN
 
 MapEntryScript_SetPartnerPositions:
-    compare PlutoEncounterVar 0x1 @ Exit if story events havne't kicked off
+    compare PlutoEncounterVar 0x1 @ Exit if story events haven't kicked off
     if lessthan _goto End
+    compare PlutoEncounterVar 0x4 @ Exit if player has beaten Team Pluto (i.e. no more partnering)
+    if greaterorequal _goto End
     getplayerpos 0x4000 0x4001
     compare 0x4000 0x15
     if lessthan _goto End @ Player did not warp from a partner change, do not change facing
