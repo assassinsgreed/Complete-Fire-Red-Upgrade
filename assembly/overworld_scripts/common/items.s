@@ -122,6 +122,11 @@ ItemScript_Common_LinkCord:
     finditem ITEM_LINK_STONE 0x1
     end
 
+.global ItemScript_Common_ReaperCloth
+ItemScript_Common_ReaperCloth:
+    finditem ITEM_REAPER_CLOTH 0x1
+    end
+
 .global ItemScript_Common_CleanseTag
 ItemScript_Common_CleanseTag:
     finditem ITEM_CLEANSE_TAG 0x1
@@ -350,6 +355,11 @@ ItemScript_Common_TerrainExtender:
 .global ItemScript_Common_HeavyDutyBoots
 ItemScript_Common_HeavyDutyBoots:
     finditem ITEM_HEAVY_DUTY_BOOTS 0x1
+    end
+
+.global ItemScript_Common_RedCard
+ItemScript_Common_RedCard:
+    finditem ITEM_RED_CARD 0x1
     end
 
 .global ItemScript_Common_RazorClaw

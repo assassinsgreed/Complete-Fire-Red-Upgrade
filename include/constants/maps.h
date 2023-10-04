@@ -253,6 +253,7 @@
 #define MAP_ROUTE_23                             ((3 << 8) | 42)
 #define MAP_ROUTE_24                             ((3 << 8) | 43)
 #define MAP_ROUTE_25                             ((3 << 8) | 44)
+#define MAP_ROUTE_11_NORTH                       ((3 << 8) | 54)
 #define MAP_ONE_ISLAND_KINDLE_ROAD               (45 | (3 << 8))
 #define MAP_ONE_ISLAND_TREASURE_BEACH            (46 | (3 << 8))
 #define MAP_TWO_ISLAND_CAPE_BRINK                (47 | (3 << 8))
