@@ -731,7 +731,7 @@ The user smashes into\nthe target at high\nspeed. This move\nalways goes first.
 The user entangles\nthe target with its\nanchor chain while\nattacking. The target\ncannot flee.
 
 #org @DESC_AURORAVEIL
-This move reduces\ndamage from physical\nand special moves for\nfive turns during a\nhailstorm.
+This move reduces all\ndamage for five turns.\nThis can be used only\nin a hailstorm.
 
 #org @DESC_BANEFULBUNKER
 Aside from protecting\nthe user from attacks,\nthis also poisons\nattackers who make\ncontact.

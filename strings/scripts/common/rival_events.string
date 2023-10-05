@@ -29,7 +29,7 @@ You're the best friend a guy could\nask for!\pHere, [PLAYER], these are for you.
 Thanks, [PLAYER]! We'll catch up at\nthe gym later.
 
 #org @gText_RivalEvent3_RequestEgg
-Hey, check it out [PLAYER]! My\nPok\emon laid an egg!\pThat's so cool isn't it?\pHey, I have an idea[.] Want to trade\none of your eggs for mine? We\lcould keep what's in them a secret\luntil they hatch.
+Hey, check it out [PLAYER]! My\nPok\emon laid an egg!\pThat's so cool, isn't it?\pHey, I have an idea[.] Want to trade\none of your eggs for mine? We\lcould keep what's in them a secret\luntil they hatch.
 
 #org @gText_RivalEvent3_Declined
 No worries. I'll be sticking around\nhere for a while, if you change\lyour mind.
