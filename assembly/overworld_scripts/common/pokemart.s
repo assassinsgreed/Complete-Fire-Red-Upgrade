@@ -91,6 +91,7 @@ OneBadge_Stock:
     .hword ITEM_ICE_HEAL
     .hword ITEM_AWAKENING
     .hword ITEM_PARALYZE_HEAL
+    .hword ITEM_REPEL
     .hword ITEM_HONEY
     .hword ITEM_REVIVE
     .hword ITEM_ESCAPE_ROPE
@@ -107,6 +108,7 @@ TwoBadges_Stock:
     .hword ITEM_ICE_HEAL
     .hword ITEM_AWAKENING
     .hword ITEM_PARALYZE_HEAL
+    .hword ITEM_REPEL
     .hword ITEM_HONEY
     .hword ITEM_REVIVE
     .hword ITEM_ESCAPE_ROPE
@@ -142,6 +144,7 @@ FourBadges_Stock:
     .hword ITEM_AWAKENING
     .hword ITEM_PARALYZE_HEAL
     .hword ITEM_REPEL
+    .hword ITEM_SUPER_REPEL
     .hword ITEM_HONEY
     .hword ITEM_REVIVE
     .hword ITEM_ESCAPE_ROPE
