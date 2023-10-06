@@ -1201,5 +1201,6 @@ npc 3 54 13 EventScript_Route11North_RockerNathaniel
 npc 3 54 14 EventScript_Route11North_NinjaBoyYao
 npc 3 54 15 EventScript_Route11North_ParasolLadyTina
 npc 3 54 16 EventScript_Route11North_FishermanJonah
+npc 3 54 17 EventScript_RivalEvent5
 sign 3 54 0 SignScript_LaplazTown_Entrance
 sign 3 54 1 SignScript_Route11North_LaplazTenets
