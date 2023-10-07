@@ -66,3 +66,15 @@ Wow, you've caught [BUFFER1] Pok\emon\ntoday, [PLAYER]! Incredible!\pWell, you b
 
 #org @gText_RivalEvent4_ChallengeOvercome
 That was fun, [PLAYER]! We should\nhave a fishing competition again\lsometime.\pI won't lose next time, though! Haha!
+
+#org @gText_RivalEvent5_AskToHaveDexNavFinished
+Oh, hey [PLAYER].\pI came out here to try and find a\nPok\emon I saw, while we were\ldealing with Team Pluto.\pBut[.] I noticed something interesting\nwhile using my DexNav.\pEven though this is still Route 11,\nthere are totally different Pok\emon\lspecies here!\pI'm having trouble finding them all.\nHave you done it?
+
+#org @gText_RivalEvent5_PromiseOfreward
+Hmm[.] Nope, looks like you haven't\nseen them all yet either.\pWell, I'll be around for a bit.\pIf you happen to complete the\nDexNav on the northern part of\lRoute 11, come see me.\pYou can either complete the day or\nnight encounters; I'm not picky.\pIf you can do it, I'll make it worth\nyour while!
+
+#org @gText_RivalEvent5_DexNavCompleted
+Oh, yes! You've caught everything\navailable on this part of Route 11.\pCan I see your DexNav and make a\nnote of what I'm missing?\p[.] And done. Thanks, [PLAYER].\pHere, this is for you.
+
+#org @gText_RivalEvent5_ChallengeOvercome
+It's incredible how many unique\nspecies of Pok\emon there are.\pI'm going to catch some Pok\emon\nbefore moving on.\pSee you later, [PLAYER].

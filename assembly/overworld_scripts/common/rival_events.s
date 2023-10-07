@@ -176,3 +176,33 @@ RivalEvent4_ResetPosition:
     waitmovement ALLEVENTS
     release
     end
+
+.global EventScript_RivalEvent5
+EventScript_RivalEvent5:
+    lock
+    faceplayer
+    checkflag 0x2C4 @ Finished Rival Event 5
+    if SET _goto RivalEvent5_EventComplete
+    msgbox gText_RivalEvent5_AskToHaveDexNavFinished MSG_NORMAL
+    special 0xE2 @ Is DexNav complete here
+    compare LASTRESULT 0x0
+    if equal _goto RivalEvent5_DexNavNotComplete
+    applymovement LASTTALKED m_Joy
+    playse 0x19 @ Correct
+    msgbox gText_RivalEvent5_DexNavCompleted MSG_NORMAL
+    obtainitem ITEM_RARE_CANDY 0x3
+    setflag 0x2C4 @ Finished Rival Event 5
+    release
+    end
+
+RivalEvent5_EventComplete:
+    msgbox gText_RivalEvent5_ChallengeOvercome MSG_NORMAL
+    release
+    end
+
+RivalEvent5_DexNavNotComplete:
+    applymovement LASTTALKED m_Wrong
+    playse 0x1A @ Error
+    msgbox gText_RivalEvent5_PromiseOfreward MSG_NORMAL
+    release
+    end
