@@ -1205,3 +1205,18 @@ npc 3 54 17 EventScript_RivalEvent5
 npc 3 54 18 EventScript_Common_Cut
 sign 3 54 0 SignScript_LaplazTown_Entrance
 sign 3 54 1 SignScript_Route11North_LaplazTenets
+
+# Laplaz Town
+## Overworld
+map 3 6 MapScript_LaplazTown
+npc 3 6 0 EventScript_Common_Cut
+npc 3 6 1 EventScript_LaplazTown_TM77PsychUp
+npc 3 6 2 EventScript_LaplazTown_Girl
+npc 3 6 3 EventScript_LaplazTown_OldMan
+npc 3 6 4 EventScript_LaplazTown_FatMan
+npc 3 6 5 EventScript_LaplazTown_YoungBoy
+sign 3 6 0 SignScript_LaplazTown_TrainerHouse
+sign 3 6 1 SignScript_LaplazTown_PeradonForest
+sign 3 6 2 SignScript_LaplazTown_ApricornBallShop
+sign 3 6 3 SignScript_LaplazTown_PsychicsHouse
+sign 3 6 4 SignScript_LaplazTown_GymSign
