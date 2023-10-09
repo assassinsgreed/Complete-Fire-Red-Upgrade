@@ -17,7 +17,7 @@
 .global MapScript_Route11South
 MapScript_Route11South:
     mapscript MAP_SCRIPT_ON_LOAD MapEntryScript_SetPartnerPositions
-    mapscript MAP_SCRIPT_ON_RESUME LevelScripts_Route11South
+    mapscript MAP_SCRIPT_ON_RESUME MapResumeScript_SetupPartnerBattles
     mapscript MAP_SCRIPT_ON_FRAME_TABLE LevelScripts_Route11South_PostRonaldBattleCutscenes
     .byte MAP_SCRIPT_TERMIN
 
@@ -34,15 +34,9 @@ MapEntryScript_SetPartnerPositions:
     applymovement PLAYER m_LookUp
     end
 
-LevelScripts_Route11South:
-    levelscript PlutoEncounterVar 0x2 LevelScript_PartnerBattles
-    .hword LEVEL_SCRIPT_TERMIN
-
-LevelScripts_Route11South_PostRonaldBattleCutscenes:
-    levelscript PlutoEncounterVar 0x3 LevelScript_PlayerReturnsToRivalAndAlistair
-    .hword LEVEL_SCRIPT_TERMIN
-
-LevelScript_PartnerBattles:
+MapResumeScript_SetupPartnerBattles:
+    compare PlutoEncounterVar 0x2
+    if notequal _goto End
     special 0xE1 @ Check if player has follower
     compare LASTRESULT FALSE
     if equal _goto End
@@ -53,7 +47,7 @@ LevelScript_PartnerBattles:
     if equal _call SetRivalBacksprite
     if greaterthan _call SetAlistairBacksprite    
     end
-    
+
 SetRivalBacksprite:
     setvar 0x5012 0x6
     return
@@ -61,6 +55,10 @@ SetRivalBacksprite:
 SetAlistairBacksprite:
     setvar 0x5012 0x7
     return
+
+LevelScripts_Route11South_PostRonaldBattleCutscenes:
+    levelscript PlutoEncounterVar 0x3 LevelScript_PlayerReturnsToRivalAndAlistair
+    .hword LEVEL_SCRIPT_TERMIN
 
 LevelScript_PlayerReturnsToRivalAndAlistair:
     applymovement PLAYER m_LookUp
