@@ -382,6 +382,11 @@ ItemScript_Common_KingsRock:
     finditem ITEM_KINGS_ROCK 0x1
     end
 
+.global ItemScript_Common_LaggingTail
+ItemScript_Common_LaggingTail:
+    finditem ITEM_LAGGING_TAIL 0x1
+    end
+
 .global ItemScript_Common_DragonScale
 ItemScript_Common_DragonScale:
     finditem ITEM_DRAGON_SCALE 0x1

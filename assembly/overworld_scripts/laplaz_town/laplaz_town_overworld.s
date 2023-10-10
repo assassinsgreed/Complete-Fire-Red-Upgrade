@@ -14,12 +14,6 @@ MapEntryScript_LaplazTown_FlightSpot:
     setworldmapflag 0x896 @ Visited Laplaz Town
     end
 
-.global EventScript_LaplazTown_TM77PsychUp
-EventScript_LaplazTown_TM77PsychUp:
-    setvar CHOSEN_ITEM ITEM_TM77
-    call ItemScript_Common_FindTM
-    end
-
 .global EventScript_LaplazTown_Girl
 EventScript_LaplazTown_Girl:
     npcchat gText_LaplazTown_Overworld_Girl
