@@ -1210,7 +1210,7 @@ sign 3 54 1 SignScript_Route11North_LaplazTenets
 ## Overworld
 map 3 6 MapScript_LaplazTown
 npc 3 6 0 EventScript_Common_Cut
-npc 3 6 1 EventScript_LaplazTown_TM77PsychUp
+npc 3 6 1 ItemScript_Common_LaggingTail
 npc 3 6 2 EventScript_LaplazTown_Girl
 npc 3 6 3 EventScript_LaplazTown_OldMan
 npc 3 6 4 EventScript_LaplazTown_FatMan
@@ -1220,3 +1220,20 @@ sign 3 6 1 SignScript_LaplazTown_PeradonForest
 sign 3 6 2 SignScript_LaplazTown_ApricornBallShop
 sign 3 6 3 SignScript_LaplazTown_PsychicsHouse
 sign 3 6 4 SignScript_LaplazTown_GymSign
+## Facilities
+map 10 0 MapScript_LaplazFacilities_PokemonCenter
+npc 10 0 0 EventScript_PokemonCenter_Main
+npc 10 0 1 EventScript_LaplazFacilities_GalarBirdsGirl
+npc 10 0 2 EventScript_LaplazFacilities_GalarBirdsGirlsSister
+npc 10 0 3 EventScript_LaplazFacilities_Gentleman
+npc 10 1 0 EventScript_LaplazFacilities_XItemsShop
+npc 10 1 1 EventScript_Pokemart
+npc 10 1 2 EventScript_LaplazFacilities_XItemsTip
+## NPC Houses
+npc 10 3 0 EventScript_LaplazNPCHouses_Monty
+npc 10 3 1 EventScript_LaplazNPCHouses_CaseysMom
+npc 10 3 2 EventScript_LaplazNPCHouses_CaseysGrandmother
+npc 10 5 0 EventScript_LaplazNPCHouses_HeracrossKid
+npc 10 5 1 EventScript_LaplazNPCHouses_HeracrossKidsSister
+npc 10 6 0 EventScript_LaplazNPCHouses_ApricornGrandma
+npc 10 6 1 EventScript_LaplazNPCHouses_ApricornGrandpa
