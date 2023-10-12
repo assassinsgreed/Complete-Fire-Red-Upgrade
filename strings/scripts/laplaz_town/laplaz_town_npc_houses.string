@@ -33,3 +33,33 @@ My grandson runs the Apricorn Ball\nShop in town.\pThe Pok\eballs he sells are a
 
 #org @gText_LaplazTownNPCHouses_ApricornGrandpa
 I helped bring the Apricorn ball\ntradition to Laplaz Town.\pIt must've been[.] Twenty years ago\nnow?\pMy old friend, Kurt, mastered the\ntechnique in the Johto region.
+
+#org @gText_LaplazTownNPCHouses_PsychicBrotherIntro
+We are the Psychic Siblings.\pWe are only interested in speaking to\npeople with great potential.
+
+#org @gText_LaplazTownNPCHouses_PsychicBrotherRecognizesPotential
+Oh! You[.] You have great potential.\pFor a trainer such as you, I have a\ngift. Please, take it.
+
+#org @gText_LaplazTownNPCHouses_PsychicBrotherExplainsHiddenPower
+That TM houses the move Hidden\nPower.\pIt draws out the potential in your\nPok\emon, and changes the move's\ltype.\pYou can see this for yourself, when\nviewing the Pok\emon's moves.\pMy sister is also a gifted psychic.\nI suggest you speak with her.
+
+#org @gText_LaplazTownNPCHouses_PsychicSisterUnsureOfPlayer
+[SHRINK]You[.] I don't know about you.\nBrother[.] are they okay to speak\lwith?
+
+#org @gText_LaplazTownNPCHouses_PsychicSisterOffersHelp
+That TM[.] My brother sees your\npotential?\pThen[.] I shall offer my power to you\nas well.\pI can sense and judge a Pok\emon's\nstatistical potential.
+
+#org @gText_LaplazTownNPCHouses_PsychicSisterOffersStatisticsOn
+I can share this power with you,\nif you would like.\pIt would allow you to see my\nratings, within your Pok\emon's\lsummary screen.\pWould you like to receive this\npower?
+
+#org @gText_LaplazTownNPCHouses_PsychicSisterStatisticsNowOn
+There! You can now see ratings in\nthe summary screen.\pIf you'd like to stop receiving this\npower, please come see me.
+
+#org @gText_LaplazTownNPCHouses_PsychicSisterOffersStatisticsOff
+I can stop sharing this power with\nyou, if you'd prefer.\pWould you like to no longer receive\nthis power?
+
+#org @gText_LaplazTownNPCHouses_PsychicSisterStatisticsNowOff
+There! You can no longer see ratings\nin the summary screen.\pIf you'd like to once again receive\nthis power, please come see me.
+
+#org @gText_LaplazTownNPCHouses_PsychicSisterSaidNo
+I understand. Please, come see me if\nyou change your mind.

@@ -68,3 +68,65 @@ EventScript_LaplazNPCHouses_ApricornGrandma:
 EventScript_LaplazNPCHouses_ApricornGrandpa:
     npcchatwithmovement gText_LaplazTownNPCHouses_ApricornGrandpa m_LookLeft
     end
+
+.global EventScript_LaplazNPCHouses_PsychicBrother
+EventScript_LaplazNPCHouses_PsychicBrother:
+    faceplayer
+    checkflag 0x257 @ Got Hidden Power gift
+    if SET _goto ExplainHiddenPower
+    msgbox gText_LaplazTownNPCHouses_PsychicBrotherIntro MSG_NORMAL
+    sound 0x15 @ Exclaim
+	applymovement LASTTALKED m_Surprise
+    msgbox gText_LaplazTownNPCHouses_PsychicBrotherRecognizesPotential MSG_NORMAL
+    obtainitem ITEM_TM10 0x1 @ Hidden Power
+    setflag 0x257 @ Got hidden power gift
+    goto ExplainHiddenPower
+
+ExplainHiddenPower:
+    msgbox gText_LaplazTownNPCHouses_PsychicBrotherExplainsHiddenPower MSG_NORMAL
+    applymovement LASTTALKED m_LookRight
+    end
+
+.global EventScript_LaplazNPCHouses_PsychicSister
+EventScript_LaplazNPCHouses_PsychicSister:
+    faceplayer
+    checkflag 0x257 @ Got Hidden Power gift
+    if NOT_SET _goto PlayerHasNotReceivedHiddenPower
+    msgbox gText_LaplazTownNPCHouses_PsychicSisterOffersHelp MSG_NORMAL
+    checkflag 0x92B @ IV Ratings shown in summary
+    if SET _goto AskToTurnOffRatings
+    msgbox gText_LaplazTownNPCHouses_PsychicSisterOffersStatisticsOn MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto ChoseNotToToggleStatistics
+    call StatisticsAnimaton
+    msgbox gText_LaplazTownNPCHouses_PsychicSisterStatisticsNowOn MSG_NORMAL
+    setflag 0x92B @ IV Ratings shown in summary
+    goto ResetPsychicSister
+
+AskToTurnOffRatings:
+    msgbox gText_LaplazTownNPCHouses_PsychicSisterOffersStatisticsOff MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto ChoseNotToToggleStatistics
+    call StatisticsAnimaton
+    msgbox gText_LaplazTownNPCHouses_PsychicSisterStatisticsNowOff MSG_NORMAL
+    clearflag 0x92B @ IV Ratings no longer shown in summary
+    goto ResetPsychicSister
+
+StatisticsAnimaton:
+    playse 0x5F @ Shiny
+	dofieldeffect 69 @ Screen flash
+    waitfieldeffect 69
+    waitse
+    return
+
+PlayerHasNotReceivedHiddenPower:
+    msgbox gText_LaplazTownNPCHouses_PsychicSisterUnsureOfPlayer MSG_NORMAL
+    goto ResetPsychicSister
+
+ChoseNotToToggleStatistics:
+    msgbox gText_LaplazTownNPCHouses_PsychicSisterSaidNo MSG_NORMAL
+    goto ResetPsychicSister
+
+ResetPsychicSister:
+    applymovement LASTTALKED m_LookLeft
+    end
