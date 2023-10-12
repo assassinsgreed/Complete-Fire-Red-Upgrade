@@ -613,7 +613,7 @@
 #define FLAG_DID_STARTER_BASED_TRADE                     0x254
 #define FLAG_BATTLED_CASEY_IN_TORMA_CAVE                 0x255
 #define FLAG_BATTLED_CASEY_ON_ROUTE_10                   0x256
-#define FLAG_DID_MARC_TRADE                              0x257
+#define FLAG_GOT_HIDDEN_POWER_FROM_PSYCHIC_SIBLINGS      0x257
 #define FLAG_BEAT_RIVAL_ON_ROUTE_17                      0x258
 #define FLAG_GOT_TM06_FROM_KOGA                          0x259
 #define FLAG_0x25A                                       0x25A
