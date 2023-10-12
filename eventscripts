@@ -1237,3 +1237,4 @@ npc 10 5 0 EventScript_LaplazNPCHouses_HeracrossKid
 npc 10 5 1 EventScript_LaplazNPCHouses_HeracrossKidsSister
 npc 10 6 0 EventScript_LaplazNPCHouses_ApricornGrandma
 npc 10 6 1 EventScript_LaplazNPCHouses_ApricornGrandpa
+npc 10 6 2 EventScript_LaplazNPCHouses_MeasurementsGirl

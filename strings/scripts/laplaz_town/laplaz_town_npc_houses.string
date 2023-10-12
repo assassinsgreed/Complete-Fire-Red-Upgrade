@@ -33,3 +33,36 @@ My grandson runs the Apricorn Ball\nShop in town.\pThe Pok\eballs he sells are a
 
 #org @gText_LaplazTownNPCHouses_ApricornGrandpa
 I helped bring the Apricorn ball\ntradition to Laplaz Town.\pIt must've been[.] Twenty years ago\nnow?\pMy old friend, Kurt, mastered the\ntechnique in the Johto region.
+
+#org @gText_LaplazTownNPCHouses_MeasurementGameIntro
+Hi! I like to play a game called the\nMeasurements game.\pEvery day, I ask trainers to show me\na certain Pok\emon species.\pIf they can do it, I give them a\nprize depending on how big it is!\pFun, right?
+
+#org @gText_LaplazTownNPCHouses_MeasurementGameRequest
+Today, I'm looking for a [BUFFER1].\nThey're usually [BUFFER3] cm big.\pDo you have one?
+
+#org @gText_LaplazTownNPCHouses_MeasurementGameChoseNo
+Too bad! Come see me later if you\ndo.\pBut remember: I won't want to see it\ntomorrow. You'd better hurry!
+
+#org @gText_LaplazTownNPCHouses_MeasurementGameChoseYes
+Great! Show me your [BUFFER1].
+
+#org @gText_LaplazTownNPCHouses_MeasurementGameChoseEgg
+That's an egg! I can't measure that.
+
+#org @gText_LaplazTownNPCHouses_MeasurementGameChoseWrongSpecies
+That's the wrong Pok\emon[.]
+
+#org @gText_LaplazTownNPCHouses_MeasurementGameSmaller
+Tee hee! It's so tiny!\nIt's only [BUFFER2] cm big.\pYou won my game!\nHere, a gift for you.
+
+#org @gText_LaplazTownNPCHouses_MeasurementGameBigger
+Wow, it's huge!\nIt's [BUFFER2] cm big.\pYou won my game!\nHere, a gift for you.
+
+#org @gText_LaplazTownNPCHouses_MeasurementGameEqual
+No way! It's exactly [BUFFER2] cm\nbig. That's unheard of!\pYou won my game!\nHere, a gift for you.
+
+#org @gText_LaplazTownNPCHouses_MeasurementGameWon
+That's it for today. Thanks for\nplaying!\pCome back tomorrow and I'll ask to\nsee a different Pok\emon.
+
+#org @gText_LaplazTownNPCHouses_MeasurementGameDone
+We've already played the measurement\ngame today.\pCome back tomorrow and we'll play\nagain!
