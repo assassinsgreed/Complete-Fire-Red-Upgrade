@@ -63,3 +63,51 @@ There! You can no longer see ratings\nin the summary screen.\pIf you'd like to o
 
 #org @gText_LaplazTownNPCHouses_PsychicSisterSaidNo
 I understand. Please, come see me if\nyou change your mind.
+
+#org @gText_LaplazTownNPCHouses_ApricornSellerIntro
+I can craft Apricorn Balls, using a\ntechnique honed in Johto.\pTo do so, I would require 2\nPok\eChips.
+
+#org @gText_LaplazTownNPCHouses_ApricornSellerCost
+Are you interested? (Held: [BUFFER1])
+
+#org @gText_LaplazTownNPCHouses_ApricornSellerNotEnoughChips
+I am sorry, but you do not have\nenough Pok\eChips.\pI require them to make the balls,\nyou see.
+
+#org @gText_LaplazTownNPCHouses_ApricornSellerAlreadyBought
+My apologies, but I need to rest.\pPlease, visit me tomorrow if you'd\nlike to make another Apricorn Ball.
+
+#org @gText_LaplazTownNPCHouses_ApricornSellerCancelled
+Understood. Do visit me again, if you\nhave need of my services.
+
+#org @gText_LaplazTownNPCHouses_ApricornSellerFastBallInfo
+This peculiar ball is most effective\nagainst Pok\emon that flee easily.
+
+#org @gText_LaplazTownNPCHouses_ApricornSellerLevelBallInfo
+This peculiar ball is most effective\nagainst lower level Pok\emon.
+
+#org @gText_LaplazTownNPCHouses_ApricornSellerLureBallInfo
+This peculiar ball is most effective\nagainst Pok\emon that you find in or\lon water.
+
+#org @gText_LaplazTownNPCHouses_ApricornSellerHeavyBallInfo
+This peculiar ball is most effective\nagainst heavy Pok\emon.
+
+#org @gText_LaplazTownNPCHouses_ApricornSellerLoveBallInfo
+This peculiar ball is most effective\nagainst Pok\emon of the opposite\lgender.
+
+#org @gText_LaplazTownNPCHouses_ApricornSellerFriendBallInfo
+This peculiar ball makes the caught\nPok\emon friendly.
+
+#org @gText_LaplazTownNPCHouses_ApricornSellerMoonBallInfo
+This peculiar ball is most effective\nagainst Pok\emon that can evolve\lusing a Moon Stone.
+
+#org @gText_LaplazTownNPCHouses_ApricornSellerConfirmation
+[BUFFER1][.]\nIs this the one you want?
+
+#org @gText_LaplazTownNPCHouses_ApricornSellerPlayerConfirmed
+Hm. Very good.\nPlease wait here a moment.
+
+#org @gText_LaplazTownNPCHouses_ApricornSellerBallMade
+There! It is finished. One [BUFFER1],\nfor you.
+
+#org @gText_LaplazTownNPCHouses_ApricornDescriber
+My husband is a gifted Apricorn\nPok\e Ball crafter.\pHe takes Apricorns received from the\nJohto Region, and mixes them with\lPok\eChips to freshen them up.\pThen, using a secret family\ntechnique, he crafts special Pok\e\lBalls using them!\pThis technique is a longstanding\ntradition passed down through our\lfamily.

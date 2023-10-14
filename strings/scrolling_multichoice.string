@@ -185,4 +185,25 @@ Turtonator[ALIGN][65]2000
 #org @gText_PokemonExchange_Dratini
 Dratini[ALIGN][65]3000
 
+#org @gText_ApricornBalls_FastBall
+Fast Ball
+
+#org @gText_ApricornBalls_LevelBall
+Level Ball
+
+#org @gText_ApricornBalls_LureBall
+Lure Ball
+
+#org @gText_ApricornBalls_HeavyBall
+Heavy Ball
+
+#org @gText_ApricornBalls_LoveBall
+Love Ball
+
+#org @gText_ApricornBalls_FriendBall
+Friend Ball
+
+#org @gText_ApricornBalls_MoonBall
+Moon Ball
+
 #endif

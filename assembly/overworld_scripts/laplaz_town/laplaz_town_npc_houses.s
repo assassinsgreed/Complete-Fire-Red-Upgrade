@@ -130,3 +130,109 @@ ChoseNotToToggleStatistics:
 ResetPsychicSister:
     applymovement LASTTALKED m_LookLeft
     end
+
+.global EventScript_LaplazNPCHouses_ApricornSeller
+EventScript_LaplazNPCHouses_ApricornSeller:
+    faceplayer
+    checkflag 0xE11 @ Apricorn ball bought today
+    if SET _goto ApricornBallAlreadyBoughtToday
+    callasm StorePokeChipCount
+	buffernumber 0x0 0x8005 @ Take stored PokeChip count
+    msgbox gText_LaplazTownNPCHouses_ApricornSellerIntro MSG_NORMAL
+    compare 0x8005 0x2
+    if lessthan _goto NotEnoughPokeChipsForApricornBall
+    msgbox gText_LaplazTownNPCHouses_ApricornSellerCost MSG_KEEPOPEN
+    setvar 0x8000 0x9
+    setvar 0x8001 0x5
+    setvar 0x8004 0x0
+	special 0x158
+    waitstate
+    switch LASTRESULT
+	case 0, fastball
+	case 1, levelball
+	case 2, lureball
+	case 3, heavyball
+    case 4, loveball
+    case 5, friendball
+    case 6, moonball
+    case 7, cancelled
+    case 0x7F, cancelled @ When player hit B to close
+    end
+
+PurchaseConfirmation:
+    msgbox gText_LaplazTownNPCHouses_ApricornSellerConfirmation MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto cancelled
+    msgbox gText_LaplazTownNPCHouses_ApricornSellerPlayerConfirmed MSG_NORMAL
+    fadescreen FADEOUT_BLACK
+    playse 0x85 @ Recover
+    waitse
+    pause DELAY_HALFSECOND
+    fadescreen FADEIN_BLACK
+    msgbox gText_LaplazTownNPCHouses_ApricornSellerBallMade MSG_NORMAL
+    obtainitem 0x4001 0x1
+    removeitem ITEM_POKE_CHIP 0x2
+    setflag 0xE11 @ Apricorn ball bought today
+    goto ApricornBallAlreadyBoughtToday
+
+NotEnoughPokeChipsForApricornBall:
+    msgbox gText_LaplazTownNPCHouses_ApricornSellerNotEnoughChips MSG_NORMAL
+    applymovement LASTTALKED m_LookLeft
+    end
+
+fastball:
+    setvar 0x4001 ITEM_FAST_BALL
+    bufferitem 0x0 0x4001
+    msgbox gText_LaplazTownNPCHouses_ApricornSellerFastBallInfo MSG_NORMAL
+    goto PurchaseConfirmation
+
+levelball:
+    setvar 0x4001 ITEM_LEVEL_BALL
+    bufferitem 0x0 0x4001
+    msgbox gText_LaplazTownNPCHouses_ApricornSellerLevelBallInfo MSG_NORMAL
+    goto PurchaseConfirmation
+
+lureball:
+    setvar 0x4001 ITEM_LURE_BALL
+    bufferitem 0x0 0x4001
+    msgbox gText_LaplazTownNPCHouses_ApricornSellerLureBallInfo MSG_NORMAL
+    goto PurchaseConfirmation
+
+heavyball:
+    setvar 0x4001 ITEM_HEAVY_BALL
+    bufferitem 0x0 0x4001
+    msgbox gText_LaplazTownNPCHouses_ApricornSellerHeavyBallInfo MSG_NORMAL
+    goto PurchaseConfirmation
+
+loveball:
+    setvar 0x4001 ITEM_LOVE_BALL
+    bufferitem 0x0 0x4001
+    msgbox gText_LaplazTownNPCHouses_ApricornSellerLoveBallInfo MSG_NORMAL
+    goto PurchaseConfirmation
+
+friendball:
+    setvar 0x4001 ITEM_FRIEND_BALL
+    bufferitem 0x0 0x4001
+    msgbox gText_LaplazTownNPCHouses_ApricornSellerFriendBallInfo MSG_NORMAL
+    goto PurchaseConfirmation
+
+moonball:
+    setvar 0x4001 ITEM_MOON_BALL
+    bufferitem 0x0 0x4001
+    msgbox gText_LaplazTownNPCHouses_ApricornSellerMoonBallInfo MSG_NORMAL
+    goto PurchaseConfirmation
+
+cancelled:
+    msgbox gText_LaplazTownNPCHouses_ApricornSellerCancelled MSG_NORMAL
+    applymovement LASTTALKED m_LookLeft
+    end
+
+ApricornBallAlreadyBoughtToday:
+    msgbox gText_LaplazTownNPCHouses_ApricornSellerAlreadyBought MSG_NORMAL
+    applymovement LASTTALKED m_LookLeft
+    end
+
+.global EventScript_LaplazNPCHouses_ApricornDescriber
+EventScript_LaplazNPCHouses_ApricornDescriber:
+    npcchatwithmovement gText_LaplazTownNPCHouses_ApricornDescriber m_LookRight
+    end

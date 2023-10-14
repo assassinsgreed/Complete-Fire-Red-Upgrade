@@ -3001,6 +3001,15 @@ extern const u8 gText_PokemonExchange_Minior[];
 extern const u8 gText_PokemonExchange_Turtonator[];
 extern const u8 gText_PokemonExchange_Dratini[];
 
+// Apricorn balls
+extern const u8 gText_ApricornBalls_FastBall[];
+extern const u8 gText_ApricornBalls_LevelBall[];
+extern const u8 gText_ApricornBalls_LureBall[];
+extern const u8 gText_ApricornBalls_HeavyBall[];
+extern const u8 gText_ApricornBalls_LoveBall[];
+extern const u8 gText_ApricornBalls_FriendBall[];
+extern const u8 gText_ApricornBalls_MoonBall[];
+
 //Scrolling Lists
 static const u8* sTutorFerrox[] =
 {
@@ -3114,6 +3123,18 @@ static const u8* sTutorRhodanzi[] =
 	gText_End,
 };
 
+static const u8* sApricornBalls[] =
+{
+	gText_ApricornBalls_FastBall,
+	gText_ApricornBalls_LevelBall,
+	gText_ApricornBalls_LureBall,
+	gText_ApricornBalls_HeavyBall,
+	gText_ApricornBalls_LoveBall,
+	gText_ApricornBalls_FriendBall,
+	gText_ApricornBalls_MoonBall,
+	gText_End,
+};
+
 // Multichoice Lists
 const struct ScrollingMulti gScrollingSets[] =
 {
@@ -3126,6 +3147,7 @@ const struct ScrollingMulti gScrollingSets[] =
 	{sGameCornerItemExchange, ARRAY_COUNT(sGameCornerItemExchange)},
 	{sGameCornerPokemonExchange, ARRAY_COUNT(sGameCornerPokemonExchange)},
 	{sTutorRhodanzi, ARRAY_COUNT(sTutorRhodanzi)},
+	{sApricornBalls, ARRAY_COUNT(sApricornBalls)},
 };
 
 //Link number of opts shown at once to the box height
