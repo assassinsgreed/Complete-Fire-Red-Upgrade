@@ -147,3 +147,6 @@ S
 
 #org @gText_IVRating_SPlus
 S+
+
+#org @gText_Tutors_ChoosePokemon
+[BLUE]And which Pok\emon would you like me\nto teach [BUFFER1] to?

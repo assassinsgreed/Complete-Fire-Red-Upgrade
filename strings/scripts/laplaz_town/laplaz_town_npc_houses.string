@@ -111,3 +111,18 @@ There! It is finished. One [BUFFER1],\nfor you.
 
 #org @gText_LaplazTownNPCHouses_ApricornDescriber
 My husband is a gifted Apricorn\nPok\e Ball crafter.\pHe takes Apricorns received from the\nJohto Region, and mixes them with\lPok\eChips to freshen them up.\pThen, using a secret family\ntechnique, he crafts special Pok\e\lBalls using them!\pThis technique is a longstanding\ntradition passed down through our\lfamily.
+
+#org @gText_LaplazTownNPCHouses_TutorConfirmation
+Hello! I am a move tutor,\nspecializing in status moves.\pI can teach your Pok\emon these\nmoves, in exchange for 5 Pok\eChips.\pAre you interested?\n(Held: [BUFFER1])
+
+#org @gText_LaplazTownNPCHouses_ConfirmationAccepted
+Great! These are the moves I can\nteach your Pok\emon.
+
+#org @gText_LaplazTownNPCHouses_Complete
+My lessons are complete. Visit again,\nif you'd like to teach more moves.
+
+#org @gText_LaplazTownNPCHouses_TutoringRejected
+I understand. You're welcome to come\nby later, if you change your mind.
+
+#org @gText_LaplazTownNPCHouses_NotEnoughPokeChips
+My apologies, but you do not have\nenough Pok\eChips.

@@ -236,3 +236,30 @@ ApricornBallAlreadyBoughtToday:
 EventScript_LaplazNPCHouses_ApricornDescriber:
     npcchatwithmovement gText_LaplazTownNPCHouses_ApricornDescriber m_LookRight
     end
+
+.global EventScript_LaplazNPCHouses_Tutor
+EventScript_LaplazNPCHouses_Tutor:
+    faceplayer
+    callasm StorePokeChipCount
+    buffernumber 0x0 0x8005 @ Take stored PokeChip count
+    msgbox gText_LaplazTownNPCHouses_TutorConfirmation MSG_YESNO
+    compare LASTRESULT YES
+    IF FALSE _goto TutoringRejected
+    checkitem ITEM_POKE_CHIP 0x5
+    compare LASTRESULT TRUE
+    if FALSE _goto NotEnoughPokeChips
+    msgbox gText_LaplazTownNPCHouses_ConfirmationAccepted MSG_KEEPOPEN
+    loadpointer 0x0 gText_LaplazTownNPCHouses_Complete
+    call EventScript_Tutors_Laplaz
+    applymovement LASTTALKED m_LookRight
+    end
+
+TutoringRejected:
+    msgbox gText_LaplazTownNPCHouses_TutoringRejected MSG_NORMAL
+    applymovement LASTTALKED m_LookRight
+    goto End
+
+NotEnoughPokeChips:
+    msgbox gText_LaplazTownNPCHouses_NotEnoughPokeChips MSG_NORMAL
+    applymovement LASTTALKED m_LookRight
+    goto End
