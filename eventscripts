@@ -1233,6 +1233,8 @@ npc 10 1 2 EventScript_LaplazFacilities_XItemsTip
 npc 10 3 0 EventScript_LaplazNPCHouses_Monty
 npc 10 3 1 EventScript_LaplazNPCHouses_CaseysMom
 npc 10 3 2 EventScript_LaplazNPCHouses_CaseysGrandmother
+npc 10 4 0 EventScript_LaplazNPCHouses_ApricornSeller
+npc 10 4 1 EventScript_LaplazNPCHouses_ApricornDescriber
 npc 10 5 0 EventScript_LaplazNPCHouses_HeracrossKid
 npc 10 5 1 EventScript_LaplazNPCHouses_HeracrossKidsSister
 npc 10 6 0 EventScript_LaplazNPCHouses_ApricornGrandma
