@@ -2931,6 +2931,8 @@ void ConvertCoinInt(u32 coinAmount)
 //waitstate
 
 //Text Declarations
+
+// Tutors
 extern const u8 gText_GrassyTerrain[];
 extern const u8 gText_MistyTerrain[];
 extern const u8 gText_ElectricTerrain[];
@@ -2959,6 +2961,14 @@ extern const u8 gText_MagicRoom[];
 extern const u8 gText_Spite[];
 extern const u8 gText_HealBell[];
 extern const u8 gText_PainSplit[];
+extern const u8 gText_ElectroWeb[];
+extern const u8 gText_Snatch[];
+extern const u8 gText_MagnetRise[];
+extern const u8 gText_Bounce[];
+extern const u8 gText_Tailwind[];
+extern const u8 gText_Endeavor[];
+extern const u8 gText_MagicCoat[];
+extern const u8 gText_WonderRoom[];
 extern const u8 gText_End[];
 
 // Restaurant Options
@@ -3135,6 +3145,19 @@ static const u8* sApricornBalls[] =
 	gText_End,
 };
 
+static const u8* sTutorsLaplaz[] =
+{
+	gText_ElectroWeb,
+	gText_Snatch,
+	gText_MagnetRise,
+	gText_Bounce,
+	gText_Tailwind,
+	gText_Endeavor,
+	gText_MagicCoat,
+	gText_WonderRoom,
+	gText_End,
+};
+
 // Multichoice Lists
 const struct ScrollingMulti gScrollingSets[] =
 {
@@ -3148,6 +3171,7 @@ const struct ScrollingMulti gScrollingSets[] =
 	{sGameCornerPokemonExchange, ARRAY_COUNT(sGameCornerPokemonExchange)},
 	{sTutorRhodanzi, ARRAY_COUNT(sTutorRhodanzi)},
 	{sApricornBalls, ARRAY_COUNT(sApricornBalls)},
+	{sTutorsLaplaz, ARRAY_COUNT(sTutorsLaplaz)},
 };
 
 //Link number of opts shown at once to the box height
