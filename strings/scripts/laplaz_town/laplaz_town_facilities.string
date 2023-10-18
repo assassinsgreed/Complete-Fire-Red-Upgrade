@@ -9,3 +9,85 @@ Did you know? If you have the HM\nfor Fly and Daimyn City's badge,\lyou can fly 
 
 #org @gText_LaplazFacilities_XItemsTip
 Monty uses a lot of stat boosting\nmoves to get the upper hand.\pYou can get the same effects by\nusing X Items, too!
+
+#org @gText_LaplazFacilities_TrainerHouse_Blackbelt
+Hmm[.] My Pok\emon are not eligible to\nenter this battle format.\pI will need to re-evaluate my\nstrategy and return here.
+
+#org @gText_LaplazFacilities_TrainerHouse_Rocker
+Did you know? You can only use\nFlying type Pok\emon, or Pok\emon\lwith the Levitate ability, here.
+
+#org @gText_LaplazFacilities_TrainerHouse_Girl
+I heard the grand prize at this\ntrainer house is a Lucky Egg.\pI want it!
+
+#org @gText_LaplazFacilities_TrainerHouse_HostIntro
+[BLUE]Hey, hey, hey! Welcome to the\nLaplaz Town Trainer House!\pI'm Mort, and I'll be your host on\nthis fine day.\pYou're [PLAYER]? Rad.\nNow, let's get battling, baby!
+
+#org @gText_LaplazFacilities_TrainerHouse_FirstOpponentArriving
+[BLUE]Your first opponent is on their way.\nLook lively!
+
+#org @gText_LaplazFacilities_TrainerHouse_SecondOpponentArriving
+[BLUE]Nice battling! Here comes the next\nopponent.
+
+#org @gText_LaplazFacilities_TrainerHouse_ThirdOpponentArriving
+[BLUE]Fine work! Your final opponent is\ncoming now. Put on a good show!
+
+#org @gText_LaplazFacilities_TrainerHouse_B1BirdKeeperTobyIntro
+[BLUE]Sky battles are my forte. You don't\nstand a chance!
+
+#org @gText_LaplazFacilities_TrainerHouse_B1BirdKeeperTobyWin
+W-what? That wasn't supposed to\nhappen!
+
+#org @gText_LaplazFacilities_TrainerHouse_B1BirdKeeperTobyLose
+Go back to the ground, where you\nbelong!
+
+#org @gText_LaplazFacilities_TrainerHouse_B2CollectorDirkIntro
+[BLUE]Only a fool would enter a sky battle\nwith just Flying Pok\emon.\pI'll show you!
+
+#org @gText_LaplazFacilities_TrainerHouse_B2CollectorDirkWin
+You're no fool[.] You're a legend!
+
+#org @gText_LaplazFacilities_TrainerHouse_B2CollectorDirkLose
+Heh, what a fool!
+
+#org @gText_LaplazFacilities_TrainerHouse_CooltrainerVanessaIntro
+[RED]Sky battles are interesting, because\nof the limitations placed upon you.\pCan you still perform, even with\nthose limitations?
+
+#org @gText_LaplazFacilities_TrainerHouse_CooltrainerVanessaWin
+Very good! You can perform well\nunder pressure.
+
+#org @gText_LaplazFacilities_TrainerHouse_CooltrainerVanessaLose
+Hm[.] I suppose those limitations were\ntoo much for you.
+
+#org @gText_LaplazFacilities_TrainerHouse_StreakLost
+[BLUE]Oh no! [PLAYER] is out of usable\nPok\emon!\pThat's the end of the challenge.\nCome on down, [PLAYER].
+
+#org @gText_LaplazFacilities_TrainerHouse_AllOpponentsDefeated
+[BLUE]Incredible! You've defeated all 3\ntrainers.\pCome on back, now, [PLAYER], to\ncollect your prizes.
+
+#org @gText_LaplazFacilities_TrainerHouse_EndOfBattles
+
+#org @gText_LaplazFacilities_TrainerHouse_CannotParticipate
+[BLUE]Sorry, chief, but none of your\nPok\emon are eligible to participate\lin sky battles.\pCome back when you have some Flying\nor Levitating Pok\emon, okay?
+
+#org @gText_LaplazFacilities_TrainerHouse_BattleConfirmation
+[BLUE]You'll be going into battle with the\nPok\emon you have with you.\pFurthermore, only those that are\nFlying or Levitating can\lparticipate.\pIs that cool with you?
+
+#org @gText_LaplazFacilities_TrainerHouse_ChoseBattle
+[BLUE]Yes, that's what I like to hear!
+
+#org @gText_LaplazFacilities_TrainerHouse_HealingPokemon
+[BLUE]We run a clean competition here.\pI'll heal your Pok\emon before you go\nin there.
+
+#org @gText_LaplazFacilities_TrainerHouse_PreChallengeComment
+[BLUE]Alright, [PLAYER], take your place in\nthe arena and we'll get started.
+
+#org @gText_LaplazFacilities_TrainerHouse_GrandPrizeAwarded
+[BLUE]Well, would you look at that!\pThis is the first time you've beaten\nall 3 trainers.\pThat nets you our grand prize: a\nLucky Egg!
+
+#org @gText_LaplazFacilities_TrainerHouse_ChoseRuleset
+[BLUE]At this trainer house, it's all about\nSky Battles!\pIn these battles, you can only bring\nFlying and Levitating Pok\emon.\pCan you get a win streak going, even\nwith those limitations? Let's see!
+
+#org @gText_LaplazFacilities_TrainerHouse_ChoseGrandPrize
+[BLUE]Our fabulous prize this time is a\nLucky Egg!\pThis bad boy will increase the EXP\nearned by whichever Pok\emon holds\lit.\pYou'll want this, if you want to go\nall the way, trust me!
+
+

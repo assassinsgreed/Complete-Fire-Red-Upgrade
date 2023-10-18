@@ -2515,6 +2515,27 @@ const struct TrainerMonNoItemDefaultMoves sParty_Route11North_FishermanJonah[] =
 
 // #endregion
 
+// #region Laplaz Town
+const struct TrainerMonNoItemDefaultMoves sParty_LaplazTown_BirdKeeperToby[] = {
+    { .lvl = 1, .species = SPECIES_CORVISQUIRE },
+    { .lvl = 1, .species = SPECIES_NOCTOWL },
+    { .lvl = 1, .species = SPECIES_FLETCHINDER }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_LaplazTown_CollectorDirk[] = {
+    { .lvl = 1, .species = SPECIES_MISDREAVUS },
+    { .lvl = 1, .species = SPECIES_DUSKULL },
+    { .lvl = 1, .species = SPECIES_VIBRAVA }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_LaplazTown_CoolTrainerVanessa[] = {
+    { .lvl = 1, .species = SPECIES_MINIOR_SHIELD },
+    { .lvl = 1, .species = SPECIES_SKARMORY },
+    { .lvl = 1, .species = SPECIES_ROTOM }
+};
+
+// #endregion
+
 // #endregion
 
 #define NO_NAME                                                                                      \
@@ -5238,6 +5259,44 @@ const struct Trainer gTrainers[] = {
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_CHECK_VIABILITY,
         .partySize = NELEMS(sParty_Route11North_FishermanJonah),
         .party = {.NoItemDefaultMoves = sParty_Route11North_FishermanJonah}
+    },
+    // #endregion
+    // #region Laplaz Town
+    [TRAINER_LAPLAZ_TRAINER_HOUSE_BIRD_KEEPER_TOBY] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_PKMN_TRAINER_3,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
+        .trainerPic = TRAINER_PIC_BIRD_KEEPER,
+        .trainerName = {_T, _o, _b, _y, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE,
+        .partySize = NELEMS(sParty_LaplazTown_BirdKeeperToby),
+        .party = {.NoItemDefaultMoves = sParty_LaplazTown_BirdKeeperToby}
+    },
+    [TRAINER_LAPLAZ_TRAINER_HOUSE_COLLECTOR_DIRK] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_PKMN_TRAINER_3,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
+        .trainerPic = TRAINER_PIC_COLLECTOR,
+        .trainerName = {_D, _i, _r, _k, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE,
+        .partySize = NELEMS(sParty_LaplazTown_CollectorDirk),
+        .party = {.NoItemDefaultMoves = sParty_LaplazTown_CollectorDirk}
+    },
+    [TRAINER_LAPLAZ_TRAINER_HOUSE_COOL_TRAINER_VANESSA] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_PKMN_TRAINER_3,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
+        .trainerPic = TRAINER_PIC_COOLTRAINER_F,
+        .trainerName = {_V, _a, _n, _e, _s, _s, _a, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE,
+        .partySize = NELEMS(sParty_LaplazTown_CoolTrainerVanessa),
+        .party = {.NoItemDefaultMoves = sParty_LaplazTown_CoolTrainerVanessa}
     },
     // #endregion
     // #endregion

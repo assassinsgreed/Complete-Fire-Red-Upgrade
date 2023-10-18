@@ -25,24 +25,6 @@ Did you know? The trainers at the\nTrainer House will Pok\emon that\lmatch your 
 #org @gText_HeleoCityFacilities_TrainerHouse_HostIntro
 [BLUE]Wah-Hey! Welcome to the Heleo City\nTrainer House, where our motto is\l"battling should be fun.\"\pThe name's Mort, and I'll be your\nhost this fine day.\pYou're [PLAYER]? Charmed.\pNow that we've gotten the\npleasantries out of the way, let's\lget you battling!
 
-#org @gText_HeleoCityFacilities_TrainerHouse_MenuIntro
-[BLUE]Now[.] What can I do you for?
-
-#org @gText_HeleoCityFacilities_TrainerHouse_BattleChoice
-Battle
-
-#org @gText_HeleoCityFacilities_TrainerHouse_TrainerHouseRulesChoice
-What is a trainer house?
-
-#org @gText_HeleoCityFacilities_TrainerHouse_RulesetChoice
-What are this house's rules?
-
-#org @gText_HeleoCityFacilities_TrainerHouse_GrandPrizeChoice
-What is the grand prize?
-
-#org @gText_HeleoCityFacilities_TrainerHouse_ChoseTrainerHouseRules
-[BLUE]Me, oh my, where are my manners?\pTrainer Houses are a hip new\nsensation hitting the Kulure region,\lspearheaded by yours truly.\pThe premise is nice and simple: fight\nbattles to win great prizes!\pEach trainer house has a different\nruleset that changes how battles\lwill play out.\pThis is a back-to-back gauntlet\nagainst 3 trainers who know this\lruleset like the back of their\lhands.\pYou'll earn prizes depending\non how well you do, and you'll\leven get a special prize the first\ltime you defeat all 3.\pBest of all - you'll earn experience\nand money each time you compete.\lIsn't that just swell?\pBut, there is a catch[.] You can only\nchallenge each trainer house once\lper day. Gotta keep things fresh\lfor spectators, ya dig?
-
 #org @gText_HeleoCityFacilities_TrainerHouse_ChoseRuleset
 [BLUE]This trainer house is all about\nInverse Battles.\pIn these battles, type effectiveness\nis swapped! Fire beats water, water\lbeats grass.\pIt isn't so bad once you get used to\nit, but it'll put new wrinkles in\lthe ol' grey matter, that's for\lsure.
 
@@ -55,17 +37,8 @@ What is the grand prize?
 #org @gText_HeleoCityFacilities_TrainerHouse_ChoseBattle
 [BLUE]Yes, yes, yes! That is what I like to\nhear, baby!
 
-#org @gText_HeleoCityFacilities_TrainerHouse_Exit
-[BLUE]Alright, see you around kiddo.
-
-#org @gText_HeleoCityFacilities_TrainerHouse_AlreadyChallengedToday
-[BLUE]Hold up a sec. You've already\nbattled with us today!\pCome back tomorrow if you'd like to\nchallenge the trainer house.
-
 #org @gText_HeleoCityFacilities_TrainerHouse_HealingPokemon
 [BLUE]Okay, let me heal your Pok\emon up\nreal quick. Regulations, and all[.]
-
-#org @gText_HeleoCityFacilities_TrainerHouse_HealingPokemonAtEnd
-[BLUE]And for being such a good sport, I'll\nheal your Pok\emon up again.
 
 #org @gText_HeleoCityFacilities_TrainerHouse_PokemonSelectionFinalized
 [BLUE]Alright! Step on up to the arena and\nlet's get started.
@@ -85,23 +58,8 @@ What is the grand prize?
 #org @gText_HeleoCityFacilities_TrainerHouse_StreakLost
 [BLUE]Ooh, sorry! But a loss is a loss.\nCome on down here, [PLAYER].
 
-#org @gText_HeleoCityFacilities_TrainerHouse_StreakContinues
-[BLUE]That's a win for [PLAYER]!
-
-#org @gText_HeleoCityFacilities_TrainerHouse_Analysis
-[BLUE]Alright[.] Let's see how you did.
-
-#org @gText_HeleoCityFacilities_TrainerHouse_AnalysisBeatNoTrainers
-[BLUE]You didn't beat any trainers[.]\nTry again tomorrow though, yeah?
-
-#org @gText_HeleoCityFacilities_TrainerHouse_AnalysisBeatTrainers
-[BLUE]You beat [BUFFER1] trainers! That'll\nearn you prizes.
-
 #org @gText_HeleoCityFacilities_TrainerHouse_GrandPrizeAwarded
 [BLUE]Well, would you look at that! You've\nbeaten all 3 trainers for the first\ltime!\pYou've earned our grand prize: a\nMach Bike!
-
-#org @gText_HeleoCityFacilities_TrainerHouse_EndOfBattles
-[BLUE]I hope you enjoyed yourself,\n[PLAYER]! Maybe we'll see you again\ltomorrow, eh?
 
 #org @gText_HeleoCityFacilities_TrainerHouse_B1PsychicBiancaIntro
 [RED]Inverse Battles[.] Can you predict\nwhat Pok\emon or moves I will use?

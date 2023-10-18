@@ -179,7 +179,13 @@
 #define SE_CAUGHT_POKEMON 0x16F
 #define MUS_FANFA1 0x101 // Got item / level up
 #define MUS_GET_ITEM_2 0x102
-#define MUS_FANFA2 0x10D
+#define MUS_EVOLUTION 0x103
+#define MUS_BIG_CELEBRATION 0x10C // Big celebration
+#define MUS_CELEBRATION 0x10D
+#define MUS_FAILED 0x10E
+#define MUS_BIG_FAILURE 0x10F
+#define MUS_GYM_VICTORY 0x13D // Gym victory
+#define MUS_OBTAIN_ITEM 0x13E // Obtain Item
 
 #ifdef UNBOUND //For Unbound
 

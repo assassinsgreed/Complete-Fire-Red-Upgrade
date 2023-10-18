@@ -77,11 +77,11 @@ EventScript_HeleoFacilities_TrainerHouse_Host:
     goto TrainerHouse_Menu
 
 TrainerHouse_Menu:
-    msgbox gText_HeleoCityFacilities_TrainerHouse_MenuIntro MSG_KEEPOPEN
-    multichoiceoption gText_HeleoCityFacilities_TrainerHouse_BattleChoice 0
-	multichoiceoption gText_HeleoCityFacilities_TrainerHouse_TrainerHouseRulesChoice 1
-	multichoiceoption gText_HeleoCityFacilities_TrainerHouse_RulesetChoice 2
-    multichoiceoption gText_HeleoCityFacilities_TrainerHouse_GrandPrizeChoice 3
+    msgbox gText_TrainerHouse_MenuIntro MSG_KEEPOPEN
+    multichoiceoption gText_TrainerHouse_BattleChoice 0
+	multichoiceoption gText_TrainerHouse_TrainerHouseRulesChoice 1
+	multichoiceoption gText_TrainerHouse_RulesetChoice 2
+    multichoiceoption gText_TrainerHouse_GrandPrizeChoice 3
     multichoiceoption gText_End 4
 	multichoice 0x0 0x0 FIVE_MULTICHOICE_OPTIONS FALSE
 	switch LASTRESULT
@@ -89,46 +89,46 @@ TrainerHouse_Menu:
 	case 1, Trainerhouse_trainerhouserules
 	case 2, Trainerhouse_ruleset
 	case 3, Trainerhouse_grandprize
-	case 4, Trainerhouse_end
-    goto Trainerhouse_end @ Cancelled with B
+	case 4, TrainerHouse_Common_End
+    goto TrainerHouse_Common_End @ Cancelled with B
 
 Trainerhouse_battle:
     checkflag 0xE0B @ Already battled today
-    if SET _goto TrainerHouseAlreadyBattledToday
+    if SET _goto TrainerHouse_Common_AlreadyBattledToday
     call TrainerHousePreBattleSetup
-    call MoveToBattlePosition
+    call TrainerHouse_Common_MoveToBattlePosition
     setflag 0x900 @ Turn on inverse battles
     setflag 0x90E @ Scale trainer levels
     applymovement 0x1 m_LookUp
     @ First Opponent
     msgbox gText_HeleoCityFacilities_TrainerHouse_FirstOpponentArriving MSG_NORMAL
     setvar 0x8001 0x2
-    call OpponentArrives
+    call TrainerHouse_Common_OpponentArrives
     msgbox gText_HeleoCityFacilities_TrainerHouse_B1PsychicBiancaIntro MSG_NORMAL
     trainerbattle9 0x0 0x62 0x0 gText_HeleoCityFacilities_TrainerHouse_B1PsychicBiancaWin gText_HeleoCityFacilities_TrainerHouse_B1PsychicBiancaLose
     call HandleBattleEnded
     @ Second Opponent
     msgbox gText_HeleoCityFacilities_TrainerHouse_SecondOpponentArriving MSG_NORMAL
     setvar 0x8001 0x5
-    call OpponentArrives
+    call TrainerHouse_Common_OpponentArrives
     msgbox gText_HeleoCityFacilities_TrainerHouse_B2SupernerdGalenIntro MSG_NORMAL
     trainerbattle9 0x0 0x63 0x0 gText_HeleoCityFacilities_TrainerHouse_B2SupernerdGalenWin gText_HeleoCityFacilities_TrainerHouse_B2SupernerdGalenLose
     call HandleBattleEnded
     @ Third Opponent
     msgbox gText_HeleoCityFacilities_TrainerHouse_ThirdOpponentArriving MSG_NORMAL
     setvar 0x8001 0x6
-    call OpponentArrives
+    call TrainerHouse_Common_OpponentArrives
     msgbox gText_HeleoCityFacilities_TrainerHouse_CooltrainerJetIntro MSG_NORMAL
     trainerbattle9 0x0 0x64 0x0 gText_HeleoCityFacilities_TrainerHouse_CooltrainerJetWin gText_HeleoCityFacilities_TrainerHouse_CooltrainerJetLose
     call HandleBattleEnded
     msgbox gText_HeleoCityFacilities_TrainerHouse_AllOpponentsDefeated MSG_NORMAL
-    call TrainerHouseReturnToHost
+    call TrainerHouse_Common_ReturnToHost
     goto TrainerHouseGivePrizes
 
 TrainerHousePreBattleSetup:
     msgbox gText_HeleoCityFacilities_TrainerHouse_BattleConfirmation MSG_YESNO
     compare LASTRESULT NO
-    if equal _goto Trainerhouse_end
+    if equal _goto TrainerHouse_Common_End
     msgbox gText_HeleoCityFacilities_TrainerHouse_ChoseBattle MSG_NORMAL
     setflag 0xE0B @ Already battled today
     setvar 0x8000 0xFEFE @ Continue lost battles
@@ -139,14 +139,16 @@ TrainerHousePreBattleSetup:
     return
 
 TrainerHouseStreakLost:
-    msgbox gText_HeleoCityFacilities_TrainerHouse_StreakLost MSG_NORMAL
+    fanfare 0x10F @ Failure
+    msgbox gText_HeleoCityFacilities_TrainerHouse_StreakLost MSG_KEEPOPEN
+    waitfanfare
     fadescreen FADEOUT_BLACK
     hidesprite 0x2
     hidesprite 0x5
     hidesprite 0x6
     setflag 0x37 @ Hide opponents
     fadescreen FADEIN_BLACK
-    call TrainerHouseReturnToHost
+    call TrainerHouse_Common_ReturnToHost
     compare 0x4090 0x0
     if equal _goto TrainerHouseDidNotBeatAnyTrainers
     goto TrainerHouseGivePrizes
@@ -154,7 +156,7 @@ TrainerHouseStreakLost:
 TrainerHouseGivePrizes:
     buffernumber 0x0 0x4090
     fanfare 0x13D @ Gym victory
-    msgbox gText_HeleoCityFacilities_TrainerHouse_AnalysisBeatTrainers MSG_KEEPOPEN
+    msgbox gText_TrainerHouse_AnalysisBeatTrainers MSG_KEEPOPEN
     waitfanfare
     compare 0x4090 0x1
     if equal _call TrainerHouseTier1Prizes
@@ -162,27 +164,27 @@ TrainerHouseGivePrizes:
     if equal _call TrainerHouseTier2Prizes
     compare 0x4090 0x3
     if equal _call TrainerHouseTier3Prizes
-    msgbox gText_HeleoCityFacilities_TrainerHouse_EndOfBattles MSG_NORMAL
+    msgbox gText_TrainerHouse_EndOfBattles MSG_NORMAL
     goto Trainerhouse_ResetStateAtEnd
 
 TrainerHouseTier1Prizes:
     random 0x2
     copyvar 0x8002 LASTRESULT
     compare 0x8002 0x0
-    if equal _call TrainerHouseGivePokeball
+    if equal _call TrainerHouse_Common_GivePokeball
     compare 0x8002 0x1
-    if equal _call TrainerHouseGivePotion
+    if equal _call TrainerHouse_Common_GivePotion
     return
 
 TrainerHouseTier2Prizes:
     random 0x3
     copyvar 0x8003 LASTRESULT
     compare 0x8003 0x0
-    if equal _call TrainerHouseGiveGreatball
+    if equal _call TrainerHouse_Common_GiveGreatBall
     compare 0x8003 0x1
-    if equal _call TrainerHouseGiveSuperPotion
+    if equal _call TrainerHouse_Common_GiveSuperPotion
     compare 0x8003 0x2
-    if equal _call TrainerHouseGiveRepel
+    if equal _call TrainerHouse_Common_GiveRepel
     pause DELAY_HALFSECOND
     call TrainerHouseTier1Prizes
     return
@@ -191,46 +193,14 @@ TrainerHouseTier3Prizes:
     random 0x3
     copyvar 0x8004 LASTRESULT
     compare 0x8004 0x0
-    if equal _call TrainerHouseGiveUltraBall
+    if equal _call TrainerHouse_Common_GiveUltraBall
     compare 0x8004 0x1
-    if equal _call TrainerHouseGiveMoomooMilk
+    if equal _call TrainerHouse_Common_GiveMoomooMilk
     compare 0x8004 0x2
-    if equal _call TrainerHouseFullHeal
+    if equal _call TrainerHouse_Common_GiveFullHeal
     pause DELAY_HALFSECOND
     call TrainerHouseTier2Prizes
     call TrainerHouseCheckForGrandPrize
-    return
-
-TrainerHouseGivePokeball:
-    obtainitem ITEM_POKE_BALL 0x1
-    return
-
-TrainerHouseGivePotion:
-    obtainitem ITEM_POTION 0x1
-    return
-
-TrainerHouseGiveGreatball:
-    obtainitem ITEM_GREAT_BALL 0x1
-    return
-
-TrainerHouseGiveSuperPotion:
-    obtainitem ITEM_SUPER_POTION 0x1
-    return
-
-TrainerHouseGiveRepel:
-    obtainitem ITEM_REPEL 0x1
-    return
-
-TrainerHouseGiveUltraBall:
-    obtainitem ITEM_ULTRA_BALL 0x1
-    return
-
-TrainerHouseGiveMoomooMilk:
-    obtainitem ITEM_MOOMOO_MILK 0x1
-    return
-
-TrainerHouseFullHeal:
-    obtainitem ITEM_FULL_HEAL 0x1
     return
 
 TrainerHouseCheckForGrandPrize:
@@ -240,22 +210,18 @@ TrainerHouseCheckForGrandPrize:
 
 TrainerHouseGiveGrandPrize:
     msgbox gText_HeleoCityFacilities_TrainerHouse_GrandPrizeAwarded MSG_NORMAL
-    fanfare 0x13E
+    fanfare 0x10C @ Big Celebration
     obtainitem ITEM_MACH_BIKE 0x1
     waitfanfare
     setflag 0x24F @ Got the bike
     return 
 
 TrainerHouseDidNotBeatAnyTrainers:
-    msgbox gText_HeleoCityFacilities_TrainerHouse_AnalysisBeatNoTrainers MSG_NORMAL
+    msgbox gText_TrainerHouse_AnalysisBeatNoTrainers MSG_NORMAL
     goto Trainerhouse_ResetStateAtEnd
 
-TrainerHouseAlreadyBattledToday:
-    msgbox gText_HeleoCityFacilities_TrainerHouse_AlreadyChallengedToday MSG_NORMAL
-    goto End
-
 Trainerhouse_trainerhouserules:
-    msgbox gText_HeleoCityFacilities_TrainerHouse_ChoseTrainerHouseRules MSG_NORMAL
+    msgbox gText_TrainerHouse_ChoseTrainerHouseRules MSG_NORMAL
     goto TrainerHouse_Menu
 
 Trainerhouse_ruleset:
@@ -266,56 +232,14 @@ Trainerhouse_grandprize:
     msgbox gText_HeleoCityFacilities_TrainerHouse_ChoseGrandPrize MSG_NORMAL
     goto TrainerHouse_Menu
 
-MoveToBattlePosition:
-    getplayerpos 0x4000 0x4001 @ Get player x y into variables
-    compare 0x4000 0xA
-    if equal _call MovePlayerFromRight
-    compare 0x4000 0x9
-    if equal _call MovePlayerFromBelow
-    applymovement PLAYER m_WalkToBattlefield
-    waitmovement ALLEVENTS
-    return
-
-MovePlayerFromRight:
-    applymovement PLAYER m_WalkFromRight
-    waitmovement ALLEVENTS
-    getplayerpos 0x4000 0x4001 @ Get player's new x y into variables
-    return
-
-MovePlayerFromBelow:
-    applymovement PLAYER m_WalkFromBelow
-    waitmovement ALLEVENTS
-    return
-
-OpponentArrives:
-    movesprite 0x8001 0x8 0xC @ Center of the room
-    clearflag 0x37 @ Show opponent
-    showsprite 0x8001
-    applymovement 0x8001 m_OpponentWalkToBattlefield
-    waitmovement ALLEVENTS
-    return
-
 HandleBattleEnded:
     compare LASTRESULT TRUE
     if equal _goto TrainerHouseStreakLost
-    fanfare 0x101 @ Get Item / Level Up
-    msgbox gText_HeleoCityFacilities_TrainerHouse_StreakContinues MSG_KEEPOPEN
+    fanfare 0x10D @ Victory
+    msgbox gText_TrainerHouse_StreakContinues MSG_KEEPOPEN
     waitfanfare
-    call OpponentLeaves
+    call TrainerHouse_Common_OpponentLeaves
     addvar 0x4090 0x1
-    return
-
-OpponentLeaves:
-    applymovement 0x8001 m_OpponentWalkAway
-    waitmovement ALLEVENTS
-    hidesprite 0x8001
-    setflag 0x37 @ Hide opponent
-    return
-
-TrainerHouseReturnToHost:
-    applymovement PLAYER m_ReturnToHost
-    waitmovement ALLEVENTS
-    applymovement 0x1 m_LookDown
     return
 
 Trainerhouse_ResetStateAtEnd:
@@ -328,21 +252,13 @@ Trainerhouse_ResetStateAtEnd:
     checkflag 0x4FE @ Inverse battles modifier
     if NOT_SET _call DisableInverseFlag
     checkflag 0x4FF @ Trainer level scaling modifier
-    if NOT_SET _call DisableScalingFlag
-    msgbox gText_HeleoCityFacilities_TrainerHouse_HealingPokemonAtEnd MSG_NORMAL
+    if NOT_SET _call TrainerHouse_Common_DisableScalingFlag
+    msgbox gText_TrainerHouse_HealingPokemonAtEnd MSG_NORMAL
     call PlayerHeal
-    goto Trainerhouse_end
-
-Trainerhouse_end:
-    msgbox gText_HeleoCityFacilities_TrainerHouse_Exit MSG_NORMAL
-    goto End
+    goto TrainerHouse_Common_End
 
 DisableInverseFlag:
     clearflag 0x900 @ Disable inverse battles
-    return
-
-DisableScalingFlag:
-    clearflag 0x90E @ Disable trainer level scaling
     return
 
 .global EventScript_HeleoFacilities_TrainerHouse_Boy
@@ -397,10 +313,3 @@ BinocularsDay:
 BinocularsNight:
     msgbox gText_HeleoCityFacilities_GuardHouse_DaimynCityBinocularsNight MSG_NORMAL
     end
-
-m_WalkFromRight: .byte walk_down, walk_left, end_m
-m_WalkFromBelow: .byte walk_left, walk_up, end_m
-m_WalkToBattlefield: .byte walk_up, walk_up, walk_left, walk_left, walk_left, walk_left, walk_up, walk_up, look_right, end_m
-m_OpponentWalkToBattlefield: .byte walk_up, walk_up, walk_up, walk_up, walk_right, walk_right, walk_right, walk_up, walk_up, look_left, end_m
-m_OpponentWalkAway: .byte walk_down, walk_down, walk_left, walk_left, walk_left, walk_down, walk_down, walk_down, walk_down, end_m
-m_ReturnToHost: .byte walk_down, walk_down, walk_right, walk_right, walk_right, walk_right, walk_down, walk_down, walk_down, walk_right, look_up, end_m

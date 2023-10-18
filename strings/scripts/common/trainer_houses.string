@@ -1,0 +1,41 @@
+#org @gText_TrainerHouse_MenuIntro
+[BLUE]Now[.] What can I do you for?
+
+#org @gText_TrainerHouse_BattleChoice
+Battle
+
+#org @gText_TrainerHouse_TrainerHouseRulesChoice
+What is a trainer house?
+
+#org @gText_TrainerHouse_RulesetChoice
+What are this house's rules?
+
+#org @gText_TrainerHouse_GrandPrizeChoice
+What is the grand prize?
+
+#org @gText_TrainerHouse_StreakContinues
+[BLUE]That's a win for [PLAYER]!
+
+#org @gText_TrainerHouse_Analysis
+[BLUE]Alright[.] Let's see how you did.
+
+#org @gText_TrainerHouse_AnalysisBeatNoTrainers
+[BLUE]You didn't beat any trainers[.]\nTry again tomorrow though, yeah?
+
+#org @gText_TrainerHouse_AnalysisBeatTrainers
+[BLUE]You beat [BUFFER1] trainers! That'll\nearn you prizes.
+
+#org @gText_TrainerHouse_EndOfBattles
+[BLUE]I hope you enjoyed yourself,\n[PLAYER]! Maybe we'll see you again\ltomorrow, eh?
+
+#org @gText_TrainerHouse_Exit
+[BLUE]Alright, see you around kiddo.
+
+#org @gText_TrainerHouse_AlreadyChallengedToday
+[BLUE]Hold up a sec. You've already\nbattled with us today!\pCome back tomorrow if you'd like to\nchallenge the trainer house.
+
+#org @gText_TrainerHouse_ChoseTrainerHouseRules
+[BLUE]Me, oh my, where are my manners?\pTrainer Houses are a hip new\nsensation hitting the Kulure region,\lspearheaded by yours truly.\pThe premise is nice and simple: fight\nbattles to win great prizes!\pEach trainer house has a different\nruleset that changes how battles\lwill play out.\pThis is a back-to-back gauntlet\nagainst 3 trainers who know this\lruleset like the back of their\lhands.\pYou'll earn prizes depending\non how well you do, and you'll\leven get a special prize the first\ltime you defeat all 3.\pBest of all - you'll earn experience\nand money each time you compete.\lIsn't that just swell?\pBut, there is a catch[.] You can only\nchallenge each trainer house once\lper day. Gotta keep things fresh\lfor spectators, ya dig?
+
+#org @gText_TrainerHouse_HealingPokemonAtEnd
+[BLUE]And for being such a good sport, I'll\nheal your Pok\emon up again.
