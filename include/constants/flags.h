@@ -636,7 +636,7 @@
 #define FLAG_FORGOTTEN_MANSE_SECURITY_GATE_4             0x269
 #define FLAG_FORGOTTEN_MANSE_SECURITY_GATE_5             0x26A
 #define FLAG_FORGOTTEN_MANSE_SECURITY_GATE_6             0x26B
-#define FLAG_POKEMON_MANSION_SWITCH_STATE                0x26C
+#define FLAG_GOT_LUCKY_EGG                               0x26C
 #define FLAG_OPENED_ROCKET_HIDEOUT                       0x26D
 #define FLAG_GOT_10_COINS_FROM_GAMBLER                   0x26E
 #define FLAG_GOT_20_COINS_FROM_GAMBLER                   0x26F
@@ -1334,6 +1334,7 @@ Daily Flags, cleared at the start of each day.  Goes up to 0xEFF
 #define FLAG_DAIMYN_CITY_DAILY_DEAL_SET       0xE0F
 #define FLAG_DAIMYN_CITY_DAILY_DEAL_BOUGHT    0xE10
 #define FLAG_LAPLAZ_TOWN_APRICORN_BALL_BOUGHT 0xE11
+#define FLAG_LAPLAZ_TOWN_TRAINER_HOUSE        0xE12
 */
 
 #define FLAG_TRAINER_FLAG_START 0x500

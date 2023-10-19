@@ -1229,6 +1229,11 @@ npc 10 0 3 EventScript_LaplazFacilities_Gentleman
 npc 10 1 0 EventScript_LaplazFacilities_XItemsShop
 npc 10 1 1 EventScript_Pokemart
 npc 10 1 2 EventScript_LaplazFacilities_XItemsTip
+npc 10 2 0 EventScript_LaplazFacilities_TrainerHouse_Host
+npc 10 2 1 EventScript_LaplazFacilities_TrainerHouse_Blackbelt
+npc 10 2 2 EventScript_LaplazFacilities_TrainerHouse_Rocker
+npc 10 2 3 EventScript_LaplazFacilities_TrainerHouse_Girl
+### Events 4-6 are hidden opponents
 ## NPC Houses
 npc 10 3 0 EventScript_LaplazNPCHouses_Monty
 npc 10 3 1 EventScript_LaplazNPCHouses_CaseysMom
