@@ -521,6 +521,25 @@
             }
         },
         {
+            "mapgroup": 3,
+            "mapnum": 6,
+            "fishing": {
+                "rate": 20,
+                "pokemon": [
+                    { "low": 5, "high": 10, "species": "SPECIES_CHINCHOU" },
+                    { "low": 4, "high": 8, "species": "SPECIES_CORPHISH" },
+                    { "low": 25, "high": 30, "species": "SPECIES_CORPHISH" },
+                    { "low": 25, "high": 30, "species": "SPECIES_CHINCHOU" },
+                    { "low": 30, "high": 35, "species": "SPECIES_LANTURN" },
+                    { "low": 40, "high": 45, "species": "SPECIES_LANTURN" },
+                    { "low": 40, "high": 45, "species": "SPECIES_CRAWDAUNT" },
+                    { "low": 40, "high": 45, "species": "SPECIES_CRAWDAUNT" },
+                    { "low": 40, "high": 45, "species": "SPECIES_CRAWDAUNT" },
+                    { "low": 40, "high": 45, "species": "SPECIES_LANTURN" }
+                ]
+            }
+        },
+        {
             "mapgroup": 1,
             "mapnum": 2,
             "grass": {
