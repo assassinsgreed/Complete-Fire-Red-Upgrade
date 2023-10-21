@@ -65,8 +65,11 @@ EventScript_HeleoCity_SwarmSwami:
     compare LASTRESULT NO
     if equal _goto EventScript_HeleoCity_SwarmSwami_Rejected
     msgbox gText_HeleoNPCHouses_SwarmSwamiStarting MSG_NORMAL
+    fadescreen FADEOUT_BLACK
     pause DELAY_1SECOND
     special 0x58 @ Buffer the location (buffer1) and pokemon (buffer2) swarming now
+    pause DELAY_HALFSECOND
+    fadescreen FADEIN_BLACK
     sound 0x15 @ Exclaim
     applymovement 0x1 m_Surprise
     msgbox gText_HeleoNPCHouses_SwarmSwamiComplete MSG_NORMAL

@@ -53,6 +53,7 @@
 #define BGM_BATTLE_TRAINER_HOUSE 0x12B // Champion Iris battle theme 
 #define BGM_BATTLE_CASEY 0x1AF // Champion Alder battle theme
 
+// See here for additional SE in Vanilla FR: https://www.pokecommunity.com/showthread.php?p=5610866#post5610866
 #define MUS_DUMMY 0
 #define SE_STOP 0
 #define SE_USE_ITEM 1

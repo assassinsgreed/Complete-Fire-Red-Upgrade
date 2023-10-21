@@ -290,7 +290,9 @@ SystemScript_PickUpItem:
 SystemScript_FindNormalItem:
 	compare 0x8005 0x1
 	if greaterthan _goto SystemScript_FindMultipleNormalItems
-	msgbox 0x81A5231 MSG_NORMAL
+	// The message at this address contains a [pause] instruction needed for hidden items. Prepping & waiting here prevents issues requiring the player to hit A twice for normal items
+	preparemsg 0x81A5231
+	waitmsg
 	return
 
 SystemScript_FindMultipleNormalItems:

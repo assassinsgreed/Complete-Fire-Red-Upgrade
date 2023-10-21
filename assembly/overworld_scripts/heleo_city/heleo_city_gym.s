@@ -16,6 +16,9 @@ LevelScripts_HeleoCityGym:
     .hword LEVEL_SCRIPT_TERMIN
 
 LevelScripts_HeleoCityGym_SetPlayerFacing:
+    getplayerpos 0x4000 0x4001
+    compare 0x4001 0x14 @ Player warped to gym entrance
+    if equal _goto SetPlayerPosForGymEntranceWarp
     compare PLAYERFACING DOWN
     if equal _goto FaceDown
     compare PLAYERFACING UP
@@ -46,11 +49,16 @@ FaceDown:
     spriteface LASTTALKED UP 
     end
 
+SetPlayerPosForGymEntranceWarp:
+    spriteface PLAYER DOWN
+    end
+
 .global EventScript_HeleoGym_CastformWater
 EventScript_HeleoGym_CastformWater:
     call CastformCommon
-    msgbox gText_HeleoCityGym_CastformSunnyDay MSG_NORMAL
+    playse 0xC3 @ Sunny day
     call SetWeatherSunny
+    msgbox gText_HeleoCityGym_CastformSunnyDay MSG_NORMAL
     call CastformCommon_WeatherChanging
     warpmuted 1 93 0xFF 0x4000 0x4001 @ Warp to same spot in drained map
     end
@@ -58,8 +66,8 @@ EventScript_HeleoGym_CastformWater:
 .global EventScript_HeleoGym_CastformDrained
 EventScript_HeleoGym_CastformDrained:
     call CastformCommon
-    msgbox gText_HeleoCityGym_CastformRainDance MSG_NORMAL
     call SetWeatherRain
+    msgbox gText_HeleoCityGym_CastformRainDance MSG_NORMAL
     call CastformCommon_WeatherChanging
     warpmuted 1 92 0xFF 0x4000 0x4001 @ Warp to same spot in flooded map
     end
@@ -73,7 +81,6 @@ CastformCommon:
     return
 
 CastformCommon_WeatherChanging:
-    pause DELAY_1SECOND
     fadescreenswapbuffers 0x1
     getplayerpos 0x4000 0x4001 @ Get player x and y in throwaway vars
     return
@@ -161,4 +168,28 @@ SignScript_HeleoGym_Placard:
 
 SignScript_HeleoGym_PlacardWithBadge:
     msgbox gText_HeleoGym_WinnersWithBadge MSG_SIGN
+    end
+
+.global EventScript_HeleoGym_Slowbro
+EventScript_HeleoGym_Slowbro:
+    faceplayer
+    cry SPECIES_SLOWBRO 0x0
+    applymovement LASTTALKED m_Question 
+    msgbox gText_HeleoGym_SlowbroQuestion MSG_NORMAL
+    msgbox gText_HeleoGym_SlowbroConfirmation MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto SlowbroNo
+    cry SPECIES_SLOWBRO 0x0
+    msgbox gText_HeleoGym_SlowbroYes MSG_NORMAL
+    waitcry
+    playse 0x27 @ Warp away
+    pause DELAY_HALFSECOND
+    warpmuted 1 92 0xFF 0xF 0x14 @ Warp to gym entrance, in flooded map
+    end
+
+SlowbroNo:
+    cry SPECIES_SLOWBRO 0x3 @ Fainted sound, pitched down
+    msgbox gText_HeleoGym_SlowbroNo MSG_NORMAL
+    waitcry
+    applymovement LASTTALKED m_LookDown
     end

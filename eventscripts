@@ -637,6 +637,7 @@ npc 1 92 7 EventScript_HeleoGym_SwimmerByron
 npc 1 92 8 EventScript_HeleoGym_SwimmerDanette
 npc 1 92 9 EventScript_HeleoGym_SwimmerMaisey
 npc 1 92 10 EventScript_HeleoGym_GymExpert
+npc 1 92 11 EventScript_HeleoGym_Slowbro
 sign 1 92 0 SignScript_HeleoGym_Placard
 sign 1 92 1 SignScript_HeleoGym_Placard
 npc 1 93 0 EventScript_HeleoGym_CastformDrained
@@ -650,6 +651,7 @@ npc 1 93 7 EventScript_HeleoGym_SwimmerByron
 npc 1 93 8 EventScript_HeleoGym_SwimmerDanette
 npc 1 93 9 EventScript_HeleoGym_SwimmerMaisey
 npc 1 93 10 EventScript_HeleoGym_GymExpert
+npc 1 93 11 EventScript_HeleoGym_Slowbro
 sign 1 93 0 SignScript_HeleoGym_Placard
 sign 1 93 1 SignScript_HeleoGym_Placard
 
