@@ -329,8 +329,8 @@ InitiateTrade:
 EventScript_Common_VendingMachine:
     preparemsg gText_VendingMachinesChoice
     waitmsg
-    showmoney 0x0 0x0 0x0
-    multichoice 0x0 0x0 0x1A 0x0 @ Vanilla vending machine multichoice
+    showmoney 0x0 0x0
+    multichoice 0x60 0x0 0x1A 0x0 @ Vanilla vending machine multichoice
     copyvar 0x4001 LASTRESULT
     copyvar 0x8000 0x4001
     compare 0x8000 0x0
@@ -368,6 +368,8 @@ Lemonade:
 
 CompleteTransaction:
     sound 0xF8 @ Money SE
+    updatemoney 0x0 0x0
+    pause DELAY_HALFSECOND
     bufferitem 0x0 0x4000
     random 0x3 @ 1 in 3
     compare LASTRESULT 0x0

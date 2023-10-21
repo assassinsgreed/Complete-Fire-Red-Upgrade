@@ -78,3 +78,15 @@ Heleo City Gym:\nVictors: Casey, [RIVAL]
 
 #org @gText_HeleoGym_WinnersWithBadge
 Heleo City Gym:\nVictors: Casey, [RIVAL], [PLAYER]
+
+#org @gText_HeleoGym_SlowbroQuestion
+Sloooooowwww?
+
+#org @gText_HeleoGym_SlowbroConfirmation
+It seems this Slowbro wants to use\nTeleport to send you back to the\lgym entrance.\pAllow it?
+
+#org @gText_HeleoGym_SlowbroYes
+Slow!
+
+#org @gText_HeleoGym_SlowbroNo
+Slowww[.]
