@@ -99,11 +99,14 @@ static bool8 IsRunningDisabledByFlag(void);
 static bool8 IsPlayerFacingSea(void);
 static bool8 UseRegisteredKeyItemOnField(void);
 
+extern const u8 LaplazGym_RotationSteps[];
+
 #if (defined VAR_DEFAULT_WALKING_SCRIPT && !defined UNBOUND)
 //Table full of pointers to custom walking scripts
 static const u8* const sDefaultWalkingScripts[] =
 {
 	NULL,
+	LaplazGym_RotationSteps,
 	//NULL,
 	//NULL,
 	//NULL,
@@ -1590,7 +1593,7 @@ static const u8* GetCustomWalkingScript(void)
 
 	u8 scriptInd = VarGet(VAR_DEFAULT_WALKING_SCRIPT);
 	if (scriptInd != 0 && scriptInd <= ARRAY_COUNT(sDefaultWalkingScripts))
-		return sDefaultWalkingScripts[scriptInd - 1];
+		return sDefaultWalkingScripts[scriptInd];
 	#endif
 
 	return NULL;
