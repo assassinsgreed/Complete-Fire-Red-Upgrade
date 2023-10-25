@@ -12,6 +12,7 @@ MapScript_LaplazTown:
 
 MapEntryScript_LaplazTown_FlightSpot:
     setworldmapflag 0x896 @ Visited Laplaz Town
+    setvar 0x500B 0x0 @ Use walking script 0, i.e. None, for when the player leaves the gym
     end
 
 .global EventScript_LaplazTown_Girl

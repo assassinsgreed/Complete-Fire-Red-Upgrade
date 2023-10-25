@@ -1249,3 +1249,5 @@ npc 10 6 1 EventScript_LaplazNPCHouses_ApricornGrandpa
 npc 10 6 2 EventScript_LaplazNPCHouses_Tutor
 npc 10 7 0 EventScript_LaplazNPCHouses_PsychicBrother
 npc 10 7 1 EventScript_LaplazNPCHouses_PsychicSister
+## Gym
+map 10 8 MapScript_LaplazGym_RotatingFloorTiles
