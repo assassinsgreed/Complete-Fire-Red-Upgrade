@@ -22,6 +22,7 @@ MapEntryScript_LaplazGym_SetWalkingScript:
 @ Assigned as a walking script, to trigger on each step
 .global LaplazGym_RotationSteps
 LaplazGym_RotationSteps:
+    @ Tiles do not rotate if the player's step results in them stopping on a movement tile    
     compare 0x4000 0x4
     if equal _goto RotateTiles
     if notequal _goto TimerTickUpSound
@@ -79,7 +80,7 @@ RotateTiles:
     end
 
 HandleRotationCW:
-    @ Tiles rotate clockwise every 4 steps
+    @ Tiles rotate clockwise every 5 steps
     special2 LASTRESULT 0x7E @ Get the number of the tile at 0x8004 0x8005
     compare LASTRESULT TileSpriteUp
     if equal _call RotateRight
@@ -92,7 +93,7 @@ HandleRotationCW:
     return
 
 HandleRotationCCW:
-    @ Tiles rotate counterclockwise every 4 steps
+    @ Tiles rotate counterclockwise every 5 steps
     special2 LASTRESULT 0x7E @ Get the number of the tile at 0x8004 0x8005
     compare LASTRESULT TileSpriteUp
     if equal _call RotateLeft
@@ -105,7 +106,7 @@ HandleRotationCCW:
     return
 
 HandleRotationHorizontal:
-    @ Tiles rotate left-right every 4 steps
+    @ Tiles rotate left-right every 5 steps
     special2 LASTRESULT 0x7E @ Get the number of the tile at 0x8004 0x8005
     compare LASTRESULT TileSpriteLeft
     if equal _call RotateRight
@@ -114,7 +115,7 @@ HandleRotationHorizontal:
     return
 
 HandleRotationVertical:
-    @ Tiles rotate up-down every 4 steps
+    @ Tiles rotate up-down every 5 steps
     special2 LASTRESULT 0x7E @ Get the number of the tile at 0x8004 0x8005
     compare LASTRESULT TileSpriteUp
     if equal _call RotateDown
@@ -123,7 +124,7 @@ HandleRotationVertical:
     return
 
 HandleRotationLeftUpRight:
-    @ Tiles rotate left-up-right-left every 4 steps
+    @ Tiles rotate left-up-right-left every 5 steps
     special2 LASTRESULT 0x7E @ Get the number of the tile at 0x8004 0x8005
     compare LASTRESULT TileSpriteLeft
     if equal _call RotateUp
@@ -134,7 +135,7 @@ HandleRotationLeftUpRight:
     return
 
 HandleRotationLeftUpDown:
-    @ Tiles rotate left-up-down every 4 steps
+    @ Tiles rotate left-up-down every 5 steps
     special2 LASTRESULT 0x7E @ Get the number of the tile at 0x8004 0x8005
     compare LASTRESULT TileSpriteLeft
     if equal _call RotateUp
@@ -145,7 +146,7 @@ HandleRotationLeftUpDown:
     return
 
 HandleRotationRightUpDown:
-    @ Tiles rotate right-up-down every 4 steps
+    @ Tiles rotate right-up-down every 5 steps
     special2 LASTRESULT 0x7E @ Get the number of the tile at 0x8004 0x8005
     compare LASTRESULT TileSpriteRight
     if equal _call RotateUp
