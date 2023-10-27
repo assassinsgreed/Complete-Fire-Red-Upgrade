@@ -391,13 +391,19 @@ StopVending:
     hidemoney
     goto End
 
-.global SetCaseyFemale
+.global SetCaseyGender
+SetCaseyGender:
+    checkgender
+    compare LASTRESULT 0x0 @ Gender is opposite of player
+    if equal _call SetCaseyFemale
+    if notequal _call SetCaseyMale
+    return
+
 SetCaseyFemale:
     setvar 0x5029 84
     textcolor RED
     return
 
-.global SetCaseyMale
 SetCaseyMale:
     setvar 0x5029 59
     textcolor BLUE

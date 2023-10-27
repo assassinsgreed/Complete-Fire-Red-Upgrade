@@ -236,13 +236,13 @@ I pulled the lever too hard and now\nit squeaks.\pAhaha! Please don't tell the o
 My granddaughter has wanted a\nDratini for ages.\pBy golly, I'm going to win enough\ncoins to get it for her!
 
 #org @gText_DaimynCityGym_Winners
-Daimyn City Gym:\nVictors: Casey
+Daimyn City Gym\nVictors: Casey
 
 #org @gText_DaimynCityGym_WinnersWithBadge
-Daimyn City Gym:\nVictors: Casey, [PLAYER]
+Daimyn City Gym\nVictors: Casey, [PLAYER]
 
 #org @gText_DaimynCityGym_WinnersWithBadgeAndRival
-Daimyn City Gym:\nVictors: Casey, [PLAYER], [RIVAL]
+Daimyn City Gym\nVictors: Casey, [PLAYER], [RIVAL]
 
 #org @gText_DaimynCityGym_SlotMachinePrompt
 It's a slot machine! Want to play?

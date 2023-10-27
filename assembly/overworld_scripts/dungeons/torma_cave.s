@@ -194,10 +194,7 @@ TileScript_TormaCave_TriggerCaseyBattleM:
 TileScript_TormaCave_TriggerCaseyBattleR:
     checkflag 0x255 @ Battled Casey
     if SET _goto End
-    checkgender
-    compare LASTRESULT 0x0 @ Gender is opposite of player
-    if equal _call SetCaseyFemale
-    if notequal _call SetCaseyMale
+    call SetCaseyGender
     applymovement PLAYER m_LookUp
     playse 0x9 @ Exit room
     pause DELAY_HALFSECOND
