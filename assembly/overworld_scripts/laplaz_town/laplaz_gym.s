@@ -311,7 +311,7 @@ TileScript_LaplazGym_IntroduceCasey:
     call SetCaseyGender
     playbgm 0x169 @ Alder encounter
     sound 0x15 @ Exclaim
-	applymovement PLAYER m_Surprise
+    applymovement PLAYER m_Surprise
     msgbox gText_LaplazGym_CaseyAsksForTilesToBeTurnedOff MSG_NORMAL
     clearflag 0x3F @ Casey is now revealed as leader
     showsprite Casey
