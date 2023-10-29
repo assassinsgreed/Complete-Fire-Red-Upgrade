@@ -1251,3 +1251,14 @@ npc 10 7 0 EventScript_LaplazNPCHouses_PsychicBrother
 npc 10 7 1 EventScript_LaplazNPCHouses_PsychicSister
 ## Gym
 map 10 8 MapScript_LaplazGym_RotatingFloorTiles
+npc 10 8 0 EventScript_LaplazGym_LeaderCasey
+npc 10 8 1 EventScript_LaplazGym_GymExpert
+npc 10 8 2 EventScript_LaplazGym_Jeremiah
+npc 10 8 3 EventScript_LaplazGym_Exie
+npc 10 8 4 EventScript_LaplazGym_Virginia
+npc 10 8 5 EventScript_LaplazGym_Nisha
+npc 10 8 6 EventScript_LaplazGym_Kent
+npc 10 8 7 EventScript_LaplazGym_Tomas
+sign 10 8 0 SignScript_LaplazGym_GymPlacard
+sign 10 8 1 SignScript_LaplazGym_GymPlacard
+tile 10 8 0 TileScript_LaplazGym_IntroduceCasey

@@ -1,0 +1,125 @@
+#org @gText_LaplazGym_GymExpertCommonIntro
+Yo, superstar!\pI had a feeling you'd make it to\nLaplaz Town's gym before long.\pLet me give you the rundown[.]
+
+#org @gText_LaplazGym_GymExpertMontyIntro
+This gym is all about\nstat changes.\pYour opponents will buff their own\nPok\emon's stats, and lower yours.\pThis could really turn the tide of\nbattle quickly, so watch out.\pUse X Items or your own moves to\nkeep your stats competitive, or\lkeep your opponents' in check.\pTo get to the end, you'll need to\nnavigate a maze of Spin Tiles.\pThe green tiles don't move, but the\nblue ones will rotate for every 5\lsteps you take.\pSome rotate clockwise, some\ncounterclockwise.\pOthers will only rotate 3 times, or\nflip in place.\pPay attention to your surroundings\nand plan a route to make it\lthrough.\pBut[.] Does any of this info\nmatter, if Monty is out sick?\pHe asked the gym to stay open and\naccept challengers.\pBut, without it's leader, we aren't\nauthorized to hand out badges[.]
+
+#org @gText_LaplazGym_GymExpertCaseyIntro
+Did you hear the news?\pCasey decided to take ownership over\nthe gym in their father's stead!\pMuch like their father, they're an\nexpert with stat changes.\pTry not to let their Pok\emon set up,\nor you could be in trouble.\pI have some tips for you though,\nlike always.\pUse X Items to keep yourself\ncompetitive, or use moves to reset\lor reverse their stat changes.\pDon't give up, superstar! I'm sure\nyou'll pull through.
+
+#org @gText_LaplazGym_Jeremiah_Intro
+Have you figured out how this gym's\npuzzle works yet?
+
+#org @gText_LaplazGym_Jeremiah_Defeat
+You've got battling figured out, at\nleast!
+
+#org @gText_LaplazGym_Jeremiah_Chat
+Blue tiles only rotate if you're\nstepping onto a normal floor tile,\lor the yellow stopping tiles.\pTake your time to plan a path, and\nstep onto a Spin Tile with\lconfidence!
+
+#org @gText_LaplazGym_Exie_Intro
+Monty is out sick[.]\pEven knowing that, you still want to\nchallenge the gym?\pVery well, let's battle!
+
+#org @gText_LaplazGym_Exie_Defeat
+Hm! You're a capable challenger!
+
+#org @gText_LaplazGym_Exie_Chat
+Even if Monty isn't here, we'll keep\nthe gym operational.
+
+#org @gText_LaplazGym_Virginia_Intro
+I've spent my whole life mastering\nstat changing moves.\pDo you think your Pok\emon can keep\nup?
+
+#org @gText_LaplazGym_Virginia_Defeat
+It seems I have more to learn[.]
+
+#org @gText_LaplazGym_Virginia_Chat
+It's important to remember that you\nalways have more you can learn.\pKeeping that in mind will put you on\na good course to always improve.
+
+#org @gText_LaplazGym_Nisha_Intro
+My Pok\emon is going to make you cry!
+
+#org @gText_LaplazGym_Nisha_Defeat
+W-waah! That's not fair!
+
+#org @gText_LaplazGym_Nisha_Chat
+Sniff[.] I was supposed to win.
+
+#org @gText_LaplazGym_Kent_Intro
+I've studied over 1,000 Pok\emon\nbattles.\pIt's allowed me to prepare a\nfoolproof battle strategy.\pHere, I'll show you!
+
+#org @gText_LaplazGym_Kent_Defeat
+N-no! This must be a mistake.\pMy data is immaculate.
+
+#org @gText_LaplazGym_Kent_Chat
+I need to run more tests. There's no\nway you should've won.
+
+#org @gText_LaplazGym_Tomas_Intro
+Some people think stat changing\nmoves are worthless.\p"Why bother, when you can win with\nbrute strength?\"\pAllow me to show you how wrong they\nare!
+
+#org @gText_LaplazGym_Tomas_Defeat
+Tch. My lesson fell through.
+
+#org @gText_LaplazGym_Tomas_Chat
+A good trainer can make a variety of\nstrategies and movesets work.
+
+#org @gText_LaplazGym_Placard_NoBadge
+Laplaz Town Gym\nVictors: None
+
+#org @gText_LaplazGym_Placard_Badge
+Laplaz Town Gym\nVictors: [PLAYER]
+
+#org @gText_LaplazGym_Placard_BadgeWithRival
+Laplaz Town Gym\nVictors: [PLAYER], [RIVAL]
+
+#org @gText_LaplazGym_CaseyAsksForTilesToBeTurnedOff
+Please deactivate the Spin Tiles.
+
+#org @gText_LaplazGym_MaleCaseyAddressesPlayer
+Hey, [PLAYER].\pI had a feeling I'd find you here.\pRemember when I said I had something\nI needed to do? Time to come\lclean.
+
+#org @gText_LaplazGym_MaleCaseyBackstory
+I'm this gym leader's son. I was born\nand raised here.\pI spent a lot of time at the gym,\ngrowing up. I kinda got sick of it.\pBut not my dad. He loved this\nplace. That is, until he got sick[.]\pYou may already know, but the\ngym leader position gets passed\ldown to family, in Laplaz Town.\pWith my dad out, it fell to me.\pI[.] Couldn't take it.\pHe was so good at it, and people\nloved him.\pI felt stifled by the gym, and\nfigured people wouldn't accept\lme, because I'm not my father[.]\pAnd I, well[.] I left.\pI started my own gym challenge and\nstarted collecting badges.\pI guess I thought I could find my\nplace in this world, if I got them\lall.\pBut really[.] I was just running\naway.
+
+#org @gText_LaplazGym_MaleCaseyCommitment
+As I journeyed around, I ran into\nother challengers.\pPeople like you, [PLAYER].\pAnd, you know what I noticed?\pEach one of them had a drive, this[.]\nspark in them.\pAnd, when they battled, that spark\nerupted into a flame big enough\lfor anyone to see.\pGym challengers are a special\nbreed.\pThey have a passion and a\ndetermination that just stands out.\pAnd, I saw this especially in you,\n[PLAYER].\pSeeing all these trainers giving their\nall[.] It made something clear to\lme.\pThey all had this dream of becoming\nthe greatest trainer in Kulure.\pThat led them to each of the\nregion's gyms, to prove their worth.\pAnd, without my father's badge[.] That\ndream would die, along with that\lspark.\pI couldn't let that happen, not a\nchance.\pBecause[.] Battling those trainers\nreignited that spark in me, too.\pI've made my decision. I will become\nLaplaz Town's gym leader.\pAnd, [PLAYER], I want you to be my\nfirst opponent.\pPlease, battle me, and show me that\nbrilliant spark again.\pI'll be waiting at the podium.
+
+#org @gText_LaplazGym_FemaleCaseyAddressesPlayer
+Hey, [PLAYER].\pI just knew we'd run into each\nother here.\pI realized something when we battled\non Route 11, and now's the right\ltime to talk about it.
+
+#org @gText_LaplazGym_FemaleCaseyBackstory
+You may have heard that the gym\nleader is sick, right?\pWell, the truth is, I'm their\ndaughter.\pI was born and raised here, and\nspent a lot of time in this gym.\pMy dad spent so much time here,\nchallenging trainers that would\lvisit. He wasn't home much.\pI[.] Kinda grew to resent this place.\pThe gym in Laplaz Town isn't like\nothers[.]\pWe pass leadership down through the\nfamily. It simply isn't our way to\lelect someone else as leader.\pYou probably know what that means[.]\nI'm the only one who can lead it.\pIf I don't, the gym will close.\nSimple as that.\pIt was a lot of pressure, and I\ndidn't even like the gym.\pAnd so, when my dad got sick[.]\nI left.\pI started pursuing the gym\nchallenge, trying to get all the\lbadges.\pI don't really know why now. I\nguess[.] I thought I'd go all the\lway and leave Laplaz behind me.\pBut really[.] I was just running\naway from my responsibility.
+
+#org @gText_LaplazGym_FemaleCaseyCommitment
+As I travelled the region, I met\nexceptional trainers. Exceptional\lpeople[.]\pPeople like you, [PLAYER].\pAnd, you know what I noticed?\pAll of them had a dream. A simple\ndream to rise to the top.\pIt was so obvious, too. Everyone on\nthis journey had that same spark.\pThat spark[.] It erupted into a\nbrilliant flame when they battled\lfor their badges.\pThose trainers and their partners\nwere truly exceptional. A rare\lbreed.\pAnd, that spark[.] It shone so\nbrightly in you, [PLAYER].\pSeeing so many trainers giving it\ntheir all for something they\lbelieved in[.]\pIt made me realize something very,\nvery important.\pThe gym challenge drove them all\ntoward chasing their dreams.\pAnd, without my father's badge[.] That\ndream would fade along with that\lspark[.]\pIt became crystal clear what I\nneeded - no, was meant to do.\pBattling those trainers reignited a\nspark in me too, one I let dim.\pPushing those trainers to achieve\ntheir dreams[.] It's what I'm meant\lto do.\pI've made my decision. I will become\nLaplaz Town's gym leader.\pNot by force, mind you. This is\nsomething I want for myself,\lfinally.\pAnd, [PLAYER], I want you to be my\nfirst opponent.\pPlease, battle me, and show me that\nbrilliant spark that only gym\lchallengers have.\pI'll be waiting at the podium.
+
+#org @gText_LaplazGym_LeaderCasey_Talk
+[PLAYER], I'm glad you're here.\pI've fought a lot of incredible\ntrainers during my gym challenge.\pAmong them all, you stood out the\nmost.\p[PLAYER], today I stand before you\nas the Laplaz Town gym leader.\pIt's now my duty to make sure gym\nchallengers can pursue their dream.\pThat means you, too, [PLAYER].\nBut, I won't make it easy for you.
+
+#org @gText_LaplazGym_LeaderCaseyM_Intro
+[PLAYER]! Let's show everyone what\nthe gym challenge is all about!
+
+#org @gText_LaplazGym_LeaderCaseyM_Defeat
+Truly exceptional. That was a battle\nbefitting the Laplaz gym.\pAnd, [PLAYER], thank you[.] For\nshowing me my true purpose.
+
+#org @gText_LaplazGym_LeaderCaseyF_Intro
+Alright, [PLAYER]. Get ready[.]\pI'm going to give this everything\nI've got, and you should too!
+
+#org @gText_LaplazGym_LeaderCaseyF_Defeat
+What a wonderful battle[.]\n[PLAYER], thank you.\pI'm more convinced than ever that\nthis is what I'm meant to do.
+
+#org @gText_LaplazGym_LeaderCasey_BadgeAwarded
+[PLAYER], you've proven yet again\nthat my decision was the right one.\pIt is my duty and my pleasure to\naward you the Tactician Badge.\pPlease, take it with my gratitude.
+
+#org @gText_LaplazGym_BadgeReceived
+[PLAYER] received the Tactician\nBadge!
+
+#org @gText_LaplazGym_LeaderCasey_BadgeDescription
+That badge is proof of your\nachievement today.\pIt's also a symbol of what the gym\nchallenge means to so many.\p[PLAYER], with this badge, Pok\emon up\nto level 65 will obey you.
+
+#org @gText_LaplazGym_LeaderCasey_TMReceived
+Please take this TM as well.\pIt contains Swords Dance, and it's\na favorite of mine.
+
+#org @gText_LaplazGym_TMReceived
+[PLAYER] received TM75!
+
+#org @gText_LaplazGym_LeaderCasey_Chat
+[PLAYER], thank you for such an\nincredible battle.\pMy gym challenge has ended, but\nyours is going strong!\pI'll cheer you on from here.\pI'd better see you face off against\nChampion Selene, someday!\pDon't let me down, okay? And, take\ncare, [PLAYER].

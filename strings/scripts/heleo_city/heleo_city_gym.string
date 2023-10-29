@@ -74,10 +74,10 @@ Yo, superstar! You're making sweet\nprogress on your journey.\pLet me give you s
 Is that the Stormcloud Badge I see,\nsuperstar?\pI should've known you'd overcome\nRaine, just like the leaders\lbefore her.\pThat badge will let you use Rock\nSmash outside of battle. I'm sure\lit will help you during your\ltravels.\pGood luck, superstar. I'll catch you\nat the next gym.
 
 #org @gText_HeleoGym_Winners
-Heleo City Gym:\nVictors: Casey, [RIVAL]
+Heleo City Gym\nVictors: Casey, [RIVAL]
 
 #org @gText_HeleoGym_WinnersWithBadge
-Heleo City Gym:\nVictors: Casey, [RIVAL], [PLAYER]
+Heleo City Gym\nVictors: Casey, [RIVAL], [PLAYER]
 
 #org @gText_HeleoGym_SlowbroQuestion
 Sloooooowwww?

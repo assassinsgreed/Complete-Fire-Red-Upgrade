@@ -116,10 +116,7 @@ TileScript_Route10_TriggerCaseyBattle_Above:
     checkflag 0x256 @ Battled Casey on Route 10
     if SET _goto End
     lock
-    checkgender
-    compare LASTRESULT 0x0 @ Gender is opposite of player
-    if equal _call SetCaseyFemale
-    if notequal _call SetCaseyMale
+    call SetCaseyGender
     clearflag 0x03D @ Show Casey
     showsprite Casey
     playbgm 0x169 @ Alder encounter

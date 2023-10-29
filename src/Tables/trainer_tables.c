@@ -2534,6 +2534,247 @@ const struct TrainerMonNoItemDefaultMoves sParty_LaplazTown_CoolTrainerVanessa[]
     { .lvl = 1, .species = SPECIES_ROTOM }
 };
 
+const struct TrainerMonNoItemCustomMoves sParty_LaplazTownGym_PsychicJeremiah[] = {
+    {
+        .lvl = 41,
+        .species = SPECIES_FALINKS,
+        .moves = {
+            MOVE_BULKUP,
+            MOVE_ROCKSMASH,
+            MOVE_NORETREAT,
+            MOVE_HEADBUTT
+        },
+        .ability = Ability_Hidden // Defiant
+    },
+    {
+        .lvl = 41,
+        .species = SPECIES_EMOLGA,
+        .moves = {
+            MOVE_ELECTROBALL,
+            MOVE_AGILITY,
+            MOVE_CHARGE,
+            MOVE_ACROBATICS
+        },
+        .ability = Ability_1 // Static
+    }
+};
+
+const struct TrainerMonNoItemCustomMoves sParty_LaplazTownGym_PicnickerExie[] = {
+    {
+        .lvl = 40,
+        .species = SPECIES_TORRACAT,
+        .moves = {
+            MOVE_FAKEOUT,
+            MOVE_SWORDSDANCE,
+            MOVE_FLAMECHARGE,
+            MOVE_PARTINGSHOT
+        },
+        .ability = Ability_Hidden // Intimidate
+    },
+    {
+        .lvl = 40,
+        .species = SPECIES_SABLEYE,
+        .moves = {
+            MOVE_SWAGGER,
+            MOVE_FOULPLAY,
+            MOVE_KNOCKOFF,
+            MOVE_SHADOWSNEAK
+        },
+        .ability = Ability_Hidden // Prankster
+    },
+    {
+        .lvl = 40,
+        .species = SPECIES_ORBEETLE,
+        .moves = {
+            MOVE_STICKYWEB,
+            MOVE_CALMMIND,
+            MOVE_PSYBEAM,
+            MOVE_STRUGGLEBUG
+        },
+        .ability = Ability_2 // Frisk
+    }
+};
+
+const struct TrainerMonNoItemCustomMoves sParty_LaplazTownGym_ChannelerVirginia[] = {
+    {
+        .lvl = 40,
+        .species = SPECIES_JANGMO_O,
+        .moves = {
+            MOVE_SCREECH,
+            MOVE_DRAGONDANCE,
+            MOVE_HEADBUTT,
+            MOVE_SCALESHOT
+        },
+        .ability = Ability_1 // Bulletproof
+    },
+    {
+        .lvl = 40,
+        .species = SPECIES_CENTISKORCH,
+        .moves = {
+            MOVE_COIL,
+            MOVE_BUGBITE,
+            MOVE_SMOKESCREEN,
+            MOVE_FIRELASH
+        },
+        .ability = Ability_2 // White Smoke
+    },
+    {
+        .lvl = 41,
+        .species = SPECIES_BASTIODON,
+        .moves = {
+            MOVE_IRONDEFENSE,
+            MOVE_ANCIENTPOWER,
+            MOVE_METALSOUND,
+            MOVE_HEADBUTT
+        },
+        .ability = Ability_1 // STurdy
+    }
+};
+
+const struct TrainerMonNoItemCustomMoves sParty_LaplazTownGym_LadyNisha[] = {
+    {
+        .lvl = 43,
+        .species = SPECIES_SCOLIPEDE,
+        .moves = {
+            MOVE_DEFENSECURL,
+            MOVE_ROLLOUT,
+            MOVE_SCREECH,
+            MOVE_POISONTAIL
+        },
+        .ability = Ability_Hidden // Speed Boost
+    }
+};
+
+const struct TrainerMonNoItemCustomMoves sParty_LaplazTownGym_ScientistKent[] = {
+    {
+        .lvl = 40,
+        .species = SPECIES_SNORUNT,
+        .moves = {
+            MOVE_ICYWIND,
+            MOVE_PROTECT,
+            MOVE_ASTONISH,
+            MOVE_LEER
+        },
+        .ability = Ability_Hidden // Moody
+    },
+    {
+        .lvl = 40,
+        .species = SPECIES_BINACLE,
+        .moves = {
+            MOVE_SHELLSMASH,
+            MOVE_ANCIENTPOWER,
+            MOVE_SLASH,
+            MOVE_WATERGUN
+        },
+        .ability = Ability_1 // Tough Claws
+    },
+    {
+        .lvl = 40,
+        .species = SPECIES_SALANDIT,
+        .moves = {
+            MOVE_NASTYPLOT,
+            MOVE_EMBER,
+            MOVE_OVERHEAT,
+            MOVE_POISONFANG
+        },
+        .ability = Ability_Hidden // Oblivious
+    },
+    {
+        .lvl = 41,
+        .species = SPECIES_MUK_A,
+        .moves = {
+            MOVE_MINIMIZE,
+            MOVE_ACIDARMOR,
+            MOVE_TOXIC,
+            MOVE_MUDSHOT
+        },
+        .ability = Ability_1 // Poison Touch
+    }
+};
+
+const struct TrainerMonNoItemCustomMoves sParty_LaplazTownGym_RockerTomas[] = {
+    {
+        .lvl = 41,
+        .species = SPECIES_BIBAREL,
+        .moves = {
+            MOVE_AMNESIA,
+            MOVE_CURSE,
+            MOVE_SUPERFANG,
+            MOVE_WATERPULSE
+        },
+        .ability = Ability_1 // Simple
+    },
+    {
+        .lvl = 41,
+        .species = SPECIES_WHIMSICOTT,
+        .moves = {
+            MOVE_COTTONGUARD,
+            MOVE_TAILWIND,
+            MOVE_SUBSTITUTE,
+            MOVE_GIGADRAIN
+        },
+        .ability = Ability_1 // Prankster
+    },
+    {
+        .lvl = 42,
+        .species = SPECIES_QUILLADIN,
+        .moves = {
+            MOVE_BELLYDRUM,
+            MOVE_NEEDLEARM,
+            MOVE_BITE,
+            MOVE_LEECHSEED
+        },
+        .ability = Ability_1 // Overgrow
+    }
+};
+
+const struct TrainerMonItemCustomMoves sParty_LaplazTownGym_LeaderCasey[] = {
+    {
+        .lvl = 42,
+        .species = SPECIES_NINJASK,
+        .moves = {
+            MOVE_XSCISSOR,
+            MOVE_BATONPASS,
+            MOVE_PROTECT,
+            MOVE_SWORDSDANCE
+        },
+        .ability = Ability_1 // Speed Boost
+    },
+    {
+        .lvl = 42,
+        .species = SPECIES_SCRAGGY,
+        .moves = {
+            MOVE_POWERUPPUNCH,
+            MOVE_SNARL,
+            MOVE_DRAINPUNCH,
+            MOVE_DRAGONDANCE
+        },
+        .ability = Ability_Hidden // Intimidate
+    },
+    {
+        .lvl = 43,
+        .species = SPECIES_BEHEEYEM,
+        .moves = {
+            MOVE_CALMMIND,
+            MOVE_STOREDPOWER,
+            MOVE_MIRACLEEYE,
+            MOVE_THUNDERBOLT
+        },
+        .ability = Ability_2 // Synchronize 
+    },
+    {
+        .lvl = 44,
+        .species = SPECIES_KINGDRA,
+        .moves = {
+            MOVE_FOCUSENERGY,
+            MOVE_SCALD,
+            MOVE_TWISTER,
+            MOVE_ICYWIND
+        },
+        .ability = Ability_2 // Sniper
+    }
+};
+
 // #endregion
 
 // #endregion
@@ -5298,6 +5539,102 @@ const struct Trainer gTrainers[] = {
         .partySize = NELEMS(sParty_LaplazTown_CoolTrainerVanessa),
         .party = {.NoItemDefaultMoves = sParty_LaplazTown_CoolTrainerVanessa}
     },
+    [TRAINER_LAPLAZ_GYM_JEREMIAH] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .trainerClass = CLASS_PSYCHIC,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_PSYCHIC_M,
+        .trainerName = {_J, _e, _r, _e, _m, _i, _a, _h, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_SETUP_FIRST_TURN,
+        .partySize = NELEMS(sParty_LaplazTownGym_PsychicJeremiah),
+        .party = {.NoItemCustomMoves = sParty_LaplazTownGym_PsychicJeremiah}
+    },
+    [TRAINER_LAPLAZ_GYM_EXIE] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .trainerClass = CLASS_PICNICKER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .trainerPic = TRAINER_PIC_PICNICKER,
+        .trainerName = {_E, _x, _i, _e, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_SETUP_FIRST_TURN,
+        .partySize = NELEMS(sParty_LaplazTownGym_PicnickerExie),
+        .party = {.NoItemCustomMoves = sParty_LaplazTownGym_PicnickerExie}
+    },
+    [TRAINER_LAPLAZ_GYM_VIRGINIA] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .trainerClass = CLASS_CHANNELER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_CHANNELER,
+        .trainerName = {_V, _i, _r, _g, _i, _n, _i, _a, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_SETUP_FIRST_TURN,
+        .partySize = NELEMS(sParty_LaplazTownGym_ChannelerVirginia),
+        .party = {.NoItemCustomMoves = sParty_LaplazTownGym_ChannelerVirginia}
+    },
+    [TRAINER_LAPLAZ_GYM_NISHA] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .trainerClass = CLASS_LADY,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .trainerPic = TRAINER_PIC_RS_LADY,
+        .trainerName = {_N, _i, _s, _h, _a, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_SETUP_FIRST_TURN,
+        .partySize = NELEMS(sParty_LaplazTownGym_LadyNisha),
+        .party = {.NoItemCustomMoves = sParty_LaplazTownGym_LadyNisha}
+    },
+    [TRAINER_LAPLAZ_GYM_KENT] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .trainerClass = CLASS_SCIENTIST,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_SCIENTIST_M,
+        .trainerName = {_K, _e, _n, _t, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_SETUP_FIRST_TURN,
+        .partySize = NELEMS(sParty_LaplazTownGym_ScientistKent),
+        .party = {.NoItemCustomMoves = sParty_LaplazTownGym_ScientistKent}
+    },
+    [TRAINER_LAPLAZ_GYM_TOMAS] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .trainerClass = CLASS_ROCKER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
+        .trainerPic = TRAINER_PIC_GUITARIST,
+        .trainerName = {_T, _o, _m, _a, _s, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_SETUP_FIRST_TURN,
+        .partySize = NELEMS(sParty_LaplazTownGym_RockerTomas),
+        .party = {.NoItemCustomMoves = sParty_LaplazTownGym_RockerTomas}
+    },
+    [TRAINER_LAPLAZ_GYM_LEADER_CASEY_F] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_LEADER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_CASEY_F,
+        .trainerName = {_C, _a, _s, _e, _y, _END},
+        .items = { ITEM_HYPER_POTION },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_SETUP_FIRST_TURN | AI_SCRIPT_SEMI_SMART,
+        .partySize = NELEMS(sParty_LaplazTownGym_LeaderCasey),
+        .party = {.ItemCustomMoves = sParty_LaplazTownGym_LeaderCasey}
+    },
+    [TRAINER_LAPLAZ_GYM_LEADER_CASEY_M] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_LEADER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_CASEY_M,
+        .trainerName = {_C, _a, _s, _e, _y, _END},
+        .items = { ITEM_HYPER_POTION },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_SETUP_FIRST_TURN | AI_SCRIPT_SEMI_SMART,
+        .partySize = NELEMS(sParty_LaplazTownGym_LeaderCasey),
+        .party = {.ItemCustomMoves = sParty_LaplazTownGym_LeaderCasey}
+    }
     // #endregion
     // #endregion
 };

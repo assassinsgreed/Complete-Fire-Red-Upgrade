@@ -133,7 +133,7 @@
 #define VAR_MAP_SCENE_ROUTE_3_AND_RUBARR_EVENTS                                0x4057
 #define VAR_MAP_SCENE_DAIMYN_CITY_GYM                                          0x4058
 #define VAR_MAP_SCENE_ROUTE_11_PLUTO_ENCOUNTER                                 0x4059
-#define VAR_MAP_SCENE_VIRIDIAN_CITY_GYM_DOOR                                   0x405A
+#define VAR_MAP_SCENE_LAPLAZ_GYM_CASEY_EVENT                                   0x405A
 #define VAR_MAP_SCENE_S_S_ANNE_2F_CORRIDOR                                     0x405B
 #define VAR_MAP_SCENE_SILPH_CO_7F                                              0x405C
 #define VAR_MAP_SCENE_POKEMON_TOWER_2F                                         0x405D
