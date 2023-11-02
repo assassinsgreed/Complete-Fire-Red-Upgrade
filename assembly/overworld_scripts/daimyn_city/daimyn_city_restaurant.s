@@ -273,10 +273,15 @@ CalculateAndPresentMealCost:
     pause DELAY_1SECOND
     hidemoney
     msgbox gText_Restaurant_PaidForMeal MSG_NORMAL
+    fadescreen FADEOUT_BLACK
+    playse 0x1 @ Use item
+    msgbox gText_Restaurant_PokemonEnjoyMeal MSG_NORMAL
+	waitse
+    fadescreen FADEIN_BLACK
     call HandlePurchase
     call HandleDuration
     call SetMealStatBuffVariables
-    return
+    goto FinishMeal
 
 HandlePurchase:
     copyvar MathNum1Var 0x8004
@@ -290,7 +295,6 @@ HandlePurchase:
 MoneyAboveNextThreshold:
     compare RestaurantMoneyNextVar 0x0
     if equal _goto Return
-
     compare RestaurantMoneyTotalVar 0xC350 @ 50,000
     if greaterorequal _goto MoneyAboveFinalThreshold
     compare RestaurantMoneyTotalVar 0x7530 @ 30,000

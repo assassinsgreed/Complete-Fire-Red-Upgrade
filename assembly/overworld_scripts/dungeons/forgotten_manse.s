@@ -101,7 +101,7 @@ TileScript_ForgottenManseExterior_FrontDoor:
     checkitem ITEM_MANSE_KEY 0x1
     compare LASTRESULT TRUE
     if equal _goto OpenDoor
-    pause 0x14
+    pause 0x10
     msgbox gText_DoorIsLocked MSG_NORMAL
     applymovement PLAYER m_WalkDown
     waitmovement ALLEVENTS
@@ -111,7 +111,7 @@ TileScript_ForgottenManseExterior_FrontDoor:
 OpenDoor:
     playse 0x8 @ Door opening
     waitse
-    pause 0x14
+    pause 0x10
     goto SetDoorOpen
 
 SetDoorOpen:
@@ -131,7 +131,7 @@ TileScript_ForgottenManse1F_StorageDoor:
     checkitem ITEM_STORAGE_KEY 0x1
     compare LASTRESULT TRUE
     if equal _goto OpenDoorInterior
-    pause 0x14
+    pause 0x10
     msgbox gText_DoorIsLocked MSG_NORMAL
     applymovement PLAYER m_WalkDown
     waitmovement ALLEVENTS
@@ -141,7 +141,7 @@ TileScript_ForgottenManse1F_StorageDoor:
 OpenDoorInterior:
     playse 0x8 @ Door opening
     waitse
-    pause 0x14
+    pause 0x10
     goto SetDoorOpenInterior
 
 SetDoorOpenInterior:

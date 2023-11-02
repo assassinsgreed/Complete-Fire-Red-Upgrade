@@ -516,9 +516,9 @@ VitaminsShop:
     .hword ITEM_HP_UP
     .hword ITEM_PROTEIN
     .hword ITEM_IRON
-    .hword ITEM_CARBOS
     .hword ITEM_CALCIUM
     .hword ITEM_ZINC
+    .hword ITEM_CARBOS
     .hword ITEM_PP_UP
     .hword ITEM_NONE
 
