@@ -159,7 +159,7 @@ Choice Band[ALIGN][65]2,500
 Choice Specs[ALIGN][65]2,500
 
 #org @gText_ItemExchange_ChoiceScarf
-ChoiceScarf[ALIGN][65]2,500
+Choice Scarf[ALIGN][65]2,500
 
 #org @gText_ItemExchange_Leftovers
 Leftovers[ALIGN][65]3,000

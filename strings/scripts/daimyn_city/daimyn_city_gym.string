@@ -29,7 +29,7 @@ Neither
 [BLUE]Wahahaha! Well, you certainly won't\nbe left wanting, in a place like\lthis!
 
 #org @gText_DaimynCityGym_Cutscene_PlayerChoseNeither
-[BLUE]Wahahaha! Keeping your reasons close\nto your chest, eh? I respect that!
+[BLUE]Wahahaha! Keeping your cards close\nto your chest, eh? I respect that!
 
 #org @gText_DaimynCityGym_Cutscene_ChanceLeadsPlayerToDeskMan
 [BLUE]Well, no matter your reason for\ncoming here, you'll need a Coin\lCase.\pCome with me. I'm friends with the\nowner and can hook you up!
@@ -56,7 +56,7 @@ Neither
 [BLUE]Here, you may store these in your\nCoin Case.
 
 #org @gText_DaimynCityGym_Cutscene_DeskManExplainsCoins
-[BLUE]Furthermore, you may be wondering\nhow coins work at this\lestablishment. Allow me to\lelaborate.\pCoins may be purchased from me for\n\$10 each. I'll cut you a deal if\lyou buy more than 65,530 at a\ltime.\pIf you have run out completely and\ncannot afford more, I will give you\l10, on the house.
+[BLUE]Furthermore, you may be wondering\nhow coins work at this\lestablishment. Allow me to\lelaborate.\pCoins may be purchased from me for\n\$10 each.\pIf you have run out completely and\ncannot afford more, I will give you\l10, on the house.
 
 #org @gText_DaimynCityGym_Cutscene_DeskManExplainsPrizes
 [BLUE]To your left, you will find our prize\ncorner. You may exchange your\lcoins there for exciting prizes.\pThese prizes include rare Pok\emon,\nas well as hard to find items.
