@@ -52,9 +52,6 @@ Some Pok\emon only appear during\ncertain times of day.\pFor example, you'll onl
 #org @gText_VarisiForest_FriendlyTrainer
 Oh, you're going on an adventure with\nyour friend? How nice! Make sure\lyou enjoy it.
 
-#org @gText_VarisiForest_FoongusEncounter
-The item was actually a Pok\emon!\nThe startled Pok\emon attacked!
-
 #org @gText_VarisiForest_AntidoteSign
 Warning! Poison type Pok\emon inhabit\nVarisi Forest. Bring antidotes\lbefore passing through.
 

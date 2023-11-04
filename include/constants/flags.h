@@ -490,15 +490,15 @@
 #define FLAG_HIDE_ROUTE11_NORTH_RED_CARD                        0x1E0
 #define FLAG_HIDE_ROUTE11_NORTH_TM47_LOW_SWEEP                  0x1E1
 #define FLAG_HIDE_LAPLAZ_TOWN_LAGGING_TAIL                      0x1E2
-#define FLAG_HIDE_SIX_ISLAND_WATER_PATH_DRAGON_SCALE            0x1E3
-#define FLAG_HIDE_SIX_ISLAND_RUIN_VALLEY_FULL_RESTORE           0x1E4
-#define FLAG_HIDE_SIX_ISLAND_RUIN_VALLEY_HP_UP                  0x1E5
-#define FLAG_HIDE_SIX_ISLAND_RUIN_VALLEY_SUN_STONE              0x1E6
-#define FLAG_HIDE_SEVEN_ISLAND_SEVAULT_CANYON_KINGS_ROCK        0x1E7
-#define FLAG_HIDE_SEVEN_ISLAND_SEVAULT_CANYON_MAX_ELIXIR        0x1E8
-#define FLAG_HIDE_SEVEN_ISLAND_SEVAULT_CANYON_NUGGET            0x1E9
-#define FLAG_HIDE_THREE_ISLAND_BERRY_FOREST_MAX_ETHER           0x1EA
-#define FLAG_HIDE_THREE_ISLAND_BERRY_FOREST_FULL_HEAL           0x1EB
+#define FLAG_HIDE_PERADON_FOREST_BLACK_SLUDGE                   0x1E3
+#define FLAG_HIDE_PERADON_FOREST_HYPER_POTION                   0x1E4
+#define FLAG_HIDE_PERADON_FOREST_HERACRONITE                    0x1E5
+#define FLAG_HIDE_PERADON_FOREST_LEAF_STONE                     0x1E6
+#define FLAG_HIDE_PERADON_FOREST_TM86_GRASS_KNOT                0x1E7
+#define FLAG_HIDE_PERADON_FOREST_TM81_X_SCISSOR                 0x1E8
+#define FLAG_HIDE_PERADON_FOREST_FULL_RESTORE                   0x1E9
+#define FLAG_HIDE_PERADON_FOREST_POKE_DOLL                      0x1EA
+#define FLAG_HIDE_PERADON_FOREST_MAX_ELIXIR                     0x1EB
 #define FLAG_HIDE_THREE_ISLAND_BERRY_FOREST_MAX_ELIXIR          0x1EC
 #define FLAG_HIDE_MT_EMBER_EXTERIOR_ULTRA_BALL                  0x1ED
 #define FLAG_HIDE_MT_EMBER_EXTERIOR_FIRE_STONE                  0x1EE
@@ -1125,30 +1125,30 @@
 #define HIDDEN_ITEM_HIDDEN_ITEM_ROUTE11NORTH_HYPER_POTION              96
 #define HIDDEN_ITEM_HIDDEN_ITEM_ROUTE11NORTH_MAX_ETHER                 97
 #define HIDDEN_ITEM_LAPLAZ_TOWN_PP_UP                                  98
-#define HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_ASPEAR_BERRY             99
-#define HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_PERSIM_BERRY            100
-#define HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_PINAP_BERRY             101
-#define HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_LUM_BERRY               102
-#define HIDDEN_ITEM_ONE_ISLAND_TREASURE_BEACH_STARDUST                103
-#define HIDDEN_ITEM_ONE_ISLAND_TREASURE_BEACH_STARDUST_2              104
-#define HIDDEN_ITEM_ONE_ISLAND_TREASURE_BEACH_PEARL                   105
-#define HIDDEN_ITEM_ONE_ISLAND_TREASURE_BEACH_PEARL_2                 106
-#define HIDDEN_ITEM_ONE_ISLAND_TREASURE_BEACH_ULTRA_BALL              107
-#define HIDDEN_ITEM_ONE_ISLAND_TREASURE_BEACH_ULTRA_BALL_2            108
-#define HIDDEN_ITEM_ONE_ISLAND_TREASURE_BEACH_STAR_PIECE              109
-#define HIDDEN_ITEM_ONE_ISLAND_TREASURE_BEACH_BIG_PEARL               110
-#define HIDDEN_ITEM_TWO_ISLAND_CAPE_BRINK_RARE_CANDY                  111
-#define HIDDEN_ITEM_PEWTER_CITY_POKE_BALL                             112
-#define HIDDEN_ITEM_ROUTE3_ORAN_BERRY                                 113
-#define HIDDEN_ITEM_ROUTE4_PERSIM_BERRY                               114
-#define HIDDEN_ITEM_ROUTE24_PECHA_BERRY                               115
-#define HIDDEN_ITEM_ROUTE25_ORAN_BERRY                                116
-#define HIDDEN_ITEM_ROUTE25_BLUK_BERRY                                117
-#define HIDDEN_ITEM_ROUTE6_SITRUS_BERRY                               118
-#define HIDDEN_ITEM_ROUTE6_RARE_CANDY                                 119
-#define HIDDEN_ITEM_SSANNE_KITCHEN_PECHA_BERRY                        120
-#define HIDDEN_ITEM_SSANNE_KITCHEN_CHERI_BERRY                        121
-#define HIDDEN_ITEM_SSANNE_KITCHEN_CHESTO_BERRY                       122
+#define HIDDEN_ITEM_PERADON_FOREST_HONDEW_BERRY                        99
+#define HIDDEN_ITEM_PERADON_FOREST_POMEG_BERRY                        100
+#define HIDDEN_ITEM_PERADON_FOREST_RARE_CANDY                         101
+#define HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_LUM_BERRY               102 // For some reason, cannot be picked up
+#define HIDDEN_ITEM_ONE_ISLAND_TREASURE_BEACH_STARDUST                103 // For some reason, cannot be picked up
+#define HIDDEN_ITEM_ONE_ISLAND_TREASURE_BEACH_STARDUST_2              104 // For some reason, cannot be picked up
+#define HIDDEN_ITEM_ONE_ISLAND_TREASURE_BEACH_PEARL                   105 // For some reason, cannot be picked up
+#define HIDDEN_ITEM_ONE_ISLAND_TREASURE_BEACH_PEARL_2                 106 // For some reason, cannot be picked up
+#define HIDDEN_ITEM_ONE_ISLAND_TREASURE_BEACH_ULTRA_BALL              107 // For some reason, cannot be picked up
+#define HIDDEN_ITEM_ONE_ISLAND_TREASURE_BEACH_ULTRA_BALL_2            108 // For some reason, cannot be picked up
+#define HIDDEN_ITEM_ONE_ISLAND_TREASURE_BEACH_STAR_PIECE              109 // For some reason, cannot be picked up
+#define HIDDEN_ITEM_ONE_ISLAND_TREASURE_BEACH_BIG_PEARL               110 // For some reason, cannot be picked up
+#define HIDDEN_ITEM_PERADON_FOREST_SITRUS_BERRY                       111
+#define HIDDEN_ITEM_PERADON_FOREST_REVIVE                             112
+#define HIDDEN_ITEM_PERADON_FOREST_BIG_MUSHROOM                       113
+#define HIDDEN_ITEM_PERADON_FOREST_ORAN_BERRY                         114
+#define HIDDEN_ITEM_PERADON_FOREST_GREAT_BALL                         115
+#define HIDDEN_ITEM_PERADON_FOREST_THREE_SITRUS_BERRIES               116
+#define HIDDEN_ITEM_PERADON_FOREST_ETHER                              117
+#define HIDDEN_ITEM_PERADON_FOREST_PECHA_BERRY                        118
+#define HIDDEN_ITEM_PERADON_FOREST_SUPER_REPEL                        119
+#define HIDDEN_ITEM_PERADON_FOREST_KELPSY_BERRY                       120
+#define HIDDEN_ITEM_PERADON_FOREST_CHERI_BERRY                        121
+#define HIDDEN_ITEM_PERADON_FOREST_BIG_MUSHROOM                       122
 #define HIDDEN_ITEM_ROUTE9_RARE_CANDY                                 123
 #define HIDDEN_ITEM_UNUSED_0x7C                                       124
 #define HIDDEN_ITEM_ROUTE10_PERSIM_BERRY                              125
@@ -1335,6 +1335,11 @@ Daily Flags, cleared at the start of each day.  Goes up to 0xEFF
 #define FLAG_DAIMYN_CITY_DAILY_DEAL_BOUGHT    0xE10
 #define FLAG_LAPLAZ_TOWN_APRICORN_BALL_BOUGHT 0xE11
 #define FLAG_LAPLAZ_TOWN_TRAINER_HOUSE        0xE12
+#define FLAG_PERADON_FOREST_AMOONGUSS_1       0xE13
+#define FLAG_PERADON_FOREST_AMOONGUSS_2       0xE14
+#define FLAG_PERADON_FOREST_AMOONGUSS_3       0xE15
+#define FLAG_PERADON_FOREST_AMOONGUSS_4       0xE16
+#define FLAG_PERADON_FOREST_AMOONGUSS_5       0xE17
 */
 
 #define FLAG_TRAINER_FLAG_START 0x500

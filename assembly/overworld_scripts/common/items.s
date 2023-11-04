@@ -46,6 +46,11 @@ ItemScript_Common_FullHeal:
     finditem ITEM_FULL_HEAL 0x1
     end
 
+.global ItemScript_Common_FullResore
+ItemScript_Common_FullResore:
+    finditem ITEM_FULL_RESTORE 0x1
+    end
+
 .global ItemScript_Common_FreshWater
 ItemScript_Common_FreshWater:
     finditem ITEM_FRESH_WATER 0x1
@@ -76,6 +81,11 @@ ItemScript_Common_SuperRepel:
     finditem ITEM_SUPER_REPEL 0x1
     end
 
+.global ItemScript_Common_PokeDoll
+ItemScript_Common_PokeDoll:
+    finditem ITEM_POKE_DOLL 0x1
+    end
+
 .global ItemScript_Common_EscapeRope
 ItemScript_Common_EscapeRope:
     finditem ITEM_ESCAPE_ROPE 0x1
@@ -99,6 +109,11 @@ ItemScript_Common_Nugget:
 .global ItemScript_Common_FireStone
 ItemScript_Common_FireStone:
     finditem ITEM_FIRE_STONE 0x1
+    end
+
+.global ItemScript_Common_LeafStone
+ItemScript_Common_LeafStone:
+    finditem ITEM_LEAF_STONE 0x1
     end
 
 .global ItemScript_Common_SunStone
@@ -390,4 +405,9 @@ ItemScript_Common_LaggingTail:
 .global ItemScript_Common_DragonScale
 ItemScript_Common_DragonScale:
     finditem ITEM_DRAGON_SCALE 0x1
+    end
+
+.global ItemScript_Common_BlackSludge
+ItemScript_Common_BlackSludge:
+    finditem ITEM_BLACK_SLUDGE 0x1
     end

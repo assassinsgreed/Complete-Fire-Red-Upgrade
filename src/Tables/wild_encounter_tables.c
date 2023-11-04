@@ -131,13 +131,30 @@ const struct WildPokemon gRoute11North_LandMonsNight[] =
 	{29, 32, SPECIES_STUNFISK_G}
 };
 
-const struct WildPokemonInfo gVarisiForest_LandMonsNightInfo = {21, gVarisiForest_LandMonsNight};
-const struct WildPokemonInfo gRubarrDesert_LandMonsNightInfo = {5, gRubarrDesert_LandMonsNight};
+const struct WildPokemon gPeradonForest_LandMonsNight[] =
+{
+	{33, 36, SPECIES_JOLTIK},
+	{33, 37, SPECIES_PHANTUMP},
+	{32, 35, SPECIES_SHIINOTIC},
+	{33, 36, SPECIES_VIGOROTH},
+	{32, 37, SPECIES_MANKEY},
+	{34, 37, SPECIES_TRUMBEAK},
+	{33, 36, SPECIES_SUDOWOODO},
+	{33, 36, SPECIES_LOPUNNY},
+	{33, 37, SPECIES_NOCTOWL},
+	{34, 37, SPECIES_HERACROSS},
+	{34, 37, SPECIES_NOCTOWL}, 
+	{33, 36, SPECIES_HERACROSS}
+};
+
+const struct WildPokemonInfo gVarisiForest_LandMonsNightInfo = {14, gVarisiForest_LandMonsNight};
+const struct WildPokemonInfo gRubarrDesert_LandMonsNightInfo = {3, gRubarrDesert_LandMonsNight};
 const struct WildPokemonInfo gHeleoRanch_LandMonsNightInfo = {21, gHeleoRanch_LandMonsNight};
 const struct WildPokemonInfo gForgottenManseExterior_LandMonsNightInfo = {21, gForgottenManseExterior_LandMonsNight};
 const struct WildPokemonInfo gDaimynCity_LandMonsNightInfo = {21, gDaimynCity_LandMonsNight};
 const struct WildPokemonInfo gRoute10Cave_LandMonsNightInfo = {5, gRoute10Cave_LandMonsNight};
 const struct WildPokemonInfo gRoute11North_LandMonsNightInfo = {21, gRoute11North_LandMonsNight};
+const struct WildPokemonInfo gPeradonForest_LandMonsNightInfo = {14, gPeradonForest_LandMonsNight};
 
 const struct WildPokemonHeader gWildMonMorningHeaders[] =
 {
@@ -211,6 +228,22 @@ const struct WildPokemonHeader gWildMonEveningHeaders[] =
 		.fishingMonsInfo = NULL,
 	},
 	{
+		.mapGroup = MAP_GROUP(PERADON_FOREST_NORTH),
+		.mapNum = MAP_NUM(PERADON_FOREST_NORTH),
+		.landMonsInfo = &gPeradonForest_LandMonsNightInfo,
+		.waterMonsInfo = NULL,
+		.rockSmashMonsInfo = NULL,
+		.fishingMonsInfo = NULL,
+	},
+	{
+		.mapGroup = MAP_GROUP(PERADON_FOREST_SOUTH),
+		.mapNum = MAP_NUM(PERADON_FOREST_SOUTH),
+		.landMonsInfo = &gPeradonForest_LandMonsNightInfo,
+		.waterMonsInfo = NULL,
+		.rockSmashMonsInfo = NULL,
+		.fishingMonsInfo = NULL,
+	},
+	{
 		.mapGroup = 0xFF,
 		.mapNum = 0xFF,
 		.landMonsInfo = NULL,
@@ -266,6 +299,30 @@ const struct WildPokemonHeader gWildMonNightHeaders[] =
 		.mapGroup = MAP_GROUP(ROUTE10_CAVE),
 		.mapNum = MAP_NUM(ROUTE10_CAVE),
 		.landMonsInfo = &gRoute10Cave_LandMonsNightInfo,
+		.waterMonsInfo = NULL,
+		.rockSmashMonsInfo = NULL,
+		.fishingMonsInfo = NULL,
+	},
+	{
+		.mapGroup = MAP_GROUP(ROUTE_11_NORTH),
+		.mapNum = MAP_NUM(ROUTE_11_NORTH),
+		.landMonsInfo = &gRoute11North_LandMonsNightInfo,
+		.waterMonsInfo = NULL,
+		.rockSmashMonsInfo = NULL,
+		.fishingMonsInfo = NULL,
+	},
+	{
+		.mapGroup = MAP_GROUP(PERADON_FOREST_NORTH),
+		.mapNum = MAP_NUM(PERADON_FOREST_NORTH),
+		.landMonsInfo = &gPeradonForest_LandMonsNightInfo,
+		.waterMonsInfo = NULL,
+		.rockSmashMonsInfo = NULL,
+		.fishingMonsInfo = NULL,
+	},
+	{
+		.mapGroup = MAP_GROUP(PERADON_FOREST_SOUTH),
+		.mapNum = MAP_NUM(PERADON_FOREST_SOUTH),
+		.landMonsInfo = &gPeradonForest_LandMonsNightInfo,
 		.waterMonsInfo = NULL,
 		.rockSmashMonsInfo = NULL,
 		.fishingMonsInfo = NULL,
