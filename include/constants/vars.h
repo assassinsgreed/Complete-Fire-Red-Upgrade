@@ -20,7 +20,7 @@
 #define VAR_TEMP_C                          0x400C
 #define VAR_TEMP_D                          0x400D
 #define VAR_TEMP_E                          0x400E
-#define VAR_TEMP_F                          0x400F
+#define VAR_DEX_NAV_SEARCH_TARGET           0x400F
 
 // Object event graphics IDs which can be changed by
 // script commands.

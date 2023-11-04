@@ -19,15 +19,15 @@ MapEntryScript_Route8_SetWeather:
 
 .global TileScript_Route8_ClearWeather
 TileScript_Route8_ClearWeather:
-    setvar 0x400F 0x0 @ Enable weather setting again
+    setvar 0x400E 0x0 @ Enable weather setting again
     call SetWeatherClear
     End
 
 .global TileScript_Route8_SetWeather
 TileScript_Route8_SetWeather:
-    compare 0x400F 0x1
+    compare 0x400E 0x1
     if equal _goto End
-    setvar 0x400F 0x1 @ Prevent future weather until var is cleared
+    setvar 0x400E 0x1 @ Prevent future weather until var is cleared
     call SetWeatherFog
     random 0x64 @ Between 0 and 100
     compare LASTRESULT 0xF @ "15"
