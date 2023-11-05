@@ -400,6 +400,98 @@
         },
         {
             "mapgroup": 1,
+            "mapnum": 40,
+            "grass": {
+                "rate": 5,
+                "pokemon": [
+                    { "low": 33, "high": 36, "species": "SPECIES_JOLTIK" },
+                    { "low": 33, "high": 37, "species": "SPECIES_FOONGUS" },
+                    { "low": 32, "high": 35, "species": "SPECIES_FERROSEED" },
+                    { "low": 33, "high": 36, "species": "SPECIES_VIGOROTH" },
+                    { "low": 32, "high": 37, "species": "SPECIES_MANKEY" },
+                    { "low": 34, "high": 37, "species": "SPECIES_TRUMBEAK" },
+                    { "low": 33, "high": 36, "species": "SPECIES_SUDOWOODO" },
+                    { "low": 33, "high": 36, "species": "SPECIES_LOPUNNY" },
+                    { "low": 33, "high": 37, "species": "SPECIES_CORVISQUIRE" },
+                    { "low": 34, "high": 37, "species": "SPECIES_HERACROSS" },
+                    { "low": 34, "high": 37, "species": "SPECIES_CORVISQUIRE" }, 
+                    { "low": 33, "high": 36, "species": "SPECIES_HERACROSS" }
+                ]
+            },
+            "surfing": {
+                "rate": 1,
+                "pokemon": [
+                    { "low": 30, "high": 35, "species": "SPECIES_MAGIKARP" },
+                    { "low": 30, "high": 35, "species": "SPECIES_CORPHISH" },
+                    { "low": 30, "high": 40, "species": "SPECIES_CORPHISH" },
+                    { "low": 30, "high": 40, "species": "SPECIES_CORPHISH" },
+                    { "low": 30, "high": 40, "species": "SPECIES_CORPHISH" }
+                ]
+            },
+            "fishing": {
+                "rate": 20,
+                "pokemon": [
+                    { "low": 30, "high": 35, "species": "SPECIES_MAGIKARP" },
+                    { "low": 30, "high": 35, "species": "SPECIES_CORPHISH" },
+                    { "low": 33, "high": 37, "species": "SPECIES_MAGIKARP" },
+                    { "low": 33, "high": 37, "species": "SPECIES_CORPHISH" },
+                    { "low": 33, "high": 37, "species": "SPECIES_CORPHISH" },
+                    { "low": 40, "high": 45, "species": "SPECIES_CORPHISH" },
+                    { "low": 40, "high": 45, "species": "SPECIES_CRAWDAUNT" },
+                    { "low": 40, "high": 45, "species": "SPECIES_CRAWDAUNT" },
+                    { "low": 40, "high": 45, "species": "SPECIES_MAGIKARP" },
+                    { "low": 40, "high": 45, "species": "SPECIES_MAGIKARP" }
+                ]
+            }
+        },
+        {
+            "mapgroup": 1,
+            "mapnum": 41,
+            "grass": {
+                "rate": 5,
+                "pokemon": [
+                    { "low": 33, "high": 36, "species": "SPECIES_JOLTIK" },
+                    { "low": 33, "high": 37, "species": "SPECIES_FOONGUS" },
+                    { "low": 32, "high": 35, "species": "SPECIES_FERROSEED" },
+                    { "low": 33, "high": 36, "species": "SPECIES_VIGOROTH" },
+                    { "low": 32, "high": 37, "species": "SPECIES_MANKEY" },
+                    { "low": 34, "high": 37, "species": "SPECIES_TRUMBEAK" },
+                    { "low": 33, "high": 36, "species": "SPECIES_SUDOWOODO" },
+                    { "low": 33, "high": 36, "species": "SPECIES_LOPUNNY" },
+                    { "low": 33, "high": 37, "species": "SPECIES_CORVISQUIRE" },
+                    { "low": 34, "high": 37, "species": "SPECIES_HERACROSS" },
+                    { "low": 34, "high": 37, "species": "SPECIES_CORVISQUIRE" }, 
+                    { "low": 33, "high": 36, "species": "SPECIES_HERACROSS" }
+                ]
+            },
+            "surfing": {
+                "rate": 1,
+                "pokemon": [
+                    { "low": 30, "high": 35, "species": "SPECIES_MAGIKARP" },
+                    { "low": 30, "high": 35, "species": "SPECIES_CORPHISH" },
+                    { "low": 30, "high": 40, "species": "SPECIES_CORPHISH" },
+                    { "low": 30, "high": 40, "species": "SPECIES_CORPHISH" },
+                    { "low": 30, "high": 40, "species": "SPECIES_CORPHISH" }
+                ]
+            },
+            "fishing": {
+                "rate": 20,
+                "pokemon": [
+                    { "low": 30, "high": 35, "species": "SPECIES_MAGIKARP" },
+                    { "low": 30, "high": 35, "species": "SPECIES_CORPHISH" },
+                    { "low": 33, "high": 37, "species": "SPECIES_MAGIKARP" },
+                    { "low": 33, "high": 37, "species": "SPECIES_CORPHISH" },
+                    { "low": 33, "high": 37, "species": "SPECIES_CORPHISH" },
+                    { "low": 40, "high": 45, "species": "SPECIES_CORPHISH" },
+                    { "low": 40, "high": 45, "species": "SPECIES_CRAWDAUNT" },
+                    { "low": 40, "high": 45, "species": "SPECIES_CRAWDAUNT" },
+                    { "low": 40, "high": 45, "species": "SPECIES_MAGIKARP" },
+                    { "low": 40, "high": 45, "species": "SPECIES_MAGIKARP" }
+                ]
+            }
+        },
+        {
+            "mapgroup": 1,
             "mapnum": 81,
             "grass": {
                 "rate": 3,

@@ -2316,7 +2316,7 @@ static void RegisterSpecies(u16 species, u8 taskId)
 {
 	// Disable selection if toggled again
 	u16 dexNavSpecies = VarGet(VAR_DEXNAV);
-	if (dexNavSpecies != SPECIES_NONE)
+	if (dexNavSpecies == species)
 	{
 		// Turn off the registered icon and print
 		sDexNavGUIPtr->registeredIconVisible = FALSE;

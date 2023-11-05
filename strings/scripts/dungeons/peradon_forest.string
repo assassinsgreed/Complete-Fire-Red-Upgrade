@@ -1,0 +1,107 @@
+#org @gText_PeradonForest_LaplazExit
+East: Laplaz Town
+
+#org @gText_PeradonForest_LakeLaplazExit
+West: Bruccie Village Rest Stop\nSouth: Lake Laplaz
+
+#org @gText_PeradonForest_LowLevelMoreExpTrainerTips
+Trainer Tips!\pIf a Pok\emon is a significantly\nlower level than it's foe, it will\learn more experience in battle.\pLikewise, if a Pok\emon is a\nsignificantly higher level, it will\learn less.
+
+#org @gText_PeradonForest_PokefanClark_Intro
+Hey, you're a trainer, right? Let's\nbattle!
+
+#org @gText_PeradonForest_PokefanClark_Defeat
+That was a lot of fun!
+
+#org @gText_PeradonForest_PokefanClark_Chat
+You're a good kid. Let me give you\na tip[.]\pSome Pok\emon in Peradon Forest like\nto trick trainers into picking them\lup.\pWatch out for any Pok\eballs that\nlook strange and you'll be okay.
+
+#org @gText_PeradonForest_CollectorFernando_Intro
+I took a trip to the ocean and\ncaught some cool Pok\emon.\pI'll show you in the best way\npossible - a battle!
+
+#org @gText_PeradonForest_CollectorFernando_Defeat
+B-but[.] My Pok\emon were cool, right?
+
+#org @gText_PeradonForest_CollectorFernando_Chat
+My Raichu is very rare.\pI've only seen it appear in the ocean\noccasionally.
+
+#org @gText_PeradonForest_BugCatcherLyle_Intro
+[BLUE]I'm going to thrash you in battle, to\nshow my girlfriend how cool I am.
+
+#org @gText_PeradonForest_BugCatcherLyle_Defeat
+Ugh[.] I hope Erica didn't see that.
+
+#org @gText_PeradonForest_BugCatcherLyle_Chat
+[BLUE]Meh, it's fine that I lost. It was\njust fun enough battling with\lErica.
+
+#org @gText_PeradonForest_BeautyErica_Intro
+[RED]I'm not very good at battling, but\nI'm going to try my best for Lyle.
+
+#org @gText_PeradonForest_BeautyErica_Defeat
+Oh no! I let Lyle down.
+
+#org @gText_PeradonForest_BeautyErica_Chat
+[RED]My boyfriend is really into Pok\emon\nbattles.\pI wanted to try getting into it too,\nto support him.
+
+#org @gText_PeradonForest_PainterSheena_Intro
+Hey, move it! I'm trying to paint\nthat pond behind you.
+
+#org @gText_PeradonForest_PainterSheena_Defeat
+I dropped my paint palette[.]\nWhat a mess.
+
+#org @gText_PeradonForest_PainterSheena_Chat
+I like to paint to destress, but\nbattles work me up again.
+
+#org @gText_PeradonForest_CamperRupert_Intro
+I've been camping with my Pok\emon\nsince it was a baby.\pThere's no way you can beat it!
+
+#org @gText_PeradonForest_CamperRupert_Defeat
+What happened? Venusaur is supposed\nto be unbeatable.
+
+#org @gText_PeradonForest_CamperRupert_Chat
+Camping with my Pok\emon makes it\neven more fun.
+
+#org @gText_PeradonForest_ScientistSean_Intro
+Ehehehe[.] I've formed a perfect\nPok\emon team. See it and weep!
+
+#org @gText_PeradonForest_ScientistSean_Defeat
+I'm the one that'll be weeping\ntoday[.]
+
+#org @gText_PeradonForest_ScientistSean_Chat
+I need to focus on why I lost, to\nmake my team even better.
+
+#org @gText_PeradonForest_RockerRaphael_Intro
+This quiet forest[.] It calls for a\nsoothing lullaby.\pBut, that is not my style. Let's rock!
+
+#org @gText_PeradonForest_RockerRaphael_Defeat
+I should have played a lullaby\nafter all.
+
+#org @gText_PeradonForest_RockerRaphael_Chat
+My instruments echo throughout the\nforest.\pThe sound is quite inspiring.
+
+#org @gText_PeradonForest_ChanellerRenee_Intro
+My soul[.] I have given it to the\nspirits of the forest.
+
+#org @gText_PeradonForest_ChanellerRenee_Defeat
+The spirits[.] are displeased with me.
+
+#org @gText_PeradonForest_ChanellerRenee_Chat
+I am one with the spirits. They guide\nmy hand.\pOhohoho! Do not pity me. I have\nchosen this.
+
+#org @gText_PeradonForest_BlackbeltBrad_Intro
+Hoo ha! My Pok\emon and I are\ntraining so we can uproot a\ltree with our bare hands.
+
+#org @gText_PeradonForest_BlackbeltBrad_Defeat
+Enough distractions. We must return\nto our training.
+
+#org @gText_PeradonForest_BlackbeltBrad_Chat
+Our goal may seem impossible, but\nthat is what gives us motivation.\pWe WILL uproot these trees. Just you\nwatch.
+
+#org @gText_PeradonForest_RuinManiacAlex_Intro
+I'm following a rumour that\nexceptional Pok\emon roost nearby.\pYou! I won't let you make that\ndiscovery before me!\pWe battle, now!
+
+#org @gText_PeradonForest_RuinManiacAlex_Defeat
+Bah, I don't have time for this.
+
+#org @gText_PeradonForest_RuinManiacAlex_Chat
+Those exceptional Pok\emon[.] Could\nthey truly exist?\pI will go to Lake Laplaz and find\nthem before anyone else[.]

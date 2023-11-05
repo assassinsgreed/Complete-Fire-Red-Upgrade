@@ -21,7 +21,7 @@
 #define VAR_SWARM_INDEX 0x5008 //Set by the engine
 #define VAR_SWARM_DAILY_EVENT 0x5009 //Set by the engine. Used to tell the game if a swarm has already been generated for the day. (Uses + 1 var also)
 #define VAR_DEFAULT_WALKING_SCRIPT 0x500B  //Walking scripts from JPAN's engine. His engine used 0x407E.
-#define VAR_DEXNAV 0x500C //Set by the engine indicating which Pokemon has been registered to find in the OW
+#define VAR_DEXNAV 0x400F //Set by the engine indicating which Pokemon has been registered to find in the OW. Set to a temp var so it resets when leaving the map
 #define VAR_STATUS_INDUCER 0x500D //Causes wild Pokemon to be spawned with the given status condition. Status + 0x100 clears var after battle.
 #define VAR_RAID_PARTNER_RANDOM_NUM 0x500E //A random number set daily to help give more random partners in raids
 

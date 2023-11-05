@@ -1262,3 +1262,47 @@ npc 10 8 7 EventScript_LaplazGym_Tomas
 sign 10 8 0 SignScript_LaplazGym_GymPlacard
 sign 10 8 1 SignScript_LaplazGym_GymPlacard
 tile 10 8 0 TileScript_LaplazGym_IntroduceCasey
+
+# Peradon Forest
+map 1 40 MapScript_PerdaonForest
+npc 1 40 0 EventScript_Common_Cut
+npc 1 40 1 EventScript_Common_Cut
+npc 1 40 2 EventScript_Common_Cut
+npc 1 40 3 EventScript_Common_Cut
+npc 1 40 4 EventScript_PeradonForest_AmoongussEncounter1
+npc 1 40 5 EventScript_PeradonForest_AmoongussEncounter2
+npc 1 40 6 EventScript_PeradonForest_FoongusEncounter1
+npc 1 40 7 EventScript_PeradonForest_AmoongussEncounter3
+npc 1 40 8 EventScript_PeradonForest_FoongusEncounter2
+npc 1 40 9 ItemScript_Common_BlackSludge
+npc 1 40 10 ItemScript_Common_HyperPotion
+npc 1 40 11 EventScript_PeradonForest_Heracronite
+npc 1 40 12 ItemScript_Common_LeafStone
+npc 1 40 13 EventScript_PeradonForest_TM86_GrassKnot
+npc 1 40 14 EventScript_PeradonForest_PokefanClark
+npc 1 40 15 EventScript_PeradonForest_CollectorFernando
+npc 1 40 16 EventScript_PeradonForest_BugCatcherLyle
+npc 1 40 17 EventScript_PeradonForest_BeautyErica
+npc 1 40 18 EventScript_PeradonForest_PainterSheena
+npc 1 40 19 EventScript_PeradonForest_CamperRupert
+npc 1 40 20 EventScript_PeradonForest_ScientistSean
+sign 1 40 0 SignScript_PeradonForest_LaplazExit
+sign 1 40 1 SignScript_PeradonForest_LowLevelMoreExpTrainerTips
+sign 1 40 2 SignScript_PeradonForest_LakeLaplazExit
+npc 1 41 0 EventScript_Common_Strength
+npc 1 41 1 EventScript_Common_Cut
+npc 1 41 2 EventScript_Common_Strength
+npc 1 41 3 EventScript_Common_Strength
+npc 1 41 4 EventScript_Common_RockSmash
+npc 1 41 5 EventScript_Common_Strength
+npc 1 41 6 EventScript_Common_RockSmash
+npc 1 41 7 EventScript_Common_Strength
+npc 1 41 8 EventScript_Common_Cut
+npc 1 41 9 EventScript_PeradonForest_TM81_XScsissor
+npc 1 41 10 ItemScript_Common_FullResore
+npc 1 41 11 ItemScript_Common_PokeDoll
+npc 1 41 12 ItemScript_Common_MaxElixir
+npc 1 41 13 EventScript_PeradonForest_RockerRaphael
+npc 1 41 14 EventScript_PeradonForest_ChanellerRenee
+npc 1 41 15 EventScript_PeradonForest_BlackbeltBrad
+npc 1 41 16 EventScript_PeradonForest_RuinManiacAlex

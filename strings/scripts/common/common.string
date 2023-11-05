@@ -150,3 +150,6 @@ S+
 
 #org @gText_Tutors_ChoosePokemon
 [BLUE]And which Pok\emon would you like me\nto teach [BUFFER1] to?
+
+#org @gText_Common_FoongusOrAmoongussTrap
+The item was actually a Pok\emon!\nThe startled Pok\emon attacked!

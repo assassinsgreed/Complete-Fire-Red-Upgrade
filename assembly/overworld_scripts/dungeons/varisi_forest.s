@@ -97,7 +97,7 @@ FoongusEncounter:
     cry SPECIES_FOONGUS 0x0
     sound 0x15 @ Exclaim
     applymovement PLAYER m_Surprise
-    msgbox gText_VarisiForest_FoongusEncounter MSG_KEEPOPEN
+    msgbox gText_Common_FoongusOrAmoongussTrap MSG_KEEPOPEN
     wildbattle SPECIES_FOONGUS 0x8 0x0
     hidesprite LASTTALKED
     release

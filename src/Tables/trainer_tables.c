@@ -2777,6 +2777,66 @@ const struct TrainerMonItemCustomMoves sParty_LaplazTownGym_LeaderCasey[] = {
 
 // #endregion
 
+// #region Peradon Forest
+const struct TrainerMonNoItemDefaultMoves sParty_PeradonForest_PokefanClark[] = {
+    { .lvl = 41, .species = SPECIES_MIMIKYU },
+    { .lvl = 41, .species = SPECIES_SLIGGOO },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_PeradonForest_CollectorFernando[] = {
+    { .lvl = 42, .species = SPECIES_DHELMISE },
+    { .lvl = 42, .species = SPECIES_RAICHU_A },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_PeradonForest_BugCatcherLyle[] = {
+   { .lvl = 40, .species = SPECIES_JOLTIK },
+   { .lvl = 41, .species = SPECIES_SHIINOTIC },
+   { .lvl = 41, .species = SPECIES_VIBRAVA },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_PeradonForest_BeautyErica[] = {
+    { .lvl = 42, .species = SPECIES_PRIMARINA },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_PeradonForest_PainterSheena[] = {
+    { .lvl = 41, .species = SPECIES_ESPEON },
+    { .lvl = 41, .species = SPECIES_MORPEKO },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_PeradonForest_CamperRupert[] = {
+    { .lvl = 43, .species = SPECIES_VENUSAUR },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_PeradonForest_ScientistSean[] = {
+    { .lvl = 42, .species = SPECIES_BEARTIC },
+    { .lvl = 42, .species = SPECIES_BARBARACLE },
+    { .lvl = 42, .species = SPECIES_KROKOROK },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_PeradonForest_RockerRaphael[] = {
+    { .lvl = 43, .species = SPECIES_VIBRAVA },
+    { .lvl = 43, .species = SPECIES_RILLABOOM },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_PeradonForest_ChannelerRenee[] = {
+    { .lvl = 39, .species = SPECIES_DUSKULL },
+    { .lvl = 39, .species = SPECIES_SABLEYE },
+    { .lvl = 40, .species = SPECIES_PHANTUMP },
+    { .lvl = 40, .species = SPECIES_TREVENANT },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_PeradonForest_BlackbeltBrad[] = {
+    { .lvl = 42, .species = SPECIES_TIMBURR },
+    { .lvl = 43, .species = SPECIES_HERACROSS },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_PeradonForest_RuinManiacAlex[] = {
+    { .lvl = 42, .species = SPECIES_VULLABY },
+    { .lvl = 43, .species = SPECIES_RUNERIGUS },
+    { .lvl = 44, .species = SPECIES_EXCADRILL },
+};
+// #endregion
+
 // #endregion
 
 #define NO_NAME                                                                                      \
@@ -5634,7 +5694,141 @@ const struct Trainer gTrainers[] = {
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_SETUP_FIRST_TURN | AI_SCRIPT_SEMI_SMART,
         .partySize = NELEMS(sParty_LaplazTownGym_LeaderCasey),
         .party = {.ItemCustomMoves = sParty_LaplazTownGym_LeaderCasey}
-    }
+    },
+    // #endregion
+    // #region Peradon Forest
+    [TRAINER_PERADON_FOREST_POKEFAN_CLARK] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_POKEFAN,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_POKEFAN_M,
+        .trainerName = {_C, _l, _a, _r, _k, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY,
+        .partySize = NELEMS(sParty_PeradonForest_PokefanClark),
+        .party = {.NoItemDefaultMoves = sParty_PeradonForest_PokefanClark}
+    },
+    [TRAINER_PERADON_FOREST_COLLECTOR_FERNANDO] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_COLLECTOR,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_COLLECTOR,
+        .trainerName = {_F, _e, _r, _n, _a, _n, _d, _o, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY,
+        .partySize = NELEMS(sParty_PeradonForest_CollectorFernando),
+        .party = {.NoItemDefaultMoves = sParty_PeradonForest_CollectorFernando}
+    },
+    [TRAINER_PERADON_FOREST_BUG_CATCHER_LYLE] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_BUG_CATCHER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_BUG_CATCHER,
+        .trainerName = {_F, _e, _r, _n, _a, _n, _d, _o, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_RISKY | AI_SCRIPT_DOUBLE_BATTLE,
+        .partySize = NELEMS(sParty_PeradonForest_BugCatcherLyle),
+        .party = {.NoItemDefaultMoves = sParty_PeradonForest_BugCatcherLyle}
+    },
+    [TRAINER_PERADON_FOREST_BEAUTY_ERICA] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_BEAUTY,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .trainerPic = TRAINER_PIC_BEAUTY,
+        .trainerName = {_E, _r, _i, _c, _a, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_HP_AWARE | AI_SCRIPT_DOUBLE_BATTLE,
+        .partySize = NELEMS(sParty_PeradonForest_BeautyErica),
+        .party = {.NoItemDefaultMoves = sParty_PeradonForest_BeautyErica}
+    },
+    [TRAINER_PERADON_FOREST_PAINTER_SHEENA] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_PAINTER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .trainerPic = TRAINER_PIC_PAINTER,
+        .trainerName = {_S, _h, _e, _e, _n, _a, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_SETUP_FIRST_TURN,
+        .partySize = NELEMS(sParty_PeradonForest_PainterSheena),
+        .party = {.NoItemDefaultMoves = sParty_PeradonForest_PainterSheena}
+    },
+    [TRAINER_PERADON_FOREST_CAMPER_RUPERT] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_CAMPER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_CAMPER,
+        .trainerName = {_R, _u, _p, _e, _r, _t, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY,
+        .partySize = NELEMS(sParty_PeradonForest_CamperRupert),
+        .party = {.NoItemDefaultMoves = sParty_PeradonForest_CamperRupert}
+    },
+    [TRAINER_PERADON_FOREST_SCIENTIST_SEAN] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_SCIENTIST,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_SCIENTIST_M,
+        .trainerName = {_S, _e, _a, _n, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_TRY_TO_FAINT,
+        .partySize = NELEMS(sParty_PeradonForest_ScientistSean),
+        .party = {.NoItemDefaultMoves = sParty_PeradonForest_ScientistSean}
+    },
+    [TRAINER_PERADON_FOREST_ROCKER_RAPHAEL] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_ROCKER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
+        .trainerPic = TRAINER_PIC_GUITARIST,
+        .trainerName = {_R, _a, _p, _h, _a, _e, _l, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_RISKY,
+        .partySize = NELEMS(sParty_PeradonForest_RockerRaphael),
+        .party = {.NoItemDefaultMoves = sParty_PeradonForest_RockerRaphael}
+    },
+    [TRAINER_PERADON_FOREST_CHANNELER_RENEE] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_CHANNELER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_CHANNELER,
+        .trainerName = {_R, _e, _n, _e, _e, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_PREFER_STRONGEST_MOVE,
+        .partySize = NELEMS(sParty_PeradonForest_ChannelerRenee),
+        .party = {.NoItemDefaultMoves = sParty_PeradonForest_ChannelerRenee}
+    },
+    [TRAINER_PERADON_FOREST_BLACKBELT_BRAD] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_BLACK_BELT,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_BLACK_BELT,
+        .trainerName = {_B, _r, _a, _d, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT,
+        .partySize = NELEMS(sParty_PeradonForest_BlackbeltBrad),
+        .party = {.NoItemDefaultMoves = sParty_PeradonForest_BlackbeltBrad}
+    },
+    [TRAINER_PERADON_FOREST_RUIN_MANIAC_ALEX] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_RUIN_MANIAC,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_RUIN_MANIAC,
+        .trainerName = {_A, _l, _e, _x, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_HP_AWARE | AI_SCRIPT_TRY_TO_FAINT,
+        .partySize = NELEMS(sParty_PeradonForest_RuinManiacAlex),
+        .party = {.NoItemDefaultMoves = sParty_PeradonForest_RuinManiacAlex}
+    },
     // #endregion
     // #endregion
 };
