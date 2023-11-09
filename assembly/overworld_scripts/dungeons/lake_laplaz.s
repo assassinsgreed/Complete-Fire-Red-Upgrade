@@ -24,3 +24,8 @@ EventScript_LakeLaplaz_TM08_BulkUp:
 SignScript_LakeLaplaz_CleanlinessReminder:
     msgbox gText_LakeLaplaz_CleanlinessReminderSign MSG_SIGN
     end
+
+.global SignScript_LakeLaplaz_FlowerOffering
+SignScript_LakeLaplaz_FlowerOffering:
+    msgbox gText_LakeLaplaz_FlowerGiftSign MSG_SIGN
+    end
