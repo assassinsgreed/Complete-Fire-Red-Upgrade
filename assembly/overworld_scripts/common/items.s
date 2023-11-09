@@ -212,6 +212,11 @@ ItemScript_Common_BlackBelt:
     finditem ITEM_BLACK_BELT 0x1
     end
 
+.global ItemScript_Common_BlackGlasses
+ItemScript_Common_BlackGlasses:
+    finditem ITEM_BLACK_GLASSES 0x1
+    end
+
 .global ItemScript_Common_NeverMeltIce
 ItemScript_Common_NeverMeltIce:
     finditem ITEM_NEVER_MELT_ICE 0x1

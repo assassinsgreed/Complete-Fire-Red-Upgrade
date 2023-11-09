@@ -147,6 +147,22 @@ const struct WildPokemon gPeradonForest_LandMonsNight[] =
 	{33, 36, SPECIES_HERACROSS}
 };
 
+const struct WildPokemon gLakeLaplaz_LandMonsNight[] =
+{
+	{36, 40, SPECIES_MORELULL},
+	{37, 41, SPECIES_DOTTLER},
+	{36, 40, SPECIES_ZORUA},
+	{35, 39, SPECIES_MORPEKO},
+	{36, 39, SPECIES_MISDREAVUS},
+	{36, 40, SPECIES_YAMASK},
+	{37, 40, SPECIES_ZORUA},
+	{37, 40, SPECIES_SHIINOTIC},
+	{36, 41, SPECIES_ZOROARK},
+	{35, 40, SPECIES_ZOROARK},
+	{36, 40, SPECIES_CHANSEY}, 
+	{36, 41, SPECIES_CHANSEY}
+};
+
 const struct WildPokemonInfo gVarisiForest_LandMonsNightInfo = {14, gVarisiForest_LandMonsNight};
 const struct WildPokemonInfo gRubarrDesert_LandMonsNightInfo = {3, gRubarrDesert_LandMonsNight};
 const struct WildPokemonInfo gHeleoRanch_LandMonsNightInfo = {21, gHeleoRanch_LandMonsNight};
@@ -155,6 +171,7 @@ const struct WildPokemonInfo gDaimynCity_LandMonsNightInfo = {21, gDaimynCity_La
 const struct WildPokemonInfo gRoute10Cave_LandMonsNightInfo = {5, gRoute10Cave_LandMonsNight};
 const struct WildPokemonInfo gRoute11North_LandMonsNightInfo = {21, gRoute11North_LandMonsNight};
 const struct WildPokemonInfo gPeradonForest_LandMonsNightInfo = {14, gPeradonForest_LandMonsNight};
+const struct WildPokemonInfo gLakeLaplaz_LandMonsNightInfo = {21, gLakeLaplaz_LandMonsNight};
 
 const struct WildPokemonHeader gWildMonMorningHeaders[] =
 {
@@ -244,6 +261,14 @@ const struct WildPokemonHeader gWildMonEveningHeaders[] =
 		.fishingMonsInfo = NULL,
 	},
 	{
+		.mapGroup = MAP_GROUP(LAKE_LAPLAZ),
+		.mapNum = MAP_NUM(LAKE_LAPLAZ),
+		.landMonsInfo = &gLakeLaplaz_LandMonsNightInfo,
+		.waterMonsInfo = NULL,
+		.rockSmashMonsInfo = NULL,
+		.fishingMonsInfo = NULL,
+	},
+	{
 		.mapGroup = 0xFF,
 		.mapNum = 0xFF,
 		.landMonsInfo = NULL,
@@ -323,6 +348,14 @@ const struct WildPokemonHeader gWildMonNightHeaders[] =
 		.mapGroup = MAP_GROUP(PERADON_FOREST_SOUTH),
 		.mapNum = MAP_NUM(PERADON_FOREST_SOUTH),
 		.landMonsInfo = &gPeradonForest_LandMonsNightInfo,
+		.waterMonsInfo = NULL,
+		.rockSmashMonsInfo = NULL,
+		.fishingMonsInfo = NULL,
+	},
+	{
+		.mapGroup = MAP_GROUP(LAKE_LAPLAZ),
+		.mapNum = MAP_NUM(LAKE_LAPLAZ),
+		.landMonsInfo = &gLakeLaplaz_LandMonsNightInfo,
 		.waterMonsInfo = NULL,
 		.rockSmashMonsInfo = NULL,
 		.fishingMonsInfo = NULL,

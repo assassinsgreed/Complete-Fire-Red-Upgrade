@@ -499,8 +499,8 @@
 #define FLAG_HIDE_PERADON_FOREST_FULL_RESTORE                   0x1E9
 #define FLAG_HIDE_PERADON_FOREST_POKE_DOLL                      0x1EA
 #define FLAG_HIDE_PERADON_FOREST_MAX_ELIXIR                     0x1EB
-#define FLAG_HIDE_THREE_ISLAND_BERRY_FOREST_MAX_ELIXIR          0x1EC
-#define FLAG_HIDE_MT_EMBER_EXTERIOR_ULTRA_BALL                  0x1ED
+#define FLAG_HIDE_LAKE_LAPLAZ_BLACK_GLASSES                     0x1EC
+#define FLAG_HIDE_LAKE_LAPLAZ_TM08_BULK_UP                      0x1ED
 #define FLAG_HIDE_MT_EMBER_EXTERIOR_FIRE_STONE                  0x1EE
 #define FLAG_HIDE_MT_EMBER_EXTERIOR_DIRE_HIT                    0x1EF
 #define FLAG_HIDE_FOUR_ISLAND_ICEFALL_CAVE_1F_ULTRA_BALL        0x1F0
@@ -1149,8 +1149,8 @@
 #define HIDDEN_ITEM_PERADON_FOREST_KELPSY_BERRY                       120
 #define HIDDEN_ITEM_PERADON_FOREST_CHERI_BERRY                        121
 #define HIDDEN_ITEM_PERADON_FOREST_BIG_MUSHROOM                       122
-#define HIDDEN_ITEM_ROUTE9_RARE_CANDY                                 123
-#define HIDDEN_ITEM_UNUSED_0x7C                                       124
+#define HIDDEN_ITEM_LAKE_LAPLAZ_DUSK_BALL                             123
+#define HIDDEN_ITEM_LAKE_LAPLAZ_OVAL_STONE                            124
 #define HIDDEN_ITEM_ROUTE10_PERSIM_BERRY                              125
 #define HIDDEN_ITEM_ROUTE10_CHERI_BERRY                               126
 #define HIDDEN_ITEM_ROUTE8_RAWST_BERRY                                127

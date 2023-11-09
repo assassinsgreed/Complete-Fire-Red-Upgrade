@@ -58,7 +58,7 @@
 #define MAP_UNDERGROUND_PATH_EAST_WEST_TUNNEL    (34 | (1 << 8))
 #define MAP_UNDERGROUND_PATH_EAST_ENTRANCE       (35 | (1 << 8))
 #define MAP_DIGLETTS_CAVE_NORTH_ENTRANCE         (36 | (1 << 8))
-#define MAP_DIGLETTS_CAVE_B1F                    (37 | (1 << 8))
+#define MAP_LAKE_LAPLAZ                          (37 | (1 << 8))
 #define MAP_DIGLETTS_CAVE_SOUTH_ENTRANCE         (38 | (1 << 8))
 #define MAP_PERADON_FOREST_GUARD_HOUSE           (39 | (1 << 8))
 #define MAP_PERADON_FOREST_NORTH                 (40 | (1 << 8))

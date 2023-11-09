@@ -1306,3 +1306,12 @@ npc 1 41 13 EventScript_PeradonForest_RockerRaphael
 npc 1 41 14 EventScript_PeradonForest_ChanellerRenee
 npc 1 41 15 EventScript_PeradonForest_BlackbeltBrad
 npc 1 41 16 EventScript_PeradonForest_RuinManiacAlex
+
+## Lake Laplaz
+map 1 37 MapScript_LakeLaplaz
+npc 1 37 0 ItemScript_Common_BlackGlasses
+npc 1 37 1 EventScript_LakeLaplaz_TM08_BulkUp
+sign 1 37 0 SignScript_LakeLaplaz_CleanlinessReminder
+## sign 1 & 2 are hidden items
+sign 1 37 3 SignScript_LakeLaplaz_FlowerOffering
+sign 1 37 4 SignScript_LakeLaplaz_FlowerOffering
