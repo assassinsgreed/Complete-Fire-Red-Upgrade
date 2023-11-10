@@ -3269,3 +3269,10 @@ void CountCoinsIntoVar4002()
 {
 	VarSet(0x4002, GetCoins());
 }
+
+void MarkGalarianBirdsAsSeen()
+{
+	GetSetPokedexFlag(288, FLAG_SET_SEEN);
+	GetSetPokedexFlag(289, FLAG_SET_SEEN);
+	GetSetPokedexFlag(290, FLAG_SET_SEEN);
+}

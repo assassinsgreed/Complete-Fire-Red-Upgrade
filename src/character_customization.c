@@ -57,6 +57,9 @@ extern const u16 ProfessorSakuraPal[];
 extern const u16 LeaderChancePal[];
 extern const u16 LeaderCaseyFPal[];
 extern const u16 PlutoAdminRonaldPal[];
+extern const u16 ZapdosGPal[];
+extern const u16 MoltresGPal[];
+extern const u16 ArticunoGPal[];
 
 #ifdef UNBOUND
 //extern const u16 MalePlayer_Trainer_Outfit_RedPal[];
@@ -325,6 +328,9 @@ static const u16* sPlayerMarlonOutfitColours[] =
 		{ LeaderChancePal, 0x121F },
 		{ LeaderCaseyFPal, 0x1220 }, // Male and female share same palette; female referenced by name to link to file
 		{ PlutoAdminRonaldPal, 0x1221 },
+		{ ZapdosGPal, 0x1222 },
+		{ MoltresGPal, 0x1223 },
+		{ ArticunoGPal, 0x1224 },
 		{ NULL, 0x11FF }
 	};
 	const struct SpritePalette* const gObjectEventSpritePalettesSwitcher[255] = {
