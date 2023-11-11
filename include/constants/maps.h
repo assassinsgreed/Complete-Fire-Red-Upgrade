@@ -51,7 +51,7 @@
 #define MAP_SSANNE_B1F_ROOM4                     (27 | (1 << 8))
 #define MAP_SSANNE_B1F_ROOM5                     (28 | (1 << 8))
 #define MAP_SSANNE_1F_ROOM6                      (29 | (1 << 8))
-#define MAP_UNDERGROUND_PATH_NORTH_ENTRANCE      (30 | (1 << 8))
+#define MAP_DAIMYN_CITY_FACTORY                  (30 | (1 << 8))
 #define MAP_ROUTE10_CAVE                         (31 | (1 << 8))
 #define MAP_UNDERGROUND_PATH_SOUTH_ENTRANCE      (32 | (1 << 8))
 #define MAP_UNDERGROUND_PATH_WEST_ENTRANCE       (33 | (1 << 8))
@@ -238,7 +238,7 @@
 #define MAP_ROUTE_9                              ((3 << 8) | 27)
 #define MAP_ROUTE_10                             ((3 << 8) | 28)
 #define MAP_ROUTE_11                             ((3 << 8) | 29)
-#define MAP_ROUTE_12                             ((3 << 8) | 30)
+#define MAP_ROUTE_12                             ((3 << 8) | 30) // TODO: If Route 12 splits into 2, be sure to update Roamers.c to have West and East connect!
 #define MAP_ROUTE_13                             ((3 << 8) | 31)
 #define MAP_ROUTE_14                             ((3 << 8) | 32)
 #define MAP_ROUTE_15                             ((3 << 8) | 33)

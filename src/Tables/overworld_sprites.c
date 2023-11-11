@@ -49,6 +49,9 @@ extern const u8 AmpharosTiles[];
 extern const u8 MareepTiles[];
 extern const u8 CastformTiles[];
 extern const u8 PikachuTiles[];
+extern const u8 ZapdosGTiles[];
+extern const u8 MoltresGTiles[];
+extern const u8 ArticunoGTiles[];
 
 #define EVENT_OBJ_PAL_TAG_NONE 0x1102
 #define gEventObjectBaseOam_16x16 ((const struct OamData*) 0x83A36F8)
@@ -595,6 +598,45 @@ static const struct SpriteFrameImage Table_Pikachu[] =
     overworld_frame(PikachuTiles, 2, 2, 8),
 };
 
+static const struct SpriteFrameImage Table_ZapdosG[] =
+{
+    overworld_frame(ZapdosGTiles, 4, 4, 0),
+    overworld_frame(ZapdosGTiles, 4, 4, 1),
+    overworld_frame(ZapdosGTiles, 4, 4, 2),
+    overworld_frame(ZapdosGTiles, 4, 4, 3),
+    overworld_frame(ZapdosGTiles, 4, 4, 4),
+    overworld_frame(ZapdosGTiles, 4, 4, 5),
+    overworld_frame(ZapdosGTiles, 4, 4, 6),
+    overworld_frame(ZapdosGTiles, 4, 4, 7),
+    overworld_frame(ZapdosGTiles, 4, 4, 8),
+};
+
+static const struct SpriteFrameImage Table_MoltresG[] =
+{
+    overworld_frame(MoltresGTiles, 4, 4, 0),
+    overworld_frame(MoltresGTiles, 4, 4, 1),
+    overworld_frame(MoltresGTiles, 4, 4, 2),
+    overworld_frame(MoltresGTiles, 4, 4, 3),
+    overworld_frame(MoltresGTiles, 4, 4, 4),
+    overworld_frame(MoltresGTiles, 4, 4, 5),
+    overworld_frame(MoltresGTiles, 4, 4, 6),
+    overworld_frame(MoltresGTiles, 4, 4, 7),
+    overworld_frame(MoltresGTiles, 4, 4, 8),
+};
+
+static const struct SpriteFrameImage Table_ArticunoG[] =
+{
+    overworld_frame(ArticunoGTiles, 4, 4, 0),
+    overworld_frame(ArticunoGTiles, 4, 4, 1),
+    overworld_frame(ArticunoGTiles, 4, 4, 2),
+    overworld_frame(ArticunoGTiles, 4, 4, 3),
+    overworld_frame(ArticunoGTiles, 4, 4, 4),
+    overworld_frame(ArticunoGTiles, 4, 4, 5),
+    overworld_frame(ArticunoGTiles, 4, 4, 6),
+    overworld_frame(ArticunoGTiles, 4, 4, 7),
+    overworld_frame(ArticunoGTiles, 4, 4, 8),
+};
+
 
 // #region MC
 const struct EventObjectGraphicsInfo GraphicsInfo_MCStanding =
@@ -740,7 +782,7 @@ const struct EventObjectGraphicsInfo GraphicsInfo_FeMCStanding =
 const struct EventObjectGraphicsInfo GraphicsInfo_FeMCCycling =
 {
     .tileTag = 0xFFFF,
-    .paletteTag1 = 0x1207,
+    .paletteTag1 = 0x1208,
     .paletteTag2 = EVENT_OBJ_PAL_TAG_NONE,
     .size = (32 * 32) / 2,
     .width = 32,
@@ -760,7 +802,7 @@ const struct EventObjectGraphicsInfo GraphicsInfo_FeMCCycling =
 const struct EventObjectGraphicsInfo GraphicsInfo_FeMCSurfing =
 {
     .tileTag = 0xFFFF,
-    .paletteTag1 = 0x1207,
+    .paletteTag1 = 0x1208,
     .paletteTag2 = EVENT_OBJ_PAL_TAG_NONE,
     .size = (16 * 32) / 2,
     .width = 16,
@@ -780,7 +822,7 @@ const struct EventObjectGraphicsInfo GraphicsInfo_FeMCSurfing =
 const struct EventObjectGraphicsInfo GraphicsInfo_FeMCFieldMove =
 {
     .tileTag = 0xFFFF,
-    .paletteTag1 = 0x1207,
+    .paletteTag1 = 0x1208,
     .paletteTag2 = EVENT_OBJ_PAL_TAG_NONE,
     .size = (16 * 32) / 2,
     .width = 16,
@@ -800,7 +842,7 @@ const struct EventObjectGraphicsInfo GraphicsInfo_FeMCFieldMove =
 const struct EventObjectGraphicsInfo GraphicsInfo_FeMCFishing =
 {
     .tileTag = 0xFFFF,
-    .paletteTag1 = 0x1207,
+    .paletteTag1 = 0x1208,
     .paletteTag2 = EVENT_OBJ_PAL_TAG_NONE,
     .size = (32 * 32) / 2,
     .width = 32,
@@ -820,7 +862,7 @@ const struct EventObjectGraphicsInfo GraphicsInfo_FeMCFishing =
 const struct EventObjectGraphicsInfo GraphicsInfo_FeMCVSSeekerBike =
 {
     .tileTag = 0xFFFF,
-    .paletteTag1 = 0x1207,
+    .paletteTag1 = 0x1208,
     .paletteTag2 = EVENT_OBJ_PAL_TAG_NONE,
     .size = (32 * 32) / 2,
     .width = 32,
@@ -1435,5 +1477,65 @@ const struct EventObjectGraphicsInfo GraphicsInfo_Pikachu =
     .subspriteTables = gEventObjectSpriteOamTables_16x16,
     .anims = gEventObjectImageAnimTable_Standard,
     .images = Table_Pikachu,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+const struct EventObjectGraphicsInfo GraphicsInfo_ZapdosG =
+{
+    .tileTag = 0xFFFF,
+    .paletteTag1 = 0x1222,
+    .paletteTag2 = EVENT_OBJ_PAL_TAG_NONE,
+    .size = (32 * 32) / 2,
+    .width = 32,
+    .height = 32,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .disableReflectionPaletteLoad = FALSE,
+    .tracks = TRACKS_NONE,
+    .gender = MALE,
+    .oam = gEventObjectBaseOam_32x32,
+    .subspriteTables = gEventObjectSpriteOamTables_32x32,
+    .anims = gEventObjectImageAnimTable_Standard,
+    .images = Table_ZapdosG,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+const struct EventObjectGraphicsInfo GraphicsInfo_MoltresG =
+{
+    .tileTag = 0xFFFF,
+    .paletteTag1 = 0x1223,
+    .paletteTag2 = EVENT_OBJ_PAL_TAG_NONE,
+    .size = (32 * 32) / 2,
+    .width = 32,
+    .height = 32,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .disableReflectionPaletteLoad = FALSE,
+    .tracks = TRACKS_NONE,
+    .gender = MALE,
+    .oam = gEventObjectBaseOam_32x32,
+    .subspriteTables = gEventObjectSpriteOamTables_32x32,
+    .anims = gEventObjectImageAnimTable_Standard,
+    .images = Table_MoltresG,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+const struct EventObjectGraphicsInfo GraphicsInfo_ArticunoG =
+{
+    .tileTag = 0xFFFF,
+    .paletteTag1 = 0x1224,
+    .paletteTag2 = EVENT_OBJ_PAL_TAG_NONE,
+    .size = (32 * 32) / 2,
+    .width = 32,
+    .height = 32,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .disableReflectionPaletteLoad = FALSE,
+    .tracks = TRACKS_NONE,
+    .gender = MALE,
+    .oam = gEventObjectBaseOam_32x32,
+    .subspriteTables = gEventObjectSpriteOamTables_32x32,
+    .anims = gEventObjectImageAnimTable_Standard,
+    .images = Table_ArticunoG,
     .affineAnims = gDummySpriteAffineAnimTable,
 };

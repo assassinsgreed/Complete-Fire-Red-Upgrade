@@ -1315,3 +1315,5 @@ sign 1 37 0 SignScript_LakeLaplaz_CleanlinessReminder
 ## sign 1 & 2 are hidden items
 sign 1 37 3 SignScript_LakeLaplaz_FlowerOffering
 sign 1 37 4 SignScript_LakeLaplaz_FlowerOffering
+tile 1 37 0 TileScript_LakeLaplaz_GalarianBirdsLeft
+tile 1 37 1 TileScript_LakeLaplaz_GalarianBirdsCommon
