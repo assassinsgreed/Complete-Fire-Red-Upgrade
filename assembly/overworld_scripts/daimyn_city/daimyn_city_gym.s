@@ -407,16 +407,17 @@ ItemTraderShopList:
     switch LASTRESULT
     case 0, ToxicOrb
     case 1, FlameOrb
-    case 2, LifeOrb
-    case 3, AssaultVest
-    case 4, FocusSash
-    case 5, WeaknessPolicy
-    case 6, ChoiceBand
-    case 7, ChoiceSpecs
-    case 8, ChoiceScarf
-    case 9, Leftovers
-    case 10, Eviolite
-    case 11, DeclineTradeExchange
+    case 2, RareCandy
+    case 3, LifeOrb
+    case 4, AssaultVest
+    case 5, FocusSash
+    case 6, WeaknessPolicy
+    case 7, ChoiceBand
+    case 8, ChoiceSpecs
+    case 9, ChoiceScarf
+    case 10, Leftovers
+    case 11, Eviolite
+    case 12, DeclineTradeExchange
     case 0x7F, DeclineTradeExchange @ When player hits B to close
     end
 
@@ -428,6 +429,11 @@ ToxicOrb:
 FlameOrb:
     setvar 0x4001 ITEM_FLAME_ORB
     setvar 0x4002 1000
+    goto ItemTrader_AfterChoiceMade
+
+RareCandy:
+    setvar 0x4001 ITEM_RARE_CANDY
+    setvar 0x4002 1500
     goto ItemTrader_AfterChoiceMade
 
 LifeOrb:

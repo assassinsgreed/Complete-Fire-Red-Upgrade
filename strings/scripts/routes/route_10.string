@@ -119,7 +119,7 @@ No way! You're just too good,\n[PLAYER]!
 [RED]I always have so much fun whenever\nwe battle, [PLAYER].\pYou're working hard to train your\nPok\emon, right?\pI have a gift for you then.
 
 #org @gText_Route10_CaseyFExpShareExplained
-[RED]It's an\nExp. Share!\pWhen it's turned on, it'll share some\nexperience with Pok\emon that\lweren't in battle.
+[RED]It's an Exp. Share!\pWhen it's turned on, it'll share some\nexperience with Pok\emon that\lweren't in battle.
 
 #org @gText_Route10_CaseyFPostBattle
 [RED]Hey, you're headed up to Laplaz\nTown next, right?\pIf so, you might be disappointed[.]\pThe gym leader there is sick, and\nhasn't taken on challengers in\lmonths.\pThey say the gym will close soon, if\nno one steps up to lead it.\pYou'd better hurry, before you miss\nyour chance for good.
@@ -155,4 +155,4 @@ You're as good as ever, [PLAYER].
 [BLUE][PLAYER], battling and talking with\nyou made me realize something\lreally important.\pThere's something I have to go do,\nbut I hope we'll see each other\lagain someday.\pTake care, [PLAYER].
 
 #org @gText_Route10_ExpShareHint
-The Exp. Share can be turned off\nand on from the Key Items pocket.\pThe challenges waiting for you have\nbeen designed assuming it is off.
+[BLACK]The Exp. Share can be turned off\nand on from the Key Items pocket.\pThe challenges waiting for you have\nbeen designed assuming it is off.

@@ -178,7 +178,9 @@ CaseyLeavesCommon:
     setflag 0x03D @ Hide Casey
     setflag 0x256 @ Battled Casey on route 10
     fadedefaultbgm
+    signmsg
     msgbox gText_Route10_ExpShareHint MSG_SIGN
+    normalmsg
     end
 
 m_WalkToPlayer: .byte walk_left, walk_left, walk_left, walk_left, walk_left, walk_left, walk_left, end_m

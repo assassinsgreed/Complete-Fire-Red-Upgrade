@@ -771,8 +771,7 @@ EventScript_DaimynCityMall_Shop_UncommonHeldItems:
     goto EventScript_EndMart
 
 HeldItemShop:
-    .hword ITEM_TOXIC_ORB
-    .hword ITEM_FLAME_ORB
+    .hword ITEM_ROCKY_HELMET
     .hword ITEM_BLACK_SLUDGE
     .hword ITEM_LIGHT_CLAY
     .hword ITEM_WHITE_HERB

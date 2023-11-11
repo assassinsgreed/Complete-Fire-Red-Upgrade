@@ -140,6 +140,9 @@ Toxic Orb[ALIGN][65]1,000
 #org @gText_ItemExchange_FlameOrb
 Flame Orb[ALIGN][65]1,000
 
+#org @gText_ItemExchange_RareCandy
+Rare Candy[ALIGN][65]1,500
+
 #org @gText_ItemExchange_LifeOrb
 Life Orb[ALIGN][65]2,000
 
