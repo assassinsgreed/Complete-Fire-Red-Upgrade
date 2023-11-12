@@ -395,10 +395,8 @@ RivalBattlePrompt:
     waitmovement PLAYER
     fadescreen FADEOUT_BLACK
     pause DELAY_HALFSECOND
-    special CAMERA_START
-    applymovement CAMERA m_CameraMovesToAlistairAndRival
-    waitmovement CAMERA
-    special CAMERA_END
+    applymovement PLAYER m_PlayerAsCameraMovesToAlistairAndRival
+    waitmovement PLAYER
     fadescreen FADEIN_BLACK
     pause DELAY_HALFSECOND
     playbgm 0x114 @ Unwavering Emotions
@@ -428,10 +426,8 @@ RivalBattlePrompt:
     fadescreen FADEOUT_BLACK
     pause DELAY_HALFSECOND
     fadedefaultbgm
-    special CAMERA_START
-    applymovement CAMERA m_CameraMovesToPlayer
-    waitmovement CAMERA
-    special CAMERA_END
+    applymovement PLAYER m_PlayerAsCameraMovesBack
+    waitmovement PLAYER
     setvar PlutoEncounterVar 0x5
     hidesprite Rival
     hidesprite Alistair
@@ -905,5 +901,5 @@ m_AlistairGivesHMFly: .byte walk_right, walk_down, walk_down, look_right, pause_
 m_RivalLeaves: .byte walk_up, walk_left, walk_left, walk_left, walk_left, walk_left, walk_left, walk_left, walk_up, walk_left, walk_left, walk_left, walk_left, walk_left, walk_left, end_m
 m_AlistairLeaves: .byte walk_left, walk_left, walk_left, walk_left, walk_left, walk_left, walk_left, walk_left, walk_left, end_m
 m_PlayerLeavingAfterPlutoEvents: .byte walk_up, walk_right, walk_right, walk_right, end_m
-m_CameraMovesToAlistairAndRival: .byte run_left, run_left, run_left, run_left, run_left, run_left, run_left, run_left, run_left, run_left, run_left, run_left, end_m
-m_CameraMovesToPlayer: .byte run_right, run_right, run_right, run_right, run_right, run_right, run_right, run_right, run_right, run_right, run_right, run_right, end_m
+m_PlayerAsCameraMovesToAlistairAndRival: .byte set_invisible, run_left, run_left, run_left, run_left, run_left, run_left, run_left, run_left, run_left, run_left, run_left, run_left, end_m
+m_PlayerAsCameraMovesBack: .byte run_right, run_right, run_right, run_right, run_right, run_right, run_right, run_right, run_right, run_right, run_right, run_right, set_visible, end_m
