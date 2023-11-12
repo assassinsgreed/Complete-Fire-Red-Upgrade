@@ -1301,7 +1301,7 @@ const struct TrainerMonNoItemCustomMoves sParty_FerroxGym_PokemonTrainerVincent[
 
 const struct TrainerMonItemCustomMoves sParty_FerroxGym_GymLeaderStella[] = {
     {
-        .lvl = 20,
+        .lvl = 19,
         .species = SPECIES_MAREANIE,
         .moves = {
             MOVE_TOXIC,
@@ -1312,7 +1312,7 @@ const struct TrainerMonItemCustomMoves sParty_FerroxGym_GymLeaderStella[] = {
         .ability = Ability_1 // Merciless
     },
     {
-        .lvl = 20,
+        .lvl = 19,
         .species = SPECIES_CARKOL,
         .moves = {
             MOVE_WILLOWISP,
@@ -1323,7 +1323,7 @@ const struct TrainerMonItemCustomMoves sParty_FerroxGym_GymLeaderStella[] = {
         .ability = Ability_2 // Flame Body
     },
     {
-        .lvl = 22,
+        .lvl = 20,
         .species = SPECIES_TOGETIC,
         .moves = {
             MOVE_THUNDERWAVE,
@@ -2395,7 +2395,7 @@ const struct TrainerMonNoItemCustomMoves sParty_Route11South_TeamPlutoAdminRonal
     },
     {
         .lvl = 37,
-        .species = SPECIES_WEAVILE,
+        .species = SPECIES_SNEASEL,
         .moves = {
             MOVE_ICESHARD,
             MOVE_METALCLAW,
