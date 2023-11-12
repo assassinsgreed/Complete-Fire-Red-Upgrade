@@ -24,13 +24,13 @@ MapScript_Route11South:
 MapEntryScript_SetPartnerPositions:
     compare PlutoEncounterVar 0x1 @ Exit if story events haven't kicked off
     if lessthan _goto End
+    movesprite2 Rival 0x1C 0x2E @ Update position of Rival permanently
+    movesprite2 Alistair 0x1D 0x2E @ Update position of Alistair permanently
     compare PlutoEncounterVar 0x4 @ Exit if player has beaten Team Pluto (i.e. no more partnering)
     if greaterorequal _goto End
     getplayerpos 0x4000 0x4001
     compare 0x4000 0x15
     if lessthan _goto End @ Player did not warp from a partner change, do not change facing
-    movesprite2 Rival 0x1C 0x2E @ Update position of Rival permanently
-    movesprite2 Alistair 0x1D 0x2E @ Update position of Alistair permanently
     applymovement PLAYER m_LookUp
     end
 
