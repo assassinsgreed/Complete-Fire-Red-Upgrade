@@ -15,10 +15,16 @@ def main():
         # If the patch is the BW Music patch, we need to apply additional logic
         if "B2W2 Music Patch" in file: ApplyBWMusicPatch()
 
-    # Fix bug in scrolling multichoice windows
+    # Apply binary fixes and hacks that we don't want to permanently have in the game
     with open(ROM_NAME, 'rb+') as romfile:
+        # Fix bug in scrolling multichoice windows
         romfile.seek(0xCBB84)
         romfile.write(b'\x00\x00\x00\x00')
+        
+        # Disable the opening cutscene
+        romfile.seek(0xEC5D0)
+        romfile.write(b'\x15\x89\x07')
+
         romfile.close()
 
 def ApplyBWMusicPatch():
