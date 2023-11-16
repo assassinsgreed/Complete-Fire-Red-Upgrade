@@ -1317,3 +1317,19 @@ sign 1 37 3 SignScript_LakeLaplaz_FlowerOffering
 sign 1 37 4 SignScript_LakeLaplaz_FlowerOffering
 tile 1 37 0 TileScript_LakeLaplaz_GalarianBirdsLeft
 tile 1 37 1 TileScript_LakeLaplaz_GalarianBirdsCommon
+
+## Route 12 Rest House
+map 22 0 MapScript_Route12RestHouse
+npc 22 0 0 EventScript_PokemonCenter_Main
+npc 22 0 1 EventScript_Pokemart
+npc 22 0 2 EventScript_Route12RestHouse_Boy
+npc 22 0 3 EventScript_Route12RestHouse_YoungGirl
+npc 22 0 4 EventScript_Route12RestHouse_PoliceOfficer
+npc 22 0 5 EventScript_Route12RestHouse_PsychicGirl
+npc 22 0 6 EventScript_Route12RestHouse_OldMan
+npc 22 0 7 EventScript_Route12RestHouse_Girl
+npc 22 0 8 EventScript_Route12RestHouse_Dad
+npc 22 0 9 EventScript_Route12RestHouse_GameboyKid
+npc 22 0 10 EventScript_Route12RestHouse_Hiker
+npc 22 0 11 EventScript_Route12RestHouse_PokemartMan
+npc 22 0 12 EventScript_Route12RestHouse_Beauty
