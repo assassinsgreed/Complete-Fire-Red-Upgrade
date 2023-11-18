@@ -64,8 +64,6 @@ Hm[.] I suppose those limitations were\ntoo much for you.
 #org @gText_LaplazFacilities_TrainerHouse_AllOpponentsDefeated
 [BLUE]Incredible! You've defeated all 3\ntrainers.\pCome on back, now, [PLAYER], to\ncollect your prizes.
 
-#org @gText_LaplazFacilities_TrainerHouse_EndOfBattles
-
 #org @gText_LaplazFacilities_TrainerHouse_CannotParticipate
 [BLUE]Sorry, chief, but none of your\nPok\emon are eligible to participate\lin sky battles.\pCome back when you have some Flying\nor Levitating Pok\emon, okay?
 

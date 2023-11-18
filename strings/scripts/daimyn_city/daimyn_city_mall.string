@@ -137,7 +137,7 @@ Wise kid! [.] But you don't have any\nroom. Come back when you do.
 How's that fish treating you? Good?\nYeah, great[.]
 
 #org @gText_DaimynCityMall_IncenseSeller
-[BLACK]*Sniff* Do you smell that? My\nincenses are so wonderful.
+[BLACK](Sniff) Do you smell that? My\nincenses are so wonderful.
 
 #org @gText_DaimynCityMall_TypeWeaknessBerriesSeller
 [BLACK]Want to dull the sting of super\neffective moves? Then I'm your gal!
