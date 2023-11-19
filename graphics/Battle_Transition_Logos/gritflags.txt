@@ -1,1 +1,1 @@
--gB4 -gzl -p -pn16 -gu8 -pu8 -mzl -mR4 -aw256 -fts
+-gB4 -gzl -gu8 -pu8 -pn16 -mzl -mp15 -mRtpf -aw256 -ah160 -fts
