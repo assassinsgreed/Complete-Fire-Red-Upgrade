@@ -1106,8 +1106,9 @@ npc 3 29 25 EventScript_Route11South_Alistair
 npc 3 29 26 EventScript_Route11South_TeamPlutoClancy
 npc 3 29 27 EventScript_Route11South_TeamPlutoEna
 sign 3 29 0 SignScript_Route11South_HessonPass
-sign 3 29 1 SignScript_Route11South_TrainerTips
+sign 3 29 1 SignScript_Route11South_TrainerTips_WildDoubleBattles
 sign 3 29 2 SignScript_Route11South_MegaStoneRefiner
+sign 3 29 6 SignScript_Route11South_TrainerTips_MegaEvolution
 tile 3 29 0 TileScript_Route11South_West
 tile 3 29 1 TileScript_Route11South_West
 tile 3 29 2 TileScript_Route11South_West
@@ -1264,6 +1265,8 @@ sign 10 8 1 SignScript_LaplazGym_GymPlacard
 tile 10 8 0 TileScript_LaplazGym_IntroduceCasey
 
 # Peradon Forest
+npc 1 39 0 EventScript_PeradonForest_GuardHouse_Guard
+npc 1 39 1 EventScript_PeradonForest_GuardHouse_Girl
 map 1 40 MapScript_PerdaonForest
 npc 1 40 0 EventScript_Common_Cut
 npc 1 40 1 EventScript_Common_Cut

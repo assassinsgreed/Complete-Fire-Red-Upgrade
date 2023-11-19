@@ -14,6 +14,16 @@ MapEntryScript_PeradonForest_FlightFlag:
     setworldmapflag 0x8AA
     end
 
+.global EventScript_PeradonForest_GuardHouse_Guard
+EventScript_PeradonForest_GuardHouse_Guard:
+    npcchat gText_PeradonForest_GuardHouse_Guard
+    end
+
+.global EventScript_PeradonForest_GuardHouse_Girl
+EventScript_PeradonForest_GuardHouse_Girl:
+    npcchat gText_PeradonForest_GuardHouse_Girl
+    end
+
 .global EventScript_PeradonForest_AmoongussEncounter1
 EventScript_PeradonForest_AmoongussEncounter1:
     call AmoongussEncounter

@@ -91,11 +91,14 @@ This area doesn't get much foot\ntraffic, so there are a lot of\lunusual Pok\emo
 #org @gText_Route11South_HessonPassSign
 Hesson Pass\nThe only passage to Uteya Village
 
-#org @gText_Route11South_TrainerTipsSign
+#org @gText_Route11South_TrainerTipsWildDoubleBattlesSign
 Trainer Tips!\nWild Pok\emon encountered in double\lbattles are harder to catch.\pThis is also true of Pok\emon that are\na higher level than the Pok\emon\lthat is out.\pPlan ahead when planning to capture\nPok\emon.
 
 #org @gText_Route11South_MegaStoneRefinerSign
 Richard's Refinery\nHome of Kulure's Mega Stone Refiner
+
+#org @gText_Route11South_TrainerTipsMegaEvolution
+Trainer Tips!\pYou can mega evolve your Pok\emon,\nif you have a Mega Ring and your\lPok\emon holds the corresponding\lMega Stone.\pIn battle, press [START_BUTTON] when viewing\nyour moves to toggle Mega\lEvolution on or off.\pYou can only Mega Evolve a\nsingle Pok\emon once per battle, and\lthe effect lasts until the battle\lends.\pUse Mega Evolution to bring out your\nPok\emon's full potential!
 
 #org @gText_Route11South_PlutoEvent_RivalSpotsPlayer
 [BLUE]Oh, [PLAYER], there you are!
@@ -257,7 +260,7 @@ I should've expected this[.]
 [BLACK]Clancy: [BLUE]Aw, don't look so smug!\pYou beat us, sure, but you won't\nbeat the head of this operation.\pGo on, try. I could use a good\nlaugh.
 
 #org @gText_Route11South_PlutoEvent_RivalHealsPlayer
-[BLACK][RIVAL]: [BLUE]Nice work, [PLAYER]. We're two\nfor two against these guys.\pI'll deal with them; you deal with\nthe leader. Here, I'll heal you\lup[.]
+[BLACK][RIVAL]: [BLUE]Nice work, [PLAYER]. We're\ntwo for two against these guys.\pI'll deal with them; you deal with\nthe leader. Here, I'll heal you\lup[.]
 
 #org @gText_Route11South_PlutoEvent_RivalCheersPlayerOn
 [BLACK][RIVAL]: [BLUE]You've got this.
@@ -437,7 +440,7 @@ No way! Even after all the training\nwe've been doing?
 [BLACK]Alistair: [BLUE][RIVAL][.] I'm sure I don't\nneed to tell you this, but[.]\pThere can be only one champion.\pIf you and [PLAYER] share that\ndream, it is natural that only one\lof you can achieve it.
 
 #org @gText_Route11SouthHouse_PlutoEvent_RivalUpset
-[BLACK][RIVAL]: [BLUE]*Sigh* Yeah[.]
+[BLACK][RIVAL]: [BLUE](Sigh) Yeah[.]
 
 #org @gText_Route11SouthHouse_PlutoEvent_RivalConsideringGivingUp
 [BLACK][RIVAL]: [BLUE]I love travelling around\nthe region with [PLAYER], I really\ldo!\pIt's just that[.] They're so good at\nbattling. It comes so easily to\lthem.\pI don't know if I can keep up.

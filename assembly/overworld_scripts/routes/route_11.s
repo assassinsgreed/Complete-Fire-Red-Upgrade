@@ -283,14 +283,19 @@ SignScript_Route11South_HessonPass:
     msgbox gText_Route11South_HessonPassSign MSG_SIGN
     end
 
-.global SignScript_Route11South_TrainerTips
-SignScript_Route11South_TrainerTips:
-    msgbox gText_Route11South_TrainerTipsSign MSG_SIGN
+.global SignScript_Route11South_TrainerTips_WildDoubleBattles
+SignScript_Route11South_TrainerTips_WildDoubleBattles:
+    msgbox gText_Route11South_TrainerTipsWildDoubleBattlesSign MSG_SIGN
     end
 
 .global SignScript_Route11South_MegaStoneRefiner
 SignScript_Route11South_MegaStoneRefiner:
     msgbox gText_Route11South_MegaStoneRefinerSign MSG_SIGN
+    end
+
+.global SignScript_Route11South_TrainerTips_MegaEvolution
+SignScript_Route11South_TrainerTips_MegaEvolution:
+    msgbox gText_Route11South_TrainerTipsMegaEvolution MSG_SIGN
     end
 
 .global EventScript_Route11South_Rival
