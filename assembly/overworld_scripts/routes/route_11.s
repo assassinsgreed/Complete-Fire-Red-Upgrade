@@ -500,11 +500,17 @@ ResetParnerState:
     return
 
 RemovePartner:
+    compare PartnerVar PartnerRival
+    if lessthan _call FadeScreenForLeavingRouteReset
     call ResetParnerState
     compare PartnerVar PartnerRival
     if greaterthan _call MovePlayerInFrontOfRival @ Had Alistair
     if equal _call MovePlayerInFrontOfAlistair @ Had Rival
     if lessthan _call ResetPlayerOnTileScript @ Reposition player after trying to leave the map
+    return
+
+FadeScreenForLeavingRouteReset:
+    fadescreen FADEOUT_BLACK
     return
 
 MovePlayerInFrontOfRival:
@@ -516,8 +522,8 @@ MovePlayerInFrontOfAlistair:
     return
 
 ResetPlayerOnTileScript:
-    getplayerpos 0x4000 0x4001
-    warpmuted 3 29 0xFF 0x4000 0x4001 @ Same spot, done to reset partners
+    special 0x8E
+    fadescreen FADEIN_BLACK
     return
 
 .global TileScript_Route11South_North
@@ -891,8 +897,8 @@ MegaStoneShop:
     .hword ITEM_DURALUDITE
     .hword ITEM_NONE
 
-m_RivalWalksToMeetPlayer: .byte walk_left, walk_left, walk_left, walk_left, walk_left, walk_left, walk_left, end_m
-m_RivalAndPlayerWalkToAlistair: .byte walk_right, walk_right, walk_right, walk_right, walk_right, walk_right, look_down, end_m
+m_RivalWalksToMeetPlayer: .byte walk_left, walk_left, walk_left, walk_left, walk_left, walk_left, walk_left, walk_left, end_m
+m_RivalAndPlayerWalkToAlistair: .byte walk_right, walk_right, walk_right, walk_right, walk_right, walk_right, walk_right, look_down, end_m
 m_AlistairWalksToMeetingPlace: .byte walk_up, walk_up, walk_up, walk_up, walk_left, walk_left, walk_left, walk_left, walk_up, look_left, end_m
 m_AlistairLinesUpWithRival: .byte walk_up, look_down, end_m
 m_ClancyFrustratedJumps: .byte jump_onspot_down, jump_onspot_down, end_m
