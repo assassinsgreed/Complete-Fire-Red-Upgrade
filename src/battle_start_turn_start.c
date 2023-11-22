@@ -178,6 +178,17 @@ static void SavePartyItems(void)
 		gNewBS->itemBackup[i] = GetMonData(&gPlayerParty[i], MON_DATA_HELD_ITEM, NULL);
 }
 
+static void TryBackupEnemyTeam(void)
+{
+	#ifdef FLAG_BACKUP_ENEMY_TEAM
+	if (FlagGet(FLAG_BACKUP_ENEMY_TEAM))
+	{
+		gNewBS->foePartyBackup = Calloc(sizeof(struct Pokemon) * PARTY_SIZE);
+		Memcpy(gNewBS->foePartyBackup, gEnemyParty, sizeof(struct Pokemon) * PARTY_SIZE);
+	}
+	#endif
+}
+
 static void TryClearLevelCapKeptOn(void)
 {
 	#if (defined FLAG_HARD_LEVEL_CAP && defined FLAG_KEPT_LEVEL_CAP_ON)
@@ -220,6 +231,7 @@ void BattleBeginFirstTurn(void)
 					gBattleScripting.battleStyle = OPTIONS_BATTLE_STYLE_SEMI_SHIFT;
 				#endif
 				SavePartyItems();
+				TryBackupEnemyTeam();
 				TryClearLevelCapKeptOn();
 				++*state;
 				break;
@@ -1337,6 +1349,7 @@ void HandleAction_UseMove(void)
 	gNewBS->breakDisguiseSpecialDmg = FALSE;
 	gNewBS->dontActivateMoldBreakersAnymoreThisTurn = FALSE;
 	gNewBS->printedStrongWindsWeakenedAttack = FALSE;
+	gNewBS->cramorantTransformed = FALSE;
 	gNewBS->zMoveData.active = FALSE;
 	gNewBS->batonPassing = FALSE;
 	gNewBS->dynamaxData.nullifiedStats = FALSE;
@@ -1590,16 +1603,9 @@ void HandleAction_UseMove(void)
 			gBankTarget = GetBattlerAtPosition(PARTNER(gBankTarget));
 		}
 	}
-	else if (gBattleTypeFlags & BATTLE_TYPE_DOUBLE
-		 && moveTarget & MOVE_TARGET_ALL)
+	else if (IS_DOUBLE_BATTLE && moveTarget & MOVE_TARGET_ALL)
 	{
-		while ((gBankTarget = GetNextMultiTarget()) != 0xFF && gBattleMons[gBankTarget].hp == 0)
-		{
-			++gNewBS->OriginalAttackerTargetCount;
-		}
-
-		if (gBankTarget == 0xFF) //No targets left
-			gBankTarget = FOE(gBankAttacker); //Doesn't matter who, as long as not attacker
+		DetermineFirstMultiTarget();
 	}
 	else if (gBattleTypeFlags & BATTLE_TYPE_DOUBLE)
 	{
@@ -1657,6 +1663,17 @@ void HandleAction_UseMove(void)
 		gBattlescriptCurrInstr = gBattleScriptsForMoveEffects[gBattleMoves[gCurrentMove].effect];
 
 	gCurrentActionFuncId = ACTION_RUN_BATTLESCRIPT;
+}
+
+void DetermineFirstMultiTarget(void)
+{
+	while ((gBankTarget = GetNextMultiTarget()) != 0xFF && gBattleMons[gBankTarget].hp == 0)
+	{
+		++gNewBS->OriginalAttackerTargetCount;
+	}
+
+	if (gBankTarget == 0xFF) //No targets left
+		gBankTarget = FOE(gBankAttacker); //Doesn't matter who, as long as not attacker
 }
 
 static void TrySetupRaidBossRepeatedAttack(u8 actionFuncId)

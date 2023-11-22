@@ -1155,10 +1155,17 @@ u8 GetIllusionPartyNumber(u8 bank)
 		struct Pokemon* party = LoadPartyRange(bank, &firstMonId, &lastMonId);
 		useBattleParty = (side == B_SIDE_PLAYER && !(gBattleTypeFlags & BATTLE_TYPE_LINK));
 		illusionMonId = (useBattleParty) ? GetBattlePartyIdFromPartyId(gBattlerPartyIndexes[bank]) : gBattlerPartyIndexes[bank];
+		bool8 isTagBattle = IsTagBattle();
+	
+		if (useBattleParty && isTagBattle)
+			lastMonId += 1; //Because team is slots 0, 2, 3
 
 		for (u8 i = lastMonId - 1; i >= firstMonId; --i) //Loop through party in reverse order
 		{
 			u8 monId = i; //Mon id may get overwritten later
+
+			if (i == 1 && useBattleParty && isTagBattle)
+				--i;
 
 			if (monId == illusionMonId) //Finished checking mons after
 				return gBattlerPartyIndexes[bank];
@@ -1372,15 +1379,8 @@ bool8 CanTransferItem(u16 species, u16 item)
 			break;
 
 		case ITEM_EFFECT_PRIMAL_ORB:
-			for (i = 0; i < EVOS_PER_MON; ++i)
-			{
-				if (evolutions[i].method == EVO_NONE) //Most likely end of entries
-					break; //Break now to save time
-				else if ((evolutions[i].method == MEGA_EVOLUTION && evolutions[i].unknown == MEGA_VARIANT_PRIMAL && evolutions[i].param == item) //Can Primal Evolve
-				||  (evolutions[i].method == MEGA_EVOLUTION && evolutions[i].unknown == MEGA_VARIANT_PRIMAL && evolutions[i].param == 0)) //Is Primal
-					return FALSE;
-			}
-			break;
+			return !IsPrimalSpecies(species)
+				&& GetPrimalSpecies(species, item) == SPECIES_NONE; //Can't primal evolve
 	}
 
 	return TRUE;
