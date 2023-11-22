@@ -910,6 +910,7 @@ struct NewBattleStruct
 	bool8 printedStrongWindsWeakenedAttack : 1;
 	bool8 isTrainerBattle : 1;
 	bool8 cottonDownActive : 1;
+	bool8 cramorantTransformed : 1;
 
 	//Other
 	u16 LastUsedMove;
@@ -1042,6 +1043,8 @@ struct NewBattleStruct
 		bool8 dynamaxPotential[MAX_BATTLERS_COUNT][MAX_BATTLERS_COUNT]; //dynamaxPotential[bankAtk][bankDef]
 		const void* megaPotential[MAX_BATTLERS_COUNT]; //aiMegaPotential[bankAtk] - stores evolution data of attacker
 	} ai;
+
+	struct Pokemon** foePartyBackup; //Pointer to dynamically allocated memory
 };
 
 extern struct NewBattleStruct* gNewBS; //0x203E038
