@@ -30,3 +30,81 @@ This is your last chance before\nBruccie Village to restock your\lsupplies.\pMak
 
 #org @gText_Route12RestHouse_Beauty
 This rest house sure is handy, isn't\nit?\pIt's got a Pok\emon Center[.] And a\nPok\eMart[.]\pAnd, you can fly back to here any\ntime you want! So handy.
+
+#org @gText_Route12RestHouse_Cutscene_SeleneGreetsPlayer
+[BLACK]Selene: [RED]Oh, [PLAYER], fancy seeing\nyou here! How's it going?
+
+#org @gText_Route12RestHouse_Cutscene_SeleneAsksAboutBadges
+[BLACK]Selene: [RED]Hm? [RIVAL] isn't with you\ntoday?\pOh, he went on ahead to get gym\nbadges, you say?\pYou two are working so hard! I'm\nsure you'll have them all before\llong.\pHey[.] How many badges do you have,\n[PLAYER]?
+
+#org @gText_Route12RestHouse_Cutscene_SeleneLessThanTwoBadges
+[BLACK]Selene: [RED]You have fewer than two\nbadges[.]\pYou're a cheater. That's not champion\nlevel behaviour.
+
+#org @gText_Route12RestHouse_Cutscene_SeleneTwoBadges
+[BLACK]Selene: [RED]You have two badges[.]\pYou must have faced many hardships\nduring your journey.\pDon't give up though, I'm sure you've\ngot this!
+
+#org @gText_Route12RestHouse_Cutscene_SeleneThreeBadges
+[BLACK]Selene: [RED]You have three badges[.]\pYour journey is starting to take\nshape.\pThe road ahead may be tough, but\nI'm sure you'll be resourceful and\lpull through!
+
+#org @gText_Route12RestHouse_Cutscene_SeleneFourBadges
+[BLACK]Selene: [RED]You have four badges[.]\pThat's pretty good! You must've met\na lot of unique Pok\emon during\lyour journey.\pI'm sure you and your Pok\emon will\nsee this journey through to the\lend.
+
+#org @gText_Route12RestHouse_Cutscene_SeleneFiveBadges
+[BLACK]Selene: [RED]You have five badges[.]\pThat's excellent! You must've faced\nevery challenge before you head\lon.\pKeep this up, and you'll give me a\nrun for my money someday, haha!
+
+#org @gText_Route12RestHouse_Cutscene_SeleneCommentsOnGymThemes
+[BLACK]Selene: [RED]What do you think of the\nKulure gyms?\pI helped the gym leaders refine\ntheir unique battle styles.
+
+#org @gText_Route12RestHouse_Cutscene_AlistairArrives
+[BLACK]Alistair: [BLUE]I knew I heard an\nirritating voice.\pAnd sure enough, there's our "Star\nChampion\" in action.\pJust can't let your gym leaders do\ntheir jobs without sticking your\lnose in, huh?
+
+#org @gText_Route12RestHouse_Cutscene_SeleneRepliesToAlistairsComment
+[BLACK]Selene: [RED]It's my duty to keep Kulure's\ngyms at their best.
+
+#org @gText_Route12RestHouse_Cutscene_AlistairRetortsToSelenesComment
+[BLACK]Alistair: [BLUE]Oh, I don't doubt it.\pIt's your duty to put your role as\nchampion above all else, no?\pAnd, what an excellent job you're\ndoing[.]
+
+#org @gText_Route12RestHouse_Cutscene_AlistairCommentsOnLaplazGymShuttingDown
+[BLACK]Alistair: [BLUE]The Laplaz Gym is vacant,\nand may shut down soon.\pSurely that is a sign of "keeping\nthem at their best,\" as you put\lit?
+
+#org @gText_Route12RestHouse_Cutscene_AlistairCommentsOnLaplazGymReopening
+[BLACK]Alistair: [BLUE]The Laplaz Gym was vacant,\nuntil recently.\pI heard it was a mutual acquaintance\nof ours that was responsible for it\lreopening though[.] Not you.
+
+#org @gText_Route12RestHouse_Cutscene_SeleneDismissesAlistairsClaim
+[BLACK]Selene: [RED]That's different.\pIt isn't my place to change how the\ntown handles gym leadership.
+
+#org @gText_Route12RestHouse_Cutscene_AlistairDismissesSelenesClaim
+[BLACK]Alistair: [BLUE]A convenient answer, as\nexpected.
+
+#org @gText_Route12RestHouse_Cutscene_AlistairTriesToLeave
+[BLACK]Alistair: [BLUE][PLAYER], it's good to see\nyou again.\pI was just investigating some rumours\nof an unusual legendary Pok\emon on\lRoute 12.\pBut[.] I must be going. I'm sure we\nwill cross paths again someday.
+
+#org @gText_Route12RestHouse_Cutscene_SeleneStopsAlistair
+[BLACK]Selene: [RED]Alistair, wait!
+
+#org @gText_Route12RestHouse_Cutscene_AlistairAcknowledgesBeingRecognized
+[BLACK]Alistair: [BLUE]My, my[.] So you recognize\nme, after all.
+
+#org @gText_Route12RestHouse_Cutscene_SeleneAsksWhereAlistairWent
+[BLACK]Selene: [RED]I wasn't sure at first[.]\pBut after we met in Daimyn City, I\nknew.\pAlistair. It's been 5 years since our\njourney. Where did you go?
+
+#org @gText_Route12RestHouse_Cutscene_AlistairSharesSomeHistory
+[BLACK]Alistair: [BLUE]You don't have the right to\nask a question like that.\pYou talk about the journey to\nbecoming a champion like it's some\lgreat endeavor.\pYou conveniently choose to keep\nforgetting those that it leaves\lbehind, though.\pYou and I[.] We set out with the\ndream to become the champion.\pWe pushed each other to our limits.\pBut[.] You were always the better\nbattler. I knew that.\pAnd, when Victini chose you, it was\nclear my dream was never going\lto be a reality.\pI gave up, but you didn't. You\nbecame the champion.\pYou did it, not me.\nI was just left behind.\pAnd, when you became the champion,\nyou stopped making time for your\lfriends and family.\pYou said you were "too busy\" for\nus. But, you were always too busy.
+
+#org @gText_Route12RestHouse_Cutscene_SeleneTalksAboutHerJourney
+[BLACK]Selene: [RED]Alistair[.] Our journey was\nimportant to me too.\pI have so many fond memories of\nour Pok\emon playing together.
+
+#org @gText_Route12RestHouse_Cutscene_AlistairTalksAboutEmboar
+[BLACK]Alistair: [BLUE]And yet, that's all they\nare - memories.\pEmboar hasn't been the same since\nour journey ended, either.\pHe has no interest in battling\nanymore, nor do I have the will to\ltrain him[.]\pYou see, his dream died too,\nSelene.\pTo become the champion, you must\nachieve something others can't.\pIt's as simple as that.
+
+#org @gText_Route12RestHouse_Cutscene_SeleneTalksAboutHerResponsibilities
+[BLACK]Selene: [RED]As a champion[.]\pAs Kulure's strongest trainer[.]\pI have a lot of important\nresponsibilities.\pSometimes I need to put those first,\neven if it isn't easy.\pIf I don't do what I need to, people\ncould get hurt.\pPlease understand that.
+
+#org @gText_Route12RestHouse_Cutscene_AlistairRejectsSelenesResponsibilities
+[BLACK]Alistair: [BLUE]5 years, Selene. It's been\n5 years.\pIn all that time, you couldn't even\nstop by to say hello?\pYou say you're doing what you must\nto keep people from getting hurt.\pIt's all a sham. You haven't even\nseen your own mother in 5 years.\pIf it weren't for me, she would be\nall alone.
+
+#org @gText_Route12RestHouse_Cutscene_AlistairLeaves
+[BLACK]Alistair: [BLUE]The position of Champion\nneeds to be removed.\pAll it does is hurt people and hinder\nthe region's progress.
+
+#org @gText_Route12RestHouse_Cutscene_SeleneLeaves
+[BLACK]Selene: [RED]I'm sorry you had to see\nthat, [PLAYER].\pBut[.] He's right, about all of it.\pI've made some mistakes and hurt\npeople dear to me.\p[PLAYER], please remember to cherish\nyour journey, even if you can't\lachieve what you set out to.\pIf you're planning to collect all the\ngym badges, you'll want to head to\lBruccie Village.\pI'm sure [RIVAL] has headed there\nas well.\pPlease excuse me. I need to catch\nup to Alistair before he's gone.
