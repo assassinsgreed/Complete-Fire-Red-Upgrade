@@ -135,7 +135,7 @@
 #define VAR_MAP_SCENE_ROUTE_11_PLUTO_ENCOUNTER                                 0x4059
 #define VAR_MAP_SCENE_LAPLAZ_GYM_CASEY_EVENT                                   0x405A
 #define VAR_MAP_SCENE_LAKE_LAPLAZ_GALARIAN_BIRDGS                              0x405B
-#define VAR_MAP_SCENE_SILPH_CO_7F                                              0x405C
+#define VAR_MAP_SCENE_ROUTE_12_REST_HOUSE                                      0x405C
 #define VAR_MAP_SCENE_POKEMON_TOWER_2F                                         0x405D
 #define VAR_MAP_SCENE_ROUTE16                                                  0x405E
 #define VAR_MAP_SCENE_ROUTE23                                                  0x405F
