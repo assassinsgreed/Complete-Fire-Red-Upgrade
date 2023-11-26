@@ -1096,69 +1096,69 @@
 #define HIDDEN_ITEM_HESSON_PASS_F2_NEST_BALL                           67
 #define HIDDEN_ITEM_HESSON_PASS_F2_NUGGET                              68
 #define HIDDEN_ITEM_ROUTE11NORTH_QUALOT_BERRY                          69
-#define HIDDEN_ITEM_UNDERGROUND_PATH_NORTH_SOUTH_TUNNEL_POTION         70 // For some reason, cannot be picked up
-#define HIDDEN_ITEM_UNDERGROUND_PATH_NORTH_SOUTH_TUNNEL_ANTIDOTE       71 // For some reason, cannot be picked up
-#define HIDDEN_ITEM_UNDERGROUND_PATH_NORTH_SOUTH_TUNNEL_PARALYZE_HEAL  72 // For some reason, cannot be picked up
-#define HIDDEN_ITEM_UNDERGROUND_PATH_NORTH_SOUTH_TUNNEL_AWAKENING      73 // For some reason, cannot be picked up
-#define HIDDEN_ITEM_UNDERGROUND_PATH_NORTH_SOUTH_TUNNEL_BURN_HEAL      74 // For some reason, cannot be picked up
-#define HIDDEN_ITEM_UNDERGROUND_PATH_NORTH_SOUTH_TUNNEL_ICE_HEAL       75 // For some reason, cannot be picked up
-#define HIDDEN_ITEM_UNDERGROUND_PATH_NORTH_SOUTH_TUNNEL_ETHER          76 // For some reason, cannot be picked up
-#define HIDDEN_ITEM_UNDERGROUND_PATH_EAST_WEST_TUNNEL_POTION           77 // For some reason, cannot be picked up
-#define HIDDEN_ITEM_UNDERGROUND_PATH_EAST_WEST_TUNNEL_ANTIDOTE         78 // For some reason, cannot be picked up
-#define HIDDEN_ITEM_UNDERGROUND_PATH_EAST_WEST_TUNNEL_PARALYZE_HEAL    79 // For some reason, cannot be picked up
-#define HIDDEN_ITEM_UNDERGROUND_PATH_EAST_WEST_TUNNEL_AWAKENING        80 // For some reason, cannot be picked up
-#define HIDDEN_ITEM_UNDERGROUND_PATH_EAST_WEST_TUNNEL_BURN_HEAL        81 // For some reason, cannot be picked up
-#define HIDDEN_ITEM_UNDERGROUND_PATH_EAST_WEST_TUNNEL_ICE_HEAL         82 // For some reason, cannot be picked up
-#define HIDDEN_ITEM_UNDERGROUND_PATH_EAST_WEST_TUNNEL_ETHER            83 // For some reason, cannot be picked up
-#define HIDDEN_ITEM_MT_MOON_B1F_TINY_MUSHROOM                          84 // For some reason, cannot be picked up
-#define HIDDEN_ITEM_MT_MOON_B1F_TINY_MUSHROOM_2                        85 // For some reason, cannot be picked up
-#define HIDDEN_ITEM_MT_MOON_B1F_TINY_MUSHROOM_3                        86 // For some reason, cannot be picked up
-#define HIDDEN_ITEM_MT_MOON_B1F_BIG_MUSHROOM                           87 // For some reason, cannot be picked up
-#define HIDDEN_ITEM_MT_MOON_B1F_BIG_MUSHROOM_2                         88 // For some reason, cannot be picked up
-#define HIDDEN_ITEM_MT_MOON_B1F_BIG_MUSHROOM_3                         89 // For some reason, cannot be picked up
-#define HIDDEN_ITEM_HIDDEN_ITEM_ROUTE11NORTH_REVIVE                    90
-#define HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_BLUK_BERRY               91 // For some reason, cannot be picked up
-#define HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_NANAB_BERRY              92 // For some reason, cannot be picked up
-#define HIDDEN_ITEM_HIDDEN_ITEM_ROUTE11NORTH_SITRUS_BERRY              93
-#define HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_ORAN_BERRY               94 // For some reason, cannot be picked up
-#define HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_CHERI_BERRY              95 // For some reason, cannot be picked up
-#define HIDDEN_ITEM_HIDDEN_ITEM_ROUTE11NORTH_HYPER_POTION              96
-#define HIDDEN_ITEM_HIDDEN_ITEM_ROUTE11NORTH_MAX_ETHER                 97
-#define HIDDEN_ITEM_LAPLAZ_TOWN_PP_UP                                  98
-#define HIDDEN_ITEM_PERADON_FOREST_HONDEW_BERRY                        99
-#define HIDDEN_ITEM_PERADON_FOREST_POMEG_BERRY                        100
-#define HIDDEN_ITEM_PERADON_FOREST_RARE_CANDY                         101
-#define HIDDEN_ITEM_THREE_ISLAND_BERRY_FOREST_LUM_BERRY               102 // For some reason, cannot be picked up
-#define HIDDEN_ITEM_ONE_ISLAND_TREASURE_BEACH_STARDUST                103 // For some reason, cannot be picked up
-#define HIDDEN_ITEM_ONE_ISLAND_TREASURE_BEACH_STARDUST_2              104 // For some reason, cannot be picked up
-#define HIDDEN_ITEM_ONE_ISLAND_TREASURE_BEACH_PEARL                   105 // For some reason, cannot be picked up
-#define HIDDEN_ITEM_ONE_ISLAND_TREASURE_BEACH_PEARL_2                 106 // For some reason, cannot be picked up
-#define HIDDEN_ITEM_ONE_ISLAND_TREASURE_BEACH_ULTRA_BALL              107 // For some reason, cannot be picked up
-#define HIDDEN_ITEM_ONE_ISLAND_TREASURE_BEACH_ULTRA_BALL_2            108 // For some reason, cannot be picked up
-#define HIDDEN_ITEM_ONE_ISLAND_TREASURE_BEACH_STAR_PIECE              109 // For some reason, cannot be picked up
-#define HIDDEN_ITEM_ONE_ISLAND_TREASURE_BEACH_BIG_PEARL               110 // For some reason, cannot be picked up
-#define HIDDEN_ITEM_PERADON_FOREST_SITRUS_BERRY                       111
-#define HIDDEN_ITEM_PERADON_FOREST_REVIVE                             112
-#define HIDDEN_ITEM_PERADON_FOREST_BIG_MUSHROOM                       113
-#define HIDDEN_ITEM_PERADON_FOREST_ORAN_BERRY                         114
-#define HIDDEN_ITEM_PERADON_FOREST_GREAT_BALL                         115
-#define HIDDEN_ITEM_PERADON_FOREST_THREE_SITRUS_BERRIES               116
-#define HIDDEN_ITEM_PERADON_FOREST_ETHER                              117
-#define HIDDEN_ITEM_PERADON_FOREST_PECHA_BERRY                        118
-#define HIDDEN_ITEM_PERADON_FOREST_SUPER_REPEL                        119
-#define HIDDEN_ITEM_PERADON_FOREST_KELPSY_BERRY                       120
-#define HIDDEN_ITEM_PERADON_FOREST_CHERI_BERRY                        121
-#define HIDDEN_ITEM_PERADON_FOREST_BIG_MUSHROOM                       122
-#define HIDDEN_ITEM_LAKE_LAPLAZ_DUSK_BALL                             123
-#define HIDDEN_ITEM_LAKE_LAPLAZ_OVAL_STONE                            124
-#define HIDDEN_ITEM_ROUTE10_PERSIM_BERRY                              125
-#define HIDDEN_ITEM_ROUTE10_CHERI_BERRY                               126
-#define HIDDEN_ITEM_ROUTE8_RAWST_BERRY                                127
-#define HIDDEN_ITEM_ROUTE8_LUM_BERRY                                  128
-#define HIDDEN_ITEM_ROUTE8_LEPPA_BERRY                                129
-#define HIDDEN_ITEM_ROUTE12_RARE_CANDY                                130
-#define HIDDEN_ITEM_ROUTE12_LEFTOVERS                                 131
-#define HIDDEN_ITEM_ROUTE16_LEFTOVERS                                 132
+#define HIDDEN_ITEM_RANDOMLY_REFRESHES_AS_PLAYER_WALKS_ON_BY_DEFAULT   70 // These items are configured to randomly spawn as the player walks, starting after the player visits the SS Anne in Vanilla FR
+#define HIDDEN_ITEM_RANDOMLY_REFRESHES_AS_PLAYER_WALKS_ON_BY_DEFAULT   71 // See here for more information: https://www.pokecommunity.com/threads/list-of-hidden-item-flags-used-in-fire-red.399026/
+#define HIDDEN_ITEM_RANDOMLY_REFRESHES_AS_PLAYER_WALKS_ON_BY_DEFAULT   72
+#define HIDDEN_ITEM_RANDOMLY_REFRESHES_AS_PLAYER_WALKS_ON_BY_DEFAULT   73
+#define HIDDEN_ITEM_RANDOMLY_REFRESHES_AS_PLAYER_WALKS_ON_BY_DEFAULT   74
+#define HIDDEN_ITEM_RANDOMLY_REFRESHES_AS_PLAYER_WALKS_ON_BY_DEFAULT   75
+#define HIDDEN_ITEM_RANDOMLY_REFRESHES_AS_PLAYER_WALKS_ON_BY_DEFAULT   76
+#define HIDDEN_ITEM_RANDOMLY_REFRESHES_AS_PLAYER_WALKS_ON_BY_DEFAULT   77
+#define HIDDEN_ITEM_RANDOMLY_REFRESHES_AS_PLAYER_WALKS_ON_BY_DEFAULT   78
+#define HIDDEN_ITEM_RANDOMLY_REFRESHES_AS_PLAYER_WALKS_ON_BY_DEFAULT   79
+#define HIDDEN_ITEM_RANDOMLY_REFRESHES_AS_PLAYER_WALKS_ON_BY_DEFAULT   80
+#define HIDDEN_ITEM_RANDOMLY_REFRESHES_AS_PLAYER_WALKS_ON_BY_DEFAULT   81
+#define HIDDEN_ITEM_RANDOMLY_REFRESHES_AS_PLAYER_WALKS_ON_BY_DEFAULT   82
+#define HIDDEN_ITEM_RANDOMLY_REFRESHES_AS_PLAYER_WALKS_ON_BY_DEFAULT   83
+#define HIDDEN_ITEM_RANDOMLY_REFRESHES_AS_PLAYER_WALKS_ON_BY_DEFAULT   84
+#define HIDDEN_ITEM_RANDOMLY_REFRESHES_AS_PLAYER_WALKS_ON_BY_DEFAULT   85
+#define HIDDEN_ITEM_RANDOMLY_REFRESHES_AS_PLAYER_WALKS_ON_BY_DEFAULT   86
+#define HIDDEN_ITEM_RANDOMLY_REFRESHES_AS_PLAYER_WALKS_ON_BY_DEFAULT   87
+#define HIDDEN_ITEM_RANDOMLY_REFRESHES_AS_PLAYER_WALKS_ON_BY_DEFAULT   88
+#define HIDDEN_ITEM_RANDOMLY_REFRESHES_AS_PLAYER_WALKS_ON_BY_DEFAULT   89
+#define HIDDEN_ITEM_RANDOMLY_REFRESHES_AS_PLAYER_WALKS_ON_BY_DEFAULT   90
+#define HIDDEN_ITEM_RANDOMLY_REFRESHES_AS_PLAYER_WALKS_ON_BY_DEFAULT   91
+#define HIDDEN_ITEM_RANDOMLY_REFRESHES_AS_PLAYER_WALKS_ON_BY_DEFAULT   92
+#define HIDDEN_ITEM_RANDOMLY_REFRESHES_AS_PLAYER_WALKS_ON_BY_DEFAULT   93
+#define HIDDEN_ITEM_RANDOMLY_REFRESHES_AS_PLAYER_WALKS_ON_BY_DEFAULT   94
+#define HIDDEN_ITEM_RANDOMLY_REFRESHES_AS_PLAYER_WALKS_ON_BY_DEFAULT   95
+#define HIDDEN_ITEM_RANDOMLY_REFRESHES_AS_PLAYER_WALKS_ON_BY_DEFAULT   96
+#define HIDDEN_ITEM_RANDOMLY_REFRESHES_AS_PLAYER_WALKS_ON_BY_DEFAULT   97
+#define HIDDEN_ITEM_RANDOMLY_REFRESHES_AS_PLAYER_WALKS_ON_BY_DEFAULT   98
+#define HIDDEN_ITEM_RANDOMLY_REFRESHES_AS_PLAYER_WALKS_ON_BY_DEFAULT   99
+#define HIDDEN_ITEM_RANDOMLY_REFRESHES_AS_PLAYER_WALKS_ON_BY_DEFAULT  100
+#define HIDDEN_ITEM_RANDOMLY_REFRESHES_AS_PLAYER_WALKS_ON_BY_DEFAULT  101
+#define HIDDEN_ITEM_RANDOMLY_REFRESHES_AS_PLAYER_WALKS_ON_BY_DEFAULT  102
+#define HIDDEN_ITEM_RANDOMLY_REFRESHES_AS_PLAYER_WALKS_ON_BY_DEFAULT  103
+#define HIDDEN_ITEM_RANDOMLY_REFRESHES_AS_PLAYER_WALKS_ON_BY_DEFAULT  104
+#define HIDDEN_ITEM_RANDOMLY_REFRESHES_AS_PLAYER_WALKS_ON_BY_DEFAULT  105
+#define HIDDEN_ITEM_RANDOMLY_REFRESHES_AS_PLAYER_WALKS_ON_BY_DEFAULT  106
+#define HIDDEN_ITEM_RANDOMLY_REFRESHES_AS_PLAYER_WALKS_ON_BY_DEFAULT  107
+#define HIDDEN_ITEM_RANDOMLY_REFRESHES_AS_PLAYER_WALKS_ON_BY_DEFAULT  108
+#define HIDDEN_ITEM_RANDOMLY_REFRESHES_AS_PLAYER_WALKS_ON_BY_DEFAULT  109
+#define HIDDEN_ITEM_RANDOMLY_REFRESHES_AS_PLAYER_WALKS_ON_BY_DEFAULT  110
+#define HIDDEN_ITEM_HIDDEN_ITEM_ROUTE11NORTH_REVIVE                   111
+#define HIDDEN_ITEM_HIDDEN_ITEM_ROUTE11NORTH_SITRUS_BERRY             112
+#define HIDDEN_ITEM_HIDDEN_ITEM_ROUTE11NORTH_HYPER_POTION             113
+#define HIDDEN_ITEM_HIDDEN_ITEM_ROUTE11NORTH_MAX_ETHER                114
+#define HIDDEN_ITEM_LAPLAZ_TOWN_PP_UP                                 115
+#define HIDDEN_ITEM_PERADON_FOREST_HONDEW_BERRY                       116
+#define HIDDEN_ITEM_PERADON_FOREST_POMEG_BERRY                        117
+#define HIDDEN_ITEM_PERADON_FOREST_RARE_CANDY                         118
+#define HIDDEN_ITEM_PERADON_FOREST_SITRUS_BERRY                       119
+#define HIDDEN_ITEM_PERADON_FOREST_REVIVE                             120
+#define HIDDEN_ITEM_PERADON_FOREST_BIG_MUSHROOM                       121
+#define HIDDEN_ITEM_PERADON_FOREST_ORAN_BERRY                         122
+#define HIDDEN_ITEM_PERADON_FOREST_GREAT_BALL                         123
+#define HIDDEN_ITEM_PERADON_FOREST_THREE_SITRUS_BERRIES               124
+#define HIDDEN_ITEM_PERADON_FOREST_ETHER                              125
+#define HIDDEN_ITEM_PERADON_FOREST_PECHA_BERRY                        126
+#define HIDDEN_ITEM_PERADON_FOREST_SUPER_REPEL                        127
+#define HIDDEN_ITEM_PERADON_FOREST_KELPSY_BERRY                       128
+#define HIDDEN_ITEM_PERADON_FOREST_CHERI_BERRY                        129
+#define HIDDEN_ITEM_PERADON_FOREST_BIG_MUSHROOM                       130
+#define HIDDEN_ITEM_LAKE_LAPLAZ_DUSK_BALL                             131
+#define HIDDEN_ITEM_LAKE_LAPLAZ_OVAL_STONE                            132
 #define HIDDEN_ITEM_FUCHSIA_CITY_MAX_REVIVE                           133
 #define HIDDEN_ITEM_ROCKET_HIDEOUT_B4F_NET_BALL                       134
 #define HIDDEN_ITEM_SILPH_CO_2F_ULTRA_BALL                            135
