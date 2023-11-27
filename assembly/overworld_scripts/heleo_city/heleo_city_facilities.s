@@ -41,6 +41,7 @@ EventScript_HeleoFacilities_Mart_PokeballShop:
     pokemart HeleoPokemart_PokeballStock
     goto EventScript_EndMart
 
+.align 1
 HeleoPokemart_PokeballStock:
     .hword ITEM_HEAL_BALL
     .hword ITEM_NEST_BALL

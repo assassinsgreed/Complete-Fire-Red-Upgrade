@@ -26,6 +26,7 @@ EventScript_FerroxFacilities_Mart_BerryShop:
     pokemart FerroxPokemart_BerryStock
     goto EventScript_EndMart
 
+.align 1
 FerroxPokemart_BerryStock:
     .hword ITEM_ORAN_BERRY
     .hword ITEM_SITRUS_BERRY

@@ -40,6 +40,7 @@ EventScript_LaplazFacilities_XItemsShop:
     pokemart LaplazPokemart_XItemStock
     goto EventScript_EndMart
 
+.align 1
 LaplazPokemart_XItemStock:
     .hword ITEM_X_ATTACK
     .hword ITEM_X_DEFEND

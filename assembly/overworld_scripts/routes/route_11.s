@@ -58,7 +58,7 @@ SetAlistairBacksprite:
 
 LevelScripts_Route11South_PostRonaldBattleCutscenes:
     levelscript PlutoEncounterVar 0x3 LevelScript_PlayerReturnsToRivalAndAlistair
-    .hword LEVEL_SCRIPT_TERMIN
+	.hword LEVEL_SCRIPT_TERMIN
 
 LevelScript_PlayerReturnsToRivalAndAlistair:
     applymovement PLAYER m_LookUp
@@ -878,6 +878,7 @@ EventScript_Route11SouthRefiner_RefinerShop:
     msgbox gText_Route11SouthHouse_RefinerFarewell MSG_NORMAL
     end
 
+.align 1
 MegaStoneShop:
     .hword ITEM_VENUSAURITE_G
     .hword ITEM_CHARIZARDITE_G
