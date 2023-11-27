@@ -51,7 +51,7 @@ EventScript_LaplazNPCHouses_HeracrossKid:
     msgbox gText_LaplazTownNPCHouses_HeracrossKidDuringPic MSG_NORMAL
     hidepokepic
     msgbox gText_LaplazTownNPCHouses_HeracrossKidAfterPic MSG_NORMAL
-    applymovement LASTTALKED m_LookLeft
+    applymovement LASTTALKED m_LookRight
     end
 
 .global EventScript_LaplazNPCHouses_HeracrossKidsSister

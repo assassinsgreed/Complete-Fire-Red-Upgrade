@@ -192,6 +192,7 @@ EventScript_RivalEvent5:
     msgbox gText_RivalEvent5_DexNavCompleted MSG_NORMAL
     obtainitem ITEM_RARE_CANDY 0x3
     setflag 0x2C4 @ Finished Rival Event 5
+    goto RivalEvent5_EventComplete
     release
     end
 
