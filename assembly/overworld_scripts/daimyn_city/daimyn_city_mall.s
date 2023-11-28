@@ -67,6 +67,7 @@ EventScript_DaimynCityMall_Shop_Herbalist:
     pokemart HerbShop
     goto EventScript_EndMart
 
+.align 1
 HerbShop:
     .hword ITEM_ENERGY_POWDER
     .hword ITEM_ENERGY_ROOT
@@ -419,6 +420,7 @@ EventScript_DaimynCityMall_Shop_Pokeballs:
     pokemart PokeBallShop
     goto EventScript_EndMart
 
+.align 1
 PokeBallShop:
     .hword ITEM_NET_BALL
     .hword ITEM_DIVE_BALL
@@ -439,6 +441,7 @@ EventScript_DaimynCityMall_Shop_XItems:
     pokemart XItemsShop
     goto EventScript_EndMart
 
+.align 1
 XItemsShop:
     .hword ITEM_X_ATTACK
     .hword ITEM_X_DEFEND
@@ -463,6 +466,7 @@ EventScript_DaimynCityMall_Shop_TMs:
     pokemart TMShop
     goto EventScript_EndMart
 
+.align 1
 TMShop:
     .hword ITEM_TM16
     .hword ITEM_TM17
@@ -480,6 +484,7 @@ EventScript_DaimynCityMall_Shop_SeedSeller:
     pokemart SeedShop
     goto EventScript_EndMart
 
+.align 1
 SeedShop:
     .hword ITEM_ELECTRIC_SEED
     .hword ITEM_GRASSY_SEED
@@ -495,6 +500,7 @@ EventScript_DaimynCityMall_Shop_EVReducingBerries:
     pokemart EVReducingBerriesShop
     goto EventScript_EndMart
 
+.align 1
 EVReducingBerriesShop:
     .hword ITEM_POMEG_BERRY
     .hword ITEM_KELPSY_BERRY
@@ -512,6 +518,7 @@ EventScript_DaimynCityMall_Shop_Vitamins:
     pokemart VitaminsShop
     goto EventScript_EndMart
 
+.align 1
 VitaminsShop:
     .hword ITEM_HP_UP
     .hword ITEM_PROTEIN
@@ -530,6 +537,7 @@ EventScript_DaimynCityMall_Shop_Gems:
     pokemart GemsShop
     goto EventScript_EndMart
 
+.align 1
 GemsShop:
     .hword ITEM_NORMAL_GEM
     .hword ITEM_FIGHTING_GEM
@@ -564,6 +572,7 @@ EventScript_DaimynCityMall_Shop_TypeBoosterItems:
     pokemart TypeBoostingShop
     goto EventScript_EndMart
 
+.align 1
 TypeBoostingShop:
     .hword ITEM_BLACK_BELT
     .hword ITEM_BLACK_GLASSES
@@ -647,6 +656,7 @@ EventScript_DaimynCityMall_Shop_Incense:
     pokemart IncenseShop
     goto EventScript_EndMart
 
+.align 1
 IncenseShop:
     .hword ITEM_LAX_INCENSE
     .hword ITEM_LUCK_INCENSE
@@ -663,6 +673,7 @@ EventScript_DaimynCityMall_Shop_TypeWeaknessBerries:
     pokemart TypeBerryShop
     goto EventScript_EndMart
 
+.align 1
 TypeBerryShop:
     .hword ITEM_OCCA_BERRY
     .hword ITEM_PASSHO_BERRY
@@ -747,6 +758,7 @@ EventScript_DaimynCityMall_Shop_EvolutionaryStones:
     pokemart EvolutionaryStonesShop
     goto EventScript_EndMart
 
+.align 1
 EvolutionaryStonesShop:
     .hword ITEM_FIRE_STONE
     .hword ITEM_WATER_STONE
@@ -770,6 +782,7 @@ EventScript_DaimynCityMall_Shop_UncommonHeldItems:
     pokemart HeldItemShop
     goto EventScript_EndMart
 
+.align 1
 HeldItemShop:
     .hword ITEM_ROCKY_HELMET
     .hword ITEM_BLACK_SLUDGE
@@ -779,6 +792,11 @@ HeldItemShop:
     .hword ITEM_WIDE_LENS
     .hword ITEM_BRIGHT_POWDER
     .hword ITEM_BIG_ROOT
+    .hword ITEM_AIR_BALLOON
+    .hword ITEM_CELL_BATTERY
+    .hword ITEM_EJECT_BUTTON
+    .hword ITEM_RED_CARD
+    .hword ITEM_TERRAIN_EXTENDER
     .hword ITEM_NONE
 
 .global EventScript_DaimynCityMall_Rocker

@@ -2241,7 +2241,7 @@ const struct TrainerMonNoItemDefaultMoves sParty_Route9_Breeder_Talia[] = {
 
 const struct TrainerMonNoItemDefaultMoves sParty_Route9_Picknicker_Zoe[] = {
     { .lvl = 33, .species = SPECIES_VESPIQUEN },
-    { .lvl = 34, .species = SPECIES_VENUSAUR },
+    { .lvl = 34, .species = SPECIES_TREVENANT },
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_Route9_CoolTrainer_Kingsley[] = {
@@ -5726,7 +5726,7 @@ const struct Trainer gTrainers[] = {
         .trainerClass = CLASS_BUG_CATCHER,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
         .trainerPic = TRAINER_PIC_BUG_CATCHER,
-        .trainerName = {_F, _e, _r, _n, _a, _n, _d, _o, _END},
+        .trainerName = {_L, _y, _l, _e, _END},
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_RISKY | AI_SCRIPT_DOUBLE_BATTLE,

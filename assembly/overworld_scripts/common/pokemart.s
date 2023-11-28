@@ -70,6 +70,7 @@ EventScript_EightBadges:
     pokemart EightBadges_Stock
     goto EventScript_EndMart
 
+.align 1
 NoBadges_Stock:
     .hword ITEM_POKE_BALL
     .hword ITEM_POTION
@@ -82,6 +83,7 @@ NoBadges_Stock:
     .hword ITEM_REVIVE
     .hword ITEM_NONE
 
+.align 1
 OneBadge_Stock:
     .hword ITEM_POKE_BALL
     .hword ITEM_POTION
@@ -97,6 +99,7 @@ OneBadge_Stock:
     .hword ITEM_ESCAPE_ROPE
     .hword ITEM_NONE
 
+.align 1
 TwoBadges_Stock:
     .hword ITEM_POKE_BALL
     .hword ITEM_GREAT_BALL
@@ -114,6 +117,7 @@ TwoBadges_Stock:
     .hword ITEM_ESCAPE_ROPE
     .hword ITEM_NONE
 
+.align 1
 ThreeBadges_Stock:
     .hword ITEM_POKE_BALL
     .hword ITEM_GREAT_BALL
@@ -131,6 +135,7 @@ ThreeBadges_Stock:
     .hword ITEM_ESCAPE_ROPE
     .hword ITEM_NONE
 
+.align 1
 FourBadges_Stock:
     .hword ITEM_POKE_BALL
     .hword ITEM_GREAT_BALL
@@ -150,6 +155,7 @@ FourBadges_Stock:
     .hword ITEM_ESCAPE_ROPE
     .hword ITEM_NONE
 
+.align 1
 FiveBadges_Stock:
     .hword ITEM_POKE_BALL
     .hword ITEM_GREAT_BALL
@@ -170,6 +176,7 @@ FiveBadges_Stock:
     .hword ITEM_ESCAPE_ROPE
     .hword ITEM_NONE
 
+.align 1
 SixBadges_Stock:
     .hword ITEM_POKE_BALL
     .hword ITEM_GREAT_BALL
@@ -191,6 +198,7 @@ SixBadges_Stock:
     .hword ITEM_ESCAPE_ROPE
     .hword ITEM_NONE
 
+.align 1
 SevenBadges_Stock:
     .hword ITEM_POKE_BALL
     .hword ITEM_GREAT_BALL
@@ -214,6 +222,7 @@ SevenBadges_Stock:
     .hword ITEM_ESCAPE_ROPE
     .hword ITEM_NONE
 
+.align 1
 EightBadges_Stock:
     .hword ITEM_POKE_BALL
     .hword ITEM_GREAT_BALL

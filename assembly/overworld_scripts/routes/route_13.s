@@ -109,6 +109,7 @@ MerchantShop:
     pokemart RestHouseItems
     return
 
+.align 1
 RestHouseItems:
     .hword ITEM_POKE_BALL
     .hword ITEM_FRESH_WATER

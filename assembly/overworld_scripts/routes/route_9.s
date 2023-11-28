@@ -14,6 +14,7 @@ EventScript_Route9_Flutist:
     applymovement LASTTALKED m_LookDown
     end
 
+.align 1
 FluteShop:
     .hword ITEM_BLUE_FLUTE
     .hword ITEM_YELLOW_FLUTE
