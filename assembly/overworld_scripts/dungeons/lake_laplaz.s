@@ -38,12 +38,14 @@ SignScript_LakeLaplaz_FlowerOffering:
 
 .global TileScript_LakeLaplaz_GalarianBirdsLeft
 TileScript_LakeLaplaz_GalarianBirdsLeft:
+    special 0xAF @ Dismount bike if on it
     applymovement PLAYER m_WalkRight
     waitmovement PLAYER
     goto TileScript_LakeLaplaz_GalarianBirdsCommon
 
 .global TileScript_LakeLaplaz_GalarianBirdsCommon
 TileScript_LakeLaplaz_GalarianBirdsCommon:
+    special 0xAF @ Dismount bike if on it
     applymovement PLAYER m_PlayerWalksUp
     waitmovement PLAYER
     sound 0x15 @ Exclaim

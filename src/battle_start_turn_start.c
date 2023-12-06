@@ -221,6 +221,7 @@ void BattleBeginFirstTurn(void)
 	int i, j;
 	u8* state = &(gBattleStruct->switchInAbilitiesCounter);
 	u8* bank = &(gBattleStruct->switchInItemsCounter);
+	FlagClear(FLAG_TEMP_1); // Used to prevent duplicate trainer sliding text
 
 	if (!gBattleExecBuffer) //Inlclude Safari Check Here?
 	{

@@ -115,6 +115,7 @@ EventScript_Route10Cave_TM23_SmackDown:
 TileScript_Route10_TriggerCaseyBattle_Above:
     checkflag 0x256 @ Battled Casey on Route 10
     if SET _goto End
+    special 0xAF @ Dismount bike if on it
     lock
     call SetCaseyGender
     clearflag 0x03D @ Show Casey
@@ -133,6 +134,7 @@ TileScript_Route10_TriggerCaseyBattle_Above:
 TileScript_Route10_TriggerCaseyBattle_Below:
     checkflag 0x256 @ Battled Casey on Route 10
     if SET _goto End
+    special 0xAF @ Dismount bike if on it
     applymovement PLAYER m_WalkUp
     waitmovement PLAYER
     applymovement PLAYER m_LookRight

@@ -14,228 +14,228 @@ I now shall unleash the power\nof Dynamax!\p
 
 // Rival 1
 #org @sText_Rival1_LastSwitchIn
-Okay, [FD][06]! Let's do this![PAUSE_UNTIL_PRESS] 
+Okay, [FD][06]! Let's do this!\p 
 
 #org @sText_Rival1_LowHP
-No way! [FD][06] and I\naren't done yet![PAUSE_UNTIL_PRESS]
+No way! [FD][06] and I\naren't done yet!\p
 
 // Rival 2
 #org @sText_Rival2_LastSwitchIn
-Let us show you how much stronger\nwe've gotten![PAUSE_UNTIL_PRESS]
+Let us show you how much stronger\nwe've gotten!\p
 
 #org @sText_Rival2_LowHP
-Ngh[.] We have to turn this around,\nfast[.][PAUSE_UNTIL_PRESS]
+Ngh[.] We have to turn this around,\nfast[.]\p
 
 // Rival 3
 #org @sText_Rival3_FirstMonDown
-Not bad, but we're just getting\nstarted![PAUSE_UNTIL_PRESS]
+Not bad, but we're just getting\nstarted!\p
 
 #org @sText_Rival3_LastSwitchIn
-Don't count us out yet![PAUSE_UNTIL_PRESS]
+Don't count us out yet!\p
 
 #org @sText_Rival3_LowHP
-Uh oh[.] We're in trouble now[.][PAUSE_UNTIL_PRESS]
+Uh oh[.] We're in trouble now[.]\p
 
 #org @sText_Casey1_LastSwitchIn
-Uh oh, I'd better step my game up.[PAUSE_UNTIL_PRESS]
+Uh oh, I'd better step my game up.\p
 
 #org @sText_Casey1_LowHP
-We can still pull through. Come on,\nlet's do this [FD][06]![PAUSE_UNTIL_PRESS]
+We can still pull through. Come on,\nlet's do this [FD][06]!\p
 
 #org @sText_Casey2_LastSwitchIn
-Down to my last Pok\emon, huh?[PAUSE_UNTIL_PRESS]
+Down to my last Pok\emon, huh?\p
 
 #org @sText_Casey2_LowHP
-We're still in this. Let's go, [FD][06]![PAUSE_UNTIL_PRESS]
+We're still in this. Let's go, [FD][06]!\p
 
 // Rival 4
 #org @sText_Rival4_FirstMonDown
-That was a pretty good move. We'll\nbring it back though, you'll see![PAUSE_UNTIL_PRESS]
+That was a pretty good move. We'll\nbring it back though, you'll see!\p
 
 #org @sText_Rival4_LastSwitchIn
-No way[.] Down to my last Pok\emon\nalready?[PAUSE_UNTIL_PRESS]
+No way[.] Down to my last Pok\emon\nalready?\p
 
 #org @sText_Rival4_LowHP
-N-No! We were supposed to win this\ntime[.][PAUSE_UNTIL_PRESS]
+N-No! We were supposed to win this\ntime[.]\p
 
 // Rival n here!
 
 // Leader 1 (Terrence)
 #org @sText_Leader1_FirstMonDown
-Not bad, not bad at all![PAUSE_UNTIL_PRESS]
+Not bad, not bad at all!\p
 
 #org @sText_Leader1_LastSwitchIn
-Excellent! I see you understand\nyour Pokemon well.[PAUSE_UNTIL_PRESS]
+Excellent! I see you understand\nyour Pokemon well.\p
 
 #org @sText_Leader1_LowHP
-Don't give up! You're doing great![PAUSE_UNTIL_PRESS]
+Don't give up! You're doing great!\p
 
 // Leader 2 (Stella)
 #org @sText_Leader2_FirstMonDown
-Not bad, but the first act has just\nconcluded.[PAUSE_UNTIL_PRESS]
+Not bad, but the first act has just\nconcluded.\p
 
 #org @sText_Leader2_LastSwitchIn
-Time for a well placed plot twist.[PAUSE_UNTIL_PRESS]
+Time for a well placed plot twist.\p
 
 #org @sText_Leader2_LowHP
-We've really been backed into a\ncorner.[PAUSE_UNTIL_PRESS]
+We've really been backed into a\ncorner.\p
 
 // Leader 3 (Raine)
 #org @sText_Leader3_FirstMonDown
-Very good. This shall be an exciting\nbattle, indeed.[PAUSE_UNTIL_PRESS]
+Very good. This shall be an exciting\nbattle, indeed.\p
 
 #org @sText_Leader3_LastSwitchIn
-You'd better keep your eyes up!\nThe weather can change quickly.[PAUSE_UNTIL_PRESS]
+You'd better keep your eyes up!\nThe weather can change quickly.\p
 
 #org @sText_Leader3_LowHP
-A storm is brewing...[PAUSE_UNTIL_PRESS]
+A storm is brewing...\p
 
 // Leader 4 (Chance)
 #org @sText_Leader4_FirstMonDown
-Wahaha! So you aren't bluffing about\nyour skills after all![PAUSE_UNTIL_PRESS]
+Wahaha! So you aren't bluffing about\nyour skills after all!\p
 
 #org @sText_Leader4_LastSwitchIn
-You've got me on the back foot. Time\nfor a shake-up![PAUSE_UNTIL_PRESS]
+You've got me on the back foot. Time\nfor a shake-up!\p
 
 #org @sText_Leader4_LowHP
-Don't count me out! The game isn't\nover until the last card is played.[PAUSE_UNTIL_PRESS]
+Don't count me out! The game isn't\nover until the last card is played.\p
 
 // Leader 5 (Chandler)
 #org @sText_Leader5_FirstMonDown
-You're quite skilled, aren't you?\nI'll have to take you seriously.[PAUSE_UNTIL_PRESS]
+You're quite skilled, aren't you?\nI'll have to take you seriously.\p
 
 #org @sText_Leader5_LastSwitchIn
-I didn't anticipate you'd pressure\nmy team this much. Fascinating.[PAUSE_UNTIL_PRESS]
+I didn't anticipate you'd pressure\nmy team this much. Fascinating.\p
 
 #org @sText_Leader5_LowHP
-Impressive. Seems you might've\noutplayed me.[PAUSE_UNTIL_PRESS]
+Impressive. Seems you might've\noutplayed me.\p
 
 // Leader 6 (Abby)
 #org @sText_Leader6_FirstMonDown
-Don't get cocky, this battle is\nfar from over.[PAUSE_UNTIL_PRESS]
+Don't get cocky, this battle is\nfar from over.\p
 
 #org @sText_Leader6_LastSwitchIn
-Your gym challenge ends here.[PAUSE_UNTIL_PRESS]
+Your gym challenge ends here.\p
 
 #org @sText_Leader6_LowHP
-You should know a cornered\nbeast is most dangerous![PAUSE_UNTIL_PRESS]
+You should know a cornered\nbeast is most dangerous!\p
 
 // Leader 7 (Iris)
 #org @sText_Leader7_FirstMonDown
-Not bad, but can you handle this?[PAUSE_UNTIL_PRESS]
+Not bad, but can you handle this?\p
 
 #org @sText_Leader7_LastSwitchIn
-You're pretty good! But the right\nitem at the right time can make\nall the difference.[PAUSE_UNTIL_PRESS]
+You're pretty good! But the right\nitem at the right time can make\nall the difference.\p
 
 #org @sText_Leader7_LowHP
-Time for a trademark last-minute\nchange-up! Get ready![PAUSE_UNTIL_PRESS]
+Time for a trademark last-minute\nchange-up! Get ready!\p
 
 // Leader 8 (Dennis & Dee)
 #org @sText_Leader8_FirstMonDown
-How're you holding up over there?\nWe're doing great![PAUSE_UNTIL_PRESS]
+How're you holding up over there?\nWe're doing great!\p
 
 #org @sText_Leader8_LastSwitchIn
-Uh oh, that was our last Pokeball![PAUSE_UNTIL_PRESS]
+Uh oh, that was our last Pokeball!\p
 
 #org @sText_Leader8_LowHP
-This is fine... This is fine...\nWe'll pull through this together![PAUSE_UNTIL_PRESS]
+This is fine... This is fine...\nWe'll pull through this together!\p
 
 // Team Pluto Admin Irene
 #org @sText_Irene_FirstMonDown
-Hmph. Don't think you're hot stuff\njust because you got lucky this\ntime.[PAUSE_UNTIL_PRESS]
+Hmph. Don't think you're hot stuff\njust because you got lucky this\ntime.\p
 
 #org @sText_Irene_LastSwitchIn
-I'll prove to you why I'm one of\nTeam Pluto's elite![PAUSE_UNTIL_PRESS]
+I'll prove to you why I'm one of\nTeam Pluto's elite!\p
 
 #org @sText_Irene_LowHP
-Don't assume you've backed me into\na corner.[PAUSE_UNTIL_PRESS]
+Don't assume you've backed me into\na corner.\p
 
 // Team Pluto Admin Ronald
 #org @sText_Ronald_FirstMonDown
-Gyahaha! Your Pok\emon are going to\npay for that.[PAUSE_UNTIL_PRESS]
+Gyahaha! Your Pok\emon are going to\npay for that.\p
 
 #org @sText_Ronald_LastSwitchIn
-You brat! Just for that, I'll lay\non an extra beating![PAUSE_UNTIL_PRESS]
+You brat! Just for that, I'll lay\non an extra beating!\p
 
 #org @sText_Ronald_LowHP
-Ngh. I never thought you'd be this\nstrong.[PAUSE_UNTIL_PRESS]
+Ngh. I never thought you'd be this\nstrong.\p
 
 // Team Pluto Leader Kurtis
 #org @sText_Kurtis_FirstMonDown
-I can see why you defeated Irene\nand Ronald. You'd best not\nunderestimate me, though.[PAUSE_UNTIL_PRESS]
+I can see why you defeated Irene\nand Ronald. You'd best not\nunderestimate me, though.\p
 
 #org @sText_Kurtis_LastSwitchIn
-Team Pluto won't fall to the likes\nof you. Not now, not ever.[PAUSE_UNTIL_PRESS]
+Team Pluto won't fall to the likes\nof you. Not now, not ever.\p
 
 #org @sText_Kurtis_LowHP
-Now you're making me angry![PAUSE_UNTIL_PRESS]
+Now you're making me angry!\p
 
 // Pokemon Trainer Alistair
 #org @sText_Alistair_FirstMonDown
-Impressive. But you can't win.[PAUSE_UNTIL_PRESS]
+Impressive. But you can't win.\p
 
 #org @sText_Alistair_LastSwitchIn
-Don't try to stop me! I'm doing\nthis for everyone's benefit![PAUSE_UNTIL_PRESS]
+Don't try to stop me! I'm doing\nthis for everyone's benefit!\p
 
 #org @sText_Alistair_LowHP
-Ngh. My perfect world... I can't\nlose like this![PAUSE_UNTIL_PRESS]
+Ngh. My perfect world... I can't\nlose like this!\p
 
 // Elite Four Hannah
 #org @sText_Hannah_FirstMonDown
-Impressive, trainer! But you'll\nfind the Elite Four are a cut\nabove regular Gym Leaders![PAUSE_UNTIL_PRESS]
+Impressive, trainer! But you'll\nfind the Elite Four are a cut\nabove regular Gym Leaders!\p
 
 #org @sText_Hannah_LastSwitchIn
-You really are something, I'll\ngive you that![PAUSE_UNTIL_PRESS]
+You really are something, I'll\ngive you that!\p
 
 #org @sText_Hannah_LowHP
-We're not done yet![PAUSE_UNTIL_PRESS]
+We're not done yet!\p
 
 // Elite Four Liam
 #org @sText_Liam_FirstMonDown
-Woo, look at you go! I'm just\ngetting started, though.[PAUSE_UNTIL_PRESS]
+Woo, look at you go! I'm just\ngetting started, though.\p
 
 #org @sText_Liam_LastSwitchIn
-Your challenge ends here! It's\nnothing personal, just my job.[PAUSE_UNTIL_PRESS]
+Your challenge ends here! It's\nnothing personal, just my job.\p
 
 #org @sText_Liam_LowHP
-Unbelievable! It's been ages since\na challenger has done this well.[PAUSE_UNTIL_PRESS]
+Unbelievable! It's been ages since\na challenger has done this well.\p
 
 // Elite Four Jasmine
 #org @sText_Jasmine_FirstMonDown
-We're just getting warmed up. Are\nyou ready?[PAUSE_UNTIL_PRESS]
+We're just getting warmed up. Are\nyou ready?\p
 
 #org @sText_Jasmine_LastSwitchIn
-The battle's really heating up\nnow, wouldn't you agree?[PAUSE_UNTIL_PRESS]
+The battle's really heating up\nnow, wouldn't you agree?\p
 
 #org @sText_Jasmine_LowHP
-Oh no! We've really slipped up,\nhaven't we?[PAUSE_UNTIL_PRESS]
+Oh no! We've really slipped up,\nhaven't we?\p
 
 // Elite Four Thomas
 #org @sText_Thomas_FirstMonDown
-You've defeated my first Pokemon?\nI won't let it happen again![PAUSE_UNTIL_PRESS]
+You've defeated my first Pokemon?\nI won't let it happen again!\p
 
 #org @sText_Thomas_LastSwitchIn
-It's over now! I won't allow you\nto waste Miss Selene's time.[PAUSE_UNTIL_PRESS]
+It's over now! I won't allow you\nto waste Miss Selene's time.\p
 
 #org @sText_Thomas_LowHP
-Miss Selene, forgive me.[PAUSE_UNTIL_PRESS]
+Miss Selene, forgive me.\p
 
 // Champion Selene
 #org @sText_Champion_FirstMonDown
-Impressive. I feel we're going to have\na really exciting battle today![PAUSE_UNTIL_PRESS]
+Impressive. I feel we're going to have\na really exciting battle today!\p
 
 #org @sText_Champion_LastSwitchIn
-It's been a long time since I've had a\nbattle this close![PAUSE_UNTIL_PRESS]
+It's been a long time since I've had a\nbattle this close!\p
 
 #org @sText_Champion_LowHP
-We won't give up until the very end!\nYou'd better give it your all too![PAUSE_UNTIL_PRESS]
+We won't give up until the very end!\nYou'd better give it your all too!\p
 
 // Champion Selene Rematch
 #org @sText_ChampionRematch_FirstMonDown
-This really takes me back to our\nfirst battle. Do you remember it,\ntoo?[PAUSE_UNTIL_PRESS]
+This really takes me back to our\nfirst battle. Do you remember it,\ntoo?\p
 
 #org @sText_ChampionRematch_LastSwitchIn
-It's quite refreshing to see how\nstrong a bond you share with your\nPokemon.[PAUSE_UNTIL_PRESS]
+It's quite refreshing to see how\nstrong a bond you share with your\nPokemon.\p
 
 #org @sText_ChampionRematch_LowHP
-I may not be the champion any\nlonger, but that doesn't mean I'll\ngo down easily![PAUSE_UNTIL_PRESS]
+I may not be the champion any\nlonger, but that doesn't mean I'll\ngo down easily!\p
