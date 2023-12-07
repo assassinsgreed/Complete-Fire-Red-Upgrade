@@ -1159,7 +1159,7 @@
 #define HIDDEN_ITEM_PERADON_FOREST_BIG_MUSHROOM                       130
 #define HIDDEN_ITEM_LAKE_LAPLAZ_DUSK_BALL                             131
 #define HIDDEN_ITEM_LAKE_LAPLAZ_OVAL_STONE                            132
-#define HIDDEN_ITEM_FUCHSIA_CITY_MAX_REVIVE                           133
+#define HIDDEN_ITEM_DAIMYN_CITY_GYM_AMULET_COIN                       133
 #define HIDDEN_ITEM_ROCKET_HIDEOUT_B4F_NET_BALL                       134
 #define HIDDEN_ITEM_SILPH_CO_2F_ULTRA_BALL                            135
 #define HIDDEN_ITEM_SILPH_CO_3F_PROTEIN                               136

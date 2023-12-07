@@ -538,54 +538,54 @@ TrainerCoinPayout:
 EventScript_DaimynCityGym_YoungsterJacob:
     setvar 0x4001 17
     trainerbattle2 0x0 0x93 0x0 gText_DaimynCityGym_YoungsterJacob_Intro gText_DaimynCityGym_YoungsterJacob_Defeat TrainerCoinPayout
-    msgbox gText_DaimynCityGym_YoungsterJacob_Chat MSG_NORMAL
+    npcchatwithmovement gText_DaimynCityGym_YoungsterJacob_Chat m_LookRight
     end
 
 .global EventScript_DaimynCityGym_PokefanKanesha
 EventScript_DaimynCityGym_PokefanKanesha:
     setvar 0x4001 22
     trainerbattle2 0x0 0x94 0x0 gText_DaimynCityGym_PokefanKanesha_Intro gText_DaimynCityGym_PokefanKanesha_Defeat TrainerCoinPayout
-    msgbox gText_DaimynCityGym_PokefanKanesha_Chat MSG_NORMAL
+    npcchatwithmovement gText_DaimynCityGym_PokefanKanesha_Chat m_LookLeft
     end
 
 .global EventScript_DaimynCityGym_BeautyEmilie
 EventScript_DaimynCityGym_BeautyEmilie:
     setvar 0x4001 21
     trainerbattle2 0x0 0x95 0x0 gText_DaimynCityGym_BeautyEmilie_Intro gText_DaimynCityGym_BeautyEmilie_Defeat TrainerCoinPayout
-    msgbox gText_DaimynCityGym_BeautyEmilie_Chat MSG_NORMAL
+    npcchatwithmovement gText_DaimynCityGym_BeautyEmilie_Chat m_LookLeft
     end
 
 .global EventScript_DaimynCityGym_BeautyLeanne
 EventScript_DaimynCityGym_BeautyLeanne:
     setvar 0x4001 35
     trainerbattle2 0x0 0x96 0x0 gText_DaimynCityGym_BeautyLeanne_Intro gText_DaimynCityGym_BeautyLeanne_Defeat TrainerCoinPayout
-    msgbox gText_DaimynCityGym_BeautyLeanne_Chat MSG_NORMAL
+    npcchatwithmovement gText_DaimynCityGym_BeautyLeanne_Chat m_LookRight
     end
 
 .global EventScript_DaimynCityGym_ChanellerRosita
 EventScript_DaimynCityGym_ChanellerRosita:
     setvar 0x4001 32
     trainerbattle2 0x0 0x97 0x0 gText_DaimynCityGym_ChannelerRosita_Intro gText_DaimynCityGym_ChannelerRosita_Defeat TrainerCoinPayout
-    msgbox gText_DaimynCityGym_ChannelerRosita_Chat MSG_NORMAL
+    npcchatwithmovement gText_DaimynCityGym_ChannelerRosita_Chat m_LookLeft
     end
 
 .global EventScript_DaimynCityGym_GamblerChuck
 EventScript_DaimynCityGym_GamblerChuck:
     setvar 0x4001 43
     trainerbattle2 0x0 0x98 0x0 gText_DaimynCityGym_GamblerChuck_Intro gText_DaimynCityGym_GamblerChuck_Defeat TrainerCoinPayout
-    msgbox gText_DaimynCityGym_GamblerChuck_Chat MSG_NORMAL
+    npcchatwithmovement gText_DaimynCityGym_GamblerChuck_Chat m_LookLeft
     end
 
 .global EventScript_DaimynCityGym_BurglarDexter
 EventScript_DaimynCityGym_BurglarDexter:
     setvar 0x4001 30
     trainerbattle2 0x0 0x99 0x0 gText_DaimynCityGym_BurglarDexter_Intro gText_DaimynCityGym_BurglarDexter_Defeat TrainerCoinPayout
-    msgbox gText_DaimynCityGym_BurglarDexter_Chat MSG_NORMAL
+    npcchatwithmovement gText_DaimynCityGym_BurglarDexter_Chat m_LookRight
     end
 
 .global EventScript_DaimynCityGym_NPCWoman
 EventScript_DaimynCityGym_NPCWoman:
-    npcchat gText_DaimynCityGym_NPCWoman
+    npcchatwithmovement gText_DaimynCityGym_NPCWoman m_LookRight
     end
 
 .global EventScript_DaimynCityGym_NPCPsychic
@@ -596,24 +596,29 @@ EventScript_DaimynCityGym_NPCPsychic:
     applymovement LASTTALKED m_LookRight
     end
 
-.global EventScript_DaimynCityGym_NPCFatGuy
-EventScript_DaimynCityGym_NPCFatGuy:
-    npcchat gText_DaimynCityGym_NPCFatGuy
+.global EventScript_DaimynCityGym_NPCOldMan
+EventScript_DaimynCityGym_NPCOldMan:
+    npcchatwithmovement gText_DaimynCityGym_NPCOldMan m_LookRight
     end
 
 .global EventScript_DaimynCityGym_NPCRocker
 EventScript_DaimynCityGym_NPCRocker:
-    msgbox gText_DaimynCityGym_NPCRocker MSG_NORMAL
+    npcchatwithmovement gText_DaimynCityGym_NPCRocker m_LookRight
     end
 
 .global EventScript_DaimynCityGym_NPCBlackBelt
 EventScript_DaimynCityGym_NPCBlackBelt:
-    npcchat gText_DaimynCityGym_NPCBlackBelt
+    npcchatwithmovement gText_DaimynCityGym_NPCBlackBelt m_LookRight
     end
 
 .global EventScript_DaimynCityGym_Gentleman
 EventScript_DaimynCityGym_Gentleman:
-    npcchat gText_DaimynCityGym_NPCGentleman
+    npcchatwithmovement gText_DaimynCityGym_NPCGentleman m_LookLeft
+    end
+
+.global EventScript_DaimynCityGym_AmuletCoinGuy
+EventScript_DaimynCityGym_AmuletCoinGuy:
+    npcchatwithmovement gText_DaimynCityGym_AmuletCoinGuy m_LookLeft
     end
 
 .global SignScript_DaimynCityGym_GymPlacard

@@ -221,9 +221,9 @@ If I win big, I'm going to put all my\nearnings into a big vacation.\pI guess yo
 Hmmm[.] Yes! I predict this is the\nluckiest slot in the building.
 
 #org @gText_DaimynCityGym_NPCPsychicFollowUp
-You can't have it; I'm using it.
+Hey, it's rude to eavesdrop.\pJust for that, you can't have this\nmachine.
 
-#org @gText_DaimynCityGym_NPCFatGuy
+#org @gText_DaimynCityGym_NPCOldMan
 Agh[.] Lost again[.]\pI guess it just goes to show, you\nlose more than you win.\pIn life and the slots[.] Sigh[.]
 
 #org @gText_DaimynCityGym_NPCRocker
@@ -234,6 +234,9 @@ I pulled the lever too hard and now\nit squeaks.\pAhaha! Please don't tell the o
 
 #org @gText_DaimynCityGym_NPCGentleman
 My granddaughter has wanted a\nDratini for ages.\pBy golly, I'm going to win enough\ncoins to get it for her!
+
+#org @gText_DaimynCityGym_AmuletCoinGuy
+Ugh[.] I lost my Amulet Coin around\nhere somewhere.\pI think I last had it somewhere\naround the prize counter.\pI was going to give it to my Pok\emon\nto hold and strike it rich, too.
 
 #org @gText_DaimynCityGym_Winners
 Daimyn City Gym\nVictors: Casey
