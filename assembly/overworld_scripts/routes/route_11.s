@@ -348,6 +348,7 @@ RivalBattlePrompt:
     msgbox gText_Route11SouthHouse_PlutoEvent_RivalEagerToBattle MSG_NORMAL
     applymovement Alistair m_LookLeft
     msgbox gText_Route11SouthHouse_PlutoEvent_AlistairAsksPlayerAndRivalToTakePlaces MSG_NORMAL
+    special 0xAF @ Dismount bike if on it
     getplayerpos 0x4000 0x4001
     compare 0x4000 0x1C
     if equal _call PlayerWalkLeft_Return
@@ -645,6 +646,7 @@ ReturnToRoute11Common:
     end
 
 InitiatePlutoEncounter:
+    special 0xAF @ Dismount bike if on it
     lock
     sound 0x15 @ Exclaim
     applymovement PLAYER m_Surprise
