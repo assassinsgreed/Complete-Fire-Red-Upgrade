@@ -956,10 +956,11 @@ npc 9 18 10 EventScript_DaimynCityGym_GamblerChuck
 npc 9 18 11 EventScript_DaimynCityGym_BurglarDexter
 npc 9 18 12 EventScript_DaimynCityGym_NPCWoman
 npc 9 18 13 EventScript_DaimynCityGym_NPCPsychic
-npc 9 18 14 EventScript_DaimynCityGym_NPCFatGuy
+npc 9 18 14 EventScript_DaimynCityGym_NPCOldMan
 npc 9 18 15 EventScript_DaimynCityGym_NPCRocker
 npc 9 18 16 EventScript_DaimynCityGym_NPCBlackBelt
 npc 9 18 17 EventScript_DaimynCityGym_Gentleman
+npc 9 18 18 EventScript_DaimynCityGym_AmuletCoinGuy
 sign 9 18 0 SignScript_DaimynCityGym_GymPlacard
 sign 9 18 1 SignScript_DaimynCityGym_CoinDepositBox
 ## TODO: These should use playslotmachine and use the Vanilla FR script as a reference
