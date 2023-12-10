@@ -200,7 +200,7 @@ TileScript_TormaCave_TriggerCaseyBattleR:
     pause DELAY_HALFSECOND
     clearflag 0x03D @ Show Casey
     showsprite Casey
-    playbgm 0x169 @ Alder encounter
+    playbgm 0x169 0x1 @ Alder encounter (Permanently replaces map music for cutscene)
     setvar 0x503A 0x2
     setvar 0x503B 0x0
     checkgender
@@ -217,7 +217,6 @@ MCaseyEvent:
     end
 
 MCaseyEventPostBattle:
-    playbgm 0x169 @ Alder encounter
     msgbox gText_TormaCave_MCaseyCommentsOnBeingLost MSG_NORMAL
     applymovement Casey m_Question
     msgbox gText_TormaCave_MCaseyLeaves MSG_NORMAL
@@ -236,7 +235,6 @@ FCaseyEvent:
     end
 
 FCaseyEventPostBattle:
-    playbgm 0x169 @ Alder encounter
     msgbox gText_TormaCave_FCaseyRecallingWhatTheyAreDoing MSG_NORMAL
     sound 0x15 @ Exclaim
 	applymovement Casey m_Surprise
@@ -264,7 +262,7 @@ CaseyLeaves:
     setflag 0x03D @ Hide Casey
     setflag 0x255 @ Battled Casey
     hidesprite Casey
-    fadedefaultbgm
+    playbgm 0x133 0x1 @ Play regular Torma Cave track (Replace override from cutscene)
     textcolor BLACK
     end
 
