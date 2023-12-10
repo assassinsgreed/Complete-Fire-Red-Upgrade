@@ -131,7 +131,7 @@ EventScript_RubarrDesert_TeamPlutoTana:
 .global EventScript_RubarrDesert_StoryEvents
 EventScript_RubarrDesert_StoryEvents:
     lock
-    playbgm 0x19A @ Encounter Team Pluto
+    playbgm 0x19A 0x1 @ Encounter Team Pluto (permanent, needs to be overidden to default track later)
     msgbox gText_RubarrDesert_ClancyIntro MSG_NORMAL
     msgbox gText_RubarrDesert_EnaIntro MSG_NORMAL
     faceplayer
@@ -175,7 +175,6 @@ EventScript_RubarrDesert_StoryEvents:
     waitmovement PLAYER
     @ Start a tag battle (0xA) against Clancy (0x21) and Ena (0x22), with Partner Rival (0xB2) using backsprite (0x6)
     trainerbattle10 0xA 0x21 0x22 0xB2 0x6 0x0 gText_RubarrDesert_ClancyLoses gText_RubarrDesert_EnaLoses
-    playbgm 0x19A @ Encounter Team Pluto
     msgbox gText_RubarrDesert_ClancyPoorLoser MSG_NORMAL
     sound 0x15 @ Exclaim
     applymovement PlutoGruntClancy m_Surprise
@@ -233,7 +232,6 @@ EventScript_RubarrDesert_StoryEvents:
     msgbox gText_RubarrDesert_RivalFightsWithPlayer MSG_NORMAL
     @ Start a tag battle against Admin Irene
     trainerbattle12 0xC 0x23 0x1C 0x6 0x100 gText_RubarrDesert_IreneBattleDefeat
-    playbgm 0x19A @ Encounter Team Pluto
     msgbox gText_RubarrDesert_IreneSurprisedByPlayer MSG_NORMAL
     applymovement PlutoAdminIrene m_LookRight
     applymovement PlutoGruntClancy m_LookLeft
@@ -276,7 +274,7 @@ EventScript_RubarrDesert_StoryEvents:
     playse 0x11 @ SE Flee
     hidesprite PlutoGruntClancy
     hidesprite PlutoGruntEna
-    fadedefaultbgm
+    playbgm 0x1B4 0x1 @ Play default Rubarr Desert track (Replace override from cutscene)
     fadescreenswapbuffers 0x00 @ Fade in
     msgbox gText_RubarrDesert_RivalCommentsOnDexNavs MSG_NORMAL
     applymovement Rival m_LookRight

@@ -120,7 +120,7 @@ TileScript_Route10_TriggerCaseyBattle_Above:
     call SetCaseyGender
     clearflag 0x03D @ Show Casey
     showsprite Casey
-    playbgm 0x169 @ Alder encounter
+    playbgm 0x169 0x1 @ Alder encounter (Permanently replaces map music for cutscene)
     applymovement Casey m_WalkToPlayer
     waitmovement Casey
     setvar 0x503A 0x2
@@ -146,7 +146,6 @@ FCaseyEvent:
     trainerbattle2 0x0 0xAE 0x100 gText_Route10_CaseyFBattleIntro gText_Route10_CaseyFBattleDefeat FCaseyEventPostBattle
 
 FCaseyEventPostBattle:
-    playbgm 0x169 @ Alder encounter
     msgbox gText_Route10_CaseyFExpShareGift MSG_NORMAL
     obtainitem ITEM_EXP_SHARE 0x1
     msgbox gText_Route10_CaseyFExpShareExplained MSG_NORMAL
@@ -162,7 +161,6 @@ MCaseyEvent:
     trainerbattle2 0x0 0xAF 0x100 gText_Route10_CaseyMBattleIntro gText_Route10_CaseyMBattleDefeat MCaseyEventPostBattle
 
 MCaseyEventPostBattle:
-    playbgm 0x169 @ Alder encounter
     msgbox gText_Route10_CaseyMExpShareGift MSG_NORMAL
     obtainitem ITEM_EXP_SHARE 0x1
     msgbox gText_Route10_CaseyMExpShareExplained MSG_NORMAL
@@ -179,7 +177,7 @@ CaseyLeavesCommon:
     hidesprite Casey
     setflag 0x03D @ Hide Casey
     setflag 0x256 @ Battled Casey on route 10
-    fadedefaultbgm
+    playbgm 0x15E 0x1 @ Regular route 10 track (Replace override from cutscene)
     signmsg
     msgbox gText_Route10_ExpShareHint MSG_SIGN
     normalmsg

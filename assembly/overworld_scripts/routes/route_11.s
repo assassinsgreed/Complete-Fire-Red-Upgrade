@@ -104,7 +104,7 @@ LevelScript_RonaldEncounterCutscene:
     setvar PartnerVar 0x0
     setvar PlutoEncounterVar 0x1
     call ResetParnerState
-    playbgm 0x19A @ Encounter Team Pluto
+    playbgm 0x19A 0x1 @ Encounter Team Pluto (Permanent for the cutscene; player warps mean this doesn't need to be overridden again)
     msgbox gText_Route11SouthHouse_PlutoEvent_RonaldThreatensRefiner MSG_NORMAL
     msgbox gText_Route11SouthHouse_PlutoEvent_RefinerRefuses MSG_NORMAL
     msgbox gText_Route11SouthHouse_PlutoEvent_RonaldAccepts MSG_NORMAL
@@ -157,7 +157,6 @@ RonaldChecksFemaleDescription:
     return
 
 PostRonaldBattle:
-    playbgm 0x19A @ Encounter Team Pluto
     setvar PlutoEncounterVar 0x3
     msgbox gText_Route11SouthHouse_PlutoEvent_RonaldAsksPlayerToJoin MSG_YESNO
     compare LASTRESULT YES
@@ -722,7 +721,7 @@ PlayerDidNotAgreeToHelp:
 .global EventScript_Route11South_TeamPlutoClancy
 EventScript_Route11South_TeamPlutoClancy:
     faceplayer
-    playbgm 0x19A @ Encounter Team Pluto
+    playbgm 0x19A 0x1 @ Encounter Team Pluto (Permanent for the cutscene; player warps mean this doesn't need to be overridden again)
     setflag 0x926 @ Follower will move during active script
     msgbox gText_Route11South_PlutoEvent_Clancy_InitiateConversationWithClancy MSG_NORMAL
     applymovement Clancy m_Surprise
@@ -756,7 +755,7 @@ AlistairLookUp:
 .global EventScript_Route11South_TeamPlutoEna
 EventScript_Route11South_TeamPlutoEna:
     faceplayer
-    playbgm 0x19A @ Encounter Team Pluto
+    playbgm 0x19A 0x1 @ Encounter Team Pluto (Permanent for the cutscene; player warps mean this doesn't need to be overridden again)
     setflag 0x926 @ Follower will move during active script
     msgbox gText_Route11South_PlutoEvent_Ena_InitiateConversationWithEna MSG_NORMAL
     compare PLAYERFACING LEFT
@@ -808,7 +807,6 @@ ClancyAndEnaSharedEvent:
     loadpointer 0x0 gText_Route11South_PlutoEvent_EnaLoses @ Ena's loss text
     special 0xAC @ Load second opponent's text into buffer
     trainerbattle3 0x3 0xC6 0x0 gText_Route11South_PlutoEvent_ClancyLoses @ Tag battle with current partner
-    playbgm 0x19A @ Encounter Team Pluto
     msgbox gText_Route11South_PlutoEvent_PostBattleClancyComplains MSG_NORMAL
     msgbox gText_Route11South_PlutoEvent_PostBattleEnaComplains MSG_NORMAL
     msgbox gText_Route11South_PlutoEvent_ClancyBacksDown MSG_NORMAL
