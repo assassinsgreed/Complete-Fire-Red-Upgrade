@@ -89,7 +89,6 @@ EventScript_PeradonForest_TM86_GrassKnot:
     call ItemScript_Common_FindTM
     end
 
-// TODO: Trainer text and event code. Remember Lyle & Erica are a double battle like Marcus on route 5
 .global EventScript_PeradonForest_PokefanClark
 EventScript_PeradonForest_PokefanClark:
     trainerbattle0 0x0 235 0x0 gText_PeradonForest_PokefanClark_Intro gText_PeradonForest_PokefanClark_Defeat

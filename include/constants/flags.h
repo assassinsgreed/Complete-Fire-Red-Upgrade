@@ -501,10 +501,10 @@
 #define FLAG_HIDE_PERADON_FOREST_MAX_ELIXIR                     0x1EB
 #define FLAG_HIDE_LAKE_LAPLAZ_BLACK_GLASSES                     0x1EC
 #define FLAG_HIDE_LAKE_LAPLAZ_TM08_BULK_UP                      0x1ED
-#define FLAG_HIDE_MT_EMBER_EXTERIOR_FIRE_STONE                  0x1EE
-#define FLAG_HIDE_MT_EMBER_EXTERIOR_DIRE_HIT                    0x1EF
-#define FLAG_HIDE_FOUR_ISLAND_ICEFALL_CAVE_1F_ULTRA_BALL        0x1F0
-#define FLAG_HIDE_FOUR_ISLAND_ICEFALL_CAVE_1F_HM07              0x1F1
+#define FLAG_HIDE_ROUTE12_EAST_HARD_STONE                       0x1EE
+#define FLAG_HIDE_ROUTE12_EAST_ICY_ROCK                         0x1EF
+#define FLAG_HIDE_ROUTE12_EAST_HYPER_POTION                     0x1F0
+#define FLAG_HIDE_ROUTE12_EAST_TM95_SNARL                       0x1F1
 #define FLAG_HIDE_FOUR_ISLAND_ICEFALL_CAVE_B1F_FULL_RESTORE     0x1F2
 #define FLAG_HIDE_FOUR_ISLAND_ICEFALL_CAVE_B1F_NEVER_MELT_ICE   0x1F3
 #define FLAG_HIDE_FIVE_ISLAND_ROCKET_WAREHOUSE_BIG_PEARL        0x1F4
@@ -1160,9 +1160,9 @@
 #define HIDDEN_ITEM_LAKE_LAPLAZ_DUSK_BALL                             131
 #define HIDDEN_ITEM_LAKE_LAPLAZ_OVAL_STONE                            132
 #define HIDDEN_ITEM_DAIMYN_CITY_GYM_AMULET_COIN                       133
-#define HIDDEN_ITEM_ROCKET_HIDEOUT_B4F_NET_BALL                       134
-#define HIDDEN_ITEM_SILPH_CO_2F_ULTRA_BALL                            135
-#define HIDDEN_ITEM_SILPH_CO_3F_PROTEIN                               136
+#define HIDDEN_ITEM_ROUTE_12_EAST_LINK_CORD                           134
+#define HIDDEN_ITEM_ROUTE_12_EAST_PROTEIN                             135
+#define HIDDEN_ITEM_ROUTE_12_EAST_STARDUST                            136
 #define HIDDEN_ITEM_SILPH_CO_4F_IRON                                  137
 #define HIDDEN_ITEM_SILPH_CO_5F_PP_UP                                 138
 #define HIDDEN_ITEM_SILPH_CO_6F_CARBOS                                139
