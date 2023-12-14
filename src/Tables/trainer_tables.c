@@ -2837,6 +2837,36 @@ const struct TrainerMonNoItemDefaultMoves sParty_PeradonForest_RuinManiacAlex[] 
 };
 // #endregion
 
+// #region Route 12
+const struct TrainerMonNoItemDefaultMoves sParty_Route12East_TriathleteJoanne[] = {
+    { .lvl = 41, .species = SPECIES_PACHIRISU },
+    { .lvl = 42, .species = SPECIES_HAKAMO_O },
+    { .lvl = 42, .species = SPECIES_MAGCARGO },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route12East_PsychicTony[] = {
+    { .lvl = 42, .species = SPECIES_MR_MIME_G },
+    { .lvl = 44, .species = SPECIES_MR_RIME },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route12East_HikerDwight[] = {
+    { .lvl = 41, .species = SPECIES_ROGGENROLA },
+    { .lvl = 41, .species = SPECIES_DRILBUR },
+    { .lvl = 42, .species = SPECIES_CARBINK },
+    { .lvl = 44, .species = SPECIES_COALOSSAL },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route12East_TriathleteTrixie[] = {
+    { .lvl = 43, .species = SPECIES_INCINEROAR },
+    { .lvl = 43, .species = SPECIES_KANGASKHAN },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route12East_GentlemanGeoffrey[] = {
+    { .lvl = 43, .species = SPECIES_STOUTLAND },
+    { .lvl = 43, .species = SPECIES_BOLTUND },
+};
+// #endregion
+
 // #endregion
 
 #define NO_NAME                                                                                      \
@@ -5828,6 +5858,68 @@ const struct Trainer gTrainers[] = {
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_HP_AWARE | AI_SCRIPT_TRY_TO_FAINT,
         .partySize = NELEMS(sParty_PeradonForest_RuinManiacAlex),
         .party = {.NoItemDefaultMoves = sParty_PeradonForest_RuinManiacAlex}
+    },
+    // #endregion
+    // #region Route 12
+    [TRAINER_ROUTE_12_EAST_TRIATHLETE_JOANNE] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_TRIATHLETE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
+        .trainerPic = TRAINER_PIC_RUNNING_TRIATHLETE_F,
+        .trainerName = {_J, _o, _a, _n, _n, _e, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_TRY_TO_FAINT,
+        .partySize = NELEMS(sParty_Route12East_TriathleteJoanne),
+        .party = {.NoItemDefaultMoves = sParty_Route12East_TriathleteJoanne}
+    },
+    [TRAINER_ROUTE_12_EAST_PSYCHIC_TONY] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_PSYCHIC,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_PSYCHIC_M,
+        .trainerName = {_T, _o, _n, _y, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE,
+        .partySize = NELEMS(sParty_Route12East_PsychicTony),
+        .party = {.NoItemDefaultMoves = sParty_Route12East_PsychicTony}
+    },
+    [TRAINER_ROUTE_12_EAST_HIKER_DWIGHT] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_HIKER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
+        .trainerPic = TRAINER_PIC_HIKER,
+        .trainerName = {_D, _w, _i, _g, _h, _t, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = NELEMS(sParty_Route12East_HikerDwight),
+        .party = {.NoItemDefaultMoves = sParty_Route12East_HikerDwight}
+    },
+    [TRAINER_ROUTE_12_EAST_TRIATHLETE_TRIXIE] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_TRIATHLETE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
+        .trainerPic = TRAINER_PIC_RUNNING_TRIATHLETE_F,
+        .trainerName = {_T, _r, _i, _x, _i, _e, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_TRY_TO_FAINT,
+        .partySize = NELEMS(sParty_Route12East_TriathleteTrixie),
+        .party = {.NoItemDefaultMoves = sParty_Route12East_TriathleteTrixie}
+    },
+    [TRAINER_ROUTE_12_EAST_GENTLEMAN_GEOFFREY] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_GENTLEMAN,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_GENTLEMAN,
+        .trainerName = {_G, _e, _o, _f, _f, _r, _e, _y, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = NELEMS(sParty_Route12East_GentlemanGeoffrey),
+        .party = {.NoItemDefaultMoves = sParty_Route12East_GentlemanGeoffrey}
     },
     // #endregion
     // #endregion

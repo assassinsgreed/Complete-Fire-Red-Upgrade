@@ -1163,6 +1163,37 @@
         },
         {
             "mapgroup": 3,
+            "mapnum": 30,
+            "grass": {
+                "rate": 21,
+                "pokemon": [
+                    { "low": 36, "high": 39, "species": "SPECIES_COTTONEE" },
+                    { "low": 35, "high": 38, "species": "SPECIES_HERDIER" },
+                    { "low": 35, "high": 39, "species": "SPECIES_SWINUB" },
+                    { "low": 36, "high": 37, "species": "SPECIES_INKAY" },
+                    { "low": 36, "high": 38, "species": "SPECIES_SNEASEL" },
+                    { "low": 36, "high": 39, "species": "SPECIES_SNEASEL" },
+                    { "low": 35, "high": 38, "species": "SPECIES_EEVEE" },
+                    { "low": 36, "high": 39, "species": "SPECIES_EEVEE" },
+                    { "low": 35, "high": 37, "species": "SPECIES_SNORUNT" },
+                    { "low": 36, "high": 38, "species": "SPECIES_SNORUNT" },
+                    { "low": 35, "high": 38, "species": "SPECIES_SNORUNT" }, 
+                    { "low": 36, "high": 39, "species": "SPECIES_SNORUNT" }
+                ]
+            },
+            "rocks": {
+                "rate": 50,
+                "pokemon": [
+                    { "low": 35, "high": 40, "species": "SPECIES_CARKOL" },
+                    { "low": 35, "high": 40, "species": "SPECIES_BOLDORE" },
+                    { "low": 35, "high": 40, "species": "SPECIES_CARKOL" },
+                    { "low": 35, "high": 40, "species": "SPECIES_SHUCKLE" },
+                    { "low": 35, "high": 40, "species": "SPECIES_SHUCKLE" }
+                ]
+            }
+        },
+        {
+            "mapgroup": 3,
             "mapnum": 31,
             "grass": {
                 "rate": 5,

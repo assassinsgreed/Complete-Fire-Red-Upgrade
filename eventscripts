@@ -1337,3 +1337,20 @@ npc 22 0 9 EventScript_Route12RestHouse_GameboyKid
 npc 22 0 10 EventScript_Route12RestHouse_Hiker
 npc 22 0 11 EventScript_Route12RestHouse_PokemartMan
 npc 22 0 12 EventScript_Route12RestHouse_Beauty
+
+# Route 12 East
+npc 3 30 0 EventScript_Common_Cut
+npc 3 30 1 EventScript_Common_RockSmash
+npc 3 30 2 EventScript_Common_RockSmash
+npc 3 30 3 EventScript_Route12East_TriathleteJoanne
+npc 3 30 4 EventScript_Route12East_PsychicTony
+npc 3 30 5 EventScript_Route12East_HikerDwight
+npc 3 30 6 EventScript_Route12East_TriathleteTrixie
+npc 3 30 7 EventScript_Route12East_GentlemanGeoffrey
+npc 3 30 8 ItemScript_Common_HardStone
+npc 3 30 9 ItemScript_Common_IcyRock
+npc 3 30 10 EventScript_Route12East_TM95_Snarl
+npc 3 30 11 ItemScript_Common_HyperPotion
+sign 3 30 0 SignScript_Route12East_TrainerTipsHeldEvolutions
+sign 3 30 1 SignScript_Route12East_TrainerTipsPremierBalls
+sign 3 30 2 SignScript_Route12East_Route12Spa

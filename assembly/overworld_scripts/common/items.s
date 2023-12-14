@@ -162,6 +162,11 @@ ItemScript_Common_HeatRock:
     finditem ITEM_HEAT_ROCK 0x1
     end
 
+.global ItemScript_Common_IcyRock
+ItemScript_Common_IcyRock:
+    finditem ITEM_ICY_ROCK 0x1
+    end
+
 .global ItemScript_Common_Snowball
 ItemScript_Common_Snowball:
     finditem ITEM_SNOWBALL 0x1
@@ -185,6 +190,11 @@ ItemScript_Common_MiracleSeed:
 .global ItemScript_Common_MysticWater
 ItemScript_Common_MysticWater:
     finditem ITEM_MYSTIC_WATER 0x1
+    end
+
+.global ItemScript_Common_HardStone
+ItemScript_Common_HardStone:
+    finditem ITEM_HARD_STONE 0x1
     end
 
 .global ItemScript_Common_Magnet
