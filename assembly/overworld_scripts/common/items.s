@@ -111,6 +111,11 @@ ItemScript_Common_FireStone:
     finditem ITEM_FIRE_STONE 0x1
     end
 
+.global ItemScript_Common_ThunderStone
+ItemScript_Common_ThunderStone:
+    finditem ITEM_THUNDER_STONE 0x1
+    end
+
 .global ItemScript_Common_LeafStone
 ItemScript_Common_LeafStone:
     finditem ITEM_LEAF_STONE 0x1

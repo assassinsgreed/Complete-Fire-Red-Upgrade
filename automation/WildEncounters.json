@@ -1306,6 +1306,68 @@
             }
         },
         {
+            "mapgroup": 23,
+            "mapnum": 1,
+            "grass": {
+                "rate": 3,
+                "pokemon": [
+                    { "low": 36, "high": 39, "species": "SPECIES_SLUGMA" },
+                    { "low": 35, "high": 38, "species": "SPECIES_CARKOL" },
+                    { "low": 35, "high": 39, "species": "SPECIES_SALANDIT" },
+                    { "low": 36, "high": 37, "species": "SPECIES_TORKOAL" },
+                    { "low": 36, "high": 38, "species": "SPECIES_ZUBAT" },
+                    { "low": 36, "high": 39, "species": "SPECIES_KOFFING_G" },
+                    { "low": 35, "high": 38, "species": "SPECIES_SALAZZLE" },
+                    { "low": 36, "high": 39, "species": "SPECIES_GOLBAT" },
+                    { "low": 35, "high": 37, "species": "SPECIES_KOFFING_G" },
+                    { "low": 36, "high": 38, "species": "SPECIES_SLUGMA" },
+                    { "low": 35, "high": 38, "species": "SPECIES_TURTONATOR" }, 
+                    { "low": 36, "high": 39, "species": "SPECIES_TURTONATOR" }
+                ]
+            },
+            "rocks": {
+                "rate": 150,
+                "pokemon": [
+                    { "low": 35, "high": 40, "species": "SPECIES_MINIOR_RED" },
+                    { "low": 35, "high": 40, "species": "SPECIES_MINIOR_ORANGE" },
+                    { "low": 35, "high": 40, "species": "SPECIES_MINIOR_YELLOW" },
+                    { "low": 35, "high": 40, "species": "SPECIES_MINIOR_GREEN" },
+                    { "low": 35, "high": 40, "species": "SPECIES_MINIOR_BLUE" }
+                ]
+            }
+        },
+        {
+            "mapgroup": 23,
+            "mapnum": 2,
+            "grass": {
+                "rate": 3,
+                "pokemon": [
+                    { "low": 36, "high": 39, "species": "SPECIES_SLUGMA" },
+                    { "low": 35, "high": 38, "species": "SPECIES_CARKOL" },
+                    { "low": 35, "high": 39, "species": "SPECIES_SALANDIT" },
+                    { "low": 36, "high": 37, "species": "SPECIES_TORKOAL" },
+                    { "low": 36, "high": 38, "species": "SPECIES_ZUBAT" },
+                    { "low": 36, "high": 39, "species": "SPECIES_KOFFING_G" },
+                    { "low": 35, "high": 38, "species": "SPECIES_SALAZZLE" },
+                    { "low": 36, "high": 39, "species": "SPECIES_GOLBAT" },
+                    { "low": 35, "high": 37, "species": "SPECIES_KOFFING_G" },
+                    { "low": 36, "high": 38, "species": "SPECIES_SLUGMA" },
+                    { "low": 35, "high": 38, "species": "SPECIES_TURTONATOR" }, 
+                    { "low": 36, "high": 39, "species": "SPECIES_TURTONATOR" }
+                ]
+            },
+            "rocks": {
+                "rate": 150,
+                "pokemon": [
+                    { "low": 35, "high": 40, "species": "SPECIES_MINIOR_INDIGO" },
+                    { "low": 35, "high": 40, "species": "SPECIES_MINIOR_VIOLET" },
+                    { "low": 35, "high": 40, "species": "SPECIES_MINIOR_YELLOW" },
+                    { "low": 35, "high": 40, "species": "SPECIES_MINIOR_GREEN" },
+                    { "low": 35, "high": 40, "species": "SPECIES_MINIOR_BLUE" }
+                ]
+            }
+        },
+        {
             "mapgroup": 30,
             "mapnum": 0,
             "grass": {

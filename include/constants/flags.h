@@ -72,7 +72,7 @@
 #define FLAG_HIDE_ROUTE_11_ALISTAIR_AND_RIVAL_AND_RT9_BLOCKER 0x042
 #define FLAG_HIDE_LAKE_LAPLAZ_GALARIAN_BIRDS               0x043
 #define FLAG_HIDE_ROUTE_12_REST_HOUSE_SELENE_AND_ALISTAIR  0x044
-#define FLAG_HIDE_SEAFOAM_B2F_BOULDER_2                    0x045
+#define FLAG_HIDE_SCALDING_SPA_PLUTO_GRUNT                 0x045
 #define FLAG_HIDE_SEAFOAM_B3F_BOULDER_1                    0x046
 #define FLAG_HIDE_SEAFOAM_B3F_BOULDER_2                    0x047
 #define FLAG_HIDE_SEAFOAM_B3F_BOULDER_3                    0x048
@@ -461,7 +461,7 @@
 #define FLAG_HIDE_DAIMYN_FACTORY_OVERWORLD_EJECT_BUTTON         0x1C3
 #define FLAG_HIDE_ROUTE9_SCEPTILITE                             0x1C4
 #define FLAG_HIDE_ROUTE9_SHARP_BEAK                             0x1C5
-#define FLAG_HIDE_ROUTE9_FIRE_STONE                             0x1C6
+#define FLAG_HIDE_ROUTE9_THUNDER_STONE                          0x1C6
 #define FLAG_HIDE_ROUTE9_TM62_ACROBATICS                        0x1C7
 #define FLAG_HIDE_ROUTE10_ROCK_INCENSE                          0x1C8
 #define FLAG_HIDE_ROUTE10_PSYCHIC_SEED                          0x1C9
@@ -505,9 +505,9 @@
 #define FLAG_HIDE_ROUTE12_EAST_ICY_ROCK                         0x1EF
 #define FLAG_HIDE_ROUTE12_EAST_HYPER_POTION                     0x1F0
 #define FLAG_HIDE_ROUTE12_EAST_TM95_SNARL                       0x1F1
-#define FLAG_HIDE_FOUR_ISLAND_ICEFALL_CAVE_B1F_FULL_RESTORE     0x1F2
-#define FLAG_HIDE_FOUR_ISLAND_ICEFALL_CAVE_B1F_NEVER_MELT_ICE   0x1F3
-#define FLAG_HIDE_FIVE_ISLAND_ROCKET_WAREHOUSE_BIG_PEARL        0x1F4
+#define FLAG_HIDE_SCALDING_SPA_TM35_FLAMETHROWER                0x1F2
+#define FLAG_HIDE_SCALDING_SPA_BLAZIKENITE                      0x1F3
+#define FLAG_HIDE_SCALDING_SPA_FIRE_STONE                       0x1F4
 #define FLAG_HIDE_FIVE_ISLAND_ROCKET_WAREHOUSE_TM36             0x1F5
 #define FLAG_HIDE_FIVE_ISLAND_ROCKET_WAREHOUSE_PEARL            0x1F6
 #define FLAG_HIDE_FIVE_ISLAND_ROCKET_WAREHOUSE_UP_GRADE         0x1F7
@@ -1163,7 +1163,7 @@
 #define HIDDEN_ITEM_ROUTE_12_EAST_LINK_CORD                           134
 #define HIDDEN_ITEM_ROUTE_12_EAST_PROTEIN                             135
 #define HIDDEN_ITEM_ROUTE_12_EAST_STARDUST                            136
-#define HIDDEN_ITEM_SILPH_CO_4F_IRON                                  137
+#define HIDDEN_ITEM_SCALDING_SPA_LAVA_COOKIE                          137
 #define HIDDEN_ITEM_SILPH_CO_5F_PP_UP                                 138
 #define HIDDEN_ITEM_SILPH_CO_6F_CARBOS                                139
 #define HIDDEN_ITEM_SILPH_CO_7F_ZINC                                  140
