@@ -1,0 +1,95 @@
+#org @gtext_ScaldingSpa_SpaRoom_PlayerWalksPastPlutoGrunt
+[RED]Hey, you there!\pThere's a toll to pass through here.\nHold up!
+
+#org @gtext_ScaldingSpa_SpaRoom_GruntShakesTheOldManDown
+[RED]I've told you a million times, you\nold coot.\pThere's a fee to hit the spa today.\nFork over the cash!
+
+#org @gtext_ScaldingSpa_SpaRoom_GruntAcknowledgesPlayer
+[RED]And just who do you think you are?
+
+#org @gtext_ScaldingSpa_SpaRoom_GruntLooksAtPlayer
+[RED]Lemme get a good look at you[.]
+
+#org @gtext_ScaldingSpa_SpaRoom_GruntInitiatesBattle
+[RED]Nyehehehe! Just my luck!\pYou're that brat I was supposed to\nkeep an eye out for.\pThe bosses told me to stop you\nfrom mucking up their operation in\lCalicin Bay.\pLooks like my break is over.
+
+#org @gtext_ScaldingSpa_SpaRoom_GruntBattleIntro
+[RED]Prepare yourself for a battle,\nchump.\pMy Pok\emon are gonna make a big\nsplash. Ready to drown under the\lpressure?
+
+#org @gtext_ScaldingSpa_SpaRoom_GruntLosesBattle
+Oh man, you're as tough as they said\nyou'd be!
+
+#org @gtext_ScaldingSpa_SpaRoom_GruntCommentsOnCalicinBayAgain
+[RED]Aw, wipe that grin off your face.\nYou won, big deal.\pMy job here is done anyways. It's\ntime go report to Clancy and Ena\lat Calicin Bay.
+
+#org @gtext_ScaldingSpa_SpaRoom_GruntLeavesForCalicinBay
+[RED]Nyehehe! There's the reaction I was\nlooking for!\pYou recognize those names, huh?\pThen you know to stay out of our\nbusiness.\pSmell ya later, chump!
+
+#org @gtext_ScaldingSpa_SpaRoom_OldManThanksPlayer
+[BLUE]Oooh, what a wretched lass. Extoring\nhonest folk like that[.]\pI must thank you for your\nassistance.\pPlease, have this. My wife baked\nthem.\pI'm sure your Pok\emon will enjoy\nthem.
+
+#org @gtext_ScaldingSpa_SpaRoom_OldManGoesToHotsprings
+[BLUE]That brat said they were going to\nCalicin Bay, did they not?\pThat's close to Bruccie Village[.]\pI hope they aren't causing trouble\nfor anyone else.\pNow[.] I need a good\nsoak in the hot springs to forget\lall this tomfoolery[.]
+
+#org @gtext_ScaldingSpa_SpaRoom_OldManBeingBothered
+I - I say! This is preposterous.\pThere is no fee to enjoy the\nScalding Spa's services!
+
+#org @gtext_ScaldingSpa_SpaRoom_OldManAfterBeingHelped
+Thank you for helping me with that\nruffian, young child.\pThere aren't many honest folk these\ndays.
+
+#org @gtext_ScaldingSpa_SpaRoom_Blackbelt
+(Huff[.] Huff[.])\pCold outside[.] Hot inside[.]\nI can't catch a break.
+
+#org @gtext_ScaldingSpa_SpaRoom_Picknicker
+Make sure you're prepared if you go\nfurther into the cave.\pWild Fire Pok\emon make this cave\ntheir home.\pTheir heat warms this space, and in\nturn it retains their heat well.
+
+#org @gtext_ScaldingSpa_SpaRoom_Nurse
+These hot springs have naturally\ncurative properties.\pJust stepping into one can make you\nand your Pok\emon feel fully\lrefreshed.
+
+#org @gtext_ScaldingSpa_SpaRoom_OldWoman
+Ahh[.] This is a wonderful soak.\nAt my age, my bones ache terribly.
+
+#org @gtext_ScaldingSpa_SpaRoom_Swimmer
+The hot springs are so hot that they\nsap my strength.\pI'm choosing to swim here to build my\nendurance.
+
+#org @gtext_ScaldingSpa_SpaRoom_GameboyKid
+My friend said his Crabrawler evolved\non Route 12's snowy side.\pIt didn't work when I tried on the\ngrassy side though[.]\pI just used an Ice Stone instead!
+
+#org @gtext_ScaldingSpa_SpaRoom_HealingSpa
+The warmth of the hotspring has\nhealed your Pok\emon fully.
+
+#org @gtext_ScaldingSpa_HikerEugene_Intro
+Think you can handle a double battle\nwith two fierce dudes?
+
+#org @gtext_ScaldingSpa_HikerEugene_Defeat
+Hohoho! We were no match for you.
+
+#org @gtext_ScaldingSpa_HikerEugene_Chat
+My pal here said he's looking for\nMiniors, and asked me to help\lsearch.\pMy tough Pok\emon will crush these\nrocks and find those Miniors!
+
+#org @gtext_ScaldingSpa_SupernerdStephen_Intro
+Do you have a Minior?
+
+#org @gtext_ScaldingSpa_SupernerdStephen_Defeat
+Bah! Don't waste my time.
+
+#org @gtext_ScaldingSpa_SupernerdStephen_Chat
+I heard there are many forms of\nMinior to be found in this cave.\pI'm going to find them all!
+
+#org @gtext_ScaldingSpa_JugglerJohan_Intro
+You'd better watch out, or else\nyou'll get burned!
+
+#org @gtext_ScaldingSpa_JugglerJohan_Defeat
+Looks like I'm the one that burnt\nout[.]
+
+#org @gtext_ScaldingSpa_JugglerJohan_Chat
+Fire Pok\emon in a hot place[.] Is\nthere anything better than that?
+
+#org @gtext_ScaldingSpa_BlackbeltKieran_Intro
+The discipline to withstand such\nheat[.]\pIt has made my Pok\emon strong!
+
+#org @gtext_ScaldingSpa_BlackbeltKieran_Defeat
+Ngh[.] We require more training!
+
+#org @gtext_ScaldingSpa_BlackbeltKieran_Chat
+Pushing your limits is the only way\nyou can grow stronger.

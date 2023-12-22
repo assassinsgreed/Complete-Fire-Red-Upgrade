@@ -2837,7 +2837,7 @@ const struct TrainerMonNoItemDefaultMoves sParty_PeradonForest_RuinManiacAlex[] 
 };
 // #endregion
 
-// #region Route 12
+// #region Route 12 & Scalding Spa
 const struct TrainerMonNoItemDefaultMoves sParty_Route12East_TriathleteJoanne[] = {
     { .lvl = 41, .species = SPECIES_PACHIRISU },
     { .lvl = 42, .species = SPECIES_HAKAMO_O },
@@ -2865,6 +2865,66 @@ const struct TrainerMonNoItemDefaultMoves sParty_Route12East_GentlemanGeoffrey[]
     { .lvl = 43, .species = SPECIES_STOUTLAND },
     { .lvl = 43, .species = SPECIES_BOLTUND },
 };
+
+const struct TrainerMonNoItemDefaultMoves sParty_ScaldingSpa_HikerEugene[] = {
+    { .lvl = 45, .species = SPECIES_TORKOAL },
+    { .lvl = 45, .species = SPECIES_COALOSSAL },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_ScaldingSpa_SupernerdStephen[] = {
+    { .lvl = 44, .species = SPECIES_HAKAMO_O },
+    { .lvl = 46, .species = SPECIES_CURSOLA },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_ScaldingSpa_JugglerJohan[] = {
+    { .lvl = 43, .species = SPECIES_ROLYCOLY },
+    { .lvl = 43, .species = SPECIES_SALAZZLE },
+    { .lvl = 44, .species = SPECIES_TURTONATOR },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_ScaldingSpa_BlackbeltKieran[] = {
+    { .lvl = 46, .species = SPECIES_EMBOAR },
+};
+
+const struct TrainerMonItemCustomMoves sParty_ScaldingSpa_TeamPlutoYolena[] = {
+    {
+        .lvl = 44,
+        .species = SPECIES_TOXICROAK,
+        .moves = {
+            MOVE_POISONJAB,
+            MOVE_VENOSHOCK,
+            MOVE_PROTECT,
+            MOVE_DRAINPUNCH
+        },
+        .heldItem = ITEM_BLACK_SLUDGE,
+        .ability = Ability_2 // Dry Skin
+    },
+    {
+        .lvl = 44,
+        .species = SPECIES_PELIPPER,
+        .moves = {
+            MOVE_SURF,
+            MOVE_STOCKPILE,
+            MOVE_ROOST,
+            MOVE_AIRSLASH
+        },
+        .heldItem = ITEM_DAMP_ROCK,
+        .ability = Ability_2 // Drizzle
+    },
+    {
+        .lvl = 44,
+        .species = SPECIES_SLIGGOO,
+        .moves = {
+            MOVE_ROCKSLIDE,
+            MOVE_DRAGONBREATH,
+            MOVE_THUNDERBOLT,
+            MOVE_MUDDYWATER
+        },
+        .heldItem = ITEM_ASSAULT_VEST,
+        .ability = Ability_2 // Hydration
+    },
+};
+
 // #endregion
 
 // #endregion
@@ -5860,7 +5920,7 @@ const struct Trainer gTrainers[] = {
         .party = {.NoItemDefaultMoves = sParty_PeradonForest_RuinManiacAlex}
     },
     // #endregion
-    // #region Route 12
+    // #region Route 12 & Scalding Spa
     [TRAINER_ROUTE_12_EAST_TRIATHLETE_JOANNE] = {
         .partyFlags = 0,
         .trainerClass = CLASS_TRIATHLETE,
@@ -5920,6 +5980,66 @@ const struct Trainer gTrainers[] = {
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
         .partySize = NELEMS(sParty_Route12East_GentlemanGeoffrey),
         .party = {.NoItemDefaultMoves = sParty_Route12East_GentlemanGeoffrey}
+    },
+    [TRAINER_SCALDING_SPA_HIKER_EUGENE] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_HIKER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
+        .trainerPic = TRAINER_PIC_HIKER,
+        .trainerName = {_E, _u, _g, _e, _n, _e, _END},
+        .items = {},
+        .doubleBattle = TRUE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_HP_AWARE | AI_SCRIPT_DOUBLE_BATTLE,
+        .partySize = NELEMS(sParty_ScaldingSpa_HikerEugene),
+        .party = {.NoItemDefaultMoves = sParty_ScaldingSpa_HikerEugene}
+    },
+    [TRAINER_SCALDING_SPA_SUPERNERD_STEPHEN] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_SUPER_NERD,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_SUPER_NERD,
+        .trainerName = {_S, _t, _e, _p, _h, _e, _n, _END},
+        .items = {},
+        .doubleBattle = TRUE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_RISKY | AI_SCRIPT_DOUBLE_BATTLE,
+        .partySize = NELEMS(sParty_ScaldingSpa_SupernerdStephen),
+        .party = {.NoItemDefaultMoves = sParty_ScaldingSpa_SupernerdStephen}
+    },
+    [TRAINER_SCALDING_SPA_JUGGLER_JOHAN] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_JUGGLER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
+        .trainerPic = TRAINER_PIC_JUGGLER,
+        .trainerName = {_J, _o, _h, _a, _n, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_SETUP_FIRST_TURN,
+        .partySize = NELEMS(sParty_ScaldingSpa_JugglerJohan),
+        .party = {.NoItemDefaultMoves = sParty_ScaldingSpa_JugglerJohan}
+    },
+    [TRAINER_SCALDING_SPA_BLACKBELT_KIERAN] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_BLACK_BELT,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_BLACK_BELT,
+        .trainerName = {_K, _i, _e, _r, _a, _n, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_RISKY | AI_SCRIPT_TRY_TO_FAINT,
+        .partySize = NELEMS(sParty_ScaldingSpa_BlackbeltKieran),
+        .party = {.NoItemDefaultMoves = sParty_ScaldingSpa_BlackbeltKieran}
+    },
+    [TRAINER_SCALDING_SPA_TEAM_PLUTO_YOLENA] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_TEAM_PLUTO,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_PLUTO_GRUNT_F,
+        .trainerName = {_Y, _o, _l, _e, _n, _a, _END},
+        .items = {},
+        .doubleBattle = TRUE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_DOUBLE_BATTLE,
+        .partySize = NELEMS(sParty_ScaldingSpa_TeamPlutoYolena),
+        .party = {.ItemCustomMoves = sParty_ScaldingSpa_TeamPlutoYolena}
     },
     // #endregion
     // #endregion
