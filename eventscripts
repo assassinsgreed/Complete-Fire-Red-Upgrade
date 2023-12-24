@@ -1365,6 +1365,7 @@ npc 23 0 4 EventScript_ScaldingSpa_SpaRoom_Nurse
 npc 23 0 5 EventScript_ScaldingSpa_SpaRoom_OldWoman
 npc 23 0 6 EventScript_ScaldingSpa_SpaRoom_Swimmer
 npc 23 0 7 EventScript_ScaldingSpa_SpaRoom_GameboyKid
+npc 23 0 8 EventScript_RivalEvent6
 tile 23 0 0 TileScript_ScaldingSpa_SpaRoom_Heal
 tile 23 0 1 TileScript_ScaldingSpa_SpaRoom_Heal
 tile 23 0 2 TileScript_ScaldingSpa_SpaRoom_ResetHeal
