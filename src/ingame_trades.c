@@ -32,6 +32,10 @@ extern u8 gText_InGameTrade_Pip[];
 extern u8 gText_InGameTrade_Boomer[];
 extern u8 gText_InGameTrade_Strawberry[];
 extern u8 gText_InGameTrade_OTSylvestre[];
+extern u8 gText_InGameTrade_Rocky[];
+extern u8 gText_InGameTrade_Chopper[];
+extern u8 gText_InGameTrade_Autumn[];
+extern u8 gText_InGameTrade_OTRival[];
 
 static const struct InGameTrade sInGameTrades[] = {
     [INGAME_TRADE_CHINCHOU] = 
@@ -169,6 +173,51 @@ static const struct InGameTrade sInGameTrades[] = {
         .otGender = FEMALE,
         .nature = NATURE_MODEST,
         .requestedSpecies = SPECIES_CACNEA
+    },
+    [INGAME_TRADE_BOLDORE] = {
+        .nickname = gText_InGameTrade_Rocky,
+        .species = SPECIES_BOLDORE,
+        .ivs = {24, 17, 26, 8, 23, 13},
+        .abilityNum = 0xFF, // Sand Force (Hidden)
+        .otId = 35846,
+        .conditions = {15, 15, 20, 10, 25},
+        .personality = 0x451308ab,
+        .heldItem = ITEM_SITRUS_BERRY,
+        .mailNum = 0,
+        .otName = gText_InGameTrade_OTRival,
+        .otGender = FEMALE,
+        .nature = NATURE_IMPISH,
+        .requestedSpecies = SPECIES_NONE // Species check is skipped
+    },
+    [INGAME_TRADE_GURDURR] = {
+        .nickname = gText_InGameTrade_Chopper,
+        .species = SPECIES_GURDURR,
+        .ivs = {25, 29, 22, 10, 18, 5},
+        .abilityNum = 0xFF, // Iron Fist (Hidden)
+        .otId = 35846,
+        .conditions = {30, 25, 10, 15, 10},
+        .personality = 0x451308ab,
+        .heldItem = ITEM_SITRUS_BERRY,
+        .mailNum = 0,
+        .otName = gText_InGameTrade_OTRival,
+        .otGender = MALE,
+        .nature = NATURE_ADAMANT,
+        .requestedSpecies = SPECIES_NONE // Species check is skipped
+    },
+    [INGAME_TRADE_PHANTUMP] = {
+        .nickname = gText_InGameTrade_Autumn,
+        .species = SPECIES_PHANTUMP,
+        .ivs = {23, 18, 26, 17, 22, 16},
+        .abilityNum = 0xFF, // Harvest (Hidden)
+        .otId = 35846,
+        .conditions = {20, 15, 15, 10, 25},
+        .personality = 0x451308ab,
+        .heldItem = ITEM_SITRUS_BERRY,
+        .mailNum = 0,
+        .otName = gText_InGameTrade_OTRival,
+        .otGender = FEMALE,
+        .nature = NATURE_JOLLY,
+        .requestedSpecies = SPECIES_NONE // Species check is skipped
     }
 };
 

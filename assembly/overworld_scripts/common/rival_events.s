@@ -207,3 +207,52 @@ RivalEvent5_DexNavNotComplete:
     msgbox gText_RivalEvent5_PromiseOfreward MSG_NORMAL
     release
     end
+
+.global EventScript_RivalEvent6
+EventScript_RivalEvent6:
+    lock
+    faceplayer
+    checkflag 0x2C5 @ Traded with Rival
+    if SET _goto RivalEvent6_TradeConcluded
+    msgbox gText_RivalEvent6_AskAboutTrade MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto RivalEvent6_Declined
+    msgbox gText_RivalEvent6_ChoosePokemon MSG_NORMAL
+    call SelectTradePokemon
+    compare 0x8004 0x6 @ Don't continue if user backed out
+    if greaterorequal _goto RivalEvent6_Declined
+    callasm StoreIsPartyMonEgg
+    compare LASTRESULT TRUE
+    if TRUE _goto RivalEvent6_ChoseEgg
+    callasm GetPokemonLevel
+    compare LASTRESULT 30
+    if lessthan _call RivalEvent6_ChoseTooLowLevel
+    bufferpartypokemon 0x0 0x8004 @ Buffer the nickname
+    msgbox gText_RivalEvent6_ConfirmChoice MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto RivalEvent6_Declined
+    msgbox gText_RivalEvent6_Confirmed MSG_NORMAL
+    random 0x3
+    setvar 0x8008 0x9 @ First trade option
+    setvar 0x8004 0x8008
+    setvar 0x8005 LASTRESULT @ 0-2, based on randomization
+    special 0x3E @ Add two vars above, result stored in 0x8008
+    call InitiateTrade
+    setflag 0x2C5 @ Traded with Rival
+    goto RivalEvent6_TradeConcluded
+
+RivalEvent6_Declined:
+    msgbox gText_RivalEvent6_Declined MSG_NORMAL
+    goto End
+
+RivalEvent6_ChoseEgg:
+    msgbox gText_RivalEvent6_ChoseEgg MSG_NORMAL
+    goto End
+
+RivalEvent6_ChoseTooLowLevel:
+    msgbox gText_RivalEvent6_ChoseTooLowALevel MSG_NORMAL
+    goto End
+
+RivalEvent6_TradeConcluded:
+    msgbox gText_RivalEvent6_TradeConcluded MSG_NORMAL
+    goto End

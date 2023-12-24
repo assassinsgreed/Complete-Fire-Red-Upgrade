@@ -2865,6 +2865,11 @@ static void Task_ChangeNickname(u8 taskId)
 	DestroyTask(taskId);
 }
 
+void GetPokemonLevel()
+{
+	gSpecialVar_LastResult = GetMonData(&gPlayerParty[Var8004], MON_DATA_LEVEL, NULL);
+}
+
 // Checks if party Pokemon in var 0x8004 is an egg and stores it in LASTRESULT (0x800D)
 void StoreIsPartyMonEgg()
 {

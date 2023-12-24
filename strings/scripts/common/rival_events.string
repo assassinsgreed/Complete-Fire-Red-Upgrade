@@ -78,3 +78,27 @@ Oh, yes! You've caught everything\navailable on this part of Route 11.\pCan I se
 
 #org @gText_RivalEvent5_ChallengeOvercome
 It's incredible how many unique\nspecies of Pok\emon there are.\pI'm going to catch some Pok\emon\nbefore moving on.\pSee you later, [PLAYER].
+
+#org @gText_RivalEvent6_TradeConcluded
+Thanks [PLAYER]!\pI'll take good care of your\nPok\emon.\pTake good care of mine too, okay?
+
+#org @gText_RivalEvent6_AskAboutTrade
+Oh, hey [PLAYER].\pI caught a really neat Pok\emon, and\nwas wondering if you'd like to\ltrade for it?\pWhat is it? That's a surprise!\pI'm looking for a Pok\emon that's at\nleast level 30.\pWhat do you say?
+
+#org @gText_RivalEvent6_Declined
+That's alright.\pI'll be here for a bit, if you change\nyour mind.
+
+#org @gText_RivalEvent6_ChoosePokemon
+Okay, choose any Pok\emon you'd like.
+
+#org @gText_RivalEvent6_ChoseEgg
+Oh[.] I'm not looking for an egg right\nnow.\pDo you have a Pok\emon that has\nalready hatched?
+
+#org @gText_RivalEvent6_ChoseTooLowALevel
+Oh[.]\pI'm looking for a Pok\emon that's at\nleast level 30.\pCome back later, if you have one\nyou'd like to trade.
+
+#org @gText_RivalEvent6_ConfirmChoice
+[BUFFER1]? Are you sure?\nThere are no take-backs.
+
+#org @gText_RivalEvent6_Confirmed
+Okay, let's trade.
