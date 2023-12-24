@@ -1398,7 +1398,3 @@ npc 23 2 2 EventScript_Common_RockSmash
 npc 23 2 3 EventScript_Common_RockSmash
 npc 23 2 4 EventScript_Common_RockSmash
 npc 23 2 5 EventScript_Common_RockSmash
-
-## TODOs
-## Pluto grunt event
-## Finish map script (moving old man)
