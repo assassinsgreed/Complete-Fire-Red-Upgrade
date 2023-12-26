@@ -93,3 +93,21 @@ Ngh[.] We require more training!
 
 #org @gtext_ScaldingSpa_BlackbeltKieran_Chat
 Pushing your limits is the only way\nyou can grow stronger.
+
+#org @gtext_GlastrierRoom_GlastrierEvaluation
+It's a prideful looking Pok\emon!\nIt's sizing you up[.]
+
+#org @gtext_GlastrierRoom_GlastrierEvaluationFailed
+The prideful Pok\emon was not\nimpressed by your prowess[.]\pIt fled!
+
+#org @gtext_GlastrierRoom_GlastrierEvaluationSucceeded
+The prideful Pok\emon is impressed by\nyour prowess.\pIt looks like it wants to battle!
+
+#org @gtext_GlastrierRoom_GlastrierBattleStart
+The prideful Pok\emon is\nchallenging you to a battle!
+
+#org @gtext_GlastrierRoom_GlastrierFledFromBattle
+The prideful Pok\emon fled!
+
+#org @gtext_GlastrierRoom_GlastrierDefeated
+The prideful Pok\emon left.\nWill it return later?

@@ -3270,6 +3270,12 @@ void GetLuckyPokmeonSpecies()
 	}
 }
 
+void CheckIfCaught()
+{
+	u16 dexNum = VarGet(gSpecialVar_LastResult);
+	gSpecialVar_LastResult = GetSetPokedexFlag(dexNum, FLAG_GET_CAUGHT);
+}
+
 void CountCoinsIntoVar4002()
 {
 	VarSet(0x4002, GetCoins());

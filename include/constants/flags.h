@@ -73,7 +73,7 @@
 #define FLAG_HIDE_LAKE_LAPLAZ_GALARIAN_BIRDS               0x043
 #define FLAG_HIDE_ROUTE_12_REST_HOUSE_SELENE_AND_ALISTAIR  0x044
 #define FLAG_HIDE_SCALDING_SPA_PLUTO_GRUNT                 0x045
-#define FLAG_HIDE_SEAFOAM_B3F_BOULDER_1                    0x046
+#define FLAG_HIDE_GLASTRIER_WHEN_CAUGHT                    0x046
 #define FLAG_HIDE_SEAFOAM_B3F_BOULDER_2                    0x047
 #define FLAG_HIDE_SEAFOAM_B3F_BOULDER_3                    0x048
 #define FLAG_HIDE_SEAFOAM_B3F_BOULDER_4                    0x049
@@ -156,7 +156,7 @@
 #define FLAG_HIDE_SELPHYS_BUTLER                           0x096
 #define FLAG_HIDE_FOUR_ISLAND_RIVAL                        0x097
 #define FLAG_HIDE_SIX_ISLAND_POKECENTER_RIVAL              0x098
-#define FLAG_HIDE_DEOXYS                                   0x099
+#define FLAG_HIDE_DEOXYS                                   0x099  Note: On by default
 #define FLAG_HIDE_BIRTH_ISLAND_METEORITE                   0x09A
 #define FLAG_HIDE_LUGIA                                    0x09B
 #define FLAG_HIDE_HO_OH                                    0x09C

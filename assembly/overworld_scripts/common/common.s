@@ -22,6 +22,12 @@ SetWeatherRain:
     doweather
     return
 
+.global SetWeatherThreeSnowflakes
+SetWeatherThreeSnowflakes:
+    setweather WEATHER_THREE_SNOWFLAKES
+    doweather
+    return
+
 .global SetWeatherSandstorm
 SetWeatherSandstorm:
     setweather WEATHER_SANDSTORM
@@ -38,6 +44,12 @@ SetWeatherFog:
 SetWeatherThinFog:
     @ Weather intentionally does not have battle effect
     setweather WEATHER_THIN_FOG
+    doweather
+    return
+
+.global SetWeatherSnowstorm
+SetWeatherSnowstorm:
+    setweather WEATHER_SNOW
     doweather
     return
 
