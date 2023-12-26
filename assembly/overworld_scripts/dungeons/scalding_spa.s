@@ -20,6 +20,25 @@ MapEntryScript_ScaldingSpa:
     call SetOldManLocation
     end
 
+.global MapScript_GlastrierRoom
+MapScript_GlastrierRoom:
+    mapscript MAP_SCRIPT_ON_TRANSITION MapEntryScript_HandleGlastrierWeather
+    .byte MAP_SCRIPT_TERMIN
+
+MapEntryScript_HandleGlastrierWeather:
+    @ HACK: For some reason, Glastrier's flag gets set when talking to it, even if it isn't set by code... So we check if it's caught and reset the flag if not
+    setvar LASTRESULT SPECIES_GLASTRIER
+    callasm CheckIfCaught
+    compare LASTRESULT 0x0
+    if equal _goto ResetGlastrier
+    call SetWeatherSnowstorm
+    end
+
+ResetGlastrier:
+    clearflag 0x46 @ Glastrier caught
+    call SetWeatherSnowstorm
+    end
+
 .global EventScript_ScaldingSpa_SpaRoom_PlutoGrunt
 EventScript_ScaldingSpa_SpaRoom_PlutoGrunt:
     playbgm 0x19A 0x1 @ Encounter Team Pluto (permanent, needs to be overidden to default track later)
@@ -266,8 +285,96 @@ EventScript_ScaldingSpa_BlackbeltKieran:
     msgbox gtext_ScaldingSpa_BlackbeltKieran_Chat MSG_NORMAL
     end
 
+.global EventScript_GlastrierRoom_Glastrier
+EventScript_GlastrierRoom_Glastrier:
+    faceplayer
+    cry SPECIES_GLASTRIER 0x0
+    waitcry
+    msgbox gtext_GlastrierRoom_GlastrierBattleStart MSG_NORMAL
+    setwildbattle SPECIES_GLASTRIER 70 ITEM_NONE
+    setflag 0x807
+    special 0x138 @ Setup a legendary encounter (blurred screen transition)
+    waitstate
+    clearflag 0x807
+    special2 LASTRESULT 0xB4 @ Check the result of the battle
+    compare LASTRESULT 0x1 @ Defeated in battle
+    if equal _call DefeatedGlastrier
+    compare LASTRESULT 0x4 @ Fled from battle
+    if equal _call FledFromGlastrier
+    compare LASTRESULT 0x7 @ Caught
+    if equal _call CaughtGlastrier
+    end
+
+DefeatedGlastrier:
+    call GlastrierLeavesCommon
+    msgbox gtext_GlastrierRoom_GlastrierDefeated MSG_NORMAL
+    return
+
+FledFromGlastrier:
+    call GlastrierLeavesCommon
+    msgbox gtext_GlastrierRoom_GlastrierFledFromBattle MSG_NORMAL
+    return
+
+CaughtGlastrier:
+    fadescreen FADEOUT_BLACK
+    hidesprite 0x1
+    setflag 0x46 @ Glastrier caught
+    fadescreen FADEIN_BLACK
+    return
+
+GlastrierLeavesCommon:
+    getplayerpos 0x4000 0x4001
+    compare 0x4000 0x8 @ Right of Glastrier
+    if equal _call MovePlayerOutOfGlastriersWay
+    applymovement 0x1 m_GlastrierRetreats
+    waitmovement 0x1
+    hidesprite 0x1
+    call SetWeatherThreeSnowflakes
+    return
+
+MovePlayerOutOfGlastriersWay:
+    call PlayerWalkDown_Return
+    applymovement PLAYER m_LookUp
+    return
+
+.global TileScript_GlastrierRoom_LeftTile
+TileScript_GlastrierRoom_LeftTile:
+    checkflag 0x46 @ Glastrier caught
+    if SET _goto End
+    compare 0x4000 0x1 @ Event already triggered while on map
+    if equal _goto End
+    lock
+    setvar 0x4000 0x1 @ Temp var to indicate the tile events shouldn't run again
+    applymovement PLAYER m_WalkToGlastrier
+    waitmovement PLAYER
+    pause DELAY_HALFSECOND
+    cry SPECIES_GLASTRIER 0x0
+    waitcry
+    msgbox gtext_GlastrierRoom_GlastrierEvaluation MSG_NORMAL
+    checkflag 0x4BC @ Defeated Champion Selene
+    if SET _goto GlastrierAcceptsPlayer
+    msgbox gtext_GlastrierRoom_GlastrierEvaluationFailed MSG_NORMAL
+    call GlastrierLeavesCommon
+    end
+
+GlastrierAcceptsPlayer:
+    msgbox gtext_GlastrierRoom_GlastrierEvaluationSucceeded MSG_NORMAL
+    end
+
+.global TileScript_GlastrierRoom_RightTile
+TileScript_GlastrierRoom_RightTile:
+    checkflag 0x46 @ Glastrier caught
+    if SET _goto End
+    compare 0x4000 0x1 @ Event already triggered while on map
+    if equal _goto End
+    lock
+    call PlayerWalkLeft_Return
+    goto TileScript_GlastrierRoom_LeftTile
+
 m_GruntWalksToPlayer: .byte walk_up, walk_up, walk_left, walk_left, walk_left, walk_left, end_m
 m_GruntLeavesFromTileEvent: .byte walk_down, walk_left, walk_left, walk_left, walk_left, walk_left, walk_left, walk_left, walk_down, walk_down, walk_down, end_m
 m_GruntLeavesFromInteraction: .byte walk_left, walk_up, walk_left, walk_left, walk_left, walk_left, walk_left, walk_left, walk_left, walk_left, end_m
 m_PlayerReturnsToOldMan: .byte walk_right, walk_right, walk_right, walk_right, walk_right, walk_down, walk_down, end_m
 m_OldManLeaves: .byte walk_up, walk_left, walk_left, walk_up, walk_up, walk_left, walk_up, walk_up, walk_up, walk_up, walk_up, walk_up, walk_up, end_m
+m_WalkToGlastrier: .byte walk_up, walk_up, walk_up, walk_up, walk_up, end_m
+m_GlastrierRetreats: .byte walk_right, walk_up, walk_up, walk_up, jump_2_up, walk_up, walk_up, walk_up, end_m 

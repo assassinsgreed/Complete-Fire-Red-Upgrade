@@ -52,6 +52,7 @@ extern const u8 PikachuTiles[];
 extern const u8 ZapdosGTiles[];
 extern const u8 MoltresGTiles[];
 extern const u8 ArticunoGTiles[];
+extern const u8 GlastrierTiles[];
 
 #define EVENT_OBJ_PAL_TAG_NONE 0x1102
 #define gEventObjectBaseOam_16x16 ((const struct OamData*) 0x83A36F8)
@@ -635,6 +636,19 @@ static const struct SpriteFrameImage Table_ArticunoG[] =
     overworld_frame(ArticunoGTiles, 4, 4, 6),
     overworld_frame(ArticunoGTiles, 4, 4, 7),
     overworld_frame(ArticunoGTiles, 4, 4, 8),
+};
+
+static const struct SpriteFrameImage Table_Glastrier[] =
+{
+    overworld_frame(GlastrierTiles, 4, 4, 0),
+    overworld_frame(GlastrierTiles, 4, 4, 1),
+    overworld_frame(GlastrierTiles, 4, 4, 2),
+    overworld_frame(GlastrierTiles, 4, 4, 3),
+    overworld_frame(GlastrierTiles, 4, 4, 4),
+    overworld_frame(GlastrierTiles, 4, 4, 5),
+    overworld_frame(GlastrierTiles, 4, 4, 6),
+    overworld_frame(GlastrierTiles, 4, 4, 7),
+    overworld_frame(GlastrierTiles, 4, 4, 8),
 };
 
 
@@ -1537,5 +1551,25 @@ const struct EventObjectGraphicsInfo GraphicsInfo_ArticunoG =
     .subspriteTables = gEventObjectSpriteOamTables_32x32,
     .anims = gEventObjectImageAnimTable_Standard,
     .images = Table_ArticunoG,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+const struct EventObjectGraphicsInfo GraphicsInfo_Glastrier =
+{
+    .tileTag = 0xFFFF,
+    .paletteTag1 = 0x1225,
+    .paletteTag2 = EVENT_OBJ_PAL_TAG_NONE,
+    .size = (32 * 32) / 2,
+    .width = 32,
+    .height = 32,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .disableReflectionPaletteLoad = FALSE,
+    .tracks = TRACKS_NONE,
+    .gender = MALE,
+    .oam = gEventObjectBaseOam_32x32,
+    .subspriteTables = gEventObjectSpriteOamTables_32x32,
+    .anims = gEventObjectImageAnimTable_Standard,
+    .images = Table_Glastrier,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
