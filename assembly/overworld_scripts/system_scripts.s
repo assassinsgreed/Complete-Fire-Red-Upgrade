@@ -409,19 +409,20 @@ showselectitems 6
 EventScript_UseRockClimb:
 	bufferpartypokemon 0x0 0x8004
 	bufferattack 0x1 MOVE_ROCKCLIMB
-	callasm IsUnboundToVar
-	compare LASTRESULT 0x0
-	if equal _goto EventScript_UseRockClimb_Ask
-	checkflag FLAG_AUTO_HMS
-	if SET _goto EventScript_UseRockClimb_SkipAsk
+	goto EventScript_UseRockClimb_SkipAsk
+	@ callasm IsUnboundToVar
+	@ compare LASTRESULT 0x0
+	@ if equal _goto EventScript_UseRockClimb_Ask
+	@ checkflag FLAG_AUTO_HMS
+	@ if SET _goto EventScript_UseRockClimb_SkipAsk
 
 EventScript_UseRockClimb_Ask:
 	msgbox gText_WantToScaleCliff MSG_YESNO
 	compare LASTRESULT NO
 	if equal _goto EventScript_RockClimbEnd
-	msgbox 0x81BDFD7 MSG_NORMAL @;[BUFFER1] used [BUFFER2]!
 
 EventScript_UseRockClimb_SkipAsk:
+	msgbox 0x81BDFD7 MSG_NORMAL @;[BUFFER1] used [BUFFER2]!
 	setfieldeffectarg 0, 0x8004
 	goto EventScript_RockClimb
 
@@ -609,11 +610,12 @@ EventScript_UseSandboxWaterfall:
 EventScript_UseSurf:
 	bufferpartypokemon 0x0 0x8004
 	bufferattack 0x1 MOVE_SURF
-	callasm IsUnboundToVar
-	compare LASTRESULT 0x0
-	if equal _goto EventScript_UseSurf_Ask
-	checkflag FLAG_AUTO_HMS
-	if SET _goto EventScript_UseSurf_SkipAsk
+	goto EventScript_UseSurf_SkipAsk
+	@ callasm IsUnboundToVar
+	@ compare LASTRESULT 0x0
+	@ if equal _goto EventScript_UseSurf_Ask
+	@ checkflag FLAG_AUTO_HMS
+	@ if SET _goto EventScript_UseSurf_SkipAsk
 
 EventScript_UseSurf_Ask:
 	callasm IsPlayerFacingMurkyBrownWaterToVar
@@ -624,9 +626,9 @@ EventScript_UseSurf_CheckAnswer:
 	compare LASTRESULT NO
 	if equal _goto EventScript_SurfEnd
 	lockall
-	msgbox 0x81BDFD7 MSG_KEEPOPEN
 
 EventScript_UseSurf_SkipAsk:
+	msgbox 0x81BDFD7 MSG_KEEPOPEN
 	lockall
 	setanimation 0x0 0x8004
 	doanimation 0x9
