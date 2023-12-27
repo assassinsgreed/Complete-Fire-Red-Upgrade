@@ -9,6 +9,20 @@
 .equ FlagHideRival, 0x03C
 .equ SpriteRival, 0x2
 
+.global MapScript_DaimynCity_GuardHouseWest
+MapScript_DaimynCity_GuardHouseWest:
+    mapscript MAP_SCRIPT_ON_TRANSITION MapScript_DaimynCity_GuardHouses_HideRival
+	.byte MAP_SCRIPT_TERMIN
+
+.global MapScript_DaimynCity_GuardHouseSouth
+MapScript_DaimynCity_GuardHouseSouth:
+    mapscript MAP_SCRIPT_ON_TRANSITION MapScript_DaimynCity_GuardHouses_HideRival
+	.byte MAP_SCRIPT_TERMIN
+
+MapScript_DaimynCity_GuardHouses_HideRival:
+    setflag 0x3C @ Hide rival in case player lost to them
+    end
+
 .global MapScript_DaimynFacilities_PokemonCenter
 MapScript_DaimynFacilities_PokemonCenter:
     mapscript MAP_SCRIPT_ON_TRANSITION MapScript_DaimynFacilities_PokemonCenter_SetHealingSpot

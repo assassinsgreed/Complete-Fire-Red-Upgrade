@@ -3287,3 +3287,12 @@ void MarkGalarianBirdsAsSeen()
 	GetSetPokedexFlag(289, FLAG_SET_SEEN);
 	GetSetPokedexFlag(290, FLAG_SET_SEEN);
 }
+
+void CountBadges()
+{
+	gSpecialVar_LastResult = 0;
+	for (int i = 0; i < 7; i++)
+	{
+		gSpecialVar_LastResult += FlagGet(PERMA_SYS_FLAGS_START + i);
+	}
+}

@@ -39,7 +39,7 @@ LevelScript_RestHouse_Cutscene:
     msgbox gText_Route12RestHouse_Cutscene_SeleneGreetsPlayer MSG_NORMAL
     applymovement Selene m_Question
     msgbox gText_Route12RestHouse_Cutscene_SeleneAsksAboutBadges MSG_NORMAL
-    call CountBadges
+    call CountBadgesForAppraisal
     applymovement Alistair m_AlistairArrives
     msgbox gText_Route12RestHouse_Cutscene_SeleneCommentsOnGymThemes MSG_NORMAL
     waitmovement Alistair
@@ -121,29 +121,15 @@ MovePlayerFromEastEntrance:
     waitmovement PLAYER
     return
 
-CountBadges:
-    checkflag 0x820 @ Rhodanzi
-    if SET _call AddBadge
-    checkflag 0x821 @ Ferrox
-    if SET _call AddBadge
-    checkflag 0x822 @ Heleo
-    if SET _call AddBadge
-    checkflag 0x823 @ Daimyn
-    if SET _call AddBadge
-    checkflag 0x824 @ Laplaz
-    if SET _call AddBadge
-    buffernumber 0x0 0x4002
-    switch 0x4002
+CountBadgesForAppraisal:
+    callasm CountBadges
+    switch LASTRESULT
     case 0, LessThanTwoBadges
     case 1, LessThanTwoBadges
     case 2, TwoBadges
     case 3, ThreeBadges
     case 4, FourBadges
     case 5, FiveBadges
-    return
-
-AddBadge:
-    addvar 0x4002 0x1
     return
 
 LessThanTwoBadges:

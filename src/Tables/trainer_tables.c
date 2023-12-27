@@ -1672,6 +1672,91 @@ const struct TrainerMonItemCustomMoves sParty_HeleoCityGym_LeaderRaine[] = {
         .ability = Ability_1 // Dry Skin
     }
 };
+
+const struct TrainerMonItemCustomMoves sParty_HeleoCityGym_LeaderRaine2[] = {
+    {
+        .lvl = 33,
+        .species = SPECIES_PELIPPER,
+        .moves = {
+            MOVE_WINGATTACK,
+            MOVE_WATERPULSE,
+            MOVE_SOAK,
+            MOVE_PROTECT
+        },
+        .heldItem = ITEM_DAMP_ROCK,
+        .ability = Ability_2 // Drizzle
+    },
+    {
+        .lvl = 33,
+        .species = SPECIES_FERROSEED,
+        .moves = {
+            MOVE_IRONHEAD,
+            MOVE_INGRAIN,
+            MOVE_BULLETSEED,
+            MOVE_LEECHSEED
+        },
+        .ability = Ability_1 // Iron Barbs
+    },
+    {
+        .lvl = 35,
+        .species = SPECIES_HELIOLISK,
+        .moves = {
+            MOVE_BULLDOZE,
+            MOVE_THUNDER,
+            MOVE_THUNDERWAVE,
+            MOVE_RAINDANCE
+        },
+        .ability = Ability_1 // Dry Skin
+    }
+};
+
+const struct TrainerMonItemCustomMoves sParty_HeleoCityGym_LeaderRaine3[] = {
+    {
+        .lvl = 41,
+        .species = SPECIES_PELIPPER,
+        .moves = {
+            MOVE_AIRSLASH,
+            MOVE_WATERPULSE,
+            MOVE_SOAK,
+            MOVE_PROTECT
+        },
+        .heldItem = ITEM_DAMP_ROCK,
+        .ability = Ability_2 // Drizzle
+    },
+    {
+        .lvl = 42,
+        .species = SPECIES_FERROTHORN,
+        .moves = {
+            MOVE_IRONHEAD,
+            MOVE_CURSE,
+            MOVE_POWERWHIP,
+            MOVE_LEECHSEED
+        },
+        .ability = Ability_1 // Iron Barbs
+    },
+    {
+        .lvl = 42,
+        .species = SPECIES_SLIGGOO,
+        .moves = {
+            MOVE_ACIDARMOR,
+            MOVE_ACIDSPRAY,
+            MOVE_DRAGONPULSE,
+            MOVE_WATERPULSE
+        },
+        .ability = Ability_2 // Hydration
+    },
+    {
+        .lvl = 43,
+        .species = SPECIES_HELIOLISK,
+        .moves = {
+            MOVE_BULLDOZE,
+            MOVE_THUNDER,
+            MOVE_THUNDERWAVE,
+            MOVE_RAINDANCE
+        },
+        .ability = Ability_1 // Dry Skin
+    }
+};
 // #endregion
 
 // #region Route 8
@@ -2176,6 +2261,54 @@ const struct TrainerMonItemCustomMoves sParty_DaimynCityGym_LeaderChance[] = {
         .moves = {
             MOVE_PAINSPLIT,
             MOVE_TRICKROOM,
+            MOVE_WILLOWISP,
+            MOVE_HEX
+        },
+        .ability = Ability_1 // Pressure
+    }
+};
+
+const struct TrainerMonItemCustomMoves sParty_DaimynCityGym_LeaderChance2[] = {
+    {
+        .lvl = 41,
+        .species = SPECIES_MINIOR_SHIELD,
+        .moves = {
+            MOVE_REFLECT,
+            MOVE_LIGHTSCREEN,
+            MOVE_UTURN,
+            MOVE_ANCIENTPOWER
+        },
+        .heldItem = ITEM_LIGHT_CLAY,
+        .ability = Ability_1 // Shields Down
+    },
+    {
+        .lvl = 42,
+        .species = SPECIES_LANTURN,
+        .moves = {
+            MOVE_SUCKERPUNCH,
+            MOVE_DISCHARGE,
+            MOVE_BRINE,
+            MOVE_VOLTSWITCH
+        },
+        .ability = Ability_1 // Volt Absorb
+    },
+    {
+        .lvl = 42,
+        .species = SPECIES_INCINEROAR,
+        .moves = {
+            MOVE_PARTINGSHOT,
+            MOVE_KNOCKOFF,
+            MOVE_FAKEOUT,
+            MOVE_FLAMETHROWER
+        },
+        .ability = Ability_Hidden // Intimidate
+    },
+    {
+        .lvl = 43,
+        .species = SPECIES_DUSKNOIR,
+        .moves = {
+            MOVE_PAINSPLIT,
+            MOVE_CURSE,
             MOVE_WILLOWISP,
             MOVE_HEX
         },
@@ -4478,6 +4611,30 @@ const struct Trainer gTrainers[] = {
         .partySize = NELEMS(sParty_HeleoCityGym_LeaderRaine),
         .party = {.ItemCustomMoves = sParty_HeleoCityGym_LeaderRaine}
     },
+    [TRAINER_HELEO_CITY_GYM_LEADER_RAINE_2] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_LEADER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_RAINE,
+        .trainerName = {_R, _a, _i, _n, _e, _END},
+        .items = { ITEM_HYPER_POTION },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_SEMI_SMART,
+        .partySize = NELEMS(sParty_HeleoCityGym_LeaderRaine2),
+        .party = {.ItemCustomMoves = sParty_HeleoCityGym_LeaderRaine2}
+    },
+    [TRAINER_HELEO_CITY_GYM_LEADER_RAINE_3] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_LEADER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_RAINE,
+        .trainerName = {_R, _a, _i, _n, _e, _END},
+        .items = { ITEM_HYPER_POTION },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_SEMI_SMART,
+        .partySize = NELEMS(sParty_HeleoCityGym_LeaderRaine3),
+        .party = {.ItemCustomMoves = sParty_HeleoCityGym_LeaderRaine3}
+    },
     // #endregion
     // #region Route 8
     [TRAINER_ROUTE_8_CAMPER_DREW] = {
@@ -5061,6 +5218,18 @@ const struct Trainer gTrainers[] = {
         .aiFlags = AI_SCRIPT_SETUP_FIRST_TURN | AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_SEMI_SMART,
         .partySize = NELEMS(sParty_DaimynCityGym_LeaderChance),
         .party = {.ItemCustomMoves = sParty_DaimynCityGym_LeaderChance}
+    },
+    [TRAINER_DAIMYN_CITY_GYM_LEADER_CHANCE_2] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_LEADER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_CHANCE,
+        .trainerName = {_C, _h, _a, _n, _c, _e, _END},
+        .items = { ITEM_HYPER_POTION },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_SETUP_FIRST_TURN | AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_SEMI_SMART,
+        .partySize = NELEMS(sParty_DaimynCityGym_LeaderChance2),
+        .party = {.ItemCustomMoves = sParty_DaimynCityGym_LeaderChance2}
     },
     // #endregion
     // #region Route 9
