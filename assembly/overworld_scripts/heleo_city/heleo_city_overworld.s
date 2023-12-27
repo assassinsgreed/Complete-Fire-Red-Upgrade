@@ -179,6 +179,11 @@ EventScript_HeleoCity_RaineFan:
     npcchat gText_HeleoCityOverworld_RaineFan
     end
 
+.global EventScript_HeleoCity_BadgeBasedGyms
+EventScript_HeleoCity_BadgeBasedGyms:
+    npcchat gText_HeleoCityOverworld_BadgeBasedGyms
+    end
+
 .global SignScript_HeleoCity_CitySign
 SignScript_HeleoCity_CitySign:
     msgbox gText_HeleoCityOverworld_HeleoCitySign MSG_SIGN

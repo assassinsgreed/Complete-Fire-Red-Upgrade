@@ -118,7 +118,25 @@ EventScript_HeleoGym_LeaderRaine:
     msgbox gText_HeleoGym_LeaderRaine_Talk MSG_NORMAL
     setvar 0x503A 0x1
     setvar 0x503B 0x1
-    trainerbattle1 0x1 0x69 0x100 gText_HeleoGym_LeaderRaine_Intro gText_HeleoGym_LeaderRaine_Defeat EventScript_HeleoGym_LeaderRaine_Defeated
+    callasm CountBadges
+    compare LASTRESULT 0x2
+    if equal _goto LeaderRaine_2Badges
+    compare LASTRESULT 0x3
+    if equal _goto LeaderRaine_3Badges
+    compare LASTRESULT 0x4
+    if equal _goto LeaderRaine_4Badges
+    end
+
+LeaderRaine_2Badges:
+    trainerbattle1 0x1 105 0x100 gText_HeleoGym_LeaderRaine_Intro gText_HeleoGym_LeaderRaine_Defeat EventScript_HeleoGym_LeaderRaine_Defeated
+    end
+
+LeaderRaine_3Badges:
+    trainerbattle1 0x1 256 0x100 gText_HeleoGym_LeaderRaine_Intro gText_HeleoGym_LeaderRaine_Defeat EventScript_HeleoGym_LeaderRaine_Defeated
+    end
+
+LeaderRaine_4Badges:
+    trainerbattle1 0x1 257 0x100 gText_HeleoGym_LeaderRaine_Intro gText_HeleoGym_LeaderRaine_Defeat EventScript_HeleoGym_LeaderRaine_Defeated
     end
 
 EventScript_HeleoGym_LeaderRaine_Defeated:

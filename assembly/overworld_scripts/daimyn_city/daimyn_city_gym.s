@@ -145,7 +145,19 @@ EventScript_DaimynCityGym_LeaderChance:
     msgbox gText_DaimynCityGym_LeaderChance_Talk MSG_NORMAL
     setvar 0x503A 0x1
     setvar 0x503B 0x1
-    trainerbattle1 0x1 0x9A 0x100 gText_DaimynCityGym_LeaderChance_Intro gText_DaimynCityGym_LeaderChance_Defeat EventScript_DaimynCityGym_LeaderChance_Defeated
+    callasm CountBadges
+    compare LASTRESULT 0x3
+    if lessorequal _goto LeaderChance_2Or3Badges
+    compare LASTRESULT 0x4
+    if equal _goto LeaderChance_4Badges
+    end
+
+LeaderChance_2Or3Badges:
+    trainerbattle1 0x1 154 0x100 gText_DaimynCityGym_LeaderChance_Intro gText_DaimynCityGym_LeaderChance_Defeat EventScript_DaimynCityGym_LeaderChance_Defeated
+    end
+
+LeaderChance_4Badges:
+    trainerbattle1 0x1 258 0x100 gText_DaimynCityGym_LeaderChance_Intro gText_DaimynCityGym_LeaderChance_Defeat EventScript_DaimynCityGym_LeaderChance_Defeated
     end
 
 EventScript_DaimynCityGym_LeaderChance_Defeated:

@@ -599,6 +599,7 @@ npc 3 4 4 EventScript_HeleoCity_BigGuy
 npc 3 4 5 EventScript_HeleoCity_TrainerHouseGirl
 npc 3 4 6 EventScript_HeleoCity_RaineFan
 npc 3 4 7 ItemScript_Common_CellBattery
+npc 3 4 8 EventScript_HeleoCity_BadgeBasedGyms
 sign 3 4 0 SignScript_HeleoCity_CitySign
 sign 3 4 1 SignScript_HeleoCity_GymSign
 sign 3 4 2 SignScript_HeleoCity_TrainerHouseSign
@@ -804,6 +805,8 @@ sign 1 28 0 SignScript_ForgottenManseStorage_ApplianceCatalog
 
 # Daimyn City
 ## Guard Houses
+map 9 3 MapScript_DaimynCity_GuardHouseWest
+map 9 6 MapScript_DaimynCity_GuardHouseSouth
 npc 9 3 0 EventScript_DaimynCity_GuardHouseWest_Guard
 tile 9 3 0 TileScript_DaimynCity_GuardHouseWest_TriggerRival
 npc 9 6 0 EventScript_DaimynCity_GuardHouseSouth_Guard
