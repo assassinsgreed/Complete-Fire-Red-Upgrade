@@ -29,16 +29,13 @@ EventScript_Common_Cut:
     closeonkeypress
     doanimation 0x2
     waitstate
-    goto EventScript_Common_CutTree
-
-EventScript_Common_CutFillerText:
-    msgbox gText_Common_CuttableTree MSG_SIGN
-    goto ReleaseAll
-
-EventScript_Common_CutTree:
     applymovement LASTTALKED m_CutTree
     waitmovement ALLEVENTS
     hidesprite LASTTALKED
+    goto ReleaseAll
+
+EventScript_Common_CutFillerText:
+    msgbox gText_Common_CuttableTree MSG_SIGN
     goto ReleaseAll
 
 .global EventScript_Common_RockSmash
@@ -56,18 +53,14 @@ EventScript_Common_RockSmash:
     closeonkeypress
     doanimation 0x25
     waitstate
-    goto EventScript_Common_SmashRock
-
-
-EventScript_Common_RockFillerText:
-    msgbox gText_Common_SmashableRock MSG_SIGN
-    goto ReleaseAll
-
-EventScript_Common_SmashRock:
     applymovement LASTTALKED m_SmashRock
     waitmovement ALLEVENTS
     hidesprite LASTTALKED
     special 0xAB @ Attempt to trigger battle
+    goto ReleaseAll
+
+EventScript_Common_RockFillerText:
+    msgbox gText_Common_SmashableRock MSG_SIGN
     goto ReleaseAll
 
 .global EventScript_Common_Strength
