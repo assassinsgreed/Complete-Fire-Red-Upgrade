@@ -291,6 +291,12 @@ EventScript_GlastrierRoom_Glastrier:
     cry SPECIES_GLASTRIER 0x0
     waitcry
     msgbox gtext_GlastrierRoom_GlastrierBattleStart MSG_NORMAL
+    setflag 0x90B @ Wild custom moves, cleared at the end of battle
+    setvar 0x8000 MOVE_ICICLECRASH
+    setvar 0x8001 MOVE_IRONDEFENSE
+    setvar 0x8002 MOVE_DOUBLEEDGE
+    setvar 0x8003 MOVE_TAUNT
+    setflag 0x90C @ Smarter wild battle, cleared at the end of battle
     setwildbattle SPECIES_GLASTRIER 70 ITEM_NONE
     setflag 0x807
     special 0x138 @ Setup a legendary encounter (blurred screen transition)
