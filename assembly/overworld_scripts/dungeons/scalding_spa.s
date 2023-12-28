@@ -112,6 +112,7 @@ PostPlutoBattle:
     applymovement OldMan m_OldManLeaves
     waitmovement OldMan
     call SetOldManLocation
+    setvar 0x4000 0x0 @ Reset for spa healing
     end
 
 PlutoGruntLeavesFromTile:
