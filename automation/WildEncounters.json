@@ -813,6 +813,62 @@
         },
         {
             "mapgroup": 3,
+            "mapnum": 11,
+            "grass": {
+                "rate": 21,
+                "pokemon": [
+                    { "low": 39, "high": 41, "species": "SPECIES_DARUMAKA_G" },
+                    { "low": 39, "high": 41, "species": "SPECIES_CUBCHOO" },
+                    { "low": 40, "high": 43, "species": "SPECIES_DELIBIRD" },
+                    { "low": 40, "high": 42, "species": "SPECIES_AMAURA" },
+                    { "low": 40, "high": 43, "species": "SPECIES_STONJOURNER" },
+                    { "low": 40, "high": 42, "species": "SPECIES_CASTFORM" },
+                    { "low": 41, "high": 43, "species": "SPECIES_GLALIE" },
+                    { "low": 41, "high": 43, "species": "SPECIES_PILOSWINE" },
+                    { "low": 39, "high": 42, "species": "SPECIES_BEARTIC" },
+                    { "low": 39, "high": 42, "species": "SPECIES_DARMANITAN_G" },
+                    { "low": 39, "high": 43, "species": "SPECIES_BEARTIC" }, 
+                    { "low": 39, "high": 43, "species": "SPECIES_DARMANITAN_G" }
+                ]
+            },
+            "rocks": {
+                "rate": 50,
+                "pokemon": [
+                    { "low": 40, "high": 45, "species": "SPECIES_CARBINK" },
+                    { "low": 40, "high": 45, "species": "SPECIES_BOLDORE" },
+                    { "low": 40, "high": 45, "species": "SPECIES_CARBINK" },
+                    { "low": 40, "high": 45, "species": "SPECIES_CARBINK" },
+                    { "low": 40, "high": 45, "species": "SPECIES_CARBINK" }
+                ]
+            },
+            "surfing": {
+                "rate": 1,
+                "pokemon": [
+                    { "low": 42, "high": 47, "species": "SPECIES_SHELLDER" },
+                    { "low": 42, "high": 47, "species": "SPECIES_CLOYSTER" },
+                    { "low": 42, "high": 47, "species": "SPECIES_SHELLDER" },
+                    { "low": 42, "high": 47, "species": "SPECIES_SHELLDER" },
+                    { "low": 42, "high": 47, "species": "SPECIES_SHELLDER" }
+                ]
+            },
+            "fishing": {
+                "rate": 20,
+                "pokemon": [
+                    { "low": 35, "high": 45, "species": "SPECIES_MAGIKARP" },
+                    { "low": 35, "high": 45, "species": "SPECIES_FRILLISH" },
+                    { "low": 40, "high": 45, "species": "SPECIES_FRILLISH" },
+                    { "low": 40, "high": 45, "species": "SPECIES_BINACLE" },
+                    { "low": 40, "high": 45, "species": "SPECIES_BINACLE" },
+                    { "low": 50, "high": 55, "species": "SPECIES_FRILLISH" },
+                    { "low": 50, "high": 55, "species": "SPECIES_BINACLE" },
+                    { "low": 50, "high": 57, "species": "SPECIES_JELLICENT" },
+                    { "low": 50, "high": 57, "species": "SPECIES_BARBARACLE" },
+                    { "low": 50, "high": 57, "species": "SPECIES_BARBARACLE" }
+                ]
+            }
+        },
+        {
+            "mapgroup": 3,
             "mapnum": 20,
             "grass": {
                 "rate": 21,
