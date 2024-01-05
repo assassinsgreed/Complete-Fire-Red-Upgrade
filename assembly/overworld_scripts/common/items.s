@@ -337,6 +337,11 @@ ItemScript_Common_Calcium:
     finditem ITEM_CALCIUM 0x1
     end
 
+.global ItemScript_Common_Zinc
+ItemScript_Common_Zinc:
+    finditem ITEM_ZINC 0x1
+    end
+
 .global ItemScript_Common_Pokeball
 ItemScript_Common_Pokeball:
     finditem ITEM_POKE_BALL 0x1

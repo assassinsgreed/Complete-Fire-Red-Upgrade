@@ -115,6 +115,12 @@ SignScript_TormaCave_TrainerTips:
     msgbox gText_TormaCave_TrainerTips MSG_SIGN
     end
 
+.global EventScript_TormaCave_TM79_FrostBreath
+EventScript_TormaCave_TM79_FrostBreath:
+    setvar CHOSEN_ITEM ITEM_TM79
+    call ItemScript_Common_FindTM
+    end
+
 .global TileScript_TormaCave_StunfiskEncounter1
 TileScript_TormaCave_StunfiskEncounter1:
     checkflag 0xE03

@@ -377,6 +377,7 @@ npc 1 5 10 EventScript_Common_RockSmash
 npc 1 5 11 EventScript_Common_RockSmash
 npc 1 5 12 EventScript_Common_RockSmash
 npc 1 5 13 EventScript_Common_RockSmash
+npc 1 5 14 EventScript_TormaCave_TM79_FrostBreath
 sign 1 5 0 SignScript_TormaCave_TrainerTips
 
 # Route 13
@@ -1406,3 +1407,33 @@ map 23 3 MapScript_GlastrierRoom
 npc 23 3 0 EventScript_GlastrierRoom_Glastrier
 tile 23 3 0 TileScript_GlastrierRoom_LeftTile
 tile 23 3 1 TileScript_GlastrierRoom_RightTile
+
+# Route 12 West
+map 3 11 MapScript_Route12West
+npc 3 11 0 EventScript_Common_Strength
+npc 3 11 1 EventScript_Common_Cut
+npc 3 11 2 EventScript_Common_RockSmash
+npc 3 11 3 EventScript_Common_RockSmash
+npc 3 11 4 EventScript_Common_RockSmash
+npc 3 11 5 EventScript_Common_RockSmash
+npc 3 11 6 EventScript_Common_RockSmash
+npc 3 11 7 EventScript_Common_RockSmash
+npc 3 11 8 EventScript_Common_RockSmash
+npc 3 11 9 EventScript_Common_RockSmash
+npc 3 11 10 EventScript_Common_RockSmash
+npc 3 11 11 EventScript_Common_RockSmash
+npc 3 11 12 ItemScript_Common_Ultraball
+npc 3 11 13 ItemScript_Common_Zinc
+npc 3 11 14 EventScript_Route12West_TM13IceBeam
+npc 3 11 15 ItemScript_Common_Revive
+npc 3 11 16 EventScript_Route12West_Slowbronite
+npc 3 11 17 ItemScript_Common_IceStone
+npc 3 11 18 EventScript_Route12West_BugCatcherBrendan
+npc 3 11 19 EventScript_Route12West_SkierChantal
+npc 3 11 20 EventScript_Route12West_HikerKumar
+npc 3 11 21 EventScript_Route12West_SkierAubrey
+npc 3 11 22 EventScript_Route12West_SkierLenora
+npc 3 11 23 EventScript_Route12West_SkierMegan
+npc 3 11 24 EventScript_Route12West_SwimmerGreg
+sign 3 11 0 SignScript_Route12West_TrainerTips
+sign 3 11 1 SignScript_Route12West_Navigation

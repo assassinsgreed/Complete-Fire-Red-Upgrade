@@ -3058,6 +3058,44 @@ const struct TrainerMonItemCustomMoves sParty_ScaldingSpa_TeamPlutoYolena[] = {
     },
 };
 
+const struct TrainerMonNoItemDefaultMoves sParty_Route12West_BugCatcherBrenan[] = {
+    { .lvl = 44, .species = SPECIES_SNOM },
+    { .lvl = 45, .species = SPECIES_FROSMOTH },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route12West_SkierChantal[] = {
+    { .lvl = 43, .species = SPECIES_BERGMITE },
+    { .lvl = 44, .species = SPECIES_SWINUB },
+    { .lvl = 44, .species = SPECIES_BERGMITE },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route12West_HikerKumar[] = {
+    { .lvl = 47, .species = SPECIES_AVALUGG },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route12West_SkierAubrey[] = {
+    { .lvl = 45, .species = SPECIES_SNEASEL },
+    { .lvl = 45, .species = SPECIES_GLACEON },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route12West_SkierLenora[] = {
+    { .lvl = 44, .species = SPECIES_DELIBIRD },
+    { .lvl = 44, .species = SPECIES_DELIBIRD },
+    { .lvl = 45, .species = SPECIES_DELIBIRD },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route12West_SkierMegan[] = {
+    { .lvl = 45, .species = SPECIES_SNORUNT },
+    { .lvl = 46, .species = SPECIES_PILOSWINE },
+    { .lvl = 47, .species = SPECIES_FROSLASS },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route12West_SwimmerMGreg[] = {
+    { .lvl = 52, .species = SPECIES_FRILLISH },
+    { .lvl = 52, .species = SPECIES_BINACLE },
+    { .lvl = 53, .species = SPECIES_JELLICENT },
+};
+
 // #endregion
 
 // #endregion
@@ -5938,7 +5976,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_C, _a, _s, _e, _y, _END},
         .items = { ITEM_HYPER_POTION },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_SETUP_FIRST_TURN | AI_SCRIPT_SEMI_SMART,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_SETUP_FIRST_TURN | AI_SCRIPT_PREFER_BATON_PASS | AI_SCRIPT_SEMI_SMART,
         .partySize = NELEMS(sParty_LaplazTownGym_LeaderCasey),
         .party = {.ItemCustomMoves = sParty_LaplazTownGym_LeaderCasey}
     },
@@ -5950,7 +5988,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_C, _a, _s, _e, _y, _END},
         .items = { ITEM_HYPER_POTION },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_SETUP_FIRST_TURN | AI_SCRIPT_SEMI_SMART,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_SETUP_FIRST_TURN | AI_SCRIPT_PREFER_BATON_PASS | AI_SCRIPT_SEMI_SMART,
         .partySize = NELEMS(sParty_LaplazTownGym_LeaderCasey),
         .party = {.ItemCustomMoves = sParty_LaplazTownGym_LeaderCasey}
     },
@@ -6209,6 +6247,90 @@ const struct Trainer gTrainers[] = {
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_DOUBLE_BATTLE,
         .partySize = NELEMS(sParty_ScaldingSpa_TeamPlutoYolena),
         .party = {.ItemCustomMoves = sParty_ScaldingSpa_TeamPlutoYolena}
+    },
+    [TRAINER_ROUTE_12_WEST_BUG_CATCHER_BRENDAN] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_BUG_CATCHER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_BUG_CATCHER,
+        .trainerName = {_B, _r, _e, _n, _d, _a, _n, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY,
+        .partySize = NELEMS(sParty_Route12West_BugCatcherBrenan),
+        .party = {.NoItemDefaultMoves = sParty_Route12West_BugCatcherBrenan}
+    },
+    [TRAINER_ROUTE_12_WEST_SKIER_CHANTAL] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_SKIER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .trainerPic = TRAINER_PIC_SKIER,
+        .trainerName = {_C, _h, _a, _n, _t, _a, _l, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_CHECK_VIABILITY,
+        .partySize = NELEMS(sParty_Route12West_SkierChantal),
+        .party = {.NoItemDefaultMoves = sParty_Route12West_SkierChantal}
+    },
+    [TRAINER_ROUTE_12_WEST_HIKER_KUMAR] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_HIKER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
+        .trainerPic = TRAINER_PIC_HIKER,
+        .trainerName = {_K, _u, _m, _a, _r, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_HP_AWARE | AI_SCRIPT_TRY_TO_FAINT,
+        .partySize = NELEMS(sParty_Route12West_HikerKumar),
+        .party = {.NoItemDefaultMoves = sParty_Route12West_HikerKumar}
+    },
+    [TRAINER_ROUTE_12_WEST_SKIER_AUBREY] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_SKIER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .trainerPic = TRAINER_PIC_SKIER,
+        .trainerName = {_A, _u, _b, _r, _e, _y, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_CHECK_VIABILITY,
+        .partySize = NELEMS(sParty_Route12West_SkierAubrey),
+        .party = {.NoItemDefaultMoves = sParty_Route12West_SkierAubrey}
+    },
+    [TRAINER_ROUTE_12_WEST_SKIER_LENORA] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_SKIER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .trainerPic = TRAINER_PIC_SKIER,
+        .trainerName = {_L, _e, _n, _o, _r, _a, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_CHECK_VIABILITY,
+        .partySize = NELEMS(sParty_Route12West_SkierLenora),
+        .party = {.NoItemDefaultMoves = sParty_Route12West_SkierLenora}
+    },
+    [TRAINER_ROUTE_12_WEST_SKIER_MEGAN] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_SKIER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .trainerPic = TRAINER_PIC_SKIER,
+        .trainerName = {_M, _e, _g, _a, _n, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_CHECK_VIABILITY,
+        .partySize = NELEMS(sParty_Route12West_SkierMegan),
+        .party = {.NoItemDefaultMoves = sParty_Route12West_SkierMegan}
+    },
+    [TRAINER_ROUTE_12_WEST_SWIMMER_M_GREG] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_SWIMMER_M,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
+        .trainerPic = TRAINER_PIC_SWIMMER_M,
+        .trainerName = {_G, _r, _e, _g, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_RISKY,
+        .partySize = NELEMS(sParty_Route12West_SwimmerMGreg),
+        .party = {.NoItemDefaultMoves = sParty_Route12West_SwimmerMGreg}
     },
     // #endregion
     // #endregion
