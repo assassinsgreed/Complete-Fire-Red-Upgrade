@@ -1437,3 +1437,20 @@ npc 3 11 23 EventScript_Route12West_SkierMegan
 npc 3 11 24 EventScript_Route12West_SwimmerGreg
 sign 3 11 0 SignScript_Route12West_TrainerTips
 sign 3 11 1 SignScript_Route12West_Navigation
+
+# Bruccie Village
+map 3 7 MapScript_BruccieVillage
+npc 3 7 0 EventScript_BruccieVillage_Hiker
+npc 3 7 1 EventScript_BruccieVillage_Skier
+npc 3 7 2 EventScript_BruccieVillage_Psychic
+npc 3 7 3 ItemScript_Common_RareCandy
+sign 3 7 0 SignScript_BruccieVillage_TownPlacard
+sign 3 7 1 SignScript_BruccieVillage_GymSign
+map 11 0 MapScript_BruccieVillageFacilities_PokemonCenter
+npc 11 0 0 EventScript_PokemonCenter_Main
+npc 11 0 1 EventScript_BruccieVillageFacilities_PokemonCenter_GameboyKidLeft
+npc 11 0 2 EventScript_BruccieVillageFacilities_PokemonCenter_GameboyKidRight
+npc 11 2 0 EventScript_Pokemart
+## For some reason, NPC 1 will never display
+npc 11 2 2 EventScript_BruccieVillageFacilities_Pokemart_StockBoy
+npc 11 2 3 EventScript_BruccieVillageFacilities_Pokemart_IceHealsGirl
