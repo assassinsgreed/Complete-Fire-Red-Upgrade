@@ -54,6 +54,7 @@ extern const u8 MoltresGTiles[];
 extern const u8 ArticunoGTiles[];
 extern const u8 GlastrierTiles[];
 extern const u8 SkierTiles[];
+extern const u8 WingullTiles[];
 
 #define EVENT_OBJ_PAL_TAG_NONE 0x1102
 #define gEventObjectBaseOam_16x16 ((const struct OamData*) 0x83A36F8)
@@ -663,6 +664,19 @@ static const struct SpriteFrameImage Table_Skier[] =
     overworld_frame(SkierTiles, 2, 4, 6),
     overworld_frame(SkierTiles, 2, 4, 7),
     overworld_frame(SkierTiles, 2, 4, 8),
+};
+
+static const struct SpriteFrameImage Table_Wingull[] =
+{
+    overworld_frame(WingullTiles, 2, 2, 0),
+    overworld_frame(WingullTiles, 2, 2, 1),
+    overworld_frame(WingullTiles, 2, 2, 2),
+    overworld_frame(WingullTiles, 2, 2, 3),
+    overworld_frame(WingullTiles, 2, 2, 4),
+    overworld_frame(WingullTiles, 2, 2, 5),
+    overworld_frame(WingullTiles, 2, 2, 6),
+    overworld_frame(WingullTiles, 2, 2, 7),
+    overworld_frame(WingullTiles, 2, 2, 8),
 };
 
 // #region MC
@@ -1604,5 +1618,25 @@ const struct EventObjectGraphicsInfo GraphicsInfo_Skier =
     .subspriteTables = gEventObjectSpriteOamTables_16x32,
     .anims = gEventObjectImageAnimTable_Standard,
     .images = Table_Skier,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+const struct EventObjectGraphicsInfo GraphicsInfo_Wingull =
+{
+    .tileTag = 0xFFFF,
+    .paletteTag1 = 0x1227,
+    .paletteTag2 = EVENT_OBJ_PAL_TAG_NONE,
+    .size = (16 * 16) / 2,
+    .width = 16,
+    .height = 16,
+    .shadowSize = SHADOW_SIZE_S,
+    .inanimate = FALSE,
+    .disableReflectionPaletteLoad = FALSE,
+    .tracks = TRACKS_NONE,
+    .gender = MALE,
+    .oam = gEventObjectBaseOam_16x16,
+    .subspriteTables = gEventObjectSpriteOamTables_16x16,
+    .anims = gEventObjectImageAnimTable_Standard,
+    .images = Table_Wingull,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
