@@ -385,6 +385,8 @@ GraphicsInfo_Mareep 839FF88
 GraphicsInfo_Pikachu 839FF90
 ## Replace Psyduck (121)
 GraphicsInfo_Castform 839FF94
+## Replace Nidoran Female (122)
+GraphicsInfo_Wingull 839FF98
 ## Replace Zapdos (136)
 GraphicsInfo_ZapdosG 839FFD0
 ## Replace Moltres (137)

@@ -1442,8 +1442,10 @@ sign 3 11 1 SignScript_Route12West_Navigation
 map 3 7 MapScript_BruccieVillage
 npc 3 7 0 EventScript_BruccieVillage_Hiker
 npc 3 7 1 EventScript_BruccieVillage_Skier
-npc 3 7 2 EventScript_BruccieVillage_Psychic
+npc 3 7 2 EventScript_BruccieVillage_Kid
 npc 3 7 3 ItemScript_Common_RareCandy
+npc 3 7 4 EventScript_BruccieVillage_OldMan
+npc 3 7 5 EventScript_BruccieVillage_Wingull
 sign 3 7 0 SignScript_BruccieVillage_TownPlacard
 sign 3 7 1 SignScript_BruccieVillage_GymSign
 map 11 0 MapScript_BruccieVillageFacilities_PokemonCenter

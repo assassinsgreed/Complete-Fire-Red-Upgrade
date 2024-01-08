@@ -262,3 +262,5 @@ m_Wrong: .byte say_cross, end_m
 m_Surprise: .byte exclaim, end_m
 m_Question: .byte say_question, end_m
 m_Joy: .byte say_smile, end_m
+m_WalkFacingUp: .byte walk_up_onspot, end_m
+m_WalkFacingRight: .byte walk_right_onspot, end_m
