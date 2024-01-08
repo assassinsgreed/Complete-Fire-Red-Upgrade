@@ -24,9 +24,9 @@ EventScript_BruccieVillage_Skier:
     npcchat gText_BruccieVillage_Skier
     end
 
-.global EventScript_BruccieVillage_Psychic
-EventScript_BruccieVillage_Psychic:
-    npcchat gText_BruccieVillage_Psychic
+.global EventScript_BruccieVillage_Kid
+EventScript_BruccieVillage_Kid:
+    npcchat gText_BruccieVillage_Kid
     end
 
 .global EventScript_BruccieVillage_OldMan
