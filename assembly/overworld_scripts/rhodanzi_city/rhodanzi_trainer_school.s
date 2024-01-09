@@ -51,13 +51,12 @@ EventScript_RhodanziTrainerSchool_MainRoom_Professor:
 
 .global EventScript_RhodanziTrainerSchool_TerrainTutor
 EventScript_RhodanziTrainerSchool_TerrainTutor:
-    lock
     faceplayer
     msgbox gText_RhodanziTrainerSchool_MainRoom_TerrainTutor_Intro MSG_NORMAL
     checkflag 0x820 @ Has Terrain Badge
     IF SET _goto TerrainTutor
     msgbox gText_RhodanziTrainerSchool_MainRoom_TerrainTutor_DoesNotHaveBadge MSG_NORMAL
-    release
+    applymovement LASTTALKED m_LookRight
     end
 
 TerrainTutor:
@@ -70,19 +69,22 @@ TerrainTutor:
     compare LASTRESULT TRUE
     if FALSE _goto NotEnoughPokeChips
     msgbox gText_RhodanziTrainerSchool_MainRoom_TerrainTutor_ConfirmationAccepted MSG_KEEPOPEN
-    loadpointer 0x0 gText_RhodanziTrainerSchool_MainRoom_TerrainTutor_Complete
     call EventScript_Tutors_Terrain
-    release
+    compare LASTRESULT TRUE
+    if equal _call TutoringComplete
+    applymovement LASTTALKED m_LookRight
     end
 
+TutoringComplete:
+    msgbox gText_RhodanziTrainerSchool_MainRoom_TerrainTutor_Complete MSG_NORMAL
+    return
+
 TutoringRejected:
-    msgbox gText_RhodanziTrainerSchool_MainRoom_TerrainTutor_ConfirmationRejected MSG_NORMAL
-    release
+    npcchatwithmovement gText_RhodanziTrainerSchool_MainRoom_TerrainTutor_ConfirmationRejected m_LookRight
     end
 
 NotEnoughPokeChips:
-    msgbox gText_RhodanziTrainerSchool_MainRoom_TerrainTutor_NotEnoughPokeChips MSG_NORMAL
-    release
+    npcchatwithmovement gText_RhodanziTrainerSchool_MainRoom_TerrainTutor_NotEnoughPokeChips m_LookRight
     end
 
 @ Basic Course

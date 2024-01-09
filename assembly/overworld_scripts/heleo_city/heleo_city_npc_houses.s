@@ -28,7 +28,6 @@ EventScript_HeleoCity_ForemanAssistant:
 
 .global EventScript_HeleoCity_MoveTutor
 EventScript_HeleoCity_MoveTutor:
-    lock
     faceplayer
     callasm StorePokeChipCount
 	buffernumber 0x0 0x8005 @ Take stored PokeChip count
@@ -39,17 +38,22 @@ EventScript_HeleoCity_MoveTutor:
     compare LASTRESULT TRUE
     if FALSE _goto NotEnoughPokeChips
     msgbox gText_HeleoNPCHouses_ConfirmationAccepted MSG_KEEPOPEN
-    loadpointer 0x0 gText_HeleoNPCHouses_Complete
     call EventScript_Tutors_Heleo
-    release
+    compare LASTRESULT TRUE
+    if equal _call TutoringComplete
+    applymovement LASTTALKED m_LookRight
     end
 
+TutoringComplete:
+    msgbox gText_HeleoNPCHouses_Complete MSG_NORMAL
+    return
+
 TutoringRejected:
-    msgbox gText_HeleoNPCHouses_TutoringRejected MSG_NORMAL
+    npcchatwithmovement gText_HeleoNPCHouses_TutoringRejected m_LookRight
     goto End
 
 NotEnoughPokeChips:
-    msgbox gText_HeleoNPCHouses_NotEnoughPokeChips MSG_NORMAL
+    npcchatwithmovement gText_HeleoNPCHouses_NotEnoughPokeChips m_LookRight
     goto End
 
 .global EventScript_HeleoCity_MoveTutorSon

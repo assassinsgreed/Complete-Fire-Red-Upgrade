@@ -30,7 +30,6 @@ BerryGirlEnd:
 
 .global EventScript_FerroxNPCHouses_MoveTutor
 EventScript_FerroxNPCHouses_MoveTutor:
-    lock
     faceplayer
     callasm StorePokeChipCount
 	buffernumber 0x0 0x8005 @ Take stored PokeChip count
@@ -41,19 +40,22 @@ EventScript_FerroxNPCHouses_MoveTutor:
     compare LASTRESULT TRUE
     if FALSE _goto NotEnoughPokeChips
     msgbox gText_FerroxNPCHouses_ConfirmationAccepted MSG_KEEPOPEN
-    loadpointer 0x0 gText_FerroxNPCHouses_Complete
     call EventScript_Tutors_Ferrox
-    release
+    compare LASTRESULT TRUE
+    if equal _call TutoringComplete
+    applymovement LASTTALKED m_LookLeft
     end
 
+TutoringComplete:
+    msgbox gText_FerroxNPCHouses_Complete MSG_NORMAL
+    return
+
 TutoringRejected:
-    msgbox gText_FerroxNPCHouses_TutoringRejected MSG_NORMAL
-    release
+    npcchatwithmovement gText_FerroxNPCHouses_TutoringRejected m_LookLeft
     end
 
 NotEnoughPokeChips:
-    msgbox gText_FerroxNPCHouses_NotEnoughPokeChips MSG_NORMAL
-    release
+    npcchatwithmovement gText_FerroxNPCHouses_NotEnoughPokeChips m_LookLeft
     end
 
 .global EventScript_FerroxNPCHouses_TutorsInTowns

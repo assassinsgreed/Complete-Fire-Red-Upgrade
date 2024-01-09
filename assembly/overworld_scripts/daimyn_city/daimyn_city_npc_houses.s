@@ -17,7 +17,6 @@ EventScript_DaimynCityNPCHouses_SuspiciousMan2:
 
 .global EventScript_DaimynCity_MoveTutor
 EventScript_DaimynCity_MoveTutor:
-    lock
     faceplayer
     callasm StorePokeChipCount
     buffernumber 0x0 0x8005 @ Take stored PokeChip count
@@ -28,17 +27,22 @@ EventScript_DaimynCity_MoveTutor:
     compare LASTRESULT TRUE
     if FALSE _goto NotEnoughPokeChips
     msgbox gText_DaimynNPCHouses_ConfirmationAccepted MSG_KEEPOPEN
-    loadpointer 0x0 gText_DaimynNPCHouses_Complete
     call EventScript_Tutors_Daimyn
-    release
+    compare LASTRESULT TRUE
+    if equal _call TutoringComplete
+    applymovement LASTTALKED m_LookLeft
     end
 
+TutoringComplete:
+    msgbox gText_DaimynNPCHouses_Complete MSG_NORMAL
+    return
+
 TutoringRejected:
-    msgbox gText_DaimynNPCHouses_TutoringRejected MSG_NORMAL
+    npcchatwithmovement gText_DaimynNPCHouses_TutoringRejected m_LookLeft
     goto End
 
 NotEnoughPokeChips:
-    msgbox gText_DaimynNPCHouses_NotEnoughPokeChips MSG_NORMAL
+    npcchatwithmovement gText_DaimynNPCHouses_NotEnoughPokeChips m_LookLeft
     goto End
 
 .global EventScript_DaimynCityNPCHouses_TutorsDaughter

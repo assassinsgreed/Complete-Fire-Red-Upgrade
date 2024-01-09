@@ -249,17 +249,20 @@ EventScript_LaplazNPCHouses_Tutor:
     compare LASTRESULT TRUE
     if FALSE _goto NotEnoughPokeChips
     msgbox gText_LaplazTownNPCHouses_ConfirmationAccepted MSG_KEEPOPEN
-    loadpointer 0x0 gText_LaplazTownNPCHouses_Complete
     call EventScript_Tutors_Laplaz
+    compare LASTRESULT TRUE
+    if equal _call TutoringComplete
     applymovement LASTTALKED m_LookRight
     end
 
+TutoringComplete:
+    msgbox gText_LaplazTownNPCHouses_Complete MSG_NORMAL
+    return
+
 TutoringRejected:
-    msgbox gText_LaplazTownNPCHouses_TutoringRejected MSG_NORMAL
-    applymovement LASTTALKED m_LookRight
+    npcchatwithmovement gText_LaplazTownNPCHouses_TutoringRejected m_LookRight
     goto End
 
 NotEnoughPokeChips:
-    msgbox gText_LaplazTownNPCHouses_NotEnoughPokeChips MSG_NORMAL
-    applymovement LASTTALKED m_LookRight
+    npcchatwithmovement gText_LaplazTownNPCHouses_NotEnoughPokeChips m_LookRight
     goto End

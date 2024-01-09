@@ -26,25 +26,29 @@ EventScript_Tutors_Terrain:
 grassyterrain:
     bufferattack 0x0 MOVE_GRASSYTERRAIN
     setvar 0x8005 0x3C
-    call teach5ChipMove
+    setvar 0x4000 5
+    call teachmove
     return
 
 mistyterrain:
     bufferattack 0x0 MOVE_MISTYTERRAIN
     setvar 0x8005 0x3D
-    call teach5ChipMove
+    setvar 0x4000 5
+    call teachmove
     return
 
 electricterrain:
     bufferattack 0x0 MOVE_ELECTRICTERRAIN
     setvar 0x8005 0x3E
-    call teach5ChipMove
+    setvar 0x4000 5
+    call teachmove
     return
 
 psychicterrain:
     bufferattack 0x0 MOVE_PSYCHICTERRAIN
     setvar 0x8005 0x3F
-    call teach5ChipMove
+    setvar 0x4000 5
+    call teachmove
     return
 
 .global EventScript_Tutors_Ferrox
@@ -70,49 +74,57 @@ EventScript_Tutors_Ferrox:
 snore:
     bufferattack 0x0 MOVE_SNORE
     setvar 0x8005 0x3
-    call teach5ChipMove
+    setvar 0x4000 5
+    call teachmove
     return
 
 worryseed:
     bufferattack 0x0 MOVE_WORRYSEED
     setvar 0x8005 0xB
-    call teach5ChipMove
+    setvar 0x4000 5
+    call teachmove
     return
 
 covet:
     bufferattack 0x0 MOVE_COVET
     setvar 0x8005 0xC
-    call teach5ChipMove
+    setvar 0x4000 5
+    call teachmove
     return
 
 gravity:
     bufferattack 0x0 MOVE_GRAVITY
     setvar 0x8005 0x13
-    call teach5ChipMove
+    setvar 0x4000 5
+    call teachmove
     return
 
 telekinesis:
     bufferattack 0x0 MOVE_TELEKINESIS
     setvar 0x8005 0x15
-    call teach5ChipMove
+    setvar 0x4000 5
+    call teachmove
     return
 
 icywind:
     bufferattack 0x0 MOVE_ICYWIND
     setvar 0x8005 0x1E
-    call teach5ChipMove
+    setvar 0x4000 5
+    call teachmove
     return
 
 gastroacid:
     bufferattack 0x0 MOVE_GASTROACID
     setvar 0x8005 0x28
-    call teach5ChipMove
+    setvar 0x4000 5
+    call teachmove
     return
 
 afteryou:
     bufferattack 0x0 MOVE_AFTERYOU
     setvar 0x8005 0x10
-    call teach5ChipMove
+    setvar 0x4000 5
+    call teachmove
     return
 
 .global EventScript_Tutors_Heleo
@@ -137,49 +149,57 @@ EventScript_Tutors_Heleo:
 grasspledge:
     bufferattack 0x0 MOVE_GRASSPLEDGE
     setvar 0x8005 0x35
-    call teach5ChipMove
+    setvar 0x4000 5
+    call teachmove
     return
 
 firepledge:
     bufferattack 0x0 MOVE_FIREPLEDGE
     setvar 0x8005 0x36
-    call teach5ChipMove
+    setvar 0x4000 5
+    call teachmove
     return
 
 waterpledge:
     bufferattack 0x0 MOVE_WATERPLEDGE
     setvar 0x8005 0x37
-    call teach5ChipMove
+    setvar 0x4000 5
+    call teachmove
     return
 
 lowkick:
     bufferattack 0x0 MOVE_LOWKICK
     setvar 0x8005 0x6
-    call teach5ChipMove
+    setvar 0x4000 5
+    call teachmove
     return
 
 bind:
     bufferattack 0x0 MOVE_BIND
     setvar 0x8005 0x8
-    call teach5ChipMove
+    setvar 0x4000 5
+    call teachmove
     return
 
 block:
     bufferattack 0x0 MOVE_BLOCK
     setvar 0x8005 0xA
-    call teach5ChipMove
+    setvar 0x4000 5
+    call teachmove
     return
 
 laserfocus:
     bufferattack 0x0 MOVE_LASERFOCUS
     setvar 0x8005 0x21
-    call teach5ChipMove
+    setvar 0x4000 5
+    call teachmove
     return
 
 uproar:
     bufferattack 0x0 MOVE_UPROAR
     setvar 0x8005 0x7
-    call teach5ChipMove
+    setvar 0x4000 5
+    call teachmove
     return
 
 .global EventScript_Tutors_Daimyn
@@ -204,49 +224,57 @@ EventScript_Tutors_Daimyn:
 FirePunch:
     bufferattack 0x0 MOVE_FIREPUNCH
     setvar 0x8005 0x0
-    call teach5ChipMove
+    setvar 0x4000 5
+    call teachmove
     return
 
 IcePunch:
     bufferattack 0x0 MOVE_ICEPUNCH
     setvar 0x8005 0x1
-    call teach5ChipMove
+    setvar 0x4000 5
+    call teachmove
     return
 
 ThunderPunch:
     bufferattack 0x0 MOVE_THUNDERPUNCH
     setvar 0x8005 0x2
-    call teach5ChipMove
+    setvar 0x4000 5
+    call teachmove
     return
 
 HealBell:
     bufferattack 0x0 MOVE_HEALBELL
     setvar 0x8005 0x4
-    call teach5ChipMove
+    setvar 0x4000 5
+    call teachmove
     return
 
 HelpingHand:
     bufferattack 0x0 MOVE_HELPINGHAND
     setvar 0x8005 0x9
-    call teach5ChipMove
+    setvar 0x4000 5
+    call teachmove
     return
 
 Spite:
     bufferattack 0x0 MOVE_SPITE
     setvar 0x8005 0xF
-    call teach5ChipMove
+    setvar 0x4000 5
+    call teachmove
     return
 
 PainSplit:
     bufferattack 0x0 MOVE_PAINSPLIT
     setvar 0x8005 0x1B
-    call teach5ChipMove
+    setvar 0x4000 5
+    call teachmove
     return
 
 MagicRoom:
     bufferattack 0x0 MOVE_MAGICROOM
     setvar 0x8005 0x25
-    call teach5ChipMove
+    setvar 0x4000 5
+    call teachmove
     return
 
 .global EventScript_Tutors_Laplaz
@@ -271,58 +299,133 @@ EventScript_Tutors_Laplaz:
 ElectroWeb:
     bufferattack 0x0 MOVE_ELECTROWEB
     setvar 0x8005 0x5
-    call teach5ChipMove
+    setvar 0x4000 5
+    call teachmove
     return
 
 Snatch:
     bufferattack 0x0 MOVE_SNATCH
     setvar 0x8005 0xE
-    call teach5ChipMove
+    setvar 0x4000 5
+    call teachmove
     return
 
 MagnetRise:
     bufferattack 0x0 MOVE_MAGNETRISE
     setvar 0x8005 0x16
-    call teach5ChipMove
+    setvar 0x4000 5
+    call teachmove
     return
 
 Bounce:
     bufferattack 0x0 MOVE_BOUNCE
     setvar 0x8005 0x17
-    call teach5ChipMove
+    setvar 0x4000 5
+    call teachmove
     return
 
 Tailwind:
     bufferattack 0x0 MOVE_TAILWIND
     setvar 0x8005 0x1C
-    call teach5ChipMove
+    setvar 0x4000 5
+    call teachmove
     return
 
 Endeavor:
     bufferattack 0x0 MOVE_ENDEAVOR
     setvar 0x8005 0x1D
-    call teach5ChipMove
+    setvar 0x4000 5
+    call teachmove
     return
 
 MagicCoat:
     bufferattack 0x0 MOVE_MAGICCOAT
     setvar 0x8005 0x24
-    call teach5ChipMove
+    setvar 0x4000 5
+    call teachmove
     return
 
 WonderRoom:
     bufferattack 0x0 MOVE_WONDERROOM
     setvar 0x8005 0x26
-    call teach5ChipMove
+    setvar 0x4000 5
+    call teachmove
     return
 
-teach5ChipMove:
+.global EventScript_Tutors_Bruccie
+EventScript_Tutors_Bruccie:
+    setvar 0x8000 0xB
+    setvar 0x8001 0x5
+    setvar 0x8004 0x0
+	special 0x158
+    waitstate
+    switch LASTRESULT
+	case 0, BugBite
+	case 1, IronDefense
+	case 2, LastResort
+	case 3, DrillRun
+    case 4, FoulPlay
+	case 5, SuperFang
+	case 6, ThroatChop
+	case 7, DualChop
+    case 8, cancelled
+    case 0x7F, cancelled @ When player hit B to close
+    return
+
+BugBite:
+    bufferattack 0x0 MOVE_BUGBITE
+    setvar 0x8005 13
+    setvar 0x4000 10
     call teachmove
-    compare LASTRESULT YES
-    if false _goto return
-    preparemsg 0x0
-    waitmsg
-    removeitem ITEM_POKE_CHIP 0x5
+    return
+
+IronDefense:
+    bufferattack 0x0 MOVE_IRONDEFENSE
+    setvar 0x8005 20
+    setvar 0x4000 10
+    call teachmove
+    return
+
+LastResort:
+    bufferattack 0x0 MOVE_LASTRESORT
+    setvar 0x8005 24
+    setvar 0x4000 10
+    call teachmove
+    return
+
+DrillRun:
+    bufferattack 0x0 MOVE_DRILLRUN
+    setvar 0x8005 35
+    setvar 0x4000 10
+    call teachmove
+    return
+
+FoulPlay:
+    bufferattack 0x0 MOVE_FOULPLAY
+    setvar 0x8005 41
+    setvar 0x4000 10
+    call teachmove
+    return
+
+SuperFang:
+    bufferattack 0x0 MOVE_SUPERFANG
+    setvar 0x8005 42
+    setvar 0x4000 10
+    call teachmove
+    return
+
+ThroatChop:
+    bufferattack 0x0 MOVE_THROATCHOP
+    setvar 0x8005 45
+    setvar 0x4000 10
+    call teachmove
+    return
+
+DualChop:
+    bufferattack 0x0 MOVE_DUALCHOP
+    setvar 0x8005 49
+    setvar 0x4000 10
+    call teachmove
     return
 
 teachmove:
@@ -333,6 +436,7 @@ teachmove:
     if false _goto cancelled @ Pokemon couldn't learn move, or player cancelled
     sound 0xF8 @ Money SE
     waitse
+    removeitem ITEM_POKE_CHIP 0x4000
     return
 
 cancelled:
