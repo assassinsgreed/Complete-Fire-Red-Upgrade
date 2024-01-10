@@ -5,19 +5,19 @@
 u8 __attribute__((long_call)) GetCurrentRegionMapSectionId(void);
 
 #ifndef UNBOUND //Modify this section
-#define MAPSEC_PALLET_TOWN                  0x58
-#define MAPSEC_VIRIDIAN_CITY                0x59
-#define MAPSEC_PEWTER_CITY                  0x5A
-#define MAPSEC_CERULEAN_CITY                0x5B
-#define MAPSEC_LAVENDER_TOWN                0x5C
+#define MAPSEC_ANTHRA_TOWN                  0x58
+#define MAPSEC_OLENIC_TOWN                  0x59
+#define MAPSEC_RHODANZI_CITY                0x5A
+#define MAPSEC_FERROX_VILLAGE               0x5B
+#define MAPSEC_HELEO_CITY                   0x5C
 #define MAPSEC_DAIMYN_CITY                  0x5D
-#define MAPSEC_CELADON_CITY                 0x5E
-#define MAPSEC_FUCHSIA_CITY                 0x5F
-#define MAPSEC_CINNABAR_ISLAND              0x60
-#define MAPSEC_INDIGO_PLATEAU               0x61
-#define MAPSEC_SAFFRON_CITY                 0x62
-#define MAPSEC_ROUTE_4_FLYDUP               0x63
-#define MAPSEC_ROUTE_10_FLYDUP              0x64
+#define MAPSEC_LAPLAZ_TOWN                  0x5E
+#define MAPSEC_BRUCCIE_VILLAGE              0x5F
+#define MAPSEC_EMRALDIN_QUAY                0x60
+#define MAPSEC_TSARVOSA_CITY                0x61
+#define MAPSEC_UTEYA_VILLAGE                0x62
+#define MAPSEC_ROUTE_11_NORTH               0x63
+#define MAPSEC_ROUTE_12_WEST                0x64
 #define MAPSEC_ROUTE_1                      0x65
 #define MAPSEC_ROUTE_2                      0x66
 #define MAPSEC_ROUTE_3                      0x67
@@ -28,9 +28,9 @@ u8 __attribute__((long_call)) GetCurrentRegionMapSectionId(void);
 #define MAPSEC_ROUTE_8                      0x6C
 #define MAPSEC_ROUTE_9                      0x6D
 #define MAPSEC_ROUTE_10                     0x6E
-#define MAPSEC_ROUTE_11                     0x6F
-#define MAPSEC_ROUTE_12                     0x70
-#define MAPSEC_ROUTE_13                     0x71
+#define MAPSEC_ROUTE_11_SOUTH               0x6F
+#define MAPSEC_ROUTE_12_REST_HOUSE          0x70
+#define MAPSEC_ROUTE_13_REST_HOUSE          0x71
 #define MAPSEC_ROUTE_14                     0x72
 #define MAPSEC_ROUTE_15                     0x73
 #define MAPSEC_ROUTE_16                     0x74
@@ -42,7 +42,7 @@ u8 __attribute__((long_call)) GetCurrentRegionMapSectionId(void);
 #define MAPSEC_ROUTE_22                     0x7A
 #define MAPSEC_ROUTE_23                     0x7B
 #define MAPSEC_ROUTE_24                     0x7C
-#define MAPSEC_ROUTE_25                     0x7D
+#define MAPSEC_ROUTE_13                     0x7D
 #define MAPSEC_VARISI_FOREST                0x7E
 #define MAPSEC_RUBARR_DESERT                0x7F
 #define MAPSEC_TORMA_CAVE                   0x80
@@ -58,7 +58,7 @@ u8 __attribute__((long_call)) GetCurrentRegionMapSectionId(void);
 #define MAPSEC_HESSON_PASS                  0x8A
 #define MAPSEC_UTEYAN_RUINS                 0x8B
 #define MAPSEC_ASCENSION_TOWER              0x8C
-#define MAPSEC_PROFESSORS_GARDEN            0x8D
+#define MAPSEC_ROUTE_12_EAST                0x8D
 #define MAPSEC_DAIMYN_FACTORY               0x8E
 #define MAPSEC_ONE_ISLAND                   0x8F
 #define MAPSEC_TWO_ISLAND                   0x90
