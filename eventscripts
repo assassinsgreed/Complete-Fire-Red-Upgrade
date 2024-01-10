@@ -1452,6 +1452,7 @@ map 11 0 MapScript_BruccieVillageFacilities_PokemonCenter
 npc 11 0 0 EventScript_PokemonCenter_Main
 npc 11 0 1 EventScript_BruccieVillageFacilities_PokemonCenter_GameboyKidLeft
 npc 11 0 2 EventScript_BruccieVillageFacilities_PokemonCenter_GameboyKidRight
+npc 11 0 3 EventScript_BruccieVillageFacilities_PokemonCenter_CaughtLocationGirl
 npc 11 2 0 EventScript_Pokemart
 ## For some reason, NPC 1 will never display
 npc 11 2 2 EventScript_BruccieVillageFacilities_Pokemart_StockBoy

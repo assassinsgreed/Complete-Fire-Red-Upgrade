@@ -7,6 +7,9 @@ I'm going to play games all day.\pThat's more fun than playing in the\nsnow is!
 #org @gText_BruccieVillageFacilities_PokemonCenter_GameboyKidCommon
 [BLUE]Uh-huh!
 
+#org @gText_BruccieVillageFacilities_PokemonCenter_CaughtLocationGirl
+Oh, your [BUFFER1][.]\pI sense it!\nYou caught it at [BUFFER2].\pThe two of you must have formed\nmany pleasant memories together.
+
 #org @gText_BruccieVillageFacilities_Pokemart_IceHealGirl
 Hmm[.] I should buy a few Ice Heals\nif I'm going to go onto Route 12.\pThere are so many ice types, and my\nPok\emon might catch frostbite.
 

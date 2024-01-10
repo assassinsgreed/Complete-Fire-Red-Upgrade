@@ -45,6 +45,16 @@ GameboyKidsLookDown:
     applymovement 0x3 m_LookDown
     return
 
+.global EventScript_BruccieVillageFacilities_PokemonCenter_CaughtLocationGirl
+EventScript_BruccieVillageFacilities_PokemonCenter_CaughtLocationGirl:
+    setvar 0x8003 0x0 @ From party
+    setvar 0x8004 0x0 @ First slot
+    bufferfirstpokemon 0x0 @ Buffer first pokemon's species (not nickname) to the first buffer
+    special2 LASTRESULT 0xC @ Store the caught location in LASTRESULT
+    callasm BufferMapNameFromLastResult @ Convert it from it's numeric representation to it's name
+    npcchatwithmovement gText_BruccieVillageFacilities_PokemonCenter_CaughtLocationGirl m_LookLeft
+    end
+
 .global EventScript_BruccieVillageFacilities_Pokemart_IceHealsGirl
 EventScript_BruccieVillageFacilities_Pokemart_IceHealsGirl:
     npcchatwithmovement gText_BruccieVillageFacilities_Pokemart_IceHealGirl m_LookLeft
@@ -53,4 +63,4 @@ EventScript_BruccieVillageFacilities_Pokemart_IceHealsGirl:
 .global EventScript_BruccieVillageFacilities_Pokemart_StockBoy
 EventScript_BruccieVillageFacilities_Pokemart_StockBoy:
     npcchatwithmovement gText_BruccieVillageFacilities_Pokemart_StockBoy m_LookUp
-    end
+    end    
