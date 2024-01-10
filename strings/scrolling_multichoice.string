@@ -233,4 +233,28 @@ Magic Coat
 #org @gText_WonderRoom
 Wonder Room
 
+#org @gText_BugBite
+Bug Bite
+
+#org @gText_IronDefense
+Iron Defense
+
+#org @gText_LastResort
+Last Resort
+
+#org @gText_DrillRun
+Drill Run
+
+#org @gText_FoulPlay
+Foul Play
+
+#org @gText_SuperFang
+Super Fang
+
+#org @gText_ThroatChop
+Throat Chop
+
+#org @gText_DualChop
+Dual Chop
+
 #endif

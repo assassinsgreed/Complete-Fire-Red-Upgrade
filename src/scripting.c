@@ -2972,6 +2972,14 @@ extern const u8 gText_Tailwind[];
 extern const u8 gText_Endeavor[];
 extern const u8 gText_MagicCoat[];
 extern const u8 gText_WonderRoom[];
+extern const u8 gText_BugBite[];
+extern const u8 gText_IronDefense[];
+extern const u8 gText_LastResort[];
+extern const u8 gText_DrillRun[];
+extern const u8 gText_FoulPlay[];
+extern const u8 gText_SuperFang[];
+extern const u8 gText_ThroatChop[];
+extern const u8 gText_DualChop[];
 extern const u8 gText_End[];
 
 // Restaurant Options
@@ -3163,6 +3171,19 @@ static const u8* sTutorsLaplaz[] =
 	gText_End,
 };
 
+static const u8* sTutorsBruccie[] =
+{
+	gText_BugBite,
+	gText_IronDefense,
+	gText_LastResort,
+	gText_DrillRun,
+	gText_FoulPlay,
+	gText_SuperFang,
+	gText_ThroatChop,
+	gText_DualChop,
+	gText_End,
+};
+
 // Multichoice Lists
 const struct ScrollingMulti gScrollingSets[] =
 {
@@ -3177,6 +3198,7 @@ const struct ScrollingMulti gScrollingSets[] =
 	{sTutorRhodanzi, ARRAY_COUNT(sTutorRhodanzi)},
 	{sApricornBalls, ARRAY_COUNT(sApricornBalls)},
 	{sTutorsLaplaz, ARRAY_COUNT(sTutorsLaplaz)},
+	{sTutorsBruccie, ARRAY_COUNT(sTutorsBruccie)},
 };
 
 //Link number of opts shown at once to the box height

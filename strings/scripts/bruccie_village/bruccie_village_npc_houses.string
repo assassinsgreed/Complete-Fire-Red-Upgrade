@@ -1,0 +1,14 @@
+#org @gText_BruccieVillageNPCHouses_TutorConfirmation
+Howdy! I'm something of an expert\nwhen it comes to Pok\emon moves.\pI can teach your Pok\emon some of\nthese incredible moves.\pAll I require in exchange is 10\nPok\eChips.\pWhat do you say?\n(Held: [BUFFER1])
+
+#org @gText_BruccieVillageNPCHouses_ConfirmationAccepted
+Excellent! These are the moves I\ncan teach your Pok\emon.
+
+#org @gText_BruccieVillageNPCHouses_Complete
+Your Pok\emon has learned the move\nperfectly!\pCome see me again, if you'd like to\nteach another Pok\emon a new move.
+
+#org @gText_BruccieVillageNPCHouses_TutoringRejected
+I understand.\pPlease, come see me again if you\nchange your mind.
+
+#org @gText_BruccieVillageNPCHouses_NotEnoughPokeChips
+I'm sorry, but you do not have\nenough Pok\eChips.\pThese moves are worth the cost, I\nassure you.
