@@ -3318,3 +3318,9 @@ void CountBadges()
 		gSpecialVar_LastResult += FlagGet(PERMA_SYS_FLAGS_START + i);
 	}
 }
+
+// Stores a map name in buffer 1, based on the number stored in LASTRESULT
+void BufferMapNameFromLastResult()
+{
+	GetMapName(sScriptStringVars[1], gSpecialVar_LastResult, 0);
+}
