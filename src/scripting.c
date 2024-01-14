@@ -657,7 +657,9 @@ bool8 sp07D_CheckTradedPokemon(void)
 	if (Var8003 == 1)
 		monOTID = GetBoxMonDataAt(Var8000, Var8001, MON_DATA_OT_ID);
 	else
-		monOTID = GetMonData(&gPlayerParty[Var8004], MON_DATA_OT_ID, 0);
+		// Original logic is flawed for trades managed in CFRU
+		return IsTradedMon(&gPlayerParty[Var8004]);
+		// monOTID = GetMonData(&gPlayerParty[Var8004], MON_DATA_OT_ID, 0);
 #else
 	monOTID = GetMonData(&gPlayerParty[Var8004], MON_DATA_OT_ID, 0);
 

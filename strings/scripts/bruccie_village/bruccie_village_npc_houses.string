@@ -34,6 +34,9 @@ Alright. If you change your mind,\ncome see me.\pAnd remember - don't tell anyon
 #org @gText_BruccieVillageNPCHouses_PokeballSwapper_AskToChoosePokemon
 Okay, which Pok\emon would you like\nto change the ball of?
 
+#org @gText_BruccieVillageNPCHouses_PokeballSwapper_TradedPokemon
+[BUFFER1] was given to you by another\ntrainer.\pIt would be rude of me to change\nit's Pok\e Ball.
+
 #org @gText_BruccieVillageNPCHouses_PokeballSwapper_PokemonInCherishBall
 [BUFFER1] is in a Cherish Ball.\nIt's special; I cannot change it.
 

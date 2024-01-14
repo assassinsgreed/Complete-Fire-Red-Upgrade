@@ -61,6 +61,9 @@ ChoosePokemon:
     if greaterorequal _goto ChoseNotToChangeBall
     bufferpartypokemon 0x0 0x8004 @ Buffer pokemon nickname
     setvar 0x8003 0x0 @ Read pokeball from party
+    special2 LASTRESULT 0x7D @ Check if it's a traded pokemon
+    compare LASTRESULT TRUE
+    if equal _goto CannotChangeForTradedPokemon
     special2 0x4000 0xB
     addvar 0x4000 0x1 @ Add 1 - This vanilla special reads the ball in a 0 based format instead of 1 based (#0 is None)
     compare 0x4000 ITEM_CHERISH_BALL
@@ -269,6 +272,10 @@ ChoseNotToChangeBall:
 NotEnoughPokeChipsForBallSwap:
     npcchatwithmovement gText_BruccieVillageNPCHouses_PokeballSwapper_NotEnoughChips m_LookLeft
     end
+
+CannotChangeForTradedPokemon:
+    msgbox gText_BruccieVillageNPCHouses_PokeballSwapper_TradedPokemon MSG_NORMAL
+    goto ChoseNotToChangeBall
 
 CannotChangeCherishBall:
     msgbox gText_BruccieVillageNPCHouses_PokeballSwapper_PokemonInCherishBall MSG_NORMAL
