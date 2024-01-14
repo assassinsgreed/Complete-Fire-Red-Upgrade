@@ -12,3 +12,69 @@ I understand.\pPlease, come see me again if you\nchange your mind.
 
 #org @gText_BruccieVillageNPCHouses_NotEnoughPokeChips
 I'm sorry, but you do not have\nenough Pok\eChips.\pThese moves are worth the cost, I\nassure you.
+
+#org @gText_BruccieVillageNPCHouses_PokeballSwapper_Intro
+Shh! Can you keep a secret?\nI've cracked the code[.]\pI've learned how to move a\nPok\emon to a different Pok\e Ball!\pThe Pok\e Ball manufacturers don't\nwant you to know this is possible.\pIt's our little secret, okay?
+
+#org @gText_BruccieVillageNPCHouses_PokeballSwapper_NotSkilled
+There's just one problem[.]\nI'm not very good yet.\pYou'll lose the ball the Pok\emon\nused to be in as a result.
+
+#org @gText_BruccieVillageNPCHouses_PokeballSwapper_Skilled
+I've gotten pretty good at doing\nthis.\pI can return the Pok\emon's old Pok\e\nBall to you when I'm done.
+
+#org @gText_BruccieVillageNPCHouses_PokeballSwapper_Confirmation
+It'll cost 2 Pok\eChips.\pWhat do you say? Want to do it?\n(Held: [BUFFER1])
+
+#org @gText_BruccieVillageNPCHouses_PokeballSwapper_NotEnoughChips
+Hey[.] You don't have enough\nPok\eChips.
+
+#org @gText_BruccieVillageNPCHouses_PokeballSwapper_ChoseNotToChangePokeball
+Alright. If you change your mind,\ncome see me.\pAnd remember - don't tell anyone\nabout this!
+
+#org @gText_BruccieVillageNPCHouses_PokeballSwapper_AskToChoosePokemon
+Okay, which Pok\emon would you like\nto change the ball of?
+
+#org @gText_BruccieVillageNPCHouses_PokeballSwapper_TradedPokemon
+[BUFFER1] was given to you by another\ntrainer.\pIt would be rude of me to change\nit's Pok\e Ball.
+
+#org @gText_BruccieVillageNPCHouses_PokeballSwapper_PokemonInCherishBall
+[BUFFER1] is in a Cherish Ball.\nIt's special; I cannot change it.
+
+#org @gText_BruccieVillageNPCHouses_PokeballSwapper_PokemonChoiceConfirmation
+[BUFFER1] is inside of a [BUFFER2]\nright now.\pThis is the Pok\emon you want to\nchange the ball for?
+
+#org @gText_BruccieVillageNPCHouses_PokeballSwapper_PokeballConfirmation
+Great! And which Pok\e Ball would\nyou like me to move it to?
+
+#org @gText_BruccieVillageNPCHouses_PokeballSwapper_ChoseANonPokeball
+I can't put it in a\n[BUFFER1][.]
+
+#org @gText_BruccieVillageNPCHouses_PokeballSwapper_ChoseSamePokeball
+It's already in a [BUFFER1][.]
+
+#org @gText_BruccieVillageNPCHouses_PokeballSwapper_BallSwapConfirmation
+You want to move your [BUFFER1]\nfrom a [BUFFER2] to a [BUFFER3]?
+
+#org @gText_BruccieVillageNPCHouses_PokeballSwapper_CollectPokechips
+Okay, let's do this!\pI'll just get those Pok\eChips from\nyou[.]
+
+#org @gText_BruccieVillageNPCHouses_PokeballSwapper_StartingProcess
+Now, turn around please[.]\nThis is a secret process.
+
+#org @gText_BruccieVillageNPCHouses_PokeballSwapper_Working
+Hm[.] Let's move this, then pop this\nopen[.]\pAh!\pOh, there we go.\pAnd then[.]
+
+#org @gText_BruccieVillageNPCHouses_PokeballSwapper_ProcessComplete
+It's done! Your [BUFFER1] was moved\ninto a [BUFFER3] successfully.
+
+#org @gText_BruccieVillageNPCHouses_PokeballSwapper_OldBallBroke
+Unfortunately, the old ball was\ndestroyed[.]\pBut I feel like I'm improving.
+
+#org @gText_BruccieVillageNPCHouses_PokeballSwapper_Improved
+Great news! I've perfected my\ncraft!\pI can move your Pok\emon without\nbreaking the old ball now!
+
+#org @gText_BruccieVillageNPCHouses_PokeballSwapper_BallReturned
+And here's the [BUFFER2] that\nyour [BUFFER1] used to be in.
+
+#org @gText_BruccieVillageNPCHouses_PokeballSwapper_Completed
+Come see me again, if you'd like to\nchange another Pok\emon's ball.
