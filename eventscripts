@@ -1457,4 +1457,5 @@ npc 11 2 0 EventScript_Pokemart
 ## For some reason, NPC 1 will never display
 npc 11 2 2 EventScript_BruccieVillageFacilities_Pokemart_StockBoy
 npc 11 2 3 EventScript_BruccieVillageFacilities_Pokemart_IceHealsGirl
+npc 11 7 0 EventScript_BruccieVillageNPCHouses_PokeballSwapper
 npc 11 8 0 EventScript_BruccieVillageNPCHouses_MoveTutor

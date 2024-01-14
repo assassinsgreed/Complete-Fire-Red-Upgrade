@@ -466,11 +466,11 @@ const struct SwarmData gSwarmTable[] =
 		.species = SPECIES_DARUMAKA,
 	},
 	{
-		.mapName = MAPSEC_ROUTE_12,
+		.mapName = MAPSEC_ROUTE_12_WEST,
 		.species = SPECIES_DARMANITAN,
 	},
 	{
-		.mapName = MAPSEC_ROUTE_11,
+		.mapName = MAPSEC_ROUTE_11_SOUTH,
 		.species = SPECIES_STUNFISK,
 	},
 };
