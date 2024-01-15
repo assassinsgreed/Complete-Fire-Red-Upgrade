@@ -237,8 +237,8 @@
 #define MAP_ROUTE_8                              ((3 << 8) | 26)
 #define MAP_ROUTE_9                              ((3 << 8) | 27)
 #define MAP_ROUTE_10                             ((3 << 8) | 28)
-#define MAP_ROUTE_11                             ((3 << 8) | 29)
-#define MAP_ROUTE_12                             ((3 << 8) | 30) // TODO: If Route 12 splits into 2, be sure to update Roamers.c to have West and East connect!
+#define MAP_ROUTE_11_SOUTH                       ((3 << 8) | 29)
+#define MAP_ROUTE_12_EAST                        ((3 << 8) | 30)
 #define MAP_ROUTE_13                             ((3 << 8) | 31)
 #define MAP_ROUTE_14                             ((3 << 8) | 32)
 #define MAP_ROUTE_15                             ((3 << 8) | 33)
@@ -251,8 +251,8 @@
 #define MAP_ROUTE_21_B                           ((3 << 8) | 40)
 #define MAP_ROUTE_22                             ((3 << 8) | 41)
 #define MAP_ROUTE_23                             ((3 << 8) | 42)
-#define MAP_ROUTE_24                             ((3 << 8) | 43)
-#define MAP_ROUTE_25                             ((3 << 8) | 44)
+#define MAP_ROUTE_24_WEST                        ((3 << 8) | 43)  // Just shown as Route 24 on the map
+#define MAP_ROUTE_24_NORTH                       ((3 << 8) | 44)  // Just shown as Route 24 on the map
 #define MAP_ROUTE_11_NORTH                       ((3 << 8) | 54)
 #define MAP_ONE_ISLAND_KINDLE_ROAD               (45 | (3 << 8))
 #define MAP_ONE_ISLAND_TREASURE_BEACH            (46 | (3 << 8))
