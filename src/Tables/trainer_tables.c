@@ -3070,7 +3070,7 @@ const struct TrainerMonNoItemDefaultMoves sParty_Route12West_SkierChantal[] = {
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_Route12West_HikerKumar[] = {
-    { .lvl = 47, .species = SPECIES_AVALUGG },
+    { .lvl = 47, .species = SPECIES_STONJOURNER },
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_Route12West_SkierAubrey[] = {
