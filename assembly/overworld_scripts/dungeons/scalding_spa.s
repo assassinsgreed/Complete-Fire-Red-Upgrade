@@ -41,6 +41,7 @@ ResetGlastrier:
 
 .global EventScript_ScaldingSpa_SpaRoom_PlutoGrunt
 EventScript_ScaldingSpa_SpaRoom_PlutoGrunt:
+    special 0xAF @ Dismount bike if on it
     playbgm 0x19A 0x1 @ Encounter Team Pluto (permanent, needs to be overidden to default track later)
     msgbox gtext_ScaldingSpa_SpaRoom_GruntShakesTheOldManDown MSG_NORMAL
     faceplayer
@@ -72,6 +73,7 @@ PlayerWalksPastGrunt:
     checkflag StoryFlag
     if SET _goto End
     lock
+    special 0xAF @ Dismount bike if on it
     playbgm 0x19A 0x1 @ Encounter Team Pluto (permanent, needs to be overidden to default track later)
     applymovement PlutoGrunt m_LookLeft
     applymovement PLAYER m_Surprise
@@ -352,6 +354,7 @@ TileScript_GlastrierRoom_LeftTile:
     if equal _goto End
     lock
     setvar 0x4000 0x1 @ Temp var to indicate the tile events shouldn't run again
+    special 0xAF @ Dismount bike if on it
     applymovement PLAYER m_WalkToGlastrier
     waitmovement PLAYER
     pause DELAY_HALFSECOND
