@@ -299,3 +299,18 @@ GiveOldBall:
     bufferitem 0x1 0x4000
     msgbox gText_BruccieVillageNPCHouses_PokeballSwapper_BallReturned MSG_NORMAL
     return
+
+.global EventScript_BruccieVillageNPCHouses_CherishBallGuy
+EventScript_BruccieVillageNPCHouses_CherishBallGuy:
+    npcchatwithmovement gText_BruccieVillageNPCHouses_CherishBallGuy m_LookLeft
+    end
+
+.global EventScript_BruccieVillageNPCHouses_TutorWife
+EventScript_BruccieVillageNPCHouses_TutorWife:
+    npcchatwithmovement gText_BruccieVillageNPCHouses_TutorWife m_LookLeft
+    end
+
+.global EventScript_BruccieVillageNPCHouses_TutorKid
+EventScript_BruccieVillageNPCHouses_TutorKid:
+    npcchatwithmovement gText_BruccieVillageNPCHouses_TutorKid m_LookUp
+    end

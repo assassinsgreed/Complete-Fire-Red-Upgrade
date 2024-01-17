@@ -78,3 +78,12 @@ And here's the [BUFFER2] that\nyour [BUFFER1] used to be in.
 
 #org @gText_BruccieVillageNPCHouses_PokeballSwapper_Completed
 Come see me again, if you'd like to\nchange another Pok\emon's ball.
+
+#org @gText_BruccieVillageNPCHouses_CherishBallGuy
+I heard there's a rare Pok\e Ball out\nthere.\pIt's said to be red and celebrate\nrare encounters.\pDo you think such a Pok\e Ball really\nexists?
+
+#org @gText_BruccieVillageNPCHouses_TutorWife
+My husband picked up his fascination\nwith Pok\emon moves from his father.\pOur daughter is starting to show\ninterest as well.\pI suppose it's becoming a family\ntradition, hohoho!
+
+#org @gText_BruccieVillageNPCHouses_TutorKid
+I want to go play outside, but mom\nsaid it's too cold out[.]
