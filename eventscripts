@@ -1458,4 +1458,7 @@ npc 11 2 0 EventScript_Pokemart
 npc 11 2 2 EventScript_BruccieVillageFacilities_Pokemart_StockBoy
 npc 11 2 3 EventScript_BruccieVillageFacilities_Pokemart_IceHealsGirl
 npc 11 7 0 EventScript_BruccieVillageNPCHouses_PokeballSwapper
+npc 11 7 1 EventScript_BruccieVillageNPCHouses_CherishBallGuy
 npc 11 8 0 EventScript_BruccieVillageNPCHouses_MoveTutor
+npc 11 8 1 EventScript_BruccieVillageNPCHouses_TutorWife
+npc 11 8 2 EventScript_BruccieVillageNPCHouses_TutorKid

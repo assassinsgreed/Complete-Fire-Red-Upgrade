@@ -95,7 +95,7 @@ static const struct InGameTrade sInGameTrades[] = {
         .heldItem = ITEM_SITRUS_BERRY,
         .mailNum = 0,
         .otName = gText_InGameTrade_OTSylvestre,
-        .otGender = FEMALE,
+        .otGender = MALE,
         .nature = NATURE_TIMID,
         .requestedSpecies = SPECIES_SLAKOTH
     },
@@ -110,7 +110,7 @@ static const struct InGameTrade sInGameTrades[] = {
         .heldItem = ITEM_SITRUS_BERRY,
         .mailNum = 0,
         .otName = gText_InGameTrade_OTSylvestre,
-        .otGender = FEMALE,
+        .otGender = MALE,
         .nature = NATURE_CALM,
         .requestedSpecies = SPECIES_MAGIKARP
     },
@@ -125,7 +125,7 @@ static const struct InGameTrade sInGameTrades[] = {
         .heldItem = ITEM_SITRUS_BERRY,
         .mailNum = 0,
         .otName = gText_InGameTrade_OTSylvestre,
-        .otGender = FEMALE,
+        .otGender = MALE,
         .nature = NATURE_JOLLY,
         .requestedSpecies = SPECIES_BOLDORE
     },
@@ -140,7 +140,7 @@ static const struct InGameTrade sInGameTrades[] = {
         .heldItem = ITEM_SITRUS_BERRY,
         .mailNum = 0,
         .otName = gText_InGameTrade_OTSylvestre,
-        .otGender = FEMALE,
+        .otGender = MALE,
         .nature = NATURE_IMPISH,
         .requestedSpecies = SPECIES_RIOLU
     },
@@ -170,7 +170,7 @@ static const struct InGameTrade sInGameTrades[] = {
         .heldItem = ITEM_SITRUS_BERRY,
         .mailNum = 0,
         .otName = gText_InGameTrade_OTSylvestre,
-        .otGender = FEMALE,
+        .otGender = MALE,
         .nature = NATURE_MODEST,
         .requestedSpecies = SPECIES_CACNEA
     },
@@ -185,7 +185,7 @@ static const struct InGameTrade sInGameTrades[] = {
         .heldItem = ITEM_SITRUS_BERRY,
         .mailNum = 0,
         .otName = gText_InGameTrade_OTRival,
-        .otGender = FEMALE,
+        .otGender = MALE,
         .nature = NATURE_IMPISH,
         .requestedSpecies = SPECIES_NONE // Species check is skipped
     },
@@ -215,7 +215,7 @@ static const struct InGameTrade sInGameTrades[] = {
         .heldItem = ITEM_SITRUS_BERRY,
         .mailNum = 0,
         .otName = gText_InGameTrade_OTRival,
-        .otGender = FEMALE,
+        .otGender = MALE,
         .nature = NATURE_JOLLY,
         .requestedSpecies = SPECIES_NONE // Species check is skipped
     }
