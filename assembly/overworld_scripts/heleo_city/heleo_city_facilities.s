@@ -205,6 +205,7 @@ TrainerHouseTier3Prizes:
     return
 
 TrainerHouseCheckForGrandPrize:
+    incrementgamestat 25
     checkflag 0x24F @ Got the bike
     if NOT_SET _call TrainerHouseGiveGrandPrize
     return

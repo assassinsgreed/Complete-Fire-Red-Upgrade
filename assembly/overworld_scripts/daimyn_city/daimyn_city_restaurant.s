@@ -469,6 +469,7 @@ DisplayMoneyLeft:
 
 FinishMeal:
     msgbox gText_Restaurant_MealConclusion MSG_NORMAL
+    incrementgamestat 24
     release
     end
 

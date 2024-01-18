@@ -330,6 +330,7 @@ CheckTradePokemonSelected:
 
 .global InitiateTrade
 InitiateTrade:
+    incrementgamestat 21
     copyvar 0x8004 0x8008
     copyvar 0x8005 0x800A
     special 0xFD

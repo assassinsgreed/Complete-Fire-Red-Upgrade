@@ -223,6 +223,7 @@ TileScript_ScaldingSpa_SpaRoom_Heal:
     call PlayerWalkDown_Return
     call SetWeatherThinFog
     pause DELAY_HALFSECOND
+    incrementgamestat 49
     playse 0x1 @ Use item
     waitse
     msgbox gtext_ScaldingSpa_SpaRoom_HealingSpa MSG_NORMAL

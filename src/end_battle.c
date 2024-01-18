@@ -980,6 +980,7 @@ void HandlePokeChip()
 	bool8 foundPokeChip = Random() % 100 < (hasPokeChipCharm ? enhancedRate : baseRate) + 1;
 	if (foundPokeChip)
 	{
+		IncrementGameStat(GAME_STAT_POKECHIPS_FOUND);
 		AddBagItem(ITEM_POKE_CHIP, 1);
 		gBattleStringLoader = gText_HoldingPokeChip;
 		PlaySE(MUS_FANFA1);

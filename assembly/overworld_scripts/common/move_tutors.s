@@ -437,6 +437,7 @@ teachmove:
     sound 0xF8 @ Money SE
     waitse
     removeitem ITEM_POKE_CHIP 0x4000
+    incrementgamestat 3
     return
 
 cancelled:
