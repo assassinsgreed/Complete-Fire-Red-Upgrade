@@ -45,6 +45,7 @@ EventScript_PokemonCenter_Farewell:
 	return
 
 EventScript_PokemonCenter_HealComplete:
+	incrementgamestat 15
 	msgbox gText_Common_PokemonCenterHealed MSG_NORMAL
 	applymovement LASTTALKED m_NurseBow
 	waitmovement 0x0

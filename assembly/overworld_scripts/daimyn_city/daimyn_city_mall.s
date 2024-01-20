@@ -43,6 +43,7 @@ LuckySpeciesSeen:
     goto LuckyDrawOver
 
 LuckySpeciesCaught:
+    incrementgamestat 46
     fanfare 0x10D @ Fanfare 2
     msgbox gText_DaimynCityMall_LuckyDrawWinCaught MSG_NORMAL
     waitfanfare

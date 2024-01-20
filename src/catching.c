@@ -248,7 +248,10 @@ void atkEF_handleballthrow(void)
 			if (shakes >= maxShakes)
 			{
 				if (gNewBS->criticalCapture)
+				{
+					IncrementGameStat(GAME_STAT_CRITICAL_CAPTURES);
 					gNewBS->criticalCaptureSuccess = TRUE;
+				}
 
 				gBattlescriptCurrInstr = BattleScript_SuccessBallThrow;
 				if (ballType != BALL_TYPE_PARK_BALL || IsRaidBattle())

@@ -164,6 +164,7 @@ EventScript_AnthraTown_MomRestPrompt:
 	msgbox gText_AnthraTown_MomRestPrompt MSG_KEEPOPEN
 	closeonkeypress
 	call PlayerHeal
+	incrementgamestat 16
 	msgbox gText_AnthraTown_MomPokemonAreHealthy MSG_KEEPOPEN
 	release
 	end
