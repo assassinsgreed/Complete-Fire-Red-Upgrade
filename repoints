@@ -331,14 +331,14 @@ GraphicsInfo_PlutoGruntMale 839FE74
 GraphicsInfo_PlutoGruntFemale 839FE78
 ## Replace Sailing Chef (59)
 GraphicsInfo_LeaderCaseyM 839FE9C
-## Replace Celio (89)
-GraphicsInfo_PlutoAdminIrene 839FF14
-## Replace Muscled Man (90)
-GraphicsInfo_PlutoAdminRonald 839FF18
 ## Replace Prof Oak (71)
 GraphicsInfo_ProfessorHawthorne 839FECC
 ## Replace Rival (72)
 GraphicsInfo_Rival 839FED0
+## Replace Lance (74)
+GraphicsInfo_ChampionSelene 839FED8
+## Replace Daisy (Blue's Sister) (76)
+GraphicsInfo_TrainerHouseHost 839FEE0
 ## Replace Mr Fuji (78)
 GraphicsInfo_Alistair 839FEE8
 ## Replace Brock (80)
@@ -351,10 +351,12 @@ GraphicsInfo_LeaderRaine 839FEF8
 GraphicsInfo_LeaderChance 839FF04
 ## Replace Koga (84)
 GraphicsInfo_LeaderCaseyF 839FF00
-## Replace Lance (74)
-GraphicsInfo_ChampionSelene 839FED8
-## Replace Daisy (Blue's Sister) (76)
-GraphicsInfo_TrainerHouseHost 839FEE0
+## Replace Sabrina (85)
+GraphicsInfo_LeaderAbby 839FF04
+## Replace Celio (89)
+GraphicsInfo_PlutoAdminIrene 839FF14
+## Replace Muscled Man (90)
+GraphicsInfo_PlutoAdminRonald 839FF18
 ## Replace Town Map (93)
 GraphicsInfo_TMPokeball 839FF24
 ## Replace Fossil (98)
@@ -433,6 +435,9 @@ LeaderChanceBPal 8239DD4
 ## Replace Koga (120)
 LeaderCaseyFBTiles 823993C
 LeaderCaseyFBPal 8239DDC
+## Replace Sabrina (122)
+LeaderAbbyBTiles 823994C
+LeaderAbbyBPal 8239DEC
 ## Replace Rival 2 (124)
 Rival2Tiles 823995C
 Rival2Pal 8239DFC
