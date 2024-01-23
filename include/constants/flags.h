@@ -74,7 +74,7 @@
 #define FLAG_HIDE_ROUTE_12_REST_HOUSE_SELENE_AND_ALISTAIR  0x044
 #define FLAG_HIDE_SCALDING_SPA_PLUTO_GRUNT                 0x045
 #define FLAG_HIDE_GLASTRIER_WHEN_CAUGHT                    0x046
-#define FLAG_HIDE_SEAFOAM_B3F_BOULDER_2                    0x047
+#define FLAG_HIDE_ABBY_IN_BRUCCIE_VILLAGE                  0x047
 #define FLAG_HIDE_SEAFOAM_B3F_BOULDER_3                    0x048
 #define FLAG_HIDE_SEAFOAM_B3F_BOULDER_4                    0x049
 #define FLAG_HIDE_SEAFOAM_B3F_BOULDER_5                    0x04A
