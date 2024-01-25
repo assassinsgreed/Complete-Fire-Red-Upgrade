@@ -58,6 +58,16 @@ No way[.] Down to my last Pok\emon\nalready?\p
 #org @sText_Rival4_LowHP
 N-No! We were supposed to win this\ntime[.]\p
 
+// Rival 5
+#org @sText_Rival5_FirstMonDown
+You defeated one of my Pok\emon, but\nI won't let it happen again.\p
+
+#org @sText_Rival5_LastSwitchIn
+Ngh[.] Down to the wire again?\nNo way! We'll win this!\p
+
+#org @sText_Rival5_LowHP
+We can't lose again!\nWe can bring this back!\p
+
 // Rival n here!
 
 // Leader 1 (Terrence)
@@ -100,15 +110,25 @@ You've got me on the back foot. Time\nfor a shake-up!\p
 #org @sText_Leader4_LowHP
 Don't count me out! The game isn't\nover until the last card is played.\p
 
-// Leader 5 (Chandler)
-#org @sText_Leader5_FirstMonDown
-You're quite skilled, aren't you?\nI'll have to take you seriously.\p
+// Leader 5 (Casey Male)
+#org @sText_Leader5M_FirstMonDown
+You're as skilled as always, aren't\nyou?\pI'll have to take this seriously.\p
 
-#org @sText_Leader5_LastSwitchIn
+#org @sText_Leader5M_LastSwitchIn
 I didn't anticipate you'd pressure\nmy team this much. Fascinating.\p
 
-#org @sText_Leader5_LowHP
+#org @sText_Leader5M_LowHP
 Impressive. Seems you might've\noutplayed me.\p
+
+// Leader 5 (Casey Female)
+#org @sText_Leader5F_FirstMonDown
+No way, you took my first Pok\emon\nout?\pDon't get comfortable, though. This\nis far from over!\p
+
+#org @sText_Leader5F_LastSwitchIn
+I'm down to my last Pok\emon already?\nTime to get even more serious.\p
+
+#org @sText_Leader5F_LowHP
+Uh oh, it's down to the wire now[.]\p
 
 // Leader 6 (Abby)
 #org @sText_Leader6_FirstMonDown
