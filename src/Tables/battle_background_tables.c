@@ -26,9 +26,13 @@
 extern const u8 BG_GrassTiles[];
 extern const u8 BG_GrassMap[];
 extern const u8 BG_GrassPal[];
+extern const u8 BG_SnowTiles[];
+extern const u8 BG_SnowMap[];
+extern const u8 BG_SnowPal[];
 
 const struct BattleBackground gBattleTerrainTable[] =
 {
+    // TODO: All of these in order
 	[BATTLE_TERRAIN_GRASS] =
 	{
 		.tileset = BG_GrassTiles,
@@ -36,6 +40,14 @@ const struct BattleBackground gBattleTerrainTable[] =
 		.entryTileset = gBattleTerrainAnimTiles_TallGrass,
 		.entryTilemap = gBattleTerrainAnimTilemap_TallGrass,
 		.palette = BG_GrassPal,
+	},
+    [BATTLE_TERRAIN_SNOWY] =
+	{
+		.tileset = BG_SnowTiles,
+		.tilemap = BG_SnowMap,
+		.entryTileset = gBattleTerrainAnimTiles_TallGrass,
+		.entryTilemap = gBattleTerrainAnimTilemap_TallGrass,
+		.palette = BG_SnowPal,
 	},
 };
 #endif

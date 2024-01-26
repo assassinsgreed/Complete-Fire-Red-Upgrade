@@ -109,17 +109,17 @@
 #define BATTLE_TERRAIN_GRASS        	0
 #define BATTLE_TERRAIN_LONG_GRASS   	1
 #define BATTLE_TERRAIN_SAND         	2
-#define BATTLE_TERRAIN_UNDERWATER   	3
+#define BATTLE_TERRAIN_SNOWY		   	3
 #define BATTLE_TERRAIN_WATER        	4
-#define BATTLE_TERRAIN_POND         	5
-#define BATTLE_TERRAIN_MOUNTAIN     	6
+#define BATTLE_TERRAIN_POND         	5 // TODO: Graphic for this
+#define BATTLE_TERRAIN_MOUNTAIN     	6 // TODO: Graphic for this
 #define BATTLE_TERRAIN_CAVE         	7
-#define BATTLE_TERRAIN_INSIDE       	8
+#define BATTLE_TERRAIN_INSIDE       	8 // TODO: More interesting graphic for this and other insides?
 #define BATTLE_TERRAIN_PLAIN        	9
-#define BATTLE_TERRAIN_INSIDE_2       	0xA
-#define BATTLE_TERRAIN_INSIDE_3       	0xB
-#define BATTLE_TERRAIN_INSIDE_4       	0xC
-#define BATTLE_TERRAIN_INSIDE_5       	0xD
+#define BATTLE_TERRAIN_INSIDE_2       	0xA // Used by Link battle, E-Reader battle, and Trainer Tower
+#define BATTLE_TERRAIN_SPOOKY       	0xB
+#define BATTLE_TERRAIN_INSIDE_4	       	0xC // Used by gym leaders
+#define BATTLE_TERRAIN_BEACH	       	0xD // TODO: Graphic for this
 #define BATTLE_TERRAIN_INSIDE_6       	0xE
 #define BATTLE_TERRAIN_LORLEI       	0xF
 #define BATTLE_TERRAIN_BRUNO 			0x10
