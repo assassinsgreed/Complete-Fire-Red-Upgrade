@@ -13,6 +13,9 @@
 //#define DEBUG_DYNAMAX //Dynamax can be used in Dynamax battles without a Dynamax Band
 //#define DEBUG_AI_CHOICES //Removes the frame-based randomness of the AI's decisions
 
+/*===== Custom code for Pokemon Amethyst =====*/
+#define NEW_BATTLE_BACKGROUNDS //When set, battle backgrounds and intro animations will be dynamically replaced by those defined in src/Tables/battle_background_tables.c 
+
 /*===== General Vars =====*/
 #define VAR_TERRAIN 0x5000 //Set to a terrain type for a battle to begin with the given terrain
 #define VAR_TOTEM 0x5001 //to var + 3 (0x5004)
