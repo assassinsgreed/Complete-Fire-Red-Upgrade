@@ -41,6 +41,11 @@ extern const u8 sText_Rival4_FirstMonDown[];
 extern const u8 sText_Rival4_LastSwitchIn[];
 extern const u8 sText_Rival4_LowHP[];
 
+// Rival battle 5
+extern const u8 sText_Rival5_FirstMonDown[];
+extern const u8 sText_Rival5_LastSwitchIn[];
+extern const u8 sText_Rival5_LowHP[];
+
 // Rival battle n
 
 // Gym Leader 1 (Terrence)
@@ -63,10 +68,14 @@ extern const u8 sText_Leader4_FirstMonDown[];
 extern const u8 sText_Leader4_LastSwitchIn[];
 extern const u8 sText_Leader4_LowHP[];
 
-// Gym Leader 5 (Chandler)
-extern const u8 sText_Leader5_FirstMonDown[];
-extern const u8 sText_Leader5_LastSwitchIn[];
-extern const u8 sText_Leader5_LowHP[];
+// Gym Leader 5 (Casey)
+extern const u8 sText_Leader5M_FirstMonDown[];
+extern const u8 sText_Leader5M_LastSwitchIn[];
+extern const u8 sText_Leader5M_LowHP[];
+
+extern const u8 sText_Leader5F_FirstMonDown[];
+extern const u8 sText_Leader5F_LastSwitchIn[];
+extern const u8 sText_Leader5F_LowHP[];
 
 // Gym Leader 6 (Abby)
 extern const u8 sText_Leader6_FirstMonDown[];

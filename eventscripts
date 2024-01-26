@@ -1439,6 +1439,7 @@ sign 3 11 0 SignScript_Route12West_TrainerTips
 sign 3 11 1 SignScript_Route12West_Navigation
 
 # Bruccie Village
+## Overworld
 map 3 7 MapScript_BruccieVillage
 npc 3 7 0 EventScript_BruccieVillage_Hiker
 npc 3 7 1 EventScript_BruccieVillage_Skier
@@ -1447,10 +1448,11 @@ npc 3 7 3 ItemScript_Common_RareCandy
 npc 3 7 4 EventScript_BruccieVillage_OldMan
 npc 3 7 5 EventScript_BruccieVillage_Wingull
 npc 3 7 6 EventScript_BruccieVillage_Abby
-## NPC 7 is the rival
+### NPC 7 is the rival
 npc 3 7 8 EventScript_BruccieVillage_AbbyCommenter
 sign 3 7 0 SignScript_BruccieVillage_TownPlacard
 sign 3 7 1 SignScript_BruccieVillage_GymSign
+## Facilities
 map 11 0 MapScript_BruccieVillageFacilities_PokemonCenter
 npc 11 0 0 EventScript_PokemonCenter_Main
 npc 11 0 1 EventScript_BruccieVillageFacilities_PokemonCenter_GameboyKidLeft
@@ -1460,8 +1462,19 @@ npc 11 2 0 EventScript_Pokemart
 ## For some reason, NPC 1 will never display
 npc 11 2 2 EventScript_BruccieVillageFacilities_Pokemart_StockBoy
 npc 11 2 3 EventScript_BruccieVillageFacilities_Pokemart_IceHealsGirl
+## NPC Houses
 npc 11 7 0 EventScript_BruccieVillageNPCHouses_PokeballSwapper
 npc 11 7 1 EventScript_BruccieVillageNPCHouses_CherishBallGuy
 npc 11 8 0 EventScript_BruccieVillageNPCHouses_MoveTutor
 npc 11 8 1 EventScript_BruccieVillageNPCHouses_TutorWife
 npc 11 8 2 EventScript_BruccieVillageNPCHouses_TutorKid
+## Gym
+npc 11 3 0 EventScript_BruccieVillageGym_GymExpert
+npc 11 3 1 EventScript_BruccieVillageGym_Mel
+npc 11 3 2 EventScript_BruccieVillageGym_Owen
+npc 11 3 3 EventScript_BruccieVillageGym_Tommy
+npc 11 3 4 EventScript_BruccieVillageGym_Joel
+npc 11 3 5 EventScript_BruccieVillageGym_Ellie
+npc 11 3 6 EventScript_BruccieVillageGym_Abby
+sign 11 3 0 SignScript_BruccieVillageGym_Placard
+sign 11 3 1 SignScript_BruccieVillageGym_Placard

@@ -54,6 +54,17 @@ static const struct TrainerSlide sTrainerSlides[] =
 	{0xCE, sText_Rival4_FirstMonDown, sText_Rival4_LastSwitchIn, sText_Rival4_LowHP}, // Fourth rival battle, Leafeon
 	{0xCF, sText_Rival4_FirstMonDown, sText_Rival4_LastSwitchIn, sText_Rival4_LowHP}, // Fourth rival battle, Glaceon
 	{0xD0, sText_Rival4_FirstMonDown, sText_Rival4_LastSwitchIn, sText_Rival4_LowHP}, // Fourth rival battle, Sylveon
+	{0xE9, sText_Leader5F_FirstMonDown, sText_Leader5F_LastSwitchIn, sText_Leader5F_LowHP}, // Gym Leader Casey (F)
+	{0xEA, sText_Leader5M_FirstMonDown, sText_Leader5M_LastSwitchIn, sText_Leader5M_LowHP}, // Gym Leader Casey (M)
+	{0x10A, sText_Rival5_FirstMonDown, sText_Rival5_LastSwitchIn, sText_Rival5_LowHP}, // Fifth rival battle, Vaporeon
+	{0x10B, sText_Rival5_FirstMonDown, sText_Rival5_LastSwitchIn, sText_Rival5_LowHP}, // Fifth rival battle, Jolteon
+	{0x10C, sText_Rival5_FirstMonDown, sText_Rival5_LastSwitchIn, sText_Rival5_LowHP}, // Fifth rival battle, Flareon
+	{0x10D, sText_Rival5_FirstMonDown, sText_Rival5_LastSwitchIn, sText_Rival5_LowHP}, // Fifth rival battle, Espeon
+	{0x10E, sText_Rival5_FirstMonDown, sText_Rival5_LastSwitchIn, sText_Rival5_LowHP}, // Fifth rival battle, Umbreon
+	{0x10F, sText_Rival5_FirstMonDown, sText_Rival5_LastSwitchIn, sText_Rival5_LowHP}, // Fifth rival battle, Leafeon
+	{0x110, sText_Rival5_FirstMonDown, sText_Rival5_LastSwitchIn, sText_Rival5_LowHP}, // Fifth rival battle, Glaceon
+	{0x111, sText_Rival5_FirstMonDown, sText_Rival5_LastSwitchIn, sText_Rival5_LowHP}, // Fifth rival battle, Sylveon
+	{0x117, sText_Leader6_FirstMonDown, sText_Leader6_LastSwitchIn, sText_Leader6_LowHP}, // Gym Leader Abby
 	{}, // Champion Selene
 };
 

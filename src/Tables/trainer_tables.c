@@ -3506,6 +3506,182 @@ const struct TrainerMonNoItemDefaultMoves sParty_Route12West_SwimmerMGreg[] = {
 
 // #endregion
 
+// #region Bruccie Village & Calicin Bay
+const struct TrainerMonNoItemCustomMoves sParty_BruccieVillageGym_LassMel[] = {
+    {
+        .lvl = 45,
+        .species = SPECIES_MIENSHAO,
+        .moves = {
+            MOVE_UTURN,
+            MOVE_FAKEOUT,
+            MOVE_FORCEPALM,
+            MOVE_NONE
+        },
+        .ability = Ability_2 // Regenerator
+    },
+    {
+        .lvl = 45,
+        .species = SPECIES_GRENINJA,
+        .moves = {
+            MOVE_UTURN,
+            MOVE_WATERPLEDGE,
+            MOVE_ICYWIND,
+            MOVE_WATERSHURIKEN
+        },
+        .ability = Ability_Hidden // Protean
+    }
+};
+
+const struct TrainerMonNoItemCustomMoves sParty_BruccieVillageGym_BirdKeeperOwen[] = {
+    {
+        .lvl = 47,
+        .species = SPECIES_GYARADOS,
+        .moves = {
+            MOVE_WATERFALL,
+            MOVE_CRUNCH,
+            MOVE_RAINDANCE,
+            MOVE_DRAGONDANCE
+        },
+        .ability = Ability_Hidden // Moxie
+    }
+};
+
+const struct TrainerMonNoItemCustomMoves sParty_BruccieVillageGym_EngineerTommy[] = {
+    {
+        .lvl = 45,
+        .species = SPECIES_SHEDINJA,
+        .moves = {
+            MOVE_SHADOWCLAW,
+            MOVE_MUDSLAP,
+            MOVE_CONFUSERAY,
+            MOVE_BUGBUZZ
+        },
+        .ability = Ability_1 // Wonder Guard
+    },
+    {
+        .lvl = 45,
+        .species = SPECIES_BIBAREL,
+        .moves = {
+            MOVE_YAWN,
+            MOVE_HYPERFANG,
+            MOVE_CRUNCH,
+            MOVE_AQUAJET
+        },
+        .ability = Ability_Hidden // Moody
+    }
+};
+
+const struct TrainerMonNoItemCustomMoves sParty_BruccieVillageGym_HikerJoel[] = {
+    {
+        .lvl = 45,
+        .species = SPECIES_MORPEKO,
+        .moves = {
+            MOVE_SPARK,
+            MOVE_BITE,
+            MOVE_BULLETSEED,
+            MOVE_TORMENT
+        },
+        .ability = Ability_1 // Hunger Switch
+    },
+    {
+        .lvl = 45,
+        .species = SPECIES_EXCADRILL,
+        .moves = {
+            MOVE_SANDSTORM,
+            MOVE_ROCKSLIDE,
+            MOVE_DIG,
+            MOVE_METALCLAW
+        },
+        .ability = Ability_2 // Sand Force
+    },
+    {
+        .lvl = 46,
+        .species = SPECIES_MUDSDALE,
+        .moves = {
+            MOVE_COUNTER,
+            MOVE_EARTHQUAKE,
+            MOVE_HEAVYSLAM,
+            MOVE_IRONDEFENSE
+        },
+        .ability = Ability_2 // Stamina
+    }
+};
+
+const struct TrainerMonNoItemCustomMoves sParty_BruccieVillageGym_CrushGirlEllie[] = {
+    {
+        .lvl = 46, 
+        .species = SPECIES_MIMIKYU,
+        .moves = {
+            MOVE_COPYCAT,
+            MOVE_SUBSTITUTE,
+            MOVE_DRAININGKISS,
+            MOVE_GIGADRAIN
+        },
+        .ability = Ability_1 // Disguise
+    },
+    {
+        .lvl = 46,
+        .species = SPECIES_TOUCANNON,
+        .moves = {
+            MOVE_ROCKBLAST,
+            MOVE_FURYATTACK,
+            MOVE_BULLETSEED,
+            MOVE_BEAKBLAST
+        },
+        .ability = Ability_2 // Skill Link
+    }
+};
+
+const struct TrainerMonItemCustomMoves sParty_BruccieVillageGym_LeaderAbby[] = {
+    {
+        .lvl = 46,
+        .species = SPECIES_RUNERIGUS,
+        .moves = {
+            MOVE_PROTECT,
+            MOVE_DESTINYBOND,
+            MOVE_SHADOWCLAW,
+            MOVE_EARTHQUAKE
+        },
+        .ability = Ability_1 // Wandering Spirit
+    },
+    {
+        .lvl = 47,
+        .species = SPECIES_MALAMAR,
+        .moves = {
+            MOVE_SUPERPOWER,
+            MOVE_HYPNOSIS,
+            MOVE_PLUCK,
+            MOVE_KNOCKOFF
+        },
+        .ability = Ability_1 // Contrary
+    },
+    {
+        .lvl = 47,
+        .species = SPECIES_DARMANITAN_G,
+        .moves = {
+            MOVE_ICICLECRASH,
+            MOVE_SUNNYDAY,
+            MOVE_FIREPUNCH,
+            MOVE_BULKUP
+        },
+        .ability = Ability_Hidden // Zen Mode
+    },
+    {
+        .lvl = 48,
+        .species = SPECIES_TREVENANT,
+        .moves = {
+            MOVE_WILLOWISP,
+            MOVE_HORNLEECH,
+            MOVE_HEX,
+            MOVE_LEECHSEED
+        },
+        .heldItem = ITEM_SITRUS_BERRY,
+        .ability = Ability_Hidden // Harvest
+    }
+};
+
+// #endregion
+
 // #endregion
 
 #define NO_NAME                                                                                      \
@@ -6836,6 +7012,80 @@ const struct Trainer gTrainers[] = {
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_RISKY,
         .partySize = NELEMS(sParty_Route12West_SwimmerMGreg),
         .party = {.NoItemDefaultMoves = sParty_Route12West_SwimmerMGreg}
+    },
+    // #endregion
+    // #region Bruccie Village & Calicin Bay
+    [TRAINER_BRUCCIE_VILLAGE_GYM_MEL] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .trainerClass = CLASS_LASS,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_GIRL,
+        .trainerPic = TRAINER_PIC_LASS,
+        .trainerName = {_M, _e, _l, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_PREFER_STRONGEST_MOVE,
+        .partySize = NELEMS(sParty_BruccieVillageGym_LassMel),
+        .party = {.NoItemCustomMoves = sParty_BruccieVillageGym_LassMel}
+    },
+    [TRAINER_BRUCCIE_VILLAGE_GYM_OWEN] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .trainerClass = CLASS_BIRD_KEEPER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_BIRD_KEEPER,
+        .trainerName = {_O, _w, _e, _n, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_PREFER_STRONGEST_MOVE,
+        .partySize = NELEMS(sParty_BruccieVillageGym_BirdKeeperOwen),
+        .party = {.NoItemCustomMoves = sParty_BruccieVillageGym_BirdKeeperOwen}
+    },
+    [TRAINER_BRUCCIE_VILLAGE_GYM_TOMMY] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .trainerClass = CLASS_ENGINEER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_WORKER,
+        .trainerName = {_T, _o, _m, _m, _y, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_PREFER_STRONGEST_MOVE,
+        .partySize = NELEMS(sParty_BruccieVillageGym_EngineerTommy),
+        .party = {.NoItemCustomMoves = sParty_BruccieVillageGym_EngineerTommy}
+    },
+    [TRAINER_BRUCCIE_VILLAGE_GYM_JOEL] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .trainerClass = CLASS_HIKER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
+        .trainerPic = TRAINER_PIC_HIKER,
+        .trainerName = {_J, _o, _e, _l, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_PREFER_STRONGEST_MOVE,
+        .partySize = NELEMS(sParty_BruccieVillageGym_HikerJoel),
+        .party = {.NoItemCustomMoves = sParty_BruccieVillageGym_HikerJoel}
+    },
+    [TRAINER_BRUCCIE_VILLAGE_GYM_ELLIE] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .trainerClass = CLASS_CRUSH_GIRL,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_CRUSH_GIRL,
+        .trainerName = {_E, _l, _l, _i, _e, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_PREFER_STRONGEST_MOVE,
+        .partySize = NELEMS(sParty_BruccieVillageGym_CrushGirlEllie),
+        .party = {.NoItemCustomMoves = sParty_BruccieVillageGym_CrushGirlEllie}
+    },
+    [TRAINER_BRUCCIE_VILLAGE_GYM_LEADER_ABBY] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_LEADER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_ABBY,
+        .trainerName = {_A, _b, _b, _y, _END},
+        .items = { ITEM_HYPER_POTION },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_PREFER_STRONGEST_MOVE | AI_SCRIPT_SEMI_SMART,
+        .partySize = NELEMS(sParty_BruccieVillageGym_LeaderAbby),
+        .party = {.ItemCustomMoves = sParty_BruccieVillageGym_LeaderAbby}
     },
     // #endregion
     // #endregion

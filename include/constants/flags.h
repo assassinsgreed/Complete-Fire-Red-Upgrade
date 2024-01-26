@@ -682,7 +682,7 @@
 #define FLAG_GOT_TM06_FROM_STELLA                        0x297
 #define FLAG_GOT_TM26_FROM_GIOVANNI                      0x298
 #define FLAG_0x299                                       0x299
-#define FLAG_GOT_TM04_FROM_SABRINA                       0x29A
+#define FLAG_GOT_TM76_FROM_ABBY                          0x29A
 #define FLAG_GOT_FAME_CHECKER                            0x29B
 #define FLAG_GOT_RECORD_SETTING_MAGIKARP                 0x29C
 #define FLAG_TWO_ISLAND_SHOP_INTRODUCED                  0x29D
@@ -1234,7 +1234,7 @@
 #define FLAG_DEFEATED_STELLA          0x4B1
 #define FLAG_DEFEATED_RAINE           0x4B2
 #define FLAG_DEFEATED_CHANCE          0x4B3
-#define FLAG_DEFEATED_CHANDLER        0x4B4
+#define FLAG_DEFEATED_CASEY           0x4B4
 #define FLAG_DEFEATED_ABBY            0x4B5
 #define FLAG_DEFEATED_IRIS            0x4B6
 #define FLAG_DEFEATED_DENNIS_AND_DEE  0x4B7
