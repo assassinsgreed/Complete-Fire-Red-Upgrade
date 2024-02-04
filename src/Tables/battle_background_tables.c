@@ -28,6 +28,9 @@
 // They are only used for backgrounds that show the night sky; otherwise they are configured with the day tileset, map, and palette.
 // Note: entry tileset & map will use the palette of the background. It has 48 entries, 16*2 for the background and 16*1 for the entry 
 
+// TODO: Use tall grass in forest maps, but give a special palette to Peradon forest
+// TODO: Use the cave graphics in Torma, but give it a special, grayer palette
+
 // Day
 extern const u8 BG_GrassTiles[];
 extern const u8 BG_GrassMap[];
@@ -56,6 +59,12 @@ extern const u8 BG_CavePal[];
 extern const u8 BG_IndoorTiles[];
 extern const u8 BG_IndoorMap[];
 extern const u8 BG_IndoorPal[];
+extern const u8 BG_SpookyTiles[];
+extern const u8 BG_SpookyMap[];
+extern const u8 BG_SpookyPal[];
+extern const u8 BG_DesertTiles[];
+extern const u8 BG_DesertMap[];
+extern const u8 BG_DesertPal[];
 
 // Evening (just palettes)
 extern const u8 BG_Grass_EveningPal[];
@@ -65,6 +74,7 @@ extern const u8 BG_Snow_EveningPal[];
 extern const u8 BG_Water_EveningPal[];
 extern const u8 BG_Pond_EveningPal[];
 extern const u8 BG_Mountain_EveningPal[];
+extern const u8 BG_Desert_EveningPal[];
 
 // Night (just palettes)
 extern const u8 BG_Grass_NightPal[];
@@ -74,6 +84,7 @@ extern const u8 BG_Snow_NightPal[];
 extern const u8 BG_Water_NightPal[];
 extern const u8 BG_Pond_NightPal[];
 extern const u8 BG_Mountain_NightPal[];
+extern const u8 BG_Desert_NightPal[];
 
 // TODO: Trainer battles appear to be broken with this change?
 // Probably because their background hasn't been done (striped, with green circle and squares in it)
@@ -171,6 +182,22 @@ const struct BattleBackground gBattleTerrainTable[] =
 		.entryTilemap = gBattleTerrainAnimTilemap_Building,
 		.palette = BG_IndoorPal,
 	},
+	[BATTLE_TERRAIN_SPOOKY] =
+	{
+		.tileset = BG_SpookyTiles,
+		.tilemap = BG_SpookyMap,
+		.entryTileset = gBattleTerrainAnimTiles_Building,
+		.entryTilemap = gBattleTerrainAnimTilemap_Building,
+		.palette = BG_SpookyPal,
+	},
+	[BATTLE_TERRAIN_DESERT] =
+	{
+		.tileset = BG_DesertTiles,
+		.tilemap = BG_DesertMap,
+		.entryTileset = gBattleTerrainAnimTiles_Sand,
+		.entryTilemap = gBattleTerrainAnimTilemap_Sand,
+		.palette = BG_DesertPal,
+	},
 };
 
 const struct BattleBackground gBattleTerrainTableEvening[] =
@@ -263,6 +290,22 @@ const struct BattleBackground gBattleTerrainTableEvening[] =
 		.entryTilemap = gBattleTerrainAnimTilemap_Building,
 		.palette = BG_IndoorPal,
 	},
+	[BATTLE_TERRAIN_SPOOKY] =
+	{
+		.tileset = BG_SpookyTiles,
+		.tilemap = BG_SpookyMap,
+		.entryTileset = gBattleTerrainAnimTiles_Building,
+		.entryTilemap = gBattleTerrainAnimTilemap_Building,
+		.palette = BG_SpookyPal,
+	},
+	[BATTLE_TERRAIN_DESERT] =
+	{
+		.tileset = BG_DesertTiles,
+		.tilemap = BG_DesertMap,
+		.entryTileset = gBattleTerrainAnimTiles_Sand,
+		.entryTilemap = gBattleTerrainAnimTilemap_Sand,
+		.palette = BG_Desert_EveningPal,
+	},
 };
 
 const struct BattleBackground gBattleTerrainTableNight[] =
@@ -354,6 +397,22 @@ const struct BattleBackground gBattleTerrainTableNight[] =
 		.entryTileset = gBattleTerrainAnimTiles_Building,
 		.entryTilemap = gBattleTerrainAnimTilemap_Building,
 		.palette = BG_IndoorPal,
+	},
+	[BATTLE_TERRAIN_SPOOKY] =
+	{
+		.tileset = BG_SpookyTiles,
+		.tilemap = BG_SpookyMap,
+		.entryTileset = gBattleTerrainAnimTiles_Building,
+		.entryTilemap = gBattleTerrainAnimTilemap_Building,
+		.palette = BG_SpookyPal,
+	},
+	[BATTLE_TERRAIN_DESERT] =
+	{
+		.tileset = BG_DesertTiles,
+		.tilemap = BG_DesertMap,
+		.entryTileset = gBattleTerrainAnimTiles_Sand,
+		.entryTilemap = gBattleTerrainAnimTilemap_Sand,
+		.palette = BG_Desert_NightPal,
 	},
 };
 #endif
