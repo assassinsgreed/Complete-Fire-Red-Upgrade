@@ -314,6 +314,14 @@ static u8 TryLoadAlternateAreaTerrain(u8 terrain)
 		// 	else if (IsCurrentAreaSwamp())
 		// 		terrain = BATTLE_TERRAIN_BOG;
 		// 	break;
+		case BATTLE_TERRAIN_CAVE:
+			if (MAP_IS(TORMA_CAVE_B1F))
+				terrain = BATTLE_TERRAIN_TORMA;
+			else if (MAP_IS(TORMA_CAVE_B2F))
+				terrain = BATTLE_TERRAIN_TORMA_DEPTHS;
+			else if (IsCurrentAreaHotCave())
+				terrain = BATTLE_TERRAIN_SCALDING_SPA;
+			break;
 		case BATTLE_TERRAIN_GRASS:
 			if (IsCurrentAreaWinter())
 				terrain = BATTLE_TERRAIN_SNOWY;

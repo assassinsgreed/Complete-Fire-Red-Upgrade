@@ -2095,6 +2095,16 @@ bool8 IsCurrentAreaDesert(void)
 	#endif
 }
 
+bool8 IsCurrentAreaHotCave(void)
+{
+	#ifdef NEW_BATTLE_BACKGROUNDS
+		u8 mapSec = GetCurrentRegionMapSectionId();
+		return mapSec == MAPSEC_ROUTE_12_EAST; // Scalding Spa is here
+	#else
+		return FALSE;
+	#endif
+}
+
 bool8 IsCurrentAreaSwamp(void)
 {
 	#ifdef UNBOUND
