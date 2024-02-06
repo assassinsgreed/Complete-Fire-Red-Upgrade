@@ -338,6 +338,9 @@ static u8 TryLoadAlternateAreaTerrain(u8 terrain)
 			if (GetCurrentRegionMapSectionId() == MAPSEC_FORGOTTEN_MANSE)
 				terrain = BATTLE_TERRAIN_SPOOKY;
 			break;
+		case BATTLE_TERRAIN_INSIDE_4:
+			terrain = BATTLE_TERRAIN_GYM;
+			break;
 	}
 
 	// if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING))
