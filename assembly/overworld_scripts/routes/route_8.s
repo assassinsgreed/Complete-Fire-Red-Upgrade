@@ -13,8 +13,8 @@ MapScript_Route8:
 MapEntryScript_Route8_SetWeather:
     @ Check player position, to see if they spawned from the north gate or fisherman's hut
     getplayerpos 0x4000 0x4001
-    compare 0x4001 0xB @ Either north gate (0xA) or Fisherman's hut (0xB), no need to set weather
-    if greaterthan _goto TileScript_Route8_SetWeather    
+    compare 0x4001 0x2D @ Above the weather stairs, no need to set weather
+    if greaterthan _goto TileScript_Route8_SetWeather
     end
 
 .global TileScript_Route8_ClearWeather

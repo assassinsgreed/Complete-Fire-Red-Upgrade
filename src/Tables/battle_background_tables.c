@@ -28,8 +28,6 @@
 // They are only used for backgrounds that show the night sky; otherwise they are configured with the day tileset, map, and palette.
 // Note: entry tileset & map will use the palette of the background. It has 48 entries, 16*2 for the background and 16*1 for the entry 
 
-// TODO: Better evening sky color (maybe tint ground colors too? Something basic like change all color codes by xx for evening and xx for night)
-
 // Day
 extern const u8 BG_GrassTiles[];
 extern const u8 BG_GrassMap[];
@@ -92,6 +90,8 @@ extern const u8 BG_Water_EveningPal[];
 extern const u8 BG_Pond_EveningPal[];
 extern const u8 BG_Mountain_EveningPal[];
 extern const u8 BG_Desert_EveningPal[];
+extern const u8 BG_Forest_EveningPal[];
+extern const u8 BG_Forest_Peradon_EveningPal[];
 
 // Night (just palettes)
 extern const u8 BG_Grass_NightPal[];
@@ -102,6 +102,8 @@ extern const u8 BG_Water_NightPal[];
 extern const u8 BG_Pond_NightPal[];
 extern const u8 BG_Mountain_NightPal[];
 extern const u8 BG_Desert_NightPal[];
+extern const u8 BG_Forest_NightPal[];
+extern const u8 BG_Forest_Peradon_NightPal[];
 
 const struct BattleBackground gBattleTerrainTable[] =
 {
@@ -467,7 +469,7 @@ const struct BattleBackground gBattleTerrainTableEvening[] =
 		.tilemap = BG_ForestMap,
 		.entryTileset = gBattleTerrainAnimTiles_LongGrass,
 		.entryTilemap = gBattleTerrainAnimTilemap_LongGrass,
-		.palette = BG_ForestPal,
+		.palette = BG_Forest_EveningPal,
 	},
 	[BATTLE_TERRAIN_FOREST_PERADON] =
 	{
@@ -475,7 +477,7 @@ const struct BattleBackground gBattleTerrainTableEvening[] =
 		.tilemap = BG_Forest_PeradonMap,
 		.entryTileset = gBattleTerrainAnimTiles_LongGrass,
 		.entryTilemap = gBattleTerrainAnimTilemap_LongGrass,
-		.palette = BG_Forest_PeradonPal,
+		.palette = BG_Forest_Peradon_EveningPal,
 	},
 };
 
@@ -655,7 +657,7 @@ const struct BattleBackground gBattleTerrainTableNight[] =
 		.tilemap = BG_ForestMap,
 		.entryTileset = gBattleTerrainAnimTiles_LongGrass,
 		.entryTilemap = gBattleTerrainAnimTilemap_LongGrass,
-		.palette = BG_ForestPal,
+		.palette = BG_Forest_NightPal,
 	},
 	[BATTLE_TERRAIN_FOREST_PERADON] =
 	{
@@ -663,7 +665,7 @@ const struct BattleBackground gBattleTerrainTableNight[] =
 		.tilemap = BG_Forest_PeradonMap,
 		.entryTileset = gBattleTerrainAnimTiles_LongGrass,
 		.entryTilemap = gBattleTerrainAnimTilemap_LongGrass,
-		.palette = BG_Forest_PeradonPal,
+		.palette = BG_Forest_Peradon_NightPal,
 	},
 };
 #endif
