@@ -115,11 +115,11 @@
 #define BATTLE_TERRAIN_MOUNTAIN     	6
 #define BATTLE_TERRAIN_CAVE         	7
 // Note: Changing the Vanilla FR indoor entries gets kind of funky. Better to insert these as new entries
-#define BATTLE_TERRAIN_INSIDE       	8 // TODO: More interesting graphic for this and other insides?
+#define BATTLE_TERRAIN_INSIDE       	8
 #define BATTLE_TERRAIN_PLAIN        	9
 #define BATTLE_TERRAIN_INSIDE_2       	0xA // Used by Link battle, E-Reader battle, and Trainer Tower
 #define BATTLE_TERRAIN_INSIDE_3       	0xB
-#define BATTLE_TERRAIN_INSIDE_4	       	0xC // Used by gym leaders  TODO: More interesting graphic here
+#define BATTLE_TERRAIN_INSIDE_4	       	0xC // Used by gym leaders
 #define BATTLE_TERRAIN_INSIDE_5	       	0xD
 #define BATTLE_TERRAIN_INSIDE_6       	0xE
 #define BATTLE_TERRAIN_LORLEI       	0xF
@@ -127,6 +127,7 @@
 #define BATTLE_TERRAIN_AGATHA       	0x11
 #define BATTLE_TERRAIN_LANCE 			0x12
 #define BATTLE_TERRAIN_CHAMPION       	0x13
+
 
 #ifdef NEW_BATTLE_BACKGROUNDS
 
@@ -136,6 +137,8 @@
 #define BATTLE_TERRAIN_TORMA_DEPTHS		0x17
 #define BATTLE_TERRAIN_SCALDING_SPA		0x18
 #define BATTLE_TERRAIN_GYM				0x19
+#define BATTLE_TERRAIN_FOREST			0x1A
+#define BATTLE_TERRAIN_FOREST_PERADON	0x1B
 
 #endif
 
