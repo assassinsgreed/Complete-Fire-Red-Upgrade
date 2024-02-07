@@ -290,7 +290,7 @@ That's the game! A real gambler\nknows when to fold with dignity.
 [PLAYER] received the Roundabout\nBadge!
 
 #org @gText_DaimynCityGym_LeaderChance_BadgeDescription
-[BLUE]That badge is proof of your skills.\pWith it, all Pok\emon up to level 55\nwill obey you.\pAs well, you'll be able to use Fly\noutside of battle now.
+[BLUE]That badge is proof of your skills.\pIt will also allow you to use the\nmove Fly outside of battle.
 
 #org @gText_DaimynCityGym_LeaderChance_TMReceived
 [BLUE]Please take these TMs as well.\pI'm sure you'll be able to use them\nto keep your opponents on their\ltoes.

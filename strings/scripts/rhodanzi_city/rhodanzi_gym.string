@@ -53,7 +53,7 @@ You battled well, [PLAYER].\pYour gym challenge will take you\nto Ferrox Village
 [PLAYER] received TM05 from Terrence!
 
 #org @gText_RhodanziGym_Leader_Terrence_BadgeDescription
-[BLUE]This badge is proof of your\nvictory over me, and your\lcapabilities as a trainer.\lAll Pok\emon up to level 25 will\lnow obey you without fail.
+[BLUE]This badge is proof of your\nvictory over me, and your\lcapabilities as a trainer.
 
 #org @gText_RhodanziGym_Leader_Terrence_TMReceived
 [BLUE]I will also give you TM05, which\ncontains Terrain Pulse. It can be\ltaught to your Pok\emon as many\ltimes as you'd like.\pI'd suggest visiting the terrain tutor\nat Rhodanzi Trainer school to make\lthe most of it.

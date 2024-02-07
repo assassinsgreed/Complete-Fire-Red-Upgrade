@@ -74,7 +74,8 @@ EventScript_FerroxGym_LeaderStella:
 EventScript_FerroxGym_LeaderStella_Defeated:
     msgbox gText_FerroxGym_LeaderStella_BadgeAwarded MSG_NORMAL
     fanfare 0x13D @ Gym victory
-    msgbox gText_FerroxGym_BadgeReceived MSG_KEEPOPEN
+    msgbox gText_FerroxGym_BadgeReceived MSG_NORMAL
+    call BadgeObedienceMessage
     waitfanfare
     setflag 0x821 @ Ferrox gym badge
     settrainerflag 0x3C @ Lorena cannot be battled now

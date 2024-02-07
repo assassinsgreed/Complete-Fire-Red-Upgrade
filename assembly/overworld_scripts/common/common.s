@@ -422,6 +422,66 @@ SetCaseyMale:
     textcolor BLUE
     return
 
+.global BadgeObedienceMessage
+BadgeObedienceMessage:
+    callasm CountBadges
+    compare LASTRESULT 0
+    if equal _call NoBadges
+    compare LASTRESULT 1
+    if equal _call OneBadge
+    compare LASTRESULT 2
+    if equal _call TwoBadges
+    compare LASTRESULT 3
+    if equal _call ThreeBadges
+    compare LASTRESULT 4
+    if equal _call FourBadges
+    compare LASTRESULT 5
+    if equal _call FiveBadges
+    compare LASTRESULT 6
+    if equal _call SixBadges
+    compare LASTRESULT 7
+    if equal _call SevenBadges
+    compare LASTRESULT 8
+    if equal _call EightBadges
+    msgbox gText_Common_BadgeObedience MSG_KEEPOPEN
+    return
+
+NoBadges:
+    buffernumber 0x0 15
+    return
+
+OneBadge:
+    buffernumber 0x0 25
+    return
+
+TwoBadges:
+    buffernumber 0x0 35
+    return
+
+ThreeBadges:
+    buffernumber 0x0 45
+    return
+
+FourBadges:
+    buffernumber 0x0 55
+    return
+
+FiveBadges:
+    buffernumber 0x0 65
+    return
+
+SixBadges:
+    buffernumber 0x0 75
+    return
+
+SevenBadges:
+    buffernumber 0x0 85
+    return
+
+EightBadges:
+    buffernumber 0x0 100
+    return
+
 .global End
 End:
     release
