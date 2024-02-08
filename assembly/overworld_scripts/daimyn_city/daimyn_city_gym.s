@@ -162,11 +162,11 @@ LeaderChance_4Badges:
 
 EventScript_DaimynCityGym_LeaderChance_Defeated:
     msgbox gText_DaimynCityGym_LeaderChance_BadgeAwarded MSG_NORMAL
+    setflag 0x823 @ Daimyn gym badge
     fanfare 0x13D @ Gym victory
     msgbox gText_DaimynCityGym_BadgeReceived MSG_NORMAL
     call BadgeObedienceMessage
     waitfanfare
-    setflag 0x823 @ Daimyn gym badge
     settrainerflag 0x93 @ Jacob cannot be battled now
     settrainerflag 0x94 @ Kanesha cannot be battled now
     settrainerflag 0x95 @ Emilie cannot be battled now
