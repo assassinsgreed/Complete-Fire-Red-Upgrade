@@ -59,10 +59,11 @@ EventScript_BruccieVillageGym_Abby:
 
 EventScript_BruccieVillageGym_LeaderAbby_Defeated:
     msgbox gText_BruccieVillageGym_LeaderAbby_BadgeAwarded MSG_NORMAL
-    fanfare 0x13D @ Gym victory
-    msgbox gText_BruccieVillageGym_BadgeReceived MSG_KEEPOPEN
-    waitfanfare
     setflag 0x825 @ Bruccie Village gym badge
+    fanfare 0x13D @ Gym victory
+    msgbox gText_BruccieVillageGym_BadgeReceived MSG_NORMAL
+    call BadgeObedienceMessage
+    waitfanfare
     msgbox gText_BruccieVillageGym_LeaderAbby_BadgeDescription MSG_NORMAL
     msgbox gText_BruccieVillageGym_LeaderAbby_TMReceived MSG_NORMAL
     loadpointer 0x0 gText_BruccieVillageGym_TMReceived

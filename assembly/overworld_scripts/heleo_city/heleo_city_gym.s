@@ -141,10 +141,11 @@ LeaderRaine_4Badges:
 
 EventScript_HeleoGym_LeaderRaine_Defeated:
     msgbox gText_HeleoGym_LeaderRaine_BadgeAwarded MSG_NORMAL
-    fanfare 0x13D @ Gym victory
-    msgbox gText_HeleoGym_BadgeReceived MSG_KEEPOPEN
-    waitfanfare
     setflag 0x822 @ Heleo gym badge
+    fanfare 0x13D @ Gym victory
+    msgbox gText_HeleoGym_BadgeReceived MSG_NORMAL
+    call BadgeObedienceMessage
+    waitfanfare
     settrainerflag 0x65 @ Tessa cannot be battled now
     settrainerflag 0x66 @ Byron cannot be battled now
     settrainerflag 0x67 @ Danette cannot be battled now

@@ -59,10 +59,11 @@ EventScript_RhodanziGym_Leader_Terrence:
 
 EventScript_RhodanziGym_Leader_TerrenceDefeated:
     msgbox gText_RhodanziGym_Leader_Terrence_BadgeAwarded MSG_NORMAL
-    fanfare 0x13D @ Gym victory
-    msgbox gText_RhodanziGym_BadgeReceived MSG_KEEPOPEN
-    waitfanfare
     setflag 0x820 @ Rhodanzi gym badge
+    fanfare 0x13D @ Gym victory
+    msgbox gText_RhodanziGym_BadgeReceived MSG_NORMAL
+    call BadgeObedienceMessage
+    waitfanfare
     setvar 0x4097 0x1 @ Disable Team Pluto tile event  
     settrainerflag 0xC @ Alonso cannot be battled now
     settrainerflag 0xD @ Brandon cannot be battled now
