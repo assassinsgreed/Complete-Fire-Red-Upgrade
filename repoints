@@ -390,6 +390,8 @@ GraphicsInfo_Pikachu 839FF90
 GraphicsInfo_Castform 839FF94
 ## Replace Nidoran Female (122)
 GraphicsInfo_Wingull 839FF98
+## Update Nidoran Male (123)
+GraphicsInfo_NidoranMale 839FF9C
 ## Replace Zapdos (136)
 GraphicsInfo_ZapdosG 839FFD0
 ## Replace Moltres (137)
