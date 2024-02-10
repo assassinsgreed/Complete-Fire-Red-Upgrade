@@ -484,7 +484,7 @@ SignScript_ForgottenManseStorage_ApplianceCatalog:
     multichoiceoption gText_ForgottenManse_ApplianceCatalog_Mower 4
     multichoiceoption gText_ForgottenManse_ApplianceCatalog_Washer 5
     multichoiceoption gText_End 6
-	multichoice 0x0 0x0 SEVEN_MULTICHOICE_OPTIONS TRUE
+	multichoice 0x0 0x0 SEVEN_MULTICHOICE_OPTIONS FALSE
 	switch LASTRESULT
 	case 0, RevertRotom
 	case 1, SetRotomFan
@@ -493,6 +493,7 @@ SignScript_ForgottenManseStorage_ApplianceCatalog:
     case 4, SetRotomMow
     case 5, SetRotomWash
     case 6, Cancelled
+    goto Cancelled
     end
 
 ApplianceCatalog_ChoseNo:

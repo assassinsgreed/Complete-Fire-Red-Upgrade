@@ -1034,7 +1034,7 @@
 #define HIDDEN_ITEM_VARISI_FOREST_RAWST_BERRY                           5
 #define HIDDEN_ITEM_OLENIC_TOWN_ASPEAR_BERRY                            6
 #define HIDDEN_ITEM_ROUTE_3_ETHER                                       7
-#define HIDDEN_ITEM_ROUTE_3_MOON_STONE                                  8
+#define HIDDEN_ITEM_ROUTE_3_BIG_MUSHROOM                                8
 #define HIDDEN_ITEM_ROUTE_4_ESCAPE_ROPE                                 9
 #define HIDDEN_ITEM_ROUTE_4_REVIVE                                     10
 #define HIDDEN_ITEM_ROUTE_13_SITRUS_BERRY                              11
@@ -1053,7 +1053,7 @@
 #define HIDDEN_ITEM_ROUTE6_ETHER                                       24
 #define HIDDEN_ITEM_ROUTE6_WATER_STONE                                 25
 #define HIDDEN_ITEM_ROUTE6_PP_UP                                       26
-#define HIDDEN_ITEM_ROUTE6_BIG_MUSHROOM                                27
+#define HIDDEN_ITEM_ROUTE6_MOON_STONE                                  27
 #define HIDDEN_ITEM_ROUTE6_BIG_ROOT                                    28
 #define HIDDEN_ITEM_ROUTE6_WHITE_HERB                                  29
 #define HIDDEN_ITEM_ROUTE6_QUICK_BALL                                  30

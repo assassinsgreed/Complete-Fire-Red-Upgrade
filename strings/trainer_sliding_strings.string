@@ -75,7 +75,7 @@ We can't lose again!\nWe can bring this back!\p
 Not bad, not bad at all!\p
 
 #org @sText_Leader1_LastSwitchIn
-Excellent! I see you understand\nyour Pokemon well.\p
+Excellent! I see you understand\nyour Pok\emon well.\p
 
 #org @sText_Leader1_LowHP
 Don't give up! You're doing great!\p
@@ -155,7 +155,7 @@ Time for a trademark last-minute\nchange-up! Get ready!\p
 How're you holding up over there?\nWe're doing great!\p
 
 #org @sText_Leader8_LastSwitchIn
-Uh oh, that was our last Pokeball!\p
+Uh oh, that was our last Pok\e Ball!\p
 
 #org @sText_Leader8_LowHP
 This is fine... This is fine...\nWe'll pull through this together!\p
@@ -232,7 +232,7 @@ Oh no! We've really slipped up,\nhaven't we?\p
 
 // Elite Four Thomas
 #org @sText_Thomas_FirstMonDown
-You've defeated my first Pokemon?\nI won't let it happen again!\p
+You've defeated my first Pok\emon?\nI won't let it happen again!\p
 
 #org @sText_Thomas_LastSwitchIn
 It's over now! I won't allow you\nto waste Miss Selene's time.\p
@@ -255,7 +255,7 @@ We won't give up until the very end!\nYou'd better give it your all too!\p
 This really takes me back to our\nfirst battle. Do you remember it,\ntoo?\p
 
 #org @sText_ChampionRematch_LastSwitchIn
-It's quite refreshing to see how\nstrong a bond you share with your\nPokemon.\p
+It's quite refreshing to see how\nstrong a bond you share with your\nPok\emon.\p
 
 #org @sText_ChampionRematch_LowHP
 I may not be the champion any\nlonger, but that doesn't mean I'll\ngo down easily!\p

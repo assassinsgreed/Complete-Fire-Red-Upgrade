@@ -81,8 +81,8 @@ SetPsychicTerrain:
 .global EnableRunningShoes
 EnableRunningShoes:
     setflag 0x82F @ Enable running shoes
-    playse 0x0102 @ Play obtain item jingle
-    msgbox gText_ReceiveRunningShoes MSG_NORMAL
+    fanfare 0x102 @ Play obtain item jingle
+    msgbox gText_ReceiveRunningShoes MSG_KEEPOPEN
     waitfanfare
     msgboxsign
     msgbox gText_AutomaticallyEnableRunningShoes MSG_YESNO
@@ -248,53 +248,73 @@ PokedexEvaluation_Conclusion:
     compare 0x800A 0x0
     if notequal _call PokedexEvaluation_PokedexIncomplete
     msgbox gText_PokedexAssessment_EvaluationComplete MSG_NORMAL
+    checkflag 0x2FF @ Assessment is from PC
+    if NOT_SET _goto HawthorneLooksRightAfterAssessment
+    end
+
+HawthorneLooksRightAfterAssessment:
+    applymovement LASTTALKED m_LookRight
     end
 
 FiftyOrLessCaught:
     call PokedexEvaluationFanfare1
-    msgbox gText_PokedexAssessment_FiftyOrLessCaught MSG_NORMAL
+    msgbox gText_PokedexAssessment_FiftyOrLessCaught MSG_KEEPOPEN
     waitfanfare
+    msgbox gText_PokedexAssessment_AdvicePrompt MSG_NORMAL
+    msgbox gText_PokedexAssessment_FiftyOrLessCaught_Advice MSG_NORMAL
     goto PokedexEvaluation_Conclusion
 
 OneHundredOrLessCaught:
     call PokedexEvaluationFanfare1
-    msgbox gText_PokedexAssessment_OneHundredOrLessCaught MSG_NORMAL
+    msgbox gText_PokedexAssessment_OneHundredOrLessCaught MSG_KEEPOPEN
     waitfanfare
+    msgbox gText_PokedexAssessment_AdvicePrompt MSG_NORMAL
+    msgbox gText_PokedexAssessment_OneHundredOrLessCaught_Advice MSG_NORMAL
     goto PokedexEvaluation_Conclusion
 
 OneHundredFiftyOrLessCaught:
     call PokedexEvaluationFanfare1
-    msgbox gText_PokedexAssessment_OneHundredFiftyOrLessCaught MSG_NORMAL
+    msgbox gText_PokedexAssessment_OneHundredFiftyOrLessCaught MSG_KEEPOPEN
     waitfanfare
+    msgbox gText_PokedexAssessment_AdvicePrompt MSG_NORMAL
+    msgbox gText_PokedexAssessment_OneHundredFiftyOrLessCaught_Advice MSG_NORMAL
     goto PokedexEvaluation_Conclusion
 
 TwoHundredOrLessCaught:
     call PokedexEvaluationFanfare1
-    msgbox gText_PokedexAssessment_TwoHundredOrLessCaught MSG_NORMAL
+    msgbox gText_PokedexAssessment_TwoHundredOrLessCaught MSG_KEEPOPEN
     waitfanfare
+    msgbox gText_PokedexAssessment_AdvicePrompt MSG_NORMAL
+    msgbox gText_PokedexAssessment_TwoHundredOrLessCaught_Advice MSG_NORMAL
     goto PokedexEvaluation_Conclusion
 
 TwoHundredFiftyOrLessCaught:
     call PokedexEvaluationFanfare1
-    msgbox gText_PokedexAssessment_TwoHundredFiftyOrLessCaught MSG_NORMAL
+    msgbox gText_PokedexAssessment_TwoHundredFiftyOrLessCaught MSG_KEEPOPEN
     waitfanfare
+    msgbox gText_PokedexAssessment_AdvicePrompt MSG_NORMAL
+    msgbox gText_PokedexAssessment_TwoHundredFiftyOrLessCaught_Advice MSG_NORMAL
     goto PokedexEvaluation_Conclusion
 
 ThreeHundredOrLessCaught:
     call PokedexEvaluationFanfare1
-    msgbox gText_PokedexAssessment_ThreeHundredOrLessCaught MSG_NORMAL
+    msgbox gText_PokedexAssessment_ThreeHundredOrLessCaught MSG_KEEPOPEN
     waitfanfare
+    msgbox gText_PokedexAssessment_AdvicePrompt MSG_NORMAL
+    msgbox gText_PokedexAssessment_ThreeHundredOrLessCaught_Advice MSG_NORMAL
     goto PokedexEvaluation_Conclusion
 
 ThreeHundredFiftyOrLessCaught:
     call PokedexEvaluationFanfare1
-    msgbox gText_PokedexAssessment_ThreeHundredFiftyOrLessCaught MSG_NORMAL
+    msgbox gText_PokedexAssessment_ThreeHundredFiftyOrLessCaught MSG_KEEPOPEN
     waitfanfare
+    msgbox gText_PokedexAssessment_AdvicePrompt MSG_NORMAL
+    msgbox gText_PokedexAssessment_ThreeHundredFiftyOrLessCaught_Advice MSG_NORMAL
     goto PokedexEvaluation_Conclusion
 
 AllCaught:
     call PokedexEvaluationFanfare2
-    msgbox gText_PokedexAssessment_AllCaught MSG_NORMAL
+    msgbox gText_PokedexAssessment_AllCaught MSG_KEEPOPEN
     waitfanfare
     goto PokedexEvaluation_Conclusion
 

@@ -70,26 +70,50 @@ Got a can of [BUFFER1]!
 #org @gText_VendingMachinesTwoItems
 Got a can of [BUFFER1]! A freebie\npopped out too!
 
+#org @gText_PokedexAssessment_AdvicePrompt
+I have some advice for you[.]
+
 #org @gText_PokedexAssessment_FiftyOrLessCaught
-[BLUE]Your journey is just beginning. I\nhave some advice for you[.]\pKeep an eye out for new Pok\emon as\nyou explore and you'll make great\lprogress.
+[BLUE]Your journey is just beginning.
+
+#org @gText_PokedexAssessment_FiftyOrLessCaught_Advice
+Keep an eye out for new Pok\emon as\nyou explore and you'll make great\lprogress.
 
 #org @gText_PokedexAssessment_OneHundredOrLessCaught
-[BLUE]You have quite a ways to go. I\nhave some advice for you[.]\pSearch everywhere for Pok\emon.\nThey can hide in grass, caves, and\lwater.
+[BLUE]You have quite a ways to go.
+
+#org @gText_PokedexAssessment_OneHundredOrLessCaught_Advice
+Search everywhere for Pok\emon.\nThey can hide in grass, caves, and\lwater.
 
 #org @gText_PokedexAssessment_OneHundredFiftyOrLessCaught
-[BLUE]Your Pok\edex is coming along\nnicely. I have some advice for\lyou[.]\pSome Pok\emon can only be obtained\nby hatching eggs or evolving\lPok\emon.
+[BLUE]Your Pok\edex is coming along\nnicely.
+
+#org @gText_PokedexAssessment_OneHundredFiftyOrLessCaught_Advice
+Some Pok\emon can only be obtained\nby hatching eggs or evolving\lPok\emon.
 
 #org @gText_PokedexAssessment_TwoHundredOrLessCaught
-[BLUE]You've caught roughly half of the\nregion's Pok\emon now! I have some\ladvice for you.\pDon't forget to use your fishing rod!\nSome Pok\emon are easier to find\lwhen fishing.
+[BLUE]You've caught roughly half of the\nregion's Pok\emon now!
+
+#org @gText_PokedexAssessment_TwoHundredOrLessCaught_Advice
+Don't forget to use your fishing rod!\nSome Pok\emon are easier to find\lwhen fishing.
 
 #org @gText_PokedexAssessment_TwoHundredFiftyOrLessCaught
-[BLUE]You've caught quite a lot of Pok\e\nmon now! I have some advice for\lyou.\pSome Pok\emon can be difficult\nto discover. Try using the DexNav\lto find them.
+[BLUE]You've caught quite a lot of Pok\e\nmon now!
+
+#org @gText_PokedexAssessment_TwoHundredFiftyOrLessCaught_Advice
+Some Pok\emon can be difficult\nto discover. Try using the DexNav\lto find them.
 
 #org @gText_PokedexAssessment_ThreeHundredOrLessCaught
-[BLUE]You've caught a significant amount of\nPok\emon now! I have some advice\lfor you.\pCheck your Pok\edex from time to\ntime for empty spaces, to see if\lany Pok\emon you've caught may be\lcapable of evolution.
+[BLUE]You've caught a significant amount of\nPok\emon now!
+
+#org @gText_PokedexAssessment_ThreeHundredOrLessCaught_Advice
+Check your Pok\edex from time to\ntime for empty spaces, to see if\lany Pok\emon you've caught may be\lcapable of evolution.
 
 #org @gText_PokedexAssessment_ThreeHundredFiftyOrLessCaught
-[BLUE]You're so close to completing your\nPok\edex! I have some advice for\lyou.\pSome incredibly powerful Pok\emon will\nonly reveal themselves to you if\lyou are a champion-level trainer.\lIt's worth revisiting old locations\lto see if anything has changed.
+[BLUE]You're so close to completing your\nPok\edex!
+
+#org @gText_PokedexAssessment_ThreeHundredFiftyOrLessCaught_Advice
+Some incredibly powerful Pok\emon will\nonly reveal themselves to you if\lyou are a champion-level trainer.\pIt's worth revisiting old locations\nto see if anything has changed.
 
 #org @gText_PokedexAssessment_AllCaught
 [BLUE]Incredible! You've captured every\nPok\emon in the region. You are a\ltruly special trainer, [PLAYER]!
