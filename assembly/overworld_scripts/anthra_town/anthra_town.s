@@ -64,7 +64,7 @@ EventScript_AnthraTown_NESClassic:
 
 .global EventScript_AnthraTown_FlowerGirl
 EventScript_AnthraTown_FlowerGirl:
-    msgbox gText_AnthraTown_FlowerGirl MSG_FACE
+    npcchatwithmovement gText_AnthraTown_FlowerGirl m_LookLeft
     end
 
 .global EventScript_AnthraTown_TechnologyMan
@@ -74,17 +74,17 @@ EventScript_AnthraTown_TechnologyMan:
 
 .global EventScript_AnthraTown_OldMan
 EventScript_AnthraTown_OldMan:
-    msgbox gText_AnthraTown_OldMan MSG_FACE
+    npcchatwithmovement gText_AnthraTown_OldMan m_LookRight
     end
 
 .global EventScript_AnthraTown_Gabby
 EventScript_AnthraTown_Gabby:
-	npcchat gText_AnthraTown_Gabby
+	npcchatwithmovement gText_AnthraTown_Gabby m_LookUp
 	end
 
 .global EventScript_AnthraTown_Ty
 EventScript_AnthraTown_Ty:
-	npcchat gText_AnthraTown_Ty
+	npcchatwithmovement gText_AnthraTown_Ty m_LookLeft
 	end
 
 .global EventScript_AnthraTown_FootprintGuy
@@ -119,7 +119,7 @@ EventScript_AnthraTown_RivalMom:
 	compare StoryEventVar PlayerMetWithRival
 	if lessorequal _goto EventScript_AnthraTown_RivalMomPersuaded
 	faceplayer
-	msgbox gText_AnthraTown_RivalMomAfterJourneyStarts MSG_NORMAL
+	npcchatwithmovement gText_AnthraTown_RivalMomAfterJourneyStarts m_LookRight
 	release
 	end
 
@@ -130,7 +130,7 @@ EventScript_AnthraTown_RivalMomBeforeProfessor:
 	end
 
 EventScript_AnthraTown_RivalMomPersuaded:
-	msgbox gText_AnthraTown_RivalMomBeingPersuaded MSG_NORMAL
+	npcchatwithmovement gText_AnthraTown_RivalMomBeingPersuaded m_LookRight
 	release
 	end
 

@@ -29,13 +29,27 @@ tables to edit:
 
 */
 
+// MC
 extern const u16 MCStandingPal[];
 extern const u16 FeMCStandingPal[];
+
+// Characters
 extern const u16 PlutoGruntMalePal[];
+extern const u16 PlutoAdminRonaldPal[];
 extern const u16 RivalPal[];
 extern const u16 ProfessorHawthornePal[];
 extern const u16 ChampionSelenePal[];
 extern const u16 LeaderTerrencePal[];
+extern const u16 AlistairPal[];
+extern const u16 LeaderStellaPal[];
+extern const u16 TrainerHouseHostPal[];
+extern const u16 LeaderRainePal[];
+extern const u16 ProfessorSakuraPal[];
+extern const u16 LeaderChancePal[];
+extern const u16 LeaderCaseyFPal[];
+extern const u16 LeaderAbbyPal[];
+
+// Overworld Events
 extern const u16 SandygastPal[];
 extern const u16 FoongusPal[];
 extern const u16 StunfiskPal[];
@@ -44,26 +58,18 @@ extern const u16 TruckPal[];
 extern const u16 InterviewerPal[];
 extern const u16 CactusPal[];
 extern const u16 MegaStonePal[];
-extern const u16 AlistairPal[];
-extern const u16 LeaderStellaPal[];
 extern const u16 DittoPal[];
 extern const u16 AmpharosPal[];
 extern const u16 MareepPal[];
 extern const u16 CastformPal[];
-extern const u16 TrainerHouseHostPal[];
-extern const u16 LeaderRainePal[];
 extern const u16 PikachuPal[];
-extern const u16 ProfessorSakuraPal[];
-extern const u16 LeaderChancePal[];
-extern const u16 LeaderCaseyFPal[];
-extern const u16 PlutoAdminRonaldPal[];
 extern const u16 ZapdosGPal[];
 extern const u16 MoltresGPal[];
 extern const u16 ArticunoGPal[];
 extern const u16 GlastrierPal[];
 extern const u16 SkierPal[];
 extern const u16 WingullPal[];
-extern const u16 LeaderAbbyPal[];
+extern const u16 NidoranMalePal[];
 
 #ifdef UNBOUND
 //extern const u16 MalePlayer_Trainer_Outfit_RedPal[];
@@ -339,6 +345,7 @@ static const u16* sPlayerMarlonOutfitColours[] =
 		{ SkierPal, 0x1226 },
 		{ WingullPal, 0x1227 },
 		{ LeaderAbbyPal, 0x1228 },
+		{ NidoranMalePal, 0x1229 },
 		{ NULL, 0x11FF }
 	};
 	const struct SpritePalette* const gObjectEventSpritePalettesSwitcher[255] = {

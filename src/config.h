@@ -131,10 +131,10 @@ enum //These vars need to be one after the other (hence the enum)
 #define REUSABLE_TMS	//if defined, don't forget to give all TMs a Mystery byte of 1!
 
 /*===== Time of Day Options =====*/
-#define TIME_MORNING_START 6		//6:00 AM / 6:00
-#define TIME_DAY_START 10			//10:00 AM / 10:00
-#define TIME_EVENING_START 18		//6:00 PM / 18:00
-#define TIME_NIGHT_START 22			//10:00 PM / 22:00
+#define TIME_MORNING_START 4		//4:00 AM / 4:00
+#define TIME_DAY_START 8			//8:00 AM / 8:00
+#define TIME_EVENING_START 17		//5:00 PM / 17:00
+#define TIME_NIGHT_START 20			//8:00 PM / 20:00
 
 /*===== General Number Options =====*/
 #define KANTO_DEX_COUNT 388

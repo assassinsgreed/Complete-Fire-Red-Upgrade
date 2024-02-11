@@ -11,7 +11,7 @@ East: Laplaz Town
 West: Bruccie Village Rest Stop\nSouth: Lake Laplaz
 
 #org @gText_PeradonForest_LowLevelMoreExpTrainerTips
-Trainer Tips!\pIf a Pok\emon is a significantly\nlower level than it's foe, it will\learn more experience in battle.\pLikewise, if a Pok\emon is a\nsignificantly higher level, it will\learn less.
+Trainer Tips!\pIf a Pok\emon is a significantly lower\nlevel than it's foe, it will earn\lmore experience in battle.\pLikewise, if a Pok\emon is a\nsignificantly higher level, it will\learn less.
 
 #org @gText_PeradonForest_PokefanClark_Intro
 Hey, you're a trainer, right? Let's\nbattle!

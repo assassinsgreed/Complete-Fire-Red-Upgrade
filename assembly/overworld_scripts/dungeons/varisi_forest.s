@@ -98,7 +98,7 @@ FoongusEncounter:
     sound 0x15 @ Exclaim
     applymovement PLAYER m_Surprise
     msgbox gText_Common_FoongusOrAmoongussTrap MSG_KEEPOPEN
-    wildbattle SPECIES_FOONGUS 0x8 0x0
+    wildbattle SPECIES_FOONGUS 0x7 0x0
     hidesprite LASTTALKED
     release
     return

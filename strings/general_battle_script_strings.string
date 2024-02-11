@@ -366,19 +366,19 @@ The mysterious strong winds\ncontinue to blow.
 [CURRENT_MOVE] can't be selected on the\nInsane difficulty!\p
 
 #org @gText_PickUpItemToBag
-[BUFFER][00] found and placed one\n[LAST_ITEM] in the Bag!
+[BUFFER][00] found and placed one\n[LAST_ITEM] in the Bag!\p
 
 #org @gText_PickUpItemToCube
 [BUFFER][00] found and placed one\n[LAST_ITEM] in the Cube!
 
 #org @gText_PickedUpKnockedOffItem
-[PLAYER_NAME] picked up\none [LAST_ITEM]!
+[PLAYER_NAME] picked up\none [LAST_ITEM]!\p
 
 #org @gText_OfferTakeCaughtMonItem
 [BUFFER][00] appears to be holding\nthe [LAST_ITEM].\pWould you like to take the\n[LAST_ITEM] from it?
 
 #org @gText_TookCaughtItemToBag
-One [LAST_ITEM] was taken from\n[BUFFER][00] and placed in the Bag.
+One [LAST_ITEM] was taken from\n[BUFFER][00] and placed in the Bag.\p
 
 #org @gText_HoldingPokeChip
 [TARGET] was holding a\nPok\eChip! Placed it in the Bag.\p

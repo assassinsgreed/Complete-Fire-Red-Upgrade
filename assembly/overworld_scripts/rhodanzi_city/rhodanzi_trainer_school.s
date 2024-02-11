@@ -56,7 +56,7 @@ EventScript_RhodanziTrainerSchool_TerrainTutor:
     checkflag 0x820 @ Has Terrain Badge
     IF SET _goto TerrainTutor
     msgbox gText_RhodanziTrainerSchool_MainRoom_TerrainTutor_DoesNotHaveBadge MSG_NORMAL
-    applymovement LASTTALKED m_LookRight
+    applymovement LASTTALKED m_LookDown
     end
 
 TerrainTutor:
@@ -72,7 +72,7 @@ TerrainTutor:
     call EventScript_Tutors_Terrain
     compare LASTRESULT TRUE
     if equal _call TutoringComplete
-    applymovement LASTTALKED m_LookRight
+    applymovement LASTTALKED m_LookDown
     end
 
 TutoringComplete:
@@ -80,11 +80,11 @@ TutoringComplete:
     return
 
 TutoringRejected:
-    npcchatwithmovement gText_RhodanziTrainerSchool_MainRoom_TerrainTutor_ConfirmationRejected m_LookRight
+    npcchatwithmovement gText_RhodanziTrainerSchool_MainRoom_TerrainTutor_ConfirmationRejected m_LookDown
     end
 
 NotEnoughPokeChips:
-    npcchatwithmovement gText_RhodanziTrainerSchool_MainRoom_TerrainTutor_NotEnoughPokeChips m_LookRight
+    npcchatwithmovement gText_RhodanziTrainerSchool_MainRoom_TerrainTutor_NotEnoughPokeChips m_LookDown
     end
 
 @ Basic Course
@@ -213,7 +213,7 @@ EventScript_RhodanziTrainerSchool_BasicCourse_StatusStudent_Question:
     multichoiceoption gText_Poison 3
     multichoiceoption gText_Sleep 4
     multichoiceoption gText_End 5
-    multichoice 0x0 0x0 SIX_MULTICHOICE_OPTIONS TRUE
+    multichoice 0x0 0x0 SIX_MULTICHOICE_OPTIONS FALSE
     copyvar MULTICHOICE_SELECTION LASTRESULT
     switch LASTRESULT
     case 0, EventScript_RhodanziTrainerSchool_BasicCourse_StatusStudent_Burn
@@ -222,6 +222,7 @@ EventScript_RhodanziTrainerSchool_BasicCourse_StatusStudent_Question:
     case 3, EventScript_RhodanziTrainerSchool_BasicCourse_StatusStudent_Poison
     case 4, EventScript_RhodanziTrainerSchool_BasicCourse_StatusStudent_Sleep
     case 5, EventScript_RhodanziTrainerSchool_BasicCourse_StatusStudent_Done
+    goto EventScript_RhodanziTrainerSchool_BasicCourse_StatusStudent_Done
     end
 
 EventScript_RhodanziTrainerSchool_BasicCourse_StatusStudent_Burn:

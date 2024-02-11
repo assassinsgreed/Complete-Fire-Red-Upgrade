@@ -46,6 +46,9 @@ if (result != 0):
     exit(3)
 
 
+print("Copying built GBA ROM to CFRU directory...")
+shutil.copy(DPE_PATH + "/test.gba", CFRU_PATH + "/BPRE0.gba")
+
 os.chdir(CFRU_PATH) # Make script must be run in home directory!
 print("Applying additional patch files...")
 result = call(["python", "./scripts/patches.py"])

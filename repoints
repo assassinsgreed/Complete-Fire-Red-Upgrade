@@ -112,8 +112,8 @@ gText_UsedVar2WildWeaker 080A1AEC
 gText_PokemonAreNeeded 0845A32C
 
 #ifdef FROSTBITE
-PokeSummary_StatusAilmentIcons_FrostbiteTiles 0813A314
-StatusGfx_Icons_FrostbiteTiles 0845A574
+PokeSummary_StatusAilmentIcons_CustomTiles 0813A314
+StatusGfx_PartyMenu_CustomTiles 0845A574
 ANIM_FROSTBITE 081C6E9C
 gText_GotFrostbite 083FDFD0
 gText_RemovedTargetFrostbite 083FDFDC
@@ -390,6 +390,8 @@ GraphicsInfo_Pikachu 839FF90
 GraphicsInfo_Castform 839FF94
 ## Replace Nidoran Female (122)
 GraphicsInfo_Wingull 839FF98
+## Update Nidoran Male (123)
+GraphicsInfo_NidoranMale 839FF9C
 ## Replace Zapdos (136)
 GraphicsInfo_ZapdosG 839FFD0
 ## Replace Moltres (137)

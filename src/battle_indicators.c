@@ -1461,7 +1461,17 @@ void TryLoadTypeIcons(void)
 				type2 = gBattleMons[bank].type2;
 			}
 
-			for (u8 typeNum = 0; typeNum < 2; ++typeNum) //Load each type
+			u8 totalTypes = type1 == type2 ? 1 : 2; // Skip drawing the same type twice, but ensure monotype icon is drawn in type #2's position to look nice
+			u8 startingTypeNum = 0; // Start drawing from first slot by default (dual types & monotype in double battles)
+			
+			// If the Pokemon is a monotype in a single battle, overwrite the counts to instead draw from the second slot so it aligns nicely with the battle hud
+			if (IS_SINGLE_BATTLE && totalTypes == 1)
+			{
+				startingTypeNum = 1;
+				totalTypes = 2;
+			}
+
+			for (u8 typeNum = startingTypeNum; typeNum < totalTypes; ++typeNum) //Load each type
 			{
 				u8 spriteId;
 				s16 x, y;

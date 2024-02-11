@@ -231,7 +231,7 @@ EventScript_RubarrDesert_StoryEvents:
     msgbox gText_RubarrDesert_IreneBattles MSG_NORMAL
     msgbox gText_RubarrDesert_RivalFightsWithPlayer MSG_NORMAL
     @ Start a tag battle against Admin Irene
-    trainerbattle12 0xC 0x23 0x1C 0x6 0x100 gText_RubarrDesert_IreneBattleDefeat
+    trainerbattle12 0xC 0x23 0xB2 0x6 0x100 gText_RubarrDesert_IreneBattleDefeat
     msgbox gText_RubarrDesert_IreneSurprisedByPlayer MSG_NORMAL
     applymovement PlutoAdminIrene m_LookRight
     applymovement PlutoGruntClancy m_LookLeft

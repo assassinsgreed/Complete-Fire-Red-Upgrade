@@ -86,7 +86,7 @@ EventScript_OlenicLab_HawthornesConservatoryAide:
 
 .global EventScript_OlenicLab_Researcher
 EventScript_OlenicLab_Researcher:
-    npcchat gText_OlenicProfessorsLab_Researcher
+    npcchatwithmovement gText_OlenicProfessorsLab_Researcher m_LookUp
     end
 
 m_HawthorneMeetsPlayer: .byte walk_up, walk_up, walk_right, walk_right, walk_right, walk_down, walk_down, end_m
