@@ -105,7 +105,7 @@
 #define MAP_HESSON_PASS_1F                       (81 | (1 << 8))
 #define MAP_HESSON_PASS_2F                       (82 | (1 << 8))
 #define MAP_HESSON_PASS_B1F                      (83 | (1 << 8))
-#define MAP_SEAFOAM_ISLANDS_B1F                  (84 | (1 << 8))
+#define MAP_CALICIN_BAY                          (84 | (1 << 8))
 #define MAP_SEAFOAM_ISLANDS_B2F                  (85 | (1 << 8))
 #define MAP_SEAFOAM_ISLANDS_B3F                  (86 | (1 << 8))
 #define MAP_SEAFOAM_ISLANDS_B4F                  (87 | (1 << 8))

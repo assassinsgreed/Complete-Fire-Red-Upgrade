@@ -3680,6 +3680,37 @@ const struct TrainerMonItemCustomMoves sParty_BruccieVillageGym_LeaderAbby[] = {
     }
 };
 
+const struct TrainerMonNoItemDefaultMoves sParty_CalicinBay_SkierRita[] = {
+    { .lvl = 44, .species = SPECIES_BERGMITE },
+    { .lvl = 44, .species = SPECIES_DELIBIRD },
+    { .lvl = 45, .species = SPECIES_CRABOMINABLE },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_CalicinBay_SwimmerFFran[] = {
+    { .lvl = 52, .species = SPECIES_LAPRAS },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_CalicinBay_SwimmerMAngelo[] = {
+    { .lvl = 49, .species = SPECIES_SHELLDER },
+    { .lvl = 49, .species = SPECIES_BARBARACLE },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_CalicinBay_SwimmerMSebastian[] = {
+    { .lvl = 49, .species = SPECIES_SEADRA },
+    { .lvl = 49, .species = SPECIES_GASTRODON_EAST }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_CalicinBay_SwimmerFCorrine[] = {
+    { .lvl = 51, .species = SPECIES_PRIMARINA },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_CalicinBay_FishermanOliver[] = {
+    { .lvl = 44, .species = SPECIES_MAGIKARP },
+    { .lvl = 44, .species = SPECIES_MAGIKARP },
+    { .lvl = 46, .species = SPECIES_DRIZZILE },
+    { .lvl = 46, .species = SPECIES_GYARADOS },
+};
+
 // #endregion
 
 // #endregion
@@ -7086,6 +7117,78 @@ const struct Trainer gTrainers[] = {
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_PREFER_STRONGEST_MOVE | AI_SCRIPT_SEMI_SMART,
         .partySize = NELEMS(sParty_BruccieVillageGym_LeaderAbby),
         .party = {.ItemCustomMoves = sParty_BruccieVillageGym_LeaderAbby}
+    },
+    [TRAINER_CALICIN_BAY_SKIER_RITA] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_SKIER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .trainerPic = TRAINER_PIC_SKIER,
+        .trainerName = {_R, _i, _t, _a, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_CHECK_VIABILITY,
+        .partySize = NELEMS(sParty_CalicinBay_SkierRita),
+        .party = {.NoItemDefaultMoves = sParty_CalicinBay_SkierRita}
+    },
+    [TRAINER_CALICIN_BAY_SWIMMER_F_FRAN] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_SWIMMER_F,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
+        .trainerPic = TRAINER_PIC_SWIMMER_F,
+        .trainerName = {_F, _r, _a, _n, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_RISKY,
+        .partySize = NELEMS(sParty_CalicinBay_SwimmerFFran),
+        .party = {.NoItemDefaultMoves = sParty_CalicinBay_SwimmerFFran}
+    },
+    [TRAINER_CALICIN_BAY_SWIMMER_M_ANGELO] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_SWIMMER_M,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
+        .trainerPic = TRAINER_PIC_SWIMMER_M,
+        .trainerName = {_A, _n, _g, _e, _l, _o, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_RISKY,
+        .partySize = NELEMS(sParty_CalicinBay_SwimmerMAngelo),
+        .party = {.NoItemDefaultMoves = sParty_CalicinBay_SwimmerMAngelo}
+    },
+    [TRAINER_CALICIN_BAY_SWIMMER_M_SEBASTIAN] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_SWIMMER_M,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
+        .trainerPic = TRAINER_PIC_SWIMMER_M,
+        .trainerName = {_S, _e, _b, _a, _s, _t, _i, _a, _n, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_RISKY,
+        .partySize = NELEMS(sParty_CalicinBay_SwimmerMSebastian),
+        .party = {.NoItemDefaultMoves = sParty_CalicinBay_SwimmerMSebastian}
+    },
+    [TRAINER_CALICIN_BAY_SWIMMER_F_CORRINE] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_SWIMMER_F,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
+        .trainerPic = TRAINER_PIC_SWIMMER_F,
+        .trainerName = {_C, _o, _r, _r, _i, _n, _e, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_RISKY,
+        .partySize = NELEMS(sParty_CalicinBay_SwimmerFCorrine),
+        .party = {.NoItemDefaultMoves = sParty_CalicinBay_SwimmerFCorrine}
+    },
+    [TRAINER_CALICIN_BAY_FISHERMAN_OLIVER] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_FISHERMAN,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_FISHERMAN,
+        .trainerName = {_O, _l, _i, _v, _e, _r, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_CHECK_VIABILITY,
+        .partySize = NELEMS(sParty_CalicinBay_FishermanOliver),
+        .party = {.NoItemDefaultMoves = sParty_CalicinBay_FishermanOliver}
     },
     // #endregion
     // #endregion

@@ -179,6 +179,22 @@ const struct WildPokemon gRoute12West_LandMonsNight[] =
 	{39, 43, SPECIES_DARMANITAN_G}
 };
 
+const struct WildPokemon gCalicinBay_LandMonsNight[] =
+{
+	{40, 42, SPECIES_SNEASEL},
+	{40, 42, SPECIES_BERGMITE},
+	{41, 44, SPECIES_AMAURA},
+	{41, 43, SPECIES_CRABOMINABLE},
+	{41, 44, SPECIES_SNOM},
+	{41, 43, SPECIES_CORVISQUIRE},
+	{42, 43, SPECIES_AVALUGG},
+	{42, 44, SPECIES_WEAVILE},
+	{42, 44, SPECIES_AURORUS},
+	{42, 44, SPECIES_MAMOSWINE},
+	{42, 44, SPECIES_AURORUS}, 
+	{42, 44, SPECIES_MAMOSWINE}
+};
+
 const struct WildPokemonInfo gVarisiForest_LandMonsNightInfo = {14, gVarisiForest_LandMonsNight};
 const struct WildPokemonInfo gRubarrDesert_LandMonsNightInfo = {3, gRubarrDesert_LandMonsNight};
 const struct WildPokemonInfo gHeleoRanch_LandMonsNightInfo = {21, gHeleoRanch_LandMonsNight};
@@ -189,6 +205,7 @@ const struct WildPokemonInfo gRoute11North_LandMonsNightInfo = {21, gRoute11Nort
 const struct WildPokemonInfo gPeradonForest_LandMonsNightInfo = {14, gPeradonForest_LandMonsNight};
 const struct WildPokemonInfo gLakeLaplaz_LandMonsNightInfo = {21, gLakeLaplaz_LandMonsNight};
 const struct WildPokemonInfo gRoute12West_LandMonsNightInfo = {21, gRoute12West_LandMonsNight};
+const struct WildPokemonInfo gCalicinBay_LandMonsNightInfo = {21, gCalicinBay_LandMonsNight};
 
 const struct WildPokemonHeader gWildMonMorningHeaders[] =
 {
@@ -294,6 +311,14 @@ const struct WildPokemonHeader gWildMonEveningHeaders[] =
 		.fishingMonsInfo = NULL,
 	},
 	{
+		.mapGroup = MAP_GROUP(CALICIN_BAY),
+		.mapNum = MAP_NUM(CALICIN_BAY),
+		.landMonsInfo = &gCalicinBay_LandMonsNightInfo,
+		.waterMonsInfo = NULL,
+		.rockSmashMonsInfo = NULL,
+		.fishingMonsInfo = NULL,
+	},
+	{
 		.mapGroup = 0xFF,
 		.mapNum = 0xFF,
 		.landMonsInfo = NULL,
@@ -389,6 +414,14 @@ const struct WildPokemonHeader gWildMonNightHeaders[] =
 		.mapGroup = MAP_GROUP(ROUTE_12_WEST),
 		.mapNum = MAP_NUM(ROUTE_12_WEST),
 		.landMonsInfo = &gRoute12West_LandMonsNightInfo,
+		.waterMonsInfo = NULL,
+		.rockSmashMonsInfo = NULL,
+		.fishingMonsInfo = NULL,
+	},
+	{
+		.mapGroup = MAP_GROUP(CALICIN_BAY),
+		.mapNum = MAP_NUM(CALICIN_BAY),
+		.landMonsInfo = &gCalicinBay_LandMonsNightInfo,
 		.waterMonsInfo = NULL,
 		.rockSmashMonsInfo = NULL,
 		.fishingMonsInfo = NULL,

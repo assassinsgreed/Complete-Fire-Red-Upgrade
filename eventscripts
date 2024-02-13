@@ -1478,3 +1478,13 @@ npc 11 3 5 EventScript_BruccieVillageGym_Ellie
 npc 11 3 6 EventScript_BruccieVillageGym_Abby
 sign 11 3 0 SignScript_BruccieVillageGym_Placard
 sign 11 3 1 SignScript_BruccieVillageGym_Placard
+
+# Calicin Bay
+npc 1 84 0 EventScript_CalicinBay_SkierRita
+npc 1 84 1 EventScript_CalicinBay_SwimmerFFran
+npc 1 84 2 EventScript_CalicinBay_SwimmerMAngelo
+npc 1 84 3 EventScript_CalicinBay_SwimmerMSebastian
+npc 1 84 4 EventScript_CalicinBay_SwimmerFCorrine
+npc 1 84 5 EventScript_CalicinBay_TM14Blizzard
+npc 1 84 6 EventScript_CalicinBay_FishermanOliver
+sign 1 84 0 EventScript_CalicinBay_CalicinBaySign
