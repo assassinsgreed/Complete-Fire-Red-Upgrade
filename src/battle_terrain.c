@@ -314,6 +314,10 @@ static u8 TryLoadAlternateAreaTerrain(u8 terrain)
 		// 	else if (IsCurrentAreaSwamp())
 		// 		terrain = BATTLE_TERRAIN_BOG;
 		// 	break;
+		case BATTLE_TERRAIN_SAND: // Hacky fix for Route 12 West & Calicin Bay which are technically covered in "sand" due to the footprints metabehavior
+			if (IsCurrentAreaWinter())
+				terrain = BATTLE_TERRAIN_SNOWY;
+			break;
 		case BATTLE_TERRAIN_CAVE:
 			if (MAP_IS(TORMA_CAVE_B1F) || MAP_IS(ROUTE10_CAVE))
 				terrain = BATTLE_TERRAIN_TORMA;

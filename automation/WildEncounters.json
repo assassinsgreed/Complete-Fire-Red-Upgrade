@@ -630,6 +630,52 @@
             }
         },
         {
+            "mapgroup": 1,
+            "mapnum": 84,
+            "grass": {
+                "rate": 21,
+                "pokemon": [
+                    { "low": 40, "high": 42, "species": "SPECIES_SNEASEL" },
+                    { "low": 40, "high": 42, "species": "SPECIES_BERGMITE" },
+                    { "low": 41, "high": 44, "species": "SPECIES_AMAURA" },
+                    { "low": 41, "high": 43, "species": "SPECIES_CRABOMINABLE" },
+                    { "low": 41, "high": 44, "species": "SPECIES_SNOM" },
+                    { "low": 41, "high": 43, "species": "SPECIES_CORVISQUIRE" },
+                    { "low": 42, "high": 43, "species": "SPECIES_AVALUGG" },
+                    { "low": 42, "high": 44, "species": "SPECIES_SNEASEL" },
+                    { "low": 42, "high": 44, "species": "SPECIES_AURORUS" },
+                    { "low": 42, "high": 44, "species": "SPECIES_MAMOSWINE" },
+                    { "low": 42, "high": 44, "species": "SPECIES_AURORUS" }, 
+                    { "low": 42, "high": 44, "species": "SPECIES_MAMOSWINE" }
+                ]
+            },
+            "surfing": {
+                "rate": 1,
+                "pokemon": [
+                    { "low": 44, "high": 48, "species": "SPECIES_SHELLDER" },
+                    { "low": 45, "high": 49, "species": "SPECIES_CLOYSTER" },
+                    { "low": 44, "high": 48, "species": "SPECIES_LAPRAS" },
+                    { "low": 45, "high": 48, "species": "SPECIES_LAPRAS" },
+                    { "low": 44, "high": 48, "species": "SPECIES_LAPRAS" }
+                ]
+            },
+            "fishing": {
+                "rate": 20,
+                "pokemon": [
+                    { "low": 5, "high": 40, "species": "SPECIES_BINACLE" },
+                    { "low": 5, "high": 40, "species": "SPECIES_SHELLDER" },
+                    { "low": 25, "high": 48, "species": "SPECIES_SHELLDER" },
+                    { "low": 25, "high": 48, "species": "SPECIES_CHINCHOU" },
+                    { "low": 25, "high": 48, "species": "SPECIES_BINACLE" },
+                    { "low": 45, "high": 55, "species": "SPECIES_CLOYSTER" },
+                    { "low": 45, "high": 55, "species": "SPECIES_BARBARACLE" },
+                    { "low": 45, "high": 55, "species": "SPECIES_LANTURN" },
+                    { "low": 45, "high": 55, "species": "SPECIES_CLOYSTER" },
+                    { "low": 45, "high": 55, "species": "SPECIES_BARBARACLE" }
+                ]
+            }
+        },
+        {
             "mapgroup": 3,
             "mapnum": 2,
             "surfing": {

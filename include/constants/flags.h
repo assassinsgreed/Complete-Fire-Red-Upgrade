@@ -516,7 +516,7 @@
 #define FLAG_HIDE_ROUTE_12_WEST_SLOWBRONITE                     0x1FA
 #define FLAG_HIDE_ROUTE_12_WEST_ICE_STONE                       0x1FB
 #define FLAG_HIDE_BRUCCIE_VILLAGE_RARE_CANDY                    0x1FC
-#define FLAG_HIDE_SEVEN_ISLAND_SEVAULT_CANYON_HOUSE_LUCKY_PUNCH 0x1FD
+#define FLAG_HIDE_CALICIN_BAY_TM14_BLIZZARD                     0x1FD
 #define FLAG_HIDE_SILPH_CO_4F_TM41                              0x1FE
 
 // Unused?
