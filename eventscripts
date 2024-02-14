@@ -1487,4 +1487,9 @@ npc 1 84 3 EventScript_CalicinBay_SwimmerMSebastian
 npc 1 84 4 EventScript_CalicinBay_SwimmerFCorrine
 npc 1 84 5 EventScript_CalicinBay_TM14Blizzard
 npc 1 84 6 EventScript_CalicinBay_FishermanOliver
+npc 1 84 7 EventScript_CalicinBay_TeamPlutoHugo
+npc 1 84 8 EventScript_CalicinBay_TeamPlutoAnise
+npc 1 84 9 EventScript_CalicinBay_TeamPlutoYolena
+npc 1 84 10 EventScript_CalicinBay_StoryEvents
+npc 1 84 11 EventScript_CalicinBay_StoryEvents
 sign 1 84 0 EventScript_CalicinBay_CalicinBaySign

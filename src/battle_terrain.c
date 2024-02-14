@@ -344,6 +344,10 @@ static u8 TryLoadAlternateAreaTerrain(u8 terrain)
 		// 	if (MetatileBehavior_IsTallGrass(tileBehavior))
 		// 		terrain = BATTLE_TERRAIN_SNOW_GRASS;
 		// 	break;
+		case BATTLE_TERRAIN_PLAIN:
+			if (IsCurrentAreaWinter())
+				terrain = BATTLE_TERRAIN_SNOWY;
+			break;
 		case BATTLE_TERRAIN_INSIDE:
 			if (mapSec == MAPSEC_FORGOTTEN_MANSE)
 				terrain = BATTLE_TERRAIN_SPOOKY;

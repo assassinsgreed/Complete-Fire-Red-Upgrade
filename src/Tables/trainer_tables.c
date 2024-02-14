@@ -3711,6 +3711,67 @@ const struct TrainerMonNoItemDefaultMoves sParty_CalicinBay_FishermanOliver[] = 
     { .lvl = 46, .species = SPECIES_GYARADOS },
 };
 
+const struct TrainerMonNoItemDefaultMoves sParty_CalicinBay_TeamPlutoHugo[] = {
+    { .lvl = 47, .species = SPECIES_THIEVUL },
+    { .lvl = 48, .species = SPECIES_MANDIBUZZ },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_CalicinBay_TeamPlutoAnise[] = {
+    { .lvl = 46, .species = SPECIES_GOLBAT },
+    { .lvl = 47, .species = SPECIES_HAKAMO_O },
+    { .lvl = 47, .species = SPECIES_SCRAFTY },
+};
+
+const struct TrainerMonItemCustomMoves sParty_CalicinBay_TeamPlutoYolena[] = {
+    {
+        .lvl = 48,
+        .species = SPECIES_TOXICROAK,
+        .moves = {
+            MOVE_POISONJAB,
+            MOVE_VENOSHOCK,
+            MOVE_PROTECT,
+            MOVE_DRAINPUNCH
+        },
+        .heldItem = ITEM_BLACK_SLUDGE,
+        .ability = Ability_2 // Dry Skin
+    },
+    {
+        .lvl = 48,
+        .species = SPECIES_PELIPPER,
+        .moves = {
+            MOVE_SURF,
+            MOVE_STOCKPILE,
+            MOVE_ROOST,
+            MOVE_AIRSLASH
+        },
+        .heldItem = ITEM_DAMP_ROCK,
+        .ability = Ability_2 // Drizzle
+    },
+    {
+        .lvl = 49,
+        .species = SPECIES_SLIGGOO,
+        .moves = {
+            MOVE_ROCKSLIDE,
+            MOVE_DRAGONPULSE,
+            MOVE_THUNDER,
+            MOVE_MUDDYWATER
+        },
+        .heldItem = ITEM_ASSAULT_VEST,
+        .ability = Ability_2 // Hydration
+    },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_CalicinBay_TeamPlutoClancy[] = {
+    { .lvl = 47, .species = SPECIES_THIEVUL },
+    { .lvl = 48, .species = SPECIES_TOXICROAK },
+    { .lvl = 49, .species = SPECIES_WEEZING_G },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_CalicinBay_TeamPlutoEna[] = {
+    { .lvl = 47, .species = SPECIES_DUSKNOIR },
+    { .lvl = 48, .species = SPECIES_SCOLIPEDE },
+    { .lvl = 49, .species = SPECIES_CROBAT },
+};
 // #endregion
 
 // #endregion
@@ -7189,6 +7250,66 @@ const struct Trainer gTrainers[] = {
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_CHECK_VIABILITY,
         .partySize = NELEMS(sParty_CalicinBay_FishermanOliver),
         .party = {.NoItemDefaultMoves = sParty_CalicinBay_FishermanOliver}
+    },
+    [TRAINER_CALICIN_BAY_TEAM_PLUTO_HUGO] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_TEAM_PLUTO,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_PLUTO_GRUNT_M,
+        .trainerName = {_H, _u, _g, _o, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_RISKY,
+        .partySize = NELEMS(sParty_CalicinBay_TeamPlutoHugo),
+        .party = {.NoItemDefaultMoves = sParty_CalicinBay_TeamPlutoHugo}
+    },
+    [TRAINER_CALICIN_BAY_TEAM_PLUTO_ANISE] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_TEAM_PLUTO,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_PLUTO_GRUNT_F,
+        .trainerName = {_A, _n, _i, _s, _e, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_RISKY,
+        .partySize = NELEMS(sParty_CalicinBay_TeamPlutoAnise),
+        .party = {.NoItemDefaultMoves = sParty_CalicinBay_TeamPlutoAnise}
+    },
+    [TRAINER_CALICIN_BAY_TEAM_PLUTO_YOLENA] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_TEAM_PLUTO,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_PLUTO_GRUNT_F,
+        .trainerName = {_Y, _o, _l, _e, _n, _a, _END},
+        .items = {},
+        .doubleBattle = TRUE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_DOUBLE_BATTLE,
+        .partySize = NELEMS(sParty_CalicinBay_TeamPlutoYolena),
+        .party = {.ItemCustomMoves = sParty_CalicinBay_TeamPlutoYolena}
+    },
+    [TRAINER_CALICIN_BAY_TEAM_PLUTO_CLANCY] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_TEAM_PLUTO,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_PLUTO_GRUNT_M,
+        .trainerName = {_C, _l, _a, _n, _c, _y, _END},
+        .items = {},
+        .doubleBattle = TRUE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_RISKY | AI_SCRIPT_DOUBLE_BATTLE,
+        .partySize = NELEMS(sParty_CalicinBay_TeamPlutoClancy),
+        .party = {.NoItemDefaultMoves = sParty_CalicinBay_TeamPlutoClancy}
+    },
+    [TRAINER_CALICIN_BAY_TEAM_PLUTO_ENA] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_TEAM_PLUTO,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_PLUTO_GRUNT_F,
+        .trainerName = {_E, _n, _a, _END},
+        .items = {},
+        .doubleBattle = TRUE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_DOUBLE_BATTLE,
+        .partySize = NELEMS(sParty_CalicinBay_TeamPlutoEna),
+        .party = {.NoItemDefaultMoves = sParty_CalicinBay_TeamPlutoEna}
     },
     // #endregion
     // #endregion
