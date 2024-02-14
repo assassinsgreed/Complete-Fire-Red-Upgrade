@@ -123,7 +123,7 @@ RestHouseItems:
 EventScript_Route13_RestHouse_Nurse:
     faceplayer
     msgbox gText_Route13_RestHouse_Nurse MSG_NORMAL
-    call PlayerHeal
+    call PlayerHealNurse
     msgbox gText_Route13_RestHouse_NurseHealed MSG_NORMAL
     applymovement 0x4 m_LookDown
     end

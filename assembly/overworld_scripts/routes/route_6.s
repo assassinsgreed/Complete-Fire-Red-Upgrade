@@ -63,7 +63,7 @@ EventScript_Route6_NurseLeanne:
 
 NurseLeanneHeal:
     msgbox gText_Route6_NurseLeanne_Chat MSG_NORMAL
-    call PlayerHeal
+    call PlayerHealNurse
     msgbox gText_Route6_NurseLeanne_HealingComplete MSG_NORMAL
     end
 

@@ -56,7 +56,7 @@ EventScript_RubarrDesert_NurseJaina:
 
 NurseJainaHeal:
     msgbox gText_RubarrDesert_NurseJaina_Chat MSG_NORMAL
-    call PlayerHeal
+    call PlayerHealNurse
     msgbox gText_RubarrDesert_NurseJaina_HealingComplete MSG_NORMAL
     end
 
