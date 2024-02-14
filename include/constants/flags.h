@@ -75,8 +75,8 @@
 #define FLAG_HIDE_SCALDING_SPA_PLUTO_GRUNT                 0x045
 #define FLAG_HIDE_GLASTRIER_WHEN_CAUGHT                    0x046
 #define FLAG_HIDE_ABBY_IN_BRUCCIE_VILLAGE                  0x047
-#define FLAG_HIDE_SEAFOAM_B3F_BOULDER_3                    0x048
-#define FLAG_HIDE_SEAFOAM_B3F_BOULDER_4                    0x049
+#define FLAG_HIDE_TEAM_PLUTO_IN_CALICIN_BAY                0x048
+#define FLAG_HIDE_TEAM_PLUTO_YOLENA_CALICIN_BAY            0x049
 #define FLAG_HIDE_SEAFOAM_B3F_BOULDER_5                    0x04A
 #define FLAG_HIDE_SEAFOAM_B3F_BOULDER_6                    0x04B
 #define FLAG_HIDE_SEAFOAM_B4F_BOULDER_1                    0x04C

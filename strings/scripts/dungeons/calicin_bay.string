@@ -52,5 +52,134 @@ Oh! That's a bite!
 #org @gText_CalicinBay_FishermanOliver_Chat
 You like to fish too, right?\pGo ahead and cast your line! A lot\nof interesting Pok\emon can be found\lhere.
 
+#org @gText_CalicinBay_TeamPlutoHugo_Intro
+Hey, you! No trespassing.\pThat's it[.] I'll have to stop you with\nforce!
+
+#org @gText_CalicinBay_TeamPlutoHugo_Defeat
+What an overwhelming show of\nforce!
+
+#org @gText_CalicinBay_TeamPlutoHugo_Chat
+Feh, you think you can just walk\nwherever you want just because\lyou're tough?
+
+#org @gText_CalicinBay_TeamPlutoAnise_Intro
+You look just like that kid I was\ntold to watch out for.\pAlright, that settles it. You're going\ndown!
+
+#org @gText_CalicinBay_TeamPlutoAnise_Defeat
+Ngh[.] You're as tough as they said\nyou'd be.
+
+#org @gText_CalicinBay_TeamPlutoAnise_Chat
+Yolena will put you in your place,\njust you wait and see.
+
+#org @gText_CalicinBay_TeamPlutoYolena_Intro
+Nyehehehe! So, we meet again,\nhuh?\pI figured you'd show up sooner or\nlater, and I was right.\pWe're expecting a shipment of Snag\nMachines from the Orre region.\pYou understand I can't just let you\npass, right?\pIf it's a fight you want, you've got\none.
+
+#org @gText_CalicinBay_TeamPlutoYolena_Defeat
+Nyehehe[.] Just as I expected.
+
+#org @gText_CalicinBay_TeamPlutoYolena_Leaves
+You won fair and square, so I'm\ngonna bow out.\pLooks like this is gonna be another\nop of ours that you've successfully\lshut down.\pI've got some paperwork waiting\nfor me, nyehehehe.\pBut, not as much as Clancy and Ena\nhave coming their way soon, I'm\lsure!\pNyehehehehe! Ciao, kiddo.
+
+#org @gText_CalicinBay_TeamPlutoClancy_Comment
+Ugh[.] Man, this operation blows.\nThis is so degrading.
+
+#org @gText_CalicinBay_TeamPlutoEna_Comment
+Achoo! Why'd they have to send us\nhere, of all places[.]
+
+#org @gText_CalicinBay_TeamPlutoClancy_RecognizesPlayer
+[BLACK]Clancy: [BLUE]Aw, nuts. You gotta be\nkidding me.\pTHIS kid again?!
+
+#org @gText_CalicinBay_TeamPlutoEna_AcknowledgesPlayer
+[BLACK]Ena: [RED]I shouldn't even be surprised\nanymore[.]
+
+#org @gText_CalicinBay_TeamPlutoClancy_PreparesForBattle
+[BLACK]Clancy: [BLUE]Raagh! I've had enough of\nthis.\pI won't let this brat ruin my day\nagain. C'mon, Ena, let's thrash this\lpunk!
+
+#org @gText_CalicinBay_TeamPlutoEna_PreparesForBattle
+[BLACK]Ena: [RED]Alright, if we must.
+
+#org @gText_CalicinBay_TeamPlutoClancy_LosesBattle
+Seriously? Why can't I beat this kid?
+
+#org @gText_CalicinBay_TeamPlutoEna_LosesBattle
+I wish I could say I didn't see this\ncoming[.]
+
+#org @gText_CalicinBay_TeamPlutoClancy_PostBattleCommentary
+[BLACK]Clancy: [BLUE]Gah[.] We lost again[.]\pWhy does this kid always have to\ncause trouble for us?
+
+#org @gText_CalicinBay_TeamPlutoEna_PostBattleCommentary
+[BLACK]Ena: [RED]At least we fulfilled our\nmission, even if it wasn't\lsatisfying[.]
+
+#org @gText_CalicinBay_TeamPlutoClancy_RemembersMission
+[BLACK]Clancy: [BLUE]Huh? Oh, yeah, you're right!
+
+#org @gText_CalicinBay_TeamPlutoClancy_ScoldsPlayer
+[BLACK]Clancy: [BLUE]You heard we were running an\noperation out here and just had to\lshow up, huh?\pYou idiot, there is no operation.\pThe bigwigs just KNEW you'd hear our\nnames and come running.\pWhile you were making your way out\nhere, the real operation was\lhappening back at HQ in Daimyn\lCity.\pI bet they've already received the\nSnag Machines by now, heh.
+
+#org @gText_CalicinBay_TeamPlutoEna_Panics
+[BLACK]Ena: [RED]Uh, Clancy[.]
+
+#org @gText_CalicinBay_TeamPlutoClancy_AsksEnaAboutPanic
+[BLACK]Clancy: [BLUE]Yeah? What's up, Ena?
+
+#org @gText_CalicinBay_TeamPlutoEna_CommentsOnHQ
+[BLACK]Ena: [RED]We weren't supposed to talk\nabout the real operation[.]\pNow they know where Pluto HQ is.
+
+#org @gText_CalicinBay_TeamPlutoClancy_Recollecting
+[BLACK]Clancy: [BLUE]Huh? But I didn't[.]
+
+#org @gText_CalicinBay_TeamPlutoClancy_ComesToRealization
+[BLACK]Clancy: [BLUE]OH SHOOT!
+
+#org @gText_CalicinBay_TeamPlutoClancy_PleadsWithThePlayer
+[BLACK]Clancy: [BLUE]Listen, brat. You didn't hear\nanything, promise?\pIf you show up at the HQ[.]\pLet's just say paperwork will be the\nleast of my worries.\pLook[.] I know we haven't seen eye to\neye in the past, but[.]\pCan you promise you won't go\nanywhere near Pluto HQ?
+
+#org @gText_CalicinBay_TeamPlutoClancy_PlayerSaidNotGoingToHQ
+[BLACK]Clancy: [BLUE]Aw, come on[.]\pI'm not the brightest dude, but even\nI can tell you're lying to my face.
+
+#org @gText_CalicinBay_TeamPlutoClancy_PlayerSaidGoingToHQ
+[BLACK]Clancy: [BLUE]Well, it was worth a shot at\nleast, right?
+
+#org @gText_CalicinBay_TeamPlutoEna_GettingClancysAttention
+[BLACK]Ena: [RED]Hey, um[.] Clancy?
+
+#org @gText_CalicinBay_TeamPlutoClancy_RespondsToEna
+[BLACK]Clancy: [BLUE]Yeah?
+
+#org @gText_CalicinBay_TeamPlutoEna_SetsClancyUpForProposal
+[BLACK]Ena: [RED]I have an idea that would get\nus out of all that paperwork.\pBut[.] You might not like it.
+
+#org @gText_CalicinBay_TeamPlutoClancy_CommentsOnNoPaperworkPlans
+[BLACK]Clancy: [BLUE]Any plan that means no\npaperwork is a good plan.
+
+#org @gText_CalicinBay_TeamPlutoEna_ProposesGoingClean
+[BLACK]Ena: [RED]What if[.] We quit Team Pluto and\nwent straight?\pWe got into this gig because we\nwanted to run away from our old\llives.\pBut[.] I don't want to do this\nanymore.\pHurting Pok\emon[.] Hurting people[.]\nAnd all it gets us is paperwork.\pIt'll be hard, but maybe we can\nstart over somewhere.\pWe could do something that makes us\nand others happy.\pSo[.] What do you say?
+
+#org @gText_CalicinBay_TeamPlutoClancy_CommentsOnEnasGenius
+[BLACK]Clancy: [BLUE]Ena[.] You[.]\pYou're a genius!
+
+#org @gText_CalicinBay_TeamPlutoEna_EnaKnows
+[BLACK]Ena: [RED]I know.
+
+#org @gText_CalicinBay_TeamPlutoClancy_TalksAboutPlutoOrigins
+[BLACK]Clancy: [BLUE]Being part of Team Pluto was\nfun for a while.\pBut, as time went on, something\nbecame really clear to me[.]
+
+#org @gText_CalicinBay_TeamPlutoClancy_HatesPlayer
+[BLACK]Clancy: [BLUE]I really, really, really,\nreally HATE losing to this kid!
+
+#org @gText_CalicinBay_TeamPlutoClancy_ResolvesToQuitPluto
+[BLACK]Clancy: [BLUE]I'm pretty sure this brat\nwon't stop, either.\pNot until there's nothing left of\nTeam Pluto, at least.\pSo, let's do it! Let's leave all this\nbehind.
+
+#org @gText_CalicinBay_TeamPlutoEna_HappyClancySaidYes
+[BLACK]Ena: [RED]Oh, Clancy[.]\nI'm so glad you agree.
+
+#org @gText_CalicinBay_TeamPlutoClancy_FiredUp
+[BLACK]Clancy: [BLUE]I'm so fired up, I'm going to\nturn in my resignation right now!
+
+#org @gText_CalicinBay_TeamPlutoClancy_Leaves
+[BLACK]Clancy: [BLUE]And you[.] I hate your guts.\nI hope we never meet again.\pBut[.] If you really are going after\nthe guys at HQ, then[.]\pDon't lose.\pI hate losing to you, but I'd hate\nlosing to someone who can't see\lthings through even more!
+
+#org @gText_CalicinBay_TeamPlutoEna_Leaves
+[BLACK]Ena: [RED]Well, Clancy said a lot of what\nI was going to say. He tends to do\lthat.\pSo, instead, let me give you a tip.\pTeam Pluto's HQ is hidden away below\nDaimyn City.\pThere's a secret stairwell in one of\nthe houses on the south end.\pIt's guarded by some sketchy looking\nguys. You'll know when you see\lthem.\pAnd[.] If anyone from HQ asks about\nus[.]\pPlease, don't tell them anything.\pI know we have no right to ask this\nof you, but please consider it.\pWe really will do our best to go\nclean.\pI'd better get going. Remember:\nDaimyn City, house in the south.
+
 #org @gText_CalicinBay_CalicinBaySign
 Calicin Bay\nThe northernmost point in Kulure
