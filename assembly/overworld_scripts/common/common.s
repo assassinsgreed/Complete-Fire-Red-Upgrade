@@ -165,6 +165,7 @@ PlayerHeal:
 	fanfare 0x100
 	waitfanfare
 	special 0x0
+    incrementgamestat 15
     fadescreenswapbuffers 0x0
     return
 
