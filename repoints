@@ -161,8 +161,8 @@ Substitute_BackTiles 08035144
 Substitute_FrontPal 0803514C
 SurfPal 080AB464
 gMoveMenuInfoIcons 08107DAC
-Type_IconsTiles 08107DB0
-Type_IconsPal 08107D64
+SwSh_Type_IconsTiles 08107DB0
+SwSh_Type_IconsPal 08107D64
 TradeBallTiles 0826CDD4
 TradeBallPal 0826CDDC
 

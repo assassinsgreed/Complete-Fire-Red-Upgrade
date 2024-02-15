@@ -65,7 +65,7 @@ EventScript_HessonPass_NurseMina:
 
 NurseMinaHeal:
     msgbox gText_HessonPass_NurseMina_Chat MSG_NORMAL
-    call PlayerHeal
+    call PlayerHealNurse
     msgbox gText_HessonPass_NurseMina_HealComplete MSG_NORMAL
     end
 

@@ -203,7 +203,7 @@ EventScript_ForgottenManseExterior_NurseLucy:
 
 NurseLucyHeal:
     msgbox gText_ForgottenManseExterior_NurseLucy_Chat MSG_NORMAL
-    call PlayerHeal
+    call PlayerHealNurse
     msgbox gText_ForgottenManseExterior_NurseLucy_HealingComplete MSG_NORMAL
     end
 

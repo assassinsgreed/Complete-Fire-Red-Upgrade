@@ -159,6 +159,12 @@ PlayerWalkDown_Return:
     waitmovement PLAYER
     return
 
+.global PlayerHealNurse
+PlayerHealNurse:
+    incrementgamestat 15
+    call PlayerHeal
+    return
+
 .global PlayerHeal
 PlayerHeal:
     fadescreenswapbuffers 0x1
