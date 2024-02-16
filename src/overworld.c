@@ -2079,7 +2079,7 @@ bool8 IsCurrentAreaWinter(void)
 {
 	#ifdef NEW_BATTLE_BACKGROUNDS
 		u8 mapSec = GetCurrentRegionMapSectionId();
-		return mapSec == MAPSEC_ROUTE_12_WEST || mapSec == MAPSEC_BRUCCIE_VILLAGE;
+		return mapSec == MAPSEC_ROUTE_12_WEST || mapSec == MAPSEC_BRUCCIE_VILLAGE || mapSec == MAPSEC_CALICIN_BAY;
 	#else
 		return FALSE;
 	#endif
@@ -2099,7 +2099,7 @@ bool8 IsCurrentAreaHotCave(void)
 {
 	#ifdef NEW_BATTLE_BACKGROUNDS
 		u8 mapSec = GetCurrentRegionMapSectionId();
-		return mapSec == MAPSEC_ROUTE_12_EAST; // Scalding Spa is here
+		return mapSec == MAPSEC_SCALDING_SPA;
 	#else
 		return FALSE;
 	#endif
