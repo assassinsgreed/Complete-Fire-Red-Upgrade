@@ -164,13 +164,16 @@ It worked flawlessly! [BUFFER1] has\nforgotten how to use [BUFFER2].
 Come see me again, if you want to\nforget more moves.
 
 #org @gText_DaimynCityNPCHouses_MoveReminderPrompt
-Hello, dearie. I am a Pok\emon\ntutor, but I am quite different\lfrom those you may be familiar\lwith.\pYou see, I remind them of moves\nthey used to know.\pFor 1 Pok\eChip, I can teach a move\nthey learned through levelling up.\pFor 10 Pok\eChips, I can teach an egg\nmove they could have known.\pWould you be interested in learning a\nmove? (Held: [BUFFER1])
+Hello, dearie. I am a Pok\emon\ntutor, but I am quite different\lfrom those you may be familiar\lwith.\pYou see, I remind them of moves\nthey used to know.\pFor 1 Pok\eChip, I can teach a move\nthey learned through leveling up.\pFor 10 Pok\eChips, I can teach an egg\nmove they could have known.\pWould you be interested in learning a\nmove? (Held: [BUFFER1])
+
+#org @gText_DaimynCityNPCHouses_MoveReminderPrompt_TeachMore
+[RED]It is done.\pWould you like to remember more\nmoves? (Held: [BUFFER1])
 
 #org @gText_DaimynCityNPCHouses_MoveReminder_PastMovesChoice
-Past Moves
+Past Moves[ALIGN][50][GREEN]1 Pok\eChip
 
 #org @gText_DaimynCityNPCHouses_MoveReminder_EggMovesChoice
-Egg Moves
+Egg Moves[ALIGN][50][GREEN]10 Pok\eChips
 
 #org @gText_DaimynCityNPCHouses_MoveReminder_CancelChoice
 Nothing for now
@@ -189,9 +192,6 @@ I am sorry, dearie. That Pok\emon\ncannot learn that type of move.
 
 #org @gText_DaimynCityNPCHouses_MoveReminder_WhichMovePrompt
 Which move would you like to teach?
-
-#org @gText_DaimynCityNPCHouses_MoveReminder_MoveReminderComeAgain
-[RED]It is done. If you wish to learn a\nnew move, come visit again, dearie.
 
 #org @gText_DaimynCityNPCHouses_MoveDeleterReminder_ChangedMind
 Come see me again, if you change\nyour mind later.

@@ -442,9 +442,9 @@ enum
 // FireRed/LeafGreen
 #define ITEM_POKE_CHIP 349
 #define ITEM_POKE_CHIP_CHARM 350
-#define ITEM_SECRET_KEY 351
+#define ITEM_SECRET_KEY 351			// TODO: change 4 items: Owl Key, Cyprus Key, Serpent Key, Cerberus Key	(Need Serpent and Cerberus to reach Kurt, other two for doors)
 #define ITEM_BIKE_VOUCHER 352
-#define ITEM_GOLD_TEETH 353
+#define ITEM_GOLD_TEETH 353		// Replaced by mega ring elsewhere in this header
 #define ITEM_OLD_AMBER 354
 #define ITEM_CARD_KEY 355
 #define ITEM_LIFT_KEY 356

@@ -229,9 +229,7 @@ FieldEffectScript_RockClimbDust 081D978C
 Wav_grass_footstep_sample 0848EE14
 Wav_sand_footstep_sample 0848EE20
 
-#ifdef UNBOUND
 gFieldEffectObjectImageAnim_ShakingGrass 83A5A2C
-#endif
 
 #ifdef CRITICAL_CAPTURE
 gBattleAnims_Special 08034238

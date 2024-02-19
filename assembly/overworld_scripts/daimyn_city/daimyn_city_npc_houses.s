@@ -392,6 +392,9 @@ EventScript_DaimynCityNPCHouses_MoveReminder:
     callasm StorePokeChipCount
 	buffernumber 0x0 0x8005 @ Take stored PokeChip count
     msgbox gText_DaimynCityNPCHouses_MoveReminderPrompt MSG_KEEPOPEN
+    @ Intentional fall through
+
+TeachMovesMenuHandling:
     multichoiceoption gText_DaimynCityNPCHouses_MoveReminder_PastMovesChoice 0
 	multichoiceoption gText_DaimynCityNPCHouses_MoveReminder_EggMovesChoice 1
 	multichoiceoption gText_DaimynCityNPCHouses_MoveReminder_CancelChoice 2
@@ -427,8 +430,8 @@ TeachMove:
     special 0x148 @ Check if egg
     compare LASTRESULT 0x1
     if equal _goto CannotTeachEgg
-    special 0xDF @ Check how many moves the Pokemon knows
-    compare 0x8005 0x0
+    callasm CanLearnAnyMoves
+    compare LASTRESULT 0x0
     if equal _goto PokemonCannotLearnMoves
     msgbox gText_DaimynCityNPCHouses_MoveReminder_WhichMovePrompt MSG_KEEPOPEN
     special 0xE0 @ Chose move
@@ -441,8 +444,10 @@ TeachMove:
     playse 0xF8 @ Money SE
     waitse
     copyvar 0x8012 0x8013
-    msgbox gText_DaimynCityNPCHouses_MoveReminder_MoveReminderComeAgain MSG_NORMAL
-    goto ResetMoveDeleterOrReminder
+    callasm StorePokeChipCount
+	buffernumber 0x0 0x8005 @ Take stored PokeChip count
+    msgbox gText_DaimynCityNPCHouses_MoveReminderPrompt_TeachMore MSG_NORMAL
+    goto TeachMovesMenuHandling
 
 Remove1Chip:
     removeitem ITEM_POKE_CHIP 0x1
@@ -454,18 +459,22 @@ Remove10Chips:
 
 NotEnoughPokeChipsForTutoring:
     msgbox gText_DaimynCityNPCHouses_MoveReminder_NotEnoughChips MSG_NORMAL
+    textcolor RED
     goto ChangedMindAboutMoveDeleteOrRemember
 
 CannotTeachEgg:
     msgbox gText_DaimynCityNPCHouses_MoveReminder_ChoseEgg MSG_NORMAL
+    textcolor RED
     goto ChangedMindAboutMoveDeleteOrRemember
 
 PokemonCannotLearnMoves:
     msgbox gText_DaimynCityNPCHouses_MoveReminder_ChoiceIsIneligible MSG_NORMAL
+    textcolor RED
     goto ChangedMindAboutMoveDeleteOrRemember
 
 ChangedMindAboutMoveDeleteOrRemember:
     msgbox gText_DaimynCityNPCHouses_MoveDeleterReminder_ChangedMind MSG_NORMAL
+    textcolor RED
     goto ResetMoveDeleterOrReminder
 
 ResetMoveDeleterOrReminder:

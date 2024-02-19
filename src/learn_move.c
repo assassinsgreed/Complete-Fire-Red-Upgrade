@@ -575,3 +575,9 @@ void PrintTMCaseTypeAndSplitIcons(u16 move, u8 type)
 	BlitBitmapToWindow(5, PSSIconsTiles + 24 * 8 * SPLIT(move), 1, 0, 24, 15);
 	CopyWindowToVram(4, COPYWIN_GFX); //Moved type icon
 }
+
+// Hack: Stores TRUE/FALSE in LAST_RESULT, depending on whether the pokemon chosen can learn any moves or not. Fixes weird issues with special 0xDF and other logic that allows a pokemon without egg moves to try learning the Cancel move
+void CanLearnAnyMoves()
+{
+	gSpecialVar_LastResult = GetNumberOfRelearnableMoves(&gPlayerParty[Var8004]) > 0;
+}

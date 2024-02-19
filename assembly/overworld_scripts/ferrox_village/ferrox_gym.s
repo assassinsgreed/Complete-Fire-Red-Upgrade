@@ -223,12 +223,11 @@ RiddleCorrect:
 EventScript_FerroxLibrary_RiddleHintGirl:
     compare StoryEventVar SolvedGymRiddle
     if greaterorequal _goto RiddleHintGirl_RiddleSolved
-    msgbox gText_FerroxLibrary_RiddleHintGirl MSG_NORMAL
+    npcchatwithmovement gText_FerroxLibrary_RiddleHintGirl m_LookUp
     end
 
 RiddleHintGirl_RiddleSolved:
-    faceplayer
-    msgbox gText_FerroxLibrary_RiddleHintGirl_RiddleSolved MSG_NORMAL
+    npcchatwithmovement gText_FerroxLibrary_RiddleHintGirl_RiddleSolved m_LookUp
     end
 
 .global EventScript_FerroxLibrary_DateBoy
