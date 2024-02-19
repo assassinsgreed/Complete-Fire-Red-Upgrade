@@ -521,7 +521,7 @@ const struct BattleBackground gBattleTerrainTableNight[] =
 		.tilemap = BG_WaterMap,
 		.entryTileset = gBattleTerrainAnimTiles_Water,
 		.entryTilemap = gBattleTerrainAnimTilemap_Water,
-		.palette = BG_Water_EveningPal,
+		.palette = BG_Water_NightPal,
 	},
 	[BATTLE_TERRAIN_POND] =
 	{
@@ -529,7 +529,7 @@ const struct BattleBackground gBattleTerrainTableNight[] =
 		.tilemap = BG_PondMap,
 		.entryTileset = gBattleTerrainAnimTiles_PondWater,
 		.entryTilemap = gBattleTerrainAnimTilemap_PondWater,
-		.palette = BG_Pond_EveningPal,
+		.palette = BG_Pond_NightPal,
 	},
 	[BATTLE_TERRAIN_CAVE] =
 	{
@@ -561,7 +561,7 @@ const struct BattleBackground gBattleTerrainTableNight[] =
 		.tilemap = BG_GrassMap,
 		.entryTileset = gBattleTerrainAnimTiles_TallGrass,
 		.entryTilemap = gBattleTerrainAnimTilemap_TallGrass,
-		.palette = BG_Grass_EveningPal,
+		.palette = BG_Grass_NightPal,
 	},
 	[BATTLE_TERRAIN_INSIDE_2] =
 	{

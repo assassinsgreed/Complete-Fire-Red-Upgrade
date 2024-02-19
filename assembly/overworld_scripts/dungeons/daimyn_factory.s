@@ -112,9 +112,9 @@ SignScript_DaimynFactoryOverworld_TrainerTipsStats:
     msgbox gText_DaimynFactoryOverworld_TrainerTipsStats MSG_SIGN
     end
 
-.global SignScript_DaimynFactoryOverworld_TrainerTipsFriendlyPokemonMoreExp
-SignScript_DaimynFactoryOverworld_TrainerTipsFriendlyPokemonMoreExp:
-    msgbox gText_DaimynFactoryOverworld_FriendlyPokemonMoreExp MSG_SIGN
+.global SignScript_DaimynFactoryOverworld_TrainerTipsDailyEvents
+SignScript_DaimynFactoryOverworld_TrainerTipsDailyEvents:
+    msgbox gText_DaimynFactoryOverworld_DailyEvents MSG_SIGN
     end
 
 .global TileScript_DaimynFactoryOverworld_DaimynFactoryLocked
