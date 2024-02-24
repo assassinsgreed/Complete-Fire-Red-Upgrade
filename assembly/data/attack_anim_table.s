@@ -16777,7 +16777,7 @@ ANIM_DRUM_BEATING:
 @Credits to GF
 .global ANIM_SNAP_TRAP
 ANIM_SNAP_TRAP:
-	goto 0x81CE29E @Original Clamp animation that uses teeth
+	goto ANIM_CLAMP @ Original Clamp fails to read for some reason, despite being identical (at 0x81CE29E)
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 .pool
