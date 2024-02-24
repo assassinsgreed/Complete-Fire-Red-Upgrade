@@ -404,7 +404,7 @@ RivalBattlePrompt:
     waitmovement PLAYER
     fadescreen FADEIN_BLACK
     pause DELAY_HALFSECOND
-    playbgm 0x114 @ Unwavering Emotions
+    playbgm 0x159 @ N's Farewell
     msgbox gText_Route11SouthHouse_PlutoEvent_AlistairPleadsForRivalToStop MSG_NORMAL
     sound 0x15 @ Exclaim
     applymovement Rival m_Surprise

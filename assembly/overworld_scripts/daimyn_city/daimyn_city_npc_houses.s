@@ -5,14 +5,130 @@
 .include "../xse_defines.s"
 .include "../asm_defines.s"
 
+.equ PlutoStoryEventVar, 0x405D
+.equ AlistairInPlutoHideoutBuilding, 0x4
+
+.global MapScript_PlutoHideout
+MapScript_PlutoHideout:
+    mapscript MAP_SCRIPT_ON_LOAD MapEntryScript_RevealStairs
+    mapscript MAP_SCRIPT_ON_FRAME_TABLE LevelScripts_PlutoHQEvents
+    .byte MAP_SCRIPT_TERMIN
+
+MapEntryScript_RevealStairs:
+    compare PlutoStoryEventVar 0x1
+    if equal _call ShowAlistairAndRealignGrunt
+    compare PlutoStoryEventVar 0x2
+    if greaterorequal _call RevealStairs
+    end
+
+ShowAlistairAndRealignGrunt:
+    clearflag 0x3C @ Hides Rival in Daimyn Guardhouses, reused here
+    showsprite AlistairInPlutoHideoutBuilding
+    setobjectmovementtype 0x1 0x9 @ Look Left
+    return
+
+LevelScripts_PlutoHQEvents:
+    levelscript PlutoStoryEventVar 0x1 LevelScript_AlistairRevealsStairs
+    .hword LEVEL_SCRIPT_TERMIN
+
+LevelScript_AlistairRevealsStairs:
+    playbgm 0x156 @ Alistair's Theme
+    applymovement PLAYER m_WalkUp
+    waitmovement PLAYER
+    msgbox gText_DaimynCityNPCHouses_AlistairBeatsGrunt MSG_NORMAL
+    msgbox gText_DaimynCityNPCHouses_GruntCommentsOnAlistairsStrength MSG_NORMAL
+    msgbox gText_DaimynCityNPCHouses_AlistairDemandsToEnterBase MSG_NORMAL
+    sound 0x15 @ Exclaim
+    applymovement 0x1 m_Surprise
+    waitmovement 0x1
+    msgbox gText_DaimynCityNPCHouses_GruntRelents MSG_NORMAL
+    applymovement 0x1 m_GruntWalksToStairs
+    pause DELAY_1SECOND
+    pause DELAY_1SECOND
+    applymovement AlistairInPlutoHideoutBuilding m_LookLeft
+    waitmovement 0x1
+    pause DELAY_HALFSECOND
+    msgbox gText_DaimynCityNPCHouses_GruntOpensStairs MSG_NORMAL
+    sound 0x26 @ Door Shut
+    call RevealStairs
+    special 0x8E
+    pause DELAY_HALFSECOND
+    applymovement 0x1 m_GruntReturnsToSeat
+    pause DELAY_1SECOND
+    pause DELAY_1SECOND
+    applymovement AlistairInPlutoHideoutBuilding m_LookRight
+    waitmovement 0x1
+    msgbox gText_DaimynCityNPCHouses_GruntInsultsAlistair MSG_NORMAL
+    msgbox gText_DaimynCityNPCHouses_AlistairRetort MSG_NORMAL
+    msgbox gText_DaimynCityNPCHouses_GruntUpset MSG_NORMAL
+    applymovement AlistairInPlutoHideoutBuilding m_LookDown
+    waitmovement AlistairInPlutoHideoutBuilding
+    msgbox gText_DaimynCityNPCHouses_AlistairNoticesPlayer MSG_NORMAL
+    applymovement 0x1 m_LookRight
+    applymovement AlistairInPlutoHideoutBuilding m_WalkDown
+    waitmovement AlistairInPlutoHideoutBuilding
+    msgbox gText_DaimynCityNPCHouses_AlistairMentionsWhyHeIsThere MSG_YESNO
+    compare LASTRESULT YES
+    if equal _call HereForPluto
+    if notequal _call NotHereForPluto
+    applymovement AlistairInPlutoHideoutBuilding m_AlistairWalksIntoBase
+    waitmovement AlistairInPlutoHideoutBuilding
+    sound 0x9 @ Exit room
+    pause DELAY_HALFSECOND
+    hidesprite AlistairInPlutoHideoutBuilding
+    setflag 0x3C @ Hides Rival in Daimyn Guardhouses, reused here
+    setvar PlutoStoryEventVar 0x2
+    fadedefaultbgm
+    end
+
+RevealStairs:
+    setmaptile 0x0 0x2 0x5 0x1 @ Top left corner of stairs, impassable
+    setmaptile 0x1 0x2 0x6 0x0 @ Top right corner of stairs, passable
+    setmaptile 0x2 0x2 0x7 0x0 @ Top of mat, passable
+    setmaptile 0x0 0x3 0xD 0x1 @ Top left corner of stairs, impassable
+    setmaptile 0x1 0x3 0xE 0x1 @ Top right corner of stairs, impassable
+    setmaptile 0x2 0x3 0xF 0x0 @ Bottom of mat, passable
+    return
+
+HereForPluto:
+    msgbox gText_DaimynCityNPCHouses_PlayerHereForPluto MSG_NORMAL
+    return
+
+NotHereForPluto:
+    msgbox gText_DaimynCityNPCHouses_PlayerNotHereForPluto MSG_NORMAL
+    return
+
 .global EventScript_DaimynCityNPCHouses_SuspiciousMan1
 EventScript_DaimynCityNPCHouses_SuspiciousMan1:
-    npcchat gText_DaimynCity_NPCHouses_SuspiciousMan1
+    compare PlutoStoryEventVar 0x2
+    if greaterorequal _goto SuspiciousMan1AfterAlistair
+    npcchatwithmovement gText_DaimynCity_NPCHouses_SuspiciousMan1 m_LookRight
+    end
+
+SuspiciousMan1AfterAlistair:
+    npcchatwithmovement gText_DaimynCity_NPCHouses_SuspiciousMan1_AfterAlistair m_LookRight
     end
 
 .global EventScript_DaimynCityNPCHouses_SuspiciousMan2
 EventScript_DaimynCityNPCHouses_SuspiciousMan2:
-    npcchat gText_DaimynCity_NPCHouses_SuspiciousMan2
+    compare PlutoStoryEventVar 0x2
+    if greaterorequal _goto SuspiciousMan2AfterAlistair
+    npcchatwithmovement gText_DaimynCity_NPCHouses_SuspiciousMan2 m_LookLeft
+    end
+
+SuspiciousMan2AfterAlistair:
+    npcchatwithmovement gText_DaimynCity_NPCHouses_SuspiciousMan2_AfterAlistair m_LookLeft
+    end
+
+.global SignScript_DaimynCityNPCHouses_PlutoPlant
+SignScript_DaimynCityNPCHouses_PlutoPlant:
+    compare PlutoStoryEventVar 0x2
+    if greaterorequal _goto PlantAfterAlistair
+    msgbox gText_DaimynCity_NPCHouses_PlutoHousePlant MSG_SIGN
+    end
+
+PlantAfterAlistair:
+    msgbox gText_DaimynCity_NPCHouses_PlutoHousePlant_AfterAlistair MSG_SIGN
     end
 
 .global EventScript_DaimynCity_MoveTutor
@@ -485,3 +601,6 @@ ResetMoveDeleterOrReminder:
 m_PikachuWalksToPlayer_Below: .byte walk_down, walk_down, walk_right, walk_right, walk_right, look_up, end_m
 m_PikachuWalksToPlayer_Above: .byte walk_up, walk_right, walk_right, end_m
 m_PikachuWalksToPlayer_Beside: .byte walk_down, walk_down, walk_right, walk_right, walk_right, walk_right, walk_up, end_m
+m_GruntWalksToStairs: .byte walk_up, walk_left, walk_left, walk_down, walk_left, walk_left, walk_left, walk_left, look_down, end_m
+m_GruntReturnsToSeat: .byte walk_right, walk_right, walk_right, walk_right, walk_up, walk_right, walk_right, walk_down, look_left, end_m
+m_AlistairWalksIntoBase: .byte walk_up, walk_left, walk_left, walk_up, walk_up, walk_left, end_m

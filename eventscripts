@@ -924,6 +924,7 @@ sign 9 16 9 SignScript_DaimynCityMall_Phone
 sign 9 16 10 SignScript_DaimynCityMall_ChancePoster
 sign 9 16 11 SignScript_DaimynCityMall_StoreDirectory
 ## NPC Houses
+map 9 10 MapScript_PlutoHideout
 npc 9 10 0 EventScript_DaimynCityNPCHouses_SuspiciousMan1
 npc 9 10 1 EventScript_DaimynCityNPCHouses_SuspiciousMan2
 npc 9 10 2 EventScript_DaimynCity_FindTM46Thief
@@ -938,6 +939,7 @@ npc 9 14 1 EventScript_DaimynCityNPCHouses_MoveDeleter
 npc 9 14 2 EventScript_DaimynCityNPCHouses_MoveReminder
 npc 9 15 0 EventScript_DaimynCityNPCHouses_TradeBuddy
 npc 9 15 1 EventScript_DaimynCityNPCHouses_Trader
+sign 9 10 0 SignScript_DaimynCityNPCHouses_PlutoPlant
 sign 9 11 0 SignScript_DaimynCityNPCHouses_EntrancePC
 sign 9 11 1 SignScript_DaimynCityNPCHouses_TransferPC
 sign 9 11 2 SignScript_DaimynCityNPCHouses_Poster
@@ -1307,7 +1309,7 @@ npc 1 41 6 EventScript_Common_RockSmash
 npc 1 41 7 EventScript_Common_Strength
 npc 1 41 8 EventScript_Common_Cut
 npc 1 41 9 EventScript_PeradonForest_TM81_XScsissor
-npc 1 41 10 ItemScript_Common_FullResore
+npc 1 41 10 ItemScript_Common_FullRestore
 npc 1 41 11 ItemScript_Common_PokeDoll
 npc 1 41 12 ItemScript_Common_MaxElixir
 npc 1 41 13 EventScript_PeradonForest_RockerRaphael
@@ -1493,3 +1495,147 @@ npc 1 84 9 EventScript_CalicinBay_TeamPlutoYolena
 npc 1 84 10 EventScript_CalicinBay_StoryEvents
 npc 1 84 11 EventScript_CalicinBay_StoryEvents
 sign 1 84 0 EventScript_CalicinBay_CalicinBaySign
+
+# Pluto HQ
+## B1F
+map 1 47 MapScript_PlutoBaseHQ_B1F
+npc 1 47 0 EventScript_PlutoHQ_B1F_TM59BrutalSwing
+npc 1 47 1 EventScript_PlutoHQ_B1F_TeamPlutoHeathcliff
+npc 1 47 2 EventScript_PlutoHQ_B1F_ScientistSeamus
+npc 1 47 3 EventScript_PlutoHQ_B1F_TeamPlutoColton
+sign 1 47 0 SignScript_PlutoHQ_B1F_Floor
+sign 1 47 1 SignScript_PlutoHQ_B1F_CerberusDoor
+sign 1 47 2 SignScript_PlutoHQ_B1F_CerberusDoor
+## B1F Hall
+map 1 54 MapScript_PlutoBaseHQ_B1FHall
+tile 1 54 0 TileScript_PlutoHQ_B1F_Hall_KurtisWarning 
+sign 1 54 0 SignScript_PlutoHQ_B1F_Hall_OwlDoor
+sign 1 54 1 SignScript_PlutoHQ_B1F_Hall_OwlDoor
+sign 1 54 2 SignScript_PlutoHQ_B1F_Hall_OwlDoor
+sign 1 54 3 SignScript_PlutoHQ_B1F_Hall_CypressDoor
+sign 1 54 4 SignScript_PlutoHQ_B1F_Hall_CypressDoor
+sign 1 54 5 SignScript_PlutoHQ_B1F_Hall_CypressDoor
+sign 1 54 6 SignScript_PlutoHQ_B1F_Hall_SerpentDoor
+sign 1 54 7 SignScript_PlutoHQ_B1F_Hall_SerpentDoor
+sign 1 54 8 SignScript_PlutoHQ_B1F_Hall_SerpentDoor
+sign 1 54 9 SignScript_PlutoHQ_B1F_Hall_CerberusDoor
+sign 1 54 10 SignScript_PlutoHQ_B1F_Hall_CerberusDoor
+sign 1 54 11 SignScript_PlutoHQ_B1F_Hall_CerberusDoor
+## B2F
+map 1 48 MapScript_PlutoBaseHQ_B2F
+npc 1 48 0 ItemScript_Common_MaxRepel
+npc 1 48 1 ItemScript_Common_Ultraball
+npc 1 48 2 EventScript_PlutoHQ_B2F_ScientistWayne
+npc 1 48 3 EventScript_PlutoHQ_B2F_TeamPlutoDenise
+npc 1 48 4 EventScript_PlutoHQ_B2F_TeamPlutoTheodore
+sign 1 48 0 SignScript_PlutoHQ_B2F_Floor
+sign 1 48 1 SignScript_PlutoHQ_B2F_Floor
+sign 1 48 2 SignScript_PlutoHQ_B2F_OwlDoor
+sign 1 48 3 SignScript_PlutoHQ_B2F_OwlDoor
+sign 1 48 4 SignScript_PlutoHQ_B2F_OwlDoor
+sign 1 48 5 SignScript_PlutoHQ_B2F_OwlDoor
+## B3F
+map 1 49 MapScript_PlutoBaseHQ_B3F
+npc 1 49 0 ItemScript_Common_RareCandy
+npc 1 49 1 ItemScript_Common_HyperPotion
+npc 1 49 2 EventScript_PlutoHQ_B3F_RestGrunt
+npc 1 49 3 EventScript_PlutoHQ_B3F_TeamPlutoYeon
+sign 1 49 0 SignScript_PlutoHQ_B3F_Floor
+sign 1 49 1 SignScript_PlutoHQ_B3F_Floor
+sign 1 49 2 SignScript_PlutoHQ_B3F_CypressDoor
+sign 1 49 3 SignScript_PlutoHQ_B3F_CypressDoor
+sign 1 49 4 SignScript_PlutoHQ_B3F_CypressDoor
+sign 1 49 5 SignScript_PlutoHQ_B3F_CypressDoor
+sign 1 49 6 SignScript_PlutoHQ_B3F_StatueSwitch
+tile 1 49 0 TileScript_PlutoHQ_WildBattle
+tile 1 49 1 TileScript_PlutoHQ_WildBattle
+tile 1 49 2 TileScript_PlutoHQ_WildBattle
+tile 1 49 3 TileScript_PlutoHQ_WildBattle
+tile 1 49 4 TileScript_PlutoHQ_WildBattle
+tile 1 49 5 TileScript_PlutoHQ_WildBattle
+tile 1 49 6 TileScript_PlutoHQ_WildBattle
+tile 1 49 7 TileScript_PlutoHQ_WildBattle
+tile 1 49 8 TileScript_PlutoHQ_WildBattle
+tile 1 49 9 TileScript_PlutoHQ_WildBattle
+tile 1 49 10 TileScript_PlutoHQ_WildBattle
+tile 1 49 11 TileScript_PlutoHQ_WildBattle
+tile 1 49 12 TileScript_PlutoHQ_WildBattle
+tile 1 49 13 TileScript_PlutoHQ_WildBattle
+tile 1 49 14 TileScript_PlutoHQ_WildBattle
+## B4F
+map 1 50 MapScript_PlutoBaseHQ_B4F
+npc 1 50 0 EventScript_PlutoHQ_B4F_CypressKey
+npc 1 50 1 ItemScript_Common_MaxRevive
+npc 1 50 2 EventScript_PlutoHQ_B4F_TeamPlutoMatty
+npc 1 50 3 EventScript_PlutoHQ_B4F_ScientistGary
+npc 1 50 4 EventScript_PlutoHQ_B4F_CoffeBreakFemaleGrunt
+npc 1 50 5 EventScript_PlutoHQ_B4F_CoffeeBreakMaleGrunt
+npc 1 50 6 EventScript_PlutoHQ_B4F_TeamPlutoMay
+sign 1 50 0 SignScript_PlutoHQ_B4F_Floor
+## For some reason, sign #1 is completely broken...
+sign 1 50 2 SignScript_PlutoHQ_B4F_Floor
+sign 1 50 3 SignScript_PlutoHQ_B4F_OwlDoor
+sign 1 50 4 SignScript_PlutoHQ_B4F_OwlDoor
+sign 1 50 5 SignScript_PlutoHQ_B4F_OwlDoor
+sign 1 50 6 SignScript_PlutoHQ_B4F_CerberusDoor
+sign 1 50 7 SignScript_PlutoHQ_B4F_CerberusDoor
+tile 1 50 0 TileScript_PlutoHQ_WildBattle
+tile 1 50 1 TileScript_PlutoHQ_WildBattle
+tile 1 50 2 TileScript_PlutoHQ_WildBattle
+tile 1 50 3 TileScript_PlutoHQ_WildBattle
+tile 1 50 4 TileScript_PlutoHQ_WildBattle
+tile 1 50 5 TileScript_PlutoHQ_WildBattle
+tile 1 50 6 TileScript_PlutoHQ_WildBattle
+tile 1 50 7 TileScript_PlutoHQ_WildBattle
+tile 1 50 8 TileScript_PlutoHQ_WildBattle
+tile 1 50 9 TileScript_PlutoHQ_WildBattle
+## B5F
+map 1 51 MapScript_PlutoBaseHQ_B5F
+npc 1 51 0 EventScript_PlutoHQ_B5F_OwlKey
+npc 1 51 1 EventScript_PlutoHQ_B5F_TM100Confide
+npc 1 51 2 EventScript_PlutoHQ_B5F_TeamPlutoClay
+npc 1 51 3 EventScript_PlutoHQ_B5F_TeamPlutoVictor
+npc 1 51 4 EventScript_PlutoHQ_B5F_TeamPluto_Paula
+sign 1 51 0 SignScript_PlutoHQ_B5F_Floor
+sign 1 51 1 SignScript_PlutoHQ_B5F_Floor
+sign 1 51 2 SignScript_PlutoHQ_B5F_CypressDoor
+sign 1 51 3 SignScript_PlutoHQ_B5F_CypressDoor
+sign 1 51 4 SignScript_PlutoHQ_B5F_CypressDoor
+sign 1 51 5 SignScript_PlutoHQ_B5F_CypressDoor
+## B6F
+map 1 52 MapScript_PlutoBaseHQ_B6F
+npc 1 52 0 ItemScript_Common_HyperPotion
+npc 1 52 1 ItemScript_Common_Nugget
+npc 1 52 2 EventScript_PlutoHQ_B6F_TeamPlutoGiana
+npc 1 52 3 EventScript_PlutoHQ_B6F_ScientistOrson
+npc 1 52 4 EventScript_PlutoHQ_B6F_TeamPlutoQuinn
+sign 1 52 0 SignScript_PlutoHQ_B6F_Floor
+sign 1 52 1 SignScript_PlutoHQ_B6F_OwlDoor
+sign 1 52 2 SignScript_PlutoHQ_B6F_OwlDoor
+sign 1 52 3 SignScript_PlutoHQ_B6F_OwlDoor
+sign 1 52 4 SignScript_PlutoHQ_B6F_OwlDoor
+tile 1 52 0 TileScript_PlutoHQ_WildBattle
+tile 1 52 1 TileScript_PlutoHQ_WildBattle
+## B7F
+map 1 53 MapScript_PlutoBaseHQ_B7F
+npc 1 53 0 EventScript_PlutoHQ_B7F_TeamPlutoLayla
+npc 1 53 1 EventScript_PlutoHQ_B7F_ScientistNico
+npc 1 53 2 EventScript_PlutoHQ_B7F_TeamPlutoMitch
+npc 1 53 3 EventScript_PlutoHQ_B7F_TeamPlutoRichard
+npc 1 53 4 ItemScript_Common_FullRestore
+npc 1 53 5 ItemScript_Common_Masterball
+npc 1 53 6 ItemScript_Common_LinkCord
+sign 1 53 0 SignScript_PlutoHQ_B7F_CypressDoor
+sign 1 53 1 SignScript_PlutoHQ_B7F_CypressDoor
+sign 1 53 2 SignScript_PlutoHQ_B7F_CypressDoor
+sign 1 53 3 SignScript_PlutoHQ_B7F_SerpentDoor
+sign 1 53 4 SignScript_PlutoHQ_B7F_SerpentDoor
+sign 1 53 5 SignScript_PlutoHQ_B7F_SerpentDoor
+sign 1 53 6 SignScript_PlutoHQ_B7F_SerpentDoor
+# Kurtis's Office
+#npc 1 55 0 EventScript_PlutoHQ_B1F_Kurtis
+npc 1 55 1 EventScript_PlutoHQ_B1F_Gyaradosite
+# Irene's Office
+#npc 1 56 0 EventScript_PlutoHQ_B4F_Irene
+# Ronald's Office
+#npc 1 57 0 EventScript_PlutoHQ_B7F_Ronald

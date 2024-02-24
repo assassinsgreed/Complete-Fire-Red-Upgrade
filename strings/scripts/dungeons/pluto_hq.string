@@ -1,0 +1,209 @@
+#org @gText_PlutoHQ_B1F_Hall_KurtissWarning
+You sense a powerful presence beyond\nthis door[.]
+
+#org @gText_PlutoHQ_B2F_RestGrunt_Intro
+Hey[.] You're that punk that everyone's\nlooking for, aren't you.\pLook, I'm no fool. I can see the way\nthe wind is blowing.\pInstead of fighting, how about we\nstrike a deal?\pGive me some money, and I'll let you\nrest here while I stand guard.
+
+#org @gText_PlutoHQ_B2F_RestGrunt_Prompt
+Just \$500. What do you say?\nPretty sweet deal, right?
+
+#org @gText_PlutoHQ_B2F_RestGrunt_ChoseYes
+Sweet dreams or whatever.\nLike I really care[.]
+
+#org @gText_PlutoHQ_B2F_RestGrunt_NotEnoughMoney
+Yo, what gives? You don't have\nenough money!\pScram! This ain't a charity.
+
+#org @gText_PlutoHQ_B2F_RestGrunt_PaymentReceived
+I'll take your payment up front.\pI ain't responsible if you sleep\npoorly.
+
+#org @gText_PlutoHQ_B2F_RestGrunt_AfterHeal
+See? No nonsense from me. Come back\nif you want to rest up again.\pI'll be happy to see your wallet\nagain.
+
+#org @gText_PlutoHQ_B2F_RestGrunt_ChoseNo
+Hehehe, you say that now, but you'll\nbe back after the others rough you\lup.\pI just know it.
+
+#org @gText_PlutoHQ_B3F_CoffeeBreakFemaleGrunt
+Can you leave me alone, please?\nI'm TRYING to relax over here.
+
+#org @gText_PlutoHQ_B3F_CoffeeBreakMaleGrunt
+I heard that there are some people\nraiding the base.\pBut[.] Meh.\pI can deal with that after my coffee\nbreak.
+
+#org @gText_PlutoHQ_B1F_TeamPlutoHeathcliff_Intro
+Stand down! I repeat, stand down!
+
+#org @gText_PlutoHQ_B1F_TeamPlutoHeathcliff_Defeat
+Tch. Unruly brat[.]
+
+#org @gText_PlutoHQ_B1F_TeamPlutoHeathcliff_Chat
+You must be really brave to raid our\nbase. Or stupid.
+
+#org @gText_PlutoHQ_B1F_ScientistSeamus_Intro
+Uehehehee! I've perfected my battle\nformula.\pAnd look here! A willing test subject\nappears.
+
+#org @gText_PlutoHQ_B1F_ScientistSeamus_Defeat
+Result: Outright failure.
+
+#org @gText_PlutoHQ_B1F_ScientistSeamus_Chat
+I don't care who you are or why\nyou're here.\pTo me, you are just a test subject.
+
+#org @gText_PlutoHQ_B1F_TeamPlutoColton_Intro
+I'm gonna knock you flat and score a\nbig promotion!\pHeh, it's nothing personal, kid.
+
+#org @gText_PlutoHQ_B1F_TeamPlutoColton_Defeat
+No[.] My promotion[.]
+
+#org @gText_PlutoHQ_B1F_TeamPlutoColton_Chat
+You just couldn't come quietly,\nhuh?\pIs my eternal happiness a joke to\nyou?
+
+#org @gText_PlutoHQ_B2F_ScientistWayne_Intro
+Blast it all. I can't concentrate with\nall this ruckus.\pI'll take my frustration out on you.
+
+#org @gText_PlutoHQ_B2F_ScientistWayne_Defeat
+Grr[.]
+
+#org @gText_PlutoHQ_B2F_ScientistWayne_Chat
+Go away, would you? I'm trying to\nconcentrate.
+
+#org @gText_PlutoHQ_B2F_TeamPlutoDenise_Intro
+What's going on? An intruder in the\nbase? Oh, it's you, isn't it!
+
+#org @gText_PlutoHQ_B2F_TeamPlutoDenise_Defeat
+I stood no chance!
+
+#org @gText_PlutoHQ_B2F_TeamPlutoDenise_Chat
+I couldn't stop you, but someone\nwill[.] I'm sure of it.
+
+#org @gText_PlutoHQ_B2F_TeamPlutoTheodore_Intro
+Aw, come on, man!\pMy lunch break JUST started and now\nI've gotta deal with you?
+
+#org @gText_PlutoHQ_B2F_TeamPlutoTheodore_Defeat
+Whatever. I'm just going to finish\neating.
+
+#org @gText_PlutoHQ_B2F_TeamPlutoTheodore_Chat
+Look, bub, I'll be real with you.\pThey don't pay me enough to care\nabout you or your invasion.
+
+#org @gText_PlutoHQ_B3F_TeamPlutoYeon_Intro
+Getting frustrated by these\nmachines?\pIf you can beat me, maybe I'll tell\nyou a secret.\pBut get real, that ain't happening.
+
+#org @gText_PlutoHQ_B3F_TeamPlutoYeon_Defeat
+Looks like I'm eating crow!
+
+#org @gText_PlutoHQ_B3F_TeamPlutoYeon_Chat
+Ever feel like you're being watched?\nThat'd be the statues around base.\pThis machine here can turn them\noff.\pDon't get the wrong idea, though.\nYou still don't stand a chance of\lreaching the boss.
+
+#org @gText_PlutoHQ_B4F_TeamPlutoMatty_Intro
+I heard that certain card keys open\ncertain doors.\pThen[.] It's really important I don't\nlet you leave with the Owl Key!
+
+#org @gText_PlutoHQ_B4F_TeamPlutoMatty_Defeat
+H-hey! That's not okay!
+
+#org @gText_PlutoHQ_B4F_TeamPlutoMatty_Chat
+You won fair and square, but let me\nask you a favor[.]\pLeave the Owl Key here, pretty\nplease?\pI'll get in a lot of trouble if you\nuse it to interrupt Miss Irene.
+
+#org @gText_PlutoHQ_B4F_ScientistGary_Intro
+Do you even know what we're trying\nto do here? Pff! Unlikely.
+
+#org @gText_PlutoHQ_B4F_ScientistGary_Defeat
+Naive and strong. An interesting\ncombination.
+
+#org @gText_PlutoHQ_B4F_ScientistGary_Chat
+We've received a shipment of Snag\nMachines from the Orre region.\pWhat're we going to do with them?\nThat's a secret to you, pal.
+
+#org @gText_PlutoHQ_B4F_TeamPlutoMay_Intro
+Oh! Oh! I found the intruder!
+
+#org @gText_PlutoHQ_B4F_TeamPlutoMay_Defeat
+Awww, why do they have to be tough?
+
+#org @gText_PlutoHQ_B4F_TeamPlutoMay_Chat
+You put me in a really bad mood,\nyou know that?
+
+#org @gText_PlutoHQ_B5F_TeamPlutoClay_Intro
+I bet you're wondering why there are\nso many of us here, huh?\pThat's cuz Yolena gave us the heads\nup that you might come here.\pGyuhuhuhuh, what a maroon. Get\nready to fight!
+
+#org @gText_PlutoHQ_B5F_TeamPlutoClay_Defeat
+Yikes! You're as tough as Yolena said\nyou'd be.
+
+#org @gText_PlutoHQ_B5F_TeamPlutoClay_Chat
+Don't get cocky, kid. There are a lot\nof grunts stronger than me in here.
+
+#org @gText_PlutoHQ_B5F_TeamPlutoVictor_Intro
+An intruder, huh?\pThis might be my best shot to snatch\nthat legendary Pok\e Ball[.]\pOh! You didn't hear that, got it?
+
+#org @gText_PlutoHQ_B5F_TeamPlutoVictor_Defeat
+Ugh[.]
+
+#org @gText_PlutoHQ_B5F_TeamPlutoVictor_Chat
+Alright, alright, I'll spill the\nbeans.\pI overheard that there might be some\nincredible Pok\e Ball that never\lfails sitting around here.\pWhere is it? I dunno.\pI heard only Ronald has the card\nkey needed to access it though.
+
+#org @gText_PlutoHQ_B5F_TeamPlutoPaula_Intro
+You're that intruder! This is my big\nchance to impress Irene.
+
+#org @gText_PlutoHQ_B5F_TeamPlutoPaula_Defeat
+Nooo! Irene will be very unhappy\nabout this[.]
+
+#org @gText_PlutoHQ_B5F_TeamPlutoPaula_Chat
+Hey, uh[.] If you run into Irene,\ndon't tell her that I failed to\lstop you, okay?
+
+#org @gText_PlutoHQ_B6F_TeamPlutoGiana_Intro
+When the alarms went off, someone\ntold me to guard this warp tile.\pI wonder why?
+
+#org @gText_PlutoHQ_B6F_TeamPlutoGiana_Defeat
+No fair. You caught me off guard\nwhile I was pondering.
+
+#org @gText_PlutoHQ_B6F_TeamPlutoGiana_Chat
+I, uh[.] I don't really know what I\nshould be doing now.\pI guess I'll just keep guarding this\nwarp tile.
+
+#org @gText_PlutoHQ_B6F_ScientistOrson_Intro
+Ah, I was hoping we would cross\npaths.\pI can use my experimental Pok\emon on\nyou without feeling bad about it.
+
+#org @gText_PlutoHQ_B6F_ScientistOrson_Defeat
+Back to the drawing board!
+
+#org @gText_PlutoHQ_B6F_ScientistOrson_Chat
+"Seeing every experience as an\nopportunity to innovate.\"\pThat's the scientist's creed, right\nthere.
+
+#org @gText_PlutoHQ_B6F_TeamPlutoQuinn_Intro
+I have no clue who the intruder is,\nso I'll just stop everyone I see!
+
+#org @gText_PlutoHQ_B6F_TeamPlutoQuinn_Defeat
+You're too good to be the intruder.\nYou can pass.
+
+#org @gText_PlutoHQ_B6F_TeamPlutoQuinn_Chat
+How'll I know if I've stopped the\nintruder?\pBelieve me, buddy, I'll know when\nI've found them.
+
+#org @gText_PlutoHQ_B7F_TeamPlutoLayla_Intro
+Tch[.] These generators aren't working\nhard enough. I'm freezing here!
+
+#org @gText_PlutoHQ_B7F_TeamPlutoLayla_Defeat
+What's got you all fired up, huh?
+
+#org @gText_PlutoHQ_B7F_TeamPlutoLayla_Chat
+Wait, what? There's an intruder on\nthe loose in here?\pHow come nobody told me?
+
+#org @gText_PlutoHQ_B7F_ScientistNico_Intro
+Hypothesis: The intruder is a kid\nmatching your description.
+
+#org @gText_PlutoHQ_B7F_ScientistNico_Defeat
+Addendum: I will not be strong\nenough to stop them.
+
+#org @gText_PlutoHQ_B7F_ScientistNico_Chat
+Conclusion: The intruder will carry\non scot-free.
+
+#org @gText_PlutoHQ_B7F_TeamPlutoMitch_Intro
+Sorry, buddy, but I can't let you\npast here.\pRonald's office is ahead and he'll be\nreal mad at me if you interrupt\lhim.
+
+#org @gText_PlutoHQ_B7F_TeamPlutoMitch_Defeat
+Aw, really?
+
+#org @gText_PlutoHQ_B7F_TeamPlutoMitch_Chat
+I'd better skedaddle before Ronald\ncatches wind of this failure.
+
+#org @gText_PlutoHQ_B7F_TeamPlutoRichard_Intro
+Halt, in the name of the law!
+
+#org @gText_PlutoHQ_B7F_TeamPlutoRichard_Defeat
+I said halt!
+
+#org @gText_PlutoHQ_B7F_TeamPlutoRichard_Chat
+Huh? It's ironic for a criminal to\ncall on the name of the law?\pGet off your high horse, why don't\nyou?

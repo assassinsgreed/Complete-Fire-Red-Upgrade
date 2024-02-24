@@ -330,6 +330,8 @@ GraphicsInfo_PlutoGruntMale 839FE74
 GraphicsInfo_PlutoGruntFemale 839FE78
 ## Replace Sailing Chef (59)
 GraphicsInfo_LeaderCaseyM 839FE9C
+## Replace Female attendant (65)
+#TODO GraphicsInfo_PlutoLeaderKurtis 839FEB4
 ## Replace Prof Oak (71)
 GraphicsInfo_ProfessorHawthorne 839FECC
 ## Replace Rival (72)

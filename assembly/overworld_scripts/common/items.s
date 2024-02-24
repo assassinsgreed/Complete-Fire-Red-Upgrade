@@ -36,6 +36,11 @@ ItemScript_Common_Revive:
     finditem ITEM_REVIVE 0x1
     end
 
+.global ItemScript_Common_MaxRevive
+ItemScript_Common_MaxRevive:
+    finditem ITEM_MAX_REVIVE 0x1
+    end
+
 .global ItemScript_Common_Antidote
 ItemScript_Common_Antidote:
     finditem ITEM_ANTIDOTE 0x1
@@ -46,8 +51,8 @@ ItemScript_Common_FullHeal:
     finditem ITEM_FULL_HEAL 0x1
     end
 
-.global ItemScript_Common_FullResore
-ItemScript_Common_FullResore:
+.global ItemScript_Common_FullRestore
+ItemScript_Common_FullRestore:
     finditem ITEM_FULL_RESTORE 0x1
     end
 
@@ -79,6 +84,11 @@ ItemScript_Common_Repel:
 .global ItemScript_Common_SuperRepel
 ItemScript_Common_SuperRepel:
     finditem ITEM_SUPER_REPEL 0x1
+    end
+
+.global ItemScript_Common_MaxRepel
+ItemScript_Common_MaxRepel:
+    finditem ITEM_MAX_REPEL 0x1
     end
 
 .global ItemScript_Common_PokeDoll
@@ -355,6 +365,11 @@ ItemScript_Common_Greatball:
 .global ItemScript_Common_Ultraball
 ItemScript_Common_Ultraball:
     finditem ITEM_ULTRA_BALL 0x1
+    end
+
+.global ItemScript_Common_Masterball
+ItemScript_Common_Masterball:
+    finditem ITEM_MASTER_BALL 0x1
     end
 
 .global ItemScript_Common_Healball

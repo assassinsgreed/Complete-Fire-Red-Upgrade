@@ -195,3 +195,51 @@ Which move would you like to teach?
 
 #org @gText_DaimynCityNPCHouses_MoveDeleterReminder_ChangedMind
 Come see me again, if you change\nyour mind later.
+
+#org @gText_DaimynCityNPCHouses_AlistairBeatsGrunt
+[BLACK]Alistair: [BLUE]Hmph. Child's play.
+
+#org @gText_DaimynCityNPCHouses_GruntCommentsOnAlistairsStrength
+[BLACK]Grunt: [BLUE]Guh[.] This guy's strong.\nJust who is he?
+
+#org @gText_DaimynCityNPCHouses_AlistairDemandsToEnterBase
+[BLACK]Alistair: [BLUE]Now, I won't ask again.\pShow me the entrance to your base,\nor else[.]
+
+#org @gText_DaimynCityNPCHouses_GruntRelents
+[BLACK]Grunt: [BLUE]Okay, okay! Just hold on,\nsheesh[.]
+
+#org @gText_DaimynCityNPCHouses_GruntOpensStairs
+[BLACK]Grunt: [BLUE]Just have to pull this here,\nand[.] Presto.
+
+#org @gText_DaimynCityNPCHouses_GruntInsultsAlistair
+[BLACK]Grunt: [BLUE]There, it's open.\nNot like it'll make a difference.\pThe grunts inside are way stronger\nthan me! Gyuh-huh-huh.
+
+#org @gText_DaimynCityNPCHouses_AlistairRetort
+[BLACK]Alistair: [BLUE]I'd certainly hope so[.]
+
+#org @gText_DaimynCityNPCHouses_GruntUpset
+[BLACK]Grunt: [BLUE]H-Hey!
+
+#org @gText_DaimynCityNPCHouses_AlistairNoticesPlayer
+[BLACK]Alistair: [BLUE]Ah, [PLAYER].\nImpeccable timing, as always.
+
+#org @gText_DaimynCityNPCHouses_AlistairMentionsWhyHeIsThere
+[BLACK]Alistair: [BLUE]I got an anonymous tip that\nTeam Pluto's HQ was hidden here.\pOppressing people through force[.]\nI can't stand Team Pluto.\pIt would be better for everyone if\nthey were to just disappear.\pI simply had to come running to see\nif the tip I received was accurate.\pSure enough, they were right.\p[PLAYER], I assume you're here to put\na stop to Team Pluto too, yes?
+
+#org @gText_DaimynCityNPCHouses_PlayerHereForPluto
+[BLACK]Alistair: [BLUE]Then, let's work together.\nI'll meet you inside.
+
+#org @gText_DaimynCityNPCHouses_PlayerNotHereForPluto
+[BLACK]Alistair: [BLUE]I'll accept your presence\nas a fortunate coincidence then.\pI could use your help, [PLAYER].\nMeet me inside, when you are\lready.
+
+#org @gText_DaimynCity_NPCHouses_SuspiciousMan1_AfterAlistair
+Tch. Just who was that guy,\nanyways?\pHe made me and my Pok\emon look like\ntotal idiots.
+
+#org @gText_DaimynCity_NPCHouses_SuspiciousMan2_AfterAlistair
+It doesn't matter if we let you\nthrough.\pThe grunts in the base will make\nshort work of you.
+
+#org @gText_DaimynCity_NPCHouses_PlutoHousePlant
+It's a normal looking plant.
+
+#org @gText_DaimynCity_NPCHouses_PlutoHousePlant_AfterAlistair
+Oh! This plant is placed over a\nsecret switch.

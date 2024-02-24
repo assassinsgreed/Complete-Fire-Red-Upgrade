@@ -147,7 +147,7 @@ EventScript_CalicinBay_StoryEvents:
     msgbox gText_CalicinBay_TeamPlutoClancy_RespondsToEna MSG_NORMAL
     msgbox gText_CalicinBay_TeamPlutoEna_SetsClancyUpForProposal MSG_NORMAL
     msgbox gText_CalicinBay_TeamPlutoClancy_CommentsOnNoPaperworkPlans MSG_NORMAL
-    playbgm 0x114 @ Unwavering Emotions
+    playbgm 0x159 @ N's Farewell
     msgbox gText_CalicinBay_TeamPlutoEna_ProposesGoingClean MSG_NORMAL
     msgbox gText_CalicinBay_TeamPlutoClancy_CommentsOnEnasGenius MSG_NORMAL
     applymovement PlutoGruntEna m_Joy
@@ -185,6 +185,7 @@ EventScript_CalicinBay_StoryEvents:
     hidesprite PlutoGruntClancy
     hidesprite PlutoGruntEna
     setflag 0x48 @ Hide all grunts in Calicin Bay
+    setvar 0x405D 0x1 @ Allow story events at Pluto Hideout building to initiate
     end
 
 ClancyComment:

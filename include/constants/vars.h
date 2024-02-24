@@ -136,7 +136,7 @@
 #define VAR_MAP_SCENE_LAPLAZ_GYM_CASEY_EVENT                                   0x405A
 #define VAR_MAP_SCENE_LAKE_LAPLAZ_GALARIAN_BIRDGS                              0x405B
 #define VAR_MAP_SCENE_ROUTE_12_REST_HOUSE                                      0x405C
-#define VAR_MAP_SCENE_POKEMON_TOWER_2F                                         0x405D
+#define VAR_MAP_SCENE_PLUTO_HQ_EVENTS                                          0x405D
 #define VAR_MAP_SCENE_ROUTE16                                                  0x405E
 #define VAR_MAP_SCENE_ROUTE23                                                  0x405F
 #define VAR_MAP_SCENE_SILPH_CO_11F                                             0x4060
@@ -200,8 +200,8 @@
 #define VAR_ANTHRA_TILE_EVENT      0x4098
 #define VAR_ROUTE_11_PARTNER       0x4099
 #define VAR_POKEBALLS_CHANGED      0x409A
-#define VAR_0x409B                 0x409B
-#define VAR_0x409C                 0x409C
+#define VAR_PLUTO_HQ_WILD_ENCOUNTERS_DISABLED 0x409B
+#define VAR_PLUTO_HQ_KURTISS_WARNING 0x409C
 #define VAR_0x409D                 0x409D
 #define VAR_0x409E                 0x409E
 #define VAR_0x409F                 0x409F
