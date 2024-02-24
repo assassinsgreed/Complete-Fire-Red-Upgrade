@@ -3851,7 +3851,7 @@ const struct TrainerMonNoItemDefaultMoves sParty_PlutoHQ_B6F_TeamPlutoGiana[] = 
     { .lvl = 48, .species = SPECIES_SCOLIPEDE },
 };
 
-const struct TrainerMonNoItemDefaultMoves sParty_PlutoHQ_B6F_ScientistOrson[] = {
+const struct TrainerMonItemDefaultMoves sParty_PlutoHQ_B6F_ScientistOrson[] = {
     { .lvl = 49, .species = SPECIES_ROTOM_WASH },
 };
 
