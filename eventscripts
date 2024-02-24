@@ -1572,12 +1572,13 @@ npc 1 50 4 EventScript_PlutoHQ_B4F_CoffeBreakFemaleGrunt
 npc 1 50 5 EventScript_PlutoHQ_B4F_CoffeeBreakMaleGrunt
 npc 1 50 6 EventScript_PlutoHQ_B4F_TeamPlutoMay
 sign 1 50 0 SignScript_PlutoHQ_B4F_Floor
-sign 1 50 1 SignScript_PlutoHQ_B4F_Floor
-sign 1 50 2 SignScript_PlutoHQ_B4F_OwlDoor
+## For some reason, sign #1 is completely broken...
+sign 1 50 2 SignScript_PlutoHQ_B4F_Floor
 sign 1 50 3 SignScript_PlutoHQ_B4F_OwlDoor
 sign 1 50 4 SignScript_PlutoHQ_B4F_OwlDoor
-sign 1 50 5 SignScript_PlutoHQ_B4F_CerberusDoor
+sign 1 50 5 SignScript_PlutoHQ_B4F_OwlDoor
 sign 1 50 6 SignScript_PlutoHQ_B4F_CerberusDoor
+sign 1 50 7 SignScript_PlutoHQ_B4F_CerberusDoor
 tile 1 50 0 TileScript_PlutoHQ_WildBattle
 tile 1 50 1 TileScript_PlutoHQ_WildBattle
 tile 1 50 2 TileScript_PlutoHQ_WildBattle
