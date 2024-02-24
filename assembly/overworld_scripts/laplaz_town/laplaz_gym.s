@@ -336,7 +336,7 @@ TileScript_LaplazGym_IntroduceCasey:
 
 FemaleCaseyBackstory:
     msgbox gText_LaplazGym_FemaleCaseyAddressesPlayer MSG_NORMAL
-    playbgm 0x114 @ Unwavering Emotions
+    playbgm 0x159 @ N's Farewell
     applymovement Casey m_LookDown
     msgbox gText_LaplazGym_FemaleCaseyBackstory MSG_NORMAL
     applymovement Casey m_LookUp
@@ -345,7 +345,7 @@ FemaleCaseyBackstory:
 
 MaleCaseyBackstory:
     msgbox gText_LaplazGym_MaleCaseyAddressesPlayer MSG_NORMAL
-    playbgm 0x114 @ Unwavering Emotions
+    playbgm 0x159 @ N's Farewell
     applymovement Casey m_LookDown
     msgbox gText_LaplazGym_MaleCaseyBackstory MSG_NORMAL
     applymovement Casey m_LookUp

@@ -3774,6 +3774,116 @@ const struct TrainerMonNoItemDefaultMoves sParty_CalicinBay_TeamPlutoEna[] = {
 };
 // #endregion
 
+// #region Pluto HQ
+const struct TrainerMonNoItemDefaultMoves sParty_PlutoHQ_B1F_TeamPlutoHeathcliff[] = {
+    { .lvl = 47, .species = SPECIES_NOIBAT },
+    { .lvl = 47, .species = SPECIES_KLANG },
+};
+
+const struct TrainerMonItemDefaultMoves sParty_PlutoHQ_B1F_ScientistSeamus[] = {
+    { .lvl = 46, .species = SPECIES_ROTOM_FAN },
+    { .lvl = 46, .species = SPECIES_HIPPOWDON_F },
+    { .lvl = 47, .species = SPECIES_SLOWBRO },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_PlutoHQ_B1F_TeamPlutoColton[] = {
+    { .lvl = 48, .species = SPECIES_TURTONATOR },
+    { .lvl = 48, .species = SPECIES_THIEVUL },
+};
+
+const struct TrainerMonItemDefaultMoves sParty_PlutoHQ_B2F_ScientistWayne[] = {
+    { .lvl = 47, .species = SPECIES_GRIMER_A },
+    { .lvl = 46, .species = SPECIES_GRIMER_A },
+    { .lvl = 46, .species = SPECIES_RATICATE_A },
+    { .lvl = 47, .species = SPECIES_PILOSWINE },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_PlutoHQ_B2F_TeamPlutoDenise[] = {
+    { .lvl = 47, .species = SPECIES_SALANDIT },
+    { .lvl = 48, .species = SPECIES_GOLBAT },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_PlutoHQ_B2F_TeamPlutoTheodore[] = {
+    { .lvl = 49, .species = SPECIES_NOIVERN },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_PlutoHQ_B3F_TeamPlutoYeon[] = {
+    { .lvl = 49, .species = SPECIES_KLINKLANG },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_PlutoHQ_B4F_TeamPlutoMatty[] = {
+    { .lvl = 48, .species = SPECIES_MORPEKO },
+    { .lvl = 48, .species = SPECIES_TOXAPEX },
+};
+
+const struct TrainerMonItemDefaultMoves sParty_PlutoHQ_B4F_ScientistGary[] = {
+    { .lvl = 47, .species = SPECIES_PYUKUMUKU },
+    { .lvl = 48, .species = SPECIES_STUNFISK },
+    { .lvl = 47, .species = SPECIES_STUNFISK_G },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_PlutoHQ_B4F_TeamPlutoMay[] = {
+    { .lvl = 46, .species = SPECIES_KOFFING_G },
+    { .lvl = 46, .species = SPECIES_DRILBUR },
+    { .lvl = 46, .species = SPECIES_SNEASEL },
+    { .lvl = 46, .species = SPECIES_CACTURNE },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_PlutoHQ_B5F_TeamPlutoClay[] = {
+    { .lvl = 48, .species = SPECIES_ZOROARK },
+    { .lvl = 49, .species = SPECIES_TOXICROAK },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_PlutoHQ_B5F_TeamPlutoVictor[] = {
+    { .lvl = 46, .species = SPECIES_KOFFING_G },
+    { .lvl = 47, .species = SPECIES_ZUBAT },
+    { .lvl = 47, .species = SPECIES_GOLBAT },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_PlutoHQ_B5F_TeamPlutoPaula[] = {
+    { .lvl = 48, .species = SPECIES_KROKOROK },
+    { .lvl = 48, .species = SPECIES_THIEVUL },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_PlutoHQ_B6F_TeamPlutoGiana[] = {
+    { .lvl = 46, .species = SPECIES_VENIPEDE },
+    { .lvl = 47, .species = SPECIES_WHIRLIPEDE },
+    { .lvl = 48, .species = SPECIES_SCOLIPEDE },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_PlutoHQ_B6F_ScientistOrson[] = {
+    { .lvl = 49, .species = SPECIES_ROTOM_WASH },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_PlutoHQ_B6F_TeamPlutoQuinn[] = {
+    { .lvl = 46, .species = SPECIES_SNEASEL },
+    { .lvl = 46, .species = SPECIES_SALANDIT },
+    { .lvl = 46, .species = SPECIES_SANDILE },
+    { .lvl = 47, .species = SPECIES_TOXICROAK },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_PlutoHQ_B7F_TeamPlutoLayla[] = {
+    { .lvl = 49, .species = SPECIES_INCINEROAR },
+};
+
+const struct TrainerMonItemDefaultMoves sParty_PlutoHQ_B7F_ScientistNico[] = {
+    { .lvl = 47, .species = SPECIES_GRIMER_A },
+    { .lvl = 47, .species = SPECIES_EMOLGA },
+    { .lvl = 48, .species = SPECIES_TOXTRICITY },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_PlutoHQ_B7F_TeamPlutoMitch[] = {
+    { .lvl = 48, .species = SPECIES_INKAY },
+    { .lvl = 48, .species = SPECIES_MR_RIME },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_PlutoHQ_B7F_TeamPlutoRichard[] = {
+    { .lvl = 48, .species = SPECIES_LUCARIO },
+    { .lvl = 49, .species = SPECIES_MALAMAR },
+};
+
+// #endregion
+
 // #endregion
 
 #define NO_NAME                                                                                      \
@@ -7310,6 +7420,248 @@ const struct Trainer gTrainers[] = {
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_DOUBLE_BATTLE,
         .partySize = NELEMS(sParty_CalicinBay_TeamPlutoEna),
         .party = {.NoItemDefaultMoves = sParty_CalicinBay_TeamPlutoEna}
+    },
+    // #endregion
+    // #region Pluto HQ
+    [TRAINER_PLUTO_HQ_B1F_TEAM_PLUTO_HEATHCLIFF] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_TEAM_PLUTO,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_PLUTO_GRUNT_M,
+        .trainerName = {_H, _e, _a, _t, _h, _c, _l, _i, _f, _f, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_RISKY,
+        .partySize = NELEMS(sParty_PlutoHQ_B1F_TeamPlutoHeathcliff),
+        .party = {.NoItemDefaultMoves = sParty_PlutoHQ_B1F_TeamPlutoHeathcliff}
+    },
+    [TRAINER_PLUTO_HQ_B1F_SCIENTIST_SEAMUS] = {
+        .partyFlags = PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_TEAM_PLUTO,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_SCIENTIST_M,
+        .trainerName = {_S, _e, _a, _m, _u, _s, _END},
+        .items = { ITEM_X_SP_ATK },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_SETUP_FIRST_TURN,
+        .partySize = NELEMS(sParty_PlutoHQ_B1F_ScientistSeamus),
+        .party = {.ItemDefaultMoves = sParty_PlutoHQ_B1F_ScientistSeamus}
+    },
+    [TRAINER_PLUTO_HQ_B1F_TEAM_PLUTO_COLTON] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_TEAM_PLUTO,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_PLUTO_GRUNT_M,
+        .trainerName = {_C, _o, _l, _t, _o, _n, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_RISKY,
+        .partySize = NELEMS(sParty_PlutoHQ_B1F_TeamPlutoColton),
+        .party = {.NoItemDefaultMoves = sParty_PlutoHQ_B1F_TeamPlutoColton}
+    },
+    [TRAINER_PLUTO_HQ_B2F_SCIENTIST_WAYNE] = {
+        .partyFlags = PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_TEAM_PLUTO,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_SCIENTIST_M,
+        .trainerName = {_W, _a, _y, _n, _e, _END},
+        .items = { ITEM_X_DEFEND },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_SETUP_FIRST_TURN,
+        .partySize = NELEMS(sParty_PlutoHQ_B2F_ScientistWayne),
+        .party = {.ItemDefaultMoves = sParty_PlutoHQ_B2F_ScientistWayne}
+    },
+    [TRAINER_PLUTO_HQ_B2F_TEAM_PLUTO_DENISE] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_TEAM_PLUTO,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_PLUTO_GRUNT_F,
+        .trainerName = {_D, _e, _n, _i, _s, _e, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_RISKY,
+        .partySize = NELEMS(sParty_PlutoHQ_B2F_TeamPlutoDenise),
+        .party = {.NoItemDefaultMoves = sParty_PlutoHQ_B2F_TeamPlutoDenise}
+    },
+    [TRAINER_PLUTO_HQ_B2F_TEAM_PLUTO_THEODORE] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_TEAM_PLUTO,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_PLUTO_GRUNT_M,
+        .trainerName = {_T, _h, _e, _o, _d, _o, _r, _e, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_RISKY,
+        .partySize = NELEMS(sParty_PlutoHQ_B2F_TeamPlutoTheodore),
+        .party = {.NoItemDefaultMoves = sParty_PlutoHQ_B2F_TeamPlutoTheodore}
+    },
+    [TRAINER_PLUTO_HQ_B3F_TEAM_PLUTO_YEON] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_TEAM_PLUTO,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_PLUTO_GRUNT_M,
+        .trainerName = {_Y, _e, _o, _n, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_RISKY,
+        .partySize = NELEMS(sParty_PlutoHQ_B3F_TeamPlutoYeon),
+        .party = {.NoItemDefaultMoves = sParty_PlutoHQ_B3F_TeamPlutoYeon}
+    },
+    [TRAINER_PLUTO_HQ_B4F_TEAM_PLUTO_MATTY] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_TEAM_PLUTO,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_PLUTO_GRUNT_M,
+        .trainerName = {_M, _a, _t, _t, _y, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_RISKY,
+        .partySize = NELEMS(sParty_PlutoHQ_B4F_TeamPlutoMatty),
+        .party = {.NoItemDefaultMoves = sParty_PlutoHQ_B4F_TeamPlutoMatty}
+    },
+    [TRAINER_PLUTO_HQ_B4F_SCIENTIST_GARY] = {
+        .partyFlags = PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_TEAM_PLUTO,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_SCIENTIST_M,
+        .trainerName = {_G, _a, _r, _y, _END},
+        .items = { ITEM_X_SPEED },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_SETUP_FIRST_TURN,
+        .partySize = NELEMS(sParty_PlutoHQ_B4F_ScientistGary),
+        .party = {.ItemDefaultMoves = sParty_PlutoHQ_B4F_ScientistGary}
+    },
+    [TRAINER_PLUTO_HQ_B4F_TEAM_PLUTO_MAY] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_TEAM_PLUTO,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_PLUTO_GRUNT_F,
+        .trainerName = {_M, _a, _y, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_RISKY,
+        .partySize = NELEMS(sParty_PlutoHQ_B4F_TeamPlutoMay),
+        .party = {.NoItemDefaultMoves = sParty_PlutoHQ_B4F_TeamPlutoMay}
+    },
+    [TRAINER_PLUTO_HQ_B5F_TEAM_PLUTO_CLAY] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_TEAM_PLUTO,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_PLUTO_GRUNT_M,
+        .trainerName = {_C, _l, _a, _y, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_RISKY,
+        .partySize = NELEMS(sParty_PlutoHQ_B5F_TeamPlutoClay),
+        .party = {.NoItemDefaultMoves = sParty_PlutoHQ_B5F_TeamPlutoClay}
+    },
+    [TRAINER_PLUTO_HQ_B5F_TEAM_PLUTO_VICTOR] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_TEAM_PLUTO,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_PLUTO_GRUNT_M,
+        .trainerName = {_V, _i, _c, _t, _o, _r, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_RISKY,
+        .partySize = NELEMS(sParty_PlutoHQ_B5F_TeamPlutoVictor),
+        .party = {.NoItemDefaultMoves = sParty_PlutoHQ_B5F_TeamPlutoVictor}
+    },
+    [TRAINER_PLUTO_HQ_B5F_TEAM_PLUTO_PAULA] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_TEAM_PLUTO,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_PLUTO_GRUNT_F,
+        .trainerName = {_P, _a, _u, _l, _a, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_RISKY,
+        .partySize = NELEMS(sParty_PlutoHQ_B5F_TeamPlutoPaula),
+        .party = {.NoItemDefaultMoves = sParty_PlutoHQ_B5F_TeamPlutoPaula}
+    },
+    [TRAINER_PLUTO_HQ_B6F_TEAM_PLUTO_GIANA] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_TEAM_PLUTO,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_PLUTO_GRUNT_F,
+        .trainerName = {_G, _i, _a, _n, _a, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_RISKY,
+        .partySize = NELEMS(sParty_PlutoHQ_B6F_TeamPlutoGiana),
+        .party = {.NoItemDefaultMoves = sParty_PlutoHQ_B6F_TeamPlutoGiana}
+    },
+    [TRAINER_PLUTO_HQ_B6F_SCIENTIST_ORSON] = {
+        .partyFlags = PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_TEAM_PLUTO,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_SCIENTIST_M,
+        .trainerName = {_O, _r, _s, _o, _n, _END},
+        .items = { ITEM_X_ATTACK },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_SETUP_FIRST_TURN,
+        .partySize = NELEMS(sParty_PlutoHQ_B6F_ScientistOrson),
+        .party = {.ItemDefaultMoves = sParty_PlutoHQ_B6F_ScientistOrson}
+    },
+    [TRAINER_PLUTO_HQ_B6F_TEAM_PLUTO_QUINN] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_TEAM_PLUTO,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_PLUTO_GRUNT_M,
+        .trainerName = {_Q, _u, _i, _n, _n, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_RISKY,
+        .partySize = NELEMS(sParty_PlutoHQ_B6F_TeamPlutoQuinn),
+        .party = {.NoItemDefaultMoves = sParty_PlutoHQ_B6F_TeamPlutoQuinn}
+    },
+    [TRAINER_PLUTO_HQ_B7F_TEAM_PLUTO_LAYLA] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_TEAM_PLUTO,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_PLUTO_GRUNT_F,
+        .trainerName = {_L, _a, _y, _l, _a, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_RISKY,
+        .partySize = NELEMS(sParty_PlutoHQ_B7F_TeamPlutoLayla),
+        .party = {.NoItemDefaultMoves = sParty_PlutoHQ_B7F_TeamPlutoLayla}
+    },
+    [TRAINER_PLUTO_HQ_B7F_SCIENTIST_NICO] = {
+        .partyFlags = PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_TEAM_PLUTO,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_SCIENTIST_M,
+        .trainerName = {_N, _i, _c, _o, _END},
+        .items = { ITEM_X_SP_DEF },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_SETUP_FIRST_TURN,
+        .partySize = NELEMS(sParty_PlutoHQ_B7F_ScientistNico),
+        .party = {.ItemDefaultMoves = sParty_PlutoHQ_B7F_ScientistNico}
+    },
+    [TRAINER_PLUTO_HQ_B7F_TEAM_PLUTO_MITCH] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_TEAM_PLUTO,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_PLUTO_GRUNT_M,
+        .trainerName = {_M, _i, _t, _c, _h, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_RISKY,
+        .partySize = NELEMS(sParty_PlutoHQ_B7F_TeamPlutoMitch),
+        .party = {.NoItemDefaultMoves = sParty_PlutoHQ_B7F_TeamPlutoMitch}
+    },
+    [TRAINER_PLUTO_HQ_B7F_TEAM_PLUTO_RICHARD] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_TEAM_PLUTO,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_PLUTO_GRUNT_M,
+        .trainerName = {_R, _i, _c, _h, _a, _r, _d, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_RISKY,
+        .partySize = NELEMS(sParty_PlutoHQ_B7F_TeamPlutoRichard),
+        .party = {.NoItemDefaultMoves = sParty_PlutoHQ_B7F_TeamPlutoRichard}
     },
     // #endregion
     // #endregion

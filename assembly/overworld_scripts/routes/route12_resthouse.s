@@ -67,7 +67,7 @@ LevelScript_RestHouse_Cutscene:
     applymovement Alistair m_AlistairStartsToLeave
     applymovement Selene m_SeleneStopsAlistair
     waitmovement Selene
-    playbgm 0x114 @ Unwavering Emotions
+    playbgm 0x159 @ N's Farewell
     msgbox gText_Route12RestHouse_Cutscene_SeleneStopsAlistair MSG_NORMAL
     applymovement Alistair m_LookUp
     msgbox gText_Route12RestHouse_Cutscene_AlistairAcknowledgesBeingRecognized MSG_NORMAL

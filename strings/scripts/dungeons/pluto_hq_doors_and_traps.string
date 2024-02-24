@@ -1,0 +1,53 @@
+#org @PlutoHQ_B1F_FloorSign
+Basement Floor 1
+
+#org @PlutoHQ_B2F_FloorSign
+Basement Floor 2
+
+#org @PlutoHQ_B3F_FloorSign
+Basement Floor 3
+
+#org @PlutoHQ_B4F_FloorSign
+Basement Floor 4
+
+#org @PlutoHQ_B5F_FloorSign
+Basement Floor 5
+
+#org @PlutoHQ_B6F_FloorSign
+Basement Floor 6 
+
+#org @PlutoHQ_OwlDoorSign
+It's a door featuring an Owl motif.
+
+#org @PlutoHQ_CypressDoorSign
+It's a door featuring a Cypress Tree\nmotif.
+
+#org @PlutoHQ_SerpentDoorSign
+It's a door featuring a Serpent\nmotif.
+
+#org @PlutoHQ_CerberusDoorSign
+It's a door featuring a Cerberus\nmotif.
+
+#org @PlutoHQ_DoorOpened
+Bingo! The [BUFFER1] opened it.
+
+#org @gText_PlutoHQ_WildPokemon
+The statue's gaze was a trap!\nA wild Pok\emon appeared.
+
+#org @gText_PlutoHQ_StatueTrapMachine
+It's a machine that controls the\nstatue traps!
+
+#org @gText_PlutoHQ_StatueTrapMachine_IsOn
+The machine is currently [GREEN]on[BLACK].\nTurn it off?
+
+#org @gText_PlutoHQ_StatueTrapMachine_IsOff
+The machine is currently [GREEN]off[BLACK].\nTurn it on?
+
+#org @gText_PlutoHQ_StatueTrapMachine_TurnedOff
+The machine is now [GREEN]off[BLACK].
+
+#org @gText_PlutoHQ_StatueTrapMachine_TurnedOn
+The machine is now [GREEN]on[BLACK].
+
+#org @gText_PlutoHQ_StatueTrapMachine_ChoseNotTo
+Better not!
