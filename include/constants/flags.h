@@ -545,7 +545,7 @@
 #define FLAG_HIDE_PLUTO_HQ_B7F_MASTER_BALL                      0x217
 #define FLAG_HIDE_PLUTO_HQ_B7F_LINK_CORD                        0x218
 #define FLAG_HIDE_PLUTO_HQ_GYARADOSITE                          0x219
-#define FLAG_0x21A               0x21A
+#define FLAG_HIDE_HELEO_CITY_MOOMOOMILK                         0x21A
 #define FLAG_0x21B               0x21B
 #define FLAG_0x21C               0x21C
 #define FLAG_0x21D               0x21D
