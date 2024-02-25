@@ -325,6 +325,10 @@ EventScript_HeleoCity_PokemonGroomer:
     checkmoney 0x3E8 @ 1000
     compare LASTRESULT TRUE
     if FALSE _goto PokemonGroomer_NotEnoughMoney
+    goto GroomingChoice
+
+GroomingChoice:
+    msgbox gText_HeleoCityNpcHouses_GroomerChoosePokemon MSG_NORMAL
     special 0x9F @ Select a Pokemon and store it's position in 0x8004
     waitstate
     compare 0x8004 0x6 @ Don't continue if user backed out
@@ -332,6 +336,13 @@ EventScript_HeleoCity_PokemonGroomer:
     callasm StoreIsPartyMonEgg
     compare LASTRESULT TRUE
     if TRUE _goto PokemonGroomer_InvalidPokemon
+    bufferpartypokemon 0x0 0x8004 @ Buffer pokemon nickname
+    msgbox gText_HeleoCityNpcHouses_GroomerPokemonChoiceConfirmation MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto GroomingChoice
+    goto FinalizeGrooming
+
+FinalizeGrooming:
     removemoney 0x3E8
     sound 0xF8 @ Money SE
     waitse
@@ -348,6 +359,7 @@ EventScript_HeleoCity_PokemonGroomer:
     special 0x13
     fadescreen FADEIN_BLACK
     setflag 0xE0A @ Daily grooming complete
+    msgbox gText_HeleoCityNpcHouses_GroomerComplete MSG_NORMAL
     checkflag 0x24E @ Got soothe bell gift
     if NOT_SET _call PokemonGroomer_FriendshipAssessment
     msgbox gText_HeleoCityNpcHouses_GroomerGroomAgainTomorrow MSG_NORMAL

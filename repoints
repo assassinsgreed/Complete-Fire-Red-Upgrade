@@ -325,6 +325,8 @@ GraphicsInfo_FeMCFieldMove 839FDE0
 GraphicsInfo_FeMCVSSeekerBike 839FDE4
 ## Replace Grumpy Old Man (33)
 GraphicsInfo_ProfessorSakura 839FE34
+## Replace standing female swimmer with sprite consistent with swimming female swimmer (46)
+GraphicsInfo_SwimmerF 839FE68
 ## Replace Rocket Grunt Male (49) and Female (50)
 GraphicsInfo_PlutoGruntMale 839FE74
 GraphicsInfo_PlutoGruntFemale 839FE78

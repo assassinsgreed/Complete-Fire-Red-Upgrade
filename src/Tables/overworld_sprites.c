@@ -57,6 +57,7 @@ extern const u8 GlastrierTiles[];
 extern const u8 SkierTiles[];
 extern const u8 WingullTiles[];
 extern const u8 NidoranMaleTiles[];
+extern const u8 SwimmerFTiles[];
 
 #define EVENT_OBJ_PAL_TAG_NONE 0x1102
 #define gEventObjectBaseOam_16x16 ((const struct OamData*) 0x83A36F8)
@@ -705,6 +706,20 @@ static const struct SpriteFrameImage Table_NidoranMale[] =
     overworld_frame(NidoranMaleTiles, 2, 2, 6),
     overworld_frame(NidoranMaleTiles, 2, 2, 7),
     overworld_frame(NidoranMaleTiles, 2, 2, 8),
+};
+
+static const struct SpriteFrameImage Table_SwimmerF[] =
+{
+    overworld_frame(SwimmerFTiles, 2, 4, 0),
+    overworld_frame(SwimmerFTiles, 2, 4, 1),
+    overworld_frame(SwimmerFTiles, 2, 4, 2),
+    overworld_frame(SwimmerFTiles, 2, 4, 3),
+    overworld_frame(SwimmerFTiles, 2, 4, 4),
+    overworld_frame(SwimmerFTiles, 2, 4, 5),
+    overworld_frame(SwimmerFTiles, 2, 4, 6),
+    overworld_frame(SwimmerFTiles, 2, 4, 7),
+    overworld_frame(SwimmerFTiles, 2, 4, 8),
+    overworld_frame(SwimmerFTiles, 2, 4, 9), // Unused
 };
 
 // #region MC
@@ -1706,5 +1721,25 @@ const struct EventObjectGraphicsInfo GraphicsInfo_NidoranMale =
     .subspriteTables = gEventObjectSpriteOamTables_16x16,
     .anims = gEventObjectImageAnimTable_Standard,
     .images = Table_NidoranMale,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+const struct EventObjectGraphicsInfo GraphicsInfo_SwimmerF =
+{
+    .tileTag = 0xFFFF,
+    .paletteTag1 = 0x122A,
+    .paletteTag2 = EVENT_OBJ_PAL_TAG_NONE,
+    .size = (16 * 32) / 2,
+    .width = 16,
+    .height = 32,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .disableReflectionPaletteLoad = FALSE,
+    .tracks = TRACKS_FOOT,
+    .gender = FEMALE,
+    .oam = gEventObjectBaseOam_16x32,
+    .subspriteTables = gEventObjectSpriteOamTables_16x32,
+    .anims = gEventObjectImageAnimTable_Standard,
+    .images = Table_SwimmerF,
     .affineAnims = gDummySpriteAffineAnimTable,
 };

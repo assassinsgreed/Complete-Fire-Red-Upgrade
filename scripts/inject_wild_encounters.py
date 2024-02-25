@@ -4,7 +4,7 @@ import json
 # Configuration - Change these if you need!
 ROM_NAME = 'test.gba'                                    # The name of the built rom to modify
 ENCOUNTERS_FILE = '.\\automation\\WildEncounters.json'   # File containing the encounters and species to parse
-ENCOUNTERS_TABLE_OFFSET = 0x7296E4                       # Location of the Kanto encounter table (0x7296E4 in vanilla FR rom)
+ENCOUNTERS_TABLE_OFFSET = 0x2FA8DC                       # Location of the Kanto encounter table (0x7296E4 in vanilla FR rom)
 REMOVE_ENCOUNTERS_WITHOUT_REPLACEMENT = True             # Whether encounters found without replacements in WildEncounters.json should be removed 
 
 ENCOUNTER_SLOTS = {

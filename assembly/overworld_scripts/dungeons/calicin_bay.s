@@ -89,6 +89,7 @@ YolenaMovesRight:
 .global EventScript_CalicinBay_StoryEvents
 EventScript_CalicinBay_StoryEvents:
     playbgm 0x19A @ Team Pluto Theme
+    special 0xAF @ Dismount bike if on it
     compare LASTTALKED PlutoGruntClancy
     if equal _call ClancyComment
     compare LASTTALKED PlutoGruntEna
