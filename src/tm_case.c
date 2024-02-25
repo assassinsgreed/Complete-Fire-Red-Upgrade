@@ -148,6 +148,13 @@ void CreateTMCaseSprite(void)
 	}
 }
 
+void StopSpriteAnimation(struct Sprite* sprite)
+{
+	SetPartyHPBarSprite(sprite, 0); //Stop moving and reload original frame
+	sprite->callback(sprite); //Update frame
+	sprite->callback = SpriteCallbackDummy; //Stop animating old mon icon
+}
+
 void ChangeMonIconPalsInTMCase(u16 itemId)
 {
 	u32 i;
@@ -163,13 +170,16 @@ void ChangeMonIconPalsInTMCase(u16 itemId)
 			{
                 sprite->oam.objMode = ST_OAM_OBJ_NORMAL;
 				sprite->callback = SpriteCB_PokeIcon;
+
+				if (canLearn == 2) // Already knows move, have colored but stop animation
+				{
+					StopSpriteAnimation(sprite);
+				}
 			}
 			else
 			{
                 sprite->oam.objMode = ST_OAM_OBJ_BLEND;
-                SetPartyHPBarSprite(sprite, 0); //Stop moving and reload original frame
-				sprite->callback(sprite); //Update frame
-				sprite->callback = SpriteCallbackDummy; //Stop animating old mon icon
+                StopSpriteAnimation(sprite);
 			}
 		}
 	}
