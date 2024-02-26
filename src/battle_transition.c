@@ -746,6 +746,7 @@ const struct BattleTransitionLogo gBattleTransitionLogos[] =
 	#ifndef UNBOUND //Modify this section
 	{CLASS_TEAM_PLUTO, TeamPlutoBattleLogoTiles, TeamPlutoBattleLogoPal, TeamPlutoBattleLogoMap},
 	{CLASS_TEAM_PLUTO_ADMIN, TeamPlutoBattleLogoTiles, TeamPlutoBattleLogoPal, TeamPlutoBattleLogoMap},
+	{CLASS_TEAM_PLUTO_LEADER, TeamPlutoBattleLogoTiles, TeamPlutoBattleLogoPal, TeamPlutoBattleLogoMap},
 	#else //For Pokemon Unbound
 	{0xFF, DynamaxBattleLogoTiles, DynamaxBattleLogoPal, DynamaxBattleLogoMap},
 	{CLASS_SHADOW, ShadowBattleLogoTiles, ShadowBattleLogoPal, ShadowBattleLogoMap},

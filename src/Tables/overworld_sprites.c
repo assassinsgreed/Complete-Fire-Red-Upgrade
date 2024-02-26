@@ -34,6 +34,7 @@ extern const u8 LeaderChanceTiles[];
 extern const u8 LeaderCaseyFTiles[];
 extern const u8 LeaderCaseyMTiles[];
 extern const u8 LeaderAbbyTiles[];
+extern const u8 PlutoLeaderKurtisTiles[];
 
 // Overworld Events
 extern const u8 SandygastTiles[];
@@ -311,6 +312,19 @@ static const struct SpriteFrameImage Table_PlutoAdminRonald[] =
     overworld_frame(PlutoAdminRonaldTiles, 2, 4, 6),
     overworld_frame(PlutoAdminRonaldTiles, 2, 4, 7),
     overworld_frame(PlutoAdminRonaldTiles, 2, 4, 8),
+};
+
+static const struct SpriteFrameImage Table_PlutoLeaderKurtis[] =
+{
+    overworld_frame(PlutoLeaderKurtisTiles, 2, 4, 0),
+    overworld_frame(PlutoLeaderKurtisTiles, 2, 4, 1),
+    overworld_frame(PlutoLeaderKurtisTiles, 2, 4, 2),
+    overworld_frame(PlutoLeaderKurtisTiles, 2, 4, 3),
+    overworld_frame(PlutoLeaderKurtisTiles, 2, 4, 4),
+    overworld_frame(PlutoLeaderKurtisTiles, 2, 4, 5),
+    overworld_frame(PlutoLeaderKurtisTiles, 2, 4, 6),
+    overworld_frame(PlutoLeaderKurtisTiles, 2, 4, 7),
+    overworld_frame(PlutoLeaderKurtisTiles, 2, 4, 8),
 };
 
 static const struct SpriteFrameImage Table_Rival[] =
@@ -1041,6 +1055,26 @@ const struct EventObjectGraphicsInfo GraphicsInfo_PlutoAdminRonald =
     .subspriteTables = gEventObjectSpriteOamTables_16x32,
     .anims = gEventObjectImageAnimTable_Standard,
     .images = Table_PlutoAdminRonald,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+const struct EventObjectGraphicsInfo GraphicsInfo_PlutoLeaderKurtis =
+{
+    .tileTag = 0xFFFF,
+    .paletteTag1 = 0x122B,
+    .paletteTag2 = EVENT_OBJ_PAL_TAG_NONE,
+    .size = (16 * 32) / 2,
+    .width = 16,
+    .height = 32,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .disableReflectionPaletteLoad = FALSE,
+    .tracks = TRACKS_FOOT,
+    .gender = MALE,
+    .oam = gEventObjectBaseOam_16x32,
+    .subspriteTables = gEventObjectSpriteOamTables_16x32,
+    .anims = gEventObjectImageAnimTable_Standard,
+    .images = Table_PlutoLeaderKurtis,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 
