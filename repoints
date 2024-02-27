@@ -333,7 +333,7 @@ GraphicsInfo_PlutoGruntFemale 839FE78
 ## Replace Sailing Chef (59)
 GraphicsInfo_LeaderCaseyM 839FE9C
 ## Replace Female attendant (65)
-#TODO GraphicsInfo_PlutoLeaderKurtis 839FEB4
+GraphicsInfo_PlutoLeaderKurtis 839FEB4
 ## Replace Prof Oak (71)
 GraphicsInfo_ProfessorHawthorne 839FECC
 ## Replace Rival (72)
@@ -413,6 +413,9 @@ PlutoAdminRonaldBPal 8239C54
 ## Replace Aqua Admin Shelly (72)
 PlutoAdminIreneBTiles 82397BC
 PlutoAdminIreneBPal 8239C5C
+## Replace Magma Admin Tabitha (73)
+PlutoLeaderKurtisBTiles 82397C4
+PlutoLeaderKurtisBPal 8239C64
 ## Replace Cue Ball (96)
 NurseTiles 823987C
 NursePal 8239D1C

@@ -48,6 +48,7 @@ extern const u16 ProfessorSakuraPal[];
 extern const u16 LeaderChancePal[];
 extern const u16 LeaderCaseyFPal[];
 extern const u16 LeaderAbbyPal[];
+extern const u16 PlutoLeaderKurtisPal[];
 
 // Overworld Events
 extern const u16 SandygastPal[];
@@ -348,6 +349,7 @@ static const u16* sPlayerMarlonOutfitColours[] =
 		{ LeaderAbbyPal, 0x1228 },
 		{ NidoranMalePal, 0x1229 },
 		{ SwimmerFPal, 0x122A },
+		{ PlutoLeaderKurtisPal, 0x122B },
 		{ NULL, 0x11FF }
 	};
 	const struct SpritePalette* const gObjectEventSpritePalettesSwitcher[255] = {
