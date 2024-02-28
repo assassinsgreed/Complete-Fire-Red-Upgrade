@@ -78,8 +78,8 @@
 #define FLAG_HIDE_TEAM_PLUTO_IN_CALICIN_BAY                0x048
 #define FLAG_HIDE_TEAM_PLUTO_YOLENA_CALICIN_BAY            0x049
 #define FLAG_HIDE_TEAM_PLUTO_GRUNTS_AND_KURTISS_IN_HQ      0x04A
-#define FLAG_HIDE_TEAM_PLUTO_IRENE_IN_HQ                   0x04B
-#define FLAG_HIDE_TEAM_PLUTO_RONALD_IN_HQ                  0x04C
+#define FLAG_HIDE_SEAFOAM_B3F_BOULDER_6                    0x04B
+#define FLAG_HIDE_SEAFOAM_B4F_BOULDER_1                    0x04C
 #define FLAG_HIDE_SEAFOAM_B4F_BOULDER_2                    0x04D
 #define FLAG_HIDE_SILPH_RIVAL                              0x04E
 #define FLAG_HIDE_ROUTE_22_RIVAL                           0x04F
@@ -544,9 +544,9 @@
 #define FLAG_HIDE_PLUTO_HQ_B7F_FULL_RESTORE                     0x216
 #define FLAG_HIDE_PLUTO_HQ_B7F_MASTER_BALL                      0x217
 #define FLAG_HIDE_PLUTO_HQ_B7F_LINK_CORD                        0x218
-#define FLAG_HIDE_PLUTO_HQ_GYARADOSITE                          0x219
+#define FLAG_SEEMS_MESSED_UP?                                   0x219
 #define FLAG_HIDE_HELEO_CITY_MOOMOOMILK                         0x21A
-#define FLAG_0x21B               0x21B
+#define FLAG_HIDE_PLUTO_HQ_GYARADOSITE                          0x21B
 #define FLAG_0x21C               0x21C
 #define FLAG_0x21D               0x21D
 #define FLAG_0x21E               0x21E

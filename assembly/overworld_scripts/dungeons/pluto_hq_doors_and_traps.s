@@ -16,10 +16,36 @@
 .equ Passable, 0x0
 .equ Impassable, 0x1
 
+.equ PlutoStoryEventVar, 0x405D
+
 .global MapScript_PlutoBaseHQ_B1F
 MapScript_PlutoBaseHQ_B1F:
     mapscript MAP_SCRIPT_ON_LOAD MapEntryScript_PlutoBaseHQ_B1F_SecurityGates
+    mapscript MAP_SCRIPT_ON_TRANSITION MapEntryScript_PlutoBaseHQ_B1F_ShowAlistair
+    mapscript MAP_SCRIPT_ON_FRAME_TABLE LevelScripts_PlutoHQEvents
     .byte MAP_SCRIPT_TERMIN
+
+LevelScripts_PlutoHQEvents:
+    levelscript PlutoStoryEventVar 0x2 LevelScript_AlistairApproachesPlayerInsideBase
+    .hword LEVEL_SCRIPT_TERMIN
+
+LevelScript_AlistairApproachesPlayerInsideBase:
+    pause DELAY_HALFSECOND
+    applymovement PLAYER m_PlayerWalkIntoBase
+    waitmovement PLAYER
+    applymovement 0x5 m_LookLeft
+    pause DELAY_HALFSECOND
+    applymovement 0x5 m_LookRight
+    pause DELAY_HALFSECOND
+    applymovement 0x5 m_AlistairWalksToPlayer
+    waitmovement 0x5
+    msgbox gText_PlutoHQ_AlistairMeetsWithPlayer MSG_NORMAL
+    applymovement 0x5 m_AlistairLeaves
+    waitmovement 0x5
+    hidesprite 0x5
+    setflag 0x3C @ Hide Alistair
+    setvar PlutoStoryEventVar 0x3
+    end
 
 .global MapScript_PlutoBaseHQ_B1FHall
 MapScript_PlutoBaseHQ_B1FHall:
@@ -59,7 +85,17 @@ MapScript_PlutoBaseHQ_B7F:
 MapEntryScript_PlutoBaseHQ_B1F_SecurityGates:
     checkflag 0x200
     if SET _call HideB1FCerberusDoor
+    end    
+
+MapEntryScript_PlutoBaseHQ_B1F_ShowAlistair:
+    compare PlutoStoryEventVar 0x2
+    if equal _call ShowAlistairInBase
     end
+
+ShowAlistairInBase:
+    clearflag 0x3C @ Temporarily show Alistair
+    showsprite 0x5 @ Alistair
+    return
 
 MapEntryScript_PlutoBaseHQ_B1FHall_SecurityGates:
     checkflag 0x201
@@ -464,9 +500,10 @@ HideB7FCypressDoor:
 
 HideB7FSerpentDoor:
     setmaptile 0x1E 0xD HorizontalTiles_DarkYellow Passable
-    setmaptile 0xB1F 0xD HorizontalTiles_LightYellow Passable
+    setmaptile 0x1F 0xD HorizontalTiles_LightYellow Passable
     setmaptile 0x1E 0xE HorizontalTiles_DarkYellow Passable
-    setmaptile 0xB1F 0xE HorizontalTiles_LightYellow Passable
+    setmaptile 0x1F 0xE HorizontalTiles_LightYellow Passable
+    setmaptile 0x1F 0xF HorizontalTiles_LightYellow Passable
     return
 
 # Door code logic ends here!
@@ -535,3 +572,7 @@ SetRattata:
 SetZubat:
     setvar 0x4000 SPECIES_ZUBAT
     return
+
+m_PlayerWalkIntoBase: .byte walk_left, walk_left, look_up, end_m
+m_AlistairWalksToPlayer: .byte walk_down, walk_down, end_m
+m_AlistairLeaves: .byte walk_up, walk_up, walk_up, walk_up, walk_up, end_m

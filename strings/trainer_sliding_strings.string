@@ -180,9 +180,29 @@ You brat! Just for that, I'll lay\non an extra beating!\p
 #org @sText_Ronald_LowHP
 Ngh. I never thought you'd be this\nstrong.\p
 
+// Team Pluto Admin Irene (Pluto HQ)
+#org @sText_Irene_PlutoHQ_FirstMonDown
+So you defeated one of my Pok\emon.\nDon't assume it'll happen again.\p
+
+#org @sText_Irene_PlutoHQ_LastSwitchIn
+This isn't over until I've crushed\neach of your Pok\emon!\p
+
+#org @sText_Irene_PlutoHQ_LowHP
+Enough! I won't allow you to disrupt\nthe boss!\p
+
+// Team Pluto Admin Ronald (Pluto HQ)
+#org @sText_Ronald_PlutoHQ_FirstMonDown
+Gyaha! Just for that, I'll rough\nyour Pok\emon up even harder!\p
+
+#org @sText_Ronald_PlutoHQ_LastSwitchIn
+Look at that, you've upset me and my\nPok\emon.\p
+
+#org @sText_Ronald_PlutoHQ_LowHP
+This isn't over yet!\p
+
 // Team Pluto Leader Kurtis
 #org @sText_Kurtis_FirstMonDown
-I can see why you defeated Irene\nand Ronald. You'd best not\nunderestimate me, though.\p
+I can see why you defeated Irene\nand Ronald.\pYou'd best not underestimate me,\nthough.\p
 
 #org @sText_Kurtis_LastSwitchIn
 Team Pluto won't fall to the likes\nof you. Not now, not ever.\p

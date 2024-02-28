@@ -65,6 +65,9 @@ static const struct TrainerSlide sTrainerSlides[] =
 	{0x110, sText_Rival5_FirstMonDown, sText_Rival5_LastSwitchIn, sText_Rival5_LowHP}, // Fifth rival battle, Glaceon
 	{0x111, sText_Rival5_FirstMonDown, sText_Rival5_LastSwitchIn, sText_Rival5_LowHP}, // Fifth rival battle, Sylveon
 	{0x117, sText_Leader6_FirstMonDown, sText_Leader6_LastSwitchIn, sText_Leader6_LowHP}, // Gym Leader Abby
+	{0x137, sText_Irene_PlutoHQ_FirstMonDown, sText_Irene_PlutoHQ_LastSwitchIn, sText_Irene_PlutoHQ_LowHP}, // Pluto Admin Irene (Pluto HQ)
+	{0x138, sText_Ronald_PlutoHQ_FirstMonDown, sText_Ronald_PlutoHQ_LastSwitchIn, sText_Ronald_PlutoHQ_LowHP}, // Pluto Admin Ronald (Pluto HQ)
+	{0x139, sText_Kurtis_FirstMonDown, sText_Kurtis_LastSwitchIn, sText_Kurtis_LowHP}, // Pluto Leader Kurtis
 	{}, // Champion Selene
 };
 

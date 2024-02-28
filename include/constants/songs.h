@@ -47,10 +47,9 @@
 #define BGM_BATTLE_RIVAL_2 0x18E // Rival Hugh battle BW2
 #define BGM_BATTLE_TEAM_PLUTO_GRUNTS 0x1A5 // Plasma Battle BW1
 #define BGM_BATTLE_TEAM_PLUTO_ADMINS 0x18A // Neo Plasma Battle BW2
-#define BGM_BATTLE_TEAM_PLUTO_ADMINS_FINAL 0x15C // N final battle theme BW
-#define BGM_BATTLE_TEAM_PLUTO_KURTIS 0x15D // Ghetsis battle theme BW
-#define BGM_BATTLE_ALISTAIR 0x17C // N Battle BW
-#define BGM_BATTLE_TRAINER_HOUSE 0x12B // Champion Iris battle theme 
+#define BGM_BATTLE_TEAM_PLUTO_KURTIS 0x1AA // Johto Champion
+#define BGM_BATTLE_ALISTAIR 0x15C // N final battle theme BW
+#define BGM_BATTLE_TRAINER_HOUSE 0x12B // Champion Iris battle theme
 #define BGM_BATTLE_CASEY 0x1AF // Champion Alder battle theme
 
 // See here for additional SE in Vanilla FR: https://www.pokecommunity.com/showthread.php?p=5610866#post5610866

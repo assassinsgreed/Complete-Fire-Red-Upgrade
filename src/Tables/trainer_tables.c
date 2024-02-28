@@ -3882,6 +3882,163 @@ const struct TrainerMonNoItemDefaultMoves sParty_PlutoHQ_B7F_TeamPlutoRichard[] 
     { .lvl = 49, .species = SPECIES_MALAMAR },
 };
 
+const struct TrainerMonItemCustomMoves sParty_PlutoHQ_B4F_TeamPlutoAdminIrene[] = {
+    {
+        .lvl = 50,
+        .species = SPECIES_NOCTOWL,
+        .moves = {
+            MOVE_ROOST,
+            MOVE_MOONBLAST,
+            MOVE_AIRSLASH,
+            MOVE_NIGHTSHADE
+        },
+        .ability = Ability_Hidden // Tinted Lens
+    },
+    {
+        .lvl = 50,
+        .species = SPECIES_MUK_A,
+        .moves = {
+            MOVE_KNOCKOFF,
+            MOVE_ACIDARMOR,
+            MOVE_POISONJAB,
+            MOVE_ICEPUNCH
+        },
+        .heldItem = ITEM_BLACK_SLUDGE,
+        .ability = Ability_1 // Poison Touch
+    },
+    {
+        .lvl = 50,
+        .species = SPECIES_MISMAGIUS,
+        .moves = {
+            MOVE_MYSTICALFIRE,
+            MOVE_SHADOWBALL,
+            MOVE_PSYSHOCK,
+            MOVE_DESTINYBOND
+        },
+        .ability = Ability_1 // Levitate
+    },
+    {
+        .lvl = 51,
+        .species = SPECIES_SALAZZLE,
+        .moves = {
+            MOVE_NASTYPLOT,
+            MOVE_FLAMETHROWER,
+            MOVE_TOXIC,
+            MOVE_VENOSHOCK
+        },
+        .heldItem = ITEM_SITRUS_BERRY,
+        .ability = Ability_1 // Corrosion
+    }
+};
+
+const struct TrainerMonItemCustomMoves sParty_PlutoHQ_B7F_TeamPlutoAdminRonald[] = {
+    {
+        .lvl = 50,
+        .species = SPECIES_KROOKODILE,
+        .moves = {
+            MOVE_CRUNCH,
+            MOVE_EARTHQUAKE,
+            MOVE_THUNDERFANG,
+            MOVE_STEALTHROCK
+        },
+        .ability = Ability_2 // Moxie
+    },
+    {
+        .lvl = 50,
+        .species = SPECIES_FERROTHORN,
+        .moves = {
+            MOVE_LEECHSEED,
+            MOVE_CURSE,
+            MOVE_GYROBALL,
+            MOVE_POWERWHIP
+        },
+        .heldItem = ITEM_OCCA_BERRY,
+        .ability = Ability_1 // Iron Barbs
+    },
+    {
+        .lvl = 50,
+        .species = SPECIES_WEAVILE,
+        .moves = {
+            MOVE_FAKEOUT,
+            MOVE_ICICLECRASH,
+            MOVE_THROATCHOP,
+            MOVE_AERIALACE
+        },
+        .ability = Ability_1 // Pressure
+    },
+    {
+        .lvl = 51,
+        .species = SPECIES_SCRAFTY,
+        .moves = {
+            MOVE_DRAGONDANCE,
+            MOVE_POWERUPPUNCH,
+            MOVE_CRUNCH,
+            MOVE_POISONJAB
+        },
+        .heldItem = ITEM_SITRUS_BERRY,
+        .ability = Ability_1 // Shed Skin
+    }
+};
+
+const struct TrainerMonItemCustomMoves sParty_PlutoHQ_B1F_TeamPlutoLeaderKurtis[] = {
+    {
+        .lvl = 51,
+        .species = SPECIES_AMOONGUSS,
+        .moves = {
+            MOVE_CLEARSMOG,
+            MOVE_SPORE,
+            MOVE_SYNTHESIS,
+            MOVE_SLUDGEBOMB
+        },
+        .ability = Ability_Hidden // Regenerator
+    },
+    {
+        .lvl = 51,
+        .species = SPECIES_KOMMO_O,
+        .moves = {
+            MOVE_BELLYDRUM,
+            MOVE_DRAGONCLAW,
+            MOVE_POISONJAB,
+            MOVE_CLOSECOMBAT
+        },
+        .heldItem = ITEM_SITRUS_BERRY,
+        .ability = Ability_Hidden // Overcoat
+    },
+    {
+        .lvl = 51,
+        .species = SPECIES_DUSKNOIR,
+        .moves = {
+            MOVE_WILLOWISP,
+            MOVE_SHADOWPUNCH,
+            MOVE_BRICKBREAK,
+            MOVE_LEECHLIFE
+        },
+        .ability = Ability_1 // Pressure
+    },
+    {
+        .lvl = 51,
+        .species = SPECIES_EXCADRILL,
+        .moves = {
+            MOVE_EARTHQUAKE,
+            MOVE_SWORDSDANCE,
+            MOVE_ROCKSLIDE,
+            MOVE_IRONHEAD
+        },
+        .ability = Ability_Hidden // Mold Breaker
+    },
+    {
+        .lvl = 52,
+        .species = SPECIES_GYARADOS,
+        .moves = {
+            MOVE_DRAGONDANCE,
+            MOVE_WATERFALL,
+            MOVE_ICEFANG,
+            MOVE_CRUNCH
+        },
+        .heldItem = ITEM_GYARADOSITE,
+        .ability = Ability_1 // Intimidate
+    },
+};
 // #endregion
 
 // #endregion
@@ -7662,6 +7819,39 @@ const struct Trainer gTrainers[] = {
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_RISKY,
         .partySize = NELEMS(sParty_PlutoHQ_B7F_TeamPlutoRichard),
         .party = {.NoItemDefaultMoves = sParty_PlutoHQ_B7F_TeamPlutoRichard}
+    },
+    [TRAINER_PLUTO_HQ_B4F_PLUTO_ADMIN_IRENE] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_TEAM_PLUTO_ADMIN,
+        .trainerPic = TRAINER_PIC_PLUTO_ADMIN_IRENE,
+        .trainerName = {_I, _r, _e, _n, _e, _END},
+        .items = { ITEM_HYPER_POTION },
+        .doubleBattle = FALSE,
+        .aiFlags =  AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_RISKY,
+        .partySize = NELEMS(sParty_PlutoHQ_B4F_TeamPlutoAdminIrene),
+        .party = {.ItemCustomMoves = sParty_PlutoHQ_B4F_TeamPlutoAdminIrene}
+    },
+    [TRAINER_PLUTO_HQ_B7F_PLUTO_ADMIN_RONALD] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_TEAM_PLUTO_ADMIN,
+        .trainerPic = TRAINER_PIC_PLUTO_ADMIN_RONALD,
+        .trainerName = {_R, _o, _n, _a, _l, _d, _END},
+        .items = { ITEM_HYPER_POTION },
+        .doubleBattle = FALSE,
+        .aiFlags =  AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_RISKY,
+        .partySize = NELEMS(sParty_PlutoHQ_B7F_TeamPlutoAdminRonald),
+        .party = {.ItemCustomMoves = sParty_PlutoHQ_B7F_TeamPlutoAdminRonald}
+    },
+    [TRAINER_PLUTO_HQ_B1F_PLUTO_LEADER_KURTIS] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_TEAM_PLUTO_LEADER,
+        .trainerPic = TRAINER_PIC_PLUTO_LEADER_KURTIS,
+        .trainerName = {_K, _u, _r, _t, _i, _s, _END},
+        .items = { ITEM_FULL_RESTORE, ITEM_MEGA_RING },
+        .doubleBattle = FALSE,
+        .aiFlags =  AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_SEMI_SMART,
+        .partySize = NELEMS(sParty_PlutoHQ_B1F_TeamPlutoLeaderKurtis),
+        .party = {.ItemCustomMoves = sParty_PlutoHQ_B1F_TeamPlutoLeaderKurtis}
     },
     // #endregion
     // #endregion

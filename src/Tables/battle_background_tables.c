@@ -80,6 +80,9 @@ extern const u8 BG_ForestPal[];
 extern const u8 BG_Forest_PeradonTiles[];
 extern const u8 BG_Forest_PeradonMap[];
 extern const u8 BG_Forest_PeradonPal[];
+extern const u8 BG_PlutoLeaderTiles[];
+extern const u8 BG_PlutoLeaderMap[];
+extern const u8 BG_PlutoLeaderPal[];
 
 // Evening (just palettes)
 extern const u8 BG_Grass_EveningPal[];
@@ -291,6 +294,14 @@ const struct BattleBackground gBattleTerrainTable[] =
 		.entryTilemap = gBattleTerrainAnimTilemap_LongGrass,
 		.palette = BG_Forest_PeradonPal,
 	},
+	[BATTLE_TERRAIN_PLUTO_LEADER] =
+	{
+		.tileset = BG_PlutoLeaderTiles,
+		.tilemap = BG_PlutoLeaderMap,
+		.entryTileset = gBattleTerrainAnimTiles_Building,
+		.entryTilemap = gBattleTerrainAnimTilemap_Building,
+		.palette = BG_PlutoLeaderPal,
+	},
 };
 
 const struct BattleBackground gBattleTerrainTableEvening[] =
@@ -479,6 +490,14 @@ const struct BattleBackground gBattleTerrainTableEvening[] =
 		.entryTilemap = gBattleTerrainAnimTilemap_LongGrass,
 		.palette = BG_Forest_Peradon_EveningPal,
 	},
+	[BATTLE_TERRAIN_PLUTO_LEADER] =
+	{
+		.tileset = BG_PlutoLeaderTiles,
+		.tilemap = BG_PlutoLeaderMap,
+		.entryTileset = gBattleTerrainAnimTiles_Building,
+		.entryTilemap = gBattleTerrainAnimTilemap_Building,
+		.palette = BG_PlutoLeaderPal,
+	},
 };
 
 const struct BattleBackground gBattleTerrainTableNight[] =
@@ -666,6 +685,14 @@ const struct BattleBackground gBattleTerrainTableNight[] =
 		.entryTileset = gBattleTerrainAnimTiles_LongGrass,
 		.entryTilemap = gBattleTerrainAnimTilemap_LongGrass,
 		.palette = BG_Forest_Peradon_NightPal,
+	},
+	[BATTLE_TERRAIN_PLUTO_LEADER] =
+	{
+		.tileset = BG_PlutoLeaderTiles,
+		.tilemap = BG_PlutoLeaderMap,
+		.entryTileset = gBattleTerrainAnimTiles_Building,
+		.entryTilemap = gBattleTerrainAnimTilemap_Building,
+		.palette = BG_PlutoLeaderPal,
 	},
 };
 #endif

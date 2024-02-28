@@ -92,13 +92,13 @@ Looks like I'm eating crow!
 Ever feel like you're being watched?\nThat'd be the statues around base.\pThis machine here can turn them\noff.\pDon't get the wrong idea, though.\nYou still don't stand a chance of\lreaching the boss.
 
 #org @gText_PlutoHQ_B4F_TeamPlutoMatty_Intro
-I heard that certain card keys open\ncertain doors.\pThen[.] It's really important I don't\nlet you leave with the Owl Key!
+I heard that certain card keys open\ncertain doors.\pThen[.] It's really important I don't\nlet you leave with the Cypress\lKey!
 
 #org @gText_PlutoHQ_B4F_TeamPlutoMatty_Defeat
 H-hey! That's not okay!
 
 #org @gText_PlutoHQ_B4F_TeamPlutoMatty_Chat
-You won fair and square, but let me\nask you a favor[.]\pLeave the Owl Key here, pretty\nplease?\pI'll get in a lot of trouble if you\nuse it to interrupt Miss Irene.
+You won fair and square, but let me\nask you a favor[.]\pLeave the Cypress Key here, pretty\nplease?\pI'll get in a lot of trouble if you\nuse it to interrupt Miss Irene.
 
 #org @gText_PlutoHQ_B4F_ScientistGary_Intro
 Do you even know what we're trying\nto do here? Pff! Unlikely.
@@ -207,3 +207,147 @@ I said halt!
 
 #org @gText_PlutoHQ_B7F_TeamPlutoRichard_Chat
 Huh? It's ironic for a criminal to\ncall on the name of the law?\pGet off your high horse, why don't\nyou?
+
+#org @gText_PlutoHQ_B4F_AdminIreneConversation
+[RED]Tch[.] I should have expected you\nwould be our mystery intruder.\pListen up.\pYour assault on our base is nothing\nshort of disgraceful.\pAs a Pluto Admin, it is my\nresponsibility to stop you here.\pBut, even more so[.]\pAfter our encounter in Rubarr Desert,\nit is my personal pleasure as well.
+
+#org @gText_PlutoHQ_B4F_AdminIreneConversation_PreBattle
+[RED]You insolent brat. Let me remind you\nwhy I am among Team Pluto's best.
+
+#org @gText_PlutoHQ_B4F_AdminIreneConversation_BattleLost
+Unbelievable. This is an absolute\ndisgrace.
+
+#org @gText_PlutoHQ_B4F_AdminIreneConversation_PostBattle
+[RED]Tch[.] So, you've improved since we\nlast met.\pIt doesn't matter.\pEven though I couldn't stop you, the\nboss is sure to put you in your\lplace.\pIn fact, I look forward to it.\pHere, take this Serpent Key.
+
+#org @gText_PlutoHQ_B4F_AdminIreneConversation_AfterSerpentKey
+[RED]You'll need that if you want to\nreach the boss.\pI look forward to your humiliating\ndefeat.
+
+#org @gText_PlutoHQ_B7F_AdminRonaldConversation
+Gyahaha! So, looks like you're the\nintruder everyone's chasing after.\pAnd look at that, you came right to\nme!\pYou know that stint at Calicin Bay?\nThat was all my doing.\pMy daughter said you fell for it\nhook, line, and sinker. Gyahaha!\pAnyways, looks like it didn't slow you\ndown enough.\pLook, I'll level with ya.\nI can't let you interrupt the boss.\pHe's busy preparing the Snag Machines\nwe got from the Orre Region.\pAfter that, we'll really show the\nKulure region we mean business, by\ltaking their precious Pok\emon!\pGyahahaha! But why am I telling you\nall this, anyways?\pMaybe I just like your spunk.
+
+#org @gText_PlutoHQ_B7F_AdminRonaldConversation_PreBattle
+Anyways, you know how this is gonna\ngo, right?\pIf you want my Cerberus Key and\nyour shot at the boss, you'll have\lto beat me first.
+
+#org @gText_PlutoHQ_B7F_AdminRonaldConversation_BattleLost
+Heh, I lost, huh?
+
+#org @gText_PlutoHQ_B4F_AdminRonaldConversation_PostBattle
+Look, you won fair and square, so\nI'll honor my end of the bargain.\pHere, the key is yours.
+
+#org @gText_PlutoHQ_B7F_AdminRonaldConversation_AfterCerberusKey
+You'll need that if you want a shot\nat fighting the boss.\pDon't get the wrong idea, though.\nHe's way tougher than any of us.\pYou'd be better off just turning tail\nand run.\pGyahahaha! I wonder what you'll\nchoose to do?
+
+#org @gText_PlutoHQ_B1F_KurtisEncounter_KurtisSeesPlayer
+[BLACK]???: [BLUE]Ah, so the sneaking rat reveals\nitself, finally[.]\pYou, come closer, won't you?\nMy eyesight isn't what it used to\lbe.
+
+#org @gText_PlutoHQ_B1F_KurtisEncounter_KurtisIntroduction
+[BLACK]???: [BLUE]Now, allow me to introduce\nmyself.
+
+#org @gText_PlutoHQ_B1F_KurtisEncounter_KurtisAnnouncesHimself
+[BLACK]Kurtis: [BLUE]I am the leader of Team\nPluto, Kurtis.\pThough, I'm sure you assumed as\nmuch, given that you've been\lturning our base upside down trying\lto find me.\pNow[.] I don't know who sent you, but\nit doesn't matter.\pThe truth of the matter is that\nyou've personally caused me a\lgreat deal of grief.\pAnd, well, I can't just let that\nslide.\pNo[.] I think I'll make an example of\nyou.
+
+#org @gText_PlutoHQ_B1F_KurtisEncounter_AlistairAnnouncesArrival
+[BLACK]???: [BLUE][PLAYER], I'm here!
+
+#org @gText_PlutoHQ_B1F_KurtisEncounter_AlistairArrives
+[BLACK]Alistair: [BLUE]You move quickly!\pNot only did you clear out most of\nthe thugs here, you also found\ltheir boss.\pGreat work.
+
+#org @gText_PlutoHQ_B1F_KurtisEncounter_KurtisUpsetWithAlistairsArrival
+[BLACK]Kurtis: [BLUE]So the rat has friends[.]\pI must admit, I'm disappointed in\nyou.\pTo not only do something as reckless\nas storming our base[.]\pBut, to drag others into your mess\nas well? Truly foolish.\pNow[.] You wouldn't think of ganging up\non an old man, would you?\pNo, of course not. Let's even the\nodds. Only fair, right?
+
+#org @gText_PlutoHQ_B1F_KurtisEncounter_KurtisCallsForIreneAndAlistair
+[BLACK]Kurtis: [BLUE]Irene! Ronald!\pWhat are you doing? The intruders\nhave reached my office.\pHurry up and crush them!
+
+#org @gText_PlutoHQ_B1F_KurtisEncounter_KurtisDenouncesThePlayerAndAlistair
+[BLACK]Kurtis: [BLUE]Now[.] While we wait for my\nsubordinates, why don't we talk?\pAfter all, we aren't in a rush, are\nwe?\pI'm sure you're wondering why Team\nPluto does what it does, aren't\lyou?
+
+#org @gText_PlutoHQ_B1F_KurtisEncounter_AlistairInterrupts
+[BLACK]Alistair: [BLUE]We have no interest in the\nramblings of a criminal!
+
+#org @gText_PlutoHQ_B1F_KurtisEncounter_KurtisRespondsToAlistair
+[BLACK]Kurtis: [BLUE]I wasn't talking to you.
+
+#org @gText_PlutoHQ_B1F_KurtisEncounter_KurtisRevealsPlutosAmbitions
+[BLACK]Kurtis: [BLUE]Now, where was I[.]\nAh, yes, our goals[.]\pIt's really quite simple. People are\nlost, misguided, hopelessly weak.\pLost little lambs, in need of a\nshepherd with a firm hand[.]\pThat's it - that's all it is.\pWe seek power, so we can rule over\nthis foolish little flock.\pIt doesn't matter how we achieve\nit.\pA legendary Pok\emon, resting beneath\nthe dunes[.]\pMysterious stones that unlock a\nPok\emon's true potential[.]\pDevices that wrest Pok\emon from their\nincompetent trainers[.]\pAll means to an end.\pYou may interrupt one plan, but we\nalways have another in the wings.
+
+#org @gText_PlutoHQ_B1F_KurtisEncounter_AlistairRespondsToKurtisGoals
+[BLACK]Alistair: [BLUE]So that's it, huh?\pNo grand ambitions, just oppressing\npeople. You make me sick.
+
+#org @gText_PlutoHQ_B1F_KurtisEncounter_KurtisRespondsToAlistairsDisdain
+[BLACK]Kurtis: [BLUE]Your opinion of me is of no\nconcern.
+
+#org @gText_PlutoHQ_B1F_KurtisEncounter_IreneArrives
+[BLACK]Irene: [RED]Boss, we're here! Sorry we're\nlate.
+
+#org @gText_PlutoHQ_B1F_KurtisEncounter_RonaldArrives
+[BLACK]Ronald: [BLUE]Looks like you decided to\nbother the boss after all, huh?
+
+#org @gText_PlutoHQ_B1F_KurtisEncounter_KurtisInitiatesFight
+[BLACK]Kurtis: [BLUE]Good, everyone is here now.\nWe can begin.
+
+#org @gText_PlutoHQ_B1F_KurtisEncounter_AlistairChallengesIreneAndRonald
+[BLACK]Alistair: [BLUE][PLAYER], this is not looking\ngood[.]\pI'll deal with these two! You deal\nwith their boss.
+
+#org @gText_PlutoHQ_B1F_KurtisEncounter_IreneBattlesAlistair
+[BLACK]Irene: [RED]You really think you can\nhandle both of us? Absurd.
+
+#org @gText_PlutoHQ_B1F_KurtisEncounter_RonaldBattlesAlistair
+[BLACK]Ronald: [BLUE]Gyahaha! I look forward to\nseeing how you compare to your\lpartner in crime over there.
+
+#org @gText_PlutoHQ_B1F_KurtisEncounter_PreparesToChallengePlayer
+[BLACK]Kurtis: [BLUE]So you will be my opponent,\nthen?\pHow disappointing[.] You look weak.\pIt can't be helped, however. You\nmust be put in your place.
+
+#org @gText_PlutoHQ_B1F_KurtisEncounter_KurtisPreBattle
+[BLACK]Kurtis: [BLUE]Make no mistake.\pWhile my body may be frail, my mind\nand my Pok\emon are as sharp as\lever.\pI will show you firsthand why power\nis king!
+
+#org @gText_PlutoHQ_B1F_KurtisEncounter_KurtisLosesBattle
+Unbelievable. To think a child could\nbe this strong[.]
+
+#org @gText_PlutoHQ_B1F_KurtisEncounter_KurtisCommentsOnLoss
+[BLACK]Kurtis: [BLUE]Well color me impressed.\pI didn't expect you would have what\nit takes to overcome me.
+
+#org @gText_PlutoHQ_B1F_KurtisEncounter_IreneCommentsOnLoss
+[BLACK]Irene: [RED]Boss! My sincerest apologies.\nWe couldn't stop this one.
+
+#org @gText_PlutoHQ_B1F_KurtisEncounter_RonaldCommentsOnLoss
+[BLACK]Ronald: [BLUE]If only you two would've\njoined up with us.
+
+#org @gText_PlutoHQ_B1F_KurtisEncounter_AlistairCommentsOnHisVictory
+[BLACK]Alistair: [BLUE]Feh! Thinking that I could\nlose to someone as pathetic as you\llot.\pTruly conceited.
+
+#org @gText_PlutoHQ_B1F_KurtisEncounter_KurtisRemindsTheTwoAboutHisPlans
+[BLACK]Kurtis: [BLUE]It matters not.\pLike I said, even if you stop one of\nour plans, another will take it's\lplace.
+
+#org @gText_PlutoHQ_B1F_KurtisEncounter_AlistairRevealsHisPlan
+[BLACK]Alistair: [BLUE]Oh yes. That reminds me.\pYou certainly love your plans, don't\nyou? Almost as much as you love\ltalking, it seems.\pYou know you aren't the only one\nwith plans, right?\pHow foolish would it be for two\npeople to raid a criminal base\lwithout any kind of backup?
+
+#org @gText_PlutoHQ_B1F_KurtisEncounter_AlistairExplainsPlan
+[BLACK]Alistair: [BLUE]I informed the authorities\nbefore arriving here.\pYou've been talking for an awfully\nlong time, indeed.\pSo long, in fact, that I'm sure\nthey've finished rounding up your\lgrunts and are ready to arrest you.\pThat's not all, though. See this\nhere?\pI've recorded everything.\pYou've hurt a lot of people with\nyour schemes.\pEven if you manage to evade the\nauthorities, the whole world knows\lwho you are and what you've done.\pI'm sure they won't forget that.\nYou'd always be on the run.\pCheckmate, Kurtis.
+
+#org @gText_PlutoHQ_B1F_KurtisEncounter_KurtisFlees
+[BLACK]Kurtis: [BLUE]Tch, we were careless!\pYou've set us back significantly, but\nTeam Pluto is more than a team.\pIt is an ideal. We will resurface!\pNow, Irene, Ronald[.] We must make\nourselves scarce!
+
+#org @gText_PlutoHQ_B1F_KurtisEncounter_IreneFlees
+[BLACK]Irene: [RED]Y-Yes, boss!
+
+#org @gText_PlutoHQ_B1F_KurtisEncounter_RonaldFlees
+[BLACK]Ronald: [BLUE]So this is how Team Pluto\nmeets it's end[.]
+
+#org @gText_PlutoHQ_B1F_KurtisEncounter_AlistairCommentsOnPlutosRetreat
+[BLACK]Alistair: [BLUE]His bark is certainly worse\nthan his bite.\pYou saw it, yes? The panic in his\neyes when I revealed my plan?\pI doubt he'll be back.\nBesides Selene is waiting outside.\pI hate to rely on her, but he\nwon't slip away from her.
+
+#org @gText_PlutoHQ_B1F_KurtisEncounter_AlistairGivesPlayerSurfGift
+[BLACK]Alistair: [BLUE][PLAYER], you've been a\nreliable friend time and again.\pI'd like to give you this.\pI know it doesn't fully make up for\nall you've done, but please take it\lwith my gratitude.
+
+#org @gText_PlutoHQ_B1F_KurtisEncounter_AlistairExplainsGift
+[BLACK]Alistair: [BLUE]That HM contains Surf.\pIt'll let your Pok\emon carry you\nacross bodies of water.\pYou'll need the badge from Bruccie\nVillage to use it though.\pYou're going to continue your gym\nchallenge, right?\pThen, I'm sure this will come in\nhandy. You'll need it to reach\lTsarvosa City.
+
+#org @gText_PlutoHQ_B1F_KurtisEncounter_AlistairPreparesToDestroyTheBase
+[BLACK]Alistair: [BLUE]I won't keep you any\nlonger.\pI'll stay here a while to destroy the\nSnag machines and make sure their\ldata backups are unusable.\pTake care, [PLAYER]. I'm sure we'll\nsee each other again.
+
+#org @gText_PlutoHQ_B1F_KurtisEncounter_AlistairDestroysSnagMachines
+[BLACK]Alistair: [BLUE]There. That's the last of\nthe Snag machines.\pNow, let's delete their data\nbackups[.]
+
+#org @gText_PlutoHQ_B1F_KurtisEncounter_AlistairReadsAboutJirachi
+[BLACK]Alistair: [BLUE]What's this?\pThese are all reports about\nsomething known as the\lmythical "Wish\" Pok\emon[.]\pI've never seen any record of this,\nin all my research.\pA Pok\emon that can grant any wish,\nhuh? Fascinating[.]
