@@ -53,6 +53,7 @@ extern const u8 sText_TheOpposingNoCaps[];
 extern const u8 sText_Your[];
 extern const u8 sText_YourCaps[];
 extern const u8 sText_SwitchingMove[];
+extern const u8 sText_MegaRing[];
 
 //Vanilla Strings
 #define BattleText_GhostAppeared (u8*) 0x83FD30D

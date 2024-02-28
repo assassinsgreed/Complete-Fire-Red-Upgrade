@@ -169,6 +169,9 @@ You were overwhelmed by your\ndefeat![FC][09]
 #org @sText_SwitchingMove
 [FD][0F] went back\nto [FD][1C] [FD][1D]!
 
+#org @sText_MegaRing
+[FD][00]'s [FD][16] is reacting\nto their trainer's [FD][01]!
+
 #ifndef UNBOUND
 
 #org @gText_BattleMenu
