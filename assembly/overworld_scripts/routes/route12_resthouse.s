@@ -43,7 +43,7 @@ LevelScript_RestHouse_Cutscene:
     applymovement Alistair m_AlistairArrives
     msgbox gText_Route12RestHouse_Cutscene_SeleneCommentsOnGymThemes MSG_NORMAL
     waitmovement Alistair
-    playbgm 0x156 @ Alistair's Theme
+    playbgm 0x173 @ Alistair's Theme
     applymovement PLAYER m_LookLeft
     msgbox gText_Route12RestHouse_Cutscene_AlistairArrives MSG_NORMAL
     applymovement Selene m_LookLeft

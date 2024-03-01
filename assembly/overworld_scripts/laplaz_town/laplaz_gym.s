@@ -195,8 +195,7 @@ EventScript_LaplazGym_LeaderCasey:
     checkflag 0x824 @ Laplaz gym badge
     if SET _goto EventScript_LaplazTownGym_LeaderCasey_Chat
     msgbox gText_LaplazGym_LeaderCasey_Talk MSG_NORMAL
-    setvar 0x503A 0x1
-    setvar 0x503B 0x1
+    call SetupMugshotGymLeaderAndBosses
     checkgender
     compare LASTRESULT 0x0 @ Gender is opposite of player
     if equal _goto FemaleCaseyBattle

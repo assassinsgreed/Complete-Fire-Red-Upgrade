@@ -98,9 +98,11 @@ ChanceContinuesCutscene:
     applymovement Chance m_Surprise
     msgbox gText_DaimynCityGym_Cutscene_ChanceTakesHisLeave MSG_NORMAL
     applymovement Chance m_ChanceLeaves
-    pause DELAY_1SECOND
+    pause DELAY_HALFSECOND
     applymovement PLAYER m_LookDown
     waitmovement Chance
+    playse 0x9 @ Exit room
+    waitse
     getplayerpos 0x4000 0x4001 @ HACK: Move the player to the same map to force map transition script to fire
     warpmuted 9 18 0xFF 0x4000 0x4001 @ Warp to same spot in the gym
     setvar StoryEventVar 0x1
@@ -143,8 +145,7 @@ EventScript_DaimynCityGym_LeaderChance:
     checkflag 0x823 @ Daimyn gym badge
     if SET _goto EventScript_DaimynCityGym_LeaderChance_Chat
     msgbox gText_DaimynCityGym_LeaderChance_Talk MSG_NORMAL
-    setvar 0x503A 0x1
-    setvar 0x503B 0x1
+    call SetupMugshotGymLeaderAndBosses
     callasm CountBadges
     compare LASTRESULT 0x3
     if lessorequal _goto LeaderChance_2Or3Badges
@@ -772,6 +773,6 @@ SlotMachineDeclined:
     end
 
 m_ChanceMovesToMeetPlayer: .byte walk_right, walk_right, walk_down, walk_down, end_m
-m_ChanceMovesToDesk: .byte walk_up, walk_up, walk_up, walk_up, walk_up, walk_up, walk_up, walk_up, walk_up, walk_right, walk_right, look_up, end_m
-m_PlayerMovesToDesk: .byte walk_up, walk_up, walk_up, walk_up, walk_up, walk_up, walk_up, walk_up, walk_up, walk_up, walk_right, look_up, end_m
+m_ChanceMovesToDesk: .byte walk_up, walk_up, walk_up, walk_up, walk_right, look_up, end_m
+m_PlayerMovesToDesk: .byte walk_up, walk_up, walk_up, walk_up, walk_up, end_m
 m_ChanceLeaves: .byte walk_down, walk_left, walk_down, walk_down, walk_down, walk_down, walk_down, end_m

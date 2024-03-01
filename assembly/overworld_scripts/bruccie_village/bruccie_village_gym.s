@@ -52,8 +52,7 @@ EventScript_BruccieVillageGym_Abby:
     checkflag 0x825 @ BruccieVillage gym badge
     if SET _goto EventScript_BruccieVillageGym_LeaderAbby_Chat
     msgbox gText_BruccieVillageGym_LeaderAbby_Talk MSG_NORMAL
-    setvar 0x503A 0x1
-    setvar 0x503B 0x1
+    call SetupMugshotGymLeaderAndBosses
     trainerbattle1 0x1 279 0x100 gText_BruccieVillageGym_LeaderAbby_Intro gText_BruccieVillageGym_LeaderAbby_Defeat EventScript_BruccieVillageGym_LeaderAbby_Defeated
     end
 

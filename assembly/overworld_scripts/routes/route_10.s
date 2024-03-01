@@ -123,8 +123,7 @@ TileScript_Route10_TriggerCaseyBattle_Above:
     playbgm 0x169 0x1 @ Alder encounter (Permanently replaces map music for cutscene)
     applymovement Casey m_WalkToPlayer
     waitmovement Casey
-    setvar 0x503A 0x2
-    setvar 0x503B 0x0
+    call SetupMugshotRival
     checkgender
     compare LASTRESULT 0x0
     if equal _goto FCaseyEvent

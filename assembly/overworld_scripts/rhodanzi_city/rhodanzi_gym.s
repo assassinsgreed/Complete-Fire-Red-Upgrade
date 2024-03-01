@@ -52,8 +52,7 @@ EventScript_RhodanziGym_Leader_Terrence:
     checkflag 0x820 @ Rhodanzi gym badge
     if SET _goto EventScript_RhodanziGym_Leader_TerrenceChat
     msgbox gText_RhodanziGym_Leader_Terrence_Talk MSG_NORMAL
-    setvar 0x503A 0x1
-    setvar 0x503B 0x1
+    call SetupMugshotGymLeaderAndBosses
     trainerbattle1 0x1 0xE 0x100 gText_RhodanziGym_Leader_Terrence_Intro gText_RhodanziGym_Leader_Terrence_Defeat EventScript_RhodanziGym_Leader_TerrenceDefeated
     end
 

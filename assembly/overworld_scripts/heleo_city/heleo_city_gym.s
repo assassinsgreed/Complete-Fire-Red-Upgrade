@@ -116,8 +116,7 @@ EventScript_HeleoGym_LeaderRaine:
     checkflag 0x822 @ Heleo gym badge
     if SET _goto EventScript_HeleoGym_LeaderRaine_Chat
     msgbox gText_HeleoGym_LeaderRaine_Talk MSG_NORMAL
-    setvar 0x503A 0x1
-    setvar 0x503B 0x1
+    call SetupMugshotGymLeaderAndBosses
     callasm CountBadges
     compare LASTRESULT 0x2
     if equal _goto LeaderRaine_2Badges

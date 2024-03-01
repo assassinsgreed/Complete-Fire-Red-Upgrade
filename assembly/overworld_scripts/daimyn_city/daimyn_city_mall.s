@@ -528,6 +528,7 @@ VitaminsShop:
     .hword ITEM_ZINC
     .hword ITEM_CARBOS
     .hword ITEM_PP_UP
+    .hword ITEM_CASTELIACONE
     .hword ITEM_NONE
 
 .global EventScript_DaimynCityMall_Shop_Gems
@@ -836,7 +837,7 @@ SignScript_DaimynCityMall_Phone:
     pause DELAY_1SECOND
     playse 0x4 @ PC On
     pause DELAY_HALFSECOND
-    playbgm 0x173 @ Juniper's father's theme
+    playbgm 0x12C @ Aspertia City
     bufferpartypokemon 0x0 0x0
     msgbox gText_DaimynCityMall_Mom MSG_NORMAL
     playse 0x3 @ PC Off

@@ -198,3 +198,8 @@ SignScript_HeleoCity_GymSign:
 SignScript_HeleoCity_TrainerHouseSign:
     msgbox gText_HeleoCityOverworld_TrainerHouseSign MSG_SIGN
     end
+
+.global SignScript_HeleoCity_TrainerTips
+SignScript_HeleoCity_TrainerTips:
+    msgbox gText_HeleoCityOverworld_TrainerTips MSG_SIGN
+    end

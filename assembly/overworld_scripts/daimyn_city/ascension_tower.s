@@ -58,12 +58,12 @@ EventScript_AscensionTower_EliteFourAttendant:
 
 TakeEliteFourChallenge:
     @ Later, perform a check here for the champions flag
-    msgbox gText_AscensionTower_BattleTowerAttendant_NotChampion MSG_NORMAL
+    msgbox gText_AscensionTower_EliteFourAttendant_NoChampionsFlag MSG_NORMAL
     release
     end
 
 EliteFourInfo:
-    msgbox gText_AscensionTower_EliteFourAttendant_NoChampionsFlag MSG_NORMAL
+    msgbox gText_AscensionTower_EliteFourAttendant_ChallengeInfo MSG_NORMAL
     goto EventScript_AscensionTower_EliteFourAttendant
 
 AttendantChoseNo:

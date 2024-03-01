@@ -109,8 +109,7 @@ RivalBattleCommon:
     sound 0x15 @ Exclaim
     applymovement SpriteRival m_Surprise
     msgbox gText_DaimynCityFacilities_GuardHouse_RivalInitiatesBattle MSG_NORMAL
-    setvar 0x503A 0x2
-    setvar 0x503B 0x0
+    call SetupMugshotRival
     trainerbattle3 0x0 0x88 0x100 gText_DaimynCityFacilities_GuardHouse_RivalLoses
     msgbox gText_DaimynCityFacilities_GuardHouse_RivalConcludesBattle MSG_NORMAL
     obtainitem ITEM_MACHO_BRACE 0x1

@@ -32,7 +32,7 @@ LevelScripts_PlutoHQEvents:
     .hword LEVEL_SCRIPT_TERMIN
 
 LevelScript_AlistairRevealsStairs:
-    playbgm 0x156 @ Alistair's Theme
+    playbgm 0x173 @ Alistair's Theme
     applymovement PLAYER m_WalkUp
     waitmovement PLAYER
     msgbox gText_DaimynCityNPCHouses_AlistairBeatsGrunt MSG_NORMAL

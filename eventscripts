@@ -605,6 +605,7 @@ npc 3 4 9 ItemScript_Common_MoomooMilk
 sign 3 4 0 SignScript_HeleoCity_CitySign
 sign 3 4 1 SignScript_HeleoCity_GymSign
 sign 3 4 2 SignScript_HeleoCity_TrainerHouseSign
+sign 3 4 4 SignScript_HeleoCity_TrainerTips
 
 ## Facilities
 map 8 2 MapScript_HeleoFacilities_PokemonCenter
@@ -970,7 +971,6 @@ npc 9 18 17 EventScript_DaimynCityGym_Gentleman
 npc 9 18 18 EventScript_DaimynCityGym_AmuletCoinGuy
 sign 9 18 0 SignScript_DaimynCityGym_GymPlacard
 sign 9 18 1 SignScript_DaimynCityGym_CoinDepositBox
-## TODO: These should use playslotmachine and use the Vanilla FR script as a reference
 sign 9 18 2 SignScript_DaimynCityGym_SlotMachine_Odds1
 sign 9 18 3 SignScript_DaimynCityGym_SlotMachine_Odds5
 sign 9 18 4 SignScript_DaimynCityGym_SlotMachine_Odds4
