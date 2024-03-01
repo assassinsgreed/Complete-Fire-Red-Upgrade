@@ -9,7 +9,6 @@
 #define TRAINER_ROUTE_2_YOUNGSTER_JOEY               5
 #define TRAINER_ROUTE_2_LASS_KIMBERLY                6
 #define TRAINER_ROUTE_2_LASS_RIKKI                   7
-#define TRAINER_ROUTE_2_COOL_TRAINER_ANDY            16
 // Varisi Forest
 #define TRAINER_VARISI_FOREST_BUG_CATCHER_KENDELL    8
 #define TRAINER_VARISI_FOREST_BUG_CATCHER_BRADEN     9
@@ -21,6 +20,8 @@
 #define TRAINER_RHODANZI_GYM_LEADER_TERRENCE         14
 // Route 7
 #define TRAINER_ROUTE_7_CAMPER_CARLISLE              15
+// Route 2 (continued)
+#define TRAINER_ROUTE_2_COOL_TRAINER_ANDY            16
 // Route 3
 #define TRAINER_ROUTE_3_PICKNICKER_TANA              17
 #define TRAINER_ROUTE_3_BUG_CATCHER_IRWIN            18
