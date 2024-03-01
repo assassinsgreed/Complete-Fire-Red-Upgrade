@@ -1634,9 +1634,9 @@ sign 1 53 4 SignScript_PlutoHQ_B7F_SerpentDoor
 sign 1 53 5 SignScript_PlutoHQ_B7F_SerpentDoor
 sign 1 53 6 SignScript_PlutoHQ_B7F_SerpentDoor
 # Kurtis's Office
-#npc 1 55 0 EventScript_PlutoHQ_B1F_Kurtis
+map 1 55 MapScript_PlutoHQ_KurtisOffice
 npc 1 55 1 EventScript_PlutoHQ_B1F_Gyaradosite
 # Irene's Office
-#npc 1 56 0 EventScript_PlutoHQ_B4F_Irene
+npc 1 56 0 EventScript_PlutoHQ_B4F_Irene
 # Ronald's Office
-#npc 1 57 0 EventScript_PlutoHQ_B7F_Ronald
+npc 1 57 0 EventScript_PlutoHQ_B7F_Ronald

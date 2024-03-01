@@ -102,6 +102,16 @@ extern const u8 sText_Ronald_FirstMonDown[];
 extern const u8 sText_Ronald_LastSwitchIn[];
 extern const u8 sText_Ronald_LowHP[];
 
+// Team Pluto Admin Irene (Pluto HQ)
+extern const u8 sText_Irene_PlutoHQ_FirstMonDown[];
+extern const u8 sText_Irene_PlutoHQ_LastSwitchIn[];
+extern const u8 sText_Irene_PlutoHQ_LowHP[];
+
+// Team Pluto Admin Ronald (Pluto HQ)
+extern const u8 sText_Ronald_PlutoHQ_FirstMonDown[];
+extern const u8 sText_Ronald_PlutoHQ_LastSwitchIn[];
+extern const u8 sText_Ronald_PlutoHQ_LowHP[];
+
 // Team Pluto Leader Kurtis
 extern const u8 sText_Kurtis_FirstMonDown[];
 extern const u8 sText_Kurtis_LastSwitchIn[];

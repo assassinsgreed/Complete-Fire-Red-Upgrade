@@ -351,6 +351,8 @@ static u8 TryLoadAlternateAreaTerrain(u8 terrain)
 		case BATTLE_TERRAIN_INSIDE:
 			if (mapSec == MAPSEC_FORGOTTEN_MANSE)
 				terrain = BATTLE_TERRAIN_SPOOKY;
+			else if (MAP_IS(PLUTO_HQ_KURTIS_OFFICE))
+				terrain = BATTLE_TERRAIN_PLUTO_LEADER;
 			break;
 		case BATTLE_TERRAIN_INSIDE_4:
 			terrain = BATTLE_TERRAIN_GYM;

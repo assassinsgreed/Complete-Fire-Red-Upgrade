@@ -5,6 +5,12 @@
 .include "../xse_defines.s"
 .include "../asm_defines.s"
 
+.equ Kurtis, 0x1
+.equ Alistair, 0x3
+.equ Irene, 0x4
+.equ Ronald, 0x5
+.equ PlutoStoryEventVar, 0x405D
+
 ## B1F
 .global EventScript_PlutoHQ_B1F_TM59BrutalSwing
 EventScript_PlutoHQ_B1F_TM59BrutalSwing:
@@ -209,9 +215,235 @@ EventScript_PlutoHQ_B7F_TeamPlutoRichard:
     end
 
 ## Irene's office
+.global EventScript_PlutoHQ_B4F_Irene
+EventScript_PlutoHQ_B4F_Irene:
+    faceplayer
+    checkitem ITEM_SERPENT_KEY 0x1
+    compare LASTRESULT TRUE
+    if equal _goto IreneDefeated
+    playbgm 0x19A @ Team Pluto Theme
+    msgbox gText_PlutoHQ_B4F_AdminIreneConversation MSG_NORMAL
+    msgbox gText_PlutoHQ_B4F_AdminIreneConversation_PreBattle MSG_NORMAL
+    setvar 0x503A 0x1
+    setvar 0x503B 0x1
+    trainerbattle3 0x0 311 0x100 gText_PlutoHQ_B4F_AdminIreneConversation_BattleLost
+    msgbox gText_PlutoHQ_B4F_AdminIreneConversation_PostBattle MSG_NORMAL
+    obtainitem ITEM_SERPENT_KEY 0x1
+    goto IreneDefeated
+    end
+
+IreneDefeated:
+    msgbox gText_PlutoHQ_B4F_AdminIreneConversation_AfterSerpentKey MSG_NORMAL
+    end
+
 ## Ronald's office
+.global EventScript_PlutoHQ_B7F_Ronald
+EventScript_PlutoHQ_B7F_Ronald:
+    faceplayer
+    checkitem ITEM_CERBERUS_KEY 0x1
+    compare LASTRESULT TRUE
+    if equal _goto RonaldDefeated
+    playbgm 0x19A @ Team Pluto Theme
+    msgbox gText_PlutoHQ_B7F_AdminRonaldConversation MSG_NORMAL
+    msgbox gText_PlutoHQ_B7F_AdminRonaldConversation_PreBattle MSG_NORMAL
+    setvar 0x503A 0x1
+    setvar 0x503B 0x1
+    trainerbattle3 0x0 312 0x100 gText_PlutoHQ_B7F_AdminRonaldConversation_BattleLost
+    msgbox gText_PlutoHQ_B4F_AdminRonaldConversation_PostBattle MSG_NORMAL
+    obtainitem ITEM_CERBERUS_KEY 0x1
+    goto RonaldDefeated
+    end
+
+RonaldDefeated:
+    msgbox gText_PlutoHQ_B7F_AdminRonaldConversation_AfterCerberusKey MSG_NORMAL
+    end
+
 ## Kurtis's Office
+.global MapScript_PlutoHQ_KurtisOffice
+MapScript_PlutoHQ_KurtisOffice:
+    mapscript MAP_SCRIPT_ON_TRANSITION MapScript_FixGyaradosite
+    mapscript MAP_SCRIPT_ON_FRAME_TABLE LevelScripts_PlutoHQKurtisEvent
+    .byte MAP_SCRIPT_TERMIN
+
+MapScript_FixGyaradosite:
+    compare PlutoStoryEventVar 0x4
+    if notequal _goto End
+    clearflag 0x21B
+    showsprite 0x2
+    end
+
+LevelScripts_PlutoHQKurtisEvent:
+    levelscript PlutoStoryEventVar 0x3 LevelScript_ChallengingKurtis
+    .hword LEVEL_SCRIPT_TERMIN
+
+LevelScript_ChallengingKurtis:
+    hidesprite 0x2 @ Gyaradosite
+    pause DELAY_HALFSECOND
+    msgbox gText_PlutoHQ_B1F_KurtisEncounter_KurtisSeesPlayer MSG_NORMAL
+    applymovement PLAYER m_PlayerApproachesKurtis
+    waitmovement PLAYER
+    special CAMERA_START
+    applymovement CAMERA m_PlayerApproachesKurtis
+    waitmovement CAMERA
+    special CAMERA_END
+    msgbox gText_PlutoHQ_B1F_KurtisEncounter_KurtisIntroduction MSG_NORMAL
+    playbgm 0x185 @ Encounter Ghetsis
+    msgbox gText_PlutoHQ_B1F_KurtisEncounter_KurtisAnnouncesHimself MSG_NORMAL
+    sound 0x15 @ Exclaim
+    applymovement PLAYER m_Surprise
+    msgbox gText_PlutoHQ_B1F_KurtisEncounter_AlistairAnnouncesArrival MSG_NORMAL
+    playse 0x8 @ Door open
+    pause DELAY_HALFSECOND
+    showsprite Alistair
+    applymovement Alistair m_AlistairMeetsWithPlayer
+    playse 0x26 @ Door shut
+    waitmovement Alistair
+    applymovement PLAYER m_LookLeft
+    msgbox gText_PlutoHQ_B1F_KurtisEncounter_AlistairArrives MSG_NORMAL
+    applymovement PLAYER m_LookUp
+    applymovement Alistair m_LookUp
+    msgbox gText_PlutoHQ_B1F_KurtisEncounter_KurtisUpsetWithAlistairsArrival MSG_NORMAL
+    applymovement Kurtis m_KurtisWalksToPhone
+    waitmovement Kurtis
+    playse 0x4 @ PC On
+    waitse
+    msgbox gText_PlutoHQ_B1F_KurtisEncounter_KurtisCallsForIreneAndAlistair MSG_NORMAL
+    playse 0x3 @ PC Off
+    waitse
+    applymovement Kurtis m_KurtisWalksBackToDesk
+    waitmovement Kurtis
+    msgbox gText_PlutoHQ_B1F_KurtisEncounter_KurtisDenouncesThePlayerAndAlistair MSG_NORMAL
+    applymovement Alistair m_AlistairWalksUpToKurtis
+    waitmovement Alistair
+    msgbox gText_PlutoHQ_B1F_KurtisEncounter_AlistairInterrupts MSG_NORMAL
+    applymovement Kurtis m_LookLeft
+    msgbox gText_PlutoHQ_B1F_KurtisEncounter_KurtisRespondsToAlistair MSG_NORMAL
+    applymovement Kurtis m_LookDown
+    msgbox gText_PlutoHQ_B1F_KurtisEncounter_KurtisRevealsPlutosAmbitions MSG_NORMAL
+    msgbox gText_PlutoHQ_B1F_KurtisEncounter_AlistairRespondsToKurtisGoals MSG_NORMAL
+    applymovement Kurtis m_LookLeft
+    msgbox gText_PlutoHQ_B1F_KurtisEncounter_KurtisRespondsToAlistairsDisdain MSG_NORMAL
+    applymovement Kurtis m_LookDown
+    playse 0x8 @ Door open
+    pause DELAY_HALFSECOND
+    showsprite Irene
+    applymovement Irene m_IreneArrives
+    pause DELAY_HALFSECOND
+    showsprite Ronald
+    applymovement Ronald m_RonaldArrives
+    playse 0x26 @ Door shut
+    waitmovement Ronald
+    applymovement PLAYER m_LookDown
+    applymovement Alistair m_LookDown
+    msgbox gText_PlutoHQ_B1F_KurtisEncounter_IreneArrives MSG_NORMAL
+    msgbox gText_PlutoHQ_B1F_KurtisEncounter_RonaldArrives MSG_NORMAL
+    msgbox gText_PlutoHQ_B1F_KurtisEncounter_KurtisInitiatesFight MSG_NORMAL
+    applymovement PLAYER m_LookUp
+    msgbox gText_PlutoHQ_B1F_KurtisEncounter_AlistairChallengesIreneAndRonald MSG_NORMAL
+    applymovement Alistair m_WalkLeft
+    waitmovement Alistair 
+    applymovement Alistair m_LookDown
+    applymovement Irene m_IreneChallengesAlistair
+    applymovement Ronald m_RonaldChallengesAlistair
+    pause DELAY_1SECOND
+    applymovement PLAYER m_LookLeft
+    waitmovement Ronald
+    msgbox gText_PlutoHQ_B1F_KurtisEncounter_IreneBattlesAlistair MSG_NORMAL
+    msgbox gText_PlutoHQ_B1F_KurtisEncounter_RonaldBattlesAlistair MSG_NORMAL
+    applymovement PLAYER m_LookUp
+    msgbox gText_PlutoHQ_B1F_KurtisEncounter_PreparesToChallengePlayer MSG_NORMAL
+    msgbox gText_PlutoHQ_B1F_KurtisEncounter_KurtisPreBattle MSG_NORMAL
+    setvar 0x503A 0x1
+    setvar 0x503B 0x1
+    trainerbattle3 0x0 313 0x100 gText_PlutoHQ_B1F_KurtisEncounter_KurtisLosesBattle
+    msgbox gText_PlutoHQ_B1F_KurtisEncounter_KurtisCommentsOnLoss MSG_NORMAL
+    applymovement Irene m_LookRight
+    msgbox gText_PlutoHQ_B1F_KurtisEncounter_IreneCommentsOnLoss MSG_NORMAL
+    applymovement Ronald m_LookRight
+    msgbox gText_PlutoHQ_B1F_KurtisEncounter_RonaldCommentsOnLoss MSG_NORMAL
+    applymovement Irene m_LookUp
+    applymovement Ronald m_LookUp
+    applymovement Alistair m_LookRight
+    msgbox gText_PlutoHQ_B1F_KurtisEncounter_AlistairCommentsOnHisVictory MSG_NORMAL
+    msgbox gText_PlutoHQ_B1F_KurtisEncounter_KurtisRemindsTheTwoAboutHisPlans MSG_NORMAL
+    applymovement Alistair m_AlistairApproachesKurtis
+    waitmovement Alistair
+    applymovement Kurtis m_LookLeft
+    playbgm 0x156 @ Alistair's Theme
+    msgbox gText_PlutoHQ_B1F_KurtisEncounter_AlistairRevealsHisPlan MSG_NORMAL
+    sound 0x15 @ Exclaim
+    applymovement Kurtis m_Surprise
+    applymovement Irene m_Surprise
+    applymovement Ronald m_Surprise
+    msgbox gText_PlutoHQ_B1F_KurtisEncounter_AlistairExplainsPlan MSG_NORMAL
+    applymovement Kurtis m_LookDown
+    msgbox gText_PlutoHQ_B1F_KurtisEncounter_KurtisFlees MSG_NORMAL
+    msgbox gText_PlutoHQ_B1F_KurtisEncounter_IreneFlees MSG_NORMAL
+    msgbox gText_PlutoHQ_B1F_KurtisEncounter_RonaldFlees MSG_NORMAL
+    fadescreen FADEOUT_BLACK
+    hidesprite Kurtis
+    hidesprite Irene
+    hidesprite Ronald
+    clearflag 0x21B @ Show Gyaradosite
+    showsprite 0x2 @ Gyaradosite
+    fadescreen FADEIN_BLACK
+    fadedefaultbgm
+    pause DELAY_HALFSECOND
+    applymovement Alistair m_LookDown
+    msgbox gText_PlutoHQ_B1F_KurtisEncounter_AlistairCommentsOnPlutosRetreat MSG_NORMAL
+    applymovement Alistair m_AlistairReturnsToPlayer
+    waitmovement Alistair
+    applymovement PLAYER m_LookLeft
+    msgbox gText_PlutoHQ_B1F_KurtisEncounter_AlistairGivesPlayerSurfGift MSG_NORMAL
+    obtainitem ITEM_HM03 0x1 @ Surf
+    msgbox gText_PlutoHQ_B1F_KurtisEncounter_AlistairExplainsGift MSG_NORMAL
+    applymovement Alistair m_LookUp
+    msgbox gText_PlutoHQ_B1F_KurtisEncounter_AlistairPreparesToDestroyTheBase MSG_NORMAL
+    fadescreen FADEOUT_BLACK
+    hidesprite 0x2 @ Gyaradosite
+    playse 0x9 @ Exit room
+    waitse
+    pause DELAY_HALFSECOND
+    applymovement PLAYER m_PlayerAsCameraMovesUp
+    applymovement Alistair m_AlistairMovesToBoxes
+    waitmovement Alistair
+    showsprite 0x2 @ Gyaradosite
+    fadescreen FADEIN_BLACK
+    msgbox gText_PlutoHQ_B1F_KurtisEncounter_AlistairDestroysSnagMachines MSG_NORMAL
+    applymovement Alistair m_AlistairMovesToPC
+    waitmovement Alistair
+    playse 0x2 @ PC Login
+    waitse
+    pause DELAY_1SECOND
+    sound 0x15 @ Exclaim
+    applymovement Alistair m_Surprise
+    playbgm 0x17A @ The day I became king
+    msgbox gText_PlutoHQ_B1F_KurtisEncounter_AlistairReadsAboutJirachi MSG_NORMAL
+    pause DELAY_HALFSECOND
+    fadescreen FADEOUT_BLACK
+    setflag 0x4A @ Pluto grunts and admins should all disappear
+    setvar PlutoStoryEventVar 0x4 @ Pluto events complete
+    warpmuted 3 5 5 @ Warp back to Daimyn City outside the building 
+    end
+
 .global EventScript_PlutoHQ_B1F_Gyaradosite
 EventScript_PlutoHQ_B1F_Gyaradosite:
-    obtainitem ITEM_GYARADOSITE 0x1
+    @ Note: These are workarounds because the gyaradosite keeps behaving oddly
+    finditem ITEM_GYARADOSITE 0x1
+    setvar PlutoStoryEventVar 0x5
     end
+
+m_PlayerApproachesKurtis: .byte walk_up, walk_up, end_m
+m_AlistairMeetsWithPlayer: .byte walk_up, walk_left, walk_up, look_right, end_m
+m_KurtisWalksToPhone: .byte walk_down_slow, walk_left_slow, walk_left_slow, walk_left_slow, walk_up_slow, walk_up_slow, end_m
+m_KurtisWalksBackToDesk: .byte walk_down_slow, walk_down_slow, walk_right_slow, walk_right_slow, walk_right_slow, walk_up_slow, look_down, end_m
+m_AlistairWalksUpToKurtis: .byte walk_left, walk_left, walk_up, walk_up, walk_up, end_m
+m_IreneArrives: .byte walk_up, walk_left, look_up, end_m
+m_RonaldArrives: .byte walk_up, walk_right, look_up, end_m
+m_IreneChallengesAlistair: .byte walk_left, walk_left, walk_up, walk_left, look_up, end_m
+m_RonaldChallengesAlistair: .byte walk_left, walk_left, walk_left, walk_left, walk_up, end_m
+m_AlistairApproachesKurtis: .byte walk_up, walk_right, walk_up, walk_right, end_m
+m_AlistairReturnsToPlayer: .byte walk_left, walk_down, walk_down, walk_down, walk_down, walk_down, walk_right, walk_right, end_m
+m_PlayerAsCameraMovesUp: .byte set_invisible, walk_up, walk_up, end_m
+m_AlistairMovesToBoxes: .byte run_left, run_left, run_left, run_left, run_up, run_up, run_up, run_up, end_m
+m_AlistairMovesToPC: .byte walk_right, walk_right, walk_right, walk_right, walk_right, walk_right, walk_right, walk_right, walk_right, walk_up, walk_up, end_m

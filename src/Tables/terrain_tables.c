@@ -321,6 +321,15 @@ const struct TerrainTableStruct gTerrainTable[] =
 			.burmyForm = SPECIES_BURMY,
 		},
 
+	[BATTLE_TERRAIN_PLUTO_LEADER + 4] =
+		{
+			.camouflageType = TYPE_DARK,
+			.secretPowerEffect = MOVE_EFFECT_ACC_MINUS_1,
+			.secretPowerAnim = MOVE_MOONBLAST,
+			.naturePowerMove = MOVE_MOONBLAST,
+			.burmyForm = SPECIES_BURMY_TRASH,
+		},
+
 #ifdef UNBOUND //The ones below are for Pokemon Unbound. Feel free to remove.
 	[BATTLE_TERRAIN_MOLEMAN + 4] =
 		{
