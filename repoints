@@ -332,8 +332,6 @@ GraphicsInfo_PlutoGruntMale 839FE74
 GraphicsInfo_PlutoGruntFemale 839FE78
 ## Replace Sailing Chef (59)
 GraphicsInfo_LeaderCaseyM 839FE9C
-## Replace Female attendant (65)
-GraphicsInfo_PlutoLeaderKurtis 839FEB4
 ## Replace Prof Oak (71)
 GraphicsInfo_ProfessorHawthorne 839FECC
 ## Replace Rival (72)
@@ -350,12 +348,14 @@ GraphicsInfo_LeaderTerrence 839FEF0
 GraphicsInfo_LeaderStella 839FEF4
 ## Replace Lt. Surge (82)
 GraphicsInfo_LeaderRaine 839FEF8
-## Replace Eirika (85)
-GraphicsInfo_LeaderChance 839FF04
+## Replace Eirika (83)
+GraphicsInfo_LeaderChance 839FEFC
 ## Replace Koga (84)
 GraphicsInfo_LeaderCaseyF 839FF00
 ## Replace Sabrina (85)
 GraphicsInfo_LeaderAbby 839FF04
+## Replace Female attendant (87)
+GraphicsInfo_PlutoLeaderKurtis 839FF0C
 ## Replace Celio (89)
 GraphicsInfo_PlutoAdminIrene 839FF14
 ## Replace Muscled Man (90)

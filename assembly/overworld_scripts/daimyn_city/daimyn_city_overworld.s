@@ -105,7 +105,7 @@ LevelScript_RivalsTour:
     applymovement PLAYER m_WalkToAscensionTower_Player
     msgbox gText_DaimynCityOverworld_Story_RivalTour24 MSG_KEEPOPEN
     waitmovement PLAYER
-    playbgm 0x156 @ Alistair Encounter
+    playbgm 0x173 @ Alistair Encounter
     msgbox gText_DaimynCityOverworld_Story_RivalTour25 MSG_NORMAL
     applymovement Selene m_Question
     applymovement Rival m_Question

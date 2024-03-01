@@ -224,8 +224,7 @@ EventScript_PlutoHQ_B4F_Irene:
     playbgm 0x19A @ Team Pluto Theme
     msgbox gText_PlutoHQ_B4F_AdminIreneConversation MSG_NORMAL
     msgbox gText_PlutoHQ_B4F_AdminIreneConversation_PreBattle MSG_NORMAL
-    setvar 0x503A 0x1
-    setvar 0x503B 0x1
+    call SetupMugshotGymLeaderAndBosses
     trainerbattle3 0x0 311 0x100 gText_PlutoHQ_B4F_AdminIreneConversation_BattleLost
     msgbox gText_PlutoHQ_B4F_AdminIreneConversation_PostBattle MSG_NORMAL
     obtainitem ITEM_SERPENT_KEY 0x1
@@ -246,8 +245,7 @@ EventScript_PlutoHQ_B7F_Ronald:
     playbgm 0x19A @ Team Pluto Theme
     msgbox gText_PlutoHQ_B7F_AdminRonaldConversation MSG_NORMAL
     msgbox gText_PlutoHQ_B7F_AdminRonaldConversation_PreBattle MSG_NORMAL
-    setvar 0x503A 0x1
-    setvar 0x503B 0x1
+    call SetupMugshotGymLeaderAndBosses
     trainerbattle3 0x0 312 0x100 gText_PlutoHQ_B7F_AdminRonaldConversation_BattleLost
     msgbox gText_PlutoHQ_B4F_AdminRonaldConversation_PostBattle MSG_NORMAL
     obtainitem ITEM_CERBERUS_KEY 0x1
@@ -353,8 +351,7 @@ LevelScript_ChallengingKurtis:
     applymovement PLAYER m_LookUp
     msgbox gText_PlutoHQ_B1F_KurtisEncounter_PreparesToChallengePlayer MSG_NORMAL
     msgbox gText_PlutoHQ_B1F_KurtisEncounter_KurtisPreBattle MSG_NORMAL
-    setvar 0x503A 0x1
-    setvar 0x503B 0x1
+    call SetupMugshotGymLeaderAndBosses
     trainerbattle3 0x0 313 0x100 gText_PlutoHQ_B1F_KurtisEncounter_KurtisLosesBattle
     msgbox gText_PlutoHQ_B1F_KurtisEncounter_KurtisCommentsOnLoss MSG_NORMAL
     applymovement Irene m_LookRight
@@ -369,7 +366,7 @@ LevelScript_ChallengingKurtis:
     applymovement Alistair m_AlistairApproachesKurtis
     waitmovement Alistair
     applymovement Kurtis m_LookLeft
-    playbgm 0x156 @ Alistair's Theme
+    playbgm 0x173 @ Alistair's Theme
     msgbox gText_PlutoHQ_B1F_KurtisEncounter_AlistairRevealsHisPlan MSG_NORMAL
     sound 0x15 @ Exclaim
     applymovement Kurtis m_Surprise

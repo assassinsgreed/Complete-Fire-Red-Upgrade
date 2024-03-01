@@ -66,8 +66,7 @@ EventScript_FerroxGym_LeaderStella:
     checkflag 0x821 @ Ferrox gym badge
     if SET _goto EventScript_FerroxGym_LeaderStella_Chat
     msgbox gText_FerroxGym_LeaderStella_Talk MSG_NORMAL
-    setvar 0x503A 0x1
-    setvar 0x503B 0x1
+    call SetupMugshotGymLeaderAndBosses
     trainerbattle1 0x1 0x40 0x100 gText_FerroxGym_LeaderStella_Intro gText_FerroxGym_LeaderStella_Defeat EventScript_FerroxGym_LeaderStella_Defeated
     end
 
@@ -291,7 +290,7 @@ EventScript_FerroxLibrary_Alistair:
     msgbox gText_FerroxLibrary_Plot_AlistairAsksWhatHeCanHelpWith MSG_NORMAL
     msgbox gText_FerroxLibrary_Plot_RivalAsksIfAlistairIsGymLeader MSG_NORMAL
     msgbox gText_FerroxLibrary_Plot_AlistairSaysNo MSG_NORMAL
-    playbgm 0x156 @ Alistair's Theme
+    playbgm 0x173 @ Alistair's Theme
     msgbox gText_FerroxLibrary_Plot_AlistairIntroducesHimself MSG_NORMAL
     msgbox gText_FerroxLibrary_Plot_RivalAsksWhatAlistairIsStudying MSG_NORMAL
     msgbox gText_FerroxLibrary_Plot_AlistairDeadEnds MSG_NORMAL

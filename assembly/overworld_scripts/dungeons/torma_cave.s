@@ -207,8 +207,7 @@ TileScript_TormaCave_TriggerCaseyBattleR:
     clearflag 0x03D @ Show Casey
     showsprite Casey
     playbgm 0x169 0x1 @ Alder encounter (Permanently replaces map music for cutscene)
-    setvar 0x503A 0x2
-    setvar 0x503B 0x0
+    call SetupMugshotRival
     checkgender
     compare LASTRESULT 0x0
     if equal _goto FCaseyEvent

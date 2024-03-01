@@ -421,8 +421,7 @@ EventScript_Route17_PlayerHasChosenStarter:
     msgbox gText_Route17_RivalWantsToBattle MSG_NORMAL
     @ Set up environment to continue game if battle is lost
     setvar 0x8000 0xFEFE
-    setvar 0x503A 0x2
-    setvar 0x503B 0x0
+    call SetupMugshotRival
     trainerbattle9 0x1 0x1 0x100 gText_Route17_RivalBattleConcludes gText_Route17_RivalBattleConcludes
     setvar 0x8000 0x0
     applymovement PLAYER m_LookUp

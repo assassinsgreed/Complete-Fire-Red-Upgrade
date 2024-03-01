@@ -157,6 +157,7 @@ EventScript_BruccieVillage_Abby:
     applymovement PLAYER m_PlayerTakesPosition
     waitmovement PLAYER
     msgbox gText_BruccieVillage_Abby_RivalPreBattle MSG_NORMAL
+    call SetupMugshotRival
     copyvar 0x4001 0x408E
     setvar 0x4000 266 @ trainer ID, which is 266 + 0-7 depending on value in 0x408E (Water starter generation)
     setvar 0x8004 0x4000

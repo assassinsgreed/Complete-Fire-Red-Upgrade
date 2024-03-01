@@ -133,8 +133,7 @@ LevelScript_RonaldEncounterCutscene:
     msgbox gText_Route11SouthHouse_PlutoEvent_RonaldScoldsRefiner MSG_NORMAL
     applymovement 0x2 m_LookDown
     msgbox gText_Route11SouthHouse_PlutoEvent_RonaldChallengesPlayer MSG_NORMAL
-    setvar 0x503A 0x1
-    setvar 0x503B 0x1
+    call SetupMugshotGymLeaderAndBosses
     trainerbattle1 0x1 0xC8 0x100 gText_Route11SouthHouse_PlutoEvent_RonaldBattleIntro gText_Route11SouthHouse_PlutoEvent_RonaldBattleLoss PostRonaldBattle
     end
 
@@ -363,8 +362,7 @@ RivalBattlePrompt:
     applymovement Alistair m_AlistairTakesSupervisionPosition
     waitmovement Alistair
     msgbox gText_Route11SouthHouse_PlutoEvent_RivalInitiatesBattle MSG_NORMAL
-    setvar 0x503A 0x2
-    setvar 0x503B 0x0
+    call SetupMugshotRival
     copyvar 0x4001 0x408E
     setvar 0x4000 201 @ trainer ID, which is 201 + 0-7 depending on value in 0x408E
     setvar 0x8004 0x4000
@@ -659,7 +657,7 @@ InitiatePlutoEncounter:
     waitmovement PLAYER
     applymovement Alistair m_AlistairWalksToMeetingPlace
     waitmovement Alistair
-    playbgm 0x156 @ Alistair's Theme
+    playbgm 0x173 @ Alistair's Theme
     msgbox gText_Route11South_PlutoEvent_AlistairAcknowledgesRival MSG_NORMAL
     applymovement Alistair m_LookLeft
     msgbox gText_Route11South_PlutoEvent_AlistairAcknowledgesPlayer MSG_NORMAL

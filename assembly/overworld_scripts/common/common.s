@@ -512,3 +512,15 @@ EightBadges:
 End:
     release
     end
+
+.global SetupMugshotRival
+SetupMugshotRival:
+    setvar 0x503A 0x2
+    setvar 0x503B 0x0
+    return
+
+.global SetupMugshotGymLeaderAndBosses
+SetupMugshotGymLeaderAndBosses:
+    setvar 0x503A 0x1
+    setvar 0x503B 0x1
+    return

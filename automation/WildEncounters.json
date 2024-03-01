@@ -1238,18 +1238,18 @@
             "grass": {
                 "rate": 21,
                 "pokemon": [
-                    { "low": 24, "high": 27, "species": "SPECIES_CUFANT" },
-                    { "low": 23, "high": 26, "species": "SPECIES_SCRAGGY" },
-                    { "low": 22, "high": 26, "species": "SPECIES_MUDBRAY" },
-                    { "low": 23, "high": 26, "species": "SPECIES_GOGOAT" },
-                    { "low": 22, "high": 26, "species": "SPECIES_FALINKS" },
-                    { "low": 22, "high": 27, "species": "SPECIES_LITLEO" },
-                    { "low": 23, "high": 26, "species": "SPECIES_GIBLE" },
-                    { "low": 22, "high": 26, "species": "SPECIES_HIPPOPOTAS" },
-                    { "low": 23, "high": 27, "species": "SPECIES_HOUNDOUR" },
-                    { "low": 22, "high": 25, "species": "SPECIES_HOUNDOUR" },
-                    { "low": 24, "high": 26, "species": "SPECIES_GABITE" }, 
-                    { "low": 23, "high": 26, "species": "SPECIES_JANGMO_O" }
+                    { "low": 27, "high": 30, "species": "SPECIES_CUFANT" },
+                    { "low": 26, "high": 29, "species": "SPECIES_SCRAGGY" },
+                    { "low": 27, "high": 30, "species": "SPECIES_MUDBRAY" },
+                    { "low": 28, "high": 31, "species": "SPECIES_GOGOAT" },
+                    { "low": 27, "high": 30, "species": "SPECIES_FALINKS" },
+                    { "low": 28, "high": 31, "species": "SPECIES_LITLEO" },
+                    { "low": 28, "high": 31, "species": "SPECIES_GIBLE" },
+                    { "low": 27, "high": 30, "species": "SPECIES_HIPPOPOTAS" },
+                    { "low": 28, "high": 31, "species": "SPECIES_HOUNDOUR" },
+                    { "low": 27, "high": 30, "species": "SPECIES_HOUNDOUR" },
+                    { "low": 28, "high": 31, "species": "SPECIES_GABITE" }, 
+                    { "low": 27, "high": 30, "species": "SPECIES_JANGMO_O" }
                 ]
             },
             "rocks": {

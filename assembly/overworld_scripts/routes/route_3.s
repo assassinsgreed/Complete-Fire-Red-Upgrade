@@ -216,8 +216,7 @@ TileScript_Route3_InitiateDexNavEvent:
     compare LASTRESULT YES
     if equal _call PlayerKnowsWhyRivalIsHere
     msgbox gText_Route3_RivalInitiatesBattle MSG_NORMAL
-    setvar 0x503A 0x2
-    setvar 0x503B 0x0
+    call SetupMugshotRival
     trainerbattle3 0x0 0x1C 0x100 gText_Route3_BeatRival
     pause DELAY_HALFSECOND
     clearflag 0x32 @ Show Assistant
