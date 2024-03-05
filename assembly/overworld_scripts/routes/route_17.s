@@ -582,6 +582,17 @@ EventScript_StarterChoice_SetSobble:
 	setvar 0x4002 SPECIES_SOBBLE
 	return
 
+.global EventScript_Route17Cave_TM80_RockSlide
+EventScript_Route17Cave_TM80_RockSlide:
+    setvar CHOSEN_ITEM ITEM_TM80
+    call ItemScript_Common_FindTM
+    end
+
+.global SignScript_Route17Cave_DeadEndAheadSign
+SignScript_Route17Cave_DeadEndAheadSign:
+    msgbox gText_Route17Cave_DeadEndWarningSign MSG_SIGN
+    end
+
 m_JoinRivalBelow: .byte walk_left, walk_up, end_m
 m_FacePlayer: .byte exclaim, look_down, end_m
 m_WalkToPlayer: .byte walk_down, walk_left, walk_left, look_down, end_m 

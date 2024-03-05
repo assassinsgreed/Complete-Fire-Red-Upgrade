@@ -547,9 +547,9 @@
 #define FLAG_SEEMS_MESSED_UP?                                   0x219
 #define FLAG_HIDE_HELEO_CITY_MOOMOOMILK                         0x21A
 #define FLAG_HIDE_PLUTO_HQ_GYARADOSITE                          0x21B
-#define FLAG_0x21C               0x21C
-#define FLAG_0x21D               0x21D
-#define FLAG_0x21E               0x21E
+#define FLAG_HIDE_ROUTE17_CAVE_TM80_ROCK_SLIDE                  0x21C
+#define FLAG_HIDE_ROUTE17_CAVE_IRON                             0x21D
+#define FLAG_HIDE_ROUTE17_CAVE_HYPER_POTION                     0x21E
 #define FLAG_0x21F               0x21F
 #define FLAG_0x220               0x220
 #define FLAG_0x221               0x221
@@ -1166,7 +1166,7 @@
 #define HIDDEN_ITEM_ROUTE_12_WEST_RARE_CANDY                          139
 #define HIDDEN_ITEM_ROUTE_12_WEST_NUGGET                              140
 #define HIDDEN_ITEM_ROUTE_12_WEST_ELIXIR                              141
-#define HIDDEN_ITEM_SILPH_CO_9F_CALCIUM                               142
+#define HIDDEN_ITEM_ROUTE_17_CAVE_X_ACCURACY                          142
 #define HIDDEN_ITEM_SILPH_CO_10F_HP_UP                                143
 #define HIDDEN_ITEM_SILPH_CO_11F_REVIVE                               144
 #define HIDDEN_ITEM_ROUTE23_LUM_BERRY                                 145

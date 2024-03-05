@@ -177,3 +177,6 @@ That was a lot of fun! You're a good\nbattler, [PLAYER].
 
 #org @gText_Route17_RivalDepartsForHawthornesLab
 [BLACK][RIVAL]: [BLUE]We're Pok\emon trainers,\n[PLAYER]. I can't believe it!\pI'm gonna catch some Pok\emon before\ngoing to Professor Hawthorne's lab.\lLet's catch up later!
+
+#org @gText_Route17Cave_DeadEndWarningSign
+Warning!\pA recent rock slide has caved in\npart of the cave ahead.\pBe cautious when exploring beyond\nthis point.
