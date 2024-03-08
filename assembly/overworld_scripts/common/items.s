@@ -111,6 +111,11 @@ ItemScript_Common_TinyMushroom:
     finditem ITEM_TINY_MUSHROOM 0x1
     end
 
+.global ItemScript_Common_BigPearl
+ItemScript_Common_BigPearl:
+    finditem ITEM_BIG_PEARL 0x1
+    end
+
 .global ItemScript_Common_StarPiece
 ItemScript_Common_StarPiece:
     finditem ITEM_STAR_PIECE 0x1
