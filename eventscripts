@@ -1658,3 +1658,37 @@ npc 1 55 1 EventScript_PlutoHQ_B1F_Gyaradosite
 npc 1 56 0 EventScript_PlutoHQ_B4F_Irene
 # Ronald's Office
 npc 1 57 0 EventScript_PlutoHQ_B7F_Ronald
+
+# Route 18
+npc 3 36 0 EventScript_Route18_SwimmerJasper
+npc 3 36 1 EventScript_Route18_TriathleteDeborah
+npc 3 36 2 EventScript_Route18_SwimmerJudie
+npc 3 36 3 EventScript_Route18_BirdKeeperKirk
+npc 3 36 4 EventScript_Route18_LassEmma
+npc 3 36 5 EventScript_Route18_TM99_DazzlingGleam
+npc 3 36 6 EventScript_Route18_Galladite
+npc 3 36 7 ItemScript_Common_SodaPop
+npc 3 36 8 ItemScript_Common_BigPearl
+npc 3 36 9 ItemScript_Common_Revive
+npc 3 36 10 ItemScript_Common_HpUp
+npc 3 36 11 EventScript_Route18_Fisherman
+sign 3 36 0 SignScript_Route18_PreserveFlowersSign
+## 1-3 are hidden items
+sign 3 36 4 SignScript_Route18_OrichelleGarden
+## Cave
+npc 1 124 0 EventScript_Route18_BlackbeltRohan
+npc 1 124 1 EventScript_Route18_TM31_BrickBreak
+npc 1 124 2 ItemScript_Common_FullRestore
+npc 1 124 3 ItemScript_Common_Potion
+npc 1 124 4 ItemScript_Common_Iron
+npc 1 124 5 EventScript_Common_RockSmash
+npc 1 124 6 EventScript_Common_RockSmash
+npc 1 124 7 EventScript_Common_RockSmash
+npc 1 124 8 EventScript_Common_RockSmash
+npc 1 124 9 EventScript_Common_RockSmash
+npc 1 124 10 EventScript_Common_RockSmash
+npc 1 124 11 EventScript_Common_RockSmash
+npc 1 124 12 EventScript_Common_RockSmash
+npc 1 124 13 EventScript_Common_RockSmash
+npc 1 124 14 EventScript_Common_RockSmash
+npc 1 124 15 EventScript_Common_RockSmash

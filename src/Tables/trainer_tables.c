@@ -4041,6 +4041,38 @@ const struct TrainerMonItemCustomMoves sParty_PlutoHQ_B1F_TeamPlutoLeaderKurtis[
 };
 // #endregion
 
+// #region Route 18
+const struct TrainerMonNoItemDefaultMoves sParty_Route18_SwimmerJasper[] = {
+    { .lvl = 46, .species = SPECIES_MARSHTOMP },
+    { .lvl = 46, .species = SPECIES_LANTURN },
+    { .lvl = 47, .species = SPECIES_SAMUROTT }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route18_TriathleteDeborah[] = {
+    { .lvl = 47, .species = SPECIES_CINDERACE },
+    { .lvl = 47, .species = SPECIES_PASSIMIAN }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route18_SwimmerJudie[] = {
+    { .lvl = 49, .species = SPECIES_EMPOLEON }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route18_BirdKeeperKirk[] = {
+    { .lvl = 47, .species = SPECIES_DECIDUEYE },
+    { .lvl = 48, .species = SPECIES_TALONFLAME }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route18_LassEmma[] = {
+    { .lvl = 46, .species = SPECIES_CUTIEFLY },
+    { .lvl = 47, .species = SPECIES_FLOETTE_BLUE },
+    { .lvl = 47, .species = SPECIES_SYLVEON },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route18_BlackbeltRohan[] = {
+    { .lvl = 49, .species = SPECIES_CONKELDURR }
+};
+// #endregion
+
 // #endregion
 
 #define NO_NAME                                                                                      \
@@ -7852,6 +7884,80 @@ const struct Trainer gTrainers[] = {
         .aiFlags =  AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_SEMI_SMART,
         .partySize = NELEMS(sParty_PlutoHQ_B1F_TeamPlutoLeaderKurtis),
         .party = {.ItemCustomMoves = sParty_PlutoHQ_B1F_TeamPlutoLeaderKurtis}
+    },
+    // #endregion
+    // #region Route 18
+    [TRAINER_ROUTE_18_SWIMMER_JASPER] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_SWIMMER_M,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
+        .trainerPic = TRAINER_PIC_SWIMMER_M,
+        .trainerName = {_J, _a, _s, _p, _e, _r, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_RISKY,
+        .partySize = NELEMS(sParty_Route18_SwimmerJasper),
+        .party = {.NoItemDefaultMoves = sParty_Route18_SwimmerJasper}
+    },
+    [TRAINER_ROUTE_18_TRIATHLETE_DEBORAH] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_TRIATHLETE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
+        .trainerPic = TRAINER_PIC_RUNNING_TRIATHLETE_F,
+        .trainerName = {_D, _e, _b, _o, _r, _a, _h, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_TRY_TO_FAINT,
+        .partySize = NELEMS(sParty_Route18_TriathleteDeborah),
+        .party = {.NoItemDefaultMoves = sParty_Route18_TriathleteDeborah}
+    },
+    [TRAINER_ROUTE_18_SWIMMER_JUDIE] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_SWIMMER_F,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
+        .trainerPic = TRAINER_PIC_SWIMMER_F,
+        .trainerName = {_J, _u, _d, _i, _e, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_RISKY,
+        .partySize = NELEMS(sParty_Route18_SwimmerJudie),
+        .party = {.NoItemDefaultMoves = sParty_Route18_SwimmerJudie}
+    },
+    [TRAINER_ROUTE_18_BIRD_KEEPER_KIRK] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_BIRD_KEEPER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_BIRD_KEEPER,
+        .trainerName = {_K, _i, _r, _k, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_TRY_TO_FAINT,
+        .partySize = NELEMS(sParty_Route18_BirdKeeperKirk),
+        .party = {.NoItemDefaultMoves = sParty_Route18_BirdKeeperKirk}
+    },
+    [TRAINER_ROUTE_18_LASS_EMMA] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_LASS,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .trainerPic = TRAINER_PIC_LASS,
+        .trainerName = {_E, _m, _m, _a, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = NELEMS(sParty_Route18_LassEmma),
+        .party = {.NoItemDefaultMoves = sParty_Route18_LassEmma}
+    },
+    [TRAINER_ROUTE_18_CAVE_BLACKBELT_ROHAN] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_BLACK_BELT,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_BLACK_BELT,
+        .trainerName = {_R, _o, _h, _a, _n, _END},
+        .items = { ITEM_X_ATTACK },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_RISKY | AI_SCRIPT_TRY_TO_FAINT,
+        .partySize = NELEMS(sParty_Route18_BlackbeltRohan),
+        .party = {.NoItemDefaultMoves = sParty_Route18_BlackbeltRohan}
     },
     // #endregion
     // #endregion
