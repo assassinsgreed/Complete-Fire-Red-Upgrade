@@ -330,6 +330,24 @@ const struct TerrainTableStruct gTerrainTable[] =
 			.burmyForm = SPECIES_BURMY_TRASH,
 		},
 
+	[BATTLE_TERRAIN_POND_CAVE + 4] =
+		{
+			.camouflageType = TYPE_WATER,
+			.secretPowerEffect = MOVE_EFFECT_SP_DEF_MINUS_1,
+			.secretPowerAnim = MOVE_MUDSHOT,
+			.naturePowerMove = MOVE_MUDDYWATER,
+			.burmyForm = SPECIES_NONE,
+		},
+
+	[BATTLE_TERRAIN_POND_CAVE_TORMA + 4] =
+		{
+			.camouflageType = TYPE_WATER,
+			.secretPowerEffect = MOVE_EFFECT_SP_DEF_MINUS_1,
+			.secretPowerAnim = MOVE_MUDSHOT,
+			.naturePowerMove = MOVE_MUDDYWATER,
+			.burmyForm = SPECIES_NONE,
+		},
+
 #ifdef UNBOUND //The ones below are for Pokemon Unbound. Feel free to remove.
 	[BATTLE_TERRAIN_MOLEMAN + 4] =
 		{

@@ -336,14 +336,12 @@ static u8 TryLoadAlternateAreaTerrain(u8 terrain)
 			else if (mapSec == MAPSEC_PERADON_FOREST)
 				terrain = BATTLE_TERRAIN_FOREST_PERADON;
 			break;
-		// case BATTLE_TERRAIN_POND:
-		// 	if (IsCurrentAreaSwamp())
-		// 		terrain = BATTLE_TERRAIN_BOG_WATER;
-		// 	break;
-		// case BATTLE_TERRAIN_SNOW_FIELD:
-		// 	if (MetatileBehavior_IsTallGrass(tileBehavior))
-		// 		terrain = BATTLE_TERRAIN_SNOW_GRASS;
-		// 	break;
+		case BATTLE_TERRAIN_POND:
+			if (MAP_IS(ROUTE17_CAVE_1F) || mapSec == MAPSEC_FORGOTTEN_MANSE)
+				terrain = BATTLE_TERRAIN_POND_CAVE;
+			else if (mapSec == MAPSEC_TORMA_CAVE)
+				terrain = BATTLE_TERRAIN_POND_CAVE_TORMA;
+			break;
 		case BATTLE_TERRAIN_PLAIN:
 			if (IsCurrentAreaWinter())
 				terrain = BATTLE_TERRAIN_SNOWY;
