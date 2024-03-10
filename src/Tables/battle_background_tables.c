@@ -83,6 +83,12 @@ extern const u8 BG_Forest_PeradonPal[];
 extern const u8 BG_PlutoLeaderTiles[];
 extern const u8 BG_PlutoLeaderMap[];
 extern const u8 BG_PlutoLeaderPal[];
+extern const u8 BG_Pond_CaveTiles[];
+extern const u8 BG_Pond_CaveMap[];
+extern const u8 BG_Pond_CavePal[];
+extern const u8 BG_Pond_Cave_TormaTiles[];
+extern const u8 BG_Pond_Cave_TormaMap[];
+extern const u8 BG_Pond_Cave_TormaPal[];
 
 // Evening (just palettes)
 extern const u8 BG_Grass_EveningPal[];
@@ -302,6 +308,22 @@ const struct BattleBackground gBattleTerrainTable[] =
 		.entryTilemap = gBattleTerrainAnimTilemap_Building,
 		.palette = BG_PlutoLeaderPal,
 	},
+	[BATTLE_TERRAIN_POND_CAVE] = 
+	{
+		.tileset = BG_Pond_CaveTiles,
+		.tilemap = BG_Pond_CaveMap,
+		.entryTileset = gBattleTerrainAnimTiles_PondWater,
+		.entryTilemap = gBattleTerrainAnimTilemap_PondWater,
+		.palette = BG_Pond_CavePal,
+	},
+	[BATTLE_TERRAIN_POND_CAVE_TORMA] = 
+	{
+		.tileset = BG_Pond_Cave_TormaTiles,
+		.tilemap = BG_Pond_Cave_TormaMap,
+		.entryTileset = gBattleTerrainAnimTiles_PondWater,
+		.entryTilemap = gBattleTerrainAnimTilemap_PondWater,
+		.palette = BG_Pond_Cave_TormaPal,
+	}
 };
 
 const struct BattleBackground gBattleTerrainTableEvening[] =
@@ -498,6 +520,22 @@ const struct BattleBackground gBattleTerrainTableEvening[] =
 		.entryTilemap = gBattleTerrainAnimTilemap_Building,
 		.palette = BG_PlutoLeaderPal,
 	},
+	[BATTLE_TERRAIN_POND_CAVE] = 
+	{
+		.tileset = BG_Pond_CaveTiles,
+		.tilemap = BG_Pond_CaveMap,
+		.entryTileset = gBattleTerrainAnimTiles_PondWater,
+		.entryTilemap = gBattleTerrainAnimTilemap_PondWater,
+		.palette = BG_Pond_CavePal,
+	},
+	[BATTLE_TERRAIN_POND_CAVE_TORMA] = 
+	{
+		.tileset = BG_Pond_Cave_TormaTiles,
+		.tilemap = BG_Pond_Cave_TormaMap,
+		.entryTileset = gBattleTerrainAnimTiles_PondWater,
+		.entryTilemap = gBattleTerrainAnimTilemap_PondWater,
+		.palette = BG_Pond_Cave_TormaPal,
+	}
 };
 
 const struct BattleBackground gBattleTerrainTableNight[] =
@@ -694,5 +732,21 @@ const struct BattleBackground gBattleTerrainTableNight[] =
 		.entryTilemap = gBattleTerrainAnimTilemap_Building,
 		.palette = BG_PlutoLeaderPal,
 	},
+	[BATTLE_TERRAIN_POND_CAVE] = 
+	{
+		.tileset = BG_Pond_CaveTiles,
+		.tilemap = BG_Pond_CaveMap,
+		.entryTileset = gBattleTerrainAnimTiles_PondWater,
+		.entryTilemap = gBattleTerrainAnimTilemap_PondWater,
+		.palette = BG_Pond_CavePal,
+	},
+	[BATTLE_TERRAIN_POND_CAVE_TORMA] = 
+	{
+		.tileset = BG_Pond_Cave_TormaTiles,
+		.tilemap = BG_Pond_Cave_TormaMap,
+		.entryTileset = gBattleTerrainAnimTiles_PondWater,
+		.entryTilemap = gBattleTerrainAnimTilemap_PondWater,
+		.palette = BG_Pond_Cave_TormaPal,
+	}
 };
 #endif
