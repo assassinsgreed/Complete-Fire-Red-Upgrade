@@ -403,6 +403,31 @@ NotRememberingToday:
 	msgbox gText_AnthraTown_RivalNotRememberingToday MSG_NORMAL
 	return
 
+.global SignScript_AnthraTown_PlayersHouse
+SignScript_AnthraTown_PlayersHouse:
+	msgbox gText_AnthraTown_PlayersHouseMailbox MSG_SIGN
+	end
+
+.global SignScript_AnthraTown_RivalsHouse
+SignScript_AnthraTown_RivalsHouse:
+	msgbox gText_AnthraTown_RivalsHouseMailbox MSG_SIGN
+	end
+
+.global SignScript_AnthraTown_TownPlacard
+SignScript_AnthraTown_TownPlacard:
+	msgbox gText_AnthraTown_TownPlacardSign MSG_SIGN
+	end
+
+.global SignScript_AnthraTown_RivalsBooks
+SignScript_AnthraTown_RivalsBooks:
+	msgbox gText_AnthraTown_RivalsBooks MSG_SIGN
+	end
+
+.global SignScript_AnthraTown_RivalsFamilyPictures
+SignScript_AnthraTown_RivalsFamilyPictures:
+	msgbox gText_AnthraTown_RivalsFamilyPicture MSG_SIGN
+	end
+
 m_RivalWalkUp: .byte walk_up, walk_up, walk_right, walk_right, walk_right, walk_up, look_right, end_m
 m_RivalRunOut: .byte run_left, run_down, run_left, run_left, run_left, run_left, run_down, run_down, run_down, run_down, end_m
 m_RivalReturn: .byte walk_up, walk_up, look_right, end_m

@@ -507,19 +507,35 @@ EventScript_DaimynCityNPCHouses_MoveReminder:
     faceplayer
     callasm StorePokeChipCount
 	buffernumber 0x0 0x8005 @ Take stored PokeChip count
+    checkflag 0x259 @ Move reminder explained
+    if SET _goto TeachMovesRevisited
+    @ Intentional fall through
+    
+TeachMovesInfo:
+    msgbox gText_DaimynCityNPCHouses_MoveReminderExplanation MSG_NORMAL
+    setflag 0x259 @ Move reminder explained
+    goto TeachMovesPrompt
+
+TeachMovesRevisited:
+    msgbox gText_DaimynCityNPCHouses_MoveReminderRemembersPlayer MSG_NORMAL
+    @ Intentional fall through
+
+TeachMovesPrompt:
     msgbox gText_DaimynCityNPCHouses_MoveReminderPrompt MSG_KEEPOPEN
     @ Intentional fall through
 
 TeachMovesMenuHandling:
     multichoiceoption gText_DaimynCityNPCHouses_MoveReminder_PastMovesChoice 0
 	multichoiceoption gText_DaimynCityNPCHouses_MoveReminder_EggMovesChoice 1
-	multichoiceoption gText_DaimynCityNPCHouses_MoveReminder_CancelChoice 2
-    multichoice 0x0 0x0 THREE_MULTICHOICE_OPTIONS FALSE
+    multichoiceoption gText_Info 2
+	multichoiceoption gText_DaimynCityNPCHouses_MoveReminder_CancelChoice 3
+    multichoice 0x0 0x0 FOUR_MULTICHOICE_OPTIONS FALSE
     copyvar MULTICHOICE_SELECTION LASTRESULT
 	switch MULTICHOICE_SELECTION
 	case 0, TeachPastMove
 	case 1, TeachEggMove
-	case 2, ChangedMindAboutMoveDeleteOrRemember
+    case 2, TeachMovesInfo
+	case 3, ChangedMindAboutMoveDeleteOrRemember
     case 0xF, ChangedMindAboutMoveDeleteOrRemember
 	goto ChangedMindAboutMoveDeleteOrRemember
 

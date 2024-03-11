@@ -163,8 +163,14 @@ It worked flawlessly! [BUFFER1] has\nforgotten how to use [BUFFER2].
 #org @gText_DaimynCityNPCHouses_MoveDeleter_ComeToForgetMoreMoves
 Come see me again, if you want to\nforget more moves.
 
+#org @gText_DaimynCityNPCHouses_MoveReminderExplanation
+Hello, dearie. I am a Pok\emon\ntutor, but I am quite different\lfrom those you may be familiar\lwith.\pYou see, I remind them of moves\nthey used to know.\pFor 1 Pok\eChip, I can teach a move\nthey learned through leveling up.\pFor 10 Pok\eChips, I can teach an egg\nmove they could have known.
+
+#org @gText_DaimynCityNPCHouses_MoveReminderRemembersPlayer
+Hello, dearie. I remember you.
+
 #org @gText_DaimynCityNPCHouses_MoveReminderPrompt
-Hello, dearie. I am a Pok\emon\ntutor, but I am quite different\lfrom those you may be familiar\lwith.\pYou see, I remind them of moves\nthey used to know.\pFor 1 Pok\eChip, I can teach a move\nthey learned through leveling up.\pFor 10 Pok\eChips, I can teach an egg\nmove they could have known.\pWould you be interested in learning a\nmove? (Held: [BUFFER1])
+Shall I have one of your Pok\emon\nremember a move? (Held: [BUFFER1])
 
 #org @gText_DaimynCityNPCHouses_MoveReminderPrompt_TeachMore
 [RED]It is done.\pWould you like to remember more\nmoves? (Held: [BUFFER1])
