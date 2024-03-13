@@ -129,3 +129,18 @@ Then you go with my\nblessing.\pBefore you go, make sure you take\nyour Running 
 
 #org @gText_AnthraTown_ReturnToSeleneAndHawthorne
 [BLUE]Whaaaat? You too? Awesome!\pC'mon, let's go tell Miss Selene and\nthe Professor the good news!
+
+#org @gText_AnthraTown_PlayersHouseMailbox
+[PLAYER]'s House
+
+#org @gText_AnthraTown_RivalsHouseMailbox
+[RIVAL]'s House
+
+#org @gText_AnthraTown_TownPlacardSign
+Anthra Town\nThe town of infinite possibilities!
+
+#org @gText_AnthraTown_RivalsBooks
+The shelves are crammed full of\nbooks on Champion Selene.
+
+#org @gText_AnthraTown_RivalsFamilyPicture
+It's a picture of [RIVAL] and\nhis family. They look happy!

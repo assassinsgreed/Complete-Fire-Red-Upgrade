@@ -272,70 +272,70 @@ I should've expected this[.]
 [BLACK]Alistair: [BLUE]I'm counting on you.
 
 #org @gText_Route11SouthHouse_PlutoEvent_RonaldThreatensRefiner
-[BLUE]Gyahahaha! C'mon, fork over the Mega\nStones, or else.
+[BLACK]???: [BLUE]Gyahahaha! C'mon, fork over the\nMega Stones, or else.
 
 #org @gText_Route11SouthHouse_PlutoEvent_RefinerRefuses
-[BLUE]Never. If you want them, you'll have\nto go through me first.
+[BLACK]Old Man: [BLUE]Never. If you want them,\nyou'll have to go through me first.
 
 #org @gText_Route11SouthHouse_PlutoEvent_RonaldAccepts
-[BLUE]That can be arranged. C'mere you.
+[BLACK]???: [BLUE]That can be arranged. C'mere\nyou.
 
 #org @gText_Route11SouthHouse_PlutoEvent_RonaldAccusesPlayer
-[BLUE]Huh? Who're you? You aren't one of\nus.\pUgh, those goons at the door must've\nbeen defeated. Are you to blame?
+[BLACK]???: [BLUE]Huh? Who're you? You aren't one\nof us.\pUgh, those goons at the door must've\nbeen defeated. Are you to blame?
 
 #org @gText_Route11SouthHouse_PlutoEvent_RonaldAppreciatesHonesty
-[BLUE]Gyahahaha! Well, wouldja look at\nthat?\pAdmitting that to me? I didn't expect\nyou to be so brave.
+[BLACK]???: [BLUE]Gyahahaha! Well, wouldja look\nat that?\pAdmitting that to me? I didn't expect\nyou to be so brave.
 
 #org @gText_Route11SouthHouse_PlutoEvent_RonaldDoesNotAppreciateDishonesty
-[BLUE]You think I'm falling for that? What\na load of guff.
+[BLACK]???: [BLUE]You think I'm falling for that?\nWhat a load of guff.
 
 #org @gText_Route11SouthHouse_PlutoEvent_RonaldStartsToRecognizePlayer
-[BLUE]Wait[.] Lemme get a good look at you.\nYou seem familiar. Let's see[.]
+[BLACK]???: [BLUE]Wait[.] Lemme get a good look at\nyou. You seem familiar. Let's see[.]
 
 #org @gText_Route11SouthHouse_PlutoEvent_RonaldGivesMaleDescriptor
-[BLUE]Dark hair, obsession with the colour\nblue, kinda cocky[.]
+[BLACK]???: [BLUE]Dark hair, obsession with the\ncolour blue, kinda cocky[.]
 
 #org @gText_Route11SouthHouse_PlutoEvent_RonaldGivesFemaleDescriptor
-[BLUE]Red hair, kind of short, kinda\ncocky[.]
+[BLACK]???: [BLUE]Red hair, short, kinda\ncocky[.]
 
 #org @gText_Route11SouthHouse_PlutoEvent_RonaldIsReadyToBattle
-[BLUE]I knew it, you're that kid from\nIrene's report!\pYou're the one that caused us all\nthat grief in the Rubarr Desert op.\pGyahahaha, just my luck! I was\nhoping to run into the punk that\lcaused trouble for Irene.
+[BLACK]???: [BLUE]I knew it, you're that kid from\nIrene's report!\pYou're the one that caused us all\nthat grief in the Rubarr Desert op.\pGyahahaha, just my luck! I was\nhoping to run into the punk that\lcaused trouble for Irene.
 
 #org @gText_Route11SouthHouse_PlutoEvent_RonaldTellsRefinerToMove
-[BLUE]You there, old fogey.\nBeat it! I'll deal with you later.
+[BLACK]???: [BLUE]You there, old fogey.\nBeat it! I'll deal with you later.
 
 #org @gText_Route11SouthHouse_PlutoEvent_RefinerWarnsPlayer
-[BLUE]Young child[.] I don't know who you\nare or why you're here, but I hope\lyou're certain of what you're doing.\pPlease, be careful.
+[BLACK]Old Man: [BLUE]Young child[.] I don't know\nwho you are or why you're here,\lbut I hope you're certain of what\lyou're doing.\pPlease, be careful.
 
 #org @gText_Route11SouthHouse_PlutoEvent_RonaldScoldsRefiner
-[BLUE]Aw, shut up already.
+[BLACK]???: [BLUE]Aw, shut up already.
 
 #org @gText_Route11SouthHouse_PlutoEvent_RonaldChallengesPlayer
-[BLUE]Listen up! The name's Ronald. I'm\nTeam Pluto's chief operating\lofficer.\pI do a lot of stuff, but let's cut\nto the chase.\pYou really screwed up our\noperations last time, and I can't\lhave that.
+[BLACK]Ronald: [BLUE]Listen up! The name's\nRonald. I'm Team Pluto's chief\loperating officer.\pI do a lot of stuff, but let's cut\nto the chase.\pYou really screwed up our\noperations last time, and I can't\lhave that.
 
 #org @gText_Route11SouthHouse_PlutoEvent_RonaldBattleIntro
-[BLUE]I am Team Pluto's strongest admin,\nand I will crush your Pok\emon!
+[BLACK]Ronald: [BLUE]I am Team Pluto's strongest\nadmin, and I will crush your\lPok\emon!
 
 #org @gText_Route11SouthHouse_PlutoEvent_RonaldBattleLoss
 Heh, so you're the real deal[.]
 
 #org @gText_Route11SouthHouse_PlutoEvent_RonaldAsksPlayerToJoin
-[BLUE]Gyahaha! Now I get it.\pSay, we could use someone like\nyou.\pWhadda ya say? Will you join us?
+[BLACK]Ronald: [BLUE]Gyahaha! Now I get it.\pSay, we could use someone like\nyou.\pWhadda ya say? Will you join us?
 
 #org @gText_Route11SouthHouse_PlutoEvent_RonaldWhenPlayerSaysYes
-[BLUE]Heh. You've got a sense of humour\ntoo. The whole package.\pI know you aren't serious.
+[BLACK]Ronald: [BLUE]Heh. You've got a sense of\nhumour too. The whole package.\pI know you aren't serious.
 
 #org @gText_Route11SouthHouse_PlutoEvent_RonaldWhenPlayerSaysNo
-[BLUE]Heh, I figured you'd say that.
+[BLACK]Ronald: [BLUE]Heh, I figured you'd say\nthat.
 
 #org @gText_Route11SouthHouse_PlutoEvent_RonaldThreatensThePlayer
-[BLUE]Listen up. I'm a good sport.\pYou won fair and square, so we'll\npull outta this op without fuss.\pBut let me be clear: You cause\ntrouble for us again, and you'll\lseriously regret it.\pJust go back to living your life, and\nput the heroics behind ya. Got it?
+[BLACK]Ronald: [BLUE]Listen up. I'm a good\nsport.\pYou won fair and square, so we'll\npull outta this op without fuss.\pBut let me be clear: You cause\ntrouble for us again, and you'll\lseriously regret it.\pJust go back to living your life, and\nput the heroics behind ya. Got it?
 
 #org @gText_Route11SouthHouse_PlutoEvent_RonaldThreatensOldMan
-[BLUE]And you, old man!\pYer lucky this kid was here. Don't\nforget that.
+[BLACK]Ronald: [BLUE]And you, old man!\pYer lucky this kid was here. Don't\nforget that.
 
 #org @gText_Route11SouthHouse_PlutoEvent_RonaldLeaves
-[BLUE]Alright. I'll make good on my word.\pAnd remember: stay out of our way if\nyou value your safety.
+[BLACK]Ronald: [BLUE]Alright. I'll make good on\nmy word.\pAnd remember: stay out of our way if\nyou value your safety.
 
 #org @gText_Route11SouthHouse_PlutoEvent_RefinerThanksPlayer
 [BLUE]Young trainer, I must thank you for\nyour help.\pHad you not intervened[.] I shudder to\nthink about it.\pBut tell me, what possessed you to\ndo something so dangerous?

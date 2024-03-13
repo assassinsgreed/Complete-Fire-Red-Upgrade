@@ -613,7 +613,7 @@
 #define FLAG_BATTLED_CASEY_ON_ROUTE_10                   0x256
 #define FLAG_GOT_HIDDEN_POWER_FROM_PSYCHIC_SIBLINGS      0x257
 #define FLAG_BEAT_RIVAL_ON_ROUTE_17                      0x258
-#define FLAG_GOT_TM06_FROM_KOGA                          0x259
+#define FLAG_MOVE_REMINDER_EXPLAINED                     0x259
 #define FLAG_0x25A                                       0x25A
 #define FLAG_GOT_TM27                                    0x25B
 #define FLAG_0x25C                                       0x25C

@@ -2907,8 +2907,8 @@ const struct TrainerMonNoItemDefaultMoves sParty_Route11South_Engineer_Dale[] = 
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_Route11South_Collector_Orville[] = {
-    { .lvl = 35, .species = SPECIES_LILEEP },
-    { .lvl = 35, .species = SPECIES_SLIGGOO },
+    { .lvl = 34, .species = SPECIES_LILEEP },
+    { .lvl = 34, .species = SPECIES_SLIGGOO },
     { .lvl = 35, .species = SPECIES_LAPRAS },
 };
 

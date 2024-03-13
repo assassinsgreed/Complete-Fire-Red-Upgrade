@@ -19,6 +19,9 @@ npc 3 0 5 EventScript_AnthraTown_FootprintGuy
 tile 3 0 0 EventScript_AnthraTown_FootprintGuy
 tile 3 0 1 EventScript_AnthraTown_FootprintGuy
 tile 3 0 2 EventScript_AnthraTown_FootprintGuy
+sign 3 0 0 SignScript_AnthraTown_PlayersHouse
+sign 3 0 1 SignScript_AnthraTown_RivalsHouse
+sign 3 0 2 SignScript_AnthraTown_TownPlacard
 npc 4 0 0 EventScript_AnthraTown_MomMain
 sign 4 1 2 EventScript_AnthraTown_PlayersPoster
 sign 4 1 3 EventScript_AnthraTown_NESClassic
@@ -26,6 +29,10 @@ npc 4 2 0 EventScript_AnthraTown_RivalMom
 npc 4 2 1 EventScript_AnthraTown_RivalInTheirHome
 npc 4 3 0 EventScript_AnthraTown_OldMan
 tile 4 1 0 TileScript_AnthraTown_RivalArrival
+sign 4 2 0 SignScript_AnthraTown_RivalsBooks
+sign 4 2 1 SignScript_AnthraTown_RivalsBooks
+sign 4 2 2 SignScript_AnthraTown_RivalsFamilyPictures
+sign 4 2 3 SignScript_AnthraTown_RivalsFamilyPictures
 
 # Route 1
 npc 3 19 0 EventScript_Route1_YoungsterPeter

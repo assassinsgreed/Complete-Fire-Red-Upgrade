@@ -562,6 +562,11 @@ TileScript_Route11South_SouthByHesson:
 
 .global TileScript_Route11South_HessonPass
 TileScript_Route11South_HessonPass:
+    lock
+    compare PlutoEncounterVar 0x5
+    if equal _goto End
+    compare PlutoEncounterVar 0x4
+    if equal _goto NeedToBattleRivalFirst
     special 0xE1 @ Check if the player has a follower
     compare LASTRESULT FALSE
     if equal _goto End
