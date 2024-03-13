@@ -461,3 +461,13 @@ ItemScript_Common_DragonScale:
 ItemScript_Common_BlackSludge:
     finditem ITEM_BLACK_SLUDGE 0x1
     end
+
+.global ItemScript_Common_Honey
+ItemScript_Common_Honey:
+    finditem ITEM_HONEY 0x1
+    end
+
+.global ItemScript_Common_Eviolite
+ItemScript_Common_Eviolite:
+    finditem ITEM_EVIOLITE 0x1
+    end

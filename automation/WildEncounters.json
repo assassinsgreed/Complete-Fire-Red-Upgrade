@@ -538,6 +538,27 @@
         },
         {
             "mapgroup": 1,
+            "mapnum": 59,
+            "grass": {
+                "rate": 52,
+                "pokemon": [
+                    { "low": 43, "high": 46, "species": "SPECIES_COMBEE" },
+                    { "low": 42, "high": 45, "species": "SPECIES_COMFEY" },
+                    { "low": 43, "high": 46, "species": "SPECIES_SUNFLORA" },
+                    { "low": 44, "high": 46, "species": "SPECIES_SHIINOTIC" },
+                    { "low": 43, "high": 46, "species": "SPECIES_FLORGES_ORANGE" },
+                    { "low": 42, "high": 45, "species": "SPECIES_VESPIQUEN" },
+                    { "low": 43, "high": 46, "species": "SPECIES_LOPUNNY" },
+                    { "low": 42, "high": 45, "species": "SPECIES_GARDEVOIR" },
+                    { "low": 42, "high": 45, "species": "SPECIES_ROSERADE" },
+                    { "low": 43, "high": 46, "species": "SPECIES_BRELOOM" },
+                    { "low": 44, "high": 46, "species": "SPECIES_WHIMSICOTT" }, 
+                    { "low": 44, "high": 46, "species": "SPECIES_WHIMSICOTT" }
+                ]
+            }
+        },
+        {
+            "mapgroup": 1,
             "mapnum": 81,
             "grass": {
                 "rate": 3,
