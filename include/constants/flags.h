@@ -560,8 +560,8 @@
 #define FLAG_HIDE_ROUTE18_CAVE_FULL_RESTORE                     0x226
 #define FLAG_HIDE_ROUTE18_CAVE_POTION                           0x227
 #define FLAG_HIDE_ROUTE18_CAVE_IRON                             0x228
-#define FLAG_0x229               0x229
-#define FLAG_0x22A               0x22A
+#define FLAG_HIDE_ORICHELLE_GARDEN_EVIOLITE                     0x229
+#define FLAG_HIDE_ORICHELLE_GARDEN_HONEY                        0x22A
 #define FLAG_0x22B               0x22B
 #define FLAG_0x22C               0x22C
 #define FLAG_0x22D               0x22D
@@ -1174,10 +1174,10 @@
 #define HIDDEN_ITEM_ROUTE_18_CAVE_DUSK_BALL                           147
 #define HIDDEN_ITEM_ROUTE_18_CAVE_LIGHT_CLAY                          148
 #define HIDDEN_ITEM_ROUTE_18_CAVE_PROTEIN                             149
-#define HIDDEN_ITEM_ROUTE9_CHESTO_BERRY                               150
-#define HIDDEN_ITEM_ROUTE10_NANAB_BERRY                               151
-#define HIDDEN_ITEM_ROUTE7_WEPEAR_BERRY                               152
-#define HIDDEN_ITEM_ROUTE20_STARDUST                                  153
+#define HIDDEN_ITEM_ORICHELLE_GARDEN_ENIGMA_BERRY_1                   150
+#define HIDDEN_ITEM_ORICHELLE_GARDEN_ENIGMA_BERRY_2                   151
+#define HIDDEN_ITEM_ORICHELLE_GARDEN_ENIGMA_BERRY_3                   152
+#define HIDDEN_ITEM_ORICHELLE_GARDEN_ENIGMA_BERRY_4                   153
 #define HIDDEN_ITEM_ROUTE21_NORTH_PEARL                               154
 #define HIDDEN_ITEM_ROUTE23_MAX_ELIXIR                                155
 #define HIDDEN_ITEM_ROUTE4_RAZZ_BERRY                                 156

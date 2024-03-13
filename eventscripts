@@ -1699,3 +1699,8 @@ npc 1 124 12 EventScript_Common_RockSmash
 npc 1 124 13 EventScript_Common_RockSmash
 npc 1 124 14 EventScript_Common_RockSmash
 npc 1 124 15 EventScript_Common_RockSmash
+
+# Orichelle Garden
+map 1 59 MapScript_OrichelleGarden
+npc 1 59 0 ItemScript_Common_Honey
+npc 1 59 1 ItemScript_Common_Eviolite
