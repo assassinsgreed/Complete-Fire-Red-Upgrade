@@ -60,3 +60,27 @@ Flowers are growing here.\nPlease watch your step!
 
 #org @gText_Route18_OrichelleGardenSign
 Orichelle Garden ahead
+
+#org @gText_Route18_ShayminGirl_IntroductoryText
+Did you know? Legend has it that\nthis route used to be a swamp.\pNobody came here or lived here.\pThen, one day, and old woman came\nhere and offered her gratitude for\lthe land.\pFrom that day forth, grass and\nflowers began to grow all along\lthe route.\pIsn't that neat?\pI like to believe that was a\nPok\emon's doing, but my sister\ldoesn't believe me.\pBut[.] If there really was a Pok\emon\nthat could cause that to happen[.]\pWell, I'd like to meet them!
+
+#org @gText_Route18_ShayminGirl_ShayminRecognized
+Oh! That [GREEN]Shaymin[RED][.]\pThat must be the Pok\emon I've\nheard so much about!\pPlease, I'd like to offer my\ngratitude to it as well, with this\lgift.
+
+#org @gText_Route18_ShayminGirl_GracideaExplanation
+The flower I gave you is called a\nGracidea. It represents gratitude.\pPlease, would you show it to your\nShaymin sometime?
+
+#org @gText_Route18_RestWoman_RestPrompt
+Oh, dear. You and your Pok\emon look\ntired. Come, have tea with us.
+
+#org @gText_Route18_RestWoman_RestYes
+Wonderful! I'll pour some right away.
+
+#org @gText_Route18_RestWoman_RestNo
+Are you sure? Well, okay then.
+
+#org @gText_Route18_RestWoman_AfterRest
+There, you must be feeling much\nbetter!\pYour Pok\emon look happy too.
+
+#org @gText_Route18_LocalLegendGirl
+My sister is so sure that she saw\nthat Pok\emon, but[.]\pIt has to just be a local legend.\pI mean, a Pok\emon that could\ntransform a swamp into a field of\lflowers..?

@@ -53,6 +53,7 @@ SetWeatherSnowstorm:
     doweather
     return
 
+// Terrains are all once per battle and cleared. See battle_start_turn_start for map based permanent terrain
 .global ClearTerrain
 ClearTerrain:
     setvar 0x5000 0x0

@@ -1682,6 +1682,10 @@ npc 3 36 11 EventScript_Route18_Fisherman
 sign 3 36 0 SignScript_Route18_PreserveFlowersSign
 ## 1-3 are hidden items
 sign 3 36 4 SignScript_Route18_OrichelleGarden
+## House
+npc 30 3 0 EventScript_Route18_ShayminFormChangeGirl
+npc 30 3 1 EventScript_Route18_RestWoman
+npc 30 3 2 EventScript_Route18_LocalLegendGirl
 ## Cave
 npc 1 124 0 EventScript_Route18_BlackbeltRohan
 npc 1 124 1 EventScript_Route18_TM31_BrickBreak
@@ -1704,3 +1708,4 @@ npc 1 124 15 EventScript_Common_RockSmash
 map 1 59 MapScript_OrichelleGarden
 npc 1 59 0 ItemScript_Common_Honey
 npc 1 59 1 ItemScript_Common_Eviolite
+npc 1 59 2 EventScript_OrichelleGarden_Shaymin
