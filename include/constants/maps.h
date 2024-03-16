@@ -144,7 +144,10 @@
 #define MAP_SIX_ISLAND_DOTTED_HOLE_SAPPHIRE_ROOM (120 | (1 << 8))
 #define MAP_SIX_ISLAND_PATTERN_BUSH              (121 | (1 << 8))
 #define MAP_SIX_ISLAND_ALTERING_CAVE             (122 | (1 << 8))
-#define MAP_RUBARR_DESERT_B1    xxF                    (123 | (1 << 8))
+#define MAP_RUBARR_DESERT_B1                     (123 | (1 << 8))
+#define MAP_ROUTE18_CAVE                         (124 | (1 << 8))
+#define MAP_ROUTE13_CAVE_1F                      (125 | (1 << 8))
+#define MAP_ROUTE13_CAVE_B1F                     (126 | (1 << 8))
 
 // Map Group 2
 #define MAP_NAVEL_ROCK_EXTERIOR                       (0 | (2 << 8))
@@ -207,6 +210,8 @@
 #define MAP_ONE_ISLAND_KINDLE_ROAD_EMBER_SPA          (57 | (2 << 8))
 #define MAP_BIRTH_ISLAND_HARBOR                       (58 | (2 << 8))
 #define MAP_NAVEL_ROCK_HARBOR                         (59 | (2 << 8))
+#define MAP_ROUTE13_CAVE_KURTIS_ROOM                  (60 | (2 << 8))
+#define MAP_ROUTE13_CAVE_B2F                          (61 | (2 << 8))
 
 // Map Group 3
 #define MAP_ANTHRA_TOWN                          (0 | (3 << 8))

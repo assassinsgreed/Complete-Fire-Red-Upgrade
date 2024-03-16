@@ -337,6 +337,11 @@ ItemScript_Common_HpUp:
     finditem ITEM_HP_UP 0x1
     end
 
+.global ItemScript_Common_PPUp
+ItemScript_Common_PPUp:
+    finditem ITEM_PP_UP 0x1
+    end
+
 .global ItemScript_Common_Protein
 ItemScript_Common_Protein:
     finditem ITEM_PROTEIN 0x1

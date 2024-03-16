@@ -562,11 +562,11 @@
 #define FLAG_HIDE_ROUTE18_CAVE_IRON                             0x228
 #define FLAG_HIDE_ORICHELLE_GARDEN_EVIOLITE                     0x229
 #define FLAG_HIDE_ORICHELLE_GARDEN_HONEY                        0x22A
-#define FLAG_0x22B               0x22B
-#define FLAG_0x22C               0x22C
-#define FLAG_0x22D               0x22D
-#define FLAG_0x22E               0x22E
-#define FLAG_0x22F               0x22F
+#define FLAG_HIDE_ROUTE13_CAVE_TM65_SHADOW_CLAW                 0x22B
+#define FLAG_HIDE_ROUTE13_CAVE_FULL_RESTORE                     0x22C
+#define FLAG_HIDE_ROUTE13_CAVE_ULTRA_BALL                       0x22D
+#define FLAG_HIDE_ROUTE13_CAVE_REVIVE                           0x22E
+#define FLAG_HIDE_ROUTE13_CAVE_PP_UP                            0x22F
 */
 
 // Story flags

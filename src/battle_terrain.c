@@ -319,9 +319,9 @@ static u8 TryLoadAlternateAreaTerrain(u8 terrain)
 				terrain = BATTLE_TERRAIN_SNOWY;
 			break;
 		case BATTLE_TERRAIN_CAVE:
-			if (MAP_IS(TORMA_CAVE_B1F) || MAP_IS(ROUTE10_CAVE))
+			if (MAP_IS(TORMA_CAVE_B1F) || MAP_IS(ROUTE10_CAVE) || MAP_IS(ROUTE13_CAVE_1F))
 				terrain = BATTLE_TERRAIN_TORMA;
-			else if (MAP_IS(TORMA_CAVE_B2F))
+			else if (MAP_IS(TORMA_CAVE_B2F) || mapSec == MAPSEC_ROUTE_13) // All non B1F caves on Route 13 use the depths background
 				terrain = BATTLE_TERRAIN_TORMA_DEPTHS;
 			else if (IsCurrentAreaHotCave())
 				terrain = BATTLE_TERRAIN_SCALDING_SPA;
@@ -339,7 +339,7 @@ static u8 TryLoadAlternateAreaTerrain(u8 terrain)
 		case BATTLE_TERRAIN_POND:
 			if (MAP_IS(ROUTE17_CAVE_1F) || mapSec == MAPSEC_FORGOTTEN_MANSE)
 				terrain = BATTLE_TERRAIN_POND_CAVE;
-			else if (mapSec == MAPSEC_TORMA_CAVE)
+			else if (mapSec == MAPSEC_TORMA_CAVE || MAP_IS(ROUTE13_CAVE_1F))
 				terrain = BATTLE_TERRAIN_POND_CAVE_TORMA;
 			break;
 		case BATTLE_TERRAIN_PLAIN:

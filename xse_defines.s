@@ -258,6 +258,7 @@ m_RunDown: .byte run_down, end_m
 m_RunUp: .byte run_up, end_m
 m_RunLeft: .byte run_left, end_m
 m_RunRight: .byte run_right, end_m
+m_HideSprite: .byte set_invisible, end_m
 m_Wrong: .byte say_cross, end_m
 m_Surprise: .byte exclaim, end_m
 m_Question: .byte say_question, end_m

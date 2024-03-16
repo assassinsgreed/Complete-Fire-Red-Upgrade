@@ -1993,3 +1993,9 @@ map \map
 	waitmovement ALLEVENTS
 	release
 .endm
+
+@ Command A6 in XSE. Used to set up breakable ice floors
+.macro cmda6 param:req
+	.byte 0xA6
+	.byte \param
+.endm
