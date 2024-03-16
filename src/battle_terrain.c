@@ -345,6 +345,10 @@ static u8 TryLoadAlternateAreaTerrain(u8 terrain)
 		case BATTLE_TERRAIN_PLAIN:
 			if (IsCurrentAreaWinter())
 				terrain = BATTLE_TERRAIN_SNOWY;
+			else if (mapSec == MAPSEC_VARISI_FOREST)
+				terrain = BATTLE_TERRAIN_FOREST;
+			else if (mapSec == MAPSEC_PERADON_FOREST)
+				terrain = BATTLE_TERRAIN_FOREST_PERADON;
 			break;
 		case BATTLE_TERRAIN_INSIDE:
 			if (mapSec == MAPSEC_FORGOTTEN_MANSE)
