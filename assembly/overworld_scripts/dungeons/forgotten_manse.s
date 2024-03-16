@@ -75,7 +75,6 @@ MapScript_ForgottenManse_Basement:
 
 MapEntryScript_ForgottenManseBasement_SetTerrain:
     call SetWeatherThinFog @ No battle effect, just visual
-    call SetMistyTerrain
     checkflag 0x26A @ Switch 5 has been flipped
     if NOT_SET _goto End
     call SetSwitch5Tiles

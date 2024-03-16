@@ -78,7 +78,7 @@
 #define FLAG_HIDE_TEAM_PLUTO_IN_CALICIN_BAY                0x048
 #define FLAG_HIDE_TEAM_PLUTO_YOLENA_CALICIN_BAY            0x049
 #define FLAG_HIDE_TEAM_PLUTO_GRUNTS_AND_KURTISS_IN_HQ      0x04A
-#define FLAG_HIDE_SEAFOAM_B3F_BOULDER_6                    0x04B
+#define FLAG_HIDE_SHAYMIN_WHEN_CAUGHT                      0x04B
 #define FLAG_HIDE_SEAFOAM_B4F_BOULDER_1                    0x04C
 #define FLAG_HIDE_SEAFOAM_B4F_BOULDER_2                    0x04D
 #define FLAG_HIDE_SILPH_RIVAL                              0x04E
@@ -614,7 +614,7 @@
 #define FLAG_GOT_HIDDEN_POWER_FROM_PSYCHIC_SIBLINGS      0x257
 #define FLAG_BEAT_RIVAL_ON_ROUTE_17                      0x258
 #define FLAG_MOVE_REMINDER_EXPLAINED                     0x259
-#define FLAG_0x25A                                       0x25A
+#define FLAG_GRACIDEA_GIFT_RECEIVED                      0x25A
 #define FLAG_GOT_TM27                                    0x25B
 #define FLAG_0x25C                                       0x25C
 #define FLAG_0x25D                                       0x25D

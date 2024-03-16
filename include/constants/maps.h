@@ -80,7 +80,7 @@
 #define MAP_PLUTO_HQ_IRENE_OFFICE                (56 | (1 << 8))
 #define MAP_PLUTO_HQ_RONALD_OFFICE               (57 | (1 << 8))
 #define MAP_SILPH_CO_ELEVATOR                    (58 | (1 << 8))
-#define MAP_POKEMON_MANSION_1F                   (59 | (1 << 8))
+#define MAP_ORICHELLE_GARDEN                     (59 | (1 << 8))
 #define MAP_POKEMON_MANSION_2F                   (60 | (1 << 8))
 #define MAP_POKEMON_MANSION_3F                   (61 | (1 << 8))
 #define MAP_POKEMON_MANSION_B1F                  (62 | (1 << 8))

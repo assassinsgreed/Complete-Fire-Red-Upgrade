@@ -73,3 +73,49 @@ SignScript_Route18_OrichelleGarden:
     msgbox gText_Route18_OrichelleGardenSign MSG_SIGN
     end
 
+.global EventScript_Route18_ShayminFormChangeGirl
+EventScript_Route18_ShayminFormChangeGirl:
+    faceplayer
+    checkflag 0x25A @ Gracidea given
+    if SET _goto ExplainGracideaUsage
+    msgbox gText_Route18_ShayminGirl_IntroductoryText MSG_NORMAL
+    setvar 0x8005 SPECIES_SHAYMIN
+    callasm HasSpeciesInParty
+    compare LASTRESULT TRUE
+    if TRUE _goto GiveGracidea
+    applymovement LASTTALKED m_LookLeft
+    end
+
+GiveGracidea:
+    msgbox gText_Route18_ShayminGirl_ShayminRecognized MSG_NORMAL
+    obtainitem ITEM_GRACIDEA 0x1
+    setflag 0x25A @ Gracidea given
+    goto ExplainGracideaUsage 
+
+ExplainGracideaUsage:
+    msgbox gText_Route18_ShayminGirl_GracideaExplanation MSG_NORMAL
+    applymovement LASTTALKED m_LookLeft
+    end
+
+.global EventScript_Route18_RestWoman
+EventScript_Route18_RestWoman:
+    faceplayer
+    msgbox gText_Route18_RestWoman_RestPrompt MSG_YESNO
+    compare LASTRESULT YES
+    if equal _goto Rest
+    msgbox gText_Route18_RestWoman_RestNo MSG_NORMAL
+    applymovement LASTTALKED m_LookUp
+    end
+
+Rest:
+    msgbox gText_Route18_RestWoman_RestYes MSG_NORMAL
+    call PlayerHeal
+    msgbox gText_Route18_RestWoman_AfterRest MSG_NORMAL
+    applymovement LASTTALKED m_LookUp
+    end
+
+.global EventScript_Route18_LocalLegendGirl
+EventScript_Route18_LocalLegendGirl:
+    npcchatwithmovement gText_Route18_LocalLegendGirl m_LookRight
+    end
+

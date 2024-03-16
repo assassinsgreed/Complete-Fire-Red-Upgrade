@@ -34,6 +34,7 @@
 #include "../include/new/move_tables.h"
 #include "../include/new/set_z_effect.h"
 #include "../include/new/util.h"
+#include "../include/constants/maps.h"
 
 /*
 battle_start_turn_start.c
@@ -714,6 +715,26 @@ bool8 TryActivateOWTerrain(void)
 				break;
 		}
 	}
+
+	// Terrain that should always be active in certain terrains
+	// TODO: Only electric terrain in Factory when machines are on
+	// if (MAP_IS(DAIMYN_FACTORY_INTERIOR && FlagGet(000)))
+	// {
+	// 	owTerrain = MISTY_TERRAIN;
+	// }
+	if (MAP_IS(FORGOTTEN_MANSE_BASEMENT))
+	{
+		owTerrain = MISTY_TERRAIN;
+	}
+	else if (MAP_IS(ORICHELLE_GARDEN))
+	{
+		owTerrain = GRASSY_TERRAIN;
+	}
+	// TODO: Psychic terrain later
+	// else if (MAP_IS(UTEYAN_RUINS))
+	// {
+	// 	owTerrain = PSYCHIC_TERRAIN;
+	// }
 
 	if (owTerrain != 0 && gTerrainType != owTerrain && !gNewBS->terrainForcefullyRemoved)
 	{

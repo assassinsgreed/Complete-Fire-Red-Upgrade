@@ -3326,3 +3326,20 @@ void BufferMapNameFromLastResult()
 {
 	GetMapName(sScriptStringVars[1], gSpecialVar_LastResult, 0);
 }
+
+// Checks if the species stored in 0x8005 is in the player party, and stores the result in LASTRESULT
+void HasSpeciesInParty(void)
+{
+	int i;
+	gSpecialVar_LastResult = FALSE;
+
+	for (i = 0; i < PARTY_SIZE; ++i)
+	{
+		u16 species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES, NULL);
+
+		if (species != SPECIES_NONE && species == VarGet(VAR_0x8005))
+		{
+			gSpecialVar_LastResult = TRUE;
+		}
+	}
+}
