@@ -1600,9 +1600,9 @@ const struct TrainerMonNoItemDefaultMoves sParty_Route13_GamblerOwain[] = {
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_Route13_CollectorBenji[] = {
-    { .lvl = 37, .species = SPECIES_HAKAMO_O },
-    { .lvl = 38, .species = SPECIES_SABLEYE },
-    { .lvl = 40, .species = SPECIES_SHEDINJA },
+    { .lvl = 47, .species = SPECIES_HAKAMO_O },
+    { .lvl = 48, .species = SPECIES_SABLEYE },
+    { .lvl = 50, .species = SPECIES_SHEDINJA },
 };
 // #endregion
 

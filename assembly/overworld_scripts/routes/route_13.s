@@ -5,6 +5,37 @@
 .include "../xse_defines.s"
 .include "../asm_defines.s"
 
+.global MapScript_Route13Cave
+MapScript_Route13Cave:
+    mapscript MAP_SCRIPT_ON_RESUME Route13Cave_SetupBreakableIce
+    mapscript MAP_SCRIPT_ON_LOAD Route13Cave_SetupBreakableFloorsInIceRoom
+    mapscript MAP_SCRIPT_ON_FRAME_TABLE LevelScripts_Route13Cave
+    .byte MAP_SCRIPT_TERMIN
+
+Route13Cave_SetupBreakableIce:
+    cmda6 0x4 @ Taken from XSE load of Vanilla FR scripts
+    end
+
+Route13Cave_SetupBreakableFloorsInIceRoom:
+    special 0x135 @ Setup cracked ice floors
+    end
+
+LevelScripts_Route13Cave:
+    levelscript 0x4001 0x1 LevelScript_HandleBreakableIce
+	.hword LEVEL_SCRIPT_TERMIN
+
+LevelScript_HandleBreakableIce:
+    lockall
+    pause DELAY_HALFSECOND
+    applymovement PLAYER m_HideSprite
+    waitmovement ALLEVENTS
+    sound 0x25 @ Fall
+    pause DELAY_1SECOND
+    warphole 2 61
+    waitstate
+    releaseall
+    end
+
 .global EventScript_Route13_CharizarditeY
 EventScript_Route13_CharizarditeY:
     finditem ITEM_CHARIZARDITE_Y 0x1
@@ -136,4 +167,12 @@ EventScript_Route13_RestHouse_GuestBookGirl:
 .global EventScript_Route13_RestHouse_RestHouseRep
 EventScript_Route13_RestHouse_RestHouseRep:
     npcchatwithmovement gText_Route13_RestHouse_RestHouseRep m_LookLeft
+    end
+
+@@@@@@@@@@ Route 13 Cave @@@@@@@@@@
+
+.global EventScript_Route13Cave_TM65ShadowClaw
+EventScript_Route13Cave_TM65ShadowClaw:
+    setvar CHOSEN_ITEM ITEM_TM65
+    call ItemScript_Common_FindTM
     end
