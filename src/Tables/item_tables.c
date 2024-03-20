@@ -477,6 +477,8 @@ const struct FlingStruct gFlingTable[ITEMS_COUNT] =
 	[ITEM_HARD_STONE] = {100, 0},
 	[ITEM_RARE_BONE] = {100, 0},
 	[ITEM_IRON_BALL] = {130, 0},
+	[ITEM_GALARICA_CUFF] = {80, 0},
+	[ITEM_GALARICA_WREATH] = {80, 0}
 };
 
 const u16 gBannedBattleEatBerries[] =
