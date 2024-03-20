@@ -123,6 +123,7 @@ MovePlayerFromEastEntrance:
 
 CountBadgesForAppraisal:
     callasm CountBadges
+    buffernumber 0x0 LASTRESULT
     switch LASTRESULT
     case 0, LessThanTwoBadges
     case 1, LessThanTwoBadges
@@ -134,32 +135,37 @@ CountBadgesForAppraisal:
 
 LessThanTwoBadges:
     fanfare 0x10F @ Big Failure
-    msgbox gText_Route12RestHouse_Cutscene_SeleneLessThanTwoBadges MSG_KEEPOPEN
+    msgbox gText_Route12RestHouse_Cutscene_SeleneBadgesCount MSG_KEEPOPEN
     waitfanfare
+    msgbox gText_Route12RestHouse_Cutscene_SeleneLessThanTwoBadges MSG_NORMAL
     return
 
 TwoBadges:
     fanfare 0x10F @ Big Failure
-    msgbox gText_Route12RestHouse_Cutscene_SeleneTwoBadges MSG_KEEPOPEN
+    msgbox gText_Route12RestHouse_Cutscene_SeleneBadgesCount MSG_KEEPOPEN
     waitfanfare
+    msgbox gText_Route12RestHouse_Cutscene_SeleneTwoBadges MSG_NORMAL
     return
 
 ThreeBadges:
     fanfare 0x10E @ Small Failure
-    msgbox gText_Route12RestHouse_Cutscene_SeleneThreeBadges MSG_KEEPOPEN
+    msgbox gText_Route12RestHouse_Cutscene_SeleneBadgesCount MSG_KEEPOPEN
     waitfanfare
+    msgbox gText_Route12RestHouse_Cutscene_SeleneThreeBadges MSG_NORMAL
     return
 
 FourBadges:
     fanfare 0x13E @ Obtain Item
-    msgbox gText_Route12RestHouse_Cutscene_SeleneFourBadges MSG_KEEPOPEN
+    msgbox gText_Route12RestHouse_Cutscene_SeleneBadgesCount MSG_KEEPOPEN
     waitfanfare
+    msgbox gText_Route12RestHouse_Cutscene_SeleneFourBadges MSG_NORMAL
     return
 
 FiveBadges:
     fanfare 0x13D @ Gym Victory
-    msgbox gText_Route12RestHouse_Cutscene_SeleneFiveBadges MSG_KEEPOPEN
+    msgbox gText_Route12RestHouse_Cutscene_SeleneBadgesCount MSG_KEEPOPEN
     waitfanfare
+    msgbox gText_Route12RestHouse_Cutscene_SeleneFiveBadges MSG_NORMAL
     return
 
 AlistairCommentsOnLaplazBeingVacant:

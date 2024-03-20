@@ -34,7 +34,7 @@ EventScript_BruccieVillage_Kid:
 
 .global EventScript_BruccieVillage_OldMan
 EventScript_BruccieVillage_OldMan:
-    checkflag 0x1E8 @ Wingull event done
+    checkflag 0xE18 @ Wingull event done
     if SET _goto OldMan_DailyEventDone
     faceplayer
     msgbox gText_BruccieVillage_OldMan_WingullEventStarting MSG_NORMAL
@@ -105,7 +105,7 @@ WingullGiftComplete:
     waitmovement 0x6
     hidesprite 0x6
     pause DELAY_1SECOND
-    setflag 0x1E8 @ Wingull event done
+    setflag 0xE18 @ Wingull event done
     goto OldMan_DailyEventDone
 
 OldMan_DailyEventDone:

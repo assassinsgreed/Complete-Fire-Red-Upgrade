@@ -40,17 +40,20 @@ This rest house sure is handy, isn't\nit?\pIt's got a Pok\emon Center[.] And a\n
 #org @gText_Route12RestHouse_Cutscene_SeleneLessThanTwoBadges
 [BLACK]Selene: [RED]You have fewer than two\nbadges[.]\pYou're a cheater. That's not champion\nlevel behaviour.
 
+#org @gText_Route12RestHouse_Cutscene_SeleneBadgesCount
+[BLACK]Selene: [RED]You have [BUFFER1] badges[.]
+
 #org @gText_Route12RestHouse_Cutscene_SeleneTwoBadges
-[BLACK]Selene: [RED]You have two badges[.]\pYou must have faced many hardships\nduring your journey.\pDon't give up though, I'm sure you've\ngot this!
+[BLACK]Selene: [RED]You must have faced many hardships\nduring your journey.\pDon't give up though, I'm sure you've\ngot this!
 
 #org @gText_Route12RestHouse_Cutscene_SeleneThreeBadges
-[BLACK]Selene: [RED]You have three badges[.]\pYour journey is starting to take\nshape.\pThe road ahead may be tough, but\nI'm sure you'll be resourceful and\lpull through!
+[BLACK]Selene: [RED]Your journey is starting to take\nshape.\pThe road ahead may be tough, but\nI'm sure you'll be resourceful and\lpull through!
 
 #org @gText_Route12RestHouse_Cutscene_SeleneFourBadges
-[BLACK]Selene: [RED]You have four badges[.]\pThat's pretty good! You must've met\na lot of unique Pok\emon during\lyour journey.\pI'm sure you and your Pok\emon will\nsee this journey through to the\lend.
+[BLACK]Selene: [RED]That's pretty good! You must've met\na lot of unique Pok\emon during\lyour journey.\pI'm sure you and your Pok\emon will\nsee this journey through to the\lend.
 
 #org @gText_Route12RestHouse_Cutscene_SeleneFiveBadges
-[BLACK]Selene: [RED]You have five badges[.]\pThat's excellent! You must've faced\nevery challenge before you head\lon.\pKeep this up, and you'll give me a\nrun for my money someday, haha!
+[BLACK]Selene: [RED]That's excellent! You must've faced\nevery challenge before you head\lon.\pKeep this up, and you'll give me a\nrun for my money someday, haha!
 
 #org @gText_Route12RestHouse_Cutscene_SeleneCommentsOnGymThemes
 [BLACK]Selene: [RED]What do you think of the\nKulure gyms?\pI helped the gym leaders refine\ntheir unique battle styles.
