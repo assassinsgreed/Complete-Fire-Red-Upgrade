@@ -4,6 +4,15 @@
 .include "../xse_commands.s"
 .include "../xse_defines.s"
 
+.global MapScript_WaterRoutes_SetRivalBruccieGymFlag
+MapScript_WaterRoutes_SetRivalBruccieGymFlag:
+    mapscript MAP_SCRIPT_ON_LOAD MapEntryScript_OceanMaps_SetRivalBruccieGymFlag
+    .byte MAP_SCRIPT_TERMIN
+
+MapEntryScript_OceanMaps_SetRivalBruccieGymFlag:
+    setflag 0x25B @ Player has surfed into the ocean
+    end
+
 .global SetWeatherClear
 SetWeatherClear:
     setweather WEATHER_NORMAL

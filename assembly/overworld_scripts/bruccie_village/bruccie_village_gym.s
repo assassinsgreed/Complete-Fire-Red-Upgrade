@@ -80,8 +80,8 @@ EventScript_BruccieVillageGym_LeaderAbby_Chat:
 
 .global SignScript_BruccieVillageGym_Placard
 SignScript_BruccieVillageGym_Placard:
-    @ TODO in Earth milestone: Check a flag indicating the player has surfed into the ocean
-    @ if SET _goto SignScript_BruccieVillageGym_PlacardWithBadgeAfterSurfing
+    checkflag 0x25B
+    if SET _goto SignScript_BruccieVillageGym_PlacardWithBadgeAfterSurfing
     checkflag 0x825 @ Bruccie gym badge
     if SET _goto SignScript_BruccieVillageGym_PlacardWithBadge
     msgbox gText_BruccieVillageGym_Winners MSG_SIGN

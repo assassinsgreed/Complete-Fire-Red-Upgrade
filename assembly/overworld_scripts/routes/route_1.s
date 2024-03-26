@@ -47,3 +47,15 @@ ItemScript_Route1_FindTMEnergyBall:
     setvar CHOSEN_ITEM ITEM_TM53
     call ItemScript_Common_FindTM
     end
+
+.global EventScript_Route1_SwimmerRebecca
+EventScript_Route1_SwimmerRebecca:
+    trainerbattle0 0x0 320 0x0 gText_Route1_SwimmerRebecca_Intro gText_Route1_SwimmerRebecca_Defeat
+    msgbox gText_Route1_SwimmerRebecca_Chat MSG_NORMAL
+    end
+
+.global EventScript_Route1_BurglarBryce
+EventScript_Route1_BurglarBryce:
+    trainerbattle0 0x0 321 0x0 gText_Route1_BurglarBryce_Intro gText_Route1_BurglarBryce_Defeat
+    msgbox gText_Route1_BurglarBryce_Chat MSG_NORMAL
+    end

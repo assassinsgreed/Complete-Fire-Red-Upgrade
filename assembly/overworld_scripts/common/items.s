@@ -207,6 +207,11 @@ ItemScript_Common_CellBattery:
     finditem ITEM_CELL_BATTERY 0x1
     end
 
+.global ItemScript_Common_SilkScarf
+ItemScript_Common_SilkScarf:
+    finditem ITEM_SILK_SCARF 0x1
+    end
+
 .global ItemScript_Common_MiracleSeed
 ItemScript_Common_MiracleSeed:
     finditem ITEM_MIRACLE_SEED 0x1
@@ -275,6 +280,11 @@ ItemScript_Common_DestinyKnot:
 .global ItemScript_Common_QuickClaw
 ItemScript_Common_QuickClaw:
     finditem ITEM_QUICK_CLAW 0x1
+    end
+
+.global ItemScript_Common_FocusBand
+ItemScript_Common_FocusBand:
+    finditem ITEM_FOCUS_BAND 0x1
     end
 
 .global ItemScript_Common_FocusSash
@@ -390,6 +400,11 @@ ItemScript_Common_Masterball:
 .global ItemScript_Common_Healball
 ItemScript_Common_Healball:
     finditem ITEM_HEAL_BALL 0x1
+    end
+
+.global ItemScript_Common_NetBall
+ItemScript_Common_NetBall:
+    finditem ITEM_NET_BALL 0x1
     end
 
 .global ItemScript_Common_Nestball

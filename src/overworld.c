@@ -2116,6 +2116,12 @@ bool8 IsCurrentAreaSwamp(void)
 	#endif
 }
 
+bool8 IsCurrentAreaOpenOcean(void)
+{
+	u8 mapSec = GetCurrentRegionMapSectionId();
+	return mapSec == MAPSEC_ROUTE_14 || mapSec == MAPSEC_ROUTE_15 || mapSec == MAPSEC_ROUTE_16;
+}
+
 static bool8 IsPlayerFacingMurkyBrownWater(void)
 {
 	return IsCurrentAreaSwamp() && !IsPlayerFacingSea();
