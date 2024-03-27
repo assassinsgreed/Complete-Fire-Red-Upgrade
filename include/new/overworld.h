@@ -31,6 +31,7 @@ bool8 IsCurrentAreaWinter(void);
 bool8 IsCurrentAreaDesert(void);
 bool8 IsCurrentAreaSwamp(void);
 bool8 IsCurrentAreaDarkerCave(void);
+bool8 IsCurrentAreaOpenOcean(void);
 bool8 InTanobyRuins(void);
 void PlayGrassFootstepNoise(void);
 void PlaySandFootstepNoise(void);

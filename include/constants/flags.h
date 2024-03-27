@@ -615,7 +615,7 @@
 #define FLAG_BEAT_RIVAL_ON_ROUTE_17                      0x258
 #define FLAG_MOVE_REMINDER_EXPLAINED                     0x259
 #define FLAG_GRACIDEA_GIFT_RECEIVED                      0x25A
-#define FLAG_GOT_TM27                                    0x25B
+#define FLAG_SURFED_INTO_THE_OCEAN                       0x25B
 #define FLAG_0x25C                                       0x25C
 #define FLAG_0x25D                                       0x25D
 #define FLAG_GOT_OLD_AMBER                               0x25E
@@ -786,10 +786,10 @@
 
 // Unused?
 /*
-#define FLAG_0x300               0x300
-#define FLAG_0x301               0x301
-#define FLAG_0x302               0x302
-#define FLAG_0x303               0x303
+#define FLAG_HIDE_ROUTE1_NETBALL                         0x300
+#define FLAG_HIDE_ROUTE16_SHAPEDONITE                    0x301
+#define FLAG_HIDE_ROUTE16_SILK_SCARF                     0x302
+#define FLAG_HIDE_ROUTE16_FOCUS_BAND                     0x303
 #define FLAG_0x304               0x304
 #define FLAG_0x305               0x305
 #define FLAG_0x306               0x306
@@ -1178,9 +1178,9 @@
 #define HIDDEN_ITEM_ORICHELLE_GARDEN_ENIGMA_BERRY_2                   151
 #define HIDDEN_ITEM_ORICHELLE_GARDEN_ENIGMA_BERRY_3                   152
 #define HIDDEN_ITEM_ORICHELLE_GARDEN_ENIGMA_BERRY_4                   153
-#define HIDDEN_ITEM_ROUTE21_NORTH_PEARL                               154
-#define HIDDEN_ITEM_ROUTE23_MAX_ELIXIR                                155
-#define HIDDEN_ITEM_ROUTE4_RAZZ_BERRY                                 156
+#define HIDDEN_ITEM_ROUTE1_ULTRA_BALL                                 154
+#define HIDDEN_ITEM_ROUTE16_ELIXIR                                    155
+#define HIDDEN_ITEM_ROUTE16_PEARL                                     156
 #define HIDDEN_ITEM_ROUTE14_PINAP_BERRY                               157
 #define HIDDEN_ITEM_MT_EMBER_EXTERIOR_FIRE_STONE                      158
 #define HIDDEN_ITEM_POKEMON_TOWER_7F_SOOTHE_BELL                      159

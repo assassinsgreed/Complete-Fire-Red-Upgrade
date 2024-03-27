@@ -1196,6 +1196,17 @@ const struct TrainerMonNoItemDefaultMoves sParty_Route1_LassHelena[] = {
 const struct TrainerMonNoItemDefaultMoves sParty_Route1_YoungsterHarlan[] = {
     { .lvl = 4, .species = SPECIES_YAMPER },
 };
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route1_BurglarBryce[] = {
+    { .lvl = 48, .species = SPECIES_GRIMER_A },
+    { .lvl = 48, .species = SPECIES_KOFFING_G },
+    { .lvl = 50, .species = SPECIES_WEEZING_G },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route1_SwimmerRebecca[] = {
+    { .lvl = 50, .species = SPECIES_FRILLISH_F },
+    { .lvl = 51, .species = SPECIES_JELLICENT_F },
+};
 // #endregion
 
 // #region Route 2
@@ -4073,6 +4084,64 @@ const struct TrainerMonNoItemDefaultMoves sParty_Route18_BlackbeltRohan[] = {
 };
 // #endregion
 
+// #region Route 16
+const struct TrainerMonNoItemDefaultMoves sParty_Route16_SwimmerGale[] = {
+    { .lvl = 51, .species = SPECIES_CARVANHA },
+    { .lvl = 51, .species = SPECIES_CARVANHA },
+    { .lvl = 52, .species = SPECIES_SHARPEDO },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route16_SwimmerAmy[] = {
+    { .lvl = 54, .species = SPECIES_LAPRAS }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route16_BirdKeeperTrevor[] = {
+    { .lvl = 48, .species = SPECIES_HOOTHOOT },
+    { .lvl = 48, .species = SPECIES_NOCTOWL },
+    { .lvl = 49, .species = SPECIES_CORVISQUIRE },
+    { .lvl = 49, .species = SPECIES_SKARMORY }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route16_LadyMaria[] = {
+    { .lvl = 55, .species = SPECIES_ROSERADE }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route16_SwimmerChristina[] = {
+    { .lvl = 52, .species = SPECIES_CROCONAW },
+    { .lvl = 53, .species = SPECIES_PELIPPER }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route16_SwimmerPhillip[] = {
+    { .lvl = 50, .species = SPECIES_SEADRA },
+    { .lvl = 51, .species = SPECIES_SHELLDER },
+    { .lvl = 52, .species = SPECIES_CLOYSTER }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route16_SwimmerLester[] = {
+    { .lvl = 54, .species = SPECIES_JELLICENT }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route16_SwimmerWendy[] = {
+    { .lvl = 52, .species = SPECIES_MAREANIE },
+    { .lvl = 52, .species = SPECIES_CURSOLA }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route16_TuberCody[] = {
+    { .lvl = 51, .species = SPECIES_LYCANROC },
+    { .lvl = 52, .species = SPECIES_CHESNAUGHT }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route16_TuberLeslie[] = {
+    { .lvl = 51, .species = SPECIES_KIRLIA },
+    { .lvl = 52, .species = SPECIES_VESPIQUEN }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route16_SwimmerClementine[] = {
+    { .lvl = 52, .species = SPECIES_GASTRODON_EAST },
+    { .lvl = 52, .species = SPECIES_GASTRODON }
+};
+// #endregion
+
 // #endregion
 
 #define NO_NAME                                                                                      \
@@ -4496,6 +4565,30 @@ const struct Trainer gTrainers[] = {
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
         .partySize = NELEMS(sParty_Route1_YoungsterHarlan),
         .party = {.NoItemDefaultMoves = sParty_Route1_YoungsterHarlan}
+    },
+    [TRAINER_ROUTE_1_BURGLAR_BRYCE] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_BURGLAR,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_BURGLAR,
+        .trainerName = {_B, _r, _y, _c, _e, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_TRY_TO_FAINT,
+        .partySize = NELEMS(sParty_Route1_BurglarBryce),
+        .party = {.NoItemDefaultMoves = sParty_Route1_BurglarBryce}
+    },
+    [TRAINER_ROUTE_1_SWIMMER_REBECCA] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_SWIMMER_F,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
+        .trainerPic = TRAINER_PIC_SWIMMER_F,
+        .trainerName = {_R, _e, _b, _e, _c, _c, _a, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_RISKY,
+        .partySize = NELEMS(sParty_Route1_SwimmerRebecca),
+        .party = {.NoItemDefaultMoves = sParty_Route1_SwimmerRebecca}
     },
     // #endregion
     // #region Route 2
@@ -7958,6 +8051,140 @@ const struct Trainer gTrainers[] = {
         .aiFlags = AI_SCRIPT_RISKY | AI_SCRIPT_TRY_TO_FAINT,
         .partySize = NELEMS(sParty_Route18_BlackbeltRohan),
         .party = {.NoItemDefaultMoves = sParty_Route18_BlackbeltRohan}
+    },
+    // #endregion
+    // #region Route 16
+    [TRAINER_ROUTE_16_SWIMMER_M_GALE] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_SWIMMER_M,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
+        .trainerPic = TRAINER_PIC_SWIMMER_M,
+        .trainerName = {_G, _a, _l, _e, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_RISKY,
+        .partySize = NELEMS(sParty_Route16_SwimmerGale),
+        .party = {.NoItemDefaultMoves = sParty_Route16_SwimmerGale}
+    },
+    [TRAINER_ROUTE_16_SWIMMER_F_AMY] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_SWIMMER_F,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
+        .trainerPic = TRAINER_PIC_SWIMMER_F,
+        .trainerName = {_A, _m, _y, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_RISKY,
+        .partySize = NELEMS(sParty_Route16_SwimmerAmy),
+        .party = {.NoItemDefaultMoves = sParty_Route16_SwimmerAmy}
+    },
+    [TRAINER_ROUTE_16_BIRD_KEEPER_TREVOR] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_BIRD_KEEPER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_BIRD_KEEPER,
+        .trainerName = {_T, _r, _e, _v, _o, _r, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_TRY_TO_FAINT,
+        .partySize = NELEMS(sParty_Route16_BirdKeeperTrevor),
+        .party = {.NoItemDefaultMoves = sParty_Route16_BirdKeeperTrevor}
+    },
+    [TRAINER_ROUTE_16_LADY_MARIA] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_LADY,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .trainerPic = TRAINER_PIC_RS_LADY,
+        .trainerName = {_M, _a, _r, _i, _a, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = NELEMS(sParty_Route16_LadyMaria),
+        .party = {.NoItemDefaultMoves = sParty_Route16_LadyMaria}
+    },
+    [TRAINER_ROUTE_16_SWIMMER_F_CHRISTINA] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_SWIMMER_F,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
+        .trainerPic = TRAINER_PIC_SWIMMER_F,
+        .trainerName = {_C, _h, _r, _i, _s, _t, _i, _n, _a, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_RISKY,
+        .partySize = NELEMS(sParty_Route16_SwimmerChristina),
+        .party = {.NoItemDefaultMoves = sParty_Route16_SwimmerChristina}
+    },
+    [TRAINER_ROUTE_16_SWIMMER_M_PHILLIP] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_SWIMMER_M,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
+        .trainerPic = TRAINER_PIC_SWIMMER_M,
+        .trainerName = {_P, _h, _i, _l, _l, _i, _p, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_RISKY,
+        .partySize = NELEMS(sParty_Route16_SwimmerPhillip),
+        .party = {.NoItemDefaultMoves = sParty_Route16_SwimmerPhillip}
+    },
+    [TRAINER_ROUTE_16_SWIMMER_M_LESTER] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_SWIMMER_M,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
+        .trainerPic = TRAINER_PIC_SWIMMER_M,
+        .trainerName = {_L, _e, _s, _t, _e, _r, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_RISKY,
+        .partySize = NELEMS(sParty_Route16_SwimmerLester),
+        .party = {.NoItemDefaultMoves = sParty_Route16_SwimmerLester}
+    },
+    [TRAINER_ROUTE_16_SWIMMER_F_WENDY] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_SWIMMER_F,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
+        .trainerPic = TRAINER_PIC_SWIMMER_F,
+        .trainerName = {_W, _e, _n, _d, _y, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_RISKY,
+        .partySize = NELEMS(sParty_Route16_SwimmerWendy),
+        .party = {.NoItemDefaultMoves = sParty_Route16_SwimmerWendy}
+    },
+    [TRAINER_ROUTE_16_TUBER_CODY] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_TUBER_RS_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_RS_TUBER_M,
+        .trainerName = {_C, _o, _d, _y, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = NELEMS(sParty_Route16_TuberCody),
+        .party = {.NoItemDefaultMoves = sParty_Route16_TuberCody}
+    },
+    [TRAINER_ROUTE_16_TUBER_LESLIE] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_TUBER_RS_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .trainerPic = TRAINER_PIC_RS_TUBER_F,
+        .trainerName = {_L, _e, _s, _l, _i, _e, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = NELEMS(sParty_Route16_TuberLeslie),
+        .party = {.NoItemDefaultMoves = sParty_Route16_TuberLeslie}
+    },
+    [TRAINER_ROUTE_16_SWIMMER_F_CLEMENTINE] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_SWIMMER_F,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
+        .trainerPic = TRAINER_PIC_SWIMMER_F,
+        .trainerName = {_C, _l, _e, _m, _e, _n, _t, _i, _n, _e, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_RISKY,
+        .partySize = NELEMS(sParty_Route16_SwimmerClementine),
+        .party = {.NoItemDefaultMoves = sParty_Route16_SwimmerClementine}
     },
     // #endregion
     // #endregion

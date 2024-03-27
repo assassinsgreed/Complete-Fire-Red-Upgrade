@@ -331,6 +331,8 @@ static u8 TryLoadAlternateAreaTerrain(u8 terrain)
 				terrain = BATTLE_TERRAIN_SNOWY;
 			else if (MetatileBehavior_IsMountain(tileBehavior))
 				terrain = BATTLE_TERRAIN_MOUNTAIN;
+			else if (IsCurrentAreaOpenOcean())
+				terrain = BATTLE_TERRAIN_SAND;
 			else if (mapSec == MAPSEC_VARISI_FOREST)
 				terrain = BATTLE_TERRAIN_FOREST;
 			else if (mapSec == MAPSEC_PERADON_FOREST)

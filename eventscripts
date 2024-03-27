@@ -42,6 +42,9 @@ npc 3 19 3 EventScript_Route1_LonelyMan
 npc 3 19 4 EventScript_Route1_SandygastEncounter
 npc 3 19 5 ItemScript_Common_Antidote
 npc 3 19 6 ItemScript_Route1_FindTMEnergyBall
+npc 3 19 7 EventScript_Route1_SwimmerRebecca
+npc 3 19 8 EventScript_Route1_BurglarBryce
+npc 3 19 9 ItemScript_Common_NetBall
 
 # Olenic Town
 ## Overworld
@@ -1732,3 +1735,20 @@ map 1 59 MapScript_OrichelleGarden
 npc 1 59 0 ItemScript_Common_Honey
 npc 1 59 1 ItemScript_Common_Eviolite
 npc 1 59 2 EventScript_OrichelleGarden_Shaymin
+
+# Route 16
+map 3 34 MapScript_WaterRoutes_SetRivalBruccieGymFlag
+npc 3 34 0 EventScript_Route16_SwimmerMGale
+npc 3 34 1 EventScript_Route16_SwimmerFAmy
+npc 3 34 2 EventScript_Route16_BirdKeeperTrevor
+npc 3 34 3 EventScript_Route16_LadyMaria
+npc 3 34 4 EventScript_Route16_SwimmerFChristina
+npc 3 34 5 EventScript_Route16_SwimmerMPhillip
+npc 3 34 6 EventScript_Route16_SwimmerMLester
+npc 3 34 7 EventScript_Route16_SwimmerFWendy
+npc 3 34 8 EventScript_Route16_TuberCody
+npc 3 34 9 EventScript_Route16_TuberLeslie
+npc 3 34 10 EventScript_Route16_SwimmerFClementine
+npc 3 34 11 EventScript_Route16_Sharpedonite
+npc 3 34 12 ItemScript_Common_SilkScarf
+npc 3 34 13 ItemScript_Common_FocusBand
