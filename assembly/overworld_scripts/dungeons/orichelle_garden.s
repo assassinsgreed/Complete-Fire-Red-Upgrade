@@ -8,10 +8,20 @@
 .global MapScript_OrichelleGarden
 MapScript_OrichelleGarden:
     mapscript MAP_SCRIPT_ON_LOAD MapEntryScript_OrichelleGarden_SetTerrain
+    mapscript MAP_SCRIPT_ON_RESUME HideLegendary
     .byte MAP_SCRIPT_TERMIN
 
 MapEntryScript_OrichelleGarden_SetTerrain:
     setworldmapflag 0x8AD @ Been to Orichelle Garden
+    end
+
+HideLegendary:
+    checkflag 0x4B
+    if SET _call HideShaymin
+    end
+
+HideShaymin:
+    hidesprite 3
     end
 
 .global EventScript_OrichelleGarden_Shaymin
@@ -41,23 +51,15 @@ EventScript_OrichelleGarden_Shaymin:
     end
 
 DefeatedShaymin:
-    call HideShaymin
+    setflag 0x4B @ Shaymin hidden
     msgbox gtext_OrichelleGarden_ShayminDefeated MSG_NORMAL
     end
 
 FledFromShaymin:
-    call HideShaymin
+    setflag 0x4B @ Shaymin hidden
     msgbox gtext_OrichelleGarden_ShayminFledFromBattle MSG_NORMAL
     end
 
 CaughtShaymin:
-    call HideShaymin
-    @ Reminder: Woman in house should give Gracidea when spoken to the first time
+    setflag 0x4B @ Shaymin hidden
     end
-
-HideShaymin:
-    fadescreen FADEOUT_BLACK
-    hidesprite LASTTALKED
-    setflag 0x4B @ Shaymin caught
-    fadescreen FADEIN_BLACK
-    return

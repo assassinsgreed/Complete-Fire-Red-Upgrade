@@ -35,6 +35,7 @@ sign 4 2 2 SignScript_AnthraTown_RivalsFamilyPictures
 sign 4 2 3 SignScript_AnthraTown_RivalsFamilyPictures
 
 # Route 1
+map 3 19 MapScript_Route1
 npc 3 19 0 EventScript_Route1_YoungsterPeter
 npc 3 19 1 EventScript_Route1_LassHelena
 npc 3 19 2 EventScript_Route1_YoungsterHarlan
