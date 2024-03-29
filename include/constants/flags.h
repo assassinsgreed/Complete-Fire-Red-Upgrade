@@ -790,10 +790,10 @@
 #define FLAG_HIDE_ROUTE16_SHAPEDONITE                    0x301
 #define FLAG_HIDE_ROUTE16_SILK_SCARF                     0x302
 #define FLAG_HIDE_ROUTE16_FOCUS_BAND                     0x303
-#define FLAG_0x304               0x304
-#define FLAG_0x305               0x305
-#define FLAG_0x306               0x306
-#define FLAG_0x307               0x307
+#define FLAG_HIDE_ROUTE14_X_ATTACK                       0x304
+#define FLAG_HIDE_ROUTE14_HYPER_POTION                   0x305
+#define FLAG_HIDE_ROUTE14_SHED_SHELL                     0x306
+#define FLAG_HIDE_ROUTE14_TM27_RETURN                    0x307
 #define FLAG_0x308               0x308
 #define FLAG_0x309               0x309
 #define FLAG_0x30A               0x30A
@@ -1181,9 +1181,9 @@
 #define HIDDEN_ITEM_ROUTE1_ULTRA_BALL                                 154
 #define HIDDEN_ITEM_ROUTE16_ELIXIR                                    155
 #define HIDDEN_ITEM_ROUTE16_PEARL                                     156
-#define HIDDEN_ITEM_ROUTE14_PINAP_BERRY                               157
-#define HIDDEN_ITEM_MT_EMBER_EXTERIOR_FIRE_STONE                      158
-#define HIDDEN_ITEM_POKEMON_TOWER_7F_SOOTHE_BELL                      159
+#define HIDDEN_ITEM_ROUTE14_FULL_HEAL                                 157
+#define HIDDEN_ITEM_ROUTE14_NET_BALL                                  158
+#define HIDDEN_ITEM_ROUTE14_BIG_PEARL                                 159
 #define HIDDEN_ITEM_NAVEL_ROCK_SUMMIT_SACRED_ASH                      160
 #define HIDDEN_ITEM_TWO_ISLAND_CAPE_BRINK_PP_MAX                      161
 #define HIDDEN_ITEM_MT_EMBER_EXTERIOR_ULTRA_BALL                      162
