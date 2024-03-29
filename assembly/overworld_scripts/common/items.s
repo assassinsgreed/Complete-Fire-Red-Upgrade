@@ -337,6 +337,11 @@ ItemScript_Common_MetalCoat:
     finditem ITEM_METAL_COAT 0x1
     end
 
+.global ItemScript_Common_XAttack
+ItemScript_Common_XAttack:
+    finditem ITEM_X_ATTACK 0x1
+    end
+
 .global ItemScript_Common_DireHit
 ItemScript_Common_DireHit:
     finditem ITEM_DIRE_HIT 0x1
@@ -460,6 +465,11 @@ ItemScript_Common_EjectButton:
 .global ItemScript_Common_ShellBell
 ItemScript_Common_ShellBell:
     finditem ITEM_SHELL_BELL 0x1
+    end
+
+.global ItemScript_Common_ShedShell
+ItemScript_Common_ShedShell:
+    finditem ITEM_SHED_SHELL 0x1
     end
 
 .global ItemScript_Common_KingsRock

@@ -4142,6 +4142,64 @@ const struct TrainerMonNoItemDefaultMoves sParty_Route16_SwimmerClementine[] = {
 };
 // #endregion
 
+// #region Route 14
+const struct TrainerMonNoItemDefaultMoves sParty_Route14_SwimmerIvan[] = {
+    { .lvl = 48, .species = SPECIES_MAGIKARP },
+    { .lvl = 48, .species = SPECIES_MARSHTOMP },
+    { .lvl = 48, .species = SPECIES_GYARADOS }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route14_HikerClifford[] = {
+    { .lvl = 47, .species = SPECIES_ROGGENROLA },
+    { .lvl = 48, .species = SPECIES_CARBINK },
+    { .lvl = 49, .species = SPECIES_MUDSDALE }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route14_FishermanEsteban[] = {
+    { .lvl = 48, .species = SPECIES_DRATINI },
+    { .lvl = 49, .species = SPECIES_DRAGONAIR }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route14_FishermanTucker[] = {
+    { .lvl = 50, .species = SPECIES_TOXAPEX }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route14_SwimmerEleanor[] = {
+    { .lvl = 46, .species = SPECIES_HORSEA },
+    { .lvl = 46, .species = SPECIES_HORSEA },
+    { .lvl = 46, .species = SPECIES_CHINCHOU },
+    { .lvl = 47, .species = SPECIES_SEADRA }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route14_BlackbeltJoaquin[] = {
+    { .lvl = 47, .species = SPECIES_PASSIMIAN },
+    { .lvl = 48, .species = SPECIES_CRABRAWLER }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route14_SwimmerChris[] = {
+    { .lvl = 47, .species = SPECIES_BINACLE },
+    { .lvl = 47, .species = SPECIES_LANTURN },
+    { .lvl = 48, .species = SPECIES_BARBARACLE }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route14_YoungsterFreddie[] = {
+    { .lvl = 46, .species = SPECIES_RATTATA_A },
+    { .lvl = 46, .species = SPECIES_RATICATE_A },
+    { .lvl = 46, .species = SPECIES_BOLTUND },
+    { .lvl = 47, .species = SPECIES_TRUMBEAK }
+};
+const struct TrainerMonNoItemDefaultMoves sParty_Route14_PsychicTobin[] = {
+    { .lvl = 48, .species = SPECIES_ELGYEM },
+    { .lvl = 48, .species = SPECIES_ORANGURU },
+};
+const struct TrainerMonNoItemDefaultMoves sParty_Route14_SwimmerMacie[] = {
+    { .lvl = 46, .species = SPECIES_SHELLDER },
+    { .lvl = 47, .species = SPECIES_OSHAWOTT },
+    { .lvl = 47, .species = SPECIES_DEWOTT }
+};
+
+// #endregion
+
 // #endregion
 
 #define NO_NAME                                                                                      \
@@ -8186,6 +8244,128 @@ const struct Trainer gTrainers[] = {
         .partySize = NELEMS(sParty_Route16_SwimmerClementine),
         .party = {.NoItemDefaultMoves = sParty_Route16_SwimmerClementine}
     },
+    // #endregion
+    // #region Route 14
+    [TRAINER_ROUTE_14_SWIMMER_M_IVAN] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_SWIMMER_M,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
+        .trainerPic = TRAINER_PIC_SWIMMER_M,
+        .trainerName = {_I, _v, _a, _n, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_RISKY,
+        .partySize = NELEMS(sParty_Route14_SwimmerIvan),
+        .party = {.NoItemDefaultMoves = sParty_Route14_SwimmerIvan}
+    },
+    [TRAINER_ROUTE_14_HIKER_CLIFFORD] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_HIKER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
+        .trainerPic = TRAINER_PIC_HIKER,
+        .trainerName = {_C, _l, _i, _f, _f, _o, _r, _d, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_HP_AWARE | AI_SCRIPT_TRY_TO_FAINT,
+        .partySize = NELEMS(sParty_Route14_HikerClifford),
+        .party = {.NoItemDefaultMoves = sParty_Route14_HikerClifford}
+    },
+    [TRAINER_ROUTE_14_FISHERMAN_ESTEBAN] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_FISHERMAN,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_FISHERMAN,
+        .trainerName = {_E, _s, _t, _e, _b, _a, _n, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_CHECK_VIABILITY,
+        .partySize = NELEMS(sParty_Route14_FishermanEsteban),
+        .party = {.NoItemDefaultMoves = sParty_Route14_FishermanEsteban}
+    },
+    [TRAINER_ROUTE_14_FISHERMAN_TUCKER] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_FISHERMAN,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_FISHERMAN,
+        .trainerName = {_T, _u, _c, _k, _e, _r, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_CHECK_VIABILITY,
+        .partySize = NELEMS(sParty_Route14_FishermanTucker),
+        .party = {.NoItemDefaultMoves = sParty_Route14_FishermanTucker}
+    },
+    [TRAINER_ROUTE_14_SWIMMER_F_ELEANOR] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_SWIMMER_F,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
+        .trainerPic = TRAINER_PIC_SWIMMER_F,
+        .trainerName = {_E, _l, _e, _a, _n, _o, _r, _END},
+        .items = { ITEM_SUPER_POTION },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_RISKY,
+        .partySize = NELEMS(sParty_Route14_SwimmerEleanor),
+        .party = {.NoItemDefaultMoves = sParty_Route14_SwimmerEleanor}
+    },
+    [TRAINER_ROUTE_14_BLACKBELT_JOAQUIN] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_BLACK_BELT,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_BLACK_BELT,
+        .trainerName = {_J, _o, _a, _q, _u, _i, _n, _END},
+        .items = { ITEM_X_DEFEND },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_RISKY | AI_SCRIPT_TRY_TO_FAINT,
+        .partySize = NELEMS(sParty_Route14_BlackbeltJoaquin),
+        .party = {.NoItemDefaultMoves = sParty_Route14_BlackbeltJoaquin}
+    },
+    [TRAINER_ROUTE_14_SWIMMER_M_CHRIS] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_SWIMMER_M,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
+        .trainerPic = TRAINER_PIC_SWIMMER_M,
+        .trainerName = {_C, _h, _r, _i, _s, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_RISKY,
+        .partySize = NELEMS(sParty_Route14_SwimmerChris),
+        .party = {.NoItemDefaultMoves = sParty_Route14_SwimmerChris}
+    },
+    [TRAINER_ROUTE_14_YOUNGSTER_FREDDIE] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_YOUNGSTER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_YOUNGSTER,
+        .trainerName = {_F, _r, _e, _d, _d, _i, _e, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = NELEMS(sParty_Route14_YoungsterFreddie),
+        .party = {.NoItemDefaultMoves = sParty_Route14_YoungsterFreddie}
+    },
+    [TRAINER_ROUTE_14_PSYCHIC_TOBIN] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_PSYCHIC,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_PSYCHIC_M,
+        .trainerName = {_T, _o, _b, _i, _n, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE,
+        .partySize = NELEMS(sParty_Route14_PsychicTobin),
+        .party = {.NoItemDefaultMoves = sParty_Route14_PsychicTobin}
+    },
+    [TRAINER_ROUTE_14_SWIMMER_F_MACIE] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_SWIMMER_F,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
+        .trainerPic = TRAINER_PIC_SWIMMER_F,
+        .trainerName = {_M, _a, _c, _i, _e, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_RISKY,
+        .partySize = NELEMS(sParty_Route14_SwimmerMacie),
+        .party = {.NoItemDefaultMoves = sParty_Route14_SwimmerMacie}
+    },    
     // #endregion
     // #endregion
 };

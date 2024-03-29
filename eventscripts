@@ -1752,3 +1752,21 @@ npc 3 34 10 EventScript_Route16_SwimmerFClementine
 npc 3 34 11 EventScript_Route16_Sharpedonite
 npc 3 34 12 ItemScript_Common_SilkScarf
 npc 3 34 13 ItemScript_Common_FocusBand
+
+## Route 14
+map 3 32 MapScript_WaterRoutes_SetRivalBruccieGymFlag
+npc 3 32 0 EventScript_Route14_SwimmerIvan
+npc 3 32 1 EventScript_Route14_HikerClifford
+npc 3 32 2 EventScript_Route14_FishermanEsteban
+npc 3 32 3 EventScript_Route14_FishermanTucker
+npc 3 32 4 EventScript_Route14_SwimmerEleanor
+npc 3 32 5 EventScript_Route14_BlackbeltJoaquin
+npc 3 32 6 EventScript_Route14_SwimmerChris
+npc 3 32 7 EventScript_Route14_YoungsterFreddie
+npc 3 32 8 EventScript_Route14_PsychicTobin
+npc 3 32 9 EventScript_Route14_SwimmerMacie
+npc 3 32 10 ItemScript_Common_XAttack
+npc 3 32 11 ItemScript_Common_HyperPotion
+npc 3 32 12 ItemScript_Common_ShedShell
+npc 3 32 13 EventScript_Route14_FindTM27Return
+sign 3 32 0 SignScript_Route14_TrainerTipsFastSurfing

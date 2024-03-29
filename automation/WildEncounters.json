@@ -1532,6 +1532,52 @@
         },
         {
             "mapgroup": 3,
+            "mapnum": 32,
+            "grass": {
+                "rate": 21,
+                "pokemon": [
+                    { "low": 43, "high": 46, "species": "SPECIES_SHELLOS" },
+                    { "low": 42, "high": 45, "species": "SPECIES_SHELLOS_EAST" },
+                    { "low": 43, "high": 46, "species": "SPECIES_BIDOOF" },
+                    { "low": 44, "high": 46, "species": "SPECIES_BUNEARY" },
+                    { "low": 43, "high": 46, "species": "SPECIES_TRUMBEAK" },
+                    { "low": 42, "high": 45, "species": "SPECIES_TRUMBEAK" },
+                    { "low": 43, "high": 46, "species": "SPECIES_TOUCANNON" },
+                    { "low": 42, "high": 45, "species": "SPECIES_TOUCANNON" },
+                    { "low": 42, "high": 45, "species": "SPECIES_GASTRODON" },
+                    { "low": 43, "high": 46, "species": "SPECIES_GASTRODON_EAST" },
+                    { "low": 44, "high": 46, "species": "SPECIES_GASTRODON" },
+                    { "low": 44, "high": 46, "species": "SPECIES_GASTRODON_EAST" }
+                ]
+            },
+            "surfing": {
+                "rate": 2,
+                "pokemon": [
+                    { "low": 41, "high": 44, "species": "SPECIES_WINGULL" },
+                    { "low": 42, "high": 45, "species": "SPECIES_HORSEA" },
+                    { "low": 41, "high": 44, "species": "SPECIES_MAREANIE" },
+                    { "low": 42, "high": 45, "species": "SPECIES_PELIPPER" },
+                    { "low": 43, "high": 46, "species": "SPECIES_PELIPPER" }
+                ]
+            },
+            "fishing": {
+                "rate": 20,
+                "pokemon": [
+                    { "low": 5, "high": 40, "species": "SPECIES_MAGIKARP" },
+                    { "low": 5, "high": 40, "species": "SPECIES_BINACLE" },
+                    { "low": 25, "high": 40, "species": "SPECIES_MAGIKARP" },
+                    { "low": 25, "high": 40, "species": "SPECIES_BINACLE" },
+                    { "low": 25, "high": 40, "species": "SPECIES_BINACLE" },
+                    { "low": 45, "high": 55, "species": "SPECIES_MAGIKARP" },
+                    { "low": 45, "high": 55, "species": "SPECIES_BINACLE" },
+                    { "low": 45, "high": 55, "species": "SPECIES_BARBARACLE" },
+                    { "low": 45, "high": 55, "species": "SPECIES_GYARADOS" },
+                    { "low": 45, "high": 55, "species": "SPECIES_BARBARACLE" }
+                ]
+            }
+        },
+        {
+            "mapgroup": 3,
             "mapnum": 34,
             "grass": {
                 "rate": 21,
