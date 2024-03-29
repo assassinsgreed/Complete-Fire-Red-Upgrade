@@ -8,6 +8,7 @@
 .global MapScript_Route8
 MapScript_Route8:
     mapscript MAP_SCRIPT_ON_LOAD MapEntryScript_Route8_SetWeather
+    mapscript MAP_SCRIPT_ON_RESUME HideTrapPokemon
     .byte MAP_SCRIPT_TERMIN
 
 MapEntryScript_Route8_SetWeather:
@@ -16,6 +17,21 @@ MapEntryScript_Route8_SetWeather:
     compare 0x4001 0x2D @ Above the weather stairs, no need to set weather
     if greaterthan _goto TileScript_Route8_SetWeather
     end
+
+HideTrapPokemon:
+    checkflag 0xE0C
+    if SET _call HideSandygast1
+    checkflag 0xE0D
+    if SET _call HideSandygast2
+    end
+
+HideSandygast1:
+    hidesprite 14
+    return
+
+HideSandygast2:
+    hidesprite 15
+    return
 
 .global TileScript_Route8_ClearWeather
 TileScript_Route8_ClearWeather:
@@ -61,14 +77,14 @@ SignScript_Route8_TrainerTips_FoggyWeather:
 
 .global EventScript_Route8_SandygastEncounter1
 EventScript_Route8_SandygastEncounter1:
-    call SandygastEncounter
     setflag 0xE0C
+    call SandygastEncounter
     end
 
 .global EventScript_Route8_SandygastEncounter2
 EventScript_Route8_SandygastEncounter2:
-    call SandygastEncounter
     setflag 0xE0D
+    call SandygastEncounter
     end
 
 SandygastEncounter:
@@ -79,7 +95,6 @@ SandygastEncounter:
     applymovement PLAYER m_Surprise
     msgbox gText_Route1_SandygastEncounter MSG_KEEPOPEN
     wildbattle SPECIES_SANDYGAST 0x19 0x0 @ Level 25
-    hidesprite LASTTALKED
     release
     return
 

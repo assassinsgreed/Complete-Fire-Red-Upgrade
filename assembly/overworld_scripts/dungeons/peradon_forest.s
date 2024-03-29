@@ -8,11 +8,46 @@
 .global MapScript_PerdaonForest
 MapScript_PerdaonForest:
     mapscript MAP_SCRIPT_ON_TRANSITION MapEntryScript_PeradonForest_FlightFlag
+    mapscript MAP_SCRIPT_ON_RESUME HideTrapPokemon
 	.byte MAP_SCRIPT_TERMIN
 
 MapEntryScript_PeradonForest_FlightFlag:
     setworldmapflag 0x8AA
     end
+
+HideTrapPokemon:
+    checkflag 0xE13
+    if SET _call HideAmoonguss1
+    checkflag 0xE14
+    if SET _call HideAmoonguss2
+    checkflag 0xE15
+    if SET _call HideAmoonguss3
+    checkflag 0xE16
+    if SET _call HideFoongus1
+    checkflag 0xE17
+    if SET _call HideFoongus2
+    end
+
+HideAmoonguss1:
+    hidesprite 5
+    return
+
+HideAmoonguss2:
+    hidesprite 6
+    return
+
+HideAmoonguss3:
+    hidesprite 8
+    return
+
+HideFoongus1:
+    hidesprite 7
+    return
+
+HideFoongus2:
+    hidesprite 9
+    return
+
 
 .global EventScript_PeradonForest_GuardHouse_Guard
 EventScript_PeradonForest_GuardHouse_Guard:
@@ -26,32 +61,32 @@ EventScript_PeradonForest_GuardHouse_Girl:
 
 .global EventScript_PeradonForest_AmoongussEncounter1
 EventScript_PeradonForest_AmoongussEncounter1:
-    call AmoongussEncounter
     setflag 0xE13
+    call AmoongussEncounter
     end
 
 .global EventScript_PeradonForest_AmoongussEncounter2
 EventScript_PeradonForest_AmoongussEncounter2:
-    call AmoongussEncounter
     setflag 0xE14
+    call AmoongussEncounter
     end
 
 .global EventScript_PeradonForest_AmoongussEncounter3
 EventScript_PeradonForest_AmoongussEncounter3:
-    call AmoongussEncounter
     setflag 0xE15
+    call AmoongussEncounter
     end
 
 .global EventScript_PeradonForest_FoongusEncounter1
 EventScript_PeradonForest_FoongusEncounter1:
-    call FoongusEncounter
     setflag 0xE16
+    call FoongusEncounter
     end
 
 .global EventScript_PeradonForest_FoongusEncounter2
 EventScript_PeradonForest_FoongusEncounter2:
-    call FoongusEncounter
     setflag 0xE17
+    call FoongusEncounter
     end
 
 AmoongussEncounter:

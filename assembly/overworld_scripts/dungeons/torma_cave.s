@@ -11,7 +11,7 @@
 .global MapScript_TormaCave
 MapScript_TormaCave:
     mapscript MAP_SCRIPT_ON_TRANSITION MapEntryScript_TormaCave_FlightFlag
-    mapscript MAP_SCRIPT_ON_LOAD SetStunfiskTrapsVisbility
+    mapscript MAP_SCRIPT_ON_RESUME HideTrapPokemon
 	.byte MAP_SCRIPT_TERMIN
 
 MapEntryScript_TormaCave_FlightFlag:
@@ -19,7 +19,7 @@ MapEntryScript_TormaCave_FlightFlag:
     setvar FormanEventVar 0x0
     end
 
-SetStunfiskTrapsVisbility:
+HideTrapPokemon:
     checkflag 0xE03
     if NOT_SET _call SetStunfisk1Visibility
     if SET _call HideStunfisk1
@@ -125,8 +125,8 @@ EventScript_TormaCave_TM79_FrostBreath:
 TileScript_TormaCave_StunfiskEncounter1:
     checkflag 0xE03
     if SET _goto End
-    call StunfiskEncounter
     setflag 0xE03
+    call StunfiskEncounter
     call HideStunfisk1
     end
 
@@ -134,8 +134,8 @@ TileScript_TormaCave_StunfiskEncounter1:
 TileScript_TormaCave_StunfiskEncounter2:
     checkflag 0xE04
     if SET _goto End
-    call StunfiskEncounter
     setflag 0xE04
+    call StunfiskEncounter
     call HideStunfisk2
     end
 
@@ -143,8 +143,8 @@ TileScript_TormaCave_StunfiskEncounter2:
 TileScript_TormaCave_StunfiskEncounter3:
     checkflag 0xE05
     if SET _goto End
-    call StunfiskEncounter
     setflag 0xE05
+    call StunfiskEncounter
     call HideStunfisk3
     end
 

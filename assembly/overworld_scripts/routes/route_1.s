@@ -5,6 +5,20 @@
 .include "../xse_defines.s"
 .include "../asm_defines.s"
 
+.global MapScript_Route1
+MapScript_Route1:
+    mapscript MAP_SCRIPT_ON_RESUME HideTrapPokemon
+    .byte MAP_SCRIPT_TERMIN
+
+HideTrapPokemon:
+    checkflag 0xE00
+    if SET _call HideSandygast
+    end
+
+HideSandygast:
+    hidesprite 5
+    return    
+
 .global EventScript_Route1_YoungsterPeter
 EventScript_Route1_YoungsterPeter:
     trainerbattle0 0x0 0x2 0x0 gText_Route1_YoungsterPeter_Intro gText_Route1_YoungsterPeter_Defeat
@@ -36,9 +50,8 @@ EventScript_Route1_SandygastEncounter:
     sound 0x15 @ Exclaim
     applymovement PLAYER m_Surprise
     msgbox gText_Route1_SandygastEncounter MSG_KEEPOPEN
-    wildbattle SPECIES_SANDYGAST 0x5 0x0
-    hidesprite LASTTALKED
     setflag 0xE00
+    wildbattle SPECIES_SANDYGAST 0x5 0x0
     release
     end
 

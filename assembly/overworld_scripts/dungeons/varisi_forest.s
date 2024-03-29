@@ -8,11 +8,27 @@
 .global MapScript_VarisiForest_FlightSpot
 MapScript_VarisiForest_FlightSpot:
 	mapscript MAP_SCRIPT_ON_TRANSITION MapEntryScript_VarisiForest_FlightFlag
+    mapscript MAP_SCRIPT_ON_RESUME HideTrapPokemon
 	.byte MAP_SCRIPT_TERMIN
 
 MapEntryScript_VarisiForest_FlightFlag:
     setworldmapflag 0x8A4
     end
+
+HideTrapPokemon:
+    checkflag 0xE01
+    if SET _call HideFoongus1
+    checkflag 0xE02
+    if SET _call HideFoongus2
+    end
+
+HideFoongus1:
+    hidesprite 8
+    return
+
+HideFoongus2:
+    hidesprite 9
+    return
 
 .global EventScript_VarisiForest_BugCatcherKendell
 EventScript_VarisiForest_BugCatcherKendell:
@@ -81,14 +97,14 @@ EventScript_VarisiForest_FriendlyTrainer:
 
 .global EventScript_VarisiForest_FoongusEncounter1
 EventScript_VarisiForest_FoongusEncounter1:
-    call FoongusEncounter
     setflag 0xE01
+    call FoongusEncounter
     end
 
 .global EventScript_VarisiForest_FoongusEncounter2
 EventScript_VarisiForest_FoongusEncounter2:
-    call FoongusEncounter
     setflag 0xE02
+    call FoongusEncounter
     end
 
 FoongusEncounter:
