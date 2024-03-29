@@ -459,8 +459,8 @@ static struct SpriteTemplate sTypeIconSpriteTemplate2 =
 static const u16 sIgnoredTriggerColours[] =
 {
 	RGB(18, 14, 23), //Pink
-	RGB(16, 11, 23), //Purple
-	RGB(11, 4, 15), //Purple
+	// RGB(16, 11, 23), //Purple
+	// RGB(11, 4, 15), //Purple
 	RGB(30, 23, 10), //Gold
 	RGB(26, 18, 2), //Gold
 	RGB(31, 31, 31), //White
