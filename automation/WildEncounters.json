@@ -798,9 +798,9 @@
                 "pokemon": [
                     { "low": 40, "high": 50, "species": "SPECIES_SHUCKLE" },
                     { "low": 40, "high": 50, "species": "SPECIES_CARBINK" },
-                    { "low": 40, "high": 50, "species": "SPECIES_MINIOR_INDIGO" },
-                    { "low": 40, "high": 50, "species": "SPECIES_MINIOR_ORANGE" },
-                    { "low": 40, "high": 50, "species": "SPECIES_MINIOR_GREEN" }
+                    { "low": 40, "high": 50, "species": "SPECIES_MINIOR_SHIELD" },
+                    { "low": 40, "high": 50, "species": "SPECIES_MINIOR_SHIELD" },
+                    { "low": 40, "high": 50, "species": "SPECIES_MINIOR_SHIELD" }
                 ]
             }
         },
@@ -829,9 +829,9 @@
                 "pokemon": [
                     { "low": 40, "high": 50, "species": "SPECIES_SHUCKLE" },
                     { "low": 40, "high": 50, "species": "SPECIES_CARBINK" },
-                    { "low": 40, "high": 50, "species": "SPECIES_MINIOR_INDIGO" },
-                    { "low": 40, "high": 50, "species": "SPECIES_MINIOR_ORANGE" },
-                    { "low": 40, "high": 50, "species": "SPECIES_MINIOR_GREEN" }
+                    { "low": 40, "high": 50, "species": "SPECIES_MINIOR_SHIELD" },
+                    { "low": 40, "high": 50, "species": "SPECIES_MINIOR_SHIELD" },
+                    { "low": 40, "high": 50, "species": "SPECIES_MINIOR_SHIELD" }
                 ]
             }
         },
@@ -1758,11 +1758,11 @@
             "rocks": {
                 "rate": 150,
                 "pokemon": [
-                    { "low": 35, "high": 40, "species": "SPECIES_MINIOR_RED" },
-                    { "low": 35, "high": 40, "species": "SPECIES_MINIOR_ORANGE" },
-                    { "low": 35, "high": 40, "species": "SPECIES_MINIOR_YELLOW" },
-                    { "low": 35, "high": 40, "species": "SPECIES_MINIOR_GREEN" },
-                    { "low": 35, "high": 40, "species": "SPECIES_MINIOR_BLUE" }
+                    { "low": 35, "high": 40, "species": "SPECIES_MINIOR_SHIELD" },
+                    { "low": 35, "high": 40, "species": "SPECIES_MINIOR_SHIELD" },
+                    { "low": 35, "high": 40, "species": "SPECIES_MINIOR_SHIELD" },
+                    { "low": 35, "high": 40, "species": "SPECIES_MINIOR_SHIELD" },
+                    { "low": 35, "high": 40, "species": "SPECIES_MINIOR_SHIELD" }
                 ]
             }
         },
@@ -1789,11 +1789,11 @@
             "rocks": {
                 "rate": 150,
                 "pokemon": [
-                    { "low": 35, "high": 40, "species": "SPECIES_MINIOR_INDIGO" },
-                    { "low": 35, "high": 40, "species": "SPECIES_MINIOR_VIOLET" },
-                    { "low": 35, "high": 40, "species": "SPECIES_MINIOR_YELLOW" },
-                    { "low": 35, "high": 40, "species": "SPECIES_MINIOR_GREEN" },
-                    { "low": 35, "high": 40, "species": "SPECIES_MINIOR_BLUE" }
+                    { "low": 35, "high": 40, "species": "SPECIES_MINIOR_SHIELD" },
+                    { "low": 35, "high": 40, "species": "SPECIES_MINIOR_SHIELD" },
+                    { "low": 35, "high": 40, "species": "SPECIES_MINIOR_SHIELD" },
+                    { "low": 35, "high": 40, "species": "SPECIES_MINIOR_SHIELD" },
+                    { "low": 35, "high": 40, "species": "SPECIES_MINIOR_SHIELD" }
                 ]
             }
         },

@@ -2192,7 +2192,7 @@ const struct TrainerMonNoItemDefaultMoves sParty_Route8_NinjaBoyZeke[] = {
 
 const struct TrainerMonNoItemDefaultMoves sParty_Route8_SuperNerdSaul[] = {
     { .lvl = 24, .species = SPECIES_DRILBUR },
-    { .lvl = 24, .species = SPECIES_MINIOR_INDIGO },
+    { .lvl = 24, .species = SPECIES_MINIOR_SHIELD },
     { .lvl = 25, .species = SPECIES_CRABRAWLER }
 };
 
