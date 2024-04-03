@@ -247,7 +247,7 @@
 #define MAP_ROUTE_12_EAST                        ((3 << 8) | 30)
 #define MAP_ROUTE_13                             ((3 << 8) | 31)
 #define MAP_ROUTE_14                             ((3 << 8) | 32)
-#define MAP_ROUTE_15                             ((3 << 8) | 33)
+#define MAP_ROUTE_15_NORTH                       ((3 << 8) | 33)
 #define MAP_ROUTE_16                             ((3 << 8) | 34)
 #define MAP_ROUTE_17                             ((3 << 8) | 35)
 #define MAP_ROUTE_18                             ((3 << 8) | 36)
@@ -281,6 +281,7 @@
 #define MAP_SEVEN_ISLAND_SEVAULT_CANYON_ENTRANCE (63 | (3 << 8))
 #define MAP_SEVEN_ISLAND_SEVAULT_CANYON          (64 | (3 << 8))
 #define MAP_SEVEN_ISLAND_TANOBY_RUINS            (65 | (3 << 8))
+#define MAP_ROUTE_15_SOUTH                       ((3 << 8) | 66)
 
 // Map Group 4
 #define MAP_PALLET_TOWN_PLAYERS_HOUSE_1F   (0 | (4 << 8))

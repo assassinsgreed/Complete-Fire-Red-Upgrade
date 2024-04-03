@@ -272,6 +272,11 @@ ItemScript_Common_SpellTag:
     finditem ITEM_SPELL_TAG 0x1
     end
 
+.global ItemScript_Common_DragonFang
+ItemScript_Common_DragonFang:
+    finditem ITEM_DRAGON_FANG 0x1
+    end
+
 .global ItemScript_Common_DestinyKnot
 ItemScript_Common_DestinyKnot:
     finditem ITEM_DESTINY_KNOT 0x1
@@ -305,6 +310,11 @@ ItemScript_Common_ChoiceScarf:
 .global ItemScript_Common_Stick
 ItemScript_Common_Stick:
     finditem ITEM_STICK 0x1
+    end
+
+.global ItemScript_Common_BrightPowder
+ItemScript_Common_BrightPowder:
+    finditem ITEM_BRIGHT_POWDER 0x1
     end
 
 .global ItemScript_Common_MetalPowder
