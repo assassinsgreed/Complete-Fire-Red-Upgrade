@@ -402,6 +402,10 @@ GraphicsInfo_ZapdosG 839FFD0
 GraphicsInfo_MoltresG 839FFD4
 ## Replace Articuno (138)
 GraphicsInfo_ArticunoG 839FFD8
+## Replace Lugia (144)
+GraphicsInfo_Kyogre 839FFF0
+## Replace Ho-oh (145)
+GraphicsInfo_Groudon 839FFF4
 ## Replace Deoxys Defense (148)
 GraphicsInfo_Glastrier 83A0000
 
