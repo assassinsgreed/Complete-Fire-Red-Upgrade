@@ -73,6 +73,7 @@ EventScript_RhodanziGym_Leader_TerrenceDefeated:
     giveitemwithfanfare ITEM_TM05 0x1 0x101 @ MUS_FANFA1
     setflag 0x254 @ Received TM 05 from Terrence
     setflag 0x4B0 @ Defeated Terrence
+    setflag 0x25C @ New Pokemart Stock
     msgbox gText_RhodanziGym_Leader_Terrence_Chat MSG_KEEPOPEN
     releaseall
     end

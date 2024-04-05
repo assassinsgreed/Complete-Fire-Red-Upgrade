@@ -60,7 +60,13 @@ EventScript_CalicinBay_TeamPlutoHugo:
 .global EventScript_CalicinBay_TeamPlutoAnise
 EventScript_CalicinBay_TeamPlutoAnise:
     trainerbattle0 0x0 287 0x0 gText_CalicinBay_TeamPlutoAnise_Intro gText_CalicinBay_TeamPlutoAnise_Defeat
+    checktrainerflag 288 @ Beat Yolena
+    if SET _goto Anise_YolenaBeat
     msgbox gText_CalicinBay_TeamPlutoAnise_Chat MSG_NORMAL
+    end
+
+Anise_YolenaBeat:
+    msgbox gText_CalicinBay_TeamPlutoAnise_YolenaBeatChat MSG_NORMAL
     end
 
 .global EventScript_CalicinBay_TeamPlutoYolena

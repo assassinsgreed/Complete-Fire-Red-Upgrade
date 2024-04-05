@@ -3645,7 +3645,7 @@ const struct TrainerMonNoItemCustomMoves sParty_BruccieVillageGym_CrushGirlEllie
 
 const struct TrainerMonItemCustomMoves sParty_BruccieVillageGym_LeaderAbby[] = {
     {
-        .lvl = 44,
+        .lvl = 45,
         .species = SPECIES_RUNERIGUS,
         .moves = {
             MOVE_PROTECT,
@@ -3656,7 +3656,7 @@ const struct TrainerMonItemCustomMoves sParty_BruccieVillageGym_LeaderAbby[] = {
         .ability = Ability_1 // Wandering Spirit
     },
     {
-        .lvl = 45,
+        .lvl = 46,
         .species = SPECIES_MALAMAR,
         .moves = {
             MOVE_SUPERPOWER,
@@ -3667,7 +3667,7 @@ const struct TrainerMonItemCustomMoves sParty_BruccieVillageGym_LeaderAbby[] = {
         .ability = Ability_1 // Contrary
     },
     {
-        .lvl = 45,
+        .lvl = 46,
         .species = SPECIES_DARMANITAN_G,
         .moves = {
             MOVE_ICICLECRASH,
@@ -3678,7 +3678,7 @@ const struct TrainerMonItemCustomMoves sParty_BruccieVillageGym_LeaderAbby[] = {
         .ability = Ability_Hidden // Zen Mode
     },
     {
-        .lvl = 46,
+        .lvl = 47,
         .species = SPECIES_TREVENANT,
         .moves = {
             MOVE_WILLOWISP,
@@ -3828,8 +3828,8 @@ const struct TrainerMonNoItemDefaultMoves sParty_PlutoHQ_B4F_TeamPlutoMatty[] = 
 };
 
 const struct TrainerMonItemDefaultMoves sParty_PlutoHQ_B4F_ScientistGary[] = {
-    { .lvl = 45, .species = SPECIES_PYUKUMUKU },
-    { .lvl = 46, .species = SPECIES_STUNFISK },
+    { .lvl = 45, .species = SPECIES_PINCURCHIN },
+    { .lvl = 46, .species = SPECIES_PAWNIARD },
     { .lvl = 45, .species = SPECIES_STUNFISK_G },
 };
 

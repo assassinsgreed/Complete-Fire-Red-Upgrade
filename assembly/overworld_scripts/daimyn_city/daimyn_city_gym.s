@@ -193,6 +193,7 @@ EventScript_DaimynCityGym_LeaderChance_Defeated:
     pause DELAY_HALFSECOND
     hidecoins
     setflag 0x4B3 @ Defeated Chance
+    setflag 0x25C @ New Pokemart Stock
     msgbox gText_DaimynCityGym_LeaderChance_Chat MSG_KEEPOPEN
     releaseall
     end

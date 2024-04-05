@@ -15,6 +15,8 @@ EventScript_Pokemart:
     if 0x1 _goto End
     checkflag 0x829 @ Has Pokedex
     if NOT_SET _goto EventScript_PokemartNotReady
+    checkflag 0x25C @ New Pokemart Stock
+    if SET _call EventScript_PokemartNewStock
     msgbox gText_Common_PokemartIntro MSG_KEEPOPEN
     checkflag 0x827 @ Eight Badges
     if SET _goto EventScript_EightBadges
@@ -33,6 +35,11 @@ EventScript_Pokemart:
     checkflag 0x820 @ One Badge
     if SET _goto EventScript_OneBadge
     goto EventScript_NoBadges @ No badges
+
+EventScript_PokemartNewStock:
+    msgbox gText_Common_PokemartNewStock MSG_NORMAL
+    clearflag 0x25C @ New stock
+    return
 
 EventScript_NoBadges:
     pokemart NoBadges_Stock

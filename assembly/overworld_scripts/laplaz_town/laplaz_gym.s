@@ -227,6 +227,7 @@ EventScript_LaplazGym_LeaderCasey_Defeated:
     textcolor BLACK
     msgbox gText_LaplazGym_TMReceived MSG_KEEPOPEN
     setflag 0x4B4 @ Defeated Casey
+    setflag 0x25C @ New Pokemart Stock
     call SetCaseyGender @ Reset text color
     msgbox gText_LaplazGym_LeaderCasey_Chat MSG_KEEPOPEN
     releaseall
