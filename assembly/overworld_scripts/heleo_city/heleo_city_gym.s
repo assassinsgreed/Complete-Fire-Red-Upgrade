@@ -158,6 +158,7 @@ EventScript_HeleoGym_LeaderRaine_Defeated:
     additem ITEM_TM37 0x1 @ Sandstorm
     msgbox gText_HeleoGym_TMReceived MSG_KEEPOPEN
     setflag 0x4B2 @ Defeated Raine
+    setflag 0x25C @ New Pokemart Stock
     msgbox gText_HeleoGym_LeaderRaine_Chat MSG_KEEPOPEN
     releaseall
     end

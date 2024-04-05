@@ -70,6 +70,7 @@ EventScript_BruccieVillageGym_LeaderAbby_Defeated:
     giveitemwithfanfare ITEM_TM76 0x1 0x101 @ MUS_FANFA1
     setflag 0x29A @ Received TM 76 from Abby
     setflag 0x4B5 @ Defeated Abby
+    setflag 0x25C @ New Pokemart Stock
     msgbox gText_BruccieVillageGym_LeaderAbby_Chat MSG_KEEPOPEN
     releaseall
     end

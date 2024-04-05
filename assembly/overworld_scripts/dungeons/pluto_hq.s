@@ -67,6 +67,7 @@ EventScript_PlutoHQ_B2F_TeamPlutoTheodore:
 ## B3F
 .global EventScript_PlutoHQ_B3F_RestGrunt
 EventScript_PlutoHQ_B3F_RestGrunt:
+    lock
     faceplayer
     msgbox gText_PlutoHQ_B2F_RestGrunt_Intro MSG_NORMAL
     showmoney 0x0 0x0
@@ -85,6 +86,7 @@ EventScript_PlutoHQ_B3F_RestGrunt:
     msgbox gText_PlutoHQ_B2F_RestGrunt_ChoseYes MSG_NORMAL
     call PlayerHeal
     msgbox gText_PlutoHQ_B2F_RestGrunt_AfterHeal MSG_NORMAL
+    release
     applymovement LASTTALKED m_LookDown
     end
 
