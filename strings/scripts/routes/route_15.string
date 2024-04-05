@@ -1,0 +1,166 @@
+// North
+#org @gText_Route15North_SwimmerMiles_Intro
+I love swimming and battling! Let's\ndo both!
+
+#org @gText_Route15North_SwimmerMiles_Defeat
+Wow, you're as strong as the current!
+
+#org @gText_Route15North_SwimmerMiles_Chat
+Swimming helps me train my Pok\emon.\nThey've become quite strong!
+
+#org @gText_Route15North_SwimmerFiona_Intro
+The ocean's waves are my rhythm.\nReady to dance in a battle?
+
+#org @gText_Route15North_SwimmerFiona_Defeat
+Your rhythm is stronger than the\nocean's waves!
+
+#org @gText_Route15North_SwimmerFiona_Chat
+Battling while swimming is a great\nway to sync with my Pok\emon.
+
+#org @gText_Route15North_HikerKlaus_Intro
+What's that? You're wondering why a\nhiker is out at sea?\pBeat me, and maybe I'll tell you!
+
+#org @gText_Route15North_HikerKlaus_Defeat
+Oho! A resounding defeat.
+
+#org @gText_Route15North_HikerKlaus_Chat
+Alright, I'll tell you why I'm out\nhere[.]\pI love mountains, because they're\nmade out of rocks!\pSimilarly, I also love Rock type\nPok\emon!\pI heard there are interesting Rock\ntype Pok\emon that can be fished up\lin the ocean routes.\pI came running when I heard that!\pBut[.] I can't find them here[.] Maybe\nthey're on one of the other routes?
+
+#org @gText_Route15North_SwimmerUrsula_Intro
+I'm looking for rare Pok\emon, but\ninstead I've found a trainer.
+
+#org @gText_Route15North_SwimmerUrsula_Defeat
+Oh, what a rare trainer!
+
+#org @gText_Route15North_SwimmerUrsula_Chat
+Route 15 is so long that we refer\nto it's northern and southern halves\lseparately.\pBut, Pok\emon don't care about that!\nThe same species can be found in\lboth halves.\pDid you know that already?
+
+#org @gText_Route15North_SwimmerQuincy_Intro
+I'm an exceptional swimmer, but an\neven more exceptional trainer.\pHere, I'll show you!
+
+#org @gText_Route15North_SwimmerQuincy_Defeat
+Truly exceptional!
+
+#org @gText_Route15North_SwimmerQuincy_Chat
+You're an exceptional trainer too! I\nfeel we could be good friends.
+
+#org @gText_Route15North_CoolTrainerWesley_Intro
+Hmph. All the trainers here are weak.\nAre you weak too?
+
+#org @gText_Route15North_CoolTrainerWesley_Defeat
+Not weak[.] Strong!
+
+#org @gText_Route15North_CoolTrainerWesley_Chat
+Hmph. You made my day.\pI hope you'll keep going and become\neven stronger.
+
+#org @gText_Route15North_SuperNerdEthan_Intro
+Prepare to be dazzled by my rare\nPok\emon[.] You can't beat them!
+
+#org @gText_Route15North_SuperNerdEthan_Defeat
+No way! They were supposed to be\nunbeatable.
+
+#org @gText_Route15North_SuperNerdEthan_Chat
+Okay, you're strong. I get that now,\nsheesh.
+
+#org @gText_Route15North_ChannelerLila_Intro
+You[.] A curse hangs over you.\nUehehehe!
+
+#org @gText_Route15North_ChannelerLila_Defeat
+That curse is now over me[.]
+
+#org @gText_Route15North_ChannelerLila_Chat
+The sea is soothing on it's surface.\pBut[.] It hides unspeakable horrors\nbeneath the waves. Uehehehe!
+
+#org @gText_Route15North_RestStopAdvertisementSign
+Route 15 Rest Stop - Just a few\nminutes south of here!
+
+// South
+#org @gText_Route15South_NursePrompt
+Welcome to the Route 15 Rest Stop!\pIf you'd like, I can heal your weary\nPok\emon.
+
+#org @gText_Route15South_NurseHealing
+Okay, please let me see your\nPok\emon for a moment[.]
+
+#org @gText_Route15South_NurseHealingDone
+There. They're looking much better!
+
+#org @gText_Route15South_NurseOutro
+Please come see me again, if you are\nin need of healing.
+
+#org @gText_Route15South_Shopkeeper
+Welcome! I sell refreshments to keep\nyour Pok\emon feeling refreshed.
+
+#org @gText_Route15South_ShopkeeperDone
+Come again!
+
+#org @gText_Route15South_Boy
+This rest stop really saved my\nhide.\pMy Pok\emon were feeling pretty worn\nout before stopping here.\pTalk about convenient!
+
+#org @gText_Route15South_RuinManiac
+I've heard rumours that a legendary\nPok\emon rests somewhere nearby.\pI'm going to be the first person to\ndiscover it, just you wait and see!
+
+#org @gText_Route15South_SwimmerGerald_Intro
+I'm Gerald, a swimmer who loves\nthe open sea and its Pok\emon.
+
+#org @gText_Route15South_SwimmerGerald_Defeat
+You're a strong trainer. I admire\nyour skills.
+
+#org @gText_Route15South_SwimmerGerald_Chat
+The sea is full of surprises. Just\nlike our battle.
+
+#org @gText_Route15South_SwimmerAlexandra_Intro
+Hey you, do you like waves?
+
+#org @gText_Route15South_SwimmerAlexandra_Defeat
+Um[.] I asked if you liked waves, not\nbattles.
+
+#org @gText_Route15South_SwimmerAlexandra_Chat
+Sometimes I like to float on the\nwaves and let them carry me\laround.
+
+#org @gText_Route15South_SwimmerBernard_Intro
+My battle strategy is as bold and in-\nyour-face as my speedo is!
+
+#org @gText_Route15South_SwimmerBernard_Defeat
+Oooh! What a trunks-like battle\nstrategy that was.
+
+#org @gText_Route15South_SwimmerBernard_Chat
+Speedos rock! They show off more of\nmy sick bod!
+
+#org @gText_Route15South_SwimmerHarold_Intro
+I'll battle you with the Pok\emon I\njust caught!
+
+#org @gText_Route15South_SwimmerHarold_Defeat
+Hm[.] Maybe I ought to throw them\nback instead.
+
+#org @gText_Route15South_SwimmerHarold_Chat
+Catching Pok\emon on your fishing line\nis quite the thrill, isn't it?
+
+#org @gText_Route15South_SwimmerMelinda_Intro
+You want a battle? Okay, well let's\nmake it quick. I'm busy.
+
+#org @gText_Route15South_SwimmerMelinda_Defeat
+Very quick, indeed.
+
+#org @gText_Route15South_SwimmerMelinda_Chat
+I heard there's a secluded island\naround here somewhere.
+
+#org @gText_Route15South_BlackbeltFranklin_Intro
+My Pok\emon and I are as strong as a\ncoursing river.\pThink you can handle us, when we're\nthis powerful?
+
+#org @gText_Route15South_BlackbeltFranklin_Defeat
+Whoa! You're like a great typhoon\nyourself.
+
+#org @gText_Route15South_BlackbeltFranklin_Chat
+It seems my Pok\emon and I must get\nback to our training.\pWe are too weak.
+
+#org @gText_Route15South_SwimmerPatricia_Intro
+Tee hee! A trainer must battle when\ntheir eyes meet, even out here.
+
+#org @gText_Route15South_SwimmerPatricia_Defeat
+A trainer must also accept defeat\nwith grace, even out here[.]
+
+#org @gText_Route15South_SwimmerPatricia_Chat
+I don't see many trainers out here,\nso I simply must battle those I\lsee.
+
+#org @gText_Route15South_RestStopSign
+Route 15 Rest Stop\nFreshen up here!\pBattling on this island is strictly\nprohibited.

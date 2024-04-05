@@ -4188,16 +4188,99 @@ const struct TrainerMonNoItemDefaultMoves sParty_Route14_YoungsterFreddie[] = {
     { .lvl = 46, .species = SPECIES_BOLTUND },
     { .lvl = 47, .species = SPECIES_TRUMBEAK }
 };
+
 const struct TrainerMonNoItemDefaultMoves sParty_Route14_PsychicTobin[] = {
     { .lvl = 48, .species = SPECIES_ELGYEM },
     { .lvl = 48, .species = SPECIES_ORANGURU },
 };
+
 const struct TrainerMonNoItemDefaultMoves sParty_Route14_SwimmerMacie[] = {
     { .lvl = 46, .species = SPECIES_SHELLDER },
     { .lvl = 47, .species = SPECIES_OSHAWOTT },
     { .lvl = 47, .species = SPECIES_DEWOTT }
 };
 
+// #endregion
+
+// #region Route 15 North and South
+const struct TrainerMonNoItemDefaultMoves sParty_Route15North_SwimmerMiles[] = {
+    { .lvl = 50, .species = SPECIES_SHELLDER },
+    { .lvl = 49, .species = SPECIES_SHELLDER },
+    { .lvl = 50, .species = SPECIES_CLOYSTER },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route15North_SwimmerFiona[] = {
+    { .lvl = 52, .species = SPECIES_LAPRAS }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route15North_HikerKlaus[] = {
+    { .lvl = 50, .species = SPECIES_STONJOURNER },
+    { .lvl = 50, .species = SPECIES_KLANG }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route15North_SwimmerUrsula[] = {
+    { .lvl = 50, .species = SPECIES_CARVANHA },
+    { .lvl = 51, .species = SPECIES_SHARPEDO }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route15North_SwimmerQuincy[] = {
+    { .lvl = 51, .species = SPECIES_PRINPLUP },
+    { .lvl = 52, .species = SPECIES_BARBARACLE }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route15North_CoolTrainerWesley[] = {
+    { .lvl = 52, .species = SPECIES_ROTOM_HEAT },
+    { .lvl = 52, .species = SPECIES_GARCHOMP },
+    { .lvl = 53, .species = SPECIES_TOGEKISS }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route15North_SuperNerdEthan[] = {
+    { .lvl = 52, .species = SPECIES_GOODRA },
+    { .lvl = 52, .species = SPECIES_RAICHU_A }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route15North_ChannelerLila[] = {
+    { .lvl = 49, .species = SPECIES_MISDREAVUS },
+    { .lvl = 49, .species = SPECIES_MISDREAVUS },
+    { .lvl = 50, .species = SPECIES_SABLEYE },
+    { .lvl = 50, .species = SPECIES_CURSOLA }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route15South_SwimmerGerald[] = {
+    { .lvl = 51, .species = SPECIES_FERALIGATR },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route15South_SwimmerAlexandra[] = {
+    { .lvl = 49, .species = SPECIES_CHINCHOU },
+    { .lvl = 49, .species = SPECIES_WINGULL },
+    { .lvl = 50, .species = SPECIES_LANTURN },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route15South_SwimmerBernard[] = {
+    { .lvl = 52, .species = SPECIES_CRABOMINABLE },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route15South_SwimmerHarold[] = {
+    { .lvl = 49, .species = SPECIES_CORPHISH },
+    { .lvl = 51, .species = SPECIES_CRAWDAUNT },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route15South_SwimmerMelinda[] = {
+    { .lvl = 48, .species = SPECIES_SQUIRTLE },
+    { .lvl = 48, .species = SPECIES_HORSEA },
+    { .lvl = 48, .species = SPECIES_BINACLE },
+    { .lvl = 50, .species = SPECIES_SWAMPERT },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route15South_BlackbeltFranklin[] = {
+    { .lvl = 50, .species = SPECIES_FALINKS },
+    { .lvl = 51, .species = SPECIES_SCRAFTY },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route15South_SwimmerPatricia[] = {
+    { .lvl = 50, .species = SPECIES_DRATINI },
+    { .lvl = 52, .species = SPECIES_DRAGONAIR },
+};
 // #endregion
 
 // #endregion
@@ -8366,6 +8449,188 @@ const struct Trainer gTrainers[] = {
         .partySize = NELEMS(sParty_Route14_SwimmerMacie),
         .party = {.NoItemDefaultMoves = sParty_Route14_SwimmerMacie}
     },    
+    // #endregion
+    // #region Route 15 North and South
+    [TRAINER_ROUTE_15_NORTH_SWIMMER_MILES] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_SWIMMER_M,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
+        .trainerPic = TRAINER_PIC_SWIMMER_M,
+        .trainerName = {_M, _i, _l, _e, _s, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_RISKY,
+        .partySize = NELEMS(sParty_Route15North_SwimmerMiles),
+        .party = {.NoItemDefaultMoves = sParty_Route15North_SwimmerMiles}
+    },
+    [TRAINER_ROUTE_15_NORTH_SWIMMER_FIONA] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_SWIMMER_F,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
+        .trainerPic = TRAINER_PIC_SWIMMER_F,
+        .trainerName = {_F, _i, _o, _n, _a, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_RISKY,
+        .partySize = NELEMS(sParty_Route15North_SwimmerFiona),
+        .party = {.NoItemDefaultMoves = sParty_Route15North_SwimmerFiona}
+    },
+    [TRAINER_ROUTE_15_NORTH_HIKER_KLAUS] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_HIKER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
+        .trainerPic = TRAINER_PIC_HIKER,
+        .trainerName = {_K, _l, _a, _u, _s, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_HP_AWARE | AI_SCRIPT_TRY_TO_FAINT,
+        .partySize = NELEMS(sParty_Route15North_HikerKlaus),
+        .party = {.NoItemDefaultMoves = sParty_Route15North_HikerKlaus}
+    },
+    [TRAINER_ROUTE_15_NORTH_SWIMMER_URSULA] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_SWIMMER_F,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
+        .trainerPic = TRAINER_PIC_SWIMMER_F,
+        .trainerName = {_U, _r, _s, _u, _l, _a, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_RISKY,
+        .partySize = NELEMS(sParty_Route15North_SwimmerUrsula),
+        .party = {.NoItemDefaultMoves = sParty_Route15North_SwimmerUrsula}
+    },
+    [TRAINER_ROUTE_15_NORTH_SWIMMER_QUINCY] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_SWIMMER_M,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
+        .trainerPic = TRAINER_PIC_SWIMMER_M,
+        .trainerName = {_Q, _u, _i, _n, _c, _y, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_RISKY,
+        .partySize = NELEMS(sParty_Route15North_SwimmerQuincy),
+        .party = {.NoItemDefaultMoves = sParty_Route15North_SwimmerQuincy}
+    },
+    [TRAINER_ROUTE_15_NORTH_COOL_TRAINER_WESLEY] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_COOLTRAINER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
+        .trainerPic = TRAINER_PIC_COOLTRAINER_M,
+        .trainerName = {_W, _e, _s, _l, _e, _y, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_SEMI_SMART | AI_SCRIPT_CHECK_VIABILITY,
+        .partySize = NELEMS(sParty_Route15North_CoolTrainerWesley),
+        .party = {.NoItemDefaultMoves = sParty_Route15North_CoolTrainerWesley}
+    },
+    [TRAINER_ROUTE_15_NORTH_SUPER_NERD_ETHAN] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_SUPER_NERD,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_SUPER_NERD,
+        .trainerName = {_E, _t, _h, _a, _n, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_SEMI_SMART,
+        .partySize = NELEMS(sParty_Route15North_SuperNerdEthan),
+        .party = {.NoItemDefaultMoves = sParty_Route15North_SuperNerdEthan}
+    },
+    [TRAINER_ROUTE_15_NORTH_CHANNELER_LILA] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_CHANNELER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_CHANNELER,
+        .trainerName = {_L, _i, _l, _a, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_PREFER_STRONGEST_MOVE,
+        .partySize = NELEMS(sParty_Route15North_ChannelerLila),
+        .party = {.NoItemDefaultMoves = sParty_Route15North_ChannelerLila}
+    },
+    [TRAINER_ROUTE_15_SOUTH_SWIMMER_GERALD] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_SWIMMER_M,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
+        .trainerPic = TRAINER_PIC_SWIMMER_M,
+        .trainerName = {_G, _e, _r, _a, _l, _d, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_RISKY,
+        .partySize = NELEMS(sParty_Route15South_SwimmerGerald),
+        .party = {.NoItemDefaultMoves = sParty_Route15South_SwimmerGerald}
+    },
+    [TRAINER_ROUTE_15_SOUTH_SWIMMER_ALEXANDRA] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_SWIMMER_F,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
+        .trainerPic = TRAINER_PIC_SWIMMER_F,
+        .trainerName = {_A, _l, _e, _x, _a, _n, _d, _r, _a, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_RISKY,
+        .partySize = NELEMS(sParty_Route15South_SwimmerAlexandra),
+        .party = {.NoItemDefaultMoves = sParty_Route15South_SwimmerAlexandra}
+    },
+    [TRAINER_ROUTE_15_SOUTH_SWIMMER_BERNARD] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_SWIMMER_M,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
+        .trainerPic = TRAINER_PIC_SWIMMER_M,
+        .trainerName = {_B, _e, _r, _n, _a, _r, _d, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_RISKY,
+        .partySize = NELEMS(sParty_Route15South_SwimmerBernard),
+        .party = {.NoItemDefaultMoves = sParty_Route15South_SwimmerBernard}
+    },
+    [TRAINER_ROUTE_15_SOUTH_SWIMMER_HAROLD] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_SWIMMER_M,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
+        .trainerPic = TRAINER_PIC_SWIMMER_M,
+        .trainerName = {_H, _a, _r, _o, _l, _d, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_RISKY,
+        .partySize = NELEMS(sParty_Route15South_SwimmerHarold),
+        .party = {.NoItemDefaultMoves = sParty_Route15South_SwimmerHarold}
+    },
+    [TRAINER_ROUTE_15_SOUTH_SWIMMER_MELINDA] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_SWIMMER_F,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
+        .trainerPic = TRAINER_PIC_SWIMMER_F,
+        .trainerName = {_M, _e, _l, _i, _n, _d, _a, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_RISKY,
+        .partySize = NELEMS(sParty_Route15South_SwimmerMelinda),
+        .party = {.NoItemDefaultMoves = sParty_Route15South_SwimmerMelinda}
+    },
+    [TRAINER_ROUTE_15_SOUTH_BLACKBELT_FRANKLIN] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_BLACK_BELT,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_BLACK_BELT,
+        .trainerName = {_F, _r, _a, _n, _k, _l, _i, _n, _END},
+        .items = {ITEM_X_DEFEND},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_RISKY | AI_SCRIPT_TRY_TO_FAINT,
+        .partySize = NELEMS(sParty_Route15South_BlackbeltFranklin),
+        .party = {.NoItemDefaultMoves = sParty_Route15South_BlackbeltFranklin}
+    },    
+    [TRAINER_ROUTE_15_SOUTH_SWIMMER_PATRICIA] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_SWIMMER_F,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
+        .trainerPic = TRAINER_PIC_SWIMMER_F,
+        .trainerName = {_P, _a, _t, _r, _i, _c, _i, _a, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_RISKY,
+        .partySize = NELEMS(sParty_Route15South_SwimmerPatricia),
+        .party = {.NoItemDefaultMoves = sParty_Route15South_SwimmerPatricia}
+    },
     // #endregion
     // #endregion
 };

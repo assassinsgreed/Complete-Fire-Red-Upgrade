@@ -32,7 +32,7 @@ u8 __attribute__((long_call)) GetCurrentRegionMapSectionId(void);
 #define MAPSEC_ROUTE_12_REST_HOUSE          0x70
 #define MAPSEC_ROUTE_13_REST_HOUSE          0x71
 #define MAPSEC_ROUTE_14                     0x72
-#define MAPSEC_ROUTE_15                     0x73
+#define MAPSEC_ROUTE_15_NORTH               0x73
 #define MAPSEC_ROUTE_16                     0x74
 #define MAPSEC_ROUTE_17                     0x75
 #define MAPSEC_ROUTE_18                     0x76
@@ -62,7 +62,7 @@ u8 __attribute__((long_call)) GetCurrentRegionMapSectionId(void);
 #define MAPSEC_DAIMYN_FACTORY               0x8E
 #define MAPSEC_CALICIN_BAY                  0x8F
 #define MAPSEC_PLUTO_HQ                     0x90
-#define MAPSEC_THREE_ISLAND                 0x91
+#define MAPSEC_ROUTE_15_SOUTH               0x91
 #define MAPSEC_FOUR_ISLAND                  0x92
 #define MAPSEC_FIVE_ISLAND                  0x93
 #define MAPSEC_SEVEN_ISLAND                 0x94

@@ -447,7 +447,7 @@ const struct SwarmData gSwarmTable[] =
 		.species = SPECIES_RATICATE,
 	},
 	{
-		.mapName = MAPSEC_ROUTE_15,
+		.mapName = MAPSEC_ROUTE_14,
 		.species = SPECIES_RAICHU_A,
 	},
 	{

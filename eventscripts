@@ -1771,3 +1771,34 @@ npc 3 32 11 ItemScript_Common_HyperPotion
 npc 3 32 12 ItemScript_Common_ShedShell
 npc 3 32 13 EventScript_Route14_FindTM27Return
 sign 3 32 0 SignScript_Route14_TrainerTipsFastSurfing
+
+## Route 15 North & South
+### North
+npc 3 33 0 EventScript_Route15North_SwimmerMiles
+npc 3 33 1 EventScript_Route15North_SwimmerFiona
+npc 3 33 2 EventScript_Route15North_HikerKlaus
+npc 3 33 3 EventScript_Route15North_SwimmerUrsula
+npc 3 33 4 EventScript_Route15North_SwimmerQuincy
+npc 3 33 5 EventScript_Route15North_CoolTrainerWesley
+npc 3 33 6 EventScript_Route15North_SuperNerdEthan
+npc 3 33 7 EventScript_Route15North_ChannelerLila
+npc 3 33 8 EventScript_Route15North_FindTM55Scald
+npc 3 33 9 ItemScript_Common_Carbos
+npc 3 33 10 ItemScript_Common_MaxRevive
+sign 3 33 0 SignScript_Route15North_RestStopAdvertisementSign
+### South
+npc 3 66 0 EventScript_Route15South_Nurse
+npc 3 66 1 EventScript_Route15South_Shopkeeper
+npc 3 66 2 EventScript_Route15South_Boy
+npc 3 66 3 EventScript_Route15South_RuinManiac
+npc 3 66 4 EventScript_Route15South_SwimmerGerald
+npc 3 66 5 EventScript_Route15South_SwimmerAlexandra
+npc 3 66 6 EventScript_Route15South_SwimmerBernard
+npc 3 66 7 EventScript_Route15South_SwimmerHarold
+npc 3 66 8 EventScript_Route15South_SwimmerMelinda
+npc 3 66 9 EventScript_Route15South_BlackbeltFranklin
+npc 3 66 10 EventScript_Route15South_SwimmerPatricia
+npc 3 66 11 ItemScript_Common_DragonFang
+npc 3 66 12 ItemScript_Common_FullHeal
+npc 3 66 13 ItemScript_Common_BrightPowder
+sign 3 66 0 SignScript_Route15South_RestStopSign
