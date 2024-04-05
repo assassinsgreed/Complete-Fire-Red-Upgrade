@@ -60,6 +60,8 @@ extern const u8 WingullTiles[];
 extern const u8 NidoranMaleTiles[];
 extern const u8 SwimmerFTiles[];
 extern const u8 ShayminTiles[];
+extern const u8 KyogreTiles[];
+extern const u8 GroudonTiles[];
 
 #define EVENT_OBJ_PAL_TAG_NONE 0x1102
 #define gEventObjectBaseOam_16x16 ((const struct OamData*) 0x83A36F8)
@@ -748,6 +750,32 @@ static const struct SpriteFrameImage Table_Shaymin[] =
     overworld_frame(ShayminTiles, 2, 2, 6),
     overworld_frame(ShayminTiles, 2, 2, 7),
     overworld_frame(ShayminTiles, 2, 2, 8),
+};
+
+static const struct SpriteFrameImage Table_Kyogre[] =
+{
+    overworld_frame(KyogreTiles, 8, 8, 0),
+    overworld_frame(KyogreTiles, 8, 8, 1),
+    overworld_frame(KyogreTiles, 8, 8, 2),
+    overworld_frame(KyogreTiles, 8, 8, 3),
+    overworld_frame(KyogreTiles, 8, 8, 4),
+    overworld_frame(KyogreTiles, 8, 8, 5),
+    overworld_frame(KyogreTiles, 8, 8, 6),
+    overworld_frame(KyogreTiles, 8, 8, 7),
+    overworld_frame(KyogreTiles, 8, 8, 8),
+};
+
+static const struct SpriteFrameImage Table_Groudon[] =
+{
+    overworld_frame(GroudonTiles, 8, 8, 0),
+    overworld_frame(GroudonTiles, 8, 8, 1),
+    overworld_frame(GroudonTiles, 8, 8, 2),
+    overworld_frame(GroudonTiles, 8, 8, 3),
+    overworld_frame(GroudonTiles, 8, 8, 4),
+    overworld_frame(GroudonTiles, 8, 8, 5),
+    overworld_frame(GroudonTiles, 8, 8, 6),
+    overworld_frame(GroudonTiles, 8, 8, 7),
+    overworld_frame(GroudonTiles, 8, 8, 8),
 };
 
 // #region MC
@@ -1809,5 +1837,45 @@ const struct EventObjectGraphicsInfo GraphicsInfo_Shaymin =
     .subspriteTables = gEventObjectSpriteOamTables_16x16,
     .anims = gEventObjectImageAnimTable_Standard,
     .images = Table_Shaymin,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+const struct EventObjectGraphicsInfo GraphicsInfo_Kyogre =
+{
+    .tileTag = 0xFFFF,
+    .paletteTag1 = 0x122D,
+    .paletteTag2 = EVENT_OBJ_PAL_TAG_NONE,
+    .size = (64 * 64) / 2,
+    .width = 64,
+    .height = 64,
+    .shadowSize = SHADOW_SIZE_L,
+    .inanimate = FALSE,
+    .disableReflectionPaletteLoad = FALSE,
+    .tracks = TRACKS_NONE,
+    .gender = MALE,
+    .oam = gEventObjectBaseOam_64x64,
+    .subspriteTables = gEventObjectSpriteOamTables_64x64,
+    .anims = gEventObjectImageAnimTable_Standard,
+    .images = Table_Kyogre,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+const struct EventObjectGraphicsInfo GraphicsInfo_Groudon =
+{
+    .tileTag = 0xFFFF,
+    .paletteTag1 = 0x122E,
+    .paletteTag2 = EVENT_OBJ_PAL_TAG_NONE,
+    .size = (64 * 64) / 2,
+    .width = 64,
+    .height = 64,
+    .shadowSize = SHADOW_SIZE_L,
+    .inanimate = FALSE,
+    .disableReflectionPaletteLoad = FALSE,
+    .tracks = TRACKS_NONE,
+    .gender = MALE,
+    .oam = gEventObjectBaseOam_64x64,
+    .subspriteTables = gEventObjectSpriteOamTables_64x64,
+    .anims = gEventObjectImageAnimTable_Standard,
+    .images = Table_Groudon,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
