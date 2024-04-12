@@ -4283,6 +4283,23 @@ const struct TrainerMonNoItemDefaultMoves sParty_Route15South_SwimmerPatricia[] 
 };
 // #endregion
 
+// #region Seppire Cove
+const struct TrainerMonNoItemDefaultMoves sParty_SeppireCove_SwimmerValerie[] = {
+    { .lvl = 52, .species = SPECIES_LAPRAS },
+    { .lvl = 52, .species = SPECIES_PINCURCHIN },
+    { .lvl = 53, .species = SPECIES_CLOYSTER },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_SeppireCove_SwimmerIchabod[] = {
+    { .lvl = 54, .species = SPECIES_DHELMISE }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_SeppireCove_RuinManiacCarter[] = {
+    { .lvl = 53, .species = SPECIES_COFAGRIGUS },
+    { .lvl = 53, .species = SPECIES_STONJOURNER },
+};
+
+
 // #endregion
 
 #define NO_NAME                                                                                      \
@@ -8631,6 +8648,44 @@ const struct Trainer gTrainers[] = {
         .partySize = NELEMS(sParty_Route15South_SwimmerPatricia),
         .party = {.NoItemDefaultMoves = sParty_Route15South_SwimmerPatricia}
     },
+    // #endregion
+    // #region Seppire Cove
+    [TRAINER_SEPPIRE_COVE_SWIMMER_VALERIE] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_SWIMMER_F,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
+        .trainerPic = TRAINER_PIC_SWIMMER_F,
+        .trainerName = {_V, _a, _l, _e, _r, _i, _e, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_RISKY,
+        .partySize = NELEMS(sParty_SeppireCove_SwimmerValerie),
+        .party = {.NoItemDefaultMoves = sParty_SeppireCove_SwimmerValerie}
+    },
+    [TRAINER_SEPPIRE_COVE_SWIMMER_ICHABOD] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_SWIMMER_M,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
+        .trainerPic = TRAINER_PIC_SWIMMER_M,
+        .trainerName = {_I, _c, _h, _a, _b, _o, _d, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_RISKY,
+        .partySize = NELEMS(sParty_SeppireCove_SwimmerIchabod),
+        .party = {.NoItemDefaultMoves = sParty_SeppireCove_SwimmerIchabod}
+    },
+    [TRAINER_SEPPIRE_COVE_RUIN_MANIAC_CARTER] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_RUIN_MANIAC,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_RUIN_MANIAC,
+        .trainerName = {_C, _a, _r, _t, _e, _r, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_HP_AWARE | AI_SCRIPT_TRY_TO_FAINT,
+        .partySize = NELEMS(sParty_SeppireCove_RuinManiacCarter),
+        .party = {.NoItemDefaultMoves = sParty_SeppireCove_RuinManiacCarter}
+    },    
     // #endregion
     // #endregion
 };

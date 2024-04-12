@@ -400,6 +400,27 @@
         },
         {
             "mapgroup": 1,
+            "mapnum": 34,
+            "grass": {
+                "rate": 5,
+                "pokemon": [
+                    { "low": 51, "high": 56, "species": "SPECIES_SLOWPOKE" },
+                    { "low": 51, "high": 56, "species": "SPECIES_GOLBAT" },
+                    { "low": 52, "high": 57, "species": "SPECIES_SLOWBRO" },
+                    { "low": 52, "high": 57, "species": "SPECIES_BOLDORE" },
+                    { "low": 52, "high": 57, "species": "SPECIES_BOLDORE" },
+                    { "low": 51, "high": 56, "species": "SPECIES_MISDREAVUS" },
+                    { "low": 51, "high": 56, "species": "SPECIES_MISDREAVUS" },
+                    { "low": 51, "high": 56, "species": "SPECIES_SLOWPOKE" },
+                    { "low": 52, "high": 58, "species": "SPECIES_MISMAGIUS" },
+                    { "low": 52, "high": 58, "species": "SPECIES_MISMAGIUS" },
+                    { "low": 52, "high": 58, "species": "SPECIES_SLOWKING" },
+                    { "low": 52, "high": 58, "species": "SPECIES_SLOWKING" }
+                ]
+            }
+        },
+        {
+            "mapgroup": 1,
             "mapnum": 37,
             "grass": {
                 "rate": 21,
@@ -554,6 +575,185 @@
                     { "low": 43, "high": 46, "species": "SPECIES_BRELOOM" },
                     { "low": 44, "high": 46, "species": "SPECIES_WHIMSICOTT" }, 
                     { "low": 44, "high": 46, "species": "SPECIES_WHIMSICOTT" }
+                ]
+            }
+        },
+        {
+            "mapgroup": 1,
+            "mapnum": 60,
+            "grass": {
+                "rate": 5,
+                "pokemon": [
+                    { "low": 50, "high": 53, "species": "SPECIES_SLOWPOKE" },
+                    { "low": 49, "high": 52, "species": "SPECIES_PINCURCHIN" },
+                    { "low": 50, "high": 53, "species": "SPECIES_PINCURCHIN" },
+                    { "low": 51, "high": 53, "species": "SPECIES_PINCURCHIN" },
+                    { "low": 50, "high": 53, "species": "SPECIES_SANDYGAST" },
+                    { "low": 49, "high": 52, "species": "SPECIES_SANDYGAST" },
+                    { "low": 50, "high": 53, "species": "SPECIES_TRUMBEAK" },
+                    { "low": 49, "high": 52, "species": "SPECIES_TOUCANNON" },
+                    { "low": 49, "high": 52, "species": "SPECIES_SLOWBRO" },
+                    { "low": 50, "high": 53, "species": "SPECIES_PALOSSAND" },
+                    { "low": 51, "high": 53, "species": "SPECIES_PALOSSAND" },
+                    { "low": 51, "high": 53, "species": "SPECIES_SLOWBRO" }
+                ]
+            },
+            "surfing": {
+                "rate": 2,
+                "pokemon": [
+                    { "low": 45, "high": 48, "species": "SPECIES_CARVANHA" },
+                    { "low": 46, "high": 49, "species": "SPECIES_SEADRA" },
+                    { "low": 45, "high": 48, "species": "SPECIES_LAPRAS" },
+                    { "low": 46, "high": 49, "species": "SPECIES_SHARPEDO" },
+                    { "low": 47, "high": 50, "species": "SPECIES_SHARPEDO" }
+                ]
+            },
+            "fishing": {
+                "rate": 20,
+                "pokemon": [
+                    { "low": 5, "high": 40, "species": "SPECIES_MAGIKARP" },
+                    { "low": 5, "high": 40, "species": "SPECIES_SHELLDER" },
+                    { "low": 25, "high": 40, "species": "SPECIES_MAGIKARP" },
+                    { "low": 25, "high": 40, "species": "SPECIES_SHELLDER" },
+                    { "low": 25, "high": 40, "species": "SPECIES_SHELLDER" },
+                    { "low": 45, "high": 55, "species": "SPECIES_SHELLDER" },
+                    { "low": 45, "high": 55, "species": "SPECIES_DHELMISE" },
+                    { "low": 45, "high": 55, "species": "SPECIES_CLOYSTER" },
+                    { "low": 45, "high": 55, "species": "SPECIES_GYARADOS" },
+                    { "low": 45, "high": 55, "species": "SPECIES_CLOYSTER" }
+                ]
+            }
+        },
+        {
+            "mapgroup": 1,
+            "mapnum": 61,
+            "grass": {
+                "rate": 5,
+                "pokemon": [
+                    { "low": 51, "high": 56, "species": "SPECIES_SLOWPOKE" },
+                    { "low": 51, "high": 56, "species": "SPECIES_GOLBAT" },
+                    { "low": 52, "high": 57, "species": "SPECIES_SLOWBRO" },
+                    { "low": 52, "high": 57, "species": "SPECIES_BOLDORE" },
+                    { "low": 52, "high": 57, "species": "SPECIES_BOLDORE" },
+                    { "low": 51, "high": 56, "species": "SPECIES_MISDREAVUS" },
+                    { "low": 51, "high": 56, "species": "SPECIES_MISDREAVUS" },
+                    { "low": 51, "high": 56, "species": "SPECIES_SLOWPOKE" },
+                    { "low": 52, "high": 58, "species": "SPECIES_MISMAGIUS" },
+                    { "low": 52, "high": 58, "species": "SPECIES_MISMAGIUS" },
+                    { "low": 52, "high": 58, "species": "SPECIES_SLOWKING" }, 
+                    { "low": 52, "high": 58, "species": "SPECIES_SLOWKING" }
+                ]
+            },
+            "rocks": {
+                "rate": 50,
+                "pokemon": [
+                    { "low": 50, "high": 55, "species": "SPECIES_CARBINK" },
+                    { "low": 50, "high": 55, "species": "SPECIES_BOLDORE" },
+                    { "low": 50, "high": 55, "species": "SPECIES_BOLDORE" },
+                    { "low": 50, "high": 55, "species": "SPECIES_BOLDORE" },
+                    { "low": 50, "high": 55, "species": "SPECIES_BOLDORE" }
+                ]
+            },
+            "surfing": {
+                "rate": 13,
+                "pokemon": [
+                    { "low": 51, "high": 56, "species": "SPECIES_SEADRA" },
+                    { "low": 51, "high": 56, "species": "SPECIES_BINACLE" },
+                    { "low": 52, "high": 57, "species": "SPECIES_CORSOLA_G" },
+                    { "low": 52, "high": 57, "species": "SPECIES_CORSOLA_G" },
+                    { "low": 55, "high": 60, "species": "SPECIES_KINGDRA" }
+                ]
+            },
+            "fishing": {
+                "rate": 20,
+                "pokemon": [
+                    { "low":  5, "high": 40, "species": "SPECIES_HORSEA" },
+                    { "low":  5, "high": 40, "species": "SPECIES_BINACLE" },
+                    { "low": 25, "high": 45, "species": "SPECIES_SEADRA" },
+                    { "low": 25, "high": 45, "species": "SPECIES_BINACLE" },
+                    { "low": 25, "high": 45, "species": "SPECIES_BINACLE" },
+                    { "low": 50, "high": 60, "species": "SPECIES_SEADRA" },
+                    { "low": 50, "high": 60, "species": "SPECIES_BARBARACLE" },
+                    { "low": 50, "high": 60, "species": "SPECIES_CORSOLA_G" },
+                    { "low": 50, "high": 60, "species": "SPECIES_CURSOLA" },
+                    { "low": 50, "high": 60, "species": "SPECIES_KINGDRA" }
+                ]
+            }
+        },
+        {
+            "mapgroup": 1,
+            "mapnum": 62,
+            "grass": {
+                "rate": 5,
+                "pokemon": [
+                    { "low": 51, "high": 56, "species": "SPECIES_SLOWPOKE" },
+                    { "low": 51, "high": 56, "species": "SPECIES_GOLBAT" },
+                    { "low": 52, "high": 57, "species": "SPECIES_SLOWBRO" },
+                    { "low": 52, "high": 57, "species": "SPECIES_BOLDORE" },
+                    { "low": 52, "high": 57, "species": "SPECIES_BOLDORE" },
+                    { "low": 51, "high": 56, "species": "SPECIES_MISDREAVUS" },
+                    { "low": 51, "high": 56, "species": "SPECIES_MISDREAVUS" },
+                    { "low": 51, "high": 56, "species": "SPECIES_SLOWPOKE" },
+                    { "low": 52, "high": 58, "species": "SPECIES_MISMAGIUS" },
+                    { "low": 52, "high": 58, "species": "SPECIES_MISMAGIUS" },
+                    { "low": 52, "high": 58, "species": "SPECIES_SLOWKING" }, 
+                    { "low": 52, "high": 58, "species": "SPECIES_SLOWKING" }
+                ]
+            },
+            "rocks": {
+                "rate": 50,
+                "pokemon": [
+                    { "low": 50, "high": 55, "species": "SPECIES_CARBINK" },
+                    { "low": 50, "high": 55, "species": "SPECIES_BOLDORE" },
+                    { "low": 50, "high": 55, "species": "SPECIES_BOLDORE" },
+                    { "low": 50, "high": 55, "species": "SPECIES_BOLDORE" },
+                    { "low": 50, "high": 55, "species": "SPECIES_BOLDORE" }
+                ]
+            }
+        },
+        {
+            "mapgroup": 1,
+            "mapnum": 72,
+            "grass": {
+                "rate": 5,
+                "pokemon": [
+                    { "low": 51, "high": 56, "species": "SPECIES_SLOWPOKE" },
+                    { "low": 51, "high": 56, "species": "SPECIES_GOLBAT" },
+                    { "low": 52, "high": 57, "species": "SPECIES_SLOWBRO" },
+                    { "low": 52, "high": 57, "species": "SPECIES_BOLDORE" },
+                    { "low": 52, "high": 57, "species": "SPECIES_BOLDORE" },
+                    { "low": 51, "high": 56, "species": "SPECIES_MISDREAVUS" },
+                    { "low": 51, "high": 56, "species": "SPECIES_MISDREAVUS" },
+                    { "low": 51, "high": 56, "species": "SPECIES_SLOWPOKE" },
+                    { "low": 52, "high": 58, "species": "SPECIES_MISMAGIUS" },
+                    { "low": 52, "high": 58, "species": "SPECIES_MISMAGIUS" },
+                    { "low": 52, "high": 58, "species": "SPECIES_SLOWKING" }, 
+                    { "low": 52, "high": 58, "species": "SPECIES_SLOWKING" }
+                ]
+            },
+            "surfing": {
+                "rate": 13,
+                "pokemon": [
+                    { "low": 51, "high": 56, "species": "SPECIES_SEADRA" },
+                    { "low": 51, "high": 56, "species": "SPECIES_BINACLE" },
+                    { "low": 52, "high": 57, "species": "SPECIES_CORSOLA_G" },
+                    { "low": 52, "high": 57, "species": "SPECIES_CORSOLA_G" },
+                    { "low": 55, "high": 60, "species": "SPECIES_KINGDRA" }
+                ]
+            },
+            "fishing": {
+                "rate": 20,
+                "pokemon": [
+                    { "low":  5, "high": 40, "species": "SPECIES_HORSEA" },
+                    { "low":  5, "high": 40, "species": "SPECIES_BINACLE" },
+                    { "low": 25, "high": 45, "species": "SPECIES_SEADRA" },
+                    { "low": 25, "high": 45, "species": "SPECIES_BINACLE" },
+                    { "low": 25, "high": 45, "species": "SPECIES_BINACLE" },
+                    { "low": 50, "high": 60, "species": "SPECIES_SEADRA" },
+                    { "low": 50, "high": 60, "species": "SPECIES_BARBARACLE" },
+                    { "low": 50, "high": 60, "species": "SPECIES_CORSOLA_G" },
+                    { "low": 50, "high": 60, "species": "SPECIES_CURSOLA" },
+                    { "low": 50, "high": 60, "species": "SPECIES_KINGDRA" }
                 ]
             }
         },
