@@ -1802,3 +1802,51 @@ npc 3 66 11 ItemScript_Common_DragonFang
 npc 3 66 12 ItemScript_Common_FullHeal
 npc 3 66 13 ItemScript_Common_BrightPowder
 sign 3 66 0 SignScript_Route15South_RestStopSign
+
+## Seppire Cove
+## Entrance
+map 1 34 MapScript_SeppireCove
+npc 1 34 0 ItemScript_Common_HyperPotion
+## Outside
+npc 1 60 0 ItemScript_Common_SafetyGoggles
+npc 1 60 1 ItemScript_Common_AssaultVest
+npc 1 60 2 EventScript_SeppireCove_SwimmerValerie
+npc 1 60 3 EventScript_SeppireCove_SwimmerIchabod
+npc 1 60 4 EventScript_SeppireCove_RuinManiacCarter
+sign 1 60 0 SignScript_SeppireCove_Sign
+## Cave first floor
+map 1 61 MapScript_SeppireCoveB1F 
+npc 1 61 0 EventScript_Common_RockSmash
+npc 1 61 1 EventScript_Common_RockSmash
+npc 1 61 2 EventScript_Common_RockSmash
+npc 1 61 3 EventScript_Common_RockSmash
+npc 1 61 4 EventScript_Common_RockSmash
+npc 1 61 5 EventScript_Common_RockSmash
+#### 6-11 are boulders
+npc 1 61 12 ItemScript_SeppireCove_TM98_Waterfall
+npc 1 61 13 ItemScript_Common_Quickball
+## Cave second floor
+npc 1 62 0 EventScript_Common_Strength
+npc 1 62 1 EventScript_Common_Strength
+npc 1 62 2 EventScript_Common_Strength
+npc 1 62 3 EventScript_Common_Strength
+npc 1 62 4 EventScript_Common_Strength
+npc 1 62 5 EventScript_Common_Strength
+npc 1 62 6 EventScript_Common_RockSmash
+npc 1 62 7 EventScript_Common_RockSmash
+npc 1 62 8 EventScript_Common_RockSmash
+npc 1 62 9 EventScript_Common_RockSmash
+npc 1 62 10 EventScript_Common_RockSmash
+npc 1 62 11 EventScript_Common_RockSmash
+npc 1 62 12 EventScript_Common_RockSmash
+npc 1 62 13 EventScript_Common_RockSmash
+npc 1 62 14 EventScript_Common_RockSmash
+npc 1 62 15 EventScript_Common_RockSmash
+npc 1 62 16 EventScript_Common_RockSmash
+npc 1 62 17 EventScript_Common_RockSmash
+npc 1 62 18 ItemScript_Common_FullHeal
+npc 1 62 19 ItemScript_Common_Calcium
+npc 1 62 20 ItemScript_Common_WaterStone
+## Side room
+npc 1 72 0 ItemScript_Common_LifeOrb
+npc 1 73 0 EventScript_SeppireCove_Kyogre

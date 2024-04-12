@@ -7,11 +7,11 @@
 
 .global MapScript_OrichelleGarden
 MapScript_OrichelleGarden:
-    mapscript MAP_SCRIPT_ON_LOAD MapEntryScript_OrichelleGarden_SetTerrain
+    mapscript MAP_SCRIPT_ON_LOAD MapEntryScript_OrichelleGarden_SetWorldMapFlag
     mapscript MAP_SCRIPT_ON_RESUME HideLegendary
     .byte MAP_SCRIPT_TERMIN
 
-MapEntryScript_OrichelleGarden_SetTerrain:
+MapEntryScript_OrichelleGarden_SetWorldMapFlag:
     setworldmapflag 0x8AD @ Been to Orichelle Garden
     end
 

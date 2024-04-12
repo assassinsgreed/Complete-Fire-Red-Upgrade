@@ -339,7 +339,7 @@ static u8 TryLoadAlternateAreaTerrain(u8 terrain)
 				terrain = BATTLE_TERRAIN_FOREST_PERADON;
 			break;
 		case BATTLE_TERRAIN_POND:
-			if (MAP_IS(ROUTE17_CAVE_1F) || mapSec == MAPSEC_FORGOTTEN_MANSE)
+			if (MAP_IS(ROUTE17_CAVE_1F) || mapSec == MAPSEC_FORGOTTEN_MANSE || mapSec == MAPSEC_SEPPIRE_COVE)
 				terrain = BATTLE_TERRAIN_POND_CAVE;
 			else if (mapSec == MAPSEC_TORMA_CAVE || MAP_IS(ROUTE13_CAVE_1F))
 				terrain = BATTLE_TERRAIN_POND_CAVE_TORMA;

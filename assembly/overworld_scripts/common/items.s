@@ -131,6 +131,11 @@ ItemScript_Common_FireStone:
     finditem ITEM_FIRE_STONE 0x1
     end
 
+.global ItemScript_Common_WaterStone
+ItemScript_Common_WaterStone:
+    finditem ITEM_WATER_STONE 0x1
+    end
+
 .global ItemScript_Common_ThunderStone
 ItemScript_Common_ThunderStone:
     finditem ITEM_THUNDER_STONE 0x1
@@ -205,6 +210,11 @@ ItemScript_Common_AbsorbBulb:
 .global ItemScript_Common_CellBattery
 ItemScript_Common_CellBattery:
     finditem ITEM_CELL_BATTERY 0x1
+    end
+
+.global ItemScript_Common_LifeOrb
+ItemScript_Common_LifeOrb:
+    finditem ITEM_LIFE_ORB 0x1
     end
 
 .global ItemScript_Common_SilkScarf
@@ -427,6 +437,11 @@ ItemScript_Common_Nestball:
     finditem ITEM_NEST_BALL 0x1
     end
 
+.global ItemScript_Common_Quickball
+ItemScript_Common_Quickball:
+    finditem ITEM_QUICK_BALL 0x1
+    end
+
 .global ItemScript_Common_GrassySeed
 ItemScript_Common_GrassySeed:
     finditem ITEM_GRASSY_SEED 0x1
@@ -455,6 +470,21 @@ ItemScript_Common_TerrainExtender:
 .global ItemScript_Common_HeavyDutyBoots
 ItemScript_Common_HeavyDutyBoots:
     finditem ITEM_HEAVY_DUTY_BOOTS 0x1
+    end
+
+.global ItemScript_Common_SafetyGoggles
+ItemScript_Common_SafetyGoggles:
+    finditem ITEM_SAFETY_GOGGLES 0x1
+    end
+
+.global ItemScript_Common_WeaknessPolicy
+ItemScript_Common_WeaknessPolicy:
+    finditem ITEM_WEAKNESS_POLICY 0x1
+    end
+
+.global ItemScript_Common_AssaultVest
+ItemScript_Common_AssaultVest:
+    finditem ITEM_ASSAULT_VEST 0x1
     end
 
 .global ItemScript_Common_RedCard
