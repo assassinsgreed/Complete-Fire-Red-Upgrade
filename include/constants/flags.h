@@ -809,9 +809,9 @@
 #define FLAG_HIDE_SEPPIRE_COVE_CALCIUM                   0x314
 #define FLAG_HIDE_SEPPIRE_COVE_WATER_STONE               0x315
 #define FLAG_HIDE_SEPPIRE_COVE_LIFE_ORB                  0x316
-#define FLAG_0x317               0x317
-#define FLAG_0x318               0x318
-#define FLAG_0x319               0x319
+#define FLAG_HIDE_ROUTE19_TM84_POISON_JAB                0x317
+#define FLAG_HIDE_ROUTE19_ZINC                           0x318
+#define FLAG_HIDE_ROUTE19_LUMINOUS_MOSS                  0x319
 #define FLAG_0x31A               0x31A
 #define FLAG_0x31B               0x31B
 #define FLAG_0x31C               0x31C
@@ -1194,10 +1194,10 @@
 #define HIDDEN_ITEM_SEPPIRE_COVE_LUXURY_BALL                          167
 #define HIDDEN_ITEM_SEPPIRE_COVE_FULL_RESTORE                         168
 #define HIDDEN_ITEM_SEPPIRE_COVE_ELIXIR                               169
-#define HIDDEN_ITEM_FIVE_ISLAND_MEMORIAL_PILLAR_BIG_PEARL             170
-#define HIDDEN_ITEM_FIVE_ISLAND_MEMORIAL_PILLAR_RAZZ_BERRY            171
-#define HIDDEN_ITEM_FIVE_ISLAND_MEMORIAL_PILLAR_SITRUS_BERRY          172
-#define HIDDEN_ITEM_FIVE_ISLAND_MEMORIAL_PILLAR_BLUK_BERRY            173
+#define HIDDEN_ITEM_ROUTE19_STARDUST                                  170
+#define HIDDEN_ITEM_ROUTE19_PINAP_BERRY                               171
+#define HIDDEN_ITEM_ROUTE19_PREMIER_BALL                              172
+#define HIDDEN_ITEM_ROUTE19_LUM_BERRY                                 173
 #define HIDDEN_ITEM_FIVE_ISLAND_RESORT_GORGEOUS_NEST_BALL             174
 #define HIDDEN_ITEM_FIVE_ISLAND_RESORT_GORGEOUS_STARDUST              175
 #define HIDDEN_ITEM_FIVE_ISLAND_RESORT_GORGEOUS_STAR_PIECE            176
@@ -1339,6 +1339,7 @@ Daily Flags, cleared at the start of each day.  Goes up to 0xEFF
 #define FLAG_PERADON_FOREST_FOONGUS_4         0xE16
 #define FLAG_PERADON_FOREST_FOONGUS_5         0xE17
 #define FLAG_BRUCCIE_VILLAGE_WINGULL_GIFT     0xE18
+#define FLAG_ROUTE_19_PALOSSAND               0xE19
 */
 
 #define FLAG_TRAINER_FLAG_START 0x500

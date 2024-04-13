@@ -4302,6 +4302,30 @@ const struct TrainerMonNoItemDefaultMoves sParty_SeppireCove_RuinManiacCarter[] 
 
 // #endregion
 
+// #region Route 19
+const struct TrainerMonNoItemDefaultMoves sParty_Route19_LassSamantha[] = {
+    { .lvl = 48, .species = SPECIES_COMFEY },
+    { .lvl = 49, .species = SPECIES_VESPIQUEN },
+    { .lvl = 48, .species = SPECIES_FROSMOTH }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route19_CoolTrainerRose[] = {
+    { .lvl = 50, .species = SPECIES_SALAZZLE },
+    { .lvl = 50, .species = SPECIES_DRAGONAIR },
+    { .lvl = 50, .species = SPECIES_EMPOLEON }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route19_PokefanPhineas[] = {
+    { .lvl = 49, .species = SPECIES_JELLICENT },
+    { .lvl = 50, .species = SPECIES_TURTONATOR }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route19_PokefanPhoebe[] = {
+    { .lvl = 49, .species = SPECIES_JELLICENT_F },
+    { .lvl = 50, .species = SPECIES_ORANGURU }
+};
+// #endregion
+
 #define NO_NAME                                                                                      \
     {                                                                                                \
         _END, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE \
@@ -6500,7 +6524,7 @@ const struct Trainer gTrainers[] = {
         .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
         .trainerClass = CLASS_POKEFAN,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
-        .trainerPic = TRAINER_PIC_POKRFAN_F,
+        .trainerPic = TRAINER_PIC_POKEFAN_F,
         .trainerName = {_K, _a, _n, _e, _s, _h, _a, _END},
         .items = { },
         .doubleBattle = FALSE,
@@ -8685,6 +8709,56 @@ const struct Trainer gTrainers[] = {
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_HP_AWARE | AI_SCRIPT_TRY_TO_FAINT,
         .partySize = NELEMS(sParty_SeppireCove_RuinManiacCarter),
         .party = {.NoItemDefaultMoves = sParty_SeppireCove_RuinManiacCarter}
+    },    
+    // #endregion
+    // #region Route 19
+    [TRAINER_ROUTE_19_LASS_SAMANTHA] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_LASS,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .trainerPic = TRAINER_PIC_LASS,
+        .trainerName = {_S, _a, _m, _a, _n, _t, _h, _a, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = NELEMS(sParty_Route19_LassSamantha),
+        .party = {.NoItemDefaultMoves = sParty_Route19_LassSamantha}
+    },
+    [TRAINER_ROUTE_19_COOLTRAINER_ROSE] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_COOLTRAINER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
+        .trainerPic = TRAINER_PIC_COOLTRAINER_F,
+        .trainerName = {_R, _o, _s, _e, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_SEMI_SMART | AI_SCRIPT_CHECK_VIABILITY,
+        .partySize = NELEMS(sParty_Route19_CoolTrainerRose),
+        .party = {.NoItemDefaultMoves = sParty_Route19_CoolTrainerRose}
+    },
+    [TRAINER_ROUTE_19_POKEFAN_PHINEAS] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_POKEFAN,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_POKEFAN_M,
+        .trainerName = {_P, _h, _i, _n, _e, _a, _s, _END},
+        .items = {},
+        .doubleBattle = TRUE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_DOUBLE_BATTLE,
+        .partySize = NELEMS(sParty_Route19_PokefanPhineas),
+        .party = {.NoItemDefaultMoves = sParty_Route19_PokefanPhineas}
+    },
+    [TRAINER_ROUTE_19_POKEFAN_PHOEBE] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_POKEFAN,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .trainerPic = TRAINER_PIC_POKEFAN_F,
+        .trainerName = {_P, _h, _o, _e, _b, _e, _END},
+        .items = {},
+        .doubleBattle = TRUE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_DOUBLE_BATTLE,
+        .partySize = NELEMS(sParty_Route19_PokefanPhoebe),
+        .party = {.NoItemDefaultMoves = sParty_Route19_PokefanPhoebe}
     },    
     // #endregion
     // #endregion

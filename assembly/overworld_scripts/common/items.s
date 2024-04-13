@@ -541,3 +541,8 @@ ItemScript_Common_Honey:
 ItemScript_Common_Eviolite:
     finditem ITEM_EVIOLITE 0x1
     end
+
+.global ItemScript_Common_LuminousMoss
+ItemScript_Common_LuminousMoss:
+    finditem ITEM_LUMINOUS_MOSS 0x1
+    end
