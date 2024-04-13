@@ -1850,3 +1850,17 @@ npc 1 62 20 ItemScript_Common_WaterStone
 ## Side room
 npc 1 72 0 ItemScript_Common_LifeOrb
 npc 1 73 0 EventScript_SeppireCove_Kyogre
+
+## Route 19
+map 3 37 MapScript_Route19
+npc 3 37 0 EventScript_Common_Strength
+npc 3 37 1 EventScript_Common_Cut
+npc 3 37 2 EventScript_Route19_LassSamantha
+npc 3 37 3 EventScript_Route19_CoolTrainerRose
+npc 3 37 4 EventScript_Route19_PokefanPhineas
+npc 3 37 5 EventScript_Route19_PokefanPhoebe
+npc 3 37 6 EventScript_Route19_TM84PoisonJab
+npc 3 37 7 ItemScript_Common_Zinc
+npc 3 37 8 ItemScript_Common_LuminousMoss
+npc 3 37 9 EventScript_Route19_Palossand
+sign 3 37 0 SignScript_Route19_LookoutPointSign

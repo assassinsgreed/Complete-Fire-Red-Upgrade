@@ -1962,6 +1962,52 @@
         },
         {
             "mapgroup": 3,
+            "mapnum": 37,
+            "grass": {
+                "rate": 21,
+                "pokemon": [
+                    { "low": 45, "high": 48, "species": "SPECIES_PINCURCHIN" },
+                    { "low": 45, "high": 48, "species": "SPECIES_SHELLOS" },
+                    { "low": 44, "high": 47, "species": "SPECIES_SANDYGAST" },
+                    { "low": 44, "high": 48, "species": "SPECIES_CRABRAWLER" },
+                    { "low": 46, "high": 48, "species": "SPECIES_GASTRODON" },
+                    { "low": 45, "high": 48, "species": "SPECIES_SLOWPOKE" },
+                    { "low": 46, "high": 48, "species": "SPECIES_PALOSSAND" },
+                    { "low": 45, "high": 47, "species": "SPECIES_SLOWPOKE" },
+                    { "low": 44, "high": 47, "species": "SPECIES_WINGULL" },
+                    { "low": 45, "high": 47, "species": "SPECIES_WINGULL" },
+                    { "low": 44, "high": 48, "species": "SPECIES_WINGULL" }, 
+                    { "low": 45, "high": 48, "species": "SPECIES_WINGULL" }
+                ]
+            },
+            "surfing": {
+                "rate": 13,
+                "pokemon": [
+                    { "low": 44, "high": 47, "species": "SPECIES_HORSEA" },
+                    { "low": 45, "high": 47, "species": "SPECIES_FRILLISH" },
+                    { "low": 44, "high": 48, "species": "SPECIES_MAREANIE" },
+                    { "low": 45, "high": 48, "species": "SPECIES_MAREANIE" },
+                    { "low": 46, "high": 49, "species": "SPECIES_MAREANIE" }
+                ]
+            },
+            "fishing": {
+                "rate": 20,
+                "pokemon": [
+                    { "low": 5, "high": 40, "species": "SPECIES_MAGIKARP" },
+                    { "low": 5, "high": 40, "species": "SPECIES_HORSEA" },
+                    { "low": 25, "high": 40, "species": "SPECIES_MAGIKARP" },
+                    { "low": 25, "high": 40, "species": "SPECIES_HORSEA" },
+                    { "low": 25, "high": 40, "species": "SPECIES_HORSEA" },
+                    { "low": 40, "high": 50, "species": "SPECIES_SEADRA" },
+                    { "low": 40, "high": 50, "species": "SPECIES_MAGIKARP" },
+                    { "low": 40, "high": 50, "species": "SPECIES_MAREANIE" },
+                    { "low": 40, "high": 50, "species": "SPECIES_GYARADOS" },
+                    { "low": 40, "high": 50, "species": "SPECIES_TOXAPEX" }
+                ]
+            }
+        },
+        {
+            "mapgroup": 3,
             "mapnum": 54,
             "grass": {
                 "rate": 21,

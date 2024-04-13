@@ -62,6 +62,7 @@ extern const u8 SwimmerFTiles[];
 extern const u8 ShayminTiles[];
 extern const u8 KyogreTiles[];
 extern const u8 GroudonTiles[];
+extern const u8 PalmTreeTiles[];
 
 #define EVENT_OBJ_PAL_TAG_NONE 0x1102
 #define gEventObjectBaseOam_16x16 ((const struct OamData*) 0x83A36F8)
@@ -776,6 +777,11 @@ static const struct SpriteFrameImage Table_Groudon[] =
     overworld_frame(GroudonTiles, 8, 8, 6),
     overworld_frame(GroudonTiles, 8, 8, 7),
     overworld_frame(GroudonTiles, 8, 8, 8),
+};
+
+static const struct SpriteFrameImage Table_PalmTree[] =
+{
+    overworld_frame(PalmTreeTiles, 4, 4, 0),
 };
 
 // #region MC
@@ -1877,5 +1883,25 @@ const struct EventObjectGraphicsInfo GraphicsInfo_Groudon =
     .subspriteTables = gEventObjectSpriteOamTables_64x64,
     .anims = gEventObjectImageAnimTable_Standard,
     .images = Table_Groudon,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+const struct EventObjectGraphicsInfo GraphicsInfo_PalmTree =
+{
+    .tileTag = 0xFFFF,
+    .paletteTag1 = 0x122F,
+    .paletteTag2 = EVENT_OBJ_PAL_TAG_NONE,
+    .size = (32 * 32) / 2,
+    .width = 32,
+    .height = 32,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .disableReflectionPaletteLoad = FALSE,
+    .tracks = TRACKS_NONE,
+    .gender = MALE,
+    .oam = gEventObjectBaseOam_32x32,
+    .subspriteTables = gEventObjectSpriteOamTables_32x32,
+    .anims = gEventObjectImageAnimTable_Standard,
+    .images = Table_PalmTree,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
