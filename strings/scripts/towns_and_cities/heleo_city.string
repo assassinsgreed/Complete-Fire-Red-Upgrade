@@ -1,0 +1,426 @@
+// Overworld
+#org @gText_HeleoCityOverworld_JumpingKidPrompt
+Yaay! Jumping is so much fun!\pYou like jumping too, right?
+
+#org @gText_HeleoCityOverworld_JumpingKidHateJumping
+What? You're dumb. Everyone likes\njumping.
+
+#org @gText_HeleoCityOverworld_JumpingKidLikeJumping
+Right?! Jumping is the best! I bet\nyou can't jump 100 times. That's my\lrecord.
+
+#org @gText_HeleoCityOverworld_JumpingKidCount
+Hmm[.] You've only jumped [BUFFER1]\ntimes. I'm not impressed!\pCome back when you've jumped at\nleast 100 times, then we'll talk.\pYou can jump here or somewhere\nelse. It doesn't matter to me!
+
+#org @gText_HeleoCityOverworld_JumpingKidCountExceeded
+Wow! You've jumped [BUFFER1] times!\nYou're the Jumping Master!
+
+#org @gText_HeleoCityOverworld_JumpingKidGift
+I have a gift for you[.] Doesn't it\nmake you feel like you're walking\lon air?
+
+#org @gText_HeleoCityOverworld_JumpingKidDone
+Well, I'd better get back to jumping.\nYou should too!
+
+#org @gText_HeleoCityOverworld_ShadyDealerProposition
+Psst! You - yeah, you!\pI got ahold of something rare,\nstranger, but I need to get rid of\lit before the fuzz catch up to me.\pYou look like a smart kid[.]\pThis item can be yours, for 1\nPok\eChip. (Held: [BUFFER1])
+
+#org @gText_HeleoCityOverworld_ShadyDealerDeclined
+Heh heh, tryin' to keep your nose\nclean, eh?\pThat's fine with me. Someone else'll\nbe interested in what I've got.
+
+#org @gText_HeleoCityOverworld_ShadyDealerNotEnoughChips
+Oy, what gives? You don't even have\na single Pok\eChip?\pScram! This isn't a charity.
+
+#org @gText_HeleoCityOverworld_ShadyDealerTradeComplete
+Heheheh, wise move, kiddo.\pI gotta scram. I'll be back with\nmore procured goods tomorrow,\lcapiche?
+
+#org @gText_HeleoCityOverworld_Route8Girl
+A lot of new trainers have trouble\nwith Route 8.\pIt's very long and is covered with\ndifficult terrain. Furthermore, it\lrains frequently[.]\pBut, there are plenty of points of\ninterest there that can make the\ltrek worth it.
+
+#org @gText_HeleoCityOverworld_FountainKid
+Wow! I can see coins at the bottom\nof this fountain.\pIf I can just find a way to reach\nthem, I'll be rich[.]
+
+#org @gText_HeleoCityOverworld_BigGuy
+For most trainers, Heleo City is their\nthird stop on their journies.\pSome like to come here after\nchallenging the Daimyn City and\lLaplaz Town gyms.\pI suppose they like the challenge?
+
+#org @gText_HeleoCityOverworld_TrainerHouseGirl
+The trainer house is so cool! You\ncan battle it every day for\lexperience, money, and items!\pThe host is kind of mysterious too,\ndon't you think?
+
+#org @gText_HeleoCityOverworld_RaineFan
+Raine is the coolest gym leader,\nhands down! She has a soft side\land a tough side too.\pYou'd better be good if you're\nthinking of challenging her for her\lbadge!
+
+#org @gText_HeleoCityOverworld_BadgeBasedGyms
+I heard some gym leaders choose\ntheir teams based on the number of\lbadges their opponents have.
+
+#org @gText_HeleoCityOverworld_HeleoCitySign
+Heleo City: The hardy plains city
+
+#org @gText_HeleoCityOverworld_GymSign
+Heleo City Pok\emon Gym\nLeader: Raine\lThe Fairweather Maiden!
+
+#org @gText_HeleoCityOverworld_TrainerHouseSign
+Heleo City Trainer House\nSpecialty: Inverse Battles
+
+#org @gText_HeleoCityOverworld_TrainerTips
+Trainer Tips!\pWhile cycling, you are less likely to\nencounter wild Pok\emon!\pBe sure to cycle if you are in a\nhurry to get to your destination.
+
+// Facilities
+#org @gText_HeleoCityFacilities_BoredKid
+I'm so bored[.] I just wanna go\nhome.
+
+#org @gText_HeleoCityFacilities_KidsMom
+My son and I from Daimyn City. We\ncame out this way to visit our\lrelatives.\pIt's nice here, but I think he's\ngetting a little homesick.
+
+#org @gText_HeleoCityFacilities_CriticalCapture
+Have you ever seen a Pok\e Ball\nshake before a Pok\emon you're\ltrying to catch gets pulled into\lit?\pThat's a Critical Capture. When it\nhappens, you'll be more likely to\lcatch the Pok\emon than usual.\pI hear it's more likely to happen\nwhen you've caught more\lunique Pok\emon species[.]
+
+#org @gText_HeleoCityFacilities_QuickTimerBallQuiz
+Pop Quiz: Is a Quick Ball better\nthan a Timer Ball?
+
+#org @gText_HeleoCityFacilities_QuickTimerBallAnswer
+Haha, it was a trick question!\pA Quick Ball is most effective during\nthe first turn of battle, but\lbecomes less effective over time.\pA Timer Ball is the opposite. It's\nonly most effective after 10 turns\lhave passed.\pDeciding the best time to use each is\nkey.
+
+#org @gText_HeleoCityFacilities_QuickTimerBallGift
+I like your spirit! Here, have a\nQuick and Timer Ball, on me.
+
+#org @gText_HeleoCityFacilities_TrainerHouse_Boy
+Whew[.] I just can't get this new\nruleset in my head. I keep battling\las if these were regular battles!
+
+#org @gText_HeleoCityFacilities_TrainerHouse_Girl
+Did you know? The trainers at the\nTrainer House will use Pok\emon that\lmatch your team's highest level.\pThat makes the battles harder, but\nit also means your Pok\emon will\learn more experience when they win.\pPretty good deal, don't you think?
+
+#org @gText_HeleoCityFacilities_TrainerHouse_HostIntro
+[BLUE]Wah-Hey! Welcome to the Heleo City\nTrainer House, where our motto is\l"battling should be fun.\"\pThe name's Mort, and I'll be your\nhost this fine day.\pYou're [PLAYER]? Charmed.\pNow that we've gotten the\npleasantries out of the way, let's\lget you battling!
+
+#org @gText_HeleoCityFacilities_TrainerHouse_ChoseRuleset
+[BLUE]This trainer house is all about\nInverse Battles.\pIn these battles, type effectiveness\nis swapped! Fire beats water, water\lbeats grass.\pIt isn't so bad once you get used to\nit, but it'll put new wrinkles in\lthe ol' grey matter, that's for\lsure.
+
+#org @gText_HeleoCityFacilities_TrainerHouse_ChoseGrandPrize
+[BLUE]Our grand prize is a sparkly new\nMach Bike.\pThis bad boy has two speed modes,\nallowing you to get to where\lyou're going in the blink of an eye!
+
+#org @gText_HeleoCityFacilities_TrainerHouse_BattleConfirmation
+[BLUE]You'll be going into battle with the\nPok\emon you have on you.\pIs that cool with you?
+
+#org @gText_HeleoCityFacilities_TrainerHouse_ChoseBattle
+[BLUE]Yes, yes, yes! That is what I like to\nhear, baby!
+
+#org @gText_HeleoCityFacilities_TrainerHouse_HealingPokemon
+[BLUE]Okay, let me heal your Pok\emon up\nreal quick. Regulations, and all[.]
+
+#org @gText_HeleoCityFacilities_TrainerHouse_PokemonSelectionFinalized
+[BLUE]Alright! Step on up to the arena and\nlet's get started.
+
+#org @gText_HeleoCityFacilities_TrainerHouse_FirstOpponentArriving
+[BLUE]Alright, you ready, [PLAYER]?\nYour first opponent is arriving!
+
+#org @gText_HeleoCityFacilities_TrainerHouse_SecondOpponentArriving
+[BLUE]Excellently done! Get ready, the\nsecond trainer is coming up.
+
+#org @gText_HeleoCityFacilities_TrainerHouse_ThirdOpponentArriving
+[BLUE]You're on fire, kiddo! Up next is the\nfinal trainer.
+
+#org @gText_HeleoCityFacilities_TrainerHouse_AllOpponentsDefeated
+[BLUE]Ladies and gentlemen, give it up for\n[PLAYER], who has just defeated\levery trainer we've lined up!\p[PLAYER], come on back to see me.
+
+#org @gText_HeleoCityFacilities_TrainerHouse_StreakLost
+[BLUE]Ooh, sorry! But a loss is a loss.\nCome on down here, [PLAYER].
+
+#org @gText_HeleoCityFacilities_TrainerHouse_GrandPrizeAwarded
+[BLUE]Well, would you look at that! You've\nbeaten all 3 trainers for the first\ltime!\pYou've earned our grand prize: a\nMach Bike!
+
+#org @gText_HeleoCityFacilities_TrainerHouse_B1PsychicBiancaIntro
+[RED]Inverse Battles[.] Can you predict\nwhat Pok\emon or moves I will use?
+
+#org @gText_HeleoCityFacilities_TrainerHouse_B1PsychicBiancaWin
+Not bad!
+
+#org @gText_HeleoCityFacilities_TrainerHouse_B1PsychicBiancaLose
+I suppose my team was too much for\nyou.
+
+#org @gText_HeleoCityFacilities_TrainerHouse_B2SupernerdGalenIntro
+[BLUE]Eheheheh! My vast intellect will\nhelp me secure victory!
+
+#org @gText_HeleoCityFacilities_TrainerHouse_B2SupernerdGalenWin
+Geh, you just got lucky.
+
+#org @gText_HeleoCityFacilities_TrainerHouse_B2SupernerdGalenLose
+You didn't stand a chance against me.
+
+#org @gText_HeleoCityFacilities_TrainerHouse_CooltrainerJetIntro
+[BLUE]My team has been practicing Inverse\nBattles for months.\pDo you think you can defeat them?
+
+#org @gText_HeleoCityFacilities_TrainerHouse_CooltrainerJetWin
+Impressive! You've mastered Inverse\nBattles.
+
+#org @gText_HeleoCityFacilities_TrainerHouse_CooltrainerJetLose
+My hard work has paid off, I see.
+
+#org @gText_HeleoCityFacilities_GuardHouse_Guard
+You're a Pok\emon trainer, yes?\pTo the west lies Route 8. It's a\nroundabout path to Daimyn City,\lbut a safer one.\pThere is an abandoned building along\nthe way. I'd urge you not to go\lthere; it could be dangerous.
+
+#org @gText_HeleoCityFacilities_GuardHouse_DateBoy
+I'm such a cool guy. I'm on a date\nwith my girlfriend!
+
+#org @gText_HeleoCityFacilities_GuardHouse_DateGirl
+I'm visiting Heleo City with my best\nfriend. He's such a reliable guy!
+
+#org @gText_HeleoCityFacilities_GuardHouse_Camper
+Whew, I should take a break[.]\pGuard houses like these are great\nplaces to take a breather at,\lwhile travelling.\pYou might hear some interesting\ngossip from the people around you\ltoo!
+
+#org @gText_HeleoCityFacilities_GuardHouse_ForgottenManseBinoculars
+Oh! It's a creepy, run-down\nbuilding in a secluded forest.
+
+#org @gText_HeleoCityFacilities_GuardHouse_DaimynCityBinocularsDay
+Oh! It's Daimyn City! The sun is\nshining off of it's towering\lskyscrapers.
+
+#org @gText_HeleoCityFacilities_GuardHouse_DaimynCityBinocularsNight
+Oh! It's Daimyn City! It's all lit up!
+
+// NPC Houses
+#org @gText_HeleoCity_ForemanHMGift
+Hey, I recognize you!\pYou're that kid that insisted on going\nthrough Torma Cave, instead of\lwaiting for us to finish clearing\lRoute 4.\pYou're really reckless, you know\nthat? But[.] I can't help but like\lyou.\pHere, take this HM! Think of it as a\ngift from your friendly\lneighborhood foreman.
+
+#org @gText_HeleoCity_ForemanBadgeComment
+With that HM, you'll be able to\nbreak any rocks in your path.\pNo more detouring into dangerous\ncaves, eh? Gwahahaha!\pYou'll need the Heleo City gym badge\nbefore you can use it, though.
+
+#org @gText_HeleoCity_ForemanAssistant
+The foreman seems like a scary guy,\nbut he actually has a heart of\lgold.
+
+#org @gText_HeleoCity_MoveTutorSon
+My daddy taught my Pok\emon a lot of\nreally cool moves! He's so smart!
+
+#org @gText_HeleoNPCHouses_TutorConfirmation
+Hello! I'm an experienced move\ntutor. I can teach your Pok\emon\lnew moves.\pMy fee is 5 Pok\eChips. What\ndo you say? (Held: [BUFFER1])
+
+#org @gText_HeleoNPCHouses_ConfirmationAccepted
+Great! These are the moves I can\nteach. Which interests you?
+
+#org @gText_HeleoNPCHouses_Complete
+That concludes our session.\pCome see me if you'd like to have\nyour Pok\emon learn more moves!
+
+#org @gText_HeleoNPCHouses_TutoringRejected
+Okay! Come see me if you change\nyour mind. I'll be here.
+
+#org @gText_HeleoNPCHouses_NotEnoughPokeChips
+I'd love to teach your Pok\emon, but\nyou don't have enough Pok\eChips to\lcover my fee[.]
+
+#org @gText_HeleoNPCHouses_SwarmSwamiIntro
+I am known as the Swarm Swami.\pI have been blessed with the\nincredible gift of foresight.\pMy specialty is seeing places where\nunusual Pok\emon swarm, with my\lmind's eye.\pWould you like me to use my gift to\nfind where Pok\emon are swarming?
+
+#org @gText_HeleoNPCHouses_SwarmSwamiRejected
+Hmm! In time, you will find yourself\nin need of my gift. I can sense it.
+
+#org @gText_HeleoNPCHouses_SwarmSwamiStarting
+Very well[.] Close your eyes with me a\nmoment, and let us focus on\lprojecting our minds[.]
+
+#org @gText_HeleoNPCHouses_SwarmSwamiComplete
+I see it! There are a number of\nunusual [BUFFER2] swarming at\l[BUFFER1] right now.\pYou should hurry[.] I foresee them\nclearing out before the day is\lover.
+
+#org @gText_HeleoNPCHouses_SwamiFan
+Isn't the swami just the coolest?\nThey say his predictions are never\lwrong!
+
+#org @gText_HeleoNPCHouses_SwamiResearcher
+I've been studying the unusual\nPok\emon that swarm to the Kulure\lregion with the swami's help.\pDespite our best efforts, we don't\nknow where they come from or why.\pAll we know is that they have a\nstriking resemblance to Pok\emon\lnative to the region[.]
+
+#org @gText_HeleoNPCHouses_SwamiResearcherRequest
+Please, if you have one of these\nunusual Pok\emon with you, could\lyou put it at the front of\lyour party and show it to me?\pI promise to make it worth your\nwhile.
+
+#org @gText_HeleoNPCHouses_SwamiResearcherRequestDenied
+I understand[.] Possessing such a\nfascinating creature would indeed\lbe a treat worth savoring.\pPerhaps someday, I will be able to\nobserve such a creature myself[.]
+
+#org @gText_HeleoNPCHouses_SwamiResearcherRequestWrongPokemon
+This isn't a Pok\emon I'm interested in\nseeing[.]
+
+#org @gText_HeleoNPCHouses_SwamiResearcherRequestShownPokemon
+What an exquisite [BUFFER1]!\pA Pok\emon that special deserves a\nreward. Here, for you.
+
+#org @gText_HeleoNPCHouses_SwamiResearcherRequestShownPokemonConclusion
+That may look like an ordinary bottle\ncap, but I hear there are people\lacross the sea that can make your\lPok\emon quite powerful with that!\pCome see me again, if you find more\nunusual Pok\emon.
+
+#org @gText_HeleoNPCHouses_SwamiResearcherRequestAlreadyShown
+That certainly is a great Pok\emon,\nbut[.] you've already shown me one\lalready.
+
+#org @gText_HeleoNPCHouses_SwamiResearcherRequestAllSwarmPokemonShown
+I-incredible! With this, you've shown\nme every unusual Pok\emon we've\lbeen tracking.\pI have a special gift to share with\nsuch an incredible trainer!
+
+#org @gText_HeleoNPCHouses_SwamiResearcherRequestGratitude
+Thank you for showing me your\ncollection of unusual Pok\emon.
+
+#org @gText_HeleoNPCHouses_RainesGrandfather
+My granddaughter, Raine, is this\ncity's gym leader.\pI'm watching her Castform while she\nperforms her duties as a leader.\pShe's a sweet girl, despite how\nseriously she takes battling.
+
+#org @gText_HeleoNPCHouses_RainesCastform
+[BLACK]CASTOR: [RED]Wakaka?
+
+#org @gText_HeleoNPCHouses_TrainersMom
+My family have all been trainers for\nas many generations as we can\lrecall.\pI guess you could say it's in our\nblood at this point! Ohoho!
+
+#org @gText_HeleoNPCHouses_TrainersYoungKid
+I'm too young to be a Pok\emon\ntrainer, so I'm watching shows\labout them.\pI'm gonna be the best someday,\nyou'll see!
+
+#org @gText_HeleoNPCHouses_TrainersKid
+Heleo City is great! There are so\nmany diverse Pok\emon species, right\lon our doorstep.
+
+#org @gText_HeleoNPCHouses_PokemonFanClubChairman
+Hello! I am the Pok\emon Fan Club's\nesteemed chairman.\pTell me, do you agree that Pok\emon\nare simply wonderful?
+
+#org @gText_HeleoNPCHouses_PokemonFanClubChairman_PokemonAreGood
+I knew you were a Pok\emon fan!\pStay a while and talk with us;\nyou're in good company.
+
+#org @gText_HeleoNPCHouses_PokemonFanClubChairman_PokemonAreLame
+W-why would you even say such a\nhorrible thing?
+
+#org @gText_HeleoNPCHouses_PokemonFanClubSuperfan
+These people are fools[.]\pObviously the most important thing\nabout a Pok\emon is how rare it is!\pSheesh[.]
+
+#org @gText_HeleoNPCHouses_PokemonFanClubSwimmer
+Uh[.] I thought this was a swim club,\nnot a Pok\emon club.\pI've made a terrible mistake.
+
+#org @gText_HeleoNPCHouses_PokemonFanClubMother
+Pok\emon are so wonderful!\pThey're soft[.]\pThey're warm[.]\pThey're friendly[.]\pThey're cute[.]\pThey're simply the best!
+
+#org @gText_HeleoNPCHouses_PokemonFanClubHallwayBoy
+The Pok\emon fan club can get pretty\nrowdy sometimes[.]\pJust last week they had a debate\nover whether Stunfisk or Pincurchin\lwere cuter.\pThey were arguing for just over 6\nhours[.]
+
+#org @gText_HeleoNPCHouses_TerraceDad
+My family come up here to enjoy\nbrunch every week.\pIt's the highlight of my week!
+
+#org @gText_HeleoNPCHouses_TerraceMom
+My son says he's planning to move to\nanother city soon.\pMy heart can't take it[.]
+
+#org @gText_HeleoNPCHouses_TerraceSon
+My mom's really upset about my\ndecision to move.\pIt's not like I'll never see them\nagain[.]
+
+#org @gText_HeleoNPCHouses_VendingMachineGirl
+Sometimes these vending machines mess\nup and spit out a second drink for\lfree. You might get lucky!
+
+#org @gText_HeleoCityNpcHouses_GroomerIntro
+Hello! I am a Pok\emon groomer. The\nprocedure I use can help your\lPok\emon grow closer to you.
+
+#org @gText_HeleoCityNpcHouses_GroomerAlreadyGroomedToday
+I'm sorry, but I need to restock and\nclean my tools.\pIf you come back tomorrow, I'd be\nhappy to groom your Pok\emon again.
+
+#org @gText_HeleoCityNpcHouses_GroomerConfirmation
+My services cost \$1,000. Would you\nlike me to groom your Pok\emon?
+
+#org @gText_HeleoCityNpcHouses_GroomerDenied
+I understand. If you change your\nmind, come see me any time.
+
+#org @gText_HeleoCityNpcHouses_GroomerNotEnoughMoney
+I'm sorry, but you don't have enough\nmoney.\pI'll be happy to groom your Pok\emon\nonce you can cover my fee though.
+
+#org @gText_HeleoCityNpcHouses_GroomerChoosePokemon
+Which Pok\emon would you like me to\ngroom?
+
+#org @gText_HeleoCityNpcHouses_GroomerPokemonChoiceConfirmation
+You want me to groom [BUFFER1]?
+
+#org @gText_HeleoCityNpcHouses_GroomerCannotGroomEgg
+I'm sorry, but I can't groom an\negg.\pI'll be happy to groom your Pok\emon\nonce it hatches though.
+
+#org @gText_HeleoCityNpcHouses_GroomerStarting
+Okay! I'll start grooming [BUFFER1].
+
+#org @gText_HeleoCityNpcHouses_GroomerComplete
+That'll do it! Your Pok\emon\nis looking nice and refreshed now.
+
+#org @gText_HeleoCityNpcHouses_GroomerGroomAgainTomorrow
+If you're satisfied with my service,\nplease visit me again tomorrow.
+
+#org @gText_HeleoCityNpcHouses_GroomerPokemonFriendshipThresholdMet
+Oh! Your [BUFFER1][.]\pIt's so close to you. How wonderful!\nA trainer like you deserves a gift.
+
+#org @gText_HeleoCityNpcHouses_GroomerSootheBellExplained
+If you give that to a Pok\emon to\nhold, it will grow closer to you\leven faster.
+
+// Gym
+#org @gText_HeleoCityGym_CastformRainDance
+Castform used Rain Dance!
+
+#org @gText_HeleoCityGym_CastformSunnyDay
+Castform used Sunny Day!
+
+#org @gText_HeleoCityGym_SwimmerTessaIntro
+This gym's puzzle is only a challenge\nto people that can't swim.
+
+#org @gText_HeleoCityGym_SwimmerTessaDefeat
+You've figured out battling, but can\nyou figure out this gym's puzzle?
+
+#org @gText_HeleoCityGym_SwimmerTessaChat
+Tee-hee! I don't think this is the\nroute you're looking for.
+
+#org @gText_HeleoCityGym_SwimmerByronIntro
+I have mastered the usage of\nsunlight. Be dazzled by my skills!
+
+#org @gText_HeleoCityGym_SwimmerByronDefeat
+You eclipsed me completely.
+
+#org @gText_HeleoCityGym_SwimmerByronChat
+Sunlight has a lot of applications in\nbattle, doesn't it?
+
+#org @gText_HeleoCityGym_SwimmerDanetteIntro
+My Pok\emon specialize in battling in\nhail. We'll chill you to the bone!
+
+#org @gText_HeleoCityGym_SwimmerDanetteDefeat
+Brrr! We were the ones left out in\nthe cold.
+
+#org @gText_HeleoCityGym_SwimmerDanetteChat
+Ice types are challenging to use,\nbut it's worth it to me.
+
+#org @gText_HeleoCityGym_SwimmerMaiseyIntro
+Are you really good enough to face\nRaine?
+
+#org @gText_HeleoCityGym_SwimmerMaiseyDefeat
+Oh, you just might be!
+
+#org @gText_HeleoCityGym_SwimmerMaiseyChat
+Go on ahead. Raine is waiting for\nyou.
+
+#org @gText_HeleoGym_LeaderRaine_Talk
+[RED]Oh, a challenger? I suppose you're\nhere for my gym badge, aren't you?\pI would urge you not to take me\nlightly. Though I am young, I am\lquite skilled.\pYou may come to regret challenging\nme. [PAUSE] You are still here?\pYou are serious, indeed. Good, I\nexpect a good battle from you.
+
+#org @gText_HeleoGym_LeaderRaine_Intro
+[RED]I am gym leader Raine, the\nFairweather Maiden.\pMy Pok\emon will wash away your\nfoolish ambitions like the tide!
+
+#org @gText_HeleoGym_LeaderRaine_Defeat
+That battle was quite entertaining,\nindeed! You have my gratitude.
+
+#org @gText_HeleoGym_LeaderRaine_BadgeAwarded
+[RED]You performed very well today. It is\nmy pleasure to award you the\lStormcloud Badge.
+
+#org @gText_HeleoGym_BadgeReceived
+[PLAYER] received the Stormcloud\nBadge!
+
+#org @gText_HeleoGym_LeaderRaine_BadgeDescription
+[RED]Take this badge with pride.\pIt will allow your Pok\emon to\nuse Rock Smash outside of battle.
+
+#org @gText_HeleoGym_LeaderRaine_TMReceived
+[RED]As proof of your accomplishment\ntoday, you may also take these\lTMs.\pThese TMs will teach your Pok\emon\nHail, Sunny Day, Rain Dance, or\lSandstorm.\pI would encourage you to apply what\nyou've learned in this gym to make\lthe most of these TMs.
+
+#org @gText_HeleoGym_TMReceived
+[PLAYER] received TM07, TM11, TM18,\nand TM37 from Raine!
+
+#org @gText_HeleoGym_LeaderRaine_Chat
+[RED]I trust you will apply the same\neffort you showed in our battle to\lthe rest of your journey.\pShould you do so, I am certain you\nwill succeed.
+
+#org @gText_HeleoGym_ExpertTips
+Yo, superstar! You're making sweet\nprogress on your journey.\pLet me give you some tips about the\nHeleo City gym[.]\pRaine and her trainers all specialize\nin different types of weather, and\lhave tailored their teams to make\lthe most of them.\pI'd recommend you bring a varied\nteam, and don't assume they will\luse the same Pok\emon types.\pYou've got this, superstar!
+
+#org @gText_HeleoGym_ExpertBadgeObtained
+Is that the Stormcloud Badge I see,\nsuperstar?\pI should've known you'd overcome\nRaine, just like the leaders\lbefore her.\pThat badge will let you use Rock\nSmash outside of battle. I'm sure\lit will help you during your\ltravels.\pGood luck, superstar. I'll catch you\nat the next gym.
+
+#org @gText_HeleoGym_Winners
+Heleo City Gym\nVictors: Casey, [RIVAL]
+
+#org @gText_HeleoGym_WinnersWithBadge
+Heleo City Gym\nVictors: Casey, [RIVAL], [PLAYER]
+
+#org @gText_HeleoGym_SlowbroQuestion
+Sloooooowwww?
+
+#org @gText_HeleoGym_SlowbroConfirmation
+It seems this Slowbro wants to use\nTeleport to send you back to the\lgym entrance.\pAllow it?
+
+#org @gText_HeleoGym_SlowbroYes
+Slow!
+
+#org @gText_HeleoGym_SlowbroNo
+Slowww[.]

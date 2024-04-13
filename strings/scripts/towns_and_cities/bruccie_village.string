@@ -1,0 +1,328 @@
+// Overworld
+#org @gText_BruccieVillage_Hiker
+Whew[.] I've finally made it to Bruccie\nVillage.\pIs this your first time here, too?\nVery few visit this village.\pI suggest indulging in the sights\nand sounds, to make the most of\lyour time here.
+
+#org @gText_BruccieVillage_Skier
+[RED]Alright, today's plans are[.]\pSkiing, followed by more skiing.\pAnd then[.] soaking in the Scalding Spa\nwith my Pok\emon!
+
+#org @gText_BruccieVillage_Kid
+I like to pretend I'm a Pok\emon with\na big tongue trying to catch\lsnowflakes!\pDo you think there's a Pok\emon out\nthere like that?
+
+#org @gText_BruccieVillage_OldMan_WingullEventStarting
+Hm? You have chosen to speak to\nme, of all people?\pYou do not need to worry about\nkeeping me company. Ohoho!\pEvery day, my friend Gulliver here\nbrings me a trinket he finds at sea.\pYou are a kind child.\pPlease, allow me to share one of\nGulliver's trinkets with you.
+
+#org @gText_BruccieVillage_OldMan_RequestsTreasure
+Gulliver, let's share your\ntrinkets with this young child.
+
+#org @gText_BruccieVillage_OldMan_GivesTreasure
+Here, for you.
+
+#org @gText_BruccieVillage_OldMan_WingullEventDone
+If you return tomorrow, I'm sure\nGulliver will have more trinkets to\lshare.
+
+#org @gText_BruccieVillage_Wingull
+[BLACK]Gulliver: [BLUE]Pek-ak-a!
+
+#org @gText_BruccieVillage_Abby_Question
+Hmm[.] You're a trainer. Good.\pI'm Abby, the Bruccie Village gym\nleader.\pThis village is built in a harsh and\nunforgiving environment.\pOnly the strong can make it out\nhere.\pThat's doubly true of my gym. I\ndon't accept weak trainers.\pAre you strong enough to handle my\ngym?
+
+#org @gText_BruccieVillage_Abby_MoveToFront
+Good. That's a strong answer.\pCome, stand here. I'll decide\nif you're worthy to face me.
+
+#org @gText_BruccieVillage_Abby_BadgeCount
+Now, let me see how many gym badges\nyou've obtained.
+
+#org @gText_BruccieVillage_Abby_SaidNo
+How disappointing.
+
+#org @gText_BruccieVillage_Abby_NotEnoughBadges
+You don't have many badges.\pBadges indicate a trainer's\nstrength.\pCome back, when you've obtained five\ngym badges.\pUntil then, I have no interest in\nbattling you.
+
+#org @gText_BruccieVillage_Abby_EnoughBadges
+Five badges[.] You're a capable trainer\nafter all.\pCome with me.
+
+#org @gText_BruccieVillage_Abby_RivalInterrupt
+[BLACK]???: [BLUE]Wait a second.
+
+#org @gText_BruccieVillage_Abby_RivalChallengesPlayer
+[BLACK][RIVAL]: [BLUE]Good, I caught up to you\nin time, [PLAYER].\pYou're here to challenge the gym,\nhuh? Well[.] You'll have to wait.\pOur last battle really got under\nmy skin.\pI've been training hard since then,\nand I'm much better than I used to\lbe.\pIf you were ready to face the\ngym, then it should be no problem\lif we battle first.\pCome on, let's go!
+
+#org @gText_BruccieVillage_Abby_AbbyAcknowledgesRival
+[BLACK]Abby: [RED]You're quite the fiery one,\naren't you?
+
+#org @gText_BruccieVillage_Abby_RivalApologizesToAbby
+[BLACK][RIVAL]: [BLUE]You're the gym leader,\nright?\pI heard you only accept\nstrong challengers.\pThen, I'll prove how much better\nI've become to both of you then.
+
+#org @gText_BruccieVillage_Abby_AbbyOverseesBattle
+[BLACK]Abby: [RED]Fine by me.\pYou two, take your positions.\nI'll oversee your battle.
+
+#org @gText_BruccieVillage_Abby_RivalIssuesChallenge
+[BLACK][RIVAL]: [BLUE]Come on, [PLAYER], let's\nbattle.
+
+#org @gText_BruccieVillage_Abby_RivalPreBattle
+[BLACK][RIVAL]: [BLUE]Alright [PLAYER], let me\nshow you how strong I've become.\pI won't lose, not this time!
+
+#org @gText_BruccieVillage_Abby_RivalLoses
+What? Are you kidding me?\nI still lost!
+
+#org @gText_BruccieVillage_Abby_RivalCommentsOnLoss
+[BLACK][RIVAL]: [BLUE]Tch. Even after all that,\nwe still weren't good enough.
+
+#org @gText_BruccieVillage_Abby_RivalLeaves
+[BLACK][RIVAL]: [BLUE]You're good, [PLAYER], I'll\ngive you that.\pBut next time, it'll be me that wins.\nYou'll see.\pI have to get back to training. See\nyou around.
+
+#org @gText_BruccieVillage_Abby_CommentsOnRival
+[RED]He's quite competitive. I can tell\nyou two have a history.\pIt's too bad he left. I would've\nwelcomed his challenge.
+
+#org @gText_BruccieVillage_Abby_AcceptsPlayersChallenge
+[RED]You[.] Your name is [PLAYER], right?\nYou battled well.\pI'll meet you inside, when you're\nready. Don't disappoint me.
+
+#org @gText_BruccieVillage_AbbyCommenter
+The gym leader, Abby, is pretty\nhardcore.\pI hear the trainers in the gym spend\nall day training their Pok\emon.\pIt must be effective though. Not\nmany trainers can beat her.
+
+#org @gText_BruccieVillage_TownPlacardSign
+Bruccie Village\nThe Snow-Swept Sanctuary
+
+#org @gText_BruccieVillage_GymSign
+Bruccie Village Pok\emon Gym\nLeader: Abby, The Dedicated\lPolymath
+
+// Facilities
+#org @gText_BruccieVillageFacilities_PokemonCenter_GameboyKidLeft
+It's too cold to go outside today.\pBetter to stay inside and play video\ngames!
+
+#org @gText_BruccieVillageFacilities_PokemonCenter_GameboyKidRight
+I'm going to play games all day.\pThat's more fun than playing in the\nsnow is!
+
+#org @gText_BruccieVillageFacilities_PokemonCenter_GameboyKidCommon
+[BLUE]Uh-huh!
+
+#org @gText_BruccieVillageFacilities_PokemonCenter_CaughtLocationGirl
+Oh, your [BUFFER1][.]\pI sense it!\nYou caught it at [BUFFER2].
+
+#org @gText_BruccieVillageFacilities_PokemonCenter_CaughtLocationGirl_Urban
+It seems like it's used to the hustle\nand bustle of human civilization.
+
+#org @gText_BruccieVillageFacilities_PokemonCenter_CaughtLocationGirl_Desert
+It's endurance must be a testament to\nthe harsh desert it calls home.
+
+#org @gText_BruccieVillageFacilities_PokemonCenter_CaughtLocationGirl_Hot
+To live in a place as hot as that[.]\nIt must have such a fierce\ltemperament.
+
+#org @gText_BruccieVillageFacilities_PokemonCenter_CaughtLocationGirl_Cold
+Living in a place as cold as that\nmust've made it very patient.
+
+#org @gText_BruccieVillageFacilities_PokemonCenter_CaughtLocationGirl_Grassy
+It must enjoy the peaceful\ncountryside!
+
+#org @gText_BruccieVillageFacilities_PokemonCenter_CaughtLocationGirl_Craggy
+It's determination is proof of the\ntime it's spent in such a place.
+
+#org @gText_BruccieVillageFacilities_PokemonCenter_CaughtLocationGirl_Watery
+To have so much water available to\nit[.] It must've enjoyed that.
+
+#org @gText_BruccieVillageFacilities_PokemonCenter_CaughtLocationGirl_Beach
+It looks like it knows how to relax\nat the seaside quite well!
+
+#org @gText_BruccieVillageFacilities_PokemonCenter_CaughtLocationGirl_Cave
+It's calmness is a sign that it lived\nin an area not visited very often.
+
+#org @gText_BruccieVillageFacilities_PokemonCenter_CaughtLocationGirl_Sea
+It must find the crashing ocean\nwaves to be really peaceful.
+
+#org @gText_BruccieVillageFacilities_PokemonCenter_CaughtLocationGirl_Spooky
+How spooky! If it could talk, I'm\nsure it would have great ghost\lstories to tell.
+
+#org @gText_BruccieVillageFacilities_PokemonCenter_CaughtLocationGirl_Marshy
+It looks like it knows how to blend\ninto it's environment quite well.
+
+#org @gText_BruccieVillageFacilities_PokemonCenter_CaughtLocationGirl_Forest
+It seems to be content with the\nsound of rustling leaves and singing\lbirds.
+
+#org @gText_BruccieVillageFacilities_PokemonCenter_CaughtLocationGirl_Default
+It's unclear how you two exactly\nmet[.]\pBut one thing is clear: the two of\nyou have formed many pleasant\lmemories since coming together.
+
+#org @gText_BruccieVillageFacilities_Pokemart_IceHealGirl
+Hmm[.] I should buy a few Ice Heals\nif I'm going to go onto Route 12.\pThere are so many ice types, and my\nPok\emon might catch frostbite.
+
+#org @gText_BruccieVillageFacilities_Pokemart_StockBoy
+It's impressive that the Bruccie\nVillage Pok\eMart's stock is the\lsame as other towns.\pIt must be really hard to get\nsupplies all the way out here.
+
+// NPC Houses
+#org @gText_BruccieVillageNPCHouses_TutorConfirmation
+Howdy! I'm something of an expert\nwhen it comes to Pok\emon moves.\pI can teach your Pok\emon some of\nthese incredible moves.\pAll I require in exchange is 10\nPok\eChips.\pWhat do you say?\n(Held: [BUFFER1])
+
+#org @gText_BruccieVillageNPCHouses_ConfirmationAccepted
+Excellent! These are the moves I\ncan teach your Pok\emon.
+
+#org @gText_BruccieVillageNPCHouses_Complete
+Your Pok\emon has learned the move\nperfectly!\pCome see me again, if you'd like to\nteach another Pok\emon a new move.
+
+#org @gText_BruccieVillageNPCHouses_TutoringRejected
+I understand.\pPlease, come see me again if you\nchange your mind.
+
+#org @gText_BruccieVillageNPCHouses_NotEnoughPokeChips
+I'm sorry, but you do not have\nenough Pok\eChips.\pThese moves are worth the cost, I\nassure you.
+
+#org @gText_BruccieVillageNPCHouses_PokeballSwapper_Intro
+Shh! Can you keep a secret?\nI've cracked the code[.]\pI've learned how to move a\nPok\emon to a different Pok\e Ball!\pThe Pok\e Ball manufacturers don't\nwant you to know this is possible.\pIt's our little secret, okay?
+
+#org @gText_BruccieVillageNPCHouses_PokeballSwapper_NotSkilled
+There's just one problem[.]\nI'm not very good yet.\pYou'll lose the ball the Pok\emon\nused to be in as a result.
+
+#org @gText_BruccieVillageNPCHouses_PokeballSwapper_Skilled
+I've gotten pretty good at doing\nthis.\pI can return the Pok\emon's old Pok\e\nBall to you when I'm done.
+
+#org @gText_BruccieVillageNPCHouses_PokeballSwapper_Confirmation
+It'll cost 2 Pok\eChips.\pWhat do you say? Want to do it?\n(Held: [BUFFER1])
+
+#org @gText_BruccieVillageNPCHouses_PokeballSwapper_NotEnoughChips
+Hey[.] You don't have enough\nPok\eChips.
+
+#org @gText_BruccieVillageNPCHouses_PokeballSwapper_ChoseNotToChangePokeball
+Alright. If you change your mind,\ncome see me.\pAnd remember - don't tell anyone\nabout this!
+
+#org @gText_BruccieVillageNPCHouses_PokeballSwapper_AskToChoosePokemon
+Okay, which Pok\emon would you like\nto change the ball of?
+
+#org @gText_BruccieVillageNPCHouses_PokeballSwapper_TradedPokemon
+[BUFFER1] was given to you by another\ntrainer.\pIt would be rude of me to change\nit's Pok\e Ball.
+
+#org @gText_BruccieVillageNPCHouses_PokeballSwapper_PokemonInCherishBall
+[BUFFER1] is in a Cherish Ball.\nIt's special; I cannot change it.
+
+#org @gText_BruccieVillageNPCHouses_PokeballSwapper_PokemonChoiceConfirmation
+[BUFFER1] is inside of a [BUFFER2]\nright now.\pThis is the Pok\emon you want to\nchange the ball for?
+
+#org @gText_BruccieVillageNPCHouses_PokeballSwapper_PokeballConfirmation
+Great! And which Pok\e Ball would\nyou like me to move it to?
+
+#org @gText_BruccieVillageNPCHouses_PokeballSwapper_ChoseANonPokeball
+I can't put it in a\n[BUFFER1][.]
+
+#org @gText_BruccieVillageNPCHouses_PokeballSwapper_ChoseSamePokeball
+It's already in a [BUFFER1][.]
+
+#org @gText_BruccieVillageNPCHouses_PokeballSwapper_BallSwapConfirmation
+You want to move your [BUFFER1]\nfrom a [BUFFER2] to a [BUFFER3]?
+
+#org @gText_BruccieVillageNPCHouses_PokeballSwapper_CollectPokechips
+Okay, let's do this!\pI'll just get those Pok\eChips from\nyou[.]
+
+#org @gText_BruccieVillageNPCHouses_PokeballSwapper_StartingProcess
+Now, turn around please[.]\nThis is a secret process.
+
+#org @gText_BruccieVillageNPCHouses_PokeballSwapper_Working
+Hm[.] Let's move this, then pop this\nopen[.]\pAh!\pOh, there we go.\pAnd then[.]
+
+#org @gText_BruccieVillageNPCHouses_PokeballSwapper_ProcessComplete
+It's done! Your [BUFFER1] was moved\ninto a [BUFFER3] successfully.
+
+#org @gText_BruccieVillageNPCHouses_PokeballSwapper_OldBallBroke
+Unfortunately, the old ball was\ndestroyed[.]\pBut I feel like I'm improving.
+
+#org @gText_BruccieVillageNPCHouses_PokeballSwapper_Improved
+Great news! I've perfected my\ncraft!\pI can move your Pok\emon without\nbreaking the old ball now!
+
+#org @gText_BruccieVillageNPCHouses_PokeballSwapper_BallReturned
+And here's the [BUFFER2] that\nyour [BUFFER1] used to be in.
+
+#org @gText_BruccieVillageNPCHouses_PokeballSwapper_Completed
+Come see me again, if you'd like to\nchange another Pok\emon's ball.
+
+#org @gText_BruccieVillageNPCHouses_CherishBallGuy
+I heard there's a rare Pok\e Ball out\nthere.\pIt's said to be red and celebrate\nrare encounters.\pDo you think such a Pok\e Ball really\nexists?
+
+#org @gText_BruccieVillageNPCHouses_TutorWife
+My husband picked up his fascination\nwith Pok\emon moves from his father.\pOur daughter is starting to show\ninterest as well.\pI suppose it's becoming a family\ntradition, hohoho!
+
+#org @gText_BruccieVillageNPCHouses_TutorKid
+I want to go play outside, but mom\nsaid it's too cold out[.]
+
+
+// Gym
+#org @gText_BruccieVillageGym_ExpertTips
+Yo, superstar! I'm not surprised to\nsee you made it here.\pListen up.\pAbby is all about strength, and\nshe's built a capable team to\lprove it.\pBecause she values strength so much,\nher gym doesn't have any puzzles.\pYou'll have to work your way\nthrough each of her trainers to\learn the right to face her.\pNow, Abby's an expert at using\nPok\emon abilities to her advantage.\pTo counter her, you'll want to be\nprepared for what those abilities\lcan do.\pCertain moves, like Worry Seed or\nGastro Acid, can change or\lsuppress your opponents' abilities.\pBut that's not all!\pSome abilities, like Mold Breaker,\ncan also suppress your opponents'\labilities.\pGood luck, superstar! I'm sure you'll\ncome out on top yet again.
+
+#org @gText_BruccieVillageGym_ExpertBadgeObtained
+Congratulations, superstar! I see you\nhave a shiny new Talent Badge.\pYou and your team worked hard to\novercome Abby and her team.\pThe next gym lies to the west, in\nTsarvosa City.\pYou'll need to be able to surf to\nreach it, but I'm sure you'll figure\lsomething out.\pCatch you there.
+
+#org @gText_BruccieVillageGym_LassMel_Intro
+Abby said I can take a break from\ntraining if I can beat you.
+
+#org @gText_BruccieVillageGym_LassMel_Defeat
+N-No! It's back to training for me[.]
+
+#org @gText_BruccieVillageGym_LassMel_Chat
+Abby insists on us training to be the\nbest we can be.\pIt's soooo exhausting though!
+
+#org @gText_BruccieVillageGym_BirdKeeperOwen_Intro
+I'm gonna win and prove myself to\nAbby. Get ready; you're going down!
+
+#org @gText_BruccieVillageGym_BirdKeeperOwen_Defeat
+How are you so strong?
+
+#org @gText_BruccieVillageGym_BirdKeeperOwen_Chat
+Tomorrow. I'll just have to prove\nmyself to Abby tomorrow.
+
+#org @gText_BruccieVillageGym_EngineerTommy_Intro
+This gym is heated by the big\ngenerators in the back.\pIt doesn't matter much, though, with\nhow fired up everyone gets.\pAnyways, I have to battle you if you\nwant to move on. Let's get started.
+
+#org @gText_BruccieVillageGym_EngineerTommy_Defeat
+Man[.] I just couldn't get myself fired\nup.
+
+#org @gText_BruccieVillageGym_EngineerTommy_Chat
+Alright, you won.\pThe rules say you're free to move\nonto the next trainer now.
+
+#org @gText_BruccieVillageGym_HikerJoel_Intro
+I don't care much for this battling\nthing, but Ellie asked me to try.\pSo[.] Get into position and let's do\nthis.
+
+#org @gText_BruccieVillageGym_HikerJoel_Defeat
+I tried, Ellie. I really did.
+
+#org @gText_BruccieVillageGym_HikerJoel_Chat
+I did my best, but I still didn't\nwin.\pI'll have to train harder for next\ntime, so I don't disappoint Ellie.
+
+#org @gText_BruccieVillageGym_CrushGirlEllie_Intro
+You're challenging the gym, right?\pYou'll have to go through me if you\nwant to face Abby.\pI won't let you win!
+
+#org @gText_BruccieVillageGym_CrushGirlEllie_Defeat
+Ngh[.] I couldn't win?
+
+#org @gText_BruccieVillageGym_CrushGirlEllie_Chat
+You're good, that much is obvious.
+
+#org @gText_BruccieVillageGym_LeaderAbby_Talk
+[RED]So, you were able to beat all of my\ntrainers after all.\pThen, there's only one thing left to\ndo.\pBattle me, and let's see if you're\nthe real deal, or if it was all a\lfluke.
+
+#org @gText_BruccieVillageGym_LeaderAbby_Intro
+[RED]Get ready, [PLAYER][.]\pI'll prove to you why our gym is the\nfiery beacon of the north!
+
+#org @gText_BruccieVillageGym_LeaderAbby_Defeat
+I'm not a sore loser.\pCongratulations! That was a\nfantastic battle.
+
+#org @gText_BruccieVillageGym_LeaderAbby_BadgeAwarded
+[RED]It's been a while since I've had such\na competent challenger.\p[PLAYER], you've earned my badge.\nTake it with pride.
+
+#org @gText_BruccieVillageGym_BadgeReceived
+[PLAYER] received the Talent Badge!
+
+#org @gText_BruccieVillageGym_LeaderAbby_BadgeDescription
+[RED]That badge is proof of your victory\ntoday.\pLook upon it with pride. Very few\ntrainers can earn it.\pYour Pok\emon will take note of this\nbadge as well.\pWith this badge, your Pok\emon will\nbe able to surf outside of battle,\lso long as you have the required\lHM.
+
+#org @gText_BruccieVillageGym_LeaderAbby_TMReceived
+[RED]I'd like you to have this as well.\nThis TM teaches Role Play.\pUse this move to prevent your\nopponents' abilities from getting\lthe better of you.
+
+#org @gText_BruccieVillageGym_TMReceived
+[PLAYER] received TM76 from Abby!
+
+#org @gText_BruccieVillageGym_LeaderAbby_Chat
+[RED]Alright, there's nothing left for us\nto discuss.\pYou've got two more badges to\ncollect. You'd better get going.
+
+#org @gText_BruccieVillageGym_Winners
+Bruccie Village Gym\nVictors: None
+
+#org @gText_BruccieVillageGym_WinnersWithBadgeAfterSurfing
+Bruccie Village Gym\nVictors: [PLAYER], [RIVAL]
+
+#org @gText_BruccieVillageGym_WinnersWithBadge
+Bruccie Village Gym\nVictors: [PLAYER]

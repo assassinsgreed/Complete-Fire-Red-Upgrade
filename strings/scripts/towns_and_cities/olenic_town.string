@@ -1,3 +1,55 @@
+// Overworld
+#org @gText_OlenicOverworld_HawthornsLabSign
+Professor Hawthorne's Lab
+
+#org @gText_OlenicOverworld_NewTrainers
+Many new trainers start their\njourneys from Anthra Town or Olenic\lTown.
+
+#org @gText_OlenicOverworld_OldLady
+I've lived in Olenic Town my entire\nlife. It's so peaceful. I never\lwant to leave.
+
+#org @gText_OlenicOverworld_GameKid
+My mom told me to play outside, but\nshe didn't say I couldn't bring my\lGameboy.
+
+#org @gText_OlenicOverworld_HawthorneFan
+Professor Hawthorne is THE leading\nexpert on Pok\emon habitat\lconservation.\pHe's so dedicated that he even has a\nconservatory connected to his lab!
+
+#org @gText_OlenicOverworld_TrainerTips
+Trainer Tips!\pCertain Pok\emon can only be found\nduring specific times of day.\pMorning starts at 4 AM.\nDay starts at 8 AM.\lEvening starts at 5 PM.\lNight starts at 8 PM.\pPok\emon may be found during the\nmorning/day, or evening/night.\pExplore at different times of day to\nfind every Pok\emon!
+
+// Facilities
+#org @gText_OlenicFacilities_Mart_StockUp
+Make sure you stock up on items\nbefore you head out. You never\lknow what might happen.
+
+// NPC Houses
+#org @gText_OlenicNPCHouses_FatherOfTrainer
+Our son left on his Pok\emon journey\na few months ago.
+
+#org @gText_OlenicNPCHouses_MotherOfTrainer
+Make sure you visit your mother once\nin a while, or she'll be lonely.
+
+#org @gText_OlenicNPCHouses_GrassTrainer
+I love [GREEN]Grass[BLUE] type Pok\emon! They're\nso calming.\pThey don't do well against aggressive\n[RED]Fire[BLUE] types though[.]
+
+#org @gText_OlenicNPCHouses_FireTrainer
+Everyone knows [RED]Fire[BLUE] type Pok\emon are\nthe best!\pThey even snuff out [GREEN]Grass[BLUE] types!
+
+#org @gText_OlenicNPCHouses_WaterTrainer
+[BLUE]Water[RED] type Pok\emon are very\ncute, don't you think?\pThey don't do well against [GREEN]Grass[RED]\ntypes though.
+
+#org @gText_OlenicNPCHouses_SinnohMother
+We recently moved here from the\nSinnoh region. I'm surprised how\lmuch warmer it is here.
+
+#org @gText_OlenicNPCHouses_SinnohChild
+I can't wait to see what kinds of\nPok\emon live here!
+
+#org @gText_OlenicNPCHouses_ProfessorBoy
+We're studying to become Pok\emon\nprofessors.
+
+#org @gText_OlenicNPCHouses_ProfessorGirl
+My little bro and I are going to\nbecome the first professor duo to\lever exist!
+
+// Professor's Lab
 #org @gText_OlenicProfessorsLab_ConservatorySign
 Professor Hawthorne's Conservatory
 
