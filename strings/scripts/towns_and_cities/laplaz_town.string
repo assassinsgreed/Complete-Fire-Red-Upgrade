@@ -1,0 +1,381 @@
+// Overworld
+#org @gText_LaplazTown_Overworld_Girl
+You aren't from around here, are\nyou? I have some advice, then[.]\pLaplaz Town is a very traditional\ntown. It is unlike other towns.\pIf you respect our customs, you will\nbe treated with kindness.
+
+#org @gText_LaplazTown_Overworld_OldMan_NotMetCaseyInGym
+A trainer, are you? Gyahahaha!\nChild, you'd better move on.\pThe Laplaz Town gym leader, Monty,\nis ill and isn't taking challengers.\p[.]What? Couldn't someone else lead\nthe gym in his place?\pGyahahaha! That is not our way,\nchild.\pThe gym leader position is passed\ndown through the leader's family.\pIf Monty's child does not wish to\nlead the gym, then there is nothing\lto be done. The gym will be\lclosed.\pIt it simply our way.
+
+#org @gText_LaplazTown_Overworld_OldMan_MetCaseyInGym
+Oh? Casey has decided to lead the\ngym, after all?\pThen, they have found their place in\nthe world and have carved out\ltheir own leadership style[.]\pVery good, very good. I am proud of\nyou, my grandchild.
+
+#org @gText_LaplazTown_Overworld_FatMan
+Laplaz Town is steeped in tradition.\pWe sell modern medicines and\nPok\e Balls, yes[.]\pHowever, our pride and joy will\nalways be our local Apricorn Balls.\pThey are unique Pok\e Ball crafted\nfrom fruits called Apricorns.\pThe berries themselves are pretty\ntasty, but we try not to eat them!
+
+#org @gText_LaplazTown_Overworld_YoungBoy
+Hey, go away! I'm trying to hide\nfrom the village elders.\pYou're going to give my hiding place\naway!
+
+#org @gText_LaplazTown_Overworld_TrainerHouseSign
+Laplaz Town Trainer House\nSpecialty: Sky Battles
+
+#org @gText_LaplazTown_Overworld_PeradonForestSign
+Peradon Forest\nBeware hidden Amoonguss!
+
+#org @gText_LaplazTown_Overworld_ApricornBallShopSign
+Apricorn Ball Shop
+
+#org @gText_LaplazTown_Overworld_PsychicsHouseSign
+Laplaz Psychic\nDiscover your Pok\emon's true\lpotential!
+
+#org @gText_LaplazTown_Overworld_GymSign_NotMetCaseyInGym
+Laplaz Town Pok\emon Gym\nLeader: Monty, the Stat Change\lCommander
+
+#org @gText_LaplazTown_Overworld_GymSign_MetCaseyInGym
+Laplaz Town Pok\emon Gym\nLeader: Casey, The Stat Change\lTactician
+
+// Facilities
+#org @gText_LaplazTownFacilities_GalarBirdsGirl
+I saw it! I saw it!\pWeird looking bird Pok\emon, flying\nout of Lake Laplaz!\pMy sister doesn't believe me and\nwon't let me go, though[.]
+
+#org @gText_LaplazTownFacilities_GalarBirdsGirlsSister
+My little sister said she saw weird\nPok\emon over Lake Laplaz.\pDon't listen to her. She must've\njust been confused[.]\pPlenty of people visit the lake, and\nthey've never seen anything like it.
+
+#org @gText_LaplazTownFacilities_GalarBirdsGentleman
+Did you know? If you have the HM\nfor Fly and Daimyn City's badge,\lyou can fly back to here any time.
+
+#org @gText_LaplazFacilities_XItemsTip
+Monty uses a lot of stat boosting\nmoves to get the upper hand.\pYou can get the same effects by\nusing X Items, too!
+
+#org @gText_LaplazFacilities_TrainerHouse_Blackbelt
+Hmm[.] My Pok\emon are not eligible to\nenter this battle format.\pI will need to re-evaluate my\nstrategy and return here.
+
+#org @gText_LaplazFacilities_TrainerHouse_Rocker
+Did you know? You can only use\nFlying type Pok\emon, or Pok\emon\lwith the Levitate ability, here.
+
+#org @gText_LaplazFacilities_TrainerHouse_Girl
+I heard the grand prize at this\ntrainer house is a Lucky Egg.\pI want it!
+
+#org @gText_LaplazFacilities_TrainerHouse_HostIntro
+[BLUE]Hey, hey, hey! Welcome to the\nLaplaz Town Trainer House!\pI'm Mort, and I'll be your host on\nthis fine day.\pYou're [PLAYER]? Rad.\nNow, let's get battling, baby!
+
+#org @gText_LaplazFacilities_TrainerHouse_FirstOpponentArriving
+[BLUE]Your first opponent is on their way.\nLook lively!
+
+#org @gText_LaplazFacilities_TrainerHouse_SecondOpponentArriving
+[BLUE]Nice battling! Here comes the next\nopponent.
+
+#org @gText_LaplazFacilities_TrainerHouse_ThirdOpponentArriving
+[BLUE]Fine work! Your final opponent is\ncoming now. Put on a good show!
+
+#org @gText_LaplazFacilities_TrainerHouse_B1BirdKeeperTobyIntro
+[BLUE]Sky battles are my forte. You don't\nstand a chance!
+
+#org @gText_LaplazFacilities_TrainerHouse_B1BirdKeeperTobyWin
+W-what? That wasn't supposed to\nhappen!
+
+#org @gText_LaplazFacilities_TrainerHouse_B1BirdKeeperTobyLose
+Go back to the ground, where you\nbelong!
+
+#org @gText_LaplazFacilities_TrainerHouse_B2CollectorDirkIntro
+[BLUE]Only a fool would enter a sky battle\nwith just Flying Pok\emon.\pI'll show you!
+
+#org @gText_LaplazFacilities_TrainerHouse_B2CollectorDirkWin
+You're no fool[.] You're a legend!
+
+#org @gText_LaplazFacilities_TrainerHouse_B2CollectorDirkLose
+Heh, what a fool!
+
+#org @gText_LaplazFacilities_TrainerHouse_CooltrainerVanessaIntro
+[RED]Sky battles are interesting, because\nof the limitations placed upon you.\pCan you still perform, even with\nthose limitations?
+
+#org @gText_LaplazFacilities_TrainerHouse_CooltrainerVanessaWin
+Very good! You can perform well\nunder pressure.
+
+#org @gText_LaplazFacilities_TrainerHouse_CooltrainerVanessaLose
+Hm[.] I suppose those limitations were\ntoo much for you.
+
+#org @gText_LaplazFacilities_TrainerHouse_StreakLost
+[BLUE]Oh no! [PLAYER] is out of usable\nPok\emon!\pThat's the end of the challenge.\nCome on down, [PLAYER].
+
+#org @gText_LaplazFacilities_TrainerHouse_AllOpponentsDefeated
+[BLUE]Incredible! You've defeated all 3\ntrainers.\pCome on back, now, [PLAYER], to\ncollect your prizes.
+
+#org @gText_LaplazFacilities_TrainerHouse_CannotParticipate
+[BLUE]Sorry, chief, but none of your\nPok\emon are eligible to participate\lin sky battles.\pCome back when you have some Flying\nor Levitating Pok\emon, okay?
+
+#org @gText_LaplazFacilities_TrainerHouse_BattleConfirmation
+[BLUE]You'll be going into battle with the\nPok\emon you have with you.\pFurthermore, only those that are\nFlying or Levitating can\lparticipate.\pIs that cool with you?
+
+#org @gText_LaplazFacilities_TrainerHouse_ChoseBattle
+[BLUE]Yes, that's what I like to hear!
+
+#org @gText_LaplazFacilities_TrainerHouse_HealingPokemon
+[BLUE]We run a clean competition here.\pI'll heal your Pok\emon before you go\nin there.
+
+#org @gText_LaplazFacilities_TrainerHouse_PreChallengeComment
+[BLUE]Alright, [PLAYER], take your place in\nthe arena and we'll get started.
+
+#org @gText_LaplazFacilities_TrainerHouse_GrandPrizeAwarded
+[BLUE]Well, would you look at that!\pThis is the first time you've beaten\nall 3 trainers.\pThat nets you our grand prize: a\nLucky Egg!
+
+#org @gText_LaplazFacilities_TrainerHouse_ChoseRuleset
+[BLUE]At this trainer house, it's all about\nSky Battles!\pIn these battles, you can only bring\nFlying and Levitating Pok\emon.\pCan you get a win streak going, even\nwith those limitations? Let's see!
+
+#org @gText_LaplazFacilities_TrainerHouse_ChoseGrandPrize
+[BLUE]Our fabulous prize this time is a\nLucky Egg!\pThis bad boy will increase the EXP\nearned by whichever Pok\emon holds\lit.\pYou'll want this, if you want to go\nall the way, trust me!
+
+// NPC Houses
+#org @gText_LaplazTownNPCHouses_MontyHaventMetWithCasey
+I[.] I have to lead the gym. If I\ndon't, it will[.]\pOoooh! My stomach hurts[.]
+
+#org @gText_LaplazTownNPCHouses_MontyMetWithCasey
+What's that? Casey will lead the\ngym?\pHow wonderful! I can focus on my\nrecovery in peace.
+
+#org @gText_LaplazTownNPCHouses_CaseysMomHaventMetWithCasey
+My husband is ill, but refuses to\nrest as long as the gym is without\lit's leader.\pHe says that trainers can't complete\ntheir gym challenge as long as the\lLaplaz gym isn't accepting\lchallengers.\pHe's thoughtful, but he needs to\nfocus on his own health right now.
+
+#org @gText_LaplazTownNPCHouses_CaseysMomMetWithCasey_Male
+Casey will lead the gym, after\nall? He was so unsure when he\lleft town.\pSomething - or someone - must've\nchanged his mind.\pI'm happy for him, though. It seems\nhe has found his calling.\pAnd, I'm sure my husband can rest,\nknowing the gym is in good hands.
+
+#org @gText_LaplazTownNPCHouses_CaseysMomMetWithCasey_Female
+Casey will lead the gym, after\nall? She was so unsure when she\lleft town.\pSomething - or someone - must've\nchanged her mind.\pI'm happy for her, though. It seems\nshe has found her calling.\pAnd, I'm sure my husband can rest,\nknowing the gym is in good hands.
+
+#org @gText_LaplazTownNPCHouses_CaseysGrandmother
+Oooh, that son of mine! He gets ill\nand refuses to rest.\pWho cares about the gym? We need\nhim here, happy and healthy.
+
+#org @gText_LaplazTownNPCHouses_HeracrossKid
+There's this super cool Pok\emon in\nPeradon Forest called Heracross.\pHere, I'll show you what it looks\nlike!
+
+#org @gText_LaplazTownNPCHouses_HeracrossKidDuringPic
+See? Isn't it super cool?\nLook at that awesome horn!
+
+#org @gText_LaplazTownNPCHouses_HeracrossKidAfterPic
+You've seen what it looks like now,\nso you have no excuses!\pGo catch a Heracross of your own.\nYou won't be disappointed, I'm sure\lof it!
+
+#org @gText_LaplazTownNPCHouses_HeracrossKidsSister
+My little brother is totally obsessed\nwith bug Pok\emon. But, like[.]\pEEEWWWW!\pBug Pok\emon are so GROSS!
+
+#org @gText_LaplazTownNPCHouses_ApricornGrandma
+My grandson helps run the Apricorn\nBall Shop in town.\pHe's learning how to craft Apricorn\nPok\e Balls from his master.\pOne day, he'll take ownership\nover the shop itself.
+
+#org @gText_LaplazTownNPCHouses_ApricornGrandpa
+I helped bring the Apricorn ball\ntradition to Laplaz Town.\pIt must've been[.] Twenty years ago\nnow?\pMy old friend, Kurt, mastered the\ntechnique in the Johto region.
+
+#org @gText_LaplazTownNPCHouses_PsychicBrotherIntro
+We are the Psychic Siblings.\pWe are only interested in speaking to\npeople with great potential.
+
+#org @gText_LaplazTownNPCHouses_PsychicBrotherRecognizesPotential
+Oh! You[.] You have great potential.\pFor a trainer such as you, I have a\ngift. Please, take it.
+
+#org @gText_LaplazTownNPCHouses_PsychicBrotherExplainsHiddenPower
+That TM houses the move Hidden\nPower.\pIt draws out the potential in your\nPok\emon, and changes the move's\ltype.\pYou can see this for yourself, when\nviewing the Pok\emon's moves.\pMy sister is also a gifted psychic.\nI suggest you speak with her.
+
+#org @gText_LaplazTownNPCHouses_PsychicSisterUnsureOfPlayer
+[SHRINK]You[.] I don't know about you.\nBrother[.] are they okay to speak\lwith?
+
+#org @gText_LaplazTownNPCHouses_PsychicSisterOffersHelp
+That TM[.] My brother sees your\npotential?\pThen[.] I shall offer my power to you\nas well.\pI can sense and judge a Pok\emon's\nstatistical potential.
+
+#org @gText_LaplazTownNPCHouses_PsychicSisterOffersStatisticsOn
+I can share this power with you,\nif you would like.\pIt would allow you to see my\nratings, within your Pok\emon's\lsummary screen.\pWould you like to receive this\npower?
+
+#org @gText_LaplazTownNPCHouses_PsychicSisterStatisticsNowOn
+There! You can now see ratings in\nthe summary screen.\pIf you'd like to stop receiving this\npower, please come see me.
+
+#org @gText_LaplazTownNPCHouses_PsychicSisterOffersStatisticsOff
+I can stop sharing this power with\nyou, if you'd prefer.\pWould you like to no longer receive\nthis power?
+
+#org @gText_LaplazTownNPCHouses_PsychicSisterStatisticsNowOff
+There! You can no longer see ratings\nin the summary screen.\pIf you'd like to once again receive\nthis power, please come see me.
+
+#org @gText_LaplazTownNPCHouses_PsychicSisterSaidNo
+I understand. Please, come see me if\nyou change your mind.
+
+#org @gText_LaplazTownNPCHouses_ApricornSellerIntro
+I can craft Apricorn Balls, using a\ntechnique honed in Johto.\pTo do so, I would require 2\nPok\eChips.
+
+#org @gText_LaplazTownNPCHouses_ApricornSellerCost
+Are you interested? (Held: [BUFFER1])
+
+#org @gText_LaplazTownNPCHouses_ApricornSellerNotEnoughChips
+I am sorry, but you do not have\nenough Pok\eChips.\pI require them to make the balls,\nyou see.
+
+#org @gText_LaplazTownNPCHouses_ApricornSellerAlreadyBought
+My apologies, but I need to rest.\pPlease, visit me tomorrow if you'd\nlike to make another Apricorn Ball.
+
+#org @gText_LaplazTownNPCHouses_ApricornSellerCancelled
+Understood. Do visit me again, if you\nhave need of my services.
+
+#org @gText_LaplazTownNPCHouses_ApricornSellerFastBallInfo
+This peculiar ball is most effective\nagainst Pok\emon that flee easily.
+
+#org @gText_LaplazTownNPCHouses_ApricornSellerLevelBallInfo
+This peculiar ball is most effective\nagainst lower level Pok\emon.
+
+#org @gText_LaplazTownNPCHouses_ApricornSellerLureBallInfo
+This peculiar ball is most effective\nagainst Pok\emon that you find in or\lon water.
+
+#org @gText_LaplazTownNPCHouses_ApricornSellerHeavyBallInfo
+This peculiar ball is most effective\nagainst heavy Pok\emon.
+
+#org @gText_LaplazTownNPCHouses_ApricornSellerLoveBallInfo
+This peculiar ball is most effective\nagainst Pok\emon of the opposite\lgender.
+
+#org @gText_LaplazTownNPCHouses_ApricornSellerFriendBallInfo
+This peculiar ball makes the caught\nPok\emon friendly.
+
+#org @gText_LaplazTownNPCHouses_ApricornSellerMoonBallInfo
+This peculiar ball is most effective\nagainst Pok\emon that can evolve\lusing a Moon Stone.
+
+#org @gText_LaplazTownNPCHouses_ApricornSellerConfirmation
+[BUFFER1][.]\nIs this the one you want?
+
+#org @gText_LaplazTownNPCHouses_ApricornSellerPlayerConfirmed
+Hm. Very good.\nPlease wait here a moment.
+
+#org @gText_LaplazTownNPCHouses_ApricornSellerBallMade
+There! It is finished. One [BUFFER1],\nfor you.
+
+#org @gText_LaplazTownNPCHouses_ApricornDescriber
+My husband is a gifted Apricorn\nPok\e Ball crafter.\pHe takes Apricorns received from the\nJohto Region, and mixes them with\lPok\eChips to freshen them up.\pThen, using a secret family\ntechnique, he crafts special Pok\e\lBalls using them!\pThis technique is a longstanding\ntradition passed down through our\lfamily.
+
+#org @gText_LaplazTownNPCHouses_TutorConfirmation
+Hello! I am a move tutor,\nspecializing in status moves.\pI can teach your Pok\emon these\nmoves, in exchange for 5 Pok\eChips.\pAre you interested?\n(Held: [BUFFER1])
+
+#org @gText_LaplazTownNPCHouses_ConfirmationAccepted
+Great! These are the moves I can\nteach your Pok\emon.
+
+#org @gText_LaplazTownNPCHouses_Complete
+My lessons are complete. Visit again,\nif you'd like to teach more moves.
+
+#org @gText_LaplazTownNPCHouses_TutoringRejected
+I understand. You're welcome to come\nby later, if you change your mind.
+
+#org @gText_LaplazTownNPCHouses_NotEnoughPokeChips
+My apologies, but you do not have\nenough Pok\eChips.
+
+// Gym
+#org @gText_LaplazGym_GymExpertCommonIntro
+Yo, superstar!\pI had a feeling you'd make it to\nLaplaz Town's gym before long.\pLet me give you the rundown[.]
+
+#org @gText_LaplazGym_GymExpertMontyIntro
+This gym is all about\nstat changes.\pYour opponents will buff their own\nPok\emon's stats, and lower yours.\pThis could really turn the tide of\nbattle quickly, so watch out.\pUse X Items or your own moves to\nkeep your stats competitive, or\lkeep your opponents' in check.\pTo get to the end, you'll need to\nnavigate a maze of Spin Tiles.\pThe green tiles don't move, but the\nblue ones will rotate for every 5\lsteps you take.\pSome rotate clockwise, some\ncounterclockwise.\pOthers will only rotate 3 times, or\nflip in place.\pPay attention to your surroundings\nand plan a route to make it\lthrough.\pBut[.] Does any of this info\nmatter, if Monty is out sick?\pHe asked the gym to stay open and\naccept challengers.\pBut, without it's leader, we aren't\nauthorized to hand out badges[.]
+
+#org @gText_LaplazGym_GymExpertCaseyIntro
+Did you hear the news?\pCasey decided to take ownership over\nthe gym in their father's stead!\pMuch like their father, they're an\nexpert with stat changes.\pTry not to let their Pok\emon set up,\nor you could be in trouble.\pI have some tips for you though,\nlike always.\pUse X Items to keep yourself\ncompetitive, or use moves to reset\lor reverse their stat changes.\pDon't give up, superstar! I'm sure\nyou'll pull through.
+
+#org @gText_LaplazGym_Jeremiah_Intro
+Have you figured out how this gym's\npuzzle works yet?
+
+#org @gText_LaplazGym_Jeremiah_Defeat
+You've got battling figured out, at\nleast!
+
+#org @gText_LaplazGym_Jeremiah_Chat
+Blue tiles only rotate if you're\nstepping onto a normal floor tile,\lor the yellow stopping tiles.\pTake your time to plan a path, and\nstep onto a Spin Tile with\lconfidence!
+
+#org @gText_LaplazGym_Exie_Intro
+Monty is out sick[.]\pEven knowing that, you still want to\nchallenge the gym?\pVery well, let's battle!
+
+#org @gText_LaplazGym_Exie_Defeat
+Hm! You're a capable challenger!
+
+#org @gText_LaplazGym_Exie_Chat
+Even if Monty isn't here, we'll keep\nthe gym operational.
+
+#org @gText_LaplazGym_Virginia_Intro
+I've spent my whole life mastering\nstat changing moves.\pDo you think your Pok\emon can keep\nup?
+
+#org @gText_LaplazGym_Virginia_Defeat
+It seems I have more to learn[.]
+
+#org @gText_LaplazGym_Virginia_Chat
+It's important to remember that you\nalways have more you can learn.\pKeeping that in mind will put you on\na good course to always improve.
+
+#org @gText_LaplazGym_Nisha_Intro
+My Pok\emon is going to make you cry!
+
+#org @gText_LaplazGym_Nisha_Defeat
+W-waah! That's not fair!
+
+#org @gText_LaplazGym_Nisha_Chat
+Sniff[.] I was supposed to win.
+
+#org @gText_LaplazGym_Kent_Intro
+I've studied over 1,000 Pok\emon\nbattles.\pIt's allowed me to prepare a\nfoolproof battle strategy.\pHere, I'll show you!
+
+#org @gText_LaplazGym_Kent_Defeat
+N-no! This must be a mistake.\pMy data is immaculate.
+
+#org @gText_LaplazGym_Kent_Chat
+I need to run more tests. There's no\nway you should've won.
+
+#org @gText_LaplazGym_Tomas_Intro
+Some people think stat changing\nmoves are worthless.\p"Why bother, when you can win with\nbrute strength?\"\pAllow me to show you how wrong they\nare!
+
+#org @gText_LaplazGym_Tomas_Defeat
+Tch. My lesson fell through.
+
+#org @gText_LaplazGym_Tomas_Chat
+A good trainer can make a variety of\nstrategies and movesets work.
+
+#org @gText_LaplazGym_Placard_NoBadge
+Laplaz Town Gym\nVictors: None
+
+#org @gText_LaplazGym_Placard_Badge
+Laplaz Town Gym\nVictors: [PLAYER]
+
+#org @gText_LaplazGym_Placard_BadgeWithRival
+Laplaz Town Gym\nVictors: [PLAYER], [RIVAL]
+
+#org @gText_LaplazGym_CaseyAsksForTilesToBeTurnedOff
+Please deactivate the Spin Tiles.
+
+#org @gText_LaplazGym_MaleCaseyAddressesPlayer
+Hey, [PLAYER].\pI had a feeling I'd find you here.\pRemember when I said I had something\nI needed to do? Time to come\lclean.
+
+#org @gText_LaplazGym_MaleCaseyBackstory
+I'm this gym leader's son. I was born\nand raised here.\pI spent a lot of time at the gym,\ngrowing up. I kinda got sick of it.\pBut not my dad. He loved this\nplace. That is, until he got sick[.]\pYou may already know, but the\ngym leader position gets passed\ldown to family, in Laplaz Town.\pWith my dad out, it fell to me.\pI[.] Couldn't take it.\pHe was so good at it, and people\nloved him.\pI felt stifled by the gym, and\nfigured people wouldn't accept\lme, because I'm not my father[.]\pAnd I, well[.] I left.\pI started my own gym challenge and\nstarted collecting badges.\pI guess I thought I could find my\nplace in this world, if I got them\lall.\pBut really[.] I was just running\naway.
+
+#org @gText_LaplazGym_MaleCaseyCommitment
+As I journeyed around, I ran into\nother challengers.\pPeople like you, [PLAYER].\pAnd, you know what I noticed?\pEach one of them had a drive, this[.]\nspark in them.\pAnd, when they battled, that spark\nerupted into a flame big enough\lfor anyone to see.\pGym challengers are a special\nbreed.\pThey have a passion and a\ndetermination that just stands out.\pAnd, I saw this especially in you,\n[PLAYER].\pSeeing all these trainers giving their\nall[.] It made something clear to\lme.\pThey all had this dream of becoming\nthe greatest trainer in Kulure.\pThat led them to each of the\nregion's gyms, to prove their worth.\pAnd, without my father's badge[.] That\ndream would die, along with that\lspark.\pI couldn't let that happen, not a\nchance.\pBecause[.] Battling those trainers\nreignited that spark in me, too.\pI've made my decision. I will become\nLaplaz Town's gym leader.\pAnd, [PLAYER], I want you to be my\nfirst opponent.\pPlease, battle me, and show me that\nbrilliant spark again.\pI'll be waiting at the podium.
+
+#org @gText_LaplazGym_FemaleCaseyAddressesPlayer
+Hey, [PLAYER].\pI just knew we'd run into each\nother here.\pI realized something when we battled\non Route 10, and now's the right\ltime to talk about it.
+
+#org @gText_LaplazGym_FemaleCaseyBackstory
+You may have heard that the gym\nleader is sick, right?\pWell, the truth is, I'm their\ndaughter.\pI was born and raised here, and\nspent a lot of time in this gym.\pMy dad spent so much time here,\nchallenging trainers that would\lvisit. He wasn't home much.\pI[.] Kinda grew to resent this place.\pThe gym in Laplaz Town isn't like\nothers[.]\pWe pass leadership down through the\nfamily. It simply isn't our way to\lelect someone else as leader.\pYou probably know what that means[.]\nI'm the only one who can lead it.\pIf I don't, the gym will close.\nSimple as that.\pIt was a lot of pressure, and I\ndidn't even like the gym.\pAnd so, when my dad got sick[.]\nI left.\pI started pursuing the gym\nchallenge, trying to get all the\lbadges.\pI don't really know why now. I\nguess[.] I thought I'd go all the\lway and leave Laplaz behind me.\pBut really[.] I was just running\naway from my responsibility.
+
+#org @gText_LaplazGym_FemaleCaseyCommitment
+As I travelled the region, I met\nexceptional trainers. Exceptional\lpeople[.]\pPeople like you, [PLAYER].\pAnd, you know what I noticed?\pAll of them had a dream. A simple\ndream to rise to the top.\pIt was so obvious, too. Everyone on\nthis journey had that same spark.\pThat spark[.] It erupted into a\nbrilliant flame when they battled\lfor their badges.\pThose trainers and their partners\nwere truly exceptional. A rare\lbreed.\pAnd, that spark[.] It shone so\nbrightly in you, [PLAYER].\pSeeing so many trainers giving it\ntheir all for something they\lbelieved in[.]\pIt made me realize something very,\nvery important.\pThe gym challenge drove them all\ntoward chasing their dreams.\pAnd, without my father's badge[.] That\ndream would fade along with that\lspark[.]\pIt became crystal clear what I\nneeded - no, was meant to do.\pBattling those trainers reignited a\nspark in me too, one I let dim.\pPushing those trainers to achieve\ntheir dreams[.] It's what I'm meant\lto do.\pI've made my decision. I will become\nLaplaz Town's gym leader.\pNot by force, mind you. This is\nsomething I want for myself,\lfinally.\pAnd, [PLAYER], I want you to be my\nfirst opponent.\pPlease, battle me, and show me that\nbrilliant spark that only gym\lchallengers have.\pI'll be waiting at the podium.
+
+#org @gText_LaplazGym_LeaderCasey_Talk
+[PLAYER], I'm glad you're here.\pI've fought a lot of incredible\ntrainers during my gym challenge.\pAmong them all, you stood out the\nmost.\p[PLAYER], today I stand before you\nas the Laplaz Town gym leader.\pIt's now my duty to make sure gym\nchallengers can pursue their dream.\pThat means you, too, [PLAYER].\nBut, I won't make it easy for you.
+
+#org @gText_LaplazGym_LeaderCaseyM_Intro
+[PLAYER]! Let's show everyone what\nthe gym challenge is all about!
+
+#org @gText_LaplazGym_LeaderCaseyM_Defeat
+Truly exceptional. That was a battle\nbefitting the Laplaz gym.\pAnd, [PLAYER], thank you[.] For\nshowing me my true purpose.
+
+#org @gText_LaplazGym_LeaderCaseyF_Intro
+Alright, [PLAYER]. Get ready[.]\pI'm going to give this everything\nI've got, and you should too!
+
+#org @gText_LaplazGym_LeaderCaseyF_Defeat
+What a wonderful battle[.]\n[PLAYER], thank you.\pI'm more convinced than ever that\nthis is what I'm meant to do.
+
+#org @gText_LaplazGym_LeaderCasey_BadgeAwarded
+[PLAYER], you've proven yet again\nthat my decision was the right one.\pIt is my duty and my pleasure to\naward you the Tactician Badge.\pPlease, take it with my gratitude.
+
+#org @gText_LaplazGym_BadgeReceived
+[PLAYER] received the Tactician\nBadge!
+
+#org @gText_LaplazGym_LeaderCasey_BadgeDescription
+That badge is proof of your\nachievement today.\pIt's also a symbol of what the gym\nchallenge means to so many.
+
+#org @gText_LaplazGym_LeaderCasey_TMReceived
+Please take this TM as well.\pIt contains Swords Dance, and it's\na favorite of mine.
+
+#org @gText_LaplazGym_TMReceived
+[PLAYER] received TM75!
+
+#org @gText_LaplazGym_LeaderCasey_Chat
+[PLAYER], thank you for such an\nincredible battle.\pMy gym challenge has ended, but\nyours is going strong!\pI'll cheer you on from here.\pI'd better see you face off against\nChampion Selene, someday!\pDon't let me down, okay? And, take\ncare, [PLAYER].

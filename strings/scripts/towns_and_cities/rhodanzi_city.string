@@ -1,3 +1,179 @@
+// Overworld
+#org @gText_RhodanziOverworld_SunSightMan
+I once saw a Pok\emon as bright as\nthe sun appear over Mount\lCarnelidge.\pIt was quite an impressive sight,\nbut nobody believes me.
+
+#org @gText_RhodanziOverworld_FirstStop
+Rhodanzi City is usually the first\nstop for new Pok\emon Trainers.\pBecause of that, Terrence goes a\nbit easier on trainers challenging\lhis gym.
+
+#org @gText_RhodanziOverworld_PokemonVariety
+There are a lot of unique Pok\emon\nspecies around Rhodanzi City.\pBe sure to catch a lot before you\nmove on!
+
+#org @gText_RhodanziOverworld_TreeGuy
+A Pok\emon can cut this tree down,\nbut you'd need to have HM01 and\lthe badge from Ferrox Village\lfirst.\pThen your Pok\emon will understand\nhow to cut this tree down, even if\lthey don't know the move itself.
+
+#org @gText_RhodanziCity_EntranceSign
+Rhodanzi City: The evergreen plains\ncity
+
+#org @gText_RhodanziCity_FishermanSign
+Rhodanzi Fishing Committee
+
+#org @gText_RhodanziOverworld_ThugsRumour
+[BLUE]Once that scientist comes along,\nwe'll[.]
+
+#org @gText_RhodanziOverworld_Thugs
+[BLUE]Hey! We're having an important\nmeeting here, can't you see that?\lScram, kid!
+
+#org @gText_RhodanziOverworld_ThugsEna
+[RED]Hey! We're having an important\nmeeting here, can't you see that?\lScram, kid!
+
+#org @gText_RhodanziOverworld_ThugsThreat
+[RED]Don't get in our way, kid. We're\nbusy here!\pKids like you should be at home,\nplaying their Gameboys, anyways.
+
+#org @gText_RhodanziOverworld_PokeChipMan
+You may find a small fragment when\ndefeating wild Pok\emon.\pWe've called these 'Pok\eChips.' We\ndon't fully understand what they\lare yet, but collectors sure like\lthem!
+
+#org @gText_RhodanziOverworld_Honey
+Did you know? If you use Honey or\nthe Sweet Scent move, you can\linstantly trigger a battle.\pPok\emon encountered this way are\nmore likely to drop Pok\eChips!\pHoney can be bought at any Pok\e\nMart.
+
+// Facilities
+#org @gText_RhodanziFacilities_Mart_BadgeStock
+Pok\eMarts offer more products to\nexperienced trainers.\pYou should always check what's\navailable after getting a new\lbadge!
+
+#org @gText_RhodanziFacilities_Mart_EscapeRope
+If you get lost in a cave, you can\nuse an Escape Rope to get out\lquickly!\pYou'll need the badge from the\nRhodanzi Gym before they'll sell\lyou one, though.
+
+#org @gText_RhodanziFacilities_Center_UsingFacility
+Pok\emon Center services are free,\nso you should use them as often as\lyou need to!
+
+#org @gText_RhodanziFacilities_Center_Trade
+I heard that Pok\emon Centers\nacross the sea usually have a\lsecond floor dedicated to trading\lwith far-away trainers.
+
+#org @gText_RhodanziFacilities_Center_PokemonTreatment
+It's your duty as a Pok\emon trainer\nto take care of your Pok\emon.\pIt doesn't matter if they're weak or\nstrong.
+
+// NPC Houses
+#org @gText_RhodanziNPCHouses_FishermanIntro
+Why, hello there, my young friend.\pTell me, do you like to fish?
+
+#org @gText_RhodanziNPCHouses_FishermanYes
+Grand! I like your style.\nHere, take this Old Rod of mine!
+
+#org @gText_RhodanziNPCHouses_FishermanNo
+I'm very sorry to hear that!\pPerhaps one day you'll come to\ndiscover the joy that can only be\lfound when a big one is on the\lline.
+
+#org @gText_RhodanziNPCHouses_FishermanTip
+Different rods can catch different\nfish.\pTry casting your rod in my pond,\nand see what you can find!
+
+#org @gText_RhodanziNPCHouses_FishermanFarewell
+Go, my young friend, and catch all\nthe fish you can find, from the\lsmallest river to the widest sea.\pOnly then will you be a master\nfisherman.\pWah-hah-hah!
+
+#org @gText_RhodanziNPCHouses_TerrenceSister
+Oh, you're a new Pok\emon Trainer?\pYou'll want to challenge my brother\nbefore you leave town; he's\lRhodanzi's Gym Leader!
+
+#org @gText_RhodanziNPCHouses_TerrenceSister_BadgeObtained
+Oh, that badge! You must've beaten\nTerrence then? Good for you!
+
+#org @gText_RhodanziNPCHouses_TerrenceLittleBrotherQuestion
+Hey, didja know?
+
+#org @gText_RhodanziNPCHouses_TerrenceLittleBrotherQuestionYes
+How did you already know? I didn't\neven tell you yet!
+
+#org @gText_RhodanziNPCHouses_TerrenceLittleBrotherQuestionNo
+My brother Terrence is the gym\nleader, and he's really strong!\pHis Pok\emon use Grassy Terrain,\nwhich heals Pok\emon on the ground\land makes his grass moves stronger.\pYou can't beat him, even if you\nhad a Flying or Fire type, so don't\leven try!
+
+#org @gText_RhodanziNPCHouses_TerrenceBrother_BadgeObtained
+Hey, that's my big brother's gym\nbadge!\pDoes that mean you're stronger than\nhim? No waaaaay!
+
+#org @gText_RhodanziNPCHouses_Evolution
+Some Pok\emon change form as they\nget stronger.\pThis phenomenon is called\nEvolution!\pSome Pok\emon can't evolve, but it\ndoesn't mean they aren't strong.
+
+#org @gText_RhodanziNPCHouses_OldTrainer
+I used to be a Pok\emon Trainer\nwhen I was young.\pBack then, they only knew of 151\ndifferent species!
+
+#org @gText_RhodanziNPCHouses_NidoranTrainer
+Some people like to battle with\nPok\emon, while others like to keep\lthem as pets.
+
+#org @gText_RhodanziNPCHouses_Nidoran
+Bow bow!
+
+#org @gText_RhodanziNPCHouses_MailTrainer
+I'm writing a letter to my pen pal\nfrom the Sinnoh Region.\pWe've written letters to each other\nfor 8 years now!
+
+#org @gText_RhodanziNPCHouses_PokedexTrainerQuestion
+Oh, you have a Pok\edex!\pAre you trying to catch every\nPok\emon in the Kulure region?
+
+#org @gText_RhodanziNPCHouses_PokedexTrainerYes
+That's great! I'll be rooting for\nyou.
+
+#org @gText_RhodanziNPCHouses_PokedexTrainerNo
+Nothing wrong with that! Some\ntrainers get more satisfaction from\lbattling.
+
+#org @gText_RhodanziNPCHouses_PlantGirl
+My Pok\emon and I love tending to\nour plants.\pMy grass types provide them with\nnutrients, and my ground types keep\lthe soil nice and healthy.
+
+// Gym
+#org @gText_RhodanziGym_Winners
+Rhodanzi City Gym\nVictors: Casey
+
+#org @gText_RhodanziGym_WinnersWithBadge
+Rhodanzi City Gym\nVictors: Casey, [PLAYER]
+
+#org @gText_RhodanziGym_WinnersWithBadgeAndDexNavEvent
+Rhodanzi City Gym\nVictors: Casey, [PLAYER], [RIVAL]
+
+#org @gText_RhodanziGym_ExpertTips
+Yo, superstar, welcome to the\nRhodanzi City gym!\pAll trainers in this gym specialize\nin a different type of terrain\lmove. Pay close attention to come\lout on top.\pGym leader Terrence uses grass\ntypes and grassy terrain. I suggest\lbringing a fire, flying, bug, or\lpoison type Pok\emon.\pYou've got this! Shoot for the stars,\nchamp. I'll be rooting for you.
+
+#org @gText_RhodanziGym_ExpertBadgeObtained
+Superstar, you've done it!\nCongratulations! Continue your\ljourney, and we'll meet again soon.
+
+#org @gText_RhodanziGym_Alonso_Intro
+You're a hundred - no, a thousand -\nyears too inexperienced to face\lTerrence!
+
+#org @gText_RhodanziGym_Alonso_Defeat
+No way! You're better than I\nthought!
+
+#org @gText_RhodanziGym_Alonso_Chat
+You'd better not waste Terrence's\ntime.
+
+#org @gText_RhodanziGym_Brandon_Intro
+Do you know which type of terrain I\nspecialize in?
+
+#org @gText_RhodanziGym_Brandon_Defeat
+Even with my Electric Terrain, I\nstill lost!
+
+#org @gText_RhodanziGym_Brandon_Chat
+Each terrain does something\ndifferent.\pElectric Terrain strengthens\nelectric type moves and makes it so\lPok\emon can't fall asleep, for\lexample.
+
+#org @gText_RhodanziGym_Leader_Terrence_Talk
+Welcome, trainer. I am Terrence, the\nleader of the Rhodanzi Gym.\pMy gym is the point where most\ntrainers learn if they have what it\ltakes to complete the Kulure gym\lchallenge.\pBut don't worry too much about\nthat.\pBelieve in your Pok\emon and do\nyour best, and you'll do great.
+
+#org @gText_RhodanziGym_Leader_Terrence_Intro
+[BLUE]Now, let's begin!
+
+#org @gText_RhodanziGym_Leader_Terrence_Defeat
+Excellent! Well done, [PLAYER].
+
+#org @gText_RhodanziGym_Leader_Terrence_Chat
+You battled well, [PLAYER].\pYour gym challenge will take you\nto Ferrox Village in the east.\pBelieve in your Pok\emon and never\ngive up!\pI expect great things from you.
+
+#org @gText_RhodanziGym_Leader_Terrence_BadgeAwarded
+[BLUE]Congratulations! You battled well,\nand have earned the Terrain Badge.\lPlease, take it.
+
+#org @gText_RhodanziGym_BadgeReceived
+[PLAYER] received the Terrain Badge!
+
+#org @gText_RhodanziGym_TMReceived
+[PLAYER] received TM05 from Terrence!
+
+#org @gText_RhodanziGym_Leader_Terrence_BadgeDescription
+[BLUE]This badge is proof of your\nvictory over me, and your\lcapabilities as a trainer.
+
+#org @gText_RhodanziGym_Leader_Terrence_TMReceived
+[BLUE]I will also give you TM05, which\ncontains Terrain Pulse. It can be\ltaught to your Pok\emon as many\ltimes as you'd like.\pI'd suggest visiting the terrain tutor\nat Rhodanzi Trainer School to make\lthe most of it.
+
+// Trainer School
 #org @gText_RhodanziTrainerSchool_MainRoom_Receptionist_GoToDesk
 Oh, hello trainer! Please go to\nthe front of the desk and I'll\lbe happy to help you.
 

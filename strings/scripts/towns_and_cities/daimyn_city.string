@@ -1,0 +1,1251 @@
+// Overworld
+#org @gText_DaimynCityOverworld_GamblingMan
+Shhh! Don't tell anyone you found me\nhere.\pI lost it all at the Daimyn City\ngym[.] I can't face my family after\lthis.
+
+#org @gText_DaimynCityOverworld_Picknicker
+Isn't the Daimyn City garden\npretty?\pIt attracts a lot of interesting\nPok\emon.
+
+#org @gText_DaimynCityOverworld_Hiker
+I'm going to hike to Bruccie\nVillage soon.\pThe road there is difficult and\nrugged, and most people can't\lmanage it.\pIt's important to take the time to\nprepare before going on any\ldangerous journies.
+
+#org @gText_DaimynCityOverworld_SuperNerd
+Daimyn City is the largest city in\nKulure! It's quite the spectacle,\lisn't it?\pA lot of powerful trainers gather\nhere to challenge the Elite Four\land try to take the Champion's\ltitle.\pThey haven't succeeded since Selene\nbecame Champion, but that won't\lstop them from trying!
+
+#org @gText_DaimynCityOverworld_OldMan
+The Daimyn City gym doubles as both\na gym and a casino!\pIt attracts all sorts of people and\nis always bustling.\pThe leader, Chance, is an old friend\nof mine.\pBe careful if you find yourself\nfacing him both in battle and at\lthe game table! Ha ha ha!
+
+#org @gText_DaimynCityOverworld_Boy
+I saw Champion Selene the other\nday! She looked really busy\lthough.
+
+#org @gText_DaimynCityOverworld_Biker
+Daimyn City's roads are all concrete\nand tile.\pIt's perfect for a road hog like me!\nGwah hah hah!
+
+#org @gText_DaimynCityOverworld_Girl
+Daimyn City is a central hub that\nconnects many routes.\pYou could make your way to many\ndifferent towns from here!
+
+#org @gText_DaimynCityOverworld_Policeman
+There have been more Team Pluto\nmembers around here lately.\pThey're careful not to do anything\nthat'll get them in trouble, so my\lhands are tied[.]\pJust[.] Don't hang out around them too\nmuch, okay? They're a bad\linfluence.
+
+#org @gText_DaimynCityOverworld_PlutoNW
+Hey, beat it, kid! I'm not botherin'\nanyone here.
+
+#org @gText_DaimynCityOverworld_PlutoSE
+Hey, kid! You'll give me your\nPok\emon, right?\pNo? Agh, get lost!
+
+#org @gText_DaimynCityOverworld_PlutoSW
+Why are there so many members of\nteam Pluto in the city? That's a\lsecret!
+
+#org @gText_DaimynCityOverworld_RestaurantSign
+Daimyn City Restaurant\nDelicious meals for Pok\emon!
+
+#org @gText_DaimynCityOverworld_AscensionTowerSign
+Ascension Tower:\nHome of Kulure's Finest Trainers
+
+#org @gText_DaimynCityOverworld_ShoppingMallSign
+Daimyn Shopping Center:\nFind your new favorite item today!
+
+#org @gText_DaimynCityOverworld_LanasHouseSign
+Lana's Lab: Home of the Kulure PC\nExpansion Effort
+
+#org @gText_DaimynCityOverworld_GymSign
+Daimyn City Pok\emon Gym\nLeader: Chance\lThe High Roller Risk Taker!
+
+#org @gText_DaimynCityOverworld_InterdimensionalResearchLabSign
+Interdimensional Research Facility:\nExploring the frontiers of Ultra\lSpace
+
+#org @gText_DaimynCityOverworld_GuardHouseNorthSign
+North: Route 9
+
+#org @gText_DaimynCityOverworld_GuardHouseWestSign
+West: Route 8
+
+#org @gText_DaimynCityOverworld_GuardHouseEastSign
+East: Route 10
+
+#org @gText_DaimynCityOverworld_GuardHouseSouthSign
+South: Route 6
+
+#org @gText_DaimynCityOverworld_CityPlacardSign
+Daimyn City: The Hustling Metropolis
+
+#org @gText_DaimynCityOverworld_Story_RivalStartsTour
+[BLUE]I know all about this city, from\nthe stuff I've read about Champion\lSelene.\pI'll show you around a bit\non the way to the Pok\emon Center.\pAre you ready, [PLAYER]? Come on,\nit'll be fun!\pTo start, let's head to the Pok\emon\nRestaurant! It's just this way[.]
+
+#org @gText_DaimynCityOverworld_Story_RivalTour1
+[BLUE]Well, you probably already know\nthis, [PLAYER], but Daimyn City is\lthe capital city of Kulure!\pIt's in the middle of the region and\ncan be reached from most places.\pOver time, people just started\ngather here.\pAnd where people gather[.] Yup,\nthat's right!\pWith so many people here, the\nPok\emon battling scene exploded!\pStrong trainers from all over came\nhere to prove their skills.\pBefore long, a group of five trainers\nstood above the others in terms of\lbattling skills.\pThey were the first to fill the roles\nof Elite Four and Champion that we\lhave today.
+
+#org @gText_DaimynCityOverworld_Story_RivalTour2
+[BLUE]Whew, we're here! This is the world\nfamous Pok\emon Restaurant!\pIt's known for the extravagant dishes\nit prepares for Pok\emon.\pIt's said that the Pok\emon that eat\nhere perform better in battle for a\lwhile.
+
+#org @gText_DaimynCityOverworld_Story_RivalTour3
+[BLUE][.]I wonder if it's true? A buff like\nthat could give someone a serious\ledge in battle.\pMaybe I'll try it later. There's still\nso much for us to see! Haha.\pNext stop is the Interdimensional\nResearch Facility, right this way[.]
+
+#org @gText_DaimynCityOverworld_Story_RivalTour4
+[BLUE]The Interdimensional Research\nFacility was founded by some of\lKulure's brightest scientists.\pThey say they've been working\nclosely with the scientists in Alola\lto study a place called Ultra\lSpace.\pSupposedly there are some alien\ncreatures called Ultra Beasts\lthere.\pBut[.] That couldn't be true, could\nit? I mean, aliens?
+
+#org @gText_DaimynCityOverworld_Story_RivalTour5
+[BLUE]We got here quicker than expected!\pIt's quite something when seen up\nclose, isn't it?\pNext on the list is the Daimyn City\nPark. Let's go!
+
+#org @gText_DaimynCityOverworld_Story_RivalTour6
+[BLUE]You wouldn't expect a park to be in\nthe middle of a city like this,\lright?\pIt used to be really big, but shrunk\nas the city's development\lprogressed[.]\pStill, wild Pok\emon seem to really\nlike it!\pDo you think they ever have issues\nwith those wild Pok\emon?
+
+#org @gText_DaimynCityOverworld_Story_RivalTour7
+[BLUE]Hmm[.] It's even smaller than I\nexpected.\pMaybe I should stop by later to see\nwhat kinds of Pok\emon I can find?\pUmm[.] What's next[.]\pOh yeah! The Daimyn City Shopping\nMall! It's just around the corner.
+
+#org @gText_DaimynCityOverworld_Story_RivalTour8
+[BLUE]This is the biggest shopping center\nin the whole region.\pThey have shops lined up and down\nthe walls. It looks so big in the\lpictures!
+
+#org @gText_DaimynCityOverworld_Story_RivalTour9
+[BLUE]They say that you can find anything\nyou're looking for here!\pSure seems like a one-stop shop, eh?
+
+#org @gText_DaimynCityOverworld_Story_RivalTour10
+[BLACK]Selene: [RED]Hey, you two! Fancy meeting\nyou here.
+
+#org @gText_DaimynCityOverworld_Story_RivalTour11
+[BLACK][RIVAL]: [BLUE]Uuuwah!
+
+#org @gText_DaimynCityOverworld_Story_RivalTour12
+[BLACK][RIVAL]: [BLUE]C-Champion Selene, no\nway! You surprised us!\pWhat are you doing here?
+
+#org @gText_DaimynCityOverworld_Story_RivalTour13
+[BLACK]Selene: [RED]I was out for a walk and\nthought I recognized a familiar\lvoice, so I thought I'd come by.\p(Giggle) You two are louder than\nyou think.\pI can't believe you've already made\nit to Daimyn City!
+
+#org @gText_DaimynCityOverworld_Story_RivalTour14
+[BLACK][RIVAL]: [BLUE]Ehehe[.] That'd be me, guilty\nas charged.
+
+#org @gText_DaimynCityOverworld_Story_RivalTour15
+[BLACK][RIVAL]: [BLUE]I was just showing [PLAYER]\naround the city.
+
+#org @gText_DaimynCityOverworld_Story_RivalTour16
+[BLACK]Selene: [RED]Oh, a tour? Sounds like\nfun!\pDo you mind if I show you a few of\nmy favorite places around here?
+
+#org @gText_DaimynCityOverworld_Story_RivalTour17
+[BLACK][RIVAL]: [BLUE]That sounds really nice!\pOh, but we couldn't possibly ask you\nto take time out of your day.\pYou must be really busy.
+
+#org @gText_DaimynCityOverworld_Story_RivalTour18
+[BLACK]Selene: [RED]Haha, I'm sure I can spare a\nfew minutes to show you around.
+
+#org @gText_DaimynCityOverworld_Story_RivalTour19
+[BLACK][RIVAL]: [BLUE]Well, if you're sure, then I\ncouldn't possibly say no!\pPlease, lead the way!
+
+#org @gText_DaimynCityOverworld_Story_RivalTour20
+[BLACK]Selene: [RED]That's what I like to\nhear! Now, where were we[.]
+
+#org @gText_DaimynCityOverworld_Story_RivalTour21
+[BLACK]Selene: [RED]It feels like just yesterday\nthat we met outside of Anthra Town.\pYou two must've become so strong to\nreach Daimyn City so quickly.\pHeehee, I'd better be careful, or\nyou two might take my title!
+
+#org @gText_DaimynCityOverworld_Story_RivalTour22
+[BLACK]Selene: [RED]This is where Daimyn City's\nPok\emon Center is.\pIt's centrally located and easy to\naccess, no matter where you are.\pTalk about convenient!\pNext, let's head over to the gym.
+
+#org @gText_DaimynCityOverworld_Story_RivalTour23
+[BLACK]Selene: [RED]And here's the gym!\pThe gym leader, Chance, has held his\nposition since before even my\ljourney began.\pHe's a very capable trainer. But I\nsuppose you'll see for yourselves\lsoon enough, won't you?\pI've got one last place to show\nyou[.]
+
+#org @gText_DaimynCityOverworld_Story_RivalTour24
+[BLACK]Selene: [RED]I'm excited to show you both\nthis last place.\pIt's the pride of Daimyn City -\nAscension Tower!\pThe best of the best gather there to\nchallenge the Elite Four and, if\lthey're lucky, me.\pSometimes it feels like the whole\nregion tunes in to watch the\lmatches that happen here.\pEvery challenger gets so into it, it's\nreally fun to face them!
+
+#org @gText_DaimynCityOverworld_Story_RivalTour25
+[BLACK]???: [BLUE]But they never beat you, do\nthey, Selene?
+
+#org @gText_DaimynCityOverworld_Story_RivalTour26
+[BLACK]Alistair: [BLUE]I see you still battle\nwith Victini, the Victory Pok\emon[.]\pDo you really think you\ndeserve the title of Undefeated\lChampion, using an advantage like\lthat?\pActing so nonchalant about it is a\ndisservice to those that challenged\lyou.
+
+#org @gText_DaimynCityOverworld_Story_RivalTour27
+[BLACK]Selene: [RED]Ummm[.] I'm sorry, do I know\nyou? Did we battle once?
+
+#org @gText_DaimynCityOverworld_Story_RivalTour28
+[BLACK]Alistair: [BLUE]You don't even remember me.\nOf course not.\pYou're too busy being some heroic\nChampion. Why would you remember\lthe little people around you?
+
+#org @gText_DaimynCityOverworld_Story_RivalTour29
+[BLACK][RIVAL]: [BLUE]Um[.] Ali-
+
+#org @gText_DaimynCityOverworld_Story_RivalTour30
+[BLACK]Alistair: [BLUE]You won't be able to hold\nyour title forever, Selene.\pSomeday, someone stronger than you\nwill beat you and become Champion.\pWill you really be so bubbly, then?
+
+#org @gText_DaimynCityOverworld_Story_RivalTour31
+[BLACK]Selene: [RED]I'm sorry that I don't\nrecognize you.\pAnd, I'm sorry you lost to me, after\nwhat must've felt like a lifetime of\lpreparation and anticipation.\pBut please, do reflect on the\njourney you shared with your\lPok\emon.\pThey came just as far as you, and\nhave shared the same joys and\lsorrows you have.\pSpend some time with them, and maybe\nwe'll battle again someday?
+
+#org @gText_DaimynCityOverworld_Story_RivalTour32
+[BLACK]Alistair: [BLUE]A perfect answer from a\nperfect Champion[.]\pUgh. I need to clear my head.
+
+#org @gText_DaimynCityOverworld_Story_RivalTour33
+[BLACK]Selene: [RED]I'm sorry you both had to\nsee that.\pChallengers come to Ascension Tower\nall the time.\pIt's natural for some to feel\ncheated when they lose, after\lthey've come so far[.]
+
+#org @gText_DaimynCityOverworld_Story_RivalTour34
+[BLUE]Excuse me, Miss Selene?\nYou have a match starting soon.
+
+#org @gText_DaimynCityOverworld_Story_RivalTour35
+[BLACK]Selene: [RED]Oh!
+
+#org @gText_DaimynCityOverworld_Story_RivalTour36
+[BLACK]Selene: [RED]I'll be right there!
+
+#org @gText_DaimynCityOverworld_Story_RivalTour37
+[BLACK]Selene: [RED]Hey, sorry you two, I have\nto run.\pBut[.] Promise me you'll get the\nrest of the gym badges so we\lcan battle someday, okay?
+
+#org @gText_DaimynCityOverworld_Story_RivalTour38
+[BLACK][RIVAL]: [BLUE]You bet! We'll be battling\nyou before you know it!
+
+#org @gText_DaimynCityOverworld_Story_RivalTour39
+[BLACK]Selene: [RED]Haha, I'll be counting on it!\nSee you around!
+
+#org @gText_DaimynCityOverworld_Story_RivalTour40
+[BLACK]Selene: [RED]That man[.] He kind of\nreminded me of[.]\pNo, it couldn't have been.
+
+#org @gText_DaimynCityOverworld_Story_RivalTour41
+[BLACK][RIVAL]: [BLUE]Hey, [PLAYER][.]\pYou recognized that guy, right?\nThat was Alistair!
+
+#org @gText_DaimynCityOverworld_Story_RecognizedAlistair
+[BLACK][RIVAL]: [BLUE]Yeah! He's a pretty\nunforgettable guy.
+
+#org @gText_DaimynCityOverworld_Story_DidNotRecognizeAlistair
+[BLACK][RIVAL]: [BLUE]I'm sure it was him.
+
+#org @gText_DaimynCityOverworld_Story_RivalTour42
+[BLACK][RIVAL]: [BLUE]Except[.] He seemed really\nangry.\pHe seemed so calm when we met him in\nFerrox Village.
+
+#org @gText_DaimynCityOverworld_Story_RivalTour43
+[BLACK][RIVAL]: [BLUE]Hey, [PLAYER], I'm going to\ncatch up with him and see if he's\lfeeling okay.\pIn the meantime, why don't you\nchallenge the gym? Then you can\ltell me all the best strategies!\pHaha, I'm kidding, I'm kidding!\nWe'll meet up later, okay?
+
+#org @gText_DaimynCityOverworld_DaimynFactorySign
+Daimyn City Factory ahead
+
+// Facilities
+#org @gText_DaimynCityFacilities_GuardHouseWest_Guard
+Daimyn City lies just beyond this\ngate. You may pass.
+
+#org @gText_DaimynCityFacilities_GuardHouseSouth_Guard
+Welcome to Daimyn City!
+
+#org @gText_DaimynCityFacilities_GuardHouseEast_Guard
+To the west lies Daimyn City.\nTo the east lies Route 10.
+
+#org @gText_DaimynCityFacilities_GuardHouseNorth_Guard
+The passage to the north leads to\nBruccie Village.\pIf you are headed that way, take\ncare to stock up at the rest house\lalong the way; it's a long trek.
+
+#org @gText_DaimynCityFacilities_GuardHouse_RivalIntroduction
+[BLUE]Hey [PLAYER]! I finally caught up to\nyou. Wait up!
+
+#org @gText_DaimynCityFacilities_GuardHouse_RivalExplainsDaimynCity
+[BLUE]Daimyn City is just ahead, and it's\nwhere Ascension Tower is!\pPowerful trainers come from all over\nthe Kulure region to challenge\lChampion Selene there.
+
+#org @gText_DaimynCityFacilities_GuardHouse_RivalInitiatesBattle
+[BLUE]Oh, I have a great idea!\pPowerful trainers come to Daimyn\nCity, right?\pWell[.] It only makes sense that we\nbattle to show off our powerful\lPok\emon, right?\pCome on, let's battle! I won't take\nno for an answer.
+
+#org @gText_DaimynCityFacilities_GuardHouse_RivalLoses
+Aw, that's another loss for me.
+
+#org @gText_DaimynCityFacilities_GuardHouse_RivalConcludesBattle
+[BLUE]Looks like you win again, [PLAYER]!\pYou and your Pok\emon are so\nstrong!\pHey, I've got something for you[.]\pI was shopping in Heleo City and\ngot a couple freebies for being\lthe 100th shopper! Isn't that neat?\pHere you go!
+
+#org @gText_DaimynCityFacilities_GuardHouse_RivalExplainsMachoBrace
+[BLUE]They said that can make your Pok\emon\nstronger as it battles, when held.\pOh, I should heal up your[.] Huh?
+
+#org @gText_DaimynCityFacilities_GuardHouse_RivalNoItems
+[BLUE]Um[.] Oops! I don't have any items\nleft! Sorry about that.
+
+#org @gText_DaimynCityFacilities_GuardHouse_RivalOffersTourOfDaimynCity
+[BLUE]Hey, I know! We're right\noutside Daimyn City, right?\pWhy don't we walk through the city\ntogether to the Pok\emon Center?\pI know a lot about the city.\nIt'll be fun! Let's go!
+
+#org @gText_DaimynCityFacilities_RestaurantBoy
+My grandpa takes me out for lunch\nevery week. It's a nice opportunity\lto catch up and chat!
+
+#org @gText_DaimynCityFacilities_RestaurantBigMan
+Urp[.] I think I ate too much[.]\nMy stomach hurts.\pIf I can't finish my meal, they'll\nmake me pay double!\pHey, you!\pYou'll take my [GREEN]Leftovers[BLUE], won't you?
+
+#org @gText_DaimynCityFacilities_RestaurantBigMan_LeftoversDescription
+If you give your Pok\emon those\nLeftovers to hold, they'll restore\lHP every turn.\pHandy, right?
+
+#org @gText_DaimynCityFacilities_RestaurantGentleman
+You can order what ever you'd like,\nmy boy. Hohoho!
+
+#org @gText_DaimynCityFacilities_RestaurantGirl
+Hmm[.] What should I order? Everything\nlooks so good.
+
+#org @gText_DaimynCityFacilities_PokemonCenter_OldWoman
+My friends and I organize a shopping\ntrip in Daimyn City every year.\pThere are a lot of really great\nsales on right now.\pI'm just waiting for them to arrive\nbefore I head out.
+
+#org @gText_DaimynCityFacilities_PokemonCenter_Woman
+My husband just disappeared on me\nand left me with our daughter.\pHe better not have run off to the\ncasino again[.]
+
+#org @gText_DaimynCityFacilities_PokemonCenter_Girl
+My mommy and I are waiting for daddy\nto come back.\pMommy said he's going to bring us\nCastelicones! I can't wait!
+
+#org @gText_DaimynCityFacilities_IRF_PCResearcher
+Please don't distract me.\pI'm tracking peculiar energy signals\nwe've detected out in Ultra Space.
+
+#org @gText_DaimynCityFacilities_IRF_MachineryResearcher
+I'm testing the equipment to make\nsure it's working properly.\pProfessor Sakura has poured a lot of\ntime and effort into our\lUltra Space research.\pI don't want to let her down.
+
+#org @gText_DaimynCityFacilities_IRF_WanderingResearcher
+We've partnered with the Aether\nFoundation in the Alola Region.\pOur goal is to share information and\nresources to help us both further\lour research.\pWe've sent them information on how to\nstabilize a corridor connected to\lUltra Space.\pIn turn, they've lent us one of their\n"Beast Killer\" projects as a safety\lprecaution.\p[.]Oh, sorry. That might've been too\ntechnical for you.
+
+#org @gText_DaimynCityFacilities_IRF_TableBottomRightResearcher
+We've identified strange creatures\nout in Ultra Space.\pThey are like Pok\emon, but [.] not.\nTheir bodies are utterly bizarre.\pWe need to investigate them further\nto understand exactly what they\lare.\pBecause they were found in Ultra\nSpace, they have been titled\l"Ultra Beasts\" by Alolan\lresearchers.
+
+#org @gText_DaimynCityFacilities_IRF_TableTopLeftResearcher
+Professor Sakura is brilliant and\nkind, but[.] I'm worried for her.\pShe spends most of her day working\nin the lab, jumping from one\lbreakthrough to the next.\pWe're grateful for her positive can-\ndo attitude, but as her\lcolleagues, we also worry for her.
+
+#org @gText_DaimynCityFacilities_IRF_TypeNullPrompt
+The ball is labelled "Beast Killer.\"
+
+#org @gText_DaimynCityFacilities_IRF_TypeNullPlayerdenied
+[BLUE]Excuse me[.] The creature in that\nPok\e Ball is pivotal to our\lresearch.\pPlease leave it be.
+
+#org @gText_DaimynCityFacilities_IRF_SakuraPreoccupied
+Hmm[.] Maybe if I adjust these\nsettings, we might[.]
+
+#org @gText_DaimynCityFacilities_IRF_SakuraNoticesPlayer
+Oh! Excuse me!
+
+#org @gText_DaimynCityFacilities_IRF_SakuraTurnsPlayerDown
+I didn't notice you there.\pI'm busy investigating some anomalies\nin our connection to Ultra Space.\pMy apologies, but I need to focus\nnow.
+
+#org @gText_DaimynCityFacilities_IRF_UltraMachine
+The machine is spinning quickly.\pThere's something visible in the\nmachine's core.\pIt looks like an unfamiliar land[.]\nOh! It's gone.
+
+#org @gText_DaimynCityFacilities_IRF_SafetyTips
+SAFETY TIPS WHEN INVESTIGATING\nULTRA SPACE:\p1. Do not interact with anything\nobserved in Ultra Space.\p2. Ensure Beast Killer is on standby,\nin case of emergency.\p3. Always work in pairs, and take\nthorough research notes.
+
+#org @gText_DaimynCityFacilities_IRF_BeastBallsShelf
+There are many peculiar looking\nPok\e Balls lined up on the shelf.
+
+#org @gText_DaimynCityFacilities_IRF_PC
+There are very detailed research\nnotes on the PC.\pBetter leave them alone!
+
+// NPC Houses
+#org @gText_DaimynCity_NPCHouses_SuspiciousMan1
+We're just minding our own business.\pWhy don't you get lost and play with\nyour Pok\emon or something?
+
+#org @gText_DaimynCity_NPCHouses_SuspiciousMan2
+Our house is really basic. There's\nnothing interesting about it or our\llives.
+
+#org @gText_DaimynNPCHouses_TutorConfirmation
+I am well studied in Pok\emon moves.\pI can tutor your Pok\emon, say, for\n5 Pok\eChips?\pDo we have a deal?\n(Held: [BUFFER1])
+
+#org @gText_DaimynNPCHouses_ConfirmationAccepted
+Excellent. Pick a move and let's\nbegin.
+
+#org @gText_DaimynNPCHouses_Complete
+My lesson is complete. Do return if\nyou would like me to teach\lanother move.
+
+#org @gText_DaimynNPCHouses_TutoringRejected
+Understood. If you change your mind,\nI will be here.
+
+#org @gText_DaimynNPCHouses_NotEnoughPokeChips
+I need 5 Pok\eChips to cover the\nlesson. Come back when you have\lenough.
+
+#org @gText_DaimynCityNPCHouses_TutorsDaughter
+Weak moves[.] Strong moves[.]\nThere is no such thing.\pA truly gifted trainer can find a\nuse for any Pok\emon move.
+
+#org @gText_DaimynCityNPCHouses_TutorsSon
+My daddy teaches moves that no\nother move tutor can!\pYou should learn as many moves from\nhim as you can before you leave\lthe city!
+
+#org @gText_DaimynCityNPCHouses_OldTrainer_Intro
+Oh, hello there! It's been ages since\nI've been visited by a Pok\emon\lTrainer.\pMost days I spend alone, with my\ntrusty Pikachu.\pIt isn't bad company though,\nhohoho!\pIn ages long past, I wanted to be\nthe very best trainer.\pAnd, after years of hard work, I did\nit!\pBut[.] Time has passed and my battling\nskills aren't what they used to be.\pMy partner, Pikachu, still yearns for\nbattle.\pSay, would you consider taking him\nwith you? He's quite strong.
+
+#org @gText_DaimynCityNPCHouses_OldTrainer_Denied
+Very well. If you change your mind,\ndo consider coming back.\pI think Pikachu is bored of spending\nhis days cooped up indoors[.]
+
+#org @gText_DaimynCityNPCHouses_OldTrainer_Grateful
+How wonderful! I'm sure he will be\nquite ecstatic.\pWhat is your name, perchance?\p[PLAYER]? What a wonderful name.
+
+#org @gText_DaimynCityNPCHouses_OldTrainer_NoSpace
+Oh dear. I'm grateful to you,\n[PLAYER], but it seems you don't\lhave space in your party.\pCome back when you do, yes?
+
+#org @gText_DaimynCityNPCHouses_OldTrainer_PikachuGiven
+Pikachu, please go with [PLAYER], and\nshow them what a champion battler\llooks like!
+
+#org @gText_DaimynCityNPCHouses_OldTrainer_PikachuObtained
+[BLACK]Received [GREEN]Pikachu [BLACK]from the old man!
+
+#org @gText_DaimynCityNPCHouses_OldTrainer_PikachuAlreadyGifted
+[BLUE]Take good care of Pikachu, okay?\nHe's a champion battler!
+
+#org @gText_DaimynCityNPCHouses_Pikachu
+[BLUE]Chuu.
+
+#org @gText_DaimynCityNPCHouses_PikachuJoins
+Pikaaaa!
+
+#org @gText_DaimynCityNPCHouses_TraderBuddy
+My friend collects rare Pok\emon from\nall over the region.\pIt'd be worth your time to trade with\nhim and add to your own collection.
+
+#org @gText_DaimynCityNPCHouses_TraderIntro
+Hello! I am a world renowned\ntrainer who scours the world in\lsearch of rare Pok\emon.
+
+#org @gText_DaimynCityNPCHouses_TraderRejected
+That's unfortunate, but I\nunderstand.\pPlease, do return if you find\nyourself with one and change your\lmind.
+
+#org @gText_DaimynCityNPCHouses_TraderWrongPokemon
+Oh dear[.] That is not the Pok\emon I\nam looking for.
+
+#org @gText_DaimynCityNPCHouses_TraderTradeInitiated
+Great! Let's begin the trade.
+
+#org @gText_DaimynCityNPCHouses_TraderRequestMrMime
+I have a [GREEN]Mr. Mime[BLUE] in my possession\nand seek a [GREEN]Galarian Farfetch'd[BLUE].\pWould you be interested in trading\nwith me?
+
+#org @gText_DaimynCityNPCHouses_TraderRequestDratini
+I have a [GREEN]Dratini[BLUE] in my possession\nand seek a [GREEN]Bonsly[BLUE].\pWould you be interested in trading\nwith me?
+
+#org @gText_DaimynCityNPCHouses_TraderRequestCorsola
+I have a [GREEN]Galarian Corsola[BLUE] in my\npossession and seek a [GREEN]Slakoth[BLUE].\pWould you be interested in trading\nwith me?
+
+#org @gText_DaimynCityNPCHouses_TraderRequestFrillish
+I have a [GREEN]Frillish[BLUE] in my\npossession and seek a [GREEN]Magikarp[BLUE].\pWould you be interested in trading\nwith me?
+
+#org @gText_DaimynCityNPCHouses_TraderRequestEmolga
+I have an [GREEN]Emolga[BLUE] in my\npossession and seek a [GREEN]Boldore[BLUE].\pWould you be interested in trading\nwith me?
+
+#org @gText_DaimynCityNPCHouses_TraderRequestEevee
+I have an [GREEN]Eevee[BLUE] in my\npossession and seek a [GREEN]Riolu[BLUE].\pWould you be interested in trading\nwith me?
+
+#org @gText_DaimynCityNPCHouses_TraderRequestNoibat
+I have a [GREEN]Noibat[BLUE] in my\npossession and seek a [GREEN]Lillipup[BLUE].\pWould you be interested in trading\nwith me?
+
+#org @gText_DaimynCityNPCHouses_TraderRequestHatenna
+I have a [GREEN]Hatenna[BLUE] in my\npossession and seek a [GREEN]Cacnea[BLUE].\pWould you be interested in trading\nwith me?
+
+#org @gText_DaimynCityNPCHouses_TraderTradeComplete
+Thank you for trading with me.\pI will take good care of your\nPok\emon. Please also do the same.
+
+#org @gText_DaimynCityNPCHouses_LanaIntroduction
+Oh, hey! You're a trainer right?\nThat must mean you're using the PC\lsystem, right?
+
+#org @gText_DaimynCityNPCHouses_LanaIntroductionContinued
+I built the PC system in Kulure, you\nknow. The name's Lana!\pIn fact, any Pok\emon you catch get\nsent to my PC.\pHehe, don't worry! It's free of\ncharge and totally safe.\pI set the PC system up here with a\ngood buddy's help. He set up the\loriginal PC system in the Kanto\lregion.\pI improved his system and added a\nfew quality of life changes.
+
+#org @gText_DaimynCityNPCHouses_LanaRevisited
+Oh hey trainer! Good to see you\nagain.\pYou caught me in the middle of some\ntweaks I've been making to the\lsystem.
+
+#org @gText_DaimynCityNPCHouses_LanaLearnAboutPC
+Would you like to learn more about\nthe Kulure PC system?
+
+#org @gText_DaimynCityNPCHouses_LanaUsesPC
+Awe, super! That's great to hear.
+
+#org @gText_DaimynCityNPCHouses_LanaDoesNotUsePC
+Awe, that's a bummer[.] It's very\nconvenient for trainers.
+
+#org @gText_DaimynCityNPCHouses_DoNotWantToLearnAboutPC
+No sweat! Just swing on by if you\nchange your mind. The lab's always\lopen.
+
+#org @gText_DaimynCityNPCHouses_DoWantToLearnAboutPC
+Alright, that's what I like to\nhear! You'll really love these\lchanges.\pFor example, you can access up to\n25 boxes now! Handy, right?\pYou can also select multiple Pok\emon\nat once by pressing [SELECT_BUTTON].\pYou'll know it's working if the cursor\nturns yellow.\pThen, click and drag to select\nPok\emon and move them in bulk.\pYou can turn it off again by pressing\n[SELECT_BUTTON]. Easy, right?
+
+#org @gText_DaimynCityNPCHouses_PocketPCHint
+I'm working on something else that's\nreally cool, but it's too early to\lshare.\pMaybe I could be convinced, say[.] if\nyou were the champion?\pHeehee! If you manage to achieve\nthat, come back and I'll show you!
+
+#org @gText_DaimynCityNPCHouses_LanaFarewell
+Come see me again if you want to\nchat, hey?\pAnd tell your friends about my PC\nsystem!
+
+#org @gText_DaimynCityNPCHouses_LanasPCEntrance
+There are many emails sent to and\nfrom other PC System experts.
+
+#org @gText_DaimynCityNPCHouses_TransferPC
+Some windows are open with text that\nis scrolling by very quickly.
+
+#org @gText_DaimynCityNPCHouses_Poster
+It's a complex diagram of a\nprototype called "Cloud System\"
+
+#org @gText_DaimynCityNPCHouses_TransferMachine
+The machine is labelled "Cloud\nTransfer prototype - do not\ltouch!\"
+
+#org @gText_DaimynCityNPCHouses_MoveDeleterReminderSon
+My parents are experts when it comes\nto a Pok\emon's moves.\pMy father is a Move Deleter and can\nhelp your Pok\emon forget moves.\pBut[.] He hasn't seen many customers\nsince HMs could be forgotten.\pMy mother is a Move Reminder. She\ncan teach your Pok\emon any move it\lused to know.\pFor a small fee, she can teach your\nPok\emon Egg Moves.\pPlease spend time with my parents.\nIt'd mean the world to them if\lsomeone had need of their services\lagain.
+
+#org @gText_DaimynCityNPCHouses_MoveDeleterPrompt
+Oooh, uh[.] What am I doing? Oh yeah!\nI'm the Move Deleter!\pI can help your Pok\emon forget\nmoves they don't need anymore.\pWould you like to forget a move?
+
+#org @gText_DaimynCityNPCHouses_MoveDeleter_ChoosePokemon
+Which Pok\emon should forget a\nmove?
+
+#org @gText_DaimynCityNPCHouses_MoveDeleter_ChoiceIsEgg
+That's preposterous! An egg cannot\nforget a move; it hasn't learned\lany!
+
+#org @gText_DaimynCityNPCHouses_MoveDeleter_ChoiceOnlyKnowsOneMove
+Oooh! [BUFFER1] only knows one move.\nIf you forget it, you won't be able\lto battle!
+
+#org @gText_DaimynCityNPCHouses_MoveDeleter_ChooseMove
+And which move would you like to\nforget?
+
+#org @gText_DaimynCityNPCHouses_MoveDeleter_Confirmation
+Hmm hmm! You want [BUFFER1] to forget\n[BUFFER2], is that it?
+
+#org @gText_DaimynCityNPCHouses_MoveDeleter_MoveDeleted
+It worked flawlessly! [BUFFER1] has\nforgotten how to use [BUFFER2].
+
+#org @gText_DaimynCityNPCHouses_MoveDeleter_ComeToForgetMoreMoves
+Come see me again, if you want to\nforget more moves.
+
+#org @gText_DaimynCityNPCHouses_MoveReminderExplanation
+Hello, dearie. I am a Pok\emon\ntutor, but I am quite different\lfrom those you may be familiar\lwith.\pYou see, I remind them of moves\nthey used to know.\pFor 1 Pok\eChip, I can teach a move\nthey learned through leveling up.\pFor 10 Pok\eChips, I can teach an egg\nmove they could have known.
+
+#org @gText_DaimynCityNPCHouses_MoveReminderRemembersPlayer
+Hello, dearie. I remember you.
+
+#org @gText_DaimynCityNPCHouses_MoveReminderPrompt
+Shall I have one of your Pok\emon\nremember a move? (Held: [BUFFER1])
+
+#org @gText_DaimynCityNPCHouses_MoveReminderPrompt_TeachMore
+[RED]It is done.\pWould you like to remember more\nmoves? (Held: [BUFFER1])
+
+#org @gText_DaimynCityNPCHouses_MoveReminder_PastMovesChoice
+Past Moves[ALIGN][50][GREEN]1 Pok\eChip
+
+#org @gText_DaimynCityNPCHouses_MoveReminder_EggMovesChoice
+Egg Moves[ALIGN][50][GREEN]10 Pok\eChips
+
+#org @gText_DaimynCityNPCHouses_MoveReminder_CancelChoice
+Nothing for now
+
+#org @gText_DaimynCityNPCHouses_MoveReminder_NotEnoughChips
+I am sorry, but you do not have\nenough Pok\eChips to learn those\lmoves.
+
+#org @gText_DaimynCityNPCHouses_MoveReminder_ChoosePokemon
+Which Pok\emon would you like me to\nteach?
+
+#org @gText_DaimynCityNPCHouses_MoveReminder_ChoseEgg
+Oh, bless your heart, sweetie[.]\nI can't teach a move to an egg.
+
+#org @gText_DaimynCityNPCHouses_MoveReminder_ChoiceIsIneligible
+I am sorry, dearie. That Pok\emon\ncannot learn that type of move.
+
+#org @gText_DaimynCityNPCHouses_MoveReminder_WhichMovePrompt
+Which move would you like to teach?
+
+#org @gText_DaimynCityNPCHouses_MoveDeleterReminder_ChangedMind
+Come see me again, if you change\nyour mind later.
+
+#org @gText_DaimynCityNPCHouses_AlistairBeatsGrunt
+[BLACK]Alistair: [BLUE]Hmph. Child's play.
+
+#org @gText_DaimynCityNPCHouses_GruntCommentsOnAlistairsStrength
+[BLACK]Grunt: [BLUE]Guh[.] This guy's strong.\nJust who is he?
+
+#org @gText_DaimynCityNPCHouses_AlistairDemandsToEnterBase
+[BLACK]Alistair: [BLUE]Now, I won't ask again.\pShow me the entrance to your base,\nor else[.]
+
+#org @gText_DaimynCityNPCHouses_GruntRelents
+[BLACK]Grunt: [BLUE]Okay, okay! Just hold on,\nsheesh[.]
+
+#org @gText_DaimynCityNPCHouses_GruntOpensStairs
+[BLACK]Grunt: [BLUE]Just have to pull this here,\nand[.] Presto.
+
+#org @gText_DaimynCityNPCHouses_GruntInsultsAlistair
+[BLACK]Grunt: [BLUE]There, it's open.\nNot like it'll make a difference.\pThe grunts inside are way stronger\nthan me! Gyuh-huh-huh.
+
+#org @gText_DaimynCityNPCHouses_AlistairRetort
+[BLACK]Alistair: [BLUE]I'd certainly hope so[.]
+
+#org @gText_DaimynCityNPCHouses_GruntUpset
+[BLACK]Grunt: [BLUE]H-Hey!
+
+#org @gText_DaimynCityNPCHouses_AlistairNoticesPlayer
+[BLACK]Alistair: [BLUE]Ah, [PLAYER].\nImpeccable timing, as always.
+
+#org @gText_DaimynCityNPCHouses_AlistairMentionsWhyHeIsThere
+[BLACK]Alistair: [BLUE]I got an anonymous tip that\nTeam Pluto's HQ was hidden here.\pOppressing people through force[.]\nI can't stand Team Pluto.\pIt would be better for everyone if\nthey were to just disappear.\pI simply had to come running to see\nif the tip I received was accurate.\pSure enough, they were right.\p[PLAYER], I assume you're here to put\na stop to Team Pluto too, yes?
+
+#org @gText_DaimynCityNPCHouses_PlayerHereForPluto
+[BLACK]Alistair: [BLUE]Then, let's work together.\nI'll meet you inside.
+
+#org @gText_DaimynCityNPCHouses_PlayerNotHereForPluto
+[BLACK]Alistair: [BLUE]I'll accept your presence\nas a fortunate coincidence then.\pI could use your help, [PLAYER].\nMeet me inside, when you are\lready.
+
+#org @gText_DaimynCity_NPCHouses_SuspiciousMan1_AfterAlistair
+Tch. Just who was that guy,\nanyways?\pHe made me and my Pok\emon look like\ntotal idiots.
+
+#org @gText_DaimynCity_NPCHouses_SuspiciousMan2_AfterAlistair
+It doesn't matter if we let you\nthrough.\pThe grunts in the base will make\nshort work of you.
+
+#org @gText_DaimynCity_NPCHouses_PlutoHousePlant
+It's a normal looking plant.
+
+#org @gText_DaimynCity_NPCHouses_PlutoHousePlant_AfterAlistair
+Oh! This plant is placed over a\nsecret switch.
+
+// Gym
+#org @gText_DaimynCityGym_Cutscene_ChanceLaughs
+[BLUE]Wahaha! Those are big winnings,\nbaby!
+
+#org @gText_DaimynCityGym_Cutscene_ChanceSpotsPlayer
+[BLUE]Oh. What do I spy but a fresh\nface? Hello there!
+
+#org @gText_DaimynCityGym_Cutscene_ChanceAddressesMalePlayer
+[BLUE]Tell me, laddie[.]
+
+#org @gText_DaimynCityGym_Cutscene_ChanceAddressesFemalePlayer
+[BLUE]Tell me, lassie[.]
+
+#org @gText_DaimynCityGym_Cutscene_ChanceAsksPlayersIntention
+[BLUE]Are you here to challenge the gym\nleader, or play the slots?
+
+#org @gText_DaimynCityGym_Cutscene_ChoiceGym
+The gym
+
+#org @gText_DaimynCityGym_Cutscene_ChoiceSlots
+The slots
+
+#org @gText_DaimynCityGym_Cutscene_ChoiceNeither
+Neither
+
+#org @gText_DaimynCityGym_Cutscene_PlayerChoseGym
+[BLUE]Wahahaha! A challenger, are ye?\nExcellent! I'm sure Chance will be\lpleased.
+
+#org @gText_DaimynCityGym_Cutscene_PlayerChoseSlots
+[BLUE]Wahahaha! Well, you certainly won't\nbe left wanting, in a place like\lthis!
+
+#org @gText_DaimynCityGym_Cutscene_PlayerChoseNeither
+[BLUE]Wahahaha! Keeping your cards close\nto your chest, eh? I respect that!
+
+#org @gText_DaimynCityGym_Cutscene_ChanceLeadsPlayerToDeskMan
+[BLUE]Well, no matter your reason for\ncoming here, you'll need a Coin\lCase.\pCome with me. I'm friends with the\nowner and can hook you up!
+
+#org @gText_DaimynCityGym_Cutscene_ChanceAsksForCoins
+[BLUE]Hey, my good man! My new friend\nhere would like to spend some time\lat this fine establishment.\pCan you get them set up with a Coin\nCase?
+
+#org @gText_DaimynCityGym_Cutscene_DeskManResponds
+[BLUE]Why, of course, good sir.\pHere, please accept this Coin Case.\nIt will hold the coins you can use\lat this establishment.
+
+#org @gText_DaimynCityGym_Cutscene_ChanceRespondsToDeskMan
+[BLUE]Yer a real champ, mate.
+
+#org @gText_DaimynCityGym_Cutscene_ChanceExplainsTheGymRules
+[BLUE]If yer here to play the slots, then\nyou have everything you need.\pIf yer here for Gym Leader Chance's\nbadge, though, there are some\lrules you'd best keep in mind[.]\pChance only challenges those that\ncan prove they're saavy gamblers\land can amass a small fortune.\pHow do you do that? Well, there are\n3 ways[.]\p1. Make Your Own Luck - This means\nbuying them from my pal here with\lyour hard earned cash.\p2. Getting Lucky - With a little\nluck, you can win more coins from\lthe slots here. Rumor has it some\lmachines are luckier than others.\p3. Playing the Field - It may not\nlook it, but most people here are\lgym trainers. If you beat them in\lbattle, they'll give you some\lcoins.
+
+#org @gText_DaimynCityGym_Cutscene_ChanceTakesHisLeave
+[BLUE]My, my, look at the time! I gotta\njet. T'was a pleasure, my friend.\pI'm sure we'll see each other around\nreal soon.
+
+#org @gText_DaimynCityGym_Cutscene_DeskManGives500Coins
+[BLUE]Ahem[.] My friend did not explain a\nfew things. Please allow me.\pAt this establishment, fun is\nforemost.\pAs a result, we give all new members\n500 coins, on the house.
+
+#org @gText_DaimynCityGym_Cutscene_DeskManCoinsHandedOver
+[BLUE]Here, you may store these in your\nCoin Case.
+
+#org @gText_DaimynCityGym_Cutscene_DeskManExplainsCoins
+[BLUE]Furthermore, you may be wondering\nhow coins work at this\lestablishment. Allow me to\lelaborate.\pCoins may be purchased from me for\n\$10 each.\pIf you have run out completely and\ncannot afford more, I will give you\l10, on the house.
+
+#org @gText_DaimynCityGym_Cutscene_DeskManExplainsPrizes
+[BLUE]To your left, you will find our prize\ncorner. You may exchange your\lcoins there for exciting prizes.\pThese prizes include rare Pok\emon,\nas well as hard to find items.
+
+#org @gText_DaimynCityGym_Cutscene_DeskManExplainsPrizesAreLockedByGymLeader
+[BLUE]As with all things in life, there is a\ncatch.\pYou cannot purchase prizes until you\nhave overcome this gym's leader in\lbattle.\pI trust this will incentivize you to\nprove your prowess in battle, yes?
+
+#org @gText_DaimynCityGym_Cutscene_DeskManExplainsCoinMachine
+[BLUE]To challenge the gym leader, you\nwill need to deposit 2,000 coins\linto the machine beside the\lbarrier. Only then will it lower.
+
+#org @gText_DaimynCityGym_Cutscene_DeskManConcludesExplaination
+[BLUE]Now then, I have talked long\nenough.\pPlease, enjoy our fine establishment\nto the fullest!
+
+#org @gText_DaimynCityGym_CoinSeller_Welcome
+Welcome to the Daimyn City Game\nCorner! I sell coins for \$10 each.
+
+#org @gText_DaimynCityGym_CoinSeller_CoinCaseFull
+My apologies, but your Coin Case is\nfull. You can't hold any more!
+
+#org @gText_DaimynCityGym_CoinSeller_BuyCoinsPrompt
+Would you like to buy some?
+
+#org @gText_DaimynCityGym_CoinSeller_CoinCountPrompt
+Very good. How many would you like\nto buy?
+
+#org @gText_DaimynCityGym_CoinSeller_ChoseTooManyCoins
+Oh dear[.] Your Coin Case can't hold\nthat many coins.\pIt can hold [BUFFER1] more. Would you\nlike to buy that many?
+
+#org @gText_DaimynCityGym_CoinSeller_CoinPurchaseConfirmation
+[BUFFER1] coins will cost \$[BUFFER2]. Is\nthat okay?
+
+#org @gText_DaimynCityGym_CoinSeller_NotEnoughMoney
+You don't have enough money[.]
+
+#org @gText_DaimynCityGym_CoinSeller_NoMoney
+What's that? You don't have enough\nmoney to buy any coins?\pHere, I'll give you 10 on the house.
+
+#org @gText_DaimynCityGym_CoinSeller_PurchaseComplete
+Excellent! Thank you for your\npatronage.
+
+#org @gText_DaimynCityGym_CoinSeller_Farewell
+We hope you enjoy your time at the\nDaimyn City Game Corner.
+
+#org @gText_DaimynCityGym_ExpertTips
+Yo, superstar! Good to see you in\nthe capital city.\pThis place doubles as both a gym\nand a game corner. Isn't that\lsomething?\pThe leader, Chance, likes to play\nthe field, both in games of chance\land in Pok\emon battles.\pHe'll use moves that keep his\nmomentum flowing.\pAs a result, you'll often find he\ngives himself the upper hand with\lan advantageous switch up during\lbattle.\pAll that to say, battle smartly and\nprepare to suddenly be put on the\lback foot and you'll be A-okay.\pYou got this, superstar.
+
+#org @gText_DaimynCityGym_ExpertBadgeObtained
+Superstar! I knew you could pull\nthrough.\pAll of Chance's tricks were no match\nfor you, were they?\pCongratulations on your victory.
+
+#org @gText_DaimynCityGym_GenericTrader
+Welcome to the Game Corner Exchange\nCounter.
+
+#org @gText_DaimynCityGym_GenericTrader_DoNotHaveBadge
+Oh! I'm sorry. You must have this\ngym's badge before you can\lexchange at this counter.\pPlease return after receiving the\nRoundabout Badge.
+
+#org @gText_DaimynCityGym_GenericTrader_OpenShopPrompt
+What can I get for you?
+
+#org @gText_DaimynCityGym_GenericTrader_Confirmation
+You want [BUFFER1]? That will cost\nyou [BUFFER2] coins.
+
+#org @gText_DaimynCityGym_GenericTrader_NotEnoughCoins
+You don't have enough coins for that\nprize.
+
+#org @gText_DaimynCityGym_GenericTrader_PurchaseComplete
+One [BUFFER1], coming right up!
+
+#org @gText_DaimynCityGym_GenericTrader_ShopClosed
+Come back and exchange more coins\nfor more fabulous prizes!
+
+#org @gText_DaimynCityGym_GenericTrader_Declined
+I hope you have a pleasant day.
+
+#org @gText_DaimynCityGym_PokemonTrader
+At this counter, I can exchange your\ncoins for rare Pok\emon.
+
+#org @gText_DaimynCityGym_PokemonTrader_ReceivedPokemon
+[BLACK]Received [BUFFER1]![BLUE]
+
+#org @gText_DaimynCityGym_PokemonTrader_AddedToParty
+I've added [BUFFER1] to your party.
+
+#org @gText_DaimynCityGym_PokemonTrader_AddedToBox
+Your party is full, so I've sent\n[BUFFER1] to your box.
+
+#org @gText_DaimynCityGym_ItemTrader
+At this counter, I can exchange your\ncoins for rare items.
+
+#org @gText_DaimynCityGym_TrainerCoinPayout
+For defeating me, I'll give you\n[BUFFER1] coins.
+
+#org @gText_DaimynCityGym_TrainerCoinsGiven
+Good luck, trainer!
+
+#org @gText_DaimynCityGym_YoungsterJacob_Intro
+Hehehe[.] This strategy'll knock you\nflat!
+
+#org @gText_DaimynCityGym_YoungsterJacob_Defeat
+Wha-? I executed my strategy\nflawlessly!
+
+#org @gText_DaimynCityGym_YoungsterJacob_Chat
+That strategy doesn't always work,\nbut when it does, it's so much fun!
+
+#org @gText_DaimynCityGym_PokefanKanesha_Intro
+Don't underestimate my Pok\emon[.]\nIt looks weak but can become quite\lstrong!
+
+#org @gText_DaimynCityGym_PokefanKanesha_Defeat
+Well, what'd you think?
+
+#org @gText_DaimynCityGym_PokefanKanesha_Chat
+Power Trick can make Shuckle really\npowerful! But[.] As a result, it's\ldefense gets much worse.\pIt requires some careful planning to\nmake the most of.
+
+#org @gText_DaimynCityGym_BeautyEmilie_Intro
+Tee hee! Careful; looks can be\ndeceiving!
+
+#org @gText_DaimynCityGym_BeautyEmilie_Defeat
+Were you fooled?
+
+#org @gText_DaimynCityGym_BeautyEmilie_Chat
+The Illusion ability can be used to\ntrick your opponent into making\ldecisions off of incorrect info.
+
+#org @gText_DaimynCityGym_BeautyLeanne_Intro
+My team is like a box of chocolates:\nYou'll never know what you'll get!
+
+#org @gText_DaimynCityGym_BeautyLeanne_Defeat
+Ahahaha, I couldn't have predicted\nthat!
+
+#org @gText_DaimynCityGym_BeautyLeanne_Chat
+Metronome is so unpredictable. You\ncould get very lucky, or very\lunlucky.\pNot knowing is half the fun though!
+
+#org @gText_DaimynCityGym_ChannelerRosita_Intro
+My Pok\emon can turn the tides of\nbattle in an instant. Watch out!
+
+#org @gText_DaimynCityGym_ChannelerRosita_Defeat
+We couldn't shift the tide after all[.]
+
+#org @gText_DaimynCityGym_ChannelerRosita_Chat
+Some powerful Pok\emon are slow, but\nTrick Room can turn that around.
+
+#org @gText_DaimynCityGym_GamblerChuck_Intro
+My team takes their own strengths and\nmakes them even greater. Can you\lhandle it?
+
+#org @gText_DaimynCityGym_GamblerChuck_Defeat
+Perhaps your team had it's own\nstrengths, too.
+
+#org @gText_DaimynCityGym_GamblerChuck_Chat
+Some moves are strengthened based\non the stat difference between\lopponents.\pMy team takes advantage of a high\nspeed stat and elevates it to make\lcertain moves even stronger!
+
+#org @gText_DaimynCityGym_BurglarDexter_Intro
+Ehehehe! Now that our eyes have\nmet, you'll be trapped in a battle\lagainst me. Got you!
+
+#org @gText_DaimynCityGym_BurglarDexter_Defeat
+Wh-? How did you wriggle free?
+
+#org @gText_DaimynCityGym_BurglarDexter_Chat
+Certain moves and abilities can trap\nyour opponent.\pWhen used right, it can set you up\nfor a very easy victory.
+
+#org @gText_DaimynCityGym_NPCWoman
+If I win big, I'm going to put all my\nearnings into a big vacation.\pI guess you could say I'm investing\nin hope.
+
+#org @gText_DaimynCityGym_NPCPsychic
+Hmmm[.] Yes! I predict this is the\nluckiest slot in the building.
+
+#org @gText_DaimynCityGym_NPCPsychicFollowUp
+Hey, it's rude to eavesdrop.\pJust for that, you can't have this\nmachine.
+
+#org @gText_DaimynCityGym_NPCOldMan
+Agh[.] Lost again[.]\pI guess it just goes to show, you\nlose more than you win.\pIn life and the slots[.] Sigh[.]
+
+#org @gText_DaimynCityGym_NPCRocker
+Rock on! All 7's! I'm on a roll.
+
+#org @gText_DaimynCityGym_NPCBlackBelt
+I pulled the lever too hard and now\nit squeaks.\pAhaha! Please don't tell the owner\nabout this.
+
+#org @gText_DaimynCityGym_NPCGentleman
+My granddaughter has wanted a\nDratini for ages.\pBy golly, I'm going to win enough\ncoins to get it for her!
+
+#org @gText_DaimynCityGym_AmuletCoinGuy
+Ugh[.] I lost my Amulet Coin around\nhere somewhere.\pI think I last had it somewhere\naround the prize counter.\pI was going to give it to my Pok\emon\nto hold and strike it rich, too.
+
+#org @gText_DaimynCityGym_Winners
+Daimyn City Gym\nVictors: Casey
+
+#org @gText_DaimynCityGym_WinnersWithBadge
+Daimyn City Gym\nVictors: Casey, [PLAYER]
+
+#org @gText_DaimynCityGym_WinnersWithBadgeAndRival
+Daimyn City Gym\nVictors: Casey, [PLAYER], [RIVAL]
+
+#org @gText_DaimynCityGym_SlotMachinePrompt
+It's a slot machine! Want to play?
+
+#org @gText_DaimynCityGym_SlotMachineDeclined
+Maybe later.
+
+#org @gText_DaimynCityGym_CoinDepositBox_DebtPaid
+Bzzt! The barrier's toll has been\npaid, and you may freely pass.
+
+#org @gText_DaimynCityGym_CoinDepositBox_DebtRemainingAndPrompt
+Bzzt! You must pay the toll in order\nto access the gym leader.\pYour account has a balance of\n[BUFFER1] coins remaining.\pHow many coins would you like to\ndeposit?
+
+#org @gText_DaimynCityGym_CoinDepositBox_NotEnougCoins
+Bzzt! You do not have that many\ncoins.
+
+#org @gText_DaimynCityGym_CoinDepositBox_TooManyCoins
+Bzzt! That is too many coins.\nReceiving just the required\l[BUFFER1] coins[.]
+
+#org @gText_DaimynCityGym_CoinDepositBox_Processing
+Bzzt! Processing[.]
+
+#org @gText_DaimynCityGym_CoinDepositBox_DebtRemaining
+Bzzt! Your remaining balance is\n[BUFFER1] coins.
+
+#org @gText_DaimynCityGym_CoinDepositBox_DebtFullyPaidOff
+Bzzt! You have fully paid the toll.\nThe way to the gym leader is open.
+
+#org @gText_DaimynCityGym_LeaderChance_Talk
+[BLUE]Wahaha! I just knew we'd see each\nother again before long.\pThat's right! I am this gym's leader.\nThe name's Chance.\pForgive me for not introducing\nmyself earlier.\pA gambling man never reveals his full\nhand, you see.\pI knew from the moment I laid eyes\non you that you had what it took\lto complete my challenge.\pBut you didn't come all this way just\nfor me to talk your ear off, yeah?\pYou're here for the badge, and to\nearn it, you'll need to beat me in\lbattle.
+
+#org @gText_DaimynCityGym_LeaderChance_Intro
+[BLUE]Alright, let's see if you're the real\ndeal, or just bluffing[.] Game on!
+
+#org @gText_DaimynCityGym_LeaderChance_Defeat
+That's the game! A real gambler\nknows when to fold with dignity.
+
+#org @gText_DaimynCityGym_LeaderChance_BadgeAwarded
+[BLUE]You're the real deal, kiddo. You've\nearned this fair and square.\pTake it; the Roundabout Badge.
+
+#org @gText_DaimynCityGym_BadgeReceived
+[PLAYER] received the Roundabout\nBadge!
+
+#org @gText_DaimynCityGym_LeaderChance_BadgeDescription
+[BLUE]That badge is proof of your skills.\pIt will also allow you to use the\nmove Fly outside of battle.
+
+#org @gText_DaimynCityGym_LeaderChance_TMReceived
+[BLUE]Please take these TMs as well.\pI'm sure you'll be able to use them\nto keep your opponents on their\ltoes.
+
+#org @gText_DaimynCityGym_TMReceived
+[PLAYER] received TM72, TM89, and\nTM94 from Chance!
+
+#org @gText_DaimynCityGym_LeaderChance_CoinsReturned
+[BLUE]Now, I ain't a stickler. You earned\nyour coins fair and square.\pHere, you may have the 2,000 coins\nyou invested into my gym challenge.
+
+#org @gText_DaimynCityGym_LeaderChance_Chat
+[BLUE]You're planning to go all the way to\nthe top, aren'tcha?\pI'll be keeping my eye on you, kid.
+
+// Mall
+#org @gText_DaimynCityMall_LuckyDrawIntro
+Welcome to the Pok\emon Lottery, or\nPok\eLotto for short!\pEvery day, we draw a random\nPok\emon.\pIf you've seen that Pok\emon, you win\na Pearl! If you've caught it, you\lwin a Big Pearl!\pSounds fun, doesn't it? There's\nno entry fee, either.\pWould you like to play?
+
+#org @gText_DaimynCityMall_LuckyDrawStarting
+Great! Let's draw the lucky Pok\emon[.]
+
+#org @gText_DaimynCityMall_LuckyDrawPokemonChosen
+Today's lucky Pok\emon is [BUFFER1].\nPlease let me see your Pok\edex.
+
+#org @gText_DaimynCityMall_LuckyDrawChoseNo
+But[.] It's free. No problem! If you\nchange your mind, just come see\lme!
+
+#org @gText_DaimynCityMall_LuckyDrawLost
+I'm sorry, you have not caught or\nseen a [BUFFER1]. You didn't win.
+
+#org @gText_DaimynCityMall_LuckyDrawWinSeen
+You have seen a [BUFFER1]. That earns\nyou our second place prize.
+
+#org @gText_DaimynCityMall_LuckyDrawWinCaught
+You have caught a [BUFFER1]! You've\nearned our first place prize!
+
+#org @gText_DaimynCityMall_LuckyDrawComeAgainTomorrow
+Thank you for playing, please come\nagain tomorrow.
+
+#org @gText_DaimynCityMall_Greeter
+Welcome to the Daimyn City Mall!\nShop to your heart's content!\pPlease see the store directory\nbeside me if you'd like assistance.\pWe hope you enjoy your time with us!
+
+#org @gText_DaimynCityMall_HerbSeller
+[BLACK]Ehehehe[.] My herbs heal your Pok\emon\ngreatly[.] If they can handle them!
+
+#org @gText_DaimynCityMall_DealOfTheDayOffer
+Hello! I sell other stores'\noverstock for a reduced price.
+
+#org @gText_DaimynCityMall_DealOfTheDayPurchasing
+Thank you! Here you go!
+
+#org @gText_DaimynCityMall_DealOfTheDayBought
+Thanks! Come back tomorrow for more\nhot deals. And tell your friends!
+
+#org @gText_DaimynCityMall_DealOfTheDayAlreadyBought
+Sorry, friend. I've sold out for the\nday. Come back tomorrow, m'kay?
+
+#org @gText_DaimynCityMall_DealOfTheDayChoseNo
+Alright, I'll be here if you change\nyour mind.\pJust remember, the deal expires at\nthe end of the day!
+
+#org @gText_DaimynCityMall_DealOfTheDayNotEnoughMoney
+Sorry, but you don't have enough\nmoney! Come back when you do.\pJust remember to do it before the\ndeal expires at the end of the\lday!
+
+#org @gText_DaimynCityMall_DealPremierBalls
+Today's deal is [GREEN]5 Premier Balls for\n\$500[BLUE]. Are you interested?
+
+#org @gText_DaimynCityMall_DealSuperPotions
+Today's deal is [GREEN]3 Super Potions for\n\$1500[BLUE]. Are you interested?
+
+#org @gText_DaimynCityMall_DealBerries
+Today's deal is [GREEN]a berry pack for\n\$1000[BLUE]. Are you interested?
+
+#org @gText_DaimynCityMall_DealSeeds
+Today's deal is [GREEN]a seed pack for\n\$800[BLUE]. Are you interested?
+
+#org @gText_DaimynCityMall_DealUltraBalls
+Today's deal is [GREEN]3 Ultra Balls for\n\$3000[BLUE]. Are you interested?
+
+#org @gText_DaimynCityMall_DealHyperPotions
+Today's deal is [GREEN]2 Hyper Potions for\n\$2500[BLUE]. Are you interested?
+
+#org @gText_DaimynCityMall_DealStatusHealers
+Today's deal is [GREEN]status healers for\n\$1200[BLUE]. Are you interested?
+
+#org @gText_DaimynCityMall_DealXItems
+Today's deal is [GREEN]a pack of X Items\nfor \$2000[BLUE]. Are you interested?
+
+#org @gText_DaimynCityMall_DealHerbs
+Today's deal is [GREEN]a pack of herbs\nfor \$1500[BLUE]. Are you interested?
+
+#org @gText_DaimynCityMall_DealGreatBalls
+Today's deal is [GREEN]4 great balls\nfor \$1250[BLUE]. Are you interested?
+
+#org @gText_DaimynCityMall_DealGems
+Today's deal is [GREEN]a pack of gems\nfor \$5000[BLUE]. Are you interested?
+
+#org @gText_DaimynCityMall_DealEvolutionaryStones
+Today's deal is [GREEN]a pack of evolution\nstones for \$6000[BLUE]. Are you\linterested?
+
+#org @gText_DaimynCityMall_MagazineSeller
+Hello! I sell magazines. Can I\ninterest you in one? No?
+
+#org @gText_DaimynCityMall_PokeballSeller
+[BLACK]Rare Pok\e Balls! Come get your Rare\nPok\e Balls here!
+
+#org @gText_DaimynCityMall_XItemsSeller
+[BLACK]I sell items that will give your\nPok\emon a serious edge. Buy some!
+
+#org @gText_DaimynCityMall_GarageSaleMan
+The mall rents out stalls to people\nfor a small fee.\pIt's great for people like me, who're\nhoping to sell some of their\lold things.\pSay[.] You wouldn't be in the market\nfor some old tech, would you?\pNo? Okay then.
+
+#org @gText_DaimynCityMall_TMSeller
+[BLACK]Want to teach your Pok\emon new\nmoves? Then you need my TMs!
+
+#org @gText_DaimynCityMall_SeedSeller
+[BLACK]I've got Terrain Seeds, straight from\nHeleo Ranch! You'll love 'em!
+
+#org @gText_DaimynCityMall_EVReducingBerriesSeller
+[BLACK]My berries lower your Pok\emon's EVs,\nbut make them friendly! Want some?
+
+#org @gText_DaimynCityMall_VitaminsSeller
+[BLACK]Your Pok\emon are looking weak[.] Buff\nthem up!
+
+#org @gText_DaimynCityMall_GemsSeller
+[BLACK]I sell rare gems that will strengthen\nyour Pok\emon's moves. Interested?
+
+#org @gText_DaimynCityMall_TypeBoostingItemsSeller
+[BLACK]Could I interest you in trinkets that\nboost your Pok\emon's typed moves?
+
+#org @gText_DaimynCityMall_RareCollectiblesMan
+I'm selling rare trinkets and\nbaubles you can't find elsewhere.\pI don't think you'll have enough\nmoney for them. Ehehehe.\pWindow shopping is free, I guess.
+
+#org @gText_DaimynCityMall_FishSeller_Question
+Hey, trainer! I'm selling a rare and\npowerful fish Pok\emon.\pYou want it, yes? \$2,000, only for\nyou!
+
+#org @gText_DaimynCityMall_FishSeller_SaidNo
+Feh, your loss! It'll go to some\nother kid and you'll miss out.
+
+#org @gText_DaimynCityMall_FishSeller_NotEnoughMoney
+Hey, what gives? You don't have\nenough cash! Come back when you\ldo.
+
+#org @gText_DaimynCityMall_FishSeller_NoRoomInParty
+Wise kid! [.] But you don't have any\nroom. Come back when you do.
+
+#org @gText_DaimynCityMall_FishSeller_BoughtCarvanhaFanfare
+[BLACK]Bought a Carvanha!
+
+#org @gText_DaimynCityMall_FishSeller_BoughtCarvanha
+[BLUE]Wise kid! I'm sure the two of you\nwill have a great time or whatever.
+
+#org @gText_DaimynCityMall_FishSeller_CarvanhaAlreadyBought
+How's that fish treating you? Good?\nYeah, great[.]
+
+#org @gText_DaimynCityMall_IncenseSeller
+[BLACK](Sniff) Do you smell that? My\nincenses are so wonderful.
+
+#org @gText_DaimynCityMall_TypeWeaknessBerriesSeller
+[BLACK]Want to dull the sting of super\neffective moves? Then I'm your gal!
+
+#org @gText_DaimynCityMall_Fisherman
+I heard someone was selling a rare\nfish Pok\emon around here, but I\lcan't find him.
+
+#org @gText_DaimynCityMall_OldLady
+There's nothing like a little bit of\nshopping to soothe the soul.
+
+#org @gText_DaimynCityMall_LostPearlsWoman
+I lost my Pearl around here\nsomewhere[.]\pIf I just retrace my steps, I'll find\nit eventually.
+
+#org @gText_DaimynCityMall_UndecidedGirl
+Hmm[.] Should I buy one of those, or\none of those?\pOooh! I just can't decide! Maybe I\nshould just get both.
+
+#org @gText_DaimynCityMall_Camper
+I'm stocking up before I go out\ncamping. You should do the same!
+
+#org @gText_DaimynCityMall_Blackbelt
+They sell a lot of great things here\nthat make your Pok\emon stronger.
+
+#org @gText_DaimynCityMall_BugCatcher
+I keep getting poisoned when I find\nBug type Pok\emon.\pMaybe I should buy some Antidotes.
+
+#org @gText_DaimynCityMall_DateBoy
+Wh-what should I say to her? I\ndidn't even think she'd say yes to\lcoming on this date!
+
+#org @gText_DaimynCityMall_DateGirl
+This cool guy asked me out on a\ndate at the mall! We're having so\lmuch fun!
+
+#org @gText_DaimynCityMall_TiredOldMan
+I'm so tired[.] Why does this mall\nhave to be so big?
+
+#org @gText_DaimynCityMall_WaitingGirl
+I'm waiting for my friends to get\nhere so we can go shopping!
+
+#org @gText_DaimynCityMall_EvolutionStonesSeller
+[BLACK]I offer rare stones excavated from\nMount Carnelidge. Want to see?
+
+#org @gText_DaimynCityMall_HeldItemSeller
+[BLACK]My items help your Pok\emon in\nbattle. You'll need these to win!
+
+#org @gText_DaimynCityMall_Rocker
+Whoa, no way! They're having a big\nsale today! Rock on!!
+
+#org @gText_DaimynCityMall_TallTV
+It's a big square TV like the one\nGrandpa has! It looks heavy.
+
+#org @gText_DaimynCityMall_RetroGame
+It's a retro game console with all\nthe classic games. Looks fun!
+
+#org @gText_DaimynCityMall_CampingTV
+It's a portable TV meant for camping.\nDad might like this[.]
+
+#org @gText_DaimynCityMall_PhonePrompt
+It's a phone!\p[.]\pIt's been a while[.] Call mom?
+
+#org @gText_DaimynCityMall_ChoseToCallMom
+Yeah, let's call mom[.]
+
+#org @gText_DaimynCityMall_Mom
+[RED]Hello?\pOh, [PLAYER], is that you?\nIt's so nice to hear from you!\pHow has your journey been? Are you\nand [RIVAL] doing well?\pYou're in Daimyn City? Wow! That's so\nfar from home!\pYou and your Pok\emon must've\ntravelled so far together.\pYou're travelling with [BUFFER1] right\nnow? How wonderful!\pYou'll have to tell me all about\nyour journey and the things you've\lseen when you get home.\pIt sounds like you're having so much\nfun! I'm so happy for you,\l[PLAYER].\pDo your best out there, okay\n[PLAYER]?\pAnd please remember, you can come\nhome any time you need to.\pAlright, [PLAYER], I'll let you get\nback to it. I'll be rooting for you!\pBye bye, sweetie!
+
+#org @gText_DaimynCityMall_PlayerFeelsBetter
+Mom's rooting for me! Time to get out\nthere and make her proud.
+
+#org @gText_DaimynCityMall_ChoseNotToCallMom
+Maybe later.
+
+#org @gText_DaimynCityMall_ChancePoster
+Challenge Chance, the High Roller,\nat Daimyn City gym today!
+
+#org @gText_DaimynCityMall_StoreDirectory
+Store directory:\pHealing Consumables: SW Corner\nTMs: NW Corner\lBerries: N Hall\lStat Boosters: NE Corner\lDeal of the Day: SE Corner\lEvolution Stones: S Hall
+
+// Ascension Tower
+#org @gText_AscensionTower_EliteFourAttendant_Introduction
+Welcome to Ascension Tower! I accept\nregistrations for the Elite Four\lchallenge.\pWould you like to take the Elite\nFour challenge?
+
+#org @gText_AscensionTower_EliteFourAttendant_NoChampionsFlag
+Please present your Champion's Flag\nand I'll get you registered[.]\pOh! You don't have one. Please\nreturn when you have one.\pOne is conferred upon you by a\nmember of the Elite Four after\lsuccessfully reaching the end of\lVictory Road.
+
+#org @gText_AscensionTower_EliteFourAttendant_ChallengeInfo
+Trainers who have obtained a\nChampion's Flag may challenge the\lElite Four Challenge.\pApplicants must battle four of the\nKulure region's best trainers in a\lback-to-back gauntlet.\pIf successful, they will obtain the\nright to challenge the Champion for\ltheir title!
+
+#org @gText_AscensionTower_BattleTowerAttendant_Introduction
+Welcome to Ascension Tower! I accept\nregistrations for the Battle Tower\lchallenge.\pWould you like to take the Battle\nTower challenge?
+
+#org @gText_AscensionTower_EliteFourAttendant_BattleTowerInfo
+Trainers who have become Gym\nLeaders, Elite Four members, or\lthe Champion are eligible to\lpartake in the Battle Tower\lchallenge.\pThese trainers may choose 3 Pok\emon\nwith which they will battle as many\ltrainers as possible.\pUpon losing, they will be awarded\nbattle points (BP) based on their\lperformance.\pBP can be traded for exciting prizes\nthat can't be found elsewhere.
+
+#org @gText_AscensionTower_BattleTowerAttendant_NotChampion
+Oh, my apologies. You must be a Gym\nLeader, Elite Four member, or the\lChampion to partake in this\lchallenge.\pPlease see me again if you attain\nany of these titles.
+
+#org @gText_AscensionTower_AttendantChoseNo
+Understood. Please speak to me again\nif you change your mind.
+
+#org @gText_AscensionTower_KarateMan
+Wrrrrooooaaaggghhh!\pI almost beat Liam this time. I'll\ntrain up and wipe that smug grin\loff his face, just you wait and\lsee.
+
+#org @gText_AscensionTower_Girl
+I like coming here to watch the\nElite Four challengers battle!\pEveryone gives it their all, and it\nleads to really exciting battles.
+
+#org @gText_AscensionTower_BigMan
+My son dreams of becoming the\nChampion. It's all he talks about.\pI thought I'd come here to see what\nit's all about.\pThis Champion is seriously strong! I'd\nbetter help him train so he can do\lhis best.
+
+#org @gText_AscensionTower_RecordsSign
+It's a board showing the records\nof all the trainers who've\lchallenged the Elite Four and\lBattle Tower.\pMaybe someday I'll be on here!
+
+// Restaurant
+#org @gText_Restaurant_FirstVisit
+Ah, 'ello! Welcome to my\nrestaurant!\pI see you are a new customer! What\nis your name?\p[PLAYER]?\pWelcome, Master [PLAYER]! Please,\nindulge me a moment while I\lexplain ze services I provide.
+
+#org @gText_Restaurant_Explaination
+Zis is ze Pok\emon Restaurant, with\ndishes tailored to a Pok\emon's\lunique palate.\lI am ze head chef, Francois.\pZe dishes served 'ere help bring\nout a Pok\emon's true potential,\lhelping zem perform better in\lbattle for a short time.\pBut, it is not a one way\nrelationship, non. We can benefit\lfrom you, too!\pIf you were to donate some Pok\eChips\nto us, we could put zem into our\ldishes to make zem even more\limpactful. Pow!\pAlso, we will be able to buy fresher\ningredients, using ze money you\lspend here.\pC'est magnifique, non? I am sure you\nwill find zis most agreeable.
+
+#org @gText_Restaurant_Intro
+Master [PLAYER], what can I get for\nyou?
+
+#org @gText_Restaurant_OptionOrder
+Order a Meal
+
+#org @gText_Restaurant_OptionProgress
+Progress
+
+#org @gText_Restaurant_OptionDonate
+Donate Pok\eChips
+
+#org @gText_Restaurant_OptionExplaination
+What is this?
+
+#org @gText_Restaurant_OptionEnd
+Nothing
+
+#org @gText_Restaurant_End
+Very well. We hope to see you again\nsoon, Master [PLAYER].
+
+#org @gText_Restaurant_MenuPresented
+What would you like to order, Master\n[PLAYER]?
+
+#org @gText_Restaurant_MenuLevelPrompt
+Which level would you like to\nprepare zis dish at?
+
+#org @gText_Restaurant_MealLevelAndCostPrompt
+Zis meal will be prepared at [GREEN]Lvl [BUFFER2][BLUE]\nand will cost \$[BUFFER3].\lIs this acceptable?
+
+#org @gText_Restaurant_MoneySpent
+So far you have spent \$[BUFFER1]\nat our establishment.\pWe'll be able to provide better\ningredients after you've spent \l\$[BUFFER2] more.
+
+#org @gText_Restaurant_MoneyRemaining
+So far you have spent \$[BUFFER1]\nat our establishment.\pYou have spent enough to get access\nto our freshest ingredients!
+
+#org @gText_Restaurant_ChipsDonated
+So far you have donated [BUFFER1]\nPok\eChips. We require [BUFFER2] more\lto provide ze next dish.
+
+#org @gText_Restaurant_DonationRequirement
+Would you like to donate Pok\eChips?
+
+#org @gText_Restaurant_DonationRequest
+How many would you like to donate?\n(Held: [BUFFER3])
+
+#org @gText_Restaurant_DonationNoPokeChips
+My apologies, Master [PLAYER].\nYou do not have any Pok\eChips.
+
+#org @gText_Restaurant_DonationTooManyPokeChips
+My apologies, Master [PLAYER].\nYou do not have zat\lmany Pok\eChips.
+
+#org @gText_Restaurant_DonationMorePokeChipsThanNeeded
+I appreciate your generosity, mon\nami, but we do not need zat many\lPok\eChips!
+
+#org @gText_Restaurant_DonationLevel2Unlocked
+You've now unlocked [GREEN]Lvl 2[BLUE]\ndishes!\pZese dishes are more delicious than\nLvl 1 ones, and will raise stats by\l2 stages!\pYou can unlock our final level,\n[GREEN]Lvl 3[BLUE], by donating [BUFFER2] more\lPok\eChips.
+
+#org @gText_Restaurant_DonationLevel3Unlocked
+You've now unlocked [GREEN]Lvl 3[BLUE]\ndishes!\pZese dishes provide large stat\nbuffs, but come with a cost -\lanother stat will be lowered!\pI've also concocted a most wonderful\ndish - ze Rare Candy Cake!\pZis meal raises all Pok\emon's stats\nby 1, but it can only be prepared\lat level 1. Incroyable, non?
+
+#org @gText_Restaurant_DonationMet
+Mon ami, you've met our donation\nincentive! Merci!
+
+#org @gText_Restaurant_ChoseNo
+Understood.
+
+#org @gText_Restaurant_DonationComplete
+Master [PLAYER][.]! Incroyable!\pYou have donated enough Pok\eChips\nto earn our finest dishes.\pMerci, mon ami! I hope you enjoy\nour restaurants offerings.
+
+#org @gText_Restaurant_AttackMealDesc
+Zis meal raises your Pok\emon's Attack\nby one stage per level.\pAt level 3, it will also lower your\nPok\emon's Defense by one stage.
+
+#org @gText_Restaurant_DefenseMealDesc
+Zis meal raises your Pok\emon's\nDefense by one stage per level.\pAt level 3, it will also lower your\nPok\emon's Attack by one stage.
+
+#org @gText_Restaurant_SpAttackMealDesc
+Zis meal raises your Pok\emon's\nSp. Attack by one stage per level.\pAt level 3, it will also lower your\nPok\emon's Sp. Defense by one stage.
+
+#org @gText_Restaurant_SpDefenseMealDesc
+Zis meal raises your Pok\emon's\nSp. Defense by one stage per\llevel.\pAt level 3, it will also lower your\nPok\emon's Sp. Attack by one stage.
+
+#org @gText_Restaurant_SpeedMealDesc
+Zis meal raises your Pok\emon's\nSpeed by one stage per\llevel.\pAt level 3, it will also lower your\nPok\emon's Accuracy by one stage.
+
+#org @gText_Restaurant_AccuracyMealDesc
+Zis meal raises your Pok\emon's\nAccuracy by one stage per\llevel.\pAt level 3, it will also lower your\nPok\emon's Speed by one stage.
+
+#org @gText_Restaurant_EvasionMealDesc
+Zis meal raises your Pok\emon's\nEvasion by one stage per\llevel.\pIt can only be served up to Level 2.
+
+#org @gText_Restaurant_AllMealDesc
+Zis wondrous meal raises each of\nyour Pok\emon's stats by one stage.\pIt can only be served at Level 1.
+
+#org @gText_Restaurant_MealReplacement
+Your Pok\emon are currently full from\nanother meal.\pEating another will replace ze\ncurrent meal's effects. Is zat ok?
+
+#org @gText_Restaurant_PaidForMeal
+C'est bon! I will get your meal[.]
+
+#org @gText_Restaurant_PokemonEnjoyMeal
+[BLACK]You and your Pok\emon enjoyed the\nmeal prepared for you.[BLUE]
+
+#org @gText_Restaurant_MealConclusion
+Thank you for your patronage, Master\n[PLAYER]. I hope you and your\lPok\emon enjoyed your meal.
+
+#org @gText_Restaurant_NotEnoughMoney
+I am sorry, but you do not have\nenough money, mon ami[.]
+
+#org @gText_Restaurant_IngredientsNextUnlocked
+You've now unlocked [GREEN]Lvl [BUFFER1][BLUE]\ningredients!\pOur dishes are healthier and\ntheir effects will last for longer!
+
+#org @gText_Restaurant_IngredientsFinalLevelUnlocked
+You've now unlocked [GREEN]Lvl 5[BLUE]\ningredients, our final level!\pOur dishes are ze healthiest they\ncan be!
+
+#org @gText_Restaurant_DurationNotMax
+Zis meal will last for [GREEN][BUFFER1]\nbattle(s)[BLUE].\pYou can unlock our next tier of\ningredients by spending \$[BUFFER2]\lmore.
+
+#org @gText_Restaurant_DurationAtMax
+Zis meal will last for [GREEN][BUFFER1]\nbattles[BLUE], ze most we can offer.

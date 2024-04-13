@@ -2119,7 +2119,7 @@ bool8 IsCurrentAreaSwamp(void)
 bool8 IsCurrentAreaOpenOcean(void)
 {
 	u8 mapSec = GetCurrentRegionMapSectionId();
-	return mapSec == MAPSEC_ROUTE_14 || mapSec == MAPSEC_ROUTE_15_NORTH || mapSec ==MAPSEC_ROUTE_15_SOUTH || mapSec == MAPSEC_ROUTE_16 | mapSec == MAPSEC_SEPPIRE_COVE;
+	return mapSec == MAPSEC_ROUTE_14 || mapSec == MAPSEC_ROUTE_15_NORTH || mapSec ==MAPSEC_ROUTE_15_SOUTH || mapSec == MAPSEC_ROUTE_16 || mapSec == MAPSEC_SEPPIRE_COVE;
 }
 
 static bool8 IsPlayerFacingMurkyBrownWater(void)
