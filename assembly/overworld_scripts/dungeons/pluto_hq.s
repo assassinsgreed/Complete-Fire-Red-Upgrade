@@ -69,7 +69,18 @@ EventScript_PlutoHQ_B2F_TeamPlutoTheodore:
 EventScript_PlutoHQ_B3F_RestGrunt:
     lock
     faceplayer
+    checkflag 0x25D @ Player healed at this location
+    if SET _goto HealPromptAfterInitialVisit
     msgbox gText_PlutoHQ_B2F_RestGrunt_Intro MSG_NORMAL
+    goto HealingPromptAndHandling
+    end
+
+HealPromptAfterInitialVisit:
+    msgbox gText_PlutoHQ_B2F_RestGrunt_IntroAfterAlreadyUsed MSG_NORMAL
+    goto HealingPromptAndHandling
+    end
+    
+HealingPromptAndHandling:
     showmoney 0x0 0x0
     msgbox gText_PlutoHQ_B2F_RestGrunt_Prompt MSG_YESNO
     compare LASTRESULT NO
@@ -86,6 +97,7 @@ EventScript_PlutoHQ_B3F_RestGrunt:
     msgbox gText_PlutoHQ_B2F_RestGrunt_ChoseYes MSG_NORMAL
     call PlayerHeal
     msgbox gText_PlutoHQ_B2F_RestGrunt_AfterHeal MSG_NORMAL
+    setflag 0x25D @ Player healed at this location
     release
     applymovement LASTTALKED m_LookDown
     end

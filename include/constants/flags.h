@@ -617,7 +617,7 @@
 #define FLAG_GRACIDEA_GIFT_RECEIVED                      0x25A
 #define FLAG_SURFED_INTO_THE_OCEAN                       0x25B
 #define FLAG_NEW_POKEMART_STOCK                          0x25C
-#define FLAG_0x25D                                       0x25D
+#define FLAG_PLUTO_HQ_REST_GRUNT_EXPLAINED               0x25D
 #define FLAG_GOT_OLD_AMBER                               0x25E
 #define FLAG_0x25F                                       0x25F
 #define FLAG_0x260                                       0x260

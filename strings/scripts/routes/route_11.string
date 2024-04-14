@@ -224,7 +224,7 @@ You should ask [RIVAL] or Alistair\nto join you before challenging\lTeam Pluto[.
 [BLACK]Clancy: [BLUE]Yo, what's up, Ena?\nI'm trying to relax over here.
 
 #org @gText_Route11South_PlutoEvent_Ena_EnaRecognizesThePlayer
-[BLACK]Ena: [RED]I don't think we'll be relaxing\ntoday, Clancy. Look there[.]\pIt's that brat from the desert op.\nRemember? They caused us a lot of\lheadaches.
+[BLACK]Ena: [RED]I don't think we'll be relaxing\ntoday, Clancy. Look there[.]\pIt's that brat from the desert\noperation.\pRemember? They caused us a lot of\nheadaches.
 
 #org @gText_Route11South_PlutoEvent_ClancyComplainsAboutPlayer
 [BLACK]Clancy: [BLUE]Ugh[.] I hate this kid.
@@ -299,7 +299,7 @@ I should've expected this[.]
 [BLACK]???: [BLUE]Red hair, short, kinda\ncocky[.]
 
 #org @gText_Route11SouthHouse_PlutoEvent_RonaldIsReadyToBattle
-[BLACK]???: [BLUE]I knew it, you're that kid from\nIrene's report!\pYou're the one that caused us all\nthat grief in the Rubarr Desert op.\pGyahahaha, just my luck! I was\nhoping to run into the punk that\lcaused trouble for Irene.
+[BLACK]???: [BLUE]I knew it, you're that kid from\nIrene's report!\pYou're the one that caused us all\nthat grief in the Rubarr Desert\loperation.\pGyahahaha, just my luck!\pI was hoping to run into the punk\nthat caused trouble for Irene.
 
 #org @gText_Route11SouthHouse_PlutoEvent_RonaldTellsRefinerToMove
 [BLACK]???: [BLUE]You there, old fogey.\nBeat it! I'll deal with you later.
@@ -329,7 +329,7 @@ Heh, so you're the real deal[.]
 [BLACK]Ronald: [BLUE]Heh, I figured you'd say\nthat.
 
 #org @gText_Route11SouthHouse_PlutoEvent_RonaldThreatensThePlayer
-[BLACK]Ronald: [BLUE]Listen up. I'm a good\nsport.\pYou won fair and square, so we'll\npull outta this op without fuss.\pBut let me be clear: You cause\ntrouble for us again, and you'll\lseriously regret it.\pJust go back to living your life, and\nput the heroics behind ya. Got it?
+[BLACK]Ronald: [BLUE]Listen up. I'm a good\nsport.\pYou won fair and square, so we'll\npull outta this operation without\lfuss.\pBut let me be clear: You cause\ntrouble for us again, and you'll\lseriously regret it.\pJust go back to living your life, and\nput the heroics behind ya. Got it?
 
 #org @gText_Route11SouthHouse_PlutoEvent_RonaldThreatensOldMan
 [BLACK]Ronald: [BLUE]And you, old man!\pYer lucky this kid was here. Don't\nforget that.

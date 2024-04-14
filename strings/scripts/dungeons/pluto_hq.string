@@ -4,6 +4,9 @@ You sense a powerful presence beyond\nthis door[.]
 #org @gText_PlutoHQ_B2F_RestGrunt_Intro
 Hey[.] You're that punk that everyone's\nlooking for, aren't you.\pLook, I'm no fool. I can see the way\nthe wind is blowing.\pInstead of fighting, how about we\nstrike a deal?\pGive me some money, and I'll let you\nrest here while I stand guard.
 
+#org @gText_PlutoHQ_B2F_RestGrunt_IntroAfterAlreadyUsed
+Oh, it's you again. You want healing,\nhuh?
+
 #org @gText_PlutoHQ_B2F_RestGrunt_Prompt
 Just \$500. What do you say?\nPretty sweet deal, right?
 
@@ -98,7 +101,7 @@ I heard that certain card keys open\ncertain doors.\pThen[.] It's really importa
 H-hey! That's not okay!
 
 #org @gText_PlutoHQ_B4F_TeamPlutoMatty_Chat
-You won fair and square, but let me\nask you a favor[.]\pLeave the Cypress Key here, pretty\nplease?\pI'll get in a lot of trouble if you\nuse it to interrupt Miss Irene.
+You won fair and square, but let me\nask you a favor[.]\pLeave the Cypress Key here, pretty\nplease?\pI'll get in a lot of trouble if you\nuse it to interrupt Ronald.
 
 #org @gText_PlutoHQ_B4F_ScientistGary_Intro
 Do you even know what we're trying\nto do here? Pff! Unlikely.
@@ -236,7 +239,7 @@ Heh, I lost, huh?
 Look, you won fair and square, so\nI'll honour my end of the bargain.\pHere, the key is yours.
 
 #org @gText_PlutoHQ_B7F_AdminRonaldConversation_AfterCerberusKey
-You'll need that if you want a shot\nat fighting the boss.\pDon't get the wrong idea, though.\nHe's way tougher than any of us.\pYou'd be better off just turning tail\nand run.\pGyahahaha! I wonder what you'll\nchoose to do?
+You'll need that if you want a shot\nat fighting the boss.\pDon't get the wrong idea, though.\nHe's way tougher than any of us.\pYou'd be better off just turning tail\nand running.\pGyahahaha! I wonder what you'll\nchoose to do?
 
 #org @gText_PlutoHQ_B1F_KurtisEncounter_KurtisSeesPlayer
 [BLACK]???: [BLUE]Ah, so the sneaking rat reveals\nitself, finally[.]\pYou, come closer, won't you?\nMy eyesight isn't what it used to\lbe.
@@ -344,10 +347,10 @@ Unbelievable. To think a child could\nbe this strong[.]
 [BLACK]Alistair: [BLUE]That HM contains Surf.\pIt'll let your Pok\emon carry you\nacross bodies of water.\pYou'll need the badge from Bruccie\nVillage to use it though.\pYou're going to continue your gym\nchallenge, right?\pThen, I'm sure this will come in\nhandy. You'll need it to reach\lTsarvosa City.
 
 #org @gText_PlutoHQ_B1F_KurtisEncounter_AlistairPreparesToDestroyTheBase
-[BLACK]Alistair: [BLUE]I won't keep you any\nlonger.\pI'll stay here a while to destroy the\nSnag machines and make sure their\ldata backups are unusable.\pTake care, [PLAYER]. I'm sure we'll\nsee each other again.
+[BLACK]Alistair: [BLUE]I won't keep you any\nlonger.\pI'll stay here a while to destroy the\nSnag Machines and make sure their\ldata backups are unusable.\pTake care, [PLAYER]. I'm sure we'll\nsee each other again.
 
 #org @gText_PlutoHQ_B1F_KurtisEncounter_AlistairDestroysSnagMachines
-[BLACK]Alistair: [BLUE]There. That's the last of\nthe Snag machines.\pNow, let's delete their data\nbackups[.]
+[BLACK]Alistair: [BLUE]There. That's the last of\nthe Snag Machines.\pNow, let's delete their data\nbackups[.]
 
 #org @gText_PlutoHQ_B1F_KurtisEncounter_AlistairReadsAboutJirachi
 [BLACK]Alistair: [BLUE]What's this?\pThese are all reports about\nsomething known as the\lmythical "Wish\" Pok\emon[.]\pI've never seen any record of this,\nin all my research.\pA Pok\emon that can grant any wish,\nhuh? Fascinating[.]
