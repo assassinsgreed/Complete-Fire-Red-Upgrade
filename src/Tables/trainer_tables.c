@@ -2244,9 +2244,9 @@ const struct TrainerMonNoItemDefaultMoves sParty_Route8_SwimmerMaya[] = {
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_Route8_SwimmerHuey[] = {
-    { .lvl = 37, .species = SPECIES_BINACLE },
-    { .lvl = 38, .species = SPECIES_CORSOLA_G },
-    { .lvl = 38, .species = SPECIES_BARBARACLE }
+    { .lvl = 47, .species = SPECIES_BINACLE },
+    { .lvl = 48, .species = SPECIES_CORSOLA_G },
+    { .lvl = 48, .species = SPECIES_BARBARACLE }
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_Route8_SwimmerBob[] = {
