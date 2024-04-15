@@ -72,3 +72,8 @@ SignScript_LaplazTown_GymSign:
 GymSignNotMetCasey:
     msgbox gText_LaplazTown_Overworld_GymSign_NotMetCaseyInGym MSG_SIGN
     end
+
+.global SignScript_LaplazTown_LaplazTownSign
+SignScript_LaplazTown_LaplazTownSign:
+    msgbox gText_LaplazTown_Overworld_TownSign MSG_SIGN
+    end

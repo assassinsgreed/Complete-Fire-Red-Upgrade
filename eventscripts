@@ -1283,6 +1283,7 @@ sign 3 6 1 SignScript_LaplazTown_PeradonForest
 sign 3 6 2 SignScript_LaplazTown_ApricornBallShop
 sign 3 6 3 SignScript_LaplazTown_PsychicsHouse
 sign 3 6 4 SignScript_LaplazTown_GymSign
+sign 3 6 6 SignScript_LaplazTown_LaplazTownSign
 ## Facilities
 map 10 0 MapScript_LaplazFacilities_PokemonCenter
 npc 10 0 0 EventScript_PokemonCenter_Main
@@ -1864,3 +1865,22 @@ npc 3 37 7 ItemScript_Common_Zinc
 npc 3 37 8 ItemScript_Common_LuminousMoss
 npc 3 37 9 EventScript_Route19_Palossand
 sign 3 37 0 SignScript_Route19_LookoutPointSign
+
+# Emraldin Quay
+map 3 8 MapScript_EmraldinQuay
+## npcs 0-4 are Palm Trees
+npc 3 8 5 EventScript_EmraldinQuay_FarmersMarketWoman
+npc 3 8 6 EventScript_EmraldinQuay_GalaricaGirl
+npc 3 8 7 EventScript_EmraldinQuay_Boy
+npc 3 8 8 EventScript_EmraldinQuay_Girl
+## npc 3 8 9 EventScript_RivalEvent7 Implemented later
+sign 3 8 0 SignScript_EmraldinQuay_TownSign
+sign 3 8 1 SignScript_EmraldinQuay_FarmersMarketSign
+map 10 9 MapScript_EmraldinQuayFacilities_PokemonCenter
+npc 10 9 0 EventScript_PokemonCenter_Main
+npc 10 9 1 EventScript_EmraldinQuayFacilities_PokemonCenter_TreasureBeachGirl
+npc 10 9 2 EventScript_EmraldinQuayFacilities_PokemonCenter_OldWoman
+npc 10 9 3 EventScript_EmraldinQuayFacilities_PokemonCenter_Blackbelt
+npc 10 10 0 EventScript_EmraldinQuayNPCHouses_Camper
+npc 10 10 1 EventScript_EmraldinQuayNPCHouses_CamperMom
+## TODO in a later ticket: Tutor and family in 10 11
