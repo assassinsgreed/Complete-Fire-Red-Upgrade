@@ -34,8 +34,29 @@ Emraldin Quay is very peaceful and\nuneventful.\pIt's quite a popular destinatio
 Sensei suggested I come to Emraldin\nQuay to let off some steam.\pBut[.] I just can't! I want to get\nback to training!\pMaybe I should check out that\nTrainer House while I'm here.
 
 // NPC Houses
-#org @gText_EmraldinQuay_NPC_Houses_Camper
+#org @gText_EmraldinQuay_NPCHouses_Camper
 To the south of Emraldin Quay,\nyou'll find Route 20.\pIt's a rugged route full of wild\nPok\emon.\pIt's locally known as "The\nWilderness Expanse\" as a result.
 
-#org @gText_EmraldinQuay_NPC_Houses_CamperMom
+#org @gText_EmraldinQuay_NPCHouses_CamperMom
 My boy likes to go camping in the\nWilderness Expanse.\pI'm a little nervous about it,\nthough[.]\pThere are a lot of strong Pok\emon\nout there.\pOh, if only he took up a safer\nhobby[.]
+
+#org @gText_EmraldinQuayNPCHouses_TutorConfirmation
+Greetings, young one.\pI'm a move tutor who specializes in\nnothing but the finest moves.\pIndeed, these moves are so powerful\nthat few Pok\emon can learn them.\pIn exchange for these incredible\nmoves, I only ask for 10 Pok\eChips.\pAre you interested?\n(Held: [BUFFER1])
+
+#org @gText_EmraldinQuayNPCHouses_ConfirmationAccepted
+Hohoho! My reputation precedes me.\pAlright, which move should I teach?
+
+#org @gText_EmraldinQuayNPCHouses_Complete
+And that concludes my lesson.\pDo return if you want to teach these\nfabulous moves to other Pok\emon.
+
+#org @gText_EmraldinQuayNPCHouses_TutoringRejected
+Unfortunate, but it can't be\nhelped.\pI know the value of the moves I\nteach.\pYou're welcome to return to me, if\nyou change your mind.
+
+#org @gText_EmraldinQuayNPCHouses_NotEnoughPokeChips
+Sorry, but you don't have enough\nPok\eChips to cover my fee.\pThese moves are too powerful to\naccept any less than my asking\lprice.\pCome back and see me, if you gather\nenough.
+
+#org @gText_EmraldinQuay_NPCHouses_TutorSon
+Our dad teaches really unique and\npowerful moves.\pOnly downside is that few Pok\emon\nare capable of learning them[.]
+
+#org @gText_EmraldinQuay_NPCHouses_TutorYoungSon
+Yaaay!\pMy daddy taught my Cinderace Blast\nBurn and now it's really strong!\pI bet he's even stronger than your\nwhole team!
