@@ -1,0 +1,41 @@
+// Overworld
+#org @gText_EmraldinQuay_Overworld_FarmersMarketWomanIntro
+Hello! Please take a look at my\nwares.
+
+#org @gText_EmraldinQuay_Overworld_FarmersMarketWomanOutro
+Do come again!
+
+#org @gText_EmraldinQuay_Overworld_GalaricaGirlIntro
+Umm[.] I made these myself[.] Would you\nlike one?
+
+#org @gText_EmraldinQuay_Overworld_GalaricaGirlOutro
+I'll be here all day if you want\nsome more!
+
+#org @gText_EmraldinQuay_Overworld_Boy
+I caught a lot of really strong\nPok\emon in the Wilderness Expanse.\pBut[.] I just can't beat the Trainer\nHouse! Ugh[.]\pWe don't have a gym, so the Trainer\nHouse is our pride and joy!\pYou're a trainer, right? You should\ntotally check it out.
+
+#org @gText_EmraldinQuay_Overworld_Girl
+You're a trainer, right? That's so\ncool!\pMost trainers don't come to Emraldin\nQuay because we don't have a gym.\pBut[.] I think it's still worth visiting,\ndon't you?
+
+#org @gText_EmraldinQuay_Overworld_TownSign
+Emraldin Quay\nThe glittering jewel of the sea.
+
+#org @gText_EmraldinQuay_Overworld_FarmersMarketSign
+Emraldin Quay Farmer's Market\pProudly serving the local community\nfor over 30 years!
+
+// Facilities
+#org @gText_EmraldinQuay_PokemonCenter_TreasureBeachGirl
+There's this really cool beach\nnearby called Treasure Beach.\pThey say rare treasures wash ashore\nfrom time to time.\pI couldn't find any, but my friend\ndid with her Item Finder!
+
+#org @gText_EmraldinQuay_PokemonCenter_OldWoman
+Emraldin Quay is very peaceful and\nuneventful.\pIt's quite a popular destination for\ntourists and those that want to\lretire.\pI'm the former, of course! Ohohoho!
+
+#org @gText_EmraldinQuay_PokemonCenter_Blackbelt
+Sensei suggested I come to Emraldin\nQuay to let off some steam.\pBut[.] I just can't! I want to get\nback to training!\pMaybe I should check out that\nTrainer House while I'm here.
+
+// NPC Houses
+#org @gText_EmraldinQuay_NPC_Houses_Camper
+To the south of Emraldin Quay,\nyou'll find Route 20.\pIt's a rugged route full of wild\nPok\emon.\pIt's locally known as "The\nWilderness Expanse\" as a result.
+
+#org @gText_EmraldinQuay_NPC_Houses_CamperMom
+My boy likes to go camping in the\nWilderness Expanse.\pI'm a little nervous about it,\nthough[.]\pThere are a lot of strong Pok\emon\nout there.\pOh, if only he took up a safer\nhobby[.]

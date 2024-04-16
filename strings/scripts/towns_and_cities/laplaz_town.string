@@ -32,6 +32,9 @@ Laplaz Town Pok\emon Gym\nLeader: Monty, the Stat Change\lCommander
 #org @gText_LaplazTown_Overworld_GymSign_MetCaseyInGym
 Laplaz Town Pok\emon Gym\nLeader: Casey, The Stat Change\lTactician
 
+#org @gText_LaplazTown_Overworld_TownSign
+Laplaz Town\nThe resting hills town
+
 // Facilities
 #org @gText_LaplazTownFacilities_GalarBirdsGirl
 I saw it! I saw it!\pWeird looking bird Pok\emon, flying\nout of Lake Laplaz!\pMy sister doesn't believe me and\nwon't let me go, though[.]
