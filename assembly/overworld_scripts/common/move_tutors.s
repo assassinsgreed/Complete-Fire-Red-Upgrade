@@ -428,6 +428,50 @@ DualChop:
     call teachmove
     return
 
+.global EventScript_Tutors_Emraldin
+EventScript_Tutors_Emraldin:
+    setvar 0x8000 0xC
+    setvar 0x8001 0x5
+    setvar 0x8004 0x0
+	special 0x158
+    waitstate
+    switch LASTRESULT
+	case 0, FrenzyPlant
+	case 1, BlastBurn
+	case 2, HydroCannon
+	case 3, SkyAttack
+    case 4, cancelled
+    case 0x7F, cancelled @ When player hit B to close
+    return
+
+FrenzyPlant:
+    bufferattack 0x0 MOVE_FRENZYPLANT
+    setvar 0x8005 56
+    setvar 0x4000 10
+    call teachmove
+    return
+
+BlastBurn:
+    bufferattack 0x0 MOVE_BLASTBURN
+    setvar 0x8005 57
+    setvar 0x4000 10
+    call teachmove
+    return
+
+HydroCannon:
+    bufferattack 0x0 MOVE_HYDROCANNON
+    setvar 0x8005 58
+    setvar 0x4000 10
+    call teachmove
+    return
+
+SkyAttack:
+    bufferattack 0x0 MOVE_SKYATTACK
+    setvar 0x8005 44
+    setvar 0x4000 10
+    call teachmove
+    return
+
 teachmove:
     msgbox gText_Tutors_ChoosePokemon MSG_NORMAL
     special 0x18D

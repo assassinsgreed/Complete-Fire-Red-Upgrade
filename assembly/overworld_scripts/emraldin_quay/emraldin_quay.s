@@ -89,10 +89,50 @@ EventScript_EmraldinQuayFacilities_PokemonCenter_Blackbelt:
 
 .global EventScript_EmraldinQuayNPCHouses_Camper
 EventScript_EmraldinQuayNPCHouses_Camper:
-    npcchatwithmovement gText_EmraldinQuay_NPC_Houses_Camper m_LookLeft
+    npcchatwithmovement gText_EmraldinQuay_NPCHouses_Camper m_LookLeft
     end
 
 .global EventScript_EmraldinQuayNPCHouses_CamperMom
 EventScript_EmraldinQuayNPCHouses_CamperMom:
-    npcchatwithmovement gText_EmraldinQuay_NPC_Houses_CamperMom m_LookUp
+    npcchatwithmovement gText_EmraldinQuay_NPCHouses_CamperMom m_LookUp
+    end
+
+.global EventScript_EmraldinQuayNPCHouses_Tutor
+EventScript_EmraldinQuayNPCHouses_Tutor:
+    faceplayer
+    callasm StorePokeChipCount
+    buffernumber 0x0 0x8005 @ Take stored PokeChip count
+    msgbox gText_EmraldinQuayNPCHouses_TutorConfirmation MSG_YESNO
+    compare LASTRESULT YES
+    IF FALSE _goto TutoringRejected
+    checkitem ITEM_POKE_CHIP 10
+    compare LASTRESULT TRUE
+    if FALSE _goto NotEnoughPokeChips
+    msgbox gText_EmraldinQuayNPCHouses_ConfirmationAccepted MSG_KEEPOPEN
+    call EventScript_Tutors_Emraldin
+    compare LASTRESULT TRUE
+    if equal _call TutoringComplete
+    applymovement LASTTALKED m_LookRight
+    end
+
+TutoringComplete:
+    msgbox gText_EmraldinQuayNPCHouses_Complete MSG_NORMAL
+    return
+
+TutoringRejected:
+    npcchatwithmovement gText_EmraldinQuayNPCHouses_TutoringRejected m_LookUp
+    goto End
+
+NotEnoughPokeChips:
+    npcchatwithmovement gText_EmraldinQuayNPCHouses_NotEnoughPokeChips m_LookUp
+    goto End
+
+.global EventScript_EmraldinQuayNPCHouses_TutorSon
+EventScript_EmraldinQuayNPCHouses_TutorSon:
+    npcchatwithmovement gText_EmraldinQuay_NPCHouses_TutorSon m_LookLeft
+    end
+
+.global EventScript_EmraldinQuayNPCHouses_TutorYoungSon
+EventScript_EmraldinQuayNPCHouses_TutorYoungSon:
+    npcchat gText_EmraldinQuay_NPCHouses_TutorYoungSon
     end
