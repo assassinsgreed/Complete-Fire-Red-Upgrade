@@ -68,6 +68,7 @@ static const struct TrainerSlide sTrainerSlides[] =
 	{0x137, sText_Irene_PlutoHQ_FirstMonDown, sText_Irene_PlutoHQ_LastSwitchIn, sText_Irene_PlutoHQ_LowHP}, // Pluto Admin Irene (Pluto HQ)
 	{0x138, sText_Ronald_PlutoHQ_FirstMonDown, sText_Ronald_PlutoHQ_LastSwitchIn, sText_Ronald_PlutoHQ_LowHP}, // Pluto Admin Ronald (Pluto HQ)
 	{0x139, sText_Kurtis_FirstMonDown, sText_Kurtis_LastSwitchIn, sText_Kurtis_LowHP}, // Pluto Leader Kurtis
+	{0x16D, sText_EmraldinRivalEvent_FirstMonDown, sText_EmraldinRivalEvent_LastSwitchIn, sText_EmraldinRivalEvent_LowHP}, // Rival event in Emraldin Quay
 	{}, // Champion Selene
 };
 
