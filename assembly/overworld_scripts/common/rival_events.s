@@ -256,3 +256,32 @@ RivalEvent6_ChoseTooLowLevel:
 RivalEvent6_TradeConcluded:
     msgbox gText_RivalEvent6_TradeConcluded MSG_NORMAL
     goto End
+
+.global EventScript_RivalEvent7
+EventScript_RivalEvent7:
+    lock
+    checkflag 0x2C6 @ Finished Rival event 7
+    if SET _goto RivalEvent7_BattleWon
+    faceplayer
+    msgbox gText_RivalEvent7_AskAboutBattle MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto RivalEvent7_Declined
+    call SetupMugshotRival
+    msgbox gText_RivalEvent7_BattleAccepted MSG_NORMAL
+    trainerbattle3 0x0 365 0x100 gText_RivalEvent7_BeatRival
+    pause DELAY_HALFSECOND
+    msgbox gText_RivalEvent7_BattleWon MSG_NORMAL
+    obtainitem ITEM_BOTTLE_CAP 0x3
+    msgbox gText_RivalEvent7_BottlecapExplaination MSG_NORMAL
+    setflag 0x2C6 @ Finished Rival event 7
+    goto RivalEvent7_BattleWon
+
+RivalEvent7_BattleWon:
+    applymovement 0xA m_LookLeft
+    msgbox gText_RivalEvent7_SpendingTimeStrategizing MSG_NORMAL
+    release
+    end
+
+RivalEvent7_Declined:
+    npcchatwithmovement gText_RivalEvent7_BattleDeclined m_LookLeft
+    end

@@ -46,6 +46,11 @@ extern const u8 sText_Rival5_FirstMonDown[];
 extern const u8 sText_Rival5_LastSwitchIn[];
 extern const u8 sText_Rival5_LowHP[];
 
+// Rival battle in Emraldin Quay (Optional)
+extern const u8 sText_EmraldinRivalEvent_FirstMonDown[];
+extern const u8 sText_EmraldinRivalEvent_LastSwitchIn[];
+extern const u8 sText_EmraldinRivalEvent_LowHP[];
+
 // Rival battle n
 
 // Gym Leader 1 (Terrence)

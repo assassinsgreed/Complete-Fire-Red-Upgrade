@@ -68,6 +68,16 @@ Ngh[.] Down to the wire again?\nNo way! We'll win this!\p
 #org @sText_Rival5_LowHP
 We can't lose again!\nWe can bring this back!\p
 
+// Optional Rival event in Emraldin Quay
+#org @sText_EmraldinRivalEvent_FirstMonDown
+Tch. That one's no good, huh?\p
+
+#org @sText_EmraldinRivalEvent_LastSwitchIn
+Already down to the last one[.]\nHow disappointing.\p
+
+#org @sText_EmraldinRivalEvent_LowHP
+Let's see if [FD][06] can pull through[.]\p
+
 // Rival n here!
 
 // Leader 1 (Terrence)

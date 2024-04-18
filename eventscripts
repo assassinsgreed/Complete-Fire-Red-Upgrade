@@ -1873,7 +1873,7 @@ npc 3 8 5 EventScript_EmraldinQuay_FarmersMarketWoman
 npc 3 8 6 EventScript_EmraldinQuay_GalaricaGirl
 npc 3 8 7 EventScript_EmraldinQuay_Boy
 npc 3 8 8 EventScript_EmraldinQuay_Girl
-## npc 3 8 9 EventScript_RivalEvent7 Implemented later
+npc 3 8 9 EventScript_RivalEvent7
 sign 3 8 0 SignScript_EmraldinQuay_TownSign
 sign 3 8 1 SignScript_EmraldinQuay_FarmersMarketSign
 map 10 9 MapScript_EmraldinQuayFacilities_PokemonCenter

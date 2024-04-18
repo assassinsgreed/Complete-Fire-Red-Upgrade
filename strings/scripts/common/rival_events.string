@@ -102,3 +102,24 @@ Oh[.]\pI'm looking for a Pok\emon that's at\nleast level 30.\pCome back later, i
 
 #org @gText_RivalEvent6_Confirmed
 Okay, let's trade.
+
+#org @gText_RivalEvent7_AskAboutBattle
+[PLAYER], good timing, as usual.\pI've been training some new Pok\emon\nsince our last battle to try out\lnew strategies.\pBut[.] I won't know if they're any\ngood, unless I can beat you.\pWhat do you say? Are you up for a\nbattle?
+
+#org @gText_RivalEvent7_BattleAccepted
+Alright, get ready. We aren't messing\naround this time.
+
+#org @gText_RivalEvent7_BeatRival
+Tch[.] These Pok\emon weren't good\nenough either, huh?
+
+#org @gText_RivalEvent7_BattleWon
+Alright, that's all I needed to\nsee.\pI'll have to push my Pok\emon to\ntrain even harder if I want to\lovercome you.\pHere, [PLAYER], a gift for you.
+
+#org @gText_RivalEvent7_BottlecapExplaination
+I heard there's this unofficial gym in\nTsarvosa City.\pRumour has it they're good at\nbringing out a Pok\emon's potential.\pAnd, turns out they're crazy about\nthose bottlecaps.\pI'm sure if you brought those to\nthem, you could make your Pok\emon\leven stronger.\pNot that you need it though,\nright?\pSee you around, [PLAYER].
+
+#org @gText_RivalEvent7_SpendingTimeStrategizing
+What about if I tried[.]\pNo, [PLAYER] would see right through\nthat strategy, too[.]
+
+#org @gText_RivalEvent7_BattleDeclined
+If you insist. I'll keep training.\pIf you change your mind, come find\nme here.
