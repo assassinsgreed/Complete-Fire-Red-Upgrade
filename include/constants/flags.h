@@ -1340,6 +1340,7 @@ Daily Flags, cleared at the start of each day.  Goes up to 0xEFF
 #define FLAG_PERADON_FOREST_FOONGUS_5         0xE17
 #define FLAG_BRUCCIE_VILLAGE_WINGULL_GIFT     0xE18
 #define FLAG_ROUTE_19_PALOSSAND               0xE19
+#define FLAG_EMRALDIN_QUAY_TRAINER_HOUSE      0xE1A
 */
 
 #define FLAG_TRAINER_FLAG_START 0x500

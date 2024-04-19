@@ -1876,6 +1876,7 @@ npc 3 8 8 EventScript_EmraldinQuay_Girl
 npc 3 8 9 EventScript_RivalEvent7
 sign 3 8 0 SignScript_EmraldinQuay_TownSign
 sign 3 8 1 SignScript_EmraldinQuay_FarmersMarketSign
+sign 3 8 4 SignScript_EmraldinQuay_TrainerHouseSign
 map 10 9 MapScript_EmraldinQuayFacilities_PokemonCenter
 npc 10 9 0 EventScript_PokemonCenter_Main
 npc 10 9 1 EventScript_EmraldinQuayFacilities_PokemonCenter_TreasureBeachGirl
@@ -1886,3 +1887,8 @@ npc 10 10 1 EventScript_EmraldinQuayNPCHouses_CamperMom
 npc 10 11 0 EventScript_EmraldinQuayNPCHouses_Tutor
 npc 10 11 1 EventScript_EmraldinQuayNPCHouses_TutorSon
 npc 10 11 2 EventScript_EmraldinQuayNPCHouses_TutorYoungSon
+## Trainer House
+npc 10 14 0 EventScript_EmraldinQuayTrainerHouse_Host
+npc 10 14 1 EventScript_EmraldinQuayTrainerHouse_Boy
+npc 10 14 2 EventScript_EmraldinQuayTrainerHouse_FatGuy
+npc 10 14 3 EventScript_EmraldinQuayTrainerHouse_Girl
