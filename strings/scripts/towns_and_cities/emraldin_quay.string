@@ -60,3 +60,88 @@ Our dad teaches really unique and\npowerful moves.\pOnly downside is that few Po
 
 #org @gText_EmraldinQuay_NPCHouses_TutorYoungSon
 Yaaay!\pMy daddy taught my Cinderace Blast\nBurn and now it's really strong!\pI bet he's even stronger than your\nwhole team!
+
+// Trainer House
+#org @gText_EmraldinQuay_TrainerHouse_HostIntro
+[BLUE]Welcome, welcome, welcome to the\nEmraldin Quay Trainer House!\pI'm Mort, the proprietor and host\nof this fine establishment.\pYou're [PLAYER]? Stellar. Let's get it\non with some excellent battles!
+
+#org @gText_EmraldinQuay_TrainerHouse_FirstOpponentArriving
+[BLUE]And here comes your first opponent\nnow!
+
+#org @gText_EmraldinQuay_TrainerHouse_SecondOpponentArriving
+[BLUE]Not bad! Let's bring opponent number\ntwo into the room.
+
+#org @gText_EmraldinQuay_TrainerHouse_ThirdOpponentArriving
+[BLUE]Another win for [PLAYER]!\pBut[.] Can they go all the way and\nbeat all three trainers?\pLet's find out!
+
+#org @gText_EmraldinQuay_TrainerHouse_B1ChannelerMargueriteIntro
+[RED]My Pok\emon[.]\pTheir types are as unknowable as\nghosts themselves.
+
+#org @gText_EmraldinQuay_TrainerHouse_B1ChannelerMargueriteWin
+You could see through the illusion\nmy Pok\emon presented?
+
+#org @gText_EmraldinQuay_TrainerHouse_B1ChannelerMargueriteLose
+Fufufufu[.] Bewildered by my Pok\emon,\njust as I expected.
+
+#org @gText_EmraldinQuay_TrainerHouse_B2NinjaBoyJulienIntro
+[BLUE]My Pok\emon have mastered the ninja\ntechnique of camouflage.
+
+#org @gText_EmraldinQuay_TrainerHouse_B2NinjaBoyJulienWin
+Tch. Seems we mastered nothing!
+
+#org @gText_EmraldinQuay_TrainerHouse_B2NinjaBoyJulienLose
+Dishonorable! You bring shame upon\nyour Pok\emon.
+
+#org @gText_EmraldinQuay_TrainerHouse_B3BugCatcherPerryIntro
+[BLUE]My Pok\emons' types will undergo a\nmetamorphosis, just as a bug does.
+
+#org @gText_EmraldinQuay_TrainerHouse_B3BugCatcherPerryWin
+We haven't finished our\ntransformation[.]
+
+#org @gText_EmraldinQuay_TrainerHouse_B3BugCatcherPerryLose
+Were you dazzled by our new form?
+
+#org @gText_EmraldinQuay_TrainerHouse_AllOpponentsDefeated
+[BLUE]Incredible! Give it up for [PLAYER],\nladies and gents, because they\ljust defeated all three trainers!
+
+#org @gText_EmraldinQuay_TrainerHouse_BattleConfirmation
+[BLUE]You'll enter with the Pok\emon you\nhave with you. Is that coolio?
+
+#org @gText_EmraldinQuay_TrainerHouse_ChoseBattle
+[BLUE]Now that's what I like to hear,\nbaby!\pLet's get some crazy battles going!
+
+#org @gText_EmraldinQuay_TrainerHouse_HealingPokemon
+[BLUE]Let me heal your Pok\emon before we\nstart.\pWouldn't be very fun if either\nopponent was at a disadvantage,\lnow would it?
+
+#org @gText_EmraldinQuay_TrainerHouse_PreChallengeComment
+[BLUE]All that's left is to take your\nposition and we'll get started!
+
+#org @gText_EmraldinQuay_TrainerHouse_StreakLost
+[BLUE]Oooh, that's gotta sting!\pThat's it for your challenge,\n[PLAYER]. Come on back, now.
+
+#org @gText_EmraldinQuay_TrainerHouse_GrandPrizeAwarded
+[BLUE]Would you look at that?\pIt's your first time clearing our\nTrainer House!\pThat earns you our nifty grand prize,\nthe Item Finder!
+
+#org @gText_EmraldinQuay_TrainerHouse_ChoseRuleset
+[BLUE]This Trainer House specializes in\nCamomon battles.\pThis battle style was popularized in\nthe Borrius region.\pPay close attention to the moves\nyour Pok\emon knows[.]\pThe first two moves they know will\ninfluence their type in battle.\pYou'll have to be analytical, when\nstudying your opponents' Pok\emon[.]\pYou'll have to be strategic, when\ndeciding which types to shift to[.]\pBut most of all, you'll have to have\nfun!
+
+#org @gText_EmraldinQuay_TrainerHouse_ChoseGrandPrize
+[BLUE]Our grand prize is none other than an\nillustrious Item Finder!\pTired of trying to find hidden items,\ndriven to tears by the monotony of\lit all?\pWell, look no further!\pThe Item Finder will tip you off to\nwhere nearby hidden items lay in\lwait!\pPerfect for the budding adventurer,\nand only found here!
+
+#org @gText_EmraldinQuay_TrainerHouse_Boy
+Camomons can be tricky to get used\nto, but it's really cool!\pJust by changing the order of your\nPok\emon's moves, you can become an\lentirely different type!
+
+#org @gText_EmraldinQuay_TrainerHouse_FatGuy
+I saw someone having fun with the\nItem Finder they won from here.\pBut[.] I'm just not good enough to\nbeat all three trainers.
+
+#org @gText_EmraldinQuay_TrainerHouse_Girl
+I've battled here a few times.\nWould you like to hear some tips?
+
+#org @gText_EmraldinQuay_TrainerHouse_Girl_ChoseYes
+To do well in Camomon battles,\nyou'll want Pok\emon that know a\ldiverse set of moves.\pIt will allow you to cover\nmany type matchups, sure.\pBut, it will also let you become\nmany different types too!\pAnd, one last tip for you[.]\pIf your first two moves are of the\nsame type, that'll be the only type\lyour Pok\emon has.\pI'm sure you can use something like\nthat to your advantage.\pGood luck! I'll be rooting for you.
+
+#org @gText_EmraldinQuay_TrainerHouse_Girl_ChoseNo
+Aww, okay. Good luck out there!
+
+#org @gText_EmraldinQuay_TrainerHouse_SpecializationSign
+Emraldin Quay Trainer House\nSpecialty: Camomon Battles

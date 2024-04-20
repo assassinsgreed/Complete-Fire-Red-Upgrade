@@ -4361,8 +4361,6 @@ const struct TrainerMonNoItemDefaultMoves sParty_SeppireCove_RuinManiacCarter[] 
     { .lvl = 53, .species = SPECIES_COFAGRIGUS },
     { .lvl = 53, .species = SPECIES_STONJOURNER },
 };
-
-
 // #endregion
 
 // #region Route 19
@@ -4386,6 +4384,116 @@ const struct TrainerMonNoItemDefaultMoves sParty_Route19_PokefanPhineas[] = {
 const struct TrainerMonNoItemDefaultMoves sParty_Route19_PokefanPhoebe[] = {
     { .lvl = 49, .species = SPECIES_JELLICENT_F },
     { .lvl = 50, .species = SPECIES_ORANGURU }
+};
+// #endregion
+
+// #region
+const struct TrainerMonNoItemCustomMoves sParty_EmraldinQuay_ChannelerMarguerite[] = {
+    {
+        .lvl = 1,
+        .species = SPECIES_QUILLADIN, // Steel / Ground
+        .moves = {
+            MOVE_METALCLAW,
+            MOVE_BULLDOZE,
+            MOVE_BRICKBREAK,
+            MOVE_SPIKES
+        },
+        .ability = Ability_Random_1_2
+    },
+    {
+        .lvl = 1,
+        .species = SPECIES_PRIMEAPE, // Bug / Dark
+        .moves = {
+            MOVE_UTURN,
+            MOVE_THROATCHOP,
+            MOVE_SCREECH,
+            MOVE_CROSSCHOP
+        },
+        .ability = Ability_Random_1_2
+    },
+    {
+        .lvl = 1,
+        .species = SPECIES_MISMAGIUS, // Fire / Fairy
+        .moves = {
+            MOVE_MYSTICALFIRE,
+            MOVE_DAZZLINGGLEAM,
+            MOVE_NASTYPLOT,
+            MOVE_POWERGEM
+        },
+        .ability = Ability_Random_1_2
+    },
+};
+
+const struct TrainerMonNoItemCustomMoves sParty_EmraldinQuay_NinjaBoyJulien[] = {
+    {
+        .lvl = 1,
+        .species = SPECIES_LILEEP, // Normal / Ghost
+        .moves = {
+            MOVE_CURSE,
+            MOVE_ATTRACT,
+            MOVE_GIGADRAIN,
+            MOVE_BULLDOZE
+        },
+        .ability = Ability_Random_1_2
+    },
+    {
+        .lvl = 1,
+        .species = SPECIES_FRILLISH, // Ice / Poison
+        .moves = {
+            MOVE_ICEBEAM,
+            MOVE_TOXIC,
+            MOVE_RAINDANCE,
+            MOVE_BRINE
+        },
+        .ability = Ability_Random_1_2
+    },
+    {
+        .lvl = 1,
+        .species = SPECIES_NIDOKING, // Water / Fighting
+        .moves = {
+            MOVE_SURF,
+            MOVE_BRICKBREAK,
+            MOVE_BODYSLAM,
+            MOVE_SUBSTITUTE
+        },
+        .ability = Ability_Random_1_2
+    },
+};
+
+const struct TrainerMonNoItemCustomMoves sParty_EmraldinQuay_BugCatcherPerry[] = {
+    {
+        .lvl = 1,
+        .species = SPECIES_GALLADE, // Fighting / Fairy
+        .moves = {
+            MOVE_CLOSECOMBAT,
+            MOVE_CHARM,
+            MOVE_NIGHTSLASH,
+            MOVE_PSYCHOCUT
+        },
+        .ability = Ability_Random_1_2
+    },
+    {
+        .lvl = 1,
+        .species = SPECIES_SLOWBRO, // Electric / Fire
+        .moves = {
+            MOVE_THUNDERWAVE,
+            MOVE_FLAMETHROWER,
+            MOVE_SURF,
+            MOVE_PSYSHOCK
+        },
+        .ability = Ability_Random_1_2
+    },
+    {
+        .lvl = 1,
+        .species = SPECIES_FLYGON, // Bug / Dragon
+        .moves = {
+            MOVE_BUGBITE,
+            MOVE_DRAGONDANCE,
+            MOVE_THUNDERPUNCH,
+            MOVE_EARTHQUAKE
+        },
+        .ability = Ability_Random_1_2
+    },
 };
 // #endregion
 
@@ -8834,6 +8942,44 @@ const struct Trainer gTrainers[] = {
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_DOUBLE_BATTLE,
         .partySize = NELEMS(sParty_Route19_PokefanPhoebe),
         .party = {.NoItemDefaultMoves = sParty_Route19_PokefanPhoebe}
+    },    
+    // #endregion
+    // #region Emraldin Quay
+    [TRAINER_EMRALDIN_TRAINER_HOUSE_CHANNELER_MARGUERITE] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .trainerClass = CLASS_PKMN_TRAINER_3,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
+        .trainerPic = TRAINER_PIC_CHANNELER,
+        .trainerName = {_M, _a, _r, _g, _u, _e, _r, _i, _t, _e, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE,
+        .partySize = NELEMS(sParty_EmraldinQuay_ChannelerMarguerite),
+        .party = {.NoItemCustomMoves = sParty_EmraldinQuay_ChannelerMarguerite}
+    },
+    [TRAINER_EMRALDIN_TRAINER_HOUSE_NINJA_BOY_JULIEN] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .trainerClass = CLASS_PKMN_TRAINER_3,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
+        .trainerPic = TRAINER_PIC_NINJA_BOY,
+        .trainerName = {_J, _u, _l, _i, _e, _n, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE,
+        .partySize = NELEMS(sParty_EmraldinQuay_NinjaBoyJulien),
+        .party = {.NoItemCustomMoves = sParty_EmraldinQuay_NinjaBoyJulien}
+    },
+    [TRAINER_EMRALDIN_TRAINER_HOUSE_BUG_CATCHER_PERRY] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .trainerClass = CLASS_PKMN_TRAINER_3,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_BUG_CATCHER,
+        .trainerName = {_P, _e, _r, _r, _y, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE,
+        .partySize = NELEMS(sParty_EmraldinQuay_BugCatcherPerry),
+        .party = {.NoItemCustomMoves = sParty_EmraldinQuay_BugCatcherPerry}
     },    
     // #endregion
     // #endregion

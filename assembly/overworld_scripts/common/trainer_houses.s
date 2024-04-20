@@ -131,6 +131,16 @@ TrainerHouse_Common_GiveQuickBall:
     obtainitem ITEM_QUICK_BALL 0x1
     return
 
+.global TrainerHouse_Common_GiveMaxPotion
+TrainerHouse_Common_GiveMaxPotion:
+    obtainitem ITEM_MAX_POTION 0x1
+    return
+
+.global TrainerHouse_Common_GiveFullRestore
+TrainerHouse_Common_GiveFullRestore:
+    obtainitem ITEM_FULL_RESTORE 0x1
+    return
+
 m_WalkFromRight: .byte walk_down, walk_left, end_m
 m_WalkFromBelow: .byte walk_left, walk_up, end_m
 m_WalkToBattlefield: .byte walk_up, walk_up, walk_left, walk_left, walk_left, walk_left, walk_up, walk_up, look_right, end_m
