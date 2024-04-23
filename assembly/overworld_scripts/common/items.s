@@ -71,6 +71,11 @@ ItemScript_Common_SodaPop:
     finditem ITEM_SODA_POP 0x1
     end
 
+.global ItemScript_Common_MaxEther
+ItemScript_Common_MaxEther:
+    finditem ITEM_MAX_ETHER 0x1
+    end
+
 .global ItemScript_Common_Elixir
 ItemScript_Common_Elixir:
     finditem ITEM_ELIXIR 0x1
@@ -310,6 +315,10 @@ ItemScript_Common_FocusSash:
 .global ItemScript_Common_ChoiceBand
 ItemScript_Common_ChoiceBand:
     finditem ITEM_CHOICE_BAND 0x1
+    end
+
+ItemScript_Common_ChoiceSpecs:
+    finditem ITEM_CHOICE_SPECS 0x1
     end
 
 .global ItemScript_Common_ChoiceScarf

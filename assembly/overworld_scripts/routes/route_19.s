@@ -31,7 +31,6 @@ EventScript_Route19_CoolTrainerRose:
     msgbox gText_Route19_CoolTrainerRose_Chat MSG_NORMAL
     end
 
-@ TODO: These two aren't being fought?
 .global EventScript_Route19_PokefanPhineas
 EventScript_Route19_PokefanPhineas:
     // Double battle with Phoebe
