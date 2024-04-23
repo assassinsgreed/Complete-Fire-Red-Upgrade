@@ -4387,7 +4387,7 @@ const struct TrainerMonNoItemDefaultMoves sParty_Route19_PokefanPhoebe[] = {
 };
 // #endregion
 
-// #region
+// #region Emraldin Quay
 const struct TrainerMonNoItemCustomMoves sParty_EmraldinQuay_ChannelerMarguerite[] = {
     {
         .lvl = 1,
@@ -4463,12 +4463,12 @@ const struct TrainerMonNoItemCustomMoves sParty_EmraldinQuay_NinjaBoyJulien[] = 
 const struct TrainerMonNoItemCustomMoves sParty_EmraldinQuay_BugCatcherPerry[] = {
     {
         .lvl = 1,
-        .species = SPECIES_GALLADE, // Fighting / Fairy
+        .species = SPECIES_SUNFLORA, // Grass / Fire
         .moves = {
-            MOVE_CLOSECOMBAT,
-            MOVE_CHARM,
-            MOVE_NIGHTSLASH,
-            MOVE_PSYCHOCUT
+            MOVE_SYNTHESIS,
+            MOVE_SUNNYDAY,
+            MOVE_WEATHERBALL,
+            MOVE_SOLARBEAM
         },
         .ability = Ability_Random_1_2
     },
@@ -4495,6 +4495,43 @@ const struct TrainerMonNoItemCustomMoves sParty_EmraldinQuay_BugCatcherPerry[] =
         .ability = Ability_Random_1_2
     },
 };
+// #endregion
+// #region Route 23
+const struct TrainerMonNoItemDefaultMoves sParty_Route23_BirdKeeperTyrone[] = {
+    { .lvl = 52, .species = SPECIES_PELIPPER },
+    { .lvl = 52, .species = SPECIES_FLETCHINDER },
+    { .lvl = 53, .species = SPECIES_DECIDUEYE },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route23_GamblerGordon[] = {
+    { .lvl = 50, .species = SPECIES_YAMASK_G },
+    { .lvl = 50, .species = SPECIES_GURDURR },
+    { .lvl = 51, .species = SPECIES_HERACROSS },
+    { .lvl = 51, .species = SPECIES_MIMIKYU },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route23_SuperNerdEmmett[] = {
+    { .lvl = 53, .species = SPECIES_DRAGONAIR },
+    { .lvl = 53, .species = SPECIES_DHELMISE },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route23_GentlemanRussell[] = {
+    { .lvl = 53, .species = SPECIES_STOUTLAND },
+    { .lvl = 53, .species = SPECIES_MANDIBUZZ },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route23_CrushGirlLily[] = {
+    { .lvl = 50, .species = SPECIES_SCRAGGY },
+    { .lvl = 51, .species = SPECIES_FALINKS },
+    { .lvl = 52, .species = SPECIES_CONKELDURR },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route23_BeautyMiranda[] = {
+    { .lvl = 52, .species = SPECIES_SLOWPOKE },
+    { .lvl = 52, .species = SPECIES_SLOWPOKE_G },
+    { .lvl = 53, .species = SPECIES_SLOWPOKE },
+};
+// #endregion
 // #endregion
 
 #define NO_NAME                                                                                      \
@@ -8981,6 +9018,80 @@ const struct Trainer gTrainers[] = {
         .partySize = NELEMS(sParty_EmraldinQuay_BugCatcherPerry),
         .party = {.NoItemCustomMoves = sParty_EmraldinQuay_BugCatcherPerry}
     },    
+    // #endregion
+    // #region Route 23
+    [TRAINER_ROUTE_23_BIRD_KEEPER_TYRONE] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_BIRD_KEEPER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_BIRD_KEEPER,
+        .trainerName = {_T, _y, _r, _o, _n, _e, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_TRY_TO_FAINT,
+        .partySize = NELEMS(sParty_Route23_BirdKeeperTyrone),
+        .party = {.NoItemDefaultMoves = sParty_Route23_BirdKeeperTyrone}
+    },
+    [TRAINER_ROUTE_23_GAMBLER_GORDON] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_GAMBLER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_GAMBLER,
+        .trainerName = {_G, _o, _r, _d, _o, _n, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_RISKY,
+        .partySize = NELEMS(sParty_Route23_GamblerGordon),
+        .party = {.NoItemDefaultMoves = sParty_Route23_GamblerGordon}
+    },
+    [TRAINER_ROUTE_23_SUPER_NERD_EMMETT] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_SUPER_NERD,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_SUPER_NERD,
+        .trainerName = {_E, _m, _m, _e, _t, _t, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_SEMI_SMART,
+        .partySize = NELEMS(sParty_Route23_SuperNerdEmmett),
+        .party = {.NoItemDefaultMoves = sParty_Route23_SuperNerdEmmett}
+    },
+    [TRAINER_ROUTE_23_GENTLEMAN_RUSSELL] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_GENTLEMAN,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_GENTLEMAN,
+        .trainerName = {_R, _u, _s, _s, _e, _l, _l, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE,
+        .partySize = NELEMS(sParty_Route23_GentlemanRussell),
+        .party = {.NoItemDefaultMoves = sParty_Route23_GentlemanRussell}
+    },
+    [TRAINER_ROUTE_23_CRUSH_GIRL_LILY] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_CRUSH_GIRL,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_CRUSH_GIRL,
+        .trainerName = {_L, _i, _l, _y, _END},
+        .items = { ITEM_X_ATTACK },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_TRY_TO_FAINT,
+        .partySize = NELEMS(sParty_Route23_CrushGirlLily),
+        .party = {.NoItemDefaultMoves = sParty_Route23_CrushGirlLily}
+    },
+    [TRAINER_ROUTE_23_BEAUTY_MIRANDA] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_BEAUTY,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .trainerPic = TRAINER_PIC_BEAUTY,
+        .trainerName = {_M, _i, _r, _a, _n, _d, _a, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE,
+        .partySize = NELEMS(sParty_Route23_BeautyMiranda),
+        .party = {.NoItemDefaultMoves = sParty_Route23_BeautyMiranda}
+    },
     // #endregion
     // #endregion
 };

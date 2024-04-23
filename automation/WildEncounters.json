@@ -2008,6 +2008,52 @@
         },
         {
             "mapgroup": 3,
+            "mapnum": 42,
+            "grass": {
+                "rate": 21,
+                "pokemon": [
+                    { "low": 47, "high": 51, "species": "SPECIES_SUNFLORA" },
+                    { "low": 47, "high": 52, "species": "SPECIES_THIEVUL" },
+                    { "low": 48, "high": 51, "species": "SPECIES_KROKOROK" },
+                    { "low": 47, "high": 52, "species": "SPECIES_KROKOROK" },
+                    { "low": 47, "high": 52, "species": "SPECIES_GASTRODON" },
+                    { "low": 46, "high": 52, "species": "SPECIES_SUNFLORA" },
+                    { "low": 46, "high": 52, "species": "SPECIES_RATICATE_A" },
+                    { "low": 47, "high": 51, "species": "SPECIES_RATICATE_A" },
+                    { "low": 48, "high": 52, "species": "SPECIES_RATICATE_A" },
+                    { "low": 47, "high": 51, "species": "SPECIES_SUNKERN" },
+                    { "low": 48, "high": 53, "species": "SPECIES_RATICATE_A" },
+                    { "low": 48, "high": 53, "species": "SPECIES_SUNKERN" }
+                ]
+            },
+            "surfing": {
+                "rate": 2,
+                "pokemon": [
+                    { "low": 47, "high": 51, "species": "SPECIES_HORSEA" },
+                    { "low": 48, "high": 50, "species": "SPECIES_FRILLISH" },
+                    { "low": 46, "high": 51, "species": "SPECIES_MAREANIE" },
+                    { "low": 46, "high": 51, "species": "SPECIES_MAREANIE" },
+                    { "low": 48, "high": 52, "species": "SPECIES_MAREANIE" }
+                ]
+            },
+            "fishing": {
+                "rate": 20,
+                "pokemon": [
+                    { "low": 5, "high": 30, "species": "SPECIES_MAGIKARP" },
+                    { "low": 5, "high": 30, "species": "SPECIES_HORSEA" },
+                    { "low": 25, "high": 35, "species": "SPECIES_MAGIKARP" },
+                    { "low": 25, "high": 35, "species": "SPECIES_HORSEA" },
+                    { "low": 25, "high": 35, "species": "SPECIES_HORSEA" },
+                    { "low": 45, "high": 55, "species": "SPECIES_SEADRA" },
+                    { "low": 45, "high": 55, "species": "SPECIES_MAGIKARP" },
+                    { "low": 45, "high": 55, "species": "SPECIES_MAREANIE" },
+                    { "low": 45, "high": 55, "species": "SPECIES_GYARADOS" },
+                    { "low": 45, "high": 55, "species": "SPECIES_TOXAPEX" }
+                ]
+            }
+        },
+        {
+            "mapgroup": 3,
             "mapnum": 54,
             "grass": {
                 "rate": 21,
@@ -2070,6 +2116,52 @@
                     { "low": 45, "high": 55, "species": "SPECIES_CLOYSTER" },
                     { "low": 45, "high": 55, "species": "SPECIES_GYARADOS" },
                     { "low": 45, "high": 55, "species": "SPECIES_CLOYSTER" }
+                ]
+            }
+        },
+        {
+            "mapgroup": 10,
+            "mapnum": 16,
+            "grass": {
+                "rate": 21,
+                "pokemon": [
+                    { "low": 47, "high": 51, "species": "SPECIES_DRILBUR" },
+                    { "low": 47, "high": 52, "species": "SPECIES_KLANG" },
+                    { "low": 48, "high": 51, "species": "SPECIES_GOLBAT" },
+                    { "low": 47, "high": 52, "species": "SPECIES_CARBINK" },
+                    { "low": 47, "high": 52, "species": "SPECIES_MAWILE" },
+                    { "low": 46, "high": 52, "species": "SPECIES_SABLEYE" },
+                    { "low": 46, "high": 52, "species": "SPECIES_MAWILE" },
+                    { "low": 47, "high": 51, "species": "SPECIES_SABLEYE" },
+                    { "low": 48, "high": 52, "species": "SPECIES_EXCADRILL" },
+                    { "low": 47, "high": 51, "species": "SPECIES_KLINK" },
+                    { "low": 48, "high": 53, "species": "SPECIES_EXCADRILL" },
+                    { "low": 48, "high": 53, "species": "SPECIES_KLINK" }
+                ]
+            },
+            "surfing": {
+                "rate": 13,
+                "pokemon": [
+                    { "low": 47, "high": 51, "species": "SPECIES_SLOWPOKE" },
+                    { "low": 48, "high": 50, "species": "SPECIES_SHELLOS" },
+                    { "low": 46, "high": 51, "species": "SPECIES_SHELLOS" },
+                    { "low": 46, "high": 51, "species": "SPECIES_SLOWPOKE" },
+                    { "low": 48, "high": 52, "species": "SPECIES_SLOWBRO" }
+                ]
+            },
+            "fishing": {
+                "rate": 20,
+                "pokemon": [
+                    { "low": 5, "high": 30, "species": "SPECIES_MAGIKARP" },
+                    { "low": 5, "high": 30, "species": "SPECIES_HORSEA" },
+                    { "low": 25, "high": 35, "species": "SPECIES_HORSEA" },
+                    { "low": 25, "high": 35, "species": "SPECIES_MAGIKARP" },
+                    { "low": 25, "high": 35, "species": "SPECIES_MAGIKARP" },
+                    { "low": 45, "high": 55, "species": "SPECIES_SEADRA" },
+                    { "low": 45, "high": 55, "species": "SPECIES_SEADRA" },
+                    { "low": 45, "high": 55, "species": "SPECIES_HORSEA" },
+                    { "low": 45, "high": 55, "species": "SPECIES_HORSEA" },
+                    { "low": 45, "high": 55, "species": "SPECIES_SEADRA" }
                 ]
             }
         },

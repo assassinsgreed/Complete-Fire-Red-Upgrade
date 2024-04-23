@@ -1751,9 +1751,9 @@ npc 3 34 7 EventScript_Route16_SwimmerFWendy
 npc 3 34 8 EventScript_Route16_TuberCody
 npc 3 34 9 EventScript_Route16_TuberLeslie
 npc 3 34 10 EventScript_Route16_SwimmerFClementine
-npc 3 34 11 EventScript_Route16_Sharpedonite
 npc 3 34 12 ItemScript_Common_SilkScarf
 npc 3 34 13 ItemScript_Common_FocusBand
+npc 3 34 18 EventScript_Route16_Sharpedonite
 
 ## Route 14
 map 3 32 MapScript_WaterRoutes_SetRivalBruccieGymFlag
@@ -1892,3 +1892,35 @@ npc 10 14 0 EventScript_EmraldinQuayTrainerHouse_Host
 npc 10 14 1 EventScript_EmraldinQuayTrainerHouse_Boy
 npc 10 14 2 EventScript_EmraldinQuayTrainerHouse_FatGuy
 npc 10 14 3 EventScript_EmraldinQuayTrainerHouse_Girl
+
+# Route 23
+map 3 42 MapScript_Route23
+npc 3 42 0 EventScript_Route23_TM24Thunderbolt
+npc 3 42 1 ItemScript_Common_FullHeal
+npc 3 42 2 ItemScript_Common_Ultraball
+npc 3 42 3 ItemScript_Common_ChoiceSpecs
+npc 3 42 4 ItemScript_Common_Revive
+npc 3 42 5 ItemScript_Common_MaxEther
+npc 3 42 6 EventScript_Route23_TM15HyperBeam
+npc 3 42 7 EventScript_Route23_BirdKeeperTyrone
+npc 3 42 8 EventScript_Route23_GamblerGordon
+npc 3 42 9 EventScript_Route23_SuperNerdEmmett
+npc 3 42 10 EventScript_Route23_GentlemanRussell
+npc 3 42 11 EventScript_Route23_CrushGirlLily
+npc 3 42 12 EventScript_Route23_BeautyMiranda
+## NPCS 13-19 are palm trees
+npc 3 42 20 EventScript_Route23_Palossand1
+npc 3 42 21 EventScript_Route23_Palossand2
+npc 3 42 22 EventScript_Common_Strength
+npc 3 42 23 EventScript_Common_Strength
+npc 3 42 24 EventScript_Common_Strength
+npc 3 42 25 EventScript_Common_Strength
+npc 3 42 26 EventScript_Common_Strength
+sign 3 42 0 SignScript_Route23_TsarvosaAnthraDirections
+sign 3 42 1 SignScript_Route23_FishermanMasterHouse
+sign 3 42 2 SignScript_Route23_TrainerTips
+npc 10 15 0 EventScript_Route23_FishermansHouse_FishermanMaster
+npc 10 15 1 EventScript_Route23_FishermansHouse_FishermanStudentA
+npc 10 15 2 EventScript_Route23_FishermansHouse_FishermanStudentB
+npc 10 15 3 EventScript_Route23_FishermansHouse_FishermanStudentC
+npc 10 16 0 ItemScript_Common_FullRestore

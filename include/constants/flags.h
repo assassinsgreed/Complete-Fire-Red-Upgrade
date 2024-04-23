@@ -812,15 +812,15 @@
 #define FLAG_HIDE_ROUTE19_TM84_POISON_JAB                0x317
 #define FLAG_HIDE_ROUTE19_ZINC                           0x318
 #define FLAG_HIDE_ROUTE19_LUMINOUS_MOSS                  0x319
-#define FLAG_0x31A               0x31A
-#define FLAG_0x31B               0x31B
-#define FLAG_0x31C               0x31C
-#define FLAG_0x31D               0x31D
-#define FLAG_0x31E               0x31E
-#define FLAG_0x31F               0x31F
-#define FLAG_0x320               0x320
-#define FLAG_0x321               0x321
-#define FLAG_0x322               0x322
+#define FLAG_HIDE_ROUTE16_SHARPEDONITE                   0x31A
+#define FLAG_HIDE_ROUTE23CAVE_FULL_RESTORE               0x31B
+#define FLAG_HIDE_ROUTE23_TM24_THUNDERBOLT               0x31C
+#define FLAG_HIDE_ROUTE23_FULL_HEAL                      0x31D
+#define FLAG_HIDE_ROUTE23_ULTRA_BALL                     0x31E
+#define FLAG_HIDE_ROUTE23_CHOICE_SPECS                   0x31F
+#define FLAG_HIDE_ROUTE23_REVIVE                         0x320
+#define FLAG_HIDE_ROUTE23_MAX_ETHER                      0x321
+#define FLAG_HIDE_ROUTE23_TM15_HYPER_BEAM                0x322
 #define FLAG_0x323               0x323
 #define FLAG_0x324               0x324
 #define FLAG_0x325               0x325
@@ -1200,9 +1200,9 @@
 #define HIDDEN_ITEM_ROUTE19_LUM_BERRY                                 173
 #define HIDDEN_ITEM_EMRALDIN_QUAY_MENTAL_HERB                         174
 #define HIDDEN_ITEM_EMRALDIN_QUAY_OVAL_STONE                          175
-#define HIDDEN_ITEM_FIVE_ISLAND_RESORT_GORGEOUS_STAR_PIECE            176
-#define HIDDEN_ITEM_FIVE_ISLAND_RESORT_GORGEOUS_STARDUST_2            177
-#define HIDDEN_ITEM_SIX_ISLAND_OUTCAST_ISLAND_STAR_PIECE              178
+#define HIDDEN_ITEM_ROUTE23_MAX_REVIVE                                176
+#define HIDDEN_ITEM_ROUTE23_MAX_REPEL                                 177
+#define HIDDEN_ITEM_ROUTE23_LEMONADE                                  178
 #define HIDDEN_ITEM_SIX_ISLAND_OUTCAST_ISLAND_NET_BALL                179
 #define HIDDEN_ITEM_SIX_ISLAND_GREEN_PATH_ULTRA_BALL                  180
 #define HIDDEN_ITEM_SIX_ISLAND_WATER_PATH_ASPEAR_BERRY                181
@@ -1341,6 +1341,8 @@ Daily Flags, cleared at the start of each day.  Goes up to 0xEFF
 #define FLAG_BRUCCIE_VILLAGE_WINGULL_GIFT     0xE18
 #define FLAG_ROUTE_19_PALOSSAND               0xE19
 #define FLAG_EMRALDIN_QUAY_TRAINER_HOUSE      0xE1A
+#define FLAG_ROUTE_23_PALOSSAND               0xE1B
+#define FLAG_ROUTE_23_PALOSSAND_2             0xE1C
 */
 
 #define FLAG_TRAINER_FLAG_START 0x500
