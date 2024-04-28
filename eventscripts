@@ -1924,3 +1924,38 @@ npc 10 15 1 EventScript_Route23_FishermansHouse_FishermanStudentA
 npc 10 15 2 EventScript_Route23_FishermansHouse_FishermanStudentB
 npc 10 15 3 EventScript_Route23_FishermansHouse_FishermanStudentC
 npc 10 16 0 ItemScript_Common_FullRestore
+
+# Route 20
+npc 3 38 0 EventScript_Common_Cut
+npc 3 38 1 EventScript_Common_Cut
+npc 3 38 2 EventScript_Common_Cut
+npc 3 38 3 EventScript_Route20_Kangaskhanite
+npc 3 38 4 EventScript_Route20_TM19Roost
+npc 3 38 5 EventScript_Route20_PsychicMcKenzie
+npc 3 38 6 EventScript_Route20_PicnickerWhitney
+npc 3 38 7 EventScript_Route20_TriathleteLena
+npc 3 38 8 EventScript_Route20_EngineerHomer
+npc 3 38 9 EventScript_Route20_CrushGirlRoxy
+npc 3 38 10 EventScript_Route20_HikerRoyce
+npc 3 38 11 EventScript_Route20_SuperNerdElliot
+npc 3 38 12 EventScript_Route20_YoungsterDewey
+npc 3 38 13 EventScript_Route20_JugglerHiram
+npc 3 38 14 EventScript_Route20_NurseJessie
+npc 3 38 15 ItemScript_Common_Healball
+npc 3 38 16 ItemScript_Common_FullHeal
+npc 3 38 17 ItemScript_Common_PPUp
+npc 3 38 18 ItemScript_Common_XSpecialDefend
+npc 3 38 19 ItemScript_Common_RockGem
+sign 3 38 0 SignScript_Route20_VictoryRoadNavigation
+sign 3 38 1 SignScript_Route20_TrainerTips
+sign 3 38 2 SignScript_Route20_MimmettJungle
+## Cave
+npc 10 17 0 EventScript_Common_RockSmash
+npc 10 17 1 EventScript_Common_RockSmash
+npc 10 17 2 EventScript_Common_RockSmash
+npc 10 17 3 EventScript_Common_RockSmash
+npc 10 17 4 EventScript_Common_RockSmash
+npc 10 17 5 EventScript_Common_RockSmash
+npc 10 17 6 EventScript_Common_RockSmash
+npc 10 17 7 EventScript_Common_RockSmash
+npc 10 17 8 EventScript_Route20Cave_TM69RockPolish
