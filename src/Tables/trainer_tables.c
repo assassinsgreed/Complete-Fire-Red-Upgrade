@@ -10,6 +10,47 @@
 
 // See battle.h for a list of struct types that can be used
 
+const struct u32 TrainerAIFlags_Standard = {
+    [CLASS_YOUNGSTER] = AI_SCRIPT_CHECK_BAD_MOVE,
+    [CLASS_LASS] = AI_SCRIPT_CHECK_BAD_MOVE,
+    [CLASS_BURGLAR] = AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_TRY_TO_FAINT,
+    [CLASS_SWIMMER_F] = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_RISKY,
+    [CLASS_SWIMMER_M] = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_RISKY,
+    [CLASS_COOLTRAINER] = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_SEMI_SMART | AI_SCRIPT_CHECK_VIABILITY,
+    [CLASS_BUG_CATCHER] = AI_SCRIPT_CHECK_BAD_MOVE,
+    [CLASS_CAMPER] = AI_SCRIPT_CHECK_BAD_MOVE,
+    [CLASS_PICNICKER] = AI_SCRIPT_CHECK_BAD_MOVE,
+    [CLASS_SR_AND_JR] = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_DOUBLE_BATTLE,
+    [CLASS_NINJA_BOY] = AI_SCRIPT_RISKY | AI_SCRIPT_TRY_TO_FAINT,
+    [CLASS_GUITARIST_RS] = AI_SCRIPT_TRY_TO_FAINT,
+    [CLASS_NURSE] = AI_SCRIPT_HP_AWARE,
+    [CLASS_BIRD_KEEPER] = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT,
+    [CLASS_RUIN_MANIAC] = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_HP_AWARE | AI_SCRIPT_TRY_TO_FAINT,
+    [CLASS_BLACK_BELT] = AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_PREFER_STRONGEST_MOVE,
+    [CLASS_PSYCHIC] = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE,
+    [CLASS_BEAUTY] = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE,
+    [CLASS_LADY] = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_SETUP_FIRST_TURN,
+    [CLASS_CRUSH_GIRL] = AI_SCRIPT_RISKY | AI_SCRIPT_TRY_TO_FAINT,
+    [CLASS_GENTLEMAN] = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY,
+    [CLASS_FISHERMAN] = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_CHECK_VIABILITY,
+    [CLASS_HIKER] = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_HP_AWARE,
+    [CLASS_ENGINEER] = AI_SCRIPT_CHECK_BAD_MOVE,
+    [CLASS_POKEFAN] = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY,
+    [CLASS_GAMBLER] = AI_SCRIPT_RISKY,
+    [CLASS_COLLECTOR] = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE,
+    [CLASS_PKMN_BREEDER] = AI_SCRIPT_CHECK_BAD_MOVE,
+    [CLASS_SUPER_NERD] = AI_SCRIPT_SEMI_SMART,
+    [CLASS_PARASOL_LADY] = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_HP_AWARE,
+    [CLASS_CHANNELER] = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_RISKY,
+    [CLASS_TUBER_RS_MALE] = AI_SCRIPT_CHECK_BAD_MOVE,
+    [CLASS_TUBER_RS_FEMALE] = AI_SCRIPT_CHECK_BAD_MOVE,
+    [CLASS_SCIENTIST] = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_CHECK_VIABILITY,
+    [CLASS_PAINTER] = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_SEMI_SMART,
+    [CLASS_TRIATHLETE] = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_TRY_TO_FAINT,
+    [CLASS_JUGGLER] = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_SETUP_FIRST_TURN,
+    [CLASS_SKIER] = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_CHECK_VIABILITY,
+};
+
 // #region Trainer Structs
 
 // #region Important trainers
@@ -4670,6 +4711,30 @@ const struct Trainer gTrainers[] = {
         .partySize = NELEMS(sParty_Casey1),
         .party = {.ItemCustomMoves = sParty_Casey1}
     },
+    [TRAINER_ROUTE_10_CASEY_F] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_PKMN_TRAINER_1,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_CASEY_F,
+        .trainerName = {_C, _a, _s, _e, _y, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_SEMI_SMART,
+        .partySize = NELEMS(sParty_Casey2),
+        .party = {.ItemCustomMoves = sParty_Casey2}
+    },
+    [TRAINER_ROUTE_10_CASEY_M] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_PKMN_TRAINER_1,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_CASEY_M,
+        .trainerName = {_C, _a, _s, _e, _y, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_SEMI_SMART,
+        .partySize = NELEMS(sParty_Casey2),
+        .party = {.ItemCustomMoves = sParty_Casey2}
+    },
     [TRAINER_ROUTE_11_SOUTH_PARTNER_RIVAL_V] = {
         .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
         .trainerClass = CLASS_RIVAL,
@@ -4993,7 +5058,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_P, _e, _t, _e, _r, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_YOUNGSTER],
         .partySize = NELEMS(sParty_Route1_YoungsterPeter),
         .party = {.NoItemDefaultMoves = sParty_Route1_YoungsterPeter}
     },
@@ -5005,7 +5070,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_H, _e, _l, _e, _n, _a, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_LASS],
         .partySize = NELEMS(sParty_Route1_LassHelena),
         .party = {.NoItemDefaultMoves = sParty_Route1_LassHelena}
     },
@@ -5017,7 +5082,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_H, _a, _r, _l, _a, _n, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_YOUNGSTER],
         .partySize = NELEMS(sParty_Route1_YoungsterHarlan),
         .party = {.NoItemDefaultMoves = sParty_Route1_YoungsterHarlan}
     },
@@ -5029,7 +5094,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_B, _r, _y, _c, _e, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_TRY_TO_FAINT,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_BURGLAR],
         .partySize = NELEMS(sParty_Route1_BurglarBryce),
         .party = {.NoItemDefaultMoves = sParty_Route1_BurglarBryce}
     },
@@ -5041,7 +5106,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_R, _e, _b, _e, _c, _c, _a, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_RISKY,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_SWIMMER_F],
         .partySize = NELEMS(sParty_Route1_SwimmerRebecca),
         .party = {.NoItemDefaultMoves = sParty_Route1_SwimmerRebecca}
     },
@@ -5055,7 +5120,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_J, _o, _e, _y, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_YOUNGSTER],
         .partySize = NELEMS(sParty_Route2_YoungsterJoey),
         .party = {.NoItemDefaultMoves = sParty_Route2_YoungsterJoey}
     },
@@ -5067,7 +5132,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_K, _i, _m, _b, _e, _r, _l, _y, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_LASS],
         .partySize = NELEMS(sParty_Route2_LassKimberly),
         .party = {.NoItemDefaultMoves = sParty_Route2_LassKimberly}
     },
@@ -5079,7 +5144,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_R, _i, _k, _k, _i, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_LASS],
         .partySize = NELEMS(sParty_Route2_LassRikki),
         .party = {.NoItemDefaultMoves = sParty_Route2_LassRikki}
     },
@@ -5091,7 +5156,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_A, _n, _d, _y, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_COOLTRAINER],
         .partySize = NELEMS(sParty_Route2_CoolTrainerAndy),
         .party = {.NoItemDefaultMoves = sParty_Route2_CoolTrainerAndy}
     },
@@ -5105,7 +5170,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_K, _e, _n, _d, _e, _l, _l, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_BUG_CATCHER],
         .partySize = NELEMS(sParty_VarisiForest_BugCatcherKendell),
         .party = {.NoItemDefaultMoves = sParty_VarisiForest_BugCatcherKendell}
     },
@@ -5117,7 +5182,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_B, _r, _a, _d, _e, _n, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_BUG_CATCHER],
         .partySize = NELEMS(sParty_VarisiForest_BugCatcherBraden),
         .party = {.NoItemDefaultMoves = sParty_VarisiForest_BugCatcherBraden}
     },
@@ -5129,7 +5194,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_B, _r, _e, _a, _n, _n, _a, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_LASS],
         .partySize = NELEMS(sParty_VarisiForest_LassBreanna),
         .party = {.NoItemDefaultMoves = sParty_VarisiForest_LassBreanna}
     },
@@ -5141,7 +5206,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_M, _i, _m, _i, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_LASS],
         .partySize = NELEMS(sParty_VarisiForest_LassMimi),
         .party = {.NoItemDefaultMoves = sParty_VarisiForest_LassMimi}
     },
@@ -5193,7 +5258,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_T, _a, _n, _a, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_PICNICKER],
         .partySize = NELEMS(sParty_Route3_PicknickerTana),
         .party = {.NoItemDefaultMoves = sParty_Route3_PicknickerTana}
     },
@@ -5205,7 +5270,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_I, _r, _w, _i, _n, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_BUG_CATCHER],
         .partySize = NELEMS(sParty_Route3_BugCatcherIrwin),
         .party = {.NoItemDefaultMoves = sParty_Route3_BugCatcherIrwin}
     },
@@ -5217,7 +5282,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_L, _o, _g, _a, _n, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_YOUNGSTER],
         .partySize = NELEMS(sParty_Route3_YoungsterLogan),
         .party = {.NoItemDefaultMoves = sParty_Route3_YoungsterLogan}
     },
@@ -5229,7 +5294,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_N, _i, _n, _a, _SPACE, _AMPERSAND, _SPACE, _M, _e, _g, _END},
         .items = {},
         .doubleBattle = TRUE,
-        .aiFlags = AI_SCRIPT_DOUBLE_BATTLE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_SR_AND_JR],
         .partySize = NELEMS(sParty_Route3_TwinsNinaAndMeg),
         .party = {.NoItemDefaultMoves = sParty_Route3_TwinsNinaAndMeg}
     },
@@ -5241,7 +5306,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_B, _o, _t, _a, _n, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_RISKY,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_NINJA_BOY],
         .partySize = NELEMS(sParty_Route3_NinjaBoyBotan),
         .party = {.NoItemDefaultMoves = sParty_Route3_NinjaBoyBotan}
     },
@@ -5253,7 +5318,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_J, _u, _d, _e, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_TRY_TO_FAINT,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_GUITARIST_RS],
         .partySize = NELEMS(sParty_Route3_RockerJude),
         .party = {.NoItemDefaultMoves = sParty_Route3_RockerJude}
     },
@@ -5278,7 +5343,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_J, _a, _i, _n, _a, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_HP_AWARE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_NURSE],
         .partySize = NELEMS(sParty_RubarrDesert_NurseJaina),
         .party = {.NoItemDefaultMoves = sParty_RubarrDesert_NurseJaina}
     },
@@ -5290,7 +5355,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_N, _o, _l, _a, _n, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_TRY_TO_FAINT,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_BIRD_KEEPER],
         .partySize = NELEMS(sParty_RubarrDesert_BirdKeeperNolan),
         .party = {.NoItemDefaultMoves = sParty_RubarrDesert_BirdKeeperNolan}
     },
@@ -5302,7 +5367,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_K, _e, _n, _t, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_RUIN_MANIAC],
         .partySize = NELEMS(sParty_RubarrDesert_RuinManiacKent),
         .party = {.NoItemDefaultMoves = sParty_RubarrDesert_RuinManiacKent}
     },
@@ -5314,7 +5379,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_K, _o, _b, _i, _y, _a, _s, _h, _i, _END},
         .items = { ITEM_X_ATTACK },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_RISKY,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_BLACK_BELT],
         .partySize = NELEMS(sParty_RubarrDesert_BlackbeltKobiyashi),
         .party = {.ItemDefaultMoves = sParty_RubarrDesert_BlackbeltKobiyashi}
     },
@@ -5326,7 +5391,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_A, _l, _b, _e, _r, _t, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_RUIN_MANIAC],
         .partySize = NELEMS(sParty_RubarrDesert_RuinManiacAlbert),
         .party = {.NoItemDefaultMoves = sParty_RubarrDesert_RuinManiacAlbert}
     },
@@ -5406,7 +5471,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_P, _i, _e, _t, _r, _o, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_CAMPER],
         .partySize = NELEMS(sParty_Route4_Camper_Pietro),
         .party = {.NoItemDefaultMoves = sParty_Route4_Camper_Pietro}
     },
@@ -5418,7 +5483,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_A, _d, _r, _i, _a, _n, _o, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_PSYCHIC],
         .partySize = NELEMS(sParty_Route4_Psychic_Adriano),
         .party = {.NoItemDefaultMoves = sParty_Route4_Psychic_Adriano}
     },
@@ -5430,7 +5495,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_B, _e, _a, _t, _r, _i, _c, _e, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_BEAUTY],
         .partySize = NELEMS(sParty_Route4_Beauty_Beatrice),
         .party = {.NoItemDefaultMoves = sParty_Route4_Beauty_Beatrice}
     },
@@ -5442,7 +5507,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_A, _l, _d, _a, _END},
         .items = { ITEM_POTION },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_LADY],
         .partySize = NELEMS(sParty_Route4_Lady_Alda),
         .party = {.ItemDefaultMoves = sParty_Route4_Lady_Alda}
     },
@@ -5454,7 +5519,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_I, _s, _a, _b, _e, _l, _a, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_LASS],
         .partySize = NELEMS(sParty_Route4_Lass_Isabela),
         .party = {.NoItemDefaultMoves = sParty_Route4_Lass_Isabela}
     },
@@ -5466,7 +5531,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_R, _o, _w, _l, _e, _y, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_BIRD_KEEPER],
         .partySize = NELEMS(sParty_Route4_Bird_Keeper_Rowley),
         .party = {.NoItemDefaultMoves = sParty_Route4_Bird_Keeper_Rowley}
     },
@@ -5478,7 +5543,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_E, _l, _i, _s, _e, _END},
         .items = { ITEM_X_ATTACK },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_CRUSH_GIRL],
         .partySize = NELEMS(sParty_Route4_Crush_Girl_Elise),
         .party = {.ItemDefaultMoves = sParty_Route4_Crush_Girl_Elise}
     },
@@ -5490,7 +5555,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_P, _o, _r, _t, _e, _r, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_GENTLEMAN],
         .partySize = NELEMS(sParty_Route4_Gentleman_Porter),
         .party = {.NoItemDefaultMoves = sParty_Route4_Gentleman_Porter}
     },
@@ -5502,7 +5567,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_L, _u, _c, _a, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_BIRD_KEEPER],
         .partySize = NELEMS(sParty_Route4_Bird_Keeper_Luca),
         .party = {.NoItemDefaultMoves = sParty_Route4_Bird_Keeper_Luca}
     },
@@ -5516,7 +5581,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_A, _l, _f, _i, _e, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_FISHERMAN],
         .partySize = NELEMS(sParty_TormaCave_Fisherman_Alfie),
         .party = {.NoItemDefaultMoves = sParty_TormaCave_Fisherman_Alfie}
     },
@@ -5528,7 +5593,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_N, _o, _b, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_HIKER],
         .partySize = NELEMS(sParty_TormaCave_Hiker_Nob),
         .party = {.NoItemDefaultMoves = sParty_TormaCave_Hiker_Nob}
     },
@@ -5540,7 +5605,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_S, _a, _u, _l, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_HIKER],
         .partySize = NELEMS(sParty_TormaCave_Hiker_Saul),
         .party = {.NoItemDefaultMoves = sParty_TormaCave_Hiker_Saul}
     },
@@ -5552,7 +5617,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_W, _y, _a, _t, _t, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_ENGINEER],
         .partySize = NELEMS(sParty_TormaCave_Engineer_Wyatt),
         .party = {.NoItemDefaultMoves = sParty_TormaCave_Engineer_Wyatt}
     },
@@ -5564,7 +5629,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_S, _h, _a, _n, _e, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_ENGINEER],
         .partySize = NELEMS(sParty_TormaCave_Engineer_Shane),
         .party = {.NoItemDefaultMoves = sParty_TormaCave_Engineer_Shane}
     },
@@ -5576,7 +5641,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_C, _o, _r, _e, _y, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_POKEFAN],
         .partySize = NELEMS(sParty_TormaCave_Pokefan_Corey),
         .party = {.NoItemDefaultMoves = sParty_TormaCave_Pokefan_Corey}
     },
@@ -5588,7 +5653,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_H, _a, _r, _m, _o, _n, _y, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_LASS],
         .partySize = NELEMS(sParty_TormaCave_Lass_Harmony),
         .party = {.NoItemDefaultMoves = sParty_TormaCave_Lass_Harmony}
     },
@@ -5602,11 +5667,10 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_C, _a, _r, _l, _i, _s, _l, _e, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_CAMPER],
         .partySize = NELEMS(sParty_Route7_CamperCarlisle),
         .party = {.NoItemDefaultMoves = sParty_Route7_CamperCarlisle}
-    },
-    
+    },    
     // #endregion
     // #region Route 13
     [TRAINER_ROUTE_13_GAMBLER_DALTON] = {
@@ -5617,7 +5681,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_D, _a, _l, _t, _o, _n, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_RISKY,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_GAMBLER],
         .partySize = NELEMS(sParty_Route13_GamblerDalton),
         .party = {.NoItemDefaultMoves = sParty_Route13_GamblerDalton}
     },
@@ -5629,7 +5693,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_C, _h, _a, _r, _l, _i, _e, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_COLLECTOR],
         .partySize = NELEMS(sParty_Route13_CollectorCharlie),
         .party = {.NoItemDefaultMoves = sParty_Route13_CollectorCharlie}
     },
@@ -5641,7 +5705,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_D, _w, _a, _y, _n, _e, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_HIKER],
         .partySize = NELEMS(sParty_Route13_HikerDwayne),
         .party = {.NoItemDefaultMoves = sParty_Route13_HikerDwayne}
     },
@@ -5653,7 +5717,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_H, _e, _c, _t, _o, _r, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_TRY_TO_FAINT,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_BLACK_BELT],
         .partySize = NELEMS(sParty_Route13_BlackBeltHector),
         .party = {.NoItemDefaultMoves = sParty_Route13_BlackBeltHector}
     },
@@ -5665,7 +5729,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_E, _t, _i, _e, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_PICNICKER],
         .partySize = NELEMS(sParty_Route13_PicknickerEtie),
         .party = {.NoItemDefaultMoves = sParty_Route13_PicknickerEtie}
     },
@@ -5677,7 +5741,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_C, _a, _n, _d, _i, _c, _e, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_BEAUTY],
         .partySize = NELEMS(sParty_Route13_BeautyCandice),
         .party = {.NoItemDefaultMoves = sParty_Route13_BeautyCandice}
     },
@@ -5689,7 +5753,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_O, _w, _a, _i, _n, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_RISKY,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_GAMBLER],
         .partySize = NELEMS(sParty_Route13_GamblerOwain),
         .party = {.NoItemDefaultMoves = sParty_Route13_GamblerOwain}
     },
@@ -5701,7 +5765,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_B, _e, _n, _j, _i, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_SEMI_SMART,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_COLLECTOR],
         .partySize = NELEMS(sParty_Route13_CollectorBenji),
         .party = {.NoItemDefaultMoves = sParty_Route13_CollectorBenji}
     },
@@ -5777,7 +5841,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_F, _a, _i, _t, _h, _END},
         .items = { ITEM_SUPER_POTION },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_LADY],
         .partySize = NELEMS(sParty_Route5_LadyFaith),
         .party = {.ItemDefaultMoves = sParty_Route5_LadyFaith}
     },
@@ -5789,7 +5853,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_B, _e, _n, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_BUG_CATCHER],
         .partySize = NELEMS(sParty_Route5_BugCatcher_Ben),
         .party = {.NoItemDefaultMoves = sParty_Route5_BugCatcher_Ben}
     },
@@ -5801,7 +5865,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_A, _l, _y, _s, _s, _i, _a, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_PSYCHIC],
         .partySize = NELEMS(sParty_Route5_Psychic_Alyssia),
         .party = {.NoItemDefaultMoves = sParty_Route5_Psychic_Alyssia}
     },
@@ -5813,7 +5877,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_B, _r, _e, _n, _d, _a, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_PKMN_BREEDER],
         .partySize = NELEMS(sParty_Route5_Breeder_Brenda),
         .party = {.NoItemDefaultMoves = sParty_Route5_Breeder_Brenda}
     },
@@ -5825,7 +5889,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_R, _a, _h, _e, _e, _m, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_TRY_TO_FAINT,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_BLACK_BELT],
         .partySize = NELEMS(sParty_Route5_Blackbelt_Raheem),
         .party = {.NoItemDefaultMoves = sParty_Route5_Blackbelt_Raheem}
     },
@@ -5837,7 +5901,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_D, _o, _m, _i, _n, _i, _k, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_RISKY,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_GAMBLER],
         .partySize = NELEMS(sParty_Route5_Gambler_Dominik),
         .party = {.NoItemDefaultMoves = sParty_Route5_Gambler_Dominik}
     },
@@ -5849,7 +5913,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_J, _u, _l, _i, _e, _t, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_DOUBLE_BATTLE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_LADY] | AI_SCRIPT_DOUBLE_BATTLE,
         .partySize = NELEMS(sParty_Route5_Lady_Juliet),
         .party = {.NoItemDefaultMoves = sParty_Route5_Lady_Juliet}
     },
@@ -5875,7 +5939,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_C, _o, _l, _e, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_BURGLAR],
         .partySize = NELEMS(sParty_HeleoRanch_Burglar_Cole),
         .party = {.NoItemDefaultMoves = sParty_HeleoRanch_Burglar_Cole}
     },
@@ -5887,7 +5951,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_T, _r, _o, _y, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_CAMPER],
         .partySize = NELEMS(sParty_HeleoRanch_Camper_Troy),
         .party = {.NoItemDefaultMoves = sParty_HeleoRanch_Camper_Troy}
     },
@@ -5899,7 +5963,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_L, _a, _u, _r, _a, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_PKMN_BREEDER],
         .partySize = NELEMS(sParty_HeleoRanch_Breeder_Laura),
         .party = {.NoItemDefaultMoves = sParty_HeleoRanch_Breeder_Laura}
     },
@@ -5911,7 +5975,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_C, _a, _r, _l, _y, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_PICNICKER],
         .partySize = NELEMS(sParty_HeleoRanch_Picknicker_Carly),
         .party = {.NoItemDefaultMoves = sParty_HeleoRanch_Picknicker_Carly}
     },
@@ -5925,7 +5989,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_J, _o, _n, _a, _s, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_TRY_TO_FAINT,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_GUITARIST_RS],
         .partySize = NELEMS(sParty_Route7_RockerJonas),
         .party = {.NoItemDefaultMoves = sParty_Route7_RockerJonas}
     },
@@ -5937,7 +6001,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_E, _d, _e, _n, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_LASS],
         .partySize = NELEMS(sParty_Route7_LassEden),
         .party = {.NoItemDefaultMoves = sParty_Route7_LassEden}
     },
@@ -5949,7 +6013,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_D, _a, _n, _n, _y, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_HIKER],
         .partySize = NELEMS(sParty_Route7_HikerDanny),
         .party = {.NoItemDefaultMoves = sParty_Route7_HikerDanny}
     },
@@ -5961,7 +6025,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_E, _r, _i, _n, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_TRY_TO_FAINT,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_CRUSH_GIRL],
         .partySize = NELEMS(sParty_Route7_CrushGirlEden),
         .party = {.NoItemDefaultMoves = sParty_Route7_CrushGirlEden}
     },
@@ -5973,7 +6037,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_I, _s, _h, _a, _a, _n, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_PSYCHIC],
         .partySize = NELEMS(sParty_Route7_PsychicIshaan),
         .party = {.NoItemDefaultMoves = sParty_Route7_PsychicIshaan}
     },
@@ -5987,7 +6051,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_N, _e, _d, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_YOUNGSTER],
         .partySize = NELEMS(sParty_Route6_Youngster_Ned),
         .party = {.NoItemDefaultMoves = sParty_Route6_Youngster_Ned}
     },
@@ -5999,7 +6063,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_R, _a, _j, _a, _n, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_RISKY,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_NINJA_BOY],
         .partySize = NELEMS(sParty_Route6_NinjaBoy_Rajan),
         .party = {.NoItemDefaultMoves = sParty_Route6_NinjaBoy_Rajan}
     },
@@ -6011,7 +6075,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_R, _o, _m, _e, _r, _o, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_HIKER],
         .partySize = NELEMS(sParty_Route6_Hiker_Romero),
         .party = {.NoItemDefaultMoves = sParty_Route6_Hiker_Romero}
     },
@@ -6023,7 +6087,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_E, _s, _t, _e, _v, _a, _n, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_SEMI_SMART,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_SUPER_NERD],
         .partySize = NELEMS(sParty_Route6_SuperNerd_Estevan),
         .party = {.NoItemDefaultMoves = sParty_Route6_SuperNerd_Estevan}
     },
@@ -6035,7 +6099,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_H, _a, _r, _r, _y, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_ENGINEER],
         .partySize = NELEMS(sParty_Route6_Engineer_Harry),
         .party = {.NoItemDefaultMoves = sParty_Route6_Engineer_Harry}
     },
@@ -6047,7 +6111,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_M, _i, _c, _k, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_RISKY,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_GAMBLER],
         .partySize = NELEMS(sParty_Route6_Gambler_Mick),
         .party = {.NoItemDefaultMoves = sParty_Route6_Gambler_Mick}
     },
@@ -6059,7 +6123,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_T, _a, _y, _l, _o, _r, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_FISHERMAN],
         .partySize = NELEMS(sParty_Route6_Fisherman_Taylor),
         .party = {.NoItemDefaultMoves = sParty_Route6_Fisherman_Taylor}
     },
@@ -6071,7 +6135,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_L, _e, _a, _n, _n, _e, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_HP_AWARE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_NURSE],
         .partySize = NELEMS(sParty_Route6_Nurse_Leanne),
         .party = {.NoItemDefaultMoves = sParty_Route6_Nurse_Leanne}
     },
@@ -6083,7 +6147,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_D, _a, _n, _t, _e, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_SEMI_SMART,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_SUPER_NERD],
         .partySize = NELEMS(sParty_Route6_SuperNerd_Dante),
         .party = {.NoItemDefaultMoves = sParty_Route6_SuperNerd_Dante}
     },
@@ -6095,7 +6159,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_B, _i, _l, _l, _i, _e, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_BUG_CATCHER],
         .partySize = NELEMS(sParty_Route6_BugCatcher_Billie),
         .party = {.NoItemDefaultMoves = sParty_Route6_BugCatcher_Billie}
     },
@@ -6107,7 +6171,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_L, _i, _n, _c, _o, _l, _n, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_GENTLEMAN],
         .partySize = NELEMS(sParty_Route6_Gentleman_Lincoln),
         .party = {.NoItemDefaultMoves = sParty_Route6_Gentleman_Lincoln}
     },
@@ -6119,7 +6183,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_R, _a, _f, _a, _e, _l, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_TRY_TO_FAINT,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_BLACK_BELT],
         .partySize = NELEMS(sParty_Route6_BlackBelt_Raphael),
         .party = {.NoItemDefaultMoves = sParty_Route6_BlackBelt_Raphael}
     },
@@ -6131,7 +6195,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_A, _n, _n, _a, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_LASS],
         .partySize = NELEMS(sParty_Route6_Lass_Anna),
         .party = {.NoItemDefaultMoves = sParty_Route6_Lass_Anna}
     },
@@ -6143,7 +6207,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_D, _a, _n, _i, _k, _a, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_SWIMMER_F],
         .partySize = NELEMS(sParty_Route6_Swimmer_Danika),
         .party = {.NoItemDefaultMoves = sParty_Route6_Swimmer_Danika}
     },
@@ -6155,7 +6219,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_S, _u, _e, _SPACE, _AMPERSAND, _SPACE, _K, _a, _t, _END},
         .items = { },
         .doubleBattle = TRUE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_DOUBLE_BATTLE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_SR_AND_JR],
         .partySize = NELEMS(sParty_Route6_SrAndJr_SueAndKat),
         .party = {.NoItemDefaultMoves = sParty_Route6_SrAndJr_SueAndKat}
     },
@@ -6167,7 +6231,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_D, _a, _r, _r, _y, _l, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_HIKER],
         .partySize = NELEMS(sParty_Route6_HikerDarryl),
         .party = {.NoItemDefaultMoves = sParty_Route6_HikerDarryl}
     },
@@ -6303,7 +6367,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_D, _r, _e, _w, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_GOOD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_CAMPER],
         .partySize = NELEMS(sParty_Route8_Camper_Drew),
         .party = {.NoItemDefaultMoves = sParty_Route8_Camper_Drew}
     },
@@ -6315,7 +6379,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_Z, _e, _k, _e, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_RISKY,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_NINJA_BOY],
         .partySize = NELEMS(sParty_Route8_NinjaBoyZeke),
         .party = {.NoItemDefaultMoves = sParty_Route8_NinjaBoyZeke}
     },
@@ -6327,7 +6391,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_S, _a, _u, _l, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_SEMI_SMART,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_SUPER_NERD],
         .partySize = NELEMS(sParty_Route8_SuperNerdSaul),
         .party = {.NoItemDefaultMoves = sParty_Route8_SuperNerdSaul}
     },
@@ -6339,7 +6403,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_P, _a, _r, _k, _e, _r, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_TRY_TO_FAINT,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_GUITARIST_RS],
         .partySize = NELEMS(sParty_Route8_RockerParker),
         .party = {.NoItemDefaultMoves = sParty_Route8_RockerParker}
     },
@@ -6351,7 +6415,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_A, _n, _n, _a, _b, _e, _l, _l, _e, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_PARASOL_LADY],
         .partySize = NELEMS(sParty_Route8_ParasolLadyAnnabelle),
         .party = {.NoItemDefaultMoves = sParty_Route8_ParasolLadyAnnabelle}
     },
@@ -6363,7 +6427,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_M, _o, _r, _g, _a, _n, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_CHANNELER],
         .partySize = NELEMS(sParty_Route8_ChannelerMorgan),
         .party = {.NoItemDefaultMoves = sParty_Route8_ChannelerMorgan}
     },
@@ -6375,7 +6439,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_A, _r, _n, _o, _l, _d, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_BUG_CATCHER],
         .partySize = NELEMS(sParty_Route8_BugCatcherArnold),
         .party = {.NoItemDefaultMoves = sParty_Route8_BugCatcherArnold}
     },
@@ -6387,7 +6451,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_L, _i, _l, _i, _a, _n, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_LASS],
         .partySize = NELEMS(sParty_Route8_LassLilian),
         .party = {.NoItemDefaultMoves = sParty_Route8_LassLilian}
     },
@@ -6399,7 +6463,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_N, _a, _t, _t, _o, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_RISKY,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_NINJA_BOY],
         .partySize = NELEMS(sParty_Route8_NinjaBoyNatto),
         .party = {.NoItemDefaultMoves = sParty_Route8_NinjaBoyNatto}
     },
@@ -6411,7 +6475,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_M, _i, _c, _a, _h, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_TUBER_RS_MALE],
         .partySize = NELEMS(sParty_Route8_TuberMicah),
         .party = {.NoItemDefaultMoves = sParty_Route8_TuberMicah}
     },
@@ -6423,7 +6487,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_N, _a, _n, _c, _y, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_TUBER_RS_FEMALE],
         .partySize = NELEMS(sParty_Route8_TuberNancy),
         .party = {.NoItemDefaultMoves = sParty_Route8_TuberNancy}
     },
@@ -6435,7 +6499,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_M, _a, _y, _a, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_SWIMMER_F],
         .partySize = NELEMS(sParty_Route8_SwimmerMaya),
         .party = {.NoItemDefaultMoves = sParty_Route8_SwimmerMaya}
     },
@@ -6447,7 +6511,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_H, _u, _e, _y, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_SWIMMER_M],
         .partySize = NELEMS(sParty_Route8_SwimmerHuey),
         .party = {.NoItemDefaultMoves = sParty_Route8_SwimmerHuey}
     },
@@ -6459,7 +6523,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_B, _o, _b, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_SWIMMER_M],
         .partySize = NELEMS(sParty_Route8_SwimmerBob),
         .party = {.NoItemDefaultMoves = sParty_Route8_SwimmerBob}
     },
@@ -6471,7 +6535,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_H, _a, _r, _r, _i, _e, _t, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_COOLTRAINER],
         .partySize = NELEMS(sParty_Route8_CoolTrainerHarriet),
         .party = {.NoItemDefaultMoves = sParty_Route8_CoolTrainerHarriet}
     },
@@ -6485,7 +6549,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_M, _o, _n, _a, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_CHANNELER],
         .partySize = NELEMS(sParty_ForgottenManse_ChannelerMona),
         .party = {.NoItemDefaultMoves = sParty_ForgottenManse_ChannelerMona}
     },
@@ -6497,7 +6561,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_C, _h, _a, _d, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_BURGLAR],
         .partySize = NELEMS(sParty_ForgottenManse_BurglarChad),
         .party = {.NoItemDefaultMoves = sParty_ForgottenManse_BurglarChad}
     },
@@ -6509,7 +6573,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_L, _u, _c, _y, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_HP_AWARE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_NURSE],
         .partySize = NELEMS(sParty_ForgottenManse_NurseLucy),
         .party = {.NoItemDefaultMoves = sParty_ForgottenManse_NurseLucy}
     },
@@ -6521,7 +6585,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_L, _u, _l, _u, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_BEAUTY],
         .partySize = NELEMS(sParty_ForgottenManse_1F_BeautyLulu),
         .party = {.NoItemDefaultMoves = sParty_ForgottenManse_1F_BeautyLulu}
     },
@@ -6533,7 +6597,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_E, _s, _t, _h, _e, _r, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_CHANNELER],
         .partySize = NELEMS(sParty_ForgottenManse_1F_ChannelerEsther),
         .party = {.NoItemDefaultMoves = sParty_ForgottenManse_1F_ChannelerEsther}
     },
@@ -6545,7 +6609,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_A, _u, _s, _t, _i, _n, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_SEMI_SMART,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_SUPER_NERD],
         .partySize = NELEMS(sParty_ForgottenManse_1F_SuperNerdAustin),
         .party = {.NoItemCustomMoves = sParty_ForgottenManse_1F_SuperNerdAustin}
     },
@@ -6557,7 +6621,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_J, _a, _c, _q, _u, _e, _s, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_BURGLAR],
         .partySize = NELEMS(sParty_ForgottenManse_1F_BurglarJacques),
         .party = {.NoItemDefaultMoves = sParty_ForgottenManse_1F_BurglarJacques}
     },
@@ -6569,7 +6633,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_C, _o, _r, _b, _i, _n, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_PSYCHIC],
         .partySize = NELEMS(sParty_ForgottenManse_1F_PsychicCorbin),
         .party = {.NoItemDefaultMoves = sParty_ForgottenManse_1F_PsychicCorbin}
     },
@@ -6581,7 +6645,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_B, _a, _r, _r, _y, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_BURGLAR],
         .partySize = NELEMS(sParty_ForgottenManse_2F_BurglarBarry),
         .party = {.NoItemDefaultMoves = sParty_ForgottenManse_2F_BurglarBarry}
     },
@@ -6593,7 +6657,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_C, _h, _e, _s, _t, _e, _r, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_YOUNGSTER],
         .partySize = NELEMS(sParty_ForgottenManse_2F_YoungsterChester),
         .party = {.NoItemDefaultMoves = sParty_ForgottenManse_2F_YoungsterChester}
     },
@@ -6605,7 +6669,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_E, _l, _a, _i, _n, _e, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_CHANNELER],
         .partySize = NELEMS(sParty_ForgottenManse_2F_ChannelerElaine),
         .party = {.NoItemDefaultMoves = sParty_ForgottenManse_2F_ChannelerElaine}
     },
@@ -6617,7 +6681,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_G, _l, _e, _n, _n, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_SEMI_SMART,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_SUPER_NERD],
         .partySize = NELEMS(sParty_ForgottenManse_BF1_SuperNerdGlenn),
         .party = {.NoItemDefaultMoves = sParty_ForgottenManse_BF1_SuperNerdGlenn}
     },
@@ -6629,7 +6693,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_P, _e, _t, _e, _r, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_BURGLAR],
         .partySize = NELEMS(sParty_ForgottenManse_BF1_BurglarPeter),
         .party = {.NoItemDefaultMoves = sParty_ForgottenManse_BF1_BurglarPeter}
     },
@@ -6641,7 +6705,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_N, _o, _e, _l, _l, _e, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_PSYCHIC],
         .partySize = NELEMS(sParty_ForgottenManse_BF1_PsychicNoelle),
         .party = {.NoItemDefaultMoves = sParty_ForgottenManse_BF1_PsychicNoelle}
     },
@@ -6653,7 +6717,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_S, _a, _n, _a, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_CHANNELER],
         .partySize = NELEMS(sParty_ForgottenManse_BF1_ChannelerSana),
         .party = {.NoItemDefaultMoves = sParty_ForgottenManse_BF1_ChannelerSana}
     },
@@ -6667,7 +6731,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_M, _a, _r, _i, _u, _s, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_TRY_TO_FAINT,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_BIRD_KEEPER],
         .partySize = NELEMS(sParty_DaimynFactory_BirdkeeperMarius),
         .party = {.NoItemDefaultMoves = sParty_DaimynFactory_BirdkeeperMarius}
     },
@@ -6679,7 +6743,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_B, _e, _n, _s, _o, _n, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_TRY_TO_FAINT,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_GUITARIST_RS],
         .partySize = NELEMS(sParty_DaimynFactory_RockerBenson),
         .party = {.NoItemDefaultMoves = sParty_DaimynFactory_RockerBenson}
     },
@@ -6703,7 +6767,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_J, _a, _m, _i, _s, _o, _n, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_ENGINEER],
         .partySize = NELEMS(sParty_DaimynFactory_EngineerJamison),
         .party = {.NoItemDefaultMoves = sParty_DaimynFactory_EngineerJamison}
     },
@@ -6715,7 +6779,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_M, _i, _k, _e, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_HIKER],
         .partySize = NELEMS(sParty_DaimynFactory_HikerMike),
         .party = {.NoItemDefaultMoves = sParty_DaimynFactory_HikerMike}
     },
@@ -6727,7 +6791,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_R, _o, _r, _y, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_RISKY,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_BLACK_BELT],
         .partySize = NELEMS(sParty_DaimynFactory_BlackbeltRory),
         .party = {.NoItemDefaultMoves = sParty_DaimynFactory_BlackbeltRory}
     },
@@ -6739,7 +6803,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_W, _i, _l, _s, _o, _n, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_ENGINEER],
         .partySize = NELEMS(sParty_DaimynFactory_EngineerWilson),
         .party = {.NoItemDefaultMoves = sParty_DaimynFactory_EngineerWilson}
     },
@@ -6751,7 +6815,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_N, _a, _t, _e, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_YOUNGSTER],
         .partySize = NELEMS(sParty_DaimynFactory_YoungsterNate),
         .party = {.NoItemDefaultMoves = sParty_DaimynFactory_YoungsterNate}
     },
@@ -6763,7 +6827,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_S, _h, _a, _n, _n, _a, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_PICNICKER],
         .partySize = NELEMS(sParty_DaimynFactory_PicknickerShanna),
         .party = {.NoItemDefaultMoves = sParty_DaimynFactory_PicknickerShanna}
     },
@@ -6775,7 +6839,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_K, _l, _i, _f, _f, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_ENGINEER],
         .partySize = NELEMS(sParty_DaimynFactory_EngineerKliff),
         .party = {.NoItemDefaultMoves = sParty_DaimynFactory_EngineerKliff}
     },
@@ -6899,7 +6963,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_M, _a, _r, _s, _h, _a, _l, _l, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_COLLECTOR],
         .partySize = NELEMS(sParty_Route9_Collector_Marshall),
         .party = {.NoItemDefaultMoves = sParty_Route9_Collector_Marshall}
     },
@@ -6911,7 +6975,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_A, _n, _d, _r, _e, _a, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_COOLTRAINER],
         .partySize = NELEMS(sParty_Route9_CoolTrainer_Andrea),
         .party = {.NoItemDefaultMoves = sParty_Route9_CoolTrainer_Andrea}
     },
@@ -6923,7 +6987,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_Y, _u, _s, _u, _f, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_FISHERMAN],
         .partySize = NELEMS(sParty_Route9_Fisherman_Yusuf),
         .party = {.NoItemDefaultMoves = sParty_Route9_Fisherman_Yusuf}
     },
@@ -6935,7 +6999,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_G, _a, _v, _i, _n, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_GENTLEMAN],
         .partySize = NELEMS(sParty_Route9_Gentleman_Gavin),
         .party = {.NoItemCustomMoves = sParty_Route9_Gentleman_Gavin}
     },
@@ -6947,7 +7011,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_A, _y, _r, _t, _o, _n, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_RISKY,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_NINJA_BOY],
         .partySize = NELEMS(sParty_Route9_NinjaBoy_Ayrton),
         .party = {.NoItemDefaultMoves = sParty_Route9_NinjaBoy_Ayrton}
     },
@@ -6959,7 +7023,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_T, _a, _l, _i, _a, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_PKMN_BREEDER],
         .partySize = NELEMS(sParty_Route9_Breeder_Talia),
         .party = {.NoItemDefaultMoves = sParty_Route9_Breeder_Talia}
     },
@@ -6971,7 +7035,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_Z, _o, _e, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_PICNICKER],
         .partySize = NELEMS(sParty_Route9_Picknicker_Zoe),
         .party = {.NoItemDefaultMoves = sParty_Route9_Picknicker_Zoe}
     },
@@ -6983,7 +7047,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_K, _i, _n, _g, _s, _l, _e, _y, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_COOLTRAINER],
         .partySize = NELEMS(sParty_Route9_CoolTrainer_Kingsley),
         .party = {.NoItemDefaultMoves = sParty_Route9_CoolTrainer_Kingsley}
     },
@@ -6997,7 +7061,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_D, _a, _r, _i, _u, _s, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_PSYCHIC],
         .partySize = NELEMS(sParty_Route10_PsychicDarius),
         .party = {.NoItemDefaultMoves = sParty_Route10_PsychicDarius}
     },
@@ -7009,7 +7073,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_M, _a, _r, _i, _o, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_TRY_TO_FAINT,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_BIRD_KEEPER],
         .partySize = NELEMS(sParty_Route10_BirdKeeperMario),
         .party = {.NoItemDefaultMoves = sParty_Route10_BirdKeeperMario}
     },
@@ -7021,7 +7085,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_D, _a, _r, _r, _e, _n, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_RISKY,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_GAMBLER],
         .partySize = NELEMS(sParty_Route10_GamblerDarren),
         .party = {.NoItemDefaultMoves = sParty_Route10_GamblerDarren}
     },
@@ -7033,7 +7097,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_G, _w, _e, _n, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_PARASOL_LADY],
         .partySize = NELEMS(sParty_Route10_ParasolLadyGwen),
         .party = {.NoItemDefaultMoves = sParty_Route10_ParasolLadyGwen}
     },
@@ -7045,7 +7109,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_J, _a, _c, _k, _s, _o, _n, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_GOOD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_CAMPER],
         .partySize = NELEMS(sParty_Route10_CamperJackson),
         .party = {.NoItemDefaultMoves = sParty_Route10_CamperJackson}
     },
@@ -7057,7 +7121,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_B, _e, _r, _t, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_TRY_TO_FAINT,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_GUITARIST_RS],
         .partySize = NELEMS(sParty_Route10_RockerBert),
         .party = {.NoItemDefaultMoves = sParty_Route10_RockerBert}
     },
@@ -7069,7 +7133,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_A, _l, _b, _e, _r, _t, _o, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_SWIMMER_M],
         .partySize = NELEMS(sParty_Route10_SwimmerAlberto),
         .party = {.NoItemDefaultMoves = sParty_Route10_SwimmerAlberto}
     },
@@ -7081,7 +7145,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_R, _o, _s, _i, _e, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_SWIMMER_F],
         .partySize = NELEMS(sParty_Route10_SwimmerRosie),
         .party = {.NoItemDefaultMoves = sParty_Route10_SwimmerRosie}
     },
@@ -7093,33 +7157,9 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_D, _o, _u, _g, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_SWIMMER_M],
         .partySize = NELEMS(sParty_Route10_SwimmerDoug),
         .party = {.NoItemDefaultMoves = sParty_Route10_SwimmerDoug}
-    },
-    [TRAINER_ROUTE_10_CASEY_F] = {
-        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
-        .trainerClass = CLASS_PKMN_TRAINER_1,
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
-        .trainerPic = TRAINER_PIC_CASEY_F,
-        .trainerName = {_C, _a, _s, _e, _y, _END},
-        .items = { },
-        .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_SEMI_SMART,
-        .partySize = NELEMS(sParty_Casey2),
-        .party = {.ItemCustomMoves = sParty_Casey2}
-    },
-    [TRAINER_ROUTE_10_CASEY_M] = {
-        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
-        .trainerClass = CLASS_PKMN_TRAINER_1,
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
-        .trainerPic = TRAINER_PIC_CASEY_M,
-        .trainerName = {_C, _a, _s, _e, _y, _END},
-        .items = { },
-        .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_SEMI_SMART,
-        .partySize = NELEMS(sParty_Casey2),
-        .party = {.ItemCustomMoves = sParty_Casey2}
     },
     [TRAINER_ROUTE_10_CAVE_HIKER_HARLEY] = {
         .partyFlags = 0,
@@ -7129,7 +7169,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_H, _a, _r, _l, _e, _y, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_HIKER],
         .partySize = NELEMS(sParty_Route10Cave_HikerHarley),
         .party = {.NoItemDefaultMoves = sParty_Route10Cave_HikerHarley}
     },
@@ -7141,7 +7181,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_X, _a, _v, _i, _e, _r, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_TRY_TO_FAINT,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_BLACK_BELT],
         .partySize = NELEMS(sParty_Route10Cave_BlackbeltXavier),
         .party = {.NoItemDefaultMoves = sParty_Route10Cave_BlackbeltXavier}
     },
@@ -7221,7 +7261,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_T, _a, _b, _i, _t, _h, _a, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_LASS],
         .partySize = NELEMS(sParty_Route11South_Lass_Tabitha),
         .party = {.NoItemDefaultMoves = sParty_Route11South_Lass_Tabitha}
     },
@@ -7233,7 +7273,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_A, _l, _i, _s, _a, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_TRY_TO_FAINT,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_CRUSH_GIRL],
         .partySize = NELEMS(sParty_Route11South_CrushGirl_Alisa),
         .party = {.NoItemDefaultMoves = sParty_Route11South_CrushGirl_Alisa}
     },
@@ -7245,7 +7285,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_D, _a, _l, _e, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_ENGINEER],
         .partySize = NELEMS(sParty_Route11South_Engineer_Dale),
         .party = {.NoItemDefaultMoves = sParty_Route11South_Engineer_Dale}
     },
@@ -7257,7 +7297,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_O, _r, _v, _i, _l, _l, _e, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_COLLECTOR],
         .partySize = NELEMS(sParty_Route11South_Collector_Orville),
         .party = {.NoItemDefaultMoves = sParty_Route11South_Collector_Orville}
     },
@@ -7304,7 +7344,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_L, _u, _k, _e, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_HIKER],
         .partySize = NELEMS(sParty_HessonPass_HikerLuke),
         .party = {.NoItemDefaultMoves = sParty_HessonPass_HikerLuke}
     },
@@ -7316,7 +7356,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_H, _a, _r, _v, _e, _y, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_CHECK_VIABILITY,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_SCIENTIST],
         .partySize = NELEMS(sParty_HessonPass_ScientistHarvey),
         .party = {.NoItemDefaultMoves = sParty_HessonPass_ScientistHarvey}
     },
@@ -7328,7 +7368,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_K, _i, _m, _i, _k, _o, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_GOOD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_PSYCHIC],
         .partySize = NELEMS(sParty_HessonPass_PsychicKimiko),
         .party = {.NoItemDefaultMoves = sParty_HessonPass_PsychicKimiko}
     },
@@ -7340,7 +7380,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_C, _o, _l, _t, _END},
         .items = { ITEM_HYPER_POTION },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_COOLTRAINER],
         .partySize = NELEMS(sParty_HessonPass_CoolTrainerColt),
         .party = {.NoItemDefaultMoves = sParty_HessonPass_CoolTrainerColt}
     },
@@ -7352,7 +7392,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_H, _a, _y, _t, _h, _a, _m, _END},
         .items = { ITEM_DIRE_HIT },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_RISKY,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_BLACK_BELT],
         .partySize = NELEMS(sParty_HessonPass_BlackbeltHaytham),
         .party = {.NoItemDefaultMoves = sParty_HessonPass_BlackbeltHaytham}
     },
@@ -7364,7 +7404,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_Z, _e, _u, _s, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_COLLECTOR],
         .partySize = NELEMS(sParty_HessonPass_CollectorZeus),
         .party = {.NoItemDefaultMoves = sParty_HessonPass_CollectorZeus}
     },
@@ -7376,7 +7416,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_M, _i, _n, _a, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_HP_AWARE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_NURSE],
         .partySize = NELEMS(sParty_HessonPass_NurseMina),
         .party = {.NoItemDefaultMoves = sParty_HessonPass_NurseMina}
     },
@@ -7388,7 +7428,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_G, _o, _r, _d, _y, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_GENTLEMAN],
         .partySize = NELEMS(sParty_HessonPass_GentlemanGordy),
         .party = {.NoItemDefaultMoves = sParty_HessonPass_GentlemanGordy}
     },
@@ -7402,7 +7442,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_I, _s, _o, _b, _e, _l, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_SEMI_SMART,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_PAINTER],
         .partySize = NELEMS(sParty_Route11North_PainterIsobel),
         .party = {.NoItemDefaultMoves = sParty_Route11North_PainterIsobel}
     },
@@ -7414,7 +7454,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_C, _l, _i, _n, _t, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_CHECK_VIABILITY,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_FISHERMAN],
         .partySize = NELEMS(sParty_Route11North_FishermanClint),
         .party = {.NoItemDefaultMoves = sParty_Route11North_FishermanClint}
     },
@@ -7426,7 +7466,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_T, _i, _n, _a, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_HP_AWARE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_PARASOL_LADY],
         .partySize = NELEMS(sParty_Route11North_ParaoslLadyTina),
         .party = {.NoItemDefaultMoves = sParty_Route11North_ParaoslLadyTina}
     },
@@ -7438,7 +7478,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_K, _a, _t, _y, _a, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_RISKY,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_CHANNELER],
         .partySize = NELEMS(sParty_Route11North_ChanellerKatya),
         .party = {.NoItemDefaultMoves = sParty_Route11North_ChanellerKatya}
     },
@@ -7450,7 +7490,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_N, _a, _t, _h, _a, _n, _i, _e, _l, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_PREFER_STRONGEST_MOVE | AI_SCRIPT_TRY_TO_FAINT,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_GUITARIST_RS] | AI_SCRIPT_PREFER_STRONGEST_MOVE,
         .partySize = NELEMS(sParty_Route11North_RockerNathaniel),
         .party = {.NoItemDefaultMoves = sParty_Route11North_RockerNathaniel}
     },
@@ -7462,7 +7502,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_Y, _a, _o, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_RISKY | AI_SCRIPT_TRY_TO_FAINT,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_NINJA_BOY],
         .partySize = NELEMS(sParty_Route11North_NinjaBoyYao),
         .party = {.NoItemDefaultMoves = sParty_Route11North_NinjaBoyYao}
     },
@@ -7474,7 +7514,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_J, _o, _n, _a, _h, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_CHECK_VIABILITY,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_FISHERMAN],
         .partySize = NELEMS(sParty_Route11North_FishermanJonah),
         .party = {.NoItemDefaultMoves = sParty_Route11North_FishermanJonah}
     },
@@ -7622,7 +7662,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_C, _l, _a, _r, _k, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_POKEFAN],
         .partySize = NELEMS(sParty_PeradonForest_PokefanClark),
         .party = {.NoItemDefaultMoves = sParty_PeradonForest_PokefanClark}
     },
@@ -7634,7 +7674,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_F, _e, _r, _n, _a, _n, _d, _o, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_COLLECTOR],
         .partySize = NELEMS(sParty_PeradonForest_CollectorFernando),
         .party = {.NoItemDefaultMoves = sParty_PeradonForest_CollectorFernando}
     },
@@ -7670,7 +7710,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_S, _h, _e, _e, _n, _a, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_SETUP_FIRST_TURN,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_PAINTER],
         .partySize = NELEMS(sParty_PeradonForest_PainterSheena),
         .party = {.NoItemDefaultMoves = sParty_PeradonForest_PainterSheena}
     },
@@ -7682,7 +7722,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_R, _u, _p, _e, _r, _t, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_CAMPER],
         .partySize = NELEMS(sParty_PeradonForest_CamperRupert),
         .party = {.NoItemDefaultMoves = sParty_PeradonForest_CamperRupert}
     },
@@ -7694,19 +7734,19 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_S, _e, _a, _n, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_TRY_TO_FAINT,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_SCIENTIST],
         .partySize = NELEMS(sParty_PeradonForest_ScientistSean),
         .party = {.NoItemDefaultMoves = sParty_PeradonForest_ScientistSean}
     },
     [TRAINER_PERADON_FOREST_ROCKER_RAPHAEL] = {
         .partyFlags = 0,
-        .trainerClass = CLASS_ROCKER,
+        .trainerClass = CLASS_GUITARIST_RS,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
         .trainerPic = TRAINER_PIC_GUITARIST,
         .trainerName = {_R, _a, _p, _h, _a, _e, _l, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_RISKY,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_GUITARIST_RS] | AI_SCRIPT_PREFER_STRONGEST_MOVE,
         .partySize = NELEMS(sParty_PeradonForest_RockerRaphael),
         .party = {.NoItemDefaultMoves = sParty_PeradonForest_RockerRaphael}
     },
@@ -7718,7 +7758,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_R, _e, _n, _e, _e, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_PREFER_STRONGEST_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_CHANNELER],
         .partySize = NELEMS(sParty_PeradonForest_ChannelerRenee),
         .party = {.NoItemDefaultMoves = sParty_PeradonForest_ChannelerRenee}
     },
@@ -7730,7 +7770,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_B, _r, _a, _d, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_BLACK_BELT],
         .partySize = NELEMS(sParty_PeradonForest_BlackbeltBrad),
         .party = {.NoItemDefaultMoves = sParty_PeradonForest_BlackbeltBrad}
     },
@@ -7742,7 +7782,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_A, _l, _e, _x, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_HP_AWARE | AI_SCRIPT_TRY_TO_FAINT,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_RUIN_MANIAC],
         .partySize = NELEMS(sParty_PeradonForest_RuinManiacAlex),
         .party = {.NoItemDefaultMoves = sParty_PeradonForest_RuinManiacAlex}
     },
@@ -7756,7 +7796,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_J, _o, _a, _n, _n, _e, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_TRY_TO_FAINT,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_TRIATHLETE],
         .partySize = NELEMS(sParty_Route12East_TriathleteJoanne),
         .party = {.NoItemDefaultMoves = sParty_Route12East_TriathleteJoanne}
     },
@@ -7768,7 +7808,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_T, _o, _n, _y, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_PSYCHIC],
         .partySize = NELEMS(sParty_Route12East_PsychicTony),
         .party = {.NoItemDefaultMoves = sParty_Route12East_PsychicTony}
     },
@@ -7780,7 +7820,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_D, _w, _i, _g, _h, _t, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_HIKER],
         .partySize = NELEMS(sParty_Route12East_HikerDwight),
         .party = {.NoItemDefaultMoves = sParty_Route12East_HikerDwight}
     },
@@ -7792,7 +7832,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_T, _r, _i, _x, _i, _e, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_TRY_TO_FAINT,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_TRIATHLETE],
         .partySize = NELEMS(sParty_Route12East_TriathleteTrixie),
         .party = {.NoItemDefaultMoves = sParty_Route12East_TriathleteTrixie}
     },
@@ -7804,7 +7844,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_G, _e, _o, _f, _f, _r, _e, _y, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_GENTLEMAN],
         .partySize = NELEMS(sParty_Route12East_GentlemanGeoffrey),
         .party = {.NoItemDefaultMoves = sParty_Route12East_GentlemanGeoffrey}
     },
@@ -7840,7 +7880,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_J, _o, _h, _a, _n, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_SETUP_FIRST_TURN,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_JUGGLER],
         .partySize = NELEMS(sParty_ScaldingSpa_JugglerJohan),
         .party = {.NoItemDefaultMoves = sParty_ScaldingSpa_JugglerJohan}
     },
@@ -7852,7 +7892,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_K, _i, _e, _r, _a, _n, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_RISKY | AI_SCRIPT_TRY_TO_FAINT,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_BLACK_BELT],
         .partySize = NELEMS(sParty_ScaldingSpa_BlackbeltKieran),
         .party = {.NoItemDefaultMoves = sParty_ScaldingSpa_BlackbeltKieran}
     },
@@ -7876,7 +7916,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_B, _r, _e, _n, _d, _a, _n, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_BUG_CATCHER],
         .partySize = NELEMS(sParty_Route12West_BugCatcherBrenan),
         .party = {.NoItemDefaultMoves = sParty_Route12West_BugCatcherBrenan}
     },
@@ -7888,7 +7928,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_C, _h, _a, _n, _t, _a, _l, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_CHECK_VIABILITY,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_SKIER],
         .partySize = NELEMS(sParty_Route12West_SkierChantal),
         .party = {.NoItemDefaultMoves = sParty_Route12West_SkierChantal}
     },
@@ -7900,7 +7940,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_K, _u, _m, _a, _r, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_HP_AWARE | AI_SCRIPT_TRY_TO_FAINT,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_HIKER],
         .partySize = NELEMS(sParty_Route12West_HikerKumar),
         .party = {.NoItemDefaultMoves = sParty_Route12West_HikerKumar}
     },
@@ -7912,7 +7952,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_A, _u, _b, _r, _e, _y, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_CHECK_VIABILITY,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_SKIER],
         .partySize = NELEMS(sParty_Route12West_SkierAubrey),
         .party = {.NoItemDefaultMoves = sParty_Route12West_SkierAubrey}
     },
@@ -7924,7 +7964,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_L, _e, _n, _o, _r, _a, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_CHECK_VIABILITY,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_SKIER],
         .partySize = NELEMS(sParty_Route12West_SkierLenora),
         .party = {.NoItemDefaultMoves = sParty_Route12West_SkierLenora}
     },
@@ -7936,7 +7976,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_M, _e, _g, _a, _n, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_CHECK_VIABILITY,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_SKIER],
         .partySize = NELEMS(sParty_Route12West_SkierMegan),
         .party = {.NoItemDefaultMoves = sParty_Route12West_SkierMegan}
     },
@@ -7948,7 +7988,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_G, _r, _e, _g, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_RISKY,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_SWIMMER_M],
         .partySize = NELEMS(sParty_Route12West_SwimmerMGreg),
         .party = {.NoItemDefaultMoves = sParty_Route12West_SwimmerMGreg}
     },
@@ -8034,7 +8074,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_R, _i, _t, _a, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_CHECK_VIABILITY,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_SKIER],
         .partySize = NELEMS(sParty_CalicinBay_SkierRita),
         .party = {.NoItemDefaultMoves = sParty_CalicinBay_SkierRita}
     },
@@ -8046,7 +8086,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_F, _r, _a, _n, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_RISKY,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_SWIMMER_F],
         .partySize = NELEMS(sParty_CalicinBay_SwimmerFFran),
         .party = {.NoItemDefaultMoves = sParty_CalicinBay_SwimmerFFran}
     },
@@ -8058,7 +8098,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_A, _n, _g, _e, _l, _o, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_RISKY,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_SWIMMER_M],
         .partySize = NELEMS(sParty_CalicinBay_SwimmerMAngelo),
         .party = {.NoItemDefaultMoves = sParty_CalicinBay_SwimmerMAngelo}
     },
@@ -8070,7 +8110,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_S, _e, _b, _a, _s, _t, _i, _a, _n, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_RISKY,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_SWIMMER_M],
         .partySize = NELEMS(sParty_CalicinBay_SwimmerMSebastian),
         .party = {.NoItemDefaultMoves = sParty_CalicinBay_SwimmerMSebastian}
     },
@@ -8082,7 +8122,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_C, _o, _r, _r, _i, _n, _e, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_RISKY,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_SWIMMER_F],
         .partySize = NELEMS(sParty_CalicinBay_SwimmerFCorrine),
         .party = {.NoItemDefaultMoves = sParty_CalicinBay_SwimmerFCorrine}
     },
@@ -8094,7 +8134,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_O, _l, _i, _v, _e, _r, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_CHECK_VIABILITY,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_FISHERMAN],
         .partySize = NELEMS(sParty_CalicinBay_FishermanOliver),
         .party = {.NoItemDefaultMoves = sParty_CalicinBay_FishermanOliver}
     },
@@ -8443,7 +8483,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_J, _a, _s, _p, _e, _r, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_RISKY,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_SWIMMER_M],
         .partySize = NELEMS(sParty_Route18_SwimmerJasper),
         .party = {.NoItemDefaultMoves = sParty_Route18_SwimmerJasper}
     },
@@ -8455,7 +8495,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_D, _e, _b, _o, _r, _a, _h, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_TRY_TO_FAINT,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_TRIATHLETE],
         .partySize = NELEMS(sParty_Route18_TriathleteDeborah),
         .party = {.NoItemDefaultMoves = sParty_Route18_TriathleteDeborah}
     },
@@ -8467,7 +8507,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_J, _u, _d, _i, _e, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_RISKY,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_SWIMMER_F],
         .partySize = NELEMS(sParty_Route18_SwimmerJudie),
         .party = {.NoItemDefaultMoves = sParty_Route18_SwimmerJudie}
     },
@@ -8479,7 +8519,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_K, _i, _r, _k, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_TRY_TO_FAINT,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_BIRD_KEEPER],
         .partySize = NELEMS(sParty_Route18_BirdKeeperKirk),
         .party = {.NoItemDefaultMoves = sParty_Route18_BirdKeeperKirk}
     },
@@ -8491,7 +8531,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_E, _m, _m, _a, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_LASS],
         .partySize = NELEMS(sParty_Route18_LassEmma),
         .party = {.NoItemDefaultMoves = sParty_Route18_LassEmma}
     },
@@ -8503,7 +8543,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_R, _o, _h, _a, _n, _END},
         .items = { ITEM_X_ATTACK },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_RISKY | AI_SCRIPT_TRY_TO_FAINT,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_BLACK_BELT],
         .partySize = NELEMS(sParty_Route18_BlackbeltRohan),
         .party = {.NoItemDefaultMoves = sParty_Route18_BlackbeltRohan}
     },
@@ -8517,7 +8557,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_G, _a, _l, _e, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_RISKY,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_SWIMMER_M],
         .partySize = NELEMS(sParty_Route16_SwimmerGale),
         .party = {.NoItemDefaultMoves = sParty_Route16_SwimmerGale}
     },
@@ -8529,7 +8569,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_A, _m, _y, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_RISKY,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_SWIMMER_F],
         .partySize = NELEMS(sParty_Route16_SwimmerAmy),
         .party = {.NoItemDefaultMoves = sParty_Route16_SwimmerAmy}
     },
@@ -8541,7 +8581,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_T, _r, _e, _v, _o, _r, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_TRY_TO_FAINT,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_BIRD_KEEPER],
         .partySize = NELEMS(sParty_Route16_BirdKeeperTrevor),
         .party = {.NoItemDefaultMoves = sParty_Route16_BirdKeeperTrevor}
     },
@@ -8553,7 +8593,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_M, _a, _r, _i, _a, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_LADY],
         .partySize = NELEMS(sParty_Route16_LadyMaria),
         .party = {.NoItemDefaultMoves = sParty_Route16_LadyMaria}
     },
@@ -8565,7 +8605,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_C, _h, _r, _i, _s, _t, _i, _n, _a, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_RISKY,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_SWIMMER_F],
         .partySize = NELEMS(sParty_Route16_SwimmerChristina),
         .party = {.NoItemDefaultMoves = sParty_Route16_SwimmerChristina}
     },
@@ -8577,7 +8617,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_P, _h, _i, _l, _l, _i, _p, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_RISKY,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_SWIMMER_M],
         .partySize = NELEMS(sParty_Route16_SwimmerPhillip),
         .party = {.NoItemDefaultMoves = sParty_Route16_SwimmerPhillip}
     },
@@ -8589,7 +8629,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_L, _e, _s, _t, _e, _r, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_RISKY,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_SWIMMER_M],
         .partySize = NELEMS(sParty_Route16_SwimmerLester),
         .party = {.NoItemDefaultMoves = sParty_Route16_SwimmerLester}
     },
@@ -8601,7 +8641,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_W, _e, _n, _d, _y, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_RISKY,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_SWIMMER_F],
         .partySize = NELEMS(sParty_Route16_SwimmerWendy),
         .party = {.NoItemDefaultMoves = sParty_Route16_SwimmerWendy}
     },
@@ -8613,7 +8653,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_C, _o, _d, _y, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_TUBER_RS_MALE],
         .partySize = NELEMS(sParty_Route16_TuberCody),
         .party = {.NoItemDefaultMoves = sParty_Route16_TuberCody}
     },
@@ -8625,7 +8665,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_L, _e, _s, _l, _i, _e, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_TUBER_RS_FEMALE],
         .partySize = NELEMS(sParty_Route16_TuberLeslie),
         .party = {.NoItemDefaultMoves = sParty_Route16_TuberLeslie}
     },
@@ -8637,7 +8677,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_C, _l, _e, _m, _e, _n, _t, _i, _n, _e, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_RISKY,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_SWIMMER_F],
         .partySize = NELEMS(sParty_Route16_SwimmerClementine),
         .party = {.NoItemDefaultMoves = sParty_Route16_SwimmerClementine}
     },
@@ -8651,7 +8691,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_I, _v, _a, _n, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_RISKY,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_SWIMMER_M],
         .partySize = NELEMS(sParty_Route14_SwimmerIvan),
         .party = {.NoItemDefaultMoves = sParty_Route14_SwimmerIvan}
     },
@@ -8663,7 +8703,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_C, _l, _i, _f, _f, _o, _r, _d, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_HP_AWARE | AI_SCRIPT_TRY_TO_FAINT,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_HIKER],
         .partySize = NELEMS(sParty_Route14_HikerClifford),
         .party = {.NoItemDefaultMoves = sParty_Route14_HikerClifford}
     },
@@ -8675,7 +8715,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_E, _s, _t, _e, _b, _a, _n, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_CHECK_VIABILITY,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_FISHERMAN],
         .partySize = NELEMS(sParty_Route14_FishermanEsteban),
         .party = {.NoItemDefaultMoves = sParty_Route14_FishermanEsteban}
     },
@@ -8687,7 +8727,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_T, _u, _c, _k, _e, _r, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_CHECK_VIABILITY,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_FISHERMAN],
         .partySize = NELEMS(sParty_Route14_FishermanTucker),
         .party = {.NoItemDefaultMoves = sParty_Route14_FishermanTucker}
     },
@@ -8699,7 +8739,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_E, _l, _e, _a, _n, _o, _r, _END},
         .items = { ITEM_SUPER_POTION },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_RISKY,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_SWIMMER_F],
         .partySize = NELEMS(sParty_Route14_SwimmerEleanor),
         .party = {.NoItemDefaultMoves = sParty_Route14_SwimmerEleanor}
     },
@@ -8711,7 +8751,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_J, _o, _a, _q, _u, _i, _n, _END},
         .items = { ITEM_X_DEFEND },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_RISKY | AI_SCRIPT_TRY_TO_FAINT,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_BLACK_BELT],
         .partySize = NELEMS(sParty_Route14_BlackbeltJoaquin),
         .party = {.NoItemDefaultMoves = sParty_Route14_BlackbeltJoaquin}
     },
@@ -8723,7 +8763,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_C, _h, _r, _i, _s, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_RISKY,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_SWIMMER_M],
         .partySize = NELEMS(sParty_Route14_SwimmerChris),
         .party = {.NoItemDefaultMoves = sParty_Route14_SwimmerChris}
     },
@@ -8735,7 +8775,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_F, _r, _e, _d, _d, _i, _e, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_YOUNGSTER],
         .partySize = NELEMS(sParty_Route14_YoungsterFreddie),
         .party = {.NoItemDefaultMoves = sParty_Route14_YoungsterFreddie}
     },
@@ -8747,7 +8787,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_T, _o, _b, _i, _n, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_PSYCHIC],
         .partySize = NELEMS(sParty_Route14_PsychicTobin),
         .party = {.NoItemDefaultMoves = sParty_Route14_PsychicTobin}
     },
@@ -8759,7 +8799,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_M, _a, _c, _i, _e, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_RISKY,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_SWIMMER_F],
         .partySize = NELEMS(sParty_Route14_SwimmerMacie),
         .party = {.NoItemDefaultMoves = sParty_Route14_SwimmerMacie}
     },    
@@ -8773,7 +8813,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_M, _i, _l, _e, _s, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_RISKY,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_SWIMMER_M],
         .partySize = NELEMS(sParty_Route15North_SwimmerMiles),
         .party = {.NoItemDefaultMoves = sParty_Route15North_SwimmerMiles}
     },
@@ -8785,7 +8825,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_F, _i, _o, _n, _a, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_RISKY,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_SWIMMER_F],
         .partySize = NELEMS(sParty_Route15North_SwimmerFiona),
         .party = {.NoItemDefaultMoves = sParty_Route15North_SwimmerFiona}
     },
@@ -8797,7 +8837,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_K, _l, _a, _u, _s, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_HP_AWARE | AI_SCRIPT_TRY_TO_FAINT,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_HIKER],
         .partySize = NELEMS(sParty_Route15North_HikerKlaus),
         .party = {.NoItemDefaultMoves = sParty_Route15North_HikerKlaus}
     },
@@ -8809,7 +8849,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_U, _r, _s, _u, _l, _a, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_RISKY,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_SWIMMER_F],
         .partySize = NELEMS(sParty_Route15North_SwimmerUrsula),
         .party = {.NoItemDefaultMoves = sParty_Route15North_SwimmerUrsula}
     },
@@ -8821,7 +8861,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_Q, _u, _i, _n, _c, _y, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_RISKY,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_SWIMMER_M],
         .partySize = NELEMS(sParty_Route15North_SwimmerQuincy),
         .party = {.NoItemDefaultMoves = sParty_Route15North_SwimmerQuincy}
     },
@@ -8833,7 +8873,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_W, _e, _s, _l, _e, _y, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_SEMI_SMART | AI_SCRIPT_CHECK_VIABILITY,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_COOLTRAINER],
         .partySize = NELEMS(sParty_Route15North_CoolTrainerWesley),
         .party = {.NoItemDefaultMoves = sParty_Route15North_CoolTrainerWesley}
     },
@@ -8845,7 +8885,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_E, _t, _h, _a, _n, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_SEMI_SMART,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_SUPER_NERD],
         .partySize = NELEMS(sParty_Route15North_SuperNerdEthan),
         .party = {.NoItemDefaultMoves = sParty_Route15North_SuperNerdEthan}
     },
@@ -8857,7 +8897,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_L, _i, _l, _a, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_PREFER_STRONGEST_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_CHANNELER],
         .partySize = NELEMS(sParty_Route15North_ChannelerLila),
         .party = {.NoItemDefaultMoves = sParty_Route15North_ChannelerLila}
     },
@@ -8869,7 +8909,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_G, _e, _r, _a, _l, _d, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_RISKY,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_SWIMMER_M],
         .partySize = NELEMS(sParty_Route15South_SwimmerGerald),
         .party = {.NoItemDefaultMoves = sParty_Route15South_SwimmerGerald}
     },
@@ -8881,7 +8921,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_A, _l, _e, _x, _a, _n, _d, _r, _a, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_RISKY,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_SWIMMER_F],
         .partySize = NELEMS(sParty_Route15South_SwimmerAlexandra),
         .party = {.NoItemDefaultMoves = sParty_Route15South_SwimmerAlexandra}
     },
@@ -8893,7 +8933,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_B, _e, _r, _n, _a, _r, _d, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_RISKY,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_SWIMMER_M],
         .partySize = NELEMS(sParty_Route15South_SwimmerBernard),
         .party = {.NoItemDefaultMoves = sParty_Route15South_SwimmerBernard}
     },
@@ -8905,7 +8945,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_H, _a, _r, _o, _l, _d, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_RISKY,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_SWIMMER_M],
         .partySize = NELEMS(sParty_Route15South_SwimmerHarold),
         .party = {.NoItemDefaultMoves = sParty_Route15South_SwimmerHarold}
     },
@@ -8917,7 +8957,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_M, _e, _l, _i, _n, _d, _a, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_RISKY,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_SWIMMER_F],
         .partySize = NELEMS(sParty_Route15South_SwimmerMelinda),
         .party = {.NoItemDefaultMoves = sParty_Route15South_SwimmerMelinda}
     },
@@ -8929,7 +8969,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_F, _r, _a, _n, _k, _l, _i, _n, _END},
         .items = {ITEM_X_DEFEND},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_RISKY | AI_SCRIPT_TRY_TO_FAINT,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_BLACK_BELT],
         .partySize = NELEMS(sParty_Route15South_BlackbeltFranklin),
         .party = {.NoItemDefaultMoves = sParty_Route15South_BlackbeltFranklin}
     },    
@@ -8941,7 +8981,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_P, _a, _t, _r, _i, _c, _i, _a, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_RISKY,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_SWIMMER_F],
         .partySize = NELEMS(sParty_Route15South_SwimmerPatricia),
         .party = {.NoItemDefaultMoves = sParty_Route15South_SwimmerPatricia}
     },
@@ -8955,7 +8995,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_V, _a, _l, _e, _r, _i, _e, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_RISKY,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_SWIMMER_F],
         .partySize = NELEMS(sParty_SeppireCove_SwimmerValerie),
         .party = {.NoItemDefaultMoves = sParty_SeppireCove_SwimmerValerie}
     },
@@ -8967,7 +9007,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_I, _c, _h, _a, _b, _o, _d, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_RISKY,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_SWIMMER_M],
         .partySize = NELEMS(sParty_SeppireCove_SwimmerIchabod),
         .party = {.NoItemDefaultMoves = sParty_SeppireCove_SwimmerIchabod}
     },
@@ -8979,7 +9019,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_C, _a, _r, _t, _e, _r, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_HP_AWARE | AI_SCRIPT_TRY_TO_FAINT,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_RUIN_MANIAC],
         .partySize = NELEMS(sParty_SeppireCove_RuinManiacCarter),
         .party = {.NoItemDefaultMoves = sParty_SeppireCove_RuinManiacCarter}
     },    
@@ -8993,7 +9033,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_S, _a, _m, _a, _n, _t, _h, _a, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_LASS],
         .partySize = NELEMS(sParty_Route19_LassSamantha),
         .party = {.NoItemDefaultMoves = sParty_Route19_LassSamantha}
     },
@@ -9005,7 +9045,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_R, _o, _s, _e, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_SEMI_SMART | AI_SCRIPT_CHECK_VIABILITY,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_COOLTRAINER],
         .partySize = NELEMS(sParty_Route19_CoolTrainerRose),
         .party = {.NoItemDefaultMoves = sParty_Route19_CoolTrainerRose}
     },
@@ -9081,7 +9121,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_T, _y, _r, _o, _n, _e, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_TRY_TO_FAINT,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_BIRD_KEEPER],
         .partySize = NELEMS(sParty_Route23_BirdKeeperTyrone),
         .party = {.NoItemDefaultMoves = sParty_Route23_BirdKeeperTyrone}
     },
@@ -9093,7 +9133,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_G, _o, _r, _d, _o, _n, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_RISKY,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_GAMBLER],
         .partySize = NELEMS(sParty_Route23_GamblerGordon),
         .party = {.NoItemDefaultMoves = sParty_Route23_GamblerGordon}
     },
@@ -9105,7 +9145,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_E, _m, _m, _e, _t, _t, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_SEMI_SMART,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_SUPER_NERD],
         .partySize = NELEMS(sParty_Route23_SuperNerdEmmett),
         .party = {.NoItemDefaultMoves = sParty_Route23_SuperNerdEmmett}
     },
@@ -9117,7 +9157,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_R, _u, _s, _s, _e, _l, _l, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_GENTLEMAN],
         .partySize = NELEMS(sParty_Route23_GentlemanRussell),
         .party = {.NoItemDefaultMoves = sParty_Route23_GentlemanRussell}
     },
@@ -9129,7 +9169,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_L, _i, _l, _y, _END},
         .items = { ITEM_X_ATTACK },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_TRY_TO_FAINT,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_CRUSH_GIRL],
         .partySize = NELEMS(sParty_Route23_CrushGirlLily),
         .party = {.NoItemDefaultMoves = sParty_Route23_CrushGirlLily}
     },
@@ -9141,7 +9181,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_M, _i, _r, _a, _n, _d, _a, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_BEAUTY],
         .partySize = NELEMS(sParty_Route23_BeautyMiranda),
         .party = {.NoItemDefaultMoves = sParty_Route23_BeautyMiranda}
     },
@@ -9155,7 +9195,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_M, _c, _K, _e, _n, _z, _i, _e, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_PSYCHIC],
         .partySize = NELEMS(sParty_Route20_PsychicMcKenzie),
         .party = {.NoItemDefaultMoves = sParty_Route20_PsychicMcKenzie}
     },
@@ -9167,7 +9207,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_W, _h, _i, _t, _n, _e, _y, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_PICNICKER],
         .partySize = NELEMS(sParty_Route20_PicknickerWhitney),
         .party = {.NoItemDefaultMoves = sParty_Route20_PicknickerWhitney}
     },
@@ -9179,7 +9219,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_L, _e, _n, _a, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_TRY_TO_FAINT,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_TRIATHLETE],
         .partySize = NELEMS(sParty_Route20_TriathleteLena),
         .party = {.NoItemDefaultMoves = sParty_Route20_TriathleteLena}
     },
@@ -9191,7 +9231,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_H, _o, _m, _e, _r, _END},
         .items = { },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_ENGINEER],
         .partySize = NELEMS(sParty_Route20_EngineerHomer),
         .party = {.NoItemDefaultMoves = sParty_Route20_EngineerHomer}
     },
@@ -9203,7 +9243,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_R, _o, _x, _y, _END},
         .items = { ITEM_X_SPEED },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_TRY_TO_FAINT,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_CRUSH_GIRL],
         .partySize = NELEMS(sParty_Route20_CrushGirlRoxy),
         .party = {.NoItemDefaultMoves = sParty_Route20_CrushGirlRoxy}
     },
@@ -9215,7 +9255,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_R, _o, _y, _c, _e, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_HP_AWARE | AI_SCRIPT_TRY_TO_FAINT,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_HIKER],
         .partySize = NELEMS(sParty_Route20_HikerRoyce),
         .party = {.NoItemDefaultMoves = sParty_Route20_HikerRoyce}
     },
@@ -9227,7 +9267,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_E, _l, _l, _i, _o, _t, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_SEMI_SMART,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_SUPER_NERD],
         .partySize = NELEMS(sParty_Route20_SuperNerdElliot),
         .party = {.NoItemDefaultMoves = sParty_Route20_SuperNerdElliot}
     },
@@ -9239,7 +9279,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_D, _e, _w, _e, _y, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_YOUNGSTER],
         .partySize = NELEMS(sParty_Route20_YoungsterDewey),
         .party = {.NoItemDefaultMoves = sParty_Route20_YoungsterDewey}
     },
@@ -9251,7 +9291,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_H, _i, _r, _a, _m, _END},
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_SETUP_FIRST_TURN,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_JUGGLER],
         .partySize = NELEMS(sParty_Route20_JugglerHiram),
         .party = {.NoItemDefaultMoves = sParty_Route20_JugglerHiram}
     },
@@ -9263,7 +9303,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = {_J, _e, _s, _s, _i, _e, _END},
         .items = { ITEM_HYPER_POTION },
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_HP_AWARE,
+        .aiFlags = TrainerAIFlags_Standard[CLASS_NURSE],
         .partySize = NELEMS(sParty_Route20_NurseJessie),
         .party = {.NoItemDefaultMoves = sParty_Route20_NurseJessie}
     },
