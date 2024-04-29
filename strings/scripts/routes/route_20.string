@@ -99,3 +99,19 @@ Trainer Tips!\pWhen using an Item Finder, the\nmachine will ping toward the\lnea
 
 #org @gText_Route20_MimmettJungleSign
 Mimmett Jungle
+
+// Treasure Beach
+#org @Route20_TreasureBeach_YoungGirl
+Treasure Beach is famous for the\nocean currents.\pThey're strong enough to pull\ntreasures onto the beachfront!\pBut that's not all[.] The wind can\ncarry things into the grass, too!\pIf you come back from time to time,\nyou might find rare treasures!
+
+#org @Route20_TreasureBeach_CapBoy
+Hehehe[.] I won an Item Finder at the\nEmraldin Quay Trainer House.\pNow I can find any treasure this\nbeach is hiding! Hehehe!
+
+#org @Route20_TreasureBeach_GrownMan
+I'm going to get as much treasure\nas I can carry and strike it rich!
+
+#org @Route20_TreasureBeach_Beauty
+There are so many people here in\nsearch of treasure[.]\pI'm thinking it would be best to go\nsomewhere else, if I want to enjoy\lthe ocean waves[.]
+
+#org @gText_Route20_TreasureBeach_Sign
+Welcome to Treasure Beach, one of\nKulure's natural wonders!\pVolunteers work tirelessly to keep\nthe beach free of Wild Pok\emon.\pSearch for buried treasure to your\nhearts content!

@@ -1959,3 +1959,12 @@ npc 10 17 5 EventScript_Common_RockSmash
 npc 10 17 6 EventScript_Common_RockSmash
 npc 10 17 7 EventScript_Common_RockSmash
 npc 10 17 8 EventScript_Route20Cave_TM69RockPolish
+
+# Treasure Beach
+map 3 46 MapScript_Route20_TreasureBeach
+npc 3 46 0 EventScript_Route20_TreasureBeach_YoungGirl
+npc 3 46 1 EventScript_Route20_TreasureBeach_CapBoy
+npc 3 46 2 EventScript_Route20_TreasureBeach_GrownMan
+npc 3 46 3 EventScript_Route20_TreasureBeach_Beauty
+npc 3 46 4 EventScript_Route20_TreasureBeach_TM73ThunderWave
+sign 3 46 0 SignScript_Route20_TreasureBeach_BeachSign

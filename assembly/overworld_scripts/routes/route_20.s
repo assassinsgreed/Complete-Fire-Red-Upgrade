@@ -105,3 +105,47 @@ EventScript_Route20Cave_TM69RockPolish:
     setvar CHOSEN_ITEM ITEM_TM69
     call ItemScript_Common_FindTM
     end
+
+@ Treasure Beach
+.global MapScript_Route20_TreasureBeach
+MapScript_Route20_TreasureBeach:
+    mapscript MAP_SCRIPT_ON_LOAD MapEntryScript_Route20_TreasureBeach_InitializeTreasures
+	.byte MAP_SCRIPT_TERMIN
+
+MapEntryScript_Route20_TreasureBeach_InitializeTreasures:
+    checkflag 0x25E @ Treasure Beach has been initialized
+    if SET _goto End
+    callasm InitializeTreasureBeach
+    setflag 0x25E @ Treasure Beach has been initialized
+    end
+
+.global EventScript_Route20_TreasureBeach_YoungGirl
+EventScript_Route20_TreasureBeach_YoungGirl:
+    npcchat Route20_TreasureBeach_YoungGirl
+    end
+
+.global EventScript_Route20_TreasureBeach_CapBoy
+EventScript_Route20_TreasureBeach_CapBoy:
+    npcchat Route20_TreasureBeach_CapBoy
+    end
+
+.global EventScript_Route20_TreasureBeach_GrownMan
+EventScript_Route20_TreasureBeach_GrownMan:
+    npcchat Route20_TreasureBeach_GrownMan
+    end
+
+.global EventScript_Route20_TreasureBeach_Beauty
+EventScript_Route20_TreasureBeach_Beauty:
+    npcchat Route20_TreasureBeach_Beauty
+    end
+
+.global EventScript_Route20_TreasureBeach_TM73ThunderWave
+EventScript_Route20_TreasureBeach_TM73ThunderWave:
+    setvar CHOSEN_ITEM ITEM_TM73
+    call ItemScript_Common_FindTM
+    end
+
+.global SignScript_Route20_TreasureBeach_BeachSign
+SignScript_Route20_TreasureBeach_BeachSign:
+    msgbox gText_Route20_TreasureBeach_Sign MSG_SIGN
+    end
