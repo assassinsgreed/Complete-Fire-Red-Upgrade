@@ -371,6 +371,11 @@ ItemScript_Common_XAttack:
     finditem ITEM_X_ATTACK 0x1
     end
 
+.global ItemScript_Common_XSpecialDefend
+ItemScript_Common_XSpecialDefend:
+    finditem ITEM_X_SP_DEF 0x1
+    end
+
 .global ItemScript_Common_DireHit
 ItemScript_Common_DireHit:
     finditem ITEM_DIRE_HIT 0x1
@@ -554,4 +559,9 @@ ItemScript_Common_Eviolite:
 .global ItemScript_Common_LuminousMoss
 ItemScript_Common_LuminousMoss:
     finditem ITEM_LUMINOUS_MOSS 0x1
+    end
+
+.global ItemScript_Common_RockGem
+ItemScript_Common_RockGem:
+    finditem ITEM_ROCK_GEM 0x1
     end
