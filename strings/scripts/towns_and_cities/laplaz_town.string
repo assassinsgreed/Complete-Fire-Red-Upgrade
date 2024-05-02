@@ -55,7 +55,7 @@ Hmm[.] My Pok\emon are not eligible to\nenter this battle format.\pI will need t
 Did you know? You can only use\nFlying type Pok\emon, or Pok\emon\lwith the Levitate ability, here.
 
 #org @gText_LaplazFacilities_TrainerHouse_Girl
-I heard the grand prize at this\ntrainer house is a Lucky Egg.\pI want it!
+I heard the grand prize at this\nTrainer House is a Lucky Egg.\pI want it!
 
 #org @gText_LaplazFacilities_TrainerHouse_HostIntro
 [BLUE]Hey, hey, hey! Welcome to the\nLaplaz Town Trainer House!\pI'm Mort, and I'll be your host on\nthis fine day.\pYou're [PLAYER]? Rad.\nNow, let's get battling, baby!
@@ -121,7 +121,7 @@ Hm[.] I suppose those limitations were\ntoo much for you.
 [BLUE]Well, would you look at that!\pThis is the first time you've beaten\nall 3 trainers.\pThat nets you our grand prize: a\nLucky Egg!
 
 #org @gText_LaplazFacilities_TrainerHouse_ChoseRuleset
-[BLUE]At this trainer house, it's all about\nSky Battles!\pIn these battles, you can only bring\nFlying and Levitating Pok\emon.\pCan you get a win streak going, even\nwith those limitations? Let's see!
+[BLUE]At this Trainer House, it's all about\nSky Battles!\pIn these battles, you can only bring\nFlying and Levitating Pok\emon.\pCan you get a win streak going, even\nwith those limitations? Let's see!
 
 #org @gText_LaplazFacilities_TrainerHouse_ChoseGrandPrize
 [BLUE]Our fabulous prize this time is a\nLucky Egg!\pThis bad boy will increase the EXP\nearned by whichever Pok\emon holds\lit.\pYou'll want this, if you want to go\nall the way, trust me!

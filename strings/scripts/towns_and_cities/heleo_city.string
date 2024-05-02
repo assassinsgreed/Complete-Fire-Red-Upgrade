@@ -42,7 +42,7 @@ Wow! I can see coins at the bottom\nof this fountain.\pIf I can just find a way 
 For most trainers, Heleo City is their\nthird stop on their journies.\pSome like to come here after\nchallenging the Daimyn City and\lLaplaz Town gyms.\pI suppose they like the challenge?
 
 #org @gText_HeleoCityOverworld_TrainerHouseGirl
-The trainer house is so cool! You\ncan battle it every day for\lexperience, money, and items!\pThe host is kind of mysterious too,\ndon't you think?
+The Trainer House is so cool! You\ncan battle it every day for\lexperience, money, and items!\pThe host is kind of mysterious too,\ndon't you think?
 
 #org @gText_HeleoCityOverworld_RaineFan
 Raine is the coolest gym leader,\nhands down! She has a soft side\land a tough side too.\pYou'd better be good if you're\nthinking of challenging her for her\lbadge!
@@ -91,7 +91,7 @@ Did you know? The trainers at the\nTrainer House will use Pok\emon that\lmatch y
 [BLUE]Wah-Hey! Welcome to the Heleo City\nTrainer House, where our motto is\l"battling should be fun.\"\pThe name's Mort, and I'll be your\nhost this fine day.\pYou're [PLAYER]? Charmed.\pNow that we've gotten the\npleasantries out of the way, let's\lget you battling!
 
 #org @gText_HeleoCityFacilities_TrainerHouse_ChoseRuleset
-[BLUE]This trainer house is all about\nInverse Battles.\pIn these battles, type effectiveness\nis swapped! Fire beats water, water\lbeats grass.\pIt isn't so bad once you get used to\nit, but it'll put new wrinkles in\lthe ol' grey matter, that's for\lsure.
+[BLUE]This Trainer House is all about\nInverse Battles.\pIn these battles, type effectiveness\nis swapped! Fire beats water, water\lbeats grass.\pIt isn't so bad once you get used to\nit, but it'll put new wrinkles in\lthe ol' grey matter, that's for\lsure.
 
 #org @gText_HeleoCityFacilities_TrainerHouse_ChoseGrandPrize
 [BLUE]Our grand prize is a sparkly new\nMach Bike.\pThis bad boy has two speed modes,\nallowing you to get to where\lyou're going in the blink of an eye!
@@ -163,7 +163,7 @@ I'm such a cool guy. I'm on a date\nwith my girlfriend!
 I'm visiting Heleo City with my best\nfriend. He's such a reliable guy!
 
 #org @gText_HeleoCityFacilities_GuardHouse_Camper
-Whew, I should take a break[.]\pGuard houses like these are great\nplaces to take a breather at,\lwhile travelling.\pYou might hear some interesting\ngossip from the people around you\ltoo!
+Whew, I should take a break[.]\pGuard Houses like these are great\nplaces to take a breather at,\lwhile travelling.\pYou might hear some interesting\ngossip from the people around you\ltoo!
 
 #org @gText_HeleoCityFacilities_GuardHouse_ForgottenManseBinoculars
 Oh! It's a creepy, run-down\nbuilding in a secluded forest.

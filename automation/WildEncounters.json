@@ -1215,15 +1215,15 @@
                 "rate": 20,
                 "pokemon": [
                     { "low": 5, "high": 20, "species": "SPECIES_MAGIKARP" },
-                    { "low": 5, "high": 20, "species": "SPECIES_CHINCHOU" },
+                    { "low": 5, "high": 20, "species": "SPECIES_FRILLISH" },
                     { "low": 20, "high": 24, "species": "SPECIES_HORSEA" },
                     { "low": 20, "high": 25, "species": "SPECIES_SHELLDER" },
                     { "low": 21, "high": 25, "species": "SPECIES_BINACLE" },
-                    { "low": 34, "high": 37, "species": "SPECIES_LANTURN" },
-                    { "low": 33, "high": 36, "species": "SPECIES_SEADRA" },
-                    { "low": 34, "high": 38, "species": "SPECIES_BARBARACLE" },
-                    { "low": 32, "high": 37, "species": "SPECIES_SEADRA" },
-                    { "low": 34, "high": 38, "species": "SPECIES_BARBARACLE" }
+                    { "low": 45, "high": 55, "species": "SPECIES_JELLICENT" },
+                    { "low": 45, "high": 55, "species": "SPECIES_SEADRA" },
+                    { "low": 45, "high": 55, "species": "SPECIES_BARBARACLE" },
+                    { "low": 45, "high": 55, "species": "SPECIES_SEADRA" },
+                    { "low": 45, "high": 55, "species": "SPECIES_BARBARACLE" }
                 ]
             }
         },

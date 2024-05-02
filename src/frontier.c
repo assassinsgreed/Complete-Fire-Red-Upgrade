@@ -15,6 +15,7 @@
 #include "../include/new/pokemon_storage_system.h"
 #include "../include/new/species_tables.h"
 #include "../include/new/util.h"
+#include "../include/new/battle_util.h"
 
 /*
 frontier.c
@@ -537,29 +538,42 @@ u8 GetBattleFacilityLevel(u8 tier)
 	return AdjustLevelForTier(VarGet(VAR_BATTLE_FACILITY_POKE_LEVEL), tier);
 }
 
-void UpdateTypesForCamomons(u8 bank)
+u8 GetHiddenPowerSafeCamomonMoveType(struct Pokemon* mon, u16 move)
 {
-	gBattleMons[bank].type1 = gBattleMoves[gBattleMons[bank].moves[0]].type;
-
-	if (gBattleMons[bank].moves[1] != MOVE_NONE)
-		gBattleMons[bank].type2 = gBattleMoves[gBattleMons[bank].moves[1]].type;
-	else
-		gBattleMons[bank].type2 = gBattleMons[bank].type1;
+	return move == MOVE_HIDDENPOWER ? CalcMonHiddenPowerType(mon) : gBattleMoves[move].type;
 }
 
+// Updated from base CFRU functionality - if a move is hidden power, get it's proper type instead of Normal
+void UpdateTypesForCamomons(u8 bank)
+{
+	struct Pokemon* mon = GetBankPartyData(bank);
+
+	u16 firstMove = gBattleMons[bank].moves[0];
+	gBattleMons[bank].type1 = GetHiddenPowerSafeCamomonMoveType(mon, firstMove);
+	u16 secondMove = gBattleMons[bank].moves[1];
+
+	if (secondMove != MOVE_NONE)
+		gBattleMons[bank].type2 = GetHiddenPowerSafeCamomonMoveType(mon, secondMove);
+	else
+		gBattleMons[bank].type2 = GetHiddenPowerSafeCamomonMoveType(mon, firstMove);
+}
+
+// Updated from base CFRU functionality - if a move is hidden power, get it's proper type instead of Normal
 u8 GetCamomonsTypeByMon(struct Pokemon* mon, u8 whichType)
 {
 	if (whichType == 0)
 	{
-		return gBattleMoves[GetMonData(mon, MON_DATA_MOVE1, NULL)].type;
+		u16 move = GetMonData(mon, MON_DATA_MOVE1, NULL);
+		return GetHiddenPowerSafeCamomonMoveType(mon, move);
 	}
 	else
 	{
 		u16 move2 = GetMonData(mon, MON_DATA_MOVE2, NULL);
 		if (move2 != MOVE_NONE)
-			return gBattleMoves[move2].type;
+			return GetHiddenPowerSafeCamomonMoveType(mon, move2);
 
-		return gBattleMoves[GetMonData(mon, MON_DATA_MOVE1, NULL)].type;
+		u16 move = GetMonData(mon, MON_DATA_MOVE1, NULL);
+		return GetHiddenPowerSafeCamomonMoveType(mon, move);
 	}
 }
 
