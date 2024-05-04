@@ -1024,6 +1024,14 @@
 #define FLAG_HIDDEN_ITEM(map, item) (FLAG_HIDDEN_ITEMS_START + HIDDEN_ITEM_##map##_##item)
 
 /*
+    NOTE: Some hidden items will respawn randomly, whenever the player has taken 1500 steps and visits a map with hidden items in it.
+    Items are organized into one of 3 groups, of which all items will spawn in: Group A = 60%, Group B = 30%, Group C = 10%
+    In Pokemon Amethyst, all these hidden items are in one map
+
+    See here for more info: https://bulbapedia.bulbagarden.net/wiki/Recurring_item#Generation_III
+    See here for more info: https://www.pokecommunity.com/threads/list-of-hidden-item-flags-used-in-fire-red.399026/
+*/
+/*
 #define HIDDEN_ITEM_ROUTE_1_PECHA_BERRY                                 0
 #define HIDDEN_ITEM_ROUTE_17_ORAN_BERRY                                 1
 #define HIDDEN_ITEM_ROUTE_2_CHESTO_BERRY                                2
@@ -1088,54 +1096,56 @@
 #define HIDDEN_ITEM_HESSON_PASS_F1_SOFT_SAND                           61
 #define HIDDEN_ITEM_HESSON_PASS_F1_EVERSTONE                           62
 #define HIDDEN_ITEM_HESSON_PASS_F1_MAX_REVIVE                          63
-#define HIDDEN_ITEM_HESSON_PASS_BF1_LIGHTCLAY                          64
-#define HIDDEN_ITEM_HESSON_PASS_BF1_XDEFEND                            65
-#define HIDDEN_ITEM_HESSON_PASS_F2_FULL_RESTORE                        66
-#define HIDDEN_ITEM_HESSON_PASS_F2_NEST_BALL                           67
+*/
+#define HIDDEN_ITEM_RECURRING10_TREASURE_BEACH_COMET_SHARD             64  // Group C
+#define HIDDEN_ITEM_RECURRING10_TREASURE_BEACH_BIG_NUGGET              65  // Group C
+#define HIDDEN_ITEM_RECURRING10_TREASURE_BEACH_STARDUST1               66  // Group C
+#define HIDDEN_ITEM_RECURRING10_TREASURE_BEACH_MAX_REVIVE              67  // Group C
+/*
 #define HIDDEN_ITEM_HESSON_PASS_F2_NUGGET                              68
 #define HIDDEN_ITEM_ROUTE11NORTH_QUALOT_BERRY                          69
 */
-#define HIDDEN_ITEM_ROUTE_20_TREASURE_BEACH_ULTRABALL1_REFRESHES       70 // These items are configured to randomly spawn as the player walks, starting after the player visits the SS Anne in Vanilla FR
-#define HIDDEN_ITEM_ROUTE_20_TREASURE_BEACH_ULTRABALL2_REFRESHES       71 // See here for more information: https://www.pokecommunity.com/threads/list-of-hidden-item-flags-used-in-fire-red.399026/
-#define HIDDEN_ITEM_ROUTE_20_TREASURE_BEACH_HYPERPOTION1_REFRESHES     72
-#define HIDDEN_ITEM_ROUTE_20_TREASURE_BEACH_HYPERPOTION2_REFRESHES     73
-#define HIDDEN_ITEM_ROUTE_20_TREASURE_BEACH_POKECHIP1_REFRESHES        74
-#define HIDDEN_ITEM_ROUTE_20_TREASURE_BEACH_POKECHIP2_REFRESHES        75
-#define HIDDEN_ITEM_ROUTE_20_TREASURE_BEACH_POKECHIP3_REFRESHES        76
-#define HIDDEN_ITEM_ROUTE_20_TREASURE_BEACH_POKECHIP4_REFRESHES        77
-#define HIDDEN_ITEM_ROUTE_20_TREASURE_BEACH_POKECHIP5_REFRESHES        78
-#define HIDDEN_ITEM_ROUTE_20_TREASURE_BEACH_REVIVE_REFRESHES           79
-#define HIDDEN_ITEM_ROUTE_20_TREASURE_BEACH_TINYMUSHROOM1_REFRESHES    80
-#define HIDDEN_ITEM_ROUTE_20_TREASURE_BEACH_TINYMUSHROOM2_REFRESHES    81
-#define HIDDEN_ITEM_ROUTE_20_TREASURE_BEACH_TINYMUSHROOM3_REFRESHES    82
-#define HIDDEN_ITEM_ROUTE_20_TREASURE_BEACH_TINYMUSHROOM4_REFRESHES    83
-#define HIDDEN_ITEM_ROUTE_20_TREASURE_BEACH_TINYMUSHROOM5_REFRESHES    84
-#define HIDDEN_ITEM_ROUTE_20_TREASURE_BEACH_PEARL1_REFRESHES           85
-#define HIDDEN_ITEM_ROUTE_20_TREASURE_BEACH_PEARL2_REFRESHES           86
-#define HIDDEN_ITEM_ROUTE_20_TREASURE_BEACH_PEARL3_REFRESHES           87
-#define HIDDEN_ITEM_ROUTE_20_TREASURE_BEACH_PEARL4_REFRESHES           88
-#define HIDDEN_ITEM_ROUTE_20_TREASURE_BEACH_PEARL5_REFRESHES           89
-#define HIDDEN_ITEM_ROUTE_20_TREASURE_BEACH_STARDUST1_REFRESHES        90
-#define HIDDEN_ITEM_ROUTE_20_TREASURE_BEACH_STARDUST2_REFRESHES        91
-#define HIDDEN_ITEM_ROUTE_20_TREASURE_BEACH_STARDUST3_REFRESHES        92
-#define HIDDEN_ITEM_ROUTE_20_TREASURE_BEACH_STARDUST4_REFRESHES        93
-#define HIDDEN_ITEM_ROUTE_20_TREASURE_BEACH_STARDUST5_REFRESHES        94
-#define HIDDEN_ITEM_ROUTE_20_TREASURE_BEACH_RAREBONE1_REFRESHES        95
-#define HIDDEN_ITEM_ROUTE_20_TREASURE_BEACH_RAREBONE2_REFRESHES        96
-#define HIDDEN_ITEM_ROUTE_20_TREASURE_BEACH_RAREBONE3_REFRESHES        97
-#define HIDDEN_ITEM_ROUTE_20_TREASURE_BEACH_BIGMUSHROOM1_REFRESHES     98
-#define HIDDEN_ITEM_ROUTE_20_TREASURE_BEACH_BIGMUSHROOM2_REFRESHES     99
-#define HIDDEN_ITEM_ROUTE_20_TREASURE_BEACH_BIGMUSHROOM3_REFRESHES    100
-#define HIDDEN_ITEM_ROUTE_20_TREASURE_BEACH_BIGPEARL1_REFRESHES       101
-#define HIDDEN_ITEM_ROUTE_20_TREASURE_BEACH_BIGPEARL2_REFRESHES       102
-#define HIDDEN_ITEM_ROUTE_20_TREASURE_BEACH_STARPIECE1_REFRESHES      103
-#define HIDDEN_ITEM_ROUTE_20_TREASURE_BEACH_STARPIECE2_REFRESHES      104
-#define HIDDEN_ITEM_ROUTE_20_TREASURE_BEACH_NUGGET1_REFRESHES         105
-#define HIDDEN_ITEM_ROUTE_20_TREASURE_BEACH_NUGGET2_REFRESHES         106
-#define HIDDEN_ITEM_ROUTE_20_TREASURE_BEACH_BALMMUSHROOM_REFRESHES    107
-#define HIDDEN_ITEM_ROUTE_20_TREASURE_BEACH_PEARLSTRING_REFRESHES     108
-#define HIDDEN_ITEM_ROUTE_20_TREASURE_BEACH_COMETSHARD_REFRESHES      109
-#define HIDDEN_ITEM_ROUTE_20_TREASURE_BEACH_BIGNUGGET_REFRESHES       110
+#define HIDDEN_ITEM_RECURRING30_TREASURE_BEACH_REVIVE1                 70  // Group B
+#define HIDDEN_ITEM_RECURRING30_TREASURE_BEACH_HP_UP                   71  // Group B
+#define HIDDEN_ITEM_RECURRING30_TREASURE_BEACH_PROTEIN                 72  // Group B
+#define HIDDEN_ITEM_RECURRING30_TREASURE_BEACH_IRON                    73  // Group B
+#define HIDDEN_ITEM_RECURRING30_TREASURE_BEACH_CARBOS                  74  // Group B
+#define HIDDEN_ITEM_RECURRING30_TREASURE_BEACH_CALCIUM                 75  // Group B
+#define HIDDEN_ITEM_RECURRING10_TREASURE_BEACH_RARE_CANDY              76  // Group C
+#define HIDDEN_ITEM_RECURRING30_TREASURE_BEACH_BOTTLECAP1              77  // Group B
+#define HIDDEN_ITEM_RECURRING30_TREASURE_BEACH_BOTTLECAP2              78  // Group B
+#define HIDDEN_ITEM_RECURRING30_TREASURE_BEACH_ZINC                    79  // Group B
+#define HIDDEN_ITEM_RECURRING30_TREASURE_BEACH_PP_UP                   80  // Group B
+#define HIDDEN_ITEM_RECURRING30_TREASURE_BEACH_HYPER_POTION1           81  // Group B
+#define HIDDEN_ITEM_RECURRING30_TREASURE_BEACH_ULTRABALL1              82  // Group B
+#define HIDDEN_ITEM_RECURRING10_TREASURE_BEACH_GOLD_BOTTLECAP          83  // Group C
+#define HIDDEN_ITEM_RECURRING30_TREASURE_BEACH_QUICK_BALL              84  // Group B
+#define HIDDEN_ITEM_RECURRING30_TREASURE_BEACH_DUSK_BALL               85  // Group B
+#define HIDDEN_ITEM_RECURRING30_TREASURE_BEACH_TIMER_BALL              86  // Group B
+#define HIDDEN_ITEM_RECURRING10_TREASURE_BEACH_LUXURY_BALL             87  // Group C
+#define HIDDEN_ITEM_RECURRING10_TREASURE_BEACH_HYPER_POTION2           88  // Group C
+#define HIDDEN_ITEM_RECURRING10_TREASURE_BEACH_POKECHIP_1              89  // Group C
+#define HIDDEN_ITEM_RECURRING60_TREASURE_BEACH_ULTRABALL2              90  // Group A
+#define HIDDEN_ITEM_RECURRING30_TREASURE_BEACH_ULTRABALL3              91  // Group B
+#define HIDDEN_ITEM_RECURRING60_TREASURE_BEACH_HYPER_POTION3           92  // Group A
+#define HIDDEN_ITEM_RECURRING30_TREASURE_BEACH_HYPER_POTION4           93  // Group B
+#define HIDDEN_ITEM_RECURRING30_TREASURE_BEACH_REVIVE2                 94  // Group B
+#define HIDDEN_ITEM_RECURRING30_TREASURE_BEACH_POKECHIP2               95  // Group B
+#define HIDDEN_ITEM_RECURRING60_TREASURE_BEACH_POKECHIP3               96  // Group A
+#define HIDDEN_ITEM_RECURRING60_TREASURE_BEACH_POKECHIP4               97  // Group A
+#define HIDDEN_ITEM_RECURRING60_TREASURE_BEACH_STARDUST2               98  // Group A
+#define HIDDEN_ITEM_RECURRING30_TREASURE_BEACH_TINYMUSHROOM1           99  // Group B
+#define HIDDEN_ITEM_RECURRING30_TREASURE_BEACH_BALMMUSHROOM           100  // Group B
+#define HIDDEN_ITEM_RECURRING30_TREASURE_BEACH_NUGGET1                101  // Group B
+#define HIDDEN_ITEM_RECURRING10_TREASURE_BEACH_NUGGET2                102  // Group C
+#define HIDDEN_ITEM_RECURRING30_TREASURE_BEACH_RARE_BONE1             103  // Group B
+#define HIDDEN_ITEM_RECURRING30_TREASURE_BEACH_TINYMUSHROOM2          104  // Group B
+#define HIDDEN_ITEM_RECURRING30_TREASURE_BEACH_STARDUST3              105  // Group B
+#define HIDDEN_ITEM_RECURRING30_TREASURE_BEACH_PEARL1                 106  // Group B
+#define HIDDEN_ITEM_RECURRING60_TREASURE_BEACH_TINYMUSHROOM3          107  // Group A
+#define HIDDEN_ITEM_RECURRING60_TREASURE_BEACH_TINYMUSHROOM4          108  // Group A
+#define HIDDEN_ITEM_RECURRING10_TREASURE_BEACH_BOTTLECAP3             109  // Group C
+#define HIDDEN_ITEM_RECURRING10_TREASURE_BEACH_FULL_RESTORE1          110  // Group C
 /*
 #define HIDDEN_ITEM_HIDDEN_ITEM_ROUTE11NORTH_REVIVE                   111
 #define HIDDEN_ITEM_HIDDEN_ITEM_ROUTE11NORTH_SITRUS_BERRY             112
@@ -1179,8 +1189,10 @@
 #define HIDDEN_ITEM_ORICHELLE_GARDEN_ENIGMA_BERRY_1                   150
 #define HIDDEN_ITEM_ORICHELLE_GARDEN_ENIGMA_BERRY_2                   151
 #define HIDDEN_ITEM_ORICHELLE_GARDEN_ENIGMA_BERRY_3                   152
-#define HIDDEN_ITEM_ORICHELLE_GARDEN_ENIGMA_BERRY_4                   153
-#define HIDDEN_ITEM_ROUTE1_ULTRA_BALL                                 154
+*/
+#define HIDDEN_ITEM_RECURRING30_TREASURE_BEACH_FULL_RESTORE2          153   // Group B
+#define HIDDEN_ITEM_RECURRING30_TREASURE_BEACH_POKECHIP5              154   // Group B
+/*
 #define HIDDEN_ITEM_ROUTE16_ELIXIR                                    155
 #define HIDDEN_ITEM_ROUTE16_PEARL                                     156
 #define HIDDEN_ITEM_ROUTE14_FULL_HEAL                                 157
@@ -1192,42 +1204,48 @@
 #define HIDDEN_ITEM_ROUTE15SOUTH_MAX_REPEL                            163
 #define HIDDEN_ITEM_ROUTE15SOUTH_WATER_STONE                          164
 #define HIDDEN_ITEM_ROUTE15SOUTH_REPEAT_BALL                          165
-#define HIDDEN_ITEM_SEPPIRE_COVE_SITRUS_BERRY                         166
-#define HIDDEN_ITEM_SEPPIRE_COVE_LUXURY_BALL                          167
-#define HIDDEN_ITEM_SEPPIRE_COVE_FULL_RESTORE                         168
-#define HIDDEN_ITEM_SEPPIRE_COVE_ELIXIR                               169
-#define HIDDEN_ITEM_ROUTE19_STARDUST                                  170
+*/
+#define HIDDEN_ITEM_RECURRING30_TREASURE_BEACH_POKECHIP6              166  // Group B
+#define HIDDEN_ITEM_RECURRING30_TREASURE_BEACH_ULTRABALL4             167  // Group B
+#define HIDDEN_ITEM_RECURRING30_TREASURE_BEACH_PEARLSTRING            168  // Group B
+#define HIDDEN_ITEM_RECURRING60_TREASURE_BEACH_PEARL2                 169  // Group A
+#define HIDDEN_ITEM_RECURRING10_TREASURE_BEACH_PEARL3                 170  // Group C
+/*
 #define HIDDEN_ITEM_ROUTE19_PINAP_BERRY                               171
 #define HIDDEN_ITEM_ROUTE19_PREMIER_BALL                              172
 #define HIDDEN_ITEM_ROUTE19_LUM_BERRY                                 173
-#define HIDDEN_ITEM_EMRALDIN_QUAY_MENTAL_HERB                         174
-#define HIDDEN_ITEM_EMRALDIN_QUAY_OVAL_STONE                          175
-#define HIDDEN_ITEM_ROUTE23_MAX_REVIVE                                176
-#define HIDDEN_ITEM_ROUTE23_MAX_REPEL                                 177
-#define HIDDEN_ITEM_ROUTE23_LEMONADE                                  178
-#define HIDDEN_ITEM_ROUTE20_DUSK_BALL                                 179
-#define HIDDEN_ITEM_ROUTE20_GREPA_BERRIES_3                           180
+*/
+#define HIDDEN_ITEM_RECURRING10_TREASURE_BEACH_BIGPEARL1              174  // Group C
+#define HIDDEN_ITEM_RECURRING30_TREASURE_BEACH_BIGPEARL2              175  // Group B
+#define HIDDEN_ITEM_RECURRING10_TREASURE_BEACH_STARPIECE1             176  // Group C
+#define HIDDEN_ITEM_RECURRING30_TREASURE_BEACH_BIGMUSHROOM1           177  // Group B
+#define HIDDEN_ITEM_RECURRING10_TREASURE_BEACH_BIGMUSHROOM2           178  // Group C
+#define HIDDEN_ITEM_RECURRING10_TREASURE_BEACH_STARPIECE2             179  // Group C
+#define HIDDEN_ITEM_RECURRING60_TREASURE_BEACH_STARDUST4              180  // Group A
+/*
 #define HIDDEN_ITEM_ROUTE20_NUGGET                                    181
 #define HIDDEN_ITEM_ROUTE20_LUM_BERRIES_2                             182
 #define HIDDEN_ITEM_ROUTE20_CAVE_ULTRA_BALL                           183
 #define HIDDEN_ITEM_ROUTE20_CAVE_X_DEFEND                             184
-#define HIDDEN_ITEM_SEVEN_ISLAND_TRAINER_TOWER_BIG_PEARL              185
-#define HIDDEN_ITEM_SEVEN_ISLAND_TRAINER_TOWER_PEARL                  186
-#define HIDDEN_ITEM_SEVEN_ISLAND_TRAINER_TOWER_NANAB_BERRY            187
-#define HIDDEN_ITEM_SEVEN_ISLAND_SEVAULT_CANYON_ENTRANCE_RAWST_BERRY  188
-#define HIDDEN_ITEM_VIRIDIAN_CITY_GYM_MACHO_BRACE                     189
-#define HIDDEN_ITEM_SSANNE_EXTERIOR_LAVA_COOKIE                       190
+*/
+#define HIDDEN_ITEM_RECURRING10_TREASURE_BEACH_RARE_BONE2             185  // Group C
+#define HIDDEN_ITEM_RECURRING30_TREASURE_BEACH_RARE_BONE3             186  // Group B
+/*
+#define HIDDEN_ITEM_HESSON_PASS_BF1_LIGHTCLAY                         187
+#define HIDDEN_ITEM_HESSON_PASS_BF1_XDEFEND                           188
+#define HIDDEN_ITEM_HESSON_PASS_F2_FULL_RESTORE                       189
+#define HIDDEN_ITEM_HESSON_PASS_F2_NEST_BALL                          190
 
-// Unused?
-#define FLAG_0x4A7               0x4A7
-#define FLAG_0x4A8               0x4A8
-#define FLAG_0x4A9               0x4A9
-#define FLAG_0x4AA               0x4AA
-#define FLAG_0x4AB               0x4AB
-#define FLAG_0x4AC               0x4AC
-#define FLAG_0x4AD               0x4AD
-#define FLAG_0x4AE               0x4AE
-#define FLAG_0x4AF               0x4AF
+// Repurposed as hidden items
+#define HIDDEN_ITEM_ORICHELLE_GARDEN_ENIGMA_BERRY_4                   191
+#define HIDDEN_ITEM_ROUTE1_ULTRA_BALL                                 192
+#define HIDDEN_ITEM_SEPPIRE_COVE_SITRUS_BERRY                         193
+#define HIDDEN_ITEM_SEPPIRE_COVE_LUXURY_BALL                          194
+#define HIDDEN_ITEM_SEPPIRE_COVE_FULL_RESTORE                         195
+#define HIDDEN_ITEM_SEPPIRE_COVE_ELIXIR                               196
+#define HIDDEN_ITEM_ROUTE19_STARDUST                                  197
+#define HIDDEN_ITEM_EMRALDIN_QUAY_MENTAL_HERB                         198
+#define HIDDEN_ITEM_EMRALDIN_QUAY_OVAL_STONE                          199
 
 // Boss clear flags, 1200
 #define FLAG_DEFEATED_TERRENCE        0x4B0
@@ -1244,12 +1262,12 @@
 #define FLAG_DEFEATED_E4_THOMAS       0x4BB
 #define FLAG_DEFEATED_CHAMPION_SELENE 0x4BC
 
-// Unused?
-#define FLAG_0x4BD                            0x4BD
-#define FLAG_0x4BE                            0x4BE
-#define FLAG_0x4BF                            0x4BF
-#define FLAG_0x4C0                            0x4C0
-#define FLAG_0x4C1                            0x4C1
+// Repurposed as hidden items
+#define HIDDEN_ITEM_ROUTE23_MAX_REVIVE                                200
+#define HIDDEN_ITEM_ROUTE23_MAX_REPEL                                 201
+#define HIDDEN_ITEM_ROUTE23_LEMONADE                                  202
+#define HIDDEN_ITEM_ROUTE20_DUSK_BALL                                 203
+#define HIDDEN_ITEM_ROUTE20_GREPA_BERRIES_3                           204
 #define FLAG_0x4C2                            0x4C2
 #define FLAG_0x4C3                            0x4C3
 #define FLAG_0x4C4                            0x4C4
