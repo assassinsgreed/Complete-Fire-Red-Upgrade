@@ -4598,42 +4598,50 @@ void SetMonExpWithMaxLevelCheck(struct Pokemon *mon, u16 species, unusedArg u8 u
 
 void RandomlyGivePartyPokerus(struct Pokemon *party)
 {
-	u16 rnd = Random();
-	if (rnd == 0x4000 || rnd == 0x8000 || rnd == 0xC000)
-	{
-		struct Pokemon *mon;
+	u8 numberOfRolls = GetCurrentRegionMapSectionId() == MAPSEC_MIMETT_JUNGLE ? 1 : 6;
+	u8 hasGivenPokerus = FALSE;
 
-		do
+	do {
+		u16 rnd = Random();
+		if (!hasGivenPokerus && (rnd == 0x4000 || rnd == 0x8000 || rnd == 0xC000))
 		{
-			do
-			{
-				rnd = Random() % PARTY_SIZE;
-				mon = &party[rnd];
-			}
-			while (!GetMonData(mon, MON_DATA_SPECIES, 0));
-		}
-		while (GetMonData(mon, MON_DATA_IS_EGG, 0));
-
-		if (!(CheckPartyHasHadPokerus(party, gBitTable[rnd])))
-		{
-			u8 rnd2;
+			struct Pokemon *mon;
 
 			do
 			{
-				rnd2 = Random();
+				do
+				{
+					rnd = Random() % PARTY_SIZE;
+					mon = &party[rnd];
+				}
+				while (!GetMonData(mon, MON_DATA_SPECIES, 0));
 			}
-			while ((rnd2 & 0x7) == 0);
+			while (GetMonData(mon, MON_DATA_IS_EGG, 0));
 
-			if (rnd2 & 0xF0)
-				rnd2 &= 0x7;
+			if (!(CheckPartyHasHadPokerus(party, gBitTable[rnd])))
+			{
+				u8 rnd2;
 
-			rnd2 |= (rnd2 << 4);
-			rnd2 &= 0xF3;
-			rnd2++;
+				do
+				{
+					rnd2 = Random();
+				}
+				while ((rnd2 & 0x7) == 0);
 
-			SetMonData(&party[rnd], MON_DATA_POKERUS, &rnd2);
+				if (rnd2 & 0xF0)
+					rnd2 &= 0x7;
+
+				rnd2 |= (rnd2 << 4);
+				rnd2 &= 0xF3;
+				rnd2++;
+
+				SetMonData(&party[rnd], MON_DATA_POKERUS, &rnd2);
+			}
+			hasGivenPokerus = TRUE;
 		}
+		numberOfRolls--;
 	}
+	while (numberOfRolls > 0);
 }
 
 void UpdatePartyPokerusTime(u16 days)

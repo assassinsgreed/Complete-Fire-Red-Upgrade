@@ -287,6 +287,11 @@ ItemScript_Common_SpellTag:
     finditem ITEM_SPELL_TAG 0x1
     end
 
+.global ItemScript_Common_TwistedSpoon
+ItemScript_Common_TwistedSpoon:
+    finditem ITEM_TWISTED_SPOON 0x1
+    end
+
 .global ItemScript_Common_DragonFang
 ItemScript_Common_DragonFang:
     finditem ITEM_DRAGON_FANG 0x1
@@ -339,6 +344,11 @@ ItemScript_Common_BrightPowder:
 .global ItemScript_Common_MetalPowder
 ItemScript_Common_MetalPowder:
     finditem ITEM_METAL_POWDER 0x1
+    end
+
+.global ItemScript_Common_QuickPowder
+ItemScript_Common_QuickPowder:
+    finditem ITEM_QUICK_POWDER 0x1
     end
 
 .global ItemScript_Common_LaxIncense
