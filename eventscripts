@@ -1968,3 +1968,19 @@ npc 3 46 2 EventScript_Route20_TreasureBeach_GrownMan
 npc 3 46 3 EventScript_Route20_TreasureBeach_Beauty
 npc 3 46 4 EventScript_Route20_TreasureBeach_TM73ThunderWave
 sign 3 46 0 SignScript_Route20_TreasureBeach_BeachSign
+
+# Route 22
+npc 3 41 0 EventScript_Common_Strength
+npc 3 41 1 EventScript_Common_Strength
+npc 3 41 2 EventScript_Route22_TM74GyroBall
+npc 3 41 3 EventScript_Route22_TM90Substitute
+npc 3 41 4 ItemScript_Common_TwistedSpoon
+npc 3 41 5 ItemScript_Common_QuickPowder
+npc 3 41 6 ItemScript_Common_WeaknessPolicy
+npc 3 41 7 EventScript_Route22_CoolTrainerGail
+npc 3 41 8 EventScript_Route22_ScientistLarry
+npc 3 41 9 EventScript_Route22_SrAndJr_Alma
+npc 3 41 10 EventScript_Route22_SrAndJr_Mai
+npc 3 41 11 EventScript_Route22_JugglerChauncy
+npc 3 41 12 EventScript_Route22_BurglarMose
+sign 3 41 0 SignScript_Route22_MimmettJungle

@@ -830,11 +830,11 @@
 #define FLAG_HIDE_ROUTE20_X_SP_DEFEND                    0x329
 #define FLAG_HIDE_ROUTE20_ROCK_GEM                       0x32A
 #define FLAG_HIDE_ROUTE20_TREASURE_BEACH_TM73THUNDERWAVE 0x32B
-#define FLAG_0x32C               0x32C
-#define FLAG_0x32D               0x32D
-#define FLAG_0x32E               0x32E
-#define FLAG_0x32F               0x32F
-#define FLAG_0x330               0x330
+#define FLAG_HIDE_ROUTE22_TM74_GYRO_BALL                 0x32C
+#define FLAG_HIDE_ROUTE22_TM90_SUBSTITUTE                0x32D
+#define FLAG_HIDE_ROUTE22_TWISTED_SPOON                  0x32E
+#define FLAG_HIDE_ROUTE22_QUICK_POWDER                   0x32F
+#define FLAG_HIDE_ROUTE22_WEAKNESS_POLICY                0x330
 #define FLAG_0x331               0x331
 #define FLAG_0x332               0x332
 #define FLAG_0x333               0x333
@@ -1268,8 +1268,8 @@
 #define HIDDEN_ITEM_ROUTE23_LEMONADE                                  202
 #define HIDDEN_ITEM_ROUTE20_DUSK_BALL                                 203
 #define HIDDEN_ITEM_ROUTE20_GREPA_BERRIES_3                           204
-#define FLAG_0x4C2                            0x4C2
-#define FLAG_0x4C3                            0x4C3
+#define HIDDEN_ITEM_ROUTE22_EVERSTONE                                 205
+#define HIDDEN_ITEM_ROUTE22_MOOMOO_MILK                               206
 #define FLAG_0x4C4                            0x4C4
 #define FLAG_0x4C5                            0x4C5
 #define FLAG_0x4C6                            0x4C6

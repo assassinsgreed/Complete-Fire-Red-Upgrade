@@ -4533,6 +4533,7 @@ const struct TrainerMonNoItemCustomMoves sParty_EmraldinQuay_BugCatcherPerry[] =
     },
 };
 // #endregion
+
 // #region Route 23
 const struct TrainerMonNoItemDefaultMoves sParty_Route23_BirdKeeperTyrone[] = {
     { .lvl = 52, .species = SPECIES_PELIPPER },
@@ -4569,6 +4570,7 @@ const struct TrainerMonNoItemDefaultMoves sParty_Route23_BeautyMiranda[] = {
     { .lvl = 53, .species = SPECIES_SLOWPOKE },
 };
 // #endregion
+
 // #region Route 20
 const struct TrainerMonNoItemDefaultMoves sParty_Route20_PsychicMcKenzie[] = {
     { .lvl = 49, .species = SPECIES_BEHEEYEM },
@@ -4622,6 +4624,38 @@ const struct TrainerMonNoItemDefaultMoves sParty_Route20_NurseJessie[] = {
     { .lvl = 52, .species = SPECIES_CHANSEY }
 };
 // #endregion
+
+// #region Route 22
+const struct TrainerMonNoItemDefaultMoves sParty_Route22_CoolTrainer_Gail[] = {
+    { .lvl = 51, .species = SPECIES_GASTRODON },
+    { .lvl = 52, .species = SPECIES_SKARMORY },
+    { .lvl = 53, .species = SPECIES_GARCHOMP }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route22_ScientistLarry[] = {
+    { .lvl = 52, .species = SPECIES_WEEZING_G },
+    { .lvl = 52, .species = SPECIES_KLANG }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route22_SrAndJr_AlmaAndMai[] = {
+    { .lvl = 51, .species = SPECIES_LEAFEON },
+    { .lvl = 51, .species = SPECIES_ORANGURU },
+    { .lvl = 52, .species = SPECIES_RIBOMBEE },
+    { .lvl = 52, .species = SPECIES_SABLEYE }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route22_JugglerChauncy[] = {
+    { .lvl = 52, .species = SPECIES_BRIONNE },
+    { .lvl = 52, .species = SPECIES_MIMIKYU }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route22_BurglarMose[] = {
+    { .lvl = 53, .species = SPECIES_BISHARP },
+    { .lvl = 54, .species = SPECIES_TOXICROAK },
+    { .lvl = 54, .species = SPECIES_SCRAFTY }
+};
+// #endregion
+
 // #endregion
 
 #define NO_NAME                                                                                      \
@@ -9302,6 +9336,68 @@ const struct Trainer gTrainers[] = {
         .aiFlags = TrainerAIFlags_Nurse_Standard,
         .partySize = NELEMS(sParty_Route20_NurseJessie),
         .party = {.NoItemDefaultMoves = sParty_Route20_NurseJessie}
+    },
+    // #endregion
+    // #region Route 22
+    [TRAINER_ROUTE_22_COOL_TRAINER_GAIL] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_COOLTRAINER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
+        .trainerPic = TRAINER_PIC_COOLTRAINER_F,
+        .trainerName = {_G, _a, _i, _l, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_CoolTrainer_Standard,
+        .partySize = NELEMS(sParty_Route22_CoolTrainer_Gail),
+        .party = {.NoItemDefaultMoves = sParty_Route22_CoolTrainer_Gail}
+    },
+    [TRAINER_ROUTE_22_SCIENTIST_LARRY] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_SCIENTIST,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_SCIENTIST_M,
+        .trainerName = {_L, _a, _r, _r, _y, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_Scientist_Standard,
+        .partySize = NELEMS(sParty_Route22_ScientistLarry),
+        .party = {.NoItemDefaultMoves = sParty_Route22_ScientistLarry}
+    },
+    [TRAINER_ROUTE_22_SRANDJR_ALMA_AND_MAI] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_SR_AND_JR,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .trainerPic = TRAINER_PIC_SR_AND_JR,
+        .trainerName = {_A, _l, _m, _a, _SPACE, _AMPERSAND, _SPACE, _M, _a, _i, _END},
+        .items = { },
+        .doubleBattle = TRUE,
+        .aiFlags = TrainerAIFlags_SrAndJr_Standard,
+        .partySize = NELEMS(sParty_Route22_SrAndJr_AlmaAndMai),
+        .party = {.NoItemDefaultMoves = sParty_Route22_SrAndJr_AlmaAndMai}
+    },
+    [TRAINER_ROUTE_22_JUGGLER_CHAUNCY] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_JUGGLER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
+        .trainerPic = TRAINER_PIC_JUGGLER,
+        .trainerName = {_C, _h, _a, _u, _n, _c, _y, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_Juggler_Standard,
+        .partySize = NELEMS(sParty_Route22_JugglerChauncy),
+        .party = {.NoItemDefaultMoves = sParty_Route22_JugglerChauncy}
+    },
+    [TRAINER_ROUTE_22_BURGLAR_MOSE] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_BURGLAR,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_BURGLAR,
+        .trainerName = {_M, _o, _s, _e, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_Burglar_Standard,
+        .partySize = NELEMS(sParty_Route22_BurglarMose),
+        .party = {.NoItemDefaultMoves = sParty_Route22_BurglarMose}
     },
     // #endregion
     // #endregion

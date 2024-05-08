@@ -2029,6 +2029,52 @@
         },
         {
             "mapgroup": 3,
+            "mapnum": 41,
+            "grass": {
+                "rate": 21,
+                "pokemon": [
+                    { "low": 47, "high": 50, "species": "SPECIES_SLOWPOKE" },
+                    { "low": 47, "high": 51, "species": "SPECIES_MIENFOO" },
+                    { "low": 47, "high": 50, "species": "SPECIES_GURDURR" },
+                    { "low": 46, "high": 51, "species": "SPECIES_SUNFLORA" },
+                    { "low": 46, "high": 51, "species": "SPECIES_SLOWBRO" },
+                    { "low": 45, "high": 51, "species": "SPECIES_MIENSHAO" },
+                    { "low": 45, "high": 51, "species": "SPECIES_SHROOMISH" },
+                    { "low": 46, "high": 50, "species": "SPECIES_SHROOMISH" },
+                    { "low": 47, "high": 51, "species": "SPECIES_BISHARP" },
+                    { "low": 46, "high": 50, "species": "SPECIES_BISHARP" },
+                    { "low": 47, "high": 52, "species": "SPECIES_BRELOOM" },
+                    { "low": 47, "high": 52, "species": "SPECIES_BRELOOM" }
+                ]
+            },
+            "surfing": {
+                "rate": 13,
+                "pokemon": [
+                    { "low": 47, "high": 50, "species": "SPECIES_CORPHISH" },
+                    { "low": 48, "high": 51, "species": "SPECIES_LANTURN" },
+                    { "low": 47, "high": 50, "species": "SPECIES_CRAWDAUNT" },
+                    { "low": 48, "high": 51, "species": "SPECIES_CRAWDAUNT" },
+                    { "low": 48, "high": 52, "species": "SPECIES_CRAWDAUNT" }
+                ]
+            },
+            "fishing": {
+                "rate": 20,
+                "pokemon": [
+                    { "low": 5, "high": 30, "species": "SPECIES_MAGIKARP" },
+                    { "low": 5, "high": 30, "species": "SPECIES_CORPHISH" },
+                    { "low": 25, "high": 40, "species": "SPECIES_CORPHISH" },
+                    { "low": 25, "high": 40, "species": "SPECIES_MAGIKARP" },
+                    { "low": 25, "high": 40, "species": "SPECIES_MAGIKARP" },
+                    { "low": 45, "high": 50, "species": "SPECIES_MAGIKARP" },
+                    { "low": 45, "high": 50, "species": "SPECIES_CRAWDAUNT" },
+                    { "low": 45, "high": 50, "species": "SPECIES_CORPHISH" },
+                    { "low": 45, "high": 50, "species": "SPECIES_GYARADOS" },
+                    { "low": 45, "high": 50, "species": "SPECIES_MAGIKARP" }
+                ]
+            }
+        },
+        {
+            "mapgroup": 3,
             "mapnum": 42,
             "grass": {
                 "rate": 21,
