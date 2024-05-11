@@ -46,6 +46,7 @@
 #define TrainerAIFlags_Triathlete_Standard      (AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_TRY_TO_FAINT)
 #define TrainerAIFlags_Juggler_Standard         (AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_SETUP_FIRST_TURN)
 #define TrainerAIFlags_Skier_Standard           (AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_CHECK_VIABILITY)
+#define TrainerAIFlags_DragonTamer_Standard     (AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_PREFER_STRONGEST_MOVE | AI_SCRIPT_TRY_TO_FAINT)
 
 // #region Trainer Structs
 
@@ -4656,6 +4657,54 @@ const struct TrainerMonNoItemDefaultMoves sParty_Route22_BurglarMose[] = {
 };
 // #endregion
 
+// #region Route 21
+const struct TrainerMonNoItemDefaultMoves sParty_Route21_PokefanWalter[] = {
+    { .lvl = 51, .species = SPECIES_BIBAREL },
+    { .lvl = 51, .species = SPECIES_PIGNITE },
+    { .lvl = 52, .species = SPECIES_MAGCARGO }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route21_CollectorEric[] = {
+    { .lvl = 53, .species = SPECIES_ROTOM },
+    { .lvl = 53, .species = SPECIES_KANGASKHAN }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route21_HikerRicardo[] = {
+    { .lvl = 52, .species = SPECIES_CARKOL },
+    { .lvl = 53, .species = SPECIES_GOGOAT },
+    { .lvl = 52, .species = SPECIES_MUDSDALE },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route21_DragonTamerTanner[] = {
+    { .lvl = 55, .species = SPECIES_DRAGONITE },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route21_ParasolLadyKatrina[] = {
+    { .lvl = 52, .species = SPECIES_FLAAFFY },
+    { .lvl = 52, .species = SPECIES_EMOLGA },
+    { .lvl = 53, .species = SPECIES_SYLVEON }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route21_NinjaBoyIshan[] = {
+    { .lvl = 51, .species = SPECIES_MIMIKYU },
+    { .lvl = 51, .species = SPECIES_WOBBUFFET },
+    { .lvl = 52, .species = SPECIES_SUDOWOODO },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route21_RockerAxel[] = {
+    { .lvl = 51, .species = SPECIES_VIBRAVA },
+    { .lvl = 51, .species = SPECIES_TOXTRICITY },
+    { .lvl = 52, .species = SPECIES_RILLABOOM }
+};
+// #endregion
+
+// #region Secret Trail
+const struct TrainerMonNoItemDefaultMoves sParty_SecretTrail_ChannelerHeather[] = {
+    { .lvl = 54, .species = SPECIES_NOCTOWL },
+    { .lvl = 54, .species = SPECIES_PHANTUMP },
+    { .lvl = 54, .species = SPECIES_SABLEYE }
+};
+// #endregion
 // #endregion
 
 #define NO_NAME                                                                                      \
@@ -5666,7 +5715,7 @@ const struct Trainer gTrainers[] = {
     [TRAINER_TORMA_CAVE_POKEFAN_COREY] = {
         .partyFlags = 0,
         .trainerClass = CLASS_POKEFAN,
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .trainerPic = TRAINER_PIC_POKEFAN_M,
         .trainerName = {_C, _o, _r, _e, _y, _END},
         .items = {},
@@ -7648,7 +7697,7 @@ const struct Trainer gTrainers[] = {
     },
     [TRAINER_LAPLAZ_GYM_TOMAS] = {
         .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
-        .trainerClass = CLASS_ROCKER,
+        .trainerClass = CLASS_GUITARIST_RS,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
         .trainerPic = TRAINER_PIC_GUITARIST,
         .trainerName = {_T, _o, _m, _a, _s, _END},
@@ -9102,7 +9151,7 @@ const struct Trainer gTrainers[] = {
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_DOUBLE_BATTLE,
         .partySize = NELEMS(sParty_Route19_PokefanPhoebe),
         .party = {.NoItemDefaultMoves = sParty_Route19_PokefanPhoebe}
-    },    
+    },
     // #endregion
     // #region Emraldin Quay
     [TRAINER_EMRALDIN_TRAINER_HOUSE_CHANNELER_MARGUERITE] = {
@@ -9400,5 +9449,105 @@ const struct Trainer gTrainers[] = {
         .party = {.NoItemDefaultMoves = sParty_Route22_BurglarMose}
     },
     // #endregion
+    // #region Route 21
+    [TRAINER_ROUTE_21_POKEFAN_WALTER] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_POKEFAN,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_POKEFAN_M,
+        .trainerName = {_W, _a, _l, _t, _e, _r, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_Pokefan_Standard,
+        .partySize = NELEMS(sParty_Route21_PokefanWalter),
+        .party = {.NoItemDefaultMoves = sParty_Route21_PokefanWalter}
+    },
+    [TRAINER_ROUTE_21_COLLECTOR_ERIC] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_COLLECTOR,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_COLLECTOR,
+        .trainerName = {_E, _r, _i, _c, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_Collector_Standard,
+        .partySize = NELEMS(sParty_Route21_CollectorEric),
+        .party = {.NoItemDefaultMoves = sParty_Route21_CollectorEric}
+    },
+    [TRAINER_ROUTE_21_HIKER_RICARDO] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_HIKER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
+        .trainerPic = TRAINER_PIC_HIKER,
+        .trainerName = {_R, _i, _c, _a, _r, _d, _o, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_Hiker_Standard,
+        .partySize = NELEMS(sParty_Route21_HikerRicardo),
+        .party = {.NoItemDefaultMoves = sParty_Route21_HikerRicardo}
+    },
+    [TRAINER_ROUTE_21_DRAGON_TAMER_TANNER] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_DRAGON_TAMER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_DRAGON_TAMER,
+        .trainerName = {_T, _a, _n, _n, _e, _r, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_DragonTamer_Standard,
+        .partySize = NELEMS(sParty_Route21_DragonTamerTanner),
+        .party = {.NoItemDefaultMoves = sParty_Route21_DragonTamerTanner}
+    },
+    [TRAINER_ROUTE_21_PARASOL_LADY_KATRINA] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_PARASOL_LADY,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .trainerPic = TRAINER_PIC_PARASOL_LADY,
+        .trainerName = {_K, _a, _t, _r, _i, _n, _a, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_ParasolLady_Standard,
+        .partySize = NELEMS(sParty_Route21_ParasolLadyKatrina),
+        .party = {.NoItemDefaultMoves = sParty_Route21_ParasolLadyKatrina}
+    },
+    [TRAINER_ROUTE_21_NINJA_BOY_ISHAN] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_NINJA_BOY,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_NINJA_BOY,
+        .trainerName = {_I, _s, _h, _a, _n, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_NinjaBoy_Standard,
+        .partySize = NELEMS(sParty_Route21_NinjaBoyIshan),
+        .party = {.NoItemDefaultMoves = sParty_Route21_NinjaBoyIshan}
+    },
+    [TRAINER_ROUTE_21_ROCKER_AXEL] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_GUITARIST_RS,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
+        .trainerPic = TRAINER_PIC_GUITARIST,
+        .trainerName = {_A, _x, _e, _l, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_Guitarist_Standard,
+        .partySize = NELEMS(sParty_Route21_RockerAxel),
+        .party = {.NoItemDefaultMoves = sParty_Route21_RockerAxel}
+    },
+    // #endregion
+    // #region Secret Trail
+    [TRAINER_SECRET_TRAIL_CHANNELER_HEATHER] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_CHANNELER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_CHANNELER,
+        .trainerName = {_H, _e, _a, _t, _h, _e, _r, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_Channeler_Standard,
+        .partySize = NELEMS(sParty_SecretTrail_ChannelerHeather),
+        .party = {.NoItemDefaultMoves = sParty_SecretTrail_ChannelerHeather}
+    },
+    // #endregion    
     // #endregion
 };

@@ -1984,3 +1984,38 @@ npc 3 41 10 EventScript_Route22_SrAndJr_Mai
 npc 3 41 11 EventScript_Route22_JugglerChauncy
 npc 3 41 12 EventScript_Route22_BurglarMose
 sign 3 41 0 SignScript_Route22_MimmettJungle
+
+# Route 21
+npc 3 39 0 EventScript_Route21_TM56_Fling
+npc 3 39 1 ItemScript_Common_FullRestore
+npc 3 39 2 ItemScript_Common_Ultraball
+npc 3 39 3 EventScript_Common_RockSmash
+npc 3 39 4 EventScript_Common_RockSmash
+npc 3 39 5 EventScript_Common_RockSmash
+npc 3 39 6 EventScript_Common_RockSmash
+npc 3 39 7 EventScript_Common_RockSmash
+npc 3 39 8 EventScript_Common_RockSmash
+npc 3 39 9 EventScript_Common_RockSmash
+npc 3 39 10 EventScript_Common_RockSmash
+npc 3 39 11 EventScript_Common_RockSmash
+npc 3 39 12 EventScript_Common_RockSmash
+npc 3 39 13 EventScript_Route21_PokefanWalter
+npc 3 39 14 EventScript_Route21_CollectorEric
+npc 3 39 15 EventScript_Route21_HikerRicardo
+npc 3 39 16 EventScript_Route21_DragonTamerTanner
+npc 3 39 17 EventScript_Route21_ParasolLadyKatrina
+npc 3 39 18 EventScript_Route21_NinjaBoyIshan
+npc 3 39 19 EventScript_Route21_RockerAxel
+npc 3 39 20 EventScript_Route21_VictoryRoadGuard
+sign 3 39 0 SignScript_Route21_TrainerTips
+sign 3 39 1 SignScript_Route21_VictoryRoad
+
+# Secret path (events included in Route 21 files)
+npc 3 40 0 EventScript_Common_Strength
+npc 3 40 1 EventScript_Common_Strength
+npc 3 40 2 EventScript_Common_Strength
+npc 3 40 3 EventScript_Common_Strength
+npc 3 40 4 EventScript_Common_Strength
+npc 3 40 5 EventScript_SecretTrail_TM77_PsychUp
+npc 3 40 6 ItemScript_Common_IronBall
+npc 3 40 7 EventScript_SecretTrail_ChannelerHeather

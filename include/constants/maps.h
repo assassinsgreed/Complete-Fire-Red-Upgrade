@@ -253,8 +253,8 @@
 #define MAP_ROUTE_18                             ((3 << 8) | 36)
 #define MAP_ROUTE_19                             ((3 << 8) | 37)
 #define MAP_ROUTE_20                             ((3 << 8) | 38)
-#define MAP_ROUTE_21_A                           ((3 << 8) | 39)
-#define MAP_ROUTE_21_B                           ((3 << 8) | 40)
+#define MAP_ROUTE_21                             ((3 << 8) | 39)
+#define MAP_SECRET_PATH                          ((3 << 8) | 40)
 #define MAP_ROUTE_22                             ((3 << 8) | 41)
 #define MAP_ROUTE_23                             ((3 << 8) | 42)
 #define MAP_ROUTE_24_WEST                        ((3 << 8) | 43)  // Just shown as Route 24 on the map

@@ -1,0 +1,83 @@
+#org @gText_Route21_PokefanWalter_Intro
+I'll battle you with my favorite\nPok\emon.
+
+#org @gText_Route21_PokefanWalter_Defeat
+Ah, darn[.] But that was fun!
+
+#org @gText_Route21_PokefanWalter_Chat
+I like to battle with unpopular\nPok\emon. They're just so cute!
+
+#org @gText_Route21_CollectorEric_Intro
+I've amassed powerful and rare\nPok\emon that can win any battle!
+
+#org @gText_Route21_CollectorEric_Defeat
+Ngh! We must return to our training.
+
+#org @gText_Route21_CollectorEric_Chat
+My rare Pok\emon will confound the\nElite Four and secure me the\lchampion's seat.\pJust you wait and see!
+
+#org @gText_Route21_HikerRicardo_Intro
+Tally ho! You think you're strong\nenough to challenge Victory Road?
+
+#org @gText_Route21_HikerRicardo_Defeat
+Ho ho! You just might be!
+
+#org @gText_Route21_HikerRicardo_Chat
+Most hikers choose Mount Carnelidge\nas their end goal.\pThose that battle come to Victory\nRoad instead!
+
+#org @gText_Route21_DragonTamerTanner_Intro
+I have honed the Pok\emon I inherited\nfrom my clan[.]
+
+#org @gText_Route21_DragonTamerTanner_Defeat
+No! It cannot be[.] We lost?
+
+#org @gText_Route21_DragonTamerTanner_Chat
+Very few Dragon Clan members are\ntrainers.\pThose that are, however, are among\nthe best of the best.
+
+#org @gText_Route21_ParasolLadyKatrina_Intro
+Don't underestimate me, I'm quite\ngood!
+
+#org @gText_Route21_ParasolLadyKatrina_Defeat
+Hey, no fair!
+
+#org @gText_Route21_ParasolLadyKatrina_Chat
+I brought my parasol so I could\nlook upon Victory Road's peak,\lwithout hurting my eyes.
+
+#org @gText_Route21_NinjaBoyIshan_Intro
+My Pok\emon have mastered the art of\nmimickry.\pPrepare to be confounded, you fool!
+
+#org @gText_Route21_NinjaBoyIshan_Defeat
+Was I the fool after all?
+
+#org @gText_Route21_NinjaBoyIshan_Chat
+A ninja must be strong, but also\nsilent. It's a delicate balance.
+
+#org @gText_Route21_RockerAxel_Intro
+Only the best trainers come to\nVictory Road.\pYou must be among the best too.\pHere, a heavy metal piece to\ncelebrate our epic battle!
+
+#org @gText_Route21_RockerAxel_Defeat
+Encore! Encore!
+
+#org @gText_Route21_RockerAxel_Chat
+You know, you just might have what\nit takes to reach the peak.
+
+#org @gText_SecretTrail_ChannelerHeather_Intro
+You've disturbed the silence of this\nplace, and must be punished[.]
+
+#org @gText_SecretTrail_ChannelerHeather_Defeat
+Ngh[.] Interloper[.]
+
+#org @gText_SecretTrail_ChannelerHeather_Chat
+This place is quiet and peaceful.\pPlease, do not disturb it if you\nintend to pass through.
+
+#org @gText_Route21_VictoryRoadGuard
+Hold, trainer.\pThis is Victory Road - a passage\nthat only the finest trainers may\lenter.\pThose that reach it's peak and obtain\nthe Champion's Flag may challenge\lthe Elite Four and Champion.\pYou may only enter if you've\nobtained all 8 gym badges.\pPlease, allow me to check your\ncredentials[.]
+
+#org @gText_Route21_VictoryRoadGuard_NotEnoughBadges
+I am sorry. You do not have all 8\ngym badges.\pPlease, continue your journey and\nreturn once you do.
+
+#org @gText_Route21_TrainerTips
+Trainer Tips!\pSome wild Pok\emon hold items.\pWhen caught, you can choose to put\nthose items directly into your bag.
+
+#org @gText_Route21_VictoryRoad
+Victory Road\nDestination of those that excel

@@ -353,6 +353,8 @@ static u8 TryLoadAlternateAreaTerrain(u8 terrain)
 				terrain = BATTLE_TERRAIN_FOREST;
 			else if (mapSec == MAPSEC_PERADON_FOREST)
 				terrain = BATTLE_TERRAIN_FOREST_PERADON;
+			else if (MetatileBehavior_IsMountain(tileBehavior))
+				terrain = BATTLE_TERRAIN_MOUNTAIN;
 			break;
 		case BATTLE_TERRAIN_INSIDE:
 			if (mapSec == MAPSEC_FORGOTTEN_MANSE)
