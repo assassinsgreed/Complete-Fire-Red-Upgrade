@@ -511,6 +511,11 @@ ItemScript_Common_AssaultVest:
     finditem ITEM_ASSAULT_VEST 0x1
     end
 
+.global ItemScript_Common_IronBall
+ItemScript_Common_IronBall:
+    finditem ITEM_IRON_BALL 0x1
+    end
+
 .global ItemScript_Common_RedCard
 ItemScript_Common_RedCard:
     finditem ITEM_RED_CARD 0x1

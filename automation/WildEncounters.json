@@ -2029,6 +2029,68 @@
         },
         {
             "mapgroup": 3,
+            "mapnum": 39,
+            "grass": {
+                "rate": 21,
+                "pokemon": [
+                    { "low": 47, "high": 50, "species": "SPECIES_FALINKS" },
+                    { "low": 48, "high": 51, "species": "SPECIES_PRIMEAPE" },
+                    { "low": 47, "high": 50, "species": "SPECIES_GOGOAT" },
+                    { "low": 48, "high": 51, "species": "SPECIES_GOGOAT" },
+                    { "low": 47, "high": 50, "species": "SPECIES_MINIOR_SHIELD" },
+                    { "low": 48, "high": 51, "species": "SPECIES_VIBRAVA" },
+                    { "low": 48, "high": 51, "species": "SPECIES_PRIMEAPE" },
+                    { "low": 47, "high": 50, "species": "SPECIES_FALINKS" },
+                    { "low": 48, "high": 51, "species": "SPECIES_VIBRAVA" },
+                    { "low": 49, "high": 52, "species": "SPECIES_HELIOLISK" },
+                    { "low": 48, "high": 51, "species": "SPECIES_VIBRAVA" }, 
+                    { "low": 49, "high": 52, "species": "SPECIES_HELIOLISK" }
+                ]
+            },
+            "rocks": {
+                "rate": 50,
+                "pokemon": [
+                    { "low": 50, "high": 55, "species": "SPECIES_CARBINK" },
+                    { "low": 50, "high": 55, "species": "SPECIES_BOLDORE" },
+                    { "low": 50, "high": 55, "species": "SPECIES_GIGALITH" },
+                    { "low": 50, "high": 55, "species": "SPECIES_BOLDORE" },
+                    { "low": 50, "high": 55, "species": "SPECIES_BOLDORE" }
+                ]
+            }
+        },
+        {
+            "mapgroup": 3,
+            "mapnum": 40,
+            "grass": {
+                "rate": 21,
+                "pokemon": [
+                    { "low": 47, "high": 50, "species": "SPECIES_FALINKS" },
+                    { "low": 48, "high": 51, "species": "SPECIES_PRIMEAPE" },
+                    { "low": 47, "high": 50, "species": "SPECIES_GOGOAT" },
+                    { "low": 48, "high": 51, "species": "SPECIES_GOGOAT" },
+                    { "low": 47, "high": 50, "species": "SPECIES_MINIOR_SHIELD" },
+                    { "low": 48, "high": 51, "species": "SPECIES_VIBRAVA" },
+                    { "low": 48, "high": 51, "species": "SPECIES_PRIMEAPE" },
+                    { "low": 47, "high": 50, "species": "SPECIES_FALINKS" },
+                    { "low": 48, "high": 51, "species": "SPECIES_VIBRAVA" },
+                    { "low": 49, "high": 52, "species": "SPECIES_HELIOLISK" },
+                    { "low": 48, "high": 51, "species": "SPECIES_VIBRAVA" }, 
+                    { "low": 49, "high": 52, "species": "SPECIES_HELIOLISK" }
+                ]
+            },
+            "rocks": {
+                "rate": 50,
+                "pokemon": [
+                    { "low": 50, "high": 55, "species": "SPECIES_CARBINK" },
+                    { "low": 50, "high": 55, "species": "SPECIES_BOLDORE" },
+                    { "low": 50, "high": 55, "species": "SPECIES_GIGALITH" },
+                    { "low": 50, "high": 55, "species": "SPECIES_BOLDORE" },
+                    { "low": 50, "high": 55, "species": "SPECIES_BOLDORE" }
+                ]
+            }
+        },
+        {
+            "mapgroup": 3,
             "mapnum": 41,
             "grass": {
                 "rate": 21,
