@@ -53,7 +53,7 @@ u8 __attribute__((long_call)) GetCurrentRegionMapSectionId(void);
 #define MAPSEC_CARNELIDGE_VOLCANO           0x85
 #define MAPSEC_SEPPIRE_COVE                 0x86
 #define MAPSEC_ORICHELLE_GARDEN             0x87
-#define MAPSEC_MIMETT_JUNGLE                0x88
+#define MAPSEC_MIMMETT_JUNGLE               0x88
 #define MAPSEC_VICTORY_ROAD                 0x89
 #define MAPSEC_HESSON_PASS                  0x8A
 #define MAPSEC_UTEYAN_RUINS                 0x8B
