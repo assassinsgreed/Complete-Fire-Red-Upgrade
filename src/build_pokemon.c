@@ -4598,7 +4598,7 @@ void SetMonExpWithMaxLevelCheck(struct Pokemon *mon, u16 species, unusedArg u8 u
 
 void RandomlyGivePartyPokerus(struct Pokemon *party)
 {
-	u8 numberOfRolls = GetCurrentRegionMapSectionId() == MAPSEC_MIMETT_JUNGLE ? 1 : 6;
+	u8 numberOfRolls = GetCurrentRegionMapSectionId() == MAPSEC_MIMMETT_JUNGLE ? 1 : 6;
 	u8 hasGivenPokerus = FALSE;
 
 	do {

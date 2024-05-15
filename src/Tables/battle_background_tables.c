@@ -89,6 +89,9 @@ extern const u8 BG_Pond_CavePal[];
 extern const u8 BG_Pond_Cave_TormaTiles[];
 extern const u8 BG_Pond_Cave_TormaMap[];
 extern const u8 BG_Pond_Cave_TormaPal[];
+extern const u8 BG_JungleMap[];
+extern const u8 BG_JungleTiles[];
+extern const u8 BG_JunglePal[];
 
 // Evening (just palettes)
 extern const u8 BG_Grass_EveningPal[];
@@ -101,6 +104,7 @@ extern const u8 BG_Mountain_EveningPal[];
 extern const u8 BG_Desert_EveningPal[];
 extern const u8 BG_Forest_EveningPal[];
 extern const u8 BG_Forest_Peradon_EveningPal[];
+extern const u8 BG_Jungle_EveningPal[];
 
 // Night (just palettes)
 extern const u8 BG_Grass_NightPal[];
@@ -113,6 +117,7 @@ extern const u8 BG_Mountain_NightPal[];
 extern const u8 BG_Desert_NightPal[];
 extern const u8 BG_Forest_NightPal[];
 extern const u8 BG_Forest_Peradon_NightPal[];
+extern const u8 BG_Jungle_NightPal[];
 
 const struct BattleBackground gBattleTerrainTable[] =
 {
@@ -323,6 +328,14 @@ const struct BattleBackground gBattleTerrainTable[] =
 		.entryTileset = gBattleTerrainAnimTiles_PondWater,
 		.entryTilemap = gBattleTerrainAnimTilemap_PondWater,
 		.palette = BG_Pond_Cave_TormaPal,
+	},
+	[BATTLE_TERRAIN_JUNGLE] =
+	{
+		.tileset = BG_JungleTiles,
+		.tilemap = BG_JungleMap,
+		.entryTileset = gBattleTerrainAnimTiles_LongGrass,
+		.entryTilemap = gBattleTerrainAnimTilemap_LongGrass,
+		.palette = BG_JunglePal,
 	}
 };
 
@@ -535,6 +548,14 @@ const struct BattleBackground gBattleTerrainTableEvening[] =
 		.entryTileset = gBattleTerrainAnimTiles_PondWater,
 		.entryTilemap = gBattleTerrainAnimTilemap_PondWater,
 		.palette = BG_Pond_Cave_TormaPal,
+	},
+	[BATTLE_TERRAIN_JUNGLE] =
+	{
+		.tileset = BG_JungleTiles,
+		.tilemap = BG_JungleMap,
+		.entryTileset = gBattleTerrainAnimTiles_LongGrass,
+		.entryTilemap = gBattleTerrainAnimTilemap_LongGrass,
+		.palette = BG_Jungle_EveningPal,
 	}
 };
 
@@ -747,6 +768,14 @@ const struct BattleBackground gBattleTerrainTableNight[] =
 		.entryTileset = gBattleTerrainAnimTiles_PondWater,
 		.entryTilemap = gBattleTerrainAnimTilemap_PondWater,
 		.palette = BG_Pond_Cave_TormaPal,
+	},
+	[BATTLE_TERRAIN_JUNGLE] =
+	{
+		.tileset = BG_JungleTiles,
+		.tilemap = BG_JungleMap,
+		.entryTileset = gBattleTerrainAnimTiles_LongGrass,
+		.entryTilemap = gBattleTerrainAnimTilemap_LongGrass,
+		.palette = BG_Jungle_NightPal,
 	}
 };
 #endif

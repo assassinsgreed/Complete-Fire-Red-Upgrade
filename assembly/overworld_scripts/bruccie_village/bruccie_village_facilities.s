@@ -123,7 +123,7 @@ EventScript_BruccieVillageFacilities_PokemonCenter_CaughtLocationGirl:
     @ Forests and Jungles
     case MAPSEC_VARISI_FOREST, ForestDescription
     case MAPSEC_PERADON_FOREST, ForestDescription
-    case MAPSEC_MIMETT_JUNGLE, ForestDescription
+    case MAPSEC_MIMMETT_JUNGLE, ForestDescription
     @ Default, when no cases are met (ex. trades, ultra space, etc.)
     npcchatwithmovement gText_BruccieVillageFacilities_PokemonCenter_CaughtLocationGirl_Default m_LookLeft
     end
