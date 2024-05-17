@@ -71,6 +71,11 @@ ItemScript_Common_SodaPop:
     finditem ITEM_SODA_POP 0x1
     end
 
+.global ItemScript_Common_Ether
+ItemScript_Common_Ether:
+    finditem ITEM_ETHER 0x1
+    end
+
 .global ItemScript_Common_MaxEther
 ItemScript_Common_MaxEther:
     finditem ITEM_MAX_ETHER 0x1
@@ -334,6 +339,11 @@ ItemScript_Common_ChoiceScarf:
 .global ItemScript_Common_Stick
 ItemScript_Common_Stick:
     finditem ITEM_STICK 0x1
+    end
+
+.global ItemScript_Common_StickyBarb
+ItemScript_Common_StickyBarb:
+    finditem ITEM_STICKY_BARB 0x1
     end
 
 .global ItemScript_Common_BrightPowder
