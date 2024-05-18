@@ -2019,3 +2019,38 @@ npc 3 40 4 EventScript_Common_Strength
 npc 3 40 5 EventScript_SecretTrail_TM77_PsychUp
 npc 3 40 6 ItemScript_Common_IronBall
 npc 3 40 7 EventScript_SecretTrail_ChannelerHeather
+
+# Mimmett Jungle
+map 1 65 MapScript_MimmettJungle
+map 1 67 MapScript_MimmettJungle
+npc 1 63 0 EventScript_MimmettJungle_Venusaurite
+npc 1 63 1 EventScript_MimmettJungle_TM22_SolarBeam
+npc 1 63 2 ItemScript_Common_AbsorbBulb
+npc 1 63 3 ItemScript_Common_HyperPotion
+npc 1 63 4 ItemScript_Common_Ether
+npc 1 63 5 ItemScript_Common_Quickball
+npc 1 63 6 EventScript_MimmettJungle_ScientistSilas
+npc 1 63 7 EventScript_MimmettJungle_RuinManiacWinston
+npc 1 63 8 EventScript_MimmettJungle_BlackBeltLouis
+npc 1 64 0 ItemScript_Common_StickyBarb
+npc 1 64 1 ItemScript_Common_Ultraball
+npc 1 64 2 EventScript_MimmettJungle_BugCatcherNeil
+npc 1 64 3 EventScript_MimmettJungle_ChannelerFreyja
+npc 1 65 0 ItemScript_Common_DireHit
+npc 1 65 1 EventScript_MimmettJungle_PokefanSusan
+npc 1 65 2 EventScript_MimmettJungle_FishermanJerry
+npc 1 66 0 EventScript_Common_Strength
+npc 1 66 1 EventScript_Common_Strength
+npc 1 66 2 EventScript_Common_Strength
+npc 1 66 3 EventScript_Common_Strength
+npc 1 66 4 EventScript_Common_Strength
+npc 1 66 5 EventScript_Common_Strength
+npc 1 66 6 EventScript_Common_Strength
+npc 1 66 7 EventScript_Common_Strength
+npc 1 66 8 EventScript_Common_Strength
+npc 1 66 9 EventScript_MimmettJungle_TM28_LeechLife
+npc 1 67 0 ItemScript_Common_Ultraball
+npc 1 67 1 EventScript_MimmettJungle_PsychicWanda
+sign 1 63 0 SignScript_MimmettJungle_PokerusSign
+sign 1 65 0 SignScript_MimmettJungle_SwampSign
+sign 1 67 0 SignScript_MimmettJungle_SwampSign

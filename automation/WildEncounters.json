@@ -713,6 +713,90 @@
         },
         {
             "mapgroup": 1,
+            "mapnum": 63,
+            "grass": {
+                "rate": 14,
+                "pokemon": [
+                    { "low": 46, "high": 49, "species": "SPECIES_CROAGUNK" },
+                    { "low": 47, "high": 50, "species": "SPECIES_CARNIVINE" },
+                    { "low": 46, "high": 49, "species": "SPECIES_JOLTIK" },
+                    { "low": 47, "high": 50, "species": "SPECIES_TOXICROAK" },
+                    { "low": 46, "high": 49, "species": "SPECIES_VIGOROTH" },
+                    { "low": 47, "high": 50, "species": "SPECIES_GALVANTULA" },
+                    { "low": 47, "high": 50, "species": "SPECIES_ORANGURU" },
+                    { "low": 46, "high": 49, "species": "SPECIES_PASSIMIAN" },
+                    { "low": 47, "high": 50, "species": "SPECIES_TOUCANNON" },
+                    { "low": 48, "high": 51, "species": "SPECIES_TOUCANNON" },
+                    { "low": 47, "high": 50, "species": "SPECIES_SLAKING" }, 
+                    { "low": 48, "high": 51, "species": "SPECIES_SLAKING" }
+                ]
+            }
+        },
+        {
+            "mapgroup": 1,
+            "mapnum": 64,
+            "grass": {
+                "rate": 14,
+                "pokemon": [
+                    { "low": 46, "high": 49, "species": "SPECIES_CROAGUNK" },
+                    { "low": 47, "high": 50, "species": "SPECIES_CARNIVINE" },
+                    { "low": 46, "high": 49, "species": "SPECIES_JOLTIK" },
+                    { "low": 47, "high": 50, "species": "SPECIES_TOXICROAK" },
+                    { "low": 46, "high": 49, "species": "SPECIES_VIGOROTH" },
+                    { "low": 47, "high": 50, "species": "SPECIES_GALVANTULA" },
+                    { "low": 47, "high": 50, "species": "SPECIES_ORANGURU" },
+                    { "low": 46, "high": 49, "species": "SPECIES_PASSIMIAN" },
+                    { "low": 47, "high": 50, "species": "SPECIES_TOUCANNON" },
+                    { "low": 48, "high": 51, "species": "SPECIES_TOUCANNON" },
+                    { "low": 47, "high": 50, "species": "SPECIES_SLAKING" }, 
+                    { "low": 48, "high": 51, "species": "SPECIES_SLAKING" }
+                ]
+            }
+        },
+        {
+            "mapgroup": 1,
+            "mapnum": 65,
+            "grass": {
+                "rate": 14,
+                "pokemon": [
+                    { "low": 46, "high": 49, "species": "SPECIES_CROAGUNK" },
+                    { "low": 47, "high": 50, "species": "SPECIES_CARNIVINE" },
+                    { "low": 46, "high": 49, "species": "SPECIES_JOLTIK" },
+                    { "low": 47, "high": 50, "species": "SPECIES_TOXICROAK" },
+                    { "low": 46, "high": 49, "species": "SPECIES_VIGOROTH" },
+                    { "low": 47, "high": 50, "species": "SPECIES_GALVANTULA" },
+                    { "low": 47, "high": 50, "species": "SPECIES_ORANGURU" },
+                    { "low": 46, "high": 49, "species": "SPECIES_PASSIMIAN" },
+                    { "low": 47, "high": 50, "species": "SPECIES_TOUCANNON" },
+                    { "low": 48, "high": 51, "species": "SPECIES_TOUCANNON" },
+                    { "low": 47, "high": 50, "species": "SPECIES_SLAKING" }, 
+                    { "low": 48, "high": 51, "species": "SPECIES_SLAKING" }
+                ]
+            }
+        },
+        {
+            "mapgroup": 1,
+            "mapnum": 67,
+            "grass": {
+                "rate": 14,
+                "pokemon": [
+                    { "low": 46, "high": 49, "species": "SPECIES_CROAGUNK" },
+                    { "low": 47, "high": 50, "species": "SPECIES_CARNIVINE" },
+                    { "low": 46, "high": 49, "species": "SPECIES_JOLTIK" },
+                    { "low": 47, "high": 50, "species": "SPECIES_TOXICROAK" },
+                    { "low": 46, "high": 49, "species": "SPECIES_VIGOROTH" },
+                    { "low": 47, "high": 50, "species": "SPECIES_GALVANTULA" },
+                    { "low": 47, "high": 50, "species": "SPECIES_ORANGURU" },
+                    { "low": 46, "high": 49, "species": "SPECIES_PASSIMIAN" },
+                    { "low": 47, "high": 50, "species": "SPECIES_TOUCANNON" },
+                    { "low": 48, "high": 51, "species": "SPECIES_TOUCANNON" },
+                    { "low": 47, "high": 50, "species": "SPECIES_SLAKING" }, 
+                    { "low": 48, "high": 51, "species": "SPECIES_SLAKING" }
+                ]
+            }
+        },
+        {
+            "mapgroup": 1,
             "mapnum": 72,
             "grass": {
                 "rate": 5,

@@ -4705,6 +4705,48 @@ const struct TrainerMonNoItemDefaultMoves sParty_SecretTrail_ChannelerHeather[] 
     { .lvl = 54, .species = SPECIES_SABLEYE }
 };
 // #endregion
+
+// #region Mimmett Jungle
+const struct TrainerMonNoItemDefaultMoves sParty_MimmettJungle_ScientistSilas[] = {
+    { .lvl = 51, .species = SPECIES_ESPEON },
+    { .lvl = 52, .species = SPECIES_SERPERIOR },
+    { .lvl = 52, .species = SPECIES_KLANG }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_MimmettJungle_RuinManiacWinston[] = {
+    { .lvl = 51, .species = SPECIES_VULLABY },
+    { .lvl = 53, .species = SPECIES_RUNERIGUS }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_MimmettJungle_BlackbeltLouis[] = {
+    { .lvl = 54, .species = SPECIES_CONKELDURR }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_MimmettJungle_ChannelerFreyja[] = {
+    { .lvl = 51, .species = SPECIES_MISDREAVUS },
+    { .lvl = 51, .species = SPECIES_MISDREAVUS },
+    { .lvl = 52, .species = SPECIES_SABLEYE },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_MimmettJungle_BugCatcherNeil[] = {
+    { .lvl = 52, .species = SPECIES_GALVANTULA },
+    { .lvl = 53, .species = SPECIES_VIKAVOLT }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_MimmettJungle_FishermanJerry[] = {
+    { .lvl = 52, .species = SPECIES_JELLICENT },
+    { .lvl = 53, .species = SPECIES_GASTRODON }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_MimmettJungle_PokefanSusan[] = {
+    { .lvl = 52, .species = SPECIES_LOPUNNY },
+    { .lvl = 53, .species = SPECIES_FROSMOTH }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_MimmettJungle_PsychicWanda[] = {
+    { .lvl = 54, .species = SPECIES_HATTERENE }
+};
+// #endregion
 // #endregion
 
 #define NO_NAME                                                                                      \
@@ -5244,7 +5286,7 @@ const struct Trainer gTrainers[] = {
     [TRAINER_VARISI_FOREST_BUG_CATCHER_KENDELL] = {
         .partyFlags = 0,
         .trainerClass = CLASS_BUG_CATCHER,
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .trainerPic = TRAINER_PIC_BUG_CATCHER,
         .trainerName = {_K, _e, _n, _d, _e, _l, _l, _END},
         .items = {},
@@ -5256,7 +5298,7 @@ const struct Trainer gTrainers[] = {
     [TRAINER_VARISI_FOREST_BUG_CATCHER_BRADEN] = {
         .partyFlags = 0,
         .trainerClass = CLASS_BUG_CATCHER,
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .trainerPic = TRAINER_PIC_BUG_CATCHER,
         .trainerName = {_B, _r, _a, _d, _e, _n, _END},
         .items = {},
@@ -5344,7 +5386,7 @@ const struct Trainer gTrainers[] = {
     [TRAINER_ROUTE_3_BUG_CATCHER_IRWIN] = {
         .partyFlags = 0,
         .trainerClass = CLASS_BUG_CATCHER,
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .trainerPic = TRAINER_PIC_BUG_CATCHER,
         .trainerName = {_I, _r, _w, _i, _n, _END},
         .items = {},
@@ -7760,7 +7802,7 @@ const struct Trainer gTrainers[] = {
     [TRAINER_PERADON_FOREST_BUG_CATCHER_LYLE] = {
         .partyFlags = 0,
         .trainerClass = CLASS_BUG_CATCHER,
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
         .trainerPic = TRAINER_PIC_BUG_CATCHER,
         .trainerName = {_L, _y, _l, _e, _END},
         .items = {},
@@ -9548,6 +9590,104 @@ const struct Trainer gTrainers[] = {
         .partySize = NELEMS(sParty_SecretTrail_ChannelerHeather),
         .party = {.NoItemDefaultMoves = sParty_SecretTrail_ChannelerHeather}
     },
-    // #endregion    
+    // #endregion
+    // #region Mimmett Jungle
+    [TRAINER_MIMMETT_JUNGLE_SCIENTIST_SILAS] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_SCIENTIST,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_SCIENTIST_M,
+        .trainerName = {_S, _i, _l, _a, _s, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_Scientist_Standard,
+        .partySize = NELEMS(sParty_MimmettJungle_ScientistSilas),
+        .party = {.NoItemDefaultMoves = sParty_MimmettJungle_ScientistSilas}
+    },
+    [TRAINER_MIMMETT_JUNGLE_RUIN_MANIAC_WINSTON] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_RUIN_MANIAC,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_RUIN_MANIAC,
+        .trainerName = {_W, _i, _n, _s, _t, _o, _n, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_RuinManiac_Standard,
+        .partySize = NELEMS(sParty_MimmettJungle_RuinManiacWinston),
+        .party = {.NoItemDefaultMoves = sParty_MimmettJungle_RuinManiacWinston}
+    },
+    [TRAINER_MIMMETT_JUNGLE_BLACKBELT_LOUIS] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_BLACK_BELT,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_BLACK_BELT,
+        .trainerName = {_L, _o, _u, _i, _s, _END},
+        .items = { ITEM_X_SP_DEF },
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_BlackBelt_Standard,
+        .partySize = NELEMS(sParty_MimmettJungle_BlackbeltLouis),
+        .party = {.NoItemDefaultMoves = sParty_MimmettJungle_BlackbeltLouis}
+    },
+    [TRAINER_MIMMETT_JUNGLE_CHANNELER_FREYJA] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_CHANNELER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_CHANNELER,
+        .trainerName = {_F, _r, _e, _y, _j, _a, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_Channeler_Standard,
+        .partySize = NELEMS(sParty_MimmettJungle_ChannelerFreyja),
+        .party = {.NoItemDefaultMoves = sParty_MimmettJungle_ChannelerFreyja}
+    },
+    [TRAINER_MIMMETT_JUNGLE_BUG_CATCHER_NEIL] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_BUG_CATCHER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_BUG_CATCHER,
+        .trainerName = {_N, _e, _i, _l, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_BugCatcher_Standard,
+        .partySize = NELEMS(sParty_MimmettJungle_BugCatcherNeil),
+        .party = {.NoItemDefaultMoves = sParty_MimmettJungle_BugCatcherNeil}
+    },
+    [TRAINER_MIMMETT_JUNGLE_FISHERMAN_JERRY] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_FISHERMAN,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_FISHERMAN,
+        .trainerName = {_J, _e, _r, _r, _y, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_Fisherman_Standard,
+        .partySize = NELEMS(sParty_MimmettJungle_FishermanJerry),
+        .party = {.NoItemDefaultMoves = sParty_MimmettJungle_FishermanJerry}
+    },
+    [TRAINER_MIMMETT_JUNGLE_POKEFAN_SUSAN] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_POKEFAN,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .trainerPic = TRAINER_PIC_POKEFAN_F,
+        .trainerName = {_S, _u, _s, _a, _n, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_Pokefan_Standard,
+        .partySize = NELEMS(sParty_MimmettJungle_PokefanSusan),
+        .party = {.NoItemDefaultMoves = sParty_MimmettJungle_PokefanSusan}
+    },
+    [TRAINER_MIMMETT_JUNGLE_PSYCHIC_WANDA] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_PSYCHIC,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_PSYCHIC_F,
+        .trainerName = {_W, _a, _n, _d, _a, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_Psychic_Standard,
+        .partySize = NELEMS(sParty_MimmettJungle_PsychicWanda),
+        .party = {.NoItemDefaultMoves = sParty_MimmettJungle_PsychicWanda}
+    },
+    // #endregion
     // #endregion
 };
