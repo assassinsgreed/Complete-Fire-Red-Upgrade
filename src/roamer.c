@@ -39,7 +39,7 @@ enum
 
 //WARNING! Make sure there are always at least two maps in a set, or the game may crash when changing maps!
 
-static const u8 sRoamerLocations[][NUM_MAPS_IN_SET] = //0x8466C58 in FR
+static const u8 sMainlandRoamerLocations[][NUM_MAPS_IN_SET] = //0x8466C58 in FR
 {
 	{MAP_NUM(ROUTE_1),	MAP_NUM(ROUTE_2),	MAP_NUM(ROUTE_17),  0xFF,   0xFF, 0xFF, 0xFF},
 	{MAP_NUM(ROUTE_2),	MAP_NUM(ROUTE_1),	MAP_NUM(ROUTE_3),	MAP_NUM(ROUTE_7),   0xFF, 0xFF, 0xFF},
@@ -60,6 +60,17 @@ static const u8 sRoamerLocations[][NUM_MAPS_IN_SET] = //0x8466C58 in FR
 	{MAP_NUM(ROUTE_18), MAP_NUM(ROUTE_17),   0xFF,   0xFF, 0xFF, 0xFF, 0xFF},
 	{MAP_NUM(ROUTE_24_WEST), MAP_NUM(ROUTE_24_NORTH),   MAP_NUM(ROUTE_11_SOUTH),   0xFF,   0xFF, 0xFF, 0xFF},
 	{MAP_NUM(ROUTE_24_WEST), MAP_NUM(ROUTE_24_NORTH),   0xFF,   0xFF,   0xFF, 0xFF, 0xFF},
+	{0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF}, // Must be present, table termination
+};
+
+static const u8 sIslandRoamerLocations[][NUM_MAPS_IN_SET] =
+{
+	{MAP_NUM(ROUTE_19), MAP_NUM(ROUTE_20), 0xFF, 0xFF, 0xFF, 0xFF, 0xFF},
+	{MAP_NUM(ROUTE_20), MAP_NUM(ROUTE_20), MAP_NUM(ROUTE_21), 0xFF, 0xFF, 0xFF, 0xFF},
+	{MAP_NUM(ROUTE_21), MAP_NUM(ROUTE_20), MAP_NUM(SECRET_PATH), 0xFF, 0xFF, 0xFF, 0xFF},
+	{MAP_NUM(SECRET_PATH), MAP_NUM(ROUTE_21), MAP_NUM(ROUTE_22), 0xFF, 0xFF, 0xFF, 0xFF},
+	{MAP_NUM(ROUTE_22), MAP_NUM(SECRET_PATH), MAP_NUM(ROUTE_23), 0xFF, 0xFF, 0xFF, 0xFF},
+	{MAP_NUM(ROUTE_23), MAP_NUM(ROUTE_22), 0xFF, 0xFF, 0xFF, 0xFF, 0xFF},
 	{0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF}, // Must be present, table termination
 };
 
@@ -161,7 +172,10 @@ static void CreateInitialRoamerMon(u16 species, u8 level, bool8 allowedOnLand, b
 	roamer.canAppearOnLand = allowedOnLand;
 	roamer.canAppearOnWater = allowedOnWater;
 	roamer.location[MAP_GRP] = ROAMING_MAP_BANK;
-	roamer.location[MAP_NUM] = sRoamerLocations[Random() % (ARRAY_COUNT(sRoamerLocations) - 1)][0];
+	roamer.location[MAP_NUM] =
+		species == SPECIES_ZERAORA ?
+			sIslandRoamerLocations[Random() % (ARRAY_COUNT(sIslandRoamerLocations) - 1)][0] :
+			sMainlandRoamerLocations[Random() % (ARRAY_COUNT(sMainlandRoamerLocations) - 1)][0];
 
 	for (i = 0; i < MAX_NUM_ROAMERS; ++i)
 	{
@@ -227,7 +241,10 @@ void RoamersMoveToOtherLocationSet(void)
 
 			while (TRUE)
 			{
-				mapNum = sRoamerLocations[Random() % (ARRAY_COUNT(sRoamerLocations) - 1)][0];
+				mapNum =
+					roamer->species == SPECIES_ZERAORA ?
+						sIslandRoamerLocations[Random() % (ARRAY_COUNT(sIslandRoamerLocations) - 1)][0] :
+						sMainlandRoamerLocations[Random() % (ARRAY_COUNT(sMainlandRoamerLocations) - 1)][0];
 				if (roamer->location[MAP_NUM] != mapNum)
 				{
 					roamer->location[MAP_NUM] = mapNum;
@@ -254,14 +271,16 @@ void RoamersMove(void)
 
 			if (roamer->species != SPECIES_NONE)
 			{
-				while (locSet < (ARRAY_COUNT(sRoamerLocations) - 1))
+				u8 count = roamer->species == SPECIES_ZERAORA ? (ARRAY_COUNT(sIslandRoamerLocations) - 1) : (ARRAY_COUNT(sMainlandRoamerLocations) - 1);
+				while (locSet < count)
 				{
-					if (roamer->location[MAP_NUM] == sRoamerLocations[locSet][0])
+					u8 location = roamer->species == SPECIES_ZERAORA ? sIslandRoamerLocations[locSet][0] : sMainlandRoamerLocations[locSet][0];
+					if (roamer->location[MAP_NUM] == location)
 					{
 						u8 mapNum;
 						while (TRUE)
 						{
-							mapNum = sRoamerLocations[locSet][Random() % NUM_MAPS_IN_SET];
+							mapNum = roamer->species == SPECIES_ZERAORA ? sIslandRoamerLocations[locSet][Random() % NUM_MAPS_IN_SET] : sMainlandRoamerLocations[locSet][Random() % NUM_MAPS_IN_SET];
 							if (!(roamer->locationHistory[2][MAP_GRP] == ROAMING_MAP_BANK && roamer->locationHistory[2][MAP_NUM] == mapNum) && mapNum != 0xFF)
 								break;
 						}

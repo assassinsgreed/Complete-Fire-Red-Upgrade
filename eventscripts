@@ -2051,6 +2051,7 @@ npc 1 66 8 EventScript_Common_Strength
 npc 1 66 9 EventScript_MimmettJungle_TM28_LeechLife
 npc 1 67 0 ItemScript_Common_Ultraball
 npc 1 67 1 EventScript_MimmettJungle_PsychicWanda
+npc 1 71 0 EventScript_MimmettJungle_Zeraora
 sign 1 63 0 SignScript_MimmettJungle_PokerusSign
 sign 1 65 0 SignScript_MimmettJungle_SwampSign
 sign 1 67 0 SignScript_MimmettJungle_SwampSign

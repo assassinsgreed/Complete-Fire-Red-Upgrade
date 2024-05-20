@@ -70,6 +70,21 @@ Agh! I've lost my focus, thanks to\nyou[.]
 #org @gText_MimmettJungle_PsychicWanda_Chat
 I'm trying to detect hidden items in\nthe jungle.\pPlease don't distract me.
 
+#org @gText_MimmettJungle_Zeraora_BattleConfirmation
+The wild Pok\emon is thrashing\nviolently. It has a dangerous aura.\pIt won't be possible to catch it or\nrun from it until it calms down.\pDo you want to battle it?
+
+#org @gText_MimmettJungle_Zeraora_ChoseNo
+Better not[.]
+
+#org @gText_MimmettJungle_Zeraora_ChoseYes
+The wild Pok\emon attacks!
+
+#org @gText_MimmettJungle_Zeraora_AfterBattle
+The Zeraora has calmed down.
+
+#org @gText_MimmettJungle_Zeraora_Roaming
+The Zeraora fled!\pMaybe it can be found again, if you\nsearch Kulure's western island[.]\pCheck the Town Map and see if it can\nbe found!
+
 #org @gText_MimmettJungle_SwampSign
 PSA: Mimmett Jungle is home to many\nthick swamps that cannot be\ltraversed by foot or Pok\emon.\pIf you must cross these swamps, keep\nan eye out for stones protruding\lfrom the muck.\pTo safely cross the swamp, jump onto\nthese stones by running toward\lthem.\p- Tsarvosa City Advisory Board
 
