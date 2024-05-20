@@ -2055,3 +2055,23 @@ npc 1 71 0 EventScript_MimmettJungle_Zeraora
 sign 1 63 0 SignScript_MimmettJungle_PokerusSign
 sign 1 65 0 SignScript_MimmettJungle_SwampSign
 sign 1 67 0 SignScript_MimmettJungle_SwampSign
+
+# Tsarvosa City
+## Overworld
+map 3 9 MapScript_TsarvosaCity
+npc 3 9 0 EventScript_TsarvosaCity_Captain
+npc 3 9 1 EventScript_TsarvosaCity_DockWorker
+npc 3 9 2 EventScript_TsarvosaCity_FightingDojoFan
+npc 3 9 3 EventScript_TsarvosaCity_DirectionsGirl
+npc 3 9 4 EventScript_TsarvosaCity_GymFan
+npc 3 9 5 EventScript_TsarvosaCity_GymsFeudMan
+npc 3 9 6 EventScript_TsarvosaCity_MarketWoman
+npc 3 9 7 EventScript_TsarvosaCity_OldMan
+npc 3 9 8 EventScript_TsarvosaCity_MimmettJungleGirl
+sign 3 9 0 SignScript_TsarvosaCity_TownPlacard
+## Facilities
+map 12 0 MapScript_TsarvosaCity_PokemonCenter
+npc 12 0 0 EventScript_PokemonCenter_Main
+npc 12 0 1 EventScript_TsarvosaCity_PokemonCenter_FatGuy
+npc 12 0 2 EventScript_TsarvosaCity_PokemonCenter_Policeman
+npc 12 0 3 EventScript_TsarvosaCity_PokemonCenter_Girl
