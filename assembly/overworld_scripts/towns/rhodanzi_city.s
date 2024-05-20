@@ -5,6 +5,357 @@
 .include "../xse_defines.s"
 .include "../asm_defines.s"
 
+@ Overworld
+.global MapScript_RhodanziOverworld_FlightSpot
+MapScript_RhodanziOverworld_FlightSpot:
+	mapscript MAP_SCRIPT_ON_TRANSITION MapEntryScript_RhodanziOverworld_FlightFlag
+	.byte MAP_SCRIPT_TERMIN
+
+MapEntryScript_RhodanziOverworld_FlightFlag:
+    setworldmapflag 0x892
+    setflag 0x31 @ Hide Rival and Team Pluto on route 3
+    checkflag 0x820 @ Obtained Rhodanzi City Gym
+    IF SET _call HideThugs
+    end
+
+HideThugs:
+    hidesprite 0x6
+    hidesprite 0x7
+    return
+
+.global EventScript_RhodanziOverworld_SunSightMan
+EventScript_RhodanziOverworld_SunSightMan:
+    npcchat gText_RhodanziOverworld_SunSightMan
+    end
+
+.global EventScript_RhodanziOverworld_FirstStop
+EventScript_RhodanziOverworld_FirstStop:
+    npcchat gText_RhodanziOverworld_FirstStop
+    end
+
+.global EventScript_RhodanziOverworld_PokemonVariety
+EventScript_RhodanziOverworld_PokemonVariety:
+    npcchat gText_RhodanziOverworld_PokemonVariety
+    end
+
+.global EventScript_RhodanziOverworld_TreeGuy
+EventScript_RhodanziOverworld_TreeGuy:
+    npcchat gText_RhodanziOverworld_TreeGuy
+    end
+
+.global SignScript_RhodanziCity_EntranceSign
+SignScript_RhodanziCity_EntranceSign:
+    msgbox gText_RhodanziCity_EntranceSign MSG_SIGN
+    end
+
+.global SignScript_RhodanziCity_FishermanSign
+SignScript_RhodanziCity_FishermanSign:
+    msgbox gText_RhodanziCity_FishermanSign MSG_SIGN
+    end
+
+.global TileScript_RhodanziOverworld_ThugsCaught
+TileScript_RhodanziOverworld_ThugsCaught:
+    checkflag 0x820
+    if SET _goto End
+    lock
+    msgbox gText_RhodanziOverworld_ThugsRumour MSG_NORMAL
+    sound 0x15 @ Exclaim
+    applymovement 0x6 m_Surprise
+    applymovement 0x7 m_Surprise
+    waitmovement ALLEVENTS
+    msgbox gText_RhodanziOverworld_Thugs MSG_NORMAL
+    applymovement 0x6 m_ThugBottomMoveToPush
+    applymovement 0x7 m_ThugTopMoveToPush
+    waitmovement ALLEVENTS
+    sound 0x7 @Bumping into wall
+    applymovement 0x6 m_ThugPush
+    applymovement 0x7 m_ThugPush
+    applymovement PLAYER m_PlayerJump
+    waitmovement ALLEVENTS
+    applymovement 0x6 m_ThugBottomMoveBack
+    applymovement 0x7 m_ThugTopMoveBack
+    waitmovement ALLEVENTS
+    msgbox gText_RhodanziOverworld_ThugsThreat MSG_NORMAL
+    release
+    end
+
+.global EventScript_RhodanziOverworld_ThugBottomSpokenTo
+EventScript_RhodanziOverworld_ThugBottomSpokenTo:
+    npcchatwithmovement gText_RhodanziOverworld_ThugsEna m_LookUp
+    end
+
+.global EventScript_RhodanziOverworld_ThugTopSpokenTo
+EventScript_RhodanziOverworld_ThugTopSpokenTo:
+    npcchatwithmovement gText_RhodanziOverworld_Thugs m_LookDown
+    end
+
+.global EventScript_RhodanziOverworld_FindTMEchoedVoice
+EventScript_RhodanziOverworld_FindTMEchoedVoice:
+    setvar CHOSEN_ITEM ITEM_TM49
+    call ItemScript_Common_FindTM
+    end
+
+.global EventScript_RhodanziOverworld_PokeChipMan
+EventScript_RhodanziOverworld_PokeChipMan:
+    npcchat gText_RhodanziOverworld_PokeChipMan
+    end
+
+.global EventScript_RhodanziOverworld_HoneyMan
+EventScript_RhodanziOverworld_HoneyMan:
+    npcchat gText_RhodanziOverworld_Honey
+    end
+
+m_ThugTopMoveToPush:
+    .byte run_right, run_down, look_left, end_m
+
+m_ThugBottomMoveToPush:
+    .byte run_right, run_up, look_left, end_m
+
+m_ThugPush:
+    .byte say_cross, jump_onspot_left, end_m
+
+m_PlayerJump:
+    .byte jump_left, end_m
+
+m_ThugTopMoveBack:
+    .byte run_up, run_left, look_down, end_m
+
+m_ThugBottomMoveBack:
+    .byte run_down, run_left, look_up, end_m
+
+@ Facilities
+.global MapScript_RhodanziFacilities_PokemonCenter
+MapScript_RhodanziFacilities_PokemonCenter:
+	mapscript MAP_SCRIPT_ON_TRANSITION MapScript_RhodanziFacilities_PokemonCenter_SetHealingSpot
+	.byte MAP_SCRIPT_TERMIN
+
+MapScript_RhodanziFacilities_PokemonCenter_SetHealingSpot:
+    sethealingplace 0x03 @ Originally Pewter City
+    call ResetRoute11PlutoEventOnWhiteout
+    end
+
+.global EventScript_RhodanziFacilities_Mart_BadgeStock
+EventScript_RhodanziFacilities_Mart_BadgeStock:
+    npcchat gText_RhodanziFacilities_Mart_BadgeStock
+    end
+
+.global EventScript_RhodanziFacilities_Mart_EscapeRope
+EventScript_RhodanziFacilities_Mart_EscapeRope:
+    npcchat gText_RhodanziFacilities_Mart_EscapeRope
+    end
+
+.global EventScript_RhodanziFacilities_Center_UsingFacility
+EventScript_RhodanziFacilities_Center_UsingFacility:
+    npcchat gText_RhodanziFacilities_Center_UsingFacility
+    end
+
+.global EventScript_RhodanziFacilities_Center_Trade
+EventScript_RhodanziFacilities_Center_Trade:
+    npcchat gText_RhodanziFacilities_Center_Trade
+    end
+
+.global EventScript_RhodanziFacilities_Center_PokemonTreatment
+EventScript_RhodanziFacilities_Center_PokemonTreatment:
+    npcchat gText_RhodanziFacilities_Center_PokemonTreatment
+    end
+
+@ NPC Houses
+.global EventScript_RhodanziNPCHouses_Fisherman
+EventScript_RhodanziNPCHouses_Fisherman:
+    lock
+    faceplayer
+    checkflag 0x24A @ Has Old Rod?
+    if SET _goto EventScript_RhodanziNPCHouses_FishermanFarewell
+    msgbox gText_RhodanziNPCHouses_FishermanIntro MSG_YESNO
+    compare LASTRESULT YES
+    IF TRUE _goto EventScript_RhodanziNPCHouses_FishermanYes
+    msgbox gText_RhodanziNPCHouses_FishermanNo MSG_NORMAL
+    release
+    end
+
+EventScript_RhodanziNPCHouses_FishermanYes:
+    msgbox gText_RhodanziNPCHouses_FishermanYes MSG_NORMAL
+    obtainitem ITEM_OLD_ROD 0x1
+    setflag 0x24A @ Has Old Rod?
+    msgbox gText_RhodanziNPCHouses_FishermanTip MSG_NORMAL
+    goto EventScript_RhodanziNPCHouses_FishermanFarewell
+
+EventScript_RhodanziNPCHouses_FishermanFarewell:
+    npcchat gText_RhodanziNPCHouses_FishermanFarewell
+    release
+    end
+
+.global EventScript_RhodanziNPCHouses_TerrenceSister
+EventScript_RhodanziNPCHouses_TerrenceSister:
+    checkflag 0x820 @ Beat Terrence
+    if SET _goto TerrenceSister_BadgeObtained
+    npcchat gText_RhodanziNPCHouses_TerrenceSister
+    end
+
+TerrenceSister_BadgeObtained:
+    npcchat gText_RhodanziNPCHouses_TerrenceSister_BadgeObtained
+    end
+
+.global EventScript_RhodanziNPCHouses_TerrenceLittleBrother
+EventScript_RhodanziNPCHouses_TerrenceLittleBrother:
+    lock
+    faceplayer
+    checkflag 0x820 @ Beat Terrence
+    if SET _goto TerrenceBrother_BadgeObtained
+    msgbox gText_RhodanziNPCHouses_TerrenceLittleBrotherQuestion MSG_YESNO
+    compare LASTRESULT YES
+    if TRUE _goto EventScript_RhodanziNPCHouses_TerrenceLittleBrotherYes
+    msgbox gText_RhodanziNPCHouses_TerrenceLittleBrotherQuestionNo MSG_NORMAL
+    release
+    end
+
+TerrenceBrother_BadgeObtained:
+    npcchatwithmovement gText_RhodanziNPCHouses_TerrenceBrother_BadgeObtained m_LookUp
+    release
+    end
+
+EventScript_RhodanziNPCHouses_TerrenceLittleBrotherYes:
+    npcchat gText_RhodanziNPCHouses_TerrenceLittleBrotherQuestionYes
+    applymovement LASTTALKED m_LookUp
+    end
+
+EventScript_RhodanziNPCHouses_TerrenceLittleBrotherNo:
+    npcchat gText_RhodanziNPCHouses_TerrenceLittleBrotherQuestionNo
+    applymovement LASTTALKED m_LookUp
+    end
+
+.global EventScript_RhodanziNPCHouses_Evolution
+EventScript_RhodanziNPCHouses_Evolution:
+    npcchatwithmovement gText_RhodanziNPCHouses_Evolution m_LookRight
+    end
+
+.global EventScript_RhodanziNPCHouses_OldTrainer
+EventScript_RhodanziNPCHouses_OldTrainer:
+    npcchatwithmovement gText_RhodanziNPCHouses_OldTrainer m_LookLeft
+    end
+
+.global EventScript_RhodanziNPCHouses_NidoranTrainer
+EventScript_RhodanziNPCHouses_NidoranTrainer:
+    npcchat gText_RhodanziNPCHouses_NidoranTrainer
+    end
+
+.global EventScript_RhodanziNPCHouses_Nidoran
+EventScript_RhodanziNPCHouses_Nidoran:
+    lock
+    faceplayer
+    checksound
+    cry SPECIES_NIDORAN_M 0x0
+    msgbox gText_RhodanziNPCHouses_Nidoran MSG_FACE
+    waitcry
+    release
+    end
+
+.global EventScript_RhodanziNPCHouses_PokedexTrainer
+EventScript_RhodanziNPCHouses_PokedexTrainer:
+    lock
+    faceplayer
+    msgbox gText_RhodanziNPCHouses_PokedexTrainerQuestion MSG_YESNO
+    compare LASTRESULT YES
+    if TRUE _goto EventScript_RhodanziNPCHouses_PokedexTrainerYes
+    goto EventScript_RhodanziNPCHouses_PokedexTrainerNo
+
+EventScript_RhodanziNPCHouses_PokedexTrainerYes:
+    npcchatwithmovement gText_RhodanziNPCHouses_PokedexTrainerYes m_LookRight
+    end
+
+EventScript_RhodanziNPCHouses_PokedexTrainerNo:
+    npcchatwithmovement gText_RhodanziNPCHouses_PokedexTrainerNo m_LookRight
+    end
+
+.global EventScript_RhodanziNPCHouses_PlantGirl
+EventScript_RhodanziNPCHouses_PlantGirl:
+    npcchatwithmovement gText_RhodanziNPCHouses_PlantGirl m_LookLeft
+    end
+
+.global EventScript_RhodanziNPCHouses_MailTrainer
+EventScript_RhodanziNPCHouses_MailTrainer:
+    npcchatwithmovement gText_RhodanziNPCHouses_MailTrainer m_LookDown
+    end
+
+@ Gym
+.global SignScript_RhodanziGym_Placard
+SignScript_RhodanziGym_Placard:
+    checkflag 0x232 @ DexNav event triggered
+    if SET _goto SignScript_RhodanziGym_PlacardWithBadgeAndDexNavEvent
+    checkflag 0x820 @ Rhodanzi gym badge
+    if SET _goto SignScript_RhodanziGym_PlacardWithBadge
+    msgbox gText_RhodanziGym_Winners MSG_SIGN
+    end
+
+SignScript_RhodanziGym_PlacardWithBadge:
+    msgbox gText_RhodanziGym_WinnersWithBadge MSG_SIGN
+    end
+
+SignScript_RhodanziGym_PlacardWithBadgeAndDexNavEvent:
+    msgbox gText_RhodanziGym_WinnersWithBadgeAndDexNavEvent MSG_SIGN
+    end
+
+.global EventScript_RhodanziGym_GymExpert
+EventScript_RhodanziGym_GymExpert:
+    checkflag 0x820 @ Rhodanzi gym badge
+    if SET _goto EventScript_RhodanziGym_GymExpertBadgeObtained
+    npcchat gText_RhodanziGym_ExpertTips
+    end
+
+EventScript_RhodanziGym_GymExpertBadgeObtained:
+    npcchat gText_RhodanziGym_ExpertBadgeObtained
+    end
+
+.global EventScript_RhodanziGym_Alonso
+EventScript_RhodanziGym_Alonso:
+    trainerbattle0 0x0 0xC 0x0 gText_RhodanziGym_Alonso_Intro gText_RhodanziGym_Alonso_Defeat
+    msgbox gText_RhodanziGym_Alonso_Chat MSG_NORMAL
+    end
+
+.global EventScript_RhodanziGym_Brandon
+EventScript_RhodanziGym_Brandon:
+    trainerbattle0 0x0 0xD 0x0 gText_RhodanziGym_Brandon_Intro gText_RhodanziGym_Brandon_Defeat
+    msgbox gText_RhodanziGym_Brandon_Chat MSG_NORMAL
+    end
+
+.global EventScript_RhodanziGym_Leader_Terrence
+EventScript_RhodanziGym_Leader_Terrence:
+    lockall
+    faceplayer
+    checkflag 0x820 @ Rhodanzi gym badge
+    if SET _goto EventScript_RhodanziGym_Leader_TerrenceChat
+    msgbox gText_RhodanziGym_Leader_Terrence_Talk MSG_NORMAL
+    call SetupMugshotGymLeaderAndBosses
+    trainerbattle1 0x1 0xE 0x100 gText_RhodanziGym_Leader_Terrence_Intro gText_RhodanziGym_Leader_Terrence_Defeat EventScript_RhodanziGym_Leader_TerrenceDefeated
+    end
+
+EventScript_RhodanziGym_Leader_TerrenceDefeated:
+    msgbox gText_RhodanziGym_Leader_Terrence_BadgeAwarded MSG_NORMAL
+    setflag 0x820 @ Rhodanzi gym badge
+    fanfare 0x13D @ Gym victory
+    msgbox gText_RhodanziGym_BadgeReceived MSG_NORMAL
+    call BadgeObedienceMessage
+    waitfanfare
+    setvar 0x4097 0x1 @ Disable Team Pluto tile event  
+    settrainerflag 0xC @ Alonso cannot be battled now
+    settrainerflag 0xD @ Brandon cannot be battled now
+    msgbox gText_RhodanziGym_Leader_Terrence_BadgeDescription MSG_NORMAL
+    msgbox gText_RhodanziGym_Leader_Terrence_TMReceived MSG_NORMAL
+    loadpointer 0x0 gText_RhodanziGym_TMReceived
+    additem ITEM_TM05 0x1
+    giveitemwithfanfare ITEM_TM05 0x1 0x101 @ MUS_FANFA1
+    setflag 0x254 @ Received TM 05 from Terrence
+    setflag 0x4B0 @ Defeated Terrence
+    setflag 0x25C @ New Pokemart Stock
+    msgbox gText_RhodanziGym_Leader_Terrence_Chat MSG_KEEPOPEN
+    releaseall
+    end
+
+EventScript_RhodanziGym_Leader_TerrenceChat:
+    npcchat gText_RhodanziGym_Leader_Terrence_Chat
+    end
+
+@ Trainer House
 EndMovementAndEvent:
     waitmovement ALLEVENTS
     release
