@@ -410,6 +410,8 @@ GraphicsInfo_Kyogre 839FFF0
 GraphicsInfo_Groudon 839FFF4
 ## Replace Deoxys Defense (148)
 GraphicsInfo_Glastrier 83A0000
+## Replace Deoxys Attack (149)
+GraphicsInfo_Zeraora 83A0004
 
 # Custom Battle Spritework
 ## Replace Aqua Boss Archie (0)

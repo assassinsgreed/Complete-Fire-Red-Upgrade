@@ -79,6 +79,56 @@ EventScript_MimmettJungle_PsychicWanda:
     msgbox gText_MimmettJungle_PsychicWanda_Chat MSG_NORMAL
     end
 
+.global EventScript_MimmettJungle_Zeraora
+EventScript_MimmettJungle_Zeraora:
+    msgbox gText_MimmettJungle_Zeraora_BattleConfirmation MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto ZeraoraChoseNo
+    faceplayer
+    cry SPECIES_ZERAORA 0x0
+    msgbox gText_MimmettJungle_Zeraora_ChoseYes MSG_NORMAL
+    waitcry
+    @ Legendary battle setup
+    setflag 0x904 @ Can't run or catch, cleared after battle
+    setflag 0x90B @ Wild custom moves, cleared at the end of battle
+    setvar 0x8000 MOVE_HONECLAWS
+    setvar 0x8001 MOVE_PLASMAFISTS
+    setvar 0x8002 MOVE_KNOCKOFF
+    setvar 0x8003 MOVE_BRICKBREAK
+    setflag 0x90C @ Smarter wild battle, cleared at the end of battle
+    setwildbattle SPECIES_ZERAORA 70 ITEM_SITRUS_BERRY
+    setflag 0x807
+    special 0x138 @ Setup a legendary encounter (blurred screen transition)
+    waitstate
+    clearflag 0x807
+    @ After battle
+    cry SPECIES_ZERAORA 0x0
+    msgbox gText_MimmettJungle_Zeraora_AfterBattle MSG_NORMAL
+    waitcry
+    compare PLAYERFACING UP
+    if equal _call ZeraoraJumpsAroundPlayer
+    applymovement LASTTALKED m_ZeraoraLeaves
+    waitmovement LASTTALKED
+    setflag 0x054 @ Zeraora Calmed
+    @ Set up roaming
+    msgbox gText_MimmettJungle_Zeraora_Roaming MSG_NORMAL
+    setvar 0x8000 SPECIES_ZERAORA
+    setvar 0x8001 70
+    setvar 0x8002 0x1 @ Can roam on land
+    setvar 0x8003 0x0 @ Cannot roam on water
+    special 0x129 @ Create roaming Pokemon
+    hidesprite LASTTALKED
+    end
+
+ZeraoraChoseNo:
+    msgbox gText_MimmettJungle_Zeraora_ChoseNo MSG_NORMAL
+    end
+
+ZeraoraJumpsAroundPlayer:
+    applymovement LASTTALKED m_ZeraoraGoesAroundPlayer
+    waitmovement LASTTALKED
+    return
+
 .global SignScript_MimmettJungle_PokerusSign
 SignScript_MimmettJungle_PokerusSign:
     msgbox gText_MimmettJungle_PokerusSign MSG_SIGN
@@ -88,3 +138,6 @@ SignScript_MimmettJungle_PokerusSign:
 SignScript_MimmettJungle_SwampSign:
     msgbox gText_MimmettJungle_SwampSign MSG_SIGN
     end
+
+m_ZeraoraGoesAroundPlayer: .byte run_right, run_down, jump_2_down, run_left, end_m
+m_ZeraoraLeaves: .byte run_down, run_down, run_down, run_down, run_down, run_down, end_m
