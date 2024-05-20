@@ -5,6 +5,107 @@
 .include "../xse_defines.s"
 .include "../asm_defines.s"
 
+@ Overworld
+.global MapScript_OlenicTown
+MapScript_OlenicTown:
+	mapscript MAP_SCRIPT_ON_TRANSITION MapEntryScript_OlenicTown_FlightSpot
+	.byte MAP_SCRIPT_TERMIN
+
+MapEntryScript_OlenicTown_FlightSpot:
+    setworldmapflag 0x891
+    sethealingplace 0x01 @ Player's House
+    call ResetRoute11PlutoEventOnWhiteout
+    end
+
+.global SignScript_OlenicOverworld_HawthornesLab
+SignScript_OlenicOverworld_HawthornesLab:
+    msgbox gText_OlenicOverworld_HawthornsLabSign MSG_SIGN
+    end
+
+.global EventScript_OlenicOverworld_NewTrainers
+EventScript_OlenicOverworld_NewTrainers:
+    npcchat gText_OlenicOverworld_NewTrainers
+    end
+
+.global EventScript_OlenicOverworld_GameKid
+EventScript_OlenicOverworld_GameKid:
+    npcchatwithmovement gText_OlenicOverworld_GameKid m_LookDown
+    end
+
+.global EventScript_OlenicOverworld_OldLady
+EventScript_OlenicOverworld_OldLady:
+    npcchat gText_OlenicOverworld_OldLady
+    end
+
+.global EventScript_OlenicOverworld_HawthorneFan
+EventScript_OlenicOverworld_HawthorneFan:
+    npcchat gText_OlenicOverworld_HawthorneFan
+    end
+
+.global EventScript_OlenicOverworld_FindTMSwagger
+EventScript_OlenicOverworld_FindTMSwagger:
+    setvar CHOSEN_ITEM ITEM_TM87
+    call ItemScript_Common_FindTM
+    end
+
+.global SignScript_OlenicOverworld_TrainerTips
+SignScript_OlenicOverworld_TrainerTips:
+    msgbox gText_OlenicOverworld_TrainerTips MSG_SIGN
+    end
+
+@ Facilities
+.global EventScript_OlenicFacilities_Mart_StockUp
+EventScript_OlenicFacilities_Mart_StockUp:
+    npcchat gText_OlenicFacilities_Mart_StockUp
+    end
+
+@ NPC Houses
+.global EventScript_OlenicNPCHouses_FatherOfTrainer
+EventScript_OlenicNPCHouses_FatherOfTrainer:
+    npcchatwithmovement gText_OlenicNPCHouses_FatherOfTrainer m_LookRight
+    end
+
+.global EventScript_OlenicNPCHouses_MotherOfTrainer
+EventScript_OlenicNPCHouses_MotherOfTrainer:
+    npcchatwithmovement gText_OlenicNPCHouses_MotherOfTrainer m_LookLeft
+    end
+
+.global EventScript_OlenicNPCHouses_GrassTrainer
+EventScript_OlenicNPCHouses_GrassTrainer:
+    npcchatwithmovement gText_OlenicNPCHouses_GrassTrainer m_LookLeft
+    end
+
+.global EventScript_OlenicNPCHouses_FireTrainer
+EventScript_OlenicNPCHouses_FireTrainer:
+    npcchatwithmovement gText_OlenicNPCHouses_FireTrainer m_LookUp
+    end
+
+.global EventScript_OlenicNPCHouses_WaterTrainer
+EventScript_OlenicNPCHouses_WaterTrainer:
+    npcchatwithmovement gText_OlenicNPCHouses_WaterTrainer m_LookUp
+    end
+
+.global EventScript_OlenicNPCHouses_SinnohMother
+EventScript_OlenicNPCHouses_SinnohMother:
+    npcchatwithmovement gText_OlenicNPCHouses_SinnohMother m_LookRight
+    end
+
+.global EventScript_OlenicNPCHouses_SinnohChild
+EventScript_OlenicNPCHouses_SinnohChild:
+    npcchatwithmovement gText_OlenicNPCHouses_SinnohChild m_LookUp
+    end
+
+.global EventScript_OlenicNPCHouses_ProfessorBoy
+EventScript_OlenicNPCHouses_ProfessorBoy:
+    npcchatwithmovement gText_OlenicNPCHouses_ProfessorBoy m_LookRight
+    end
+
+.global EventScript_OlenicNPCHouses_ProfessorGirl
+EventScript_OlenicNPCHouses_ProfessorGirl:
+    npcchatwithmovement gText_OlenicNPCHouses_ProfessorGirl m_LookLeft
+    end
+
+@ Professor's Lab
 .equ Hawthorne, 0x1
 
 .global MapScript_OlenicLab

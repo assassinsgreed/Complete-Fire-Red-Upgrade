@@ -5,6 +5,267 @@
 .include "../xse_defines.s"
 .include "../asm_defines.s"
 
+.equ LoudMan, 0x2
+.equ Rival, 0x9
+.equ StoryEventVar, 0x4052
+.equ MetRivalAtGym, 0x1
+
+@ Overworld
+.global MapScript_FerroxOverworld
+MapScript_FerroxOverworld:
+	mapscript MAP_SCRIPT_ON_TRANSITION MapEntryScript_FerroxOverworld_FlightFlag
+	.byte MAP_SCRIPT_TERMIN
+
+MapEntryScript_FerroxOverworld_FlightFlag:
+    setworldmapflag 0x893
+    compare StoryEventVar MetRivalAtGym
+    if greaterorequal _call MoveLoudMan
+    compare StoryEventVar MetRivalAtGym
+    if lessorequal _call HideStellaInGym
+    end
+
+MoveLoudMan:
+    movesprite2 LoudMan 0xA 0xD
+    setobjectmovementtype LoudMan 0x2 @ Walk around
+    return
+
+HideStellaInGym:
+    setflag 0x03B @ Hide Stella in Ferrox Gym
+    return
+
+.global EventScript_FerroxVillage_AngryLibraryVisitor
+EventScript_FerroxVillage_AngryLibraryVisitor:
+    npcchat gText_FerroxOverworld_AngryLibraryVisitor
+    end
+
+.global EventScript_FerroxVillage_EggFan
+EventScript_FerroxVillage_EggFan:
+    npcchat gText_FerroxOverworld_EggFan
+    end
+
+.global EventScript_FerroxVillage_FlowerKid
+EventScript_FerroxVillage_FlowerKid:
+    npcchat gText_FerroxOverworld_FlowerKid
+    end
+
+.global EventScript_FerroxVillage_AppleMan
+EventScript_FerroxVillage_AppleMan:
+    npcchat gText_FerroxOverworld_AppleMan
+    end
+
+.global EventScript_FerroxVillage_Policeman
+EventScript_FerroxVillage_Policeman:
+    npcchat gText_FerroxOverworld_Policeman
+    end
+
+.global SignScript_FerroxVillage_Library
+SignScript_FerroxVillage_Library:
+    msgbox gText_FerroxOverworld_LibrarySign MSG_SIGN
+    end
+
+.global SignScript_FerroxVillage_Gym
+SignScript_FerroxVillage_Gym:
+    msgbox gText_FerroxOverworld_GymSign MSG_SIGN
+    end
+
+.global SignScript_FerroxVillage_TownEntrance
+SignScript_FerroxVillage_TownEntrance:
+    msgbox gText_FerroxOverworld_TownEntranceSign MSG_SIGN
+    end
+
+.global TileScript_FerroxVillage_ApproachedGym
+TileScript_FerroxVillage_ApproachedGym:
+    lock
+    pause DELAY_HALFSECOND
+    applymovement PLAYER m_LookUp
+    opendoor 0x25 0x10
+    waitdooranim
+	playbgm 0x195
+    clearflag 0x2F @ Show Rival
+    showsprite Rival
+    pause DELAY_1SECOND
+    applymovement PLAYER m_backup
+    waitmovement ALLEVENTS
+    applymovement Rival m_WalkDown
+    waitmovement ALLEVENTS
+    closedoor 0x25 0x10
+    waitdooranim
+    msgbox gText_FerroxOverworld_MeetingRival MSG_NORMAL
+    applymovement Rival m_rivalLeaves
+    waitmovement ALLEVENTS
+    setflag 0x2F @ Hide Rival
+    setvar StoryEventVar MetRivalAtGym
+    hidesprite Rival
+    fadedefaultbgm
+    call MoveLoudMan
+    release
+	end
+
+m_backup: .byte slide_down, look_up, end_m
+m_rivalLeaves: .byte walk_left, walk_down, walk_down, walk_down, walk_down, walk_down, walk_down, end_m
+
+@ Facilities
+.global MapScript_FerroxFacilities_PokemonCenter
+MapScript_FerroxFacilities_PokemonCenter:
+	mapscript MAP_SCRIPT_ON_TRANSITION MapScript_FerroxFacilities_PokemonCenter_SetHealingSpot
+	.byte MAP_SCRIPT_TERMIN
+
+MapScript_FerroxFacilities_PokemonCenter_SetHealingSpot:
+    sethealingplace 0x04 @ Originally Cerulean City
+    call ResetRoute11PlutoEventOnWhiteout
+    end
+
+.global EventScript_FerroxFacilities_Mart_BerryShop
+EventScript_FerroxFacilities_Mart_BerryShop:
+    lock
+    faceplayer
+    special 0x187
+    compare LASTRESULT 0x2
+    if 0x1 _goto End
+    msgbox gText_Common_PokemartIntro MSG_KEEPOPEN
+    pokemart FerroxPokemart_BerryStock
+    goto EventScript_EndMart
+
+.align 1
+FerroxPokemart_BerryStock:
+    .hword ITEM_ORAN_BERRY
+    .hword ITEM_SITRUS_BERRY
+    .hword ITEM_CHERI_BERRY
+    .hword ITEM_CHESTO_BERRY
+    .hword ITEM_PECHA_BERRY
+    .hword ITEM_RAWST_BERRY
+    .hword ITEM_ASPEAR_BERRY
+    .hword ITEM_PERSIM_BERRY
+    .hword ITEM_LEPPA_BERRY
+    .hword ITEM_NONE
+
+.global EventScript_FerroxFacilities_Mart_UniqueShops
+EventScript_FerroxFacilities_Mart_UniqueShops:
+    npcchat gText_FerroxFacilities_Mart_UniqueShops
+    end
+
+.global EventScript_FerroxFacilities_Mart_Berries
+EventScript_FerroxFacilities_Mart_Berries:
+    npcchat gText_FerroxFacilities_Mart_Berries
+    end
+
+.global EventScript_FerroxFacilities_Center_FerroxHikers
+EventScript_FerroxFacilities_Center_FerroxHikers:
+    npcchat gText_FerroxFacilities_Mart_FerroxHikers
+    end
+
+.global EventScript_FerroxFacilities_Center_StellaSibling
+EventScript_FerroxFacilities_Center_StellaSibling:
+    npcchat gText_FerroxFacilities_Mart_StellaSibling
+    end
+
+.global EventScript_FerroxFacilities_Center_FerroxBadge
+EventScript_FerroxFacilities_Center_FerroxBadge:
+    npcchat gText_FerroxFacilities_Mart_FerroxBadge
+    end
+
+@ NPC Houses
+.global EventScript_FerroxNPCHouses_SmallestVillage
+EventScript_FerroxNPCHouses_SmallestVillage:
+    npcchatwithmovement gText_FerroxNPCHouses_SmallestVillage m_LookRight
+    end
+
+.global EventScript_FerroxNPCHouses_DailyBerry
+EventScript_FerroxNPCHouses_DailyBerry:
+    lock
+    faceplayer
+    checkflag 0xE06
+    if SET _goto BerryGirlEnd
+    msgbox gText_FerroxNPCHouses_BerryGirl_FreeBerry MSG_NORMAL
+    random 0xA
+    addvar LASTRESULT 0x85 @ Cheri Berry to Sitrus Berry
+    obtainitem LASTRESULT 0x1 
+    setflag 0xE06
+    goto BerryGirlEnd
+
+BerryGirlEnd:
+    msgbox gText_FerroxNPCHouses_BerryGirl_ComeBackTomorrow MSG_NORMAL
+    release
+    end
+
+.global EventScript_FerroxNPCHouses_MoveTutor
+EventScript_FerroxNPCHouses_MoveTutor:
+    faceplayer
+    callasm StorePokeChipCount
+	buffernumber 0x0 0x8005 @ Take stored PokeChip count
+    msgbox gText_FerroxNPCHouses_TutorConfirmation MSG_YESNO
+    compare LASTRESULT YES
+    IF FALSE _goto TutoringRejected
+    checkitem ITEM_POKE_CHIP 0x5
+    compare LASTRESULT TRUE
+    if FALSE _goto NotEnoughPokeChips
+    msgbox gText_FerroxNPCHouses_ConfirmationAccepted MSG_KEEPOPEN
+    call EventScript_Tutors_Ferrox
+    compare LASTRESULT TRUE
+    if equal _call TutoringComplete
+    applymovement LASTTALKED m_LookLeft
+    end
+
+TutoringComplete:
+    msgbox gText_FerroxNPCHouses_Complete MSG_NORMAL
+    return
+
+TutoringRejected:
+    npcchatwithmovement gText_FerroxNPCHouses_TutoringRejected m_LookLeft
+    end
+
+NotEnoughPokeChips:
+    npcchatwithmovement gText_FerroxNPCHouses_NotEnoughPokeChips m_LookLeft
+    end
+
+.global EventScript_FerroxNPCHouses_TutorsInTowns
+EventScript_FerroxNPCHouses_TutorsInTowns:
+    npcchat gText_FerroxNPCHouses_TutorsInTowns
+    end
+
+.global EventScript_FerroxNPCHouses_TradeGirlDad
+EventScript_FerroxNPCHouses_TradeGirlDad:
+    npcchatwithmovement gText_FerroxNPCHouses_TradeGirlDad m_LookRight
+    end
+
+.global EventScript_FerroxNPCHouses_ChinchouTrade
+EventScript_FerroxNPCHouses_ChinchouTrade:
+    lock
+    faceplayer
+    checkflag 0x248
+    if SET _goto EventScript_ChinchouTradeComplete
+    msgbox gText_FerroxNPCHouses_ChinchouTrade_Request MSG_YESNO
+    compare LASTRESULT NO
+    if TRUE _goto EventScript_ChinchouTradeDeclined
+    // Set up vars needed for trade
+    setvar 0x8008 0x0 @ Set Trade #0 (Chinchou)
+    copyvar 0x8004 0x8008 @ Set expected mon from Trade #0 (Snom)
+    special2 LASTRESULT 0xFC // Checks the trade set in 0x8004 and buffers the name of the Pokemon wanted and the given Pokemon
+    copyvar 0x8009 LASTRESULT
+    call SelectTradePokemon
+    compare 0x8004 0x6
+    if greaterorequal _goto EventScript_ChinchouTradeDeclined
+    call CheckTradePokemonSelected
+    comparevars LASTRESULT 0x8009
+    if notequal _goto EventScript_ChinchouTradeWrongPokemon
+    msgbox gText_FerroxNPCHouses_ChinchouTrade_InitiatingTrade MSG_NORMAL
+    call InitiateTrade
+    setflag 0x248
+    goto EventScript_ChinchouTradeComplete
+
+EventScript_ChinchouTradeDeclined:
+    msgbox gText_FerroxNPCHouses_ChinchouTrade_Declined MSG_NORMAL
+    goto End
+
+EventScript_ChinchouTradeWrongPokemon:
+    msgbox gText_FerroxNPCHouses_ChinchouTrade_WrongPokemon MSG_NORMAL
+    goto End
+
+EventScript_ChinchouTradeComplete:
+    msgbox gText_FerroxNPCHouses_ChinchouTrade_Complete MSG_NORMAL
+    goto End
+
+@ Gym
 .equ StoryEventVar, 0x4052
 .equ SolvedGymRiddle, 0x2
 .equ MetAlistairAtLibrary, 0x3

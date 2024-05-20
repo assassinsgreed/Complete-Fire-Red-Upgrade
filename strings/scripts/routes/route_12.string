@@ -1,3 +1,126 @@
+#org @gText_Route12East_TriathleteJoanne_Intro
+Remember to stretch before you\nexercise.
+
+#org @gText_Route12East_TriathleteJoanne_Defeat
+Also, make sure you stretch before\nbattling!
+
+#org @gText_Route12East_TriathleteJoanne_Chat
+If you don't stretch, you could hurt\nyourself or your Pok\emon badly.
+
+#org @gText_Route12East_PsychicTony_Intro
+I foresee your Pok\emon, frozen in\nutter terror!
+
+#org @gText_Route12East_PsychicTony_Defeat
+Guh? It was my Pok\emon that would\nfreeze up?
+
+#org @gText_Route12East_PsychicTony_Chat
+Be careful not to catch frostbite.\pNot only does it hurt, it makes your\nspecial attacks weaker!
+
+#org @gText_Route12East_HikerDwight_Intro
+Gyahaha! It's energizing to see a\nyoungster out on the Bruccie\ltrails.\pC'mon, let's battle!
+
+#org @gText_Route12East_HikerDwight_Defeat
+Gyahaha! Your Pok\emon are just as\nenergized as you are!
+
+#org @gText_Route12East_HikerDwight_Chat
+Remember to keep warm out there.\nThe Bruccie trail is unforgiving.
+
+#org @gText_Route12East_TriathleteTrixie_Intro
+My Pok\emon are fast, like really\nfast. Think you can keep up?
+
+#org @gText_Route12East_TriathleteTrixie_Defeat
+Good job!
+
+#org @gText_Route12East_TriathleteTrixie_Chat
+Slow or fast, it doesn't matter.\nPlay to your Pok\emons' strengths.
+
+#org @gText_Route12East_GentlemanGeoffrey_Intro
+Good day. Shall we battle?
+
+#org @gText_Route12East_GentlemanGeoffrey_Defeat
+I say, that was quite enjoyable.
+
+#org @gText_Route12East_GentlemanGeoffrey_Chat
+I picked up Pok\emon battling as a\nhobby.\pWhat I didn't expect was for my\nPok\emon to become my trusted\lcompanions.
+
+#org @gText_Route12East_TrainerTipsHeldEvolutions
+Trainer Tips!\pSome Pok\emon only evolve when\nholding an item and leveling up.\pThis item will not be consumed\nwhen the evolution occurs.
+
+#org @gText_Route12East_TrainerTipsPremierBalls
+Trainer Tips!\pIf you buy 10 or more Pok\e Balls\nfrom a Pok\eMart, the clerk will\lgive you a Premier Ball for free.\pYou can receive multiple Premier\nBalls when buying Pok\e Balls in\lbulk.
+
+#org @gText_Route12East_Route12Spa
+Scalding Spa\pGet relaxed and refreshed alongside\nyour Pok\emon.
+
+#org @gText_Route12West_BugCatcherBrendan_Intro
+I-It's so cold[.]\nWarm me up with a battle, now!
+
+#org @gText_Route12West_BugCatcherBrendan_Defeat
+N-No fair[.]
+
+#org @gText_Route12West_BugCatcherBrendan_Chat
+It's s-so cold-d-d[.]\pB-But I won't st-stop wearing m-my\nshorts!
+
+#org @gText_Route12West_SkierChantal_Intro
+[RED]Oh, there's a trainer all the way\nout here?\pLet's finish our battle quickly so I\ncan get back to skiing!
+
+#org @gText_Route12West_SkierChantal_Defeat
+Hmph[.] You didn't have to end it that\nquickly.
+
+#org @gText_Route12West_SkierChantal_Chat
+[RED]My Pok\emon and I love to go skiing\ntogether.
+
+#org @gText_Route12West_HikerKumar_Intro
+My Pok\emon and I are all warmed up\nfor battle. Let's go!
+
+#org @gText_Route12West_HikerKumar_Defeat
+Now I'm fired up!
+
+#org @gText_Route12West_HikerKumar_Chat
+In cold environments, it's important\nto do whatever it takes to keep\lwarm.
+
+#org @gText_Route12West_SkierAubrey_Intro
+[RED]The slopes of Route 12 West attract\nskiers and Pok\emon trainers alike.\pAnd, guess what[.] I'm both a skier\nand a trainer!
+
+#org @gText_Route12West_SkierAubrey_Defeat
+I'm more of a skier than a trainer[.]
+
+#org @gText_Route12West_SkierAubrey_Chat
+[RED]Don't you just love the trails my\nskis leave?
+
+#org @gText_Route12West_SkierLenora_Intro
+[RED]Hey, be careful! People are skiing\nout here!\pI'll teach you some manners with a\nbattle.
+
+#org @gText_Route12West_SkierLenora_Defeat
+Well? Have you learned your lesson?
+
+#org @gText_Route12West_SkierLenora_Chat
+[RED]Be careful around skiers. Sometimes\nit can be difficult to stop in time.
+
+#org @gText_Route12West_SkierMegan_Intro
+[RED]I may be a skier, but I'm also a\ncompetent Pok\emon battler.\pHere, I'll show you!
+
+#org @gText_Route12West_SkierMegan_Defeat
+You're competent, too!
+
+#org @gText_Route12West_SkierMegan_Chat
+[RED]Skiing and battling are my passions.
+
+#org @gText_Route12West_SwimmerGreg_Intro
+You're riding a Pok\emon?\pDo you find the ocean around here\nuncomfortable?
+
+#org @gText_Route12West_SwimmerGreg_Defeat
+Battling while riding your Pok\emon[.]\nI see.
+
+#org @gText_Route12West_SwimmerGreg_Chat
+The ocean around here are freezing\ncold, but that's the way I like it.\pI wouldn't want to ride my Pok\emon\nhere, even if it was even colder.
+
+#org @gText_Route12West_TrainerTipsSign
+Trainer Tips!\pUsing repels deters weak Pok\emon\nfrom being encountered.\pA White Flute lowers the level\nof wild Pok\emon.\pBy using these items together,\nyou can avoid most encounters.
+
+#org @gText_Route12West_NavigationSign
+West: Bruccie Village\nNorth: Calicin Bay
+
 #org @gText_Route12RestHouse_Boy
 Hey, I know something really cool!\pRoute 12 is split into two halves:\nthe grassy eastern side, and the\lsnowy western side.\pCool, right?
 
@@ -111,3 +234,4 @@ This Rest House sure is handy, isn't\nit?\pIt's got a Pok\emon Center[.] And a\n
 
 #org @gText_Route12RestHouse_Cutscene_SeleneLeaves
 [BLACK]Selene: [RED]I'm sorry you had to see\nthat, [PLAYER].\pBut[.] He's right, about all of it.\pI've made some mistakes and hurt\npeople dear to me.\p[PLAYER], please remember to cherish\nyour journey, even if you can't\lachieve what you set out to.\pIf you're planning to collect all the\ngym badges, you'll want to head to\lBruccie Village.\pI'm sure [RIVAL] has headed there\nas well.\pPlease excuse me. I need to catch\nup to Alistair before he's gone.
+

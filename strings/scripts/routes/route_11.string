@@ -462,3 +462,72 @@ Well, if it isn't [PLAYER]. Would you\nlike to buy some Mega Stones?
 
 #org @gText_Route11SouthHouse_RefinerFarewell
 Take care, and do come by again.
+
+#org @gText_LaplazTown_EntranceSign
+Laplaz Town: The town of serene\ntradition
+
+#org @gText_Route11North_LaplazTenetsSign
+This pond embodies Laplaz Town's\ncore beliefs:\pPatience: To remain watchful, and\nanticipate without reaction.\pSerenity: To keep a calm and focused\nmind.\pFaith: To put our trust and\nconfidence in those around us.
+
+#org @gText_Route11North_PainterIsobel_Intro
+Hey, don't bother me. I'm trying to\npaint the landscape here.
+
+#org @gText_Route11North_PainterIsobel_Defeat
+Ahh! My paint spilled.
+
+#org @gText_Route11North_PainterIsobel_Chat
+Can you leave me alone, please? I'm\nbusy painting.
+
+#org @gText_Route11North_FishermanClint_Intro
+Hmm[.] No bites today. Let's battle\ninstead!
+
+#org @gText_Route11North_FishermanClint_Defeat
+Hmmm[.] No victories today, either.
+
+#org @gText_Route11North_FishermanClint_Chat
+I'm not convinced there are fish in\nthese ponds[.]\pI wish I had a DexNav so I could\ncheck.
+
+#org @gText_Route11North_ChannelerKatya_Intro
+Ehehehe[.] I will place a curse on\nyou!
+
+#org @gText_Route11North_ChannelerKatya_Defeat
+Kyaah!
+
+#org @gText_Route11North_ChannelerKatya_Chat
+You're quite strong. It would be\nvery difficult to curse you.
+
+#org @gText_Route11North_RockerNathaniel_Intro
+This breezy plain[.] It makes me want\nto play a smooth waltz!
+
+#org @gText_Route11North_RockerNathaniel_Defeat
+Hm. Maybe a dirge is more fitting?
+
+#org @gText_Route11North_RockerNathaniel_Chat
+A good artist can take in their\nenvironment and use it to inspire\ltheir music.
+
+#org @gText_Route11North_NinjaBoyYao_Intro
+Aha! I got you. Now we battle!
+
+#org @gText_Route11North_NinjaBoyYao_Defeat
+Hey, no fair!
+
+#org @gText_Route11North_NinjaBoyYao_Chat
+You were supposed to be so surprised\nthat you couldn't battle properly[.]
+
+#org @gText_Route11North_ParasolLadyTina_Intro
+Oh, hello trainer! Shall we battle?
+
+#org @gText_Route11North_ParasolLadyTina_Defeat
+Wonderful!
+
+#org @gText_Route11North_ParasolLadyTina_Chat
+I'm out for a walk with my favorite\nparasol.
+
+#org @gText_Route11North_FishermanJonah_Intro
+I'm pretending to fish, so I can\nenjoy some "Me\" time.
+
+#org @gText_Route11North_FishermanJonah_Defeat
+My rod snapped!
+
+#org @gText_Route11North_FishermanJonah_Chat
+Did you know? These ponds were dug\nout by the citizens of Laplaz Town.\pThere are no Pok\emon to be found in\nthem, as a result.
