@@ -586,7 +586,7 @@ ItemScript_Common_LuminousMoss:
     finditem ITEM_LUMINOUS_MOSS 0x1
     end
 
-.global ItemScript_Common_RockGem
-ItemScript_Common_RockGem:
-    finditem ITEM_ROCK_GEM 0x1
+.global ItemScript_Common_GrassGem
+ItemScript_Common_GrassGem:
+    finditem ITEM_GRASS_GEM 0x1
     end

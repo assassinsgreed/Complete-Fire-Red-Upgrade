@@ -828,7 +828,7 @@
 #define FLAG_HIDE_ROUTE20_FULL_HEAL                      0x327
 #define FLAG_HIDE_ROUTE20_PP_UP                          0x328
 #define FLAG_HIDE_ROUTE20_X_SP_DEFEND                    0x329
-#define FLAG_HIDE_ROUTE20_ROCK_GEM                       0x32A
+#define FLAG_HIDE_ROUTE20_GRASS_GEM                      0x32A
 #define FLAG_HIDE_ROUTE20_TREASURE_BEACH_TM73THUNDERWAVE 0x32B
 #define FLAG_HIDE_ROUTE22_TM74_GYRO_BALL                 0x32C
 #define FLAG_HIDE_ROUTE22_TM90_SUBSTITUTE                0x32D
