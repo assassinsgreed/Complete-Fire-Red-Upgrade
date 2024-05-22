@@ -25,9 +25,9 @@ EventScript_TsarvosaCity_DockWorker:
     npcchatwithmovement gText_TsarvosaCity_DockWorker m_LookLeft
     end
 
-.global EventScript_TsarvosaCity_FightingDojoFan
-EventScript_TsarvosaCity_FightingDojoFan:
-    npcchat gText_TsarvosaCity_FightingDojoFan
+.global EventScript_TsarvosaCity_StatsDojoFan
+EventScript_TsarvosaCity_StatsDojoFan:
+    npcchat gText_TsarvosaCity_StatsDojoFan
     end
 
 .global EventScript_TsarvosaCity_DirectionsGirl
@@ -65,6 +65,11 @@ SignScript_TsarvosaCity_TownPlacard:
     msgbox gText_TsarvosaCity_TownPlacard MSG_SIGN
     end
 
+.global SignScript_TsarvosaCity_StatsDojo
+SignScript_TsarvosaCity_StatsDojo:
+    msgbox gText_TsarvosaCity_StatsDojoSign MSG_SIGN
+    end
+
 @ Pokemon Center
 .global MapScript_TsarvosaCity_PokemonCenter
 MapScript_TsarvosaCity_PokemonCenter:
@@ -89,3 +94,52 @@ EventScript_TsarvosaCity_PokemonCenter_Policeman:
 EventScript_TsarvosaCity_PokemonCenter_Girl:
     npcchatwithmovement gText_TsarvosaCity_PokemonCenter_Girl m_LookLeft
     end
+
+@ Stats Dojo
+.equ Attendant, 0x1
+
+.global MapScript_TsarvosaCity_StatsDojo
+MapScript_TsarvosaCity_StatsDojo:
+    mapscript MAP_SCRIPT_ON_FRAME_TABLE LevelScripts_StatsDojo_AttendantCutscene
+	mapscript MAP_SCRIPT_ON_TRANSITION MapScript_StatsDojo_PositionAttendant
+    @ TODO in a future ticket: on menu close to reset trainers
+    .byte MAP_SCRIPT_TERMIN
+
+LevelScripts_StatsDojo_AttendantCutscene:
+    levelscript 0x405E 0x0 LevelScript_AttendantWelcomesPlayer
+    .hword LEVEL_SCRIPT_TERMIN
+
+LevelScript_AttendantWelcomesPlayer:
+    pause DELAY_HALFSECOND
+    applymovement Attendant m_LookLeft
+    pause DELAY_HALFSECOND
+    applymovement Attendant m_LookRight
+    pause DELAY_HALFSECOND
+    applymovement Attendant m_LookDown
+    waitmovement Attendant
+    sound 0x15 @ Exclaim
+    applymovement Attendant m_Surprise
+    waitmovement Attendant
+    applymovement Attendant m_AttendantWalksToPlayer
+    waitmovement Attendant
+    msgbox gText_TsarvosaCity_StatsDojo_AttendantIntro MSG_NORMAL
+    msgbox gText_TsarvosaCity_StatsDojo_AttendantRegularChat MSG_NORMAL
+    applymovement Attendant m_AttendantReturnsToRegularSpot
+    waitmovement ALLEVENTS
+    setvar 0x405E 0x1
+    end
+
+MapScript_StatsDojo_PositionAttendant:
+    compare 0x405E 0x0
+    if equal _goto End
+    movesprite2 Attendant 0xB 0xB @ Beside the right podium
+    setobjectmovementtype Attendant look_down
+    end
+
+.global EventScript_TsarvosaCity_StatsDojo_Attendant
+EventScript_TsarvosaCity_StatsDojo_Attendant:
+    npcchatwithmovement gText_TsarvosaCity_StatsDojo_AttendantRegularChat m_LookDown
+    end
+
+m_AttendantWalksToPlayer: .byte walk_down, walk_down, end_m
+m_AttendantReturnsToRegularSpot: .byte walk_right, walk_right, walk_up, look_down, end_m

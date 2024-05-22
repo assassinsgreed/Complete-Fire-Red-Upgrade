@@ -137,7 +137,7 @@
 #define VAR_MAP_SCENE_LAKE_LAPLAZ_GALARIAN_BIRDGS                              0x405B
 #define VAR_MAP_SCENE_ROUTE_12_REST_HOUSE                                      0x405C
 #define VAR_MAP_SCENE_PLUTO_HQ_EVENTS                                          0x405D
-#define VAR_MAP_SCENE_ROUTE16                                                  0x405E
+#define VAR_MAP_SCENE_TSARVOSA_STAT_DOJO_PROGRESSION                           0x405E
 #define VAR_MAP_SCENE_ROUTE23                                                  0x405F
 #define VAR_MAP_SCENE_SILPH_CO_11F                                             0x4060
 #define VAR_MAP_SCENE_PEWTER_CITY_MUSEUM_1F                                    0x4061
