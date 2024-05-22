@@ -4,7 +4,7 @@ This is the entrance to the Tsarvosa\nCity Pier.\pI'm sorry, but we're not accep
 #org @gText_TsarvosaCity_DockWorker
 We trade goods with Slateport City in\nthe Hoenn region quite often.\pI'm actually in the middle of\nreceiving a shipment now.\pAnd now, I must be getting back to\nwork.
 
-#org @gText_TsarvosaCity_FightingDojoFan
+#org @gText_TsarvosaCity_StatsDojoFan
 My big bro works at the Fighting\nDojo.\pHe specializes in making Pok\emons'\nstats stronger.\pIsn't that cool? Much cooler than\nheld items, that's for sure!
 
 #org @gText_TsarvosaCity_DirectionsGirl
@@ -28,6 +28,9 @@ Be careful if you pass through\nMimmett Jungle.\pThe swamps there are difficult 
 #org @gText_TsarvosaCity_TownPlacard
 Tsarvosa City\nThe Eternal Sunshine City
 
+#org @gText_TsarvosaCity_StatsDojoSign
+Tsarvosa City Stats Dojo\nPush beyond your limits!
+
 #org @gText_TsarvosaCity_PokemonCenter_FatGuy
 Did you know Iris and Stella are\nsisters?\pTwo sisters that are both gym\nleaders[.] What a powerful duo!
 
@@ -36,3 +39,9 @@ My colleagues across the sea were\nsharing their troubles with me.\pUntil recent
 
 #org @gText_TsarvosaCity_PokemonCenter_Girl
 I was playing by Mimmett Jungle and\nheard a really weird Pok\emon cry.\pIt sounded angry[.] And hurt.\nI hope it's okay.
+
+#org @gText_TsarvosaCity_StatsDojo_AttendantIntro
+[BLUE]Oh! Hey, there, superstar!\p[.] Is what I would say, if we were\nstill an official gym[.]\pWe lost our endorsement from the\nPok\emon League a while back.\pWe can't call ourselves a gym\nanymore, or give out badges[.]\pBut don't let that give you the\nwrong idea!\pWe can still challenge trainers and\ngive out rewards! And so[.]
+
+#org @gText_TsarvosaCity_StatsDojo_AttendantRegularChat
+[BLUE]It's my pleasure to welcome you to\nthe Stats Dojo!\pThe trainers here specialize in a\nPok\emon's stats.\pIt'd be worth your while to train\nhere for a bit.\pI'd suggest talking with the leader,\nKaito, in the back.\pJust, uh, mind your manners.\pHe's still quite bitter about losing\nthe League's endorsement.
