@@ -2079,3 +2079,4 @@ npc 12 0 3 EventScript_TsarvosaCity_PokemonCenter_Girl
 ## Stats Dojo
 map 12 1 MapScript_TsarvosaCity_StatsDojo
 npc 12 1 0 EventScript_TsarvosaCity_StatsDojo_Attendant
+npc 12 1 1 EventScript_TsarvosaCity_StatsDojo_Kaito

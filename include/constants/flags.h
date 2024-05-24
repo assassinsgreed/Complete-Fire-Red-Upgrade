@@ -619,7 +619,7 @@
 #define FLAG_NEW_POKEMART_STOCK                          0x25C
 #define FLAG_PLUTO_HQ_REST_GRUNT_EXPLAINED               0x25D
 #define FLAG_TREASURE_BEACH_INITIALIZED                  0x25E
-#define FLAG_0x25F                                       0x25F
+#define FLAG_GOT_STRENGTH_FROM_KAITO                     0x25F
 #define FLAG_0x260                                       0x260
 #define FLAG_0x261                                       0x261
 #define FLAG_0x262                                       0x262

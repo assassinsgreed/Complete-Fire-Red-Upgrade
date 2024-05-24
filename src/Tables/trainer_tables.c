@@ -4747,6 +4747,55 @@ const struct TrainerMonNoItemDefaultMoves sParty_MimmettJungle_PsychicWanda[] = 
     { .lvl = 54, .species = SPECIES_HATTERENE }
 };
 // #endregion
+
+// #region Tsarvosa City
+const struct TrainerMonNoItemCustomMoves sParty_TsarvosaCity_StatsDojo_Kaito[] = {
+    {
+        .lvl = 51,
+        .species = SPECIES_GOGOAT,
+        .moves = {
+            MOVE_SEEDBOMB,
+            MOVE_BULKUP,
+            MOVE_HORNLEECH,
+            MOVE_BULLDOZE
+        },
+        .ability = Ability_1 // Sap Sipper
+    },
+    {
+        .lvl = 52,
+        .species = SPECIES_TURTONATOR,
+        .moves = {
+            MOVE_SHELLTRAP,
+            MOVE_FLAMETHROWER,
+            MOVE_OUTRAGE,
+            MOVE_IRONDEFENSE
+        },
+        .ability = Ability_1 // Shell Armor
+    },
+    {
+        .lvl = 52,
+        .species = SPECIES_BISHARP,
+        .moves = {
+            MOVE_RETALIATE,
+            MOVE_NIGHTSLASH,
+            MOVE_IRONHEAD,
+            MOVE_XSCISSOR
+        },
+        .ability = Ability_1 // Defiant
+    },
+    {
+        .lvl = 53,
+        .species = SPECIES_CONKELDURR,
+        .moves = {
+            MOVE_STONEEDGE,
+            MOVE_HAMMERARM,
+            MOVE_BULKUP,
+            MOVE_FIREPUNCH
+        },
+        .ability = Ability_2 // Sheer Force
+    }
+};
+// #endregion
 // #endregion
 
 #define NO_NAME                                                                                      \
@@ -9687,6 +9736,20 @@ const struct Trainer gTrainers[] = {
         .aiFlags = TrainerAIFlags_Psychic_Standard,
         .partySize = NELEMS(sParty_MimmettJungle_PsychicWanda),
         .party = {.NoItemDefaultMoves = sParty_MimmettJungle_PsychicWanda}
+    },
+    // #endregion
+    // #region Tsarvosa City
+    [TRAINER_TSARVOSA_CITY_STATS_DOJO_KAITO] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .trainerClass = CLASS_PKMN_TRAINER_2,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_BLACK_BELT,
+        .trainerName = {_K, _a, _i, _t, _o, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_TRY_TO_FAINT,
+        .partySize = NELEMS(sParty_TsarvosaCity_StatsDojo_Kaito),
+        .party = {.NoItemCustomMoves = sParty_TsarvosaCity_StatsDojo_Kaito}
     },
     // #endregion
     // #endregion

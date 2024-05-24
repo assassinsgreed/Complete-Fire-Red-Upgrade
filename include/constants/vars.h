@@ -137,7 +137,7 @@
 #define VAR_MAP_SCENE_LAKE_LAPLAZ_GALARIAN_BIRDGS                              0x405B
 #define VAR_MAP_SCENE_ROUTE_12_REST_HOUSE                                      0x405C
 #define VAR_MAP_SCENE_PLUTO_HQ_EVENTS                                          0x405D
-#define VAR_MAP_SCENE_TSARVOSA_STAT_DOJO_PROGRESSION                           0x405E
+#define VAR_MAP_SCENE_TSARVOSA_STATS_DOJO_PROGRESSION                          0x405E
 #define VAR_MAP_SCENE_ROUTE23                                                  0x405F
 #define VAR_MAP_SCENE_SILPH_CO_11F                                             0x4060
 #define VAR_MAP_SCENE_PEWTER_CITY_MUSEUM_1F                                    0x4061
@@ -202,10 +202,10 @@
 #define VAR_POKEBALLS_CHANGED      0x409A
 #define VAR_PLUTO_HQ_WILD_ENCOUNTERS_DISABLED 0x409B
 #define VAR_PLUTO_HQ_KURTISS_WARNING 0x409C
-#define VAR_0x409D                 0x409D
-#define VAR_0x409E                 0x409E
-#define VAR_0x409F                 0x409F
-#define VAR_0x40A0                 0x40A0
+#define VAR_TSARVOSA_STATS_DOJO_SHOPS_LEVEL 0x409D
+#define VAR_TSARVOSA_STATS_DOJO_POWER_ITEM_LEVEL 0x409E
+#define VAR_TSARVOSA_STATS_DOJO_IVMAXER_LEVEL 0x409F
+#define VAR_TSARVOSA_STATS_DOJO_EVDISCIPLE_LEVEL 0x40A0
 #define VAR_0x40A1                 0x40A1
 #define VAR_0x40A2                 0x40A2
 #define VAR_0x40A3                 0x40A3

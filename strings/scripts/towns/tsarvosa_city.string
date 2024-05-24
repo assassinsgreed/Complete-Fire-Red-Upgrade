@@ -45,3 +45,87 @@ I was playing by Mimmett Jungle and\nheard a really weird Pok\emon cry.\pIt soun
 
 #org @gText_TsarvosaCity_StatsDojo_AttendantRegularChat
 [BLUE]It's my pleasure to welcome you to\nthe Stats Dojo!\pThe trainers here specialize in a\nPok\emon's stats.\pIt'd be worth your while to train\nhere for a bit.\pI'd suggest talking with the leader,\nKaito, in the back.\pJust, uh, mind your manners.\pHe's still quite bitter about losing\nthe League's endorsement.
+
+#org @gText_TsarvosaCity_StatsDojo_KaitoIntroduction
+Hmm[.] Who are you?\pAre you a challenger? Or have you\ncome to mock our proud dojo?\pWe are not like the weaklings at the\nTsarvosa Gym, who rely on items to\lwin their battles.\pInstead, we put our faith in a\nPok\emon's inherent capabilities.\pMy Strength HM and facilities are\nonly given to those I deem worthy.\pIf you want them, you will have to\ndefeat me in battle without items.\pIs this acceptable to you?\n[BLACK](Held items will be moved to bag)
+
+#org @gText_TsarvosaCity_StatsDojo_KaitoChoseNo
+[BLUE]Very well. If you are a trainer\nworth your weight, you will return.
+
+#org @gText_TsarvosaCity_StatsDojo_KaitoChoseYes
+[BLUE]Gahahaha! Excellent!\pThen, prepare for my full might to\nweigh upon you and your Pok\emon!
+
+#org @gText_TsarvosaCity_StatsDojo_KaitoLoses
+Bravo! You are indeed worthy of my\nfacilities!
+
+#org @gText_TsarvosaCity_StatsDojo_KaitoWins
+Disgraceful[.]
+
+#org @gText_TsarvosaCity_StatsDojo_LostToKaito
+[BLUE]I am disappointed in that battle.\pTrain up, get stronger, and face me\nagain.\pThe strong must care for the weak,\nso I shall heal your Pok\emon.
+
+#org @gText_TsarvosaCity_StatsDojo_KaitoUrgesThePlayerToReturn
+[BLUE]I expect to see you on the field of\nbattle again someday.
+
+#org @gText_TsarvosaCity_StatsDojo_KaitoGivesStrength
+[BLUE]Congratulations on a well earned\nvictory. May I know your name?\p[PLAYER]?\p[PLAYER]! You and your Pok\emon\nbattled valiantly.\pIt is my honour to bestow upon you\nthis HM containing Strength.
+
+#org @gText_TsarvosaCity_StatsDojo_KaitoCommentsOnBadge
+[BLUE]This will allow you to push aside\nboulders with relative ease.\pUnfortunately, you will need this\ncity's gym badge to use it[.]\pNevertheless[.] You have left an\nimpression on me, [PLAYER].\pMy Stats Dojo and it's facilities are\nyours to use at your leisure!
+
+#org @gText_TsarvosaCity_StatsDojo_KaitoAsksToExplainServices
+[BLUE]If I may, I would like to explain\nour facilities to you.
+
+#org @gText_TsarvosaCity_StatsDojo_KaitoAsksToExplainServices_PlayerChoseNo
+[BLUE]Very well. If you change your mind,\ncome see me.\pHowever, you are welcome to peruse\nour facilities as you please.\pYou have proven your mettle; I will\nallow you to use items here.
+
+#org @gText_TsarvosaCity_StatsDojo_KaitoExplainsGeneralPurpose
+[BLUE]Allow me to explain the services we\noffer here.\pAt this dojo, we excel in bringing\nout a Pok\emon's true potential.\pOur facilities will improve your\nPok\emon's battle stats.\pSince you have bested me in battle,\nI shall allow you to use items.
+
+#org @gText_TsarvosaCity_StatsDojo_KaitoExplainsItemShop
+[BLUE]To our left, you will find our dojo's\nshop.\pHere we sell various items to\nelevate your Pok\emon's base stats.
+
+#org @gText_TsarvosaCity_StatsDojo_KaitoExplainsItemsShop_NotFunded
+[BLUE]With some funding, we could expand\nthe items we can offer.
+
+#org @gText_TsarvosaCity_StatsDojo_KaitoExplainsItemsShop_Funded
+[BLUE]Thanks to your contributions, we've\nstocked everything we could dream\lof.
+
+#org @gText_TsarvosaCity_StatsDojo_KaitoExplainsIVMaxerAndPowerItems
+[BLUE]To our right is where the brainiacs\nstudy Pok\emons' innate potential.\pThey have two research projects\nthey focus on.
+
+#org @gText_TsarvosaCity_StatsDojo_KaitoExplainsPowerItems
+[BLUE]The first project is researching held\nitems that bolster a Pok\emon's\lstats.\pDo not get the wrong idea!\pThese held items are okay because\nthey serve to strengthen your\lPok\emon's natural power!
+
+#org @gText_TsarvosaCity_StatsDojo_KaitoExplainsPowerItems_NotFunded
+[BLUE]Regrettably, we need more funding\nfor this to become a reality[.]
+
+#org @gText_TsarvosaCity_StatsDojo_KaitoExplainsPowerItems_Funded
+[BLUE]Thanks to your donations, we have\naccomplished all we had hoped to!
+
+#org @gText_TsarvosaCity_StatsDojo_KaitoExplainsIVMaxer
+[BLUE]The next project is investigating\nhow to tap into a Pok\emon's natural\lpower.\pThis would see their innate strength\ngrow beyond it's original limits.
+
+#org @gText_TsarvosaCity_StatsDojo_KaitoExplainsIVMaxer_NotFunded
+[BLUE]We[.] are embarrassingly short on\nfunds, and so research is halted.\pWith more funding, we could research\nhow to draw out a Pok\emon's\lmaximum potential.
+
+#org @gText_TsarvosaCity_StatsDojo_KaitoExplainsIVMaxer_Funded
+[BLUE]Thanks to your generous\ncontributions, research is complete.\pWith the power of science, we can\nnow maximize your Pok\emons\lindividual potential.\pWe simply ask for a Bottle Cap or\nGold Bottle Cap in return.
+
+#org @gText_TsarvosaCity_StatsDojo_KaitoExplainsEVDisciples
+[BLUE]Next is our training station.\pHere you'll find disciples who have\neach perfected a particular stat.\pBy battling them you can elevate\nthat same stat in your Pok\emon.\pYou may battle them repeatedly by\nsimply talking with them again.
+
+#org @gText_TsarvosaCity_StatsDojo_KaitoExplainsEVDisciples_NotFunded
+[BLUE]With some funding, these\nentrepeneuring disciples could\limprove.\pWhy, I'm sure they could find\nPok\emon that would strengthen your\lown Pok\emon's stats even faster.
+
+#org @gText_TsarvosaCity_StatsDojo_KaitoExplainsEVDisciples_Funded
+[BLUE]Thanks to your funding, they have\namassed the finest Pok\emon they\lcould.\pI'm sure your Pok\emon will benefit\nfrom their efforts tremendously.
+
+#org @gText_TsarvosaCity_StatsDojo_KaitoExplainsHimself
+[BLUE]And finally, we arrive at me.\pAs this facility's leader, it falls to\nme to oversee it's progress.\pYou may speak to me whenever you'd\nlike to hear this explaination\lagain.
+
+#org @gText_TsarvosaCity_StatsDojo_KaitoExplainsHimself_FundingRemains
+[BLUE]And, if you are feeling charitable,\nyou may donate to any of the\lprojects we just discussed.\pBy doing so, they may offer more\nservices. It is truly win-win.
+
+#org @gText_TsarvosaCity_StatsDojo_KaitoExplainsHimself_NoFundingRemains
+[BLUE]We have no other projects\nthat require funding!\pTruly, from the bottom of my heart,\nthank you, [PLAYER].
