@@ -30,6 +30,7 @@
 #include "../include/constants/pokedex.h"
 #include "../include/constants/pokemon.h"
 #include "../include/constants/songs.h"
+#include "../include/item.h"
 
 #include "../include/new/battle_strings.h"
 #include "../include/new/build_pokemon.h"
@@ -470,6 +471,17 @@ void sp015_ModifyHeldItem(void)
 			return;	// cant change existing item
 
 		Var8005 = ITEM_NONE;
+
+		// Retrieve the item and put it back into the bag
+		#ifdef SELECT_FROM_PC
+		if (Var8003 == 1)
+				AddBagItem(GetBoxMonDataAt(Var8000, Var8001, MON_DATA_HELD_ITEM), 1);
+			else
+				AddBagItem(GetMonData(&gPlayerParty[Var8004], MON_DATA_HELD_ITEM, NULL), 1);
+		#else
+			AddBagItem(GetMonData(&gPlayerParty[Var8004], MON_DATA_HELD_ITEM, NULL), 1);
+		#endif
+
 		SetMonDataFromVar8003(MON_DATA_HELD_ITEM); //Remove items
 	}
 	else
