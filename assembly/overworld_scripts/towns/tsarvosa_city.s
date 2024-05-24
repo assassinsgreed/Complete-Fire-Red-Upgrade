@@ -128,10 +128,6 @@ LevelScript_AttendantWelcomesPlayer:
     applymovement Attendant m_AttendantReturnsToRegularSpot
     waitmovement ALLEVENTS
     setvar 0x405E 0x1
-    setvar 0x409E 20000 @ Shops remaining balance
-    setvar 0x40A0 50000 @ Power Item Booster remaining balance
-    setvar 0x40A2 50000 @ IV Maxer remaining balance
-    setvar 0x40A4 30000 @ Stats Disciples remaining balance
     end
 
 MapScript_StatsDojo_PositionAttendant:
@@ -235,11 +231,11 @@ KaitoExplainsFacilities:
     special CAMERA_END
     msgbox gText_TsarvosaCity_StatsDojo_KaitoExplainsIVMaxerAndPowerItems MSG_NORMAL
     msgbox gText_TsarvosaCity_StatsDojo_KaitoExplainsPowerItems MSG_NORMAL
-    compare 0x409F 0x2 @ Power Item level, maxes at 3
+    compare 0x409E 0x2 @ Power Item level, maxes at 3
     if lessthan _call PowerItemLevelsNotMaxedOut
     if greaterthan _call PowerItemLevelsMaxedOut
     msgbox gText_TsarvosaCity_StatsDojo_KaitoExplainsIVMaxer MSG_NORMAL
-    compare 0x40A1 0x2 @ IV Maxer level, maxes at 3
+    compare 0x409F 0x2 @ IV Maxer level, maxes at 3
     if lessthan _call IVMaxingNotUnlocked
     if greaterthan _call IVMaxingUnlocked
     special CAMERA_START
@@ -249,7 +245,7 @@ KaitoExplainsFacilities:
     waitmovement CAMERA
     special CAMERA_END
     msgbox gText_TsarvosaCity_StatsDojo_KaitoExplainsEVDisciples MSG_NORMAL
-    compare 0x40A3 0x2 @ EV Disciple level, maxes at 3
+    compare 0x40A0 0x2 @ EV Disciple level, maxes at 3
     if lessthan _call DisciplesNotAtMaxLevel
     if greaterthan _call DisciplesAtMaxLevel
     special CAMERA_START
