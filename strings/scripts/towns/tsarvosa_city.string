@@ -80,7 +80,7 @@ Disgraceful[.]
 [BLUE]Very well. If you change your mind,\ncome see me.\pHowever, you are welcome to peruse\nour facilities as you please.\pYou have proven your mettle; I will\nallow you to use items here.
 
 #org @gText_TsarvosaCity_StatsDojo_KaitoExplainsGeneralPurpose
-[BLUE]Allow me to explain the services we\noffer here.\pAt this dojo, we excel in bringing\nout a Pok\emon's true potential.\pOur facilities will improve your\nPok\emon's battle stats.\pSince you have bested me in battle,\nI shall allow you to use items.
+[BLUE]Allow me to explain the services we\noffer here.\pAt this dojo, we excel in bringing\nout a Pok\emon's true potential.\pOur facilities will improve your\nPok\emon's battle stats.
 
 #org @gText_TsarvosaCity_StatsDojo_KaitoExplainsItemShop
 [BLUE]To our left, you will find our dojo's\nshop.\pHere we sell various items to\nelevate your Pok\emon's base stats.
@@ -89,7 +89,7 @@ Disgraceful[.]
 [BLUE]With some funding, we could expand\nthe items we can offer.
 
 #org @gText_TsarvosaCity_StatsDojo_KaitoExplainsItemsShop_Funded
-[BLUE]Thanks to your contributions, we've\nstocked everything we could dream\lof.
+[BLUE]Thanks to your contributions, our\nshelves are fully stocked again.
 
 #org @gText_TsarvosaCity_StatsDojo_KaitoExplainsIVMaxerAndPowerItems
 [BLUE]To our right is where the brainiacs\nstudy Pok\emons' innate potential.\pThey have two research projects\nthey focus on.
@@ -113,7 +113,7 @@ Disgraceful[.]
 [BLUE]Thanks to your generous\ncontributions, research is complete.
 
 #org @gText_TsarvosaCity_StatsDojo_KaitoExplainsEVDisciples
-[BLUE]Next is our training station.\pHere you'll find disciples who have\neach perfected a particular stat.\pBy battling them you can elevate\nthat same stat in your Pok\emon.\pYou may battle them repeatedly by\nsimply talking with them again.
+[BLUE]Next is our training station.\pHere you'll find disciples who have\neach perfected a particular stat.\pBy battling them you can elevate\nthat same stat in your Pok\emon.\pYou may battle them repeatedly by\nsimply talking with them again.\pSince you have bested me in battle,\nI shall allow you to use items.
 
 #org @gText_TsarvosaCity_StatsDojo_KaitoExplainsEVDisciples_NotFunded
 [BLUE]With some funding, we could invest\nin the disciples' training further.\pWhy, I'm sure they could find\nPok\emon that would strengthen your\lown Pok\emon's stats even faster.
@@ -200,7 +200,7 @@ This research project has been\nfunded!\pThe IV Maxing process is now at\n[GREEN
 The brainiacs at the lab can now\nelevate any Pok\emon's stat to it's\lmaximum potential.\pThey'll require a Bottle Cap in\nexchange for their services.\pThey think they can do even better,\nbut will need \$[BUFFER2] to further\ltheir research.
 
 #org @gText_TsarvosaCity_StatsDojo_Kaito_IVMaxingLevel3Unlocked
-In addition to improving a single\nstat, the brainiacs can now improve\lall of a Pok\emon's stats at once.\pThis procedure is special and will\nrequire a Gold Bottle Cap.\pThey still offer their regular\nservices, of course!
+The brainiacs have pulled out all\nthe stops.\pNot only can they improve a single\nstat with a Bottle Cap[.]\pNow they can improve all stats\nat once, in exchange for a Gold\lBottle Cap.
 
 #org @gText_TsarvosaCity_StatsDojo_Kaito_DisciplesInvestmentCost
 The disciples are currently at \n[GREEN]Lvl [BUFFER1][BLUE].\pWith \$[BUFFER2], they could build\nmore impactful Pok\emon teams.
