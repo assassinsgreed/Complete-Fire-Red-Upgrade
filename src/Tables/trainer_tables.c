@@ -9741,9 +9741,9 @@ const struct Trainer gTrainers[] = {
     // #region Tsarvosa City
     [TRAINER_TSARVOSA_CITY_STATS_DOJO_KAITO] = {
         .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
-        .trainerClass = CLASS_PKMN_TRAINER_2,
+        .trainerClass = CLASS_SENSEI,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
-        .trainerPic = TRAINER_PIC_BLACK_BELT,
+        .trainerPic = TRAINER_PIC_EXPERT_M,
         .trainerName = {_K, _a, _i, _t, _o, _END},
         .items = {},
         .doubleBattle = FALSE,

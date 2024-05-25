@@ -48,6 +48,7 @@
 #define BGM_BATTLE_TEAM_PLUTO_GRUNTS 0x1A5 // Plasma Battle BW1
 #define BGM_BATTLE_TEAM_PLUTO_ADMINS 0x18A // Neo Plasma Battle BW2
 #define BGM_BATTLE_TEAM_PLUTO_KURTIS 0x1AA // Johto Champion
+#define BGM_BATTLE_KAITO_THEME 0x15B // Battle Subway Trainer
 #define BGM_BATTLE_ALISTAIR 0x15C // N final battle theme BW
 #define BGM_BATTLE_TRAINER_HOUSE 0x12B // Champion Iris battle theme
 #define BGM_BATTLE_CASEY 0x1AF // Champion Alder battle theme
