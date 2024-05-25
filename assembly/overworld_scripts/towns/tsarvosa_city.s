@@ -97,6 +97,7 @@ EventScript_TsarvosaCity_PokemonCenter_Girl:
 
 @ Stats Dojo
 .equ Attendant, 0x1
+.equ Kaito, 0x2
 
 .global MapScript_TsarvosaCity_StatsDojo
 MapScript_TsarvosaCity_StatsDojo:
@@ -142,13 +143,11 @@ EventScript_TsarvosaCity_StatsDojo_Attendant:
     npcchatwithmovement gText_TsarvosaCity_StatsDojo_AttendantRegularChat m_LookDown
     end
 
-.equ Kaito, 0x2
-
 .global EventScript_TsarvosaCity_StatsDojo_Kaito
 EventScript_TsarvosaCity_StatsDojo_Kaito:
     faceplayer
     checktrainerflag 406
-    if SET _goto KaitoDojoOptions
+    if SET _goto KaitoWelcomesPlayer
     msgbox gText_TsarvosaCity_StatsDojo_KaitoIntroduction MSG_YESNO
     compare LASTRESULT NO
     if equal _goto ChoseNotToBattleKaito
@@ -202,20 +201,227 @@ KaitoDefeated:
     setvar 0x405E 0x2 @ Kaito defeated
     msgbox gText_TsarvosaCity_StatsDojo_KaitoAsksToExplainServices MSG_YESNO
     compare LASTRESULT NO
-    if equal _goto ChoseNotToExplainServicesAfterVictory
-    call KaitoExplainsFacilities
+    if equal _goto KaitoChoseToDoNothing
+    call ExplainFacilities
     end
 
-ChoseNotToExplainServicesAfterVictory:
-    msgbox gText_TsarvosaCity_StatsDojo_KaitoAsksToExplainServices_PlayerChoseNo MSG_NORMAL
-    applymovement Kaito m_LookDown
-    end
+KaitoWelcomesPlayer:
+    msgbox gText_TsarvosaCity_StatsDojo_KaitoWelcomesPlayer MSG_KEEPOPEN
+    goto KaitoDojoOptions
 
 KaitoDojoOptions:
-    @ TODO: Populate in future tickets
+    multichoiceoption gText_TsarvosaCity_StatsDojo_KaitoOptions_InvestInShops 0
+    multichoiceoption gText_TsarvosaCity_StatsDojo_KaitoOptions_InvestInPowerItems 1
+    multichoiceoption gText_TsarvosaCity_StatsDojo_KaitoOptions_InvestInIVMaxer 2
+    multichoiceoption gText_TsarvosaCity_StatsDojo_KaitoOptions_InvestInDisciples 3
+    multichoiceoption gText_TsarvosaCity_StatsDojo_KaitoOptions_ExplainFacilities 4
+    multichoiceoption gText_TsarvosaCity_StatsDojo_KaitoOptions_Nothing 5
+    multichoice 0x0 0x0 SIX_MULTICHOICE_OPTIONS FALSE
+    switch LASTRESULT
+	case 0, ShopInvestment
+    case 1, PowerItemInvestment
+	case 2, IVMaxerInvestment
+    case 3, DisciplesInvestment
+	case 4, ExplainFacilities
+	case 5, KaitoChoseToDoNothing
+    goto KaitoChoseToDoNothing
     end
 
-KaitoExplainsFacilities:
+ShopInvestment:
+    compare 0x409D 0x2 @ Shop level
+    if equal _goto AllItemsUnlockedWithReturnToMenu
+    copyvar 0x4000 0x409D
+    addvar 0x4000 0x1 @ +1 for readability
+    compare 0x409D 0x0 @ Level 1
+    if equal _call SetupLevelTwoShopCost
+    compare 0x409D 0x1 @ Level 2
+    if equal _call SetupLevelThreeShopCost
+    buffernumber 0x0 0x4000
+    buffernumber 0x1 0x8004
+    msgbox gText_TsarvosaCity_StatsDojo_Kaito_ShopInvestmentCost MSG_NORMAL
+    call HandleInvestmentPayment
+    addvar 0x409D 0x1 @ Internal number
+    addvar 0x4000 0x1 @ Number shown in dialog
+    buffernumber 0x0 0x4000
+    fanfare 0x101 @ Level Up
+    msgbox gText_TsarvosaCity_StatsDojo_Kaito_ShopLevelledUp MSG_NORMAL
+    waitfanfare
+    compare 0x409D 0x1
+    if equal _call ShopIsLevel2Now
+    compare 0x409D 0x2
+    if equal _call ShopIsLevel3Now
+    msgbox gText_TsarvosaCity_StatsDojo_Kaito_FinishedInvestingAndReturningToMenu MSG_NORMAL
+    goto KaitoDojoOptions
+
+SetupLevelTwoShopCost:
+    setvar 0x8004 20000
+    return
+
+SetupLevelThreeShopCost:
+    setvar 0x8004 50000
+    return
+
+ShopIsLevel2Now:
+    setvar 0x8004 50000
+    buffernumber 0x1 0x8004
+    msgbox gText_TsarvosaCity_StatsDojo_Kaito_ShopLevel2Unlocked MSG_NORMAL
+    return
+
+ShopIsLevel3Now:
+    msgbox gText_TsarvosaCity_StatsDojo_Kaito_ShopLevel3Unlocked MSG_NORMAL
+    call AllItemsUnlocked
+    return
+
+PowerItemInvestment:
+    compare 0x409E 0x2 @ Power Item investment
+    if equal _goto PowerItemLevelsMaxedOutWithReturnToMenu
+    copyvar 0x4000 0x409E
+    addvar 0x4000 0x1 @ + 1 for readability
+    compare 0x409E 0x0 @ Level 1
+    if equal _call SetupLevelTwoResearchCost
+    compare 0x409E 0x1 @ Level 2
+    if equal _call SetupLevelThreeResearchCost
+    buffernumber 0x0 0x4000
+    buffernumber 0x1 0x8004
+    msgbox gText_TsarvosaCity_StatsDojo_Kaito_PowerItemInvestmentCost MSG_NORMAL
+    compare 0x409D 0x2 @ Shop level
+    if lessthan _call ShopsAreNotMaxedYet
+    call HandleInvestmentPayment
+    addvar 0x409E 0x1 @ Internal number
+    addvar 0x4000 0x1 @ Number shown in dialog
+    buffernumber 0x0 0x4000
+    fanfare 0x101 @ Level Up
+    msgbox gText_TsarvosaCity_StatsDojo_Kaito_PowerItemsLevelledUp MSG_NORMAL
+    waitfanfare
+    compare 0x409E 0x1
+    if equal _call PowerItemsAreLevel2Now
+    compare 0x409E 0x2
+    if equal _call PowerItemsAreLevel3Now
+    msgbox gText_TsarvosaCity_StatsDojo_Kaito_FinishedInvestingAndReturningToMenu MSG_NORMAL
+    goto KaitoDojoOptions
+
+SetupLevelTwoResearchCost:
+    setvar 0x8004 40000
+    return
+
+SetupLevelThreeResearchCost:
+    setvar 0x8004 60000
+    return
+
+ShopsAreNotMaxedYet:
+    msgbox gText_TsarvosaCity_StatsDojo_Kaito_PowerItemInvestmentShopsNotLevelledUp MSG_NORMAL
+    return
+
+PowerItemsAreLevel2Now:
+    setvar 0x8004 60000
+    buffernumber 0x1 0x8004
+    msgbox gText_TsarvosaCity_StatsDojo_Kaito_PowerItemsLevel2Unlocked MSG_NORMAL
+    return
+
+PowerItemsAreLevel3Now:
+    msgbox gText_TsarvosaCity_StatsDojo_Kaito_PowerItemsLevel3Unlocked MSG_NORMAL
+    call PowerItemLevelsMaxedOut
+    return
+
+IVMaxerInvestment:
+    compare 0x409F 0x2 @ IV Maxer Level
+    if equal _goto IVMaxingAtMaxLevelReturnToMenu
+    copyvar 0x4000 0x409F
+    addvar 0x4000 0x1 @ +1 for readability
+    compare 0x409F 0x0 @ Level 1
+    if equal _call SetupLevelTwoResearchCost
+    compare 0x409F 0x1 @ Level 2
+    if equal _call SetupLevelThreeShopCost
+    buffernumber 0x0 0x4000
+    buffernumber 0x1 0x8004
+    msgbox gText_TsarvosaCity_StatsDojo_Kaito_IVMaxingInvestmentCost MSG_NORMAL
+    call HandleInvestmentPayment
+    addvar 0x409F 0x1 @ Internal number
+    addvar 0x4000 0x1 @ Number shown in dialog
+    buffernumber 0x0 0x4000
+    fanfare 0x101 @ Level Up
+    msgbox gText_TsarvosaCity_StatsDojo_Kaito_IVMaxingLevelledUp MSG_NORMAL
+    waitfanfare
+    compare 0x409F 0x1
+    if equal _call IVMaxingIsLevel2Now
+    compare 0x409F 0x2
+    if equal _call IVMaxingIsLevel3Now
+    msgbox gText_TsarvosaCity_StatsDojo_Kaito_FinishedInvestingAndReturningToMenu MSG_NORMAL
+    goto KaitoDojoOptions
+
+IVMaxingIsLevel2Now:
+    setvar 0x8004 60000
+    buffernumber 0x1 0x8004
+    msgbox gText_TsarvosaCity_StatsDojo_Kaito_IVMaxingLevel2Unlocked MSG_NORMAL
+    return
+
+IVMaxingIsLevel3Now:
+    msgbox gText_TsarvosaCity_StatsDojo_Kaito_IVMaxingLevel3Unlocked MSG_NORMAL
+    call IVMaxingAtMaxLevel
+    return
+
+DisciplesInvestment:
+    compare 0x40A0 0x2 @ Disciples Level
+    if equal _goto DisciplesAtMaxLevelReturnToMenu
+    copyvar 0x4000 0x40A0
+    addvar 0x4000 0x1 @ +1 for readability
+    compare 0x40A0 0x0 @ Level 1
+    if equal _call SetupLevelTwoDisciplesCost
+    compare 0x40A0 0x1 @ Level 2
+    if equal _call SetupLevelThreeDisciplesCost
+    buffernumber 0x0 0x4000
+    buffernumber 0x1 0x8004
+    msgbox gText_TsarvosaCity_StatsDojo_Kaito_DisciplesInvestmentCost MSG_NORMAL
+    call HandleInvestmentPayment
+    addvar 0x40A0 0x1 @ Internal number
+    addvar 0x4000 0x1 @ Number shown in dialog
+    buffernumber 0x0 0x4000
+    fanfare 0x101 @ Level Up
+    msgbox gText_TsarvosaCity_StatsDojo_Kaito_DisciplesLevelledUp MSG_NORMAL
+    waitfanfare
+    compare 0x40A0 0x1
+    if equal _call DisciplesAreLevel2Now
+    compare 0x40A0 0x2
+    if equal _call DisciplesAreLevel3Now
+    msgbox gText_TsarvosaCity_StatsDojo_Kaito_FinishedInvestingAndReturningToMenu MSG_NORMAL
+    goto KaitoDojoOptions
+
+SetupLevelTwoDisciplesCost:
+    setvar 0x8004 30000
+    return
+
+SetupLevelThreeDisciplesCost:
+    setvar 0x8004 60000
+    return
+
+DisciplesAreLevel2Now:
+    setvar 0x8004 60000
+    buffernumber 0x1 0x8004
+    msgbox gText_TsarvosaCity_StatsDojo_Kaito_DisciplesLevel2Unlocked MSG_NORMAL
+    return
+
+DisciplesAreLevel3Now:
+    msgbox gText_TsarvosaCity_StatsDojo_Kaito_DisciplesLevel3Unlocked MSG_NORMAL
+    call DisciplesAtMaxLevel
+    return
+
+HandleInvestmentPayment:
+    showmoney 0x0 0x0
+    msgbox gText_TsarvosaCity_StatsDojo_Kaito_CostConfirmation MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto ChoseNotToInvest
+    callasm CheckMoneyFromVar @ Check if player has enough money (from var 0x8004)
+    compare LASTRESULT TRUE
+    if FALSE _goto NotEnoughMoney
+    playse 0xF8 @ Money
+    callasm RemoveMoneyFromVar @ Removes based on var 0x8004 value
+    updatemoney 0x0 0x0
+    waitse
+    pause DELAY_1SECOND
+    hidemoney
+    return
+
+ExplainFacilities:
     msgbox gText_TsarvosaCity_StatsDojo_KaitoExplainsGeneralPurpose MSG_NORMAL
     special CAMERA_START
     applymovement CAMERA m_CameraMovesLeft
@@ -236,8 +442,8 @@ KaitoExplainsFacilities:
     if greaterthan _call PowerItemLevelsMaxedOut
     msgbox gText_TsarvosaCity_StatsDojo_KaitoExplainsIVMaxer MSG_NORMAL
     compare 0x409F 0x2 @ IV Maxer level, maxes at 3
-    if lessthan _call IVMaxingNotUnlocked
-    if greaterthan _call IVMaxingUnlocked
+    if lessthan _call IVMaxingNotAtMaxLevel
+    if greaterthan _call IVMaxingAtMaxLevel
     special CAMERA_START
     applymovement CAMERA m_CameraMovesLeft
     waitmovement CAMERA
@@ -256,6 +462,7 @@ KaitoExplainsFacilities:
     compare 0x405E 0xA @ 2 levels per shop, plus 2 initial events
     if lessthan _call FundingRemains
     if greaterthan _call FundingIsComplete
+    applymovement Kaito m_LookDown
     end
 
 MoreItemsToUnlock:
@@ -263,32 +470,60 @@ MoreItemsToUnlock:
     return
 
 AllItemsUnlocked:
+    fanfare 0x10D @ Fanfare 2
     msgbox gText_TsarvosaCity_StatsDojo_KaitoExplainsItemsShop_Funded MSG_NORMAL
+    waitfanfare
     return
+
+AllItemsUnlockedWithReturnToMenu:
+    call AllItemsUnlocked
+    goto KaitoDojoOptions
+    end
 
 PowerItemLevelsNotMaxedOut:
     msgbox gText_TsarvosaCity_StatsDojo_KaitoExplainsPowerItems_NotFunded MSG_NORMAL
     return
 
 PowerItemLevelsMaxedOut:
+    fanfare 0x10D @ Fanfare 2
     msgbox gText_TsarvosaCity_StatsDojo_KaitoExplainsPowerItems_Funded MSG_NORMAL
+    waitfanfare
     return
 
-IVMaxingNotUnlocked:
+PowerItemLevelsMaxedOutWithReturnToMenu:
+    call PowerItemLevelsMaxedOut
+    goto KaitoDojoOptions
+    end
+
+IVMaxingNotAtMaxLevel:
     msgbox gText_TsarvosaCity_StatsDojo_KaitoExplainsIVMaxer_NotFunded MSG_NORMAL
     return
 
-IVMaxingUnlocked:
+IVMaxingAtMaxLevel:
+    fanfare 0x10D @ Fanfare 2
     msgbox gText_TsarvosaCity_StatsDojo_KaitoExplainsIVMaxer_Funded MSG_NORMAL
+    waitfanfare
     return
+
+IVMaxingAtMaxLevelReturnToMenu:
+    call IVMaxingAtMaxLevel
+    goto KaitoDojoOptions
+    end
 
 DisciplesNotAtMaxLevel:
     msgbox gText_TsarvosaCity_StatsDojo_KaitoExplainsEVDisciples_NotFunded MSG_NORMAL
     return
 
 DisciplesAtMaxLevel:
+    fanfare 0x10D @ Fanfare 2
     msgbox gText_TsarvosaCity_StatsDojo_KaitoExplainsEVDisciples_Funded MSG_NORMAL
+    waitfanfare
     return
+
+DisciplesAtMaxLevelReturnToMenu:
+    call DisciplesAtMaxLevel
+    goto KaitoDojoOptions
+    end
 
 FundingRemains:
     msgbox gText_TsarvosaCity_StatsDojo_KaitoExplainsHimself_FundingRemains MSG_NORMAL
@@ -299,6 +534,19 @@ FundingIsComplete:
     msgbox gText_TsarvosaCity_StatsDojo_KaitoExplainsHimself_NoFundingRemains MSG_NORMAL
     waitfanfare
     return
+
+KaitoChoseToDoNothing:
+    msgbox gText_TsarvosaCity_StatsDojo_KaitoAsksToExplainServices_PlayerChoseNo MSG_NORMAL
+    applymovement Kaito m_LookDown
+    end
+
+ChoseNotToInvest:
+    msgbox gText_TsarvosaCity_StatsDojo_Kaito_ChoseNotToInvest MSG_KEEPOPEN
+    goto KaitoDojoOptions
+
+NotEnoughMoney:
+    msgbox gText_TsarvosaCity_StatsDojo_Kaito_NotEnoughMoney MSG_KEEPOPEN
+    goto KaitoDojoOptions
 
 m_AttendantWalksToPlayer: .byte walk_down, walk_down, end_m
 m_AttendantReturnsToRegularSpot: .byte walk_right, walk_right, walk_up, look_down, end_m

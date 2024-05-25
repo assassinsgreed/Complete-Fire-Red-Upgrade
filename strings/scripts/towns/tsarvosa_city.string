@@ -44,7 +44,7 @@ I was playing by Mimmett Jungle and\nheard a really weird Pok\emon cry.\pIt soun
 [BLUE]Oh! Hey, there, superstar!\p[.] Is what I would say, if we were\nstill an official gym[.]\pWe lost our endorsement from the\nPok\emon League a while back.\pWe can't call ourselves a gym\nanymore, or give out badges[.]\pBut don't let that give you the\nwrong idea!\pWe can still challenge trainers and\ngive out rewards! And so[.]
 
 #org @gText_TsarvosaCity_StatsDojo_AttendantRegularChat
-[BLUE]It's my pleasure to welcome you to\nthe Stats Dojo!\pThe trainers here specialize in a\nPok\emon's stats.\pIt'd be worth your while to train\nhere for a bit.\pI'd suggest talking with the leader,\nKaito, in the back.\pJust, uh, mind your manners.\pHe's still quite bitter about losing\nthe League's endorsement.
+[BLUE]It's my pleasure to welcome you to\nthe Stats Dojo!\pThe trainers here specialize in a\nPok\emon's stats.\pIt'd be worth your while to train\nhere for a bit.\pI'd suggest talking with the sensei,\nKaito, in the back.\pJust, uh, mind your manners.\pHe's still quite bitter about losing\nthe League's endorsement.
 
 #org @gText_TsarvosaCity_StatsDojo_KaitoIntroduction
 Hmm[.] Who are you?\pAre you a challenger? Or have you\ncome to mock our proud dojo?\pWe are not like the weaklings at the\nTsarvosa Gym, who rely on items to\lwin their battles.\pInstead, we put our faith in a\nPok\emon's inherent capabilities.\pMy Strength HM and facilities are\nonly given to those I deem worthy.\pIf you want them, you will have to\ndefeat me in battle without items.\pIs this acceptable to you?\n[BLACK](Held items will be moved to bag)
@@ -95,37 +95,121 @@ Disgraceful[.]
 [BLUE]To our right is where the brainiacs\nstudy Pok\emons' innate potential.\pThey have two research projects\nthey focus on.
 
 #org @gText_TsarvosaCity_StatsDojo_KaitoExplainsPowerItems
-[BLUE]The first project is researching held\nitems that bolster a Pok\emon's\lstats.\pDo not get the wrong idea!\pThese held items are okay because\nthey serve to strengthen your\lPok\emon's natural power!
+[BLUE]The first project is researching held\nitems that bolster a Pok\emon's\lEVs, or Effort Values.\pDo not get the wrong idea!\pThese held items are okay because\nthey serve to strengthen your\lPok\emon's natural power!
 
 #org @gText_TsarvosaCity_StatsDojo_KaitoExplainsPowerItems_NotFunded
 [BLUE]Regrettably, we need more funding\nfor this to become a reality[.]
 
 #org @gText_TsarvosaCity_StatsDojo_KaitoExplainsPowerItems_Funded
-[BLUE]Thanks to your donations, we have\naccomplished all we had hoped to!
+[BLUE]Thanks to your donations, we have\ncompleted this research track!
 
 #org @gText_TsarvosaCity_StatsDojo_KaitoExplainsIVMaxer
-[BLUE]The next project is investigating\nhow to tap into a Pok\emon's natural\lpower.\pThis would see their innate strength\ngrow beyond it's original limits.
+[BLUE]The next project is investigating\nhow to tap into a Pok\emon's natural\lpower.\pThis would see their innate strength\ngrow beyond it's original limits.\pIn other words, it would maximize\ntheir IVs, or Individual Values.
 
 #org @gText_TsarvosaCity_StatsDojo_KaitoExplainsIVMaxer_NotFunded
-[BLUE]We[.] are embarrassingly short on\nfunds, and so research is halted.\pWith more funding, we could research\nhow to draw out a Pok\emon's\lmaximum potential.
+[BLUE]We[.] are embarrassingly short on\nfunds, and so research is halted.
 
 #org @gText_TsarvosaCity_StatsDojo_KaitoExplainsIVMaxer_Funded
-[BLUE]Thanks to your generous\ncontributions, research is complete.\pWith the power of science, we can\nnow maximize your Pok\emons\lindividual potential.\pWe simply ask for a Bottle Cap or\nGold Bottle Cap in return.
+[BLUE]Thanks to your generous\ncontributions, research is complete.
 
 #org @gText_TsarvosaCity_StatsDojo_KaitoExplainsEVDisciples
 [BLUE]Next is our training station.\pHere you'll find disciples who have\neach perfected a particular stat.\pBy battling them you can elevate\nthat same stat in your Pok\emon.\pYou may battle them repeatedly by\nsimply talking with them again.
 
 #org @gText_TsarvosaCity_StatsDojo_KaitoExplainsEVDisciples_NotFunded
-[BLUE]With some funding, these\nentrepeneuring disciples could\limprove.\pWhy, I'm sure they could find\nPok\emon that would strengthen your\lown Pok\emon's stats even faster.
+[BLUE]With some funding, we could invest\nin the disciples' training further.\pWhy, I'm sure they could find\nPok\emon that would strengthen your\lown Pok\emon's stats even faster.
 
 #org @gText_TsarvosaCity_StatsDojo_KaitoExplainsEVDisciples_Funded
 [BLUE]Thanks to your funding, they have\namassed the finest Pok\emon they\lcould.\pI'm sure your Pok\emon will benefit\nfrom their efforts tremendously.
 
 #org @gText_TsarvosaCity_StatsDojo_KaitoExplainsHimself
-[BLUE]And finally, we arrive at me.\pAs this facility's leader, it falls to\nme to oversee it's progress.\pYou may speak to me whenever you'd\nlike to hear this explaination\lagain.
+[BLUE]And finally, we arrive at me.\pAs this facility's sensei, it falls to\nme to oversee it's progress.\pYou may speak to me whenever you'd\nlike to hear this explaination\lagain.
 
 #org @gText_TsarvosaCity_StatsDojo_KaitoExplainsHimself_FundingRemains
 [BLUE]And, if you are feeling charitable,\nyou may donate to any of the\lprojects we just discussed.\pBy doing so, they may offer more\nservices. It is truly win-win.
 
 #org @gText_TsarvosaCity_StatsDojo_KaitoExplainsHimself_NoFundingRemains
 [BLUE]We have no other projects\nthat require funding!\pTruly, from the bottom of my heart,\nthank you, [PLAYER].
+
+#org @gText_TsarvosaCity_StatsDojo_KaitoWelcomesPlayer
+[PLAYER], welcome!\nWhat can I do for you today?
+
+#org @gText_TsarvosaCity_StatsDojo_KaitoOptions_InvestInShops
+Invest in shops
+
+#org @gText_TsarvosaCity_StatsDojo_KaitoOptions_InvestInPowerItems
+Invest in Power Items reserach
+
+#org @gText_TsarvosaCity_StatsDojo_KaitoOptions_InvestInIVMaxer
+Invest in IV Maxing research
+
+#org @gText_TsarvosaCity_StatsDojo_KaitoOptions_InvestInDisciples
+Invest in EV Stat Disciples
+
+#org @gText_TsarvosaCity_StatsDojo_KaitoOptions_ExplainFacilities
+Explain facilities
+
+#org @gText_TsarvosaCity_StatsDojo_KaitoOptions_Nothing
+Nothing for now
+
+#org @gText_TsarvosaCity_StatsDojo_Kaito_CostConfirmation
+Is this okay with you?
+
+#org @gText_TsarvosaCity_StatsDojo_Kaito_ChoseNotToInvest
+Understood. Is there anything else I\ncan help you with?
+
+#org @gText_TsarvosaCity_StatsDojo_Kaito_NotEnoughMoney
+I admire your passion, but you don't\nhave enough money to fund that[.]\pIs there something else I can help\nyou with?
+
+#org @gText_TsarvosaCity_StatsDojo_Kaito_FinishedInvestingAndReturningToMenu
+Now[.] Is there anything else I can\nhelp you with?
+
+#org @gText_TsarvosaCity_StatsDojo_Kaito_ShopInvestmentCost
+Our shops are [GREEN]Lvl [BUFFER1][BLUE] right\nnow.\pIt will cost \$[BUFFER2] to improve\nthem.
+
+#org @gText_TsarvosaCity_StatsDojo_Kaito_ShopLevelledUp
+This project has been funded! Our\nshops are now [GREEN]Lvl [BUFFER1][BLUE].
+
+#org @gText_TsarvosaCity_StatsDojo_Kaito_ShopLevel2Unlocked
+We can now afford to stock EV\nReducing Berries.\pThe next shop upgrade will cost\n\$[BUFFER2].
+
+#org @gText_TsarvosaCity_StatsDojo_Kaito_ShopLevel3Unlocked
+We can now afford to stock Power\nItems.
+
+#org @gText_TsarvosaCity_StatsDojo_Kaito_PowerItemInvestmentCost
+Your Power Items are currently at\n[GREEN]Lvl [BUFFER1][BLUE].\pWith \$[BUFFER2] more, our research\ncould surely improve them further.
+
+#org @gText_TsarvosaCity_StatsDojo_Kaito_PowerItemInvestmentShopsNotLevelledUp
+Though I must warn you[.]\pYou would not benefit from this\nresearch until we could afford to\lstock Power Items in our shop.
+
+#org @gText_TsarvosaCity_StatsDojo_Kaito_PowerItemsLevelledUp
+This research project has been\nfunded!\pYour Power Items are now at\n[GREEN]Lvl [BUFFER1][BLUE]. Congratulations.
+
+#org @gText_TsarvosaCity_StatsDojo_Kaito_PowerItemsLevel2Unlocked
+Now all EVs, or Effort Values, you\ngain from battling are doubled!\pThe brainiacs at the lab think they\ncan take it even further.\pThey'll need \$[BUFFER2] to further\ntheir research, however.
+
+#org @gText_TsarvosaCity_StatsDojo_Kaito_PowerItemsLevel3Unlocked
+Now all EVs, or Effort Values, you\ngain from battling are tripled!
+
+#org @gText_TsarvosaCity_StatsDojo_Kaito_IVMaxingInvestmentCost
+Research into IV, or Individual\nValue, maxing is at [GREEN]Lvl [BUFFER1][BLUE].\pWith \$[BUFFER2] more, our research\ncould surely improve even further.
+
+#org @gText_TsarvosaCity_StatsDojo_Kaito_IVMaxingLevelledUp
+This research project has been\nfunded!\pThe IV Maxing process is now at\n[GREEN]Lvl [BUFFER1][BLUE]. Congratulations.
+
+#org @gText_TsarvosaCity_StatsDojo_Kaito_IVMaxingLevel2Unlocked
+The brainiacs at the lab can now\nelevate any Pok\emon's stat to it's\lmaximum potential.\pThey'll require a Bottle Cap in\nexchange for their services.\pThey think they can do even better,\nbut will need \$[BUFFER2] to further\ltheir research.
+
+#org @gText_TsarvosaCity_StatsDojo_Kaito_IVMaxingLevel3Unlocked
+In addition to improving a single\nstat, the brainiacs can now improve\lall of a Pok\emon's stats at once.\pThis procedure is special and will\nrequire a Gold Bottle Cap.\pThey still offer their regular\nservices, of course!
+
+#org @gText_TsarvosaCity_StatsDojo_Kaito_DisciplesInvestmentCost
+The disciples are currently at \n[GREEN]Lvl [BUFFER1][BLUE].\pWith \$[BUFFER2], they could build\nmore impactful Pok\emon teams.
+
+#org @gText_TsarvosaCity_StatsDojo_Kaito_DisciplesLevelledUp
+This project has been funded! The\ndisciples are now at [GREEN]Lvl [BUFFER1][BLUE].
+
+#org @gText_TsarvosaCity_StatsDojo_Kaito_DisciplesLevel2Unlocked
+The disciples have amassed a team of\nPok\emon that are even stronger.\pNow, they give 2 EVs, or Effort\nValues, in their respective stat\lwhen defeated.\pIf we had just \$[BUFFER2] more, I'm\nsure they could do even better.
+
+#org @gText_TsarvosaCity_StatsDojo_Kaito_DisciplesLevel3Unlocked
+The disciples have amassed a team of\nPok\emon that are even stronger.\pNow, they give 3 EVs, or Effort\nValues, in their respective stat\lwhen defeated.
