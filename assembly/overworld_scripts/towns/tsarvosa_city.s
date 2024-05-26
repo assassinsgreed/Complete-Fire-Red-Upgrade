@@ -240,6 +240,7 @@ ShopInvestment:
     buffernumber 0x1 0x8004
     msgbox gText_TsarvosaCity_StatsDojo_Kaito_ShopInvestmentCost MSG_NORMAL
     call HandleInvestmentPayment
+    addvar 0x405E 0x1 @ Total Investment in the dojo
     addvar 0x409D 0x1 @ Internal number
     addvar 0x4000 0x1 @ Number shown in dialog
     buffernumber 0x0 0x4000
@@ -287,8 +288,11 @@ PowerItemInvestment:
     compare 0x409D 0x2 @ Shop level
     if lessthan _call ShopsAreNotMaxedYet
     call HandleInvestmentPayment
+    addvar 0x405E 0x1 @ Total Investment in the dojo
     addvar 0x409E 0x1 @ Internal number
     addvar 0x4000 0x1 @ Number shown in dialog
+    copyvar 0x40A1 0x409E @ Setup Power Item level, which is +1 on the shop level to double/triple EVs
+    addvar 0x40A1 0x1
     buffernumber 0x0 0x4000
     fanfare 0x101 @ Level Up
     msgbox gText_TsarvosaCity_StatsDojo_Kaito_PowerItemsLevelledUp MSG_NORMAL
@@ -336,6 +340,7 @@ IVMaxerInvestment:
     buffernumber 0x1 0x8004
     msgbox gText_TsarvosaCity_StatsDojo_Kaito_IVMaxingInvestmentCost MSG_NORMAL
     call HandleInvestmentPayment
+    addvar 0x405E 0x1 @ Total Investment in the dojo
     addvar 0x409F 0x1 @ Internal number
     addvar 0x4000 0x1 @ Number shown in dialog
     buffernumber 0x0 0x4000
@@ -373,6 +378,7 @@ DisciplesInvestment:
     buffernumber 0x1 0x8004
     msgbox gText_TsarvosaCity_StatsDojo_Kaito_DisciplesInvestmentCost MSG_NORMAL
     call HandleInvestmentPayment
+    addvar 0x405E 0x1 @ Total Investment in the dojo
     addvar 0x40A0 0x1 @ Internal number
     addvar 0x4000 0x1 @ Number shown in dialog
     buffernumber 0x0 0x4000
