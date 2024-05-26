@@ -603,6 +603,110 @@ PowerItemsShop:
     .hword ITEM_POWER_ANKLET
     .hword ITEM_NONE
 
+.global EventScript_TsarvosaCity_StatsDojo_PowerItemScientist
+EventScript_TsarvosaCity_StatsDojo_PowerItemScientist:  
+    msgbox gText_TsarvosaCity_StatsDojo_PowerItemResearchIntro MSG_NORMAL
+    checktrainerflag 406
+    if NOT_SET _goto FacilitiesCannotOfferServices
+    compare 0x409D 0x2 @ Shop Level
+    if notequal _goto PowerItemsNotUnlockedYet
+    copyvar 0x4000 0x409E @ Power Items level
+    addvar 0x4000 0x1 @ For display
+    buffernumber 0x0 0x4000
+    msgbox gText_TsarvosaCity_StatsDojo_PowerItemsResearchLevel MSG_NORMAL
+    compare 0x409E 0x2
+    if lessthan _call PowerItemsCanBeImproved
+    if equal _call PowerItemsAtMaxLevel
+    msgbox gText_TsarvosaCity_StatsDojo_PowerItemsEVAssessmentQuestion MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto ChoseNotToAssess
+    goto AssessPokemonsEVs
+    end
+
+PowerItemsNotUnlockedYet:
+    msgbox gText_TsarvosaCity_StatsDojo_PowerItemsNotUnlockedYet MSG_NORMAL
+    end
+
+PowerItemsCanBeImproved:
+    msgbox gText_TsarvosaCity_StatsDojo_PowerItemsCanBeStrengthenedFurther MSG_NORMAL
+    return
+
+PowerItemsAtMaxLevel:
+    msgbox gText_TsarvosaCity_StatsDojo_PowerItemsAtMaxLevel MSG_NORMAL
+    return
+
+AssessPokemonsEVs:
+    msgbox gText_TsarvosaCity_StatsDojo_ChooseAPokemonToAssessEVsFor MSG_NORMAL
+    special 0x9F @ Select a Pokemon and store it's position in 0x8004
+    waitstate
+    compare 0x8004 0x6 @ Don't continue if user backed out
+    if greaterorequal _goto ChoseNotToAssess
+    bufferpartypokemon 0x0 0x8004
+    callasm StoreIsPartyMonEgg
+    compare LASTRESULT TRUE
+    if TRUE _goto ChoseToAssessAnEgg
+    callasm CalculateEVTotal
+    compare LASTRESULT 100
+    if lessthan _goto EVAssessmentVeryPoor
+    compare LASTRESULT 200
+    if lessthan _goto EVAssessmentPoor
+    compare LASTRESULT 300
+    if lessthan _goto EVAssessmentGood
+    compare LASTRESULT 400
+    if lessthan _goto EVAssessmentGreat
+    compare LASTRESULT 509
+    if lessthan _goto EVAssessmentExcellent
+    @ At 510, full
+    fanfare 0x10C @ Big Celebration
+    msgbox gText_TsarvosaCity_StatsDojo_EVAssessmentExcellent MSG_NORMAL
+    waitfanfare
+    msgbox gText_TsarvosaCity_StatsDojo_EVAssessmentFullFollowUp MSG_NORMAL
+    goto AskToAssessMore
+
+ChoseToAssessAnEgg:
+    msgbox gText_TsarvosaCity_StatsDojo_ChoseToAssessEgg MSG_NORMAL
+    goto AssessPokemonsEVs
+
+EVAssessmentVeryPoor:
+    fanfare 0x10F @ Big Failure
+    msgbox gText_TsarvosaCity_StatsDojo_EVAssessmentVeryPoor MSG_NORMAL
+    waitfanfare
+    goto AskToAssessMore
+
+EVAssessmentPoor:
+    fanfare 0x10F @ Big Failure
+    msgbox gText_TsarvosaCity_StatsDojo_EVAssessmentPoor MSG_NORMAL
+    waitfanfare
+    goto AskToAssessMore
+
+EVAssessmentGood:
+    fanfare 0x10E @ Small Failure
+    msgbox gText_TsarvosaCity_StatsDojo_EVAssessmentGood MSG_NORMAL
+    waitfanfare
+    goto AskToAssessMore
+
+EVAssessmentGreat:
+    fanfare 0x13E @ Obtain Item
+    msgbox gText_TsarvosaCity_StatsDojo_EVAssessmentGreat MSG_NORMAL
+    waitfanfare
+    goto AskToAssessMore
+
+EVAssessmentExcellent:
+    fanfare 0x10D @ Celebration
+    msgbox gText_TsarvosaCity_StatsDojo_EVAssessmentExcellent MSG_NORMAL
+    waitfanfare
+    goto AskToAssessMore
+
+AskToAssessMore:
+    msgbox gText_TsarvosaCity_StatsDojo_EVAssessmentAgainQuestion MSG_YESNO
+    compare LASTRESULT YES
+    if equal _goto AssessPokemonsEVs
+    goto ChoseNotToAssess
+
+ChoseNotToAssess:
+    msgbox gText_TsarvosaCity_StatsDojo_NotAssessing MSG_NORMAL
+    end
+
 m_AttendantWalksToPlayer: .byte walk_down, walk_down, end_m
 m_AttendantReturnsToRegularSpot: .byte walk_right, walk_right, walk_up, look_down, end_m
 m_CameraMovesLeft: .byte walk_left, walk_left, walk_left, walk_left, end_m

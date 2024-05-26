@@ -3369,3 +3369,20 @@ void HasSpeciesInParty(void)
 		}
 	}
 }
+
+// Adds all the EVs that the Pokemon in Var8004 has received, then stores the result in LASTRESULT
+void CalculateEVTotal()
+{
+	u16 partyId = Var8004;
+	gSpecialVar_LastResult = 0;
+
+	if (partyId >= PARTY_SIZE)
+		return;
+	
+	gSpecialVar_LastResult += GetMonData(&gPlayerParty[Var8004], MON_DATA_HP_EV, NULL);
+	gSpecialVar_LastResult += GetMonData(&gPlayerParty[Var8004], MON_DATA_ATK_EV, NULL);
+	gSpecialVar_LastResult += GetMonData(&gPlayerParty[Var8004], MON_DATA_DEF_EV, NULL);
+	gSpecialVar_LastResult += GetMonData(&gPlayerParty[Var8004], MON_DATA_SPATK_EV, NULL);
+	gSpecialVar_LastResult += GetMonData(&gPlayerParty[Var8004], MON_DATA_SPDEF_EV, NULL);
+	gSpecialVar_LastResult += GetMonData(&gPlayerParty[Var8004], MON_DATA_SPEED_EV, NULL);
+}
