@@ -2080,3 +2080,14 @@ npc 12 0 3 EventScript_TsarvosaCity_PokemonCenter_Girl
 map 12 1 MapScript_TsarvosaCity_StatsDojo
 npc 12 1 0 EventScript_TsarvosaCity_StatsDojo_Attendant
 npc 12 1 1 EventScript_TsarvosaCity_StatsDojo_Kaito
+npc 12 1 2 EventScript_TsarvosaCity_StatsDojo_EVReducingBerryShop
+npc 12 1 3 EventScript_TsarvosaCity_StatsDojo_VitaminShop
+npc 12 1 4 EventScript_TsarvosaCity_StatsDojo_PowerItemShop
+#npc 12 1 5 EventScript_TsarvosaCity_StatsDojo_PowerItemScientist
+#npc 12 1 6 EventScript_TsarvosaCity_StatsDojo_IVMaxingScientist
+#npc 12 1 7 EventScript_TsarvosaCity_StatsDojo_HPDisciple
+#npc 12 1 8 EventScript_TsarvosaCity_StatsDojo_AttackDisciple
+#npc 12 1 9 EventScript_TsarvosaCity_StatsDojo_DefenseDisciple
+#npc 12 1 10 EventScript_TsarvosaCity_StatsDojo_SpecialAttackDisciple
+#npc 12 1 11 EventScript_TsarvosaCity_StatsDojo_SpecialDefenseDisciple
+#npc 12 1 12 EventScript_TsarvosaCity_StatsDojo_SpeedDisciple

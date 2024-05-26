@@ -213,3 +213,18 @@ The disciples have amassed a team of\nPok\emon that are even stronger.\pNow, the
 
 #org @gText_TsarvosaCity_StatsDojo_Kaito_DisciplesLevel3Unlocked
 The disciples have amassed a team of\nPok\emon that are even stronger.\pNow, they give 3 EVs, or Effort\nValues, in their respective stat\lwhen defeated.
+
+#org @gText_TsarvosaCity_StatsDojo_Common_FacilitiesBeforeBeatingKaito
+I cannot provide my services until\nyou have proven yourself to Kaito.
+
+#org @gText_TsarvosaCity_StatsDojo_Common_ShopLevelTooLow
+Hello! I wish I could sell you\nthings, but I have no stock.\pIf you could invest in our shops, I\ncould open up shop again.
+
+#org @gText_TsarvosaCity_StatsDojo_VitaminsShop
+[BLACK]Hello! I sell vitamins that raise a\nPok\emon's stats.
+
+#org @gText_TsarvosaCity_StatsDojo_EVBerriesShop
+[BLACK]Hello! I sell EV, or Effort Value,\nreducing berries.
+
+#org @gText_TsarvosaCity_StatsDojo_PowerItemsShop
+[BLACK]Hello! I sell Power Items that raise\nyour Pok\emons' stats more quickly.

@@ -548,6 +548,55 @@ NotEnoughMoney:
     msgbox gText_TsarvosaCity_StatsDojo_Kaito_NotEnoughMoney MSG_KEEPOPEN
     goto KaitoDojoOptions
 
+FacilitiesCannotOfferServices:
+    msgbox gText_TsarvosaCity_StatsDojo_Common_FacilitiesBeforeBeatingKaito MSG_NORMAL
+    end
+
+ShopLevelTooLow:
+    msgbox gText_TsarvosaCity_StatsDojo_Common_ShopLevelTooLow MSG_NORMAL
+    end
+
+.global EventScript_TsarvosaCity_StatsDojo_VitaminShop
+EventScript_TsarvosaCity_StatsDojo_VitaminShop:
+    msgbox gText_TsarvosaCity_StatsDojo_VitaminsShop MSG_KEEPOPEN
+    checktrainerflag 406
+    if NOT_SET _goto FacilitiesCannotOfferServices
+    pokemart VitaminsShop @ Common shop
+    goto EventScript_EndMart
+    end
+
+.global EventScript_TsarvosaCity_StatsDojo_EVReducingBerryShop
+EventScript_TsarvosaCity_StatsDojo_EVReducingBerryShop:
+    compare 0x409D 0x1 @ Shop level
+    if lessthan _goto ShopLevelTooLow
+    msgbox gText_TsarvosaCity_StatsDojo_EVBerriesShop MSG_KEEPOPEN
+    checktrainerflag 406
+    if NOT_SET _goto FacilitiesCannotOfferServices
+    pokemart EVReducingBerriesShop @ Common Shop
+    goto EventScript_EndMart
+    end
+
+.global EventScript_TsarvosaCity_StatsDojo_PowerItemShop
+EventScript_TsarvosaCity_StatsDojo_PowerItemShop:
+    compare 0x409D 0x2 @ Shop level
+    if lessthan _goto ShopLevelTooLow
+    msgbox gText_TsarvosaCity_StatsDojo_PowerItemsShop MSG_KEEPOPEN
+    checktrainerflag 406
+    if NOT_SET _goto FacilitiesCannotOfferServices
+    pokemart PowerItemsShop
+    goto EventScript_EndMart
+    end
+
+.align 1
+PowerItemsShop:
+    .hword ITEM_POWER_WEIGHT
+    .hword ITEM_POWER_BRACER
+    .hword ITEM_POWER_BELT
+    .hword ITEM_POWER_LENS
+    .hword ITEM_POWER_BAND
+    .hword ITEM_POWER_ANKLET
+    .hword ITEM_NONE
+
 m_AttendantWalksToPlayer: .byte walk_down, walk_down, end_m
 m_AttendantReturnsToRegularSpot: .byte walk_right, walk_right, walk_up, look_down, end_m
 m_CameraMovesLeft: .byte walk_left, walk_left, walk_left, walk_left, end_m
