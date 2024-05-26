@@ -2091,4 +2091,3 @@ npc 12 1 4 EventScript_TsarvosaCity_StatsDojo_PowerItemShop
 #npc 12 1 10 EventScript_TsarvosaCity_StatsDojo_SpecialAttackDisciple
 #npc 12 1 11 EventScript_TsarvosaCity_StatsDojo_SpecialDefenseDisciple
 #npc 12 1 12 EventScript_TsarvosaCity_StatsDojo_SpeedDisciple
-#npc 12 1 13 EventScript_TsarvosaCity_StatsDojo_EffortEvaluator
