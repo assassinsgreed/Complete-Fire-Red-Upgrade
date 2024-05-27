@@ -240,6 +240,7 @@ ShopInvestment:
     buffernumber 0x1 0x8004
     msgbox gText_TsarvosaCity_StatsDojo_Kaito_ShopInvestmentCost MSG_NORMAL
     call HandleInvestmentPayment
+    addvar 0x405E 0x1 @ Total Investment in the dojo
     addvar 0x409D 0x1 @ Internal number
     addvar 0x4000 0x1 @ Number shown in dialog
     buffernumber 0x0 0x4000
@@ -287,8 +288,11 @@ PowerItemInvestment:
     compare 0x409D 0x2 @ Shop level
     if lessthan _call ShopsAreNotMaxedYet
     call HandleInvestmentPayment
+    addvar 0x405E 0x1 @ Total Investment in the dojo
     addvar 0x409E 0x1 @ Internal number
     addvar 0x4000 0x1 @ Number shown in dialog
+    copyvar 0x40A1 0x409E @ Setup Power Item level, which is +1 on the shop level to double/triple EVs
+    addvar 0x40A1 0x1
     buffernumber 0x0 0x4000
     fanfare 0x101 @ Level Up
     msgbox gText_TsarvosaCity_StatsDojo_Kaito_PowerItemsLevelledUp MSG_NORMAL
@@ -336,6 +340,7 @@ IVMaxerInvestment:
     buffernumber 0x1 0x8004
     msgbox gText_TsarvosaCity_StatsDojo_Kaito_IVMaxingInvestmentCost MSG_NORMAL
     call HandleInvestmentPayment
+    addvar 0x405E 0x1 @ Total Investment in the dojo
     addvar 0x409F 0x1 @ Internal number
     addvar 0x4000 0x1 @ Number shown in dialog
     buffernumber 0x0 0x4000
@@ -373,6 +378,7 @@ DisciplesInvestment:
     buffernumber 0x1 0x8004
     msgbox gText_TsarvosaCity_StatsDojo_Kaito_DisciplesInvestmentCost MSG_NORMAL
     call HandleInvestmentPayment
+    addvar 0x405E 0x1 @ Total Investment in the dojo
     addvar 0x40A0 0x1 @ Internal number
     addvar 0x4000 0x1 @ Number shown in dialog
     buffernumber 0x0 0x4000
@@ -547,6 +553,159 @@ ChoseNotToInvest:
 NotEnoughMoney:
     msgbox gText_TsarvosaCity_StatsDojo_Kaito_NotEnoughMoney MSG_KEEPOPEN
     goto KaitoDojoOptions
+
+FacilitiesCannotOfferServices:
+    msgbox gText_TsarvosaCity_StatsDojo_Common_FacilitiesBeforeBeatingKaito MSG_NORMAL
+    end
+
+ShopLevelTooLow:
+    msgbox gText_TsarvosaCity_StatsDojo_Common_ShopLevelTooLow MSG_NORMAL
+    end
+
+.global EventScript_TsarvosaCity_StatsDojo_VitaminShop
+EventScript_TsarvosaCity_StatsDojo_VitaminShop:
+    msgbox gText_TsarvosaCity_StatsDojo_VitaminsShop MSG_KEEPOPEN
+    checktrainerflag 406
+    if NOT_SET _goto FacilitiesCannotOfferServices
+    pokemart VitaminsShop @ Common shop
+    goto EventScript_EndMart
+    end
+
+.global EventScript_TsarvosaCity_StatsDojo_EVReducingBerryShop
+EventScript_TsarvosaCity_StatsDojo_EVReducingBerryShop:
+    compare 0x409D 0x1 @ Shop level
+    if lessthan _goto ShopLevelTooLow
+    msgbox gText_TsarvosaCity_StatsDojo_EVBerriesShop MSG_KEEPOPEN
+    checktrainerflag 406
+    if NOT_SET _goto FacilitiesCannotOfferServices
+    pokemart EVReducingBerriesShop @ Common Shop
+    goto EventScript_EndMart
+    end
+
+.global EventScript_TsarvosaCity_StatsDojo_PowerItemShop
+EventScript_TsarvosaCity_StatsDojo_PowerItemShop:
+    compare 0x409D 0x2 @ Shop level
+    if lessthan _goto ShopLevelTooLow
+    msgbox gText_TsarvosaCity_StatsDojo_PowerItemsShop MSG_KEEPOPEN
+    checktrainerflag 406
+    if NOT_SET _goto FacilitiesCannotOfferServices
+    pokemart PowerItemsShop
+    goto EventScript_EndMart
+    end
+
+.align 1
+PowerItemsShop:
+    .hword ITEM_POWER_WEIGHT
+    .hword ITEM_POWER_BRACER
+    .hword ITEM_POWER_BELT
+    .hword ITEM_POWER_LENS
+    .hword ITEM_POWER_BAND
+    .hword ITEM_POWER_ANKLET
+    .hword ITEM_NONE
+
+.global EventScript_TsarvosaCity_StatsDojo_PowerItemScientist
+EventScript_TsarvosaCity_StatsDojo_PowerItemScientist:  
+    msgbox gText_TsarvosaCity_StatsDojo_PowerItemResearchIntro MSG_NORMAL
+    checktrainerflag 406
+    if NOT_SET _goto FacilitiesCannotOfferServices
+    compare 0x409D 0x2 @ Shop Level
+    if notequal _goto PowerItemsNotUnlockedYet
+    copyvar 0x4000 0x409E @ Power Items level
+    addvar 0x4000 0x1 @ For display
+    buffernumber 0x0 0x4000
+    msgbox gText_TsarvosaCity_StatsDojo_PowerItemsResearchLevel MSG_NORMAL
+    compare 0x409E 0x2
+    if lessthan _call PowerItemsCanBeImproved
+    if equal _call PowerItemsAtMaxLevel
+    msgbox gText_TsarvosaCity_StatsDojo_PowerItemsEVAssessmentQuestion MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto ChoseNotToAssess
+    goto AssessPokemonsEVs
+    end
+
+PowerItemsNotUnlockedYet:
+    msgbox gText_TsarvosaCity_StatsDojo_PowerItemsNotUnlockedYet MSG_NORMAL
+    end
+
+PowerItemsCanBeImproved:
+    msgbox gText_TsarvosaCity_StatsDojo_PowerItemsCanBeStrengthenedFurther MSG_NORMAL
+    return
+
+PowerItemsAtMaxLevel:
+    msgbox gText_TsarvosaCity_StatsDojo_PowerItemsAtMaxLevel MSG_NORMAL
+    return
+
+AssessPokemonsEVs:
+    msgbox gText_TsarvosaCity_StatsDojo_ChooseAPokemonToAssessEVsFor MSG_NORMAL
+    special 0x9F @ Select a Pokemon and store it's position in 0x8004
+    waitstate
+    compare 0x8004 0x6 @ Don't continue if user backed out
+    if greaterorequal _goto ChoseNotToAssess
+    bufferpartypokemon 0x0 0x8004
+    callasm StoreIsPartyMonEgg
+    compare LASTRESULT TRUE
+    if TRUE _goto ChoseToAssessAnEgg
+    callasm CalculateEVTotal
+    compare LASTRESULT 100
+    if lessthan _goto EVAssessmentVeryPoor
+    compare LASTRESULT 200
+    if lessthan _goto EVAssessmentPoor
+    compare LASTRESULT 300
+    if lessthan _goto EVAssessmentGood
+    compare LASTRESULT 400
+    if lessthan _goto EVAssessmentGreat
+    compare LASTRESULT 509
+    if lessthan _goto EVAssessmentExcellent
+    @ At 510, full
+    fanfare 0x10C @ Big Celebration
+    msgbox gText_TsarvosaCity_StatsDojo_EVAssessmentExcellent MSG_NORMAL
+    waitfanfare
+    msgbox gText_TsarvosaCity_StatsDojo_EVAssessmentFullFollowUp MSG_NORMAL
+    goto AskToAssessMore
+
+ChoseToAssessAnEgg:
+    msgbox gText_TsarvosaCity_StatsDojo_ChoseToAssessEgg MSG_NORMAL
+    goto AssessPokemonsEVs
+
+EVAssessmentVeryPoor:
+    fanfare 0x10F @ Big Failure
+    msgbox gText_TsarvosaCity_StatsDojo_EVAssessmentVeryPoor MSG_NORMAL
+    waitfanfare
+    goto AskToAssessMore
+
+EVAssessmentPoor:
+    fanfare 0x10F @ Big Failure
+    msgbox gText_TsarvosaCity_StatsDojo_EVAssessmentPoor MSG_NORMAL
+    waitfanfare
+    goto AskToAssessMore
+
+EVAssessmentGood:
+    fanfare 0x10E @ Small Failure
+    msgbox gText_TsarvosaCity_StatsDojo_EVAssessmentGood MSG_NORMAL
+    waitfanfare
+    goto AskToAssessMore
+
+EVAssessmentGreat:
+    fanfare 0x13E @ Obtain Item
+    msgbox gText_TsarvosaCity_StatsDojo_EVAssessmentGreat MSG_NORMAL
+    waitfanfare
+    goto AskToAssessMore
+
+EVAssessmentExcellent:
+    fanfare 0x10D @ Celebration
+    msgbox gText_TsarvosaCity_StatsDojo_EVAssessmentExcellent MSG_NORMAL
+    waitfanfare
+    goto AskToAssessMore
+
+AskToAssessMore:
+    msgbox gText_TsarvosaCity_StatsDojo_EVAssessmentAgainQuestion MSG_YESNO
+    compare LASTRESULT YES
+    if equal _goto AssessPokemonsEVs
+    goto ChoseNotToAssess
+
+ChoseNotToAssess:
+    msgbox gText_TsarvosaCity_StatsDojo_NotAssessing MSG_NORMAL
+    end
 
 m_AttendantWalksToPlayer: .byte walk_down, walk_down, end_m
 m_AttendantReturnsToRegularSpot: .byte walk_right, walk_right, walk_up, look_down, end_m

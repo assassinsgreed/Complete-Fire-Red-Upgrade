@@ -501,16 +501,6 @@ EventScript_DaimynCityMall_Shop_EVReducingBerries:
     pokemart EVReducingBerriesShop
     goto EventScript_EndMart
 
-.align 1
-EVReducingBerriesShop:
-    .hword ITEM_POMEG_BERRY
-    .hword ITEM_KELPSY_BERRY
-    .hword ITEM_QUALOT_BERRY
-    .hword ITEM_HONDEW_BERRY
-    .hword ITEM_GREPA_BERRY
-    .hword ITEM_TAMATO_BERRY
-    .hword ITEM_NONE
-
 .global EventScript_DaimynCityMall_Shop_Vitamins
 EventScript_DaimynCityMall_Shop_Vitamins:
     lock
@@ -518,18 +508,6 @@ EventScript_DaimynCityMall_Shop_Vitamins:
     msgbox gText_DaimynCityMall_VitaminsSeller MSG_KEEPOPEN
     pokemart VitaminsShop
     goto EventScript_EndMart
-
-.align 1
-VitaminsShop:
-    .hword ITEM_HP_UP
-    .hword ITEM_PROTEIN
-    .hword ITEM_IRON
-    .hword ITEM_CALCIUM
-    .hword ITEM_ZINC
-    .hword ITEM_CARBOS
-    .hword ITEM_PP_UP
-    .hword ITEM_CASTELIACONE
-    .hword ITEM_NONE
 
 .global EventScript_DaimynCityMall_Shop_Gems
 EventScript_DaimynCityMall_Shop_Gems:

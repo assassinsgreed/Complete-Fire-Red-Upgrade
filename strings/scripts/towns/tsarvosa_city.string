@@ -213,3 +213,69 @@ The disciples have amassed a team of\nPok\emon that are even stronger.\pNow, the
 
 #org @gText_TsarvosaCity_StatsDojo_Kaito_DisciplesLevel3Unlocked
 The disciples have amassed a team of\nPok\emon that are even stronger.\pNow, they give 3 EVs, or Effort\nValues, in their respective stat\lwhen defeated.
+
+#org @gText_TsarvosaCity_StatsDojo_Common_FacilitiesBeforeBeatingKaito
+I cannot provide my services until\nyou have proven yourself to Kaito.
+
+#org @gText_TsarvosaCity_StatsDojo_Common_ShopLevelTooLow
+Hello! I wish I could sell you\nthings, but I have no stock.\pIf you could invest in our shops, I\ncould open up shop again.
+
+#org @gText_TsarvosaCity_StatsDojo_VitaminsShop
+[BLACK]Hello! I sell vitamins that raise a\nPok\emon's stats.
+
+#org @gText_TsarvosaCity_StatsDojo_EVBerriesShop
+[BLACK]Hello! I sell EV, or Effort Value,\nreducing berries.
+
+#org @gText_TsarvosaCity_StatsDojo_PowerItemsShop
+[BLACK]Hello! I sell Power Items that raise\nyour Pok\emons' stats more quickly.
+
+#org @gText_TsarvosaCity_StatsDojo_PowerItemResearchIntro
+I'm studying the effect Power Items\nhave on a Pok\emon's stats.
+
+#org @gText_TsarvosaCity_StatsDojo_PowerItemsNotUnlockedYet
+It's very difficult, without having\nPower Items available in our\lshops[.]
+
+#org @gText_TsarvosaCity_StatsDojo_PowerItemsResearchLevel
+Our research has elevated Power\nItems to [GREEN]Lvl [BUFFER1][BLUE].\pThis means that all EVs, or Effort\nValues, earned are [BUFFER1]x their\lusual rate.
+
+#org @gText_TsarvosaCity_StatsDojo_PowerItemsCanBeStrengthenedFurther
+With funding, I'm sure we could make\nthem even more efficient[.]\pOh, pretend you didn't hear that.\nNothing to concern yourself over.
+
+#org @gText_TsarvosaCity_StatsDojo_PowerItemsAtMaxLevel
+We've researched everything we\npossibly could!
+
+#org @gText_TsarvosaCity_StatsDojo_PowerItemsEVAssessmentQuestion
+By-the-by, I can assess the amount\nof effort your Pok\emon has put in.\pIn other words, I can assess if\nthey can receive more EVs still.\pAre you interested?
+
+#org @gText_TsarvosaCity_StatsDojo_ChooseAPokemonToAssessEVsFor
+Now, which Pok\emon would you like to\nassess?
+
+#org @gText_TsarvosaCity_StatsDojo_ChoseToAssessEgg
+That is preposterous!\pI can't check the EVs of a Pok\emon\nthat has yet to hatch.
+
+#org @gText_TsarvosaCity_StatsDojo_EVAssessmentVeryPoor
+Oh dear[.] [BUFFER1] hasn't put much\neffort in at all[.]
+
+#org @gText_TsarvosaCity_StatsDojo_EVAssessmentPoor
+[BUFFER1] has put a very minor amount\nof effort in.
+
+#org @gText_TsarvosaCity_StatsDojo_EVAssessmentGood
+[BUFFER1] is starting to put in\neffort, but has a long ways to go.
+
+#org @gText_TsarvosaCity_StatsDojo_EVAssessmentGreat
+[BUFFER1] has put in a good amount\nof effort and it's starting to show.
+
+#org @gText_TsarvosaCity_StatsDojo_EVAssessmentExcellent
+[BUFFER1] has put in lots of effort!\nIt's getting close to mastery.
+
+#org @gText_TsarvosaCity_StatsDojo_EVAssessmentFull
+[BUFFER1] has put in significant\namounts of effort and it shows!
+
+#org @gText_TsarvosaCity_StatsDojo_EVAssessmentFullFollowUp
+It couldn't possibly put in more\neffort.
+
+#org @gText_TsarvosaCity_StatsDojo_EVAssessmentAgainQuestion
+Would you like me to assess another\nPok\emon's effort?
+
+#org @gText_TsarvosaCity_StatsDojo_NotAssessing
+Very well. I hope you get out there\nand toughen up your Pok\emon!
