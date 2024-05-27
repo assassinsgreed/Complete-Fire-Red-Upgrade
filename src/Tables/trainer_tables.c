@@ -47,6 +47,7 @@
 #define TrainerAIFlags_Juggler_Standard         (AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_SETUP_FIRST_TURN)
 #define TrainerAIFlags_Skier_Standard           (AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_CHECK_VIABILITY)
 #define TrainerAIFlags_DragonTamer_Standard     (AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_PREFER_STRONGEST_MOVE | AI_SCRIPT_TRY_TO_FAINT)
+#define TrainerAIFlags_Disciple_Standard        (AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_HP_AWARE | AI_SCRIPT_CHECK_VIABILITY)
 
 // #region Trainer Structs
 
@@ -4795,6 +4796,115 @@ const struct TrainerMonNoItemCustomMoves sParty_TsarvosaCity_StatsDojo_Kaito[] =
         .ability = Ability_2 // Sheer Force
     }
 };
+
+const struct TrainerMonNoItemDefaultMoves sParty_TsarvosaCity_StatsDojo_ZacharyHP1[] = {
+    { .lvl = 1, .species = SPECIES_SLAKOTH },
+    { .lvl = 1, .species = SPECIES_SHROOMISH },
+    { .lvl = 1, .species = SPECIES_HAPPINY }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_TsarvosaCity_StatsDojo_ZacharyHP2[] = {
+    { .lvl = 1, .species = SPECIES_NOCTOWL },
+    { .lvl = 1, .species = SPECIES_VAPOREON },
+    { .lvl = 1, .species = SPECIES_CHANSEY }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_TsarvosaCity_StatsDojo_ZacharyHP3[] = {
+    { .lvl = 1, .species = SPECIES_SLAKING },
+    { .lvl = 1, .species = SPECIES_STUNFISK_G }, // Note this is 2 EVs due to a huge lack of 3EV HP pokemon that aren't legendaries
+    { .lvl = 1, .species = SPECIES_BLISSEY }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_TsarvosaCity_StatsDojo_NelsonAttack1[] = {
+    { .lvl = 1, .species = SPECIES_NIDORAN_M },
+    { .lvl = 1, .species = SPECIES_MUDKIP },
+    { .lvl = 1, .species = SPECIES_PIKIPEK }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_TsarvosaCity_StatsDojo_NelsonAttack2[] = {
+    { .lvl = 1, .species = SPECIES_NIDORINO },
+    { .lvl = 1, .species = SPECIES_MARSHTOMP },
+    { .lvl = 1, .species = SPECIES_TRUMBEAK }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_TsarvosaCity_StatsDojo_NelsonAttack3[] = {
+    { .lvl = 1, .species = SPECIES_NIDOKING },
+    { .lvl = 1, .species = SPECIES_SWAMPERT },
+    { .lvl = 1, .species = SPECIES_TOUCANNON }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_TsarvosaCity_StatsDojo_DionDefense1[] = {
+    { .lvl = 1, .species = SPECIES_KLINK },
+    { .lvl = 1, .species = SPECIES_CHESPIN },
+    { .lvl = 1, .species = SPECIES_ROLYCOLY }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_TsarvosaCity_StatsDojo_DionDefense2[] = {
+    { .lvl = 1, .species = SPECIES_KLANG },
+    { .lvl = 1, .species = SPECIES_QUILLADIN },
+    { .lvl = 1, .species = SPECIES_CARKOL }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_TsarvosaCity_StatsDojo_DionDefense3[] = {
+    { .lvl = 1, .species = SPECIES_KLINKLANG },
+    { .lvl = 1, .species = SPECIES_CHESNAUGHT },
+    { .lvl = 1, .species = SPECIES_COALOSSAL }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_TsarvosaCity_StatsDojo_SeymourSpecialAttack1[] = {
+    { .lvl = 1, .species = SPECIES_MAREEP },
+    { .lvl = 1, .species = SPECIES_RALTS },
+    { .lvl = 1, .species = SPECIES_OSHAWOTT }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_TsarvosaCity_StatsDojo_SeymourSpecialAttack2[] = {
+    { .lvl = 1, .species = SPECIES_FLAAFFY },
+    { .lvl = 1, .species = SPECIES_KIRLIA },
+    { .lvl = 1, .species = SPECIES_DEWOTT }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_TsarvosaCity_StatsDojo_SeymourSpecialAttack3[] = {
+    { .lvl = 1, .species = SPECIES_AMPHAROS },
+    { .lvl = 1, .species = SPECIES_GARDEVOIR },
+    { .lvl = 1, .species = SPECIES_SAMUROTT }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_TsarvosaCity_StatsDojo_GarlandSpecialDefense1[] = {
+    { .lvl = 1, .species = SPECIES_FLABEBE_ORANGE },
+    { .lvl = 1, .species = SPECIES_BLIPBUG },
+    { .lvl = 1, .species = SPECIES_GOOMY }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_TsarvosaCity_StatsDojo_GarlandSpecialDefense2[] = {
+    { .lvl = 1, .species = SPECIES_FLOETTE_ORANGE },
+    { .lvl = 1, .species = SPECIES_DOTTLER },
+    { .lvl = 1, .species = SPECIES_SLIGGOO }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_TsarvosaCity_StatsDojo_GarlandSpecialDefense3[] = {
+    { .lvl = 1, .species = SPECIES_FLORGES_ORANGE },
+    { .lvl = 1, .species = SPECIES_ORBEETLE },
+    { .lvl = 1, .species = SPECIES_GOODRA }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_TsarvosaCity_StatsDojo_SidneySpeed1[] = {
+    { .lvl = 1, .species = SPECIES_SNIVY },
+    { .lvl = 1, .species = SPECIES_ZUBAT },
+    { .lvl = 1, .species = SPECIES_SCORBUNNY }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_TsarvosaCity_StatsDojo_SidneySpeed2[] = {
+    { .lvl = 1, .species = SPECIES_SERVINE },
+    { .lvl = 1, .species = SPECIES_GOLBAT },
+    { .lvl = 1, .species = SPECIES_RABOOT }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_TsarvosaCity_StatsDojo_SidneySpeed3[] = {
+    { .lvl = 1, .species = SPECIES_SERPERIOR },
+    { .lvl = 1, .species = SPECIES_CROBAT },
+    { .lvl = 1, .species = SPECIES_CINDERACE }
+};
+
 // #endregion
 // #endregion
 
@@ -9750,6 +9860,222 @@ const struct Trainer gTrainers[] = {
         .aiFlags = AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_TRY_TO_FAINT,
         .partySize = NELEMS(sParty_TsarvosaCity_StatsDojo_Kaito),
         .party = {.NoItemCustomMoves = sParty_TsarvosaCity_StatsDojo_Kaito}
+    },
+    [TRAINER_TSARVOSA_CITY_STATS_DOJO_ZACHARY_HP_1] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_DISCIPLE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
+        .trainerPic = TRAINER_PIC_RS_BLACK_BELT,
+        .trainerName = {_Z, _a, _c, _h, _a, _r, _y, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_Disciple_Standard,
+        .partySize = NELEMS(sParty_TsarvosaCity_StatsDojo_ZacharyHP1),
+        .party = {.NoItemDefaultMoves = sParty_TsarvosaCity_StatsDojo_ZacharyHP1}
+    },
+    [TRAINER_TSARVOSA_CITY_STATS_DOJO_ZACHARY_HP_2] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_DISCIPLE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
+        .trainerPic = TRAINER_PIC_RS_BLACK_BELT,
+        .trainerName = {_Z, _a, _c, _h, _a, _r, _y, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_Disciple_Standard,
+        .partySize = NELEMS(sParty_TsarvosaCity_StatsDojo_ZacharyHP2),
+        .party = {.NoItemDefaultMoves = sParty_TsarvosaCity_StatsDojo_ZacharyHP2}
+    },
+    [TRAINER_TSARVOSA_CITY_STATS_DOJO_ZACHARY_HP_3] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_DISCIPLE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
+        .trainerPic = TRAINER_PIC_RS_BLACK_BELT,
+        .trainerName = {_Z, _a, _c, _h, _a, _r, _y, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_Disciple_Standard,
+        .partySize = NELEMS(sParty_TsarvosaCity_StatsDojo_ZacharyHP3),
+        .party = {.NoItemDefaultMoves = sParty_TsarvosaCity_StatsDojo_ZacharyHP3}
+    },
+    [TRAINER_TSARVOSA_CITY_STATS_DOJO_NELSON_ATK_1] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_DISCIPLE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
+        .trainerPic = TRAINER_PIC_RS_BLACK_BELT,
+        .trainerName = {_N, _e, _l, _s, _o, _n, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_Disciple_Standard,
+        .partySize = NELEMS(sParty_TsarvosaCity_StatsDojo_NelsonAttack1),
+        .party = {.NoItemDefaultMoves = sParty_TsarvosaCity_StatsDojo_NelsonAttack1}
+    },
+    [TRAINER_TSARVOSA_CITY_STATS_DOJO_NELSON_ATK_2] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_DISCIPLE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
+        .trainerPic = TRAINER_PIC_RS_BLACK_BELT,
+        .trainerName = {_N, _e, _l, _s, _o, _n, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_Disciple_Standard,
+        .partySize = NELEMS(sParty_TsarvosaCity_StatsDojo_NelsonAttack2),
+        .party = {.NoItemDefaultMoves = sParty_TsarvosaCity_StatsDojo_NelsonAttack2}
+    },
+    [TRAINER_TSARVOSA_CITY_STATS_DOJO_NELSON_ATK_3] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_DISCIPLE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
+        .trainerPic = TRAINER_PIC_RS_BLACK_BELT,
+        .trainerName = {_N, _e, _l, _s, _o, _n, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_Disciple_Standard,
+        .partySize = NELEMS(sParty_TsarvosaCity_StatsDojo_NelsonAttack3),
+        .party = {.NoItemDefaultMoves = sParty_TsarvosaCity_StatsDojo_NelsonAttack3}
+    },
+    [TRAINER_TSARVOSA_CITY_STATS_DOJO_DION_DEF_1] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_DISCIPLE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
+        .trainerPic = TRAINER_PIC_RS_BLACK_BELT,
+        .trainerName = {_D, _i, _o, _n, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_Disciple_Standard,
+        .partySize = NELEMS(sParty_TsarvosaCity_StatsDojo_DionDefense1),
+        .party = {.NoItemDefaultMoves = sParty_TsarvosaCity_StatsDojo_DionDefense1}
+    },
+    [TRAINER_TSARVOSA_CITY_STATS_DOJO_DION_DEF_2] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_DISCIPLE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
+        .trainerPic = TRAINER_PIC_RS_BLACK_BELT,
+        .trainerName = {_D, _i, _o, _n, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_Disciple_Standard,
+        .partySize = NELEMS(sParty_TsarvosaCity_StatsDojo_DionDefense2),
+        .party = {.NoItemDefaultMoves = sParty_TsarvosaCity_StatsDojo_DionDefense2}
+    },
+    [TRAINER_TSARVOSA_CITY_STATS_DOJO_DION_DEF_3] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_DISCIPLE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
+        .trainerPic = TRAINER_PIC_RS_BLACK_BELT,
+        .trainerName = {_D, _i, _o, _n, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_Disciple_Standard,
+        .partySize = NELEMS(sParty_TsarvosaCity_StatsDojo_DionDefense3),
+        .party = {.NoItemDefaultMoves = sParty_TsarvosaCity_StatsDojo_DionDefense3}
+    },
+    [TRAINER_TSARVOSA_CITY_STATS_DOJO_SEYMOUR_SPATK_1] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_DISCIPLE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
+        .trainerPic = TRAINER_PIC_RS_BLACK_BELT,
+        .trainerName = {_S, _e, _y, _m, _o, _u, _r, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_Disciple_Standard,
+        .partySize = NELEMS(sParty_TsarvosaCity_StatsDojo_SeymourSpecialAttack1),
+        .party = {.NoItemDefaultMoves = sParty_TsarvosaCity_StatsDojo_SeymourSpecialAttack1}
+    },
+    [TRAINER_TSARVOSA_CITY_STATS_DOJO_SEYMOUR_SPATK_2] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_DISCIPLE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
+        .trainerPic = TRAINER_PIC_RS_BLACK_BELT,
+        .trainerName = {_S, _e, _y, _m, _o, _u, _r, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_Disciple_Standard,
+        .partySize = NELEMS(sParty_TsarvosaCity_StatsDojo_SeymourSpecialAttack2),
+        .party = {.NoItemDefaultMoves = sParty_TsarvosaCity_StatsDojo_SeymourSpecialAttack2}
+    },
+    [TRAINER_TSARVOSA_CITY_STATS_DOJO_SEYMOUR_SPATK_3] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_DISCIPLE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
+        .trainerPic = TRAINER_PIC_RS_BLACK_BELT,
+        .trainerName = {_S, _e, _y, _m, _o, _u, _r, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_Disciple_Standard,
+        .partySize = NELEMS(sParty_TsarvosaCity_StatsDojo_SeymourSpecialAttack3),
+        .party = {.NoItemDefaultMoves = sParty_TsarvosaCity_StatsDojo_SeymourSpecialAttack3}
+    },
+    [TRAINER_TSARVOSA_CITY_STATS_DOJO_GARLAND_SPDEF_1] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_DISCIPLE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
+        .trainerPic = TRAINER_PIC_RS_BLACK_BELT,
+        .trainerName = {_G, _a, _r, _l, _a, _n, _d, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_Disciple_Standard,
+        .partySize = NELEMS(sParty_TsarvosaCity_StatsDojo_GarlandSpecialDefense1),
+        .party = {.NoItemDefaultMoves = sParty_TsarvosaCity_StatsDojo_GarlandSpecialDefense1}
+    },
+    [TRAINER_TSARVOSA_CITY_STATS_DOJO_GARLAND_SPDEF_2] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_DISCIPLE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
+        .trainerPic = TRAINER_PIC_RS_BLACK_BELT,
+        .trainerName = {_G, _a, _r, _l, _a, _n, _d, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_Disciple_Standard,
+        .partySize = NELEMS(sParty_TsarvosaCity_StatsDojo_GarlandSpecialDefense2),
+        .party = {.NoItemDefaultMoves = sParty_TsarvosaCity_StatsDojo_GarlandSpecialDefense2}
+    },
+    [TRAINER_TSARVOSA_CITY_STATS_DOJO_GARLAND_SPDEF_3] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_DISCIPLE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
+        .trainerPic = TRAINER_PIC_RS_BLACK_BELT,
+        .trainerName = {_G, _a, _r, _l, _a, _n, _d, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_Disciple_Standard,
+        .partySize = NELEMS(sParty_TsarvosaCity_StatsDojo_GarlandSpecialDefense3),
+        .party = {.NoItemDefaultMoves = sParty_TsarvosaCity_StatsDojo_GarlandSpecialDefense3}
+    },
+    [TRAINER_TSARVOSA_CITY_STATS_DOJO_SIDNEY_SPEED_1] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_DISCIPLE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
+        .trainerPic = TRAINER_PIC_RS_BLACK_BELT,
+        .trainerName = {_S, _i, _d, _n, _e, _y, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_Disciple_Standard,
+        .partySize = NELEMS(sParty_TsarvosaCity_StatsDojo_SidneySpeed1),
+        .party = {.NoItemDefaultMoves = sParty_TsarvosaCity_StatsDojo_SidneySpeed1}
+    },
+    [TRAINER_TSARVOSA_CITY_STATS_DOJO_SIDNEY_SPEED_2] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_DISCIPLE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
+        .trainerPic = TRAINER_PIC_RS_BLACK_BELT,
+        .trainerName = {_S, _i, _d, _n, _e, _y, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_Disciple_Standard,
+        .partySize = NELEMS(sParty_TsarvosaCity_StatsDojo_SidneySpeed2),
+        .party = {.NoItemDefaultMoves = sParty_TsarvosaCity_StatsDojo_SidneySpeed2}
+    },
+    [TRAINER_TSARVOSA_CITY_STATS_DOJO_SIDNEY_SPEED_3] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_DISCIPLE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
+        .trainerPic = TRAINER_PIC_RS_BLACK_BELT,
+        .trainerName = {_S, _i, _d, _n, _e, _y, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_Disciple_Standard,
+        .partySize = NELEMS(sParty_TsarvosaCity_StatsDojo_SidneySpeed3),
+        .party = {.NoItemDefaultMoves = sParty_TsarvosaCity_StatsDojo_SidneySpeed3}
     },
     // #endregion
     // #endregion
