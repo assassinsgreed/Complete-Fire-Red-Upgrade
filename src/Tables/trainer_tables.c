@@ -4811,7 +4811,7 @@ const struct TrainerMonNoItemDefaultMoves sParty_TsarvosaCity_StatsDojo_ZacharyH
 
 const struct TrainerMonNoItemDefaultMoves sParty_TsarvosaCity_StatsDojo_ZacharyHP3[] = {
     { .lvl = 1, .species = SPECIES_SLAKING },
-    { .lvl = 1, .species = SPECIES_STUNFISK_G }, // Note this is 2 EVs due to a huge lack of 3EV HP pokemon that aren't legendaries
+    { .lvl = 1, .species = SPECIES_SLAKING },
     { .lvl = 1, .species = SPECIES_BLISSEY }
 };
 
