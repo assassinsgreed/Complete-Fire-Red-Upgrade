@@ -103,7 +103,7 @@ EventScript_TsarvosaCity_PokemonCenter_Girl:
 MapScript_TsarvosaCity_StatsDojo:
     mapscript MAP_SCRIPT_ON_FRAME_TABLE LevelScripts_StatsDojo_AttendantCutscene
 	mapscript MAP_SCRIPT_ON_TRANSITION MapScript_StatsDojo_PositionAttendant
-    @ TODO in a future ticket: on menu close to reset trainers
+    mapscript MAP_SCRIPT_ON_RESUME MapResumeScript_ResetEVDiscipleFlags
     .byte MAP_SCRIPT_TERMIN
 
 LevelScripts_StatsDojo_AttendantCutscene:
@@ -138,6 +138,27 @@ MapScript_StatsDojo_PositionAttendant:
     setobjectmovementtype Attendant look_down
     end
 
+MapResumeScript_ResetEVDiscipleFlags:
+    cleartrainerflag 407 @ Level 1 HP
+    cleartrainerflag 408 @ Level 2 HP
+    cleartrainerflag 409 @ Level 3 HP
+    cleartrainerflag 410 @ Level 1 Attack
+    cleartrainerflag 411 @ Level 2 Attack
+    cleartrainerflag 412 @ Level 3 Attack
+    cleartrainerflag 413 @ Level 1 Defense
+    cleartrainerflag 414 @ Level 2 Defense
+    cleartrainerflag 415 @ Level 3 Defense
+    cleartrainerflag 416 @ Level 1 Special Attack
+    cleartrainerflag 417 @ Level 2 Special Attack
+    cleartrainerflag 418 @ Level 3 Special Attack
+    cleartrainerflag 419 @ Level 1 Special Defense
+    cleartrainerflag 420 @ Level 2 Special Defense
+    cleartrainerflag 421 @ Level 3 Special Defense
+    cleartrainerflag 422 @ Level 1 Speed
+    cleartrainerflag 423 @ Level 2 Speed
+    cleartrainerflag 424 @ Level 3 Speed
+    end
+
 .global EventScript_TsarvosaCity_StatsDojo_Attendant
 EventScript_TsarvosaCity_StatsDojo_Attendant:
     npcchatwithmovement gText_TsarvosaCity_StatsDojo_AttendantRegularChat m_LookDown
@@ -154,7 +175,7 @@ EventScript_TsarvosaCity_StatsDojo_Kaito:
     call PrepareKaitoBattle
     call SetupMugshotGymLeaderAndBosses
     msgbox gText_TsarvosaCity_StatsDojo_KaitoChoseYes MSG_NORMAL
-    trainerbattle9 0x1 406 0x100 gText_TsarvosaCity_StatsDojo_KaitoLoses gText_TsarvosaCity_StatsDojo_KaitoWins
+    trainerbattle9 0x1 406 0x100 gText_TsarvosaCity_StatsDojo_KaitoLoses gText_TsarvosaCity_StatsDojo_KaitoWins    
     clearflag 0x915 @ Can use items again
     compare LASTRESULT TRUE
     if equal _goto LostToKaito
@@ -705,6 +726,118 @@ AskToAssessMore:
 
 ChoseNotToAssess:
     msgbox gText_TsarvosaCity_StatsDojo_NotAssessing MSG_NORMAL
+    end
+
+.global EventScript_TsarvosaCity_StatsDojo_HPDisciple
+EventScript_TsarvosaCity_StatsDojo_HPDisciple:
+    bufferstring 0x0 gText_Common_StatHP
+    setvar 0x4000 407 @ Level 1 HP trainer
+    goto EVDiscipleCommon
+    end
+
+.global EventScript_TsarvosaCity_StatsDojo_AttackDisciple
+EventScript_TsarvosaCity_StatsDojo_AttackDisciple:
+    bufferstring 0x0 gText_Common_StatAttack
+    setvar 0x4000 410 @ Level 1 Attack trainer
+    goto EVDiscipleCommon
+    end
+
+.global EventScript_TsarvosaCity_StatsDojo_DefenseDisciple
+EventScript_TsarvosaCity_StatsDojo_DefenseDisciple:
+    bufferstring 0x0 gText_Common_StatDefense
+    setvar 0x4000 413 @ Level 1 Defense trainer
+    goto EVDiscipleCommon
+    end
+
+.global EventScript_TsarvosaCity_StatsDojo_SpecialAttackDisciple
+EventScript_TsarvosaCity_StatsDojo_SpecialAttackDisciple:
+    bufferstring 0x0 gText_Common_StatSpecialAttack
+    setvar 0x4000 416 @ Level 1 Special Attack trainer
+    goto EVDiscipleCommon
+    end
+
+.global EventScript_TsarvosaCity_StatsDojo_SpecialDefenseDisciple
+EventScript_TsarvosaCity_StatsDojo_SpecialDefenseDisciple:
+    bufferstring 0x0 gText_Common_StatSpecialDefense
+    setvar 0x4000 419 @ Level 1 Special Defense trainer
+    goto EVDiscipleCommon
+    end
+
+.global EventScript_TsarvosaCity_StatsDojo_SpeedDisciple
+EventScript_TsarvosaCity_StatsDojo_SpeedDisciple:
+    bufferstring 0x0 gText_Common_StatSpeed
+    setvar 0x4000 422 @ Level 1 Speed trainer
+    goto EVDiscipleCommon
+    end
+
+EVDiscipleCommon:
+    faceplayer
+    lock
+    msgbox gText_TsarvosaCity_StatsDojo_EVDiscipleIntro MSG_NORMAL
+    checktrainerflag 406
+    if NOT_SET _goto FacilitiesCannotOfferServices
+    msgbox gText_TsarvosaCity_StatsDojo_EVDiscipleBattleConfirmation MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto ChoseNotToBattleEVDisciple
+    goto ChooseBattleLevel
+
+ChooseBattleLevel:
+    msgbox gText_TsarvosaCity_StatsDojo_EVDiscipleBattleAccepted MSG_KEEPOPEN
+    multichoiceoption gText_Level1 0
+    multichoiceoption gText_Level2 1
+    multichoiceoption gText_Level3 2
+	multichoiceoption gText_ChangeMind 3
+	multichoice 0x0 0x0 FOUR_MULTICHOICE_OPTIONS FALSE
+	switch LASTRESULT
+	case 0, DoLevel1Battle
+    case 1, DoLevel2Battle
+    case 2, DoLevel3Battle
+	case 3, ChoseNotToBattleEVDisciple
+    goto ChoseNotToBattleEVDisciple
+
+DoLevel1Battle:
+    buffernumber 0x0 0x1
+    copyvar 0x4001 0x4000 @ Stay at the level they're at
+    goto DoBattleCommon
+
+DoLevel2Battle:
+    compare 0x40A0 0x1 @ Level 2
+    if lessthan _goto CannotBattleChosenLevel
+    buffernumber 0x0 0x2
+    copyvar 0x4001 0x4000
+    addvar 0x4001 0x1 @ For level 2
+    goto DoBattleCommon
+
+DoLevel3Battle:
+    compare 0x40A0 0x2 @ Level 3
+    if lessthan _goto CannotBattleChosenLevel
+    buffernumber 0x0 0x3
+    copyvar 0x4001 0x4000
+    addvar 0x4001 0x2 @ For level 3
+    goto DoBattleCommon
+
+CannotBattleChosenLevel:
+    msgbox gText_TsarvosaCity_StatsDojo_EVDiscipleBattleLevelChoiceIsTooHigh MSG_NORMAL
+    goto ChooseBattleLevel
+
+DoBattleCommon:
+    msgbox gText_TsarvosaCity_StatsDojo_EVDiscipleBattleLevelConfirmation MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto ChooseBattleLevel
+    msgbox gText_TsarvosaCity_StatsDojo_EVDiscipleBattleLevelConfirmationYes MSG_NORMAL
+    setvar 0x8000 0xFEFE @ Continue lost battles
+    setflag 0x90E @ Scale disciple teams
+    trainerbattle9 0x0 0x4001 0x0 gText_TsarvosaCity_StatsDojo_EVDiscipleBattlePostBattle gText_TsarvosaCity_StatsDojo_EVDiscipleBattlePostBattle
+    clearflag 0x90E @ Stop scaling disciple teams
+    msgbox gText_TsarvosaCity_StatsDojo_EVDiscipleBattlePostBattleHealing MSG_NORMAL
+    call PlayerHeal
+    msgbox gText_TsarvosaCity_StatsDojo_EVDiscipleBattleAskToBattleAgainSometime MSG_NORMAL
+    release
+    end
+
+ChoseNotToBattleEVDisciple:
+    msgbox gText_TsarvosaCity_StatsDojo_EVDiscipleBattleRejected MSG_NORMAL
+    release
     end
 
 m_AttendantWalksToPlayer: .byte walk_down, walk_down, end_m

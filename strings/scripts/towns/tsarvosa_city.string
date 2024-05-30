@@ -279,3 +279,33 @@ Would you like me to assess another\nPok\emon's effort?
 
 #org @gText_TsarvosaCity_StatsDojo_NotAssessing
 Very well. I hope you get out there\nand toughen up your Pok\emon!
+
+#org @gText_TsarvosaCity_StatsDojo_EVDiscipleIntro
+I am training my Pok\emon to excel in\nthe [BUFFER1] stat.
+
+#org @gText_TsarvosaCity_StatsDojo_EVDiscipleBattleConfirmation
+Would you like to battle with me, to\ntoughen your own Pok\emon up?
+
+#org @gText_TsarvosaCity_StatsDojo_EVDiscipleBattleAccepted
+Which team level would you like me\nto bring?
+
+#org @gText_TsarvosaCity_StatsDojo_EVDiscipleBattleRejected
+Too bad!
+
+#org @gText_TsarvosaCity_StatsDojo_EVDiscipleBattleLevelConfirmation
+Level [BUFFER1]? Are you sure?
+
+#org @gText_TsarvosaCity_StatsDojo_EVDiscipleBattleLevelConfirmationYes
+Great! Let's get training.
+
+#org @gText_TsarvosaCity_StatsDojo_EVDiscipleBattlePostBattle
+That was a productive training match.
+
+#org @gText_TsarvosaCity_StatsDojo_EVDiscipleBattlePostBattleHealing
+Thank you for that battle.\nHere, let me heal your Pok\emon[.]
+
+#org @gText_TsarvosaCity_StatsDojo_EVDiscipleBattleAskToBattleAgainSometime
+Let's battle again sometime, okay?
+
+#org @gText_TsarvosaCity_StatsDojo_EVDiscipleBattleLevelChoiceIsTooHigh
+Sorry! I haven't been able to get\nPok\emon strong enough yet.\pIf you were to invest in our dojo,\nperhaps I could[.]
