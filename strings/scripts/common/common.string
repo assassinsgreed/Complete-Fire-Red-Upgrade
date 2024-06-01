@@ -193,17 +193,35 @@ Pok\emon up to level [BUFFER1] will now\nobey you without fail.
 #org @gText_Common_StatHP
 HP
 
+#org @gText_Common_StatHPMaxed
+[GREEN]HP
+
 #org @gText_Common_StatAttack
 Attack
+
+#org @gText_Common_StatAttackMaxed
+[GREEN]Attack
 
 #org @gText_Common_StatDefense
 Defense
 
+#org @gText_Common_StatDefenseMaxed
+[GREEN]Defense
+
 #org @gText_Common_StatSpecialAttack
 Special Attack
+
+#org @gText_Common_StatSpecialAttackMaxed
+[GREEN]Special Attack
 
 #org @gText_Common_StatSpecialDefense
 Special Defense
 
+#org @gText_Common_StatSpecialDefenseMaxed
+[GREEN]Special Defense
+
 #org @gText_Common_StatSpeed
 Speed
+
+#org @gText_Common_StatSpeedMaxed
+[GREEN]Speed

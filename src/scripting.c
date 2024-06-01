@@ -3386,3 +3386,20 @@ void CalculateEVTotal()
 	gSpecialVar_LastResult += GetMonData(&gPlayerParty[Var8004], MON_DATA_SPDEF_EV, NULL);
 	gSpecialVar_LastResult += GetMonData(&gPlayerParty[Var8004], MON_DATA_SPEED_EV, NULL);
 }
+
+// Sets LASTRESULT to true if all IVs on the Pokemon in Var8004 are maxed, and false if not
+void CheckIfAllIVsAreMaxed()
+{
+	u16 partyId = Var8004;
+	gSpecialVar_LastResult = 0;
+
+	if (partyId >= PARTY_SIZE)
+		return;
+
+	gSpecialVar_LastResult += GetMonData(&gPlayerParty[Var8004], MON_DATA_HP_IV, NULL);
+	gSpecialVar_LastResult += GetMonData(&gPlayerParty[Var8004], MON_DATA_ATK_IV, NULL);
+	gSpecialVar_LastResult += GetMonData(&gPlayerParty[Var8004], MON_DATA_DEF_IV, NULL);
+	gSpecialVar_LastResult += GetMonData(&gPlayerParty[Var8004], MON_DATA_SPATK_IV, NULL);
+	gSpecialVar_LastResult += GetMonData(&gPlayerParty[Var8004], MON_DATA_SPDEF_IV, NULL);
+	gSpecialVar_LastResult += GetMonData(&gPlayerParty[Var8004], MON_DATA_SPEED_IV, NULL);
+}

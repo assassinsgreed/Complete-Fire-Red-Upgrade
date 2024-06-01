@@ -229,6 +229,9 @@ Hello! I wish I could sell you\nthings, but I have no stock.\pIf you could inves
 #org @gText_TsarvosaCity_StatsDojo_PowerItemsShop
 [BLACK]Hello! I sell Power Items that raise\nyour Pok\emons' stats more quickly.
 
+#org @gText_TsarvosaCity_StatsDojo_ChoseAnEgg
+That is preposterous!\pI can't work with the egg of a\nPok\emon that has yet to hatch.
+
 #org @gText_TsarvosaCity_StatsDojo_PowerItemResearchIntro
 I'm studying the effect Power Items\nhave on a Pok\emon's stats.
 
@@ -249,9 +252,6 @@ By-the-by, I can assess the amount\nof effort your Pok\emon has put in.\pIn othe
 
 #org @gText_TsarvosaCity_StatsDojo_ChooseAPokemonToAssessEVsFor
 Now, which Pok\emon would you like to\nassess?
-
-#org @gText_TsarvosaCity_StatsDojo_ChoseToAssessEgg
-That is preposterous!\pI can't check the EVs of a Pok\emon\nthat has yet to hatch.
 
 #org @gText_TsarvosaCity_StatsDojo_EVAssessmentVeryPoor
 Oh dear[.] [BUFFER1] hasn't put much\neffort in at all[.]
@@ -279,6 +279,72 @@ Would you like me to assess another\nPok\emon's effort?
 
 #org @gText_TsarvosaCity_StatsDojo_NotAssessing
 Very well. I hope you get out there\nand toughen up your Pok\emon!
+
+#org @gText_TsarvosaCity_StatsDojo_IVMaxingScientist_Intro
+Good day. My colleagues and I have\nbeen researching Pok\emon's innate\lpotential.\pIn other words, how to maximize\ntheir Individual Values, or IVs.
+
+#org @gText_TsarvosaCity_StatsDojo_IVMaxingScientist_NoInvestment
+Unfortunately, we haven't been able\nto make progress in our research.\pIf we had some additional funding,\nhowever, I'm sure we could!
+
+#org @gText_TsarvosaCity_StatsDojo_IVMaxingScientist_NotFullyInvested
+We're making progress, but could\ndo with some funding[.]
+
+#org @gText_TsarvosaCity_StatsDojo_IVMaxingScientist_FullyInvested
+Thanks to your generosity, we've\nresearched everything we planned\lto!
+
+#org @gText_TsarvosaCity_StatsDojo_IVMaxingScientist_ProceedWithServicesConfirmation
+[BLUE]Would you like to unlock a Pok\emon's\npotential?
+
+#org @gText_TsarvosaCity_StatsDojo_IVMaxingScientist_PokemonChoice
+Which Pok\emon would you like me to\nwork with?
+
+#org @gText_TsarvosaCity_StatsDojo_IVMaxingScientist_ChoseNotToProceed
+[BLUE]Very well. You are welcome to return\nif you change your mind.
+
+#org @gText_TsarvosaCity_StatsDojo_IVMaxingScientist_PokemonChoiceConfirmation
+[BUFFER1]? Are you sure?
+
+#org @gText_TsarvosaCity_StatsDojo_IVMaxingScientist_ResearchLevel2Services
+We've researched the ability to\nmaximize a single stat!\pIn exchange, we ask for a Bottle\nCap.
+
+#org @gText_TsarvosaCity_StatsDojo_IVMaxingScientist_BottlecapChoiceConfirmation
+Is this acceptable?\n[BLACK](Held: [BUFFER1])[BLUE]
+
+#org @gText_TsarvosaCity_StatsDojo_IVMaxingScientist_InsufficientCaps
+I'm sorry, but you don't have\nenough to cover my fee.
+
+#org @gText_TsarvosaCity_StatsDojo_IVMaxingScientist_ResearchLevel3Services
+Our research has enabled us to\nmaximize a single IV for a Bottle\lCap, or all for a Gold Bottle Cap.\pWhich service are you interested in?\n[BLACK](Held: [BUFFER1] Regular, [BUFFER2] Gold)[BLUE]
+
+#org @gText_TsarvosaCity_StatsDojo_IVMaxingScientist_Choice_BottleCap
+1 Stat[ALIGN][40][GREEN](1 Bottle Cap)
+
+#org @gText_TsarvosaCity_StatsDojo_IVMaxingScientist_Choice_GoldBottleCap
+All Stats[ALIGN][40][GREEN](1 Gold Bottle Cap)
+
+#org @gText_TsarvosaCity_StatsDojo_IVMaxingScientist_StatChoiceQuestion
+[BLUE]Which stat do you want to maximize?
+
+#org @gText_TsarvosaCity_StatsDojo_IVMaxingScientist_ChosenStatIsAlreadyMaxed
+[BLUE]This stat is already maxed out[.]
+
+#org @gText_TsarvosaCity_StatsDojo_IVMaxingScientist_AllStatsArelreadyMaxed
+All of [BUFFER1]'s stats are already\nmaxed[.] It would have no effect.\pPlease, choose a different Pok\emon.
+
+#org @gText_TsarvosaCity_StatsDojo_IVMaxingScientist_ChosenStatConfirmation
+[BLUE][BUFFER1]? Are you sure?
+
+#org @gText_TsarvosaCity_StatsDojo_IVMaxingScientist_StatIsMaxedOut
+[BLUE]The [BUFFER1] stat was maxed out!
+
+#org @gText_TsarvosaCity_StatsDojo_IVMaxingScientist_AllStatsConfirmation
+[BLUE]Are you sure you want to maximize\nall of [BUFFER1]'s stats?
+
+#org @gText_TsarvosaCity_StatsDojo_IVMaxingScientist_AllStatsAreMaxedOut
+All of [BUFFER1]'s stats have been\nmaxed out!
+
+#org @gText_TsarvosaCity_StatsDojo_IVMaxingScientist_Choice_ChangedMind
+Nevemind
 
 #org @gText_TsarvosaCity_StatsDojo_EVDiscipleIntro
 I am training my Pok\emon to excel in\nthe [BUFFER1] stat.
