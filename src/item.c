@@ -2191,6 +2191,16 @@ void StorePokeChipCount(void)
 	VarSet(0x8005, CountTotalItemQuantityInBag(ITEM_POKE_CHIP));
 }
 
+void StoreBottleCapCount(void)
+{
+	VarSet(0x8005, CountTotalItemQuantityInBag(ITEM_BOTTLE_CAP));
+}
+
+void StoreGoldBottleCapCount(void)
+{
+	VarSet(0x8005, CountTotalItemQuantityInBag(ITEM_GOLD_BOTTLE_CAP));
+}
+
 // Removes Pokechips by var 0x4006
 void SubtractPokeChipByVar(void)
 {

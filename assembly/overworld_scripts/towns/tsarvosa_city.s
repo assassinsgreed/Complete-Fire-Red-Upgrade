@@ -658,14 +658,7 @@ PowerItemsAtMaxLevel:
 
 AssessPokemonsEVs:
     msgbox gText_TsarvosaCity_StatsDojo_ChooseAPokemonToAssessEVsFor MSG_NORMAL
-    special 0x9F @ Select a Pokemon and store it's position in 0x8004
-    waitstate
-    compare 0x8004 0x6 @ Don't continue if user backed out
-    if greaterorequal _goto ChoseNotToAssess
-    bufferpartypokemon 0x0 0x8004
-    callasm StoreIsPartyMonEgg
-    compare LASTRESULT TRUE
-    if TRUE _goto ChoseToAssessAnEgg
+    call ChoosePokemon
     callasm CalculateEVTotal
     compare LASTRESULT 100
     if lessthan _goto EVAssessmentVeryPoor
@@ -684,8 +677,19 @@ AssessPokemonsEVs:
     msgbox gText_TsarvosaCity_StatsDojo_EVAssessmentFullFollowUp MSG_NORMAL
     goto AskToAssessMore
 
-ChoseToAssessAnEgg:
-    msgbox gText_TsarvosaCity_StatsDojo_ChoseToAssessEgg MSG_NORMAL
+ChoosePokemon:
+    special 0x9F @ Select a Pokemon and store it's position in 0x8004
+    waitstate
+    compare 0x8004 0x6 @ Don't continue if user backed out
+    if greaterorequal _goto ChoseNotToAssess
+    bufferpartypokemon 0x0 0x8004
+    callasm StoreIsPartyMonEgg
+    compare LASTRESULT TRUE
+    if TRUE _goto ChoseAnEgg
+    return
+
+ChoseAnEgg:
+    msgbox gText_TsarvosaCity_StatsDojo_ChoseAnEgg MSG_NORMAL
     goto AssessPokemonsEVs
 
 EVAssessmentVeryPoor:
@@ -726,6 +730,293 @@ AskToAssessMore:
 
 ChoseNotToAssess:
     msgbox gText_TsarvosaCity_StatsDojo_NotAssessing MSG_NORMAL
+    end
+
+.global EventScript_TsarvosaCity_StatsDojo_IVMaxingScientist
+EventScript_TsarvosaCity_StatsDojo_IVMaxingScientist:
+    msgbox gText_TsarvosaCity_StatsDojo_IVMaxingScientist_Intro MSG_NORMAL
+    checktrainerflag 406
+    if NOT_SET _goto FacilitiesCannotOfferServices
+    compare 0x409F 0x0 @ IV Maxer Level 1
+    if equal _goto CannotMaximizeIVs
+    compare 0x409F 0x2 @ IV Maxer Level 3
+    if lessthan _call IVMaxerNotFullyInvested
+    if equal _call IVMaxerFullyInvested
+    goto AskToMaximizeAPokemonsStats
+
+AskToMaximizeAPokemonsStats:
+    msgbox gText_TsarvosaCity_StatsDojo_IVMaxingScientist_ProceedWithServicesConfirmation MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto ChoseNotToMax
+    goto ChoosePokemonToMaxIVsOf
+
+ChoosePokemonToMaxIVsOf:
+    msgbox gText_TsarvosaCity_StatsDojo_IVMaxingScientist_PokemonChoice MSG_NORMAL
+    call ChoosePokemon
+    msgbox gText_TsarvosaCity_StatsDojo_IVMaxingScientist_PokemonChoiceConfirmation MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto ChoosePokemonToMaxIVsOf
+    compare 0x409F 0x1 @ IV Maxer Level 2
+    if equal _goto ResearchLevel2Services
+    goto ResearchLevel3Services
+
+ResearchLevel2Services:
+    msgbox gText_TsarvosaCity_StatsDojo_IVMaxingScientist_ResearchLevel2Services MSG_NORMAL
+    callasm StoreBottleCapCount
+	buffernumber 0x0 0x8005 @ Take stored Bottlecap count
+    msgbox gText_TsarvosaCity_StatsDojo_IVMaxingScientist_BottlecapChoiceConfirmation MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto ChoosePokemonToMaxIVsOf
+    checkitem ITEM_BOTTLE_CAP 0x1
+    compare LASTRESULT TRUE
+    if TRUE _goto ChooseStatToMaximize
+    msgbox gText_TsarvosaCity_StatsDojo_IVMaxingScientist_InsufficientCaps MSG_NORMAL
+    end
+
+ResearchLevel3Services:
+    callasm StoreBottleCapCount
+	buffernumber 0x0 0x8005 @ Take stored Bottlecap count
+    callasm StoreGoldBottleCapCount
+	buffernumber 0x1 0x8005 @ Take stored Gold Bottlecap count
+    msgbox gText_TsarvosaCity_StatsDojo_IVMaxingScientist_ResearchLevel3Services MSG_KEEPOPEN
+    multichoiceoption gText_TsarvosaCity_StatsDojo_IVMaxingScientist_Choice_BottleCap 0
+	multichoiceoption gText_TsarvosaCity_StatsDojo_IVMaxingScientist_Choice_GoldBottleCap 1
+    multichoiceoption gText_TsarvosaCity_StatsDojo_IVMaxingScientist_Choice_ChangedMind 2
+    multichoice 0x0 0x0 THREE_MULTICHOICE_OPTIONS FALSE
+    copyvar MULTICHOICE_SELECTION LASTRESULT
+	switch MULTICHOICE_SELECTION
+	case 0, ChooseStatToMaximize
+	case 1, MaximizeAllIVs
+    case 2, ResearchLevel3Services
+	case 0xF, ResearchLevel3Services
+	goto ResearchLevel3Services
+
+ChooseStatToMaximize:
+    checkitem ITEM_BOTTLE_CAP 0x1
+    compare LASTRESULT TRUE
+    if FALSE _goto InsufficentCaps
+    callasm CheckIfAllIVsAreMaxed
+    compare LASTRESULT 186 @ Perfect IVs
+    if equal _goto AllIVsAreAlreadyMaxed
+    msgbox gText_TsarvosaCity_StatsDojo_IVMaxingScientist_StatChoiceQuestion MSG_KEEPOPEN
+    setvar 0x8003 0x0 @ Check IVs from party
+    @ var 0x8004 represents the party slot
+    setvar 0x8005 0x0 @ Check HP
+    call SetHpText
+    setvar 0x8005 0x1 @ Check Attack
+    call SetAttackText
+    setvar 0x8005 0x2 @ Check Defense
+    call SetDefenseText
+    setvar 0x8005 0x4 @ Check Special Attack
+    call SetSpecialAttackText
+    setvar 0x8005 0x5 @ Check Special Defense
+    call SetSpecialDefenseText
+    setvar 0x8005 0x3 @ Check Speed
+    call SetSpeedText
+    multichoiceoption gText_TsarvosaCity_StatsDojo_IVMaxingScientist_Choice_ChangedMind 6
+    multichoice 0x0 0x0 SEVEN_MULTICHOICE_OPTIONS FALSE
+    copyvar MULTICHOICE_SELECTION LASTRESULT
+	switch MULTICHOICE_SELECTION
+    case 0, MaxHPConfirmation
+	case 1, MaxAttackConfirmation
+    case 2, MaxDefenseConfirmation
+    case 3, MaxSpecialAttackConfirmation
+    case 4, MaxSpecialDefenseConfirmation
+    case 5, MaxSpeedConfirmation
+    case 6, ChoseNotToMax
+	case 0xF, ChoseNotToMax
+    goto ChoseNotToMax
+
+MaxHPConfirmation:
+    bufferstring 0x0 gText_Common_StatHP
+    setvar 0x8005 0x0
+    goto Maximize1IV
+
+MaxAttackConfirmation:
+    bufferstring 0x0 gText_Common_StatAttack
+    setvar 0x8005 0x1
+    goto Maximize1IV
+
+MaxDefenseConfirmation:
+    bufferstring 0x0 gText_Common_StatDefense
+    setvar 0x8005 0x2
+    goto Maximize1IV
+
+MaxSpecialAttackConfirmation:
+    bufferstring 0x0 gText_Common_StatSpecialAttack
+    setvar 0x8005 0x4
+    goto Maximize1IV
+
+MaxSpecialDefenseConfirmation:
+    bufferstring 0x0 gText_Common_StatSpecialDefense
+    setvar 0x8005 0x5
+    goto Maximize1IV
+
+MaxSpeedConfirmation:
+    bufferstring 0x0 gText_Common_StatSpeed
+    setvar 0x8005 0x3
+    goto Maximize1IV
+
+Maximize1IV:
+    special2 LASTRESULT 0x8
+    compare LASTRESULT 31
+    if equal _goto IVIsAlreadyMaxed
+    msgbox gText_TsarvosaCity_StatsDojo_IVMaxingScientist_ChosenStatConfirmation MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto ChooseStatToMaximize
+    setvar 0x8006 31
+    special 0x10 @ Maximize the chosen IV
+    removeitem ITEM_BOTTLE_CAP 0x1
+    sound 0x30 @Save
+    msgbox gText_TsarvosaCity_StatsDojo_IVMaxingScientist_StatIsMaxedOut MSG_KEEPOPEN
+    goto AskToMaximizeAPokemonsStats
+
+MaximizeAllIVs:
+    checkitem ITEM_GOLD_BOTTLE_CAP 0x1
+    compare LASTRESULT TRUE
+    if FALSE _goto InsufficentCaps
+    callasm CheckIfAllIVsAreMaxed
+    compare LASTRESULT 186 @ Perfect IVs
+    if equal _goto AllIVsAreAlreadyMaxed
+    bufferpartypokemon 0x0 0x8004
+    msgbox gText_TsarvosaCity_StatsDojo_IVMaxingScientist_AllStatsConfirmation MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto ResearchLevel3Services
+    setvar 0x8006 31 @ Maxing IVs
+    setvar 0x8005 0x0 @ HP
+    special 0x10 @ Maximize the chosen IV
+    setvar 0x8005 0x1 @ Attack
+    special 0x10 @ Maximize the chosen IV
+    setvar 0x8005 0x2 @ Defense
+    special 0x10 @ Maximize the chosen IV
+    setvar 0x8005 0x3 @ Speed
+    special 0x10 @ Maximize the chosen IV
+    setvar 0x8005 0x4 @ Special Attack
+    special 0x10 @ Maximize the chosen IV
+    setvar 0x8005 0x5 @ Special Defense
+    special 0x10 @ Maximize the chosen IV
+    removeitem ITEM_GOLD_BOTTLE_CAP 0x1
+    sound 0x30 @Save
+    msgbox gText_TsarvosaCity_StatsDojo_IVMaxingScientist_AllStatsAreMaxedOut MSG_KEEPOPEN
+    goto AskToMaximizeAPokemonsStats
+
+IVIsAlreadyMaxed:
+    msgbox gText_TsarvosaCity_StatsDojo_IVMaxingScientist_ChosenStatIsAlreadyMaxed MSG_NORMAL
+    goto ChooseStatToMaximize
+
+AllIVsAreAlreadyMaxed:
+    bufferpartypokemon 0x0 0x8004
+    msgbox gText_TsarvosaCity_StatsDojo_IVMaxingScientist_AllStatsArelreadyMaxed MSG_NORMAL
+    goto ChoosePokemonToMaxIVsOf
+
+CannotMaximizeIVs:
+    msgbox gText_TsarvosaCity_StatsDojo_IVMaxingScientist_NoInvestment MSG_NORMAL
+    end
+
+InsufficentCaps:
+    msgbox gText_TsarvosaCity_StatsDojo_IVMaxingScientist_InsufficientCaps MSG_NORMAL
+    end
+
+IVMaxerNotFullyInvested:
+    msgbox gText_TsarvosaCity_StatsDojo_IVMaxingScientist_NotFullyInvested MSG_NORMAL
+    return
+
+IVMaxerFullyInvested:
+    msgbox gText_TsarvosaCity_StatsDojo_IVMaxingScientist_FullyInvested MSG_NORMAL
+    return
+
+SetHpText:
+    special2 LASTRESULT 0x8
+    compare LASTRESULT 31
+    if equal _call HPMaxed
+    if notequal _call HPNotMaxed
+    return
+
+HPMaxed:
+    multichoiceoption gText_Common_StatHPMaxed 0
+    return
+
+HPNotMaxed:
+    multichoiceoption gText_Common_StatHP 0
+    return
+
+SetAttackText:
+    special2 LASTRESULT 0x8
+    compare LASTRESULT 31
+    if equal _call AttackMaxed
+    if notequal _call AttackNotMaxed
+    return
+
+AttackMaxed:
+    multichoiceoption gText_Common_StatAttackMaxed 1
+    return
+
+AttackNotMaxed:
+    multichoiceoption gText_Common_StatAttack 1
+    return
+
+SetDefenseText:
+    special2 LASTRESULT 0x8
+    compare LASTRESULT 31
+    if equal _call DefenseMaxed
+    if notequal _call DefenseNotMaxed
+    return
+
+DefenseMaxed:
+    multichoiceoption gText_Common_StatDefenseMaxed 2
+    return
+
+DefenseNotMaxed:
+    multichoiceoption gText_Common_StatDefense 2
+    return
+
+SetSpecialAttackText:
+    special2 LASTRESULT 0x8
+    compare LASTRESULT 31
+    if equal _call SpecialAttackMaxed
+    if notequal _call SpecialAttackNotMaxed
+    return
+
+SpecialAttackMaxed:
+    multichoiceoption gText_Common_StatSpecialAttackMaxed 3
+    return
+
+SpecialAttackNotMaxed:
+    multichoiceoption gText_Common_StatSpecialAttack 3
+    return
+
+SetSpecialDefenseText:
+    special2 LASTRESULT 0x8
+    compare LASTRESULT 31
+    if equal _call SpecialDefenseMaxed
+    if notequal _call SpecialDefenseNotMaxed
+    return
+
+SpecialDefenseMaxed:
+    multichoiceoption gText_Common_StatSpecialDefenseMaxed 4
+    return
+
+SpecialDefenseNotMaxed:
+    multichoiceoption gText_Common_StatSpecialDefense 4
+    return
+
+SetSpeedText:
+    special2 LASTRESULT 0x8
+    compare LASTRESULT 31
+    if equal _call SpeedMaxed
+    if notequal _call SpeedNotMaxed
+    return
+
+SpeedMaxed:
+    multichoiceoption gText_Common_StatSpeedMaxed 5
+    return
+
+SpeedNotMaxed:
+    multichoiceoption gText_Common_StatSpeed 5
+    return
+
+ChoseNotToMax:
+    msgbox gText_TsarvosaCity_StatsDojo_IVMaxingScientist_ChoseNotToProceed MSG_NORMAL
     end
 
 .global EventScript_TsarvosaCity_StatsDojo_HPDisciple
