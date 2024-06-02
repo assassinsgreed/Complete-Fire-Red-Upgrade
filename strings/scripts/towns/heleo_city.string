@@ -212,7 +212,7 @@ Hmm! In time, you will find yourself\nin need of my gift. I can sense it.
 Very well[.] Close your eyes with me a\nmoment, and let us focus on\lprojecting our minds[.]
 
 #org @gText_HeleoNPCHouses_SwarmSwamiComplete
-I see it! There are a number of\nunusual [BUFFER2] swarming at\l[BUFFER1] right now.\pYou should hurry[.] I foresee them\nclearing out before the day is\lover.
+I see it! There are a number of\nunusual [GREEN][BUFFER2][BLUE] swarming at\l[GREEN][BUFFER1][BLUE] right now.\pYou should hurry[.] I foresee them\nclearing out before the day is\lover.
 
 #org @gText_HeleoNPCHouses_SwamiFan
 Isn't the swami just the coolest?\nThey say his predictions are never\lwrong!
