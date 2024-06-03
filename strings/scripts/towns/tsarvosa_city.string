@@ -375,3 +375,21 @@ Let's battle again sometime, okay?
 
 #org @gText_TsarvosaCity_StatsDojo_EVDiscipleBattleLevelChoiceIsTooHigh
 Sorry! I haven't been able to get\nPok\emon strong enough yet.\pIf you were to invest in our dojo,\nperhaps I could[.]
+
+#org @gText_TsarvosaCityNPCHouses_TutorConfirmation
+I've devoted myself to studying\nfantastic Pok\emon moves.\pI can teach these moves, in exchange\nfor just 10 Pok\eChips.\pAre you interested?\n(Held: [BUFFER1])
+
+#org @gText_TsarvosaCityNPCHouses_ConfirmationAccepted
+Great. Which move interests you?
+
+#org @gText_TsarvosaCityNPCHouses_Complete
+It is done! My tutelage has\nconcluded.\pCome see me again, if you require my\nservices.
+
+#org @gText_TsarvosaCityNPCHouses_TutoringRejected
+Very well. My door is always open,\nin case you change your mind.
+
+#org @gText_TsarvosaCityNPCHouses_NotEnoughPokeChips
+My apologies, but you do not have\nenough Pok\eChips to cover my fee.
+
+#org @gText_TsarvosaCityNPCHouses_TutorGirlfriend
+I met my boyfriend when I was\ntaking my gym challenge.\pThe moves he taught my Pok\emon\nhelped me secure a victory.\pThose days are far behind me, now.

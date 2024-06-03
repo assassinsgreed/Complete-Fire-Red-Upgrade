@@ -2091,3 +2091,6 @@ npc 12 1 9 EventScript_TsarvosaCity_StatsDojo_DefenseDisciple
 npc 12 1 10 EventScript_TsarvosaCity_StatsDojo_SpecialAttackDisciple
 npc 12 1 11 EventScript_TsarvosaCity_StatsDojo_SpecialDefenseDisciple
 npc 12 1 12 EventScript_TsarvosaCity_StatsDojo_SpeedDisciple
+## NPC Houses
+npc 2 3 0 EventScript_TsarvosaCity_NPCHouses_MoveTutor
+npc 2 3 1 EventScript_TsarvosaCity_NPCHouses_MoveTutorGirlfriend

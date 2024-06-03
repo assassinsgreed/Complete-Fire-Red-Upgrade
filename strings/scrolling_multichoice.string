@@ -269,4 +269,28 @@ Hydro Cannon
 #org @gText_SkyAttack
 Sky Attack
 
+#org @gText_Synthesis
+Synthesis
+
+#org @gText_SignalBeam
+Signal Beam
+
+#org @gText_IronHead
+Iron Head
+
+#org @gText_AquaTail
+Aqua Tail
+
+#org @gText_ZenHeadbutt
+Zen Headbutt
+
+#org @gText_DragonPulse
+Dragon Pulse
+
+#org @gText_BadTantrum
+Bad Tantrum
+
+#org @gText_NastyPlot
+Nasty Plot
+
 #endif

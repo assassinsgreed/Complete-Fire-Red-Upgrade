@@ -1137,3 +1137,39 @@ m_CameraMovesLeft: .byte walk_left, walk_left, walk_left, walk_left, end_m
 m_CameraMovesRight: .byte walk_right, walk_right, walk_right, walk_right, walk_right, walk_right, walk_right, walk_right, end_m
 m_CameraMovesDown: .byte walk_down, walk_down, walk_down, end_m
 m_CameraMovesUp: .byte walk_up, walk_up, walk_up, end_m
+
+@ NPC Houses
+.global EventScript_TsarvosaCity_NPCHouses_MoveTutor
+EventScript_TsarvosaCity_NPCHouses_MoveTutor:
+    faceplayer
+    callasm StorePokeChipCount
+    buffernumber 0x0 0x8005 @ Take stored PokeChip count
+    msgbox gText_TsarvosaCityNPCHouses_TutorConfirmation MSG_YESNO
+    compare LASTRESULT YES
+    IF FALSE _goto TutoringRejected
+    checkitem ITEM_POKE_CHIP 10
+    compare LASTRESULT TRUE
+    if FALSE _goto NotEnoughPokeChips
+    msgbox gText_TsarvosaCityNPCHouses_ConfirmationAccepted MSG_KEEPOPEN
+    call EventScript_Tutors_Tsarvosa
+    compare LASTRESULT TRUE
+    if equal _call TutoringComplete
+    applymovement LASTTALKED m_LookRight
+    end
+
+TutoringComplete:
+    msgbox gText_TsarvosaCityNPCHouses_Complete MSG_NORMAL
+    return
+
+TutoringRejected:
+    npcchatwithmovement gText_TsarvosaCityNPCHouses_TutoringRejected m_LookRight
+    goto End
+
+NotEnoughPokeChips:
+    npcchatwithmovement gText_TsarvosaCityNPCHouses_NotEnoughPokeChips m_LookRight
+    goto End
+
+.global EventScript_TsarvosaCity_NPCHouses_MoveTutorGirlfriend
+EventScript_TsarvosaCity_NPCHouses_MoveTutorGirlfriend:
+    npcchatwithmovement gText_TsarvosaCityNPCHouses_TutorGirlfriend m_LookLeft
+    end
