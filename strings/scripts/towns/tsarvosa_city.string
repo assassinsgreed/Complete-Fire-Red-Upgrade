@@ -375,3 +375,45 @@ Let's battle again sometime, okay?
 
 #org @gText_TsarvosaCity_StatsDojo_EVDiscipleBattleLevelChoiceIsTooHigh
 Sorry! I haven't been able to get\nPok\emon strong enough yet.\pIf you were to invest in our dojo,\nperhaps I could[.]
+
+#org @gText_TsarvosaCityNPCHouses_TutorConfirmation
+I've devoted myself to studying\nfantastic Pok\emon moves.\pI can teach these moves, in exchange\nfor just 10 Pok\eChips.\pAre you interested?\n(Held: [BUFFER1])
+
+#org @gText_TsarvosaCityNPCHouses_ConfirmationAccepted
+Great. Which move interests you?
+
+#org @gText_TsarvosaCityNPCHouses_Complete
+It is done! My tutelage has\nconcluded.\pCome see me again, if you require my\nservices.
+
+#org @gText_TsarvosaCityNPCHouses_TutoringRejected
+Very well. My door is always open,\nin case you change your mind.
+
+#org @gText_TsarvosaCityNPCHouses_NotEnoughPokeChips
+My apologies, but you do not have\nenough Pok\eChips to cover my fee.
+
+#org @gText_TsarvosaCityNPCHouses_TutorGirlfriend
+I met my boyfriend when I was\ntaking my gym challenge.\pThe moves he taught my Pok\emon\nhelped me secure a victory.\pThose days are far behind me, now.
+
+#org @gText_TsarvosaCityNPCHouses_SlwobroTrade_Request
+Hi! I just moved here from the Galar\nregion.\pI heard the Slowbros around here\nare different from the ones back\lhome.\pIf you have one, would you be\nwilling to trade it for my Galarian\lSlowbro?
+
+#org @gText_TsarvosaCityNPCHouses_SlwobroTrade_ChoosingPokemon
+Oh, I'm so excited! Which Slowbro\nwill you trade me, I wonder[.]
+
+#org @gText_TsarvosaCityNPCHouses_SlwobroTrade_PokemonChoiceConfirmation
+Are you sure that's the one you want\nto trade?
+
+#org @gText_TsarvosaCityNPCHouses_SlwobroTrade_InitiatingTrade
+Yay! Let's trade!
+
+#org @gText_TsarvosaCityNPCHouses_SlwobroTrade_Declined
+Okay, no big deal! If you change\nyour mind, come back though, okay?
+
+#org @gText_TsarvosaCityNPCHouses_SlwobroTrade_WrongPokemon
+Umm[.] Thanks, but no thanks[.]\nI wanted a regular Slowbro.
+
+#org @gText_TsarvosaCityNPCHouses_SlwobroTrade_Complete
+Isn't it neat how different our\nSlowbros look?\pI guess Pok\emon really do come in\nall shapes and sizes!
+
+#org @gText_TsarvosaCityNPCHouses_SlwobroTradeMother
+My daughter has been awfully lonely\nsince we moved.\pShe would never say so, though!\pIf you aren't too busy, would you\nkindly talk to her?\pI'm sure she would appreciate it.

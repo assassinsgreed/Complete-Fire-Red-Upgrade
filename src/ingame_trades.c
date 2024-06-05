@@ -36,6 +36,8 @@ extern u8 gText_InGameTrade_Rocky[];
 extern u8 gText_InGameTrade_Chopper[];
 extern u8 gText_InGameTrade_Autumn[];
 extern u8 gText_InGameTrade_OTRival[];
+extern u8 gText_InGameTrade_Boris[];
+extern u8 gText_InGameTrade_OTWinona[];
 
 static const struct InGameTrade sInGameTrades[] = {
     [INGAME_TRADE_CHINCHOU] = 
@@ -218,6 +220,21 @@ static const struct InGameTrade sInGameTrades[] = {
         .otGender = MALE,
         .nature = NATURE_JOLLY,
         .requestedSpecies = SPECIES_NONE // Species check is skipped
+    },
+    [INGAME_TRADE_SLOWBRO_G] = {
+        .nickname = gText_InGameTrade_Boris,
+        .species = SPECIES_SLOWBRO_G,
+        .ivs = {28, 20, 18, 26, 23, 8},
+        .abilityNum = 0xFF, // Regenerator (Hidden)
+        .otId = 79525,
+        .conditions = {5, 10, 10, 25, 20},
+        .personality = 0x4c970b89,
+        .heldItem = ITEM_LAGGING_TAIL,
+        .mailNum = 0,
+        .otName = gText_InGameTrade_OTWinona,
+        .otGender = FEMALE,
+        .nature = NATURE_BOLD,
+        .requestedSpecies = SPECIES_SLOWBRO
     }
 };
 

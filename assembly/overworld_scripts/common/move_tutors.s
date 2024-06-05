@@ -472,6 +472,82 @@ SkyAttack:
     call teachmove
     return
 
+.global EventScript_Tutors_Tsarvosa
+EventScript_Tutors_Tsarvosa:
+    setvar 0x8000 0xD
+    setvar 0x8001 0x5
+    setvar 0x8004 0x0
+	special 0x158
+    waitstate
+    switch LASTRESULT
+	case 0, Synthesis
+	case 1, SignalBeam
+	case 2, IronHead
+	case 3, AquaTail
+    case 4, ZenHeadbutt
+	case 5, DragonPulse
+	case 6, BadTantrum
+	case 7, NastyPlot
+    case 8, cancelled
+    case 0x7F, cancelled @ When player hit B to close
+    return
+
+Synthesis:
+    bufferattack 0x0 MOVE_SYNTHESIS
+    setvar 0x8005 17
+    setvar 0x4000 10
+    call teachmove
+    return
+
+SignalBeam:
+    bufferattack 0x0 MOVE_SIGNALBEAM
+    setvar 0x8005 18
+    setvar 0x4000 10
+    call teachmove
+    return
+
+IronHead:
+    bufferattack 0x0 MOVE_IRONHEAD
+    setvar 0x8005 25
+    setvar 0x4000 10
+    call teachmove
+    return
+
+AquaTail:
+    bufferattack 0x0 MOVE_AQUATAIL
+    setvar 0x8005 26
+    setvar 0x4000 10
+    call teachmove
+    return
+
+ZenHeadbutt:
+    bufferattack 0x0 MOVE_ZENHEADBUTT
+    setvar 0x8005 31
+    setvar 0x4000 10
+    call teachmove
+    return
+
+DragonPulse:
+    bufferattack 0x0 MOVE_DRAGONPULSE
+    setvar 0x8005 34
+    setvar 0x4000 10
+    call teachmove
+    return
+
+BadTantrum:
+    bufferattack 0x0 MOVE_STOMPINGTANTRUM @ Due to character limits, this displays as "Bad Tantrum"
+    setvar 0x8005 46
+    setvar 0x4000 10
+    call teachmove
+    return
+
+NastyPlot:
+    bufferattack 0x0 MOVE_NASTYPLOT
+    setvar 0x8005 59
+    setvar 0x4000 10
+    call teachmove
+    return
+
 teachmove:
     msgbox gText_Tutors_ChoosePokemon MSG_NORMAL
     special 0x18D
