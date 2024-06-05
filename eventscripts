@@ -2094,3 +2094,5 @@ npc 12 1 12 EventScript_TsarvosaCity_StatsDojo_SpeedDisciple
 ## NPC Houses
 npc 2 3 0 EventScript_TsarvosaCity_NPCHouses_MoveTutor
 npc 2 3 1 EventScript_TsarvosaCity_NPCHouses_MoveTutorGirlfriend
+npc 12 4 0 EventScript_TsarvosaCity_NPCHouses_SlowbroGTrade
+npc 12 4 1 EventScript_TsarvosaCity_NPCHouses_SlowbroGTradeMother

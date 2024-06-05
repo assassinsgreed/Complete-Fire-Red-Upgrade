@@ -1173,3 +1173,49 @@ NotEnoughPokeChips:
 EventScript_TsarvosaCity_NPCHouses_MoveTutorGirlfriend:
     npcchatwithmovement gText_TsarvosaCityNPCHouses_TutorGirlfriend m_LookLeft
     end
+
+.global EventScript_TsarvosaCity_NPCHouses_SlowbroGTrade
+EventScript_TsarvosaCity_NPCHouses_SlowbroGTrade:
+    lock
+    faceplayer
+    checkflag 0x260
+    if SET _goto EventScript_SlowbroGTradeComplete
+    msgbox gText_TsarvosaCityNPCHouses_SlwobroTrade_Request MSG_YESNO @ THIS
+    compare LASTRESULT NO
+    if TRUE _goto EventScript_SlowbroGTradeDeclined
+    // Set up vars needed for trade
+    setvar 0x8008 12 @ Set Trade #12 (Slowbro-G)
+    copyvar 0x8004 0x8008 @ Set expected mon from Trade #12 (Slowbro)
+    special2 LASTRESULT 0xFC // Checks the trade set in 0x8004 and buffers the name of the Pokemon wanted and the given Pokemon
+    copyvar 0x8009 LASTRESULT
+    msgbox gText_TsarvosaCityNPCHouses_SlwobroTrade_ChoosingPokemon MSG_NORMAL
+    call SelectTradePokemon
+    compare 0x8004 0x6
+    if greaterorequal _goto EventScript_SlowbroGTradeDeclined
+    call CheckTradePokemonSelected
+    comparevars LASTRESULT 0x8009
+    if notequal _goto EventScript_SlowbroGTradeWrongPokemon
+    msgbox gText_TsarvosaCityNPCHouses_SlwobroTrade_PokemonChoiceConfirmation MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto EventScript_SlowbroGTradeDeclined
+    msgbox gText_TsarvosaCityNPCHouses_SlwobroTrade_InitiatingTrade MSG_NORMAL
+    call InitiateTrade
+    setflag 0x260
+    goto EventScript_SlowbroGTradeComplete
+
+EventScript_SlowbroGTradeDeclined:
+    npcchatwithmovement gText_TsarvosaCityNPCHouses_SlwobroTrade_Declined m_LookRight
+    goto End
+
+EventScript_SlowbroGTradeWrongPokemon:
+    npcchatwithmovement gText_TsarvosaCityNPCHouses_SlwobroTrade_WrongPokemon m_LookRight
+    goto End
+
+EventScript_SlowbroGTradeComplete:
+    npcchatwithmovement gText_TsarvosaCityNPCHouses_SlwobroTrade_Complete m_LookRight
+    goto End
+
+.global EventScript_TsarvosaCity_NPCHouses_SlowbroGTradeMother
+EventScript_TsarvosaCity_NPCHouses_SlowbroGTradeMother:
+    npcchatwithmovement gText_TsarvosaCityNPCHouses_SlwobroTradeMother m_LookUp
+    end
