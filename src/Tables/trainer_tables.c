@@ -48,6 +48,7 @@
 #define TrainerAIFlags_Skier_Standard           (AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_CHECK_VIABILITY)
 #define TrainerAIFlags_DragonTamer_Standard     (AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_PREFER_STRONGEST_MOVE | AI_SCRIPT_TRY_TO_FAINT)
 #define TrainerAIFlags_Disciple_Standard        (AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_HP_AWARE | AI_SCRIPT_CHECK_VIABILITY)
+#define TrainerAIFlags_Developer_Standard       (AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_SEMI_SMART)
 
 // #region Trainer Structs
 
@@ -4903,6 +4904,258 @@ const struct TrainerMonNoItemDefaultMoves sParty_TsarvosaCity_StatsDojo_SidneySp
     { .lvl = 1, .species = SPECIES_SERPERIOR },
     { .lvl = 1, .species = SPECIES_CROBAT },
     { .lvl = 1, .species = SPECIES_CINDERACE }
+};
+
+const struct TrainerMonItemCustomMoves sParty_TsarvosaCity_DevTeam_Collin1[] = {
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_TYPHLOSION,
+        .moves = {
+            MOVE_LAVAPLUME,
+            MOVE_HIDDENPOWER,
+            MOVE_AERIALACE,
+            MOVE_EXTRASENSORY
+        },
+        .heldItem = ITEM_CHARCOAL,
+        .ability = Ability_1 // Blaze
+    },
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_GALLADE,
+        .moves = {
+            MOVE_PSYCHOCUT,
+            MOVE_LEAFBLADE,
+            MOVE_CLOSECOMBAT,
+            MOVE_SWORDSDANCE
+        },
+        .heldItem = ITEM_GALLADITE,
+        .ability = Ability_1 // Steadfast
+    },
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_NIDOKING,
+        .moves = {
+            MOVE_TOXIC,
+            MOVE_VENOSHOCK,
+            MOVE_DRILLRUN,
+            MOVE_SURF
+        },
+        .heldItem = ITEM_TOXIC_ORB,
+        .ability = Ability_2 // Rivalry
+    },
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_JELLICENT,
+        .moves = {
+            MOVE_SCALD,
+            MOVE_ICEBEAM,
+            MOVE_OMINOUSWIND,
+            MOVE_RECOVER
+        },
+        .heldItem = ITEM_LEFTOVERS,
+        .ability = Ability_2 // Cursed Body
+    },
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_SHIINOTIC,
+        .moves = {
+            MOVE_GIGADRAIN,
+            MOVE_MOONBLAST,
+            MOVE_CHARGEBEAM,
+            MOVE_STRENGTHSAP
+        },
+        .heldItem = ITEM_WEAKNESS_POLICY,
+        .ability = Ability_2 // Effect Spore
+    }
+};
+
+const struct TrainerMonItemCustomMoves sParty_TsarvosaCity_DevTeam_Collin2[] = {
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_MAMOSWINE,
+        .moves = {
+            MOVE_EARTHQUAKE,
+            MOVE_ICICLECRASH,
+            MOVE_ICESHARD,
+            MOVE_ROCKTOMB
+        },
+        .heldItem = ITEM_LIFE_ORB,
+        .ability = Ability_Hidden // Thick Fat
+    },
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_TREVENANT,
+        .moves = {
+            MOVE_WILLOWISP,
+            MOVE_HORNLEECH,
+            MOVE_SHADOWCLAW,
+            MOVE_GROWTH
+        },
+        .heldItem = ITEM_SITRUS_BERRY,
+        .ability = Ability_Hidden // Harvest
+    },
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_VOLCARONA,
+        .moves = {
+            MOVE_FIERYDANCE,
+            MOVE_QUIVERDANCE,
+            MOVE_BUGBUZZ,
+            MOVE_HURRICANE
+        },
+        .heldItem = ITEM_CHARTI_BERRY,
+        .ability = Ability_1 // Flame Body
+    },
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_TYRANTRUM,
+        .moves = {
+            MOVE_HEADSMASH,
+            MOVE_EARTHQUAKE,
+            MOVE_CRUNCH,
+            MOVE_DRAGONCLAW
+        },
+        .heldItem = ITEM_CHOICE_BAND,
+        .ability = Ability_Hidden // Rock Head
+    },
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_BLASTOISE,
+        .moves = {
+            MOVE_WAVECRASH,
+            MOVE_SHELLSMASH,
+            MOVE_CRUNCH,
+            MOVE_EARTHQUAKE
+        },
+        .heldItem = ITEM_BLASTOISINITE_G,
+        .ability = Ability_Hidden // Rain Dish
+    }
+};
+
+const struct TrainerMonItemCustomMoves sParty_TsarvosaCity_DevTeam_Crystal1[] = {
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_TOGEKISS,
+        .moves = {
+            MOVE_AIRSLASH,
+            MOVE_DAZZLINGGLEAM,
+            MOVE_FIREBLAST,
+            MOVE_NASTYPLOT
+        },
+        .heldItem = ITEM_WEAKNESS_POLICY,
+        .ability = Ability_2 // Serene Grace
+    },
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_VENUSAUR,
+        .moves = {
+            MOVE_GIGADRAIN,
+            MOVE_SLUDGEBOMB,
+            MOVE_TOXIC,
+            MOVE_PROTECT
+        },
+        .heldItem = ITEM_BLACK_SLUDGE,
+        .ability = Ability_Hidden // Chlorophyll
+    },
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_CHARIZARD,
+        .moves = {
+            MOVE_FLAMETHROWER,
+            MOVE_SOLARBEAM,
+            MOVE_TAILWIND,
+            MOVE_PROTECT
+        },
+        .heldItem = ITEM_CHARIZARDITE_Y,
+        .ability = Ability_1 // Blaze
+    },
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_GARCHOMP,
+        .moves = {
+            MOVE_SCALESHOT,
+            MOVE_EARTHQUAKE,
+            MOVE_FIREFANG,
+            MOVE_SWORDSDANCE
+        },
+        .heldItem = ITEM_LIFE_ORB,
+        .ability = Ability_Hidden // Rough Skin
+    },
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_CORVIKNIGHT,
+        .moves = {
+            MOVE_BRAVEBIRD,
+            MOVE_UTURN,
+            MOVE_TAUNT,
+            MOVE_ROOST
+        },
+        .heldItem = ITEM_ROCKY_HELMET,
+        .ability = Ability_1 // Pressure
+    }
+};
+
+const struct TrainerMonItemCustomMoves sParty_TsarvosaCity_DevTeam_Crystal2[] = {
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_EMBOAR,
+        .moves = {
+            MOVE_FLAREBLITZ,
+            MOVE_SUPERPOWER,
+            MOVE_HEADSMASH,
+            MOVE_WILDCHARGE
+        },
+        .heldItem = ITEM_CHOICE_SCARF,
+        .ability = Ability_Hidden // Reckless
+    },
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_GYARADOS,
+        .moves = {
+            MOVE_WATERFALL,
+            MOVE_ICEFANG,
+            MOVE_EARTHQUAKE,
+            MOVE_CRUNCH
+        },
+        .heldItem = ITEM_LIFE_ORB,
+        .ability = Ability_Hidden // Moxie
+    },
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_ROTOM_WASH,
+        .moves = {
+            MOVE_HYDROPUMP,
+            MOVE_VOLTSWITCH,
+            MOVE_NASTYPLOT,
+            MOVE_WILLOWISP
+        },
+        .heldItem = ITEM_SITRUS_BERRY,
+        .ability = Ability_1 // Levitate
+    },
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_AMOONGUSS,
+        .moves = {
+            MOVE_GIGADRAIN,
+            MOVE_SPORE,
+            MOVE_RAGEPOWDER,
+            MOVE_PROTECT
+        },
+        .heldItem = ITEM_MENTAL_HERB,
+        .ability = Ability_Hidden // Regenerator
+    },
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_GARDEVOIR,
+        .moves = {
+            MOVE_HYPERVOICE,
+            MOVE_PSYCHIC,
+            MOVE_HIDDENPOWER,
+            MOVE_PROTECT
+        },
+        .heldItem = ITEM_GARDEVOIRITE,
+        .ability = Ability_Hidden // Telepathy
+    }
 };
 
 // #endregion
@@ -10076,6 +10329,54 @@ const struct Trainer gTrainers[] = {
         .aiFlags = TrainerAIFlags_Disciple_Standard,
         .partySize = NELEMS(sParty_TsarvosaCity_StatsDojo_SidneySpeed3),
         .party = {.NoItemDefaultMoves = sParty_TsarvosaCity_StatsDojo_SidneySpeed3}
+    },
+    [TRAINER_TSARVOSA_CITY_DEV_TEAM_COLLIN_1] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_DEVELOPER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_RS_COOLTRAINER_M,
+        .trainerName = {_C, _o, _l, _l, _i, _n, _END},
+        .items = { ITEM_MEGA_RING, ITEM_FULL_RESTORE },
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_Developer_Standard,
+        .partySize = NELEMS(sParty_TsarvosaCity_DevTeam_Collin1),
+        .party = {.ItemCustomMoves = sParty_TsarvosaCity_DevTeam_Collin1}
+    },
+    [TRAINER_TSARVOSA_CITY_DEV_TEAM_COLLIN_2] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_DEVELOPER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_RS_COOLTRAINER_M,
+        .trainerName = {_C, _o, _l, _l, _i, _n, _END},
+        .items = { ITEM_MEGA_RING, ITEM_FULL_RESTORE },
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_Developer_Standard,
+        .partySize = NELEMS(sParty_TsarvosaCity_DevTeam_Collin2),
+        .party = {.ItemCustomMoves = sParty_TsarvosaCity_DevTeam_Collin2}
+    },
+    [TRAINER_TSARVOSA_CITY_DEV_TEAM_CRYSTAL_1] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_DEVELOPER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_RS_COOLTRAINER_F,
+        .trainerName = {_C, _r, _y, _s, _t, _a, _l, _END },
+        .items = { ITEM_MEGA_RING, ITEM_FULL_RESTORE },
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_Developer_Standard,
+        .partySize = NELEMS(sParty_TsarvosaCity_DevTeam_Crystal1),
+        .party = {.ItemCustomMoves = sParty_TsarvosaCity_DevTeam_Crystal1}
+    },
+    [TRAINER_TSARVOSA_CITY_DEV_TEAM_CRYSTAL_2] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_DEVELOPER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_RS_COOLTRAINER_F,
+        .trainerName = {_C, _r, _y, _s, _t, _a, _l, _END },
+        .items = { ITEM_MEGA_RING, ITEM_FULL_RESTORE },
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_Developer_Standard,
+        .partySize = NELEMS(sParty_TsarvosaCity_DevTeam_Crystal2),
+        .party = {.ItemCustomMoves = sParty_TsarvosaCity_DevTeam_Crystal2}
     },
     // #endregion
     // #endregion

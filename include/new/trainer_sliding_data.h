@@ -53,6 +53,15 @@ extern const u8 sText_EmraldinRivalEvent_LowHP[];
 
 // Rival battle n
 
+// Developers
+extern const u8 sText_DeveloperCollin_FirstMonDown[];
+extern const u8 sText_DeveloperCollin_LastSwitchIn[];
+extern const u8 sText_DeveloperCollin_LowHP[];
+
+extern const u8 sText_DeveloperCrystal_FirstMonDown[];
+extern const u8 sText_DeveloperCrystal_LastSwitchIn[];
+extern const u8 sText_DeveloperCrystal_LowHP[];
+
 // Gym Leader 1 (Terrence)
 extern const u8 sText_Leader1_FirstMonDown[];
 extern const u8 sText_Leader1_LastSwitchIn[];

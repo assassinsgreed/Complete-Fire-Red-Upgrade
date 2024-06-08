@@ -69,6 +69,10 @@ static const struct TrainerSlide sTrainerSlides[] =
 	{0x138, sText_Ronald_PlutoHQ_FirstMonDown, sText_Ronald_PlutoHQ_LastSwitchIn, sText_Ronald_PlutoHQ_LowHP}, // Pluto Admin Ronald (Pluto HQ)
 	{0x139, sText_Kurtis_FirstMonDown, sText_Kurtis_LastSwitchIn, sText_Kurtis_LowHP}, // Pluto Leader Kurtis
 	{0x16D, sText_EmraldinRivalEvent_FirstMonDown, sText_EmraldinRivalEvent_LastSwitchIn, sText_EmraldinRivalEvent_LowHP}, // Rival event in Emraldin Quay
+	{0x1A9, sText_DeveloperCollin_FirstMonDown, sText_DeveloperCollin_LastSwitchIn, sText_DeveloperCollin_LowHP}, // Developer Collin 1
+	{0x1AA, sText_DeveloperCollin_FirstMonDown, sText_DeveloperCollin_LastSwitchIn, sText_DeveloperCollin_LowHP}, // Developer Collin 2
+	{0x1AB, sText_DeveloperCrystal_FirstMonDown, sText_DeveloperCrystal_LastSwitchIn, sText_DeveloperCrystal_LowHP}, // Developer Crystal 1
+	{0x1AC, sText_DeveloperCrystal_FirstMonDown, sText_DeveloperCrystal_LastSwitchIn, sText_DeveloperCrystal_LowHP}, // Developer Crystal 2
 	{}, // Champion Selene
 };
 

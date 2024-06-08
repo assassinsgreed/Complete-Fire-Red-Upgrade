@@ -1363,6 +1363,8 @@ Daily Flags, cleared at the start of each day.  Goes up to 0xEFF
 #define FLAG_EMRALDIN_QUAY_TRAINER_HOUSE      0xE1A
 #define FLAG_ROUTE_23_PALOSSAND               0xE1B
 #define FLAG_ROUTE_23_PALOSSAND_2             0xE1C
+#define FLAG_DEV_TEAM_COLLIN_BATTLED          0xE1D
+#define FLAG_DEV_TEAM_CRYSTAL_BATTLED         0xE1E
 */
 
 #define FLAG_TRAINER_FLAG_START 0x500

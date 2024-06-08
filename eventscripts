@@ -2070,6 +2070,7 @@ npc 3 9 7 EventScript_TsarvosaCity_OldMan
 npc 3 9 8 EventScript_TsarvosaCity_MimmettJungleGirl
 sign 3 9 0 SignScript_TsarvosaCity_TownPlacard
 sign 3 9 1 SignScript_TsarvosaCity_StatsDojo
+sign 3 9 2 SignScript_TsarvosaCity_DevStudioSign
 ## Facilities
 map 12 0 MapScript_TsarvosaCity_PokemonCenter
 npc 12 0 0 EventScript_PokemonCenter_Main
@@ -2094,5 +2095,7 @@ npc 12 1 12 EventScript_TsarvosaCity_StatsDojo_SpeedDisciple
 ## NPC Houses
 npc 2 3 0 EventScript_TsarvosaCity_NPCHouses_MoveTutor
 npc 2 3 1 EventScript_TsarvosaCity_NPCHouses_MoveTutorGirlfriend
+npc 12 2 0 EventScript_TsarvosaCity_NPCHouses_DevTeamCollin
+npc 12 2 1 EventScript_TsarvosaCity_NPCHouses_DevTeamCrystal
 npc 12 4 0 EventScript_TsarvosaCity_NPCHouses_SlowbroGTrade
 npc 12 4 1 EventScript_TsarvosaCity_NPCHouses_SlowbroGTradeMother
