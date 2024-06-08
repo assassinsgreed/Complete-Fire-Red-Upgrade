@@ -70,6 +70,11 @@ SignScript_TsarvosaCity_StatsDojo:
     msgbox gText_TsarvosaCity_StatsDojoSign MSG_SIGN
     end
 
+.global SignScript_TsarvosaCity_DevStudioSign
+SignScript_TsarvosaCity_DevStudioSign:
+    msgbox gText_TsarvosaCity_DevStudioSign MSG_SIGN
+    end
+
 @ Pokemon Center
 .global MapScript_TsarvosaCity_PokemonCenter
 MapScript_TsarvosaCity_PokemonCenter:
@@ -1219,3 +1224,109 @@ EventScript_SlowbroGTradeComplete:
 EventScript_TsarvosaCity_NPCHouses_SlowbroGTradeMother:
     npcchatwithmovement gText_TsarvosaCityNPCHouses_SlwobroTradeMother m_LookUp
     end
+
+.global EventScript_TsarvosaCity_NPCHouses_DevTeamCollin
+EventScript_TsarvosaCity_NPCHouses_DevTeamCollin:
+    faceplayer
+    msgbox gText_TsarvosaCityNPCHouses_DevTeam_CollinIntro MSG_NORMAL
+    checkflag 0xE1D @ Battled Collin today
+    if SET _goto CollinBattled
+    msgbox gText_TsarvosaCityNPCHouses_DevTeam_CollinBattleRequest MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto ChoseNotToBattleCollin
+    call SetupDevTeamBattle
+    msgbox gText_TsarvosaCityNPCHouses_DevTeam_CollinPreBattle MSG_NORMAL
+    random 2 @ Randomize between + 0 (first team) and + 1 (second team)
+    compare LASTRESULT 0
+    if equal _call FightCollinTeam1
+    if notequal _call FightCollinTeam2
+    call PostDevTeamBattle
+    msgbox gText_TsarvosaCityNPCHouses_DevTeam_CollinGivesReward MSG_NORMAL
+    obtainitem ITEM_POKE_CHIP 0x4000
+    setflag 0xE1D
+    msgbox gText_TsarvosaCityNPCHouses_DevTeam_CollinHealsTeam MSG_NORMAL
+    call PlayerHeal
+    goto CollinBattled
+    end
+
+CollinBattled:
+    msgbox gText_TsarvosaCityNPCHouses_DevTeam_CollinBattled MSG_NORMAL
+    goto CollinClosingStatement
+
+ChoseNotToBattleCollin:
+    msgbox gText_TsarvosaCityNPCHouses_DevTeam_CollinBattleRequestDenied MSG_NORMAL
+    goto CollinClosingStatement
+
+FightCollinTeam1:
+    trainerbattle9 0x1 425 0x100 gText_TsarvosaCityNPCHouses_DevTeam_CollinPostBattle gText_TsarvosaCityNPCHouses_DevTeam_CollinPostBattle
+    return
+
+FightCollinTeam2:
+    trainerbattle9 0x1 426 0x100 gText_TsarvosaCityNPCHouses_DevTeam_CollinPostBattle gText_TsarvosaCityNPCHouses_DevTeam_CollinPostBattle
+    return
+
+CollinClosingStatement:
+    npcchatwithmovement gText_TsarvosaCityNPCHouses_DevTeam_CollinClosing m_LookRight
+    end
+
+.global EventScript_TsarvosaCity_NPCHouses_DevTeamCrystal
+EventScript_TsarvosaCity_NPCHouses_DevTeamCrystal:
+    faceplayer
+    msgbox gText_TsarvosaCityNPCHouses_DevTeam_CrystalIntro MSG_NORMAL
+    checkflag 0xE1E @ Battled Crystal today
+    if SET _goto CrystalBattled
+    msgbox gText_TsarvosaCityNPCHouses_DevTeam_CrystalBattleRequest MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto ChoseNotToBattleCrystal
+    call SetupDevTeamBattle
+    msgbox gText_TsarvosaCityNPCHouses_DevTeam_CrystalPreBattle MSG_NORMAL
+    random 2 @ Randomize between + 0 (first team) and + 1 (second team)
+    compare LASTRESULT 0
+    if equal _call FightCrystalTeam1
+    if notequal _call FightCrystalTeam2
+    call PostDevTeamBattle
+    msgbox gText_TsarvosaCityNPCHouses_DevTeam_CrystalGivesReward MSG_NORMAL
+    obtainitem ITEM_POKE_CHIP 0x4000
+    setflag 0xE1E
+    msgbox gText_TsarvosaCityNPCHouses_DevTeam_CrystalHealsTeam MSG_NORMAL
+    call PlayerHeal
+    goto CrystalBattled
+    end
+
+CrystalBattled:
+    msgbox gText_TsarvosaCityNPCHouses_DevTeam_CrystalBattled MSG_NORMAL
+    goto CrystalClosingStatement
+
+ChoseNotToBattleCrystal:
+    msgbox gText_TsarvosaCityNPCHouses_DevTeam_CrystalBattleRequestDenied MSG_NORMAL
+    goto CrystalClosingStatement
+
+FightCrystalTeam1:
+    trainerbattle9 0x1 427 0x100 gText_TsarvosaCityNPCHouses_DevTeam_CrystalPostBattle_PlayerWins gText_TsarvosaCityNPCHouses_DevTeam_CrystalPostBattle_PlayerLoses
+    return
+
+FightCrystalTeam2:
+    trainerbattle9 0x1 428 0x100 gText_TsarvosaCityNPCHouses_DevTeam_CrystalPostBattle_PlayerWins gText_TsarvosaCityNPCHouses_DevTeam_CrystalPostBattle_PlayerLoses
+    return
+
+CrystalClosingStatement:
+    npcchatwithmovement gText_TsarvosaCityNPCHouses_DevTeam_CrystalClosing m_LookLeft
+    end
+
+SetupDevTeamBattle:
+    call SetupMugshotRival
+    setflag 0x90E @ Scale teams
+    setvar 0x8000 0xFEFE @ Continue lost battles
+    return
+
+PostDevTeamBattle:
+    setvar 0x8000 0x0
+    clearflag 0x90E @ Scale teams
+    setvar 0x4000 0x1 @ 1 PokeChip reward (loss)
+    compare LASTRESULT TRUE
+    if notequal _call IncreaseDevTeamReward
+    return
+
+IncreaseDevTeamReward:
+    setvar 0x4000 0x5 @ 5 PokeChip reward
+    return

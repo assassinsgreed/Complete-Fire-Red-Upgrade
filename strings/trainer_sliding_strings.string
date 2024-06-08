@@ -80,6 +80,25 @@ Let's see if [FD][06] can pull through[.]\p
 
 // Rival n here!
 
+// Developers
+#org @sText_DeveloperCollin_FirstMonDown
+Looks like you've kept up on your\ntraining!
+
+#org @sText_DeveloperCollin_LastSwitchIn
+Battles are at their most intense\nwhen you're on the back foot!
+
+#org @sText_DeveloperCollin_LowHP
+Uh oh[.] This isn't looking good.
+
+#org @sText_DeveloperCrystal_FirstMonDown
+Tsk[.] Only a minor inconvience!\pDo you honestly think losing a single\npokemon will stop me from beating\lyou?
+
+#org @sText_DeveloperCrystal_LastSwitchIn
+Don't count me out yet!
+
+#org @sText_DeveloperCrystal_LowHP
+I'm not giving up yet!
+
 // Leader 1 (Terrence)
 #org @sText_Leader1_FirstMonDown
 Not bad, not bad at all!\p

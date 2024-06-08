@@ -31,6 +31,9 @@ Tsarvosa City\nThe Eternal Sunshine City
 #org @gText_TsarvosaCity_StatsDojoSign
 Tsarvosa City Stats Dojo\nPush beyond your limits!
 
+#org @gText_TsarvosaCity_DevStudioSign
+Amethyst Dev Studio
+
 #org @gText_TsarvosaCity_PokemonCenter_FatGuy
 Did you know Iris and Stella are\nsisters?\pTwo sisters that are both gym\nleaders[.] What a powerful duo!
 
@@ -417,3 +420,60 @@ Isn't it neat how different our\nSlowbros look?\pI guess Pok\emon really do come
 
 #org @gText_TsarvosaCityNPCHouses_SlwobroTradeMother
 My daughter has been awfully lonely\nsince we moved.\pShe would never say so, though!\pIf you aren't too busy, would you\nkindly talk to her?\pI'm sure she would appreciate it.
+
+#org @gText_TsarvosaCityNPCHouses_DevTeam_CollinIntro
+Hey, there! Are you enjoying\nPok\emon Amethyst?\pI'm Collin, the lead developer of\nthis romhack.\pI've created everything you're seeing\nand interacting with, with a little\lsupport from the hacking community!
+
+#org @gText_TsarvosaCityNPCHouses_DevTeam_CollinBattleRequest
+Say[.] Would you be interested in\nhaving a casual battle?
+
+#org @gText_TsarvosaCityNPCHouses_DevTeam_CollinBattleRequestDenied
+No sweat! I'm down to battle later if\nyou change your mind.
+
+#org @gText_TsarvosaCityNPCHouses_DevTeam_CollinBattled
+[BLUE]I think I'll take a break from\nbattling for today.\pBut, if you're up to it, swing by\ntomorrow and let's battle again!
+
+#org @gText_TsarvosaCityNPCHouses_DevTeam_CollinPreBattle
+Alright, I'm getting fired up!\nLet's go!
+
+#org @gText_TsarvosaCityNPCHouses_DevTeam_CollinPostBattle
+That was fun!
+
+#org @gText_TsarvosaCityNPCHouses_DevTeam_CollinGivesReward
+[BLUE]Hey, thanks for the fun battle.\pYou did great! Let me give you\nthis[.]
+
+#org @gText_TsarvosaCityNPCHouses_DevTeam_CollinHealsTeam
+[BLUE]I'll heal your Pok\emon too.
+
+#org @gText_TsarvosaCityNPCHouses_DevTeam_CollinClosing
+[BLUE]I hope you continue to enjoy\nPok\emon Amethyst.\pGo out there and make some great\nmemories, okay?
+
+#org @gText_TsarvosaCityNPCHouses_DevTeam_CrystalIntro
+I'm Crystal and I helped develop\nPok\emon Amethyst.\pI helped with the story, maps, and\nbug testing.
+
+#org @gText_TsarvosaCityNPCHouses_DevTeam_CrystalBattleRequest
+I'm feeling pretty lucky today!\pDid you want to battle to see who is\nthe luckiest?
+
+#org @gText_TsarvosaCityNPCHouses_DevTeam_CrystalBattleRequestDenied
+So after all that you are going to\nturn tail and run? Ha!
+
+#org @gText_TsarvosaCityNPCHouses_DevTeam_CrystalBattled
+I've had enough battling today, my\nluck has run out.
+
+#org @gText_TsarvosaCityNPCHouses_DevTeam_CrystalPreBattle
+Finally! A worthy opponent!
+
+#org @gText_TsarvosaCityNPCHouses_DevTeam_CrystalPostBattle_PlayerWins
+Good Grief[.]
+
+#org @gText_TsarvosaCityNPCHouses_DevTeam_CrystalPostBattle_PlayerLoses
+Stay in school kid!
+
+#org @gText_TsarvosaCityNPCHouses_DevTeam_CrystalGivesReward
+[RED]That was thrilling! Take this[.]
+
+#org @gText_TsarvosaCityNPCHouses_DevTeam_CrystalHealsTeam
+[RED]Let me heal your Pok\emon for you.
+
+#org @gText_TsarvosaCityNPCHouses_DevTeam_CrystalClosing
+[RED]I hope you had fun, I know I did!
