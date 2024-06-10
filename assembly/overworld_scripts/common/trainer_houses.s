@@ -70,11 +70,6 @@ TrainerHouse_Common_End:
     msgbox gText_TrainerHouse_Exit MSG_NORMAL
     goto End
 
-.global TrainerHouse_Common_DisableScalingFlag
-TrainerHouse_Common_DisableScalingFlag:
-    clearflag 0x90E @ Disable trainer level scaling
-    return
-
 // Prizes
 .global TrainerHouse_Common_GivePokeball
 TrainerHouse_Common_GivePokeball:

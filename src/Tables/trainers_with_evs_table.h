@@ -1487,6 +1487,7 @@ const u8 gBaseIVsByTrainerClass[NUM_TRAINER_CLASSES] =
 	[CLASS_SENSEI] = 31,
 	[CLASS_DISCIPLE] = 25,
 	[CLASS_DEVELOPER] = 25,
+	[CLASS_GYM_TRAINEE] = 25
 };
 #else //For Pokemon Unbound
 const u8 gBaseIVsByTrainerClass[NUM_TRAINER_CLASSES] =

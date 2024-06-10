@@ -523,6 +523,11 @@ End:
     release
     end
 
+.global DisableTrainerScalingFlag
+DisableTrainerScalingFlag:
+    clearflag 0x90E @ Disable trainer level scaling
+    return
+
 .global SetupMugshotRival
 SetupMugshotRival:
     setvar 0x503A 0x2

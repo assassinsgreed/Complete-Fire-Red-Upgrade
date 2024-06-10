@@ -455,7 +455,7 @@ Trainerhouse_ResetStateAtEnd:
     checkflag 0x4FE @ Inverse battles modifier
     if NOT_SET _call DisableInverseFlag
     checkflag 0x4FF @ Trainer level scaling modifier
-    if NOT_SET _call TrainerHouse_Common_DisableScalingFlag
+    if NOT_SET _call DisableTrainerScalingFlag
     msgbox gText_TrainerHouse_HealingPokemonAtEnd MSG_NORMAL
     call PlayerHeal
     goto TrainerHouse_Common_End

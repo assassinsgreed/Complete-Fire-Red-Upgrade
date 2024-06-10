@@ -49,6 +49,7 @@
 #define TrainerAIFlags_DragonTamer_Standard     (AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_PREFER_STRONGEST_MOVE | AI_SCRIPT_TRY_TO_FAINT)
 #define TrainerAIFlags_Disciple_Standard        (AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_HP_AWARE | AI_SCRIPT_CHECK_VIABILITY)
 #define TrainerAIFlags_Developer_Standard       (AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_SEMI_SMART)
+#define TrainerAIFlags_GymTrainees_Standard     (AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_CHECK_VIABILITY)
 
 // #region Trainer Structs
 
@@ -5158,6 +5159,851 @@ const struct TrainerMonItemCustomMoves sParty_TsarvosaCity_DevTeam_Crystal2[] = 
     }
 };
 
+const struct TrainerMonNoItemCustomMoves sParty_TsarvosaCity_GymTrainees_Noam[] = {
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_DITTO,
+        .moves = {
+            MOVE_TRANSFORM,
+            MOVE_NONE,
+            MOVE_NONE,
+            MOVE_NONE
+        },
+        .ability = Ability_Hidden // Imposter
+    },
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_STOUTLAND,
+        .moves = {
+            MOVE_RETALIATE,
+            MOVE_FIREFANG,
+            MOVE_PLAYROUGH,
+            MOVE_ROAR
+        },
+        .ability = Ability_1 // Intimidate
+    },
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_LOPUNNY,
+        .moves = {
+            MOVE_REVERSAL,
+            MOVE_HEADBUTT,
+            MOVE_REST,
+            MOVE_SLEEPTALK
+        },
+        .ability = Ability_1 // Cute Charm
+    },
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_KANGASKHAN,
+        .moves = {
+            MOVE_CRUNCH,
+            MOVE_FAKEOUT,
+            MOVE_BODYSLAM,
+            MOVE_WORKUP
+        },
+        .ability = Ability_2 // Scrappy
+    }
+};
+
+const struct TrainerMonNoItemCustomMoves sParty_TsarvosaCity_GymTrainees_Ashley[] = {
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_MAGCARGO,
+        .moves = {
+            MOVE_SHELLSMASH,
+            MOVE_ROCKSLIDE,
+            MOVE_RECOVER,
+            MOVE_FLAMETHROWER
+        },
+        .ability = Ability_2 // Flame Body
+    },
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_HOUNDOOM,
+        .moves = {
+            MOVE_NASTYPLOT,
+            MOVE_CRUNCH,
+            MOVE_FLAMETHROWER,
+            MOVE_MUDSHOT
+        },
+        .ability = Ability_Hidden // Unnerve
+    },
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_SALAZZLE,
+        .moves = {
+            MOVE_FIREBLAST,
+            MOVE_TOXIC,
+            MOVE_DRAGONPULSE,
+            MOVE_VENOSHOCK
+        },
+        .ability = Ability_1 // Corrosion
+    },
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_FLAREON,
+        .moves = {
+            MOVE_FLAREBLITZ,
+            MOVE_LASTRESORT,
+            MOVE_DIG,
+            MOVE_WILLOWISP
+        },
+        .ability = Ability_Hidden // Guts
+    }
+};
+
+const struct TrainerMonNoItemCustomMoves sParty_TsarvosaCity_GymTrainees_Chelsea[] = {
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_BIBAREL,
+        .moves = {
+            MOVE_CURSE,
+            MOVE_SUPERFANG,
+            MOVE_AQUATAIL,
+            MOVE_AQUAJET
+        },
+        .ability = Ability_1 // Simple
+    },
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_GYARADOS,
+        .moves = {
+            MOVE_RAINDANCE,
+            MOVE_HURRICANE,
+            MOVE_WATERFALL,
+            MOVE_ICEFANG
+        },
+        .ability = Ability_1 // Intimidate
+    },
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_GASTRODON,
+        .moves = {
+            MOVE_MUDDYWATER,
+            MOVE_EARTHPOWER,
+            MOVE_RECOVER,
+            MOVE_BODYSLAM
+        },
+        .ability = Ability_2 // Storm Drain
+    },
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_LAPRAS,
+        .moves = {
+            MOVE_ICEBEAM,
+            MOVE_RAINDANCE,
+            MOVE_HYDROPUMP,
+            MOVE_DRAGONPULSE
+        },
+        .ability = Ability_Hidden // Hydration
+    }
+};
+
+const struct TrainerMonNoItemCustomMoves sParty_TsarvosaCity_GymTrainees_Buddy[] = {
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_CACTURNE,
+        .moves = {
+            MOVE_LEECHSEED,
+            MOVE_SPIKYSHIELD,
+            MOVE_SUCKERPUNCH,
+            MOVE_SPIKES
+        },
+        .ability = Ability_Hidden // Water Absorb
+    },
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_ROSERADE,
+        .moves = {
+            MOVE_TOXICSPIKES,
+            MOVE_GIGADRAIN,
+            MOVE_SWIFT,
+            MOVE_VENOSHOCK
+        },
+        .ability = Ability_Hidden // Technician
+    },
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_CRADILY,
+        .moves = {
+            MOVE_ANCIENTPOWER,
+            MOVE_AMNESIA,
+            MOVE_GIGADRAIN,
+            MOVE_WRAP
+        },
+        .ability = Ability_Hidden // Storm Drain
+    },
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_DHELMISE,
+        .moves = {
+            MOVE_ANCHORSHOT,
+            MOVE_WHIRLPOOL,
+            MOVE_SHADOWCLAW,
+            MOVE_LIQUIDATION
+        },
+        .ability = Ability_1 // Steelworker
+    }
+};
+
+const struct TrainerMonNoItemCustomMoves sParty_TsarvosaCity_GymTrainees_Gawain[] = {
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_FALINKS,
+        .moves = {
+            MOVE_NORETREAT,
+            MOVE_CLOSECOMBAT,
+            MOVE_FIRSTIMPRESSION,
+            MOVE_HEADBUTT
+        },
+        .ability = Ability_Hidden // Defiant
+    },
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_PRIMEAPE,
+        .moves = {
+            MOVE_STOMPINGTANTRUM,
+            MOVE_CROSSCHOP,
+            MOVE_FOCUSENERGY,
+            MOVE_SCREECH
+        },
+        .ability = Ability_2 // Anger Point
+    },
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_MIENSHAO,
+        .moves = {
+            MOVE_UTURN,
+            MOVE_DRAINPUNCH,
+            MOVE_BOUNCE,
+            MOVE_DETECT
+        },
+        .ability = Ability_2 // Regenerator
+    },
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_SIRFETCHD,
+        .moves = {
+            MOVE_SWORDSDANCE,
+            MOVE_BRICKBREAK,
+            MOVE_BRUTALSWING,
+            MOVE_STEELWING
+        },
+        .ability = Ability_Hidden // Scrappy
+    }
+};
+
+const struct TrainerMonNoItemCustomMoves sParty_TsarvosaCity_GymTrainees_Skylar[] = {
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_EMOLGA,
+        .moves = {
+            MOVE_VOLTSWITCH,
+            MOVE_LIGHTSCREEN,
+            MOVE_DISCHARGE,
+            MOVE_ACROBATICS
+        },
+        .ability = Ability_1 // Static
+    },
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_TOUCANNON,
+        .moves = {
+            MOVE_ROOST,
+            MOVE_BULLETSEED,
+            MOVE_ROCKBLAST,
+            MOVE_DRILLPECK
+        },
+        .ability = Ability_2 // Skill Link
+    },
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_MANDIBUZZ,
+        .moves = {
+            MOVE_DARKPULSE,
+            MOVE_AIRSLASH,
+            MOVE_IRONDEFENSE,
+            MOVE_KNOCKOFF
+        },
+        .ability = Ability_2 // Overcoat
+    },
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_TALONFLAME,
+        .moves = {
+            MOVE_AERIALACE,
+            MOVE_FLAREBLITZ,
+            MOVE_TAILWIND,
+            MOVE_STEELWING
+        },
+        .ability = Ability_1 // Flame Body
+    }
+};
+
+const struct TrainerMonNoItemCustomMoves sParty_TsarvosaCity_GymTrainees_Bella[] = {
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_CROBAT,
+        .moves = {
+            MOVE_CROSSPOISON,
+            MOVE_TAILWIND,
+            MOVE_LEECHLIFE,
+            MOVE_ACROBATICS
+        },
+        .ability = Ability_Hidden // Inflitrator
+    },
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_AMOONGUSS,
+        .moves = {
+            MOVE_TOXIC,
+            MOVE_GIGADRAIN,
+            MOVE_CLEARSMOG,
+            MOVE_ASTONISH
+        },
+        .ability = Ability_Hidden // Regenerator
+    },
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_TOXICROAK,
+        .moves = {
+            MOVE_POISONJAB,
+            MOVE_SUCKERPUNCH,
+            MOVE_ROCKSLIDE,
+            MOVE_PROTECT
+        },
+        .ability = Ability_Hidden // Poison Touch
+    },
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_TOXAPEX,
+        .moves = {
+            MOVE_BANEFULBUNKER,
+            MOVE_TOXICSPIKES,
+            MOVE_RECOVER,
+            MOVE_SURF
+        },
+        .ability = Ability_1 // Merciless
+    }
+};
+
+const struct TrainerMonNoItemCustomMoves sParty_TsarvosaCity_GymTrainees_Flash[] = {
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_RAICHU,
+        .moves = {
+            MOVE_NASTYPLOT,
+            MOVE_DISCHARGE,
+            MOVE_LIGHTSCREEN,
+            MOVE_IRONTAIL
+        },
+        .ability = Ability_1 // Static
+    },
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_GALVANTULA,
+        .moves = {
+            MOVE_THUNDER,
+            MOVE_SUCKERPUNCH,
+            MOVE_BUGBUZZ,
+            MOVE_THUNDERWAVE
+        },
+        .ability = Ability_1 // Compound Eyes
+    },
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_TOXTRICITY_LOW_KEY,
+        .moves = {
+            MOVE_CHARGE,
+            MOVE_DISCHARGE,
+            MOVE_POISONJAB,
+            MOVE_BOOMBURST
+        },
+        .ability = Ability_1 // Punk Rock
+    },
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_VIKAVOLT,
+        .moves = {
+            MOVE_CRUNCH,
+            MOVE_THUNDERBOLT,
+            MOVE_BUGBUZZ,
+            MOVE_FLY
+        },
+        .ability = Ability_1 // Levitate
+    }
+};
+
+const struct TrainerMonNoItemCustomMoves sParty_TsarvosaCity_GymTrainees_Terra[] = {
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_HIPPOWDON_F,
+        .moves = {
+            MOVE_EARTHQUAKE,
+            MOVE_CRUNCH,
+            MOVE_ICEFANG,
+            MOVE_YAWN
+        },
+        .ability = Ability_1 // Sand Stream
+    },
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_MUDSDALE,
+        .moves = {
+            MOVE_HEAVYSLAM,
+            MOVE_HIGHHORSEPOWER,
+            MOVE_STOMP,
+            MOVE_STEALTHROCK
+        },
+        .ability = Ability_2 // Stamina
+    },
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_STUNFISK_G,
+        .moves = {
+            MOVE_SNAPTRAP,
+            MOVE_MUDDYWATER,
+            MOVE_BOUNCE,
+            MOVE_IRONDEFENSE
+        },
+        .ability = Ability_1 // Mimicry
+    },
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_FLYGON,
+        .moves = {
+            MOVE_DRAGONCLAW,
+            MOVE_DRAGONDANCE,
+            MOVE_EARTHQUAKE,
+            MOVE_BUGBUZZ
+        },
+        .ability = Ability_1 // Levitate
+    }
+};
+
+const struct TrainerMonNoItemCustomMoves sParty_TsarvosaCity_GymTrainees_Seifa[] = {
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_MALAMAR,
+        .moves = {
+            MOVE_SUPERPOWER,
+            MOVE_PSYCHOCUT,
+            MOVE_NIGHTSLASH,
+            MOVE_LIQUIDATION
+        },
+        .ability = Ability_1 // Contrary
+    },
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_WOBBUFFET,
+        .moves = {
+            MOVE_COUNTER,
+            MOVE_MIRRORCOAT,
+            MOVE_ENCORE,
+            MOVE_SAFEGUARD
+        },
+        .ability = Ability_1 // Shadow Tag
+    },
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_MR_RIME,
+        .moves = {
+            MOVE_DAZZLINGGLEAM,
+            MOVE_MISTYTERRAIN,
+            MOVE_FREEZEDRY,
+            MOVE_PSYCHIC
+        },
+        .ability = Ability_1 // Screen Cleaner
+    },
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_ESPEON,
+        .moves = {
+            MOVE_MORNINGSUN,
+            MOVE_PSYCHIC,
+            MOVE_PSYCHUP,
+            MOVE_SHADOWBALL
+        },
+        .ability = Ability_Hidden // Magic Bounce
+    }
+};
+
+const struct TrainerMonNoItemCustomMoves sParty_TsarvosaCity_GymTrainees_Rocco[] = {
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_LYCANROC_DUSK,
+        .moves = {
+            MOVE_ACCELEROCK,
+            MOVE_STEALTHROCK,
+            MOVE_CRUNCH,
+            MOVE_SUCKERPUNCH
+        },
+        .ability = Ability_1 // Tough Claws
+    },
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_BASTIODON,
+        .moves = {
+            MOVE_IRONHEAD,
+            MOVE_IRONDEFENSE,
+            MOVE_PROTECT,
+            MOVE_BULLDOZE
+        },
+        .ability = Ability_1 // Sturdy
+    },
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_COALOSSAL,
+        .moves = {
+            MOVE_HEATCRASH,
+            MOVE_TARSHOT,
+            MOVE_SMACKDOWN,
+            MOVE_BODYPRESS
+        },
+        .ability = Ability_1 // Steam Engine
+    },
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_STONJOURNER,
+        .moves = {
+            MOVE_ROCKSLIDE,
+            MOVE_BODYSLAM,
+            MOVE_SANDTOMB,
+            MOVE_CURSE
+        },
+        .ability = Ability_1 // Power Spot
+    }
+};
+
+const struct TrainerMonNoItemCustomMoves sParty_TsarvosaCity_GymTrainees_Janice[] = {
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_CLOYSTER,
+        .moves = {
+            MOVE_ICICLESPEAR,
+            MOVE_RAZORSHELL,
+            MOVE_SHELLSMASH,
+            MOVE_TOXICSPIKES
+        },
+        .ability = Ability_2 // Skill Link
+    },
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_AVALUGG,
+        .moves = {
+            MOVE_HAIL,
+            MOVE_BLIZZARD,
+            MOVE_RECOVER,
+            MOVE_CRUNCH
+        },
+        .ability = Ability_2 // Ice Body
+    },
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_MAMOSWINE,
+        .moves = {
+            MOVE_EARTHQUAKE,
+            MOVE_ICESHARD,
+            MOVE_ICEFANG,
+            MOVE_KNOCKOFF
+        },
+        .ability = Ability_2 // Snow Cloak
+    },
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_AURORUS,
+        .moves = {
+            MOVE_AURORAVEIL,
+            MOVE_THUNDERWAVE,
+            MOVE_FREEZEDRY,
+            MOVE_ANCIENTPOWER
+        },
+        .ability = Ability_Hidden // Snow Warning
+    }
+};
+
+const struct TrainerMonNoItemCustomMoves sParty_TsarvosaCity_GymTrainees_Antoinette[] = {
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_VESPIQUEN,
+        .moves = {
+            MOVE_DEFENDORDER,
+            MOVE_ATTACKORDER,
+            MOVE_POWERGEM,
+            MOVE_AIRSLASH
+        },
+        .ability = Ability_1 // Pressure
+    },
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_HERACROSS,
+        .moves = {
+            MOVE_BRICKBREAK,
+            MOVE_MEGAHORN,
+            MOVE_THROATCHOP,
+            MOVE_SWORDSDANCE
+        },
+        .ability = Ability_2 // Guts
+    },
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_SCOLIPEDE,
+        .moves = {
+            MOVE_TOXIC,
+            MOVE_VENOSHOCK,
+            MOVE_BUGBITE,
+            MOVE_BATONPASS
+        },
+        .ability = Ability_Hidden // Speed Boost
+    },
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_FROSMOTH,
+        .moves = {
+            MOVE_STRUGGLEBUG,
+            MOVE_AURORABEAM,
+            MOVE_QUIVERDANCE,
+            MOVE_STUNSPORE
+        },
+        .ability = Ability_Hidden // Ice Scales
+    }
+};
+
+const struct TrainerMonNoItemCustomMoves sParty_TsarvosaCity_GymTrainees_Ryu[] = {
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_TURTONATOR,
+        .moves = {
+            MOVE_SMOG,
+            MOVE_FLAMETHROWER,
+            MOVE_SHELLSMASH,
+            MOVE_DRAGONPULSE
+        },
+        .ability = Ability_1 // Shell Armor
+    },
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_NOIVERN,
+        .moves = {
+            MOVE_DRAGONPULSE,
+            MOVE_MOONLIGHT,
+            MOVE_ROOST,
+            MOVE_AIRSLASH
+        },
+        .ability = Ability_2 // Infiltrator
+    },
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_TYRANTRUM,
+        .moves = {
+            MOVE_CRUNCH,
+            MOVE_DRAGONCLAW,
+            MOVE_FIREFANG,
+            MOVE_THUNDERFANG
+        },
+        .ability = Ability_1 // Strong Jaw
+    },
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_GARCHOMP,
+        .moves = {
+            MOVE_DRAGONDANCE,
+            MOVE_DRAGONCLAW,
+            MOVE_EARTHQUAKE,
+            MOVE_POISONJAB
+        },
+        .ability = Ability_Hidden // Rough Skin
+    }
+};
+
+const struct TrainerMonNoItemCustomMoves sParty_TsarvosaCity_GymTrainees_Tobias[] = {
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_JELLICENT,
+        .moves = {
+            MOVE_RECOVER,
+            MOVE_WILLOWISP,
+            MOVE_HEX,
+            MOVE_SCALD
+        },
+        .ability = Ability_2 // Cursed Body
+    },
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_RUNERIGUS,
+        .moves = {
+            MOVE_SHADOWCLAW,
+            MOVE_CURSE,
+            MOVE_EARTHQUAKE,
+            MOVE_ENERGYBALL
+        },
+        .ability = Ability_1 // Wandering Spirit
+    },
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_ROTOM_HEAT,
+        .moves = {
+            MOVE_REST,
+            MOVE_THUNDERBOLT,
+            MOVE_OVERHEAT,
+            MOVE_SUBSTITUTE
+        },
+        .ability = Ability_1 // Levitate
+    },
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_DUSKNOIR,
+        .moves = {
+            MOVE_SHADOWBALL,
+            MOVE_FUTURESIGHT,
+            MOVE_THUNDERPUNCH,
+            MOVE_ICEPUNCH
+        },
+        .ability = Ability_Hidden // Frisk
+    }
+};
+
+const struct TrainerMonNoItemCustomMoves sParty_TsarvosaCity_GymTrainees_Grayson[] = {
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_WEAVILE,
+        .moves = {
+            MOVE_ICESHARD,
+            MOVE_BEATUP,
+            MOVE_METALCLAW,
+            MOVE_KNOCKOFF
+        },
+        .ability = Ability_1 // Pressure
+    },
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_KROOKODILE,
+        .moves = {
+            MOVE_HONECLAWS,
+            MOVE_CRUNCH,
+            MOVE_EARTHQUAKE,
+            MOVE_FIREFANG
+        },
+        .ability = Ability_1 // Intimidate
+    },
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_MUK_A,
+        .moves = {
+            MOVE_GUNKSHOT,
+            MOVE_CRUNCH,
+            MOVE_TOXIC,
+            MOVE_MINIMIZE
+        },
+        .ability = Ability_1 // Poison Touch
+    },
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_BISHARP,
+        .moves = {
+            MOVE_SLASH,
+            MOVE_IRONDEFENSE,
+            MOVE_NIGHTSLASH,
+            MOVE_FURYCUTTER
+        },
+        .ability = Ability_1 // Defiant
+    }
+};
+
+const struct TrainerMonNoItemCustomMoves sParty_TsarvosaCity_GymTrainees_Mason[] = {
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_SKARMORY,
+        .moves = {
+            MOVE_SPIKES,
+            MOVE_ROOST,
+            MOVE_DRILLPECK,
+            MOVE_STEELWING
+        },
+        .ability = Ability_2 // Sturdy
+    },
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_FERROTHORN,
+        .moves = {
+            MOVE_POWERWHIP,
+            MOVE_CURSE,
+            MOVE_GYROBALL,
+            MOVE_INGRAIN
+        },
+        .ability = Ability_1 // Iron Barbs
+    },
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_KLINKLANG,
+        .moves = {
+            MOVE_SHIFTGEAR,
+            MOVE_GEARGRIND,
+            MOVE_CHARGEBEAM,
+            MOVE_METALSOUND
+        },
+        .ability = Ability_Hidden // Clear Body
+    },
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_LUCARIO,
+        .moves = {
+            MOVE_AURASPHERE,
+            MOVE_METEORMASH,
+            MOVE_BONERUSH,
+            MOVE_SWORDSDANCE
+        },
+        .ability = Ability_1 // Steadfast
+    }
+};
+
+const struct TrainerMonNoItemCustomMoves sParty_TsarvosaCity_GymTrainees_Estelle[] = {
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_FLORGES_YELLOW,
+        .moves = {
+            MOVE_MOONBLAST,
+            MOVE_SYNTHESIS,
+            MOVE_PETALDANCE,
+            MOVE_MISTYTERRAIN
+        },
+        .ability = Ability_1 // Flower Veil
+    },
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_WEEZING_G,
+        .moves = {
+            MOVE_STRANGESTEAM,
+            MOVE_TOXIC,
+            MOVE_SLUDGEBOMB,
+            MOVE_HEATWAVE
+        },
+        .ability = Ability_2 // Neutralizing Gas
+    },
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_TOGEKISS,
+        .moves = {
+            MOVE_THUNDERWAVE,
+            MOVE_AIRSLASH,
+            MOVE_MOONBLAST,
+            MOVE_CALMMIND
+        },
+        .ability = Ability_2 // Serene Grace
+    },
+    {
+        .lvl = 50, // Minimum, scales to player
+        .species = SPECIES_MIMIKYU,
+        .moves = {
+            MOVE_WOODHAMMER,
+            MOVE_SHADOWCLAW,
+            MOVE_CHARM,
+            MOVE_PLAYROUGH
+        },
+        .ability = Ability_1 // Disguise
+    }
+};
 // #endregion
 // #endregion
 
@@ -10377,6 +11223,222 @@ const struct Trainer gTrainers[] = {
         .aiFlags = TrainerAIFlags_Developer_Standard,
         .partySize = NELEMS(sParty_TsarvosaCity_DevTeam_Crystal2),
         .party = {.ItemCustomMoves = sParty_TsarvosaCity_DevTeam_Crystal2}
+    },
+    [TRAINER_TSARVOSA_CITY_GYM_TRAINEE_NOAM] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .trainerClass = CLASS_GYM_TRAINEE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_COOLTRAINER_M,
+        .trainerName = {_N, _o, _a, _m, _END },
+        .items = { ITEM_FULL_RESTORE },
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_GymTrainees_Standard,
+        .partySize = NELEMS(sParty_TsarvosaCity_GymTrainees_Noam),
+        .party = {.NoItemCustomMoves = sParty_TsarvosaCity_GymTrainees_Noam}
+    },
+    [TRAINER_TSARVOSA_CITY_GYM_TRAINEE_ASHLEY] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .trainerClass = CLASS_GYM_TRAINEE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_COOLTRAINER_F,
+        .trainerName = {_A, _s, _h, _l, _e, _y, _END },
+        .items = { ITEM_FULL_RESTORE },
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_GymTrainees_Standard,
+        .partySize = NELEMS(sParty_TsarvosaCity_GymTrainees_Ashley),
+        .party = {.NoItemCustomMoves = sParty_TsarvosaCity_GymTrainees_Ashley}
+    },
+    [TRAINER_TSARVOSA_CITY_GYM_TRAINEE_CHELSEA] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .trainerClass = CLASS_GYM_TRAINEE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_COOLTRAINER_F,
+        .trainerName = {_C, _h, _e, _l, _s, _e, _a, _END },
+        .items = { ITEM_FULL_RESTORE },
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_GymTrainees_Standard,
+        .partySize = NELEMS(sParty_TsarvosaCity_GymTrainees_Chelsea),
+        .party = {.NoItemCustomMoves = sParty_TsarvosaCity_GymTrainees_Chelsea}
+    },
+    [TRAINER_TSARVOSA_CITY_GYM_TRAINEE_BUDDY] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .trainerClass = CLASS_GYM_TRAINEE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_COOLTRAINER_M,
+        .trainerName = {_B, _u, _d, _d, _y, _END },
+        .items = { ITEM_FULL_RESTORE },
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_GymTrainees_Standard,
+        .partySize = NELEMS(sParty_TsarvosaCity_GymTrainees_Buddy),
+        .party = {.NoItemCustomMoves = sParty_TsarvosaCity_GymTrainees_Buddy}
+    },
+    [TRAINER_TSARVOSA_CITY_GYM_TRAINEE_GAWAIN] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .trainerClass = CLASS_GYM_TRAINEE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_COOLTRAINER_M,
+        .trainerName = {_G, _a, _w, _a, _i, _n, _END },
+        .items = { ITEM_FULL_RESTORE },
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_GymTrainees_Standard,
+        .partySize = NELEMS(sParty_TsarvosaCity_GymTrainees_Gawain),
+        .party = {.NoItemCustomMoves = sParty_TsarvosaCity_GymTrainees_Gawain}
+    },
+    [TRAINER_TSARVOSA_CITY_GYM_TRAINEE_SKYLAR] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .trainerClass = CLASS_GYM_TRAINEE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_COOLTRAINER_F,
+        .trainerName = {_S, _k, _y, _l, _a, _r, _END },
+        .items = { ITEM_FULL_RESTORE },
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_GymTrainees_Standard,
+        .partySize = NELEMS(sParty_TsarvosaCity_GymTrainees_Skylar),
+        .party = {.NoItemCustomMoves = sParty_TsarvosaCity_GymTrainees_Skylar}
+    },
+    [TRAINER_TSARVOSA_CITY_GYM_TRAINEE_BELLA] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .trainerClass = CLASS_GYM_TRAINEE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_COOLTRAINER_F,
+        .trainerName = {_B, _e, _l, _l, _a, _END },
+        .items = { ITEM_FULL_RESTORE },
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_GymTrainees_Standard,
+        .partySize = NELEMS(sParty_TsarvosaCity_GymTrainees_Bella),
+        .party = {.NoItemCustomMoves = sParty_TsarvosaCity_GymTrainees_Bella}
+    },
+    [TRAINER_TSARVOSA_CITY_GYM_TRAINEE_FLASH] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .trainerClass = CLASS_GYM_TRAINEE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_COOLTRAINER_M,
+        .trainerName = {_F, _l, _a, _s, _h, _END },
+        .items = { ITEM_FULL_RESTORE },
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_GymTrainees_Standard,
+        .partySize = NELEMS(sParty_TsarvosaCity_GymTrainees_Flash),
+        .party = {.NoItemCustomMoves = sParty_TsarvosaCity_GymTrainees_Flash}
+    },
+    [TRAINER_TSARVOSA_CITY_GYM_TRAINEE_TERRA] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .trainerClass = CLASS_GYM_TRAINEE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_COOLTRAINER_F,
+        .trainerName = {_T, _e, _r, _r, _a, _END },
+        .items = { ITEM_FULL_RESTORE },
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_GymTrainees_Standard,
+        .partySize = NELEMS(sParty_TsarvosaCity_GymTrainees_Terra),
+        .party = {.NoItemCustomMoves = sParty_TsarvosaCity_GymTrainees_Terra}
+    },
+    [TRAINER_TSARVOSA_CITY_GYM_TRAINEE_SEIFA] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .trainerClass = CLASS_GYM_TRAINEE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_COOLTRAINER_F,
+        .trainerName = {_S, _e, _i, _f, _a, _END },
+        .items = { ITEM_FULL_RESTORE },
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_GymTrainees_Standard,
+        .partySize = NELEMS(sParty_TsarvosaCity_GymTrainees_Seifa),
+        .party = {.NoItemCustomMoves = sParty_TsarvosaCity_GymTrainees_Seifa}
+    },
+    [TRAINER_TSARVOSA_CITY_GYM_TRAINEE_ROCCO] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .trainerClass = CLASS_GYM_TRAINEE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_COOLTRAINER_M,
+        .trainerName = {_R, _o, _c, _c, _o, _END },
+        .items = { ITEM_FULL_RESTORE },
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_GymTrainees_Standard,
+        .partySize = NELEMS(sParty_TsarvosaCity_GymTrainees_Rocco),
+        .party = {.NoItemCustomMoves = sParty_TsarvosaCity_GymTrainees_Rocco}
+    },
+    [TRAINER_TSARVOSA_CITY_GYM_TRAINEE_JANICE] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .trainerClass = CLASS_GYM_TRAINEE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_COOLTRAINER_F,
+        .trainerName = {_J, _a, _n, _i, _c, _e, _END },
+        .items = { ITEM_FULL_RESTORE },
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_GymTrainees_Standard,
+        .partySize = NELEMS(sParty_TsarvosaCity_GymTrainees_Janice),
+        .party = {.NoItemCustomMoves = sParty_TsarvosaCity_GymTrainees_Janice}
+    },
+    [TRAINER_TSARVOSA_CITY_GYM_TRAINEE_ANTOINETTE] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .trainerClass = CLASS_GYM_TRAINEE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_COOLTRAINER_F,
+        .trainerName = {_A, _n, _t, _o, _i, _n, _e, _t, _t, _e, _END },
+        .items = { ITEM_FULL_RESTORE },
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_GymTrainees_Standard,
+        .partySize = NELEMS(sParty_TsarvosaCity_GymTrainees_Antoinette),
+        .party = {.NoItemCustomMoves = sParty_TsarvosaCity_GymTrainees_Antoinette}
+    },
+    [TRAINER_TSARVOSA_CITY_GYM_TRAINEE_RYU] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .trainerClass = CLASS_GYM_TRAINEE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_COOLTRAINER_M,
+        .trainerName = {_R, _y, _u, _END },
+        .items = { ITEM_FULL_RESTORE },
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_GymTrainees_Standard,
+        .partySize = NELEMS(sParty_TsarvosaCity_GymTrainees_Ryu),
+        .party = {.NoItemCustomMoves = sParty_TsarvosaCity_GymTrainees_Ryu}
+    },
+    [TRAINER_TSARVOSA_CITY_GYM_TRAINEE_TOBIAS] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .trainerClass = CLASS_GYM_TRAINEE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_COOLTRAINER_M,
+        .trainerName = {_T, _o, _b, _i, _a, _s, _END },
+        .items = { ITEM_FULL_RESTORE },
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_GymTrainees_Standard,
+        .partySize = NELEMS(sParty_TsarvosaCity_GymTrainees_Tobias),
+        .party = {.NoItemCustomMoves = sParty_TsarvosaCity_GymTrainees_Tobias}
+    },
+    [TRAINER_TSARVOSA_CITY_GYM_TRAINEE_GRAYSON] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .trainerClass = CLASS_GYM_TRAINEE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_COOLTRAINER_M,
+        .trainerName = {_G, _r, _a, _y, _s, _o, _n, _END },
+        .items = { ITEM_FULL_RESTORE },
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_GymTrainees_Standard,
+        .partySize = NELEMS(sParty_TsarvosaCity_GymTrainees_Grayson),
+        .party = {.NoItemCustomMoves = sParty_TsarvosaCity_GymTrainees_Grayson}
+    },
+    [TRAINER_TSARVOSA_CITY_GYM_TRAINEE_MASON] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .trainerClass = CLASS_GYM_TRAINEE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_COOLTRAINER_M,
+        .trainerName = {_M, _a, _s, _o, _n, _END },
+        .items = { ITEM_FULL_RESTORE },
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_GymTrainees_Standard,
+        .partySize = NELEMS(sParty_TsarvosaCity_GymTrainees_Mason),
+        .party = {.NoItemCustomMoves = sParty_TsarvosaCity_GymTrainees_Mason}
+    },
+    [TRAINER_TSARVOSA_CITY_GYM_TRAINEE_ESTELLE] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .trainerClass = CLASS_GYM_TRAINEE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_COOLTRAINER_F,
+        .trainerName = {_E, _s, _t, _e, _l, _l, _e, _END },
+        .items = { ITEM_FULL_RESTORE },
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_GymTrainees_Standard,
+        .partySize = NELEMS(sParty_TsarvosaCity_GymTrainees_Estelle),
+        .party = {.NoItemCustomMoves = sParty_TsarvosaCity_GymTrainees_Estelle}
     },
     // #endregion
     // #endregion

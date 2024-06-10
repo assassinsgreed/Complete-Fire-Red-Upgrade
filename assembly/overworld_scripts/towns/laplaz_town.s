@@ -322,7 +322,7 @@ Trainerhouse_ResetStateAtEnd:
     setvar 0x8003 0x0 @ Reset prize 2 pool var
     setvar 0x8004 0x0 @ Reset prize 3 pool var
     checkflag 0x4FF @ Trainer level scaling modifier
-    if NOT_SET _call TrainerHouse_Common_DisableScalingFlag
+    if NOT_SET _call DisableTrainerScalingFlag
     msgbox gText_TrainerHouse_HealingPokemonAtEnd MSG_NORMAL
     call PlayerHeal
     goto TrainerHouse_Common_End
