@@ -1124,7 +1124,8 @@ DoBattleCommon:
     setvar 0x8000 0xFEFE @ Continue lost battles
     setflag 0x90E @ Scale disciple teams
     trainerbattle9 0x0 0x4001 0x0 gText_TsarvosaCity_StatsDojo_EVDiscipleBattlePostBattle gText_TsarvosaCity_StatsDojo_EVDiscipleBattlePostBattle
-    clearflag 0x90E @ Stop scaling disciple teams
+    checkflag 0x4FF @ Trainer level scaling modifier
+    if NOT_SET _call DisableTrainerScalingFlag
     msgbox gText_TsarvosaCity_StatsDojo_EVDiscipleBattlePostBattleHealing MSG_NORMAL
     call PlayerHeal
     msgbox gText_TsarvosaCity_StatsDojo_EVDiscipleBattleAskToBattleAgainSometime MSG_NORMAL
@@ -1240,6 +1241,7 @@ EventScript_TsarvosaCity_NPCHouses_DevTeamCollin:
     compare LASTRESULT 0
     if equal _call FightCollinTeam1
     if notequal _call FightCollinTeam2
+    trainerbattle9 0x1 0x4005 0x100 gText_TsarvosaCityNPCHouses_DevTeam_CollinPostBattle gText_TsarvosaCityNPCHouses_DevTeam_CollinPostBattle
     call PostDevTeamBattle
     msgbox gText_TsarvosaCityNPCHouses_DevTeam_CollinGivesReward MSG_NORMAL
     obtainitem ITEM_POKE_CHIP 0x4000
@@ -1258,11 +1260,11 @@ ChoseNotToBattleCollin:
     goto CollinClosingStatement
 
 FightCollinTeam1:
-    trainerbattle9 0x1 425 0x100 gText_TsarvosaCityNPCHouses_DevTeam_CollinPostBattle gText_TsarvosaCityNPCHouses_DevTeam_CollinPostBattle
+    setvar 0x4005 425
     return
 
 FightCollinTeam2:
-    trainerbattle9 0x1 426 0x100 gText_TsarvosaCityNPCHouses_DevTeam_CollinPostBattle gText_TsarvosaCityNPCHouses_DevTeam_CollinPostBattle
+    setvar 0x4005 426
     return
 
 CollinClosingStatement:
@@ -1284,6 +1286,7 @@ EventScript_TsarvosaCity_NPCHouses_DevTeamCrystal:
     compare LASTRESULT 0
     if equal _call FightCrystalTeam1
     if notequal _call FightCrystalTeam2
+    trainerbattle9 0x1 0x4005 0x100 gText_TsarvosaCityNPCHouses_DevTeam_CrystalPostBattle_PlayerWins gText_TsarvosaCityNPCHouses_DevTeam_CrystalPostBattle_PlayerLoses
     call PostDevTeamBattle
     msgbox gText_TsarvosaCityNPCHouses_DevTeam_CrystalGivesReward MSG_NORMAL
     obtainitem ITEM_POKE_CHIP 0x4000
@@ -1302,11 +1305,11 @@ ChoseNotToBattleCrystal:
     goto CrystalClosingStatement
 
 FightCrystalTeam1:
-    trainerbattle9 0x1 427 0x100 gText_TsarvosaCityNPCHouses_DevTeam_CrystalPostBattle_PlayerWins gText_TsarvosaCityNPCHouses_DevTeam_CrystalPostBattle_PlayerLoses
+    setvar 0x4005 427
     return
 
 FightCrystalTeam2:
-    trainerbattle9 0x1 428 0x100 gText_TsarvosaCityNPCHouses_DevTeam_CrystalPostBattle_PlayerWins gText_TsarvosaCityNPCHouses_DevTeam_CrystalPostBattle_PlayerLoses
+    setvar 0x4005 428
     return
 
 CrystalClosingStatement:
@@ -1321,7 +1324,8 @@ SetupDevTeamBattle:
 
 PostDevTeamBattle:
     setvar 0x8000 0x0
-    clearflag 0x90E @ Scale teams
+    checkflag 0x4FF @ Trainer level scaling modifier
+    if NOT_SET _call DisableTrainerScalingFlag
     setvar 0x4000 0x1 @ 1 PokeChip reward (loss)
     compare LASTRESULT TRUE
     if notequal _call IncreaseDevTeamReward

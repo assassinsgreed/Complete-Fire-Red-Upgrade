@@ -35,6 +35,7 @@
 #include "../include/new/set_z_effect.h"
 #include "../include/new/util.h"
 #include "../include/constants/maps.h"
+#include "../include/constants/opponents.h"
 
 /*
 battle_start_turn_start.c
@@ -1819,6 +1820,38 @@ u16 GetMUS_ForBattle(void)
 
 			if (gClassBasedBattleBGM[trainerClass])
 				return gClassBasedBattleBGM[trainerClass];
+
+			// Special case - if Gym Trainee, assign music based on index
+			// The CLASS_GYM_TRAINEE class must not be in the BGM array
+			if (trainerClass == CLASS_GYM_TRAINEE)
+			{
+				switch gTrainerBattleOpponent_A // Trainer ID
+				{
+					case TRAINER_TSARVOSA_CITY_GYM_TRAINEE_ASHLEY:
+					case TRAINER_TSARVOSA_CITY_GYM_TRAINEE_BUDDY:
+					case TRAINER_TSARVOSA_CITY_GYM_TRAINEE_BELLA:
+					case TRAINER_TSARVOSA_CITY_GYM_TRAINEE_FLASH:
+						return BGM_BATTLE_KANTO_LEADER;
+					case TRAINER_TSARVOSA_CITY_GYM_TRAINEE_NOAM:
+					case TRAINER_TSARVOSA_CITY_GYM_TRAINEE_SEIFA:
+					case TRAINER_TSARVOSA_CITY_GYM_TRAINEE_ANTOINETTE:
+					case TRAINER_TSARVOSA_CITY_GYM_TRAINEE_GRAYSON:
+					case TRAINER_TSARVOSA_CITY_GYM_TRAINEE_MASON:
+						return BGM_BATTLE_JOHTO_LEADER;
+					case TRAINER_TSARVOSA_CITY_GYM_TRAINEE_GAWAIN:
+					case TRAINER_TSARVOSA_CITY_GYM_TRAINEE_SKYLAR:
+					case TRAINER_TSARVOSA_CITY_GYM_TRAINEE_ROCCO:
+					case TRAINER_TSARVOSA_CITY_GYM_TRAINEE_RYU:
+						return BGM_BATTLE_HOENN_LEADER;
+					case TRAINER_TSARVOSA_CITY_GYM_TRAINEE_CHELSEA:
+					case TRAINER_TSARVOSA_CITY_GYM_TRAINEE_TERRA:
+					case TRAINER_TSARVOSA_CITY_GYM_TRAINEE_JANICE:
+					case TRAINER_TSARVOSA_CITY_GYM_TRAINEE_TOBIAS:
+						return BGM_BATTLE_SINNOH_LEADER;
+					default:
+						return BGM_BATTLE_GYM_LEADER; // Only ever hit by Estelle and unmapped trainers
+				} 
+			}
 			
 			#ifdef UNBOUND
 			if (gTrainerBattleOpponent_A == TRAINER_NEX)
