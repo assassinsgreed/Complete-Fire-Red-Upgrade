@@ -99,6 +99,11 @@ EventScript_Route23_Palossand2:
     release
     end
 
+.global EventScript_Route23_RocksMan
+EventScript_Route23_RocksMan:
+    npcchatwithmovement gText_Route23_RocksMan m_LookLeft
+    end
+
 .global SignScript_Route23_TsarvosaAnthraDirections
 SignScript_Route23_TsarvosaAnthraDirections:
     msgbox gText_Route23_TsarvosaAnthraDirectionsSign MSG_SIGN

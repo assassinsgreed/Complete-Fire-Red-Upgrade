@@ -1908,6 +1908,7 @@ npc 3 42 9 EventScript_Route23_SuperNerdEmmett
 npc 3 42 10 EventScript_Route23_GentlemanRussell
 npc 3 42 11 EventScript_Route23_CrushGirlLily
 npc 3 42 12 EventScript_Route23_BeautyMiranda
+npc 3 42 27 EventScript_Route23_RocksMan
 ## NPCS 13-19 are palm trees
 npc 3 42 20 EventScript_Route23_Palossand1
 npc 3 42 21 EventScript_Route23_Palossand2
