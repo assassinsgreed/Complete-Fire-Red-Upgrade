@@ -467,6 +467,47 @@ bool8 CanMonLearnTutorMove(struct Pokemon* mon, u8 tutorId)
 	}
 
 	//Special move tutors not stored in a table
+	
+	// Do not proceed if the pokemon is one of the Amethyst species that cannot learn TMs/Tutor moves
+	if (species == SPECIES_EGG ||
+		species == SPECIES_BLIPBUG ||
+		species == SPECIES_COMBEE ||
+		species == SPECIES_COSMOG ||
+		species == SPECIES_COSMOEM ||
+		species == SPECIES_DITTO ||
+		species == SPECIES_MAGIKARP ||
+		species == SPECIES_WOBBUFFET ||
+		species == SPECIES_WYNAUT ||
+		// Personal preference: Pokemon that can change type on form change
+		species == SPECIES_SILVALLY ||
+		species == SPECIES_SILVALLY_FIRE ||
+		species == SPECIES_SILVALLY_WATER ||
+		species == SPECIES_SILVALLY_GRASS ||
+		species == SPECIES_SILVALLY_FIGHT ||
+		species == SPECIES_SILVALLY_FLYING ||
+		species == SPECIES_SILVALLY_POISON ||
+		species == SPECIES_SILVALLY_ELECTRIC ||
+		species == SPECIES_SILVALLY_GROUND ||
+		species == SPECIES_SILVALLY_PSYCHIC ||
+		species == SPECIES_SILVALLY_ROCK ||
+		species == SPECIES_SILVALLY_ICE ||
+		species == SPECIES_SILVALLY_BUG ||
+		species == SPECIES_SILVALLY_DRAGON ||
+		species == SPECIES_SILVALLY_GHOST ||
+		species == SPECIES_SILVALLY_DARK ||
+		species == SPECIES_SILVALLY_STEEL ||
+		species == SPECIES_SILVALLY_FAIRY ||
+		species == SPECIES_ROTOM ||
+		species == SPECIES_ROTOM_FAN ||
+		species == SPECIES_ROTOM_FROST ||
+		species == SPECIES_ROTOM_HEAT ||
+		species == SPECIES_ROTOM_MOW ||
+		species == SPECIES_ROTOM_WASH ||
+		species == SPECIES_SHAYMIN_SKY)  
+		{
+			return FALSE;
+		}
+
 	u16 dexNum = SpeciesToNationalPokedexNum(species);
 	switch (tutorId) {
 		case TUTOR_SPECIAL_DRACO_METEOR:
@@ -518,6 +559,96 @@ bool8 CanMonLearnTutorMove(struct Pokemon* mon, u8 tutorId)
 				|| dexNum == NATIONAL_DEX_ZAMAZENTA
 			#endif
 				;
+		case TUTOR_SPECIAL_ASSIST:
+		case TUTOR_SPECIAL_HEADBUTT:
+		case TUTOR_SPECIAL_PAYDAY:
+			return gBaseStats[species].type1 == TYPE_NORMAL
+				|| gBaseStats[species].type2 == TYPE_NORMAL;
+		case TUTOR_SPECIAL_FIREFANG:
+		case TUTOR_SPECIAL_MYSTICALFIRE:
+		case TUTOR_SPECIAL_INCINERATE:
+			return gBaseStats[species].type1 == TYPE_FIRE
+				|| gBaseStats[species].type2 == TYPE_FIRE;
+		case TUTOR_SPECIAL_AQUARING:
+		case TUTOR_SPECIAL_BRINE:
+		case TUTOR_SPECIAL_RAZORSHELL:
+			return gBaseStats[species].type1 == TYPE_WATER
+				|| gBaseStats[species].type2 == TYPE_WATER;
+		case TUTOR_SPECIAL_SPARK:
+		case TUTOR_SPECIAL_SHOCKWAVE:
+		case TUTOR_SPECIAL_PARABOLICCHARGE:
+			return gBaseStats[species].type1 == TYPE_ELECTRIC
+				|| gBaseStats[species].type2 == TYPE_ELECTRIC;
+		case TUTOR_SPECIAL_COTTONSPORE:
+		case TUTOR_SPECIAL_FORESTSCURSE:
+		case TUTOR_SPECIAL_MEGADRAIN:
+			return gBaseStats[species].type1 == TYPE_GRASS
+				|| gBaseStats[species].type2 == TYPE_GRASS;
+		case TUTOR_SPECIAL_ICESHARD:
+		case TUTOR_SPECIAL_FREEZEDRY:
+		case TUTOR_SPECIAL_AURORABEAM:
+			return gBaseStats[species].type1 == TYPE_ICE
+				|| gBaseStats[species].type2 == TYPE_ICE;
+		case TUTOR_SPECIAL_KARATECHOP:
+		case TUTOR_SPECIAL_AURASPHERE:
+		case TUTOR_SPECIAL_STORMTHROW:
+			return gBaseStats[species].type1 == TYPE_FIGHTING
+				|| gBaseStats[species].type2 == TYPE_FIGHTING;
+		case TUTOR_SPECIAL_SLUDGE:
+		case TUTOR_SPECIAL_ACIDSPRAY:
+		case TUTOR_SPECIAL_COIL:
+			return gBaseStats[species].type1 == TYPE_POISON
+				|| gBaseStats[species].type2 == TYPE_POISON;
+		case TUTOR_SPECIAL_MUDSHOT:
+		case TUTOR_SPECIAL_SPIKES:
+		case TUTOR_SPECIAL_MAGNITUDE:
+			return gBaseStats[species].type1 == TYPE_GROUND
+				|| gBaseStats[species].type2 == TYPE_GROUND;
+		case TUTOR_SPECIAL_CHATTER:
+		case TUTOR_SPECIAL_DUALWINGBEAT:
+		case TUTOR_SPECIAL_SKYDROP:
+			return gBaseStats[species].type1 == TYPE_FLYING
+				|| gBaseStats[species].type2 == TYPE_FLYING;
+		case TUTOR_SPECIAL_HEALBLOCK:
+		case TUTOR_SPECIAL_PSYWAVE:
+		case TUTOR_SPECIAL_MAGICPOWDER:
+			return gBaseStats[species].type1 == TYPE_PSYCHIC
+				|| gBaseStats[species].type2 == TYPE_PSYCHIC;
+		case TUTOR_SPECIAL_FURYCUTTER:
+		case TUTOR_SPECIAL_FELLSTINGER:
+		case TUTOR_SPECIAL_RAGEPOWDER:
+			return gBaseStats[species].type1 == TYPE_BUG
+				|| gBaseStats[species].type2 == TYPE_BUG;
+		case TUTOR_SPECIAL_ROLLOUT:
+		case TUTOR_SPECIAL_WIDEGUARD:
+		case TUTOR_SPECIAL_ANCIENTPOWER:
+			return gBaseStats[species].type1 == TYPE_ROCK
+				|| gBaseStats[species].type2 == TYPE_ROCK;
+		case TUTOR_SPECIAL_DESTINYBOND:
+		case TUTOR_SPECIAL_SHADOWSNEAK:
+		case TUTOR_SPECIAL_GRUDGE:
+			return gBaseStats[species].type1 == TYPE_GHOST
+				|| gBaseStats[species].type2 == TYPE_GHOST;
+		case TUTOR_SPECIAL_BREAKINGSWIPE:
+		case TUTOR_SPECIAL_SCALESHOT:
+		case TUTOR_SPECIAL_DRAGONRUSH:
+			return gBaseStats[species].type1 == TYPE_DRAGON
+				|| gBaseStats[species].type2 == TYPE_DRAGON;
+		case TUTOR_SPECIAL_FAKETEARS:
+		case TUTOR_SPECIAL_SUCKERPUNCH:
+		case TUTOR_SPECIAL_PURSUIT:
+			return gBaseStats[species].type1 == TYPE_DARK
+				|| gBaseStats[species].type2 == TYPE_DARK;
+		case TUTOR_SPECIAL_AUTOMIZE:
+		case TUTOR_SPECIAL_METALBURST:
+		case TUTOR_SPECIAL_GYROBALL:
+			return gBaseStats[species].type1 == TYPE_STEEL
+				|| gBaseStats[species].type2 == TYPE_STEEL;
+		case TUTOR_SPECIAL_CRAFTYSHIELD:
+		case TUTOR_SPECIAL_DRAININGKISS:
+		case TUTOR_SPECIAL_SPIRITBREAK:
+			return gBaseStats[species].type1 == TYPE_FAIRY
+				|| gBaseStats[species].type2 == TYPE_FAIRY;
 	}
 
 	return FALSE;
@@ -544,6 +675,114 @@ u16 GetExpandedTutorMove(u8 tutorId)
 			return MOVE_COREENFORCER;
 		case TUTOR_SPECIAL_STEEL_BEAM:
 			return MOVE_STEELBEAM;
+		case TUTOR_SPECIAL_ASSIST:
+			return MOVE_ASSIST;
+		case TUTOR_SPECIAL_HEADBUTT:
+			return MOVE_HEADBUTT;
+		case TUTOR_SPECIAL_PAYDAY:
+			return MOVE_PAYDAY;
+		case TUTOR_SPECIAL_FIREFANG:
+			return MOVE_FIREFANG;
+		case TUTOR_SPECIAL_MYSTICALFIRE:
+			return MOVE_MYSTICALFIRE;
+		case TUTOR_SPECIAL_INCINERATE:
+			return MOVE_INCINERATE;
+		case TUTOR_SPECIAL_AQUARING:
+			return MOVE_AQUARING;
+		case TUTOR_SPECIAL_BRINE:
+			return MOVE_BRINE;
+		case TUTOR_SPECIAL_RAZORSHELL:
+			return MOVE_RAZORSHELL;
+		case TUTOR_SPECIAL_SPARK:
+			return MOVE_SPARK;
+		case TUTOR_SPECIAL_SHOCKWAVE:
+			return MOVE_SHOCKWAVE;
+		case TUTOR_SPECIAL_PARABOLICCHARGE:
+			return MOVE_PARABOLICCHARGE;
+		case TUTOR_SPECIAL_COTTONSPORE:
+			return MOVE_COTTONSPORE;
+		case TUTOR_SPECIAL_FORESTSCURSE:
+			return MOVE_FORESTSCURSE;
+		case TUTOR_SPECIAL_MEGADRAIN:
+			return MOVE_MEGADRAIN;
+		case TUTOR_SPECIAL_ICESHARD:
+			return MOVE_ICESHARD;
+		case TUTOR_SPECIAL_FREEZEDRY:
+			return MOVE_FREEZEDRY;
+		case TUTOR_SPECIAL_AURORABEAM:
+			return MOVE_AURORABEAM;
+		case TUTOR_SPECIAL_KARATECHOP:
+			return MOVE_KARATECHOP;
+		case TUTOR_SPECIAL_AURASPHERE:
+			return MOVE_AURASPHERE;
+		case TUTOR_SPECIAL_STORMTHROW:
+			return MOVE_STORMTHROW;
+		case TUTOR_SPECIAL_SLUDGE:
+			return MOVE_SLUDGE;
+		case TUTOR_SPECIAL_ACIDSPRAY:
+			return MOVE_ACIDSPRAY;
+		case TUTOR_SPECIAL_COIL:
+			return MOVE_COIL;
+		case TUTOR_SPECIAL_MUDSHOT:
+			return MOVE_MUDSHOT;
+		case TUTOR_SPECIAL_SPIKES:
+			return MOVE_SPIKES;
+		case TUTOR_SPECIAL_MAGNITUDE:
+			return MOVE_MAGNITUDE;
+		case TUTOR_SPECIAL_CHATTER:
+			return MOVE_CHATTER;
+		case TUTOR_SPECIAL_DUALWINGBEAT:
+			return MOVE_DUALWINGBEAT;
+		case TUTOR_SPECIAL_SKYDROP:
+			return MOVE_SKYDROP;
+		case TUTOR_SPECIAL_HEALBLOCK:
+			return MOVE_HEALBLOCK;
+		case TUTOR_SPECIAL_PSYWAVE:
+			return MOVE_PSYWAVE;
+		case TUTOR_SPECIAL_MAGICPOWDER:
+			return MOVE_MAGICPOWDER;
+		case TUTOR_SPECIAL_FURYCUTTER:
+			return MOVE_FURYCUTTER;
+		case TUTOR_SPECIAL_FELLSTINGER:
+			return MOVE_FELLSTINGER;
+		case TUTOR_SPECIAL_RAGEPOWDER:
+			return MOVE_RAGEPOWDER;
+		case TUTOR_SPECIAL_ROLLOUT:
+			return MOVE_ROLLOUT;
+		case TUTOR_SPECIAL_WIDEGUARD:
+			return MOVE_WIDEGUARD;
+		case TUTOR_SPECIAL_ANCIENTPOWER:
+			return MOVE_ANCIENTPOWER;
+		case TUTOR_SPECIAL_DESTINYBOND:
+			return MOVE_DESTINYBOND;
+		case TUTOR_SPECIAL_SHADOWSNEAK:
+			return MOVE_SHADOWSNEAK;
+		case TUTOR_SPECIAL_GRUDGE:
+			return MOVE_GRUDGE;
+		case TUTOR_SPECIAL_BREAKINGSWIPE:
+			return MOVE_BREAKINGSWIPE;
+		case TUTOR_SPECIAL_SCALESHOT:
+			return MOVE_SCALESHOT;
+		case TUTOR_SPECIAL_DRAGONRUSH:
+			return MOVE_DRAGONRUSH;
+		case TUTOR_SPECIAL_FAKETEARS:
+			return MOVE_FAKETEARS;
+		case TUTOR_SPECIAL_SUCKERPUNCH:
+			return MOVE_SUCKERPUNCH;
+		case TUTOR_SPECIAL_PURSUIT:
+			return MOVE_PURSUIT;
+		case TUTOR_SPECIAL_AUTOMIZE:
+			return MOVE_AUTOTOMIZE;
+		case TUTOR_SPECIAL_METALBURST:
+			return MOVE_METALBURST;
+		case TUTOR_SPECIAL_GYROBALL:
+			return MOVE_GYROBALL;
+		case TUTOR_SPECIAL_CRAFTYSHIELD:
+			return MOVE_CRAFTYSHIELD;
+		case TUTOR_SPECIAL_DRAININGKISS:
+			return MOVE_DRAININGKISS;
+		case TUTOR_SPECIAL_SPIRITBREAK:
+			return MOVE_SPIRITBREAK;
 		default:
 			if (tutorId >= NUM_MOVE_TUTORS)
 				return MOVE_NONE;

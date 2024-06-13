@@ -225,3 +225,57 @@ Speed
 
 #org @gText_Common_StatSpeedMaxed
 [GREEN]Speed
+
+#org @gText_Common_TypeNormal
+Normal
+
+#org @gText_Common_TypeFire
+Fire
+
+#org @gText_Common_TypeWater
+Water
+
+#org @gText_Common_TypeGrass
+Grass
+
+#org @gText_Common_TypeFighting
+Fighting
+
+#org @gText_Common_TypeFlying
+Flying
+
+#org @gText_Common_TypePoison
+Poison
+
+#org @gText_Common_TypeElectric
+Electric
+
+#org @gText_Common_TypeGround
+Ground
+
+#org @gText_Common_TypePsychic
+Psychic
+
+#org @gText_Common_TypeRock
+Rock
+
+#org @gText_Common_TypeIce
+Ice
+
+#org @gText_Common_TypeBug
+Bug
+
+#org @gText_Common_TypeDragon
+Dragon
+
+#org @gText_Common_TypeGhost
+Ghost
+
+#org @gText_Common_TypeDark
+Dark
+
+#org @gText_Common_TypeSteel
+Steel
+
+#org @gText_Common_TypeFairy
+Fairy

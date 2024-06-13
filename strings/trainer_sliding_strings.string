@@ -82,22 +82,32 @@ Let's see if [FD][06] can pull through[.]\p
 
 // Developers
 #org @sText_DeveloperCollin_FirstMonDown
-Looks like you've kept up on your\ntraining!
+Looks like you've kept up on your\ntraining!/p
 
 #org @sText_DeveloperCollin_LastSwitchIn
-Battles are at their most intense\nwhen you're on the back foot!
+Battles are at their most intense\nwhen you're on the back foot!/p
 
 #org @sText_DeveloperCollin_LowHP
-Uh oh[.] This isn't looking good.
+Uh oh[.] This isn't looking good./p
 
 #org @sText_DeveloperCrystal_FirstMonDown
-Tsk[.] Only a minor inconvience!\pDo you honestly think losing a single\npokemon will stop me from beating\lyou?
+Tsk[.] Only a minor inconvience!\pDo you honestly think losing a single\npokemon will stop me from beating\lyou?/p
 
 #org @sText_DeveloperCrystal_LastSwitchIn
-Don't count me out yet!
+Don't count me out yet!/p
 
 #org @sText_DeveloperCrystal_LowHP
-I'm not giving up yet!
+I'm not giving up yet!/p
+
+// Gym Leader Trainees (Generic)
+#org @sText_GymLeaderTrainee_FirstMonDown
+Don't assume the others will go down\nso easily!\p
+
+#org @sText_GymLeaderTrainee_LastSwitchIn
+We're going to give it our all!\p
+
+#org @sText_GymLeaderTrainee_LowHP
+We can bring it back, just you wait\nand see!\p
 
 // Leader 1 (Terrence)
 #org @sText_Leader1_FirstMonDown

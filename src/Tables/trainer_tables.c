@@ -5817,7 +5817,7 @@ const struct TrainerMonNoItemCustomMoves sParty_TsarvosaCity_GymTrainees_Ryu[] =
     }
 };
 
-const struct TrainerMonNoItemCustomMoves sParty_TsarvosaCity_GymTrainees_Tobias[] = {
+const struct TrainerMonNoItemCustomMoves sParty_TsarvosaCity_GymTrainees_Caspar[] = {
     {
         .lvl = 50, // Minimum, scales to player
         .species = SPECIES_JELLICENT,
@@ -5864,7 +5864,7 @@ const struct TrainerMonNoItemCustomMoves sParty_TsarvosaCity_GymTrainees_Tobias[
     }
 };
 
-const struct TrainerMonNoItemCustomMoves sParty_TsarvosaCity_GymTrainees_Grayson[] = {
+const struct TrainerMonNoItemCustomMoves sParty_TsarvosaCity_GymTrainees_Darcy[] = {
     {
         .lvl = 50, // Minimum, scales to player
         .species = SPECIES_WEAVILE,
@@ -5958,7 +5958,7 @@ const struct TrainerMonNoItemCustomMoves sParty_TsarvosaCity_GymTrainees_Mason[]
     }
 };
 
-const struct TrainerMonNoItemCustomMoves sParty_TsarvosaCity_GymTrainees_Estelle[] = {
+const struct TrainerMonNoItemCustomMoves sParty_TsarvosaCity_GymTrainees_Faye[] = {
     {
         .lvl = 50, // Minimum, scales to player
         .species = SPECIES_FLORGES_YELLOW,
@@ -11240,7 +11240,7 @@ const struct Trainer gTrainers[] = {
         .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
         .trainerClass = CLASS_GYM_TRAINEE,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
-        .trainerPic = TRAINER_PIC_COOLTRAINER_F,
+        .trainerPic = TRAINER_PIC_BEAUTY,
         .trainerName = {_A, _s, _h, _l, _e, _y, _END },
         .items = { ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
@@ -11252,7 +11252,7 @@ const struct Trainer gTrainers[] = {
         .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
         .trainerClass = CLASS_GYM_TRAINEE,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
-        .trainerPic = TRAINER_PIC_COOLTRAINER_F,
+        .trainerPic = TRAINER_PIC_SWIMMER_F,
         .trainerName = {_C, _h, _e, _l, _s, _e, _a, _END },
         .items = { ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
@@ -11264,7 +11264,7 @@ const struct Trainer gTrainers[] = {
         .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
         .trainerClass = CLASS_GYM_TRAINEE,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
-        .trainerPic = TRAINER_PIC_COOLTRAINER_M,
+        .trainerPic = TRAINER_PIC_BUG_CATCHER,
         .trainerName = {_B, _u, _d, _d, _y, _END },
         .items = { ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
@@ -11276,7 +11276,7 @@ const struct Trainer gTrainers[] = {
         .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
         .trainerClass = CLASS_GYM_TRAINEE,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
-        .trainerPic = TRAINER_PIC_COOLTRAINER_M,
+        .trainerPic = TRAINER_PIC_BLACK_BELT,
         .trainerName = {_G, _a, _w, _a, _i, _n, _END },
         .items = { ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
@@ -11288,7 +11288,7 @@ const struct Trainer gTrainers[] = {
         .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
         .trainerClass = CLASS_GYM_TRAINEE,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
-        .trainerPic = TRAINER_PIC_COOLTRAINER_F,
+        .trainerPic = TRAINER_PIC_LASS,
         .trainerName = {_S, _k, _y, _l, _a, _r, _END },
         .items = { ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
@@ -11300,7 +11300,7 @@ const struct Trainer gTrainers[] = {
         .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
         .trainerClass = CLASS_GYM_TRAINEE,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
-        .trainerPic = TRAINER_PIC_COOLTRAINER_F,
+        .trainerPic = TRAINER_PIC_PKMN_BREEDER_F,
         .trainerName = {_B, _e, _l, _l, _a, _END },
         .items = { ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
@@ -11312,7 +11312,7 @@ const struct Trainer gTrainers[] = {
         .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
         .trainerClass = CLASS_GYM_TRAINEE,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
-        .trainerPic = TRAINER_PIC_COOLTRAINER_M,
+        .trainerPic = TRAINER_PIC_GUITARIST,
         .trainerName = {_F, _l, _a, _s, _h, _END },
         .items = { ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
@@ -11324,7 +11324,7 @@ const struct Trainer gTrainers[] = {
         .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
         .trainerClass = CLASS_GYM_TRAINEE,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
-        .trainerPic = TRAINER_PIC_COOLTRAINER_F,
+        .trainerPic = TRAINER_PIC_PKMN_RANGER_F,
         .trainerName = {_T, _e, _r, _r, _a, _END },
         .items = { ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
@@ -11336,7 +11336,7 @@ const struct Trainer gTrainers[] = {
         .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
         .trainerClass = CLASS_GYM_TRAINEE,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
-        .trainerPic = TRAINER_PIC_COOLTRAINER_F,
+        .trainerPic = TRAINER_PIC_PSYCHIC_F,
         .trainerName = {_S, _e, _i, _f, _a, _END },
         .items = { ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
@@ -11348,7 +11348,7 @@ const struct Trainer gTrainers[] = {
         .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
         .trainerClass = CLASS_GYM_TRAINEE,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
-        .trainerPic = TRAINER_PIC_COOLTRAINER_M,
+        .trainerPic = TRAINER_PIC_HIKER,
         .trainerName = {_R, _o, _c, _c, _o, _END },
         .items = { ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
@@ -11360,7 +11360,7 @@ const struct Trainer gTrainers[] = {
         .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
         .trainerClass = CLASS_GYM_TRAINEE,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
-        .trainerPic = TRAINER_PIC_COOLTRAINER_F,
+        .trainerPic = TRAINER_PIC_SKIER,
         .trainerName = {_J, _a, _n, _i, _c, _e, _END },
         .items = { ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
@@ -11372,7 +11372,7 @@ const struct Trainer gTrainers[] = {
         .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
         .trainerClass = CLASS_GYM_TRAINEE,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
-        .trainerPic = TRAINER_PIC_COOLTRAINER_F,
+        .trainerPic = TRAINER_PIC_POKEFAN_F,
         .trainerName = {_A, _n, _t, _o, _i, _n, _e, _t, _t, _e, _END },
         .items = { ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
@@ -11384,7 +11384,7 @@ const struct Trainer gTrainers[] = {
         .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
         .trainerClass = CLASS_GYM_TRAINEE,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
-        .trainerPic = TRAINER_PIC_COOLTRAINER_M,
+        .trainerPic = TRAINER_PIC_DRAGON_TAMER,
         .trainerName = {_R, _y, _u, _END },
         .items = { ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
@@ -11392,35 +11392,35 @@ const struct Trainer gTrainers[] = {
         .partySize = NELEMS(sParty_TsarvosaCity_GymTrainees_Ryu),
         .party = {.NoItemCustomMoves = sParty_TsarvosaCity_GymTrainees_Ryu}
     },
-    [TRAINER_TSARVOSA_CITY_GYM_TRAINEE_TOBIAS] = {
+    [TRAINER_TSARVOSA_CITY_GYM_TRAINEE_CASPAR] = {
         .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
         .trainerClass = CLASS_GYM_TRAINEE,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
-        .trainerPic = TRAINER_PIC_COOLTRAINER_M,
-        .trainerName = {_T, _o, _b, _i, _a, _s, _END },
+        .trainerPic = TRAINER_PIC_PSYCHIC_M,
+        .trainerName = {_C, _a, _s, _p, _a, _r, _END },
         .items = { ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
         .aiFlags = TrainerAIFlags_GymTrainees_Standard,
-        .partySize = NELEMS(sParty_TsarvosaCity_GymTrainees_Tobias),
-        .party = {.NoItemCustomMoves = sParty_TsarvosaCity_GymTrainees_Tobias}
+        .partySize = NELEMS(sParty_TsarvosaCity_GymTrainees_Caspar),
+        .party = {.NoItemCustomMoves = sParty_TsarvosaCity_GymTrainees_Caspar}
     },
-    [TRAINER_TSARVOSA_CITY_GYM_TRAINEE_GRAYSON] = {
+    [TRAINER_TSARVOSA_CITY_GYM_TRAINEE_DARCY] = {
         .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
         .trainerClass = CLASS_GYM_TRAINEE,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
-        .trainerPic = TRAINER_PIC_COOLTRAINER_M,
-        .trainerName = {_G, _r, _a, _y, _s, _o, _n, _END },
+        .trainerPic = TRAINER_PIC_SUPER_NERD,
+        .trainerName = {_D, _a, _r, _c, _y, _END },
         .items = { ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
         .aiFlags = TrainerAIFlags_GymTrainees_Standard,
-        .partySize = NELEMS(sParty_TsarvosaCity_GymTrainees_Grayson),
-        .party = {.NoItemCustomMoves = sParty_TsarvosaCity_GymTrainees_Grayson}
+        .partySize = NELEMS(sParty_TsarvosaCity_GymTrainees_Darcy),
+        .party = {.NoItemCustomMoves = sParty_TsarvosaCity_GymTrainees_Darcy}
     },
     [TRAINER_TSARVOSA_CITY_GYM_TRAINEE_MASON] = {
         .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
         .trainerClass = CLASS_GYM_TRAINEE,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
-        .trainerPic = TRAINER_PIC_COOLTRAINER_M,
+        .trainerPic = TRAINER_PIC_SCIENTIST_M,
         .trainerName = {_M, _a, _s, _o, _n, _END },
         .items = { ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
@@ -11428,17 +11428,17 @@ const struct Trainer gTrainers[] = {
         .partySize = NELEMS(sParty_TsarvosaCity_GymTrainees_Mason),
         .party = {.NoItemCustomMoves = sParty_TsarvosaCity_GymTrainees_Mason}
     },
-    [TRAINER_TSARVOSA_CITY_GYM_TRAINEE_ESTELLE] = {
+    [TRAINER_TSARVOSA_CITY_GYM_TRAINEE_FAYE] = {
         .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
         .trainerClass = CLASS_GYM_TRAINEE,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
-        .trainerPic = TRAINER_PIC_COOLTRAINER_F,
-        .trainerName = {_E, _s, _t, _e, _l, _l, _e, _END },
+        .trainerPic = TRAINER_PIC_PARASOL_LADY,
+        .trainerName = {_F, _a, _y, _e, _END },
         .items = { ITEM_FULL_RESTORE },
         .doubleBattle = FALSE,
         .aiFlags = TrainerAIFlags_GymTrainees_Standard,
-        .partySize = NELEMS(sParty_TsarvosaCity_GymTrainees_Estelle),
-        .party = {.NoItemCustomMoves = sParty_TsarvosaCity_GymTrainees_Estelle}
+        .partySize = NELEMS(sParty_TsarvosaCity_GymTrainees_Faye),
+        .party = {.NoItemCustomMoves = sParty_TsarvosaCity_GymTrainees_Faye}
     },
     // #endregion
     // #endregion

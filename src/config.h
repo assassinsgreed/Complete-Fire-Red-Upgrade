@@ -126,7 +126,7 @@ enum //These vars need to be one after the other (hence the enum)
 #define NUM_TMS 100	//keep this defined even if EXPANDED_TMSHMS is not!!
 #define NUM_HMS 6	//keep this defined even if EXPANDED_TMSHMS is not!!
 #define NUM_MOVE_TUTORS 64 //keep this defined even if EXPANDED_MOVE_TUTORS is not!! If using DPE, set to 128.
-#define LAST_TOTAL_TUTOR_NUM 72 //Should be equal to (NUM_MOVE_TUTORS - 1) + 9. Must be set to an actual integer or the compilation will not work.
+#define LAST_TOTAL_TUTOR_NUM 126 //Should be equal to (NUM_MOVE_TUTORS - 1) + 9. Must be set to an actual integer or the compilation will not work.
 #define TMS_BEFORE_HMS  //Uncomment this if you want the HMs to appear after the TMs in your bag
 #define DELETABLE_HMS //Uncomment this if you want HMs to be deletable without the Move Deleter
 #define REUSABLE_TMS	//if defined, don't forget to give all TMs a Mystery byte of 1!

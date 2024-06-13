@@ -138,7 +138,7 @@
 #define VAR_MAP_SCENE_ROUTE_12_REST_HOUSE                                      0x405C
 #define VAR_MAP_SCENE_PLUTO_HQ_EVENTS                                          0x405D
 #define VAR_MAP_SCENE_TSARVOSA_STATS_DOJO_PROGRESSION                          0x405E
-#define VAR_MAP_SCENE_ROUTE23                                                  0x405F
+#define VAR_MAP_SCENE_TSARVOSA_GYM_TRAINEE_CAFE                                0x405F
 #define VAR_MAP_SCENE_SILPH_CO_11F                                             0x4060
 #define VAR_MAP_SCENE_PEWTER_CITY_MUSEUM_1F                                    0x4061
 #define VAR_MAP_SCENE_ROUTE5_ROUTE6_ROUTE7_ROUTE8_GATES                        0x4062
@@ -207,7 +207,7 @@
 #define VAR_TSARVOSA_STATS_DOJO_IVMAXER_LEVEL 0x409F
 #define VAR_TSARVOSA_STATS_DOJO_EVDISCIPLE_LEVEL 0x40A0
 #define VAR_POWER_ITEM_LEVEL       0x40A1
-#define VAR_0x40A2                 0x40A2
+#define VAR_GYM_TRAINEE_MOVE       0x40A2
 #define VAR_0x40A3                 0x40A3
 #define VAR_0x40A4                 0x40A4
 #define VAR_0x40A5                 0x40A5
