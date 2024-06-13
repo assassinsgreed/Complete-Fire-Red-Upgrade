@@ -13,6 +13,7 @@ MapScript_TsarvosaCity:
 
 MapEntryScript_TsarvosaCity_FlightSpot:
     setworldmapflag 0x899 @ Visited Tsarvosa City
+    clearflag 0x91D @ Enable saving when leaving the Gym Trainee Cafe
     end
 
 .global EventScript_TsarvosaCity_Captain
@@ -73,6 +74,11 @@ SignScript_TsarvosaCity_StatsDojo:
 .global SignScript_TsarvosaCity_DevStudioSign
 SignScript_TsarvosaCity_DevStudioSign:
     msgbox gText_TsarvosaCity_DevStudioSign MSG_SIGN
+    end
+
+.global SignScript_TsarvosaCity_GymTraineesCafeSign
+SignScript_TsarvosaCity_GymTraineesCafeSign:
+    msgbox gText_TsarvosaCity_GymTraineeCafeSign MSG_SIGN
     end
 
 @ Pokemon Center
@@ -182,6 +188,7 @@ EventScript_TsarvosaCity_StatsDojo_Kaito:
     msgbox gText_TsarvosaCity_StatsDojo_KaitoChoseYes MSG_NORMAL
     trainerbattle9 0x1 406 0x100 gText_TsarvosaCity_StatsDojo_KaitoLoses gText_TsarvosaCity_StatsDojo_KaitoWins    
     clearflag 0x915 @ Can use items again
+    setvar 0x8000 0x0 @ Does not continue after lost battles
     compare LASTRESULT TRUE
     if equal _goto LostToKaito
     goto KaitoDefeated
@@ -1124,6 +1131,7 @@ DoBattleCommon:
     setvar 0x8000 0xFEFE @ Continue lost battles
     setflag 0x90E @ Scale disciple teams
     trainerbattle9 0x0 0x4001 0x0 gText_TsarvosaCity_StatsDojo_EVDiscipleBattlePostBattle gText_TsarvosaCity_StatsDojo_EVDiscipleBattlePostBattle
+    setvar 0x8000 0x0 @ Does not continue after lost battles
     checkflag 0x4FF @ Trainer level scaling modifier
     if NOT_SET _call DisableTrainerScalingFlag
     msgbox gText_TsarvosaCity_StatsDojo_EVDiscipleBattlePostBattleHealing MSG_NORMAL
@@ -1334,3 +1342,729 @@ PostDevTeamBattle:
 IncreaseDevTeamReward:
     setvar 0x4000 0x5 @ 5 PokeChip reward
     return
+
+@ Gym Trainee Cafe
+.equ TraineeMoveChoice, 0x40A2
+
+.global MapScript_GymTraineeCafe
+MapScript_GymTraineeCafe:
+    mapscript MAP_SCRIPT_ON_LOAD MapEntryScript_GymTraineeCafe_RotateTrainers
+    mapscript MAP_SCRIPT_ON_FRAME_TABLE LevelScripts_GymTraineeCafe_AttendantCutscene
+    .byte MAP_SCRIPT_TERMIN
+
+MapEntryScript_GymTraineeCafe_RotateTrainers:
+    setflag 0x91D @ Disable saving while inside the Gym Trainee Cafe, to prevent weirdness when loading a save there
+    checkflag 0xE1F @ Trainees have been rotated today
+    if SET _goto End
+    @ Clear all trainer flags
+    cleartrainerflag 429 @ Noam
+    cleartrainerflag 430 @ Ashley
+    cleartrainerflag 431 @ Chelsea
+    cleartrainerflag 432 @ Buddy
+    cleartrainerflag 433 @ Gawain
+    cleartrainerflag 434 @ Skylar
+    cleartrainerflag 435 @ Bella
+    cleartrainerflag 436 @ Flash
+    cleartrainerflag 437 @ Terra
+    cleartrainerflag 438 @ Seifa
+    cleartrainerflag 439 @ Rocco
+    cleartrainerflag 440 @ Janice
+    cleartrainerflag 441 @ Antoinette
+    cleartrainerflag 442 @ Ryu
+    cleartrainerflag 443 @ Caspar
+    cleartrainerflag 444 @ Darcy
+    cleartrainerflag 445 @ Mason
+    cleartrainerflag 446 @ Faye
+    random 3
+    copyvar TraineeMoveChoice LASTRESULT
+    callasm InitializeGymTraineesCafe
+    setflag 0xE1F @ Trainees have been rotated today
+    end
+
+LevelScripts_GymTraineeCafe_AttendantCutscene:
+    levelscript 0x405F 0x0 LevelScript_CafeAttendantWelcomesPlayer
+    .hword LEVEL_SCRIPT_TERMIN
+
+LevelScript_CafeAttendantWelcomesPlayer:
+    pause DELAY_HALFSECOND
+    sound 0x15 @ Exclaim
+    applymovement Attendant m_Surprise
+    waitmovement Attendant
+    msgbox gText_TsarvosaCity_GymTraineeCafe_AttendantSpotsPlayer MSG_NORMAL
+    applymovement Attendant m_CafeAttendantWalksToPlayer
+    waitmovement Attendant
+    msgbox gText_TsarvosaCity_GymTraineeCafe_AttendantExplainsServices MSG_NORMAL
+    applymovement Attendant m_CafeAttendnatReturnsToPosition
+    waitmovement Attendant
+    setvar 0x405F 0x1 @ Prevent the event from playing again
+    end
+
+.global EventScript_TsarvosaCity_GymTraineeCafe_Attendant
+EventScript_TsarvosaCity_GymTraineeCafe_Attendant:
+    npcchatwithmovement gText_TsarvosaCity_GymTraineeCafe_AttendantExplainsServices m_LookDown
+    end
+
+.global EventScript_TsarvosaCity_GymTraineeCafe_Noam
+EventScript_TsarvosaCity_GymTraineeCafe_Noam:
+    bufferstring 0x0 gText_TsarvosaCity_GymTraineeCafe_TraineeNoam
+    bufferstring 0x1 gText_Common_TypeNormal
+    bufferstring 0x2 gText_TsarvosaCity_GymTraineeCafe_TraineeNoam_TrainedUnder
+    setvar 0x4000 429
+    setvar 0x4001 ITEM_SILK_SCARF
+    setvar 0x4002 ITEM_NORMAL_GEM
+    setvar 0x4003 ITEM_CHILAN_BERRY
+    faceplayer
+    checktrainerflag 429
+    if NOT_SET _call BattleGymTrainee
+    bufferstring 0x1 gText_Common_TypeNormal @ Gets reset if tutoring right after battle
+    switch TraineeMoveChoice
+    case 0, TutorNormal1
+    case 1, TutorNormal2
+    case 2, TutorNormal3
+    end
+
+TutorNormal1:
+    setvar 0x8005 73
+    bufferattack 0x2 MOVE_ASSIST
+    goto TutorPokemon
+
+TutorNormal2:
+    setvar 0x8005 74
+    bufferattack 0x2 MOVE_HEADBUTT
+    goto TutorPokemon
+
+TutorNormal3:
+    setvar 0x8005 75
+    bufferattack 0x2 MOVE_PAYDAY
+    goto TutorPokemon
+
+.global EventScript_TsarvosaCity_GymTraineeCafe_Ashley
+EventScript_TsarvosaCity_GymTraineeCafe_Ashley:
+    bufferstring 0x0 gText_TsarvosaCity_GymTraineeCafe_TraineeAshley
+    bufferstring 0x1 gText_Common_TypeFire
+    bufferstring 0x2 gText_TsarvosaCity_GymTraineeCafe_TraineeAshley_TrainedUnder
+    setvar 0x4000 430
+    setvar 0x4001 ITEM_CHARCOAL
+    setvar 0x4002 ITEM_FIRE_GEM
+    setvar 0x4003 ITEM_OCCA_BERRY
+    faceplayer
+    checktrainerflag 430
+    if NOT_SET _call BattleGymTrainee
+    bufferstring 0x1 gText_Common_TypeFire @ Gets reset if tutoring right after battle
+    switch TraineeMoveChoice
+    case 0, TutorFire1
+    case 1, TutorFire2
+    case 2, TutorFire3
+    end
+
+TutorFire1:
+    setvar 0x8005 76
+    bufferattack 0x2 MOVE_FIREFANG
+    goto TutorPokemon
+
+TutorFire2:
+    setvar 0x8005 77
+    bufferattack 0x2 MOVE_MYSTICALFIRE
+    goto TutorPokemon
+
+TutorFire3:
+    setvar 0x8005 78
+    bufferattack 0x2 MOVE_INCINERATE
+    goto TutorPokemon
+
+.global EventScript_TsarvosaCity_GymTraineeCafe_Chelsea
+EventScript_TsarvosaCity_GymTraineeCafe_Chelsea:
+    bufferstring 0x0 gText_TsarvosaCity_GymTraineeCafe_TraineeChelsea
+    bufferstring 0x1 gText_Common_TypeWater
+    bufferstring 0x2 gText_TsarvosaCity_GymTraineeCafe_TraineeChelsea_TrainedUnder
+    setvar 0x4000 431
+    setvar 0x4001 ITEM_MYSTIC_WATER
+    setvar 0x4002 ITEM_WATER_GEM
+    setvar 0x4003 ITEM_PASSHO_BERRY
+    faceplayer
+    checktrainerflag 431
+    if NOT_SET _call BattleGymTrainee
+    bufferstring 0x1 gText_Common_TypeWater @ Gets reset if tutoring right after battle
+    switch TraineeMoveChoice
+    case 0, TutorWater1
+    case 1, TutorWater2
+    case 2, TutorWater3
+    end
+
+TutorWater1:
+    setvar 0x8005 79
+    bufferattack 0x2 MOVE_AQUARING
+    goto TutorPokemon
+
+TutorWater2:
+    setvar 0x8005 80
+    bufferattack 0x2 MOVE_BRINE
+    goto TutorPokemon
+
+TutorWater3:
+    setvar 0x8005 81
+    bufferattack 0x2 MOVE_RAZORSHELL
+    goto TutorPokemon
+
+.global EventScript_TsarvosaCity_GymTraineeCafe_Buddy
+EventScript_TsarvosaCity_GymTraineeCafe_Buddy:
+    bufferstring 0x0 gText_TsarvosaCity_GymTraineeCafe_TraineeBuddy
+    bufferstring 0x1 gText_Common_TypeGrass
+    bufferstring 0x2 gText_TsarvosaCity_GymTraineeCafe_TraineeBuddy_TrainedUnder
+    setvar 0x4000 432
+    setvar 0x4001 ITEM_MIRACLE_SEED
+    setvar 0x4002 ITEM_GRASS_GEM
+    setvar 0x4003 ITEM_RINDO_BERRY
+    faceplayer
+    checktrainerflag 432
+    if NOT_SET _call BattleGymTrainee
+    bufferstring 0x1 gText_Common_TypeGrass @ Gets reset if tutoring right after battle
+    switch TraineeMoveChoice
+    case 0, TutorGrass1
+    case 1, TutorGrass2
+    case 2, TutorGrass3
+    end
+
+TutorGrass1:
+    setvar 0x8005 85
+    bufferattack 0x2 MOVE_COTTONSPORE
+    goto TutorPokemon
+
+TutorGrass2:
+    setvar 0x8005 86
+    bufferattack 0x2 MOVE_FORESTSCURSE
+    goto TutorPokemon
+
+TutorGrass3:
+    setvar 0x8005 87
+    bufferattack 0x2 MOVE_MEGADRAIN
+    goto TutorPokemon
+
+.global EventScript_TsarvosaCity_GymTraineeCafe_Gawain
+EventScript_TsarvosaCity_GymTraineeCafe_Gawain:
+    bufferstring 0x0 gText_TsarvosaCity_GymTraineeCafe_TraineeGawain
+    bufferstring 0x1 gText_Common_TypeFighting
+    bufferstring 0x2 gText_TsarvosaCity_GymTraineeCafe_TraineeGawain_TrainedUnder
+    setvar 0x4000 433
+    setvar 0x4001 ITEM_BLACK_BELT
+    setvar 0x4002 ITEM_FIGHTING_GEM
+    setvar 0x4003 ITEM_CHOPLE_BERRY
+    faceplayer
+    checktrainerflag 433
+    if NOT_SET _call BattleGymTrainee
+    bufferstring 0x1 gText_Common_TypeFighting @ Gets reset if tutoring right after battle
+    switch TraineeMoveChoice
+    case 0, TutorFighting1
+    case 1, TutorFighting2
+    case 2, TutorFighting3
+    end
+
+TutorFighting1:
+    setvar 0x8005 91
+    bufferattack 0x2 MOVE_KARATECHOP
+    goto TutorPokemon
+
+TutorFighting2:
+    setvar 0x8005 92
+    bufferattack 0x2 MOVE_AURASPHERE
+    goto TutorPokemon
+
+TutorFighting3:
+    setvar 0x8005 93
+    bufferattack 0x2 MOVE_STORMTHROW
+    goto TutorPokemon
+
+.global EventScript_TsarvosaCity_GymTraineeCafe_Skylar
+EventScript_TsarvosaCity_GymTraineeCafe_Skylar:
+    bufferstring 0x0 gText_TsarvosaCity_GymTraineeCafe_TraineeSkylar
+    bufferstring 0x1 gText_Common_TypeFlying
+    bufferstring 0x2 gText_TsarvosaCity_GymTraineeCafe_TraineeSkylar_TrainedUnder
+    setvar 0x4000 434
+    setvar 0x4001 ITEM_SHARP_BEAK
+    setvar 0x4002 ITEM_FLYING_GEM
+    setvar 0x4003 ITEM_COBA_BERRY
+    faceplayer
+    checktrainerflag 434
+    if NOT_SET _call BattleGymTrainee
+    bufferstring 0x1 gText_Common_TypeFlying @ Gets reset if tutoring right after battle
+    switch TraineeMoveChoice
+    case 0, TutorFlying1
+    case 1, TutorFlying2
+    case 2, TutorFlying3
+    end
+
+TutorFlying1:
+    setvar 0x8005 100
+    bufferattack 0x2 MOVE_CHATTER
+    goto TutorPokemon
+
+TutorFlying2:
+    setvar 0x8005 101
+    bufferattack 0x2 MOVE_DUALWINGBEAT
+    goto TutorPokemon
+
+TutorFlying3:
+    setvar 0x8005 102
+    bufferattack 0x2 MOVE_SKYDROP
+    goto TutorPokemon
+
+.global EventScript_TsarvosaCity_GymTraineeCafe_Bella
+EventScript_TsarvosaCity_GymTraineeCafe_Bella:
+    bufferstring 0x0 gText_TsarvosaCity_GymTraineeCafe_TraineeBella
+    bufferstring 0x1 gText_Common_TypePoison
+    bufferstring 0x2 gText_TsarvosaCity_GymTraineeCafe_TraineeBella_TrainedUnder
+    setvar 0x4000 435
+    setvar 0x4001 ITEM_POISON_BARB
+    setvar 0x4002 ITEM_POISON_GEM
+    setvar 0x4003 ITEM_KEBIA_BERRY
+    faceplayer
+    checktrainerflag 435
+    if NOT_SET _call BattleGymTrainee
+    bufferstring 0x1 gText_Common_TypePoison @ Gets reset if tutoring right after battle
+    switch TraineeMoveChoice
+    case 0, TutorPoison1
+    case 1, TutorPoison2
+    case 2, TutorPoison3
+    end
+
+TutorPoison1:
+    setvar 0x8005 94
+    bufferattack 0x2 MOVE_SLUDGE
+    goto TutorPokemon
+
+TutorPoison2:
+    setvar 0x8005 95
+    bufferattack 0x2 MOVE_ACIDSPRAY
+    goto TutorPokemon
+
+TutorPoison3:
+    setvar 0x8005 96
+    bufferattack 0x2 MOVE_COIL
+    goto TutorPokemon
+
+.global EventScript_TsarvosaCity_GymTraineeCafe_Flash
+EventScript_TsarvosaCity_GymTraineeCafe_Flash:
+    bufferstring 0x0 gText_TsarvosaCity_GymTraineeCafe_TraineeFlash
+    bufferstring 0x1 gText_Common_TypeElectric
+    bufferstring 0x2 gText_TsarvosaCity_GymTraineeCafe_TraineeFlash_TrainedUnder
+    setvar 0x4000 436
+    setvar 0x4001 ITEM_MAGNET
+    setvar 0x4002 ITEM_ELECTRIC_GEM
+    setvar 0x4003 ITEM_WACAN_BERRY
+    faceplayer
+    checktrainerflag 436
+    if NOT_SET _call BattleGymTrainee
+    bufferstring 0x1 gText_Common_TypeElectric @ Gets reset if tutoring right after battle
+    switch TraineeMoveChoice
+    case 0, TutorElectric1
+    case 1, TutorElectric2
+    case 2, TutorElectric3
+    end
+
+TutorElectric1:
+    setvar 0x8005 82
+    bufferattack 0x2 MOVE_SPARK
+    goto TutorPokemon
+
+TutorElectric2:
+    setvar 0x8005 83
+    bufferattack 0x2 MOVE_SHOCKWAVE
+    goto TutorPokemon
+
+TutorElectric3:
+    setvar 0x8005 84
+    bufferattack 0x2 MOVE_PARABOLICCHARGE
+    goto TutorPokemon
+
+.global EventScript_TsarvosaCity_GymTraineeCafe_Terra
+EventScript_TsarvosaCity_GymTraineeCafe_Terra:
+    bufferstring 0x0 gText_TsarvosaCity_GymTraineeCafe_TraineeTerra
+    bufferstring 0x1 gText_Common_TypeGround
+    bufferstring 0x2 gText_TsarvosaCity_GymTraineeCafe_TraineeTerra_TrainedUnder
+    setvar 0x4000 437
+    setvar 0x4001 ITEM_SOFT_SAND
+    setvar 0x4002 ITEM_GROUND_GEM
+    setvar 0x4003 ITEM_SHUCA_BERRY
+    faceplayer
+    checktrainerflag 437
+    if NOT_SET _call BattleGymTrainee
+    bufferstring 0x1 gText_Common_TypeGround @ Gets reset if tutoring right after battle
+    switch TraineeMoveChoice
+    case 0, TutorGround1
+    case 1, TutorGround2
+    case 2, TutorGround3
+    end
+
+TutorGround1:
+    setvar 0x8005 97
+    bufferattack 0x2 MOVE_MUDSHOT
+    goto TutorPokemon
+
+TutorGround2:
+    setvar 0x8005 98
+    bufferattack 0x2 MOVE_SPIKES
+    goto TutorPokemon
+
+TutorGround3:
+    setvar 0x8005 99
+    bufferattack 0x2 MOVE_MAGNITUDE
+    goto TutorPokemon
+
+.global EventScript_TsarvosaCity_GymTraineeCafe_Seifa
+EventScript_TsarvosaCity_GymTraineeCafe_Seifa:
+    bufferstring 0x0 gText_TsarvosaCity_GymTraineeCafe_TraineeSeifa
+    bufferstring 0x1 gText_Common_TypePsychic
+    bufferstring 0x2 gText_TsarvosaCity_GymTraineeCafe_TraineeSeifa_TrainedUnder
+    setvar 0x4000 438
+    setvar 0x4001 ITEM_TWISTED_SPOON
+    setvar 0x4002 ITEM_PSYCHIC_GEM
+    setvar 0x4003 ITEM_PAYAPA_BERRY
+    faceplayer
+    checktrainerflag 438
+    if NOT_SET _call BattleGymTrainee
+    bufferstring 0x1 gText_Common_TypePsychic @ Gets reset if tutoring right after battle
+    switch TraineeMoveChoice
+    case 0, TutorPsychic1
+    case 1, TutorPsychic2
+    case 2, TutorPsychic3
+    end
+
+TutorPsychic1:
+    setvar 0x8005 103
+    bufferattack 0x2 MOVE_HEALBLOCK
+    goto TutorPokemon
+
+TutorPsychic2:
+    setvar 0x8005 104
+    bufferattack 0x2 MOVE_PSYWAVE
+    goto TutorPokemon
+
+TutorPsychic3:
+    setvar 0x8005 105
+    bufferattack 0x2 MOVE_MAGICPOWDER
+    goto TutorPokemon
+
+.global EventScript_TsarvosaCity_GymTraineeCafe_Rocco
+EventScript_TsarvosaCity_GymTraineeCafe_Rocco:
+    bufferstring 0x0 gText_TsarvosaCity_GymTraineeCafe_TraineeRocco
+    bufferstring 0x1 gText_Common_TypeRock
+    bufferstring 0x2 gText_TsarvosaCity_GymTraineeCafe_TraineeRocco_TrainedUnder
+    setvar 0x4000 439
+    setvar 0x4001 ITEM_HARD_STONE
+    setvar 0x4002 ITEM_ROCK_GEM
+    setvar 0x4003 ITEM_CHARTI_BERRY
+    faceplayer
+    checktrainerflag 439
+    if NOT_SET _call BattleGymTrainee
+    bufferstring 0x1 gText_Common_TypeRock @ Gets reset if tutoring right after battle
+    switch TraineeMoveChoice
+    case 0, TutorRock1
+    case 1, TutorRock2
+    case 2, TutorRock3
+    end
+
+TutorRock1:
+    setvar 0x8005 109
+    bufferattack 0x2 MOVE_ROLLOUT
+    goto TutorPokemon
+
+TutorRock2:
+    setvar 0x8005 110
+    bufferattack 0x2 MOVE_WIDEGUARD
+    goto TutorPokemon
+
+TutorRock3:
+    setvar 0x8005 111
+    bufferattack 0x2 MOVE_ANCIENTPOWER
+    goto TutorPokemon
+
+.global EventScript_TsarvosaCity_GymTraineeCafe_Janice
+EventScript_TsarvosaCity_GymTraineeCafe_Janice:
+    textcolor RED
+    bufferstring 0x0 gText_TsarvosaCity_GymTraineeCafe_TraineeJanice
+    bufferstring 0x1 gText_Common_TypeIce
+    bufferstring 0x2 gText_TsarvosaCity_GymTraineeCafe_TraineeJanice_TrainedUnder
+    setvar 0x4000 440
+    setvar 0x4001 ITEM_NEVER_MELT_ICE
+    setvar 0x4002 ITEM_ICE_GEM
+    setvar 0x4003 ITEM_YACHE_BERRY
+    faceplayer
+    checktrainerflag 440
+    if NOT_SET _call BattleGymTrainee
+    bufferstring 0x1 gText_Common_TypeIce @ Gets reset if tutoring right after battle
+    switch TraineeMoveChoice
+    case 0, TutorIce1
+    case 1, TutorIce2
+    case 2, TutorIce3
+    end
+
+TutorIce1:
+    setvar 0x8005 88
+    bufferattack 0x2 MOVE_ICESHARD
+    goto TutorPokemon
+
+TutorIce2:
+    setvar 0x8005 89
+    bufferattack 0x2 MOVE_FREEZEDRY
+    goto TutorPokemon
+
+TutorIce3:
+    setvar 0x8005 90
+    bufferattack 0x2 MOVE_AURORABEAM
+    goto TutorPokemon
+
+.global EventScript_TsarvosaCity_GymTraineeCafe_Antoinette
+EventScript_TsarvosaCity_GymTraineeCafe_Antoinette:
+    bufferstring 0x0 gText_TsarvosaCity_GymTraineeCafe_TraineeAntoinette
+    bufferstring 0x1 gText_Common_TypeBug
+    bufferstring 0x2 gText_TsarvosaCity_GymTraineeCafe_TraineeAntoinette_TrainedUnder
+    setvar 0x4000 441
+    setvar 0x4001 ITEM_SILVER_POWDER
+    setvar 0x4002 ITEM_BUG_GEM
+    setvar 0x4003 ITEM_TANGA_BERRY
+    faceplayer
+    checktrainerflag 441
+    if NOT_SET _call BattleGymTrainee
+    bufferstring 0x1 gText_Common_TypeBug @ Gets reset if tutoring right after battle
+    switch TraineeMoveChoice
+    case 0, TutorBug1
+    case 1, TutorBug2
+    case 2, TutorBug3
+    end
+
+TutorBug1:
+    setvar 0x8005 106
+    bufferattack 0x2 MOVE_FURYCUTTER
+    goto TutorPokemon
+
+TutorBug2:
+    setvar 0x8005 107
+    bufferattack 0x2 MOVE_FELLSTINGER
+    goto TutorPokemon
+
+TutorBug3:
+    setvar 0x8005 108
+    bufferattack 0x2 MOVE_RAGEPOWDER
+    goto TutorPokemon
+
+.global EventScript_TsarvosaCity_GymTraineeCafe_Ryu
+EventScript_TsarvosaCity_GymTraineeCafe_Ryu:
+    bufferstring 0x0 gText_TsarvosaCity_GymTraineeCafe_TraineeRyu
+    bufferstring 0x1 gText_Common_TypeDragon
+    bufferstring 0x2 gText_TsarvosaCity_GymTraineeCafe_TraineeRyu_TrainedUnder
+    setvar 0x4000 442
+    setvar 0x4001 ITEM_DRAGON_FANG
+    setvar 0x4002 ITEM_DRAGON_GEM
+    setvar 0x4003 ITEM_HABAN_BERRY
+    faceplayer
+    checktrainerflag 442
+    if NOT_SET _call BattleGymTrainee
+    bufferstring 0x1 gText_Common_TypeDragon @ Gets reset if tutoring right after battle
+    switch TraineeMoveChoice
+    case 0, TutorDragon1
+    case 1, TutorDragon2
+    case 2, TutorDragon3
+    end
+
+TutorDragon1:
+    setvar 0x8005 115
+    bufferattack 0x2 MOVE_BREAKINGSWIPE
+    goto TutorPokemon
+
+TutorDragon2:
+    setvar 0x8005 116
+    bufferattack 0x2 MOVE_SCALESHOT
+    goto TutorPokemon
+
+TutorDragon3:
+    setvar 0x8005 117
+    bufferattack 0x2 MOVE_DRAGONRUSH
+    goto TutorPokemon
+
+.global EventScript_TsarvosaCity_GymTraineeCafe_Caspar
+EventScript_TsarvosaCity_GymTraineeCafe_Caspar:
+    bufferstring 0x0 gText_TsarvosaCity_GymTraineeCafe_TraineeCaspar
+    bufferstring 0x1 gText_Common_TypeGhost
+    bufferstring 0x2 gText_TsarvosaCity_GymTraineeCafe_TraineeCaspar_TrainedUnder
+    setvar 0x4000 443
+    setvar 0x4001 ITEM_SPELL_TAG
+    setvar 0x4002 ITEM_GHOST_GEM
+    setvar 0x4003 ITEM_KASIB_BERRY
+    faceplayer
+    checktrainerflag 443
+    if NOT_SET _call BattleGymTrainee
+    bufferstring 0x1 gText_Common_TypeGhost @ Gets reset if tutoring right after battle
+    switch TraineeMoveChoice
+    case 0, TutorGhost1
+    case 1, TutorGhost2
+    case 2, TutorGhost3
+    end
+
+TutorGhost1:
+    setvar 0x8005 112
+    bufferattack 0x2 MOVE_DESTINYBOND
+    goto TutorPokemon
+
+TutorGhost2:
+    setvar 0x8005 113
+    bufferattack 0x2 MOVE_SHADOWSNEAK
+    goto TutorPokemon
+
+TutorGhost3:
+    setvar 0x8005 114
+    bufferattack 0x2 MOVE_GRUDGE
+    goto TutorPokemon
+
+.global EventScript_TsarvosaCity_GymTraineeCafe_Darcy
+EventScript_TsarvosaCity_GymTraineeCafe_Darcy:
+    bufferstring 0x0 gText_TsarvosaCity_GymTraineeCafe_TraineeDarcy
+    bufferstring 0x1 gText_Common_TypeDark
+    bufferstring 0x2 gText_TsarvosaCity_GymTraineeCafe_TraineeDarcy_TrainedUnder
+    setvar 0x4000 444
+    setvar 0x4001 ITEM_BLACK_GLASSES
+    setvar 0x4002 ITEM_DARK_GEM
+    setvar 0x4003 ITEM_COLBUR_BERRY
+    faceplayer
+    checktrainerflag 444
+    if NOT_SET _call BattleGymTrainee
+    bufferstring 0x1 gText_Common_TypeDark @ Gets reset if tutoring right after battle
+    switch TraineeMoveChoice
+    case 0, TutorDark1
+    case 1, TutorDark2
+    case 2, TutorDark3
+    end
+
+TutorDark1:
+    setvar 0x8005 118
+    bufferattack 0x2 MOVE_FAKETEARS
+    goto TutorPokemon
+
+TutorDark2:
+    setvar 0x8005 119
+    bufferattack 0x2 MOVE_SUCKERPUNCH
+    goto TutorPokemon
+
+TutorDark3:
+    setvar 0x8005 120
+    bufferattack 0x2 MOVE_PURSUIT
+    goto TutorPokemon
+
+.global EventScript_TsarvosaCity_GymTraineeCafe_Mason
+EventScript_TsarvosaCity_GymTraineeCafe_Mason:
+    bufferstring 0x0 gText_TsarvosaCity_GymTraineeCafe_TraineeMason
+    bufferstring 0x1 gText_Common_TypeSteel
+    bufferstring 0x2 gText_TsarvosaCity_GymTraineeCafe_TraineeMason_TrainedUnder
+    setvar 0x4000 445
+    setvar 0x4001 ITEM_METAL_COAT
+    setvar 0x4002 ITEM_STEEL_GEM
+    setvar 0x4003 ITEM_BABIRI_BERRY
+    faceplayer
+    checktrainerflag 445
+    if NOT_SET _call BattleGymTrainee
+    bufferstring 0x1 gText_Common_TypeSteel @ Gets reset if tutoring right after battle
+    switch TraineeMoveChoice
+    case 0, TutorSteel1
+    case 1, TutorSteel2
+    case 2, TutorSteel3
+    end
+
+TutorSteel1:
+    setvar 0x8005 121
+    bufferattack 0x2 MOVE_AUTOTOMIZE
+    goto TutorPokemon
+
+TutorSteel2:
+    setvar 0x8005 122
+    bufferattack 0x2 MOVE_METALBURST
+    goto TutorPokemon
+
+TutorSteel3:
+    setvar 0x8005 123
+    bufferattack 0x2 MOVE_GYROBALL
+    goto TutorPokemon
+
+.global EventScript_TsarvosaCity_GymTraineeCafe_Faye
+EventScript_TsarvosaCity_GymTraineeCafe_Faye:
+    bufferstring 0x0 gText_TsarvosaCity_GymTraineeCafe_TraineeFaye
+    bufferstring 0x1 gText_Common_TypeFairy
+    bufferstring 0x2 gText_TsarvosaCity_GymTraineeCafe_TraineeFaye_TrainedUnder
+    setvar 0x4000 446
+    setvar 0x4001 ITEM_PIXIE_PLATE
+    setvar 0x4002 ITEM_FAIRY_GEM
+    setvar 0x4003 ITEM_ROSELI_BERRY
+    faceplayer
+    checktrainerflag 446
+    if NOT_SET _call BattleGymTrainee
+    bufferstring 0x1 gText_Common_TypeFairy @ Gets reset if tutoring right after battle
+    switch TraineeMoveChoice
+    case 0, TutorFairy1
+    case 1, TutorFairy2
+    case 2, TutorFairy3
+    end
+
+TutorFairy1:
+    setvar 0x8005 124
+    bufferattack 0x2 MOVE_CRAFTYSHIELD
+    goto TutorPokemon
+
+TutorFairy2:
+    setvar 0x8005 125
+    bufferattack 0x2 MOVE_DRAININGKISS
+    goto TutorPokemon
+
+TutorFairy3:
+    setvar 0x8005 126
+    bufferattack 0x2 MOVE_SPIRITBREAK
+    goto TutorPokemon
+
+BattleGymTrainee:
+    msgbox gText_TsarvosaCity_GymTraineeCafe_Trainee_Intro MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto ChoseNotToBattleTrainee
+    setvar 0x8000 0xFEFE @ Continue lost battles
+    setflag 0x90E @ Scale gym trainee teams
+    call SetupMugshotRival
+    msgbox gText_TsarvosaCity_GymTraineeCafe_Trainee_PreBattle MSG_NORMAL
+    trainerbattle9 0x0 0x4000 0x100 gText_TsarvosaCity_GymTraineeCafe_Trainee_BattleWon gText_TsarvosaCity_GymTraineeCafe_Trainee_BattleLost
+    setvar 0x8000 0x0 @ Does not continue after lost battles    
+    checkflag 0x4FF @ Trainer level scaling modifier
+    if NOT_SET _call DisableTrainerScalingFlag
+    msgbox gText_TsarvosaCity_GymTraineeCafe_Trainee_PostBattleHeal MSG_NORMAL
+    call PlayerHeal
+    compare LASTRESULT TRUE
+    if equal _goto LostToTrainee
+    msgbox gText_TsarvosaCity_GymTraineeCafe_Trainee_WonAgainstTrainee MSG_NORMAL
+    obtainitem 0x4001 0x1
+    pause DELAY_HALFSECOND
+    obtainitem 0x4002 0x1
+    pause DELAY_HALFSECOND
+    obtainitem 0x4003 0x3
+    return
+
+ChoseNotToBattleTrainee:
+    msgbox gText_TsarvosaCity_GymTraineeCafe_Trainee_ChoseNotToBattle MSG_NORMAL
+    end
+
+LostToTrainee:
+    msgbox gText_TsarvosaCity_GymTraineeCafe_Trainee_LostToTrainee MSG_NORMAL
+    end
+
+TutorPokemon:
+    msgbox gText_TsarvosaCity_GymTraineeCafe_Trainee_OfferingMove MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto ChoseNotToTutor
+    msgbox gText_TsarvosaCity_GymTraineeCafe_Trainee_ChoosePokemonPrompt MSG_NORMAL
+    special 0x18D
+    waitstate
+    compare LASTRESULT YES
+    if false _goto ChoseNotToTutor @ Pokemon couldn't learn move, or player cancelled
+    msgbox gText_TsarvosaCity_GymTraineeCafe_Trainee_OfferingToTeachMore MSG_NORMAL
+    end
+
+ChoseNotToTutor:
+    msgbox gText_TsarvosaCity_GymTraineeCafe_Trainee_ChoseNotToTutor MSG_NORMAL
+    msgbox gText_TsarvosaCity_GymTraineeCafe_Trainee_LeavingAtEndOfDay MSG_NORMAL
+    end
+
+m_CafeAttendantWalksToPlayer: .byte walk_down, walk_down, end_m
+m_CafeAttendnatReturnsToPosition: .byte walk_up, walk_up, look_down, end_m

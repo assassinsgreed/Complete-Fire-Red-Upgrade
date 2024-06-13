@@ -51,6 +51,7 @@
 #include "../include/new/scrolling_multichoice.h"
 #include "../include/new/Vanilla_functions_battle.h"
 #include "../include/new/wild_encounter.h"
+#include "../include/random.h"
 /*
 scripting.c
 	handles all scripting specials or other functions associated with scripts
@@ -3424,4 +3425,51 @@ void CheckIfAllIVsAreMaxed()
 	gSpecialVar_LastResult += GetMonData(&gPlayerParty[Var8004], MON_DATA_SPATK_IV, NULL);
 	gSpecialVar_LastResult += GetMonData(&gPlayerParty[Var8004], MON_DATA_SPDEF_IV, NULL);
 	gSpecialVar_LastResult += GetMonData(&gPlayerParty[Var8004], MON_DATA_SPEED_IV, NULL);
+}
+
+void InitializeGymTraineesCafe()
+{
+	// Collect random treasure flags
+	int traineeFlagsSize = 18;
+	int traineeFlags[18] = {
+		FLAG_GYM_TRAINEES_VISIBLE_NOAM,
+		FLAG_GYM_TRAINEES_VISIBLE_ASHLEY,
+		FLAG_GYM_TRAINEES_VISIBLE_CHELSEA,
+		FLAG_GYM_TRAINEES_VISIBLE_BUDDY,
+		FLAG_GYM_TRAINEES_VISIBLE_GAWAIN,
+		FLAG_GYM_TRAINEES_VISIBLE_SKYLAR,
+		FLAG_GYM_TRAINEES_VISIBLE_BELLA,
+		FLAG_GYM_TRAINEES_VISIBLE_FLASH,
+		FLAG_GYM_TRAINEES_VISIBLE_TERRA,
+		FLAG_GYM_TRAINEES_VISIBLE_SEIFA,
+		FLAG_GYM_TRAINEES_VISIBLE_ROCCO,
+		FLAG_GYM_TRAINEES_VISIBLE_JANICE,
+		FLAG_GYM_TRAINEES_VISIBLE_ANTOINETTE,
+		FLAG_GYM_TRAINEES_VISIBLE_RYU,
+		FLAG_GYM_TRAINEES_VISIBLE_CASPAR,
+		FLAG_GYM_TRAINEES_VISIBLE_DARCY,
+		FLAG_GYM_TRAINEES_VISIBLE_MASON,
+		FLAG_GYM_TRAINEES_VISIBLE_FAYE,
+	};
+
+	// Randomly pick 3-5 trainees to display
+	int numElementsToPick = (Random() % 3) + 3;
+
+	for (int i = 0; i < numElementsToPick; i++)
+	{
+		int indexToPick = Random() % traineeFlagsSize; // Randomly pick an index from the original array
+		// Remove the picked element from the original array by shifting all elements to the left
+		for (int j = indexToPick; j < traineeFlagsSize - 1; j++)
+		{
+			traineeFlags[j] = traineeFlags[j + 1];
+		}
+
+		traineeFlagsSize--; // Decrease the size of the original array
+	}
+
+	// Mark all remaining flags as set to hide the trainers
+	for (int i = 0; i < traineeFlagsSize; i++)
+	{
+		FlagSet(traineeFlags[i]);
+	}
 }

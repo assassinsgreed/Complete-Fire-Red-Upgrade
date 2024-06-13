@@ -34,6 +34,9 @@ Tsarvosa City Stats Dojo\nPush beyond your limits!
 #org @gText_TsarvosaCity_DevStudioSign
 Amethyst Dev Studio
 
+#org @gText_TsarvosaCity_GymTraineeCafeSign
+Gym Trainee Caf\e\nWelcoming aspiring gym leaders!
+
 #org @gText_TsarvosaCity_PokemonCenter_FatGuy
 Did you know Iris and Stella are\nsisters?\pTwo sisters that are both gym\nleaders[.] What a powerful duo!
 
@@ -477,3 +480,157 @@ Stay in school kid!
 
 #org @gText_TsarvosaCityNPCHouses_DevTeam_CrystalClosing
 [RED]I hope you had fun, I know I did!
+
+// Gym Trainee Cafe
+#org @gText_TsarvosaCity_GymTraineeCafe_AttendantSpotsPlayer
+[BLUE]Oh, a new face!
+
+#org @gText_TsarvosaCity_GymTraineeCafe_AttendantExplainsServices
+[BLUE]Welcome to the Tsarvosa City Gym\nTrainee Caf\e!\pI see you are a Pok\emon trainer,\ntaking part in their gym challenge.\pPlease allow me to explain the\nservices we can offer you.\pOur clientelle are exclusively\naspiring gym leaders from other\lregions.\pThey come here not only to relax,\nbut to practice their skills.\pI'm sure if you were to speak with\none, they would be delighted to\lbattle you.\pShould you succeed, they may even\noffer you a reward!\pBe sure to return often, as our\nclientelle changes regularly.\pThere is just one catch - you cannot\nsave while in the building!
+
+#org @gText_TsarvosaCity_GymTraineeCafe_TraineeNoam
+Noam
+
+#org @gText_TsarvosaCity_GymTraineeCafe_TraineeNoam_TrainedUnder
+Whitney in Johto.
+
+#org @gText_TsarvosaCity_GymTraineeCafe_TraineeAshley
+Ashley
+
+#org @gText_TsarvosaCity_GymTraineeCafe_TraineeAshley_TrainedUnder
+Blaine in Kanto.
+
+#org @gText_TsarvosaCity_GymTraineeCafe_TraineeChelsea
+Chelsea
+
+#org @gText_TsarvosaCity_GymTraineeCafe_TraineeChelsea_TrainedUnder
+Wake in Sinnoh.
+
+#org @gText_TsarvosaCity_GymTraineeCafe_TraineeBuddy
+Buddy
+
+#org @gText_TsarvosaCity_GymTraineeCafe_TraineeBuddy_TrainedUnder
+Eirika in Kanto.
+
+#org @gText_TsarvosaCity_GymTraineeCafe_TraineeGawain
+Gawain
+
+#org @gText_TsarvosaCity_GymTraineeCafe_TraineeGawain_TrainedUnder
+Brawly in Hoenn.
+
+#org @gText_TsarvosaCity_GymTraineeCafe_TraineeSkylar
+Skylar
+
+#org @gText_TsarvosaCity_GymTraineeCafe_TraineeSkylar_TrainedUnder
+Winona in Hoenn.
+
+#org @gText_TsarvosaCity_GymTraineeCafe_TraineeBella
+Bella
+
+#org @gText_TsarvosaCity_GymTraineeCafe_TraineeBella_TrainedUnder
+Koga in Kanto.
+
+#org @gText_TsarvosaCity_GymTraineeCafe_TraineeFlash
+Flash
+
+#org @gText_TsarvosaCity_GymTraineeCafe_TraineeFlash_TrainedUnder
+Lt. Surge in Kanto.
+
+#org @gText_TsarvosaCity_GymTraineeCafe_TraineeTerra
+Terra
+
+#org @gText_TsarvosaCity_GymTraineeCafe_TraineeTerra_TrainedUnder
+Bertha in Sinnoh.
+
+#org @gText_TsarvosaCity_GymTraineeCafe_TraineeSeifa
+Seifa
+
+#org @gText_TsarvosaCity_GymTraineeCafe_TraineeSeifa_TrainedUnder
+Will in Johto.
+
+#org @gText_TsarvosaCity_GymTraineeCafe_TraineeRocco
+Rocco
+
+#org @gText_TsarvosaCity_GymTraineeCafe_TraineeRocco_TrainedUnder
+Roxanne in Hoenn.
+
+#org @gText_TsarvosaCity_GymTraineeCafe_TraineeJanice
+Janice
+
+#org @gText_TsarvosaCity_GymTraineeCafe_TraineeJanice_TrainedUnder
+Candice in Sinnoh.
+
+#org @gText_TsarvosaCity_GymTraineeCafe_TraineeAntoinette
+Antoinette
+
+#org @gText_TsarvosaCity_GymTraineeCafe_TraineeAntoinette_TrainedUnder
+Bugsy in Johto.
+
+#org @gText_TsarvosaCity_GymTraineeCafe_TraineeRyu
+Ryu
+
+#org @gText_TsarvosaCity_GymTraineeCafe_TraineeRyu_TrainedUnder
+Drake in Hoenn.
+
+#org @gText_TsarvosaCity_GymTraineeCafe_TraineeCaspar
+Caspar
+
+#org @gText_TsarvosaCity_GymTraineeCafe_TraineeCaspar_TrainedUnder
+Fantina in Sinnoh.
+
+#org @gText_TsarvosaCity_GymTraineeCafe_TraineeDarcy
+Darcy
+
+#org @gText_TsarvosaCity_GymTraineeCafe_TraineeDarcy_TrainedUnder
+Karen in Johto.
+
+#org @gText_TsarvosaCity_GymTraineeCafe_TraineeMason
+Mason
+
+#org @gText_TsarvosaCity_GymTraineeCafe_TraineeMason_TrainedUnder
+Jasmine in Johto.
+
+#org @gText_TsarvosaCity_GymTraineeCafe_TraineeFaye
+Faye
+
+#org @gText_TsarvosaCity_GymTraineeCafe_TraineeFaye_TrainedUnder
+Bede in Galar.
+
+#org @gText_TsarvosaCity_GymTraineeCafe_Trainee_Intro
+Hey. I'm [BUFFER1], and I specialize\nin [BUFFER2] type Pok\emon.\pI've been training under\n[BUFFER3]\pThink you can defeat me in a battle?
+
+#org @gText_TsarvosaCity_GymTraineeCafe_Trainee_ChoseNotToBattle
+That's too bad!
+
+#org @gText_TsarvosaCity_GymTraineeCafe_Trainee_PreBattle
+Don't expect me to go easy on you!
+
+#org @gText_TsarvosaCity_GymTraineeCafe_Trainee_BattleWon
+Well done!
+
+#org @gText_TsarvosaCity_GymTraineeCafe_Trainee_BattleLost
+Looks like you were no match for my\nPok\emon!
+
+#org @gText_TsarvosaCity_GymTraineeCafe_Trainee_PostBattleHeal
+That was a good battle.\nHere, let me heal your Pok\emon[.]
+
+#org @gText_TsarvosaCity_GymTraineeCafe_Trainee_LostToTrainee
+Challenge me again sometime, if\nyou're up to it!
+
+#org @gText_TsarvosaCity_GymTraineeCafe_Trainee_WonAgainstTrainee
+You're really good!\nHere, a gift from me to you[.]
+
+#org @gText_TsarvosaCity_GymTraineeCafe_Trainee_OfferingMove
+I've dedicated my life to bringing\nthe best out of [BUFFER2] Pok\emon.\pIf you'd like, I can teach almost\nany [BUFFER2] Pok\emon a unique move!\pToday I'm teaching [BUFFER3].\nWhat do you say?
+
+#org @gText_TsarvosaCity_GymTraineeCafe_Trainee_ChoseNotToTutor
+Okay. If you change your mind, come\nsee me.
+
+#org @gText_TsarvosaCity_GymTraineeCafe_Trainee_ChoosePokemonPrompt
+Alright, which Pok\emon should I\nteach?
+
+#org @gText_TsarvosaCity_GymTraineeCafe_Trainee_OfferingToTeachMore
+All done! It's learned [BUFFER3].\pIf you'd like me to teach more\n[BUFFER2] Pok\emon, just ask!
+
+#org @gText_TsarvosaCity_GymTraineeCafe_Trainee_LeavingAtEndOfDay
+But be quick! I'll likely be leaving\nat the end of the day.

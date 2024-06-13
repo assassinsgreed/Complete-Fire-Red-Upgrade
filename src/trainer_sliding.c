@@ -73,6 +73,24 @@ static const struct TrainerSlide sTrainerSlides[] =
 	{0x1AA, sText_DeveloperCollin_FirstMonDown, sText_DeveloperCollin_LastSwitchIn, sText_DeveloperCollin_LowHP}, // Developer Collin 2
 	{0x1AB, sText_DeveloperCrystal_FirstMonDown, sText_DeveloperCrystal_LastSwitchIn, sText_DeveloperCrystal_LowHP}, // Developer Crystal 1
 	{0x1AC, sText_DeveloperCrystal_FirstMonDown, sText_DeveloperCrystal_LastSwitchIn, sText_DeveloperCrystal_LowHP}, // Developer Crystal 2
+	{0x1AD, sText_GymLeaderTrainee_FirstMonDown, sText_GymLeaderTrainee_LastSwitchIn, sText_GymLeaderTrainee_LowHP}, // Gym Trainee Noam
+	{0x1AE, sText_GymLeaderTrainee_FirstMonDown, sText_GymLeaderTrainee_LastSwitchIn, sText_GymLeaderTrainee_LowHP}, // Gym Trainee Ashley
+	{0x1AF, sText_GymLeaderTrainee_FirstMonDown, sText_GymLeaderTrainee_LastSwitchIn, sText_GymLeaderTrainee_LowHP}, // Gym Trainee Chelsea
+	{0x1B0, sText_GymLeaderTrainee_FirstMonDown, sText_GymLeaderTrainee_LastSwitchIn, sText_GymLeaderTrainee_LowHP}, // Gym Trainee Buddy
+	{0x1B1, sText_GymLeaderTrainee_FirstMonDown, sText_GymLeaderTrainee_LastSwitchIn, sText_GymLeaderTrainee_LowHP}, // Gym Trainee Gawain
+	{0x1B2, sText_GymLeaderTrainee_FirstMonDown, sText_GymLeaderTrainee_LastSwitchIn, sText_GymLeaderTrainee_LowHP}, // Gym Trainee Skylar
+	{0x1B3, sText_GymLeaderTrainee_FirstMonDown, sText_GymLeaderTrainee_LastSwitchIn, sText_GymLeaderTrainee_LowHP}, // Gym Trainee Bella
+	{0x1B4, sText_GymLeaderTrainee_FirstMonDown, sText_GymLeaderTrainee_LastSwitchIn, sText_GymLeaderTrainee_LowHP}, // Gym Trainee Flash
+	{0x1B5, sText_GymLeaderTrainee_FirstMonDown, sText_GymLeaderTrainee_LastSwitchIn, sText_GymLeaderTrainee_LowHP}, // Gym Trainee Terra
+	{0x1B6, sText_GymLeaderTrainee_FirstMonDown, sText_GymLeaderTrainee_LastSwitchIn, sText_GymLeaderTrainee_LowHP}, // Gym Trainee Seifa
+	{0x1B7, sText_GymLeaderTrainee_FirstMonDown, sText_GymLeaderTrainee_LastSwitchIn, sText_GymLeaderTrainee_LowHP}, // Gym Trainee Rocco
+	{0x1B8, sText_GymLeaderTrainee_FirstMonDown, sText_GymLeaderTrainee_LastSwitchIn, sText_GymLeaderTrainee_LowHP}, // Gym Trainee Janice
+	{0x1B9, sText_GymLeaderTrainee_FirstMonDown, sText_GymLeaderTrainee_LastSwitchIn, sText_GymLeaderTrainee_LowHP}, // Gym Trainee Antoinette
+	{0x1BA, sText_GymLeaderTrainee_FirstMonDown, sText_GymLeaderTrainee_LastSwitchIn, sText_GymLeaderTrainee_LowHP}, // Gym Trainee Ryu
+	{0x1BB, sText_GymLeaderTrainee_FirstMonDown, sText_GymLeaderTrainee_LastSwitchIn, sText_GymLeaderTrainee_LowHP}, // Gym Trainee Caspar
+	{0x1BC, sText_GymLeaderTrainee_FirstMonDown, sText_GymLeaderTrainee_LastSwitchIn, sText_GymLeaderTrainee_LowHP}, // Gym Trainee Darcy
+	{0x1BD, sText_GymLeaderTrainee_FirstMonDown, sText_GymLeaderTrainee_LastSwitchIn, sText_GymLeaderTrainee_LowHP}, // Gym Trainee Mason
+	{0x1BE, sText_GymLeaderTrainee_FirstMonDown, sText_GymLeaderTrainee_LastSwitchIn, sText_GymLeaderTrainee_LowHP}, // Gym Trainee Faye
 	{}, // Champion Selene
 };
 

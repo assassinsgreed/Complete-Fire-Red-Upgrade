@@ -73,13 +73,67 @@ enum MoveTutors
 //Numbers in comments are ideal numbers (if NUM_MOVE_TUTORS is 146)
 enum SpecialMoveTutors
 {
-	TUTOR_SPECIAL_DRACO_METEOR = NUM_MOVE_TUTORS,	//146 - Dragon Pokemon
-	TUTOR_SPECIAL_SECRET_SWORD,						//147 - Keldeo only
-	TUTOR_SPECIAL_RELIC_SONG,						//148 - Meloetta only
-	TUTOR_SPECIAL_VOLT_TACKLE,						//149 - Pikachu only
-	TUTOR_SPECIAL_DRAGON_ASCENT,					//150 - Rayquaza only
-	TUTOR_SPECIAL_THOUSAND_ARROWS,					//151 - Zygarde only
-	TUTOR_SPECIAL_THOUSAND_WAVES,					//152 - Zygarde only
-	TUTOR_SPECIAL_CORE_ENFORCER,					//153 - Zygarde only
-	TUTOR_SPECIAL_STEEL_BEAM,						//154 - Steel Pokemon
+	TUTOR_SPECIAL_DRACO_METEOR = NUM_MOVE_TUTORS,	//64 - Dragon Pokemon
+	TUTOR_SPECIAL_SECRET_SWORD,			//65 - Keldeo only
+	TUTOR_SPECIAL_RELIC_SONG,			//66 - Meloetta only
+	TUTOR_SPECIAL_VOLT_TACKLE,			//67 - Pikachu only
+	TUTOR_SPECIAL_DRAGON_ASCENT,		//68 - Rayquaza only
+	TUTOR_SPECIAL_THOUSAND_ARROWS,		//69 - Zygarde only
+	TUTOR_SPECIAL_THOUSAND_WAVES,		//70 - Zygarde only
+	TUTOR_SPECIAL_CORE_ENFORCER,		//71- Zygarde only
+	TUTOR_SPECIAL_STEEL_BEAM,			//72 - Steel Pokemon
+	TUTOR_SPECIAL_ASSIST,				//73 - Normal Pokemon
+	TUTOR_SPECIAL_HEADBUTT,				//74 - Normal Pokemon
+	TUTOR_SPECIAL_PAYDAY,				//75 - Normal Pokemon
+	TUTOR_SPECIAL_FIREFANG,				//76 - Fire Pokemon
+	TUTOR_SPECIAL_MYSTICALFIRE,			//77 - Fire Pokemon
+	TUTOR_SPECIAL_INCINERATE,			//78 - Fire Pokemon
+	TUTOR_SPECIAL_AQUARING,				//79 - Water Pokemon
+	TUTOR_SPECIAL_BRINE,				//80 - Water Pokemon
+	TUTOR_SPECIAL_RAZORSHELL,			//81 - Water Pokemon
+	TUTOR_SPECIAL_SPARK,				//82 - Electric Pokemon
+	TUTOR_SPECIAL_SHOCKWAVE,			//83 - Electric Pokemon
+	TUTOR_SPECIAL_PARABOLICCHARGE,		//84 - Electric Pokemon
+	TUTOR_SPECIAL_COTTONSPORE,			//85 - Grass Pokemon
+	TUTOR_SPECIAL_FORESTSCURSE,			//86 - Grass Pokemon
+	TUTOR_SPECIAL_MEGADRAIN,			//87 - Grass Pokemon
+	TUTOR_SPECIAL_ICESHARD,				//88 - Ice Pokemon
+	TUTOR_SPECIAL_FREEZEDRY,			//89 - Ice Pokemon
+	TUTOR_SPECIAL_AURORABEAM,			//90 - Ice Pokemon
+	TUTOR_SPECIAL_KARATECHOP,			//91 - Fighting Pokemon
+	TUTOR_SPECIAL_AURASPHERE,			//92 - Fighting Pokemon
+	TUTOR_SPECIAL_STORMTHROW,			//93 - Fighting Pokemon
+	TUTOR_SPECIAL_SLUDGE,				//94 - Poison Pokemon
+	TUTOR_SPECIAL_ACIDSPRAY,			//95 - Poison Pokemon
+	TUTOR_SPECIAL_COIL,					//96 - Poison Pokemon
+	TUTOR_SPECIAL_MUDSHOT,				//97 - Ground Pokemon
+	TUTOR_SPECIAL_SPIKES,				//98 - Ground Pokemon
+	TUTOR_SPECIAL_MAGNITUDE,			//99 - Ground Pokemon
+	TUTOR_SPECIAL_CHATTER,				//100 - Flying Pokemon
+	TUTOR_SPECIAL_DUALWINGBEAT,			//101 - Flying Pokemon
+	TUTOR_SPECIAL_SKYDROP,				//102 - Flying Pokemon
+	TUTOR_SPECIAL_HEALBLOCK,			//103 - Psychic Pokemon
+	TUTOR_SPECIAL_PSYWAVE,				//104 - Psychic Pokemon
+	TUTOR_SPECIAL_MAGICPOWDER,			//105 - Psychic Pokemon
+	TUTOR_SPECIAL_FURYCUTTER,			//106 - Bug Pokemon
+	TUTOR_SPECIAL_FELLSTINGER,			//107 - Bug Pokemon
+	TUTOR_SPECIAL_RAGEPOWDER,			//108 - Bug Pokemon
+	TUTOR_SPECIAL_ROLLOUT,				//109 - Rock Pokemon
+	TUTOR_SPECIAL_WIDEGUARD,			//110 - Rock Pokemon
+	TUTOR_SPECIAL_ANCIENTPOWER,			//111 - Rock Pokemon
+	TUTOR_SPECIAL_DESTINYBOND,			//112 - Ghost Pokemon
+	TUTOR_SPECIAL_SHADOWSNEAK,			//113 - Ghost Pokemon
+	TUTOR_SPECIAL_GRUDGE,				//114 - Ghost Pokemon
+	TUTOR_SPECIAL_BREAKINGSWIPE,		//115 - Dragon Pokemon
+	TUTOR_SPECIAL_SCALESHOT,			//116 - Dragon Pokemon
+	TUTOR_SPECIAL_DRAGONRUSH,			//117 - Dragon Pokemon
+	TUTOR_SPECIAL_FAKETEARS,			//118 - Dark Pokemon
+	TUTOR_SPECIAL_SUCKERPUNCH,			//119 - Dark Pokemon
+	TUTOR_SPECIAL_PURSUIT,				//120 - Dark Pokemon
+	TUTOR_SPECIAL_AUTOMIZE,				//121 - Steel Pokemon
+	TUTOR_SPECIAL_METALBURST,			//122 - Steel Pokemon
+	TUTOR_SPECIAL_GYROBALL,				//123 - Steel Pokemon
+	TUTOR_SPECIAL_CRAFTYSHIELD,			//124 - Fairy Pokemon
+	TUTOR_SPECIAL_DRAININGKISS,			//125 - Fairy Pokemon
+	TUTOR_SPECIAL_SPIRITBREAK,			//126 - Fairy Pokemon
 };
