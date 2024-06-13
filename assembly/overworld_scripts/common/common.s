@@ -257,20 +257,19 @@ PokedexEvaluation_Rating:
     if lessorequal _goto ThreeHundredOrLessCaught
     comparevartovalue 0x8009 0x15E @ 350
     if lessorequal _goto ThreeHundredFiftyOrLessCaught
-    comparevartovar 0x8009 0x800A @ All Pokemon
-    if equal _goto AllCaught
+    goto AllCaught
 
 PokedexEvaluation_Conclusion:
     compare 0x800A 0x0
     if notequal _call PokedexEvaluation_PokedexIncomplete
     msgbox gText_PokedexAssessment_EvaluationComplete MSG_NORMAL
     checkflag 0x2FF @ Assessment is from PC
-    if NOT_SET _goto HawthorneLooksRightAfterAssessment
+    if NOT_SET _call HawthorneLooksRightAfterAssessment
     end
 
 HawthorneLooksRightAfterAssessment:
     applymovement LASTTALKED m_LookRight
-    end
+    return
 
 FiftyOrLessCaught:
     call PokedexEvaluationFanfare1
@@ -332,7 +331,16 @@ AllCaught:
     call PokedexEvaluationFanfare2
     msgbox gText_PokedexAssessment_AllCaught MSG_KEEPOPEN
     waitfanfare
+    checkflag 0x2FF @ Assessment is from PC
+    if NOT_SET _goto HawthornePresentsDiploma
     goto PokedexEvaluation_Conclusion
+
+HawthornePresentsDiploma:
+    msgbox gText_PokedexAssessment_AllCaughtDiploma MSG_NORMAL
+    call HawthorneLooksRightAfterAssessment
+    special 0x108 @ Show diploma
+    waitstate
+    end
 
 PokedexEvaluationFanfare1:
     fanfare 0x13D

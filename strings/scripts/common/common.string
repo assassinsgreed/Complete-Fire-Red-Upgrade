@@ -130,6 +130,9 @@ Some incredibly powerful Pok\emon will\nonly reveal themselves to you if\lyou ar
 #org @gText_PokedexAssessment_AllCaught
 [BLUE]Incredible! You've captured every\nPok\emon in the region. You are a\ltruly special trainer, [PLAYER]!
 
+#org @gText_PokedexAssessment_AllCaughtDiploma
+[BLUE]I'll present you with this Diploma,\nwhich celebrates your achievement.
+
 #org @gText_GuardHouseBinoculars
 A pair of binoculars! What can be\nseen[.]
 
