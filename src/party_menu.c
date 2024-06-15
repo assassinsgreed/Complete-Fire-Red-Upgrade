@@ -2509,6 +2509,7 @@ static u8 GetAbilityCapsuleNewAbility(struct Pokemon* mon)
 	{
 		if (ability != hiddenAbility
 		&& hiddenAbility != ABILITY_NONE
+		&& species != SPECIES_GRENINJA // Handled by special event
 		#ifdef UNBOUND
 		&& (FlagGet(FLAG_ABILITY_RANDOMIZER)
 		 || SpeciesToNationalPokedexNum(species) != NATIONAL_DEX_ZYGARDE) //Must be given with Power Construct
@@ -2526,7 +2527,7 @@ static u8 GetAbilityCapsuleNewAbility(struct Pokemon* mon)
 			if (ability != ability2 && ability2 != ABILITY_NONE)
 				changeTo = ability2;
 		}
-		else if (ability == ability2) //Explicit check just in case the Pokemon has its Hidden Ability
+		else // Allow the pokemon to switch from Ability2 or it's hidden ability to it's first ability
 		{
 			if (ability1 != ABILITY_NONE)
 				changeTo = ability1;

@@ -768,10 +768,16 @@ bool8 IsWhiteSmokeAbility(u8 ability, u16 species)
 
 	switch (SpeciesToNationalPokedexNum(species))
 	{
-		#if (defined NATIONAL_DEX_TORKOAL && defined NATIONAL_DEX_HEATMOR && defined NATIONAL_DEX_SIZZLIPEDE && defined NATIONAL_DEX_CENTISKORCH)
+		#ifdef NATIONAL_DEX_TORKOAL
 		case NATIONAL_DEX_TORKOAL:
+		#endif
+		#ifdef NATIONAL_DEX_HEATMOR
 		case NATIONAL_DEX_HEATMOR:
+		#endif
+		#ifdef NATIONAL_DEX_SIZZLIPEDE
 		case NATIONAL_DEX_SIZZLIPEDE:
+		#endif
+		#ifdef NATIONAL_DEX_CENTISKORCH
 		case NATIONAL_DEX_CENTISKORCH:
 			return TRUE;
 		#endif

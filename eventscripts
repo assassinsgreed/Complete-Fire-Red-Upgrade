@@ -2118,6 +2118,8 @@ npc 2 0 18 EventScript_TsarvosaCity_GymTraineeCafe_Faye
 ## NPC Houses
 npc 2 3 0 EventScript_TsarvosaCity_NPCHouses_MoveTutor
 npc 2 3 1 EventScript_TsarvosaCity_NPCHouses_MoveTutorGirlfriend
+npc 2 5 0 EventScript_TsarvosaCity_NPCHouses_PokeChipCrusher
+npc 2 5 1 EventScript_TsarvosaCity_NPCHouses_PokeChipCrusherFriend
 npc 12 2 0 EventScript_TsarvosaCity_NPCHouses_DevTeamCollin
 npc 12 2 1 EventScript_TsarvosaCity_NPCHouses_DevTeamCrystal
 npc 12 4 0 EventScript_TsarvosaCity_NPCHouses_SlowbroGTrade

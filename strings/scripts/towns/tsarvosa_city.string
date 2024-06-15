@@ -634,3 +634,36 @@ All done! It's learned [BUFFER3].\pIf you'd like me to teach more\n[BUFFER2] Pok
 
 #org @gText_TsarvosaCity_GymTraineeCafe_Trainee_LeavingAtEndOfDay
 But be quick! I'll likely be leaving\nat the end of the day.
+
+#org @gText_TsarvosaCity_NPCHouses_PokeCrusherIntro
+Hyuck-yuck-yuck! We've finally done\nit!\pWe've invented a machine that can\ncrush Pok\eChips, then reform them\linto new items.\pYou! You look like a curious fellow.\nWant to take a test run with it?
+
+#org @gText_TsarvosaCity_NPCHouses_PokeCrusherItemConfirmationQuestion
+One [BUFFER1]? It'd take [BUFFER2]\nPok\eChips to make that.\pIs that fine?\n[BLACK](Held: [BUFFER3])
+
+#org @gText_TsarvosaCity_NPCHouses_PokeCrusherItemConfirmationMade
+[BLUE]Alright! Let's get to crushin'.
+
+#org @gText_TsarvosaCity_NPCHouses_PokeCrusherItemCrushing1
+[BLUE]Now if I just insert them here[.]
+
+#org @gText_TsarvosaCity_NPCHouses_PokeCrusherItemCrushing2
+And then[.]
+
+#org @gText_TsarvosaCity_NPCHouses_PokeCrusherItemCrushing3
+Aha!
+
+#org @gText_TsarvosaCity_NPCHouses_PokeCrusherItemCrushingComplete
+It worked flawlessly!\nOne [BUFFER1], for you.
+
+#org @gText_TsarvosaCity_NPCHouses_PokeCrusherItemComeAgain
+Come back if you have more\nPok\eChips to crush.\pWe could really benefit from your\nexperience with our machine.
+
+#org @gText_TsarvosaCity_NPCHouses_PokeCrusherDeclined
+[BLUE]That's too bad!\pBut I'm sure someone with tons of\nPok\eChips will come around soon.
+
+#org @gText_TsarvosaCity_NPCHouses_PokeCrusherNotEnoughChips
+[BLUE]I can't make an item out of\nnothing!\pBring me more Pok\eChips if you want\nthat.
+
+#org @gText_TsarvosaCity_NPCHouses_PokeCrusherFriend
+My friend and I have rented out this\nold house to pursue our research.\pIt has been hard, but all our\nstruggles are finally paying off!\pJust don't tell anyone about this,\nokay?\pWe don't need any copycats on our\ntails[.]

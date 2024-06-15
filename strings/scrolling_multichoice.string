@@ -293,4 +293,28 @@ Bad Tantrum
 #org @gText_NastyPlot
 Nasty Plot
 
+#org @gText_PokeChipCrusher_MaxRevive
+Max Revive[ALIGN][65]05 Pok\eChips
+
+#org @gText_PokeChipCrusher_PPMax
+PP Max[ALIGN][65]10 Pok\eChips
+
+#org @gText_PokeChipCrusher_RareCandy
+Rare Candy[ALIGN][65]10 Pok\eChips
+
+#org @gText_PokeChipCrusher_BottleCap
+Bottle Cap[ALIGN][65]15 Pok\eChips
+
+#org @gText_PokeChipCrusher_AbilityCapsule
+Ability Capsule[ALIGN][65]15 Pok\eChips
+
+#org @gText_PokeChipCrusher_AbilityPatch
+Ability Patch[ALIGN][65]25 Pok\eChips
+
+#org @gText_PokeChipCrusher_GoldBottleCap
+Gold Bottle Cap[ALIGN][65]35 Pok\eChips
+
+#org @gText_PokeChipCrusher_MasterBall
+Master Ball[ALIGN][65]50 Pok\eChips
+
 #endif
