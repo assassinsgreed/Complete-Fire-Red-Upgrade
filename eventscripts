@@ -2116,11 +2116,20 @@ npc 2 0 16 EventScript_TsarvosaCity_GymTraineeCafe_Darcy
 npc 2 0 17 EventScript_TsarvosaCity_GymTraineeCafe_Mason
 npc 2 0 18 EventScript_TsarvosaCity_GymTraineeCafe_Faye
 ## NPC Houses
+npc 2 1 0 EventScript_TsarvosaCity_NPCHouses_IrisFanClubPresident
+npc 2 2 0 EventScript_TsarvosaCity_NPCHouses_HoennGirl
+npc 2 2 1 EventScript_TsarvosaCity_NPCHouses_HoennBoy
 npc 2 3 0 EventScript_TsarvosaCity_NPCHouses_MoveTutor
 npc 2 3 1 EventScript_TsarvosaCity_NPCHouses_MoveTutorGirlfriend
+npc 2 4 0 EventScript_TsarvosaCity_NPCHouses_BattlingFanGirl
+npc 2 4 1 EventScript_TsarvosaCity_NPCHouses_BattlingFanBoy
 npc 2 5 0 EventScript_TsarvosaCity_NPCHouses_PokeChipCrusher
 npc 2 5 1 EventScript_TsarvosaCity_NPCHouses_PokeChipCrusherFriend
+npc 10 19 0 EventScript_TsarvosaCity_NPCHouses_IrisAndStellaMom
+npc 10 19 1 EventScript_TsarvosaCity_NPCHouses_IrisAndStellaGrandpa
 npc 12 2 0 EventScript_TsarvosaCity_NPCHouses_DevTeamCollin
 npc 12 2 1 EventScript_TsarvosaCity_NPCHouses_DevTeamCrystal
+npc 12 3 0 EventScript_TsarvosaCity_NPCHouses_MarketBoy
+npc 12 3 1 EventScript_TsarvosaCity_NPCHouses_WildernessGirl
 npc 12 4 0 EventScript_TsarvosaCity_NPCHouses_SlowbroGTrade
 npc 12 4 1 EventScript_TsarvosaCity_NPCHouses_SlowbroGTradeMother

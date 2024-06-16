@@ -2187,3 +2187,64 @@ ChoseNotToCrush:
 EventScript_TsarvosaCity_NPCHouses_PokeChipCrusherFriend:
     npcchatwithmovement gText_TsarvosaCity_NPCHouses_PokeCrusherFriend m_LookRight
     end
+
+.global EventScript_TsarvosaCity_NPCHouses_MarketBoy
+EventScript_TsarvosaCity_NPCHouses_MarketBoy:
+    npcchatwithmovement gText_TsarvosaCity_NPCHouses_MarketBoy m_LookRight
+    end
+
+.global EventScript_TsarvosaCity_NPCHouses_WildernessGirl
+EventScript_TsarvosaCity_NPCHouses_WildernessGirl:
+    npcchatwithmovement gText_TsarvosaCity_NPCHouses_WildnernessGirl m_LookUp
+    end
+
+.global EventScript_TsarvosaCity_NPCHouses_IrisAndStellaMom
+EventScript_TsarvosaCity_NPCHouses_IrisAndStellaMom:
+    npcchatwithmovement gText_TsarvosaCity_NPCHouses_IrisAndStellaMom m_LookLeft
+    end
+
+.global EventScript_TsarvosaCity_NPCHouses_IrisAndStellaGrandpa
+EventScript_TsarvosaCity_NPCHouses_IrisAndStellaGrandpa:
+    npcchatwithmovement gText_TsarvosaCity_NPCHouses_IrisAndStellaGrandpa m_LookUp
+    end
+
+.global EventScript_TsarvosaCity_NPCHouses_IrisFanClubPresident
+EventScript_TsarvosaCity_NPCHouses_IrisFanClubPresident:
+    faceplayer
+    checkflag 0x261 @ Received Flame Orb
+    if SET _goto ReceivedFlameOrb
+    msgbox gText_TsarvosaCity_NPCHouses_IrisFanClubPresident MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto PresidentChoseNo
+    msgbox gText_TsarvosaCity_NPCHouses_IrisFanClubPresident_Yes MSG_NORMAL
+    obtainitem ITEM_FLAME_ORB 0x1
+    setflag 0x261 @ Received Flame Orb
+    goto ReceivedFlameOrb
+
+ReceivedFlameOrb:
+    npcchatwithmovement gText_TsarvosaCity_NPCHouses_IrisFanClubPresident_FlameOrbComment m_LookLeft
+    end
+
+PresidentChoseNo:
+    npcchatwithmovement gText_TsarvosaCity_NPCHouses_IrisFanClubPresident_No m_LookLeft
+    end
+
+.global EventScript_TsarvosaCity_NPCHouses_HoennGirl
+EventScript_TsarvosaCity_NPCHouses_HoennGirl:
+    npcchatwithmovement gText_TsarvosaCity_NPCHouses_HoennGirl m_LookRight
+    end
+
+.global EventScript_TsarvosaCity_NPCHouses_HoennBoy
+EventScript_TsarvosaCity_NPCHouses_HoennBoy:
+    npcchatwithmovement gText_TsarvosaCity_NPCHouses_HoennBoy m_LookLeft
+    end
+
+.global EventScript_TsarvosaCity_NPCHouses_BattlingFanGirl
+EventScript_TsarvosaCity_NPCHouses_BattlingFanGirl:
+    npcchatwithmovement gText_TsarvosaCity_NPCHouses_BattlingFanGirl m_LookRight
+    end
+
+.global EventScript_TsarvosaCity_NPCHouses_BattlingFanBoy
+EventScript_TsarvosaCity_NPCHouses_BattlingFanBoy:
+    npcchatwithmovement gText_TsarvosaCity_NPCHouses_BattlingFanBoy m_LookLeft
+    end
