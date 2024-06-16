@@ -3059,6 +3059,16 @@ extern const u8 gText_ApricornBalls_LoveBall[];
 extern const u8 gText_ApricornBalls_FriendBall[];
 extern const u8 gText_ApricornBalls_MoonBall[];
 
+// PokeChip Crusher
+extern const u8 gText_PokeChipCrusher_MaxRevive[];
+extern const u8 gText_PokeChipCrusher_PPMax[];
+extern const u8 gText_PokeChipCrusher_RareCandy[];
+extern const u8 gText_PokeChipCrusher_BottleCap[];
+extern const u8 gText_PokeChipCrusher_AbilityCapsule[];
+extern const u8 gText_PokeChipCrusher_AbilityPatch[];
+extern const u8 gText_PokeChipCrusher_GoldBottleCap[];
+extern const u8 gText_PokeChipCrusher_MasterBall[];
+
 //Scrolling Lists
 static const u8* sTutorFerrox[] =
 {
@@ -3233,6 +3243,19 @@ static const u8* sTutorsTsarvosa[] =
 	gText_End,
 };
 
+static const u8* sPokeChipCrusher[] =
+{
+	gText_PokeChipCrusher_MaxRevive,
+	gText_PokeChipCrusher_PPMax,
+	gText_PokeChipCrusher_RareCandy,
+	gText_PokeChipCrusher_BottleCap,
+	gText_PokeChipCrusher_AbilityCapsule,
+	gText_PokeChipCrusher_AbilityPatch,
+	gText_PokeChipCrusher_GoldBottleCap,
+	gText_PokeChipCrusher_MasterBall,
+	gText_End,
+};
+
 // Multichoice Lists
 const struct ScrollingMulti gScrollingSets[] =
 {
@@ -3250,6 +3273,7 @@ const struct ScrollingMulti gScrollingSets[] =
 	{sTutorsBruccie, ARRAY_COUNT(sTutorsBruccie)},
 	{sTutorsEmraldin, ARRAY_COUNT(sTutorsEmraldin)},
 	{sTutorsTsarvosa, ARRAY_COUNT(sTutorsTsarvosa)},
+	{sPokeChipCrusher, ARRAY_COUNT(sPokeChipCrusher)},
 };
 
 //Link number of opts shown at once to the box height

@@ -2068,3 +2068,122 @@ ChoseNotToTutor:
 
 m_CafeAttendantWalksToPlayer: .byte walk_down, walk_down, end_m
 m_CafeAttendnatReturnsToPosition: .byte walk_up, walk_up, look_down, end_m
+
+.global EventScript_TsarvosaCity_NPCHouses_PokeChipCrusher
+EventScript_TsarvosaCity_NPCHouses_PokeChipCrusher:
+    faceplayer
+    msgbox gText_TsarvosaCity_NPCHouses_PokeCrusherIntro MSG_KEEPOPEN
+    setvar 0x8000 0xE @ Pokechip crusher
+    setvar 0x8001 0x5
+    setvar 0x8004 0x0
+	special 0x158
+    waitstate
+    switch LASTRESULT
+	case 0, MaxRevive
+	case 1, PPMax
+	case 2, RareCandy
+	case 3, BottleCap
+    case 4, AbilityCapsule
+	case 5, AbilityPatch
+	case 6, GoldBottleCap
+	case 7, MasterBall
+    case 8, ChoseNotToCrush
+    case 0x7F, ChoseNotToCrush @ When player hit B to close
+    goto ChoseNotToCrush
+
+MaxRevive:
+    setvar 0x4000 ITEM_MAX_REVIVE
+    bufferitem 0x0 ITEM_MAX_REVIVE
+    setvar 0x4001 5
+    buffernumber 0x1 5
+    goto CrushingConfirmation
+
+PPMax:
+    setvar 0x4000 ITEM_PP_MAX
+    bufferitem 0x0 ITEM_PP_MAX
+    setvar 0x4001 10
+    buffernumber 0x1 10
+    goto CrushingConfirmation
+
+RareCandy:
+    setvar 0x4000 ITEM_RARE_CANDY
+    bufferitem 0x0 ITEM_RARE_CANDY
+    setvar 0x4001 10
+    buffernumber 0x1 10
+    goto CrushingConfirmation
+
+BottleCap:
+    setvar 0x4000 ITEM_BOTTLE_CAP
+    bufferitem 0x0 ITEM_BOTTLE_CAP
+    setvar 0x4001 15
+    buffernumber 0x1 15
+    goto CrushingConfirmation
+
+AbilityCapsule:
+    setvar 0x4000 ITEM_ABILITY_CAPSULE
+    bufferitem 0x0 ITEM_ABILITY_CAPSULE
+    setvar 0x4001 15
+    buffernumber 0x1 15
+    goto CrushingConfirmation
+
+AbilityPatch:
+    setvar 0x4000 ITEM_ABILITY_PATCH
+    bufferitem 0x0 ITEM_ABILITY_PATCH
+    setvar 0x4001 25
+    buffernumber 0x1 25
+    goto CrushingConfirmation
+
+GoldBottleCap:
+    setvar 0x4000 ITEM_GOLD_BOTTLE_CAP
+    bufferitem 0x0 ITEM_GOLD_BOTTLE_CAP
+    setvar 0x4001 35
+    buffernumber 0x1 35
+    goto CrushingConfirmation
+
+MasterBall:
+    setvar 0x4000 ITEM_MASTER_BALL
+    bufferitem 0x0 ITEM_MASTER_BALL
+    setvar 0x4001 50
+    buffernumber 0x1 50
+    goto CrushingConfirmation
+
+CrushingConfirmation:
+    callasm StorePokeChipCount
+    buffernumber 0x2 0x8005 @ Take stored PokeChip count
+    msgbox gText_TsarvosaCity_NPCHouses_PokeCrusherItemConfirmationQuestion MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto ChoseNotToCrush
+    comparevars 0x8005 0x4001
+    if lessthan _goto NotEnoughPokeChipsToCrush
+    msgbox gText_TsarvosaCity_NPCHouses_PokeCrusherItemConfirmationMade MSG_NORMAL
+    fadescreen FADEOUT_BLACK
+    playse 0x17 @ Pokeball shake
+    msgbox gText_TsarvosaCity_NPCHouses_PokeCrusherItemCrushing1 MSG_NORMAL
+	waitse
+    playse 0x17 @ Pokeball shake
+    msgbox gText_TsarvosaCity_NPCHouses_PokeCrusherItemCrushing2 MSG_NORMAL
+	waitse
+    playse 0x7C @ Rock Smash
+    msgbox gText_TsarvosaCity_NPCHouses_PokeCrusherItemCrushing3 MSG_NORMAL
+	waitse
+    fadescreen FADEIN_BLACK
+    fanfare 0x101 @ Level Up
+    msgbox gText_TsarvosaCity_NPCHouses_PokeCrusherItemCrushingComplete MSG_NORMAL
+    waitfanfare
+    obtainitem 0x4000 0x1
+    removeitem ITEM_POKE_CHIP 0x4001
+    npcchatwithmovement gText_TsarvosaCity_NPCHouses_PokeCrusherItemComeAgain m_LookLeft
+    end
+
+NotEnoughPokeChipsToCrush:
+    npcchatwithmovement gText_TsarvosaCity_NPCHouses_PokeCrusherNotEnoughChips m_LookLeft
+    end
+
+ChoseNotToCrush:
+    npcchatwithmovement gText_TsarvosaCity_NPCHouses_PokeCrusherDeclined m_LookLeft
+    end
+
+.global EventScript_TsarvosaCity_NPCHouses_PokeChipCrusherFriend
+EventScript_TsarvosaCity_NPCHouses_PokeChipCrusherFriend:
+    npcchatwithmovement gText_TsarvosaCity_NPCHouses_PokeCrusherFriend m_LookRight
+    end

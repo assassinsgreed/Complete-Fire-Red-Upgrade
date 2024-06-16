@@ -274,7 +274,9 @@ CB2_ItemMenuFromField 801D800
 #endif
 
 ##Enable Ability Capusle & form change items, pointing to location in our ROM
+### First AbilityCapsule is for regular capsule (hold effect == 0), and second is for Ability Patch (hold effect == 1)
 FieldUseFunc_AbilityCapsule 87343A8
+FieldUseFunc_AbilityCapsule 8731A10
 FieldUseFunc_FormChangeItem 873371C
 FieldUseFunc_FormChangeItem 8734C14
 FieldUseFunc_FormChangeItem 8734C40
