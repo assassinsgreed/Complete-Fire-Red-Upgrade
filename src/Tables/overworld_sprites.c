@@ -35,6 +35,7 @@ extern const u8 LeaderCaseyFTiles[];
 extern const u8 LeaderCaseyMTiles[];
 extern const u8 LeaderAbbyTiles[];
 extern const u8 PlutoLeaderKurtisTiles[];
+extern const u8 LeaderIrisTiles[];
 
 // Overworld Events
 extern const u8 SandygastTiles[];
@@ -500,6 +501,19 @@ static const struct SpriteFrameImage Table_LeaderAbby[] =
     overworld_frame(LeaderAbbyTiles, 2, 4, 6),
     overworld_frame(LeaderAbbyTiles, 2, 4, 7),
     overworld_frame(LeaderAbbyTiles, 2, 4, 8),
+};
+
+static const struct SpriteFrameImage Table_LeaderIris[] =
+{
+    overworld_frame(LeaderIrisTiles, 2, 4, 0),
+    overworld_frame(LeaderIrisTiles, 2, 4, 1),
+    overworld_frame(LeaderIrisTiles, 2, 4, 2),
+    overworld_frame(LeaderIrisTiles, 2, 4, 3),
+    overworld_frame(LeaderIrisTiles, 2, 4, 4),
+    overworld_frame(LeaderIrisTiles, 2, 4, 5),
+    overworld_frame(LeaderIrisTiles, 2, 4, 6),
+    overworld_frame(LeaderIrisTiles, 2, 4, 7),
+    overworld_frame(LeaderIrisTiles, 2, 4, 8),
 };
 
 static const struct SpriteFrameImage Table_Sandygast[] =
@@ -1399,6 +1413,27 @@ const struct EventObjectGraphicsInfo GraphicsInfo_LeaderAbby =
     .images = Table_LeaderAbby,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
+
+const struct EventObjectGraphicsInfo GraphicsInfo_LeaderIris =
+{
+    .tileTag = 0xFFFF,
+    .paletteTag1 = 0x1231,
+    .paletteTag2 = EVENT_OBJ_PAL_TAG_NONE,
+    .size = (16 * 32) / 2,
+    .width = 16,
+    .height = 32,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .disableReflectionPaletteLoad = FALSE,
+    .tracks = TRACKS_FOOT,
+    .gender = FEMALE,
+    .oam = gEventObjectBaseOam_16x32,
+    .subspriteTables = gEventObjectSpriteOamTables_16x32,
+    .anims = gEventObjectImageAnimTable_Standard,
+    .images = Table_LeaderIris,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
 
 const struct EventObjectGraphicsInfo GraphicsInfo_Sandygast =
 {

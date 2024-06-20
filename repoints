@@ -354,6 +354,8 @@ GraphicsInfo_LeaderChance 839FEFC
 GraphicsInfo_LeaderCaseyF 839FF00
 ## Replace Sabrina (85)
 GraphicsInfo_LeaderAbby 839FF04
+## Replace Blaine (86)
+GraphicsInfo_LeaderIris 839FF08
 ## Replace Female attendant (87)
 GraphicsInfo_PlutoLeaderKurtis 839FF0C
 ## Replace Celio (89)
@@ -453,6 +455,9 @@ LeaderChanceBPal 8239DD4
 ## Replace Koga (120)
 LeaderCaseyFBTiles 823993C
 LeaderCaseyFBPal 8239DDC
+## Replace Blaine (121)
+LeaderIrisBTiles 8239944
+LeaderIrisBPal 8239DE4
 ## Replace Sabrina (122)
 LeaderAbbyBTiles 823994C
 LeaderAbbyBPal 8239DEC
