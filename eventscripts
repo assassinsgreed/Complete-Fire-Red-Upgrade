@@ -2073,6 +2073,26 @@ sign 3 9 0 SignScript_TsarvosaCity_TownPlacard
 sign 3 9 1 SignScript_TsarvosaCity_StatsDojo
 sign 3 9 2 SignScript_TsarvosaCity_DevStudioSign
 sign 3 9 3 SignScript_TsarvosaCity_GymTraineesCafeSign
+## Gym (in overworld)
+npc 3 9 9 EventScript_TsarvosaCity_Gym_Attendant
+npc 3 9 10 EventScript_TsarvosaCity_Gym_Merchant1
+npc 3 9 11 EventScript_TsarvosaCity_Gym_Merchant2
+npc 3 9 12 EventScript_TsarvosaCity_Gym_Merchant3
+npc 3 9 13 EventScript_TsarvosaCity_Gym_Merchant4
+npc 3 9 14 EventScript_TsarvosaCity_Gym_Merchant5
+npc 3 9 15 EventScript_TsarvosaCity_Gym_Merchant6
+npc 3 9 16 EventScript_TsarvosaCity_Gym_Merchant7
+npc 3 9 17 EventScript_TsarvosaCity_Gym_Merchant8
+npc 3 9 18 EventScript_TsarvosaCity_Gym_Merchant9
+npc 3 9 19 EventScript_TsarvosaCity_Gym_Merchant10
+npc 3 9 20 EventScript_TsarvosaCity_Gym_Merchant11
+npc 3 9 21 EventScript_TsarvosaCity_Gym_Merchant12
+npc 3 9 22 EventScript_TsarvosaCity_Gym_Merchant13
+npc 3 9 23 EventScript_TsarvosaCity_Gym_Merchant14
+npc 3 9 24 EventScript_TsarvosaCity_Gym_Merchant15
+npc 3 9 25 EventScript_TsarvosaCity_Gym_Merchant16
+sign 3 9 4 SignScript_TsarvosaCity_Gym_GymSign
+sign 3 9 5 SignScript_TsarvosaCity_Gym_GymVictorsSign
 ## Facilities
 map 12 0 MapScript_TsarvosaCity_PokemonCenter
 npc 12 0 0 EventScript_PokemonCenter_Main

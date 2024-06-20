@@ -2248,3 +2248,281 @@ EventScript_TsarvosaCity_NPCHouses_BattlingFanGirl:
 EventScript_TsarvosaCity_NPCHouses_BattlingFanBoy:
     npcchatwithmovement gText_TsarvosaCity_NPCHouses_BattlingFanBoy m_LookLeft
     end
+
+@ Gym
+.global EventScript_TsarvosaCity_Gym_Attendant
+EventScript_TsarvosaCity_Gym_Attendant: 
+    checkflag 0x826 @ Tsarvosa gym badge
+    if SET _goto SignScript_TsarvosaCity_Gym_AttendantPostVictory
+    npcchat gText_TsarvosaCity_Gym_Attendant
+    end
+
+SignScript_TsarvosaCity_Gym_AttendantPostVictory:
+    npcchat gText_TsarvosaCity_Gym_AttendantPostVictory
+    end
+
+.global EventScript_TsarvosaCity_Gym_Merchant1
+EventScript_TsarvosaCity_Gym_Merchant1:
+    call MerchantShopIntro
+    pokemart HeldItemsShop2
+    call MerchantShopOutro
+    end
+
+.global EventScript_TsarvosaCity_Gym_Merchant2
+EventScript_TsarvosaCity_Gym_Merchant2:
+    call MerchantShopIntro
+    pokemart SpecialXItemsShop
+    call MerchantShopOutro
+    end
+
+.global EventScript_TsarvosaCity_Gym_Merchant3
+EventScript_TsarvosaCity_Gym_Merchant3:
+    call MerchantShopIntro
+    pokemart SeedsShop
+    call MerchantShopOutro
+    end
+
+.global EventScript_TsarvosaCity_Gym_Merchant4
+EventScript_TsarvosaCity_Gym_Merchant4:
+    call MerchantShopIntro
+    pokemart HealingItemsShop
+    call MerchantShopOutro
+    end
+
+.global EventScript_TsarvosaCity_Gym_Merchant5
+EventScript_TsarvosaCity_Gym_Merchant5:
+    call MerchantShopIntro
+    pokemart RepelsShop
+    call MerchantShopOutro
+    end
+
+.global EventScript_TsarvosaCity_Gym_Merchant6
+EventScript_TsarvosaCity_Gym_Merchant6:
+    call MerchantShopIntro
+    pokemart HeldItemsShop4
+    call MerchantShopOutro
+    end
+
+.global EventScript_TsarvosaCity_Gym_Merchant7
+EventScript_TsarvosaCity_Gym_Merchant7:
+    call MerchantShopIntro
+    pokemart BitterItemsShop
+    call MerchantShopOutro
+    end
+
+.global EventScript_TsarvosaCity_Gym_Merchant8
+EventScript_TsarvosaCity_Gym_Merchant8:
+    call MerchantShopIntro
+    pokemart BerryShop
+    call MerchantShopOutro
+    end
+
+.global EventScript_TsarvosaCity_Gym_Merchant9
+EventScript_TsarvosaCity_Gym_Merchant9:
+    call MerchantShopIntro
+    pokemart PokeBallShop
+    call MerchantShopOutro
+    end
+
+.global EventScript_TsarvosaCity_Gym_Merchant10
+EventScript_TsarvosaCity_Gym_Merchant10:
+    call MerchantShopIntro
+    pokemart PhysicalXItemsShop
+    call MerchantShopOutro
+    end
+
+.global EventScript_TsarvosaCity_Gym_Merchant11
+EventScript_TsarvosaCity_Gym_Merchant11:
+    call MerchantShopIntro
+    pokemart HerbsShop
+    call MerchantShopOutro
+    end
+
+.global EventScript_TsarvosaCity_Gym_Merchant12
+EventScript_TsarvosaCity_Gym_Merchant12:
+    call MerchantShopIntro
+    pokemart HeldItemsShop1
+    call MerchantShopOutro
+    end
+
+.global EventScript_TsarvosaCity_Gym_Merchant13
+EventScript_TsarvosaCity_Gym_Merchant13:
+    call MerchantShopIntro
+    pokemart PPItemsShop
+    call MerchantShopOutro
+    end
+
+.global EventScript_TsarvosaCity_Gym_Merchant14
+EventScript_TsarvosaCity_Gym_Merchant14:
+    call MerchantShopIntro
+    pokemart HeldItemsShop3
+    call MerchantShopOutro
+    end
+
+.global EventScript_TsarvosaCity_Gym_Merchant15
+EventScript_TsarvosaCity_Gym_Merchant15:
+    call MerchantShopIntro
+    pokemart RocksShop
+    call MerchantShopOutro
+    end
+
+.global EventScript_TsarvosaCity_Gym_Merchant16
+EventScript_TsarvosaCity_Gym_Merchant16:
+    call MerchantShopIntro
+    pokemart DrinksShop
+    call MerchantShopOutro
+    end
+
+MerchantShopIntro:
+    special 0x47 @ Pause timer
+    msgbox gText_TsarvosaCity_Gym_MerchantIntro MSG_KEEPOPEN
+    return
+
+MerchantShopOutro:
+    msgbox gText_TsarvosaCity_Gym_MerchantOutro MSG_NORMAL
+    special 0x48 @ Resume timer
+    return
+
+.align 1
+PokeBallShop:
+    .hword ITEM_POKE_BALL
+    .hword ITEM_GREAT_BALL
+    .hword ITEM_ULTRA_BALL
+    .hword ITEM_NONE
+
+.align 1
+RepelsShop:
+    .hword ITEM_REPEL
+    .hword ITEM_SUPER_REPEL
+    .hword ITEM_MAX_REPEL
+    .hword ITEM_ESCAPE_ROPE
+    .hword ITEM_NONE
+
+.align 1
+PPItemsShop:
+    .hword ITEM_ETHER
+    .hword ITEM_ELIXIR
+    .hword ITEM_REVIVE
+    .hword ITEM_NONE
+
+.align 1
+HealingItemsShop:
+    .hword ITEM_POTION
+    .hword ITEM_SUPER_POTION
+    .hword ITEM_HYPER_POTION
+    .hword ITEM_NONE
+
+.align 1
+PhysicalXItemsShop:
+    .hword ITEM_X_ATTACK
+    .hword ITEM_X_DEFEND
+    .hword ITEM_X_SPEED
+    .hword ITEM_NONE
+
+.align 1
+SpecialXItemsShop:
+    .hword ITEM_X_SP_ATK
+    .hword ITEM_X_SP_DEF
+    .hword ITEM_X_ACCURACY
+    .hword ITEM_NONE
+
+.align 1
+BitterItemsShop:
+    .hword ITEM_ENERGY_POWDER
+    .hword ITEM_ENERGY_ROOT
+    .hword ITEM_HEAL_POWDER
+    .hword ITEM_REVIVAL_HERB
+    .hword ITEM_NONE
+
+.align 1 
+SeedsShop:
+    .hword ITEM_GRASSY_SEED
+    .hword ITEM_ELECTRIC_SEED
+    .hword ITEM_MISTY_SEED
+    .hword ITEM_PSYCHIC_SEED
+    .hword ITEM_NONE
+
+.align 1
+HerbsShop:
+    .hword ITEM_WHITE_HERB
+    .hword ITEM_MENTAL_HERB
+    .hword ITEM_POWER_HERB
+    .hword ITEM_NONE
+
+.align 1
+BerryShop:
+    .hword ITEM_ORAN_BERRY
+    .hword ITEM_CHERI_BERRY
+    .hword ITEM_PECHA_BERRY
+    .hword ITEM_CHESTO_BERRY
+    .hword ITEM_RAWST_BERRY
+    .hword ITEM_ASPEAR_BERRY
+    .hword ITEM_LEPPA_BERRY
+    .hword ITEM_SITRUS_BERRY
+    .hword ITEM_NONE
+
+.align 1
+DrinksShop:
+    .hword ITEM_FRESH_WATER
+    .hword ITEM_LEMONADE
+    .hword ITEM_MOOMOO_MILK
+    .hword ITEM_NONE
+
+.align 1
+RocksShop:
+    .hword ITEM_ICY_ROCK
+    .hword ITEM_HEAT_ROCK
+    .hword ITEM_DAMP_ROCK
+    .hword ITEM_SMOOTH_ROCK
+    .hword ITEM_NONE
+
+.align 1
+HeldItemsShop1:
+    .hword ITEM_ROCKY_HELMET
+    .hword ITEM_RED_CARD
+    .hword ITEM_AIR_BALLOON
+    .hword ITEM_CELL_BATTERY
+    .hword ITEM_ABSORB_BULB
+    .hword ITEM_SNOWBALL
+    .hword ITEM_NONE
+
+.align 1
+HeldItemsShop2:
+    .hword ITEM_TERRAIN_EXTENDER
+    .hword ITEM_BLACK_SLUDGE
+    .hword ITEM_LIGHT_CLAY
+    .hword ITEM_WIDE_LENS
+    .hword ITEM_QUICK_CLAW
+    .hword ITEM_NONE
+
+.align 1
+HeldItemsShop3:
+    .hword ITEM_EJECT_BUTTON
+    .hword ITEM_BIG_ROOT
+    .hword ITEM_BRIGHT_POWDER
+    .hword ITEM_NONE
+
+.align 1
+HeldItemsShop4:
+    .hword ITEM_STICKY_BARB
+    .hword ITEM_IRON_BALL
+    .hword ITEM_LAGGING_TAIL
+    .hword ITEM_SHED_SHELL
+    .hword ITEM_HEAVY_DUTY_BOOTS
+    .hword ITEM_NONE
+
+.global SignScript_TsarvosaCity_Gym_GymSign
+SignScript_TsarvosaCity_Gym_GymSign:
+    msgbox gText_TsarvosaCity_Gym_GymSign MSG_SIGN
+    end
+
+.global SignScript_TsarvosaCity_Gym_GymVictorsSign
+SignScript_TsarvosaCity_Gym_GymVictorsSign:
+    checkflag 0x826 @ Tsarvosa gym badge
+    if SET _goto SignScript_TsarvosaCity_Gym_GymVictorsSignPostVictory
+    msgbox gText_TsarvosaCity_Gym_GymVictorsSignPreVictory MSG_SIGN
+    end
+
+SignScript_TsarvosaCity_Gym_GymVictorsSignPostVictory:
+    msgbox gText_TsarvosaCity_Gym_GymVictorsSignPostVictory MSG_SIGN
+    end
