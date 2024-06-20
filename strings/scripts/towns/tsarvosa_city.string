@@ -703,3 +703,24 @@ We love to watch the Elite Four\nchallenges they broadcast on TV!\pIt's so cool 
 
 #org @gText_TsarvosaCity_NPCHouses_BattlingFanBoy
 I know that no one will really be\nable to beat the champion.\pIt's still fun to root for an\nunderdog, though!
+
+#org @gText_TsarvosaCity_Gym_Attendant
+Yo, superstar! Welcome to the\nTsarvosa City Gym!\pAn outdoor market is quite an\nunconventional place for a gym.\pBut don't be fooled!\pIt's the perfect battleground for it's\nleader, Iris!\pShe uses items to their full\neffect to turn the tide of battle.\pIf you want to suceed, you'll need\nto familiarize yourself with all\lsorts of items.\pBut don't sweat the small stuff[.]\nI know you've got this in the bag!
+
+#org @gText_TsarvosaCity_Gym_AttendantPostVictory
+I recognize that shine anywhere;\nthat's the Support Badge!\pWay to go, superstar!\pYou're one step closer to completing\nyour journey.
+
+#org @gText_TsarvosaCity_Gym_MerchantIntro
+Welcome to my shop! Is there\nanything I can get you?
+
+#org @gText_TsarvosaCity_Gym_MerchantOutro
+Come again!
+
+#org @gText_TsarvosaCity_Gym_GymSign
+Tsarvosa City Pok\emon Gym\nLeader: Iris, The Item Analyst
+
+#org @gText_TsarvosaCity_Gym_GymVictorsSignPreVictory
+Tsarvosa City Gym\nVictors: [RIVAL]
+
+#org @gText_TsarvosaCity_Gym_GymVictorsSignPostVictory
+Tsarvosa City Gym\nVictors: [RIVAL], [PLAYER]
