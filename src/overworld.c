@@ -1900,7 +1900,7 @@ void PlayerOnBikeCollide(u8 direction)
 
 bool8 CanUseEscapeRopeOnCurrMap(void)
 {
-	if (gFollowerState.inProgress && !(gFollowerState.flags & FOLLOWER_FLAG_CAN_LEAVE_ROUTE))
+	if ((gFollowerState.inProgress && !(gFollowerState.flags & FOLLOWER_FLAG_CAN_LEAVE_ROUTE)) || FlagGet(FLAG_TSARVOSA_GYM_CHALLENGE_ACTIVE))
 		return FALSE;
 
 	return (gMapHeader.flags & MAP_ALLOW_ESCAPE_ROPE) != 0;

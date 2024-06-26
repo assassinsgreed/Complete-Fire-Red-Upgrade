@@ -2449,7 +2449,7 @@ const struct TrainerMonNoItemDefaultMoves sParty_ForgottenManse_BF1_SuperNerdGle
     { .lvl = 27, .species = SPECIES_SLOWPOKE },
     { .lvl = 27, .species = SPECIES_SLOWPOKE_G }
 };
-const struct TrainerMonNoItemDefaultMoves sParty_ForgottenManse_BF1_BurglarPeter[] = {
+const struct TrainerMonNoItemDefaultMoves sParty_ForgottenManse_BF1_BurglarPavle[] = {
     { .lvl = 25, .species = SPECIES_NICKIT },
     { .lvl = 31, .species = SPECIES_THIEVUL }
 };
@@ -6004,6 +6004,279 @@ const struct TrainerMonNoItemCustomMoves sParty_TsarvosaCity_GymTrainees_Faye[] 
         .ability = Ability_1 // Disguise
     }
 };
+
+const struct TrainerMonItemCustomMoves sParty_TsarvosaCityGym_PokefanMarci[] = {
+    {
+        .lvl = 54,
+        .species = SPECIES_DELPHOX,
+        .moves = {
+            MOVE_TRICK,
+            MOVE_PSYSHOCK,
+            MOVE_MYSTICALFIRE,
+            MOVE_LIGHTSCREEN
+        },
+        .heldItem = ITEM_FLAME_ORB,
+        .ability = Ability_1 // Blaze
+    },
+    {
+        .lvl = 54,
+        .species = SPECIES_BISHARP,
+        .moves = {
+            MOVE_SUCKERPUNCH,
+            MOVE_NIGHTSLASH,
+            MOVE_EMBARGO,
+            MOVE_METALBURST
+        },
+        .heldItem = ITEM_WEAKNESS_POLICY,
+        .ability = Ability_1 // Defiant
+    },
+    {
+        .lvl = 54,
+        .species = SPECIES_MR_MIME_G,
+        .moves = {
+            MOVE_TRICK,
+            MOVE_RECYCLE,
+            MOVE_FLING,
+            MOVE_FREEZEDRY
+        },
+        .heldItem = ITEM_LAGGING_TAIL,
+        .ability = Ability_1 // Screen Cleaner
+    },
+};
+
+const struct TrainerMonItemCustomMoves sParty_TsarvosaCityGym_CoolTrainerNorbert[] = {
+    {
+        .lvl = 55,
+        .species = SPECIES_JOLTEON,
+        .moves = {
+            MOVE_ELECTROBALL,
+            MOVE_HIDDENPOWER,
+            MOVE_NONE,
+            MOVE_NONE
+        },
+        .heldItem = ITEM_CHOICE_SCARF,
+        .ability = Ability_Hidden // Quick Feet
+    },
+    {
+        .lvl = 55,
+        .species = SPECIES_CONKELDURR,
+        .moves = {
+            MOVE_HAMMERARM,
+            MOVE_ROCKSLIDE,
+            MOVE_BULKUP,
+            MOVE_THUNDERPUNCH
+        },
+        .heldItem = ITEM_TOXIC_ORB,
+        .ability = Ability_1 // Guts
+    },
+};
+
+const struct TrainerMonItemCustomMoves sParty_TsarvosaCityGym_ChannelerJamila[] = {
+    {
+        .lvl = 57,
+        .species = SPECIES_FROSLASS,
+        .moves = {
+            MOVE_FROSTBREATH,
+            MOVE_DESTINYBOND,
+            MOVE_CRUNCH,
+            MOVE_SHADOWBALL
+        },
+        .heldItem = ITEM_FOCUS_SASH,
+        .ability = Ability_Hidden // Cursed Body
+    }
+};
+
+const struct TrainerMonItemCustomMoves sParty_TsarvosaCityGym_BurglarMarion[] = {
+    {
+        .lvl = 53,
+        .species = SPECIES_SCOLIPEDE,
+        .moves = {
+            MOVE_SPIKES,
+            MOVE_TOXICSPIKES,
+            MOVE_BUGBITE,
+            MOVE_POISONTAIL
+        },
+        .heldItem = ITEM_RED_CARD,
+        .ability = Ability_1 // Poison Point
+    },
+    {
+        .lvl = 53,
+        .species = SPECIES_BARBARACLE,
+        .moves = {
+            MOVE_RAZORSHELL,
+            MOVE_ROCKPOLISH,
+            MOVE_SLASH,
+            MOVE_ANCIENTPOWER
+        },
+        .heldItem = ITEM_WEAKNESS_POLICY,
+        .ability = Ability_Hidden // Pickpocket
+    },
+    {
+        .lvl = 54,
+        .species = SPECIES_COFAGRIGUS,
+        .moves = {
+            MOVE_WILLOWISP,
+            MOVE_SHADOWBALL,
+            MOVE_DISABLE,
+            MOVE_MEANLOOK
+        },
+        .heldItem = ITEM_EJECT_BUTTON,
+        .ability = Ability_1 // Mummy
+    },
+    {
+        .lvl = 54,
+        .species = SPECIES_SCEPTILE,
+        .moves = {
+            MOVE_FLING,
+            MOVE_THIEF,
+            MOVE_LEAFBLADE,
+            MOVE_XSCISSOR
+        },
+        .heldItem = ITEM_IRON_BALL,
+        .ability = Ability_Hidden // Unburden
+    },
+};
+
+const struct TrainerMonItemCustomMoves sParty_TsarvosaCityGym_LassAlanah[] = {
+    {
+        .lvl = 54,
+        .species = SPECIES_LOPUNNY,
+        .moves = {
+            MOVE_FACADE,
+            MOVE_PLAYROUGH,
+            MOVE_UTURN,
+            MOVE_RETALIATE
+        },
+        .heldItem = ITEM_TOXIC_ORB,
+        .ability = Ability_1 // Cute Charm
+    },
+    {
+        .lvl = 54,
+        .species = SPECIES_COALOSSAL,
+        .moves = {
+            MOVE_TARSHOT,
+            MOVE_INCINERATE,
+            MOVE_STEALTHROCK,
+            MOVE_ANCIENTPOWER
+        },
+        .heldItem = ITEM_QUICK_CLAW,
+        .ability = Ability_2 // Flame Body
+    },
+    {
+        .lvl = 54,
+        .species = SPECIES_SHIINOTIC,
+        .moves = {
+            MOVE_STRENGTHSAP,
+            MOVE_SPORE,
+            MOVE_DAZZLINGGLEAM,
+            MOVE_SWAGGER
+        },
+        .heldItem = ITEM_LEFTOVERS,
+        .ability = Ability_2 // Effect Spore
+    },
+};
+
+const struct TrainerMonItemCustomMoves sParty_TsarvosaCityGym_GentlemanPaul[] = {
+    {
+        .lvl = 53,
+        .species = SPECIES_CARBINK,
+        .moves = {
+            MOVE_LIGHTSCREEN,
+            MOVE_REFLECT,
+            MOVE_STEALTHROCK,
+            MOVE_ANCIENTPOWER
+        },
+        .heldItem = ITEM_LIGHT_CLAY,
+        .ability = Ability_1 // Clear Body
+    },
+    {
+        .lvl = 54,
+        .species = SPECIES_YAMASK_G,
+        .moves = {
+            MOVE_SHADOWBALL,
+            MOVE_DISABLE,
+            MOVE_SLAM,
+            MOVE_EARTHPOWER
+        },
+        .heldItem = ITEM_EJECT_BUTTON,
+        .ability = Ability_1 // Wandering Spirit
+    },
+    {
+        .lvl = 53,
+        .species = SPECIES_DARMANITAN_G,
+        .moves = {
+            MOVE_ICEPUNCH,
+            MOVE_EARTHQUAKE,
+            MOVE_NONE,
+            MOVE_NONE
+        },
+        .heldItem = ITEM_CHOICE_BAND,
+        .ability = Ability_1 // Gorilla Tactics
+    },
+    {
+        .lvl = 54,
+        .species = SPECIES_TOXICROAK,
+        .moves = {
+            MOVE_POISONJAB,
+            MOVE_SUCKERPUNCH,
+            MOVE_DRAINPUNCH,
+            MOVE_NONE
+        },
+        .heldItem = ITEM_BLACK_SLUDGE,
+        .ability = Ability_Hidden // Poison Touch
+    },
+};
+
+const struct TrainerMonItemCustomMoves sParty_TsarvosaCityGym_LeaderIris[] = {
+    {
+        .lvl = 55,
+        .species = SPECIES_FERROTHORN,
+        .moves = {
+            MOVE_CURSE,
+            MOVE_IRONHEAD,
+            MOVE_POWERWHIP,
+            MOVE_SPIKES
+        },
+        .heldItem = ITEM_ROCKY_HELMET,
+        .ability = Ability_1 // Iron Barbs
+    },
+    {
+        .lvl = 55,
+        .species = SPECIES_CHANSEY,
+        .moves = {
+            MOVE_MINIMIZE,
+            MOVE_THUNDERWAVE,
+            MOVE_ECHOEDVOICE,
+            MOVE_SEISMICTOSS
+        },
+        .heldItem = ITEM_EVIOLITE,
+        .ability = Ability_2 // Serene Grace
+    },
+    {
+        .lvl = 56,
+        .species = SPECIES_PALOSSAND,
+        .moves = {
+            MOVE_GIGADRAIN,
+            MOVE_SHADOWBALL,
+            MOVE_IRONDEFENSE,
+            MOVE_SCORCHINGSANDS
+        },
+        .heldItem = ITEM_ABSORB_BULB,
+        .ability = Ability_1 // Water Compaction
+    },
+    {
+        .lvl = 58,
+        .species = SPECIES_GIGALITH,
+        .moves = {
+            MOVE_ROCKSLIDE,
+            MOVE_FACADE,
+            MOVE_IRONHEAD,
+            MOVE_EARTHQUAKE
+        },
+        .heldItem = ITEM_ASSAULT_VEST,
+        .ability = Ability_2 // Sand Stream
+    },
+};
 // #endregion
 // #endregion
 
@@ -8064,7 +8337,7 @@ const struct Trainer gTrainers[] = {
         .partySize = NELEMS(sParty_ForgottenManse_BF1_SuperNerdGlenn),
         .party = {.NoItemDefaultMoves = sParty_ForgottenManse_BF1_SuperNerdGlenn}
     },
-    [TRAINER_FORGOTTEN_MANSE_BF1_BURGLAR_PETER] = {
+    [TRAINER_FORGOTTEN_MANSE_BF1_BURGLAR_PAVLE] = {
         .partyFlags = 0,
         .trainerClass = CLASS_BURGLAR,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
@@ -8073,8 +8346,8 @@ const struct Trainer gTrainers[] = {
         .items = { },
         .doubleBattle = FALSE,
         .aiFlags = TrainerAIFlags_Burglar_Standard,
-        .partySize = NELEMS(sParty_ForgottenManse_BF1_BurglarPeter),
-        .party = {.NoItemDefaultMoves = sParty_ForgottenManse_BF1_BurglarPeter}
+        .partySize = NELEMS(sParty_ForgottenManse_BF1_BurglarPavle),
+        .party = {.NoItemDefaultMoves = sParty_ForgottenManse_BF1_BurglarPavle}
     },
     [TRAINER_FORGOTTEN_MANSE_BF1_PSYCHIC_NOELLE] = {
         .partyFlags = 0,
@@ -11439,6 +11712,90 @@ const struct Trainer gTrainers[] = {
         .aiFlags = TrainerAIFlags_GymTrainees_Standard,
         .partySize = NELEMS(sParty_TsarvosaCity_GymTrainees_Faye),
         .party = {.NoItemCustomMoves = sParty_TsarvosaCity_GymTrainees_Faye}
+    },
+    [TRAINER_TSARVOSA_CITY_GYM_MARCI] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_POKEFAN,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .trainerPic = TRAINER_PIC_POKEFAN_F,
+        .trainerName = {_M, _a, _r, _c, _i, _END },
+        .items = { ITEM_HYPER_POTION },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_SETUP_FIRST_TURN,
+        .partySize = NELEMS(sParty_TsarvosaCityGym_PokefanMarci),
+        .party = {.ItemCustomMoves = sParty_TsarvosaCityGym_PokefanMarci}
+    },
+    [TRAINER_TSARVOSA_CITY_GYM_NORBERT] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_COOLTRAINER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
+        .trainerPic = TRAINER_PIC_COOLTRAINER_M,
+        .trainerName = {_N, _o, _r, _b, _e, _r, _t, _END },
+        .items = { ITEM_X_SP_ATK, ITEM_LEMONADE },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_PREFER_STRONGEST_MOVE,
+        .partySize = NELEMS(sParty_TsarvosaCityGym_CoolTrainerNorbert),
+        .party = {.ItemCustomMoves = sParty_TsarvosaCityGym_CoolTrainerNorbert}
+    },
+    [TRAINER_TSARVOSA_CITY_GYM_JAMILA] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_CHANNELER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_CHANNELER,
+        .trainerName = {_J, _a, _m, _i, _l, _a, _END },
+        .items = { ITEM_MAX_POTION },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_TRY_TO_FAINT,
+        .partySize = NELEMS(sParty_TsarvosaCityGym_ChannelerJamila),
+        .party = {.ItemCustomMoves = sParty_TsarvosaCityGym_ChannelerJamila}
+    },
+    [TRAINER_TSARVOSA_CITY_GYM_MARION] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_BURGLAR,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_BURGLAR,
+        .trainerName = {_M, _a, _r, _i, _o, _n, _END },
+        .items = { ITEM_MOOMOO_MILK, ITEM_X_DEFEND },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_RISKY,
+        .partySize = NELEMS(sParty_TsarvosaCityGym_BurglarMarion),
+        .party = {.ItemCustomMoves = sParty_TsarvosaCityGym_BurglarMarion}
+    },
+    [TRAINER_TSARVOSA_CITY_GYM_ALANAH] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_LASS,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .trainerPic = TRAINER_PIC_LASS,
+        .trainerName = {_A, _l, _a, _n, _a, _h, _END },
+        .items = { ITEM_MOOMOO_MILK, ITEM_FULL_HEAL },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_HP_AWARE,
+        .partySize = NELEMS(sParty_TsarvosaCityGym_LassAlanah),
+        .party = {.ItemCustomMoves = sParty_TsarvosaCityGym_LassAlanah}
+    },
+    [TRAINER_TSARVOSA_CITY_GYM_PAUL] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_GENTLEMAN,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_GENTLEMAN,
+        .trainerName = {_P, _a, _u, _l, _END },
+        .items = { ITEM_FULL_RESTORE },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_HP_AWARE,
+        .partySize = NELEMS(sParty_TsarvosaCityGym_GentlemanPaul),
+        .party = {.ItemCustomMoves = sParty_TsarvosaCityGym_GentlemanPaul}
+    },
+    [TRAINER_TSARVOSA_CITY_GYM_LEADER_IRIS] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_LEADER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_IRIS,
+        .trainerName = {_I, _r, _i, _s, _END },
+        .items = { ITEM_MAX_POTION, ITEM_FULL_HEAL },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_HP_AWARE | AI_SCRIPT_SEMI_SMART,
+        .partySize = NELEMS(sParty_TsarvosaCityGym_LeaderIris),
+        .party = {.ItemCustomMoves = sParty_TsarvosaCityGym_LeaderIris}
     },
     // #endregion
     // #endregion

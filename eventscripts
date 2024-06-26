@@ -845,7 +845,7 @@ sign 1 11 1 SignScript_ForgottenManse_Journal4
 ## BF1
 map 1 12 MapScript_ForgottenManse_Basement
 npc 1 12 0 EventScript_ForgottenManseBF1_SuperNerdGlenn
-npc 1 12 1 EventScript_ForgottenManseBF1_BurglarPeter
+npc 1 12 1 EventScript_ForgottenManseBF1_BurglarPavle
 npc 1 12 2 EventScript_ForgottenManseBF1_PsychicNoelle
 npc 1 12 3 EventScript_ForgottenManseBF1_ChannelerSana
 npc 1 12 4 ItemScript_Common_EscapeRope
@@ -2091,6 +2091,13 @@ npc 3 9 22 EventScript_TsarvosaCity_Gym_Merchant13
 npc 3 9 23 EventScript_TsarvosaCity_Gym_Merchant14
 npc 3 9 24 EventScript_TsarvosaCity_Gym_Merchant15
 npc 3 9 25 EventScript_TsarvosaCity_Gym_Merchant16
+npc 3 9 26 EventScript_TsarvosaCity_Gym_LeaderIris
+tile 3 9 0 TileScript_TsarvosaCity_Gym_BarricadeSouth
+tile 3 9 1 TileScript_TsarvosaCity_Gym_BarricadeSouth
+tile 3 9 2 TileScript_TsarvosaCity_Gym_BarricadeSouth
+tile 3 9 3 TileScript_TsarvosaCity_Gym_BarricadeWest
+tile 3 9 4 TileScript_TsarvosaCity_Gym_BarricadeWest
+tile 3 9 5 TileScript_TsarvosaCity_Gym_BarricadeWest
 sign 3 9 4 SignScript_TsarvosaCity_Gym_GymSign
 sign 3 9 5 SignScript_TsarvosaCity_Gym_GymVictorsSign
 ## Facilities
