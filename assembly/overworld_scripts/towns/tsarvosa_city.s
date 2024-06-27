@@ -2515,6 +2515,8 @@ HeldItemsShop4:
 .global EventScript_TsarvosaCity_Gym_LeaderIris
 EventScript_TsarvosaCity_Gym_LeaderIris:
     faceplayer
+    checkflag 0x826 @ Tsarvosa City gym badge obtained
+    if SET _goto EventScript_TsarvosaCity_Gym_LeaderIris_Chat
     buffernumber 0x0 VarGymChallengeProgress
     switch VarGymChallengeProgress
     case 1, GymChallenge1
@@ -2524,7 +2526,7 @@ EventScript_TsarvosaCity_Gym_LeaderIris:
     case 5, GymChallenge5
     case 6, GymChallenge6
     case 7, GymChallenge7  @ This is a joke question asking who your favorite gym leader is, with all options being Iris and being correct.
-    @ case 8, GymChallengeBattleIris @ TODO: Done in a later ticket
+    case 8, GymChallengeBattleIris
     msgbox gText_TsarvosaCity_Gym_Iris_GymChallengeIntroduction MSG_NORMAL
     setvar VarGymChallengeProgress 0x1
     goto TsarvosaGymChallengeRules
@@ -2898,12 +2900,12 @@ GymChallenge6:
     if SET _goto GymChallenge6AnswerConfirmation
     call GymChallengeQuestionSetupCommon
     msgbox gText_TsarvosaCity_Gym_Iris_GymChallenge_Question6 MSG_NORMAL
-    buffernumber 0x0 30
+    buffernumber 0x0 45
     call GymChallengeTriggerStart
     end
 
 GymChallenge6AnswerConfirmation:
-    setvar 0x8010 30
+    setvar 0x8010 45
     special2 0x4004 0x4D @ Handle if player has passed the time limit in var 8010
     compare 0x4004 TRUE
     if equal _goto GymChallenge6RanOutOfTime
@@ -2952,12 +2954,12 @@ GymChallenge7AnswerConfirmation:
     compare 0x4004 TRUE
     if equal _call GymChallenge7RanOutOfTime
     if notequal _call GymChallengeHandleWhenRemainingTime
+    msgbox gText_TsarvosaCity_Gym_Iris_GymChallenge_AnswerLeadIn MSG_NORMAL
     msgbox gText_TsarvosaCity_Gym_Iris_GymChallenge_Question7 MSG_KEEPOPEN
     multichoiceoption gText_TsarvosaCity_Gym_Iris_GymChallenge_Question7ChoiceAll 0
 	multichoiceoption gText_TsarvosaCity_Gym_Iris_GymChallenge_Question7ChoiceAll 1
     multichoiceoption gText_TsarvosaCity_Gym_Iris_GymChallenge_Question7ChoiceAll 2
     multichoiceoption gText_TsarvosaCity_Gym_Iris_GymChallenge_Question7ChoiceAll 3
-	msgbox gText_TsarvosaCity_Gym_Iris_GymChallenge_ConfirmingAnswerLeadIn MSG_NORMAL
     multichoice 0x0 0x0 FOUR_MULTICHOICE_OPTIONS TRUE
 	switch LASTRESULT
 	case 0, GymChallenge7JokeAnswerIsCorrect
@@ -2982,6 +2984,41 @@ GymChallenge7JokeAnswerIsCorrect:
 GymChallenge7RanOutOfTime:
     msgbox gText_TsarvosaCity_Gym_Iris_GymChallenge_Question7TimesUpPrompt MSG_NORMAL
     return
+
+GymChallengeBattleIris:
+    msgbox gText_TsarvosaCity_Gym_LeaderIris_Talk MSG_NORMAL
+    call SetupMugshotGymLeaderAndBosses
+    trainerbattle1 0x1 453 0x100 gText_TsarvosaCity_Gym_LeaderIris_Intro gText_TsarvosaCity_Gym_LeaderIris_Defeat EventScript_TsarvosaCity_Gym_LeaderIris_Defeated
+    end
+
+EventScript_TsarvosaCity_Gym_LeaderIris_Defeated:
+    msgbox gText_TsarvosaCity_Gym_LeaderIris_BadgeAwarded MSG_NORMAL
+    setflag 0x826 @ Tsarvosa City gym badge
+    clearflag 0x04F @ Enable Iris & Stella battle in Daimyn City restaurant
+    fanfare 0x13D @ Gym victory
+    msgbox gText_TsarvosaCity_Gym_BadgeReceived MSG_NORMAL
+    call BadgeObedienceMessage
+    waitfanfare
+    msgbox gText_TsarvosaCity_Gym_LeaderIris_BadgeDescription MSG_NORMAL
+    msgbox gText_TsarvosaCity_Gym_LeaderIris_TMReceived MSG_NORMAL
+    loadpointer 0x0 gText_TsarvosaCity_Gym_TMReceived
+    additem ITEM_TM21 0x1
+    giveitemwithfanfare ITEM_TM21 0x1 0x101 @ MUS_FANFA1
+    setflag 0x4B6 @ Defeated Iris
+    setflag 0x25C @ New Pokemart Stock
+    goto EventScript_TsarvosaCity_Gym_LeaderIris_Chat
+    end
+
+EventScript_TsarvosaCity_Gym_LeaderIris_Chat:
+    msgbox gText_TsarvosaCity_Gym_LeaderIris_Chat MSG_NORMAL
+    checkflag 0x04F
+    if NOT_SET _goto IrisCommentsOnLunchWithStella
+    applymovement LASTTALKED m_LookDown
+    end
+
+IrisCommentsOnLunchWithStella:
+    npcchatwithmovement gText_TsarvosaCity_Gym_LeaderIris_CommentOnStellaLunch m_LookDown
+    end
 
 .global TileScript_TsarvosaCity_Gym_BarricadeSouth
 TileScript_TsarvosaCity_Gym_BarricadeSouth:
