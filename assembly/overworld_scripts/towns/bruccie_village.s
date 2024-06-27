@@ -787,7 +787,7 @@ EventScript_BruccieVillageGym_Ellie:
 .global EventScript_BruccieVillageGym_Abby
 EventScript_BruccieVillageGym_Abby:
     faceplayer
-    checkflag 0x825 @ BruccieVillage gym badge
+    checkflag 0x825 @ Bruccie Village gym badge
     if SET _goto EventScript_BruccieVillageGym_LeaderAbby_Chat
     msgbox gText_BruccieVillageGym_LeaderAbby_Talk MSG_NORMAL
     call SetupMugshotGymLeaderAndBosses

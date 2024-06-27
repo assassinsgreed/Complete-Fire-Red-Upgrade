@@ -82,22 +82,22 @@ Let's see if [FD][06] can pull through[.]\p
 
 // Developers
 #org @sText_DeveloperCollin_FirstMonDown
-Looks like you've kept up on your\ntraining!/p
+Looks like you've kept up on your\ntraining!\p
 
 #org @sText_DeveloperCollin_LastSwitchIn
-Battles are at their most intense\nwhen you're on the back foot!/p
+Battles are at their most intense\nwhen you're on the back foot!\p
 
 #org @sText_DeveloperCollin_LowHP
-Uh oh[.] This isn't looking good./p
+Uh oh[.] This isn't looking good.\p
 
 #org @sText_DeveloperCrystal_FirstMonDown
-Tsk[.] Only a minor inconvience!\pDo you honestly think losing a single\npokemon will stop me from beating\lyou?/p
+Tsk[.] Only a minor inconvience!\pDo you honestly think losing a single\npokemon will stop me from beating\lyou?\p
 
 #org @sText_DeveloperCrystal_LastSwitchIn
-Don't count me out yet!/p
+Don't count me out yet!\p
 
 #org @sText_DeveloperCrystal_LowHP
-I'm not giving up yet!/p
+I'm not giving up yet!\p
 
 // Gym Leader Trainees (Generic)
 #org @sText_GymLeaderTrainee_FirstMonDown
@@ -184,7 +184,7 @@ You should know a cornered\nbeast is most dangerous!\p
 Not bad, but can you handle this?\p
 
 #org @sText_Leader7_LastSwitchIn
-You're pretty good! But the right\nitem at the right time can make\nall the difference.\p
+The right item at the right time can\nmake all the difference.\p
 
 #org @sText_Leader7_LowHP
 Time for a trademark last-minute\nchange-up! Get ready!\p

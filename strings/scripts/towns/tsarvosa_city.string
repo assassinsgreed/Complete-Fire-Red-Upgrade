@@ -946,3 +946,33 @@ Indeed, quite impressive.
 
 #org @gText_TsarvosaCity_Gym_Paul_Chat
 [BLUE]Very good. You may proceed.
+
+#org @gText_TsarvosaCity_Gym_LeaderIris_Talk
+[RED]Alright[.] Are you ready to go?\pSeeing you take my challenge got me\nfired up for our battle!\pDon't let me down, okay?
+
+#org @gText_TsarvosaCity_Gym_LeaderIris_Intro
+[RED]Okay[.] Enough talking. I hope you're\nready, because we sure are!
+
+#org @gText_TsarvosaCity_Gym_LeaderIris_Defeat
+That was such a fun battle.\nYou've earned your victory!
+
+#org @gText_TsarvosaCity_Gym_LeaderIris_BadgeAwarded
+[RED]Yup, no two ways about it[.]\pYou've earned my badge through and\nthrough!\pPlease accept it with my\ncongratulations.
+
+#org @gText_TsarvosaCity_Gym_BadgeReceived
+[PLAYER] received the Support Badge!
+
+#org @gText_TsarvosaCity_Gym_LeaderIris_BadgeDescription
+[RED]That right there is the support\nbadge!\pNow that you've earned it, you can\nuse Strength outside of battle.\pJust remember you'll need the HM for\nit, first!
+
+#org @gText_TsarvosaCity_Gym_LeaderIris_TMReceived
+[RED]I'd also like to give you this[.]\nIt's my favorite TM, Knock Off!\pUse this to get rid of your foes'\npesky held items in battle.
+
+#org @gText_TsarvosaCity_Gym_TMReceived
+[PLAYER] received TM21 from Iris!
+
+#org @gText_TsarvosaCity_Gym_LeaderIris_Chat
+[RED]Thanks for the battle!\pAnd, best of luck on the rest of\nyour gym challenge!
+
+#org @gText_TsarvosaCity_Gym_LeaderIris_CommentOnStellaLunch
+[RED]Hmm[.] It's been a while since I\ncaught up with Stella[.]\pMaybe I should invite her for lunch\nin Daimyn City sometime.
