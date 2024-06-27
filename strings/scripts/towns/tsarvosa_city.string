@@ -902,15 +902,6 @@ Oh! Well done!
 #org @gText_TsarvosaCity_Gym_Marci_Chat
 [RED]Good luck with the rest of your gym\nchallenge, dearie.
 
-#org @gText_TsarvosaCity_Gym_Norbert_Intro
-[BLUE]My Pok\emon have mastered their held\nitems. You don't stand a chance!
-
-#org @gText_TsarvosaCity_Gym_Norbert_Defeat
-H-huh?
-
-#org @gText_TsarvosaCity_Gym_Norbert_Chat
-[BLUE]Unbelievable[.] My unstoppable\nstrategy was[.] stopped?
-
 #org @gText_TsarvosaCity_Gym_Jamila_Intro
 [RED]Fufufufufu[.] My Pok\emon's item\naccounts for it's weaknesses.
 
@@ -919,6 +910,15 @@ Unbelievable[.]
 
 #org @gText_TsarvosaCity_Gym_Jamila_Chat
 [RED]I will need to commit to more\ntraining.
+
+#org @gText_TsarvosaCity_Gym_Norbert_Intro
+[BLUE]My Pok\emon have mastered their held\nitems. You don't stand a chance!
+
+#org @gText_TsarvosaCity_Gym_Norbert_Defeat
+H-huh?
+
+#org @gText_TsarvosaCity_Gym_Norbert_Chat
+[BLUE]Unbelievable[.] My unstoppable\nstrategy was[.] stopped?
 
 #org @gText_TsarvosaCity_Gym_Marion_Intro
 [BLUE]Yo, dude!\pI'm much better than the others.\nThink you can keep up?

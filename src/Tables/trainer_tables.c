@@ -6044,6 +6044,21 @@ const struct TrainerMonItemCustomMoves sParty_TsarvosaCityGym_PokefanMarci[] = {
     },
 };
 
+const struct TrainerMonItemCustomMoves sParty_TsarvosaCityGym_ChannelerJamila[] = {
+    {
+        .lvl = 56,
+        .species = SPECIES_FROSLASS,
+        .moves = {
+            MOVE_FROSTBREATH,
+            MOVE_DESTINYBOND,
+            MOVE_CRUNCH,
+            MOVE_SHADOWBALL
+        },
+        .heldItem = ITEM_FOCUS_SASH,
+        .ability = Ability_Hidden // Cursed Body
+    }
+};
+
 const struct TrainerMonItemCustomMoves sParty_TsarvosaCityGym_CoolTrainerNorbert[] = {
     {
         .lvl = 55,
@@ -6066,24 +6081,9 @@ const struct TrainerMonItemCustomMoves sParty_TsarvosaCityGym_CoolTrainerNorbert
             MOVE_BULKUP,
             MOVE_THUNDERPUNCH
         },
-        .heldItem = ITEM_TOXIC_ORB,
+        .heldItem = ITEM_FLAME_ORB,
         .ability = Ability_1 // Guts
     },
-};
-
-const struct TrainerMonItemCustomMoves sParty_TsarvosaCityGym_ChannelerJamila[] = {
-    {
-        .lvl = 57,
-        .species = SPECIES_FROSLASS,
-        .moves = {
-            MOVE_FROSTBREATH,
-            MOVE_DESTINYBOND,
-            MOVE_CRUNCH,
-            MOVE_SHADOWBALL
-        },
-        .heldItem = ITEM_FOCUS_SASH,
-        .ability = Ability_Hidden // Cursed Body
-    }
 };
 
 const struct TrainerMonItemCustomMoves sParty_TsarvosaCityGym_BurglarMarion[] = {
@@ -11725,18 +11725,6 @@ const struct Trainer gTrainers[] = {
         .partySize = NELEMS(sParty_TsarvosaCityGym_PokefanMarci),
         .party = {.ItemCustomMoves = sParty_TsarvosaCityGym_PokefanMarci}
     },
-    [TRAINER_TSARVOSA_CITY_GYM_NORBERT] = {
-        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
-        .trainerClass = CLASS_COOLTRAINER,
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
-        .trainerPic = TRAINER_PIC_COOLTRAINER_M,
-        .trainerName = {_N, _o, _r, _b, _e, _r, _t, _END },
-        .items = { ITEM_X_SP_ATK, ITEM_LEMONADE },
-        .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_PREFER_STRONGEST_MOVE,
-        .partySize = NELEMS(sParty_TsarvosaCityGym_CoolTrainerNorbert),
-        .party = {.ItemCustomMoves = sParty_TsarvosaCityGym_CoolTrainerNorbert}
-    },
     [TRAINER_TSARVOSA_CITY_GYM_JAMILA] = {
         .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
         .trainerClass = CLASS_CHANNELER,
@@ -11748,6 +11736,18 @@ const struct Trainer gTrainers[] = {
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_TRY_TO_FAINT,
         .partySize = NELEMS(sParty_TsarvosaCityGym_ChannelerJamila),
         .party = {.ItemCustomMoves = sParty_TsarvosaCityGym_ChannelerJamila}
+    },
+    [TRAINER_TSARVOSA_CITY_GYM_NORBERT] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_COOLTRAINER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
+        .trainerPic = TRAINER_PIC_COOLTRAINER_M,
+        .trainerName = {_N, _o, _r, _b, _e, _r, _t, _END },
+        .items = { ITEM_X_SP_ATK, ITEM_LEMONADE },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_PREFER_STRONGEST_MOVE,
+        .partySize = NELEMS(sParty_TsarvosaCityGym_CoolTrainerNorbert),
+        .party = {.ItemCustomMoves = sParty_TsarvosaCityGym_CoolTrainerNorbert}
     },
     [TRAINER_TSARVOSA_CITY_GYM_MARION] = {
         .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,

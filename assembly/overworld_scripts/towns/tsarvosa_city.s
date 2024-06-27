@@ -2753,11 +2753,11 @@ GymChallenge2RanOutOfTime:
     goto BattlingGymTrainer2
 
 BattlingGymTrainer2:
-    setvar 0x5029 47
+    setvar 0x5029 58
     call HandlePreGymBattle
-    msgbox gText_TsarvosaCity_Gym_Norbert_Intro MSG_NORMAL
-    trainerbattle3 0x1 448 0x0 gText_TsarvosaCity_Gym_Norbert_Defeat
-    msgbox gText_TsarvosaCity_Gym_Norbert_Chat MSG_NORMAL
+    msgbox gText_TsarvosaCity_Gym_Jamila_Intro MSG_NORMAL
+    trainerbattle3 0x1 448 0x0 gText_TsarvosaCity_Gym_Jamila_Defeat
+    msgbox gText_TsarvosaCity_Gym_Jamila_Chat MSG_NORMAL
     call HandlePostGymBattle
     end
 
@@ -2797,11 +2797,11 @@ GymChallenge3RanOutOfTime:
     goto BattlingGymTrainer3
 
 BattlingGymTrainer3:
-    setvar 0x5029 58
+    setvar 0x5029 47
     call HandlePreGymBattle
-    msgbox gText_TsarvosaCity_Gym_Jamila_Intro MSG_NORMAL
-    trainerbattle3 0x1 449 0x0 gText_TsarvosaCity_Gym_Jamila_Defeat
-    msgbox gText_TsarvosaCity_Gym_Jamila_Chat MSG_NORMAL
+    msgbox gText_TsarvosaCity_Gym_Norbert_Intro MSG_NORMAL
+    trainerbattle3 0x1 449 0x0 gText_TsarvosaCity_Gym_Norbert_Defeat
+    msgbox gText_TsarvosaCity_Gym_Norbert_Chat MSG_NORMAL
     call HandlePostGymBattle
     end
 
