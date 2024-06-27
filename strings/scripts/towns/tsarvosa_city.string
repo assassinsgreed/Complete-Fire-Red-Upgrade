@@ -681,7 +681,7 @@ My daughters, Iris and Stella,\nare both official gym leaders.\pTheir dedication
 Hooo[.]\pI want to learn more about Pok\emon\nand items, so I can connect with my\lgranddaughter.\pBut[.] This information is just so\nconfusing[.]
 
 #org @gText_TsarvosaCity_NPCHouses_IrisFanClubPresident
-Hello, hello!\pI'm the founder and president of the\nIris fan club.\pWe've dedicated ourselves to learning\neverything about her.\pWhat her favourite Pok\emon are[.]\pWhich items she's using in her next\nbattles[.]\pWhich type of sandwich she likes\nbest[.]\pYou! You want to join us, yes?
+Hello, hello!\pI'm the founder and president of the\nIris fan club.\pWe've dedicated ourselves to learning\neverything about her.\pWhat her favorite Pok\emon are[.]\pWhich items she's using in her next\nbattles[.]\pWhich type of sandwich she likes\nbest[.]\pYou! You want to join us, yes?
 
 #org @gText_TsarvosaCity_NPCHouses_IrisFanClubPresident_Yes
 Ohohoho! Very good!\pYour first order of business is to\nlearn everything about Iris.\pAnd, to start, I want you to learn\neverything you can about this item!
@@ -705,7 +705,7 @@ We love to watch the Elite Four\nchallenges they broadcast on TV!\pIt's so cool 
 I know that no one will really be\nable to beat the champion.\pIt's still fun to root for an\nunderdog, though!
 
 #org @gText_TsarvosaCity_Gym_Attendant
-Yo, superstar! Welcome to the\nTsarvosa City Gym!\pAn outdoor market is quite an\nunconventional place for a gym.\pBut don't be fooled!\pIt's the perfect battleground for it's\nleader, Iris!\pShe uses items to their full\neffect to turn the tide of battle.\pIf you want to suceed, you'll need\nto familiarize yourself with all\lsorts of items.\pBut don't sweat the small stuff[.]\nI know you've got this in the bag!
+Yo, superstar! Welcome to the\nTsarvosa City Gym!\pAn outdoor market is quite an\nunconventional place for a gym.\pBut don't be fooled!\pIt's the perfect battleground for it's\nleader, Iris!\pShe uses items to their full\neffect to turn the tide of battle.\pIf you want to suceed, you'll need\nto familiarize yourself with all\lsorts of items.\pYou can also use moves like Thief\nto turn their advantage into yours.\pOr, use abilities like Frisk to get\na heads up on what they're holding.\pBut don't sweat the small stuff[.]\nI know you've got this in the bag!
 
 #org @gText_TsarvosaCity_Gym_AttendantPostVictory
 I recognize that shine anywhere;\nthat's the Support Badge!\pWay to go, superstar!\pYou're one step closer to completing\nyour journey.
@@ -724,3 +724,225 @@ Tsarvosa City Gym\nVictors: [RIVAL]
 
 #org @gText_TsarvosaCity_Gym_GymVictorsSignPostVictory
 Tsarvosa City Gym\nVictors: [RIVAL], [PLAYER]
+
+#org @gText_TsarvosaCity_Gym_GymChallengeActiveCannotLeave
+The gym challenge is active!\nYou cannot leave right now.
+
+#org @gText_TsarvosaCity_Gym_Iris_GymChallengeIntroduction
+[RED]Heya! I'm the Tsarvosa City gym\nleader, Iris.\pWelcome to my gym!\pI bet you're eager to challenge me\nfor my badge.\pBut[.] You'll have to beat my gym\nchallenge first.
+
+#org @gText_TsarvosaCity_Gym_Iris_GymChallengeRules
+[RED]The rules are pretty simple.\nAt this gym, items are everything.\pTo complete my challenge, you'll\nneed to prove you know your\lPotions from your Pok\e Balls.\pYou'll need to answer 7 questions\nabout items I've lined up for you.\pCheck your bag or chat with the\nshopkeepers to find the answer!\pSounds easy, right?\nThere are a few catches, though!\pOnce the challenge starts, there'll\nbe no leaving or saving the game.\pYou'd best be prepared before\nhearing the next question!\pSecond, you'll be put on a timer\nuntil you answer.\pThere's no time for lollygagging,\nthough! The timer never stops.\pIf you get the answer wrong or run\nout of time, you must battle a gym\ltrainer to proceed.\pBut[.] If you guess correctly, I'll\ngive you a reward!\pAnd it gets better! By guessing\ncorrectly, you can choose to\lbattle that trainer or skip them.\pAnd[.] That's it! Just let me know when\nyou'd like to get started.
+
+#org @gText_TsarvosaCity_Gym_Iris_GymChallenge_NextChallengeQuestion
+[RED]Hey! Are you ready to start question\nnumber [BUFFER1]?
+
+#org @gText_TsarvosaCity_Gym_Iris_GymChallenge_NotReadyForQuestion
+[RED]Okay! Take a breather and swing by\nwhen you're ready to go.
+
+#org @gText_TsarvosaCity_Gym_Iris_GymChallenge_RulesMenuChoice
+What are the rules?
+
+#org @gText_TsarvosaCity_Gym_Iris_GymChallenge_Starting
+[RED]Great! Here's the question[.]
+
+#org @gText_TsarvosaCity_Gym_Iris_GymChallenge_IrisStartsTheClock
+[RED]Come see me when you think you know\nthe answer. And[.] Go!
+
+#org @gText_TsarvosaCity_Gym_Iris_GymChallenge_QuestionTimer
+[RED]You have [GREEN][BUFFER1] seconds[RED] to find the\nanswer!
+
+#org @gText_TsarvosaCity_Gym_Iris_GymChallenge_TimerValue
+[RED]You have [BUFFER2] seconds left on\nthe clock.\pAre you ready to answer my question?
+
+#org @gText_TsarvosaCity_Gym_Iris_GymChallenge_RanOutOfTime
+[RED]Oooh[.] I'm sorry. You ran out of\ntime.
+
+#org @gText_TsarvosaCity_Gym_Iris_GymChallenge_MustBattle
+[RED]You'll have to battle one of my\ntrainers to proceed.\pCome on up!
+
+#org @gText_TsarvosaCity_Gym_Iris_GymChallenge_ItemReward
+[RED]Here's your reward for getting that\nquestion right.
+
+#org @gText_TsarvosaCity_Gym_Iris_GymChallenge_AskToBattle
+[RED]Now[.] Would you like to battle my\ntrainer anyways?
+
+#org @gText_TsarvosaCity_Gym_Iris_GymChallenge_ChoseToBattle
+[RED]Feisty, I like it!\pCome on up!
+
+#org @gText_TsarvosaCity_Gym_Iris_GymChallenge_ChoseNotToBattle
+[RED]Alrighty!\pI'll give you a breather before the\nnext round.\pWhen you're ready to get started,\njust come see me.
+
+#org @gText_TsarvosaCity_Gym_Iris_GymChallenge_ChoseNotToAnswer
+[RED]Okay! Come back when you're sure\nyou know the answer.\pJust be careful not to take too\nlong!
+
+#org @gText_TsarvosaCity_Gym_Iris_GymChallenge_AnswerLeadIn
+[RED]Alright[.] My question was[.]
+
+#org @gText_TsarvosaCity_Gym_Iris_GymChallenge_ConfirmingAnswerLeadIn
+[RED]That is[.]
+
+#org @gText_TsarvosaCity_Gym_Iris_GymChallenge_GivenAnswerWasIncorrect
+[RED]Incorrect[.]
+
+#org @gText_TsarvosaCity_Gym_Iris_GymChallenge_GivenAnswerWasCorrect
+[RED]Correct! Very good!
+
+#org @gText_TsarvosaCity_Gym_Iris_GymChallenge_PlayerClearedBattle
+[RED]Not bad! That victory gets you one\nstep closer to facing me.\pI'll give you a breather, first.\pOnce you're ready, come see me for\nyour next challenge. Later!
+
+#org @gText_TsarvosaCity_Gym_Iris_GymChallenge_Question1
+[RED]How much HP does a Hyper Potion\nheal your Pok\emon for?
+
+#org @gText_TsarvosaCity_Gym_Iris_GymChallenge_Question1Choice1
+50
+
+#org @gText_TsarvosaCity_Gym_Iris_GymChallenge_Question1Choice2
+100
+
+#org @gText_TsarvosaCity_Gym_Iris_GymChallenge_Question1Choice3
+120
+
+#org @gText_TsarvosaCity_Gym_Iris_GymChallenge_Question1Choice4
+200
+
+#org @gText_TsarvosaCity_Gym_Iris_GymChallenge_Question2
+[RED]Which held item prevents Water\ndamage and raises Sp. Attack?
+
+#org @gText_TsarvosaCity_Gym_Iris_GymChallenge_Question2Choice1
+Cell Battery
+
+#org @gText_TsarvosaCity_Gym_Iris_GymChallenge_Question2Choice2
+Absorb Bulb
+
+#org @gText_TsarvosaCity_Gym_Iris_GymChallenge_Question2Choice3
+Air Balloon
+
+#org @gText_TsarvosaCity_Gym_Iris_GymChallenge_Question2Choice4
+Snowball
+
+#org @gText_TsarvosaCity_Gym_Iris_GymChallenge_Question3
+[RED]What does a Flame Orb do in\nbattle, when held?
+
+#org @gText_TsarvosaCity_Gym_Iris_GymChallenge_Question3Choice1
+Burn the holder
+
+#org @gText_TsarvosaCity_Gym_Iris_GymChallenge_Question3Choice2
+Burn the opponent
+
+#org @gText_TsarvosaCity_Gym_Iris_GymChallenge_Question3Choice3
+Raise holder's fire damage
+
+#org @gText_TsarvosaCity_Gym_Iris_GymChallenge_Question3Choice4
+Raise holder's fire resistance
+
+#org @gText_TsarvosaCity_Gym_Iris_GymChallenge_Question4
+[RED]Which held item prevents damage from\nentry hazards?
+
+#org @gText_TsarvosaCity_Gym_Iris_GymChallenge_Question4Choice1
+Rocky Helmet
+
+#org @gText_TsarvosaCity_Gym_Iris_GymChallenge_Question4Choice2
+Safety Goggles
+
+#org @gText_TsarvosaCity_Gym_Iris_GymChallenge_Question4Choice3
+Eject Button
+
+#org @gText_TsarvosaCity_Gym_Iris_GymChallenge_Question4Choice4
+Assault Vest
+
+#org @gText_TsarvosaCity_Gym_Iris_GymChallenge_Question5
+[RED]Which stats does a Weakness Policy\nstrengthen?
+
+#org @gText_TsarvosaCity_Gym_Iris_GymChallenge_Question5Choice1
+HP and Speed
+
+#org @gText_TsarvosaCity_Gym_Iris_GymChallenge_Question5Choice2
+Attack and Special Attack
+
+#org @gText_TsarvosaCity_Gym_Iris_GymChallenge_Question5Choice3
+Defense and Special Defense
+
+#org @gText_TsarvosaCity_Gym_Iris_GymChallenge_Question5Choice4
+All Stats
+
+#org @gText_TsarvosaCity_Gym_Iris_GymChallenge_Question6
+[RED]If I have \$10,000 and buy 3 Super\nPotions, 1 Elixir, and 1 Revival\lHerb, how much will I have left?
+
+#org @gText_TsarvosaCity_Gym_Iris_GymChallenge_Question6Choice1
+\$2,800
+
+#org @gText_TsarvosaCity_Gym_Iris_GymChallenge_Question6Choice2
+\$3,250
+
+#org @gText_TsarvosaCity_Gym_Iris_GymChallenge_Question6Choice3
+\$3,600
+
+#org @gText_TsarvosaCity_Gym_Iris_GymChallenge_Question6Choice4
+\$4,300
+
+#org @gText_TsarvosaCity_Gym_Iris_GymChallenge_Question7
+[RED]Who's gym challenge has been your\nfavorite so far?
+
+#org @gText_TsarvosaCity_Gym_Iris_GymChallenge_Question7ChoiceAll
+Yours!
+
+#org @gText_TsarvosaCity_Gym_Iris_GymChallenge_Question7TimesUpPrompt
+[RED]Time's up! What's your answer?
+
+#org @gText_TsarvosaCity_Gym_Iris_GymChallenge_ReadyForBadgeBattle
+[RED]Jokes aside, that's it!\nThat was fun, wasn't it?\pYou've done it! You've completed my\ngym challenge.\pYou're welcome to challenge me for\nmy badge whenever you're ready.\pBut[.] I'd suggest you prepare first!\nI won't go easy on you!
+
+#org @gText_TsarvosaCity_Gym_Marci_Intro
+[RED]Hello, dearie. Do you know about\nheld items?\pDon't worry if you don't[.] My Pok\emon\nwill teach you quickly!
+
+#org @gText_TsarvosaCity_Gym_Marci_Defeat
+Oh! Well done!
+
+#org @gText_TsarvosaCity_Gym_Marci_Chat
+[RED]Good luck with the rest of your gym\nchallenge, dearie.
+
+#org @gText_TsarvosaCity_Gym_Jamila_Intro
+[RED]Fufufufufu[.] My Pok\emon's item\naccounts for it's weaknesses.
+
+#org @gText_TsarvosaCity_Gym_Jamila_Defeat
+Unbelievable[.]
+
+#org @gText_TsarvosaCity_Gym_Jamila_Chat
+[RED]I will need to commit to more\ntraining.
+
+#org @gText_TsarvosaCity_Gym_Norbert_Intro
+[BLUE]My Pok\emon have mastered their held\nitems. You don't stand a chance!
+
+#org @gText_TsarvosaCity_Gym_Norbert_Defeat
+H-huh?
+
+#org @gText_TsarvosaCity_Gym_Norbert_Chat
+[BLUE]Unbelievable[.] My unstoppable\nstrategy was[.] stopped?
+
+#org @gText_TsarvosaCity_Gym_Marion_Intro
+[BLUE]Yo, dude!\pI'm much better than the others.\nThink you can keep up?
+
+#org @gText_TsarvosaCity_Gym_Marion_Defeat
+Looks like I was unable to keep up!
+
+#org @gText_TsarvosaCity_Gym_Marion_Chat
+[BLUE]Not bad, little dude!\nI'll be rooting for you.
+
+#org @gText_TsarvosaCity_Gym_Alanah_Intro
+[RED]Um[.] Not many trainers get past me.\nYou think you're able to?
+
+#org @gText_TsarvosaCity_Gym_Alanah_Defeat
+I suppose you may proceed.
+
+#org @gText_TsarvosaCity_Gym_Alanah_Chat
+[RED]Um[.] Good luck.
+
+#org @gText_TsarvosaCity_Gym_Paul_Intro
+[BLUE]Hello. I shall be your\nnext opponent. Prepare yourself!
+
+#org @gText_TsarvosaCity_Gym_Paul_Defeat
+Indeed, quite impressive.
+
+#org @gText_TsarvosaCity_Gym_Paul_Chat
+[BLUE]Very good. You may proceed.

@@ -277,10 +277,10 @@ EventScript_ForgottenManseBF1_SuperNerdGlenn:
     msgbox gText_ForgottenManseBF1_SuperNerdGlenn_Chat MSG_NORMAL
     end
 
-.global EventScript_ForgottenManseBF1_BurglarPeter
-EventScript_ForgottenManseBF1_BurglarPeter:
-    trainerbattle0 0x0 0x85 0x0 gText_ForgottenManseBF1_BurglarPeter_Intro gText_ForgottenManseBF1_BurglarPeter_Defeat
-    msgbox gText_ForgottenManseBF1_BurglarPeter_Chat MSG_NORMAL
+.global EventScript_ForgottenManseBF1_BurglarPavle
+EventScript_ForgottenManseBF1_BurglarPavle:
+    trainerbattle0 0x0 0x85 0x0 gText_ForgottenManseBF1_BurglarPavle_Intro gText_ForgottenManseBF1_BurglarPavle_Defeat
+    msgbox gText_ForgottenManseBF1_BurglarPavle_Chat MSG_NORMAL
     end
 
 .global EventScript_ForgottenManseBF1_PsychicNoelle

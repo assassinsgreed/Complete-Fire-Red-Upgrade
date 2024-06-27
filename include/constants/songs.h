@@ -46,6 +46,7 @@
 #define BGM_RIVAL_AIDEN_THEME 0x195 // Cheren BW2
 #define BGM_TEAM_PLUTO_PLOT_ENCOUTNER 0x19A // Team Plasma Appears!
 #define BGM_TEAM_PLUTO_PRE_BATTLE 0x177 // Team Plasma BW
+#define BGM_GYM 0x113 // Gym Challenge
 
 // Battle (Custom)
 #define BGM_BATTLE_RIVAL 0x10A // Rival battle BW

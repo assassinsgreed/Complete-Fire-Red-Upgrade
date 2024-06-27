@@ -2250,8 +2250,11 @@ EventScript_TsarvosaCity_NPCHouses_BattlingFanBoy:
     end
 
 @ Gym
+.equ VarGymChallengeProgress, 0x4060
+.equ GymTrainer, 28
+
 .global EventScript_TsarvosaCity_Gym_Attendant
-EventScript_TsarvosaCity_Gym_Attendant: 
+EventScript_TsarvosaCity_Gym_Attendant:
     checkflag 0x826 @ Tsarvosa gym badge
     if SET _goto SignScript_TsarvosaCity_Gym_AttendantPostVictory
     npcchat gText_TsarvosaCity_Gym_Attendant
@@ -2374,13 +2377,11 @@ EventScript_TsarvosaCity_Gym_Merchant16:
     end
 
 MerchantShopIntro:
-    special 0x47 @ Pause timer
     msgbox gText_TsarvosaCity_Gym_MerchantIntro MSG_KEEPOPEN
     return
 
 MerchantShopOutro:
     msgbox gText_TsarvosaCity_Gym_MerchantOutro MSG_NORMAL
-    special 0x48 @ Resume timer
     return
 
 .align 1
@@ -2511,6 +2512,500 @@ HeldItemsShop4:
     .hword ITEM_HEAVY_DUTY_BOOTS
     .hword ITEM_NONE
 
+.global EventScript_TsarvosaCity_Gym_LeaderIris
+EventScript_TsarvosaCity_Gym_LeaderIris:
+    faceplayer
+    buffernumber 0x0 VarGymChallengeProgress
+    switch VarGymChallengeProgress
+    case 1, GymChallenge1
+    case 2, GymChallenge2
+    case 3, GymChallenge3
+    case 4, GymChallenge4
+    case 5, GymChallenge5
+    case 6, GymChallenge6
+    case 7, GymChallenge7  @ This is a joke question asking who your favorite gym leader is, with all options being Iris and being correct.
+    @ case 8, GymChallengeBattleIris @ TODO: Done in a later ticket
+    msgbox gText_TsarvosaCity_Gym_Iris_GymChallengeIntroduction MSG_NORMAL
+    setvar VarGymChallengeProgress 0x1
+    goto TsarvosaGymChallengeRules
+    end
+
+@ Common Gym Logic
+TsarvosaGymChallengeStarting:
+    msgbox gText_TsarvosaCity_Gym_Iris_GymChallenge_Starting MSG_NORMAL
+    return
+
+TsarvosaGymChallengeRules:
+    npcchatwithmovement gText_TsarvosaCity_Gym_Iris_GymChallengeRules m_LookDown
+    end
+
+TsarvosaGymChallengeChoseNotToTakeNextQuestion:
+    npcchatwithmovement gText_TsarvosaCity_Gym_Iris_GymChallenge_NotReadyForQuestion m_LookDown
+    end
+
+GymChallengeQuestionSetupCommon:
+    msgbox gText_TsarvosaCity_Gym_Iris_GymChallenge_NextChallengeQuestion MSG_KEEPOPEN
+    multichoiceoption gText_Yes 0
+	multichoiceoption gText_TsarvosaCity_Gym_Iris_GymChallenge_RulesMenuChoice 1
+	multichoiceoption gText_No 2
+	multichoice 0x0 0x0 THREE_MULTICHOICE_OPTIONS FALSE
+	switch LASTRESULT
+	case 0, TsarvosaGymChallengeStarting _call
+	case 1, TsarvosaGymChallengeRules
+	case 2, TsarvosaGymChallengeChoseNotToTakeNextQuestion
+    case 0x7F, TsarvosaGymChallengeChoseNotToTakeNextQuestion @ When player hit B to close
+    return
+
+GymChallengeTriggerStart:
+    msgbox gText_TsarvosaCity_Gym_Iris_GymChallenge_QuestionTimer MSG_NORMAL
+    npcchatwithmovement gText_TsarvosaCity_Gym_Iris_GymChallenge_IrisStartsTheClock m_LookDown
+    call GymChallengeNowActiveCommon
+    return
+
+GymChallengeNowActiveCommon:
+    setflag 0x262 @ Gym Challenge active
+    setflag 0x91D @ Hide Save option
+    setvar 0x4000 0x1 @ Tile events are active
+    playbgm 0x113 @ Gym Challenge
+    special 0x46 @ Timer start
+    return
+
+GymChallengeDeactivatedCommon:
+    clearflag 0x262 @ Gym Challenge inactive
+    clearflag 0x91D @ Show Save option
+    setvar 0x4000 0x0 @ Tile events are inactive
+    special 0x49 @ Timer stop
+    return
+
+GymChallengeHandleWhenRemainingTime:
+    @ Calculate how much time the player has left
+    special2 0x4004 0x4A
+    copyvar 0x4003 0x8010
+    setvar 0x8004 0x4003
+    setvar 0x8005 0x4004
+    special2 LASTRESULT 0x3F
+    @ Present it to them
+    buffernumber 0x1 0x4003
+    msgbox gText_TsarvosaCity_Gym_Iris_GymChallenge_TimerValue MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto ChoseNotToAnswer
+    return
+
+GymChallengeHandleRanOutOfTime:
+    msgbox gText_TsarvosaCity_Gym_Iris_GymChallenge_RanOutOfTime MSG_NORMAL
+    call GymChallengeMustBattle
+    return
+
+GymChallengeMustBattle:
+    msgbox gText_TsarvosaCity_Gym_Iris_GymChallenge_MustBattle MSG_NORMAL
+    return
+
+AnswerWasIncorrect:
+    msgbox gText_TsarvosaCity_Gym_Iris_GymChallenge_ConfirmingAnswerLeadIn MSG_NORMAL
+    fanfare 0x10F @ Failure
+    applymovement LASTTALKED m_Wrong
+    msgbox gText_TsarvosaCity_Gym_Iris_GymChallenge_GivenAnswerWasIncorrect MSG_NORMAL
+    waitfanfare
+    call GymChallengeMustBattle
+    return
+
+AnswerWasCorrect:
+    msgbox gText_TsarvosaCity_Gym_Iris_GymChallenge_ConfirmingAnswerLeadIn MSG_NORMAL
+    fanfare 0x10D @ Celebration
+    applymovement LASTTALKED m_Joy
+    msgbox gText_TsarvosaCity_Gym_Iris_GymChallenge_GivenAnswerWasCorrect MSG_NORMAL
+    waitfanfare
+    msgbox gText_TsarvosaCity_Gym_Iris_GymChallenge_ItemReward MSG_NORMAL
+    obtainitem 0x4002 0x1
+    msgbox gText_TsarvosaCity_Gym_Iris_GymChallenge_AskToBattle MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto ChoseNotToBattleOptionalTrainer
+    msgbox gText_TsarvosaCity_Gym_Iris_GymChallenge_ChoseToBattle MSG_NORMAL
+    return
+
+ChoseNotToAnswer:
+    npcchatwithmovement gText_TsarvosaCity_Gym_Iris_GymChallenge_ChoseNotToAnswer m_LookDown
+    end
+
+ChoseNotToBattleOptionalTrainer:
+    call GymChallengeDeactivatedCommon
+    fadedefaultbgm
+    npcchatwithmovement gText_TsarvosaCity_Gym_Iris_GymChallenge_ChoseNotToBattle m_LookDown
+    addvar VarGymChallengeProgress 0x1
+    end
+
+HandlePreGymBattle:
+    special 0xAF @ Dismount bike if on it
+    applymovement LASTTALKED m_LookDown
+    getplayerpos 0x4005 0x4006
+    compare 0x4006 0xB @ Above
+    if equal _call PlayerWalkLeft_Return
+    waitmovement PLAYER
+    getplayerpos 0x4005 0x4006
+    compare 0x4005 0x24
+    if equal _call PlayerWalkDown_Return
+    compare 0x4005 0x26
+    if equal _call PlayerWalkDown_Return
+    waitmovement PLAYER
+    compare 0x4006 0xB
+    if equal _call PlayerWalkDown_Return
+    getplayerpos 0x4005 0x4006
+    compare 0x4005 0x25
+    if lessthan _call PlayerWalkRight_Return
+    if greaterthan _call PlayerWalkLeft_Return
+    waitmovement PLAYER
+    applymovement PLAYER m_LookDown
+    showsprite GymTrainer
+    applymovement GymTrainer m_OpponentWalksToPlayer
+    waitmovement GymTrainer
+    playbgm 342 @ Encounter Ace Trainer
+    call GymChallengeDeactivatedCommon @ Reset states in case the player loses to the trainer
+    return
+
+HandlePostGymBattle:
+    applymovement GymTrainer m_OpponentLeaves
+    waitmovement GymTrainer
+    hidesprite GymTrainer
+    applymovement PLAYER m_LookUp
+    fadedefaultbgm
+    msgbox gText_TsarvosaCity_Gym_Iris_GymChallenge_PlayerClearedBattle MSG_NORMAL
+    addvar VarGymChallengeProgress 0x1
+    return
+
+@ Challenge specific logic
+GymChallenge1:
+    checkflag 0x262 @ Gym Challenge active
+    if SET _goto GymChallenge1AnswerConfirmation
+    call GymChallengeQuestionSetupCommon
+    msgbox gText_TsarvosaCity_Gym_Iris_GymChallenge_Question1 MSG_NORMAL
+    buffernumber 0x0 180
+    call GymChallengeTriggerStart
+    end
+
+GymChallenge1AnswerConfirmation:
+    setvar 0x8010 180
+    special2 0x4004 0x4D @ Handle if player has passed the time limit in var 8010
+    compare 0x4004 TRUE
+    if equal _goto GymChallenge1RanOutOfTime
+    call GymChallengeHandleWhenRemainingTime
+    @ This is the start of less generic logic
+    setvar 0x4002 ITEM_HYPER_POTION
+    msgbox gText_TsarvosaCity_Gym_Iris_GymChallenge_AnswerLeadIn MSG_NORMAL
+    msgbox gText_TsarvosaCity_Gym_Iris_GymChallenge_Question1 MSG_KEEPOPEN
+    multichoiceoption gText_TsarvosaCity_Gym_Iris_GymChallenge_Question1Choice1 0
+	multichoiceoption gText_TsarvosaCity_Gym_Iris_GymChallenge_Question1Choice2 1
+    multichoiceoption gText_TsarvosaCity_Gym_Iris_GymChallenge_Question1Choice3 2
+    multichoiceoption gText_TsarvosaCity_Gym_Iris_GymChallenge_Question1Choice4 3
+	multichoice 0x0 0x0 FOUR_MULTICHOICE_OPTIONS TRUE
+	switch LASTRESULT
+	case 0, AnswerWasIncorrect _call
+	case 1, AnswerWasIncorrect _call
+	case 2, AnswerWasIncorrect _call
+    case 3, AnswerWasCorrect _call
+    goto BattlingGymTrainer1
+
+GymChallenge1RanOutOfTime:
+    call GymChallengeHandleRanOutOfTime
+    goto BattlingGymTrainer1
+
+BattlingGymTrainer1:
+    setvar 0x5029 31
+    call HandlePreGymBattle
+    msgbox gText_TsarvosaCity_Gym_Marci_Intro MSG_NORMAL
+    trainerbattle3 0x1 447 0x0 gText_TsarvosaCity_Gym_Marci_Defeat
+    msgbox gText_TsarvosaCity_Gym_Marci_Chat MSG_NORMAL
+    call HandlePostGymBattle
+    end
+
+GymChallenge2:
+    checkflag 0x262 @ Gym Challenge active
+    if SET _goto GymChallenge2AnswerConfirmation
+    call GymChallengeQuestionSetupCommon
+    msgbox gText_TsarvosaCity_Gym_Iris_GymChallenge_Question2 MSG_NORMAL
+    buffernumber 0x0 150
+    call GymChallengeTriggerStart
+    end
+
+GymChallenge2AnswerConfirmation:
+    setvar 0x8010 150
+    special2 0x4004 0x4D @ Handle if player has passed the time limit in var 8010
+    compare 0x4004 TRUE
+    if equal _goto GymChallenge2RanOutOfTime
+    call GymChallengeHandleWhenRemainingTime
+    @ This is the start of less generic logic
+    setvar 0x4002 ITEM_X_SP_ATK
+    msgbox gText_TsarvosaCity_Gym_Iris_GymChallenge_AnswerLeadIn MSG_NORMAL
+    msgbox gText_TsarvosaCity_Gym_Iris_GymChallenge_Question2 MSG_KEEPOPEN
+    multichoiceoption gText_TsarvosaCity_Gym_Iris_GymChallenge_Question2Choice1 0
+	multichoiceoption gText_TsarvosaCity_Gym_Iris_GymChallenge_Question2Choice2 1
+    multichoiceoption gText_TsarvosaCity_Gym_Iris_GymChallenge_Question2Choice3 2
+    multichoiceoption gText_TsarvosaCity_Gym_Iris_GymChallenge_Question2Choice4 3
+	multichoice 0x0 0x0 FOUR_MULTICHOICE_OPTIONS TRUE
+	switch LASTRESULT
+	case 0, AnswerWasIncorrect _call
+	case 1, AnswerWasCorrect _call
+	case 2, AnswerWasIncorrect _call
+    case 3, AnswerWasIncorrect _call
+    goto BattlingGymTrainer2
+
+GymChallenge2RanOutOfTime:
+    call GymChallengeHandleRanOutOfTime
+    goto BattlingGymTrainer2
+
+BattlingGymTrainer2:
+    setvar 0x5029 58
+    call HandlePreGymBattle
+    msgbox gText_TsarvosaCity_Gym_Jamila_Intro MSG_NORMAL
+    trainerbattle3 0x1 448 0x0 gText_TsarvosaCity_Gym_Jamila_Defeat
+    msgbox gText_TsarvosaCity_Gym_Jamila_Chat MSG_NORMAL
+    call HandlePostGymBattle
+    end
+
+GymChallenge3:
+    checkflag 0x262 @ Gym Challenge active
+    if SET _goto GymChallenge3AnswerConfirmation
+    call GymChallengeQuestionSetupCommon
+    msgbox gText_TsarvosaCity_Gym_Iris_GymChallenge_Question3 MSG_NORMAL
+    buffernumber 0x0 120
+    call GymChallengeTriggerStart
+    end
+
+GymChallenge3AnswerConfirmation:
+    setvar 0x8010 120
+    special2 0x4004 0x4D @ Handle if player has passed the time limit in var 8010
+    compare 0x4004 TRUE
+    if equal _goto GymChallenge3RanOutOfTime
+    call GymChallengeHandleWhenRemainingTime
+    @ This is the start of less generic logic
+    setvar 0x4002 ITEM_MAX_POTION
+    msgbox gText_TsarvosaCity_Gym_Iris_GymChallenge_AnswerLeadIn MSG_NORMAL
+    msgbox gText_TsarvosaCity_Gym_Iris_GymChallenge_Question3 MSG_KEEPOPEN
+    multichoiceoption gText_TsarvosaCity_Gym_Iris_GymChallenge_Question3Choice1 0
+	multichoiceoption gText_TsarvosaCity_Gym_Iris_GymChallenge_Question3Choice2 1
+    multichoiceoption gText_TsarvosaCity_Gym_Iris_GymChallenge_Question3Choice3 2
+    multichoiceoption gText_TsarvosaCity_Gym_Iris_GymChallenge_Question3Choice4 3
+	multichoice 0x0 0x0 FOUR_MULTICHOICE_OPTIONS TRUE
+	switch LASTRESULT
+	case 0, AnswerWasCorrect _call
+	case 1, AnswerWasIncorrect _call
+	case 2, AnswerWasIncorrect _call
+    case 3, AnswerWasIncorrect _call
+    goto BattlingGymTrainer3
+
+GymChallenge3RanOutOfTime:
+    call GymChallengeHandleRanOutOfTime
+    goto BattlingGymTrainer3
+
+BattlingGymTrainer3:
+    setvar 0x5029 47
+    call HandlePreGymBattle
+    msgbox gText_TsarvosaCity_Gym_Norbert_Intro MSG_NORMAL
+    trainerbattle3 0x1 449 0x0 gText_TsarvosaCity_Gym_Norbert_Defeat
+    msgbox gText_TsarvosaCity_Gym_Norbert_Chat MSG_NORMAL
+    call HandlePostGymBattle
+    end
+
+GymChallenge4:
+    checkflag 0x262 @ Gym Challenge active
+    if SET _goto GymChallenge4AnswerConfirmation
+    call GymChallengeQuestionSetupCommon
+    msgbox gText_TsarvosaCity_Gym_Iris_GymChallenge_Question4 MSG_NORMAL
+    buffernumber 0x0 90
+    call GymChallengeTriggerStart
+    end
+
+GymChallenge4AnswerConfirmation:
+    setvar 0x8010 90
+    special2 0x4004 0x4D @ Handle if player has passed the time limit in var 8010
+    compare 0x4004 TRUE
+    if equal _goto GymChallenge4RanOutOfTime
+    call GymChallengeHandleWhenRemainingTime
+    @ This is the start of less generic logic
+    setvar 0x4002 ITEM_X_DEFEND
+    msgbox gText_TsarvosaCity_Gym_Iris_GymChallenge_AnswerLeadIn MSG_NORMAL
+    msgbox gText_TsarvosaCity_Gym_Iris_GymChallenge_Question4 MSG_KEEPOPEN
+    multichoiceoption gText_TsarvosaCity_Gym_Iris_GymChallenge_Question4Choice1 0
+	multichoiceoption gText_TsarvosaCity_Gym_Iris_GymChallenge_Question4Choice2 1
+    multichoiceoption gText_TsarvosaCity_Gym_Iris_GymChallenge_Question4Choice3 2
+    multichoiceoption gText_TsarvosaCity_Gym_Iris_GymChallenge_Question4Choice4 3
+	multichoice 0x0 0x0 FOUR_MULTICHOICE_OPTIONS TRUE
+	switch LASTRESULT
+	case 0, AnswerWasIncorrect _call
+	case 1, AnswerWasCorrect _call
+	case 2, AnswerWasIncorrect _call
+    case 3, AnswerWasIncorrect _call
+    goto BattlingGymTrainer4
+
+GymChallenge4RanOutOfTime:
+    call GymChallengeHandleRanOutOfTime
+    goto BattlingGymTrainer4
+
+BattlingGymTrainer4:
+    setvar 0x5029 27
+    call HandlePreGymBattle
+    msgbox gText_TsarvosaCity_Gym_Marion_Intro MSG_NORMAL
+    trainerbattle3 0x1 450 0x0 gText_TsarvosaCity_Gym_Marion_Defeat
+    msgbox gText_TsarvosaCity_Gym_Marion_Chat MSG_NORMAL
+    call HandlePostGymBattle
+    end
+
+GymChallenge5:
+    checkflag 0x262 @ Gym Challenge active
+    if SET _goto GymChallenge5AnswerConfirmation
+    call GymChallengeQuestionSetupCommon
+    msgbox gText_TsarvosaCity_Gym_Iris_GymChallenge_Question5 MSG_NORMAL
+    buffernumber 0x0 60
+    call GymChallengeTriggerStart
+    end
+
+GymChallenge5AnswerConfirmation:
+    setvar 0x8010 60
+    special2 0x4004 0x4D @ Handle if player has passed the time limit in var 8010
+    compare 0x4004 TRUE
+    if equal _goto GymChallenge5RanOutOfTime
+    call GymChallengeHandleWhenRemainingTime
+    @ This is the start of less generic logic
+    setvar 0x4002 ITEM_MOOMOO_MILK
+    msgbox gText_TsarvosaCity_Gym_Iris_GymChallenge_AnswerLeadIn MSG_NORMAL
+    msgbox gText_TsarvosaCity_Gym_Iris_GymChallenge_Question5 MSG_KEEPOPEN
+    multichoiceoption gText_TsarvosaCity_Gym_Iris_GymChallenge_Question5Choice1 0
+	multichoiceoption gText_TsarvosaCity_Gym_Iris_GymChallenge_Question5Choice2 1
+    multichoiceoption gText_TsarvosaCity_Gym_Iris_GymChallenge_Question5Choice3 2
+    multichoiceoption gText_TsarvosaCity_Gym_Iris_GymChallenge_Question5Choice4 3
+	multichoice 0x0 0x0 FOUR_MULTICHOICE_OPTIONS TRUE
+	switch LASTRESULT
+	case 0, AnswerWasIncorrect _call
+	case 1, AnswerWasCorrect _call
+	case 2, AnswerWasIncorrect _call
+    case 3, AnswerWasIncorrect _call
+    goto BattlingGymTrainer5
+
+GymChallenge5RanOutOfTime:
+    call GymChallengeHandleRanOutOfTime
+    goto BattlingGymTrainer5
+
+BattlingGymTrainer5:
+    setvar 0x5029 22
+    call HandlePreGymBattle
+    msgbox gText_TsarvosaCity_Gym_Alanah_Intro MSG_NORMAL
+    trainerbattle3 0x1 451 0x0 gText_TsarvosaCity_Gym_Alanah_Defeat
+    msgbox gText_TsarvosaCity_Gym_Alanah_Chat MSG_NORMAL
+    call HandlePostGymBattle
+    end
+
+GymChallenge6:
+    checkflag 0x262 @ Gym Challenge active
+    if SET _goto GymChallenge6AnswerConfirmation
+    call GymChallengeQuestionSetupCommon
+    msgbox gText_TsarvosaCity_Gym_Iris_GymChallenge_Question6 MSG_NORMAL
+    buffernumber 0x0 30
+    call GymChallengeTriggerStart
+    end
+
+GymChallenge6AnswerConfirmation:
+    setvar 0x8010 30
+    special2 0x4004 0x4D @ Handle if player has passed the time limit in var 8010
+    compare 0x4004 TRUE
+    if equal _goto GymChallenge6RanOutOfTime
+    call GymChallengeHandleWhenRemainingTime
+    @ This is the start of less generic logic
+    setvar 0x4002 ITEM_FULL_RESTORE
+    msgbox gText_TsarvosaCity_Gym_Iris_GymChallenge_AnswerLeadIn MSG_NORMAL
+    msgbox gText_TsarvosaCity_Gym_Iris_GymChallenge_Question6 MSG_KEEPOPEN
+    multichoiceoption gText_TsarvosaCity_Gym_Iris_GymChallenge_Question6Choice1 0
+	multichoiceoption gText_TsarvosaCity_Gym_Iris_GymChallenge_Question6Choice2 1
+    multichoiceoption gText_TsarvosaCity_Gym_Iris_GymChallenge_Question6Choice3 2
+    multichoiceoption gText_TsarvosaCity_Gym_Iris_GymChallenge_Question6Choice4 3
+	multichoice 0x0 0x0 FOUR_MULTICHOICE_OPTIONS TRUE
+	switch LASTRESULT
+	case 0, AnswerWasIncorrect _call
+	case 1, AnswerWasIncorrect _call
+	case 2, AnswerWasCorrect _call
+    case 3, AnswerWasIncorrect _call
+    goto BattlingGymTrainer6
+
+GymChallenge6RanOutOfTime:
+    call GymChallengeHandleRanOutOfTime
+    goto BattlingGymTrainer6
+
+BattlingGymTrainer6:
+    setvar 0x5029 61
+    call HandlePreGymBattle
+    msgbox gText_TsarvosaCity_Gym_Paul_Intro MSG_NORMAL
+    trainerbattle3 0x1 452 0x0 gText_TsarvosaCity_Gym_Paul_Defeat
+    msgbox gText_TsarvosaCity_Gym_Paul_Chat MSG_NORMAL
+    call HandlePostGymBattle
+    end
+
+GymChallenge7:
+    checkflag 0x262 @ Gym Challenge active
+    if SET _goto GymChallenge7AnswerConfirmation
+    call GymChallengeQuestionSetupCommon
+    msgbox gText_TsarvosaCity_Gym_Iris_GymChallenge_Question7 MSG_NORMAL
+    buffernumber 0x0 10
+    call GymChallengeTriggerStart
+    end
+
+GymChallenge7AnswerConfirmation:
+    setvar 0x8010 10
+    special2 0x4004 0x4D @ Handle if player has passed the time limit in var 8010
+    compare 0x4004 TRUE
+    if equal _call GymChallenge7RanOutOfTime
+    if notequal _call GymChallengeHandleWhenRemainingTime
+    msgbox gText_TsarvosaCity_Gym_Iris_GymChallenge_Question7 MSG_KEEPOPEN
+    multichoiceoption gText_TsarvosaCity_Gym_Iris_GymChallenge_Question7ChoiceAll 0
+	multichoiceoption gText_TsarvosaCity_Gym_Iris_GymChallenge_Question7ChoiceAll 1
+    multichoiceoption gText_TsarvosaCity_Gym_Iris_GymChallenge_Question7ChoiceAll 2
+    multichoiceoption gText_TsarvosaCity_Gym_Iris_GymChallenge_Question7ChoiceAll 3
+	msgbox gText_TsarvosaCity_Gym_Iris_GymChallenge_ConfirmingAnswerLeadIn MSG_NORMAL
+    multichoice 0x0 0x0 FOUR_MULTICHOICE_OPTIONS TRUE
+	switch LASTRESULT
+	case 0, GymChallenge7JokeAnswerIsCorrect
+	case 1, GymChallenge7JokeAnswerIsCorrect
+	case 2, GymChallenge7JokeAnswerIsCorrect
+    case 3, GymChallenge7JokeAnswerIsCorrect
+    end
+
+GymChallenge7JokeAnswerIsCorrect:
+    msgbox gText_TsarvosaCity_Gym_Iris_GymChallenge_ConfirmingAnswerLeadIn MSG_NORMAL
+    fanfare 0x10D @ Celebration
+    applymovement LASTTALKED m_Joy
+    msgbox gText_TsarvosaCity_Gym_Iris_GymChallenge_GivenAnswerWasCorrect MSG_NORMAL
+    waitfanfare
+    call GymChallengeDeactivatedCommon
+    fadedefaultbgm
+    msgbox gText_TsarvosaCity_Gym_Iris_GymChallenge_ReadyForBadgeBattle MSG_NORMAL
+    applymovement LASTTALKED m_LookDown
+    addvar VarGymChallengeProgress 0x1
+    end
+
+GymChallenge7RanOutOfTime:
+    msgbox gText_TsarvosaCity_Gym_Iris_GymChallenge_Question7TimesUpPrompt MSG_NORMAL
+    return
+
+.global TileScript_TsarvosaCity_Gym_BarricadeSouth
+TileScript_TsarvosaCity_Gym_BarricadeSouth:
+    call GymBarricadeCommon
+    applymovement PLAYER m_WalkUp
+    waitmovement PLAYER
+    release
+    end
+
+.global TileScript_TsarvosaCity_Gym_BarricadeWest
+TileScript_TsarvosaCity_Gym_BarricadeWest:
+    call GymBarricadeCommon
+    applymovement PLAYER m_WalkRight
+    waitmovement PLAYER
+    release
+    end
+
+GymBarricadeCommon:
+    checkflag 0x262 @ Gym Challenge active
+    if NOT_SET _goto End
+    lock
+    msgbox gText_TsarvosaCity_Gym_GymChallengeActiveCannotLeave MSG_NORMAL
+    return
+
 .global SignScript_TsarvosaCity_Gym_GymSign
 SignScript_TsarvosaCity_Gym_GymSign:
     msgbox gText_TsarvosaCity_Gym_GymSign MSG_SIGN
@@ -2526,3 +3021,6 @@ SignScript_TsarvosaCity_Gym_GymVictorsSign:
 SignScript_TsarvosaCity_Gym_GymVictorsSignPostVictory:
     msgbox gText_TsarvosaCity_Gym_GymVictorsSignPostVictory MSG_SIGN
     end
+
+m_OpponentWalksToPlayer: .byte walk_up, walk_up, walk_up, walk_up, walk_up, end_m
+m_OpponentLeaves: .byte walk_down, walk_down, walk_down, walk_down, walk_down, end_m

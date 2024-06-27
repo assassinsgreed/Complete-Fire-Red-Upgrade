@@ -1109,7 +1109,7 @@ SKIP_FIELD_MOVES:
 
 static bool8 SetUpFieldMove_Fly(void)
 {
-	if (gFollowerState.inProgress && !(gFollowerState.flags & FOLLOWER_FLAG_CAN_LEAVE_ROUTE))
+	if ((gFollowerState.inProgress && !(gFollowerState.flags & FOLLOWER_FLAG_CAN_LEAVE_ROUTE)) || FlagGet(FLAG_TSARVOSA_GYM_CHALLENGE_ACTIVE))
 		return FALSE;
 
 	#ifdef UNBOUND
@@ -1173,7 +1173,7 @@ static bool8 SetUpFieldMove_Waterfall(void)
 #define FieldCallback_Teleport (void*) (0x80F6730 | 1)
 static bool8 SetUpFieldMove_Teleport(void)
 {
-	if (gFollowerState.inProgress && !(gFollowerState.flags & FOLLOWER_FLAG_CAN_LEAVE_ROUTE))
+	if ((gFollowerState.inProgress && !(gFollowerState.flags & FOLLOWER_FLAG_CAN_LEAVE_ROUTE)) || FlagGet(FLAG_TSARVOSA_GYM_CHALLENGE_ACTIVE))
 		return FALSE;
 
 	if (Overworld_MapTypeAllowsTeleportAndFly(gMapHeader.mapType) == TRUE)
@@ -1316,7 +1316,7 @@ void sp100_CanPlayerUseFlashInCurrentLocation(void)
 void sp101_CanPlayerFlyInCurrentLocation(void)
 {
 	gSpecialVar_LastResult = FALSE;
-	if (gFollowerState.inProgress && !(gFollowerState.flags & FOLLOWER_FLAG_CAN_LEAVE_ROUTE))
+	if ((gFollowerState.inProgress && !(gFollowerState.flags & FOLLOWER_FLAG_CAN_LEAVE_ROUTE)) || FlagGet(FLAG_TSARVOSA_GYM_CHALLENGE_ACTIVE))
 		return;
 
 	gSpecialVar_LastResult = Overworld_MapTypeAllowsTeleportAndFly(gMapHeader.mapType);
