@@ -223,7 +223,7 @@
 #define MAP_CELADON_CITY                         (6 | (3 << 8))
 #define MAP_FUCHSIA_CITY                         (7 | (3 << 8))
 #define MAP_CINNABAR_ISLAND                      (8 | (3 << 8))
-#define MAP_INDIGO_PLATEAU_EXTERIOR              (9 | (3 << 8))
+#define MAP_TSARVOSA_CITY                        (9 | (3 << 8))
 #define MAP_SAFFRON_CITY                         (10 | (3 << 8))
 #define MAP_ROUTE_12_WEST                        (11 | (3 << 8))
 #define MAP_ONE_ISLAND                           (12 | (3 << 8))

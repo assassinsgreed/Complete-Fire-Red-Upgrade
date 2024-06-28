@@ -366,8 +366,14 @@ static u8 TryLoadAlternateAreaTerrain(u8 terrain)
 			else if (MAP_IS(PLUTO_HQ_KURTIS_OFFICE))
 				terrain = BATTLE_TERRAIN_PLUTO_LEADER;
 			break;
+		case BATTLE_TERRAIN_INSIDE_3:	// Battles when the map has the Gym Style battle type set
+			if (MAP_IS(TSARVOSA_CITY))
+				terrain = BATTLE_TERRAIN_GRASS;
+			break;
 		case BATTLE_TERRAIN_INSIDE_4:
 			terrain = BATTLE_TERRAIN_GYM;
+			if (MAP_IS(TSARVOSA_CITY))
+				terrain = BATTLE_TERRAIN_GRASS;
 			break;
 	}
 

@@ -2501,6 +2501,8 @@ HeldItemsShop3:
     .hword ITEM_EJECT_BUTTON
     .hword ITEM_BIG_ROOT
     .hword ITEM_BRIGHT_POWDER
+    .hword ITEM_TOXIC_ORB
+    .hword ITEM_FLAME_ORB
     .hword ITEM_NONE
 
 .align 1
@@ -2551,7 +2553,8 @@ GymChallengeQuestionSetupCommon:
 	multichoiceoption gText_TsarvosaCity_Gym_Iris_GymChallenge_RulesMenuChoice 1
 	multichoiceoption gText_No 2
 	multichoice 0x0 0x0 THREE_MULTICHOICE_OPTIONS FALSE
-	switch LASTRESULT
+	copyvar MULTICHOICE_SELECTION LASTRESULT
+	switch MULTICHOICE_SELECTION
 	case 0, TsarvosaGymChallengeStarting _call
 	case 1, TsarvosaGymChallengeRules
 	case 2, TsarvosaGymChallengeChoseNotToTakeNextQuestion
@@ -2691,7 +2694,7 @@ GymChallenge1AnswerConfirmation:
     if equal _goto GymChallenge1RanOutOfTime
     call GymChallengeHandleWhenRemainingTime
     @ This is the start of less generic logic
-    setvar 0x4002 ITEM_HYPER_POTION
+    setvar 0x4002 ITEM_LEMONADE
     msgbox gText_TsarvosaCity_Gym_Iris_GymChallenge_AnswerLeadIn MSG_NORMAL
     msgbox gText_TsarvosaCity_Gym_Iris_GymChallenge_Question1 MSG_KEEPOPEN
     multichoiceoption gText_TsarvosaCity_Gym_Iris_GymChallenge_Question1Choice1 0
@@ -2699,7 +2702,8 @@ GymChallenge1AnswerConfirmation:
     multichoiceoption gText_TsarvosaCity_Gym_Iris_GymChallenge_Question1Choice3 2
     multichoiceoption gText_TsarvosaCity_Gym_Iris_GymChallenge_Question1Choice4 3
 	multichoice 0x0 0x0 FOUR_MULTICHOICE_OPTIONS TRUE
-	switch LASTRESULT
+	copyvar MULTICHOICE_SELECTION LASTRESULT
+	switch MULTICHOICE_SELECTION
 	case 0, AnswerWasIncorrect _call
 	case 1, AnswerWasIncorrect _call
 	case 2, AnswerWasIncorrect _call
@@ -2735,7 +2739,7 @@ GymChallenge2AnswerConfirmation:
     if equal _goto GymChallenge2RanOutOfTime
     call GymChallengeHandleWhenRemainingTime
     @ This is the start of less generic logic
-    setvar 0x4002 ITEM_X_SP_ATK
+    setvar 0x4002 ITEM_HYPER_POTION
     msgbox gText_TsarvosaCity_Gym_Iris_GymChallenge_AnswerLeadIn MSG_NORMAL
     msgbox gText_TsarvosaCity_Gym_Iris_GymChallenge_Question2 MSG_KEEPOPEN
     multichoiceoption gText_TsarvosaCity_Gym_Iris_GymChallenge_Question2Choice1 0
@@ -2743,7 +2747,8 @@ GymChallenge2AnswerConfirmation:
     multichoiceoption gText_TsarvosaCity_Gym_Iris_GymChallenge_Question2Choice3 2
     multichoiceoption gText_TsarvosaCity_Gym_Iris_GymChallenge_Question2Choice4 3
 	multichoice 0x0 0x0 FOUR_MULTICHOICE_OPTIONS TRUE
-	switch LASTRESULT
+	copyvar MULTICHOICE_SELECTION LASTRESULT
+	switch MULTICHOICE_SELECTION
 	case 0, AnswerWasIncorrect _call
 	case 1, AnswerWasCorrect _call
 	case 2, AnswerWasIncorrect _call
@@ -2779,7 +2784,7 @@ GymChallenge3AnswerConfirmation:
     if equal _goto GymChallenge3RanOutOfTime
     call GymChallengeHandleWhenRemainingTime
     @ This is the start of less generic logic
-    setvar 0x4002 ITEM_MAX_POTION
+    setvar 0x4002 ITEM_REVIVE
     msgbox gText_TsarvosaCity_Gym_Iris_GymChallenge_AnswerLeadIn MSG_NORMAL
     msgbox gText_TsarvosaCity_Gym_Iris_GymChallenge_Question3 MSG_KEEPOPEN
     multichoiceoption gText_TsarvosaCity_Gym_Iris_GymChallenge_Question3Choice1 0
@@ -2787,10 +2792,11 @@ GymChallenge3AnswerConfirmation:
     multichoiceoption gText_TsarvosaCity_Gym_Iris_GymChallenge_Question3Choice3 2
     multichoiceoption gText_TsarvosaCity_Gym_Iris_GymChallenge_Question3Choice4 3
 	multichoice 0x0 0x0 FOUR_MULTICHOICE_OPTIONS TRUE
-	switch LASTRESULT
-	case 0, AnswerWasCorrect _call
+    copyvar MULTICHOICE_SELECTION LASTRESULT
+	switch MULTICHOICE_SELECTION
+	case 0, AnswerWasIncorrect _call
 	case 1, AnswerWasIncorrect _call
-	case 2, AnswerWasIncorrect _call
+	case 2, AnswerWasCorrect _call
     case 3, AnswerWasIncorrect _call
     goto BattlingGymTrainer3
 
@@ -2823,7 +2829,7 @@ GymChallenge4AnswerConfirmation:
     if equal _goto GymChallenge4RanOutOfTime
     call GymChallengeHandleWhenRemainingTime
     @ This is the start of less generic logic
-    setvar 0x4002 ITEM_X_DEFEND
+    setvar 0x4002 ITEM_MAX_POTION
     msgbox gText_TsarvosaCity_Gym_Iris_GymChallenge_AnswerLeadIn MSG_NORMAL
     msgbox gText_TsarvosaCity_Gym_Iris_GymChallenge_Question4 MSG_KEEPOPEN
     multichoiceoption gText_TsarvosaCity_Gym_Iris_GymChallenge_Question4Choice1 0
@@ -2831,7 +2837,8 @@ GymChallenge4AnswerConfirmation:
     multichoiceoption gText_TsarvosaCity_Gym_Iris_GymChallenge_Question4Choice3 2
     multichoiceoption gText_TsarvosaCity_Gym_Iris_GymChallenge_Question4Choice4 3
 	multichoice 0x0 0x0 FOUR_MULTICHOICE_OPTIONS TRUE
-	switch LASTRESULT
+	copyvar MULTICHOICE_SELECTION LASTRESULT
+	switch MULTICHOICE_SELECTION
 	case 0, AnswerWasIncorrect _call
 	case 1, AnswerWasCorrect _call
 	case 2, AnswerWasIncorrect _call
@@ -2867,7 +2874,7 @@ GymChallenge5AnswerConfirmation:
     if equal _goto GymChallenge5RanOutOfTime
     call GymChallengeHandleWhenRemainingTime
     @ This is the start of less generic logic
-    setvar 0x4002 ITEM_MOOMOO_MILK
+    setvar 0x4002 ITEM_FULL_RESTORE
     msgbox gText_TsarvosaCity_Gym_Iris_GymChallenge_AnswerLeadIn MSG_NORMAL
     msgbox gText_TsarvosaCity_Gym_Iris_GymChallenge_Question5 MSG_KEEPOPEN
     multichoiceoption gText_TsarvosaCity_Gym_Iris_GymChallenge_Question5Choice1 0
@@ -2875,7 +2882,8 @@ GymChallenge5AnswerConfirmation:
     multichoiceoption gText_TsarvosaCity_Gym_Iris_GymChallenge_Question5Choice3 2
     multichoiceoption gText_TsarvosaCity_Gym_Iris_GymChallenge_Question5Choice4 3
 	multichoice 0x0 0x0 FOUR_MULTICHOICE_OPTIONS TRUE
-	switch LASTRESULT
+	copyvar MULTICHOICE_SELECTION LASTRESULT
+	switch MULTICHOICE_SELECTION
 	case 0, AnswerWasIncorrect _call
 	case 1, AnswerWasCorrect _call
 	case 2, AnswerWasIncorrect _call
@@ -2911,7 +2919,7 @@ GymChallenge6AnswerConfirmation:
     if equal _goto GymChallenge6RanOutOfTime
     call GymChallengeHandleWhenRemainingTime
     @ This is the start of less generic logic
-    setvar 0x4002 ITEM_FULL_RESTORE
+    setvar 0x4002 ITEM_MAX_REVIVE
     msgbox gText_TsarvosaCity_Gym_Iris_GymChallenge_AnswerLeadIn MSG_NORMAL
     msgbox gText_TsarvosaCity_Gym_Iris_GymChallenge_Question6 MSG_KEEPOPEN
     multichoiceoption gText_TsarvosaCity_Gym_Iris_GymChallenge_Question6Choice1 0
@@ -2919,7 +2927,8 @@ GymChallenge6AnswerConfirmation:
     multichoiceoption gText_TsarvosaCity_Gym_Iris_GymChallenge_Question6Choice3 2
     multichoiceoption gText_TsarvosaCity_Gym_Iris_GymChallenge_Question6Choice4 3
 	multichoice 0x0 0x0 FOUR_MULTICHOICE_OPTIONS TRUE
-	switch LASTRESULT
+	copyvar MULTICHOICE_SELECTION LASTRESULT
+	switch MULTICHOICE_SELECTION
 	case 0, AnswerWasIncorrect _call
 	case 1, AnswerWasIncorrect _call
 	case 2, AnswerWasCorrect _call
