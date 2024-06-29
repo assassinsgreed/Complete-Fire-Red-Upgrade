@@ -825,16 +825,16 @@ Snowball
 [RED]What does a Flame Orb do in\nbattle, when held?
 
 #org @gText_TsarvosaCity_Gym_Iris_GymChallenge_Question3Choice1
-Burn the holder
-
-#org @gText_TsarvosaCity_Gym_Iris_GymChallenge_Question3Choice2
-Burn the opponent
-
-#org @gText_TsarvosaCity_Gym_Iris_GymChallenge_Question3Choice3
 Raise holder's fire damage
 
-#org @gText_TsarvosaCity_Gym_Iris_GymChallenge_Question3Choice4
+#org @gText_TsarvosaCity_Gym_Iris_GymChallenge_Question3Choice2
 Raise holder's fire resistance
+
+#org @gText_TsarvosaCity_Gym_Iris_GymChallenge_Question3Choice3
+Burn the holder
+
+#org @gText_TsarvosaCity_Gym_Iris_GymChallenge_Question3Choice4
+Burn the opponent
 
 #org @gText_TsarvosaCity_Gym_Iris_GymChallenge_Question4
 [RED]Which held item prevents damage from\nentry hazards?

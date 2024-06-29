@@ -6191,15 +6191,15 @@ const struct TrainerMonItemCustomMoves sParty_TsarvosaCityGym_GentlemanPaul[] = 
     },
     {
         .lvl = 54,
-        .species = SPECIES_YAMASK_G,
+        .species = SPECIES_RAICHU,
         .moves = {
-            MOVE_SHADOWBALL,
-            MOVE_DISABLE,
-            MOVE_SLAM,
-            MOVE_EARTHPOWER
+            MOVE_NUZZLE,
+            MOVE_THUNDERBOLT,
+            MOVE_IRONTAIL,
+            MOVE_NASTYPLOT
         },
-        .heldItem = ITEM_EJECT_BUTTON,
-        .ability = Ability_1 // Wandering Spirit
+        .heldItem = ITEM_AIR_BALLOON,
+        .ability = Ability_1 // Static
     },
     {
         .lvl = 53,
