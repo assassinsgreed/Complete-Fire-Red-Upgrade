@@ -6278,6 +6278,85 @@ const struct TrainerMonItemCustomMoves sParty_TsarvosaCityGym_LeaderIris[] = {
     },
 };
 // #endregion
+// #region Daimyn City Restaurant event
+const struct TrainerMonItemCustomMoves sParty_DaimynCityRestaurant_Iris[] = {
+    {
+        .lvl = 57,
+        .species = SPECIES_FERROTHORN,
+        .moves = {
+            MOVE_CURSE,
+            MOVE_GYROBALL,
+            MOVE_POWERWHIP,
+            MOVE_SPIKES
+        },
+        .heldItem = ITEM_ROCKY_HELMET,
+        .ability = Ability_1 // Iron Barbs
+    },
+    {
+        .lvl = 58,
+        .species = SPECIES_CHANSEY,
+        .moves = {
+            MOVE_MINIMIZE,
+            MOVE_THUNDERWAVE,
+            MOVE_SOFTBOILED,
+            MOVE_SEISMICTOSS
+        },
+        .heldItem = ITEM_EVIOLITE,
+        .ability = Ability_2 // Serene Grace
+    },
+    {
+        .lvl = 59,
+        .species = SPECIES_GIGALITH,
+        .moves = {
+            MOVE_ROCKSLIDE,
+            MOVE_FACADE,
+            MOVE_IRONHEAD,
+            MOVE_EARTHQUAKE
+        },
+        .heldItem = ITEM_ASSAULT_VEST,
+        .ability = Ability_2 // Sand Stream
+    },
+};
+
+const struct TrainerMonItemCustomMoves sParty_DaimynCityRestaurant_Stella[] = {
+    {
+        .lvl = 56,
+        .species = SPECIES_TOXAPEX,
+        .moves = {
+            MOVE_SCALD,
+            MOVE_BANEFULBUNKER,
+            MOVE_TOXICSPIKES,
+            MOVE_VENOSHOCK
+        },
+        .heldItem = ITEM_BLACK_SLUDGE,
+        .ability = Ability_1 // Merciless
+    },
+    {
+        .lvl = 57,
+        .species = SPECIES_COALOSSAL,
+        .moves = {
+            MOVE_TARSHOT,
+            MOVE_HEATCRASH,
+            MOVE_STONEEDGE,
+            MOVE_WILLOWISP
+        },
+        .heldItem = ITEM_WEAKNESS_POLICY,
+        .ability = Ability_2 // Flame Body
+    },
+    {
+        .lvl = 58,
+        .species = SPECIES_TOGEKISS,
+        .moves = {
+            MOVE_THUNDERWAVE,
+            MOVE_FOLLOWME,
+            MOVE_ROOST,
+            MOVE_AIRSLASH
+        },
+        .heldItem = ITEM_LIFE_ORB,
+        .ability = Ability_2 // Serene Grace
+    },
+};
+// #endregion
 // #endregion
 
 #define NO_NAME                                                                                      \
@@ -11796,6 +11875,32 @@ const struct Trainer gTrainers[] = {
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_HP_AWARE | AI_SCRIPT_SEMI_SMART,
         .partySize = NELEMS(sParty_TsarvosaCityGym_LeaderIris),
         .party = {.ItemCustomMoves = sParty_TsarvosaCityGym_LeaderIris}
+    },
+    // #endregion
+    // #region Daimyn City Restaurant
+    [TRAINER_DAIMYN_CITY_RESTAURANT_IRIS] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_LEADER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_IRIS,
+        .trainerName = {_I, _r, _i, _s, _END },
+        .items = { ITEM_FULL_RESTORE },
+        .doubleBattle = TRUE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_DOUBLE_BATTLE | AI_SCRIPT_HP_AWARE | AI_SCRIPT_SEMI_SMART,
+        .partySize = NELEMS(sParty_DaimynCityRestaurant_Iris),
+        .party = {.ItemCustomMoves = sParty_DaimynCityRestaurant_Iris}
+    },
+    [TRAINER_DAIMYN_CITY_RESTAURANT_STELLA] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_LEADER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_STELLA,
+        .trainerName = {_S, _t, _e, _l, _l, _a, _END},
+        .items = { ITEM_FULL_HEAL },
+        .doubleBattle = TRUE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_HP_AWARE | AI_SCRIPT_SETUP_FIRST_TURN | AI_SCRIPT_DOUBLE_BATTLE | AI_SCRIPT_SEMI_SMART,
+        .partySize = NELEMS(sParty_DaimynCityRestaurant_Stella),
+        .party = {.ItemCustomMoves = sParty_DaimynCityRestaurant_Stella}
     },
     // #endregion
     // #endregion

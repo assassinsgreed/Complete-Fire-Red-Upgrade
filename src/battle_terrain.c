@@ -374,6 +374,8 @@ static u8 TryLoadAlternateAreaTerrain(u8 terrain)
 			terrain = BATTLE_TERRAIN_GYM;
 			if (MAP_IS(TSARVOSA_CITY))
 				terrain = BATTLE_TERRAIN_GRASS;
+			else if (MAP_IS(DAIMYN_RESTAURANT))
+				terrain = BATTLE_TERRAIN_INSIDE;
 			break;
 	}
 

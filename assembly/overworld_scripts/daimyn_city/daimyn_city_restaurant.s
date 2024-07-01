@@ -18,6 +18,18 @@
 .equ StatBuffLevelVar, 0x4004
 .equ MealLevelChosen, 0x4005
 
+.global MapScript_DaimynCityRestaurant
+MapScript_DaimynCityRestaurant:
+    mapscript MAP_SCRIPT_ON_LOAD MapEntryScript_Restaurant_IrisAndStellaMeals
+    .byte MAP_SCRIPT_TERMIN
+
+MapEntryScript_Restaurant_IrisAndStellaMeals:
+    checkflag 0x04F @ Hide Iris and Stella in restaurant
+    if SET _goto End
+    setmaptile 0xA 0x2 0x2E7 0x1 @ Give Iris a meal
+    setmaptile 0xA 0x3 0x2E7 0x1 @ Give Stella a meal
+    end
+
 .global EventScript_DaimynRestaurant_Chef
 EventScript_DaimynRestaurant_Chef:
     checkflag 0x250 @ Restaurant has been explained
@@ -560,3 +572,76 @@ RestaurantEnd:
 
 Return:
     return
+
+.global EventScript_DaimynCityFacilities_RestaurauntStella
+EventScript_DaimynCityFacilities_RestaurauntStella:
+    msgbox gText_Restaurant_StellaIntro MSG_NORMAL
+    msgbox gText_Restaurant_StellaIntro_IrisFollowUp MSG_NORMAL
+    goto IrisAndStellaCommon
+
+.global EventScript_DaimynCityFacilities_RestaurauntIris
+EventScript_DaimynCityFacilities_RestaurauntIris:
+    msgbox gText_Restaurant_IrisIntro MSG_NORMAL
+    msgbox gText_Restaurant_IrisIntro_StellaFollowUp MSG_NORMAL
+    goto IrisAndStellaCommon
+
+IrisAndStellaCommon:
+    applymovement 0x6 m_Surprise
+    applymovement 0x7 m_Surprise
+    sound 0x15 @ Exclaim
+    waitmovement ALLEVENTS
+    applymovement 0x6 m_LookLeft
+    applymovement 0x7 m_LookLeft
+    msgbox gText_Restaurant_Stella_SeesPlayer MSG_NORMAL
+    msgbox gText_Restaurant_Iris_SeesPlayer MSG_NORMAL
+    msgbox gText_Restaurant_Stella_RecognizesPlayer MSG_NORMAL
+    applymovement 0x6 m_LookUp
+    applymovement 0x7 m_LookDown
+    msgbox gText_Restaurant_Iris_SuggestsBattle MSG_NORMAL
+    msgbox gText_Restaurant_Stella_ConsidersBattle MSG_NORMAL
+    applymovement 0x6 m_LookLeft
+    applymovement 0x7 m_LookLeft
+    msgbox gText_Restaurant_Stella_SuggestsBattle MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto IrisAndStellaChoseNotToBattle
+    applymovement 0x7 m_Joy
+    msgbox gText_Restaurant_Iris_PreBattle MSG_NORMAL
+    msgbox gText_Restaurant_Stella_PreBattle MSG_NORMAL
+    setflag 0x909 @ Two opponents
+    setvar 0x5010 455 @ Stella
+    loadpointer 0x0 gText_Restaurant_Stella_PostBattle @ Stella's loss text
+    special 0xAC @ Load second opponent's text into buffer
+    setvar 0x5002 0x12 @ Raise Iris defense by 1
+    setvar 0x5004 0x15 @ Raise Stella special defense by 1
+    trainerbattle3 0x3 454 0x0 gText_Restaurant_Iris_PostBattle
+    msgbox gText_Restaurant_Iris_AfterBattle MSG_NORMAL
+    obtainitem ITEM_UTILITY_UMBRELLA 0x1
+    msgbox gText_Restaurant_Stella_AfterBattle MSG_NORMAL
+    obtainitem ITEM_TM42 0x1 @ Facade
+    applymovement 0x7 m_Surprise
+    sound 0x15 @ Exclaim
+    msgbox gText_Restaurant_Iris_OhNo MSG_NORMAL
+    applymovement 0x6 m_LookUp
+    applymovement 0x7 m_LookDown
+    msgbox gText_Restaurant_Iris_PreparingToLeave MSG_NORMAL
+    msgbox gText_Restaurant_Stella_PreparingToLeave MSG_NORMAL
+    applymovement 0x6 m_LookLeft
+    applymovement 0x7 m_LookLeft
+    msgbox gText_Restaurant_Iris_Leaves MSG_NORMAL
+    msgbox gText_Restaurant_Stella_Leaves MSG_NORMAL
+    fadescreen FADEOUT_BLACK
+    hidesprite 0x6
+    hidesprite 0x7
+    setmaptile 0xA 0x2 0x2E0 0x1 @ Remove Iris' meal
+    setmaptile 0xA 0x3 0x2E0 0x1 @ Remove Stella's meal
+    special 0x8E @ Refresh the map
+    setflag 0x04F @ Hide Iris and Stella in restaurant
+    fadescreen FADEIN_BLACK
+    end
+
+IrisAndStellaChoseNotToBattle:
+    msgbox gText_Restaurant_Iris_DisappointedWithNoBattle MSG_NORMAL
+    msgbox gText_Restaurant_Stella_DisappointedWithNoBattle MSG_NORMAL
+    applymovement 0x6 m_LookRight
+    applymovement 0x7 m_LookRight
+    end

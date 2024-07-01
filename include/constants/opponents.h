@@ -506,3 +506,6 @@
 #define TRAINER_TSARVOSA_CITY_GYM_ALANAH                 451
 #define TRAINER_TSARVOSA_CITY_GYM_PAUL                   452
 #define TRAINER_TSARVOSA_CITY_GYM_LEADER_IRIS            453
+// Daimyn City Restaurant Event
+#define TRAINER_DAIMYN_CITY_RESTAURANT_IRIS              454
+#define TRAINER_DAIMYN_CITY_RESTAURANT_STELLA            455
