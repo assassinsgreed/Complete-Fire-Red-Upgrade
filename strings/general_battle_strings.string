@@ -3,7 +3,7 @@
 //New Encounter Strings
 
 #org @BattleText_MealActivated
-[FD][13] is benefitting from a meal!
+[FD][13] is\nbenefitting from a meal!
 
 #org @BattleText_MealEffectEnded
 [FD][13]'s meal effect has ended.\p

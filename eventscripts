@@ -907,12 +907,15 @@ sign 3 5 12 SignScript_DaimynCityOverworld_FactorySign
 ### Sign 10 is a hidden item
 sign 3 5 11 SignScript_DaimynCityOverworld_DaimynCityPlacard
 ## Facilities
+map 9 8 MapScript_DaimynCityRestaurant
 map 9 9 MapScript_DaimynFacilities_PokemonCenter
 npc 9 8 0 EventScript_DaimynRestaurant_Chef
 npc 9 8 1 EventScript_DaimynCityFacilities_RestaurauntBoy
 npc 9 8 2 EventScript_DaimynCityFacilities_RestaurauntBigMan
 npc 9 8 3 EventScript_DaimynCityFacilities_RestaurauntGentleman
 npc 9 8 4 EventScript_DaimynCityFacilities_RestaurauntGirl
+npc 9 8 5 EventScript_DaimynCityFacilities_RestaurauntStella
+npc 9 8 6 EventScript_DaimynCityFacilities_RestaurauntIris
 npc 9 9 0 EventScript_PokemonCenter_Main
 npc 9 9 1 EventScript_DaimynCityFacilities_PokemonCenterOldWoman
 npc 9 9 2 EventScript_DaimynCityFacilities_PokemonCenterWoman

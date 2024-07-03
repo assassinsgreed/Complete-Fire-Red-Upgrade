@@ -259,7 +259,7 @@ If you give your Pok\emon those\nLeftovers to hold, they'll restore\lHP every tu
 You can order what ever you'd like,\nmy boy. Hohoho!
 
 #org @gText_DaimynCityFacilities_RestaurantGirl
-Hmm[.] What should I order? Everything\nlooks so good.
+My Pok\emon love eating here.\pThey even perform better in battle\nafterward, too!
 
 #org @gText_DaimynCityFacilities_PokemonCenter_OldWoman
 My friends and I organize a shopping\ntrip in Daimyn City every year.\pThere are a lot of really great\nsales on right now.\pI'm just waiting for them to arrive\nbefore I head out.
@@ -1249,3 +1249,75 @@ Zis meal will last for [GREEN][BUFFER1]\nbattle(s)[BLUE].\pYou can unlock our ne
 
 #org @gText_Restaurant_DurationAtMax
 Zis meal will last for [GREEN][BUFFER1]\nbattles[BLUE], ze most we can offer.
+
+#org @gText_Restaurant_IrisIntro
+[BLACK]Iris: [RED](Nom[.] Nom[.] Nom[.])\nThis is sooooo delicious!
+
+#org @gText_Restaurant_IrisIntro_StellaFollowUp
+[BLACK]Stella: [RED]Iris[.] Please eat more\nslowly[.] You'll choke.
+
+#org @gText_Restaurant_StellaIntro
+[BLACK]Stella: [RED]Oh dear, I don't think I\ncould eat another bite[.]
+
+#org @gText_Restaurant_StellaIntro_IrisFollowUp
+[BLACK]Iris: [RED]Pass it over here!\nI'll finish it.
+
+#org @gText_Restaurant_Stella_SeesPlayer
+[BLACK]Stella: [RED]Oh, pardon me. I didn't see\nyou there[.] Can I help you?
+
+#org @gText_Restaurant_Iris_SeesPlayer
+[BLACK]Iris: [RED]Hey, I recognize you! You\nchallenged my gym recently.
+
+#org @gText_Restaurant_Stella_RecognizesPlayer
+[BLACK]Stella: [RED]Oh yes, I do remember you,\nnow that Iris mentions it.
+
+#org @gText_Restaurant_Iris_SuggestsBattle
+[BLACK]Iris: [RED]Hey, Stella[.]\pThey probably want a battle with us!\nWhat do you say?
+
+#org @gText_Restaurant_Stella_ConsidersBattle
+[BLACK]Stella: [RED]Hmm[.] I suppose it has been\na while since we battled together.
+
+#org @gText_Restaurant_Stella_SuggestsBattle
+[BLACK]Stella: [RED]Are you interested in\nbattling us?
+
+#org @gText_Restaurant_Iris_DisappointedWithNoBattle
+[BLACK]Iris: [RED]Aww! I was all ready to throw\ndown, too. Maybe next time.
+
+#org @gText_Restaurant_Stella_DisappointedWithNoBattle
+[BLACK]Stella: [RED]Yes, perhaps next time[.]
+
+#org @gText_Restaurant_Iris_PreBattle
+[BLACK]Iris: [RED]Yessss! C'mon, Stella! Let's\nshow them what we can do!
+
+#org @gText_Restaurant_Stella_PreBattle
+[BLACK]Stella: [RED]Don't expect this to be an\neasy battle[.]
+
+#org @gText_Restaurant_Iris_PreBattle2
+[BLACK]Iris: [RED]Yep, that's right! Our Pok\emon\nare all fired up from our meals,\ltoo!
+
+#org @gText_Restaurant_Iris_PostBattle
+What a fun battle!
+
+#org @gText_Restaurant_Stella_PostBattle
+Yes, that was quite enjoyable.
+
+#org @gText_Restaurant_Iris_AfterBattle
+[BLACK]Iris: [RED]Whew, that really hit the\nspot!\pHere, I've got something nice to give\nyou.
+
+#org @gText_Restaurant_Stella_AfterBattle
+[BLACK]Stella: [RED]Yes, that was very\nenjoyable.\pI, too, have something I'd like to\ngive you.
+
+#org @gText_Restaurant_Iris_OhNo
+[BLACK]Iris: [RED]Oh no!
+
+#org @gText_Restaurant_Iris_PreparingToLeave
+[BLACK]Iris: [RED]Sorry, Stella, but I have to\nrun! I have a gym challenge soon.
+
+#org @gText_Restaurant_Stella_PreparingToLeave
+[BLACK]Stella: [RED]Oh, Iris[.]\pI suppose I should be going as well.
+
+#org @gText_Restaurant_Iris_Leaves
+[BLACK]Iris: [RED]Thanks again for the battle!
+
+#org @gText_Restaurant_Stella_Leaves
+[BLACK]Stella: [RED]Good luck!
