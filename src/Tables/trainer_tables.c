@@ -2019,10 +2019,10 @@ const struct TrainerMonNoItemDefaultMoves sParty_Route6_SrAndJr_SueAndKat[] = {
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_Route6_HikerDarryl[] = {
-    { .lvl = 45, .species = SPECIES_BOLDORE },
-    { .lvl = 45, .species = SPECIES_BARBARACLE },
-    { .lvl = 46, .species = SPECIES_TYRANTRUM },
-    { .lvl = 46, .species = SPECIES_CONKELDURR }
+    { .lvl = 55, .species = SPECIES_BOLDORE },
+    { .lvl = 55, .species = SPECIES_BARBARACLE },
+    { .lvl = 56, .species = SPECIES_TYRANTRUM },
+    { .lvl = 56, .species = SPECIES_CONKELDURR }
 };
 // #endregion
 
@@ -3097,15 +3097,15 @@ const struct TrainerMonNoItemDefaultMoves sParty_HessonPass_ScientistHarvey[] = 
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_HessonPass_PsychicKimiko[] = {
-    { .lvl = 42, .species = SPECIES_HATTREM },
-    { .lvl = 42, .species = SPECIES_MORPEKO },
-    { .lvl = 44, .species = SPECIES_MANDIBUZZ }
+    { .lvl = 58, .species = SPECIES_HATTREM },
+    { .lvl = 58, .species = SPECIES_MORPEKO },
+    { .lvl = 60, .species = SPECIES_MANDIBUZZ }
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_HessonPass_CoolTrainerColt[] = {
-    { .lvl = 44, .species = SPECIES_GLALIE },
-    { .lvl = 44, .species = SPECIES_TOUCANNON },
-    { .lvl = 46, .species = SPECIES_MAMOSWINE }
+    { .lvl = 60, .species = SPECIES_GLALIE },
+    { .lvl = 60, .species = SPECIES_TOUCANNON },
+    { .lvl = 61, .species = SPECIES_MAMOSWINE }
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_HessonPass_BlackbeltHaytham[] = {
@@ -3114,19 +3114,19 @@ const struct TrainerMonNoItemDefaultMoves sParty_HessonPass_BlackbeltHaytham[] =
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_HessonPass_CollectorZeus[] = {
-    { .lvl = 44, .species = SPECIES_COFAGRIGUS },
-    { .lvl = 44, .species = SPECIES_RUNERIGUS }
+    { .lvl = 59, .species = SPECIES_COFAGRIGUS },
+    { .lvl = 59, .species = SPECIES_RUNERIGUS }
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_HessonPass_NurseMina[] = {
-    { .lvl = 38, .species = SPECIES_HAPPINY },
-    { .lvl = 40, .species = SPECIES_CHANSEY },
-    { .lvl = 42, .species = SPECIES_BLISSEY }
+    { .lvl = 56, .species = SPECIES_HAPPINY },
+    { .lvl = 58, .species = SPECIES_CHANSEY },
+    { .lvl = 60, .species = SPECIES_BLISSEY }
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_HessonPass_GentlemanGordy[] = {
-    { .lvl = 43, .species = SPECIES_BOLTUND },
-    { .lvl = 44, .species = SPECIES_STOUTLAND }
+    { .lvl = 58, .species = SPECIES_BOLTUND },
+    { .lvl = 59, .species = SPECIES_STOUTLAND }
 };
 // #endregion
 
