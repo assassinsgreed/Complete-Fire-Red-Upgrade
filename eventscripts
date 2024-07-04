@@ -2019,8 +2019,8 @@ npc 3 40 0 EventScript_Common_Strength
 npc 3 40 1 EventScript_Common_Strength
 npc 3 40 2 EventScript_Common_Strength
 npc 3 40 3 EventScript_Common_Strength
-npc 3 40 4 EventScript_Common_Strength
-npc 3 40 5 EventScript_SecretTrail_TM77_PsychUp
+npc 3 40 4 EventScript_SecretTrail_TM77_PsychUp
+npc 3 40 5 EventScript_Common_Strength
 npc 3 40 6 ItemScript_Common_IronBall
 npc 3 40 7 EventScript_SecretTrail_ChannelerHeather
 
