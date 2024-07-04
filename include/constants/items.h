@@ -447,7 +447,7 @@ enum
 #define ITEM_GOLD_TEETH 353		// Replaced by mega ring elsewhere in this header
 #define ITEM_SERPENT_KEY 354
 #define ITEM_CERBERUS_KEY 355
-#define ITEM_LIFT_KEY 356
+#define ITEM_FACTORY_KEY 356
 #define ITEM_HELIX_FOSSIL 357
 #define ITEM_DOME_FOSSIL 358
 #define ITEM_SILPH_SCOPE 359

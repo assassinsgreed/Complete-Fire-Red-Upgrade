@@ -625,7 +625,7 @@
 */
 #define FLAG_TSARVOSA_GYM_CHALLENGE_ACTIVE               0x262
 /**
-#define FLAG_GOT_EEVEE                                   0x263
+#define FLAG_FOUND_DAIMYN_FACTORY_KEY                    0x263
 #define FLAG_FOUND_BOTH_VERMILION_GYM_SWITCHES           0x264
 #define FLAG_FORGOTTEN_MANSE_SECURITY_GATE_1             0x265
 */

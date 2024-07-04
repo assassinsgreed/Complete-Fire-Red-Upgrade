@@ -81,6 +81,19 @@ SignScript_TsarvosaCity_GymTraineesCafeSign:
     msgbox gText_TsarvosaCity_GymTraineeCafeSign MSG_SIGN
     end
 
+.global EventScript_TsarvosaCity_DaimynFactoryPresident
+EventScript_TsarvosaCity_DaimynFactoryPresident:
+    faceplayer
+    checkitem ITEM_FACTORY_KEY 0x1
+    compare LASTRESULT TRUE
+    if TRUE _goto AlreadyHaveKey
+    msgbox gText_TsarvosaCity_DaimynFactoryMan MSG_NORMAL
+    end
+
+AlreadyHaveKey:
+    msgbox gText_TsarvosaCity_DaimynFactoryMan_HaveKey MSG_NORMAL
+    end
+
 @ Pokemon Center
 .global MapScript_TsarvosaCity_PokemonCenter
 MapScript_TsarvosaCity_PokemonCenter:

@@ -25,6 +25,12 @@ You aren't from here, that much is\ncertain to me.\pI wouldn't worry about it, t
 #org @gText_TsarvosaCity_MimmettJungleGirl
 Be careful if you pass through\nMimmett Jungle.\pThe swamps there are difficult to\nnavigate and it's easy to get lost.
 
+#org @gText_TsarvosaCity_DaimynFactoryMan
+Oh, bother[.]\pI could've sworn I had the key to\nDaimyn City Factory in this pocket[.]\pI must've dropped it while surfing on\nRoute 15.\pBah, I'll just have another one\nmade.
+
+#org @gText_TsarvosaCity_DaimynFactoryMan_HaveKey
+Hey, you there! You found my key to\nthe Daimyn City Factory.\pIt matters not; I've had another one\nmade.\pYou just need to promise not to go\nnear the factory. Wahahaha!
+
 #org @gText_TsarvosaCity_TownPlacard
 Tsarvosa City\nThe Eternal Sunshine City
 
