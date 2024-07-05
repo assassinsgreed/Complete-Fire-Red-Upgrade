@@ -60,6 +60,11 @@ EventScript_Route15North_FindTM55Scald:
     call ItemScript_Common_FindTM
     end
 
+.global EventScript_Route15North_FindFactoryKey
+EventScript_Route15North_FindFactoryKey:
+    finditem ITEM_FACTORY_KEY 0x1
+    end
+
 .global SignScript_Route15North_RestStopAdvertisementSign
 SignScript_Route15North_RestStopAdvertisementSign:
     msgbox gText_Route15North_RestStopAdvertisementSign MSG_SIGN
