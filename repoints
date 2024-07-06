@@ -398,8 +398,10 @@ GraphicsInfo_Castform 839FF94
 GraphicsInfo_Wingull 839FF98
 ## Update Nidoran Male (123)
 GraphicsInfo_NidoranMale 839FF9C
-## Update Meowth (125)
+## Replace Meowth (125)
 GraphicsInfo_Shaymin 839FFA4
+## Replace Seel (126)
+GraphicsInfo_Meltan 839FFA8
 ## Replace Zapdos (136)
 GraphicsInfo_ZapdosG 839FFD0
 ## Replace Moltres (137)
