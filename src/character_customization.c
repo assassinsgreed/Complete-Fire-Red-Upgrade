@@ -78,6 +78,7 @@ extern const u16 KyogrePal[];
 extern const u16 GroudonPal[];
 extern const u16 PalmTreePal[];
 extern const u16 ZeraoraPal[];
+extern const u16 MeltanPal[];
 
 #ifdef UNBOUND
 //extern const u16 MalePlayer_Trainer_Outfit_RedPal[];
@@ -362,6 +363,7 @@ static const u16* sPlayerMarlonOutfitColours[] =
 		{ PalmTreePal, 0x122F },
 		{ ZeraoraPal, 0x1230 },
 		{ LeaderIrisPal, 0x1231 },
+		{ MeltanPal, 0x1232 },
 		{ NULL, 0x11FF }
 	};
 	const struct SpritePalette* const gObjectEventSpritePalettesSwitcher[255] = {
