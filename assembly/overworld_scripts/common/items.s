@@ -31,6 +31,11 @@ ItemScript_Common_HyperPotion:
     finditem ITEM_HYPER_POTION 0x1
     end
 
+.global ItemScript_Common_MaxPotion
+ItemScript_Common_MaxPotion:
+    finditem ITEM_MAX_POTION 0x1
+    end
+
 .global ItemScript_Common_MoomooMilk
 ItemScript_Common_MoomooMilk:
     finditem ITEM_MOOMOO_MILK 0x1

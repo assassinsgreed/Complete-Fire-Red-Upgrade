@@ -2166,3 +2166,25 @@ npc 12 3 0 EventScript_TsarvosaCity_NPCHouses_MarketBoy
 npc 12 3 1 EventScript_TsarvosaCity_NPCHouses_WildernessGirl
 npc 12 4 0 EventScript_TsarvosaCity_NPCHouses_SlowbroGTrade
 npc 12 4 1 EventScript_TsarvosaCity_NPCHouses_SlowbroGTradeMother
+## Daimyn Factory Interior
+map 1 95 MapScript_DaimynFactoryInterior
+npc 1 95 0 EventScript_Common_Strength
+npc 1 95 1 EventScript_Common_Strength
+npc 1 95 2 EventScript_DaimynFactory_Meltan
+npc 1 95 3 EventScript_Common_Strength
+npc 1 95 4 EventScript_DaimynFactory_FindTM25Thunder
+npc 1 95 5 ItemScript_Common_ThunderStone
+npc 1 95 6 ItemScript_Common_MaxPotion
+npc 1 95 7 ItemScript_Common_Ultraball
+sign 1 95 0 SignScript_DaimynFactory_BreakersNotice
+sign 1 95 1 SignScript_DaimynFacatory_Breaker
+sign 1 95 2 SignScript_DaimynFacatory_Breaker
+sign 1 95 3 SignScript_DaimynFacatory_Breaker
+sign 1 95 4 SignScript_DaimynFacatory_Breaker
+sign 1 95 5 SignScript_DaimynFacatory_Breaker
+sign 1 95 6 SignScript_DaimynFacatory_Breaker
+sign 1 95 7 SignScript_DaimynFacatory_Breaker
+sign 1 95 8 SignScript_DaimynFacatory_Breaker
+tile 1 95 0 TileScript_EncounterMeltan_Left
+tile 1 95 1 TileScript_EncounterMeltan_Middle
+tile 1 95 2 TileScript_EncounterMeltan_Right

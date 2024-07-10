@@ -62,6 +62,12 @@ SetWeatherSnowstorm:
     doweather
     return
 
+.global SetWeatherDark
+SetWeatherDark:
+    setweather WEATHER_BIT_DARK
+    doweather
+    return
+
 // Terrains are all once per battle and cleared. See battle_start_turn_start for map based permanent terrain
 .global ClearTerrain
 ClearTerrain:

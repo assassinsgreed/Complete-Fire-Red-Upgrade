@@ -626,7 +626,9 @@
 #define FLAG_TSARVOSA_GYM_CHALLENGE_ACTIVE               0x262
 /**
 #define FLAG_FOUND_DAIMYN_FACTORY_KEY                    0x263
-#define FLAG_FOUND_BOTH_VERMILION_GYM_SWITCHES           0x264
+*/
+#define FLAG_DAIMYN_FACTORY_POWER_IS_ON                  0x264
+/**
 #define FLAG_FORGOTTEN_MANSE_SECURITY_GATE_1             0x265
 */
 #define FLAG_PENDING_DAYCARE_EGG                         0x266
@@ -853,10 +855,10 @@
 #define FLAG_HIDE_MIMMETT_JUNGLE_STICKY_BARB             0x33E
 #define FLAG_HIDE_MIMMETT_JUNGLE_ULTRA_BALL_2            0x33F
 #define FLAG_HIDE_MIMMETT_JUNGLE_DIRE_HIT                0x340
-#define FLAG_0x341               0x341
-#define FLAG_0x342               0x342
-#define FLAG_0x343               0x343
-#define FLAG_0x344               0x344
+#define FLAG_HIDE_DAIMYN_FACTORY_TM25THUNDER             0x341
+#define FLAG_HIDE_DAIMYN_FACTORY_THUNDER_STONE           0x342
+#define FLAG_HIDE_DAIMYN_FACTORY_MAX_POTION              0x343
+#define FLAG_HIDE_DAIMYN_FACTORY_ULTRA_BALL              0x344
 #define FLAG_0x345               0x345
 #define FLAG_0x346               0x346
 #define FLAG_0x347               0x347

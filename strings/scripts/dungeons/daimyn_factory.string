@@ -1,3 +1,4 @@
+// Exterior
 #org @gText_DaimynFactoryOverworld_ReminiscingOldMan
 Oooh[.] It's so sad to see that the\nold factory has been shut down.\pI used to work here.\pThat was many years ago, before the\nregion entered into a partnership\lwith Galar to receive their energy.
 
@@ -102,3 +103,28 @@ Agh[.] What am I doing battling, at a\ntime like this? Bad habit, I\lsuppose.
 
 #org @gText_DaimynFactoryOverworld_EngineerKliff_Chat
 I could've swore I left that button\naround here somewhere[.]
+
+// Interior
+#org @gText_DaimynFactory_BreakerNotice
+NOTICE: The factory's power supply\nis limited.\pPlease turn the breakers on and off\nto open and close doors as needed.\pWARNING: While power is on, ions will\nflow through the area.\pAs a result, Electric Pok\emon will be\nstrengthened.
+
+#org @gText_DaimynFactory_BreakerPrompt
+It's a breaker! It's currently\n[BUFFER1]. Turn it [BUFFER2]?
+
+#org @gText_DaimynFactory_BreakerOn
+[GREEN]on[BLACK]
+
+#org @gText_DaimynFactory_BreakerOff
+[RED]off[BLACK]
+
+#org @gText_DaimynFactory_BreakerChoseNotTo
+Better not!
+
+#org @gText_DaimynFactory_BreakerFlipped
+The breaker is now [BUFFER2].
+
+#org @gText_DaimynFactory_NoNeedToFlipBreaker
+The generator is [GREEN]on[BLACK]! There's no need\nto flip the breaker now.
+
+#org @gText_DaimynFactory_GeneratorOn
+The generator has been turned [GREEN]on[BLACK]!\nAll doors have now been opened.
