@@ -717,12 +717,11 @@ bool8 TryActivateOWTerrain(void)
 		}
 	}
 
-	// Terrain that should always be active in certain terrains
-	// TODO: Only electric terrain in Factory when machines are on
-	// if (MAP_IS(DAIMYN_FACTORY_INTERIOR && FlagGet(000)))
-	// {
-	// 	owTerrain = MISTY_TERRAIN;
-	// }
+	// Terrain that should always be active in certain maps
+	if (MAP_IS(DAIMYN_FACTORY_INTERIOR) && FlagGet(FLAG_DAIMYN_FACTORY_POWER_IS_ON))
+	{
+		owTerrain = ELECTRIC_TERRAIN;
+	}
 	if (MAP_IS(FORGOTTEN_MANSE_BASEMENT))
 	{
 		owTerrain = MISTY_TERRAIN;

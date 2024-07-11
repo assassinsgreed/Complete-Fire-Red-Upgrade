@@ -116,7 +116,7 @@
 #define MAP_POKEMON_TOWER_5F                     (92 | (1 << 8))
 #define MAP_POKEMON_TOWER_6F                     (93 | (1 << 8))
 #define MAP_POKEMON_TOWER_7F                     (94 | (1 << 8))
-#define MAP_POWER_PLANT                          (95 | (1 << 8))
+#define MAP_DAIMYN_FACTORY_INTERIOR              (95 | (1 << 8))
 #define MAP_MT_EMBER_RUBY_PATH_B4F               (96 | (1 << 8))
 #define MAP_MT_EMBER_EXTERIOR                    (97 | (1 << 8))
 #define MAP_MT_EMBER_SUMMIT_PATH_1F              (98 | (1 << 8))

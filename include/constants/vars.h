@@ -140,7 +140,7 @@
 #define VAR_MAP_SCENE_TSARVOSA_STATS_DOJO_PROGRESSION                          0x405E
 #define VAR_MAP_SCENE_TSARVOSA_GYM_TRAINEE_CAFE                                0x405F
 #define VAR_MAP_SCENE_TSARVOA_GYM_CHALLENGE_PROGRESS                           0x4060
-#define VAR_MAP_SCENE_PEWTER_CITY_MUSEUM_1F                                    0x4061
+#define VAR_MAP_SCENE_DAIMYN_FACTORY_MELTAN_EVENTS                             0x4061
 #define VAR_MAP_SCENE_ROUTE5_ROUTE6_ROUTE7_ROUTE8_GATES                        0x4062
 #define VAR_MAP_SCENE_SEAFOAM_ISLANDS_B4F                                      0x4063
 #define VAR_MAP_SCENE_VICTORY_ROAD_1F                                          0x4064

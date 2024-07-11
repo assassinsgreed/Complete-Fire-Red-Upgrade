@@ -982,6 +982,27 @@
         },
         {
             "mapgroup": 1,
+            "mapnum": 95,
+            "grass": {
+                "rate": 5,
+                "pokemon": [
+                    { "low": 51, "high": 56, "species": "SPECIES_TOXEL" },
+                    { "low": 51, "high": 56, "species": "SPECIES_KLINK" },
+                    { "low": 52, "high": 57, "species": "SPECIES_MAWILE" },
+                    { "low": 52, "high": 57, "species": "SPECIES_KOFFING_G" },
+                    { "low": 52, "high": 57, "species": "SPECIES_KLANG" },
+                    { "low": 51, "high": 56, "species": "SPECIES_KOFFING_G" },
+                    { "low": 51, "high": 56, "species": "SPECIES_GRIMER_A" },
+                    { "low": 51, "high": 56, "species": "SPECIES_WEEZING_G" },
+                    { "low": 52, "high": 58, "species": "SPECIES_KLINKLANG" },
+                    { "low": 52, "high": 58, "species": "SPECIES_TOXTRICITY" },
+                    { "low": 52, "high": 58, "species": "SPECIES_KLINKLANG" },
+                    { "low": 52, "high": 58, "species": "SPECIES_TOXTRICITY" }
+                ]
+            }
+        },
+        {
+            "mapgroup": 1,
             "mapnum": 124,
             "grass": {
                 "rate": 10,
