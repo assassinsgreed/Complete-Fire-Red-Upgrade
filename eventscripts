@@ -2176,6 +2176,11 @@ npc 1 95 4 EventScript_DaimynFactory_FindTM25Thunder
 npc 1 95 5 ItemScript_Common_ThunderStone
 npc 1 95 6 ItemScript_Common_MaxPotion
 npc 1 95 7 ItemScript_Common_Ultraball
+npc 1 95 8 EventScript_DaimynFactory_BurglarSly
+npc 1 95 9 EventScript_DaimynFactory_EngineerHasan
+npc 1 95 10 EventScript_DaimynFactory_BurglarWill
+npc 1 95 11 EventScript_DaimynFactory_EngineerElroy
+npc 1 95 12 EventScript_DaimynFactory_RustedData
 sign 1 95 0 SignScript_DaimynFactory_BreakersNotice
 sign 1 95 1 SignScript_DaimynFacatory_Breaker
 sign 1 95 2 SignScript_DaimynFacatory_Breaker

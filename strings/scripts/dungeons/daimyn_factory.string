@@ -128,3 +128,48 @@ The generator is [GREEN]on[BLACK]! There's no need\nto flip the breaker now.
 
 #org @gText_DaimynFactory_GeneratorOn
 The generator has been turned [GREEN]on[BLACK]!\nAll doors have now been opened.
+
+#org @gText_DaimynFactory_BurglarSly_Intro
+Hey, you're not supposed to be here.\nHuh? Me? Mind your own business!
+
+#org @gText_DaimynFactory_BurglarSly_Defeat
+Tch.
+
+#org @gText_DaimynFactory_BurglarSly_Chat
+We didn't see each other, capiche?
+
+#org @gText_DaimynFactory_EngineerHasan_Intro
+They've got me working in an\nabandoned factory[.]\pBattle me to relieve my boredom!
+
+#org @gText_DaimynFactory_EngineerHasan_Defeat
+Yeah, that fired me up!
+
+#org @gText_DaimynFactory_EngineerHasan_Chat
+I don't know why they sent me out\nhere[.] But hey, the pay is good!
+
+#org @gText_DaimynFactory_BurglarWill_Intro
+Hey, scram! I found this place first.
+
+#org @gText_DaimynFactory_BurglarWill_Defeat
+You aren't a competitor?
+
+#org @gText_DaimynFactory_BurglarWill_Chat
+Hehehe[.] An abandoned factory is just\nasking to be pilfered!
+
+#org @gText_DaimynFactory_EngineerElroy_Intro
+Have you seen a strange Pok\emon\naround here?
+
+#org @gText_DaimynFactory_EngineerElroy_Defeat
+Hey, I was distracted!
+
+#org @gText_DaimynFactory_EngineerElroy_Chat
+I could've sworn I saw a strange\nPok\emon run by just now[.]
+
+#org @gtext_DaimynFactory_MeltanBattleStart
+The nervous Pok\emon attacks!
+
+#org @gtext_DaimynFactory_MeltanFledFromBattle
+The nervous Pok\emon fled!
+
+#org @gtext_DaimynFactory_MeltanDefeated
+The nervous Pok\emon left.\nWill it return later?

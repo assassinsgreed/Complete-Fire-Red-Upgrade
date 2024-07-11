@@ -6357,6 +6357,29 @@ const struct TrainerMonItemCustomMoves sParty_DaimynCityRestaurant_Stella[] = {
     },
 };
 // #endregion
+// #region Daimyn Factory
+const struct TrainerMonNoItemDefaultMoves sParty_DaimynFactory_BurglarSly[] = {
+    { .lvl = 54, .species = SPECIES_CROAGUNK },
+    { .lvl = 55, .species = SPECIES_WEAVILE }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_DaimynFactory_EngineerHasan[] = {
+    { .lvl = 54, .species = SPECIES_KLINK },
+    { .lvl = 54, .species = SPECIES_KLANG },
+    { .lvl = 54, .species = SPECIES_KLINKLANG }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_DaimynFactory_BurglarWill[] = {
+    { .lvl = 53, .species = SPECIES_SCRAGGY },
+    { .lvl = 54, .species = SPECIES_THIEVUL },
+    { .lvl = 55, .species = SPECIES_SERPERIOR }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_DaimynFactory_EngineerElroy[] = {
+    { .lvl = 54, .species = SPECIES_MAWILE },
+    { .lvl = 54, .species = SPECIES_RAICHU }
+};
+// #endregion
 // #endregion
 
 #define NO_NAME                                                                                      \
@@ -11901,6 +11924,56 @@ const struct Trainer gTrainers[] = {
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_HP_AWARE | AI_SCRIPT_SETUP_FIRST_TURN | AI_SCRIPT_DOUBLE_BATTLE | AI_SCRIPT_SEMI_SMART,
         .partySize = NELEMS(sParty_DaimynCityRestaurant_Stella),
         .party = {.ItemCustomMoves = sParty_DaimynCityRestaurant_Stella}
+    },
+    // #endregion
+    // #region Daimyn Factory
+    [TRAINER_DAIMYN_FACTORY_BURGLAR_SLY] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_BURGLAR,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_BURGLAR,
+        .trainerName = {_S, _l, _y, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_Burglar_Standard,
+        .partySize = NELEMS(sParty_DaimynFactory_BurglarSly),
+        .party = {.NoItemDefaultMoves = sParty_DaimynFactory_BurglarSly}
+    },
+    [TRAINER_DAIMYN_FACTORY_ENGINEER_HASAN] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_ENGINEER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_WORKER,
+        .trainerName = {_H, _a, _s, _a, _n, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_Engineer_Standard,
+        .partySize = NELEMS(sParty_DaimynFactory_EngineerHasan),
+        .party = {.NoItemDefaultMoves = sParty_DaimynFactory_EngineerHasan}
+    },
+    [TRAINER_DAIMYN_FACTORY_BURGLAR_WILL] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_BURGLAR,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_BURGLAR,
+        .trainerName = {_W, _i, _l, _l, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_Burglar_Standard,
+        .partySize = NELEMS(sParty_DaimynFactory_BurglarWill),
+        .party = {.NoItemDefaultMoves = sParty_DaimynFactory_BurglarWill}
+    },
+    [TRAINER_DAIMYN_FACTORY_ENGINEER_ELROY] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_ENGINEER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_WORKER,
+        .trainerName = {_E, _l, _r, _o, _y, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_Engineer_Standard,
+        .partySize = NELEMS(sParty_DaimynFactory_EngineerElroy),
+        .party = {.NoItemDefaultMoves = sParty_DaimynFactory_EngineerElroy}
     },
     // #endregion
     // #endregion

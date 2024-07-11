@@ -184,6 +184,7 @@ MapScript_DaimynFactoryInterior:
     mapscript MAP_SCRIPT_ON_LOAD MapLoadScript_SetMeltanLocationAndBreakerState
     mapscript MAP_SCRIPT_ON_TRANSITION MapEntryScript_DaimynFactory_FlightFlag
     mapscript MAP_SCRIPT_ON_FRAME_TABLE LevelScripts_DaimynFactory
+    mapscript MAP_SCRIPT_ON_RESUME MapResumeScript_HideLegendary
     .byte MAP_SCRIPT_TERMIN
 
 MapLoadScript_SetMeltanLocationAndBreakerState:
@@ -192,7 +193,6 @@ MapLoadScript_SetMeltanLocationAndBreakerState:
     movesprite2 Meltan 0x18 0x6
     setobjectmovementtype Meltan 64 @ Walk down on the spot, facing down
     clearflag 0x264 @ Power is off
-    @ TODO: Hide meltan if needed
     special 0x8E
     compare VarMeltanEvents 0x2
     if notequal _goto End
@@ -245,6 +245,15 @@ LevelScript_PlayerSurprisesMeltan:
     special 0x8E
     end
 
+MapResumeScript_HideLegendary:
+    checkflag 0x55
+    if SET _goto HideMeltan
+    end
+
+HideMeltan:    
+    hidesprite Meltan
+    end
+
 DoorStateChangeCommon:
     playse 0x8 @ Door open
     waitse
@@ -271,7 +280,6 @@ CloseADoors:
     call CloseBottomLeftDoor2A
     call CloseBottomRightDoor1A
     call CloseBottomRightDoor2A
-    call DoorStateChangeCommon
     return
 
 OpenBDoors:
@@ -344,8 +352,8 @@ OpenTopLeftDoor2A:
 CloseTopLeftDoor2A:
     setmaptile 0xA 0x3 VerticalDoorUpperWall Impassable
     setmaptile 0xA 0x4 VerticalDoorLowerWall Impassable
-    setmaptile 0xA 0x5 VerticalDoorShadedFloor Passable
-    setmaptile 0xA 0x6 VerticalDoorUnshadedFloor Passable
+    setmaptile 0xA 0x5 VerticalDoorShadedFloor Impassable
+    setmaptile 0xA 0x6 VerticalDoorUnshadedFloor Impassable
     return
 
 OpenTopRightDoor1A:
@@ -385,21 +393,19 @@ CloseTopRightDoor2A:
     return
 
 OpenBottomLeftDoor2A:
-    setmaptile 0xF 0x20 FloorLeftShaded Passable
-    setmaptile 0x10 0x20 FloorUnshaded Passable
-    setmaptile 0x11 0x20 FloorUnshaded Passable
-    setmaptile 0xF 0x21 FloorLeftShaded Passable
-    setmaptile 0x10 0x21 FloorUnshaded Passable
-    setmaptile 0x11 0x21 FloorUnshaded Passable
+    setmaptile 0xB 0x21 WallUpper Impassable
+    setmaptile 0xB 0x22 WallLower Impassable
+    setmaptile 0xB 0x23 FloorUpShaded Passable
+    setmaptile 0xB 0x24 FloorUnshaded Passable
+    setmaptile 0xB 0x25 FloorUnshaded Passable
     return
 
 CloseBottomLeftDoor2A:
-    setmaptile 0xF 0x20 HorizontalDoorUpperLeft Impassable
-    setmaptile 0x10 0x20 HorizontalDoorUpperMiddle Impassable
-    setmaptile 0x11 0x20 HorizontalDoorUpperRight Impassable
-    setmaptile 0xF 0x21 HorizontalDoorLowerLeft Impassable
-    setmaptile 0x10 0x21 HorizontalDoorLowerMiddle Impassable
-    setmaptile 0x11 0x21 HorizontalDoorLowerRight Impassable
+    setmaptile 0xB 0x21 VerticalDoorUpperWall Impassable
+    setmaptile 0xB 0x22 VerticalDoorLowerWall Impassable
+    setmaptile 0xB 0x23 VerticalDoorShadedFloor Impassable
+    setmaptile 0xB 0x24 VerticalDoorUnshadedFloor Impassable
+    setmaptile 0xB 0x25 VerticalDoorUnshadedFloor Impassable
     return
 
 OpenBottomRightDoor1A:
@@ -419,7 +425,6 @@ CloseBottomRightDoor1A:
     setmaptile 0x24 0x1D HorizontalDoorLowerMiddle Impassable
     setmaptile 0x25 0x1D HorizontalDoorLowerRight Impassable
     return
-
 
 OpenBottomRightDoor2A:
     setmaptile 0x27 0x22 FloorLeftShaded Passable
@@ -540,9 +545,9 @@ OpenUpperVerticalDoorB:
 CloseUpperVerticalDoorB:
     setmaptile 0x25 0x8 VerticalDoorUpperWall Impassable
     setmaptile 0x25 0x9 VerticalDoorLowerWall Impassable
-    setmaptile 0x25 0xA VerticalDoorShadedFloor Passable
-    setmaptile 0x25 0xB VerticalDoorUnshadedFloor Passable
-    setmaptile 0x25 0xC VerticalDoorUnshadedFloor Passable
+    setmaptile 0x25 0xA VerticalDoorShadedFloor Impassable
+    setmaptile 0x25 0xB VerticalDoorUnshadedFloor Impassable
+    setmaptile 0x25 0xC VerticalDoorUnshadedFloor Impassable
     return
 
 OpenLowerVerticalDoorB:
@@ -599,13 +604,70 @@ CloseLowerRightDoorB:
 
 .global EventScript_DaimynFactory_Meltan
 EventScript_DaimynFactory_Meltan:
-    @ TODO: Populate for when Meltan is at the end of the dungeon
+    faceplayer
+    cry SPECIES_MELTAN 0x0
+    waitcry
+    msgbox gtext_DaimynFactory_MeltanBattleStart MSG_NORMAL
+    setflag 0x90B @ Wild custom moves, cleared at the end of battle
+    setvar 0x8000 MOVE_THUNDERWAVE
+    setvar 0x8001 MOVE_THUNDERBOLT
+    setvar 0x8002 MOVE_ACIDARMOR
+    setvar 0x8003 MOVE_FLASHCANNON
+    setflag 0x90C @ Smarter wild battle, cleared at the end of battle
+    setwildbattle SPECIES_MELTAN 60 ITEM_PETAYA_BERRY
+    setflag 0x55 @ Meltan hidden
+    setflag 0x807
+    special 0x138 @ Setup a legendary encounter (blurred screen transition)
+    waitstate
+    clearflag 0x807
+    special2 LASTRESULT 0xB4 @ Check the result of the battle
+    compare LASTRESULT 0x1 @ Defeated in battle
+    if equal _goto DefeatedMeltan
+    compare LASTRESULT 0x4 @ Fled from battle
+    if equal _goto FledFromMeltan
+    end
+
+DefeatedMeltan:
+    msgbox gtext_DaimynFactory_MeltanDefeated MSG_NORMAL
+    end
+
+FledFromMeltan:
+    msgbox gtext_DaimynFactory_MeltanFledFromBattle MSG_NORMAL
     end
 
 .global EventScript_DaimynFactory_FindTM25Thunder
 EventScript_DaimynFactory_FindTM25Thunder:
     setvar CHOSEN_ITEM ITEM_TM25
     call ItemScript_Common_FindTM
+    end
+
+.global EventScript_DaimynFactory_BurglarSly
+EventScript_DaimynFactory_BurglarSly:
+    trainerbattle0 0x0 456 0x0 gText_DaimynFactory_BurglarSly_Intro gText_DaimynFactory_BurglarSly_Defeat
+    msgbox gText_DaimynFactory_BurglarSly_Chat MSG_NORMAL
+    end
+
+.global EventScript_DaimynFactory_EngineerHasan
+EventScript_DaimynFactory_EngineerHasan:
+    trainerbattle0 0x0 457 0x0 gText_DaimynFactory_EngineerHasan_Intro gText_DaimynFactory_EngineerHasan_Defeat
+    msgbox gText_DaimynFactory_EngineerHasan_Chat MSG_NORMAL
+    end
+
+.global EventScript_DaimynFactory_BurglarWill
+EventScript_DaimynFactory_BurglarWill:
+    trainerbattle0 0x0 458 0x0 gText_DaimynFactory_BurglarWill_Intro gText_DaimynFactory_BurglarWill_Defeat
+    msgbox gText_DaimynFactory_BurglarWill_Chat MSG_NORMAL
+    end
+
+.global EventScript_DaimynFactory_EngineerElroy
+EventScript_DaimynFactory_EngineerElroy:
+    trainerbattle0 0x0 459 0x0 gText_DaimynFactory_EngineerElroy_Intro gText_DaimynFactory_EngineerElroy_Defeat
+    msgbox gText_DaimynFactory_EngineerElroy_Chat MSG_NORMAL
+    end
+
+.global EventScript_DaimynFactory_RustedData
+EventScript_DaimynFactory_RustedData:
+    finditem ITEM_RUSTED_DATA 0x1
     end
 
 .global SignScript_DaimynFactory_BreakersNotice

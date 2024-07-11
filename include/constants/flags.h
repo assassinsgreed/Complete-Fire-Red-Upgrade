@@ -88,7 +88,7 @@
 #define FLAG_HIDE_SEPPIRE_COVE_UPPER_FLOOR_SE_BOULDER      0x052
 #define FLAG_HIDE_SEPPIRE_COVE_UPPER_FLOOR_E_BOULDER       0x053
 #define FLAG_HIDE_ZERAORA_WHEN_CALMED                      0x054
-#define FLAG_HIDE_VIRIDIAN_GIOVANNI                        0x055
+#define FLAG_HIDE_DAIMYN_FACTORY_MELTAN                    0x055
 #define FLAG_HIDE_OLD_AMBER                                0x056
 #define FLAG_HIDE_EEVEE_BALL                               0x057
 #define FLAG_HIDE_VICTORY_ROAD_2F_BOULDER                  0x058
@@ -859,7 +859,7 @@
 #define FLAG_HIDE_DAIMYN_FACTORY_THUNDER_STONE           0x342
 #define FLAG_HIDE_DAIMYN_FACTORY_MAX_POTION              0x343
 #define FLAG_HIDE_DAIMYN_FACTORY_ULTRA_BALL              0x344
-#define FLAG_0x345               0x345
+#define FLAG_HIDE_DAIMYN_FACTORY_RUSTED_DATA             0x345
 #define FLAG_0x346               0x346
 #define FLAG_0x347               0x347
 #define FLAG_0x348               0x348
