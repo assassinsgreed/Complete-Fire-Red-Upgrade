@@ -877,10 +877,55 @@ MoveAlistairAndPlayerAfterClancyAndEna:
 .global EventScript_Route11SouthRefiner_RefinerShop
 EventScript_Route11SouthRefiner_RefinerShop:
     faceplayer
+    msgbox gText_Route11SouthHouse_RefinerShopWelcome MSG_NORMAL
+    checkitem ITEM_RUSTED_DATA 0x1
+    compare LASTRESULT TRUE
+    if TRUE _call RefinerExpandStock
+    goto RefinerShopCommon
+
+RefinerExpandStock:
+    checkflag 0x26D @ Melmetalite explained
+    if SET _goto RefinerShopCommon
+    msgbox gText_Route11SouthHouse_RefinerHoldingRustedData MSG_NORMAL
+    setflag 0x26D @ Melmetalite explained
+    goto RefinerShopCommon
+
+RefinerShopCommon:
     msgbox gText_Route11SouthHouse_RefinerShop MSG_KEEPOPEN
-    pokemart MegaStoneShop
+    checkitem ITEM_RUSTED_DATA 0x1
+    compare LASTRESULT TRUE
+    if equal _call HandleExpandedMegaStoneShop
+    if notequal _call HandleMegaStoneShop
     msgbox gText_Route11SouthHouse_RefinerFarewell MSG_NORMAL
     end
+
+HandleExpandedMegaStoneShop:
+    pokemart ExpandedMegaStoneShop
+    return
+
+HandleMegaStoneShop:
+    pokemart MegaStoneShop
+    return
+
+.align 1
+ExpandedMegaStoneShop:
+    .hword ITEM_VENUSAURITE_G
+    .hword ITEM_CHARIZARDITE_G
+    .hword ITEM_BLASTOISINITE_G
+    .hword ITEM_LAPRASITE
+    .hword ITEM_MELMETALITE @ Exclusive to this shop
+    .hword ITEM_RILLABITE
+    .hword ITEM_CINDERITE
+    .hword ITEM_INTELLEITE
+    .hword ITEM_CORVIKNITE
+    .hword ITEM_ORBEETLITE
+    .hword ITEM_COALOSSITE
+    .hword ITEM_TOXTRICITE
+    .hword ITEM_CENTISKORITE
+    .hword ITEM_HATTERITE
+    .hword ITEM_COPPERITE
+    .hword ITEM_DURALUDITE
+    .hword ITEM_NONE
 
 .align 1
 MegaStoneShop:
@@ -888,7 +933,6 @@ MegaStoneShop:
     .hword ITEM_CHARIZARDITE_G
     .hword ITEM_BLASTOISINITE_G
     .hword ITEM_LAPRASITE
-    @ .hword ITEM_MELMETALITE @ TODO: Only when melmetal is captured!
     .hword ITEM_RILLABITE
     .hword ITEM_CINDERITE
     .hword ITEM_INTELLEITE

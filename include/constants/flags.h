@@ -639,7 +639,7 @@
 #define FLAG_FORGOTTEN_MANSE_SECURITY_GATE_5             0x26A
 #define FLAG_FORGOTTEN_MANSE_SECURITY_GATE_6             0x26B
 #define FLAG_GOT_LUCKY_EGG                               0x26C
-#define FLAG_OPENED_ROCKET_HIDEOUT                       0x26D
+#define FLAG_RUSTED_DATA_EXPLAINED                       0x26D
 #define FLAG_GOT_10_COINS_FROM_GAMBLER                   0x26E
 #define FLAG_GOT_20_COINS_FROM_GAMBLER                   0x26F
 #define FLAG_GOT_20_COINS_FROM_GAMBLER_2                 0x270

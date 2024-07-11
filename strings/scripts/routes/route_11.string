@@ -457,8 +457,14 @@ No way! Even after all the training\nwe've been doing?
 #org @gText_Route11SouthHouse_PlutoEvent_RivalAcceptsTheOffer
 [BLACK][RIVAL]: [BLUE]You'd do that?\pAlright, Alistair. It's a deal.\pLet's get training[.] There's a lot I\nneed to practice.
 
+#org @gText_Route11SouthHouse_RefinerShopWelcome
+Well, if it isn't [PLAYER].
+
 #org @gText_Route11SouthHouse_RefinerShop
-Well, if it isn't [PLAYER]. Would you\nlike to buy some Mega Stones?
+Would you like to buy some Mega\nStones?
+
+#org @gText_Route11SouthHouse_RefinerHoldingRustedData
+Hmm? What's this?\nThis [GREEN]Rusted Data[BLUE] you have[.]\pHohohoho! I thought this information\nhad been lost for good.\pWorry not. The data within is\ndamaged, but nothing I cannot\lhandle.\pWith this information, I can offer\nyou a very powerful Mega Stone[.]\pNow, then[.]
 
 #org @gText_Route11SouthHouse_RefinerFarewell
 Take care, and do come by again.
