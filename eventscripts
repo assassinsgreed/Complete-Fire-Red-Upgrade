@@ -310,26 +310,10 @@ npc 1 1 30 EventScript_RubarrDesert_StoryEvents
 sign 1 1 0 SignScript_RubarrDesert_Oasis
 
 ## Cave BF1
-npc 1 123 0 EventScript_Common_RockSmash
-npc 1 123 1 EventScript_Common_RockSmash
-npc 1 123 2 EventScript_Common_RockSmash
-npc 1 123 3 EventScript_Common_RockSmash
-npc 1 123 4 EventScript_Common_Strength
-npc 1 123 5 EventScript_Common_Strength
+
 
 ## Cave BF2
-npc 1 3 0 EventScript_Common_Strength
-npc 1 3 1 EventScript_Common_Strength
-npc 1 3 2 EventScript_Common_Strength
-npc 1 3 3 EventScript_Common_Strength
-npc 1 3 4 EventScript_Common_Strength
-npc 1 3 5 EventScript_Common_Strength
-npc 1 3 6 EventScript_Common_RockSmash
-npc 1 3 7 EventScript_Common_RockSmash
-npc 1 3 8 EventScript_Common_RockSmash
-npc 1 3 9 EventScript_Common_RockSmash
-npc 1 3 10 EventScript_Common_RockSmash
-npc 1 3 11 EventScript_Common_RockSmash
+
 
 # Route 4
 map 3 22 MapScript_Route4
