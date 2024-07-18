@@ -481,6 +481,11 @@ ItemScript_Common_Quickball:
     finditem ITEM_QUICK_BALL 0x1
     end
 
+.global ItemScript_Common_Duskball
+ItemScript_Common_Duskball:
+    finditem ITEM_DUSK_BALL 0x1
+    end
+
 .global ItemScript_Common_GrassySeed
 ItemScript_Common_GrassySeed:
     finditem ITEM_GRASSY_SEED 0x1
@@ -594,4 +599,14 @@ ItemScript_Common_LuminousMoss:
 .global ItemScript_Common_GrassGem
 ItemScript_Common_GrassGem:
     finditem ITEM_GRASS_GEM 0x1
+    end
+
+.global ItemScript_Common_RockGem
+ItemScript_Common_RockGem:
+    finditem ITEM_ROCK_GEM 0x1
+    end
+
+.global ItemScript_Common_GroundGem
+ItemScript_Common_GroundGem:
+    finditem ITEM_GROUND_GEM 0x1
     end
