@@ -2088,8 +2088,7 @@ bool8 IsCurrentAreaWinter(void)
 bool8 IsCurrentAreaDesert(void)
 {
 	#ifdef NEW_BATTLE_BACKGROUNDS
-		u8 mapSec = GetCurrentRegionMapSectionId();
-		return mapSec == MAPSEC_RUBARR_DESERT;
+		return MAP_IS(RUBARR_DESERT);
 	#else
 		return FALSE;
 	#endif

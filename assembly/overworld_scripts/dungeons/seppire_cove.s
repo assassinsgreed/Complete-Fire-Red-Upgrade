@@ -216,9 +216,9 @@ ItemScript_SeppireCove_TM98_Waterfall:
 
 .global EventScript_SeppireCove_Kyogre
 EventScript_SeppireCove_Kyogre:
-    msgbox gText_SeppireCove_EncounterKyogre MSG_NORMAL
+    msgbox gText_SeppireCove_EncounterKyogreGroudon MSG_NORMAL
     @ Todo later: Check for the blue orb and trigger a legendary battle
-    msgbox gText_SeppireCove_KyogreDormant MSG_NORMAL
+    msgbox gText_SeppireCove_KyogreGroudonDormant MSG_NORMAL
     end
 
 .global SignScript_SeppireCove_Sign

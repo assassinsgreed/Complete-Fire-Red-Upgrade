@@ -144,7 +144,7 @@
 #define MAP_SIX_ISLAND_DOTTED_HOLE_SAPPHIRE_ROOM (120 | (1 << 8))
 #define MAP_SIX_ISLAND_PATTERN_BUSH              (121 | (1 << 8))
 #define MAP_SIX_ISLAND_ALTERING_CAVE             (122 | (1 << 8))
-#define MAP_RUBARR_DESERT_B1                     (123 | (1 << 8))
+#define MAP_RUBARR_DESERT_B1F                    (123 | (1 << 8))
 #define MAP_ROUTE18_CAVE                         (124 | (1 << 8))
 #define MAP_ROUTE13_CAVE_1F                      (125 | (1 << 8))
 #define MAP_ROUTE13_CAVE_B1F                     (126 | (1 << 8))

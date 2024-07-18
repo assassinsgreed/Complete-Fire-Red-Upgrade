@@ -261,3 +261,15 @@ Hmph. I see why my subordinates\nstruggled so much with you.
 
 #org @gText_RubarrDesert_TagBattleExplaination
 [BLACK]You will battle alongside [RIVAL],\nwho will bring his own Pok\emon.\pPlease move the 3 Pok\emon you would\nlike to bring to the first 3 slots\lof your party.
+
+#org @gText_RubarrDesertCaves_PeculiarStatue_Confirmation
+It's a peculiar statue!\nRemove it from the pedestal?
+
+#org @gText_RubarrDesertCaves_PeculiarStatue_ChoseYes
+Who wouldn't?
+
+#org @gText_RubarrDesertCaves_PeculiarStatue_ChoseNo
+Better not!
+
+#org @gText_RubarrDesertCaves_PeculiarStatue_SandMoved
+It sounds like something moved below!

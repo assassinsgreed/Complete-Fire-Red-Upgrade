@@ -66,6 +66,7 @@ extern const u8 GroudonTiles[];
 extern const u8 PalmTreeTiles[];
 extern const u8 ZeraoraTiles[];
 extern const u8 MeltanTiles[];
+extern const u8 StatueTiles[];
 
 #define EVENT_OBJ_PAL_TAG_NONE 0x1102
 #define gEventObjectBaseOam_16x16 ((const struct OamData*) 0x83A36F8)
@@ -824,6 +825,11 @@ static const struct SpriteFrameImage Table_Meltan[] =
     overworld_frame(MeltanTiles, 2, 4, 6),
     overworld_frame(MeltanTiles, 2, 4, 7),
     overworld_frame(MeltanTiles, 2, 4, 8),
+};
+
+static const struct SpriteFrameImage Table_Statue[] =
+{
+    overworld_frame(StatueTiles, 2, 4, 0),
 };
 
 // #region MC
@@ -2006,5 +2012,25 @@ const struct EventObjectGraphicsInfo GraphicsInfo_Meltan =
     .subspriteTables = gEventObjectSpriteOamTables_16x32,
     .anims = gEventObjectImageAnimTable_Standard,
     .images = Table_Meltan,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+const struct EventObjectGraphicsInfo GraphicsInfo_Statue =
+{
+    .tileTag = 0xFFFF,
+    .paletteTag1 = 0x1233,
+    .paletteTag2 = EVENT_OBJ_PAL_TAG_NONE,
+    .size = (16 * 32) / 2,
+    .width = 16,
+    .height = 32,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = TRUE,
+    .disableReflectionPaletteLoad = FALSE,
+    .tracks = TRACKS_NONE,
+    .gender = MALE,
+    .oam = gEventObjectBaseOam_16x32,
+    .subspriteTables = gEventObjectSpriteOamTables_16x32,
+    .anims = gEventObjectImageAnimTable_Standard,
+    .images = Table_Statue,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
