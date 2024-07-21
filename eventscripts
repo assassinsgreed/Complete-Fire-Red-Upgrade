@@ -1326,11 +1326,11 @@ sign 3 6 3 SignScript_LaplazTown_PsychicsHouse
 sign 3 6 4 SignScript_LaplazTown_GymSign
 sign 3 6 6 SignScript_LaplazTown_LaplazTownSign
 ## Facilities
-map 10 0 MapScript_LaplazFacilities_PokemonCenter
-npc 10 0 0 EventScript_PokemonCenter_Main
-npc 10 0 1 EventScript_LaplazFacilities_GalarBirdsGirl
-npc 10 0 2 EventScript_LaplazFacilities_GalarBirdsGirlsSister
-npc 10 0 3 EventScript_LaplazFacilities_Gentleman
+map 10 20 MapScript_LaplazFacilities_PokemonCenter
+npc 10 20 0 EventScript_PokemonCenter_Main
+npc 10 20 1 EventScript_LaplazFacilities_GalarBirdsGirl
+npc 10 20 2 EventScript_LaplazFacilities_GalarBirdsGirlsSister
+npc 10 20 3 EventScript_LaplazFacilities_Gentleman
 npc 10 1 0 EventScript_LaplazFacilities_XItemsShop
 npc 10 1 1 EventScript_Pokemart
 npc 10 1 2 EventScript_LaplazFacilities_XItemsTip
