@@ -67,6 +67,8 @@ extern const u8 PalmTreeTiles[];
 extern const u8 ZeraoraTiles[];
 extern const u8 MeltanTiles[];
 extern const u8 StatueTiles[];
+extern const u8 JirachiTiles[];
+extern const u8 JirachiDormantTiles[];
 
 #define EVENT_OBJ_PAL_TAG_NONE 0x1102
 #define gEventObjectBaseOam_16x16 ((const struct OamData*) 0x83A36F8)
@@ -830,6 +832,24 @@ static const struct SpriteFrameImage Table_Meltan[] =
 static const struct SpriteFrameImage Table_Statue[] =
 {
     overworld_frame(StatueTiles, 2, 4, 0),
+};
+
+static const struct SpriteFrameImage Table_Jirachi[] =
+{
+    overworld_frame(JirachiTiles, 4, 4, 0),
+    overworld_frame(JirachiTiles, 4, 4, 1),
+    overworld_frame(JirachiTiles, 4, 4, 2),
+    overworld_frame(JirachiTiles, 4, 4, 3),
+    overworld_frame(JirachiTiles, 4, 4, 4),
+    overworld_frame(JirachiTiles, 4, 4, 5),
+    overworld_frame(JirachiTiles, 4, 4, 6),
+    overworld_frame(JirachiTiles, 4, 4, 7),
+    overworld_frame(JirachiTiles, 4, 4, 8),
+};
+
+static const struct SpriteFrameImage Table_JirachiDormant[] =
+{
+    overworld_frame(JirachiDormantTiles, 4, 4, 0),
 };
 
 // #region MC
@@ -2032,5 +2052,45 @@ const struct EventObjectGraphicsInfo GraphicsInfo_Statue =
     .subspriteTables = gEventObjectSpriteOamTables_16x32,
     .anims = gEventObjectImageAnimTable_Standard,
     .images = Table_Statue,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+const struct EventObjectGraphicsInfo GraphicsInfo_Jirachi =
+{
+    .tileTag = 0xFFFF,
+    .paletteTag1 = 0x1234,
+    .paletteTag2 = EVENT_OBJ_PAL_TAG_NONE,
+    .size = (32 * 32) / 2,
+    .width = 32,
+    .height = 32,
+    .shadowSize = SHADOW_SIZE_S,
+    .inanimate = FALSE,
+    .disableReflectionPaletteLoad = FALSE,
+    .tracks = TRACKS_NONE,
+    .gender = MALE,
+    .oam = gEventObjectBaseOam_32x32,
+    .subspriteTables = gEventObjectSpriteOamTables_32x32,
+    .anims = gEventObjectImageAnimTable_Standard,
+    .images = Table_Jirachi,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+const struct EventObjectGraphicsInfo GraphicsInfo_JirachiDormant =
+{
+    .tileTag = 0xFFFF,
+    .paletteTag1 = 0x1234, // Same as Jirachi
+    .paletteTag2 = EVENT_OBJ_PAL_TAG_NONE,
+    .size = (32 * 32) / 2,
+    .width = 32,
+    .height = 32,
+    .shadowSize = SHADOW_SIZE_S,
+    .inanimate = FALSE,
+    .disableReflectionPaletteLoad = FALSE,
+    .tracks = TRACKS_NONE,
+    .gender = MALE,
+    .oam = gEventObjectBaseOam_32x32,
+    .subspriteTables = gEventObjectSpriteOamTables_32x32,
+    .anims = gEventObjectImageAnimTable_Standard,
+    .images = Table_JirachiDormant,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
