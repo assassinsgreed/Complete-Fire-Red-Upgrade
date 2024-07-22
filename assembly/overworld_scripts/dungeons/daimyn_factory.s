@@ -105,7 +105,41 @@ EventScript_DaimynFactoryOverworld_FindTM93_Wild_Charge:
 
 .global EventScript_DaimynFactoryOverworld_ReminiscingOldMan
 EventScript_DaimynFactoryOverworld_ReminiscingOldMan:
+    checkflag 0x26E @ Steel beam tutor unlocked
+    if SET _goto TeachSteelBeamQuestion
     npcchat gText_DaimynFactoryOverworld_ReminiscingOldMan
+    setvar LASTRESULT SPECIES_MELTAN
+    callasm CheckIfCaught
+    compare LASTRESULT 0x1
+    if equal _goto OldManTalksAboutSteelBeam
+    applymovement LASTTALKED m_LookUp
+    end
+
+OldManTalksAboutSteelBeam:
+    msgbox gText_DaimynFactoryOverworld_OldManAsksToSeePokedex MSG_NORMAL
+    sound 0x15 @ Exclaim
+    applymovement LASTTALKED m_Surprise
+    msgbox gText_DaimynFactoryOverworld_OldManSuggestsTeachingPokemon MSG_NORMAL
+    setflag 0x26E @ Steel beam tutor unlocked
+    goto TeachSteelBeamQuestion
+
+TeachSteelBeamQuestion:
+    faceplayer
+    msgbox gText_DaimynFactoryOverworld_OldManAsksToTeachSteelBeam MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto ChoseNotToLearnSteelBeam
+    msgbox gText_DaimynFactoryOverworld_OldManPlayerWantsTutoring MSG_NORMAL
+    setvar 0x8005 72 @ Steel Beam
+    special 0x18D
+    waitstate
+    compare LASTRESULT YES
+    if false _goto ChoseNotToLearnSteelBeam @ Pokemon couldn't learn, or player chose not to
+    msgbox gText_DaimynFactoryOverworld_OldManFarewell MSG_NORMAL
+    applymovement LASTTALKED m_LookUp
+    end
+
+ChoseNotToLearnSteelBeam:
+    msgbox gText_DaimynFactoryOverworld_OldManPlayerDoesNotWantTutoring MSG_NORMAL
     applymovement LASTTALKED m_LookUp
     end
 
