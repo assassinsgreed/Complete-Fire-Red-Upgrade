@@ -1,6 +1,24 @@
 // Exterior
 #org @gText_DaimynFactoryOverworld_ReminiscingOldMan
-Oooh[.] It's so sad to see that the\nold factory has been shut down.\pI used to work here.\pThat was many years ago, before the\nregion entered into a partnership\lwith Galar to receive their energy.
+Oooh[.] It's so sad to see that the\nold factory has been shut down.\pI used to work here.\pThat was many years ago, before the\nregion entered into a partnership\lwith Galar to receive their energy.\pI wonder if that curious little\nPok\emon is still there[.]
+
+#org @gText_DaimynFactoryOverworld_OldManAsksToSeePokedex
+Hmm? You say you've encountered and\ncaught an interesting Pok\emon?\pDo you mind if I see your Pok\edex\nfor a moment?
+
+#org @gText_DaimynFactoryOverworld_OldManSuggestsTeachingPokemon
+Why, that's it! Meltan!\pIt does my old heart good to see\nthe little fellow is doing well.\pSeeing it again invigorates this old\nman's spirit! Ohohoho!
+
+#org @gText_DaimynFactoryOverworld_OldManAsksToTeachSteelBeam
+It has been quite some time, but I'm\nsure I could teach your Steel type\lPok\emon a few tricks from my past.\pWould you like me to teach a Steel\nPok\emon the move Steel Beam?
+
+#org @gText_DaimynFactoryOverworld_OldManPlayerWantsTutoring
+Wonderful! Which Pok\emon should I\nteach?
+
+#org @gText_DaimynFactoryOverworld_OldManPlayerDoesNotWantTutoring
+Hmm? No? That is a shame.
+
+#org @gText_DaimynFactoryOverworld_OldManFarewell
+It does my heart good to pass on my\nexperience to the next generation.\pOhohoho!\pTreat your Pok\emon well, and they\nwill treat you well in turn.
 
 #org @gText_DaimynFactoryOverworld_StrongTrainersWarning
 Be careful, there are strong trainers\nahead.\pIf you haven't obtained Daimyn City's\ngym badge yet, you may have a\ltough time.\pBut[.] Maybe that's what you're looking\nfor? It could a good training\lopportunity too.
