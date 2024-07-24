@@ -5,35 +5,19 @@
 .include "../xse_defines.s"
 .include "../asm_defines.s"
 
-.global MapScript_Route13Cave
-MapScript_Route13Cave:
-    mapscript MAP_SCRIPT_ON_RESUME Route13Cave_SetupBreakableIce
-    mapscript MAP_SCRIPT_ON_LOAD Route13Cave_SetupBreakableFloorsInIceRoom
-    mapscript MAP_SCRIPT_ON_FRAME_TABLE LevelScripts_Route13Cave
+.global MapScript_Route13
+MapScript_Route13:
+    mapscript MAP_SCRIPT_ON_LOAD Route13_HandleGruntVisibility
     .byte MAP_SCRIPT_TERMIN
 
-Route13Cave_SetupBreakableIce:
-    cmda6 0x4 @ Taken from XSE load of Vanilla FR scripts
+Route13_HandleGruntVisibility:
+    checkflag 0x826 @ Has Tsarvosa City gym badge
+    if SET _goto MoveGruntsIntoPosition
     end
 
-Route13Cave_SetupBreakableFloorsInIceRoom:
-    special 0x135 @ Setup cracked ice floors
-    end
-
-LevelScripts_Route13Cave:
-    levelscript 0x4001 0x1 LevelScript_HandleBreakableIce
-	.hword LEVEL_SCRIPT_TERMIN
-
-LevelScript_HandleBreakableIce:
-    lockall
-    pause DELAY_HALFSECOND
-    applymovement PLAYER m_HideSprite
-    waitmovement ALLEVENTS
-    sound 0x25 @ Fall
-    pause DELAY_1SECOND
-    warphole 2 61
-    waitstate
-    releaseall
+MoveGruntsIntoPosition:
+    movesprite2 26 0x47 0x15
+    movesprite2 27 0x48 0x15
     end
 
 .global EventScript_Route13_CharizarditeY
@@ -105,6 +89,20 @@ EventScript_Route13_CollectorBenji:
     msgbox gText_Route13_CollectorBenji_Chat MSG_NORMAL
     end
 
+.global EventScript_Route13_ExPlutoGrunt_Left
+EventScript_Route13_ExPlutoGrunt_Left:
+    msgbox gText_Route13_GruntLeft MSG_NORMAL
+    faceplayer
+    npcchatwithmovement gText_Route13_GruntCommon m_LookRight
+    end
+
+.global EventScript_Route13_ExPlutoGrunt_Right
+EventScript_Route13_ExPlutoGrunt_Right:
+    msgbox gText_Route13_GruntRight MSG_NORMAL
+    faceplayer
+    npcchatwithmovement gText_Route13_GruntCommon m_LookLeft
+    end
+
 @@@@@@@@@@ Route 13 Rest House @@@@@@@@@@
 .global MapScript_Route13_RestHouse
 MapScript_Route13_RestHouse:
@@ -170,6 +168,36 @@ EventScript_Route13_RestHouse_RestHouseRep:
     end
 
 @@@@@@@@@@ Route 13 Cave @@@@@@@@@@
+.global MapScript_Route13Cave
+MapScript_Route13Cave:
+    mapscript MAP_SCRIPT_ON_RESUME Route13Cave_SetupBreakableIce
+    mapscript MAP_SCRIPT_ON_LOAD Route13Cave_SetupBreakableFloorsInIceRoom
+    mapscript MAP_SCRIPT_ON_FRAME_TABLE LevelScripts_Route13Cave
+    .byte MAP_SCRIPT_TERMIN
+
+Route13Cave_SetupBreakableIce:
+    cmda6 0x4 @ Taken from XSE load of Vanilla FR scripts
+    end
+
+Route13Cave_SetupBreakableFloorsInIceRoom:
+    special 0x135 @ Setup cracked ice floors
+    end
+
+LevelScripts_Route13Cave:
+    levelscript 0x4001 0x1 LevelScript_HandleBreakableIce
+	.hword LEVEL_SCRIPT_TERMIN
+
+LevelScript_HandleBreakableIce:
+    lockall
+    pause DELAY_HALFSECOND
+    applymovement PLAYER m_HideSprite
+    waitmovement ALLEVENTS
+    sound 0x25 @ Fall
+    pause DELAY_1SECOND
+    warphole 2 61
+    waitstate
+    releaseall
+    end
 
 .global EventScript_Route13Cave_TM65ShadowClaw
 EventScript_Route13Cave_TM65ShadowClaw:

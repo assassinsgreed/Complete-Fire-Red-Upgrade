@@ -565,7 +565,7 @@ TileScript_Route11South_SouthByHesson:
 TileScript_Route11South_HessonPass:
     lock
     compare PlutoEncounterVar 0x5
-    if equal _goto End
+    if equal _goto HandleEnaEvent
     compare PlutoEncounterVar 0x4
     if equal _goto NeedToBattleRivalFirst
     special 0xE1 @ Check if the player has a follower
@@ -578,6 +578,48 @@ TileScript_Route11South_HessonPass:
     if notequal _call PlayerWalksAwayFromHessonLeft
     release
     end
+
+HandleEnaEvent:
+    checkflag 0x826 @ Has Tsarvosa City gym badge
+    if NOT_SET _goto End
+    applymovement PLAYER m_LookUp
+    waitmovement PLAYER
+    sound 0x15 @ Exclaim
+    applymovement PLAYER m_Surprise
+    waitmovement PLAYER
+    pause DELAY_HALFSECOND
+    applymovement PLAYER m_WalkDown
+    waitmovement PLAYER
+    applymovement PLAYER m_LookUp
+    playse 0x9 @ Exit room
+    pause DELAY_HALFSECOND
+    clearflag 0x56 @ Show Ena
+    showsprite 29
+    applymovement 29 m_WalkDown
+    waitmovement 29
+    msgbox gText_Route11South_BumpingIntoEna MSG_NORMAL
+    msgbox gText_Route11South_EnaAsksPlayerIfRecognizes MSG_YESNO
+    compare LASTRESULT NO
+    if notequal _call RecognizesEna
+    if equal _call DoesNotRecognizeEna
+    msgbox gText_Route11South_EnaExplainsWhatHappenedSinceBattle MSG_NORMAL
+    applymovement Ena m_LookLeft
+    playbgm 0x159 @ N's Farewell
+    applymovement 29 m_LookLeft
+    msgbox gText_Route11South_EnaAsksForHelp MSG_NORMAL
+    applymovement 29 m_LookDown
+    fadedefaultbgm
+    movesprite2 29 0x2A 0x36
+    setflag 0x26F @ Spoke to Ena
+    goto EventScript_Route11South_EnaPostGym7
+
+RecognizesEna:
+    msgbox gText_Route11South_EnaRecognized MSG_NORMAL
+    return
+
+DoesNotRecognizeEna:
+    msgbox gText_Route11South_EnaNotRecognized MSG_NORMAL
+    return
 
 PlayerWalksAwayFromHessonLeft:
     call PlayerWalkLeft_Return
@@ -963,6 +1005,11 @@ m_AlistairLeaves: .byte walk_left, walk_left, walk_left, walk_left, walk_left, w
 m_PlayerLeavingAfterPlutoEvents: .byte walk_up, walk_right, walk_right, walk_right, end_m
 m_PlayerAsCameraMovesToAlistairAndRival: .byte set_invisible, run_left, run_left, run_left, run_left, run_left, run_left, run_left, run_left, run_left, run_left, run_left, run_left, end_m
 m_PlayerAsCameraMovesBack: .byte run_right, run_right, run_right, run_right, run_right, run_right, run_right, run_right, run_right, run_right, run_right, run_right, set_visible, end_m
+
+.global EventScript_Route11South_EnaPostGym7
+EventScript_Route11South_EnaPostGym7:
+    npcchatwithmovement gText_Route11South_EnaChat m_LookDown
+    end
 
 @ North
 .global SignScript_LaplazTown_Entrance

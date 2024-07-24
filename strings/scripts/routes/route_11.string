@@ -537,3 +537,24 @@ My rod snapped!
 
 #org @gText_Route11North_FishermanJonah_Chat
 Did you know? These ponds were dug\nout by the citizens of Laplaz Town.\pThere are no Pok\emon to be found in\nthem, as a result.
+
+#org @gText_Route11South_BumpingIntoEna
+[RED]Oh, [PLAYER]! Just who I was looking\nfor.
+
+#org @gText_Route11South_EnaAsksPlayerIfRecognizes
+[RED]Whew, you're hard to catch.\pKind of unbelievable, given how often\nwe brushed paths before[.]\pYou[.] You do recognize me, right?
+
+#org @gText_Route11South_EnaRecognized
+[RED]Hehe! Yep, it's me, Ena!\pBet you didn't recognize me at first,\nwith my new look.
+
+#org @gText_Route11South_EnaNotRecognized
+[RED]Huh? Really? Oh, right!\nYou only ever saw me in uniform.\pIt's me, Ena!
+
+#org @gText_Route11South_EnaExplainsWhatHappenedSinceBattle
+[RED]Look[.] There's something you should\nknow[.]\pClancy and I have been working\nreally hard to make an honest\llife for ourselves.\pBut[.] Trouble has a habit of finding\nus, it seems.\pSome old colleagues reached out and\ntold us about what you did at HQ.\pThey said that some guy showed up\nafter everything went down.\pHe kept going on about making their\ndreams come true, if they'd help\lhim with something he was doing.\pThat got our colleague's attention.\pThey followed this guy to Mount\nCarnelidge, and asked us to, too.
+
+#org @gText_Route11South_EnaAsksForHelp
+[RED]But[.] I don't want to do that.\nWe don't want to do that.\pLook, I won't beat around the bush.\pYou made life really hard for Clancy\nand I for a long, long time.\pBut[.] You're also the only one who\nwas willing to give us a real\lchance to fix our mistakes.\pSomething tells me the whole\nsituation stinks. It can't be real.\pAnd, something tells me you won't let\nthis guy get away with whatever\lhe's really scheming[.]\pGranting someone's dreams? And\nasking almost nothing in return?\pThat's the kind of nonsense Team\nPluto would've come up with.\pSo, please[.]
+
+#org @gText_Route11South_EnaChat
+[RED]Could you check into whatever is\nhappening at Mount Carnelidge?\pYou're the only person I can ask[.]\pAnd[.] Thank you in advance. I'll be\ngoing back to Uteya Village soon.

@@ -448,6 +448,7 @@ npc 1 5 14 EventScript_TormaCave_TM79_FrostBreath
 sign 1 5 0 SignScript_TormaCave_TrainerTips
 
 # Route 13
+map 3 31 MapScript_Route13
 npc 3 31 0 EventScript_Common_RockSmash
 npc 3 31 1 EventScript_Common_RockSmash
 npc 3 31 2 EventScript_Common_RockSmash
@@ -478,6 +479,9 @@ npc 3 31 22 EventScript_Route13_BeautyCandice
 npc 3 31 23 EventScript_Route13_GamblerOwain
 ## Requires Surf
 npc 3 31 24 EventScript_Route13_CollectorBenji
+## Story grunts
+npc 3 31 25 EventScript_Route13_ExPlutoGrunt_Left
+npc 3 31 26 EventScript_Route13_ExPlutoGrunt_Right
 ## Route 13 Rest House
 map 17 1 MapScript_Route13_RestHouse
 npc 17 1 0 EventScript_Route13_RestHouse_PCGuy
@@ -1206,6 +1210,7 @@ npc 3 29 24 EventScript_Route11South_Rival
 npc 3 29 25 EventScript_Route11South_Alistair
 npc 3 29 26 EventScript_Route11South_TeamPlutoClancy
 npc 3 29 27 EventScript_Route11South_TeamPlutoEna
+npc 3 29 28 EventScript_Route11South_EnaPostGym7
 sign 3 29 0 SignScript_Route11South_HessonPass
 sign 3 29 1 SignScript_Route11South_TrainerTips_WildDoubleBattles
 sign 3 29 2 SignScript_Route11South_MegaStoneRefiner

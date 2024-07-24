@@ -102,3 +102,12 @@ Wow, there are so many names in this\nguest book!\lI had no idea so many people 
 
 #org @gText_Route13_RestHouse_RestHouseRep
 Hello, trainer! Mount Carnelidge is\nquite dangerous.\pWe've set up this Rest House to give\naspiring mountain climbers the\lopportunity to rest and refresh\lbefore tackling the mountain.\pNow that you've visited us, you'll\nbe able to return here by having\lyour Pok\emon use Fly. Provided you\lhave the necessary badge and HM,\lof course!\pPlease feel free to use any of\nthe amenities you find at the rest\lhouse!
+
+#org @gText_Route13_GruntLeft
+I could've sworn this was the\nmeeting spot[.]\pYou don't think they left without us,\ndo you?
+
+#org @gText_Route13_GruntRight
+Aw man, you don't think they ditched\nus, do you?\pI was looking forward to finally\ngetting what I deserve.
+
+#org @gText_Route13_GruntCommon
+Hey, beat it!\nWe're busy talking here.
