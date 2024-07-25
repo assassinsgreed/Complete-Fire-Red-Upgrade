@@ -89,7 +89,7 @@
 #define FLAG_HIDE_SEPPIRE_COVE_UPPER_FLOOR_E_BOULDER       0x053
 #define FLAG_HIDE_ZERAORA_WHEN_CALMED                      0x054
 #define FLAG_HIDE_DAIMYN_FACTORY_MELTAN                    0x055
-#define FLAG_HIDE_ON_BY_DEFAULT?                           0x056
+#define FLAG_HIDE_ENA_ON_ROUTE_11_SOUTH_POST_BADGE7        0x056
 #define FLAG_HIDE_GROUDON_WHEN_CAUGHT                      0x057
 #define FLAG_HIDE_RUBARR_DESERT_BF1_STATUE_LEFT            0x058
 #define FLAG_HIDE_RUBARR_DESERT_BF1_STATUE_LEFT_UPPER      0x059
@@ -641,7 +641,7 @@
 #define FLAG_GOT_LUCKY_EGG                               0x26C
 #define FLAG_RUSTED_DATA_EXPLAINED                       0x26D
 #define FLAG_STEEL_BEAM_TUTOR_UNLOCKED                   0x26E
-#define FLAG_GOT_20_COINS_FROM_GAMBLER                   0x26F
+#define FLAG_SPOKE_TO_ENA_AT_HESSON_PASS                 0x26F
 #define FLAG_GOT_20_COINS_FROM_GAMBLER_2                 0x270
 #define FLAG_GOT_BICYCLE                                 0x271
 #define FLAG_GOT_DOME_FOSSIL                             0x272
