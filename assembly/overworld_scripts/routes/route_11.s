@@ -25,6 +25,8 @@ MapScript_Route11South:
 MapEntryScript_SetPartnerPositions:
     compare PlutoEncounterVar 0x1 @ Exit if story events haven't kicked off
     if lessthan _goto End
+    checkflag 0x26F @ Spoke to Ena
+    if SET _call SetEnaLocationPostBadge7
     movesprite2 Rival 0x1C 0x2E @ Update position of Rival permanently
     movesprite2 Alistair 0x1D 0x2E @ Update position of Alistair permanently
     compare PlutoEncounterVar 0x4 @ Exit if player has beaten Team Pluto (i.e. no more partnering)
@@ -48,6 +50,11 @@ MapResumeScript_SetupPartnerBattles:
     if equal _call SetRivalBacksprite
     if greaterthan _call SetAlistairBacksprite    
     end
+
+SetEnaLocationPostBadge7:
+    movesprite 29 0x2A 0x36
+    movesprite2 29 0x2A 0x36
+    return
 
 SetRivalBacksprite:
     setvar 0x5012 0x6
@@ -609,7 +616,7 @@ HandleEnaEvent:
     msgbox gText_Route11South_EnaAsksForHelp MSG_NORMAL
     applymovement 29 m_LookDown
     fadedefaultbgm
-    movesprite2 29 0x2A 0x36
+    call SetEnaLocationPostBadge7
     setflag 0x26F @ Spoke to Ena
     goto EventScript_Route11South_EnaPostGym7
 
