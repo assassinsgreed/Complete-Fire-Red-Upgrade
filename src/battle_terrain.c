@@ -317,6 +317,8 @@ static u8 TryLoadAlternateAreaTerrain(u8 terrain)
 		case BATTLE_TERRAIN_SAND: // Hacky fix for Route 12 West & Calicin Bay which are technically covered in "sand" due to the footprints metabehavior
 			if (IsCurrentAreaWinter())
 				terrain = BATTLE_TERRAIN_SNOWY;
+			else if (IsCurrentAreaHotCave())
+				terrain = BATTLE_TERRAIN_SCALDING_SPA;
 			break;
 		case BATTLE_TERRAIN_CAVE:
 			if (MAP_IS(TORMA_CAVE_B1F) || MAP_IS(ROUTE10_CAVE) || MAP_IS(ROUTE13_CAVE_1F))
@@ -339,6 +341,8 @@ static u8 TryLoadAlternateAreaTerrain(u8 terrain)
 				terrain = BATTLE_TERRAIN_FOREST_PERADON;
 			else if (mapSec == MAPSEC_MIMMETT_JUNGLE)
 				terrain = BATTLE_TERRAIN_JUNGLE;
+			else if (mapSec == MAPSEC_CARNELIDGE_VOLCANO)
+				terrain = BATTLE_TERRAIN_MOUNTAIN;
 			break;
 		case BATTLE_TERRAIN_POND:
 			if (MAP_IS(ROUTE17_CAVE_1F) || mapSec == MAPSEC_FORGOTTEN_MANSE || mapSec == MAPSEC_SEPPIRE_COVE)

@@ -2236,3 +2236,5 @@ sign 1 95 8 SignScript_DaimynFacatory_Breaker
 tile 1 95 0 TileScript_EncounterMeltan_Left
 tile 1 95 1 TileScript_EncounterMeltan_Middle
 tile 1 95 2 TileScript_EncounterMeltan_Right
+## Carnelidge Volcano
+map 1 42 MapScript_CarnelidgeVolcano
