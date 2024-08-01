@@ -638,14 +638,14 @@ LevelScripts_LaplazGym_SetPlayerFacing:
 @ Assigned as a walking script, to trigger on each step
 .global LaplazGym_RotationSteps
 LaplazGym_RotationSteps:
-    @ Tiles do not rotate if the player's step results in them stopping on a movement tile    
+    @ Tiles do not rotate if the player's step results in them stopping on a movement tile
+    release
     compare 0x4000 0x4
     if equal _goto RotateTiles
     if notequal _goto TimerTickUpSound
 
 TimerTickUpSound:
     addvar 0x4000 0x1
-    release
     end
 
 RotateTiles:
@@ -692,7 +692,6 @@ RotateTiles:
     call HandleRotationRightUpDown @ Right in area 4
     setvar 0x4000 0x0
     special 0x8E @ Refresh map changes
-    release
     end
 
 HandleRotationCW:

@@ -20,11 +20,6 @@ MoveGruntsIntoPosition:
     movesprite2 27 0x48 0x15
     end
 
-.global EventScript_Route13_CharizarditeY
-EventScript_Route13_CharizarditeY:
-    finditem ITEM_CHARIZARDITE_Y 0x1
-    end
-
 .global EventScript_Route13_FindTM39RockTomb
 EventScript_Route13_FindTM39RockTomb:
     setvar CHOSEN_ITEM ITEM_TM39

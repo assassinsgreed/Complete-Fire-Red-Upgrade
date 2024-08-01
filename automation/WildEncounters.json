@@ -528,6 +528,161 @@
         },
         {
             "mapgroup": 1,
+            "mapnum": 42,
+            "grass": {
+                "rate": 21,
+                "pokemon": [
+                    { "low": 49, "high": 52, "species": "SPECIES_SLUGMA" },
+                    { "low": 50, "high": 53, "species": "SPECIES_BOLDORE" },
+                    { "low": 49, "high": 52, "species": "SPECIES_SALANDIT" },
+                    { "low": 49, "high": 52, "species": "SPECIES_MINIOR_SHIELD" },
+                    { "low": 49, "high": 52, "species": "SPECIES_FLETCHINDER" },
+                    { "low": 50, "high": 53, "species": "SPECIES_TORKOAL" },
+                    { "low": 50, "high": 53, "species": "SPECIES_MINIOR_SHIELD" },
+                    { "low": 49, "high": 52, "species": "SPECIES_SKARMORY" },
+                    { "low": 50, "high": 53, "species": "SPECIES_SLUGMA" },
+                    { "low": 49, "high": 52, "species": "SPECIES_BOLDORE" },
+                    { "low": 49, "high": 52, "species": "SPECIES_TALONFLAME" }, 
+                    { "low": 50, "high": 53, "species": "SPECIES_SLUGMA" }
+                ]
+            },
+            "rocks": {
+                "rate": 50,
+                "pokemon": [
+                    { "low": 48, "high": 53, "species": "SPECIES_BOLDORE" },
+                    { "low": 48, "high": 53, "species": "SPECIES_MINIOR_SHIELD" },
+                    { "low": 48, "high": 53, "species": "SPECIES_MINIOR_SHIELD" },
+                    { "low": 48, "high": 53, "species": "SPECIES_GIGALITH" },
+                    { "low": 48, "high": 53, "species": "SPECIES_GIGALITH" }
+                ]
+            }
+        },
+        {
+            "mapgroup": 1,
+            "mapnum": 43,
+            "grass": {
+                "rate": 7,
+                "pokemon": [
+                    { "low": 49, "high": 52, "species": "SPECIES_TORKOAL" },
+                    { "low": 50, "high": 53, "species": "SPECIES_CARKOL" },
+                    { "low": 49, "high": 52, "species": "SPECIES_TORKOAL" },
+                    { "low": 49, "high": 52, "species": "SPECIES_CARKOL" },
+                    { "low": 49, "high": 52, "species": "SPECIES_COALOSSAL" },
+                    { "low": 50, "high": 53, "species": "SPECIES_MAGCARGO" },
+                    { "low": 50, "high": 53, "species": "SPECIES_TURTONATOR" },
+                    { "low": 49, "high": 52, "species": "SPECIES_TURTONATOR" },
+                    { "low": 50, "high": 53, "species": "SPECIES_GIGALITH" },
+                    { "low": 49, "high": 52, "species": "SPECIES_CENTISKORCH" },
+                    { "low": 50, "high": 53, "species": "SPECIES_VOLCARONA" }, 
+                    { "low": 50, "high": 53, "species": "SPECIES_VOLCARONA" }
+                ]
+            },
+            "rocks": {
+                "rate": 50,
+                "pokemon": [
+                    { "low": 48, "high": 53, "species": "SPECIES_CARKOL" },
+                    { "low": 48, "high": 53, "species": "SPECIES_CARBINK" },
+                    { "low": 48, "high": 53, "species": "SPECIES_CARBINK" },
+                    { "low": 48, "high": 53, "species": "SPECIES_COALOSSAL" },
+                    { "low": 48, "high": 53, "species": "SPECIES_COALOSSAL" }
+                ]
+            },
+            "surfing": {
+                "rate": 13,
+                "pokemon": [
+                    { "low": 49, "high": 52, "species": "SPECIES_SLUGMA" },
+                    { "low": 50, "high": 53, "species": "SPECIES_SLUGMA" },
+                    { "low": 50, "high": 52, "species": "SPECIES_MAGCARGO" },
+                    { "low": 50, "high": 53, "species": "SPECIES_MAGCARGO" },
+                    { "low": 50, "high": 55, "species": "SPECIES_MAGCARGO" }
+                ]
+            }
+        },
+        {
+            "mapgroup": 1,
+            "mapnum": 44,
+            "grass": {
+                "rate": 7,
+                "pokemon": [
+                    { "low": 49, "high": 52, "species": "SPECIES_TORKOAL" },
+                    { "low": 50, "high": 53, "species": "SPECIES_CARKOL" },
+                    { "low": 49, "high": 52, "species": "SPECIES_TORKOAL" },
+                    { "low": 49, "high": 52, "species": "SPECIES_CARKOL" },
+                    { "low": 49, "high": 52, "species": "SPECIES_COALOSSAL" },
+                    { "low": 50, "high": 53, "species": "SPECIES_MAGCARGO" },
+                    { "low": 50, "high": 53, "species": "SPECIES_TURTONATOR" },
+                    { "low": 49, "high": 52, "species": "SPECIES_TURTONATOR" },
+                    { "low": 50, "high": 53, "species": "SPECIES_GIGALITH" },
+                    { "low": 49, "high": 52, "species": "SPECIES_CENTISKORCH" },
+                    { "low": 50, "high": 53, "species": "SPECIES_VOLCARONA" }, 
+                    { "low": 50, "high": 53, "species": "SPECIES_VOLCARONA" }
+                ]
+            },
+            "rocks": {
+                "rate": 50,
+                "pokemon": [
+                    { "low": 48, "high": 53, "species": "SPECIES_CARKOL" },
+                    { "low": 48, "high": 53, "species": "SPECIES_CARBINK" },
+                    { "low": 48, "high": 53, "species": "SPECIES_CARBINK" },
+                    { "low": 48, "high": 53, "species": "SPECIES_COALOSSAL" },
+                    { "low": 48, "high": 53, "species": "SPECIES_COALOSSAL" }
+                ]
+            }
+        },
+        {
+            "mapgroup": 1,
+            "mapnum": 45,
+            "grass": {
+                "rate": 7,
+                "pokemon": [
+                    { "low": 49, "high": 52, "species": "SPECIES_TORKOAL" },
+                    { "low": 50, "high": 53, "species": "SPECIES_CARKOL" },
+                    { "low": 49, "high": 52, "species": "SPECIES_TORKOAL" },
+                    { "low": 49, "high": 52, "species": "SPECIES_CARKOL" },
+                    { "low": 49, "high": 52, "species": "SPECIES_COALOSSAL" },
+                    { "low": 50, "high": 53, "species": "SPECIES_MAGCARGO" },
+                    { "low": 50, "high": 53, "species": "SPECIES_TURTONATOR" },
+                    { "low": 49, "high": 52, "species": "SPECIES_TURTONATOR" },
+                    { "low": 50, "high": 53, "species": "SPECIES_GIGALITH" },
+                    { "low": 49, "high": 52, "species": "SPECIES_CENTISKORCH" },
+                    { "low": 50, "high": 53, "species": "SPECIES_VOLCARONA" }, 
+                    { "low": 50, "high": 53, "species": "SPECIES_VOLCARONA" }
+                ]
+            },
+            "surfing": {
+                "rate": 13,
+                "pokemon": [
+                    { "low": 49, "high": 52, "species": "SPECIES_SLUGMA" },
+                    { "low": 50, "high": 53, "species": "SPECIES_SLUGMA" },
+                    { "low": 50, "high": 52, "species": "SPECIES_MAGCARGO" },
+                    { "low": 50, "high": 53, "species": "SPECIES_MAGCARGO" },
+                    { "low": 50, "high": 55, "species": "SPECIES_MAGCARGO" }
+                ]
+            }
+        },
+        {
+            "mapgroup": 1,
+            "mapnum": 46,
+            "grass": {
+                "rate": 7,
+                "pokemon": [
+                    { "low": 49, "high": 52, "species": "SPECIES_TORKOAL" },
+                    { "low": 50, "high": 53, "species": "SPECIES_CARKOL" },
+                    { "low": 49, "high": 52, "species": "SPECIES_TORKOAL" },
+                    { "low": 49, "high": 52, "species": "SPECIES_CARKOL" },
+                    { "low": 49, "high": 52, "species": "SPECIES_COALOSSAL" },
+                    { "low": 50, "high": 53, "species": "SPECIES_MAGCARGO" },
+                    { "low": 50, "high": 53, "species": "SPECIES_TURTONATOR" },
+                    { "low": 49, "high": 52, "species": "SPECIES_TURTONATOR" },
+                    { "low": 50, "high": 53, "species": "SPECIES_GIGALITH" },
+                    { "low": 49, "high": 52, "species": "SPECIES_CENTISKORCH" },
+                    { "low": 50, "high": 53, "species": "SPECIES_VOLCARONA" }, 
+                    { "low": 50, "high": 53, "species": "SPECIES_VOLCARONA" }
+                ]
+            }
+        },
+        {
+            "mapgroup": 1,
             "mapnum": 59,
             "grass": {
                 "rate": 52,
@@ -807,6 +962,47 @@
                     { "low": 50, "high": 60, "species": "SPECIES_CORSOLA_G" },
                     { "low": 50, "high": 60, "species": "SPECIES_CURSOLA" },
                     { "low": 50, "high": 60, "species": "SPECIES_KINGDRA" }
+                ]
+            }
+        },
+        {
+            "mapgroup": 1,
+            "mapnum": 74,
+            "grass": {
+                "rate": 7,
+                "pokemon": [
+                    { "low": 49, "high": 52, "species": "SPECIES_TORKOAL" },
+                    { "low": 50, "high": 53, "species": "SPECIES_CARKOL" },
+                    { "low": 49, "high": 52, "species": "SPECIES_TORKOAL" },
+                    { "low": 49, "high": 52, "species": "SPECIES_CARKOL" },
+                    { "low": 49, "high": 52, "species": "SPECIES_COALOSSAL" },
+                    { "low": 50, "high": 53, "species": "SPECIES_MAGCARGO" },
+                    { "low": 50, "high": 53, "species": "SPECIES_TURTONATOR" },
+                    { "low": 49, "high": 52, "species": "SPECIES_TURTONATOR" },
+                    { "low": 50, "high": 53, "species": "SPECIES_GIGALITH" },
+                    { "low": 49, "high": 52, "species": "SPECIES_CENTISKORCH" },
+                    { "low": 50, "high": 53, "species": "SPECIES_VOLCARONA" }, 
+                    { "low": 50, "high": 53, "species": "SPECIES_VOLCARONA" }
+                ]
+            },
+            "rocks": {
+                "rate": 50,
+                "pokemon": [
+                    { "low": 48, "high": 53, "species": "SPECIES_CARKOL" },
+                    { "low": 48, "high": 53, "species": "SPECIES_CARBINK" },
+                    { "low": 48, "high": 53, "species": "SPECIES_CARBINK" },
+                    { "low": 48, "high": 53, "species": "SPECIES_COALOSSAL" },
+                    { "low": 48, "high": 53, "species": "SPECIES_COALOSSAL" }
+                ]
+            },
+            "surfing": {
+                "rate": 13,
+                "pokemon": [
+                    { "low": 49, "high": 52, "species": "SPECIES_SLUGMA" },
+                    { "low": 50, "high": 53, "species": "SPECIES_SLUGMA" },
+                    { "low": 50, "high": 52, "species": "SPECIES_MAGCARGO" },
+                    { "low": 50, "high": 53, "species": "SPECIES_MAGCARGO" },
+                    { "low": 50, "high": 55, "species": "SPECIES_MAGCARGO" }
                 ]
             }
         },
