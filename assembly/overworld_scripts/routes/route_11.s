@@ -219,6 +219,12 @@ EventScript_Route11South_TM51SteelWing:
     call ItemScript_Common_FindTM
     end
 
+.global EventScript_Route11South_TM32DoubleTeam
+EventScript_Route11South_TM32DoubleTeam:
+    setvar CHOSEN_ITEM ITEM_TM32
+    call ItemScript_Common_FindTM
+    end
+
 .global EventScript_Route11South_Mawilite
 EventScript_Route11South_Mawilite:
     finditem ITEM_MAWILITE 0x1

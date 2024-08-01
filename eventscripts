@@ -1211,6 +1211,7 @@ npc 3 29 25 EventScript_Route11South_Alistair
 npc 3 29 26 EventScript_Route11South_TeamPlutoClancy
 npc 3 29 27 EventScript_Route11South_TeamPlutoEna
 npc 3 29 28 EventScript_Route11South_EnaPostGym7
+npc 3 29 29 EventScript_Route11South_TM32DoubleTeam
 sign 3 29 0 SignScript_Route11South_HessonPass
 sign 3 29 1 SignScript_Route11South_TrainerTips_WildDoubleBattles
 sign 3 29 2 SignScript_Route11South_MegaStoneRefiner
