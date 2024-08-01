@@ -355,6 +355,15 @@ const struct TerrainTableStruct gTerrainTable[] =
 			.secretPowerAnim = MOVE_SLUDGEWAVE,
 			.naturePowerMove = MOVE_SLUDGEWAVE,
 			.burmyForm = SPECIES_BURMY,
+		},
+	
+	[BATTLE_TERRAIN_LAVA_POOL + 4] =
+		{
+			.camouflageType = TYPE_FIRE,
+			.secretPowerEffect = MOVE_EFFECT_BURN,
+			.secretPowerAnim = MOVE_ERUPTION,
+			.naturePowerMove = MOVE_LAVAPLUME,
+			.burmyForm = SPECIES_BURMY,
 		}
 
 #ifdef UNBOUND //The ones below are for Pokemon Unbound. Feel free to remove.

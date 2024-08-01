@@ -462,7 +462,7 @@ npc 3 31 9 EventScript_Common_Strength
 npc 3 31 10 ItemScript_Common_MetalCoat
 npc 3 31 11 ItemScript_Common_HyperPotion
 npc 3 31 12 ItemScript_Common_MaxElixir
-npc 3 31 13 EventScript_Route13_CharizarditeY
+npc 3 31 13 ItemScript_Common_MaxRevive
 npc 3 31 14 EventScript_Route13_FindTM39RockTomb
 npc 3 31 15 ItemScript_Common_Protein
 npc 3 31 16 ItemScript_Common_HeavyDutyBoots
@@ -2237,4 +2237,74 @@ tile 1 95 0 TileScript_EncounterMeltan_Left
 tile 1 95 1 TileScript_EncounterMeltan_Middle
 tile 1 95 2 TileScript_EncounterMeltan_Right
 ## Carnelidge Volcano
+### Exterior
 map 1 42 MapScript_CarnelidgeVolcano
+npc 1 42 0 EventScript_Common_RockSmash
+npc 1 42 1 EventScript_Common_RockSmash
+npc 1 42 2 EventScript_Common_RockSmash
+npc 1 42 3 EventScript_Common_Strength
+npc 1 42 4 EventScript_Common_RockSmash
+npc 1 42 5 EventScript_Common_RockSmash
+npc 1 42 6 EventScript_Common_RockSmash
+npc 1 42 7 EventScript_Common_RockSmash
+npc 1 42 8 EventScript_Common_RockSmash
+npc 1 42 9 EventScript_Common_RockSmash
+npc 1 42 10 EventScript_CarnelidgeVolcano_HikerBjorn
+npc 1 42 11 EventScript_CarnelidgeVolcano_BirdKeeperFalco
+npc 1 42 12 EventScript_CarnelidgeVolcano_CrushGirlEunice
+npc 1 42 13 EventScript_CarnelidgeVolcano_ScientistXander
+npc 1 42 14 EventScript_CarnelidgeVolcano_CharizarditeY
+npc 1 42 15 EventScript_CarnelidgeVolcano_TM50_Overheat
+npc 1 42 16 ItemScript_Common_MaxRepel
+npc 1 42 17 ItemScript_Common_EscapeRope
+sign 1 42 0 SignScript_CarnelidgeVolcano_EntrySign
+### Interior, BF1
+map 1 74 MapScript_CarnelidgeVolcano
+npc 1 74 0 EventScript_Common_RockSmash
+npc 1 74 1 EventScript_Common_RockSmash
+npc 1 74 2 EventScript_Common_RockSmash
+npc 1 74 3 EventScript_Common_RockSmash
+npc 1 74 4 EventScript_Common_RockSmash
+npc 1 74 5 EventScript_Common_Strength
+npc 1 74 6 EventScript_CarnelidgeVolcano_DragonTamerFlynn
+npc 1 74 7 EventScript_CarnelidgeVolcano_TM38_FireBlast
+npc 1 74 8 ItemScript_Common_FullRestore
+npc 1 74 9 ItemScript_Common_FireGem
+### Interior, F1
+map 1 43 MapScript_CarnelidgeVolcano
+npc 1 43 0 EventScript_Common_RockSmash
+npc 1 43 1 EventScript_Common_RockSmash
+npc 1 43 2 EventScript_Common_RockSmash
+npc 1 43 3 EventScript_Common_RockSmash
+npc 1 43 4 EventScript_Common_RockSmash
+npc 1 43 5 EventScript_Common_RockSmash
+npc 1 43 6 EventScript_Common_RockSmash
+npc 1 43 7 EventScript_CarnelidgeVolcano_ChannelerKelsey
+npc 1 43 8 EventScript_CarnelidgeVolcano_JugglerSeth
+npc 1 43 9 ItemScript_Common_FireStone
+npc 1 43 10 ItemScript_Common_Revive
+sign 1 43 0 SignScript_CarnelidgeVolcano_TrainerTips
+### Interior, F2
+map 1 45 MapScript_CarnelidgeVolcano
+npc 1 45 0 EventScript_CarnelidgeVolcano_SuperNerdNathan
+npc 1 45 1 EventScript_CarnelidgeVolcano_HikerHugh
+npc 1 45 2 EventScript_Common_Strength
+npc 1 45 3 EventScript_Common_Strength
+npc 1 45 4 ItemScript_Common_Charcoal
+### Interior, F3
+map 1 46 MapScript_CarnelidgeVolcano
+sign 1 46 0 SignScript_CarnelidgeVolcano_HotSpringSign
+tile 1 46 0 TileScript_ScaldingSpa_SpaRoom_Heal
+tile 1 46 1 TileScript_ScaldingSpa_SpaRoom_ResetHeal
+### Interior, Volcanion Room
+map 1 44 MapScript_CarnelidgeVolcano
+npc 1 44 0 EventScript_Common_RockSmash
+npc 1 44 1 EventScript_Common_RockSmash
+npc 1 44 2 EventScript_Common_RockSmash
+npc 1 44 3 EventScript_Common_RockSmash
+npc 1 44 4 EventScript_Common_RockSmash
+npc 1 44 5 EventScript_Common_Strength
+npc 1 44 6 ItemScript_Common_Timerball
+tile 1 44 0 TileScript_CarnelidgeVolcano_VolcanionRoom
+tile 1 44 1 TileScript_CarnelidgeVolcano_VolcanionRoom
+tile 1 44 2 TileScript_CarnelidgeVolcano_VolcanionRoom

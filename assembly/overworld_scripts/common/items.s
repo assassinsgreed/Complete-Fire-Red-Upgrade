@@ -242,6 +242,11 @@ ItemScript_Common_MiracleSeed:
     finditem ITEM_MIRACLE_SEED 0x1
     end
 
+.global ItemScript_Common_Charcoal
+ItemScript_Common_Charcoal:
+    finditem ITEM_CHARCOAL 0x1
+    end
+
 .global ItemScript_Common_MysticWater
 ItemScript_Common_MysticWater:
     finditem ITEM_MYSTIC_WATER 0x1
@@ -481,6 +486,11 @@ ItemScript_Common_Quickball:
     finditem ITEM_QUICK_BALL 0x1
     end
 
+.global ItemScript_Common_Timerball
+ItemScript_Common_Timerball:
+    finditem ITEM_TIMER_BALL 0x1
+    end
+
 .global ItemScript_Common_Duskball
 ItemScript_Common_Duskball:
     finditem ITEM_DUSK_BALL 0x1
@@ -599,6 +609,11 @@ ItemScript_Common_LuminousMoss:
 .global ItemScript_Common_GrassGem
 ItemScript_Common_GrassGem:
     finditem ITEM_GRASS_GEM 0x1
+    end
+
+.global ItemScript_Common_FireGem
+ItemScript_Common_FireGem:
+    finditem ITEM_FIRE_GEM 0x1
     end
 
 .global ItemScript_Common_RockGem

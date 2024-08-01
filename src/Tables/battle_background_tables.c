@@ -92,6 +92,9 @@ extern const u8 BG_Pond_Cave_TormaPal[];
 extern const u8 BG_JungleMap[];
 extern const u8 BG_JungleTiles[];
 extern const u8 BG_JunglePal[];
+extern const u8 BG_LavaPoolTiles[];
+extern const u8 BG_LavaPoolMap[];
+extern const u8 BG_LavaPoolPal[];
 
 // Evening (just palettes)
 extern const u8 BG_Grass_EveningPal[];
@@ -336,7 +339,15 @@ const struct BattleBackground gBattleTerrainTable[] =
 		.entryTileset = gBattleTerrainAnimTiles_LongGrass,
 		.entryTilemap = gBattleTerrainAnimTilemap_LongGrass,
 		.palette = BG_JunglePal,
-	}
+	},
+	[BATTLE_TERRAIN_LAVA_POOL] = 
+	{
+		.tileset = BG_LavaPoolTiles,
+		.tilemap = BG_LavaPoolMap,
+		.entryTileset = gBattleTerrainAnimTiles_Cave,
+		.entryTilemap = gBattleTerrainAnimTilemap_Cave,
+		.palette = BG_LavaPoolPal,
+	},
 };
 
 const struct BattleBackground gBattleTerrainTableEvening[] =
@@ -556,7 +567,15 @@ const struct BattleBackground gBattleTerrainTableEvening[] =
 		.entryTileset = gBattleTerrainAnimTiles_LongGrass,
 		.entryTilemap = gBattleTerrainAnimTilemap_LongGrass,
 		.palette = BG_Jungle_EveningPal,
-	}
+	},
+	[BATTLE_TERRAIN_LAVA_POOL] = 
+	{
+		.tileset = BG_LavaPoolTiles,
+		.tilemap = BG_LavaPoolMap,
+		.entryTileset = gBattleTerrainAnimTiles_Cave,
+		.entryTilemap = gBattleTerrainAnimTilemap_Cave,
+		.palette = BG_LavaPoolPal,
+	},
 };
 
 const struct BattleBackground gBattleTerrainTableNight[] =
@@ -776,6 +795,14 @@ const struct BattleBackground gBattleTerrainTableNight[] =
 		.entryTileset = gBattleTerrainAnimTiles_LongGrass,
 		.entryTilemap = gBattleTerrainAnimTilemap_LongGrass,
 		.palette = BG_Jungle_NightPal,
-	}
+	},
+	[BATTLE_TERRAIN_LAVA_POOL] = 
+	{
+		.tileset = BG_LavaPoolTiles,
+		.tilemap = BG_LavaPoolMap,
+		.entryTileset = gBattleTerrainAnimTiles_Cave,
+		.entryTilemap = gBattleTerrainAnimTilemap_Cave,
+		.palette = BG_LavaPoolPal,
+	},
 };
 #endif

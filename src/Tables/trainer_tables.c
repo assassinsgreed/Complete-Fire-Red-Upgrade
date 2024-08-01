@@ -6278,6 +6278,7 @@ const struct TrainerMonItemCustomMoves sParty_TsarvosaCityGym_LeaderIris[] = {
     },
 };
 // #endregion
+
 // #region Daimyn City Restaurant event
 const struct TrainerMonItemCustomMoves sParty_DaimynCityRestaurant_Iris[] = {
     {
@@ -6357,6 +6358,7 @@ const struct TrainerMonItemCustomMoves sParty_DaimynCityRestaurant_Stella[] = {
     },
 };
 // #endregion
+
 // #region Daimyn Factory
 const struct TrainerMonNoItemDefaultMoves sParty_DaimynFactory_BurglarSly[] = {
     { .lvl = 54, .species = SPECIES_CROAGUNK },
@@ -6378,6 +6380,58 @@ const struct TrainerMonNoItemDefaultMoves sParty_DaimynFactory_BurglarWill[] = {
 const struct TrainerMonNoItemDefaultMoves sParty_DaimynFactory_EngineerElroy[] = {
     { .lvl = 54, .species = SPECIES_MAWILE },
     { .lvl = 54, .species = SPECIES_RAICHU }
+};
+// #endregion
+
+// #region Carnelidge Volcano
+const struct TrainerMonNoItemDefaultMoves sParty_CarnelidgeVolcano_HikerBjorn[] = {
+    { .lvl = 54, .species = SPECIES_STONJOURNER },
+    { .lvl = 54, .species = SPECIES_GURDURR },
+    { .lvl = 54, .species = SPECIES_MUDSDALE },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_CarnelidgeVolcano_ChannelerKelsey[] = {
+    { .lvl = 53, .species = SPECIES_DUSKULL },
+    { .lvl = 53, .species = SPECIES_MISDREAVUS },
+    { .lvl = 53, .species = SPECIES_SABLEYE },
+    { .lvl = 54, .species = SPECIES_MISMAGIUS },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_CarnelidgeVolcano_JugglerSeth[] = {
+    { .lvl = 55, .species = SPECIES_MR_MIME_G },
+    { .lvl = 55, .species = SPECIES_DELPHOX },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_CarnelidgeVolcano_DragonTamerFlynn[] = {
+    { .lvl = 54, .species = SPECIES_SLIGGOO },
+    { .lvl = 55, .species = SPECIES_GABITE },
+    { .lvl = 55, .species = SPECIES_DRAGONITE },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_CarnelidgeVolcano_BirdKeepeFalco[] = {
+    { .lvl = 55, .species = SPECIES_CORVISQUIRE },
+    { .lvl = 55, .species = SPECIES_TALONFLAME },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_CarnelidgeVolcano_CrushGirlEunice[] = {
+    { .lvl = 56, .species = SPECIES_SIRFETCHD },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_CarnelidgeVolcano_SuperNerdNathan[] = {
+    { .lvl = 54, .species = SPECIES_PINCURCHIN },
+    { .lvl = 54, .species = SPECIES_CRABOMINABLE },
+    { .lvl = 55, .species = SPECIES_SKARMORY },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_CarnelidgeVolcano_HikerHugh[] = {
+    { .lvl = 55, .species = SPECIES_MINIOR_SHIELD },
+    { .lvl = 56, .species = SPECIES_COALOSSAL },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_CarnelidgeVolcano_ScientistXander[] = {
+    { .lvl = 55, .species = SPECIES_LILEEP },
+    { .lvl = 55, .species = SPECIES_WEEZING_G },
+    { .lvl = 55, .species = SPECIES_LUCARIO },
 };
 // #endregion
 // #endregion
@@ -11974,6 +12028,116 @@ const struct Trainer gTrainers[] = {
         .aiFlags = TrainerAIFlags_Engineer_Standard,
         .partySize = NELEMS(sParty_DaimynFactory_EngineerElroy),
         .party = {.NoItemDefaultMoves = sParty_DaimynFactory_EngineerElroy}
+    },
+    // #endregion
+    // #region Carnelidge Volcano
+    [TRAINER_CARNELIDGE_VOLCANO_HIKER_BJORN] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_HIKER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
+        .trainerPic = TRAINER_PIC_HIKER,
+        .trainerName = {_B, _j, _o, _r, _n, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_Hiker_Standard,
+        .partySize = NELEMS(sParty_CarnelidgeVolcano_HikerBjorn),
+        .party = {.NoItemDefaultMoves = sParty_CarnelidgeVolcano_HikerBjorn}
+    },
+    [TRAINER_CARNELIDGE_VOLCANO_CHANNELER_KELSEY] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_CHANNELER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_CHANNELER,
+        .trainerName = {_K, _e, _l, _s, _e, _y, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_Channeler_Standard,
+        .partySize = NELEMS(sParty_CarnelidgeVolcano_ChannelerKelsey),
+        .party = {.NoItemDefaultMoves = sParty_CarnelidgeVolcano_ChannelerKelsey}
+    },
+    [TRAINER_CARNELIDGE_VOLCANO_JUGGLER_SETH] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_JUGGLER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
+        .trainerPic = TRAINER_PIC_JUGGLER,
+        .trainerName = {_S, _e, _t, _h, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_Juggler_Standard,
+        .partySize = NELEMS(sParty_CarnelidgeVolcano_JugglerSeth),
+        .party = {.NoItemDefaultMoves = sParty_CarnelidgeVolcano_JugglerSeth}
+    },
+    [TRAINER_CARNELIDGE_VOLCANO_DRAGON_TAMER_FLYNN] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_DRAGON_TAMER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_DRAGON_TAMER,
+        .trainerName = {_F, _l, _y, _n, _n, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_DragonTamer_Standard,
+        .partySize = NELEMS(sParty_CarnelidgeVolcano_DragonTamerFlynn),
+        .party = {.NoItemDefaultMoves = sParty_CarnelidgeVolcano_DragonTamerFlynn}
+    },
+    [TRAINER_CARNELIDGE_VOLCANO_BIRD_KEEPER_FALCO] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_BIRD_KEEPER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_BIRD_KEEPER,
+        .trainerName = {_F, _a, _l, _c, _o, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_BirdKeeper_Standard,
+        .partySize = NELEMS(sParty_CarnelidgeVolcano_BirdKeepeFalco),
+        .party = {.NoItemDefaultMoves = sParty_CarnelidgeVolcano_BirdKeepeFalco}
+    },
+    [TRAINER_CARNELIDGE_VOLCANO_CRUSH_GIRL_EUNICE] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_CRUSH_GIRL,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_CRUSH_GIRL,
+        .trainerName = {_E, _u, _n, _i, _c, _e, _END},
+        .items = { ITEM_X_SPEED },
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_CrushGirl_Standard,
+        .partySize = NELEMS(sParty_CarnelidgeVolcano_CrushGirlEunice),
+        .party = {.NoItemDefaultMoves = sParty_CarnelidgeVolcano_CrushGirlEunice}
+    },
+    [TRAINER_CARNELIDGE_VOLCANO_SUPER_NERD_NATHAN] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_SUPER_NERD,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_SUPER_NERD,
+        .trainerName = {_N, _a, _t, _h, _a, _n, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_SuperNerd_Standard,
+        .partySize = NELEMS(sParty_CarnelidgeVolcano_SuperNerdNathan),
+        .party = {.NoItemDefaultMoves = sParty_CarnelidgeVolcano_SuperNerdNathan}
+    },
+    [TRAINER_CARNELIDGE_VOLCANO_HIKER_HUGH] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_HIKER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
+        .trainerPic = TRAINER_PIC_HIKER,
+        .trainerName = {_H, _u, _g, _h, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_Hiker_Standard,
+        .partySize = NELEMS(sParty_CarnelidgeVolcano_HikerHugh),
+        .party = {.NoItemDefaultMoves = sParty_CarnelidgeVolcano_HikerHugh}
+    },
+    [TRAINER_CARNELIDGE_VOLCANO_SCIENTIST_XANDER] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_SCIENTIST,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_SCIENTIST_M,
+        .trainerName = {_X, _a, _n, _d, _e, _r, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_Scientist_Standard,
+        .partySize = NELEMS(sParty_CarnelidgeVolcano_ScientistXander),
+        .party = {.NoItemDefaultMoves = sParty_CarnelidgeVolcano_ScientistXander}
     },
     // #endregion
     // #endregion

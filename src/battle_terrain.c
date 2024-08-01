@@ -359,7 +359,7 @@ static u8 TryLoadAlternateAreaTerrain(u8 terrain)
 				terrain = BATTLE_TERRAIN_FOREST;
 			else if (mapSec == MAPSEC_PERADON_FOREST)
 				terrain = BATTLE_TERRAIN_FOREST_PERADON;
-			else if (MetatileBehavior_IsMountain(tileBehavior))
+			else if (MetatileBehavior_IsMountain(tileBehavior) || mapSec == MAPSEC_CARNELIDGE_VOLCANO)
 				terrain = BATTLE_TERRAIN_MOUNTAIN;
 			else if (mapSec == MAPSEC_MIMMETT_JUNGLE)
 				terrain = BATTLE_TERRAIN_JUNGLE;
@@ -416,6 +416,9 @@ static u8 TryLoadAlternateAreaTerrain(u8 terrain)
 
 	if (MetatileBehavior_IsSand(tileBehavior) && IsCurrentAreaDesert())
 		terrain = BATTLE_TERRAIN_DESERT;
+
+	if (tileBehavior == MB_LAVA)
+		terrain = BATTLE_TERRAIN_LAVA_POOL;
 
 	return terrain;
 }
