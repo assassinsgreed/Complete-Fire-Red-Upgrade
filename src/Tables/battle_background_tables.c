@@ -95,6 +95,9 @@ extern const u8 BG_JunglePal[];
 extern const u8 BG_LavaPoolTiles[];
 extern const u8 BG_LavaPoolMap[];
 extern const u8 BG_LavaPoolPal[];
+extern const u8 BG_CarnelidgePeakTiles[];
+extern const u8 BG_CarnelidgePeakMap[];
+extern const u8 BG_CarnelidgePeakPal[];
 
 // Evening (just palettes)
 extern const u8 BG_Grass_EveningPal[];
@@ -108,6 +111,7 @@ extern const u8 BG_Desert_EveningPal[];
 extern const u8 BG_Forest_EveningPal[];
 extern const u8 BG_Forest_Peradon_EveningPal[];
 extern const u8 BG_Jungle_EveningPal[];
+extern const u8 BG_CarnelidgePeak_EveningPal[];
 
 // Night (just palettes)
 extern const u8 BG_Grass_NightPal[];
@@ -121,6 +125,7 @@ extern const u8 BG_Desert_NightPal[];
 extern const u8 BG_Forest_NightPal[];
 extern const u8 BG_Forest_Peradon_NightPal[];
 extern const u8 BG_Jungle_NightPal[];
+extern const u8 BG_CarnelidgePeak_NightPal[];
 
 const struct BattleBackground gBattleTerrainTable[] =
 {
@@ -347,6 +352,14 @@ const struct BattleBackground gBattleTerrainTable[] =
 		.entryTileset = gBattleTerrainAnimTiles_Cave,
 		.entryTilemap = gBattleTerrainAnimTilemap_Cave,
 		.palette = BG_LavaPoolPal,
+	},
+	[BATTLE_TERRAIN_CARNELIDGE_PEAK] = 
+	{
+		.tileset = BG_CarnelidgePeakTiles,
+		.tilemap = BG_CarnelidgePeakMap,
+		.entryTileset = gBattleTerrainAnimTiles_Cave,
+		.entryTilemap = gBattleTerrainAnimTilemap_Cave,
+		.palette = BG_CarnelidgePeakPal,
 	},
 };
 
@@ -576,6 +589,14 @@ const struct BattleBackground gBattleTerrainTableEvening[] =
 		.entryTilemap = gBattleTerrainAnimTilemap_Cave,
 		.palette = BG_LavaPoolPal,
 	},
+	[BATTLE_TERRAIN_CARNELIDGE_PEAK] = 
+	{
+		.tileset = BG_CarnelidgePeakTiles,
+		.tilemap = BG_CarnelidgePeakMap,
+		.entryTileset = gBattleTerrainAnimTiles_Cave,
+		.entryTilemap = gBattleTerrainAnimTilemap_Cave,
+		.palette = BG_CarnelidgePeak_EveningPal,
+	},
 };
 
 const struct BattleBackground gBattleTerrainTableNight[] =
@@ -803,6 +824,14 @@ const struct BattleBackground gBattleTerrainTableNight[] =
 		.entryTileset = gBattleTerrainAnimTiles_Cave,
 		.entryTilemap = gBattleTerrainAnimTilemap_Cave,
 		.palette = BG_LavaPoolPal,
+	},
+	[BATTLE_TERRAIN_CARNELIDGE_PEAK] = 
+	{
+		.tileset = BG_CarnelidgePeakTiles,
+		.tilemap = BG_CarnelidgePeakMap,
+		.entryTileset = gBattleTerrainAnimTiles_Cave,
+		.entryTilemap = gBattleTerrainAnimTilemap_Cave,
+		.palette = BG_CarnelidgePeak_NightPal,
 	},
 };
 #endif

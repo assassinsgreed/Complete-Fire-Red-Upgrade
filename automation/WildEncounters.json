@@ -530,7 +530,7 @@
             "mapgroup": 1,
             "mapnum": 42,
             "grass": {
-                "rate": 21,
+                "rate": 31,
                 "pokemon": [
                     { "low": 49, "high": 52, "species": "SPECIES_SLUGMA" },
                     { "low": 50, "high": 53, "species": "SPECIES_BOLDORE" },
@@ -588,7 +588,7 @@
                 ]
             },
             "surfing": {
-                "rate": 13,
+                "rate": 50,
                 "pokemon": [
                     { "low": 49, "high": 52, "species": "SPECIES_SLUGMA" },
                     { "low": 50, "high": 53, "species": "SPECIES_SLUGMA" },
@@ -650,7 +650,7 @@
                 ]
             },
             "surfing": {
-                "rate": 13,
+                "rate": 50,
                 "pokemon": [
                     { "low": 49, "high": 52, "species": "SPECIES_SLUGMA" },
                     { "low": 50, "high": 53, "species": "SPECIES_SLUGMA" },
@@ -996,7 +996,7 @@
                 ]
             },
             "surfing": {
-                "rate": 13,
+                "rate": 50,
                 "pokemon": [
                     { "low": 49, "high": 52, "species": "SPECIES_SLUGMA" },
                     { "low": 50, "high": 53, "species": "SPECIES_SLUGMA" },
