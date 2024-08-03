@@ -880,7 +880,7 @@
 #define FLAG_HIDE_CARNELIDGE_VOLCANO_BF1_FULL_RESTORE         0x357
 #define FLAG_HIDE_CARNELIDGE_VOLCANO_BF1_FIRE_GEM             0x358
 #define FLAG_HIDE_CARNELIDGE_VOLCANO_OVERWORLD_ESCAPE_ROPE    0x359
-#define FLAG_0x35A               0x35A
+#define FLAG_HIDE_ROUTE_11_SOUTH_TM32_DOUBLE_TEAM        0x35A
 #define FLAG_0x35B               0x35B
 #define FLAG_0x35C               0x35C
 #define FLAG_0x35D               0x35D
