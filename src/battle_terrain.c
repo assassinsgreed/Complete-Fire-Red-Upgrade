@@ -360,7 +360,12 @@ static u8 TryLoadAlternateAreaTerrain(u8 terrain)
 			else if (mapSec == MAPSEC_PERADON_FOREST)
 				terrain = BATTLE_TERRAIN_FOREST_PERADON;
 			else if (MetatileBehavior_IsMountain(tileBehavior) || mapSec == MAPSEC_CARNELIDGE_VOLCANO)
-				terrain = BATTLE_TERRAIN_MOUNTAIN;
+			{
+				if (MAP_IS(CARNELIDGE_VOLCANO_PEAK))
+					terrain = BATTLE_TERRAIN_CARNELIDGE_PEAK;
+				else 
+					terrain = BATTLE_TERRAIN_MOUNTAIN;
+			}
 			else if (mapSec == MAPSEC_MIMMETT_JUNGLE)
 				terrain = BATTLE_TERRAIN_JUNGLE;
 			break;

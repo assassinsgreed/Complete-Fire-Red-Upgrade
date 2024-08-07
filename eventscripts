@@ -2259,6 +2259,9 @@ npc 1 42 15 EventScript_CarnelidgeVolcano_TM50_Overheat
 npc 1 42 16 ItemScript_Common_MaxRepel
 npc 1 42 17 ItemScript_Common_EscapeRope
 sign 1 42 0 SignScript_CarnelidgeVolcano_EntrySign
+tile 1 42 0 TileScript_CarnelidgeVolcano_ExtendedSequenceWarning
+tile 1 42 1 TileScript_CarnelidgeVolcano_ExtendedSequenceWarning
+tile 1 42 2 TileScript_CarnelidgeVolcano_ExtendedSequenceWarning
 ### Interior, BF1
 map 1 74 MapScript_CarnelidgeVolcano
 npc 1 74 0 EventScript_Common_RockSmash
@@ -2309,3 +2312,5 @@ npc 1 44 6 ItemScript_Common_Timerball
 tile 1 44 0 TileScript_CarnelidgeVolcano_VolcanionRoom
 tile 1 44 1 TileScript_CarnelidgeVolcano_VolcanionRoom
 tile 1 44 2 TileScript_CarnelidgeVolcano_VolcanionRoom
+### Peak
+map 1 58 MapScript_CarnelidgeVolcano_Peak

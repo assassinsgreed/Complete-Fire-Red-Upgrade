@@ -36,6 +36,7 @@ Don't count us out yet!\p
 #org @sText_Rival3_LowHP
 Uh oh[.] We're in trouble now[.]\p
 
+// Casey
 #org @sText_Casey1_LastSwitchIn
 Uh oh, I'd better step my game up.\p
 
@@ -77,6 +78,15 @@ Already down to the last one[.]\nHow disappointing.\p
 
 #org @sText_EmraldinRivalEvent_LowHP
 Let's see if [FD][06] can pull through[.]\p
+
+#org @sText_Rival6_FirstMonDown
+You just got lucky.\nIt won't happen again!\p
+
+#org @sText_Rival6_LastSwitchIn
+I'm done losing to you, [PLAYER]!\p
+
+#org @sText_Rival6_LowHP
+C'mon[.] We won't lose again[.] We can't!\p
 
 // Rival n here!
 
@@ -257,7 +267,7 @@ Impressive. But you can't win.\p
 Don't try to stop me! I'm doing\nthis for everyone's benefit!\p
 
 #org @sText_Alistair_LowHP
-Ngh. My perfect world... I can't\nlose like this!\p
+Ngh. My perfect world[.] I can't\nlose like this!\p
 
 // Elite Four Hannah
 #org @sText_Hannah_FirstMonDown

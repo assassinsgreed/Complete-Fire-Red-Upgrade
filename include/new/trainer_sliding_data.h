@@ -51,6 +51,11 @@ extern const u8 sText_EmraldinRivalEvent_FirstMonDown[];
 extern const u8 sText_EmraldinRivalEvent_LastSwitchIn[];
 extern const u8 sText_EmraldinRivalEvent_LowHP[];
 
+// Rival battle 6
+extern const u8 sText_Rival6_FirstMonDown[];
+extern const u8 sText_Rival6_LastSwitchIn[];
+extern const u8 sText_Rival6_LowHP[];
+
 // Rival battle n
 
 // Developers
