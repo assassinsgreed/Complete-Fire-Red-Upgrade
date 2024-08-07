@@ -553,15 +553,3 @@ SetupMugshotGymLeaderAndBosses:
     setvar 0x503A 0x1
     setvar 0x503B 0x1
     return
-
-@ This control function disables walking scripts if the player isn't on a map that set temp var 0x400E
-@ This should only happen if the player is on an eligible map, but then warps/flies away.
-.global DisableWalkingScriptIfOnInvalidMap
-DisableWalkingScriptIfOnInvalidMap:
-    compare 0x400E 0x1
-    if notequal _goto DisableWalkingScript
-    return
-
-DisableWalkingScript:
-    setvar 0x500B 0x0
-    end

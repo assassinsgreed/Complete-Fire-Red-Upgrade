@@ -2263,7 +2263,6 @@ tile 1 42 0 TileScript_CarnelidgeVolcano_ExtendedSequenceWarning
 tile 1 42 1 TileScript_CarnelidgeVolcano_ExtendedSequenceWarning
 tile 1 42 2 TileScript_CarnelidgeVolcano_ExtendedSequenceWarning
 ### Interior, BF1
-map 1 74 MapScript_CarnelidgeVolcano
 npc 1 74 0 EventScript_Common_RockSmash
 npc 1 74 1 EventScript_Common_RockSmash
 npc 1 74 2 EventScript_Common_RockSmash
@@ -2275,7 +2274,6 @@ npc 1 74 7 EventScript_CarnelidgeVolcano_TM38_FireBlast
 npc 1 74 8 ItemScript_Common_FullRestore
 npc 1 74 9 ItemScript_Common_FireGem
 ### Interior, F1
-map 1 43 MapScript_CarnelidgeVolcano
 npc 1 43 0 EventScript_Common_RockSmash
 npc 1 43 1 EventScript_Common_RockSmash
 npc 1 43 2 EventScript_Common_RockSmash
@@ -2289,19 +2287,16 @@ npc 1 43 9 ItemScript_Common_FireStone
 npc 1 43 10 ItemScript_Common_Revive
 sign 1 43 0 SignScript_CarnelidgeVolcano_TrainerTips
 ### Interior, F2
-map 1 45 MapScript_CarnelidgeVolcano
 npc 1 45 0 EventScript_CarnelidgeVolcano_SuperNerdNathan
 npc 1 45 1 EventScript_CarnelidgeVolcano_HikerHugh
 npc 1 45 2 EventScript_Common_Strength
 npc 1 45 3 EventScript_Common_Strength
 npc 1 45 4 ItemScript_Common_Charcoal
 ### Interior, F3
-map 1 46 MapScript_CarnelidgeVolcano
 sign 1 46 0 SignScript_CarnelidgeVolcano_HotSpringSign
 tile 1 46 0 TileScript_ScaldingSpa_SpaRoom_Heal
 tile 1 46 1 TileScript_ScaldingSpa_SpaRoom_ResetHeal
 ### Interior, Volcanion Room
-map 1 44 MapScript_CarnelidgeVolcano
 npc 1 44 0 EventScript_Common_RockSmash
 npc 1 44 1 EventScript_Common_RockSmash
 npc 1 44 2 EventScript_Common_RockSmash

@@ -100,7 +100,6 @@ static bool8 IsPlayerFacingSea(void);
 static bool8 UseRegisteredKeyItemOnField(void);
 
 extern const u8 LaplazGym_RotationSteps[];
-extern const u8 CarnelidgeVolcano_Tremors[];
 
 #if (defined VAR_DEFAULT_WALKING_SCRIPT && !defined UNBOUND)
 //Table full of pointers to custom walking scripts
@@ -108,7 +107,6 @@ static const u8* const sDefaultWalkingScripts[] =
 {
 	NULL,
 	LaplazGym_RotationSteps,
-	CarnelidgeVolcano_Tremors,
 	//NULL,
 	//NULL,
 	//etc
