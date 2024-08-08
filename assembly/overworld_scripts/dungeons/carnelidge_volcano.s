@@ -7,11 +7,48 @@
 
 .global MapScript_CarnelidgeVolcano
 MapScript_CarnelidgeVolcano:
-    mapscript MAP_SCRIPT_ON_TRANSITION MapEntryScript_CarnelidgeVolcano_FlightFlag
+    mapscript MAP_SCRIPT_ON_TRANSITION MapEntryScript_CarnelidgeVolcano_FlightFlagAndWalkingScript
 	.byte MAP_SCRIPT_TERMIN
 
-MapEntryScript_CarnelidgeVolcano_FlightFlag:
+MapEntryScript_CarnelidgeVolcano_FlightFlagAndWalkingScript:
     setworldmapflag 0x8AB
+    setvar 0x500B 0x2 @ Use walking script #2, i.e. "mountain tremors." This is cleared if the player the first time it executes, if the player isn't on a mount carnelidge map
+    setvar 0x400E 0x1 @ Used to control whether the tremor is active or not
+    end
+
+.global CarnelidgeVolcano_Tremors
+CarnelidgeVolcano_Tremors:
+    call DisableWalkingScriptIfOnInvalidMap
+    release
+    compare 0x4002 0x1
+    if equal _goto End @ Don't trigger a tremor while another one is live
+    random 100 @ 1% chance for heavy tremor, 4% chance for light tremor
+    compare LASTRESULT 1
+    if lessthan _goto HeavyTremor
+    compare LASTRESULT 5
+    if lessthan _goto LightTremor
+    end
+
+HeavyTremor:
+    setvar 0x4002 0x1
+    setvar 0x8004 0x3 @ This controls how far the screen shakes vertically
+	setvar 0x8005 0x0 @ This controls how far the screen shakes horizontally
+	setvar 0x8006 0x15 @ This controls how long the overall animation lasts
+	setvar 0x8007 0x3 @ This controls how long one screen shake lasts
+    playse 0xE3 @ Earthquake
+    special 0x136 @ SPECIAL_SHAKE_SCREEN
+    setvar 0x4002 0x0
+    end
+
+LightTremor:
+    setvar 0x4002 0x1
+    setvar 0x8004 0x1 @ This controls how far the screen shakes vertically
+	setvar 0x8005 0x0 @ This controls how far the screen shakes horizontally
+	setvar 0x8006 0x10 @ This controls how long the overall animation lasts
+	setvar 0x8007 0x1 @ This controls how long one screen shake lasts
+    playse 0x21 @ Small tremor
+    special 0x136 @ SPECIAL_SHAKE_SCREEN
+    setvar 0x4002 0x0
     end
 
 .global EventScript_CarnelidgeVolcano_HikerBjorn
