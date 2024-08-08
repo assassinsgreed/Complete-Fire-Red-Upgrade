@@ -93,7 +93,7 @@
 #define FLAG_HIDE_GROUDON_WHEN_CAUGHT                      0x057
 #define FLAG_HIDE_RUBARR_DESERT_BF1_STATUE_LEFT            0x058
 #define FLAG_HIDE_RUBARR_DESERT_BF1_STATUE_LEFT_UPPER      0x059
-#define FLAG_HIDE_ON_BY_DEFAULT                            0x05A
+#define FLAG_HIDE_JIRACHI_ON_CARNELIDGE_VOLCANO_ON_BY_DEFAULT 0x05A
 #define FLAG_HIDE_RUBARR_DESERT_BF1_STATUE_CENTER          0x05B
 #define FLAG_HIDE_RUBARR_DESERT_BF1_STATUE_CENTER_LOWER    0x05C
 #define FLAG_HIDE_RUBARR_DESERT_BF1_STATUE_RIGHT_UPPER     0x05D
@@ -101,7 +101,7 @@
 #define FLAG_HIDE_RUBARR_DESERT_BF1_STATUE_RIGHT_LOWER     0x05F
 #define FLAG_HIDE_RUBARR_DESERT_BF1_STATUE_CENTER_UPPER    0x060
 #define FLAG_HIDE_RUBARR_DESERT_SHORTCUT_BOULDER           0x061
-#define FLAG_HIDE_CINNABAR_BILL                            0x062
+#define FLAG_HIDE_CINNABAR_BILL_ON_BY_DEFAULT              0x062
 #define FLAG_HIDE_UNION_ROOM_PLAYER_1                      0x063
 #define FLAG_HIDE_UNION_ROOM_PLAYER_2                      0x064
 #define FLAG_HIDE_UNION_ROOM_PLAYER_3                      0x065
@@ -642,7 +642,7 @@
 #define FLAG_RUSTED_DATA_EXPLAINED                       0x26D
 #define FLAG_STEEL_BEAM_TUTOR_UNLOCKED                   0x26E
 #define FLAG_SPOKE_TO_ENA_AT_HESSON_PASS                 0x26F
-#define FLAG_GOT_20_COINS_FROM_GAMBLER_2                 0x270
+#define FLAG_JIRACHI_AWAKENED                            0x270
 #define FLAG_GOT_BICYCLE                                 0x271
 #define FLAG_GOT_DOME_FOSSIL                             0x272
 #define FLAG_GOT_HELIX_FOSSIL                            0x273

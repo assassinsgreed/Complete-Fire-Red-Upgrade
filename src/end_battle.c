@@ -229,6 +229,13 @@ void HandleEndTurn_BattleWon(void)
 				PlayBGM(BGM_VICTORY_SPECIAL);
 				specialMus = TRUE;
 				break;
+			case CLASS_TEAM_PLUTO:
+			case CLASS_TEAM_PLUTO_ADMIN:
+			case CLASS_TEAM_PLUTO_LEADER:
+			case CLASS_PKMN_TRAINER_4:
+				PlayBGM(BGM_VICTORY_PLUTO);
+				specialMus = TRUE;
+				break;
 			default:
 				PlayBGM(BGM_VICTORY_TRAINER_BATTLE);
 				break;

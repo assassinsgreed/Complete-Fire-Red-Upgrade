@@ -90,3 +90,87 @@ Rest in the Carnelidge Hot Springs!\nGuaranteed to cure what ails you.
 
 #org @gText_CarnelidgeVolcano_VolcanionPresenceFelt
 You can feel a powerful presence,\nbut it will not reveal itself[.]
+
+#org @gText_CarnelidgeVolcano_ExtendedSequenceWarning
+Warning: Travelling beyond this point\nwill initiate an extended sequence\lof events.\pFree exploration and saving your\ngame will be unavailable.\pBe sure you are prepared and have\ntime available before proceeding.\p(Estimate: 1 hour)
+
+#org @gText_CarnelidgeVolcanoPeak_AlistairGreetsPlayer
+[BLACK]???: [BLUE]So, [PLAYER], you've come[.]\nI should have expected this.\pYou do have a tendency to appear\nwhenever something big happens[.]
+
+#org @gText_CarnelidgeVolcanoPeak_AlistairFacesPlayer
+[BLACK]Alistair: [BLUE]Perhaps you are surprised\nto see me, however?\pI, who detested Team Pluto so much,\nbenefitting from their research?\pPlease, allow me to explain.\pI'm certain you'll understand my\nsituation.
+
+#org @gText_CarnelidgeVolcanoPeak_AlistairExplainsMotivations1
+[BLACK]Alistair: [BLUE]When I was a child, I had\none small dream.\pTo become the Kulure region's finest\nchampion.\pNow, I'm sure I don't need to tell\nyou that it never happened[.]\pThe honours went to my good\n"friend,\" Selene.\pSupportive friends and family[.]\pNatural talent, both in connecting\nwith and battling with Pok\emon[.]\pAn unbreakable bond with the\nlegendary Victory Pok\emon, Victini[.]\pShe had it all[.] A true force of\nnature.\pHow could I compete?\nHow could any of us?\pPeople like me, why[.] Our dreams may\nas well have never existed.
+
+#org @gText_CarnelidgeVolcanoPeak_AlistairExplainsMotivations2
+[BLACK]Alistair: [BLUE]Those Team Pluto thugs\nare the same as me, in a way.\pLosers with nowhere to go.\nNo hope of achieving their goals.\pWhy should our dreams be any\nless valuable than others'?\pThe simple truth is that most who\ndare to dream will become broken.
+
+#org @gText_CarnelidgeVolcanoPeak_AlistairExplainsMotivations3
+[BLACK]Alistair: [BLUE]Are you starting\nto understand now, [PLAYER]?
+
+#org @gText_CarnelidgeVolcanoPeak_PlayerDoesNotUnderstandAlistairsMotivation
+[BLACK]Alistair: [BLUE]That's unfortunate, but I'll\nexplain further.
+
+#org @gText_CarnelidgeVolcanoPeak_PlayerUnderstandsAlistairsMotivation
+[BLACK]Alistair: [BLUE]Good.\nPlease allow me to continue.
+
+#org @gText_CarnelidgeVolcanoPeak_AlistairExplainsMotivations4
+[BLACK]Alistair: [BLUE]The simple truth is that\nonly a chosen few can succeed.\pBut[.] It doesn't have to be that way.
+
+#org @gText_CarnelidgeVolcanoPeak_AlistairExplainsMotivations5
+[BLACK]Alistair: [BLUE]Look there! Encased within\nthat stone.\pThat is the legendary Wish Pok\emon,\n[GREEN]Jirachi[BLUE].\pIt's existence was a mere myth, until\nrecently.
+
+#org @gText_CarnelidgeVolcanoPeak_AlistairExplainsMotivations6
+[BLACK]Alistair: [BLUE]Do you understand now,\n[PLAYER]?\pUsing Jirachi's wishes, I can level\nthe playing field.\pEveryone will be equal. Everyone can\nachieve their dreams.\pAll I must do is write my wishes upon\nthe tags on Jirachi's head before\lit wakes.\pNow, [PLAYER], will you still oppose\nme, knowing my itentions?
+
+#org @gText_CarnelidgeVolcanoPeak_PlayerWillOpposeAlistair
+[BLACK]Alistair: [BLUE][.] Of course.\nI should not be surprised, really.\pYou are an accomplished trainer,\nmuch like Selene.\pIt's your very nature to oppose\nthose that cannot compete.\pThen, I am unfortunately left with no\nchoice.\pForgive me, [PLAYER], but I must\nensure my wishes are granted.
+
+#org @gText_CarnelidgeVolcanoPeak_PlayerWillNotOpposeAlistair
+[BLACK]Alistair: [BLUE]I want to believe you,\n[PLAYER], but I find I cannot.\pYou, much like Selene, are an\naccomplished trainer.\pIt is your very nature to tower over\nthose that cannot compete against\lyou.\pAs such, I must take necessary\nprecations.\pYou see, my wishes must be granted,\nat any and all costs.
+
+#org @gText_CarnelidgeVolcanoPeak_AlistairCallsForRival
+[BLACK]Alistair: [BLUE]I am not a fool, [PLAYER].\pI accounted for every possibility.\nAnd so, I brought backup.\pSomeone else who's dreams have\nbeen left in the dust.\pHowever[.] This person's dreams weren't\ncrushed by Selene.\pThey were crushed by you,\n[PLAYER].\p[RIVAL]! Now is the time!\pStall [PLAYER] while I help Jirachi\nawaken!
+
+#org @gText_CarnelidgeVolcanoPeak_RivalChallengesPlayer
+[BLACK][RIVAL]: [BLUE][PLAYER][.] I wish I could\nsay I was surprised to see you.\pBut[.] You just love to interfere\nwhere you don't belong, don't you?\pEver since I saw Selene battle for\nthe first time, I knew[.]\pI wanted to be up on that stage\nsomeday, as Kulure's champion.\pI studied Pok\emon species and\nlearned battle strategies[.]\pI did everything right, but effort\nmeans nothing in this world[.]\pYou've always been better at\neverything related to Pok\emon.\pIt's clear as day that I could never\ncompete with you!\pAs long as you're around, my dreams\nwill never come true.\pAnd you won't stop.\nYou already know why.\pIt's because becoming the champion is\nyour dream, too.\pThere can be only one, after all.\nSomeone must fail[.]\p[PLAYER]! I know I don't have\nwhat it takes to stop you.\pBut[.] Maybe I can stall you long\nenough for Jirachi to awaken.\pThen, my wish will come true and I'll\nhave the skill to rival you.\p[PLAYER], I've removed all the dead\nweight from my Pok\emon team.\pNow, we're the best we've ever been.\nI won't fail here. I can't!
+
+#org @gText_CarnelidgeVolcanoPeak_RivalLosesToPlayer
+No[.] No! This can't be happening!
+
+#org @gText_CarnelidgeVolcanoPeak_RivalCannotHandleLoss
+[BLACK][RIVAL]: [BLUE]Ahhh! This can't be\nhappening[.]\pWhy can't you lost just for once?
+
+#org @gText_CarnelidgeVolcanoPeak_AlistairCommentsOnRivalsLoss
+[BLACK]Alistair: [BLUE]It's fine, [RIVAL], Jirachi\nhas almost awoken.\pI'll keep [PLAYER] busy until then.
+
+#org @gText_CarnelidgeVolcanoPeak_AlistairPreparesToBattle
+[BLACK]Alistair: [BLUE]We've never battled, have\nwe [PLAYER]?\pThen[.] Allow me to prove to you why\nI am the closest Selene has ever\lcome to defeat!
+
+#org @gText_CarnelidgeVolcanoPeak_AlistairLosesToPlayer
+Unfortunate[.]\pThis changes nothing, however.
+
+#org @gText_CarnelidgeVolcanoPeak_AlistairCommentsOnDelays
+[BLACK]Alistair: [BLUE]To see how you battle[.] It's\ntruly reminiscent of her.
+
+#org @gText_CarnelidgeVolcanoPeak_SeleneArrives
+[BLACK]???: [RED]Alistair? Is that you?
+
+#org @gText_CarnelidgeVolcanoPeak_SeleneAcknowledgesPlayerAndRival
+[BLACK]Selene: [RED]And [PLAYER] and [RIVAL],\ntoo[.] What's going on here?
+
+#org @gText_CarnelidgeVolcanoPeak_AlistairAddressesSelene
+[BLACK]Alistair: [BLUE]I should have expected you\nwould show up, Selene.\pI have no interest in repeating my\nintentions. And besides --
+
+#org @gText_CarnelidgeVolcanoPeak_AlistairCommentsOnJirachiAwakening
+[BLACK]Alistair: [BLUE]It's time!\nJirachi has awakened!\pNow, my wish should be granted[.]
+
+#org @gText_CarnelidgeVolcanoPeak_RivalCommentsOnWish
+[BLACK][RIVAL]: [BLUE]Finally, our wish for all\npeople to be equal will be\lgranted!
+
+#org @gText_CarnelidgeVolcanoPeak_AlistairCommentsOnRivalsResponse
+[BLACK]Alistair: [BLUE]Equality? In a manner of\nspeaking, I suppose.\pEquality is awfully reductive,\nthough.\pYou see[.]
+
+#org @gText_CarnelidgeVolcanoPeak_AlistairsWish
+My wish is[.]\pTo rid this world of all Pok\emon!

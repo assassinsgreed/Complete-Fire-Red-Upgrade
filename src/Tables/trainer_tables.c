@@ -484,7 +484,7 @@ const struct TrainerMonItemCustomMoves sParty_Route11_Alistair[] = {
             MOVE_ROOST,
             MOVE_MEANLOOK
         },
-        .ability = Ability_1 // Inner Focus
+        .ability = Ability_Hidden // Infiltrator
     },
     {
         .lvl = 34,
@@ -495,7 +495,7 @@ const struct TrainerMonItemCustomMoves sParty_Route11_Alistair[] = {
             MOVE_TOXIC,
             MOVE_VENOSHOCK
         },
-        .ability = Ability_1 // Effect Spore
+        .ability = Ability_Hidden // Regenerator
     },
     {
         .lvl = 36,
@@ -826,7 +826,7 @@ const struct TrainerMonItemCustomMoves sParty_Rival5_Vaporeon[] = {
             MOVE_IRONHEAD
         },
         .heldItem = ITEM_OCCA_BERRY,
-        .ability = Ability_1 // Keen Eye
+        .ability = Ability_1 // Pressure
     },
     {
         .lvl = 43,
@@ -877,7 +877,7 @@ const struct TrainerMonItemCustomMoves sParty_Rival5_Jolteon[] = {
             MOVE_IRONHEAD
         },
         .heldItem = ITEM_OCCA_BERRY,
-        .ability = Ability_1 // Keen Eye
+        .ability = Ability_1 // Pressure
     },
     {
         .lvl = 43,
@@ -928,7 +928,7 @@ const struct TrainerMonItemCustomMoves sParty_Rival5_Flareon[] = {
             MOVE_IRONHEAD
         },
         .heldItem = ITEM_OCCA_BERRY,
-        .ability = Ability_1 // Keen Eye
+        .ability = Ability_1 // Pressure
     },
     {
         .lvl = 43,
@@ -979,7 +979,7 @@ const struct TrainerMonItemCustomMoves sParty_Rival5_Espeon[] = {
             MOVE_IRONHEAD
         },
         .heldItem = ITEM_OCCA_BERRY,
-        .ability = Ability_1 // Keen Eye
+        .ability = Ability_1 // Pressure
     },
     {
         .lvl = 43,
@@ -1030,7 +1030,7 @@ const struct TrainerMonItemCustomMoves sParty_Rival5_Umbreon[] = {
             MOVE_IRONHEAD
         },
         .heldItem = ITEM_OCCA_BERRY,
-        .ability = Ability_1 // Keen Eye
+        .ability = Ability_1 // Pressure
     },
     {
         .lvl = 43,
@@ -1081,7 +1081,7 @@ const struct TrainerMonItemCustomMoves sParty_Rival5_Leafeon[] = {
             MOVE_IRONHEAD
         },
         .heldItem = ITEM_OCCA_BERRY,
-        .ability = Ability_1 // Keen Eye
+        .ability = Ability_1 // Pressure
     },
     {
         .lvl = 43,
@@ -1132,7 +1132,7 @@ const struct TrainerMonItemCustomMoves sParty_Rival5_Glaceon[] = {
             MOVE_IRONHEAD
         },
         .heldItem = ITEM_OCCA_BERRY,
-        .ability = Ability_1 // Keen Eye
+        .ability = Ability_1 // Pressure
     },
     {
         .lvl = 43,
@@ -1183,7 +1183,7 @@ const struct TrainerMonItemCustomMoves sParty_Rival5_Sylveon[] = {
             MOVE_IRONHEAD
         },
         .heldItem = ITEM_OCCA_BERRY,
-        .ability = Ability_1 // Keen Eye
+        .ability = Ability_1 // Pressure
     },
     {
         .lvl = 43,
@@ -1283,6 +1283,119 @@ const struct TrainerMonItemCustomMoves sParty_Rival_EmraldinQuayEvent[] = {
         },
         .heldItem = ITEM_LUCARIONITE,
         .ability = Ability_Hidden // Justified
+    }
+};
+
+const struct TrainerMonItemCustomMoves sParty_CarnelidgeVolcano_Rival[] = {
+    {
+        .lvl = 54,
+        .species = SPECIES_CORVIKNIGHT,
+        .moves = {
+            MOVE_DRILLPECK,
+            MOVE_IRONHEAD,
+            MOVE_IRONDEFENSE,
+            MOVE_ROOST
+        },
+        .heldItem = ITEM_OCCA_BERRY,
+        .ability = Ability_Hidden // Mirror Coat
+    },
+    {
+        .lvl = 54,
+        .species = SPECIES_WEAVILE,
+        .moves = {
+            MOVE_ICESHARD,
+            MOVE_SCREECH,
+            MOVE_ICICLECRASH,
+            MOVE_KNOCKOFF
+        },
+        .heldItem = ITEM_FOCUS_SASH,
+        .ability = Ability_1 // Pressure
+    },
+    {
+        .lvl = 55,
+        .species = SPECIES_MUDSDALE,
+        .moves = {
+            MOVE_STOMPINGTANTRUM,
+            MOVE_SUPERPOWER,
+            MOVE_HEAVYSLAM,
+            MOVE_CURSE
+        },
+        .heldItem = ITEM_SITRUS_BERRY,
+        .ability = Ability_2 // Stamina
+    },
+    {
+        .lvl = 55,
+        .species = SPECIES_AMPHAROS,
+        .moves = {
+            MOVE_DAZZLINGGLEAM,
+            MOVE_DISCHARGE,
+            MOVE_COTTONGUARD,
+            MOVE_DRAGONPULSE
+        },
+        .heldItem = ITEM_AMPHAROSITE,
+        .ability = Ability_1 // Static
+    },
+    {
+        .lvl = 56,
+        .species = SPECIES_BISHARP,
+        .moves = {
+            MOVE_IRONHEAD,
+            MOVE_RETALIATE,
+            MOVE_NIGHTSLASH,
+            MOVE_SUCKERPUNCH
+        },
+        .heldItem = ITEM_LIFE_ORB,
+        .ability = Ability_1 // Defiant
+    },
+};
+
+const struct TrainerMonItemCustomMoves sParty_CarnelidgeVolcano_Alistair[] = {
+    {
+        .lvl = 55,
+        .species = SPECIES_GOLBAT,
+        .moves = {
+            MOVE_TOXIC,
+            MOVE_VENOSHOCK,
+            MOVE_LEECHLIFE,
+            MOVE_MEANLOOK
+        },
+        .heldItem = ITEM_EVIOLITE,
+        .ability = Ability_Hidden // Infiltrator
+    },
+    {
+        .lvl = 54,
+        .species = SPECIES_AMOONGUSS,
+        .moves = {
+            MOVE_SPORE,
+            MOVE_GIGADRAIN,
+            MOVE_SUBSTITUTE,
+            MOVE_CLEARSMOG
+        },
+        .ability = Ability_Hidden // Regenerator
+    },
+    {
+        .lvl = 56,
+        .species = SPECIES_SHARPEDO,
+        .moves = {
+            MOVE_AQUAJET,
+            MOVE_LIQUIDATION,
+            MOVE_CRUNCH,
+            MOVE_ICEFANG
+        },
+        .heldItem = ITEM_WATER_GEM,
+        .ability = Ability_Hidden // Speed Boost
+    },
+    {
+        .lvl = 57,
+        .species = SPECIES_HOUNDOOM,
+        .moves = {
+            MOVE_SUNNYDAY,
+            MOVE_DARKPULSE,
+            MOVE_FLAMETHROWER,
+            MOVE_THUNDERFANG
+        },
+        .heldItem = ITEM_HOUNDOOMINITE,
+        .ability = Ability_2 // Flash Fire
     }
 };
 
@@ -6855,6 +6968,30 @@ const struct Trainer gTrainers[] = {
         .aiFlags = AI_SCRIPT_SETUP_FIRST_TURN | AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_SEMI_SMART,
         .partySize = NELEMS(sParty_Rival_EmraldinQuayEvent),
         .party = {.ItemCustomMoves = sParty_Rival_EmraldinQuayEvent}
+    },
+    [TRAINER_CARNELIDGE_VOLCANO_RIVAL] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_RIVAL_2,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_RIVAL_3,
+        .trainerName = NO_NAME,  // Name replaced from RIVAL trainer classes
+        .items = { ITEM_MEGA_RING, ITEM_FULL_RESTORE },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_SETUP_FIRST_TURN | AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_SEMI_SMART,
+        .partySize = NELEMS(sParty_CarnelidgeVolcano_Rival),
+        .party = {.ItemCustomMoves = sParty_CarnelidgeVolcano_Rival}
+    },
+    [TRAINER_CARNELIDGE_VOLCANO_ALISTAIR] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_PKMN_TRAINER_4,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MAGMA,
+        .trainerPic = TRAINER_PIC_ALISTAIR,
+        .trainerName = {_A, _l, _i, _s, _t, _a, _i, _r, _END},
+        .items = { ITEM_MEGA_RING, ITEM_FULL_RESTORE },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_RISKY | AI_SCRIPT_SEMI_SMART,
+        .partySize = NELEMS(sParty_CarnelidgeVolcano_Alistair),
+        .party = {.ItemCustomMoves = sParty_CarnelidgeVolcano_Alistair}
     },
     // #endregion
     // #region Route 1

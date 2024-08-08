@@ -360,6 +360,15 @@ const struct TerrainTableStruct gTerrainTable[] =
 	[BATTLE_TERRAIN_LAVA_POOL + 4] =
 		{
 			.camouflageType = TYPE_FIRE,
+			.secretPowerEffect = MOVE_EFFECT_SPD_MINUS_2,
+			.secretPowerAnim = MOVE_FISSURE,
+			.naturePowerMove = MOVE_EARTHQUAKE,
+			.burmyForm = SPECIES_BURMY,
+		},
+
+	[BATTLE_TERRAIN_CARNELIDGE_PEAK + 4] =
+		{
+			.camouflageType = TYPE_GROUND,
 			.secretPowerEffect = MOVE_EFFECT_BURN,
 			.secretPowerAnim = MOVE_ERUPTION,
 			.naturePowerMove = MOVE_LAVAPLUME,

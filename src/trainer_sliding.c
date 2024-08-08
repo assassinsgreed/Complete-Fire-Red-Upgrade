@@ -92,6 +92,8 @@ static const struct TrainerSlide sTrainerSlides[] =
 	{0x1BD, sText_GymLeaderTrainee_FirstMonDown, sText_GymLeaderTrainee_LastSwitchIn, sText_GymLeaderTrainee_LowHP}, // Gym Trainee Mason
 	{0x1BE, sText_GymLeaderTrainee_FirstMonDown, sText_GymLeaderTrainee_LastSwitchIn, sText_GymLeaderTrainee_LowHP}, // Gym Trainee Faye
 	{0x1C5, sText_Leader7_FirstMonDown, sText_Leader7_LastSwitchIn, sText_Leader7_LowHP}, // Gym Leader Iris
+	{0x1D5, sText_Rival6_FirstMonDown, sText_Rival6_FirstMonDown, sText_Rival6_LowHP}, // Carnelidge Volcano Rival
+	{0x1D6, sText_Alistair_FirstMonDown, sText_Alistair_LastSwitchIn, sText_Alistair_LowHP}, // Carnelidge Volcano Alistair
 	{}, // Champion Selene
 };
 

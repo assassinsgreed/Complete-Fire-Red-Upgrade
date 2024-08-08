@@ -1200,6 +1200,8 @@ static u8 GetTrainerMonGender(struct Trainer* trainer)
 	switch (trainer->trainerClass)
 	{
 		case CLASS_TEAM_PLUTO: //Otherwise all Grunts have the same genders
+		case CLASS_TEAM_PLUTO_ADMIN:
+		case CLASS_TEAM_PLUTO_LEADER:
 		case CLASS_LEADER:
 		case CLASS_ELITE_4:
 		case CLASS_CHAMPION:
@@ -1345,6 +1347,8 @@ static bool8 IsBossTrainerClassForLevelScaling(u16 trainerId)
 	#endif
 
 	switch (gTrainers[trainerId].trainerClass) {
+		case CLASS_TEAM_PLUTO_ADMIN:
+		case CLASS_TEAM_PLUTO_LEADER:
 		case CLASS_LEADER:
 		case CLASS_ELITE_4:
 		case CLASS_CHAMPION:
