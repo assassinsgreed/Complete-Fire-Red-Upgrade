@@ -1548,7 +1548,7 @@ bool8 TryStartStepCountScript(u16 metatileBehavior)
 		if (customWalkingScript != NULL)
 		{
 			ScriptContext1_SetupScript(customWalkingScript);
-			return TRUE;
+			return FALSE; // Return false so wild encounters can occur as the player walks
 		}
 	}
 

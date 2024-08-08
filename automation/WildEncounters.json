@@ -530,7 +530,7 @@
             "mapgroup": 1,
             "mapnum": 42,
             "grass": {
-                "rate": 52,
+                "rate": 21,
                 "pokemon": [
                     { "low": 49, "high": 52, "species": "SPECIES_SLUGMA" },
                     { "low": 50, "high": 53, "species": "SPECIES_BOLDORE" },
