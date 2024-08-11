@@ -409,8 +409,8 @@ extern const u16 sMapSectionTopLeftCorners[][2];
 extern const u16 sMapSectionDimensions[][2];
 void CreateTownMapRoamerSprites(void)
 {
-	if (GetSelectedRegionMap() != 0)
-		return; //Roaming only tracked on the main map
+	if (GetSelectedRegionMap() != 0 || FlagGet(FLAG_IN_THE_EMPTY_WORLD))
+		return; //Roaming only tracked on the main map, or in the empty world
 
 	for (int i = 0; i < MAX_NUM_ROAMERS; ++i)
 	{
