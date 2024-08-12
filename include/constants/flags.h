@@ -643,7 +643,9 @@
 #define FLAG_STEEL_BEAM_TUTOR_UNLOCKED                   0x26E
 #define FLAG_SPOKE_TO_ENA_AT_HESSON_PASS                 0x26F
 #define FLAG_JIRACHI_AWAKENED                            0x270
-#define FLAG_GOT_BICYCLE                                 0x271
+*/
+#define FLAG_IN_THE_EMPTY_WORLD                          0x271
+/*
 #define FLAG_GOT_DOME_FOSSIL                             0x272
 #define FLAG_GOT_HELIX_FOSSIL                            0x273
 #define FLAG_DID_ESPHERE_TRADE                           0x274

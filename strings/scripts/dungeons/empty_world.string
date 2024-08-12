@@ -1,0 +1,101 @@
+#org @gText_EmptyWorld_RivalAsksAlistairWhatHappened
+[BLACK][RIVAL]: [BLUE]Alistair!\pWhere did Jirachi go?\nWhat did you do?
+
+#org @gText_EmptyWorld_AlistairRespondsToRivalsQuestion
+[BLACK]Alistair: [BLUE]Exactly what I intended to\ndo, [RIVAL].
+
+#org @gText_EmptyWorld_SeleneCommentsOnWhatHeDid
+[BLACK]Selene: [RED]No[.] He[.]\nIt can't be[.]\pHe wished for all Pok\emon to cease\nto exist, and his wish came true!
+
+#org @gText_EmptyWorld_AlistairJustifiesHimself1
+[BLACK]Alistair: [BLUE]Yes, that's correct,\nSelene.\pPok\emon are, or rather were,\nincredible creatures.\pAmazing things were achieved due\nto the bond between people and\lPok\emon.\pI will not deny this. However[.]\pTheir potential to divide people and\nbring pain was a far more likely\loutcome.
+
+#org @gText_EmptyWorld_AlistairJustifiesHimself2
+[BLACK]Alistair: [BLUE]We are selfish creatures,\nand that trait passed onto the\lPok\emon around us.\pLike Team Pluto, who wished to use\nPok\emon to rule with an iron fist.\pIn other regions, organizations\nattempt to use Pok\emon to\ldetabilize the world.\pThese are unusual occurences,\nsure.\pA more common reality is that those\nwho excel at battling have a\lhigher social status than their\lpeers.\pSurely you can see that Pok\emon only\nbring pain to those around them?
+
+#org @gText_EmptyWorld_AlistairJustifiesHimself3
+[BLACK]Alistair: [BLUE][RIVAL], I surely do not\nneed to explain this truth to you.
+
+#org @gText_EmptyWorld_RivalChallengesAlistairsDecision
+[BLACK][RIVAL]: [BLUE]What are you saying,\nAlistair?\pThat a world without Pok\emon is a\nbetter one?
+
+#org @gText_EmptyWorld_AlistairConfirmsHisDecision
+[BLACK]Alistair: [BLUE]Exactly. Now Pok\emon cannot\nbe used to bring harm to others.
+
+#org @gText_EmptyWorld_RivalAttemptsToBattle
+[BLACK][RIVAL]: [BLUE]This isn't what we agreed\nto, Alistair!\pI just wanted to be strong enough\nto face [PLAYER] as an equal!\pYou've left me with no choice[.]\pI'll have to battle you to get you\nto see reason.\pCorviknight, go!
+
+#org @gText_EmptyWorld_RivalRealizesWhatHappened
+[BLACK][RIVAL]: [BLUE]N-No! That's right[.]\nCorviknight is[.]
+
+#org @gText_EmptyWorld_AlistairConcludesHisPoint1
+[BLACK]Alistair: [BLUE]You've just made my point,\n[RIVAL].\pYou disagreed with me, and intended\nto make me submit through force.
+
+#org @gText_EmptyWorld_AlistairConcludesHisPoint2
+[BLACK]Alistair: [BLUE]This is precisely why\nPok\emon needed to be eliminated.
+
+#org @gText_EmptyWorld_SeleneCondemnsAlistair
+[BLACK]Selene: [RED]You say Pok\emon only bring\npain, but that's just not true!\pSome rely upon Pok\emon to help\nthem live their day-to-day lives.\pOthers befriend them and turn to\nthem when they have no one else.\pAnd for some, their Pok\emons'\nstrength gives them the hope and\ldetermination they need to change.\pYou could say a Pok\emon's strength\ngives people a strength of their\lown.\pAnd now[.] These people have lost\nthat[.]\pAlistair[.] What you've done is truly\nterrible.
+
+#org @gText_EmptyWorld_AlistairRebukesSelene
+[BLACK]Alistair: [BLUE]No, Selene. Pok\emon have\nsimply become a crutch to those\lpeople.\pThey now have the opportunity to\nstand on their own two feet.
+
+#org @gText_EmptyWorld_SeleneApprehendsAlistair
+[BLACK]Selene: [RED]Alistair[.]\pYou've been hurt because of Pok\emon,\nI understand that.\pI've had a hand to play in that as\nwell.\pBut what you've done is\nunforgiveable.\pI may not have my Pok\emon at my\nside anymore, but I am still\lKulure's champion.\pIt is my duty to take you in and\nensure you're adequately punished.
+
+#org @gText_EmptyWorld_AlistairAcceptsHisFate
+[BLACK]Alistair: [BLUE]Anything to clutch the\nreigns of your fabricated rule.\pDo as you will. I've done what I set\nout to do and have no regrets.
+
+#org @gText_EmptyWorld_SeleneGivesAlistairHisSentence
+[BLACK]Selene: [RED]I want you to understand\njust what you've done, Alistair.\pYou'll be partaking in community\nservice as punishment.\pYou'll be working with and alongside\nthose that will be hurt by your\lactions.\pAnd, in time, I hope you come to\nunderstand just how much people\lrelied upon Pok\emon.\pNot as tools to hurt others, but as\ncompanions.
+
+#org @gText_EmptyWorld_SeleneLeavesWithAlistair
+[BLACK]Selene: [RED]Let's go, Alistair.
+
+#org @gText_EmptyWorld_SeleneTalksToPlayer
+[BLACK]Selene: [RED][PLAYER], [RIVAL][.]\pI'm truly sorry for what happened\nhere. If I had been faster[.]\pNo, there's no use in thinking about\nwhat-ifs. What's done is done[.]\pAlthough[.] There may be a way to[.]\nNo, it's too risky.
+
+#org @gText_EmptyWorld_RivalAsksSeleneHowToFixThings
+[BLACK][RIVAL]: [BLUE]There's a way to fix this?\pPlease, Champion Selene[.] Tell me!
+
+#org @gText_EmptyWorld_SeleneExplainsUltraSpace
+[BLACK]Selene: [RED]Well[.]\pThe Interdimensional Research\nFacility recently made a\lbreakthrough.\pThey were able to open a stable\nportal to another dimension, just\lfor a brief moment.\pWe've called this place "Ultra\nSpace\" but we know very little\labout it.\pWe've only been able to confirm\nthere are unusual creatures there.\pCreatures like Pok\emon, but not[.]\pThere's a slim chance we could use\nan Ultra Beast to reverse Jirachi's\lwish.\pIt would be incredibly\ndangerous, though.\pThere's also no guarantee that\nsomeone could get back home[.]
+
+#org @gText_EmptyWorld_RivalWillGoToUltraSpace
+[BLACK][RIVAL]: [BLUE]I'll do it. I'll go to Ultra\nSpace and fix this mess.
+
+#org @gText_EmptyWorld_SeleneDisapprovesOfRivalsChoice
+[BLACK]Selene: [RED][RIVAL], I can't ask that\nof you. The risks are too great.
+
+#org @gText_EmptyWorld_RivalReaffirmsTheirChoice
+[BLACK][RIVAL]: [BLUE]I know, but[.]\nI need to do this.\pI'm partly responsible for what\nhappened here.\pI[.] I've caused a lot of problems for\npeople.\pI know it's dangerous. I know there's\nno guarantee it'll work.\pBut[.] I have to try.\nPlease, let me do this.
+
+#org @gText_EmptyWorld_SeleneGivesIn
+[BLACK]Selene: [RED][.] If you've made up your\nmind, I can't stop you.\pJust be careful.
+
+#org @gText_EmptyWorld_AlistairRebukesRival
+[BLACK]Alistair: [BLUE]This change in heart is\ndisappointing, [RIVAL].\pThis is everything you wanted. It's\ntoo late to get cold feet.
+
+#org @gText_EmptyWorld_SeleneTakesAlistairAway
+[BLACK]Selene: [RED]And you, Alistair[.]\pIt's time we got going.\nYou've got a lot of work to do.
+
+#org @gText_EmptyWorld_RivalCommentsOnTheirDeparture
+[BLACK][RIVAL]: [BLUE]They're gone[.]
+
+#org @gText_EmptyWorld_RivalAddressesPlayer
+[BLACK][RIVAL]: [BLUE][PLAYER], I owe you an\napology as well.\pI got so caught up in trying to beat\nyou that I lost sight of things.\pI treated you terribly.\nI'm sorry, [PLAYER].
+
+#org @gText_EmptyWorld_RivalCommentsOnWorldState
+[BLACK][RIVAL]: [BLUE]I played a part in\nsomething terrible, maybe even\lpermanent[.]\pLook around. There are no birds in\nthe sky[.]\pNo Pok\emon rustling around in the\ngrass[.]\pIt's like the life has been sucked\nout of the world.
+
+#org @gText_EmptyWorld_RivalAsksPlayerFavor
+[BLACK][RIVAL]: [BLUE][PLAYER], I have a favour\nto ask of you.\pDon't feel pressured to say yes,\neither.\pEspecially after everything that's\nhappened.\p[PLAYER], would you go to Ultra\nSpace with me?
+
+#org @gText_EmptyWorld_PlayerDoesNotWantToGoToUltraSpace
+[BLACK][RIVAL]: [BLUE]I understand.\pIt's too dangerous, and so much has\nalready happened.\pI[.] I'm scared, but I can do this.\nI have to.\pCould I ask you to come see me off,\nat least?\pIt'd really help put my nerves at\nease.\pI'll see you later, I hope.\nTake care, [PLAYER].
+
+#org @gText_EmptyWorld_PlayerWillGoToUltraSpaceWithRival
+[BLACK][RIVAL]: [BLUE]Oh, [PLAYER], that makes me\nreally happy.\pTo be honest, I'm scared. Like,\nreally scared.\pBut, I have to do this to make up\nfor what I've done.\pAnd with you by my side, I feel much\nmore confident.\pIt'll be a long journey there, but\nlet's go.
+
+#org @gText_EmptyWorld_SystemMessageAboutWorldState
+The world has changed[.]\nIt is now devoid of Pok\emon.\pAs a result, the Pok\edex is\nmalfunctioning.\pCertain routes have become\ninaccessible as well.\pGet to the Interdimensional Research\nFacility in Daimyn City as soon as\lpossible!

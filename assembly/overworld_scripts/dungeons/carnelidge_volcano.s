@@ -177,7 +177,6 @@ MapScript_SetCarnelidgeVolcanoPeakState:
 
 LevelScripts_CarnelidgeVolcanoPeak_StoryEvents:
     levelscript VarStorySequence 0x1 LevelScript_InitiateStoryConclusion
-    @ TODO Later: Level script for story's conclusion
 	.hword LEVEL_SCRIPT_TERMIN
 
 LevelScript_InitiateStoryConclusion:
@@ -281,8 +280,9 @@ LevelScript_InitiateStoryConclusion:
     cry SPECIES_JIRACHI 0x0
     waitcry
     msgbox gText_CarnelidgeVolcanoPeak_AlistairsWish MSG_NORMAL
-    @ TODO later: Transport player, set vars and flags, end event
     addvar VarStorySequence 0x1
+    getplayerpos 0x4000 0x4001
+    warpmuted 16 2 0xFF 0x4000 0x4001 @ Warp to same position in the empty world
     end
 
 DoNotUnderstandMotivations:
