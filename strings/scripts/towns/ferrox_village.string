@@ -14,6 +14,9 @@ I love eating apples under this tree.\nI get all my best ideas here.
 #org @gText_FerroxOverworld_Policeman
 Hey, kid. We've been getting reports\nof Team Pluto activity in the area.\pIf you see or hear them, you come\nrunning to a police officer, okay?\lDon't get involved with them.
 
+#org @gText_FerroxOverworld_Policeman_PlutoDefeated
+We've received word that Team Pluto\nhas been disbanded.\pAll those involved should be behind\nbars now.\pIf you hear anything else about Team\nPluto, though, be sure to run to\lthe nearest police officer, okay?
+
 #org @gText_FerroxOverworld_LibrarySign
 Ferrox Village Library\nHome to the largest book\lcollection in Kulure!
 

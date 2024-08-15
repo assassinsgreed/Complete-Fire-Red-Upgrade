@@ -55,7 +55,13 @@ EventScript_FerroxVillage_AppleMan:
 
 .global EventScript_FerroxVillage_Policeman
 EventScript_FerroxVillage_Policeman:
+    checkflag 0x4A @ Pluto Defeated
+    if SET _goto Policeman_PlutoDefeated
     npcchat gText_FerroxOverworld_Policeman
+    end
+
+Policeman_PlutoDefeated:
+    npcchat gText_FerroxOverworld_Policeman_PlutoDefeated
     end
 
 .global SignScript_FerroxVillage_Library

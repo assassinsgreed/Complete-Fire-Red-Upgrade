@@ -1,3 +1,5 @@
+// Story events
+
 #org @gText_EmptyWorld_RivalAsksAlistairWhatHappened
 [BLACK][RIVAL]: [BLUE]Alistair!\pWhere did Jirachi go?\nWhat did you do?
 
@@ -99,3 +101,307 @@
 
 #org @gText_EmptyWorld_SystemMessageAboutWorldState
 The world has changed[.]\nIt is now devoid of Pok\emon.\pAs a result, the Pok\edex is\nmalfunctioning.\pCertain routes have become\ninaccessible as well.\pGet to the Interdimensional Research\nFacility in Daimyn City as soon as\lpossible!
+
+// Events in the Empty World
+#org @gText_EmptyWorld_CarnelidgeVolcano_Scientist
+You need to leave.\pSomething has happened, and all\nPok\emon here have disappeared!\pAs a result, Carnelidge Volcano has\nbecome very unstable[.]\pThe scientist in me wishes\nto investigate this phenomenon.\pBut, as a trainer[.]\pJust what is happening?
+
+#org @gText_EmptyWorld_CarnelidgeVolcano_CrushGirl
+My Pok\emon and I were training.\pThen, suddenly, there was a bright\nflash and they were gone!\pMy training partners[.] Where did they\ngo?
+
+#org @gText_EmptyWorld_CarnelidgeVolcano_BirdKeeper
+Have you seen my birds?\pThey were swooping and diving\nthrough the mountain crags.\pI lost track of them and they aren't\nanswering my calls[.]
+
+#org @gText_EmptyWorld_CarnelidgeVolcano_Hiker
+These tremors are unnatural.\pThere's no telling when a rockslide\nmight happen.\pYou need to get off the mountain!
+
+#org @gText_EmptyWorld_Route13_Gambler
+My Pok\emon used to cheer me on\nwhile I gambled[.]\pNow that they're gone, though[.]
+
+#org @gText_EmptyWorld_Route13_SuperNerd
+I was tracking a rare Pok\emon, then\nit suddenly vanished.\pIt wasn't your doing, was it?
+
+#org @gText_EmptyWorld_Route13_Hiker
+Do you know what's going on?\nMy Pok\emon just disppeared[.]\pSomething like this has never\nhappened before.\pWhat am I supposed to do?
+
+#org @gText_EmptyWorld_Route13_Blackbelt
+Wh-what happened?\pMy Pok\e Balls[.] They're totally\nempty!
+
+#org @gText_EmptyWorld_Route13_Picknicker
+Is it eerily quiet to you, too?\nOr is it just me?
+
+#org @gText_EmptyWorld_Route13_LycanrocGirl
+Lycanroc?\nWhere did you go, buddy?
+
+#org @gText_EmptyWorld_Route13RestHouse_PCGuy
+The PC is malfunctioning.\pSorry about that, I'll try to get it\nfixed soon!\pThen you can use it to store and\nwithdraw your Pok\emon again.
+
+#org @gText_EmptyWorld_Route13RestHouse_Hiker
+I'm going to go hiking with my son\nand our Pok\emon soon!\pIt's going to be so much fun!\nHe loves the family Boldore.
+
+#org @gText_EmptyWorld_Route13RestHouse_Nurse
+I'd offer to heal you and your\nPok\emon, but[.]\pOh, why is this happening? What did\nwe do to deserve this?
+
+#org @gText_EmptyWorld_Route13RestHouse_BookshelfGirl
+Ugh, this sucks.\pWhy do I have to study while I'm on\nvacation? So lame!
+
+#org @gText_EmptyWorld_MalfunctioningPC
+The PC is malfunctioning.\nIt can't be used right now.
+
+#org @gText_EmptyWorld_Route4_FatGuy
+Hey, you! Something scary is\nhappening right now.\pWe're trying to keep everyone out of\nTorma Cave until we know what's\lgoing on.\pPlease make your way to Ferrox\nVillage.
+
+#org @gText_EmptyWorld_Route4_ParasolLady
+Sorry, you'll have to turn back.\pWe need everyone to stay somewhere\nsafe while we figure things out.\pWhy don't you meet up with others in\nFerrox Village?
+
+#org @gText_EmptyWorld_Route4_Camper
+Do you know what's going on?\nNobody will tell me anything!
+
+#org @gText_EmptyWorld_Route4_Psychic
+I sense[.] Something bad has happened.
+
+#org @gText_EmptyWorld_Route4_Beauty
+Sorry, I don't have time to chat\nright now.\pI'm trying to figure out what\nhappened to my Pok\emon.
+
+#org @gText_EmptyWorld_Route4_Beauty2
+No[.] My beautiful Pok\emon[.] Gone!
+
+#org @gText_EmptyWorld_Route4_Lass
+Okay, okay[.]\nJust have to keep a cool head.\pThere's gotta be a good reason for\nall this. Yeah. There has to be!
+
+#org @gText_EmptyWorld_Route4_BirdKeeper
+I was watching some bird Pok\emon fly\nby and then[.]\pThey just disappeared?\nWhat's going on?
+
+#org @gText_EmptyWorld_Route4_CrushGirl
+I'm really confused[.]\pI was battling someone, and then\nboth of our Pok\emon just vanished?\pWas it a new Pok\emon move?\nWhere is my Pok\emon?
+
+#org @gText_EmptyWorld_Route4_Gentleman
+I have never seen anything like this,\nin all my years.\pI can't shake the feeling that\nsomething really bad has happened.
+
+#org @gText_EmptyWorld_Route4_BirdKeeper2
+A lot of people are going to Ferrox\nVillage until things get sorted out.\pAre you going there, too?
+
+#org @gText_EmptyWorld_Route4_OldLady
+Oh, Yamper[.] Where did you go?\pCome here, sweetie[.]
+
+#org @gText_EmptyWorld_Route4_Boy
+Where did my Wynaut go?\pIt was right here, but now it's\ngone[.]\pYou didn't steal it, did you?
+
+#org @gText_EmptyWorld_FerroxVillage_Blackbelt
+I don't know what's going on, but now\neveryone is yelling, and that is[.]\pAWESOME! Gyahahahaha!\pTake that, library!
+
+#org @gText_EmptyWorld_FerroxVillage_Biker1
+The boss told us to hit the brakes\nuntil we get word that things are\lsafe.\pWe're rebels, but we ain't stupid,\ny'know?
+
+#org @gText_EmptyWorld_FerroxVillage_Girl
+Excuse me, do you know what's\nhappening?\pI saw Stella walk by and she looked\nreally sad[.]
+
+#org @gText_EmptyWorld_FerroxVillage_FatGuy
+I do all my best thinking under this\ntree.\pMaybe if I stay here long enough, I\ncan think of how to fix this mess.
+
+#org @gText_EmptyWorld_FerroxVillage_Policeman
+Hey, you. All Pok\emon seem to have\ndisappeared completely.\pWe're assessing the situation.\pUntil we have an answer for this,\nplease stay within the village.
+
+#org @gText_EmptyWorld_FerroxVillage_Biker2
+The boss isn't afraid of anything.\pNot breaking a bone.\nNot the police.\pAnd DEFINITELY not losing his\nPok\emon!
+
+#org @gText_EmptyWorld_FerroxVillage_BikerBoss
+I'm the boss of these knuckleheads.\pThey'll act tough, but truth is,\nthey're all scared stiff!\pIt's up to me to keep 'em level\nheaded and stay put.\pJust 'cuz we're rebels doesn't mean\nwe're troublemakers.
+
+#org @gText_EmptyWorld_FerroxVillage_Biker3
+No wild Pok\emon to get in my way[.]\pI can ride my motorcycle even\nfaster now!
+
+#org @gText_EmptyWorld_FerroxVillage_Biker4
+The guys are acting tough, but I\ndunno, man.\pIsn't a world without Pok\emon kinda\nbad?
+
+#org @gText_EmptyWorld_FerroxVillage_Biker5
+My buddy is a cop.\pYeah, yeah, I know. Kinda unexpected\nfor a guy like me.\pHe asked us to help block the road\nso people stay put until they get\lto the bottom of things.
+
+#org @gText_EmptyWorld_FerroxVillage_NPCHouses_BerryMom
+Have you heard the news? They say\nPok\emon have stared disappearing!
+
+#org @gText_EmptyWorld_FerroxVillage_NPCHouses_BerryDaughter
+I can't find my darling Shuckle.\pWithout him, I don't know how I'll\ntend to my berries[.]
+
+#org @EmptyWorld_FerroxVillage_Pokemart_MainShop
+We've been asked to stop selling\nmerchandise for the time being.\pPlease understand.
+
+#org @EmptyWorld_FerroxVillage_Pokemart_BerryShop
+I'm sorry, but I cannot sell\nberries right now.\pI need to preserve our stock, in\ncase people need them.\pMy apologies[.]
+
+#org @EmptyWorld_FerroxVillage_Pokemart_ShoppingGirl
+I was just about to check out, and\nthen those clerks told me they're\lshutting the store down.\pUgh[.] What's their deal, anyways?
+
+#org @EmptyWorld_FerroxVillage_Pokemart_ShoppingMan
+I can't look at these potions.\pSeeing them just reminds me of my\nPok\emon, and it makes me too sad[.]
+
+#org @EmptyWorld_FerroxVillage_ChinchouHouse_Dad
+There, there, dear.\pWe'll find out what's happening. I\npromise!
+
+#org @EmptyWorld_FerroxVillage_ChinchouHouse_DadPleads
+Please, if you know anything[.]\nAnything at all[.]\pI can't stand to see my daughter cry\nlike this.
+
+#org @EmptyWorld_FerroxVillage_ChinchouHouse_DaughterChinchou
+My little Cosmo is missing! Waaah!\nWhere did it go?
+
+#org @EmptyWorld_FerroxVillage_ChinchouHouse_DaughterSnom
+Waaah! My Snom!! Where did it go?
+
+#org @gText_EmptyWorld_FerroxVillage_Gym_Attendee
+Yo, superstar.\pI'll level with you; things aren't\nlooking good right now.\pWord on the street is that all\nPok\emon suddenly vanished.\pI don't know what this means for\npeople like me and you, but[.]\pTry to hang in there.\pThings'll work themselves out,\nsomehow. I'm sure of it.
+
+#org @gText_EmptyWorld_FerroxVillage_Gym_Stella
+Please forgive me, but I cannot take\non any challengers at this time.\pYou see, all of the gym's Pok\emon\nhave vanished.\pIt is the same for you as well, I\nassume?\pPlease, give me some time.\nI'll try to find a solution to this.
+
+#org @gText_EmptyWorld_FerroxVillage_PokemonCenter_Nurse
+I'm sorry. I'd love to take your\nPok\emon and heal them, but[.]\pJust what is happening to our world?
+
+#org @gText_EmptyWorld_FerroxVillage_PokemonCenter_Picknicker
+I know there's no immediate danger,\nbut I don't really feel comfortable\lgoing out right now.
+
+#org @gText_EmptyWorld_FerroxVillage_PokemonCenter_SuperNerd
+People are just overreacting to\nwhat's happening.\pI'm sure the whole situation will\nblow over before long.
+
+#org @gText_EmptyWorld_FerroxVillage_PokemonCenter_Boy
+Is it just me or does the world feel\na bit gloomier?
+
+#org @gText_EmptyWorld_FerroxVillage_TutorHouse_Tutor
+I would offer to tutor your Pok\emon\nbut[.]\pOh, what am I supposed to do now?\nIt's hopeless!
+
+#org @gText_EmptyWorld_FerroxVillage_TutorHouse_TutorWife
+I feel so bad for my husband.\pHe really loved teaching Pok\emon his\nmoves, but now[.]
+
+#org @gText_EmptyWorld_FerroxVillage_Library_Attendant1
+Welcome to the Ferrox Library.\pWe have plenty of books on things\nnot related to Pok\emon.\pOh, sorry[.] That was awfully\ninsensitive.
+
+#org @gText_EmptyWorld_FerroxVillage_Library_Attendant2
+Due to recent events, we are\nsuspending our late rental fees.
+
+#org @gText_EmptyWorld_FerroxVillage_Library_PCRocker
+Hey, do you think this problem is\nhappening in other regions, too?\pI'm thinking of getting out of here\nand going to Kalos.\pMaybe they still have Pok\emon! I'm\nsuch a genius.
+
+#org @gText_EmptyWorld_FerroxVillage_Library_TableBoy
+I feel a bit numb, not going to\nlie.\pWe've had Pok\emon as part of our\nlives for so long, and now they're\ljust[.] Gone?\pIt feels surreal, to say the least.
+
+#org @gText_EmptyWorld_FerroxVillage_Library_TableGirl
+Is it just me, or does the library\nfeel even quieter than usual?
+
+#org @gText_EmptyWorld_FerroxVillage_Library_Lady
+Come on, come on, think!\pThere has to be a logical\nexplaination for everything that's\lhappening.
+
+#org @gText_EmptyWorld_FerroxVillage_Library_Psychic
+I was one of the gym trainers in\nFerrox Village[.]\pWhat am I going to do now?
+
+#org @gText_EmptyWorld_FerroxVillage_Library_BirdKeeper
+I'm sorry, but I don't feel up to\ntalking right now.
+
+#org @gText_EmptyWorld_FerroxVillage_Library_Gentleman
+Harrumph. These young'uns are\nstressing out over nothing.\pWhy, we'll just[.] We'll[.] Well, I don't\nknow, but we'll do it!\pThen everything will go back to\nnormal!
+
+#org @gText_EmptyWorld_FerroxVillage_Library_SuperNerd
+I love riddles, but this is one I\njust don't think I can crack.\pWhere did all the Pok\emon go,\nexactly?\pAnd[.] They seem to have disappeared\nall at the same time?\pVery strange[.]
+
+#org @gText_EmptyWorld_FerroxVillage_Library_Picknicker
+I bet that riddle guy is convinced\nhe can fix whatever is going on.\pUgh.
+
+#org @gText_EmptyWorld_FerroxVillage_Library_CoupleBoy
+People are saying Pok\emon just up\nand vanished.\pBut, like, that's impossible, isn't it?
+
+#org @gText_EmptyWorld_FerroxVillage_Library_CoupleGirl
+I'm really scared of what this all\nmeans, but I have to try to relax.\pChampion Selene must be finding a\nsolution to all this as we speak.
+
+#org @gText_EmptyWorld_Route11South_Lass
+What's happening? My Pok\emon are\ngone all of a sudden!\pHow am I going to continue my gym\nchallenge?
+
+#org @gText_EmptyWorld_Route11South_HessonPassGirl
+You can't go through Hesson Pass\nright now!\pThere was a landslide that caused a\nlot of damage.\pEven now, the pass is very\nunstable[.]\pA group of people are trying to\nclear the rubble, but without their\lPok\emon it could take a really\llong time[.]
+
+#org @gText_EmptyWorld_Route11South_BaldMan
+My wife and I worked with our\nPok\emon to provide for our family.\pWhat'll happen to us, now that\nthey're gone?
+
+#org @gText_EmptyWorld_Route11South_SuperNerd
+T-This is really bad.\pPeople respected me because of my\nrare Pok\emon collection.\pBut now I don't have it[.]
+
+#org @gText_EmptyWorld_Route11South_Channeler
+For all Pok\emon to suddenly\ndisappear from the world without a\ltrace[.]\pWhy, it's an omen even more dire than\nI could have ever predicted.
+
+#org @gText_EmptyWorld_Route11South_BugCatcher
+All the bug Pok\emon are gone!\pWhat'll happen to the plants around\nhere now?
+
+#org @gText_EmptyWorld_Route11South_RefinersHouse_MegaStoneRefiner
+These are troubling times, indeed.\pI made my livelihood out of forging\nMega Stones for Pok\emon to hold.\pBut without Pok\emon[.]
+
+#org @gText_EmptyWorld_Route10_Psychic
+This sensation[.]\pI can't shake the feeling that we\ncan't fix this problem[.]
+
+#org @gText_EmptyWorld_Route10_BirdKeeper
+They're asking everyone nearby to\nget to Daimyn City.\pThat means us too, right?
+
+#org @gText_EmptyWorld_Route10_Gambler
+There's a lot of buzz coming from\nDaimyn City.\pDid something happen?
+
+#org @gText_EmptyWorld_Route10_Lady
+I don't know what we'll do without\nour Pok\emon.\pI had mine for as long as I could\nremember[.]
+
+#org @gText_EmptyWorld_Route10_Camper
+Okay[.] If I was a Pok\emon[.] Where\nwould I go?\pCamping, probably.\pYeah, definitely.
+
+#org @gText_EmptyWorld_Route10_Rocker
+Hey! Do you know what happened to\neveryones' Pok\emon?\pNo? Shoot!
+
+#org @gText_EmptyWorld_Route10Guardhouse_Guard
+We're asking everyone to make their\nway to Daimyn City.\pPlease, enter the city and await\nfurther instructions.
+
+#org @gText_EmptyWorld_DaimynCity_LittleGirlGuard
+Can you describe what your family\nlooks like?\pOr where you saw them last?
+
+#org @gText_EmptyWorld_DaimynCity_LittleGirl
+(Sniff) I don't know where my mommy\nand daddy are.\pLillipup usually helps me but he ran\naway.
+
+#org @gText_EmptyWorld_DaimynCity_Boy
+We were going to watch the Passimian\nAces play a soccer game.\pBut now, I don't think the game'll be\non.\pAnd[.] I don't really feel up to\nwatching it, even if it was[.]
+
+#org @gText_EmptyWorld_DaimynCity_Girl
+This guard won't tell me what's\nhappening.\pDo you know? Can you tell me?
+
+#org @gText_EmptyWorld_DaimynCity_CoupleGuard
+Please, stay here and wait for\nfurther instructions.
+
+#org @gText_EmptyWorld_DaimynCity_GuardTop
+We've been tasked with overseeing\nthis evacuation zone.\pPlease stay here and wait for\nfurther instructions.
+
+#org @gText_EmptyWorld_DaimynCity_GuardMiddle
+I'm sorry, but I can't let you pass\nthrough here.
+
+#org @gText_EmptyWorld_DaimynCity_GuardBottom
+This was supposed to be a lazy\nday[.]\pWill things go back to normal?\nI wonder[.]
+
+#org @gText_EmptyWorld_Common_RivalTileEvent1
+[BLACK][RIVAL]: [BLUE]This is terrible[.]\pI had no idea this is what Alistair\nwas planning. I'm such an idiot!\pBut[.] I'm also responsible for this\nhappening, aren't I?\pI let myself get so upset that I\nmade a lot of bad decisions[.]\p[PLAYER], we should get going.
+
+#org @gText_EmptyWorld_Common_RivalTileEvent2
+[BLACK][RIVAL]: [BLUE]Those tremors on Carnelidge\nVolcano[.]\pYou don't think that's due to what\nhappened to this world's Pok\emon,\ldo you?\pMaybe those Pok\emon were helping\nkeep the region stable[.]\pAnd now that they're gone[.]
+
+#org @gText_EmptyWorld_Common_RivalTileEvent3
+[BLACK][RIVAL]: [BLUE]Hey, [PLAYER][.]\pDo you think something like I did can\nbe forgiven?
+
+#org @gText_EmptyWorld_Common_RivalTileEvent3_Yes
+[BLACK][RIVAL]: [BLUE]I really hope you're right.
+
+#org @gText_EmptyWorld_Common_RivalTileEvent3_No
+[BLACK][RIVAL]: [BLUE]Yeah, you're probably\nright[.]
+
+#org @gText_EmptyWorld_Common_RivalTileEvent3_Common
+[BLACK][RIVAL]: [BLUE]We should get going.
+
+#org @gText_EmptyWorld_Common_RivalTileEvent4
+[BLACK][RIVAL]: [BLUE]Everyone is panicking[.]\pI don't blame them though.\p[PLAYER], I have to get to Daimyn\nCity! I need to try and fix things.
+
+#org @gText_EmptyWorld_Common_RivalTileEvent5
+[BLACK][RIVAL]: [BLUE]I've hurt so many people\nbecause of what I've done[.]\pI just hope Alistair understands what\nhe's done, too.\pHe's not a bad person, he really\nisn't.\pHe's just hurting[.] Like I was.\pAnd, because he didn't have anyone\nthere for him, he let it overtake\lhim[.]
+
+#org @gText_EmptyWorld_Common_RivalTileEvent6
+[BLACK][RIVAL]: [BLUE]I don't know if it's\npossible, but I have to do\lwhatever I can to fix this.\pAnd then[.] I'll try to find a way to\nmake it up to everyone.\p[PLAYER], thank you for giving me a\nchance after all that's happened.\pYou have no idea how much it means\nto me.
+
+#org @gText_EmptyWorld_Common_RivalTileEvent7
+[BLACK][RIVAL]: [BLUE]We're almost there.\pI'm scared, but[.] I'm ready.\pLet's get to the Interdimensional\nResearch Facility.
