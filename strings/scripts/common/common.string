@@ -7,6 +7,15 @@ It's a rugged rock, but a Pok\emon\nmay be able to smash it.
 #org @gText_Common_PushableRock
 It's a sturdy boulder, but a Pok\emon\nmay be able to push it.
 
+#org @gText_EmptyWorld_Common_CuttableTree
+It looks like this tree could have\nbeen cut down by a Pok\emon[.]
+
+#org @gText_EmptyWorld_Common_SmashableRock
+It's a rugged rock, but a Pok\emon\nmight have been able to smash it[.]
+
+#org @gText_EmptyWorld_Common_PushableRock
+It's a sturdy boulder, but a Pok\emon\nmight have been able to push it[.]
+
 #org @gText_Common_PokemonUsedHM
 [BUFFER1] used [BUFFER2]!
 

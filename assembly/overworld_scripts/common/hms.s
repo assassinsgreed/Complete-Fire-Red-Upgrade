@@ -91,5 +91,20 @@ ReleaseAll:
     releaseall
     end
 
+.global EventScript_EmptyWorld_Common_Cut
+EventScript_EmptyWorld_Common_Cut:
+    msgbox gText_EmptyWorld_Common_CuttableTree MSG_SIGN
+    end
+
+.global EventScript_EmptyWorld_Common_RockSmash
+EventScript_EmptyWorld_Common_RockSmash:
+    msgbox gText_EmptyWorld_Common_SmashableRock MSG_SIGN
+    end
+
+.global EventScript_EmptyWorld_Common_Strength
+EventScript_EmptyWorld_Common_Strength:
+    msgbox gText_EmptyWorld_Common_PushableRock MSG_SIGN
+    end
+
 m_CutTree: .byte cut_tree, end_m
 m_SmashRock: .byte smash_rock, end_m

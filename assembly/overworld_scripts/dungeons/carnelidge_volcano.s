@@ -282,7 +282,7 @@ LevelScript_InitiateStoryConclusion:
     msgbox gText_CarnelidgeVolcanoPeak_AlistairsWish MSG_NORMAL
     addvar VarStorySequence 0x1
     getplayerpos 0x4000 0x4001
-    warpmuted 16 2 0xFF 0x4000 0x4001 @ Warp to same position in the empty world
+    warpmuted 2 12 0xFF 0x4000 0x4001 @ Warp to same position in the empty world
     end
 
 DoNotUnderstandMotivations:
