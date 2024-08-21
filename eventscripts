@@ -2494,7 +2494,7 @@ sign 2 18 1 SignScript_Route11South_TrainerTips_WildDoubleBattles
 sign 2 18 2 SignScript_Route11South_MegaStoneRefiner
 tile 2 18 0 TileScript_EmptyWorld_Common_HandleRivalComments
 tile 2 18 1 TileScript_EmptyWorld_Common_HandleRivalComments
-### R2 1ners House
+### Refiners House
 npc 2 22 0 EventScript_EmptyWorld_Route11South_RefinersHouse_MegaStoneRefiner
 ## Route 10
 npc 2 19 0 ItemScript_Common_RockIncense
@@ -2534,3 +2534,22 @@ npc 2 21 7 EventScript_EmptyWorld_DaimynCity_GuardBottom
 npc 2 21 8 EventScript_EmptyWorld_DaimynCity_Boy
 sign 2 21 0 SignScript_DaimynCityOverworld_InterdimensionalResearchLab
 sign 2 21 1 SignScript_DaimynCityOverworld_GuardHouseEast
+### Interdimensional Research Facility
+map 2 23 MapScript_EmptyWorld_InterdimensionalResearchFacility
+npc 2 23 0 EventScript_EmptyWorld_InterdimensionalResearchFacility_PCResearcherLeft
+npc 2 23 1 EventScript_EmptyWorld_InterdimensionalResearchFacility_MachineResearcherRight
+npc 2 23 2 EventScript_EmptyWorld_InterdimensionalResearchFacility_PCResearcherRight
+npc 2 23 3 EventScript_EmptyWorld_InterdimensionalResearchFacility_PlantResearcher
+npc 2 23 4 EventScript_EmptyWorld_InterdimensionalResearchFacility_MachineResearcherLeft
+npc 2 23 5 EventScript_EmptyWorld_InterdimensionalResearchFacility_BeastKillerBall
+npc 2 23 6 EventScript_EmptyWorld_InterdimensionalResearchFacility_Sakura
+npc 2 23 7 EventScript_EmptyWorld_InterdimensionalResearchFacility_Rival
+npc 2 23 8 EventScript_EmptyWorld_InterdimensionalResearchFacility_Selene
+sign 2 23 0 SignScript_DaimynCityFacilities_UltraSpaceMachine
+sign 2 23 1 SignScript_DaimynCityFacilities_UltraSpaceMachine
+sign 2 23 2 SignScript_DaimynCityFacilities_UltraSpaceSafetyTipsSign
+sign 2 23 3 SignScript_DaimynCityFacilities_BeastBallsCase
+sign 2 23 4 SignScript_DaimynCityFacilities_BeastBallsCase
+sign 2 23 5 SignScript_DaimynCityFacilities_BeastBallsCase
+sign 2 23 6 SignScript_DaimynCityFacilities_BeastBallsCase
+sign 2 23 7 SignScript_EmptyWorld_MalfunctioningPC

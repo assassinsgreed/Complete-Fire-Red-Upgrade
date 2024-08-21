@@ -405,3 +405,168 @@ This was supposed to be a lazy\nday[.]\pWill things go back to normal?\nI wonder
 
 #org @gText_EmptyWorld_Common_RivalTileEvent7
 [BLACK][RIVAL]: [BLUE]We're almost there.\pI'm scared, but[.] I'm ready.\pLet's get to the Interdimensional\nResearch Facility.
+
+#org @gText_EmptyWorld_IDF_PCResearcherLeft
+Numbers are looking stable[.]\nWe're good to go.
+
+#org @gText_EmptyWorld_InterdimensionalResearchFacility_MachineResearcherRight
+We'll make sure the machines remain\noperational.
+
+#org @gText_EmptyWorld_InterdimensionalResearchFacility_PCResearcherRight
+We don't know where you'll be sent,\nor if you can return home.\pPlease ensure you're ready before\ntravelling to Ultra Space.
+
+#org @gText_EmptyWorld_InterdimensionalResearchFacility_PlantResearcher
+I wish I could join you, but we need\nall hands on deck here to keep you\lsafe.
+
+#org @gText_EmptyWorld_InterdimensionalResearchFacility_MachineResearcherLeft
+Our generators are operating as\nexpected.\pI suspect we'll have enough power to\nopen a portal for 3 seconds.
+
+#org @gText_EmptyWorld_InterdimensionalResearchFacility_BeastKillerBall
+The ball feels empty[.]
+
+#org @gText_EmptyWorld_InterdimensionalResearchFacility_Sakura
+[RED]We'll get you to Ultra Space safely.\nYou can count on it.\pWe'll do whatever we can to support\nyou, but please remember it's\lexpected to be a one way trip.
+
+#org @gText_EmptyWorld_InterdimensionalResearchFacility_Selene
+[RED]I'm sorry to ask this of you[.]\nAnd I understand your hesitation.\pPlease, take as much time as you\nneed to make your decision.
+
+#org @gText_EmptyWorld_InterdimensionalResearchFacility_Rival_PlayerMetTheRival
+[BLACK][RIVAL]: [BLUE][PLAYER][.] You came after\nall. Thank you, really.\pOkay, we'd better find who's in\ncharge and ask for their help.
+
+#org @gText_EmptyWorld_InterdimensionalResearchFacility_Rival_PlayerTravelledWithRival
+[BLACK][RIVAL]: [BLUE]So this is the\nInterdimensional Reserach Facility[.]\pThere's no time to gawk!\pLet's find the person in charge and\nask for their help.
+
+#org @gText_EmptyWorld_InterdimensionalResearchFacility_Rival_RivalAsksWhoIsInCharge
+[BLACK][RIVAL]: [BLUE]Excuse me!\pI need to ask for help from the\nperson in charge of this facility.
+
+#org @gText_EmptyWorld_InterdimensionalResearchFacility_Sakura_RespondsToRivalsRequest
+[BLACK]???: [RED]Yes, that would be me.\nPlease excuse me, however.\pWe have a situation we need to\nhandle right now.\pUnfortunately, I won't be able to\nhelp you until we're done.
+
+#org @gText_EmptyWorld_InterdimensionalResearchFacility_Rival_RespondsToSakura
+[BLACK][RIVAL]: [BLUE]If it's about the missing\nPok\emon, then it's why I've come\lhere.
+
+#org @gText_EmptyWorld_InterdimensionalResearchFacility_Sakura_ListensToRival
+[BLACK]Sakura: [RED]Oh? Then it seems we\nmight be able to help each other.\pI am Professor Sakura, the head\nresearcher at the Interdimensional\lResearch Facility.\pNow then, please continue.
+
+#org @gText_EmptyWorld_InterdimensionalResearchFacility_Rival_AsksForSakurasHelp
+[BLACK][RIVAL]: [BLUE]Yeah, I'm partly to blame\nfor that[.]\pI don't have a lot of time, so I'll\nkeep it quick.\pI want to go to Ultra Space, to see\nif I can find a way to fix what I\ldid.\pChampion Selene said you might be\nable to help me with that?
+
+#org @gText_EmptyWorld_InterdimensionalResearchFacility_Sakura_ConsidersRivalsRequest
+[BLACK]Sakura: [RED]An interesting proposal[.]
+
+#org @gText_EmptyWorld_InterdimensionalResearchFacility_Sakura_RejectsRivalsRequest
+[BLACK]Sakura: [RED]I cannot allow it.\pWe've just recently discovered\nhow to open stable portals to\lUltra Space.\pThere are still many unknowns we\nhaven't verified.\pFurthermore, we lost our ability to\npower the machine properly when\lour Pok\emon disappeared.\pWe only have enough power to open a\nportal once.\pIt would be a one way trip.\nIt's simply too dangerous.
+
+#org @gText_EmptyWorld_InterdimensionalResearchFacility_Rival_PleadsWithSakura
+[BLACK][RIVAL]: [BLUE]I understand it's dangrous,\nand I may not come back.\pBut[.] I have to try. Please, can you\nreconsider?
+
+#org @gText_EmptyWorld_InterdimensionalResearchFacility_Selene_EntranceComment
+[BLACK]???: [RED]Would you be convinced if I\nvouched for [RIVAL]?
+
+#org @gText_EmptyWorld_InterdimensionalResearchFacility_Rival_CommentsOnSelenesArrival
+[BLACK][RIVAL]: [BLUE]Champion Selene!\nI didn't expect to see you here.
+
+#org @gText_EmptyWorld_InterdimensionalResearchFacility_Selene_GreetsPlayerAndRival
+[BLACK]Selene: [RED]Alistair was taken into\ncustody without a fuss.\pThanks to that, I got here sooner\nthan I expected.
+
+#org @gText_EmptyWorld_InterdimensionalResearchFacility_Selene_VouchesForRival
+[BLACK]Selene: [RED]Hello, Sakura.\pI know this is a dangerous plan, and\na really big ask due to that.\pI can vouch for [RIVAL] and his\nintentions.\pHe's made some mistakes, but he\nrecognizes that and is determined\lto make things right.\pI don't know if we'll find an answer\nin Ultra Space.\pBut[.] If anyone can right now, it's\nhim. He'll find a way, or make one.
+
+#org @gText_EmptyWorld_InterdimensionalResearchFacility_Sakura_ScoldsSelene
+[BLACK]Sakura: [RED]Selene[.] That's a lot of big\ntalk, honey.\pThere's an infinitely small chance a\nsolution can be found there.\pAnd, we can only open a portal to\nUltra Space once.\pYou'd be asking me to send a child\noff to an uncertain end.\pTo say it's an irresponsible plan[.]\nWell[.]
+
+#org @gText_EmptyWorld_InterdimensionalResearchFacility_Selene_Insists
+[BLACK]Selene: [RED]I understand, as I'm sure\n[RIVAL] does as well.\pBut if it's what he chooses, then we\nhave to respect that.\pBesides, we don't have any other\noptions right now.
+
+#org @gText_EmptyWorld_InterdimensionalResearchFacility_Sakura_StartsToConsider
+[BLACK]Sakura: [RED]That is true[.]
+
+#org @gText_EmptyWorld_InterdimensionalResearchFacility_Sakura_GivesInToSelenesRequest
+[BLACK]Sakura: [RED]You're as pushy as ever,\nSelene.
+
+#org @gText_EmptyWorld_InterdimensionalResearchFacility_Sakura_AsksRivalsCommitment
+[BLACK]Sakura: [RED]Young man. Your name is\n[RIVAL], correct?\pI'm a woman of science, and I'll\ntell you plainly[.]\pThis is a very risky plan. The\nchances of you coming home are\lnearly zero.\pKnowing that, you still intend to go?
+
+#org @gText_EmptyWorld_InterdimensionalResearchFacility_Rival_Commits
+[BLACK][RIVAL]: [BLUE]I do.\pIf I don't, and people have to live\nwithout their Pok\emon[.]\pWell, I don't think I could live with\nmyself.
+
+#org @gText_EmptyWorld_InterdimensionalResearchFacility_Sakura_AcceptsRivalsRequest
+[BLACK]Sakura: [RED]Very well, then.\pWe'll do everything in our power to\nsupport you.\pI just have one requirement.\pThis is a dangerous endeavor. We\ndon't know what to expect.\pYou should go with someone you\ntrust, to keep each other safe.
+
+#org @gText_EmptyWorld_InterdimensionalResearchFacility_Selene_CannotGoToUltraSpace
+[BLACK]Selene: [RED]I would join you, but I'm\nneeded here.\pPok\emon have vanished across the\nentire region, and possibly the\lworld.\pPeople are scared, and looking to me\nfor reassurance.\pI need to stay here to keep people\ncalm.
+
+#org @gText_EmptyWorld_InterdimensionalResearchFacility_Rival_AcceptsSeleneBeingUnableToGo
+[BLACK][RIVAL]: [BLUE]Yeah, I get it.\nYou're needed here.
+
+#org @gText_EmptyWorld_InterdimensionalResearchFacility_Rival_AsksForPlayersHelp
+[BLACK][RIVAL]: [BLUE][PLAYER][.] I know I have no\nright to ask this, but[.]\pWould you be willing to go to Ultra\nSpace with me, knowing the risks?
+
+#org @gText_EmptyWorld_InterdimensionalResearchFacility_Rival_PlayerIsNotReady
+[BLACK][RIVAL]: [BLUE]Yeah, I understand[.]\nIt's a really big thing to ask.\pI'm committed to doing this, so I'll\nstay here to prepare.\pPlease, think it over and let me know\nif you change your mind.\pAnd, if your mind is set, I'll try to\nfigure something out.
+
+#org @gText_EmptyWorld_InterdimensionalResearchFacility_Rival_PlayerIsReady
+[BLACK][RIVAL]: [BLUE][PLAYER][.]\pYou're really the best friend a guy\ncould ask for.\pWe can do this, I just know it!
+
+#org @gText_EmptyWorld_InterdimensionalResearchFacility_Rival_SaysHeAndPlayerAreReady
+[BLACK][RIVAL]: [BLUE]Okay, we're ready,\nProfessor Sakura.
+
+#org @gText_EmptyWorld_InterdimensionalResearchFacility_Sakura_LeadsPlayerAndRivalToMachine
+[BLACK]Sakura: [RED]Understood.\pPlease, come this way.
+
+#org @gText_EmptyWorld_InterdimensionalResearchFacility_Sakura_ExplainsMachine
+[BLACK]Sakura: [RED]This machine here will open\na portal to Ultra Space.\pWe're short on power, and can only\nkeep it open for 3 seconds.\pYou'll have to be quick.\pAnd remember[.] Ultra Space is an\nentirely different dimension.\pWe don't know what you'll encounter[.]\nOr even if you'll find a way home[.]
+
+#org @gText_EmptyWorld_InterdimensionalResearchFacility_Rival_ShowsConfidenceInThePlan
+[BLACK][RIVAL]: [BLUE]Don't worry. We'll find a\nway to fix this. I just know it.
+
+#org @gText_EmptyWorld_InterdimensionalResearchFacility_Selene_SendsOffPlayerAndRival
+[BLACK]Selene: [RED]Good luck, you two!\pWe'll do everything we can from\nhere in the meantime.
+
+#org @gText_EmptyWorld_InterdimensionalResearchFacility_Rival_RespondsToSelenesSendoff
+[BLACK][RIVAL]: [BLUE]You bet!
+
+#org @gText_EmptyWorld_InterdimensionalResearchFacility_Rival_AcknowledgesPlayer
+[BLACK][RIVAL]: [BLUE][PLAYER][.]\nThis could be really dangerous.\pI'm glad you're with me. I just know\nwe'll find a way to fix this mess.
+
+#org @gText_EmptyWorld_InterdimensionalResearchFacility_Rival_AsksSakuraWhatToDo
+[BLACK][RIVAL]: [BLUE]Okay! No more stalling.\pWhat do we need to do, professor?
+
+#org @gText_EmptyWorld_InterdimensionalResearchFacility_Sakura_GivesInstructions
+[BLACK]Sakura: [RED]Step in front of this machine\nhere.\pWe'll get it started and send you\noff.
+
+#org @gText_EmptyWorld_InterdimensionalResearchFacility_Sakura_PreparingToStartMachine
+[BLACK]Sakura: [RED]Good. Now please stand\nstill.\pAs the machine runs, you may feel a\npulling sensation.\pThis is normal, and it's the machine\npulling you into Ultra Space.\pOnce the pulling stops, you will\nhave arrived.
+
+#org @gText_EmptyWorld_InterdimensionalResearchFacility_Sakura_SendingOffOne
+[BLACK]Sakura: [RED]Okay!\pStart sending power to the Ultra\nWormhole Device!
+
+#org @gText_EmptyWorld_InterdimensionalResearchFacility_Researcher_SendingOffOne
+[BLACK]Researcher: [BLUE]Power on!\pThe machine is drawing power at a\nsteady rate.\pWe should be ready to open a portal\nmomentarily.
+
+#org @gText_EmptyWorld_InterdimensionalResearchFacility_Sakura_SendingOffTwo
+[BLACK]Sakura: [RED]Start up the transferrence\nsoftware.\pI need a reading as soon as\npossible!
+
+#org @gText_EmptyWorld_InterdimensionalResearchFacility_Researcher_SendingOffTwo
+[BLACK]Researcher: [BLUE]Understood!\pSoftware is starting, and we can\nbegin monitoring momentarily.
+
+#org @gText_EmptyWorld_InterdimensionalResearchFacility_Sakura_SendingOffSoon
+[BLACK]Sakura: [RED][PLAYER], [RIVAL].\pYou should feel that pulling\nsensation soon.
+
+#org @gText_EmptyWorld_InterdimensionalResearchFacility_Rival_FeelingPull
+[BLACK][RIVAL]: [BLUE]I feel it!
+
+#org @gText_EmptyWorld_InterdimensionalResearchFacility_Sakura_SendingOffThree
+[BLACK]Sakura: [RED]How are things looking?
+
+#org @gText_EmptyWorld_InterdimensionalResearchFacility_Researcher_SendingOffThree
+[BLACK]Researcher: [BLUE]Levels are steady.\nThe portal will open soon.
+
+#org @gText_EmptyWorld_InterdimensionalResearchFacility_Sakura_SendingOffFour
+[BLACK]Sakura: [RED]Good luck, you two.\pHopefully we'll meet again soon.
+
+#org @gText_EmptyWorld_InterdimensionalResearchFacility_Rival_SendingOffFour
+[BLACK][RIVAL]: [BLUE]Here we go[.]
+
+#org @gText_EmptyWorld_InterdimensionalResearchFacility_Selene_CountingOnPlayerAndRival
+[BLACK]Selene: [RED][PLAYER][.] [RIVAL][.]\pI'm counting on you. We all are.

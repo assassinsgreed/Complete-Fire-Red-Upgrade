@@ -729,3 +729,269 @@ RivalComment7:
 ReleaseAndEndRivalTileEvent:
     release
     end
+
+## Interdimensional Research Facility story sequences
+.equ SakuraInIDF, 0x7
+.equ RivalInIDF, 0x8
+.equ SeleneInIDF, 0x9
+
+.global MapScript_EmptyWorld_InterdimensionalResearchFacility
+MapScript_EmptyWorld_InterdimensionalResearchFacility:
+    mapscript MAP_SCRIPT_ON_LOAD Level_Script_ShowAllNPCsInInterdimensionalResearchFacility
+    mapscript MAP_SCRIPT_ON_FRAME_TABLE LevelScripts_EmptyWorld_InterdimensionalResearchFacility_StoryEvents
+    .byte MAP_SCRIPT_TERMIN
+
+LevelScripts_EmptyWorld_InterdimensionalResearchFacility_SetNPCPositions:
+    levelscript VarStorySequence 0x4 Level_Script_ShowAllNPCsInInterdimensionalResearchFacility
+	.hword LEVEL_SCRIPT_TERMIN
+
+Level_Script_ShowAllNPCsInInterdimensionalResearchFacility:
+    compare VarStorySequence 0x4
+    if lessthan _goto End
+    movesprite2 SakuraInIDF 0x6 0x7
+    setobjectmovementtype SakuraInIDF look_down
+    movesprite2 RivalInIDF 0x6 0x8
+    movesprite2 SeleneInIDF 0x7 0x8
+    return
+
+LevelScripts_EmptyWorld_InterdimensionalResearchFacility_StoryEvents:
+    levelscript VarStorySequence 0x3 LevelScript_InterdimensionalResearchFacilityStory
+	.hword LEVEL_SCRIPT_TERMIN
+
+LevelScript_InterdimensionalResearchFacilityStory:
+    special 0xE1 @ Check if player has a follower
+    compare LASTRESULT TRUE
+    if equal _call StopRivalFollower
+    if notequal _call RivalWalksIn
+    applymovement PLAYER m_PlayerAndRivalWalkToSakura
+    applymovement RivalInIDF m_PlayerAndRivalWalkToSakura
+    waitmovement RivalInIDF
+    msgbox gText_EmptyWorld_InterdimensionalResearchFacility_Rival_RivalAsksWhoIsInCharge MSG_NORMAL
+    sound 0x15 @ Exclaim
+    applymovement SakuraInIDF m_Surprise
+    pause DELAY_HALFSECOND
+    applymovement SakuraInIDF m_SakuraWalksToRival
+    waitmovement SakuraInIDF
+    msgbox gText_EmptyWorld_InterdimensionalResearchFacility_Sakura_RespondsToRivalsRequest MSG_NORMAL
+    msgbox gText_EmptyWorld_InterdimensionalResearchFacility_Rival_RespondsToSakura MSG_NORMAL
+    applymovement SakuraInIDF m_Question
+    msgbox gText_EmptyWorld_InterdimensionalResearchFacility_Sakura_ListensToRival MSG_NORMAL
+    msgbox gText_EmptyWorld_InterdimensionalResearchFacility_Rival_AsksForSakurasHelp MSG_NORMAL
+    applymovement SakuraInIDF m_LookLeft
+    msgbox gText_EmptyWorld_InterdimensionalResearchFacility_Sakura_ConsidersRivalsRequest MSG_NORMAL
+    applymovement SakuraInIDF m_LookDown
+    msgbox gText_EmptyWorld_InterdimensionalResearchFacility_Sakura_RejectsRivalsRequest MSG_NORMAL
+    msgbox gText_EmptyWorld_InterdimensionalResearchFacility_Rival_PleadsWithSakura MSG_NORMAL
+    playse 0x8 @ Door open
+    pause DELAY_HALFSECOND
+    msgbox gText_EmptyWorld_InterdimensionalResearchFacility_Selene_EntranceComment MSG_NORMAL
+    sound 0x15 @ Exclaim
+    applymovement PLAYER m_Surprise
+    applymovement RivalInIDF m_Surprise
+    applymovement SakuraInIDF m_Surprise
+    showsprite SeleneInIDF
+    applymovement SeleneInIDF m_SeleneWalksToSakura
+    pause DELAY_1SECOND
+    applymovement PLAYER m_LookDown
+    applymovement RivalInIDF m_LookDown
+    pause DELAY_1SECOND
+    applymovement PLAYER m_LookRight
+    applymovement RivalInIDF m_LookRight
+    waitmovement SeleneInIDF
+    msgbox gText_EmptyWorld_InterdimensionalResearchFacility_Rival_CommentsOnSelenesArrival MSG_NORMAL
+    applymovement SeleneInIDF m_LookLeft
+    msgbox gText_EmptyWorld_InterdimensionalResearchFacility_Selene_GreetsPlayerAndRival MSG_NORMAL
+    applymovement SeleneInIDF m_LookUp
+    applymovement PLAYER m_LookUp
+    applymovement RivalInIDF m_LookUp
+    msgbox gText_EmptyWorld_InterdimensionalResearchFacility_Selene_VouchesForRival MSG_NORMAL
+    applymovement SakuraInIDF m_WalkRight
+    waitmovement SakuraInIDF
+    applymovement SakuraInIDF m_LookDown
+    msgbox gText_EmptyWorld_InterdimensionalResearchFacility_Sakura_ScoldsSelene MSG_NORMAL
+    msgbox gText_EmptyWorld_InterdimensionalResearchFacility_Selene_Insists MSG_NORMAL
+    applymovement SakuraInIDF m_WalkUp
+    waitmovement SakuraInIDF
+    msgbox gText_EmptyWorld_InterdimensionalResearchFacility_Sakura_StartsToConsider MSG_NORMAL
+    applymovement SakuraInIDF m_LookDown
+    msgbox gText_EmptyWorld_InterdimensionalResearchFacility_Sakura_GivesInToSelenesRequest MSG_NORMAL
+    applymovement SakuraInIDF m_WalkLeft
+    waitmovement SakuraInIDF
+    applymovement SakuraInIDF m_WalkDown
+    msgbox gText_EmptyWorld_InterdimensionalResearchFacility_Sakura_AsksRivalsCommitment MSG_NORMAL
+    msgbox gText_EmptyWorld_InterdimensionalResearchFacility_Rival_Commits MSG_NORMAL
+    msgbox gText_EmptyWorld_InterdimensionalResearchFacility_Sakura_AcceptsRivalsRequest MSG_NORMAL
+    applymovement RivalInIDF m_LookRight
+    applymovement SeleneInIDF m_LookLeft
+    msgbox gText_EmptyWorld_InterdimensionalResearchFacility_Selene_CannotGoToUltraSpace MSG_NORMAL
+    msgbox gText_EmptyWorld_InterdimensionalResearchFacility_Rival_AcceptsSeleneBeingUnableToGo MSG_NORMAL
+    applymovement PLAYER m_LookRight
+    applymovement RivalInIDF m_LookLeft
+    applymovement SeleneInIDF m_LookUp
+    addvar VarStorySequence 0x1
+    clearflag 0x03D @ Show Casey in cutscenes; reused for cutscenes in empty world
+    call Level_Script_ShowAllNPCsInInterdimensionalResearchFacility
+    goto EventScript_EmptyWorld_InterdimensionalResearchFacility_Rival
+    end
+
+RivalWalksIn:
+    applymovement PLAYER m_PlayerWalksToRivalInterruption
+    waitmovement PLAYER
+    playse 0x8 @ Door open
+    pause DELAY_HALFSECOND
+    showsprite RivalInIDF
+    applymovement RivalInIDF m_RivalWalksToPlayer
+    waitmovement RivalInIDF
+    applymovement PLAYER m_LookRight
+    msgbox gText_EmptyWorld_InterdimensionalResearchFacility_Rival_PlayerMetTheRival MSG_NORMAL
+    return
+
+StopRivalFollower:
+    showsprite RivalInIDF
+    special 0x8E
+    special 0xD2 @ Stop follower
+    applymovement PLAYER m_PlayerWalksToRivalInterruption
+    pause 0x10 @ Pause 1/4 second to ensure rival follows player
+    applymovement RivalInIDF m_RivalWalksToPlayer
+    waitmovement RivalInIDF
+    applymovement PLAYER m_LookRight
+    waitmovement PLAYER
+    msgbox gText_EmptyWorld_InterdimensionalResearchFacility_Rival_PlayerTravelledWithRival MSG_NORMAL
+    return
+
+.global EventScript_EmptyWorld_InterdimensionalResearchFacility_PCResearcherLeft
+EventScript_EmptyWorld_InterdimensionalResearchFacility_PCResearcherLeft:
+    npcchatwithmovement gText_EmptyWorld_IDF_PCResearcherLeft m_LookUp
+    end
+
+.global EventScript_EmptyWorld_InterdimensionalResearchFacility_MachineResearcherRight
+EventScript_EmptyWorld_InterdimensionalResearchFacility_MachineResearcherRight:
+    npcchatwithmovement gText_EmptyWorld_InterdimensionalResearchFacility_MachineResearcherRight m_LookUp
+    end
+
+.global EventScript_EmptyWorld_InterdimensionalResearchFacility_PCResearcherRight
+EventScript_EmptyWorld_InterdimensionalResearchFacility_PCResearcherRight:
+    npcchatwithmovement gText_EmptyWorld_InterdimensionalResearchFacility_PCResearcherRight m_LookUp
+    end
+
+.global EventScript_EmptyWorld_InterdimensionalResearchFacility_PlantResearcher
+EventScript_EmptyWorld_InterdimensionalResearchFacility_PlantResearcher:
+    npcchatwithmovement gText_EmptyWorld_InterdimensionalResearchFacility_PlantResearcher m_LookLeft
+    end
+
+.global EventScript_EmptyWorld_InterdimensionalResearchFacility_MachineResearcherLeft
+EventScript_EmptyWorld_InterdimensionalResearchFacility_MachineResearcherLeft:
+    npcchatwithmovement gText_EmptyWorld_InterdimensionalResearchFacility_MachineResearcherLeft m_LookUp
+    end
+
+.global EventScript_EmptyWorld_InterdimensionalResearchFacility_BeastKillerBall
+EventScript_EmptyWorld_InterdimensionalResearchFacility_BeastKillerBall:
+    msgbox gText_DaimynCityFacilities_IRF_TypeNullPrompt MSG_NORMAL
+    msgbox gText_EmptyWorld_InterdimensionalResearchFacility_BeastKillerBall MSG_NORMAL
+    end
+
+.global EventScript_EmptyWorld_InterdimensionalResearchFacility_Sakura
+EventScript_EmptyWorld_InterdimensionalResearchFacility_Sakura:
+    npcchatwithmovement gText_EmptyWorld_InterdimensionalResearchFacility_Sakura m_LookDown
+    end
+
+.global EventScript_EmptyWorld_InterdimensionalResearchFacility_Rival
+EventScript_EmptyWorld_InterdimensionalResearchFacility_Rival:
+    faceplayer
+    msgbox gText_EmptyWorld_InterdimensionalResearchFacility_Rival_AsksForPlayersHelp MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto NotReadyToGoToUltraSpace
+    msgbox gText_EmptyWorld_InterdimensionalResearchFacility_Rival_PlayerIsReady MSG_NORMAL
+    getplayerpos 0x4000 0x4001
+    compare 0x4001 0x9
+    if equal _call PlayerWalksToBeBesideRival
+    applymovement RivalInIDF m_LookUp
+    applymovement PLAYER m_LookUp
+    msgbox gText_EmptyWorld_InterdimensionalResearchFacility_Rival_SaysHeAndPlayerAreReady MSG_NORMAL
+    msgbox gText_EmptyWorld_InterdimensionalResearchFacility_Sakura_LeadsPlayerAndRivalToMachine MSG_NORMAL
+    applymovement SeleneInIDF m_LookLeft
+    applymovement SakuraInIDF m_SakuraWalksToMachine
+    applymovement PLAYER m_OthersWalkToMachine
+    applymovement RivalInIDF m_OthersWalkToMachine
+    waitmovement RivalInIDF
+    applymovement PLAYER m_LookUp
+    applymovement RivalInIDF m_LookUp
+    applymovement SakuraInIDF m_LookDown
+    msgbox gText_EmptyWorld_InterdimensionalResearchFacility_Sakura_ExplainsMachine MSG_NORMAL
+    msgbox gText_EmptyWorld_InterdimensionalResearchFacility_Rival_ShowsConfidenceInThePlan MSG_NORMAL
+    applymovement SeleneInIDF m_OthersWalkToMachine
+    waitmovement SeleneInIDF
+    applymovement PLAYER m_LookRight
+    applymovement RivalInIDF m_LookRight
+    applymovement SakuraInIDF m_LookRight
+    msgbox gText_EmptyWorld_InterdimensionalResearchFacility_Selene_SendsOffPlayerAndRival MSG_NORMAL
+    msgbox gText_EmptyWorld_InterdimensionalResearchFacility_Rival_RespondsToSelenesSendoff MSG_NORMAL
+    applymovement RivalInIDF m_LookLeft
+    applymovement SakuraInIDF m_LookDown
+    msgbox gText_EmptyWorld_InterdimensionalResearchFacility_Rival_AcknowledgesPlayer MSG_NORMAL
+    applymovement PLAYER m_LookUp
+    applymovement RivalInIDF m_LookUp
+    msgbox gText_EmptyWorld_InterdimensionalResearchFacility_Rival_AsksSakuraWhatToDo MSG_NORMAL
+    applymovement SakuraInIDF m_LookLeft
+    msgbox gText_EmptyWorld_InterdimensionalResearchFacility_Sakura_GivesInstructions MSG_NORMAL
+    applymovement PLAYER m_PlayerAndRivalWalkInFrontOfMachine
+    applymovement RivalInIDF m_PlayerAndRivalWalkInFrontOfMachine
+    waitmovement RivalInIDF
+    msgbox gText_EmptyWorld_InterdimensionalResearchFacility_Sakura_PreparingToStartMachine MSG_NORMAL
+    applymovement SakuraInIDF m_LookUp
+    msgbox gText_EmptyWorld_InterdimensionalResearchFacility_Sakura_SendingOffOne MSG_NORMAL
+    sound 0x26 @ Door Shut
+    msgbox gText_EmptyWorld_InterdimensionalResearchFacility_Researcher_SendingOffOne MSG_NORMAL
+    applymovement SakuraInIDF m_LookDown
+    msgbox gText_EmptyWorld_InterdimensionalResearchFacility_Sakura_SendingOffTwo MSG_NORMAL
+    sound 0x54 @ Exp Max
+    msgbox gText_EmptyWorld_InterdimensionalResearchFacility_Researcher_SendingOffTwo MSG_NORMAL
+    applymovement SakuraInIDF m_LookLeft
+    msgbox gText_EmptyWorld_InterdimensionalResearchFacility_Sakura_SendingOffSoon MSG_NORMAL
+    msgbox gText_EmptyWorld_InterdimensionalResearchFacility_Rival_FeelingPull MSG_NORMAL
+    applymovement SakuraInIDF m_LookDown
+    sound 0x52 @ Elevator
+    pause 0x10
+    msgbox gText_EmptyWorld_InterdimensionalResearchFacility_Sakura_SendingOffThree MSG_NORMAL
+    sound 0xE8 @ Stat increase
+    msgbox gText_EmptyWorld_InterdimensionalResearchFacility_Researcher_SendingOffThree MSG_NORMAL
+    applymovement SakuraInIDF m_LookLeft
+    sound 0x49 @ Escalator
+    msgbox gText_EmptyWorld_InterdimensionalResearchFacility_Sakura_SendingOffFour MSG_NORMAL
+    msgbox gText_EmptyWorld_InterdimensionalResearchFacility_Rival_SendingOffFour MSG_NORMAL
+    sound 0x51 @ Thunder2
+    fadescreenspeed FADEOUT_WHITE 0x96 @ fast fade
+    applymovement PLAYER m_PlayerAndRivalInvisible
+    applymovement RivalInIDF m_PlayerAndRivalInvisible
+    fadescreenspeed FADEIN_WHITE 0x64 @ Slow fade
+    msgbox gText_EmptyWorld_InterdimensionalResearchFacility_Selene_CountingOnPlayerAndRival MSG_NORMAL
+    addvar VarStorySequence 0x1
+    setflag 0x03D @ Hide Casey in cutscenes again; reused for cutscenes in empty world
+    @ TODO Later: Transfer player to ultra space map
+    end
+
+NotReadyToGoToUltraSpace:
+    npcchat gText_EmptyWorld_InterdimensionalResearchFacility_Rival_PlayerIsNotReady
+    applymovement RivalInIDF m_LookUp @ Not using npcchatwithmovement in case player says no during cutscene
+    end
+
+PlayerWalksToBeBesideRival:
+    applymovement PLAYER m_PlayerStandsBesideRivalAgain
+    waitmovement PLAYER
+    return
+
+.global EventScript_EmptyWorld_InterdimensionalResearchFacility_Selene
+EventScript_EmptyWorld_InterdimensionalResearchFacility_Selene:
+    npcchatwithmovement gText_EmptyWorld_InterdimensionalResearchFacility_Selene m_LookUp
+    end
+
+m_PlayerWalksToRivalInterruption: .byte walk_up, walk_up, walk_up, walk_left, end_m
+m_RivalWalksToPlayer: .byte walk_up, walk_up, walk_up, look_left, end_m
+m_PlayerAndRivalWalkToSakura: .byte walk_left, walk_left, walk_left, walk_left, walk_left, walk_left, walk_up, walk_up, end_m
+m_SakuraWalksToRival: .byte walk_right, walk_right, walk_right, walk_down, walk_down, end_m
+m_SeleneWalksToSakura: .byte walk_up, walk_up, walk_up, walk_left, walk_left, walk_left, walk_left, walk_left, walk_up, walk_up, end_m
+m_PlayerStandsBesideRivalAgain: .byte walk_left, walk_up, end_m
+m_SakuraWalksToMachine: .byte walk_up, walk_up, walk_left, walk_left, walk_left, end_m
+m_OthersWalkToMachine: .byte walk_up, walk_up, walk_left, walk_left, end_m
+m_PlayerAndRivalWalkInFrontOfMachine: .byte walk_left, walk_left, look_down, end_m
+m_PlayerAndRivalInvisible: .byte set_invisible, end_m
