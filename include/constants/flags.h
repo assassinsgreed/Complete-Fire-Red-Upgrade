@@ -646,7 +646,7 @@
 */
 #define FLAG_IN_THE_EMPTY_WORLD                          0x271
 /*
-#define FLAG_GOT_DOME_FOSSIL                             0x272
+#define FLAG_TRAVELLED_TO_ULTRA_SPACE                    0x272
 #define FLAG_GOT_HELIX_FOSSIL                            0x273
 #define FLAG_DID_ESPHERE_TRADE                           0x274
 #define FLAG_DID_TANGENY_TRADE                           0x275

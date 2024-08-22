@@ -120,10 +120,10 @@ LevelScript_ContinueStoryConclusion:
     msgbox gText_EmptyWorld_SystemMessageAboutWorldState MSG_SIGN
     msgboxnormal
     addvar VarStorySequence 0x1
-    special 0x27 @ Copy player's party to memory (to be restored with special 0x28 later)
-    special 0xEF @ Delete player's party
     setflag 0x271 @ In the empty world
     clearflag 0x829 @ Hide Pokedex in menu
+    clearflag 0x828 @ Disable Pokemon Menu
+	setflag 0x911 @ Disable wild encounters
     @ setflag 0x91D @ Hide Save in the menu (TODO: reenable after all dev is complete)
     end
 
@@ -967,7 +967,7 @@ EventScript_EmptyWorld_InterdimensionalResearchFacility_Rival:
     msgbox gText_EmptyWorld_InterdimensionalResearchFacility_Selene_CountingOnPlayerAndRival MSG_NORMAL
     addvar VarStorySequence 0x1
     setflag 0x03D @ Hide Casey in cutscenes again; reused for cutscenes in empty world
-    @ TODO Later: Transfer player to ultra space map
+    warpmuted 2 31 0xFF 0x5 0x6 @ Warp to the landing space in ultra space
     end
 
 NotReadyToGoToUltraSpace:

@@ -2553,3 +2553,30 @@ sign 2 23 4 SignScript_DaimynCityFacilities_BeastBallsCase
 sign 2 23 5 SignScript_DaimynCityFacilities_BeastBallsCase
 sign 2 23 6 SignScript_DaimynCityFacilities_BeastBallsCase
 sign 2 23 7 SignScript_EmptyWorld_MalfunctioningPC
+
+# Ultra Space
+### NOTE: For some reason the first event is broken on each map...
+map 2 31 MapScript_UltraSpace_FirstVisit
+npc 2 32 1 EventScript_UltraSpace_AzurasVillage_Man
+npc 2 32 2 EventScript_UltraSpace_AzurasVillage_Lass
+npc 2 32 3 EventScript_UltraSpace_AzurasVillage_Shopkeeper
+tile 2 32 0 TileScript_UltraSpace_AzurasVillage_EmptyWorldCutscenes
+tile 2 32 1 TileScript_UltraSpace_AzurasVillage_EmptyWorldCutscenes
+tile 2 32 2 TileScript_UltraSpace_AzurasVillage_EmptyWorldCutscenes
+tile 2 32 3 TileScript_UltraSpace_AzurasVillage_EmptyWorldCutscenes
+tile 2 32 4 TileScript_UltraSpace_AzurasVillage_EmptyWorldTalkingToAzurasVillageNPCs
+tile 2 32 5 TileScript_UltraSpace_AzurasVillage_EmptyWorldTalkingToAzurasVillageNPCs
+tile 2 32 6 TileScript_UltraSpace_AzurasVillage_EmptyWorldTalkingToAzurasVillageNPCs
+tile 2 32 7 TileScript_UltraSpace_AzurasVillage_EmptyWorldTalkingToAzurasVillageNPCs
+sign 2 32 0 SignScript_UltraSpace_AzurasVillage_TownPlacard
+## NPC Houses
+npc 2 33 1 EventScript_UltraSpace_AzurasVillage_NPCHouses1_Boy
+npc 2 33 2 EventScript_UltraSpace_AzurasVillage_NPCHouses1_Mom
+npc 2 33 3 EventScript_UltraSpace_AzurasVillage_NPCHouses1_Girl
+npc 2 34 1 EventScript_UltraSpace_AzurasVillage_NPCHouses2_Daughter
+npc 2 34 2 EventScript_UltraSpace_AzurasVillage_NPCHouses2_Dad
+npc 2 35 1 EventScript_UltraSpace_AzurasVillage_NPCHouses3_Boy
+npc 2 35 2 EventScript_UltraSpace_AzurasVillage_NPCHouses3_Girl
+npc 2 36 1 EventScript_UltraSpace_AzurasVillage_BikeShop_Boy
+npc 2 36 2 EventScript_UltraSpace_AzurasVillage_BikeShop_Man
+npc 2 36 3 EventScript_UltraSpace_AzurasVillage_BikeShop_Shopkeeper

@@ -9,6 +9,7 @@
 #include "../include/new/dns_data.h"
 #include "../include/new/dynamic_ow_pals.h"
 #include "../include/new/util.h"
+#include "../include/constants/region_map_sections.h"
 /*
 dns.c
 	handles functions and palette changes for the day, night, and seasons feature
@@ -72,8 +73,19 @@ static void FadeDayNightPalettes(void)
 
 			if (fadePalettes)
 			{
-				u8 coeff = gDNSNightFadingByTime[gClock.hour][gClock.minute / 10].amount;
-				u16 colour = gDNSNightFadingByTime[gClock.hour][gClock.minute / 10].colour;
+				u32 hour = gClock.hour;
+				
+				// Ultra space DNS is the inverse of the main world
+				if (GetCurrentRegionMapSectionId() == MAPSEC_ULTRA_SPACE)
+				{
+					if (hour >= 12)
+						hour -= 12;
+					else
+						hour += 12;	
+				}
+
+				u8 coeff = gDNSNightFadingByTime[hour][gClock.minute / 10].amount;
+				u16 colour = gDNSNightFadingByTime[hour][gClock.minute / 10].colour;
 				bool8 palFadeActive = gPaletteFade->active || gWeatherPtr->palProcessingState == WEATHER_PAL_STATE_SCREEN_FADING_IN;
 
 				if (inOverworld)

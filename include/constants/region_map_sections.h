@@ -112,7 +112,7 @@ u8 __attribute__((long_call)) GetCurrentRegionMapSectionId(void);
 #define MAPSEC_SCUFIB_CHAMBER               0xC0
 #define MAPSEC_RIXY_CHAMBER                 0xC1
 #define MAPSEC_VIAPOIS_CHAMBER              0xC2
-#define MAPSEC_EMBER_SPA                    0xC3
+#define MAPSEC_ULTRA_SPACE                  0xC3
 #endif
 
 #define MAPSEC_CELADON_DEPT                 0xC4

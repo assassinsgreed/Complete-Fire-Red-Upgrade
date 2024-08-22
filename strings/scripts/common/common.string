@@ -297,3 +297,9 @@ It's a powerful Pok\emon!
 
 #org @gText_SeppireCove_KyogreGroudonDormant
 The Pok\emon appears to be dormant[.]\pWill something stir it from it's\nslumber?
+
+#org @gText_Common_Day
+daytime
+
+#org @gText_Common_Night
+nighttime
