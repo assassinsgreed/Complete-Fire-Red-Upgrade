@@ -1,0 +1,65 @@
+#org @gText_UltraSpace_IntroCutscene_Rival_SurprisedAtArrival
+[BLACK][RIVAL]: [BLUE]Did[.] Did we make it?\nIt this Ultra Space?
+
+#org @gText_UltraSpace_IntroCutscene_Rival_CommentsOnTimeOfDay
+[BLACK][RIVAL]: [BLUE]It's gotta be, right?\pWe left during the [BUFFER1], but it's\n[BUFFER2] here!\pIt feels a bit more lively here, too,\ndon't you think?
+
+#org @gText_UltraSpace_IntroCutscene_Rival_PreparingToLeave
+[BLACK][RIVAL]: [BLUE]I expected it to look a lot\ndifferent here, not going to lie[.]\pCome on, [PLAYER]. Let's take a look\naround.\pIf we're lucky, we might be able to\nfind something that'll help us fix\lthings back home.\pAnd[.] A way for us to get home, too[.]
+
+#org @gText_UltraSpace_IntroCutscene_Rival_ApproachingVillage
+[BLACK][RIVAL]: [BLUE][PLAYER], look[.]\nIs that what I think it is?
+
+#org @gText_UltraSpace_IntroCutscene_Rival_ApproachingVillage2
+[BLACK][RIVAL]: [BLUE]It is! It's a village.\pI can't believe it. Do people really\nlive here?\pIs that even[.] Possible?
+
+#org @gText_UltraSpace_IntroCutscene_Rival_ApproachingVillage3
+[BLACK][RIVAL]: [BLUE][PLAYER], this is huge!\pIf people live here, they may know\nsomething that'll help us!\pLet's ask around.
+
+#org @gText_UltraSpace_IntroCutscene_Rival_LeavingVillage
+[BLACK][RIVAL]: [BLUE]Come on, [PLAYER].\pLet's ask around and see what we can\nlearn about this place.
+
+#org @gText_UltraSpace_IntroCutscene_Rival_LeavingVillage2
+[BLACK][RIVAL]: [BLUE]Wow[.] People here really\naren't very friendly, huh?\pI wonder if we just got unlucky?\pOr maybe being in a place without\nPok\emon is just like this?\pI dunno[.]\pIt's pretty clear we won't get\nanywhere asking around here\lthough.\pLet's try outside the village.
+
+#org @gText_UltraSpace_AzurasVillage_TownPlacard
+Azuras Village\nCelebrating nature's simplicity
+
+#org @gText_UltraSpace_AzurasVillage_Shopkeeper
+I don't have time to talk right\nnow.\pI have a lot of work to do today.
+
+#org @gText_UltraSpace_AzurasVillage_Man
+Hello! Do you have any money to\nspare?\pNo? Then go away!
+
+#org @gText_UltraSpace_AzurasVillage_Lass
+Look, I'm not interested. Buzz off!
+
+#org @gText_UltraSpace_AzurasVillage_NPCHouses1_Girl
+Eek! W-Who are you? How did you get\ninto our house?
+
+#org @gText_UltraSpace_AzurasVillage_NPCHouses1_Boy
+What's with your outfit?\nYou look totally LAME!
+
+#org @gText_UltraSpace_AzurasVillage_NPCHouses1_Mom
+I don't think I know you.\nAre you a friend of my daughter's?\pWell, it makes no difference to me.\nJust be gone by dinnertime.
+
+#org @gText_UltraSpace_AzurasVillage_NPCHouses2_Dad
+Hey! I didn't invite you into my\nhome.\pIf you don't get out immediately,\nI'll sue you for all you're worth!
+
+#org @gText_UltraSpace_AzurasVillage_NPCHouses2_Daughter
+Yawwwwwwwn!\pEveryone and everything here are so\nboring.\pY'know what? You look awfully boring,\ntoo.
+
+#org @gText_UltraSpace_AzurasVillage_NPCHouses3_Girl
+Huh? You say you're on a journey of\nsome kind and need advice?\pHere's some advice: leave me alone!
+
+#org @gText_UltraSpace_AzurasVillage_NPCHouses3_Boy
+Poke a man? What's that?\pAren't you a little old to be poking\npeople? Sheesh[.]
+
+#org @gText_UltraSpace_AzurasVillage_BikeShop_Shopkeeper
+If you aren't here to buy something,\nthen get lost.\pCan't you see the "No Loitering\"\nsign?
+
+#org @gText_UltraSpace_AzurasVillage_BikeShop_Boy
+Ugh[.] What about me made you think\n"Hey, I should bother that\lperson,\" huh?
+
+#org @gText_UltraSpace_AzurasVillage_BikeShop_Man
+Aw, come on[.] Can't I just shop in\npeace?\pGo play outside or something.
