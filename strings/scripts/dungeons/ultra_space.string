@@ -132,3 +132,66 @@ Altar of Eclipse Ahead!\pThis natural monument pays homage to\nthe state of sola
 
 #org @gText_UltraSpace_AltarOfEclipse_FirstVisit_RivalBeforeWarp
 [BLACK][RIVAL]: [BLUE]Wait! What is it -
+
+#org @gText_UltraSpace_Hoenn_Wingulls
+Pek-ak-a!
+
+#org @gText_UltraSpace_Hoenn_ArrivalCutscene1
+[RIVAL]: [BLUE]- doing?
+
+#org @gText_UltraSpace_Hoenn_ArrivalCutscene2
+[RIVAL]: [BLUE]What just happened?\pDid that creature[.] Send us through\nUltra Space again?\pJust where are we, exactly?
+
+#org @gText_UltraSpace_Hoenn_ArrivalCutscene3
+[RIVAL]: [BLUE]Hey, [PLAYER]! Do you see\nthat?\pAre those[.] Wingulls?
+
+#org @gText_UltraSpace_Hoenn_ArrivalCutscene4
+[RIVAL]: [BLUE]Hahaha! Do you see that,\n[PLAYER]?\pThere are Wingulls here! We made it\nto somewhere that Pok\emon exist in!
+
+#org @gText_UltraSpace_Hoenn_ArrivalCutscene5
+[RIVAL]: [BLUE]The air is warm and salty\nhere[.]\pIt kind of reminds me of our family\nvacation in Hoenn.\pBut[.] I don't think this is our\nhome dimension, though.\pIf it was, there wouldn't be Wingulls\nhere, right?
+
+#org @gText_UltraSpace_Hoenn_ArrivalCutscene6
+[RIVAL]: [BLUE]This is really exciting\nthough!\pIf a Pok\emon was able to change\nour world like that[.]\pAnd there are Pok\emon here[.]\pThen maybe, just maybe, we can find\na way to fix things here!\p[PLAYER], let's look around!
+
+#org @gText_UltraSpace_Hoenn_FindingJirachi1
+[RIVAL]: [BLUE]Whoa, [PLAYER], look at\nthis!
+
+#org @gText_UltraSpace_Hoenn_FindingJirachi2
+[RIVAL]: [BLUE]This is [GREEN]Jirachi[BLUE], isn't it?\pBut[.] Not the Jirachi we encountered\nback home.\pThis one is still asleep[.]
+
+#org @gText_UltraSpace_Hoenn_FindingJirachi3
+[RIVAL]: [BLUE]Oh! I've got it!
+
+#org @gText_UltraSpace_Hoenn_FindingJirachi4
+[RIVAL]: [BLUE]When Alistair was\nresearching Jirachi, he said\lsomething interesting.\pApparently Jirachi sleeps for 1,000\nyears.\pIf a wish is written on any of the\nthree tags on it's head, they'll be\lgranted when it wakes up.
+
+#org @gText_UltraSpace_Hoenn_FindingJirachi5
+[RIVAL]: [BLUE]Alistair could have had\nthree, but he only made one wish[.]\pI guess he felt really strongly\nabout it.
+
+#org @gText_UltraSpace_Hoenn_FindingJirachi6
+[RIVAL]: [BLUE]We have no way of knowing\nhow long this Jirachi has been\lasleep[.]\p[PLAYER], let's write our wishes on\nJirachi's head!\pIf we're lucky, it'll wake up before\nlong!
+
+#org @gText_UltraSpace_Hoenn_FindingJirachi7_Yes
+[RIVAL]: [BLUE]That's the spirit!\pWe'll just make sure we're careful\nabout what we wish for.
+
+#org @gText_UltraSpace_Hoenn_FindingJirachi7_No
+[RIVAL]: [BLUE]I get why you're\nhesitant[.]\pWishes can be really powerful, and\nwe have to be careful not to wish\lfor something dangerous.\pLet's think about it carefully, then.\nHow does that sound?
+
+#org @gText_UltraSpace_Hoenn_FindingJirachi8
+[RIVAL]: [BLUE]Okay! Now, what should we\nwrite[.]?
+
+#org @gText_UltraSpace_Hoenn_FindingJirachiWishes
+[RIVAL]: [BLUE]I think it's safe to say we\nneed to reverse Alistair's wish.\pLet's write "Bring back the Pok\emon\nwe lost in our home dimension.\"\pAnd, we need to get home, too.\pI'll write "[PLAYER] and [RIVAL]\nreturn to their home dimension.\"\pFinally[.] I think we need to help\nAlistair make up for what he did.\pHe's hurting and isn't thinking\nstraight.\pI'll write "Give Alistair a chance to\nmake up for his mistakes.\"\pOkay! That's all three tags.
+
+#org @gText_UltraSpace_Hoenn_FindingJirachi9
+[RIVAL]: [BLUE]Whew[.] That should do it.\pNow, all we have to do is wait[.] For\nup to 1,000 years.\pHuh. I guess we'd better look for\nother ways to --
+
+#org @gText_UltraSpace_Hoenn_FindingJirachi10
+Rach-iiii!
+
+#org @gText_UltraSpace_Hoenn_FindingJirachi11
+[BLACK][RIVAL]: [BLUE]It woke up already?\nTalk about lucky!
+
+#org @gText_UltraSpace_Hoenn_FindingJirachi12
+[BLACK][RIVAL]: [BLUE]Okay, [PLAYER], get ready!\pThe wishes we wrote will come true\nany second now.\pWe're going home.

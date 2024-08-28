@@ -2602,3 +2602,13 @@ tile 2 37 14 TileScript_UltraSpaceWilds_CosmogEvent2
 tile 2 37 15 TileScript_UltraSpaceWilds_CosmogEvent2
 tile 2 38 0 TileScript_UltraSpaceWilds_AltarOfEclipse_CosmogEvent
 tile 2 38 1 TileScript_UltraSpaceWilds_AltarOfEclipse_CosmogEvent
+## Ultra Space Hoenn
+map 2 39 MapScript_UltraSpaceHoenn
+npc 2 39 4 EventScript_UltraSpaceHoenn_Wingull1
+npc 2 39 5 EventScript_UltraSpaceHoenn_Wingull2
+npc 2 39 6 EventScript_UltraSpaceHoenn_Wingull3
+npc 2 39 7 EventScript_UltraSpaceHoenn_Wingull4
+npc 2 39 8 EventScript_UltraSpaceHoenn_Wingull5
+npc 2 39 9 EventScript_UltraSpaceHoenn_Wingull6
+npc 2 39 10 EventScript_UltraSpaceHoenn_Wingull7
+npc 2 39 11 EventScript_UltraSpaceHoenn_Jirachi
