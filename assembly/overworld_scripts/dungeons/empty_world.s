@@ -961,8 +961,8 @@ EventScript_EmptyWorld_InterdimensionalResearchFacility_Rival:
     msgbox gText_EmptyWorld_InterdimensionalResearchFacility_Rival_SendingOffFour MSG_NORMAL
     sound 0x51 @ Thunder2
     fadescreenspeed FADEOUT_WHITE 0x96 @ fast fade
-    applymovement PLAYER m_PlayerAndRivalInvisible
-    applymovement RivalInIDF m_PlayerAndRivalInvisible
+    applymovement PLAYER m_HideSprite
+    applymovement RivalInIDF m_HideSprite
     fadescreenspeed FADEIN_WHITE 0x64 @ Slow fade
     msgbox gText_EmptyWorld_InterdimensionalResearchFacility_Selene_CountingOnPlayerAndRival MSG_NORMAL
     addvar VarStorySequence 0x1
@@ -994,4 +994,3 @@ m_PlayerStandsBesideRivalAgain: .byte walk_left, walk_up, end_m
 m_SakuraWalksToMachine: .byte walk_up, walk_up, walk_left, walk_left, walk_left, end_m
 m_OthersWalkToMachine: .byte walk_up, walk_up, walk_left, walk_left, end_m
 m_PlayerAndRivalWalkInFrontOfMachine: .byte walk_left, walk_left, look_down, end_m
-m_PlayerAndRivalInvisible: .byte set_invisible, end_m

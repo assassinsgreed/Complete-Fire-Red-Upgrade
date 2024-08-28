@@ -34,7 +34,6 @@ LevelScript_PlayerAndRivalArriveInUltraSpace:
     waitmovement Rival
     setvar 0x8000 Rival @ Rival follows player
     special 0xD1 @ Set up rival follower
-    setflag 0x272 @ Travelled to Ultra Space
     addvar VarEmptyWorldStorySequence 0x1
     end
 
@@ -56,26 +55,26 @@ BufferNight:
     bufferstring 0x1 gText_Common_Day
     return
 
-.global EventScript_UltraSpace_AzurasVillage_Shopkeeper
-EventScript_UltraSpace_AzurasVillage_Shopkeeper:
-    npcchat gText_UltraSpace_AzurasVillage_Shopkeeper
-    addvar 0x40A6 0x1 @ Spoke to someone in Azuras Village
+.global EventScript_UltraSpace_EclipseVillage_Shopkeeper
+EventScript_UltraSpace_EclipseVillage_Shopkeeper:
+    npcchat gText_UltraSpace_EclipseVillage_Shopkeeper
+    addvar 0x40A6 0x1 @ Spoke to someone in Eclipse Village
     end
 
-.global EventScript_UltraSpace_AzurasVillage_Man
-EventScript_UltraSpace_AzurasVillage_Man:
-    npcchat gText_UltraSpace_AzurasVillage_Man
-    addvar 0x40A6 0x1 @ Spoke to someone in Azuras Village
+.global EventScript_UltraSpace_EclipseVillage_Man
+EventScript_UltraSpace_EclipseVillage_Man:
+    npcchat gText_UltraSpace_EclipseVillage_Man
+    addvar 0x40A6 0x1 @ Spoke to someone in Eclipse Village
     end
 
-.global EventScript_UltraSpace_AzurasVillage_Lass
-EventScript_UltraSpace_AzurasVillage_Lass:
-    npcchat gText_UltraSpace_AzurasVillage_Lass
-    addvar 0x40A6 0x1 @ Spoke to someone in Azuras Village
+.global EventScript_UltraSpace_EclipseVillage_Lass
+EventScript_UltraSpace_EclipseVillage_Lass:
+    npcchat gText_UltraSpace_EclipseVillage_Lass
+    addvar 0x40A6 0x1 @ Spoke to someone in Eclipse Village
     end
 
-.global TileScript_UltraSpace_AzurasVillage_EmptyWorldCutscenes
-TileScript_UltraSpace_AzurasVillage_EmptyWorldCutscenes:
+.global TileScript_UltraSpace_EclipseVillage_EmptyWorldCutscenes
+TileScript_UltraSpace_EclipseVillage_EmptyWorldCutscenes:
     lock
     msgbox gText_UltraSpace_IntroCutscene_Rival_ApproachingVillage MSG_NORMAL
     applymovement PLAYER m_PlayerWalksIntoTown
@@ -88,11 +87,11 @@ TileScript_UltraSpace_AzurasVillage_EmptyWorldCutscenes:
     release
     end
 
-.global TileScript_UltraSpace_AzurasVillage_EmptyWorldTalkingToAzurasVillageNPCs
-TileScript_UltraSpace_AzurasVillage_EmptyWorldTalkingToAzurasVillageNPCs:
+.global TileScript_UltraSpace_EclipseVillage_EmptyWorldTalkingToEclipseVillageNPCs
+TileScript_UltraSpace_EclipseVillage_EmptyWorldTalkingToEclipseVillageNPCs:
     lock
     special 0xD3 @ Face follower
-    compare 0x40A6 0x5 @ Spoke to 5 people in Azuras Village (even the same one 5 times)
+    compare 0x40A6 0x5 @ Spoke to 5 people in Eclipse Village (even the same one 5 times)
     if greaterorequal _goto RivalCommentsOnRudeness
     msgbox gText_UltraSpace_IntroCutscene_Rival_LeavingVillage MSG_NORMAL
     applymovement PLAYER m_WalkLeft
@@ -107,70 +106,299 @@ RivalCommentsOnRudeness:
     addvar 0x40A5 0x1
     end
 
-.global SignScript_UltraSpace_AzurasVillage_TownPlacard
-SignScript_UltraSpace_AzurasVillage_TownPlacard:
-    msgbox gText_UltraSpace_AzurasVillage_TownPlacard MSG_SIGN
+.global SignScript_UltraSpace_EclipseVillage_TownPlacard
+SignScript_UltraSpace_EclipseVillage_TownPlacard:
+    msgbox gText_UltraSpace_EclipseVillage_TownPlacard MSG_SIGN
     end
 
-## Azuras Village NPC Houses
-.global EventScript_UltraSpace_AzurasVillage_NPCHouses1_Girl
-EventScript_UltraSpace_AzurasVillage_NPCHouses1_Girl:
-    npcchatwithmovement gText_UltraSpace_AzurasVillage_NPCHouses1_Girl m_LookLeft
-    addvar 0x40A6 0x1 @ Spoke to someone in Azuras Village
+## Eclipse Village NPC Houses
+.global EventScript_UltraSpace_EclipseVillage_NPCHouses1_Girl
+EventScript_UltraSpace_EclipseVillage_NPCHouses1_Girl:
+    npcchatwithmovement gText_UltraSpace_EclipseVillage_NPCHouses1_Girl m_LookLeft
+    addvar 0x40A6 0x1 @ Spoke to someone in Eclipse Village
     end
 
-.global EventScript_UltraSpace_AzurasVillage_NPCHouses1_Boy
-EventScript_UltraSpace_AzurasVillage_NPCHouses1_Boy:
-    npcchatwithmovement gText_UltraSpace_AzurasVillage_NPCHouses1_Boy m_LookUp
-    addvar 0x40A6 0x1 @ Spoke to someone in Azuras Village
+.global EventScript_UltraSpace_EclipseVillage_NPCHouses1_Boy
+EventScript_UltraSpace_EclipseVillage_NPCHouses1_Boy:
+    npcchatwithmovement gText_UltraSpace_EclipseVillage_NPCHouses1_Boy m_LookUp
+    addvar 0x40A6 0x1 @ Spoke to someone in Eclipse Village
     end
 
-.global EventScript_UltraSpace_AzurasVillage_NPCHouses1_Mom
-EventScript_UltraSpace_AzurasVillage_NPCHouses1_Mom:
-    npcchatwithmovement gText_UltraSpace_AzurasVillage_NPCHouses1_Mom m_LookUp
-    addvar 0x40A6 0x1 @ Spoke to someone in Azuras Village
+.global EventScript_UltraSpace_EclipseVillage_NPCHouses1_Mom
+EventScript_UltraSpace_EclipseVillage_NPCHouses1_Mom:
+    npcchatwithmovement gText_UltraSpace_EclipseVillage_NPCHouses1_Mom m_LookUp
+    addvar 0x40A6 0x1 @ Spoke to someone in Eclipse Village
     end
 
-.global EventScript_UltraSpace_AzurasVillage_NPCHouses2_Dad
-EventScript_UltraSpace_AzurasVillage_NPCHouses2_Dad:
-    npcchatwithmovement gText_UltraSpace_AzurasVillage_NPCHouses2_Dad m_LookRight
-    addvar 0x40A6 0x1 @ Spoke to someone in Azuras Village
+.global EventScript_UltraSpace_EclipseVillage_NPCHouses2_Dad
+EventScript_UltraSpace_EclipseVillage_NPCHouses2_Dad:
+    npcchatwithmovement gText_UltraSpace_EclipseVillage_NPCHouses2_Dad m_LookRight
+    addvar 0x40A6 0x1 @ Spoke to someone in Eclipse Village
     end
 
-.global EventScript_UltraSpace_AzurasVillage_NPCHouses2_Daughter
-EventScript_UltraSpace_AzurasVillage_NPCHouses2_Daughter:
-    npcchat gText_UltraSpace_AzurasVillage_NPCHouses2_Daughter
-    addvar 0x40A6 0x1 @ Spoke to someone in Azuras Village
+.global EventScript_UltraSpace_EclipseVillage_NPCHouses2_Daughter
+EventScript_UltraSpace_EclipseVillage_NPCHouses2_Daughter:
+    npcchat gText_UltraSpace_EclipseVillage_NPCHouses2_Daughter
+    addvar 0x40A6 0x1 @ Spoke to someone in Eclipse Village
     end
 
-.global EventScript_UltraSpace_AzurasVillage_NPCHouses3_Girl
-EventScript_UltraSpace_AzurasVillage_NPCHouses3_Girl:
-    npcchatwithmovement gText_UltraSpace_AzurasVillage_NPCHouses3_Girl m_LookLeft
-    addvar 0x40A6 0x1 @ Spoke to someone in Azuras Village
+.global EventScript_UltraSpace_EclipseVillage_NPCHouses3_Girl
+EventScript_UltraSpace_EclipseVillage_NPCHouses3_Girl:
+    npcchatwithmovement gText_UltraSpace_EclipseVillage_NPCHouses3_Girl m_LookLeft
+    addvar 0x40A6 0x1 @ Spoke to someone in Eclipse Village
     end
 
-.global EventScript_UltraSpace_AzurasVillage_NPCHouses3_Boy
-EventScript_UltraSpace_AzurasVillage_NPCHouses3_Boy:
-    npcchat gText_UltraSpace_AzurasVillage_NPCHouses3_Boy
-    addvar 0x40A6 0x1 @ Spoke to someone in Azuras Village
+.global EventScript_UltraSpace_EclipseVillage_NPCHouses3_Boy
+EventScript_UltraSpace_EclipseVillage_NPCHouses3_Boy:
+    npcchat gText_UltraSpace_EclipseVillage_NPCHouses3_Boy
+    addvar 0x40A6 0x1 @ Spoke to someone in Eclipse Village
     end
 
-.global EventScript_UltraSpace_AzurasVillage_BikeShop_Shopkeeper
-EventScript_UltraSpace_AzurasVillage_BikeShop_Shopkeeper:
-    npcchatwithmovement gText_UltraSpace_AzurasVillage_BikeShop_Shopkeeper m_LookLeft
-    addvar 0x40A6 0x1 @ Spoke to someone in Azuras Village
+.global EventScript_UltraSpace_EclipseVillage_BikeShop_Shopkeeper
+EventScript_UltraSpace_EclipseVillage_BikeShop_Shopkeeper:
+    npcchatwithmovement gText_UltraSpace_EclipseVillage_BikeShop_Shopkeeper m_LookLeft
+    addvar 0x40A6 0x1 @ Spoke to someone in Eclipse Village
     end
 
-.global EventScript_UltraSpace_AzurasVillage_BikeShop_Boy
-EventScript_UltraSpace_AzurasVillage_BikeShop_Boy:
-    npcchatwithmovement gText_UltraSpace_AzurasVillage_BikeShop_Boy m_LookLeft
-    addvar 0x40A6 0x1 @ Spoke to someone in Azuras Village
+.global EventScript_UltraSpace_EclipseVillage_BikeShop_Boy
+EventScript_UltraSpace_EclipseVillage_BikeShop_Boy:
+    npcchatwithmovement gText_UltraSpace_EclipseVillage_BikeShop_Boy m_LookLeft
+    addvar 0x40A6 0x1 @ Spoke to someone in Eclipse Village
     end
 
-.global EventScript_UltraSpace_AzurasVillage_BikeShop_Man
-EventScript_UltraSpace_AzurasVillage_BikeShop_Man:
-    npcchatwithmovement gText_UltraSpace_AzurasVillage_BikeShop_Man m_LookUp
-    addvar 0x40A6 0x1 @ Spoke to someone in Azuras Village
+.global EventScript_UltraSpace_EclipseVillage_BikeShop_Man
+EventScript_UltraSpace_EclipseVillage_BikeShop_Man:
+    npcchatwithmovement gText_UltraSpace_EclipseVillage_BikeShop_Man m_LookUp
+    addvar 0x40A6 0x1 @ Spoke to someone in Eclipse Village
     end
 
 m_PlayerWalksIntoTown: .byte walk_right, walk_right, walk_right, end_m
+
+## Ultra Space Wilds
+.equ Cosmog, 0x1
+
+.global MapScript_UltraSpaceWilds
+MapScript_UltraSpaceWilds:
+    mapscript MAP_SCRIPT_ON_LOAD MapScript_UltraSpaceWilds_SetCosmogLocation
+    .byte MAP_SCRIPT_TERMIN
+
+MapScript_UltraSpaceWilds_SetCosmogLocation:
+    switch VarEmptyWorldStorySequence
+    case 7, End
+    case 8, MoveCosmogAfterFirstEncounter
+    case 9, MoveCosmogAfterSecondEncounter
+    case 10, MoveCosmogAfterThirdEncounter
+    end
+
+MoveCosmogAfterFirstEncounter:
+    movesprite2 Cosmog 0x9 0x1B @ Permanent location
+    setobjectmovementtype Cosmog 64 @ Walk down on the spot, facing down
+    end
+
+MoveCosmogAfterSecondEncounter:
+    movesprite2 Cosmog 0x1B 0x11 @ Permanent location
+    setobjectmovementtype Cosmog 64 @ Walk down on the spot, facing down
+    end
+
+MoveCosmogAfterThirdEncounter:
+    movesprite2 Cosmog 0x1A 0x01 @ Permanent location
+    setobjectmovementtype Cosmog 64 @ Walk down on the spot, facing down
+    end
+
+CosmogSurpriseCommon:
+    pause DELAY_HALFSECOND
+    sound 0x15 @ Exclaim
+    applymovement Cosmog m_Surprise
+    waitmovement Cosmog
+    pause DELAY_HALFSECOND
+    cry SPECIES_COSMOG 0x0
+    msgbox gText_UltraSpaceWilds_CosmogPew MSG_NORMAL
+    waitcry
+    return
+
+.global TileScript_UltraSpaceWilds_CosmogEvent1
+TileScript_UltraSpaceWilds_CosmogEvent1:
+    lock
+    release @ Lock so player stands still, then release so cosmog keeps animating
+    msgbox gText_UltraSpaceWilds_CosmogChase1 MSG_NORMAL
+    applymovement Cosmog m_LookLeft
+    waitmovement Cosmog
+    call CosmogSurpriseCommon
+    applymovement Cosmog m_CosmogRunsFirstEncounter
+    applymovement PLAYER m_PlayerAndRivalChaseCosmogFirstEncounter
+    waitmovement Cosmog
+    msgbox gText_UltraSpaceWilds_CosmogChase2 MSG_NORMAL
+    special 0xD3 @ Face follower
+    msgbox gText_UltraSpaceWilds_CosmogChase3 MSG_YESNO
+    compare LASTRESULT YES
+    if equal _call CosmogLooksLikePokemon
+    if notequal _call CosmogDoesNotLookLikePokemon
+    msgbox gText_UltraSpaceWilds_CosmogChase5 MSG_NORMAL
+    addvar VarEmptyWorldStorySequence 0x1
+    applymovement PLAYER m_LookUp
+    movesprite Cosmog 0x9 0x1B @ While on map
+    goto MoveCosmogAfterFirstEncounter @ Permanent location, if player runs through map and returns here
+
+CosmogLooksLikePokemon:
+    msgbox gText_UltraSpaceWilds_CosmogChase4_Yes MSG_NORMAL
+    return
+
+CosmogDoesNotLookLikePokemon:
+    msgbox gText_UltraSpaceWilds_CosmogChase4_No MSG_NORMAL
+    return
+
+.global TileScript_UltraSpaceWilds_CosmogEvent2
+TileScript_UltraSpaceWilds_CosmogEvent2:
+    lock
+    release @ Lock so player stands still, then release so cosmog keeps animating
+    msgbox gText_UltraSpaceWilds_CosmogChase6 MSG_NORMAL
+    applymovement Cosmog m_LookUp
+    call CosmogSurpriseCommon
+    applymovement Cosmog m_CosmogRunsSecondEncounterJump
+    pause 5
+    playse 0xA @ Ledge hop
+    waitmovement Cosmog
+    applymovement Cosmog m_CosmogRunsSecondEncounter
+    waitmovement Cosmog
+    msgbox gText_UltraSpaceWilds_CosmogChase7 MSG_NORMAL
+    special 0xD3 @ Face follower
+    msgbox gText_UltraSpaceWilds_CosmogChase8 MSG_NORMAL
+    applymovement PLAYER m_LookRight
+    addvar VarEmptyWorldStorySequence 0x1
+    movesprite Cosmog 0x1B 0x11 @ While on map
+    goto MoveCosmogAfterSecondEncounter @ Set permanent location, due to being outside of loaded memory
+
+.global TileScript_UltraSpaceWilds_CosmogEvent3
+TileScript_UltraSpaceWilds_CosmogEvent3:
+    lock
+    release @ Lock so player stands still, then release so cosmog keeps animating
+    msgbox gText_UltraSpaceWilds_CosmogChase9 MSG_NORMAL
+    call CosmogSurpriseCommon
+    applymovement Cosmog m_CosmogRunsThirdEncounterJump
+    pause 10
+    playse 0xA @ Ledge hop
+    waitmovement Cosmog
+    applymovement Cosmog m_CosmogRunsThirdEncounter
+    applymovement PLAYER m_LookRight
+    waitmovement Cosmog
+    msgbox gText_UltraSpaceWilds_CosmogChase10 MSG_NORMAL
+    special 0xD3 @ Face follower
+    msgbox gText_UltraSpaceWilds_CosmogChase11 MSG_NORMAL
+    applymovement PLAYER m_LookUp
+    addvar VarEmptyWorldStorySequence 0x1
+    movesprite Cosmog 0x1A 0x1 @ While on map
+    goto MoveCosmogAfterThirdEncounter @ Set permanent location, due to being outside of loaded memory
+
+.global TileScript_UltraSpaceWilds_CosmogEvent4
+TileScript_UltraSpaceWilds_CosmogEvent4:
+    lock
+    release @ Lock so player stands still, then release so cosmog keeps animating
+    msgbox gText_UltraSpaceWilds_CosmogChase12 MSG_NORMAL
+    getplayerpos 0x4000 0x4001
+    compare 0x4000 0x18
+    if equal _call CosmogEvent4_PlayerOnLeft
+    if greaterthan _call CosmogEvent4_PlayerOnRight
+    applymovement Cosmog m_CosmogRunsFourthEncounterDown
+    waitmovement Cosmog
+    msgbox gText_UltraSpaceWilds_CosmogChase13 MSG_NORMAL
+    special 0xD3 @ Face follower
+    msgbox gText_UltraSpaceWilds_CosmogChase14 MSG_NORMAL
+    addvar VarEmptyWorldStorySequence 0x1
+    setflag 0x272 @ Hide Cosmog when reloading map
+    hidesprite Cosmog @ Hide Cosmog while on map
+    end
+
+CosmogEvent4_PlayerOnLeft:
+    applymovement Cosmog m_LookLeft
+    call CosmogSurpriseCommon
+    applymovement Cosmog m_CosmogRunsFourthEncounterRight
+    waitmovement Cosmog
+    return
+
+CosmogEvent4_PlayerOnRight:
+    applymovement Cosmog m_LookRight
+    call CosmogSurpriseCommon
+    applymovement Cosmog m_CosmogRunsFourthEncounterLeft
+    waitmovement Cosmog
+    return
+
+.global TileScript_UltraSpaceWilds_CosmogEventIncomplete
+TileScript_UltraSpaceWilds_CosmogEventIncomplete:
+    compare VarEmptyWorldStorySequence 0xB
+    if greaterorequal _goto End
+    lock
+    special 0xD3 @ Face follower
+    msgbox gText_UltraSpaceWilds_CosmogChaseIncomplete MSG_NORMAL
+    applymovement PLAYER m_WalkLeft
+    waitmovement PLAYER
+    end
+
+.global SignScript_UltraSpaceWilds_BridgeSign
+SignScript_UltraSpaceWilds_BridgeSign:
+    msgbox gText_UltraSpaceWilds_BridgeSign MSG_SIGN
+    end
+
+.global SignScript_UltraSpaceWilds_AltarOfEclipseSign
+SignScript_UltraSpaceWilds_AltarOfEclipseSign:
+    msgbox gText_UltraSpaceWilds_AltarOfEclipseSign MSG_SIGN
+    end
+
+.global TileScript_UltraSpaceWilds_AltarOfEclipse_CosmogEvent
+TileScript_UltraSpaceWilds_AltarOfEclipse_CosmogEvent:
+    lock
+    release @ Lock so player stands still, then release so cosmog keeps animating
+    msgbox gText_UltraSpace_AltarOfEclipse_FirstVisit_RivalSeesCosmog MSG_NORMAL
+    special 0xD3 @ Face follower
+    msgbox gText_UltraSpace_AltarOfEclipse_FirstVisit_RivalFeelsBadAboutHarassingCosmog MSG_NORMAL
+    applymovement PLAYER m_WalkUp
+    applymovement Cosmog m_LookDown
+    call CosmogSurpriseCommon
+    applymovement Cosmog m_CosmogRunsAtAltarOfEclipse
+    pause 0x5 @ Pause quarter second
+    getplayerpos 0x4000 0x4001
+    compare 0x4000 0xA @ Right tile event
+    if equal _call PlayerRunLeft
+    applymovement PLAYER m_PlayerRunsAtAltarOfEclipse
+    waitmovement PLAYER
+    pause DELAY_HALFSECOND
+    msgbox gText_UltraSpace_AltarOfEclipse_FirstVisit_CosmogCornered MSG_NORMAL
+    sound 0x15 @ Exclaim
+    applymovement Cosmog m_CosmogBigSurprise
+    waitmovement Cosmog
+    pause DELAY_HALFSECOND
+    cry SPECIES_COSMOG 0x0
+    msgbox gText_UltraSpaceWilds_CosmogPew MSG_NORMAL
+    waitcry
+    msgbox gText_UltraSpace_AltarOfEclipse_FirstVisit_RivalBeforeWarp MSG_NORMAL
+    sound 0x51 @ Thunder2
+    fadescreenspeed FADEOUT_WHITE 0x96 @ fast fade
+    applymovement PLAYER m_HideSprite
+    special 0xD2 @ Destroy follower
+    fadescreenspeed FADEIN_WHITE 0x64 @ Slow fade
+    setflag 0x70 @ Hide Cosmog here when revisiting
+    addvar VarEmptyWorldStorySequence 0x1
+    pause DELAY_HALFSECOND
+    applymovement Cosmog m_Joy
+    cry SPECIES_COSMOG 0x0
+    msgbox gText_UltraSpaceWilds_CosmogPew MSG_NORMAL
+    pause DELAY_HALFSECOND
+    @ TODO Later: Warp to Hoenn
+    end
+
+PlayerRunLeft:
+    applymovement PLAYER m_RunLeft
+    waitmovement PLAYER
+    return
+
+m_CosmogRunsFirstEncounter: .byte run_up, run_up, run_up, run_up, run_up, run_up, walk_down_onspot, end_m
+m_PlayerAndRivalChaseCosmogFirstEncounter: .byte run_right, run_right, run_right, run_right, run_right, end_m
+m_CosmogRunsSecondEncounterJump: .byte jump_2_down, end_m
+m_CosmogRunsSecondEncounter: .byte run_down, run_right, run_right, run_right, run_right, run_right, run_right, run_right, walk_down_onspot, end_m
+m_CosmogRunsThirdEncounterJump: .byte run_right, jump_2_right, end_m
+m_CosmogRunsThirdEncounter: .byte run_right, run_right, run_right, run_right, run_right, run_right, run_right, walk_down_onspot, end_m
+m_CosmogRunsFourthEncounterRight: .byte run_right, run_right, run_right, run_right, end_m
+m_CosmogRunsFourthEncounterLeft: .byte run_left, run_left, run_left, run_left, end_m
+m_CosmogRunsFourthEncounterDown: .byte run_down, run_down, run_down, run_down, run_down, run_down, end_m
+m_CosmogRunsAtAltarOfEclipse: .byte run_up, run_up, run_left, run_up, run_up, run_up, run_up, run_up, run_right, run_right, walk_down_onspot, end_m
+m_PlayerRunsAtAltarOfEclipse: .byte run_up, run_up, run_left, run_up, run_up, run_up, run_up, run_right, run_up, run_right, look_up, end_m
+m_CosmogBigSurprise: .byte say_double_exclaim, end_m

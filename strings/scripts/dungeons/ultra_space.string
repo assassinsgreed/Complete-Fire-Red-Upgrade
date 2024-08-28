@@ -22,44 +22,113 @@
 #org @gText_UltraSpace_IntroCutscene_Rival_LeavingVillage2
 [BLACK][RIVAL]: [BLUE]Wow[.] People here really\naren't very friendly, huh?\pI wonder if we just got unlucky?\pOr maybe being in a place without\nPok\emon is just like this?\pI dunno[.]\pIt's pretty clear we won't get\nanywhere asking around here\lthough.\pLet's try outside the village.
 
-#org @gText_UltraSpace_AzurasVillage_TownPlacard
-Azuras Village\nCelebrating nature's simplicity
+#org @gText_UltraSpace_EclipseVillage_TownPlacard
+Eclipse Village\nA haven sheltered from the world
 
-#org @gText_UltraSpace_AzurasVillage_Shopkeeper
+#org @gText_UltraSpace_EclipseVillage_Shopkeeper
 I don't have time to talk right\nnow.\pI have a lot of work to do today.
 
-#org @gText_UltraSpace_AzurasVillage_Man
+#org @gText_UltraSpace_EclipseVillage_Man
 Hello! Do you have any money to\nspare?\pNo? Then go away!
 
-#org @gText_UltraSpace_AzurasVillage_Lass
+#org @gText_UltraSpace_EclipseVillage_Lass
 Look, I'm not interested. Buzz off!
 
-#org @gText_UltraSpace_AzurasVillage_NPCHouses1_Girl
+#org @gText_UltraSpace_EclipseVillage_NPCHouses1_Girl
 Eek! W-Who are you? How did you get\ninto our house?
 
-#org @gText_UltraSpace_AzurasVillage_NPCHouses1_Boy
+#org @gText_UltraSpace_EclipseVillage_NPCHouses1_Boy
 What's with your outfit?\nYou look totally LAME!
 
-#org @gText_UltraSpace_AzurasVillage_NPCHouses1_Mom
+#org @gText_UltraSpace_EclipseVillage_NPCHouses1_Mom
 I don't think I know you.\nAre you a friend of my daughter's?\pWell, it makes no difference to me.\nJust be gone by dinnertime.
 
-#org @gText_UltraSpace_AzurasVillage_NPCHouses2_Dad
+#org @gText_UltraSpace_EclipseVillage_NPCHouses2_Dad
 Hey! I didn't invite you into my\nhome.\pIf you don't get out immediately,\nI'll sue you for all you're worth!
 
-#org @gText_UltraSpace_AzurasVillage_NPCHouses2_Daughter
+#org @gText_UltraSpace_EclipseVillage_NPCHouses2_Daughter
 Yawwwwwwwn!\pEveryone and everything here are so\nboring.\pY'know what? You look awfully boring,\ntoo.
 
-#org @gText_UltraSpace_AzurasVillage_NPCHouses3_Girl
+#org @gText_UltraSpace_EclipseVillage_NPCHouses3_Girl
 Huh? You say you're on a journey of\nsome kind and need advice?\pHere's some advice: leave me alone!
 
-#org @gText_UltraSpace_AzurasVillage_NPCHouses3_Boy
+#org @gText_UltraSpace_EclipseVillage_NPCHouses3_Boy
 Poke a man? What's that?\pAren't you a little old to be poking\npeople? Sheesh[.]
 
-#org @gText_UltraSpace_AzurasVillage_BikeShop_Shopkeeper
+#org @gText_UltraSpace_EclipseVillage_BikeShop_Shopkeeper
 If you aren't here to buy something,\nthen get lost.\pCan't you see the "No Loitering\"\nsign?
 
-#org @gText_UltraSpace_AzurasVillage_BikeShop_Boy
+#org @gText_UltraSpace_EclipseVillage_BikeShop_Boy
 Ugh[.] What about me made you think\n"Hey, I should bother that\lperson,\" huh?
 
-#org @gText_UltraSpace_AzurasVillage_BikeShop_Man
+#org @gText_UltraSpace_EclipseVillage_BikeShop_Man
 Aw, come on[.] Can't I just shop in\npeace?\pGo play outside or something.
+
+#org @gText_UltraSpaceWilds_CosmogPew
+Pew!
+
+#org @gText_UltraSpaceWilds_CosmogChase1
+[BLACK][RIVAL]: [BLUE]Hey, [PLAYER], I think I\nsee some sort of creature over\lthere[.]
+
+#org @gText_UltraSpaceWilds_CosmogChase2
+[BLACK][RIVAL]: [BLUE]Oh, shoot!\nI think I scared it off.
+
+#org @gText_UltraSpaceWilds_CosmogChase3
+[BLACK][RIVAL]: [BLUE]Hey, [PLAYER][.] That looked\nkind of like a Pok\emon, didn't it?
+
+#org @gText_UltraSpaceWilds_CosmogChase4_Yes
+[BLACK][RIVAL]: [BLUE]Exactly! But it couldn't\nhave been a Pok\emon, right?
+
+#org @gText_UltraSpaceWilds_CosmogChase4_No
+[BLACK][RIVAL]: [BLUE]I guess so, yeah. It\nlooked too[.] Alien, I guess?
+
+#org @gText_UltraSpaceWilds_CosmogChase5
+[BLACK][RIVAL]: [BLUE]I wonder if that was one of\nthe Ultra Beasts I've heard about?\pBut[.] It didn't look like something I'd\ncall a beast.\pIt looked[.] Scared.\pI don't want to frighten that\ncreature, but it's the best lead\lwe've got.\pCome on, [PLAYER], let's see if we\ncan find it!
+
+#org @gText_UltraSpaceWilds_CosmogChase6
+[BLACK][RIVAL]: [BLUE]Look, there it is!
+
+#org @gText_UltraSpaceWilds_CosmogChase7
+[BLACK][RIVAL]: [BLUE]Agh[.] It got away again[.]
+
+#org @gText_UltraSpaceWilds_CosmogChase8
+[BLACK][RIVAL]: [BLUE]I feel really bad about\nstressing it out like this.\pBut[.] It's the best chance we have.\pCome on, [PLAYER], we have to try\nand corner it!
+
+#org @gText_UltraSpaceWilds_CosmogChase9
+[BLACK][RIVAL]: [BLUE]Okay[.] We just have to\napproach it carefully[.]
+
+#org @gText_UltraSpaceWilds_CosmogChase10
+[BLACK][RIVAL]: [BLUE]Aw, that's not fair!
+
+#org @gText_UltraSpaceWilds_CosmogChase11
+[BLACK][RIVAL]: [BLUE][PLAYER], we're just going\nto have to hope it's waiting up\lahead.\pLet's go!
+
+#org @gText_UltraSpaceWilds_CosmogChase12
+[BLACK][RIVAL]: [BLUE]Whew[.] It went pretty far\nthis time, huh?
+
+#org @gText_UltraSpaceWilds_CosmogChase13
+[BLACK][RIVAL]: [BLUE]Oh, shoot! I should've kept\nquiet, my bad.
+
+#org @gText_UltraSpaceWilds_CosmogChase14
+[BLACK][RIVAL]: [BLUE]It must be pretty tired by\nnow.\pWe've got to be in the home\nstretch!\pLet's see if we can find it one more\ntime.
+
+#org @gText_UltraSpaceWilds_CosmogChaseIncomplete
+[BLACK][RIVAL]: [BLUE]I don't think that\ncreature went this way.\pCome on, [PLAYER], let's head back\nand see if we can find it.
+
+#org @gText_UltraSpaceWilds_BridgeSign
+Eclipse Bridge\nPassage to the Other Side
+
+#org @gText_UltraSpaceWilds_AltarOfEclipseSign
+Altar of Eclipse Ahead!\pThis natural monument pays homage to\nthe state of solar unity.
+
+#org @gText_UltraSpace_AltarOfEclipse_FirstVisit_RivalSeesCosmog
+[BLACK][RIVAL]: [BLUE]Look, there it is!
+
+#org @gText_UltraSpace_AltarOfEclipse_FirstVisit_RivalFeelsBadAboutHarassingCosmog
+[BLACK][RIVAL]: [BLUE]Come on, [PLAYER], let's try\nto corner it.\pI know[.] It feels bad to bother it\nlike this[.]\pWe'll have to make it up to the\nlittle guy after we're done.
+
+#org @gText_UltraSpace_AltarOfEclipse_FirstVisit_CosmogCornered
+[BLACK][RIVAL]: [BLUE]Whew, we caught it[.]\pOkay, let's see if we can learn\nsomething about it.
+
+#org @gText_UltraSpace_AltarOfEclipse_FirstVisit_RivalBeforeWarp
+[BLACK][RIVAL]: [BLUE]Wait! What is it -

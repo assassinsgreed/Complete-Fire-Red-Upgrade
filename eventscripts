@@ -2557,26 +2557,48 @@ sign 2 23 7 SignScript_EmptyWorld_MalfunctioningPC
 # Ultra Space
 ### NOTE: For some reason the first event is broken on each map...
 map 2 31 MapScript_UltraSpace_FirstVisit
-npc 2 32 1 EventScript_UltraSpace_AzurasVillage_Man
-npc 2 32 2 EventScript_UltraSpace_AzurasVillage_Lass
-npc 2 32 3 EventScript_UltraSpace_AzurasVillage_Shopkeeper
-tile 2 32 0 TileScript_UltraSpace_AzurasVillage_EmptyWorldCutscenes
-tile 2 32 1 TileScript_UltraSpace_AzurasVillage_EmptyWorldCutscenes
-tile 2 32 2 TileScript_UltraSpace_AzurasVillage_EmptyWorldCutscenes
-tile 2 32 3 TileScript_UltraSpace_AzurasVillage_EmptyWorldCutscenes
-tile 2 32 4 TileScript_UltraSpace_AzurasVillage_EmptyWorldTalkingToAzurasVillageNPCs
-tile 2 32 5 TileScript_UltraSpace_AzurasVillage_EmptyWorldTalkingToAzurasVillageNPCs
-tile 2 32 6 TileScript_UltraSpace_AzurasVillage_EmptyWorldTalkingToAzurasVillageNPCs
-tile 2 32 7 TileScript_UltraSpace_AzurasVillage_EmptyWorldTalkingToAzurasVillageNPCs
-sign 2 32 0 SignScript_UltraSpace_AzurasVillage_TownPlacard
+npc 2 32 1 EventScript_UltraSpace_EclipseVillage_Man
+npc 2 32 2 EventScript_UltraSpace_EclipseVillage_Lass
+npc 2 32 3 EventScript_UltraSpace_EclipseVillage_Shopkeeper
+tile 2 32 0 TileScript_UltraSpace_EclipseVillage_EmptyWorldCutscenes
+tile 2 32 1 TileScript_UltraSpace_EclipseVillage_EmptyWorldCutscenes
+tile 2 32 2 TileScript_UltraSpace_EclipseVillage_EmptyWorldCutscenes
+tile 2 32 3 TileScript_UltraSpace_EclipseVillage_EmptyWorldCutscenes
+tile 2 32 4 TileScript_UltraSpace_EclipseVillage_EmptyWorldTalkingToEclipseVillageNPCs
+tile 2 32 5 TileScript_UltraSpace_EclipseVillage_EmptyWorldTalkingToEclipseVillageNPCs
+tile 2 32 6 TileScript_UltraSpace_EclipseVillage_EmptyWorldTalkingToEclipseVillageNPCs
+tile 2 32 7 TileScript_UltraSpace_EclipseVillage_EmptyWorldTalkingToEclipseVillageNPCs
+sign 2 32 0 SignScript_UltraSpace_EclipseVillage_TownPlacard
 ## NPC Houses
-npc 2 33 1 EventScript_UltraSpace_AzurasVillage_NPCHouses1_Boy
-npc 2 33 2 EventScript_UltraSpace_AzurasVillage_NPCHouses1_Mom
-npc 2 33 3 EventScript_UltraSpace_AzurasVillage_NPCHouses1_Girl
-npc 2 34 1 EventScript_UltraSpace_AzurasVillage_NPCHouses2_Daughter
-npc 2 34 2 EventScript_UltraSpace_AzurasVillage_NPCHouses2_Dad
-npc 2 35 1 EventScript_UltraSpace_AzurasVillage_NPCHouses3_Boy
-npc 2 35 2 EventScript_UltraSpace_AzurasVillage_NPCHouses3_Girl
-npc 2 36 1 EventScript_UltraSpace_AzurasVillage_BikeShop_Boy
-npc 2 36 2 EventScript_UltraSpace_AzurasVillage_BikeShop_Man
-npc 2 36 3 EventScript_UltraSpace_AzurasVillage_BikeShop_Shopkeeper
+npc 2 33 1 EventScript_UltraSpace_EclipseVillage_NPCHouses1_Boy
+npc 2 33 2 EventScript_UltraSpace_EclipseVillage_NPCHouses1_Mom
+npc 2 33 3 EventScript_UltraSpace_EclipseVillage_NPCHouses1_Girl
+npc 2 34 1 EventScript_UltraSpace_EclipseVillage_NPCHouses2_Daughter
+npc 2 34 2 EventScript_UltraSpace_EclipseVillage_NPCHouses2_Dad
+npc 2 35 1 EventScript_UltraSpace_EclipseVillage_NPCHouses3_Boy
+npc 2 35 2 EventScript_UltraSpace_EclipseVillage_NPCHouses3_Girl
+npc 2 36 1 EventScript_UltraSpace_EclipseVillage_BikeShop_Boy
+npc 2 36 2 EventScript_UltraSpace_EclipseVillage_BikeShop_Man
+npc 2 36 3 EventScript_UltraSpace_EclipseVillage_BikeShop_Shopkeeper
+## Ultra Space Wilds
+map 2 37 MapScript_UltraSpaceWilds
+sign 2 37 0 SignScript_UltraSpaceWilds_BridgeSign
+sign 2 37 1 SignScript_UltraSpaceWilds_AltarOfEclipseSign
+tile 2 37 0 TileScript_UltraSpaceWilds_CosmogEvent1
+tile 2 37 1 TileScript_UltraSpaceWilds_CosmogEvent1
+tile 2 37 2 TileScript_UltraSpaceWilds_CosmogEvent1
+tile 2 37 3 TileScript_UltraSpaceWilds_CosmogEvent3
+tile 2 37 4 TileScript_UltraSpaceWilds_CosmogEvent3
+tile 2 37 5 TileScript_UltraSpaceWilds_CosmogEvent3
+tile 2 37 6 TileScript_UltraSpaceWilds_CosmogEvent3
+tile 2 37 7 TileScript_UltraSpaceWilds_CosmogEvent4
+tile 2 37 8 TileScript_UltraSpaceWilds_CosmogEvent4
+tile 2 37 9 TileScript_UltraSpaceWilds_CosmogEvent4
+tile 2 37 10 TileScript_UltraSpaceWilds_CosmogEvent4
+tile 2 37 11 TileScript_UltraSpaceWilds_CosmogEventIncomplete
+tile 2 37 12 TileScript_UltraSpaceWilds_CosmogEventIncomplete
+tile 2 37 13 TileScript_UltraSpaceWilds_CosmogEventIncomplete
+tile 2 37 14 TileScript_UltraSpaceWilds_CosmogEvent2
+tile 2 37 15 TileScript_UltraSpaceWilds_CosmogEvent2
+tile 2 38 0 TileScript_UltraSpaceWilds_AltarOfEclipse_CosmogEvent
+tile 2 38 1 TileScript_UltraSpaceWilds_AltarOfEclipse_CosmogEvent
