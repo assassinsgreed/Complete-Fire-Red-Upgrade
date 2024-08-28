@@ -382,7 +382,7 @@ TileScript_UltraSpaceWilds_AltarOfEclipse_CosmogEvent:
     cry SPECIES_COSMOG 0x0
     msgbox gText_UltraSpaceWilds_CosmogPew MSG_NORMAL
     pause DELAY_HALFSECOND
-    @ TODO Later: Warp to Hoenn
+    warpmuted 2 39 0xFF 0x13 0x1D @ Warp to Hoenn's Mirage Island in an alternate dimension
     end
 
 PlayerRunLeft:
@@ -402,3 +402,224 @@ m_CosmogRunsFourthEncounterDown: .byte run_down, run_down, run_down, run_down, r
 m_CosmogRunsAtAltarOfEclipse: .byte run_up, run_up, run_left, run_up, run_up, run_up, run_up, run_up, run_right, run_right, walk_down_onspot, end_m
 m_PlayerRunsAtAltarOfEclipse: .byte run_up, run_up, run_left, run_up, run_up, run_up, run_up, run_right, run_up, run_right, look_up, end_m
 m_CosmogBigSurprise: .byte say_double_exclaim, end_m
+
+## Ultra Space Hoenn
+.equ Wingull1, 0x2
+.equ Wingull2, 0x3
+.equ Wingull3, 0x4
+.equ JirachiDormant, 12
+.equ JirachiAwakened, 13
+
+.global MapScript_UltraSpaceHoenn
+MapScript_UltraSpaceHoenn:
+    mapscript MAP_SCRIPT_ON_FRAME_TABLE LevelScripts_UltraSpace_Hoenn
+    mapscript MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE LevelScripts_UltraSpace_Hoenn_PlayerFacing
+    .byte MAP_SCRIPT_TERMIN
+
+LevelScripts_UltraSpace_Hoenn:
+    levelscript VarEmptyWorldStorySequence 0xC LevelScript_PlayerAndRivalArriveInHoenn
+	.hword LEVEL_SCRIPT_TERMIN
+
+LevelScript_PlayerAndRivalArriveInHoenn:
+    pause DELAY_HALFSECOND
+    msgbox gText_UltraSpace_Hoenn_ArrivalCutscene1 MSG_NORMAL
+    applymovement Rival m_LookLeft
+    applymovement PLAYER m_LookLeft
+    pause DELAY_HALFSECOND
+    applymovement Rival m_LookRight
+    applymovement PLAYER m_LookRight
+    pause DELAY_HALFSECOND
+    applymovement Rival m_LookUp
+    applymovement PLAYER m_LookUp
+    msgbox gText_UltraSpace_Hoenn_ArrivalCutscene2 MSG_NORMAL
+    applymovement Rival m_PlayerAndRivalApproachWingulls
+    applymovement PLAYER m_PlayerAndRivalApproachWingulls
+    waitmovement PLAYER
+    sound 0x15 @ Exclaim
+    applymovement Rival m_Surprise
+    applymovement PLAYER m_Surprise
+    msgbox gText_UltraSpace_Hoenn_ArrivalCutscene3 MSG_NORMAL
+    applymovement Wingull1 m_LookDown
+    applymovement Wingull2 m_LookDown
+    applymovement Wingull3 m_LookDown
+    cry SPECIES_WINGULL 0x0
+    msgbox gText_UltraSpace_Hoenn_Wingulls MSG_NORMAL
+    applymovement Wingull1 m_WingullFlyAway
+    applymovement Wingull2 m_WingullFlyAway
+    applymovement Wingull3 m_WingullFlyAway
+    applymovement Rival m_RivalRunToWingulls
+    applymovement PLAYER m_WalkUp
+    waitmovement Wingull3
+    hidesprite Wingull1
+    hidesprite Wingull2
+    hidesprite Wingull3
+    setflag 0x71 @ Hide Wingulls, in case the player walks away and come back
+    pause DELAY_1SECOND
+    applymovement Rival m_LookDown
+    msgbox gText_UltraSpace_Hoenn_ArrivalCutscene4 MSG_NORMAL
+    applymovement Rival m_LookUp
+    msgbox gText_UltraSpace_Hoenn_ArrivalCutscene5 MSG_NORMAL
+    applymovement Rival m_LookDown
+    msgbox gText_UltraSpace_Hoenn_ArrivalCutscene6 MSG_NORMAL
+    applymovement Rival m_RivalReturnsToPlayer
+    waitmovement Rival
+    setvar 0x8000 Rival @ Rival follows player
+    special 0xD1 @ Set up rival follower
+    addvar VarEmptyWorldStorySequence 0x1
+    end
+
+LevelScripts_UltraSpace_Hoenn_PlayerFacing:
+    levelscript VarEmptyWorldStorySequence 0xC LevelScript_UltraSpace_Hoenn_SetPlayerFacing
+    .hword LEVEL_SCRIPT_TERMIN
+
+LevelScript_UltraSpace_Hoenn_SetPlayerFacing:
+    applymovement PLAYER m_LookUp
+    end
+
+.global EventScript_UltraSpaceHoenn_Wingull1
+EventScript_UltraSpaceHoenn_Wingull1:
+    call WingullCommon
+    hidesprite LASTTALKED
+    setflag 0x8
+    end
+
+.global EventScript_UltraSpaceHoenn_Wingull2
+EventScript_UltraSpaceHoenn_Wingull2:
+    call WingullCommon
+    hidesprite LASTTALKED
+    setflag 0x9
+    end
+
+.global EventScript_UltraSpaceHoenn_Wingull3
+EventScript_UltraSpaceHoenn_Wingull3:
+    call WingullCommon
+    hidesprite LASTTALKED
+    setflag 0xA
+    end
+
+.global EventScript_UltraSpaceHoenn_Wingull4
+EventScript_UltraSpaceHoenn_Wingull4:
+    call WingullCommon
+    hidesprite LASTTALKED
+    setflag 0xB
+    end
+
+.global EventScript_UltraSpaceHoenn_Wingull5
+EventScript_UltraSpaceHoenn_Wingull5:
+    call WingullCommon
+    hidesprite LASTTALKED
+    setflag 0xC
+    end
+
+.global EventScript_UltraSpaceHoenn_Wingull6
+EventScript_UltraSpaceHoenn_Wingull6:
+    call WingullCommon
+    hidesprite LASTTALKED
+    setflag 0xD
+    end
+
+.global EventScript_UltraSpaceHoenn_Wingull7
+EventScript_UltraSpaceHoenn_Wingull7:
+    call WingullCommon
+    hidesprite LASTTALKED
+    setflag 0xE
+    end
+
+WingullCommon:
+    faceplayer
+    cry SPECIES_WINGULL 0x0
+    msgbox gText_UltraSpace_Hoenn_Wingulls MSG_NORMAL
+    applymovement LASTTALKED m_WingullFlyAway
+    pause DELAY_HALFSECOND
+    applymovement PLAYER m_LookRight
+    waitmovement LASTTALKED
+    return
+
+.global EventScript_UltraSpaceHoenn_Jirachi
+EventScript_UltraSpaceHoenn_Jirachi:
+    special 0xD3 @ Face follower
+    msgbox gText_UltraSpace_Hoenn_FindingJirachi1 MSG_NORMAL
+    call HandlePlayerPositioningAtJirachi
+    msgbox gText_UltraSpace_Hoenn_FindingJirachi2 MSG_NORMAL
+    applymovement Rival m_Surprise
+    sound 0x15 @ Exclaim
+    msgbox gText_UltraSpace_Hoenn_FindingJirachi3 MSG_NORMAL
+    special 0xD3 @ Face follower
+    msgbox gText_UltraSpace_Hoenn_FindingJirachi4 MSG_NORMAL
+    applymovement Rival m_LookDown
+    msgbox gText_UltraSpace_Hoenn_FindingJirachi5 MSG_NORMAL
+    special 0xD3 @ Face follower
+    msgbox gText_UltraSpace_Hoenn_FindingJirachi6 MSG_YESNO
+    compare LASTRESULT NO
+    if equal _call PlayerDoesNotWantToWish
+    msgbox gText_UltraSpace_Hoenn_FindingJirachi7_Yes MSG_NORMAL
+    applymovement PLAYER m_LookUp
+    applymovement Rival m_LookUp
+    msgbox gText_UltraSpace_Hoenn_FindingJirachi8 MSG_NORMAL
+    fadescreen FADEOUT_BLACK
+    msgbox gText_UltraSpace_Hoenn_FindingJirachiWishes MSG_NORMAL
+    fadescreen FADEIN_BLACK
+    msgbox gText_UltraSpace_Hoenn_FindingJirachi9 MSG_NORMAL
+    playse 0x5F @ Shiny
+	dofieldeffect 69 @ Screen flash
+    hidesprite JirachiDormant
+    showsprite JirachiAwakened
+    waitfieldeffect 69
+    waitse
+    cry SPECIES_JIRACHI 0x0
+    msgbox gText_UltraSpace_Hoenn_FindingJirachi10 MSG_KEEPOPEN
+    waitcry
+    applymovement Rival m_Surprise
+    applymovement PLAYER m_Surprise
+    sound 0x15 @ Exclaim
+    msgbox gText_UltraSpace_Hoenn_FindingJirachi11 MSG_NORMAL
+    special 0xD3 @ Face follower
+    msgbox gText_UltraSpace_Hoenn_FindingJirachi12 MSG_NORMAL
+    fadescreen FADEOUT_WHITE
+    cry SPECIES_JIRACHI 0x0
+    waitcry
+    pause DELAY_HALFSECOND
+    addvar VarEmptyWorldStorySequence 0x1
+    special 0xD2 @ Destroy follower
+    warpmuted 1 58 0xFF 0xB 0x9 @ Warp to Carnelidge Volcano in the home dimension
+    end
+
+HandlePlayerPositioningAtJirachi:
+    getplayerpos 0x4000 0x4001
+    compare 0x4001 0x7 @ Above
+    if equal _call PlayerWalkToJirachiFromAbove
+    compare 0x4000 0x1D @ Centered with Jirach
+    if lessthan _call PlayerWalkToJirachiFromLeft
+    if greaterthan _call PlayerWalkToJirachiFromRight
+    applymovement PLAYER m_LookUp
+    applymovement Rival m_LookUp
+    return
+
+PlayerWalkToJirachiFromAbove:
+    applymovement PLAYER m_PlayerWalksToJirachiFromAbove
+    waitmovement PLAYER
+    return
+
+PlayerWalkToJirachiFromLeft:
+    applymovement PLAYER m_PlayerWalksToJirachiFromLeft
+    waitmovement PLAYER
+    return
+
+PlayerWalkToJirachiFromRight:
+    applymovement PLAYER m_PlayerWalksToJirachiFromRight
+    waitmovement PLAYER
+    return
+
+PlayerDoesNotWantToWish:
+    msgbox gText_UltraSpace_Hoenn_FindingJirachi7_No MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto PlayerDoesNotWantToWish
+    return
+
+m_WingullFlyAway: .byte run_right, run_right, run_right, run_right, run_right, run_right, run_right, run_right, run_right, run_right, end_m
+m_PlayerAndRivalApproachWingulls: .byte walk_up, walk_up, walk_up, end_m
+m_RivalRunToWingulls: .byte run_up, run_up, run_up, look_right, end_m
+m_RivalReturnsToPlayer: .byte walk_down, walk_down, walk_right, look_up, end_m
+m_PlayerWalksToJirachiFromAbove: .byte walk_left, walk_down, walk_down, walk_right, look_up, end_m
+m_PlayerWalksToJirachiFromLeft: .byte walk_down, walk_right, look_up, end_m
+m_PlayerWalksToJirachiFromRight: .byte walk_down, walk_left, look_up, end_m
