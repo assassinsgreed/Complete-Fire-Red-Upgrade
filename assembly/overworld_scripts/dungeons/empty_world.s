@@ -124,7 +124,9 @@ LevelScript_ContinueStoryConclusion:
     clearflag 0x829 @ Hide Pokedex in menu
     clearflag 0x828 @ Disable Pokemon Menu
 	setflag 0x911 @ Disable wild encounters
-    @ setflag 0x91D @ Hide Save in the menu (TODO: reenable after all dev is complete)
+    setflag 0x91D @ Hide Save in the menu
+    special 0x27 @ Copies the party to RAM
+    special 0xEF @ Erases player party
     end
 
 PlayerSaidNoToRivalsRequest:

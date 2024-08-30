@@ -595,6 +595,8 @@ TileScript_Route11South_HessonPass:
 HandleEnaEvent:
     checkflag 0x826 @ Has Tsarvosa City gym badge
     if NOT_SET _goto End
+    checkflag 0x273 @ Has completed the Carnelidge Volcano events
+    if SET _goto End
     applymovement PLAYER m_LookUp
     waitmovement PLAYER
     sound 0x15 @ Exclaim

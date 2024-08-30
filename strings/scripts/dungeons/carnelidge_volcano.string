@@ -174,3 +174,141 @@ Unfortunate[.]\pThis changes nothing, however.
 
 #org @gText_CarnelidgeVolcanoPeak_AlistairsWish
 [BLACK]Alistair: [BLUE]My wish is[.]\pTo rid this world of all Pok\emon!
+
+#org @gText_CarnelidgeVolcanoPeak_Conclusion_AlistairGetsDejaVu
+[BLACK]Alistair: [BLUE][.] Why do I get the sense\nI've explained myself to you\lbefore?\pNo matter.\p[PLAYER], please understand. I must\nawaken Jirachi so it grants my wish.\pI must right the wrongs in this\nworld, no matter the cost.\pI cannot have anyone, even you,\ninterfering with me.\pAnd so, I must stall you. I've\ncalled upon an old friend to help.\pThey're someone you know well.\pSomeone who has had their dreams\ncrushed by your own successes.\p[RIVAL]! Stall [PLAYER] while I\nawaken Jirachi!
+
+#org @gText_CarnelidgeVolcanoPeak_Conclusion_RivalArrives
+[BLACK][RIVAL]: [BLUE]Looks like I made it just\nin time, [PLAYER]!
+
+#org @gText_CarnelidgeVolcanoPeak_Conclusion_AlistairQuestionsRivalsMotivations
+[BLACK]Alistair: [BLUE]Wh-what is the meaning of\nthis, [RIVAL]?\pWe're supposed to be partners! Why\nare you siding with [PLAYER]?
+
+#org @gText_CarnelidgeVolcanoPeak_Conclusion_RivalPleadsToAlistair
+[BLACK][RIVAL]: [BLUE]Alistair[.]\nPlease, listen to me.\pI know you're in a bad place right\nnow.\pYou feel like your friends - no, the\nwhole world - has given up on you.\pAnd you're putting all the blame on\nPok\emon, and wish they'd all just\ldisappear.\pBut[.] That's not going to make\nanything better, Alistair!\pI can't just say "you aren't alone!\"\nand expect it to fix everything.\pI'm not that naive[.]\pI also know it isn't easy to just\nlet go of that pain[.]\pThat feeling of inadequacy[.]\pBecause I was there, too.\pAlistair[.] I made a huge mistake, and\nI was lucky to have [PLAYER] to\lhelp me set things straight.\pSo now, I want to help you too.\pI know you're not a bad person.\nYou're just hurting.\pPlease, stop this.\pPok\emon aren't at fault. Nobody is.
+
+#org @gText_CarnelidgeVolcanoPeak_Conclusion_AlistairDisagreesWithRival
+[BLACK]Alistair: [BLUE]To say you understand\neven a fraction of what I've gone\lthrough[.]\pWhy, it's truly absurd.\pPok\emon aren't to blame? Surely\nyou don't believe that.\pPeople would be better off if\nPok\emon never existed.\pMy wish for this world must come\ntrue, at any cost.\pI will stop you both myself, if I\nmust!
+
+#org @gText_CarnelidgeVolcanoPeak_Conclusion_RivalExplainsTheStakes
+[BLACK][RIVAL]: [BLUE][PLAYER], you have your\nPok\emon with you, right?\pWe have to stop Alistair and erase\nthe wish he wrote before Jirachi\lwakes up!\pFor everyone's sake, including his.
+
+#org @gText_CarnelidgeVolcanoPeak_Conclusion_RivalInitiatesBattle
+[BLACK][RIVAL]: [BLUE]Alistair, if it's a battle\nyou want, you've got one.\pMake sure you pay close attention,\nthough.\pWe'll show you just how important\nthe bond between people and\lPok\emon is!
+
+#org @gText_CarnelidgeVolcanoPeak_Conclusion_RivalPreBattle
+[BLACK][RIVAL]: [BLUE]Okay, let's go, [PLAYER]!
+
+#org @gText_CarnelidgeVolcanoPeak_Conclusion_AlistairLosesToPlayerAndRival
+No[.] No! This cannot be happening!
+
+#org @gText_CarnelidgeVolcanoPeak_Conclusion_AlistairLamentsLoss
+[BLACK]Alistair: [BLUE]Why[.] Why must you two\noppose me?\pDo you really enjoy living in such\nan unjust world?
+
+#org @gText_CarnelidgeVolcanoPeak_Conclusion_RivalCommentsOnLoss
+[BLACK][RIVAL]: [BLUE]Alistair[.] You're right, the\nworld isn't fair.\pSometimes we just can't do what\nwe've always dreamed of, no matter\lhow hard we try.\pBut that doesn't mean that dreaming\nabout it is pointless!\pI have the same dream as you do, to\nbecome Kulure's champion.\pIt's been a long and difficult\njourney, and I don't know how it'll\lend.\pBut[.] I'm okay with that now.
+
+#org @gText_CarnelidgeVolcanoPeak_Conclusion_RivalCommentsOnHisJourney
+[BLACK][RIVAL]: [BLUE]I got to set out on a once\nin a lifetime journey with my best\lfriend.\pI got to befriend so many Pok\emon\nand meet so many people.\pAnd I got to see the world we call\nhome!
+
+#org @gText_CarnelidgeVolcanoPeak_Conclusion_RivalConcludesHisThoughtsOnHisJourney
+[BLACK][RIVAL]: [BLUE]I want to become Kulure's\nChampion, I really do!\pBut[.] If it never happens, I'll still\nbe happy with what I did get to\lhave.\pAlistair[.] We have a lot in common.\nI'm sure you understand what I\lmean.\pYou must remember setting out on\nyour journey with your first\lPok\emon[.]\pThe excitement you felt when you\nwon your first gym badge[.]\pAnd giving it your all whenever you\nbattled with Champion Selene, too[.]\pWeren't those experiences worth\nhaving?
+
+#org @gText_CarnelidgeVolcanoPeak_Conclusion_AlistairAsksWhatMotivatesTheRival
+[BLACK]Alistair: [BLUE][RIVAL][.] Where is all of\nthis coming from?\pJust a few days ago, you were\nwilling to do whatever it took to\lovertake [PLAYER].
+
+#org @gText_CarnelidgeVolcanoPeak_Conclusion_RivalExplainsMotivations
+[BLACK][RIVAL]: [BLUE]You're right[.]\pI was really frustrated and made\nsome really stupid decisions.\pThis'll sound ridiculous, but[.]\pI did side with you, and[.] We won.\p[PLAYER] and Champion Selene couldn't\nstop us in time.\pJirachi woke up and granted the\nwish you wrote.\pAnd, just as you planned, all\nPok\emon vanished from the world.
+
+#org @gText_CarnelidgeVolcanoPeak_Conclusion_AlistairRealizesRivalIsTellingTheTruth
+[BLACK]Alistair: [BLUE]You know what I wished\nfor?\pThen[.] You're telling the truth after\nall. Unbelievable[.]
+
+#org @gText_CarnelidgeVolcanoPeak_Conclusion_RivalExplainsHimself
+[BLACK][RIVAL]: [BLUE]It was a wake up call for\nme.\pThe problem wasn't [PLAYER], or\nPok\emon, or anything like that.\pIt was[.] me.\pI overlooked what really mattered,\njust to hurt someone else.
+
+#org @gText_CarnelidgeVolcanoPeak_Conclusion_RivalPraisesPlayer
+[BLACK][RIVAL]: [BLUE]You said [PLAYER] crushed\nmy dreams.\pBut[.] That's not true at all!\p[PLAYER] never stopped fighting for\npeople and their Pok\emon, even\lwhen up against impossible odds.\pThey even picked me back up and\nwent with me to entirely other\ldimensions to fix things, as crazy\las it all sounds!\pIt was thanks to them that I was\nable to realize what was important\lto me.
+
+#org @gText_CarnelidgeVolcanoPeak_Conclusion_RivalPleadsToAlistairToReconsiderWish
+[BLACK][RIVAL]: [BLUE]Alistair[.]\pWe made a terrible mistake, and we\nwere lucky enough to fix it.\pPlease[.] Reconsider what you're\nwishing for.
+
+#org @gText_CarnelidgeVolcanoPeak_Conclusion_AlistairAcknowledgesJirachisPower
+[BLACK]Alistair: [BLUE]Aha[.] Ahahaha!\pSo the rumours are true. Jirachi\nreally can grant any wish.
+
+#org @gText_CarnelidgeVolcanoPeak_Conclusion_AlistairPreparesHisWish
+[BLACK]Alistair: [BLUE]Then[.]\nI understand what to do.
+
+#org @gText_CarnelidgeVolcanoPeak_Conclusion_AlistairErasesHisWish
+[BLACK]Alistair: [BLUE]I will do whatever I can to\nachieve the dreams I gave up on.\pNot with Jirachi's power[.]\pBut with my own[.]
+
+#org @gText_CarnelidgeVolcanoPeak_Conclusion_AlistairAsksRivalAboutHisMotivations
+[BLACK]Alistair: [BLUE][RIVAL], I think I\nunderstand how you feel now.\pThat this imperfect world is[.]\nSomehow ideal.\pI can see it in your eyes - there's a\nspark that wasn't there before.\pSomething that has emboldened you\nand given you something I never\lcould.\pYes[.] It's the same spark she had in\nher eyes, all those years ago.\pA spark I think I've lost, too[.]
+
+#org @gText_CarnelidgeVolcanoPeak_Conclusion_AlistairSharesHisNewMotivations
+[BLACK]Alistair: [BLUE][PLAYER], [RIVAL][.]\pI must admit, I am not sure this is\nthe answer I was looking for.\pBut[.] I'm willing to find out,\nalongside my Pok\emon.
+
+#org @gText_CarnelidgeVolcanoPeak_Conclusion_RivalAcknowledgesAlistairsMotivations
+[BLACK][RIVAL]: [BLUE]Alistair[.]
+
+#org @gText_CarnelidgeVolcanoPeak_Conclusion_SeleneFollowsUpOnRumours
+[BLACK]Selene: [RED]Hm? Alistair? And [PLAYER]\nand [RIVAL], too?\pI heard rumours that Team Pluto was\nreforming here, but it looks like it\lwasn't true after all.
+
+#org @gText_CarnelidgeVolcanoPeak_Conclusion_SeleneSeesJirachi
+[BLACK]Selene: [RED]And to top it all off, an\nunusual Pok\emon as well?\pWhat's going on here?
+
+#org @gText_CarnelidgeVolcanoPeak_Conclusion_AlistairCommentsOnSelenesArrival
+[BLACK]Alistair: [BLUE]Indeed, there is no truth\nto the rumours.\pHowever[.] There was certainly a\nthreat that was stopped here.\pSelene, I think we need to talk.
+
+#org @gText_CarnelidgeVolcanoPeak_Conclusion_SeleneAsksAlistairToGoToRestaurant
+[BLACK]Selene: [RED]I don't think I really\nget it, but yes, we should talk[.]\pThere are things I need to tell you,\nas well.\pI know a great restaurant in Daimyn\nCity. Want to go there?
+
+#org @gText_CarnelidgeVolcanoPeak_Conclusion_AlistairAgreesToRestaurant
+[BLACK]Alistair: [BLUE]Yes, that sounds like a\ngood idea.\pBefore I go[.]
+
+#org @gText_CarnelidgeVolcanoPeak_Conclusion_AlistairThanksPlayerAndRival
+[BLACK]Alistair: [BLUE][PLAYER], [RIVAL], thank you,\ntruly.\pIf not for you, well[.]
+
+#org @gText_CarnelidgeVolcanoPeak_Conclusion_RivalRespondsToAlistairsThanks
+[BLACK][RIVAL]: [BLUE]Aw, you don't need to thank\nus.\pWe're just glad we were able to help\nyou, Alistair.
+
+#org @gText_CarnelidgeVolcanoPeak_Conclusion_AlistairGivesMegaStones
+[BLACK]Alistair: [BLUE]Even still, I'd like to\nshow my appreciation.\pAs I'm sure you're\nboth aware, Mega Evolution is only\lachievable when the bond between a\lperson and Pok\emon is strong.\pYou both reminded me how important\nthose bonds truly are.\pPlease[.] I'd like you to take these\nHoundoomites.\pI'm sure you'll use them well.
+
+#org @gText_CarnelidgeVolcanoPeak_Conclusion_RivalThanksAlistairForMegaStones
+[BLACK][RIVAL]: [BLUE]Thank you, Alistair.\pYou can be sure we'll put them to\ngood use.
+
+#org @gText_CarnelidgeVolcanoPeak_Conclusion_AlistairCommentsOnGoingBackToUltraSpace
+[BLACK]Alistair: [BLUE]And, one last thing.\pI am confident everything you told\nme about is true.\pIt seems you went through quite an\nordeal to set things right.\pI have friends at the\nInterdimensional Research Facility.\pI'll put in a good word for you.\pI understand if you never wish to\nreturn to other dimensions.\pBut, if your mind changes to\nsomeday, I'm sure they'll be willing\lto help you.
+
+#org @gText_CarnelidgeVolcanoPeak_Conclusion_SeleneIsConfused
+[BLACK]Selene: [RED]Oookay, you're starting to\nlose me. What's going on?
+
+#org @gText_CarnelidgeVolcanoPeak_Conclusion_AlistairMentionsALotToDiscuss
+[BLACK]Alistair: [BLUE]We have a lot to discuss.\pShall we go to that restaurant you\nsuggested?
+
+#org @gText_CarnelidgeVolcanoPeak_Conclusion_SelenePreparingToLeave
+[BLACK]Selene: [RED]Sure! Let's go.
+
+#org @gText_CarnelidgeVolcanoPeak_Conclusion_SeleneEncouragesPlayerAndRival
+[BLACK]Selene: [RED]Oh, and I hope all is well\non your gym challenge, [PLAYER]\land [RIVAL]!\pI'll be expecting to see you at\nAscension Tower before long.
+
+#org @gText_CarnelidgeVolcanoPeak_Conclusion_RivalCommentsOnTheirSuccess
+[BLACK][RIVAL]: [BLUE][PLAYER], I can't believe\nit.\pWe actually managed to convince\nAlistair before Jirachi woke up!\pMy hands are still shaking and\neverything.
+
+#org @gText_CarnelidgeVolcanoPeak_Conclusion_RivalMentionsJirachi
+[BLACK][RIVAL]: [BLUE]Speaking of Jirachi[.]
+
+#org @gText_CarnelidgeVolcanoPeak_Conclusion_RivalEncouragesPlayerToFaceJirachi
+[BLACK][RIVAL]: [BLUE]It wouldn't be right for me\nto face it, after everything that\lhas happened.\p[PLAYER], you have the strength to\nmake your dreams come true without\lJirachi's power.\pI think it's only fair for you to face\nit.
+
+#org @gText_CarnelidgeVolcanoPeak_Conclusion_RivalPondersWhatToDoNext
+[BLACK][RIVAL]: [BLUE]As for me[.]\nI've got a lot to think about.\pIf it weren't for you, well[.]
+
+#org @gText_CarnelidgeVolcanoPeak_Conclusion_RivalLeaves
+[BLACK][RIVAL]: [BLUE]It's better not to dwell\non it now.\p[PLAYER], you're going to continue on\nyour gym challenge, right?\pOur next stop would be Uteya\nVillage.\pMaybe we'll see each other there?\pAnyways, I'd better get going.\pSee you later [PLAYER], and thanks\nagain for everything you've done.
+
+#org @gText_CarnelidgeVolcanoPeak_Conclusion_PlayerAvertedTragedy
+Thanks to the bonds shared with your\nPok\emon, tragedy was averted.
+
+#org @gText_CarnelidgeVolcanoPeak_Conclusion_PlayerCanSaveAgain
+You are now free to explore once\nagain and save your progress.

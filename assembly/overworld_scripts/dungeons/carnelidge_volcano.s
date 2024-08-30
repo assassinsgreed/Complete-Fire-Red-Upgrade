@@ -168,15 +168,16 @@ TileScript_CarnelidgeVolcano_ExtendedSequenceWarning:
 MapScript_CarnelidgeVolcano_Peak:
     mapscript MAP_SCRIPT_ON_LOAD MapScript_SetCarnelidgeVolcanoPeakState
     mapscript MAP_SCRIPT_ON_FRAME_TABLE LevelScripts_CarnelidgeVolcanoPeak_StoryEvents
+    mapscript MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE LevelScripts_CarnelidgeVolcanoPeak_StoryEvents_AfterUltraSpace
 	.byte MAP_SCRIPT_TERMIN
 
 MapScript_SetCarnelidgeVolcanoPeakState:
     playbgm 0x14B 0x1 @ Regular peak theme, set as permanent on the map (in case the player lost to Rival or Alistair)
-    @ TODO later: Show Jirachi in it's correct sprite if it has yet to be caught
     end
 
 LevelScripts_CarnelidgeVolcanoPeak_StoryEvents:
     levelscript VarStorySequence 0x1 LevelScript_InitiateStoryConclusion
+    levelscript VarStorySequence 0xE LevelScript_StoryConclusionCutscene
 	.hword LEVEL_SCRIPT_TERMIN
 
 LevelScript_InitiateStoryConclusion:
@@ -259,15 +260,7 @@ LevelScript_InitiateStoryConclusion:
     applymovement PLAYER m_LookUp
     applymovement Selene m_LookUp
     msgbox gText_CarnelidgeVolcanoPeak_AlistairAddressesSelene MSG_NORMAL
-    playse 0x5F @ Shiny
-	dofieldeffect 69 @ Screen flash
-    hidesprite JirachiDormant
-    setflag 0x270 @ Jirachi has been awakened
-    clearflag 0x05A @ Animated Jirachi is now shown
-    showsprite Jirachi
-    waitfieldeffect 69
-    waitse
-    cry SPECIES_JIRACHI 0x0
+    call HandleJirachisAwakening
     applymovement Rival m_LookUp
     applymovement Alistair m_WalkUp
     waitmovement Alistair
@@ -301,5 +294,198 @@ WillNotOpposeAlistair:
     msgbox gText_CarnelidgeVolcanoPeak_PlayerWillNotOpposeAlistair MSG_NORMAL
     return
 
+LevelScripts_CarnelidgeVolcanoPeak_StoryEvents_AfterUltraSpace:
+    levelscript VarStorySequence 0xE LevelScript_PlayerPositionDuringFinalStoryEvent
+	.hword LEVEL_SCRIPT_TERMIN
+
+LevelScript_PlayerPositionDuringFinalStoryEvent:
+    applymovement PLAYER m_LookUp
+    end
+
+LevelScript_StoryConclusionCutscene:
+    pause DELAY_HALFSECOND
+    msgbox gText_CarnelidgeVolcanoPeak_AlistairGreetsPlayer MSG_NORMAL
+    applymovement Alistair m_LookDown
+    playbgm 0x173 @ Alistair's theme
+    msgbox gText_CarnelidgeVolcanoPeak_AlistairFacesPlayer MSG_NORMAL
+    msgbox gText_CarnelidgeVolcanoPeak_AlistairExplainsMotivations1 MSG_NORMAL
+    msgbox gText_CarnelidgeVolcanoPeak_Conclusion_AlistairGetsDejaVu MSG_NORMAL
+    showsprite Rival
+    applymovement Rival m_RivalWalksToPlayersSide
+    waitmovement Rival
+    applymovement PLAYER m_LookRight
+    msgbox gText_CarnelidgeVolcanoPeak_Conclusion_RivalArrives MSG_NORMAL
+    applymovement PLAYER m_LookUp
+    applymovement Rival m_LookUp
+    applymovement Alistair m_Question
+    msgbox gText_CarnelidgeVolcanoPeak_Conclusion_AlistairQuestionsRivalsMotivations MSG_NORMAL
+    msgbox gText_CarnelidgeVolcanoPeak_Conclusion_RivalPleadsToAlistair MSG_NORMAL
+    msgbox gText_CarnelidgeVolcanoPeak_Conclusion_AlistairDisagreesWithRival MSG_NORMAL
+    applymovement Rival m_LookLeft
+    applymovement PLAYER m_LookRight
+    msgbox gText_CarnelidgeVolcanoPeak_Conclusion_RivalExplainsTheStakes MSG_NORMAL
+    goto BattleAlistair
+    
+BattleAlistair:
+    applymovement Rival m_LookUp
+    applymovement PLAYER m_LookUp
+    @ Set up vars to return the player here in case they throw against Alistair (TODO later: This causes the pokemon center text and animation to play. Not ideal, but not breaking)
+    setvar 0x5037 0x3A01 @ Bank 1, map 58
+    setvar 0x5038 0xB @ X coordinate
+    setvar 0x5039 0x9 @ Y coordinate
+    setflag 0x92D @ Just a dream whiteout text
+    msgbox gText_CarnelidgeVolcanoPeak_Conclusion_RivalInitiatesBattle MSG_NORMAL
+    special 0x28 @ Restore party
+    special 0x0 @ Heal player party
+    addvar VarStorySequence 0x1 @ Big hack - add 1 so the cutscene doesn't reset when exiting the party menu
+    call RivalTagBattlePromptAndPartyOrganization
+    subvar VarStorySequence 0x1 @ Big hack - subtract 1 so the cutscene does play again if the player loses to Alistair
+    msgbox gText_CarnelidgeVolcanoPeak_Conclusion_RivalPreBattle MSG_NORMAL
+    call SetupMugshotGymLeaderAndBosses
+    @ Start a tag battle against Alistair
+    trainerbattle12 0xC 470 471 0x6 0x100 gText_CarnelidgeVolcanoPeak_Conclusion_AlistairLosesToPlayerAndRival
+    setvar 0x5037 0x0 @ Disable custom warp
+    setvar 0x5038 0x0 @ Disable custom warp
+    setvar 0x5039 0x0 @ Disable custom warp
+    clearflag 0x92D @ Just a dream whiteout text
+    playbgm 0x114 0x0 @ Unwavering emotions
+    msgbox gText_CarnelidgeVolcanoPeak_Conclusion_AlistairLamentsLoss MSG_NORMAL
+    applymovement Rival m_WalkUp
+    msgbox gText_CarnelidgeVolcanoPeak_Conclusion_RivalCommentsOnLoss MSG_NORMAL
+    applymovement Rival m_LookDown
+    msgbox gText_CarnelidgeVolcanoPeak_Conclusion_RivalCommentsOnHisJourney MSG_NORMAL
+    applymovement Rival m_LookUp
+    msgbox gText_CarnelidgeVolcanoPeak_Conclusion_RivalConcludesHisThoughtsOnHisJourney MSG_NORMAL
+    msgbox gText_CarnelidgeVolcanoPeak_Conclusion_AlistairAsksWhatMotivatesTheRival MSG_NORMAL
+    msgbox gText_CarnelidgeVolcanoPeak_Conclusion_RivalExplainsMotivations MSG_NORMAL
+    sound 0x15 @ Exclaim
+    applymovement Alistair m_Surprise
+    waitmovement Alistair
+    applymovement Alistair m_LookLeft
+    msgbox gText_CarnelidgeVolcanoPeak_Conclusion_AlistairRealizesRivalIsTellingTheTruth MSG_NORMAL
+    applymovement Alistair m_LookDown
+    applymovement Rival m_LookDown
+    msgbox gText_CarnelidgeVolcanoPeak_Conclusion_RivalExplainsHimself MSG_NORMAL
+    msgbox gText_CarnelidgeVolcanoPeak_Conclusion_RivalPraisesPlayer MSG_NORMAL
+    applymovement Rival m_LookUp
+    msgbox gText_CarnelidgeVolcanoPeak_Conclusion_RivalPleadsToAlistairToReconsiderWish MSG_NORMAL
+    msgbox gText_CarnelidgeVolcanoPeak_Conclusion_AlistairAcknowledgesJirachisPower MSG_NORMAL
+    applymovement Alistair m_LookUp
+    msgbox gText_CarnelidgeVolcanoPeak_Conclusion_AlistairPreparesHisWish MSG_NORMAL
+    pause DELAY_HALFSECOND
+    call HandleJirachisAwakening
+    fadescreen FADEOUT_WHITE
+    msgbox gText_CarnelidgeVolcanoPeak_Conclusion_AlistairErasesHisWish MSG_NORMAL
+    fadescreen FADEIN_WHITE
+    pause DELAY_1SECOND
+    applymovement Alistair m_LookDown
+    msgbox gText_CarnelidgeVolcanoPeak_Conclusion_AlistairAsksRivalAboutHisMotivations MSG_NORMAL
+    applymovement Alistair m_WalkDown
+    applymovement Rival m_LookLeft
+    msgbox gText_CarnelidgeVolcanoPeak_Conclusion_AlistairSharesHisNewMotivations MSG_NORMAL
+    showsprite Selene
+    applymovement Selene m_SeleneWalksTowardGroup
+    msgbox gText_CarnelidgeVolcanoPeak_Conclusion_RivalAcknowledgesAlistairsMotivations MSG_NORMAL
+    applymovement Selene m_SeleneApproachesAlistair
+    waitmovement Selene
+    applymovement Selene m_Question
+    applymovement Alistair m_LookLeft
+    msgbox gText_CarnelidgeVolcanoPeak_Conclusion_SeleneFollowsUpOnRumours MSG_NORMAL
+    applymovement Selene m_LookUp
+    msgbox gText_CarnelidgeVolcanoPeak_Conclusion_SeleneSeesJirachi MSG_NORMAL
+    applymovement Selene m_LookRight
+    msgbox gText_CarnelidgeVolcanoPeak_Conclusion_AlistairCommentsOnSelenesArrival MSG_NORMAL
+    msgbox gText_CarnelidgeVolcanoPeak_Conclusion_SeleneAsksAlistairToGoToRestaurant MSG_NORMAL
+    msgbox gText_CarnelidgeVolcanoPeak_Conclusion_AlistairAgreesToRestaurant MSG_NORMAL
+    applymovement Selene m_LookDown
+    applymovement Alistair m_LookDown
+    msgbox gText_CarnelidgeVolcanoPeak_Conclusion_AlistairThanksPlayerAndRival MSG_NORMAL
+    applymovement Alistair m_LookRight
+    applymovement Selene m_LookRight
+    msgbox gText_CarnelidgeVolcanoPeak_Conclusion_RivalRespondsToAlistairsThanks MSG_NORMAL
+    applymovement Alistair m_LookDown
+    pause DELAY_HALFSECOND
+    msgbox gText_CarnelidgeVolcanoPeak_Conclusion_AlistairGivesMegaStones MSG_NORMAL
+    applymovement Alistair m_LookRight
+    pause DELAY_1SECOND
+    applymovement Alistair m_LookDown
+    pause DELAY_HALFSECOND
+    obtainitem ITEM_HOUNDOOMINITE 0x1
+    applymovement Alistair m_LookRight
+    msgbox gText_CarnelidgeVolcanoPeak_Conclusion_RivalThanksAlistairForMegaStones MSG_NORMAL
+    applymovement Alistair m_LookDown
+    msgbox gText_CarnelidgeVolcanoPeak_Conclusion_AlistairCommentsOnGoingBackToUltraSpace MSG_NORMAL
+    applymovement Selene m_LookRight
+    applymovement Alistair m_LookLeft
+    msgbox gText_CarnelidgeVolcanoPeak_Conclusion_SeleneIsConfused MSG_NORMAL
+    msgbox gText_CarnelidgeVolcanoPeak_Conclusion_AlistairMentionsALotToDiscuss MSG_NORMAL
+    msgbox gText_CarnelidgeVolcanoPeak_Conclusion_SelenePreparingToLeave MSG_NORMAL
+    applymovement Selene m_LookDown
+    applymovement Alistair m_LookDown
+    msgbox gText_CarnelidgeVolcanoPeak_Conclusion_SeleneEncouragesPlayerAndRival MSG_NORMAL
+    applymovement Selene m_SeleneLeaves
+    applymovement Alistair m_AlistairLeaves
+    pause DELAY_HALFSECOND
+    applymovement PLAYER m_LookLeft
+    applymovement Rival m_LookLeft
+    pause DELAY_1SECOND
+    applymovement PLAYER m_LookDown
+    applymovement Rival m_LookDown
+    waitmovement Alistair
+    playse 0x9 @ Exit room
+    hidesprite Alistair
+    hidesprite Selene
+    fadedefaultbgm
+    applymovement Rival m_RivalWalksInFrontOfPlayer
+    waitmovement Rival
+    applymovement PLAYER m_LookUp
+    msgbox gText_CarnelidgeVolcanoPeak_Conclusion_RivalCommentsOnTheirSuccess MSG_NORMAL
+    applymovement Rival m_LookUp
+    msgbox gText_CarnelidgeVolcanoPeak_Conclusion_RivalMentionsJirachi MSG_NORMAL
+    applymovement Rival m_LookDown
+    msgbox gText_CarnelidgeVolcanoPeak_Conclusion_RivalEncouragesPlayerToFaceJirachi MSG_NORMAL
+    applymovement Rival m_LookRight
+    msgbox gText_CarnelidgeVolcanoPeak_Conclusion_RivalPondersWhatToDoNext MSG_NORMAL
+    applymovement Rival m_LookDown
+    msgbox gText_CarnelidgeVolcanoPeak_Conclusion_RivalLeaves MSG_NORMAL
+    applymovement Rival m_AlistairLeaves
+    waitmovement Rival
+    playse 0x9 @ Exit room
+    hidesprite Rival
+    fanfare 0x10C @ Big Celebration
+    msgboxsign
+    msgbox gText_CarnelidgeVolcanoPeak_Conclusion_PlayerAvertedTragedy MSG_KEEPOPEN
+    waitfanfare
+    msgbox gText_CarnelidgeVolcanoPeak_Conclusion_PlayerCanSaveAgain MSG_NORMAL
+    msgboxnormal
+    special 0x0 @ Heal player party
+    setflag 0x829 @ ShowHide Pokedex in menu
+    setflag 0x828 @ Enable Pokemon Menu
+	clearflag 0x911 @ Enable wild encounters
+    clearflag 0x91D @ Show Save in the menu
+    clearflag 0x271 @ No longer in the empty world
+    setflag 0x56 @ Hide Ena on Route 11 South and Alistair here
+    setflag 0x273 @ Has completed the Carnelidge Volcano events
+    addvar VarStorySequence 0x1 @ Conclude the story event
+    end
+
+HandleJirachisAwakening:
+    playse 0x5F @ Shiny
+	dofieldeffect 69 @ Screen flash
+    hidesprite JirachiDormant
+    setflag 0x270 @ Jirachi has been awakened
+    clearflag 0x05A @ Animated Jirachi is now shown
+    showsprite Jirachi
+    waitfieldeffect 69
+    waitse
+    cry SPECIES_JIRACHI 0x0
+    return
+
 m_PlayerWalksToConfrontAlistair: .byte walk_up, walk_up, walk_up, walk_up, walk_up, walk_up, end_m
 m_RivalWalksToStallPlayer: .byte walk_up, walk_up, walk_up, walk_up, walk_up, walk_up, walk_up, walk_left, look_down, end_m
+m_RivalWalksToPlayersSide: .byte walk_up, walk_up, walk_up, walk_up, walk_up, walk_up, look_left, end_m
+m_SeleneWalksTowardGroup: .byte walk_up, walk_up, walk_up, walk_up, end_m
+m_SeleneApproachesAlistair: .byte walk_up, walk_up, walk_up, look_right, end_m
+m_SeleneLeaves: .byte walk_down, walk_down, walk_down, walk_down, walk_down, walk_down, walk_down, end_m
+m_AlistairLeaves: .byte walk_left, walk_down, walk_down, walk_down, walk_down, walk_down, walk_down, walk_down, end_m
+m_RivalWalksInFrontOfPlayer: .byte walk_left, look_down, end_m

@@ -647,7 +647,7 @@
 #define FLAG_IN_THE_EMPTY_WORLD                          0x271
 /*
 #define FLAG_TRAVELLED_TO_ULTRA_SPACE                    0x272
-#define FLAG_GOT_HELIX_FOSSIL                            0x273
+#define FLAG_COMPLETED_CARNELIDGE_VOLCANO_STORY          0x273
 #define FLAG_DID_ESPHERE_TRADE                           0x274
 #define FLAG_DID_TANGENY_TRADE                           0x275
 #define FLAG_DID_SEELOR_TRADE                            0x276
@@ -1516,6 +1516,8 @@ Daily Flags, cleared at the start of each day.  Goes up to 0xEFF
 #define FLAG_0x8D6 (SYS_FLAGS + 0xD6)
 
 #define FLAG_0x8E0 (SYS_FLAGS + 0xE0)
+
+#define FLAG_DREAM_WHITE_OUT_TEXT 0x92D
 
 // SPECIAL FLAGS (unknown purpose)
 #define SPECIAL_FLAGS_START 0x4000
