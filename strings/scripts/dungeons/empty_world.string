@@ -536,7 +536,7 @@ The ball feels empty[.]
 [BLACK]Sakura: [RED]Step in front of this machine\nhere.\pWe'll get it started and send you\noff.
 
 #org @gText_EmptyWorld_InterdimensionalResearchFacility_Sakura_PreparingToStartMachine
-[BLACK]Sakura: [RED]Good. Now please stand\nstill.\pAs the machine runs, you may feel a\npulling sensation.\pThis is normal, and it's the machine\npulling you into Ultra Space.\pOnce the pulling stops, you will\nhave arrived.
+[BLACK]Sakura: [RED]Good. Now please stand\nstill.\pAs the machine runs, you may feel a\npulling sensation.\pThis is normal, and it's the machine\npulling you into Ultra Space.\pOnce the sensation passes, you\nwill have arrived.
 
 #org @gText_EmptyWorld_InterdimensionalResearchFacility_Sakura_SendingOffOne
 [BLACK]Sakura: [RED]Okay!\pStart sending power to the Ultra\nWormhole Device!

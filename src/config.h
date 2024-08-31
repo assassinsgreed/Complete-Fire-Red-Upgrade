@@ -70,6 +70,7 @@
 #define FLAG_UNLOCKED_DEXNAV_HELD_ITEMS 0x92A //If set, possible held items will be displayed for wild Pokemon on the DexNav UI
 #define FLAG_SHOW_IVS_IN_SUMMARY 0x92B //If set, IV ratings will be shown in the summary screen
 #define FLAG_CAMOMONS_BATTLE 0x92C //If set, the camomon battle style is used
+#define FLAG_DREAM_WHITE_OUT_TEXT 0x92D //If set, the player receives the "Dream" whiteout text when losing. Recommended to pair with SET_HEALING_PLACE_HACK
 #define FLAG_DAILY_EVENTS_START 0xE00 //To flag + 0xFF, resets every new day.
 
 /*===== Start Menu/Poketools Flags =====*/
@@ -232,7 +233,7 @@ enum //These vars need to be one after the other (hence the enum)
 #define OBEDIENCE_BY_BADGE_AMOUNT //Determines obedience based on the number of badges the Player has, rather than which badges the player has
 #define SAVE_BLOCK_EXPANSION //Commenting this requires you to also manually remove Save Expansion Hooks found in hooks. It will also break several features. DO NOT COMMENT OUT!
 #define SELECT_FROM_PC //Comment this out to remove select-from-pc hack
-//#define SET_HEALING_PLACE_HACK  //Uncomment this if you want custom map/bank whiteout respawn locations
+#define SET_HEALING_PLACE_HACK  //Uncomment this if you want custom map/bank whiteout respawn locations
 //#define FOSSIL_IMAGE_HACK   //Uncommenting includes JPANs fossil image hack (see EXISTING_FOSSIL_IMAGE_TABLE_ADDRESS)
 #define EVO_HOLD_ITEM_REMOVAL //Comment this out if you want leveling up/hold item evolution (eg. sneasel) to remove the item (like normal)
 // #define EXPAND_MOVESETS //Comment this out if you're using the Dynamic Pokemon Expansion repo to expand the movesets

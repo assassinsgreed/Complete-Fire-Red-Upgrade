@@ -166,11 +166,7 @@ EventScript_RubarrDesert_StoryEvents:
     applymovement PLAYER m_LookLeft
     msgbox gText_RubarrDesert_RivalReadyToFight MSG_NORMAL
     call PlayerHeal    
-    signmsg
-    msgbox gText_RubarrDesert_TagBattleExplaination MSG_SIGN
-    callasm InitPartyMenuFromField
-    pause DELAY_HALFSECOND
-    normalmsg
+    call RivalTagBattlePromptAndPartyOrganization
     msgbox gText_RubarrDesert_RivalStartsFight MSG_NORMAL
     applymovement Rival m_LookUp
     applymovement PLAYER m_LookUp

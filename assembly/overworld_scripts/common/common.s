@@ -554,6 +554,15 @@ SetupMugshotGymLeaderAndBosses:
     setvar 0x503B 0x1
     return
 
+.global RivalTagBattlePromptAndPartyOrganization
+RivalTagBattlePromptAndPartyOrganization:
+    signmsg
+    msgbox gText_Common_RivalTagBattleExplaination MSG_SIGN
+    callasm InitPartyMenuFromField
+    pause DELAY_HALFSECOND
+    normalmsg
+    return
+
 @ This control function disables walking scripts if the player isn't on a map that set temp var 0x400E
 @ This should only happen if the player is on an eligible map, but then warps/flies away.
 .global DisableWalkingScriptIfOnInvalidMap

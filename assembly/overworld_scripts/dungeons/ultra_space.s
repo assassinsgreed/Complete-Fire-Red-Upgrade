@@ -581,6 +581,8 @@ EventScript_UltraSpaceHoenn_Jirachi:
     pause DELAY_HALFSECOND
     addvar VarEmptyWorldStorySequence 0x1
     special 0xD2 @ Destroy follower
+    clearflag 0x270 @ Jirachi is dormant again in the home dimension
+    setflag 0x05A @ Animated Jirachi is hidden
     warpmuted 1 58 0xFF 0xB 0x9 @ Warp to Carnelidge Volcano in the home dimension
     end
 

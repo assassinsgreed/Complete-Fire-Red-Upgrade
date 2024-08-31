@@ -1316,12 +1316,51 @@ const struct TrainerMonItemCustomMoves sParty_CarnelidgeVolcano_Rival[] = {
         .species = SPECIES_MUDSDALE,
         .moves = {
             MOVE_STOMPINGTANTRUM,
-            MOVE_SUPERPOWER,
+            MOVE_COUNTER,
             MOVE_HEAVYSLAM,
             MOVE_CURSE
         },
         .heldItem = ITEM_SITRUS_BERRY,
         .ability = Ability_2 // Stamina
+    },
+    {
+        .lvl = 55,
+        .species = SPECIES_AMPHAROS,
+        .moves = {
+            MOVE_DAZZLINGGLEAM,
+            MOVE_DISCHARGE,
+            MOVE_COTTONGUARD,
+            MOVE_DRAGONPULSE
+        },
+        .heldItem = ITEM_AMPHAROSITE,
+        .ability = Ability_1 // Static
+    },
+    {
+        .lvl = 56,
+        .species = SPECIES_BISHARP,
+        .moves = {
+            MOVE_IRONHEAD,
+            MOVE_RETALIATE,
+            MOVE_NIGHTSLASH,
+            MOVE_SUCKERPUNCH
+        },
+        .heldItem = ITEM_LIFE_ORB,
+        .ability = Ability_1 // Defiant
+    },
+};
+
+const struct TrainerMonItemCustomMoves sParty_CarnelidgeVolcano_PartnerRival[] = {
+    {
+        .lvl = 54,
+        .species = SPECIES_CORVIKNIGHT,
+        .moves = {
+            MOVE_DRILLPECK,
+            MOVE_IRONHEAD,
+            MOVE_IRONDEFENSE,
+            MOVE_ROOST
+        },
+        .heldItem = ITEM_OCCA_BERRY,
+        .ability = Ability_Hidden // Mirror Coat
     },
     {
         .lvl = 55,
@@ -1366,7 +1405,7 @@ const struct TrainerMonItemCustomMoves sParty_CarnelidgeVolcano_Alistair[] = {
         .lvl = 54,
         .species = SPECIES_AMOONGUSS,
         .moves = {
-            MOVE_SPORE,
+            MOVE_INGRAIN,
             MOVE_GIGADRAIN,
             MOVE_SUBSTITUTE,
             MOVE_CLEARSMOG
@@ -12275,6 +12314,18 @@ const struct Trainer gTrainers[] = {
         .aiFlags = TrainerAIFlags_Scientist_Standard,
         .partySize = NELEMS(sParty_CarnelidgeVolcano_ScientistXander),
         .party = {.NoItemDefaultMoves = sParty_CarnelidgeVolcano_ScientistXander}
+    },
+    [TRAINER_CARNELIDGE_VOLCANO_PARTNER_RIVAL] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_RIVAL,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_RIVAL,
+        .trainerName = NO_NAME, // Name replaced from RIVAL trainer classes
+        .items = {ITEM_MEGA_RING, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE},
+        .doubleBattle = TRUE,
+        .aiFlags = AI_SCRIPT_SEMI_SMART | AI_SCRIPT_HP_AWARE | AI_SCRIPT_DOUBLE_BATTLE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = NELEMS(sParty_CarnelidgeVolcano_PartnerRival),
+        .party = {.ItemCustomMoves = sParty_CarnelidgeVolcano_PartnerRival}
     },
     // #endregion
     // #endregion

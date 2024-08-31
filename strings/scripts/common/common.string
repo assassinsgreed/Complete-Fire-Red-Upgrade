@@ -303,3 +303,6 @@ daytime
 
 #org @gText_Common_Night
 nighttime
+
+#org @gText_Common_RivalTagBattleExplaination
+[BLACK]You will battle alongside [RIVAL],\nwho will bring his own Pok\emon.\pPlease move the 3 Pok\emon you would\nlike to bring to the first 3 slots\lof your party.

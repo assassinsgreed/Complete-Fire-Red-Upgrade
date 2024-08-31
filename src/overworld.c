@@ -1694,6 +1694,8 @@ bool8 WhiteoutLogic(void)
 {
 #ifdef SET_HEALING_PLACE_HACK
 	u16 loc = VarGet(VAR_HEALINGMAP);
+	if (loc == 0) return TRUE; // Load from original table
+
 	gWarp1->mapNum = (loc >> 8) & 0xFF;	// upper byte
 	gWarp1->mapGroup = loc & 0xFF;	// lower byte
 	gWarp1->warpId = 0xFF;
@@ -1712,13 +1714,17 @@ extern const u8 gText_AllJustADream[];
 const u8* LoadProperWhiteoutString(const u8* string)
 {
 	#ifdef SET_HEALING_PLACE_HACK
-	if (string == sText_ScurriedHome)
+	// if (string == sText_ScurriedHome)
+	// {
+	// 	if (gSaveBlock1->location.mapNum != MAP_NUM(PLAYER_HOME)
+	// 	||  gSaveBlock1->location.mapGroup != MAP_GROUP(PLAYER_HOME))
+	// 	{
+	// 		string = gText_ScurriedToNearestHealer;
+	// 	}
+	// }
+	if (FlagGet(FLAG_DREAM_WHITE_OUT_TEXT))
 	{
-		if (gSaveBlock1->location.mapNum != MAP_NUM(PLAYER_HOME)
-		||  gSaveBlock1->location.mapGroup != MAP_GROUP(PLAYER_HOME))
-		{
-			string = gText_ScurriedToNearestHealer;
-		}
+		string = gText_AllJustADream;
 	}
 	#endif
 
