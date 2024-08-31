@@ -68,7 +68,10 @@ u8 BattleSetup_GetTerrainId(void)
 		else if (MetatileBehavior_IsSandOrShallowFlowingWater(tileBehavior))
 			terrain = BATTLE_TERRAIN_SAND;
 		else if (MetatileBehavior_IsMountain(tileBehavior))
-			terrain = BATTLE_TERRAIN_MOUNTAIN;
+			if (MAP_IS(CARNELIDGE_VOLCANO_PEAK))
+					terrain = BATTLE_TERRAIN_CARNELIDGE_PEAK;
+				else 
+					terrain = BATTLE_TERRAIN_MOUNTAIN;
 
 		#ifdef BRIDGE_FIX
 			else if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING))

@@ -2314,6 +2314,7 @@ tile 1 44 1 TileScript_CarnelidgeVolcano_VolcanionRoom
 tile 1 44 2 TileScript_CarnelidgeVolcano_VolcanionRoom
 ## Peak
 map 1 58 MapScript_CarnelidgeVolcano_Peak
+npc 1 58 4 EventScript_CarnelidgeVolcano_Jirachi
 # Empty World
 ## Carnelidge Volcano
 map 2 12 MapScript_EmptyWorld_CarnelidgeVolcanoPeak
