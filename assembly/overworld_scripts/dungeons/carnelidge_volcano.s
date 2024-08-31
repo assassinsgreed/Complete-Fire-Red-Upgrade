@@ -8,7 +8,7 @@
 .global MapScript_CarnelidgeVolcano
 MapScript_CarnelidgeVolcano:
     mapscript MAP_SCRIPT_ON_TRANSITION MapEntryScript_CarnelidgeVolcano_FlightFlagAndWalkingScript
-	.byte MAP_SCRIPT_TERMIN
+    .byte MAP_SCRIPT_TERMIN
 
 MapEntryScript_CarnelidgeVolcano_FlightFlagAndWalkingScript:
     setworldmapflag 0x8AB
@@ -169,10 +169,20 @@ MapScript_CarnelidgeVolcano_Peak:
     mapscript MAP_SCRIPT_ON_LOAD MapScript_SetCarnelidgeVolcanoPeakState
     mapscript MAP_SCRIPT_ON_FRAME_TABLE LevelScripts_CarnelidgeVolcanoPeak_StoryEvents
     mapscript MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE LevelScripts_CarnelidgeVolcanoPeak_StoryEvents_AfterUltraSpace
+    mapscript MAP_SCRIPT_ON_RESUME HideLegendary
 	.byte MAP_SCRIPT_TERMIN
 
 MapScript_SetCarnelidgeVolcanoPeakState:
     playbgm 0x14B 0x1 @ Regular peak theme, set as permanent on the map (in case the player lost to Rival or Alistair)
+    end
+
+HideLegendary:
+    checkflag 0x5A @ Jirachi
+    if SET _call HideJirachi
+    end
+
+HideJirachi:
+    hidesprite 5
     end
 
 LevelScripts_CarnelidgeVolcanoPeak_StoryEvents:
@@ -489,3 +499,47 @@ m_SeleneApproachesAlistair: .byte walk_up, walk_up, walk_up, look_right, end_m
 m_SeleneLeaves: .byte walk_down, walk_down, walk_down, walk_down, walk_down, walk_down, walk_down, end_m
 m_AlistairLeaves: .byte walk_left, walk_down, walk_down, walk_down, walk_down, walk_down, walk_down, walk_down, end_m
 m_RivalWalksInFrontOfPlayer: .byte walk_left, look_down, end_m
+
+@ Jirachi events
+.global EventScript_CarnelidgeVolcano_Jirachi
+EventScript_CarnelidgeVolcano_Jirachi:
+    faceplayer
+    cry SPECIES_JIRACHI 0x0
+    msgbox gText_UltraSpace_Hoenn_FindingJirachi10 MSG_NORMAL
+    waitcry
+    setflag 0x90B @ Wild custom moves, cleared at the end of battle
+    setvar 0x8000 MOVE_METEORMASH
+    setvar 0x8001 MOVE_PSYCHIC
+    setvar 0x8002 MOVE_WISH
+    setvar 0x8003 MOVE_COSMICPOWER
+    setflag 0x90C @ Smarter wild battle, cleared at the end of battle
+    setwildbattle SPECIES_JIRACHI 60 ITEM_STAR_PIECE
+    setflag 0x807
+    special 0x138 @ Setup a legendary encounter (blurred screen transition)
+    waitstate
+    clearflag 0x807
+    special2 LASTRESULT 0xB4 @ Check the result of the battle
+    compare LASTRESULT 0x1 @ Defeated in battle
+    if equal _call DefeatedOrFledFromJirachi
+    compare LASTRESULT 0x4 @ Fled from battle
+    if equal _call DefeatedOrFledFromJirachi
+    compare LASTRESULT 0x7 @ Caught
+    if equal _call CaughtJirachi
+    end
+
+DefeatedOrFledFromJirachi:
+    applymovement Jirachi m_LookDown
+    cry SPECIES_JIRACHI 0x0
+    waitcry
+    applymovement Jirachi m_JirachiFloatsAway
+    waitmovement Jirachi
+    hidesprite LASTTALKED
+    setflag 0x5A @ Jirachi hidden
+    msgbox gtext_OrichelleGarden_JirachiDefeatedOrPlayerFled MSG_NORMAL
+    end
+
+CaughtJirachi:
+    setflag 0x5A @ Jirachi hidden
+    return
+
+m_JirachiFloatsAway: .byte slide_up, slide_up, slide_up, slide_up, slide_up, slide_up, slide_up, end_m
