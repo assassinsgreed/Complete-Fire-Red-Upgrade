@@ -26,6 +26,7 @@ battle_terrain.c
 
 #define gBattleTerrainTable ((struct BattleBackground*) *((u32*) 0x800F320))
 #ifdef NEW_BATTLE_BACKGROUNDS
+extern struct BattleBackground gBattleTerrainTableMorning[];
 extern struct BattleBackground gBattleTerrainTableEvening[];
 extern struct BattleBackground gBattleTerrainTableNight[];
 #endif
@@ -253,7 +254,9 @@ void LoadBattleTerrainGfx(u8 terrainId)
 		u8 mapType = GetCurrentMapType();
 		if (!IsMapTypeIndoors(mapType) && IsMapTypeOutdoors(mapType))
 		{
-			if (IsNightTime())
+			if (IsMorning())
+				table = gBattleTerrainTableMorning;
+			else if (IsNightTime())
 				table = gBattleTerrainTableNight;
 			else if (IsEvening())
 				table = gBattleTerrainTableEvening;
