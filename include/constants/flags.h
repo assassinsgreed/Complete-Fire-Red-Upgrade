@@ -101,7 +101,7 @@
 #define FLAG_HIDE_RUBARR_DESERT_BF1_STATUE_RIGHT_LOWER     0x05F
 #define FLAG_HIDE_RUBARR_DESERT_BF1_STATUE_CENTER_UPPER    0x060
 #define FLAG_HIDE_RUBARR_DESERT_SHORTCUT_BOULDER           0x061
-#define FLAG_HIDE_CINNABAR_BILL_ON_BY_DEFAULT              0x062
+#define FLAG_HIDE_ECLIPSE_VILLAGE_RESERACHER_ON_BY_DEFAULT 0x062
 #define FLAG_HIDE_UNION_ROOM_PLAYER_1_ON_BY_DEFAULT        0x063  // Union rooms are on by default
 #define FLAG_HIDE_UNION_ROOM_PLAYER_2_ON_BY_DEFAULT        0x064
 #define FLAG_HIDE_UNION_ROOM_PLAYER_3_ON_BY_DEFAULT        0x065
@@ -648,9 +648,9 @@
 /*
 #define FLAG_TRAVELLED_TO_ULTRA_SPACE                    0x272
 #define FLAG_COMPLETED_CARNELIDGE_VOLCANO_STORY          0x273
-#define FLAG_DID_ESPHERE_TRADE                           0x274
-#define FLAG_DID_TANGENY_TRADE                           0x275
-#define FLAG_DID_SEELOR_TRADE                            0x276
+#define FLAG_PERMITTED_TO_GO_TO_ULTRA_SPACE              0x274
+#define FLAG_POIPOLE_EXPLAINED                           0x275
+#define FLAG_RECEIVED_POIPOLE_GIFT                       0x276
 #define FLAG_0x277                                       0x277
 #define FLAG_GOT_HITMON_FROM_DOJO                        0x278
 #define FLAG_0x279                                       0x279

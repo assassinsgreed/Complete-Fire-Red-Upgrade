@@ -251,7 +251,7 @@ PokedexEvaluation_Rating:
     copyvar 0x8004 0x8009
     comparevartovalue 0x8009 0x32 @ 50
     if lessorequal _goto FiftyOrLessCaught
-    comparevartovalue 0x8009 0x64 @ OneHundred
+    comparevartovalue 0x8009 0x64 @ 100
     if lessorequal _goto OneHundredOrLessCaught
     comparevartovalue 0x8009 0x96 @ 150
     if lessorequal _goto OneHundredFiftyOrLessCaught
@@ -574,3 +574,14 @@ DisableWalkingScriptIfOnInvalidMap:
 DisableWalkingScript:
     setvar 0x500B 0x0
     end
+
+.global UltraSpaceWarpEffect
+UltraSpaceWarpEffect:
+    playse 0x49 @ Escalator
+    waitse
+    pause DELAY_1SECOND
+    playse 0x51 @ Thunder2
+    fadescreenspeed FADEOUT_WHITE 0x96 @ fast fade
+    applymovement PLAYER m_HideSprite
+    fadescreenspeed FADEIN_WHITE 0x64 @ Slow fade
+    return

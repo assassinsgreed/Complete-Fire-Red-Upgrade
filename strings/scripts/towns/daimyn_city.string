@@ -292,13 +292,37 @@ The ball is labelled "Beast Killer.\"
 [BLUE]Excuse me[.] The creature in that\nPok\e Ball is pivotal to our\lresearch.\pPlease leave it be.
 
 #org @gText_DaimynCityFacilities_IRF_SakuraPreoccupied
-Hmm[.] Maybe if I adjust these\nsettings, we might[.]
+[RED]Hmm[.] Maybe if I adjust these\nsettings, we might[.]
 
 #org @gText_DaimynCityFacilities_IRF_SakuraNoticesPlayer
-Oh! Excuse me!
+[RED]Oh! Excuse me!
 
 #org @gText_DaimynCityFacilities_IRF_SakuraTurnsPlayerDown
-I didn't notice you there.\pI'm busy investigating some anomalies\nin our connection to Ultra Space.\pMy apologies, but I need to focus\nnow.
+[RED]I didn't notice you there.\pI'm busy investigating some anomalies\nin our connection to Ultra Space.\pMy apologies, but I need to focus\nnow.
+
+#org @gText_DaimynCityFacilities_IRF_SakuraTalksToPlayerFollowingAlistairsRecommendation
+[RED]I didn't notice you there.\pWait[.] I sense an odd energy\nsurrounding you.\pIt is similar to the energy we've\nobserved in Ultra Space.\pAre you perhaps[.] [PLAYER]?\pAllow me to introduce myself. I am\nProfessor Sakura. It's a pleasure.\pAlistair sent word about you, and it\nseems his analysis was accurate.\pNormally, Ultra Space is too\ndangerous for civilians to visit.\pBut[.] It seems you have experienced\nit in some way.\pTell me[.] Are you willing to aid us\nin our exploration of Ultra Space?
+
+#org @gText_DaimynCityFacilities_IRF_Sakura_PlayerUnwillingToGoToUltraSpace
+[RED]Yes, yes, of course.\nWe will carry on all the same.\pIf you change your mind, please\ncome see me.\pWe could mutually benefit each\nother, I am sure.
+
+#org @gText_DaimynCityFacilities_IRF_Sakura_PlayerWillingToGoToUltraSpace
+[RED]Wonderful! We will surely make new\ndiscoveries with your support.\pThere is no pressure to help us;\njust stop by whenever you are\lavailable.\pNow[.] I have some things to take care\nof.\pPlease, come speak to me whenever\nyou are ready.
+
+#org @gText_DaimynCityFacilities_IRF_Sakura_AskingPlayerIfTheyWantToTravelToUltraSpace
+[RED]Hello, [PLAYER]. Are you interested\nin investigating Ultra Space?
+
+#org @gText_DaimynCityFacilities_IRF_Sakura_PlayerChoseNotToTravelToUltraSpace
+[RED]Understood. Come see me if you\nchange your mind.
+
+#org @gText_DaimynCityFacilities_IRF_Sakura_CanOnlyGoToEclipseVillage_Confirmation
+[RED]At the moment we can only travel to\na place called "Eclipse Village.\"\pIs that where you'd like to go?
+
+#org @gText_DaimynCityFacilities_IRF_Sakura_DirectsPlayerToMachine
+[RED]Okay. Please step before the\nmachine. We will start momentarily.
+
+#org @gText_DaimynCityFacilities_IRF_Sakura_StartingMachine
+[RED]We're starting the machines now.\pYou'll feel a brief pulling\nsensation while you shift between\ldimensions.\pWe've sent a researcher ahead of\nyou.\pPlease speak to them when you wish\nto return.\pSafe travels!
 
 #org @gText_DaimynCityFacilities_IRF_UltraMachine
 The machine is spinning quickly.\pThere's something visible in the\nmachine's core.\pIt looks like an unfamiliar land[.]\nOh! It's gone.

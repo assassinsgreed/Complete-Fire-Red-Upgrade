@@ -212,7 +212,7 @@
 #define VAR_EMPTY_WORLD_RIVAL_COMMENTS 0x40A4
 #define VAR_ULTRA_SPACE_EMPTY_WORLD_EVENTS_PROGRESSION 0x40A5
 #define VAR_ULTRA_SPACE_NPCS_SPOKEN_TO 0x40A6
-#define VAR_0x40A7                 0x40A7
+#define VAR_ULTRA_BEASTS_PROGRESSION 0x40A7
 #define VAR_0x40A8                 0x40A8
 #define VAR_0x40A9                 0x40A9
 #define VAR_0x40AA                 0x40AA

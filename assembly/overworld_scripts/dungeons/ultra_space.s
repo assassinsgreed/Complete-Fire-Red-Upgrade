@@ -172,6 +172,80 @@ EventScript_UltraSpace_EclipseVillage_BikeShop_Man:
     addvar 0x40A6 0x1 @ Spoke to someone in Eclipse Village
     end
 
+.global EventScript_UltraSpace_EclipseVillage_ReturnHomeResearcher
+EventScript_UltraSpace_EclipseVillage_ReturnHomeResearcher:
+    faceplayer
+    msgbox gText_UltraSpace_Common_ResearcherGoHome MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto PlayerChoseNotToGoHome
+    msgbox gText_UltraSpace_Common_ResearcherPlayerGoingHome MSG_NORMAL
+    call UltraSpaceWarpEffect
+    warpmuted 9 17 1 @ In front of the ultra space wormhole machine
+    end
+
+PlayerChoseNotToGoHome:
+    msgbox gText_UltraSpace_Common_ResearcherPlayerChoseToStayInUltraSpace MSG_NORMAL
+    end    
+
+.global EventScript_UltraSpace_EclipseVillage_PoipoleResearcher
+EventScript_UltraSpace_EclipseVillage_PoipoleResearcher:
+    faceplayer
+    checkflag 0x276 @ Received Poipole
+    if SET _goto PlayerReceivedPoipoleAlready
+    checkflag 0x275 @ Poipole explained
+    if SET _goto CheckIfPoipoleCanBeGifted
+    msgbox gText_UltraSpace_PoipoleResearcher_IntroducesPoipole MSG_NORMAL
+    setflag 0x275 @ Poipole explained
+    goto CheckIfPoipoleCanBeGifted
+    end
+
+CheckIfPoipoleCanBeGifted:
+    msgbox gText_UltraSpace_PoipoleResearcher_LeadingUpToPoipoleGift MSG_NORMAL
+    special 0xD4 @ Seen in 8005, caught in 8006
+    compare 0x8006 150
+    if lessthan _goto NotEnoughPokemonCaughtForPoipole
+    applymovement LASTTALKED m_Joy
+    playse 0x19 @ Correct
+    msgbox gText_UltraSpace_PoipoleResearcher_EnoughPokemon MSG_NORMAL
+    countpokemon
+    compare LASTRESULT 0x6
+    if equal _goto NotEnoughPartySpaceForPoipole
+    setflag 0x276 @ Received Poipole
+    fanfare 0x102
+    msgbox gText_UltraSpace_PoipoleResearcher_PlayerReceivesPoipole MSG_KEEPOPEN
+    waitfanfare
+    givepokemon SPECIES_POIPOLE 50 ITEM_NONE @ Give Poipole
+    msgbox gText_UltraSpace_PoipoleResearcher_PoipoleNicknameConfirmation MSG_YESNO
+    compare LASTRESULT YES
+    if equal _call NicknamePoipole
+    msgbox gText_UltraSpace_PoipoleResearcher_PlayerAlreadyHasPoipole MSG_NORMAL
+    end
+
+NotEnoughPokemonCaughtForPoipole:
+    applymovement LASTTALKED m_Wrong
+    playse 0x1A @ Error
+    buffernumber 0x0 0x8006
+    msgbox gText_UltraSpace_PoipoleResearcher_NotEnoughPokemon MSG_NORMAL
+    end
+
+NotEnoughPartySpaceForPoipole:
+    msgbox gText_UltraSpace_PoipoleResearcher_NotEnoughRoomInParty MSG_NORMAL
+    end
+
+NicknamePoipole:
+    setvar 0x8003 0x0 @ Nickname from the party
+    setvar 0x8005 SPECIES_POIPOLE @ Get Poipole for nicknaming (0x8004 will contain party index)
+    callasm GetPokemonPartyIndex
+    @ Note: No need to check var8004 <= 5, because player just received Poipole
+    fadescreen 0x1
+    special 0x9E @ Nickname Poipole at found index
+	waitstate
+    end
+
+PlayerReceivedPoipoleAlready:
+    msgbox gText_UltraSpace_PoipoleResearcher_PlayerAlreadyHasPoipole MSG_NORMAL
+    end
+
 m_PlayerWalksIntoTown: .byte walk_right, walk_right, walk_right, end_m
 
 ## Ultra Space Wilds
