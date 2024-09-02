@@ -84,18 +84,18 @@ EventScript_Route13_CollectorBenji:
     msgbox gText_Route13_CollectorBenji_Chat MSG_NORMAL
     end
 
-.global EventScript_Route13_ExPlutoGrunt_Left
-EventScript_Route13_ExPlutoGrunt_Left:
-    msgbox gText_Route13_GruntLeft MSG_NORMAL
+.global EventScript_Route13_Hiker_Left
+EventScript_Route13_Hiker_Left:
+    msgbox gText_Route13_HikerLeft MSG_NORMAL
     faceplayer
-    npcchatwithmovement gText_Route13_GruntCommon m_LookRight
+    npcchatwithmovement gText_Route13_HikerCommon m_LookRight
     end
 
-.global EventScript_Route13_ExPlutoGrunt_Right
-EventScript_Route13_ExPlutoGrunt_Right:
-    msgbox gText_Route13_GruntRight MSG_NORMAL
+.global EventScript_Route13_Hiker_Right
+EventScript_Route13_Hiker_Right:
+    msgbox gText_Route13_HikerRight MSG_NORMAL
     faceplayer
-    npcchatwithmovement gText_Route13_GruntCommon m_LookLeft
+    npcchatwithmovement gText_Route13_HikerCommon m_LookLeft
     end
 
 @@@@@@@@@@ Route 13 Rest House @@@@@@@@@@
