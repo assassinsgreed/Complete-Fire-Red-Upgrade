@@ -1043,28 +1043,28 @@
             "grass": {
                 "rate": 3,
                 "pokemon": [
-                    { "low": 44, "high": 47, "species": "SPECIES_BISHARP" },
-                    { "low": 43, "high": 48, "species": "SPECIES_KLANG" },
-                    { "low": 42, "high": 45, "species": "SPECIES_WOBBUFFET" },
-                    { "low": 43, "high": 46, "species": "SPECIES_MALAMAR" },
-                    { "low": 44, "high": 47, "species": "SPECIES_SCRAFTY" },
-                    { "low": 42, "high": 47, "species": "SPECIES_MISMAGIUS" },
-                    { "low": 43, "high": 46, "species": "SPECIES_TYRANTRUM" },
-                    { "low": 42, "high": 44, "species": "SPECIES_BASTIODON" },
-                    { "low": 40, "high": 45, "species": "SPECIES_NOIBAT" },
-                    { "low": 42, "high": 46, "species": "SPECIES_BOLDORE" },
-                    { "low": 42, "high": 46, "species": "SPECIES_NOIBAT" }, 
-                    { "low": 41, "high": 45, "species": "SPECIES_NOIVERN" }
+                    { "low": 52, "high": 54, "species": "SPECIES_BISHARP" },
+                    { "low": 52, "high": 55, "species": "SPECIES_KLANG" },
+                    { "low": 51, "high": 53, "species": "SPECIES_WOBBUFFET" },
+                    { "low": 51, "high": 53, "species": "SPECIES_MALAMAR" },
+                    { "low": 52, "high": 54, "species": "SPECIES_SCRAFTY" },
+                    { "low": 51, "high": 54, "species": "SPECIES_MISMAGIUS" },
+                    { "low": 51, "high": 53, "species": "SPECIES_TYRANTRUM" },
+                    { "low": 50, "high": 53, "species": "SPECIES_BASTIODON" },
+                    { "low": 50, "high": 54, "species": "SPECIES_NOIBAT" },
+                    { "low": 51, "high": 54, "species": "SPECIES_BOLDORE" },
+                    { "low": 52, "high": 55, "species": "SPECIES_NOIBAT" }, 
+                    { "low": 52, "high": 55, "species": "SPECIES_NOIVERN" }
                 ]
             },
             "rocks": {
                 "rate": 50,
                 "pokemon": [
-                    { "low": 40, "high": 45, "species": "SPECIES_BOLDORE" },
-                    { "low": 40, "high": 45, "species": "SPECIES_KLANG" },
-                    { "low": 40, "high": 45, "species": "SPECIES_GIGALITH" },
-                    { "low": 40, "high": 45, "species": "SPECIES_KLANG" },
-                    { "low": 40, "high": 45, "species": "SPECIES_KLANG" }
+                    { "low": 50, "high": 55, "species": "SPECIES_BOLDORE" },
+                    { "low": 50, "high": 55, "species": "SPECIES_KLANG" },
+                    { "low": 50, "high": 55, "species": "SPECIES_GIGALITH" },
+                    { "low": 50, "high": 55, "species": "SPECIES_KLANG" },
+                    { "low": 50, "high": 55, "species": "SPECIES_KLANG" }
                 ]
             }
         },
