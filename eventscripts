@@ -2561,6 +2561,8 @@ map 2 31 MapScript_UltraSpace_FirstVisit
 npc 2 32 1 EventScript_UltraSpace_EclipseVillage_Man
 npc 2 32 2 EventScript_UltraSpace_EclipseVillage_Lass
 npc 2 32 3 EventScript_UltraSpace_EclipseVillage_Shopkeeper
+npc 2 32 4 EventScript_UltraSpace_EclipseVillage_ReturnHomeResearcher
+npc 2 32 5 EventScript_UltraSpace_EclipseVillage_PoipoleResearcher
 tile 2 32 0 TileScript_UltraSpace_EclipseVillage_EmptyWorldCutscenes
 tile 2 32 1 TileScript_UltraSpace_EclipseVillage_EmptyWorldCutscenes
 tile 2 32 2 TileScript_UltraSpace_EclipseVillage_EmptyWorldCutscenes

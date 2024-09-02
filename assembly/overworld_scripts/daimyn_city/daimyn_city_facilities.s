@@ -204,14 +204,83 @@ EventScript_DaimynCityFacilities_Pokeball:
 
 .global EventScript_DaimynCityFacilities_ProfessorSakura
 EventScript_DaimynCityFacilities_ProfessorSakura:
+    checkflag 0x274 @ Permitted to go to ultra space
+    if SET _goto SakuraAsksToGoToUltraSpace
     msgbox gText_DaimynCityFacilities_IRF_SakuraPreoccupied MSG_NORMAL
     sound 0x15 @ Exclaim
     applymovement 0x7 m_Surprise
     msgbox gText_DaimynCityFacilities_IRF_SakuraNoticesPlayer MSG_NORMAL
+    checkflag 0x273 @ Completed Carnelidge Volcano story events
+    if SET _goto SakuraTalksAboutAlistairsRecommendation
     faceplayer
     msgbox gText_DaimynCityFacilities_IRF_SakuraTurnsPlayerDown MSG_NORMAL
     applymovement 0x7 m_LookLeft
     end
+
+SakuraTalksAboutAlistairsRecommendation:
+    faceplayer
+    msgbox gText_DaimynCityFacilities_IRF_SakuraTalksToPlayerFollowingAlistairsRecommendation MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto ChoseNotToHelpWithUltraSpace
+    msgbox gText_DaimynCityFacilities_IRF_Sakura_PlayerWillingToGoToUltraSpace MSG_NORMAL
+    applymovement LASTTALKED m_LookLeft
+    setflag 0x274 @ Permitted to go to ultra space
+    clearflag 0x062 @ Show the researcher in Eclipse Village
+    end
+
+ChoseNotToHelpWithUltraSpace:
+    npcchatwithmovement gText_DaimynCityFacilities_IRF_Sakura_PlayerUnwillingToGoToUltraSpace m_LookLeft
+    end
+
+SakuraAsksToGoToUltraSpace:
+    faceplayer
+    msgbox gText_DaimynCityFacilities_IRF_Sakura_AskingPlayerIfTheyWantToTravelToUltraSpace MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto ChoseNotToGoToUltraSpace
+    compare 0x40A7 0x0
+    if notequal _goto SakuraAsksPlayerWhereTheyWantToGo
+    if equal _goto SakuraConfirmsEclipseVillageDestination
+    end
+
+ChoseNotToGoToUltraSpace:
+    npcchatwithmovement gText_DaimynCityFacilities_IRF_Sakura_PlayerChoseNotToTravelToUltraSpace m_LookLeft
+    end
+
+UltraSpaceWarpCommon:
+    msgbox gText_DaimynCityFacilities_IRF_Sakura_DirectsPlayerToMachine MSG_NORMAL
+    getplayerpos 0x4000 0x4001
+    compare 0x4001 0x5 @ Beside
+    if lessthan _call PlayerWalksToMachineFromAbove
+    if equal _call PlayerWalksToMachineFromRight
+    applymovement PLAYER m_PlayerWalksToUltraSpaceMachineFromBelow
+    waitmovement PLAYER
+    applymovement 0x7 m_LookDown
+    msgbox gText_DaimynCityFacilities_IRF_Sakura_StartingMachine MSG_NORMAL
+    call UltraSpaceWarpEffect
+    return
+
+PlayerWalksToMachineFromAbove:
+    applymovement PLAYER m_PlayerWalksToUltraSpaceMachineFromAbove
+    waitmovement PLAYER
+    call PlayerWalksToMachineFromRight
+    return
+
+PlayerWalksToMachineFromRight:
+    applymovement PLAYER m_PlayerWalksToUltraSpaceMachineFromRight
+    waitmovement PLAYER
+    return
+
+SakuraAsksPlayerWhereTheyWantToGo:
+    @ TODO Later: Choosing ultra space destination
+    return
+
+SakuraConfirmsEclipseVillageDestination:
+    msgbox gText_DaimynCityFacilities_IRF_Sakura_CanOnlyGoToEclipseVillage_Confirmation MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto ChoseNotToGoToUltraSpace
+    call UltraSpaceWarpCommon
+    warpmuted 2 32 0xFF 0xB 0x9
+    return
 
 .global SignScript_DaimynCityFacilities_UltraSpaceMachine
 SignScript_DaimynCityFacilities_UltraSpaceMachine:
@@ -241,3 +310,6 @@ m_RivalLeaves_West: .byte walk_right, walk_right, walk_right, set_invisible, end
 m_RivalLeaves_South: .byte walk_up, walk_up, walk_up, set_invisible, end_m
 m_PlayerLeavesWithRival_West: .byte walk_down, walk_right, walk_right, end_m
 m_PlayerLeavesWithRival_South: .byte walk_left, walk_up, walk_up, end_m
+m_PlayerWalksToUltraSpaceMachineFromAbove: .byte walk_right, walk_down, end_m
+m_PlayerWalksToUltraSpaceMachineFromRight: .byte walk_down, walk_left, end_m
+m_PlayerWalksToUltraSpaceMachineFromBelow: .byte walk_left, walk_left, look_down, end_m

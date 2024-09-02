@@ -2881,6 +2881,20 @@ void StoreIsPartyMonEgg()
 	Var800D = GetMonData(&gPlayerParty[Var8004], MON_DATA_IS_EGG, NULL);
 }
 
+// Find party index of a pokemon species stored in Var8005 and store it in Var8004
+void GetPokemonPartyIndex()
+{	
+	Var8004 = 6; // Out of bounds
+	for (u8 i = 0; i < PARTY_SIZE; i++)
+	{
+		if (Var8005 == GetMonData(&gPlayerParty[i], MON_DATA_SPECIES, NULL))
+		{
+			Var8004 = i;
+			return;
+		}
+	}
+}
+
 // Checks if party Pokemon in var 0x8004 is any Rotom form, and stores it in LASTRESULT (0x800D)
 void StoreIsPartyMonRotom()
 {

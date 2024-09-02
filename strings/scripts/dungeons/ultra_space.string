@@ -195,3 +195,37 @@ Rach-iiii!
 
 #org @gText_UltraSpace_Hoenn_FindingJirachi12
 [BLACK][RIVAL]: [BLUE]Okay, [PLAYER], get ready!\pThe wishes we wrote will come true\nany second now.\pWe're going home.
+
+#org @gText_UltraSpace_Common_ResearcherGoHome
+Hello, [PLAYER]! Professor Sakura let\nme know you'd be coming.\pI can contact the crew back at the\nresearch facility, if you'd like.\pWhat do you say? Do you want to\nreturn home?
+
+#org @gText_UltraSpace_Common_ResearcherPlayerChoseToStayInUltraSpace
+Okay! Come see me when you're ready\nto go home.
+
+#org @gText_UltraSpace_Common_ResearcherPlayerGoingHome
+Alright. Just close your eyes for a\nmoment.\pI'll contact the boys back home and\nthey'll open up a wormhole right\laway.\pJust sit tight[.]
+
+#org @gText_UltraSpace_PoipoleResearcher_IntroducesPoipole
+Oh, hello [PLAYER]!\pI heard you'll be helping us out\nwith our Ultra Space research.\pListen, I've learned something really\nexciting!\pThe locals here tend to depart on\njournies with a specific Ultra\lBeast at their side.\pHohoho! It sounds quite like how we\nset out with our starter Pok\emon,\lno?\pFurthermore, we've earned the trust\nof the locals here.\pAnd, guess what? They've gifted us a\nPoipole as a result!\pThe little fellow is quite feisty, and\nI'd feel bad keeping it here while\lwe do our research.\pSay[.] I think it would do well with\nyou actually.
+
+#org @gText_UltraSpace_PoipoleResearcher_LeadingUpToPoipoleGift
+Ultra Beasts are quite different\nfrom Pok\emon.\pI think I'd only feel comfortable\ngiving this Poipole to you, if you\lcan prove your mastery over\lPok\emon.\pRegistering 150 caught Pok\emon in\nyour Pok\edex should do it.
+
+#org @gText_UltraSpace_PoipoleResearcher_EnoughPokemon
+Oh, yes! You've caught enough\nPok\emon.\pI'm confident you and Poipole will do\nwell together.
+
+#org @gText_UltraSpace_PoipoleResearcher_NotEnoughPokemon
+Oh dear, I'm sorry. You've only\ncaught [BUFFER1] Pok\emon.\pCome see me once you've caught 150\ndifferent Pok\emon, okay?\pI know you can do it!
+
+#org @gText_UltraSpace_PoipoleResearcher_NotEnoughRoomInParty
+Hmm[.] You don't have enough room in\nyour party to take Poipole with\lyou.\pNo problem though!\pCome see me once you've made room\nand I'll be happy to send you two\loff together.
+
+#org @gText_UltraSpace_PoipoleResearcher_PlayerReceivesPoipole
+[BLACK][PLAYER] received a Poipole!
+
+#org @gText_UltraSpace_PoipoleResearcher_PoipoleNicknameConfirmation
+[BLACK]Do you want to give a nickname to\nPoipole?
+
+#org @gText_UltraSpace_PoipoleResearcher_PlayerAlreadyHasPoipole
+Take good care of Poipole!
+
