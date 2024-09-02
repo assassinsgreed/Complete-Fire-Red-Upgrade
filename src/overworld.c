@@ -2106,7 +2106,7 @@ bool8 IsCurrentAreaHotCave(void)
 {
 	#ifdef NEW_BATTLE_BACKGROUNDS
 		u8 mapSec = GetCurrentRegionMapSectionId();
-		return mapSec == MAPSEC_SCALDING_SPA || MAPSEC_CARNELIDGE_VOLCANO;
+		return mapSec == MAPSEC_SCALDING_SPA || mapSec == MAPSEC_CARNELIDGE_VOLCANO;
 	#else
 		return FALSE;
 	#endif
