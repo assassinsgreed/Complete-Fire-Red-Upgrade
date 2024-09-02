@@ -480,8 +480,8 @@ npc 3 31 23 EventScript_Route13_GamblerOwain
 ## Requires Surf
 npc 3 31 24 EventScript_Route13_CollectorBenji
 ## Story grunts
-npc 3 31 25 EventScript_Route13_ExPlutoGrunt_Left
-npc 3 31 26 EventScript_Route13_ExPlutoGrunt_Right
+npc 3 31 25 EventScript_Route13_Hiker_Left
+npc 3 31 26 EventScript_Route13_Hiker_Right
 ## Route 13 Rest House
 map 17 1 MapScript_Route13_RestHouse
 npc 17 1 0 EventScript_Route13_RestHouse_PCGuy
