@@ -84,3 +84,13 @@ There, you must be feeling much\nbetter!\pYour Pok\emon look happy too.
 
 #org @gText_Route18_LocalLegendGirl
 My sister is so sure that she saw\nthat Pok\emon, but[.]\pIt has to just be a local legend.\pI mean, a Pok\emon that could\ntransform a swamp into a field of\lflowers..?
+
+// Orichelle Garden
+#org @gtext_OrichelleGarden_ShayminBattleStart
+The startled Pok\emon attacks!
+
+#org @gtext_OrichelleGarden_ShayminFledFromBattle
+The startled Pok\emon fled!
+
+#org @gtext_OrichelleGarden_ShayminDefeated
+The startled Pok\emon left.\nWill it return later?

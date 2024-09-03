@@ -1,3 +1,5 @@
+// Common strings
+
 #org @gText_Common_CuttableTree
 It looks like this tree can be cut\ndown by a Pok\emon.
 
@@ -306,3 +308,141 @@ nighttime
 
 #org @gText_Common_RivalTagBattleExplaination
 [BLACK]You will battle alongside [RIVAL],\nwho will bring his own Pok\emon.\pPlease move the 3 Pok\emon you would\nlike to bring to the first 3 slots\lof your party.
+
+// In-game trades
+
+#org @gText_InGameTrade_Cosmo
+Cosmo
+
+#org @gText_InGameTrade_OTMillie
+Millie
+
+#org @gText_InGameTrade_Pikachu
+Pikachu
+
+#org @gText_InGameGift_OTAsh
+Ash
+
+#org @gText_InGameTrade_Mimmers
+Mimmers
+
+#org @gText_InGameTrade_Drago
+Drago
+
+#org @gText_InGameTrade_Cork
+Cork
+
+#org @gText_InGameTrade_Lacey
+Lacey
+
+#org @gText_InGameTrade_Pinky
+Pinky
+
+#org @gText_InGameTrade_Pip
+Pip
+
+#org @gText_InGameTrade_Boomer
+Boomer
+
+#org @gText_InGameTrade_Strawberry
+Strawberry
+
+#org @gText_InGameTrade_OTSylvestre
+Sylvestre
+
+#org @gText_InGameTrade_Rocky
+Rocky
+
+#org @gText_InGameTrade_Chopper
+Chopper
+
+#org @gText_InGameTrade_Autumn
+Autumn
+
+#org @gText_InGameTrade_OTRival
+Rival
+
+#org @gText_InGameTrade_Boris
+Boris
+
+#org @gText_InGameTrade_OTWinona
+Winona
+
+// Special NPCs
+
+// Tutors
+#org @gText_TutoringRejected
+Okay! Come see me if you change\nyour mind. I'll be here.
+
+#org @gText_Tutors_ChoosePokemon
+[BLUE]And which Pok\emon would you like me\nto teach [BUFFER1] to?
+
+// Pokemon Center
+#org @gText_Common_PokemonCenterHealChoice
+Welcome to our Pok\emon Center!\pWould you like me to heal your\nPok\emon back to perfect health?
+
+#org @gText_Common_PokemonCenterTakePokemon
+Okay, I'll take your Pok\emon for a\nfew seconds.
+
+#org @gText_Common_PokemonFarewell
+We hope to see you again!
+
+#org @gText_Common_PokemonCenterHealed
+Thank you for waiting.\nWe've restored your Pok\emon to\lfull health.
+
+// Pokemart
+#org @gText_Common_PokemartIntro
+[BLACK]Welcome to our Pok\eMart! How can I\nhelp you?
+
+#org @gText_Common_PokemartEnd
+[BLACK]Please come again!
+
+#org @gText_Common_PokemartNotReady
+I'm sorry, but we're still receiving\nour shipment. Can you come back\llater?
+
+#org @gText_Common_PokemartNewStock
+[BLACK]Oh, that badge[.] With that in hand,\nyou may purchase new products!
+
+// Trainer Houses
+
+#org @gText_TrainerHouse_MenuIntro
+[BLUE]Now[.] What can I do you for?
+
+#org @gText_TrainerHouse_BattleChoice
+Battle
+
+#org @gText_TrainerHouse_TrainerHouseRulesChoice
+What is a Trainer House?
+
+#org @gText_TrainerHouse_RulesetChoice
+What are this Trainer House's rules?
+
+#org @gText_TrainerHouse_GrandPrizeChoice
+What is the grand prize?
+
+#org @gText_TrainerHouse_StreakContinues
+[BLUE]That's a win for [PLAYER]!
+
+#org @gText_TrainerHouse_Analysis
+[BLUE]Alright[.] Let's see how you did.
+
+#org @gText_TrainerHouse_AnalysisBeatNoTrainers
+[BLUE]You didn't beat any trainers[.]\nTry again tomorrow though, yeah?
+
+#org @gText_TrainerHouse_AnalysisBeatTrainers
+[BLUE]You beat [BUFFER1] trainers! That'll\nearn you prizes.
+
+#org @gText_TrainerHouse_EndOfBattles
+[BLUE]I hope you enjoyed yourself,\n[PLAYER]! Maybe we'll see you again\ltomorrow, eh?
+
+#org @gText_TrainerHouse_Exit
+[BLUE]Alright, see you around kiddo.
+
+#org @gText_TrainerHouse_AlreadyChallengedToday
+[BLUE]Hold up a sec. You've already\nbattled with us today!\pCome back tomorrow if you'd like to\nchallenge the Trainer House.
+
+#org @gText_TrainerHouse_ChoseTrainerHouseRules
+[BLUE]Me, oh my, where are my manners?\pTrainer Houses are a hip new\nsensation hitting the Kulure region,\lspearheaded by yours truly.\pThe premise is nice and simple: fight\nbattles to win great prizes!\pEach Trainer House has a different\nruleset that changes how battles\lwill play out.\pThis is a back-to-back gauntlet\nagainst 3 trainers who know this\lruleset like the back of their\lhands.\pYou'll earn prizes depending\non how well you do, and you'll\leven get a special prize the first\ltime you defeat all 3.\pBest of all - you'll earn experience\nand money each time you compete.\lIsn't that just swell?\pBut, there is a catch[.] You can only\nchallenge each Trainer House once\lper day. Gotta keep things fresh\lfor spectators, ya dig?
+
+#org @gText_TrainerHouse_HealingPokemonAtEnd
+[BLUE]And for being such a good sport, I'll\nheal your Pok\emon up again.
