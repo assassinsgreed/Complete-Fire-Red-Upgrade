@@ -2639,3 +2639,7 @@ npc 14 1 0 EventScript_Pokemart
 npc 14 1 1 EventScript_Pokemart_StatBoostingBerriesShop
 npc 14 1 2 EventScript_Pokemart_Girl
 npc 14 1 3 EventScript_Pokemart_OldWoman
+## Houses
+npc 14 2 0 EventScript_UteyaVillage_MoveTutor
+npc 14 2 1 EventScript_UteyaVillage_MoveTutor_Daughter
+npc 14 2 2 EventScript_UteyaVillage_MoveTutor_Wife
