@@ -16,9 +16,12 @@ EventScript_DaimynCityMall_LuckyDrawLady:
     if equal _goto LuckyDrawChoseNo
     msgbox gText_DaimynCityMall_LuckyDrawStarting MSG_NORMAL
     random 0x11F @ up to #287 to avoid exposing starters and legendaries, stored in LastResult
-    callasm GetLuckyPokmeonSpecies
+    callasm GetLuckyPokemonSpecies
+    showpokepic 0x8000
+    cry 0x8000 0x0
     setflag 0xE0E @ Daily lucky species flag
     msgbox gText_DaimynCityMall_LuckyDrawPokemonChosen MSG_NORMAL
+    hidepokepic
     compare LASTRESULT 0x1 @ Seen
     if lessthan _goto LuckySpeciesDidNotWin
     if equal _goto LuckySpeciesSeen

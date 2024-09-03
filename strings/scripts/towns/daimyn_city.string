@@ -913,10 +913,10 @@ But[.] It's free. No problem! If you\nchange your mind, just come see\lme!
 I'm sorry, you have not caught or\nseen a [BUFFER1]. You didn't win.
 
 #org @gText_DaimynCityMall_LuckyDrawWinSeen
-You have seen a [BUFFER1]. That earns\nyou our second place prize.
+You have seen a [BUFFER1].\pYou've earned our second place\nprize.
 
 #org @gText_DaimynCityMall_LuckyDrawWinCaught
-You have caught a [BUFFER1]! You've\nearned our first place prize!
+You have caught a [BUFFER1]!\pYou've earned our first place prize!
 
 #org @gText_DaimynCityMall_LuckyDrawComeAgainTomorrow
 Thank you for playing, please come\nagain tomorrow.

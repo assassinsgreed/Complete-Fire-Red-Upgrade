@@ -1391,6 +1391,10 @@ Daily Flags, cleared at the start of each day.  Goes up to 0xEFF
 #define FLAG_GYM_TRAINEES_VISIBLE_DARCY       0xE2F
 #define FLAG_GYM_TRAINEES_VISIBLE_MASON       0xE30
 #define FLAG_GYM_TRAINEES_VISIBLE_FAYE        0xE31
+/*
+#define FLAG_SLOWPOKE_NEWS_SPECIES_SET        0xE32
+#define FLAG_SLOWPOKE_NEWS_COMPLETED          0xE33
+*/
 
 #define FLAG_TRAINER_FLAG_START 0x500
 

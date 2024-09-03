@@ -85,8 +85,8 @@ EventScript_PokemonCenter_BirdKeeper:
     npcchat gText_UteyaVillage_PokemonCenter_BirdKeeper
     end
 
-.global EventScript_Pokemart_StatBoostingBerriesShop
-EventScript_Pokemart_StatBoostingBerriesShop:
+.global EventScript_UteyaVillage_Pokemart_StatBoostingBerriesShop
+EventScript_UteyaVillage_Pokemart_StatBoostingBerriesShop:
     lock
     faceplayer
     special 0x187
@@ -109,13 +109,13 @@ UteyaVillagePokemart_StatBoostingBerryStock:
     .hword ITEM_MARANGA_BERRY // Sp. Defense, when hit by a special move
     .hword ITEM_NONE
 
-.global EventScript_Pokemart_Girl
-EventScript_Pokemart_Girl:
+.global EventScript_UteyaVillage_Pokemart_Girl
+EventScript_UteyaVillage_Pokemart_Girl:
     npcchatwithmovement gText_UteyaVillage_Pokemart_Girl m_LookRight
     end
 
-.global EventScript_Pokemart_OldWoman
-EventScript_Pokemart_OldWoman:
+.global EventScript_UteyaVillage_Pokemart_OldWoman
+EventScript_UteyaVillage_Pokemart_OldWoman:
     npcchatwithmovement gText_UteyaVillage_Pokemart_Woman m_LookUp
     end
 
@@ -148,3 +148,103 @@ TutoringRejected:
 NotEnoughPokeChips:
     npcchatwithmovement gText_UteyaVillage_MoveTutor_NotEnoughPokeChips m_LookRight
     goto End
+
+.global MapScript_UteyaVillage_SlowpokeNews
+MapScript_UteyaVillage_SlowpokeNews:
+    mapscript MAP_SCRIPT_ON_LOAD MapEntryScript_UteyaVillage_SlowpokeNews_SetSpecies
+    .byte MAP_SCRIPT_TERMIN
+
+MapEntryScript_UteyaVillage_SlowpokeNews_SetSpecies:
+    call BufferSpeciesName    
+    checkflag 0xE32 @ Species has been set
+    if SET _goto End
+    random 0x11F @ up to #287 to avoid exposing starters and legendaries, stored in LastResult
+    copyvar 0x40ED LASTRESULT @ Slowpoke news dex #
+    setflag 0xE32 @ Species has been set
+    call BufferSpeciesName @ Get the species name belonging to this pokedex #
+    copyvar 0x40EE LASTRESULT @ Get the species # out
+    end
+
+BufferSpeciesName:
+    copyvar LASTRESULT 0x40ED @ Slowpoke news species
+    callasm GetSlowpokeNewsSpecies @ Var result not used; used to buffer species name
+    return
+
+.global EventScript_UteyaVillage_SlowpokeNews_Producer
+EventScript_UteyaVillage_SlowpokeNews_Producer:
+    checkflag 0xE33 @ Slowpoke News completed today
+    if SET _goto SlowpokeNewsCompleted_Producer
+    faceplayer
+    msgbox gText_UteyaVillage_SlowpokeNews_Producer_Intro MSG_NORMAL
+    showpokepic 0x40EE
+    cry 0x40EE 0x0
+    msgbox gText_UteyaVillage_SlowpokeNews_Producer_PokemonAllTheRage MSG_NORMAL
+    hidepokepic
+    sound 0x15 @ Exclaim
+    applymovement LASTTALKED m_Surprise
+    msgbox gText_UteyaVillage_SlowpokeNews_Producer_AsksPlayerToShowPokemon MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto SlowpokeNews_ChoseNotToShowPokemon
+    msgbox gText_UteyaVillage_SlowpokeNews_Producer_PromptingToShowPokemon MSG_NORMAL
+    special 0x9F @ Choose pokemon from party
+    waitstate
+    compare 0x8004 0x6 @ Cancelled out
+    if greaterorequal _goto SlowpokeNews_ChoseNotToShowPokemon
+    call BufferSpeciesName @ Buffer the name again, because it is overwritten when choosing a pokemon
+    setvar 0x8003 0x0 @ Check species from party (0x8004 set by special 0x9F above)
+    special2 LASTRESULT 0x18 @ Check species
+    comparevartovar LASTRESULT 0x40EE @ Compare value of chosen pokemon to the daily pokemon
+    if notequal _goto SlowpokeNews_ChoseWrongPokemon
+    sound 0x15 @ Exclaim
+    applymovement LASTTALKED m_Surprise
+    msgbox gText_UteyaVillage_SlowpokeNews_Producer_ChoseRightPokemon MSG_NORMAL
+    fadescreen FADEOUT_BLACK
+    msgbox gText_UteyaVillage_SlowpokeNews_Producer_CommentingOnPokemon MSG_NORMAL
+    fadescreen FADEIN_BLACK
+    msgbox gText_UteyaVillage_SlowpokeNews_Producer_PokemonShown MSG_NORMAL
+    compare 0x40EF 5
+    if lessthan _call IncrementSlowpokeNewsReward
+    msgbox gText_UteyaVillage_SlowpokeNews_Producer_GivingReward MSG_NORMAL
+    obtainitem ITEM_POKE_CHIP 0x40EF
+    msgbox gText_UteyaVillage_SlowpokeNews_Producer_TalkingAboutIncreasingReward MSG_NORMAL
+    applymovement LASTTALKED m_LookRight
+    setflag 0xE33 @ Slowpoke News completed today
+    end
+
+IncrementSlowpokeNewsReward:
+    addvar 0x40EF 0x1
+    return
+
+SlowpokeNews_ChoseNotToShowPokemon:
+    npcchatwithmovement gText_UteyaVillage_SlowpokeNews_Producer_PlayerChoseNotToShow m_LookRight
+    end
+
+SlowpokeNews_ChoseWrongPokemon:
+    npcchatwithmovement gText_UteyaVillage_SlowpokeNews_Producer_ChoseWrongPokemon m_LookRight
+    end
+
+SlowpokeNewsCompleted_Producer:
+    npcchatwithmovement gText_UteyaVillage_SlowpokeNews_Producer_PokemonShown m_LookRight
+    end
+
+.global EventScript_UteyaVillage_SlowpokeNews_Reporter
+EventScript_UteyaVillage_SlowpokeNews_Reporter:
+    checkflag 0xE33 @ Slowpoke News completed today
+    if SET _goto SlowpokeNewsCompleted_Reporter
+    npcchatwithmovement gText_UteyaVillage_SlowpokeNews_Reporter_PokemonNotShown m_LookUp
+    end
+
+SlowpokeNewsCompleted_Reporter:
+    npcchatwithmovement gText_UteyaVillage_SlowpokeNews_Reporter_PokemonShown m_LookUp
+    end
+
+.global EventScript_UteyaVillage_SlowpokeNews_Editor
+EventScript_UteyaVillage_SlowpokeNews_Editor:
+    checkflag 0xE33 @ Slowpoke News completed today
+    if SET _goto SlowpokeNewsCompleted_Editor
+    npcchatwithmovement gText_UteyaVillage_SlowpokeNews_Editor_PokemonNotShown m_LookLeft
+    end
+
+SlowpokeNewsCompleted_Editor:
+    npcchatwithmovement gText_UteyaVillage_SlowpokeNews_Editor_PokemonShown m_LookLeft
+    end
