@@ -148,13 +148,3 @@ TutoringRejected:
 NotEnoughPokeChips:
     npcchatwithmovement gText_UteyaVillage_MoveTutor_NotEnoughPokeChips m_LookRight
     goto End
-
-.global EventScript_UteyaVillage_MoveTutor_Daughter
-EventScript_UteyaVillage_MoveTutor_Daughter:
-    npcchat gText_UteyaVillage_MoveTutor_Daughter
-    end
-
-.global EventScript_UteyaVillage_MoveTutor_Wife
-EventScript_UteyaVillage_MoveTutor_Wife:
-    npcchatwithmovement gText_UteyaVillage_MoveTutor_Wife m_LookUp
-    end
