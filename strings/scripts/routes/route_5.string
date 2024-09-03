@@ -120,3 +120,99 @@ Well look at that! You've hatched\n[BUFFER1] eggs. I have a gift for\lyou.
 
 #org @gText_Route5_EggGiver_TenEggGiftReceived
 [BLUE]Just by having this charm, you'll be\nmore likely to find eggs at the\ldaycare.\pIsn't that handy?
+
+// Heleo Ranch
+
+#org @gText_HeleoRanch_Mareep
+Baah!
+
+#org @gText_HeleoRanch_MoomooMilkSeller_PurchaseRequest
+Hello! I sell Moomoo Milk, fresh\nfrom the farm.\pWould you like some? It's \$500 for\none, or \$6,000 for a dozen.
+
+#org @gText_HeleoRanch_MoomooMilkSeller_PuchaseOne
+Just one
+
+#org @gText_HeleoRanch_MoomooMilkSeller_PuchaseADozen
+A dozen
+
+#org @gText_HeleoRanch_MoomooMilkSeller_PuchaseNone
+No thank you
+
+#org @gText_HeleoRanch_MoomooMilkSeller_PuchaseComplete
+Thank you very much! Please enjoy,\nand tell your friends about us.
+
+#org @gText_HeleoRanch_MoomooMilkSeller_NotEnoughCash
+Oh, sorry sweetie, but you don't\nhave enough money.
+
+#org @gText_HeleoRanch_MoomooMilkSeller_ChoseNotToBuy
+That's okay. If you change your\nmind, I'd be happy to sell you\lsome.
+
+#org @gText_HeleoRanch_AgitatedAmpharos_Sound
+Phaar! Phaar!!
+
+#org @gText_HeleoRanch_AgitatedAmpharos_Prompt
+The Ampharos appears to be very\nagitated.\pDo you want to battle it? You won't\nbe able to run.
+
+#org @gText_HeleoRanch_AgitatedAmpharos_LeftAlone
+You decided to leave it alone.
+
+#org @gText_HeleoRanch_AgitatedAmpharos_BattleStarted
+The Ampharos attacks!
+
+#org @gText_HeleoRanch_AgitatedAmpharos_BattleEnded
+The Ampharos calmed down.
+
+#org @gText_HeleoRanch_BurglarCole_Intro
+Eheheh[.] I'm gonna make a killing\noffa all the Mareep wool I'm gonna\lshear!
+
+#org @gText_HeleoRanch_BurglarCole_Defeat
+D'oh! This guard dog has teeth!
+
+#org @gText_HeleoRanch_BurglarCole_Chat
+Awright, let's make a deal. I won't\nburgle this place, and you forget\lyou saw me. Capiche?
+
+#org @gText_HeleoRanch_CamperTroy_Intro
+Do you know the secret of Heleo\nRanch?
+
+#org @gText_HeleoRanch_CamperTroy_Defeat
+Who responds to a question with a\nPok\emon battle?
+
+#org @gText_HeleoRanch_CamperTroy_Chat
+Alright, the secret of Heleo Ranch\nis[.] That they import the Moomoo\lMilk they sell!\pScandalous, isn't it?
+
+#org @gText_HeleoRanch_BreederLaura_Intro
+Look at all these baby Pok\emon!
+
+#org @gText_HeleoRanch_BreederLaura_Defeat
+Aww, my babies couldn't win[.]
+
+#org @gText_HeleoRanch_BreederLaura_Chat
+Aren't baby Pok\emon just the cutest\nlittle things?
+
+#org @gText_HeleoRanch_PicknickerCarly_Intro
+The picnicker's creed: go everywhere,\nsee everything!
+
+#org @gText_HeleoRanch_PicknickerCarly_Defeat
+I'm better at picnicking than I am at\nbattling.
+
+#org @gText_HeleoRanch_PicknickerCarly_Chat
+I'll go picnicking anywhere I want\nto, even here!
+
+#org @gText_HeleoRanch_GladeSign
+Heleo Ranch Glade\nWatch out for territorial Pok\emon!
+
+#org @gText_HeleoRanch_EntranceSign
+Welcome to Heleo Ranch!\nHome of our world famous\lMoomoo Milk.
+
+#org @gText_HeleoRanch_Dad
+Welcome tah Heleo Ranch, home of\nth' region's world famous Moomoo\lMilk!\pMah wife sells it out in th' pasture\ndurin' th' day.\pIt ain't much, but it's honest work\nand it makes mah family happy.\lCan't ask for more'n that.
+
+#org @gText_HeleoRanch_Daughter
+My family has owned this ranch for\ngenerations, and I'll inherit it\lnext.
+
+#org @gText_HeleoRanch_Mom
+I've sold out of all the Moomoo Milk\nI had today. Come back tomorrow if\lyou'd like more.
+
+#org @gText_HeleoRanch_Son
+Mah Pa said that visitors are\nwelcome t'catch any Pok\emon they\lfind out in the fields.\pHe also said there's a real ornery\nPok\emon deep in the woods that\ldon't take kindly to strangers.\pYou'd best keep your distance.
+
