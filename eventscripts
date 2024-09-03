@@ -2615,3 +2615,27 @@ npc 2 39 8 EventScript_UltraSpaceHoenn_Wingull5
 npc 2 39 9 EventScript_UltraSpaceHoenn_Wingull6
 npc 2 39 10 EventScript_UltraSpaceHoenn_Wingull7
 npc 2 39 11 EventScript_UltraSpaceHoenn_Jirachi
+
+# Uteya Village
+## Overworld
+map 3 10 MapScript_UteyaVillage
+npc 3 10 0 EventScript_UteyaVillage_HessonPassKid
+npc 3 10 1 EventScript_UteyaVillage_GymGirl
+npc 3 10 2 EventScript_UteyaVillage_UteyaRuinsMan
+npc 3 10 3 EventScript_UteyaVillage_TrainerHouseOldMan
+npc 3 10 4 EventScript_UteyaVillage_TM30_ShadowBall
+npc 3 10 5 ItemScript_Common_HyperPotion
+sign 3 10 0 SignScript_UteyaVillage_HessonPass
+sign 3 10 1 SignScript_UteyaVillage_TownPlacard
+sign 3 10 2 SignScript_UteyaVillage_GymSign
+sign 3 10 3 SignScript_UteyaVillage_TrainerHouse
+## Facilities
+map 14 0 MapScript_UteyaVillage_PokemonCenter
+npc 14 0 0 EventScript_PokemonCenter_Main
+npc 14 0 1 EventScript_PokemonCenter_Woman
+npc 14 0 2 EventScript_PokemonCenter_SuperNerd
+npc 14 0 3 EventScript_PokemonCenter_BirdKeeper
+npc 14 1 0 EventScript_Pokemart
+npc 14 1 1 EventScript_Pokemart_StatBoostingBerriesShop
+npc 14 1 2 EventScript_Pokemart_Girl
+npc 14 1 3 EventScript_Pokemart_OldWoman

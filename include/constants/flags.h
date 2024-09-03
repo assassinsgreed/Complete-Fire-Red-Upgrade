@@ -883,8 +883,8 @@
 #define FLAG_HIDE_CARNELIDGE_VOLCANO_BF1_FIRE_GEM             0x358
 #define FLAG_HIDE_CARNELIDGE_VOLCANO_OVERWORLD_ESCAPE_ROPE    0x359
 #define FLAG_HIDE_ROUTE_11_SOUTH_TM32_DOUBLE_TEAM        0x35A
-#define FLAG_0x35B               0x35B
-#define FLAG_0x35C               0x35C
+#define FLAG_HIDE_UTEYA_VILLAGE_TM30_SHADOW_BALL         0x35B
+#define FLAG_HIDE_UTEYA_VILLAGE_HYPER_POTION             0x35C
 #define FLAG_0x35D               0x35D
 #define FLAG_0x35E               0x35E
 #define FLAG_0x35F               0x35F
@@ -1299,8 +1299,8 @@
 #define FLAG_HIDDEN_ITEM_CARNELIDGE_VOLCANO_OVERWORLD_HP_UP           227
 #define FLAG_HIDDEN_ITEM_CARNELIDGE_VOLCANO_VOLCANION_ROOM_SACRED_ASH 228
 #define FLAG_HIDDEN_ITEM_CARNELIDGE_VOLCANO_F2_NUGGET                 229
-#define FLAG_0x4DB                            0x4DB
-#define FLAG_0x4DC                            0x4DC
+#define FLAG_HIDDEN_ITEM_UTEYA_VILLAGE_POWER_HERB                     230
+#define FLAG_HIDDEN_ITEM_UTEYA_VILLAGE_REPEAT_BALL                    231
 #define FLAG_0x4DD                            0x4DD
 #define FLAG_0x4DE                            0x4DE
 #define FLAG_0x4DF                            0x4DF

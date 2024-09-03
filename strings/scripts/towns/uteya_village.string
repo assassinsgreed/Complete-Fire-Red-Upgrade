@@ -1,0 +1,41 @@
+// Overworld
+
+#org @gText_UteyaVillage_HessonPassBoy
+Oh, are you a trainer?\nWe don't get many of those here.\pWelcome to Uteya Village! This is\nthe last stop for gym challengers.
+
+#org @gText_UteyaVillage_GymGirl
+Dennis and Dee are so cool[.]\nI love watching them battle!\pIt's like they're psychic and always\nknow what the other is thinking.
+
+#org @gText_UteyaVillage_UteyaRuinsMan
+The ruins to the north generate weird\npsychic waves.\pSome Pok\emon seem to really enjoy it\nand are drawn to it.\pMe, though? I think it's really\ncreepy!
+
+#org @gText_UteyaVillage_TrainerHouseOldMan
+The Trainer House here specializes in\na unique battle style popularized\lin Borrius.\pI hear Pok\emon will temporarily\ndevolve during battle.\pHohohoho! I wish it could apply to\nhumans and be permanent!
+
+#org @gText_UteyaVillage_HessonPass
+Hesson Pass\nThe passage to the west
+
+#org @gText_UteyaVillage_TownPlacard
+Uteya Village\nHome of tradition
+
+#org @gText_UteyaVillage_GymSign
+Uteya Village Pok\emon Gym\nLeaders: Dennis and Dee\pThe Decisive Duo
+
+#org @gText_UteyaVillage_TrainerHouse
+Uteya Village Trainer House\nSpecialty: Benjamin Butterfree\lBattles
+
+// Facilities
+#org @gText_UteyaVillage_PokemonCenter_Woman
+They say some unusual orbs were\nspotted in the Uteyan Ruins.\pThat would've gotten me fired up\nwhen I was a trainer in my youth.\pThose days are behind me, now.
+
+#org @gText_UteyaVillage_PokemonCenter_SuperNerd
+There are a lot of rare Pok\emon that\nlive around here.\pIt's because few people live nearby.
+
+#org @gText_UteyaVillage_PokemonCenter_BirdKeeper
+Did you fly here? No?\nWhere are you from?\pWow, Anthra Town?\nThat's far away from here!
+
+#org @gText_UteyaVillage_Pokemart_Girl
+I'm about to challenge the gym.\pI'm really not used to the double\nbattles they hold there[.]\pI'll need to think about which items\nwill help secure a victory.
+
+#org @gText_UteyaVillage_Pokemart_Woman
+It's so convenient that Pok\eMarts sell\nboth healing items and medicines.
