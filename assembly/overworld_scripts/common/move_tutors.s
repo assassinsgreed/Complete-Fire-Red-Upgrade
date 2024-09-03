@@ -5,7 +5,12 @@
 .include "../xse_defines.s"
 .include "../asm_defines.s"
 
-@ Vars are set to the tutor number in hex.  Ex #63, psychic terrain, is 0x3F
+@ Vars are set as:
+@ 0x8000 - The scrolling multichoice entry to use
+@ 0x8001 - The number of entries to show at a time
+@ 0x8004 - Always 0, to ensure the menu cleans itself up when called again
+@ 0x8005 - The Tutor # in DPE (0 based)
+@ 0x4000 - The cost to teach the chosen move
 
 .global EventScript_Tutors_Terrain
 EventScript_Tutors_Terrain:
@@ -548,6 +553,83 @@ NastyPlot:
     call teachmove
     return
 
+.global EventScript_Tutors_Uteya
+EventScript_Tutors_Uteya:
+    setvar 0x8000 0xF
+    setvar 0x8001 0x5
+    setvar 0x8004 0x0
+	special 0x158
+    waitstate
+    switch LASTRESULT
+	case 0, SeedBomb
+	case 1, Liquidation
+	case 2, Outrage
+	case 3, EarthPower
+    case 4, GunkShot
+	case 5, HeatWave
+	case 6, HyperVoice
+	case 7, Superpower
+    case 8, cancelled
+    case 0x7F, cancelled @ When player hit B to close
+    return
+
+SeedBomb:
+    bufferattack 0x0 MOVE_SEEDBOMB
+    setvar 0x8005 32
+    setvar 0x4000 10
+    call teachmove
+    return
+
+Liquidation:
+    bufferattack 0x0 MOVE_LIQUIDATION
+    setvar 0x8005 39
+    setvar 0x4000 10
+    call teachmove
+    return
+
+Outrage:
+    bufferattack 0x0 MOVE_OUTRAGE
+    setvar 0x8005 43
+    setvar 0x4000 10
+    call teachmove
+    return
+
+EarthPower:
+    bufferattack 0x0 MOVE_EARTHPOWER
+    setvar 0x8005 47
+    setvar 0x4000 10
+    call teachmove
+    return
+
+GunkShot:
+    bufferattack 0x0 MOVE_GUNKSHOT
+    setvar 0x8005 48
+    setvar 0x4000 10
+    call teachmove
+    return
+
+HeatWave:
+    bufferattack 0x0 MOVE_HEATWAVE
+    setvar 0x8005 50
+    setvar 0x4000 10
+    call teachmove
+    return
+
+HyperVoice:
+    bufferattack 0x0 MOVE_HYPERVOICE
+    setvar 0x8005 51
+    setvar 0x4000 10
+    call teachmove
+    return
+
+Superpower:
+    bufferattack 0x0 MOVE_SUPERPOWER
+    setvar 0x8005 52
+    setvar 0x4000 10
+    call teachmove
+    return
+
+// Common
 teachmove:
     msgbox gText_Tutors_ChoosePokemon MSG_NORMAL
     special 0x18D

@@ -39,3 +39,19 @@ I'm about to challenge the gym.\pI'm really not used to the double\nbattles they
 
 #org @gText_UteyaVillage_Pokemart_Woman
 It's so convenient that Pok\eMarts sell\nboth healing items and medicines.
+
+// NPC Houses
+#org @gText_UteyaVillage_MoveTutor_Confirmation
+Greetings!\pI am an exceptional move tutor\nspecializing in exceptional moves.\pI can teach your Pok\emon these\nexceptional moves for 10 Pok\eChips.\pAre you interested?\n(Held: [BUFFER1])
+
+#org @gText_UteyaVillage_MoveTutor_ConfirmationAccepted
+Wonderful! Which of these\nexceptional moves should I teach?
+
+#org @gText_UteyaVillage_MoveTutor_Complete
+Done and done.\pYour Pok\emon has learned the move\nexceptionally well!\pDo return if you wish to teach your\nPok\emon more exceptional moves.
+
+#org @gText_UteyaVillage_MoveTutor_Rejected
+Unfortunate, but understandable.\pThese exceptional moves require an\nexceptional Pok\emon to learn them.\pCome see me again, if you seek my\ntutelage.
+
+#org @gText_UteyaVillage_MoveTutor_NotEnoughPokeChips
+Oh dear[.] You don't have enough\nPok\eChips.\pThese moves are too exceptional to\nteach as a charity.\pPlease return once you have at least\n10 Pok\eChips.
