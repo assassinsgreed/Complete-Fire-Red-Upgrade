@@ -157,6 +157,37 @@ SpecialBuffers = {
     "EMOJI_BIGANGER": ["F9", "FE"],
 }
 
+BrailleMapping = {
+    'A': 0x01,
+    'B': 0x05,
+    'C': 0x03,
+    'D': 0x0B,
+    'E': 0x09,
+    'F': 0x07,
+    'G': 0x0F,
+    'H': 0x0D,
+    'I': 0x06,
+    'J': 0x0E,
+    'K': 0x11,
+    'L': 0x15,
+    'M': 0x13,
+    'N': 0x1B,
+    'O': 0x19,
+    'P': 0x17,
+    'Q': 0x1F,
+    'R': 0x1D,
+    'S': 0x16,
+    'T': 0x1E,
+    'U': 0x31,
+    'V': 0x35,
+    'W': 0x2E,
+    'X': 0x33,
+    'Y': 0x3B,
+    'Z': 0x39,
+    ' ': 0x00,
+    ',': 0x04,
+    '.': 0x2C,
+}
 
 def StringFileConverter(fileName: str):
     stringToWrite = ".thumb\n.text\n.align 2\n\n"
@@ -218,6 +249,7 @@ def ProcessString(string: str, lineNum: int, maxLength=0, fillWithFF=False) -> s
     stringToWrite = ".byte "
     buffer = False
     escapeChar = False
+    braille = False
     bufferChars = ""
     strLen = 0
 
@@ -241,6 +273,8 @@ def ProcessString(string: str, lineNum: int, maxLength=0, fillWithFF=False) -> s
                         stringToWrite += ("0x" + bufferChar + ", ")
                         strLen += 1
 
+                elif bufferChars == "BRAILLE":
+                    braille = True
                 elif len(bufferChars) > 2:  # Unrecognized buffer
                     print('Warning: The string buffer "' + bufferChars + '" is not recognized!')
                     stringToWrite += "0x0, "  # Place whitespace where the buffer should have gone
@@ -265,7 +299,10 @@ def ProcessString(string: str, lineNum: int, maxLength=0, fillWithFF=False) -> s
 
         else:
             try:
-                stringToWrite += hex(charMap[char]) + ", "
+                if braille:
+                    stringToWrite += hex(BrailleMapping[char]) + ", "
+                else: 
+                    stringToWrite += hex(charMap[char]) + ", "
                 strLen += 1
 
             except KeyError:

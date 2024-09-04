@@ -1145,6 +1145,8 @@ map \map
 .endm
 
 @ Displays the string at pointer as braille text in a standard message box. The string must be formatted to use braille characters.
+@ This is being managed by the [BRAILLE] buffer characters in string.py.
+@ Braille strings must be written in all uppercase like [BRAILLE]MY MESSAGE
 .macro braillemessage text:req
 .byte 0x78
 .4byte \text
@@ -1926,6 +1928,13 @@ map \map
 	getbraillestringwidth \text
 	call EventScript_BrailleCursorWaitButton
 .endm*/
+
+.macro braillemsgbox text:req
+	braillemessage \text
+	getbraillestringwidth \text
+	waitkeypress
+    closeonkeypress
+.endm
 
 .macro multichoiceoption text:req num:req
 	setvar 0x8006 \num
