@@ -302,6 +302,7 @@ BuyNoMoomooMilk:
 PurchaseMoomooMilk:
     updatemoney
     playse 0xF8 @ Money SE
+    waitse
     msgbox gText_HeleoRanch_MoomooMilkSeller_PuchaseComplete MSG_NORMAL
     return
 

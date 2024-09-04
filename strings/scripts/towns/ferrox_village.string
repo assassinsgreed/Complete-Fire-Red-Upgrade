@@ -56,7 +56,7 @@ I tend to the village's berry\ngardens.\pHere, you can have a free sample!
 Come back tomorrow for another\nberry!
 
 #org @gText_FerroxNPCHouses_TutorConfirmation
-Hello! I'm an experienced move\ntutor. I can teach your Pok\emon\lnew and exciting moves.\pMy fee is 5 Pok\eChips. What do you\nsay? (Held: [BUFFER1])
+Hello! I'm an experienced move\ntutor. I can teach your Pok\emon\lnew and exciting moves.\pMy fee is 5 Pok\eChips. What do you\nsay? [BLACK](Held: [BUFFER1])
 
 #org @gText_FerroxNPCHouses_ConfirmationAccepted
 Great! Let's get started.

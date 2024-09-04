@@ -389,7 +389,7 @@ Let's battle again sometime, okay?
 Sorry! I haven't been able to get\nPok\emon strong enough yet.\pIf you were to invest in our dojo,\nperhaps I could[.]
 
 #org @gText_TsarvosaCityNPCHouses_TutorConfirmation
-I've devoted myself to studying\nfantastic Pok\emon moves.\pI can teach these moves, in exchange\nfor just 10 Pok\eChips.\pAre you interested?\n(Held: [BUFFER1])
+I've devoted myself to studying\nfantastic Pok\emon moves.\pI can teach these moves, in exchange\nfor just 10 Pok\eChips.\pAre you interested?\n[BLACK](Held: [BUFFER1])
 
 #org @gText_TsarvosaCityNPCHouses_ConfirmationAccepted
 Great. Which move interests you?

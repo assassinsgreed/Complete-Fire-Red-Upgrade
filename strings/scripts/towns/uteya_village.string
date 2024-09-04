@@ -42,7 +42,7 @@ It's so convenient that Pok\eMarts sell\nboth healing items and medicines.
 
 // NPC Houses
 #org @gText_UteyaVillage_MoveTutor_Confirmation
-Greetings!\pI am an exceptional move tutor\nspecializing in exceptional moves.\pI can teach your Pok\emon these\nexceptional moves for 10 Pok\eChips.\pAre you interested?\n(Held: [BUFFER1])
+Greetings!\pI am an exceptional move tutor\nspecializing in exceptional moves.\pI can teach your Pok\emon these\nexceptional moves for 10 Pok\eChips.\pAre you interested?\n[BLACK](Held: [BUFFER1])
 
 #org @gText_UteyaVillage_MoveTutor_ConfirmationAccepted
 Wonderful! Which of these\nexceptional moves should I teach?
@@ -100,3 +100,81 @@ Wh-what are we going to do if we\ncan't report on [BUFFER1]?\pWe could report on
 
 #org @gText_UteyaVillage_SlowpokeNews_Editor_PokemonShown
 Thanks soooo much for showing us\nthat [BUFFER1]!\pIf you didn't, we could've been in\nreally big trouble.
+
+#org @gText_UteyaVillage_ClancyAndEnasHouse_Cutscene_ClancySeesPlayer
+[BLUE][.] Huh? Do I know you?
+
+#org @gText_UteyaVillage_ClancyAndEnasHouse_Cutscene_EnaSeesPlayer
+[RED]Oh! You came after all!
+
+#org @gText_UteyaVillage_ClancyAndEnasHouse_Cutscene_ClancyAsksEnaIfSheRecognizesPlayer
+[BLUE]Yo, Ena, you know this person?
+
+#org @gText_UteyaVillage_ClancyAndEnasHouse_Cutscene_EnaMentionsWhoPlayerIs
+[RED]Clancy, it's [PLAYER].\pRemember? They're the reason we\ngot out of Team Pluto!
+
+#org @gText_UteyaVillage_ClancyAndEnasHouse_Cutscene_ClancyTellsPlayerTheyArentFriends
+[BLUE]Whoa! It's [PLAYER]! Almost didn't\nrecognize you.\pLook, I'll level with you.\nWe aren't friends.\pBut[.] You did get us to straighten\nourselves up.\pAnd for that, I'm grateful.\pLook, just don't let it get to your\nhead, got it?
+
+#org @gText_UteyaVillage_ClancyAndEnasHouse_Cutscene_EnaScoldsClancy
+[RED]Oh, knock it off, Clancy!\pCan't you just be friendly toward\n[PLAYER] for once?\pIf not for them, we wouldn't be here\nright now.
+
+#org @gText_UteyaVillage_ClancyAndEnasHouse_Cutscene_ClancyPraisesEna
+[BLUE]Yeah, that's fair. You're a genius,\nyou know that Ena?
+
+#org @gText_UteyaVillage_ClancyAndEnasHouse_Cutscene_EnaAcceptsClancysPraise
+[RED]I know.
+
+#org @gText_UteyaVillage_ClancyAndEnasHouse_Cutscene_ClancyStartsOver
+[BLUE]Lemme start over[.]\pWe have some history, you and I.\pIt'll be hard to look past that, but\nI'll try, for Ena.
+
+#org @gText_UteyaVillage_ClancyAndEnasHouse_Cutscene_EnaPraisesClancy
+[RED]That's the spirit!
+
+#org @gText_UteyaVillage_ClancyAndEnasHouse_Cutscene_ClancyMentionsHisSkillset
+[BLUE]If you didn't intervene at Calicin\nBay, I might still be with Team\lPluto right now.\pAnd, I would be imprisoned along\nwith the others.\pI've been working real hard to turn\nover a new leaf since then.\pAnd it turns out I'm pretty good at\nworking with Pok\emon, too!\pWho knew?\pSometimes, Pok\emon just need a\nsecond chance too.\pI can work with them to change their\nnature to something else.\pSince you helped us out, I'll try to\nlook past everything that happened.\pI'll work with your Pok\emon, in\nexchange for 10 Pok\eChips each.\pNot a bad deal, right?\nThink about it.
+
+#org @gText_UteyaVillage_ClancyAndEnasHouse_Cutscene_EnaTalksAboutClancysSkills
+[RED]He really is good at it, y'know?\nIt's like he's found his calling.\pThink about taking him up on his\noffer sometime, okay?\pHe's rough around the edges, but I\nknow he'd really appreciate it.\pHe'd never say it, but he'd be happy\nhe could return the favor.\pBe sure to stop by sometime, okay?
+
+#org @gText_UteyaVillage_ClancyAndEnasHouse_EnaChat
+Hey, [PLAYER]. How's it going?\pYou don't need to worry about us\nanymore.\pWe're working hard to make an honest\nliving for ourselves.
+
+#org @gText_UteyaVillage_ClancyAndEnasHouse_Clancy_OfferToChangePokemonNature
+Yo, [PLAYER].\pYou want to take me up on my offer\nto change a Pok\emon's nature?\pThat'll be 10 Pok\eChips then.\n[BLACK](Held: [BUFFER1])
+
+#org @gText_UteyaVillage_ClancyAndEnasHouse_Clancy_PlayerChoseNotToChangeNature
+No? Alright, that's your choice\nthen.\pSwing by if you change your mind.
+
+#org @gText_UteyaVillage_ClancyAndEnasHouse_Clancy_NotEnoughPokeChips
+Dude, you don't have enough\nPok\eChips. I can't do this for free.\pCome back once you have 10\nPok\eChips and I'll help you out.
+
+#org @gText_UteyaVillage_ClancyAndEnasHouse_Clancy_ChoosePokemon
+Now we're talking.\pWhich Pok\emon do you want me to\nchange the nature of?
+
+#org @gText_UteyaVillage_ClancyAndEnasHouse_Clancy_ChoseAnEgg
+Dude, I can't change the nature of a\nPok\emon that hasn't hatched!\pBring it back after it's hatched and\nwe'll talk.
+
+#org @gText_UteyaVillage_ClancyAndEnasHouse_Clancy_PlayerChoseAPokemon
+You want to change [BUFFER1]'s\nnature, huh?
+
+#org @gText_UteyaVillage_ClancyAndEnasHouse_Clancy_AskingToChoseNature
+Which nature do you want it to be?
+
+#org @gText_UteyaVillage_ClancyAndEnasHouse_Clancy_ChoseTheSameNatureItAlreadyIs
+It's already that nature, you goof.
+
+#org @gText_UteyaVillage_ClancyAndEnasHouse_Clancy_NatureConfirmation
+You sure that's the one?
+
+#org @gText_UteyaVillage_ClancyAndEnasHouse_Clancy_StartingNatureChange
+Alright, give us a bit of time.\pI'll need to understand your Pok\emon\nbetter to know how to shift it's\lnature properly.
+
+#org @gText_UteyaVillage_ClancyAndEnasHouse_Clancy_ChangingNature
+Hey, [BUFFER1], let's get to know each\nother better.\pMmhm[.] Yep[.] I understand[.]\pOkay, let's try this instead[.]
+
+#org @gText_UteyaVillage_ClancyAndEnasHouse_Clancy_NatureChangeComplete
+Alright, we're done here.\pIt's nature has shifted to the one\nyou asked for.\pThat'll be 10 Pok\eChips.
+
+#org @gText_UteyaVillage_ClancyAndEnasHouse_Clancy_TransactionComplete
+Come back if you want another nature\nchanged.\pIt'll be 10 Pok\eChips as usual.

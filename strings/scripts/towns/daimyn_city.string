@@ -344,7 +344,7 @@ We're just minding our own business.\pWhy don't you get lost and play with\nyour
 Our house is really basic. There's\nnothing interesting about it or our\llives.
 
 #org @gText_DaimynNPCHouses_TutorConfirmation
-I am well studied in Pok\emon moves.\pI can tutor your Pok\emon, say, for\n5 Pok\eChips?\pDo we have a deal?\n(Held: [BUFFER1])
+I am well studied in Pok\emon moves.\pI can tutor your Pok\emon, say, for\n5 Pok\eChips?\pDo we have a deal?\n[BLACK](Held: [BUFFER1])
 
 #org @gText_DaimynNPCHouses_ConfirmationAccepted
 Excellent. Pick a move and let's\nbegin.
@@ -509,10 +509,10 @@ Hello, dearie. I am a Pok\emon\ntutor, but I am quite different\lfrom those you 
 Hello, dearie. I remember you.
 
 #org @gText_DaimynCityNPCHouses_MoveReminderPrompt
-Shall I have one of your Pok\emon\nremember a move? (Held: [BUFFER1])
+Shall I have one of your Pok\emon\nremember a move? [BLACK](Held: [BUFFER1])
 
 #org @gText_DaimynCityNPCHouses_MoveReminderPrompt_TeachMore
-[RED]It is done.\pWould you like to remember more\nmoves? (Held: [BUFFER1])
+[RED]It is done.\pWould you like to remember more\nmoves? [BLACK](Held: [BUFFER1])
 
 #org @gText_DaimynCityNPCHouses_MoveReminder_PastMovesChoice
 Past Moves[ALIGN][50][GREEN]1 Pok\eChip
@@ -1197,7 +1197,7 @@ So far you have donated [BUFFER1]\nPok\eChips. We require [BUFFER2] more\lto pro
 Would you like to donate Pok\eChips?
 
 #org @gText_Restaurant_DonationRequest
-How many would you like to donate?\n(Held: [BUFFER3])
+How many would you like to donate?\n[BLACK](Held: [BUFFER3])
 
 #org @gText_Restaurant_DonationNoPokeChips
 My apologies, Master [PLAYER].\nYou do not have any Pok\eChips.

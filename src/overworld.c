@@ -3088,3 +3088,44 @@ const union AnimCmd gEventObjectImageAnim_RunEast[] =
 };
 #endif
 
+// Set var 8005 to the party index and var 8006 to the desired nature
+// LASTRESULT is true if the nature was changed, and false if not (i.e. ineligible)
+void SwitchMonNature()
+{
+	gSpecialVar_LastResult = FALSE; // Did not perform the nature change
+	struct Pokemon* mon = &gPlayerParty[Var8005];
+	u32 speciesPersonality = GetMonData(mon, MON_DATA_PERSONALITY, NULL);
+	if (VarGet(Var8006) == GetNatureFromPersonality(speciesPersonality))
+		return; // Pokemon is already this nature, do not attempt to set it again
+
+	// Collect data about the pokemon
+	// u8 abilityBit = GetMonData(mon, MON_DATA_PERSONALITY, NULL) & 1;
+	u16 species = GetMonData(mon, MON_DATA_SPECIES, NULL);
+	u8 abilityBit = speciesPersonality & 1;
+	u32 personality;
+	u8 gender = GetGenderFromSpeciesAndPersonality(species, speciesPersonality);
+	bool8 isShiny = IsMonShiny(mon);
+	u32 trainerId = GetMonData(mon, MON_DATA_OT_ID, NULL);
+	u16 sid = HIHALF(trainerId);
+	u16 tid = LOHALF(trainerId);
+	
+	// Look for a personality bit that matches the desired nature
+	do
+	{
+		personality = Random32(); 
+		if (isShiny)
+		{
+			u8 shinyRange = 1;
+			personality = (((shinyRange ^ (sid ^ tid)) ^ LOHALF(personality)) << 16) | LOHALF(personality);
+		}
+		personality &= ~(1);
+		personality |= abilityBit;
+		if (VarGet(Var8006) == GetNatureFromPersonality(personality))
+			if(GetGenderFromSpeciesAndPersonality(species, personality) == gender)
+			break; // we found a personality with the same nature
+	} while (TRUE);
+
+	SetMonData(mon, MON_DATA_PERSONALITY, &personality);
+	CalculateMonStats(mon);
+	gSpecialVar_LastResult = TRUE; // Performed the nature change
+}
