@@ -185,6 +185,7 @@
 #define SE_RG_EXCELLENT 254
 
 #define SE_CAUGHT_POKEMON 0x16F
+#define MUS_FANFARE_HEAL 0x100 // Pokemon Center heal jingle
 #define MUS_FANFA1 0x101 // Got item / level up
 #define MUS_GET_ITEM_2 0x102
 #define MUS_EVOLUTION 0x103

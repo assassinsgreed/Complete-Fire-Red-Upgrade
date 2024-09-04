@@ -2645,3 +2645,6 @@ map 14 2 MapScript_UteyaVillage_SlowpokeNews
 npc 14 2 0 EventScript_UteyaVillage_SlowpokeNews_Producer
 npc 14 2 1 EventScript_UteyaVillage_SlowpokeNews_Reporter
 npc 14 2 2 EventScript_UteyaVillage_SlowpokeNews_Editor
+map 14 3 MapScript_UteyaVillage_ClancyAndEnasHouse
+npc 14 3 0 EventScript_UteyaVillage_Clancy
+npc 14 3 1 EventScript_UteyaVillage_Ena

@@ -197,7 +197,7 @@ I understand. Please, come see me if\nyou change your mind.
 I can craft Apricorn Balls, using a\ntechnique honed in Johto.\pTo do so, I would require 2\nPok\eChips.
 
 #org @gText_LaplazTownNPCHouses_ApricornSellerCost
-Are you interested? (Held: [BUFFER1])
+Are you interested? [BLACK](Held: [BUFFER1])
 
 #org @gText_LaplazTownNPCHouses_ApricornSellerNotEnoughChips
 I am sorry, but you do not have\nenough Pok\eChips.\pI require them to make the balls,\nyou see.
@@ -242,7 +242,7 @@ There! It is finished. One [BUFFER1],\nfor you.
 My husband is a gifted Apricorn\nPok\e Ball crafter.\pHe takes Apricorns received from the\nJohto Region, and mixes them with\lPok\eChips to freshen them up.\pThen, using a secret family\ntechnique, he crafts special Pok\e\lBalls using them!\pThis technique is a longstanding\ntradition passed down through our\lfamily.
 
 #org @gText_LaplazTownNPCHouses_TutorConfirmation
-Hello! I am a move tutor,\nspecializing in status moves.\pI can teach your Pok\emon these\nmoves, in exchange for 5 Pok\eChips.\pAre you interested?\n(Held: [BUFFER1])
+Hello! I am a move tutor,\nspecializing in status moves.\pI can teach your Pok\emon these\nmoves, in exchange for 5 Pok\eChips.\pAre you interested?\n[BLACK](Held: [BUFFER1])
 
 #org @gText_LaplazTownNPCHouses_ConfirmationAccepted
 Great! These are the moves I can\nteach your Pok\emon.

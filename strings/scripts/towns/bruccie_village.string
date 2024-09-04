@@ -149,7 +149,7 @@ It's impressive that the Bruccie\nVillage Pok\eMart's stock is the\lsame as othe
 
 // NPC Houses
 #org @gText_BruccieVillageNPCHouses_TutorConfirmation
-Howdy! I'm something of an expert\nwhen it comes to Pok\emon moves.\pI can teach your Pok\emon some of\nthese incredible moves.\pAll I require in exchange is 10\nPok\eChips.\pWhat do you say?\n(Held: [BUFFER1])
+Howdy! I'm something of an expert\nwhen it comes to Pok\emon moves.\pI can teach your Pok\emon some of\nthese incredible moves.\pAll I require in exchange is 10\nPok\eChips.\pWhat do you say?\n[BLACK](Held: [BUFFER1])
 
 #org @gText_BruccieVillageNPCHouses_ConfirmationAccepted
 Excellent! These are the moves I\ncan teach your Pok\emon.
@@ -173,7 +173,7 @@ There's just one problem[.]\nI'm not very good yet.\pYou'll lose the ball the Po
 I've gotten pretty good at doing\nthis.\pI can return the Pok\emon's old Pok\e\nBall to you when I'm done.
 
 #org @gText_BruccieVillageNPCHouses_PokeballSwapper_Confirmation
-It'll cost 2 Pok\eChips.\pWhat do you say? Want to do it?\n(Held: [BUFFER1])
+It'll cost 2 Pok\eChips.\pWhat do you say? Want to do it?\n[BLACK](Held: [BUFFER1])
 
 #org @gText_BruccieVillageNPCHouses_PokeballSwapper_NotEnoughChips
 Hey[.] You don't have enough\nPok\eChips.

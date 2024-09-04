@@ -3077,6 +3077,33 @@ extern const u8 gText_PokeChipCrusher_AbilityPatch[];
 extern const u8 gText_PokeChipCrusher_GoldBottleCap[];
 extern const u8 gText_PokeChipCrusher_MasterBall[];
 
+// Nature Changer
+extern const u8 gText_Natures_Adamant[];
+extern const u8 gText_Natures_Bashful[];
+extern const u8 gText_Natures_Bold[];
+extern const u8 gText_Natures_Brave[];
+extern const u8 gText_Natures_Calm[];
+extern const u8 gText_Natures_Careful[];
+extern const u8 gText_Natures_Docile[];
+extern const u8 gText_Natures_Gentle[];
+extern const u8 gText_Natures_Hardy[];
+extern const u8 gText_Natures_Hasty[];
+extern const u8 gText_Natures_Impish[];
+extern const u8 gText_Natures_Jolly[];
+extern const u8 gText_Natures_Lax[];
+extern const u8 gText_Natures_Lonely[];
+extern const u8 gText_Natures_Mild[];
+extern const u8 gText_Natures_Modest[];
+extern const u8 gText_Natures_Naive[];
+extern const u8 gText_Natures_Naughty[];
+extern const u8 gText_Natures_Quiet[];
+extern const u8 gText_Natures_Quirky[];
+extern const u8 gText_Natures_Rash[];
+extern const u8 gText_Natures_Relaxed[];
+extern const u8 gText_Natures_Sassy[];
+extern const u8 gText_Natures_Serious[];
+extern const u8 gText_Natures_Timid[];
+
 //Scrolling Lists
 static const u8* sTutorFerrox[] =
 {
@@ -3277,6 +3304,36 @@ static const u8* sTutorsUteya[] =
 	gText_End,
 };
 
+static const u8* sNatures[] =
+{
+	gText_Natures_Adamant,
+	gText_Natures_Bashful,
+	gText_Natures_Bold,
+	gText_Natures_Brave,
+	gText_Natures_Calm,
+	gText_Natures_Careful,
+	gText_Natures_Docile,
+	gText_Natures_Gentle,
+	gText_Natures_Hardy,
+	gText_Natures_Hasty,
+	gText_Natures_Impish,
+	gText_Natures_Jolly,
+	gText_Natures_Lax,
+	gText_Natures_Lonely,
+	gText_Natures_Mild,
+	gText_Natures_Modest,
+	gText_Natures_Naive,
+	gText_Natures_Naughty,
+	gText_Natures_Quiet,
+	gText_Natures_Quirky,
+	gText_Natures_Rash,
+	gText_Natures_Relaxed,
+	gText_Natures_Sassy,
+	gText_Natures_Serious,
+	gText_Natures_Timid,
+	gText_End,
+};
+
 // Multichoice Lists
 const struct ScrollingMulti gScrollingSets[] =
 {
@@ -3296,6 +3353,7 @@ const struct ScrollingMulti gScrollingSets[] =
 	{sTutorsTsarvosa, ARRAY_COUNT(sTutorsTsarvosa)},
 	{sPokeChipCrusher, ARRAY_COUNT(sPokeChipCrusher)},
 	{sTutorsUteya, ARRAY_COUNT(sTutorsUteya)},
+	{sNatures, ARRAY_COUNT(sNatures)}
 };
 
 //Link number of opts shown at once to the box height

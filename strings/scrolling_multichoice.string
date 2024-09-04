@@ -341,4 +341,79 @@ Gold Bottle Cap[ALIGN][65]35 Pok\eChips
 #org @gText_PokeChipCrusher_MasterBall
 Master Ball[ALIGN][65]50 Pok\eChips
 
+#org @gText_Natures_Adamant
+Adamant[ALIGN][30]([RED]+ Attack[BLUE] - Sp. Attack[BLACK])
+
+#org @gText_Natures_Bashful
+Bashful[ALIGN][30](Neutral)
+
+#org @gText_Natures_Bold
+Bold[ALIGN][30]([RED]+ Defense[BLUE] - Attack[BLACK])
+
+#org @gText_Natures_Brave
+Brave[ALIGN][30]([RED]+ Attack[BLUE] - Speed[BLACK])
+
+#org @gText_Natures_Calm
+Calm[ALIGN][30]([RED]+ Sp. Defense[BLUE] - Attack[BLACK])
+
+#org @gText_Natures_Careful
+Careful[ALIGN][30]([RED]+ Sp. Defense[BLUE] - Sp. Attack[BLACK])
+
+#org @gText_Natures_Docile
+Docile[ALIGN][30](Neutral)
+
+#org @gText_Natures_Gentle
+Gentle[ALIGN][30]([RED]+ Sp. Defense[BLUE] - Defense[BLACK])
+
+#org @gText_Natures_Hardy
+Hardy[ALIGN][30](Neutral)
+
+#org @gText_Natures_Hasty
+Hasty[ALIGN][30]([RED]+ Speed[BLUE] - Defense[BLACK])
+
+#org @gText_Natures_Impish
+Impish[ALIGN][30]([RED]+ Defense[BLUE] - Sp. Attack[BLACK])
+
+#org @gText_Natures_Jolly
+Jolly[ALIGN][30]([RED]+ Speed[BLUE] - Sp. Attack[BLACK])
+
+#org @gText_Natures_Lax
+Lax[ALIGN][30]([RED]+ Defense[BLUE] - Sp. Defense[BLACK])
+
+#org @gText_Natures_Lonely
+Lonely[ALIGN][30]([RED]+ Attack[BLUE] - Defense[BLACK])
+
+#org @gText_Natures_Mild
+Mild[ALIGN][30]([RED]+ Sp. Attack[BLUE] - Defense[BLACK])
+
+#org @gText_Natures_Modest
+Modest[ALIGN][30]([RED]+ Sp. Attack[BLUE] - Attack[BLACK])
+
+#org @gText_Natures_Naive
+Naive[ALIGN][30]([RED]+ Speed[BLUE] - Sp. Defense[BLACK])
+
+#org @gText_Natures_Naughty
+Naughty[ALIGN][30]([RED]+ Attack[BLUE] - Sp. Defense[BLACK])
+
+#org @gText_Natures_Quiet
+Quiet[ALIGN][30]([RED]+ Sp. Attack[BLUE] - Speed[BLACK])
+
+#org @gText_Natures_Quirky
+Quirky[ALIGN][30](Neutral)
+
+#org @gText_Natures_Rash
+Rash[ALIGN][30]([RED]+ Sp. Attack[BLUE] - Sp. Defense[BLACK])
+
+#org @gText_Natures_Relaxed
+Relaxed[ALIGN][30]([RED]+ Defense[BLUE] - Speed[BLACK])
+
+#org @gText_Natures_Sassy
+Sassy[ALIGN][30]([RED]+ Sp. Defense[BLUE] - Speed[BLACK])
+
+#org @gText_Natures_Serious
+Serious[ALIGN][30](Neutral)
+
+#org @gText_Natures_Timid
+Timid[ALIGN][30]([RED]+ Speed[BLUE] - Attack[BLACK])
+
 #endif

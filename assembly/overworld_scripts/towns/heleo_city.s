@@ -67,6 +67,7 @@ EventScript_HeleoCity_ShadyDealer:
     if FALSE _goto ShadyDealerNotEnoughPokeChips
     removeitem ITEM_POKE_CHIP 0x1
     sound 0xF8 @ Money SE
+    waitse
     random 0xE @ 15 items
     switch LASTRESULT
     case 0, ShadyDealerObtainPotion

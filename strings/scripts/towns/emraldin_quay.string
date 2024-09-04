@@ -41,7 +41,7 @@ To the south of Emraldin Quay,\nyou'll find Route 20.\pIt's a rugged route full 
 My boy likes to go camping in the\nWilderness Expanse.\pI'm a little nervous about it,\nthough[.]\pThere are a lot of strong Pok\emon\nout there.\pOh, if only he took up a safer\nhobby[.]
 
 #org @gText_EmraldinQuayNPCHouses_TutorConfirmation
-Greetings, young one.\pI'm a move tutor who specializes in\nnothing but the finest moves.\pIndeed, these moves are so powerful\nthat few Pok\emon can learn them.\pIn exchange for these incredible\nmoves, I only ask for 10 Pok\eChips.\pAre you interested?\n(Held: [BUFFER1])
+Greetings, young one.\pI'm a move tutor who specializes in\nnothing but the finest moves.\pIndeed, these moves are so powerful\nthat few Pok\emon can learn them.\pIn exchange for these incredible\nmoves, I only ask for 10 Pok\eChips.\pAre you interested?\n[BLACK](Held: [BUFFER1])
 
 #org @gText_EmraldinQuayNPCHouses_ConfirmationAccepted
 Hohoho! My reputation precedes me.\pAlright, which move should I teach?
