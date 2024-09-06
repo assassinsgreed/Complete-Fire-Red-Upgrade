@@ -6586,6 +6586,27 @@ const struct TrainerMonNoItemDefaultMoves sParty_CarnelidgeVolcano_ScientistXand
     { .lvl = 55, .species = SPECIES_LUCARIO },
 };
 // #endregion
+
+// #region Uteya Village
+const struct TrainerMonNoItemDefaultMoves sParty_UteyaVillage_PicknickerLisa[] = {
+    { .lvl = 1, .species = SPECIES_CURSOLA },
+    { .lvl = 1, .species = SPECIES_BRELOOM },
+    { .lvl = 1, .species = SPECIES_MR_RIME }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_UteyaVillage_SwimmerTyson[] = {
+    { .lvl = 1, .species = SPECIES_FLAREON },
+    { .lvl = 1, .species = SPECIES_NINJASK },
+    { .lvl = 1, .species = SPECIES_FLORGES }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_UteyaVillage_ScientistWilford[] = {
+    { .lvl = 1, .species = SPECIES_KROOKODILE },
+    { .lvl = 1, .species = SPECIES_NOIVERN },
+    { .lvl = 1, .species = SPECIES_DECIDUEYE }
+};
+// #endregion
+
 // #endregion
 
 #define NO_NAME                                                                                      \
@@ -12326,6 +12347,44 @@ const struct Trainer gTrainers[] = {
         .aiFlags = AI_SCRIPT_SEMI_SMART | AI_SCRIPT_HP_AWARE | AI_SCRIPT_DOUBLE_BATTLE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_CHECK_BAD_MOVE,
         .partySize = NELEMS(sParty_CarnelidgeVolcano_PartnerRival),
         .party = {.ItemCustomMoves = sParty_CarnelidgeVolcano_PartnerRival}
+    },
+    // #endregion
+    // #region Uteya Village
+    [TRAINER_UTEYA_VILLAGE_TRAINER_HOUSE_PICKNICKER_LISA] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_PKMN_TRAINER_3,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .trainerPic = TRAINER_PIC_PICNICKER,
+        .trainerName = {_L, _i, _s, _a, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE,
+        .partySize = NELEMS(sParty_UteyaVillage_PicknickerLisa),
+        .party = {.NoItemDefaultMoves = sParty_UteyaVillage_PicknickerLisa}
+    },
+    [TRAINER_UTEYA_VILLAGE_TRAINER_HOUSE_SWIMMER_TYSON] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_PKMN_TRAINER_3,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
+        .trainerPic = TRAINER_PIC_SWIMMER_M,
+        .trainerName = {_T, _y, _s, _o, _n, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE,
+        .partySize = NELEMS(sParty_UteyaVillage_SwimmerTyson),
+        .party = {.NoItemDefaultMoves = sParty_UteyaVillage_SwimmerTyson}
+    },
+    [TRAINER_UTEYA_VILLAGE_TRAINER_HOUSE_SCIENTIST_WILFORD] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_PKMN_TRAINER_3,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_SCIENTIST_M,
+        .trainerName = {_W, _i, _l, _f, _o, _r, _d, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE,
+        .partySize = NELEMS(sParty_UteyaVillage_ScientistWilford),
+        .party = {.NoItemDefaultMoves = sParty_UteyaVillage_ScientistWilford}
     },
     // #endregion
     // #endregion

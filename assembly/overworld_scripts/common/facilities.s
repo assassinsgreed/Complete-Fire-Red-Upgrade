@@ -481,6 +481,16 @@ TrainerHouse_Common_GiveFullRestore:
     obtainitem ITEM_FULL_RESTORE 0x1
     return
 
+.global TrainerHouse_Common_GiveMaxRevive
+TrainerHouse_Common_GiveMaxRevive:
+    obtainitem ITEM_MAX_REVIVE 0x1
+    return
+
+.global TrainerHouse_Common_GivePPMax
+TrainerHouse_Common_GivePPMax:
+    obtainitem ITEM_PP_MAX 0x1
+    return
+
 m_WalkFromRight: .byte walk_down, walk_left, end_m
 m_WalkFromBelow: .byte walk_left, walk_up, end_m
 m_WalkToBattlefield: .byte walk_up, walk_up, walk_left, walk_left, walk_left, walk_left, walk_up, walk_up, look_right, end_m

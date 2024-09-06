@@ -521,3 +521,209 @@ m_ClancyWalksToPlayer: .byte walk_down, walk_down, end_m
 m_EnaTakesClancysPlace: .byte walk_right, look_down, end_m
 m_EnaReturnsToSeat: .byte walk_left, walk_left, walk_left, walk_up, walk_up, look_right, end_m
 m_ClancyReturnsToSeat: .byte walk_up, walk_up, look_left, end_m
+
+// Trainer House
+.global EventScript_UteyaVillage_TrainerHouse_Host
+EventScript_UteyaVillage_TrainerHouse_Host:
+    faceplayer
+    msgbox gText_UteyaVillage_TrainerHouse_HostIntro MSG_NORMAL
+    goto TrainerHouse_Menu
+    end
+
+TrainerHouse_Menu:
+    msgbox gText_TrainerHouse_MenuIntro MSG_KEEPOPEN
+    multichoiceoption gText_TrainerHouse_BattleChoice 0
+	multichoiceoption gText_TrainerHouse_TrainerHouseRulesChoice 1
+	multichoiceoption gText_TrainerHouse_RulesetChoice 2
+    multichoiceoption gText_TrainerHouse_GrandPrizeChoice 3
+    multichoiceoption gText_End 4
+	multichoice 0x0 0x0 FIVE_MULTICHOICE_OPTIONS FALSE
+	switch LASTRESULT
+	case 0, Trainerhouse_battle
+	case 1, Trainerhouse_trainerhouserules
+	case 2, Trainerhouse_ruleset
+	case 3, Trainerhouse_grandprize
+	case 4, TrainerHouse_Common_End
+    goto TrainerHouse_Common_End @ Cancelled with B
+
+Trainerhouse_battle:
+    checkflag 0xE34 @ Already battled here today
+    if SET _goto TrainerHouse_Common_AlreadyBattledToday
+    call TrainerHousePreBattleSetup
+    call TrainerHouse_Common_MoveToBattlePosition
+    setflag 0x90E @ Scale trainer levels
+    setflag 0x92E @ Benjamin Butterfree battles
+    applymovement 0x1 m_LookUp
+    @ First Opponent
+    msgbox gText_UteyaVillage_TrainerHouse_FirstOpponentArriving MSG_NORMAL
+    setvar 0x8001 0x5
+    call TrainerHouse_Common_OpponentArrives
+    msgbox gText_UteyaVillage_TrainerHouse_B1PicknickerLisaIntro MSG_NORMAL
+    trainerbattle9 0x0 472 0x0 gText_UteyaVillage_TrainerHouse_B1PicknickerLisaWin gText_UteyaVillage_TrainerHouse_B1PicknickerLisaLose
+    call HandleBattleEnded
+    @ Second Opponent
+    msgbox gText_UteyaVillage_TrainerHouse_SecondOpponentArriving MSG_NORMAL
+    setvar 0x8001 0x6
+    call TrainerHouse_Common_OpponentArrives
+    msgbox gText_UteyaVillage_TrainerHouse_B2SwimmerTysonIntro MSG_NORMAL
+    trainerbattle9 0x0 473 0x0 gText_UteyaVillage_TrainerHouse_B2SwimmerTysonWin gText_UteyaVillage_TrainerHouse_B2SwimmerTysonLose
+    call HandleBattleEnded
+    @ Third Opponent
+    msgbox gText_UteyaVillage_TrainerHouse_ThirdOpponentArriving MSG_NORMAL
+    setvar 0x8001 0x7
+    call TrainerHouse_Common_OpponentArrives
+    msgbox gText_UteyaVillage_TrainerHouse_B3ScientistWilfordIntro MSG_NORMAL
+    trainerbattle9 0x0 474 0x0 gText_UteyaVillage_TrainerHouse_B3ScientistWilfordWin gText_UteyaVillage_TrainerHouse_B3ScientistWilfordLose
+    call HandleBattleEnded
+    msgbox gText_UteyaVillage_TrainerHouse_AllOpponentsDefeated MSG_NORMAL
+    call TrainerHouse_Common_ReturnToHost
+    goto TrainerHouseGivePrizes
+
+TrainerHousePreBattleSetup:
+    msgbox gText_UteyaVillage_TrainerHouse_BattleConfirmation MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto TrainerHouse_Common_End
+    msgbox gText_UteyaVillage_TrainerHouse_ChoseBattle MSG_NORMAL
+    setflag 0xE34 @ Already battled today
+    setvar 0x8000 0xFEFE @ Continue lost battles
+    msgbox gText_UteyaVillage_TrainerHouse_HealingPokemon MSG_NORMAL
+    call PlayerHeal
+    msgbox gText_UteyaVillage_TrainerHouse_PreChallengeComment MSG_NORMAL
+    setvar 0x4090 0x0 @ 0 win streak
+    return
+
+HandleBattleEnded:
+    compare LASTRESULT TRUE
+    if equal _goto TrainerHouseStreakLost
+    fanfare 0x10D @ Victory
+    msgbox gText_TrainerHouse_StreakContinues MSG_KEEPOPEN
+    waitfanfare
+    call TrainerHouse_Common_OpponentLeaves
+    addvar 0x4090 0x1
+    return
+
+TrainerHouseStreakLost:
+    fanfare 0x10F @ Failure
+    msgbox gText_UteyaVillage_TrainerHouse_StreakLost MSG_KEEPOPEN
+    waitfanfare
+    fadescreen FADEOUT_BLACK
+    hidesprite 0x5
+    hidesprite 0x6
+    hidesprite 0x7
+    setflag 0x37 @ Hide opponents
+    fadescreen FADEIN_BLACK
+    call TrainerHouse_Common_ReturnToHost
+    compare 0x4090 0x0
+    if equal _goto TrainerHouseDidNotBeatAnyTrainers
+    goto TrainerHouseGivePrizes
+
+TrainerHouseGivePrizes:
+    buffernumber 0x0 0x4090
+    fanfare 0x13D @ Gym victory
+    msgbox gText_TrainerHouse_AnalysisBeatTrainers MSG_KEEPOPEN
+    waitfanfare
+    compare 0x4090 0x1
+    if equal _call TrainerHouseTier1Prizes
+    compare 0x4090 0x2
+    if equal _call TrainerHouseTier2Prizes
+    compare 0x4090 0x3
+    if equal _call TrainerHouseTier3Prizes
+    msgbox gText_TrainerHouse_EndOfBattles MSG_NORMAL
+    goto Trainerhouse_ResetStateAtEnd
+
+TrainerHouseTier1Prizes:
+    random 0x2
+    copyvar 0x8002 LASTRESULT
+    compare 0x8002 0x0
+    if equal _call TrainerHouse_Common_GiveUltraBall
+    compare 0x8002 0x1
+    if equal _call TrainerHouse_Common_GiveMaxPotion
+    return
+
+TrainerHouseTier2Prizes:
+    random 0x3
+    copyvar 0x8003 LASTRESULT
+    compare 0x8003 0x0
+    if equal _call TrainerHouse_Common_GiveUltraBall
+    compare 0x8003 0x1
+    if equal _call TrainerHouse_Common_GiveFullRestore
+    compare 0x8003 0x2
+    if equal _call TrainerHouse_Common_GiveRevive
+    pause DELAY_HALFSECOND
+    call TrainerHouseTier1Prizes
+    return
+
+TrainerHouseTier3Prizes:
+    random 0x3
+    copyvar 0x8004 LASTRESULT
+    compare 0x8004 0x0
+    if equal _call TrainerHouse_Common_GiveFullRestore
+    compare 0x8004 0x1
+    if equal _call TrainerHouse_Common_GiveMaxRevive
+    compare 0x8004 0x2
+    if equal _call TrainerHouse_Common_GivePPMax
+    pause DELAY_HALFSECOND
+    call TrainerHouseTier2Prizes
+    call TrainerHouseCheckForGrandPrize
+    return
+
+TrainerHouseCheckForGrandPrize:
+    incrementgamestat 25
+    checkflag 0x277 @ Got the Pokechip charm
+    if NOT_SET _call TrainerHouseGiveGrandPrize
+    return
+
+TrainerHouseGiveGrandPrize:
+    msgbox gText_UteyaVillage_TrainerHouse_GrandPrizeAwarded MSG_NORMAL
+    fanfare 0x10C @ Big Celebration
+    obtainitem ITEM_POKE_CHIP_CHARM 0x1
+    waitfanfare
+    setflag 0x277 @ Got the Pokechip charm
+    return
+
+TrainerHouseDidNotBeatAnyTrainers:
+    msgbox gText_TrainerHouse_AnalysisBeatNoTrainers MSG_NORMAL
+    goto Trainerhouse_ResetStateAtEnd
+
+Trainerhouse_ResetStateAtEnd:
+    setvar 0x4090 0x0 @ Reset win streak
+    setvar 0x8000 0x0 @ Turn off continuing after losing
+    setvar 0x8001 0x0 @ Reset temp trainer var
+    setvar 0x8002 0x0 @ Reset prize 1 pool var
+    setvar 0x8003 0x0 @ Reset prize 2 pool var
+    setvar 0x8004 0x0 @ Reset prize 3 pool var
+    clearflag 0x92E @ Turn off Benjamin Butterfree battles
+    checkflag 0x4FF @ Trainer level scaling modifier
+    if NOT_SET _call DisableTrainerScalingFlag
+    msgbox gText_TrainerHouse_HealingPokemonAtEnd MSG_NORMAL
+    call PlayerHeal
+    goto TrainerHouse_Common_End
+
+Trainerhouse_trainerhouserules:
+    msgbox gText_TrainerHouse_ChoseTrainerHouseRules MSG_NORMAL
+    goto TrainerHouse_Menu
+
+Trainerhouse_ruleset:
+    msgbox gText_UteyaVillage_TrainerHouse_ChoseRuleset MSG_NORMAL
+    goto TrainerHouse_Menu
+
+Trainerhouse_grandprize:
+    msgbox gText_UteyaVillage_TrainerHouse_ChoseGrandPrize MSG_NORMAL
+    goto TrainerHouse_Menu
+
+.global EventScript_UteyaVillage_TrainerHouse_Man
+EventScript_UteyaVillage_TrainerHouse_Man:
+    msgbox gText_UteyaVillage_TrainerHouse_Man MSG_NORMAL
+    faceplayer
+    npcchatwithmovement gText_UteyaVillage_TrainerHouse_ManAfterFacingPlayer m_LookUp
+    end
+
+.global EventScript_UteyaVillage_TrainerHouse_Boy
+EventScript_UteyaVillage_TrainerHouse_Boy:
+    npcchat gText_UteyaVillage_TrainerHouse_Boy
+    end
+
+.global EventScript_UteyaVillage_TrainerHouse_Girl
+EventScript_UteyaVillage_TrainerHouse_Girl:
+    npcchatwithmovement gText_UteyaVillage_TrainerHouse_Girl m_LookLeft
+    end
