@@ -1112,12 +1112,10 @@ static bool8 SetUpFieldMove_Fly(void)
 	if ((gFollowerState.inProgress && !(gFollowerState.flags & FOLLOWER_FLAG_CAN_LEAVE_ROUTE)) || FlagGet(FLAG_TSARVOSA_GYM_CHALLENGE_ACTIVE))
 		return FALSE;
 
-	#ifdef UNBOUND
-	if (GetCurrentRegionMapSectionId() == MAPSEC_NEWMOON_ISLAND
-	&& VarGet(VAR_DARKRAI_EVENT) < 3)
-		return FALSE; //Can't fly while dreaming
-	#endif
-
+	if (GetCurrentRegionMapSectionId() == MAPSEC_CARNELIDGE_VOLCANO
+	&& VarGet(VAR_MAP_SCENE_CARNELIDGE_VOLCANO_STORY_PROGRESSION) == 15)
+		return FALSE; //Can't fly while concluding the game's story
+	
 	if (Overworld_MapTypeAllowsTeleportAndFly(gMapHeader.mapType) == TRUE)
 	{
 		gFieldCallback2 = NULL; //Undoes when its set when party menu is accessed via R
@@ -1176,6 +1174,10 @@ static bool8 SetUpFieldMove_Teleport(void)
 	if ((gFollowerState.inProgress && !(gFollowerState.flags & FOLLOWER_FLAG_CAN_LEAVE_ROUTE)) || FlagGet(FLAG_TSARVOSA_GYM_CHALLENGE_ACTIVE))
 		return FALSE;
 
+	if (GetCurrentRegionMapSectionId() == MAPSEC_CARNELIDGE_VOLCANO
+	&& VarGet(VAR_MAP_SCENE_CARNELIDGE_VOLCANO_STORY_PROGRESSION) == 15)
+		return FALSE; //Can't teleport while concluding the game's story
+
 	if (Overworld_MapTypeAllowsTeleportAndFly(gMapHeader.mapType) == TRUE)
 	{
 		gFieldCallback2 = FieldCallback_PrepareFadeInFromMenu;
@@ -1220,6 +1222,10 @@ static bool8 SetUpFieldMove_SweetScent(void)
 {
 	if (gMapHeader.mapType == MAP_TYPE_UNDERWATER)
 		return FALSE; //Sweet Scent glitches out sprites underwater
+
+	if (GetCurrentRegionMapSectionId() == MAPSEC_CARNELIDGE_VOLCANO
+	&& VarGet(VAR_MAP_SCENE_CARNELIDGE_VOLCANO_STORY_PROGRESSION) == 15)
+		return FALSE; //Can't use sweet scent while concluding the game's story
 
 	gFieldCallback2 = FieldCallback_PrepareFadeInFromMenu;
 	gPostMenuFieldCallback = FieldCallback_SweetScent;

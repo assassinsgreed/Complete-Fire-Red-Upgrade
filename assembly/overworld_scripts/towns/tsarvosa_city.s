@@ -1158,6 +1158,16 @@ ChoseNotToBattleEVDisciple:
     release
     end
 
+.global SignScript_TsarvosaCity_StatsDojo_WallScroll
+SignScript_TsarvosaCity_StatsDojo_WallScroll:
+    msgbox gText_TsarvosaCity_StatsDojo_WallScroll MSG_SIGN
+    end
+
+.global SignScript_TsarvosaCity_StatsDojo_GymPlacard
+SignScript_TsarvosaCity_StatsDojo_GymPlacard:
+    msgbox gText_TsarvosaCity_StatsDojo_GymPlacard MSG_SIGN
+    end
+
 m_AttendantWalksToPlayer: .byte walk_down, walk_down, end_m
 m_AttendantReturnsToRegularSpot: .byte walk_right, walk_right, walk_up, look_down, end_m
 m_CameraMovesLeft: .byte walk_left, walk_left, walk_left, walk_left, end_m
@@ -1207,7 +1217,7 @@ EventScript_TsarvosaCity_NPCHouses_SlowbroGTrade:
     faceplayer
     checkflag 0x260
     if SET _goto EventScript_SlowbroGTradeComplete
-    msgbox gText_TsarvosaCityNPCHouses_SlwobroTrade_Request MSG_YESNO @ THIS
+    msgbox gText_TsarvosaCityNPCHouses_SlowbroTrade_Request MSG_YESNO @ THIS
     compare LASTRESULT NO
     if TRUE _goto EventScript_SlowbroGTradeDeclined
     // Set up vars needed for trade
@@ -1215,36 +1225,36 @@ EventScript_TsarvosaCity_NPCHouses_SlowbroGTrade:
     copyvar 0x8004 0x8008 @ Set expected mon from Trade #12 (Slowbro)
     special2 LASTRESULT 0xFC // Checks the trade set in 0x8004 and buffers the name of the Pokemon wanted and the given Pokemon
     copyvar 0x8009 LASTRESULT
-    msgbox gText_TsarvosaCityNPCHouses_SlwobroTrade_ChoosingPokemon MSG_NORMAL
+    msgbox gText_TsarvosaCityNPCHouses_SlowbroTrade_ChoosingPokemon MSG_NORMAL
     call SelectTradePokemon
     compare 0x8004 0x6
     if greaterorequal _goto EventScript_SlowbroGTradeDeclined
     call CheckTradePokemonSelected
     comparevars LASTRESULT 0x8009
     if notequal _goto EventScript_SlowbroGTradeWrongPokemon
-    msgbox gText_TsarvosaCityNPCHouses_SlwobroTrade_PokemonChoiceConfirmation MSG_YESNO
+    msgbox gText_TsarvosaCityNPCHouses_SlowbroTrade_PokemonChoiceConfirmation MSG_YESNO
     compare LASTRESULT NO
     if equal _goto EventScript_SlowbroGTradeDeclined
-    msgbox gText_TsarvosaCityNPCHouses_SlwobroTrade_InitiatingTrade MSG_NORMAL
+    msgbox gText_TsarvosaCityNPCHouses_SlowbroTrade_InitiatingTrade MSG_NORMAL
     call InitiateTrade
     setflag 0x260
     goto EventScript_SlowbroGTradeComplete
 
 EventScript_SlowbroGTradeDeclined:
-    npcchatwithmovement gText_TsarvosaCityNPCHouses_SlwobroTrade_Declined m_LookRight
+    npcchatwithmovement gText_TsarvosaCityNPCHouses_SlowbroTrade_Declined m_LookRight
     goto End
 
 EventScript_SlowbroGTradeWrongPokemon:
-    npcchatwithmovement gText_TsarvosaCityNPCHouses_SlwobroTrade_WrongPokemon m_LookRight
+    npcchatwithmovement gText_TsarvosaCityNPCHouses_SlowbroTrade_WrongPokemon m_LookRight
     goto End
 
 EventScript_SlowbroGTradeComplete:
-    npcchatwithmovement gText_TsarvosaCityNPCHouses_SlwobroTrade_Complete m_LookRight
+    npcchatwithmovement gText_TsarvosaCityNPCHouses_SlowbroTrade_Complete m_LookRight
     goto End
 
 .global EventScript_TsarvosaCity_NPCHouses_SlowbroGTradeMother
 EventScript_TsarvosaCity_NPCHouses_SlowbroGTradeMother:
-    npcchatwithmovement gText_TsarvosaCityNPCHouses_SlwobroTradeMother m_LookUp
+    npcchatwithmovement gText_TsarvosaCityNPCHouses_SlowbroTradeMother m_LookUp
     end
 
 .global EventScript_TsarvosaCity_NPCHouses_DevTeamCollin
@@ -1419,6 +1429,7 @@ EventScript_TsarvosaCity_GymTraineeCafe_Attendant:
 
 .global EventScript_TsarvosaCity_GymTraineeCafe_Noam
 EventScript_TsarvosaCity_GymTraineeCafe_Noam:
+    lock
     bufferstring 0x0 gText_TsarvosaCity_GymTraineeCafe_TraineeNoam
     bufferstring 0x1 gText_Common_TypeNormal
     bufferstring 0x2 gText_TsarvosaCity_GymTraineeCafe_TraineeNoam_TrainedUnder
@@ -1453,6 +1464,7 @@ TutorNormal3:
 
 .global EventScript_TsarvosaCity_GymTraineeCafe_Ashley
 EventScript_TsarvosaCity_GymTraineeCafe_Ashley:
+    lock
     bufferstring 0x0 gText_TsarvosaCity_GymTraineeCafe_TraineeAshley
     bufferstring 0x1 gText_Common_TypeFire
     bufferstring 0x2 gText_TsarvosaCity_GymTraineeCafe_TraineeAshley_TrainedUnder
@@ -1487,6 +1499,7 @@ TutorFire3:
 
 .global EventScript_TsarvosaCity_GymTraineeCafe_Chelsea
 EventScript_TsarvosaCity_GymTraineeCafe_Chelsea:
+    lock
     bufferstring 0x0 gText_TsarvosaCity_GymTraineeCafe_TraineeChelsea
     bufferstring 0x1 gText_Common_TypeWater
     bufferstring 0x2 gText_TsarvosaCity_GymTraineeCafe_TraineeChelsea_TrainedUnder
@@ -1521,6 +1534,7 @@ TutorWater3:
 
 .global EventScript_TsarvosaCity_GymTraineeCafe_Buddy
 EventScript_TsarvosaCity_GymTraineeCafe_Buddy:
+    lock
     bufferstring 0x0 gText_TsarvosaCity_GymTraineeCafe_TraineeBuddy
     bufferstring 0x1 gText_Common_TypeGrass
     bufferstring 0x2 gText_TsarvosaCity_GymTraineeCafe_TraineeBuddy_TrainedUnder
@@ -1555,6 +1569,7 @@ TutorGrass3:
 
 .global EventScript_TsarvosaCity_GymTraineeCafe_Gawain
 EventScript_TsarvosaCity_GymTraineeCafe_Gawain:
+    lock
     bufferstring 0x0 gText_TsarvosaCity_GymTraineeCafe_TraineeGawain
     bufferstring 0x1 gText_Common_TypeFighting
     bufferstring 0x2 gText_TsarvosaCity_GymTraineeCafe_TraineeGawain_TrainedUnder
@@ -1589,6 +1604,7 @@ TutorFighting3:
 
 .global EventScript_TsarvosaCity_GymTraineeCafe_Skylar
 EventScript_TsarvosaCity_GymTraineeCafe_Skylar:
+    lock
     bufferstring 0x0 gText_TsarvosaCity_GymTraineeCafe_TraineeSkylar
     bufferstring 0x1 gText_Common_TypeFlying
     bufferstring 0x2 gText_TsarvosaCity_GymTraineeCafe_TraineeSkylar_TrainedUnder
@@ -1623,6 +1639,7 @@ TutorFlying3:
 
 .global EventScript_TsarvosaCity_GymTraineeCafe_Bella
 EventScript_TsarvosaCity_GymTraineeCafe_Bella:
+    lock
     bufferstring 0x0 gText_TsarvosaCity_GymTraineeCafe_TraineeBella
     bufferstring 0x1 gText_Common_TypePoison
     bufferstring 0x2 gText_TsarvosaCity_GymTraineeCafe_TraineeBella_TrainedUnder
@@ -1657,6 +1674,7 @@ TutorPoison3:
 
 .global EventScript_TsarvosaCity_GymTraineeCafe_Flash
 EventScript_TsarvosaCity_GymTraineeCafe_Flash:
+    lock
     bufferstring 0x0 gText_TsarvosaCity_GymTraineeCafe_TraineeFlash
     bufferstring 0x1 gText_Common_TypeElectric
     bufferstring 0x2 gText_TsarvosaCity_GymTraineeCafe_TraineeFlash_TrainedUnder
@@ -1691,6 +1709,7 @@ TutorElectric3:
 
 .global EventScript_TsarvosaCity_GymTraineeCafe_Terra
 EventScript_TsarvosaCity_GymTraineeCafe_Terra:
+    lock
     bufferstring 0x0 gText_TsarvosaCity_GymTraineeCafe_TraineeTerra
     bufferstring 0x1 gText_Common_TypeGround
     bufferstring 0x2 gText_TsarvosaCity_GymTraineeCafe_TraineeTerra_TrainedUnder
@@ -1725,6 +1744,7 @@ TutorGround3:
 
 .global EventScript_TsarvosaCity_GymTraineeCafe_Seifa
 EventScript_TsarvosaCity_GymTraineeCafe_Seifa:
+    lock
     bufferstring 0x0 gText_TsarvosaCity_GymTraineeCafe_TraineeSeifa
     bufferstring 0x1 gText_Common_TypePsychic
     bufferstring 0x2 gText_TsarvosaCity_GymTraineeCafe_TraineeSeifa_TrainedUnder
@@ -1759,6 +1779,7 @@ TutorPsychic3:
 
 .global EventScript_TsarvosaCity_GymTraineeCafe_Rocco
 EventScript_TsarvosaCity_GymTraineeCafe_Rocco:
+    lock
     bufferstring 0x0 gText_TsarvosaCity_GymTraineeCafe_TraineeRocco
     bufferstring 0x1 gText_Common_TypeRock
     bufferstring 0x2 gText_TsarvosaCity_GymTraineeCafe_TraineeRocco_TrainedUnder
@@ -1793,6 +1814,7 @@ TutorRock3:
 
 .global EventScript_TsarvosaCity_GymTraineeCafe_Janice
 EventScript_TsarvosaCity_GymTraineeCafe_Janice:
+    lock
     textcolor RED
     bufferstring 0x0 gText_TsarvosaCity_GymTraineeCafe_TraineeJanice
     bufferstring 0x1 gText_Common_TypeIce
@@ -1828,6 +1850,7 @@ TutorIce3:
 
 .global EventScript_TsarvosaCity_GymTraineeCafe_Antoinette
 EventScript_TsarvosaCity_GymTraineeCafe_Antoinette:
+    lock
     bufferstring 0x0 gText_TsarvosaCity_GymTraineeCafe_TraineeAntoinette
     bufferstring 0x1 gText_Common_TypeBug
     bufferstring 0x2 gText_TsarvosaCity_GymTraineeCafe_TraineeAntoinette_TrainedUnder
@@ -1862,6 +1885,7 @@ TutorBug3:
 
 .global EventScript_TsarvosaCity_GymTraineeCafe_Ryu
 EventScript_TsarvosaCity_GymTraineeCafe_Ryu:
+    lock
     bufferstring 0x0 gText_TsarvosaCity_GymTraineeCafe_TraineeRyu
     bufferstring 0x1 gText_Common_TypeDragon
     bufferstring 0x2 gText_TsarvosaCity_GymTraineeCafe_TraineeRyu_TrainedUnder
@@ -1896,6 +1920,7 @@ TutorDragon3:
 
 .global EventScript_TsarvosaCity_GymTraineeCafe_Caspar
 EventScript_TsarvosaCity_GymTraineeCafe_Caspar:
+    lock
     bufferstring 0x0 gText_TsarvosaCity_GymTraineeCafe_TraineeCaspar
     bufferstring 0x1 gText_Common_TypeGhost
     bufferstring 0x2 gText_TsarvosaCity_GymTraineeCafe_TraineeCaspar_TrainedUnder
@@ -1930,6 +1955,7 @@ TutorGhost3:
 
 .global EventScript_TsarvosaCity_GymTraineeCafe_Darcy
 EventScript_TsarvosaCity_GymTraineeCafe_Darcy:
+    lock
     bufferstring 0x0 gText_TsarvosaCity_GymTraineeCafe_TraineeDarcy
     bufferstring 0x1 gText_Common_TypeDark
     bufferstring 0x2 gText_TsarvosaCity_GymTraineeCafe_TraineeDarcy_TrainedUnder
@@ -1964,6 +1990,7 @@ TutorDark3:
 
 .global EventScript_TsarvosaCity_GymTraineeCafe_Mason
 EventScript_TsarvosaCity_GymTraineeCafe_Mason:
+    lock
     bufferstring 0x0 gText_TsarvosaCity_GymTraineeCafe_TraineeMason
     bufferstring 0x1 gText_Common_TypeSteel
     bufferstring 0x2 gText_TsarvosaCity_GymTraineeCafe_TraineeMason_TrainedUnder
@@ -1998,6 +2025,7 @@ TutorSteel3:
 
 .global EventScript_TsarvosaCity_GymTraineeCafe_Faye
 EventScript_TsarvosaCity_GymTraineeCafe_Faye:
+    lock
     bufferstring 0x0 gText_TsarvosaCity_GymTraineeCafe_TraineeFaye
     bufferstring 0x1 gText_Common_TypeFairy
     bufferstring 0x2 gText_TsarvosaCity_GymTraineeCafe_TraineeFaye_TrainedUnder

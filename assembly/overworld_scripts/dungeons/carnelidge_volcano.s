@@ -395,6 +395,7 @@ BattleAlistair:
     msgbox gText_CarnelidgeVolcanoPeak_Conclusion_AlistairSharesHisNewMotivations MSG_NORMAL
     showsprite Selene
     applymovement Selene m_SeleneWalksTowardGroup
+    waitmovement Selene
     msgbox gText_CarnelidgeVolcanoPeak_Conclusion_RivalAcknowledgesAlistairsMotivations MSG_NORMAL
     applymovement Selene m_SeleneApproachesAlistair
     waitmovement Selene
@@ -476,7 +477,7 @@ BattleAlistair:
     clearflag 0x271 @ No longer in the empty world
     setflag 0x56 @ Hide Ena on Route 11 South and Alistair here
     setflag 0x273 @ Has completed the Carnelidge Volcano events
-    addvar VarStorySequence 0x1 @ Conclude the story event
+    addvar VarStorySequence 0x5 @ Conclude the story event. This is incremented dramatically to ensure Flying/Teleporting/etc will be usable again
     end
 
 HandleJirachisAwakening:
