@@ -91,7 +91,7 @@
 [BLACK][RIVAL]: [BLUE]I played a part in\nsomething terrible, maybe even\lpermanent[.]\pLook around. There are no birds in\nthe sky[.]\pNo Pok\emon rustling around in the\ngrass[.]\pIt's like the life has been sucked\nout of the world.
 
 #org @gText_EmptyWorld_RivalAsksPlayerFavor
-[BLACK][RIVAL]: [BLUE][PLAYER], I have a favour\nto ask of you.\pDon't feel pressured to say yes,\neither.\pEspecially after everything that's\nhappened.\p[PLAYER], would you go to Ultra\nSpace with me?
+[BLACK][RIVAL]: [BLUE][PLAYER], I have a favour\nto ask of you.\pDon't feel pressured to say yes,\neither.\pEspecially after everything that's\nhappened.\p[PLAYER], would you go with me to\nthe Interdimensional Research\lFacility?
 
 #org @gText_EmptyWorld_PlayerDoesNotWantToGoToUltraSpace
 [BLACK][RIVAL]: [BLUE]I understand.\pIt's too dangerous, and so much has\nalready happened.\pI[.] I'm scared, but I can do this.\nI have to.\pCould I ask you to come see me off,\nat least?\pIt'd really help put my nerves at\nease.\pI'll see you later, I hope.\nTake care, [PLAYER].
@@ -143,7 +143,7 @@ I'm going to go hiking with my son\nand our Pok\emon soon!\pIt's going to be so 
 I'd offer to heal you and your\nPok\emon, but[.]\pOh, why is this happening? What did\nwe do to deserve this?
 
 #org @gText_EmptyWorld_Route13RestHouse_BookshelfGirl
-Ugh, this sucks.\pWhy do I have to study while I'm on\nvacation? So lame!
+I wonder how many of the people in\nthis guest book came with their\lPok\emon?\pUgh[.] I don't want to think about that\nright now[.]
 
 #org @gText_EmptyWorld_MalfunctioningPC
 The PC is malfunctioning.\nIt can't be used right now.

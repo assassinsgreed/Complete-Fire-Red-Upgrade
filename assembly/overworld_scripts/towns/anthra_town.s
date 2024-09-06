@@ -200,6 +200,7 @@ LevelScripts_AnthraTown_GenChoice:
 
 LevelScript_GenChoice_Main:
 	lock
+	setflag 0x056 @ Hide Ena on Route 11 South
 	spriteface PLAYER look_down
 	setvar 0x4056 0x1
 	sethealingplace 0x01 @ Player's house

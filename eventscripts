@@ -2171,6 +2171,9 @@ npc 12 1 9 EventScript_TsarvosaCity_StatsDojo_DefenseDisciple
 npc 12 1 10 EventScript_TsarvosaCity_StatsDojo_SpecialAttackDisciple
 npc 12 1 11 EventScript_TsarvosaCity_StatsDojo_SpecialDefenseDisciple
 npc 12 1 12 EventScript_TsarvosaCity_StatsDojo_SpeedDisciple
+sign 12 1 0 SignScript_TsarvosaCity_StatsDojo_WallScroll
+sign 12 1 1 SignScript_TsarvosaCity_StatsDojo_GymPlacard
+sign 12 1 2 SignScript_TsarvosaCity_StatsDojo_GymPlacard
 ## Gym Trainee Cafe
 map 2 0 MapScript_GymTraineeCafe
 npc 2 0 0 EventScript_TsarvosaCity_GymTraineeCafe_Attendant

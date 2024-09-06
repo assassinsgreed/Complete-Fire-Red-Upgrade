@@ -561,7 +561,7 @@
             "mapgroup": 1,
             "mapnum": 43,
             "grass": {
-                "rate": 7,
+                "rate": 3,
                 "pokemon": [
                     { "low": 49, "high": 52, "species": "SPECIES_TORKOAL" },
                     { "low": 50, "high": 53, "species": "SPECIES_CARKOL" },
@@ -588,7 +588,7 @@
                 ]
             },
             "surfing": {
-                "rate": 50,
+                "rate": 13,
                 "pokemon": [
                     { "low": 49, "high": 52, "species": "SPECIES_SLUGMA" },
                     { "low": 50, "high": 53, "species": "SPECIES_SLUGMA" },
@@ -602,7 +602,7 @@
             "mapgroup": 1,
             "mapnum": 44,
             "grass": {
-                "rate": 7,
+                "rate": 3,
                 "pokemon": [
                     { "low": 49, "high": 52, "species": "SPECIES_TORKOAL" },
                     { "low": 50, "high": 53, "species": "SPECIES_CARKOL" },
@@ -633,7 +633,7 @@
             "mapgroup": 1,
             "mapnum": 45,
             "grass": {
-                "rate": 7,
+                "rate": 3,
                 "pokemon": [
                     { "low": 49, "high": 52, "species": "SPECIES_TORKOAL" },
                     { "low": 50, "high": 53, "species": "SPECIES_CARKOL" },
@@ -650,7 +650,7 @@
                 ]
             },
             "surfing": {
-                "rate": 50,
+                "rate": 13,
                 "pokemon": [
                     { "low": 49, "high": 52, "species": "SPECIES_SLUGMA" },
                     { "low": 50, "high": 53, "species": "SPECIES_SLUGMA" },
@@ -664,7 +664,7 @@
             "mapgroup": 1,
             "mapnum": 46,
             "grass": {
-                "rate": 7,
+                "rate": 3,
                 "pokemon": [
                     { "low": 49, "high": 52, "species": "SPECIES_TORKOAL" },
                     { "low": 50, "high": 53, "species": "SPECIES_CARKOL" },
@@ -969,7 +969,7 @@
             "mapgroup": 1,
             "mapnum": 74,
             "grass": {
-                "rate": 7,
+                "rate": 3,
                 "pokemon": [
                     { "low": 49, "high": 52, "species": "SPECIES_TORKOAL" },
                     { "low": 50, "high": 53, "species": "SPECIES_CARKOL" },
@@ -996,7 +996,7 @@
                 ]
             },
             "surfing": {
-                "rate": 50,
+                "rate": 13,
                 "pokemon": [
                     { "low": 49, "high": 52, "species": "SPECIES_SLUGMA" },
                     { "low": 50, "high": 53, "species": "SPECIES_SLUGMA" },

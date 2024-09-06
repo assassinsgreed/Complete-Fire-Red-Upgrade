@@ -12,12 +12,12 @@ MapScript_Route13:
 
 Route13_HandleGruntVisibility:
     checkflag 0x826 @ Has Tsarvosa City gym badge
-    if SET _goto MoveGruntsIntoPosition
+    if SET _goto MoveHikersIntoPosition
     end
 
-MoveGruntsIntoPosition:
-    movesprite2 26 0x47 0x15
-    movesprite2 27 0x48 0x15
+MoveHikersIntoPosition:
+    movesprite2 26 0x47 0x16
+    movesprite2 27 0x48 0x16
     end
 
 .global EventScript_Route13_FindTM39RockTomb
@@ -129,6 +129,7 @@ EventScript_Route13_RestHouse_Merchant:
     end
 
 MerchantShop:
+    lock
     msgbox gText_Route13_RestHouse_MerchantOpensShop MSG_KEEPOPEN
     pokemart RestHouseItems
     return
@@ -146,6 +147,7 @@ RestHouseItems:
 .global EventScript_Route13_RestHouse_Nurse
 EventScript_Route13_RestHouse_Nurse:
     faceplayer
+    lock
     msgbox gText_Route13_RestHouse_Nurse MSG_NORMAL
     call PlayerHealNurse
     msgbox gText_Route13_RestHouse_NurseHealed MSG_NORMAL
