@@ -71,6 +71,7 @@
 #define FLAG_SHOW_IVS_IN_SUMMARY 0x92B //If set, IV ratings will be shown in the summary screen
 #define FLAG_CAMOMONS_BATTLE 0x92C //If set, the camomon battle style is used
 #define FLAG_DREAM_WHITE_OUT_TEXT 0x92D //If set, the player receives the "Dream" whiteout text when losing. Recommended to pair with SET_HEALING_PLACE_HACK
+#define FLAG_BENJAMIN_BUTTERFREE_BATTLE 0x92E //If set, all battles become Benjamin Butterfree battles, where pokemon temporarily devolve when reaching 0HP
 #define FLAG_DAILY_EVENTS_START 0xE00 //To flag + 0xFF, resets every new day.
 
 /*===== Start Menu/Poketools Flags =====*/

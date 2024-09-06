@@ -178,3 +178,82 @@ Alright, we're done here.\pIt's nature has shifted to the one\nyou asked for.\pT
 
 #org @gText_UteyaVillage_ClancyAndEnasHouse_Clancy_TransactionComplete
 Come back if you want another nature\nchanged.\pIt'll be 10 Pok\eChips as usual.
+
+// Trainer House
+#org @gText_UteyaVillage_TrainerHouse_HostIntro
+[BLUE]Yo, yo, yo! Welcome to the Uteya\nVillage Trainer House!\pI'm Mort, and I'll be your fine host\non this fine day.\pYou're [PLAYER], yeah?\pCool. Let's get some sweet battles\ngoing, you dig?
+
+#org @gText_UteyaVillage_TrainerHouse_FirstOpponentArriving
+[BLUE]First opponent, coming up!
+
+#org @gText_UteyaVillage_TrainerHouse_B1PicknickerLisaIntro
+[RED]Um[.] Don't think that just because I'm\nyoung that I'll be easy to beat.
+
+#org @gText_UteyaVillage_TrainerHouse_B1PicknickerLisaWin
+Oh! You beat me?\nI didn't expect that[.]
+
+#org @gText_UteyaVillage_TrainerHouse_B1PicknickerLisaLose
+See? Told ya so!
+
+#org @gText_UteyaVillage_TrainerHouse_SecondOpponentArriving
+[BLUE]Here comes your next opponent!
+
+#org @gText_UteyaVillage_TrainerHouse_B2SwimmerTysonIntro
+[BLUE]Sup, little dude?\pI hate to break it to you, but your\nstreak is ending right here.
+
+#org @gText_UteyaVillage_TrainerHouse_B2SwimmerTysonWin
+No way! Looks like you're moving on\nafter all.
+
+#org @gText_UteyaVillage_TrainerHouse_B2SwimmerTysonLose
+Hook, line, and sinker!
+
+#org @gText_UteyaVillage_TrainerHouse_ThirdOpponentArriving
+[BLUE]Your last, but certainly not least\nopponent is heading down now!
+
+#org @gText_UteyaVillage_TrainerHouse_B3ScientistWilfordIntro
+[BLUE]I've devoted myself to studying the\nBenjamin Butterfree phenomenon.\pWhat I'm trying to say is that I've\nmastered it, and I'll prove it now.
+
+#org @gText_UteyaVillage_TrainerHouse_B3ScientistWilfordWin
+Hm! So you've mastered this style\ntoo, have you?
+
+#org @gText_UteyaVillage_TrainerHouse_B3ScientistWilfordLose
+Do not be discouraged. You can\nsurely learn from my expertise.
+
+#org @gText_UteyaVillage_TrainerHouse_AllOpponentsDefeated
+[BLUE]Unbelievable! [PLAYER] has defeated\nall three trainers!\pGive them a hand, everyone!
+
+#org @gText_UteyaVillage_TrainerHouse_BattleConfirmation
+[BLUE]You'll be going toe to toe with other\ntrainers, using the Pok\emon you\lhave with you right now.\pThat's cool with you?
+
+#org @gText_UteyaVillage_TrainerHouse_ChoseBattle
+[BLUE]Aw yeah! I'm getting fired up just\nhearing that!\pLet's get you in there and get into\nsome totally sick battles!
+
+#org @gText_UteyaVillage_TrainerHouse_HealingPokemon
+[BLUE]Let me heal your Pok\emon up real\nquick.\pGotta have clean fights, after all.\pWouldn't want to catch the wrong\nkind of attention from the\lauthorities[.]
+
+#org @gText_UteyaVillage_TrainerHouse_PreChallengeComment
+[BLUE]Alright, we're ready to throw down.\pHead on up to the stage and get\nready to battle.
+
+#org @gText_UteyaVillage_TrainerHouse_StreakLost
+[BLUE]Ouch, with that loss, your challenge\nis over[.] That's gotta sting!\pCome on down, [PLAYER].
+
+#org @gText_UteyaVillage_TrainerHouse_GrandPrizeAwarded
+[BLUE]Hey, look at that!\pIt's your first time winning at this\nTrainer House.\pThat earns you the grand prize, the\nPok\eChip Charm!
+
+#org @gText_UteyaVillage_TrainerHouse_ChoseRuleset
+[BLUE]This Trainer House specializes in the\nBenjamin Butterfree battle style.\pThis unusual style was popularized in\nthe Borrius region.\pThe rules are the same as a normal\nbattle, but don't be fooled!\pUnlike normal battles, a Pok\emon\ndoesn't necessarily faint when it's\lHP hits 0.\pInstead, it'll devolve into it's\nprevious forms, if possible, and\lwill only faint when it's no longer\lpossible.\pDon't sweat it though, baby. The\neffect will be reversed when the\lbattle ends.\pThese battles are pretty unusual, so\nnaturally they come with a catch.\pYour Pok\emon will be fully healed\nwhen the battle ends.\pAs a trade-off, you won't gain any\nEXP for defeating your opponents.\pLife is full of ups and downs, isn't\nit?\pKeep a cool head, and keep knocking\n'em down till you win the fight!
+
+#org @gText_UteyaVillage_TrainerHouse_ChoseGrandPrize
+[BLUE]This Trainer House's grand prize is\nnone other than a Pok\eChip Charm!\pWith this bad boy, you can expect\nto find a lot more Pok\eChips from\lwild Pok\emon.\pTalk about rad, am I right?
+
+#org @gText_UteyaVillage_TrainerHouse_Man
+Hoo hoo! The battles here sure are\nsomething.
+
+#org @gText_UteyaVillage_TrainerHouse_ManAfterFacingPlayer
+Pok\emon devolving after being\ndefeated is quite something, huh?\pI wonder how the trainers in Borrius\ncame up with this battle style?
+
+#org @gText_UteyaVillage_TrainerHouse_Boy
+Hmm[.] I guess it'd be smart to bring\nfully evolved Pok\emon with me.\pThat way, it'll be much harder for\nmy opponent to take me out.
+
+#org @gText_UteyaVillage_TrainerHouse_Girl
+I'd really like to win that grand\nprize, the Pok\eChip Charm.\pFinding more Pok\eChips would help me\nteach my Pok\emon stronger moves!

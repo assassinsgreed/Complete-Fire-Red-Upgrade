@@ -651,7 +651,7 @@
 #define FLAG_PERMITTED_TO_GO_TO_ULTRA_SPACE              0x274
 #define FLAG_POIPOLE_EXPLAINED                           0x275
 #define FLAG_RECEIVED_POIPOLE_GIFT                       0x276
-#define FLAG_0x277                                       0x277
+#define FLAG_GOT_POKECHIP_CHARM                          0x277
 #define FLAG_GOT_HITMON_FROM_DOJO                        0x278
 #define FLAG_0x279                                       0x279
 #define FLAG_SILPH_2F_DOOR_1                             0x27A
@@ -1394,6 +1394,7 @@ Daily Flags, cleared at the start of each day.  Goes up to 0xEFF
 /*
 #define FLAG_SLOWPOKE_NEWS_SPECIES_SET        0xE32
 #define FLAG_SLOWPOKE_NEWS_COMPLETED          0xE33
+#define FLAG_UTEYA_VILLAGE_TRAINER_HOUSE      0xE34
 */
 
 #define FLAG_TRAINER_FLAG_START 0x500

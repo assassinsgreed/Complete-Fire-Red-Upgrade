@@ -2651,3 +2651,9 @@ npc 14 2 2 EventScript_UteyaVillage_SlowpokeNews_Editor
 map 14 3 MapScript_UteyaVillage_ClancyAndEnasHouse
 npc 14 3 0 EventScript_UteyaVillage_Clancy
 npc 14 3 1 EventScript_UteyaVillage_Ena
+## Trainer House
+npc 14 4 0 EventScript_UteyaVillage_TrainerHouse_Host
+npc 14 4 1 EventScript_UteyaVillage_TrainerHouse_Man
+npc 14 4 2 EventScript_UteyaVillage_TrainerHouse_Boy
+npc 14 4 3 EventScript_UteyaVillage_TrainerHouse_Girl
+### Note: Events 4-6 are for opponents
