@@ -257,3 +257,36 @@ Hmm[.] I guess it'd be smart to bring\nfully evolved Pok\emon with me.\pThat way
 
 #org @gText_UteyaVillage_TrainerHouse_Girl
 I'd really like to win that grand\nprize, the Pok\eChip Charm.\pFinding more Pok\eChips would help me\nteach my Pok\emon stronger moves!
+
+#org @gText_UteyaVillage_Gym_Copycat_IntroducesThemselves
+Hey! I'm [BUFFER1].\nYou're [PLAYER]? Nice to meet you!\pI'm taking the gym challenge too.\pLet's team up to beat this gym's\npuzzles!\pI heard we need to both step on\nswitches at the same time to move\lforward.\pWe'll have to work together.\nI'll just follow your lead, okay?\pLet's go slowly so we don't trip\nover each other.\pYou should hit your switch at the\nsame time as me or after me.\pOh, and one other thing[.]\pIf you run into any gym trainers,\nyou'll be on your own in battle.\pOkay! Let's do this!
+
+#org @gText_UteyaVillage_Gym_Copycat_AskPlayerWhatTheyNeed
+What's wrong?\nAre you okay to keep going?
+
+#org @gText_UteyaVillage_Gym_Copycat_ContinuingChallenge
+Alright, let's solve this puzzle!
+
+#org @gText_UteyaVillage_Gym_Copycat_PausingChallenge
+Okay! It's good to take a breather\nfrom time to time.\pI'll guide you back to the\nentrance.
+
+#org @gText_UteyaVillage_Gym_Copycat_BothSwitchesPressed
+We did it, nice!\pI'll meet you up ahead when you're\nready.
+
+#org @gText_UteyaVillage_Gym_Copycat_BothSwitchesPressed_FinalPuzzle
+Awesome! We finished every puzzle at\nthis gym!\pYou rock, [PLAYER]!\pI'm going to go prepare for my\nbattle with the gym leaders.\pGood luck, [PLAYER]!\nI'll root for you!
+
+#org @gText_UteyaVillage_Gym_Copycat_SubsequentRooms
+Let's do this, [PLAYER]!
+
+#org @gText_UteyaVillage_Gym_ExpertTips
+Yo, superstar! This is a bittersweet\nreunion, isn't it?\pThis is the last gym you need to\nconquer on your gym challenge.\pNo time to get sentimental though.\nI have a job to do!\pDennis and Dee have been the gym\nleaders here for over a decade.\pThey specialize in Double Battles.\pRemember that some moves and\nabilities change in these battles.\pAlso, some moves and abilities are\nonly useful in double battles.\pKeep these tips in mind and you're\nsure to come out on top!\pNow let's talk about the gym\npuzzle[.]\pThis gym emphasizes teamwork both in\nand outside battle.\pYou'll need to coordinate with a\npartner to press switches at the\lsame time in order to progress.\pDon't sweat it, though.\pI've got a partner in mind that I\nthink you'll really get along with.\pAlright, superstar. You're in the\nhome stretch now.\pTime for a brilliant finish!
+
+#org @gText_UteyaVillage_Gym_ExpertBadgeObtained
+Yo, superstar! You've done it!\pYou've acquired every gym badge in\nKulure! Way to go!\pAll that's left is to challenge the\nElite Four and Champion.\pGood luck, kiddo!\nI'll be rooting for you!
+
+#org @gText_UteyaVillageGym_Winners
+Uteya Village Gym\nVictors: [RIVAL]
+
+#org @gText_UteyaVillageGym_WinnersWithBadge
+Uteya Village Gym\nVictors: [RIVAL], [PLAYER]

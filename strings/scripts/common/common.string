@@ -446,3 +446,9 @@ What is the grand prize?
 
 #org @gText_TrainerHouse_HealingPokemonAtEnd
 [BLUE]And for being such a good sport, I'll\nheal your Pok\emon up again.
+
+#org @gText_CopycatName_Male
+Liam
+
+#org @gText_CopycatName_Female
+Emily

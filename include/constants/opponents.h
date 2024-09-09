@@ -528,7 +528,7 @@
 #define TRAINER_CARNELIDGE_VOLCANO_ALISTAIR              470
 // Carnelidge Volcano Battle Partner
 #define TRAINER_CARNELIDGE_VOLCANO_PARTNER_RIVAL         471
-// Uteya Village
+// Uteya Village (Gym trainers are split to allow interesting class/gender combos)
 #define TRAINER_UTEYA_VILLAGE_TRAINER_HOUSE_PICKNICKER_LISA 472
 #define TRAINER_UTEYA_VILLAGE_TRAINER_HOUSE_SWIMMER_TYSON 473
 #define TRAINER_UTEYA_VILLAGE_TRAINER_HOUSE_SCIENTIST_WILFORD 474

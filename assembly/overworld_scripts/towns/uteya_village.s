@@ -12,6 +12,7 @@ MapScript_UteyaVillage:
 
 MapEntryScript_UteyaVillage_FlightSpot:
     setworldmapflag 0x89A @ Visited Uteya Village
+    setflag 0x3C @ Safety check - hide copycat in the gym when revisiting the overworld (and NPCs in many other places)
     end
 
 .global EventScript_UteyaVillage_HessonPassKid
@@ -377,8 +378,6 @@ ChooseNature:
     msgbox gText_UteyaVillage_ClancyAndEnasHouse_Clancy_NatureConfirmation MSG_YESNO
     compare LASTRESULT NO
     if equal _goto ChooseNature
-    @ TODO: For some reason, the "Already this nature" check ONLY works when the chosen pokemon is in the first slot
-    @ This makes no sense, because we're getting the pokemon out of a slot index and reading it's data
     callasm SwitchMonNature @ Nature change technically happens here, if LASTRESULT is true
     compare LASTRESULT FALSE @ Check if the pokemon is already this nature
     if equal _goto ChosenPokemonIsAlreadyChosenNature
@@ -726,4 +725,220 @@ EventScript_UteyaVillage_TrainerHouse_Boy:
 .global EventScript_UteyaVillage_TrainerHouse_Girl
 EventScript_UteyaVillage_TrainerHouse_Girl:
     npcchatwithmovement gText_UteyaVillage_TrainerHouse_Girl m_LookLeft
+    end
+
+// Gym
+
+@ TODO FOR EACH REMAINING PUZZLE!
+@  - Add a new statement to MapEntryScript_UteyaVillageGym_UpdateMapTiles
+@  - Add a Puzzle{Number}Complete function
+@  - Add a Hide{Number}Wall function
+@  - Add a TileScript_UteyaVillage_Gym_{Number}Puzzle tile event
+@  - If needed, add a GymPuzzleConfirmationCheckRoom{Number} function
+@  - Add a new tile event for each of the switch tiles
+
+.equ CopyCatNPC, 0x1
+.equ VarGymProgress, 0x40A8
+
+.equ FloorTile, 0x281
+.equ LeftShadedFloorTile, 0x288
+.equ Passable, 0x0
+.equ Impassable, 0x1
+
+.global MapScript_UteyaVillage_Gym
+MapScript_UteyaVillage_Gym:
+    mapscript MAP_SCRIPT_ON_LOAD MapEntryScript_UteyaVillageGym_UpdateMapTiles
+    .byte MAP_SCRIPT_TERMIN
+
+MapEntryScript_UteyaVillageGym_UpdateMapTiles:
+    compare VarGymProgress 0x1
+    if greaterorequal _call PuzzleOneComplete
+    @ TODO More Later
+    end
+
+HandleSwitchesPressed:
+    setvar 0x8004 0x2 @ Janky - this is the copycat's event ID on the map, in the global list (npcs, signs, tiles)... Not just NPCs 
+    callasm CalculateEventPosition
+    comparevartovar 0x4000 0x4002 @ X coords
+    if notequal _goto End
+    comparevartovar 0x4001 0x4003 @ Y coords
+    if notequal _goto End
+    @ Both switches pressed at the same time
+    addvar VarGymProgress 0x1
+    playse 0x19 @ Correct
+    applymovement CopyCatNPC m_Joy @ TODO: only shows sometimes? waiting for movement or putting a delay in does weird things
+    waitse
+    pause DELAY_HALFSECOND
+    call SetCopyCatGender
+    compare VarGymProgress 0x5
+    if equal _call AllPuzzlesCompleteMessage
+    if notequal _call PuzzlesRemainingMessage 
+    return
+
+AllPuzzlesCompleteMessage:
+    msgbox gText_UteyaVillage_Gym_Copycat_BothSwitchesPressed_FinalPuzzle MSG_NORMAL
+    return
+
+PuzzlesRemainingMessage:
+    msgbox gText_UteyaVillage_Gym_Copycat_BothSwitchesPressed MSG_NORMAL
+    return
+
+PuzzleOneComplete:
+    call HideFirstWall
+    hidesprite CopyCatNPC
+    setflag 0x3C @ Copycat NPC is hidden
+    setflag 0x82F @ Player can run again
+    setvar 0x4000 0x5 @ New X coord to move copycat to
+    setvar 0x4001 0x8 @ New Y coord to move copycat to
+    call MoveCopyCatToPuzzle
+    return
+
+HideFirstWall:
+    setmaptile 0x4 0x8 FloorTile Passable
+    setmaptile 0x4 0x9 LeftShadedFloorTile Passable
+    setmaptile 0x4 0xA LeftShadedFloorTile Passable
+    setmaptile 0x4 0xB FloorTile Passable
+    return
+
+MoveCopyCatToPuzzle:
+    movesprite CopyCatNPC 0x4000 0x4001
+    movesprite2 CopyCatNPC 0x4000 0x4001
+    return
+
+@ NOTE: For a copycat NPC to work, they must have movement type 53 (Copy Player),
+@ and also have a movment value up to FF (15x15 movement grid). If it is 00 they'll have a default radius of 3! 
+.global EventScript_UteyaVillage_Gym_Copycat
+EventScript_UteyaVillage_Gym_Copycat:
+    faceplayer
+    call SetCopyCatGender
+    msgbox gText_UteyaVillage_Gym_Copycat_AskPlayerWhatTheyNeed MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto TakeABreak
+    msgbox gText_UteyaVillage_Gym_Copycat_ContinuingChallenge MSG_NORMAL
+    switch PLAYERFACING
+    case INTERNAL_DOWN, CopyCatLookDown
+    case INTERNAL_UP, CopyCatLookUp
+    case INTERNAL_LEFT, CopyCatLookLeft
+    case INTERNAL_RIGHT, CopyCatLookRight
+    return
+
+CopyCatLookDown:
+    applymovement LASTTALKED m_LookDown
+    return
+
+CopyCatLookUp:
+    applymovement LASTTALKED m_LookUp
+    return
+
+CopyCatLookLeft:
+    applymovement LASTTALKED m_LookLeft
+    return
+
+CopyCatLookRight:
+    applymovement LASTTALKED m_LookRight
+    return
+
+.global TileScript_UteyaVillage_Gym_FirstPuzzle
+TileScript_UteyaVillage_Gym_FirstPuzzle:
+    lockall
+    checkflag 0x82F @ Player cannot run
+    if NOT_SET _goto GymPuzzleConfirmationCheckRoomOneAndTwo
+    applymovement PLAYER m_WalkUp
+    waitmovement PLAYER
+    fadescreen FADEOUT_BLACK
+    call ShowCopyCat
+    lockall @ Second lock needed to prevent the copycat from mimicking the player's last input before triggering the tile event
+    fadescreen FADEIN_BLACK
+    applymovement PLAYER m_LookRight
+    applymovement CopyCatNPC m_LookLeft
+    msgbox gText_UteyaVillage_Gym_Copycat_IntroducesThemselves MSG_NORMAL
+    applymovement PLAYER m_LookUp
+    applymovement CopyCatNPC m_LookUp @ Need to reset orientation of both player and copycat so they walk in the same direction (if not facing the same direction, copycat's movement will be rotated 90/180/270 degrees)
+    waitmovement CopyCatNPC
+    releaseall
+    end
+
+GymPuzzleConfirmationCheckRoomOneAndTwo:
+    call EventScript_UteyaVillage_Gym_Copycat
+    applymovement PLAYER m_WalkUp
+    waitmovement PLAYER
+    end
+
+TakeABreak:
+    msgbox gText_UteyaVillage_Gym_Copycat_PausingChallenge MSG_NORMAL
+    setflag 0x82F @ Player can run again
+    setflag 0x3C @ Hide Copycat again
+    warpmuted 14 9 0xFF 0x4 0x14
+    end
+
+ShowCopyCat:
+    call SetCopyCatGender
+    clearflag 0x82F @ Player cannot run for duration of gym puzzle
+    clearflag 0x3C @ Show copycat on map reload
+    showsprite CopyCatNPC
+    return
+
+SetCopyCatGender:
+    checkgender
+    compare LASTRESULT 0x0 @ Gender is opposite of player
+    if equal _call SetCopycatFemale
+    if notequal _call SetCopycatMale
+    return
+
+SetCopycatFemale:
+    setvar 0x5029 7
+    textcolor RED
+    bufferstring 0x0 gText_CopycatName_Female
+    return
+
+SetCopycatMale:
+    setvar 0x5029 0
+    textcolor BLUE
+    bufferstring 0x0 gText_CopycatName_Male
+    return
+
+.global TileScript_UteyaVillage_Gym_Puzzle1BottomLeft
+TileScript_UteyaVillage_Gym_Puzzle1BottomLeft:
+    lock
+    setvar 0x4000 0x3 @ Set required NPC positions to the other switch
+    setvar 0x4001 0xD
+    call HandleSwitchesPressed
+    fadescreen FADEOUT_BLACK
+    call PuzzleOneComplete
+    special 0x8E @ Refresh map
+    fadescreen FADEIN_BLACK
+    end
+
+.global TileScript_UteyaVillage_Gym_Puzzle1TopRight
+TileScript_UteyaVillage_Gym_Puzzle1TopRight:
+    lock
+    setvar 0x4000 0x2 @ Set required NPC positions to the other switch
+    setvar 0x4001 0xE
+    call HandleSwitchesPressed
+    fadescreen FADEOUT_BLACK
+    call PuzzleOneComplete
+    special 0x8E @ Refresh map
+    fadescreen FADEIN_BLACK
+    end
+
+.global EventScript_UteyaVillage_Gym_GymExpert
+EventScript_UteyaVillage_Gym_GymExpert:
+    checkflag 0x827 @ Uteya gym badge
+    if SET _goto EventScript_UteyaVillage_Gym_ExpertBadgeObtained
+    npcchat gText_UteyaVillage_Gym_ExpertTips
+    end
+
+EventScript_UteyaVillage_Gym_ExpertBadgeObtained:
+    npcchat gText_UteyaVillage_Gym_ExpertBadgeObtained
+    end
+
+.global SignScript_UteyaVillageGym_Placard
+SignScript_UteyaVillageGym_Placard:
+    checkflag 0x827 @ Uteya gym badge
+    if SET _goto SignScript_UteyaVillageGym_Placard_AfterBadge
+    msgbox gText_UteyaVillageGym_Winners MSG_SIGN
+    end
+
+SignScript_UteyaVillageGym_Placard_AfterBadge:
+    msgbox gText_UteyaVillageGym_WinnersWithBadge MSG_SIGN
     end
