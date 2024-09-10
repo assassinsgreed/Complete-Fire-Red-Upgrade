@@ -729,19 +729,15 @@ EventScript_UteyaVillage_TrainerHouse_Girl:
 
 // Gym
 
-@ TODO FOR EACH REMAINING PUZZLE!
-@  - Add a new statement to MapEntryScript_UteyaVillageGym_UpdateMapTiles
-@  - Add a Puzzle{Number}Complete function
-@  - Add a Hide{Number}Wall function
-@  - Add a TileScript_UteyaVillage_Gym_{Number}Puzzle tile event
-@  - If needed, add a GymPuzzleConfirmationCheckRoom{Number} function
-@  - Add a new tile event for each of the switch tiles
-
 .equ CopyCatNPC, 0x1
 .equ VarGymProgress, 0x40A8
 
 .equ FloorTile, 0x281
 .equ LeftShadedFloorTile, 0x288
+.equ ThreeQuarterShadedFloorTile, 0x28A
+.equ WallUpper, 0x295
+.equ WallLower, 0x29D
+.equ WallDividerTop, 0x291
 .equ Passable, 0x0
 .equ Impassable, 0x1
 
@@ -753,11 +749,18 @@ MapScript_UteyaVillage_Gym:
 MapEntryScript_UteyaVillageGym_UpdateMapTiles:
     compare VarGymProgress 0x1
     if greaterorequal _call PuzzleOneComplete
-    @ TODO More Later
+    compare VarGymProgress 0x2
+    if greaterorequal _call PuzzleTwoComplete
+    compare VarGymProgress 0x3
+    if greaterorequal _call PuzzleThreeComplete
+    compare VarGymProgress 0x4
+    if greaterorequal _call PuzzleFourComplete
+    compare VarGymProgress 0x5
+    if greaterorequal _call PuzzleFiveComplete
     end
 
 HandleSwitchesPressed:
-    setvar 0x8004 0x2 @ Janky - this is the copycat's event ID on the map, in the global list (npcs, signs, tiles)... Not just NPCs 
+    setvar 0x8004 CopyCatNPC
     callasm CalculateEventPosition
     comparevartovar 0x4000 0x4002 @ X coords
     if notequal _goto End
@@ -785,7 +788,6 @@ PuzzlesRemainingMessage:
 
 PuzzleOneComplete:
     call HideFirstWall
-    hidesprite CopyCatNPC
     setflag 0x3C @ Copycat NPC is hidden
     setflag 0x82F @ Player can run again
     setvar 0x4000 0x5 @ New X coord to move copycat to
@@ -800,9 +802,89 @@ HideFirstWall:
     setmaptile 0x4 0xB FloorTile Passable
     return
 
+PuzzleTwoComplete:
+    call HideSecondWall
+    setflag 0x3C @ Copycat NPC is hidden
+    setflag 0x82F @ Player can run again
+    setvar 0x4000 0xA @ New X coord to move copycat to
+    setvar 0x4001 0x6 @ New Y coord to move copycat to
+    call MoveCopyCatToPuzzle
+    return
+
+HideSecondWall:
+    setmaptile 0x8 0x3 WallUpper Impassable
+    setmaptile 0x8 0x4 WallLower Impassable
+    setmaptile 0x8 0x5 WallDividerTop Passable
+    setmaptile 0x9 0x3 WallUpper Impassable
+    setmaptile 0x9 0x4 WallLower Impassable
+    setmaptile 0x9 0x5 WallDividerTop Passable
+    setmaptile 0xA 0x5 FloorTile Passable
+    return
+
+PuzzleThreeComplete:
+    call HideThirdWall
+    setflag 0x3C @ Copycat NPC is hidden
+    setflag 0x82F @ Player can run again
+    setvar 0x4000 0xE @ New X coord to move copycat to
+    setvar 0x4001 0xB @ New Y coord to move copycat to
+    call MoveCopyCatToPuzzle
+    return
+
+HideThirdWall:
+    setmaptile 0xD 0x8 FloorTile Passable
+    setmaptile 0xD 0x9 LeftShadedFloorTile Passable
+    setmaptile 0xD 0xA LeftShadedFloorTile Passable
+    setmaptile 0xD 0xB FloorTile Passable
+    return
+
+PuzzleFourComplete:
+    call HideFourthWall
+    setflag 0x3C @ Copycat NPC is hidden
+    setflag 0x82F @ Player can run again
+    setvar 0x4000 0x13 @ New X coord to move copycat to
+    setvar 0x4001 0xE @ New Y coord to move copycat to
+    call MoveCopyCatToPuzzle
+    return
+
+HideFourthWall:
+    setmaptile 0x11 0xB WallUpper Impassable
+    setmaptile 0x11 0xC WallLower Impassable
+    setmaptile 0x11 0xD WallDividerTop Passable
+    setmaptile 0x12 0xB WallUpper Impassable
+    setmaptile 0x12 0xC WallLower Impassable
+    setmaptile 0x12 0xD WallDividerTop Passable
+    setmaptile 0x13 0xD FloorTile Passable
+    return
+
+PuzzleFiveComplete:
+    call HideFifthWallAndGymShortcuts
+    setflag 0x3C @ Copycat NPC is hidden
+    setflag 0x82F @ Player can run again
+    return
+
+HideFifthWallAndGymShortcuts:
+    @ Fifth wall
+    setmaptile 0x16 0x6 FloorTile Passable
+    setmaptile 0x16 0x7 LeftShadedFloorTile Passable
+    setmaptile 0x16 0x8 LeftShadedFloorTile Passable
+    setmaptile 0x16 0x9 FloorTile Passable
+    @ Gym Shortcut at entrance
+    setmaptile 0x8 0x11 WallUpper Impassable
+    setmaptile 0x8 0x12 WallLower Impassable
+    setmaptile 0x8 0x13 ThreeQuarterShadedFloorTile Passable
+    setmaptile 0x9 0x13 FloorTile Passable
+    @ Gym Shortcut at leaders
+    setmaptile 0x1A 0x2 WallUpper Impassable
+    setmaptile 0x1A 0x3 WallLower Impassable
+    setmaptile 0x1A 0x4 ThreeQuarterShadedFloorTile Passable
+    setmaptile 0x1A 0x5 FloorTile Passable
+    setmaptile 0x1B 0x5 FloorTile Passable
+    return
+
 MoveCopyCatToPuzzle:
-    movesprite CopyCatNPC 0x4000 0x4001
     movesprite2 CopyCatNPC 0x4000 0x4001
+    getplayerpos 0x4000 0x4001
+    warpmuted 14 9 0xFF 0x4000 0x4001 @ Warp into the same position. If the map is not reloaded in this way, the copycat's coordinates get locked and will not update as the player moves
     return
 
 @ NOTE: For a copycat NPC to work, they must have movement type 53 (Copy Player),
@@ -858,9 +940,76 @@ TileScript_UteyaVillage_Gym_FirstPuzzle:
     releaseall
     end
 
+.global TileScript_UteyaVillage_Gym_SecondPuzzle
+TileScript_UteyaVillage_Gym_SecondPuzzle:
+    lockall
+    checkflag 0x82F @ Player cannot run
+    if NOT_SET _goto GymPuzzleConfirmationCheckRoomOneAndTwo
+    applymovement PLAYER m_WalkUp
+    waitmovement PLAYER
+    fadescreen FADEOUT_BLACK
+    call ShowCopyCat
+    lockall @ Second lock needed to prevent the copycat from mimicking the player's last input before triggering the tile event
+    fadescreen FADEIN_BLACK
+    applymovement PLAYER m_LookRight
+    applymovement CopyCatNPC m_LookLeft
+    msgbox gText_UteyaVillage_Gym_Copycat_SubsequentRooms MSG_NORMAL
+    applymovement PLAYER m_LookUp
+    applymovement CopyCatNPC m_LookUp @ Need to reset orientation of both player and copycat so they walk in the same direction (if not facing the same direction, copycat's movement will be rotated 90/180/270 degrees)
+    waitmovement CopyCatNPC
+    releaseall
+    end
+
+.global TileScript_UteyaVillage_Gym_ThirdAndFifthPuzzles
+TileScript_UteyaVillage_Gym_ThirdAndFifthPuzzles:
+    lockall
+    checkflag 0x82F @ Player cannot run
+    if NOT_SET _goto GymPuzzleConfirmationCheckRoomThreeAndFive
+    applymovement PLAYER m_WalkRight
+    waitmovement PLAYER
+    fadescreen FADEOUT_BLACK
+    call ShowCopyCat
+    applymovement PLAYER m_LookUp
+    waitmovement PLAYER
+    lockall @ Second lock needed to prevent the copycat from mimicking the player's last input before triggering the tile event
+    applymovement PLAYER m_LookRight
+    fadescreen FADEIN_BLACK
+    msgbox gText_UteyaVillage_Gym_Copycat_SubsequentRooms MSG_NORMAL
+    releaseall
+    end
+
+.global TileScript_UteyaVillage_Gym_FourthPuzzle
+TileScript_UteyaVillage_Gym_FourthPuzzle:
+    lockall
+    checkflag 0x82F @ Player cannot run
+    if NOT_SET _goto GymPuzzleConfirmationCheckRoomFour
+    applymovement PLAYER m_WalkDown
+    waitmovement PLAYER
+    fadescreen FADEOUT_BLACK
+    call ShowCopyCat
+    applymovement PLAYER m_LookUp
+    waitmovement PLAYER
+    applymovement PLAYER m_LookDown
+    applymovement CopyCatNPC m_LookDown
+    fadescreen FADEIN_BLACK
+    msgbox gText_UteyaVillage_Gym_Copycat_SubsequentRooms MSG_NORMAL
+    end
+
 GymPuzzleConfirmationCheckRoomOneAndTwo:
     call EventScript_UteyaVillage_Gym_Copycat
     applymovement PLAYER m_WalkUp
+    waitmovement PLAYER
+    end
+
+GymPuzzleConfirmationCheckRoomThreeAndFive:
+    call EventScript_UteyaVillage_Gym_Copycat
+    applymovement PLAYER m_WalkRight
+    waitmovement PLAYER
+    end
+
+GymPuzzleConfirmationCheckRoomFour:
+    call EventScript_UteyaVillage_Gym_Copycat
+    applymovement PLAYER m_WalkDown
     waitmovement PLAYER
     end
 
@@ -903,10 +1052,7 @@ TileScript_UteyaVillage_Gym_Puzzle1BottomLeft:
     setvar 0x4000 0x3 @ Set required NPC positions to the other switch
     setvar 0x4001 0xD
     call HandleSwitchesPressed
-    fadescreen FADEOUT_BLACK
     call PuzzleOneComplete
-    special 0x8E @ Refresh map
-    fadescreen FADEIN_BLACK
     end
 
 .global TileScript_UteyaVillage_Gym_Puzzle1TopRight
@@ -915,10 +1061,79 @@ TileScript_UteyaVillage_Gym_Puzzle1TopRight:
     setvar 0x4000 0x2 @ Set required NPC positions to the other switch
     setvar 0x4001 0xE
     call HandleSwitchesPressed
-    fadescreen FADEOUT_BLACK
     call PuzzleOneComplete
-    special 0x8E @ Refresh map
-    fadescreen FADEIN_BLACK
+    end
+
+.global TileScript_UteyaVillage_Gym_Puzzle2TopRight
+TileScript_UteyaVillage_Gym_Puzzle2TopRight:
+    lock
+    setvar 0x4000 0x4 @ Set required NPC positions to the other switch
+    setvar 0x4001 0x6
+    call HandleSwitchesPressed
+    call PuzzleTwoComplete
+    end
+
+.global TileScript_UteyaVillage_Gym_Puzzle2BottomLeft
+TileScript_UteyaVillage_Gym_Puzzle2BottomLeft:
+    lock
+    setvar 0x4000 0x6 @ Set required NPC positions to the other switch
+    setvar 0x4001 0x4
+    call HandleSwitchesPressed
+    call PuzzleTwoComplete
+    end
+
+.global TileScript_UteyaVillage_Gym_Puzzle3TopLeft
+TileScript_UteyaVillage_Gym_Puzzle3TopLeft:
+    lock
+    setvar 0x4000 0xF @ Set required NPC positions to the other switch
+    setvar 0x4001 0x6
+    call HandleSwitchesPressed
+    call PuzzleThreeComplete
+    end
+
+.global TileScript_UteyaVillage_Gym_Puzzle3BottomRight
+TileScript_UteyaVillage_Gym_Puzzle3BottomRight:
+    lock
+    setvar 0x4000 0xC @ Set required NPC positions to the other switch
+    setvar 0x4001 0x4
+    call HandleSwitchesPressed
+    call PuzzleThreeComplete
+    end
+
+.global TileScript_UteyaVillage_Gym_Puzzle4TopRight
+TileScript_UteyaVillage_Gym_Puzzle4TopRight:
+    lock
+    setvar 0x4000 0xD @ Set required NPC positions to the other switch
+    setvar 0x4001 0xE
+    call HandleSwitchesPressed
+    call PuzzleThreeComplete
+    end
+
+.global TileScript_UteyaVillage_Gym_Puzzle4BottomLeft
+TileScript_UteyaVillage_Gym_Puzzle4BottomLeft:
+    lock
+    setvar 0x4000 0xE @ Set required NPC positions to the other switch
+    setvar 0x4001 0xD
+    call HandleSwitchesPressed
+    call PuzzleThreeComplete
+    end
+
+.global TileScript_UteyaVillage_Gym_Puzzle5BottomLeft
+TileScript_UteyaVillage_Gym_Puzzle5BottomLeft:
+    lock
+    setvar 0x4000 0x17 @ Set required NPC positions to the other switch
+    setvar 0x4001 0xB
+    call HandleSwitchesPressed
+    call PuzzleThreeComplete
+    end
+
+.global TileScript_UteyaVillage_Gym_Puzzle5TopRight
+TileScript_UteyaVillage_Gym_Puzzle5TopRight:
+    lock
+    setvar 0x4000 0x14 @ Set required NPC positions to the other switch
+    setvar 0x4001 0xE
+    call HandleSwitchesPressed
+    call PuzzleThreeComplete
     end
 
 .global EventScript_UteyaVillage_Gym_GymExpert

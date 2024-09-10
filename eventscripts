@@ -2667,3 +2667,15 @@ sign 14 9 1 SignScript_UteyaVillageGym_Placard
 tile 14 9 0 TileScript_UteyaVillage_Gym_FirstPuzzle
 tile 14 9 1 TileScript_UteyaVillage_Gym_Puzzle1BottomLeft
 tile 14 9 2 TileScript_UteyaVillage_Gym_Puzzle1TopRight
+tile 14 9 3 TileScript_UteyaVillage_Gym_SecondPuzzle
+tile 14 9 4 TileScript_UteyaVillage_Gym_Puzzle2TopRight
+tile 14 9 5 TileScript_UteyaVillage_Gym_Puzzle2BottomLeft
+tile 14 9 6 TileScript_UteyaVillage_Gym_ThirdAndFifthPuzzles
+tile 14 9 7 TileScript_UteyaVillage_Gym_Puzzle3TopLeft
+tile 14 9 8 TileScript_UteyaVillage_Gym_Puzzle3BottomRight
+tile 14 9 9 TileScript_UteyaVillage_Gym_FourthPuzzle
+tile 14 9 10 TileScript_UteyaVillage_Gym_Puzzle4TopRight
+tile 14 9 11 TileScript_UteyaVillage_Gym_Puzzle4BottomLeft
+tile 14 9 12 TileScript_UteyaVillage_Gym_ThirdAndFifthPuzzles
+tile 14 9 13 TileScript_UteyaVillage_Gym_Puzzle5BottomLeft
+tile 14 9 14 TileScript_UteyaVillage_Gym_Puzzle5TopRight

@@ -3136,12 +3136,15 @@ void CalculateEventPosition()
 	VarSet(0x4002, 0);
 	VarSet(0x4003, 0);
 
-	struct EventObject* eventObject = &gEventObjects[Var8004];
-
-	if (eventObject != NULL)
+	for (u8 eventObjId = 0; eventObjId < MAP_OBJECTS_COUNT; ++eventObjId) //For each NPC on the map
 	{
-		// Store result in temp vars, adjusted for some weird map math
-		VarSet(0x4002, eventObject->currentCoords.x - 7);
-		VarSet(0x4003, eventObject->currentCoords.y - 7);
+		struct EventObject* eventObject = &gEventObjects[eventObjId];
+
+		if (eventObject != NULL && eventObject->localId == Var8004)
+		{
+			// Store result in temp vars, adjusted for some weird map math
+			VarSet(0x4002, eventObject->currentCoords.x - 7);
+			VarSet(0x4003, eventObject->currentCoords.y - 7);
+		}
 	}
 }
