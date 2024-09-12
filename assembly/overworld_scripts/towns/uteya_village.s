@@ -884,8 +884,7 @@ HideFifthWallAndGymShortcuts:
 
 MoveCopyCatToPuzzle:
     movesprite2 CopyCatNPC 0x4000 0x4001
-    getplayerpos 0x4000 0x4001
-    warpmuted 14 9 0xFF 0x4000 0x4001 @ Warp into the same position. If the map is not reloaded in this way, the copycat's coordinates get locked and will not update as the player moves
+    warpmuted 14 9 0xFF 0x4004 0x4005 @ Warp into the middle of the puzzle room. If the map is not reloaded in this way, the copycat's coordinates get locked and will not update as the player moves
     return
 
 @ NOTE: For a copycat NPC to work, they must have movement type 53 (Copy Player),
@@ -1052,6 +1051,8 @@ TileScript_UteyaVillage_Gym_Puzzle1BottomLeft:
     lock
     setvar 0x4000 0x3 @ Set required NPC positions to the other switch
     setvar 0x4001 0xD
+    setvar 0x4004 0x2 @ Set player's intended reset point after the puzzle's completion
+    setvar 0x4005 0xE
     call HandleSwitchesPressed
     call PuzzleOneComplete
     end
@@ -1061,6 +1062,8 @@ TileScript_UteyaVillage_Gym_Puzzle1TopRight:
     lock
     setvar 0x4000 0x2 @ Set required NPC positions to the other switch
     setvar 0x4001 0xE
+    setvar 0x4004 0x3 @ Set player's intended reset point after the puzzle's completion
+    setvar 0x4005 0xD
     call HandleSwitchesPressed
     call PuzzleOneComplete
     end
@@ -1070,6 +1073,8 @@ TileScript_UteyaVillage_Gym_Puzzle2TopRight:
     lock
     setvar 0x4000 0x4 @ Set required NPC positions to the other switch
     setvar 0x4001 0x6
+    setvar 0x4004 0x6 @ Set player's intended reset point after the puzzle's completion
+    setvar 0x4005 0x4
     call HandleSwitchesPressed
     call PuzzleTwoComplete
     end
@@ -1079,6 +1084,8 @@ TileScript_UteyaVillage_Gym_Puzzle2BottomLeft:
     lock
     setvar 0x4000 0x6 @ Set required NPC positions to the other switch
     setvar 0x4001 0x4
+    setvar 0x4004 0x4 @ Set player's intended reset point after the puzzle's completion
+    setvar 0x4005 0x6
     call HandleSwitchesPressed
     call PuzzleTwoComplete
     end
@@ -1088,6 +1095,8 @@ TileScript_UteyaVillage_Gym_Puzzle3TopLeft:
     lock
     setvar 0x4000 0xF @ Set required NPC positions to the other switch
     setvar 0x4001 0x6
+    setvar 0x4004 0xC @ Set player's intended reset point after the puzzle's completion
+    setvar 0x4005 0x4
     call HandleSwitchesPressed
     call PuzzleThreeComplete
     end
@@ -1097,6 +1106,8 @@ TileScript_UteyaVillage_Gym_Puzzle3BottomRight:
     lock
     setvar 0x4000 0xC @ Set required NPC positions to the other switch
     setvar 0x4001 0x4
+    setvar 0x4004 0xF @ Set player's intended reset point after the puzzle's completion
+    setvar 0x4005 0x6
     call HandleSwitchesPressed
     call PuzzleThreeComplete
     end
@@ -1106,6 +1117,8 @@ TileScript_UteyaVillage_Gym_Puzzle4TopRight:
     lock
     setvar 0x4000 0xD @ Set required NPC positions to the other switch
     setvar 0x4001 0xE
+    setvar 0x4004 0xE @ Set player's intended reset point after the puzzle's completion
+    setvar 0x4005 0xD
     call HandleSwitchesPressed
     call PuzzleThreeComplete
     end
@@ -1115,6 +1128,8 @@ TileScript_UteyaVillage_Gym_Puzzle4BottomLeft:
     lock
     setvar 0x4000 0xE @ Set required NPC positions to the other switch
     setvar 0x4001 0xD
+    setvar 0x4004 0xD @ Set player's intended reset point after the puzzle's completion
+    setvar 0x4005 0xE
     call HandleSwitchesPressed
     call PuzzleThreeComplete
     end
@@ -1124,6 +1139,8 @@ TileScript_UteyaVillage_Gym_Puzzle5BottomLeft:
     lock
     setvar 0x4000 0x17 @ Set required NPC positions to the other switch
     setvar 0x4001 0xB
+    setvar 0x4004 0x14 @ Set player's intended reset point after the puzzle's completion
+    setvar 0x4005 0xE
     call HandleSwitchesPressed
     call PuzzleThreeComplete
     end
@@ -1133,6 +1150,8 @@ TileScript_UteyaVillage_Gym_Puzzle5TopRight:
     lock
     setvar 0x4000 0x14 @ Set required NPC positions to the other switch
     setvar 0x4001 0xE
+    setvar 0x4004 0x17 @ Set player's intended reset point after the puzzle's completion
+    setvar 0x4005 0xB
     call HandleSwitchesPressed
     call PuzzleThreeComplete
     end
