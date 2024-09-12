@@ -50,6 +50,7 @@ LevelScript_DepartingWithRival:
 MapEntryScript_PlayersHouse_HealingSpot:
     sethealingplace 0x01 @ Player's House
 	call ResetRoute11PlutoEventOnWhiteout
+	call ResetUteyaVillageGymFlagsOnWhiteout
     end
 
 .global EventScript_AnthraTown_PlayersPoster

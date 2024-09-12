@@ -253,6 +253,7 @@ MapScript_BruccieVillageFacilities_PokemonCenter:
 
 MapScript_BruccieVillageFacilities_PokemonCenter_SetHealingSpot:
     sethealingplace 0x08
+    call ResetUteyaVillageGymFlagsOnWhiteout
     end
 
 .global EventScript_BruccieVillageFacilities_PokemonCenter_GameboyKidLeft

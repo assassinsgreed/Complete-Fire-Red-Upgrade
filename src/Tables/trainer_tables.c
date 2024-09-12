@@ -2659,7 +2659,7 @@ const struct TrainerMonNoItemDefaultMoves sParty_DaimynFactory_EngineerJamison[]
     { .lvl = 30, .species = SPECIES_JOLTIK }
 };
 
-const struct TrainerMonNoItemDefaultMoves sParty_DaimynFactory_HikerMike[] = {
+const struct TrainerMonNoItemDefaultMoves sParty_DaimynFactory_HikerPercy[] = {
     { .lvl = 31, .species = SPECIES_CUFANT },
     { .lvl = 31, .species = SPECIES_DRILBUR },
     { .lvl = 31, .species = SPECIES_CARBINK }
@@ -6605,6 +6605,254 @@ const struct TrainerMonNoItemDefaultMoves sParty_UteyaVillage_ScientistWilford[]
     { .lvl = 1, .species = SPECIES_NOIVERN },
     { .lvl = 1, .species = SPECIES_DECIDUEYE }
 };
+
+const struct TrainerMonItemCustomMoves sParty_UteyaVillageGym_Michael[] = {
+    {
+        .lvl = 60,
+        .species = SPECIES_CARBINK,
+        .moves = {
+            MOVE_ROCKSLIDE,
+            MOVE_REFLECT,
+            MOVE_LIGHTSCREEN,
+            MOVE_STEALTHROCK
+        },
+        .heldItem = ITEM_LIGHT_CLAY,
+        .ability = Ability_1 // Clear Body
+    }    
+};
+
+const struct TrainerMonNoItemCustomMoves sParty_UteyaVillageGym_Leo[] = {
+    {
+        .lvl = 60,
+        .species = SPECIES_SCRAFTY,
+        .moves = {
+            MOVE_ROCKSLIDE,
+            MOVE_SNARL,
+            MOVE_COACHING,
+            MOVE_BRICKBREAK
+        },
+        .ability = Ability_Hidden // Intimidate
+    }    
+};
+
+const struct TrainerMonNoItemCustomMoves sParty_UteyaVillageGym_Bonnie[] = {
+    {
+        .lvl = 59,
+        .species = SPECIES_STONJOURNER,
+        .moves = {
+            MOVE_WIDEGUARD,
+            MOVE_BLOCK,
+            MOVE_ROCKSLIDE,
+            MOVE_CURSE
+        },
+        .ability = Ability_1 // Power Spot
+    },
+    {
+        .lvl = 59,
+        .species = SPECIES_FROSMOTH,
+        .moves = {
+            MOVE_TAILWIND,
+            MOVE_HAIL,
+            MOVE_BLIZZARD,
+            MOVE_AURORAVEIL
+        },
+        .ability = Ability_Hidden // Ice Scales
+    },
+};
+
+const struct TrainerMonNoItemCustomMoves sParty_UteyaVillageGym_Clyde[] = {
+    {
+        .lvl = 60,
+        .species = SPECIES_INFERNAPE,
+        .moves = {
+            MOVE_BRICKBREAK,
+            MOVE_MACHPUNCH,
+            MOVE_FLAREBLITZ,
+            MOVE_ACROBATICS
+        },
+        .ability = Ability_Hidden // Iron Fist
+    },
+    {
+        .lvl = 60,
+        .species = SPECIES_MR_RIME,
+        .moves = {
+            MOVE_SAFEGUARD,
+            MOVE_REFLECT,
+            MOVE_PSYCHIC,
+            MOVE_FREEZEDRY
+        },
+        .ability = Ability_Hidden // Ice Body
+    },
+};
+
+const struct TrainerMonNoItemCustomMoves sParty_UteyaVillageGym_Jessie[] = {
+    {
+        .lvl = 60,
+        .species = SPECIES_SLAKING,
+        .moves = {
+            MOVE_KNOCKOFF,
+            MOVE_GIGAIMPACT,
+            MOVE_HAMMERARM,
+            MOVE_PLAYROUGH
+        },
+        .ability = Ability_1 // Truant
+    }
+};
+
+const struct TrainerMonNoItemCustomMoves sParty_UteyaVillageGym_James[] = {
+    {
+        .lvl = 59,
+        .species = SPECIES_WEEZING_G,
+        .moves = {
+            MOVE_AROMATICMIST,
+            MOVE_AROMATHERAPY,
+            MOVE_HEATWAVE,
+            MOVE_STRANGESTEAM
+        },
+        .ability = Ability_2 // Neutralizing Gas
+    }
+};
+
+const struct TrainerMonNoItemCustomMoves sParty_UteyaVillageGym_Mike[] = {
+    {
+        .lvl = 60,
+        .species = SPECIES_GYARADOS,
+        .moves = {
+            MOVE_WATERFALL,
+            MOVE_ICEFANG,
+            MOVE_DRAGONDANCE,
+            MOVE_EARTHQUAKE
+        },
+        .ability = Ability_1 // Intimidate
+    }
+};
+
+const struct TrainerMonItemCustomMoves sParty_UteyaVillageGym_Diane[] = {
+    {
+        .lvl = 61,
+        .species = SPECIES_PINCURCHIN,
+        .moves = {
+            MOVE_RECOVER,
+            MOVE_PROTECT,
+            MOVE_ZINGZAP,
+            MOVE_ELECTRICTERRAIN
+        },
+        .heldItem = ITEM_AIR_BALLOON,
+        .ability = Ability_1 // Lightning Rod
+    }
+};
+
+const struct TrainerMonNoItemCustomMoves sParty_UteyaVillageGym_Hannibal[] = {
+    {
+        .lvl = 58,
+        .species = SPECIES_FLYGON,
+        .moves = {
+            MOVE_HEATWAVE,
+            MOVE_BUGBUZZ,
+            MOVE_EARTHQUAKE,
+            MOVE_DRAGONPULSE
+        },
+        .ability = Ability_1 // Levitate
+    },
+    {
+        .lvl = 59,
+        .species = SPECIES_TOGEKISS,
+        .moves = {
+            MOVE_FOLLOWME,
+            MOVE_AIRSLASH,
+            MOVE_CHARM,
+            MOVE_AURASPHERE
+        },
+        .ability = Ability_2 // Serene Grace
+    }
+};
+
+const struct TrainerMonItemCustomMoves sParty_UteyaVillageGym_Clarice[] = {
+    {
+        .lvl = 58,
+        .species = SPECIES_ORANGURU,
+        .moves = {
+            MOVE_INSTRUCT,
+            MOVE_NONE,
+            MOVE_NONE,
+            MOVE_NONE
+        },
+        .heldItem = ITEM_LEFTOVERS,
+        .ability = Ability_2 // Telepathy
+    },
+    {
+        .lvl = 59,
+        .species = SPECIES_BLISSEY,
+        .moves = {
+            MOVE_HELPINGHAND,
+            MOVE_LIFEDEW,
+            MOVE_MINIMIZE,
+            MOVE_THUNDERBOLT
+        },
+        .ability = Ability_Hidden // Healer
+    }
+};
+
+const struct TrainerMonItemCustomMoves sParty_UteyaVillageGym_LeadersDennisAndDee[] = {
+    {
+        .lvl = 61,
+        .species = SPECIES_KLINKLANG,
+        .moves = {
+            MOVE_MAGNETICFLUX,
+            MOVE_GEARUP,
+            MOVE_ZAPCANNON,
+            MOVE_GEARGRIND
+        },
+        .heldItem = ITEM_AIR_BALLOON,
+        .ability = Ability_2 // Minus
+    },
+    {
+        .lvl = 61,
+        .species = SPECIES_TOXTRICITY,
+        .moves = {
+            MOVE_TOXIC,
+            MOVE_VENOSHOCK,
+            MOVE_OVERDRIVE,
+            MOVE_BOOMBURST
+        },
+        .ability = Ability_2 // Plus
+    },
+    {
+        .lvl = 60,
+        .species = SPECIES_LUCARIO,
+        .moves = {
+            MOVE_FOLLOWME,
+            MOVE_QUICKGUARD,
+            MOVE_HEALPULSE,
+            MOVE_BRICKBREAK
+        },
+        .ability = Ability_2 // Inner Focus
+    },
+    {
+        .lvl = 62,
+        .species = SPECIES_ROTOM_FROST,
+        .moves = {
+            MOVE_HELPINGHAND,
+            MOVE_BLIZZARD,
+            MOVE_LIGHTSCREEN,
+            MOVE_DISCHARGE
+        },
+        .ability = Ability_1 // Levitate
+    },
+    {
+        .lvl = 63,
+        .species = SPECIES_GARCHOMP,
+        .moves = {
+            MOVE_EARTHQUAKE,
+            MOVE_ROCKSLIDE,
+            MOVE_POISONJAB,
+            MOVE_DRAGONCLAW
+        },
+        .heldItem = ITEM_ASSAULT_VEST,
+        .ability = Ability_Hidden // Rough Skin
+    }
+};
+
 // #endregion
 
 // #endregion
@@ -8776,17 +9024,17 @@ const struct Trainer gTrainers[] = {
         .partySize = NELEMS(sParty_DaimynFactory_EngineerJamison),
         .party = {.NoItemDefaultMoves = sParty_DaimynFactory_EngineerJamison}
     },
-    [TRAINER_DAIMYN_FACTORY_HIKER_MIKE] = {
+    [TRAINER_DAIMYN_FACTORY_HIKER_PERCY] = {
         .partyFlags = 0,
         .trainerClass = CLASS_HIKER,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
         .trainerPic = TRAINER_PIC_HIKER,
-        .trainerName = {_M, _i, _k, _e, _END},
+        .trainerName = {_P, _e, _r, _c, _y, _END},
         .items = { },
         .doubleBattle = FALSE,
         .aiFlags = TrainerAIFlags_Hiker_Standard,
-        .partySize = NELEMS(sParty_DaimynFactory_HikerMike),
-        .party = {.NoItemDefaultMoves = sParty_DaimynFactory_HikerMike}
+        .partySize = NELEMS(sParty_DaimynFactory_HikerPercy),
+        .party = {.NoItemDefaultMoves = sParty_DaimynFactory_HikerPercy}
     },
     [TRAINER_DAIMYN_FACTORY_BLACKBELT_RORY] = {
         .partyFlags = 0,
@@ -12385,6 +12633,138 @@ const struct Trainer gTrainers[] = {
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE,
         .partySize = NELEMS(sParty_UteyaVillage_ScientistWilford),
         .party = {.NoItemDefaultMoves = sParty_UteyaVillage_ScientistWilford}
+    },
+    [TRAINER_UTEYA_VILLAGE_GYM_MICHAEL] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .trainerClass = CLASS_HIKER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
+        .trainerPic = TRAINER_PIC_HIKER,
+        .trainerName = {_M, _i, _c, _h, _a, _e, _l, _END},
+        .items = {},
+        .doubleBattle = TRUE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_DOUBLE_BATTLE,
+        .partySize = NELEMS(sParty_UteyaVillageGym_Michael),
+        .party = {.ItemCustomMoves = sParty_UteyaVillageGym_Michael}
+    },
+    [TRAINER_UTEYA_VILLAGE_GYM_LEO] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .trainerClass = CLASS_BLACK_BELT,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_BLACK_BELT,
+        .trainerName = {_L, _e, _o, _END},
+        .items = {},
+        .doubleBattle = TRUE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_RISKY | AI_SCRIPT_DOUBLE_BATTLE,
+        .partySize = NELEMS(sParty_UteyaVillageGym_Leo),
+        .party = {.NoItemCustomMoves = sParty_UteyaVillageGym_Leo}
+    },
+    [TRAINER_UTEYA_VILLAGE_GYM_BONNIE] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .trainerClass = CLASS_BEAUTY,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .trainerPic = TRAINER_PIC_BEAUTY,
+        .trainerName = {_B, _o, _n, _n, _i, _e, _END},
+        .items = {},
+        .doubleBattle = TRUE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_DOUBLE_BATTLE,
+        .partySize = NELEMS(sParty_UteyaVillageGym_Bonnie),
+        .party = {.NoItemCustomMoves = sParty_UteyaVillageGym_Bonnie}
+    },
+    [TRAINER_UTEYA_VILLAGE_GYM_CLYDE] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .trainerClass = CLASS_BURGLAR,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_BURGLAR,
+        .trainerName = {_C, _l, _y, _d, _e, _END},
+        .items = {},
+        .doubleBattle = TRUE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_DOUBLE_BATTLE,
+        .partySize = NELEMS(sParty_UteyaVillageGym_Clyde),
+        .party = {.NoItemCustomMoves = sParty_UteyaVillageGym_Clyde}
+    },
+    [TRAINER_UTEYA_VILLAGE_GYM_JESSIE] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .trainerClass = CLASS_SWIMMER_F,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
+        .trainerPic = TRAINER_PIC_SWIMMER_F,
+        .trainerName = {_J, _e, _s, _s, _i, _e, _END},
+        .items = {},
+        .doubleBattle = TRUE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_RISKY | AI_SCRIPT_DOUBLE_BATTLE,
+        .partySize = NELEMS(sParty_UteyaVillageGym_Jessie),
+        .party = {.NoItemCustomMoves = sParty_UteyaVillageGym_Jessie}
+    },
+    [TRAINER_UTEYA_VILLAGE_GYM_JAMES] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .trainerClass = CLASS_COOLTRAINER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
+        .trainerPic = TRAINER_PIC_COOLTRAINER_M,
+        .trainerName = {_J, _a, _m, _e, _s, _END},
+        .items = {},
+        .doubleBattle = TRUE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_DOUBLE_BATTLE,
+        .partySize = NELEMS(sParty_UteyaVillageGym_James),
+        .party = {.NoItemCustomMoves = sParty_UteyaVillageGym_James}
+    },
+    [TRAINER_UTEYA_VILLAGE_GYM_MIKE] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .trainerClass = CLASS_POKEFAN,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_POKEFAN_M,
+        .trainerName = {_M, _i, _k, _e, _END},
+        .items = {},
+        .doubleBattle = TRUE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_DOUBLE_BATTLE,
+        .partySize = NELEMS(sParty_UteyaVillageGym_Mike),
+        .party = {.NoItemCustomMoves = sParty_UteyaVillageGym_Mike}
+    },
+    [TRAINER_UTEYA_VILLAGE_GYM_DIANE] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .trainerClass = CLASS_POKEFAN,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .trainerPic = TRAINER_PIC_POKEFAN_F,
+        .trainerName = {_D, _i, _a, _n, _n, _e, _END},
+        .items = {},
+        .doubleBattle = TRUE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_HP_AWARE | AI_SCRIPT_DOUBLE_BATTLE,
+        .partySize = NELEMS(sParty_UteyaVillageGym_Diane),
+        .party = {.ItemCustomMoves = sParty_UteyaVillageGym_Diane}
+    },
+    [TRAINER_UTEYA_VILLAGE_GYM_HANNIBAL] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .trainerClass = CLASS_SUPER_NERD,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_SUPER_NERD,
+        .trainerName = {_H, _a, _n, _n, _i, _b, _a, _l, _END},
+        .items = {},
+        .doubleBattle = TRUE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_DOUBLE_BATTLE,
+        .partySize = NELEMS(sParty_UteyaVillageGym_Hannibal),
+        .party = {.NoItemCustomMoves = sParty_UteyaVillageGym_Hannibal}
+    },
+    [TRAINER_UTEYA_VILLAGE_GYM_CLARICE] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .trainerClass = CLASS_NURSE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .trainerPic = TRAINER_PIC_NURSE,
+        .trainerName = {_C, _l, _a, _r, _i, _c, _e, _END},
+        .items = {},
+        .doubleBattle = TRUE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_HP_AWARE | AI_SCRIPT_DOUBLE_BATTLE,
+        .partySize = NELEMS(sParty_UteyaVillageGym_Clarice),
+        .party = {.ItemCustomMoves = sParty_UteyaVillageGym_Clarice}
+    },
+    [TRAINER_UTEYA_VILLAGE_GYM_LEADERS_DENNIS_AND_DEE] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_LEADER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_COOL_COUPLE, // TODO Later: Change to be Dennis & Dee's sprite
+        .trainerName = {_D, _e, _n, _n, _i, _s, _AMPERSAND, _D, _e, _e, _END},
+        .items = {ITEM_MAX_POTION},
+        .doubleBattle = TRUE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_SEMI_SMART | AI_SCRIPT_DOUBLE_BATTLE,
+        .partySize = NELEMS(sParty_UteyaVillageGym_LeadersDennisAndDee),
+        .party = {.ItemCustomMoves = sParty_UteyaVillageGym_LeadersDennisAndDee}
     },
     // #endregion
     // #endregion

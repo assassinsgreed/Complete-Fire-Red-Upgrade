@@ -69,6 +69,7 @@ MapScript_UteyaVillage_PokemonCenter:
 
 MapScript_UteyaVillageFacilities_PokemonCenter_SetHealingSpot:
     sethealingplace 0xE
+    call ResetUteyaVillageGymFlagsOnWhiteout
     end
 
 .global EventScript_PokemonCenter_Woman
@@ -1145,6 +1146,66 @@ EventScript_UteyaVillage_Gym_GymExpert:
 
 EventScript_UteyaVillage_Gym_ExpertBadgeObtained:
     npcchat gText_UteyaVillage_Gym_ExpertBadgeObtained
+    end
+
+.global EventScript_UteyaVillage_Gym_Michael
+EventScript_UteyaVillage_Gym_Michael:
+    trainerbattle11 0xB 475 476 3 4 0x0 gText_UteyaVillageGym_Michael_Intro gText_UteyaVillageGym_Leo_Intro gText_UteyaVillageGym_Michael_Defeat gText_UteyaVillageGym_Leo_Defeat gText_Common_CannotDoubleBattle_Male gText_Common_CannotDoubleBattle_Male
+    msgbox gText_UteyaVillageGym_Michael_Chat MSG_NORMAL
+    end
+
+.global EventScript_UteyaVillage_Gym_Leo
+EventScript_UteyaVillage_Gym_Leo:
+    trainerbattle11 0xB 476 475 4 3 0x0 gText_UteyaVillageGym_Leo_Intro gText_UteyaVillageGym_Michael_Intro gText_UteyaVillageGym_Leo_Defeat gText_UteyaVillageGym_Michael_Defeat gText_Common_CannotDoubleBattle_Male gText_Common_CannotDoubleBattle_Male
+    msgbox gText_UteyaVillageGym_Leo_Chat MSG_NORMAL
+    end
+
+.global EventScript_UteyaVillage_Gym_Bonnie
+EventScript_UteyaVillage_Gym_Bonnie:
+    trainerbattle11 0xB 478 477 6 5 0x0 gText_UteyaVillageGym_Bonnie_Intro gText_UteyaVillageGym_Clyde_Intro gText_UteyaVillageGym_Bonnie_Defeat gText_UteyaVillageGym_Clyde_Defeat gText_Common_CannotDoubleBattle_Female gText_Common_CannotDoubleBattle_Male
+    msgbox gText_UteyaVillageGym_Bonnie_Chat MSG_NORMAL
+    end
+
+.global EventScript_UteyaVillage_Gym_Clyde
+EventScript_UteyaVillage_Gym_Clyde:
+    trainerbattle11 0xB 477 478 5 6 0x0 gText_UteyaVillageGym_Bonnie_Intro gText_UteyaVillageGym_Clyde_Intro gText_UteyaVillageGym_Bonnie_Defeat gText_UteyaVillageGym_Clyde_Defeat gText_Common_CannotDoubleBattle_Male gText_Common_CannotDoubleBattle_Female
+    msgbox gText_UteyaVillageGym_Clyde_Chat MSG_NORMAL
+    end
+
+.global EventScript_UteyaVillage_Gym_Jessie
+EventScript_UteyaVillage_Gym_Jessie:
+    trainerbattle11 0xB 479 480 7 8 0x0 gText_UteyaVillageGym_James_Intro gText_UteyaVillageGym_Jessie_Intro gText_UteyaVillageGym_Jessie_Defeat gText_UteyaVillageGym_James_Defeat gText_Common_CannotDoubleBattle_Male gText_Common_CannotDoubleBattle_Female
+    msgbox gText_UteyaVillageGym_Jessie_Chat MSG_NORMAL
+    end
+
+.global EventScript_UteyaVillage_Gym_James
+EventScript_UteyaVillage_Gym_James:
+    trainerbattle11 0xB 480 479 8 7 0x0 gText_UteyaVillageGym_Jessie_Intro gText_UteyaVillageGym_James_Intro gText_UteyaVillageGym_James_Defeat gText_UteyaVillageGym_Jessie_Defeat gText_Common_CannotDoubleBattle_Male gText_Common_CannotDoubleBattle_Female
+    msgbox gText_UteyaVillageGym_James_Chat MSG_NORMAL
+    end
+
+.global EventScript_UteyaVillage_Gym_Mike
+EventScript_UteyaVillage_Gym_Mike:
+    trainerbattle11 0xB 481 482 9 10 0x0 gText_UteyaVillageGym_Diane_Intro gText_UteyaVillageGym_Mike_Intro gText_UteyaVillageGym_Mike_Defeat gText_UteyaVillageGym_Diane_Defeat gText_Common_CannotDoubleBattle_Female gText_Common_CannotDoubleBattle_Male
+    msgbox gText_UteyaVillageGym_Mike_Chat MSG_NORMAL
+    end
+
+.global EventScript_UteyaVillage_Gym_Diane
+EventScript_UteyaVillage_Gym_Diane:
+    trainerbattle11 0xB 482 481 10 9 0x0 gText_UteyaVillageGym_Mike_Intro gText_UteyaVillageGym_Diane_Intro gText_UteyaVillageGym_Diane_Defeat gText_UteyaVillageGym_Mike_Defeat gText_Common_CannotDoubleBattle_Female gText_Common_CannotDoubleBattle_Male
+    msgbox gText_UteyaVillageGym_Diane_Chat MSG_NORMAL
+    end
+
+.global EventScript_UteyaVillage_Gym_Hannibal
+EventScript_UteyaVillage_Gym_Hannibal:
+    trainerbattle11 0xB 483 484 11 12 0x0 gText_UteyaVillageGym_Clarice_Intro gText_UteyaVillageGym_Hannibal_Intro gText_UteyaVillageGym_Hannibal_Defeat gText_UteyaVillageGym_Clarice_Defeat gText_Common_CannotDoubleBattle_Female gText_Common_CannotDoubleBattle_Male
+    msgbox gText_UteyaVillageGym_Hannibal_Chat MSG_NORMAL
+    end
+
+.global EventScript_UteyaVillage_Gym_Clarice
+EventScript_UteyaVillage_Gym_Clarice:
+    trainerbattle11 0xB 484 483 12 11 0x0 gText_UteyaVillageGym_Hannibal_Intro gText_UteyaVillageGym_Clarice_Intro gText_UteyaVillageGym_Clarice_Defeat gText_UteyaVillageGym_Hannibal_Defeat gText_Common_CannotDoubleBattle_Female gText_Common_CannotDoubleBattle_Male
+    msgbox gText_UteyaVillageGym_Clarice_Chat MSG_NORMAL
     end
 
 .global SignScript_UteyaVillageGym_Placard

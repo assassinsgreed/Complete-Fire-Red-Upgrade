@@ -70,6 +70,7 @@ MapScript_EmraldinQuayFacilities_PokemonCenter:
 
 MapScript_EmraldinQuayFacilities_PokemonCenter_SetHealingSpot:
     sethealingplace 0x09
+    call ResetUteyaVillageGymFlagsOnWhiteout
     end
 
 .global EventScript_EmraldinQuayFacilities_PokemonCenter_TreasureBeachGirl

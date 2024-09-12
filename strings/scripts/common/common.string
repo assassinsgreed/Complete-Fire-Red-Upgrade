@@ -452,3 +452,9 @@ Liam
 
 #org @gText_CopycatName_Female
 Emily
+
+#org @gText_Common_CannotDoubleBattle_Male
+[BLUE]Hold on. You need more Pok\emon in\norder to battle us.
+
+#org @gText_Common_CannotDoubleBattle_Female
+[RED]Hey! You don't have enough Pok\emon\nto battle us with.

@@ -119,6 +119,7 @@ MapScript_FerroxFacilities_PokemonCenter:
 MapScript_FerroxFacilities_PokemonCenter_SetHealingSpot:
     sethealingplace 0x04 @ Originally Cerulean City
     call ResetRoute11PlutoEventOnWhiteout
+    call ResetUteyaVillageGymFlagsOnWhiteout
     end
 
 .global EventScript_FerroxFacilities_Mart_BerryShop

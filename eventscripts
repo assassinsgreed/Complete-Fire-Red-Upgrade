@@ -2662,6 +2662,17 @@ map 14 9 MapScript_UteyaVillage_Gym
 npc 14 9 0 EventScript_UteyaVillage_Gym_Copycat
 npc 14 9 1 EventScript_Common_Strength
 npc 14 9 2 EventScript_UteyaVillage_Gym_GymExpert
+npc 14 9 3 EventScript_UteyaVillage_Gym_Michael
+# npc 14 9 4 EventScript_UteyaVillage_Gym_Leo  NOTE: For some reason, doesn't load properly. Just going to use a different NPC instead
+npc 14 9 5 EventScript_UteyaVillage_Gym_Bonnie
+npc 14 9 6 EventScript_UteyaVillage_Gym_Clyde
+npc 14 9 7 EventScript_UteyaVillage_Gym_Jessie
+npc 14 9 8 EventScript_UteyaVillage_Gym_James
+npc 14 9 9 EventScript_UteyaVillage_Gym_Mike
+npc 14 9 10 EventScript_UteyaVillage_Gym_Diane
+npc 14 9 11 EventScript_UteyaVillage_Gym_Hannibal
+npc 14 9 12 EventScript_UteyaVillage_Gym_Clarice
+npc 14 9 13 EventScript_UteyaVillage_Gym_Leo
 sign 14 9 0 SignScript_UteyaVillageGym_Placard
 sign 14 9 1 SignScript_UteyaVillageGym_Placard
 tile 14 9 0 TileScript_UteyaVillage_Gym_FirstPuzzle

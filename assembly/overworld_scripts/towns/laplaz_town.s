@@ -87,6 +87,7 @@ MapScript_LaplazFacilities_PokemonCenter:
 
 MapScript_LaplazFacilities_PokemonCenter_SetHealingSpot:
     sethealingplace 0x07 @ Originally Fucshia City
+    call ResetUteyaVillageGymFlagsOnWhiteout
     end
 
 .global EventScript_LaplazFacilities_GalarBirdsGirl
