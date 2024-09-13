@@ -65,16 +65,16 @@ EventScript_Route5_LadyJuliet:
     compare PLAYERFACING LEFT
     if equal _call JulietAndMarcusLookRight
     @ Perform a double battle with Juliet & Marcus' teams (0x47 and 0x48), referencing their overworld NPC IDs (0x10 and 0x11), with their respective intro/defeat/chat text
-    trainerbattle11 0x0 0x47 0x48 0x10 0x11 0x0 gText_Route5_LadyJuliet_Intro gText_Route5_GentlemanMarcus_Intro gText_Route5_LadyJuliet_Defeat gText_Route5_GentlemanMarcus_Defeat gText_Route5_LadyJuliet_Chat gText_Route5_GentlemanMarcus_Chat
+    trainerbattle11 0x0 0x47 0x48 0x10 0x11 0x0 gText_Route5_GentlemanMarcus_Intro gText_Route5_LadyJuliet_Intro gText_Route5_LadyJuliet_Defeat gText_Route5_GentlemanMarcus_Defeat gText_Common_CannotDoubleBattle_Male gText_Common_CannotDoubleBattle_Female
     msgbox gText_Route5_LadyJuliet_Chat MSG_NORMAL
     end
-
+    
 .global EventScript_Route5_GentlemanMarcus
 EventScript_Route5_GentlemanMarcus:
     compare PLAYERFACING RIGHT
     if equal _call JulietAndMarcusLookLeft
     @ Perform a double battle with Juliet & Marcus' teams (0x47 and 0x48), referencing their overworld NPC IDs (0x10 and 0x11), with their respective intro/defeat/chat text
-    trainerbattle11 0x0 0x47 0x48 0x10 0x11 0x0 gText_Route5_LadyJuliet_Intro gText_Route5_GentlemanMarcus_Intro gText_Route5_LadyJuliet_Defeat gText_Route5_GentlemanMarcus_Defeat gText_Route5_LadyJuliet_Chat gText_Route5_GentlemanMarcus_Chat
+    trainerbattle11 0x0 0x47 0x48 0x10 0x11 0x0 gText_Route5_LadyJuliet_Intro gText_Route5_GentlemanMarcus_Intro gText_Route5_LadyJuliet_Defeat gText_Route5_GentlemanMarcus_Defeat gText_Common_CannotDoubleBattle_Male gText_Common_CannotDoubleBattle_Female
     msgbox gText_Route5_GentlemanMarcus_Chat MSG_NORMAL
     end
 

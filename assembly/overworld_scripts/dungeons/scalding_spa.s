@@ -255,7 +255,7 @@ EventScript_ScaldingSpa_HikerEugene:
     // Double battle with Stephen
     compare PLAYERFACING LEFT
     if equal _call EugeneAndStephenLookRight
-    trainerbattle11 0x0 251 252 14 15 0x0 gtext_ScaldingSpa_HikerEugene_Intro gtext_ScaldingSpa_SupernerdStephen_Intro gtext_ScaldingSpa_HikerEugene_Defeat gtext_ScaldingSpa_SupernerdStephen_Defeat gtext_ScaldingSpa_HikerEugene_Chat gtext_ScaldingSpa_SupernerdStephen_Chat
+    trainerbattle11 0x0 251 252 14 15 0x0 gtext_ScaldingSpa_HikerEugene_Intro gtext_ScaldingSpa_SupernerdStephen_Intro gtext_ScaldingSpa_HikerEugene_Defeat gtext_ScaldingSpa_SupernerdStephen_Defeat gText_Common_CannotDoubleBattle_Male gText_Common_CannotDoubleBattle_Male
     msgbox gtext_ScaldingSpa_HikerEugene_Chat MSG_NORMAL
     end
 
@@ -264,7 +264,7 @@ EventScript_ScaldingSpa_SuperNerdStephen:
     // Double battle with Eugene
     compare PLAYERFACING RIGHT
     if equal _call EugeneAndStephenLookLeft
-    trainerbattle11 0x0 251 252 14 15 0x0 gtext_ScaldingSpa_HikerEugene_Intro gtext_ScaldingSpa_SupernerdStephen_Intro gtext_ScaldingSpa_HikerEugene_Defeat gtext_ScaldingSpa_SupernerdStephen_Defeat gtext_ScaldingSpa_HikerEugene_Chat gtext_ScaldingSpa_SupernerdStephen_Chat
+    trainerbattle11 0x0 251 252 14 15 0x0 gtext_ScaldingSpa_HikerEugene_Intro gtext_ScaldingSpa_SupernerdStephen_Intro gtext_ScaldingSpa_HikerEugene_Defeat gtext_ScaldingSpa_SupernerdStephen_Defeat gText_Common_CannotDoubleBattle_Male gText_Common_CannotDoubleBattle_Male
     msgbox gtext_ScaldingSpa_SupernerdStephen_Chat MSG_NORMAL
     end
 
