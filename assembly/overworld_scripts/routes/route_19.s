@@ -36,7 +36,7 @@ EventScript_Route19_PokefanPhineas:
     // Double battle with Phoebe
     compare PLAYERFACING RIGHT
     if equal _call PhineasAndPhoebeLookLeft
-    trainerbattle11 0x0 363 364 5 6 0x0 gText_Route19_PokefanPhineas_Intro gText_Route19_PokefanPhoebe_Intro gText_Route19_PokefanPhineas_Defeat gText_Route19_PokefanPhoebe_Defeat gText_Route19_PokefanPhineas_Chat gText_Route19_PokefanPhoebe_Chat
+    trainerbattle11 0x0 363 364 5 6 0x0 gText_Route19_PokefanPhineas_Intro gText_Route19_PokefanPhoebe_Intro gText_Route19_PokefanPhineas_Defeat gText_Route19_PokefanPhoebe_Defeat gText_Common_CannotDoubleBattle_Male gText_Common_CannotDoubleBattle_Female
     msgbox gText_Route19_PokefanPhineas_Chat MSG_NORMAL
     end
 
@@ -45,7 +45,7 @@ EventScript_Route19_PokefanPhoebe:
     // Double battle with Phineas
     compare PLAYERFACING LEFT
     if equal _call PhineasAndPhoebeLookRight
-    trainerbattle11 0x0 363 364 5 6 0x0 gText_Route19_PokefanPhineas_Intro gText_Route19_PokefanPhoebe_Intro gText_Route19_PokefanPhineas_Defeat gText_Route19_PokefanPhoebe_Defeat gText_Route19_PokefanPhineas_Chat gText_Route19_PokefanPhoebe_Chat
+    trainerbattle11 0x0 363 364 5 6 0x0 gText_Route19_PokefanPhineas_Intro gText_Route19_PokefanPhoebe_Intro gText_Route19_PokefanPhineas_Defeat gText_Route19_PokefanPhoebe_Defeat gText_Common_CannotDoubleBattle_Male gText_Common_CannotDoubleBattle_Female
     msgbox gText_Route19_PokefanPhoebe_Chat MSG_NORMAL
     end
 

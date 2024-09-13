@@ -141,7 +141,7 @@ EventScript_PeradonForest_BugCatcherLyle:
     compare PLAYERFACING LEFT
     if equal _call LyleAndEricaLookRight
     @ Perform a double battle with Lyle & Erica's teams (237 and 238), referencing their overworld NPC IDs (17 and 18), with their respective intro/defeat/chat text
-    trainerbattle11 0x0 237 238 17 18 0x0 gText_PeradonForest_BugCatcherLyle_Intro gText_PeradonForest_BeautyErica_Intro gText_PeradonForest_BugCatcherLyle_Defeat gText_PeradonForest_BeautyErica_Defeat gText_PeradonForest_BugCatcherLyle_Chat gText_PeradonForest_BeautyErica_Chat
+    trainerbattle11 0x0 237 238 17 18 0x0 gText_PeradonForest_BugCatcherLyle_Intro gText_PeradonForest_BeautyErica_Intro gText_PeradonForest_BugCatcherLyle_Defeat gText_PeradonForest_BeautyErica_Defeat gText_Common_CannotDoubleBattle_Male gText_Common_CannotDoubleBattle_Female
     msgbox gText_PeradonForest_BugCatcherLyle_Chat MSG_NORMAL
     end
 
@@ -150,7 +150,7 @@ EventScript_PeradonForest_BeautyErica:
     compare PLAYERFACING RIGHT
     if equal _call LyleAndEricaLookLeft
     @ Perform a double battle with Lyle & Erica's teams (237 and 238), referencing their overworld NPC IDs (17 and 18), with their respective intro/defeat/chat text
-    trainerbattle11 0x0 237 238 17 18 0x0 gText_PeradonForest_BugCatcherLyle_Intro gText_PeradonForest_BeautyErica_Intro gText_PeradonForest_BugCatcherLyle_Defeat gText_PeradonForest_BeautyErica_Defeat gText_PeradonForest_BugCatcherLyle_Chat gText_PeradonForest_BeautyErica_Chat
+    trainerbattle11 0x0 237 238 17 18 0x0 gText_PeradonForest_BugCatcherLyle_Intro gText_PeradonForest_BeautyErica_Intro gText_PeradonForest_BugCatcherLyle_Defeat gText_PeradonForest_BeautyErica_Defeat gText_Common_CannotDoubleBattle_Male gText_Common_CannotDoubleBattle_Female
     msgbox gText_PeradonForest_BeautyErica_Chat MSG_NORMAL
     end
 
