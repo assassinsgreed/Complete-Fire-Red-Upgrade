@@ -257,3 +257,126 @@ Hmm[.] I guess it'd be smart to bring\nfully evolved Pok\emon with me.\pThat way
 
 #org @gText_UteyaVillage_TrainerHouse_Girl
 I'd really like to win that grand\nprize, the Pok\eChip Charm.\pFinding more Pok\eChips would help me\nteach my Pok\emon stronger moves!
+
+#org @gText_UteyaVillage_Gym_Copycat_IntroducesThemselves
+Hey! I'm [BUFFER1].\nYou're [PLAYER]? Nice to meet you!\pI'm taking the gym challenge too.\pLet's team up to beat this gym's\npuzzles!\pI heard we need to both step on\nswitches at the same time to move\lforward.\pWe'll have to work together.\nI'll just follow your lead, okay?\pLet's go slowly so we don't trip\nover each other.\pYou should hit your switch at the\nsame time as me or after me.\pOh, and one other thing[.]\pIf you run into any gym trainers,\nyou'll be on your own in battle.\pOkay! Let's do this!
+
+#org @gText_UteyaVillage_Gym_Copycat_AskPlayerWhatTheyNeed
+What's wrong?\nAre you okay to keep going?
+
+#org @gText_UteyaVillage_Gym_Copycat_ContinuingChallenge
+Alright, let's solve this puzzle!
+
+#org @gText_UteyaVillage_Gym_Copycat_PausingChallenge
+Okay! It's good to take a breather\nfrom time to time.\pI'll guide you back to the\nentrance.
+
+#org @gText_UteyaVillage_Gym_Copycat_BothSwitchesPressed
+We did it, nice!\pI'll meet you up ahead when you're\nready.
+
+#org @gText_UteyaVillage_Gym_Copycat_BothSwitchesPressed_FinalPuzzle
+Awesome! We finished every puzzle at\nthis gym!\pYou rock, [PLAYER]!\pI'm going to go prepare for my\nbattle with the gym leaders.\pGood luck, [PLAYER]!\nI'll root for you!
+
+#org @gText_UteyaVillage_Gym_Copycat_SubsequentRooms
+Let's do this, [PLAYER]!
+
+#org @gText_UteyaVillage_Gym_ExpertTips
+Yo, superstar! This is a bittersweet\nreunion, isn't it?\pThis is the last gym you need to\nconquer on your gym challenge.\pNo time to get sentimental though.\nI have a job to do!\pDennis and Dee have been the gym\nleaders here for over a decade.\pThey specialize in Double Battles.\pRemember that some moves and\nabilities change in these battles.\pAlso, some moves and abilities are\nonly useful in double battles.\pKeep these tips in mind and you're\nsure to come out on top!\pNow let's talk about the gym\npuzzle[.]\pThis gym emphasizes teamwork both in\nand outside battle.\pYou'll need to coordinate with a\npartner to press switches at the\lsame time in order to progress.\pDon't sweat it, though.\pI've got a partner in mind that I\nthink you'll really get along with.\pAlright, superstar. You're in the\nhome stretch now.\pTime for a brilliant finish!
+
+#org @gText_UteyaVillage_Gym_ExpertBadgeObtained
+Yo, superstar! You've done it!\pYou've acquired every gym badge in\nKulure! Way to go!\pAll that's left is to challenge the\nElite Four and Champion.\pGood luck, kiddo!\nI'll be rooting for you!
+
+#org @gText_UteyaVillageGym_Winners
+Uteya Village Gym\nVictors: [RIVAL]
+
+#org @gText_UteyaVillageGym_WinnersWithBadge
+Uteya Village Gym\nVictors: [RIVAL], [PLAYER]
+
+#org @gText_UteyaVillageGym_Michael_Intro
+[BLUE]I haven't known this guy long, but\nwe've gotten a feel for each\lothers' battle styles.
+
+#org @gText_UteyaVillageGym_Michael_Defeat
+Oh yeah? Guess I have more to learn\nafter all.
+
+#org @gText_UteyaVillageGym_Michael_Chat
+I'm trying my best here, okay?
+
+#org @gText_UteyaVillageGym_Leo_Intro
+[BLUE]Ay! Me and this guy? We're good.\pWe'll show you in a battle!
+
+#org @gText_UteyaVillageGym_Leo_Defeat
+What? No way!
+
+#org @gText_UteyaVillageGym_Leo_Chat
+Okay, maybe we aren't that good\nafter all.
+
+#org @gText_UteyaVillageGym_Bonnie_Intro
+[RED]Promise not to cry when we beat you?
+
+#org @gText_UteyaVillageGym_Bonnie_Defeat
+H-Hey!
+
+#org @gText_UteyaVillageGym_Bonnie_Chat
+I really underestimated you.
+
+#org @gText_UteyaVillageGym_Clyde_Intro
+[BLUE]Hehehe[.] Bonnie and I have this one\nin the bag.\pI can tell just by looking at you!
+
+#org @gText_UteyaVillageGym_Clyde_Defeat
+Oof!
+
+#org @gText_UteyaVillageGym_Clyde_Chat
+Looks can be deceiving!
+
+#org @gText_UteyaVillageGym_Jessie_Intro
+[RED]Prepare for trouble, and make it\ndouble!
+
+#org @gText_UteyaVillageGym_Jessie_Defeat
+Looks like I'm blasting off[.]
+
+#org @gText_UteyaVillageGym_Jessie_Chat
+Don't get cocky, kid. This happens\nmore often than you think.
+
+#org @gText_UteyaVillageGym_James_Intro
+[BLUE]Are you worn down from the gym\npuzzle yet?
+
+#org @gText_UteyaVillageGym_James_Defeat
+Nope! Not worn down at all!
+
+#org @gText_UteyaVillageGym_James_Chat
+Well, my job is done.\nGuess I'll take it easy now.
+
+#org @gText_UteyaVillageGym_Mike_Intro
+[BLUE]My partner and I can practically\nread each others' minds.
+
+#org @gText_UteyaVillageGym_Mike_Defeat
+Did you read our minds, too?
+
+#org @gText_UteyaVillageGym_Mike_Chat
+We've got a long ways to go, by the\nlooks of things.
+
+#org @gText_UteyaVillageGym_Diane_Intro
+[RED]Wait! We need to battle you.
+
+#org @gText_UteyaVillageGym_Diane_Defeat
+Oh! I didn't expect that.
+
+#org @gText_UteyaVillageGym_Diane_Chat
+I've battled with Mike for over 10\nyears.
+
+#org @gText_UteyaVillageGym_Hannibal_Intro
+[BLUE]I'll enjoy battling with you[.]
+
+#org @gText_UteyaVillageGym_Hannibal_Defeat
+Yes, exquisite[.]
+
+#org @gText_UteyaVillageGym_Hannibal_Chat
+Okay, carry on[.]\nI will watch you with interest[.]
+
+#org @gText_UteyaVillageGym_Clarice_Intro
+[RED]Greetings. It is my duty to battle\nyou. Prepare yourself!
+
+#org @gText_UteyaVillageGym_Clarice_Defeat
+Yes, as expected.
+
+#org @gText_UteyaVillageGym_Clarice_Chat
+You've attained quite a few skills.\nImpressive.

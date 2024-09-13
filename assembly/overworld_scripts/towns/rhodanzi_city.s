@@ -132,6 +132,7 @@ MapScript_RhodanziFacilities_PokemonCenter:
 MapScript_RhodanziFacilities_PokemonCenter_SetHealingSpot:
     sethealingplace 0x03 @ Originally Pewter City
     call ResetRoute11PlutoEventOnWhiteout
+    call ResetUteyaVillageGymFlagsOnWhiteout
     end
 
 .global EventScript_RhodanziFacilities_Mart_BadgeStock

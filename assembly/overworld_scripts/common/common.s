@@ -332,6 +332,14 @@ ResetRoute11PlutoEventOnWhiteout:
     setvar 0x4059 0x1 @ Need to pick partner
     return
 
+.global ResetUteyaVillageGymFlagsOnWhiteout
+ResetUteyaVillageGymFlagsOnWhiteout:
+    checkflag 0x3C
+    if SET _goto End
+    setflag 0x82F @ Player can run again
+    setflag 0x3C @ Hide Copycat again
+    return
+
 .global PokedexEvaluation_Introduction
 PokedexEvaluation_Introduction:
     @ Note: This script is also located at 0x81A73E0 for ratings from the PC.

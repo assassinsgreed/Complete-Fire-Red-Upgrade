@@ -110,7 +110,7 @@ static const u8* const sDefaultWalkingScripts[] =
 	NULL,
 	LaplazGym_RotationSteps,
 	CarnelidgeVolcano_Tremors,
-	EmptyWorld_CarnelidgeVolcano_Tremors
+	EmptyWorld_CarnelidgeVolcano_Tremors,
 	//NULL,
 	//etc
 };
@@ -3128,4 +3128,23 @@ void SwitchMonNature()
 	SetMonData(mon, MON_DATA_PERSONALITY, &personality);
 	CalculateMonStats(mon);
 	gSpecialVar_LastResult = TRUE; // Performed the nature change
+}
+
+// Finds the event stored in Var8004, and stores their XY coordinates in 0x4002 and 0x4003
+void CalculateEventPosition()
+{
+	VarSet(0x4002, 0);
+	VarSet(0x4003, 0);
+
+	for (u8 eventObjId = 0; eventObjId < MAP_OBJECTS_COUNT; ++eventObjId) //For each NPC on the map
+	{
+		struct EventObject* eventObject = &gEventObjects[eventObjId];
+
+		if (eventObject != NULL && eventObject->localId == Var8004)
+		{
+			// Store result in temp vars, adjusted for some weird map math
+			VarSet(0x4002, eventObject->currentCoords.x - 7);
+			VarSet(0x4003, eventObject->currentCoords.y - 7);
+		}
+	}
 }

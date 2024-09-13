@@ -15,6 +15,7 @@ MapEntryScript_OlenicTown_FlightSpot:
     setworldmapflag 0x891
     sethealingplace 0x01 @ Player's House
     call ResetRoute11PlutoEventOnWhiteout
+    call ResetUteyaVillageGymFlagsOnWhiteout
     end
 
 .global SignScript_OlenicOverworld_HawthornesLab

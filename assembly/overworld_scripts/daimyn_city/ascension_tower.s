@@ -14,6 +14,7 @@ MapEntryScript_AscensionTower_FlightFlag:
     setworldmapflag 0x8B2 @ Been to Ascension Tower
     sethealingplace 0xA @ Originally Indigo Plateau
     call ResetRoute11PlutoEventOnWhiteout
+    call ResetUteyaVillageGymFlagsOnWhiteout
     end
 
 .global EventScript_AscensionTower_BattleTowerAttendant

@@ -102,6 +102,7 @@ MapScript_TsarvosaCity_PokemonCenter:
 
 MapScript_TsarvosaCity_PokemonCenter_SetHealingSpot:
     sethealingplace 0xB
+    call ResetUteyaVillageGymFlagsOnWhiteout
     end
 
 .global EventScript_TsarvosaCity_PokemonCenter_FatGuy
