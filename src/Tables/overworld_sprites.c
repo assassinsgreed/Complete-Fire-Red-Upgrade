@@ -36,6 +36,8 @@ extern const u8 LeaderCaseyMTiles[];
 extern const u8 LeaderAbbyTiles[];
 extern const u8 PlutoLeaderKurtisTiles[];
 extern const u8 LeaderIrisTiles[];
+extern const u8 LeaderDennisTiles[];
+extern const u8 LeaderDeeTiles[];
 
 // Overworld Events
 extern const u8 SandygastTiles[];
@@ -521,6 +523,33 @@ static const struct SpriteFrameImage Table_LeaderIris[] =
     overworld_frame(LeaderIrisTiles, 2, 4, 8),
 };
 
+static const struct SpriteFrameImage Table_LeaderDennis[] =
+{
+    overworld_frame(LeaderDennisTiles, 2, 4, 0),
+    overworld_frame(LeaderDennisTiles, 2, 4, 1),
+    overworld_frame(LeaderDennisTiles, 2, 4, 2),
+    overworld_frame(LeaderDennisTiles, 2, 4, 3),
+    overworld_frame(LeaderDennisTiles, 2, 4, 4),
+    overworld_frame(LeaderDennisTiles, 2, 4, 5),
+    overworld_frame(LeaderDennisTiles, 2, 4, 6),
+    overworld_frame(LeaderDennisTiles, 2, 4, 7),
+    overworld_frame(LeaderDennisTiles, 2, 4, 8),
+};
+
+static const struct SpriteFrameImage Table_LeaderDee[] =
+{
+    overworld_frame(LeaderDeeTiles, 2, 4, 0),
+    overworld_frame(LeaderDeeTiles, 2, 4, 1),
+    overworld_frame(LeaderDeeTiles, 2, 4, 2),
+    overworld_frame(LeaderDeeTiles, 2, 4, 3),
+    overworld_frame(LeaderDeeTiles, 2, 4, 4),
+    overworld_frame(LeaderDeeTiles, 2, 4, 5),
+    overworld_frame(LeaderDeeTiles, 2, 4, 6),
+    overworld_frame(LeaderDeeTiles, 2, 4, 7),
+    overworld_frame(LeaderDeeTiles, 2, 4, 8),
+};
+
+// Overworld events
 static const struct SpriteFrameImage Table_Sandygast[] =
 {
     overworld_frame(SandygastTiles, 2, 2, 0),
@@ -1488,7 +1517,47 @@ const struct EventObjectGraphicsInfo GraphicsInfo_LeaderIris =
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 
+const struct EventObjectGraphicsInfo GraphicsInfo_LeaderDennis =
+{
+    .tileTag = 0xFFFF,
+    .paletteTag1 = 0x1236,
+    .paletteTag2 = EVENT_OBJ_PAL_TAG_NONE,
+    .size = (16 * 32) / 2,
+    .width = 16,
+    .height = 32,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .disableReflectionPaletteLoad = FALSE,
+    .tracks = TRACKS_FOOT,
+    .gender = MALE,
+    .oam = gEventObjectBaseOam_16x32,
+    .subspriteTables = gEventObjectSpriteOamTables_16x32,
+    .anims = gEventObjectImageAnimTable_Standard,
+    .images = Table_LeaderDennis,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
 
+const struct EventObjectGraphicsInfo GraphicsInfo_LeaderDee =
+{
+    .tileTag = 0xFFFF,
+    .paletteTag1 = 0x1236,
+    .paletteTag2 = EVENT_OBJ_PAL_TAG_NONE,
+    .size = (16 * 32) / 2,
+    .width = 16,
+    .height = 32,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .disableReflectionPaletteLoad = FALSE,
+    .tracks = TRACKS_FOOT,
+    .gender = FEMALE,
+    .oam = gEventObjectBaseOam_16x32,
+    .subspriteTables = gEventObjectSpriteOamTables_16x32,
+    .anims = gEventObjectImageAnimTable_Standard,
+    .images = Table_LeaderDee,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+// Overworld events
 const struct EventObjectGraphicsInfo GraphicsInfo_Sandygast =
 {
     .tileTag = 0xFFFF,
