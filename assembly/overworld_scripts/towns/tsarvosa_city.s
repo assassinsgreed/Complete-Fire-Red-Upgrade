@@ -3045,6 +3045,8 @@ GymChallengeBattleIris:
 EventScript_TsarvosaCity_Gym_LeaderIris_Defeated:
     msgbox gText_TsarvosaCity_Gym_LeaderIris_BadgeAwarded MSG_NORMAL
     setflag 0x826 @ Tsarvosa City gym badge
+    setflag 0x4B6 @ Defeated Iris
+    setflag 0x25C @ New Pokemart Stock
     clearflag 0x04F @ Enable Iris & Stella battle in Daimyn City restaurant
     fanfare 0x13D @ Gym victory
     msgbox gText_TsarvosaCity_Gym_BadgeReceived MSG_NORMAL
@@ -3055,8 +3057,6 @@ EventScript_TsarvosaCity_Gym_LeaderIris_Defeated:
     loadpointer 0x0 gText_TsarvosaCity_Gym_TMReceived
     additem ITEM_TM21 0x1
     giveitemwithfanfare ITEM_TM21 0x1 0x101 @ MUS_FANFA1
-    setflag 0x4B6 @ Defeated Iris
-    setflag 0x25C @ New Pokemart Stock
     goto EventScript_TsarvosaCity_Gym_LeaderIris_Chat
     end
 

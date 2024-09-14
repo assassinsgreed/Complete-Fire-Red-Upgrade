@@ -164,6 +164,8 @@ LeaderChance_4Badges:
 EventScript_DaimynCityGym_LeaderChance_Defeated:
     msgbox gText_DaimynCityGym_LeaderChance_BadgeAwarded MSG_NORMAL
     setflag 0x823 @ Daimyn gym badge
+    setflag 0x4B3 @ Defeated Chance
+    setflag 0x25C @ New Pokemart Stock
     fanfare 0x13D @ Gym victory
     msgbox gText_DaimynCityGym_BadgeReceived MSG_NORMAL
     call BadgeObedienceMessage
@@ -192,8 +194,6 @@ EventScript_DaimynCityGym_LeaderChance_Defeated:
     waitse
     pause DELAY_HALFSECOND
     hidecoins
-    setflag 0x4B3 @ Defeated Chance
-    setflag 0x25C @ New Pokemart Stock
     msgbox gText_DaimynCityGym_LeaderChance_Chat MSG_KEEPOPEN
     releaseall
     end

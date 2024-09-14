@@ -333,6 +333,9 @@ EventScript_RhodanziGym_Leader_Terrence:
 EventScript_RhodanziGym_Leader_TerrenceDefeated:
     msgbox gText_RhodanziGym_Leader_Terrence_BadgeAwarded MSG_NORMAL
     setflag 0x820 @ Rhodanzi gym badge
+    setflag 0x254 @ Received TM 05 from Terrence
+    setflag 0x4B0 @ Defeated Terrence
+    setflag 0x25C @ New Pokemart Stock
     fanfare 0x13D @ Gym victory
     msgbox gText_RhodanziGym_BadgeReceived MSG_NORMAL
     call BadgeObedienceMessage
@@ -345,9 +348,6 @@ EventScript_RhodanziGym_Leader_TerrenceDefeated:
     loadpointer 0x0 gText_RhodanziGym_TMReceived
     additem ITEM_TM05 0x1
     giveitemwithfanfare ITEM_TM05 0x1 0x101 @ MUS_FANFA1
-    setflag 0x254 @ Received TM 05 from Terrence
-    setflag 0x4B0 @ Defeated Terrence
-    setflag 0x25C @ New Pokemart Stock
     msgbox gText_RhodanziGym_Leader_Terrence_Chat MSG_KEEPOPEN
     releaseall
     end

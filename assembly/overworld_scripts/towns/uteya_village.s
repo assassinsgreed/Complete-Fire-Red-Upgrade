@@ -8,12 +8,51 @@
 .global MapScript_UteyaVillage
 MapScript_UteyaVillage:
     mapscript MAP_SCRIPT_ON_TRANSITION MapEntryScript_UteyaVillage_FlightSpot
+    mapscript MAP_SCRIPT_ON_FRAME_TABLE LevelScripts_UteyaVillage
     .byte MAP_SCRIPT_TERMIN
 
 MapEntryScript_UteyaVillage_FlightSpot:
     setworldmapflag 0x89A @ Visited Uteya Village
     setflag 0x3C @ Safety check - hide copycat in the gym when revisiting the overworld (and NPCs in many other places)
     end
+
+LevelScripts_UteyaVillage:
+    levelscript 0x406D 0x1 LevelScript_UteyaVillage_RivalMeetingPlayerAfterAllBadges
+	.hword LEVEL_SCRIPT_TERMIN
+
+LevelScript_UteyaVillage_RivalMeetingPlayerAfterAllBadges:
+    showsprite 0x8 @ Rival
+    playbgm 0x195
+    applymovement 0x8 m_RivalWalksToPlayer
+    waitmovement 0x8
+    msgbox gText_UteyaVillage_RivalCongratulatingThePlayer MSG_YESNO
+    compare LASTRESULT NO
+    if notequal _call PlayerSaidYesToRivalQuestion
+    if equal _call PlayerSaidNoToRivalQuestion
+    msgbox gText_UteyaVillage_RivalCommentingOnAllBadges MSG_NORMAL
+    applymovement 0x8 m_LookDown
+    msgbox gText_UteyaVillage_RivalReflectingOnJourney MSG_NORMAL
+    applymovement 0x8 m_LookUp
+    msgbox gText_UteyaVillage_RivalMentioningNextSteps MSG_NORMAL
+    applymovement 0x8 m_LookDown
+    pause DELAY_HALFSECOND
+    setfieldeffectarg 0, 0x26 @ Rival X
+	setfieldeffectarg 1, 0xF @ Rival Y
+	dofieldeffect 30 @FLDEFF_NPCFLY_OUT
+    pause 0x9 @ Delay just long enough for the bird to connect with the rival
+    applymovement 0x8 m_RivalJumpsOntoBird
+	waitfieldeffect 30 @FLDEFF_NPCFLY_OUT
+    fadedefaultbgm
+    addvar 0x406D 0x1
+    end
+
+PlayerSaidYesToRivalQuestion:
+    msgbox gText_UteyaVillage_RivalPlayerSaysYes MSG_NORMAL
+    return
+
+PlayerSaidNoToRivalQuestion:
+    msgbox gText_UteyaVillage_RivalPlayerSaysNo MSG_NORMAL
+    return
 
 .global EventScript_UteyaVillage_HessonPassKid
 EventScript_UteyaVillage_HessonPassKid:
@@ -41,6 +80,11 @@ EventScript_UteyaVillage_TM30_ShadowBall:
     call ItemScript_Common_FindTM
     end
 
+.global EventScript_UteyaVillage_RuinsTourGuideGirl
+EventScript_UteyaVillage_RuinsTourGuideGirl:
+    npcchatwithmovement gText_UteyaVillage_RuinsTourGuideGirl m_LookDown
+    end
+
 .global SignScript_UteyaVillage_HessonPass
 SignScript_UteyaVillage_HessonPass:
     msgbox gText_UteyaVillage_HessonPass MSG_SIGN
@@ -60,6 +104,9 @@ SignScript_UteyaVillage_GymSign:
 SignScript_UteyaVillage_TrainerHouse:
     msgbox gText_UteyaVillage_TrainerHouse MSG_SIGN
     end
+
+m_RivalWalksToPlayer: .byte walk_right, walk_right, walk_right, walk_right, walk_right, walk_right, walk_right, walk_right, walk_right, look_up, end_m
+m_RivalJumpsOntoBird: .byte jump_onspot_down, set_invisible, end_m
 
 // Facilities
 .global MapScript_UteyaVillage_PokemonCenter
@@ -1227,6 +1274,113 @@ EventScript_UteyaVillage_Gym_Clarice:
     msgbox gText_UteyaVillageGym_Clarice_Chat MSG_NORMAL
     end
 
+.global EventScript_UteyaVillage_Gym_LeaderDennis
+EventScript_UteyaVillage_Gym_LeaderDennis:
+    faceplayer
+    checkflag 0x827 @ Uteya Village gym badge obtained
+    if SET _goto LeaderDennisChat
+    countpokemon
+    compare LASTRESULT 0x1
+    if equal _goto CannotBattle_Dennis
+    getplayerpos 0x4000 0x4001
+    compare 0x4001 0x5
+    if equal _goto DennisAfterMovement
+    msgbox gText_UteyaVillageGym_LeaderDennis_PrePositioningPlayer MSG_NORMAL
+    compare 0x4001 0x3
+    if equal _call PlayerWalkFromAboveDennis
+    applymovement PLAYER m_PlayerWalkInFront_Dennis
+    waitmovement PLAYER
+    applymovement LASTTALKED m_LookDown
+    msgbox gText_UteyaVillageGym_LeaderDennis_AfterPositioningPlayer MSG_NORMAL
+    goto DennisAfterMovement
+
+.global EventScript_UteyaVillage_Gym_LeaderDee
+EventScript_UteyaVillage_Gym_LeaderDee:
+    faceplayer
+    checkflag 0x827 @ Uteya Village gym badge obtained
+    if SET _goto LeaderDeeChat
+    countpokemon
+    compare LASTRESULT 0x1
+    if equal _goto CannotBattle_Dee
+    getplayerpos 0x4000 0x4001
+    compare 0x4001 0x5
+    if equal _goto DeeAfterMovement
+    msgbox gText_UteyaVillageGym_LeaderDee_PrePositioningPlayer MSG_NORMAL
+    compare 0x4001 0x3
+    if equal _call PlayerWalkFromAboveDee
+    applymovement PLAYER m_PlayerWalkInFront_Dee
+    waitmovement PLAYER
+    applymovement LASTTALKED m_LookDown
+    msgbox gText_UteyaVillageGym_LeaderDee_AfterPositioningPlayer MSG_NORMAL
+    goto DeeAfterMovement
+
+PlayerWalkFromAboveDennis:
+    applymovement PLAYER m_PlayerWalkDown_Dennis
+    waitmovement PLAYER
+    return
+
+PlayerWalkFromAboveDee:
+    applymovement PLAYER m_PlayerWalkDown_Dee
+    waitmovement PLAYER
+    return
+
+DennisAfterMovement:
+    msgbox gText_UteyaVillageGym_LeaderDennis_LeadingUpToBattle MSG_NORMAL
+    call SetupMugshotGymLeaderAndBosses
+    trainerbattle1 0x1 485 0x100 gText_UteyaVillageGym_LeaderDee_InitiatingBattle gText_UteyaVillageGym_LeadersDennisAndDee_Defeat DennisAndDee_Defeated
+    end
+
+DeeAfterMovement:
+    msgbox gText_UteyaVillageGym_LeaderDee_LeadingUpToBattle MSG_NORMAL
+    call SetupMugshotGymLeaderAndBosses
+    trainerbattle1 0x1 485 0x100 gText_UteyaVillageGym_LeaderDennis_InitiatingBattle gText_UteyaVillageGym_LeadersDennisAndDee_Defeat DennisAndDee_Defeated
+    end
+
+DennisAndDee_Defeated:
+    msgbox gText_UteyaVillageGym_LeadersDennisAndDee_BadgeAwarded MSG_NORMAL
+    setflag 0x827 @ Uteya Village gym badge
+    setflag 0x4B7 @ Defeated Dennis and Dee
+    setflag 0x25C @ New Pokemart Stock
+    setvar 0x406D 0x1 @ Trigger overworld event with rival
+    fanfare 0x13D @ Gym victory
+    msgbox gText_UteyaVillage_Gym_BadgeReceived MSG_NORMAL
+    call BadgeObedienceMessage
+    waitfanfare
+    settrainerflag 475 @ Michael cannot be battled now
+    settrainerflag 476 @ Leo cannot be battled now
+    settrainerflag 477 @ Bonnie cannot be battled now
+    settrainerflag 478 @ Clyde cannot be battled now
+    settrainerflag 479 @ Jessie cannot be battled now
+    settrainerflag 480 @ James cannot be battled now
+    settrainerflag 481 @ Mike cannot be battled now
+    settrainerflag 482 @ Diane cannot be battled now
+    settrainerflag 483 @ Hannibal cannot be battled now
+    settrainerflag 484 @ Clarice cannot be battled now
+    msgbox gText_LeadersDennisAndDee_BadgeDescription MSG_NORMAL
+    msgbox gText_LeadersDennisAndDee_TMReceived MSG_NORMAL
+    loadpointer 0x0 gText_UteyaVillage_Gym_TMReceived
+    additem ITEM_TM26 0x1
+    giveitemwithfanfare ITEM_TM26 0x1 0x101 @ MUS_FANFA1
+    msgbox gText_UteyaVillageGym_LeaderDennis_Chat MSG_NORMAL
+    msgbox gText_UteyaVillageGym_LeaderDee_Chat MSG_NORMAL
+    end
+
+CannotBattle_Dennis:
+    npcchatwithmovement gText_UteyaVillageGym_LeaderDennis_NotEnoughPokemon m_LookDown
+    end
+
+CannotBattle_Dee:
+    npcchatwithmovement gText_UteyaVillageGym_LeaderDee_NotEnoughPokemon m_LookDown
+    end
+
+LeaderDennisChat:
+    npcchatwithmovement gText_UteyaVillageGym_LeaderDennis_Chat m_LookDown
+    end
+
+LeaderDeeChat:
+    npcchatwithmovement gText_UteyaVillageGym_LeaderDee_Chat m_LookDown
+    end
+
 .global SignScript_UteyaVillageGym_Placard
 SignScript_UteyaVillageGym_Placard:
     checkflag 0x827 @ Uteya gym badge
@@ -1237,3 +1391,8 @@ SignScript_UteyaVillageGym_Placard:
 SignScript_UteyaVillageGym_Placard_AfterBadge:
     msgbox gText_UteyaVillageGym_WinnersWithBadge MSG_SIGN
     end
+
+m_PlayerWalkDown_Dennis: .byte walk_left, walk_down, end_m
+m_PlayerWalkInFront_Dennis: .byte walk_down, walk_right, look_up, end_m
+m_PlayerWalkDown_Dee: .byte walk_right, walk_down, end_m
+m_PlayerWalkInFront_Dee: .byte walk_down, walk_left, look_up, end_m

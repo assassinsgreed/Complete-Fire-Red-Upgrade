@@ -809,6 +809,8 @@ FemaleCaseyBattle:
 EventScript_LaplazGym_LeaderCasey_Defeated:
     msgbox gText_LaplazGym_LeaderCasey_BadgeAwarded MSG_NORMAL
     setflag 0x824 @ Laplaz gym badge
+    setflag 0x4B4 @ Defeated Casey
+    setflag 0x25C @ New Pokemart Stock
     fanfare 0x13D @ Gym victory
     textcolor BLACK
     msgbox gText_LaplazGym_BadgeReceived MSG_NORMAL
@@ -827,8 +829,6 @@ EventScript_LaplazGym_LeaderCasey_Defeated:
     additem ITEM_TM75 0x1 @ Swords Dance
     textcolor BLACK
     msgbox gText_LaplazGym_TMReceived MSG_KEEPOPEN
-    setflag 0x4B4 @ Defeated Casey
-    setflag 0x25C @ New Pokemart Stock
     call SetCaseyGender @ Reset text color
     msgbox gText_LaplazGym_LeaderCasey_Chat MSG_KEEPOPEN
     releaseall

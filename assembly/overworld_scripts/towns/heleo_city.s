@@ -1093,6 +1093,8 @@ LeaderRaine_4Badges:
 EventScript_HeleoGym_LeaderRaine_Defeated:
     msgbox gText_HeleoGym_LeaderRaine_BadgeAwarded MSG_NORMAL
     setflag 0x822 @ Heleo gym badge
+    setflag 0x4B2 @ Defeated Raine
+    setflag 0x25C @ New Pokemart Stock
     fanfare 0x13D @ Gym victory
     msgbox gText_HeleoGym_BadgeReceived MSG_NORMAL
     call BadgeObedienceMessage
@@ -1109,8 +1111,6 @@ EventScript_HeleoGym_LeaderRaine_Defeated:
     additem ITEM_TM18 0x1 @ Rain Dance
     additem ITEM_TM37 0x1 @ Sandstorm
     msgbox gText_HeleoGym_TMReceived MSG_KEEPOPEN
-    setflag 0x4B2 @ Defeated Raine
-    setflag 0x25C @ New Pokemart Stock
     msgbox gText_HeleoGym_LeaderRaine_Chat MSG_KEEPOPEN
     releaseall
     end

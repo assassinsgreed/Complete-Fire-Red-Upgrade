@@ -798,6 +798,9 @@ EventScript_BruccieVillageGym_Abby:
 EventScript_BruccieVillageGym_LeaderAbby_Defeated:
     msgbox gText_BruccieVillageGym_LeaderAbby_BadgeAwarded MSG_NORMAL
     setflag 0x825 @ Bruccie Village gym badge
+    setflag 0x29A @ Received TM 76 from Abby
+    setflag 0x4B5 @ Defeated Abby
+    setflag 0x25C @ New Pokemart Stock
     fanfare 0x13D @ Gym victory
     msgbox gText_BruccieVillageGym_BadgeReceived MSG_NORMAL
     call BadgeObedienceMessage
@@ -807,9 +810,6 @@ EventScript_BruccieVillageGym_LeaderAbby_Defeated:
     loadpointer 0x0 gText_BruccieVillageGym_TMReceived
     additem ITEM_TM76 0x1
     giveitemwithfanfare ITEM_TM76 0x1 0x101 @ MUS_FANFA1
-    setflag 0x29A @ Received TM 76 from Abby
-    setflag 0x4B5 @ Defeated Abby
-    setflag 0x25C @ New Pokemart Stock
     msgbox gText_BruccieVillageGym_LeaderAbby_Chat MSG_KEEPOPEN
     releaseall
     end

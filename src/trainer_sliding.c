@@ -94,6 +94,7 @@ static const struct TrainerSlide sTrainerSlides[] =
 	{0x1C5, sText_Leader7_FirstMonDown, sText_Leader7_LastSwitchIn, sText_Leader7_LowHP}, // Gym Leader Iris
 	{0x1D5, sText_Rival6_FirstMonDown, sText_Rival6_LastSwitchIn, sText_Rival6_LowHP}, // Carnelidge Volcano Rival
 	{0x1D6, sText_Alistair_FirstMonDown, sText_Alistair_LastSwitchIn, sText_Alistair_LowHP}, // Carnelidge Volcano Alistair
+	{0x1E5, sText_Leader8_FirstMonDown, sText_Leader8_LastSwitchIn, sText_Leader8_LowHP}, // Gym Leaders Dennis and Dee
 	{}, // Champion Selene
 };
 
