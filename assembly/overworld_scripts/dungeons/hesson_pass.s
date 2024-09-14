@@ -42,14 +42,14 @@ EventScript_HessonPass_ScientistHarvey:
     msgbox gText_HessonPass_ScientistHarvey_Chat MSG_NORMAL
     end
 
-.global EventSCript_HessonPass_PsychicKimiko
-EventSCript_HessonPass_PsychicKimiko:
+.global EventScript_HessonPass_PsychicKimiko
+EventScript_HessonPass_PsychicKimiko:
     trainerbattle0 0x0 0xD3 0x0 gText_HessonPass_PsychicKimiko_Intro gText_HessonPass_PsychicKimiko_Defeat
     msgbox gText_HessonPass_PsychicKimiko_Chat MSG_NORMAL
     end
 
-.global EventSCript_HessonPass_CoolTrainerColt
-EventSCript_HessonPass_CoolTrainerColt:
+.global EventScript_HessonPass_CoolTrainerColt
+EventScript_HessonPass_CoolTrainerColt:
     trainerbattle0 0x0 0xD4 0x0 gText_HessonPass_CoolTrainerColt_Intro gText_HessonPass_CoolTrainerColt_Defeat
     msgbox gText_HessonPass_CoolTrainerColt_Chat MSG_NORMAL
     end

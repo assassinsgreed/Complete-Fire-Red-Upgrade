@@ -1257,8 +1257,8 @@ npc 1 81 11 ItemScript_Common_HpUp
 npc 1 81 12 ItemScript_Common_Ultraball
 npc 1 81 13 EventScript_HessonPass_HikerLuke
 npc 1 81 14 EventScript_HessonPass_ScientistHarvey
-npc 1 81 15 EventSCript_HessonPass_PsychicKimiko
-npc 1 81 16 EventSCript_HessonPass_CoolTrainerColt
+npc 1 81 15 EventScript_HessonPass_PsychicKimiko
+npc 1 81 16 EventScript_HessonPass_CoolTrainerColt
 sign 1 81 0 SignScript_HessonPass_HolesInGround
 ## F1
 npc 1 82 0 EventScript_Common_Strength
