@@ -591,24 +591,16 @@ SetCaseyMale:
 .global BadgeObedienceMessage
 BadgeObedienceMessage:
     callasm CountBadges
-    compare LASTRESULT 0
-    if equal _call NoBadges
-    compare LASTRESULT 1
-    if equal _call OneBadge
-    compare LASTRESULT 2
-    if equal _call TwoBadges
-    compare LASTRESULT 3
-    if equal _call ThreeBadges
-    compare LASTRESULT 4
-    if equal _call FourBadges
-    compare LASTRESULT 5
-    if equal _call FiveBadges
-    compare LASTRESULT 6
-    if equal _call SixBadges
-    compare LASTRESULT 7
-    if equal _call SevenBadges
-    compare LASTRESULT 8
-    if equal _call EightBadges
+    switch LASTRESULT
+    case 0, NoBadges _call
+    case 1, OneBadge _call
+    case 2, TwoBadges _call
+    case 3, ThreeBadges _call
+    case 4, FourBadges _call
+    case 5, FiveBadges _call
+    case 6, SixBadges _call
+    case 7, SevenBadges _call
+    case 8, EightBadges _call
     msgbox gText_Common_BadgeObedience MSG_KEEPOPEN
     return
 

@@ -12,6 +12,27 @@ The ruins to the north generate weird\npsychic waves.\pSome Pok\emon seem to rea
 #org @gText_UteyaVillage_TrainerHouseOldMan
 The Trainer House here specializes in\na unique battle style popularized\lin Borrius.\pI hear Pok\emon will temporarily\ndevolve during battle.\pHohohoho! I wish it could apply to\nhumans and be permanent!
 
+#org @gText_UteyaVillage_RuinsTourGuideGirl
+Why not visit the Uteya Ruins while\nyou're in the area?\pIt's just a few minutes north of\nhere.\pIt's perfect for sightseers and\ntrainers hoping to toughen their\lteams alike!
+
+#org @gText_UteyaVillage_RivalCongratulatingThePlayer
+[BLUE]Hey, [PLAYER], good to see you!\pI couldn't help but notice you\nleaving the gym.\pDoes it mean what I think it means?
+
+#org @gText_UteyaVillage_RivalPlayerSaysYes
+[BLUE]I knew it!
+
+#org @gText_UteyaVillage_RivalPlayerSaysNo
+[BLUE]Haha, nice try. The look on your\nface gives you away!
+
+#org @gText_UteyaVillage_RivalCommentingOnAllBadges
+[BLUE]Congratulations! Can you believe we\nhave all our badges now?
+
+#org @gText_UteyaVillage_RivalReflectingOnJourney
+[BLUE]It feels like we set out on our\njourney a really long time ago[.]\pSo much has changed since then.
+
+#org @gText_UteyaVillage_RivalMentioningNextSteps
+[BLUE]No time to get sentimental, though!\pWe're finally eligible to sign up for\nthe Elite Four challenge.\pIsn't that awesome?\pI'm going to go to Ascension Tower in\nDaimyn City right away to register.\pCome join me when you're ready!
+
 #org @gText_UteyaVillage_HessonPass
 Hesson Pass\nThe passage to the west
 
@@ -380,3 +401,57 @@ Yes, as expected.
 
 #org @gText_UteyaVillageGym_Clarice_Chat
 You've attained quite a few skills.\nImpressive.
+
+#org @gText_UteyaVillageGym_LeaderDennis_NotEnoughPokemon
+[BLUE]Whoa, pump the breaks, buddy!\pYou're gonna need at least 2 Pok\emon\nif you want some of this action.
+
+#org @gText_UteyaVillageGym_LeaderDee_NotEnoughPokemon
+[RED]Hey, hey, hey, hold it!\pYou can't just waltz in here and\nexpect to battle us with just one\lPok\emon!
+
+#org @gText_UteyaVillageGym_LeaderDennis_Chat
+[BLUE]Alright hotshot, you earned your\nbadge, now skedaddle!
+
+#org @gText_UteyaVillageGym_LeaderDee_Chat
+[RED]Make sure others know you really had\nto work for this badge, okay?
+
+#org @gText_UteyaVillageGym_LeaderDennis_PrePositioningPlayer
+[BLUE]It's important to look a man in the\neyes when you battle him.\pC'mon[.] Over here.
+
+#org @gText_UteyaVillageGym_LeaderDennis_AfterPositioningPlayer
+[BLUE]Alright, alright, alright!\nNow we're talking.
+
+#org @gText_UteyaVillageGym_LeaderDennis_LeadingUpToBattle
+[BLUE]So, hotshot, you want our gym\nbadge, huh?\pYou know what you have to do -\nprove your skill to us first!
+
+#org @gText_UteyaVillageGym_LeaderDennis_InitiatingBattle
+[BLUE]It's only fair to warn you though[.]\nthese muscles aren't for show.\pWe're the real deal, and you'll see\nwhy soon enough.
+
+#org @gText_UteyaVillageGym_LeaderDee_PrePositioningPlayer
+[RED]You're looking for a battle, huh?\nThen come over this way.
+
+#org @gText_UteyaVillageGym_LeaderDee_AfterPositioningPlayer
+[RED]There, much better. Now then[.]
+
+#org @gText_UteyaVillageGym_LeaderDee_LeadingUpToBattle
+[RED]You want our badge, do you?\pIn that case you'll have to earn\nit.\pAnd, the only way to do that around\nhere is to beat us in battle!
+
+#org @gText_UteyaVillageGym_LeaderDee_InitiatingBattle
+[RED]Don't expect us to go easy on you\njust because you're a kid, though!
+
+#org @gText_UteyaVillageGym_LeadersDennisAndDee_Defeat
+Dennis: This can't be happening!\nDee: Have we been [.] defeated?
+
+#org @gText_UteyaVillageGym_LeadersDennisAndDee_BadgeAwarded
+[BLUE]Hmph. Okay, so maybe you know a\nthing or two.\p[RED]We can take our lumps, though.\pA win's a win, and so this badge is\nyours.
+
+#org @gText_UteyaVillage_Gym_BadgeReceived
+[BLACK][PLAYER] received the Double Badge!
+
+#org @gText_LeadersDennisAndDee_BadgeDescription
+[RED]That's the Double Badge.\pIt proves you've got what it takes\nto win double battles, naturally.\p[BLUE]It'll also let you use Rock Climb\noutside of battle, if you've got\lthe HM on hand.\pSweet deal, right?\nIt's not just for looks.\p[SHRINK]Although it is good for that, too[.]
+
+#org @gText_LeadersDennisAndDee_TMReceived
+[BLUE]Y'know what? I don't mind you, kid.\nYou've got spunk.\pHere, have this too.\nIt's the TM for Earthquake.\p[RED]Use it to punish both of your\nopponents during double battles.
+
+#org @gText_UteyaVillage_Gym_TMReceived
+[BLACK][PLAYER] received TM26 from Dennis\nand Dee!

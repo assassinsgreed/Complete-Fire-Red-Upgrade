@@ -2628,6 +2628,7 @@ npc 3 10 2 EventScript_UteyaVillage_UteyaRuinsMan
 npc 3 10 3 EventScript_UteyaVillage_TrainerHouseOldMan
 npc 3 10 4 EventScript_UteyaVillage_TM30_ShadowBall
 npc 3 10 5 ItemScript_Common_HyperPotion
+npc 3 10 6 EventScript_UteyaVillage_RuinsTourGuideGirl
 sign 3 10 0 SignScript_UteyaVillage_HessonPass
 sign 3 10 1 SignScript_UteyaVillage_TownPlacard
 sign 3 10 2 SignScript_UteyaVillage_GymSign
@@ -2673,6 +2674,8 @@ npc 14 9 10 EventScript_UteyaVillage_Gym_Diane
 npc 14 9 11 EventScript_UteyaVillage_Gym_Hannibal
 npc 14 9 12 EventScript_UteyaVillage_Gym_Clarice
 npc 14 9 13 EventScript_UteyaVillage_Gym_Leo
+npc 14 9 14 EventScript_UteyaVillage_Gym_LeaderDennis
+npc 14 9 15 EventScript_UteyaVillage_Gym_LeaderDee
 sign 14 9 0 SignScript_UteyaVillageGym_Placard
 sign 14 9 1 SignScript_UteyaVillageGym_Placard
 tile 14 9 0 TileScript_UteyaVillage_Gym_FirstPuzzle

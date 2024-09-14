@@ -3481,7 +3481,7 @@ void MarkGalarianBirdsAsSeen()
 void CountBadges()
 {
 	gSpecialVar_LastResult = 0;
-	for (int i = 0; i < 7; i++)
+	for (int i = 0; i < 8; i++)
 	{
 		gSpecialVar_LastResult += FlagGet(PERMA_SYS_FLAGS_START + i);
 	}

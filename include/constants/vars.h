@@ -143,16 +143,16 @@
 #define VAR_MAP_SCENE_DAIMYN_FACTORY_MELTAN_EVENTS                             0x4061
 #define VAR_MAP_SCENE_CARNELIDGE_VOLCANO_STORY_PROGRESSION                     0x4062
 #define VAR_MAP_SCENE_UTEYA_VILLAGE_CLANCY_AND_ENA                             0x4063
-#define VAR_MAP_SCENE_VICTORY_ROAD_1F                                          0x4064
-#define VAR_MAP_SCENE_VICTORY_ROAD_2F_BOULDER1                                 0x4065
-#define VAR_MAP_SCENE_VICTORY_ROAD_2F_BOULDER2                                 0x4066
-#define VAR_MAP_SCENE_VICTORY_ROAD_3F                                          0x4067
-#define VAR_MAP_SCENE_POKEMON_LEAGUE                                           0x4068
-#define VAR_MAP_SCENE_CINNABAR_ISLAND_POKEMON_LAB_EXPERIMENT_ROOM_WHICH_FOSSIL 0x4069
-#define VAR_MAP_SCENE_CINNABAR_ISLAND_POKEMON_LAB_EXPERIMENT_ROOM_REVIVE_STATE 0x406A
-#define VAR_MAP_SCENE_ROUTE24                                                  0x406B
+#define VAR_MAP_SCENE_VICTORY_ROAD_1F                                          0x4064 // Appears to reset with map reload
+#define VAR_MAP_SCENE_VICTORY_ROAD_2F_BOULDER1                                 0x4065 // Appears to reset with map reload
+#define VAR_MAP_SCENE_VICTORY_ROAD_2F_BOULDER2                                 0x4066 // Appears to reset with map reload
+#define VAR_MAP_SCENE_VICTORY_ROAD_3F                                          0x4067 // Appears to reset with map reload
+#define VAR_MAP_SCENE_POKEMON_LEAGUE                                           0x4068 // Appears to reset with map reload
+#define VAR_MAP_SCENE_CINNABAR_ISLAND_POKEMON_LAB_EXPERIMENT_ROOM_WHICH_FOSSIL 0x4069 // Appears to reset with map reload
+#define VAR_MAP_SCENE_CINNABAR_ISLAND_POKEMON_LAB_EXPERIMENT_ROOM_REVIVE_STATE 0x406A // Appears to reset with map reload
+#define VAR_MAP_SCENE_ROUTE24                                                  0x406B // Appears to reset with map reload
 #define VAR_MAP_SCENE_PEWTER_CITY                                              0x406C
-#define VAR_0x406D                                                             0x406D
+#define VAR_MAP_SCENE_UTEYA_VILLAGE_MEETING_WITH_RIVAL                         0x406D
 #define VAR_MAP_SCENE_FUCHSIA_CITY_SAFARI_ZONE_ENTRANCE                        0x406E
 #define VAR_CABLE_CLUB_STATE                                                   0x406F
 #define VAR_MAP_SCENE_PALLET_TOWN_SIGN_LADY                                    0x4070
