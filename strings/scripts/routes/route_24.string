@@ -1,0 +1,59 @@
+#org @gText_Route24_PsychicRaya_Intro
+Do you feel it? The waves of psychic\nenergy eminating from the north[.]
+
+#org @gText_Route24_PsychicRaya_Defeat
+Those waves could not empower us[.]
+
+#org @gText_Route24_PsychicRaya_Chat
+The Uteyan Ruins are north of here.\pRumour has it an ancient civilization\nonce stood there.\pIt's been ruins for as long as anyone\ncan remember.
+
+#org @gText_Route24_DragonTamerDavid_Intro
+You're interested in that house on\nthe hill, yes?\pOnly those strong enough to defeat\nme may earn the right to visit it!
+
+#org @gText_Route24_DragonTamerDavid_Defeat
+Hm! You pass!
+
+#org @gText_Route24_DragonTamerDavid_Chat
+The man in that house up there is my\nsensei.\pIf he deems you worthy, he'll teach\nyour Pok\emon the ultimate Dragon\ltype move.
+
+#org @gText_Route24_PsychicJeff_Intro
+Your weak point[.] I see it!\nIt's clear as day!
+
+#org @gText_Route24_PsychicJeff_Defeat
+H-Huh?
+
+#org @gText_Route24_PsychicJeff_Chat
+Know your opponent's strengths to\nbetter understand their weaknesses.\pI think I know what my mentor meant\nnow.
+
+#org @gText_Route24_FishermanHumphrey_Intro
+I swear I saw a Dratini in this pond,\nbut nobody believes me[.]\pI'm so frustrated! I know, I'll take\nit out on you!
+
+#org @gText_Route24_FishermanHumphrey_Defeat
+Grr[.]
+
+#org @gText_Route24_FishermanHumphrey_Chat
+I'll prove it to everyone[.]\pI'm not leaving this spot until I fish\nthat Dratini up!\pI just need to pick the right rod[.]\nHmmm[.]
+
+#org @gText_Route24_TriathleteWillow_Intro
+Greetings! I think I'll take a break\nfrom training to battle you.
+
+#org @gText_Route24_TriathleteWillow_Defeat
+This was a nice diversion.
+
+#org @gText_Route24_TriathleteWillow_Chat
+Can you feel how clean the air is\nhere?\pIt's because we're so far from\nKulure's cities.
+
+#org @gText_Route24_BlackbeltIrvine_Intro
+My Pok\emon have been training day\nand night.
+
+#org @gText_Route24_BlackbeltIrvine_Defeat
+A loss is a loss.
+
+#org @gText_Route24_BlackbeltIrvine_Chat
+One of my Pok\emon evolved before\nthe others.\pI thought they'd get discouraged,\nbut it only motivated them to work\lharder!
+
+#org @gText_Route24_UteyanRuinsSign
+Uteyan Ruins\nRelic of a forgotten civilization
+
+#org @gText_Route24_TrainerTipsSign
+Trainer Tips!\pLooking for a specific nature on wild\nPok\emon?\pLead your party with a Pok\emon with\nthat nature and the Synchronize\lability!\pAll wild Pok\emon are 50% likely to\nhave the same ability.

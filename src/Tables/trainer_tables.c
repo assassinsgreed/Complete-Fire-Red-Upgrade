@@ -6855,6 +6855,41 @@ const struct TrainerMonItemCustomMoves sParty_UteyaVillageGym_LeadersDennisAndDe
 
 // #endregion
 
+// #region Route 24
+const struct TrainerMonNoItemDefaultMoves sParty_Route24_PsychicRaya[] = {
+    { .lvl = 60, .species = SPECIES_HATTREM },
+    { .lvl = 61, .species = SPECIES_HATTERENE },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route24_DragonTamerDavid[] = {
+    { .lvl = 61, .species = SPECIES_TURTONATOR },
+    { .lvl = 61, .species = SPECIES_TYRANTRUM },
+    { .lvl = 62, .species = SPECIES_CHARIZARD },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route24_PsychicJeff[] = {
+    { .lvl = 61, .species = SPECIES_WOBBUFFET },
+    { .lvl = 61, .species = SPECIES_BEHEEYEM },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route24_FishermanHumphrey[] = {
+    { .lvl = 63, .species = SPECIES_DHELMISE },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route24_TriathleteWillow[] = {
+    { .lvl = 60, .species = SPECIES_WHIRLIPEDE },
+    { .lvl = 61, .species = SPECIES_LOPUNNY },
+    { .lvl = 61, .species = SPECIES_WHIMSICOTT },
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route24_BlackbeltIrvine[] = {
+    { .lvl = 58, .species = SPECIES_MIENFOO },
+    { .lvl = 58, .species = SPECIES_MIENFOO },
+    { .lvl = 59, .species = SPECIES_MIENFOO },
+    { .lvl = 60, .species = SPECIES_MIENSHAO },
+};
+// #endregion
+
 // #endregion
 
 #define NO_NAME                                                                                      \
@@ -12765,6 +12800,80 @@ const struct Trainer gTrainers[] = {
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_SEMI_SMART | AI_SCRIPT_DOUBLE_BATTLE,
         .partySize = NELEMS(sParty_UteyaVillageGym_LeadersDennisAndDee),
         .party = {.ItemCustomMoves = sParty_UteyaVillageGym_LeadersDennisAndDee}
+    },
+    // #endregion
+    // #region Route 24
+    [TRAINER_ROUTE_24_PSYCHIC_RAYA] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_PSYCHIC,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_PSYCHIC_F,
+        .trainerName = {_R, _a, _y, _a, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_Psychic_Standard,
+        .partySize = NELEMS(sParty_Route24_PsychicRaya),
+        .party = {.NoItemDefaultMoves = sParty_Route24_PsychicRaya}
+    },
+    [TRAINER_ROUTE_24_DRAGON_TAMER_DAVID] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_DRAGON_TAMER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_DRAGON_TAMER,
+        .trainerName = {_D, _a, _v, _i, _d, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_DragonTamer_Standard,
+        .partySize = NELEMS(sParty_Route24_DragonTamerDavid),
+        .party = {.NoItemDefaultMoves = sParty_Route24_DragonTamerDavid}
+    },
+    [TRAINER_ROUTE_24_PSYCHIC_JEFF] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_PSYCHIC,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_PSYCHIC_M,
+        .trainerName = {_J, _e, _f, _f, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_Psychic_Standard,
+        .partySize = NELEMS(sParty_Route24_PsychicJeff),
+        .party = {.NoItemDefaultMoves = sParty_Route24_PsychicJeff}
+    },
+    [TRAINER_ROUTE_24_FISHERMAN_HUMPHREY] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_FISHERMAN,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_FISHERMAN,
+        .trainerName = {_H, _u, _m, _p, _h, _r, _e, _y, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_Fisherman_Standard,
+        .partySize = NELEMS(sParty_Route24_FishermanHumphrey),
+        .party = {.NoItemDefaultMoves = sParty_Route24_FishermanHumphrey}
+    },
+    [TRAINER_ROUTE_24_TRIATHLETE_WILLOW] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_TRIATHLETE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
+        .trainerPic = TRAINER_PIC_RUNNING_TRIATHLETE_F,
+        .trainerName = {_W, _i, _l, _l, _o, _w, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_Triathlete_Standard,
+        .partySize = NELEMS(sParty_Route24_TriathleteWillow),
+        .party = {.NoItemDefaultMoves = sParty_Route24_TriathleteWillow}
+    },
+    [TRAINER_ROUTE_24_BLACKBELT_IRVINE] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_BLACK_BELT,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_BLACK_BELT,
+        .trainerName = {_I, _r, _v, _i, _n, _e, _END},
+        .items = { ITEM_DIRE_HIT },
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_BlackBelt_Standard,
+        .partySize = NELEMS(sParty_Route24_BlackbeltIrvine),
+        .party = {.NoItemDefaultMoves = sParty_Route24_BlackbeltIrvine}
     },
     // #endregion
     // #endregion

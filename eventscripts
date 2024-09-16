@@ -2693,3 +2693,27 @@ tile 14 9 11 TileScript_UteyaVillage_Gym_Puzzle4BottomLeft
 tile 14 9 12 TileScript_UteyaVillage_Gym_ThirdAndFifthPuzzles
 tile 14 9 13 TileScript_UteyaVillage_Gym_Puzzle5BottomLeft
 tile 14 9 14 TileScript_UteyaVillage_Gym_Puzzle5TopRight
+
+# Route 24
+npc 3 43 0 EventScript_Common_Cut
+npc 3 43 1 EventScript_Common_RockSmash
+npc 3 43 2 EventScript_Common_RockSmash
+npc 3 43 3 EventScript_Common_RockSmash
+npc 3 43 4 EventScript_Common_RockSmash
+npc 3 43 5 EventScript_Common_RockSmash
+npc 3 43 6 EventScript_Common_RockSmash
+npc 3 43 7 EventScript_Common_RockSmash
+npc 3 43 8 EventScript_Common_RockSmash
+npc 3 43 9 EventScript_Common_RockSmash
+npc 3 43 10 EventScript_Route24_FindTM85_DreamEater
+npc 3 43 11 EventScript_Route24_FindTM63_DrainPunch
+npc 3 43 12 ItemScript_Common_MaxEther
+npc 3 43 13 ItemScript_Common_Duskball
+npc 3 43 14 EventScript_Route24_PsychicRaya
+npc 3 43 15 EventScript_Route24_DragonTamerDavid
+npc 3 43 16 EventScript_Route24_PsychicJeff
+npc 3 43 17 EventScript_Route24_FishermanHumphrey
+npc 3 43 18 EventScript_Route24_TriathleteWillow
+npc 3 43 19 EventScript_Route24_BlackbeltIrvine
+sign 3 43 0 SignScript_Route24_UteyanRuinsSign
+sign 3 43 1 SignScript_Route24_TrainerTips

@@ -2515,6 +2515,62 @@
         },
         {
             "mapgroup": 3,
+            "mapnum": 43,
+            "grass": {
+                "rate": 21,
+                "pokemon": [
+                    { "low": 53, "high": 56, "species": "SPECIES_KIRLIA" },
+                    { "low": 53, "high": 56, "species": "SPECIES_PAWNIARD" },
+                    { "low": 54, "high": 57, "species": "SPECIES_STOUTLAND" },
+                    { "low": 54, "high": 57, "species": "SPECIES_SUDOWOODO" },
+                    { "low": 54, "high": 58, "species": "SPECIES_BOLTUND" },
+                    { "low": 54, "high": 57, "species": "SPECIES_CORVIKNIGHT" },
+                    { "low": 53, "high": 56, "species": "SPECIES_TOGETIC" },
+                    { "low": 54, "high": 57, "species": "SPECIES_TOGETIC" },
+                    { "low": 54, "high": 57, "species": "SPECIES_LYCANROC" },
+                    { "low": 54, "high": 58, "species": "SPECIES_LUCARIO" },
+                    { "low": 54, "high": 58, "species": "SPECIES_CONKELDURR" },
+                    { "low": 54, "high": 58, "species": "SPECIES_LUCARIO" }
+                ]
+            },
+            "rocks": {
+                "rate": 50,
+                "pokemon": [
+                    { "low": 55, "high": 60, "species": "SPECIES_BOLDORE" },
+                    { "low": 55, "high": 60, "species": "SPECIES_GIGALITH" },
+                    { "low": 55, "high": 60, "species": "SPECIES_SHUCKLE" },
+                    { "low": 55, "high": 60, "species": "SPECIES_SHUCKLE" },
+                    { "low": 55, "high": 60, "species": "SPECIES_SHUCKLE" }
+                ]
+            },
+            "surfing": {
+                "rate": 2,
+                "pokemon": [
+                    { "low": 52, "high": 56, "species": "SPECIES_CHINCHOU" },
+                    { "low": 55, "high": 57, "species": "SPECIES_CHINCHOU" },
+                    { "low": 55, "high": 57, "species": "SPECIES_LANTURN" },
+                    { "low": 57, "high": 58, "species": "SPECIES_LANTURN" },
+                    { "low": 56, "high": 59, "species": "SPECIES_LANTURN" }
+                ]
+            },
+            "fishing": {
+                "rate": 20,
+                "pokemon": [
+                    { "low": 5, "high": 20, "species": "SPECIES_MAGIKARP" },
+                    { "low": 5, "high": 20, "species": "SPECIES_CORPHISH" },
+                    { "low": 30, "high": 40, "species": "SPECIES_CORPHISH" },
+                    { "low": 30, "high": 40, "species": "SPECIES_MAGIKARP" },
+                    { "low": 30, "high": 40, "species": "SPECIES_CHINCHOU" },
+                    { "low": 50, "high": 60, "species": "SPECIES_GYARADOS" },
+                    { "low": 50, "high": 60, "species": "SPECIES_CRAWDAUNT" },
+                    { "low": 50, "high": 60, "species": "SPECIES_LANTURN" },
+                    { "low": 50, "high": 60, "species": "SPECIES_LANTURN" },
+                    { "low": 50, "high": 60, "species": "SPECIES_DRATINI" }
+                ]
+            }
+        },
+        {
+            "mapgroup": 3,
             "mapnum": 54,
             "grass": {
                 "rate": 21,

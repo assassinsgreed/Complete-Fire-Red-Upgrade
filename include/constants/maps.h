@@ -257,8 +257,8 @@
 #define MAP_SECRET_PATH                          ((3 << 8) | 40)
 #define MAP_ROUTE_22                             ((3 << 8) | 41)
 #define MAP_ROUTE_23                             ((3 << 8) | 42)
-#define MAP_ROUTE_24_WEST                        ((3 << 8) | 43)  // Just shown as Route 24 on the map
-#define MAP_ROUTE_24_NORTH                       ((3 << 8) | 44)  // Just shown as Route 24 on the map
+#define MAP_ROUTE_24                             ((3 << 8) | 43)
+#define MAP_UNUSED                               ((3 << 8) | 44) // Currently Route 24 in binary
 #define MAP_ROUTE_11_NORTH                       ((3 << 8) | 54)
 #define MAP_ONE_ISLAND_KINDLE_ROAD               (45 | (3 << 8))
 #define MAP_ONE_ISLAND_TREASURE_BEACH            (46 | (3 << 8))
