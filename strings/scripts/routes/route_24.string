@@ -57,3 +57,24 @@ Uteyan Ruins\nRelic of a forgotten civilization
 
 #org @gText_Route24_TrainerTipsSign
 Trainer Tips!\pLooking for a specific nature on wild\nPok\emon?\pLead your party with a Pok\emon with\nthat nature and the Synchronize\lability!\pAll wild Pok\emon are 50% likely to\nhave the same ability.
+
+#org @gText_Route24_House_DragonMaster_Intro
+Young one[.] I can sense your aura.
+
+#org @gText_Route24_House_DragonMaster_OfferToTeachDracoMeteor
+You are quite the capable trainer,\nare you not?\pIn my youth, I was an exceptional\ndragon tamer. Amongst the best.\pI have mastered a technique that\nonly capable trainers can handle.\pI can teach it to any Dragon type\nPok\emon you've formed a special\lbond with.\pWould you like me to teach one of\nyour Pok\emon?
+
+#org @gText_Route24_House_DragonMaster_ChoseNo
+Very well.\pYour aura indicates you will achieve\ngreatness even without this\ltechnique.
+
+#org @gText_Route24_House_DragonMaster_NoDragons
+None of your Pok\emon are capable of\nlearning this technique.\pReturn with a Dragon Pok\emon, child,\nand I shall teach it.
+
+#org @gText_Route24_House_DragonMaster_ChosePokemonPrompt
+Now, which Pok\emon shall I teach?
+
+#org @gText_Route24_House_DragonMaster_TutoringComplete
+It is done. Your Pok\emon has\nmastered my technique.\pUse it to show your opponents the\nunrivaled power of Dragon Pok\emon.
+
+#org @gText_Route24_House_DragonMaster_NotEnoughBadges
+You have yet to achieve the\npotential you hold within.\pReturn to me once you have.

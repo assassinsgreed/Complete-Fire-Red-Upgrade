@@ -62,3 +62,37 @@ SignScript_Route24_UteyanRuinsSign:
 SignScript_Route24_TrainerTips:
     msgbox gText_Route24_TrainerTipsSign MSG_SIGN
     end
+
+.global EventScript_Route24_House_DragonMaster
+EventScript_Route24_House_DragonMaster:
+    faceplayer
+    msgbox gText_Route24_House_DragonMaster_Intro MSG_NORMAL
+    callasm CountBadges
+    compare LASTRESULT 0x8
+    if lessthan _goto DragonMaster_NotEnoughBadges
+    msgbox gText_Route24_House_DragonMaster_OfferToTeachDracoMeteor MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto DragonMaster_ChoseNo
+    special 0xCC @ Check if any pokemon can learn draco meteor
+    compare LASTRESULT 0x0
+    if equal _goto DragonMaster_NoDragons
+    msgbox gText_Route24_House_DragonMaster_ChosePokemonPrompt MSG_NORMAL
+    setvar 0x8005 64 @ Draco Meteor
+    special 0x18D
+    waitstate
+    compare LASTRESULT YES
+    if false _goto DragonMaster_ChoseNo @ Pokemon couldn't learn, or player chose not to
+    npcchatwithmovement gText_Route24_House_DragonMaster_TutoringComplete m_LookDown
+    end
+
+DragonMaster_NotEnoughBadges:
+    npcchatwithmovement gText_Route24_House_DragonMaster_NotEnoughBadges m_LookDown
+    end
+
+DragonMaster_ChoseNo:
+    npcchatwithmovement gText_Route24_House_DragonMaster_ChoseNo m_LookDown
+    end
+
+DragonMaster_NoDragons:
+    npcchatwithmovement gText_Route24_House_DragonMaster_NoDragons m_LookDown
+    end
