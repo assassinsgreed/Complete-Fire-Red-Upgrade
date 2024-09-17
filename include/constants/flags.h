@@ -885,10 +885,10 @@
 #define FLAG_HIDE_ROUTE_11_SOUTH_TM32_DOUBLE_TEAM        0x35A
 #define FLAG_HIDE_UTEYA_VILLAGE_TM30_SHADOW_BALL         0x35B
 #define FLAG_HIDE_UTEYA_VILLAGE_HYPER_POTION             0x35C
-#define FLAG_0x35D               0x35D
-#define FLAG_0x35E               0x35E
-#define FLAG_0x35F               0x35F
-#define FLAG_0x360               0x360
+#define FLAG_HIDE_ROUTE24_TM85_DREAM_EATER               0x35D
+#define FLAG_HIDE_ROUTE24_TM63_DRAIN_PUNCH               0x35E
+#define FLAG_HIDE_ROUTE24_MAX_ETHER                      0x35F
+#define FLAG_HIDE_ROUTE24_DUSK_BALL                      0x360
 #define FLAG_0x361               0x361
 #define FLAG_0x362               0x362
 #define FLAG_0x363               0x363
@@ -1301,8 +1301,8 @@
 #define FLAG_HIDDEN_ITEM_CARNELIDGE_VOLCANO_F2_NUGGET                 229
 #define FLAG_HIDDEN_ITEM_UTEYA_VILLAGE_POWER_HERB                     230
 #define FLAG_HIDDEN_ITEM_UTEYA_VILLAGE_REPEAT_BALL                    231
-#define FLAG_0x4DD                            0x4DD
-#define FLAG_0x4DE                            0x4DE
+#define FLAG_ROUTE_24_MAX_REPEL                                       232
+#define FLAG_ROUTE_24_MAX_ELIXIR                                      233
 #define FLAG_0x4DF                            0x4DF
 #define FLAG_0x4E0                            0x4E0
 #define FLAG_0x4E1                            0x4E1

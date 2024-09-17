@@ -211,6 +211,22 @@ const struct WildPokemon gRoute21AndSecretTrail_LandMonsNight[] =
 	{49, 52, SPECIES_HELIOLISK}
 };
 
+const struct WildPokemon gRoute24_LandMonsNight[] =
+{
+	{53, 56, SPECIES_GRIMER_A},
+	{53, 56, SPECIES_PAWNIARD},
+	{54, 57, SPECIES_STOUTLAND},
+	{54, 57, SPECIES_SUDOWOODO},
+	{54, 58, SPECIES_MUK_A},
+	{54, 57, SPECIES_CORVIKNIGHT},
+	{53, 56, SPECIES_MIMIKYU},
+	{54, 57, SPECIES_MIMIKYU},
+	{54, 57, SPECIES_LYCANROC_N},
+	{54, 58, SPECIES_MANDIBUZZ},
+	{54, 58, SPECIES_CONKELDURR}, 
+	{54, 58, SPECIES_MANDIBUZZ}
+};
+
 const struct WildPokemonInfo gVarisiForest_LandMonsNightInfo = {14, gVarisiForest_LandMonsNight};
 const struct WildPokemonInfo gRubarrDesert_LandMonsNightInfo = {3, gRubarrDesert_LandMonsNight};
 const struct WildPokemonInfo gHeleoRanch_LandMonsNightInfo = {21, gHeleoRanch_LandMonsNight};
@@ -223,6 +239,7 @@ const struct WildPokemonInfo gLakeLaplaz_LandMonsNightInfo = {21, gLakeLaplaz_La
 const struct WildPokemonInfo gRoute12West_LandMonsNightInfo = {21, gRoute12West_LandMonsNight};
 const struct WildPokemonInfo gCalicinBay_LandMonsNightInfo = {21, gCalicinBay_LandMonsNight};
 const struct WildPokemonInfo gRoute21AndSecretTrail_LandMonsNightInfo = {21, gRoute21AndSecretTrail_LandMonsNight};
+const struct WildPokemonInfo gRoute24_LandMonsNightInfo = {21, gRoute24_LandMonsNight};
 
 const struct WildPokemonHeader gWildMonMorningHeaders[] =
 {
@@ -347,6 +364,14 @@ const struct WildPokemonHeader gWildMonEveningHeaders[] =
 		.mapGroup = MAP_GROUP(SECRET_PATH),
 		.mapNum = MAP_NUM(SECRET_PATH),
 		.landMonsInfo = &gRoute21AndSecretTrail_LandMonsNightInfo,
+		.waterMonsInfo = NULL,
+		.rockSmashMonsInfo = NULL,
+		.fishingMonsInfo = NULL,
+	},
+	{
+		.mapGroup = MAP_GROUP(ROUTE_24),
+		.mapNum = MAP_NUM(ROUTE_24),
+		.landMonsInfo = &gRoute24_LandMonsNightInfo,
 		.waterMonsInfo = NULL,
 		.rockSmashMonsInfo = NULL,
 		.fishingMonsInfo = NULL,
