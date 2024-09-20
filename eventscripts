@@ -2719,3 +2719,23 @@ sign 3 43 0 SignScript_Route24_UteyanRuinsSign
 sign 3 43 1 SignScript_Route24_TrainerTips
 ## House
 npc 28 0 0 EventScript_Route24_House_DragonMaster
+
+## Uteyan Ruins
+map 1 85 MapScript_UteyanRuins
+npc 1 85 0 ItemScript_Common_PsychicSeed
+npc 1 85 1 EventScript_UteyanRuins_TM04CalmMind
+npc 1 85 2 EventScript_UteyanRuins_RuinManiacKristian
+npc 1 85 3 EventScript_UteyanRuins_PsychicHaley
+npc 1 85 4 EventScript_UteyanRuins_RuinManiacCyril
+npc 1 85 5 EventScript_UteyanRuins_BrailleMan
+npc 1 85 6 EventScript_UteyanRuins_PuzzleGirl
+npc 1 86 0 ItemScript_Common_Revive
+npc 1 86 1 EventScript_UteyanRuins_TM29Psychic
+npc 1 86 2 EventScript_UteyanRuins_SuperNerdMorty
+npc 1 86 3 EventScript_UteyanRuins_ChannelerAgatha
+npc 1 87 0 EventScript_UteyanRuins_LassDorothy
+npc 1 102 0 EventScript_UteyanRuins_HM06RockClimb
+npc 1 103 0 EventScript_UteyanRuins_Gardevoirite
+npc 1 104 0 EventScript_UteyanRuins_SacredAsh
+npc 1 105 0 EventScript_UteyanRuins_RedOrb
+npc 1 106 0 EventScript_UteyanRuins_BlueOrb

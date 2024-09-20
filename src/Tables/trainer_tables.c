@@ -6889,6 +6889,40 @@ const struct TrainerMonNoItemDefaultMoves sParty_Route24_BlackbeltIrvine[] = {
     { .lvl = 60, .species = SPECIES_MIENSHAO },
 };
 // #endregion
+// #region Uteyan Ruins
+const struct TrainerMonNoItemDefaultMoves sParty_UteyanRuins_RuinManiacKristian[] = {
+    { .lvl = 59, .species = SPECIES_STONJOURNER },
+    { .lvl = 60, .species = SPECIES_WOBBUFFET }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_UteyanRuins_PsychicHaley[] = {
+    { .lvl = 63, .species = SPECIES_BEHEEYEM }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_UteyanRuins_RuinManiacCyril[] = {
+    { .lvl = 58, .species = SPECIES_YAMASK_G },
+    { .lvl = 59, .species = SPECIES_COFAGRIGUS },
+    { .lvl = 60, .species = SPECIES_RUNERIGUS }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_UteyanRuins_SuperNerdMorty[] = {
+    { .lvl = 59, .species = SPECIES_GOGOAT },
+    { .lvl = 59, .species = SPECIES_DRAGONAIR },
+    { .lvl = 59, .species = SPECIES_GALLADE }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_UteyanRuins_ChannelerAgatha[] = {
+    { .lvl = 60, .species = SPECIES_MIMIKYU },
+    { .lvl = 60, .species = SPECIES_UMBREON }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_UteyanRuins_LassDorothy[] = {
+    { .lvl = 57, .species = SPECIES_FLAAFFY },
+    { .lvl = 57, .species = SPECIES_KIRLIA },
+    { .lvl = 58, .species = SPECIES_RIBOMBEE },
+    { .lvl = 59, .species = SPECIES_WHIMSICOTT },
+};
+// #endregion
 
 // #endregion
 
@@ -12874,6 +12908,80 @@ const struct Trainer gTrainers[] = {
         .aiFlags = TrainerAIFlags_BlackBelt_Standard,
         .partySize = NELEMS(sParty_Route24_BlackbeltIrvine),
         .party = {.NoItemDefaultMoves = sParty_Route24_BlackbeltIrvine}
+    },
+    // #endregion
+    // #region Uteyan Ruins
+    [TRAINER_UTEYAN_RUINS_RUIN_MANIAC_KRISTIAN] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_RUIN_MANIAC,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
+        .trainerPic = TRAINER_PIC_RUIN_MANIAC,
+        .trainerName = {_K, _r, _i, _s, _t, _i, _a, _n, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_RuinManiac_Standard,
+        .partySize = NELEMS(sParty_UteyanRuins_RuinManiacKristian),
+        .party = {.NoItemDefaultMoves = sParty_UteyanRuins_RuinManiacKristian}
+    },
+    [TRAINER_UTEYAN_RUINS_PSYCHIC_HALEY] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_PSYCHIC,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_PSYCHIC_F,
+        .trainerName = {_H, _a, _l, _e, _y, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_Psychic_Standard,
+        .partySize = NELEMS(sParty_UteyanRuins_PsychicHaley),
+        .party = {.NoItemDefaultMoves = sParty_UteyanRuins_PsychicHaley}
+    },
+    [TRAINER_UTEYAN_RUINS_RUIN_MANIAC_CYRIL] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_RUIN_MANIAC,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
+        .trainerPic = TRAINER_PIC_RUIN_MANIAC,
+        .trainerName = {_C, _y, _r, _i, _l, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_RuinManiac_Standard,
+        .partySize = NELEMS(sParty_UteyanRuins_RuinManiacCyril),
+        .party = {.NoItemDefaultMoves = sParty_UteyanRuins_RuinManiacCyril}
+    },
+    [TRAINER_UTEYAN_RUINS_SUPER_NERD_MORTY] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_SUPER_NERD,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_SUPER_NERD,
+        .trainerName = {_M, _o, _r, _t, _y, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_SuperNerd_Standard,
+        .partySize = NELEMS(sParty_UteyanRuins_SuperNerdMorty),
+        .party = {.NoItemDefaultMoves = sParty_UteyanRuins_SuperNerdMorty}
+    },
+    [TRAINER_UTEYAN_RUINS_CHANNELER_AGATHA] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_CHANNELER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_CHANNELER,
+        .trainerName = {_A, _g, _a, _t, _h, _a, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_Channeler_Standard,
+        .partySize = NELEMS(sParty_UteyanRuins_ChannelerAgatha),
+        .party = {.NoItemDefaultMoves = sParty_UteyanRuins_ChannelerAgatha}
+    },
+    [TRAINER_UTEYAN_RUINS_LASS_DOROTHY] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_LASS,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_GIRL,
+        .trainerPic = TRAINER_PIC_LASS,
+        .trainerName = {_D, _o, _r, _o, _t, _h, _y, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_Lass_Standard,
+        .partySize = NELEMS(sParty_UteyanRuins_LassDorothy),
+        .party = {.NoItemDefaultMoves = sParty_UteyanRuins_LassDorothy}
     },
     // #endregion
     // #endregion
