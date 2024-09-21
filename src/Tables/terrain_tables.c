@@ -373,7 +373,26 @@ const struct TerrainTableStruct gTerrainTable[] =
 			.secretPowerAnim = MOVE_ERUPTION,
 			.naturePowerMove = MOVE_LAVAPLUME,
 			.burmyForm = SPECIES_BURMY,
-		}
+		},
+
+	[BATTLE_TERRAIN_CAVE_UTEYA + 4] =
+		{
+			.camouflageType = TYPE_NORMAL,
+			.secretPowerEffect = MOVE_EFFECT_BREAK_SCREENS,
+			.secretPowerAnim = MOVE_GIGAIMPACT,
+			.naturePowerMove = MOVE_BODYSLAM,
+			.burmyForm = SPECIES_BURMY,
+		},
+
+
+		[BATTLE_TERRAIN_POND_CAVE_UTEYA + 4] =
+		{
+			.camouflageType = TYPE_WATER,
+			.secretPowerEffect = MOVE_EFFECT_SPD_MINUS_1,
+			.secretPowerAnim = MOVE_BUBBLEBEAM,
+			.naturePowerMove = MOVE_WATERPULSE,
+			.burmyForm = SPECIES_BURMY,
+		},
 
 #ifdef UNBOUND //The ones below are for Pokemon Unbound. Feel free to remove.
 	[BATTLE_TERRAIN_MOLEMAN + 4] =

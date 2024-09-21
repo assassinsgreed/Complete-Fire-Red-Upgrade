@@ -333,6 +333,8 @@ static u8 TryLoadAlternateAreaTerrain(u8 terrain)
 				terrain = BATTLE_TERRAIN_TORMA_DEPTHS;
 			else if (IsCurrentAreaHotCave())
 				terrain = BATTLE_TERRAIN_SCALDING_SPA;
+			else if (mapSec == MAPSEC_UTEYAN_RUINS)
+				terrain = BATTLE_TERRAIN_CAVE_UTEYA;
 			break;
 		case BATTLE_TERRAIN_GRASS:
 			if (IsCurrentAreaWinter())
@@ -355,6 +357,8 @@ static u8 TryLoadAlternateAreaTerrain(u8 terrain)
 				terrain = BATTLE_TERRAIN_POND_CAVE;
 			else if (mapSec == MAPSEC_TORMA_CAVE || MAP_IS(ROUTE13_CAVE_1F))
 				terrain = BATTLE_TERRAIN_POND_CAVE_TORMA;
+			else if (mapSec == MAPSEC_UTEYAN_RUINS)
+				terrain = BATTLE_TERRAIN_POND_CAVE_UTEYA;
 			break;
 		case BATTLE_TERRAIN_PLAIN:
 			if (IsCurrentAreaWinter())
@@ -376,7 +380,7 @@ static u8 TryLoadAlternateAreaTerrain(u8 terrain)
 				terrain = BATTLE_TERRAIN_JUNGLE;
 			break;
 		case BATTLE_TERRAIN_INSIDE:
-			if (mapSec == MAPSEC_FORGOTTEN_MANSE)
+			if (mapSec == MAPSEC_FORGOTTEN_MANSE || mapSec == MAPSEC_UTEYAN_RUINS)
 				terrain = BATTLE_TERRAIN_SPOOKY;
 			else if (MAP_IS(PLUTO_HQ_KURTIS_OFFICE))
 				terrain = BATTLE_TERRAIN_PLUTO_LEADER;
