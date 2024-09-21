@@ -227,6 +227,22 @@ const struct WildPokemon gRoute24_LandMonsNight[] =
 	{54, 58, SPECIES_MANDIBUZZ}
 };
 
+const struct WildPokemon gUteyanRuins_LandMonsNight[] =
+{
+	{53, 56, SPECIES_ELGYEM},
+	{53, 56, SPECIES_DOTTLER},
+	{54, 57, SPECIES_RUNERIGUS},
+	{54, 57, SPECIES_BEHEEYEM},
+	{54, 58, SPECIES_MISDREAVUS},
+	{54, 57, SPECIES_MISDREAVUS},
+	{53, 56, SPECIES_ORBEETLE},
+	{54, 57, SPECIES_ORBEETLE},
+	{54, 57, SPECIES_DUSCLOPS},
+	{54, 58, SPECIES_DUSCLOPS},
+	{54, 58, SPECIES_MISMAGIUS}, 
+	{54, 58, SPECIES_MISMAGIUS}
+};
+
 const struct WildPokemonInfo gVarisiForest_LandMonsNightInfo = {14, gVarisiForest_LandMonsNight};
 const struct WildPokemonInfo gRubarrDesert_LandMonsNightInfo = {3, gRubarrDesert_LandMonsNight};
 const struct WildPokemonInfo gHeleoRanch_LandMonsNightInfo = {21, gHeleoRanch_LandMonsNight};
@@ -240,6 +256,7 @@ const struct WildPokemonInfo gRoute12West_LandMonsNightInfo = {21, gRoute12West_
 const struct WildPokemonInfo gCalicinBay_LandMonsNightInfo = {21, gCalicinBay_LandMonsNight};
 const struct WildPokemonInfo gRoute21AndSecretTrail_LandMonsNightInfo = {21, gRoute21AndSecretTrail_LandMonsNight};
 const struct WildPokemonInfo gRoute24_LandMonsNightInfo = {21, gRoute24_LandMonsNight};
+const struct WildPokemonInfo gUteyanRuins_LandMonsNightInfo = {21, gUteyanRuins_LandMonsNight};
 
 const struct WildPokemonHeader gWildMonMorningHeaders[] =
 {
@@ -377,6 +394,14 @@ const struct WildPokemonHeader gWildMonEveningHeaders[] =
 		.fishingMonsInfo = NULL,
 	},
 	{
+		.mapGroup = MAP_GROUP(UTEYAN_RUINS_OVERWORLD),
+		.mapNum = MAP_NUM(UTEYAN_RUINS_OVERWORLD),
+		.landMonsInfo = &gUteyanRuins_LandMonsNightInfo,
+		.waterMonsInfo = NULL,
+		.rockSmashMonsInfo = NULL,
+		.fishingMonsInfo = NULL,
+	},
+	{
 		.mapGroup = 0xFF,
 		.mapNum = 0xFF,
 		.landMonsInfo = NULL,
@@ -480,6 +505,38 @@ const struct WildPokemonHeader gWildMonNightHeaders[] =
 		.mapGroup = MAP_GROUP(CALICIN_BAY),
 		.mapNum = MAP_NUM(CALICIN_BAY),
 		.landMonsInfo = &gCalicinBay_LandMonsNightInfo,
+		.waterMonsInfo = NULL,
+		.rockSmashMonsInfo = NULL,
+		.fishingMonsInfo = NULL,
+	},
+	{
+		.mapGroup = MAP_GROUP(ROUTE_21),
+		.mapNum = MAP_NUM(ROUTE_21),
+		.landMonsInfo = &gRoute21AndSecretTrail_LandMonsNightInfo,
+		.waterMonsInfo = NULL,
+		.rockSmashMonsInfo = NULL,
+		.fishingMonsInfo = NULL,
+	},
+	{
+		.mapGroup = MAP_GROUP(SECRET_PATH),
+		.mapNum = MAP_NUM(SECRET_PATH),
+		.landMonsInfo = &gRoute21AndSecretTrail_LandMonsNightInfo,
+		.waterMonsInfo = NULL,
+		.rockSmashMonsInfo = NULL,
+		.fishingMonsInfo = NULL,
+	},
+	{
+		.mapGroup = MAP_GROUP(ROUTE_24),
+		.mapNum = MAP_NUM(ROUTE_24),
+		.landMonsInfo = &gRoute24_LandMonsNightInfo,
+		.waterMonsInfo = NULL,
+		.rockSmashMonsInfo = NULL,
+		.fishingMonsInfo = NULL,
+	},
+	{
+		.mapGroup = MAP_GROUP(UTEYAN_RUINS_OVERWORLD),
+		.mapNum = MAP_NUM(UTEYAN_RUINS_OVERWORLD),
+		.landMonsInfo = &gUteyanRuins_LandMonsNightInfo,
 		.waterMonsInfo = NULL,
 		.rockSmashMonsInfo = NULL,
 		.fishingMonsInfo = NULL,

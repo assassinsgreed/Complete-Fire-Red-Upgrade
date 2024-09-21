@@ -730,11 +730,15 @@ bool8 TryActivateOWTerrain(void)
 	{
 		owTerrain = GRASSY_TERRAIN;
 	}
-	// TODO: Psychic terrain later
-	// else if (MAP_IS(UTEYAN_RUINS))
-	// {
-	// 	owTerrain = PSYCHIC_TERRAIN;
-	// }
+	else if (MAP_IS(UTEYAN_RUINS_OVERWORLD) ||
+		MAP_IS(UTEYAN_RUINS_CHAMBER_1) ||
+		MAP_IS(UTEYAN_RUINS_CHAMBER_2) ||
+		MAP_IS(UTEYAN_RUINS_CHAMBER_3) ||
+		MAP_IS(UTEYAN_RUINS_CHAMBER_4) ||
+		MAP_IS(UTEYAN_RUINS_CHAMBER_5))
+	{
+		owTerrain = PSYCHIC_TERRAIN;
+	}
 
 	if (owTerrain != 0 && gTerrainType != owTerrain && !gNewBS->terrainForcefullyRemoved)
 	{
