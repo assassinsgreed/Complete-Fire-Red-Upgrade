@@ -2069,6 +2069,9 @@ bool8 IsCurrentAreaVolcano(void)
 
 bool8 IsCurrentAreaAutumn(void)
 {
+	u8 mapSec = GetCurrentRegionMapSectionId();
+	return mapSec == MAPSEC_PERADON_FOREST;
+
 	#ifdef UNBOUND
 		u8 mapSec = GetCurrentRegionMapSectionId();
 		return mapSec == MAPSEC_TEHL_TOWN

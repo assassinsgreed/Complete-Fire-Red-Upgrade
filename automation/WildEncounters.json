@@ -1180,7 +1180,7 @@
             "mapgroup": 1,
             "mapnum": 86,
             "grass": {
-                "rate": 3,
+                "rate": 7,
                 "pokemon": [
                     { "low": 53, "high": 56, "species": "SPECIES_NOIBAT" },
                     { "low": 53, "high": 56, "species": "SPECIES_GOLBAT" },
@@ -1236,7 +1236,7 @@
             "mapgroup": 1,
             "mapnum": 87,
             "grass": {
-                "rate": 3,
+                "rate": 7,
                 "pokemon": [
                     { "low": 53, "high": 56, "species": "SPECIES_NOIBAT" },
                     { "low": 53, "high": 56, "species": "SPECIES_GOLBAT" },
