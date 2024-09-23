@@ -42,8 +42,26 @@ I saw it! I saw it!\pWeird looking bird Pok\emon, flying\nout of Lake Laplaz!\pM
 #org @gText_LaplazTownFacilities_GalarBirdsGirlsSister
 My little sister said she saw weird\nPok\emon over Lake Laplaz.\pDon't listen to her. She must've\njust been confused[.]\pPlenty of people visit the lake, and\nthey've never seen anything like it.
 
-#org @gText_LaplazTownFacilities_GalarBirdsGentleman
-Did you know? If you have the HM\nfor Fly and Daimyn City's badge,\lyou can fly back to here any time.
+#org @gText_LaplazTownFacilities_DecoderGentleman
+Did you know? If you have the HM\nfor Fly and Daimyn City's badge,\lyou can fly back to here any time.\pI often use it to return home after\na long day's work of investigating\lancient ruins.
+
+#org @gText_LaplazTownFacilities_DecoderGentleman_PlayerHasLearnedOfDecoder
+I have devoted myself to studying\nthe glyphs at the Uteyan Ruins.\pThat look on your face[.] You've heard\nof me, I see!\pSo, you must be an intellectual,\nmuch like myself.\pThen, we are colleagues!\pI have developed a device that can\ninterpret those very glyphs.\pI am willing to sell it to you for\n\$20,000, to cover the parts.
+
+#org @gText_LaplazTownFacilities_DecoderGentleman_OfferToPurchaseDecoder
+What do you say?
+
+#org @gText_LaplazTownFacilities_DecoderGentleman_NotEnoughMoney
+Oh dear[.] You don't have enough to\npurchase this decoder.\pNo matter. We are colleagues. I will\nhold onto it for you.
+
+#org @gText_LaplazTownFacilities_DecoderGentleman_ChoseNotToBuy
+Very well. Do not fret, though.\pWe are colleagues. I will hold onto\nthis for you.
+
+#org @gText_LaplazTownFacilities_DecoderGentleman_PurchasingDecoder
+Wonderful! Then, take this decoder.
+
+#org @gText_LaplazTownFacilities_DecoderGentleman_ExplainingDecoder
+That decoder will automatically\ntranslate the glyphs at the Uteyan\lRuins.\pGo forth, my colleague, and pursue\nnew discoveries!
 
 #org @gText_LaplazFacilities_XItemsTip
 Monty uses a lot of stat boosting\nmoves to get the upper hand.\pYou can get the same effects by\nusing X Items, too!

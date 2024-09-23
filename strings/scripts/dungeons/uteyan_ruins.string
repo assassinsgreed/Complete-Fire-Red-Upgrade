@@ -60,3 +60,120 @@ Hey, that's not cool!
 
 #org @gText_UteyanRuins_LassDorothy_Chat
 Did you notice the ruins here have\nstrange symbols on the walls?\pI wonder if they're hiding a secret[.]
+
+#org @gText_UteyanRuins_ChamberCommon_Decoding
+The Decoder is translating the glyphs\non the door.
+
+#org @gText_UteyanRuins_ChamberCommon_ChamberOpened
+The chamber has been unsealed.
+
+#org @gText_UteyanRuins_ChamberBottom_1
+[BRAILLE]REDUCE SEVEN
+
+#org @gText_UteyanRuins_ChamberBottom_2
+[BRAILLE]TO JUST TWO
+
+#org @gText_UteyanRuins_ChamberBottomDecoded
+REDUCE SEVEN\nTO JUST TWO
+
+#org @gText_UteyanRuins_ChamberLeft_1
+[BRAILLE]ITS NEWFOUND
+
+#org @gText_UteyanRuins_ChamberLeft_2
+[BRAILLE]WEAKNESS IS
+
+#org @gText_UteyanRuins_ChamberLeft_3
+[BRAILLE]ITS STRENGTH
+
+#org @gText_UteyanRuins_ChamberLeftDecoded
+ITS NEWFOUND\nWEAKNESS IS\lITS STRENGTH
+
+#org @gText_UteyanRuins_ChamberRight_1
+[BRAILLE]FIVE STONES
+
+#org @gText_UteyanRuins_ChamberRight_2
+[BRAILLE]BOW BEFORE
+
+#org @gText_UteyanRuins_ChamberRight_3
+[BRAILLE]THE RISING
+
+#org @gText_UteyanRuins_ChamberRight_4
+[BRAILLE]SUN
+
+#org @gText_UteyanRuins_ChamberRightDecoded
+FIVE STONES\nBOW BEFORE\lTHE RISING\lSUN
+
+#org @gText_UteyanRuins_ChamberMiddle_1
+[BRAILLE]SEEK DOWN
+
+#org @gText_UteyanRuins_ChamberMiddle_2
+[BRAILLE]RIGHT RIGHT
+
+#org @gText_UteyanRuins_ChamberMiddle_3
+[BRAILLE]DOWN LEFT
+
+#org @gText_UteyanRuins_ChamberMiddleDecoded
+SEEK DOWN\nRIGHT RIGHT\lDOWN LEFT
+
+#org @gText_UteyanRuins_ChamberTop_1
+[BRAILLE]FACE THE
+
+#org @gText_UteyanRuins_ChamberTop_2
+[BRAILLE]PAST TO
+
+#org @gText_UteyanRuins_ChamberTop_3
+[BRAILLE]FACE THE
+
+#org @gText_UteyanRuins_ChamberTop_4
+[BRAILLE]FUTURE
+
+#org @gText_UteyanRuins_ChamberTopDecoded
+FACE THE\nPAST TO\lFACE THE\lFUTURE
+
+#org @gText_UteyanRuins_History_First_1
+[BRAILLE]ONE KING
+
+#org @gText_UteyanRuins_History_First_2
+[BRAILLE]RULED OVER
+
+#org @gText_UteyanRuins_History_First_3
+[BRAILLE]ALL UTEYA
+
+#org @gText_UteyanRuins_History_First_Decoded
+ONE KING\nRULED OVER\lALL UTEYA
+
+#org @gText_UteyanRuins_History_Second_1
+[BRAILLE]TWO TRAITORS
+
+#org @gText_UteyanRuins_History_Second_2
+[BRAILLE]SOUGHT THE
+
+#org @gText_UteyanRuins_History_Second_3
+[BRAILLE]KINGS GLORY
+
+#org @gText_UteyanRuins_History_Second_Decoded
+TWO TRAITORS\nSOUGHT THE\lKINGS GLORY
+
+#org @gText_UteyanRuins_History_Third_1
+[BRAILLE]THREE HEINOUS
+
+#org @gText_UteyanRuins_History_Third_2
+[BRAILLE]ACTS TO SOW
+
+#org @gText_UteyanRuins_History_Third_3
+[BRAILLE]DISCOURSE
+
+#org @gText_UteyanRuins_History_Third_Decoded
+THREE HEINOUS\nACTS TO SOW\lDISCOURSE
+
+#org @gText_UteyanRuins_History_Fourth_1
+[BRAILLE]FOUR NIGHTS
+
+#org @gText_UteyanRuins_History_Fourth_2
+[BRAILLE]PASSED BEFORE
+
+#org @gText_UteyanRuins_History_Fourth_3
+[BRAILLE]UTEYA FELL
+
+#org @gText_UteyanRuins_History_Fourth_Decoded
+FOUR NIGHTS\nPASSED BEFORE\lUTEYA FELL

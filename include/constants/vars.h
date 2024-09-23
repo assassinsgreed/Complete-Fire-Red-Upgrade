@@ -214,7 +214,7 @@
 #define VAR_ULTRA_SPACE_NPCS_SPOKEN_TO 0x40A6
 #define VAR_ULTRA_BEASTS_PROGRESSION 0x40A7
 #define VAR_UTEYA_GYM_PROGRESS     0x40A8
-#define VAR_0x40A9                 0x40A9
+#define VAR_UTEYAN_RUINS_HISTORY   0x40A9
 #define VAR_0x40AA                 0x40AA
 #define VAR_0x40AB                 0x40AB
 #define VAR_0x40AC                 0x40AC
