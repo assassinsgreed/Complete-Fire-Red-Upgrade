@@ -102,7 +102,48 @@ EventScript_LaplazFacilities_GalarBirdsGirlsSister:
 
 .global EventScript_LaplazFacilities_Gentleman
 EventScript_LaplazFacilities_Gentleman:
-    npcchatwithmovement gText_LaplazTownFacilities_GalarBirdsGentleman m_LookDown
+    checkitem ITEM_DECODER 0x1
+    compare LASTRESULT TRUE
+    if equal _goto DecoderGentleman_ExplainingDecoder
+    checkflag 0x279 @ Learned of the decoder
+    if NOT_SET _goto DecoderGentleman_BeforeLearningOfDecoder
+    faceplayer
+    msgbox gText_LaplazTownFacilities_DecoderGentleman MSG_NORMAL
+    msgbox gText_LaplazTownFacilities_DecoderGentleman_PlayerHasLearnedOfDecoder MSG_NORMAL
+    showmoney 0x0 0x0
+    msgbox gText_LaplazTownFacilities_DecoderGentleman_OfferToPurchaseDecoder MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto DecoderGentleman_ChoseNotToBuy
+    checkmoney 20000
+    compare LASTRESULT NO
+    if equal _goto DecoderGentleman_NotEnoughMoney
+    playse 0xF8 @ Money
+    removemoney 20000
+    updatemoney 0x0 0x0
+    waitse
+    pause DELAY_1SECOND
+    hidemoney
+    msgbox gText_LaplazTownFacilities_DecoderGentleman_PurchasingDecoder MSG_NORMAL
+    obtainitem ITEM_DECODER 0x1
+    goto DecoderGentleman_ExplainingDecoder
+    end
+
+DecoderGentleman_BeforeLearningOfDecoder:
+    npcchatwithmovement gText_LaplazTownFacilities_DecoderGentleman m_LookDown
+    end
+
+DecoderGentleman_NotEnoughMoney:
+    hidemoney
+    npcchatwithmovement gText_LaplazTownFacilities_DecoderGentleman_NotEnoughMoney m_LookDown
+    end
+
+DecoderGentleman_ChoseNotToBuy:
+    hidemoney
+    npcchatwithmovement gText_LaplazTownFacilities_DecoderGentleman_ChoseNotToBuy m_LookDown
+    end
+
+DecoderGentleman_ExplainingDecoder:
+    npcchatwithmovement gText_LaplazTownFacilities_DecoderGentleman_ExplainingDecoder m_LookDown
     end
 
 .global EventScript_LaplazFacilities_XItemsShop

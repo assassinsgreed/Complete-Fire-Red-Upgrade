@@ -654,11 +654,11 @@
 #define FLAG_GOT_POKECHIP_CHARM                          0x277
 #define FLAG_GOT_HITMON_FROM_DOJO                        0x278
 #define FLAG_LEARNED_ABOUT_BRAILLE_DECODER               0x279
-#define FLAG_SILPH_2F_DOOR_1                             0x27A
-#define FLAG_SILPH_2F_DOOR_2                             0x27B
-#define FLAG_SILPH_3F_DOOR_1                             0x27C
-#define FLAG_SILPH_3F_DOOR_2                             0x27D
-#define FLAG_SILPH_4F_DOOR_1                             0x27E
+#define FLAG_UTEYAN_RUINS_TOP_CHAMBER_SOLVED             0x27A
+#define FLAG_UTEYAN_RUINS_MIDDLE_CHAMBER_SOLVED          0x27B
+#define FLAG_UTEYAN_RUINS_LEFT_CHAMBER_SOLVED            0x27C
+#define FLAG_UTEYAN_RUINS_RIGHT_CHAMBER_SOLVED           0x27D
+#define FLAG_UTEYAN_RUINS_BOTTOM_CHAMBER_SOLVED          0x27E
 #define FLAG_SILPH_4F_DOOR_2                             0x27F
 #define FLAG_SILPH_5F_DOOR_1                             0x280
 #define FLAG_SILPH_5F_DOOR_2                             0x281
