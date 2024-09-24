@@ -51,6 +51,17 @@ MapEntryScript_SeppireCoveB1F_SetBoulderVisibilityAndCurrents:
     if SET _call SetSECurrent
     end
 
+.global MapScript_SeppireCove_KyogreRoom
+MapScript_SeppireCove_KyogreRoom:
+    mapscript MAP_SCRIPT_ON_RESUME MapResumeScript_HideKyogre
+	.byte MAP_SCRIPT_TERMIN
+
+MapResumeScript_HideKyogre:
+    checkflag 0x4C @ Kyogre caught, defeated, or run from
+    if NOT_SET _goto End
+    hidesprite 1
+    end
+
 @ Map tile events
 SetWaterfallTiles:
     clearflag 0xA @ BoulderN
@@ -216,10 +227,75 @@ ItemScript_SeppireCove_TM98_Waterfall:
 
 .global EventScript_SeppireCove_Kyogre
 EventScript_SeppireCove_Kyogre:
-    msgbox gText_SeppireCove_EncounterKyogreGroudon MSG_NORMAL
-    @ Todo later: Check for the blue orb and trigger a legendary battle
-    msgbox gText_SeppireCove_KyogreGroudonDormant MSG_NORMAL
+    msgbox gText_Common_EncounterKyogreGroudon MSG_NORMAL
+    checkitem ITEM_BLUE_ORB 0x1
+    compare LASTRESULT TRUE
+    if equal _goto KyogreAwakens
+    msgbox gText_Common_KyogreGroudonDormant MSG_NORMAL
     end
+
+KyogreAwakens:
+    @ Awakening
+    playse 0x24 @ Ice crack
+    waitse
+    pause DELAY_HALFSECOND
+    playse 0x24 @ Ice crack
+    waitse
+    pause DELAY_HALFSECOND
+    bufferitem 0x0 ITEM_BLUE_ORB
+    msgbox gText_Common_KyogreGroudonAwakens MSG_NORMAL
+    playse 0x23 @ Ice break
+    waitse
+    @ Earthquake
+    setvar 0x8004 0x0 @ This controls how far the screen shakes vertically
+	setvar 0x8005 0x3 @ This controls how far the screen shakes horizontally
+	setvar 0x8006 0x20 @ This controls how long the overall animation lasts
+	setvar 0x8007 0x2 @ This controls how long one screen shake lasts
+    special 0x136 @ SPECIAL_SHAKE_SCREEN
+    waitstate
+    @ Kyogre awakened
+    applymovement LASTTALKED m_KyogreGroudonAnimateOnSpotActive @ Walk on the spot, facing down (regular kyogre)
+    cry SPECIES_KYOGRE 0x0
+    msgbox gText_SeppireCove_KyogreCry MSG_NORMAL
+    waitcry
+    pause DELAY_1SECOND
+    @ Blue Orb reacting further
+    applymovement PLAYER m_Surprise
+    msgbox gText_Common_KyogreGroudonOrbGlowing MSG_NORMAL
+    fadescreenspeed FADEOUT_WHITE 0x96 @ fast fade
+    applymovement LASTTALKED m_KyogreGroudonAnimateOnSpotPrimal @ Walk on the spot, facing right (primal kyogre)
+    call SetWeatherRain
+    fadescreen FADEIN_WHITE
+    @ Primal Kyogre awakened
+    cry SPECIES_KYOGRE_PRIMAL 0x0
+    msgbox gText_SeppireCove_PrimalKyogreCry MSG_NORMAL
+    msgbox gText_Common_KyogreGroudonPreBattle MSG_NORMAL
+    waitcry
+    setflag 0x90B @ Wild custom moves, cleared at the end of battle
+    setvar 0x8000 MOVE_ORIGINPULSE
+    setvar 0x8001 MOVE_CALMMIND
+    setvar 0x8002 MOVE_ICEBEAM
+    setvar 0x8003 MOVE_THUNDER
+    setflag 0x90C @ Smarter wild battle, cleared at the end of battle
+    setwildbattle SPECIES_KYOGRE_PRIMAL 70
+    setflag 0x4C @ Hide KYOGRE
+    setflag 0x807
+    special 0x138 @ Setup a legendary encounter (blurred screen transition)
+    waitstate
+    clearflag 0x807
+    special2 LASTRESULT 0xB4 @ Check the result of the battle
+    compare LASTRESULT 0x1 @ Defeated in battle
+    if equal _call DefeatedOrFledFromKyogre
+    compare LASTRESULT 0x4 @ Fled from battle
+    if equal _call DefeatedOrFledFromKyogre
+    call SetWeatherClear
+    bufferitem 0x0 ITEM_BLUE_ORB
+    msgbox gText_Common_OrbCalmed MSG_NORMAL
+    end
+
+DefeatedOrFledFromKyogre:
+    msgbox gText_Common_KyogreGroudonFledOrDefeated MSG_NORMAL
+    return
 
 .global SignScript_SeppireCove_Sign
 SignScript_SeppireCove_Sign:

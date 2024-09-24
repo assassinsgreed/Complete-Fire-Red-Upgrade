@@ -1899,6 +1899,8 @@ npc 1 62 19 ItemScript_Common_Calcium
 npc 1 62 20 ItemScript_Common_WaterStone
 ## Side room
 npc 1 72 0 ItemScript_Common_LifeOrb
+## Kyogre Room
+map 1 73 MapScript_SeppireCove_KyogreRoom 
 npc 1 73 0 EventScript_SeppireCove_Kyogre
 
 ## Route 19

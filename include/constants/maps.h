@@ -94,7 +94,7 @@
 #define MAP_SAFARI_ZONE_BUILDING4                (70 | (1 << 8))
 #define MAP_SAFARI_ZONE_SECRET_HOUSE             (71 | (1 << 8))
 #define MAP_CERULEAN_CAVE_1F                     (72 | (1 << 8))
-#define MAP_CERULEAN_CAVE_2F                     (73 | (1 << 8))
+#define MAP_SEPPIRE_COVE_KYOGRE_ROOM             (73 | (1 << 8))
 #define MAP_CARNELIDGE_VOLCANO_BF1               (74 | (1 << 8))
 #define MAP_POKEMON_LEAGUE_LORELEIS_ROOM         (75 | (1 << 8))
 #define MAP_POKEMON_LEAGUE_BRUNOS_ROOM           (76 | (1 << 8))

@@ -335,6 +335,8 @@ static u8 TryLoadAlternateAreaTerrain(u8 terrain)
 				terrain = BATTLE_TERRAIN_SCALDING_SPA;
 			else if (mapSec == MAPSEC_UTEYAN_RUINS)
 				terrain = BATTLE_TERRAIN_CAVE_UTEYA;
+			else if (MAP_IS(SEPPIRE_COVE_KYOGRE_ROOM))
+				terrain = BATTLE_TERRAIN_POND_CAVE;
 			break;
 		case BATTLE_TERRAIN_GRASS:
 			if (IsCurrentAreaWinter())
