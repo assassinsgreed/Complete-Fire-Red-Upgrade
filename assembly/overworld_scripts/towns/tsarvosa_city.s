@@ -1455,7 +1455,7 @@ TutorNormal1:
 
 TutorNormal2:
     setvar 0x8005 74
-    bufferattack 0x2 MOVE_HEADBUTT
+    bufferattack 0x2 MOVE_SECRETPOWER
     goto TutorPokemon
 
 TutorNormal3:
