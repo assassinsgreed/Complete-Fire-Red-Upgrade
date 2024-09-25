@@ -100,6 +100,8 @@ extern const u8 BG_CarnelidgePeakPal[];
 extern const u8 BG_Pond_Cave_TormaPal[];
 extern const u8 BG_Cave_UteyaPal[];
 extern const u8 BG_Pond_Cave_UteyaPal[];
+extern const u8 BG_Cave_SeppirePal[];
+extern const u8 BG_Pond_Cave_SeppirePal[];
 
 // Morning (just palettes)
 extern const u8 BG_Grass_MorningPal[];
@@ -393,6 +395,22 @@ const struct BattleBackground gBattleTerrainTable[] =
 		.entryTilemap = gBattleTerrainAnimTilemap_PondWater,
 		.palette = BG_Pond_Cave_UteyaPal,
 	},
+	[BATTLE_TERRAIN_CAVE_SEPPIRE] =
+	{
+		.tileset = BG_CaveTiles,
+		.tilemap = BG_CaveMap,
+		.entryTileset = gBattleTerrainAnimTiles_Cave,
+		.entryTilemap = gBattleTerrainAnimTilemap_Cave,
+		.palette = BG_Cave_SeppirePal,
+	},
+	[BATTLE_TERRAIN_POND_CAVE_SEPPIRE] = 
+	{
+		.tileset = BG_Pond_CaveTiles,
+		.tilemap = BG_Pond_CaveMap,
+		.entryTileset = gBattleTerrainAnimTiles_PondWater,
+		.entryTilemap = gBattleTerrainAnimTilemap_PondWater,
+		.palette = BG_Pond_Cave_SeppirePal,
+	},
 };
 
 const struct BattleBackground gBattleTerrainTableMorning[] =
@@ -644,6 +662,22 @@ const struct BattleBackground gBattleTerrainTableMorning[] =
 		.entryTileset = gBattleTerrainAnimTiles_PondWater,
 		.entryTilemap = gBattleTerrainAnimTilemap_PondWater,
 		.palette = BG_Pond_Cave_UteyaPal,
+	},
+	[BATTLE_TERRAIN_CAVE_SEPPIRE] =
+	{
+		.tileset = BG_CaveTiles,
+		.tilemap = BG_CaveMap,
+		.entryTileset = gBattleTerrainAnimTiles_Cave,
+		.entryTilemap = gBattleTerrainAnimTilemap_Cave,
+		.palette = BG_Cave_SeppirePal,
+	},
+	[BATTLE_TERRAIN_POND_CAVE_SEPPIRE] = 
+	{
+		.tileset = BG_Pond_CaveTiles,
+		.tilemap = BG_Pond_CaveMap,
+		.entryTileset = gBattleTerrainAnimTiles_PondWater,
+		.entryTilemap = gBattleTerrainAnimTilemap_PondWater,
+		.palette = BG_Pond_Cave_SeppirePal,
 	},
 };
 
@@ -898,6 +932,22 @@ const struct BattleBackground gBattleTerrainTableEvening[] =
 		.entryTilemap = gBattleTerrainAnimTilemap_PondWater,
 		.palette = BG_Pond_Cave_UteyaPal,
 	},
+	[BATTLE_TERRAIN_CAVE_SEPPIRE] =
+	{
+		.tileset = BG_CaveTiles,
+		.tilemap = BG_CaveMap,
+		.entryTileset = gBattleTerrainAnimTiles_Cave,
+		.entryTilemap = gBattleTerrainAnimTilemap_Cave,
+		.palette = BG_Cave_SeppirePal,
+	},
+	[BATTLE_TERRAIN_POND_CAVE_SEPPIRE] = 
+	{
+		.tileset = BG_Pond_CaveTiles,
+		.tilemap = BG_Pond_CaveMap,
+		.entryTileset = gBattleTerrainAnimTiles_PondWater,
+		.entryTilemap = gBattleTerrainAnimTilemap_PondWater,
+		.palette = BG_Pond_Cave_SeppirePal,
+	},
 };
 
 const struct BattleBackground gBattleTerrainTableNight[] =
@@ -1149,6 +1199,22 @@ const struct BattleBackground gBattleTerrainTableNight[] =
 		.entryTileset = gBattleTerrainAnimTiles_PondWater,
 		.entryTilemap = gBattleTerrainAnimTilemap_PondWater,
 		.palette = BG_Pond_Cave_UteyaPal,
+	},
+	[BATTLE_TERRAIN_CAVE_SEPPIRE] =
+	{
+		.tileset = BG_CaveTiles,
+		.tilemap = BG_CaveMap,
+		.entryTileset = gBattleTerrainAnimTiles_Cave,
+		.entryTilemap = gBattleTerrainAnimTilemap_Cave,
+		.palette = BG_Cave_SeppirePal,
+	},
+	[BATTLE_TERRAIN_POND_CAVE_SEPPIRE] = 
+	{
+		.tileset = BG_Pond_CaveTiles,
+		.tilemap = BG_Pond_CaveMap,
+		.entryTileset = gBattleTerrainAnimTiles_PondWater,
+		.entryTilemap = gBattleTerrainAnimTilemap_PondWater,
+		.palette = BG_Pond_Cave_SeppirePal,
 	},
 };
 #endif

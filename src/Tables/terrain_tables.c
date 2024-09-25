@@ -384,13 +384,30 @@ const struct TerrainTableStruct gTerrainTable[] =
 			.burmyForm = SPECIES_BURMY,
 		},
 
-
-		[BATTLE_TERRAIN_POND_CAVE_UTEYA + 4] =
+	[BATTLE_TERRAIN_POND_CAVE_UTEYA + 4] =
 		{
 			.camouflageType = TYPE_WATER,
 			.secretPowerEffect = MOVE_EFFECT_SPD_MINUS_1,
 			.secretPowerAnim = MOVE_BUBBLEBEAM,
 			.naturePowerMove = MOVE_WATERPULSE,
+			.burmyForm = SPECIES_BURMY,
+		},
+
+	[BATTLE_TERRAIN_CAVE_SEPPIRE + 4] =
+		{
+			.camouflageType = TYPE_PSYCHIC,
+			.secretPowerEffect = MOVE_EFFECT_CONFUSION,
+			.secretPowerAnim = MOVE_PSYCHIC,
+			.naturePowerMove = MOVE_PSYBEAM,
+			.burmyForm = SPECIES_BURMY,
+		},
+
+	[BATTLE_TERRAIN_POND_CAVE_SEPPIRE + 4] =
+		{
+			.camouflageType = TYPE_WATER,
+			.secretPowerEffect = MOVE_EFFECT_REMOVE_TERRAIN,
+			.secretPowerAnim = MOVE_SURF,
+			.naturePowerMove = MOVE_SCALD,
 			.burmyForm = SPECIES_BURMY,
 		},
 

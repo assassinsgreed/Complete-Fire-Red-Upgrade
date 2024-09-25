@@ -335,8 +335,13 @@ static u8 TryLoadAlternateAreaTerrain(u8 terrain)
 				terrain = BATTLE_TERRAIN_SCALDING_SPA;
 			else if (mapSec == MAPSEC_UTEYAN_RUINS)
 				terrain = BATTLE_TERRAIN_CAVE_UTEYA;
-			else if (MAP_IS(SEPPIRE_COVE_KYOGRE_ROOM))
-				terrain = BATTLE_TERRAIN_POND_CAVE;
+			else if (mapSec == MAPSEC_SEPPIRE_COVE)
+			{
+				if (MAP_IS(SEPPIRE_COVE_KYOGRE_ROOM))
+					terrain = BATTLE_TERRAIN_POND_CAVE_SEPPIRE;
+				else
+					terrain = BATTLE_TERRAIN_CAVE_SEPPIRE;
+			}
 			break;
 		case BATTLE_TERRAIN_GRASS:
 			if (IsCurrentAreaWinter())
@@ -355,10 +360,12 @@ static u8 TryLoadAlternateAreaTerrain(u8 terrain)
 				terrain = BATTLE_TERRAIN_MOUNTAIN;
 			break;
 		case BATTLE_TERRAIN_POND:
-			if (MAP_IS(ROUTE17_CAVE_1F) || mapSec == MAPSEC_FORGOTTEN_MANSE || mapSec == MAPSEC_SEPPIRE_COVE)
+			if (MAP_IS(ROUTE17_CAVE_1F) || mapSec == MAPSEC_FORGOTTEN_MANSE)
 				terrain = BATTLE_TERRAIN_POND_CAVE;
 			else if (mapSec == MAPSEC_TORMA_CAVE || MAP_IS(ROUTE13_CAVE_1F))
 				terrain = BATTLE_TERRAIN_POND_CAVE_TORMA;
+			else if (mapSec == MAPSEC_SEPPIRE_COVE)
+				terrain = BATTLE_TERRAIN_POND_CAVE_SEPPIRE;
 			else if (mapSec == MAPSEC_UTEYAN_RUINS)
 				terrain = BATTLE_TERRAIN_POND_CAVE_UTEYA;
 			break;
