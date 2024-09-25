@@ -83,7 +83,7 @@ enum SpecialMoveTutors
 	TUTOR_SPECIAL_CORE_ENFORCER,		//71- Zygarde only
 	TUTOR_SPECIAL_STEEL_BEAM,			//72 - Steel Pokemon
 	TUTOR_SPECIAL_ASSIST,				//73 - Normal Pokemon
-	TUTOR_SPECIAL_HEADBUTT,				//74 - Normal Pokemon
+	TUTOR_SPECIAL_SECRETPOWER,			//74 - Normal Pokemon
 	TUTOR_SPECIAL_PAYDAY,				//75 - Normal Pokemon
 	TUTOR_SPECIAL_FIREFANG,				//76 - Fire Pokemon
 	TUTOR_SPECIAL_MYSTICALFIRE,			//77 - Fire Pokemon

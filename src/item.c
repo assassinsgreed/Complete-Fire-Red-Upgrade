@@ -560,7 +560,7 @@ bool8 CanMonLearnTutorMove(struct Pokemon* mon, u8 tutorId)
 			#endif
 				;
 		case TUTOR_SPECIAL_ASSIST:
-		case TUTOR_SPECIAL_HEADBUTT:
+		case TUTOR_SPECIAL_SECRETPOWER:
 		case TUTOR_SPECIAL_PAYDAY:
 			return gBaseStats[species].type1 == TYPE_NORMAL
 				|| gBaseStats[species].type2 == TYPE_NORMAL;
@@ -677,8 +677,8 @@ u16 GetExpandedTutorMove(u8 tutorId)
 			return MOVE_STEELBEAM;
 		case TUTOR_SPECIAL_ASSIST:
 			return MOVE_ASSIST;
-		case TUTOR_SPECIAL_HEADBUTT:
-			return MOVE_HEADBUTT;
+		case TUTOR_SPECIAL_SECRETPOWER:
+			return MOVE_SECRETPOWER;
 		case TUTOR_SPECIAL_PAYDAY:
 			return MOVE_PAYDAY;
 		case TUTOR_SPECIAL_FIREFANG:
