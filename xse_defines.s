@@ -265,3 +265,7 @@ m_Question: .byte say_question, end_m
 m_Joy: .byte say_smile, end_m
 m_WalkFacingUp: .byte walk_up_onspot, end_m
 m_WalkFacingRight: .byte walk_right_onspot, end_m
+
+@ This implementation is cheesy but allows the sprite to animate long enough for the player to finish talking with Groudon or Kyogre, without needing to reload the map to apply a movement type
+m_KyogreGroudonAnimateOnSpotActive: .byte walk_up_onspot, walk_up_onspot, walk_up_onspot, walk_up_onspot, walk_up_onspot, walk_up_onspot, end_m
+m_KyogreGroudonAnimateOnSpotPrimal: .byte walk_left_onspot, walk_left_onspot, walk_left_onspot, walk_left_onspot, walk_left_onspot, walk_left_onspot, end_m

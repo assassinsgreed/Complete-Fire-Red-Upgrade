@@ -18,6 +18,7 @@
 MapScript_RubarrDesert:
 	mapscript MAP_SCRIPT_ON_TRANSITION MapEntryScript_RubarrDesert_FlightFlag
     mapscript MAP_SCRIPT_ON_LOAD MapEntryScript_RubarrDesert_SetWeather
+    mapscript MAP_SCRIPT_ON_RESUME MapResumeScript_HideGroudon
 	.byte MAP_SCRIPT_TERMIN
 
 MapEntryScript_RubarrDesert_FlightFlag:
@@ -46,6 +47,12 @@ SetAllWeatherTypes:
     compare LASTRESULT 0x5 @ "6"
     if greaterorequal _call SetWeatherSandstorm
     @ Otherwise, leave as regular weather
+    end
+
+MapResumeScript_HideGroudon:
+    checkflag 0x57 @ Groudon caught, defeated, or run from
+    if NOT_SET _goto End
+    hidesprite 41
     end
 
 .global EventScript_RubarrDesert_NurseJaina
@@ -341,10 +348,74 @@ PlayerDeflectsTheBlame:
 
 .global EventScript_RubarrDesert_Groudon
 EventScript_RubarrDesert_Groudon:
-    msgbox gText_SeppireCove_EncounterKyogreGroudon MSG_NORMAL
-    @ Todo later: Check for the blue orb and trigger a legendary battle
-    msgbox gText_SeppireCove_KyogreGroudonDormant MSG_NORMAL
+    msgbox gText_Common_EncounterKyogreGroudon MSG_NORMAL
+    checkitem ITEM_RED_ORB 0x1
+    compare LASTRESULT TRUE
+    if equal _goto GroudonAwakens
+    msgbox gText_Common_KyogreGroudonDormant MSG_NORMAL
     end
+
+GroudonAwakens:
+    @ Awakening
+    playse 0x24 @ Ice crack
+    waitse
+    pause DELAY_HALFSECOND
+    playse 0x24 @ Ice crack
+    waitse
+    pause DELAY_HALFSECOND
+    bufferitem 0x0 ITEM_RED_ORB
+    msgbox gText_Common_KyogreGroudonAwakens MSG_NORMAL
+    playse 0x23 @ Ice break
+    waitse
+    @ Earthquake
+    setvar 0x8004 0x0 @ This controls how far the screen shakes vertically
+	setvar 0x8005 0x3 @ This controls how far the screen shakes horizontally
+	setvar 0x8006 0x20 @ This controls how long the overall animation lasts
+	setvar 0x8007 0x2 @ This controls how long one screen shake lasts
+    special 0x136 @ SPECIAL_SHAKE_SCREEN
+    waitstate
+    @ Groudon awakened
+    applymovement LASTTALKED m_KyogreGroudonAnimateOnSpotActive @ Walk on the spot, facing down (regular groudon)
+    cry SPECIES_GROUDON 0x0
+    msgbox gText_RubarrDesert_GroudonCry MSG_NORMAL
+    waitcry
+    pause DELAY_1SECOND
+    @ Red Orb reacting further
+    applymovement PLAYER m_Surprise
+    msgbox gText_Common_KyogreGroudonOrbGlowing MSG_NORMAL
+    fadescreenspeed FADEOUT_WHITE 0x96 @ fast fade
+    applymovement LASTTALKED m_KyogreGroudonAnimateOnSpotPrimal @ Walk on the spot, facing right (primal groudon)
+    call SetWeatherSunny
+    fadescreen FADEIN_WHITE
+    @ Primal Groudon awakened
+    cry SPECIES_GROUDON_PRIMAL 0x0
+    msgbox gText_RubarrDesert_PrimalGroudonCry MSG_NORMAL
+    msgbox gText_Common_KyogreGroudonPreBattle MSG_NORMAL
+    waitcry
+    setflag 0x90B @ Wild custom moves, cleared at the end of battle
+    setvar 0x8000 MOVE_PRECIPICEBLADES
+    setvar 0x8001 MOVE_LAVAPLUME
+    setvar 0x8002 MOVE_BULKUP
+    setvar 0x8003 MOVE_HAMMERARM
+    setflag 0x90C @ Smarter wild battle, cleared at the end of battle
+    setwildbattle SPECIES_GROUDON_PRIMAL 70
+    setflag 0x57 @ Hide Groudon
+    setflag 0x807
+    special 0x138 @ Setup a legendary encounter (blurred screen transition)
+    waitstate
+    clearflag 0x807
+    special2 LASTRESULT 0xB4 @ Check the result of the battle
+    compare LASTRESULT 0x1 @ Defeated in battle
+    if equal _call DefeatedOrFledFromGroudon
+    compare LASTRESULT 0x4 @ Fled from battle
+    if equal _call DefeatedOrFledFromGroudon
+    bufferitem 0x0 ITEM_RED_ORB
+    msgbox gText_Common_OrbCalmed MSG_NORMAL
+    end
+
+DefeatedOrFledFromGroudon:
+    msgbox gText_Common_KyogreGroudonFledOrDefeated MSG_NORMAL
+    return
 
 m_RivalRunsToMeetPlayer: .byte run_right, run_up, run_up, run_up, run_right, run_right, run_right, run_up, run_up, run_right, run_right, run_right, end_m 
 m_ClancyAngry: .byte jump_onspot_down, pause_short, jump_onspot_down, end_m
