@@ -2750,6 +2750,7 @@ npc 1 85 24 EventScript_Common_RockSmash
 npc 1 85 25 EventScript_Common_RockSmash
 npc 1 85 26 EventScript_Common_RockSmash
 npc 1 85 27 EventScript_Common_RockSmash
+npc 1 85 28 EventScript_RivalEvent8
 sign 1 85 2 SignScript_UteyanRuins_ChamberDoor_Bottom
 sign 1 85 3 SignScript_UteyanRuins_ChamberDoor_Left
 sign 1 85 4 SignScript_UteyanRuins_ChamberDoor_Middle

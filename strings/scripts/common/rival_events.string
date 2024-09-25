@@ -123,3 +123,36 @@ What about if I tried[.]\pNo, [PLAYER] would see right through\nthat strategy, t
 
 #org @gText_RivalEvent7_BattleDeclined
 If you insist. I'll keep training.\pIf you change your mind, come find\nme here.
+
+#org @gText_RivalEvent8_MaxFriendshipQuestion
+Hey, [PLAYER]! You wanted to come\nsee the ruins too, huh?\pListen[.] I've been thinking a lot\nlately.\pI realize I haven't been treating my\nPok\emon right, and I wanted to fix\lthat.\pI've spent a lot more time with them,\nand I understand them better now.\pDid you know about the move\nReturn?\pIt gets really strong if your Pok\emon\nlikes you a lot!\pYou set me straight after what\nhappened at Carnelidge Volcano.\pAs thanks, I can help you get closer\nto a Pok\emon, if it knows Return.\pWhat do you say?
+
+#org @gText_RivalEvent8_ChoosePokemon
+Okay, awesome! Which Pok\emon do you\nwant to get closer with?\pRemember to pick one that knows\nReturn.
+
+#org @gText_RivalEvent8_ChoiceConfirmation
+[BUFFER1]? This is the one you\nwant to bond with?
+
+#org @gText_RivalEvent8_StartingBonding
+Okay! Let's get started.
+
+#org @gText_RivalEvent8_DuringBonding
+So, to start, you need to try and\nthink like your Pok\emon[.]\pAlso, pay attention to it's body\nlanguage[.]\pMake sure to give it treats when it\ndoes well, too[.]
+
+#org @gText_RivalEvent8_AfterBonding
+And done!\pYou've fully bonded with [BUFFER1].\nThat's awesome!
+
+#org @gText_RivalEvent8_ChoseEgg
+Um[.] That's an egg, [PLAYER].\nI can't help you until it's hatched!
+
+#org @gText_RivalEvent8_ChosePokemonThatDoesNotKnowReturn
+Oh[.] That Pok\emon doesn't know\nReturn.\pBring me one that does, okay?
+
+#org @gText_RivalEvent8_ChosePokemonThatIsMaxFriendship
+Oh, you're already fully bonded to\nthat Pok\emon. That's wonderful!\pIt would be best if we worked with a\nPok\emon that you haven't fully\lbonded with yet.\pI'll be here for a bit, if you come\nback with another Pok\emon.
+
+#org @gText_RivalEvent8_TreatingPokemonRight
+Make sure you always treat your\nPok\emon well, okay [PLAYER]?
+
+#org @gText_RivalEvent8_Declined
+Okay, no sweat.\pI'll be here for a while if you\nchange your mind.

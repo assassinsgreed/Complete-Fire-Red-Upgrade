@@ -77,6 +77,7 @@ UteyanRuins_ChambersCommon_Decoding:
     return
 
 UtyeanRuins_ChambersCommon_DoorOpening:
+    special 0xAF @ Dismount bike if on it
     call TriggerDoorOpening
     applymovement PLAYER m_PlayerRunsFromChamberDoor
     waitstate

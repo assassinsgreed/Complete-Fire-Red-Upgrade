@@ -3590,3 +3590,17 @@ void InitializeGymTraineesCafe()
 		FlagSet(traineeFlags[i]);
 	}
 }
+
+// Input: var8004 is the index of the pokemon in the party, var8005 is the move to be checked for
+// Output: LASTRESULT set to TRUE/FALSE, depending on if the pokemon knows the move or not
+void CheckIfPokemonKnowsMove()
+{
+	u16 partyId = Var8004;
+	gSpecialVar_LastResult = FALSE;
+
+	if (partyId >= PARTY_SIZE)
+		return;
+
+	
+	gSpecialVar_LastResult = MoveInMonMoveset(Var8005, &gPlayerParty[partyId]);
+}

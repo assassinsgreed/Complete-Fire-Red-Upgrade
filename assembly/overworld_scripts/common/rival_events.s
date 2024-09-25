@@ -285,3 +285,69 @@ RivalEvent7_BattleWon:
 RivalEvent7_Declined:
     npcchatwithmovement gText_RivalEvent7_BattleDeclined m_LookLeft
     end
+
+.global EventScript_RivalEvent8
+EventScript_RivalEvent8:
+    lock
+    checkflag 0x2C7 @ Finished Rival event 8
+    if SET _goto RivalEvent8_AfterMaxingFriendship
+    faceplayer
+    msgbox gText_RivalEvent8_MaxFriendshipQuestion MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto RivalEvent8_Declined
+    msgbox gText_RivalEvent8_ChoosePokemon MSG_NORMAL
+    special 0x9F @ Select a Pokemon and store it's position in 0x8004
+    waitstate
+    compare 0x8004 0x6 @ Don't continue if user backed out
+    if greaterorequal _goto RivalEvent8_Declined
+    @ Check if egg
+    callasm StoreIsPartyMonEgg
+    compare LASTRESULT TRUE
+    if equal _goto RivalEvent8_ChoseEgg
+    @ Check if it has max friendship already
+    setvar 0x8003 0x0 @ Check from party (0x8004 already holding party slot)
+    special2 LASTRESULT 0xD
+    compare LASTRESULT 255
+    if equal _goto PokemonAlreadyHasMaxFriendship
+    @ Check if it knows return
+    setvar 0x8005 MOVE_RETURN
+    callasm CheckIfPokemonKnowsMove
+    compare LASTRESULT TRUE
+    if notequal _goto PokemonDoesNotKnowReturn
+    @ Confirm choice
+    bufferpartypokemon 0x0 0x8004
+    msgbox gText_RivalEvent8_ChoiceConfirmation MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto RivalEvent8_Declined
+    @ Start bonding
+    msgbox gText_RivalEvent8_StartingBonding MSG_NORMAL
+    fadescreen FADEOUT_BLACK
+    msgbox gText_RivalEvent8_DuringBonding MSG_NORMAL
+    fanfare 0x100
+	waitfanfare
+    setvar 0x8005 0x00FF @ Add (00) 255 (FF) friendship, to the party pokemon (var8003) in the chosen slot (var8004) 
+    special 0x13
+    fadescreen FADEIN_BLACK
+    msgbox gText_RivalEvent8_AfterBonding MSG_NORMAL
+    setflag 0x2C7 @ Finished Rival event 8
+    goto RivalEvent8_AfterMaxingFriendship
+
+RivalEvent8_ChoseEgg:
+    npcchatwithmovement gText_RivalEvent8_ChoseEgg m_LookDown
+    end
+
+PokemonAlreadyHasMaxFriendship:
+    npcchatwithmovement gText_RivalEvent8_ChosePokemonThatIsMaxFriendship m_LookDown
+    end
+
+PokemonDoesNotKnowReturn:
+    npcchatwithmovement gText_RivalEvent8_ChosePokemonThatDoesNotKnowReturn m_LookDown
+    end
+
+RivalEvent8_AfterMaxingFriendship:
+    npcchatwithmovement gText_RivalEvent8_TreatingPokemonRight m_LookDown
+    end
+
+RivalEvent8_Declined:
+    npcchatwithmovement gText_RivalEvent8_Declined m_LookDown
+    end
