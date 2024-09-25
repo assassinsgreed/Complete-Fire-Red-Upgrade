@@ -230,7 +230,27 @@ EventScript_HeleoFacilities_PokemonCenter_KidsMom:
 
 .global EventScript_HeleoFacilities_PokemonCenter_CriticalCapture
 EventScript_HeleoFacilities_PokemonCenter_CriticalCapture:
-    npcchat gText_HeleoCityFacilities_CriticalCapture
+    faceplayer
+    msgbox gText_HeleoCityFacilities_CriticalCapture MSG_NORMAL
+    checkitem ITEM_CATCHING_CHARM 0x1
+    compare LASTRESULT TRUE
+    if equal _goto AlreadyHaveCatchCharm
+    msgbox gText_HeleoCityFacilities_CriticalCapture_IntroToCatchCharm MSG_NORMAL
+    setvar 0x8004 23 @ Critical Captures
+    callasm StoreGameStat
+    buffernumber 0x0 LASTRESULT
+    compare LASTRESULT 5
+    if greaterorequal _goto GiveCatchCharm
+    msgbox gText_HeleoCityFacilities_CriticalCapture_NotEnoughCriticalCaptures MSG_NORMAL
+    end
+
+GiveCatchCharm:
+    msgbox gText_HeleoCityFacilities_CriticalCapture_EnoughCriticalCaptures MSG_NORMAL
+    obtainitem ITEM_CATCHING_CHARM 0x1
+    goto AlreadyHaveCatchCharm
+
+AlreadyHaveCatchCharm:
+    msgbox gText_HeleoCityFacilities_CriticalCapture_AfterCatchCharm MSG_NORMAL
     end
 
 .global EventScript_HeleoFacilities_Mart_PokeballShop
