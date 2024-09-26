@@ -962,6 +962,7 @@ npc 9 9 0 EventScript_PokemonCenter_Main
 npc 9 9 1 EventScript_DaimynCityFacilities_PokemonCenterOldWoman
 npc 9 9 2 EventScript_DaimynCityFacilities_PokemonCenterWoman
 npc 9 9 3 EventScript_DaimynCityFacilities_PokemonCenterGirl
+npc 9 9 4 EventScript_DaimynCityFacilities_PokeballTraveller
 npc 9 16 0 EventScript_DaimynCityMall_LuckyDrawLady
 npc 9 16 1 EventScript_DaimynCityMall_Greeter
 npc 9 16 2 EventScript_DaimynCityMall_Shop_Herbalist

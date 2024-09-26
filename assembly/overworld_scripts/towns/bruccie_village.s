@@ -539,7 +539,7 @@ ChoosePokeball:
     case ITEM_FRIEND_BALL, ChoseFriendBall
     case ITEM_MOON_BALL, ChoseMoonBall
     case ITEM_SPORT_BALL, ChoseSportBall
-    case ITEM_BEAST_BALL, ChoseBestBall
+    case ITEM_BEAST_BALL, ChoseBeastBall
     case ITEM_DREAM_BALL, ChoseDreamBall
     @ For all non-pokeball items, as well as Dynamax and Cherish balls, default to not being able to process it
     bufferitem 0x0 CHOSEN_ITEM
@@ -643,7 +643,7 @@ ChoseSportBall:
     setvar 0x8005 0x18
     goto BallConfirmation
 
-ChoseBestBall:
+ChoseBeastBall:
     setvar 0x8005 0x19
     goto BallConfirmation
 

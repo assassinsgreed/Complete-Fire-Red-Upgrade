@@ -1395,6 +1395,7 @@ Daily Flags, cleared at the start of each day.  Goes up to 0xEFF
 #define FLAG_SLOWPOKE_NEWS_SPECIES_SET        0xE32
 #define FLAG_SLOWPOKE_NEWS_COMPLETED          0xE33
 #define FLAG_UTEYA_VILLAGE_TRAINER_HOUSE      0xE34
+#define FLAG_DAIMYN_CITY_POKEBALL_TRAVELLER   0xE35
 */
 
 #define FLAG_TRAINER_FLAG_START 0x500

@@ -87,8 +87,8 @@ void atkEF_handleballthrow(void)
 				EmitBallThrowAnim(0, 4);
 				MarkBufferBankForExecution(gActiveBattler);
 				gBattlescriptCurrInstr = BattleScript_SuccessBallThrow;
-				if (ballType != BALL_TYPE_PARK_BALL)
-					SetMonData(GetBankPartyData(gBankTarget), MON_DATA_POKEBALL, &ballType);
+				// if (ballType != BALL_TYPE_PARK_BALL)
+				SetMonData(GetBankPartyData(gBankTarget), MON_DATA_POKEBALL, &ballType);
 				if (CalculatePlayerPartyCount() == 6)
 					gBattleCommunication[MULTISTRING_CHOOSER] = 0;
 				else
@@ -174,8 +174,8 @@ void atkEF_handleballthrow(void)
 		if (IsRaidBattle()) //Dynamax Raid Pokemon can be caught easier
 			odds *= 4;
 
-		if (ballType != BALL_TYPE_SAFARI_BALL)
-		{
+		// if (ballType != BALL_TYPE_SAFARI_BALL)
+		// {
 			if (ballType == BALL_TYPE_MASTER_BALL)
 				gBattleResults.usedMasterBall = 1;
 
@@ -183,7 +183,7 @@ void atkEF_handleballthrow(void)
 			//Commenting it out also prevents errors from using poke balls with large indices.
 			//else if (gBattleResults.usedBalls[ballType - BALL_TYPE_ULTRA_BALL] < 0xFF)
 			//		gBattleResults.usedBalls[ballType - BALL_TYPE_ULTRA_BALL]++;
-		}
+		// }
 
 		if (odds >= 0xFF) //Pokemon is Caught
 		{
@@ -191,8 +191,8 @@ void atkEF_handleballthrow(void)
 			MarkBufferBankForExecution(gActiveBattler);
 			gBattlescriptCurrInstr = BattleScript_SuccessBallThrow;
 
-			if (ballType != BALL_TYPE_PARK_BALL || IsRaidBattle())
-				SetMonData(&gEnemyParty[gBattlerPartyIndexes[gBankTarget]], MON_DATA_POKEBALL, &ballType);
+			// if (ballType != BALL_TYPE_PARK_BALL || IsRaidBattle())
+			SetMonData(&gEnemyParty[gBattlerPartyIndexes[gBankTarget]], MON_DATA_POKEBALL, &ballType);
 
 			if (CalculatePlayerPartyCount() == 6)
 				gBattleCommunication[MULTISTRING_CHOOSER] = 0;
@@ -213,7 +213,6 @@ void atkEF_handleballthrow(void)
 			}
 
 			if (ballType == BALL_TYPE_MASTER_BALL
-			||	ballType == BALL_TYPE_PARK_BALL
 			#ifdef FLAG_ALWAYS_CATCHABLE
 			|| FlagGet(FLAG_ALWAYS_CATCHABLE)
 			#endif
@@ -254,8 +253,8 @@ void atkEF_handleballthrow(void)
 				}
 
 				gBattlescriptCurrInstr = BattleScript_SuccessBallThrow;
-				if (ballType != BALL_TYPE_PARK_BALL || IsRaidBattle())
-					SetMonData(&gEnemyParty[gBattlerPartyIndexes[gBankTarget]], MON_DATA_POKEBALL, &ballType);
+				// if (ballType != BALL_TYPE_PARK_BALL || IsRaidBattle())
+				SetMonData(&gEnemyParty[gBattlerPartyIndexes[gBankTarget]], MON_DATA_POKEBALL, &ballType);
 
 				if (CalculatePlayerPartyCount() == 6)
 					gBattleCommunication[MULTISTRING_CHOOSER] = 0;
@@ -285,10 +284,10 @@ u32 GetBaseBallCatchOdds(u8 ballType, u8 bankAtk, u8 bankDef)
 	u8 atkLevel = gBattleMons[bankAtk].level;
 	u8 defLevel = gBattleMons[bankDef].level;
 
-	if (ballType == BALL_TYPE_SAFARI_BALL)
-		catchRate = (gBattleStruct->safariCatchFactor * 1275) % 100;
-	else
-		catchRate = gBaseStats[GetMonData(GetBankPartyData(bankDef), MON_DATA_SPECIES, NULL)].catchRate; //Uses party data b/c Transform update Gen 5+
+	// if (ballType == BALL_TYPE_SAFARI_BALL)
+	// 	catchRate = (gBattleStruct->safariCatchFactor * 1275) % 100;
+	// else
+	catchRate = gBaseStats[GetMonData(GetBankPartyData(bankDef), MON_DATA_SPECIES, NULL)].catchRate; //Uses party data b/c Transform update Gen 5+
 
 	if (ballType >= BALL_TYPE_NET_BALL)
 	{
@@ -450,7 +449,9 @@ u32 GetBaseBallCatchOdds(u8 ballType, u8 bankAtk, u8 bankDef)
 					ballMultiplier = 10;
 				break;
 
+			case BALL_TYPE_SAFARI_BALL:
 			case BALL_TYPE_SPORT_BALL:
+			case BALL_TYPE_PARK_BALL:
 				ballMultiplier = 15;
 				break;
 
@@ -1049,11 +1050,11 @@ bool8 TryGetPokeBallBattleScript(void)
 {
 	if (GetPocketByItemId(gLastUsedItem) == POCKET_POKE_BALLS)
 	{
-		u8 ballType = ItemId_GetType(gLastUsedItem);
-		if (ballType == BALL_TYPE_SAFARI_BALL)
-			gBattlescriptCurrInstr = BattleScript_SafariBallThrow;
-		else
-			gBattlescriptCurrInstr = BattleScript_BallThrow;
+		// u8 ballType = ItemId_GetType(gLastUsedItem);
+		// if (ballType == BALL_TYPE_SAFARI_BALL)
+		// 	gBattlescriptCurrInstr = BattleScript_SafariBallThrow;
+		// else
+		gBattlescriptCurrInstr = BattleScript_BallThrow;
 
 		return TRUE;
 	}
