@@ -203,7 +203,7 @@ bool8 ShouldDoTrainerSlide(u8 bank, u16 trainerId, u8 caseId)
 {
 	u32 i;
 
-	if (!(gBattleTypeFlags & BATTLE_TYPE_TRAINER) || SIDE(bank) != B_SIDE_OPPONENT)
+	if (!(gBattleTypeFlags & BATTLE_TYPE_TRAINER) || SIDE(bank) != B_SIDE_OPPONENT || FlagGet(FLAG_TEMP_1))
 		return FALSE;
 
 	for (i = 0; i < ARRAY_COUNT(sTrainerSlides); ++i)
