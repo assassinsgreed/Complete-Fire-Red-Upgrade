@@ -72,6 +72,18 @@ My son and I from Daimyn City. We\ncame out this way to visit our\lrelatives.\pI
 #org @gText_HeleoCityFacilities_CriticalCapture
 Have you ever seen a Pok\e Ball\nshake before a Pok\emon you're\ltrying to catch gets pulled into\lit?\pThat's a Critical Capture. When it\nhappens, you'll be more likely to\lcatch the Pok\emon than usual.\pI hear it's more likely to happen\nwhen you've caught more\lunique Pok\emon species[.]
 
+#org @gText_HeleoCityFacilities_CriticalCapture_IntroToCatchCharm
+Say[.] I have this nifty Catch Charm\nhere.\pIt doubles the likelihood of a\ncritical capture happening.\pI could part with it, if you can\nprove you've mastered them[.]\pLet's say[.] by successfully performing\n5 critical captures?
+
+#org @gText_HeleoCityFacilities_CriticalCapture_NotEnoughCriticalCaptures
+Oh[.] No good!\pYou've only performed [BUFFER1]\ncritical captures so far!
+
+#org @gText_HeleoCityFacilities_CriticalCapture_EnoughCriticalCaptures
+You've performed [BUFFER1] critical\ncaptures?\pWow, you're something special!\pYou've definitely earned this Catch\nCharm!
+
+#org @gText_HeleoCityFacilities_CriticalCapture_AfterCatchCharm
+Use that Catch Charm to fill your\nPok\edex quickly!
+
 #org @gText_HeleoCityFacilities_QuickTimerBallQuiz
 Pop Quiz: Is a Quick Ball better\nthan a Timer Ball?
 
