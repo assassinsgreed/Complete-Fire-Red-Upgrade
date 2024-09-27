@@ -270,6 +270,24 @@ My husband just disappeared on me\nand left me with our daughter.\pHe better not
 #org @gText_DaimynCityFacilities_PokemonCenter_Girl
 My mommy and I are waiting for daddy\nto come back.\pMommy said he's going to bring us\nCastelicones! I can't wait!
 
+#org @gText_DaimynCityFacilities_PokemonCenter_TravellingMan_Intro
+Ho ho! I am a world traveller that\nhas visited many regions.\pIn fact, I just returned from a trip\nfrom which I brought some rare\lregional Pok\e Balls.
+
+#org @gText_DaimynCityFacilities_PokemonCenter_TravellingMan_SaleOffer
+Say[.] Would you be interested in\nbuying one from me, for \$1,500?
+
+#org @gText_DaimynCityFacilities_PokemonCenter_TravellingMan_Purchased
+Wonderful! Then, take this Pok\e Ball.
+
+#org @gText_DaimynCityFacilities_PokemonCenter_TravellingMan_ChoseNotToBuy
+How unfortunate!
+
+#org @gText_DaimynCityFacilities_PokemonCenter_TravellingMan_NotEnoughMoney
+For shame! You don't have enough\nmoney for this wonderful Pok\e Ball.
+
+#org @gText_DaimynCityFacilities_PokemonCenter_TravellingMan_ReturningTomorrow
+I must now leave for\nanother trip.\pDo not fret, young one.\pI shall return tomorrow with more\nPok\e Balls to sell.\pBut now, I must bid you adieu, as\nthey say in Kalos.
+
 #org @gText_DaimynCityFacilities_IRF_PCResearcher
 Please don't distract me.\pI'm tracking peculiar energy signals\nwe've detected out in Ultra Space.
 

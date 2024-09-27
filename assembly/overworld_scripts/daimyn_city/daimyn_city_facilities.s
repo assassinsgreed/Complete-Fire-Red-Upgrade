@@ -171,6 +171,67 @@ EventScript_DaimynCityFacilities_PokemonCenterGirl:
     npcchatwithmovement gText_DaimynCityFacilities_PokemonCenter_Girl m_LookLeft
     end
 
+.global EventScript_DaimynCityFacilities_PokeballTraveller
+EventScript_DaimynCityFacilities_PokeballTraveller: 
+    lock
+    faceplayer
+    msgbox gText_DaimynCityFacilities_PokemonCenter_TravellingMan_Intro MSG_NORMAL
+    showmoney 0x0 0x0
+    msgbox gText_DaimynCityFacilities_PokemonCenter_TravellingMan_SaleOffer MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto PokeballTraveller_ChoseNotToBuy
+    checkmoney 1500
+    compare LASTRESULT NO
+    if equal _goto PokeballTraveller_NotEnoughMoney
+    playse 0xF8 @ Money
+    removemoney 1500
+    updatemoney 0x0 0x0
+    waitse
+    pause DELAY_1SECOND
+    hidemoney
+    msgbox gText_DaimynCityFacilities_PokemonCenter_TravellingMan_Purchased MSG_NORMAL
+    random 0x4
+    switch LASTRESULT
+    case 0, GiveSafariBall
+    case 1, GiveSportBall
+    case 2, GiveParkBall
+    case 3, GiveDreamBall
+    end
+
+GiveSafariBall:
+    obtainitem ITEM_SAFARI_BALL 0x1
+    goto PokeballTraveller_AfterPurchase
+
+GiveSportBall:
+    obtainitem ITEM_SPORT_BALL 0x1
+    goto PokeballTraveller_AfterPurchase
+
+GiveParkBall:
+    obtainitem ITEM_PARK_BALL 0x1
+    goto PokeballTraveller_AfterPurchase
+
+GiveDreamBall:
+    obtainitem ITEM_DREAM_BALL 0x1
+    goto PokeballTraveller_AfterPurchase
+
+PokeballTraveller_AfterPurchase:
+    msgbox gText_DaimynCityFacilities_PokemonCenter_TravellingMan_ReturningTomorrow MSG_NORMAL
+    setflag 0xE35 @ Hide traveller man
+    fadescreen FADEOUT_BLACK
+    hidesprite LASTTALKED
+    fadescreen FADEIN_BLACK
+    end
+
+PokeballTraveller_ChoseNotToBuy:
+    hidemoney
+    npcchatwithmovement gText_DaimynCityFacilities_PokemonCenter_TravellingMan_ChoseNotToBuy m_LookUp
+    end
+
+PokeballTraveller_NotEnoughMoney:
+    hidemoney
+    npcchatwithmovement gText_DaimynCityFacilities_PokemonCenter_TravellingMan_NotEnoughMoney m_LookUp
+    end
+
 .global EventScript_DaimynCityFacilities_PCResearcher
 EventScript_DaimynCityFacilities_PCResearcher:
     npcchatwithmovement gText_DaimynCityFacilities_IRF_PCResearcher m_LookUp
