@@ -280,7 +280,9 @@ static void LoadBattleBG_EntryOverlay(u8 terrainId)
 	u8 mapType = GetCurrentMapType();
 	if (!IsMapTypeIndoors(mapType) && IsMapTypeOutdoors(mapType))
 	{
-		if (IsNightTime())
+		if (IsMorning())
+			table = gBattleTerrainTableMorning;
+		else if (IsNightTime())
 			table = gBattleTerrainTableNight;
 		else if (IsEvening())
 			table = gBattleTerrainTableEvening;

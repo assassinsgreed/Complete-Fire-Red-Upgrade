@@ -238,9 +238,9 @@ EventScript_UteyaVillage_SlowpokeNews_Producer:
     msgbox gText_UteyaVillage_SlowpokeNews_Producer_PromptingToShowPokemon MSG_NORMAL
     special 0x9F @ Choose pokemon from party
     waitstate
+    call BufferSpeciesName @ Buffer the name again, because it is overwritten when choosing a pokemon
     compare 0x8004 0x6 @ Cancelled out
     if greaterorequal _goto SlowpokeNews_ChoseNotToShowPokemon
-    call BufferSpeciesName @ Buffer the name again, because it is overwritten when choosing a pokemon
     setvar 0x8003 0x0 @ Check species from party (0x8004 set by special 0x9F above)
     special2 LASTRESULT 0x18 @ Check species
     comparevartovar LASTRESULT 0x40EE @ Compare value of chosen pokemon to the daily pokemon
@@ -817,7 +817,7 @@ HandleSwitchesPressed:
     @ Both switches pressed at the same time
     addvar VarGymProgress 0x1
     playse 0x19 @ Correct
-    applymovement CopyCatNPC m_Joy @ TODO: only shows sometimes? waiting for movement or putting a delay in does weird things
+    applymovement CopyCatNPC m_Joy
     waitse
     pause DELAY_HALFSECOND
     call SetCopyCatGender

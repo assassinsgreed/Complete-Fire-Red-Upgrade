@@ -252,6 +252,7 @@ PlayerWalkToFaceHawthorne:
     return
 
 PlayerMustChooseStarter:
+    lock
     msgbox gText_Route17_ChooseAStarterWarning MSG_NORMAL
     special 0x1AA @ Get player facing
     compareplayerfacing INTERNAL_DOWN

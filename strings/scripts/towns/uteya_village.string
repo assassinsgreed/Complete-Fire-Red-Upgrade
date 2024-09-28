@@ -81,16 +81,16 @@ Oh dear[.] You don't have enough\nPok\eChips.\pThese moves are too exceptional t
 I'm Chuck with Slowpoke News -\nfirst on the scene of any story!\pAgh, nevermind that now[.]\nWe're in big trouble!
 
 #org @gText_UteyaVillage_SlowpokeNews_Producer_PokemonAllTheRage
-We just got word that [BUFFER1] is\nall the rage right now.\pWe don't have any stories lined up\nabout [BUFFER1] though!
+We just got word that [BUFFER1]\nis all the rage right now.\pWe don't have any stories lined up\nabout [BUFFER1] though!
 
 #org @gText_UteyaVillage_SlowpokeNews_Producer_AsksPlayerToShowPokemon
-Oh! I just got an incredible idea!\pYou're a trainer, yes?\pIf you have a [BUFFER1], you simply\nmust show us!\pThen we can learn more about it and\nwrite a story about it!\pAnd, we can pay you for your hard\nwork with Pok\eChips!\pIt's a real "scratch our back, we\nscratch yours\" kinda deal.\pWhat do you say?
+Oh! I just got an incredible idea!\pYou're a trainer, yes?\pIf you have a [BUFFER1], you\nsimply must show us!\pThen we can learn more about it and\nwrite a story about it!\pAnd, we can pay you for your hard\nwork with Pok\eChips!\pIt's a real "you scratch our back,\nwe scratch yours\" kinda deal.\pWhat do you say?
 
 #org @gText_UteyaVillage_SlowpokeNews_Producer_PromptingToShowPokemon
-Grand!\nNow show us that [BUFFER1], baby!
+Grand!\nNow show us that [BUFFER1]!
 
 #org @gText_UteyaVillage_SlowpokeNews_Producer_ChoseWrongPokemon
-Hey, what gives?\nThat's not a [BUFFER1]!\pCome back if you can get ahold of\none.\pBut be quick!\pThe people are fickle and the buzz\non [BUFFER1] will die out by the end\lof the day.
+Hey, what gives?\nThat's not a [BUFFER1]!\pCome back if you can get ahold of\none.\pBut be quick!\pThe people are fickle and the buzz\non [BUFFER1] will die out by\lthe end of the day.
 
 #org @gText_UteyaVillage_SlowpokeNews_Producer_ChoseRightPokemon
 Oh, yes, yes, yes!\pThat's an honest to goodness\n[BUFFER1] right there!\pOkay, okay, let me just take a look\nat it real quick[.]
@@ -105,19 +105,19 @@ But before you go[.]\pI'm a man of my word. Here's your\nreward for helping us.
 You're a good kid.\pIf you help us out again, we'll get\nyou a better reward.\pWe can only give so much each time\nthough.\pWe aren't made of money!\nWahahahaha!
 
 #org @gText_UteyaVillage_SlowpokeNews_Producer_PlayerChoseNotToShow
-Aww, don't be stingy!\pI'll be here if you change your\nmind.\pBut be quick!\pThe people are fickle and the buzz\non [BUFFER1] will die out by the end\lof the day.
+Aww, don't be stingy!\pI'll be here if you change your\nmind.\pBut be quick!\pThe people are fickle and the buzz\non [BUFFER1] will die out by\lthe end of the day.
 
 #org @gText_UteyaVillage_SlowpokeNews_Producer_PokemonShown
 Wahahaha! You really saved our\nbacon today.\pYou're alright, kid!\pSomeone with your skills is a rare\nfind.\pIf you come back tomorrow, we might\nhave another gig lined up for you.
 
 #org @gText_UteyaVillage_SlowpokeNews_Reporter_PokemonNotShown
-If we can't find a [BUFFER1] to report\non, we'll be in big trouble!
+If we can't find a [BUFFER1] to\nreport on, we'll be in big trouble!
 
 #org @gText_UteyaVillage_SlowpokeNews_Reporter_PokemonShown
 Whew, you really helped us out!\pIf you come back tomorrow, I'm sure\nyou could help us out again.
 
 #org @gText_UteyaVillage_SlowpokeNews_Editor_PokemonNotShown
-Wh-what are we going to do if we\ncan't report on [BUFFER1]?\pWe could report on the rising\nPok\eMart prices[.]\pNo way! People don't want to read\nabout that!
+What are we going to do if we can't\nreport on [BUFFER1]?\pWe could report on the rising\nPok\eMart prices[.]\pNo way! People don't want to read\nabout that!
 
 #org @gText_UteyaVillage_SlowpokeNews_Editor_PokemonShown
 Thanks soooo much for showing us\nthat [BUFFER1]!\pIf you didn't, we could've been in\nreally big trouble.
