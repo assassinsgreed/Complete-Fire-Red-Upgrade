@@ -403,6 +403,24 @@ Pikachu, please go with [PLAYER], and\nshow them what a champion battler\llooks 
 #org @gText_DaimynCityNPCHouses_OldTrainer_PikachuAlreadyGifted
 [BLUE]Take good care of Pikachu, okay?\nHe's a champion battler!
 
+#org @gText_DaimynCityNPCHouses_OldTrainer_AskingAboutPikachu
+[BLUE]Hello again. How are you and Pikachu\ngetting along?
+
+#org @gText_DaimynCityNPCHouses_OldTrainer_OffterToTeachVoltTackle
+Oh, I just had a great idea!\pPikachu mastered a special move\ncalled Volt Tackle.\pI could teach it to your Pichu,\nPikachu, or Kantonian Raichu.\pWhat do you say?
+
+#org @gText_DaimynCityNPCHouses_OldTrainer_ChoosePokemon
+Okay, who should I teach?
+
+#org @gText_DaimynCityNPCHouses_OldTrainer_TutoringComplete
+Okay, all done. They've learned Volt\nTackle now!
+
+#org @gText_DaimynCityNPCHouses_OldTrainer_CommentOnMaximizingBond
+Remember to treat your Pok\emon\nwell.\pDo that and you can overcome any\nobstacle.
+
+#org @gText_DaimynCityNPCHouses_OldTrainer_Declined
+That's fine.\pIf you change your mind, I'd be\nhappy to teach your Pok\emon.
+
 #org @gText_DaimynCityNPCHouses_Pikachu
 [BLUE]Chuu.
 

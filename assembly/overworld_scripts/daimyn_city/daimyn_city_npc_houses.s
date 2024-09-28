@@ -221,12 +221,11 @@ EventScript_DaimynCityNPCHouses_OldTrainer:
     if notequal _call PlayerFaceOldManBeside
     waitmovement PLAYER
     faceplayer
-    goto OldTrainer_GiftReceived
+    npcchatwithmovement gText_DaimynCityNPCHouses_OldTrainer_PikachuAlreadyGifted m_LookLeft
     end
 
 OldTrainer_NoSpace:
-    msgbox gText_DaimynCityNPCHouses_OldTrainer_NoSpace MSG_NORMAL
-    release
+    npcchatwithmovement gText_DaimynCityNPCHouses_OldTrainer_NoSpace m_LookLeft
     end
 
 MovePikachuAboveBelow:
@@ -264,13 +263,28 @@ PlayerFaceOldManBeside:
     return
 
 OldTrainer_GiftReceived:
-    msgbox gText_DaimynCityNPCHouses_OldTrainer_PikachuAlreadyGifted MSG_NORMAL
-    release
+    msgbox gText_DaimynCityNPCHouses_OldTrainer_AskingAboutPikachu MSG_NORMAL
+    sound 0x15 @ Exclaim
+    applymovement LASTTALKED m_Surprise
+    msgbox gText_DaimynCityNPCHouses_OldTrainer_OffterToTeachVoltTackle MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto OldTrainer_DeniedVoltTackleTutoring
+    msgbox gText_DaimynCityNPCHouses_OldTrainer_ChoosePokemon MSG_NORMAL
+    setvar 0x8005 67 @ Volt Tackle
+    special 0x18D
+    waitstate
+    compare LASTRESULT YES
+    if false _goto OldTrainer_DeniedVoltTackleTutoring @ Pokemon couldn't learn, or player chose not to
+    msgbox gText_DaimynCityNPCHouses_OldTrainer_TutoringComplete MSG_NORMAL
+    npcchatwithmovement gText_DaimynCityNPCHouses_OldTrainer_CommentOnMaximizingBond m_LookLeft
     end
 
 OldTrainer_Denied:
-    msgbox gText_DaimynCityNPCHouses_OldTrainer_Denied MSG_NORMAL
-    release
+    npcchatwithmovement gText_DaimynCityNPCHouses_OldTrainer_Denied m_LookLeft
+    end
+
+OldTrainer_DeniedVoltTackleTutoring:
+    npcchatwithmovement gText_DaimynCityNPCHouses_OldTrainer_Declined m_LookLeft
     end
 
 .global EventScript_DaimynCityNPCHouses_Pikachu
@@ -278,8 +292,7 @@ EventScript_DaimynCityNPCHouses_Pikachu:
     lock
     faceplayer
     cry SPECIES_PIKACHU 0x0
-    msgbox gText_DaimynCityNPCHouses_Pikachu MSG_NORMAL
-    release
+    npcchatwithmovement gText_DaimynCityNPCHouses_Pikachu m_LookRight
     end
 
 .global EventScript_DaimynCityNPCHouses_TradeBuddy
