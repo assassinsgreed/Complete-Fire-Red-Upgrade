@@ -1183,6 +1183,78 @@ My son dreams of becoming the\nChampion. It's all he talks about.\pI thought I'd
 #org @gText_AscensionTower_RecordsSign
 It's a board showing the records\nof all the trainers who've\lchallenged the Elite Four and\lBattle Tower.\pMaybe someday I'll be on here!
 
+#org @gText_AscensionTower_EliteFourChallengeRegistration_RivalGreetsPlayer
+[BLACK][RIVAL]: [BLUE]Oh, hey [PLAYER]!\nYou're just in time.\pLet's register ourselves for the Elite\nFour Challenge!\pOnce we challenge and beat them,\nwe'll have our chance to battle\lChampion Selene[.]\pI can't wait! We've dreamed of this\nday for ages!
+
+#org @gText_AscensionTower_EliteFourChallengeRegistration_RivalAsksToRegister
+[BLACK][RIVAL]: [BLUE]Excuse me.\pMy friend [PLAYER] and I would like\nto register for the Elite Four\lChallenge.
+
+#org @gText_AscensionTower_EliteFourChallengeRegistration_AttendantAsksToSeeChampionsFlag
+[BLACK]Attendant: [RED]I can help you with\nthat!\pMay I please see your Champion's\nFlags?
+
+#org @gText_AscensionTower_EliteFourChallengeRegistration_RivalConfusedAboutFlag
+[BLACK][RIVAL]: [BLUE]Um[.] My Champion's Flag?\pI've never heard of that[.]
+
+#org @gText_AscensionTower_EliteFourChallengeRegistration_AttendantExplainsVictoryRoadChallenge
+[BLACK]Attendant: [RED]Oh, my apologies.\pOnly trainers who have claimed a\nChampion's Flag from Victory\lRoad may challenge the Elite Four.\pI can register you as entrants to\nVictory Road, if you've collected\lall of Kulure's gym badges.\pWould you like to sign up for the\nVictory Road Challenge instead?
+
+#org @gText_AscensionTower_EliteFourChallengeRegistration_RivalAsksToTakeVictoryRoadChallenge
+[BLACK][RIVAL]: [BLUE]Oh, yes! We've done that.\pWe really want to challenge the\nElite Four and Champion.\pCould you please register us for\nthe Victory Road Challenge?
+
+#org @gText_AscensionTower_EliteFourChallengeRegistration_AttendantAsksToSeeBadges
+[BLACK]Attendant: [RED]Absolutely!\pPlease state your names and present\nyour badges.\pThen, a member of the Elite Four\nwill come down to meet you.
+
+#org @gText_AscensionTower_EliteFourChallengeRegistration_RivalPresentsBadges
+[BLACK][RIVAL]: [BLUE]Awesome!\pI'm [RIVAL]. Here are my badges.\pThis here is [PLAYER].
+
+#org @gText_AscensionTower_EliteFourChallengeRegistration_PlayerPresentsBadges
+[BLACK][PLAYER] presented their gym badges.
+
+#org @gText_AscensionTower_EliteFourChallengeRegistration_AttendantCongratulatesPlayerAndRival
+[BLACK]Attendant: [RED]Allow me to congratulate\nyou on your accomplishment!
+
+#org @gText_AscensionTower_EliteFourChallengeRegistration_AttendantCallsForEliteFourMember
+[BLACK]Attendant: [RED]Please wait just a\nmoment.\pA member of the Elite Four will be\nhere shortly to see you.
+
+#org @gText_AscensionTower_EliteFourChallengeRegistration_RivalWaitingForEliteFourMember
+[BLACK][RIVAL]: [BLUE]This is so exciting!\pI wonder which Elite Four member\nwe'll end up meeting?\pOh, I can't wait[.]
+
+#org @gText_AscensionTower_EliteFourChallengeRegistration_SeleneGreetsPlayerAndRival
+[BLACK]Selene: [RED]Hey, you two!\nIt's been a while, hasn't it?
+
+#org @gText_AscensionTower_EliteFourChallengeRegistration_RivalGreetingSelene
+[BLACK][RIVAL]: [BLUE]Champion Selene?\nWhat are you doing here?
+
+#org @gText_AscensionTower_EliteFourChallengeRegistration_SeleneExplainsHerself
+[BLACK]Selene: [RED]We got word that you two\nwere registering for the Victory\lRoad challenge.\pLucas was going to come down to\nexplain things to you, but[.] Well[.]\pWhen I heard it was you two, I just\nhad to come see you myself!
+
+#org @gText_AscensionTower_EliteFourChallengeRegistration_RivalUnderstands
+[BLACK][RIVAL]: [BLUE]Oh, yeah. That makes\nsense!
+
+#org @gText_AscensionTower_EliteFourChallengeRegistration_SeleneExplainsVictoryRoadChallenge
+[BLACK]Selene: [RED]First, please accept my\ncongratulations on receiving all 8\lgym badges!\pWith those badges in hand, you can\nnow take the Victory Road\lChallenge.\pThe challenge itself is simple.\nAllow me to explain how it works[.]\pYou must ascend Victory Road, a\nmountain on the western isle.\pVictory Road is filled with\npowerful Pok\emon and trainers.\pIt's no stretch to say they're among\nthe best of the best!\pAt the peak of the mountain, you will\nfind a Champion's Flag.\pYou must return with that flag in\norder to challenge the Elite Four,\las well as myself.\pDo you have any questions?
+
+#org @gText_AscensionTower_EliteFourChallengeRegistration_RivalUnderstandsChallenge
+[BLACK][RIVAL]: [BLUE]Nope. So far, so good!
+
+#org @gText_AscensionTower_EliteFourChallengeRegistration_SeleneExplainsEliteFourChallenge
+[BLACK]Selene: [RED]Excellent! Next, I'll explain\nthe Elite Four Challenge.\pYou will be tasked with battling each\nmember of the Elite Four in order.\pAfterward, you may challenge me for\nthe title of Kulure's Champion.\pOnce the challenge starts, you will\nbe unable to stop until you have\lsucceeded or failed.\pDon't sweat it if you lose,\nthough!\pThis challenge can be attempted any\ntime and as many times as you'd\llike, as long as you still have the\lChampion's Flag.\pDo you have any questions?
+
+#org @gText_AscensionTower_EliteFourChallengeRegistration_RivalHasNoQuestions
+[BLACK][RIVAL]: [BLUE]Nope, all good here!
+
+#org @gText_AscensionTower_EliteFourChallengeRegistration_SeleneBidsPlayerAndRivalFarewell
+[BLACK]Selene: [RED]Okay, great!\pIf you need a refresher later, just\nspeak with the attendant here.\pAnd[.] That's all I had to share!\pI'm sure you're both really excited\nto take the Victory Road\lChallenge.\pI won't keep you here any longer.\pGood luck! I'll be looking forward to\nbattling with you.
+
+#org @gText_AscensionTower_EliteFourChallengeRegistration_RivalIsReady
+[BLACK][RIVAL]: [BLUE]You bet!\pWe'll get those flags and be back\nbefore you know it.\pI can't wait to finally battle with\nyou, Champion Selene!
+
+#org @gText_AscensionTower_EliteFourChallengeRegistration_SeleneLeaves
+[BLACK]Selene: [RED]Haha, I bet!\nWell, goodbye for now!
+
+#org @gText_AscensionTower_EliteFourChallengeRegistration_RivalRecapsTheChallenges
+[BLACK][RIVAL]: [BLUE]Okay, so[.]\pFirst we go to Victory Road and get\nthe Champion's Flag at the peak.\pThen, we come back here and\nchallenge the Elite Four and\lChampion Selene.\pOkay!\p[PLAYER], I'm going to go toughen up\nmy Pok\emon. Then, I'll get that\lflag[.]\pI'm sure we'll cross paths on Victory\nRoad.\pIf we do, you'd better be ready!\pMy Pok\emon and I will give it our\nall!\pOkay, [PLAYER], I'd better get\ngoing. See you around!
+
 // Restaurant
 #org @gText_Restaurant_FirstVisit
 Ah, 'ello! Welcome to my\nrestaurant!\pI see you are a new customer! What\nis your name?\p[PLAYER]?\pWelcome, Master [PLAYER]! Please,\nindulge me a moment while I\lexplain ze services I provide.

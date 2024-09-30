@@ -659,7 +659,7 @@
 #define FLAG_UTEYAN_RUINS_LEFT_CHAMBER_SOLVED            0x27C
 #define FLAG_UTEYAN_RUINS_RIGHT_CHAMBER_SOLVED           0x27D
 #define FLAG_UTEYAN_RUINS_BOTTOM_CHAMBER_SOLVED          0x27E
-#define FLAG_SILPH_4F_DOOR_2                             0x27F
+#define FLAG_REGISTERED_FOR_VICTORY_ROAD_CHALLENGE       0x27F
 #define FLAG_SILPH_5F_DOOR_1                             0x280
 #define FLAG_SILPH_5F_DOOR_2                             0x281
 #define FLAG_SILPH_5F_DOOR_3                             0x282
