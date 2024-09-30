@@ -196,10 +196,10 @@ MapScript_AnthraTown_GameStartup:
 	.byte MAP_SCRIPT_TERMIN
 
 LevelScripts_AnthraTown_GenChoice:
-	levelscript 0x4056 0 LevelScript_GenChoice_Main
+	levelscript 0x4056 0 LevelScript_NewGameSetup_Main
 	.hword LEVEL_SCRIPT_TERMIN
 
-LevelScript_GenChoice_Main:
+LevelScript_NewGameSetup_Main:
 	lock
 	setflag 0x056 @ Hide Ena on Route 11 South
 	spriteface PLAYER look_down
@@ -207,7 +207,19 @@ LevelScript_GenChoice_Main:
 	sethealingplace 0x01 @ Player's house
 	clearflag 0x82F @ Ability to run
 	msgboxsign
-	msgbox gText_GenChoice_Msgwelcome MSG_YESNO
+	msgbox gText_GenChoice_Msgwelcome MSG_NORMAL
+	msgbox gText_GenChoice_TutorializationQuestion MSG_YESNO
+	compare LASTRESULT YES
+	if equal _call EnableTutorialization
+	goto GenChoiceMain
+
+EnableTutorialization:
+	setflag 0x90A @ Tutorial battles on
+	setvar 0x40FF 0x1 @ Catching tutorial cutscene on (+1 in Hawthorne event, triggers map event)
+	return
+
+GenChoiceMain:
+	msgbox gText_GenChoice_FavoriteGenQuestion MSG_YESNO
 	compare LASTRESULT YES
 	if TRUE _call EventScript_GenChoice_Favoritegen
 	call EventScript_GenChoice_Shuffle
@@ -229,13 +241,13 @@ EventScript_GenChoice_Favoritegen:
 	case 5, EventScript_GenChoice_Kalosconfirm
 	case 6, EventScript_GenChoice_Alolaconfirm
 	case 7, EventScript_GenChoice_Galarconfirm
-	case 0x7F, LevelScript_GenChoice_Main @ Pressed B to quit, goto initial question
+	case 0x7F, GenChoiceMain @ Pressed B to quit, goto initial question
 	end
 
 EventScript_GenChoice_Shuffle:
 	msgbox gText_GenChoice_Msgshuffleconfirm MSG_YESNO
 	compare LASTRESULT 0x1
-	if 0x0 _call LevelScript_GenChoice_Main
+	if 0x0 _call GenChoiceMain
 	random 0x8
 	copyvar 0x408C LASTRESULT
 	random 0x8
@@ -318,7 +330,7 @@ EventScript_GenChoice_Reset:
 	setvar 0x408C 0x0
 	setvar 0x408D 0x0
 	setvar 0x408E 0x0
-	call LevelScript_GenChoice_Main
+	call GenChoiceMain
 
 EventScript_GenChoice_End:
 	sound 0x30 @Save

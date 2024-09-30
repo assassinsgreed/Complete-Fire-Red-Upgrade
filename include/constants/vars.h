@@ -300,7 +300,7 @@
 #define VAR_0x40FC                 0x40FC
 #define VAR_0x40FD                 0x40FD
 #define VAR_GAME_MODIFIER_CHOICE   0x40FE
-#define VAR_0x40FF                 0x40FF
+#define VAR_CATCHING_TUTORIAL      0x40FF
 
 #define VARS_END                   0x40FF
 

@@ -438,13 +438,13 @@ static u8 TryLoadAlternateAreaTerrain(u8 terrain)
 	// 			break;
 	// 	}
 	// }
-#endif
 
 	if (MetatileBehavior_IsSand(tileBehavior) && IsCurrentAreaDesert())
 		terrain = BATTLE_TERRAIN_DESERT;
 
 	if (tileBehavior == MB_LAVA)
 		terrain = BATTLE_TERRAIN_LAVA_POOL;
+#endif
 
 	return terrain;
 }

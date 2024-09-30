@@ -26,7 +26,13 @@ Oh, good! You and your\nPok\emon are looking great.\lTake care now!
 [RED]Enjoy your journey with [RIVAL] and\nyour Pok\emon, and stay safe!\pAnd remember, you can always come\nhome, whenever you need to.
 
 #org @gText_GenChoice_Msgwelcome
-Welcome to Pok\emon Amethyst!\pWe have a couple questions to help\ncustomize your experience.\pFirst of all, do you have a\nfavorite Pok\emon generation?
+Welcome to Pok\emon Amethyst!\pWe have a couple questions to help\ncustomize your experience.
+
+#org @gText_GenChoice_TutorializationQuestion
+Would you like to enable early game\nbattling and catching tutorials?
+
+#org @gText_GenChoice_FavoriteGenQuestion
+Next, do you have a favorite\nPok\emon generation?
 
 #org @gText_GenChoice_Msgfavoritegen
 Please select your favorite\ngeneration.
@@ -35,28 +41,28 @@ Please select your favorite\ngeneration.
 The game will be set in shuffle\nmode. This will choose random\lstarters from across all 8\lgenerations.\pDo you want to start in shuffle\nmode?
 
 #org @gText_GenChoice_Msgkantoconfirm
-Your favorite generation is 1\n(Kanto)?
+Your favorite generation is\n1 (Kanto)?
 
 #org @gText_GenChoice_Msgjohtoconfirm
-Your favorite generation is 2\n(Johto)?
+Your favorite generation is\n2 (Johto)?
 
 #org @gText_GenChoice_Msghoennconfirm
-Your favorite generation is 3\n(Hoenn)?
+Your favorite generation is\n3 (Hoenn)?
 
 #org @gText_GenChoice_Msgsinnohconfirm
-Your favorite generation is 4\n(Sinnoh)?
+Your favorite generation is\n4 (Sinnoh)?
 
 #org @gText_GenChoice_Msgunovaconfirm
-Your favorite generation is 5\n(Unova)?
+Your favorite generation is\n5 (Unova)?
 
 #org @gText_GenChoice_Msgkalosconfirm
-Your favorite generation is 6\n(Kalos)?
+Your favorite generation is\n6 (Kalos)?
 
 #org @gText_GenChoice_Msgalolaconfirm
-Your favorite generation is 7\n(Alola)?
+Your favorite generation is\n7 (Alola)?
 
 #org @gText_GenChoice_Msggalarconfirm
-Your favorite generation is 8\n(Galar)?
+Your favorite generation is\n8 (Galar)?
 
 #org @gText_GenChoice_Msgcomplete
 Selection confirmed. We hope you\nenjoy Pok\emon Amethyst!
