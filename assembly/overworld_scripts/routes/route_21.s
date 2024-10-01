@@ -57,15 +57,14 @@ EventScript_Route21_RockerAxel:
 EventScript_Route21_VictoryRoadGuard:
     faceplayer
     msgbox gText_Route21_VictoryRoadGuard MSG_NORMAL
-    callasm CountBadges
-    compare LASTRESULT 0x8
-    if equal _goto HaveAll8Badges
+    checkflag 0x27F @ Registered for Victory Road challenge
+    if SET _goto CanTakeVictoryRoadChallenge
     playse 0x1A @ Error
     msgbox gText_Route21_VictoryRoadGuard_NotEnoughBadges MSG_NORMAL
     applymovement LASTTALKED m_LookDown
     end
 
-HaveAll8Badges:
+CanTakeVictoryRoadChallenge:
     @ TODO: Populate in a later milestone
     end
 

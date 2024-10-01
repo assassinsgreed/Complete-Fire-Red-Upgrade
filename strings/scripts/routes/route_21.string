@@ -71,10 +71,10 @@ Ngh[.] Interloper[.]
 This place is quiet and peaceful.\pPlease, do not disturb it if you\nintend to pass through.
 
 #org @gText_Route21_VictoryRoadGuard
-Hold, trainer.\pThis is Victory Road - a passage\nthat only the finest trainers may\lenter.\pThose that reach it's peak and obtain\nthe Champion's Flag may challenge\lthe Elite Four and Champion.\pYou may only enter if you've\nobtained all 8 gym badges.\pPlease, allow me to check your\ncredentials[.]
+Hold, trainer.\pThis is Victory Road - a passage\nthat only the finest trainers may\lenter.\pThose that reach it's peak and obtain\nthe Champion's Flag may challenge\lthe Elite Four and Champion.\pYou may only enter if you've\nobtained all 8 gym badges and\lhave been registered for the\lVictory Road challenge.\pPlease, allow me to check your\ncredentials[.]
 
 #org @gText_Route21_VictoryRoadGuard_NotEnoughBadges
-I am sorry. You do not have all 8\ngym badges.\pPlease, continue your journey and\nreturn once you do.
+I am sorry.\nYou are not permitted to pass.\pYou must be registered in the\nVictory Road Challenge.\pThis can only be done at Ascension\nTower, once you have all 8\lof Kulure's gym badges.\pPlease, continue your journey and\nreturn once you have been\lregistered.
 
 #org @gText_Route21_TrainerTips
 Trainer Tips!\pSome wild Pok\emon hold items.\pWhen caught, you can choose to put\nthose items directly into your bag.
