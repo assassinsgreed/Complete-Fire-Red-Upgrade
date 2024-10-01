@@ -92,6 +92,8 @@ npc 3 20 8 EventScript_Route2_CoolTrainerAndy
 npc 3 20 9 ItemScript_Common_LaxIncense
 npc 3 20 10 EventScript_Route2_YoungsterJoey
 sign 3 20 2 SignScript_Route2_TrainerTipsFishing
+tile 3 20 0 TileScript_Route2_CapturingPokemonLeft
+tile 3 20 1 TileScript_Route2_CapturingPokemonRight
 
 # Varisi Forest
 map 1 0 MapScript_VarisiForest_FlightSpot

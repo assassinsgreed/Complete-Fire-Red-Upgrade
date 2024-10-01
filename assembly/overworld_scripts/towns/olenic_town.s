@@ -164,6 +164,7 @@ LevelScript_ReceivingPokedex:
     waitmovement Hawthorne
     setflag 0x030 @ Hide blocking events in Anthra Town
 	setvar 0x4050 0x1
+    addvar 0x40FF 0x1 @ Enable catching event on Route 2, if player requested tutorialization
 	end
 
 .global SignScript_OlenicLab_Conservatory

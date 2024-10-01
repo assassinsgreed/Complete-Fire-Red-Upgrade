@@ -424,6 +424,7 @@ EventScript_Route17_PlayerHasChosenStarter:
     setvar 0x8000 0xFEFE
     call SetupMugshotRival
     trainerbattle9 0x1 0x1 0x100 gText_Route17_RivalBattleConcludes gText_Route17_RivalBattleConcludes
+    clearflag 0x90A @ Tutorials off (if it was never set, nothing will change)
     setvar 0x8000 0x0
     applymovement PLAYER m_LookUp
     applymovement Rival m_LookUp
