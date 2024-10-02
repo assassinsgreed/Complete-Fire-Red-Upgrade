@@ -59,7 +59,7 @@ extern const u16 StunfiskPal[];
 extern const u16 TMPokeballPal[];
 extern const u16 TruckPal[];
 extern const u16 InterviewerPal[];
-extern const u16 CactusPal[];
+extern const u16 CactusAndVictoryFlagPal[];
 extern const u16 MegaStonePal[];
 extern const u16 DittoPal[];
 extern const u16 AmpharosPal[];
@@ -336,7 +336,7 @@ static const u16* sPlayerMarlonOutfitColours[] =
 		{ ProfessorHawthornePal, 0x1210 },
 		{ TruckPal, 0x1211 },
 		{ InterviewerPal, 0x1212 },
-		{ CactusPal, 0x1213 },
+		{ CactusAndVictoryFlagPal, 0x1213 },
 		{ MegaStonePal, 0x1214 },
 		{ AlistairPal, 0x1215 },
 		{ LeaderStellaPal, 0x1216 },
