@@ -47,7 +47,7 @@ extern const u8 TMPokeballTiles[];
 extern const u8 TruckTiles[];
 extern const u8 InterviewerTiles[];
 extern const u8 CameramanTiles[];
-extern const u8 CactusTiles[];
+extern const u8 CactusAndVictoryFlagTiles[];
 extern const u8 MegaStoneTiles[];
 extern const u8 DittoTiles[];
 extern const u8 AmpharosTiles[];
@@ -609,9 +609,15 @@ static const struct SpriteFrameImage Table_Cameraman[] =
     overworld_frame(CameramanTiles, 2, 4, 8),
 };
 
-static const struct SpriteFrameImage Table_Cactus[] =
+static const struct SpriteFrameImage Table_CactusAndVictoryFlag[] =
 {
-    overworld_frame(CactusTiles, 2, 4, 0),
+    overworld_frame(CactusAndVictoryFlagTiles, 2, 4, 0), // Cactus, stationary
+    overworld_frame(CactusAndVictoryFlagTiles, 2, 4, 1), // Victory flag, stationary
+    overworld_frame(CactusAndVictoryFlagTiles, 2, 4, 2), // Unused, face side
+    overworld_frame(CactusAndVictoryFlagTiles, 2, 4, 3), // Unused, walk down step 1
+    overworld_frame(CactusAndVictoryFlagTiles, 2, 4, 4), // Unused, walk down step 2
+    overworld_frame(CactusAndVictoryFlagTiles, 2, 4, 5), // Victory flag, waving 1
+    overworld_frame(CactusAndVictoryFlagTiles, 2, 4, 6), // Victory flag, waving 2
 };
 
 static const struct SpriteFrameImage Table_MegaStone[] =
@@ -1698,7 +1704,7 @@ const struct EventObjectGraphicsInfo GraphicsInfo_Cameraman =
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 
-const struct EventObjectGraphicsInfo GraphicsInfo_Cactus =
+const struct EventObjectGraphicsInfo GraphicsInfo_CactusAndVictoryFlag =
 {
     .tileTag = 0xFFFF,
     .paletteTag1 = 0x1213,
@@ -1707,14 +1713,14 @@ const struct EventObjectGraphicsInfo GraphicsInfo_Cactus =
     .width = 16,
     .height = 32,
     .shadowSize = SHADOW_SIZE_M,
-    .inanimate = TRUE,
+    .inanimate = FALSE,
     .disableReflectionPaletteLoad = FALSE,
     .tracks = TRACKS_NONE,
     .gender = MALE,
     .oam = gEventObjectBaseOam_16x32,
     .subspriteTables = gEventObjectSpriteOamTables_16x32,
     .anims = gEventObjectImageAnimTable_Standard,
-    .images = Table_Cactus,
+    .images = Table_CactusAndVictoryFlag,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 
