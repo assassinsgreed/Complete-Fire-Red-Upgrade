@@ -53,6 +53,12 @@ EventScript_Route18_TM99_DazzlingGleam:
     call ItemScript_Common_FindTM
     end
 
+.global EventScript_Route18_TM92_TrickRoom
+EventScript_Route18_TM92_TrickRoom:
+    setvar CHOSEN_ITEM ITEM_TM92
+    call ItemScript_Common_FindTM
+    end
+
 .global EventScript_Route18_Galladite
 EventScript_Route18_Galladite:
     finditem ITEM_GALLADITE 0x1

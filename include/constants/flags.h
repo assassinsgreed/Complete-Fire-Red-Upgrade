@@ -909,10 +909,10 @@
 #define FLAG_HIDE_VICTORY_ROAD_OUTSIDE_MAX_ELIXIR        0x372
 #define FLAG_HIDE_VICTORY_ROAD_OUTSIDE_PP_UP             0x373
 #define FLAG_HIDE_VICTORY_ROAD_BACK_ROOM_STEEL_GEM       0x374
-#define FLAG_0x375               0x375
-#define FLAG_0x376               0x376
-#define FLAG_0x377               0x377
-#define FLAG_0x378               0x378
+#define FLAG_HIDE_FORGOTTEN_MANSE_TM97_DARK_PULSE        0x375
+#define FLAG_HIDE_ROUTE9_TM66_PAYBACK                    0x376
+#define FLAG_HIDE_DAIMYN_FACTORY_TM36_SLUDGE_BOMB        0x377
+#define FLAG_HIDE_ROUTE18_TM92_TRICK_ROOM                0x378
 #define FLAG_0x379               0x379
 #define FLAG_0x37A               0x37A
 #define FLAG_0x37B               0x37B

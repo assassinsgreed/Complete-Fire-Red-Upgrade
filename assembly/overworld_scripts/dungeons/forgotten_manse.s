@@ -223,6 +223,12 @@ EventScript_ForgottenManseBF1_TM61WillOWisp:
     call ItemScript_Common_FindTM
     end
 
+.global EventScript_ForgottenManseF2_TM97DarkPulse
+EventScript_ForgottenManseF2_TM97DarkPulse:
+    setvar CHOSEN_ITEM ITEM_TM97
+    call ItemScript_Common_FindTM
+    end
+
 .global EventScript_ForgottenManse1F_BeautyLulu
 EventScript_ForgottenManse1F_BeautyLulu:
     trainerbattle0 0x0 0x7C 0x0 gText_ForgottenManse1F_BeautyLulu_Intro gText_ForgottenManse1F_BeautyLulu_Defeat

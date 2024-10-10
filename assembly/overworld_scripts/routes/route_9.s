@@ -34,6 +34,12 @@ EventScript_Route9_TM62_Acrobatics:
     call ItemScript_Common_FindTM
     end
 
+.global EventScript_Route9_TM66_Payback
+EventScript_Route9_TM66_Payback:
+    setvar CHOSEN_ITEM ITEM_TM66
+    call ItemScript_Common_FindTM
+    end
+
 .global EventScript_Route9_SlowbroGirl
 EventScript_Route9_SlowbroGirl:
     msgbox gText_Route9_SlowbroGirlFrustration MSG_NORMAL
