@@ -143,7 +143,7 @@
 #define VAR_MAP_SCENE_DAIMYN_FACTORY_MELTAN_EVENTS                             0x4061
 #define VAR_MAP_SCENE_CARNELIDGE_VOLCANO_STORY_PROGRESSION                     0x4062
 #define VAR_MAP_SCENE_UTEYA_VILLAGE_CLANCY_AND_ENA                             0x4063
-#define VAR_MAP_SCENE_VICTORY_ROAD_1F                                          0x4064 // Appears to reset with map reload
+#define VAR_MAP_SCENE_VICTORY_ROAD_BOULDERS                                    0x4064 // Resets with map reload
 #define VAR_MAP_SCENE_VICTORY_ROAD_2F_BOULDER1                                 0x4065 // Appears to reset with map reload
 #define VAR_MAP_SCENE_VICTORY_ROAD_2F_BOULDER2                                 0x4066 // Appears to reset with map reload
 #define VAR_MAP_SCENE_VICTORY_ROAD_3F                                          0x4067 // Appears to reset with map reload

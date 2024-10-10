@@ -243,6 +243,22 @@ const struct WildPokemon gUteyanRuins_LandMonsNight[] =
 	{54, 58, SPECIES_MISMAGIUS}
 };
 
+const struct WildPokemon gVictoryRoad_LandMonsNight[] =
+{
+	{54, 57, SPECIES_MIENSHAO},
+	{54, 57, SPECIES_SKARMORY},
+	{55, 58, SPECIES_WEEZING_G},
+	{55, 58, SPECIES_WEEZING_G},
+	{55, 59, SPECIES_BISHARP},
+	{55, 58, SPECIES_PRIMEAPE},
+	{54, 57, SPECIES_GALLADE},
+	{55, 58, SPECIES_GARCHOMP},
+	{55, 58, SPECIES_KOMMO_O},
+	{55, 59, SPECIES_TREVENANT},
+	{55, 59, SPECIES_KOMMO_O}, 
+	{55, 59, SPECIES_TREVENANT}
+};
+
 const struct WildPokemonInfo gVarisiForest_LandMonsNightInfo = {14, gVarisiForest_LandMonsNight};
 const struct WildPokemonInfo gRubarrDesert_LandMonsNightInfo = {3, gRubarrDesert_LandMonsNight};
 const struct WildPokemonInfo gHeleoRanch_LandMonsNightInfo = {21, gHeleoRanch_LandMonsNight};
@@ -257,6 +273,7 @@ const struct WildPokemonInfo gCalicinBay_LandMonsNightInfo = {21, gCalicinBay_La
 const struct WildPokemonInfo gRoute21AndSecretTrail_LandMonsNightInfo = {21, gRoute21AndSecretTrail_LandMonsNight};
 const struct WildPokemonInfo gRoute24_LandMonsNightInfo = {21, gRoute24_LandMonsNight};
 const struct WildPokemonInfo gUteyanRuins_LandMonsNightInfo = {21, gUteyanRuins_LandMonsNight};
+const struct WildPokemonInfo gVictoryRoad_LandMonsNightInfo = {21, gVictoryRoad_LandMonsNight};
 
 const struct WildPokemonHeader gWildMonMorningHeaders[] =
 {
@@ -402,6 +419,14 @@ const struct WildPokemonHeader gWildMonEveningHeaders[] =
 		.fishingMonsInfo = NULL,
 	},
 	{
+		.mapGroup = MAP_GROUP(VICTORY_ROAD_OUTSIDE),
+		.mapNum = MAP_NUM(VICTORY_ROAD_OUTSIDE),
+		.landMonsInfo = &gVictoryRoad_LandMonsNightInfo,
+		.waterMonsInfo = NULL,
+		.rockSmashMonsInfo = NULL,
+		.fishingMonsInfo = NULL,
+	},
+	{
 		.mapGroup = 0xFF,
 		.mapNum = 0xFF,
 		.landMonsInfo = NULL,
@@ -537,6 +562,14 @@ const struct WildPokemonHeader gWildMonNightHeaders[] =
 		.mapGroup = MAP_GROUP(UTEYAN_RUINS_OVERWORLD),
 		.mapNum = MAP_NUM(UTEYAN_RUINS_OVERWORLD),
 		.landMonsInfo = &gUteyanRuins_LandMonsNightInfo,
+		.waterMonsInfo = NULL,
+		.rockSmashMonsInfo = NULL,
+		.fishingMonsInfo = NULL,
+	},
+	{
+		.mapGroup = MAP_GROUP(VICTORY_ROAD_OUTSIDE),
+		.mapNum = MAP_NUM(VICTORY_ROAD_OUTSIDE),
+		.landMonsInfo = &gVictoryRoad_LandMonsNightInfo,
 		.waterMonsInfo = NULL,
 		.rockSmashMonsInfo = NULL,
 		.fishingMonsInfo = NULL,

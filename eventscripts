@@ -2041,6 +2041,7 @@ npc 3 41 12 EventScript_Route22_BurglarMose
 sign 3 41 0 SignScript_Route22_MimmettJungle
 
 # Route 21
+map 3 39 MapScript_Route21
 npc 3 39 0 EventScript_Route21_TM56_Fling
 npc 3 39 1 ItemScript_Common_FullRestore
 npc 3 39 2 ItemScript_Common_Ultraball
@@ -2776,3 +2777,54 @@ npc 1 103 0 EventScript_UteyanRuins_Gardevoirite
 npc 1 104 0 EventScript_UteyanRuins_SacredAsh
 npc 1 105 0 EventScript_UteyanRuins_RedOrb
 npc 1 106 0 EventScript_UteyanRuins_BlueOrb
+
+# Victory Road
+## 1F
+map 1 96 MapScript_VictoryRoad_1F
+npc 1 96 0 EventScript_Common_Strength
+npc 1 96 1 EventScript_Common_Strength
+npc 1 96 2 EventScript_Common_Strength
+npc 1 96 3 EventScript_VictoryRoad_CoolTrainerTimothy
+npc 1 96 4 EventScript_VictoryRoad_CoolTrainerJonathan
+npc 1 96 5 EventScript_VictoryRoad_CoolTrainerSatoshi
+npc 1 96 6 EventScript_VictoryRoad_TM82_DragonTail
+npc 1 96 7 ItemScript_Common_MaxPotion
+npc 1 96 8 ItemScript_Common_DragonScale
+tile 1 96 0 TileEvent_VictoryRoad_1F_LeftPuzzleCheck
+tile 1 96 1 TileEvent_VictoryRoad_1F_MiddlePuzzleCheck
+tile 1 96 2 TileEvent_VictoryRoad_1F_RightPuzzleCheck
+## 2F
+map 1 97 MapScript_VictoryRoad_2F
+npc 1 97 0 EventScript_Common_Strength
+npc 1 97 1 EventScript_Common_Strength
+npc 1 97 2 EventScript_VictoryRoad_CoolTrainerCourtney
+npc 1 97 3 EventScript_VictoryRoad_CoolTrainerTheresa
+npc 1 97 4 EventScript_VictoryRoad_CoolTrainerAbdul
+npc 1 97 5 ItemScript_Common_FullHeal
+npc 1 97 6 ItemScript_Common_Ultraball
+tile 1 97 0 TileEvent_VictoryRoad_2F_LeftPuzzleCheck
+tile 1 97 1 TileEvent_VictoryRoad_2F_RightPuzzleCheck
+## 3F
+map 1 98 MapScript_VictoryRoad_3F
+npc 1 98 0 EventScript_Common_Strength
+npc 1 98 1 EventScript_Common_Strength
+npc 1 98 2 EventScript_VictoryRoad_CoolTrainerArthur
+npc 1 98 3 EventScript_VictoryRoad_CoolTrainerKelly
+npc 1 98 4 EventScript_VictoryRoad_NurseCelia
+npc 1 98 5 ItemScript_Common_Revive
+tile 1 98 0 TileEvent_VictoryRoad_3F_LeftPuzzleCheck
+tile 1 98 1 TileEvent_VictoryRoad_3F_RightPuzzleCheck
+## Outside
+npc 1 99 0 EventScript_VictoryRoad_CoolTrainerLydia
+npc 1 99 1 EventScript_VictoryRoad_CoolTrainerRobin
+npc 1 99 2 EventScript_VictoryRoad_CoolTrainerLuigi
+npc 1 99 3 EventScript_Common_Cut
+npc 1 99 4 EventScript_Common_Cut
+npc 1 99 5 EventScript_VictoryRoad_TM52_FocusBlast
+npc 1 99 6 ItemScript_Common_FullRestore
+npc 1 99 7 ItemScript_Common_MaxElixir
+npc 1 99 8 ItemScript_Common_PPUp
+sign 1 99 0 SignScript_VictoryRoad_PuzzleTips
+## Back Room
+npc 1 100 0 EventScript_VictoryRoad_CoolTrainerDahlia
+npc 1 100 1 ItemScript_Common_SteelGem

@@ -1311,6 +1311,161 @@
         },
         {
             "mapgroup": 1,
+            "mapnum": 96,
+            "grass": {
+                "rate": 5,
+                "pokemon": [
+                    { "low": 54, "high": 57, "species": "SPECIES_GOLBAT" },
+                    { "low": 54, "high": 57, "species": "SPECIES_BOLDORE" },
+                    { "low": 55, "high": 58, "species": "SPECIES_SCRAFTY" },
+                    { "low": 55, "high": 58, "species": "SPECIES_GIGALITH" },
+                    { "low": 55, "high": 59, "species": "SPECIES_WOBBUFFET" },
+                    { "low": 55, "high": 58, "species": "SPECIES_COALOSSAL" },
+                    { "low": 54, "high": 57, "species": "SPECIES_KLINKLANG" },
+                    { "low": 55, "high": 58, "species": "SPECIES_NOIVERN" },
+                    { "low": 55, "high": 58, "species": "SPECIES_CROBAT" },
+                    { "low": 55, "high": 59, "species": "SPECIES_MAMOSWINE" },
+                    { "low": 55, "high": 59, "species": "SPECIES_CROBAT" },
+                    { "low": 55, "high": 59, "species": "SPECIES_MAMOSWINE" }
+                ]
+            },
+            "surfing": {
+                "rate": 13,
+                "pokemon": [
+                    { "low": 54, "high": 59, "species": "SPECIES_MAREANIE" },
+                    { "low": 55, "high": 60, "species": "SPECIES_TOXAPEX" },
+                    { "low": 55, "high": 60, "species": "SPECIES_DHELMISE" },
+                    { "low": 57, "high": 60, "species": "SPECIES_TOXAPEX" },
+                    { "low": 56, "high": 59, "species": "SPECIES_TOXAPEX" }
+                ]
+            },
+            "fishing": {
+                "rate": 20,
+                "pokemon": [
+                    { "low": 5, "high": 20, "species": "SPECIES_SLOWPOKE" },
+                    { "low": 5, "high": 20, "species": "SPECIES_SLOWPOKE" },
+                    { "low": 25, "high": 50, "species": "SPECIES_SLOWPOKE" },
+                    { "low": 25, "high": 50, "species": "SPECIES_SLOWPOKE" },
+                    { "low": 25, "high": 50, "species": "SPECIES_DRATINI" },
+                    { "low": 55, "high": 60, "species": "SPECIES_SLOWBRO" },
+                    { "low": 55, "high": 60, "species": "SPECIES_DRATINI" },
+                    { "low": 55, "high": 60, "species": "SPECIES_DRAGONAIR" },
+                    { "low": 55, "high": 60, "species": "SPECIES_DRATINI" },
+                    { "low": 55, "high": 60, "species": "SPECIES_DRAGONAIR" }
+                ]
+            }
+        },
+        {
+            "mapgroup": 1,
+            "mapnum": 97,
+            "grass": {
+                "rate": 5,
+                "pokemon": [
+                    { "low": 54, "high": 57, "species": "SPECIES_GOLBAT" },
+                    { "low": 54, "high": 57, "species": "SPECIES_BOLDORE" },
+                    { "low": 55, "high": 58, "species": "SPECIES_SCRAFTY" },
+                    { "low": 55, "high": 58, "species": "SPECIES_GIGALITH" },
+                    { "low": 55, "high": 59, "species": "SPECIES_WOBBUFFET" },
+                    { "low": 55, "high": 58, "species": "SPECIES_COALOSSAL" },
+                    { "low": 54, "high": 57, "species": "SPECIES_KLINKLANG" },
+                    { "low": 55, "high": 58, "species": "SPECIES_NOIVERN" },
+                    { "low": 55, "high": 58, "species": "SPECIES_CROBAT" },
+                    { "low": 55, "high": 59, "species": "SPECIES_MAMOSWINE" },
+                    { "low": 55, "high": 59, "species": "SPECIES_CROBAT" },
+                    { "low": 55, "high": 59, "species": "SPECIES_MAMOSWINE" }
+                ]
+            }
+        },
+        {
+            "mapgroup": 1,
+            "mapnum": 98,
+            "grass": {
+                "rate": 5,
+                "pokemon": [
+                    { "low": 54, "high": 57, "species": "SPECIES_GOLBAT" },
+                    { "low": 54, "high": 57, "species": "SPECIES_BOLDORE" },
+                    { "low": 55, "high": 58, "species": "SPECIES_SCRAFTY" },
+                    { "low": 55, "high": 58, "species": "SPECIES_GIGALITH" },
+                    { "low": 55, "high": 59, "species": "SPECIES_WOBBUFFET" },
+                    { "low": 55, "high": 58, "species": "SPECIES_COALOSSAL" },
+                    { "low": 54, "high": 57, "species": "SPECIES_KLINKLANG" },
+                    { "low": 55, "high": 58, "species": "SPECIES_NOIVERN" },
+                    { "low": 55, "high": 58, "species": "SPECIES_CROBAT" },
+                    { "low": 55, "high": 59, "species": "SPECIES_MAMOSWINE" },
+                    { "low": 55, "high": 59, "species": "SPECIES_CROBAT" },
+                    { "low": 55, "high": 59, "species": "SPECIES_MAMOSWINE" }
+                ]
+            }
+        },
+        {
+            "mapgroup": 1,
+            "mapnum": 99,
+            "grass": {
+                "rate": 21,
+                "pokemon": [
+                    { "low": 54, "high": 57, "species": "SPECIES_MIENSHAO" },
+                    { "low": 54, "high": 57, "species": "SPECIES_SKARMORY" },
+                    { "low": 55, "high": 58, "species": "SPECIES_WEEZING_G" },
+                    { "low": 55, "high": 58, "species": "SPECIES_WEEZING_G" },
+                    { "low": 55, "high": 59, "species": "SPECIES_BISHARP" },
+                    { "low": 55, "high": 58, "species": "SPECIES_PRIMEAPE" },
+                    { "low": 54, "high": 57, "species": "SPECIES_GALLADE" },
+                    { "low": 55, "high": 58, "species": "SPECIES_GARCHOMP" },
+                    { "low": 55, "high": 58, "species": "SPECIES_KOMMO_O" },
+                    { "low": 55, "high": 59, "species": "SPECIES_HATTERENE" },
+                    { "low": 55, "high": 59, "species": "SPECIES_KOMMO_O" },
+                    { "low": 55, "high": 59, "species": "SPECIES_HATTERENE" }
+                ]
+            },
+            "surfing": {
+                "rate": 13,
+                "pokemon": [
+                    { "low": 54, "high": 59, "species": "SPECIES_LANTURN" },
+                    { "low": 55, "high": 60, "species": "SPECIES_SEADRA" },
+                    { "low": 55, "high": 60, "species": "SPECIES_SEADRA" },
+                    { "low": 57, "high": 60, "species": "SPECIES_LAPRAS" },
+                    { "low": 56, "high": 59, "species": "SPECIES_LAPRAS" }
+                ]
+            },
+            "fishing": {
+                "rate": 20,
+                "pokemon": [
+                    { "low": 5, "high": 20, "species": "SPECIES_SLOWPOKE" },
+                    { "low": 5, "high": 20, "species": "SPECIES_SLOWPOKE" },
+                    { "low": 25, "high": 50, "species": "SPECIES_SLOWPOKE" },
+                    { "low": 25, "high": 50, "species": "SPECIES_SLOWPOKE" },
+                    { "low": 25, "high": 50, "species": "SPECIES_DRATINI" },
+                    { "low": 55, "high": 60, "species": "SPECIES_SLOWBRO" },
+                    { "low": 55, "high": 60, "species": "SPECIES_DRATINI" },
+                    { "low": 55, "high": 60, "species": "SPECIES_DRAGONAIR" },
+                    { "low": 55, "high": 60, "species": "SPECIES_DRATINI" },
+                    { "low": 55, "high": 60, "species": "SPECIES_DRAGONITE" }
+                ]
+            }
+        },
+        {
+            "mapgroup": 1,
+            "mapnum": 100,
+            "grass": {
+                "rate": 5,
+                "pokemon": [
+                    { "low": 54, "high": 57, "species": "SPECIES_GOLBAT" },
+                    { "low": 54, "high": 57, "species": "SPECIES_BOLDORE" },
+                    { "low": 55, "high": 58, "species": "SPECIES_SCRAFTY" },
+                    { "low": 55, "high": 58, "species": "SPECIES_GIGALITH" },
+                    { "low": 55, "high": 59, "species": "SPECIES_WOBBUFFET" },
+                    { "low": 55, "high": 58, "species": "SPECIES_COALOSSAL" },
+                    { "low": 54, "high": 57, "species": "SPECIES_KLINKLANG" },
+                    { "low": 55, "high": 58, "species": "SPECIES_NOIVERN" },
+                    { "low": 55, "high": 58, "species": "SPECIES_CROBAT" },
+                    { "low": 55, "high": 59, "species": "SPECIES_MAMOSWINE" },
+                    { "low": 55, "high": 59, "species": "SPECIES_DURALUDON" },
+                    { "low": 55, "high": 59, "species": "SPECIES_DURALUDON" }
+                ]
+            }
+        },
+        {
+            "mapgroup": 1,
             "mapnum": 102,
             "grass": {
                 "rate": 7,
