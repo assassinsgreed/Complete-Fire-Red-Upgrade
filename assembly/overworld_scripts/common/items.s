@@ -625,3 +625,8 @@ ItemScript_Common_RockGem:
 ItemScript_Common_GroundGem:
     finditem ITEM_GROUND_GEM 0x1
     end
+
+.global ItemScript_Common_SteelGem
+ItemScript_Common_SteelGem:
+    finditem ITEM_STEEL_GEM 0x1
+    end

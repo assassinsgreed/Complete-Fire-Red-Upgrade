@@ -51,10 +51,10 @@ LevelScript_AscensionTower_RegisteringForEliteFourChallenge:
     msgbox gText_AscensionTower_EliteFourChallengeRegistration_RivalAsksToTakeVictoryRoadChallenge MSG_NORMAL
     msgbox gText_AscensionTower_EliteFourChallengeRegistration_AttendantAsksToSeeBadges MSG_NORMAL
     msgbox gText_AscensionTower_EliteFourChallengeRegistration_RivalPresentsBadges MSG_NORMAL
-    msgbox gText_AscensionTower_EliteFourChallengeRegistration_PlayerPresentsBadges MSG_NORMAL
     fanfare 0x13D @ Gym victory
-    msgbox gText_AscensionTower_EliteFourChallengeRegistration_AttendantCongratulatesPlayerAndRival MSG_KEEPOPEN
+    msgbox gText_AscensionTower_EliteFourChallengeRegistration_PlayerPresentsBadges MSG_KEEPOPEN
     waitfanfare
+    msgbox gText_AscensionTower_EliteFourChallengeRegistration_AttendantCongratulatesPlayerAndRival MSG_NORMAL
     msgbox gText_AscensionTower_EliteFourChallengeRegistration_AttendantCallsForEliteFourMember MSG_NORMAL
     applymovement RivalOnFirstFloor m_LookLeft
     applymovement PLAYER m_LookRight

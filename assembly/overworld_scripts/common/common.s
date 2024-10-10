@@ -67,7 +67,7 @@ EventScript_Common_RockFillerText:
 .global EventScript_Common_Strength
 EventScript_Common_Strength:
     checkflag 0x805
-    if SET _goto ReleaseAll
+    if SET _goto AlreadyAbleToPushBoulders
     lockall
     checkflag 0x826 @ Support Badge, Gym 7
     if NOT_SET _goto EventScript_Common_StrengthFillerText
@@ -82,6 +82,10 @@ EventScript_Common_Strength:
     doanimation 0x28
     waitstate
     setflag 0x805 @ Can now push boulders while on this map
+    goto ReleaseAll
+
+AlreadyAbleToPushBoulders:
+    msgbox gText_Common_CanAlreadyPushBoulders MSG_SIGN
     goto ReleaseAll
 
 EventScript_Common_StrengthFillerText:

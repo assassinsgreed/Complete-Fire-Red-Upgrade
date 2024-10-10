@@ -6889,6 +6889,7 @@ const struct TrainerMonNoItemDefaultMoves sParty_Route24_BlackbeltIrvine[] = {
     { .lvl = 60, .species = SPECIES_MIENSHAO },
 };
 // #endregion
+
 // #region Uteyan Ruins
 const struct TrainerMonNoItemDefaultMoves sParty_UteyanRuins_RuinManiacKristian[] = {
     { .lvl = 59, .species = SPECIES_STONJOURNER },
@@ -6921,6 +6922,652 @@ const struct TrainerMonNoItemDefaultMoves sParty_UteyanRuins_LassDorothy[] = {
     { .lvl = 57, .species = SPECIES_KIRLIA },
     { .lvl = 58, .species = SPECIES_RIBOMBEE },
     { .lvl = 59, .species = SPECIES_WHIMSICOTT },
+};
+// #endregion
+
+// #region Victory Road
+const struct TrainerMonNoItemCustomMoves sParty_VictoryRoad_CoolTrainerTimothy[] = {
+    {
+        .lvl = 61,
+        .species = SPECIES_TORKOAL,
+        .moves = {
+            MOVE_BODYSLAM,
+            MOVE_AMNESIA,
+            MOVE_HEATWAVE,
+            MOVE_PROTECT
+        },
+        .ability = Ability_1 // White smoke
+    },
+    {
+        .lvl = 61,
+        .species = SPECIES_TURTONATOR,
+        .moves = {
+            MOVE_SHELLTRAP,
+            MOVE_SHELLSMASH,
+            MOVE_EXPLOSION,
+            MOVE_FLAIL
+        },
+        .ability = Ability_1 // Shell Armor
+    },
+    {
+        .lvl = 62,
+        .species = SPECIES_TORTERRA,
+        .moves = {
+            MOVE_WOODHAMMER,
+            MOVE_LEECHSEED,
+            MOVE_CRUNCH,
+            MOVE_HEADLONGRUSH
+        },
+        .ability = Ability_1 // Overgrow
+    },
+    {
+        .lvl = 62,
+        .species = SPECIES_SHUCKLE,
+        .moves = {
+            MOVE_POWERSPLIT,
+            MOVE_ROCKSLIDE,
+            MOVE_INFESTATION,
+            MOVE_STICKYWEB
+        },
+        .ability = Ability_1 // Sturdy
+    },
+    {
+        .lvl = 63,
+        .species = SPECIES_BLASTOISE,
+        .moves = {
+            MOVE_HYDROCANNON,
+            MOVE_RAINDANCE,
+            MOVE_IRONDEFENSE,
+            MOVE_ICEBEAM
+        },
+        .ability = Ability_Hidden // Rain dish
+    },
+};
+
+const struct TrainerMonNoItemCustomMoves sParty_VictoryRoad_CoolTrainerJonathan[] = {
+    {
+        .lvl = 63,
+        .species = SPECIES_CRAWDAUNT,
+        .moves = {
+            MOVE_SWORDSDANCE,
+            MOVE_CRABHAMMER,
+            MOVE_CRUNCH,
+            MOVE_DIG
+        },
+        .ability = Ability_Hidden // Adaptability
+    },
+    {
+        .lvl = 63,
+        .species = SPECIES_MAMOSWINE,
+        .moves = {
+            MOVE_ICICLECRASH,
+            MOVE_EARTHQUAKE,
+            MOVE_FLAIL,
+            MOVE_ROCKTOMB
+        },
+        .ability = Ability_Hidden // Thick Fat
+    },
+    {
+        .lvl = 64,
+        .species = SPECIES_DELIBIRD,
+        .moves = {
+            MOVE_DRILLPECK,
+            MOVE_ICYWIND,
+            MOVE_SEEDBOMB,
+            MOVE_SPIKES
+        },
+        .ability = Ability_1 // Vital Spirit
+    }
+};
+
+const struct TrainerMonNoItemCustomMoves sParty_VictoryRoad_CoolTrainerSatoshi[] = {
+    {
+        .lvl = 61,
+        .species = SPECIES_MUK,
+        .moves = {
+            MOVE_TOXIC,
+            MOVE_ACIDARMOR,
+            MOVE_SLUDGEBOMB,
+            MOVE_ZENHEADBUTT
+        },
+        .ability = Ability_Hidden // Poison Touch
+    },
+    {
+        .lvl = 62,
+        .species = SPECIES_HERACROSS,
+        .moves = {
+            MOVE_MEGAHORN,
+            MOVE_BRICKBREAK,
+            MOVE_THROATCHOP,
+            MOVE_SWORDSDANCE
+        },
+        .ability = Ability_2 // Guts
+    },
+    {
+        .lvl = 62,
+        .species = SPECIES_KROOKODILE,
+        .moves = {
+            MOVE_CRUNCH,
+            MOVE_SANDSTORM,
+            MOVE_EARTHQUAKE,
+            MOVE_THUNDERFANG
+        },
+        .ability = Ability_2 // Moxie
+    },
+    {
+        .lvl = 63,
+        .species = SPECIES_NOIVERN,
+        .moves = {
+            MOVE_BOOMBURST,
+            MOVE_HURRICANE,
+            MOVE_ROOST,
+            MOVE_TAILWIND
+        },
+        .ability = Ability_2 // Infiltrator
+    }
+};
+
+const struct TrainerMonNoItemCustomMoves sParty_VictoryRoad_CoolTrainerCourtney[] = {
+    {
+        .lvl = 60,
+        .species = SPECIES_PALOSSAND,
+        .moves = {
+            MOVE_SHOREUP,
+            MOVE_SHADOWBALL,
+            MOVE_EARTHPOWER,
+            MOVE_GIGADRAIN
+        },
+        .ability = Ability_1 // Water Compaction
+    },
+    {
+        .lvl = 60,
+        .species = SPECIES_SLOWKING,
+        .moves = {
+            MOVE_POWERGEM,
+            MOVE_FUTURESIGHT,
+            MOVE_SURF,
+            MOVE_PSYCHUP
+        },
+        .ability = Ability_2 // Own Tempo
+    },
+    {
+        .lvl = 60,
+        .species = SPECIES_VESPIQUEN,
+        .moves = {
+            MOVE_STRUGGLEBUG,
+            MOVE_ROOST,
+            MOVE_TOXIC,
+            MOVE_DEFENDORDER
+        },
+        .ability = Ability_Hidden // Unnerve
+    },
+    {
+        .lvl = 61,
+        .species = SPECIES_GALLADE,
+        .moves = {
+            MOVE_LEAFBLADE,
+            MOVE_SACREDSWORD,
+            MOVE_NIGHTSLASH,
+            MOVE_THUNDERPUNCH
+        },
+        .ability = Ability_1 // Steadfast
+    },
+    {
+        .lvl = 61,
+        .species = SPECIES_BISHARP,
+        .moves = {
+            MOVE_NIGHTSLASH,
+            MOVE_IRONDEFENSE,
+            MOVE_FURYCUTTER,
+            MOVE_POISONJAB
+        },
+        .ability = Ability_Hidden // Pressure
+    },
+    {
+        .lvl = 62,
+        .species = SPECIES_NIDOKING,
+        .moves = {
+            MOVE_MEGAHORN,
+            MOVE_SLUDGEWAVE,
+            MOVE_EARTHPOWER,
+            MOVE_THUNDERBOLT
+        },
+        .ability = Ability_2 // Rivalry
+    }
+};
+
+const struct TrainerMonNoItemCustomMoves sParty_VictoryRoad_CoolTrainerTheresa[] = {
+    {
+        .lvl = 63,
+        .species = SPECIES_MUDSDALE,
+        .moves = {
+            MOVE_COUNTER,
+            MOVE_EARTHQUAKE,
+            MOVE_IRONHEAD,
+            MOVE_ROCKSLIDE
+        },
+        .ability = Ability_2 // Stamina
+    },
+    {
+        .lvl = 63,
+        .species = SPECIES_AMPHAROS,
+        .moves = {
+            MOVE_COTTONGUARD,
+            MOVE_DAZZLINGGLEAM,
+            MOVE_THUNDER,
+            MOVE_RAINDANCE
+        },
+        .ability = Ability_1 // Static
+    },
+    {
+        .lvl = 64,
+        .species = SPECIES_STOUTLAND,
+        .moves = {
+            MOVE_PLAYROUGH,
+            MOVE_TAKEDOWN,
+            MOVE_ICEFANG,
+            MOVE_FIREFANG
+        },
+        .ability = Ability_Hidden // Scrappy
+    },
+    {
+        .lvl = 64,
+        .species = SPECIES_BLAZIKEN,
+        .moves = {
+            MOVE_BLAZEKICK,
+            MOVE_BOUNCE,
+            MOVE_SKYUPPERCUT,
+            MOVE_FEATHERDANCE
+        },
+        .ability = Ability_Hidden // Speed Boost
+    }
+};
+
+const struct TrainerMonNoItemCustomMoves sParty_VictoryRoad_CoolTrainerAbdul[] = {
+    {
+        .lvl = 63,
+        .species = SPECIES_NIDOKING,
+        .moves = {
+            MOVE_SLUDGEBOMB,
+            MOVE_HIGHHORSEPOWER,
+            MOVE_SHADOWBALL,
+            MOVE_THROATCHOP
+        },
+        .ability = Ability_Hidden // Sheer Force
+    },
+    {
+        .lvl = 63,
+        .species = SPECIES_SHARPEDO,
+        .moves = {
+            MOVE_LIQUIDATION,
+            MOVE_AGILITY,
+            MOVE_CRUNCH,
+            MOVE_SWAGGER
+        },
+        .ability = Ability_1 // Rough Skin
+    },
+    {
+        .lvl = 64,
+        .species = SPECIES_CROBAT,
+        .moves = {
+            MOVE_LEECHLIFE,
+            MOVE_CROSSPOISON,
+            MOVE_MEANLOOK,
+            MOVE_BRAVEBIRD
+        },
+        .ability = Ability_Hidden // Infiltrator
+    },
+    {
+        .lvl = 64,
+        .species = SPECIES_GYARADOS,
+        .moves = {
+            MOVE_DRAGONDANCE,
+            MOVE_WATERFALL,
+            MOVE_EARTHQUAKE,
+            MOVE_ICEFANG
+        },
+        .ability = Ability_Hidden // Moxie
+    }
+};
+
+const struct TrainerMonNoItemCustomMoves sParty_VictoryRoad_CoolTrainerArthur[] = {
+    {
+        .lvl = 62,
+        .species = SPECIES_BLISSEY,
+        .moves = {
+            MOVE_SOFTBOILED,
+            MOVE_LIGHTSCREEN,
+            MOVE_THUNDERWAVE,
+            MOVE_SEISMICTOSS
+        },
+        .ability = Ability_1 // Natural Cure
+    },
+    {
+        .lvl = 62,
+        .species = SPECIES_SLAKING,
+        .moves = {
+            MOVE_SLACKOFF,
+            MOVE_YAWN,
+            MOVE_COVET,
+            MOVE_FLING
+        },
+        .ability = Ability_1 // Truant
+    },
+    {
+        .lvl = 62,
+        .species = SPECIES_BASTIODON,
+        .moves = {
+            MOVE_ANCIENTPOWER,
+            MOVE_IRONHEAD,
+            MOVE_IRONDEFENSE,
+            MOVE_SCORCHINGSANDS
+        },
+        .ability = Ability_1 // Sturdy
+    },
+    {
+        .lvl = 62,
+        .species = SPECIES_ESPEON,
+        .moves = {
+            MOVE_MORNINGSUN,
+            MOVE_CALMMIND,
+            MOVE_PSYCHIC,
+            MOVE_SHADOWBALL
+        },
+        .ability = Ability_Hidden // Magic Bounce
+    },
+    {
+        .lvl = 63,
+        .species = SPECIES_DUSKNOIR,
+        .moves = {
+            MOVE_SHADOWPUNCH,
+            MOVE_WILLOWISP,
+            MOVE_HEX,
+            MOVE_MEANLOOK
+        },
+        .ability = Ability_1 // Pressure
+    },
+    {
+        .lvl = 63,
+        .species = SPECIES_NINJASK,
+        .moves = {
+            MOVE_BATONPASS,
+            MOVE_SWORDSDANCE,
+            MOVE_XSCISSOR,
+            MOVE_SLASH
+        },
+        .ability = Ability_1 // Speed Boost
+    }
+};
+
+const struct TrainerMonNoItemCustomMoves sParty_VictoryRoad_CoolTrainerKelly[] = {
+    {
+        .lvl = 61,
+        .species = SPECIES_MR_RIME,
+        .moves = {
+            MOVE_MIRRORCOAT,
+            MOVE_FREEZEDRY,
+            MOVE_PSYCHIC,
+            MOVE_TEETERDANCE
+        },
+        .ability = Ability_1 // Screen Cleaner
+    },
+    {
+        .lvl = 61,
+        .species = SPECIES_SALAZZLE,
+        .moves = {
+            MOVE_TOXIC,
+            MOVE_VENOSHOCK,
+            MOVE_FLAMETHROWER,
+            MOVE_NASTYPLOT
+        },
+        .ability = Ability_1 // Corrosion
+    },
+    {
+        .lvl = 61,
+        .species = SPECIES_CONKELDURR,
+        .moves = {
+            MOVE_HAMMERARM,
+            MOVE_STONEEDGE,
+            MOVE_FOCUSPUNCH,
+            MOVE_ROCKTOMB
+        },
+        .ability = Ability_1 // Guts
+    },
+    {
+        .lvl = 62,
+        .species = SPECIES_PRIMARINA,
+        .moves = {
+            MOVE_HYPERVOICE,
+            MOVE_MOONBLAST,
+            MOVE_SPARKLINGARIA,
+            MOVE_ENERGYBALL
+        },
+        .ability = Ability_Hidden // Liquid Voice
+    },
+    {
+        .lvl = 63,
+        .species = SPECIES_COPPERAJAH,
+        .moves = {
+            MOVE_IRONHEAD,
+            MOVE_BULLDOZE,
+            MOVE_PLAYROUGH,
+            MOVE_HIGHHORSEPOWER
+        },
+        .ability = Ability_1 // Sheer Force
+    }
+};
+
+const struct TrainerMonNoItemCustomMoves sParty_VictoryRoad_CoolTrainerLydia[] = {
+    {
+        .lvl = 62,
+        .species = SPECIES_CARBINK,
+        .moves = {
+            MOVE_LIGHTSCREEN,
+            MOVE_POWERGEM,
+            MOVE_STEALTHROCK,
+            MOVE_FLASHCANNON
+        },
+        .ability = Ability_1 // Clear Body
+    },
+    {
+        .lvl = 62,
+        .species = SPECIES_DHELMISE,
+        .moves = {
+            MOVE_SHADOWCLAW,
+            MOVE_ENERGYBALL,
+            MOVE_ANCHORSHOT,
+            MOVE_BULLDOZE
+        },
+        .ability = Ability_1 // Steelworker
+    },
+    {
+        .lvl = 63,
+        .species = SPECIES_ROTOM_MOW,
+        .moves = {
+            MOVE_LEAFSTORM,
+            MOVE_DISCHARGE,
+            MOVE_HEX,
+            MOVE_WILLOWISP
+        },
+        .ability = Ability_1 // Levitate
+    },
+    {
+        .lvl = 63,
+        .species = SPECIES_FALINKS,
+        .moves = {
+            MOVE_NORETREAT,
+            MOVE_FIRSTIMPRESSION,
+            MOVE_MEGAHORN,
+            MOVE_HEADBUTT
+        },
+        .ability = Ability_Hidden // Battle Armor
+    },
+    {
+        .lvl = 64,
+        .species = SPECIES_SHEDINJA,
+        .moves = {
+            MOVE_CONFUSERAY,
+            MOVE_MUDSLAP,
+            MOVE_GRUDGE,
+            MOVE_LEECHLIFE
+        },
+        .ability = Ability_1 // Wonder Guard
+    },
+    {
+        .lvl = 64,
+        .species = SPECIES_MINIOR_SHIELD,
+        .moves = {
+            MOVE_EXPLOSION,
+            MOVE_SHELLSMASH,
+            MOVE_POWERGEM,
+            MOVE_COSMICPOWER
+        },
+        .ability = Ability_1 // Shields Down
+    }
+};
+
+const struct TrainerMonNoItemCustomMoves sParty_VictoryRoad_CoolTrainerRobin[] = {
+    {
+        .lvl = 63,
+        .species = SPECIES_DITTO,
+        .moves = {
+            MOVE_TRANSFORM,
+            MOVE_NONE,
+            MOVE_NONE,
+            MOVE_NONE
+        },
+        .ability = Ability_Hidden // Imposter
+    },
+    {
+        .lvl = 64,
+        .species = SPECIES_DITTO,
+        .moves = {
+            MOVE_TRANSFORM,
+            MOVE_NONE,
+            MOVE_NONE,
+            MOVE_NONE
+        },
+        .ability = Ability_Hidden // Imposter
+    },
+    {
+        .lvl = 64,
+        .species = SPECIES_LUCARIO,
+        .moves = {
+            MOVE_COPYCAT,
+            MOVE_BONERUSH,
+            MOVE_SWORDSDANCE,
+            MOVE_FORCEPALM
+        },
+        .ability = Ability_Hidden // Justified
+    },
+    {
+        .lvl = 65,
+        .species = SPECIES_SUDOWOODO,
+        .moves = {
+            MOVE_MIMIC,
+            MOVE_HAMMERARM,
+            MOVE_STONEEDGE,
+            MOVE_WOODHAMMER
+        },
+        .ability = Ability_1 // Sturdy
+    }
+};
+
+const struct TrainerMonNoItemCustomMoves sParty_VictoryRoad_CoolTrainerLuigi[] = {
+    {
+        .lvl = 65,
+        .species = SPECIES_RILLABOOM,
+        .moves = {
+            MOVE_DRUMBEATING,
+            MOVE_BOOMBURST,
+            MOVE_DRAINPUNCH,
+            MOVE_SCREECH
+        },
+        .ability = Ability_Hidden // Grassy Surge
+    },
+    {
+        .lvl = 65,
+        .species = SPECIES_CINDERACE,
+        .moves = {
+            MOVE_PYROBALL,
+            MOVE_COUNTER,
+            MOVE_BOUNCE,
+            MOVE_QUICKATTACK
+        },
+        .ability = Ability_Hidden // Libero
+    },
+    {
+        .lvl = 65,
+        .species = SPECIES_INTELEON,
+        .moves = {
+            MOVE_SNIPESHOT,
+            MOVE_UTURN,
+            MOVE_SHADOWBALL,
+            MOVE_ICEBEAM
+        },
+        .ability = Ability_Hidden // Sniper
+    }
+};
+
+const struct TrainerMonNoItemCustomMoves sParty_VictoryRoad_CoolTrainerDahlia[] = {
+    {
+        .lvl = 65,
+        .species = SPECIES_AMOONGUSS,
+        .moves = {
+            MOVE_TOXIC,
+            MOVE_SLUDGEBOMB,
+            MOVE_HEX,
+            MOVE_REST
+        },
+        .ability = Ability_Hidden // Regenerator
+    },
+    {
+        .lvl = 65,
+        .species = SPECIES_BRELOOM,
+        .moves = {
+            MOVE_FORCEPALM,
+            MOVE_BULLETSEED,
+            MOVE_MACHPUNCH,
+            MOVE_ROCKTOMB
+        },
+        .ability = Ability_Hidden // Technician
+    },
+    {
+        .lvl = 65,
+        .species = SPECIES_SIRFETCHD,
+        .moves = {
+            MOVE_BRICKBREAK,
+            MOVE_BRAVEBIRD,
+            MOVE_FIRSTIMPRESSION,
+            MOVE_KNOCKOFF
+        },
+        .ability = Ability_1 // Steadfast
+    }
+};
+
+const struct TrainerMonNoItemCustomMoves sParty_VictoryRoad_NurseCelia[] = {
+    {
+        .lvl = 66,
+        .species = SPECIES_CHANSEY,
+        .moves = {
+            MOVE_SWEETKISS,
+            MOVE_COVET,
+            MOVE_SOFTBOILED,
+            MOVE_SING
+        },
+        .ability = Ability_Hidden // Healer
+    },
+    {
+        .lvl = 66,
+        .species = SPECIES_MEGANIUM,
+        .moves = {
+            MOVE_SUNNYDAY,
+            MOVE_SOLARBEAM,
+            MOVE_SYNTHESIS,
+            MOVE_BODYSLAM
+        },
+        .ability = Ability_1 // Overgrow
+    }
 };
 // #endregion
 
@@ -12982,6 +13629,164 @@ const struct Trainer gTrainers[] = {
         .aiFlags = TrainerAIFlags_Lass_Standard,
         .partySize = NELEMS(sParty_UteyanRuins_LassDorothy),
         .party = {.NoItemDefaultMoves = sParty_UteyanRuins_LassDorothy}
+    },
+    // #endregion
+    // #region Victory Road
+    [TRAINER_VICTORY_ROAD_COOL_TRAINER_TIMOTHY] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .trainerClass = CLASS_COOLTRAINER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
+        .trainerPic = TRAINER_PIC_COOLTRAINER_M,
+        .trainerName = {_T, _i, _m, _o, _t, _h, _y, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_CoolTrainer_Standard,
+        .partySize = NELEMS(sParty_VictoryRoad_CoolTrainerTimothy),
+        .party = {.NoItemCustomMoves = sParty_VictoryRoad_CoolTrainerTimothy}
+    },
+    [TRAINER_VICTORY_ROAD_COOL_TRAINER_JONATHAN] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .trainerClass = CLASS_COOLTRAINER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
+        .trainerPic = TRAINER_PIC_COOLTRAINER_M,
+        .trainerName = {_J, _o, _n, _a, _t, _h, _a, _n, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_CoolTrainer_Standard,
+        .partySize = NELEMS(sParty_VictoryRoad_CoolTrainerJonathan),
+        .party = {.NoItemCustomMoves = sParty_VictoryRoad_CoolTrainerJonathan}
+    },
+    [TRAINER_VICTORY_ROAD_COOL_TRAINER_SATOSHI] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .trainerClass = CLASS_COOLTRAINER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
+        .trainerPic = TRAINER_PIC_COOLTRAINER_M,
+        .trainerName = {_S, _a, _t, _o, _s, _h, _i, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_CoolTrainer_Standard,
+        .partySize = NELEMS(sParty_VictoryRoad_CoolTrainerSatoshi),
+        .party = {.NoItemCustomMoves = sParty_VictoryRoad_CoolTrainerSatoshi}
+    },
+    [TRAINER_VICTORY_ROAD_COOL_TRAINER_COURTNEY] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .trainerClass = CLASS_COOLTRAINER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
+        .trainerPic = TRAINER_PIC_COOLTRAINER_F,
+        .trainerName = {_C, _o, _u, _r, _t, _n, _e, _y, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_CoolTrainer_Standard,
+        .partySize = NELEMS(sParty_VictoryRoad_CoolTrainerCourtney),
+        .party = {.NoItemCustomMoves = sParty_VictoryRoad_CoolTrainerCourtney}
+    },
+    [TRAINER_VICTORY_ROAD_COOL_TRAINER_THERESA] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .trainerClass = CLASS_COOLTRAINER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
+        .trainerPic = TRAINER_PIC_COOLTRAINER_F,
+        .trainerName = {_T, _h, _e, _r, _e, _s, _a, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_CoolTrainer_Standard,
+        .partySize = NELEMS(sParty_VictoryRoad_CoolTrainerTheresa),
+        .party = {.NoItemCustomMoves = sParty_VictoryRoad_CoolTrainerTheresa}
+    },
+    [TRAINER_VICTORY_ROAD_COOL_TRAINER_ABDUL] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .trainerClass = CLASS_COOLTRAINER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
+        .trainerPic = TRAINER_PIC_COOLTRAINER_M,
+        .trainerName = {_A, _b, _d, _u, _l, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_CoolTrainer_Standard,
+        .partySize = NELEMS(sParty_VictoryRoad_CoolTrainerAbdul),
+        .party = {.NoItemCustomMoves = sParty_VictoryRoad_CoolTrainerAbdul}
+    },
+    [TRAINER_VICTORY_ROAD_COOL_TRAINER_ARTHUR] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .trainerClass = CLASS_COOLTRAINER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
+        .trainerPic = TRAINER_PIC_COOLTRAINER_M,
+        .trainerName = {_A, _r, _t, _h, _u, _r, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_CoolTrainer_Standard,
+        .partySize = NELEMS(sParty_VictoryRoad_CoolTrainerArthur),
+        .party = {.NoItemCustomMoves = sParty_VictoryRoad_CoolTrainerArthur}
+    },
+    [TRAINER_VICTORY_ROAD_COOL_TRAINER_KELLY] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .trainerClass = CLASS_COOLTRAINER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
+        .trainerPic = TRAINER_PIC_COOLTRAINER_F,
+        .trainerName = {_K, _e, _l, _l, _y, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_CoolTrainer_Standard,
+        .partySize = NELEMS(sParty_VictoryRoad_CoolTrainerKelly),
+        .party = {.NoItemCustomMoves = sParty_VictoryRoad_CoolTrainerKelly}
+    },
+    [TRAINER_VICTORY_ROAD_COOL_TRAINER_LYDIA] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .trainerClass = CLASS_COOLTRAINER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
+        .trainerPic = TRAINER_PIC_COOLTRAINER_F,
+        .trainerName = {_L, _y, _d, _i, _a, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_CoolTrainer_Standard,
+        .partySize = NELEMS(sParty_VictoryRoad_CoolTrainerLydia),
+        .party = {.NoItemCustomMoves = sParty_VictoryRoad_CoolTrainerLydia}
+    },
+    [TRAINER_VICTORY_ROAD_COOL_TRAINER_ROBIN] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .trainerClass = CLASS_COOLTRAINER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
+        .trainerPic = TRAINER_PIC_COOLTRAINER_F,
+        .trainerName = {_R, _o, _b, _i, _n, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_CoolTrainer_Standard,
+        .partySize = NELEMS(sParty_VictoryRoad_CoolTrainerRobin),
+        .party = {.NoItemCustomMoves = sParty_VictoryRoad_CoolTrainerRobin}
+    },
+    [TRAINER_VICTORY_ROAD_COOL_TRAINER_LUIGI] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .trainerClass = CLASS_COOLTRAINER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
+        .trainerPic = TRAINER_PIC_COOLTRAINER_M,
+        .trainerName = {_L, _u, _i, _g, _i, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_CoolTrainer_Standard,
+        .partySize = NELEMS(sParty_VictoryRoad_CoolTrainerLuigi),
+        .party = {.NoItemCustomMoves = sParty_VictoryRoad_CoolTrainerLuigi}
+    },
+    [TRAINER_VICTORY_ROAD_COOL_TRAINER_DAHLIA] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .trainerClass = CLASS_COOLTRAINER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
+        .trainerPic = TRAINER_PIC_COOLTRAINER_F,
+        .trainerName = {_D, _a, _h, _l, _i, _a, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_CoolTrainer_Standard,
+        .partySize = NELEMS(sParty_VictoryRoad_CoolTrainerDahlia),
+        .party = {.NoItemCustomMoves = sParty_VictoryRoad_CoolTrainerDahlia}
+    },
+    [TRAINER_VICTORY_ROAD_NURSE_CELIA] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .trainerClass = CLASS_NURSE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .trainerPic = TRAINER_PIC_NURSE,
+        .trainerName = {_C, _e, _l, _i, _a, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_Nurse_Standard,
+        .partySize = NELEMS(sParty_VictoryRoad_NurseCelia),
+        .party = {.NoItemCustomMoves = sParty_VictoryRoad_NurseCelia}
     },
     // #endregion
     // #endregion

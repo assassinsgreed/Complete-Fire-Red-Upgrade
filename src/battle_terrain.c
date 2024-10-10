@@ -335,7 +335,7 @@ static u8 TryLoadAlternateAreaTerrain(u8 terrain)
 				terrain = BATTLE_TERRAIN_TORMA_DEPTHS;
 			else if (IsCurrentAreaHotCave())
 				terrain = BATTLE_TERRAIN_SCALDING_SPA;
-			else if (mapSec == MAPSEC_UTEYAN_RUINS)
+			else if (mapSec == MAPSEC_UTEYAN_RUINS || mapSec == MAPSEC_VICTORY_ROAD)
 				terrain = BATTLE_TERRAIN_CAVE_UTEYA;
 			else if (mapSec == MAPSEC_SEPPIRE_COVE)
 			{
@@ -348,7 +348,7 @@ static u8 TryLoadAlternateAreaTerrain(u8 terrain)
 		case BATTLE_TERRAIN_GRASS:
 			if (IsCurrentAreaWinter())
 				terrain = BATTLE_TERRAIN_SNOWY;
-			else if (MetatileBehavior_IsMountain(tileBehavior))
+			else if (MetatileBehavior_IsMountain(tileBehavior) || mapSec == MAPSEC_CARNELIDGE_VOLCANO || mapSec == MAPSEC_VICTORY_ROAD)
 				terrain = BATTLE_TERRAIN_MOUNTAIN;
 			else if (IsCurrentAreaOpenOcean())
 				terrain = BATTLE_TERRAIN_SAND;
@@ -358,8 +358,6 @@ static u8 TryLoadAlternateAreaTerrain(u8 terrain)
 				terrain = BATTLE_TERRAIN_FOREST_PERADON;
 			else if (mapSec == MAPSEC_MIMMETT_JUNGLE)
 				terrain = BATTLE_TERRAIN_JUNGLE;
-			else if (mapSec == MAPSEC_CARNELIDGE_VOLCANO)
-				terrain = BATTLE_TERRAIN_MOUNTAIN;
 			break;
 		case BATTLE_TERRAIN_POND:
 			if (MAP_IS(ROUTE17_CAVE_1F) || mapSec == MAPSEC_FORGOTTEN_MANSE)
@@ -368,7 +366,7 @@ static u8 TryLoadAlternateAreaTerrain(u8 terrain)
 				terrain = BATTLE_TERRAIN_POND_CAVE_TORMA;
 			else if (mapSec == MAPSEC_SEPPIRE_COVE)
 				terrain = BATTLE_TERRAIN_POND_CAVE_SEPPIRE;
-			else if (mapSec == MAPSEC_UTEYAN_RUINS)
+			else if (mapSec == MAPSEC_UTEYAN_RUINS || MAP_IS(VICTORY_ROAD_1F))
 				terrain = BATTLE_TERRAIN_POND_CAVE_UTEYA;
 			break;
 		case BATTLE_TERRAIN_PLAIN:
@@ -380,7 +378,7 @@ static u8 TryLoadAlternateAreaTerrain(u8 terrain)
 				terrain = BATTLE_TERRAIN_FOREST;
 			else if (mapSec == MAPSEC_PERADON_FOREST)
 				terrain = BATTLE_TERRAIN_FOREST_PERADON;
-			else if (MetatileBehavior_IsMountain(tileBehavior) || mapSec == MAPSEC_CARNELIDGE_VOLCANO)
+			else if (MetatileBehavior_IsMountain(tileBehavior) || mapSec == MAPSEC_CARNELIDGE_VOLCANO || mapSec == MAPSEC_VICTORY_ROAD)
 			{
 				if (MAP_IS(CARNELIDGE_VOLCANO_PEAK))
 					terrain = BATTLE_TERRAIN_CARNELIDGE_PEAK;

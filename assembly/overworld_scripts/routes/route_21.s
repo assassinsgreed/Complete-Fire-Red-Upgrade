@@ -5,6 +5,17 @@
 .include "../xse_defines.s"
 .include "../asm_defines.s"
 
+.global MapScript_Route21
+MapScript_Route21:
+    mapscript MAP_SCRIPT_ON_LOAD MapLoadScript_Route21_MoveVictoryRoadGuard
+    .byte MAP_SCRIPT_TERMIN
+
+MapLoadScript_Route21_MoveVictoryRoadGuard:
+    checkflag 0x280 @ Victory Road guard has stepped aside
+    if NOT_SET _goto End
+    movesprite2 21 0x27 0x6 @ Permanent position
+    end
+
 .global EventScript_Route21_TM56_Fling
 EventScript_Route21_TM56_Fling:
     setvar CHOSEN_ITEM ITEM_TM56
@@ -65,8 +76,27 @@ EventScript_Route21_VictoryRoadGuard:
     end
 
 CanTakeVictoryRoadChallenge:
-    @ TODO: Populate in a later milestone
+    fanfare 0x10D @ Celebration
+    msgbox gText_Route21_VictoryRoadGuard_HasEnoughBadges MSG_NORMAL
+    waitfanfare
+    msgbox gText_Route21_VictoryRoadGuard_WishesLuck MSG_NORMAL
+    checkflag 0x280 @ Victory Road guard has stepped aside
+    if SET _goto End
+    getplayerpos 0x4000 0x4001
+    compare 0x4000 0x27
+    if equal _call PlayerMovesOutOfGuardsWay
+    applymovement LASTTALKED m_WalkRight
+    waitmovement LASTTALKED
+    applymovement LASTTALKED m_LookDown
+    movesprite LASTTALKED 0x27 0x6 @ Location while on map
+    movesprite2 LASTTALKED 0x27 0x6 @ Permanent position
+    setflag 0x280 @ Victory Road guard has stepped aside
     end
+
+PlayerMovesOutOfGuardsWay:
+    applymovement PLAYER m_WalkDown
+    waitmovement PLAYER
+    return
 
 .global SignScript_Route21_TrainerTips
 SignScript_Route21_TrainerTips:
