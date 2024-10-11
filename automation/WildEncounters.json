@@ -1318,15 +1318,15 @@
                     { "low": 54, "high": 57, "species": "SPECIES_GOLBAT" },
                     { "low": 54, "high": 57, "species": "SPECIES_BOLDORE" },
                     { "low": 55, "high": 58, "species": "SPECIES_SCRAFTY" },
-                    { "low": 55, "high": 58, "species": "SPECIES_GIGALITH" },
-                    { "low": 55, "high": 59, "species": "SPECIES_WOBBUFFET" },
+                    { "low": 55, "high": 58, "species": "SPECIES_KANGASKHAN" },
+                    { "low": 55, "high": 59, "species": "SPECIES_HOUNDOOM" },
                     { "low": 55, "high": 58, "species": "SPECIES_COALOSSAL" },
                     { "low": 54, "high": 57, "species": "SPECIES_KLINKLANG" },
                     { "low": 55, "high": 58, "species": "SPECIES_NOIVERN" },
                     { "low": 55, "high": 58, "species": "SPECIES_CROBAT" },
                     { "low": 55, "high": 59, "species": "SPECIES_MAMOSWINE" },
-                    { "low": 55, "high": 59, "species": "SPECIES_CROBAT" },
-                    { "low": 55, "high": 59, "species": "SPECIES_MAMOSWINE" }
+                    { "low": 55, "high": 59, "species": "SPECIES_GARCHOMP" },
+                    { "low": 55, "high": 59, "species": "SPECIES_GARCHOMP" }
                 ]
             },
             "surfing": {
@@ -1364,15 +1364,15 @@
                     { "low": 54, "high": 57, "species": "SPECIES_GOLBAT" },
                     { "low": 54, "high": 57, "species": "SPECIES_BOLDORE" },
                     { "low": 55, "high": 58, "species": "SPECIES_SCRAFTY" },
-                    { "low": 55, "high": 58, "species": "SPECIES_GIGALITH" },
-                    { "low": 55, "high": 59, "species": "SPECIES_WOBBUFFET" },
+                    { "low": 55, "high": 58, "species": "SPECIES_KANGASKHAN" },
+                    { "low": 55, "high": 59, "species": "SPECIES_HOUNDOOM" },
                     { "low": 55, "high": 58, "species": "SPECIES_COALOSSAL" },
                     { "low": 54, "high": 57, "species": "SPECIES_KLINKLANG" },
                     { "low": 55, "high": 58, "species": "SPECIES_NOIVERN" },
                     { "low": 55, "high": 58, "species": "SPECIES_CROBAT" },
                     { "low": 55, "high": 59, "species": "SPECIES_MAMOSWINE" },
-                    { "low": 55, "high": 59, "species": "SPECIES_CROBAT" },
-                    { "low": 55, "high": 59, "species": "SPECIES_MAMOSWINE" }
+                    { "low": 55, "high": 59, "species": "SPECIES_GARCHOMP" },
+                    { "low": 55, "high": 59, "species": "SPECIES_GARCHOMP" }
                 ]
             }
         },
@@ -1385,15 +1385,15 @@
                     { "low": 54, "high": 57, "species": "SPECIES_GOLBAT" },
                     { "low": 54, "high": 57, "species": "SPECIES_BOLDORE" },
                     { "low": 55, "high": 58, "species": "SPECIES_SCRAFTY" },
-                    { "low": 55, "high": 58, "species": "SPECIES_GIGALITH" },
-                    { "low": 55, "high": 59, "species": "SPECIES_WOBBUFFET" },
+                    { "low": 55, "high": 58, "species": "SPECIES_KANGASKHAN" },
+                    { "low": 55, "high": 59, "species": "SPECIES_HOUNDOOM" },
                     { "low": 55, "high": 58, "species": "SPECIES_COALOSSAL" },
                     { "low": 54, "high": 57, "species": "SPECIES_KLINKLANG" },
                     { "low": 55, "high": 58, "species": "SPECIES_NOIVERN" },
                     { "low": 55, "high": 58, "species": "SPECIES_CROBAT" },
                     { "low": 55, "high": 59, "species": "SPECIES_MAMOSWINE" },
-                    { "low": 55, "high": 59, "species": "SPECIES_CROBAT" },
-                    { "low": 55, "high": 59, "species": "SPECIES_MAMOSWINE" }
+                    { "low": 55, "high": 59, "species": "SPECIES_GARCHOMP" },
+                    { "low": 55, "high": 59, "species": "SPECIES_GARCHOMP" }
                 ]
             }
         },
@@ -1406,11 +1406,11 @@
                     { "low": 54, "high": 57, "species": "SPECIES_MIENSHAO" },
                     { "low": 54, "high": 57, "species": "SPECIES_SKARMORY" },
                     { "low": 55, "high": 58, "species": "SPECIES_WEEZING_G" },
-                    { "low": 55, "high": 58, "species": "SPECIES_WEEZING_G" },
-                    { "low": 55, "high": 59, "species": "SPECIES_BISHARP" },
+                    { "low": 55, "high": 58, "species": "SPECIES_HELIOLISK" },
+                    { "low": 55, "high": 59, "species": "SPECIES_MORPEKO" },
                     { "low": 55, "high": 58, "species": "SPECIES_PRIMEAPE" },
-                    { "low": 54, "high": 57, "species": "SPECIES_GALLADE" },
-                    { "low": 55, "high": 58, "species": "SPECIES_GARCHOMP" },
+                    { "low": 54, "high": 57, "species": "SPECIES_HELIOLISK" },
+                    { "low": 55, "high": 58, "species": "SPECIES_CRABOMINABLE" },
                     { "low": 55, "high": 58, "species": "SPECIES_KOMMO_O" },
                     { "low": 55, "high": 59, "species": "SPECIES_HATTERENE" },
                     { "low": 55, "high": 59, "species": "SPECIES_KOMMO_O" },
@@ -1452,8 +1452,8 @@
                     { "low": 54, "high": 57, "species": "SPECIES_GOLBAT" },
                     { "low": 54, "high": 57, "species": "SPECIES_BOLDORE" },
                     { "low": 55, "high": 58, "species": "SPECIES_SCRAFTY" },
-                    { "low": 55, "high": 58, "species": "SPECIES_GIGALITH" },
-                    { "low": 55, "high": 59, "species": "SPECIES_WOBBUFFET" },
+                    { "low": 55, "high": 58, "species": "SPECIES_KANGASKHAN" },
+                    { "low": 55, "high": 59, "species": "SPECIES_HOUNDOOM" },
                     { "low": 55, "high": 58, "species": "SPECIES_COALOSSAL" },
                     { "low": 54, "high": 57, "species": "SPECIES_KLINKLANG" },
                     { "low": 55, "high": 58, "species": "SPECIES_NOIVERN" },
