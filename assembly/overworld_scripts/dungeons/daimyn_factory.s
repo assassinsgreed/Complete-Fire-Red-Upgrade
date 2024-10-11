@@ -675,6 +675,12 @@ EventScript_DaimynFactory_FindTM25Thunder:
     call ItemScript_Common_FindTM
     end
 
+.global EventScript_DaimynFactory_TM36_SludgeBomb
+EventScript_DaimynFactory_TM36_SludgeBomb:
+    setvar CHOSEN_ITEM ITEM_TM36
+    call ItemScript_Common_FindTM
+    end
+
 .global EventScript_DaimynFactory_BurglarSly
 EventScript_DaimynFactory_BurglarSly:
     trainerbattle0 0x0 456 0x0 gText_DaimynFactory_BurglarSly_Intro gText_DaimynFactory_BurglarSly_Defeat

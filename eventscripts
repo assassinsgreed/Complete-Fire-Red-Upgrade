@@ -884,6 +884,9 @@ npc 1 11 7 EventScript_ForgottenManse2F_ChannelerElaine
 npc 1 11 8 ItemScript_Common_SpellTag
 npc 1 11 9 ItemScript_Common_DuskStone
 npc 1 11 10 EventScript_ForgottenManse2F_TM60Hex
+npc 1 11 11 EventScript_Common_RockSmash
+npc 1 11 12 EventScript_Common_Strength
+npc 1 11 13 EventScript_ForgottenManseF2_TM97DarkPulse
 sign 1 11 0 SignScript_ForgottenManse_Journal3
 sign 1 11 1 SignScript_ForgottenManse_Journal4
 ## BF1
@@ -1143,6 +1146,7 @@ npc 3 27 13 EventScript_Route9_NinjaBoyAyrton
 npc 3 27 14 EventScript_Route9_BreederTalia
 npc 3 27 15 EventScript_Route9_PicknickerZoe
 npc 3 27 16 EventScript_Route9_CoolTrainerKingsley
+npc 3 27 17 EventScript_Route9_TM66_Payback
 sign 3 27 0 SignScript_Route9_TrainerTips
 sign 3 27 1 SignScript_Route9_FlutistsHouse
 sign 3 27 2 SignScript_Route9_Route12RestHouse
@@ -1757,6 +1761,7 @@ npc 3 36 8 ItemScript_Common_BigPearl
 npc 3 36 9 ItemScript_Common_Revive
 npc 3 36 10 ItemScript_Common_HpUp
 npc 3 36 11 EventScript_Route18_Fisherman
+npc 3 36 12 EventScript_Route18_TM92_TrickRoom
 sign 3 36 0 SignScript_Route18_PreserveFlowersSign
 ## 1-3 are hidden items
 sign 3 36 4 SignScript_Route18_OrichelleGarden
@@ -2234,6 +2239,7 @@ npc 1 95 9 EventScript_DaimynFactory_EngineerHasan
 npc 1 95 10 EventScript_DaimynFactory_BurglarWill
 npc 1 95 11 EventScript_DaimynFactory_EngineerElroy
 npc 1 95 12 EventScript_DaimynFactory_RustedData
+npc 1 95 13 EventScript_DaimynFactory_TM36_SludgeBomb
 sign 1 95 0 SignScript_DaimynFactory_BreakersNotice
 sign 1 95 1 SignScript_DaimynFacatory_Breaker
 sign 1 95 2 SignScript_DaimynFacatory_Breaker
