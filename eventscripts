@@ -940,6 +940,7 @@ npc 3 5 10 EventScript_DaimynCityOverworld_PlutoSE
 npc 3 5 11 EventScript_DaimynCityOverworld_PlutoSW
 npc 3 5 12 EventScript_Common_Cut
 npc 3 5 13 EventScript_DaimynCity_FindTM54FalseSwipe
+npc 3 5 18 EventScript_DaimynCity_RivalExhibitionBattle
 sign 3 5 0 SignScript_DaimynCityOverworld_Restaurant
 sign 3 5 1 SignScript_DaimynCityOverworld_AscensionTower
 sign 3 5 2 SignScript_DaimynCityOverworld_ShoppingMall

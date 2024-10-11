@@ -579,3 +579,5 @@
 #define TRAINER_VICTORY_ROAD_RIVAL_L                     516
 #define TRAINER_VICTORY_ROAD_RIVAL_G                     517
 #define TRAINER_VICTORY_ROAD_RIVAL_S                     518
+// Ascension Tower
+#define TRAINER_DAIMYN_CITY_RIVAL_EXHIBITION_BATTLE_2    519

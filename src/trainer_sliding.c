@@ -102,6 +102,7 @@ static const struct TrainerSlide sTrainerSlides[] =
 	{0x205, sText_Rival7_FirstMonDown, sText_Rival7_LastSwitchIn, sText_Rival7_LowHP}, // Seventh rival battle, Leafeon
 	{0x206, sText_Rival7_FirstMonDown, sText_Rival7_LastSwitchIn, sText_Rival7_LowHP}, // Seventh rival battle, Glaceon
 	{0x207, sText_Rival7_FirstMonDown, sText_Rival7_LastSwitchIn, sText_Rival7_LowHP}, // Seventh rival battle, Sylveon
+	{0x208, sText_Rival7_FirstMonDown, sText_Rival7_LastSwitchIn, sText_Rival7_LowHP}, // Rival exhibition battle (secondary team)
 	{}, // Champion Selene
 };
 

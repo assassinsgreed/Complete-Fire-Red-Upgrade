@@ -1941,6 +1941,69 @@ const struct TrainerMonItemCustomMoves sParty_VictoryRoad_Rival_Sylveon[] = {
         .ability = Ability_2 // Cute Charm
     },
 };
+
+const struct TrainerMonItemCustomMoves sParty_Rival_ExhibitionBattle_SecondaryTeam[] = {
+    {
+        .lvl = 66,
+        .species = SPECIES_CLOYSTER,
+        .moves = {
+            MOVE_SPIKES,
+            MOVE_TOXICSPIKES,
+            MOVE_RAZORSHELL,
+            MOVE_ICICLECRASH
+        },
+        .heldItem = ITEM_LEFTOVERS,
+        .ability = Ability_Hidden // Overcoat
+    },
+    {
+        .lvl = 66,
+        .species = SPECIES_TOGEKISS,
+        .moves = {
+            MOVE_AURASPHERE,
+            MOVE_AIRSLASH,
+            MOVE_TRIATTACK,
+            MOVE_DAZZLINGGLEAM
+        },
+        .heldItem = ITEM_ASSAULT_VEST,
+        .ability = Ability_2 // Serene Grace
+    },
+    {
+        .lvl = 66,
+        .species = SPECIES_COALOSSAL,
+        .moves = {
+            MOVE_HEATCRASH,
+            MOVE_STEALTHROCK,
+            MOVE_STONEEDGE,
+            MOVE_SCORCHINGSANDS
+        },
+        .heldItem = ITEM_WEAKNESS_POLICY,
+        .ability = Ability_1 // Steam Engine
+    },
+    {
+        .lvl = 66,
+        .species = SPECIES_RAICHU_A,
+        .moves = {
+            MOVE_ELECTRICTERRAIN,
+            MOVE_ELECTROBALL,
+            MOVE_PSYCHIC,
+            MOVE_SURF
+        },
+        .heldItem = ITEM_ELECTRIC_SEED,
+        .ability = Ability_1 // Surge Surfer
+    },
+    {
+        .lvl = 68,
+        .species = SPECIES_LUCARIO,
+        .moves = {
+            MOVE_SWORDSDANCE,
+            MOVE_METEORMASH,
+            MOVE_CLOSECOMBAT,
+            MOVE_EARTHQUAKE
+        },
+        .heldItem = ITEM_LUCARIONITE,
+        .ability = Ability_Hidden // Justified
+    }
+};
 // #endregion
 
 // #region Route 1 
@@ -14388,5 +14451,18 @@ const struct Trainer gTrainers[] = {
         .party = {.ItemCustomMoves = sParty_VictoryRoad_Rival_Sylveon}
     },
     // #endregion
+    // #region Ascension Tower
+    [TRAINER_DAIMYN_CITY_RIVAL_EXHIBITION_BATTLE_2] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_RIVAL_2,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_RIVAL_2,
+        .trainerName = NO_NAME,  // Name replaced from RIVAL trainer classes
+        .items = { ITEM_MEGA_RING, ITEM_FULL_RESTORE },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_SETUP_FIRST_TURN | AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_SEMI_SMART,
+        .partySize = NELEMS(sParty_Rival_ExhibitionBattle_SecondaryTeam),
+        .party = {.ItemCustomMoves = sParty_Rival_ExhibitionBattle_SecondaryTeam}
+    },
     // #endregion
 };
