@@ -2834,3 +2834,5 @@ sign 1 99 0 SignScript_VictoryRoad_PuzzleTips
 ## Back Room
 npc 1 100 0 EventScript_VictoryRoad_CoolTrainerDahlia
 npc 1 100 1 ItemScript_Common_SteelGem
+## Peak
+map 1 101 MapScript_VictoryRoadPeak

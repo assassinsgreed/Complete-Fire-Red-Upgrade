@@ -56,7 +56,10 @@ extern const u8 sText_Rival6_FirstMonDown[];
 extern const u8 sText_Rival6_LastSwitchIn[];
 extern const u8 sText_Rival6_LowHP[];
 
-// Rival battle n
+// Rival battle 7
+extern const u8 sText_Rival7_FirstMonDown[];
+extern const u8 sText_Rival7_LastSwitchIn[];
+extern const u8 sText_Rival7_LowHP[];
 
 // Developers
 extern const u8 sText_DeveloperCollin_FirstMonDown[];

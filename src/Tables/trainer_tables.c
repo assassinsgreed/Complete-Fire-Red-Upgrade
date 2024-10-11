@@ -1438,6 +1438,509 @@ const struct TrainerMonItemCustomMoves sParty_CarnelidgeVolcano_Alistair[] = {
     }
 };
 
+const struct TrainerMonItemCustomMoves sParty_VictoryRoad_Rival_Vaporeon[] = {
+    {
+        .lvl = 66,
+        .species = SPECIES_CORVIKNIGHT,
+        .moves = {
+            MOVE_DRILLPECK,
+            MOVE_IRONHEAD,
+            MOVE_IRONDEFENSE,
+            MOVE_ROOST
+        },
+        .heldItem = ITEM_OCCA_BERRY,
+        .ability = Ability_Hidden // Mirror Coat
+    },
+    {
+        .lvl = 66,
+        .species = SPECIES_WEAVILE,
+        .moves = {
+            MOVE_ICESHARD,
+            MOVE_SCREECH,
+            MOVE_ICICLECRASH,
+            MOVE_KNOCKOFF
+        },
+        .heldItem = ITEM_KINGS_ROCK,
+        .ability = Ability_1 // Pressure
+    },
+    {
+        .lvl = 66,
+        .species = SPECIES_MUDSDALE,
+        .moves = {
+            MOVE_STOMPINGTANTRUM,
+            MOVE_SUPERPOWER,
+            MOVE_HEAVYSLAM,
+            MOVE_REST
+        },
+        .heldItem = ITEM_CHESTO_BERRY,
+        .ability = Ability_2 // Stamina
+    },
+    {
+        .lvl = 66,
+        .species = SPECIES_AMPHAROS,
+        .moves = {
+            MOVE_DAZZLINGGLEAM,
+            MOVE_DISCHARGE,
+            MOVE_COTTONGUARD,
+            MOVE_DRAGONPULSE
+        },
+        .heldItem = ITEM_AMPHAROSITE,
+        .ability = Ability_1 // Static
+    },
+    {
+        .lvl = 68,
+        .species = SPECIES_VAPOREON,
+        .moves = {
+            MOVE_SCALD,
+            MOVE_ACIDARMOR,
+            MOVE_ICEBEAM,
+            MOVE_FLIPTURN
+        },
+        .heldItem = ITEM_LEFTOVERS,
+        .ability = Ability_2 // Water Absorb
+    },
+};
+
+const struct TrainerMonItemCustomMoves sParty_VictoryRoad_Rival_Jolteon[] = {
+    {
+        .lvl = 66,
+        .species = SPECIES_CORVIKNIGHT,
+        .moves = {
+            MOVE_DRILLPECK,
+            MOVE_IRONHEAD,
+            MOVE_IRONDEFENSE,
+            MOVE_ROOST
+        },
+        .heldItem = ITEM_OCCA_BERRY,
+        .ability = Ability_Hidden // Mirror Coat
+    },
+    {
+        .lvl = 66,
+        .species = SPECIES_WEAVILE,
+        .moves = {
+            MOVE_ICESHARD,
+            MOVE_SCREECH,
+            MOVE_ICICLECRASH,
+            MOVE_KNOCKOFF
+        },
+        .heldItem = ITEM_KINGS_ROCK,
+        .ability = Ability_1 // Pressure
+    },
+    {
+        .lvl = 66,
+        .species = SPECIES_MUDSDALE,
+        .moves = {
+            MOVE_STOMPINGTANTRUM,
+            MOVE_SUPERPOWER,
+            MOVE_HEAVYSLAM,
+            MOVE_REST
+        },
+        .heldItem = ITEM_CHESTO_BERRY,
+        .ability = Ability_2 // Stamina
+    },
+    {
+        .lvl = 66,
+        .species = SPECIES_AMPHAROS,
+        .moves = {
+            MOVE_DAZZLINGGLEAM,
+            MOVE_DISCHARGE,
+            MOVE_COTTONGUARD,
+            MOVE_DRAGONPULSE
+        },
+        .heldItem = ITEM_AMPHAROSITE,
+        .ability = Ability_1 // Static
+    },
+    {
+        .lvl = 68,
+        .species = SPECIES_JOLTEON,
+        .moves = {
+            MOVE_THUNDERBOLT,
+            MOVE_VOLTSWITCH,
+            MOVE_SHADOWBALL,
+            MOVE_METALSOUND
+        },
+        .heldItem = ITEM_LEFTOVERS,
+        .ability = Ability_2 // Volt Absorb
+    },
+};
+
+const struct TrainerMonItemCustomMoves sParty_VictoryRoad_Rival_Flareon[] = {
+    {
+        .lvl = 66,
+        .species = SPECIES_CORVIKNIGHT,
+        .moves = {
+            MOVE_DRILLPECK,
+            MOVE_IRONHEAD,
+            MOVE_IRONDEFENSE,
+            MOVE_ROOST
+        },
+        .heldItem = ITEM_OCCA_BERRY,
+        .ability = Ability_Hidden // Mirror Coat
+    },
+    {
+        .lvl = 66,
+        .species = SPECIES_WEAVILE,
+        .moves = {
+            MOVE_ICESHARD,
+            MOVE_SCREECH,
+            MOVE_ICICLECRASH,
+            MOVE_KNOCKOFF
+        },
+        .heldItem = ITEM_KINGS_ROCK,
+        .ability = Ability_1 // Pressure
+    },
+    {
+        .lvl = 66,
+        .species = SPECIES_MUDSDALE,
+        .moves = {
+            MOVE_STOMPINGTANTRUM,
+            MOVE_SUPERPOWER,
+            MOVE_HEAVYSLAM,
+            MOVE_REST
+        },
+        .heldItem = ITEM_CHESTO_BERRY,
+        .ability = Ability_2 // Stamina
+    },
+    {
+        .lvl = 66,
+        .species = SPECIES_AMPHAROS,
+        .moves = {
+            MOVE_DAZZLINGGLEAM,
+            MOVE_DISCHARGE,
+            MOVE_COTTONGUARD,
+            MOVE_DRAGONPULSE
+        },
+        .heldItem = ITEM_AMPHAROSITE,
+        .ability = Ability_1 // Static
+    },
+    {
+        .lvl = 68,
+        .species = SPECIES_FLAREON,
+        .moves = {
+            MOVE_FLAREBLITZ,
+            MOVE_BODYSLAM,
+            MOVE_DIG,
+            MOVE_LASTRESORT
+        },
+        .heldItem = ITEM_LEFTOVERS,
+        .ability = Ability_2 // Flash Fire
+    },
+};
+
+const struct TrainerMonItemCustomMoves sParty_VictoryRoad_Rival_Espeon[] = {
+    {
+        .lvl = 66,
+        .species = SPECIES_CORVIKNIGHT,
+        .moves = {
+            MOVE_DRILLPECK,
+            MOVE_IRONHEAD,
+            MOVE_IRONDEFENSE,
+            MOVE_ROOST
+        },
+        .heldItem = ITEM_OCCA_BERRY,
+        .ability = Ability_Hidden // Mirror Coat
+    },
+    {
+        .lvl = 66,
+        .species = SPECIES_WEAVILE,
+        .moves = {
+            MOVE_ICESHARD,
+            MOVE_SCREECH,
+            MOVE_ICICLECRASH,
+            MOVE_KNOCKOFF
+        },
+        .heldItem = ITEM_KINGS_ROCK,
+        .ability = Ability_1 // Pressure
+    },
+    {
+        .lvl = 66,
+        .species = SPECIES_MUDSDALE,
+        .moves = {
+            MOVE_STOMPINGTANTRUM,
+            MOVE_SUPERPOWER,
+            MOVE_HEAVYSLAM,
+            MOVE_REST
+        },
+        .heldItem = ITEM_CHESTO_BERRY,
+        .ability = Ability_2 // Stamina
+    },
+    {
+        .lvl = 66,
+        .species = SPECIES_AMPHAROS,
+        .moves = {
+            MOVE_DAZZLINGGLEAM,
+            MOVE_DISCHARGE,
+            MOVE_COTTONGUARD,
+            MOVE_DRAGONPULSE
+        },
+        .heldItem = ITEM_AMPHAROSITE,
+        .ability = Ability_1 // Static
+    },
+    {
+        .lvl = 68,
+        .species = SPECIES_ESPEON,
+        .moves = {
+            MOVE_MORNINGSUN,
+            MOVE_CALMMIND,
+            MOVE_PSYCHIC,
+            MOVE_DAZZLINGGLEAM
+        },
+        .heldItem = ITEM_LEFTOVERS,
+        .ability = Ability_2 // Synchronize
+    },
+};
+
+const struct TrainerMonItemCustomMoves sParty_VictoryRoad_Rival_Umbreon[] = {
+    {
+        .lvl = 66,
+        .species = SPECIES_CORVIKNIGHT,
+        .moves = {
+            MOVE_DRILLPECK,
+            MOVE_IRONHEAD,
+            MOVE_IRONDEFENSE,
+            MOVE_ROOST
+        },
+        .heldItem = ITEM_OCCA_BERRY,
+        .ability = Ability_Hidden // Mirror Coat
+    },
+    {
+        .lvl = 66,
+        .species = SPECIES_WEAVILE,
+        .moves = {
+            MOVE_ICESHARD,
+            MOVE_SCREECH,
+            MOVE_ICICLECRASH,
+            MOVE_KNOCKOFF
+        },
+        .heldItem = ITEM_KINGS_ROCK,
+        .ability = Ability_1 // Pressure
+    },
+    {
+        .lvl = 66,
+        .species = SPECIES_MUDSDALE,
+        .moves = {
+            MOVE_STOMPINGTANTRUM,
+            MOVE_SUPERPOWER,
+            MOVE_HEAVYSLAM,
+            MOVE_REST
+        },
+        .heldItem = ITEM_CHESTO_BERRY,
+        .ability = Ability_2 // Stamina
+    },
+    {
+        .lvl = 66,
+        .species = SPECIES_AMPHAROS,
+        .moves = {
+            MOVE_DAZZLINGGLEAM,
+            MOVE_DISCHARGE,
+            MOVE_COTTONGUARD,
+            MOVE_DRAGONPULSE
+        },
+        .heldItem = ITEM_AMPHAROSITE,
+        .ability = Ability_1 // Static
+    },
+    {
+        .lvl = 68,
+        .species = SPECIES_UMBREON,
+        .moves = {
+            MOVE_MOONLIGHT,
+            MOVE_SNARL,
+            MOVE_TOXIC,
+            MOVE_MEANLOOK
+        },
+        .heldItem = ITEM_LEFTOVERS,
+        .ability = Ability_2 // Synchronize
+    },
+};
+
+const struct TrainerMonItemCustomMoves sParty_VictoryRoad_Rival_Leafeon[] = {
+    {
+        .lvl = 66,
+        .species = SPECIES_CORVIKNIGHT,
+        .moves = {
+            MOVE_DRILLPECK,
+            MOVE_IRONHEAD,
+            MOVE_IRONDEFENSE,
+            MOVE_ROOST
+        },
+        .heldItem = ITEM_OCCA_BERRY,
+        .ability = Ability_Hidden // Mirror Coat
+    },
+    {
+        .lvl = 66,
+        .species = SPECIES_WEAVILE,
+        .moves = {
+            MOVE_ICESHARD,
+            MOVE_SCREECH,
+            MOVE_ICICLECRASH,
+            MOVE_KNOCKOFF
+        },
+        .heldItem = ITEM_KINGS_ROCK,
+        .ability = Ability_1 // Pressure
+    },
+    {
+        .lvl = 66,
+        .species = SPECIES_MUDSDALE,
+        .moves = {
+            MOVE_STOMPINGTANTRUM,
+            MOVE_SUPERPOWER,
+            MOVE_HEAVYSLAM,
+            MOVE_REST
+        },
+        .heldItem = ITEM_CHESTO_BERRY,
+        .ability = Ability_2 // Stamina
+    },
+    {
+        .lvl = 66,
+        .species = SPECIES_AMPHAROS,
+        .moves = {
+            MOVE_DAZZLINGGLEAM,
+            MOVE_DISCHARGE,
+            MOVE_COTTONGUARD,
+            MOVE_DRAGONPULSE
+        },
+        .heldItem = ITEM_AMPHAROSITE,
+        .ability = Ability_1 // Static
+    },
+    {
+        .lvl = 68,
+        .species = SPECIES_LEAFEON,
+        .moves = {
+            MOVE_SWORDSDANCE,
+            MOVE_LEAFBLADE,
+            MOVE_SYNTHESIS,
+            MOVE_AERIALACE
+        },
+        .heldItem = ITEM_LEFTOVERS,
+        .ability = Ability_2 // Leaf Guard
+    },
+};
+
+const struct TrainerMonItemCustomMoves sParty_VictoryRoad_Rival_Glaceon[] = {
+    {
+        .lvl = 66,
+        .species = SPECIES_CORVIKNIGHT,
+        .moves = {
+            MOVE_DRILLPECK,
+            MOVE_IRONHEAD,
+            MOVE_IRONDEFENSE,
+            MOVE_ROOST
+        },
+        .heldItem = ITEM_OCCA_BERRY,
+        .ability = Ability_Hidden // Mirror Coat
+    },
+    {
+        .lvl = 66,
+        .species = SPECIES_WEAVILE,
+        .moves = {
+            MOVE_ICESHARD,
+            MOVE_SCREECH,
+            MOVE_ICICLECRASH,
+            MOVE_KNOCKOFF
+        },
+        .heldItem = ITEM_KINGS_ROCK,
+        .ability = Ability_1 // Pressure
+    },
+    {
+        .lvl = 66,
+        .species = SPECIES_MUDSDALE,
+        .moves = {
+            MOVE_STOMPINGTANTRUM,
+            MOVE_SUPERPOWER,
+            MOVE_HEAVYSLAM,
+            MOVE_REST
+        },
+        .heldItem = ITEM_CHESTO_BERRY,
+        .ability = Ability_2 // Stamina
+    },
+    {
+        .lvl = 66,
+        .species = SPECIES_AMPHAROS,
+        .moves = {
+            MOVE_DAZZLINGGLEAM,
+            MOVE_DISCHARGE,
+            MOVE_COTTONGUARD,
+            MOVE_DRAGONPULSE
+        },
+        .heldItem = ITEM_AMPHAROSITE,
+        .ability = Ability_1 // Static
+    },
+    {
+        .lvl = 68,
+        .species = SPECIES_GLACEON,
+        .moves = {
+            MOVE_FREEZEDRY,
+            MOVE_HAIL,
+            MOVE_AURORAVEIL,
+            MOVE_SHADOWBALL
+        },
+        .heldItem = ITEM_LEFTOVERS,
+        .ability = Ability_2 // Snow Cloak
+    },
+};
+
+const struct TrainerMonItemCustomMoves sParty_VictoryRoad_Rival_Sylveon[] = {
+    {
+        .lvl = 66,
+        .species = SPECIES_CORVIKNIGHT,
+        .moves = {
+            MOVE_DRILLPECK,
+            MOVE_IRONHEAD,
+            MOVE_IRONDEFENSE,
+            MOVE_ROOST
+        },
+        .heldItem = ITEM_OCCA_BERRY,
+        .ability = Ability_Hidden // Mirror Coat
+    },
+    {
+        .lvl = 66,
+        .species = SPECIES_WEAVILE,
+        .moves = {
+            MOVE_ICESHARD,
+            MOVE_SCREECH,
+            MOVE_ICICLECRASH,
+            MOVE_KNOCKOFF
+        },
+        .heldItem = ITEM_KINGS_ROCK,
+        .ability = Ability_1 // Pressure
+    },
+    {
+        .lvl = 66,
+        .species = SPECIES_MUDSDALE,
+        .moves = {
+            MOVE_STOMPINGTANTRUM,
+            MOVE_SUPERPOWER,
+            MOVE_HEAVYSLAM,
+            MOVE_REST
+        },
+        .heldItem = ITEM_CHESTO_BERRY,
+        .ability = Ability_2 // Stamina
+    },
+    {
+        .lvl = 66,
+        .species = SPECIES_AMPHAROS,
+        .moves = {
+            MOVE_DAZZLINGGLEAM,
+            MOVE_DISCHARGE,
+            MOVE_COTTONGUARD,
+            MOVE_DRAGONPULSE
+        },
+        .heldItem = ITEM_AMPHAROSITE,
+        .ability = Ability_1 // Static
+    },
+    {
+        .lvl = 68,
+        .species = SPECIES_SYLVEON,
+        .moves = {
+            MOVE_MOONBLAST,
+            MOVE_WISH,
+            MOVE_PSYSHOCK,
+            MOVE_REFLECT
+        },
+        .heldItem = ITEM_LEFTOVERS,
+        .ability = Ability_2 // Cute Charm
+    },
+};
 // #endregion
 
 // #region Route 1 
@@ -13787,6 +14290,102 @@ const struct Trainer gTrainers[] = {
         .aiFlags = TrainerAIFlags_Nurse_Standard,
         .partySize = NELEMS(sParty_VictoryRoad_NurseCelia),
         .party = {.NoItemCustomMoves = sParty_VictoryRoad_NurseCelia}
+    },
+    [TRAINER_VICTORY_ROAD_RIVAL_V] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_RIVAL_2,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_RIVAL_2,
+        .trainerName = NO_NAME,  // Name replaced from RIVAL trainer classes
+        .items = { ITEM_MEGA_RING, ITEM_FULL_RESTORE },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_SETUP_FIRST_TURN | AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_SEMI_SMART,
+        .partySize = NELEMS(sParty_VictoryRoad_Rival_Vaporeon),
+        .party = {.ItemCustomMoves = sParty_VictoryRoad_Rival_Vaporeon}
+    },
+    [TRAINER_VICTORY_ROAD_RIVAL_J] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_RIVAL_2,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_RIVAL_2,
+        .trainerName = NO_NAME,  // Name replaced from RIVAL trainer classes
+        .items = { ITEM_MEGA_RING, ITEM_FULL_RESTORE },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_SETUP_FIRST_TURN | AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_SEMI_SMART,
+        .partySize = NELEMS(sParty_VictoryRoad_Rival_Jolteon),
+        .party = {.ItemCustomMoves = sParty_VictoryRoad_Rival_Jolteon}
+    },
+    [TRAINER_VICTORY_ROAD_RIVAL_F] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_RIVAL_2,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_RIVAL_2,
+        .trainerName = NO_NAME,  // Name replaced from RIVAL trainer classes
+        .items = { ITEM_MEGA_RING, ITEM_FULL_RESTORE },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_SETUP_FIRST_TURN | AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_SEMI_SMART,
+        .partySize = NELEMS(sParty_VictoryRoad_Rival_Flareon),
+        .party = {.ItemCustomMoves = sParty_VictoryRoad_Rival_Flareon}
+    },
+    [TRAINER_VICTORY_ROAD_RIVAL_E] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_RIVAL_2,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_RIVAL_2,
+        .trainerName = NO_NAME,  // Name replaced from RIVAL trainer classes
+        .items = { ITEM_MEGA_RING, ITEM_FULL_RESTORE },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_SETUP_FIRST_TURN | AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_SEMI_SMART,
+        .partySize = NELEMS(sParty_VictoryRoad_Rival_Espeon),
+        .party = {.ItemCustomMoves = sParty_VictoryRoad_Rival_Espeon}
+    },
+    [TRAINER_VICTORY_ROAD_RIVAL_U] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_RIVAL_2,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_RIVAL_2,
+        .trainerName = NO_NAME,  // Name replaced from RIVAL trainer classes
+        .items = { ITEM_MEGA_RING, ITEM_FULL_RESTORE },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_SETUP_FIRST_TURN | AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_SEMI_SMART,
+        .partySize = NELEMS(sParty_VictoryRoad_Rival_Umbreon),
+        .party = {.ItemCustomMoves = sParty_VictoryRoad_Rival_Umbreon}
+    },
+    [TRAINER_VICTORY_ROAD_RIVAL_L] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_RIVAL_2,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_RIVAL_2,
+        .trainerName = NO_NAME,  // Name replaced from RIVAL trainer classes
+        .items = { ITEM_MEGA_RING, ITEM_FULL_RESTORE },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_SETUP_FIRST_TURN | AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_SEMI_SMART,
+        .partySize = NELEMS(sParty_VictoryRoad_Rival_Leafeon),
+        .party = {.ItemCustomMoves = sParty_VictoryRoad_Rival_Leafeon}
+    },
+    [TRAINER_VICTORY_ROAD_RIVAL_G] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_RIVAL_2,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_RIVAL_2,
+        .trainerName = NO_NAME,  // Name replaced from RIVAL trainer classes
+        .items = { ITEM_MEGA_RING, ITEM_FULL_RESTORE },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_SETUP_FIRST_TURN | AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_SEMI_SMART,
+        .partySize = NELEMS(sParty_VictoryRoad_Rival_Glaceon),
+        .party = {.ItemCustomMoves = sParty_VictoryRoad_Rival_Glaceon}
+    },
+    [TRAINER_VICTORY_ROAD_RIVAL_S] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_RIVAL_2,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_RIVAL_2,
+        .trainerName = NO_NAME,  // Name replaced from RIVAL trainer classes
+        .items = { ITEM_MEGA_RING, ITEM_FULL_RESTORE },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_SETUP_FIRST_TURN | AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_SEMI_SMART,
+        .partySize = NELEMS(sParty_VictoryRoad_Rival_Sylveon),
+        .party = {.ItemCustomMoves = sParty_VictoryRoad_Rival_Sylveon}
     },
     // #endregion
     // #endregion

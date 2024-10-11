@@ -571,3 +571,11 @@
 #define TRAINER_VICTORY_ROAD_COOL_TRAINER_LUIGI          508
 #define TRAINER_VICTORY_ROAD_COOL_TRAINER_DAHLIA         509
 #define TRAINER_VICTORY_ROAD_NURSE_CELIA                 510
+#define TRAINER_VICTORY_ROAD_RIVAL_V                     511
+#define TRAINER_VICTORY_ROAD_RIVAL_J                     512
+#define TRAINER_VICTORY_ROAD_RIVAL_F                     513
+#define TRAINER_VICTORY_ROAD_RIVAL_E                     514
+#define TRAINER_VICTORY_ROAD_RIVAL_U                     515
+#define TRAINER_VICTORY_ROAD_RIVAL_L                     516
+#define TRAINER_VICTORY_ROAD_RIVAL_G                     517
+#define TRAINER_VICTORY_ROAD_RIVAL_S                     518
