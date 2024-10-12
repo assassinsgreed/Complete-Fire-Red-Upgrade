@@ -303,6 +303,53 @@ EventScript_DaimynCity_FindTM54FalseSwipe:
     call ItemScript_Common_FindTM
     end
 
+.global EventScript_DaimynCity_RivalExhibitionBattle
+EventScript_DaimynCity_RivalExhibitionBattle:
+    faceplayer
+    checkflag 0xE36 @ Rival exhbition battle already completed
+    if SET _goto AlreadyCompletedRivalExhibitionBattleToday
+    msgbox gText_DaimynCityOverworld_RivalExhibitionBattle_OfferToBattle MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto ChoseNotToBattleRivalToday
+    msgbox gText_DaimynCityOverworld_RivalExhibitionBattle_PromptForWhichTeam MSG_KEEPOPEN
+    multichoiceoption gText_DaimynCityOverworld_RivalExhibitionBattle_EeveeTeam 0
+	multichoiceoption gText_DaimynCityOverworld_RivalExhibitionBattle_EmraldinTeam 1
+	multichoice 0x0 0x0 TWO_MULTICHOICE_OPTIONS TRUE
+	copyvar MULTICHOICE_SELECTION LASTRESULT
+	switch LASTRESULT
+	case 0, BattleEeveeTeam _call
+	case 1, BattleEmraldinTeam _call
+	call SetupMugshotRival
+    setvar 0x8000 0xFEFE @ Continue lost battles
+    msgbox gText_DaimynCityOverworld_RivalExhibitionBattle_PreBattle MSG_NORMAL
+    trainerbattle9 0x0 0x4000 0x100 gText_DaimynCityOverworld_RivalExhibitionBattle_PlayerWon gText_DaimynCityOverworld_RivalExhibitionBattle_PlayerLost
+    msgbox gText_DaimynCityOverworld_RivalExhibitionBattle_PostBattle MSG_NORMAL
+    call PlayerHeal
+    setvar 0x8000 0x0 @ Do not continue lost battles
+    setflag 0xE36 @ Rival exhbition battle already completed
+    goto AlreadyCompletedRivalExhibitionBattleToday
+
+BattleEeveeTeam:
+    @ Figure out which team the rival uses
+    copyvar 0x4001 0x408E
+    setvar 0x4000 511 @ trainer ID, which is 511 + 0-7 depending on value in 0x408E
+    setvar 0x8004 0x4000
+    setvar 0x8005 0x4001
+    special 0x3E @ Add two vars above, result stored in 0x4000 which is loaded as trainer ID
+    return
+
+BattleEmraldinTeam:
+    setvar 0x4000 519
+    return
+
+AlreadyCompletedRivalExhibitionBattleToday:
+    npcchatwithmovement gText_DaimynCityOverworld_RivalExhibitionBattle_AlreadyBattledToday m_LookDown
+    end
+
+ChoseNotToBattleRivalToday:
+    npcchatwithmovement gText_DaimynCityOverworld_RivalExhibitionBattle_ChoseNotToBattle m_LookDown
+    end
+
 .global SignScript_DaimynCityOverworld_Restaurant
 SignScript_DaimynCityOverworld_Restaurant:
     msgbox gText_DaimynCityOverworld_RestaurantSign MSG_SIGN

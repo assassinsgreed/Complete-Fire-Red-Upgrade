@@ -209,6 +209,36 @@ Daimyn City: The Hustling Metropolis
 #org @gText_DaimynCityOverworld_DaimynFactorySign
 Daimyn City Factory ahead
 
+#org @gText_DaimynCityOverworld_RivalExhibitionBattle_OfferToBattle
+Hey, [PLAYER]!\pI've been training my Pok\emon, and\nwe're tougher than ever.\pWant to see if you can still beat\nthem in a friendly battle?
+
+#org @gText_DaimynCityOverworld_RivalExhibitionBattle_ChoseNotToBattle
+Aw, too bad!\pI'm going to keep training. Come say\nhi if you change your mind!
+
+#org @gText_DaimynCityOverworld_RivalExhibitionBattle_PromptForWhichTeam
+That's the spirit!\pWhich of my teams do you want to\ntake on?
+
+#org @gText_DaimynCityOverworld_RivalExhibitionBattle_EeveeTeam
+Main Team (Eevee)
+
+#org @gText_DaimynCityOverworld_RivalExhibitionBattle_EmraldinTeam
+Backup Team (Emraldin)
+
+#org @gText_DaimynCityOverworld_RivalExhibitionBattle_PreBattle
+Okay, we're going to go all out.\nMake sure you do your best!
+
+#org @gText_DaimynCityOverworld_RivalExhibitionBattle_PlayerWon
+Nice! You won!
+
+#org @gText_DaimynCityOverworld_RivalExhibitionBattle_PlayerLost
+Hey, don't sweat it.\nWe all lose sometimes!
+
+#org @gText_DaimynCityOverworld_RivalExhibitionBattle_PostBattle
+That was a fun battle!\pOur Pok\emon already look a lot\ntougher, don't you think?\pHere, let me heal your Pok\emon up.
+
+#org @gText_DaimynCityOverworld_RivalExhibitionBattle_AlreadyBattledToday
+We're going to take a break from\ntraining so we're fully rested.\pCome see us tomorrow if you want to\nhave another battle!
+
 // Facilities
 #org @gText_DaimynCityFacilities_GuardHouseWest_Guard
 Daimyn City lies just beyond this\ngate. You may pass.

@@ -153,7 +153,7 @@
 #define VAR_MAP_SCENE_ROUTE24                                                  0x406B // Appears to reset with map reload
 #define VAR_MAP_SCENE_ASCENSION_TOWER_ELITE_FOUR_CHALLENGE                     0x406C
 #define VAR_MAP_SCENE_UTEYA_VILLAGE_MEETING_WITH_RIVAL                         0x406D
-#define VAR_MAP_SCENE_FUCHSIA_CITY_SAFARI_ZONE_ENTRANCE                        0x406E
+#define VAR_MAP_SCENE_VICTORY_ROAD_PEAK_CUTSCENES                              0x406E
 #define VAR_CABLE_CLUB_STATE                                                   0x406F
 #define VAR_MAP_SCENE_PALLET_TOWN_SIGN_LADY                                    0x4070
 #define VAR_MAP_SCENE_CINNABAR_ISLAND                                          0x4071

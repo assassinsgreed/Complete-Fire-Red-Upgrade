@@ -123,3 +123,42 @@ There you go! Right as rain.\pKeep pushing your limits and strive\nfor the peak.
 
 #org @gText_VictoryRoad_PuzzleTipsSign
 A tip to wise trainers: Victory\nRoad is a labrynth of passages.\pBy pushing boulders onto designated\nswitches, you may open shortcuts.\pUse these as needed to recuperate\nas needed, and strive for the peak!\p- Elite Four Committee
+
+#org @gText_VictoryRoad_RivalGreetsPlayer
+[BLUE]Hey, [PLAYER]! Looks like you\njust barely beat me here.\pI can't believe we're here, at the\npeak of Victory Road[.]\pThe air tastes a bit different here,\ndoesn't it?\pMaybe it's just because we've come\nsuch a long ways from home[.]\pAnyways, let's not waste any time.\pWe have to get our Victory Flags so\nwe can take the Elite Four\lChallenge.
+
+#org @gText_VictoryRoad_RivalSeesSingleFlag
+[BLUE]H-huh? Why is there only one flag?\pShoudn't there be two? We both\nsigned up at the same time[.]\pThere must be a mistake.
+
+#org @gText_VictoryRoad_RivalUnderstandsSingleFlag
+[BLUE]No, actually[.] This is no mistake.
+
+#org @gText_VictoryRoad_RivalAcknowledgesLoomingBattle
+[BLUE]There can only be one champion.\nWe can't both do it, [PLAYER].\pOnly one of us can continue past this\npoint.\pYou know what I'm getting at, right\n[PLAYER]?
+
+#org @gText_VictoryRoad_RivalIssuesBattle_PlayerUnderstands
+[BLUE]Yeah, exactly. We're going to\nbattle for it.
+
+#org @gText_VictoryRoad_RivalIssuesBattle_PlayerDoesNotUnderstand
+[BLUE][PLAYER], we're going to battle to\nsee who deserves this flag.
+
+#org @gText_VictoryRoad_RivalIssuesBattle_TakingPositions
+[BLUE]Let's take our positions.
+
+#org @gText_VictoryRoad_RivalIssuesBattle_AsksToTakeBattleSeriously
+[BLUE][PLAYER], it feels like just yesterday\nthat we left home.\pSince then, we've seen so many\nincredible things[.]\pMet so many amazing people and\nPok\emon[.]\pAnd, worked together to fix a mistake\nI made[.]\p[PLAYER], this has been a once in a\nlifetime journey.\pWe aren't the same naive kids we were\nwhen we left home.\pWhat I'm trying to say is[.]\pI'm not going to hold back.\pI'm going to give everything I've\ngot to earn this Victory Flag.\pAnd, I want you to, too.\pI want to know that I overcame you\nat your absolute best.
+
+#org @gText_VictoryRoad_RivalIssuesBattle_BattleIntro
+[BLUE]So, come on, [PLAYER][.]\pLet's do this!
+
+#org @gText_VictoryRoad_RivalLosesBattle
+W-what? I[.] Lost?
+
+#org @gText_VictoryRoad_RivalAcceptsLoss
+[BLUE]Ha[.] I really thought I had you\nthis time, [PLAYER].\pBut I guess deep down I knew you'd\nwin.\pYou're just that good.
+
+#org @gText_VictoryRoad_RivalCheersPlayerOn
+[BLUE]That's all there is to it.\pYou won fair and square, and the\nVictory Flag is yours.\pIt's funny. I thought I'd be really\nupset about this.\pBut[.] I'm actually happy for you,\n[PLAYER]!\pI'm grateful we were able to go all\nout like that.\p[PLAYER], you're going to challenge\nthe Elite Four and Champion Selene\lafter this, aren't you?\pThen, there's nothing else to it!\pI'll be in the crowd, cheering you on\nthe loudest out of everyone there.\pSo, get out there and show the\nregion - no, the whole world -\lwhat the little guys from Anthra\lcan do.\pAnd, when you win, make sure you\ndon't get too comfortable[.]\pBecause I'll be right there, ready\nto take your title!\pYou'd better believe it, [PLAYER]!\nHa ha ha!\pAnd until that happens, I'll train\nday in and day out so my Pok\emon\land I are stronger than ever.\pAlright, that's enough out of me.\pYou've got this, [PLAYER]!
+
+#org @gText_VictoryRoad_PlayerReceivesVictoryFlag
+[PLAYER] has earned the Victory Flag,\nsymbol of perseverence and skill!

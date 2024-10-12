@@ -343,3 +343,101 @@ SignScript_VictoryRoad_PuzzleTips:
     end
 
 @ Cutscenes
+.equ Rival, 0x1
+
+.global MapScript_VictoryRoadPeak
+MapScript_VictoryRoadPeak:
+    mapscript MAP_SCRIPT_ON_FRAME_TABLE LevelScripts_VictoryRoadPeak
+	.byte MAP_SCRIPT_TERMIN
+
+LevelScripts_VictoryRoadPeak:
+	levelscript 0x406E 0x0 LevelScript_VictoryRoadPeak_BattleForVictoryFlag
+	.hword LEVEL_SCRIPT_TERMIN
+
+LevelScript_VictoryRoadPeak_BattleForVictoryFlag:
+    getplayerpos 0x4000 0x4001
+    compare 0x4000 0x8
+    if equal _call PlayerWalkRight_Return
+    applymovement PLAYER m_LookUp
+    waitmovement PLAYER
+    playse 0x9 @ Exit Room
+    showsprite Rival
+    pause DELAY_HALFSECOND
+    applymovement Rival m_LookRight
+    applymovement PLAYER m_LookLeft
+    msgbox gText_VictoryRoad_RivalGreetsPlayer MSG_NORMAL
+    applymovement PLAYER m_PlayerAndRivalWalkToVictoryFlag
+    applymovement Rival m_PlayerAndRivalWalkToVictoryFlag
+    waitmovement ALLEVENTS
+    pause 0x10
+    applymovement PLAYER m_Surprise
+    applymovement Rival m_Surprise
+    sound 0x15 @ Exclaim
+    msgbox gText_VictoryRoad_RivalSeesSingleFlag MSG_NORMAL
+    applymovement Rival m_LookDown
+    msgbox gText_VictoryRoad_RivalUnderstandsSingleFlag MSG_NORMAL
+    applymovement Rival m_LookRight
+    applymovement PLAYER m_LookLeft
+    msgbox gText_VictoryRoad_RivalAcknowledgesLoomingBattle MSG_YESNO
+    compare LASTRESULT NO
+    if notequal _call PlayerUnderstandsBattleIsComing
+    if equal _call PlayerDoesNotUnderstandBattleIsComing
+    msgbox gText_VictoryRoad_RivalIssuesBattle_TakingPositions MSG_NORMAL
+    applymovement Rival m_RivalTakesPosition
+    applymovement PLAYER m_PlayerTakesPosition
+    waitmovement ALLEVENTS
+    playbgm 0x195 @ Rival's theme
+    msgbox gText_VictoryRoad_RivalIssuesBattle_AsksToTakeBattleSeriously MSG_NORMAL
+    msgbox gText_VictoryRoad_RivalIssuesBattle_BattleIntro MSG_NORMAL
+    call SetupMugshotRival
+    @ Figure out which team the rival uses
+    copyvar 0x4001 0x408E
+    setvar 0x4000 511 @ trainer ID, which is 511 + 0-7 depending on value in 0x408E
+    setvar 0x8004 0x4000
+    setvar 0x8005 0x4001
+    special 0x3E @ Add two vars above, result stored in 0x4000 which is loaded as trainer ID
+    trainerbattle3 0x0 0x4000 0x100 gText_VictoryRoad_RivalLosesBattle
+    msgbox gText_VictoryRoad_RivalAcceptsLoss MSG_NORMAL
+    applymovement Rival m_WalkRight
+    applymovement PLAYER m_WalkLeft
+    waitmovement ALLEVENTS
+    playbgm 0x114 0x0 @ Unwavering emotions
+    msgbox gText_VictoryRoad_RivalCheersPlayerOn MSG_NORMAL
+    applymovement Rival m_LookDown
+    pause DELAY_HALFSECOND
+    setfieldeffectarg 0, 0x8 @ Rival X
+	setfieldeffectarg 1, 0xC @ Rival Y
+	dofieldeffect 30 @FLDEFF_NPCFLY_OUT
+    pause 0x9 @ Delay just long enough for the bird to connect with the rival
+    applymovement Rival m_RivalJumpsOntoBird
+	waitfieldeffect 30 @FLDEFF_NPCFLY_OUT
+    fadedefaultbgm
+    hidesprite Rival
+    pause DELAY_1SECOND
+    applymovement PLAYER m_SlowlyApproachVictoryFlag
+    waitmovement PLAYER
+    pause DELAY_1SECOND
+    hidesprite 0x2 @ Flag
+    fanfare 0x10C @ Big celebration
+    msgbox gText_VictoryRoad_PlayerReceivesVictoryFlag MSG_KEEPOPEN
+    waitfanfare
+    closemessage
+    additem ITEM_VICTORY_FLAG 0x1
+    setflag 0x72 @ Victory Flag claimed
+    clearflag 0x06B @ Rival appears in Daimyn City for training battle 
+    setvar 0x406E 0x1 @ cutscenes over
+    end
+
+PlayerUnderstandsBattleIsComing:
+    msgbox gText_VictoryRoad_RivalIssuesBattle_PlayerUnderstands MSG_NORMAL
+    return
+
+PlayerDoesNotUnderstandBattleIsComing:
+    msgbox gText_VictoryRoad_RivalIssuesBattle_PlayerDoesNotUnderstand MSG_NORMAL
+    return
+
+m_PlayerAndRivalWalkToVictoryFlag: .byte walk_up, walk_up, walk_up, end_m
+m_RivalTakesPosition: .byte walk_left, look_right, end_m
+m_PlayerTakesPosition: .byte walk_right, look_left, end_m
+m_RivalJumpsOntoBird: .byte jump_onspot_down, set_invisible, end_m
+m_SlowlyApproachVictoryFlag: .byte walk_up_very_slow, end_m
