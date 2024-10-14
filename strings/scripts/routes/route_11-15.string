@@ -1,3 +1,4 @@
+// Route 11
 #org @gText_Route11South_TeamPlutoRoss_Intro
 I'm in a good mood; I think I'll beat\nyour Pok\emon up!
 
@@ -558,3 +559,618 @@ Did you know? These ponds were dug\nout by the citizens of Laplaz Town.\pThere a
 
 #org @gText_Route11South_EnaChat
 [RED]Could you check into whatever is\nhappening at Carnelidge Volcano?\pThe champ might be on her way,\nalready, but[.]\pYou're the only person I can trust[.]\pAnd[.] Thank you in advance. I'll be\ngoing back to Uteya Village soon.
+
+// Route 12
+#org @gText_Route12East_TriathleteJoanne_Intro
+Remember to stretch before you\nexercise.
+
+#org @gText_Route12East_TriathleteJoanne_Defeat
+Also, make sure you stretch before\nbattling!
+
+#org @gText_Route12East_TriathleteJoanne_Chat
+If you don't stretch, you could hurt\nyourself or your Pok\emon badly.
+
+#org @gText_Route12East_PsychicTony_Intro
+I foresee your Pok\emon, frozen in\nutter terror!
+
+#org @gText_Route12East_PsychicTony_Defeat
+Guh? It was my Pok\emon that would\nfreeze up?
+
+#org @gText_Route12East_PsychicTony_Chat
+Be careful not to catch frostbite.\pNot only does it hurt, it makes your\nspecial attacks weaker!
+
+#org @gText_Route12East_HikerDwight_Intro
+Gyahaha! It's energizing to see a\nyoungster out on the Bruccie\ltrails.\pC'mon, let's battle!
+
+#org @gText_Route12East_HikerDwight_Defeat
+Gyahaha! Your Pok\emon are just as\nenergized as you are!
+
+#org @gText_Route12East_HikerDwight_Chat
+Remember to keep warm out there.\nThe Bruccie trail is unforgiving.
+
+#org @gText_Route12East_TriathleteTrixie_Intro
+My Pok\emon are fast, like really\nfast. Think you can keep up?
+
+#org @gText_Route12East_TriathleteTrixie_Defeat
+Good job!
+
+#org @gText_Route12East_TriathleteTrixie_Chat
+Slow or fast, it doesn't matter.\nPlay to your Pok\emons' strengths.
+
+#org @gText_Route12East_GentlemanGeoffrey_Intro
+Good day. Shall we battle?
+
+#org @gText_Route12East_GentlemanGeoffrey_Defeat
+I say, that was quite enjoyable.
+
+#org @gText_Route12East_GentlemanGeoffrey_Chat
+I picked up Pok\emon battling as a\nhobby.\pWhat I didn't expect was for my\nPok\emon to become my trusted\lcompanions.
+
+#org @gText_Route12East_TrainerTipsHeldEvolutions
+Trainer Tips!\pSome Pok\emon only evolve when\nholding an item and leveling up.\pThis item will not be consumed\nwhen the evolution occurs.
+
+#org @gText_Route12East_TrainerTipsPremierBalls
+Trainer Tips!\pIf you buy 10 or more Pok\e Balls\nfrom a Pok\eMart, the clerk will\lgive you a Premier Ball for free.\pYou can receive multiple Premier\nBalls when buying Pok\e Balls in\lbulk.
+
+#org @gText_Route12East_Route12Spa
+Scalding Spa\pGet relaxed and refreshed alongside\nyour Pok\emon.
+
+#org @gText_Route12West_BugCatcherBrendan_Intro
+I-It's so cold[.]\nWarm me up with a battle, now!
+
+#org @gText_Route12West_BugCatcherBrendan_Defeat
+N-No fair[.]
+
+#org @gText_Route12West_BugCatcherBrendan_Chat
+It's s-so cold-d-d[.]\pB-But I won't st-stop wearing m-my\nshorts!
+
+#org @gText_Route12West_SkierChantal_Intro
+[RED]Oh, there's a trainer all the way\nout here?\pLet's finish our battle quickly so I\ncan get back to skiing!
+
+#org @gText_Route12West_SkierChantal_Defeat
+Hmph[.] You didn't have to end it that\nquickly.
+
+#org @gText_Route12West_SkierChantal_Chat
+[RED]My Pok\emon and I love to go skiing\ntogether.
+
+#org @gText_Route12West_HikerKumar_Intro
+My Pok\emon and I are all warmed up\nfor battle. Let's go!
+
+#org @gText_Route12West_HikerKumar_Defeat
+Now I'm fired up!
+
+#org @gText_Route12West_HikerKumar_Chat
+In cold environments, it's important\nto do whatever it takes to keep\lwarm.
+
+#org @gText_Route12West_SkierAubrey_Intro
+[RED]The slopes of Route 12 West attract\nskiers and Pok\emon trainers alike.\pAnd, guess what[.] I'm both a skier\nand a trainer!
+
+#org @gText_Route12West_SkierAubrey_Defeat
+I'm more of a skier than a trainer[.]
+
+#org @gText_Route12West_SkierAubrey_Chat
+[RED]Don't you just love the trails my\nskis leave?
+
+#org @gText_Route12West_SkierLenora_Intro
+[RED]Hey, be careful! People are skiing\nout here!\pI'll teach you some manners with a\nbattle.
+
+#org @gText_Route12West_SkierLenora_Defeat
+Well? Have you learned your lesson?
+
+#org @gText_Route12West_SkierLenora_Chat
+[RED]Be careful around skiers. Sometimes\nit can be difficult to stop in time.
+
+#org @gText_Route12West_SkierMegan_Intro
+[RED]I may be a skier, but I'm also a\ncompetent Pok\emon battler.\pHere, I'll show you!
+
+#org @gText_Route12West_SkierMegan_Defeat
+You're competent, too!
+
+#org @gText_Route12West_SkierMegan_Chat
+[RED]Skiing and battling are my passions.
+
+#org @gText_Route12West_SwimmerGreg_Intro
+You're riding a Pok\emon?\pDo you find the ocean around here\nuncomfortable?
+
+#org @gText_Route12West_SwimmerGreg_Defeat
+Battling while riding your Pok\emon[.]\nI see.
+
+#org @gText_Route12West_SwimmerGreg_Chat
+The ocean around here are freezing\ncold, but that's the way I like it.\pI wouldn't want to ride my Pok\emon\nhere, even if it was even colder.
+
+#org @gText_Route12West_TrainerTipsSign
+Trainer Tips!\pUsing repels deters weak Pok\emon\nfrom being encountered.\pA White Flute lowers the level\nof wild Pok\emon.\pBy using these items together,\nyou can avoid most encounters.
+
+#org @gText_Route12West_NavigationSign
+West: Bruccie Village\nNorth: Calicin Bay
+
+#org @gText_Route12RestHouse_Boy
+Hey, I know something really cool!\pRoute 12 is split into two halves:\nthe grassy eastern side, and the\lsnowy western side.\pCool, right?
+
+#org @gText_Route12RestHouse_YoungGirl
+Hey, I know something fun!\pPeradon Forest connects to a huge\nlake! You can even swim in it!\pThat's fun, right?
+
+#org @gText_Route12RestHouse_PoliceOfficer
+I received reports that Team Pluto\nhad been seen around here.\pIf you see them, you run right to a\nfriendly police officer, okay?\pDo not approach them. I repeat: do\nNOT approach them!
+
+#org @gText_Route12RestHouse_PsychicGirl
+I predict that[.] I will be very tired\nafter travelling to Bruccie Village.
+
+#org @gText_Route12RestHouse_OldMan
+Hoof[.] I used to hike across Route 12\nboth ways on my way to school.\pThese whipper-snappers don't\nunderstand the value of hard work.
+
+#org @gText_Route12RestHouse_Girl
+My dad is so excited to see these\nwild Mamoswines, tee hee!
+
+#org @gText_Route12RestHouse_Dad
+I'm taking my kids out on a hike to\nsee the wild Mamoswine!
+
+#org @gText_Route12RestHouse_GameboyKid
+Meh. Mamoswines, who cares?\nI'd rather just play my Gameboy[.]
+
+#org @gText_Route12RestHouse_Hiker
+Be careful if you choose to go out\ninto Route 12's mountainside.\pPeople have reported seeing a\nstrange icy Pok\emon.\pIt usually stares at people and\nleaves, but you'd best be careful\lif you see it.
+
+#org @gText_Route12RestHouse_PokemartMan
+This is your last chance before\nBruccie Village to restock your\lsupplies.\pMake sure you're prepared before\ngoing out onto Route 12!
+
+#org @gText_Route12RestHouse_Beauty
+This Rest House sure is handy, isn't\nit?\pIt's got a Pok\emon Center[.] And a\nPok\eMart[.]\pAnd, you can fly back to here any\ntime you want! So handy.
+
+#org @gText_Route12RestHouse_Cutscene_SeleneGreetsPlayer
+[BLACK]Selene: [RED]Oh, [PLAYER], fancy seeing\nyou here! How's it going?
+
+#org @gText_Route12RestHouse_Cutscene_SeleneAsksAboutBadges
+[BLACK]Selene: [RED]Hm? [RIVAL] isn't with you\ntoday?\pOh, he went on ahead to get gym\nbadges, you say?\pYou two are working so hard! I'm\nsure you'll have them all before\llong.\pHey[.] How many badges do you have,\n[PLAYER]?
+
+#org @gText_Route12RestHouse_Cutscene_SeleneLessThanTwoBadges
+[BLACK]Selene: [RED]You have fewer than two\nbadges[.]\pYou're a cheater. That's not champion\nlevel behaviour.
+
+#org @gText_Route12RestHouse_Cutscene_SeleneBadgesCount
+[BLACK]Selene: [RED]You have [BUFFER1] badges[.]
+
+#org @gText_Route12RestHouse_Cutscene_SeleneTwoBadges
+[BLACK]Selene: [RED]You must have faced many hardships\nduring your journey.\pDon't give up though, I'm sure you've\ngot this!
+
+#org @gText_Route12RestHouse_Cutscene_SeleneThreeBadges
+[BLACK]Selene: [RED]Your journey is starting to take\nshape.\pThe road ahead may be tough, but\nI'm sure you'll be resourceful and\lpull through!
+
+#org @gText_Route12RestHouse_Cutscene_SeleneFourBadges
+[BLACK]Selene: [RED]That's pretty good! You must've met\na lot of unique Pok\emon during\lyour journey.\pI'm sure you and your Pok\emon will\nsee this journey through to the\lend.
+
+#org @gText_Route12RestHouse_Cutscene_SeleneFiveBadges
+[BLACK]Selene: [RED]That's excellent! You must've faced\nevery challenge before you head\lon.\pKeep this up, and you'll give me a\nrun for my money someday, haha!
+
+#org @gText_Route12RestHouse_Cutscene_SeleneCommentsOnGymThemes
+[BLACK]Selene: [RED]What do you think of the\nKulure gyms?\pI helped the gym leaders refine\ntheir unique battle styles.
+
+#org @gText_Route12RestHouse_Cutscene_AlistairArrives
+[BLACK]Alistair: [BLUE]I knew I heard an\nirritating voice.\pAnd sure enough, there's our "Star\nChampion\" in action.\pJust can't let your gym leaders do\ntheir jobs without sticking your\lnose in, huh?
+
+#org @gText_Route12RestHouse_Cutscene_SeleneRepliesToAlistairsComment
+[BLACK]Selene: [RED]It's my duty to keep Kulure's\ngyms at their best.
+
+#org @gText_Route12RestHouse_Cutscene_AlistairRetortsToSelenesComment
+[BLACK]Alistair: [BLUE]Oh, I don't doubt it.\pIt's your duty to put your role as\nchampion above all else, no?\pAnd, what an excellent job you're\ndoing[.]
+
+#org @gText_Route12RestHouse_Cutscene_AlistairCommentsOnLaplazGymShuttingDown
+[BLACK]Alistair: [BLUE]The Laplaz Gym is vacant,\nand may shut down soon.\pSurely that is a sign of "keeping\nthem at their best,\" as you put\lit?
+
+#org @gText_Route12RestHouse_Cutscene_AlistairCommentsOnLaplazGymReopening
+[BLACK]Alistair: [BLUE]The Laplaz Gym was vacant,\nuntil recently.\pI heard it was a mutual acquaintance\nof ours that was responsible for it\lreopening though[.] Not you.
+
+#org @gText_Route12RestHouse_Cutscene_SeleneDismissesAlistairsClaim
+[BLACK]Selene: [RED]That's different.\pIt isn't my place to change how the\ntown handles gym leadership.
+
+#org @gText_Route12RestHouse_Cutscene_AlistairDismissesSelenesClaim
+[BLACK]Alistair: [BLUE]A convenient answer, as\nexpected.
+
+#org @gText_Route12RestHouse_Cutscene_AlistairTriesToLeave
+[BLACK]Alistair: [BLUE][PLAYER], it's good to see\nyou again.\pI was just investigating some rumours\nof an unusual legendary Pok\emon on\lRoute 12.\pBut[.] I must be going. I'm sure we\nwill cross paths again someday.
+
+#org @gText_Route12RestHouse_Cutscene_SeleneStopsAlistair
+[BLACK]Selene: [RED]Alistair, wait!
+
+#org @gText_Route12RestHouse_Cutscene_AlistairAcknowledgesBeingRecognized
+[BLACK]Alistair: [BLUE]My, my[.] So you recognize\nme, after all.
+
+#org @gText_Route12RestHouse_Cutscene_SeleneAsksWhereAlistairWent
+[BLACK]Selene: [RED]I wasn't sure at first[.]\pBut after we met in Daimyn City, I\nknew.\pAlistair. It's been 5 years since our\njourney. Where did you go?
+
+#org @gText_Route12RestHouse_Cutscene_AlistairSharesSomeHistory
+[BLACK]Alistair: [BLUE]You don't have the right to\nask a question like that.\pYou talk about the journey to\nbecoming a champion like it's some\lgreat endeavor.\pYou conveniently choose to keep\nforgetting those that it leaves\lbehind, though.\pYou and I[.] We set out with the\ndream to become the champion.\pWe pushed each other to our limits.\pBut[.] You were always the better\nbattler. I knew that.\pAnd, when Victini chose you, it was\nclear my dream was never going\lto be a reality.\pI gave up, but you didn't. You\nbecame the champion.\pYou did it, not me.\nI was just left behind.\pAnd, when you became the champion,\nyou stopped making time for your\lfriends and family.\pYou said you were "too busy\" for\nus. But, you were always too busy.
+
+#org @gText_Route12RestHouse_Cutscene_SeleneTalksAboutHerJourney
+[BLACK]Selene: [RED]Alistair[.] Our journey was\nimportant to me too.\pI have so many fond memories of\nour Pok\emon playing together.
+
+#org @gText_Route12RestHouse_Cutscene_AlistairTalksAboutEmboar
+[BLACK]Alistair: [BLUE]And yet, that's all they\nare - memories.\pEmboar hasn't been the same since\nour journey ended, either.\pHe has no interest in battling\nanymore, nor do I have the will to\ltrain him[.]\pYou see, his dream died too,\nSelene.\pTo become the champion, you must\nachieve something others can't.\pIt's as simple as that.
+
+#org @gText_Route12RestHouse_Cutscene_SeleneTalksAboutHerResponsibilities
+[BLACK]Selene: [RED]As a champion[.]\pAs Kulure's strongest trainer[.]\pI have a lot of important\nresponsibilities.\pSometimes I need to put those first,\neven if it isn't easy.\pIf I don't do what I need to, people\ncould get hurt.\pPlease understand that.
+
+#org @gText_Route12RestHouse_Cutscene_AlistairRejectsSelenesResponsibilities
+[BLACK]Alistair: [BLUE]5 years, Selene. It's been\n5 years.\pIn all that time, you couldn't even\nstop by to say hello?\pYou say you're doing what you must\nto keep people from getting hurt.\pIt's all a sham. You haven't even\nseen your own mother in 5 years.\pIf it weren't for me, she would be\nall alone.
+
+#org @gText_Route12RestHouse_Cutscene_AlistairLeaves
+[BLACK]Alistair: [BLUE]The position of Champion\nneeds to be removed.\pAll it does is hurt people and hinder\nthe region's progress.
+
+#org @gText_Route12RestHouse_Cutscene_SeleneLeaves
+[BLACK]Selene: [RED]I'm sorry you had to see\nthat, [PLAYER].\pBut[.] He's right, about all of it.\pI've made some mistakes and hurt\npeople dear to me.\p[PLAYER], please remember to cherish\nyour journey, even if you can't\lachieve what you set out to.\pIf you're planning to collect all the\ngym badges, you'll want to head to\lBruccie Village.\pI'm sure [RIVAL] has headed there\nas well.\pPlease excuse me. I need to catch\nup to Alistair before he's gone.
+
+// Route 13
+#org @gText_Route13_RestHouse
+Carnelidge Volcano Rest House\pRest up and restock before pushing\nfor the mountain peak!
+
+#org @gText_Route13_TrainerTips
+Trainer Tips!\pCertain locations can be returned to\nwith Fly, even if they don't have\la Pok\emon Center.
+
+#org @gText_Route13_GamblerDalton_Intro
+Let's toss a coin. Heads, I win.\nTails, you win.
+
+#org @gText_Route13_GamblerDalton_Defeat
+Tails[.] I lose.
+
+#org @gText_Route13_GamblerDalton_Chat
+What is life without a bit of risk?
+
+#org @gText_Route13_CollectorCharlie_Intro
+Ehehehehe! I found a rare Pok\emon\nnearby. Here, I'll show you!
+
+#org @gText_Route13_CollectorCharlie_Defeat
+H-how? It was rare[.]
+
+#org @gText_Route13_CollectorCharlie_Chat
+I don't care that I lost. I still\nhave a Pok\emon most people don't.
+
+#org @gText_Route13_HikerDwayne_Intro
+I have a dream to climb every\nmountain in Kulure.
+
+#org @gText_Route13_HikerDwayne_Defeat
+What's your dream, I wonder?
+
+#org @gText_Route13_HikerDwayne_Chat
+I'd better get back to hiking. There\nare still mountains out there that\lremain unclimbed!
+
+#org @gText_Route13_BlackBeltHector_Intro
+Swift as a coursing river[.]\nStrength of a raging fire[.]
+
+#org @gText_Route13_BlackBeltHector_Defeat
+Mysterious, like the dark side of the\nmoon[.]
+
+#org @gText_Route13_BlackBeltHector_Chat
+I repeat affirmations to myself while\nI train, to help me focus on my\lgoals.
+
+#org @gText_Route13_CamperEtie_Intro
+Hi there! My Pok\emon and I are\nhaving a picnic. Would you like to\ljoin us?
+
+#org @gText_Route13_CamperEtie_Defeat
+Oh! You wanted to battle?
+
+#org @gText_Route13_CamperEtie_Chat
+That was fun, but we're going to go\nback to picknicking now.
+
+#org @gText_Route13_BeautyCandice_Intro
+I'm out for a jog with my pet\nLycanroc.
+
+#org @gText_Route13_BeautyCandice_Defeat
+Oh dear!
+
+#org @gText_Route13_BeautyCandice_Chat
+My Lycanroc isn't used to battling.
+
+#org @gText_Route13_GamblerOwain_Intro
+How skilled are you, I wonder? Let's\nfind out!
+
+#org @gText_Route13_GamblerOwain_Defeat
+Heh, you have some skill!
+
+#org @gText_Route13_GamblerOwain_Chat
+Everyone is so serious these days.\nWhy not play a game once in a\lwhile?
+
+#org @gText_Route13_CollectorBenji_Intro
+Fufufufu, you found my secret place.
+
+#org @gText_Route13_CollectorBenji_Defeat
+Aaah, and you're strong too!
+
+#org @gText_Route13_CollectorBenji_Chat
+Go away! This is my secret place.\nYou can't have it.
+
+#org @gText_Route13_RestHouse_PCGuy
+The PC to my left will allow you to\naccess your Pok\emon and items.
+
+#org @gText_Route13_RestHouse_Hiker
+I make a point to return to Mount\nCarnelidge every year.\lIt's become something of a\ltradition now, hohoho!
+
+#org @gText_Route13_RestHouse_Merchant
+Why, hello! I've brought supplies\nfrom the Ferrox Village Pok\eMart.\pWould you like to buy something\nbefore you go?
+
+#org @gText_Route13_RestHouse_MerchantOpensShop
+Here's what I've got today[.]
+
+#org @gText_Route13_RestHouse_MerchantFarewell
+Good luck, and remember to pace\nyourself out there!
+
+#org @gText_Route13_RestHouse_Nurse
+You and your Pok\emon look tired.\nYou should rest!
+
+#org @gText_Route13_RestHouse_NurseHealed
+Ah, much better! It's important to be\nwell rested before climbing Mount\lCarnelidge.
+
+#org @gText_Route13_RestHouse_GuestBookGirl
+Wow, there are so many names in this\nguest book!\lI had no idea so many people came\lout this way.
+
+#org @gText_Route13_RestHouse_RestHouseRep
+Hello, trainer! Carnelidge Volcano is\nquite dangerous.\pWe've set up this Rest House to give\naspiring mountain climbers the\lopportunity to rest and refresh\lbefore tackling the mountain.\pNow that you've visited us, you'll\nbe able to return here by having\lyour Pok\emon use Fly. Provided you\lhave the necessary badge and HM,\lof course!\pPlease feel free to use any of\nthe amenities you find at the rest\lhouse!
+
+#org @gText_Route13_HikerLeft
+Hm[.] It looks like our group hasn't\narrived yet.
+
+#org @gText_Route13_HikerRight
+We shouldn't hike up the mountain\nwithout the rest of our group[.]\pIt would be reckless.
+
+#org @gText_Route13_HikerCommon
+Oh! Please be patient with us.\pWe're waiting for the rest of our\nhiking group to get here.\pI heard Hesson Pass is a popular\nhiking destination.\pWhy don't you try there? It's just\nnorth of Ferrox Village.
+
+// Route 14
+#org @gText_Route14_SwimmerIvan_Intro
+The waves of battle are calling us.\nAre you ready?
+
+#org @gText_Route14_SwimmerIvan_Defeat
+I guess I got swept away[.]
+
+#org @gText_Route14_SwimmerIvan_Chat
+Every wave brings a new challenge.\nSame goes for battles.
+
+#org @gText_Route14_HikerClifford_Intro
+The mountains have taught me\npatience. Can you endure my\lstrategy?
+
+#org @gText_Route14_HikerClifford_Defeat
+Seems like I've got more to learn\nfrom the mountains[.]
+
+#org @gText_Route14_HikerClifford_Chat
+Every rock on the path is a lesson.\nEvery battle, too.
+
+#org @gText_Route14_FishermanEsteban_Intro
+The sea is full of surprises, just\nlike our upcoming battle!
+
+#org @gText_Route14_FishermanEsteban_Defeat
+I guess I didn't cast the right\nstrategy[.]
+
+#org @gText_Route14_FishermanEsteban_Chat
+Every catch is a story. Every battle\nis a memory.
+
+#org @gText_Route14_FishermanTucker_Intro
+Fishing is a patient man's game. Are\nyou patient enough to battle me?
+
+#org @gText_Route14_FishermanTucker_Defeat
+Seems like I'm the one who needs to\nbe more patient[.]
+
+#org @gText_Route14_FishermanTucker_Chat
+Fishing and Pok\emon battles both\nrequire patience and strategy.
+
+#org @gText_Route14_SwimmerEleanor_Intro
+The water is perfect today for a\nswim and a battle!
+
+#org @gText_Route14_SwimmerEleanor_Defeat
+I guess I swam right into that\ndefeat[.]
+
+#org @gText_Route14_SwimmerEleanor_Chat
+Swimming helps me clear my mind for\nmy Pok\emon battles.
+
+#org @gText_Route14_BlackbeltJoaquin_Intro
+My fighting spirit is as strong as the\ncurrent. Can you withstand it?
+
+#org @gText_Route14_BlackbeltJoaquin_Defeat
+Your spirit is stronger than I\nanticipated[.]
+
+#org @gText_Route14_BlackbeltJoaquin_Chat
+A true warrior is like water, flexible\nyet powerful.
+
+#org @gText_Route14_SwimmerChris_Intro
+Let's make this battle a splash!
+
+#org @gText_Route14_SwimmerChris_Defeat
+I'm all washed up[.]
+
+#org @gText_Route14_SwimmerChris_Chat
+Even in defeat, there's a wave of\nlessons to learn.
+
+#org @gText_Route14_YoungsterFreddie_Intro
+I may be young, but I'm ready to\ngive it my all in this battle!
+
+#org @gText_Route14_YoungsterFreddie_Defeat
+Guess I've still got a lot to learn[.]
+
+#org @gText_Route14_YoungsterFreddie_Chat
+Every battle is a chance to learn\nsomething new!
+
+#org @gText_Route14_PsychicTobin_Intro
+Can you predict the outcome of our\nbattle, like I can?
+
+#org @gText_Route14_PsychicTobin_Defeat
+My predictions were[.] off.
+
+#org @gText_Route14_PsychicTobin_Chat
+Predicting the future is not as easy\nas it seems.
+
+#org @gText_Route14_SwimmerMacie_Intro
+Ready to dive into a battle with me?
+
+#org @gText_Route14_SwimmerMacie_Defeat
+I guess I'm in over my head[.]
+
+#org @gText_Route14_SwimmerMacie_Chat
+There's always more to learn, on land\nand in water.
+
+#org @gText_Route14_TrainerTipsFastSurfing
+Trainer Tips!\pYou can surf more quickly by\npressing and holding [B_BUTTON].
+
+// Route 15
+// North
+#org @gText_Route15North_SwimmerMiles_Intro
+I love swimming and battling! Let's\ndo both!
+
+#org @gText_Route15North_SwimmerMiles_Defeat
+Wow, you're as strong as the current!
+
+#org @gText_Route15North_SwimmerMiles_Chat
+Swimming helps me train my Pok\emon.\nThey've become quite strong!
+
+#org @gText_Route15North_SwimmerFiona_Intro
+The ocean's waves are my rhythm.\nReady to dance in a battle?
+
+#org @gText_Route15North_SwimmerFiona_Defeat
+Your rhythm is stronger than the\nocean's waves!
+
+#org @gText_Route15North_SwimmerFiona_Chat
+Battling while swimming is a great\nway to sync with my Pok\emon.
+
+#org @gText_Route15North_HikerKlaus_Intro
+What's that? You're wondering why a\nhiker is out at sea?\pBeat me, and maybe I'll tell you!
+
+#org @gText_Route15North_HikerKlaus_Defeat
+Oho! A resounding defeat.
+
+#org @gText_Route15North_HikerKlaus_Chat
+Alright, I'll tell you why I'm out\nhere[.]\pI love mountains, because they're\nmade out of rocks!\pSimilarly, I also love Rock type\nPok\emon!\pI heard there are interesting Rock\ntype Pok\emon that can be fished up\lin the ocean routes.\pI came running when I heard that!\pBut[.] I can't find them here[.] Maybe\nthey're on one of the other routes?
+
+#org @gText_Route15North_SwimmerUrsula_Intro
+I'm looking for rare Pok\emon, but\ninstead I've found a trainer.
+
+#org @gText_Route15North_SwimmerUrsula_Defeat
+Oh, what a rare trainer!
+
+#org @gText_Route15North_SwimmerUrsula_Chat
+Route 15 is so long that we refer\nto it's northern and southern halves\lseparately.\pBut, Pok\emon don't care about that!\nThe same species can be found in\lboth halves.\pDid you know that already?
+
+#org @gText_Route15North_SwimmerQuincy_Intro
+I'm an exceptional swimmer, but an\neven more exceptional trainer.\pHere, I'll show you!
+
+#org @gText_Route15North_SwimmerQuincy_Defeat
+Truly exceptional!
+
+#org @gText_Route15North_SwimmerQuincy_Chat
+You're an exceptional trainer too! I\nfeel we could be good friends.
+
+#org @gText_Route15North_CoolTrainerWesley_Intro
+Hmph. All the trainers here are weak.\nAre you weak too?
+
+#org @gText_Route15North_CoolTrainerWesley_Defeat
+Not weak[.] Strong!
+
+#org @gText_Route15North_CoolTrainerWesley_Chat
+Hmph. You made my day.\pI hope you'll keep going and become\neven stronger.
+
+#org @gText_Route15North_SuperNerdEthan_Intro
+Prepare to be dazzled by my rare\nPok\emon[.] You can't beat them!
+
+#org @gText_Route15North_SuperNerdEthan_Defeat
+No way! They were supposed to be\nunbeatable.
+
+#org @gText_Route15North_SuperNerdEthan_Chat
+Okay, you're strong. I get that now,\nsheesh.
+
+#org @gText_Route15North_ChannelerLila_Intro
+You[.] A curse hangs over you.\nUehehehe!
+
+#org @gText_Route15North_ChannelerLila_Defeat
+That curse is now over me[.]
+
+#org @gText_Route15North_ChannelerLila_Chat
+The sea is soothing on it's surface.\pBut[.] It hides unspeakable horrors\nbeneath the waves. Uehehehe!
+
+#org @gText_Route15North_RestStopAdvertisementSign
+Route 15 Rest Stop - Just a few\nminutes south of here!
+
+// South
+#org @gText_Route15South_NursePrompt
+Welcome to the Route 15 Rest Stop!\pIf you'd like, I can heal your weary\nPok\emon.
+
+#org @gText_Route15South_NurseHealing
+Okay, please let me see your\nPok\emon for a moment[.]
+
+#org @gText_Route15South_NurseHealingDone
+There. They're looking much better!
+
+#org @gText_Route15South_NurseOutro
+Please come see me again, if you are\nin need of healing.
+
+#org @gText_Route15South_Shopkeeper
+Welcome! I sell refreshments to keep\nyour Pok\emon feeling refreshed.
+
+#org @gText_Route15South_ShopkeeperDone
+Come again!
+
+#org @gText_Route15South_Boy
+This rest stop really saved my\nhide.\pMy Pok\emon were feeling pretty worn\nout before stopping here.\pTalk about convenient!
+
+#org @gText_Route15South_RuinManiac
+I've heard rumours that a legendary\nPok\emon rests somewhere nearby.\pI'm going to be the first person to\ndiscover it, just you wait and see!
+
+#org @gText_Route15South_SwimmerGerald_Intro
+I'm Gerald, a swimmer who loves\nthe open sea and its Pok\emon.
+
+#org @gText_Route15South_SwimmerGerald_Defeat
+You're a strong trainer. I admire\nyour skills.
+
+#org @gText_Route15South_SwimmerGerald_Chat
+The sea is full of surprises. Just\nlike our battle.
+
+#org @gText_Route15South_SwimmerAlexandra_Intro
+Hey you, do you like waves?
+
+#org @gText_Route15South_SwimmerAlexandra_Defeat
+Um[.] I asked if you liked waves, not\nbattles.
+
+#org @gText_Route15South_SwimmerAlexandra_Chat
+Sometimes I like to float on the\nwaves and let them carry me\laround.
+
+#org @gText_Route15South_SwimmerBernard_Intro
+My battle strategy is as bold and in-\nyour-face as my speedo is!
+
+#org @gText_Route15South_SwimmerBernard_Defeat
+Oooh! What a trunks-like battle\nstrategy that was.
+
+#org @gText_Route15South_SwimmerBernard_Chat
+Speedos rock! They show off more of\nmy sick bod!
+
+#org @gText_Route15South_SwimmerHarold_Intro
+I'll battle you with the Pok\emon I\njust caught!
+
+#org @gText_Route15South_SwimmerHarold_Defeat
+Hm[.] Maybe I ought to throw them\nback instead.
+
+#org @gText_Route15South_SwimmerHarold_Chat
+Catching Pok\emon on your fishing line\nis quite the thrill, isn't it?
+
+#org @gText_Route15South_SwimmerMelinda_Intro
+You want a battle? Okay, well let's\nmake it quick. I'm busy.
+
+#org @gText_Route15South_SwimmerMelinda_Defeat
+Very quick, indeed.
+
+#org @gText_Route15South_SwimmerMelinda_Chat
+I heard there's a secluded island\naround here somewhere.
+
+#org @gText_Route15South_BlackbeltFranklin_Intro
+My Pok\emon and I are as strong as a\ncoursing river.\pThink you can handle us, when we're\nthis powerful?
+
+#org @gText_Route15South_BlackbeltFranklin_Defeat
+Whoa! You're like a great typhoon\nyourself.
+
+#org @gText_Route15South_BlackbeltFranklin_Chat
+It seems my Pok\emon and I must get\nback to our training.\pWe are too weak.
+
+#org @gText_Route15South_SwimmerPatricia_Intro
+Tee hee! A trainer must battle when\ntheir eyes meet, even out here.
+
+#org @gText_Route15South_SwimmerPatricia_Defeat
+A trainer must also accept defeat\nwith grace, even out here[.]
+
+#org @gText_Route15South_SwimmerPatricia_Chat
+I don't see many trainers out here,\nso I simply must battle those I\lsee.
+
+#org @gText_Route15South_RestStopSign
+Route 15 Rest Stop\nFreshen up here!\pBattling on this island is strictly\nprohibited.
