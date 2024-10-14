@@ -5,7 +5,7 @@
 .include "../xse_defines.s"
 .include "../asm_defines.s"
 
-@ South
+@ Route 11 South
 .equ PlutoEncounterVar, 0x4059
 .equ PartnerVar, 0x4099 @ 0 for none, 1 for Rival, 2 for Alistair
 .equ PartnerRival, 0x1
@@ -1026,7 +1026,7 @@ EventScript_Route11South_EnaPostGym7:
     npcchatwithmovement gText_Route11South_EnaChat m_LookDown
     end
 
-@ North
+@ Route 11 North
 .global SignScript_LaplazTown_Entrance
 SignScript_LaplazTown_Entrance:
     msgbox gText_LaplazTown_EntranceSign MSG_SIGN
@@ -1089,4 +1089,795 @@ EventScript_Route11North_ParasolLadyTina:
 EventScript_Route11North_FishermanJonah:
     trainerbattle0 0x0 0xDF 0x0 gText_Route11North_FishermanJonah_Intro gText_Route11North_FishermanJonah_Defeat
     msgbox gText_Route11North_FishermanJonah_Chat MSG_NORMAL
+    end
+
+@ Route 12 East
+.global EventScript_Route12East_TriathleteJoanne
+EventScript_Route12East_TriathleteJoanne:
+    trainerbattle0 0x0 246 0x0 gText_Route12East_TriathleteJoanne_Intro gText_Route12East_TriathleteJoanne_Defeat
+    msgbox gText_Route12East_TriathleteJoanne_Chat MSG_NORMAL
+    end
+
+.global EventScript_Route12East_PsychicTony
+EventScript_Route12East_PsychicTony:
+    trainerbattle0 0x0 247 0x0 gText_Route12East_PsychicTony_Intro gText_Route12East_PsychicTony_Defeat
+    msgbox gText_Route12East_PsychicTony_Chat MSG_NORMAL
+    end
+
+.global EventScript_Route12East_HikerDwight
+EventScript_Route12East_HikerDwight:
+    trainerbattle0 0x0 248 0x0 gText_Route12East_HikerDwight_Intro gText_Route12East_HikerDwight_Defeat
+    msgbox gText_Route12East_HikerDwight_Chat MSG_NORMAL
+    end
+
+.global EventScript_Route12East_TriathleteTrixie
+EventScript_Route12East_TriathleteTrixie:
+    trainerbattle0 0x0 249 0x0 gText_Route12East_TriathleteTrixie_Intro gText_Route12East_TriathleteTrixie_Defeat
+    msgbox gText_Route12East_TriathleteTrixie_Chat MSG_NORMAL
+    end
+
+.global EventScript_Route12East_GentlemanGeoffrey
+EventScript_Route12East_GentlemanGeoffrey:
+    trainerbattle0 0x0 250 0x0 gText_Route12East_GentlemanGeoffrey_Intro gText_Route12East_GentlemanGeoffrey_Defeat
+    msgbox gText_Route12East_GentlemanGeoffrey_Chat MSG_NORMAL
+    end
+
+.global EventScript_Route12East_TM95_Snarl
+EventScript_Route12East_TM95_Snarl:
+    setvar CHOSEN_ITEM ITEM_TM95
+    call ItemScript_Common_FindTM
+    end
+
+.global SignScript_Route12East_TrainerTipsHeldEvolutions
+SignScript_Route12East_TrainerTipsHeldEvolutions:
+    msgbox gText_Route12East_TrainerTipsHeldEvolutions MSG_SIGN
+    end
+
+.global SignScript_Route12East_TrainerTipsPremierBalls
+SignScript_Route12East_TrainerTipsPremierBalls:
+    msgbox gText_Route12East_TrainerTipsPremierBalls MSG_SIGN
+    end
+
+.global SignScript_Route12East_Route12Spa
+SignScript_Route12East_Route12Spa:
+    msgbox gText_Route12East_Route12Spa MSG_SIGN
+    end
+
+@ Route 12 West
+.global MapScript_Route12West
+MapScript_Route12West:
+    mapscript MAP_SCRIPT_ON_LOAD MapEntryScript_Route12West_SetWeather
+    .byte MAP_SCRIPT_TERMIN
+
+MapEntryScript_Route12West_SetWeather:
+    random 0xA @ Between 0 and 10
+    compare LASTRESULT 0x4 @ 50%
+    if lessorequal _call SetWeatherSnowstorm
+    compare LASTRESULT 0x9 @ 10%
+    if greaterorequal _call SetWeatherClear
+    @ Otherwise, leave as default weather (steady snowfall)
+    end
+
+.global EventScript_Route12West_TM13IceBeam
+EventScript_Route12West_TM13IceBeam:
+    setvar CHOSEN_ITEM ITEM_TM13
+    call ItemScript_Common_FindTM
+    end
+
+.global EventScript_Route12West_Slowbronite
+EventScript_Route12West_Slowbronite:
+    finditem ITEM_SLOWBRONITE 0x1
+    end
+
+.global EventScript_Route12West_BugCatcherBrendan
+EventScript_Route12West_BugCatcherBrendan:
+    trainerbattle0 0x0 259 0x0 gText_Route12West_BugCatcherBrendan_Intro gText_Route12West_BugCatcherBrendan_Defeat
+    msgbox gText_Route12West_BugCatcherBrendan_Chat MSG_NORMAL
+    end
+
+.global EventScript_Route12West_SkierChantal
+EventScript_Route12West_SkierChantal:
+    trainerbattle0 0x0 260 0x0 gText_Route12West_SkierChantal_Intro gText_Route12West_SkierChantal_Defeat
+    msgbox gText_Route12West_SkierChantal_Chat MSG_NORMAL
+    end
+
+.global EventScript_Route12West_HikerKumar
+EventScript_Route12West_HikerKumar:
+    trainerbattle0 0x0 261 0x0 gText_Route12West_HikerKumar_Intro gText_Route12West_HikerKumar_Defeat
+    msgbox gText_Route12West_HikerKumar_Chat MSG_NORMAL
+    end
+
+.global EventScript_Route12West_SkierAubrey
+EventScript_Route12West_SkierAubrey:
+    trainerbattle0 0x0 262 0x0 gText_Route12West_SkierAubrey_Intro gText_Route12West_SkierAubrey_Defeat
+    msgbox gText_Route12West_SkierAubrey_Chat MSG_NORMAL
+    end
+
+.global EventScript_Route12West_SkierLenora
+EventScript_Route12West_SkierLenora:
+    trainerbattle0 0x0 263 0x0 gText_Route12West_SkierLenora_Intro gText_Route12West_SkierLenora_Defeat
+    msgbox gText_Route12West_SkierLenora_Chat MSG_NORMAL
+    end
+
+.global EventScript_Route12West_SkierMegan
+EventScript_Route12West_SkierMegan:
+    trainerbattle0 0x0 264 0x0 gText_Route12West_SkierMegan_Intro gText_Route12West_SkierMegan_Defeat
+    msgbox gText_Route12West_SkierMegan_Chat MSG_NORMAL
+    end
+
+.global EventScript_Route12West_SwimmerGreg
+EventScript_Route12West_SwimmerGreg:
+    trainerbattle0 0x0 265 0x0 gText_Route12West_SwimmerGreg_Intro gText_Route12West_SwimmerGreg_Defeat
+    msgbox gText_Route12West_SwimmerGreg_Chat MSG_NORMAL
+    end
+
+.global SignScript_Route12West_TrainerTips
+SignScript_Route12West_TrainerTips:
+    msgbox gText_Route12West_TrainerTipsSign MSG_SIGN
+    end
+
+.global SignScript_Route12West_Navigation
+SignScript_Route12West_Navigation:
+    msgbox gText_Route12West_NavigationSign MSG_SIGN
+    end
+
+@ Rest House
+.equ Selene, 14
+.equ Alistair, 15
+.equ StoryEventVar, 0x405C
+
+.global MapScript_Route12RestHouse
+MapScript_Route12RestHouse:
+    mapscript MAP_SCRIPT_ON_TRANSITION MapEntryScript_Route12_RestHouse_FlightFlag
+    mapscript MAP_SCRIPT_ON_FRAME_TABLE LevelScripts_Route12_RestHouse_StoryEvents
+    .byte MAP_SCRIPT_TERMIN
+
+MapEntryScript_Route12_RestHouse_FlightFlag:
+    setworldmapflag 0x8A3 @ Visited Route 12 Rest House
+    sethealingplace 0xD @ Route 12 Rest House
+    call ResetUteyaVillageGymFlagsOnWhiteout
+    end
+
+LevelScripts_Route12_RestHouse_StoryEvents:
+    levelscript StoryEventVar 0x0 LevelScript_RestHouse_Cutscene
+    .hword LEVEL_SCRIPT_TERMIN
+
+LevelScript_RestHouse_Cutscene:
+    getplayerpos 0x4000 0x4001
+    compare 0x4000 0xD
+    if lessorequal _call MovePlayerFromSouthEntrance
+    getplayerpos 0x4000 0x4001
+    compare 0x4000 0xD
+    if greaterthan _call MovePlayerFromEastEntrance
+    sound 0x15 @ Exclaim
+    applymovement Selene m_Surprise
+    waitse
+	applymovement Selene m_LookDown
+    playbgm 0x196 @ Bianca Encounter
+    msgbox gText_Route12RestHouse_Cutscene_SeleneGreetsPlayer MSG_NORMAL
+    applymovement Selene m_Question
+    msgbox gText_Route12RestHouse_Cutscene_SeleneAsksAboutBadges MSG_NORMAL
+    call CountBadgesForAppraisal
+    applymovement Alistair m_AlistairArrives
+    msgbox gText_Route12RestHouse_Cutscene_SeleneCommentsOnGymThemes MSG_NORMAL
+    waitmovement Alistair
+    playbgm 0x173 @ Alistair's Theme
+    applymovement PLAYER m_LookLeft
+    msgbox gText_Route12RestHouse_Cutscene_AlistairArrives MSG_NORMAL
+    applymovement Selene m_LookLeft
+    msgbox gText_Route12RestHouse_Cutscene_SeleneRepliesToAlistairsComment MSG_NORMAL
+    applymovement Alistair m_WalkUp
+    waitmovement Alistair
+    applymovement Alistair m_LookRight
+    applymovement PLAYER m_LookUp
+    msgbox gText_Route12RestHouse_Cutscene_AlistairRetortsToSelenesComment MSG_NORMAL
+    checkflag 0x3F @ Casey hidden in gym
+    if SET _call AlistairCommentsOnLaplazBeingVacant
+    if NOT_SET _call AlistairCommentsOnLaplazAlmostShuttingDown
+    msgbox gText_Route12RestHouse_Cutscene_SeleneDismissesAlistairsClaim MSG_NORMAL
+    msgbox gText_Route12RestHouse_Cutscene_AlistairDismissesSelenesClaim MSG_NORMAL
+    applymovement Alistair m_WalkDown
+    waitmovement Alistair
+    applymovement Alistair m_LookRight
+    applymovement Selene m_LookDown
+    applymovement PLAYER m_LookLeft
+    msgbox gText_Route12RestHouse_Cutscene_AlistairTriesToLeave MSG_NORMAL
+    applymovement Alistair m_AlistairStartsToLeave
+    applymovement Selene m_SeleneStopsAlistair
+    waitmovement Selene
+    playbgm 0x159 @ N's Farewell
+    msgbox gText_Route12RestHouse_Cutscene_SeleneStopsAlistair MSG_NORMAL
+    applymovement Alistair m_LookUp
+    msgbox gText_Route12RestHouse_Cutscene_AlistairAcknowledgesBeingRecognized MSG_NORMAL
+    msgbox gText_Route12RestHouse_Cutscene_SeleneAsksWhereAlistairWent MSG_NORMAL
+    msgbox gText_Route12RestHouse_Cutscene_AlistairSharesSomeHistory MSG_NORMAL
+    msgbox gText_Route12RestHouse_Cutscene_SeleneTalksAboutHerJourney MSG_NORMAL
+    msgbox gText_Route12RestHouse_Cutscene_AlistairTalksAboutEmboar MSG_NORMAL
+    msgbox gText_Route12RestHouse_Cutscene_SeleneTalksAboutHerResponsibilities MSG_NORMAL
+    msgbox gText_Route12RestHouse_Cutscene_AlistairRejectsSelenesResponsibilities MSG_NORMAL
+    applymovement Alistair m_LookDown
+    msgbox gText_Route12RestHouse_Cutscene_AlistairLeaves MSG_NORMAL
+    applymovement Alistair m_NPCsLeave
+    waitmovement Alistair
+    playse 0x8 @ Door open
+    pause DELAY_HALFSECOND
+    hidesprite Alistair
+    pause DELAY_HALFSECOND
+    applymovement Selene m_SeleneReturnsToPlayer
+    waitmovement Selene
+    applymovement PLAYER m_LookUp
+    msgbox gText_Route12RestHouse_Cutscene_SeleneLeaves MSG_NORMAL
+    applymovement Selene m_SeleneStopsAlistair
+    waitmovement Selene
+    applymovement PLAYER m_LookLeft
+    applymovement Selene m_WalkDown
+    waitmovement Selene
+    applymovement Selene m_WalkDown
+    waitmovement Selene
+    applymovement Selene m_NPCsLeave
+    pause DELAY_HALFSECOND
+    applymovement PLAYER m_LookDown
+    waitmovement Selene
+    playse 0x8 @ Door open
+    pause DELAY_HALFSECOND
+    hidesprite Selene
+    fadedefaultbgm
+    setflag 0x44 @ Hide Selene and Alistair in Rest House
+    setvar StoryEventVar 0x1
+    special 0x8E @ Refresh map
+    end
+
+MovePlayerFromSouthEntrance:
+    compare 0x4000 0xC @ Player is on left entrance
+    if equal _call PlayerWalkRight_Return
+    applymovement PLAYER m_PlayerWalksUp
+    waitmovement PLAYER
+    return
+
+MovePlayerFromEastEntrance:
+    applymovement PLAYER m_PlayerWalksLeft
+    waitmovement PLAYER
+    return
+
+CountBadgesForAppraisal:
+    callasm CountBadges
+    buffernumber 0x0 LASTRESULT
+    switch LASTRESULT
+    case 0, LessThanTwoBadges
+    case 1, LessThanTwoBadges
+    case 2, TwoBadges
+    case 3, ThreeBadges
+    case 4, FourBadges
+    case 5, FiveBadges
+    return
+
+LessThanTwoBadges:
+    fanfare 0x10F @ Big Failure
+    msgbox gText_Route12RestHouse_Cutscene_SeleneBadgesCount MSG_KEEPOPEN
+    waitfanfare
+    msgbox gText_Route12RestHouse_Cutscene_SeleneLessThanTwoBadges MSG_NORMAL
+    return
+
+TwoBadges:
+    fanfare 0x10F @ Big Failure
+    msgbox gText_Route12RestHouse_Cutscene_SeleneBadgesCount MSG_KEEPOPEN
+    waitfanfare
+    msgbox gText_Route12RestHouse_Cutscene_SeleneTwoBadges MSG_NORMAL
+    return
+
+ThreeBadges:
+    fanfare 0x10E @ Small Failure
+    msgbox gText_Route12RestHouse_Cutscene_SeleneBadgesCount MSG_KEEPOPEN
+    waitfanfare
+    msgbox gText_Route12RestHouse_Cutscene_SeleneThreeBadges MSG_NORMAL
+    return
+
+FourBadges:
+    fanfare 0x13E @ Obtain Item
+    msgbox gText_Route12RestHouse_Cutscene_SeleneBadgesCount MSG_KEEPOPEN
+    waitfanfare
+    msgbox gText_Route12RestHouse_Cutscene_SeleneFourBadges MSG_NORMAL
+    return
+
+FiveBadges:
+    fanfare 0x13D @ Gym Victory
+    msgbox gText_Route12RestHouse_Cutscene_SeleneBadgesCount MSG_KEEPOPEN
+    waitfanfare
+    msgbox gText_Route12RestHouse_Cutscene_SeleneFiveBadges MSG_NORMAL
+    return
+
+AlistairCommentsOnLaplazBeingVacant:
+    msgbox gText_Route12RestHouse_Cutscene_AlistairCommentsOnLaplazGymShuttingDown MSG_NORMAL
+    return
+
+AlistairCommentsOnLaplazAlmostShuttingDown:
+    msgbox gText_Route12RestHouse_Cutscene_AlistairCommentsOnLaplazGymReopening MSG_NORMAL
+    return
+
+.global EventScript_Route12RestHouse_Boy
+EventScript_Route12RestHouse_Boy:
+    npcchatwithmovement gText_Route12RestHouse_Boy m_LookDown
+    end
+
+.global EventScript_Route12RestHouse_YoungGirl
+EventScript_Route12RestHouse_YoungGirl:
+    npcchatwithmovement gText_Route12RestHouse_YoungGirl m_LookDown
+    end
+
+.global EventScript_Route12RestHouse_PoliceOfficer
+EventScript_Route12RestHouse_PoliceOfficer:
+    npcchatwithmovement gText_Route12RestHouse_PoliceOfficer m_LookDown
+    end
+
+.global EventScript_Route12RestHouse_PsychicGirl
+EventScript_Route12RestHouse_PsychicGirl:
+    npcchatwithmovement gText_Route12RestHouse_PsychicGirl m_LookDown
+    end
+
+.global EventScript_Route12RestHouse_OldMan
+EventScript_Route12RestHouse_OldMan:
+    npcchatwithmovement gText_Route12RestHouse_OldMan m_LookLeft
+    end
+
+.global EventScript_Route12RestHouse_Girl
+EventScript_Route12RestHouse_Girl:
+    npcchatwithmovement gText_Route12RestHouse_Girl m_LookRight
+    end
+
+.global EventScript_Route12RestHouse_Dad
+EventScript_Route12RestHouse_Dad:
+    npcchatwithmovement gText_Route12RestHouse_Dad m_LookLeft
+    end
+
+.global EventScript_Route12RestHouse_GameboyKid
+EventScript_Route12RestHouse_GameboyKid:
+    npcchatwithmovement gText_Route12RestHouse_GameboyKid m_LookDown
+    end
+
+.global EventScript_Route12RestHouse_Hiker
+EventScript_Route12RestHouse_Hiker:
+    npcchat gText_Route12RestHouse_Hiker
+    end
+
+.global EventScript_Route12RestHouse_PokemartMan
+EventScript_Route12RestHouse_PokemartMan:
+    npcchat gText_Route12RestHouse_PokemartMan
+    end
+
+.global EventScript_Route12RestHouse_Beauty
+EventScript_Route12RestHouse_Beauty:
+    npcchatwithmovement gText_Route12RestHouse_Beauty m_LookUp
+    end
+
+m_PlayerWalksUp: .byte walk_up, walk_up, walk_up, walk_up, end_m
+m_PlayerWalksLeft: .byte walk_left, walk_left, walk_left, walk_left, walk_left, walk_left, walk_left, walk_left, walk_left, walk_left, look_up, end_m
+m_AlistairArrives: .byte walk_right, walk_right, walk_right, walk_right, walk_right, walk_right, walk_right, walk_right, end_m
+m_AlistairStartsToLeave: .byte walk_down, end_m
+m_SeleneStopsAlistair: .byte walk_left, look_down, end_m
+m_NPCsLeave: .byte walk_down, walk_down, walk_down, end_m
+m_SeleneReturnsToPlayer: .byte walk_right, look_down, end_m
+
+@ Route 13
+.global MapScript_Route13
+MapScript_Route13:
+    mapscript MAP_SCRIPT_ON_LOAD Route13_HandleGruntVisibility
+    .byte MAP_SCRIPT_TERMIN
+
+Route13_HandleGruntVisibility:
+    checkflag 0x826 @ Has Tsarvosa City gym badge
+    if SET _goto MoveHikersIntoPosition
+    end
+
+MoveHikersIntoPosition:
+    movesprite2 26 0x47 0x16
+    movesprite2 27 0x48 0x16
+    end
+
+.global EventScript_Route13_FindTM39RockTomb
+EventScript_Route13_FindTM39RockTomb:
+    setvar CHOSEN_ITEM ITEM_TM39
+    call ItemScript_Common_FindTM
+    end
+
+.global SignScript_Route13_RestHouse
+SignScript_Route13_RestHouse:
+    msgbox gText_Route13_RestHouse MSG_SIGN
+    end
+
+.global SignScript_Route13_TrainerTips
+SignScript_Route13_TrainerTips:
+    msgbox gText_Route13_TrainerTips MSG_SIGN
+    end
+
+.global EventScript_Route13_GamblerDalton
+EventScript_Route13_GamblerDalton:
+    trainerbattle0 0x0 0x34 0x0 gText_Route13_GamblerDalton_Intro gText_Route13_GamblerDalton_Defeat
+    msgbox gText_Route13_GamblerDalton_Chat MSG_NORMAL
+    end
+
+.global EventScript_Route13_CollectorCharlie
+EventScript_Route13_CollectorCharlie:
+    trainerbattle0 0x0 0x35 0x0 gText_Route13_CollectorCharlie_Intro gText_Route13_CollectorCharlie_Defeat
+    msgbox gText_Route13_CollectorCharlie_Chat MSG_NORMAL
+    end
+
+.global EventScript_Route13_HikerDwayne
+EventScript_Route13_HikerDwayne:
+    trainerbattle0 0x0 0x36 0x0 gText_Route13_HikerDwayne_Intro gText_Route13_HikerDwayne_Defeat
+    msgbox gText_Route13_HikerDwayne_Chat MSG_NORMAL
+    end
+
+.global EventScript_Route13_BlackBeltHector
+EventScript_Route13_BlackBeltHector:
+    trainerbattle0 0x0 0x37 0x0 gText_Route13_BlackBeltHector_Intro gText_Route13_BlackBeltHector_Defeat
+    msgbox gText_Route13_BlackBeltHector_Chat MSG_NORMAL
+    end
+
+.global EventScript_Route13_CamperEtie
+EventScript_Route13_CamperEtie:
+    trainerbattle0 0x0 0x38 0x0 gText_Route13_CamperEtie_Intro gText_Route13_CamperEtie_Defeat
+    msgbox gText_Route13_CamperEtie_Chat MSG_NORMAL
+    end
+
+.global EventScript_Route13_BeautyCandice
+EventScript_Route13_BeautyCandice:
+    trainerbattle0 0x0 0x39 0x0 gText_Route13_BeautyCandice_Intro gText_Route13_BeautyCandice_Defeat
+    msgbox gText_Route13_BeautyCandice_Chat MSG_NORMAL
+    end
+
+.global EventScript_Route13_GamblerOwain
+EventScript_Route13_GamblerOwain:
+    trainerbattle0 0x0 0x3A 0x0 gText_Route13_GamblerOwain_Intro gText_Route13_GamblerOwain_Defeat
+    msgbox gText_Route13_GamblerOwain_Chat MSG_NORMAL
+    end
+
+.global EventScript_Route13_CollectorBenji
+EventScript_Route13_CollectorBenji:
+    trainerbattle0 0x0 0x3B 0x0 gText_Route13_CollectorBenji_Intro gText_Route13_CollectorBenji_Defeat
+    msgbox gText_Route13_CollectorBenji_Chat MSG_NORMAL
+    end
+
+.global EventScript_Route13_Hiker_Left
+EventScript_Route13_Hiker_Left:
+    msgbox gText_Route13_HikerLeft MSG_NORMAL
+    faceplayer
+    npcchatwithmovement gText_Route13_HikerCommon m_LookRight
+    end
+
+.global EventScript_Route13_Hiker_Right
+EventScript_Route13_Hiker_Right:
+    msgbox gText_Route13_HikerRight MSG_NORMAL
+    faceplayer
+    npcchatwithmovement gText_Route13_HikerCommon m_LookLeft
+    end
+
+@@@@@@@@@@ Route 13 Rest House @@@@@@@@@@
+.global MapScript_Route13_RestHouse
+MapScript_Route13_RestHouse:
+    mapscript MAP_SCRIPT_ON_TRANSITION MapEntryScript_Route13_RestHouse_FlightFlag
+    .byte MAP_SCRIPT_TERMIN
+
+MapEntryScript_Route13_RestHouse_FlightFlag:
+    setworldmapflag 0x8A2
+    end
+
+.global EventScript_Route13_RestHouse_PCGuy
+EventScript_Route13_RestHouse_PCGuy:
+    npcchatwithmovement gText_Route13_RestHouse_PCGuy m_LookDown
+    end
+
+.global EventScript_Route13_RestHouse_Hiker
+EventScript_Route13_RestHouse_Hiker:
+    npcchatwithmovement gText_Route13_RestHouse_Hiker m_LookLeft
+    end
+
+.global EventScript_Route13_RestHouse_Merchant
+EventScript_Route13_RestHouse_Merchant:
+    faceplayer
+    msgbox gText_Route13_RestHouse_Merchant MSG_YESNO
+    compare LASTRESULT YES
+    If equal _call MerchantShop
+    msgbox gText_Route13_RestHouse_MerchantFarewell MSG_NORMAL
+    applymovement 0x3 m_LookRight
+    end
+
+MerchantShop:
+    lock
+    msgbox gText_Route13_RestHouse_MerchantOpensShop MSG_KEEPOPEN
+    pokemart RestHouseItems
+    return
+
+.align 1
+RestHouseItems:
+    .hword ITEM_POKE_BALL
+    .hword ITEM_FRESH_WATER
+    .hword ITEM_FULL_HEAL
+    .hword ITEM_REVIVE
+    .hword ITEM_REPEL
+    .hword ITEM_ESCAPE_ROPE
+    .hword ITEM_NONE
+
+.global EventScript_Route13_RestHouse_Nurse
+EventScript_Route13_RestHouse_Nurse:
+    faceplayer
+    lock
+    msgbox gText_Route13_RestHouse_Nurse MSG_NORMAL
+    call PlayerHealNurse
+    msgbox gText_Route13_RestHouse_NurseHealed MSG_NORMAL
+    applymovement 0x4 m_LookDown
+    end
+
+.global EventScript_Route13_RestHouse_GuestBookGirl
+EventScript_Route13_RestHouse_GuestBookGirl:
+    npcchatwithmovement gText_Route13_RestHouse_GuestBookGirl m_LookUp
+    end
+
+.global EventScript_Route13_RestHouse_RestHouseRep
+EventScript_Route13_RestHouse_RestHouseRep:
+    npcchatwithmovement gText_Route13_RestHouse_RestHouseRep m_LookLeft
+    end
+
+@@@@@@@@@@ Route 13 Cave @@@@@@@@@@
+.global MapScript_Route13Cave
+MapScript_Route13Cave:
+    mapscript MAP_SCRIPT_ON_RESUME Route13Cave_SetupBreakableIce
+    mapscript MAP_SCRIPT_ON_LOAD Route13Cave_SetupBreakableFloorsInIceRoom
+    mapscript MAP_SCRIPT_ON_FRAME_TABLE LevelScripts_Route13Cave
+    .byte MAP_SCRIPT_TERMIN
+
+Route13Cave_SetupBreakableIce:
+    cmda6 0x4 @ Taken from XSE load of Vanilla FR scripts
+    end
+
+Route13Cave_SetupBreakableFloorsInIceRoom:
+    special 0x135 @ Setup cracked ice floors
+    end
+
+LevelScripts_Route13Cave:
+    levelscript 0x4001 0x1 LevelScript_HandleBreakableIce
+	.hword LEVEL_SCRIPT_TERMIN
+
+LevelScript_HandleBreakableIce:
+    lockall
+    pause DELAY_HALFSECOND
+    applymovement PLAYER m_HideSprite
+    waitmovement ALLEVENTS
+    sound 0x25 @ Fall
+    pause DELAY_1SECOND
+    warphole 2 61
+    waitstate
+    releaseall
+    end
+
+.global EventScript_Route13Cave_TM65ShadowClaw
+EventScript_Route13Cave_TM65ShadowClaw:
+    setvar CHOSEN_ITEM ITEM_TM65
+    call ItemScript_Common_FindTM
+    end
+
+@ Route 14
+.global EventScript_Route14_SwimmerIvan
+EventScript_Route14_SwimmerIvan:
+    trainerbattle0 0x0 333 0x0 gText_Route14_SwimmerIvan_Intro gText_Route14_SwimmerIvan_Defeat
+    msgbox gText_Route14_SwimmerIvan_Chat MSG_NORMAL
+    end
+
+.global EventScript_Route14_HikerClifford
+EventScript_Route14_HikerClifford:
+    trainerbattle0 0x0 334 0x0 gText_Route14_HikerClifford_Intro gText_Route14_HikerClifford_Defeat
+    msgbox gText_Route14_HikerClifford_Chat MSG_NORMAL
+    end
+
+.global EventScript_Route14_FishermanEsteban
+EventScript_Route14_FishermanEsteban:
+    trainerbattle0 0x0 335 0x0 gText_Route14_FishermanEsteban_Intro gText_Route14_FishermanEsteban_Defeat
+    msgbox gText_Route14_FishermanEsteban_Chat MSG_NORMAL
+    end
+
+.global EventScript_Route14_FishermanTucker
+EventScript_Route14_FishermanTucker:
+    trainerbattle0 0x0 336 0x0 gText_Route14_FishermanTucker_Intro gText_Route14_FishermanTucker_Defeat
+    msgbox gText_Route14_FishermanTucker_Chat MSG_NORMAL
+    end
+
+.global EventScript_Route14_SwimmerEleanor
+EventScript_Route14_SwimmerEleanor:
+    trainerbattle0 0x0 337 0x0 gText_Route14_SwimmerEleanor_Intro gText_Route14_SwimmerEleanor_Defeat
+    msgbox gText_Route14_SwimmerEleanor_Chat MSG_NORMAL
+    end
+
+.global EventScript_Route14_BlackbeltJoaquin
+EventScript_Route14_BlackbeltJoaquin:
+    trainerbattle0 0x0 338 0x0 gText_Route14_BlackbeltJoaquin_Intro gText_Route14_BlackbeltJoaquin_Defeat
+    msgbox gText_Route14_BlackbeltJoaquin_Chat MSG_NORMAL
+    end
+
+.global EventScript_Route14_SwimmerChris
+EventScript_Route14_SwimmerChris:
+    trainerbattle0 0x0 339 0x0 gText_Route14_SwimmerChris_Intro gText_Route14_SwimmerChris_Defeat
+    msgbox gText_Route14_SwimmerChris_Chat MSG_NORMAL
+    end
+
+.global EventScript_Route14_YoungsterFreddie
+EventScript_Route14_YoungsterFreddie:
+    trainerbattle0 0x0 340 0x0 gText_Route14_YoungsterFreddie_Intro gText_Route14_YoungsterFreddie_Defeat
+    msgbox gText_Route14_YoungsterFreddie_Chat MSG_NORMAL
+    end
+
+.global EventScript_Route14_PsychicTobin
+EventScript_Route14_PsychicTobin:
+    trainerbattle0 0x0 341 0x0 gText_Route14_PsychicTobin_Intro gText_Route14_PsychicTobin_Defeat
+    msgbox gText_Route14_PsychicTobin_Chat MSG_NORMAL
+    end
+
+.global EventScript_Route14_SwimmerMacie
+EventScript_Route14_SwimmerMacie:
+    trainerbattle0 0x0 342 0x0 gText_Route14_SwimmerMacie_Intro gText_Route14_SwimmerMacie_Defeat
+    msgbox gText_Route14_SwimmerMacie_Chat MSG_NORMAL
+    end
+
+.global EventScript_Route14_FindTM27Return
+EventScript_Route14_FindTM27Return:
+    setvar CHOSEN_ITEM ITEM_TM27
+    call ItemScript_Common_FindTM
+    end
+
+.global SignScript_Route14_TrainerTipsFastSurfing
+SignScript_Route14_TrainerTipsFastSurfing:
+    msgbox gText_Route14_TrainerTipsFastSurfing MSG_SIGN
+    end
+
+@ Route 15 North
+.global EventScript_Route15North_SwimmerMiles
+EventScript_Route15North_SwimmerMiles:
+    trainerbattle0 0x0 343 0x0 gText_Route15North_SwimmerMiles_Intro gText_Route15North_SwimmerMiles_Defeat
+    msgbox gText_Route15North_SwimmerMiles_Chat MSG_NORMAL
+    end
+
+.global EventScript_Route15North_SwimmerFiona
+EventScript_Route15North_SwimmerFiona:
+    trainerbattle0 0x0 344 0x0 gText_Route15North_SwimmerFiona_Intro gText_Route15North_SwimmerFiona_Defeat
+    msgbox gText_Route15North_SwimmerFiona_Chat MSG_NORMAL
+    end
+
+.global EventScript_Route15North_HikerKlaus
+EventScript_Route15North_HikerKlaus:
+    trainerbattle0 0x0 345 0x0 gText_Route15North_HikerKlaus_Intro gText_Route15North_HikerKlaus_Defeat
+    msgbox gText_Route15North_HikerKlaus_Chat MSG_NORMAL
+    end
+
+.global EventScript_Route15North_SwimmerUrsula
+EventScript_Route15North_SwimmerUrsula:
+    trainerbattle0 0x0 346 0x0 gText_Route15North_SwimmerUrsula_Intro gText_Route15North_SwimmerUrsula_Defeat
+    msgbox gText_Route15North_SwimmerUrsula_Chat MSG_NORMAL
+    end
+
+.global EventScript_Route15North_SwimmerQuincy
+EventScript_Route15North_SwimmerQuincy:
+    trainerbattle0 0x0 347 0x0 gText_Route15North_SwimmerQuincy_Intro gText_Route15North_SwimmerQuincy_Defeat
+    msgbox gText_Route15North_SwimmerQuincy_Chat MSG_NORMAL
+    end
+
+.global EventScript_Route15North_CoolTrainerWesley
+EventScript_Route15North_CoolTrainerWesley:
+    trainerbattle0 0x0 348 0x0 gText_Route15North_CoolTrainerWesley_Intro gText_Route15North_CoolTrainerWesley_Defeat
+    msgbox gText_Route15North_CoolTrainerWesley_Chat MSG_NORMAL
+    end
+
+.global EventScript_Route15North_SuperNerdEthan
+EventScript_Route15North_SuperNerdEthan:
+    trainerbattle0 0x0 349 0x0 gText_Route15North_SuperNerdEthan_Intro gText_Route15North_SuperNerdEthan_Defeat
+    msgbox gText_Route15North_SuperNerdEthan_Chat MSG_NORMAL
+    end
+
+.global EventScript_Route15North_ChannelerLila
+EventScript_Route15North_ChannelerLila:
+    trainerbattle0 0x0 350 0x0 gText_Route15North_ChannelerLila_Intro gText_Route15North_ChannelerLila_Defeat
+    msgbox gText_Route15North_ChannelerLila_Chat MSG_NORMAL
+    end
+
+.global EventScript_Route15North_FindTM55Scald
+EventScript_Route15North_FindTM55Scald:
+    setvar CHOSEN_ITEM ITEM_TM55
+    call ItemScript_Common_FindTM
+    end
+
+.global EventScript_Route15North_FindFactoryKey
+EventScript_Route15North_FindFactoryKey:
+    finditem ITEM_FACTORY_KEY 0x1
+    end
+
+.global SignScript_Route15North_RestStopAdvertisementSign
+SignScript_Route15North_RestStopAdvertisementSign:
+    msgbox gText_Route15North_RestStopAdvertisementSign MSG_SIGN
+    end
+
+@ Route 15South
+.global EventScript_Route15South_Nurse
+EventScript_Route15South_Nurse:
+    msgbox gText_Route15South_NursePrompt MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto HealingDone
+    msgbox gText_Route15South_NurseHealing MSG_NORMAL
+    call PlayerHealNurse
+    msgbox gText_Route15South_NurseHealingDone MSG_NORMAL
+    goto HealingDone
+    end
+
+HealingDone:
+    msgbox gText_Route15South_NurseOutro MSG_NORMAL
+    applymovement LASTTALKED m_LookDown
+    end
+
+.global EventScript_Route15South_Shopkeeper
+EventScript_Route15South_Shopkeeper:
+    msgbox gText_Route15South_Shopkeeper MSG_NORMAL
+    pokemart Route15Shop
+    npcchatwithmovement gText_Route15South_ShopkeeperDone m_LookDown
+    end
+
+.align 1
+Route15Shop:
+    .hword ITEM_GREAT_BALL
+    .hword ITEM_LEMONADE
+    .hword ITEM_LAVA_COOKIE
+    .hword ITEM_REVIVE
+    .hword ITEM_SUPER_REPEL
+    .hword ITEM_NONE
+
+.global EventScript_Route15South_Boy
+EventScript_Route15South_Boy:
+    npcchat gText_Route15South_Boy
+    end
+
+.global EventScript_Route15South_RuinManiac
+EventScript_Route15South_RuinManiac:
+    npcchat gText_Route15South_RuinManiac
+    end
+
+.global EventScript_Route15South_SwimmerGerald
+EventScript_Route15South_SwimmerGerald:
+    trainerbattle0 0x0 351 0x0 gText_Route15South_SwimmerGerald_Intro gText_Route15South_SwimmerGerald_Defeat
+    msgbox gText_Route15South_SwimmerGerald_Chat MSG_NORMAL
+    end
+
+.global EventScript_Route15South_SwimmerAlexandra
+EventScript_Route15South_SwimmerAlexandra:
+    trainerbattle0 0x0 352 0x0 gText_Route15South_SwimmerAlexandra_Intro gText_Route15South_SwimmerAlexandra_Defeat
+    msgbox gText_Route15South_SwimmerAlexandra_Chat MSG_NORMAL
+    end
+
+.global EventScript_Route15South_SwimmerBernard
+EventScript_Route15South_SwimmerBernard:
+    trainerbattle0 0x0 353 0x0 gText_Route15South_SwimmerBernard_Intro gText_Route15South_SwimmerBernard_Defeat
+    msgbox gText_Route15South_SwimmerBernard_Chat MSG_NORMAL    
+    end
+
+.global EventScript_Route15South_SwimmerHarold
+EventScript_Route15South_SwimmerHarold:
+    trainerbattle0 0x0 354 0x0 gText_Route15South_SwimmerHarold_Intro gText_Route15South_SwimmerHarold_Defeat
+    msgbox gText_Route15South_SwimmerHarold_Chat MSG_NORMAL
+    end
+
+.global EventScript_Route15South_SwimmerMelinda
+EventScript_Route15South_SwimmerMelinda:
+    trainerbattle0 0x0 355 0x0 gText_Route15South_SwimmerMelinda_Intro gText_Route15South_SwimmerMelinda_Defeat
+    msgbox gText_Route15South_SwimmerMelinda_Chat MSG_NORMAL    
+    end
+
+.global EventScript_Route15South_BlackbeltFranklin
+EventScript_Route15South_BlackbeltFranklin:
+    trainerbattle0 0x0 356 0x0 gText_Route15South_BlackbeltFranklin_Intro gText_Route15South_BlackbeltFranklin_Defeat
+    msgbox gText_Route15South_BlackbeltFranklin_Chat MSG_NORMAL
+    end
+
+.global EventScript_Route15South_SwimmerPatricia
+EventScript_Route15South_SwimmerPatricia:
+    trainerbattle0 0x0 357 0x0 gText_Route15South_SwimmerPatricia_Intro gText_Route15South_SwimmerPatricia_Defeat
+    msgbox gText_Route15South_SwimmerPatricia_Chat MSG_NORMAL
+    end
+
+.global SignScript_Route15South_RestStopSign
+SignScript_Route15South_RestStopSign:
+    msgbox gText_Route15South_RestStopSign MSG_SIGN
     end

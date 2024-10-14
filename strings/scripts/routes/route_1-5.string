@@ -1,0 +1,651 @@
+// Route 1
+#org @gText_Route1_YoungsterPeter_Intro
+Our eyes met! You know what happens\nnext, right?
+
+#org @gText_Route1_YoungsterPeter_Defeat
+I didn't catch you off guard[.]
+
+#org @gText_Route1_YoungsterPeter_Chat
+When two trainers' eyes meet, it's\ntime for a battle.
+
+#org @gText_Route1_LassHelena_Intro
+Oh, a trainer! Do you think you can\nbeat my cute Pok\emon?
+
+#org @gText_Route1_LassHelena_Defeat
+My cute Pok\emon!
+
+#org @gText_Route1_LassHelena_Chat
+Make sure you take good care of\nyour Pok\emon!\pIf they're hurt, take them to a\nPok\emon Center.
+
+#org @gText_Route1_YoungsterHarlan_Intro
+I've had Yamper as my Pok\emon since\nI was a baby!
+
+#org @gText_Route1_YoungsterHarlan_Defeat
+Yamper isn't used to Pok\emon battles\nyet[.]
+
+#org @gText_Route1_YoungsterHarlan_Chat
+Many trainers start their journeys\nfrom Anthra Town or Olenic Town.
+
+#org @gText_Route1_LonelyMan
+My love lives across the sea. If\nonly I had a Pok\emon that could\lSurf! Then I could visit her.
+
+#org @gText_Route1_SandygastEncounter
+The sandcastle was actually a\nPok\emon! The startled Pok\emon\lattacked!
+
+#org @gText_Route1_SwimmerRebecca_Intro
+If you can beat me, I'll tell you\nsomething cool.\pGood deal, right? Let's go!
+
+#org @gText_Route1_SwimmerRebecca_Defeat
+A deal is a deal.
+
+#org @gText_Route1_SwimmerRebecca_Chat
+Okay, you beat me, so I'll honour my\nend of the bargain.\pThe Shellos found on the mainland\nlook different than the ones on the\lwest coast.\pNeat, right? I wonder why that is\nthough[.]
+
+#org @gText_Route1_BurglarBryce_Intro
+(Huff[.] Huff[.])\pSwimming out here really took a lot\nout of me.\pHey, I know! You can help me unwind\nwith a battle.
+
+#org @gText_Route1_BurglarBryce_Defeat
+Nope, still exhausted!
+
+#org @gText_Route1_BurglarBryce_Chat
+Whew, maybe I'll take a breather\nhere for a bit.
+
+// Route 2
+#org @gText_Route2_YoungsterJoey_Intro
+I only have one Pok\emon, but he's\nthe strongest one ever!
+
+#org @gText_Route2_YoungsterJoey_Defeat
+What? That's not possible! You\ncheated!
+
+#org @gText_Route2_YoungsterJoey_Chat
+My Rattata is the strongest one in\nthe world. How did you beat it?
+
+#org @gText_Route2_LassKimberly_Intro
+You're a new trainer, right? Let's\nbattle!
+
+#org @gText_Route2_LassKimberly_Defeat
+That was pretty fun!
+
+#org @gText_Route2_LassKimberly_Chat
+Pok\emon battles are a great way for\ntrainers to get to know one\lanother, don't you think?
+
+#org @gText_Route2_LassRikki_Intro
+Did you know the same kind of\nPok\emon can look different?
+
+#org @gText_Route2_LassRikki_Defeat
+Even though they looked different,\nthe outcome was the same[.]
+
+#org @gText_Route2_LassRikki_Chat
+Weren't my Flab\eb\e's pretty?
+
+#org @gText_Route2_CoolTrainerAndy_Intro
+What's a cool guy like me doing in a\ncool place like this? Beat me and\lmaybe I'll tell you!
+
+#org @gText_Route2_CoolTrainerAndy_Defeat
+No way! I didn't think you could\nactually do it!
+
+#org @gText_Route2_CoolTrainerAndy_Chat
+Alright, I'll tell you why I'm here.\nIt's peaceful and I like the\lsolitude.
+
+#org @gText_Route2_TrainerTips
+Trainer Tips!\pThe Old Rod usually hooks Magikarp,\nbut can catch other Pok\emon\las well.\pSeasoned fishermen know to\ncheck every body of water for\lnew Pok\emon.
+
+#org @gText_Route2_CatchingTutorial_RivalGreetsPlayer
+[BLACK][RIVAL]: [BLUE]Oh, [PLAYER]!
+
+#org @gText_Route2_CatchingTutorial_RivalCommentsOnPokedexAndPokeballs
+[BLACK][RIVAL]: [BLUE]Looks like you got a\nPok\edex and Pok\e Balls from\lProfessor Hawthorne too, huh?\pThat's so awesome!\pCome on, let's try them out.
+
+#org @gText_Route2_CatchingTutorialIntro_RivalTalksAboutHowToFindAPokemon
+[BLACK][RIVAL]: [BLUE]I read that wild\nPok\emon hide out in tall grass.\pIf we just look around a bit[.]
+
+#org @gText_Route2_CatchingTutorialIntro_RivalFindsAPokemon
+[BLACK][RIVAL]: [BLUE]Oh! It's a Pok\emon!\pOkay, I'll show you how to catch it.
+
+#org @gText_Route2_CatchingTutorialIntro_RivalAfterTutorial
+[BLACK][RIVAL]: [BLUE]And that's all there is to\nit. Pretty cool, right?\pSometimes, just throwing a Pok\e Ball\nis enough to catch a Pok\emon.\pYou can lower their HP or hit them\nwith a status effect to make it\leasier though.\pOh, and don't try to catch another\ntrainer's Pok\emon. That's just rude!\pI can't wait to see what kinds of\nPok\emon you catch.\pOkay, [PLAYER], I'm going to go on\nahead to Rhodanzi City.\pI heard there's a gym there, and I\nwanna get their badge.\pMake sure to say hi if you see me,\nokay? Later!
+
+// Route 3
+#org @gText_Route3_TrainerTips
+Trainer Tips!\pAggressive Pok\emon live in dark\ngrass, and may attack in pairs.
+
+#org @gText_Route3_Navigation
+North: Route 4\nSouth: Rubarr Desert
+
+#org @gText_Route3_PicknickerTana_Intro
+I've been a camper since I was a\nbaby!
+
+#org @gText_Route3_PicknickerTana_Defeat
+Whoa!
+
+#org @gText_Route3_PicknickerTana_Chat
+Even if I'm close to the city, I'm\nstill camping.
+
+#org @gText_Route3_BugCatcherIrwin_Intro
+My bug Pok\emon evolved. Do you know\nwhat that means?
+
+#org @gText_Route3_BugCatcherIrwin_Defeat
+But[.] My Pok\emon evolved!
+
+#org @gText_Route3_BugCatcherIrwin_Chat
+Pok\emon get stronger when they\nevolve.
+
+#org @gText_Route3_YoungsterLogan_Intro
+Want to go for a jog with me?
+
+#org @gText_Route3_YoungsterLogan_Defeat
+Guess not.
+
+#org @gText_Route3_YoungsterLogan_Chat
+Exercise is good for you and your\nPok\emon.
+
+#org @gText_Route3_TwinsNinaAndMeg_Nina_Intro
+We're twins! Do you know what that\nmeans?
+
+#org @gText_Route3_TwinsNinaAndMeg_Nina_Defeat
+We couldn't even beat you when\nbattling together[.]
+
+#org @gText_Route3_TwinsNinaAndMeg_Nina_Chat
+Double battles are interesting,\nright? There are so many strategies\lto try out!
+
+#org @gText_Route3_TwinsNinaAndMeg_Meg_Intro
+I-I'll do my best, for Nina!
+
+#org @gText_Route3_TwinsNinaAndMeg_Meg_Defeat
+Oooh, I'm sorry Nina[.]
+
+#org @gText_Route3_TwinsNinaAndMeg_Meg_Chat
+I like battling with Nina, but she's\nmuch better than me.
+
+#org @gText_Route3_NinjaBoyBotan_Intro
+Aha! Got you!
+
+#org @gText_Route3_NinjaBoyBotan_Defeat
+My sneak attack didn't work?
+
+#org @gText_Route3_NinjaBoyBotan_Chat
+I'm short, so it's easy to ambush\npeople by hiding in the grass.
+
+#org @gText_Route3_RockerJude_Intro
+My guitar cries out in anguish.\nBattle me, trainer.
+
+#org @gText_Route3_RockerJude_Defeat
+Rock on, dude.
+
+#org @gText_Route3_RockerJude_Chat
+I recently got dumped, so I'm\nfeeling a bit gloomy.
+
+#org @gText_Route3_TeamPlutoRaul_Intro
+Sorry, bub, no one's allowed passage\nto the desert today. Scram!
+
+#org @gText_Route3_TeamPlutoRaul_Defeat
+Geh? You're one tough kid!
+
+#org @gText_Route3_TeamPlutoRaul_Chat
+Aw, forget it. I don't get paid\nenough to stop you.
+
+#org @gText_Route3_RivalArrives
+[BLUE]Oh, [PLAYER]! I finally caught up to\nyou!
+
+#org @gText_Route3_RivalGymBadgeAcknowledgement
+[BLUE]I just beat the Rhodanzi City gym.\nTerrence was tougher than I\lthought!\pI couldn't help but notice\nyou got the badge before me.\pI guess you know why I'm here,\nright?
+
+#org @gText_Route3_PlayerKnowsWhyRivalIsHere
+[BLUE]That's right! It's time for a Pok\emon\nbattle!
+
+#org @gText_Route3_PlayerDoesNotKnowWhyRivalIsHere
+[BLUE]We've both beaten Terrence, so now\nwe have to see who's actually\lstronger! Get ready, [PLAYER], it's\ltime for a Pok\emon battle!
+
+#org @gText_Route3_RivalInitiatesBattle
+[BLUE]I'm much tougher than I used to be,\nso don't think I'll go easy on you.\lLet's go!
+
+#org @gText_Route3_BeatRival
+I guess it was no fluke you beat\nTerrence before me!
+
+#org @gText_Route3_RivalAcceptsDefeat
+[BLUE]Wow, you're much stronger already.\nI'll have to step my game up for\lour next battle.\pAnd to do that, I'll need to\nchallenge the Ferrox Village gym.\pYou're headed there too, right?\nLet's go together.
+
+#org @gText_Route3_PlutoGruntStopsAssistant
+[BLACK]Clancy: [BLUE]Hold it, chump!
+
+#org @gText_Route3_AssistantQuestioningAmbush
+[BLACK]Assistant: [BLUE]Oh my! What's the meaning\nof this?
+
+#org @gText_Route3_PlutoThreat
+[BLACK]Ena: [RED]We're with Team Pluto, and we\nknow you're transporting DexNavs.\pFork 'em over and we won't have to\nhurt you.
+
+#org @gText_Route3_AssistantRecognizesPluto
+[BLACK]Assistant: [BLUE]T-Team Pluto? You're those\nthugs that everybody's talking\labout[.]
+
+#org @gText_Route3_PlutoThreat2
+[BLACK]Clancy: [BLUE]So you've heard of us, eh?\nThen you know not to mess with us.\pHand them over and you won't have\nto get hurt.
+
+#org @gText_Route3_AssistantSurrenders
+[BLUE]Y-yikes! Take them, just don't hurt\nme!
+
+#org @gText_Route3_PlutoDeparts
+[BLACK]Ena: [RED]Heh heh, wise move, old man.\nYou didn't see us here, got it?\lNow scram, before we change our\lminds.
+
+#org @gText_Route3_RivalCommentsOnPluto
+[BLACK][RIVAL]: [BLUE]Team Pluto[.] I've heard of\nthem.\pThey say they're a ruthless gang\nwho'll stop at nothing to get\lpowerful Pok\emon.\lA lot of people try to steer clear\lof them.\pBut enough about that, we have to\nhelp that guy! Let's go, [PLAYER].
+
+#org @gText_Route3_RivalSpeaksToAssistant
+[BLACK][RIVAL]: [BLUE]Hey, are you okay? We saw\nwhat happened. They said they were\lfrom Team Pluto, right?
+
+#org @gText_Route3_AssistantRespondsToRival
+[BLACK]Assistant: [BLUE]Y-yes, they did. They\nmust've known I was delivering them\lto Professor Hawthorne and planned\lto jump me.
+
+#org @gText_Route3_RivalRecruitsPlayer
+[BLACK][RIVAL]: [BLUE]Those scoundrels[.] We're\ngoing after them, right?
+
+#org @gText_Route3_PlayerDoesNotAgreeToChallengePluto
+[BLACK][RIVAL]: [BLUE]Aw, come on, the gym\nchallenge can wait. This guy needs\lour help.
+
+#org @gText_Route3_PlayerAgreesToChallengePluto
+[BLACK][RIVAL]: [BLUE]That's the spirit!
+
+#org @gText_Route3_RivalTracksPluto
+[BLACK][RIVAL]: [BLUE]They ran off that way\nright?
+
+#org @gText_Route3_AssistantConfirms
+[BLACK]Assistant: [BLUE]Y-yes, they did[.]\nAre you certain you want to help?\pTeam Pluto is dangerous, you know.\pI'm not a trainer, but I can go\nfind some.
+
+#org @gText_Route3_RivalSaysYoureTrainers
+[BLACK][RIVAL]: [BLUE]Hey, we're trainers too!\nYou don't have to worry about us,\lwe're really strong.\lJust wait here, alright?
+
+#org @gText_Route3_AssistantExplainsRubarrDesert
+[BLACK]Assistant: [BLUE]Alright, if you're certain,\nthen I suppose I can't stop you.\lPlease be careful though.\pThey ran into Rubarr Desert.\nIt's known to be an inhospitable\lplace.\pPlease, I urge you to make sure\nyou're fully prepared before going\lthere.
+
+#org @gText_Route3_RivalThanksAssistant
+[BLACK][RIVAL]: [BLUE]Got it, thanks!
+
+#org @gText_Route3_RivalUrgesPlayerToHurry
+[BLACK][RIVAL]: [BLUE]Let's hurry! We have to\ncatch up to them before we lose\lthem.
+
+#org @gText_Route3_Assistant
+I'll wait here for you to retrieve\nthe DexNav shipment from Team\lPluto, but please be careful.
+
+#org @gText_Route3_AssistantWhenPlayerHasToBeatPluto
+[BLUE]H-hey, you aren't going to leave me\nhigh and dry, are you?\pTeam Pluto took the DexNavs and\nescaped into Rubarr Desert.
+
+#org @gText_Route3_AssistantWelcomesPlayerBack
+[BLACK]Assistant: [BLUE]Ah, you're back, and\nunharmed at that! But where is\lyour friend?
+
+#org @gText_Route3_RivalJoinsPlayer
+[BLACK][RIVAL]: [BLUE]Perfect timing, [PLAYER]!\nLet's return the DexNavs and get\lmoving.
+
+#org @gText_Route3_ReturningDexNavs
+[BLACK]Returned the DexNavs to the\nassistant.
+
+#org @gText_Route3_AssistantThanksPlayer
+[BLACK]Assistant: [BLUE]Why, thank you.
+
+#org @gText_Route3_AssistantClarifiesNames
+[BLACK]Assistant: [BLUE]Wait[.] Did you say\n[PLAYER] just now? Would that\lmean you are [RIVAL], then?
+
+#org @gText_Route3_RivalConfirmsNames
+[BLACK][RIVAL]: [BLUE]Yep, that's us! I'm\nsurprised you know about us\lalready.
+
+#org @gText_Route3_AssistantGivesDexNavs
+[BLACK]Assistant: [BLUE]Oh, what fortuitous luck!\nIt just so happens that two of\lthese DexNavs were meant for you.\pWhy don't you take them, with my\nthanks.
+
+#org @gText_Route3_ReceiveDexNav
+[BLACK]You received a DexNav!
+
+#org @gText_Route3_RivalCommentsOnDexNav
+[BLACK][RIVAL]: [BLUE]Wow, we really lucked out!
+
+#org @gText_Route3_AssistantAsksIfYouNeedDexNavInstructions
+[BLACK]Assistant: [BLUE]Would you like me to\nexplain how it works?
+
+#org @gText_Route3_AssistantGivesDexNavInstructions
+[BLACK]Assistant: [BLUE]Ahem. Let me just pull out\nthe instructions[.]\p"To use the DexNav, open your Start\nmenu and press [DPAD_RIGHT], then select\lDexNav.\"\p"The interface will show Pok\emon\nyou've seen or caught that are\lfound nearby, and which habitat\lthey can be found in.\"\p"Simply select a Pok\emon to begin\nsearching for it. You may see\lrustling grass, bubbling water, or\ldust clouds nearby, depending on\lwhere you are.\lSimply walk to one of those spaces\lto encounter the Pok\emon you are\lsearching for.\"\p"If you search for the same Pok\emon\noften, you may find stronger\lPok\emon, indicated by their star\llevel. You may also find Pok\emon\lwith rare moves or held items.\"\p"If you can't find a Pok\emon, move\nto an open area and try again.\"\pWhew, that's a lot! But I'm sure\nyou'll get the hang of it as you\luse it.
+
+#org @gText_Route3_AssistantNoDexNavInstructions
+[BLACK]Assistant: [BLUE]Very well. It's easy\nenough to pick up by using.
+
+#org @gText_Route3_AssistantContinuesOn
+[BLACK]Assistant: [BLUE]Now then, I must be off to\ndeliver the rest of these DexNavs.\pThanks again, and safe travels young\nones.
+
+#org @gText_Route3_RivalWantsToBattleAgain
+[BLACK][RIVAL]: [BLUE]You know what happens next,\nright? A Pok\emon battle!
+
+#org @gText_Route3_RivalContinuesOn
+[BLACK][RIVAL]: [BLUE]Haha, just kidding!\pFighting Team Pluto took a lot out\nof me. Let's meet up again in\lFerrox Village okay?
+
+// Route 4
+#org @gText_Route4_ForemanChat
+A recent landslide has blocked the\npath to Ferrox Village.\pPlease be patient with us while we\nclear the way, and do not enter\lTorma Cave.
+
+#org @gText_Route4_WorkerChat
+Huagh! These rocks sure are heavy.\nIt will take some time to get these\lcleared[.]
+
+#org @gText_Route4_LargeManChat
+The road is blocked? I can't believe\nmy bad luck.
+
+#org @gText_Route4_LassChat
+I was supposed to meet my boyfriend\ntoday. I hope it won't take long to\lclear the path[.]
+
+#org @gText_Route4_TormaCaveSign
+Torma Cave
+
+#org @gText_Route4_TrainerTipsSign
+Trainer Tips!\pSome routes have paths that are only\naccessible when your Pok\emon can\luse HM moves.\pReturn often to discover new things!
+
+#org @gText_Route4_CamperPietro_Intro
+We may be camping, but my Pok\emon\nare always ready to battle.
+
+#org @gText_Route4_CamperPietro_Defeat
+You must've been ready to battle\ntoo!
+
+#org @gText_Route4_CamperPietro_Chat
+I love to go camping with my\nPok\emon!
+
+#org @gText_Route4_PsychicAdriano_Intro
+I predicted you would come here.
+
+#org @gText_Route4_PsychicAdriano_Defeat
+I predicted you would win, too.
+
+#org @gText_Route4_PsychicAdriano_Chat
+My predictions are never wrong.
+
+#org @gText_Route4_BeautyBeatrice_Intro
+Do you prefer cute Pok\emon, or\nstrong ones?
+
+#org @gText_Route4_BeautyBeatrice_Defeat
+Oh, your Pok\emon are cute and\nstrong!
+
+#org @gText_Route4_BeautyBeatrice_Chat
+I like using cute Pok\emon, and I\ndon't care if I lose battles\lbecause of that.
+
+#org @gText_Route4_LadyAlda_Intro
+Spin, my beautiful umbrella!
+
+#org @gText_Route4_LadyAlda_Defeat
+Hm, you're quite strong.
+
+#org @gText_Route4_LadyAlda_Chat
+There's nothing quite like an\numbrella to shade you from the\lsun. Do you not agree?
+
+#org @gText_Route4_LassIsabela_Intro
+What kind of trainer are you?
+
+#org @gText_Route4_LassIsabela_Defeat
+Oh, you're one of those, huh?
+
+#org @gText_Route4_LassIsabela_Chat
+There are a lot of different trainer\ntypes out there, hey?
+
+#org @gText_Route4_BirdKeeperRowley_Intro
+My Pok\emon can fly at mach 3. No,\nmach 4!
+
+#org @gText_Route4_BirdKeeperRowley_Defeat
+Weren't you impressed by our speed?
+
+#org @gText_Route4_BirdKeeperRowley_Chat
+Flying type Pok\emon are great!
+
+#org @gText_Route4_CrushGirlElise_Intro
+My Pok\emon and I train our bodies\nevery day. Do you think you can\lchallenge us?
+
+#org @gText_Route4_CrushGirlElise_Defeat
+So formidable[.]
+
+#org @gText_Route4_CrushGirlElise_Chat
+A good training regime is important\nto bringing out your inner strength.
+
+#org @gText_Route4_GentlemanPorter_Intro
+Why, hello there, young trainer.\nMight I interest you in a battle\lwith a gentleman like me?
+
+#org @gText_Route4_GentlemanPorter_Defeat
+You are quite gifted!
+
+#org @gText_Route4_GentlemanPorter_Chat
+I daresay, I did not expect your\nPok\emon to be so strong.
+
+#org @gText_Route4_BirdKeeperLuca_Intro
+Fufufufu[.] Go, my precious birds!
+
+#org @gText_Route4_BirdKeeperLuca_Defeat
+Ahhh, my bird Pok\emon!
+
+#org @gText_Route4_BirdKeeperLuca_Chat
+Birds need special care. They're a\nlot more complex than other\lPok\emon.
+
+#org @gText_Route4_ForemanConfrontsPlayer
+[BLUE]Hey! Did you just come from Torma\nCave?
+
+#org @gText_Route4_PlayerHonest
+[BLUE]I see[.] At least you fessed up.
+
+#org @gText_Route4_PlayerDishonest
+[BLUE]Don't lie to me[.] I just saw you\nwalk out!
+
+#org @gText_Route4_ForemanBeratesPlayer
+[BLUE]Listen, kid.\pI know you're impatient, but you\nshould've just waited for us to\lfinish clearing the way.\pTorma Cave is dangerous, and I\ncould've gotten in a lot of trouble\lif you'd gotten hurt.
+
+#org @gText_Route4_ForemanConcedes
+[BLUE]Sigh[.] But what's done is done, I\nsuppose. You're no worse for wear.
+
+#org @gText_Route4_ForemanLeaves
+[BLUE]Look, the way is clear now, so\nthere's no need to put yourself in\ldanger, you hear?\pI'll be leaving to reunite with my\ncrew in Heleo City now. Stay out\lof trouble, alright?
+
+// Route 5
+#org @gText_Route5_BikerLeader
+Awright, boys, listen up!\pWe're gonna form up, ride on down to\nthat daycare down the road, and\ltell 'em exactly what we want!
+
+#org @gText_Route5_Biker
+Aw, yeah! Let's rev our engines so\nloud they can't ignore us!\pWe're gonna make 'em teach us how\nto breed and hatch cute Pok\emon.
+
+#org @gText_Route5_AnotherRoute
+[BLACK]It doesn't look like you'll be able\nto go this way right now[.]
+
+#org @gText_Route5_LadyFaith_Intro
+Excuse me. Do you have time for a\nPok\emon battle?
+
+#org @gText_Route5_LadyFaith_Defeat
+My word!
+
+#org @gText_Route5_LadyFaith_Chat
+This route is quite peaceful, is it\nnot?
+
+#org @gText_Route5_BugCatcherBen_Intro
+Hnngh[.] Why are there no bug Pok\emon\naround here?
+
+#org @gText_Route5_BugCatcherBen_Defeat
+Aw, just leave me alone!
+
+#org @gText_Route5_BugCatcherBen_Chat
+Routes without any bug Pok\emon are\nsuper lame. I'm sure you know what\lI mean.
+
+#org @gText_Route5_PsychicAlyssia_Intro
+Hmmm? A lost lamb approaches me.
+
+#org @gText_Route5_PsychicAlyssia_Defeat
+Oh, it was not a lamb, but a wolf in\ndisguise.
+
+#org @gText_Route5_PsychicAlyssia_Chat
+Take care not to stray too far off\nthe beaten path, or you may find\lyourself in a troublesome situation.
+
+#org @gText_Route5_BreederBrenda_Intro
+I love raising baby Pok\emon at the\nHeleo Ranch Daycare!
+
+#org @gText_Route5_BreederBrenda_Defeat
+Oh no, my baby Pok\emon!
+
+#org @gText_Route5_BreederBrenda_Chat
+Almost any Pok\emon can produce an\negg. You should see how many new\lPok\emon you can discover through\lbreeding.
+
+#org @gText_Route5_BlackbeltRaheem_Intro
+My Pok\emon are forces of nature.\nYou'd better watch out!
+
+#org @gText_Route5_BlackbeltRaheem_Defeat
+Hmm! Very good.
+
+#org @gText_Route5_BlackbeltRaheem_Chat
+Your Pok\emon are quite strong as\nwell.
+
+#org @gText_Route5_GamblerDominik_Intro
+Want to play a game?
+
+#org @gText_Route5_GamblerDominik_Defeat
+No, that isn't how you play[.]
+
+#org @gText_Route5_GamblerDominik_Chat
+Pok\emon battles are like a game.\pYou and your opponent strategize\nand do your best, but ultimately\lsomeone has to lose.
+
+#org @gText_Route5_LadyJuliet_Intro
+[RED]Good day, fair trainer. I am Lady\nJuliet, and I shall be your\lopponent.
+
+#org @gText_Route5_LadyJuliet_Defeat
+My, how uncouth!
+
+#org @gText_Route5_LadyJuliet_Chat
+[RED]You should know that I am from an\nesteemed family, and we will\lremember this transgression.
+
+#org @gText_Route5_GentlemanMarcus_Intro
+[BLUE]The young lady requests a battle\nwith you. I shall join her.
+
+#org @gText_Route5_GentlemanMarcus_Defeat
+Indeed, this outcome was inevitable.
+
+#org @gText_Route5_GentlemanMarcus_Chat
+[BLUE]Pay the young lady no mind. She is\nrather upset, but I can tell she\lquite enjoyed our little spat.
+
+#org @gText_Route5_DaycareSign
+Heleo Ranch Daycare\nDrop off your Pok\emon any time!
+
+#org @gText_Route5_AffectionGirl
+Did you know you can check your\nPok\emon's affection toward you in\lthe Summary screen?\pAffectionate Pok\emon will gain more\nEXP in battle, and may even\levolve!
+
+#org @gText_Route5_EggGiver_Introduction
+Oh, a young Pok\emon trainer!\pAt the Heleo Ranch Daycare, we raise\nPok\emon. Sometimes, we find eggs\lafterward.
+
+#org @gText_Route5_EggGiver_Prompt
+We actually have extra eggs right\nnow. Would you like one?
+
+#org @gText_Route5_EggGiver_EggRejected
+Oh, very well[.] Come see me if you\nchange your mind.
+
+#org @gText_Route5_EggGiver_EggPun
+Excellent! Or should I say\neggcelent?
+
+#org @gText_Route5_EggGiver_NoRoomForEgg
+You don't have room to carry this\negg. Come back when you do, okay?
+
+#org @gText_Route5_EggGiver_ReceivedEgg
+[BLACK]Received a Pok\emon egg from the\nDaycare Man.
+
+#org @gText_Route5_EggGiver_ReceiveEggComment
+[BLUE]I wonder what will hatch from this\negg.\pTake good care of it, okay?
+
+#org @gText_Route5_EggGiver_EggInstructions
+[BLUE]Eggs take time to hatch. It's best to\nwalk with them until they do.\pIf you have a Pok\emon with the\nFlame Body ability at the front of\lyour party, it's warmth will make\leggs hatch faster!
+
+#org @gText_Route5_EggGiver_TenEggGiftComment
+So far you've hatched [BUFFER1]\neggs.\pOnce you've hatched 10, come see\nme. I'll have a gift for you.
+
+#org @gText_Route5_EggGiver_HatchedAtLeastTenEggs
+Well look at that! You've hatched\n[BUFFER1] eggs. I have a gift for\lyou.
+
+#org @gText_Route5_EggGiver_ReceivedOvalCharm
+[BLACK]Received the Oval Charm!
+
+#org @gText_Route5_EggGiver_TenEggGiftReceived
+[BLUE]Just by having this charm, you'll be\nmore likely to find eggs at the\ldaycare.\pIsn't that handy?
+
+// Heleo Ranch
+
+#org @gText_HeleoRanch_Mareep
+Baah!
+
+#org @gText_HeleoRanch_MoomooMilkSeller_PurchaseRequest
+Hello! I sell Moomoo Milk, fresh\nfrom the farm.\pWould you like some? It's \$500 for\none, or \$6,000 for a dozen.
+
+#org @gText_HeleoRanch_MoomooMilkSeller_PuchaseOne
+Just one
+
+#org @gText_HeleoRanch_MoomooMilkSeller_PuchaseADozen
+A dozen
+
+#org @gText_HeleoRanch_MoomooMilkSeller_PuchaseNone
+No thank you
+
+#org @gText_HeleoRanch_MoomooMilkSeller_PuchaseComplete
+Thank you very much! Please enjoy,\nand tell your friends about us.
+
+#org @gText_HeleoRanch_MoomooMilkSeller_NotEnoughCash
+Oh, sorry sweetie, but you don't\nhave enough money.
+
+#org @gText_HeleoRanch_MoomooMilkSeller_ChoseNotToBuy
+That's okay. If you change your\nmind, I'd be happy to sell you\lsome.
+
+#org @gText_HeleoRanch_AgitatedAmpharos_Sound
+Phaar! Phaar!!
+
+#org @gText_HeleoRanch_AgitatedAmpharos_Prompt
+The Ampharos appears to be very\nagitated.\pDo you want to battle it? You won't\nbe able to run.
+
+#org @gText_HeleoRanch_AgitatedAmpharos_LeftAlone
+You decided to leave it alone.
+
+#org @gText_HeleoRanch_AgitatedAmpharos_BattleStarted
+The Ampharos attacks!
+
+#org @gText_HeleoRanch_AgitatedAmpharos_BattleEnded
+The Ampharos calmed down.
+
+#org @gText_HeleoRanch_BurglarCole_Intro
+Eheheh[.] I'm gonna make a killing\noffa all the Mareep wool I'm gonna\lshear!
+
+#org @gText_HeleoRanch_BurglarCole_Defeat
+D'oh! This guard dog has teeth!
+
+#org @gText_HeleoRanch_BurglarCole_Chat
+Awright, let's make a deal. I won't\nburgle this place, and you forget\lyou saw me. Capiche?
+
+#org @gText_HeleoRanch_CamperTroy_Intro
+Do you know the secret of Heleo\nRanch?
+
+#org @gText_HeleoRanch_CamperTroy_Defeat
+Who responds to a question with a\nPok\emon battle?
+
+#org @gText_HeleoRanch_CamperTroy_Chat
+Alright, the secret of Heleo Ranch\nis[.] That they import the Moomoo\lMilk they sell!\pScandalous, isn't it?
+
+#org @gText_HeleoRanch_BreederLaura_Intro
+Look at all these baby Pok\emon!
+
+#org @gText_HeleoRanch_BreederLaura_Defeat
+Aww, my babies couldn't win[.]
+
+#org @gText_HeleoRanch_BreederLaura_Chat
+Aren't baby Pok\emon just the cutest\nlittle things?
+
+#org @gText_HeleoRanch_PicknickerCarly_Intro
+The picnicker's creed: go everywhere,\nsee everything!
+
+#org @gText_HeleoRanch_PicknickerCarly_Defeat
+I'm better at picnicking than I am at\nbattling.
+
+#org @gText_HeleoRanch_PicknickerCarly_Chat
+I'll go picnicking anywhere I want\nto, even here!
+
+#org @gText_HeleoRanch_GladeSign
+Heleo Ranch Glade\nWatch out for territorial Pok\emon!
+
+#org @gText_HeleoRanch_EntranceSign
+Welcome to Heleo Ranch!\nHome of our world famous\lMoomoo Milk.
+
+#org @gText_HeleoRanch_Dad
+Welcome tah Heleo Ranch, home of\nth' region's world famous Moomoo\lMilk!\pMah wife sells it out in th' pasture\ndurin' th' day.\pIt ain't much, but it's honest work\nand it makes mah family happy.\lCan't ask for more'n that.
+
+#org @gText_HeleoRanch_Daughter
+My family has owned this ranch for\ngenerations, and I'll inherit it\lnext.
+
+#org @gText_HeleoRanch_Mom
+I've sold out of all the Moomoo Milk\nI had today. Come back tomorrow if\lyou'd like more.
+
+#org @gText_HeleoRanch_Son
+Mah Pa said that visitors are\nwelcome t'catch any Pok\emon they\lfind out in the fields.\pHe also said there's a real ornery\nPok\emon deep in the woods that\ldon't take kindly to strangers.\pYou'd best keep your distance.
