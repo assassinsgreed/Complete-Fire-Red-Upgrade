@@ -346,6 +346,8 @@ GraphicsInfo_TrainerHouseHost 839FEE0
 GraphicsInfo_E4Hannah 839FEE4
 ## Replace Mr Fuji (78)
 GraphicsInfo_Alistair 839FEE8
+## Replace Bruno (79)
+GraphicsInfo_E4Lucas 839FEEC
 ## Replace Brock (80)
 GraphicsInfo_LeaderTerrence 839FEF0
 ## Replace Misty (81)
@@ -465,6 +467,9 @@ PlutoGruntMPal 8239D84
 ## Replace Lorelei (112)
 E4HannahBTiles 82398FC
 E4HannahBPal 8239D9C
+## Replace Bruno (113)
+E4LucasBTiles 8239904
+E4LucasBPal 8239DA4
 ## Replace Brock (116)
 LeaderTerrenceBTiles 823991C
 LeaderTerrenceBPal 8239DBC

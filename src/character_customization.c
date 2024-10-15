@@ -52,6 +52,7 @@ extern const u16 PlutoLeaderKurtisPal[];
 extern const u16 LeaderIrisPal[];
 extern const u16 LeaderDennisPal[];
 extern const u16 E4HannahPal[];
+extern const u16 E4LucasPal[];
 
 // Overworld Events
 extern const u16 SandygastPal[];
@@ -374,6 +375,7 @@ static const u16* sPlayerMarlonOutfitColours[] =
 		{ CosmogPal, 0x1235 },
 		{ LeaderDennisPal, 0x1236 }, // Shared palette between both leaders
 		{ E4HannahPal, 0x1237 },
+		{ E4LucasPal, 0x1238 },
 		{ NULL, 0x11FF }
 	};
 	const struct SpritePalette* const gObjectEventSpritePalettesSwitcher[255] = {
