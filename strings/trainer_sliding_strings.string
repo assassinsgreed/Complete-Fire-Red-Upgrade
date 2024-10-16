@@ -288,24 +288,24 @@ You really are something, I'll\ngive you that!\p
 #org @sText_Hannah_LowHP
 We're not done yet!\p
 
-// Elite Four Liam
-#org @sText_Liam_FirstMonDown
+// Elite Four Lucas
+#org @sText_Lucas_FirstMonDown
 Woo, look at you go! I'm just\ngetting started, though.\p
 
-#org @sText_Liam_LastSwitchIn
+#org @sText_Lucas_LastSwitchIn
 Your challenge ends here! It's\nnothing personal, just my job.\p
 
-#org @sText_Liam_LowHP
+#org @sText_Lucas_LowHP
 Unbelievable! It's been ages since\na challenger has done this well.\p
 
-// Elite Four Jasmine
-#org @sText_Jasmine_FirstMonDown
+// Elite Four Jenna
+#org @sText_Jenna_FirstMonDown
 We're just getting warmed up. Are\nyou ready?\p
 
-#org @sText_Jasmine_LastSwitchIn
+#org @sText_Jenna_LastSwitchIn
 The battle's really heating up\nnow, wouldn't you agree?\p
 
-#org @sText_Jasmine_LowHP
+#org @sText_Jenna_LowHP
 Oh no! We've really slipped up,\nhaven't we?\p
 
 // Elite Four Thomas

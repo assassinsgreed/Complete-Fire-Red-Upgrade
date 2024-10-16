@@ -154,15 +154,15 @@ extern const u8 sText_Hannah_FirstMonDown[];
 extern const u8 sText_Hannah_LastSwitchIn[];
 extern const u8 sText_Hannah_LowHP[];
 
-// Elite Four Liam
-extern const u8 sText_Liam_FirstMonDown[];
-extern const u8 sText_Liam_LastSwitchIn[];
-extern const u8 sText_Liam_LowHP[];
+// Elite Four Lucas
+extern const u8 sText_Lucas_FirstMonDown[];
+extern const u8 sText_Lucas_LastSwitchIn[];
+extern const u8 sText_Lucas_LowHP[];
 
-// Elite Four Jasmine
-extern const u8 sText_Jasmine_FirstMonDown[];
-extern const u8 sText_Jasmine_LastSwitchIn[];
-extern const u8 sText_Jasmine_LowHP[];
+// Elite Four Jenna
+extern const u8 sText_Jenna_FirstMonDown[];
+extern const u8 sText_Jenna_LastSwitchIn[];
+extern const u8 sText_Jenna_LowHP[];
 
 // Elite Four Thomas
 extern const u8 sText_Thomas_FirstMonDown[];
