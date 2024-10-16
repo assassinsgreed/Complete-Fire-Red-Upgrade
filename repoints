@@ -340,6 +340,8 @@ GraphicsInfo_Rival 839FED0
 GraphicsInfo_LeaderDennis 839FED4
 ## Replace Lance (74)
 GraphicsInfo_ChampionSelene 839FED8
+## Replace Agatha (75)
+GraphicsInfo_E4Jenna 839FEDC
 ## Replace Daisy (Blue's Sister) (76)
 GraphicsInfo_TrainerHouseHost 839FEE0
 ## Replace Lorelei (77)
@@ -470,6 +472,9 @@ E4HannahBPal 8239D9C
 ## Replace Bruno (113)
 E4LucasBTiles 8239904
 E4LucasBPal 8239DA4
+## Replace Agatha (114)
+E4JennaBTiles 823990C
+E4JennaBPal 8239DAC
 ## Replace Brock (116)
 LeaderTerrenceBTiles 823991C
 LeaderTerrenceBPal 8239DBC

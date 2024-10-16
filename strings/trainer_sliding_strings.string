@@ -290,23 +290,23 @@ We're not done yet!\p
 
 // Elite Four Lucas
 #org @sText_Lucas_FirstMonDown
-Woo, look at you go! I'm just\ngetting started, though.\p
+Woo, look at you go!\nYou're so earnest.\pI'm just getting started, though.\p
 
 #org @sText_Lucas_LastSwitchIn
 Your challenge ends here! It's\nnothing personal, just my job.\p
 
 #org @sText_Lucas_LowHP
-Unbelievable! It's been ages since\na challenger has done this well.\p
+Unbelievable[.] I might actually\nlose this one.\pHope that won't affect my\nperformance review[.]\p
 
 // Elite Four Jenna
 #org @sText_Jenna_FirstMonDown
-We're just getting warmed up. Are\nyou ready?\p
+Oooh, baby[.] We're getting amped up\nnow!\pDon't stop rockin', ya hear me?\p
 
 #org @sText_Jenna_LastSwitchIn
-The battle's really heating up\nnow, wouldn't you agree?\p
+Time for a stellar encore.\nLet's jam out!\p
 
 #org @sText_Jenna_LowHP
-Oh no! We've really slipped up,\nhaven't we?\p
+Uh oh[.] Better step it up or we'll be\nexiting, stage left!\p
 
 // Elite Four Thomas
 #org @sText_Thomas_FirstMonDown
