@@ -40,6 +40,7 @@ extern const u8 LeaderDennisTiles[];
 extern const u8 LeaderDeeTiles[];
 extern const u8 E4HannahTiles[];
 extern const u8 E4LucasTiles[];
+extern const u8 E4JennaTiles[];
 
 // Overworld Events
 extern const u8 SandygastTiles[];
@@ -575,6 +576,19 @@ static const struct SpriteFrameImage Table_E4Lucas[] =
     overworld_frame(E4LucasTiles, 2, 4, 6),
     overworld_frame(E4LucasTiles, 2, 4, 7),
     overworld_frame(E4LucasTiles, 2, 4, 8),
+};
+
+static const struct SpriteFrameImage Table_E4Jenna[] =
+{
+    overworld_frame(E4JennaTiles, 2, 4, 0),
+    overworld_frame(E4JennaTiles, 2, 4, 1),
+    overworld_frame(E4JennaTiles, 2, 4, 2),
+    overworld_frame(E4JennaTiles, 2, 4, 3),
+    overworld_frame(E4JennaTiles, 2, 4, 4),
+    overworld_frame(E4JennaTiles, 2, 4, 5),
+    overworld_frame(E4JennaTiles, 2, 4, 6),
+    overworld_frame(E4JennaTiles, 2, 4, 7),
+    overworld_frame(E4JennaTiles, 2, 4, 8),
 };
 
 // Overworld events
@@ -1628,6 +1642,26 @@ const struct EventObjectGraphicsInfo GraphicsInfo_E4Lucas =
     .subspriteTables = gEventObjectSpriteOamTables_16x32,
     .anims = gEventObjectImageAnimTable_Standard,
     .images = Table_E4Lucas,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+const struct EventObjectGraphicsInfo GraphicsInfo_E4Jenna =
+{
+    .tileTag = 0xFFFF,
+    .paletteTag1 = 0x1239,
+    .paletteTag2 = EVENT_OBJ_PAL_TAG_NONE,
+    .size = (16 * 32) / 2,
+    .width = 16,
+    .height = 32,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .disableReflectionPaletteLoad = FALSE,
+    .tracks = TRACKS_FOOT,
+    .gender = FEMALE,
+    .oam = gEventObjectBaseOam_16x32,
+    .subspriteTables = gEventObjectSpriteOamTables_16x32,
+    .anims = gEventObjectImageAnimTable_Standard,
+    .images = Table_E4Jenna,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 
