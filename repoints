@@ -382,6 +382,8 @@ GraphicsInfo_LeaderDee 839FF40
 GraphicsInfo_PalmTree 839FF44
 ## Replace Gym Sign (102)
 GraphicsInfo_Skier 839FF48
+## Replace Sign (103)
+GraphicsInfo_E4Thomas 839FF4C
 ## Replace Deoxys Triangle (106)
 GraphicsInfo_CactusAndVictoryFlag 839FF58
 ## Replace SS Anne (108)
@@ -439,9 +441,12 @@ GraphicsInfo_Zeraora 83A0004
 ## Replace Aqua Boss Archie (0)
 LeaderCaseyMBTiles 823957C
 LeaderCaseyMBPal 8239A1C
-## Replace Aqua Grunt (1)
+## Replace Aqua Grunt Male (1)
 AlistairBTiles 8239584
 AlistairBPal 8239A24
+## Replace Aqua Grunt Female (2)
+E4ThomasBTiles 823958C
+E4ThomasBPal 8239A2C
 ## Replace Aqua Admin Matt (71)
 PlutoAdminRonaldBTiles 82397B4
 PlutoAdminRonaldBPal 8239C54
