@@ -54,6 +54,7 @@ extern const u16 LeaderDennisPal[];
 extern const u16 E4HannahPal[];
 extern const u16 E4LucasPal[];
 extern const u16 E4JennaPal[];
+extern const u16 E4ThomasPal[];
 
 // Overworld Events
 extern const u16 SandygastPal[];
@@ -378,6 +379,7 @@ static const u16* sPlayerMarlonOutfitColours[] =
 		{ E4HannahPal, 0x1237 },
 		{ E4LucasPal, 0x1238 },
 		{ E4JennaPal, 0x1239 },
+		{ E4ThomasPal, 0x123A },
 		{ NULL, 0x11FF }
 	};
 	const struct SpritePalette* const gObjectEventSpritePalettesSwitcher[255] = {
