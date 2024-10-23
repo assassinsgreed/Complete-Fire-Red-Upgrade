@@ -923,7 +923,22 @@ npc 2 10 2 EventScript_AscensionTower_EliteFourAttendant
 npc 2 10 3 EventScript_AscensionTower_Blackbelt
 npc 2 10 4 EventScript_AscensionTower_Girl
 npc 2 10 5 EventScript_AscensionTower_BigMan
+npc 2 10 8 EventScript_Pokemart
 sign 2 10 0 SignScript_AscensionTower_RecordsBoard
+map 1 107 MapScript_AscensionTower_Elevator
+npc 1 107 0 EventScript_AscensionTower_Elevator_Attendant
+map 1 75 MapScript_AscensionTower_E4Room
+npc 1 75 0 EventScript_AscensionTower_EliteFourHannah
+tile 1 75 0 TileScript_AscensionTower_ReturnToElevator
+map 1 76 MapScript_AscensionTower_E4Room
+npc 1 76 0 EventScript_AscensionTower_EliteFourLucas
+tile 1 76 0 TileScript_AscensionTower_ReturnToElevator
+map 1 77 MapScript_AscensionTower_E4Room
+npc 1 77 0 EventScript_AscensionTower_EliteFourJenna
+tile 1 77 0 TileScript_AscensionTower_ReturnToElevator
+map 1 78 MapScript_AscensionTower_E4Room
+npc 1 78 0 EventScript_AscensionTower_EliteFourThomas
+tile 1 78 0 TileScript_AscensionTower_ReturnToElevator
 ## Overworld
 map 3 5 MapScript_DaimynCity
 npc 3 5 0 EventScript_DaimynCityOverworld_GamblingMan

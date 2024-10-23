@@ -95,15 +95,19 @@ static const struct TrainerSlide sTrainerSlides[] =
 	{0x1D6, sText_Alistair_FirstMonDown, sText_Alistair_LastSwitchIn, sText_Alistair_LowHP}, // Carnelidge Volcano Alistair
 	{0x1E5, sText_Leader8_FirstMonDown, sText_Leader8_LastSwitchIn, sText_Leader8_LowHP}, // Gym Leaders Dennis and Dee
 	{0x1FF, sText_Rival7_FirstMonDown, sText_Rival7_LastSwitchIn, sText_Rival7_LowHP}, // Seventh rival battle, Vaporeon
-	{0x201, sText_Rival7_FirstMonDown, sText_Rival7_LastSwitchIn, sText_Rival7_LowHP}, // Seventh rival battle, Jolteon
-	{0x202, sText_Rival7_FirstMonDown, sText_Rival7_LastSwitchIn, sText_Rival7_LowHP}, // Seventh rival battle, Flareon
-	{0x203, sText_Rival7_FirstMonDown, sText_Rival7_LastSwitchIn, sText_Rival7_LowHP}, // Seventh rival battle, Espeon
-	{0x204, sText_Rival7_FirstMonDown, sText_Rival7_LastSwitchIn, sText_Rival7_LowHP}, // Seventh rival battle, Umbreon
-	{0x205, sText_Rival7_FirstMonDown, sText_Rival7_LastSwitchIn, sText_Rival7_LowHP}, // Seventh rival battle, Leafeon
-	{0x206, sText_Rival7_FirstMonDown, sText_Rival7_LastSwitchIn, sText_Rival7_LowHP}, // Seventh rival battle, Glaceon
-	{0x207, sText_Rival7_FirstMonDown, sText_Rival7_LastSwitchIn, sText_Rival7_LowHP}, // Seventh rival battle, Sylveon
-	{0x208, sText_Rival7_FirstMonDown, sText_Rival7_LastSwitchIn, sText_Rival7_LowHP}, // Rival exhibition battle (secondary team)
-	{}, // Champion Selene
+	{0x200, sText_Rival7_FirstMonDown, sText_Rival7_LastSwitchIn, sText_Rival7_LowHP}, // Seventh rival battle, Jolteon
+	{0x201, sText_Rival7_FirstMonDown, sText_Rival7_LastSwitchIn, sText_Rival7_LowHP}, // Seventh rival battle, Flareon
+	{0x202, sText_Rival7_FirstMonDown, sText_Rival7_LastSwitchIn, sText_Rival7_LowHP}, // Seventh rival battle, Espeon
+	{0x203, sText_Rival7_FirstMonDown, sText_Rival7_LastSwitchIn, sText_Rival7_LowHP}, // Seventh rival battle, Umbreon
+	{0x204, sText_Rival7_FirstMonDown, sText_Rival7_LastSwitchIn, sText_Rival7_LowHP}, // Seventh rival battle, Leafeon
+	{0x205, sText_Rival7_FirstMonDown, sText_Rival7_LastSwitchIn, sText_Rival7_LowHP}, // Seventh rival battle, Glaceon
+	{0x206, sText_Rival7_FirstMonDown, sText_Rival7_LastSwitchIn, sText_Rival7_LowHP}, // Seventh rival battle, Sylveon
+	{0x207, sText_Rival7_FirstMonDown, sText_Rival7_LastSwitchIn, sText_Rival7_LowHP}, // Rival exhibition battle (secondary team)
+	{0x208, sText_Hannah_FirstMonDown, sText_Hannah_LastSwitchIn, sText_Hannah_LowHP}, // Elite Four Hannah
+	{0x209, sText_Lucas_FirstMonDown, sText_Lucas_LastSwitchIn, sText_Lucas_LowHP}, // Elite Four Lucas
+	{0x20A, sText_Jenna_FirstMonDown, sText_Jenna_LastSwitchIn, sText_Jenna_LowHP}, // Elite Four Jenna
+	{0x20B, sText_Thomas_FirstMonDown, sText_Thomas_LastSwitchIn, sText_Thomas_LowHP}, // Elite Four Thomas
+	{0x20C, sText_Champion_FirstMonDown, sText_Champion_LastSwitchIn, sText_Champion_LowHP}, // Champion Selene
 };
 
 static const struct DynamaxTrainerSlide sDynamaxTrainerSlides[] =
