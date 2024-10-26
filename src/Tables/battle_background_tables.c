@@ -95,6 +95,9 @@ extern const u8 BG_LavaPoolPal[];
 extern const u8 BG_CarnelidgePeakTiles[];
 extern const u8 BG_CarnelidgePeakMap[];
 extern const u8 BG_CarnelidgePeakPal[];
+extern const u8 BG_ChampionTiles[];
+extern const u8 BG_ChampionMap[];
+extern const u8 BG_ChampionPal[];
 
 // Palette swaps (interiors)
 extern const u8 BG_Pond_Cave_TormaPal[];
@@ -411,6 +414,14 @@ const struct BattleBackground gBattleTerrainTable[] =
 		.entryTilemap = gBattleTerrainAnimTilemap_PondWater,
 		.palette = BG_Pond_Cave_SeppirePal,
 	},
+	[BATTLE_TERRAIN_CHAMPION] =
+	{
+		.tileset = BG_ChampionTiles,
+		.tilemap = BG_ChampionMap,
+		.entryTileset = gBattleTerrainAnimTiles_Building,
+		.entryTilemap = gBattleTerrainAnimTilemap_Building,
+		.palette = BG_ChampionPal,
+	},
 };
 
 const struct BattleBackground gBattleTerrainTableMorning[] =
@@ -678,6 +689,14 @@ const struct BattleBackground gBattleTerrainTableMorning[] =
 		.entryTileset = gBattleTerrainAnimTiles_PondWater,
 		.entryTilemap = gBattleTerrainAnimTilemap_PondWater,
 		.palette = BG_Pond_Cave_SeppirePal,
+	},
+	[BATTLE_TERRAIN_CHAMPION] =
+	{
+		.tileset = BG_ChampionTiles,
+		.tilemap = BG_ChampionMap,
+		.entryTileset = gBattleTerrainAnimTiles_Building,
+		.entryTilemap = gBattleTerrainAnimTilemap_Building,
+		.palette = BG_ChampionPal,
 	},
 };
 
@@ -948,6 +967,14 @@ const struct BattleBackground gBattleTerrainTableEvening[] =
 		.entryTilemap = gBattleTerrainAnimTilemap_PondWater,
 		.palette = BG_Pond_Cave_SeppirePal,
 	},
+	[BATTLE_TERRAIN_CHAMPION] =
+	{
+		.tileset = BG_ChampionTiles,
+		.tilemap = BG_ChampionMap,
+		.entryTileset = gBattleTerrainAnimTiles_Building,
+		.entryTilemap = gBattleTerrainAnimTilemap_Building,
+		.palette = BG_ChampionPal,
+	},
 };
 
 const struct BattleBackground gBattleTerrainTableNight[] =
@@ -1215,6 +1242,14 @@ const struct BattleBackground gBattleTerrainTableNight[] =
 		.entryTileset = gBattleTerrainAnimTiles_PondWater,
 		.entryTilemap = gBattleTerrainAnimTilemap_PondWater,
 		.palette = BG_Pond_Cave_SeppirePal,
+	},
+	[BATTLE_TERRAIN_CHAMPION] =
+	{
+		.tileset = BG_ChampionTiles,
+		.tilemap = BG_ChampionMap,
+		.entryTileset = gBattleTerrainAnimTiles_Building,
+		.entryTilemap = gBattleTerrainAnimTilemap_Building,
+		.palette = BG_ChampionPal,
 	},
 };
 #endif
