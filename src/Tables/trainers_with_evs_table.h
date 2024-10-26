@@ -1487,7 +1487,11 @@ const u8 gBaseIVsByTrainerClass[NUM_TRAINER_CLASSES] =
 	[CLASS_SENSEI] = 31,
 	[CLASS_DISCIPLE] = 25,
 	[CLASS_DEVELOPER] = 25,
-	[CLASS_GYM_TRAINEE] = 25
+	[CLASS_GYM_TRAINEE] = 25,
+	[CLASS_PKMN_TRAINER_1] = 20,
+	[CLASS_PKMN_TRAINER_2] = 20,
+	[CLASS_PKMN_TRAINER_3] = 20,
+	[CLASS_PKMN_TRAINER_4] = 31, // Alistair Carnelidge
 };
 #else //For Pokemon Unbound
 const u8 gBaseIVsByTrainerClass[NUM_TRAINER_CLASSES] =

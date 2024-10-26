@@ -405,6 +405,12 @@ static u8 TryLoadAlternateAreaTerrain(u8 terrain)
 			else if (MAP_IS(DAIMYN_RESTAURANT))
 				terrain = BATTLE_TERRAIN_INSIDE;
 			break;
+		case BATTLE_TERRAIN_LORLEI:
+		case BATTLE_TERRAIN_BRUNO:
+		case BATTLE_TERRAIN_AGATHA:
+		case BATTLE_TERRAIN_LANCE:
+			terrain = BATTLE_TERRAIN_GYM;
+			break;
 	}
 
 	// if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING))

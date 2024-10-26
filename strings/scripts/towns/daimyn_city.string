@@ -1181,7 +1181,7 @@ Store directory:\pHealing Consumables: SW Corner\nTMs: NW Corner\lBerries: N Hal
 
 // Ascension Tower
 #org @gText_AscensionTower_EliteFourAttendant_Introduction
-Welcome to Ascension Tower! I accept\nregistrations for the Elite Four\lchallenge.\pWould you like to take the Elite\nFour challenge?
+Welcome to Ascension Tower! I accept\nregistrations for the Elite Four\lChallenge.\pWould you like to take the Elite\nFour Challenge?
 
 #org @gText_AscensionTower_EliteFourAttendant_NoChampionsFlag
 Please present your Victory Flag\nand I'll get you registered[.]\pOh! You don't have one.\pYou'll first need to gather all 8\nbadges, and return here to register\lfor the Victory Road Challenge.\pThen, you may ascend Victory Road\nto claim a Victory Flag of your\lown.
@@ -1189,11 +1189,17 @@ Please present your Victory Flag\nand I'll get you registered[.]\pOh! You don't 
 #org @gText_AscensionTower_EliteFourAttendant_ChallengeInfo
 Trainers who have obtained a\nVictory Flag may challenge the\lElite Four Challenge.\pApplicants must battle four of the\nKulure region's best trainers in a\lback-to-back gauntlet.\pIf successful, they will obtain the\nright to challenge the Champion for\ltheir title!
 
+#org @gText_AscensionTower_EliteFourAttendant_GettingTheGate
+Wonderful! I'll just put your\nname into the system[.]\pPerfect. Thank you for registering,\n[PLAYER].\pPlease, allow me to get the gate for\nyou.
+
+#org @gText_AscensionTower_EliteFourAttendant_WishingLuck
+You may proceed to the elevator at\nthe back of the room.\pIt will take you to your first\nchallenge.\pShould you succeed, you may return\nto the elevator to be\ldelievered to your next challenge.\pOn behalf of everyone at Ascension\nTower, I wish you the best of\lluck!
+
 #org @gText_AscensionTower_BattleTowerAttendant_Introduction
-Welcome to Ascension Tower! I accept\nregistrations for the Battle Tower\lchallenge.\pWould you like to take the Battle\nTower challenge?
+Welcome to Ascension Tower! I accept\nregistrations for the Battle Tower\lChallenge.\pWould you like to take the Battle\nTower Challenge?
 
 #org @gText_AscensionTower_EliteFourAttendant_BattleTowerInfo
-Trainers who have become Gym\nLeaders, Elite Four members, or\lthe Champion are eligible to\lpartake in the Battle Tower\lchallenge.\pThese trainers may choose 3 Pok\emon\nwith which they will battle as many\ltrainers as possible.\pUpon losing, they will be awarded\nbattle points (BP) based on their\lperformance.\pBP can be traded for exciting prizes\nthat can't be found elsewhere.
+Trainers who have become Gym\nLeaders, Elite Four members, or\lthe Champion are eligible to\lpartake in the Battle Tower\lChallenge.\pThese trainers may choose 3 Pok\emon\nwith which they will battle as many\ltrainers as possible.\pUpon losing, they will be awarded\nbattle points (BP) based on their\lperformance.\pBP can be traded for exciting prizes\nthat can't be found elsewhere.
 
 #org @gText_AscensionTower_BattleTowerAttendant_NotChampion
 Oh, my apologies. You must be a Gym\nLeader, Elite Four member, or the\lChampion to partake in this\lchallenge.\pPlease see me again if you attain\nany of these titles.
@@ -1211,10 +1217,13 @@ I like coming here to watch the\nElite Four challengers battle!\pEveryone gives 
 My son dreams of becoming the\nChampion. It's all he talks about.\pI thought I'd come here to see what\nit's all about.\pThis Champion is seriously strong! I'd\nbetter help him train so he can do\lhis best.
 
 #org @gText_AscensionTower_RecordsSign
-It's a board showing the records\nof all the trainers who've\lchallenged the Elite Four and\lBattle Tower.\pMaybe someday I'll be on here!
+It's a board showing the records\nof all the trainers who've\lchallenged the Elite Four and\lBattle Tower.
+
+#org @gText_AscensionTower_RecordsSign_NotOnBoard
+Maybe someday I'll be on here!
 
 #org @gText_AscensionTower_EliteFourChallengeRegistration_RivalGreetsPlayer
-[BLACK][RIVAL]: [BLUE]Oh, hey [PLAYER]!\nYou're just in time.\pLet's register ourselves for the Elite\nFour Challenge!\pOnce we challenge and beat them,\nwe'll have our chance to battle\lChampion Selene[.]\pI can't wait! We've dreamed of this\nday for ages!
+[BLACK][RIVAL]: [BLUE]Oh, hey [PLAYER]!\nYou're just in time.\pLet's register ourselves for the Elite\nFour Challenge!\pOnce we battle and beat them,\nwe'll have our chance to battle\lChampion Selene[.]\pI can't wait! We've dreamed of this\nday for ages!
 
 #org @gText_AscensionTower_EliteFourChallengeRegistration_RivalAsksToRegister
 [BLACK][RIVAL]: [BLUE]Excuse me.\pMy friend [PLAYER] and I would like\nto register for the Elite Four\lChallenge.
@@ -1284,6 +1293,63 @@ It's a board showing the records\nof all the trainers who've\lchallenged the Eli
 
 #org @gText_AscensionTower_EliteFourChallengeRegistration_RivalRecapsTheChallenges
 [BLACK][RIVAL]: [BLUE]Okay, so[.]\pFirst we go to Victory Road and get\nthe Victory Flag at the peak.\pThen, we come back here and\nchallenge the Elite Four and\lChampion Selene.\pOkay!\p[PLAYER], I'm going to go toughen up\nmy Pok\emon. Then, I'll get that\lflag[.]\pI'm sure we'll cross paths on Victory\nRoad.\pIf we do, you'd better be ready!\pMy Pok\emon and I will give it our\nall!\pOkay, [PLAYER], I'd better get\ngoing. See you around!
+
+#org @gText_AscensionTower_ElevatorAttendant_FirstFloor
+[BLUE]Greetings, and welcome to the Elite\nFour Challenge.\pMy name is Yael, and I shall be your\nattendant today.\pNow please, relax while I deliver\nyou to the first Elite Four member,\lHannah.
+
+#org @gText_AscensionTower_ElevatorAttendant_SecondFloor
+[BLUE]Welcome back. I see you have\novercome Hannah.\pThen please, allow me to deliver you\nto your next opponent, Lucas.
+
+#org @gText_AscensionTower_ElevatorAttendant_ThirdFloor
+[BLUE]Congratulations are in order. You\nhave beaten Lucas.\pIt is now my pleasure to deliver you\nto Jenna, your next opponent.
+
+#org @gText_AscensionTower_ElevatorAttendant_FourthFloor
+[BLUE]Masterfully done.\pWith Jenna's defeat, it is my duty to\ndeliver you to the final Elite Four\lmember, Thomas.
+
+#org @gText_AscensionTower_ElevatorAttendant_ChampionsFloor
+[BLUE]This is truly unprecedented!\pYou have overcome every Elite Four\nmember.\pThen, there is nothing left for me to\ndo but deliver you to the\lChampion's quarters.
+
+#org @gText_AscensionTower_ElevatorAttendant_WishesLuck
+[BLUE]We have arrived at your\ndestination.\pBest of luck in your challenge, yes?
+
+#org @gText_AscensionTower_ElevatorAttendant_Chat
+Please, step out of the elevator\nwhen you are prepared.
+
+#org @gText_AscensionTower_EliteFour_HannahIntro
+[RED]Hello, and welcome to the Pok\emon\nLeague!\pOnly the best of the best can reach\nthis place.\pI am Hannah, and I will be your\nfirst opponent.\pBut[.] Don't assume I'll be easy to\nbeat just because I'm first!
+
+#org @gText_AscensionTower_EliteFour_HannahDefeat
+Very good!\nYou have earned this victory.
+
+#org @gText_AscensionTower_EliteFour_HannahChat
+[RED]Congratulations!\pYou and your Pok\emon battled\nadmirably.\pYou may proceed to your next\nopponent by returning to the\lelevator.\pGood luck!
+
+#org @gText_AscensionTower_EliteFour_LucasIntro
+[BLUE]Yaaaaawwwwnnnn[.]\pI heard my break was over because a\nnew challenger showed up.\pNever expected it'd be some kid.\pLook[.] Don't cry when you lose,\nokay?\pI'm just doing my job[.]
+
+#org @gText_AscensionTower_EliteFour_LucasDefeat
+Whew, you took that battle seriously!
+
+#org @gText_AscensionTower_EliteFour_LucasChat
+[BLUE]Alright, so you've got the stuff\nafter all.\pWin or lose, it doesn't matter.\nI did my job, so we're all good.\pHead on back to the elevator when\nyou're ready.
+
+#org @gText_AscensionTower_EliteFour_JennaIntro
+[RED]Hey, hey, hey! We've got a new\nchallenger in the house, folks!\pI'm Jenna, the third Elite Four\nmember.\pLookie here - these battles are some\nof the fiercest in the region.\pSo, it only makes sense that we give\nit our all and rock out!\pC'mon now, let's jam!
+
+#org @gText_AscensionTower_EliteFour_JennaDefeat
+Rock on!
+
+#org @gText_AscensionTower_EliteFour_JennaChat
+[RED]Now THAT was an electric battle!\nYou rock, kiddo!\pI hope you keep that rhythm going!\pAlright, time for me to take a bow.\pHead back to the elevator when\nyou're ready for your next battle.
+
+#org @gText_AscensionTower_EliteFour_ThomasIntro
+[BLUE]I received word that an up-and-\ncoming trainer was challenging us.\pTo be honest, I expected someone\nmore[.] Impressive.\pListen here.\pI am the final Elite Four\nmember before Miss Selene.\pI will not allow you to waste her\ntime. Your challenge ends here.
+
+#org @gText_AscensionTower_EliteFour_ThomasDefeat
+W-what? This is unprecedented[.]
+
+#org @gText_AscensionTower_EliteFour_ThomasChat
+[BLUE]I must admit, I am surprised.\pWhether it was luck or skill, it\nmatters not.\pYou won, and you have earned the\nright to challenge Miss Selene.\pYou may return to the elevator when\nyou are ready to challenge her.
 
 // Restaurant
 #org @gText_Restaurant_FirstVisit

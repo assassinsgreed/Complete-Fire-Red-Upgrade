@@ -50,6 +50,7 @@
 #define TrainerAIFlags_Disciple_Standard        (AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_HP_AWARE | AI_SCRIPT_CHECK_VIABILITY)
 #define TrainerAIFlags_Developer_Standard       (AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_SEMI_SMART)
 #define TrainerAIFlags_GymTrainees_Standard     (AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_CHECK_VIABILITY)
+#define TrainerAIFlags_AscensionTower_Standard  (AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_HP_AWARE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_SEMI_SMART)
 
 // #region Trainer Structs
 
@@ -8137,6 +8138,337 @@ const struct TrainerMonNoItemCustomMoves sParty_VictoryRoad_NurseCelia[] = {
 };
 // #endregion
 
+// #region Ascension Tower
+// TODO: Other E4 trainer defs + Selene
+const struct TrainerMonItemCustomMoves sParty_AscensionTower_EliteFour_Hannah[] = {
+    {
+        .lvl = 68,
+        .species = SPECIES_WHIMSICOTT,
+        .moves = {
+            MOVE_LEECHSEED,
+            MOVE_SUBSTITUTE,
+            MOVE_COTTONGUARD,
+            MOVE_GIGADRAIN
+        },
+        .heldItem = ITEM_LEFTOVERS,
+        .ability = Ability_1 // Prankster
+    },
+    {
+        .lvl = 68,
+        .species = SPECIES_GASTRODON_EAST,
+        .moves = {
+            MOVE_MUDDYWATER,
+            MOVE_EARTHPOWER,
+            MOVE_RECOVER,
+            MOVE_SLUDGEWAVE
+        },
+        .heldItem = ITEM_BRIGHT_POWDER,
+        .ability = Ability_2 // Storm Drain
+    },
+    {
+        .lvl = 69,
+        .species = SPECIES_TALONFLAME,
+        .moves = {
+            MOVE_ROOST,
+            MOVE_TAILWIND,
+            MOVE_FLAREBLITZ,
+            MOVE_BRAVEBIRD
+        },
+        .heldItem = ITEM_LIFE_ORB,
+        .ability = Ability_Hidden // Gale Wings
+    },
+    {
+        .lvl = 69,
+        .species = SPECIES_COFAGRIGUS,
+        .moves = {
+            MOVE_WILLOWISP,
+            MOVE_HEX,
+            MOVE_DARKPULSE,
+            MOVE_TRICK
+        },
+        .heldItem = ITEM_LAGGING_TAIL,
+        .ability = Ability_1 // Mummy
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_MAWILE,
+        .moves = {
+            MOVE_IRONHEAD,
+            MOVE_PLAYROUGH,
+            MOVE_ICEPUNCH,
+            MOVE_SWORDSDANCE
+        },
+        .heldItem = ITEM_MAWILITE,
+        .ability = Ability_2 // Intimidate
+    }
+};
+
+const struct TrainerMonItemCustomMoves sParty_AscensionTower_EliteFour_Lucas[] = {
+    {
+        .lvl = 69,
+        .species = SPECIES_FERROTHORN,
+        .moves = {
+            MOVE_LEECHSEED,
+            MOVE_SPIKES,
+            MOVE_POWERWHIP,
+            MOVE_GYROBALL
+        },
+        .heldItem = ITEM_LEFTOVERS,
+        .ability = Ability_1 // Iron Barbs
+    },
+    {
+        .lvl = 69,
+        .species = SPECIES_SALAZZLE,
+        .moves = {
+            MOVE_NASTYPLOT,
+            MOVE_TOXIC,
+            MOVE_VENOSHOCK,
+            MOVE_FLAMETHROWER
+        },
+        .heldItem = ITEM_FOCUS_SASH,
+        .ability = Ability_1 // Corrosion
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_TOGEKISS,
+        .moves = {
+            MOVE_AIRSLASH,
+            MOVE_ROOST,
+            MOVE_THUNDERWAVE,
+            MOVE_AURASPHERE
+        },
+        .heldItem = ITEM_HEAVY_DUTY_BOOTS,
+        .ability = Ability_2 // Serene Grace
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_KOMMO_O,
+        .moves = {
+            MOVE_NOBLEROAR,
+            MOVE_ICEPUNCH,
+            MOVE_CLOSECOMBAT,
+            MOVE_OUTRAGE
+        },
+        .heldItem = ITEM_WHITE_HERB,
+        .ability = Ability_Hidden // Overcoat
+    },
+    {
+        .lvl = 71,
+        .species = SPECIES_GYARADOS,
+        .moves = {
+            MOVE_EARTHQUAKE,
+            MOVE_WATERFALL,
+            MOVE_CRUNCH,
+            MOVE_DRAGONDANCE
+        },
+        .heldItem = ITEM_GYARADOSITE,
+        .ability = Ability_1 // Intimidate
+    }
+};
+
+const struct TrainerMonItemCustomMoves sParty_AscensionTower_EliteFour_Jenna[] = {
+    {
+        .lvl = 70,
+        .species = SPECIES_TOXAPEX,
+        .moves = {
+            MOVE_TOXICSPIKES,
+            MOVE_BANEFULBUNKER,
+            MOVE_LIQUIDATION,
+            MOVE_RECOVER
+        },
+        .heldItem = ITEM_ROCKY_HELMET,
+        .ability = Ability_1 // Merciless
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_BISHARP,
+        .moves = {
+            MOVE_NIGHTSLASH,
+            MOVE_IRONHEAD,
+            MOVE_SWORDSDANCE,
+            MOVE_PSYCHOCUT
+        },
+        .heldItem = ITEM_LIFE_ORB,
+        .ability = Ability_1 // Defiant
+    },
+    {
+        .lvl = 71,
+        .species = SPECIES_HATTERENE,
+        .moves = {
+            MOVE_PSYCHIC,
+            MOVE_CALMMIND,
+            MOVE_DAZZLINGGLEAM,
+            MOVE_MYSTICALFIRE
+        },
+        .heldItem = ITEM_LEFTOVERS,
+        .ability = Ability_Hidden // Magic Bounce
+    },
+    {
+        .lvl = 71,
+        .species = SPECIES_MAMOSWINE,
+        .moves = {
+            MOVE_ICESHARD,
+            MOVE_EARTHQUAKE,
+            MOVE_ICICLECRASH,
+            MOVE_STONEEDGE
+        },
+        .heldItem = ITEM_ASSAULT_VEST,
+        .ability = Ability_Hidden // Thick Fat
+    },
+    {
+        .lvl = 72,
+        .species = SPECIES_KANGASKHAN,
+        .moves = {
+            MOVE_FAKEOUT,
+            MOVE_POWERUPPUNCH,
+            MOVE_CRUNCH,
+            MOVE_RETURN
+        },
+        .heldItem = ITEM_KANGASKHANITE,
+        .ability = Ability_Hidden // Inner Focus
+    }
+};
+
+const struct TrainerMonItemCustomMoves sParty_AscensionTower_EliteFour_Thomas[] = {
+    {
+        .lvl = 71,
+        .species = SPECIES_VENUSAUR,
+        .moves = {
+            MOVE_LEECHSEED,
+            MOVE_SLUDGEBOMB,
+            MOVE_SYNTHESIS,
+            MOVE_GIGADRAIN
+        },
+        .heldItem = ITEM_BLACK_SLUDGE,
+        .ability = Ability_1 // Overgrow
+    },
+    {
+        .lvl = 71,
+        .species = SPECIES_KROOKODILE,
+        .moves = {
+            MOVE_EARTHQUAKE,
+            MOVE_CRUNCH,
+            MOVE_STONEEDGE,
+            MOVE_OUTRAGE
+        },
+        .heldItem = ITEM_ASSAULT_VEST,
+        .ability = Ability_1 // Intimidate
+    },
+    {
+        .lvl = 72,
+        .species = SPECIES_INFERNAPE,
+        .moves = {
+            MOVE_MACHPUNCH,
+            MOVE_FLAREBLITZ,
+            MOVE_THUNDERPUNCH,
+            MOVE_SHADOWCLAW
+        },
+        .heldItem = ITEM_LIFE_ORB,
+        .ability = Ability_Hidden // Iron Fist
+    },
+    {
+        .lvl = 72,
+        .species = SPECIES_ROTOM_WASH,
+        .moves = {
+            MOVE_REST,
+            MOVE_WILLOWISP,
+            MOVE_VOLTSWITCH,
+            MOVE_HYDROPUMP
+        },
+        .heldItem = ITEM_CHESTO_BERRY,
+        .ability = Ability_1 // Levitate
+    },
+    {
+        .lvl = 73,
+        .species = SPECIES_SLOWBRO,
+        .moves = {
+            MOVE_SLACKOFF,
+            MOVE_CALMMIND,
+            MOVE_PSYSHOCK,
+            MOVE_SCALD
+        },
+        .heldItem = ITEM_SLOWBRONITE,
+        .ability = Ability_1 // Oblivious
+    }
+};
+
+const struct TrainerMonItemCustomMoves sParty_AscensionTower_Champion_Selene[] = {
+    {
+        .lvl = 73,
+        .species = SPECIES_SKARMORY,
+        .moves = {
+            MOVE_BRAVEBIRD,
+            MOVE_SPIKES,
+            MOVE_IRONHEAD,
+            MOVE_ROOST
+        },
+        .heldItem = ITEM_ROCKY_HELMET,
+        .ability = Ability_2 // Sturdy
+    },
+    {
+        .lvl = 73,
+        .species = SPECIES_ROSERADE,
+        .moves = {
+            MOVE_TOXICSPIKES,
+            MOVE_LEECHSEED,
+            MOVE_GIGADRAIN,
+            MOVE_SLUDGEBOMB
+        },
+        .heldItem = ITEM_BLACK_SLUDGE,
+        .ability = Ability_2 // Poison Point
+    },
+    {
+        .lvl = 73,
+        .species = SPECIES_LOPUNNY,
+        .moves = {
+            MOVE_HIGHJUMPKICK,
+            MOVE_FAKEOUT,
+            MOVE_RETURN,
+            MOVE_ICEPUNCH
+        },
+        .heldItem = ITEM_LOPUNNITE,
+        .ability = Ability_1 // Cute Charm
+    },
+    {
+        .lvl = 73,
+        .species = SPECIES_SYLVEON,
+        .moves = {
+            MOVE_HYPERVOICE,
+            MOVE_PSYSHOCK,
+            MOVE_WISH,
+            MOVE_PROTECT
+        },
+        .heldItem = ITEM_LEFTOVERS,
+        .ability = Ability_Hidden // Pixelate
+    },
+    {
+        .lvl = 74,
+        .species = SPECIES_GRENINJA,
+        .moves = {
+            MOVE_WATERSHURIKEN,
+            MOVE_SCALD,
+            MOVE_DARKPULSE,
+            MOVE_ICEBEAM
+        },
+        .heldItem = ITEM_LIFE_ORB,
+        .ability = Ability_2 // Battle Bond
+    },
+    {
+        .lvl = 75,
+        .species = SPECIES_VICTINI,
+        .moves = {
+            MOVE_VCREATE,
+            MOVE_WILDCHARGE,
+            MOVE_ZENHEADBUTT,
+            MOVE_DAZZLINGGLEAM
+        },
+        .heldItem = ITEM_WHITE_HERB,
+        .ability = Ability_1 // Victory Star
+    }
+};
+
+// #endregion
+
 // #endregion
 
 #define NO_NAME                                                                                      \
@@ -14464,5 +14796,65 @@ const struct Trainer gTrainers[] = {
         .partySize = NELEMS(sParty_Rival_ExhibitionBattle_SecondaryTeam),
         .party = {.ItemCustomMoves = sParty_Rival_ExhibitionBattle_SecondaryTeam}
     },
+    [TRAINER_ASCENSION_TOWER_E4_HANNAH] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_ELITE_4,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
+        .trainerPic = TRAINER_PIC_E4_HANNAH,
+        .trainerName = {_H, _a, _n, _n, _a, _h, _END},
+        .items = { ITEM_MEGA_RING, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_AscensionTower_Standard,
+        .partySize = NELEMS(sParty_AscensionTower_EliteFour_Hannah),
+        .party = {.ItemCustomMoves = sParty_AscensionTower_EliteFour_Hannah}
+    },
+    [TRAINER_ASCENSION_TOWER_E4_LUCAS] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_ELITE_4,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
+        .trainerPic = TRAINER_PIC_E4_LUCAS,
+        .trainerName = {_L, _u, _c, _a, _s, _END},
+        .items = { ITEM_MEGA_RING, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_AscensionTower_Standard,
+        .partySize = NELEMS(sParty_AscensionTower_EliteFour_Lucas),
+        .party = {.ItemCustomMoves = sParty_AscensionTower_EliteFour_Lucas}
+    },
+    [TRAINER_ASCENSION_TOWER_E4_JENNA] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_ELITE_4,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
+        .trainerPic = TRAINER_PIC_E4_JENNA,
+        .trainerName = {_J, _e, _n, _n, _a, _END},
+        .items = { ITEM_MEGA_RING, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_AscensionTower_Standard,
+        .partySize = NELEMS(sParty_AscensionTower_EliteFour_Jenna),
+        .party = {.ItemCustomMoves = sParty_AscensionTower_EliteFour_Jenna}
+    },
+    [TRAINER_ASCENSION_TOWER_E4_THOMAS] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_ELITE_4,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
+        .trainerPic = TRAINER_PIC_E4_THOMAS,
+        .trainerName = {_T, _h, _o, _m, _a, _s, _END},
+        .items = { ITEM_MEGA_RING, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_AscensionTower_Standard,
+        .partySize = NELEMS(sParty_AscensionTower_EliteFour_Thomas),
+        .party = {.ItemCustomMoves = sParty_AscensionTower_EliteFour_Thomas}
+    },
+    [TRAINER_ASCENSION_TOWER_CHAMPION_SELENE] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_CHAMPION,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
+        .trainerPic = TRAINER_PIC_CHAMPION_SELENE,
+        .trainerName = {_S, _e, _l, _e, _n, _e, _END},
+        .items = { ITEM_MEGA_RING, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_AscensionTower_Standard,
+        .partySize = NELEMS(sParty_AscensionTower_Champion_Selene),
+        .party = {.ItemCustomMoves = sParty_AscensionTower_Champion_Selene}
+    }
     // #endregion
 };
