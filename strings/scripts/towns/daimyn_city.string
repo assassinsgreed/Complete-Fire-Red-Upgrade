@@ -1312,6 +1312,9 @@ Maybe someday I'll be on here!
 #org @gText_AscensionTower_ElevatorAttendant_WishesLuck
 [BLUE]We have arrived at your\ndestination.\pBest of luck in your challenge, yes?
 
+#org @gText_AscensionTower_ElevatorAttendant_PriorToChampion
+[BLUE]Please ensure you are fully prepared\nbefore exiting the elevator.\pI'm certain the champion will be\neager to battle you without delay.
+
 #org @gText_AscensionTower_ElevatorAttendant_Chat
 Please, step out of the elevator\nwhen you are prepared.
 
@@ -1350,6 +1353,30 @@ W-what? This is unprecedented[.]
 
 #org @gText_AscensionTower_EliteFour_ThomasChat
 [BLUE]I must admit, I am surprised.\pWhether it was luck or skill, it\nmatters not.\pYou won, and you have earned the\nright to challenge Miss Selene.\pYou may return to the elevator when\nyou are ready to challenge her.
+
+#org @gText_AscensionTower_ChampionSelene_PreBattle1
+[RED][PLAYER], you've finally arrived.
+
+#org @gText_AscensionTower_ChampionSelene_PreBattle2
+[RED]You know, when we first met, I had a\nfeeling you'd stand before me\lsomeday.\pTo think you've become so capable in\nsuch a short time[.]
+
+#org @gText_AscensionTower_ChampionSelene_PreBattle3
+[RED][PLAYER], are you ready?\pYou stand before the Undefeated\nChampion, Selene.\pThe whole region is watching us right\nnow.\pI will face you with everything I've\ngot, and I ask the same of you.\pI should warn you[.]\pI didn't get to where I am today by\nluck.\pDo you think you can overcome me,\nwhen victory itself stands with me?
+
+#org @gText_AscensionTower_ChampionSelene_Defeat
+[PLAYER], you and your Pok\emon\nhave battled incredibly well.\pIt is my pleasure to award you the\ntitle of Kulure's Newest Champion!\pPlease, accept my heartfelt\ncongratulations.
+
+#org @gText_AscensionTower_ChampionSelene_PostBattle
+[RED][PLAYER], what you've accomplished\ntoday cannot be understated.\pYou and your Pok\emon have risen\nabove every challenge you faced.\pThrough the trust and bond you\nshare, you accomplished something\lmany have only dreamed of.\pAnd[.] You have fought to protect\nthe region we all call home.\pThere is no one more deserving of\nthe title of Champion.\pNow, please, come with me to the\nHall of Fame.\pI'd like to make a record of what\nyou and your Pok\emon have\lachieved.
+
+#org @gText_AscensionTower_ChampionSelene_ExplainingHallOfFame
+[RED][PLAYER], we are standing in the Hall\nof Fame.\pIt is a sacred place that only\nchampions may enter.
+
+#org @gText_AscensionTower_ChampionSelene_UrgingPlayerToEnterHallOfFame
+[RED]This machine will make a record of\nyou and your Pok\emon partners.\pIt will stand as a testiment to\neverything you have accomplished.\p[PLAYER], please place your Pok\e\nBalls into the machine when you\lare ready.\pI will then officially welcome you\nto the Kulure Hall of Fame!
+
+#org @gText_AscensionTower_ChampionSelene_ReturningToAnthra
+[RED]Undoubtedly, your friends and family\nhave already seen your victory.\pI'm sure you're eager to return home\nto celebrate with them.\pAs for myself, I think it's time for a\nnice, long vacation[.]\pBut that can wait.\pCome! Let us return to Anthra Town\nto celebrate your accomplishments.
 
 // Restaurant
 #org @gText_Restaurant_FirstVisit

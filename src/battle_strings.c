@@ -684,7 +684,7 @@ u32 BattleStringExpandPlaceholders(const u8* src, u8* dst)
 							toCpy = GetExpandedPlaceholder(ExpandPlaceholder_RivalName);
 						else
 					#elif defined OVERWRITE_RIVAL
-						if (class == 0x51 || class == 0x59 || class == 0x5A)
+						if (class == 0x51 || class == 0x59)
 							toCpy = GetExpandedPlaceholder(ExpandPlaceholder_RivalName);
 						else
 					#endif
@@ -842,7 +842,7 @@ u32 BattleStringExpandPlaceholders(const u8* src, u8* dst)
 							toCpy = GetExpandedPlaceholder(ExpandPlaceholder_RivalName);
 						else
 					#elif defined OVERWRITE_RIVAL
-						if (class == 0x51 || class == 0x59 || class == 0x5A)
+						if (class == 0x51 || class == 0x59)
 							toCpy = GetExpandedPlaceholder(ExpandPlaceholder_RivalName);
 						else
 					#endif

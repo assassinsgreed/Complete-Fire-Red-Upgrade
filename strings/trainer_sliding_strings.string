@@ -320,7 +320,7 @@ Miss Selene, forgive me.\p
 
 // Champion Selene
 #org @sText_Champion_FirstMonDown
-Impressive. I feel we're going to have\na really exciting battle today!\p
+Impressive.\pI feel we're going to have a really\nexciting battle today!\p
 
 #org @sText_Champion_LastSwitchIn
 It's been a long time since I've had a\nbattle this close!\p
@@ -328,6 +328,7 @@ It's been a long time since I've had a\nbattle this close!\p
 #org @sText_Champion_LowHP
 We won't give up until the very end!\nYou'd better give it your all too!\p
 
+// Title Defense slide-ins
 // Champion Selene Rematch
 #org @sText_ChampionRematch_FirstMonDown
 This really takes me back to our\nfirst battle. Do you remember it,\ntoo?\p

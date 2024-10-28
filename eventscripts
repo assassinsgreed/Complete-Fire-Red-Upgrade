@@ -939,6 +939,8 @@ tile 1 77 0 TileScript_AscensionTower_ReturnToElevator
 map 1 78 MapScript_AscensionTower_E4Room
 npc 1 78 0 EventScript_AscensionTower_EliteFourThomas
 tile 1 78 0 TileScript_AscensionTower_ReturnToElevator
+map 1 79 MapScript_AscensionTower_E4Room
+map 1 80 MapScript_AscensionTower_HallOfFame
 ## Overworld
 map 3 5 MapScript_DaimynCity
 npc 3 5 0 EventScript_DaimynCityOverworld_GamblingMan
