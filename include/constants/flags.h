@@ -118,7 +118,7 @@
 #define FLAG_HIDE_COSMOG_AT_ALTAR_OF_ECLIPSE               0x070
 #define FLAG_HIDE_HOENN_WINGULLS                           0x071
 #define FLAG_HIDE_VICTORY_FLAG                             0x072
-#define FLAG_HIDE_ONE_ISLAND_POKECENTER_CELIO              0x073
+#define FLAG_HIDE_VOLCANION                                0x073
 #define FLAG_HIDE_TWO_ISLAND_GAME_CORNER_BIKER             0x074
 #define FLAG_HIDE_TWO_ISLAND_GAME_CORNER_LOSTELLE          0x075
 #define FLAG_HIDE_LOSTELLE_IN_HER_HOME                     0x076

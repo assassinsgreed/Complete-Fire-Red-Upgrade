@@ -300,11 +300,20 @@ AscensionTowerElevatorTravel:
     pause DELAY_HALFSECOND
     applymovement 0x1 m_YaelReturnsFromElevator
     waitmovement ALLEVENTS
+    compare 0x406C 0xF
+    if equal _goto YaelBeforeChampion
     msgbox gText_AscensionTower_ElevatorAttendant_WishesLuck MSG_NORMAL
+    end
+
+YaelBeforeChampion:
+    @ TODO Later: Handle when player is already champion
+    npcchatwithmovement gText_AscensionTower_ElevatorAttendant_PriorToChampion m_LookDown
     end
 
 .global EventScript_AscensionTower_Elevator_Attendant
 EventScript_AscensionTower_Elevator_Attendant:
+    compare 0x406C 0xF
+    if equal _goto YaelBeforeChampion
     npcchatwithmovement gText_AscensionTower_ElevatorAttendant_Chat m_LookDown
     end
 
@@ -368,7 +377,69 @@ LevelScript_AscensionTower_WalkForward_ForE4Battle_Common:
     end
 
 LevelScript_AscensionTower_WalkForward_ForChampionBattle:
-    // TODO: Populate in later ticket
+    pause DELAY_HALFSECOND
+    applymovement PLAYER m_ApproachChampion
+    waitmovement PLAYER
+    lock
+    pause DELAY_HALFSECOND
+    msgbox gText_AscensionTower_ChampionSelene_PreBattle1 MSG_NORMAL
+    applymovement 0x1 m_LookLeft
+    msgbox gText_AscensionTower_ChampionSelene_PreBattle2 MSG_NORMAL
+    applymovement 0x1 m_LookDown
+    playbgm 344 @ PWT Lobby
+    msgbox gText_AscensionTower_ChampionSelene_PreBattle3 MSG_NORMAL
+    call SetupMugshotChampionAndTitleDefense
+    trainerbattle3 0x0 524 0x100 gText_AscensionTower_ChampionSelene_Defeat
+    playbgm 345 @ N's farewell
+    msgbox gText_AscensionTower_ChampionSelene_PostBattle MSG_NORMAL
+    applymovement 0x1 m_ReigningChampionWalksToHallOfFame
+    applymovement PLAYER m_PlayerWalksToHallOfFame
+    waitmovement PLAYER
+    setflag 0x4BC @ Champion Selene defeated. This is never reset as it's used to determine if the player is in the postgame
+    warp 1 80 0
+    end
+
+.global MapScript_AscensionTower_HallOfFame
+MapScript_AscensionTower_HallOfFame:
+    mapscript MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE LevelScripts_AscensionTower_E4_OnWarp
+    mapscript MAP_SCRIPT_ON_FRAME_TABLE LevelScripts_AscensionTower_HallOfFame
+    .byte MAP_SCRIPT_TERMIN
+
+LevelScripts_AscensionTower_HallOfFame:
+    levelscript 0x406C 0xF LevelScript_AscensionTower_HallOfFame_Registration
+    .hword LEVEL_SCRIPT_TERMIN
+
+LevelScript_AscensionTower_HallOfFame_Registration:
+    lockall
+    pause DELAY_HALFSECOND
+    applymovement 0x1 m_SeleneWalksToHallOfFameMachine 
+    applymovement PLAYER m_PlayerWalksToHallOfFameMachine
+    waitmovement PLAYER
+    pause DELAY_HALFSECOND
+    applymovement 0x1 m_LookLeft
+    applymovement PLAYER m_LookRight
+    msgbox gText_AscensionTower_ChampionSelene_ExplainingHallOfFame MSG_NORMAL
+    applymovement 0x1 m_LookUp
+    applymovement PLAYER m_LookUp
+    msgbox gText_AscensionTower_ChampionSelene_UrgingPlayerToEnterHallOfFame MSG_NORMAL
+    applymovement PLAYER m_PlayerApproachesHallOfFameMachine
+    waitmovement PLAYER
+    pause DELAY_HALFSECOND
+    doanimation 0x3E @ Place pokeballs into the machine
+    waitanimation 0x3E
+    pause 0x28
+    special 0xA9 @ Unclear, but Vanilla FR does it here
+    special 0x0 @ Heal the party
+    callasm ResetAllLegendaries
+    sethealingplace 0x1 @ Player healing place is now their home
+    fadescreenspeed FADEOUT_BLACK 0x18
+    @ TODO in next ticket: Special 0x110 is hard coded to warp the player to map 3.9, which is Tsarvosa for us.
+    @ Due to this issue and new bugs in the vanilla credits script, we'll need to jerry rig our own credits sequence in the next set of tickets
+    special 0x110
+    waitstate
+    releaseall
+    @ special 0x1A5 @ Vanilla credits now have messed up starter palettes and it just crashes partway through
+    @ waitstate
     end
 
 @ This is a workaround for the warp back to the elevator being buggy with warp tiles...
@@ -474,3 +545,9 @@ ThomasChat:
 m_YaelStartsElevator: .byte walk_left, walk_left, look_up, end_m
 m_YaelReturnsFromElevator: .byte walk_right, walk_right, look_down, end_m
 m_ApproachEliteFour: .byte walk_up, walk_up, walk_up, walk_up, end_m
+m_ApproachChampion: .byte walk_up_slow, walk_up_slow, walk_up_slow, walk_up_slow, walk_up_slow, walk_up_slow, walk_up_slow, walk_up_slow, walk_up_slow, walk_up_slow, end_m
+m_ReigningChampionWalksToHallOfFame: .byte walk_up, walk_up, walk_up, walk_up, walk_up, walk_up, set_invisible, end_m
+m_PlayerWalksToHallOfFame: .byte walk_up, walk_up, walk_up, walk_up, walk_up, walk_up, walk_up, end_m
+m_SeleneWalksToHallOfFameMachine: .byte walk_up, walk_up, walk_up, walk_up, walk_up, walk_up, walk_right, look_up, end_m 
+m_PlayerWalksToHallOfFameMachine: .byte walk_up, walk_up, walk_up, walk_up, walk_up, walk_up, walk_up, end_m
+m_PlayerApproachesHallOfFameMachine: .byte walk_up_very_slow, end_m

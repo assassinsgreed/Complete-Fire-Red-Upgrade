@@ -656,14 +656,20 @@ DisableTrainerScalingFlag:
 
 .global SetupMugshotRival
 SetupMugshotRival:
-    setvar 0x503A 0x2
-    setvar 0x503B 0x0
+    setvar 0x503A 0x2 @ Two small bars with half trainer sprites
+    setvar 0x503B 0x0 @ Player picture
     return
 
 .global SetupMugshotGymLeaderAndBosses
 SetupMugshotGymLeaderAndBosses:
-    setvar 0x503A 0x1
-    setvar 0x503B 0x1
+    setvar 0x503A 0x1 @ One small bar with half trainer sprites
+    setvar 0x503B 0x1 @ VS picture
+    return
+
+.global SetupMugshotChampionAndTitleDefense
+SetupMugshotChampionAndTitleDefense:
+    setvar 0x503A 0x0 @ One big bar with full trainer sprite
+    setvar 0x503B 0x1 @ VS picture
     return
 
 .global RivalTagBattlePromptAndPartyOrganization

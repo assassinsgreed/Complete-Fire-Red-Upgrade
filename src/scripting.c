@@ -3604,3 +3604,51 @@ void CheckIfPokemonKnowsMove()
 	
 	gSpecialVar_LastResult = MoveInMonMoveset(Var8005, &gPlayerParty[partyId]);
 }
+
+void ResetAllLegendaries()
+{
+	// Handle roamers (This will have to be kept in sync with ASM scripts if levels are changed)
+	int roamers[4] = { SPECIES_ARTICUNO_G, SPECIES_ZAPDOS_G,  SPECIES_MOLTRES_G, SPECIES_ZERAORA };
+	int roamerLevels[4] = { 50, 50, 50, 70 };
+
+	for (int i = 0; i < 4; i++)
+	{
+		if (!GetSetPokedexFlag(SpeciesToNationalPokedexNum(roamers[i]), FLAG_GET_CAUGHT))
+		{
+			Var8000 = roamers[i]; // Species
+			Var8001 = roamerLevels[i]; // Level
+			Var8002 = TRUE; // Roaming on land
+			Var8003 = FALSE; // No roaming on water
+			sp129_InitRoamer();
+		}
+	}
+
+	// Handle non-roamers
+	int species[7] = {
+		SPECIES_JIRACHI,
+		SPECIES_SHAYMIN,
+		SPECIES_KYOGRE,
+		SPECIES_GROUDON,
+		SPECIES_VOLCANION,
+		SPECIES_GLASTRIER,
+		SPECIES_MELTAN,
+	};
+
+	int speciesFlags[7] = {
+		0x5A,
+		0x4B,
+		0x4C,
+		0x57,
+		0x73,
+		0x46,
+		0x55
+	};
+
+	for (int i = 0; i < 7; i++)
+	{
+		if (!GetSetPokedexFlag(SpeciesToNationalPokedexNum(species[i]), FLAG_GET_CAUGHT))
+		{
+			FlagClear(speciesFlags[i]);
+		}
+	}
+}
