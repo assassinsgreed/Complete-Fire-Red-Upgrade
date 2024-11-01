@@ -355,6 +355,7 @@ LevelScripts_VictoryRoadPeak:
 	.hword LEVEL_SCRIPT_TERMIN
 
 LevelScript_VictoryRoadPeak_BattleForVictoryFlag:
+    special 0xAF @ Dismount bike if on it
     getplayerpos 0x4000 0x4001
     compare 0x4000 0x8
     if equal _call PlayerWalkRight_Return

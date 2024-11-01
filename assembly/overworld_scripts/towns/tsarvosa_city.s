@@ -9,11 +9,36 @@
 .global MapScript_TsarvosaCity
 MapScript_TsarvosaCity:
     mapscript MAP_SCRIPT_ON_TRANSITION MapEntryScript_TsarvosaCity_FlightSpot
+    mapscript MAP_SCRIPT_ON_FRAME_TABLE LevelScripts_TsarvosaCity
+    mapscript MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE LevelScipts_TsarvosaCity_OnWarp
     .byte MAP_SCRIPT_TERMIN
 
 MapEntryScript_TsarvosaCity_FlightSpot:
     setworldmapflag 0x899 @ Visited Tsarvosa City
     clearflag 0x91D @ Enable saving when leaving the Gym Trainee Cafe
+    end
+
+LevelScripts_TsarvosaCity:
+    levelscript 0x406F 0x1 LevelScript_TsarvosaCity_StartCredits
+    .hword LEVEL_SCRIPT_TERMIN
+
+LevelScipts_TsarvosaCity_OnWarp:
+    levelscript 0x406F 0x1 LevelScript_TsarvosaCity_CreditsSetup
+    .hword LEVEL_SCRIPT_TERMIN
+
+LevelScript_TsarvosaCity_CreditsSetup:
+    setflag 0x4000 @ Do not show the map name popup this time
+    applymovement PLAYER m_HideSprite
+    end
+
+LevelScript_TsarvosaCity_StartCredits:
+    @ Due to Vanilla FR code, we need to check if the credits var is active when this map loads, and warp the player if it is
+    playbgm 0x159 @ N's Farewell
+    msgboxsign
+    msgbox gText_Common_Credits_Intro MSG_SIGN
+    addvar 0x406F 0x1 @ Prevent the Credits hack from happening twice during warp
+    warpmuted 31 0 0 @ Daimyn City (Credits Version), Ascension Tower door
+    waitstate
     end
 
 .global EventScript_TsarvosaCity_Captain
