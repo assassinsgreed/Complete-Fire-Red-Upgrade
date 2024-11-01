@@ -23,6 +23,7 @@ MapScript_AnthraTown:
 
 MapEntryScript_AnthraTown_FlightSpot:
     setworldmapflag 0x890
+	setvar 0x406F 0x0 @ Disable credits, in case the player exited the game after entering the Hall of Fame
     end
 
 LevelScripts_AnthraTown_MeetingWithRival:

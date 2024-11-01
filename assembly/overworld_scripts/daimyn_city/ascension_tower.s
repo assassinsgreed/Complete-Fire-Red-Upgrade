@@ -396,6 +396,9 @@ LevelScript_AscensionTower_WalkForward_ForChampionBattle:
     applymovement PLAYER m_PlayerWalksToHallOfFame
     waitmovement PLAYER
     setflag 0x4BC @ Champion Selene defeated. This is never reset as it's used to determine if the player is in the postgame
+    clearflag 0x6C @ Post-Credits NPCs will appear
+    clearflag 0x9D @ Postgame NPCs will now appear
+    setvar 0x4070 0x1 @ Trigger postcredits upon returning to Anthra Town
     warp 1 80 0
     end
 
@@ -433,13 +436,10 @@ LevelScript_AscensionTower_HallOfFame_Registration:
     callasm ResetAllLegendaries
     sethealingplace 0x1 @ Player healing place is now their home
     fadescreenspeed FADEOUT_BLACK 0x18
-    @ TODO in next ticket: Special 0x110 is hard coded to warp the player to map 3.9, which is Tsarvosa for us.
-    @ Due to this issue and new bugs in the vanilla credits script, we'll need to jerry rig our own credits sequence in the next set of tickets
-    special 0x110
+    setvar 0x406F 0x1 @ Credits are active
+    special 0x110 @ Trigger HoF, which will warp the player to Tsarvosa City (Indigo Plateau, in Vanilla FR)
     waitstate
     releaseall
-    @ special 0x1A5 @ Vanilla credits now have messed up starter palettes and it just crashes partway through
-    @ waitstate
     end
 
 @ This is a workaround for the warp back to the elevator being buggy with warp tiles...

@@ -2854,3 +2854,12 @@ npc 1 100 0 EventScript_VictoryRoad_CoolTrainerDahlia
 npc 1 100 1 ItemScript_Common_SteelGem
 ## Peak
 map 1 101 MapScript_VictoryRoadPeak
+
+## Credits Sequence
+map 31 0 MapScript_Common_Credits
+map 31 1 MapScript_Common_Credits
+map 31 2 MapScript_Common_Credits
+map 31 3 MapScript_Common_Credits
+map 31 4 MapScript_Common_Credits
+map 31 5 MapScript_Common_Credits
+map 31 6 MapScript_Common_Credits

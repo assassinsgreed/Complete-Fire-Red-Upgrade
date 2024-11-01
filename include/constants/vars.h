@@ -154,8 +154,8 @@
 #define VAR_MAP_SCENE_ASCENSION_TOWER_ELITE_FOUR_CHALLENGE                     0x406C
 #define VAR_MAP_SCENE_UTEYA_VILLAGE_MEETING_WITH_RIVAL                         0x406D
 #define VAR_MAP_SCENE_VICTORY_ROAD_PEAK_CUTSCENES                              0x406E
-#define VAR_CABLE_CLUB_STATE                                                   0x406F
-#define VAR_MAP_SCENE_PALLET_TOWN_SIGN_LADY                                    0x4070
+#define VAR_MAP_SCENE_CREDITS                                                  0x406F // Used on many maps
+#define VAR_MAP_SCENE_POST_CREDITS                                             0x4070 // Used only on first game clear
 #define VAR_MAP_SCENE_CINNABAR_ISLAND                                          0x4071
 #define VAR_0x4072                                                             0x4072
 #define VAR_MAP_SCENE_SAFFRON_CITY_POKEMON_TRAINER_FAN_CLUB                    0x4073
