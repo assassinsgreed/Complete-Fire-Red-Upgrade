@@ -149,6 +149,10 @@ extern const u8 sText_Alistair_FirstMonDown[];
 extern const u8 sText_Alistair_LastSwitchIn[];
 extern const u8 sText_Alistair_LowHP[];
 
+extern const u8 sText_AlistairPostCredits_FirstMonDown[];
+extern const u8 sText_AlistairPostCredits_LastSwitchIn[];
+extern const u8 sText_AlistairPostCredits_LowHP[];
+
 // Elite Four Hannah
 extern const u8 sText_Hannah_FirstMonDown[];
 extern const u8 sText_Hannah_LastSwitchIn[];

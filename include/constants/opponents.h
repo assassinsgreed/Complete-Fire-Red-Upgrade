@@ -579,10 +579,11 @@
 #define TRAINER_VICTORY_ROAD_RIVAL_L                     516
 #define TRAINER_VICTORY_ROAD_RIVAL_G                     517
 #define TRAINER_VICTORY_ROAD_RIVAL_S                     518
-// Ascension Tower
+// Ascension Tower & Post Credits
 #define TRAINER_DAIMYN_CITY_RIVAL_EXHIBITION_BATTLE_2    519
 #define TRAINER_ASCENSION_TOWER_E4_HANNAH                520
 #define TRAINER_ASCENSION_TOWER_E4_LUCAS                 521
 #define TRAINER_ASCENSION_TOWER_E4_JENNA                 522
 #define TRAINER_ASCENSION_TOWER_E4_THOMAS                523
 #define TRAINER_ASCENSION_TOWER_CHAMPION_SELENE          524
+#define TRAINER_ANTHRA_TOWN_ALISTAIR                     525

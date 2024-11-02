@@ -351,7 +351,7 @@ MapScript_VictoryRoadPeak:
 	.byte MAP_SCRIPT_TERMIN
 
 LevelScripts_VictoryRoadPeak:
-	levelscript 0x406E 0x0 LevelScript_VictoryRoadPeak_BattleForVictoryFlag
+	levelscript 0x4072 0x0 LevelScript_VictoryRoadPeak_BattleForVictoryFlag
 	.hword LEVEL_SCRIPT_TERMIN
 
 LevelScript_VictoryRoadPeak_BattleForVictoryFlag:
@@ -426,7 +426,7 @@ LevelScript_VictoryRoadPeak_BattleForVictoryFlag:
     additem ITEM_VICTORY_FLAG 0x1
     setflag 0x72 @ Victory Flag claimed
     clearflag 0x06B @ Rival appears in Daimyn City for training battle 
-    setvar 0x406E 0x1 @ cutscenes over
+    setvar 0x4072 0x1 @ cutscenes over
     end
 
 PlayerUnderstandsBattleIsComing:

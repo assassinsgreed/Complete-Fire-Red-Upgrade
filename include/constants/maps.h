@@ -355,7 +355,7 @@
 #define MAP_CELADON_CITY_POKEMON_CENTER_2F         (13 | (10 << 8))
 #define MAP_CELADON_CITY_GAME_CORNER               (14 | (10 << 8))
 #define MAP_CELADON_CITY_GAME_CORNER_PRIZE_ROOM    (15 | (10 << 8))
-#define MAP_CELADON_CITY_GYM                       (16 | (10 << 8))
+#define MAP_ROUTE23_CAVE                           (16 | (10 << 8))
 #define MAP_CELADON_CITY_RESTAURANT                (17 | (10 << 8))
 #define MAP_CELADON_CITY_HOUSE1                    (18 | (10 << 8))
 #define MAP_CELADON_CITY_HOTEL                     (19 | (10 << 8))

@@ -108,6 +108,7 @@ static const struct TrainerSlide sTrainerSlides[] =
 	{0x20A, sText_Jenna_FirstMonDown, sText_Jenna_LastSwitchIn, sText_Jenna_LowHP}, // Elite Four Jenna
 	{0x20B, sText_Thomas_FirstMonDown, sText_Thomas_LastSwitchIn, sText_Thomas_LowHP}, // Elite Four Thomas
 	{0x20C, sText_Champion_FirstMonDown, sText_Champion_LastSwitchIn, sText_Champion_LowHP}, // Champion Selene
+	{0x20D, sText_AlistairPostCredits_FirstMonDown, sText_AlistairPostCredits_LastSwitchIn, sText_AlistairPostCredits_LowHP}, // Post-Credits Alistair battle
 };
 
 static const struct DynamaxTrainerSlide sDynamaxTrainerSlides[] =

@@ -2005,6 +2005,68 @@ const struct TrainerMonItemCustomMoves sParty_Rival_ExhibitionBattle_SecondaryTe
         .ability = Ability_Hidden // Justified
     }
 };
+
+const struct TrainerMonItemCustomMoves sParty_PostCredits_Alistair[] = {
+    {
+        .lvl = 70,
+        .species = SPECIES_CROBAT,
+        .moves = {
+            MOVE_ACROBATICS,
+            MOVE_LEECHLIFE,
+            MOVE_CROSSPOISON,
+            MOVE_HAZE
+        },
+        .heldItem = ITEM_FLYING_GEM,
+        .ability = Ability_Hidden // Infiltrator
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_AMOONGUSS,
+        .moves = {
+            MOVE_SPORE,
+            MOVE_TOXIC,
+            MOVE_BODYSLAM,
+            MOVE_PROTECT
+        },
+        .ability = Ability_Hidden // Regenerator
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_SHARPEDO,
+        .moves = {
+            MOVE_AQUAJET,
+            MOVE_LIQUIDATION,
+            MOVE_CRUNCH,
+            MOVE_ICEFANG
+        },
+        .heldItem = ITEM_WATER_GEM,
+        .ability = Ability_Hidden // Speed Boost
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_HOUNDOOM,
+        .moves = {
+            MOVE_DESTINYBOND,
+            MOVE_DARKPULSE,
+            MOVE_FLAMETHROWER,
+            MOVE_THUNDERFANG
+        },
+        .heldItem = ITEM_HOUNDOOMINITE,
+        .ability = Ability_2 // Flash Fire
+    },
+    {
+        .lvl = 72,
+        .species = SPECIES_EMBOAR,
+        .moves = {
+            MOVE_HEADSMASH,
+            MOVE_FLAREBLITZ,
+            MOVE_WILDCHARGE,
+            MOVE_TAKEDOWN
+        },
+        .heldItem = ITEM_LEFTOVERS,
+        .ability = Ability_Hidden // Reckless
+    }
+};
 // #endregion
 
 // #region Route 1 
@@ -14783,7 +14845,7 @@ const struct Trainer gTrainers[] = {
         .party = {.ItemCustomMoves = sParty_VictoryRoad_Rival_Sylveon}
     },
     // #endregion
-    // #region Ascension Tower
+    // #region Ascension Tower & Post Credits
     [TRAINER_DAIMYN_CITY_RIVAL_EXHIBITION_BATTLE_2] = {
         .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
         .trainerClass = CLASS_RIVAL_2,
@@ -14855,6 +14917,18 @@ const struct Trainer gTrainers[] = {
         .aiFlags = TrainerAIFlags_AscensionTower_Standard,
         .partySize = NELEMS(sParty_AscensionTower_Champion_Selene),
         .party = {.ItemCustomMoves = sParty_AscensionTower_Champion_Selene}
-    }
+    },
+    [TRAINER_ANTHRA_TOWN_ALISTAIR] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_PKMN_TRAINER_4,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MAGMA,
+        .trainerPic = TRAINER_PIC_ALISTAIR,
+        .trainerName = {_A, _l, _i, _s, _t, _a, _i, _r, _END},
+        .items = { ITEM_MEGA_RING },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_RISKY | AI_SCRIPT_SEMI_SMART,
+        .partySize = NELEMS(sParty_PostCredits_Alistair),
+        .party = {.ItemCustomMoves = sParty_PostCredits_Alistair}
+    },
     // #endregion
 };
