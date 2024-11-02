@@ -153,11 +153,11 @@
 #define VAR_MAP_SCENE_ROUTE24                                                  0x406B // Appears to reset with map reload
 #define VAR_MAP_SCENE_ASCENSION_TOWER_ELITE_FOUR_CHALLENGE                     0x406C
 #define VAR_MAP_SCENE_UTEYA_VILLAGE_MEETING_WITH_RIVAL                         0x406D
-#define VAR_MAP_SCENE_VICTORY_ROAD_PEAK_CUTSCENES                              0x406E
+#define VAR_MAP_SCENE_FUCHSIA_CITY_SAFARI_ZONE_ENTRANCE                        0x406E
 #define VAR_MAP_SCENE_CREDITS                                                  0x406F // Used on many maps
 #define VAR_MAP_SCENE_POST_CREDITS                                             0x4070 // Used only on first game clear
 #define VAR_MAP_SCENE_CINNABAR_ISLAND                                          0x4071
-#define VAR_0x4072                                                             0x4072
+#define VAR_MAP_SCENE_VICTORY_ROAD_PEAK_CUTSCENES                              0x4072
 #define VAR_MAP_SCENE_SAFFRON_CITY_POKEMON_TRAINER_FAN_CLUB                    0x4073
 #define VAR_MAP_SCENE_SEVEN_ISLAND_HOUSE_ROOM1                                 0x4074
 #define VAR_MAP_SCENE_ONE_ISLAND_HARBOR                                        0x4075
