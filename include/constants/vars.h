@@ -285,7 +285,7 @@
 #define VAR_DAILY_SLOWPOKE_NEWS_DEX_NUMBER 0x40ED
 #define VAR_DAILY_SLOWPOKE_NEWS_SPECIES 0x40EE
 #define VAR_DAILY_SLOWPOKE_NEWS_REWARD_LEVEL 0x40EF
-#define VAR_0x40F0                 0x40F0
+#define VAR_TRAINER_BGM_OVERRIDE   0x40F0
 #define VAR_DAILY_BP               0x40F1
 #define VAR_0x40F2                 0x40F2
 #define VAR_0x40F3                 0x40F3

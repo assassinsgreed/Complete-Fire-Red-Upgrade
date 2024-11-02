@@ -28,6 +28,7 @@ MapEntryScript_AnthraTown_FlightSpot:
 
 LevelScripts_AnthraTown_MeetingWithRival:
 	levelscript StoryEventVar PlayerAllowedToGoOnJourney LevelScript_DepartingWithRival
+	levelscript 0x4070 0x1 LevelScript_PostCreditsParty
 	.hword LEVEL_SCRIPT_TERMIN
 
 LevelScript_DepartingWithRival:
@@ -449,3 +450,108 @@ m_RivalReturn: .byte walk_up, walk_up, look_right, end_m
 m_RivalRunOutAgain: .byte run_down, run_down, run_down, end_m
 m_RivalMeetPlayerAtJourneyStart: .byte walk_left, walk_left, walk_left, walk_left, walk_left, walk_left, walk_left, walk_left, look_up, end_m
 m_RivalReturnsToRoute17: .byte walk_right, walk_right, walk_right, walk_right, walk_right, walk_right, walk_right, walk_right, end_m
+
+// Post-Credits Party
+LevelScript_PostCreditsParty:
+	showsprite 0x9 @ Mom
+	showsprite 0xA @ Rival
+	showsprite 0xB @ Old man
+	showsprite 0xC @ Youngster
+	showsprite 0xD @ Alistair
+	applymovement 0xA m_RivalMeetPlayerAtJourneyStart
+	waitmovement 0xA
+	msgbox gText_AnthraTown_PostCredits_RivalCollectingPlayer MSG_NORMAL
+	applymovement 0xA m_RivalBringsPlayerToParty
+	applymovement PLAYER m_PlayerArrivesAtTheParty
+	waitmovement PLAYER
+	pause DELAY_HALFSECOND
+	msgbox gText_AnthraTown_PostCredits_RivalStartingParty MSG_NORMAL
+	applymovement 0xA m_LookUp
+	pause DELAY_HALFSECOND
+	applymovement 0xA m_LookDown
+	pause DELAY_HALFSECOND
+	msgbox gText_AnthraTown_PostCredits_RivalCallsForEveryoneToGather MSG_NORMAL
+	applymovement 0x9 m_Surprise
+	applymovement 0xB m_Surprise
+	applymovement 0xC m_Surprise
+	sound 0x15 @ Exclaim
+	pause DELAY_1SECOND
+	applymovement 0xA m_LookLeft
+	applymovement 0x9 m_MomWalksToPlayer
+	applymovement 0xB m_OldManWalksToPlayer
+	applymovement 0xC m_YoungsterWalksToPlayer
+	waitmovement ALLEVENTS
+	applymovement PLAYER m_LookLeft
+	playbgm 416 @ Accumula Town, permanent
+	msgbox gText_AnthraTown_PostCredits_MomCongratulatesPlayer MSG_NORMAL
+	applymovement PLAYER m_LookUp
+	msgbox gText_AnthraTown_PostCredits_OldManCongratulatesPlayer MSG_NORMAL
+	applymovement PLAYER m_LookDown
+	msgbox gText_AnthraTown_PostCredits_YoungsterCongratulatesPlayer MSG_NORMAL
+	applymovement PLAYER m_LookRight
+	msgbox gText_AnthraTown_PostCredits_RivalCongratulatesPlayer MSG_NORMAL
+	applymovement PLAYER m_Surprise
+	applymovement 0xA m_Surprise
+	applymovement 0x9 m_Surprise
+	applymovement 0xB m_Surprise
+	applymovement 0xC m_Surprise
+	msgbox gText_AnthraTown_PostCredits_AlistairArrives MSG_NORMAL
+	showsprite 0xD
+	applymovement PLAYER m_LookDown
+	applymovement 0xA m_LookDown
+	applymovement 0x9 m_LookDown
+	applymovement 0xB m_LookDown
+	applymovement 0xC m_YoungsterMovesAside
+	applymovement 0xD m_AlistairWalksUp
+	waitmovement ALLEVENTS
+	msgbox gText_AnthraTown_PostCredits_RivalConfirmsAlistairsArrival MSG_NORMAL
+	playbgm 0x173 0x1 @ Unwavering Emotions
+	msgbox gText_AnthraTown_PostCredits_AlistairAsksToBattle MSG_NORMAL
+	applymovement PLAYER m_LookRight
+	applymovement 0xA m_LookLeft
+	msgbox gText_AnthraTown_PostCredits_RivalAsksIfPlayerWantsToBattle MSG_NORMAL
+	applymovement PLAYER m_WalkDown
+	applymovement 0xA m_LookDown
+	msgbox gText_AnthraTown_PostCredits_RivalCommentsOnPlayerBattlingAlistair MSG_NORMAL
+	setvar 0x8000 0xFEFE @ Continue lost battles
+	setvar 0x40F0 276 @ Unwavering emotions overrides battle theme 
+	msgbox gText_AnthraTown_PostCredits_AlistairPreBattle MSG_NORMAL
+	trainerbattle9 0x0 525 0x0 gText_AnthraTown_PostCredits_AlistairWinsOrLoses gText_AnthraTown_PostCredits_AlistairWinsOrLoses
+	setvar 0x40F0 0x0
+	setvar 0x8000 0x0 @ Do not continue lost battles
+	special 0x0 @ Heal the party
+	msgbox gText_AnthraTown_PostCredits_AlistairLeaves MSG_NORMAL
+	applymovement 0xD m_AlistairWalksAway
+	waitmovement 0xD
+	applymovement PLAYER m_WalkUp
+	waitmovement PLAYER
+	applymovement PLAYER m_LookRight
+	applymovement 0xA m_LookLeft
+	applymovement 0x9 m_LookRight
+	applymovement 0xC m_LookLeft
+	msgbox gText_AnthraTown_PostCredits_RivalCommentsOnAlistairBattle MSG_NORMAL
+	fadescreenspeed FADEOUT_BLACK 0x64 @ Slow fade
+	msgboxsign
+	msgbox gText_AnthraTown_PostCredits_NextSteps MSG_NORMAL
+	msgboxnormal
+	hidesprite 0x9
+	hidesprite 0xA
+	hidesprite 0xB
+	hidesprite 0xC
+	hidesprite 0xD
+	applymovement PLAYER m_PlayerReturnsToHouse
+	waitmovement PLAYER
+	fadescreen FADEIN_BLACK
+	addvar 0x4070 0x1
+	playbgm 0x12C 0x1 @ Default theme, permanent
+	end
+
+m_RivalBringsPlayerToParty: .byte walk_right, walk_right, walk_right, walk_right, walk_right, walk_right, walk_right, walk_right, look_left, end_m
+m_PlayerArrivesAtTheParty: .byte walk_down, walk_right, walk_right, walk_right, walk_right, walk_right, walk_right, walk_right, look_right, end_m
+m_MomWalksToPlayer: .byte walk_left, walk_up, walk_left, walk_up, look_right, end_m
+m_OldManWalksToPlayer: .byte walk_left, walk_down, walk_down, look_down, end_m
+m_YoungsterWalksToPlayer: .byte walk_left, walk_left, walk_left, walk_up, end_m
+m_YoungsterMovesAside: .byte walk_right, look_down, end_m
+m_AlistairWalksUp: .byte walk_up, walk_up, walk_up, walk_up, end_m
+m_AlistairWalksAway: .byte walk_down, walk_down, walk_down, walk_down, walk_down, walk_down, end_m
+m_PlayerReturnsToHouse: .byte run_left, run_left, run_left, run_left, run_left, run_left, run_left, run_up, look_down, end_m

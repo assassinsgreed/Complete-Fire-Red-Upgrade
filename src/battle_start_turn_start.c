@@ -1776,6 +1776,12 @@ u16 GetMUS_ForBattle(void)
 
 	if (gBattleTypeFlags & BATTLE_TYPE_TRAINER)
 	{
+		#ifdef VAR_TRAINER_BGM_OVERRIDE
+			song = VarGet(VAR_TRAINER_BGM_OVERRIDE);
+			if (song != 0)
+				return song;
+		#endif
+
 		u8 trainerClass;
 
 		if (gBattleTypeFlags & BATTLE_TYPE_FRONTIER || IsFrontierTrainerId(gTrainerBattleOpponent_A))
@@ -1868,12 +1874,6 @@ u16 GetMUS_ForBattle(void)
 					return gClassBasedBattleBGM[trainerClass];
 			}
 		}
-
-		#ifdef VAR_TRAINER_BGM_OVERRIDE
-			song = VarGet(VAR_TRAINER_BGM_OVERRIDE);
-			if (song != 0)
-				return song;
-		#endif
 
 		#ifdef UNBOUND
 			return BGM_BATTLE_BORRIUS_TRAINER;

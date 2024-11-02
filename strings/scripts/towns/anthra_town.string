@@ -150,3 +150,55 @@ The shelves are crammed full of\nbooks on Champion Selene.
 
 #org @gText_AnthraTown_RivalsFamilyPicture
 It's a picture of [RIVAL] and\nhis family. They look happy!
+
+// Post Credits Party
+#org @gText_AnthraTown_PostCredits_RivalCollectingPlayer
+[BLACK][RIVAL]: [BLUE]Hey, [PLAYER]!\pSorry it took so long for us to get\nready for your party[.]\pWe just didn't expect you to become\nthe Champion that quickly! Hahaha!\pC'mon! Everyone's waiting for you!
+
+#org @gText_AnthraTown_PostCredits_RivalStartingParty
+[BLACK][RIVAL]: [BLUE]Alright, let's get this\nparty started.
+
+#org @gText_AnthraTown_PostCredits_RivalCallsForEveryoneToGather
+[BLACK][RIVAL]: [BLUE]Hey, everyone, gather\nround! [PLAYER] is here!
+
+#org @gText_AnthraTown_PostCredits_MomCongratulatesPlayer
+[BLACK]Mom: [RED]Sweetie[.] I'm so proud of you.\pIt feels like it was only yesterday\nthat you were leaving home.\pAnd now[.] You're Kulure's newest\nChampion!
+
+#org @gText_AnthraTown_PostCredits_OldManCongratulatesPlayer
+[BLACK]Old Man: [BLUE]Hehehe[.]\pYou've come such a long ways in such\na short period of time.\pPlease, accept this old man's\ncongratulations.
+
+#org @gText_AnthraTown_PostCredits_YoungsterCongratulatesPlayer
+[BLACK]Youngster: [BLUE]Remember when I was\nlooking at Pok\emon footprints and\lwouldn't let you pass?\pHahaha! Who would've thought I was\ngetting in the way of the Champion\lin the making?
+
+#org @gText_AnthraTown_PostCredits_RivalCongratulatesPlayer
+[BLACK][RIVAL]: [BLUE]Heh, lively bunch, eh?\p[PLAYER], I wanted to congratulate\nyou, too.\pI was glued to the TV the whole\ntime you were battling Selene.\pYou really gave it your all and\nshowed the world how tough you\lare!\pAnd now[.] You're the Champion!\nThat's incredible!
+
+#org @gText_AnthraTown_PostCredits_AlistairArrives
+[BLACK]???: [BLUE][PLAYER] is here, you say?
+
+#org @gText_AnthraTown_PostCredits_RivalConfirmsAlistairsArrival
+[BLACK][RIVAL]: [BLUE]Alistair? What're you doing\nhere?
+
+#org @gText_AnthraTown_PostCredits_AlistairAsksToBattle
+[BLACK]Alistair: [BLUE]I heard that someone\ndefeated Selene in battle.\pI wasn't surprised at all to hear it\nwas you that did it, [PLAYER].\pYou and your Pok\emon have always\nheld a special bond.\pAnd, an unbreakable trust in each\nother to get through any hardship.\p[PLAYER], I've been spending a lot of\ntime reflecting since our encounter\lat Carnelidge Volcano.\pI[.] Want to understand my Pok\emon\nbetter. Like you do.\pPlease, if you are willing, would you\nbattle with me?\pI wish to see firsthand the type of\nbond that earned your victory.
+
+#org @gText_AnthraTown_PostCredits_RivalAsksIfPlayerWantsToBattle
+[BLACK][RIVAL]: [BLUE]Your first challenger as\nthe new Champion[.]\pWhat do you say, [PLAYER]?
+
+#org @gText_AnthraTown_PostCredits_RivalCommentsOnPlayerBattlingAlistair
+[BLACK][RIVAL]: [BLUE]Heh, I suppose I didn't\nneed to ask, did I?
+
+#org @gText_AnthraTown_PostCredits_AlistairPreBattle
+[BLACK]Alistair: [BLUE]Thank you, [PLAYER].\pPlease, show me the strength that\nyou and your Pok\emon earned your\ltitle with.
+
+#org @gText_AnthraTown_PostCredits_AlistairWinsOrLoses
+Phenomenal.\nTruly[.] Thank you, [PLAYER].
+
+#org @gText_AnthraTown_PostCredits_AlistairLeaves
+[BLACK]Alistair: [BLUE][PLAYER], thank you for\nbattling with me.\pYour rise to becoming the Champion\nwas no mistake.\pYou and your Pok\emon are truly\nsomething special.\pI understand better now.\pPok\emon are not tools[.]\pAnd, it doesn't matter if you win or\nlose your battles.\pBeing able to connect with Pok\emon is\nwhat matters most.\p[PLAYER], I must be going now.\nI have a lot of work to do.\pMay we meet again someday, after\nI've done what I need to do.
+
+#org @gText_AnthraTown_PostCredits_RivalCommentsOnAlistairBattle
+[BLACK][RIVAL]: [BLUE]Nice battling, [PLAYER]!\pI think you really helped Alistair\nunderstand something.\pSomething he'd forgotten along the\nway[.]\pI'm sure he'll be alright now.\pNow, how about we keep this party\ngoing?
+
+#org @gText_AnthraTown_PostCredits_NextSteps
+Your journey to become the Champion\nhas concluded.\pHowever, there are many more stories\nto be told in the Kulure region!\pRevisit old locations to see how the\nregion has changed.

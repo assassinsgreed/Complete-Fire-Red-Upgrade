@@ -278,6 +278,15 @@ Don't try to stop me! I'm doing\nthis for everyone's benefit!\p
 #org @sText_Alistair_LowHP
 Ngh. My perfect world[.] I can't\nlose like this!\p
 
+#org @sText_AlistairPostCredits_FirstMonDown
+Yes, I see.\p
+
+#org @sText_AlistairPostCredits_LastSwitchIn
+I've learned from my mistakes.\nI trust in my Pok\emon.\p
+
+#org @sText_AlistairPostCredits_LowHP
+So this is the strength of Kulure's\nnewest Champion[.]\p
+
 // Elite Four Hannah
 #org @sText_Hannah_FirstMonDown
 Impressive, trainer!\pBut you'll find the Elite Four are a\ncut above regular Gym Leaders!\p
