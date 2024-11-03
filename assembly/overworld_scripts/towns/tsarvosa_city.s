@@ -919,6 +919,7 @@ Maximize1IV:
     special 0x10 @ Maximize the chosen IV
     removeitem ITEM_BOTTLE_CAP 0x1
     sound 0x30 @Save
+    incrementgamestat 4
     msgbox gText_TsarvosaCity_StatsDojo_IVMaxingScientist_StatIsMaxedOut MSG_KEEPOPEN
     goto AskToMaximizeAPokemonsStats
 
@@ -948,6 +949,7 @@ MaximizeAllIVs:
     special 0x10 @ Maximize the chosen IV
     removeitem ITEM_GOLD_BOTTLE_CAP 0x1
     sound 0x30 @Save
+    incrementgamestat 4
     msgbox gText_TsarvosaCity_StatsDojo_IVMaxingScientist_AllStatsAreMaxedOut MSG_KEEPOPEN
     goto AskToMaximizeAPokemonsStats
 

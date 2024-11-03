@@ -805,7 +805,7 @@ LevelScript_Credits_2:
     applymovement PLAYER m_Credits_PlayerWalkDownFadeout
     pause DELAY_1SECOND
     addvar 0x406F 0x1
-    warpmuted 31 2 0
+    warpmuted 31 7 0
     waitstate
     end
 
@@ -864,7 +864,7 @@ LevelScript_Credits_4:
     applymovement PLAYER m_Credits_PlayerWalkRightFadeout
     pause DELAY_1SECOND
     addvar 0x406F 0x1
-    warpmuted 31 4 0
+    warpmuted 31 8 0
     waitstate
     end
 
@@ -896,7 +896,7 @@ LevelScript_Credits_5:
     applymovement PLAYER m_Credits_PlayerRunsDownFadeout
     pause DELAY_1SECOND
     addvar 0x406F 0x1
-    warpmuted 31 5 0
+    warpmuted 31 9 0
     waitstate
     end
 
