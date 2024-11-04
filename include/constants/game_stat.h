@@ -7,7 +7,7 @@
 #define GAME_STAT_FIRST_HOF_PLAY_TIME        1
 #define GAME_STAT_POKECHIPS_FOUND            2 //Repurposed for Pokemon Amethyst
 #define GAME_STAT_TUTOR_MOVES_TAUGHT         3 //Repurposed for Pokemon Amethyst
-#define GAME_STAT_CHANGED_IV_NATURE          4 //Not integrated yet!
+#define GAME_STAT_CHANGED_IV_NATURE          4
 #define GAME_STAT_STEPS                      5
 #define GAME_STAT_PICKUP_ITEMS               6 //NEW
 #define GAME_STAT_TOTAL_BATTLES              7
@@ -17,7 +17,7 @@
 #define GAME_STAT_POKEMON_CAPTURES          11
 #define GAME_STAT_FISHING_CAPTURES          12
 #define GAME_STAT_HATCHED_EGGS              13
-#define GAME_STAT_EVOLVED_POKEMON           14 //Not integrated yet!
+#define GAME_STAT_EVOLVED_POKEMON           14
 #define GAME_STAT_USED_POKECENTER_OR_NURSE  15
 #define GAME_STAT_RESTED_AT_HOME            16
 #define GAME_STAT_ENTERED_SAFARI_ZONE       17 //Not used by Pokemon Amethyst
@@ -49,8 +49,8 @@
 #define GAME_STAT_JUMPED_DOWN_LEDGES        43
 #define GAME_STAT_WATCHED_TV                44 //Not used by Pokemon Amethyst
 #define GAME_STAT_DEXNAV_SCANNED            45 //NEW!
-#define GAME_STAT_WON_POKEMON_LOTTERY       46
-#define GAME_STAT_USED_DAYCARE              47
+#define GAME_STAT_WON_LUCKY_DRAW            46
+#define GAME_STAT_POKEMON_PUT_IN_DAYCARE    47 // TODO: Not sure this is implemented
 #define GAME_STAT_RAID_BATTLES              48 //NEW! (Not used by Pokemon Amethyst)
 #define GAME_STAT_ENTERED_HOT_SPRINGS       49
 #define GAME_STAT_NUM_UNION_ROOM_BATTLES    50 //Not used by Pokemon Amethyst

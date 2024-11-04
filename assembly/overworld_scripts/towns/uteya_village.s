@@ -440,6 +440,7 @@ ChooseNature:
     sound 0xF8 @ Money SE
     waitse
     npcchatwithmovement gText_UteyaVillage_ClancyAndEnasHouse_Clancy_TransactionComplete m_LookLeft
+    incrementgamestat 4
     end
 
 Adamant:

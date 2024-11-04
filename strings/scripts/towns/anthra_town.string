@@ -202,3 +202,120 @@ Phenomenal.\nTruly[.] Thank you, [PLAYER].
 
 #org @gText_AnthraTown_PostCredits_NextSteps
 Your journey to become the Champion\nhas concluded.\pHowever, there are many more stories\nto be told in the Kulure region!\pRevisit old locations to see how the\nregion has changed.
+
+#org @gText_AnthraTown_ChampionFanatic_Intro
+O-oh, Champion [PLAYER]!\nIt's really you!\pI'm a huuuuuge fan!\pI know everything about you and your\njourney.\pI-if you aren't too busy, I could\ntell you about some of the things\lI've seen you accomplish?
+
+#org @gText_AnthraTown_ChampionFanatic_WantToKnowStats
+What statistic would you like to know\nmore about? ([B_BUTTON] to cancel)
+
+#org @gText_AnthraTown_ChampionFanatic_DoNotWantToKnowStats
+O-okay! No worries! Ahaha[.]
+
+#org @gText_AnthraTown_ChampionFanatic_AfterStatsChat
+I'll keep track of everything you\nachieve.\pJust say the word and I'll share\neverything I know!
+
+#org @gText_AnthraTown_ChampionFanatic_GameStats_TimesSaved
+You've saved the game [BUFFER1] times.
+
+#org @gText_AnthraTown_ChampionFanatic_GameStats_StepsTaken
+You've taken [BUFFER1] steps.
+
+#org @gText_AnthraTown_ChampionFanatic_GameStats_PokeChipsFound
+You've collected [BUFFER1] Pok\eChips.
+
+#org @gText_AnthraTown_ChampionFanatic_GameStats_NumberOfBattles
+You've completed [BUFFER1] battles.\n([BUFFER2] Wild / [BUFFER3] trainer)
+
+#org @gText_AnthraTown_ChampionFanatic_GameStats_TutorMovesTaught
+You've taught [BUFFER1] tutor moves.
+
+#org @gText_AnthraTown_ChampionFanatic_GameStats_TimesEnteredHoF
+You've entered the Hall of Fame\n[BUFFER1] times.
+
+#org @gText_AnthraTown_ChampionFanatic_GameStats_SaveTimeOnFirstHoF
+Your save time was [BUFFER1] when you\nfirst entered the Hall of Fame.
+
+#org @gText_AnthraTown_ChampionFanatic_GameStats_TimesPokedexWasChecked
+You've checked the Pok\edex [BUFFER1]\ntimes.
+
+#org @gText_AnthraTown_ChampionFanatic_GameStats_PokemonCaughtTotal
+You've caught [BUFFER1] Pok\emon in\ntotal.
+
+#org @gText_AnthraTown_ChampionFanatic_GameStats_PokemonCaughtToday
+You've caught [BUFFER1] Pok\emon\ntoday.
+
+#org @gText_AnthraTown_ChampionFanatic_GameStats_CriticalCaptures
+You've performed [BUFFER1] successful\ncritical captures.
+
+#org @gText_AnthraTown_ChampionFanatic_GameStats_PokemonEvolved
+You've evolved Pok\emon [BUFFER1]\ntimes.
+
+#org @gText_AnthraTown_ChampionFanatic_GameStats_FishCaught
+You've hooked [BUFFER1] Pok\emon while\nfishing.
+
+#org @gText_AnthraTown_ChampionFanatic_GameStats_EXPEarnedToday
+You've earned [BUFFER1] EXP today.
+
+#org @gText_AnthraTown_ChampionFanatic_GameStats_NumberOfTrades
+You've completed [BUFFER1] Pok\emon\ntrades.
+
+#org @gText_AnthraTown_ChampionFanatic_GameStats_ItemsPickedUp
+You've found [BUFFER1] items with the\nPickup ability.
+
+#org @gText_AnthraTown_ChampionFanatic_GameStats_HiddenItemsFound
+You've found [BUFFER1] hidden items.
+
+#org @gText_AnthraTown_ChampionFanatic_GameStats_TimesItemFinderWasUsed
+You've used the Item Finder [BUFFER1]\ntimes.
+
+#org @gText_AnthraTown_ChampionFanatic_GameStats_PokemonLeftAtDaycare
+You've left [BUFFER1] Pok\emon at the\nDay Care.
+
+#org @gText_AnthraTown_ChampionFanatic_GameStats_EggsHatched
+You've hatched [BUFFER1] eggs.
+
+#org @gText_AnthraTown_ChampionFanatic_GameStats_TimesHealedAtPokemonCenterOrNurse
+You've healed at a Pok\emon Center or\nNurse [BUFFER1] times.
+
+#org @gText_AnthraTown_ChampionFanatic_GameStats_TimesRestedAtHome
+You've rested at home [BUFFER1] times.
+
+#org @gText_AnthraTown_ChampionFanatic_GameStats_TimesEnteredAHotSpring
+You've entered hot springs [BUFFER1]\ntimes.
+
+#org @gText_AnthraTown_ChampionFanatic_GameStats_TimesCutWasUsed
+You've used Cut in the field [BUFFER1]\ntimes.
+
+#org @gText_AnthraTown_ChampionFanatic_GameStats_TimesRockSmashWasUsed
+You've used Rock Smash in the field\n[BUFFER1] times.
+
+#org @gText_AnthraTown_ChampionFanatic_GameStats_NumberOfMealsEaten
+You've eaten [BUFFER1] meals at the\nDaimyn City Restaurant.
+
+#org @gText_AnthraTown_ChampionFanatic_GameStats_NumberOfTrainerHousesBeaten
+You've completed [BUFFER1] Trainer\nHouse challenges.
+
+#org @gText_AnthraTown_ChampionFanatic_GameStats_TimesLuckyDrawWasWon
+You've won the Lucky Draw [BUFFER1]\ntimes.
+
+#org @gText_AnthraTown_ChampionFanatic_GameStats_ChangedIVsAndNature
+You've changed a Pok\emon's IVs or\nNature [BUFFER1] times.
+
+#org @gText_AnthraTown_ChampionFanatic_GameStats_NumberOfJackpots
+You've hit the jackpot [BUFFER1] times\nat the Daimyn City Gym.
+
+#org @gText_AnthraTown_ChampionFanatic_GameStats_TimesShopped
+You've gone shopping [BUFFER1] times.
+
+#org @gText_AnthraTown_ChampionFanatic_GameStats_TimesSplashWasUsed
+You've used Splash [BUFFER1] times\nin battle.
+
+#org @gText_AnthraTown_ChampionFanatic_GameStats_TimesStruggleWasUsed
+You've used Struggle [BUFFER1] times\nin battle.
+
+#org @gText_AnthraTown_ChampionFanatic_GameStats_TimesLedgesWereHoppedOffOf
+You've hopped off of [BUFFER1] ledges.
+
+#org @gText_AnthraTown_ChampionFanatic_GameStats_TimesPlayerWasRainedOn
+You were caught in the rain [BUFFER1]\ntimes.

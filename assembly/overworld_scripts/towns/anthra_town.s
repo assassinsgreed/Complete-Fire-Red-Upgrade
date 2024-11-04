@@ -444,6 +444,324 @@ SignScript_AnthraTown_RivalsFamilyPictures:
 	msgbox gText_AnthraTown_RivalsFamilyPicture MSG_SIGN
 	end
 
+.global EventScript_AnthraTown_ChampionFanatic
+EventScript_AnthraTown_ChampionFanatic:
+	lock
+	faceplayer
+	msgbox gText_AnthraTown_ChampionFanatic_Intro MSG_YESNO
+	compare LASTRESULT NO
+	if equal _goto DoNotWantToKnowStats
+	goto LearnGameStats
+	end
+
+DoNotWantToKnowStats:
+	msgbox gText_AnthraTown_ChampionFanatic_DoNotWantToKnowStats MSG_NORMAL
+	goto DoneHearingStats
+
+DoneHearingStats:
+	npcchatwithmovement gText_AnthraTown_ChampionFanatic_AfterStatsChat m_LookDown
+	release
+	end
+
+LearnGameStats:
+	msgbox gText_AnthraTown_ChampionFanatic_WantToKnowStats MSG_KEEPOPEN
+	setvar 0x8000 0x11 @ Game stats
+    setvar 0x8001 0x8 @ Show 8 at a time
+    setvar 0x8004 0x0
+	special 0x158
+    waitstate
+    switch LASTRESULT
+    case 0, GameStats_TimesSaved _goto
+    case 1, GameStats_StepsTaken _goto
+    case 2, GameStats_PokeChipsFound _goto
+    case 3, GameStats_NumberOfBattles _goto
+    case 4, GameStats_TutorMovesTaught _goto
+    case 5, GameStats_TimesEnteredHoF _goto
+    case 6, GameStats_SaveTimeOnFirstHoF _goto
+    case 7, GameStats_TimesPokedexWasChecked _goto
+    case 8, GameStats_PokemonCaughtTotal _goto
+    case 9, GameStats_PokemonCaughtToday _goto
+    case 10, GameStats_CriticalCaptures _goto
+    case 11, GameStats_PokemonEvolved _goto
+    case 12, GameStats_FishCaught _goto
+    case 13, GameStats_EXPEarnedToday _goto
+    case 14, GameStats_NumberOfTrades _goto
+    case 15, GameStats_ItemsPickedUp _goto
+    case 16, GameStats_HiddenItemsFound _goto
+    case 17, GameStats_TimesItemFinderWasUsed _goto
+    case 18, GameStats_PokemonLeftAtDaycare _goto
+    case 19, GameStats_EggsHatched _goto
+    case 20, GameStats_TimesHealedAtPokemonCenterOrNurse _goto
+    case 21, GameStats_TimesRestedAtHome _goto
+    case 22, GameStats_TimesEnteredAHotSpring _goto
+    case 23, GameStats_TimesCutWasUsed _goto
+    case 24, GameStats_TimesRockSmashWasUsed _goto
+	case 25, GameStats_NumberOfMealsEaten _goto
+	case 26, GameStats_NumberOfTrainerHousesBeaten _goto
+	case 27, GameStats_TimesLuckyDrawWasWon _goto
+	case 28, GameStats_ChangedIVsAndNature _goto
+	case 29, GameStats_NumberOfJackpots _goto
+	case 30, GameStats_TimesShopped _goto
+	case 31, GameStats_TimesSplashWasUsed _goto
+	case 32, GameStats_TimesStruggleWasUsed _goto
+	case 33, GameStats_TimesLedgesWereHoppedOffOf _goto
+	case 34, GameStats_TimesPlayerWasRainedOn _goto
+    case 35, DoneHearingStats
+    case 0x7F, DoneHearingStats @ When player hits B to close
+	goto DoneHearingStats
+	end
+
+	GameStats_TimesSaved:
+		setvar 0x8004 0 @ Times saved
+		callasm StoreGameStat
+		buffernumber 0x0 LASTRESULT
+		msgbox gText_AnthraTown_ChampionFanatic_GameStats_TimesSaved MSG_NORMAL
+		goto LearnGameStats
+
+	GameStats_StepsTaken:
+		setvar 0x8004 5 @ Steps taken
+		callasm StoreGameStat
+		buffernumber 0x0 LASTRESULT
+		msgbox gText_AnthraTown_ChampionFanatic_GameStats_StepsTaken MSG_NORMAL
+		goto LearnGameStats
+
+	GameStats_PokeChipsFound:
+		setvar 0x8004 2 @ PokeChips found
+		callasm StoreGameStat
+		buffernumber 0x0 LASTRESULT
+		msgbox gText_AnthraTown_ChampionFanatic_GameStats_PokeChipsFound MSG_NORMAL
+		goto LearnGameStats
+
+	GameStats_NumberOfBattles:
+		setvar 0x8004 7 @ Total battles
+		callasm StoreGameStat
+		buffernumber 0x0 LASTRESULT
+		setvar 0x8004 8 @ Wild battles
+		callasm StoreGameStat
+		buffernumber 0x1 LASTRESULT
+		setvar 0x8004 9 @ Trainer battles
+		callasm StoreGameStat
+		buffernumber 0x2 LASTRESULT
+		msgbox gText_AnthraTown_ChampionFanatic_GameStats_NumberOfBattles MSG_NORMAL
+		goto LearnGameStats
+
+	GameStats_TutorMovesTaught:
+		setvar 0x8004 3 @ Tutor moves taught
+		callasm StoreGameStat
+		buffernumber 0x0 LASTRESULT
+		msgbox gText_AnthraTown_ChampionFanatic_GameStats_TutorMovesTaught MSG_NORMAL
+		goto LearnGameStats
+
+	GameStats_TimesEnteredHoF:
+		setvar 0x8004 10 @ Times entered the hall of fame
+		callasm StoreGameStat
+		buffernumber 0x0 LASTRESULT
+		msgbox gText_AnthraTown_ChampionFanatic_GameStats_TimesEnteredHoF MSG_NORMAL
+		goto LearnGameStats
+
+	GameStats_SaveTimeOnFirstHoF:
+		setvar 0x8004 1 @ Save time at first hall of fame
+		callasm StoreGameStat
+		buffernumber 0x0 LASTRESULT
+		msgbox gText_AnthraTown_ChampionFanatic_GameStats_SaveTimeOnFirstHoF MSG_NORMAL
+		goto LearnGameStats
+
+	GameStats_TimesPokedexWasChecked:
+		setvar 0x8004 41 @ Times pokedex was checked
+		callasm StoreGameStat
+		buffernumber 0x0 LASTRESULT
+		msgbox gText_AnthraTown_ChampionFanatic_GameStats_TimesPokedexWasChecked MSG_NORMAL
+		goto LearnGameStats
+
+	GameStats_PokemonCaughtTotal:
+		setvar 0x8004 11 @ Pokemon caught (Total)
+		callasm StoreGameStat
+		buffernumber 0x0 LASTRESULT
+		msgbox gText_AnthraTown_ChampionFanatic_GameStats_PokemonCaughtTotal MSG_NORMAL
+		goto LearnGameStats
+
+	GameStats_PokemonCaughtToday:
+		setvar 0x8004 33 @ Pokemon caught (Today)
+		callasm StoreGameStat
+		buffernumber 0x0 LASTRESULT
+		msgbox gText_AnthraTown_ChampionFanatic_GameStats_PokemonCaughtToday MSG_NORMAL
+		goto LearnGameStats
+
+	GameStats_CriticalCaptures:
+		setvar 0x8004 23 @ Critical Captures
+		callasm StoreGameStat
+		buffernumber 0x0 LASTRESULT
+		msgbox gText_AnthraTown_ChampionFanatic_GameStats_CriticalCaptures MSG_NORMAL
+		goto LearnGameStats
+
+	GameStats_PokemonEvolved:
+		setvar 0x8004 14 @ Evolved Pokemon
+		callasm StoreGameStat
+		buffernumber 0x0 LASTRESULT
+		msgbox gText_AnthraTown_ChampionFanatic_GameStats_PokemonEvolved MSG_NORMAL
+		goto LearnGameStats
+
+	GameStats_FishCaught:
+		setvar 0x8004 12 @ Pokemon hooked while fishing
+		callasm StoreGameStat
+		buffernumber 0x0 LASTRESULT
+		msgbox gText_AnthraTown_ChampionFanatic_GameStats_FishCaught MSG_NORMAL
+		goto LearnGameStats
+
+	GameStats_EXPEarnedToday:
+		setvar 0x8004 34 @ EXP earned today
+		callasm StoreGameStat
+		buffernumber 0x0 LASTRESULT
+		msgbox gText_AnthraTown_ChampionFanatic_GameStats_EXPEarnedToday MSG_NORMAL
+		goto LearnGameStats
+
+	GameStats_NumberOfTrades:
+		setvar 0x8004 21 @ Pokemon trades completed
+		callasm StoreGameStat
+		buffernumber 0x0 LASTRESULT
+		msgbox gText_AnthraTown_ChampionFanatic_GameStats_NumberOfTrades MSG_NORMAL
+		goto LearnGameStats
+
+	GameStats_ItemsPickedUp:
+		setvar 0x8004 6 @ Items picked up
+		callasm StoreGameStat
+		buffernumber 0x0 LASTRESULT
+		msgbox gText_AnthraTown_ChampionFanatic_GameStats_ItemsPickedUp MSG_NORMAL
+		goto LearnGameStats
+
+	GameStats_HiddenItemsFound:
+		setvar 0x8004 20 @ Hidden items found
+		callasm StoreGameStat
+		buffernumber 0x0 LASTRESULT
+		msgbox gText_AnthraTown_ChampionFanatic_GameStats_HiddenItemsFound MSG_NORMAL
+		goto LearnGameStats
+
+	GameStats_TimesItemFinderWasUsed:
+		setvar 0x8004 39 @ Times the ItemFinder was used
+		callasm StoreGameStat
+		buffernumber 0x0 LASTRESULT
+		msgbox gText_AnthraTown_ChampionFanatic_GameStats_TimesItemFinderWasUsed MSG_NORMAL
+		goto LearnGameStats
+
+	GameStats_PokemonLeftAtDaycare:
+		setvar 0x8004 47 @ Pokemon left at the daycare
+		callasm StoreGameStat
+		buffernumber 0x0 LASTRESULT
+		msgbox gText_AnthraTown_ChampionFanatic_GameStats_PokemonLeftAtDaycare MSG_NORMAL
+		goto LearnGameStats
+
+	GameStats_EggsHatched:
+		setvar 0x8004 13 @ Eggs hatched
+		callasm StoreGameStat
+		buffernumber 0x0 LASTRESULT
+		msgbox gText_AnthraTown_ChampionFanatic_GameStats_EggsHatched MSG_NORMAL
+		goto LearnGameStats
+
+	GameStats_TimesHealedAtPokemonCenterOrNurse:
+		setvar 0x8004 15 @ Times healed at a pokemon center or nurse
+		callasm StoreGameStat
+		buffernumber 0x0 LASTRESULT
+		msgbox gText_AnthraTown_ChampionFanatic_GameStats_TimesHealedAtPokemonCenterOrNurse MSG_NORMAL
+		goto LearnGameStats
+
+	GameStats_TimesRestedAtHome:
+		setvar 0x8004 16 @ Times rested at home
+		callasm StoreGameStat
+		buffernumber 0x0 LASTRESULT
+		msgbox gText_AnthraTown_ChampionFanatic_GameStats_TimesRestedAtHome MSG_NORMAL
+		goto LearnGameStats
+
+	GameStats_TimesEnteredAHotSpring:
+		setvar 0x8004 49 @ Times entered a hot spring
+		callasm StoreGameStat
+		buffernumber 0x0 LASTRESULT
+		msgbox gText_AnthraTown_ChampionFanatic_GameStats_TimesEnteredAHotSpring MSG_NORMAL
+		goto LearnGameStats
+
+	GameStats_TimesCutWasUsed:
+		setvar 0x8004 18 @ Times Cut was used
+		callasm StoreGameStat
+		buffernumber 0x0 LASTRESULT
+		msgbox gText_AnthraTown_ChampionFanatic_GameStats_TimesCutWasUsed MSG_NORMAL
+		goto LearnGameStats
+
+	GameStats_TimesRockSmashWasUsed:
+		setvar 0x8004 19 @ Times Rock Smash was used
+		callasm StoreGameStat
+		buffernumber 0x0 LASTRESULT
+		msgbox gText_AnthraTown_ChampionFanatic_GameStats_TimesRockSmashWasUsed MSG_NORMAL
+		goto LearnGameStats
+
+	GameStats_NumberOfMealsEaten:
+		setvar 0x8004 24 @ Number of meals eaten
+		callasm StoreGameStat
+		buffernumber 0x0 LASTRESULT
+		msgbox gText_AnthraTown_ChampionFanatic_GameStats_NumberOfMealsEaten MSG_NORMAL
+		goto LearnGameStats
+
+	GameStats_NumberOfTrainerHousesBeaten:
+		setvar 0x8004 25 @ Trainer Houses challenges completed
+		callasm StoreGameStat
+		buffernumber 0x0 LASTRESULT
+		msgbox gText_AnthraTown_ChampionFanatic_GameStats_NumberOfTrainerHousesBeaten MSG_NORMAL
+		goto LearnGameStats
+
+	GameStats_TimesLuckyDrawWasWon:
+		setvar 0x8004 46 @ Lucky Draw
+		callasm StoreGameStat
+		buffernumber 0x0 LASTRESULT
+		msgbox gText_AnthraTown_ChampionFanatic_GameStats_TimesLuckyDrawWasWon MSG_NORMAL
+		goto LearnGameStats
+
+	GameStats_ChangedIVsAndNature:
+		setvar 0x8004 4 @ Times a Pokemon's IVs or Nature were changed
+		callasm StoreGameStat
+		buffernumber 0x0 LASTRESULT
+		msgbox gText_AnthraTown_ChampionFanatic_GameStats_ChangedIVsAndNature MSG_NORMAL
+		goto LearnGameStats
+
+	GameStats_NumberOfJackpots:
+		setvar 0x8004 28 @ Jackpots on the slots
+		callasm StoreGameStat
+		buffernumber 0x0 LASTRESULT
+		msgbox gText_AnthraTown_ChampionFanatic_GameStats_NumberOfJackpots MSG_NORMAL
+		goto LearnGameStats
+
+	GameStats_TimesShopped:
+		setvar 0x8004 38 @ Times Shopped
+		callasm StoreGameStat
+		buffernumber 0x0 LASTRESULT
+		msgbox gText_AnthraTown_ChampionFanatic_GameStats_TimesShopped MSG_NORMAL
+		goto LearnGameStats
+
+	GameStats_TimesSplashWasUsed:
+		setvar 0x8004 26 @ Times splash was used
+		callasm StoreGameStat
+		buffernumber 0x0 LASTRESULT
+		msgbox gText_AnthraTown_ChampionFanatic_GameStats_TimesSplashWasUsed MSG_NORMAL
+		goto LearnGameStats
+
+	GameStats_TimesStruggleWasUsed:
+		setvar 0x8004 27 @ Times struggle was used
+		callasm StoreGameStat
+		buffernumber 0x0 LASTRESULT
+		msgbox gText_AnthraTown_ChampionFanatic_GameStats_TimesStruggleWasUsed MSG_NORMAL
+		goto LearnGameStats
+
+	GameStats_TimesLedgesWereHoppedOffOf:
+		setvar 0x8004 43 @ Times hopped off of ledges
+		callasm StoreGameStat
+		buffernumber 0x0 LASTRESULT
+		msgbox gText_AnthraTown_ChampionFanatic_GameStats_TimesLedgesWereHoppedOffOf MSG_NORMAL
+		goto LearnGameStats
+
+	GameStats_TimesPlayerWasRainedOn:
+		setvar 0x8004 40 @ Times the player was rained on
+		callasm StoreGameStat
+		buffernumber 0x0 LASTRESULT
+		msgbox gText_AnthraTown_ChampionFanatic_GameStats_TimesPlayerWasRainedOn MSG_NORMAL
+		goto LearnGameStats
+
 m_RivalWalkUp: .byte walk_up, walk_up, walk_right, walk_right, walk_right, walk_up, look_right, end_m
 m_RivalRunOut: .byte run_left, run_down, run_left, run_left, run_left, run_left, run_down, run_down, run_down, run_down, end_m
 m_RivalReturn: .byte walk_up, walk_up, look_right, end_m
@@ -453,6 +771,7 @@ m_RivalReturnsToRoute17: .byte walk_right, walk_right, walk_right, walk_right, w
 
 // Post-Credits Party
 LevelScript_PostCreditsParty:
+	playbgm 0x12C
 	showsprite 0x9 @ Mom
 	showsprite 0xA @ Rival
 	showsprite 0xB @ Old man
@@ -482,7 +801,7 @@ LevelScript_PostCreditsParty:
 	applymovement 0xC m_YoungsterWalksToPlayer
 	waitmovement ALLEVENTS
 	applymovement PLAYER m_LookLeft
-	playbgm 416 @ Accumula Town, permanent
+	playbgm 416 0x1 @ Accumula Town, permanent
 	msgbox gText_AnthraTown_PostCredits_MomCongratulatesPlayer MSG_NORMAL
 	applymovement PLAYER m_LookUp
 	msgbox gText_AnthraTown_PostCredits_OldManCongratulatesPlayer MSG_NORMAL
@@ -539,10 +858,12 @@ LevelScript_PostCreditsParty:
 	hidesprite 0xB
 	hidesprite 0xC
 	hidesprite 0xD
+	hidesprite 0xE @ Champion Fanatic, hidden because we are moving the player during the fadeout
 	applymovement PLAYER m_PlayerReturnsToHouse
 	waitmovement PLAYER
 	fadescreen FADEIN_BLACK
 	addvar 0x4070 0x1
+	showsprite 0xE @ Champion Fanatic
 	playbgm 0x12C 0x1 @ Default theme, permanent
 	end
 

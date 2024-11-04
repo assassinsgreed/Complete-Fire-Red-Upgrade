@@ -416,4 +416,110 @@ Serious[ALIGN][30](Neutral)
 #org @gText_Natures_Timid
 Timid[ALIGN][30]([RED]+ Speed[BLUE] - Attack[BLACK])
 
+#org @gText_GameStats_TimesSaved
+Times the game has been saved
+
+#org @gText_GameStats_StepsTaken
+Steps taken
+
+#org @gText_GameStats_PokeChipsFound
+Pok\eChips found
+
+// This includes wild, trainer, and then total
+#org @gText_GameStats_NumberOfBattles
+Number of battles completed
+
+#org @gText_GameStats_TutorMovesTaught
+Tutor moves taught
+
+#org @gText_GameStats_TimesEnteredHallOfFame
+Times entering the Hall of Fame
+
+#org @gText_GameStats_PlaytimeAtFirstHoF
+Game time on first Hall of Fame entry
+
+#org @gText_GameStats_TimesThePokedexWasChecked
+Times the Pok\edex was checked
+
+#org @gText_GameStats_PokemonCaught
+Pok\emon caught (Total)
+
+#org @gText_GameStats_NumberOfPokemonCaughtToday
+Pok\emon caught (Today)
+
+#org @gText_GameStats_NumberOfCriticalCaptures
+Critical captures performed
+
+#org @gText_GameStats_PokemonEvolved
+Pok\emon evolved
+
+#org @gText_GameStats_FishCaught
+Pok\emon hooked while fishing
+
+#org @gText_GameStats_EXPEarnedToday
+Experience earned (Today)
+
+#org @gText_GameStats_NumberOfTradesCompleted
+Pok\emon trades completed
+
+#org @gText_GameStats_ItemsPickedUp
+Items found by Pickup ability
+
+#org @gText_GameStats_HiddenItemsFound
+Hidden items found
+
+#org @gText_GameStats_TimesTheItemFinderWasUsed
+Times the Item Finder was used
+
+#org @gText_GameStats_PokemonWereLeftAtTheDaycare
+Pok\emon left at the Day Care
+
+#org @gText_GameStats_EggsHatched
+Eggs hatched
+
+#org @gText_GameStats_TimesHealedAtPokemonCenterOrNurse
+Pok\emon Center and Nurse heals
+
+#org @gText_GameStats_TimesRestedAtHome
+Times rested at home
+
+#org @gText_GameStats_TimesThePlayerEnteredAHotSpring
+Times entering a hotspring
+
+#org @gText_GameStats_TimesCutWasUsed
+Times Cut was used in field
+
+#org @gText_GameStats_TimesRockSmashWasUsed
+Times Rock Smash was used in field
+
+#org @gText_GameStats_NumberOfMealsEaten
+Restaurant meals eaten
+
+#org @gText_GameStats_NumberOfTrainerHousesCleared
+Times clearing Trainer Houses
+
+#org @gText_GameStats_TimesTheLuckyDrawWasWon
+Lucky Draw wins
+
+#org @gText_GameStats_ChangedIVsAndNature
+IVs and Natures changed
+
+#org @gText_GameStats_NumberOfJackpotsAtCasino
+Jackpots at the casino
+
+#org @gText_GameStats_TimesShopped
+Times went shopping
+
+#org @gText_GameStats_TimesSplashWasUsed
+Times Splash was used
+
+#org @gText_GameStats_TimesStruggleWasUsed
+Times Struggle was used
+
+#org @gText_GameStats_TimesLedgesWereJumpedOffOf
+Ledges jumped off of
+
+#org @gText_GameStats_TimesThePlayerWasRainedOn
+Times the player was rained on
+
 #endif

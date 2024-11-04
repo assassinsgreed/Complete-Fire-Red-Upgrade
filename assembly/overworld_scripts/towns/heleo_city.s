@@ -32,7 +32,7 @@ EventScript_HeleoCity_JumpingKid:
     buffernumber 0x0 LASTRESULT
     compare LASTRESULT 0x64 @ 100
     if lessthan _goto NotEnoughJumps
-    faceplayer @ TODO: Needed?
+    faceplayer
     msgbox gText_HeleoCityOverworld_JumpingKidCountExceeded MSG_NORMAL
     fanfare 0x13E
     waitfanfare

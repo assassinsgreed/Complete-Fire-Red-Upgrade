@@ -3104,6 +3104,43 @@ extern const u8 gText_Natures_Sassy[];
 extern const u8 gText_Natures_Serious[];
 extern const u8 gText_Natures_Timid[];
 
+// Game stats
+extern const u8 gText_GameStats_TimesSaved[];
+extern const u8 gText_GameStats_StepsTaken[];
+extern const u8 gText_GameStats_PokeChipsFound[];
+extern const u8 gText_GameStats_NumberOfBattles[];
+extern const u8 gText_GameStats_TutorMovesTaught[];
+extern const u8 gText_GameStats_TimesEnteredHallOfFame[];
+extern const u8 gText_GameStats_PlaytimeAtFirstHoF[];
+extern const u8 gText_GameStats_TimesThePokedexWasChecked[];
+extern const u8 gText_GameStats_PokemonCaught[];
+extern const u8 gText_GameStats_NumberOfPokemonCaughtToday[];
+extern const u8 gText_GameStats_NumberOfCriticalCaptures[];
+extern const u8 gText_GameStats_PokemonEvolved[];
+extern const u8 gText_GameStats_FishCaught[];
+extern const u8 gText_GameStats_EXPEarnedToday[];
+extern const u8 gText_GameStats_NumberOfTradesCompleted[];
+extern const u8 gText_GameStats_ItemsPickedUp[];
+extern const u8 gText_GameStats_HiddenItemsFound[];
+extern const u8 gText_GameStats_TimesTheItemFinderWasUsed[];
+extern const u8 gText_GameStats_PokemonWereLeftAtTheDaycare[];
+extern const u8 gText_GameStats_EggsHatched[];
+extern const u8 gText_GameStats_TimesHealedAtPokemonCenterOrNurse[];
+extern const u8 gText_GameStats_TimesRestedAtHome[];
+extern const u8 gText_GameStats_TimesThePlayerEnteredAHotSpring[];
+extern const u8 gText_GameStats_TimesCutWasUsed[];
+extern const u8 gText_GameStats_TimesRockSmashWasUsed[];
+extern const u8 gText_GameStats_NumberOfMealsEaten[];
+extern const u8 gText_GameStats_NumberOfTrainerHousesCleared[];
+extern const u8 gText_GameStats_TimesTheLuckyDrawWasWon[];
+extern const u8 gText_GameStats_ChangedIVsAndNature[];
+extern const u8 gText_GameStats_NumberOfJackpotsAtCasino[];
+extern const u8 gText_GameStats_TimesShopped[];
+extern const u8 gText_GameStats_TimesSplashWasUsed[];
+extern const u8 gText_GameStats_TimesStruggleWasUsed[];
+extern const u8 gText_GameStats_TimesLedgesWereJumpedOffOf[];
+extern const u8 gText_GameStats_TimesThePlayerWasRainedOn[];
+
 //Scrolling Lists
 static const u8* sTutorFerrox[] =
 {
@@ -3334,6 +3371,46 @@ static const u8* sNatures[] =
 	gText_End,
 };
 
+static const u8* sGameStats[] =
+{
+	gText_GameStats_TimesSaved,
+	gText_GameStats_StepsTaken,
+	gText_GameStats_PokeChipsFound,
+	gText_GameStats_NumberOfBattles,
+	gText_GameStats_TutorMovesTaught,
+	gText_GameStats_TimesEnteredHallOfFame,
+	gText_GameStats_PlaytimeAtFirstHoF,
+	gText_GameStats_TimesThePokedexWasChecked,
+	gText_GameStats_PokemonCaught,
+	gText_GameStats_NumberOfPokemonCaughtToday,
+	gText_GameStats_NumberOfCriticalCaptures,
+	gText_GameStats_PokemonEvolved,
+	gText_GameStats_FishCaught,
+	gText_GameStats_EXPEarnedToday,
+	gText_GameStats_NumberOfTradesCompleted,
+	gText_GameStats_ItemsPickedUp,
+	gText_GameStats_HiddenItemsFound,
+	gText_GameStats_TimesTheItemFinderWasUsed,
+	gText_GameStats_PokemonWereLeftAtTheDaycare,
+	gText_GameStats_EggsHatched,
+	gText_GameStats_TimesHealedAtPokemonCenterOrNurse,
+	gText_GameStats_TimesRestedAtHome,
+	gText_GameStats_TimesThePlayerEnteredAHotSpring,
+	gText_GameStats_TimesCutWasUsed,
+	gText_GameStats_TimesRockSmashWasUsed,
+	gText_GameStats_NumberOfMealsEaten,
+	gText_GameStats_NumberOfTrainerHousesCleared,
+	gText_GameStats_TimesTheLuckyDrawWasWon,
+	gText_GameStats_ChangedIVsAndNature,
+	gText_GameStats_NumberOfJackpotsAtCasino,
+	gText_GameStats_TimesShopped,
+	gText_GameStats_TimesSplashWasUsed,
+	gText_GameStats_TimesStruggleWasUsed,
+	gText_GameStats_TimesLedgesWereJumpedOffOf,
+	gText_GameStats_TimesThePlayerWasRainedOn,
+	gText_End,
+};
+
 // Multichoice Lists
 const struct ScrollingMulti gScrollingSets[] =
 {
@@ -3353,7 +3430,8 @@ const struct ScrollingMulti gScrollingSets[] =
 	{sTutorsTsarvosa, ARRAY_COUNT(sTutorsTsarvosa)},
 	{sPokeChipCrusher, ARRAY_COUNT(sPokeChipCrusher)},
 	{sTutorsUteya, ARRAY_COUNT(sTutorsUteya)},
-	{sNatures, ARRAY_COUNT(sNatures)}
+	{sNatures, ARRAY_COUNT(sNatures)},
+	{sGameStats, ARRAY_COUNT(sGameStats)}
 };
 
 //Link number of opts shown at once to the box height
