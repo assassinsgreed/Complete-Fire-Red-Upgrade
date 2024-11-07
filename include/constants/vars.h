@@ -156,7 +156,7 @@
 #define VAR_MAP_SCENE_FUCHSIA_CITY_SAFARI_ZONE_ENTRANCE                        0x406E
 #define VAR_MAP_SCENE_CREDITS                                                  0x406F // Used on many maps
 #define VAR_MAP_SCENE_POST_CREDITS                                             0x4070 // Used only on first game clear
-#define VAR_MAP_SCENE_CINNABAR_ISLAND                                          0x4071
+#define VAR_MAP_SCENE_HAWTHORNES_LAB_CONSERVATORY                              0x4071
 #define VAR_MAP_SCENE_VICTORY_ROAD_PEAK_CUTSCENES                              0x4072
 #define VAR_MAP_SCENE_SAFFRON_CITY_POKEMON_TRAINER_FAN_CLUB                    0x4073
 #define VAR_MAP_SCENE_SEVEN_ISLAND_HOUSE_ROOM1                                 0x4074

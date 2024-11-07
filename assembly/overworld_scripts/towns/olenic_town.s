@@ -111,11 +111,19 @@ EventScript_OlenicNPCHouses_ProfessorGirl:
 
 .global MapScript_OlenicLab
 MapScript_OlenicLab:
+    mapscript MAP_SCRIPT_ON_LOAD MapScript_MoveConservatoryAide
 	mapscript MAP_SCRIPT_ON_FRAME_TABLE LevelScripts_OlenicLab_ObtainingPokedex
 	.byte MAP_SCRIPT_TERMIN
 
+MapScript_MoveConservatoryAide:
+    compare 0x4071 0x2
+    if notequal _goto End
+    movesprite2 0x3 0x3 0x2
+    end
+
 LevelScripts_OlenicLab_ObtainingPokedex:
 	levelscript 0x4050 0x0 LevelScript_ReceivingPokedex
+    levelscript 0x4071 0x1 LevelScript_GainingAccessToConservatory
 	.hword LEVEL_SCRIPT_TERMIN
 
 LevelScript_ReceivingPokedex:
@@ -167,6 +175,39 @@ LevelScript_ReceivingPokedex:
     addvar 0x40FF 0x1 @ Enable catching event on Route 2, if player requested tutorialization
 	end
 
+LevelScript_GainingAccessToConservatory:
+    pause DELAY_HALFSECOND
+    sound 0x15 @ Exclaim
+	applymovement Hawthorne m_Surprise
+    waitmovement Hawthorne
+    pause DELAY_HALFSECOND
+    msgbox gText_OlenicProfessorsLab_HawthorneWelcomesPlayerAsChampion MSG_NORMAL
+    applymovement Hawthorne m_HawthorneMeetsPlayer
+    waitmovement Hawthorne
+    msgbox gText_OlenicProfessorsLab_HawthorneCongratulatesPlayer MSG_NORMAL
+    applymovement Hawthorne m_HawthorneWalksToConservatoryEntrance
+    applymovement PLAYER m_PlayerWalksToConservatoryEntrance
+    waitmovement PLAYER
+    msgbox gText_OlenicProfessorsLab_HawthorneIntroducesTheConservatory MSG_NORMAL
+    applymovement Hawthorne m_LookRight
+    applymovement PLAYER m_LookLeft
+    msgbox gText_OlenicProfessorsLab_HawthorneTalksAboutConservatory MSG_NORMAL
+    applymovement Hawthorne m_LookUp
+    applymovement PLAYER m_LookUp
+    msgbox gText_OlenicProfessorsLab_HawthorneGivesPlayerAccessToTheConservatory MSG_NORMAL
+    msgbox gText_OlenicProfessorsLab_AideMovesAside MSG_NORMAL
+    applymovement 0x3 m_WalkLeft
+    waitmovement 0x3
+    applymovement 0x3 m_LookDown
+    movesprite2 0x3 0x3 0x2
+    applymovement Hawthorne m_LookRight
+    applymovement PLAYER m_LookLeft
+    msgbox gText_OlenicProfessorsLab_HawthorneGivesPlayerBlessingToCatchPokemonInGarden MSG_NORMAL
+    applymovement Hawthorne m_HawthorneReturnsToDeskFromConservatory
+    waitmovement Hawthorne
+    addvar 0x4071 0x1 @ End cutscene
+    end
+
 .global SignScript_OlenicLab_Conservatory
 SignScript_OlenicLab_Conservatory:
     msgbox gText_OlenicProfessorsLab_ConservatorySign MSG_SIGN
@@ -183,13 +224,33 @@ EventScript_OlenicLab_Hawthorne:
 
 .global EventScript_OlenicLab_HawthornesConservatoryAide
 EventScript_OlenicLab_HawthornesConservatoryAide:
-    @ TODO: Check if player has become champion
+    checkflag 0x4BC @ Player is champion
+    if SET _goto ConservatoryAide_AfterChampion
     npcchatwithmovement gText_OlenicProfessorsLab_ConservatoryAide m_LookDown
+    end
+
+ConservatoryAide_AfterChampion:
+    npcchatwithmovement gText_OlenicProfessorsLab_ConservatoryAide_AfterBecomingChampion m_LookDown
     end
 
 .global EventScript_OlenicLab_Researcher
 EventScript_OlenicLab_Researcher:
     npcchatwithmovement gText_OlenicProfessorsLab_Researcher m_LookUp
+    end
+
+.global SignScript_OlenicTown_HawthornesConservatory_GrassAreaSign
+SignScript_OlenicTown_HawthornesConservatory_GrassAreaSign:
+    msgbox gText_OlenicTown_HawthornesConservatory_GrassAreaSign MSG_SIGN
+    end
+
+.global SignScript_OlenicTown_HawthornesConservatory_FireAreaSign
+SignScript_OlenicTown_HawthornesConservatory_FireAreaSign:
+    msgbox gText_OlenicTown_HawthornesConservatory_FireAreaSign MSG_SIGN
+    end
+
+.global SignScript_OlenicTown_HawthornesConservatory_WaterAreaSign
+SignScript_OlenicTown_HawthornesConservatory_WaterAreaSign:
+    msgbox gText_OlenicTown_HawthornesConservatory_WaterAreaSign MSG_SIGN
     end
 
 m_HawthorneMeetsPlayer: .byte walk_up, walk_up, walk_right, walk_right, walk_right, walk_down, walk_down, end_m
@@ -198,3 +259,6 @@ m_HawthorneReturnsToPlayer: .byte walk_left, walk_down, end_m
 m_HawthorneReturnsToDesk: .byte walk_up, walk_up, walk_left, walk_left, walk_left, walk_down, walk_down, look_right, end_m
 m_CameraPanUp: .byte walk_up, walk_up, walk_up, walk_up, end_m
 m_CameraPanDown: .byte walk_down, walk_down, walk_down, walk_down, end_m
+m_HawthorneWalksToConservatoryEntrance: .byte walk_up, walk_up, walk_up, walk_left, look_up, end_m
+m_PlayerWalksToConservatoryEntrance: .byte walk_up, walk_up, walk_up, walk_up, end_m
+m_HawthorneReturnsToDeskFromConservatory: .byte walk_left, walk_down, walk_left, walk_down, walk_down, look_right, end_m

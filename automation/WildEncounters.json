@@ -2974,6 +2974,69 @@
         },
         {
             "mapgroup": 3,
+            "mapnum": 47,
+            "grass": {
+                "rate": 21,
+                "pokemon": [
+                    { "low": 5, "high": 5, "species": "SPECIES_TREECKO" },
+                    { "low": 5, "high": 5, "species": "SPECIES_TURTWIG" },
+                    { "low": 5, "high": 5, "species": "SPECIES_ROWLET" },
+                    { "low": 5, "high": 5, "species": "SPECIES_GROOKEY" },
+                    { "low": 5, "high": 5, "species": "SPECIES_BULBASAUR" },
+                    { "low": 5, "high": 5, "species": "SPECIES_CHIKORITA" },
+                    { "low": 5, "high": 5, "species": "SPECIES_ROWLET" },
+                    { "low": 5, "high": 5, "species": "SPECIES_GROOKEY" },
+                    { "low": 5, "high": 5, "species": "SPECIES_SNIVY" },
+                    { "low": 5, "high": 5, "species": "SPECIES_CHESPIN" },
+                    { "low": 5, "high": 5, "species": "SPECIES_SNIVY" }, 
+                    { "low": 5, "high": 5, "species": "SPECIES_CHESPIN" }
+                ]
+            }
+        },
+        {
+            "mapgroup": 3,
+            "mapnum": 48,
+            "grass": {
+                "rate": 21,
+                "pokemon": [
+                    { "low": 5, "high": 5, "species": "SPECIES_CHARMANDER" },
+                    { "low": 5, "high": 5, "species": "SPECIES_SCORBUNNY" },
+                    { "low": 5, "high": 5, "species": "SPECIES_TORCHIC" },
+                    { "low": 5, "high": 5, "species": "SPECIES_FENNEKIN" },
+                    { "low": 5, "high": 5, "species": "SPECIES_CHIMCHAR" },
+                    { "low": 5, "high": 5, "species": "SPECIES_LITTEN" },
+                    { "low": 5, "high": 5, "species": "SPECIES_TORCHIC" },
+                    { "low": 5, "high": 5, "species": "SPECIES_FENNEKIN" },
+                    { "low": 5, "high": 5, "species": "SPECIES_CYNDAQUIL" },
+                    { "low": 5, "high": 5, "species": "SPECIES_TEPIG" },
+                    { "low": 5, "high": 5, "species": "SPECIES_CYNDAQUIL" }, 
+                    { "low": 5, "high": 5, "species": "SPECIES_TEPIG" }
+                ]
+            }
+        },
+        {
+            "mapgroup": 3,
+            "mapnum": 49,
+            "grass": {
+                "rate": 21,
+                "pokemon": [
+                    { "low": 5, "high": 5, "species": "SPECIES_PIPLUP" },
+                    { "low": 5, "high": 5, "species": "SPECIES_OSHAWOTT" },
+                    { "low": 5, "high": 5, "species": "SPECIES_SOBBLE" },
+                    { "low": 5, "high": 5, "species": "SPECIES_FROAKIE" },
+                    { "low": 5, "high": 5, "species": "SPECIES_TOTODILE" },
+                    { "low": 5, "high": 5, "species": "SPECIES_MUDKIP" },
+                    { "low": 5, "high": 5, "species": "SPECIES_SOBBLE" },
+                    { "low": 5, "high": 5, "species": "SPECIES_FROAKIE" },
+                    { "low": 5, "high": 5, "species": "SPECIES_POPPLIO" },
+                    { "low": 5, "high": 5, "species": "SPECIES_SQUIRTLE" },
+                    { "low": 5, "high": 5, "species": "SPECIES_POPPLIO" }, 
+                    { "low": 5, "high": 5, "species": "SPECIES_SQUIRTLE" }
+                ]
+            }
+        },
+        {
+            "mapgroup": 3,
             "mapnum": 54,
             "grass": {
                 "rate": 21,
