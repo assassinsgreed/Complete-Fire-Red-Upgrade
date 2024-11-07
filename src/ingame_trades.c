@@ -38,6 +38,8 @@ extern u8 gText_InGameTrade_Autumn[];
 extern u8 gText_InGameTrade_OTRival[];
 extern u8 gText_InGameTrade_Boris[];
 extern u8 gText_InGameTrade_OTWinona[];
+extern u8 gText_InGameGift_OTSelene[];
+extern u8 gText_InGameGift_Victini[];
 
 static const struct InGameTrade sInGameTrades[] = {
     [INGAME_TRADE_CHINCHOU] = 
@@ -253,6 +255,21 @@ static const struct InGameTrade sInGameGifts[] = {
         .otName = gText_InGameGift_OTAsh,
         .otGender = MALE,
         .nature = NATURE_TIMID
+    },
+    [INGAME_GIFT_VICTINI] =
+    {
+        .nickname = gText_InGameGift_Victini,
+        .species = SPECIES_VICTINI,
+        .ivs = {26, 31, 24, 31, 27, 31},
+        .abilityNum = 0, // Victory Star
+        .otId = 2022,
+        .conditions = {30, 30, 20, 25, 20},
+        .personality = 0x451308ab,
+        .heldItem = ITEM_WHITE_HERB,
+        .mailNum = 0,
+        .otName = gText_InGameGift_OTSelene,
+        .otGender = FEMALE,
+        .nature = NATURE_ADAMANT
     }
 };
 

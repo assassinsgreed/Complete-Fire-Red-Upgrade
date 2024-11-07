@@ -4701,3 +4701,24 @@ void PartySpreadPokerus(struct Pokemon *party)
 		}
 	}
 }
+
+// Input: Var8004 - the index of the Greninja to change
+// Output: LASTRESULT - whether it worked or not
+void SetGreninjaAbilityToBattleBond()
+{
+	u16 partyId = Var8004;
+	gSpecialVar_LastResult = FALSE;
+
+	if (partyId >= PARTY_SIZE)
+		return;
+	
+	struct Pokemon* mon = &gPlayerParty[partyId];
+	u16 species = GetMonData(mon, MON_DATA_SPECIES, NULL);
+	u8 ability = GetMonAbility(mon);
+
+	if (species == SPECIES_GRENINJA && ability != ABILITY_BATTLEBOND)
+	{
+		SetAbilityFromEnum(mon, Ability_2);
+		gSpecialVar_LastResult = TRUE;
+	}
+}

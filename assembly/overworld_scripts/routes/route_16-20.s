@@ -934,6 +934,95 @@ EventScript_Route19_Palossand:
     release
     end
 
+.global EventScript_Route19_Selene
+EventScript_Route19_Selene:
+    lock
+    faceplayer
+    checkflag 0x278 @ Got Victini gift
+    if SET _goto Selene_AskToSetBattleBond
+    msgbox gText_Route19_Selene_TalkingAboutVacation MSG_NORMAL
+    sound 0x15 @ Exclaim
+    applymovement LASTTALKED m_Surprise
+    msgbox gText_Route19_Selene_OffersVictini MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto Selene_ChoseNotToTakeVictini
+    countpokemon
+    compare LASTRESULT 0x6
+    if equal _goto Selene_NoSpaceForVictini
+    msgbox gText_Route19_Selene_GaveVictini MSG_NORMAL
+    setvar 0x8000 MOVE_VCREATE
+    setvar 0x8001 MOVE_WILDCHARGE
+    setvar 0x8002 MOVE_ZENHEADBUTT
+    setvar 0x8003 MOVE_DAZZLINGGLEAM
+    setvar 0x8004 0x1 @ Ingame gift 1, Victini
+    setvar 0x8005 75 @ Level 75
+    setflag 0x278 @ Got Victini gift
+    fanfare 0x101
+    callasm CreateInGameGiftPokemon
+    msgbox gText_Route19_Selene_VictiniObtained MSG_KEEPOPEN
+    waitfanfare
+    msgbox gText_Route19_Selene_ThinkingAboutBattleBond MSG_NORMAL
+    sound 0x15 @ Exclaim
+    applymovement LASTTALKED m_Surprise
+    npcchatwithmovement gText_Route19_Selene_ExplainingBattleBond m_LookDown
+    end
+
+Selene_ChoseNotToTakeVictini:
+    npcchatwithmovement gText_Route19_Selene_SaidNoToTakingVictini m_LookDown
+    end
+
+Selene_NoSpaceForVictini:
+    npcchatwithmovement gText_Route19_Selene_NotEnoughRoomForVictini m_LookDown
+    end    
+
+Selene_AskToSetBattleBond:
+    msgbox gText_Route19_Selene_AskingToTeachBattleBond MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto Selene_ChoseNoToLearningBattleBond
+    msgbox gText_Route19_Selene_BattleBondChoseYes MSG_NORMAL
+    special 0x9F @ Choose pokemon from party
+    waitstate
+    compare 0x8004 0x6 @ Cancelled out
+    if greaterorequal _goto Selene_ChoseNoToLearningBattleBond
+    setvar 0x8003 0x0 @ Check species from party (0x8004 set by special 0x9F above)
+    special2 LASTRESULT 0x18 @ Check species
+    compare LASTRESULT SPECIES_GRENINJA
+    if notequal _goto Selene_ChoseWrongPokemon
+    bufferpartypokemon 0x0 0x8004 @ Get the Greninja's nickname
+    special2 LASTRESULT 0xD
+    compare LASTRESULT 255
+    if notequal _goto Selene_GreninjaDoesNotHaveMaxFriendship 
+    msgbox gText_Route19_Selene_ChoiceConfirmation MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto Selene_ChoseNoToLearningBattleBond
+    callasm SetGreninjaAbilityToBattleBond
+    compare LASTRESULT FALSE
+    if equal _goto Selene_GreninjaAlreadyHasBattleBond
+    msgbox gText_Route19_Selene_BattleBondGreninjaStarting MSG_NORMAL
+    fadescreen FADEOUT_BLACK
+    msgbox gText_Route19_Selene_BattleBondGreninjaWorking MSG_NORMAL
+    fadescreen FADEIN_BLACK
+    fanfare 0x101
+	waitfanfare
+    npcchatwithmovement gText_Route19_Selene_BattleBondFarewell m_LookDown
+    end
+
+Selene_ChoseNoToLearningBattleBond:
+    npcchatwithmovement gText_Route19_Selene_BattleBondChoseNo m_LookDown
+    end
+
+Selene_ChoseWrongPokemon:
+    npcchatwithmovement gText_Route19_Selene_BattleBondChoseWrongPokemon m_LookDown
+    end
+
+Selene_GreninjaDoesNotHaveMaxFriendship:
+    npcchatwithmovement gText_Route19_Selene_BattleBondGreninjaNotMaxFriendship m_LookDown
+    end
+
+Selene_GreninjaAlreadyHasBattleBond:
+    npcchatwithmovement gText_Route19_Selene_BattleBondGreninjaAlradyKnowsBattleBond m_LookDown
+    end
+
 .global SignScript_Route19_LookoutPointSign
 SignScript_Route19_LookoutPointSign:
     msgbox gText_Route19_LookoutPoint_Sign MSG_SIGN
