@@ -2864,3 +2864,8 @@ map 31 3 MapScript_Common_Credits
 map 31 8 MapScript_Common_Credits
 map 31 9 MapScript_Common_Credits
 map 31 6 MapScript_Common_Credits
+
+## Professor Hawthorne's Conservatory
+sign 3 47 0 SignScript_OlenicTown_HawthornesConservatory_GrassAreaSign
+sign 3 48 0 SignScript_OlenicTown_HawthornesConservatory_FireAreaSign
+sign 3 49 0 SignScript_OlenicTown_HawthornesConservatory_WaterAreaSign

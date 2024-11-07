@@ -259,6 +259,150 @@ const struct WildPokemon gVictoryRoad_LandMonsNight[] =
 	{55, 59, SPECIES_TREVENANT}
 };
 
+const struct WildPokemon gProfessorsConservatory_Grass_LandMonsMorning[] =
+{
+	{5, 5, SPECIES_BULBASAUR},
+	{5, 5, SPECIES_CHIKORITA},
+	{5, 5, SPECIES_TREECKO},
+	{5, 5, SPECIES_TURTWIG},
+	{5, 5, SPECIES_SNIVY},
+	{5, 5, SPECIES_CHESPIN},
+	{5, 5, SPECIES_TREECKO},
+	{5, 5, SPECIES_TURTWIG},
+	{5, 5, SPECIES_ROWLET},
+	{5, 5, SPECIES_GROOKEY},
+	{5, 5, SPECIES_ROWLET}, 
+	{5, 5, SPECIES_GROOKEY}
+};
+
+const struct WildPokemon gProfessorsConservatory_Grass_LandMonsEvening[] =
+{
+	{5, 5, SPECIES_SNIVY},
+	{5, 5, SPECIES_CHESPIN},
+	{5, 5, SPECIES_BULBASAUR},
+	{5, 5, SPECIES_CHIKORITA},
+	{5, 5, SPECIES_ROWLET},
+	{5, 5, SPECIES_GROOKEY},
+	{5, 5, SPECIES_BULBASAUR},
+	{5, 5, SPECIES_CHIKORITA},
+	{5, 5, SPECIES_TREECKO},
+	{5, 5, SPECIES_TURTWIG},
+	{5, 5, SPECIES_TREECKO}, 
+	{5, 5, SPECIES_TURTWIG}
+};
+
+const struct WildPokemon gProfessorsConservatory_Grass_LandMonsNight[] =
+{
+	{5, 5, SPECIES_ROWLET},
+	{5, 5, SPECIES_GROOKEY},
+	{5, 5, SPECIES_SNIVY},
+	{5, 5, SPECIES_CHESPIN},
+	{5, 5, SPECIES_TREECKO},
+	{5, 5, SPECIES_TURTWIG},
+	{5, 5, SPECIES_SNIVY},
+	{5, 5, SPECIES_CHESPIN},
+	{5, 5, SPECIES_BULBASAUR},
+	{5, 5, SPECIES_CHIKORITA},
+	{5, 5, SPECIES_BULBASAUR}, 
+	{5, 5, SPECIES_CHIKORITA}
+};
+
+const struct WildPokemon gProfessorsConservatory_Fire_LandMonsMorning[] =
+{
+	{5, 5, SPECIES_TORCHIC},
+	{5, 5, SPECIES_FENNEKIN},
+	{5, 5, SPECIES_CHIMCHAR},
+	{5, 5, SPECIES_LITTEN},
+	{5, 5, SPECIES_CYNDAQUIL},
+	{5, 5, SPECIES_TEPIG},
+	{5, 5, SPECIES_CHIMCHAR},
+	{5, 5, SPECIES_LITTEN},
+	{5, 5, SPECIES_CHARMANDER},
+	{5, 5, SPECIES_SCORBUNNY},
+	{5, 5, SPECIES_CHARMANDER}, 
+	{5, 5, SPECIES_SCORBUNNY}
+};
+
+const struct WildPokemon gProfessorsConservatory_Fire_LandMonsEvening[] =
+{
+	{5, 5, SPECIES_CYNDAQUIL},
+	{5, 5, SPECIES_TEPIG},
+	{5, 5, SPECIES_CHARMANDER},
+	{5, 5, SPECIES_SCORBUNNY},
+	{5, 5, SPECIES_TORCHIC},
+	{5, 5, SPECIES_FENNEKIN},
+	{5, 5, SPECIES_CHARMANDER},
+	{5, 5, SPECIES_SCORBUNNY},
+	{5, 5, SPECIES_CHIMCHAR},
+	{5, 5, SPECIES_LITTEN},
+	{5, 5, SPECIES_CHIMCHAR}, 
+	{5, 5, SPECIES_LITTEN}
+};
+
+const struct WildPokemon gProfessorsConservatory_Fire_LandMonsNight[] =
+{
+	{5, 5, SPECIES_CHIMCHAR},
+	{5, 5, SPECIES_LITTEN},
+	{5, 5, SPECIES_CYNDAQUIL},
+	{5, 5, SPECIES_TEPIG},
+	{5, 5, SPECIES_CHARMANDER},
+	{5, 5, SPECIES_SCORBUNNY},
+	{5, 5, SPECIES_CYNDAQUIL},
+	{5, 5, SPECIES_TEPIG},
+	{5, 5, SPECIES_TORCHIC},
+	{5, 5, SPECIES_FENNEKIN},
+	{5, 5, SPECIES_TORCHIC}, 
+	{5, 5, SPECIES_FENNEKIN}
+};
+
+const struct WildPokemon gProfessorsConservatory_Water_LandMonsMorning[] =
+{
+	{5, 5, SPECIES_POPPLIO},
+	{5, 5, SPECIES_SQUIRTLE},
+	{5, 5, SPECIES_TOTODILE},
+	{5, 5, SPECIES_MUDKIP},
+	{5, 5, SPECIES_PIPLUP},
+	{5, 5, SPECIES_OSHAWOTT},
+	{5, 5, SPECIES_TOTODILE},
+	{5, 5, SPECIES_MUDKIP},
+	{5, 5, SPECIES_SOBBLE},
+	{5, 5, SPECIES_FROAKIE},
+	{5, 5, SPECIES_SOBBLE}, 
+	{5, 5, SPECIES_FROAKIE}
+};
+
+const struct WildPokemon gProfessorsConservatory_Water_LandMonsEvening[] =
+{
+	{5, 5, SPECIES_TOTODILE},
+	{5, 5, SPECIES_MUDKIP},
+	{5, 5, SPECIES_POPPLIO},
+	{5, 5, SPECIES_SQUIRTLE},
+	{5, 5, SPECIES_SOBBLE},
+	{5, 5, SPECIES_FROAKIE},
+	{5, 5, SPECIES_POPPLIO},
+	{5, 5, SPECIES_SQUIRTLE},
+	{5, 5, SPECIES_PIPLUP},
+	{5, 5, SPECIES_OSHAWOTT},
+	{5, 5, SPECIES_PIPLUP}, 
+	{5, 5, SPECIES_OSHAWOTT}
+};
+
+const struct WildPokemon gProfessorsConservatory_Water_LandMonsNight[] =
+{
+	{5, 5, SPECIES_SOBBLE},
+	{5, 5, SPECIES_FROAKIE},
+	{5, 5, SPECIES_PIPLUP},
+	{5, 5, SPECIES_OSHAWOTT},
+	{5, 5, SPECIES_POPPLIO},
+	{5, 5, SPECIES_SQUIRTLE},
+	{5, 5, SPECIES_PIPLUP},
+	{5, 5, SPECIES_OSHAWOTT},
+	{5, 5, SPECIES_TOTODILE},
+	{5, 5, SPECIES_MUDKIP},
+	{5, 5, SPECIES_TOTODILE}, 
+	{5, 5, SPECIES_MUDKIP}
+};
+
 const struct WildPokemonInfo gVarisiForest_LandMonsNightInfo = {14, gVarisiForest_LandMonsNight};
 const struct WildPokemonInfo gRubarrDesert_LandMonsNightInfo = {3, gRubarrDesert_LandMonsNight};
 const struct WildPokemonInfo gHeleoRanch_LandMonsNightInfo = {21, gHeleoRanch_LandMonsNight};
@@ -274,9 +418,42 @@ const struct WildPokemonInfo gRoute21AndSecretTrail_LandMonsNightInfo = {21, gRo
 const struct WildPokemonInfo gRoute24_LandMonsNightInfo = {21, gRoute24_LandMonsNight};
 const struct WildPokemonInfo gUteyanRuins_LandMonsNightInfo = {21, gUteyanRuins_LandMonsNight};
 const struct WildPokemonInfo gVictoryRoad_LandMonsNightInfo = {21, gVictoryRoad_LandMonsNight};
+const struct WildPokemonInfo gProfessorsConservatory_Grass_LandMonsMorningInfo = {21, gProfessorsConservatory_Grass_LandMonsMorning};
+const struct WildPokemonInfo gProfessorsConservatory_Grass_LandMonsEveningInfo = {21, gProfessorsConservatory_Grass_LandMonsEvening};
+const struct WildPokemonInfo gProfessorsConservatory_Grass_LandMonsNightInfo = {21, gProfessorsConservatory_Grass_LandMonsNight};
+const struct WildPokemonInfo gProfessorsConservatory_Fire_LandMonsMorningInfo = {21, gProfessorsConservatory_Fire_LandMonsMorning};
+const struct WildPokemonInfo gProfessorsConservatory_Fire_LandMonsEveningInfo = {21, gProfessorsConservatory_Fire_LandMonsEvening};
+const struct WildPokemonInfo gProfessorsConservatory_Fire_LandMonsNightInfo = {21, gProfessorsConservatory_Fire_LandMonsNight};
+const struct WildPokemonInfo gProfessorsConservatory_Water_LandMonsMorningInfo = {21, gProfessorsConservatory_Water_LandMonsMorning};
+const struct WildPokemonInfo gProfessorsConservatory_Water_LandMonsEveningInfo = {21, gProfessorsConservatory_Water_LandMonsEvening};
+const struct WildPokemonInfo gProfessorsConservatory_Water_LandMonsNightInfo = {21, gProfessorsConservatory_Water_LandMonsNight};
 
 const struct WildPokemonHeader gWildMonMorningHeaders[] =
 {
+	{
+		.mapGroup = MAP_GROUP(PROFESSORS_CONSERVATORY_GRASS),
+		.mapNum = MAP_NUM(PROFESSORS_CONSERVATORY_GRASS),
+		.landMonsInfo = &gProfessorsConservatory_Grass_LandMonsMorningInfo,
+		.waterMonsInfo = NULL,
+		.rockSmashMonsInfo = NULL,
+		.fishingMonsInfo = NULL,
+	},
+	{
+		.mapGroup = MAP_GROUP(PROFESSORS_CONSERVATORY_FIRE),
+		.mapNum = MAP_NUM(PROFESSORS_CONSERVATORY_FIRE),
+		.landMonsInfo = &gProfessorsConservatory_Fire_LandMonsMorningInfo,
+		.waterMonsInfo = NULL,
+		.rockSmashMonsInfo = NULL,
+		.fishingMonsInfo = NULL,
+	},
+	{
+		.mapGroup = MAP_GROUP(PROFESSORS_CONSERVATORY_WATER),
+		.mapNum = MAP_NUM(PROFESSORS_CONSERVATORY_WATER),
+		.landMonsInfo = &gProfessorsConservatory_Water_LandMonsMorningInfo,
+		.waterMonsInfo = NULL,
+		.rockSmashMonsInfo = NULL,
+		.fishingMonsInfo = NULL,
+	},
 	{
 		.mapGroup = 0xFF,
 		.mapNum = 0xFF,
@@ -427,6 +604,30 @@ const struct WildPokemonHeader gWildMonEveningHeaders[] =
 		.fishingMonsInfo = NULL,
 	},
 	{
+		.mapGroup = MAP_GROUP(PROFESSORS_CONSERVATORY_GRASS),
+		.mapNum = MAP_NUM(PROFESSORS_CONSERVATORY_GRASS),
+		.landMonsInfo = &gProfessorsConservatory_Grass_LandMonsEveningInfo,
+		.waterMonsInfo = NULL,
+		.rockSmashMonsInfo = NULL,
+		.fishingMonsInfo = NULL,
+	},
+	{
+		.mapGroup = MAP_GROUP(PROFESSORS_CONSERVATORY_FIRE),
+		.mapNum = MAP_NUM(PROFESSORS_CONSERVATORY_FIRE),
+		.landMonsInfo = &gProfessorsConservatory_Fire_LandMonsEveningInfo,
+		.waterMonsInfo = NULL,
+		.rockSmashMonsInfo = NULL,
+		.fishingMonsInfo = NULL,
+	},
+	{
+		.mapGroup = MAP_GROUP(PROFESSORS_CONSERVATORY_WATER),
+		.mapNum = MAP_NUM(PROFESSORS_CONSERVATORY_WATER),
+		.landMonsInfo = &gProfessorsConservatory_Water_LandMonsEveningInfo,
+		.waterMonsInfo = NULL,
+		.rockSmashMonsInfo = NULL,
+		.fishingMonsInfo = NULL,
+	},
+	{
 		.mapGroup = 0xFF,
 		.mapNum = 0xFF,
 		.landMonsInfo = NULL,
@@ -570,6 +771,30 @@ const struct WildPokemonHeader gWildMonNightHeaders[] =
 		.mapGroup = MAP_GROUP(VICTORY_ROAD_OUTSIDE),
 		.mapNum = MAP_NUM(VICTORY_ROAD_OUTSIDE),
 		.landMonsInfo = &gVictoryRoad_LandMonsNightInfo,
+		.waterMonsInfo = NULL,
+		.rockSmashMonsInfo = NULL,
+		.fishingMonsInfo = NULL,
+	},
+	{
+		.mapGroup = MAP_GROUP(PROFESSORS_CONSERVATORY_GRASS),
+		.mapNum = MAP_NUM(PROFESSORS_CONSERVATORY_GRASS),
+		.landMonsInfo = &gProfessorsConservatory_Grass_LandMonsNightInfo,
+		.waterMonsInfo = NULL,
+		.rockSmashMonsInfo = NULL,
+		.fishingMonsInfo = NULL,
+	},
+	{
+		.mapGroup = MAP_GROUP(PROFESSORS_CONSERVATORY_FIRE),
+		.mapNum = MAP_NUM(PROFESSORS_CONSERVATORY_FIRE),
+		.landMonsInfo = &gProfessorsConservatory_Fire_LandMonsNightInfo,
+		.waterMonsInfo = NULL,
+		.rockSmashMonsInfo = NULL,
+		.fishingMonsInfo = NULL,
+	},
+	{
+		.mapGroup = MAP_GROUP(PROFESSORS_CONSERVATORY_WATER),
+		.mapNum = MAP_NUM(PROFESSORS_CONSERVATORY_WATER),
+		.landMonsInfo = &gProfessorsConservatory_Water_LandMonsNightInfo,
 		.waterMonsInfo = NULL,
 		.rockSmashMonsInfo = NULL,
 		.fishingMonsInfo = NULL,

@@ -17,6 +17,15 @@ Professor Hawthorne is THE leading\nexpert on Pok\emon habitat\lconservation.\pH
 #org @gText_OlenicOverworld_TrainerTips
 Trainer Tips!\pCertain Pok\emon can only be found\nduring specific times of day.\pMorning starts at 4 AM.\nDay starts at 8 AM.\lEvening starts at 5 PM.\lNight starts at 8 PM.\pPok\emon may be found during the\nmorning/day, or evening/night.\pExplore at different times of day to\nfind every Pok\emon!
 
+#org @gText_OlenicTown_HawthornesConservatory_GrassAreaSign
+Professor Hawthorne's Conservatory\n[GREEN]Meadow Area
+
+#org @gText_OlenicTown_HawthornesConservatory_FireAreaSign
+Professor Hawthorne's Conservatory\n[RED]Mountain Area
+
+#org @gText_OlenicTown_HawthornesConservatory_WaterAreaSign
+Professor Hawthorne's Conservatory\n[BLUE]Marsh Area
+
 // Facilities
 #org @gText_OlenicFacilities_Mart_StockUp
 Make sure you stock up on items\nbefore you head out. You never\lknow what might happen.
@@ -59,6 +68,9 @@ Hello, [PLAYER]. You're here to have\nyour Pokedex evaluated, yes?\pVery well, p
 #org @gText_OlenicProfessorsLab_ConservatoryAide
 I'm sorry, but the conservatory is a\nsensitive area. Only the professor\land champion may enter.
 
+#org @gText_OlenicProfessorsLab_ConservatoryAide_AfterBecomingChampion
+Ah, Champion [PLAYER].\pYou may enter the professor's\nconservatory at your leisure.
+
 #org @gText_OlenicProfessorsLab_Researcher
 We're hard at work researching the\nhabitats of Pok\emon.
 
@@ -94,3 +106,24 @@ We're hard at work researching the\nhabitats of Pok\emon.
 
 #org @gText_OlenicProfessorsLab_HawthorneBidsFarewell
 [BLUE]To have a dream is a wonderful\nthing, especially when shared by\lfriends[.] But I am rambling on.\p[PLAYER]! I wish you the best in your\njourney. You are welcome to visit\lme whenever you'd like.
+
+#org @gText_OlenicProfessorsLab_HawthorneWelcomesPlayerAsChampion
+[BLUE][PLAYER], is that you?
+
+#org @gText_OlenicProfessorsLab_HawthorneCongratulatesPlayer
+[BLUE][PLAYER], I saw your battle against\nSelene on TV.\pPlease, accept my humblest\ncongratulations!\pYou and your partner Pok\emon have\ncome so far.\pWhy, I'm getting a bit sentimental!\nHohoho!\pListen, [PLAYER][.]\pI want to give you a gift, to\ncelebrate your accomplishments.\pCome with me, please.
+
+#org @gText_OlenicProfessorsLab_HawthorneIntroducesTheConservatory
+[BLUE]This here is my pride and joy, the\nPok\emon Conservatory[.]
+
+#org @gText_OlenicProfessorsLab_HawthorneTalksAboutConservatory
+[BLUE]I have dedicated myself to providing\nan environment Pok\emon can thrive\lin.\pAnd, I daresay, I succeeded!\nHohoho!\pNow, many rare Pok\emon flock here.\pWhy, the Pok\emon you started your\njourney with was born here!\pI normally don't let people enter\nhere, to ensure it stays preserved.\pBut[.] For an exceptional trainer like\nyou, I can make an exception.
+
+#org @gText_OlenicProfessorsLab_HawthorneGivesPlayerAccessToTheConservatory
+[BLUE]Excuse me!\pPlease, let [PLAYER] pass to the\nconservatory as they see fit.
+
+#org @gText_OlenicProfessorsLab_AideMovesAside
+[BLACK]Aide: [BLUE]Yes, sir!
+
+#org @gText_OlenicProfessorsLab_HawthorneGivesPlayerBlessingToCatchPokemonInGarden
+[BLUE][PLAYER], please feel free to capture\nany Pok\emon you find in the\lconservatory.\pConsider this my gift to you.\pJust[.] Don't forget to show me your\nPok\eDex from time to time, hey?\pHohoho!\pTake care, [PLAYER]!

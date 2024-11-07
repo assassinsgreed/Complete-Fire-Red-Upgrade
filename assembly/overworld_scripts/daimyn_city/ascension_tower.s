@@ -399,6 +399,7 @@ LevelScript_AscensionTower_WalkForward_ForChampionBattle:
     clearflag 0x6C @ Post-Credits NPCs will appear
     clearflag 0x9D @ Postgame NPCs will now appear
     setvar 0x4070 0x1 @ Trigger postcredits upon returning to Anthra Town
+    setvar 0x4071 0x1 @ Trigger Hawthorne's Conservatory event
     warp 1 80 0
     end
 
