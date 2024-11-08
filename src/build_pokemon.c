@@ -4719,6 +4719,8 @@ void SetGreninjaAbilityToBattleBond()
 	if (species == SPECIES_GRENINJA && ability != ABILITY_BATTLEBOND)
 	{
 		SetAbilityFromEnum(mon, Ability_2);
+		Var8005 = 26; // Special Ribbon 7, used to check for Battle Bond eligibility
+		sp011_RibbonSetterCleaner();
 		gSpecialVar_LastResult = TRUE;
 	}
 }

@@ -80,7 +80,7 @@
 #define MON_DATA_GIFT_RIBBON_4     75
 #define MON_DATA_GIFT_RIBBON_5     76
 #define MON_DATA_GIFT_RIBBON_6     77
-#define MON_DATA_GIFT_RIBBON_7     78
+#define MON_DATA_GIFT_RIBBON_7     78 // Used to control Battle Bondable Greninja
 #define MON_DATA_FATEFUL_ENCOUNTER 79
 #define MON_DATA_OBEDIENCE         80
 #define MON_DATA_KNOWN_MOVES       81
