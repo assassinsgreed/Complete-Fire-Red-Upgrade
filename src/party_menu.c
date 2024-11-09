@@ -2515,7 +2515,6 @@ static u8 GetAbilityCapsuleNewAbility(struct Pokemon* mon)
 	{
 		if (ability != hiddenAbility
 		&& hiddenAbility != ABILITY_NONE
-		&& species != SPECIES_GRENINJA // Handled by special event
 		#ifdef UNBOUND
 		&& (FlagGet(FLAG_ABILITY_RANDOMIZER)
 		 || SpeciesToNationalPokedexNum(species) != NATIONAL_DEX_ZYGARDE) //Must be given with Power Construct
@@ -2530,7 +2529,8 @@ static u8 GetAbilityCapsuleNewAbility(struct Pokemon* mon)
 	{
 		if (ability == ability1)
 		{
-			if (ability != ability2 && ability2 != ABILITY_NONE)
+			// Greninja cannot change to Battle Bond with an Ability Capsule
+			if (ability != ability2 && ability2 != ABILITY_NONE && species != SPECIES_GRENINJA)
 				changeTo = ability2;
 		}
 		else // Allow the pokemon to switch from Ability2 or it's hidden ability to it's first ability

@@ -420,6 +420,60 @@ My husband and I train our Pok\emon\ntogether every day.\pIt's a great way to co
 #org @gText_Route19_LookoutPoint_Sign
 Lookout Point\nPlease keep our beaches clean!
 
+#org @gText_Route19_Selene_TalkingAboutVacation
+[RED]Oh, hey [PLAYER]!\nFancy seeing you here!\pI thought I'd take a nice, long\nvacation, now that I no longer\lhave my Champion's duties.\pI didn't realize just how badly I\nneeded this break.\pOnly thing is[.] I think Victini is\nbored. It misses battling.
+
+#org @gText_Route19_Selene_OffersVictini
+[RED]Oh, I just had a great idea!\pIf you're willing, you could take\nVictini with you for a while!\pWhat do you say?
+
+#org @gText_Route19_Selene_SaidNoToTakingVictini
+[RED]Don't worry about it! I'll find some\nnew ways to keep Victini busy.\pIf you change your mind though,\ncome by and say hello, okay?
+
+#org @gText_Route19_Selene_NotEnoughRoomForVictini
+[RED]That's great!\pBut[.] You don't have enough space to\ntake Victini with you[.]\pThe offer is still on the table, if\nyou come back later!
+
+#org @gText_Route19_Selene_GaveVictini
+[RED]That's great!\pTake good care of Victini, okay?\pYou're welcome to travel together\nfor as long as you'd like.
+
+#org @gText_Route19_Selene_VictiniObtained
+[BLACK]Received [RED]Victini [BLACK]from Selene!
+
+#org @gText_Route19_Selene_ThinkingAboutBattleBond
+[RED]Hmmm[.]\nI think you could do that, too[.]
+
+#org @gText_Route19_Selene_ExplainingBattleBond
+[RED]Oh! Sorry about that.\nI got a bit lost in thought.\pI was thinking[.]\pIf a [BLUE]Greninja[RED] trusts their trainer\nenough, they enter a sort of\ltrance in battle.\pIt's called "Battle Bond\", and it's\nnot unlike Mega Evolution.\pMost trainers can't achieve that\nlevel of synergy though.\pBut[.] I think you could do it!\pIf you have a Greninja you've grown\nclose with, bring it to me.\pI can help the two of you get in\nsync and unlock it's Battle Bond\lability.\pPretty sweet deal, right?\pAnyways! I'm going to keep relaxing\nhere in the meantime.\pI hope you and Victini enjoy\ntravelling together.\pBye for now!
+
+#org @gText_Route19_Selene_AskingToTeachBattleBond
+[RED]Hey, [PLAYER]! Are you and Victini\nenjoying travelling together?\pIf you're interested, I can help you\nunlock your Greninja's Battle Bond\lability.\pWhat do you say?
+
+#org @gText_Route19_Selene_BattleBondChoseNo
+[RED]No worries! I'll be here if you\nchange your mind.\pI hope you and Victini enjoy\ntravelling together!
+
+#org @gText_Route19_Selene_BattleBondChoseYes
+[RED]Okay, awesome! Which Greninja do you\nwant to get in sync with?
+
+#org @gText_Route19_Selene_BattleBondChoseWrongPokemon
+[RED]Oh[.] I can only help you get in sync\nwith a Greninja[.]\pCome see me if you have one that\nyou've grown very close to, okay?
+
+#org @gText_Route19_Selene_BattleBondGreninjaNotMaxFriendship
+[RED]Hmm[.] You haven't grown close to\n[BUFFER1] yet.\pI don't think this'll work.\pCome see me when you two have\nbecome better friends, okay?
+
+#org @gText_Route19_Selene_BattleBondGreninjaAlradyKnowsBattleBond
+[RED][BUFFER1] has already achieved\nthe Battle Bond ability.\pCome see me if you have a Greninja\nthat has not achieved it.
+
+#org @gText_Route19_Selene_ChoiceConfirmation
+[RED]You want to get in sync with\n[BUFFER1]?
+
+#org @gText_Route19_Selene_BattleBondGreninjaStarting
+[RED]Okay! Let's begin.
+
+#org @gText_Route19_Selene_BattleBondGreninjaWorking
+[RED]Now[.] [PLAYER] and\n[BUFFER1][.]\pTry to think about what the other\nmay be thinking about[.]\pTry to move in the same way, at the\nsame time[.]\pRecall the journey the two of you\nhave shared together[.]\pThat's good! Keep practicing[.]
+
+#org @gText_Route19_Selene_BattleBondFarewell
+[RED]Congratulations! You and\n[BUFFER1] are in sync.\p[BUFFER1] has mastered the Battle\nBond ability.\pI hope the two of you will use it to\nachieve your goals.\pBe sure to come see me if you'd like\nto sync with another Greninja!
+
 // Route 20
 #org @gText_Route20_PsychicMcKenzie_Intro
 I predict that you will lose handily.

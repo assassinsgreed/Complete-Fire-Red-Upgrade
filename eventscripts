@@ -1942,6 +1942,7 @@ npc 3 37 6 EventScript_Route19_TM84PoisonJab
 npc 3 37 7 ItemScript_Common_Zinc
 npc 3 37 8 ItemScript_Common_LuminousMoss
 npc 3 37 9 EventScript_Route19_Palossand
+npc 3 37 13 EventScript_Route19_Selene
 sign 3 37 0 SignScript_Route19_LookoutPointSign
 
 # Emraldin Quay

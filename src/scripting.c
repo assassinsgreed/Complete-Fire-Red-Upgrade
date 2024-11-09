@@ -3678,7 +3678,6 @@ void CheckIfPokemonKnowsMove()
 
 	if (partyId >= PARTY_SIZE)
 		return;
-
 	
 	gSpecialVar_LastResult = MoveInMonMoveset(Var8005, &gPlayerParty[partyId]);
 }

@@ -652,7 +652,7 @@
 #define FLAG_POIPOLE_EXPLAINED                           0x275
 #define FLAG_RECEIVED_POIPOLE_GIFT                       0x276
 #define FLAG_GOT_POKECHIP_CHARM                          0x277
-#define FLAG_GOT_HITMON_FROM_DOJO                        0x278
+#define FLAG_GOT_VICTINI_GIFT_FROM_SELENE                0x278
 #define FLAG_LEARNED_ABOUT_BRAILLE_DECODER               0x279
 #define FLAG_UTEYAN_RUINS_TOP_CHAMBER_SOLVED             0x27A
 #define FLAG_UTEYAN_RUINS_MIDDLE_CHAMBER_SOLVED          0x27B
