@@ -1479,26 +1479,6 @@ extern bool8 __attribute__((long_call)) UpdatePoisonStepCounter(void);
 //Hack take step function to include custom walking scripts
 bool8 TryStartStepCountScript(u16 metatileBehavior)
 {
-	// Hack: If the player has any Greninja in the party with the battle bond ability and without the corresponding ribbon, reset them to Torrent
-	for (int i = 0; i < PARTY_SIZE; i++)
-	{
-		struct Pokemon* mon = &gPlayerParty[i];
-		u16 species = GetMonData(mon, MON_DATA_SPECIES, NULL);
-		
-		if (species == SPECIES_GRENINJA)
-		{
-			u8 ability = GetMonAbility(mon);
-			Var8004 = i; // Party index
-			Var8005 = 26; // Special Ribbon 7, used to check for Battle Bond eligibility
-			u8 isBattleBondEnabled = sp009_PokemonRibbonChecker();
-
-			if (ability == ABILITY_BATTLEBOND && !isBattleBondEnabled)
-			{
-				GiveMonNatureAndAbility(mon, GetNature(mon), 0, FALSE, TRUE, FALSE); // Ability 1, Torrent
-			}
-		}
-	}
-
 	if (InUnionRoom() == TRUE
 	||  gQuestLogMode == 2)
 		return FALSE;
@@ -1668,6 +1648,26 @@ void RunOnTransitionMapScript(void)
 
 void RunOnResumeMapScript(void)
 {
+	// Hack: If the player has any Greninja in the party with the battle bond ability and without the corresponding ribbon, reset them to Torrent
+	for (int i = 0; i < PARTY_SIZE; i++)
+	{
+		struct Pokemon* mon = &gPlayerParty[i];
+		u16 species = GetMonData(mon, MON_DATA_SPECIES, NULL);
+		
+		if (species == SPECIES_GRENINJA)
+		{
+			u8 ability = GetMonAbility(mon);
+			Var8004 = i; // Party index
+			Var8005 = 26; // Special Ribbon 7, used to check for Battle Bond eligibility
+			u8 isBattleBondEnabled = sp009_PokemonRibbonChecker();
+
+			if (ability == ABILITY_BATTLEBOND && !isBattleBondEnabled)
+			{
+				GiveMonNatureAndAbility(mon, GetNature(mon), 0, FALSE, TRUE, FALSE); // Ability 1, Torrent
+			}
+		}
+	}
+
 	ForceClockUpdate();
 	MapHeaderRunScriptByTag(5);
 }
