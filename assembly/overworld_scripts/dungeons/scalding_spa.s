@@ -298,7 +298,7 @@ EventScript_GlastrierRoom_Glastrier:
     setvar 0x8002 MOVE_DOUBLEEDGE
     setvar 0x8003 MOVE_TAUNT
     setflag 0x90C @ Smarter wild battle, cleared at the end of battle
-    setwildbattle SPECIES_GLASTRIER 70 ITEM_NONE
+    setwildbattle SPECIES_GLASTRIER 75 ITEM_NONE
     setflag 0x807
     special 0x138 @ Setup a legendary encounter (blurred screen transition)
     waitstate
@@ -360,7 +360,7 @@ TileScript_GlastrierRoom_LeftTile:
     waitcry
     msgbox gtext_GlastrierRoom_GlastrierEvaluation MSG_NORMAL
     checkflag 0x4BC @ Defeated Champion Selene
-    if NOT_SET _goto GlastrierAcceptsPlayer
+    if SET _goto GlastrierAcceptsPlayer
     msgbox gtext_GlastrierRoom_GlastrierEvaluationFailed MSG_NORMAL
     call GlastrierLeavesCommon
     clearflag 0x46 @ Clear Glastrier flag; it gets set whenever this event fires. The player should be allowed to be sized up by it as many times as they want

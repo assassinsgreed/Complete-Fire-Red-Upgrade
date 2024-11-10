@@ -91,6 +91,21 @@ Rest in the Carnelidge Hot Springs!\nGuaranteed to cure what ails you.
 #org @gText_CarnelidgeVolcano_VolcanionPresenceFelt
 You can feel a powerful presence,\nbut it will not reveal itself[.]
 
+#org @gText_CarnelidgeVolcano_VolcanionEmerging
+You can feel a powerful presence.\nIt seems to be sizing you up[.]
+
+#org @gText_CarnelidgeVolcano_VolcanionCry
+FWOOOO!
+
+#org @gText_CarnelidgeVolcano_VolcanionEmerged
+An imposing Pok\emon has appeared!
+
+#org @gtext_VolcanionRoom_VolcanionDefeated
+The imposing Pok\emon fled.\nWill it return later?
+
+#org @gtext_VolcanionRoom_VolcanionFledFromBattle
+The imposing Pok\emon left.\nWill it return later?
+
 #org @gText_CarnelidgeVolcano_ExtendedSequenceWarning
 Warning: Travelling beyond this point\nwill initiate an extended sequence\lof events.\pFree exploration and saving your\ngame will be unavailable.\pBe sure you are prepared and have\ntime available before proceeding.\p(Estimate: 1 hour)
 

@@ -436,6 +436,8 @@ GraphicsInfo_Groudon 839FFF4
 GraphicsInfo_Glastrier 83A0000
 ## Replace Deoxys Attack (149)
 GraphicsInfo_Zeraora 83A0004
+## Replace Deoxys Speed (150)
+GraphicsInfo_Volcanion 83A0008
 
 # Custom Battle Spritework
 ## Replace Aqua Boss Archie (0)
