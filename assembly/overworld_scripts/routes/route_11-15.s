@@ -1617,6 +1617,11 @@ EventScript_Route13_RestHouse_RestHouseRep:
     npcchatwithmovement gText_Route13_RestHouse_RestHouseRep m_LookLeft
     end
 
+.global EventScript_Route13_RestHouse_VolcanionHiker
+EventScript_Route13_RestHouse_VolcanionHiker:
+    npcchatwithmovement gText_Route13_RestHouse_VolcanionHiker m_LookDown
+    end
+
 @@@@@@@@@@ Route 13 Cave @@@@@@@@@@
 .global MapScript_Route13Cave
 MapScript_Route13Cave:

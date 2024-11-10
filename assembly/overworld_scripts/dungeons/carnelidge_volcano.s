@@ -51,6 +51,23 @@ LightTremor:
     setvar 0x4002 0x0
     end
 
+.global MapScript_CarnelidgeVolcano_VolcanionRoom
+MapScript_CarnelidgeVolcano_VolcanionRoom:
+    mapscript MAP_SCRIPT_ON_TRANSITION MapEntryScript_CarnelidgeVolcano_FlightFlagAndWalkingScript
+    mapscript MAP_SCRIPT_ON_RESUME HideVolcanionOnResume
+    .byte MAP_SCRIPT_TERMIN
+
+HideVolcanionOnResume:
+    setvar LASTRESULT SPECIES_VOLCANION
+    callasm CheckIfCaught
+    compare LASTRESULT 0x1
+    if equal _call HideVolcanion
+    end
+
+HideVolcanion:
+    hidesprite 8
+    end
+
 .global EventScript_CarnelidgeVolcano_HikerBjorn
 EventScript_CarnelidgeVolcano_HikerBjorn:
     trainerbattle0 0x0 460 0x0 gText_CarnelidgeVolcano_HikerBjorn_Intro gText_CarnelidgeVolcano_HikerBjorn_Defeat
@@ -124,12 +141,94 @@ EventScript_CarnelidgeVolcano_TM38_FireBlast:
 
 .global TileScript_CarnelidgeVolcano_VolcanionRoom
 TileScript_CarnelidgeVolcano_VolcanionRoom:
-    checkflag 0x4BC @ Became champion
+    checkflag 0x73 @ Volcanion caught or defeated
     if SET _goto End
+    checkflag 0x4BC @ Became champion
+    if SET _goto VolcanionEmerges
     lock
     msgbox gText_CarnelidgeVolcano_VolcanionPresenceFelt MSG_NORMAL
     setvar 0x4000 0x1 @ Don't trigger this until the player returns
     end
+
+.global TileScript_CarnelidgeVolcano_VolcanionRoom_ResetVolcanionEntrance
+TileScript_CarnelidgeVolcano_VolcanionRoom_ResetVolcanionEntrance:
+    setvar 0x4000 0x0 @ Reset Volcanion tile event, so it triggers if the player walks away and returns while on this map
+    release
+    end
+
+VolcanionEmerges:
+    lock
+    msgbox gText_CarnelidgeVolcano_VolcanionEmerging MSG_NORMAL
+    special CAMERA_START
+    applymovement CAMERA m_CameraPanUpForVolcanion
+    waitmovement CAMERA
+    special CAMERA_END
+    pause DELAY_HALFSECOND
+    setvar 0x4002 0x1
+    setvar 0x8004 0x3 @ This controls how far the screen shakes vertically
+	setvar 0x8005 0x0 @ This controls how far the screen shakes horizontally
+	setvar 0x8006 0x15 @ This controls how long the overall animation lasts
+	setvar 0x8007 0x3 @ This controls how long one screen shake lasts
+    playse 0xE3 @ Earthquake
+    special 0x136 @ SPECIAL_SHAKE_SCREEN
+    showsprite 0x8 @ Volcanion
+    playse 0xA @ Hop
+    applymovement 0x8 m_VolcanionJumpOutOfLava
+    waitmovement 0x8
+    special CAMERA_START
+    applymovement CAMERA m_CameraPanDownForVolcanion
+    waitmovement CAMERA
+    special CAMERA_END
+    cry SPECIES_VOLCANION 0x0
+    msgbox gText_CarnelidgeVolcano_VolcanionCry MSG_NORMAL
+    waitcry
+    msgbox gText_CarnelidgeVolcano_VolcanionEmerged MSG_NORMAL
+    setvar 0x4000 0x1 @ Don't trigger this until the player returns
+    end
+
+EventScript_CarnelidgeVolcano_Volcanion:
+    lock
+    faceplayer
+    cry SPECIES_VOLCANION 0x0
+    msgbox gText_CarnelidgeVolcano_VolcanionCry MSG_NORMAL
+    waitcry
+    setflag 0x90B @ Wild custom moves, cleared at the end of battle
+    setvar 0x8000 MOVE_STEAMERUPTION
+    setvar 0x8001 MOVE_MIST
+    setvar 0x8002 MOVE_FIRESPIN
+    setvar 0x8003 MOVE_EARTHPOWER
+    setflag 0x90C @ Smarter wild battle, cleared at the end of battle
+    setwildbattle SPECIES_VOLCANION 75 ITEM_NONE
+    setflag 0x807
+    special 0x138 @ Setup a legendary encounter (blurred screen transition)
+    waitstate
+    clearflag 0x807
+    setflag 0x73 @ Volcanion caught, defeated, or fled from
+    special2 LASTRESULT 0xB4 @ Check the result of the battle
+    compare LASTRESULT 0x1 @ Defeated in battle
+    if equal _call DefeatedVolcanion
+    compare LASTRESULT 0x4 @ Fled from battle
+    if equal _call FledFromVolcanion
+    end
+
+DefeatedVolcanion:
+    call VolcanionLeavesCommon
+    msgbox gtext_VolcanionRoom_VolcanionDefeated MSG_NORMAL
+    return
+
+FledFromVolcanion:
+    call VolcanionLeavesCommon
+    msgbox gtext_VolcanionRoom_VolcanionFledFromBattle MSG_NORMAL
+    return
+
+VolcanionLeavesCommon:
+    showsprite 8
+    pause DELAY_HALFSECOND
+    playse 0xA @ Hop
+    applymovement 0x8 m_VolcanionJumpIntoLava
+    waitmovement 0x8
+    hidesprite 0x8
+    return
 
 .global SignScript_CarnelidgeVolcano_EntrySign
 SignScript_CarnelidgeVolcano_EntrySign:
@@ -544,3 +643,7 @@ CaughtJirachi:
     return
 
 m_JirachiFloatsAway: .byte slide_up, slide_up, slide_up, slide_up, slide_up, slide_up, slide_up, end_m
+m_CameraPanUpForVolcanion: .byte walk_up, walk_up, walk_up, end_m
+m_CameraPanDownForVolcanion: .byte walk_down, walk_down, walk_down, end_m
+m_VolcanionJumpOutOfLava: .byte jump_2_down, end_m
+m_VolcanionJumpIntoLava: .byte jump_2_up, end_m
