@@ -107,7 +107,7 @@ The prideful Pok\emon is impressed by\nyour prowess.\pIt looks like it wants to 
 The prideful Pok\emon is\nchallenging you to a battle!
 
 #org @gtext_GlastrierRoom_GlastrierFledFromBattle
-The prideful Pok\emon fled!
+The prideful Pok\emon fled!\nWill it return later?
 
 #org @gtext_GlastrierRoom_GlastrierDefeated
 The prideful Pok\emon left.\nWill it return later?
