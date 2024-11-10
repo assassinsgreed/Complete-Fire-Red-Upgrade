@@ -26,17 +26,13 @@ MapScript_GlastrierRoom:
     .byte MAP_SCRIPT_TERMIN
 
 MapEntryScript_HandleGlastrierWeather:
-    @ HACK: For some reason, Glastrier's flag gets set when talking to it, even if it isn't set by code... So we check if it's caught and reset the flag if not
-    setvar LASTRESULT SPECIES_GLASTRIER
-    callasm CheckIfCaught
-    compare LASTRESULT 0x0
-    if equal _goto ResetGlastrier
+    checkflag 0x46 @ Glastrier caught or defeated
+    if SET _goto SetNormalSnowfall
     call SetWeatherSnowstorm
     end
 
-ResetGlastrier:
-    clearflag 0x46 @ Glastrier caught
-    call SetWeatherSnowstorm
+SetNormalSnowfall:
+    call SetWeatherThreeSnowflakes
     end
 
 .global EventScript_ScaldingSpa_SpaRoom_PlutoGrunt
@@ -364,9 +360,10 @@ TileScript_GlastrierRoom_LeftTile:
     waitcry
     msgbox gtext_GlastrierRoom_GlastrierEvaluation MSG_NORMAL
     checkflag 0x4BC @ Defeated Champion Selene
-    if SET _goto GlastrierAcceptsPlayer
+    if NOT_SET _goto GlastrierAcceptsPlayer
     msgbox gtext_GlastrierRoom_GlastrierEvaluationFailed MSG_NORMAL
     call GlastrierLeavesCommon
+    clearflag 0x46 @ Clear Glastrier flag; it gets set whenever this event fires. The player should be allowed to be sized up by it as many times as they want
     end
 
 GlastrierAcceptsPlayer:
