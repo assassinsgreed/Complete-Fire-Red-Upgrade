@@ -51,6 +51,7 @@
 #define TrainerAIFlags_Developer_Standard       (AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_SEMI_SMART)
 #define TrainerAIFlags_GymTrainees_Standard     (AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_CHECK_VIABILITY)
 #define TrainerAIFlags_AscensionTower_Standard  (AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_HP_AWARE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_SEMI_SMART)
+#define TrainerAIFlags_GymLeaderRematches_Standard (AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_HP_AWARE | AI_SCRIPT_SEMI_SMART)
 
 // #region Trainer Structs
 
@@ -8201,7 +8202,6 @@ const struct TrainerMonNoItemCustomMoves sParty_VictoryRoad_NurseCelia[] = {
 // #endregion
 
 // #region Ascension Tower
-// TODO: Other E4 trainer defs + Selene
 const struct TrainerMonItemCustomMoves sParty_AscensionTower_EliteFour_Hannah[] = {
     {
         .lvl = 68,
@@ -8529,6 +8529,2024 @@ const struct TrainerMonItemCustomMoves sParty_AscensionTower_Champion_Selene[] =
     }
 };
 
+// #endregion
+
+// #region Gym Leader Rematches
+const struct TrainerMonItemCustomMoves sParty_GymLeaderRematches_Terrence_1[] = {
+    {
+        .lvl = 70,
+        .species = SPECIES_RILLABOOM,
+        .moves = {
+            MOVE_BOOMBURST,
+            MOVE_DRUMBEATING,
+            MOVE_GRASSYGLIDE,
+            MOVE_GRASSYTERRAIN
+        },
+        .heldItem = ITEM_TERRAIN_EXTENDER,
+        .ability = Ability_Hidden // Grassy Surge
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_THIEVUL,
+        .moves = {
+            MOVE_KNOCKOFF,
+            MOVE_PARTINGSHOT,
+            MOVE_ACROBATICS,
+            MOVE_FIREFANG
+        },
+        .heldItem = ITEM_GRASSY_SEED,
+        .ability = Ability_2 // Unburden
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_SIRFETCHD,
+        .moves = {
+            MOVE_FIRSTIMPRESSION,
+            MOVE_GRASSYGLIDE,
+            MOVE_BRICKBREAK,
+            MOVE_COUNTER
+        },
+        .heldItem = ITEM_MUSCLE_BAND,
+        .ability = Ability_Hidden // Scrafty
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_STUNFISK_G,
+        .moves = {
+            MOVE_TERRAINPULSE,
+            MOVE_MUDDYWATER,
+            MOVE_DISCHARGE,
+            MOVE_STEALTHROCK
+        },
+        .heldItem = ITEM_LEFTOVERS,
+        .ability = Ability_1 // Mimicry
+    },
+    {
+        .lvl = 72,
+        .species = SPECIES_GOGOAT,
+        .moves = {
+            MOVE_HORNLEECH,
+            MOVE_MILKDRINK,
+            MOVE_BULKUP,
+            MOVE_GRASSYTERRAIN
+        },
+        .heldItem = ITEM_GRASSY_SEED,
+        .ability = Ability_Hidden // Grass Pelt
+    }
+};
+
+const struct TrainerMonItemCustomMoves sParty_GymLeaderRematches_Terrence_2[] = {
+    {
+        .lvl = 70,
+        .species = SPECIES_PINCURCHIN,
+        .moves = {
+            MOVE_ZINGZAP,
+            MOVE_POISONJAB,
+            MOVE_ELECTRICTERRAIN,
+            MOVE_TOXICSPIKES
+        },
+        .heldItem = ITEM_TERRAIN_EXTENDER,
+        .ability = Ability_Hidden // Electric Surge
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_SCEPTILE,
+        .moves = {
+            MOVE_SCREECH,
+            MOVE_XSCISSOR,
+            MOVE_LEAFBLADE,
+            MOVE_ACROBATICS
+        },
+        .heldItem = ITEM_ELECTRIC_SEED,
+        .ability = Ability_Hidden // Unburden
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_LANTURN,
+        .moves = {
+            MOVE_RISINGVOLTAGE,
+            MOVE_SCALD,
+            MOVE_ELECTRICTERRAIN,
+            MOVE_DAZZLINGGLEAM
+        },
+        .heldItem = ITEM_RED_CARD,
+        .ability = Ability_Hidden // Water Absorb
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_STUNFISK_G,
+        .moves = {
+            MOVE_TERRAINPULSE,
+            MOVE_MUDDYWATER,
+            MOVE_DISCHARGE,
+            MOVE_STEALTHROCK
+        },
+        .heldItem = ITEM_LEFTOVERS,
+        .ability = Ability_1 // Mimicry
+    },
+    {
+        .lvl = 72,
+        .species = SPECIES_RAICHU_A,
+        .moves = {
+            MOVE_SURF,
+            MOVE_RISINGVOLTAGE,
+            MOVE_PSYCHIC,
+            MOVE_NASTYPLOT
+        },
+        .heldItem = ITEM_MAGNET,
+        .ability = Ability_1 // Surge Surfer
+    }
+};
+
+const struct TrainerMonItemCustomMoves sParty_GymLeaderRematches_Terrence_3[] = {
+    {
+        .lvl = 70,
+        .species = SPECIES_DELPHOX,
+        .moves = {
+            MOVE_PSYCHICTERRAIN,
+            MOVE_WILLOWISP,
+            MOVE_LIGHTSCREEN,
+            MOVE_FLAMETHROWER
+        },
+        .heldItem = ITEM_PSYCHIC_SEED,
+        .ability = Ability_Hidden // Magician
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_SCRAFTY,
+        .moves = {
+            MOVE_HIGHJUMPKICK,
+            MOVE_DRAGONDANCE,
+            MOVE_ZENHEADBUTT,
+            MOVE_KNOCKOFF
+        },
+        .heldItem = ITEM_MUSCLE_BAND,
+        .ability = Ability_Hidden // Intimidate
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_HATTERENE,
+        .moves = {
+            MOVE_PSYSHOCK,
+            MOVE_HEALINGWISH,
+            MOVE_DAZZLINGGLEAM,
+            MOVE_CALMMIND
+        },
+        .heldItem = ITEM_PSYCHIC_SEED,
+        .ability = Ability_Hidden // Magic Bounce
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_STUNFISK_G,
+        .moves = {
+            MOVE_TERRAINPULSE,
+            MOVE_MUDDYWATER,
+            MOVE_DISCHARGE,
+            MOVE_STEALTHROCK
+        },
+        .heldItem = ITEM_LEFTOVERS,
+        .ability = Ability_1 // Mimicry
+    },
+    {
+        .lvl = 72,
+        .species = SPECIES_SLOWKING_G,
+        .moves = {
+            MOVE_EXPANDINGFORCE,
+            MOVE_SLACKOFF,
+            MOVE_PSYCHICTERRAIN,
+            MOVE_TOXIC
+        },
+        .heldItem = ITEM_BLACK_SLUDGE,
+        .ability = Ability_Hidden // Regenerator
+    }
+};
+
+const struct TrainerMonItemCustomMoves sParty_GymLeaderRematches_Terrence_4[] = {
+    {
+        .lvl = 70,
+        .species = SPECIES_WEEZING_G,
+        .moves = {
+            MOVE_HEATWAVE,
+            MOVE_SLUDGEBOMB,
+            MOVE_THUNDERBOLT,
+            MOVE_PAINSPLIT
+        },
+        .heldItem = ITEM_TERRAIN_EXTENDER,
+        .ability = Ability_Hidden // Misty Surge
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_LUCARIO,
+        .moves = {
+            MOVE_TERRAINPULSE,
+            MOVE_EXTREMESPEED,
+            MOVE_METEORMASH,
+            MOVE_EARTHQUAKE
+        },
+        .heldItem = ITEM_ASSAULT_VEST,
+        .ability = Ability_Hidden // Justified
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_ROSERADE,
+        .moves = {
+            MOVE_PETALDANCE,
+            MOVE_SLUDGEBOMB,
+            MOVE_NONE,
+            MOVE_NONE
+        },
+        .heldItem = ITEM_CHOICE_SPECS,
+        .ability = Ability_2 // Poison Point
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_STUNFISK_G,
+        .moves = {
+            MOVE_TERRAINPULSE,
+            MOVE_MUDDYWATER,
+            MOVE_DISCHARGE,
+            MOVE_STEALTHROCK
+        },
+        .heldItem = ITEM_LEFTOVERS,
+        .ability = Ability_1 // Mimicry
+    },
+    {
+        .lvl = 72,
+        .species = SPECIES_SYLVEON,
+        .moves = {
+            MOVE_PSYCHIC,
+            MOVE_MISTYTERRAIN,
+            MOVE_MISTYEXPLOSION,
+            MOVE_MOONBLAST
+        },
+        .heldItem = ITEM_MISTY_SEED,
+        .ability = Ability_Hidden // Pixelate
+    }
+};
+
+const struct TrainerMonItemCustomMoves sParty_GymLeaderRematches_Stella_1[] = {
+    {
+        .lvl = 70,
+        .species = SPECIES_ROTOM_HEAT,
+        .moves = {
+            MOVE_WILLOWISP,
+            MOVE_FIREBLAST,
+            MOVE_DISCHARGE,
+            MOVE_PAINSPLIT
+        },
+        .heldItem = ITEM_WIDE_LENS,
+        .ability = Ability_1 // Levitate
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_GASTRODON_EAST,
+        .moves = {
+            MOVE_SCALD,
+            MOVE_RECOVER,
+            MOVE_EARTHPOWER,
+            MOVE_ACIDARMOR
+        },
+        .heldItem = ITEM_LEFTOVERS,
+        .ability = Ability_2 // Storm Drain
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_TOUCANNON,
+        .moves = {
+            MOVE_BEAKBLAST,
+            MOVE_ROCKBLAST,
+            MOVE_BULLETSEED,
+            MOVE_FURYATTACK
+        },
+        .heldItem = ITEM_LIFE_ORB,
+        .ability = Ability_2 // Skill Link
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_WEAVILE,
+        .moves = {
+            MOVE_FLING,
+            MOVE_NIGHTSLASH,
+            MOVE_SCREECH,
+            MOVE_ICICLECRASH
+        },
+        .heldItem = ITEM_FLAME_ORB,
+        .ability = Ability_1 // Pressure
+    },
+    {
+        .lvl = 72,
+        .species = SPECIES_COALOSSAL,
+        .moves = {
+            MOVE_TARSHOT,
+            MOVE_HEATCRASH,
+            MOVE_STEALTHROCK,
+            MOVE_STONEEDGE
+        },
+        .heldItem = ITEM_WEAKNESS_POLICY,
+        .ability = Ability_2 // Flame Body
+    }
+};
+
+const struct TrainerMonItemCustomMoves sParty_GymLeaderRematches_Stella_2[] = {
+    {
+        .lvl = 70,
+        .species = SPECIES_TOXTRICITY_LOW_KEY,
+        .moves = {
+            MOVE_NUZZLE,
+            MOVE_THUNDERFANG,
+            MOVE_SHIFTGEAR,
+            MOVE_POISONJAB
+        },
+        .heldItem = ITEM_WEAKNESS_POLICY,
+        .ability = Ability_Hidden // Technician
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_LUCARIO,
+        .moves = {
+            MOVE_FORCEPALM,
+            MOVE_SMELLINGSALTS,
+            MOVE_BULLETPUNCH,
+            MOVE_SWORDSDANCE
+        },
+        .heldItem = ITEM_LIFE_ORB,
+        .ability = Ability_1 // Steadfast
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_PRIMEAPE,
+        .moves = {
+            MOVE_SMELLINGSALTS,
+            MOVE_BODYSLAM,
+            MOVE_CROSSCHOP,
+            MOVE_THUNDERBOLT
+        },
+        .heldItem = ITEM_FOCUS_SASH,
+        .ability = Ability_2 // Anger Point
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_STUNFISK,
+        .moves = {
+            MOVE_BOUNCE,
+            MOVE_THUNDERBOLT,
+            MOVE_MUDDYWATER,
+            MOVE_THUNDERWAVE
+        },
+        .heldItem = ITEM_KINGS_ROCK,
+        .ability = Ability_1 // Static
+    },
+    {
+        .lvl = 72,
+        .species = SPECIES_TOGEKISS,
+        .moves = {
+            MOVE_THUNDERWAVE,
+            MOVE_AIRSLASH,
+            MOVE_ANCIENTPOWER,
+            MOVE_AURASPHERE
+        },
+        .heldItem = ITEM_HEAVY_DUTY_BOOTS,
+        .ability = Ability_2 // Serene Grace
+    }
+};
+
+const struct TrainerMonItemCustomMoves sParty_GymLeaderRematches_Stella_3[] = {
+    {
+        .lvl = 70,
+        .species = SPECIES_SHIINOTIC,
+        .moves = {
+            MOVE_SPORE,
+            MOVE_DREAMEATER,
+            MOVE_MOONBLAST,
+            MOVE_GIGADRAIN
+        },
+        .heldItem = ITEM_BIG_ROOT,
+        .ability = Ability_2 // Effect Spore
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_BRELOOM,
+        .moves = {
+            MOVE_SPORE,
+            MOVE_SEEDBOMB,
+            MOVE_MACHPUNCH,
+            MOVE_LEECHSEED
+        },
+        .heldItem = ITEM_TOXIC_ORB,
+        .ability = Ability_2 // Poison Heal
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_GARDEVOIR,
+        .moves = {
+            MOVE_HYPNOSIS,
+            MOVE_NIGHTMARE,
+            MOVE_MOONBLAST,
+            MOVE_PSYCHIC
+        },
+        .heldItem = ITEM_WIDE_LENS,
+        .ability = Ability_1 // Synchronize
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_MR_RIME,
+        .moves = {
+            MOVE_HYPNOSIS,
+            MOVE_DREAMEATER,
+            MOVE_FREEZEDRY,
+            MOVE_REFLECT
+        },
+        .heldItem = ITEM_WIDE_LENS,
+        .ability = Ability_1 // Screen Cleaner
+    },
+    {
+        .lvl = 72,
+        .species = SPECIES_LAPRAS,
+        .moves = {
+            MOVE_REST,
+            MOVE_SLEEPTALK,
+            MOVE_FREEZEDRY,
+            MOVE_CHARM
+        },
+        .heldItem = ITEM_LEFTOVERS,
+        .ability = Ability_2 // Shell Armor
+    }
+};
+
+const struct TrainerMonItemCustomMoves sParty_GymLeaderRematches_Stella_4[] = {
+    {
+        .lvl = 70,
+        .species = SPECIES_TOXAPEX,
+        .moves = {
+            MOVE_BANEFULBUNKER,
+            MOVE_TOXICSPIKES,
+            MOVE_RECOVER,
+            MOVE_VENOSHOCK
+        },
+        .heldItem = ITEM_BLACK_SLUDGE,
+        .ability = Ability_1 // Merciless
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_CURSOLA,
+        .moves = {
+            MOVE_STRENGTHSAP,
+            MOVE_HEX,
+            MOVE_TOXIC,
+            MOVE_SURF
+        },
+        .heldItem = ITEM_LUM_BERRY,
+        .ability = Ability_Hidden // Perish Body
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_MUK_A,
+        .moves = {
+            MOVE_SCREECH,
+            MOVE_GUNKSHOT,
+            MOVE_ICEPUNCH,
+            MOVE_METRONOME
+        },
+        .heldItem = ITEM_RED_CARD,
+        .ability = Ability_1 // Poison Touch
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_CLOYSTER,
+        .moves = {
+            MOVE_TOXICSPIKES,
+            MOVE_LIGHTSCREEN,
+            MOVE_RAZORSHELL,
+            MOVE_DRILLRUN
+        },
+        .heldItem = ITEM_LIGHT_CLAY,
+        .ability = Ability_Hidden // Overcoat
+    },
+    {
+        .lvl = 72,
+        .species = SPECIES_CONKELDURR,
+        .moves = {
+            MOVE_FACADE,
+            MOVE_DRAINPUNCH,
+            MOVE_STONEEDGE,
+            MOVE_BULKUP
+        },
+        .heldItem = ITEM_TOXIC_ORB,
+        .ability = Ability_1 // Guts
+    }
+};
+
+const struct TrainerMonItemCustomMoves sParty_GymLeaderRematches_Raine_1[] = {
+    {
+        .lvl = 70,
+        .species = SPECIES_TORKOAL,
+        .moves = {
+            MOVE_SHELLSMASH,
+            MOVE_HEATWAVE,
+            MOVE_EARTHPOWER,
+            MOVE_STEALTHROCK
+        },
+        .heldItem = ITEM_HEAT_ROCK,
+        .ability = Ability_2 // Drought
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_TALONFLAME,
+        .moves = {
+            MOVE_TAILWIND,
+            MOVE_STEELWING,
+            MOVE_ACROBATICS,
+            MOVE_WILLOWISP
+        },
+        .heldItem = ITEM_SITRUS_BERRY,
+        .ability = Ability_Hidden // Gale Wings
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_VENUSAUR,
+        .moves = {
+            MOVE_SOLARBEAM,
+            MOVE_SLUDGEBOMB,
+            MOVE_SYNTHESIS,
+            MOVE_GROWTH
+        },
+        .heldItem = ITEM_BLACK_SLUDGE,
+        .ability = Ability_Hidden // Chlorophyll
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_HELIOLISK,
+        .moves = {
+            MOVE_SUNNYDAY,
+            MOVE_THUNDERBOLT,
+            MOVE_WEATHERBALL,
+            MOVE_VOLTSWITCH
+        },
+        .heldItem = ITEM_LIFE_ORB,
+        .ability = Ability_Hidden // Solar Power
+    },
+    {
+        .lvl = 72,
+        .species = SPECIES_VOLCARONA,
+        .moves = {
+            MOVE_FIERYDANCE,
+            MOVE_MORNINGSUN,
+            MOVE_SOLARBEAM,
+            MOVE_SUNNYDAY
+        },
+        .heldItem = ITEM_HEAVY_DUTY_BOOTS,
+        .ability = Ability_1 // Flame Body
+    }
+};
+
+const struct TrainerMonItemCustomMoves sParty_GymLeaderRematches_Raine_2[] = {
+    {
+        .lvl = 70,
+        .species = SPECIES_PELIPPER,
+        .moves = {
+            MOVE_HURRICANE,
+            MOVE_ROOST,
+            MOVE_SCALD,
+            MOVE_RAINDANCE
+        },
+        .heldItem = ITEM_DAMP_ROCK,
+        .ability = Ability_2 // Drizzle
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_FERROTHORN,
+        .moves = {
+            MOVE_POWERWHIP,
+            MOVE_CURSE,
+            MOVE_GYROBALL,
+            MOVE_LEECHSEED
+        },
+        .heldItem = ITEM_ROCKY_HELMET,
+        .ability = Ability_1 // Iron Barbs
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_BLASTOISE,
+        .moves = {
+            MOVE_WEATHERBALL,
+            MOVE_IRONDEFENSE,
+            MOVE_AQUATAIL,
+            MOVE_FLASHCANNON
+        },
+        .heldItem = ITEM_LEFTOVERS,
+        .ability = Ability_Hidden // Rain Dish
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_HELIOLISK,
+        .moves = {
+            MOVE_THUNDER,
+            MOVE_BULLDOZE,
+            MOVE_SURF,
+            MOVE_RAINDANCE
+        },
+        .heldItem = ITEM_SITRUS_BERRY,
+        .ability = Ability_1 // Dry Skin
+    },
+    {
+        .lvl = 72,
+        .species = SPECIES_BEARTIC,
+        .moves = {
+            MOVE_AQUAJET,
+            MOVE_ICICLECRASH,
+            MOVE_EARTHQUAKE,
+            MOVE_AVALANCHE
+        },
+        .heldItem = ITEM_CHOICE_BAND,
+        .ability = Ability_Hidden // Swift Swim
+    }
+};
+
+const struct TrainerMonItemCustomMoves sParty_GymLeaderRematches_Raine_3[] = {
+    {
+        .lvl = 70,
+        .species = SPECIES_HIPPOWDON_F,
+        .moves = {
+            MOVE_SLACKOFF,
+            MOVE_YAWN,
+            MOVE_EARTHQUAKE,
+            MOVE_THUNDERFANG
+        },
+        .heldItem = ITEM_SMOOTH_ROCK,
+        .ability = Ability_1 // Sand Stream
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_EXCADRILL,
+        .moves = {
+            MOVE_SANDSTORM,
+            MOVE_DRILLRUN,
+            MOVE_ROCKSLIDE,
+            MOVE_RAPIDSPIN
+        },
+        .heldItem = ITEM_SITRUS_BERRY,
+        .ability = Ability_2 // Sand Force
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_STOUTLAND,
+        .moves = {
+            MOVE_ICEFANG,
+            MOVE_RETALIATE,
+            MOVE_CRUNCH,
+            MOVE_THUNDERWAVE
+        },
+        .heldItem = ITEM_EJECT_BUTTON,
+        .ability = Ability_2 // Sand Rush
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_HELIOLISK,
+        .moves = {
+            MOVE_SANDSTORM,
+            MOVE_PARABOLICCHARGE,
+            MOVE_WEATHERBALL,
+            MOVE_LOWKICK
+        },
+        .heldItem = ITEM_LEFTOVERS,
+        .ability = Ability_2 // Sand Veil
+    },
+    {
+        .lvl = 72,
+        .species = SPECIES_GIGALITH,
+        .moves = {
+            MOVE_STEALTHROCK,
+            MOVE_STONEEDGE,
+            MOVE_IRONDEFENSE,
+            MOVE_BULLDOZE
+        },
+        .heldItem = ITEM_ASSAULT_VEST,
+        .ability = Ability_2 // Sand Stream
+    }
+};
+
+const struct TrainerMonItemCustomMoves sParty_GymLeaderRematches_Raine_4[] = {
+    {
+        .lvl = 70,
+        .species = SPECIES_AURORUS,
+        .moves = {
+            MOVE_BLIZZARD,
+            MOVE_AURORAVEIL,
+            MOVE_THUNDERWAVE,
+            MOVE_ROCKSLIDE
+        },
+        .heldItem = ITEM_ICY_ROCK,
+        .ability = Ability_Hidden // Snow Warning
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_BEARTIC,
+        .moves = {
+            MOVE_ICICLECRASH,
+            MOVE_AQUAJET,
+            MOVE_LIQUIDATION,
+            MOVE_NIGHTSLASH
+        },
+        .heldItem = ITEM_LIFE_ORB,
+        .ability = Ability_2 // Slush Rush
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_GLACEON,
+        .moves = {
+            MOVE_BLIZZARD,
+            MOVE_HAIL,
+            MOVE_FREEZEDRY,
+            MOVE_SHADOWBALL
+        },
+        .heldItem = ITEM_QUICK_CLAW,
+        .ability = Ability_1 // Snow Cloak
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_MANDIBUZZ,
+        .moves = {
+            MOVE_KNOCKOFF,
+            MOVE_TOXIC,
+            MOVE_ROOST,
+            MOVE_AERIALACE
+        },
+        .heldItem = ITEM_LEFTOVERS,
+        .ability = Ability_2 // Overcoat
+    },
+    {
+        .lvl = 72,
+        .species = SPECIES_MR_RIME,
+        .moves = {
+            MOVE_PSYCHIC,
+            MOVE_DAZZLINGGLEAM,
+            MOVE_MIRRORCOAT,
+            MOVE_HAIL
+        },
+        .heldItem = ITEM_LUM_BERRY,
+        .ability = Ability_Hidden // Ice Body
+    }
+};
+
+const struct TrainerMonItemCustomMoves sParty_GymLeaderRematches_Chance_1[] = {
+    {
+        .lvl = 70,
+        .species = SPECIES_ESPEON,
+        .moves = {
+            MOVE_REFLECT,
+            MOVE_LIGHTSCREEN,
+            MOVE_PSYCHIC,
+            MOVE_MORNINGSUN
+        },
+        .heldItem = ITEM_LEFTOVERS,
+        .ability = Ability_Hidden // Magic Bounce
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_CROBAT,
+        .moves = {
+            MOVE_TAILWIND,
+            MOVE_UTURN,
+            MOVE_CROSSPOISON,
+            MOVE_HAZE
+        },
+        .heldItem = ITEM_LIFE_ORB,
+        .ability = Ability_Hidden // Infiltrator
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_RIBOMBEE,
+        .moves = {
+            MOVE_AROMATHERAPY,
+            MOVE_TAILWIND,
+            MOVE_BUGBUZZ,
+            MOVE_DAZZLINGGLEAM
+        },
+        .heldItem = ITEM_HEAVY_DUTY_BOOTS,
+        .ability = Ability_Hidden // Sweet Veil
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_LOPUNNY,
+        .moves = {
+            MOVE_HEALINGWISH,
+            MOVE_HIGHJUMPKICK,
+            MOVE_PLAYROUGH,
+            MOVE_UTURN
+        },
+        .heldItem = ITEM_CHOPLE_BERRY,
+        .ability = Ability_1 // Cute Charm
+    },
+    {
+        .lvl = 72,
+        .species = SPECIES_FLORGES_YELLOW,
+        .moves = {
+            MOVE_WISH,
+            MOVE_SAFEGUARD,
+            MOVE_MOONBLAST,
+            MOVE_ENERGYBALL
+        },
+        .heldItem = ITEM_KEBIA_BERRY,
+        .ability = Ability_1 // Flower Veil
+    }
+};
+
+const struct TrainerMonItemCustomMoves sParty_GymLeaderRematches_Chance_2[] = {
+    {
+        .lvl = 70,
+        .species = SPECIES_MIMIKYU,
+        .moves = {
+            MOVE_TRICKROOM,
+            MOVE_WILLOWISP,
+            MOVE_SHADOWCLAW,
+            MOVE_PAINSPLIT
+        },
+        .heldItem = ITEM_MUSCLE_BAND,
+        .ability = Ability_1 // Disguise
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_SLOWBRO,
+        .moves = {
+            MOVE_PSYCHIC,
+            MOVE_SCALD,
+            MOVE_YAWN,
+            MOVE_SLACKOFF
+        },
+        .heldItem = ITEM_LUM_BERRY,
+        .ability = Ability_Hidden // Regenerator
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_RUNERIGUS,
+        .moves = {
+            MOVE_SHADOWCLAW,
+            MOVE_POWERSPLIT,
+            MOVE_EARTHQUAKE,
+            MOVE_DESTINYBOND
+        },
+        .heldItem = ITEM_WEAKNESS_POLICY,
+        .ability = Ability_1 // Wandering Spirit
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_DUSCLOPS,
+        .moves = {
+            MOVE_WILLOWISP,
+            MOVE_HEX,
+            MOVE_TRICKROOM,
+            MOVE_PAINSPLIT
+        },
+        .heldItem = ITEM_EVIOLITE,
+        .ability = Ability_1 // Pressure
+    },
+    {
+        .lvl = 72,
+        .species = SPECIES_HATTERENE,
+        .moves = {
+            MOVE_PSYSHOCK,
+            MOVE_CALMMIND,
+            MOVE_TRICKROOM,
+            MOVE_MYSTICALFIRE
+        },
+        .heldItem = ITEM_LEFTOVERS,
+        .ability = Ability_Hidden // Magic Bounce
+    }
+};
+
+const struct TrainerMonItemCustomMoves sParty_GymLeaderRematches_Chance_3[] = {
+    {
+        .lvl = 70,
+        .species = SPECIES_LAPRAS,
+        .moves = {
+            MOVE_PERISHSONG,
+            MOVE_ICEBEAM,
+            MOVE_BRINE,
+            MOVE_BODYSLAM
+        },
+        .heldItem = ITEM_WATER_GEM,
+        .ability = Ability_2 // Shell Armor
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_WOBBUFFET,
+        .moves = {
+            MOVE_COUNTER,
+            MOVE_MIRRORCOAT,
+            MOVE_DESTINYBOND,
+            MOVE_ENCORE
+        },
+        .heldItem = ITEM_LEFTOVERS,
+        .ability = Ability_1 // Shadow Tag
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_CURSOLA,
+        .moves = {
+            MOVE_PERISHSONG,
+            MOVE_STRENGTHSAP,
+            MOVE_MIRRORCOAT,
+            MOVE_SPITE
+        },
+        .heldItem = ITEM_SITRUS_BERRY,
+        .ability = Ability_Hidden // Perish Body
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_COFAGRIGUS,
+        .moves = {
+            MOVE_MEANLOOK,
+            MOVE_WILLOWISP,
+            MOVE_SHADOWBALL,
+            MOVE_DESTINYBOND
+        },
+        .heldItem = ITEM_WEAKNESS_POLICY,
+        .ability = Ability_1 // Mummy
+    },
+    {
+        .lvl = 72,
+        .species = SPECIES_MISMAGIUS,
+        .moves = {
+            MOVE_PERISHSONG,
+            MOVE_MEANLOOK,
+            MOVE_MYSTICALFIRE,
+            MOVE_SHADOWBALL
+        },
+        .heldItem = ITEM_COLBUR_BERRY,
+        .ability = Ability_1 // Levitate
+    }
+};
+
+const struct TrainerMonItemCustomMoves sParty_GymLeaderRematches_Chance_4[] = {
+    {
+        .lvl = 70,
+        .species = SPECIES_PRIMEAPE,
+        .moves = {
+            MOVE_METRONOME,
+            MOVE_NONE,
+            MOVE_NONE,
+            MOVE_NONE
+        },
+        .heldItem = ITEM_CHOICE_BAND,
+        .ability = Ability_Hidden // Defiant
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_MUK_A,
+        .moves = {
+            MOVE_METRONOME,
+            MOVE_NONE,
+            MOVE_NONE,
+            MOVE_NONE
+        },
+        .heldItem = ITEM_CHOICE_SCARF,
+        .ability = Ability_1 // Poison Touch
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_INFERNAPE,
+        .moves = {
+            MOVE_METRONOME,
+            MOVE_NONE,
+            MOVE_NONE,
+            MOVE_NONE
+        },
+        .heldItem = ITEM_CHOICE_SPECS,
+        .ability = Ability_1 // Blaze
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_LUCARIO,
+        .moves = {
+            MOVE_METRONOME,
+            MOVE_NONE,
+            MOVE_NONE,
+            MOVE_NONE
+        },
+        .heldItem = ITEM_CHOICE_BAND,
+        .ability = Ability_2 // Inner Focus
+    },
+    {
+        .lvl = 72,
+        .species = SPECIES_TOGEKISS,
+        .moves = {
+            MOVE_METRONOME,
+            MOVE_NONE,
+            MOVE_NONE,
+            MOVE_NONE
+        },
+        .heldItem = ITEM_CHOICE_SPECS,
+        .ability = Ability_Hidden // Super Luck
+    }
+};
+
+const struct TrainerMonItemCustomMoves sParty_GymLeaderRematches_Casey_1[] = {
+    {
+        .lvl = 70,
+        .species = SPECIES_BEHEEYEM,
+        .moves = {
+            MOVE_COSMICPOWER,
+            MOVE_STOREDPOWER,
+            MOVE_RECOVER,
+            MOVE_THUNDERBOLT
+        },
+        .heldItem = ITEM_WHITE_HERB,
+        .ability = Ability_Hidden // Analytic
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_SHUCKLE,
+        .moves = {
+            MOVE_ACUPRESSURE,
+            MOVE_REST,
+            MOVE_ROCKSLIDE,
+            MOVE_WRAP
+        },
+        .heldItem = ITEM_LEFTOVERS,
+        .ability = Ability_1 // Sturdy
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_INCINEROAR,
+        .moves = {
+            MOVE_PARTINGSHOT,
+            MOVE_FAKEOUT,
+            MOVE_DARKESTLARIAT,
+            MOVE_CROSSCHOP
+        },
+        .heldItem = ITEM_LIFE_ORB,
+        .ability = Ability_Hidden // Intimidate
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_FALINKS,
+        .moves = {
+            MOVE_FIRSTIMPRESSION,
+            MOVE_NORETREAT,
+            MOVE_CLOSECOMBAT,
+            MOVE_MEGAHORN
+        },
+        .heldItem = ITEM_RED_CARD,
+        .ability = Ability_1 // Battle Armor
+    },
+    {
+        .lvl = 72,
+        .species = SPECIES_KOMMO_O,
+        .moves = {
+            MOVE_CLANGOROUSSOUL,
+            MOVE_NOBLEROAR,
+            MOVE_CLOSECOMBAT,
+            MOVE_BOOMBURST
+        },
+        .heldItem = ITEM_SITRUS_BERRY,
+        .ability = Ability_Hidden // Overcoat
+    }
+};
+
+const struct TrainerMonItemCustomMoves sParty_GymLeaderRematches_Casey_2[] = {
+    {
+        .lvl = 70,
+        .species = SPECIES_VAPOREON,
+        .moves = {
+            MOVE_BATONPASS,
+            MOVE_ACIDARMOR,
+            MOVE_AQUARING,
+            MOVE_MUDDYWATER
+        },
+        .heldItem = ITEM_LEFTOVERS,
+        .ability = Ability_1 // Water Absorb
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_NINJASK,
+        .moves = {
+            MOVE_BATONPASS,
+            MOVE_PROTECT,
+            MOVE_SWORDSDANCE,
+            MOVE_XSCISSOR
+        },
+        .heldItem = ITEM_FOCUS_SASH,
+        .ability = Ability_1 // Speed Boost
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_BLAZIKEN,
+        .moves = {
+            MOVE_BATONPASS,
+            MOVE_FOCUSENERGY,
+            MOVE_BULKUP,
+            MOVE_BLAZEKICK
+        },
+        .heldItem = ITEM_HEAVY_DUTY_BOOTS,
+        .ability = Ability_Hidden // Speed Boost
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_THIEVUL,
+        .moves = {
+            MOVE_BATONPASS,
+            MOVE_SUBSTITUTE,
+            MOVE_NASTYPLOT,
+            MOVE_SHADOWBALL
+        },
+        .heldItem = ITEM_GHOST_GEM,
+        .ability = Ability_2 // Unburden
+    },
+    {
+        .lvl = 72,
+        .species = SPECIES_WEAVILE,
+        .moves = {
+            MOVE_BATONPASS,
+            MOVE_FLING,
+            MOVE_SWORDSDANCE,
+            MOVE_ICICLECRASH
+        },
+        .heldItem = ITEM_IRON_BALL,
+        .ability = Ability_Hidden // Pickpocket
+    }
+};
+
+const struct TrainerMonItemCustomMoves sParty_GymLeaderRematches_Casey_3[] = {
+    {
+        .lvl = 70,
+        .species = SPECIES_BEHEEYEM,
+        .moves = {
+            MOVE_PSYCHUP,
+            MOVE_CALMMIND,
+            MOVE_PSYCHIC,
+            MOVE_THUNDERBOLT
+        },
+        .heldItem = ITEM_LAGGING_TAIL,
+        .ability = Ability_Hidden // Analytic
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_MIENSHAO,
+        .moves = {
+            MOVE_PSYCHUP,
+            MOVE_HIGHJUMPKICK,
+            MOVE_BOUNCE,
+            MOVE_FAKEOUT
+        },
+        .heldItem = ITEM_EJECT_BUTTON,
+        .ability = Ability_2 // Regenerator
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_STONJOURNER,
+        .moves = {
+            MOVE_PSYCHUP,
+            MOVE_STONEEDGE,
+            MOVE_ROCKPOLISH,
+            MOVE_BODYSLAM
+        },
+        .heldItem = ITEM_WEAKNESS_POLICY,
+        .ability = Ability_1 // Power Spot
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_GARDEVOIR,
+        .moves = {
+            MOVE_PSYCHUP,
+            MOVE_PSYCHIC,
+            MOVE_MOONBLAST,
+            MOVE_WISH
+        },
+        .heldItem = ITEM_PSYCHIC_GEM,
+        .ability = Ability_2 // Trace
+    },
+    {
+        .lvl = 72,
+        .species = SPECIES_ROTOM_FROST,
+        .moves = {
+            MOVE_PSYCHUP,
+            MOVE_BLIZZARD,
+            MOVE_TRICK,
+            MOVE_DISCHARGE
+        },
+        .heldItem = ITEM_OCCA_BERRY,
+        .ability = Ability_1 // Levitate
+    }
+};
+
+const struct TrainerMonItemCustomMoves sParty_GymLeaderRematches_Casey_4[] = {
+    {
+        .lvl = 70,
+        .species = SPECIES_BIBAREL,
+        .moves = {
+            MOVE_AMNESIA,
+            MOVE_SWORDSDANCE,
+            MOVE_AQUAJET,
+            MOVE_CRUNCH
+        },
+        .heldItem = ITEM_BRIGHT_POWDER,
+        .ability = Ability_1 // Simple
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_GLALIE,
+        .moves = {
+            MOVE_PROTECT,
+            MOVE_ICEFANG,
+            MOVE_HEADBUTT,
+            MOVE_SUBSTITUTE
+        },
+        .heldItem = ITEM_KINGS_ROCK,
+        .ability = Ability_Hidden // Moody
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_SKARMORY,
+        .moves = {
+            MOVE_ROOST,
+            MOVE_DRILLPECK,
+            MOVE_SPIKES,
+            MOVE_IRONDEFENSE
+        },
+        .heldItem = ITEM_LEFTOVERS,
+        .ability = Ability_Hidden // Weak Armor
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_SERPERIOR,
+        .moves = {
+            MOVE_LEAFSTORM,
+            MOVE_LEECHSEED,
+            MOVE_DRAGONPULSE,
+            MOVE_KNOCKOFF
+        },
+        .heldItem = ITEM_OCCA_BERRY,
+        .ability = Ability_Hidden // Contrary
+    },
+    {
+        .lvl = 72,
+        .species = SPECIES_KINGDRA,
+        .moves = {
+            MOVE_FOCUSENERGY,
+            MOVE_DRAGONPULSE,
+            MOVE_SCALD,
+            MOVE_AGILITY
+        },
+        .heldItem = ITEM_SITRUS_BERRY,
+        .ability = Ability_2 // Sniper
+    }
+};
+
+const struct TrainerMonItemCustomMoves sParty_GymLeaderRematches_Abby_1[] = {
+    {
+        .lvl = 70,
+        .species = SPECIES_JELLICENT_F,
+        .moves = {
+            MOVE_WHIRLPOOL,
+            MOVE_DESTINYBOND,
+            MOVE_SHADOWBALL,
+            MOVE_RECOVER
+        },
+        .heldItem = ITEM_LUM_BERRY,
+        .ability = Ability_1 // Cursed Body
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_EXCADRILL,
+        .moves = {
+            MOVE_DRILLRUN,
+            MOVE_SWORDSDANCE,
+            MOVE_RAPIDSPIN,
+            MOVE_CRUSHCLAW
+        },
+        .heldItem = ITEM_AIR_BALLOON,
+        .ability = Ability_Hidden // Mold Breaker
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_TURTONATOR,
+        .moves = {
+            MOVE_SHELLTRAP,
+            MOVE_OVERHEAT,
+            MOVE_BODYSLAM,
+            MOVE_EXPLOSION
+        },
+        .heldItem = ITEM_SITRUS_BERRY,
+        .ability = Ability_1 // Shell Armor
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_COFAGRIGUS,
+        .moves = {
+            MOVE_WILLOWISP,
+            MOVE_HEX,
+            MOVE_SHADOWCLAW,
+            MOVE_DISABLE
+        },
+        .heldItem = ITEM_WEAKNESS_POLICY,
+        .ability = Ability_1 // Mummy
+    },
+    {
+        .lvl = 72,
+        .species = SPECIES_WEEZING_G,
+        .moves = {
+            MOVE_STRANGESTEAM,
+            MOVE_SLUDGEBOMB,
+            MOVE_EXPLOSION,
+            MOVE_MEMENTO
+        },
+        .heldItem = ITEM_BLACK_SLUDGE,
+        .ability = Ability_2 // Neutralizing Gas
+    }
+};
+
+const struct TrainerMonItemCustomMoves sParty_GymLeaderRematches_Abby_2[] = {
+    {
+        .lvl = 70,
+        .species = SPECIES_GOGOAT,
+        .moves = {
+            MOVE_SEEDBOMB,
+            MOVE_MILKDRINK,
+            MOVE_AERIALACE,
+            MOVE_EARTHQUAKE
+        },
+        .heldItem = ITEM_OCCA_BERRY,
+        .ability = Ability_1 // Sap Sipper
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_ROTOM_HEAT,
+        .moves = {
+            MOVE_OVERHEAT,
+            MOVE_VOLTSWITCH,
+            MOVE_THUNDERWAVE,
+            MOVE_HEX
+        },
+        .heldItem = ITEM_ABSORB_BULB,
+        .ability = Ability_1 // Levitate
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_CRADILY,
+        .moves = {
+            MOVE_GIGADRAIN,
+            MOVE_ANCIENTPOWER,
+            MOVE_STOCKPILE,
+            MOVE_LEECHSEED
+        },
+        .heldItem = ITEM_YACHE_BERRY,
+        .ability = Ability_Hidden // Storm Drain
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_TYPHLOSION,
+        .moves = {
+            MOVE_FLAMETHROWER,
+            MOVE_EXTRASENSORY,
+            MOVE_HIDDENPOWER,
+            MOVE_WILLOWISP
+        },
+        .heldItem = ITEM_AIR_BALLOON,
+        .ability = Ability_Hidden // Flash Fire
+    },
+    {
+        .lvl = 72,
+        .species = SPECIES_RAICHU,
+        .moves = {
+            MOVE_NASTYPLOT,
+            MOVE_THUNDERBOLT,
+            MOVE_NUZZLE,
+            MOVE_IRONTAIL
+        },
+        .heldItem = ITEM_AIR_BALLOON,
+        .ability = Ability_Hidden // Lightning Rod
+    }
+};
+
+const struct TrainerMonItemCustomMoves sParty_GymLeaderRematches_Abby_3[] = {
+    {
+        .lvl = 70,
+        .species = SPECIES_AMOONGUSS,
+        .moves = {
+            MOVE_LEECHSEED,
+            MOVE_CLEARSMOG,
+            MOVE_GROWTH,
+            MOVE_GIGADRAIN
+        },
+        .heldItem = ITEM_BLACK_SLUDGE,
+        .ability = Ability_1 // Effect Spore
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_COMFEY,
+        .moves = {
+            MOVE_PLAYROUGH,
+            MOVE_SWEETKISS,
+            MOVE_PETALBLIZZARD,
+            MOVE_CHARM
+        },
+        .heldItem = ITEM_SITRUS_BERRY,
+        .ability = Ability_Hidden // Natural Cure
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_LOPUNNY,
+        .moves = {
+            MOVE_BOUNCE,
+            MOVE_HIGHJUMPKICK,
+            MOVE_HEADBUTT,
+            MOVE_QUICKATTACK
+        },
+        .heldItem = ITEM_CHOICE_BAND,
+        .ability = Ability_1 // Cute Charm
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_FROSLASS,
+        .moves = {
+            MOVE_WILLOWISP,
+            MOVE_SHADOWBALL,
+            MOVE_ICYWIND,
+            MOVE_CRUNCH
+        },
+        .heldItem = ITEM_FOCUS_SASH,
+        .ability = Ability_Hidden // Cursed Body
+    },
+    {
+        .lvl = 72,
+        .species = SPECIES_GLALIE,
+        .moves = {
+            MOVE_PROTECT,
+            MOVE_HAIL,
+            MOVE_FREEZEDRY,
+            MOVE_CRUNCH
+        },
+        .heldItem = ITEM_LEFTOVERS,
+        .ability = Ability_Hidden // Moody
+    }
+};
+
+const struct TrainerMonItemCustomMoves sParty_GymLeaderRematches_Abby_4[] = {
+    {
+        .lvl = 70,
+        .species = SPECIES_BRELOOM,
+        .moves = {
+            MOVE_MACHPUNCH,
+            MOVE_SPORE,
+            MOVE_SEEDBOMB,
+            MOVE_HEADBUTT
+        },
+        .heldItem = ITEM_TOXIC_ORB,
+        .ability = Ability_2 // Poison Heal
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_HERACROSS,
+        .moves = {
+            MOVE_THROATCHOP,
+            MOVE_MEGAHORN,
+            MOVE_CLOSECOMBAT,
+            MOVE_SWORDSDANCE
+        },
+        .heldItem = ITEM_FLAME_ORB,
+        .ability = Ability_2 // Guts
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_JOLTEON,
+        .moves = {
+            MOVE_ELECTROBALL,
+            MOVE_AGILITY,
+            MOVE_SANDATTACK,
+            MOVE_SHADOWBALL
+        },
+        .heldItem = ITEM_FLAME_ORB,
+        .ability = Ability_Hidden // Quick Feet
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_TREVENANT,
+        .moves = {
+            MOVE_WILLOWISP,
+            MOVE_HORNLEECH,
+            MOVE_HEX,
+            MOVE_LEECHSEED
+        },
+        .heldItem = ITEM_SITRUS_BERRY,
+        .ability = Ability_Hidden // Harvest
+    },
+    {
+        .lvl = 72,
+        .species = SPECIES_BARBARACLE,
+        .moves = {
+            MOVE_FLING,
+            MOVE_ROCKPOLISH,
+            MOVE_RAZORSHELL,
+            MOVE_CROSSCHOP
+        },
+        .heldItem = ITEM_IRON_BALL,
+        .ability = Ability_Hidden // Pickpocket
+    }
+};
+
+const struct TrainerMonItemCustomMoves sParty_GymLeaderRematches_Iris_1[] = {
+    {
+        .lvl = 70,
+        .species = SPECIES_GASTRODON,
+        .moves = {
+            MOVE_EARTHPOWER,
+            MOVE_RECOVER,
+            MOVE_MUDDYWATER,
+            MOVE_ICYWIND
+        },
+        .heldItem = ITEM_RINDO_BERRY,
+        .ability = Ability_1 // Sticky Hold
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_GYARADOS,
+        .moves = {
+            MOVE_WATERFALL,
+            MOVE_BULLDOZE,
+            MOVE_IRONHEAD,
+            MOVE_DRAGONDANCE
+        },
+        .heldItem = ITEM_CELL_BATTERY,
+        .ability = Ability_1 // Intimidate
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_COALOSSAL,
+        .moves = {
+            MOVE_HEATCRASH,
+            MOVE_STEALTHROCK,
+            MOVE_ROCKSLIDE,
+            MOVE_HIGHHORSEPOWER
+        },
+        .heldItem = ITEM_ABSORB_BULB,
+        .ability = Ability_1 // Steam Engine
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_AURORUS,
+        .moves = {
+            MOVE_HYPERBEAM,
+            MOVE_FREEZEDRY,
+            MOVE_THUNDERWAVE,
+            MOVE_ANCIENTPOWER
+        },
+        .heldItem = ITEM_CHOPLE_BERRY,
+        .ability = Ability_1 // Refrigerate
+    },
+    {
+        .lvl = 72,
+        .species = SPECIES_DRAGONITE,
+        .moves = {
+            MOVE_ROOST,
+            MOVE_EXTREMESPEED,
+            MOVE_OUTRAGE,
+            MOVE_AQUATAIL
+        },
+        .heldItem = ITEM_WEAKNESS_POLICY,
+        .ability = Ability_Hidden // Multiscale
+    }
+};
+
+const struct TrainerMonItemCustomMoves sParty_GymLeaderRematches_Iris_2[] = {
+    {
+        .lvl = 70,
+        .species = SPECIES_DHELMISE,
+        .moves = {
+            MOVE_SWITCHEROO,
+            MOVE_POWERWHIP,
+            MOVE_ANCHORSHOT,
+            MOVE_FACADE
+        },
+        .heldItem = ITEM_TOXIC_ORB,
+        .ability = Ability_1 // Steelworker
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_TREVENANT,
+        .moves = {
+            MOVE_REST,
+            MOVE_HEX,
+            MOVE_WILLOWISP,
+            MOVE_WOODHAMMER
+        },
+        .heldItem = ITEM_LUM_BERRY,
+        .ability = Ability_Hidden // Harvest
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_BARBARACLE,
+        .moves = {
+            MOVE_THIEF,
+            MOVE_FLING,
+            MOVE_RAZORSHELL,
+            MOVE_ROCKSLIDE
+        },
+        .heldItem = ITEM_RAZOR_CLAW,
+        .ability = Ability_1 // Tough Claws
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_SLOWBRO,
+        .moves = {
+            MOVE_SLACKOFF,
+            MOVE_RECYCLE,
+            MOVE_FUTURESIGHT,
+            MOVE_SURF
+        },
+        .heldItem = ITEM_LUM_BERRY,
+        .ability = Ability_1 // Oblivious
+    },
+    {
+        .lvl = 72,
+        .species = SPECIES_HATTERENE,
+        .moves = {
+            MOVE_TRICK,
+            MOVE_CALMMIND,
+            MOVE_DAZZLINGGLEAM,
+            MOVE_PSYCHIC
+        },
+        .heldItem = ITEM_CHOICE_BAND,
+        .ability = Ability_Hidden // Magic Bounce
+    }
+};
+
+const struct TrainerMonItemCustomMoves sParty_GymLeaderRematches_Iris_3[] = {
+    {
+        .lvl = 70,
+        .species = SPECIES_KROOKODILE,
+        .moves = {
+            MOVE_EMBARGO,
+            MOVE_SANDSTORM,
+            MOVE_EARTHQUAKE,
+            MOVE_CRUNCH
+        },
+        .heldItem = ITEM_BLACK_GLASSES,
+        .ability = Ability_1 // Intimidate
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_CENTISKORCH,
+        .moves = {
+            MOVE_BUGBITE,
+            MOVE_COIL,
+            MOVE_FIRELASH,
+            MOVE_LUNGE
+        },
+        .heldItem = ITEM_CHARTI_BERRY,
+        .ability = Ability_1 // Flash Fire
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_GRENINJA,
+        .moves = {
+            MOVE_THIEF,
+            MOVE_FLING,
+            MOVE_ACROBATICS,
+            MOVE_SHADOWSNEAK
+        },
+        .heldItem = ITEM_KINGS_ROCK,
+        .ability = Ability_Hidden // Protean
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_TOXICROAK,
+        .moves = {
+            MOVE_KNOCKOFF,
+            MOVE_SLUDGEBOMB,
+            MOVE_BELCH,
+            MOVE_DRAINPUNCH
+        },
+        .heldItem = ITEM_SITRUS_BERRY,
+        .ability = Ability_1 // Anticipation
+    },
+    {
+        .lvl = 72,
+        .species = SPECIES_ZOROARK,
+        .moves = {
+            MOVE_EMBARGO,
+            MOVE_KNOCKOFF,
+            MOVE_UTURN,
+            MOVE_SUCKERPUNCH
+        },
+        .heldItem = ITEM_FOCUS_SASH,
+        .ability = Ability_1 // Illusion
+    }
+};
+
+const struct TrainerMonItemCustomMoves sParty_GymLeaderRematches_Iris_4[] = {
+    {
+        .lvl = 70,
+        .species = SPECIES_BARBARACLE,
+        .moves = {
+            MOVE_SWITCHEROO,
+            MOVE_SHELLSMASH,
+            MOVE_BRICKBREAK,
+            MOVE_DRAGONCLAW
+        },
+        .heldItem = ITEM_LAGGING_TAIL,
+        .ability = Ability_2 // Sniper
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_JELLICENT_F,
+        .moves = {
+            MOVE_TRICK,
+            MOVE_SHADOWBALL,
+            MOVE_BRINE,
+            MOVE_WILLOWISP
+        },
+        .heldItem = ITEM_CHOICE_SPECS,
+        .ability = Ability_2 // Water Absorb
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_MR_RIME,
+        .moves = {
+            MOVE_TRICK,
+            MOVE_PSYCHIC,
+            MOVE_HEX,
+            MOVE_FUTURESIGHT
+        },
+        .heldItem = ITEM_TOXIC_ORB,
+        .ability = Ability_1 // Screen Cleaner
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_DUSKNOIR,
+        .moves = {
+            MOVE_TRICK,
+            MOVE_WILLOWISP,
+            MOVE_HEX,
+            MOVE_FUTURESIGHT
+        },
+        .heldItem = ITEM_FLAME_ORB,
+        .ability = Ability_Hidden // Frisk
+    },
+    {
+        .lvl = 72,
+        .species = SPECIES_MALAMAR,
+        .moves = {
+            MOVE_SWITCHEROO,
+            MOVE_SUPERPOWER,
+            MOVE_NIGHTSLASH,
+            MOVE_LIGHTSCREEN
+        },
+        .heldItem = ITEM_STICKY_BARB,
+        .ability = Ability_1 // Contrary
+    }
+};
+
+const struct TrainerMonItemCustomMoves sParty_GymLeaderRematches_DennisAndDee_1[] = {
+    {
+        .lvl = 70,
+        .species = SPECIES_ROTOM_FAN,
+        .moves = {
+            MOVE_DISCHARGE,
+            MOVE_AIRSLASH,
+            MOVE_SUBSTITUTE,
+            MOVE_DARKPULSE
+        },
+        .heldItem = ITEM_LUM_BERRY,
+        .ability = Ability_1 // Levitate
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_KROOKODILE,
+        .moves = {
+            MOVE_EARTHQUAKE,
+            MOVE_THUNDERFANG,
+            MOVE_CRUNCH,
+            MOVE_ICEFANG
+        },
+        .heldItem = ITEM_CHOICE_BAND,
+        .ability = Ability_1 // Intimidate
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_TALONFLAME,
+        .moves = {
+            MOVE_TAILWIND,
+            MOVE_ROOST,
+            MOVE_ACROBATICS,
+            MOVE_FLAREBLITZ
+        },
+        .heldItem = ITEM_FLYING_GEM,
+        .ability = Ability_1 // Flame Body
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_CACTURNE,
+        .moves = {
+            MOVE_SPIKES,
+            MOVE_SUCKERPUNCH,
+            MOVE_SPIKYSHIELD,
+            MOVE_DRAINPUNCH
+        },
+        .heldItem = ITEM_ROCKY_HELMET,
+        .ability = Ability_Hidden // Water Absorb
+    },
+    {
+        .lvl = 72,
+        .species = SPECIES_LANTURN,
+        .moves = {
+            MOVE_SURF,
+            MOVE_CHARGEBEAM,
+            MOVE_BLIZZARD,
+            MOVE_CHARGE
+        },
+        .heldItem = ITEM_LEFTOVERS,
+        .ability = Ability_1 // Volt Absorb
+    }
+};
+
+const struct TrainerMonItemCustomMoves sParty_GymLeaderRematches_DennisAndDee_2[] = {
+    {
+        .lvl = 70,
+        .species = SPECIES_MIENSHAO,
+        .moves = {
+            MOVE_FAKEOUT,
+            MOVE_QUICKGUARD,
+            MOVE_UTURN,
+            MOVE_DRAINPUNCH
+        },
+        .heldItem = ITEM_NORMAL_GEM,
+        .ability = Ability_2 // Regenerator
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_UMBREON,
+        .moves = {
+            MOVE_HELPINGHAND,
+            MOVE_CHARM,
+            MOVE_SNARL,
+            MOVE_COPYCAT
+        },
+        .heldItem = ITEM_LUM_BERRY,
+        .ability = Ability_1 // Synchronize
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_CARBINK,
+        .moves = {
+            MOVE_REFLECT,
+            MOVE_LIGHTSCREEN,
+            MOVE_ROCKSLIDE,
+            MOVE_SANDTOMB
+        },
+        .heldItem = ITEM_LIGHT_CLAY,
+        .ability = Ability_1 // Clear Body
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_TOGEKISS,
+        .moves = {
+            MOVE_FOLLOWME,
+            MOVE_ROOST,
+            MOVE_AIRSLASH,
+            MOVE_LIFEDEW
+        },
+        .heldItem = ITEM_ROCKY_HELMET,
+        .ability = Ability_2 // Serene Grace
+    },
+    {
+        .lvl = 72,
+        .species = SPECIES_GALLADE,
+        .moves = {
+            MOVE_QUICKGUARD,
+            MOVE_SACREDSWORD,
+            MOVE_LIFEDEW,
+            MOVE_WIDEGUARD
+        },
+        .heldItem = ITEM_MUSCLE_BAND,
+        .ability = Ability_Hidden // Justified
+    }
+};
+
+const struct TrainerMonItemCustomMoves sParty_GymLeaderRematches_DennisAndDee_3[] = {
+    {
+        .lvl = 70,
+        .species = SPECIES_AMPHAROS,
+        .moves = {
+            MOVE_DISCHARGE,
+            MOVE_COTTONGUARD,
+            MOVE_LIGHTSCREEN,
+            MOVE_FIREPUNCH
+        },
+        .heldItem = ITEM_AIR_BALLOON,
+        .ability = Ability_Hidden // Plus
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_KLINKLANG,
+        .moves = {
+            MOVE_GEARUP,
+            MOVE_SHIFTGEAR,
+            MOVE_CHARGEBEAM,
+            MOVE_METALSOUND
+        },
+        .heldItem = ITEM_ROCKY_HELMET,
+        .ability = Ability_2 // Minus
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_LANTURN,
+        .moves = {
+            MOVE_HYDROPUMP,
+            MOVE_THUNDERBOLT,
+            MOVE_CURSE,
+            MOVE_ICYWIND
+        },
+        .heldItem = ITEM_WIDE_LENS,
+        .ability = Ability_1 // Volt Absorb
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_WEEZING,
+        .moves = {
+            MOVE_EXPLOSION,
+            MOVE_HEATWAVE,
+            MOVE_SLUDGEBOMB,
+            MOVE_WILLOWISP
+        },
+        .heldItem = ITEM_BLACK_SLUDGE,
+        .ability = Ability_2 // Neutralizing Gas
+    },
+    {
+        .lvl = 72,
+        .species = SPECIES_SLAKING,
+        .moves = {
+            MOVE_THROATCHOP,
+            MOVE_XSCISSOR,
+            MOVE_ICEPUNCH,
+            MOVE_GIGAIMPACT
+        },
+        .heldItem = ITEM_CHOICE_BAND,
+        .ability = Ability_1 // Truant
+    }
+};
+
+const struct TrainerMonItemCustomMoves sParty_GymLeaderRematches_DennisAndDee_4[] = {
+    {
+        .lvl = 70,
+        .species = SPECIES_PRIMARINA,
+        .moves = {
+            MOVE_SPARKLINGARIA,
+            MOVE_HYPERVOICE,
+            MOVE_DAZZLINGGLEAM,
+            MOVE_ENERGYBALL
+        },
+        .heldItem = ITEM_LIFE_ORB,
+        .ability = Ability_Hidden // Liquid Voice
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_CROBAT,
+        .moves = {
+            MOVE_HEATWAVE,
+            MOVE_AIRSLASH,
+            MOVE_MEANLOOK,
+            MOVE_ROUND
+        },
+        .heldItem = ITEM_FOCUS_SASH,
+        .ability = Ability_Hidden // Infiltrator
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_FLYGON,
+        .moves = {
+            MOVE_BULLDOZE,
+            MOVE_EARTHQUAKE,
+            MOVE_BOOMBURST,
+            MOVE_UTURN
+        },
+        .heldItem = ITEM_YACHE_BERRY,
+        .ability = Ability_1 // Levitate
+    },
+    {
+        .lvl = 70,
+        .species = SPECIES_CHESNAUGHT,
+        .moves = {
+            MOVE_ROCKSLIDE,
+            MOVE_GRASSPLEDGE,
+            MOVE_SPIKYSHIELD,
+            MOVE_STOMPINGTANTRUM
+        },
+        .heldItem = ITEM_ROCKY_HELMET,
+        .ability = Ability_1 // Overgrow
+    },
+    {
+        .lvl = 72,
+        .species = SPECIES_BLASTOISE,
+        .moves = {
+            MOVE_WATERSPOUT,
+            MOVE_ICYWIND,
+            MOVE_ROCKSLIDE,
+            MOVE_WATERPLEDGE
+        },
+        .heldItem = ITEM_CHOICE_SCARF,
+        .ability = Ability_Hidden // Rain Dish
+    }
+};
 // #endregion
 
 // #endregion
@@ -14929,6 +16947,440 @@ const struct Trainer gTrainers[] = {
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_RISKY | AI_SCRIPT_SEMI_SMART,
         .partySize = NELEMS(sParty_PostCredits_Alistair),
         .party = {.ItemCustomMoves = sParty_PostCredits_Alistair}
+    },
+    // #endregion
+    // #region Gym Leader Rematches
+    [TRAINER_LEADER_TERRENCE_REMATCH_1] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_LEADER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_TERRENCE,
+        .trainerName = {_T, _e, _r, _r, _e, _n, _c, _e, _END},
+        .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_GymLeaderRematches_Standard,
+        .partySize = NELEMS(sParty_GymLeaderRematches_Terrence_1),
+        .party = {.ItemCustomMoves = sParty_GymLeaderRematches_Terrence_1}
+    },
+    [TRAINER_LEADER_TERRENCE_REMATCH_2] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_LEADER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_TERRENCE,
+        .trainerName = {_T, _e, _r, _r, _e, _n, _c, _e, _END},
+        .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_GymLeaderRematches_Standard,
+        .partySize = NELEMS(sParty_GymLeaderRematches_Terrence_2),
+        .party = {.ItemCustomMoves = sParty_GymLeaderRematches_Terrence_2}
+    },
+    [TRAINER_LEADER_TERRENCE_REMATCH_3] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_LEADER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_TERRENCE,
+        .trainerName = {_T, _e, _r, _r, _e, _n, _c, _e, _END},
+        .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_GymLeaderRematches_Standard,
+        .partySize = NELEMS(sParty_GymLeaderRematches_Terrence_3),
+        .party = {.ItemCustomMoves = sParty_GymLeaderRematches_Terrence_3}
+    },
+    [TRAINER_LEADER_TERRENCE_REMATCH_4] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_LEADER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_TERRENCE,
+        .trainerName = {_T, _e, _r, _r, _e, _n, _c, _e, _END},
+        .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_GymLeaderRematches_Standard,
+        .partySize = NELEMS(sParty_GymLeaderRematches_Terrence_4),
+        .party = {.ItemCustomMoves = sParty_GymLeaderRematches_Terrence_4}
+    },
+    [TRAINER_LEADER_STELLA_REMATCH_1] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_LEADER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_STELLA,
+        .trainerName = {_S, _t, _e, _l, _l, _a, _END},
+        .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_GymLeaderRematches_Standard,
+        .partySize = NELEMS(sParty_GymLeaderRematches_Stella_1),
+        .party = {.ItemCustomMoves = sParty_GymLeaderRematches_Stella_1}
+    },
+    [TRAINER_LEADER_STELLA_REMATCH_2] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_LEADER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_STELLA,
+        .trainerName = {_S, _t, _e, _l, _l, _a, _END},
+        .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_GymLeaderRematches_Standard,
+        .partySize = NELEMS(sParty_GymLeaderRematches_Stella_2),
+        .party = {.ItemCustomMoves = sParty_GymLeaderRematches_Stella_2}
+    },
+    [TRAINER_LEADER_STELLA_REMATCH_3] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_LEADER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_STELLA,
+        .trainerName = {_S, _t, _e, _l, _l, _a, _END},
+        .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_GymLeaderRematches_Standard,
+        .partySize = NELEMS(sParty_GymLeaderRematches_Stella_3),
+        .party = {.ItemCustomMoves = sParty_GymLeaderRematches_Stella_3}
+    },
+    [TRAINER_LEADER_STELLA_REMATCH_4] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_LEADER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_STELLA,
+        .trainerName = {_S, _t, _e, _l, _l, _a, _END},
+        .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_GymLeaderRematches_Standard,
+        .partySize = NELEMS(sParty_GymLeaderRematches_Stella_4),
+        .party = {.ItemCustomMoves = sParty_GymLeaderRematches_Stella_4}
+    },
+    [TRAINER_LEADER_RAINE_REMATCH_1] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_LEADER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_RAINE,
+        .trainerName = {_R, _a, _i, _n, _e, _END},
+        .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_GymLeaderRematches_Standard,
+        .partySize = NELEMS(sParty_GymLeaderRematches_Raine_1),
+        .party = {.ItemCustomMoves = sParty_GymLeaderRematches_Raine_1}
+    },
+    [TRAINER_LEADER_RAINE_REMATCH_2] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_LEADER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_RAINE,
+        .trainerName = {_R, _a, _i, _n, _e, _END},
+        .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_GymLeaderRematches_Standard,
+        .partySize = NELEMS(sParty_GymLeaderRematches_Raine_2),
+        .party = {.ItemCustomMoves = sParty_GymLeaderRematches_Raine_2}
+    },
+    [TRAINER_LEADER_RAINE_REMATCH_3] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_LEADER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_RAINE,
+        .trainerName = {_R, _a, _i, _n, _e, _END},
+        .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_GymLeaderRematches_Standard,
+        .partySize = NELEMS(sParty_GymLeaderRematches_Raine_3),
+        .party = {.ItemCustomMoves = sParty_GymLeaderRematches_Raine_3}
+    },
+    [TRAINER_LEADER_RAINE_REMATCH_4] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_LEADER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_RAINE,
+        .trainerName = {_R, _a, _i, _n, _e, _END},
+        .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_GymLeaderRematches_Standard,
+        .partySize = NELEMS(sParty_GymLeaderRematches_Raine_4),
+        .party = {.ItemCustomMoves = sParty_GymLeaderRematches_Raine_4}
+    },
+    [TRAINER_LEADER_CHANCE_REMATCH_1] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_LEADER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_CHANCE,
+        .trainerName = {_C, _h, _a, _n, _c, _e, _END},
+        .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_GymLeaderRematches_Standard,
+        .partySize = NELEMS(sParty_GymLeaderRematches_Chance_1),
+        .party = {.ItemCustomMoves = sParty_GymLeaderRematches_Chance_1}
+    },
+    [TRAINER_LEADER_CHANCE_REMATCH_2] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_LEADER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_CHANCE,
+        .trainerName = {_C, _h, _a, _n, _c, _e, _END},
+        .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_GymLeaderRematches_Standard,
+        .partySize = NELEMS(sParty_GymLeaderRematches_Chance_2),
+        .party = {.ItemCustomMoves = sParty_GymLeaderRematches_Chance_2}
+    },
+    [TRAINER_LEADER_CHANCE_REMATCH_3] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_LEADER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_CHANCE,
+        .trainerName = {_C, _h, _a, _n, _c, _e, _END},
+        .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_GymLeaderRematches_Standard,
+        .partySize = NELEMS(sParty_GymLeaderRematches_Chance_3),
+        .party = {.ItemCustomMoves = sParty_GymLeaderRematches_Chance_3}
+    },
+    [TRAINER_LEADER_CHANCE_REMATCH_4] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_LEADER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_CHANCE,
+        .trainerName = {_C, _h, _a, _n, _c, _e, _END},
+        .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_GymLeaderRematches_Standard,
+        .partySize = NELEMS(sParty_GymLeaderRematches_Chance_4),
+        .party = {.ItemCustomMoves = sParty_GymLeaderRematches_Chance_4}
+    },
+    [TRAINER_LEADER_CASEY_F_REMATCH_1] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_LEADER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_CASEY_F,
+        .trainerName = {_C, _a, _s, _e, _y, _END},
+        .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_GymLeaderRematches_Standard | AI_SCRIPT_SETUP_FIRST_TURN,
+        .partySize = NELEMS(sParty_GymLeaderRematches_Casey_1),
+        .party = {.ItemCustomMoves = sParty_GymLeaderRematches_Casey_1}
+    },
+    [TRAINER_LEADER_CASEY_F_REMATCH_2] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_LEADER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_CASEY_F,
+        .trainerName = {_C, _a, _s, _e, _y, _END},
+        .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_GymLeaderRematches_Standard | AI_SCRIPT_SETUP_FIRST_TURN,
+        .partySize = NELEMS(sParty_GymLeaderRematches_Casey_2),
+        .party = {.ItemCustomMoves = sParty_GymLeaderRematches_Casey_2}
+    },
+    [TRAINER_LEADER_CASEY_F_REMATCH_3] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_LEADER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_CASEY_F,
+        .trainerName = {_C, _a, _s, _e, _y, _END},
+        .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_GymLeaderRematches_Standard | AI_SCRIPT_SETUP_FIRST_TURN,
+        .partySize = NELEMS(sParty_GymLeaderRematches_Casey_3),
+        .party = {.ItemCustomMoves = sParty_GymLeaderRematches_Casey_3}
+    },
+    [TRAINER_LEADER_CASEY_F_REMATCH_4] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_LEADER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_CASEY_F,
+        .trainerName = {_C, _a, _s, _e, _y, _END},
+        .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_GymLeaderRematches_Standard | AI_SCRIPT_SETUP_FIRST_TURN,
+        .partySize = NELEMS(sParty_GymLeaderRematches_Casey_4),
+        .party = {.ItemCustomMoves = sParty_GymLeaderRematches_Casey_4}
+    },
+    [TRAINER_LEADER_CASEY_M_REMATCH_1] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_LEADER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_CASEY_M,
+        .trainerName = {_C, _a, _s, _e, _y, _END},
+        .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_GymLeaderRematches_Standard | AI_SCRIPT_SETUP_FIRST_TURN,
+        .partySize = NELEMS(sParty_GymLeaderRematches_Casey_1),
+        .party = {.ItemCustomMoves = sParty_GymLeaderRematches_Casey_1}
+    },
+    [TRAINER_LEADER_CASEY_M_REMATCH_2] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_LEADER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_CASEY_M,
+        .trainerName = {_C, _a, _s, _e, _y, _END},
+        .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_GymLeaderRematches_Standard | AI_SCRIPT_SETUP_FIRST_TURN,
+        .partySize = NELEMS(sParty_GymLeaderRematches_Casey_2),
+        .party = {.ItemCustomMoves = sParty_GymLeaderRematches_Casey_2}
+    },
+    [TRAINER_LEADER_CASEY_M_REMATCH_3] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_LEADER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_CASEY_M,
+        .trainerName = {_C, _a, _s, _e, _y, _END},
+        .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_GymLeaderRematches_Standard | AI_SCRIPT_SETUP_FIRST_TURN,
+        .partySize = NELEMS(sParty_GymLeaderRematches_Casey_3),
+        .party = {.ItemCustomMoves = sParty_GymLeaderRematches_Casey_3}
+    },
+    [TRAINER_LEADER_CASEY_M_REMATCH_4] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_LEADER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_CASEY_M,
+        .trainerName = {_C, _a, _s, _e, _y, _END},
+        .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_GymLeaderRematches_Standard | AI_SCRIPT_SETUP_FIRST_TURN,
+        .partySize = NELEMS(sParty_GymLeaderRematches_Casey_4),
+        .party = {.ItemCustomMoves = sParty_GymLeaderRematches_Casey_4}
+    },
+    [TRAINER_LEADER_ABBY_REMATCH_1] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_LEADER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_ABBY,
+        .trainerName = {_A, _b, _b, _y, _END},
+        .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_GymLeaderRematches_Standard,
+        .partySize = NELEMS(sParty_GymLeaderRematches_Abby_1),
+        .party = {.ItemCustomMoves = sParty_GymLeaderRematches_Abby_1}
+    },
+    [TRAINER_LEADER_ABBY_REMATCH_2] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_LEADER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_ABBY,
+        .trainerName = {_A, _b, _b, _y, _END},
+        .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_GymLeaderRematches_Standard,
+        .partySize = NELEMS(sParty_GymLeaderRematches_Abby_2),
+        .party = {.ItemCustomMoves = sParty_GymLeaderRematches_Abby_2}
+    },
+    [TRAINER_LEADER_ABBY_REMATCH_3] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_LEADER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_ABBY,
+        .trainerName = {_A, _b, _b, _y, _END},
+        .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_GymLeaderRematches_Standard,
+        .partySize = NELEMS(sParty_GymLeaderRematches_Abby_3),
+        .party = {.ItemCustomMoves = sParty_GymLeaderRematches_Abby_3}
+    },
+    [TRAINER_LEADER_ABBY_REMATCH_4] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_LEADER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_ABBY,
+        .trainerName = {_A, _b, _b, _y, _END},
+        .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_GymLeaderRematches_Standard,
+        .partySize = NELEMS(sParty_GymLeaderRematches_Abby_4),
+        .party = {.ItemCustomMoves = sParty_GymLeaderRematches_Abby_4}
+    },
+    [TRAINER_LEADER_IRIS_REMATCH_1] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_LEADER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_IRIS,
+        .trainerName = {_I, _r, _i, _s, _END},
+        .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_GymLeaderRematches_Standard,
+        .partySize = NELEMS(sParty_GymLeaderRematches_Iris_1),
+        .party = {.ItemCustomMoves = sParty_GymLeaderRematches_Iris_1}
+    },
+    [TRAINER_LEADER_IRIS_REMATCH_2] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_LEADER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_IRIS,
+        .trainerName = {_I, _r, _i, _s, _END},
+        .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_GymLeaderRematches_Standard,
+        .partySize = NELEMS(sParty_GymLeaderRematches_Iris_2),
+        .party = {.ItemCustomMoves = sParty_GymLeaderRematches_Iris_2}
+    },
+    [TRAINER_LEADER_IRIS_REMATCH_3] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_LEADER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_IRIS,
+        .trainerName = {_I, _r, _i, _s, _END},
+        .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_GymLeaderRematches_Standard,
+        .partySize = NELEMS(sParty_GymLeaderRematches_Iris_3),
+        .party = {.ItemCustomMoves = sParty_GymLeaderRematches_Iris_3}
+    },
+    [TRAINER_LEADER_IRIS_REMATCH_4] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_LEADER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_IRIS,
+        .trainerName = {_I, _r, _i, _s, _END},
+        .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_GymLeaderRematches_Standard,
+        .partySize = NELEMS(sParty_GymLeaderRematches_Iris_4),
+        .party = {.ItemCustomMoves = sParty_GymLeaderRematches_Iris_4}
+    },
+    [TRAINER_LEADERS_DENNIS_AND_DEE_REMATCH_1] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_LEADER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_DENNIS_AND_DEE,
+        .trainerName = {_D, _e, _n, _n, _i, _s, _AMPERSAND, _D, _e, _e, _END},
+        .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
+        .doubleBattle = TRUE,
+        .aiFlags = TrainerAIFlags_GymLeaderRematches_Standard | AI_SCRIPT_DOUBLE_BATTLE,
+        .partySize = NELEMS(sParty_GymLeaderRematches_DennisAndDee_1),
+        .party = {.ItemCustomMoves = sParty_GymLeaderRematches_DennisAndDee_1}
+    },
+    [TRAINER_LEADERS_DENNIS_AND_DEE_REMATCH_2] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_LEADER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_DENNIS_AND_DEE,
+        .trainerName = {_D, _e, _n, _n, _i, _s, _AMPERSAND, _D, _e, _e, _END},
+        .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
+        .doubleBattle = TRUE,
+        .aiFlags = TrainerAIFlags_GymLeaderRematches_Standard | AI_SCRIPT_DOUBLE_BATTLE,
+        .partySize = NELEMS(sParty_GymLeaderRematches_DennisAndDee_2),
+        .party = {.ItemCustomMoves = sParty_GymLeaderRematches_DennisAndDee_2}
+    },
+    [TRAINER_LEADERS_DENNIS_AND_DEE_REMATCH_3] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_LEADER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_DENNIS_AND_DEE,
+        .trainerName = {_D, _e, _n, _n, _i, _s, _AMPERSAND, _D, _e, _e, _END},
+        .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
+        .doubleBattle = TRUE,
+        .aiFlags = TrainerAIFlags_GymLeaderRematches_Standard | AI_SCRIPT_DOUBLE_BATTLE,
+        .partySize = NELEMS(sParty_GymLeaderRematches_DennisAndDee_3),
+        .party = {.ItemCustomMoves = sParty_GymLeaderRematches_DennisAndDee_3}
+    },
+    [TRAINER_LEADERS_DENNIS_AND_DEE_REMATCH_4] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_LEADER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
+        .trainerPic = TRAINER_PIC_DENNIS_AND_DEE,
+        .trainerName = {_D, _e, _n, _n, _i, _s, _AMPERSAND, _D, _e, _e, _END},
+        .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
+        .doubleBattle = TRUE,
+        .aiFlags = TrainerAIFlags_GymLeaderRematches_Standard | AI_SCRIPT_DOUBLE_BATTLE,
+        .partySize = NELEMS(sParty_GymLeaderRematches_DennisAndDee_4),
+        .party = {.ItemCustomMoves = sParty_GymLeaderRematches_DennisAndDee_4}
     },
     // #endregion
 };
