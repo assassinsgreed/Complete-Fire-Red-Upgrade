@@ -988,3 +988,18 @@ That was such a fun battle.\nYou've earned your victory!
 
 #org @gText_TsarvosaCity_Gym_LeaderIris_CommentOnStellaLunch
 [RED]Hmm[.] It's been a while since I\ncaught up with Stella[.]\pMaybe I should invite her for lunch\nin Daimyn City sometime.
+
+#org @gText_TsarvosaGym_LeaderIris_AskForRematch
+[RED]Champion [PLAYER]!\nIs that you?\pIf you're here, then you must be\nwondering how well the gym is\ldoing, right?\pThen let me show you with a battle!
+
+#org @gText_TsarvosaGym_LeaderIris_PreBattle
+[RED]We're going to go all out.\nHope you're ready!
+
+#org @gText_TsarvosaGym_LeaderIris_OnPlayerVictory
+You're really good, [PLAYER]!
+
+#org @gText_TsarvosaGym_LeaderIris_ChoseNotToBattle
+[RED]Aw, that's no fun[.]\pMaybe we can battle later?
+
+#org @gText_TsarvosaGym_LeaderIris_BeatenToday
+[RED]If I've gotten stronger, then\nyou've gotten twice as strong!\pNow I'm motivated to train my\nPok\emon even harder.\pLet's battle again sometime!

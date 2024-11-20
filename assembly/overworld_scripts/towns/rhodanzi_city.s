@@ -323,6 +323,8 @@ EventScript_RhodanziGym_Brandon:
 EventScript_RhodanziGym_Leader_Terrence:
     lockall
     faceplayer
+    checkflag 0x82C @ Game is cleared
+    if SET _goto Terrence_Postgame
     checkflag 0x820 @ Rhodanzi gym badge
     if SET _goto EventScript_RhodanziGym_Leader_TerrenceChat
     msgbox gText_RhodanziGym_Leader_Terrence_Talk MSG_NORMAL
@@ -354,6 +356,32 @@ EventScript_RhodanziGym_Leader_TerrenceDefeated:
 
 EventScript_RhodanziGym_Leader_TerrenceChat:
     npcchat gText_RhodanziGym_Leader_Terrence_Chat
+    end
+
+Terrence_Postgame:
+    checkflag 0xE37 @ Terrence Rematch beaten today
+    if SET _goto TerrenceRematch_BeatenToday
+    msgbox gText_RhodanziGym_LeaderTerrence_AskForRematch MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto TerrenceRematch_ChoseNotToBattle
+    msgbox gText_RhodanziGym_LeaderTerrence_PreBattle MSG_NORMAL
+    setvar 0x4000 526 @ Initial trainer ID for first team
+    random 0x4
+    setvar 0x8004 0x4000
+    copyvar 0x8005 LASTRESULT
+    special 0x3E @ Add two vars above, result stored in 0x4000 which is loaded as trainer ID
+    call SetupMugshotGymLeaderAndBosses
+    trainerbattle3 0x1 0x4000 0x100 gText_RhodanziGym_LeaderTerrence_OnPlayerVictory
+    setflag 0xE37 @ Terrence Rematch beaten today
+    goto TerrenceRematch_BeatenToday
+    end
+
+TerrenceRematch_ChoseNotToBattle:
+    npcchatwithmovement gText_RhodanziGym_LeaderTerrence_ChoseNotToBattle m_LookDown
+    end
+
+TerrenceRematch_BeatenToday:
+    npcchatwithmovement gText_RhodanziGym_LeaderTerrence_BeatenToday m_LookDown
     end
 
 @ Trainer House

@@ -142,6 +142,8 @@ LevelScript_ContinueCutsceneAfterChanceLeaves:
 EventScript_DaimynCityGym_LeaderChance:
     lockall
     faceplayer
+    checkflag 0x82C @ Game is cleared
+    if SET _goto Chance_Postgame
     checkflag 0x823 @ Daimyn gym badge
     if SET _goto EventScript_DaimynCityGym_LeaderChance_Chat
     msgbox gText_DaimynCityGym_LeaderChance_Talk MSG_NORMAL
@@ -200,6 +202,32 @@ EventScript_DaimynCityGym_LeaderChance_Defeated:
 
 EventScript_DaimynCityGym_LeaderChance_Chat:
     npcchat gText_DaimynCityGym_LeaderChance_Chat
+    end
+
+Chance_Postgame:
+    checkflag 0xE9A @ Chance Rematch beaten today
+    if SET _goto ChanceRematch_BeatenToday
+    msgbox gText_DaimynGym_LeaderChance_AskForRematch MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto ChanceRematch_ChoseNotToBattle
+    msgbox gText_DaimynGym_LeaderChance_PreBattle MSG_NORMAL
+    setvar 0x4000 538 @ Initial trainer ID for first team
+    random 0x4
+    setvar 0x8004 0x4000
+    copyvar 0x8005 LASTRESULT
+    special 0x3E @ Add two vars above, result stored in 0x4000 which is loaded as trainer ID
+    call SetupMugshotGymLeaderAndBosses
+    trainerbattle3 0x1 0x4000 0x100 gText_DaimynGym_LeaderChance_OnPlayerVictory
+    setflag 0xE9A @ Chance Rematch beaten today
+    goto ChanceRematch_BeatenToday
+    end
+
+ChanceRematch_ChoseNotToBattle:
+    npcchatwithmovement gText_DaimynGym_LeaderChance_ChoseNotToBattle m_LookDown
+    end
+
+ChanceRematch_BeatenToday:
+    npcchatwithmovement gText_DaimynGym_LeaderChance_BeatenToday m_LookDown
     end
 
 .global EventScript_DaimynCityGym_CoinSeller
