@@ -962,6 +962,21 @@ That's the game! A real gambler\nknows when to fold with dignity.
 #org @gText_DaimynCityGym_LeaderChance_Chat
 [BLUE]You're planning to go all the way to\nthe top, aren'tcha?\pI'll be keeping my eye on you, kid.
 
+#org @gText_DaimynGym_LeaderChance_AskForRematch
+[BLUE][PLAYER]! I heard you went all the\nway and became the Champion!\pHearing that got me real fired up.\nI've been itching for a battle!\pWhat do you say?
+
+#org @gText_DaimynGym_LeaderChance_PreBattle
+[BLUE]Wahahaha! The die has been cast!\nPay close attention, [PLAYER]!\pThe team I choose is sure to mystify\nyou.
+
+#org @gText_DaimynGym_LeaderChance_OnPlayerVictory
+Bravo, bravo!
+
+#org @gText_DaimynGym_LeaderChance_ChoseNotToBattle
+[BLUE]What a shame!\pYou know when to fold them though,\nand I'll respect that decision.
+
+#org @gText_DaimynGym_LeaderChance_BeatenToday
+[BLUE]You're something else, kiddo!\nTell ya what.\pCome back tomorrow, and we can have\nourselves another battle.
+
 // Mall
 #org @gText_DaimynCityMall_LuckyDrawIntro
 Welcome to the Pok\emon Lottery, or\nPok\eLotto for short!\pEvery day, we draw a random\nPok\emon.\pIf you've seen that Pok\emon, you win\na Pearl! If you've caught it, you\lwin a Big Pearl!\pSounds fun, doesn't it? There's\nno entry fee, either.\pWould you like to play?

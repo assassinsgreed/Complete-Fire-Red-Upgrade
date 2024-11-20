@@ -1085,6 +1085,8 @@ EventScript_HeleoGym_SwimmerMaisey:
 EventScript_HeleoGym_LeaderRaine:
     lockall
     faceplayer
+    checkflag 0x82C @ Game is cleared
+    if SET _goto LeaderRaine_Postgame
     checkflag 0x822 @ Heleo gym badge
     if SET _goto EventScript_HeleoGym_LeaderRaine_Chat
     msgbox gText_HeleoGym_LeaderRaine_Talk MSG_NORMAL
@@ -1108,6 +1110,32 @@ LeaderRaine_3Badges:
 
 LeaderRaine_4Badges:
     trainerbattle1 0x1 257 0x100 gText_HeleoGym_LeaderRaine_Intro gText_HeleoGym_LeaderRaine_Defeat EventScript_HeleoGym_LeaderRaine_Defeated
+    end
+
+LeaderRaine_Postgame:
+    checkflag 0xE39 @ Leader Raine Rematch beaten today
+    if SET _goto LeaderRaineRematch_BeatenToday
+    msgbox gText_HeleoGym_LeaderRaine_AskForRematch MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto LeaderRaineRematch_ChoseNotToBattle
+    msgbox gText_HeleoGym_LeaderRaine_PreBattle MSG_NORMAL
+    setvar 0x4000 534 @ Initial trainer ID for first team
+    random 0x4
+    setvar 0x8004 0x4000
+    copyvar 0x8005 LASTRESULT
+    special 0x3E @ Add two vars above, result stored in 0x4000 which is loaded as trainer ID
+    call SetupMugshotGymLeaderAndBosses
+    trainerbattle3 0x1 0x4000 0x100 gText_HeleoGym_LeaderRaine_OnPlayerVictory
+    setflag 0xE39 @ Leader Raine Rematch beaten today
+    goto LeaderRaineRematch_BeatenToday
+    end
+
+LeaderRaineRematch_ChoseNotToBattle:
+    npcchatwithmovement gText_HeleoGym_LeaderRaine_ChoseNotToBattle m_LookDown
+    end
+
+LeaderRaineRematch_BeatenToday:
+    npcchatwithmovement gText_HeleoGym_LeaderRaine_BeatenToday m_LookDown
     end
 
 EventScript_HeleoGym_LeaderRaine_Defeated:
@@ -1138,6 +1166,8 @@ EventScript_HeleoGym_LeaderRaine_Defeated:
 EventScript_HeleoGym_LeaderRaine_Chat:
     npcchat gText_HeleoGym_LeaderRaine_Chat
     end
+
+
 
 .global EventScript_HeleoGym_GymExpert
 EventScript_HeleoGym_GymExpert:

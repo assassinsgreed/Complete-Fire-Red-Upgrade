@@ -788,6 +788,8 @@ EventScript_BruccieVillageGym_Ellie:
 .global EventScript_BruccieVillageGym_Abby
 EventScript_BruccieVillageGym_Abby:
     faceplayer
+    checkflag 0x82C @ Game is cleared
+    if SET _goto Abby_Postgame
     checkflag 0x825 @ Bruccie Village gym badge
     if SET _goto EventScript_BruccieVillageGym_LeaderAbby_Chat
     msgbox gText_BruccieVillageGym_LeaderAbby_Talk MSG_NORMAL
@@ -816,6 +818,32 @@ EventScript_BruccieVillageGym_LeaderAbby_Defeated:
 
 EventScript_BruccieVillageGym_LeaderAbby_Chat:
     npcchat gText_BruccieVillageGym_LeaderAbby_Chat
+    end
+
+Abby_Postgame:
+    checkflag 0xE3C @ Abby Rematch beaten today
+    if SET _goto AbbyRematch_BeatenToday
+    msgbox gText_BruccieGym_LeaderAbby_AskForRematch MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto AbbyRematch_ChoseNotToBattle
+    msgbox gText_BruccieGym_LeaderAbby_PreBattle MSG_NORMAL
+    setvar 0x4000 550 @ Initial trainer ID for first team
+    random 0x4
+    setvar 0x8004 0x4000
+    copyvar 0x8005 LASTRESULT
+    special 0x3E @ Add two vars above, result stored in 0x4000 which is loaded as trainer ID
+    call SetupMugshotGymLeaderAndBosses
+    trainerbattle3 0x1 0x4000 0x100 gText_BruccieGym_LeaderAbby_OnPlayerVictory
+    setflag 0xE3C @ Abby Rematch beaten today
+    goto AbbyRematch_BeatenToday
+    end
+
+AbbyRematch_ChoseNotToBattle:
+    npcchatwithmovement gText_BruccieGym_LeaderAbby_ChoseNotToBattle m_LookDown
+    end
+
+AbbyRematch_BeatenToday:
+    npcchatwithmovement gText_BruccieGym_LeaderAbby_BeatenToday m_LookDown
     end
 
 .global SignScript_BruccieVillageGym_Placard

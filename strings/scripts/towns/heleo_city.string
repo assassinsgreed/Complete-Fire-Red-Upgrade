@@ -413,6 +413,21 @@ That battle was quite entertaining,\nindeed! You have my gratitude.
 #org @gText_HeleoGym_LeaderRaine_Chat
 [RED]I trust you will apply the same\neffort you showed in our battle to\lthe rest of your journey.\pShould you do so, I am certain you\nwill succeed.
 
+#org @gText_HeleoGym_LeaderRaine_AskForRematch
+[RED]Greetings, Champion [PLAYER].\nIt is a pleasure to see you again.\pIt has been quite some time since we\nlast met.\pIs it fair to assume you've come to\nrequest a rematch from me?
+
+#org @gText_HeleoGym_LeaderRaine_PreBattle
+[RED]Very good. I shall accept your\nchallenge, with these Pok\emon at\lmy side this time.\pPrepare yourself, [PLAYER]! We will\nnot hold back!
+
+#org @gText_HeleoGym_LeaderRaine_OnPlayerVictory
+Excellent!\nYou remain an exceptional trainer.
+
+#org @gText_HeleoGym_LeaderRaine_ChoseNotToBattle
+[RED]Very well. I shall wait here in case\nyou change your mind.
+
+#org @gText_HeleoGym_LeaderRaine_BeatenToday
+[RED]You battled quite admirably.\pDo return tomorrow, if you wish to\nchallenge us again.
+
 #org @gText_HeleoGym_ExpertTips
 Yo, superstar! You're making sweet\nprogress on your journey.\pLet me give you some tips about the\nHeleo City gym[.]\pRaine and her trainers all specialize\nin different types of weather, and\lhave tailored their teams to make\lthe most of them.\pI'd recommend you bring a varied\nteam, and don't assume they will\luse the same Pok\emon types.\pYou've got this, superstar!
 

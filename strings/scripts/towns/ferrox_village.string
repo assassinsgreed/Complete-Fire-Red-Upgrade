@@ -140,6 +140,21 @@ Oh my[.] I didn't expect you to battle\nso fiercely.
 #org @gText_FerroxGym_LeaderStella_Chat
 It was a pleasure battling with you.\nI wish you luck in your gym\lchallenge.
 
+#org @gText_FerroxGym_LeaderStella_AskForRematch
+Umm[.] Congratulations on becoming the\nChampion, [PLAYER].\pYou and your Pok\emon are quite\nstrong.\pI was thinking[.] If I battled you,\nI could get stronger too.\pWould that be okay with you?
+
+#org @gText_FerroxGym_LeaderStella_PreBattle
+Okay[.] I think I'll pick this strategy\ntoday.\pI won't hold back just because\nyou're the champion, [PLAYER]!
+
+#org @gText_FerroxGym_LeaderStella_OnPlayerVictory
+Your skills haven't dulled even a\nbit!
+
+#org @gText_FerroxGym_LeaderStella_ChoseNotToBattle
+That's okay[.] I wish you all the\nbest, [PLAYER].\pCome say hi sometime, okay?
+
+#org @gText_FerroxGym_LeaderStella_BeatenToday
+Thank you for battling with me\ntoday.\pI need to get back to my usual\nduties now, but let's battle again\lsometime, okay?
+
 #org @gText_FerroxLibrary_ReadBookPrompt_L
 It is said that many mythical Pok\emon\ninhabit the Ku[GREEN]l[BLACK]ure Region, though\lthis has often been disputed by\lresearchers.
 

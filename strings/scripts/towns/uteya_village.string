@@ -455,3 +455,28 @@ Dennis: This can't be happening!\nDee: Have we been [.] defeated?
 
 #org @gText_UteyaVillage_Gym_TMReceived
 [BLACK][PLAYER] received TM26 from Dennis\nand Dee!
+
+#org @gText_UteyaGym_LeaderDennis_AskForRematch
+[BLUE]Oh, hey there hotshot.\pYou looking for another bout against\nthe Golden God?
+
+#org @gText_UteyaGym_LeaderDee_AskForRematch
+[RED]Hey, long time no see.\pIf you're here, you're probably\nlooking for a battle, huh?
+
+#org @gText_UteyaGym_LeaderDennisAndDee_PreBattle
+[BLUE]Don't think we'll go easy on you just\nbecause you're a kid.\p[RED]You may be the champion, but our\npride is on the line.
+
+#org @gText_UteyaGym_LeaderDennisAndDee_OnPlayerVictory
+Dennis: So you've still got it, huh?\nDee: We still can't win[.]
+
+#org @gText_UteyaGym_LeaderDennis_ChoseNotToBattle
+[BLUE]It's okay if you're intimidated,\nbud. Anyone would be.\pTell you what. Give yourself five,\nand come back when you're feeling\lup to a battle.
+
+#org @gText_UteyaGym_LeaderDennis_BeatenToday
+[BLUE]You've got the goods, that's for\nsure.\pWell, we're gonna toughen up and\ngive you a run for your money next\ltime.
+
+#org @gText_UteyaGym_LeaderDee_ChoseNotToBattle
+[RED]No? Well that's a shame.\pWell, in the meantime we'll keep\ntraining, so we'll only be stronger\llater.
+
+#org @gText_UteyaGym_LeaderDee_BeatenToday
+[RED]Okay, so you're strong.\nDon't get too cozy, though, champ!\pWe'll get tougher and show you what\nwe can do.
+

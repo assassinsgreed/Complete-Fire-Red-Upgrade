@@ -834,6 +834,8 @@ RotateUp:
 EventScript_LaplazGym_LeaderCasey:
     faceplayer
     call SetCaseyGender
+    checkflag 0x82C @ Game is cleared
+    if SET _goto Casey_Postgame
     checkflag 0x824 @ Laplaz gym badge
     if SET _goto EventScript_LaplazTownGym_LeaderCasey_Chat
     msgbox gText_LaplazGym_LeaderCasey_Talk MSG_NORMAL
@@ -877,6 +879,40 @@ EventScript_LaplazGym_LeaderCasey_Defeated:
 
 EventScript_LaplazTownGym_LeaderCasey_Chat:
     npcchat gText_LaplazGym_LeaderCasey_Chat
+    end
+
+Casey_Postgame:
+    checkflag 0xE3B @ Casey Rematch beaten today
+    if SET _goto CaseyRematch_BeatenToday
+    msgbox gText_LaplazGym_LeaderCasey_AskForRematch MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto CaseyRematch_ChoseNotToBattle
+    msgbox gText_LaplazGym_LeaderCasey_PreBattle MSG_NORMAL
+    setvar 0x4000 542 @ Initial trainer ID for first team
+    random 0x4
+    setvar 0x8004 0x4000
+    copyvar 0x8005 LASTRESULT
+    special 0x3E @ Add two vars above, result stored in 0x4000 which is loaded as trainer ID
+    checkgender
+    compare LASTRESULT 0x1 @ Gender is opposite of player
+    if equal _call SetCaseyMaleRematchTeam
+    call SetupMugshotGymLeaderAndBosses
+    trainerbattle3 0x1 0x4000 0x100 gText_LaplazGym_LeaderCasey_OnPlayerVictory
+    setflag 0xE3B @ Casey Rematch beaten today
+    call SetCaseyGender
+    goto CaseyRematch_BeatenToday
+    end
+
+SetCaseyMaleRematchTeam:
+    addvar 0x4000 0x4
+    return
+
+CaseyRematch_ChoseNotToBattle:
+    npcchatwithmovement gText_LaplazGym_LeaderCasey_ChoseNotToBattle m_LookDown
+    end
+
+CaseyRematch_BeatenToday:
+    npcchatwithmovement gText_LaplazGym_LeaderCasey_BeatenToday m_LookDown
     end
 
 .global EventScript_LaplazGym_GymExpert

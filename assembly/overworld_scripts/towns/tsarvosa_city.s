@@ -2586,6 +2586,8 @@ HeldItemsShop4:
 .global EventScript_TsarvosaCity_Gym_LeaderIris
 EventScript_TsarvosaCity_Gym_LeaderIris:
     faceplayer
+    checkflag 0x82C @ Game is cleared
+    if SET _goto Iris_Postgame
     checkflag 0x826 @ Tsarvosa City gym badge obtained
     if SET _goto EventScript_TsarvosaCity_Gym_LeaderIris_Chat
     buffernumber 0x0 VarGymChallengeProgress
@@ -3096,6 +3098,32 @@ EventScript_TsarvosaCity_Gym_LeaderIris_Chat:
 
 IrisCommentsOnLunchWithStella:
     npcchatwithmovement gText_TsarvosaCity_Gym_LeaderIris_CommentOnStellaLunch m_LookDown
+    end
+
+Iris_Postgame:
+    checkflag 0xE3D @ Iris Rematch beaten today
+    if SET _goto IrisRematch_BeatenToday
+    msgbox gText_TsarvosaGym_LeaderIris_AskForRematch MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto IrisRematch_ChoseNotToBattle
+    msgbox gText_TsarvosaGym_LeaderIris_PreBattle MSG_NORMAL
+    setvar 0x4000 554 @ Initial trainer ID for first team
+    random 0x4
+    setvar 0x8004 0x4000
+    copyvar 0x8005 LASTRESULT
+    special 0x3E @ Add two vars above, result stored in 0x4000 which is loaded as trainer ID
+    call SetupMugshotGymLeaderAndBosses
+    trainerbattle3 0x1 0x4000 0x100 gText_TsarvosaGym_LeaderIris_OnPlayerVictory
+    setflag 0xE3D @ Iris Rematch beaten today
+    goto IrisRematch_BeatenToday
+    end
+
+IrisRematch_ChoseNotToBattle:
+    npcchatwithmovement gText_TsarvosaGym_LeaderIris_ChoseNotToBattle m_LookDown
+    end
+
+IrisRematch_BeatenToday:
+    npcchatwithmovement gText_TsarvosaGym_LeaderIris_BeatenToday m_LookDown
     end
 
 .global TileScript_TsarvosaCity_Gym_BarricadeSouth

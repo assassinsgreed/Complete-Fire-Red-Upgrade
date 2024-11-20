@@ -318,6 +318,21 @@ I'm not a sore loser.\pCongratulations! That was a\nfantastic battle.
 #org @gText_BruccieVillageGym_LeaderAbby_Chat
 [RED]Alright, there's nothing left for us\nto discuss.\pYou've got two more badges to\ncollect. You'd better get going.
 
+#org @gText_BruccieGym_LeaderAbby_AskForRematch
+[RED]Hmph, I see the new Champion has\nthe time to check in on us.\pYou haven't gotten soft, have you?\pThen, prove it to me with a battle!
+
+#org @gText_BruccieGym_LeaderAbby_PreBattle
+[RED]I've mastered many strategies.\pToday, I will battle with this team.\nDon't assume we'll be easy to beat!
+
+#org @gText_BruccieGym_LeaderAbby_OnPlayerVictory
+You're still an exceptional trainer.\nGood!
+
+#org @gText_BruccieGym_LeaderAbby_ChoseNotToBattle
+[RED]Disappointing, but I won't push you.\pIf you feel you can take us, then\ncome back another time.
+
+#org @gText_BruccieGym_LeaderAbby_BeatenToday
+[RED]You've still got what it takes, it\nseems.\pWe aren't done yet though!\nWe'll keep training, every day.\pCome see us tomorrow and we'll prove\nhow strong we've become.
+
 #org @gText_BruccieVillageGym_Winners
 Bruccie Village Gym\nVictors: None
 

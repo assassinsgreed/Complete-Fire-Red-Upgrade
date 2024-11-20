@@ -173,6 +173,21 @@ You battled well, [PLAYER].\pYour gym challenge will take you\nto Ferrox Village
 #org @gText_RhodanziGym_Leader_Terrence_TMReceived
 [BLUE]I will also give you TM05, which\ncontains Terrain Pulse. It can be\ltaught to your Pok\emon as many\ltimes as you'd like.\pI'd suggest visiting the terrain tutor\nat Rhodanzi Trainer School to make\lthe most of it.
 
+#org @gText_RhodanziGym_LeaderTerrence_AskForRematch
+Oh, Champion [PLAYER], it's good to\nsee you again!\pI've been thinking about our first\nbattle, when you earned my badge.\pIf you're willing, I'd like to battle\nwith you again to see how much\lyou've grown.\pWhat do you say?
+
+#org @gText_RhodanziGym_LeaderTerrence_PreBattle
+Excellent! Now[.] I think I'll choose\nthis team[.]\pOkay, get ready, [PLAYER].\nI won't hold back today!
+
+#org @gText_RhodanziGym_LeaderTerrence_OnPlayerVictory
+Excellent! You're as capable a\ntrainer as ever, [PLAYER].
+
+#org @gText_RhodanziGym_LeaderTerrence_ChoseNotToBattle
+Don't worry, I won't pressure you to\nsay yes.\pIf you change your mind though,\ncome say hi.
+
+#org @gText_RhodanziGym_LeaderTerrence_BeatenToday
+Battling with you is always so\nexhilerating, [PLAYER].\pI think my Pok\emon and I will take it\neasy for the rest of the day.\pCome see us tomorrow if you'd like to\nbattle again, okay?
+
 // Trainer School
 #org @gText_RhodanziTrainerSchool_MainRoom_Receptionist_GoToDesk
 Oh, hello trainer! Please go to\nthe front of the desk and I'll\lbe happy to help you.

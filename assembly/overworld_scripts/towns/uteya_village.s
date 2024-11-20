@@ -1278,6 +1278,8 @@ EventScript_UteyaVillage_Gym_Clarice:
 .global EventScript_UteyaVillage_Gym_LeaderDennis
 EventScript_UteyaVillage_Gym_LeaderDennis:
     faceplayer
+    checkflag 0x82C @ Game is cleared
+    if SET _goto Dennis_Postgame
     checkflag 0x827 @ Uteya Village gym badge obtained
     if SET _goto LeaderDennisChat
     countpokemon
@@ -1298,6 +1300,8 @@ EventScript_UteyaVillage_Gym_LeaderDennis:
 .global EventScript_UteyaVillage_Gym_LeaderDee
 EventScript_UteyaVillage_Gym_LeaderDee:
     faceplayer
+    checkflag 0x82C @ Game is cleared
+    if SET _goto Dee_Postgame
     checkflag 0x827 @ Uteya Village gym badge obtained
     if SET _goto LeaderDeeChat
     countpokemon
@@ -1380,6 +1384,84 @@ LeaderDennisChat:
 
 LeaderDeeChat:
     npcchatwithmovement gText_UteyaVillageGym_LeaderDee_Chat m_LookDown
+    end
+
+Dennis_Postgame:
+    checkflag 0xE3E @ Dennis and Dee Rematch beaten today
+    if SET _goto DennisRematch_BeatenToday
+    msgbox gText_UteyaGym_LeaderDennis_AskForRematch MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto DennisRematch_ChoseNotToBattle
+    countpokemon
+    compare LASTRESULT 0x1
+    if equal _goto CannotBattle_Dennis
+    getplayerpos 0x4000 0x4001
+    compare 0x4001 0x5
+    if notequal _call DennisRepositioning
+    call DennisAndDee_Battle
+    goto DennisRematch_BeatenToday
+
+DennisRepositioning:
+    msgbox gText_UteyaVillageGym_LeaderDennis_PrePositioningPlayer MSG_NORMAL
+    compare 0x4001 0x3
+    if equal _call PlayerWalkFromAboveDennis
+    applymovement PLAYER m_PlayerWalkInFront_Dennis
+    waitmovement PLAYER
+    applymovement LASTTALKED m_LookDown
+    msgbox gText_UteyaVillageGym_LeaderDennis_AfterPositioningPlayer MSG_NORMAL
+    return
+
+Dee_Postgame:
+    checkflag 0xE3E @ Dennis and Dee Rematch beaten today
+    if SET _goto DeeRematch_BeatenToday
+    msgbox gText_UteyaGym_LeaderDee_AskForRematch MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto DeeRematch_ChoseNotToBattle
+    countpokemon
+    compare LASTRESULT 0x1
+    if equal _goto CannotBattle_Dee
+    getplayerpos 0x4000 0x4001
+    compare 0x4001 0x5
+    if notequal _call DeeRepositioning
+    call DennisAndDee_Battle
+    goto DeeRematch_BeatenToday
+
+DeeRepositioning:
+    msgbox gText_UteyaVillageGym_LeaderDee_PrePositioningPlayer MSG_NORMAL
+    compare 0x4001 0x3
+    if equal _call PlayerWalkFromAboveDee
+    applymovement PLAYER m_PlayerWalkInFront_Dee
+    waitmovement PLAYER
+    applymovement LASTTALKED m_LookDown
+    msgbox gText_UteyaVillageGym_LeaderDee_AfterPositioningPlayer MSG_NORMAL
+    return
+
+DennisAndDee_Battle:
+    msgbox gText_UteyaGym_LeaderDennisAndDee_PreBattle MSG_NORMAL
+    setvar 0x4000 558 @ Initial trainer ID for first team
+    random 0x4
+    setvar 0x8004 0x4000
+    copyvar 0x8005 LASTRESULT
+    special 0x3E @ Add two vars above, result stored in 0x4000 which is loaded as trainer ID
+    call SetupMugshotGymLeaderAndBosses
+    trainerbattle3 0x1 0x4000 0x100 gText_UteyaGym_LeaderDennisAndDee_OnPlayerVictory
+    setflag 0xE3E @ Dennis And Dee Rematch beaten today
+    return
+
+DennisRematch_ChoseNotToBattle:
+    npcchatwithmovement gText_UteyaGym_LeaderDennis_ChoseNotToBattle m_LookDown
+    end
+
+DennisRematch_BeatenToday:
+    npcchatwithmovement gText_UteyaGym_LeaderDennis_BeatenToday m_LookDown
+    end
+
+DeeRematch_ChoseNotToBattle:
+    npcchatwithmovement gText_UteyaGym_LeaderDee_ChoseNotToBattle m_LookDown
+    end
+
+DeeRematch_BeatenToday:
+    npcchatwithmovement gText_UteyaGym_LeaderDee_BeatenToday m_LookDown
     end
 
 .global SignScript_UteyaVillageGym_Placard

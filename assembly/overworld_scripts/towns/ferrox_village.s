@@ -331,6 +331,8 @@ EventScript_FerroxGym_GymExpertTips:
 EventScript_FerroxGym_LeaderStella:
     lockall
     faceplayer
+    checkflag 0x82C @ Game is cleared
+    if SET _goto Stella_Postgame
     checkflag 0x821 @ Ferrox gym badge
     if SET _goto EventScript_FerroxGym_LeaderStella_Chat
     msgbox gText_FerroxGym_LeaderStella_Talk MSG_NORMAL
@@ -363,6 +365,32 @@ EventScript_FerroxGym_LeaderStella_Defeated:
 
 EventScript_FerroxGym_LeaderStella_Chat:
     npcchat gText_FerroxGym_LeaderStella_Chat
+    end
+
+Stella_Postgame:
+    checkflag 0xE38 @ Stella Rematch beaten today
+    if SET _goto StellaRematch_BeatenToday
+    msgbox gText_FerroxGym_LeaderStella_AskForRematch MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto StellaRematch_ChoseNotToBattle
+    msgbox gText_FerroxGym_LeaderStella_PreBattle MSG_NORMAL
+    setvar 0x4000 530 @ Initial trainer ID for first team
+    random 0x4
+    setvar 0x8004 0x4000
+    copyvar 0x8005 LASTRESULT
+    special 0x3E @ Add two vars above, result stored in 0x4000 which is loaded as trainer ID
+    call SetupMugshotGymLeaderAndBosses
+    trainerbattle3 0x1 0x4000 0x100 gText_FerroxGym_LeaderStella_OnPlayerVictory
+    setflag 0xE38 @ Stella Rematch beaten today
+    goto StellaRematch_BeatenToday
+    end
+
+StellaRematch_ChoseNotToBattle:
+    npcchatwithmovement gText_FerroxGym_LeaderStella_ChoseNotToBattle m_LookDown
+    end
+
+StellaRematch_BeatenToday:
+    npcchatwithmovement gText_FerroxGym_LeaderStella_BeatenToday m_LookDown
     end
 
 .global EventScript_FerroxLibrary_ReadBookPromptL
