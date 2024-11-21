@@ -5405,7 +5405,7 @@ const struct TrainerMonNoItemDefaultMoves sParty_Route20_JugglerHiram[] = {
     { .lvl = 53, .species = SPECIES_MR_MIME_G }
 };
 
-const struct TrainerMonNoItemDefaultMoves sParty_Route20_NurseJessie[] = {
+const struct TrainerMonNoItemDefaultMoves sParty_Route20_NurseJudy[] = {
     { .lvl = 52, .species = SPECIES_COMFEY },
     { .lvl = 52, .species = SPECIES_CHANSEY }
 };
@@ -5480,6 +5480,10 @@ const struct TrainerMonNoItemDefaultMoves sParty_Route21_RockerAxel[] = {
     { .lvl = 51, .species = SPECIES_VIBRAVA },
     { .lvl = 51, .species = SPECIES_TOXTRICITY },
     { .lvl = 52, .species = SPECIES_RILLABOOM }
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_Route21_NurseBenedikta[] = {
+    { .lvl = 53, .species = SPECIES_HATTERENE }
 };
 // #endregion
 
@@ -7403,9 +7407,9 @@ const struct TrainerMonItemCustomMoves sParty_UteyaVillageGym_Clarice[] = {
         .species = SPECIES_ORANGURU,
         .moves = {
             MOVE_INSTRUCT,
-            MOVE_NONE,
-            MOVE_NONE,
-            MOVE_NONE
+            MOVE_AFTERYOU, // For when the partner is not using an instructable move (like follow me)
+            MOVE_TAUNT,
+            MOVE_QUASH
         },
         .heldItem = ITEM_LEFTOVERS,
         .ability = Ability_2 // Telepathy
@@ -7527,7 +7531,7 @@ const struct TrainerMonNoItemDefaultMoves sParty_UteyanRuins_RuinManiacKristian[
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_UteyanRuins_PsychicHaley[] = {
-    { .lvl = 63, .species = SPECIES_BEHEEYEM }
+    { .lvl = 63, .species = SPECIES_ESPEON }
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_UteyanRuins_RuinManiacCyril[] = {
@@ -15242,17 +15246,17 @@ const struct Trainer gTrainers[] = {
         .partySize = NELEMS(sParty_Route20_JugglerHiram),
         .party = {.NoItemDefaultMoves = sParty_Route20_JugglerHiram}
     },
-    [TRAINER_ROUTE_20_NURSE_JESSIE] = {
+    [TRAINER_ROUTE_20_NURSE_JUDY] = {
         .partyFlags = 0,
         .trainerClass = CLASS_NURSE,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .trainerPic = TRAINER_PIC_NURSE,
-        .trainerName = {_J, _e, _s, _s, _i, _e, _END},
+        .trainerName = {_J, _u, _d, _y, _END},
         .items = { ITEM_HYPER_POTION },
         .doubleBattle = FALSE,
         .aiFlags = TrainerAIFlags_Nurse_Standard,
-        .partySize = NELEMS(sParty_Route20_NurseJessie),
-        .party = {.NoItemDefaultMoves = sParty_Route20_NurseJessie}
+        .partySize = NELEMS(sParty_Route20_NurseJudy),
+        .party = {.NoItemDefaultMoves = sParty_Route20_NurseJudy}
     },
     // #endregion
     // #region Route 22
@@ -15401,6 +15405,18 @@ const struct Trainer gTrainers[] = {
         .aiFlags = TrainerAIFlags_Guitarist_Standard,
         .partySize = NELEMS(sParty_Route21_RockerAxel),
         .party = {.NoItemDefaultMoves = sParty_Route21_RockerAxel}
+    },
+    [TRAINER_ROUTE_21_NURSE_BENEDIKTA] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_NURSE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .trainerPic = TRAINER_PIC_NURSE,
+        .trainerName = {_B, _e, _n, _e, _d, _i, _k, _t, _a, _END},
+        .items = { ITEM_HYPER_POTION },
+        .doubleBattle = FALSE,
+        .aiFlags = TrainerAIFlags_Nurse_Standard,
+        .partySize = NELEMS(sParty_Route21_NurseBenedikta),
+        .party = {.NoItemDefaultMoves = sParty_Route21_NurseBenedikta}
     },
     // #endregion
     // #region Secret Trail

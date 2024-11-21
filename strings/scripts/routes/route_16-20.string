@@ -556,16 +556,16 @@ Oh, no! I dropped my Pok\e Balls!
 #org @gText_Route20_JugglerHiram_Chat
 Guess there's a first time for\neverything, huh?
 
-#org @gText_Route20_NurseJessie_Intro
+#org @gText_Route20_NurseJudy_Intro
 I got assigned to Mimmett Jungle,\nbut it's awfully boring.\pWould you entertain me with a\nbattle?
 
-#org @gText_Route20_NurseJessie_Defeat
+#org @gText_Route20_NurseJudy_Defeat
 Thank you!
 
-#org @gText_Route20_NurseJessie_Chat
+#org @gText_Route20_NurseJudy_Chat
 Our battle really livened things\nup around here.\pAs thank you, please allow me to\nheal your Pok\emon[.]
 
-#org @gText_Route20_NurseJessie_HealingComplete
+#org @gText_Route20_NurseJudy_HealingComplete
 There, all better!
 
 #org @gText_Route20_VictoryRoadNavigationSign

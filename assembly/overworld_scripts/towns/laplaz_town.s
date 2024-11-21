@@ -652,6 +652,10 @@ NotEnoughPokeChips:
 .equ TileSpriteRight, 0x2C2
 .equ TileSpriteDown, 0x2C3
 .equ TileSpriteUp, 0x2C4
+.equ StaticTileRight, 0x28A
+.equ StaticTileUp, 0x28C
+.equ StaticTileRight_BehindWall, 0x2BC
+.equ Passable, 0x0
 .equ Casey, 0x1
 
 .global MapScript_LaplazGym_RotatingFloorTiles
@@ -675,7 +679,63 @@ LevelScripts_LaplazGym:
 LevelScripts_LaplazGym_SetPlayerFacing:
     @ Player may warp here after tile event, due to engine limitations. Set their facing to up
     spriteface PLAYER UP
+    call SetQuickAccessTiles
     end
+
+SetQuickAccessTiles:
+    setmaptile 0x5 0x7 StaticTileRight_BehindWall Passable
+    setmaptile 0x1 0x7 StaticTileRight Passable
+    setmaptile 0x1 0x8 StaticTileUp Passable
+    setmaptile 0x1 0x9 StaticTileUp Passable
+    setmaptile 0x1 0xA StaticTileUp Passable
+    setmaptile 0x1 0xB StaticTileUp Passable
+    setmaptile 0x1 0xC StaticTileUp Passable
+    setmaptile 0x1 0xD StaticTileUp Passable
+    setmaptile 0x1 0xE StaticTileUp Passable
+    setmaptile 0x1 0xF StaticTileUp Passable
+    setmaptile 0x1 0x10 StaticTileUp Passable
+    setmaptile 0x1 0x11 StaticTileUp Passable
+    setmaptile 0x1 0x12 StaticTileUp Passable
+    setmaptile 0x1 0x13 StaticTileUp Passable
+    setmaptile 0x1 0x14 StaticTileUp Passable
+    setmaptile 0x1 0x15 StaticTileUp Passable
+    setmaptile 0x1 0x16 StaticTileUp Passable
+    setmaptile 0x1 0x17 StaticTileUp Passable
+    setmaptile 0x1 0x18 StaticTileUp Passable
+    setmaptile 0x1 0x19 StaticTileUp Passable
+    setmaptile 0x1 0x1A StaticTileUp Passable
+    setmaptile 0x1 0x1B StaticTileUp Passable
+    setmaptile 0x1 0x1C StaticTileUp Passable
+    setmaptile 0x1 0x1D StaticTileUp Passable
+    setmaptile 0x1 0x1E StaticTileUp Passable
+    setmaptile 0x1 0x1F StaticTileUp Passable
+    setmaptile 0x1 0x20 StaticTileUp Passable
+    setmaptile 0x1 0x21 StaticTileUp Passable
+    setmaptile 0x1 0x22 StaticTileUp Passable
+    setmaptile 0x1 0x23 StaticTileUp Passable
+    setmaptile 0x1 0x24 StaticTileUp Passable
+    setmaptile 0x1 0x25 StaticTileUp Passable
+    setmaptile 0x1 0x26 StaticTileUp Passable
+    setmaptile 0x1 0x27 StaticTileUp Passable
+    setmaptile 0x1 0x28 StaticTileUp Passable
+    setmaptile 0x1 0x29 StaticTileUp Passable
+    setmaptile 0x1 0x2A StaticTileUp Passable
+    setmaptile 0x1 0x2B StaticTileUp Passable
+    setmaptile 0x1 0x2C StaticTileUp Passable
+    setmaptile 0x1 0x2D StaticTileUp Passable
+    setmaptile 0x1 0x2E StaticTileUp Passable
+    setmaptile 0x1 0x2F StaticTileUp Passable
+    setmaptile 0x1 0x30 StaticTileUp Passable
+    setmaptile 0x1 0x31 StaticTileUp Passable
+    setmaptile 0x1 0x32 StaticTileUp Passable
+    setmaptile 0x1 0x33 StaticTileUp Passable
+    setmaptile 0x1 0x34 StaticTileUp Passable
+    setmaptile 0x1 0x35 StaticTileUp Passable
+    setmaptile 0x1 0x36 StaticTileUp Passable
+    setmaptile 0x1 0x37 StaticTileUp Passable
+    setmaptile 0x1 0x38 StaticTileUp Passable
+    special 0x8E @ Refresh map changes
+    return
 
 @ Assigned as a walking script, to trigger on each step
 .global LaplazGym_RotationSteps
@@ -828,7 +888,6 @@ RotateLeft:
 RotateUp:
     setmaptile 0x8004 0x8005 TileSpriteUp 0x0
     return
-
 
 .global EventScript_LaplazGym_LeaderCasey
 EventScript_LaplazGym_LeaderCasey:
@@ -1001,6 +1060,7 @@ TileScript_LaplazGym_IntroduceCasey:
     compare LASTRESULT 0x0
     if equal _call FemaleCaseyBackstory
     if notequal _call MaleCaseyBackstory
+    msgbox gText_LaplazGym_CaseyEnablesEasyTiles MSG_NORMAL
     fadedefaultbgm
     applymovement Casey m_CaseyWalksToPodium
     pause DELAY_1SECOND

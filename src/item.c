@@ -641,7 +641,7 @@ bool8 CanMonLearnTutorMove(struct Pokemon* mon, u8 tutorId)
 				|| gBaseStats[species].type2 == TYPE_DARK;
 		case TUTOR_SPECIAL_AUTOMIZE:
 		case TUTOR_SPECIAL_METALBURST:
-		case TUTOR_SPECIAL_GYROBALL:
+		case TUTOR_SPECIAL_HEAVYSLAM:
 			return gBaseStats[species].type1 == TYPE_STEEL
 				|| gBaseStats[species].type2 == TYPE_STEEL;
 		case TUTOR_SPECIAL_CRAFTYSHIELD:
@@ -775,8 +775,8 @@ u16 GetExpandedTutorMove(u8 tutorId)
 			return MOVE_AUTOTOMIZE;
 		case TUTOR_SPECIAL_METALBURST:
 			return MOVE_METALBURST;
-		case TUTOR_SPECIAL_GYROBALL:
-			return MOVE_GYROBALL;
+		case TUTOR_SPECIAL_HEAVYSLAM:
+			return MOVE_HEAVYSLAM;
 		case TUTOR_SPECIAL_CRAFTYSHIELD:
 			return MOVE_CRAFTYSHIELD;
 		case TUTOR_SPECIAL_DRAININGKISS:

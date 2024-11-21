@@ -87,7 +87,6 @@ LevelScript_AscensionTower_RegisteringForEliteFourChallenge:
     applymovement RivalOnFirstFloor m_Joy
     msgbox gText_AscensionTower_EliteFourChallengeRegistration_RivalUnderstands MSG_NORMAL
     msgbox gText_AscensionTower_EliteFourChallengeRegistration_SeleneExplainsVictoryRoadChallenge MSG_NORMAL
-    msgbox gText_AscensionTower_EliteFourChallengeRegistration_RivalUnderstandsChallenge MSG_NORMAL
     msgbox gText_AscensionTower_EliteFourChallengeRegistration_SeleneExplainsEliteFourChallenge MSG_NORMAL
     msgbox gText_AscensionTower_EliteFourChallengeRegistration_RivalHasNoQuestions MSG_NORMAL
     msgbox gText_AscensionTower_EliteFourChallengeRegistration_SeleneBidsPlayerAndRivalFarewell MSG_NORMAL
@@ -193,6 +192,14 @@ TakeEliteFourChallenge:
 
 NoVictoryFlag:
     msgbox gText_AscensionTower_EliteFourAttendant_NoChampionsFlag MSG_NORMAL
+    checkflag 0x27F @ Victory Road challenge started
+    if SET _goto NoVictoryFlag_AlreadyRegisteredForVictoryRoad
+    msgbox gText_AscensionTower_EliteFourAttendant_NoChampionsFlag_HasNotEarnedRightToEnterVictoryRoad MSG_NORMAL
+    release
+    end
+
+NoVictoryFlag_AlreadyRegisteredForVictoryRoad:
+    msgbox gText_AscensionTower_EliteFourAttendant_NoChampionsFlag_HasEarnedRightToEnterVictoryRoad MSG_NORMAL
     release
     end
 
