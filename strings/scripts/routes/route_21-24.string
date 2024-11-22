@@ -83,6 +83,18 @@ Yes, excellent! You are permitted to\nenter Victory Road.
 #org @gText_Route21_VictoryRoadGuard_WishesLuck
 Please proceed, and strive to excel\nin all things, always.
 
+#org @gText_Route20_NurseBenedikta_Intro
+Are you good enough to challenge\nVictory Road?\pI'll be the judge of that!
+
+#org @gText_Route20_NurseBenedikta_Defeat
+Yes, I think you've got what it\ntakes!
+
+#org @gText_Route20_NurseBenedikta_Chat
+If you're going for the top, you'll\nneed to be well rested.\pHere, let me heal your tired\nPok\emon[.]
+
+#org @gText_Route20_NurseBenedikta_HealingComplete
+All better!\pYou're looking ready to tackle\nwhatever comes your way now.
+
 #org @gText_Route21_TrainerTips
 Trainer Tips!\pSome wild Pok\emon hold items.\pWhen caught, you can choose to put\nthose items directly into your bag.
 

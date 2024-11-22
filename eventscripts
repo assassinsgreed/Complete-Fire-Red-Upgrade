@@ -2021,7 +2021,7 @@ npc 3 38 10 EventScript_Route20_HikerRoyce
 npc 3 38 11 EventScript_Route20_SuperNerdElliot
 npc 3 38 12 EventScript_Route20_YoungsterDewey
 npc 3 38 13 EventScript_Route20_JugglerHiram
-npc 3 38 14 EventScript_Route20_NurseJessie
+npc 3 38 14 EventScript_Route20_NurseJudy
 npc 3 38 15 ItemScript_Common_Healball
 npc 3 38 16 ItemScript_Common_FullHeal
 npc 3 38 17 ItemScript_Common_PPUp
@@ -2089,6 +2089,7 @@ npc 3 39 17 EventScript_Route21_ParasolLadyKatrina
 npc 3 39 18 EventScript_Route21_NinjaBoyIshan
 npc 3 39 19 EventScript_Route21_RockerAxel
 npc 3 39 20 EventScript_Route21_VictoryRoadGuard
+npc 3 39 21 EventScript_Route21_NurseBenedikta
 sign 3 39 0 SignScript_Route21_TrainerTips
 sign 3 39 1 SignScript_Route21_VictoryRoad
 
@@ -2129,8 +2130,7 @@ npc 1 66 4 EventScript_Common_Strength
 npc 1 66 5 EventScript_Common_Strength
 npc 1 66 6 EventScript_Common_Strength
 npc 1 66 7 EventScript_Common_Strength
-npc 1 66 8 EventScript_Common_Strength
-npc 1 66 9 EventScript_MimmettJungle_TM28_LeechLife
+npc 1 66 8 EventScript_MimmettJungle_TM28_LeechLife
 npc 1 67 0 ItemScript_Common_Ultraball
 npc 1 67 1 EventScript_MimmettJungle_PsychicWanda
 npc 1 71 0 EventScript_MimmettJungle_Zeraora

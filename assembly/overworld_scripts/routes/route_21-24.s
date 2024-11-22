@@ -99,6 +99,21 @@ PlayerMovesOutOfGuardsWay:
     waitmovement PLAYER
     return
 
+.global EventScript_Route21_NurseBenedikta
+EventScript_Route21_NurseBenedikta:
+    faceplayer
+    checktrainerflag 562
+    if SET _goto NurseBenediktaHeal
+    trainerbattle2 0x0 562 0x0 gText_Route20_NurseBenedikta_Intro gText_Route20_NurseBenedikta_Defeat NurseBenediktaHeal
+    call NurseBenediktaHeal
+    end
+
+NurseBenediktaHeal:
+    msgbox gText_Route20_NurseBenedikta_Chat MSG_NORMAL
+    call PlayerHealNurse
+    msgbox gText_Route20_NurseBenedikta_HealingComplete MSG_NORMAL
+    end
+
 .global SignScript_Route21_TrainerTips
 SignScript_Route21_TrainerTips:
     msgbox gText_Route21_TrainerTips MSG_SIGN

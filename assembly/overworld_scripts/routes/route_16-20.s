@@ -1094,19 +1094,19 @@ EventScript_Route20_JugglerHiram:
     msgbox gText_Route20_JugglerHiram_Chat MSG_NORMAL
     end
 
-.global EventScript_Route20_NurseJessie
-EventScript_Route20_NurseJessie:
+.global EventScript_Route20_NurseJudy
+EventScript_Route20_NurseJudy:
     faceplayer
     checktrainerflag 384
-    if SET _goto NurseJessieHeal
-    trainerbattle2 0x0 384 0x0 gText_Route20_NurseJessie_Intro gText_Route20_NurseJessie_Defeat NurseJessieHeal
-    call NurseJessieHeal
+    if SET _goto NurseJudyHeal
+    trainerbattle2 0x0 384 0x0 gText_Route20_NurseJudy_Intro gText_Route20_NurseJudy_Defeat NurseJudyHeal
+    call NurseJudyHeal
     end
 
-NurseJessieHeal:
-    msgbox gText_Route20_NurseJessie_Chat MSG_NORMAL
+NurseJudyHeal:
+    msgbox gText_Route20_NurseJudy_Chat MSG_NORMAL
     call PlayerHealNurse
-    msgbox gText_Route20_NurseJessie_HealingComplete MSG_NORMAL
+    msgbox gText_Route20_NurseJudy_HealingComplete MSG_NORMAL
     end
 
 .global SignScript_Route20_VictoryRoadNavigation

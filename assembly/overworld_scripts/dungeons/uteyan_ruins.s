@@ -104,6 +104,7 @@ UtyeanRuins_ChambersCommon_ChamberHasBeenOpened:
 
 .global SignScript_UteyanRuins_ChamberDoor_Bottom
 SignScript_UteyanRuins_ChamberDoor_Bottom:
+    lock
     checkflag 0x27E @ Bottom chamber solved
     if SET _goto UtyeanRuins_ChambersCommon_ChamberHasBeenOpened
     checkitem ITEM_DECODER 0x1
@@ -157,6 +158,7 @@ OpenBottomChamber:
 
 .global SignScript_UteyanRuins_ChamberDoor_Left
 SignScript_UteyanRuins_ChamberDoor_Left:
+    lock
     checkflag 0x27C @ Left chamber solved
     if SET _goto UtyeanRuins_ChambersCommon_ChamberHasBeenOpened
     checkitem ITEM_DECODER 0x1
@@ -167,17 +169,22 @@ SignScript_UteyanRuins_ChamberDoor_Left:
     special 0x9F @ Choose pokemon from party
     waitstate
     compare 0x8004 0x6 @ Cancelled out
-    if greaterorequal _goto End
+    if greaterorequal _goto ChamberDoor_Left_WrongChoice
     setvar 0x8003 0x0 @ Check from party; 0x8004 holds index
     special2 LASTRESULT 0x18 @ Get species from chosen index
     compare LASTRESULT SPECIES_SHEDINJA
-    if notequal _goto End
+    if notequal _goto ChamberDoor_Left_WrongChoice
     @ Puzzle solved!
     setflag 0x27C @ Left chamber solved
     call UtyeanRuins_ChambersCommon_DoorOpening
     call OpenLeftChamber
     special 0x8E
     msgbox gText_UteyanRuins_ChamberCommon_ChamberOpened MSG_NORMAL
+    end
+
+ChamberDoor_Left_WrongChoice:
+    msgbox gText_UteyanRuins_ChamberLeft_IncorrectChoice MSG_NORMAL
+    release
     end
 
 ChamberDoor_Left:
@@ -198,6 +205,7 @@ OpenLeftChamber:
 
 .global SignScript_UteyanRuins_ChamberDoor_Middle
 SignScript_UteyanRuins_ChamberDoor_Middle:
+    lock
     checkflag 0x27B @ Middle chamber solved
     if SET _goto UtyeanRuins_ChambersCommon_ChamberHasBeenOpened
     checkitem ITEM_DECODER 0x1
@@ -224,6 +232,7 @@ OpenMiddleChamber:
 
 .global SignScript_UteyanRuins_ChamberMiddle_SolutionTile
 SignScript_UteyanRuins_ChamberMiddle_SolutionTile:
+    lock
     checkflag 0x27B
     if SET _goto End
     setflag 0x27B @ Middle chamber solved
@@ -239,6 +248,7 @@ SignScript_UteyanRuins_ChamberMiddle_SolutionTile:
 
 .global SignScript_UteyanRuins_ChamberDoor_Right
 SignScript_UteyanRuins_ChamberDoor_Right:
+    lock
     checkflag 0x27D @ Right chamber solved
     if SET _goto UtyeanRuins_ChambersCommon_ChamberHasBeenOpened
     checkitem ITEM_DECODER 0x1
@@ -293,6 +303,7 @@ OpenRightChamber:
 
 .global SignScript_UteyanRuins_ChamberDoor_Top
 SignScript_UteyanRuins_ChamberDoor_Top:
+    lock
     checkflag 0x27A @ Top chamber solved
     if SET _goto UtyeanRuins_ChambersCommon_ChamberHasBeenOpened
     checkitem ITEM_DECODER 0x1
@@ -333,6 +344,7 @@ ResetHistory:
 
 .global SignScript_UteyanRuins_History1
 SignScript_UteyanRuins_History1:
+    lock
     checkitem ITEM_DECODER 0x1
     compare LASTRESULT TRUE
     if notequal _call History1
@@ -353,6 +365,7 @@ History1_Decoded:
 
 .global SignScript_UteyanRuins_History2
 SignScript_UteyanRuins_History2:
+    lock
     checkitem ITEM_DECODER 0x1
     compare LASTRESULT TRUE
     if notequal _call History2
@@ -375,6 +388,7 @@ History2_Decoded:
 
 .global SignScript_UteyanRuins_History3
 SignScript_UteyanRuins_History3:
+    lock
     checkitem ITEM_DECODER 0x1
     compare LASTRESULT TRUE
     if notequal _call History3
@@ -397,6 +411,7 @@ History3_Decoded:
 
 .global SignScript_UteyanRuins_History4
 SignScript_UteyanRuins_History4:
+    lock
     checkitem ITEM_DECODER 0x1
     compare LASTRESULT TRUE
     if notequal _call History4

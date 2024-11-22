@@ -2048,7 +2048,7 @@ TutorSteel2:
 
 TutorSteel3:
     setvar 0x8005 123
-    bufferattack 0x2 MOVE_GYROBALL
+    bufferattack 0x2 MOVE_HEAVYSLAM
     goto TutorPokemon
 
 .global EventScript_TsarvosaCity_GymTraineeCafe_Faye
