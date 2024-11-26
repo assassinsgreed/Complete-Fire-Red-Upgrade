@@ -3141,6 +3141,25 @@ extern const u8 gText_GameStats_TimesStruggleWasUsed[];
 extern const u8 gText_GameStats_TimesLedgesWereJumpedOffOf[];
 extern const u8 gText_GameStats_TimesThePlayerWasRainedOn[];
 
+// Game Modifiers
+extern const u8 gText_GameModifiers_RandomizerSpecies[];
+extern const u8 gText_GameModifiers_RandomizerAbilities[];
+extern const u8 gText_GameModifiers_RandomizerMovesets[];
+extern const u8 gText_GameModifiers_InverseBattles[];
+extern const u8 gText_GameModifiers_CamomonBattles[];
+extern const u8 gText_GameModifiers_DoubleBattles[];
+extern const u8 gText_GameModifiers_GuaranteedCaptures[];
+extern const u8 gText_GameModifiers_CatchTrainerPokemon[];
+extern const u8 gText_GameModifiers_ScaleWildPokemon[];
+extern const u8 gText_GameModifiers_ScaleTrainerPokemon[];
+extern const u8 gText_GameModifiers_HiddenAbilities[];
+extern const u8 gText_GameModifiers_ShinyPokemon[];
+extern const u8 gText_GameModifiers_MoveReminderAllMoves[];
+extern const u8 gText_GameModifiers_KeepHeldItemsAfterBattle[];
+extern const u8 gText_GameModifiers_DexNavShowAll[];
+extern const u8 gText_GameModifiers_PermanentWeather[];
+extern const u8 gText_GameModifiers_PermanentTerrain[];
+
 //Scrolling Lists
 static const u8* sTutorFerrox[] =
 {
@@ -3411,6 +3430,28 @@ static const u8* sGameStats[] =
 	gText_End,
 };
 
+static const u8* sGameModifiers[] =
+{
+	gText_GameModifiers_RandomizerSpecies,
+	gText_GameModifiers_RandomizerAbilities,
+	gText_GameModifiers_RandomizerMovesets,
+	gText_GameModifiers_InverseBattles,
+	gText_GameModifiers_CamomonBattles,
+	gText_GameModifiers_DoubleBattles,
+	gText_GameModifiers_GuaranteedCaptures,
+	gText_GameModifiers_CatchTrainerPokemon,
+	gText_GameModifiers_ScaleWildPokemon,
+	gText_GameModifiers_ScaleTrainerPokemon,
+	gText_GameModifiers_HiddenAbilities,
+	gText_GameModifiers_ShinyPokemon,
+	gText_GameModifiers_MoveReminderAllMoves,
+	gText_GameModifiers_KeepHeldItemsAfterBattle,
+	gText_GameModifiers_DexNavShowAll,
+	gText_GameModifiers_PermanentWeather,
+	gText_GameModifiers_PermanentTerrain,
+	gText_End,
+};
+
 // Multichoice Lists
 const struct ScrollingMulti gScrollingSets[] =
 {
@@ -3431,7 +3472,8 @@ const struct ScrollingMulti gScrollingSets[] =
 	{sPokeChipCrusher, ARRAY_COUNT(sPokeChipCrusher)},
 	{sTutorsUteya, ARRAY_COUNT(sTutorsUteya)},
 	{sNatures, ARRAY_COUNT(sNatures)},
-	{sGameStats, ARRAY_COUNT(sGameStats)}
+	{sGameStats, ARRAY_COUNT(sGameStats)},
+	{sGameModifiers, ARRAY_COUNT(sGameModifiers)}
 };
 
 //Link number of opts shown at once to the box height
@@ -3728,4 +3770,17 @@ void ResetAllLegendaries()
 			FlagClear(speciesFlags[i]);
 		}
 	}
+}
+
+void ComputeCompletedGameModifierRequirements()
+{
+	// All Trainer Houses cleared (indicated by their grand prize flags) + became champion
+	if (FlagGet(0x24F) && FlagGet(0x26C) && FlagGet(0x252) && FlagGet(0x277) && FlagGet(FLAG_SYS_GAME_CLEAR))
+	{
+		FlagSet(FLAG_GAMEMODIFIER_INVERSEBATTLES_UNLOCKED);
+		FlagSet(FLAG_GAMEMODIFIER_CAMOMONBATTLES_UNLOCKED);
+		FlagSet(FLAG_GAMEMODIFIER_DOUBLEBATTLES_UNLOCKED);
+	}
+
+	// TODO Later: Other modifier unlocks!
 }

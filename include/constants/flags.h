@@ -180,21 +180,23 @@
 #define FLAG_HIDE_SAFFRON_CITY_POKECENTER_SABRINA_JOURNALS 0x0AE
 
 // Unused?
-#define FLAG_0x0AF               0x0AF
-#define FLAG_0x0B0               0x0B0
-#define FLAG_0x0B1               0x0B1
-#define FLAG_0x0B2               0x0B2
-#define FLAG_0x0B3               0x0B3
-#define FLAG_0x0B4               0x0B4
-#define FLAG_0x0B5               0x0B5
-#define FLAG_0x0B6               0x0B6
-#define FLAG_0x0B7               0x0B7
-#define FLAG_0x0B8               0x0B8
-#define FLAG_0x0B9               0x0B9
-#define FLAG_0x0BA               0x0BA
-#define FLAG_0x0BB               0x0BB
-#define FLAG_0x0BC               0x0BC
-#define FLAG_0x0BD               0x0BD
+*/
+#define FLAG_GAMEMODIFIER_RANDOMIZER_UNLOCKED              0x0AF
+#define FLAG_GAMEMODIFIER_INVERSEBATTLES_UNLOCKED          0x0B0
+#define FLAG_GAMEMODIFIER_CAMOMONBATTLES_UNLOCKED          0x0B1
+#define FLAG_GAMEMODIFIER_DOUBLEBATTLES_UNLOCKED           0x0B2
+#define FLAG_GAMEMODIFIER_GUARANTEEDCAPTURES_UNLOCKED      0x0B3
+#define FLAG_GAMEMODIFIER_CATCHTRAINERPOKEMON_UNLOCKED     0x0B4
+#define FLAG_GAMEMODIFIER_SCALEWILDPOKEMON_UNLOCKED        0x0B5
+#define FLAG_GAMEMODIFIER_SCALETRAINERPOKEMON_UNLOCKED     0x0B6
+#define FLAG_GAMEMODIFIER_HIDDENABILITIES_UNLOCKED         0x0B7
+#define FLAG_GAMEMODIFIER_SHINIES_UNLOCKED                 0x0B8
+#define FLAG_GAMEMODIFIER_MOVEREMINDERALLMOVES_UNLOCKED    0x0B9
+#define FLAG_GAMEMODIFIER_KEEPHELDCONSUMABLES_UNLOCKED     0x0BA
+#define FLAG_GAMEMODIFIER_DEXNAVSHOWALL_UNLOCKED           0x0BB
+#define FLAG_GAMEMODIFIER_PERMANENTWEATHER_UNLOCKED        0x0BC
+#define FLAG_GAMEMODIFIER_PERMANENTTERRAIN_UNLOCKED        0x0BD
+/*
 #define FLAG_0x0BE               0x0BE
 #define FLAG_0x0BF               0x0BF
 #define FLAG_0x0C0               0x0C0
@@ -342,9 +344,9 @@
 #define FLAG_0x14E               0x14E
 #define FLAG_0x14F               0x14F
 #define FLAG_0x150               0x150
-#define FLAG_0x151               0x151
-#define FLAG_0x152               0x152
-#define FLAG_0x153               0x153
+#define FLAG_DO_NOT_DISABLE_INVERSE_BATTLES                     0x151
+#define FLAG_DO_NOT_DISABLE_CAMOMON_BATTLES                     0x152
+#define FLAG_DO_NOT_DISABLE_TRAINER_LEVEL_SCALING               0x153
 
 // Item ball hide/show
 #define FLAG_HIDE_ROUTE1_POKEBALL                               0x154
@@ -1334,8 +1336,8 @@
 #define FLAG_0x4FB                            0x4FB
 #define FLAG_0x4FC                            0x4FC
 #define FLAG_0x4FD                            0x4FD
-#define FLAG_DO_NOT_RESET_INVERSE_BATTLES     0x4FE
-#define FLAG_DO_NOT_RESET_TRAINER_SCALING     0x4FF
+#define FLAG_0x4FE                            0x4FE
+#define FLAG_0x4FF                            0x4FF
 */
 
 /*

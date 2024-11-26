@@ -57,11 +57,13 @@ MapEntryScript_PlayersHouse_HealingSpot:
 
 .global EventScript_AnthraTown_PlayersPoster
 EventScript_AnthraTown_PlayersPoster:
+	lock
 	msgbox gText_AnthraTown_PlayersPoster MSG_NORMAL
 	end
 
 .global EventScript_AnthraTown_NESClassic
 EventScript_AnthraTown_NESClassic:
+	lock
 	msgbox gText_AnthraTown_NESClassic MSG_NORMAL
 	end
 
@@ -421,26 +423,31 @@ NotRememberingToday:
 
 .global SignScript_AnthraTown_PlayersHouse
 SignScript_AnthraTown_PlayersHouse:
+	lock
 	msgbox gText_AnthraTown_PlayersHouseMailbox MSG_SIGN
 	end
 
 .global SignScript_AnthraTown_RivalsHouse
 SignScript_AnthraTown_RivalsHouse:
+	lock
 	msgbox gText_AnthraTown_RivalsHouseMailbox MSG_SIGN
 	end
 
 .global SignScript_AnthraTown_TownPlacard
 SignScript_AnthraTown_TownPlacard:
+	lock
 	msgbox gText_AnthraTown_TownPlacardSign MSG_SIGN
 	end
 
 .global SignScript_AnthraTown_RivalsBooks
 SignScript_AnthraTown_RivalsBooks:
+	lock
 	msgbox gText_AnthraTown_RivalsBooks MSG_SIGN
 	end
 
 .global SignScript_AnthraTown_RivalsFamilyPictures
 SignScript_AnthraTown_RivalsFamilyPictures:
+	lock
 	msgbox gText_AnthraTown_RivalsFamilyPicture MSG_SIGN
 	end
 

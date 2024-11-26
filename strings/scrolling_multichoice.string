@@ -522,4 +522,55 @@ Ledges jumped off of
 #org @gText_GameStats_TimesThePlayerWasRainedOn
 Times the player was rained on
 
+#org @gText_GameModifiers_RandomizerSpecies
+Randomizer (Species)
+
+#org @gText_GameModifiers_RandomizerAbilities
+Randomizer (Movesets)
+
+#org @gText_GameModifiers_RandomizerMovesets
+Randomizer (Abilities)
+
+#org @gText_GameModifiers_InverseBattles
+Inverse Battles
+
+#org @gText_GameModifiers_CamomonBattles
+Camomon Battles
+
+#org @gText_GameModifiers_DoubleBattles
+Double Battles
+
+#org @gText_GameModifiers_GuaranteedCaptures
+Guaranteed Captures
+
+#org @gText_GameModifiers_CatchTrainerPokemon
+Catch Trainer Pok\emon
+
+#org @gText_GameModifiers_ScaleWildPokemon
+Scale Wild Pok\emon Levels
+
+#org @gText_GameModifiers_ScaleTrainerPokemon
+Scale Trainer Pok\emon Levels
+
+#org @gText_GameModifiers_HiddenAbilities
+Always Hidden Abilities
+
+#org @gText_GameModifiers_ShinyPokemon
+Shiny Pok\emon
+
+#org @gText_GameModifiers_MoveReminderAllMoves
+Move Reminder Teaches All Moves
+
+#org @gText_GameModifiers_KeepHeldItemsAfterBattle
+Keep Held Items After Battle
+
+#org @gText_GameModifiers_DexNavShowAll
+Show All Pok\emon in DexNav
+
+#org @gText_GameModifiers_PermanentWeather
+Permanent Weather in Battle
+
+#org @gText_GameModifiers_PermanentTerrain
+Permanent Terrain in Battle
+
 #endif
