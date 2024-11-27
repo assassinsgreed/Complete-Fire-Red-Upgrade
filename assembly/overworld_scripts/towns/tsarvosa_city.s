@@ -1173,7 +1173,7 @@ DoBattleCommon:
     setflag 0x90E @ Scale disciple teams
     trainerbattle9 0x0 0x4001 0x0 gText_TsarvosaCity_StatsDojo_EVDiscipleBattlePostBattle gText_TsarvosaCity_StatsDojo_EVDiscipleBattlePostBattle
     setvar 0x8000 0x0 @ Does not continue after lost battles
-    checkflag 0x4FF @ Trainer level scaling modifier
+    checkflag 0x153 @ Trainer level scaling modifier
     if NOT_SET _call DisableTrainerScalingFlag
     msgbox gText_TsarvosaCity_StatsDojo_EVDiscipleBattlePostBattleHealing MSG_NORMAL
     call PlayerHeal
@@ -1383,7 +1383,7 @@ SetupDevTeamBattle:
 
 PostDevTeamBattle:
     setvar 0x8000 0x0
-    checkflag 0x4FF @ Trainer level scaling modifier
+    checkflag 0x153 @ Trainer level scaling modifier
     if NOT_SET _call DisableTrainerScalingFlag
     setvar 0x4000 0x1 @ 1 PokeChip reward (loss)
     compare LASTRESULT TRUE
@@ -2096,7 +2096,7 @@ BattleGymTrainee:
     msgbox gText_TsarvosaCity_GymTraineeCafe_Trainee_PreBattle MSG_NORMAL
     trainerbattle9 0x0 0x4000 0x100 gText_TsarvosaCity_GymTraineeCafe_Trainee_BattleWon gText_TsarvosaCity_GymTraineeCafe_Trainee_BattleLost
     setvar 0x8000 0x0 @ Does not continue after lost battles    
-    checkflag 0x4FF @ Trainer level scaling modifier
+    checkflag 0x153 @ Trainer level scaling modifier
     if NOT_SET _call DisableTrainerScalingFlag
     msgbox gText_TsarvosaCity_GymTraineeCafe_Trainee_PostBattleHeal MSG_NORMAL
     call PlayerHeal
