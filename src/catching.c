@@ -60,6 +60,155 @@ extern species_t gUltraBeastList[];
 static u8 GetCatchingBattler(void);
 static bool8 CriticalCapture(u32 odds);
 
+void AttemptCapture(u8 ballType, u8 defLevel)
+{
+	u32 odds = GetBaseBallCatchOdds(ballType, gBankAttacker, gBankTarget);
+
+	#ifndef NO_HARDER_WILD_DOUBLES
+	if (!(gBattleTypeFlags & BATTLE_TYPE_TRAINER) && IS_DOUBLE_BATTLE)
+	{
+		u16 PokesCaught = GetNationalPokedexCount(FLAG_GET_CAUGHT);
+		if (PokesCaught < 30)
+			odds = (odds * 30) / 100;
+		else if (PokesCaught <= 150)
+			odds = (odds * 50) / 100;
+		else if (PokesCaught <= 300)
+			odds = (odds * 70) / 100;
+		else if (PokesCaught <= 450)
+			odds = (odds * 80) / 100;
+		else if (PokesCaught <= 600)
+			odds = (odds * 80) / 100;
+	}
+	#endif
+
+	//Low-Level Modifier - from SwSh
+	if (defLevel <= 20)
+		odds = (odds * (30 - defLevel)) / 10;
+
+	//Status Modifier
+	if (gBattleMons[gBankTarget].status1 & (STATUS_SLEEP
+	#ifndef FROSTBITE
+											| STATUS_FREEZE
+	#endif
+											))
+		odds = (odds * 25) / 10;
+	if (gBattleMons[gBankTarget].status1 & (STATUS_PSN_ANY | STATUS_BURN | STATUS_PARALYSIS
+	#ifdef FROSTBITE
+											| STATUS_FREEZE
+	#endif
+											))
+		odds = (odds * 15) / 10;
+
+	//Difficulty Modifier - from SwSh
+	#ifdef SWSH_CATCHING_DIFFICULTY_MODIFIER
+	if (!FlagGet(FLAG_SYS_GAME_CLEAR) && gBattleMons[gBankAttacker].level < defLevel)
+		odds /= 10;
+	#endif
+
+	//Raid Modifier
+	if (IsRaidBattle()) //Dynamax Raid Pokemon can be caught easier
+		odds *= 4;
+
+	// if (ballType != BALL_TYPE_SAFARI_BALL)
+	// {
+		if (ballType == BALL_TYPE_MASTER_BALL)
+			gBattleResults.usedMasterBall = 1;
+
+		//This was used for the TV shows in Ruby, but seems kind of pointless in FR.
+		//Commenting it out also prevents errors from using poke balls with large indices.
+		//else if (gBattleResults.usedBalls[ballType - BALL_TYPE_ULTRA_BALL] < 0xFF)
+		//		gBattleResults.usedBalls[ballType - BALL_TYPE_ULTRA_BALL]++;
+	// }
+
+	if (odds >= 0xFF) //Pokemon is Caught
+	{
+		EmitBallThrowAnim(0, 4);
+		MarkBufferBankForExecution(gActiveBattler);
+		gBattlescriptCurrInstr = BattleScript_SuccessBallThrow;
+
+		// if (ballType != BALL_TYPE_PARK_BALL || IsRaidBattle())
+		SetMonData(&gEnemyParty[gBattlerPartyIndexes[gBankTarget]], MON_DATA_POKEBALL, &ballType);
+
+		if (CalculatePlayerPartyCount() == 6)
+			gBattleCommunication[MULTISTRING_CHOOSER] = 0;
+		else
+			gBattleCommunication[MULTISTRING_CHOOSER] = 1;
+	}
+	else //Pokemon may be caught, calculate shakes
+	{
+		u8 shakes, maxShakes;
+
+		if (CriticalCapture(odds))
+		{
+			maxShakes = 2;  //Critical capture doesn't gauarantee capture
+		}
+		else
+		{
+			maxShakes = 4;
+		}
+
+		if (ballType == BALL_TYPE_MASTER_BALL
+		#ifdef FLAG_ALWAYS_CATCHABLE
+		|| FlagGet(FLAG_ALWAYS_CATCHABLE)
+		#endif
+		#ifdef FLAG_SANDBOX_MODE
+		|| FlagGet(FLAG_SANDBOX_MODE)
+		#endif
+		)
+			shakes = maxShakes;
+		else
+		{
+			#ifdef BUTTON_PRESS_INCREASES_CATCH_ODDS
+			if (JOY_HELD(A_BUTTON)
+			|| JOY_REPT(A_BUTTON)
+			|| (JOY_HELD(B_BUTTON) && JOY_HELD(DPAD_DOWN))
+			|| (JOY_REPT(B_BUTTON) && JOY_REPT(DPAD_DOWN)))
+				odds += (Sqrt(odds * 5)); //Bigger gains for lower numbers
+			#endif
+
+			odds = udivsi(0xFFFF0, Sqrt(Sqrt(udivsi(0xFF0000, odds))));
+			for (shakes = 0; shakes < maxShakes && Random() < odds; ++shakes) ;
+		}
+
+		EmitBallThrowAnim(0, shakes);
+		MarkBufferBankForExecution(gActiveBattler);
+
+		if (!gNewBS->firstFailedPokeBallStored)
+		{
+			gNewBS->firstFailedPokeBallStored = TRUE; //Only once per battle
+			gNewBS->failedThrownPokeBall = gLastUsedItem;
+		}
+
+		if (shakes >= maxShakes)
+		{
+			if (gNewBS->criticalCapture)
+			{
+				IncrementGameStat(GAME_STAT_CRITICAL_CAPTURES);
+				gNewBS->criticalCaptureSuccess = TRUE;
+			}
+
+			gBattlescriptCurrInstr = BattleScript_SuccessBallThrow;
+			// if (ballType != BALL_TYPE_PARK_BALL || IsRaidBattle())
+			SetMonData(&gEnemyParty[gBattlerPartyIndexes[gBankTarget]], MON_DATA_POKEBALL, &ballType);
+
+			if (CalculatePlayerPartyCount() == 6)
+				gBattleCommunication[MULTISTRING_CHOOSER] = 0;
+			else
+				gBattleCommunication[MULTISTRING_CHOOSER] = 1;
+		}
+		else if (IsRaidBattle())
+		{
+			gBattleCommunication[MULTISTRING_CHOOSER] = shakes;
+			gBattlescriptCurrInstr = BattleScript_RaidMonEscapeBall;
+		}
+		else //Rip
+		{
+			gBattleCommunication[MULTISTRING_CHOOSER] = shakes;
+			gBattlescriptCurrInstr = BattleScript_ShakeBallThrow;
+		}
+	}
+}
+
 void atkEF_handleballthrow(void)
 {
 	if (gBattleExecBuffer) return;
@@ -84,15 +233,7 @@ void atkEF_handleballthrow(void)
 		#ifdef FLAG_CATCH_TRAINERS_POKEMON
 			if (FlagGet(FLAG_CATCH_TRAINERS_POKEMON))
 			{
-				EmitBallThrowAnim(0, 4);
-				MarkBufferBankForExecution(gActiveBattler);
-				gBattlescriptCurrInstr = BattleScript_SuccessBallThrow;
-				// if (ballType != BALL_TYPE_PARK_BALL)
-				SetMonData(GetBankPartyData(gBankTarget), MON_DATA_POKEBALL, &ballType);
-				if (CalculatePlayerPartyCount() == 6)
-					gBattleCommunication[MULTISTRING_CHOOSER] = 0;
-				else
-					gBattleCommunication[MULTISTRING_CHOOSER] = 1;
+				AttemptCapture(ballType, defLevel);
 			}
 			else
 			{
@@ -127,151 +268,7 @@ void atkEF_handleballthrow(void)
 	}
 	else
 	{
-		u32 odds = GetBaseBallCatchOdds(ballType, gBankAttacker, gBankTarget);
-
-		#ifndef NO_HARDER_WILD_DOUBLES
-		if (!(gBattleTypeFlags & BATTLE_TYPE_TRAINER) && IS_DOUBLE_BATTLE)
-		{
-			u16 PokesCaught = GetNationalPokedexCount(FLAG_GET_CAUGHT);
-			if (PokesCaught < 30)
-				odds = (odds * 30) / 100;
-			else if (PokesCaught <= 150)
-				odds = (odds * 50) / 100;
-			else if (PokesCaught <= 300)
-				odds = (odds * 70) / 100;
-			else if (PokesCaught <= 450)
-				odds = (odds * 80) / 100;
-			else if (PokesCaught <= 600)
-				odds = (odds * 80) / 100;
-		}
-		#endif
-
-		//Low-Level Modifier - from SwSh
-		if (defLevel <= 20)
-			odds = (odds * (30 - defLevel)) / 10;
-
-		//Status Modifier
-		if (gBattleMons[gBankTarget].status1 & (STATUS_SLEEP
-		#ifndef FROSTBITE
-		                                      | STATUS_FREEZE
-		#endif
-		                                       ))
-			odds = (odds * 25) / 10;
-		if (gBattleMons[gBankTarget].status1 & (STATUS_PSN_ANY | STATUS_BURN | STATUS_PARALYSIS
-		#ifdef FROSTBITE
-		                                      | STATUS_FREEZE
-		#endif
-		                                       ))
-			odds = (odds * 15) / 10;
-
-		//Difficulty Modifier - from SwSh
-		#ifdef SWSH_CATCHING_DIFFICULTY_MODIFIER
-		if (!FlagGet(FLAG_SYS_GAME_CLEAR) && gBattleMons[gBankAttacker].level < defLevel)
-			odds /= 10;
-		#endif
-
-		//Raid Modifier
-		if (IsRaidBattle()) //Dynamax Raid Pokemon can be caught easier
-			odds *= 4;
-
-		// if (ballType != BALL_TYPE_SAFARI_BALL)
-		// {
-			if (ballType == BALL_TYPE_MASTER_BALL)
-				gBattleResults.usedMasterBall = 1;
-
-			//This was used for the TV shows in Ruby, but seems kind of pointless in FR.
-			//Commenting it out also prevents errors from using poke balls with large indices.
-			//else if (gBattleResults.usedBalls[ballType - BALL_TYPE_ULTRA_BALL] < 0xFF)
-			//		gBattleResults.usedBalls[ballType - BALL_TYPE_ULTRA_BALL]++;
-		// }
-
-		if (odds >= 0xFF) //Pokemon is Caught
-		{
-			EmitBallThrowAnim(0, 4);
-			MarkBufferBankForExecution(gActiveBattler);
-			gBattlescriptCurrInstr = BattleScript_SuccessBallThrow;
-
-			// if (ballType != BALL_TYPE_PARK_BALL || IsRaidBattle())
-			SetMonData(&gEnemyParty[gBattlerPartyIndexes[gBankTarget]], MON_DATA_POKEBALL, &ballType);
-
-			if (CalculatePlayerPartyCount() == 6)
-				gBattleCommunication[MULTISTRING_CHOOSER] = 0;
-			else
-				gBattleCommunication[MULTISTRING_CHOOSER] = 1;
-		}
-		else //Pokemon may be caught, calculate shakes
-		{
-			u8 shakes, maxShakes;
-
-			if (CriticalCapture(odds))
-			{
-				maxShakes = 2;  //Critical capture doesn't gauarantee capture
-			}
-			else
-			{
-				maxShakes = 4;
-			}
-
-			if (ballType == BALL_TYPE_MASTER_BALL
-			#ifdef FLAG_ALWAYS_CATCHABLE
-			|| FlagGet(FLAG_ALWAYS_CATCHABLE)
-			#endif
-			#ifdef FLAG_SANDBOX_MODE
-			|| FlagGet(FLAG_SANDBOX_MODE)
-			#endif
-			)
-				shakes = maxShakes;
-			else
-			{
-				#ifdef BUTTON_PRESS_INCREASES_CATCH_ODDS
-				if (JOY_HELD(A_BUTTON)
-				|| JOY_REPT(A_BUTTON)
-				|| (JOY_HELD(B_BUTTON) && JOY_HELD(DPAD_DOWN))
-				|| (JOY_REPT(B_BUTTON) && JOY_REPT(DPAD_DOWN)))
-					odds += (Sqrt(odds * 5)); //Bigger gains for lower numbers
-				#endif
-
-				odds = udivsi(0xFFFF0, Sqrt(Sqrt(udivsi(0xFF0000, odds))));
-				for (shakes = 0; shakes < maxShakes && Random() < odds; ++shakes) ;
-			}
-
-			EmitBallThrowAnim(0, shakes);
-			MarkBufferBankForExecution(gActiveBattler);
-
-			if (!gNewBS->firstFailedPokeBallStored)
-			{
-				gNewBS->firstFailedPokeBallStored = TRUE; //Only once per battle
-				gNewBS->failedThrownPokeBall = gLastUsedItem;
-			}
-
-			if (shakes >= maxShakes)
-			{
-				if (gNewBS->criticalCapture)
-				{
-					IncrementGameStat(GAME_STAT_CRITICAL_CAPTURES);
-					gNewBS->criticalCaptureSuccess = TRUE;
-				}
-
-				gBattlescriptCurrInstr = BattleScript_SuccessBallThrow;
-				// if (ballType != BALL_TYPE_PARK_BALL || IsRaidBattle())
-				SetMonData(&gEnemyParty[gBattlerPartyIndexes[gBankTarget]], MON_DATA_POKEBALL, &ballType);
-
-				if (CalculatePlayerPartyCount() == 6)
-					gBattleCommunication[MULTISTRING_CHOOSER] = 0;
-				else
-					gBattleCommunication[MULTISTRING_CHOOSER] = 1;
-			}
-			else if (IsRaidBattle())
-			{
-				gBattleCommunication[MULTISTRING_CHOOSER] = shakes;
-				gBattlescriptCurrInstr = BattleScript_RaidMonEscapeBall;
-			}
-			else //Rip
-			{
-				gBattleCommunication[MULTISTRING_CHOOSER] = shakes;
-				gBattlescriptCurrInstr = BattleScript_ShakeBallThrow;
-			}
-		}
+		AttemptCapture(ballType, defLevel);
 	}
 }
 

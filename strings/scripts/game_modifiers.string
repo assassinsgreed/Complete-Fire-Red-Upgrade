@@ -91,7 +91,7 @@ When enabled, all battles are double\nbattles (whenever possible).
 When enabled, all Pok\e Balls\nguarantee a capture.
 
 #org @gText_GameModifiers_CatchTrainerPokemon_Description
-When enabled, the player can catch\na trainer's Pok\emon in battle.\pCapture is guaranteed, and battle\nends once a Pok\emon is caught.
+When enabled, the player can catch\na trainer's Pok\emon in battle.\pBattle ends once any Pok\emon is\ncaught and prize money is not\lawarded.
 
 #org @gText_GameModifiers_ScaleWildPokemon_Description
 When enabled, wild Pok\emon match the\nlowest level in the player's party.
