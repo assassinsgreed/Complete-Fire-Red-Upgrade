@@ -382,6 +382,7 @@ TerrenceRematch_ChoseNotToBattle:
 
 TerrenceRematch_BeatenToday:
     npcchatwithmovement gText_RhodanziGym_LeaderTerrence_BeatenToday m_LookDown
+    goto GymLeaderRematch_HandleAllCleared
     end
 
 @ Trainer House

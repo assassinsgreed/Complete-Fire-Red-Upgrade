@@ -1454,6 +1454,7 @@ DennisRematch_ChoseNotToBattle:
 
 DennisRematch_BeatenToday:
     npcchatwithmovement gText_UteyaGym_LeaderDennis_BeatenToday m_LookDown
+    goto GymLeaderRematch_HandleAllCleared
     end
 
 DeeRematch_ChoseNotToBattle:
@@ -1462,6 +1463,7 @@ DeeRematch_ChoseNotToBattle:
 
 DeeRematch_BeatenToday:
     npcchatwithmovement gText_UteyaGym_LeaderDee_BeatenToday m_LookDown
+    goto GymLeaderRematch_HandleAllCleared
     end
 
 .global SignScript_UteyaVillageGym_Placard

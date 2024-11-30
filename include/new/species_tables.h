@@ -31,6 +31,7 @@ struct SpecialSpeciesFlags
 	bool8 setPerfectXIVs : 1;
 	bool8 smartWild : 1;
 	bool8 randomizerBan : 1;
+	bool8 randomizerKulureOnly : 1;
 };
 
 extern const struct SpecialSpeciesFlags gSpecialSpeciesFlags[];

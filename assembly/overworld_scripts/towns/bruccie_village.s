@@ -844,6 +844,7 @@ AbbyRematch_ChoseNotToBattle:
 
 AbbyRematch_BeatenToday:
     npcchatwithmovement gText_BruccieGym_LeaderAbby_BeatenToday m_LookDown
+    goto GymLeaderRematch_HandleAllCleared
     end
 
 .global SignScript_BruccieVillageGym_Placard

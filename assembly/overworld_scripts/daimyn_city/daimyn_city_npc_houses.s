@@ -538,7 +538,7 @@ TeachMovesPrompt:
     @ Intentional fall through
 
 TeachMovesMenuHandling:
-    multichoiceoption gText_DaimynCityNPCHouses_MoveReminder_PastMovesChoice 0
+    multichoiceoption gText_DaimynCityNPCHouses_MoveReminder_LevelUpMovesChoice 0
 	multichoiceoption gText_DaimynCityNPCHouses_MoveReminder_EggMovesChoice 1
     multichoiceoption gText_Info 2
 	multichoiceoption gText_DaimynCityNPCHouses_MoveReminder_CancelChoice 3

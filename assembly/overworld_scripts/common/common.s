@@ -704,6 +704,27 @@ UltraSpaceWarpEffect:
     fadescreenspeed FADEIN_WHITE 0x64 @ Slow fade
     return
 
+.global GymLeaderRematch_HandleAllCleared
+GymLeaderRematch_HandleAllCleared:
+    checkflag 0xE37 @ Terrence
+    if NOT_SET _goto End
+    checkflag 0xE38 @ Stella
+    if NOT_SET _goto End
+    checkflag 0xE39 @ Raine
+    if NOT_SET _goto End
+    checkflag 0xE3A @ Chance
+    if NOT_SET _goto End
+    checkflag 0xE3B @ Casey
+    if NOT_SET _goto End
+    checkflag 0xE3C @ Abby
+    if NOT_SET _goto End
+    checkflag 0xE3D @ Iris
+    if NOT_SET _goto End
+    checkflag 0xE3E @ Dennis & Dee
+    if NOT_SET _goto End
+    setflag 0xB7 @ Game modifier for all wilds with hidden abilities
+    end
+
 .global MapScript_Common_Credits
 MapScript_Common_Credits:
     mapscript MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE LevelScripts_Credits_OnWarp

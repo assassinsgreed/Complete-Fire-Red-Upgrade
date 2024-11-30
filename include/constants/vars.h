@@ -215,10 +215,10 @@
 #define VAR_ULTRA_BEASTS_PROGRESSION 0x40A7
 #define VAR_UTEYA_GYM_PROGRESS     0x40A8
 #define VAR_UTEYAN_RUINS_HISTORY   0x40A9
-#define VAR_0x40AA                 0x40AA
-#define VAR_0x40AB                 0x40AB
-#define VAR_0x40AC                 0x40AC
-#define VAR_0x40AD                 0x40AD
+#define VAR_CHAMPION_DEFENSE_VICTORIES 0x40AA
+#define VAR_DEX_NAV_LEVEL_25_PLUS  0x40AB
+#define VAR_INSTANT_BATTLE_WEATHER 0x40AC
+#define VAR_INSTANT_BATTLE_TERRAIN 0x40AD
 #define VAR_0x40AE                 0x40AE
 #define VAR_0x40AF                 0x40AF
 #define VAR_0x40B0                 0x40B0

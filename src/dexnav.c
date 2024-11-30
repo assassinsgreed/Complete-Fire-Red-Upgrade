@@ -1118,7 +1118,13 @@ static void Task_ManageDexNavHUD(u8 taskId)
 		//Increment the search level
 		u16 dexNum = SpeciesToNationalPokedexNum(species);
 		if (gDexNavSearchLevels[dexNum] < 255)
+		{
 			gDexNavSearchLevels[dexNum] += 1;
+			if (gDexNavSearchLevels[dexNum] == 25)
+			{
+				VarSet(VAR_DEX_NAV_LEVEL_25_PLUS, VarGet(VAR_DEX_NAV_LEVEL_25_PLUS) + 1);
+			}
+		}
 
 		//Freeing only the state, objects and hblank cleared on battle start.
 		Free(sDexNavHudPtr);
@@ -2082,7 +2088,7 @@ static bool8 TryAddSpeciesToArray(u16 species, u8 encounterMethod, u8 indexCount
 	u16 dexNum = SpeciesToNationalPokedexNum(species);
 
 	//Disallow species not seen
-	if (!GetSetPokedexFlag(dexNum, FLAG_GET_SEEN))
+	if (!GetSetPokedexFlag(dexNum, FLAG_GET_SEEN) && !FlagGet(FLAG_DEXNAV_SHOW_ALL_SPECIES))
 	{
 		for (i = 0; i < max(MAX_TOTAL_LAND_MONS, MAX_TOTAL_WATER_MONS); ++i)
 		{

@@ -3157,8 +3157,9 @@ extern const u8 gText_GameModifiers_ShinyPokemon[];
 extern const u8 gText_GameModifiers_MoveReminderAllMoves[];
 extern const u8 gText_GameModifiers_KeepHeldItemsAfterBattle[];
 extern const u8 gText_GameModifiers_DexNavShowAll[];
-extern const u8 gText_GameModifiers_PermanentWeather[];
-extern const u8 gText_GameModifiers_PermanentTerrain[];
+extern const u8 gText_GameModifiers_InstantBattleWeather[];
+extern const u8 gText_GameModifiers_InstantBattleTerrain[];
+extern const u8 gText_GameModifiers_InstantFriendship[];
 
 //Scrolling Lists
 static const u8* sTutorFerrox[] =
@@ -3447,8 +3448,9 @@ static const u8* sGameModifiers[] =
 	gText_GameModifiers_MoveReminderAllMoves,
 	gText_GameModifiers_KeepHeldItemsAfterBattle,
 	gText_GameModifiers_DexNavShowAll,
-	gText_GameModifiers_PermanentWeather,
-	gText_GameModifiers_PermanentTerrain,
+	gText_GameModifiers_InstantBattleWeather,
+	gText_GameModifiers_InstantBattleTerrain,
+	gText_GameModifiers_InstantFriendship,
 	gText_End,
 };
 
@@ -3772,6 +3774,18 @@ void ResetAllLegendaries()
 	}
 }
 
+bool8 AreAllItemsInRangeObtained(u16 startRange, u16 endRange)
+{
+	for (u32 i = startRange; i <= endRange; ++i)
+	{
+		if (!CheckBagHasItem(i, 1))
+		{
+			return FALSE;
+		}
+	}
+	return TRUE;
+}
+
 void ComputeCompletedGameModifierRequirements()
 {
 	// All Trainer Houses cleared (indicated by their grand prize flags) + became champion
@@ -3782,5 +3796,99 @@ void ComputeCompletedGameModifierRequirements()
 		FlagSet(FLAG_GAMEMODIFIER_DOUBLEBATTLES_UNLOCKED);
 	}
 
-	// TODO Later: Other modifier unlocks!
+	// Pokedex is complete
+	bool8 isPokedexComplete = TRUE;
+	for (u32 i = 1; i <= NATIONAL_DEX_COUNT; i++)
+	{
+		if (!GetSetPokedexFlag(i, FLAG_GET_CAUGHT))
+		{
+			isPokedexComplete = FALSE;
+			break;
+		}
+	}
+
+	if (isPokedexComplete)
+	{
+		FlagSet(FLAG_GAMEMODIFIER_RANDOMIZERSPECIES_UNLOCKED);
+		FlagSet(FLAG_GAMEMODIFIER_RANDOMIZERMOVESETS_UNLOCKED);
+		FlagSet(FLAG_GAMEMODIFIER_RANDOMIZERABILITIES_UNLOCKED);
+		FlagSet(FLAG_GAMEMODIFIER_GUARANTEEDCAPTURES_UNLOCKED);
+		FlagSet(FLAG_GAMEMODIFIER_SHINIES_UNLOCKED);
+	}
+
+	// All legendaries caught
+	int species[15] = {
+		SPECIES_JIRACHI,
+		SPECIES_SHAYMIN,
+		SPECIES_KYOGRE,
+		SPECIES_GROUDON,
+		SPECIES_VOLCANION,
+		SPECIES_GLASTRIER,
+		SPECIES_MELTAN,
+		SPECIES_MELMETAL,
+		SPECIES_VICTINI,
+		SPECIES_TYPE_NULL,
+		SPECIES_SILVALLY,
+		SPECIES_ZERAORA,
+		SPECIES_ARTICUNO_G,
+		SPECIES_ZAPDOS_G,
+		SPECIES_MOLTRES_G
+		// UBs not in Kulure
+	};
+
+	bool8 areAllLegendariesCaught = TRUE;
+	for (int i = 0; i < 15; i++)
+	{
+		if (!GetSetPokedexFlag(SpeciesToNationalPokedexNum(species[i]), FLAG_GET_CAUGHT))
+		{
+			areAllLegendariesCaught = FALSE;
+			break;
+		}
+	}
+
+	if (areAllLegendariesCaught)
+		FlagSet(FLAG_GAMEMODIFIER_SCALEWILDPOKEMON_UNLOCKED);
+
+	// Champion Defense 3+ times
+	if (VarGet(VAR_CHAMPION_DEFENSE_VICTORIES) >= 3)
+		FlagSet(FLAG_GAMEMODIFIER_SCALETRAINERPOKEMON_UNLOCKED);
+
+	// Level 100 in party
+	for (int i = 0; i < PARTY_SIZE; i++)
+	{
+		struct Pokemon* mon = &gPlayerParty[i];
+		u16 species = GetMonData(mon, MON_DATA_SPECIES, NULL);
+		if (species != SPECIES_NONE && GetMonData(mon, MON_DATA_LEVEL, NULL) == 100)
+		{
+			FlagSet(FLAG_GAMEMODIFIER_MOVEREMINDERALLMOVES_UNLOCKED);
+			break;
+		}
+	}
+
+	// All TMs and HMs
+	bool8 areAllTMsAndHMsObtained = 
+		AreAllItemsInRangeObtained(ITEM_TM01_WORK_UP, ITEM_TM50_OVERHEAT) &&
+		AreAllItemsInRangeObtained(ITEM_TM51_STEEL_WING, ITEM_TM58_ENDURE) &&
+		AreAllItemsInRangeObtained(ITEM_TM59_BRUTAL_SWING, ITEM_TM100_CONFIDE) &&
+		AreAllItemsInRangeObtained(ITEM_HM01_CUT, ITEM_HM04_STRENGTH) &&
+		CheckBagHasItem(ITEM_HM06_ROCK_SMASH, 1) &&
+		CheckBagHasItem(ITEM_HM08_ROCK_CLIMB, 1);
+
+	if (areAllTMsAndHMsObtained)
+		FlagSet(FLAG_GAMEMODIFIER_KEEPHELDCONSUMABLES_UNLOCKED);
+
+	// 3+ Level 25 DexNav Search Levels
+	if (VarGet(VAR_DEX_NAV_LEVEL_25_PLUS) >= 3)
+		FlagSet(FLAG_GAMEMODIFIER_DEXNAVSHOWALL_UNLOCKED);
+
+	// Uteyan Ruins puzzles
+	if (FlagGet(FLAG_UTEYAN_RUINS_TOP_CHAMBER_SOLVED) &&
+		FlagGet(FLAG_UTEYAN_RUINS_MIDDLE_CHAMBER_SOLVED) &&
+		FlagGet(FLAG_UTEYAN_RUINS_LEFT_CHAMBER_SOLVED) &&
+		FlagGet(FLAG_UTEYAN_RUINS_RIGHT_CHAMBER_SOLVED) &&
+		FlagGet(FLAG_UTEYAN_RUINS_BOTTOM_CHAMBER_SOLVED) &&
+		FlagGet(FLAG_SYS_GAME_CLEAR))
+	{
+		FlagSet(FLAG_GAMEMODIFIER_INSTANTBATTLETERRAIN_UNLOCKED);
+	}
 }

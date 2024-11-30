@@ -1136,6 +1136,7 @@ LeaderRaineRematch_ChoseNotToBattle:
 
 LeaderRaineRematch_BeatenToday:
     npcchatwithmovement gText_HeleoGym_LeaderRaine_BeatenToday m_LookDown
+    goto GymLeaderRematch_HandleAllCleared
     end
 
 EventScript_HeleoGym_LeaderRaine_Defeated:

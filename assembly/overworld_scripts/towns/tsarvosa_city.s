@@ -3124,6 +3124,7 @@ IrisRematch_ChoseNotToBattle:
 
 IrisRematch_BeatenToday:
     npcchatwithmovement gText_TsarvosaGym_LeaderIris_BeatenToday m_LookDown
+    goto GymLeaderRematch_HandleAllCleared
     end
 
 .global TileScript_TsarvosaCity_Gym_BarricadeSouth

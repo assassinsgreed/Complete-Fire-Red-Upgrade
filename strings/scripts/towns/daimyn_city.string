@@ -569,7 +569,7 @@ It worked flawlessly! [BUFFER1] has\nforgotten how to use [BUFFER2].
 Come see me again, if you want to\nforget more moves.
 
 #org @gText_DaimynCityNPCHouses_MoveReminderExplanation
-Hello, dearie. I am a Pok\emon\ntutor, but I am quite different\lfrom those you may be familiar\lwith.\pYou see, I remind them of moves\nthey used to know.\pFor 1 Pok\eChip, I can teach a move\nthey learned through leveling up.\pFor 10 Pok\eChips, I can teach an egg\nmove they could have known.
+Hello, dearie. I am a Pok\emon\ntutor, but I am quite different\lfrom those you may be familiar\lwith.\pYou see, I remind them how to use\nmoves they learn through level\lup, or through their parents.\pFor 1 Pok\eChip, I can teach a move\nthey learn through leveling up.\pFor 10 Pok\eChips, I can teach an\negg move they could have known.
 
 #org @gText_DaimynCityNPCHouses_MoveReminderRemembersPlayer
 Hello, dearie. I remember you.
@@ -580,11 +580,11 @@ Shall I have one of your Pok\emon\nremember a move? [BLACK](Held: [BUFFER1])
 #org @gText_DaimynCityNPCHouses_MoveReminderPrompt_TeachMore
 [RED]It is done.\pWould you like to remember more\nmoves? [BLACK](Held: [BUFFER1])
 
-#org @gText_DaimynCityNPCHouses_MoveReminder_PastMovesChoice
-Past Moves[ALIGN][50][GREEN]1 Pok\eChip
+#org @gText_DaimynCityNPCHouses_MoveReminder_LevelUpMovesChoice
+Level Up Moves[ALIGN][64][GREEN]1 Pok\eChip
 
 #org @gText_DaimynCityNPCHouses_MoveReminder_EggMovesChoice
-Egg Moves[ALIGN][50][GREEN]10 Pok\eChips
+Egg Moves[ALIGN][64][GREEN]10 Pok\eChips
 
 #org @gText_DaimynCityNPCHouses_MoveReminder_CancelChoice
 Nothing for now

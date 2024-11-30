@@ -379,6 +379,12 @@ void CreateWildMon(u16 species, u8 level, u8 monHeaderIndex, bool8 purgeParty)
 		}
 	}
 
+	if (FlagGet(FLAG_SHINY_CREATION) || FlagGet(FLAG_SHINY_GAME_MODIFIER_ON))
+	{
+		while (!IsMonShiny(&gEnemyParty[enemyMonIndex]))
+			ForceMonShiny(&gEnemyParty[enemyMonIndex]);
+	}
+
 	//Status Inducers
 	TryStatusInducer(&gEnemyParty[enemyMonIndex]);
 }
@@ -1240,6 +1246,11 @@ void DoStandardWildBattle(void)
 		if (FlagGet(FLAG_TAG_BATTLE))
 			gBattleTypeFlags |=  BATTLE_TYPE_INGAME_PARTNER;
 	}
+	#endif
+
+	#ifdef FLAG_CAMOMONS_BATTLE
+	if (FlagGet(FLAG_CAMOMONS_BATTLE))
+		gBattleTypeFlags |= BATTLE_TYPE_CAMOMONS;
 	#endif
 
 	#ifdef FLAG_AI_CONTROL_BATTLE

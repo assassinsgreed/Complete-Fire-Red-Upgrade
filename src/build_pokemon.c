@@ -4053,7 +4053,7 @@ u8 ScriptGiveMon(u16 species, u8 level, u16 item, unusedArg u32 unused1, unusedA
 	if (FlagGet(FLAG_HIDDEN_ABILITY))
 	{
 		mon.hiddenAbility = TRUE;
-		FlagClear(FLAG_HIDDEN_ABILITY);
+		// FlagClear(FLAG_HIDDEN_ABILITY);
 	}
 	#endif
 
@@ -4128,7 +4128,7 @@ static void CheckShinyMon(struct Pokemon* mon)
 	u32 otId = GetMonData(mon, MON_DATA_OT_ID, NULL);
 
 	#ifdef FLAG_SHINY_CREATION
-	if (FlagGet(FLAG_SHINY_CREATION))
+	if (FlagGet(FLAG_SHINY_CREATION) || FlagGet(FLAG_SHINY_GAME_MODIFIER_ON))
 	{
 		forceShiny = TRUE;
 	}
@@ -4204,6 +4204,14 @@ void ForceMonShiny(struct Pokemon* mon)
 	CalculateMonStats(mon);
 }
 
+u16 IsSpeciesBannedFromRandomizer(u16 species) //Exported
+{
+	if (FlagGet(FLAG_POKEMON_RANDOMIZER_KULURE_ONLY))
+		return !gSpecialSpeciesFlags[species].randomizerKulureOnly;
+	else
+		return gSpecialSpeciesFlags[species].randomizerBan;
+}
+
 void TryRandomizeSpecies(unusedArg u16* species)
 {
 	#ifdef FLAG_POKEMON_RANDOMIZER
@@ -4236,7 +4244,7 @@ void TryRandomizeSpecies(unusedArg u16* species)
 		newSpecies ^= xorVal;
 		newSpecies %= (u32) speciesCount; //Prevent overflow
 		
-		while (gSpecialSpeciesFlags[newSpecies].randomizerBan && numAttempts < 100)
+		while (IsSpeciesBannedFromRandomizer(newSpecies) && numAttempts < 100)
 		{
 			newSpecies *= xorVal;
 			newSpecies %= (u32) speciesCount;
@@ -4249,11 +4257,6 @@ void TryRandomizeSpecies(unusedArg u16* species)
 		*species = newSpecies;
 	}
 	#endif
-}
-
-u16 IsSpeciesBannedFromRandomizer(u16 species) //Exported
-{
-	return gSpecialSpeciesFlags[species].randomizerBan;
 }
 
 u16 GetRandomizedSpecies(u16 species)

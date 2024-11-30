@@ -567,10 +567,13 @@ Keep Held Items After Battle
 #org @gText_GameModifiers_DexNavShowAll
 Show All Pok\emon in DexNav
 
-#org @gText_GameModifiers_PermanentWeather
-Permanent Weather in Battle
+#org @gText_GameModifiers_InstantBattleWeather
+Instant Weather in Battle
 
-#org @gText_GameModifiers_PermanentTerrain
-Permanent Terrain in Battle
+#org @gText_GameModifiers_InstantBattleTerrain
+Instant Terrain in Battle
+
+#org @gText_GameModifiers_InstantFriendship
+Instant Friendship
 
 #endif
