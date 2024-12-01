@@ -18,36 +18,214 @@ The conditions to unlock this\nmodifier have not been achieved.\pWould you like 
 [GREEN]Password is correct.
 
 #org @gText_GameModifiers_TurnOffPrompt
-This modifier is currently on.\nDo you want to turn it off?
+This modifier is currently [GREEN]on[BLACK].\nDo you want to turn it off?
 
 #org @gText_GameModifiers_TurnOnPrompt
-This modifier is currently off.\nDo you want to turn it on?
+This modifier is currently [GREEN]off[BLACK].\nDo you want to turn it on?
 
 #org @gText_GameModifiers_ModifierNowOff
-The modifier has been disabled.
+The modifier has been [GREEN]disabled[BLACK].
 
 #org @gText_GameModifiers_ModifierNowOn
-The modifier has been enabled.
+The modifier has been [GREEN]enabled[BLACK].
+
+
+// Randomizer specific strings
+#org @gText_GameModifiers_RandomizerSpecies_RandomizationQuestion
+Do you want to randomize between the\nKulure Dex or Gens 1-8?
+
+#org @gText_GameModifiers_RandomizerSpecies_Kulure
+Kulure Pok\eDex
+
+#org @gText_GameModifiers_RandomizerSpecies_AllGens
+All Gens
+
+#org @gText_GameModifiers_InstantBattleWeather_ChosenWeatherChoice
+Which weather effect do you want\nactive in battle?
+
+#org @gText_GameModifiers_InstantBattleWeather_Sun
+Harsh Sunlight
+
+#org @gText_GameModifiers_InstantBattleWeather_Rain
+Rain
+
+#org @gText_GameModifiers_InstantBattleWeather_Sandstorm
+Sandstorm
+
+#org @gText_GameModifiers_InstantBattleWeather_Hail
+Hail
+
+#org @gText_GameModifiers_InstantBattleWeather_Fog
+Fog
+
+#org @gText_GameModifiers_InstantBattleTerrain_ChosenTerrainChoice
+Which terrain effect do you want\nactive in battle?
+
+#org @gText_GameModifiers_Common_Cancel
+Cancel
 
 // Modifier Descriptions
+
+#org @gText_GameModifiers_RandomizerSpecies_Description
+When enabled, randomizes Pok\emon\nspecies.\pRandomization can be done against\nthe Kulure dex or gens 1-8.\p[RED]NOTE: Gens 1-8 randomizaiton is\nnot guaranteed to be stable!
+
+#org @gText_GameModifiers_RandomizerMovesets_Description
+When enabled, randomizes Pok\emon\nmovesets.
+
+#org @gText_GameModifiers_RandomizerAbilities_Description
+When enabled, randomizes abilities\nPok\emon can have.
+
+#org @gText_GameModifiers_RandomizerCommon_Details
+Note: Randomization is based on a\nseed assigned to your save file.
 
 #org @gText_GameModifiers_InverseBattles_Description
 When enabled, type effectiveness is\nreversed in battle.
 
+#org @gText_GameModifiers_CamomonBattles_Description
+When enabled, Pok\emon types are\ndecided by their first 2 moves.
+
+#org @gText_GameModifiers_DoubleBattles_Description
+When enabled, all battles are double\nbattles (whenever possible).
+
+#org @gText_GameModifiers_GuaranteedCaptures_Description
+When enabled, all Pok\e Balls\nguarantee a capture.
+
+#org @gText_GameModifiers_CatchTrainerPokemon_Description
+When enabled, the player can catch\na trainer's Pok\emon in battle.\pBattle ends once any Pok\emon is\ncaught and prize money is not\lawarded.
+
+#org @gText_GameModifiers_ScaleWildPokemon_Description
+When enabled, wild Pok\emon match the\nlowest level in the player's party.
+
+#org @gText_GameModifiers_ScaleTrainerPokemon_Description
+When enabled, trainer Pok\emon match\nthe highest level in the player's\lparty.
+
+#org @gText_GameModifiers_HiddenAbilities_Description
+When enabled, wild Pok\emon will\nalways have their hidden abilities\l(if they have one).
+
+#org @gText_GameModifiers_Shinies_Description
+When enabled, all wild Pok\emon will\nbe shiny.
+
+#org @gText_GameModifiers_MoveReminderAllMoves_Description
+When enabled, the Move Reminder will\nteach moves regardless of level.
+
+#org @gText_GameModifiers_KeepHeldConsumables_Description
+When enabled, held consumable items\nare returned after battle.
+
+#org @gText_GameModifiers_DexNavShowAll_Description
+When enabled, all searchable Pok\emon\nare shown in the DexNav, even if\lthey haven't been encountered yet.
+
+#org @gText_GameModifiers_InstantBattleWeather_Description
+When enabled, battles will start with\nthe preferred weather.\pThis is overridden by abilities and\nwill not influence evolutions.
+
+#org @gText_GameModifiers_InstantBattleTerrain_Description
+When enabled, battles will start with\nthe preferred terrain.\pThis is overridden by abilities.
+
+#org @gText_GameModifiers_InstantFriendship_Description
+When enabled, Pok\emon instantly\nreach max friendship.
 
 // Modifier Password Declarations
+
+#org @gText_GameModifiers_RandomizerSpecies_PasswordDeclaration
+The password to unlock this modifier\nin new games is [BLUE]DITTOMODE[BLACK].
+
+#org @gText_GameModifiers_RandomizerMovesets_PasswordDeclaration
+The password to unlock this modifier\nin new games is [BLUE]SHAKEITUP[BLACK].
+
+#org @gText_GameModifiers_RandomizerAbilities_PasswordDeclaration
+The password to unlock this modifier\nin new games is [BLUE]ADAPTABLE[BLACK].
 
 #org @gText_GameModifiers_InverseBattles_PasswordDeclaration
 The password to unlock this modifier\nin new games is [BLUE]OPPOSITEDAY[BLACK].
 
+#org @gText_GameModifiers_CamomonBattles_PasswordDeclaration
+The password to unlock this modifier\nin new games is [BLUE]CHAMELEON[BLACK].
+
+#org @gText_GameModifiers_DoubleBattles_PasswordDeclaration
+The password to unlock this modifier\nin new games is [BLUE]TWOFORONE[BLACK].
+
+#org @gText_GameModifiers_GuaranteedCaptures_PasswordDeclaration
+The password to unlock this modifier\nin new games is [BLUE]TOOSKILLED[BLACK].
+
+#org @gText_GameModifiers_CatchTrainerPokemon_PasswordDeclaration
+The password to unlock this modifier\nin new games is [BLUE]SNAGEM[BLACK].
+
+#org @gText_GameModifiers_ScaleWildPokemon_PasswordDeclaration
+The password to unlock this modifier\nin new games is [BLUE]STRONGWILD[BLACK].
+
+#org @gText_GameModifiers_ScaleTrainerPokemon_PasswordDeclaration
+The password to unlock this modifier\nin new games is [BLUE]WELLTRAINED[BLACK].
+
+#org @gText_GameModifiers_HiddenAbilities_PasswordDeclaration
+The password to unlock this modifier\nin new games is [BLUE]REVEALALL[BLACK].
+
+#org @gText_GameModifiers_Shinies_PasswordDeclaration
+The password to unlock this modifier\nin new games is [BLUE]GLITTERING[BLACK].
+
+#org @gText_GameModifiers_MoveReminderAllMoves_PasswordDeclaration
+The password to unlock this modifier\nin new games is [BLUE]ENLIGHTENED[BLACK].
+
+#org @gText_GameModifiers_KeepHeldConsumables_PasswordDeclaration
+The password to unlock this modifier\nin new games is [BLUE]MINEMINEMINE[BLACK].
+
+#org @gText_GameModifiers_DexNavShowAll_PasswordDeclaration
+The password to unlock this modifier\nin new games is [BLUE]FOUNDYOU[BLACK].
+
+#org @gText_GameModifiers_InstantBattleWeather_PasswordDeclaration
+The password to unlock this modifier\nin new games is [BLUE]FORECAST[BLACK].
+
+#org @gText_GameModifiers_InstantBattleTerrain_PasswordDeclaration
+The password to unlock this modifier\nin new games is [BLUE]ALLTERRAIN[BLACK].
+
+#org @gText_GameModifiers_InstantFriendship_PasswordDeclaration
+The password to unlock this modifier\nin new games is [BLUE]BFFS[BLACK].
+
 // Unlock Criteria
+
+#org @gText_GameModifiers_UnlockCriteria_CompleteUltraSpaceEpisode
+[BLUE]Unlock Criteria: [BLACK]Complete the\npostgame Ultra episode.
 
 #org @gText_GameModifiers_UnlockCriteria_AllTrainerHouses
 [BLUE]Unlock Criteria: [BLACK]Complete all Trainer\nHouses and become Champion.
 
+#org @gText_GameModifiers_UnlockCriteria_CompleteThePokedex
+[BLUE]Unlock Criteria: [BLACK]Catch all\nPok\emon in the game.
+
+#org @gText_GameModifiers_UnlockCriteria_DefeatKurtis
+[BLUE]Unlock Criteria: [BLACK]Defeat a vengeful\ntrainer in the postgame.
+
+#org @gText_GameModifiers_UnlockCriteria_CatchAllLegendaries
+[BLUE]Unlock Criteria: [BLACK]Catch all legendary\nand mythical Pok\emon in Kulure.
+
+#org @gText_GameModifiers_UnlockCriteria_ChampionDefense
+[BLUE]Unlock Criteria: [BLACK]Defend your champion\ntitle 3 or more times.
+
+#org @gText_GameModifiers_UnlockCriteria_GymLeaderRematches
+[BLUE]Unlock Criteria: [BLACK]Complete all gym\nleader rematches in a single day.
+
+#org @gText_GameModifiers_UnlockCriteria_LevelOneHundred
+[BLUE]Unlock Criteria: [BLACK]Have a level 100\nPok\emon in the party when accessing\lthis PC.
+
+#org @gText_GameModifiers_UnlockCriteria_AllTMsAndHMs
+[BLUE]Unlock Criteria: [BLACK]Acquire all 100 TMs\nand all 6 HMs in Kulure.
+
+#org @gText_GameModifiers_UnlockCriteria_3OrMoreLevel25DexNavSearches
+[BLUE]Unlock Criteria: [BLACK]Reach DexNav Search\nLevel 25 with at least 3 Pok\emon\land become the champion.
+
+#org @gText_GameModifiers_UnlockCriteria_BattleBondGreninja
+[BLUE]Unlock Criteria: [BLACK]Obtain an\nunbreakable bond with a Greninja.
+
+#org @gText_GameModifiers_UnlockCriteria_AllUteyanRuinPuzzles
+[BLUE]Unlock Criteria: [BLACK]Solve the mysteries\nof the Uteyan Ruins and become\lchampion.
+
 // Passwords
-#org @gText_GameModifiers_Randomizer_Password
+#org @gText_GameModifiers_RandomizerSpecies_Password
+DITTOMODE
+
+#org @gText_GameModifiers_RandomizerMovesets_Password
 SHAKEITUP
+
+#org @gText_GameModifiers_RandomizerAbilities_Password
+ADAPTABLE
 
 #org @gText_GameModifiers_InverseBattles_Password
 OPPOSITEDAY
@@ -85,10 +263,11 @@ MINEMINEMINE
 #org @gText_GameModifiers_DexNavShowAll_Password
 FOUNDYOU
 
-#org @gText_GameModifiers_PermanentWeather_Password
+#org @gText_GameModifiers_InstantBattleWeather_Password
 FORECAST
 
-#org @gText_GameModifiers_PermanentTerrain_Password
+#org @gText_GameModifiers_InstantBattleTerrain_Password
 ALLTERRAIN
 
-// TODO: Clean up all the old stuff below
+#org @gText_GameModifiers_InstantFriendship_Password
+BFFS

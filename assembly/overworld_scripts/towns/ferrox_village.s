@@ -391,6 +391,7 @@ StellaRematch_ChoseNotToBattle:
 
 StellaRematch_BeatenToday:
     npcchatwithmovement gText_FerroxGym_LeaderStella_BeatenToday m_LookDown
+    goto GymLeaderRematch_HandleAllCleared
     end
 
 .global EventScript_FerroxLibrary_ReadBookPromptL

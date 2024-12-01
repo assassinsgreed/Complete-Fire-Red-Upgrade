@@ -740,6 +740,11 @@ bool8 TryActivateOWTerrain(void)
 		owTerrain = PSYCHIC_TERRAIN;
 	}
 
+	// Only override battle terrain with game modifier one if it is set
+	u8 gameModifierTerrain = VarGet(VAR_INSTANT_BATTLE_TERRAIN);
+	if (gameModifierTerrain > 0)
+		owTerrain = gameModifierTerrain;
+
 	if (owTerrain != 0 && gTerrainType != owTerrain && !gNewBS->terrainForcefullyRemoved)
 	{
 		switch (owTerrain) {

@@ -465,6 +465,9 @@ u8 AbilityBattleEffects(u8 caseID, u8 bank, u8 ability, u8 special, u16 moveArg)
 		}
 	}
 
+	u8 gameModifierWeather = VarGet(VAR_INSTANT_BATTLE_WEATHER);
+	u8 currentWeather = GetCurrentWeather();
+
 	switch (caseID)
 	{
 	case ABILITYEFFECT_ON_SWITCHIN: // 0;
@@ -477,7 +480,20 @@ u8 AbilityBattleEffects(u8 caseID, u8 bank, u8 ability, u8 special, u16 moveArg)
 		switch (gLastUsedAbility)
 		{
 		case ABILITYEFFECT_SWITCH_IN_WEATHER:
-			switch (GetCurrentWeather()) {
+			// Override the weather in maps with permanent weather if a game modifier is on
+			// Note that weather can still be overridden by specific abilities
+			if (gameModifierWeather == 1)
+				currentWeather = WEATHER_DROUGHT;
+			else if (gameModifierWeather == 2)
+				currentWeather = WEATHER_RAIN_LIGHT;
+			else if (gameModifierWeather == 3)
+				currentWeather = WEATHER_SANDSTORM;
+			else if (gameModifierWeather == 4)
+				currentWeather = WEATHER_STEADY_SNOW;
+			else if (gameModifierWeather == 5)
+				currentWeather = WEATHER_FOG_1;
+
+			switch (currentWeather) {
 				case WEATHER_RAIN_LIGHT:
 				case WEATHER_RAIN_MED:
 					if (!(gBattleWeather & WEATHER_RAIN_ANY))
@@ -586,7 +602,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 bank, u8 ability, u8 special, u16 moveArg)
 					gBattleCommunication[MULTISTRING_CHOOSER] = NELEMS(gWeatherContinuesStringIds) - 1; //Custom string
 				}
 				else
-					gBattleCommunication[MULTISTRING_CHOOSER] = GetCurrentWeather();
+					gBattleCommunication[MULTISTRING_CHOOSER] = currentWeather;
 
 				BattleScriptPushCursorAndCallback(BattleScript_OverworldWeatherStarts);
 			}

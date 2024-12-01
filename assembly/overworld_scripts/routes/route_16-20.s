@@ -1004,6 +1004,7 @@ Selene_AskToSetBattleBond:
     fadescreen FADEIN_BLACK
     fanfare 0x101
 	waitfanfare
+    setflag 0xBC @ Instant Battle Weather modifier unlocked
     npcchatwithmovement gText_Route19_Selene_BattleBondFarewell m_LookDown
     end
 

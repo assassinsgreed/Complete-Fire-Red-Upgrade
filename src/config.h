@@ -72,6 +72,10 @@
 #define FLAG_CAMOMONS_BATTLE 0x92C //If set, the camomon battle style is used
 #define FLAG_DREAM_WHITE_OUT_TEXT 0x92D //If set, the player receives the "Dream" whiteout text when losing. Recommended to pair with SET_HEALING_PLACE_HACK
 #define FLAG_BENJAMIN_BUTTERFREE_BATTLE 0x92E //If set, all battles become Benjamin Butterfree battles, where pokemon temporarily devolve when reaching 0HP
+#define FLAG_ALWAYS_CATCHABLE 0x92F //If set, all pokeballs will guarantee a capture
+#define FLAG_SHINY_GAME_MODIFIER_ON 0x931 //If set, the shiny creation flag (0x913) is not reset after battle
+#define FLAG_DEXNAV_SHOW_ALL_SPECIES 0x932 //If set, the DexNav will show species on all routes, even if they have not been caught
+#define FLAG_INSTANT_FRIENDSHIP 0x933 //If set, Pokemon reach max friendship after taking a single step
 #define FLAG_DAILY_EVENTS_START 0xE00 //To flag + 0xFF, resets every new day.
 
 /*===== Start Menu/Poketools Flags =====*/
@@ -203,9 +207,10 @@ enum //These vars need to be one after the other (hence the enum)
 
 /*=====Randomizer Options=====*/
 #define FLAG_POKEMON_RANDOMIZER 0x940 //Setting randomizes Pokemon species that are created.
-//#define FLAG_POKEMON_LEARNSET_RANDOMIZER 0x941 //Setting randomizes Pokemon learnsets.
-//#define FLAG_ABILITY_RANDOMIZER 0x942 //Setting randomizes Pokemon abilities.
+#define FLAG_POKEMON_LEARNSET_RANDOMIZER 0x941 //Setting randomizes Pokemon learnsets.
+#define FLAG_ABILITY_RANDOMIZER 0x942 //Setting randomizes Pokemon abilities.
 #define NUM_SPECIES_RANDOMIZER NUM_SPECIES //The final number of Pokemon (+ 1) of species that can appear in the randomizer. Change to NUM_SPECIES for Gen 8
+#define FLAG_POKEMON_RANDOMIZER_KULURE_ONLY 0x933 //If set, only Pokmeon from Pokemon Amethyst can be randomized in
 
 /*===== Pre-existing Offsets =====*/
 //#define EXISTING_FOSSIL_IMAGE_TABLE_ADDRESS 0x81a4600 //Uncomment this if you've already inserted a fossil image table

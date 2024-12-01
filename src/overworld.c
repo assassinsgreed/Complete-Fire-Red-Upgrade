@@ -1648,10 +1648,17 @@ void RunOnTransitionMapScript(void)
 
 void RunOnResumeMapScript(void)
 {
-	// Hack: If the player has any Greninja in the party with the battle bond ability and without the corresponding ribbon, reset them to Torrent
 	for (int i = 0; i < PARTY_SIZE; i++)
 	{
 		struct Pokemon* mon = &gPlayerParty[i];
+		u16 friendship = MAX_FRIENDSHIP;
+		
+		if (FlagGet(FLAG_INSTANT_FRIENDSHIP))
+		{
+			SetMonData(mon, MON_DATA_FRIENDSHIP, &friendship);
+		}
+		
+		// Hack: If the player has any Greninja in the party with the battle bond ability and without the corresponding ribbon, reset them to Torrent
 		u16 species = GetMonData(mon, MON_DATA_SPECIES, NULL);
 		
 		if (species == SPECIES_GRENINJA)

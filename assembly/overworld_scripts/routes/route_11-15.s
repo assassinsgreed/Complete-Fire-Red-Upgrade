@@ -504,11 +504,16 @@ AlistairBattleSupervision:
 
 ResetParnerState:
     clearflag 0x908 @ End tag battles
-    clearflag 0x910 @ Do not trigger wild double battles
+    checkflag 0x907 @ Double battles modifier is on
+    if NOT_SET _call ClearWildDoublesFlag
     setvar 0x5011 0x0 @ Reset partner trainer ID
     setvar 0x5012 0x0 @ Reset partner trainer backsprite
     special 0xD2 @ Remove follower
     clearflag 0x42
+    return
+
+ClearWildDoublesFlag:
+    clearflag 0x910 @ Do not trigger wild double battles
     return
 
 RemovePartner:

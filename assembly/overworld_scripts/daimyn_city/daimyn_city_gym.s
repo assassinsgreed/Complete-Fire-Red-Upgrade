@@ -228,6 +228,7 @@ ChanceRematch_ChoseNotToBattle:
 
 ChanceRematch_BeatenToday:
     npcchatwithmovement gText_DaimynGym_LeaderChance_BeatenToday m_LookDown
+    goto GymLeaderRematch_HandleAllCleared
     end
 
 .global EventScript_DaimynCityGym_CoinSeller

@@ -54,9 +54,9 @@ const u16 gEndBattleFlagClearTable[] =
 #ifdef FLAG_NO_CATCHING_AND_RUNNING
 	FLAG_NO_CATCHING_AND_RUNNING,
 #endif
-#ifdef FLAG_ALWAYS_CATCHABLE
-	FLAG_ALWAYS_CATCHABLE,
-#endif
+// #ifdef FLAG_ALWAYS_CATCHABLE
+// 	FLAG_ALWAYS_CATCHABLE,
+// #endif
 #ifdef FLAG_WILD_CUSTOM_MOVES
 	FLAG_WILD_CUSTOM_MOVES,
 #endif
@@ -66,12 +66,12 @@ const u16 gEndBattleFlagClearTable[] =
 #ifdef FLAG_SCALE_WILD_BOSS_LEVEL
 	FLAG_SCALE_WILD_BOSS_LEVEL,
 #endif
-#ifdef FLAG_DOUBLE_WILD_BATTLE
-	FLAG_DOUBLE_WILD_BATTLE,
-#endif
-// #ifdef FLAG_SHINY_CREATION
-// 	FLAG_SHINY_CREATION,
+// #ifdef FLAG_DOUBLE_WILD_BATTLE
+// 	FLAG_DOUBLE_WILD_BATTLE,
 // #endif
+#ifdef FLAG_SHINY_CREATION
+	FLAG_SHINY_CREATION,
+#endif
 // #ifdef FLAG_CAMOMONS_BATTLE
 // 	FLAG_CAMOMONS_BATTLE,
 // #endif
@@ -141,9 +141,9 @@ const u16 gEndBattleFlagClearTable[] =
 #ifdef FLAG_START_WITH_RAID_SHIELDS
 	FLAG_START_WITH_RAID_SHIELDS,
 #endif
-#ifdef FLAG_KEEP_CONSUMABLE_ITEMS
-	FLAG_KEEP_CONSUMABLE_ITEMS,
-#endif
+// #ifdef FLAG_KEEP_CONSUMABLE_ITEMS
+// 	FLAG_KEEP_CONSUMABLE_ITEMS,
+// #endif
 // #ifdef FLAG_HIDDEN_ABILITY
 // 	FLAG_HIDDEN_ABILITY,
 // #endif
@@ -422,7 +422,8 @@ bool8 HandleRunActionFrontier(void)
 			}
 		}
 		else if (!CantCatchBecauseFlag() //Wild battle where mon can be caught
-		&& !IsRunningFromBattleImpossible()) //Can run right now
+		&& !IsRunningFromBattleImpossible() //Can run right now
+		&& !FlagGet(FLAG_SHINY_GAME_MODIFIER_ON)) // Would be very annoying
 		{
 			if ((GetMonData(&gEnemyParty[0], MON_DATA_HP, 0) != 0 && IsMonShiny(&gEnemyParty[0]))
 			|| (IS_DOUBLE_BATTLE && GetMonData(&gEnemyParty[1], MON_DATA_HP, 0) != 0 && IsMonShiny(&gEnemyParty[1]))

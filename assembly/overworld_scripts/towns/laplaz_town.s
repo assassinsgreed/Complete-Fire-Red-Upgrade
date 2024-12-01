@@ -972,6 +972,7 @@ CaseyRematch_ChoseNotToBattle:
 
 CaseyRematch_BeatenToday:
     npcchatwithmovement gText_LaplazGym_LeaderCasey_BeatenToday m_LookDown
+    goto GymLeaderRematch_HandleAllCleared
     end
 
 .global EventScript_LaplazGym_GymExpert
