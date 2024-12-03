@@ -916,6 +916,24 @@ We shouldn't hike up the mountain\nwithout the rest of our group[.]\pIt would be
 #org @gText_Route13_HikerCommon
 Oh! Please be patient with us.\pWe're waiting for the rest of our\nhiking group to get here.\pI heard Hesson Pass is a popular\nhiking destination.\pWhy don't you try there? It's just\nnorth of Ferrox Village.
 
+#org @gText_Route13Cave_KurtisIntro
+I-Impossible!\nWhat are you doing here?\pNo[.] It matters not.\pYou disrupted every operation Team\nPluto enacted.\pAnd now, you've followed me here.\pYou've caused me a lot of grief,\nyou little rat.\pLook here! It is one of the Snag\nMachines I had hidden away.\pWith this, I can rebuild Team Pluto.
+
+#org @gText_Route13Cave_KurtisInitiatingBattle
+I only need to crush you, as I\nshould have done long ago.
+
+#org @gText_Route13Cave_KurtisLostBattle
+No! Team Pluto shall never fall!
+
+#org @gText_Route13Cave_KurtisCommentsOnPlutoRisingUp
+This loss is only a minor setback[.]\pAs long as Powerful Pok\emon exist,\nso too shall Team Pluto!\pFufufufu!\pYou'd better prepare yourself, kid.\pI'll return someday, and I'll\nremember you[.]
+
+#org @gText_Route13Cave_SeeSnagMachine
+[BLACK]It's a Snag Machine, left behind by\nKurtis[.] Better smash it!
+
+#org @gText_Route13Cave_DestroySnagMachine
+[BLACK]Ka-chk!!
+
 // Route 14
 #org @gText_Route14_SwimmerIvan_Intro
 The waves of battle are calling us.\nAre you ready?

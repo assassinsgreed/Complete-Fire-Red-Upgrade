@@ -268,6 +268,16 @@ Team Pluto won't fall to the likes\nof you. Not now, not ever.\p
 #org @sText_Kurtis_LowHP
 Now you're making me angry!\p
 
+// Team Pluto Leader Kurtis (Route 13 Cave)
+#org @sText_KurtisRoute13Cave_FirstMonDown
+I shall repay you in full for the\ngrief you've dealt me!\p
+
+#org @sText_KurtisRoute13Cave_LastSwitchIn
+I will crush you and your Pok\emon\npersonally!\p
+
+#org @sText_KurtisRoute13Cave_LowHP
+Team Pluto is eternal[.]\nOf that you can be certain!\p
+
 // Pokemon Trainer Alistair
 #org @sText_Alistair_FirstMonDown
 Impressive. But you can't win.\p

@@ -626,3 +626,5 @@
 #define TRAINER_LEADERS_DENNIS_AND_DEE_REMATCH_4         561
 // Victory Road
 #define TRAINER_ROUTE_21_NURSE_BENEDIKTA                 562
+// Route 13 Cave
+#define TRAINER_ROUTE_13_CAVE_PLUTO_LEADER_KURTIS        563

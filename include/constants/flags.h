@@ -672,7 +672,7 @@
 #define FLAG_VICTORY_ROAD_2F_RIGHT_PUZZLE_SOLVED         0x285
 #define FLAG_VICTORY_ROAD_3F_LEFT_PUZZLE_SOLVED          0x286
 #define FLAG_VICTORY_ROAD_3F_RIGHT_PUZZLE_SOLVED         0x287
-#define FLAG_SILPH_9F_DOOR_1                             0x288
+#define FLAG_DEFEATED_KURTIS_IN_ROUTE_13_CAVE            0x288
 #define FLAG_SILPH_9F_DOOR_2                             0x289
 #define FLAG_SILPH_9F_DOOR_3                             0x28A
 #define FLAG_SILPH_9F_DOOR_4                             0x28B
