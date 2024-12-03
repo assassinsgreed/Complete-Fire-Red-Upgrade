@@ -109,6 +109,42 @@ static const struct TrainerSlide sTrainerSlides[] =
 	{0x20B, sText_Thomas_FirstMonDown, sText_Thomas_LastSwitchIn, sText_Thomas_LowHP}, // Elite Four Thomas
 	{0x20C, sText_Champion_FirstMonDown, sText_Champion_LastSwitchIn, sText_Champion_LowHP}, // Champion Selene
 	{0x20D, sText_AlistairPostCredits_FirstMonDown, sText_AlistairPostCredits_LastSwitchIn, sText_AlistairPostCredits_LowHP}, // Post-Credits Alistair battle
+	{526, sText_Leader1Rematch_FirstMonDown, sText_Leader1Rematch_LastSwitchIn, sText_Leader1Rematch_LowHp}, // Gym Leader Terrence Rematch
+	{527, sText_Leader1Rematch_FirstMonDown, sText_Leader1Rematch_LastSwitchIn, sText_Leader1Rematch_LowHp}, // Gym Leader Terrence Rematch
+	{528, sText_Leader1Rematch_FirstMonDown, sText_Leader1Rematch_LastSwitchIn, sText_Leader1Rematch_LowHp}, // Gym Leader Terrence Rematch
+	{529, sText_Leader1Rematch_FirstMonDown, sText_Leader1Rematch_LastSwitchIn, sText_Leader1Rematch_LowHp}, // Gym Leader Terrence Rematch
+	{530, sText_Leader2Rematch_FirstMonDown, sText_Leader2Rematch_LastSwitchIn, sText_Leader2Rematch_LowHp}, // Gym Leader Stella Rematch
+	{531, sText_Leader2Rematch_FirstMonDown, sText_Leader2Rematch_LastSwitchIn, sText_Leader2Rematch_LowHp}, // Gym Leader Stella Rematch
+	{532, sText_Leader2Rematch_FirstMonDown, sText_Leader2Rematch_LastSwitchIn, sText_Leader2Rematch_LowHp}, // Gym Leader Stella Rematch
+	{533, sText_Leader2Rematch_FirstMonDown, sText_Leader2Rematch_LastSwitchIn, sText_Leader2Rematch_LowHp}, // Gym Leader Stella Rematch
+	{534, sText_Leader3Rematch_FirstMonDown, sText_Leader3Rematch_LastSwitchIn, sText_Leader3Rematch_LowHp}, // Gym Leader Raine Rematch
+	{535, sText_Leader3Rematch_FirstMonDown, sText_Leader3Rematch_LastSwitchIn, sText_Leader3Rematch_LowHp}, // Gym Leader Raine Rematch
+	{536, sText_Leader3Rematch_FirstMonDown, sText_Leader3Rematch_LastSwitchIn, sText_Leader3Rematch_LowHp}, // Gym Leader Raine Rematch
+	{537, sText_Leader3Rematch_FirstMonDown, sText_Leader3Rematch_LastSwitchIn, sText_Leader3Rematch_LowHp}, // Gym Leader Raine Rematch
+	{538, sText_Leader4Rematch_FirstMonDown, sText_Leader4Rematch_LastSwitchIn, sText_Leader4Rematch_LowHp}, // Gym Leader Chance Rematch
+	{539, sText_Leader4Rematch_FirstMonDown, sText_Leader4Rematch_LastSwitchIn, sText_Leader4Rematch_LowHp}, // Gym Leader Chance Rematch
+	{540, sText_Leader4Rematch_FirstMonDown, sText_Leader4Rematch_LastSwitchIn, sText_Leader4Rematch_LowHp}, // Gym Leader Chance Rematch
+	{541, sText_Leader4Rematch_FirstMonDown, sText_Leader4Rematch_LastSwitchIn, sText_Leader4Rematch_LowHp}, // Gym Leader Chance Rematch
+	{542, sText_Leader5FRematch_FirstMonDown, sText_Leader5FRematch_LastSwitchIn, sText_Leader5FRematch_LowHp}, // Gym Leader Casey (Female) Rematch
+	{543, sText_Leader5FRematch_FirstMonDown, sText_Leader5FRematch_LastSwitchIn, sText_Leader5FRematch_LowHp}, // Gym Leader Casey (Female) Rematch
+	{544, sText_Leader5FRematch_FirstMonDown, sText_Leader5FRematch_LastSwitchIn, sText_Leader5FRematch_LowHp}, // Gym Leader Casey (Female) Rematch
+	{545, sText_Leader5FRematch_FirstMonDown, sText_Leader5FRematch_LastSwitchIn, sText_Leader5FRematch_LowHp}, // Gym Leader Casey (Female) Rematch
+	{546, sText_Leader5MRematch_FirstMonDown, sText_Leader5MRematch_LastSwitchIn, sText_Leader5MRematch_LowHp}, // Gym Leader Casey (Male) Rematch
+	{547, sText_Leader5MRematch_FirstMonDown, sText_Leader5MRematch_LastSwitchIn, sText_Leader5MRematch_LowHp}, // Gym Leader Casey (Male) Rematch
+	{548, sText_Leader5MRematch_FirstMonDown, sText_Leader5MRematch_LastSwitchIn, sText_Leader5MRematch_LowHp}, // Gym Leader Casey (Male) Rematch
+	{549, sText_Leader5MRematch_FirstMonDown, sText_Leader5MRematch_LastSwitchIn, sText_Leader5MRematch_LowHp}, // Gym Leader Casey (Male) Rematch
+	{550, sText_Leader6Rematch_FirstMonDown, sText_Leader6Rematch_LastSwitchIn, sText_Leader6Rematch_LowHp}, // Gym Leader Abby Rematch
+	{551, sText_Leader6Rematch_FirstMonDown, sText_Leader6Rematch_LastSwitchIn, sText_Leader6Rematch_LowHp}, // Gym Leader Abby Rematch
+	{552, sText_Leader6Rematch_FirstMonDown, sText_Leader6Rematch_LastSwitchIn, sText_Leader6Rematch_LowHp}, // Gym Leader Abby Rematch
+	{553, sText_Leader6Rematch_FirstMonDown, sText_Leader6Rematch_LastSwitchIn, sText_Leader6Rematch_LowHp}, // Gym Leader Abby Rematch
+	{554, sText_Leader7Rematch_FirstMonDown, sText_Leader7Rematch_LastSwitchIn, sText_Leader7Rematch_LowHp}, // Gym Leader Iris Rematch
+	{555, sText_Leader7Rematch_FirstMonDown, sText_Leader7Rematch_LastSwitchIn, sText_Leader7Rematch_LowHp}, // Gym Leader Iris Rematch
+	{556, sText_Leader7Rematch_FirstMonDown, sText_Leader7Rematch_LastSwitchIn, sText_Leader7Rematch_LowHp}, // Gym Leader Iris Rematch
+	{557, sText_Leader7Rematch_FirstMonDown, sText_Leader7Rematch_LastSwitchIn, sText_Leader7Rematch_LowHp}, // Gym Leader Iris Rematch
+	{558, sText_Leader8Rematch_FirstMonDown, sText_Leader8Rematch_LastSwitchIn, sText_Leader8Rematch_LowHp}, // Gym Leaders Dennis & Dee Rematch
+	{559, sText_Leader8Rematch_FirstMonDown, sText_Leader8Rematch_LastSwitchIn, sText_Leader8Rematch_LowHp}, // Gym Leaders Dennis & Dee Rematch
+	{560, sText_Leader8Rematch_FirstMonDown, sText_Leader8Rematch_LastSwitchIn, sText_Leader8Rematch_LowHp}, // Gym Leaders Dennis & Dee Rematch
+	{561, sText_Leader8Rematch_FirstMonDown, sText_Leader8Rematch_LastSwitchIn, sText_Leader8Rematch_LowHp}, // Gym Leaders Dennis & Dee Rematch
 	{0x233, sText_KurtisRoute13Cave_FirstMonDown, sText_KurtisRoute13Cave_LastSwitchIn, sText_KurtisRoute13Cave_LowHP}, //  Pluto Leader Kurtis (Route 13 Cave)
 };
 

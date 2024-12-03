@@ -138,6 +138,15 @@ Excellent! I see you understand\nyour Pok\emon well.\p
 #org @sText_Leader1_LowHP
 Don't give up! You're doing great!\p
 
+#org @sText_Leader1Rematch_FirstMonDown
+We never got the chance to let loose\nbefore, did we? This is refreshing!\p
+
+#org @sText_Leader1Rematch_LastSwitchIn
+So you're this skilled, are you?\nI'm not giving up though!\p
+
+#org @sText_Leader1Rematch_LowHp
+We're really sweating now!\p
+
 // Leader 2 (Stella)
 #org @sText_Leader2_FirstMonDown
 Not bad, but the first act has just\nconcluded.\p
@@ -148,6 +157,15 @@ Time for a well placed plot twist.\p
 #org @sText_Leader2_LowHP
 We've really been backed into a\ncorner.\p
 
+#org @sText_Leader2Rematch_FirstMonDown
+Don't get too excited. This is just\nthe end of the first chapter!\p
+
+#org @sText_Leader2Rematch_LastSwitchIn
+Any good story saves the best for\nlast.\p
+
+#org @sText_Leader2Rematch_LowHp
+Time for an exhilerating plot twist[.]\p
+
 // Leader 3 (Raine)
 #org @sText_Leader3_FirstMonDown
 Very good. This shall be an exciting\nbattle, indeed.\p
@@ -156,7 +174,16 @@ Very good. This shall be an exciting\nbattle, indeed.\p
 You'd better keep your eyes up!\nThe weather can change quickly.\p
 
 #org @sText_Leader3_LowHP
-A storm is brewing...\p
+A storm is brewing[.]\p
+
+#org @sText_Leader3Rematch_FirstMonDown
+Impressive, but I won't allow you to\nrain on my parade.\p
+
+#org @sText_Leader3Rematch_LastSwitchIn
+This is the calm before the storm[.]\p
+
+#org @sText_Leader3Rematch_LowHp
+Don't get distracted, now.\nThe weather can change quickly!\p
 
 // Leader 4 (Chance)
 #org @sText_Leader4_FirstMonDown
@@ -168,6 +195,15 @@ You've got me on the back foot. Time\nfor a shake-up!\p
 #org @sText_Leader4_LowHP
 Don't count me out! The game isn't\nover until the last card is played.\p
 
+#org @sText_Leader4Rematch_FirstMonDown
+The stakes are really rising now!\p
+
+#org @sText_Leader4Rematch_LastSwitchIn
+I'm all in!\p
+
+#org @sText_Leader4Rematch_LowHp
+You've concealed your hand well\nduring this battle[.]\p
+
 // Leader 5 (Casey Male)
 #org @sText_Leader5M_FirstMonDown
 You're as skilled as always, aren't\nyou?\pI'll have to take this seriously.\p
@@ -177,6 +213,15 @@ I didn't anticipate you'd pressure\nmy team this much. Fascinating.\p
 
 #org @sText_Leader5M_LowHP
 Impressive. Seems you might've\noutplayed me.\p
+
+#org @sText_Leader5MRematch_FirstMonDown
+Your skills are as sharp as ever.\p
+
+#org @sText_Leader5MRematch_LastSwitchIn
+A battle isn't over until it's over.\nWe'll bring this back.\p
+
+#org @sText_Leader5MRematch_LowHp
+I need to think of a last minute\nstrategy to turn the tides[.]\p
 
 // Leader 5 (Casey Female)
 #org @sText_Leader5F_FirstMonDown
@@ -188,6 +233,15 @@ I'm down to my last Pok\emon already?\nTime to get even more serious.\p
 #org @sText_Leader5F_LowHP
 Uh oh, it's down to the wire now[.]\p
 
+#org @sText_Leader5FRematch_FirstMonDown
+Our battle is just starting.\nAre you warmed up? We sure are!\p
+
+#org @sText_Leader5FRematch_LastSwitchIn
+The battle is far from over, just\nyou wait and see!\p
+
+#org @sText_Leader5FRematch_LowHp
+Time for us to get serious[.]\p
+
 // Leader 6 (Abby)
 #org @sText_Leader6_FirstMonDown
 Don't get cocky, this battle is\nfar from over.\p
@@ -197,6 +251,15 @@ Your gym challenge ends here.\p
 
 #org @sText_Leader6_LowHP
 You should know a cornered\nbeast is most dangerous!\p
+
+#org @sText_Leader6Rematch_FirstMonDown
+A sound strategy.\pNow that I've seen it, I won't allow\nit to happen again.\p
+
+#org @sText_Leader6Rematch_LastSwitchIn
+Don't assume you've cornered us.\nWe're in it to win it.\p
+
+#org @sText_Leader6Rematch_LowHp
+As long as we're still standing, we\ncan win this battle.\p
 
 // Leader 7 (Iris)
 #org @sText_Leader7_FirstMonDown
@@ -208,6 +271,15 @@ The right item at the right time can\nmake all the difference.\p
 #org @sText_Leader7_LowHP
 Time for a trademark last-minute\nchange-up! Get ready!\p
 
+#org @sText_Leader7Rematch_FirstMonDown
+I've still got plenty of Pok\emon\nleft!\p
+
+#org @sText_Leader7Rematch_LastSwitchIn
+Things are getting serious[.]\nI'd better get more serious, too!\p
+
+#org @sText_Leader7Rematch_LowHp
+Time to come back swinging!\p
+
 // Leader 8 (Dennis & Dee)
 #org @sText_Leader8_FirstMonDown
 How're you holding up over there?\nWe're doing great!\p
@@ -217,6 +289,15 @@ Uh oh, that was our last Pok\e Ball!\p
 
 #org @sText_Leader8_LowHP
 This is fine[.] This is fine[.]\nWe'll pull through this together!\p
+
+#org @sText_Leader8Rematch_FirstMonDown
+We'll pull through by relying on our\nteamwork, same as always.\p
+
+#org @sText_Leader8Rematch_LastSwitchIn
+What? You've got to be kidding me!\p
+
+#org @sText_Leader8Rematch_LowHp
+C'mon[.] We have to pull ourselves\ntogether[.]\p
 
 // Team Pluto Admin Irene
 #org @sText_Irene_FirstMonDown
