@@ -109,6 +109,7 @@ static const struct TrainerSlide sTrainerSlides[] =
 	{0x20B, sText_Thomas_FirstMonDown, sText_Thomas_LastSwitchIn, sText_Thomas_LowHP}, // Elite Four Thomas
 	{0x20C, sText_Champion_FirstMonDown, sText_Champion_LastSwitchIn, sText_Champion_LowHP}, // Champion Selene
 	{0x20D, sText_AlistairPostCredits_FirstMonDown, sText_AlistairPostCredits_LastSwitchIn, sText_AlistairPostCredits_LowHP}, // Post-Credits Alistair battle
+	{0x233, sText_KurtisRoute13Cave_FirstMonDown, sText_KurtisRoute13Cave_LastSwitchIn, sText_KurtisRoute13Cave_LowHP}, //  Pluto Leader Kurtis (Route 13 Cave)
 };
 
 static const struct DynamaxTrainerSlide sDynamaxTrainerSlides[] =

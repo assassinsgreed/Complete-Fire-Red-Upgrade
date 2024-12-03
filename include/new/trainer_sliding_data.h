@@ -144,6 +144,11 @@ extern const u8 sText_Kurtis_FirstMonDown[];
 extern const u8 sText_Kurtis_LastSwitchIn[];
 extern const u8 sText_Kurtis_LowHP[];
 
+// Team Pluto Leader Kurtis (Route 13 Cave)
+extern const u8 sText_KurtisRoute13Cave_FirstMonDown[];
+extern const u8 sText_KurtisRoute13Cave_LastSwitchIn[];
+extern const u8 sText_KurtisRoute13Cave_LowHP[];
+
 // Pokemon Trainer Alistair
 extern const u8 sText_Alistair_FirstMonDown[];
 extern const u8 sText_Alistair_LastSwitchIn[];

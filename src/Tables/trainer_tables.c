@@ -10552,6 +10552,82 @@ const struct TrainerMonItemCustomMoves sParty_GymLeaderRematches_DennisAndDee_4[
     }
 };
 // #endregion
+// #region Route 13 Cave
+const struct TrainerMonItemCustomMoves sParty_Route13Cave_TeamPlutoLeaderKurtis[] = {
+    {
+        .lvl = 73,
+        .species = SPECIES_AMOONGUSS,
+        .moves = {
+            MOVE_CLEARSMOG,
+            MOVE_SPORE,
+            MOVE_SYNTHESIS,
+            MOVE_SLUDGEBOMB
+        },
+        .heldItem = ITEM_BLACK_SLUDGE,
+        .ability = Ability_Hidden // Regenerator
+    },
+    {
+        .lvl = 73,
+        .species = SPECIES_KOMMO_O,
+        .moves = {
+            MOVE_BELLYDRUM,
+            MOVE_DRAGONCLAW,
+            MOVE_POISONJAB,
+            MOVE_CLOSECOMBAT
+        },
+        .heldItem = ITEM_SITRUS_BERRY,
+        .ability = Ability_Hidden // Overcoat
+    },
+    {
+        .lvl = 73,
+        .species = SPECIES_DUSKNOIR,
+        .moves = {
+            MOVE_WILLOWISP,
+            MOVE_SHADOWPUNCH,
+            MOVE_BRICKBREAK,
+            MOVE_LEECHLIFE
+        },
+        .heldItem = ITEM_RED_CARD,
+        .ability = Ability_1 // Pressure
+    },
+    {
+        .lvl = 74,
+        .species = SPECIES_BISHARP,
+        .moves = {
+            MOVE_RETALIATE,
+            MOVE_SWORDSDANCE,
+            MOVE_IRONHEAD,
+            MOVE_SUCKERPUNCH
+        },
+        .heldItem = ITEM_NORMAL_GEM,
+        .ability = Ability_2 // Inner Focus
+    },
+    {
+        .lvl = 74,
+        .species = SPECIES_EXCADRILL,
+        .moves = {
+            MOVE_EARTHQUAKE,
+            MOVE_SWORDSDANCE,
+            MOVE_ROCKSLIDE,
+            MOVE_IRONHEAD
+        },
+        .heldItem = ITEM_AIR_BALLOON,
+        .ability = Ability_Hidden // Mold Breaker
+    },
+    {
+        .lvl = 75,
+        .species = SPECIES_GYARADOS,
+        .moves = {
+            MOVE_DRAGONDANCE,
+            MOVE_WATERFALL,
+            MOVE_ICEFANG,
+            MOVE_CRUNCH
+        },
+        .heldItem = ITEM_GYARADOSITE,
+        .ability = Ability_1 // Intimidate
+    },
+};
+// #endregion
 
 // #endregion
 
@@ -17397,6 +17473,19 @@ const struct Trainer gTrainers[] = {
         .aiFlags = TrainerAIFlags_GymLeaderRematches_Standard | AI_SCRIPT_DOUBLE_BATTLE,
         .partySize = NELEMS(sParty_GymLeaderRematches_DennisAndDee_4),
         .party = {.ItemCustomMoves = sParty_GymLeaderRematches_DennisAndDee_4}
+    },
+    // #endregion
+    // #region Route 13 Cave
+    [TRAINER_ROUTE_13_CAVE_PLUTO_LEADER_KURTIS] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
+        .trainerClass = CLASS_TEAM_PLUTO_LEADER,
+        .trainerPic = TRAINER_PIC_PLUTO_LEADER_KURTIS,
+        .trainerName = {_K, _u, _r, _t, _i, _s, _END},
+        .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_MEGA_RING },
+        .doubleBattle = FALSE,
+        .aiFlags =  AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_SEMI_SMART,
+        .partySize = NELEMS(sParty_Route13Cave_TeamPlutoLeaderKurtis),
+        .party = {.ItemCustomMoves = sParty_Route13Cave_TeamPlutoLeaderKurtis}
     },
     // #endregion
 };

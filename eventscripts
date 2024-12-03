@@ -506,6 +506,8 @@ npc 1 126 4 EventScript_Common_RockSmash
 npc 1 126 5 EventScript_Common_RockSmash
 npc 1 126 6 ItemScript_Common_FullRestore
 npc 1 126 7 ItemScript_Common_Ultraball
+map 2 60 MapScript_Route13Cave_KurtisRoom
+npc 2 60 0 EventScript_Route13Cave_Kurtis
 npc 2 61 0 EventScript_Common_Strength
 npc 2 61 1 EventScript_Common_RockSmash
 npc 2 61 2 EventScript_Common_RockSmash

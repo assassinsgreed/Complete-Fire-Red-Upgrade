@@ -1659,10 +1659,43 @@ LevelScript_HandleBreakableIce:
     releaseall
     end
 
+.global MapScript_Route13Cave_KurtisRoom
+MapScript_Route13Cave_KurtisRoom:
+    mapscript MAP_SCRIPT_ON_LOAD Route13Cave_KurtisRoom
+    .byte MAP_SCRIPT_TERMIN
+
+Route13Cave_KurtisRoom:
+    checkflag 0x288 @ Kurtis beaten in Route 13 Cave
+    if NOT_SET _goto End
+    hidesprite 0x1 @ Hide Kurtis when defeated
+    end
+
 .global EventScript_Route13Cave_TM65ShadowClaw
 EventScript_Route13Cave_TM65ShadowClaw:
     setvar CHOSEN_ITEM ITEM_TM65
     call ItemScript_Common_FindTM
+    end
+
+.global EventScript_Route13Cave_Kurtis
+EventScript_Route13Cave_Kurtis:
+    lock
+    faceplayer
+    applymovement LASTTALKED m_Surprise
+    sound 0x15 @ Exclaim
+    playbgm 0x185 @ Ghetsis theme
+    msgbox gText_Route13Cave_KurtisIntro MSG_NORMAL
+    msgbox gText_Route13Cave_KurtisInitiatingBattle MSG_NORMAL
+    call SetupMugshotGymLeaderAndBosses
+    trainerbattle3 0x0 563 0x100 gText_Route13Cave_KurtisLostBattle
+    msgbox gText_Route13Cave_KurtisCommentsOnPlutoRisingUp MSG_NORMAL
+    fadescreen FADEOUT_BLACK
+    hidesprite LASTTALKED
+    setflag 0x288 @ Kurtis beaten in Route 13 Cave
+    setflag 0x0B4 @ Catch Trainers' Pokemon Unlocked
+    fadescreen FADEIN_BLACK
+    msgbox gText_Route13Cave_SeeSnagMachine MSG_NORMAL
+    sound 0x23 @ Ice break
+    msgbox gText_Route13Cave_DestroySnagMachine MSG_NORMAL
     end
 
 @ Route 14
