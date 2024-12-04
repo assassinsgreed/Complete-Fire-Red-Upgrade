@@ -18,6 +18,8 @@
 #include "../include/new/move_tables.h"
 #include "../include/new/multi.h"
 #include "../include/new/util.h"
+#include "../include/constants/songs.h"
+#include "../include/m4a.h"
 
 /*
 battle_util.c
@@ -2689,4 +2691,21 @@ u16 TryFixDynamaxTransformSpecies(u8 bank, u16 species)
 		species = gBattleSpritesDataPtr->bankData[bank].transformSpecies;
 
 	return species;
+}
+
+void HandleBattleBGMForLowHP()
+{
+	// Play low HP beep if either of the player's pokemon have low HP but are not 0
+	if ((!IS_DOUBLE_BATTLE && gBattleMons[0].hp > 0 && gBattleMons[0].hp <= gBattleMons[0].maxHP / 5) ||
+		(IS_DOUBLE_BATTLE && (
+			(gBattleMons[0].hp > 0 && gBattleMons[0].hp <= gBattleMons[0].maxHP / 5) ||
+			(gBattleMons[PARTNER(0)].hp > 0 && gBattleMons[PARTNER(0)].hp <= gBattleMons[PARTNER(0)].maxHP / 5))))
+	{
+		PlayBGM(BGM_LOW_HP);
+	}
+	else
+	{
+		// Continue the music that is meant to be playing
+		m4aMPlayContinue(&gMPlayInfo_BGM);
+	}
 }

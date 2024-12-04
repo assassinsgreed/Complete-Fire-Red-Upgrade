@@ -343,10 +343,7 @@ static void PlayerIntro_WaitForShinyAnimAndHealthbox(void)
 		SetShinyAnimOver(gActiveBattler);
 		SetShinyAnimOver(partner);
 		FreeShinySpriteGfx();
-
-		HandleLowHpMusicChange(GetBankPartyData(gActiveBattler), gActiveBattler);
-		if (IS_DOUBLE_BATTLE)
-			HandleLowHpMusicChange(GetBankPartyData(partner), partner);
+		HandleBattleBGMForLowHP();
 
 		gBattleSpritesDataPtr->healthBoxesData[gActiveBattler].introEndDelay = 3;
 		gBattlerControllerFuncs[gActiveBattler] = PlayerIntro_DelayAndEnd;

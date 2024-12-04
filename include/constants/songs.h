@@ -43,6 +43,7 @@
 
 #define BGM_RANDOM_BATTLE_MUSIC 0xFEFE
 #define BGM_BATTLE_GYM_LEADER_LAST_POKEMON 0x166
+#define BGM_LOW_HP 0x175
 
 // Overworld (Custom)
 #define BGM_RIVAL_AIDEN_THEME 0x195 // Cheren BW2

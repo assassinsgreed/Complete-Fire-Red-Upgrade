@@ -440,6 +440,7 @@ void atk4D_switchindataupdate(void)
 	PREPARE_MON_NICK_BUFFER(gBattleTextBuff1, gActiveBattler, GetIllusionPartyNumber(gActiveBattler));
 
 	gBattleMons[gActiveBattler].type3 = TYPE_BLANK;
+	HandleBattleBGMForLowHP();
 
 	gBattlescriptCurrInstr += 2;
 }
