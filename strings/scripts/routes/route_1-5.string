@@ -555,6 +555,9 @@ Well look at that! You've hatched\n[BUFFER1] eggs. I have a gift for\lyou.
 #org @gText_Route5_EggGiver_TenEggGiftReceived
 [BLUE]Just by having this charm, you'll be\nmore likely to find eggs at the\ldaycare.\pIsn't that handy?
 
+#org @gText_Route5_TrainerTips
+Trainer Tips!\pYou can press [SELECT_BUTTON] in the party menu\nto quickly rearrange your Pok\emon.
+
 // Heleo Ranch
 
 #org @gText_HeleoRanch_Mareep

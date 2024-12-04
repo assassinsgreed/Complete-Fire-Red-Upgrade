@@ -911,6 +911,11 @@ SignScript_Route5_Daycare:
     msgbox gText_Route5_DaycareSign MSG_SIGN
     end
 
+.global SignScript_Route5_TrainerTips
+SignScript_Route5_TrainerTips:
+    msgbox gText_Route5_TrainerTips MSG_SIGN
+    end
+
 @@ Heleo Ranch
 .global MapScript_HeleoRanchExterior
 MapScript_HeleoRanchExterior:
