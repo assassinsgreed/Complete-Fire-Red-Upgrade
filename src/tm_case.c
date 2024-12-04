@@ -131,9 +131,9 @@ void CreateTMCaseSprite(void)
 		if (species != SPECIES_NONE && species != SPECIES_EGG)
 		{
 			s16 x = 1 + (32 / 2) + (counter % 3) * 32;
-			s16 y = 29 + (32 / 2);
+			s16 y = 25 + (32 / 2);
 			if (counter >= 3)
-				y = 58 + (32 / 2);
+				y = 54 + (32 / 2);
 
 			u8 spriteId = CreateMonIcon(species, SpriteCallbackDummy, x, y, 0, GetMonData(mon, MON_DATA_PERSONALITY, NULL), FALSE);
 			if (spriteId < MAX_SPRITES)
