@@ -767,11 +767,13 @@ GameModifiers_CamomonBattles_ClearModifier:
 GameModifiers_DoubleBattles_SetModifier:
 	setflag 0x907 @ Turn on Trainer Double Battles
 	setflag 0x910 @ Turn on Wild Double Battles
+	setflag 0x934 @ Double battles modifier active
 	return
 
 GameModifiers_DoubleBattles_ClearModifier:
 	clearflag 0x907 @ Turn off Double Battles
 	clearflag 0x910 @ Turn off Wild Double Battles
+	clearflag 0x934 @ Double battles modifier active
 	return
 
 GameModifiers_GuaranteedCaptures_SetModifier:
