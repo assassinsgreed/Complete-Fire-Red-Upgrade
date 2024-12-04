@@ -80,20 +80,36 @@ extern const u8 sText_Leader1_FirstMonDown[];
 extern const u8 sText_Leader1_LastSwitchIn[];
 extern const u8 sText_Leader1_LowHP[];
 
+extern const u8 sText_Leader1Rematch_FirstMonDown[];
+extern const u8 sText_Leader1Rematch_LastSwitchIn[];
+extern const u8 sText_Leader1Rematch_LowHp[];
+
 // Gym Leader 2 (Stella)
 extern const u8 sText_Leader2_FirstMonDown[];
 extern const u8 sText_Leader2_LastSwitchIn[];
 extern const u8 sText_Leader2_LowHP[];
+
+extern const u8 sText_Leader2Rematch_FirstMonDown[];
+extern const u8 sText_Leader2Rematch_LastSwitchIn[];
+extern const u8 sText_Leader2Rematch_LowHp[];
 
 // Gym Leader 3 (Raine)
 extern const u8 sText_Leader3_FirstMonDown[];
 extern const u8 sText_Leader3_LastSwitchIn[];
 extern const u8 sText_Leader3_LowHP[];
 
-// Gym Leader 4 (Monty)
+extern const u8 sText_Leader3Rematch_FirstMonDown[];
+extern const u8 sText_Leader3Rematch_LastSwitchIn[];
+extern const u8 sText_Leader3Rematch_LowHp[];
+
+// Gym Leader 4 (Chance)
 extern const u8 sText_Leader4_FirstMonDown[];
 extern const u8 sText_Leader4_LastSwitchIn[];
 extern const u8 sText_Leader4_LowHP[];
+
+extern const u8 sText_Leader4Rematch_FirstMonDown[];
+extern const u8 sText_Leader4Rematch_LastSwitchIn[];
+extern const u8 sText_Leader4Rematch_LowHp[];
 
 // Gym Leader 5 (Casey)
 extern const u8 sText_Leader5M_FirstMonDown[];
@@ -104,20 +120,40 @@ extern const u8 sText_Leader5F_FirstMonDown[];
 extern const u8 sText_Leader5F_LastSwitchIn[];
 extern const u8 sText_Leader5F_LowHP[];
 
+extern const u8 sText_Leader5MRematch_FirstMonDown[];
+extern const u8 sText_Leader5MRematch_LastSwitchIn[];
+extern const u8 sText_Leader5MRematch_LowHp[];
+
+extern const u8 sText_Leader5FRematch_FirstMonDown[];
+extern const u8 sText_Leader5FRematch_LastSwitchIn[];
+extern const u8 sText_Leader5FRematch_LowHp[];
+
 // Gym Leader 6 (Abby)
 extern const u8 sText_Leader6_FirstMonDown[];
 extern const u8 sText_Leader6_LastSwitchIn[];
 extern const u8 sText_Leader6_LowHP[];
+
+extern const u8 sText_Leader6Rematch_FirstMonDown[];
+extern const u8 sText_Leader6Rematch_LastSwitchIn[];
+extern const u8 sText_Leader6Rematch_LowHp[];
 
 // Gym Leader 7 (Iris)
 extern const u8 sText_Leader7_FirstMonDown[];
 extern const u8 sText_Leader7_LastSwitchIn[];
 extern const u8 sText_Leader7_LowHP[];
 
+extern const u8 sText_Leader7Rematch_FirstMonDown[];
+extern const u8 sText_Leader7Rematch_LastSwitchIn[];
+extern const u8 sText_Leader7Rematch_LowHp[];
+
 // Gym Leader 8 (Dennis & Dee)
 extern const u8 sText_Leader8_FirstMonDown[];
 extern const u8 sText_Leader8_LastSwitchIn[];
 extern const u8 sText_Leader8_LowHP[];
+
+extern const u8 sText_Leader8Rematch_FirstMonDown[];
+extern const u8 sText_Leader8Rematch_LastSwitchIn[];
+extern const u8 sText_Leader8Rematch_LowHp[];
 
 // Team Pluto Admin Irene
 extern const u8 sText_Irene_FirstMonDown[];
@@ -187,4 +223,3 @@ extern const u8 sText_Champion_LowHP[];
 extern const u8 sText_ChampionRematch_FirstMonDown[];
 extern const u8 sText_ChampionRematch_LastSwitchIn[];
 extern const u8 sText_ChampionRematch_LowHP[];
-
