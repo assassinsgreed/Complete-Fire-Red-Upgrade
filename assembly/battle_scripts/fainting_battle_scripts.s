@@ -77,7 +77,7 @@ BattleScript_FaintRaidScriptingBank:
 	goto BattleScript_FinishFaintRaidBoss
 
 BattleScript_SuccessBallThrow:
-	jumpifhalfword EQUALS ITEM_BUFFER ITEM_SAFARI_BALL BattleScript_PrintCaughtMonInfo
+	@ jumpifhalfword EQUALS ITEM_BUFFER ITEM_SAFARI_BALL BattleScript_PrintCaughtMonInfo
 	incrementgamestat 0xB @;GAME_STAT_POKEMON_CAPTURES
 
 BattleScript_PrintCaughtMonInfo:
