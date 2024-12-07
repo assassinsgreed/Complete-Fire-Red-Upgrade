@@ -725,6 +725,20 @@ GymLeaderRematch_HandleAllCleared:
     setflag 0xB7 @ Game modifier for all wilds with hidden abilities
     end
 
+.global EventScript_Common_PocketPC
+EventScript_Common_PocketPC:
+    playse 0x2 @ Log on
+    special 0x3C
+    waitstate
+    setvar 0x8004 0x0
+	release
+    playse 0x3 @ Log off
+    end
+
+////////////
+// CREDITS
+////////////
+
 .global MapScript_Common_Credits
 MapScript_Common_Credits:
     mapscript MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE LevelScripts_Credits_OnWarp
