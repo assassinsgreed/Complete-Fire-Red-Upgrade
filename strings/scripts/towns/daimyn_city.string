@@ -526,6 +526,24 @@ Alright, that's what I like to\nhear! You'll really love these\lchanges.\pFor ex
 #org @gText_DaimynCityNPCHouses_PocketPCHint
 I'm working on something else that's\nreally cool, but it's too early to\lshare.\pMaybe I could be convinced, say[.] if\nyou were the champion?\pHeehee! If you manage to achieve\nthat, come back and I'll show you!
 
+#org @gText_DaimynCityNPCHouses_GivingPocketPC1
+Oh my!\pWhile I've been tinkering away, you\nwent off and became the champion!\pCongratulations!\nThat's a huge accomplishment!
+
+#org @gText_DaimynCityNPCHouses_GivingPocketPC2
+Oh! I've got just the thing.\nHang on a sec, 'kay?
+
+#org @gText_DaimynCityNPCHouses_GivingPocketPC3
+Hmm[.] Now where did I put it[.]\nAha!
+
+#org @gText_DaimynCityNPCHouses_GivingPocketPC4
+This is my pride and joy, the\n[GREEN]PortaPC[RED]!\pNow, I know what you're thinking[.]\nAnd yes, you're right!\pThis handy device will allow you to\naccess your PC from anywhere in\lthe world!\pYou can find it in your Tools menu,\nbeside the DexNav. Handy, right?\pPlease, take it! It's a gift from me\nto Kulure's newest champion.
+
+#org @gText_DaimynCityNPCHouses_ReceivedPortaPC
+[BLACK][PLAYER] recieved the PortaPC!
+
+#org @gText_DaimynCityNPCHouses_GivingPocketPC5
+[RED]Take good care of that, okay?\nIt's a Lana original!
+
 #org @gText_DaimynCityNPCHouses_LanaFarewell
 Come see me again if you want to\nchat, hey?\pAnd tell your friends about my PC\nsystem!
 

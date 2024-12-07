@@ -9,6 +9,7 @@
 #include "../include/start_menu.h"
 #include "../include/constants/flags.h"
 #include "../include/constants/songs.h"
+#include "../include/field_weather.h"
 
 #include "../include/new/dexnav.h"
 
@@ -31,6 +32,7 @@ enum
 	STARTMENU_RETIRE_SAFARI,
 	STARTMENU_PLAYER_LINK,
 	STARTMENU_DEXNAV,
+	STARTMENU_POCKETPC,
 	STARTMENU_EXIT_RIGHT,
 	STARTMENU_EXIT_LEFT,
 	MAX_STARTMENU_ITEMS
@@ -52,6 +54,7 @@ extern const u8 gText_MenuExitRight[];
 extern const u8 gText_MenuExitLeft[];
 extern const u8 gText_MenuRetire[];
 extern const u8 gText_MenuDexNav[];
+extern const u8 gText_MenuPocketPC[];
 extern const u8 gText_MenuBag[];
 extern const u8 gText_MenuCube[];
 #ifdef UNBOUND
@@ -68,6 +71,7 @@ extern const u8 gText_ExitDescription[];
 extern const u8 gText_RetireDescription[];
 extern const u8 gText_PlayerDescription[];
 extern const u8 gText_DexNavDescription[];
+extern const u8 gText_PocketPCDescription[];
 
 extern bool8 (*sStartMenuCallback)(void);
 extern u8 sStartMenuCursorPos;
@@ -109,6 +113,7 @@ static void BuildPokeToolsMenu(void);
 static bool8 CloseAndReloadStartMenu(void);
 static bool8 ReloadStartMenu(void);
 static bool8 ReloadStartMenuItems(void);
+bool8 StartMenuPocketPCCallback(void);
 
 const struct MenuAction sStartMenuActionTable[] =
 {
@@ -122,6 +127,7 @@ const struct MenuAction sStartMenuActionTable[] =
 	[STARTMENU_RETIRE_SAFARI] = {gText_MenuRetire, {.u8_void = StartMenuSafariZoneRetireCallback}},
 	[STARTMENU_PLAYER_LINK] = {gText_MenuPlayer, {.u8_void = StartMenuLinkModePlayerCallback}},
 	[STARTMENU_DEXNAV] = {gText_MenuDexNav, {.u8_void = StartMenuDexNavCallback}},
+	[STARTMENU_POCKETPC] = {gText_MenuPocketPC, {.u8_void = StartMenuPocketPCCallback}},
 	[STARTMENU_EXIT_RIGHT] = {gText_MenuExitRight, {.u8_void = StartMenuExitCallback}},
 	[STARTMENU_EXIT_LEFT] = {gText_MenuExitLeft, {.u8_void = StartMenuExitCallback}},
 };
@@ -138,6 +144,7 @@ const u8* const sStartMenuDescPointers[] =
 	gText_RetireDescription,
 	gText_PlayerDescription,
 	gText_DexNavDescription,
+	gText_PocketPCDescription,
 	// NULL,
 	gText_ExitDescription,
 	gText_ExitDescription,
@@ -147,6 +154,11 @@ static bool8 CanSetUpSecondaryStartMenu(void)
 {
 	#ifdef FLAG_SYS_DEXNAV
 	if (FlagGet(FLAG_SYS_DEXNAV) && FlagGet(FLAG_SYS_POKEDEX_GET))
+		return TRUE;
+	#endif
+
+	#ifdef FLAG_SYS_POCKETPC
+	if (FlagGet(FLAG_SYS_POCKETPC) && FlagGet(0x828)) // Pokemon menu enabled
 		return TRUE;
 	#endif
 
@@ -229,6 +241,11 @@ static void BuildPokeToolsMenu(void)
 	#endif
 		AppendToStartMenuItems(STARTMENU_DEXNAV);
 
+	#ifdef FLAG_SYS_POCKETPC
+	if (FlagGet(FLAG_SYS_POCKETPC) && FlagGet(0x828)) // Pokemon menu enabled)
+		AppendToStartMenuItems(STARTMENU_POCKETPC);
+	#endif
+
 	#ifdef FLAG_SYS_QUEST_LOG
 	if (FlagGet(FLAG_SYS_QUEST_LOG))
 		AppendToStartMenuItems(STARTMENU_QUEST_LOG);
@@ -305,7 +322,10 @@ bool8 StartCB_HandleInput(void)
 		if (!StartMenuPokedexSanityCheck())
 			return FALSE;
 		sStartMenuCallback = sStartMenuActionTable[sStartMenuOrder[sStartMenuCursorPos]].func.u8_void;
-		StartMenu_FadeScreenIfLeavingOverworld();
+		if(sStartMenuCallback != StartMenuPocketPCCallback)
+		{
+			StartMenu_FadeScreenIfLeavingOverworld();    
+		}
 		return FALSE;
 	}
 	else if (JOY_NEW(B_BUTTON | START_BUTTON))
@@ -352,6 +372,21 @@ static bool8 ReloadStartMenuItems(void)
 		sStartMenuCallback = StartCB_HandleInput;
 	}
 
+	return FALSE;
+}
+
+extern u8 EventScript_Common_PocketPC[];
+bool8 StartMenuPocketPCCallback(void)
+{
+	if (!gPaletteFade->active)
+	{
+		PlayRainStoppingSoundEffect();
+		DestroySafariZoneStatsWindow();
+		ClearStdWindowAndFrame(GetStartMenuWindowId(), TRUE);
+		RemoveStartMenuWindow();
+		ScriptContext1_SetupScript(EventScript_Common_PocketPC);
+		return TRUE;
+	}
 	return FALSE;
 }
 #endif

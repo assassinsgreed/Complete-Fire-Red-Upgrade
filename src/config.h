@@ -84,6 +84,7 @@
 #define FLAG_SYS_PLAYER_HIDE 0x91C	//Toggle [player] off
 #define FLAG_SYS_SAVE_HIDE 0x91D	//Toggle save off
 #define FLAG_SYS_DEXNAV 0x91E		//Flag to turn dexnav on/off in start menu (if undefined, this will eliminate dexnav from the start menu)
+#define FLAG_SYS_POCKETPC 0x935		//Toggle Pocket PC Off/On (if undefined, this will eliminate dexnav from the start menu)
 
 /*===== Pedometer Flags as in JPAN Engine =====*/
 #define FLAG_LONG_PEDOMETER 0x920		//32 bit / 4 bytes / Max 4 294 967 295 steps

@@ -413,7 +413,12 @@ DoesNotUsePC:
     msgbox gText_DaimynCityNPCHouses_LanaDoesNotUsePC MSG_NORMAL
     return
 
-RevisitingLana:
+HandlePocketPCCheck:
+    checkflag 0x4BC @ Is champion
+    if SET _goto GivePocketPC
+    goto RevisitingLana
+
+RevisitingLana:    
     msgbox gText_DaimynCityNPCHouses_LanaRevisited MSG_NORMAL
     goto LearnAboutPCPrompt
 
@@ -422,22 +427,39 @@ LearnAboutPCPrompt:
     compare LASTRESULT NO
     if equal _goto ChoseNotToLearnAboutPC
     msgbox gText_DaimynCityNPCHouses_DoWantToLearnAboutPC MSG_NORMAL
+    goto HandleLanaFarewell
+
+HandleLanaFarewell:
     checkflag 0x4BC @ Is champion
     if SET _goto GivePocketPC
     msgbox gText_DaimynCityNPCHouses_PocketPCHint MSG_NORMAL
-    msgbox gText_DaimynCityNPCHouses_LanaFarewell MSG_NORMAL
-    release
-    applymovement 0x1 m_LookRight
-    end
+    goto LanaFarewell
 
 ChoseNotToLearnAboutPC:
     msgbox gText_DaimynCityNPCHouses_DoNotWantToLearnAboutPC MSG_NORMAL
-    release
-    applymovement 0x1 m_LookRight
-    end
+    goto HandleLanaFarewell
 
 GivePocketPC:
-    # TODO later: Check if player is champ to give Pocket PC
+    checkflag 0x935 @ Received Portable PC
+    if SET _goto LanaFarewell
+    msgbox gText_DaimynCityNPCHouses_GivingPocketPC1 MSG_NORMAL
+    applymovement LASTTALKED m_Surprise
+    sound 0x15 @ Exclaim
+    msgbox gText_DaimynCityNPCHouses_GivingPocketPC2 MSG_NORMAL
+    applymovement LASTTALKED m_LookRight
+    msgbox gText_DaimynCityNPCHouses_GivingPocketPC3 MSG_NORMAL
+    faceplayer
+    msgbox gText_DaimynCityNPCHouses_GivingPocketPC4 MSG_NORMAL
+    fanfare 0x13E
+    msgbox gText_DaimynCityNPCHouses_ReceivedPortaPC MSG_KEEPOPEN
+    waitfanfare
+    msgbox gText_DaimynCityNPCHouses_GivingPocketPC5 MSG_NORMAL
+    setflag 0x935 @ Received Portable PC
+    goto LanaFarewell
+    end
+
+LanaFarewell:
+    npcchatwithmovement gText_DaimynCityNPCHouses_LanaFarewell m_LookRight
     end
 
 .global SignScript_DaimynCityNPCHouses_EntrancePC

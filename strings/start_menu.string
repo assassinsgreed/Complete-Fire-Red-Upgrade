@@ -1,6 +1,12 @@
 #org @gText_MenuDexNav
 DexNav
 
+#org @gText_MenuPocketPC
+PortaPC
+
+#org @gText_PocketPCDescription
+Use a portable PC, to access your\nBoxes from anywhere in the world!
+
 #org @gText_StartMenu_MissionLog
 Mission Log
 
