@@ -265,9 +265,19 @@ LevelScripts_AscensionTower_Elevator:
 LevelScript_AscensionTower_Elevator_FirstChallenger:
     applymovement PLAYER m_WalkUp
     waitmovement PLAYER
-    msgbox gText_AscensionTower_ElevatorAttendant_FirstFloor MSG_NORMAL
+    checkflag 0x82C @ Game is cleared
+    if SET _call EleveatorAttendant_FirstFloor_Rematch
+    if NOT_SET _call EleveatorAttendant_FirstFloor
     setdynamicwarp 1 75 0
     goto AscensionTowerElevatorTravel
+
+EleveatorAttendant_FirstFloor:
+    msgbox gText_AscensionTower_ElevatorAttendant_FirstFloor MSG_NORMAL
+    return
+
+EleveatorAttendant_FirstFloor_Rematch:
+    msgbox gText_AscensionTower_ElevatorAttendant_FirstFloor_PerformingRematch MSG_NORMAL
+    return
 
 LevelScript_AscensionTower_Elevator_SecondChallenger:
     applymovement PLAYER m_WalkUp
@@ -461,6 +471,8 @@ TileScript_AscensionTower_ReturnToElevator:
 EventScript_AscensionTower_EliteFourHannah:
     lock
     faceplayer
+    checkflag 0x82C @ Game is cleared
+    if SET _goto HannahRematch
     checkflag 0x4B8 @ Hannah Defeated
     if SET _goto HannahChat
     call SetupMugshotGymLeaderAndBosses
@@ -468,22 +480,43 @@ EventScript_AscensionTower_EliteFourHannah:
     trainerbattle3 0x0 520 0x100 gText_AscensionTower_EliteFour_HannahDefeat
     setflag 0x4B8 @ Hannah Defeated
     msgbox gText_AscensionTower_EliteFour_HannahChat MSG_NORMAL
+    call OpenHannahDoor
+    end
+
+OpenHannahDoor:
     pause DELAY_HALFSECOND
     playse 0x8 @ Door Open
     setmaptile 0x6 0xB RoomOneFloor Passable
     setmaptile 0x6 0xC RoomOneFloorShaded Passable
     special 0x8E
     addvar 0x406C 0x1 @ Elevator will take player to the next floor
-    end
+    return
 
 HannahChat:
     msgbox gText_AscensionTower_EliteFour_HannahChat MSG_NORMAL
+    end
+
+HannahRematch:
+    checkflag 0x4B8 @ Hannah Defeated
+    if SET _goto HannahRematchChat
+    call SetupMugshotGymLeaderAndBosses
+    msgbox gText_AscensionTower_EliteFour_HannahRematchIntro MSG_NORMAL
+    trainerbattle3 0x0 564 0x100 gText_AscensionTower_EliteFour_HannahRematchDefeat
+    setflag 0x4B8 @ Hannah Defeated
+    msgbox gText_AscensionTower_EliteFour_HannahRematchChat MSG_NORMAL
+    call OpenHannahDoor
+    end
+
+HannahRematchChat:
+    msgbox gText_AscensionTower_EliteFour_HannahRematchChat MSG_NORMAL
     end
 
 .global EventScript_AscensionTower_EliteFourLucas
 EventScript_AscensionTower_EliteFourLucas:
     lock
     faceplayer
+    checkflag 0x82C @ Game is cleared
+    if SET _goto LucasRematch
     checkflag 0x4B9 @ Lucas Defeated
     if SET _goto LucasChat
     call SetupMugshotGymLeaderAndBosses
@@ -491,22 +524,43 @@ EventScript_AscensionTower_EliteFourLucas:
     trainerbattle3 0x0 521 0x100 gText_AscensionTower_EliteFour_LucasDefeat
     setflag 0x4B9 @ Lucas Defeated
     msgbox gText_AscensionTower_EliteFour_LucasChat MSG_NORMAL
+    call OpenLucasDoor
+    end
+
+OpenLucasDoor:
     pause DELAY_HALFSECOND
     playse 0x8 @ Door Open
     setmaptile 0x6 0xB RoomTwoFloor Passable
     setmaptile 0x6 0xC RoomTwoFloorShaded Passable
     special 0x8E
     addvar 0x406C 0x1 @ Elevator will take player to the next floor
-    end
+    return
 
 LucasChat:
     msgbox gText_AscensionTower_EliteFour_LucasChat MSG_NORMAL
+    end
+
+LucasRematch:
+    checkflag 0x4B9 @ Lucas Defeated
+    if SET _goto LucasRematchChat
+    call SetupMugshotGymLeaderAndBosses
+    msgbox gText_AscensionTower_EliteFour_LucasRematchIntro MSG_NORMAL
+    trainerbattle3 0x0 565 0x100 gText_AscensionTower_EliteFour_LucasRematchDefeat
+    setflag 0x4B9 @ Lucas Defeated
+    msgbox gText_AscensionTower_EliteFour_LucasRematchChat MSG_NORMAL
+    call OpenLucasDoor
+    end
+
+LucasRematchChat:
+    msgbox gText_AscensionTower_EliteFour_LucasRematchChat MSG_NORMAL
     end
 
 .global EventScript_AscensionTower_EliteFourJenna
 EventScript_AscensionTower_EliteFourJenna:
     lock
     faceplayer
+    checkflag 0x82C @ Game is cleared
+    if SET _goto JennaRematch
     checkflag 0x4BA @ Jenna Defeated
     if SET _goto JennaChat
     call SetupMugshotGymLeaderAndBosses
@@ -514,23 +568,43 @@ EventScript_AscensionTower_EliteFourJenna:
     trainerbattle3 0x0 522 0x100 gText_AscensionTower_EliteFour_JennaDefeat
     setflag 0x4BA @ Jenna Defeated
     msgbox gText_AscensionTower_EliteFour_JennaChat MSG_NORMAL
+    call OpenJennaDoor
+    end
+
+OpenJennaDoor:
     pause DELAY_HALFSECOND
     playse 0x8 @ Door Open
     setmaptile 0x6 0xB RoomThreeFloor Passable
     setmaptile 0x6 0xC RoomThreeFloorShaded Passable
     special 0x8E
     addvar 0x406C 0x1 @ Elevator will take player to the next floor
-    end
+    return
 
 JennaChat:
     msgbox gText_AscensionTower_EliteFour_JennaChat MSG_NORMAL
     end
 
-@ TODO Later: Thomas will need unique dialog if the player has become champion already
+JennaRematch:
+    checkflag 0x4BA @ Jenna Defeated
+    if SET _goto JennaRematchChat
+    call SetupMugshotGymLeaderAndBosses
+    msgbox gText_AscensionTower_EliteFour_JennaRematchIntro MSG_NORMAL
+    trainerbattle3 0x0 566 0x100 gText_AscensionTower_EliteFour_JennaRematchDefeat
+    setflag 0x4BA @ Jenna Defeated
+    msgbox gText_AscensionTower_EliteFour_JennaRematchChat MSG_NORMAL
+    call OpenJennaDoor
+    end
+
+JennaRematchChat:
+    msgbox gText_AscensionTower_EliteFour_JennaRematchChat MSG_NORMAL
+    end
+
 .global EventScript_AscensionTower_EliteFourThomas
 EventScript_AscensionTower_EliteFourThomas:
     lock
     faceplayer
+    checkflag 0x82C @ Game is cleared
+    if SET _goto ThomasRematch
     checkflag 0x4BB @ Thomas Defeated
     if SET _goto ThomasChat
     call SetupMugshotGymLeaderAndBosses
@@ -538,16 +612,35 @@ EventScript_AscensionTower_EliteFourThomas:
     trainerbattle3 0x0 523 0x100 gText_AscensionTower_EliteFour_ThomasDefeat
     setflag 0x4BB @ Thomas Defeated
     msgbox gText_AscensionTower_EliteFour_ThomasChat MSG_NORMAL
+    call OpenThomasDoor
+    end
+
+OpenThomasDoor:
     pause DELAY_HALFSECOND
     playse 0x8 @ Door Open
     setmaptile 0x6 0xB RoomFourFloor Passable
     setmaptile 0x6 0xC RoomFourFloorShaded Passable
     special 0x8E
     addvar 0x406C 0x1 @ Elevator will take player to the next floor
-    end
+    return
 
 ThomasChat:
     msgbox gText_AscensionTower_EliteFour_ThomasChat MSG_NORMAL
+    end
+
+ThomasRematch:
+    checkflag 0x4BB @ Thomas Defeated
+    if SET _goto ThomasRematchChat
+    call SetupMugshotGymLeaderAndBosses
+    msgbox gText_AscensionTower_EliteFour_ThomasRematchIntro MSG_NORMAL
+    trainerbattle3 0x0 567 0x100 gText_AscensionTower_EliteFour_ThomasRematchDefeat
+    setflag 0x4BB @ Thomas Defeated
+    msgbox gText_AscensionTower_EliteFour_ThomasRematchChat MSG_NORMAL
+    call OpenThomasDoor
+    end
+
+ThomasRematchChat:
+    msgbox gText_AscensionTower_EliteFour_ThomasRematchChat MSG_NORMAL
     end
 
 m_YaelStartsElevator: .byte walk_left, walk_left, look_up, end_m

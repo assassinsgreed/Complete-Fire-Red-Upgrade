@@ -388,6 +388,15 @@ You really are something, I'll\ngive you that!\p
 #org @sText_Hannah_LowHP
 We're not done yet!\p
 
+#org @sText_HannahRematch_FirstMonDown
+You're quite strong, Champion\n[PLAYER]!\pBut, do recall that I've grown\nstronger, too!\p
+
+#org @sText_HannahRematch_LastSwitchIn
+Allow me to show you just how much\nwe've improved!\p
+
+#org @sText_HannahRematch_LowHP
+We're not done yet!\p
+
 // Elite Four Lucas
 #org @sText_Lucas_FirstMonDown
 Woo, look at you go!\nYou're so earnest.\pI'm just getting started, though.\p
@@ -397,6 +406,15 @@ Your challenge ends here! It's\nnothing personal, just my job.\p
 
 #org @sText_Lucas_LowHP
 Unbelievable[.] I might actually\nlose this one.\pHope that won't affect my\nperformance review[.]\p
+
+#org @sText_LucasRematch_FirstMonDown
+Well, well[.] Looks like we're going to\nhave ourselves an interesting\lbattle after all.\p
+
+#org @sText_LucasRematch_LastSwitchIn
+It's my job to end your challenge\nhere, even if you're the champion.\p
+
+#org @sText_LucasRematch_LowHP
+Ugh[.] I might actually lose to the\nnew champ, huh?\pThat sure won't look good on my\nnext performance review[.]\p
 
 // Elite Four Jenna
 #org @sText_Jenna_FirstMonDown
@@ -408,6 +426,15 @@ Time for a stellar encore.\nLet's jam out!\p
 #org @sText_Jenna_LowHP
 Uh oh[.] Better step it up or we'll be\nexiting, stage left!\p
 
+#org @sText_JennaRematch_FirstMonDown
+This battle is really picking up\npace. I'm getting amped up!\p
+
+#org @sText_JennaRematch_LastSwitchIn
+This battle is really lighting a fire\nin my belly[.] Let's rock, [PLAYER]!\p
+
+#org @sText_JennaRematch_LowHP
+Seems my encore might be coming to\nan end, soon[.]\p
+
 // Elite Four Thomas
 #org @sText_Thomas_FirstMonDown
 You've defeated my first Pok\emon?\nI won't let it happen again!\p
@@ -417,6 +444,15 @@ It's over now! I won't allow you\nto waste Miss Selene's time.\p
 
 #org @sText_Thomas_LowHP
 Miss Selene, forgive me.\p
+
+#org @sText_ThomasRematch_FirstMonDown
+Hmph. You're strong, but nowhere\nnear as strong as Miss Selene.\p
+
+#org @sText_ThomasRematch_LastSwitchIn
+Ngh[.] To push us this hard[.]\nNo, I won't give in!\p
+
+#org @sText_ThomasRematch_LowHP
+We'll fight until we drop!\p
 
 // Champion Selene
 #org @sText_Champion_FirstMonDown
