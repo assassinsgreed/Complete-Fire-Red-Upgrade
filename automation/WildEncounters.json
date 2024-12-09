@@ -1313,7 +1313,7 @@
             "mapgroup": 1,
             "mapnum": 96,
             "grass": {
-                "rate": 5,
+                "rate": 3,
                 "pokemon": [
                     { "low": 54, "high": 57, "species": "SPECIES_GOLBAT" },
                     { "low": 54, "high": 57, "species": "SPECIES_BOLDORE" },
@@ -1359,7 +1359,7 @@
             "mapgroup": 1,
             "mapnum": 97,
             "grass": {
-                "rate": 5,
+                "rate": 3,
                 "pokemon": [
                     { "low": 54, "high": 57, "species": "SPECIES_GOLBAT" },
                     { "low": 54, "high": 57, "species": "SPECIES_BOLDORE" },
@@ -1380,7 +1380,7 @@
             "mapgroup": 1,
             "mapnum": 98,
             "grass": {
-                "rate": 5,
+                "rate": 3,
                 "pokemon": [
                     { "low": 54, "high": 57, "species": "SPECIES_GOLBAT" },
                     { "low": 54, "high": 57, "species": "SPECIES_BOLDORE" },

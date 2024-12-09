@@ -1333,6 +1333,9 @@ Maybe someday I'll be on here!
 #org @gText_AscensionTower_ElevatorAttendant_FirstFloor
 [BLUE]Greetings, and welcome to the Elite\nFour Challenge.\pMy name is Yael, and I shall be your\nattendant today.\pNow please, relax while I deliver\nyou to the first Elite Four member,\lHannah.
 
+#org @gText_AscensionTower_ElevatorAttendant_FirstFloor_PerformingRematch
+[BLUE]Ah, Champion [PLAYER].\nIt is good to see you again.\pI assume you are here to defend\nyour title?\pYou will be required to beat each\nElite Four member once again.\pI do believe they will be eager to\nsee you, however.\pWithout further ado, allow me to\ndeliver you to Hannah[.]
+
 #org @gText_AscensionTower_ElevatorAttendant_SecondFloor
 [BLUE]Welcome back. I see you have\novercome Hannah.\pThen please, allow me to deliver you\nto your next opponent, Lucas.
 
@@ -1413,6 +1416,43 @@ W-what? This is unprecedented[.]
 
 #org @gText_AscensionTower_ChampionSelene_ReturningToAnthra
 [RED]Undoubtedly, your friends and family\nhave already seen your victory.\pI'm sure you're eager to return home\nto celebrate with them.\pAs for myself, I think it's time for a\nnice, long vacation[.]\pBut that can wait.\pCome! Let us return to Anthra Town\nto celebrate your accomplishments.
+
+// Rematches and Champion Defense
+#org @gText_AscensionTower_EliteFour_HannahRematchIntro
+[RED]I wasn't expecting a visit from\nChampion [PLAYER] today!\pYou are here to train your\nPok\emon, I assume?\pVery well, I accept your\nchallenge.\pBut, you should know that I've been\ntraining, too!
+
+#org @gText_AscensionTower_EliteFour_HannahRematchDefeat
+That concludes our battle!
+
+#org @gText_AscensionTower_EliteFour_HannahRematchChat
+[RED]Champion [PLAYER], you battled quite\nexceptionally.\pYou may challenge Lucas next.\pDo come visit again sometime, okay?
+
+#org @gText_AscensionTower_EliteFour_LucasRematchIntro
+[BLUE]Oh, hey. It's Champion [PLAYER].\pDoes this mean this is a friendly\nvisit, or a challenge?\pHaha, I'm just kidding.\nI know why you're here.\pLet's get started then; my break\nstarts soon.
+
+#org @gText_AscensionTower_EliteFour_LucasRematchDefeat
+Yup, that went exactly how I\nthought it would.
+
+#org @gText_AscensionTower_EliteFour_LucasRematchChat
+[BLUE]Alright, I did my part.\pYou're off to see Jenna now, and I'm\noff to take five.
+
+#org @gText_AscensionTower_EliteFour_JennaRematchIntro
+[RED]Whoa, whoa, whoa!\pIs that Champion [PLAYER], I see?\nWhat's good, champ?\pYou must be here for a jam sesh,\nyeah? Of course you are!\pI'm so down! Let's jam out!
+
+#org @gText_AscensionTower_EliteFour_JennaRematchDefeat
+That's all she wrote!
+
+#org @gText_AscensionTower_EliteFour_JennaRematchChat
+[RED]That was some good battling,\nChampion [PLAYER]!\pThat'll do it for me, though.\nI'm sure Thomas is waiting for you.\pHe'll never admit it, but he's been\neager for a rematch ever since the\llast time you two battled!
+
+#org @gText_AscensionTower_EliteFour_ThomasRematchIntro
+[BLUE]Champion [PLAYER]. So you've\nreturned.\pIf you're here, that means the other\nthree couldn't defeat you.\pThen, allow me to remind you why I'm\nthe final Elite Four member!
+
+#org @gText_AscensionTower_EliteFour_ThomasRematchDefeat
+Excellent. You are indeed worthy of\nyour title.
+
+#org @gText_AscensionTower_EliteFour_ThomasRematchChat
+[BLUE]I appreciate the battle we shared.\pHowever, I shouldn't keep you\nhere too long[.]\pYou have a challenger waiting,\nChampion [PLAYER].\pPlease, take the lift to the\nChampion's quarters and I will have\lthem delivered to you.
 
 // Restaurant
 #org @gText_Restaurant_FirstVisit

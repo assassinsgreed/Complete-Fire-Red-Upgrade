@@ -199,20 +199,36 @@ extern const u8 sText_Hannah_FirstMonDown[];
 extern const u8 sText_Hannah_LastSwitchIn[];
 extern const u8 sText_Hannah_LowHP[];
 
+extern const u8 sText_HannahRematch_FirstMonDown[];
+extern const u8 sText_HannahRematch_LastSwitchIn[];
+extern const u8 sText_HannahRematch_LowHP[];
+
 // Elite Four Lucas
 extern const u8 sText_Lucas_FirstMonDown[];
 extern const u8 sText_Lucas_LastSwitchIn[];
 extern const u8 sText_Lucas_LowHP[];
+
+extern const u8 sText_LucasRematch_FirstMonDown[];
+extern const u8 sText_LucasRematch_LastSwitchIn[];
+extern const u8 sText_LucasRematch_LowHP[];
 
 // Elite Four Jenna
 extern const u8 sText_Jenna_FirstMonDown[];
 extern const u8 sText_Jenna_LastSwitchIn[];
 extern const u8 sText_Jenna_LowHP[];
 
+extern const u8 sText_JennaRematch_FirstMonDown[];
+extern const u8 sText_JennaRematch_LastSwitchIn[];
+extern const u8 sText_JennaRematch_LowHP[];
+
 // Elite Four Thomas
 extern const u8 sText_Thomas_FirstMonDown[];
 extern const u8 sText_Thomas_LastSwitchIn[];
 extern const u8 sText_Thomas_LowHP[];
+
+extern const u8 sText_ThomasRematch_FirstMonDown[];
+extern const u8 sText_ThomasRematch_LastSwitchIn[];
+extern const u8 sText_ThomasRematch_LowHP[];
 
 // Champion Selene
 extern const u8 sText_Champion_FirstMonDown[];

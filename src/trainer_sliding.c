@@ -146,6 +146,10 @@ static const struct TrainerSlide sTrainerSlides[] =
 	{560, sText_Leader8Rematch_FirstMonDown, sText_Leader8Rematch_LastSwitchIn, sText_Leader8Rematch_LowHp}, // Gym Leaders Dennis & Dee Rematch
 	{561, sText_Leader8Rematch_FirstMonDown, sText_Leader8Rematch_LastSwitchIn, sText_Leader8Rematch_LowHp}, // Gym Leaders Dennis & Dee Rematch
 	{0x233, sText_KurtisRoute13Cave_FirstMonDown, sText_KurtisRoute13Cave_LastSwitchIn, sText_KurtisRoute13Cave_LowHP}, //  Pluto Leader Kurtis (Route 13 Cave)
+	{564, sText_HannahRematch_FirstMonDown, sText_HannahRematch_LastSwitchIn, sText_HannahRematch_LowHP}, // Elite Four Hannah Rematch
+	{565, sText_LucasRematch_FirstMonDown, sText_LucasRematch_LastSwitchIn, sText_LucasRematch_LowHP}, // Elite Four Lucas Rematch
+	{566, sText_JennaRematch_FirstMonDown, sText_JennaRematch_LastSwitchIn, sText_JennaRematch_LowHP}, // Elite Four Jenna Rematch
+	{567, sText_ThomasRematch_FirstMonDown, sText_ThomasRematch_LastSwitchIn, sText_ThomasRematch_LowHP}, // Elite Four Thomas Rematch
 };
 
 static const struct DynamaxTrainerSlide sDynamaxTrainerSlides[] =
