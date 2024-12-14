@@ -235,7 +235,73 @@ extern const u8 sText_Champion_FirstMonDown[];
 extern const u8 sText_Champion_LastSwitchIn[];
 extern const u8 sText_Champion_LowHP[];
 
-// Champion Selene (Rematch)
-extern const u8 sText_ChampionRematch_FirstMonDown[];
-extern const u8 sText_ChampionRematch_LastSwitchIn[];
-extern const u8 sText_ChampionRematch_LowHP[];
+// Title Defense
+/// Rival
+extern const u8 sText_TitleDefense_Rival_FirstMonDown[];
+extern const u8 sText_TitleDefense_Rival_LastSwitchIn[];
+extern const u8 sText_TitleDefense_Rival_LowHP[];
+
+/// Joey
+extern const u8 sText_TitleDefense_Joey_FirstMonDown[];
+extern const u8 sText_TitleDefense_Joey_LastSwitchIn[];
+extern const u8 sText_TitleDefense_Joey_LowHP[];
+
+/// Selene
+extern const u8 sText_TitleDefense_Selene_FirstMonDown[];
+extern const u8 sText_TitleDefense_Selene_LastSwitchIn[];
+extern const u8 sText_TitleDefense_Selene_LowHP[];
+
+/// Alistair
+extern const u8 sText_TitleDefense_Alistair_FirstMonDown[];
+extern const u8 sText_TitleDefense_Alistair_LastSwitchIn[];
+extern const u8 sText_TitleDefense_Alistair_LowHP[];
+
+/// Hawthorne
+extern const u8 sText_TitleDefense_Hawthorne_FirstMonDown[];
+extern const u8 sText_TitleDefense_Hawthorne_LastSwitchIn[];
+extern const u8 sText_TitleDefense_Hawthorne_LowHP[];
+
+/// Clancy
+extern const u8 sText_TitleDefense_Clancy_FirstMonDown[];
+extern const u8 sText_TitleDefense_Clancy_LastSwitchIn[];
+extern const u8 sText_TitleDefense_Clancy_LowHP[];
+
+/// Ena
+extern const u8 sText_TitleDefense_Ena_FirstMonDown[];
+extern const u8 sText_TitleDefense_Ena_LastSwitchIn[];
+extern const u8 sText_TitleDefense_Ena_LowHP[];
+
+/// Copycat
+extern const u8 sText_TitleDefense_Copycat_FirstMonDown[];
+extern const u8 sText_TitleDefense_Copycat_LastSwitchIn[];
+extern const u8 sText_TitleDefense_Copycat_LowHP[];
+
+/// Foreigner
+extern const u8 sText_TitleDefense_Foreigner_FirstMonDown[];
+extern const u8 sText_TitleDefense_Foreigner_LastSwitchIn[];
+extern const u8 sText_TitleDefense_Foreigner_LowHP[];
+
+/// Collin
+extern const u8 sText_TitleDefense_Collin_FirstMonDown[];
+extern const u8 sText_TitleDefense_Collin_LastSwitchIn[];
+extern const u8 sText_TitleDefense_Collin_LowHP[];
+
+/// Crystal
+extern const u8 sText_TitleDefense_Crystal_FirstMonDown[];
+extern const u8 sText_TitleDefense_Crystal_LastSwitchIn[];
+extern const u8 sText_TitleDefense_Crystal_LowHP[];
+
+/// Irene
+extern const u8 sText_TitleDefense_Irene_FirstMonDown[];
+extern const u8 sText_TitleDefense_Irene_LastSwitchIn[];
+extern const u8 sText_TitleDefense_Irene_LowHP[];
+
+/// Ronald
+extern const u8 sText_TitleDefense_Ronald_FirstMonDown[];
+extern const u8 sText_TitleDefense_Ronald_LastSwitchIn[];
+extern const u8 sText_TitleDefense_Ronald_LowHP[];
+
+/// Kurtis
+extern const u8 sText_TitleDefense_Kurtis_FirstMonDown[];
+extern const u8 sText_TitleDefense_Kurtis_LastSwitchIn[];
+extern const u8 sText_TitleDefense_Kurtis_LowHP[];

@@ -150,6 +150,29 @@ static const struct TrainerSlide sTrainerSlides[] =
 	{565, sText_LucasRematch_FirstMonDown, sText_LucasRematch_LastSwitchIn, sText_LucasRematch_LowHP}, // Elite Four Lucas Rematch
 	{566, sText_JennaRematch_FirstMonDown, sText_JennaRematch_LastSwitchIn, sText_JennaRematch_LowHP}, // Elite Four Jenna Rematch
 	{567, sText_ThomasRematch_FirstMonDown, sText_ThomasRematch_LastSwitchIn, sText_ThomasRematch_LowHP}, // Elite Four Thomas Rematch
+	{568, sText_TitleDefense_Rival_FirstMonDown, sText_TitleDefense_Rival_LastSwitchIn, sText_TitleDefense_Rival_LowHP}, // Title Defense (Rival, Vaporeon)
+	{569, sText_TitleDefense_Rival_FirstMonDown, sText_TitleDefense_Rival_LastSwitchIn, sText_TitleDefense_Rival_LowHP}, // Title Defense (Rival, Jolteon)
+	{570, sText_TitleDefense_Rival_FirstMonDown, sText_TitleDefense_Rival_LastSwitchIn, sText_TitleDefense_Rival_LowHP}, // Title Defense (Rival, Flareon)
+	{571, sText_TitleDefense_Rival_FirstMonDown, sText_TitleDefense_Rival_LastSwitchIn, sText_TitleDefense_Rival_LowHP}, // Title Defense (Rival, Espeon)
+	{572, sText_TitleDefense_Rival_FirstMonDown, sText_TitleDefense_Rival_LastSwitchIn, sText_TitleDefense_Rival_LowHP}, // Title Defense (Rival, Umbreon)
+	{573, sText_TitleDefense_Rival_FirstMonDown, sText_TitleDefense_Rival_LastSwitchIn, sText_TitleDefense_Rival_LowHP}, // Title Defense (Rival, Leafeon)
+	{574, sText_TitleDefense_Rival_FirstMonDown, sText_TitleDefense_Rival_LastSwitchIn, sText_TitleDefense_Rival_LowHP}, // Title Defense (Rival, Glaceeon)
+	{575, sText_TitleDefense_Rival_FirstMonDown, sText_TitleDefense_Rival_LastSwitchIn, sText_TitleDefense_Rival_LowHP}, // Title Defense (Rival, Sylveon)
+	{576, sText_TitleDefense_Joey_FirstMonDown, sText_TitleDefense_Joey_LastSwitchIn, sText_TitleDefense_Joey_LowHP}, // Title Defense (Joey)
+	{577, sText_TitleDefense_Selene_FirstMonDown, sText_TitleDefense_Selene_LastSwitchIn, sText_TitleDefense_Selene_LowHP}, // Title Defense (Selene, before Victini gift)
+	{578, sText_TitleDefense_Selene_FirstMonDown, sText_TitleDefense_Selene_LastSwitchIn, sText_TitleDefense_Selene_LowHP}, // Title Defense (Selene, after Victini gift)
+	{579, sText_TitleDefense_Alistair_FirstMonDown, sText_TitleDefense_Alistair_LastSwitchIn, sText_TitleDefense_Alistair_LowHP}, // Title Defense (Alistair)
+	{580, sText_TitleDefense_Hawthorne_FirstMonDown, sText_TitleDefense_Hawthorne_LastSwitchIn, sText_TitleDefense_Hawthorne_LowHP}, // Title Defense (Hawthorne)
+	{581, sText_TitleDefense_Clancy_FirstMonDown, sText_TitleDefense_Clancy_LastSwitchIn, sText_TitleDefense_Clancy_LowHP}, // Title Defense (Clancy)
+	{582, sText_TitleDefense_Ena_FirstMonDown, sText_TitleDefense_Ena_LastSwitchIn, sText_TitleDefense_Ena_LowHP}, // Title Defense (Ena)
+	{583, sText_TitleDefense_Copycat_FirstMonDown, sText_TitleDefense_Copycat_LastSwitchIn, sText_TitleDefense_Copycat_LowHP}, // Title Defense (Copycat, Male)
+	{584, sText_TitleDefense_Copycat_FirstMonDown, sText_TitleDefense_Copycat_LastSwitchIn, sText_TitleDefense_Copycat_LowHP}, // Title Defense (Copycat, Female)
+	{585, sText_TitleDefense_Foreigner_FirstMonDown, sText_TitleDefense_Foreigner_LastSwitchIn, sText_TitleDefense_Foreigner_LowHP}, // Title Defense (Foreigner)
+	{586, sText_TitleDefense_Collin_FirstMonDown, sText_TitleDefense_Collin_LastSwitchIn, sText_TitleDefense_Collin_LowHP}, // Title Defense (Collin)
+	{587, sText_TitleDefense_Crystal_FirstMonDown, sText_TitleDefense_Crystal_LastSwitchIn, sText_TitleDefense_Crystal_LowHP}, // Title Defense (Crystal)
+	{588, sText_TitleDefense_Irene_FirstMonDown, sText_TitleDefense_Irene_LastSwitchIn, sText_TitleDefense_Irene_LowHP}, // Title Defense (Irene)
+	{589, sText_TitleDefense_Ronald_FirstMonDown, sText_TitleDefense_Ronald_LastSwitchIn, sText_TitleDefense_Ronald_LowHP}, // Title Defense (Ronald)
+	{590, sText_TitleDefense_Kurtis_FirstMonDown, sText_TitleDefense_Kurtis_LastSwitchIn, sText_TitleDefense_Kurtis_LowHP}, // Title Defense (Kurtis)
 };
 
 static const struct DynamaxTrainerSlide sDynamaxTrainerSlides[] =
@@ -277,7 +300,7 @@ bool8 ShouldDoTrainerSlide(u8 bank, u16 trainerId, u8 caseId)
 						u8 class = gTrainers[gTrainerBattleOpponent_A].trainerClass;
 						if ((gBattleTypeFlags & BATTLE_TYPE_TRAINER) == (BATTLE_TYPE_TRAINER)
 							&& !(gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_FRONTIER | BATTLE_TYPE_TRAINER_TOWER))
-							&& (class == CLASS_LEADER || class == CLASS_ELITE_4 || class == CLASS_CHAMPION ))
+							&& (class == CLASS_LEADER || class == CLASS_ELITE_4 || class == CLASS_CHAMPION || class == CLASS_CHALLENGER))
 							{
 								PlayBGM(BGM_BATTLE_GYM_LEADER_LAST_POKEMON);
 							}

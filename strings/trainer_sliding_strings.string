@@ -465,12 +465,142 @@ It's been a long time since I've had a\nbattle this close!\p
 We won't give up until the very end!\nYou'd better give it your all too!\p
 
 // Title Defense slide-ins
-// Champion Selene Rematch
-#org @sText_ChampionRematch_FirstMonDown
+/// Rival
+#org @sText_TitleDefense_Rival_FirstMonDown
+You've gotten a lot better too,\nhaven't you [PLAYER]?\p
+
+#org @sText_TitleDefense_Rival_LastSwitchIn
+We'll show you just how much\nstronger we've gotten!\p
+
+#org @sText_TitleDefense_Rival_LowHP
+We can still win this!\nI believe in us!\p
+
+/// Joey
+#org @sText_TitleDefense_Joey_FirstMonDown
+M-My Rattata! How could you?\p
+
+#org @sText_TitleDefense_Joey_LastSwitchIn
+We're the best! We'll prove it!\p
+
+#org @sText_TitleDefense_Joey_LowHP
+My Pok\emon do their best when\nthey're backed into a corner!\p
+
+/// Selene
+#org @sText_TitleDefense_Selene_FirstMonDown
 This really takes me back to our\nfirst battle. Do you remember it,\ntoo?\p
 
-#org @sText_ChampionRematch_LastSwitchIn
+#org @sText_TitleDefense_Selene_LastSwitchIn
 It's quite refreshing to see how\nstrong a bond you share with your\nPok\emon.\p
 
-#org @sText_ChampionRematch_LowHP
+#org @sText_TitleDefense_Selene_LowHP
 I may not be the champion any\nlonger, but that doesn't mean I'll\ngo down easily!\p
+
+/// Alistair
+#org @sText_TitleDefense_Alistair_FirstMonDown
+So this is the strength that your\nbond has cultivated[.]\p
+
+#org @sText_TitleDefense_Alistair_LastSwitchIn
+We've grown closer, too.\nYou will acknowlege our strength!\p
+
+#org @sText_TitleDefense_Alistair_LowHP
+This isn't the end for us!\p
+
+/// Hawthorne
+#org @sText_TitleDefense_Hawthorne_FirstMonDown
+My, my[.] I never expected you would\nbe this strong!\p
+
+#org @sText_TitleDefense_Hawthorne_LastSwitchIn
+Hohoho! I see now what Selene saw\nin you so long ago.\p
+
+#org @sText_TitleDefense_Hawthorne_LowHP
+I'm grateful to have seen how\nmuch you've grown, [PLAYER].\p
+
+/// Clancy
+#org @sText_TitleDefense_Clancy_FirstMonDown
+My Pok\emon and I understand each\nother better now. You'll see!\p
+
+#org @sText_TitleDefense_Clancy_LastSwitchIn
+We're getting pumped up now[.]\p
+
+#org @sText_TitleDefense_Clancy_LowHP
+Time to bring this battle back to our\nfavour!\p
+
+/// Ena
+#org @sText_TitleDefense_Ena_FirstMonDown
+You've certainly been training since\nwe last battled!\p
+
+#org @sText_TitleDefense_Ena_LastSwitchIn
+We've also been training! If you let\nyour guard down, we'll win!\p
+
+#org @sText_TitleDefense_Ena_LowHP
+Uh oh, this isn't looking good for us.\p
+
+/// Copycat
+#org @sText_TitleDefense_Copycat_FirstMonDown
+Oh, I love it when you use that\nmove!\p
+
+#org @sText_TitleDefense_Copycat_LastSwitchIn
+You're good, but it's my turn to be\nKulure's Champion!\p
+
+#org @sText_TitleDefense_Copycat_LowHP
+So this is what it's like to be\npushed to the brink[.]\p
+
+/// Foreigner
+#org @sText_TitleDefense_Foreigner_FirstMonDown
+A lucky hit[.] I'm one of the best\ntrainers back home. I'll prove it!\p
+
+#org @sText_TitleDefense_Foreigner_LastSwitchIn
+Kulure's Pok\emon trainers are a cut\nabove the rest, huh[.]\p
+
+#org @sText_TitleDefense_Foreigner_LowHP
+Ngh! I'm not about to lose.\nNot like this!\p
+
+/// Collin
+#org @sText_TitleDefense_Collin_FirstMonDown
+You saw through that strategy, huh?\p
+
+#org @sText_TitleDefense_Collin_LastSwitchIn
+I've saved the best for last!\p
+
+#org @sText_TitleDefense_Collin_LowHP
+Heh, looks like I might not be\nclaiming your title after all[.]\p
+
+/// Crystal
+#org @sText_TitleDefense_Crystal_FirstMonDown
+CRYSTAL WRITE THIS
+
+#org @sText_TitleDefense_Crystal_LastSwitchIn
+CRYSTAL WRITE THIS
+
+#org @sText_TitleDefense_Crystal_LowHP
+CRYSTAL WRITE THIS
+
+/// Irene
+#org @sText_TitleDefense_Irene_FirstMonDown
+Don't be so smug.\nOur battle is just beginning.\p
+
+#org @sText_TitleDefense_Irene_LastSwitchIn
+Need I remind you I am one of\nTeam Pluto's former elites?\p
+
+#org @sText_TitleDefense_Irene_LowHP
+So infuriating[.]\p
+
+/// Ronald
+#org @sText_TitleDefense_Ronald_FirstMonDown
+Gyahahaha! So you've been getting\ntougher too, huh?\p
+
+#org @sText_TitleDefense_Ronald_LastSwitchIn
+This reminds me of when we battled\nat Pluto HQ[.]\p
+
+#org @sText_TitleDefense_Ronald_LowHP
+Not bad, kiddo. But you should know\nnot to underestimate me by now!\p
+
+/// Kurtis
+#org @sText_TitleDefense_Kurtis_FirstMonDown
+You won't thwart me this time[.]\nI'll see to that personally!\p
+
+#org @sText_TitleDefense_Kurtis_LastSwitchIn
+Impossible! But no matter[.] We don't\ngive up no matter the odds!\p
+
+#org @sText_TitleDefense_Kurtis_LowHP
+Feh! I loathe battling you[.]\p

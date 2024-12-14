@@ -1205,6 +1205,7 @@ static u8 GetTrainerMonGender(struct Trainer* trainer)
 		case CLASS_LEADER:
 		case CLASS_ELITE_4:
 		case CLASS_CHAMPION:
+		case CLASS_CHALLENGER:
 		case CLASS_RIVAL:
 		case CLASS_RIVAL_2:
 		case CLASS_BOSS:
@@ -1352,6 +1353,7 @@ static bool8 IsBossTrainerClassForLevelScaling(u16 trainerId)
 		case CLASS_LEADER:
 		case CLASS_ELITE_4:
 		case CLASS_CHAMPION:
+		case CLASS_CHALLENGER:
 		case CLASS_RIVAL_2:
 		case CLASS_BOSS:
 		#ifdef UNBOUND
