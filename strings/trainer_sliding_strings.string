@@ -567,13 +567,13 @@ Heh, looks like I might not be\nclaiming your title after all[.]\p
 
 /// Crystal
 #org @sText_TitleDefense_Crystal_FirstMonDown
-CRYSTAL WRITE THIS
+Don't get too cocky!\nThe battle has only just begun!\p
 
 #org @sText_TitleDefense_Crystal_LastSwitchIn
-CRYSTAL WRITE THIS
+I've saved my secret weapon for\nlast!\p
 
 #org @sText_TitleDefense_Crystal_LowHP
-CRYSTAL WRITE THIS
+Looks like you might win this one,\nkeep it up!\p
 
 /// Irene
 #org @sText_TitleDefense_Irene_FirstMonDown
