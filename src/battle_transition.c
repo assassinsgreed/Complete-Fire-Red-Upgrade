@@ -345,6 +345,7 @@ void Mugshots_CreateOpponentPlayerSprites(struct Task* task)
 	if (sTrainerEventObjectLocalId != 0 //Used for mugshots
 	#ifdef FR_PRE_BATTLE_MUGSHOT_STYLE
 	|| GET_TRAINER(gTrainerBattleOpponent_A).trainerClass == CLASS_CHAMPION
+	|| GET_TRAINER(gTrainerBattleOpponent_A).trainerClass == CLASS_CHALLENGER
 	|| GET_TRAINER(gTrainerBattleOpponent_A).trainerClass == CLASS_ELITE_FOUR
 	#endif
 	)

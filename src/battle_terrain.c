@@ -183,7 +183,7 @@ u8 GetBattleTerrainOverride(void)
 			{
 				terrain = BATTLE_TERRAIN_INSIDE_4;
 			}
-			else if (trainerClass == CLASS_CHAMPION || trainerClassB == CLASS_CHAMPION)
+			else if (trainerClass == CLASS_CHAMPION || trainerClassB == CLASS_CHAMPION || trainerClass == CLASS_CHALLENGER || trainerClassB == CLASS_CHALLENGER)
 			{
 				terrain = BATTLE_TERRAIN_CHAMPION;
 			}

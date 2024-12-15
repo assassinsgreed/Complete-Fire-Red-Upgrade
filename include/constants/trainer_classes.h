@@ -8,7 +8,7 @@ enum
 	CLASS_DISCIPLE,			//0x3
 	CLASS_PKMN_TRAINER_4,	//0x4 Used by Alistair (Carnelidge Volcano)
 	CLASS_RUIN_MANIAC_RS,	//0x5
-	CLASS_INTERVIEWER,		//0x6
+	CLASS_CHALLENGER,		//0x6 Used by Title Defense System
 	CLASS_TUBER_RS_FEMALE,	//0x7
 	CLASS_TUBER_RS_MALE,	//0x8
 	CLASS_COOLTRAINER_RS,	//0x9

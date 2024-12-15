@@ -1945,7 +1945,7 @@ u8 GetTrainerBattleTransition(void)
 		return B_TRANSITION_CHAMPION;
 
 	#ifdef FR_PRE_BATTLE_MUGSHOT_STYLE
-	if (GET_TRAINER(gTrainerBattleOpponent_A).trainerClass == CLASS_CHAMPION)
+	if (GET_TRAINER(gTrainerBattleOpponent_A).trainerClass == CLASS_CHAMPION || GET_TRAINER(gTrainerBattleOpponent_A).trainerClass == CLASS_CHALLENGER)
 		return B_TRANSITION_CHAMPION;
 
 	if (GET_TRAINER(gTrainerBattleOpponent_A).trainerClass == CLASS_ELITE_FOUR)
