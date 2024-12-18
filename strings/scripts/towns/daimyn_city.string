@@ -1216,6 +1216,9 @@ Store directory:\pHealing Consumables: SW Corner\nTMs: NW Corner\lBerries: N Hal
 #org @gText_AscensionTower_EliteFourAttendant_Introduction
 Welcome to Ascension Tower! I accept\nregistrations for the Elite Four\lChallenge.\pWould you like to take the Elite\nFour Challenge?
 
+#org @gText_AscensionTower_EliteFourAttendant_Introduction_PlayerIsChampion
+It is good to see you again,\nChampion [PLAYER].\pYou have a challenger waiting for\nyou.\pWould you like to take the Elite\nFour challenge, and face them at\lthe end?
+
 #org @gText_AscensionTower_EliteFourAttendant_NoChampionsFlag
 Please present your Victory Flag\nand I'll get you registered[.]\pOh! You don't have one.
 
@@ -1230,6 +1233,9 @@ Trainers who have obtained a\nVictory Flag may challenge the\lElite Four Challen
 
 #org @gText_AscensionTower_EliteFourAttendant_GettingTheGate
 Wonderful! I'll just put your\nname into the system[.]\pPerfect. Thank you for registering,\n[PLAYER].\pPlease, allow me to get the gate for\nyou.
+
+#org @gText_AscensionTower_EliteFourAttendant_GettingTheGate_PlayerIsChampion
+Wonderful! Please, allow me to get\nthe gate for you.
 
 #org @gText_AscensionTower_EliteFourAttendant_WishingLuck
 You may proceed to the elevator at\nthe back of the room.\pIt will take you to your first\nchallenge.\pShould you succeed, you may return\nto the elevator to be\ldelievered to your next challenge.\pOn behalf of everyone at Ascension\nTower, I wish you the best of\lluck!
@@ -1346,13 +1352,16 @@ Maybe someday I'll be on here!
 [BLUE]Masterfully done.\pWith Jenna's defeat, it is my duty to\ndeliver you to the final Elite Four\lmember, Thomas.
 
 #org @gText_AscensionTower_ElevatorAttendant_ChampionsFloor
-[BLUE]This is truly unprecedented!\pYou have overcome every Elite Four\nmember.\pThen, there is nothing left for me to\ndo but deliver you to the\lChampion's quarters.
+[BLUE]Please accept my congratulations!\pYou have overcome every Elite Four\nmember.\pThen, there is nothing left for me to\ndo but deliver you to the\lChampion's quarters.
 
 #org @gText_AscensionTower_ElevatorAttendant_WishesLuck
 [BLUE]We have arrived at your\ndestination.\pBest of luck in your challenge, yes?
 
 #org @gText_AscensionTower_ElevatorAttendant_PriorToChampion
 [BLUE]Please ensure you are fully prepared\nbefore exiting the elevator.\pI'm certain the champion will be\neager to battle you without delay.
+
+#org @gText_AscensionTower_ElevatorAttendant_PriorToChampion_PlayerIsChampion
+[BLUE]Please ensure you are fully prepared\nbefore exiting the elevator.\pIt is my duty to send your\nchallenger to you posthaste.\pYou will not have another\nopportunity to prepare.
 
 #org @gText_AscensionTower_ElevatorAttendant_Chat
 Please, step out of the elevator\nwhen you are prepared.
@@ -1417,7 +1426,7 @@ W-what? This is unprecedented[.]
 #org @gText_AscensionTower_ChampionSelene_ReturningToAnthra
 [RED]Undoubtedly, your friends and family\nhave already seen your victory.\pI'm sure you're eager to return home\nto celebrate with them.\pAs for myself, I think it's time for a\nnice, long vacation[.]\pBut that can wait.\pCome! Let us return to Anthra Town\nto celebrate your accomplishments.
 
-// Rematches and Champion Defense
+// Rematches and Title Defense
 #org @gText_AscensionTower_EliteFour_HannahRematchIntro
 [RED]I wasn't expecting a visit from\nChampion [PLAYER] today!\pYou are here to train your\nPok\emon, I assume?\pVery well, I accept your\nchallenge.\pBut, you should know that I've been\ntraining, too!
 
@@ -1453,6 +1462,195 @@ Excellent. You are indeed worthy of\nyour title.
 
 #org @gText_AscensionTower_EliteFour_ThomasRematchChat
 [BLUE]I appreciate the battle we shared.\pHowever, I shouldn't keep you\nhere too long[.]\pYou have a challenger waiting,\nChampion [PLAYER].\pPlease, take the lift to the\nChampion's quarters and I will have\lthem delivered to you.
+
+#org @gText_AscensionTower_TitleDefenseChallenger_Rival_Intro
+[BLUE]Yo, [PLAYER]!\pI told you I'd be back to take your\ntitle, didn't I?\pMy Pok\emon and I have been training\nreally hard for this day.
+
+#org @gText_AscensionTower_TitleDefenseChallenger_Rival_PreBattle
+[BLUE]We'll prove to you that we aren't the\nsame old team you remember.\pDon't let up, [PLAYER], because we\nwon't be either!
+
+#org @gText_AscensionTower_TitleDefenseChallenger_Rival_PostBattle
+Aw, nuts!
+
+#org @gText_AscensionTower_TitleDefenseChallenger_Rival_Defeat
+[BLUE]Hahaha!\pAwe, man! You're just too strong for\nme, [PLAYER]!\pI'm glad we were able to go all\nout.\pI'm going to go train some more, and\nthen I'll become the next champion\lfor sure!\pUntil then, [PLAYER]!
+
+#org @gText_AscensionTower_TitleDefenseChallenger_Joey_Intro
+[BLUE]This is it[.] It's really it[.]\nThe champion!\pOh[.] Focus up, Joey[.]\pY'know, they used to laugh at me and\nmy Rattatas.\pBut look at me now. I'm at the top\nof the world!
+
+#org @gText_AscensionTower_TitleDefenseChallenger_Joey_PreBattle
+[BLUE]I'll prove to you why my Rattatas\nare in the top percentile!
+
+#org @gText_AscensionTower_TitleDefenseChallenger_Joey_PostBattle
+N-No! My Rattatas!
+
+#org @gText_AscensionTower_TitleDefenseChallenger_Joey_Defeat
+[BLUE]I can't believe we lost!\pWe can take this in stride, though.\pIt just means that my Rattata and I\nbetter get back to training.\pWe'll show the whole world how\nstrong we are someday!
+
+#org @gText_AscensionTower_TitleDefenseChallenger_Selene_Intro
+[RED]Hey there, Champion [PLAYER]!\pLooks like you've settled into the\nrole of champion quite comfortably.\pYou know what that means, don't\nyou?\pYou're the strongest trainer in the\nregion, the one everyone wants to\lbeat!\p[.] Including me!
+
+#org @gText_AscensionTower_TitleDefenseChallenger_Selene_PreBattle
+[RED]I hope you're ready for a challenge,\n[PLAYER], because I won't go easy\lon you!
+
+#org @gText_AscensionTower_TitleDefenseChallenger_Selene_PostBattle
+Hmm! Very well done!
+
+#org @gText_AscensionTower_TitleDefenseChallenger_Selene_Defeat
+[RED]That was a great battle, [PLAYER]!\pYou've really proven why you're the\nbest around.\pI hope you make the most of your\ntime as Kulure's champion.\pIt was a pleasure battling each\nother. See you!
+
+#org @gText_AscensionTower_TitleDefenseChallenger_Alistair_Intro
+[BLUE][PLAYER], it has been quite some\ntime[.]\pI've spent a lot of time thinking\nsince we last met.\pMy Pok\emon and I are closer than\never, and it's thanks to your\linfluence.\pI --
+
+#org @gText_AscensionTower_TitleDefenseChallenger_Alistair_PreBattle
+[BLUE]No[.] There's nothing left to say, I\nsuppose.\pI will show you the new bond we've\nformed, in battle.
+
+#org @gText_AscensionTower_TitleDefenseChallenger_Alistair_PostBattle
+I[.] I lost?
+
+#org @gText_AscensionTower_TitleDefenseChallenger_Alistair_Defeat
+[BLUE]Yes, that went exactly how I\nwould've expected.\pAnd yet, I am not disappointed.\p[PLAYER], thank you for sharing that\nbattle with me.\pWe'll take our leave now, but I'm\nsure we'll meet again soon.
+
+#org @gText_AscensionTower_TitleDefenseChallenger_Hawthorne_Intro
+[BLUE]Hohoho!\pAre you surprised to see me,\n[PLAYER]?\pWhen I heard you'd become the\nchampion, well[.]\pI just had to build my own team to\nsee how far you've come!
+
+#org @gText_AscensionTower_TitleDefenseChallenger_Hawthorne_PreBattle
+[BLUE]Now, shall we battle?\pI want to see the results of what\nSelene saw way back then[.]
+
+#org @gText_AscensionTower_TitleDefenseChallenger_Hawthorne_PostBattle
+Hohoho! That was quite something!
+
+#org @gText_AscensionTower_TitleDefenseChallenger_Hawthorne_Defeat
+[BLUE]Truly fantastic battling, [PLAYER]!\pI'm sure Selene enjoyed getting to\ngo all out against you, as well.\pWell, I should be returning to the\nlab soon.\pTake care, [PLAYER]. And do stop by\nto see the conservatory sometime!
+
+#org @gText_AscensionTower_TitleDefenseChallenger_Clancy_Intro
+[BLUE]Yo, [PLAYER]. It's been a while.\nIt's me, Clancy!\pEna and I have been working hard to\nget a fresh start.\pWhat better way to do that then to\nknock you off your throne and take\lit for myself?
+
+#org @gText_AscensionTower_TitleDefenseChallenger_Clancy_PreBattle
+[BLUE]Alright, [PLAYER].\pWe've come a long ways since we last\nbattled. We'll prove it!
+
+#org @gText_AscensionTower_TitleDefenseChallenger_Clancy_PostBattle
+Aw, c'mon[.] We lost?
+
+#org @gText_AscensionTower_TitleDefenseChallenger_Clancy_Defeat
+[BLUE]Heh, you're alright, [PLAYER].\pI have no hard feelings over our\nbattle.\pI knew I wouldn't win, but it's fun to\ntry, you know?\pCome see Ena sometime.\nI'm sure she'd like that.\pAnyways, take it easy.
+
+#org @gText_AscensionTower_TitleDefenseChallenger_Ena_Intro
+[RED]Champion [PLAYER]! Bet you're\nsurprised to see me, right?\pIt's me, Ena!\pClancy and I have gotten into\nPok\emon battling.\pWe're better than ever now!
+
+#org @gText_AscensionTower_TitleDefenseChallenger_Ena_PreBattle
+[RED]You know why I'm here, right?\pYep! I'm here to take the title of\nChampion from you!
+
+#org @gText_AscensionTower_TitleDefenseChallenger_Ena_PostBattle
+I really thought we had this in the\nbag!
+
+#org @gText_AscensionTower_TitleDefenseChallenger_Ena_Defeat
+[RED]Haha, I suppose it wasn't meant to\nbe after all[.]\pThat's okay with me, though!\pI had a lot of fun battling you.\nNot very often I can say that!\pGood luck with your future battles,\n[PLAYER]!
+
+#org @gText_AscensionTower_TitleDefenseChallenger_CopycatM_Intro
+[BLUE]Oh wow! It's really Champion [PLAYER]\nin the flesh!\pOh, allow me to introduce myself[.]\nI'm Liam, and I'm your biggest fan!\pI know everything about you and your\nbattling strategy.\pI've even built a team just like\nyours!
+
+#org @gText_AscensionTower_TitleDefenseChallenger_CopycatM_PreBattle
+[BLUE]I'll show you just how good I am.\pC'mon, let's have a battle!
+
+#org @gText_AscensionTower_TitleDefenseChallenger_CopycatM_PostBattle
+Whoa! Over in a flash!
+
+#org @gText_AscensionTower_TitleDefenseChallenger_CopycatM_Defeat
+[BLUE]You're so cool!\nI can't even be mad that I lost!\pI'd better get back to training, so I\ncan battle even better next time.\pI'll be back someday, Champion\n[PLAYER]!
+
+#org @gText_AscensionTower_TitleDefenseChallenger_CopycatF_Intro
+[RED]Oh[.] My[.] Gosh!!\nIt's Champion [PLAYER]!\pOh, where are my manners[.]\nI'm Emily, and I'm your biggest fan!\pI know everything there is to know\nabout you and your Pok\emon!
+
+#org @gText_AscensionTower_TitleDefenseChallenger_CopycatF_PreBattle
+[RED]And, with that knowledge, I'll be\nsure to take your title from you!\pNow, let's battle, Champion [PLAYER]!
+
+#org @gText_AscensionTower_TitleDefenseChallenger_CopycatF_PostBattle
+It's over already?
+
+#org @gText_AscensionTower_TitleDefenseChallenger_CopycatF_Defeat
+[RED]Awww, you're just too good[.]\pI couldn't have picked a better role\nmodel, that's for sure!\pI need to train harder so I can put\nup a better fight next time.\pI'll be back to battle you again\nsomeday!
+
+#org @gText_AscensionTower_TitleDefenseChallenger_Foreigner_Intro
+[BLUE]So, you're the champion[.]\pKulure's Pok\emon trainers are the\nreal deal.\pA lot tougher than the ones back\nin my home region, that's for sure.\pBut[.] I'm a lot tougher than them,\ntoo.
+
+#org @gText_AscensionTower_TitleDefenseChallenger_Foreigner_PreBattle
+[BLUE]I'm curious if you're really the best\nof the best.\pWell, only one way to find out[.]\nI challenge you to a battle!
+
+#org @gText_AscensionTower_TitleDefenseChallenger_Foreigner_PostBattle
+Tch[.] Came all this way just to lose.
+
+#org @gText_AscensionTower_TitleDefenseChallenger_Foreigner_Defeat
+[BLUE]Yep, you're good alright.\nI can accept my defeat with grace.\pBut, know this[.]\pI will be back to take your title. I\nhope you'll be ready for me then!
+
+#org @gText_AscensionTower_TitleDefenseChallenger_Collin_Intro
+[BLUE]Oh, so you've become the champion?\nThat's great!\pI've brought my most trusted Pok\emon\npartners with me.\pYou could say they helped me become\nchampion, in another lifetime[.]
+
+#org @gText_AscensionTower_TitleDefenseChallenger_Collin_PreBattle
+[BLUE]I wonder if we'll be able to earn\nthe title here, too?\pLet's find out!
+
+#org @gText_AscensionTower_TitleDefenseChallenger_Collin_PostBattle
+And the battle is over!
+
+#org @gText_AscensionTower_TitleDefenseChallenger_Collin_Defeat
+[BLUE]You certainly are good, [PLAYER]!\pI hope you and your Pok\emon have\nformed many pleasant memories here.\pAnyways, I gave it my best shot.\pYou'd better register in the Hall\nof Fame now. See you around!
+
+#org @gText_AscensionTower_TitleDefenseChallenger_Crystal_Intro
+[RED]Wow look at you!\nYou are the champion now.\pYou've worked tirelessly to achieve\nsuch an accomplishment.
+
+#org @gText_AscensionTower_TitleDefenseChallenger_Crystal_PreBattle
+[RED]Let's have a battle, see who will\ncome out on top.
+
+#org @gText_AscensionTower_TitleDefenseChallenger_Crystal_PostBattle
+Farewell, hopefully we meet again.
+
+#org @gText_AscensionTower_TitleDefenseChallenger_Crystal_Defeat
+[RED]Ahh! Can't win them all I suppose!\pThat's why you are the champion, I\nsuppose.
+
+#org @gText_AscensionTower_TitleDefenseChallenger_Irene_Intro
+[RED]My, my[.]\pImagine my surprise to hear you have\nbecome Kulure's Champion.\pI'm sure you know why I'm here, don't\nyou?\pI'm going to repay you for all the\ntrouble you've caused me!
+
+#org @gText_AscensionTower_TitleDefenseChallenger_Irene_PreBattle
+[RED]Get ready[.]\pThis battle will be over before you\nknow it.
+
+#org @gText_AscensionTower_TitleDefenseChallenger_Irene_PostBattle
+I don't believe this[.]
+
+#org @gText_AscensionTower_TitleDefenseChallenger_Irene_Defeat
+[RED]Ngh[.] How frustrating.\nBut, I am nothing if not persistent.\pI will learn from this loss and\nreturn someday.\pOf that, you can be certain.
+
+#org @gText_AscensionTower_TitleDefenseChallenger_Ronald_Intro
+[BLUE]Well, lookie that!\pThe little brat went and became the\nregion champion.\pI'd say congratulations, but I'm not\nthat selfless.\pNow, let's dispense with the\npleasantries, shall we?
+
+#org @gText_AscensionTower_TitleDefenseChallenger_Ronald_PreBattle
+[BLUE]I'm Ronald, and I'm Kulure's next\nchampion.\pNice to meetcha.
+
+#org @gText_AscensionTower_TitleDefenseChallenger_Ronald_PostBattle
+We couldn't cut the mustard, huh?
+
+#org @gText_AscensionTower_TitleDefenseChallenger_Ronald_Defeat
+[BLUE]Gyahaha!\nWell, that's how things go.\pY'know, in another life I might've\nbeen your rival. Gyahaha!\pI'm just kidding! You should have\nseen the look on your face.\pWell, I lost, so it's only fair that I\nclear out.
+
+#org @gText_AscensionTower_TitleDefenseChallenger_Kurtis_Intro
+[BLUE]So we meet again[.]\pI assume you are surprised to see\nme, aren't you?\pYou took everything from me, and so\nI've come to return the favour.\pWhen I've claimed your title, I will\nrule this region as it is meant to\lbe!
+
+#org @gText_AscensionTower_TitleDefenseChallenger_Kurtis_PreBattle
+[BLUE]I grow tired of talking. Allow my\nPok\emon to prove our prowess[.]
+
+#org @gText_AscensionTower_TitleDefenseChallenger_Kurtis_PostBattle
+What a pity[.]
+
+#org @gText_AscensionTower_TitleDefenseChallenger_Kurtis_Defeat
+[BLUE]Geh! Even now I cannot stop you.\pIt matters not.\pI will return one day, to take\neverything you hold dear from you.
+
+#org @gText_AscensionTower_TitleDefense_WaitingForChallenger
+A challenger should be arriving\nsoon[.]
+
+#org @gText_AscensionTower_TitleDefense_PlayerSucceeded
+The challenger has been beaten.\pTime to register my Pok\emon team in\nthe Hall of Fame!
+
+#org @gText_AscensionTower_HallOfFame_PlayerIsDefendingTheirTitle
+Okay[.] Time to register my Pok\emon\nteam and head home!
 
 // Restaurant
 #org @gText_Restaurant_FirstVisit

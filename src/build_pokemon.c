@@ -275,6 +275,11 @@ void BuildTrainerPartySetup(void)
 					if (species != SPECIES_NONE && species != SPECIES_EGG) //Prevent Eggs from getting in
 					{
 						gEnemyParty[k] = gPlayerParty[i];
+
+						if (i <= 3) gEnemyParty[k].level = 78;
+						else if (i == 4) gEnemyParty[k].level = 79;
+						else gEnemyParty[k].level = 80;
+
 						HealMon(&gEnemyParty[k++]);
 					}
 				}

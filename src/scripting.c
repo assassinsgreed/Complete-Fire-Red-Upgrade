@@ -3850,7 +3850,7 @@ void ComputeCompletedGameModifierRequirements()
 		FlagSet(FLAG_GAMEMODIFIER_SCALEWILDPOKEMON_UNLOCKED);
 
 	// Champion Defense 3+ times
-	if (VarGet(VAR_CHAMPION_DEFENSE_VICTORIES) >= 3)
+	if (VarGet(VAR_TITLE_DEFENSE_VICTORIES) >= 3)
 		FlagSet(FLAG_GAMEMODIFIER_SCALETRAINERPOKEMON_UNLOCKED);
 
 	// Level 100 in party
