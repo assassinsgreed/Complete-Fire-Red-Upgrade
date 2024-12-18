@@ -77,6 +77,7 @@
 #define FLAG_DEXNAV_SHOW_ALL_SPECIES 0x932 //If set, the DexNav will show species on all routes, even if they have not been caught
 #define FLAG_INSTANT_FRIENDSHIP 0x933 //If set, Pokemon reach max friendship after taking a single step
 #define FLAG_DOUBLE_WILD_BATTLES_MODIFIER_ACTIVE 0x934 //If set, the wild double battles flag will not be disabled after battle
+#define FLAG_BATTLE_YOURSELF 0x936 // If set, the player's team is copied to the opponent's
 #define FLAG_DAILY_EVENTS_START 0xE00 //To flag + 0xFF, resets every new day.
 
 /*===== Start Menu/Poketools Flags =====*/

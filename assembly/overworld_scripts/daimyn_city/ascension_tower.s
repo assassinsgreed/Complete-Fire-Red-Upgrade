@@ -151,7 +151,9 @@ BattleTowerInfo:
 .global EventScript_AscensionTower_EliteFourAttendant
 EventScript_AscensionTower_EliteFourAttendant:
     lock
-    msgbox gText_AscensionTower_EliteFourAttendant_Introduction MSG_KEEPOPEN
+    checkflag 0x4BC @ Player has beaten Selene
+    if SET _call EliteFourAttendantIntro_PlayerIsChampion
+    if NOT_SET _call EliteFourAttendantIntro_PlayerIsChallenging
     multichoiceoption gText_Yes 0
 	multichoiceoption gText_Info 1
 	multichoiceoption gText_No 2
@@ -163,6 +165,14 @@ EventScript_AscensionTower_EliteFourAttendant:
 	case 2, AttendantChoseNo
     goto AttendantChoseNo
 
+EliteFourAttendantIntro_PlayerIsChampion:
+    msgbox gText_AscensionTower_EliteFourAttendant_Introduction_PlayerIsChampion MSG_KEEPOPEN
+    return
+
+EliteFourAttendantIntro_PlayerIsChallenging:
+    msgbox gText_AscensionTower_EliteFourAttendant_Introduction MSG_KEEPOPEN
+    return
+
 TakeEliteFourChallenge:
     checkitem ITEM_VICTORY_FLAG 0x1
     compare LASTRESULT TRUE
@@ -171,7 +181,9 @@ TakeEliteFourChallenge:
     clearflag 0x4B9 @ E4 Lucas defeated
     clearflag 0x4BA @ E4 Jenna defeated
     clearflag 0x4BB @ E4 Thomas defeated 
-    msgbox gText_AscensionTower_EliteFourAttendant_GettingTheGate MSG_NORMAL
+    checkflag 0x4BC @ Player has beaten Selene
+    if SET _call EliteFourAttendantGettingTheGate_PlayerIsChampion
+    if NOT_SET _call EliteFourAttendantGettingTheGate_PlayerIsChallenging
     applymovement LASTTALKED m_LookLeft
     call OpenFloorBarrier
     applymovement LASTTALKED m_LookDown
@@ -202,6 +214,14 @@ NoVictoryFlag_AlreadyRegisteredForVictoryRoad:
     msgbox gText_AscensionTower_EliteFourAttendant_NoChampionsFlag_HasEarnedRightToEnterVictoryRoad MSG_NORMAL
     release
     end
+
+EliteFourAttendantGettingTheGate_PlayerIsChampion:
+    msgbox gText_AscensionTower_EliteFourAttendant_GettingTheGate_PlayerIsChampion MSG_NORMAL
+    return
+
+EliteFourAttendantGettingTheGate_PlayerIsChallenging:
+    msgbox gText_AscensionTower_EliteFourAttendant_GettingTheGate MSG_NORMAL
+    return
 
 EliteFourInfo:
     msgbox gText_AscensionTower_EliteFourAttendant_ChallengeInfo MSG_NORMAL
@@ -323,8 +343,13 @@ AscensionTowerElevatorTravel:
     end
 
 YaelBeforeChampion:
-    @ TODO Later: Handle when player is already champion
+    checkflag 0x4BC @ Player beat Selene
+    if SET _goto YaelBeforeChampion_PlayerIsChampion
     npcchatwithmovement gText_AscensionTower_ElevatorAttendant_PriorToChampion m_LookDown
+    end
+
+YaelBeforeChampion_PlayerIsChampion:
+    npcchatwithmovement gText_AscensionTower_ElevatorAttendant_PriorToChampion_PlayerIsChampion m_LookDown
     end
 
 .global EventScript_AscensionTower_Elevator_Attendant
@@ -395,6 +420,8 @@ LevelScript_AscensionTower_WalkForward_ForE4Battle_Common:
 
 LevelScript_AscensionTower_WalkForward_ForChampionBattle:
     pause DELAY_HALFSECOND
+    checkflag 0x4BC @ Selene has already been defeated
+    if SET _goto AscensionTower_ChampionsQuarters_TitleDefense
     applymovement PLAYER m_ApproachChampion
     waitmovement PLAYER
     lock
@@ -415,10 +442,260 @@ LevelScript_AscensionTower_WalkForward_ForChampionBattle:
     setflag 0x4BC @ Champion Selene defeated. This is never reset as it's used to determine if the player is in the postgame
     clearflag 0x6C @ Post-Credits NPCs will appear
     clearflag 0x9D @ Postgame NPCs will now appear
+    clearflag 0x3C @ Show Selene in HoF Room
     setvar 0x4070 0x1 @ Trigger postcredits upon returning to Anthra Town
     setvar 0x4071 0x1 @ Trigger Hawthorne's Conservatory event
     warp 1 80 0
     end
+
+AscensionTower_ChampionsQuarters_TitleDefense:
+    applymovement PLAYER m_PlayerWalksToTakeChampionsPlace
+    waitmovement PLAYER
+    pause DELAY_HALFSECOND
+    msgbox gText_AscensionTower_TitleDefense_WaitingForChallenger MSG_NORMAL
+    pause DELAY_HALFSECOND
+    playse 0x52 @ Elevator
+    waitse
+    playse 0x42 @ Ding dong
+    waitse
+    pause DELAY_HALFSECOND
+    playse 0x8 @ door open
+    call SetupMugshotChampionAndTitleDefense
+    checkflag 0x288 @ Defeated Kurtis in postgame
+    random 11
+    copyvar 0x4002 LASTRESULT
+    if SET _call AscensionTower_ChampionsQuarters_TitleDefense_AfterBeatingKurtis
+    switch 0x4002
+    case 0, TitleDefense_Rival _call
+    case 1, TitleDefense_Joey _call
+    case 2, TitleDefense_Selene _call
+    case 3, TitleDefense_Alistair _call
+    case 4, TitleDefense_Hawthorne _call
+    case 5, TitleDefense_Clancy _call
+    case 6, TitleDefense_Ena _call
+    case 7, TitleDefense_Copycat _call
+    case 8, TitleDefense_Foreigner _call
+    case 9, TitleDefense_Collin _call
+    case 10, TitleDefense_Crystal _call
+    case 11, TitleDefense_Irene _call
+    case 12, TitleDefense_Ronald _call
+    case 13, TitleDefense_Kurtis _call
+    applymovement 0x2 m_ChallengerLeavesTheRoom
+    waitmovement 0x2
+    pause DELAY_HALFSECOND
+    playse 0x8 @ door open
+    msgbox gText_AscensionTower_TitleDefense_PlayerSucceeded MSG_NORMAL
+    applymovement PLAYER m_ReigningChampionWalksToHallOfFame
+    waitmovement PLAYER
+    addvar 0x40AA 0x1 @ Player has defended their title one more time
+    warp 1 80 0
+    end
+
+AscensionTower_ChampionsQuarters_TitleDefense_AfterBeatingKurtis:
+    random 14 @ Include Irene, Ronald, and Kurtis
+    copyvar 0x4002 LASTRESULT
+    return
+
+TitleDefense_Rival:
+    setvar 0x5029 72
+    showsprite 0x2
+    @ Figure out the rival's team
+    copyvar 0x4001 0x408E
+    setvar 0x4000 568 @ trainer ID, which is 568 + 0-7 depending on value in 0x408E (Water starter generation)
+    setvar 0x8004 0x4000
+    setvar 0x8005 0x4001
+    special 0x3E @ Add two vars above, result stored in 0x5011 which is loaded as trainer ID
+    applymovement 0x2 m_ChallengerWalksToPlayerAsChampion
+    waitmovement 0x2
+    msgbox gText_AscensionTower_TitleDefenseChallenger_Rival_Intro MSG_NORMAL
+    playbgm 344 @ PWT Lobby
+    msgbox gText_AscensionTower_TitleDefenseChallenger_Rival_PreBattle MSG_NORMAL
+    trainerbattle3 0x0 0x4000 0x100 gText_AscensionTower_TitleDefenseChallenger_Rival_PostBattle
+    msgbox gText_AscensionTower_TitleDefenseChallenger_Rival_Defeat MSG_NORMAL
+    return
+
+TitleDefense_Joey:
+    setvar 0x5029 18
+    showsprite 0x2
+    applymovement 0x2 m_ChallengerWalksToPlayerAsChampion
+    waitmovement 0x2
+    msgbox gText_AscensionTower_TitleDefenseChallenger_Joey_Intro MSG_NORMAL
+    playbgm 344 @ PWT Lobby
+    msgbox gText_AscensionTower_TitleDefenseChallenger_Joey_PreBattle MSG_NORMAL
+    trainerbattle3 0x0 576 0x100 gText_AscensionTower_TitleDefenseChallenger_Joey_PostBattle
+    msgbox gText_AscensionTower_TitleDefenseChallenger_Joey_Defeat MSG_NORMAL
+    return
+
+TitleDefense_Selene:
+    setvar 0x4000 577
+    checkflag 0x278 @ Got Victini Gift
+    if SET _call TitleDefense_Selene_SetNoVictiniTeam
+    setvar 0x5029 74
+    showsprite 0x2
+    applymovement 0x2 m_ChallengerWalksToPlayerAsChampion
+    waitmovement 0x2
+    msgbox gText_AscensionTower_TitleDefenseChallenger_Selene_Intro MSG_NORMAL
+    playbgm 344 @ PWT Lobby
+    msgbox gText_AscensionTower_TitleDefenseChallenger_Selene_PreBattle MSG_NORMAL
+    trainerbattle3 0x0 0x4000 0x100 gText_AscensionTower_TitleDefenseChallenger_Selene_PostBattle
+    msgbox gText_AscensionTower_TitleDefenseChallenger_Selene_Defeat MSG_NORMAL
+    return
+
+TitleDefense_Selene_SetNoVictiniTeam:
+    setvar 0x4000 578
+    return
+
+TitleDefense_Alistair:
+    setvar 0x5029 78
+    showsprite 0x2
+    applymovement 0x2 m_ChallengerWalksToPlayerAsChampion
+    waitmovement 0x2
+    msgbox gText_AscensionTower_TitleDefenseChallenger_Alistair_Intro MSG_NORMAL
+    playbgm 344 @ PWT Lobby
+    msgbox gText_AscensionTower_TitleDefenseChallenger_Alistair_PreBattle MSG_NORMAL
+    trainerbattle3 0x0 579 0x100 gText_AscensionTower_TitleDefenseChallenger_Alistair_PostBattle
+    msgbox gText_AscensionTower_TitleDefenseChallenger_Alistair_Defeat MSG_NORMAL
+    return
+
+TitleDefense_Hawthorne:
+    setvar 0x5029 71
+    showsprite 0x2
+    applymovement 0x2 m_ChallengerWalksToPlayerAsChampion
+    waitmovement 0x2
+    msgbox gText_AscensionTower_TitleDefenseChallenger_Hawthorne_Intro MSG_NORMAL
+    playbgm 344 @ PWT Lobby
+    msgbox gText_AscensionTower_TitleDefenseChallenger_Hawthorne_PreBattle MSG_NORMAL
+    trainerbattle3 0x0 580 0x100 gText_AscensionTower_TitleDefenseChallenger_Hawthorne_PostBattle
+    msgbox gText_AscensionTower_TitleDefenseChallenger_Hawthorne_Defeat MSG_NORMAL
+    return
+
+TitleDefense_Clancy:
+    setvar 0x5029 26
+    showsprite 0x2
+    applymovement 0x2 m_ChallengerWalksToPlayerAsChampion
+    waitmovement 0x2
+    msgbox gText_AscensionTower_TitleDefenseChallenger_Clancy_Intro MSG_NORMAL
+    playbgm 344 @ PWT Lobby
+    msgbox gText_AscensionTower_TitleDefenseChallenger_Clancy_PreBattle MSG_NORMAL
+    trainerbattle3 0x0 581 0x100 gText_AscensionTower_TitleDefenseChallenger_Clancy_PostBattle
+    msgbox gText_AscensionTower_TitleDefenseChallenger_Clancy_Defeat MSG_NORMAL
+    return
+
+TitleDefense_Ena:
+    setvar 0x5029 22
+    showsprite 0x2
+    applymovement 0x2 m_ChallengerWalksToPlayerAsChampion
+    waitmovement 0x2
+    msgbox gText_AscensionTower_TitleDefenseChallenger_Ena_Intro MSG_NORMAL
+    playbgm 344 @ PWT Lobby
+    msgbox gText_AscensionTower_TitleDefenseChallenger_Ena_PreBattle MSG_NORMAL
+    trainerbattle3 0x0 582 0x100 gText_AscensionTower_TitleDefenseChallenger_Ena_PostBattle
+    msgbox gText_AscensionTower_TitleDefenseChallenger_Ena_Defeat MSG_NORMAL
+    return
+
+TitleDefense_Copycat:
+    setflag 0x936 @ Battle a copy of the player's team, cleared after battle
+    checkgender
+    compare LASTRESULT 0x0 @ Gender is opposite of player
+    if equal _call TitleDefense_Copycat_Male
+    if notequal _call TitleDefense_Copycat_Female
+    return
+
+TitleDefense_Copycat_Male:
+    setvar 0x5029 0
+    showsprite 0x2
+    applymovement 0x2 m_ChallengerWalksToPlayerAsChampion
+    waitmovement 0x2
+    msgbox gText_AscensionTower_TitleDefenseChallenger_CopycatM_Intro MSG_NORMAL
+    playbgm 344 @ PWT Lobby
+    msgbox gText_AscensionTower_TitleDefenseChallenger_CopycatM_PreBattle MSG_NORMAL
+    trainerbattle3 0x0 583 0x100 gText_AscensionTower_TitleDefenseChallenger_CopycatM_PostBattle
+    msgbox gText_AscensionTower_TitleDefenseChallenger_CopycatM_Defeat MSG_NORMAL
+    return
+
+TitleDefense_Copycat_Female:
+    setvar 0x5029 7
+    showsprite 0x2
+    applymovement 0x2 m_ChallengerWalksToPlayerAsChampion
+    waitmovement 0x2
+    msgbox gText_AscensionTower_TitleDefenseChallenger_CopycatF_Intro MSG_NORMAL
+    playbgm 344 @ PWT Lobby
+    msgbox gText_AscensionTower_TitleDefenseChallenger_CopycatF_PreBattle MSG_NORMAL
+    trainerbattle3 0x0 584 0x100 gText_AscensionTower_TitleDefenseChallenger_CopycatF_PostBattle
+    msgbox gText_AscensionTower_TitleDefenseChallenger_CopycatF_Defeat MSG_NORMAL
+    return
+
+TitleDefense_Foreigner:
+    setvar 0x5029 52
+    showsprite 0x2
+    applymovement 0x2 m_ChallengerWalksToPlayerAsChampion
+    waitmovement 0x2
+    msgbox gText_AscensionTower_TitleDefenseChallenger_Foreigner_Intro MSG_NORMAL
+    playbgm 344 @ PWT Lobby
+    msgbox gText_AscensionTower_TitleDefenseChallenger_Foreigner_PreBattle MSG_NORMAL
+    trainerbattle3 0x0 585 0x100 gText_AscensionTower_TitleDefenseChallenger_Foreigner_PostBattle
+    msgbox gText_AscensionTower_TitleDefenseChallenger_Foreigner_Defeat MSG_NORMAL
+    return
+
+TitleDefense_Collin:
+    setvar 0x5029 25
+    showsprite 0x2
+    applymovement 0x2 m_ChallengerWalksToPlayerAsChampion
+    waitmovement 0x2
+    msgbox gText_AscensionTower_TitleDefenseChallenger_Collin_Intro MSG_NORMAL
+    playbgm 344 @ PWT Lobby
+    msgbox gText_AscensionTower_TitleDefenseChallenger_Collin_PreBattle MSG_NORMAL
+    trainerbattle3 0x0 586 0x100 gText_AscensionTower_TitleDefenseChallenger_Collin_PostBattle
+    msgbox gText_AscensionTower_TitleDefenseChallenger_Collin_Defeat MSG_NORMAL
+    return
+
+TitleDefense_Crystal:
+    setvar 0x5029 28
+    showsprite 0x2
+    applymovement 0x2 m_ChallengerWalksToPlayerAsChampion
+    waitmovement 0x2
+    msgbox gText_AscensionTower_TitleDefenseChallenger_Crystal_Intro MSG_NORMAL
+    playbgm 344 @ PWT Lobby
+    msgbox gText_AscensionTower_TitleDefenseChallenger_Crystal_PreBattle MSG_NORMAL
+    trainerbattle3 0x0 587 0x100 gText_AscensionTower_TitleDefenseChallenger_Crystal_PostBattle
+    msgbox gText_AscensionTower_TitleDefenseChallenger_Crystal_Defeat MSG_NORMAL
+    return
+
+TitleDefense_Irene:
+    setvar 0x5029 89
+    showsprite 0x2
+    applymovement 0x2 m_ChallengerWalksToPlayerAsChampion
+    waitmovement 0x2
+    msgbox gText_AscensionTower_TitleDefenseChallenger_Irene_Intro MSG_NORMAL
+    playbgm 344 @ PWT Lobby
+    msgbox gText_AscensionTower_TitleDefenseChallenger_Irene_PreBattle MSG_NORMAL
+    trainerbattle3 0x0 588 0x100 gText_AscensionTower_TitleDefenseChallenger_Irene_PostBattle
+    msgbox gText_AscensionTower_TitleDefenseChallenger_Irene_Defeat MSG_NORMAL
+    return
+
+TitleDefense_Ronald:
+    setvar 0x5029 90
+    showsprite 0x2
+    applymovement 0x2 m_ChallengerWalksToPlayerAsChampion
+    waitmovement 0x2
+    msgbox gText_AscensionTower_TitleDefenseChallenger_Ronald_Intro MSG_NORMAL
+    playbgm 344 @ PWT Lobby
+    msgbox gText_AscensionTower_TitleDefenseChallenger_Ronald_PreBattle MSG_NORMAL
+    trainerbattle3 0x0 589 0x100 gText_AscensionTower_TitleDefenseChallenger_Ronald_PostBattle
+    msgbox gText_AscensionTower_TitleDefenseChallenger_Ronald_Defeat MSG_NORMAL
+    return
+
+TitleDefense_Kurtis:
+    setvar 0x5029 87
+    showsprite 0x2
+    applymovement 0x2 m_ChallengerWalksToPlayerAsChampion
+    waitmovement 0x2
+    msgbox gText_AscensionTower_TitleDefenseChallenger_Kurtis_Intro MSG_NORMAL
+    playbgm 344 @ PWT Lobby
+    msgbox gText_AscensionTower_TitleDefenseChallenger_Kurtis_PreBattle MSG_NORMAL
+    trainerbattle3 0x0 590 0x100 gText_AscensionTower_TitleDefenseChallenger_Kurtis_PostBattle
+    msgbox gText_AscensionTower_TitleDefenseChallenger_Kurtis_Defeat MSG_NORMAL
+    return
 
 .global MapScript_AscensionTower_HallOfFame
 MapScript_AscensionTower_HallOfFame:
@@ -433,6 +710,9 @@ LevelScripts_AscensionTower_HallOfFame:
 LevelScript_AscensionTower_HallOfFame_Registration:
     lockall
     pause DELAY_HALFSECOND
+    setflag 0x3C @ Hide Selene in HoF Room in repeat visits
+    compare 0x4070 0x2 @ Player has completed the postcredits sequence (i.e. they are now defending their title)
+    if equal _goto HallOfFame_RegistrationTitleDefense
     applymovement 0x1 m_SeleneWalksToHallOfFameMachine 
     applymovement PLAYER m_PlayerWalksToHallOfFameMachine
     waitmovement PLAYER
@@ -446,6 +726,20 @@ LevelScript_AscensionTower_HallOfFame_Registration:
     applymovement PLAYER m_PlayerApproachesHallOfFameMachine
     waitmovement PLAYER
     pause DELAY_HALFSECOND
+    goto HallOfFameCommon
+    end
+
+HallOfFame_RegistrationTitleDefense:
+    applymovement PLAYER m_PlayerWalksToHallOfFameMachine
+    waitmovement PLAYER
+    applymovement PLAYER m_WalkUp
+    waitmovement PLAYER
+    pause DELAY_HALFSECOND
+    msgbox gText_AscensionTower_HallOfFame_PlayerIsDefendingTheirTitle MSG_NORMAL
+    goto HallOfFameCommon
+    end
+
+HallOfFameCommon:
     doanimation 0x3E @ Place pokeballs into the machine
     waitanimation 0x3E
     pause 0x28
@@ -652,3 +946,6 @@ m_PlayerWalksToHallOfFame: .byte walk_up, walk_up, walk_up, walk_up, walk_up, wa
 m_SeleneWalksToHallOfFameMachine: .byte walk_up, walk_up, walk_up, walk_up, walk_up, walk_up, walk_right, look_up, end_m 
 m_PlayerWalksToHallOfFameMachine: .byte walk_up, walk_up, walk_up, walk_up, walk_up, walk_up, walk_up, end_m
 m_PlayerApproachesHallOfFameMachine: .byte walk_up_very_slow, end_m
+m_PlayerWalksToTakeChampionsPlace: .byte  walk_up_slow, walk_up_slow, walk_up_slow, walk_up_slow, walk_up_slow, walk_up_slow, walk_up_slow, walk_up_slow, walk_up_slow, walk_up_slow, walk_up_slow, walk_up_slow, look_down, end_m
+m_ChallengerWalksToPlayerAsChampion: .byte walk_up_slow, walk_up_slow, walk_up_slow, walk_up_slow, walk_up_slow, look_up, pause_long, pause_long, pause_long, pause_long, pause_long, end_m
+m_ChallengerLeavesTheRoom: .byte walk_down_slow, walk_down_slow, walk_down_slow, walk_down_slow, walk_down_slow, look_down, end_m
