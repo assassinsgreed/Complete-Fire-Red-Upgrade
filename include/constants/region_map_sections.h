@@ -69,7 +69,7 @@ u8 __attribute__((long_call)) GetCurrentRegionMapSectionId(void);
 #define MAPSEC_SIX_ISLAND                   0x95
 #define MAPSEC_SCALDING_SPA                 0x96
 #define MAPSEC_TREASURE_BEACH               0x97
-#define MAPSEC_CAPE_BRINK                   0x98
+#define MAPSEC_SECRET_TRAIL                 0x98
 #define MAPSEC_BOND_BRIDGE                  0x99
 #define MAPSEC_THREE_ISLE_PORT              0x9A
 #define MAPSEC_SEVII_ISLE_6                 0x9B
