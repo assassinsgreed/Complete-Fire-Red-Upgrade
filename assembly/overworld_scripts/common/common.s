@@ -982,8 +982,8 @@ LevelScript_Credits_7:
     fadescreenspeed FADEOUT_BLACK 0x64 @ Slow fade
     msgboxnormal
     msgbox gText_Common_Credits_PlayerReturnsHome MSG_NORMAL
-    addvar 0x406F 0x1
-    warpmuted 3 0 0xFF 0x6 0x7 @ Warp outside the player's house, in the real Anthra Town. This is where the Hall of Fame places the player if they shut the game down
+    pause DELAY_1SECOND
+    callasm DoSoftReset
     waitstate
     end
 
