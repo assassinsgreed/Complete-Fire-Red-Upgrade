@@ -276,9 +276,9 @@ void BuildTrainerPartySetup(void)
 					{
 						gEnemyParty[k] = gPlayerParty[i];
 
-						if (i <= 3) gEnemyParty[k].level = 78;
-						else if (i == 4) gEnemyParty[k].level = 79;
-						else gEnemyParty[k].level = 80;
+						if (i <= 3) gEnemyParty[k].level = 73;
+						else if (i == 4) gEnemyParty[k].level = 74;
+						else gEnemyParty[k].level = 75;
 
 						HealMon(&gEnemyParty[k++]);
 					}
