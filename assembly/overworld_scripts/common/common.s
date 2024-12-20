@@ -725,6 +725,10 @@ GymLeaderRematch_HandleAllCleared:
     setflag 0xB7 @ Game modifier for all wilds with hidden abilities
     end
 
+//////////////
+// Menu Utils
+//////////////
+
 .global EventScript_Common_PocketPC
 EventScript_Common_PocketPC:
     playse 0x2 @ Log on
@@ -733,6 +737,25 @@ EventScript_Common_PocketPC:
     setvar 0x8004 0x0
 	release
     playse 0x3 @ Log off
+    end
+
+.global EventScript_Common_InfiniteRepel
+EventScript_Common_InfiniteRepel:
+    checkflag 0x93A
+    if SET _goto TurnOffInfiniteRepel
+    playse 0x29 @ Repel
+    msgboxsign
+	msgbox gText_Common_InfiniteRepelActivated MSG_SIGN
+    msgboxnormal
+    setflag 0x93A @ Infinite Repel on
+    end
+
+TurnOffInfiniteRepel:
+    playse 0x1E @ Unlock
+    msgboxsign
+	msgbox gText_Common_InfiniteRepelDeactivated MSG_SIGN
+    msgboxnormal
+    clearflag 0x93A @ Infinite Repel off
     end
 
 ////////////
