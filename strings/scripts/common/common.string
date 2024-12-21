@@ -524,3 +524,9 @@ Emily
 
 #org @gText_Common_Credits_PlayerReturnsHome
 After a long journey, it's time to\nreturn home[.]
+
+#org @gText_Common_InfiniteRepelActivated
+The Infinite Repel has been\n[GREEN]activated[BLACK].
+
+#org @gText_Common_InfiniteRepelDeactivated
+The Infinite Repel has been\n[GREEN]deactivated[BLACK].

@@ -7,6 +7,12 @@ PortaPC
 #org @gText_PocketPCDescription
 Use a portable PC, to access your\nBoxes from anywhere in the world!
 
+#org @gText_MenuInfiniteRepel
+InfRepel
+
+#org @gText_InfiniteRepelDescription
+Apply or remove a mystical spray\nthat repels all Wild Pok\emon.
+
 #org @gText_StartMenu_MissionLog
 Mission Log
 
