@@ -739,6 +739,24 @@ EventScript_Common_PocketPC:
     playse 0x3 @ Log off
     end
 
+.global EventScript_Common_PokeVial
+EventScript_Common_PokeVial:
+    msgboxsign
+    compare 0x40AE 0x0
+    if equal _goto PokeVialNoMoreCharges
+    subvar 0x40AE 0x1
+    buffernumber 0x0 0x40AE
+    playse 0x1 @ Use item
+    msgbox gText_Common_PokeVialUsed MSG_NORMAL
+    special 0x0
+    end
+
+PokeVialNoMoreCharges:
+    playse 0x1A @ Error
+    msgbox gText_Common_PokeVialNoUsesLeft MSG_NORMAL
+    msgboxnormal
+    end
+
 .global EventScript_Common_InfiniteRepel
 EventScript_Common_InfiniteRepel:
     checkflag 0x93A

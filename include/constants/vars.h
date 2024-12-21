@@ -219,7 +219,7 @@
 #define VAR_DEX_NAV_LEVEL_25_PLUS  0x40AB
 #define VAR_INSTANT_BATTLE_WEATHER 0x40AC
 #define VAR_INSTANT_BATTLE_TERRAIN 0x40AD
-#define VAR_0x40AE                 0x40AE
+#define VAR_POKE_VIAL_CHARGES      0x40AE
 #define VAR_0x40AF                 0x40AF
 #define VAR_0x40B0                 0x40B0
 #define VAR_0x40B1                 0x40B1

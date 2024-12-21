@@ -316,6 +316,7 @@ EventScript_PokemonCenter_Heal:
 	applymovement LASTTALKED m_NurseLookDown
 	waitmovement 0x0
 	special 0x0
+    setvar 0x40AE 0x3 @ Refilled Poke Vial
 	special 0x169
 	special2 LASTRESULT 0x1B1
 	compare LASTRESULT TRUE

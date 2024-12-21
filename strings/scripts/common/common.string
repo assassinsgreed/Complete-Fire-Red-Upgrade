@@ -525,6 +525,12 @@ Emily
 #org @gText_Common_Credits_PlayerReturnsHome
 After a long journey, it's time to\nreturn home[.]
 
+#org @gText_Common_PokeVialUsed
+Your Pok\emon were fully healed!\n(Remaining Uses: [BUFFER1])
+
+#org @gText_Common_PokeVialNoUsesLeft
+The Pok\eVial is empty. Visit a\nPok\emon Center to refill it!
+
 #org @gText_Common_InfiniteRepelActivated
 The Infinite Repel has been\n[GREEN]activated[BLACK].
 
