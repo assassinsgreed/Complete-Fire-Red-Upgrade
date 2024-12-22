@@ -877,7 +877,7 @@ bool8 StandardWildEncounter(const u32 currMetaTileBehavior, const u16 previousMe
 	if (sWildEncountersDisabled == TRUE)
 		return FALSE;
 
-	#ifdef FLAG_NO_RANDOM_WILD_ENCOUNTERS
+	#if (defined FLAG_NO_RANDOM_WILD_ENCOUNTERS && defined FLAG_INFINITE_REPEL_ACTIVE)
 	if (FlagGet(FLAG_NO_RANDOM_WILD_ENCOUNTERS) || FlagGet(FLAG_INFINITE_REPEL_ACTIVE))
 		return FALSE;
 	#endif

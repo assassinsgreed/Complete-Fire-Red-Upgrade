@@ -402,7 +402,7 @@ showselectitems 6
 
 @;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
-.equ FLAG_AUTO_HMS, 0x902 @For Unbound
+.equ FLAG_AUTO_HMS, 0x28 @ For Pokemon Amethyst, when hiding starter pokeballs (i.e. we always want auto HMs)
 .equ FLDEFF_USE_ROCK_CLIMB, 55
 
 .global EventScript_UseRockClimb
