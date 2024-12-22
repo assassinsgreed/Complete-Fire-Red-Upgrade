@@ -33,6 +33,7 @@ enum
 	STARTMENU_PLAYER_LINK,
 	STARTMENU_DEXNAV,
 	STARTMENU_POCKETPC,
+	STARTMENU_POKEVIAL,
 	STARTMENU_INFINITE_REPEL,
 	STARTMENU_EXIT_RIGHT,
 	STARTMENU_EXIT_LEFT,
@@ -56,6 +57,7 @@ extern const u8 gText_MenuExitLeft[];
 extern const u8 gText_MenuRetire[];
 extern const u8 gText_MenuDexNav[];
 extern const u8 gText_MenuPocketPC[];
+extern const u8 gText_MenuPokeVial[];
 extern const u8 gText_MenuInfiniteRepel[];
 extern const u8 gText_MenuBag[];
 extern const u8 gText_MenuCube[];
@@ -74,6 +76,7 @@ extern const u8 gText_RetireDescription[];
 extern const u8 gText_PlayerDescription[];
 extern const u8 gText_DexNavDescription[];
 extern const u8 gText_PocketPCDescription[];
+extern const u8 gText_PokeVialDescription[];
 extern const u8 gText_InfiniteRepelDescription[];
 
 extern bool8 (*sStartMenuCallback)(void);
@@ -117,6 +120,7 @@ static bool8 CloseAndReloadStartMenu(void);
 static bool8 ReloadStartMenu(void);
 static bool8 ReloadStartMenuItems(void);
 bool8 StartMenuPocketPCCallback(void);
+bool8 StartMenuPokeVialCallback(void);
 bool8 StartMenuInfiniteRepelCallback(void);
 
 const struct MenuAction sStartMenuActionTable[] =
@@ -132,6 +136,7 @@ const struct MenuAction sStartMenuActionTable[] =
 	[STARTMENU_PLAYER_LINK] = {gText_MenuPlayer, {.u8_void = StartMenuLinkModePlayerCallback}},
 	[STARTMENU_DEXNAV] = {gText_MenuDexNav, {.u8_void = StartMenuDexNavCallback}},
 	[STARTMENU_POCKETPC] = {gText_MenuPocketPC, {.u8_void = StartMenuPocketPCCallback}},
+	[STARTMENU_POKEVIAL] = {gText_MenuPokeVial, {.u8_void = StartMenuPokeVialCallback}},
 	[STARTMENU_INFINITE_REPEL] = {gText_MenuInfiniteRepel, {.u8_void = StartMenuInfiniteRepelCallback}},
 	[STARTMENU_EXIT_RIGHT] = {gText_MenuExitRight, {.u8_void = StartMenuExitCallback}},
 	[STARTMENU_EXIT_LEFT] = {gText_MenuExitLeft, {.u8_void = StartMenuExitCallback}},
@@ -150,6 +155,7 @@ const u8* const sStartMenuDescPointers[] =
 	gText_PlayerDescription,
 	gText_DexNavDescription,
 	gText_PocketPCDescription,
+	gText_PokeVialDescription,
 	gText_InfiniteRepelDescription,
 	// NULL,
 	gText_ExitDescription,
@@ -167,6 +173,11 @@ static bool8 CanSetUpSecondaryStartMenu(void)
 	{
 		#ifdef FLAG_SYS_POCKETPC
 		if (FlagGet(FLAG_SYS_POCKETPC))
+			return TRUE;
+		#endif
+
+		#ifdef FLAG_SYS_POKE_VIAL
+		if (FlagGet(FLAG_SYS_POKE_VIAL))
 			return TRUE;
 		#endif
 
@@ -262,6 +273,11 @@ static void BuildPokeToolsMenu(void)
 			AppendToStartMenuItems(STARTMENU_POCKETPC);
 		#endif
 
+		#ifdef FLAG_SYS_POKE_VIAL
+		if (FlagGet(FLAG_SYS_POKE_VIAL))
+			AppendToStartMenuItems(STARTMENU_POKEVIAL);
+		#endif
+
 		#ifdef FLAG_SYS_INFINITE_REPEL
 		if (FlagGet(FLAG_SYS_INFINITE_REPEL))
 			AppendToStartMenuItems(STARTMENU_INFINITE_REPEL);
@@ -344,7 +360,11 @@ bool8 StartCB_HandleInput(void)
 		if (!StartMenuPokedexSanityCheck())
 			return FALSE;
 		sStartMenuCallback = sStartMenuActionTable[sStartMenuOrder[sStartMenuCursorPos]].func.u8_void;
-		if(sStartMenuCallback != StartMenuPocketPCCallback && sStartMenuCallback != StartMenuInfiniteRepelCallback)
+
+		// Do not fade the screen when using certain tools
+		if(sStartMenuCallback != StartMenuPocketPCCallback &&
+		   sStartMenuCallback != StartMenuPokeVialCallback &&
+		   sStartMenuCallback != StartMenuInfiniteRepelCallback)
 		{
 			StartMenu_FadeScreenIfLeavingOverworld();    
 		}
@@ -398,7 +418,10 @@ static bool8 ReloadStartMenuItems(void)
 }
 
 extern u8 EventScript_Common_PocketPC[];
-bool8 StartMenuPocketPCCallback(void)
+extern u8 EventScript_Common_PokeVial[];
+extern u8 EventScript_Common_InfiniteRepel[];
+
+static bool8 StartMenuCommonCallback(const u8* script)
 {
 	if (!gPaletteFade->active)
 	{
@@ -406,24 +429,24 @@ bool8 StartMenuPocketPCCallback(void)
 		DestroySafariZoneStatsWindow();
 		ClearStdWindowAndFrame(GetStartMenuWindowId(), TRUE);
 		RemoveStartMenuWindow();
-		ScriptContext1_SetupScript(EventScript_Common_PocketPC);
+		ScriptContext1_SetupScript(script);
 		return TRUE;
 	}
 	return FALSE;
 }
 
-extern u8 EventScript_Common_InfiniteRepel[];
+bool8 StartMenuPocketPCCallback(void)
+{
+	return StartMenuCommonCallback(EventScript_Common_PocketPC);
+}
+
+bool8 StartMenuPokeVialCallback(void)
+{
+	return StartMenuCommonCallback(EventScript_Common_PokeVial);
+}
+
 bool8 StartMenuInfiniteRepelCallback(void)
 {
-	if (!gPaletteFade->active)
-	{
-		PlayRainStoppingSoundEffect();
-		DestroySafariZoneStatsWindow();
-		ClearStdWindowAndFrame(GetStartMenuWindowId(), TRUE);
-		RemoveStartMenuWindow();
-		ScriptContext1_SetupScript(EventScript_Common_InfiniteRepel);
-		return TRUE;
-	}
-	return FALSE;
+	return StartMenuCommonCallback(EventScript_Common_InfiniteRepel);
 }
 #endif
