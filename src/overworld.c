@@ -2509,8 +2509,8 @@ const u8* GetInteractedWaterScript(unusedArg u32 unused1, u8 metatileBehavior, u
 	if (MetatileBehavior_IsFastCurrent(metatileBehavior))
 	{
 		if (
-		#ifdef FLAG_BOUGHT_ADM
-		FlagGet(FLAG_BOUGHT_ADM) ||
+		#ifdef FLAG_OBTAINED_ADM
+		FlagGet(FLAG_OBTAINED_ADM) ||
 		#endif
 		#ifdef FLAG_SANDBOX_MODE
 		FlagGet(FLAG_SANDBOX_MODE) ||
@@ -2550,9 +2550,10 @@ const u8* GetInteractedWaterScript(unusedArg u32 unused1, u8 metatileBehavior, u
 
 			u8 partyId = PartyHasMonWithFieldMovePotential(MOVE_SURF, item, SHOULDNT_BE_SURFING);
 
-			#ifdef FLAG_BOUGHT_ADM
-			if (FlagGet(FLAG_BOUGHT_ADM)
-			&& (!gFollowerState.inProgress || gFollowerState.flags & FOLLOWER_FLAG_CAN_SURF))
+			#ifdef FLAG_OBTAINED_ADM
+			if (FlagGet(FLAG_OBTAINED_ADM)
+			&& (!gFollowerState.inProgress || gFollowerState.flags & FOLLOWER_FLAG_CAN_SURF)
+			&& CheckBagHasItem(item, 1) > 0)
 				return EventScript_UseADMSurf;
 			#endif
 
@@ -2585,8 +2586,8 @@ const u8* GetInteractedWaterScript(unusedArg u32 unused1, u8 metatileBehavior, u
 				item = ITEM_HM07_WATERFALL;
 				#endif
 
-				#ifdef FLAG_BOUGHT_ADM
-				if (FlagGet(FLAG_BOUGHT_ADM)
+				#ifdef FLAG_OBTAINED_ADM
+				if (FlagGet(FLAG_OBTAINED_ADM)
 				&& (!gFollowerState.inProgress || gFollowerState.flags & FOLLOWER_FLAG_CAN_WATERFALL))
 					return EventScript_UseADMWaterfall;
 				#endif
@@ -2616,14 +2617,15 @@ const u8* GetInteractedWaterScript(unusedArg u32 unused1, u8 metatileBehavior, u
 	else if (IsPlayerFacingRockClimbableWall())
 	{
 		if (HasBadgeToUseRockClimb()
-		&& (!gFollowerState.inProgress || gFollowerState.flags & FOLLOWER_FLAG_CAN_ROCK_CLIMB))
+		&& (!gFollowerState.inProgress || gFollowerState.flags & FOLLOWER_FLAG_CAN_ROCK_CLIMB)
+		&& CheckBagHasItem(ITEM_HM08_ROCK_CLIMB, 1) > 0) // Must have rock climb to use ADM
 		{
 			#ifdef ONLY_CHECK_ITEM_FOR_HM_USAGE
 			item = ITEM_HM08_ROCK_CLIMB;
 			#endif
 
-			#ifdef FLAG_BOUGHT_ADM
-			if (FlagGet(FLAG_BOUGHT_ADM))
+			#ifdef FLAG_OBTAINED_ADM
+			if (FlagGet(FLAG_OBTAINED_ADM))
 				return EventScript_UseADMRockClimb;
 			#endif
 
@@ -2721,8 +2723,8 @@ bool8 TrySetupDiveDownScript(void)
 {
 	if (HasBadgeToUseDive()
 	&& (!gFollowerState.inProgress || gFollowerState.flags & FOLLOWER_FLAG_CAN_DIVE)
-	#if (defined FLAG_BOUGHT_ADM && !defined DEBUG_HMS)
-	&& FlagGet(FLAG_BOUGHT_ADM)
+	#if (defined FLAG_OBTAINED_ADM && !defined DEBUG_HMS)
+	&& FlagGet(FLAG_OBTAINED_ADM)
 	#endif
 	&& TrySetDiveWarp() == 2)
 	{
@@ -2731,8 +2733,8 @@ bool8 TrySetupDiveDownScript(void)
 		item = ITEM_HM05_DIVE;
 		#endif
 
-		#ifdef FLAG_BOUGHT_ADM
-		if (FlagGet(FLAG_BOUGHT_ADM))
+		#ifdef FLAG_OBTAINED_ADM
+		if (FlagGet(FLAG_OBTAINED_ADM))
 		{
 			ScriptContext1_SetupScript(EventScript_UseADMDive);
 			return TRUE;
@@ -2766,8 +2768,8 @@ bool8 TrySetupDiveEmergeScript(void)
 		item = ITEM_HM05_DIVE;
 		#endif
 
-		#ifdef FLAG_BOUGHT_ADM
-		if (FlagGet(FLAG_BOUGHT_ADM))
+		#ifdef FLAG_OBTAINED_ADM
+		if (FlagGet(FLAG_OBTAINED_ADM))
 		{
 			ScriptContext1_SetupScript(EventScript_UseADMDiveUnderwater);
 			return TRUE;

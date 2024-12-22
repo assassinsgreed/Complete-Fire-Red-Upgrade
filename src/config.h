@@ -78,6 +78,7 @@
 #define FLAG_INSTANT_FRIENDSHIP 0x933 //If set, Pokemon reach max friendship after taking a single step
 #define FLAG_DOUBLE_WILD_BATTLES_MODIFIER_ACTIVE 0x934 //If set, the wild double battles flag will not be disabled after battle
 #define FLAG_BATTLE_YOURSELF 0x936 // If set, the player's team is copied to the opponent's
+#define FLAG_OBTAINED_ADM 0x939  	// Flag indicating the ADM tool has been received, which replaces the need for HM compatible pokemon
 #define FLAG_INFINITE_REPEL_ACTIVE 0x93A // If set, the player will not encounter wild Pokemon. This is separate from 0x911 so it can be managed by a menu option and not overridden by certain story events
 #define FLAG_DAILY_EVENTS_START 0xE00 //To flag + 0xFF, resets every new day.
 
@@ -88,8 +89,7 @@
 #define FLAG_SYS_DEXNAV 0x91E		//Flag to turn dexnav on/off in start menu (if undefined, this will eliminate dexnav from the start menu)
 #define FLAG_SYS_POCKETPC 0x935		//Toggle Pocket PC Off/On (if undefined, this will eliminate dexnav from the start menu)
 #define FLAG_SYS_INFINITE_REPEL 0x937 // Flag to turn Infinite Repel Off/On in start menu (if undefined, this will eliminate Infinite Repel from the start menu)
-#define FLAG_SYS_POKE_VIAL 0x938 // Flag to turn Poke Vial Off/On in start menu (if undefined, this will eliminate Poke Vial from the start menu)
-#define FLAG_SYS_POKE_RIDE 0x939 // Flag to turn Poke Ride Off/On in start menu (if undefined, this will eliminate Poke Ride from the start menu)
+#define FLAG_SYS_POKE_VIAL 0x938 	// Flag to turn Poke Vial Off/On in start menu (if undefined, this will eliminate Poke Vial from the start menu)
 
 /*===== Pedometer Flags as in JPAN Engine =====*/
 #define FLAG_LONG_PEDOMETER 0x920		//32 bit / 4 bytes / Max 4 294 967 295 steps

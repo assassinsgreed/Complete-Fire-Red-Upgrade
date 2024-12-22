@@ -1062,8 +1062,8 @@ static bool8 RockClimb_Init(struct Task *task, struct EventObject* eventObject)
 	PlayerGetDestCoords(&task->tDestX, &task->tDestY);
 	MoveCoords(eventObject->movementDirection, &task->tDestX, &task->tDestY);
 
-	#ifdef FLAG_BOUGHT_ADM
-	if (FlagGet(FLAG_BOUGHT_ADM))
+	#ifdef FLAG_OBTAINED_ADM
+	if (FlagGet(FLAG_OBTAINED_ADM))
 	{
 		task->tState = STATE_ROCK_CLIMB_JUMP_ON;
 		sp09A_StopSounds();

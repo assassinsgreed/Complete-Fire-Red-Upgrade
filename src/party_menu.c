@@ -1042,7 +1042,7 @@ void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
 			&& VarGet(VAR_SQ_WEED_WHACKER) > 0 && VarGet(VAR_SQ_WEED_WHACKER) < 2 //Weed Whacker in progress
 			#ifndef DEBUG_HMS
 			&& HasBadgeToUseFieldMove(FIELD_MOVE_CUT)
-			&& (FlagGet(FLAG_BOUGHT_ADM) || FlagGet(FLAG_SANDBOX_MODE) ||
+			&& (FlagGet(FLAG_OBTAINED_ADM) || FlagGet(FLAG_SANDBOX_MODE) ||
 			 (CheckBagHasItem(ITEM_HM01_CUT, 1) > 0 && CanMonLearnTMTutor(&mons[slotId], ITEM_HM01_CUT, 0) == CAN_LEARN_MOVE))
 			#endif
 			)
@@ -1059,8 +1059,8 @@ void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
 			#ifndef DEBUG_HMS
 			&& HasBadgeToUseFieldMove(FIELD_MOVE_FLY)
 			&& (
-			 #ifdef FLAG_BOUGHT_ADM
-			 FlagGet(FLAG_BOUGHT_ADM) ||
+			 #ifdef FLAG_OBTAINED_ADM
+			 FlagGet(FLAG_OBTAINED_ADM) ||
 			 #endif
 			 #ifdef FLAG_SANDBOX_MODE
 			 FlagGet(FLAG_SANDBOX_MODE) ||
@@ -1080,8 +1080,8 @@ void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
 		// 	#ifndef DEBUG_HMS
 		// 	&& HasBadgeToUseFieldMove(FIELD_MOVE_DIG)
 		// 	// && (
-		// 	//  #ifdef FLAG_BOUGHT_ADM
-		// 	//  FlagGet(FLAG_BOUGHT_ADM) ||
+		// 	//  #ifdef FLAG_OBTAINED_ADM
+		// 	//  FlagGet(FLAG_OBTAINED_ADM) ||
 		// 	//  #endif
 		// 	//  #ifdef FLAG_SANDBOX_MODE
 		// 	//  FlagGet(FLAG_SANDBOX_MODE) ||
@@ -1209,8 +1209,8 @@ static bool8 SetUpFieldMove_Dive(void)
 	if (!HasBadgeToUseFieldMove(FIELD_MOVE_DIVE))
 		return FALSE;
 
-	#if (defined FLAG_BOUGHT_ADM && !defined DEBUG_HMS)
-	if (!FlagGet(FLAG_BOUGHT_ADM))
+	#if (defined FLAG_OBTAINED_ADM && !defined DEBUG_HMS)
+	if (!FlagGet(FLAG_OBTAINED_ADM))
 		return FALSE;
 	#endif
 
@@ -1390,8 +1390,8 @@ void sp10A_CanUseCutOnTree(void)
 	Var8004 = PARTY_SIZE;
 	if (HasBadgeToUseFieldMove(FIELD_MOVE_CUT))
 	{
-		#ifdef FLAG_BOUGHT_ADM
-		if (FlagGet(FLAG_BOUGHT_ADM))
+		#ifdef FLAG_OBTAINED_ADM
+		if (FlagGet(FLAG_OBTAINED_ADM) && CheckBagHasItem(item, 1) > 0)
 			Var8004 = 0; //Mon doesn't matter, just can't be over 6
 		else
 		#endif
@@ -1415,8 +1415,8 @@ void sp10B_CanUseRockSmashOnRock(void)
 	Var8004 = PARTY_SIZE;
 	if (HasBadgeToUseFieldMove(FIELD_MOVE_ROCK_SMASH))
 	{
-		#ifdef FLAG_BOUGHT_ADM
-		if (FlagGet(FLAG_BOUGHT_ADM))
+		#ifdef FLAG_OBTAINED_ADM
+		if (FlagGet(FLAG_OBTAINED_ADM) && CheckBagHasItem(item, 1) > 0)
 			Var8004 = 0; //Mon doesn't matter, just can't be over 6
 		else
 		#endif
@@ -1440,8 +1440,8 @@ void sp10C_CanUseStrengthOnBoulder(void)
 	Var8004 = PARTY_SIZE;
 	if (HasBadgeToUseFieldMove(FIELD_MOVE_STRENGTH))
 	{
-		#ifdef FLAG_BOUGHT_ADM
-		if (FlagGet(FLAG_BOUGHT_ADM))
+		#ifdef FLAG_OBTAINED_ADM
+		if (FlagGet(FLAG_OBTAINED_ADM) && CheckBagHasItem(item, 1) > 0)
 			Var8004 = 0; //Mon doesn't matter, just can't be over 6
 		else
 		#endif
