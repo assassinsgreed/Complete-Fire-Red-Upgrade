@@ -450,9 +450,7 @@ GivePocketPC:
     msgbox gText_DaimynCityNPCHouses_GivingPocketPC3 MSG_NORMAL
     faceplayer
     msgbox gText_DaimynCityNPCHouses_GivingPocketPC4 MSG_NORMAL
-    fanfare 0x13E
-    msgbox gText_DaimynCityNPCHouses_ReceivedPortaPC MSG_KEEPOPEN
-    waitfanfare
+    obtainitem ITEM_PORTA_PC 0x1
     msgbox gText_DaimynCityNPCHouses_GivingPocketPC5 MSG_NORMAL
     setflag 0x935 @ Received Portable PC
     goto LanaFarewell

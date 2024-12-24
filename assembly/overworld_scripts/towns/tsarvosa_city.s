@@ -2313,10 +2313,8 @@ ToolDeveloper_PokeVial:
     call ToolsDeveloper_PurchaseTool
     msgbox gText_TsarvosaCity_NPCHouses_ToolDeveloper_ToolPurchaseComplete MSG_NORMAL
     setflag 0x938 @ PokeVial active in menu
-    fanfare 0x101 @ Got Item / Level up
     setvar 0x40AE 0x3 @ Fully fill the pokevial
-    msgbox gText_TsarvosaCity_NPCHouses_ToolDeveloper_ReceivedPokeVial MSG_KEEPOPEN
-    waitfanfare
+    obtainitem ITEM_POKE_VIAL 0x1
     msgbox gText_TsarvosaCity_NPCHouses_ToolDeveloper_CommentingOnToolCreation MSG_NORMAL
     goto PromptForTool
 
@@ -2327,9 +2325,7 @@ ToolDeveloper_InfiniteRepel:
     call ToolsDeveloper_PurchaseTool
     msgbox gText_TsarvosaCity_NPCHouses_ToolDeveloper_ToolPurchaseComplete MSG_NORMAL
     setflag 0x937 @ Obtained Infinite Repel
-    fanfare 0x101 @ Got Item / Level up
-    msgbox gText_TsarvosaCity_NPCHouses_ToolDeveloper_ReceivedInfiniteRepel MSG_KEEPOPEN
-    waitfanfare
+    obtainitem ITEM_INFINITE_REPEL 0x1
     msgbox gText_TsarvosaCity_NPCHouses_ToolDeveloper_CommentingOnToolCreation MSG_NORMAL
     goto PromptForTool
 

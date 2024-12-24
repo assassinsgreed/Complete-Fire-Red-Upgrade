@@ -737,12 +737,6 @@ The Infinite Repel!\nYes, an amazing tool, indeed.\pThis tool behaves like any o
 #org @gText_TsarvosaCity_NPCHouses_ToolDeveloper_ADMDescription
 The ADM!\nYes, an amazing tool, indeed.\pThe ADM, or Advanced Digging n'\nDiving Machine, was founded in the\lBorrius Region.\pQuite a mouthful, yes?\nLet's stick with ADM.\pThe ADM is an explorer's best\nfriend.\pBy leveraging inflatable Pok\emon, it\ncan replicate a Pok\emon's ability\lto use HM moves in the field.\pWhat does this mean for you?\pYou can use an HM without needing a\ncompatible Pok\emon, of course!\pThere is a catch, however. You must\nhave an HM in order to use it.
 
-#org @gText_TsarvosaCity_NPCHouses_ToolDeveloper_ReceivedPokeVial
-[BLACK][PLAYER] received the [GREEN]Pok\eVial[BLACK]![BLUE]
-
-#org @gText_TsarvosaCity_NPCHouses_ToolDeveloper_ReceivedInfiniteRepel
-[BLACK][PLAYER] received the [GREEN]Infinite Repel[BLACK]![BLUE]
-
 #org @gText_TsarvosaCity_NPCHouses_ToolDeveloper_CommentingOnToolCreation
 It feels so good to craft such a\nbeautiful tool.\pI have the urge to create even\nmore, in fact!
 

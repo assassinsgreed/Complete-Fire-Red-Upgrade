@@ -315,9 +315,7 @@ ReturningDexNavs:
     sound 0x15 @ Exclaim
     applymovement Assistant m_Surprise
     msgbox gText_Route3_AssistantGivesDexNavs MSG_NORMAL
-    fanfare 0x13E
-    msgbox gText_Route3_ReceiveDexNav MSG_KEEPOPEN
-    waitfanfare
+    obtainitem ITEM_DEX_NAV 0x1
     setflag 0x91E @ Show DexNav
     setflag 0x92A @ Show held items in DexNav UI
     applymovement Rival m_LookRight

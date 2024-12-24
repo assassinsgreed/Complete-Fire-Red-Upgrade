@@ -289,9 +289,6 @@ I'll wait here for you to retrieve\nthe DexNav shipment from Team\lPluto, but pl
 #org @gText_Route3_AssistantGivesDexNavs
 [BLACK]Assistant: [BLUE]Oh, what fortuitous luck!\nIt just so happens that two of\lthese DexNavs were meant for you.\pWhy don't you take them, with my\nthanks.
 
-#org @gText_Route3_ReceiveDexNav
-[BLACK]You received a DexNav!
-
 #org @gText_Route3_RivalCommentsOnDexNav
 [BLACK][RIVAL]: [BLUE]Wow, we really lucked out!
 

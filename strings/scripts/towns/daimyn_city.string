@@ -538,9 +538,6 @@ Hmm[.] Now where did I put it[.]\nAha!
 #org @gText_DaimynCityNPCHouses_GivingPocketPC4
 This is my pride and joy, the\n[GREEN]PortaPC[RED]!\pNow, I know what you're thinking[.]\nAnd yes, you're right!\pThis handy device will allow you to\naccess your PC from anywhere in\lthe world!\pYou can find it in your Tools menu,\nbeside the DexNav. Handy, right?\pPlease, take it! It's a gift from me\nto Kulure's newest champion.
 
-#org @gText_DaimynCityNPCHouses_ReceivedPortaPC
-[BLACK][PLAYER] recieved the PortaPC!
-
 #org @gText_DaimynCityNPCHouses_GivingPocketPC5
 [RED]Take good care of that, okay?\nIt's a Lana original!
 
