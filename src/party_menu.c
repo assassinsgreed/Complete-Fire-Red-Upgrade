@@ -1074,26 +1074,26 @@ void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
 			}
 		}
 
-		// if (knowsDig) //Doesn't know 4 field moves
-		// {
-		// 	if (CanUseEscapeRopeOnCurrMap() //Only add if usable
-		// 	#ifndef DEBUG_HMS
-		// 	&& HasBadgeToUseFieldMove(FIELD_MOVE_DIG)
-		// 	// && (
-		// 	//  #ifdef FLAG_OBTAINED_ADM
-		// 	//  FlagGet(FLAG_OBTAINED_ADM) ||
-		// 	//  #endif
-		// 	//  #ifdef FLAG_SANDBOX_MODE
-		// 	//  FlagGet(FLAG_SANDBOX_MODE) ||
-		// 	//  #endif
-		// 	//  (CheckBagHasItem(ITEM_TM28_DIG, 1) > 0 && CanMonLearnTMTutor(&mons[slotId], ITEM_TM28_DIG, 0) == CAN_LEARN_MOVE))
-		// 	#endif
-		// 	)
-		// 	{
-		// 		AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_FIELD_MOVES + FIELD_MOVE_DIG);
-		// 		++k;
-		// 	}
-		// }
+		if (knowsDig || FlagGet(FLAG_OBTAINED_ADM)) //Doesn't know 4 field moves
+		{
+			if (CanUseEscapeRopeOnCurrMap() //Only add if usable
+			#ifndef DEBUG_HMS
+			//&& HasBadgeToUseFieldMove(FIELD_MOVE_DIG)
+			// && (
+			//  #ifdef FLAG_OBTAINED_ADM
+			//  FlagGet(FLAG_OBTAINED_ADM) ||
+			//  #endif
+			//  #ifdef FLAG_SANDBOX_MODE
+			//  FlagGet(FLAG_SANDBOX_MODE) ||
+			//  #endif
+			//  (CheckBagHasItem(ITEM_TM28_DIG, 1) > 0 && CanMonLearnTMTutor(&mons[slotId], ITEM_TM28_DIG, 0) == CAN_LEARN_MOVE))
+			#endif
+			)
+			{
+				AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_FIELD_MOVES + FIELD_MOVE_DIG);
+				++k;
+			}
+		}
 	}
 	#endif
 
