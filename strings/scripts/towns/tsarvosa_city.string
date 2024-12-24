@@ -678,7 +678,70 @@ Come back if you have more\nPok\eChips to crush.\pWe could really benefit from y
 [BLUE]I can't make an item out of\nnothing!\pBring me more Pok\eChips if you want\nthat.
 
 #org @gText_TsarvosaCity_NPCHouses_PokeCrusherFriend
-My friend and I have rented out this\nold house to pursue our research.\pIt has been hard, but all our\nstruggles are finally paying off!\pJust don't tell anyone about this,\nokay?\pWe don't need any copycats on our\ntails[.]
+My friends and I rented out this old\nhouse to pursue our research.\pIt has been hard, but all our\nstruggles are finally paying off!\pJust don't tell anyone about what\nwe're doing here, okay?\pWe don't need any copycats on our\ntails[.]
+
+#org @gText_TsarvosaCity_NPCHouses_ToolDeveloper_Intro
+I'm developing handy tools that any\nserious Pok\emon Trainer dreams of.
+
+#org @gText_TsarvosaCity_NPCHouses_ToolDeveloper_PlayerNotChampion
+[.]You!\pNo[.] You are not ready for my tools\nyet.\pMy tools must only be used by the\nvery best[.] I'll have no less!\pCome back when - or rather, if - you\nbecome Kulure's Champion.
+
+#org @gText_TsarvosaCity_NPCHouses_ToolDeveloper_PlayerIsChampion
+[.]You! You are Kulure's Champion.\pVery good! Let me share my tools\nwith you.
+
+#org @gText_TsarvosaCity_NPCHouses_ToolDeveloper_ToolPurchasePrompt
+To creat this tool, I would require\n30 Pok\eChips from you.\pIs this acceptable?\n[BLACK](Held: [BUFFER1])[BLUE]
+
+#org @gText_TsarvosaCity_NPCHouses_ToolDeveloper_ToolPurchaseNotEnoughChips
+Oh, that's no good!\pYou'd need more Pok\eChips before I\ncould make that for you.\pCome see me later, if you have\nenough Pok\eChips.
+
+#org @gText_TsarvosaCity_NPCHouses_ToolDeveloper_ToolPurchaseHaveEnoughChips
+Very good!\nI will take your payment now.
+
+#org @gText_TsarvosaCity_NPCHouses_ToolDeveloper_ToolPurchaseStarting
+Okay, please wait a moment.
+
+#org @gText_TsarvosaCity_NPCHouses_ToolDeveloper_ToolPurchaseWorking
+I have a vision for this tool in my\nhead, and the components I need.\pI only need to put them together to\nform an incredible tool[.]
+
+#org @gText_TsarvosaCity_NPCHouses_ToolDeveloper_ToolPurchaseWorking2
+Yes! That's it!\nI've created a masterpiece!
+
+#org @gText_TsarvosaCity_NPCHouses_ToolDeveloper_ToolPurchaseComplete
+It is done! You may take your\ntool.\pYou can use it in the Start Menu,\nlike you would your fancy DexNav.
+
+#org @gText_TsarvosaCity_NPCHouses_ToolDeveloper_ADMPurchaseComplete
+It is done! You may take your\ntool.\pIt will be used automatically\nwhenever you need to use an HM.
+
+#org @gText_TsarvosaCity_NPCHouses_ToolDeveloper_PromptForTool
+Which of my babies do you want to\nknow more about?
+
+#org @gText_TsarvosaCity_NPCHouses_ToolDeveloper_PokeVialChoice
+Pok\eVial
+
+#org @gText_TsarvosaCity_NPCHouses_ToolDeveloper_InfiniteRepelChoice
+Infinite Repel
+
+#org @gText_TsarvosaCity_NPCHouses_ToolDeveloper_ADMChoice
+ADM
+
+#org @gText_TsarvosaCity_NPCHouses_ToolDeveloper_ExitChoice
+Nothing for now
+
+#org @gText_TsarvosaCity_NPCHouses_ToolDeveloper_PokeVialDescription
+The Pok\eVial!\nYes, an amazing tool, indeed.\pThis tool holds the medicine used in\nPok\emon Centers.\pJust as you'd expect, it allows you\nto fully heal your Pok\emon\lanywhere, any time.\pOh, but there is a catch!\pThe vial can only hold enough\nmedicine to do this 3 times.\pOnce it's out, you'll need to refill\nit at a Pok\emon Center.
+
+#org @gText_TsarvosaCity_NPCHouses_ToolDeveloper_InfiniteRepelDescription
+The Infinite Repel!\nYes, an amazing tool, indeed.\pThis tool behaves like any other\nrepel.\pJust as you'd expect, it never runs\nout! Handy, right?\pYou can use the tool to apply and\nremove the effect at will.
+
+#org @gText_TsarvosaCity_NPCHouses_ToolDeveloper_ADMDescription
+The ADM!\nYes, an amazing tool, indeed.\pThe ADM, or Advanced Digging n'\nDiving Machine, was founded in the\lBorrius Region.\pQuite a mouthful, yes?\nLet's stick with ADM.\pThe ADM is an explorer's best\nfriend.\pBy leveraging inflatable Pok\emon, it\ncan replicate a Pok\emon's ability\lto use HM moves in the field.\pWhat does this mean for you?\pYou can use an HM without needing a\ncompatible Pok\emon, of course!\pThere is a catch, however. You must\nhave an HM in order to use it.
+
+#org @gText_TsarvosaCity_NPCHouses_ToolDeveloper_CommentingOnToolCreation
+It feels so good to craft such a\nbeautiful tool.\pI have the urge to create even\nmore, in fact!
+
+#org @gText_TsarvosaCity_NPCHouses_ToolDeveloper_ChoseQuit
+Hmm[.] Okay.\pCome back if you want to learn more\nabout my beautiful tools.
 
 #org @gText_TsarvosaCity_NPCHouses_MarketBoy
 Tsarvosa City is home to the second\nbiggest shopping center in Kulure.\pOf course, the biggest is in Daimyn\nCity on the mainland!\pBut, Tsarvosa City's sells things you\nwon't find in Daimyn City!\pI guess that's true of Daimyn\nCity's Mall too, though[.]

@@ -2241,6 +2241,7 @@ npc 2 4 0 EventScript_TsarvosaCity_NPCHouses_BattlingFanGirl
 npc 2 4 1 EventScript_TsarvosaCity_NPCHouses_BattlingFanBoy
 npc 2 5 0 EventScript_TsarvosaCity_NPCHouses_PokeChipCrusher
 npc 2 5 1 EventScript_TsarvosaCity_NPCHouses_PokeChipCrusherFriend
+npc 2 5 2 EventScript_TsarvosaCity_NPCHouses_ToolsDeveloper
 npc 10 19 0 EventScript_TsarvosaCity_NPCHouses_IrisAndStellaMom
 npc 10 19 1 EventScript_TsarvosaCity_NPCHouses_IrisAndStellaGrandpa
 npc 12 2 0 EventScript_TsarvosaCity_NPCHouses_DevTeamCollin

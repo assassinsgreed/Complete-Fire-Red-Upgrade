@@ -2254,7 +2254,96 @@ ChoseNotToCrush:
 
 .global EventScript_TsarvosaCity_NPCHouses_PokeChipCrusherFriend
 EventScript_TsarvosaCity_NPCHouses_PokeChipCrusherFriend:
-    npcchatwithmovement gText_TsarvosaCity_NPCHouses_PokeCrusherFriend m_LookRight
+    npcchatwithmovement gText_TsarvosaCity_NPCHouses_PokeCrusherFriend m_LookLeft
+    end
+
+.global EventScript_TsarvosaCity_NPCHouses_ToolsDeveloper
+EventScript_TsarvosaCity_NPCHouses_ToolsDeveloper:
+    lock
+    faceplayer
+    msgbox gText_TsarvosaCity_NPCHouses_ToolDeveloper_Intro MSG_NORMAL
+    checkflag 0x4BC @ Beat Selene, became champion
+    if NOT_SET _goto ToolsDeveloper_NotChampion
+    msgbox gText_TsarvosaCity_NPCHouses_ToolDeveloper_PlayerIsChampion MSG_NORMAL
+PromptForTool:
+    msgbox gText_TsarvosaCity_NPCHouses_ToolDeveloper_PromptForTool MSG_NORMAL
+    multichoiceoption gText_TsarvosaCity_NPCHouses_ToolDeveloper_PokeVialChoice 0
+	multichoiceoption gText_TsarvosaCity_NPCHouses_ToolDeveloper_InfiniteRepelChoice 1
+	multichoiceoption gText_TsarvosaCity_NPCHouses_ToolDeveloper_ADMChoice 2
+	multichoiceoption gText_TsarvosaCity_NPCHouses_ToolDeveloper_ExitChoice 3
+	multichoice 0x0 0x0 FOUR_MULTICHOICE_OPTIONS FALSE
+	switch LASTRESULT
+    case 0, ToolDeveloper_PokeVial _goto
+    case 1, ToolDeveloper_InfiniteRepel _goto
+    case 2, ToolDeveloper_ADM _goto
+    case 3, ToolDeveloper_Exit _goto
+    goto ToolDeveloper_Exit @ If player presses B
+
+ToolsDeveloper_NotChampion:
+    npcchatwithmovement gText_TsarvosaCity_NPCHouses_ToolDeveloper_PlayerNotChampion m_LookRight
+    end
+
+ToolsDeveloper_PurchaseTool:
+    callasm StorePokeChipCount
+    buffernumber 0x0 0x8005
+    msgbox gText_TsarvosaCity_NPCHouses_ToolDeveloper_ToolPurchasePrompt MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto ToolDeveloper_Exit
+    compare 0x8005 30
+    if lessthan _goto ToolsDeveloper_NotEnoughPokeChips
+    msgbox gText_TsarvosaCity_NPCHouses_ToolDeveloper_ToolPurchaseHaveEnoughChips MSG_NORMAL
+    playse 0xF8 @ Money SE
+    waitse
+    removeitem ITEM_POKE_CHIP 30
+    msgbox gText_TsarvosaCity_NPCHouses_ToolDeveloper_ToolPurchaseStarting MSG_NORMAL
+    fadescreen FADEOUT_BLACK
+    msgbox gText_TsarvosaCity_NPCHouses_ToolDeveloper_ToolPurchaseWorking MSG_NORMAL
+    msgbox gText_TsarvosaCity_NPCHouses_ToolDeveloper_ToolPurchaseWorking2 MSG_NORMAL
+    fadescreen FADEIN_BLACK
+    return
+
+ToolsDeveloper_NotEnoughPokeChips:
+    npcchatwithmovement gText_TsarvosaCity_NPCHouses_ToolDeveloper_ToolPurchaseNotEnoughChips m_LookRight
+    end
+
+ToolDeveloper_PokeVial:
+    msgbox gText_TsarvosaCity_NPCHouses_ToolDeveloper_PokeVialDescription MSG_NORMAL
+    checkflag 0x938 @ PokeVial active in menu
+    if SET _goto PromptForTool
+    call ToolsDeveloper_PurchaseTool
+    msgbox gText_TsarvosaCity_NPCHouses_ToolDeveloper_ToolPurchaseComplete MSG_NORMAL
+    setflag 0x938 @ PokeVial active in menu
+    setvar 0x40AE 0x3 @ Fully fill the pokevial
+    obtainitem ITEM_POKE_VIAL 0x1
+    msgbox gText_TsarvosaCity_NPCHouses_ToolDeveloper_CommentingOnToolCreation MSG_NORMAL
+    goto PromptForTool
+
+ToolDeveloper_InfiniteRepel:
+    msgbox gText_TsarvosaCity_NPCHouses_ToolDeveloper_InfiniteRepelDescription MSG_NORMAL
+    checkflag 0x937 @ Obtained Infinite Repel
+    if SET _goto PromptForTool
+    call ToolsDeveloper_PurchaseTool
+    msgbox gText_TsarvosaCity_NPCHouses_ToolDeveloper_ToolPurchaseComplete MSG_NORMAL
+    setflag 0x937 @ Obtained Infinite Repel
+    obtainitem ITEM_INFINITE_REPEL 0x1
+    msgbox gText_TsarvosaCity_NPCHouses_ToolDeveloper_CommentingOnToolCreation MSG_NORMAL
+    goto PromptForTool
+
+ToolDeveloper_ADM:
+    msgbox gText_TsarvosaCity_NPCHouses_ToolDeveloper_ADMDescription MSG_NORMAL
+    checkflag 0x939 @ Obtained ADM
+    if SET _goto PromptForTool
+    call ToolsDeveloper_PurchaseTool
+    msgbox gText_TsarvosaCity_NPCHouses_ToolDeveloper_ADMPurchaseComplete MSG_NORMAL
+    setflag 0x939 @ Obtained ADM
+    fanfare 0x101 @ Got Item / Level up
+    obtainitem ITEM_ADM 0x1
+    waitfanfare
+    msgbox gText_TsarvosaCity_NPCHouses_ToolDeveloper_CommentingOnToolCreation MSG_NORMAL
+    goto PromptForTool
+
+ToolDeveloper_Exit:
+    npcchatwithmovement gText_TsarvosaCity_NPCHouses_ToolDeveloper_ChoseQuit m_LookRight
     end
 
 .global EventScript_TsarvosaCity_NPCHouses_MarketBoy
