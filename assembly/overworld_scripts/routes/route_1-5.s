@@ -294,6 +294,7 @@ ReturningDexNavs:
     compareplayerfacing INTERNAL_RIGHT
     if equal _call MovePlayerBelowAssistantLeft
     waitmovement ALLEVENTS
+    lock
     faceplayer
     msgbox gText_Route3_AssistantWelcomesPlayerBack MSG_NORMAL
     showsprite Rival

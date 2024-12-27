@@ -55,6 +55,7 @@ EventScript_Route6_FishermanTaylor:
 
 .global EventScript_Route6_NurseLeanne
 EventScript_Route6_NurseLeanne:
+    lock
     faceplayer
     checktrainerflag 0x559
     if SET _goto NurseLeanneHeal
@@ -106,6 +107,7 @@ EventScript_Route6_SwimmerDanika:
 
 .global EventScript_Route6_SrAndJr_Sue
 EventScript_Route6_SrAndJr_Sue:
+    lock
     faceplayer
     trainerbattle0 0x0 0x60 0x0 gText_Route6_SrAndJrSueAndKat_Sue_Intro gText_Route6_SrAndJrSueAndKat_Sue_Defeat
     msgbox gText_Route6_SrAndJrSueAndKat_Sue_Chat MSG_NORMAL
@@ -113,6 +115,7 @@ EventScript_Route6_SrAndJr_Sue:
 
 .global EventScript_Route6_SrAndJr_Kat
 EventScript_Route6_SrAndJr_Kat:
+    lock
     faceplayer
     trainerbattle0 0x0 0x60 0x0 gText_Route6_SrAndJrSueAndKat_Kat_Intro gText_Route6_SrAndJrSueAndKat_Kat_Defeat
     msgbox gText_Route6_SrAndJrSueAndKat_Kat_Chat MSG_NORMAL
@@ -439,6 +442,7 @@ FishermanFarewell:
 @ Route 9
 .global EventScript_Route9_Flutist
 EventScript_Route9_Flutist:
+    lock
     faceplayer
     msgbox gText_Route9_FlutistShopIntroduction MSG_KEEPOPEN
     pokemart FluteShop
@@ -474,6 +478,7 @@ EventScript_Route9_TM66_Payback:
 
 .global EventScript_Route9_SlowbroGirl
 EventScript_Route9_SlowbroGirl:
+    lock
     msgbox gText_Route9_SlowbroGirlFrustration MSG_NORMAL
     faceplayer
     msgbox gText_Route9_SlowbroGirlApology MSG_NORMAL

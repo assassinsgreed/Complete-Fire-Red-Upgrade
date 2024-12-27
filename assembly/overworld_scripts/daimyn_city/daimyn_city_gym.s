@@ -634,6 +634,7 @@ EventScript_DaimynCityGym_NPCWoman:
 
 .global EventScript_DaimynCityGym_NPCPsychic
 EventScript_DaimynCityGym_NPCPsychic:
+    lock
     msgbox gText_DaimynCityGym_NPCPsychic MSG_NORMAL
     faceplayer
     msgbox gText_DaimynCityGym_NPCPsychicFollowUp MSG_NORMAL

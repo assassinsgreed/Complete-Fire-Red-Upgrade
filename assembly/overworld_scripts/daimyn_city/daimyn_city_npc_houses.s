@@ -133,6 +133,7 @@ PlantAfterAlistair:
 
 .global EventScript_DaimynCity_MoveTutor
 EventScript_DaimynCity_MoveTutor:
+    lock
     faceplayer
     callasm StorePokeChipCount
     buffernumber 0x0 0x8005 @ Take stored PokeChip count

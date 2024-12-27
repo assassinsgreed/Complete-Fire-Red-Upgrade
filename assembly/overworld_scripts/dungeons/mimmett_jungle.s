@@ -81,6 +81,7 @@ EventScript_MimmettJungle_PsychicWanda:
 
 .global EventScript_MimmettJungle_Zeraora
 EventScript_MimmettJungle_Zeraora:
+    lock
     msgbox gText_MimmettJungle_Zeraora_BattleConfirmation MSG_YESNO
     compare LASTRESULT NO
     if equal _goto ZeraoraChoseNo

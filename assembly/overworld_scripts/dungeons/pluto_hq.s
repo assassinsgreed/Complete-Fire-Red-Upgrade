@@ -231,6 +231,7 @@ EventScript_PlutoHQ_B7F_TeamPlutoRichard:
 ## Irene's office
 .global EventScript_PlutoHQ_B4F_Irene
 EventScript_PlutoHQ_B4F_Irene:
+    lock
     faceplayer
     checkitem ITEM_SERPENT_KEY 0x1
     compare LASTRESULT TRUE
@@ -252,6 +253,7 @@ IreneDefeated:
 ## Ronald's office
 .global EventScript_PlutoHQ_B7F_Ronald
 EventScript_PlutoHQ_B7F_Ronald:
+    lock
     faceplayer
     checkitem ITEM_CERBERUS_KEY 0x1
     compare LASTRESULT TRUE

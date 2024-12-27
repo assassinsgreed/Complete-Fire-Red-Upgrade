@@ -313,6 +313,7 @@ EventScript_VictoryRoad_CoolTrainerDahlia:
 
 .global EventScript_VictoryRoad_NurseCelia
 EventScript_VictoryRoad_NurseCelia:
+    lock
     faceplayer
     checktrainerflag 510
     if SET _goto NurseCeliaHeal

@@ -194,6 +194,7 @@ EventScript_ForgottenManseExterior_BurglarChad:
 
 .global EventScript_ForgottenManseExterior_NurseLucy
 EventScript_ForgottenManseExterior_NurseLucy:
+    lock
     faceplayer
     checktrainerflag 0x57B
     if SET _goto NurseLucyHeal

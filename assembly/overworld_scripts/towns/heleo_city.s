@@ -230,6 +230,7 @@ EventScript_HeleoFacilities_PokemonCenter_KidsMom:
 
 .global EventScript_HeleoFacilities_PokemonCenter_CriticalCapture
 EventScript_HeleoFacilities_PokemonCenter_CriticalCapture:
+    lock
     faceplayer
     msgbox gText_HeleoCityFacilities_CriticalCapture MSG_NORMAL
     checkitem ITEM_CATCHING_CHARM 0x1
@@ -563,6 +564,7 @@ EventScript_HeleoCity_ForemanAssistant:
 
 .global EventScript_HeleoCity_MoveTutor
 EventScript_HeleoCity_MoveTutor:
+    lock
     faceplayer
     callasm StorePokeChipCount
 	buffernumber 0x0 0x8005 @ Take stored PokeChip count
@@ -1194,6 +1196,7 @@ SignScript_HeleoGym_PlacardWithBadge:
 
 .global EventScript_HeleoGym_Slowbro
 EventScript_HeleoGym_Slowbro:
+    lock
     faceplayer
     cry SPECIES_SLOWBRO 0x0
     applymovement LASTTALKED m_Question 
