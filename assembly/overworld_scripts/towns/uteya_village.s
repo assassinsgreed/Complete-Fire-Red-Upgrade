@@ -170,6 +170,7 @@ EventScript_UteyaVillage_Pokemart_OldWoman:
 
 .global EventScript_UteyaVillage_MoveTutor
 EventScript_UteyaVillage_MoveTutor:
+    lock
     faceplayer
     callasm StorePokeChipCount
     buffernumber 0x0 0x8005 @ Take stored PokeChip count
@@ -222,6 +223,7 @@ BufferSpeciesName:
 
 .global EventScript_UteyaVillage_SlowpokeNews_Producer
 EventScript_UteyaVillage_SlowpokeNews_Producer:
+    lock
     checkflag 0xE33 @ Slowpoke News completed today
     if SET _goto SlowpokeNewsCompleted_Producer
     faceplayer
@@ -366,6 +368,7 @@ LevelScript_MeetingClancyAndEnaInTheirHome:
 
 .global EventScript_UteyaVillage_Clancy
 EventScript_UteyaVillage_Clancy:
+    lock
     faceplayer
     callasm StorePokeChipCount
     buffernumber 0x0 0x8005 @ Take stored PokeChip count
@@ -573,6 +576,7 @@ m_ClancyReturnsToSeat: .byte walk_up, walk_up, look_left, end_m
 // Trainer House
 .global EventScript_UteyaVillage_TrainerHouse_Host
 EventScript_UteyaVillage_TrainerHouse_Host:
+    lock
     faceplayer
     msgbox gText_UteyaVillage_TrainerHouse_HostIntro MSG_NORMAL
     goto TrainerHouse_Menu
@@ -761,6 +765,7 @@ Trainerhouse_grandprize:
 
 .global EventScript_UteyaVillage_TrainerHouse_Man
 EventScript_UteyaVillage_TrainerHouse_Man:
+    lock
     msgbox gText_UteyaVillage_TrainerHouse_Man MSG_NORMAL
     faceplayer
     npcchatwithmovement gText_UteyaVillage_TrainerHouse_ManAfterFacingPlayer m_LookUp
@@ -939,6 +944,7 @@ MoveCopyCatToPuzzle:
 @ and also have a movment value up to FF (15x15 movement grid). If it is 00 they'll have a default radius of 3! 
 .global EventScript_UteyaVillage_Gym_Copycat
 EventScript_UteyaVillage_Gym_Copycat:
+    lock
     faceplayer
     call SetCopyCatGender
     msgbox gText_UteyaVillage_Gym_Copycat_AskPlayerWhatTheyNeed MSG_YESNO
@@ -1277,6 +1283,7 @@ EventScript_UteyaVillage_Gym_Clarice:
 
 .global EventScript_UteyaVillage_Gym_LeaderDennis
 EventScript_UteyaVillage_Gym_LeaderDennis:
+    lock
     faceplayer
     checkflag 0x82C @ Game is cleared
     if SET _goto Dennis_Postgame
@@ -1299,6 +1306,7 @@ EventScript_UteyaVillage_Gym_LeaderDennis:
 
 .global EventScript_UteyaVillage_Gym_LeaderDee
 EventScript_UteyaVillage_Gym_LeaderDee:
+    lock
     faceplayer
     checkflag 0x82C @ Game is cleared
     if SET _goto Dee_Postgame

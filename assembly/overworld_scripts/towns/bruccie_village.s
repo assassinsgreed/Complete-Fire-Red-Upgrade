@@ -35,6 +35,7 @@ EventScript_BruccieVillage_Kid:
 
 .global EventScript_BruccieVillage_OldMan
 EventScript_BruccieVillage_OldMan:
+    lock
     checkflag 0xE18 @ Wingull event done
     if SET _goto OldMan_DailyEventDone
     faceplayer
@@ -121,6 +122,7 @@ EventScript_BruccieVillage_Wingull:
 
 .global EventScript_BruccieVillage_Abby
 EventScript_BruccieVillage_Abby:
+    lock
     faceplayer
     msgbox gText_BruccieVillage_Abby_Question MSG_YESNO
     compare LASTRESULT NO
@@ -289,6 +291,7 @@ GameboyKidsLookDown:
 
 .global EventScript_BruccieVillageFacilities_PokemonCenter_CaughtLocationGirl
 EventScript_BruccieVillageFacilities_PokemonCenter_CaughtLocationGirl:
+    lock
     faceplayer
     setvar 0x8003 0x0 @ From party
     setvar 0x8004 0x0 @ First slot
@@ -435,6 +438,7 @@ EventScript_BruccieVillageFacilities_Pokemart_StockBoy:
 @ NPC Houses
 .global EventScript_BruccieVillageNPCHouses_MoveTutor
 EventScript_BruccieVillageNPCHouses_MoveTutor:
+    lock
     faceplayer
     callasm StorePokeChipCount
     buffernumber 0x0 0x8005 @ Take stored PokeChip count
@@ -465,6 +469,7 @@ NotEnoughPokeChips:
 
 .global EventScript_BruccieVillageNPCHouses_PokeballSwapper
 EventScript_BruccieVillageNPCHouses_PokeballSwapper:
+    lock
     faceplayer
     msgbox gText_BruccieVillageNPCHouses_PokeballSwapper_Intro MSG_NORMAL
     compare 0x409A 5
@@ -787,6 +792,7 @@ EventScript_BruccieVillageGym_Ellie:
 
 .global EventScript_BruccieVillageGym_Abby
 EventScript_BruccieVillageGym_Abby:
+    lock
     faceplayer
     checkflag 0x82C @ Game is cleared
     if SET _goto Abby_Postgame

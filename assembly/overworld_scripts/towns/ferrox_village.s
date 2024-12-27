@@ -197,6 +197,7 @@ BerryGirlEnd:
 
 .global EventScript_FerroxNPCHouses_MoveTutor
 EventScript_FerroxNPCHouses_MoveTutor:
+    lock
     faceplayer
     callasm StorePokeChipCount
 	buffernumber 0x0 0x8005 @ Take stored PokeChip count

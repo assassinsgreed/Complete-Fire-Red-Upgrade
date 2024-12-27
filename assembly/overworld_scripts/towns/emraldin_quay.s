@@ -100,6 +100,7 @@ EventScript_EmraldinQuayNPCHouses_CamperMom:
 
 .global EventScript_EmraldinQuayNPCHouses_Tutor
 EventScript_EmraldinQuayNPCHouses_Tutor:
+    lock
     faceplayer
     callasm StorePokeChipCount
     buffernumber 0x0 0x8005 @ Take stored PokeChip count
@@ -140,6 +141,7 @@ EventScript_EmraldinQuayNPCHouses_TutorYoungSon:
 
 .global EventScript_EmraldinQuayTrainerHouse_Host
 EventScript_EmraldinQuayTrainerHouse_Host:
+    lock
     faceplayer
     msgbox gText_EmraldinQuay_TrainerHouse_HostIntro MSG_NORMAL
     goto TrainerHouse_Menu
@@ -342,6 +344,7 @@ EventScript_EmraldinQuayTrainerHouse_FatGuy:
 
 .global EventScript_EmraldinQuayTrainerHouse_Girl
 EventScript_EmraldinQuayTrainerHouse_Girl:
+    lock
     faceplayer
     msgbox gText_EmraldinQuay_TrainerHouse_Girl MSG_YESNO
     compare LASTRESULT YES

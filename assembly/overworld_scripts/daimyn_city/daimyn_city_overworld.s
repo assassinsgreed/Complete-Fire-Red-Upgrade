@@ -305,6 +305,7 @@ EventScript_DaimynCity_FindTM54FalseSwipe:
 
 .global EventScript_DaimynCity_RivalExhibitionBattle
 EventScript_DaimynCity_RivalExhibitionBattle:
+    lock
     faceplayer
     checkflag 0xE36 @ Rival exhbition battle already completed
     if SET _goto AlreadyCompletedRivalExhibitionBattleToday

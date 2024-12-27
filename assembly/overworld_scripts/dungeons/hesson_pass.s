@@ -56,6 +56,7 @@ EventScript_HessonPass_CoolTrainerColt:
 
 .global EventScript_HessonPass_NurseMina
 EventScript_HessonPass_NurseMina:
+    lock
     faceplayer
     checktrainerflag 0x5D7
     if SET _goto NurseMinaHeal

@@ -57,6 +57,7 @@ MapResumeScript_HideGroudon:
 
 .global EventScript_RubarrDesert_NurseJaina
 EventScript_RubarrDesert_NurseJaina:
+    lock
     faceplayer
     checktrainerflag 0x517
     if SET _goto NurseJainaHeal
@@ -101,8 +102,8 @@ EventScript_RubarrDesert_TMFlameCharge:
 
 .global EventScript_RubarrDesert_CaveGuide
 EventScript_RubarrDesert_CaveGuide:
+    lockall
     faceplayer
-    lockall    
     msgbox gText_RubarrDesert_TourGuideIntro MSG_YESNO
     compare LASTRESULT YES
     if true _call EventScript_RubarrDesert_CaveGuide_Info

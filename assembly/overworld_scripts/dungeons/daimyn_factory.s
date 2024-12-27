@@ -105,6 +105,7 @@ EventScript_DaimynFactoryOverworld_FindTM93_Wild_Charge:
 
 .global EventScript_DaimynFactoryOverworld_ReminiscingOldMan
 EventScript_DaimynFactoryOverworld_ReminiscingOldMan:
+    lock
     checkflag 0x26E @ Steel beam tutor unlocked
     if SET _goto TeachSteelBeamQuestion
     npcchat gText_DaimynFactoryOverworld_ReminiscingOldMan
@@ -638,6 +639,7 @@ CloseLowerRightDoorB:
 
 .global EventScript_DaimynFactory_Meltan
 EventScript_DaimynFactory_Meltan:
+    lock
     faceplayer
     cry SPECIES_MELTAN 0x0
     waitcry

@@ -23,6 +23,7 @@ EventScript_LaplazTown_Girl:
 
 .global EventScript_LaplazTown_OldMan
 EventScript_LaplazTown_OldMan:
+    lock
     faceplayer
     checkflag 0x03F @ Casey hidden in gym
     if SET _goto OldManNoGymLeader
@@ -102,6 +103,7 @@ EventScript_LaplazFacilities_GalarBirdsGirlsSister:
 
 .global EventScript_LaplazFacilities_Gentleman
 EventScript_LaplazFacilities_Gentleman:
+    lock
     checkitem ITEM_DECODER 0x1
     compare LASTRESULT TRUE
     if equal _goto DecoderGentleman_ExplainingDecoder
@@ -176,6 +178,7 @@ EventScript_LaplazFacilities_XItemsTip:
 
 .global EventScript_LaplazFacilities_TrainerHouse_Host
 EventScript_LaplazFacilities_TrainerHouse_Host:
+    lock
     faceplayer
     msgbox gText_LaplazFacilities_TrainerHouse_HostIntro MSG_NORMAL
     goto TrainerHouse_Menu
@@ -451,6 +454,7 @@ EventScript_LaplazNPCHouses_ApricornGrandpa:
 
 .global EventScript_LaplazNPCHouses_PsychicBrother
 EventScript_LaplazNPCHouses_PsychicBrother:
+    lock
     faceplayer
     checkflag 0x257 @ Got Hidden Power gift
     if SET _goto ExplainHiddenPower
@@ -469,6 +473,7 @@ ExplainHiddenPower:
 
 .global EventScript_LaplazNPCHouses_PsychicSister
 EventScript_LaplazNPCHouses_PsychicSister:
+    lock
     faceplayer
     checkflag 0x257 @ Got Hidden Power gift
     if NOT_SET _goto PlayerHasNotReceivedHiddenPower
@@ -513,6 +518,7 @@ ResetPsychicSister:
 
 .global EventScript_LaplazNPCHouses_ApricornSeller
 EventScript_LaplazNPCHouses_ApricornSeller:
+    lock
     faceplayer
     checkflag 0xE11 @ Apricorn ball bought today
     if SET _goto ApricornBallAlreadyBoughtToday
@@ -619,6 +625,7 @@ EventScript_LaplazNPCHouses_ApricornDescriber:
 
 .global EventScript_LaplazNPCHouses_Tutor
 EventScript_LaplazNPCHouses_Tutor:
+    lock
     faceplayer
     callasm StorePokeChipCount
     buffernumber 0x0 0x8005 @ Take stored PokeChip count
@@ -891,6 +898,7 @@ RotateUp:
 
 .global EventScript_LaplazGym_LeaderCasey
 EventScript_LaplazGym_LeaderCasey:
+    lock
     faceplayer
     call SetCaseyGender
     checkflag 0x82C @ Game is cleared

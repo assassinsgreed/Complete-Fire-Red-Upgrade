@@ -756,6 +756,7 @@ SignScript_Route18_OrichelleGarden:
 
 .global EventScript_Route18_ShayminFormChangeGirl
 EventScript_Route18_ShayminFormChangeGirl:
+    lock
     faceplayer
     checkflag 0x25A @ Gracidea given
     if SET _goto ExplainGracideaUsage
@@ -780,6 +781,7 @@ ExplainGracideaUsage:
 
 .global EventScript_Route18_RestWoman
 EventScript_Route18_RestWoman:
+    lock
     faceplayer
     msgbox gText_Route18_RestWoman_RestPrompt MSG_YESNO
     compare LASTRESULT YES
@@ -822,6 +824,7 @@ HideShaymin:
 
 .global EventScript_OrichelleGarden_Shaymin
 EventScript_OrichelleGarden_Shaymin:
+    lock
     faceplayer
     cry SPECIES_SHAYMIN 0x0
     waitcry
@@ -1097,6 +1100,7 @@ EventScript_Route20_JugglerHiram:
 
 .global EventScript_Route20_NurseJudy
 EventScript_Route20_NurseJudy:
+    lock
     faceplayer
     checktrainerflag 384
     if SET _goto NurseJudyHeal

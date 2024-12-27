@@ -37,6 +37,7 @@ SetNormalSnowfall:
 
 .global EventScript_ScaldingSpa_SpaRoom_PlutoGrunt
 EventScript_ScaldingSpa_SpaRoom_PlutoGrunt:
+    lock
     special 0xAF @ Dismount bike if on it
     playbgm 0x19A 0x1 @ Encounter Team Pluto (permanent, needs to be overidden to default track later)
     msgbox gtext_ScaldingSpa_SpaRoom_GruntShakesTheOldManDown MSG_NORMAL
@@ -288,6 +289,7 @@ EventScript_ScaldingSpa_BlackbeltKieran:
 
 .global EventScript_GlastrierRoom_Glastrier
 EventScript_GlastrierRoom_Glastrier:
+    lock
     faceplayer
     cry SPECIES_GLASTRIER 0x0
     waitcry

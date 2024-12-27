@@ -67,6 +67,7 @@ EventScript_Route21_RockerAxel:
 
 .global EventScript_Route21_VictoryRoadGuard
 EventScript_Route21_VictoryRoadGuard:
+    lock
     faceplayer
     msgbox gText_Route21_VictoryRoadGuard MSG_NORMAL
     checkflag 0x27F @ Registered for Victory Road challenge
@@ -101,6 +102,7 @@ PlayerMovesOutOfGuardsWay:
 
 .global EventScript_Route21_NurseBenedikta
 EventScript_Route21_NurseBenedikta:
+    lock
     faceplayer
     checktrainerflag 562
     if SET _goto NurseBenediktaHeal
@@ -320,6 +322,7 @@ SignScript_Route23_TrainerTips:
 
 .global EventScript_Route23_FishermansHouse_FishermanMaster
 EventScript_Route23_FishermansHouse_FishermanMaster:
+    lock
     faceplayer
     checkflag 0x24C @ Has Super Rod
     if SET _goto SuperRodExplaination
@@ -431,6 +434,7 @@ SignScript_Route24_TrainerTips:
 
 .global EventScript_Route24_House_DragonMaster
 EventScript_Route24_House_DragonMaster:
+    lock
     faceplayer
     msgbox gText_Route24_House_DragonMaster_Intro MSG_NORMAL
     callasm CountBadges

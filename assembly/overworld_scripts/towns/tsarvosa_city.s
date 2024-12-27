@@ -108,6 +108,7 @@ SignScript_TsarvosaCity_GymTraineesCafeSign:
 
 .global EventScript_TsarvosaCity_DaimynFactoryPresident
 EventScript_TsarvosaCity_DaimynFactoryPresident:
+    lock
     faceplayer
     checkitem ITEM_FACTORY_KEY 0x1
     compare LASTRESULT TRUE
@@ -216,6 +217,7 @@ EventScript_TsarvosaCity_StatsDojo_Attendant:
 
 .global EventScript_TsarvosaCity_StatsDojo_Kaito
 EventScript_TsarvosaCity_StatsDojo_Kaito:
+    lock
     faceplayer
     checktrainerflag 406
     if SET _goto KaitoWelcomesPlayer
@@ -1115,8 +1117,8 @@ EventScript_TsarvosaCity_StatsDojo_SpeedDisciple:
     end
 
 EVDiscipleCommon:
-    faceplayer
     lock
+    faceplayer
     msgbox gText_TsarvosaCity_StatsDojo_EVDiscipleIntro MSG_NORMAL
     checktrainerflag 406
     if NOT_SET _goto FacilitiesCannotOfferServices
@@ -1206,6 +1208,7 @@ m_CameraMovesUp: .byte walk_up, walk_up, walk_up, end_m
 @ NPC Houses
 .global EventScript_TsarvosaCity_NPCHouses_MoveTutor
 EventScript_TsarvosaCity_NPCHouses_MoveTutor:
+    lock
     faceplayer
     callasm StorePokeChipCount
     buffernumber 0x0 0x8005 @ Take stored PokeChip count
@@ -1287,6 +1290,7 @@ EventScript_TsarvosaCity_NPCHouses_SlowbroGTradeMother:
 
 .global EventScript_TsarvosaCity_NPCHouses_DevTeamCollin
 EventScript_TsarvosaCity_NPCHouses_DevTeamCollin:
+    lock
     faceplayer
     msgbox gText_TsarvosaCityNPCHouses_DevTeam_CollinIntro MSG_NORMAL
     checkflag 0xE1D @ Battled Collin today
@@ -1332,6 +1336,7 @@ CollinClosingStatement:
 
 .global EventScript_TsarvosaCity_NPCHouses_DevTeamCrystal
 EventScript_TsarvosaCity_NPCHouses_DevTeamCrystal:
+    lock
     faceplayer
     msgbox gText_TsarvosaCityNPCHouses_DevTeam_CrystalIntro MSG_NORMAL
     checkflag 0xE1E @ Battled Crystal today
@@ -2140,6 +2145,7 @@ m_CafeAttendnatReturnsToPosition: .byte walk_up, walk_up, look_down, end_m
 
 .global EventScript_TsarvosaCity_NPCHouses_PokeChipCrusher
 EventScript_TsarvosaCity_NPCHouses_PokeChipCrusher:
+    lock
     faceplayer
     msgbox gText_TsarvosaCity_NPCHouses_PokeCrusherIntro MSG_KEEPOPEN
     setvar 0x8000 0xE @ Pokechip crusher
@@ -2368,6 +2374,7 @@ EventScript_TsarvosaCity_NPCHouses_IrisAndStellaGrandpa:
 
 .global EventScript_TsarvosaCity_NPCHouses_IrisFanClubPresident
 EventScript_TsarvosaCity_NPCHouses_IrisFanClubPresident:
+    lock
     faceplayer
     checkflag 0x261 @ Received Flame Orb
     if SET _goto ReceivedFlameOrb
@@ -2674,6 +2681,7 @@ HeldItemsShop4:
 
 .global EventScript_TsarvosaCity_Gym_LeaderIris
 EventScript_TsarvosaCity_Gym_LeaderIris:
+    lock
     faceplayer
     checkflag 0x82C @ Game is cleared
     if SET _goto Iris_Postgame

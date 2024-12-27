@@ -174,6 +174,7 @@ EventScript_UltraSpace_EclipseVillage_BikeShop_Man:
 
 .global EventScript_UltraSpace_EclipseVillage_ReturnHomeResearcher
 EventScript_UltraSpace_EclipseVillage_ReturnHomeResearcher:
+    lock
     faceplayer
     msgbox gText_UltraSpace_Common_ResearcherGoHome MSG_YESNO
     compare LASTRESULT NO
@@ -189,6 +190,7 @@ PlayerChoseNotToGoHome:
 
 .global EventScript_UltraSpace_EclipseVillage_PoipoleResearcher
 EventScript_UltraSpace_EclipseVillage_PoipoleResearcher:
+    lock
     faceplayer
     checkflag 0x276 @ Received Poipole
     if SET _goto PlayerReceivedPoipoleAlready
@@ -600,6 +602,7 @@ EventScript_UltraSpaceHoenn_Wingull7:
     end
 
 WingullCommon:
+    lock
     faceplayer
     cry SPECIES_WINGULL 0x0
     msgbox gText_UltraSpace_Hoenn_Wingulls MSG_NORMAL

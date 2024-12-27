@@ -603,6 +603,7 @@ m_RivalWalksInFrontOfPlayer: .byte walk_left, look_down, end_m
 @ Jirachi events
 .global EventScript_CarnelidgeVolcano_Jirachi
 EventScript_CarnelidgeVolcano_Jirachi:
+    lock
     faceplayer
     cry SPECIES_JIRACHI 0x0
     msgbox gText_UltraSpace_Hoenn_FindingJirachi10 MSG_NORMAL

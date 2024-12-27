@@ -432,6 +432,7 @@ EventScript_RhodanziTrainerSchool_MainRoom_Professor:
 
 .global EventScript_RhodanziTrainerSchool_TerrainTutor
 EventScript_RhodanziTrainerSchool_TerrainTutor:
+    lock
     faceplayer
     msgbox gText_RhodanziTrainerSchool_MainRoom_TerrainTutor_Intro MSG_NORMAL
     checkflag 0x820 @ Has Terrain Badge

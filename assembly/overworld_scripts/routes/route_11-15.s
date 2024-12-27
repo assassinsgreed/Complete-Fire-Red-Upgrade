@@ -312,6 +312,7 @@ SignScript_Route11South_TrainerTips_MegaEvolution:
 
 .global EventScript_Route11South_Rival
 EventScript_Route11South_Rival:
+    lock
     faceplayer
     compare PlutoEncounterVar 0x4
     if equal _goto RivalBattlePrompt
@@ -458,6 +459,7 @@ DeniedRivalBattle:
 
 .global EventScript_Route11South_Alistair
 EventScript_Route11South_Alistair:
+    lock
     faceplayer
     compare PlutoEncounterVar 0x4
     if equal _goto AlistairBattleSupervision
@@ -786,6 +788,7 @@ PlayerDidNotAgreeToHelp:
 
 .global EventScript_Route11South_TeamPlutoClancy
 EventScript_Route11South_TeamPlutoClancy:
+    lock
     faceplayer
     playbgm 0x19A 0x1 @ Encounter Team Pluto (Permanent for the cutscene; player warps mean this doesn't need to be overridden again)
     setflag 0x926 @ Follower will move during active script
@@ -820,6 +823,7 @@ AlistairLookUp:
 
 .global EventScript_Route11South_TeamPlutoEna
 EventScript_Route11South_TeamPlutoEna:
+    lock
     faceplayer
     playbgm 0x19A 0x1 @ Encounter Team Pluto (Permanent for the cutscene; player warps mean this doesn't need to be overridden again)
     setflag 0x926 @ Follower will move during active script
@@ -938,6 +942,7 @@ MoveAlistairAndPlayerAfterClancyAndEna:
 
 .global EventScript_Route11SouthRefiner_RefinerShop
 EventScript_Route11SouthRefiner_RefinerShop:
+    lock
     faceplayer
     msgbox gText_Route11SouthHouse_RefinerShopWelcome MSG_NORMAL
     checkitem ITEM_RUSTED_DATA 0x1
@@ -1544,6 +1549,7 @@ EventScript_Route13_CollectorBenji:
 
 .global EventScript_Route13_Hiker_Left
 EventScript_Route13_Hiker_Left:
+    lock
     msgbox gText_Route13_HikerLeft MSG_NORMAL
     faceplayer
     npcchatwithmovement gText_Route13_HikerCommon m_LookRight
@@ -1551,6 +1557,7 @@ EventScript_Route13_Hiker_Left:
 
 .global EventScript_Route13_Hiker_Right
 EventScript_Route13_Hiker_Right:
+    lock
     msgbox gText_Route13_HikerRight MSG_NORMAL
     faceplayer
     npcchatwithmovement gText_Route13_HikerCommon m_LookLeft
@@ -1578,6 +1585,7 @@ EventScript_Route13_RestHouse_Hiker:
 
 .global EventScript_Route13_RestHouse_Merchant
 EventScript_Route13_RestHouse_Merchant:
+    lock
     faceplayer
     msgbox gText_Route13_RestHouse_Merchant MSG_YESNO
     compare LASTRESULT YES
@@ -1604,8 +1612,8 @@ RestHouseItems:
 
 .global EventScript_Route13_RestHouse_Nurse
 EventScript_Route13_RestHouse_Nurse:
-    faceplayer
     lock
+    faceplayer
     msgbox gText_Route13_RestHouse_Nurse MSG_NORMAL
     call PlayerHealNurse
     msgbox gText_Route13_RestHouse_NurseHealed MSG_NORMAL

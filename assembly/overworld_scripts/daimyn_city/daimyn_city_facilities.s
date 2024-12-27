@@ -266,6 +266,7 @@ EventScript_DaimynCityFacilities_Pokeball:
 
 .global EventScript_DaimynCityFacilities_ProfessorSakura
 EventScript_DaimynCityFacilities_ProfessorSakura:
+    lock
     checkflag 0x274 @ Permitted to go to ultra space
     if SET _goto SakuraAsksToGoToUltraSpace
     msgbox gText_DaimynCityFacilities_IRF_SakuraPreoccupied MSG_NORMAL

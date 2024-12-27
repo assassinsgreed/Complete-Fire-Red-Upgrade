@@ -899,6 +899,7 @@ EventScript_EmptyWorld_InterdimensionalResearchFacility_Sakura:
 
 .global EventScript_EmptyWorld_InterdimensionalResearchFacility_Rival
 EventScript_EmptyWorld_InterdimensionalResearchFacility_Rival:
+    lock
     faceplayer
     msgbox gText_EmptyWorld_InterdimensionalResearchFacility_Rival_AsksForPlayersHelp MSG_YESNO
     compare LASTRESULT NO
