@@ -12,6 +12,7 @@
 #include "../include/field_weather.h"
 
 #include "../include/new/dexnav.h"
+#include "../include/string_util.h"
 
 #ifndef UNBOUND
 /*
@@ -61,6 +62,7 @@ extern const u8 gText_MenuPokeVial[];
 extern const u8 gText_MenuInfiniteRepel[];
 extern const u8 gText_MenuBag[];
 extern const u8 gText_MenuCube[];
+extern const u8 gText_Time[];
 #ifdef UNBOUND
 #define gText_MenuBag gText_MenuCube
 #endif
@@ -85,6 +87,12 @@ extern u8 sNumStartMenuItems;
 extern u8 sStartMenuOrder[];
 extern s8 sDrawStartMenuState[2];
 extern u8 sStartMenuOpen;
+
+// Timebox
+extern u8 sTimeWindowId;
+void DrawTime(void);
+static void UpdateTimeText(void);
+static void RemoveTimeBox(void);
 
 //Vanilla functions:
 void __attribute__((long_call)) SetUpStartMenu_Link(void);
@@ -162,6 +170,16 @@ const u8* const sStartMenuDescPointers[] =
 	gText_ExitDescription,
 };
 
+static const struct WindowTemplate sTimeBoxWindowTemplate = {
+	.bg = 0,
+	.tilemapLeft = 1,
+	.tilemapTop = 1,
+	.width = 10,
+	.height = 2,
+	.paletteNum = 15,
+	.baseBlock = 0x008
+};
+
 static bool8 CanSetUpSecondaryStartMenu(void)
 {
 	#ifdef FLAG_SYS_DEXNAV
@@ -225,6 +243,8 @@ static void SetUpStartMenu_NormalField(void)
 		AppendToStartMenuItems(STARTMENU_EXIT_RIGHT);
 	else
 		AppendToStartMenuItems(STARTMENU_EXIT);
+
+	DrawTime();
 }
 
 static void SetUpStartMenu_SafariZone(void)
@@ -290,6 +310,7 @@ static void BuildPokeToolsMenu(void)
 	}
 
 	AppendToStartMenuItems(STARTMENU_EXIT_LEFT);
+	DrawTime();
 }
 
 void SetUpStartMenu(void)
@@ -311,6 +332,9 @@ void SetUpStartMenu(void)
 bool8 StartCB_HandleInput(void)
 {
 	ForceClockUpdate(); //To help with the clock in the start menu routine
+
+	if (!FlagGet(FLAG_SYS_SAFARI_MODE) && sTimeWindowId != 0xFF)
+		UpdateTimeText();
 
 	if (JOY_NEW(DPAD_UP))
 	{
@@ -361,6 +385,9 @@ bool8 StartCB_HandleInput(void)
 			return FALSE;
 		sStartMenuCallback = sStartMenuActionTable[sStartMenuOrder[sStartMenuCursorPos]].func.u8_void;
 
+		if (sStartMenuCursorPos==STARTMENU_EXIT)
+		    RemoveTimeBox();
+
 		// Do not fade the screen when using certain tools
 		if(sStartMenuCallback != StartMenuPocketPCCallback &&
 		   sStartMenuCallback != StartMenuPokeVialCallback &&
@@ -372,6 +399,7 @@ bool8 StartCB_HandleInput(void)
 	}
 	else if (JOY_NEW(B_BUTTON | START_BUTTON))
 	{
+		RemoveTimeBox();
 		DestroySafariZoneStatsWindow();
 		DestroyHelpMessageWindow_();
 		CloseStartMenu();
@@ -448,5 +476,73 @@ bool8 StartMenuPokeVialCallback(void)
 bool8 StartMenuInfiniteRepelCallback(void)
 {
 	return StartMenuCommonCallback(EventScript_Common_InfiniteRepel);
+}
+
+// Timebox
+void DrawTime(void)
+{
+	sTimeWindowId = AddWindow(&sTimeBoxWindowTemplate);
+	
+	if (sTimeWindowId != 0xFF)
+	{
+		DrawStdWindowFrame(sTimeWindowId, FALSE);
+		PutWindowTilemap(sTimeWindowId);
+		FillWindowPixelBuffer(sTimeWindowId, PIXEL_FILL(1));
+	}
+
+	//Print Text
+	UpdateTimeText();
+}
+
+extern u8 gText_StartMenu_TimeBase[];
+extern u8 gText_StartMenu_TimeBase_12Hr[];
+extern u8 gText_StartMenu_AM[];
+extern u8 gText_StartMenu_PM[];
+extern u8 gText_StartMenu_RedText[];
+extern u8 gText_StartMenu_NormalText[];
+extern u8 gText_StartMenu_Sunday[];
+extern u8 gText_StartMenu_Monday[];
+extern u8 gText_StartMenu_Tuesday[];
+extern u8 gText_StartMenu_Wednesday[];
+extern u8 gText_StartMenu_Thursday[];
+extern u8 gText_StartMenu_Friday[];
+extern u8 gText_StartMenu_Saturday[];
+extern u8 gText_StartMenu_Error[];
+
+
+static u8* sDayNames[] =
+{
+    gText_StartMenu_Sunday,
+    gText_StartMenu_Monday,
+    gText_StartMenu_Tuesday,
+    gText_StartMenu_Wednesday,
+    gText_StartMenu_Thursday,
+    gText_StartMenu_Friday,
+    gText_StartMenu_Saturday,
+};
+
+static void UpdateTimeText()
+{
+	//Prepare string: "DOW. HH:MM AM"
+	const u8* amPMString = (gClock.hour >= 12) ? gText_StartMenu_PM : gText_StartMenu_AM;
+	ConvertIntToDecimalStringN(gStringVar1, (gClock.hour == 0) ? 12 : (gClock.hour > 12) ? gClock.hour - 12 : gClock.hour, STR_CONV_MODE_RIGHT_ALIGN, 2); //Hour - 12hr format
+	ConvertIntToDecimalStringN(gStringVar2, gClock.minute, STR_CONV_MODE_LEADING_ZEROS, 2); //Minute
+
+	StringCopy(gStringVar3, amPMString);
+	StringCopy(gStringVarC, (gClock.dayOfWeek >= 7) ? gText_StartMenu_Error : sDayNames[gClock.dayOfWeek]); //Day of Week
+	StringExpandPlaceholders(gStringVar4, gText_StartMenu_TimeBase_12Hr);
+
+	AddTextPrinterParameterized(sTimeWindowId, 2, gStringVar4, 4, 3, 0xFF, NULL);
+	CopyWindowToVram(sTimeWindowId, COPYWIN_GFX);
+}
+
+static void RemoveTimeBox(void)
+{
+	if (sTimeWindowId != 0xFF)
+	{
+		ClearStdWindowAndFrameToTransparent(sTimeWindowId, FALSE);
+		CopyWindowToVram(sTimeWindowId, COPYWIN_GFX);
+		RemoveWindow(sTimeWindowId);
+	}
 }
 #endif
