@@ -334,13 +334,25 @@ BattleEeveeTeam:
     @ Figure out which team the rival uses
     copyvar 0x4001 0x408E
     setvar 0x4000 511 @ trainer ID, which is 511 + 0-7 depending on value in 0x408E
+    checkflag 0x4BC @ Defeated Selene and become champion
+    if SET _call SetPostgameEeveeRivalTeam
     setvar 0x8004 0x4000
     setvar 0x8005 0x4001
     special 0x3E @ Add two vars above, result stored in 0x4000 which is loaded as trainer ID
     return
 
+SetPostgameEeveeRivalTeam:
+    setvar 0x4000 591
+    return
+
 BattleEmraldinTeam:
     setvar 0x4000 519
+    checkflag 0x4BC @ Defeated Selene and become champion
+    if SET _call SetPostgameEmraldinRivalTeam
+    return
+
+SetPostgameEmraldinRivalTeam:
+    setvar 0x4000 599
     return
 
 AlreadyCompletedRivalExhibitionBattleToday:
