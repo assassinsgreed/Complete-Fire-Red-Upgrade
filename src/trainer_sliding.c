@@ -173,6 +173,15 @@ static const struct TrainerSlide sTrainerSlides[] =
 	{588, sText_TitleDefense_Irene_FirstMonDown, sText_TitleDefense_Irene_LastSwitchIn, sText_TitleDefense_Irene_LowHP}, // Title Defense (Irene)
 	{589, sText_TitleDefense_Ronald_FirstMonDown, sText_TitleDefense_Ronald_LastSwitchIn, sText_TitleDefense_Ronald_LowHP}, // Title Defense (Ronald)
 	{590, sText_TitleDefense_Kurtis_FirstMonDown, sText_TitleDefense_Kurtis_LastSwitchIn, sText_TitleDefense_Kurtis_LowHP}, // Title Defense (Kurtis)
+	{591, sText_Rival7_FirstMonDown, sText_Rival7_LastSwitchIn, sText_Rival7_LowHP}, // Postgame rival exhbition battle (Vaporeon)
+	{592, sText_Rival7_FirstMonDown, sText_Rival7_LastSwitchIn, sText_Rival7_LowHP}, // Postgame rival exhbition battle (Jolteon)
+	{593, sText_Rival7_FirstMonDown, sText_Rival7_LastSwitchIn, sText_Rival7_LowHP}, // Postgame rival exhbition battle (Flareon)
+	{594, sText_Rival7_FirstMonDown, sText_Rival7_LastSwitchIn, sText_Rival7_LowHP}, // Postgame rival exhbition battle (Espeon)
+	{595, sText_Rival7_FirstMonDown, sText_Rival7_LastSwitchIn, sText_Rival7_LowHP}, // Postgame rival exhbition battle (Umbreon)
+	{596, sText_Rival7_FirstMonDown, sText_Rival7_LastSwitchIn, sText_Rival7_LowHP}, // Postgame rival exhbition battle (Leafeon)
+	{597, sText_Rival7_FirstMonDown, sText_Rival7_LastSwitchIn, sText_Rival7_LowHP}, // Postgame rival exhbition battle (Glaceon)
+	{598, sText_Rival7_FirstMonDown, sText_Rival7_LastSwitchIn, sText_Rival7_LowHP}, // Postgame rival exhbition battle (Sylveon)
+	{599, sText_Rival7_FirstMonDown, sText_Rival7_LastSwitchIn, sText_Rival7_LowHP}, // Postgame rival exhbition battle (Emraldin)
 };
 
 static const struct DynamaxTrainerSlide sDynamaxTrainerSlides[] =
