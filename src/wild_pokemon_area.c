@@ -131,12 +131,6 @@ s32 GetSpeciesPokedexAreaMarkers(u16 species, struct Subsprite * subsprites)
         foundInExpandedEncounterTables = FALSE;
         mapSecId = GetMapSecIdFromWildMonHeader(&headerTable[i]);
 
-        // If the species isn't found, fallback to the day table (this means there is not a DNS override)
-        if (!IsSpeciesOnMap(&headerTable[i], species))
-        {
-            headerTable = gWildMonHeaders;
-        }
-
         if (IsSpeciesOnMap(&headerTable[i], species))
         {
             for (j = 0; j < ARRAY_COUNT(sKulureExpandedDexAreas); j++)
@@ -161,6 +155,56 @@ s32 GetSpeciesPokedexAreaMarkers(u16 species, struct Subsprite * subsprites)
                 {
                     if (dexArea != DEX_AREA_NONE)
                         GetAreaMarkerSubsprite(areaCount++, dexArea, subsprites);
+                }
+            }
+        }
+    }
+
+    // If not daytime, iterate through gWildMonHeaders and skip entries that exist in headerTable
+    if (!IsDayTime())
+    {
+        for (i = 0; gWildMonHeaders[i].mapGroup != MAP_GROUP(UNDEFINED); i++)
+        {
+            bool8 skipEntry = FALSE;
+            for (j = 0; headerTable[j].mapGroup != MAP_GROUP(UNDEFINED); j++)
+            {
+                if (gWildMonHeaders[i].mapGroup == headerTable[j].mapGroup &&
+                    gWildMonHeaders[i].mapNum == headerTable[j].mapNum)
+                {
+                    skipEntry = TRUE;
+                    break;
+                }
+            }
+
+            if (skipEntry)
+                continue;
+
+            foundInExpandedEncounterTables = FALSE;
+            mapSecId = GetMapSecIdFromWildMonHeader(&gWildMonHeaders[i]);
+
+            if (IsSpeciesOnMap(&gWildMonHeaders[i], species))
+            {
+                for (j = 0; j < ARRAY_COUNT(sKulureExpandedDexAreas); j++)
+                {
+                    tableIndex = 0;
+                    while (FindDexAreaByMapSec(mapSecId, sKulureExpandedDexAreas[j].table, sKulureExpandedDexAreas[j].count, &tableIndex, &dexArea))
+                    {
+                        if (dexArea != DEX_AREA_NONE)
+                        {
+                            GetAreaMarkerSubsprite(areaCount++, dexArea, subsprites);
+                            foundInExpandedEncounterTables = TRUE;
+                        }
+                    }
+                }
+
+                if (!foundInExpandedEncounterTables)
+                {
+                    tableIndex = 0;
+                    while (FindDexAreaByMapSec(mapSecId, sDexAreas_Kulure, ARRAY_COUNT(sDexAreas_Kulure), &tableIndex, &dexArea))
+                    {
+                        if (dexArea != DEX_AREA_NONE)
+                            GetAreaMarkerSubsprite(areaCount++, dexArea, subsprites);
+                    }
                 }
             }
         }
