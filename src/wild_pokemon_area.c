@@ -29,11 +29,11 @@ static const u16 sDexAreas_Kulure[][2] = {
     { MAPSEC_TSARVOSA_CITY,       10 },
     { MAPSEC_UTEYA_VILLAGE,       11 },
     { MAPSEC_ROUTE_11_NORTH,      15 },
-    { MAPSEC_ROUTE_12_WEST,       21 },
+    { MAPSEC_ROUTE_12_WEST,       53 },
     { MAPSEC_ROUTE_1,             12 },
     { MAPSEC_ROUTE_2,             13 },
     { MAPSEC_ROUTE_3,             14 },
-    { MAPSEC_ROUTE_4,             15 },
+    { MAPSEC_ROUTE_4,             54 },
     { MAPSEC_ROUTE_5,             16 },
     { MAPSEC_ROUTE_6,             17 },
     { MAPSEC_ROUTE_7,             18 },
@@ -67,18 +67,16 @@ static const u16 sDexAreas_Kulure[][2] = {
     { MAPSEC_ORICHELLE_GARDEN,    46 },
     { MAPSEC_MIMMETT_JUNGLE,      47 },
     { MAPSEC_VICTORY_ROAD,        48 },
-    { MAPSEC_HESSON_PASS,         49 },
+    { MAPSEC_HESSON_PASS,         49 }, 
     { MAPSEC_UTEYAN_RUINS,        50 },
-    { MAPSEC_ASCENSION_TOWER,     51 },
-    { MAPSEC_ROUTE_12_EAST,       52 },
-    { MAPSEC_DAIMYN_FACTORY,      53 },
+    { MAPSEC_DAIMYN_FACTORY,      52 },
+    { MAPSEC_ROUTE_12_EAST,       51 },
 };
 
 // Formerly Sevii Island 1
 static const u16 sDexAreas_KulureExpanded1[][2] = {
 	{ MAPSEC_SCALDING_SPA,    55 },
-	{ MAPSEC_TREASURE_BEACH,  56 },
-	{ MAPSEC_CALICIN_BAY,     48 },
+	{ MAPSEC_CALICIN_BAY,     57 },
 };
 
 // Formerly Sevii Island 2
@@ -89,7 +87,7 @@ static const u16 sDexAreas_KulureExpanded2[][2] = {
 
 // Formerly Sevii Island 3
 static const u16 sDexAreas_KulureExpanded3[][2] = {
-	{ MAPSEC_ROUTE_15_SOUTH,    50 },
+	{ MAPSEC_ROUTE_15_SOUTH,    56 },
 };
 
 static const struct
@@ -112,6 +110,7 @@ s32 GetSpeciesPokedexAreaMarkers(u16 species, struct Subsprite * subsprites)
     u16 dexArea;
     s32 tableIndex;
     u32 i, j;
+    bool8 foundInExpandedEncounterTables;
 
     // Day has it's headerTable set to null
     const struct WildPokemonHeader* headerTable = NULL;
@@ -127,9 +126,9 @@ s32 GetSpeciesPokedexAreaMarkers(u16 species, struct Subsprite * subsprites)
     else if (IsEvening())
         headerTable = gWildMonEveningHeaders;
 
-    // TODO: Pokemon in maps taken from sevii (e.x. Calicin Bay) are not appearing in the right places
     for (i = 0, areaCount = 0; headerTable[i].mapGroup != MAP_GROUP(UNDEFINED); i++)
     {
+        foundInExpandedEncounterTables = FALSE;
         mapSecId = GetMapSecIdFromWildMonHeader(&headerTable[i]);
 
         // If the species isn't found, fallback to the day table (this means there is not a DNS override)
@@ -140,19 +139,25 @@ s32 GetSpeciesPokedexAreaMarkers(u16 species, struct Subsprite * subsprites)
 
         if (IsSpeciesOnMap(&headerTable[i], species))
         {
-            // Search for all dex areas associated with this MAPSEC.
-            // In the vanilla game each MAPSEC only has at most one DEX_AREA.
-            tableIndex = 0;
-            while (FindDexAreaByMapSec(mapSecId, sDexAreas_Kulure, ARRAY_COUNT(sDexAreas_Kulure), &tableIndex, &dexArea))
-            {
-                if (dexArea != DEX_AREA_NONE)
-                    GetAreaMarkerSubsprite(areaCount++, dexArea, subsprites);
-            }
-
             for (j = 0; j < ARRAY_COUNT(sKulureExpandedDexAreas); j++)
             {
                 tableIndex = 0;
                 while (FindDexAreaByMapSec(mapSecId, sKulureExpandedDexAreas[j].table, sKulureExpandedDexAreas[j].count, &tableIndex, &dexArea))
+                {
+                    if (dexArea != DEX_AREA_NONE)
+                    {
+                        GetAreaMarkerSubsprite(areaCount++, dexArea, subsprites);
+                        foundInExpandedEncounterTables = TRUE;
+                    }
+                }
+            }
+
+            // Search for all dex areas associated with this MAPSEC.
+            // In the vanilla game each MAPSEC only has at most one DEX_AREA.
+            if (!foundInExpandedEncounterTables)
+            {
+                tableIndex = 0;
+                while (FindDexAreaByMapSec(mapSecId, sDexAreas_Kulure, ARRAY_COUNT(sDexAreas_Kulure), &tableIndex, &dexArea))
                 {
                     if (dexArea != DEX_AREA_NONE)
                         GetAreaMarkerSubsprite(areaCount++, dexArea, subsprites);
