@@ -218,6 +218,7 @@ EventScript_OlenicLab_Hawthorne:
     lock
     faceplayer
     msgbox gText_OlenicProfessorsLab_HawthornePokedexEvaluation MSG_NORMAL
+    clearflag 0x2FF @ Assessment is in person (prevents bug when evaluating at PC, then with Hawthorne)
     call PokedexEvaluation_Introduction
     release
     end

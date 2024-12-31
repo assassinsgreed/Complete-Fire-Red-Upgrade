@@ -4146,8 +4146,10 @@ static void CheckShinyMon(struct Pokemon* mon)
 		if (CheckBagHasItem(ITEM_SHINY_CHARM, 1) > 0)
 		{
 			//Try an extra 2 times to generate shiny personality
-			if (IsShinyOtIdPersonality(otId, Random32())
-			||  IsShinyOtIdPersonality(otId, Random32()))
+			// if (IsShinyOtIdPersonality(otId, Random32())
+			// ||  IsShinyOtIdPersonality(otId, Random32()))
+
+			if (Random() % 100 == 0) // 1 in 100 with Shiny Charm
 				forceShiny = TRUE;
 		}
 		#endif

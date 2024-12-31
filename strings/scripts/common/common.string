@@ -75,8 +75,14 @@ Now, let me review the data in your\nPok\edex for a moment[.]
 #org @gText_PokedexAssessment_SeenCaughtLeft
 You have seen [BUFFER1] Pok\emon, and\ncaught [BUFFER2]. That leaves [BUFFER3] left\lto catch. My rating is[.]
 
+#org @gText_PokedexAssessment_LessThanSeventyFivePercentPokedex
+Come see me once you have\ncompleted 75% of your Pok\edex.\pI'll have something nice to give you.
+
 #org @gText_PokedexAssessment_IncompletePokedex
-Come see me once you have\ncompleted your Pok\edex. I'll have\lsomething nice to give you.
+Come see me once you have\ncompleted your Pok\edex.\pI'll have something nice to give you.
+
+#org @gText_PokedexAssessment_GiftAvailable
+Come see me when you can.\nI have something nice to give you.
 
 #org @gText_PokedexAssessment_EvaluationComplete
 Thank you for showing me your\nPok\edex, [PLAYER]. You've made\lgreat progress.
@@ -100,49 +106,61 @@ Got a can of [BUFFER1]! A freebie\npopped out too!
 I have some advice for you[.]
 
 #org @gText_PokedexAssessment_FiftyOrLessCaught
-[BLUE]Your journey is just beginning.
+Your journey is just beginning.
 
 #org @gText_PokedexAssessment_FiftyOrLessCaught_Advice
 Keep an eye out for new Pok\emon as\nyou explore and you'll make great\lprogress.
 
 #org @gText_PokedexAssessment_OneHundredOrLessCaught
-[BLUE]You have quite a ways to go.
+You have quite a ways to go.
 
 #org @gText_PokedexAssessment_OneHundredOrLessCaught_Advice
 Search everywhere for Pok\emon.\nThey can hide in grass, caves, and\lwater.
 
 #org @gText_PokedexAssessment_OneHundredFiftyOrLessCaught
-[BLUE]Your Pok\edex is coming along\nnicely.
+Your Pok\edex is coming along\nnicely.
 
 #org @gText_PokedexAssessment_OneHundredFiftyOrLessCaught_Advice
 Some Pok\emon can only be obtained\nby hatching eggs or evolving\lPok\emon.
 
 #org @gText_PokedexAssessment_TwoHundredOrLessCaught
-[BLUE]You've caught roughly half of the\nregion's Pok\emon now!
+You've caught roughly half of the\nregion's Pok\emon now!
 
 #org @gText_PokedexAssessment_TwoHundredOrLessCaught_Advice
 Don't forget to use your fishing rod!\nSome Pok\emon are easier to find\lwhen fishing.
 
 #org @gText_PokedexAssessment_TwoHundredFiftyOrLessCaught
-[BLUE]You've caught quite a lot of Pok\e\nmon now!
+You've caught quite a lot of Pok\e\nmon now!
 
 #org @gText_PokedexAssessment_TwoHundredFiftyOrLessCaught_Advice
 Some Pok\emon can be difficult\nto discover. Try using the DexNav\lto find them.
 
 #org @gText_PokedexAssessment_ThreeHundredOrLessCaught
-[BLUE]You've caught a significant amount of\nPok\emon now!
+You've caught a significant amount of\nPok\emon now!
 
 #org @gText_PokedexAssessment_ThreeHundredOrLessCaught_Advice
 Check your Pok\edex from time to\ntime for empty spaces, to see if\lany Pok\emon you've caught may be\lcapable of evolution.
 
 #org @gText_PokedexAssessment_ThreeHundredFiftyOrLessCaught
-[BLUE]You're so close to completing your\nPok\edex!
+You're so close to completing your\nPok\edex!
 
 #org @gText_PokedexAssessment_ThreeHundredFiftyOrLessCaught_Advice
 Some incredibly powerful Pok\emon will\nonly reveal themselves to you if\lyou are a champion-level trainer.\pIt's worth revisiting old locations\nto see if anything has changed.
 
+#org @gText_PokedexAssessment_ThreeHundredFiftyOrMoreCaught
+You're almost there!
+
+#org @gText_PokedexAssessment_ThreeHundredFiftyOrMoreCaught_Advice
+Just keep doing what you're doing,\nand you'll complete the Pok\edex in\lno time!
+
+#org @gText_PokedexAssessment_ShinyCharmAward
+[PLAYER]! You've caught at least 75%\nof all Pok\emon in Kulure!\pI have a special gift for you[.]\pPlease, accept it with my gratitude.
+
+#org @gText_PokedexAssessment_ShinyCharmDescription
+[BLUE]This incredible charm draws more\nShiny Pok\emon to you.\pYou may find that one in one\nhundred Pok\emon are shiny, even!\pHohoho!\pIt is quite the reward, isn't it?
+
 #org @gText_PokedexAssessment_AllCaught
-[BLUE]Incredible! You've captured every\nPok\emon in the region. You are a\ltruly special trainer, [PLAYER]!
+Incredible! You've captured every\nPok\emon in the region. You are a\ltruly special trainer, [PLAYER]!
 
 #org @gText_PokedexAssessment_AllCaughtDiploma
 [BLUE]I'll present you with this Diploma,\nwhich celebrates your achievement.

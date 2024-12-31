@@ -90,6 +90,24 @@ def InsertCode():
         os.system("python scripts/insert.py")
 
 
+def ApplyCustomHacks():
+    with open("test.gba", 'rb+') as romfile:
+        originalPokedexEvalAddress = b'\xE0\x73\x1A\x08'
+        updatedPokedexEvalAddress = b''
+        
+        with open("offsets.ini", 'r') as generatedOffsets:
+            for line in generatedOffsets:
+                if line.startswith("PokedexEvaluation_Introduction"):
+                    address = line[-9:-1]
+                    updatedPokedexEvalAddress = int(address, 16).to_bytes(4, byteorder='little')
+                    break
+        
+        romData = romfile.read()
+        romData = romData.replace(originalPokedexEvalAddress, updatedPokedexEvalAddress)
+        romfile.seek(0)
+        romfile.write(romData)
+
+
 def InjectWildEncounters():
     print("Injecting wild encounter data...")
     if shutil.which('python3') is not None:
@@ -124,6 +142,7 @@ def main():
             EditInsert(offset)
             BuildCode()
             InsertCode()
+            ApplyCustomHacks()
             InjectWildEncounters()
             rom.close()
 
