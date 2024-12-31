@@ -3,6 +3,7 @@
 
 .include "../xse_commands.s"
 .include "../xse_defines.s"
+.include "../asm_defines.s"
 
 // HMs
 
@@ -344,10 +345,9 @@ ResetUteyaVillageGymFlagsOnWhiteout:
     setflag 0x3C @ Hide Copycat again
     return
 
+@ Note: This script clunkily replaces the call to vanilla script located at 0x81A73E0 (called through 0x1A6AA5) for ratings from the PC via ApplyCustomHacks() in make.py
 .global PokedexEvaluation_Introduction
 PokedexEvaluation_Introduction:
-    @ Note: This script is also located at 0x81A73E0 for ratings from the PC.
-    @ Not ideal, but worth keeping separately while these are actively developed, and until repointing effectively can be figured out
     setvar 0x8004 0x1F
     special 0x17E
     special 0x17D
@@ -355,7 +355,7 @@ PokedexEvaluation_Introduction:
     special2 LASTRESULT 0xD4
     copyvar 0x8008 0x8005
     copyvar 0x8009 0x8006
-    setvar 0x800A 0x184 @ 388 Pokemon
+    setvar 0x800A 390 @ National Dex Count
     subvar 0x800A 0x8009 @ Subtract caught pokemon from total
     copyvar 0x800B LASTRESULT
     buffernumber 0x0 0x8008
@@ -383,18 +383,72 @@ PokedexEvaluation_Rating:
     if lessorequal _goto ThreeHundredOrLessCaught
     comparevartovalue 0x8009 0x15E @ 350
     if lessorequal _goto ThreeHundredFiftyOrLessCaught
+    comparevartovalue 0x8009 389 @ Full Pokedex - 1
+    if lessorequal _goto ThreeHundredFiftyOrMoreCaught
     goto AllCaught
 
 PokedexEvaluation_Conclusion:
-    compare 0x800A 0x0
-    if notequal _call PokedexEvaluation_PokedexIncomplete
-    msgbox gText_PokedexAssessment_EvaluationComplete MSG_NORMAL
     checkflag 0x2FF @ Assessment is from PC
-    if NOT_SET _call HawthorneLooksRightAfterAssessment
+	if SET _call PokedexEvaluation_PCConclusion
+    if NOT_SET _call HawthorneInPersonAssessmentComplete
     end
 
-HawthorneLooksRightAfterAssessment:
-    applymovement LASTTALKED m_LookRight
+PokedexEvaluation_PCConclusion:
+	compare 0x800A 0x0
+    if notequal _call PokedexEvaluation_FromPC_PokedexIncomplete
+    if equal _call PokedexEvaluation_FromPC_GiftAvailable
+    goto 0x81A6AB2 @ Vanilla close link & return to PC script
+	return
+
+PokedexEvaluation_FromPC_PokedexIncomplete:
+    checkitem ITEM_SHINY_CHARM 0x1
+    compare LASTRESULT TRUE
+    if TRUE _call PokedexEvaluation_PokedexIncomplete
+    checkitem ITEM_SHINY_CHARM 0x1
+    compare LASTRESULT FALSE
+    if TRUE _call PCShinyCharmAwardCheck
+    return
+
+PokedexEvaluation_PokedexIncomplete:
+    msgbox gText_PokedexAssessment_IncompletePokedex MSG_KEEPOPEN
+    return
+
+PCShinyCharmAwardCheck:
+    compare 0x8009 292 @ 3/4 of 390
+    if greaterorequal _goto PokedexEvaluation_FromPC_GiftAvailable
+    msgbox gText_PokedexAssessment_LessThanSeventyFivePercentPokedex MSG_KEEPOPEN
+    return
+
+PokedexEvaluation_FromPC_GiftAvailable:
+    msgbox gText_PokedexAssessment_GiftAvailable MSG_KEEPOPEN
+    return
+
+HawthorneInPersonAssessmentComplete:
+    checkitem ITEM_SHINY_CHARM 0x1
+    compare LASTRESULT FALSE
+    if TRUE _call ShinyCharmAwardCheck
+	compare 0x4001 TRUE
+	if TRUE _goto HawthornePresentsDiploma
+
+    compare 0x8009 292 @ 3/4 of 390
+    if greaterorequal _call PokedexEvaluation_PokedexIncomplete
+    if lessthan _call HawthornePromptForSeventyFivePercentPokedex
+	npcchatwithmovement gText_PokedexAssessment_EvaluationComplete m_LookRight
+    return
+
+ShinyCharmAwardCheck:
+    compare 0x8009 292 @ 3/4 of 390
+    if greaterorequal _call GiveShinyCharm
+    return
+
+GiveShinyCharm: 
+    msgbox gText_PokedexAssessment_ShinyCharmAward MSG_NORMAL
+    obtainitem ITEM_SHINY_CHARM 0x1
+	msgbox gText_PokedexAssessment_ShinyCharmDescription MSG_NORMAL
+    return
+
+HawthornePromptForSeventyFivePercentPokedex:
+    msgbox gText_PokedexAssessment_LessThanSeventyFivePercentPokedex MSG_NORMAL
     return
 
 FiftyOrLessCaught:
@@ -453,17 +507,24 @@ ThreeHundredFiftyOrLessCaught:
     msgbox gText_PokedexAssessment_ThreeHundredFiftyOrLessCaught_Advice MSG_NORMAL
     goto PokedexEvaluation_Conclusion
 
+ThreeHundredFiftyOrMoreCaught:
+    call PokedexEvaluationFanfare2
+    msgbox gText_PokedexAssessment_ThreeHundredFiftyOrMoreCaught MSG_KEEPOPEN
+    waitfanfare
+    msgbox gText_PokedexAssessment_AdvicePrompt MSG_NORMAL
+    msgbox gText_PokedexAssessment_ThreeHundredFiftyOrMoreCaught_Advice MSG_NORMAL
+    goto PokedexEvaluation_Conclusion
+
 AllCaught:
     call PokedexEvaluationFanfare2
     msgbox gText_PokedexAssessment_AllCaught MSG_KEEPOPEN
     waitfanfare
-    checkflag 0x2FF @ Assessment is from PC
-    if NOT_SET _goto HawthornePresentsDiploma
+    setvar 0x4001 TRUE
     goto PokedexEvaluation_Conclusion
 
 HawthornePresentsDiploma:
-    msgbox gText_PokedexAssessment_AllCaughtDiploma MSG_NORMAL
-    call HawthorneLooksRightAfterAssessment
+	msgbox gText_PokedexAssessment_EvaluationComplete MSG_NORMAL
+    npcchatwithmovement gText_PokedexAssessment_AllCaughtDiploma m_LookRight
     special 0x108 @ Show diploma
     waitstate
     end
@@ -474,10 +535,6 @@ PokedexEvaluationFanfare1:
 
 PokedexEvaluationFanfare2:
     fanfare 0x103
-    return
-
-PokedexEvaluation_PokedexIncomplete:
-    msgbox gText_PokedexAssessment_IncompletePokedex MSG_KEEPOPEN
     return
 
 SetTextColor_Black:
