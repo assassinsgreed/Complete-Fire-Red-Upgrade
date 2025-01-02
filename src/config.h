@@ -151,8 +151,8 @@ enum //These vars need to be one after the other (hence the enum)
 #define TIME_NIGHT_START 20			//8:00 PM / 20:00
 
 /*===== General Number Options =====*/
-#define KANTO_DEX_COUNT 388
-#define NATIONAL_DEX_COUNT 388
+#define KANTO_DEX_COUNT 390
+#define NATIONAL_DEX_COUNT 390
 
 #define MAX_LEVEL 100 //Also change this in the file "asm_defines.asm" found in the root
 #define NUM_TRAINER_CLASSES 107 //Vanilla FR has 107
