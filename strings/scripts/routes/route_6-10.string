@@ -600,8 +600,11 @@ What is he doing, anyways?
 #org @gText_Route10_CaseyFBattleDefeat
 No way! You're just too good,\n[PLAYER]!
 
+#org @gText_Route10_CaseyFBattleComplete
+[RED]I always have so much fun whenever\nwe battle, [PLAYER].
+
 #org @gText_Route10_CaseyFExpShareGift
-[RED]I always have so much fun whenever\nwe battle, [PLAYER].\pYou're working hard to train your\nPok\emon, right?\pI have a gift for you then.
+You're working hard to train your\nPok\emon, right?\pI have a gift for you then.
 
 #org @gText_Route10_CaseyFExpShareExplained
 [RED]It's an Exp. Share!\pWhen it's turned on, it'll share some\nexperience with Pok\emon that\lweren't in battle.
@@ -624,8 +627,11 @@ No way! You're just too good,\n[PLAYER]!
 #org @gText_Route10_CaseyMBattleDefeat
 You're as good as ever, [PLAYER].
 
+#org @gText_Route10_CaseyMBattleComplete
+[BLUE]That was a fun battle, as usual\n[PLAYER].
+
 #org @gText_Route10_CaseyMExpShareGift
-[BLUE]That was a fun battle, as usual\n[PLAYER].\pHey, you're working hard to raise\nyour Pok\emon well, aren't you?\pHere, a gift between friends. Please\ntake it.
+Hey, you're working hard to raise\nyour Pok\emon well, aren't you?\pHere, a gift between friends. Please\ntake it.
 
 #org @gText_Route10_CaseyMExpShareExplained
 [BLUE]It's an Exp Share. When it's on, it'll\ncause Pok\emon that weren't used in\lbattle to share some experience\lwith those that were.

@@ -501,6 +501,77 @@ Emily
 #org @gText_Common_CannotDoubleBattle_Female
 [RED]Hey! You don't have enough Pok\emon\nto battle us with.
 
+////////////
+// GAME CUSTOMIZATION
+////////////
+
+#org @gText_GameCustomization_CustomizationPrompt
+Welcome to Pok\emon Amethyst!\pDo you want to customize your\nexperience with the game?
+
+#org @gText_GameCustomization_CustomizationMenu
+Please choose which feature(s) you\nwould like to customize.
+
+#org @gText_GameCustomization_Complete
+Selections have been saved.\pWe hope you enjoy Pok\emon Amethyst!
+
+#org @gText_GameCustomizationMenu_GameMode
+Game Mode
+
+#org @gText_GameCustomizationMenu_Tutorials
+Tutorials
+
+#org @gText_GameCustomizationMenu_StarterSelection
+Starter Selection
+
+#org @gText_GameCustomizationMenu_QuickStart
+Quick Start
+
+#org @gText_GameCustomizationMenu_Done
+Done
+
+#org @gText_GameCustomization_GameMode_Prompt
+The game mode dictates how the game\nis structured.\pStandard mode is the default and\nintended experience.\pCasual mode gives the player\nconvenience items from the start\l(such as Exp Share).\pPlease select a mode.
+
+#org @gText_GameCustomization_GameModeOption_Standard
+Standard
+
+#org @gText_GameCustomization_GameModeOption_Casual
+Casual
+
+#org @gText_GameCustomization_GameMode_StandardSet
+Standard Mode is enabled!
+
+#org @gText_GameCustomization_GameMode_CasualSet
+Casual Mode is enabled!
+
+#org @gText_GameCustomization_TutorializationQuestion
+Would you like to enable early game\nbattling and catching tutorials?
+
+#org @gText_GameCustomization_TutorializationTurnedOn
+Tutorialization is enabled!
+
+#org @gText_GameCustomization_TutorializationTurnedOff
+Tutorialization is disabled!
+
+#org @gText_GameCustomization_StarterGenerationPrompt
+Choose which Pok\emon generation your\nStarter Pok\emon are from.\pYou may also set Shuffle mode to\nrandomly pick from gens 1-8.
+
+#org @gText_GameCustomization_StarterGenerationSaved
+Starter Generation choice saved!
+
+#org @gText_GameCustomization_QuickStartQuestion
+This option allows you to skip initial\nplot points, up to receiving your\lStarter Pok\emon.\pIt is only recommended for players in\nrepeat playthroughs, as skipped\lplot is not recapped.\pDo you want to skip initial plot\npoints?
+
+#org @gText_GameCustomization_QuickStartTurnedOn
+Quick Start is enabled!
+
+#org @gText_GameCustomization_QuickStartTurnedOff
+Quick Start is disabled!
+
+////////////
+// CREDITS
+////////////
+
 #org @gText_Common_Credits_Intro
 [BLUE]Pok\emon Amethyst Credits
 
