@@ -135,7 +135,7 @@ EventScript_AnthraTown_RivalMomBeforeProfessor:
 	end
 
 EventScript_AnthraTown_RivalMomPersuaded:
-	npcchatwithmovement gText_AnthraTown_RivalMomBeingPersuaded m_LookRight
+	msgbox gText_AnthraTown_RivalMomBeingPersuaded MSG_NORMAL
 	release
 	end
 
@@ -200,148 +200,8 @@ MapScript_AnthraTown_GameStartup:
 	.byte MAP_SCRIPT_TERMIN
 
 LevelScripts_AnthraTown_GenChoice:
-	levelscript 0x4056 0 LevelScript_NewGameSetup_Main
+	levelscript 0x4056 0 GameCustomizationMain
 	.hword LEVEL_SCRIPT_TERMIN
-
-LevelScript_NewGameSetup_Main:
-	lock
-	setflag 0x056 @ Hide Ena on Route 11 South
-	spriteface PLAYER look_down
-	setvar 0x4056 0x1
-	sethealingplace 0x01 @ Player's house
-	clearflag 0x82F @ Ability to run
-	msgboxsign
-	msgbox gText_GenChoice_Msgwelcome MSG_NORMAL
-	msgbox gText_GenChoice_TutorializationQuestion MSG_YESNO
-	compare LASTRESULT YES
-	if equal _call EnableTutorialization
-	goto GenChoiceMain
-
-EnableTutorialization:
-	setflag 0x90A @ Tutorial battles on
-	setvar 0x40FF 0x1 @ Catching tutorial cutscene on (+1 in Hawthorne event, triggers map event)
-	return
-
-GenChoiceMain:
-	msgbox gText_GenChoice_FavoriteGenQuestion MSG_YESNO
-	compare LASTRESULT YES
-	if TRUE _call EventScript_GenChoice_Favoritegen
-	call EventScript_GenChoice_Shuffle
-	end
-
-EventScript_GenChoice_Favoritegen:
-	msgbox gText_GenChoice_Msgfavoritegen MSG_KEEPOPEN
-	setvar 0x8000 0x5
-    setvar 0x8001 0x4
-    setvar 0x8004 0x0
-	special 0x158
-    waitstate
-    switch LASTRESULT
-	case 0, EventScript_GenChoice_Kantoconfirm
-	case 1, EventScript_GenChoice_Johtoconfirm
-	case 2, EventScript_GenChoice_Hoennconfirm
-	case 3, EventScript_GenChoice_Sinnohconfirm
-	case 4, EventScript_GenChoice_Unovaconfirm
-	case 5, EventScript_GenChoice_Kalosconfirm
-	case 6, EventScript_GenChoice_Alolaconfirm
-	case 7, EventScript_GenChoice_Galarconfirm
-	case 0x7F, GenChoiceMain @ Pressed B to quit, goto initial question
-	end
-
-EventScript_GenChoice_Shuffle:
-	msgbox gText_GenChoice_Msgshuffleconfirm MSG_YESNO
-	compare LASTRESULT 0x1
-	if 0x0 _call GenChoiceMain
-	random 0x8
-	copyvar 0x408C LASTRESULT
-	random 0x8
-	copyvar 0x408D LASTRESULT
-	random 0x8
-	copyvar 0x408E LASTRESULT
-	call EventScript_GenChoice_End
-	end
-
-EventScript_GenChoice_Kantoconfirm:
-	msgbox gText_GenChoice_Msgkantoconfirm MSG_YESNO
-	call EventScript_GenChoice_Genchoiceconfirm
-	setvar 0x408C 0x0
-	setvar 0x408D 0x0
-	setvar 0x408E 0x0
-	call EventScript_GenChoice_End
-
-EventScript_GenChoice_Johtoconfirm:
-	msgbox gText_GenChoice_Msgjohtoconfirm MSG_YESNO
-	call EventScript_GenChoice_Genchoiceconfirm
-	setvar 0x408C 0x1
-	setvar 0x408D 0x1
-	setvar 0x408E 0x1
-	call EventScript_GenChoice_End
-
-EventScript_GenChoice_Hoennconfirm:
-	msgbox gText_GenChoice_Msghoennconfirm MSG_YESNO
-	call EventScript_GenChoice_Genchoiceconfirm
-	setvar 0x408C 0x2
-	setvar 0x408D 0x2
-	setvar 0x408E 0x2
-	call EventScript_GenChoice_End
-
-EventScript_GenChoice_Sinnohconfirm:
-	msgbox gText_GenChoice_Msgsinnohconfirm MSG_YESNO
-	call EventScript_GenChoice_Genchoiceconfirm
-	setvar 0x408C 0x3
-	setvar 0x408D 0x3
-	setvar 0x408E 0x3
-	call EventScript_GenChoice_End
-
-EventScript_GenChoice_Unovaconfirm:
-	msgbox gText_GenChoice_Msgunovaconfirm MSG_YESNO
-	call EventScript_GenChoice_Genchoiceconfirm
-	setvar 0x408C 0x4
-	setvar 0x408D 0x4
-	setvar 0x408E 0x4
-	call EventScript_GenChoice_End
-
-EventScript_GenChoice_Kalosconfirm:
-	msgbox gText_GenChoice_Msgkalosconfirm MSG_YESNO
-	call EventScript_GenChoice_Genchoiceconfirm
-	setvar 0x408C 0x5
-	setvar 0x408D 0x5
-	setvar 0x408E 0x5
-	call EventScript_GenChoice_End
-
-EventScript_GenChoice_Alolaconfirm:
-	msgbox gText_GenChoice_Msgalolaconfirm MSG_YESNO
-	call EventScript_GenChoice_Genchoiceconfirm
-	setvar 0x408C 0x6
-	setvar 0x408D 0x6
-	setvar 0x408E 0x6
-	call EventScript_GenChoice_End
-
-EventScript_GenChoice_Galarconfirm:
-	msgbox gText_GenChoice_Msggalarconfirm MSG_YESNO
-	call EventScript_GenChoice_Genchoiceconfirm
-	setvar 0x408C 0x7
-	setvar 0x408D 0x7
-	setvar 0x408E 0x7
-	call EventScript_GenChoice_End
-
-EventScript_GenChoice_Genchoiceconfirm:
-	compare LASTRESULT 0x1
-	if 0x0 _call EventScript_GenChoice_Reset
-	return
-
-EventScript_GenChoice_Reset:
-	setvar 0x408C 0x0
-	setvar 0x408D 0x0
-	setvar 0x408E 0x0
-	call GenChoiceMain
-
-EventScript_GenChoice_End:
-	sound 0x30 @Save
-	msgbox gText_GenChoice_Msgcomplete MSG_KEEPOPEN
-	normalmsg
-	release
-	end
 
 TileScript_AnthraTown_RivalArrival:
 	compare StoryEventVar PlayerCalledDownstairs
@@ -405,12 +265,7 @@ LevelScript_AnthraTown_MeetingRival:
 	applymovement Mom m_LookLeft
 	setvar StoryEventVar PlayerMetWithRivalAtHouse
 	setflag 0x02C @ Hide the rival from this point forward
-	setflag 0x02E @ Hide rival in their house
-	setflag 0x02F @ Hide rival in Anthra Town overworld
-	setflag 0x028 @ Hide grass starter ball on route 17
-	setflag 0x029 @ Hide water starter ball on route 17
-	setflag 0x02A @ Hide fire starter ball on route 17
-	setflag 0x911 @ Disable wild encounters
+	call SetGameInitializationFlags
 	end
 
 RememberingToday:

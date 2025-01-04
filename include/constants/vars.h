@@ -129,7 +129,7 @@
 #define VAR_SWARM_POKEMON_SHOWN                                                0x4053
 #define VAR_MAP_SCENE_DAIMYN_CITY_STORY_PROGRESSION                            0x4054
 #define VAR_MAP_SCENE_ANTHRA_TOWN_STARTING_EVENTS                              0x4055
-#define VAR_MAP_SCENE_PLAYERS_FAVORITE_GEN_ON_NEWGAME                          0x4056
+#define VAR_MAP_SCENE_NEWGAME_GAME_CUSTOMIZATION_PROMPTS                       0x4056
 #define VAR_MAP_SCENE_ROUTE_3_AND_RUBARR_EVENTS                                0x4057
 #define VAR_MAP_SCENE_DAIMYN_CITY_GYM                                          0x4058
 #define VAR_MAP_SCENE_ROUTE_11_PLUTO_ENCOUNTER                                 0x4059

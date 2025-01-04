@@ -834,6 +834,234 @@ TurnOffInfiniteRepel:
     end
 
 ////////////
+// GAME CUSTOMIZATION
+////////////
+
+.global GameCustomizationMain
+GameCustomizationMain:
+	lock
+	setflag 0x056 @ Hide Ena on Route 11 South
+	spriteface PLAYER look_down
+	setvar 0x4056 0x1 @ Prevent Game Customization level script from running again
+	sethealingplace 0x01 @ Player's house
+    setflag 0x911 @ Disable wild encounters
+	clearflag 0x82F @ Ability to run
+	call ShuffleStarterGenerations
+    setvar 0x4000 0x0 @ Standard difficulty on
+	msgboxsign
+	msgbox gText_GameCustomization_CustomizationPrompt MSG_YESNO
+	compare LASTRESULT NO
+	if equal _goto GameCustomizationComplete
+	goto GameCustomizationMenu
+
+ShuffleStarterGenerations:
+	random 0x8
+	copyvar 0x408C LASTRESULT @ Grass
+	random 0x8
+	copyvar 0x408D LASTRESULT @ Fire
+	random 0x8
+	copyvar 0x408E LASTRESULT @ Water
+	return
+
+GameCustomizationMenu:
+    msgboxsign
+    msgbox gText_GameCustomization_CustomizationMenu MSG_KEEPOPEN
+	multichoiceoption gText_GameCustomizationMenu_GameMode 0
+    multichoiceoption gText_GameCustomizationMenu_Tutorials 1
+    multichoiceoption gText_GameCustomizationMenu_StarterSelection 2
+    multichoiceoption gText_GameCustomizationMenu_QuickStart 3
+    multichoiceoption gText_GameCustomizationMenu_Done 4
+    multichoice 0x0 0x0 FIVE_MULTICHOICE_OPTIONS FALSE
+    switch LASTRESULT
+    case 0, GameCustomization_GameMode _goto
+    case 1, GameCustomization_Tutorials _goto
+    case 2, GameCustomization_StarterSelection _goto
+    case 3, GameCustomization_QuickStart _goto
+    // Case n-1 and 0x7F fall through to completion
+    goto GameCustomizationComplete
+
+GameCustomizationComplete:
+    sound 0x30 @Save
+	msgbox gText_GameCustomization_Complete MSG_KEEPOPEN
+    compare 0x4000 0x1 @ In casual mode
+    if equal _call GiveCasualModeItems
+	msgboxnormal
+	release
+	end
+
+GameCustomization_GameMode:
+    msgbox gText_GameCustomization_GameMode_Prompt MSG_KEEPOPEN
+    multichoiceoption gText_GameCustomization_GameModeOption_Standard 0
+    multichoiceoption gText_GameCustomization_GameModeOption_Casual 1
+    multichoice 0x0 0x0 TWO_MULTICHOICE_OPTIONS TRUE
+    switch LASTRESULT
+    case 0, EnableStandardMode _call
+    case 1, EnableCasualMode _call
+    goto GameCustomizationMenu
+
+EnableStandardMode:
+    setvar 0x4000 0x0
+    sound 0x30 @Save
+    msgbox gText_GameCustomization_GameMode_StandardSet MSG_NORMAL
+    return
+
+EnableCasualMode:
+    setvar 0x4000 0x1
+    sound 0x30 @Save
+    msgbox gText_GameCustomization_GameMode_CasualSet MSG_NORMAL
+    return
+
+GiveCasualModeItems:
+    additem ITEM_EXP_SHARE 0x1
+    additem ITEM_PORTA_PC 0x1
+    additem ITEM_POKE_VIAL 0x1
+    additem ITEM_INFINITE_REPEL 0x1
+    additem ITEM_ADM 0x1
+    additem ITEM_MACH_BIKE 0x1
+    additem ITEM_ITEMFINDER 0x1
+    additem ITEM_POKE_CHIP_CHARM 0x1
+    @ Flags for Trainer House rewards
+    setflag 0x24F @ For Mach Bike
+    setflag 0x252 @ For Item Finder
+    setflag 0x277 @ For Poke Chip Charm
+    addmoney 2000 @ 5000 total
+    setvar 0x4000 0x0 @ Reset control var
+    return
+
+GameCustomization_Tutorials:
+    msgbox gText_GameCustomization_TutorializationQuestion MSG_YESNO
+    compare LASTRESULT NO
+    if notequal _call EnableTutorialization
+    if equal _call DisableTutorialization
+    goto GameCustomizationMenu
+
+EnableTutorialization:
+	setflag 0x90A @ Tutorial battles on
+	setvar 0x40FF 0x1 @ Catching tutorial cutscene on (+1 in Hawthorne event, triggers map event)
+    sound 0x30 @Save
+    msgbox gText_GameCustomization_TutorializationTurnedOn MSG_NORMAL
+	return
+
+DisableTutorialization:
+	clearflag 0x90A @ Tutorial battles off
+	setvar 0x40FF 0x0 @ Catching tutorial cutscene on (+1 in Hawthorne event, triggers map event)
+    sound 0x30 @Save
+    msgbox gText_GameCustomization_TutorializationTurnedOff MSG_NORMAL
+	return
+
+GameCustomization_StarterSelection:
+    msgbox gText_GameCustomization_StarterGenerationPrompt MSG_KEEPOPEN
+    setvar 0x8000 0x5
+    setvar 0x8001 0x4
+    setvar 0x8004 0x0
+	special 0x158
+    waitstate
+    switch LASTRESULT
+	case 0, GameCustomization_GenChoice_Kanto _call
+	case 1, GameCustomization_GenChoice_Johto _call
+	case 2, GameCustomization_GenChoice_Hoenn _call
+	case 3, GameCustomization_GenChoice_Sinnoh _call
+	case 4, GameCustomization_GenChoice_Unova _call
+	case 5, GameCustomization_GenChoice_Kalos _call
+	case 6, GameCustomization_GenChoice_Alola _call
+	case 7, GameCustomization_GenChoice_Galar _call
+    case 8, GameCustomization_GenChoice_Shuffle _call
+    case 0x7F, GameCustomizationMenu _goto
+    sound 0x30 @Save
+	msgbox gText_GameCustomization_StarterGenerationSaved MSG_KEEPOPEN
+    goto GameCustomizationMenu
+
+GameCustomization_GenChoice_Kanto:
+	setvar 0x408C 0x0
+	setvar 0x408D 0x0
+	setvar 0x408E 0x0
+    return
+
+GameCustomization_GenChoice_Johto:
+	setvar 0x408C 0x1
+	setvar 0x408D 0x1
+	setvar 0x408E 0x1
+    return
+
+GameCustomization_GenChoice_Hoenn:
+	setvar 0x408C 0x2
+	setvar 0x408D 0x2
+	setvar 0x408E 0x2
+    return
+
+GameCustomization_GenChoice_Sinnoh:
+	setvar 0x408C 0x3
+	setvar 0x408D 0x3
+	setvar 0x408E 0x3
+    return
+
+GameCustomization_GenChoice_Unova:
+	setvar 0x408C 0x4
+	setvar 0x408D 0x4
+	setvar 0x408E 0x4
+    return
+
+GameCustomization_GenChoice_Kalos:
+	setvar 0x408C 0x5
+	setvar 0x408D 0x5
+	setvar 0x408E 0x5
+    return
+
+GameCustomization_GenChoice_Alola:
+	setvar 0x408C 0x6
+	setvar 0x408D 0x6
+	setvar 0x408E 0x6
+    return
+
+GameCustomization_GenChoice_Galar:
+	setvar 0x408C 0x7
+	setvar 0x408D 0x7
+	setvar 0x408E 0x7
+    return
+
+GameCustomization_GenChoice_Shuffle:
+    call ShuffleStarterGenerations
+    return
+
+GameCustomization_QuickStart:
+    msgbox gText_GameCustomization_QuickStartQuestion MSG_YESNO
+    compare LASTRESULT NO
+    if notequal _call EnableQuickStart
+    if equal _call DisableQuickStart
+    goto GameCustomizationMenu
+
+EnableQuickStart:
+    setvar 0x4055 0x5 @ Anthra / Route 17 story events
+    additem ITEM_TOWN_MAP 0x1
+    setflag 0x82F @ Player can now run
+    setflag 0x914 @ Enable auto run
+    clearflag 0x02B @ Show the professor, champion, and tv crew
+    call SetGameInitializationFlags
+    setflag 0x2F @ Hide Rival in Anthra Town (Not cleared in Disable script as it is set by other game initialization scripts)
+    sound 0x30 @Save
+    msgbox gText_GameCustomization_QuickStartTurnedOn MSG_NORMAL
+	return
+
+.global SetGameInitializationFlags
+SetGameInitializationFlags:
+    setflag 0x02E @ Hide rival in their house
+	setflag 0x02F @ Hide rival in Anthra Town overworld
+	setflag 0x028 @ Hide grass starter ball on route 17
+	setflag 0x029 @ Hide water starter ball on route 17
+	setflag 0x02A @ Hide fire starter ball on route 17
+    return
+
+DisableQuickStart:
+    setvar 0x4055 0x0 @ Anthra / Route 17 story events
+    removeitem ITEM_TOWN_MAP 0x1
+    clearflag 0x82F @ Player can no longer run
+    clearflag 0x914 @ Disable auto run
+    setflag 0x02B @ Hide the professor, champion, and tv crew
+    sound 0x30 @Save
+    msgbox gText_GameCustomization_QuickStartTurnedOff MSG_NORMAL
+	return
+
+////////////
 // CREDITS
 ////////////
 

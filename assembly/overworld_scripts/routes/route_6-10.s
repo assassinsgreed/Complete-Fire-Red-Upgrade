@@ -696,9 +696,10 @@ FCaseyEvent:
     trainerbattle2 0x0 0xAE 0x100 gText_Route10_CaseyFBattleIntro gText_Route10_CaseyFBattleDefeat FCaseyEventPostBattle
 
 FCaseyEventPostBattle:
-    msgbox gText_Route10_CaseyFExpShareGift MSG_NORMAL
-    obtainitem ITEM_EXP_SHARE 0x1
-    msgbox gText_Route10_CaseyFExpShareExplained MSG_NORMAL
+    msgbox gText_Route10_CaseyFBattleComplete MSG_NORMAL
+    checkitem ITEM_EXP_SHARE 0x1
+    compare LASTRESULT TRUE
+    if FALSE _call FCaseyGivesExpShare
     msgbox gText_Route10_CaseyFPostBattle MSG_NORMAL
     applymovement Casey m_LookRight
     msgbox gText_Route10_CaseyFReflection MSG_NORMAL
@@ -706,20 +707,33 @@ FCaseyEventPostBattle:
     msgbox gText_Route10_CaseyFLeaves MSG_NORMAL
     goto CaseyLeavesCommon
 
+FCaseyGivesExpShare:
+    msgbox gText_Route10_CaseyFExpShareGift MSG_NORMAL
+    obtainitem ITEM_EXP_SHARE 0x1
+    msgbox gText_Route10_CaseyFExpShareExplained MSG_NORMAL
+    return
+
 MCaseyEvent:
     msgbox gText_Route10_CaseyMIntroduction MSG_NORMAL
     trainerbattle2 0x0 0xAF 0x100 gText_Route10_CaseyMBattleIntro gText_Route10_CaseyMBattleDefeat MCaseyEventPostBattle
 
 MCaseyEventPostBattle:
-    msgbox gText_Route10_CaseyMExpShareGift MSG_NORMAL
-    obtainitem ITEM_EXP_SHARE 0x1
-    msgbox gText_Route10_CaseyMExpShareExplained MSG_NORMAL
+    msgbox gText_Route10_CaseyMBattleComplete MSG_NORMAL
+    checkitem ITEM_EXP_SHARE 0x1
+    compare LASTRESULT TRUE
+    if FALSE _call MCaseyGivesExpShare
     msgbox gText_Route10_CaseyMPostBattle MSG_NORMAL
     applymovement Casey m_LookRight
     msgbox gText_Route10_CaseyMReflection MSG_NORMAL
     applymovement Casey m_LookLeft
     msgbox gText_Route10_CaseyMLeaves MSG_NORMAL
     goto CaseyLeavesCommon
+
+MCaseyGivesExpShare:
+    msgbox gText_Route10_CaseyMExpShareGift MSG_NORMAL
+    obtainitem ITEM_EXP_SHARE 0x1
+    msgbox gText_Route10_CaseyMExpShareExplained MSG_NORMAL
+    return
 
 CaseyLeavesCommon:
     applymovement Casey m_WalkAwayFromPlayer

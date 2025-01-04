@@ -165,6 +165,7 @@ EventScript_Route17_HawthorneChooseStarter:
     setvar StoryEventVar PlayerChoosingStarter
     lock
     faceplayer
+    special 0xAF @ Dismount bike if on it
     msgbox gText_Route17_HawthorneDialogWhenChoosingStarter MSG_NORMAL
     compareplayerfacing INTERNAL_RIGHT
     if equal _call EventScript_Route17_PlayerMovesForHawthornePokeballs
@@ -222,6 +223,7 @@ EventScript_Route17_ChampionSelene_BeforeChoosingStarter:
 TileEvent_MeetingRival:
     getplayerpos 0x4000 0x4001 @ Get player x and y in throwaway vars
     lock
+    special 0xAF @ Dismount bike if on it
     compare 0x4000 0x11
     if equal _call SetPlayerFacingLeft
     compare 0x4000 0x11
@@ -326,6 +328,7 @@ PlayerWalkToFaceHawthorne:
 
 PlayerMustChooseStarter:
     lock
+    special 0xAF @ Dismount bike if on it
     msgbox gText_Route17_ChooseAStarterWarning MSG_NORMAL
     special 0x1AA @ Get player facing
     compareplayerfacing INTERNAL_DOWN

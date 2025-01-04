@@ -3036,6 +3036,7 @@ extern const u8 gText_RegionUnova[];
 extern const u8 gText_RegionKalos[];
 extern const u8 gText_RegionAlola[];
 extern const u8 gText_RegionGalar[];
+extern const u8 gText_RegionShuffle[];
 
 // Game Corner Prizes
 extern const u8 gText_ItemExchange_ToxicOrb[];
@@ -3236,6 +3237,7 @@ static const u8* sFavoriteRegion[] =
 	gText_RegionKalos,
 	gText_RegionAlola,
 	gText_RegionGalar,
+	gText_RegionShuffle,
 };
 
 static const u8* sGameCornerItemExchange[] =
