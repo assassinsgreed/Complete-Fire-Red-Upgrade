@@ -924,7 +924,7 @@ EventScript_LaplazGym_LeaderCasey_Defeated:
     fanfare 0x13D @ Gym victory
     textcolor BLACK
     msgbox gText_LaplazGym_BadgeReceived MSG_NORMAL
-    call BadgeObedienceMessage
+    call PrintUpdatedLevelCaps
     waitfanfare
     settrainerflag 0xE3 @ Jeremiah cannot be battled now
     settrainerflag 0xE4 @ Exie cannot be battled now

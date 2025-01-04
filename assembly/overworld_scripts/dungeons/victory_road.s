@@ -428,6 +428,8 @@ LevelScript_VictoryRoadPeak_BattleForVictoryFlag:
     setflag 0x72 @ Victory Flag claimed
     clearflag 0x06B @ Rival appears in Daimyn City for training battle 
     setvar 0x4072 0x1 @ cutscenes over
+    checkflag 0x93B @ Hard level caps
+    if SET _call PrintUpdatedLevelCaps
     end
 
 PlayerUnderstandsBattleIsComing:

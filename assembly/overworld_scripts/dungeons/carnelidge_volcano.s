@@ -577,6 +577,8 @@ BattleAlistair:
     setflag 0x56 @ Hide Ena on Route 11 South and Alistair here
     setflag 0x273 @ Has completed the Carnelidge Volcano events
     addvar VarStorySequence 0x5 @ Conclude the story event. This is incremented dramatically to ensure Flying/Teleporting/etc will be usable again
+    checkflag 0x93B @ Hard level caps
+    if SET _call PrintUpdatedLevelCaps
     end
 
 HandleJirachisAwakening:

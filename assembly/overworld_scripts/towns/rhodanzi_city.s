@@ -340,7 +340,7 @@ EventScript_RhodanziGym_Leader_TerrenceDefeated:
     setflag 0x25C @ New Pokemart Stock
     fanfare 0x13D @ Gym victory
     msgbox gText_RhodanziGym_BadgeReceived MSG_NORMAL
-    call BadgeObedienceMessage
+    call PrintUpdatedLevelCaps
     waitfanfare
     setvar 0x4097 0x1 @ Disable Team Pluto tile event  
     settrainerflag 0xC @ Alonso cannot be battled now

@@ -649,7 +649,20 @@ SetCaseyMale:
     textcolor BLUE
     return
 
-.global BadgeObedienceMessage
+.global PrintUpdatedLevelCaps
+PrintUpdatedLevelCaps:
+    @ Note: The hard level cap is always below the soft cap, so we don't need to show it if hard caps are enabled
+    checkflag 0x93B @ Hard level cap is on
+    if SET _call PrintLevelCapMessage
+    if NOT_SET _call BadgeObedienceMessage
+    return
+
+PrintLevelCapMessage:
+    callasm GetLevelCapIntoLastResult
+    buffernumber 0x0 LASTRESULT
+    msgbox gText_Common_LevelCapUpdate MSG_KEEPOPEN
+    return
+
 BadgeObedienceMessage:
     callasm CountBadges
     switch LASTRESULT
@@ -869,14 +882,16 @@ GameCustomizationMenu:
 	multichoiceoption gText_GameCustomizationMenu_GameMode 0
     multichoiceoption gText_GameCustomizationMenu_Tutorials 1
     multichoiceoption gText_GameCustomizationMenu_StarterSelection 2
-    multichoiceoption gText_GameCustomizationMenu_QuickStart 3
-    multichoiceoption gText_GameCustomizationMenu_Done 4
-    multichoice 0x0 0x0 FIVE_MULTICHOICE_OPTIONS FALSE
+    multichoiceoption gText_GameCustomizationMenu_LevelCaps 3
+    multichoiceoption gText_GameCustomizationMenu_QuickStart 4
+    multichoiceoption gText_GameCustomizationMenu_Done 5
+    multichoice 0x0 0x0 SIX_MULTICHOICE_OPTIONS FALSE
     switch LASTRESULT
     case 0, GameCustomization_GameMode _goto
     case 1, GameCustomization_Tutorials _goto
     case 2, GameCustomization_StarterSelection _goto
-    case 3, GameCustomization_QuickStart _goto
+    case 3, GameCustomization_LevelCaps _goto
+    case 4, GameCustomization_QuickStart _goto
     // Case n-1 and 0x7F fall through to completion
     goto GameCustomizationComplete
 
@@ -1021,6 +1036,28 @@ GameCustomization_GenChoice_Galar:
 
 GameCustomization_GenChoice_Shuffle:
     call ShuffleStarterGenerations
+    return
+
+GameCustomization_LevelCaps:
+    msgbox gText_GameCustomization_LevelCapsQuestion MSG_KEEPOPEN
+    multichoiceoption gText_GameCustomization_LevelCapsOption_Soft 0
+    multichoiceoption gText_GameCustomization_LevelCapsOption_Hard 1
+    multichoice 0x0 0x0 TWO_MULTICHOICE_OPTIONS TRUE
+    switch LASTRESULT
+    case 0, EnableSoftLevelCaps _call
+    case 1, EnableHardLevelCaps _call
+    goto GameCustomizationMenu
+
+EnableSoftLevelCaps:
+    clearflag 0x93B @ Soft caps
+    sound 0x30 @Save
+    msgbox gText_GameCustomization_SoftLevelCapsTurnedOn MSG_NORMAL
+    return
+
+EnableHardLevelCaps:
+    setflag 0x93B @ Hard caps
+    sound 0x30 @Save
+    msgbox gText_GameCustomization_HardLevelCapsTurnedOn MSG_NORMAL
     return
 
 GameCustomization_QuickStart:

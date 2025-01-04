@@ -272,6 +272,8 @@ CaseyLeaves:
     hidesprite Casey
     playbgm 0x133 0x1 @ Play regular Torma Cave track (Replace override from cutscene)
     textcolor BLACK
+    checkflag 0x93B @ Hard level caps
+    if SET _call PrintUpdatedLevelCaps
     end
 
 m_CaseyWalksToPlayer: .byte walk_down, walk_down, pause_long, look_left, pause_long, pause_long, pause_long, look_right, pause_long, pause_long, pause_long, pause_long, look_down, exclaim, walk_down, walk_down, end_m

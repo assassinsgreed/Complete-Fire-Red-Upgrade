@@ -296,6 +296,8 @@ EventScript_RubarrDesert_StoryEvents:
     setflag 0x33 @ Hide Team Pluto
     setflag 0x34 @ Hide Rival and Irene
     setvar Route3RubarrStoryEventVar VarStoryPlayerBeatPluto
+    checkflag 0x93B @ Hard level caps
+    if SET _call PrintUpdatedLevelCaps
     end
 
 ClancyComment:

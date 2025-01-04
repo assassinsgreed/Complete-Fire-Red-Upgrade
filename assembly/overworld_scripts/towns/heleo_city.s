@@ -1148,7 +1148,7 @@ EventScript_HeleoGym_LeaderRaine_Defeated:
     setflag 0x25C @ New Pokemart Stock
     fanfare 0x13D @ Gym victory
     msgbox gText_HeleoGym_BadgeReceived MSG_NORMAL
-    call BadgeObedienceMessage
+    call PrintUpdatedLevelCaps
     waitfanfare
     settrainerflag 0x65 @ Tessa cannot be battled now
     settrainerflag 0x66 @ Byron cannot be battled now

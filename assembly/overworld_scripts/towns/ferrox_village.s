@@ -349,7 +349,7 @@ EventScript_FerroxGym_LeaderStella_Defeated:
     setflag 0x25C @ New Pokemart Stock
     fanfare 0x13D @ Gym victory
     msgbox gText_FerroxGym_BadgeReceived MSG_NORMAL
-    call BadgeObedienceMessage
+    call PrintUpdatedLevelCaps
     waitfanfare
     settrainerflag 0x3C @ Lorena cannot be battled now
     settrainerflag 0x3D @ Lona cannot be battled now

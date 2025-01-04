@@ -170,7 +170,7 @@ EventScript_DaimynCityGym_LeaderChance_Defeated:
     setflag 0x25C @ New Pokemart Stock
     fanfare 0x13D @ Gym victory
     msgbox gText_DaimynCityGym_BadgeReceived MSG_NORMAL
-    call BadgeObedienceMessage
+    call PrintUpdatedLevelCaps
     waitfanfare
     settrainerflag 0x93 @ Jacob cannot be battled now
     settrainerflag 0x94 @ Kanesha cannot be battled now

@@ -1256,6 +1256,7 @@
 #define HIDDEN_ITEM_ROUTE19_STARDUST                                  197
 #define HIDDEN_ITEM_EMRALDIN_QUAY_MENTAL_HERB                         198
 #define HIDDEN_ITEM_EMRALDIN_QUAY_OVAL_STONE                          199
+*/
 
 // Boss clear flags, 1200
 #define FLAG_DEFEATED_TERRENCE        0x4B0
@@ -1272,6 +1273,7 @@
 #define FLAG_DEFEATED_E4_THOMAS       0x4BB
 #define FLAG_DEFEATED_CHAMPION_SELENE 0x4BC
 
+/*
 // Repurposed as hidden items
 #define FLAG_HIDDEN_ITEM_ROUTE23_MAX_REVIVE                           200
 #define FLAG_HIDDEN_ITEM_ROUTE23_MAX_REPEL                            201

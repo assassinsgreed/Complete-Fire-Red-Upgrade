@@ -434,6 +434,8 @@ LevelScript_AscensionTower_WalkForward_ForChampionBattle:
     msgbox gText_AscensionTower_ChampionSelene_PreBattle3 MSG_NORMAL
     call SetupMugshotChampionAndTitleDefense
     trainerbattle3 0x0 524 0x100 gText_AscensionTower_ChampionSelene_Defeat
+    checkflag 0x93B @ Hard level caps
+    if SET _call PrintUpdatedLevelCaps
     playbgm 345 @ N's farewell
     msgbox gText_AscensionTower_ChampionSelene_PostBattle MSG_NORMAL
     applymovement 0x1 m_ReigningChampionWalksToHallOfFame

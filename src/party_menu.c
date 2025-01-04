@@ -2738,6 +2738,7 @@ void FieldUseFunc_Honey(u8 taskId)
 
 extern const u8 gText_ExpShareTurnedOff[];
 extern const u8 gText_ExpShareTurnedOn[];
+extern const u8 gText_LevelCapLock[];
 
 void FieldUseFunc_ExpShare(u8 taskId)
 {
@@ -2755,7 +2756,6 @@ void FieldUseFunc_ExpShare(u8 taskId)
 	}	
 }
 
-extern u8 GetCurrentLevelCap(void); //Must be implemented yourself
 void ItemUseCB_RareCandy(u8 taskId, TaskFunc func)
 {
 	bool8 noEffect;
@@ -2786,7 +2786,11 @@ void ItemUseCB_RareCandy(u8 taskId, TaskFunc func)
 	if (noEffect)
 	{
 		gPartyMenuUseExitCallback = FALSE;
-		DisplayPartyMenuMessage(gText_WontHaveEffect, TRUE);
+
+		if (level >= GetCurrentLevelCap())
+			DisplayPartyMenuMessage(gText_LevelCapLock, TRUE);
+		else
+			DisplayPartyMenuMessage(gText_WontHaveEffect, TRUE);
 		ScheduleBgCopyTilemapToVram(2);
 		gTasks[taskId].func = func;
 	}

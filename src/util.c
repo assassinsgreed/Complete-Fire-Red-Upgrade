@@ -648,3 +648,65 @@ void InitializeTreasureBeach()
 		FlagClear(FLAG_HIDDEN_ITEMS_START + treasureFlags[randomIndex]);
 	}
 }
+
+// Generally calculated as {Boss's Ace} - 2
+const u8 LevelCaps[] =
+{
+	11, // Before Gym 1's badge
+	13, // Before Irene
+	15, // Before Casey
+	18, // Before Gym 2's badge
+	24, // Before Gym 3's badge
+	31, // Before Gym 4's badge
+	35, // Before Ronald
+	39, // Before Gym 5's badge
+	45, // Before Gym 6's badge
+	49, // Before Kurtis
+	55, // Before Gym 7's badge & Carnelidge events
+	61, // Before Gym 8's badge
+	65, // Before Elite Four
+	72, // Before Champion
+	100, // Postgame
+};
+
+extern u8 GetCurrentLevelCap(void);
+u8 GetCurrentLevelCap()
+{
+	u8 cap = 0;
+
+	if (FlagGet(FLAG_DEFEATED_TERRENCE))
+		cap++;
+	if (FlagGet(0x34)) // Irene
+		cap++;
+	if (FlagGet(0x255)) // Rubarr Casey
+		cap++;
+	if (FlagGet(FLAG_DEFEATED_STELLA))
+		cap++;
+	if (FlagGet(FLAG_DEFEATED_RAINE))
+		cap++;
+	if (FlagGet(FLAG_DEFEATED_CHANCE))
+		cap++;
+	if (FlagGet(0x41)) // Ronald
+		cap++;
+	if (FlagGet(FLAG_DEFEATED_CASEY))
+		cap++;
+	if (FlagGet(FLAG_DEFEATED_ABBY))
+		cap++;
+	if (FlagGet(0x4A)) // Kurtis
+		cap++;
+	if (FlagGet(0x273)) // Carnelidge Volcano Story
+		cap++;
+	if (FlagGet(FLAG_DEFEATED_DENNIS_AND_DEE))
+		cap++;
+	if (FlagGet(0x72)) // Rival on Victory Road
+		cap++;
+	if (FlagGet(FLAG_DEFEATED_CHAMPION_SELENE))
+		cap++;
+
+	return LevelCaps[cap];
+}
+
+void GetLevelCapIntoLastResult(void)
+{
+	gSpecialVar_LastResult = GetCurrentLevelCap();
+}
