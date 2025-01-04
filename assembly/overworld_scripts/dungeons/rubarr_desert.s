@@ -142,6 +142,7 @@ EventScript_RubarrDesert_TeamPlutoTana:
 EventScript_RubarrDesert_StoryEvents:
     lock
     playbgm 0x19A 0x1 @ Encounter Team Pluto (permanent, needs to be overidden to default track later)
+    special 0xAF @ Dismount bike if on it
     msgbox gText_RubarrDesert_ClancyIntro MSG_NORMAL
     msgbox gText_RubarrDesert_EnaIntro MSG_NORMAL
     faceplayer

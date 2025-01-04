@@ -917,10 +917,12 @@ GiveCasualModeItems:
     additem ITEM_POKE_VIAL 0x1
     additem ITEM_INFINITE_REPEL 0x1
     additem ITEM_ADM 0x1
+    additem ITEM_MACH_BIKE 0x1
     additem ITEM_ITEMFINDER 0x1
     additem ITEM_POKE_CHIP_CHARM 0x1
     @ Flags for Trainer House rewards
-    setflag 0x252 @ For item finder
+    setflag 0x24F @ For Mach Bike
+    setflag 0x252 @ For Item Finder
     setflag 0x277 @ For Poke Chip Charm
     addmoney 2000 @ 5000 total
     setvar 0x4000 0x0 @ Reset control var

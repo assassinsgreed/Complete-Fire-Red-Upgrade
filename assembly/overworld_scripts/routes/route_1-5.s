@@ -120,6 +120,7 @@ SignScript_Route2_TrainerTipsFishing:
 
 .global TileScript_Route2_CapturingPokemonLeft
 TileScript_Route2_CapturingPokemonLeft:
+    special 0xAF @ Dismount bike if on it
     applymovement PLAYER m_WalkRight
     waitmovement PLAYER
     applymovement PLAYER m_LookUp
@@ -129,6 +130,7 @@ TileScript_Route2_CapturingPokemonLeft:
 .global TileScript_Route2_CapturingPokemonRight
 TileScript_Route2_CapturingPokemonRight:
     lock
+    special 0xAF @ Dismount bike if on it
     showsprite CatchingTutorialRival
     applymovement CatchingTutorialRival m_RivalWalkDownTowardPlayer
     waitmovement CatchingTutorialRival
@@ -289,6 +291,7 @@ EventScript_Route3_Assistant:
     end
 
 ReturningDexNavs:
+    special 0xAF @ Dismount bike if on it
     compareplayerfacing INTERNAL_LEFT
     if equal _call MovePlayerBelowAssistantRight
     compareplayerfacing INTERNAL_RIGHT
@@ -372,6 +375,7 @@ NoDexNavInstructions:
 .global TileScript_Route3_InitiateDexNavEvent
 TileScript_Route3_InitiateDexNavEvent:
     lockall
+    special 0xAF @ Dismount bike if on it
     clearflag 0x31 @ Show rival and pluto grunts on route 3
     showsprite Rival
     playbgm 0x195

@@ -184,6 +184,7 @@ TileScript_TormaCave_ClearPathCleared:
 TileScript_TormaCave_TriggerCaseyBattleL:
     checkflag 0x255 @ Battled Casey
     if SET _goto End
+    special 0xAF @ Dismount bike if on it
     applymovement PLAYER m_WalkRight
     waitmovement PLAYER
     goto TileScript_TormaCave_TriggerCaseyBattleM
@@ -192,6 +193,7 @@ TileScript_TormaCave_TriggerCaseyBattleL:
 TileScript_TormaCave_TriggerCaseyBattleM:
     checkflag 0x255 @ Battled Casey
     if SET _goto End
+    special 0xAF @ Dismount bike if on it
     applymovement PLAYER m_WalkRight
     waitmovement PLAYER
     goto TileScript_TormaCave_TriggerCaseyBattleR
@@ -200,6 +202,7 @@ TileScript_TormaCave_TriggerCaseyBattleM:
 TileScript_TormaCave_TriggerCaseyBattleR:
     checkflag 0x255 @ Battled Casey
     if SET _goto End
+    special 0xAF @ Dismount bike if on it
     call SetCaseyGender
     applymovement PLAYER m_LookUp
     playse 0x9 @ Exit room
