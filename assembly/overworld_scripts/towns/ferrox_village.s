@@ -158,17 +158,17 @@ EventScript_FerroxFacilities_Mart_Berries:
 
 .global EventScript_FerroxFacilities_Center_FerroxHikers
 EventScript_FerroxFacilities_Center_FerroxHikers:
-    npcchat gText_FerroxFacilities_Mart_FerroxHikers
+    npcchat gText_FerroxFacilities_Center_FerroxHikers
     end
 
 .global EventScript_FerroxFacilities_Center_StellaSibling
 EventScript_FerroxFacilities_Center_StellaSibling:
-    npcchat gText_FerroxFacilities_Mart_StellaSibling
+    npcchat gText_FerroxFacilities_Center_StellaSibling
     end
 
 .global EventScript_FerroxFacilities_Center_FerroxBadge
 EventScript_FerroxFacilities_Center_FerroxBadge:
-    npcchat gText_FerroxFacilities_Mart_FerroxBadge
+    npcchat gText_FerroxFacilities_Center_FerroxBadge
     end
 
 @ NPC Houses

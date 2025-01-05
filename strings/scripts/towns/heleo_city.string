@@ -292,6 +292,36 @@ Pok\emon are so wonderful!\pThey're soft[.]\pThey're warm[.]\pThey're friendly[.
 #org @gText_HeleoNPCHouses_PokemonFanClubHallwayBoy
 The Pok\emon fan club can get pretty\nrowdy sometimes[.]\pJust last week they had a debate\nover whether Stunfisk or Pincurchin\lwere cuter.\pThey were arguing for just over 6\nhours[.]
 
+#org @gText_HeleoCity_NurseBrianne_Intro
+Uuuugghhh[.]\pI wanna make a fresh start as a\nPok\emon Trainer, but I just can't\lwin.\pHmm[.] You[.]
+
+#org @gText_HeleoCity_NurseBrianne_NotChampion
+Nah, forget it. I'm not gonna take\nadvice from some nobody!\pNo, what I need is advice from a\nbona fide Champion!
+
+#org @gText_HeleoCity_NurseBrianne_PromptForBattle
+You seem tough. I'm sure I could\nlearn something by battling you.\pBut[.] I'm a rising superstar.\pIt'd damage my image if I battled\nyou for free.\pSo[.] I'll give you the honour of\nbattling me, for a small fee.\p5 Pok\eChips!\nThat's what I've decided!\pWhat do you say? It's a steal,\nright? [BLACK](Held: [BUFFER1])
+
+#org @gText_HeleoCity_NurseBrianne_ChoseNo
+Pffft[.] Whatever.\pI only said you looked strong\nbecause I felt so bad for you.
+
+#org @gText_HeleoCity_NurseBrianne_NotEnoughChips
+Aw, come ON!\pYou don't even HAVE 5 Pok\eChips!\nDon't waste my time, okay?
+
+#org @gText_HeleoCity_NurseBrianne_ReceivedPokeChips
+Payment received!
+
+#org @gText_HeleoCity_NurseBrianne_PreBattle
+Alright, let's battle[.]\pI'll take my frustration out -- err[.]\nLearn a lot from you. Yeah!
+
+#org @gText_HeleoCity_NurseBrianne_WonBattle
+Pfft. Really?\nWhat a waste of my time!
+
+#org @gText_HeleoCity_NurseBrianne_LostBattle
+No way! I lost? To YOU?
+
+#org @gText_HeleoCity_NurseBrianne_PostBattle
+Not what I was expecting, but I'm\nfeeling inspired now all the same!\pSee ya, nerd. I'm gonna show the\nworld what I've got!\pYou'll NEVER see me here again,\nbecause it's nothing but wins from\lhere on out.
+
 #org @gText_HeleoNPCHouses_TerraceDad
 My family come up here to enjoy\nbrunch every week.\pIt's the highlight of my week!
 

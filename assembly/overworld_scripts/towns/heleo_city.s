@@ -958,6 +958,50 @@ EventScript_HeleoCity_HallwayBoy:
     npcchatwithmovement gText_HeleoNPCHouses_PokemonFanClubHallwayBoy m_LookLeft
     end
 
+.global EventScript_HeleoCity_BlisseyTrainer
+EventScript_HeleoCity_BlisseyTrainer:
+    lock
+    faceplayer
+    msgbox gText_HeleoCity_NurseBrianne_Intro MSG_NORMAL
+    checkflag 0x4BC @ Beaten Selene
+    if NOT_SET _goto BrianneBeforePostgame
+    callasm StorePokeChipCount
+	buffernumber 0x0 0x8005 @ Take stored PokeChip count
+    msgbox gText_HeleoCity_NurseBrianne_PromptForBattle MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto BrianneChoseNo
+    checkitem ITEM_POKE_CHIP 0x5
+    compare LASTRESULT TRUE
+    if FALSE _goto BrianneNotEnoughChips
+    playse 0xF8 @ Money
+    removeitem ITEM_POKE_CHIP 0x5
+    msgbox gText_HeleoCity_NurseBrianne_ReceivedPokeChips MSG_NORMAL
+    msgbox gText_HeleoCity_NurseBrianne_PreBattle MSG_NORMAL
+    setvar 0x8000 0xFEFE @ Continue lost battles
+    setflag 0x90E @ Scale trainer levels
+    trainerbattle9 0x0 600 0x0 gText_HeleoCity_NurseBrianne_WonBattle gText_HeleoCity_NurseBrianne_LostBattle
+    msgbox gText_HeleoCity_NurseBrianne_PostBattle MSG_NORMAL
+    checkflag 0x153 @ Trainer level scaling modifier
+    if NOT_SET _call DisableTrainerScalingFlag
+    setflag 0xE3F @ Brianne beaten today
+    setvar 0x8000 0x0 @ Do not continue lost battles
+    fadescreen FADEOUT_BLACK
+    hidesprite LASTTALKED
+    fadescreen FADEIN_BLACK
+    end
+
+BrianneBeforePostgame:
+    npcchatwithmovement gText_HeleoCity_NurseBrianne_NotChampion m_LookDown
+    end
+
+BrianneChoseNo:
+    npcchatwithmovement gText_HeleoCity_NurseBrianne_ChoseNo m_LookDown
+    end
+
+BrianneNotEnoughChips:
+    npcchatwithmovement gText_HeleoCity_NurseBrianne_NotEnoughChips m_LookDown
+    end
+
 .global EventScript_HeleoCity_TerraceDad
 EventScript_HeleoCity_TerraceDad:
     npcchatwithmovement gText_HeleoNPCHouses_TerraceDad m_LookLeft

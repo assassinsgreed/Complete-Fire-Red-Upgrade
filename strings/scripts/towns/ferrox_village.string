@@ -36,13 +36,13 @@ Some Pok\eMarts sell items produced\nlocally. It's always worth checking\lin whe
 #org @gText_FerroxFacilities_Mart_Berries
 All of the berries sold here were\ngrown on good ol' Ferrox soil.\pThey taste good in soup, but you\nmight also find them useful if\lyou're thinking of challenging the\lFerrox Gym.
 
-#org @gText_FerroxFacilities_Mart_FerroxHikers
+#org @gText_FerroxFacilities_Center_FerroxHikers
 Ferrox Village is often the last stop\nfor hikers making their way to\lCarnelidge Volcano.\pHave you been there before? There's\na path through Torma Cave that\lleads there.\pYou might find some strong Pok\emon\nthere.
 
-#org @gText_FerroxFacilities_Mart_StellaSibling
+#org @gText_FerroxFacilities_Center_StellaSibling
 I heard a rumour that Stella and\nIris are related.\pStella is really quiet, but Iris is\nso full of life! Could they really\lbe siblings?
 
-#org @gText_FerroxFacilities_Mart_FerroxBadge
+#org @gText_FerroxFacilities_Center_FerroxBadge
 The Ferrox Gym badge allows your\nPok\emon to use Cut while in the\lfield.\pIt's a must-have for any serious\nPok\emon trainers!
 
 // NPC Houses

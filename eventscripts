@@ -69,6 +69,7 @@ sign 5 7 0 SignScript_OlenicLab_Conservatory
 npc 5 7 0 EventScript_OlenicLab_Hawthorne
 npc 5 7 2 EventScript_OlenicLab_HawthornesConservatoryAide
 npc 5 7 3 EventScript_OlenicLab_Researcher
+npc 5 7 4 EventScript_OlenicLab_ToolsDeveloper
 
 ## NPC Houses
 npc 5 0 0 EventScript_OlenicNPCHouses_FatherOfTrainer
@@ -773,6 +774,7 @@ npc 1 90 2 EventScript_HeleoCity_PokemonFanClubSuperfan
 npc 1 90 3 EventScript_HeleoCity_PokemonFanClubSwimmer
 npc 1 90 4 EventScript_HeleoCity_PokemonFanClubMother
 npc 1 90 5 EventScript_HeleoCity_HallwayBoy
+npc 1 90 6 EventScript_HeleoCity_BlisseyTrainer
 npc 1 91 0 EventScript_HeleoCity_TerraceDad
 npc 1 91 1 EventScript_HeleoCity_TerraceMom
 npc 1 91 2 EventScript_HeleoCity_TerraceSon
@@ -2241,7 +2243,6 @@ npc 2 4 0 EventScript_TsarvosaCity_NPCHouses_BattlingFanGirl
 npc 2 4 1 EventScript_TsarvosaCity_NPCHouses_BattlingFanBoy
 npc 2 5 0 EventScript_TsarvosaCity_NPCHouses_PokeChipCrusher
 npc 2 5 1 EventScript_TsarvosaCity_NPCHouses_PokeChipCrusherFriend
-npc 2 5 2 EventScript_TsarvosaCity_NPCHouses_ToolsDeveloper
 npc 10 19 0 EventScript_TsarvosaCity_NPCHouses_IrisAndStellaMom
 npc 10 19 1 EventScript_TsarvosaCity_NPCHouses_IrisAndStellaGrandpa
 npc 12 2 0 EventScript_TsarvosaCity_NPCHouses_DevTeamCollin
