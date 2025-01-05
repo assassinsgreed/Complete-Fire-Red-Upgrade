@@ -222,8 +222,11 @@ S+
 #org @gText_Common_FoongusOrAmoongussTrap
 The item was actually a Pok\emon!\nThe startled Pok\emon attacked!
 
+#org @gText_Common_LevelCapUpdate
+[BLACK]The Level Cap has been raised to\n[GREEN][BUFFER1][BLACK].
+
 #org @gText_Common_BadgeObedience
-Pok\emon up to level [BUFFER1] will now\nobey you without fail.
+Pok\emon up to level [GREEN][BUFFER1][BLACK] will now\nobey you without fail.
 
 #org @gText_Common_StatHP
 HP
@@ -523,6 +526,9 @@ Tutorials
 #org @gText_GameCustomizationMenu_StarterSelection
 Starter Selection
 
+#org @gText_GameCustomizationMenu_LevelCaps
+Level Caps
+
 #org @gText_GameCustomizationMenu_QuickStart
 Quick Start
 
@@ -558,6 +564,21 @@ Choose which Pok\emon generation your\nStarter Pok\emon are from.\pYou may also 
 
 #org @gText_GameCustomization_StarterGenerationSaved
 Starter Generation choice saved!
+
+#org @gText_GameCustomization_LevelCapsQuestion
+You may choose to set soft or hard\nlevel caps.\pWhen soft caps are set, you may\nlevel your Pok\emon freely.\pThey will only obey your commands if\nyou have enough badges, however.\pThis is the intended experience for\nan initial playthrough.\pWhen hard caps are set, you will\nnot be able to level up past\lcertain thresholds, as determined\lby the next boss trainer.\pThis results in a more challenging\nexperience.\pWhich level capping do you prefer?
+
+#org @gText_GameCustomization_LevelCapsOption_Soft
+Soft Level Caps
+
+#org @gText_GameCustomization_LevelCapsOption_Hard
+Hard Level Caps
+
+#org @gText_GameCustomization_SoftLevelCapsTurnedOn
+Soft Level Caps are enabled!
+
+#org @gText_GameCustomization_HardLevelCapsTurnedOn
+Hard Level Caps are enabled!
 
 #org @gText_GameCustomization_QuickStartQuestion
 This option allows you to skip initial\nplot points, up to receiving your\lStarter Pok\emon.\pIt is only recommended for players in\nrepeat playthroughs, as skipped\lplot is not recapped.\pDo you want to skip initial plot\npoints?

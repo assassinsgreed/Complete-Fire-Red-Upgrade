@@ -263,6 +263,7 @@ void atk23_getexp(void)
 
 	SKIP_EXP_CALC:
 		calculatedExp = MathMax(1, calculatedExp);
+		if (FlagGet(FLAG_HARD_LEVEL_CAP) && pokeLevel >= GetCurrentLevelCap()) calculatedExp = 1; //Doesn't really gain Exp. if above level cap
 		gBattleMoveDamage = calculatedExp;
 
 		gBattleScripting.expStateTracker++;

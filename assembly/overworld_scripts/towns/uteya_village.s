@@ -1357,7 +1357,7 @@ DennisAndDee_Defeated:
     setvar 0x406D 0x1 @ Trigger overworld event with rival
     fanfare 0x13D @ Gym victory
     msgbox gText_UteyaVillage_Gym_BadgeReceived MSG_NORMAL
-    call BadgeObedienceMessage
+    call PrintUpdatedLevelCaps
     waitfanfare
     settrainerflag 475 @ Michael cannot be battled now
     settrainerflag 476 @ Leo cannot be battled now

@@ -436,6 +436,8 @@ LevelScript_ChallengingKurtis:
     fadescreen FADEOUT_BLACK
     setflag 0x4A @ Pluto grunts and admins should all disappear
     setvar PlutoStoryEventVar 0x4 @ Pluto events complete
+    checkflag 0x93B @ Hard level caps
+    if SET _call PrintUpdatedLevelCaps
     warpmuted 3 5 5 @ Warp back to Daimyn City outside the building 
     end
 

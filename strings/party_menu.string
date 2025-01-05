@@ -78,3 +78,6 @@ The Exp. Share was turned off.[PAUSE_UNTIL_PRESS]
 
 #org @gText_ExpShareTurnedOn
 The Exp. Share was turned on.[PAUSE_UNTIL_PRESS]
+
+#org @gText_LevelCapLock
+This item won't have an effect\nbecause of the level cap.[PAUSE_UNTIL_PRESS]

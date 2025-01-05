@@ -811,7 +811,7 @@ EventScript_BruccieVillageGym_LeaderAbby_Defeated:
     setflag 0x25C @ New Pokemart Stock
     fanfare 0x13D @ Gym victory
     msgbox gText_BruccieVillageGym_BadgeReceived MSG_NORMAL
-    call BadgeObedienceMessage
+    call PrintUpdatedLevelCaps
     waitfanfare
     msgbox gText_BruccieVillageGym_LeaderAbby_BadgeDescription MSG_NORMAL
     msgbox gText_BruccieVillageGym_LeaderAbby_TMReceived MSG_NORMAL

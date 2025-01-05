@@ -3176,7 +3176,7 @@ EventScript_TsarvosaCity_Gym_LeaderIris_Defeated:
     clearflag 0x04F @ Enable Iris & Stella battle in Daimyn City restaurant
     fanfare 0x13D @ Gym victory
     msgbox gText_TsarvosaCity_Gym_BadgeReceived MSG_NORMAL
-    call BadgeObedienceMessage
+    call PrintUpdatedLevelCaps
     waitfanfare
     msgbox gText_TsarvosaCity_Gym_LeaderIris_BadgeDescription MSG_NORMAL
     msgbox gText_TsarvosaCity_Gym_LeaderIris_TMReceived MSG_NORMAL

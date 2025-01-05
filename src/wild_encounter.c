@@ -142,7 +142,6 @@ static u8 ChooseWildMonLevel(const struct WildPokemon* wildPokemon)
 	}
 
 	#ifdef FLAG_HARD_LEVEL_CAP
-	extern u8 GetCurrentLevelCap(void); //Must be implemented yourself
 	if (FlagGet(FLAG_HARD_LEVEL_CAP))
 	{
 		u8 levelCap = GetCurrentLevelCap();

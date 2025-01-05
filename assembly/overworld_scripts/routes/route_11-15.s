@@ -181,6 +181,8 @@ PostRonaldBattle:
     playse 0x9 @ Exit room
     waitse 
     fadedefaultbgm
+    checkflag 0x93B @ Hard level caps
+    if SET _call PrintUpdatedLevelCaps
     fadescreen FADEIN_BLACK
     pause DELAY_HALFSECOND
     applymovement 0x1 m_RefinerWalksToPlayer
