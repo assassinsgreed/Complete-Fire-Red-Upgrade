@@ -12407,6 +12407,46 @@ const struct TrainerMonItemCustomMoves sParty_AscensionTower_TitleDefense_Kurtis
     },
 };
 // #endregion
+// #region Ferrox Village (Postgame)
+const struct TrainerMonNoItemCustomMoves sParty_FerroxVillage_NurseBrianne[] = {
+    {
+        .lvl = 1,
+        .species = SPECIES_BLISSEY,
+        .moves = { MOVE_POUND, MOVE_SING, MOVE_HEALPULSE, MOVE_LIGHTSCREEN },
+        .ability = Ability_1 // Natural Cure
+    },
+    {
+        .lvl = 1,
+        .species = SPECIES_BLISSEY,
+        .moves = { MOVE_POUND, MOVE_SING, MOVE_HEALPULSE, MOVE_LIGHTSCREEN },
+        .ability = Ability_1 // Natural Cure
+    },
+    {
+        .lvl = 1,
+        .species = SPECIES_BLISSEY,
+        .moves = { MOVE_POUND, MOVE_SING, MOVE_HEALPULSE, MOVE_LIGHTSCREEN },
+        .ability = Ability_1 // Natural Cure
+    },
+    {
+        .lvl = 1,
+        .species = SPECIES_BLISSEY,
+        .moves = { MOVE_POUND, MOVE_SING, MOVE_HEALPULSE, MOVE_LIGHTSCREEN },
+        .ability = Ability_1 // Natural Cure
+    },
+    {
+        .lvl = 1,
+        .species = SPECIES_BLISSEY,
+        .moves = { MOVE_POUND, MOVE_SING, MOVE_HEALPULSE, MOVE_LIGHTSCREEN },
+        .ability = Ability_1 // Natural Cure
+    },
+    {
+        .lvl = 1,
+        .species = SPECIES_BLISSEY,
+        .moves = { MOVE_POUND, MOVE_SING, MOVE_HEALPULSE, MOVE_LIGHTSCREEN },
+        .ability = Ability_1 // Natural Cure
+    },
+};
+// #endregion
 // #endregion
 
 #define NO_NAME                                                                                      \
@@ -19700,6 +19740,20 @@ const struct Trainer gTrainers[] = {
         .partySize = NELEMS(sParty_Rival_PostgameExhibitionBattle_SecondaryTeam),
         .party = {.ItemCustomMoves = sParty_Rival_PostgameExhibitionBattle_SecondaryTeam}
     },
+    // #endregion
+    // #region Ferrox Village (Postgame)
+    [TRAINER_FERROX_VILLAGE_NURSE_BRIANNE] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .trainerClass = CLASS_NURSE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .trainerPic = TRAINER_PIC_NURSE,
+        .trainerName = {_B, _r, _i, _a, _n, _n, _e, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = NELEMS(sParty_FerroxVillage_NurseBrianne),
+        .party = {.NoItemCustomMoves = sParty_FerroxVillage_NurseBrianne}
+    }
     // #endregion
     // #endregion
 };

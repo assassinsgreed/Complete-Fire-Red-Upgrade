@@ -254,6 +254,95 @@ SignScript_OlenicTown_HawthornesConservatory_WaterAreaSign:
     msgbox gText_OlenicTown_HawthornesConservatory_WaterAreaSign MSG_SIGN
     end
 
+.global EventScript_OlenicLab_ToolsDeveloper
+EventScript_OlenicLab_ToolsDeveloper:
+    lock
+    faceplayer
+    msgbox gText_OlenicLab_ToolDeveloper_Intro MSG_NORMAL
+    checkflag 0x4BC @ Beat Selene, became champion
+    if NOT_SET _goto ToolsDeveloper_NotChampion
+    msgbox gText_OlenicLab_ToolDeveloper_PlayerIsChampion MSG_NORMAL
+PromptForTool:
+    msgbox gText_OlenicLab_ToolDeveloper_PromptForTool MSG_NORMAL
+    multichoiceoption gText_OlenicLab_ToolDeveloper_PokeVialChoice 0
+	multichoiceoption gText_OlenicLab_ToolDeveloper_InfiniteRepelChoice 1
+	multichoiceoption gText_OlenicLab_ToolDeveloper_ADMChoice 2
+	multichoiceoption gText_OlenicLab_ToolDeveloper_ExitChoice 3
+	multichoice 0x0 0x0 FOUR_MULTICHOICE_OPTIONS FALSE
+	switch LASTRESULT
+    case 0, ToolDeveloper_PokeVial _goto
+    case 1, ToolDeveloper_InfiniteRepel _goto
+    case 2, ToolDeveloper_ADM _goto
+    case 3, ToolDeveloper_Exit _goto
+    goto ToolDeveloper_Exit @ If player presses B
+
+ToolsDeveloper_NotChampion:
+    npcchatwithmovement gText_OlenicLab_ToolDeveloper_PlayerNotChampion m_LookLeft
+    end
+
+ToolsDeveloper_PurchaseTool:
+    callasm StorePokeChipCount
+    buffernumber 0x0 0x8005
+    msgbox gText_OlenicLab_ToolDeveloper_ToolPurchasePrompt MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto ToolDeveloper_Exit
+    compare 0x8005 30
+    if lessthan _goto ToolsDeveloper_NotEnoughPokeChips
+    msgbox gText_OlenicLab_ToolDeveloper_ToolPurchaseHaveEnoughChips MSG_NORMAL
+    playse 0xF8 @ Money SE
+    waitse
+    removeitem ITEM_POKE_CHIP 30
+    msgbox gText_OlenicLab_ToolDeveloper_ToolPurchaseStarting MSG_NORMAL
+    fadescreen FADEOUT_BLACK
+    msgbox gText_OlenicLab_ToolDeveloper_ToolPurchaseWorking MSG_NORMAL
+    msgbox gText_OlenicLab_ToolDeveloper_ToolPurchaseWorking2 MSG_NORMAL
+    fadescreen FADEIN_BLACK
+    return
+
+ToolsDeveloper_NotEnoughPokeChips:
+    npcchatwithmovement gText_OlenicLab_ToolDeveloper_ToolPurchaseNotEnoughChips m_LookLeft
+    end
+
+ToolDeveloper_PokeVial:
+    msgbox gText_OlenicLab_ToolDeveloper_PokeVialDescription MSG_NORMAL
+    checkflag 0x938 @ PokeVial active in menu
+    if SET _goto PromptForTool
+    call ToolsDeveloper_PurchaseTool
+    msgbox gText_OlenicLab_ToolDeveloper_ToolPurchaseComplete MSG_NORMAL
+    setflag 0x938 @ PokeVial active in menu
+    setvar 0x40AE 0x3 @ Fully fill the pokevial
+    obtainitem ITEM_POKE_VIAL 0x1
+    msgbox gText_OlenicLab_ToolDeveloper_CommentingOnToolCreation MSG_NORMAL
+    goto PromptForTool
+
+ToolDeveloper_InfiniteRepel:
+    msgbox gText_OlenicLab_ToolDeveloper_InfiniteRepelDescription MSG_NORMAL
+    checkflag 0x937 @ Obtained Infinite Repel
+    if SET _goto PromptForTool
+    call ToolsDeveloper_PurchaseTool
+    msgbox gText_OlenicLab_ToolDeveloper_ToolPurchaseComplete MSG_NORMAL
+    setflag 0x937 @ Obtained Infinite Repel
+    obtainitem ITEM_INFINITE_REPEL 0x1
+    msgbox gText_OlenicLab_ToolDeveloper_CommentingOnToolCreation MSG_NORMAL
+    goto PromptForTool
+
+ToolDeveloper_ADM:
+    msgbox gText_OlenicLab_ToolDeveloper_ADMDescription MSG_NORMAL
+    checkflag 0x939 @ Obtained ADM
+    if SET _goto PromptForTool
+    call ToolsDeveloper_PurchaseTool
+    msgbox gText_OlenicLab_ToolDeveloper_ADMPurchaseComplete MSG_NORMAL
+    setflag 0x939 @ Obtained ADM
+    fanfare 0x101 @ Got Item / Level up
+    obtainitem ITEM_ADM 0x1
+    waitfanfare
+    msgbox gText_OlenicLab_ToolDeveloper_CommentingOnToolCreation MSG_NORMAL
+    goto PromptForTool
+
+ToolDeveloper_Exit:
+    npcchatwithmovement gText_OlenicLab_ToolDeveloper_ChoseQuit m_LookLeft
+    end
+
 m_HawthorneMeetsPlayer: .byte walk_up, walk_up, walk_right, walk_right, walk_right, walk_down, walk_down, end_m
 m_HawthorneGoesToPokedex: .byte walk_up, walk_right, end_m
 m_HawthorneReturnsToPlayer: .byte walk_left, walk_down, end_m

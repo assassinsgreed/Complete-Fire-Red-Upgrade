@@ -170,6 +170,7 @@ EventScript_AnthraTown_MomRestPrompt:
 	closeonkeypress
 	call PlayerHeal
 	incrementgamestat 16
+	setvar 0x40AE 0x3 @ Fully charge the Poke Vial
 	msgbox gText_AnthraTown_MomPokemonAreHealthy MSG_KEEPOPEN
 	release
 	end

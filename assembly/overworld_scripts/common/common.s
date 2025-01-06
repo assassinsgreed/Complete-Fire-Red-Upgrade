@@ -939,6 +939,7 @@ GiveCasualModeItems:
     setflag 0x24F @ For Mach Bike
     setflag 0x252 @ For Item Finder
     setflag 0x277 @ For Poke Chip Charm
+    setvar 0x40AE 0x3 @ Fully charge the Poke Vial
     addmoney 2000 @ 5000 total
     setvar 0x4000 0x0 @ Reset control var
     return
