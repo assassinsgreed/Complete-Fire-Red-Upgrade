@@ -88,6 +88,10 @@ extern const u16 StatuePal[];
 extern const u16 JirachiPal[];
 extern const u16 CosmogPal[];
 extern const u16 VolcanionPal[];
+extern const u16 UltraWormholePal[];
+extern const u16 DuskManeNecrozmaPal[];
+extern const u16 DawnWingsNecrozmaPal[];
+extern const u16 UltraNecrozmaPal[];
 
 #ifdef UNBOUND
 //extern const u16 MalePlayer_Trainer_Outfit_RedPal[];
@@ -382,6 +386,10 @@ static const u16* sPlayerMarlonOutfitColours[] =
 		{ E4JennaPal, 0x1239 },
 		{ E4ThomasPal, 0x123A },
 		{ VolcanionPal, 0x123B },
+		{ UltraWormholePal, 0x123C },
+		{ DuskManeNecrozmaPal, 0x123D },
+		{ DawnWingsNecrozmaPal, 0x123E },
+		{ UltraNecrozmaPal, 0x123F },
 		{ NULL, 0x11FF }
 	};
 	const struct SpritePalette* const gObjectEventSpritePalettesSwitcher[255] = {

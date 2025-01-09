@@ -77,6 +77,10 @@ extern const u8 JirachiTiles[];
 extern const u8 JirachiDormantTiles[];
 extern const u8 CosmogTiles[];
 extern const u8 VolcanionTiles[];
+extern const u8 UltraWormholeTiles[];
+extern const u8 DuskManeNecrozmaTiles[];
+extern const u8 DawnWingsNecrozmaTiles[];
+extern const u8 UltraNecrozmaTiles[];
 
 #define EVENT_OBJ_PAL_TAG_NONE 0x1102
 #define gEventObjectBaseOam_16x16 ((const struct OamData*) 0x83A36F8)
@@ -969,6 +973,58 @@ static const struct SpriteFrameImage Table_Volcanion[] =
     overworld_frame(VolcanionTiles, 4, 4, 6),
     overworld_frame(VolcanionTiles, 4, 4, 7),
     overworld_frame(VolcanionTiles, 4, 4, 8),
+};
+
+static const struct SpriteFrameImage Table_UltraWormhole[] =
+{
+    overworld_frame(UltraWormholeTiles, 8, 8, 0),
+    overworld_frame(UltraWormholeTiles, 8, 8, 1),
+    overworld_frame(UltraWormholeTiles, 8, 8, 2),
+    overworld_frame(UltraWormholeTiles, 8, 8, 3),
+    overworld_frame(UltraWormholeTiles, 8, 8, 4),
+    overworld_frame(UltraWormholeTiles, 8, 8, 5),
+    overworld_frame(UltraWormholeTiles, 8, 8, 6),
+    overworld_frame(UltraWormholeTiles, 8, 8, 7),
+    overworld_frame(UltraWormholeTiles, 8, 8, 8),
+};
+
+static const struct SpriteFrameImage Table_DuskManeNecrozma[] =
+{
+    overworld_frame(DuskManeNecrozmaTiles, 8, 8, 0),
+    overworld_frame(DuskManeNecrozmaTiles, 8, 8, 1),
+    overworld_frame(DuskManeNecrozmaTiles, 8, 8, 2),
+    overworld_frame(DuskManeNecrozmaTiles, 8, 8, 3),
+    overworld_frame(DuskManeNecrozmaTiles, 8, 8, 4),
+    overworld_frame(DuskManeNecrozmaTiles, 8, 8, 5),
+    overworld_frame(DuskManeNecrozmaTiles, 8, 8, 6),
+    overworld_frame(DuskManeNecrozmaTiles, 8, 8, 7),
+    overworld_frame(DuskManeNecrozmaTiles, 8, 8, 8),
+};
+
+static const struct SpriteFrameImage Table_DawnWingsNecrozma[] =
+{
+    overworld_frame(DawnWingsNecrozmaTiles, 8, 8, 0),
+    overworld_frame(DawnWingsNecrozmaTiles, 8, 8, 1),
+    overworld_frame(DawnWingsNecrozmaTiles, 8, 8, 2),
+    overworld_frame(DawnWingsNecrozmaTiles, 8, 8, 3),
+    overworld_frame(DawnWingsNecrozmaTiles, 8, 8, 4),
+    overworld_frame(DawnWingsNecrozmaTiles, 8, 8, 5),
+    overworld_frame(DawnWingsNecrozmaTiles, 8, 8, 6),
+    overworld_frame(DawnWingsNecrozmaTiles, 8, 8, 7),
+    overworld_frame(DawnWingsNecrozmaTiles, 8, 8, 8),
+};
+
+static const struct SpriteFrameImage Table_UltraNecrozma[] =
+{
+    overworld_frame(UltraNecrozmaTiles, 8, 8, 0),
+    overworld_frame(UltraNecrozmaTiles, 8, 8, 1),
+    overworld_frame(UltraNecrozmaTiles, 8, 8, 2),
+    overworld_frame(UltraNecrozmaTiles, 8, 8, 3),
+    overworld_frame(UltraNecrozmaTiles, 8, 8, 4),
+    overworld_frame(UltraNecrozmaTiles, 8, 8, 5),
+    overworld_frame(UltraNecrozmaTiles, 8, 8, 6),
+    overworld_frame(UltraNecrozmaTiles, 8, 8, 7),
+    overworld_frame(UltraNecrozmaTiles, 8, 8, 8),
 };
 
 // #region MC
@@ -2374,3 +2430,82 @@ const struct EventObjectGraphicsInfo GraphicsInfo_Volcanion =
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 
+const struct EventObjectGraphicsInfo GraphicsInfo_UltraWormhole =
+{
+    .tileTag = 0xFFFF,
+    .paletteTag1 = 0x123C,
+    .paletteTag2 = EVENT_OBJ_PAL_TAG_NONE,
+    .size = (64 * 64) / 2,
+    .width = 64,
+    .height = 64,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .disableReflectionPaletteLoad = FALSE,
+    .tracks = TRACKS_NONE,
+    .gender = MALE,
+    .oam = gEventObjectBaseOam_64x64,
+    .subspriteTables = gEventObjectSpriteOamTables_64x64,
+    .anims = gEventObjectImageAnimTable_Standard,
+    .images = Table_UltraWormhole,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+const struct EventObjectGraphicsInfo GraphicsInfo_DuskManeNecrozma =
+{
+    .tileTag = 0xFFFF,
+    .paletteTag1 = 0x123D,
+    .paletteTag2 = EVENT_OBJ_PAL_TAG_NONE,
+    .size = (64 * 64) / 2,
+    .width = 64,
+    .height = 64,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .disableReflectionPaletteLoad = FALSE,
+    .tracks = TRACKS_NONE,
+    .gender = MALE,
+    .oam = gEventObjectBaseOam_64x64,
+    .subspriteTables = gEventObjectSpriteOamTables_64x64,
+    .anims = gEventObjectImageAnimTable_Standard,
+    .images = Table_DuskManeNecrozma,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+const struct EventObjectGraphicsInfo GraphicsInfo_DawnWingsNecrozma =
+{
+    .tileTag = 0xFFFF,
+    .paletteTag1 = 0x123E,
+    .paletteTag2 = EVENT_OBJ_PAL_TAG_NONE,
+    .size = (64 * 64) / 2,
+    .width = 64,
+    .height = 64,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .disableReflectionPaletteLoad = FALSE,
+    .tracks = TRACKS_NONE,
+    .gender = MALE,
+    .oam = gEventObjectBaseOam_64x64,
+    .subspriteTables = gEventObjectSpriteOamTables_64x64,
+    .anims = gEventObjectImageAnimTable_Standard,
+    .images = Table_DawnWingsNecrozma,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+const struct EventObjectGraphicsInfo GraphicsInfo_UltraNecrozma =
+{
+    .tileTag = 0xFFFF,
+    .paletteTag1 = 0x123F,
+    .paletteTag2 = EVENT_OBJ_PAL_TAG_NONE,
+    .size = (64 * 64) / 2,
+    .width = 64,
+    .height = 64,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .disableReflectionPaletteLoad = FALSE,
+    .tracks = TRACKS_NONE,
+    .gender = MALE,
+    .oam = gEventObjectBaseOam_64x64,
+    .subspriteTables = gEventObjectSpriteOamTables_64x64,
+    .anims = gEventObjectImageAnimTable_Standard,
+    .images = Table_UltraNecrozma,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};

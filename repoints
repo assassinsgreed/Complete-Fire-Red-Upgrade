@@ -390,6 +390,8 @@ GraphicsInfo_Skier 839FF48
 GraphicsInfo_E4Thomas 839FF4C
 ## Replace Deoxys Triangle (106)
 GraphicsInfo_CactusAndVictoryFlag 839FF58
+## Replace Lapras (107)
+GraphicsInfo_UltraWormhole 839FF5C
 ## Replace SS Anne (108)
 GraphicsInfo_Truck 839FF60
 ## Replace Spearow (110)
@@ -432,6 +434,12 @@ GraphicsInfo_ZapdosG 839FFD0
 GraphicsInfo_MoltresG 839FFD4
 ## Replace Articuno (138)
 GraphicsInfo_ArticunoG 839FFD8
+## Replace Entei (141)
+GraphicsInfo_DuskManeNecrozma 839FFE4
+## Replace Suicune (142)
+GraphicsInfo_DawnWingsNecrozma 839FFE8
+## Replace Raikou (143)
+GraphicsInfo_UltraNecrozma 839FFEC
 ## Replace Lugia (144)
 GraphicsInfo_Kyogre 839FFF0
 ## Replace Ho-oh (145)
