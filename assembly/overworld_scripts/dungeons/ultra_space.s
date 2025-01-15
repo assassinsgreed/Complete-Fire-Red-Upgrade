@@ -252,6 +252,8 @@ m_PlayerWalksIntoTown: .byte walk_right, walk_right, walk_right, end_m
 
 ## Ultra Space Wilds
 .equ Cosmog, 0x1
+.equ UltraEpisodeCosmog, 0x2
+.equ UltraEpisodeTakenCosmog, 0x3
 
 .global MapScript_UltraSpaceWilds
 MapScript_UltraSpaceWilds:
@@ -414,6 +416,29 @@ SignScript_UltraSpaceWilds_BridgeSign:
     msgbox gText_UltraSpaceWilds_BridgeSign MSG_SIGN
     end
 
+.global MapScript_UltraSpaceWilds_AltarOfEclipse
+MapScript_UltraSpaceWilds_AltarOfEclipse:
+    mapscript MAP_SCRIPT_ON_LOAD HandleUltraEpisodeCosmogVisibility
+    mapscript MAP_SCRIPT_ON_RESUME HideLegendary
+    .byte MAP_SCRIPT_TERMIN
+
+HandleUltraEpisodeCosmogVisibility:
+    compare 0x4073 0x3 @ Ultra Episode initial cutscene concluded
+    if notequal _goto End
+    movesprite2 UltraEpisodeCosmog 0x9 0xC @ Permanent location
+    end
+
+HideLegendary:
+    setvar LASTRESULT SPECIES_COSMOG
+    callasm CheckIfCaught
+    compare LASTRESULT TRUE
+    if equal _goto HideCosmog
+    end
+
+HideCosmog:
+    hidesprite UltraEpisodeCosmog
+    end
+
 .global SignScript_UltraSpaceWilds_AltarOfEclipseSign
 SignScript_UltraSpaceWilds_AltarOfEclipseSign:
     msgbox gText_UltraSpaceWilds_AltarOfEclipseSign MSG_SIGN
@@ -466,6 +491,135 @@ PlayerRunLeft:
     waitmovement PLAYER
     return
 
+.global TileScript_UltraSpaceWilds_AltarOfEclipse_UltraEpisodeIntroduction
+TileScript_UltraSpaceWilds_AltarOfEclipse_UltraEpisodeIntroduction:
+    lock
+    getplayerpos 0x4000 0x4001
+    compare 0x4000 0xA
+    if equal _call PlayerRunLeft
+    applymovement PLAYER m_LookUp
+    applymovement UltraEpisodeCosmog m_Surprise
+    applymovement UltraEpisodeTakenCosmog m_Surprise
+    playse 0x15 @ Exclaim
+    waitse
+    cry SPECIES_COSMOG 0x0
+    msgbox gText_UltraSpaceWilds_CosmogPew MSG_NORMAL
+    msgbox gText_UltraSpaceWilds_AltarOfEclipse_CosmogSighted MSG_NORMAL
+    applymovement PLAYER m_WalkUp
+    pause DELAY_HALFSECOND
+    applymovement UltraEpisodeCosmog m_UltraEpisodeCosmogRunsAtAltarOfEclipse
+    applymovement UltraEpisodeTakenCosmog m_UltraEpisodeTakenCosmogRunsAtAltarOfEclipse
+    pause 0x5 @ Pause quarter second
+    @ Note: The player MUST finish animating after the Cosmogs or else the releaseall hack below will not animate them
+    applymovement PLAYER m_UltraEpisodePlayerChasesCosmogs
+    waitmovement ALLEVENTS
+    releaseall @ Hackaround - releaseall to reanimate cosmogs, but keep player locked with messagebox
+    pause DELAY_HALFSECOND
+    msgbox gText_UltraSpaceWilds_AltarOfEclipse_CosmogPreparingToCatch MSG_NORMAL
+    applymovement PLAYER m_WalkUp
+    playse 0x24 @ Ice crack
+    waitse
+    pause DELAY_HALFSECOND
+    playse 0x24 @ Ice crack
+    waitse
+    pause DELAY_HALFSECOND
+    playse 0x23 @ Ice shatter
+    waitmovement PLAYER
+    fadescreenspeed FADEOUT_WHITE 0x96 @ fast fade
+    showsprite 4 @ Show wormhole
+    fadescreenspeed FADEIN_WHITE 0x80 @ Slower fade
+    pause 0x5 @ Pause quarter second
+    playbgm 0x181 @ Necrozma appearance
+    applymovement PLAYER m_Surprise
+    applymovement UltraEpisodeCosmog m_Surprise
+    applymovement UltraEpisodeTakenCosmog m_Surprise
+    playse 0x15 @ Exclaim
+    msgbox gText_UltraSpaceWilds_AltarOfEclipse_UltraWormholeOpened MSG_NORMAL
+    cry SPECIES_COSMOG 0x0
+    msgbox gText_UltraSpaceWilds_CosmogPew MSG_NORMAL
+    applymovement UltraEpisodeCosmog m_UltraEpisodeCosmogPanic
+    playse 0x52 @ Elevator
+    applymovement UltraEpisodeTakenCosmog m_UltraEpisodeTakenCosmogFloatUp
+    waitmovement ALLEVENTS
+    pause DELAY_HALFSECOND
+    waitse
+    hidesprite UltraEpisodeTakenCosmog
+    setflag 0x74 @ Hide Taken Cosmog
+    applymovement UltraEpisodeCosmog m_Surprise
+    playse 0x15 @ Exclaim
+    waitse
+    pause DELAY_HALFSECOND
+    playse 0x24 @ Ice crack
+    waitse
+    pause DELAY_HALFSECOND
+    playse 0x24 @ Ice crack
+    waitse
+    pause DELAY_HALFSECOND
+    playse 0x23 @ Ice shatter
+    fadescreenspeed FADEOUT_WHITE 0x96 @ fast fade
+    hidesprite 4 @ Hide wormhole
+    fadescreenspeed FADEIN_WHITE 0x80 @ Slower fade
+    pause DELAY_HALFSECOND
+    cry SPECIES_COSMOG 0x3 @ Lower pitch, fainted sound
+    msgbox gText_UltraSpaceWilds_AltarOfEclipse_UltraWormholeCosmogCry MSG_NORMAL
+    applymovement UltraEpisodeCosmog m_LookDown
+    fadedefaultbgm
+    msgbox gText_UltraSpaceWilds_AltarOfEclipse_UltraWormholeClosed MSG_NORMAL
+    movesprite2 UltraEpisodeCosmog 0x9 0xC @ Permanent location
+    setvar 0x4073 0x3 @ Tile event concluded
+    end
+
+.global EventScript_UltraSpaceWilds_Cosmog
+EventScript_UltraSpaceWilds_Cosmog:
+    lock
+    faceplayer
+    applymovement Cosmog m_Surprise
+    playse 0x15 @ Exclaim
+    pause DELAY_HALFSECOND
+    cry SPECIES_COSMOG 0x0
+    msgbox gText_UltraSpaceWilds_CosmogPew MSG_NORMAL
+    waitcry
+    msgbox gText_UltraSpaceWilds_AltarOfEclipse_CosmogFight MSG_NORMAL
+    setvar 0x4073 0x4 @ Cosmog challenged
+    setflag 0x90B @ Wild custom moves, cleared at the end of battle
+    setvar 0x8000 MOVE_SPLASH
+    setvar 0x8001 MOVE_NONE
+    setvar 0x8002 MOVE_NONE
+    setvar 0x8003 MOVE_NONE
+    setflag 0x90C @ Smarter wild battle, cleared at the end of battle
+    setwildbattle SPECIES_COSMOG 70 ITEM_NONE
+    setflag 0x807
+    special 0x138 @ Setup a legendary encounter (blurred screen transition)
+    waitstate
+    clearflag 0x807
+    special2 LASTRESULT 0xB4 @ Check the result of the battle
+    compare LASTRESULT 0x1 @ Defeated in battle
+    if equal _goto DefeatedOrFledFromCosmog
+    compare LASTRESULT 0x4 @ Fled from battle
+    if equal _goto DefeatedOrFledFromCosmog
+    compare LASTRESULT 0x7 @ Caught
+    if equal _call CaughtCosmog
+    end
+
+DefeatedOrFledFromCosmog:
+    cry SPECIES_COSMOG 0x0
+    msgbox gText_UltraSpaceWilds_CosmogPew MSG_NORMAL
+    waitcry
+    pause DELAY_HALFSECOND
+    playse 0x51 @ Thunder2
+    fadescreenspeed FADEOUT_WHITE 0x96 @ fast fade
+    applymovement LASTTALKED m_HideSprite
+    hidesprite LASTTALKED
+    setflag 0x06E @ Cosmog hidden
+    fadescreenspeed FADEIN_WHITE 0x64 @ Slow fade
+    msgbox gText_UltraSpaceWilds_AltarOfEclipse_CosmogDefeatedOrFled MSG_NORMAL
+    end
+
+CaughtCosmog:
+    @ Cosmog hidden in map resume script
+    msgbox gText_UltraSpaceWilds_AltarOfEclipse_CosmogCaught MSG_NORMAL
+    return
+
 m_CosmogRunsFirstEncounter: .byte run_up, run_up, run_up, run_up, run_up, run_up, walk_down_onspot, end_m
 m_PlayerAndRivalChaseCosmogFirstEncounter: .byte run_right, run_right, run_right, run_right, run_right, end_m
 m_CosmogRunsSecondEncounterJump: .byte jump_2_down, end_m
@@ -477,6 +631,11 @@ m_CosmogRunsFourthEncounterLeft: .byte run_left, run_left, run_left, run_left, e
 m_CosmogRunsFourthEncounterDown: .byte run_down, run_down, run_down, run_down, run_down, run_down, end_m
 m_CosmogRunsAtAltarOfEclipse: .byte run_up, run_up, run_left, run_up, run_up, run_up, run_up, run_up, run_right, run_right, walk_down_onspot, end_m
 m_PlayerRunsAtAltarOfEclipse: .byte run_up, run_up, run_left, run_up, run_up, run_up, run_up, run_right, run_up, run_right, look_up, end_m
+m_UltraEpisodeCosmogRunsAtAltarOfEclipse: .byte run_up, run_up, run_left, run_up, run_up, run_up, run_up, run_up, run_right, look_down, end_m
+m_UltraEpisodeTakenCosmogRunsAtAltarOfEclipse: .byte run_up, run_up, run_right, run_up, run_up, run_up, run_up, run_up, run_left, look_down, end_m
+m_UltraEpisodePlayerChasesCosmogs: .byte walk_up, run_up, run_left, run_up, run_up, run_up, run_up, run_right, look_up, end_m
+m_UltraEpisodeCosmogPanic: .byte look_right, jump_onspot_right, jump_onspot_right, pause_long, jump_onspot_right, jump_onspot_right, pause_long, jump_onspot_right, jump_onspot_right, pause_long, jump_onspot_right, jump_onspot_right, pause_long, jump_onspot_right, jump_onspot_right, pause_long, end_m
+m_UltraEpisodeTakenCosmogFloatUp: .byte walk_down_slow, pause_long, walk_down_very_slow, pause_long, pause_long, pause_long, pause_long, pause_long, lock_facing, walk_up_very_slow, walk_up_very_slow, walk_up_very_slow, end_m
 m_CosmogBigSurprise: .byte say_double_exclaim, end_m
 
 ## Ultra Space Hoenn

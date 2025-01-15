@@ -761,6 +761,7 @@ LevelScripts_EmptyWorld_InterdimensionalResearchFacility_StoryEvents:
 	.hword LEVEL_SCRIPT_TERMIN
 
 LevelScript_InterdimensionalResearchFacilityStory:
+    setflag 0x77 @ Hide Taken Cosmog in ultra space
     special 0xE1 @ Check if player has a follower
     compare LASTRESULT TRUE
     if equal _call StopRivalFollower

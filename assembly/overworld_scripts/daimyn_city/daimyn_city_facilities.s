@@ -8,6 +8,8 @@
 .equ StoryEventVar, 0x4054
 .equ FlagHideRival, 0x03C
 .equ SpriteRival, 0x2
+.equ Sakura, 0x7
+.equ PCResearcher, 0x1
 
 .global MapScript_DaimynCity_GuardHouseWest
 MapScript_DaimynCity_GuardHouseWest:
@@ -232,10 +234,221 @@ PokeballTraveller_NotEnoughMoney:
     npcchatwithmovement gText_DaimynCityFacilities_PokemonCenter_TravellingMan_NotEnoughMoney m_LookUp
     end
 
+.global MapScripts_InterdimensionalResearchFacility
+MapScripts_InterdimensionalResearchFacility:
+    mapscript MAP_SCRIPT_ON_LOAD MapScripts_InterdimensionalResearchFacility_MoveSakuraForUltraEpisodeInitialEvents
+    mapscript MAP_SCRIPT_ON_FRAME_TABLE LevelScripts_InterdimensionalResearchFacility
+	.byte MAP_SCRIPT_TERMIN
+
+MapScripts_InterdimensionalResearchFacility_MoveSakuraForUltraEpisodeInitialEvents:
+    compare 0x4073 0x1
+    if notequal _goto End
+    movesprite2 0x7 0xC 0xA @ Move Sakura above player (permanent, because she is otherwise out of in-memory npcs)
+    end
+
+LevelScripts_InterdimensionalResearchFacility:
+    levelscript 0x4073 0x1 LevelScript_InterdimensionalResearchFacility_UltraEpisode_InitialEvents
+    levelscript 0x4073 0x4 LevelScript_InterdimensionalResearchFacility_UltraEpisode_PostCosmogEvents
+    .hword LEVEL_SCRIPT_TERMIN
+
+LevelScript_InterdimensionalResearchFacility_UltraEpisode_InitialEvents:
+    pause DELAY_HALFSECOND
+    applymovement Sakura m_SakuraPacesLeft
+    waitmovement Sakura
+    msgbox gText_UltraEpisode_Intro_SakuraPondering MSG_NORMAL
+    applymovement Sakura m_SakuraPacesRight
+    waitmovement Sakura
+    applymovement Sakura m_SakuraPacesRight
+    waitmovement Sakura
+    msgbox gText_UltraEpisode_Intro_SakuraPondering2 MSG_NORMAL
+    applymovement Sakura m_SakuraPacesLeft
+    waitmovement Sakura
+    applymovement Sakura m_LookDown
+    pause DELAY_HALFSECOND
+    applymovement Sakura m_Surprise
+    playse 0x15 @ Exclaim
+    msgbox gText_UltraEpisode_Intro_SakuraAcknowledgesPlayer MSG_NORMAL
+    applymovement Sakura m_SakuraApproachesPlayer
+    waitmovement Sakura
+    msgbox gText_UltraEpisode_Intro_SakuraAltarOfEclipseQuestion MSG_YESNO
+    compare LASTRESULT YES
+    if equal _call UltraEpisode_Intro_RememberAltarOfEclipse
+    if notequal _call UltraEpisode_Intro_DoNotRememberAltarOfEclipse
+    applymovement Sakura m_WalkLeft
+    msgbox gText_UltraEpisode_Intro_Sakura_MentioningReadings MSG_NORMAL
+    applymovement Sakura m_WalkRight
+    waitmovement Sakura
+    applymovement Sakura m_WalkRight
+    msgbox gText_UltraEpisode_Intro_Sakura_ExtrapolatingOnFindings MSG_NORMAL
+    applymovement Sakura m_WalkLeft
+    waitmovement Sakura
+    applymovement Sakura m_LookDown
+    msgbox gText_UltraEpisode_Intro_Sakura_ConcludesFindings MSG_NORMAL
+    obtainitem ITEM_BEAST_BALL 5
+    msgbox gText_UltraEpisode_Intro_Sakura_GivesBeastBalls MSG_NORMAL
+    applymovement Sakura m_LookLeft
+    applymovement PLAYER m_LookLeft
+    special CAMERA_START
+    applymovement CAMERA m_UltraEpisodeCamera_MoveToResearcher
+    waitmovement CAMERA
+    special CAMERA_END
+    msgbox gText_UltraEpisode_Intro_Sakura_CommentsOnBuyingBeastBalls MSG_NORMAL
+    special CAMERA_START
+    applymovement CAMERA m_UltraEpisodeCamera_MoveToPlayer
+    waitmovement CAMERA
+    special CAMERA_END
+    applymovement Sakura m_LookDown
+    applymovement PLAYER m_LookUp
+    msgbox gText_UltraEpisode_Intro_Sakura_PreparingToStart MSG_NORMAL
+    applymovement Sakura m_SakuraReturnToMachine
+    waitmovement Sakura
+    movesprite Sakura 0x3 0x5 @ Move Sakura back to her original position (while in map)
+    movesprite2 Sakura 0x3 0x5 @ Move Sakura back to her original position (permanently)
+    setvar 0x4073 0x2 @ Ultra Episode has started
+    clearflag 0x06E @ Show Challengable Cosmog at Altar of Eclipse
+    clearflag 0x77 @ Show Taken Cosmog in ultra space
+    end
+
+UltraEpisode_Intro_RememberAltarOfEclipse:
+    msgbox gText_UltraEpisode_Intro_Sakura_PlayerRecallsAltar MSG_NORMAL
+    return
+
+UltraEpisode_Intro_DoNotRememberAltarOfEclipse:
+    msgbox gText_UltraEpisode_Intro_Sakura_PlayerDoesNotRecallAltar MSG_NORMAL
+    return
+
+LevelScript_InterdimensionalResearchFacility_UltraEpisode_PostCosmogEvents:
+    applymovement Sakura m_LookDown
+    msgbox gText_UltraEpisode_PostCosmog_Sakura_WelcomeBack MSG_NORMAL
+    applymovement Sakura m_SakuraWelcomesPlayerBackAfterCosmog
+    waitmovement Sakura
+    applymovement PLAYER m_LookRight
+    msgbox gText_UltraEpisode_PostCosmog_Sakura_AsksAboutSource MSG_NORMAL
+    applymovement Sakura m_Surprise
+    playse 0x15 @ Exclaim
+    msgbox gText_UltraEpisode_PostCosmog_Sakura_LearnsOfWormholes MSG_NORMAL
+    applymovement Sakura m_LookDown
+    msgbox gText_UltraEpisode_PostCosmog_Sakura_Pondering MSG_NORMAL
+    applymovement Sakura m_LookLeft
+    msgbox gText_UltraEpisode_PostCosmog_Sakura_AsksToSeeCosmog MSG_NORMAL
+    setvar LASTRESULT SPECIES_COSMOG
+    callasm CheckIfCaught
+    compare LASTRESULT TRUE
+    if notequal _goto UltraEpisodeCosmogNotCaught
+    playse 0x19 @ Correct
+    msgbox gText_UltraEpisode_PostCosmog_Sakura_CaughtCosmog MSG_NORMAL
+    pause DELAY_HALFSECOND
+    applymovement Sakura m_LookDown
+    msgbox gText_UltraEpisode_PostCosmog_Sakura_FindingsDoNotMatch MSG_NORMAL
+    applymovement Sakura m_LookLeft
+    msgbox gText_UltraEpisode_PostCosmog_Sakura_WrongUltraBeast MSG_NORMAL
+    playbgm 0x181 @ Necrozma appearance
+    special CAMERA_START
+    applymovement CAMERA m_UltraEpisodeCamera_PostCosmog_MoveToResearcher
+    waitmovement CAMERA
+    special CAMERA_END
+    applymovement PCResearcher m_Surprise
+    playse 0x15 @ Exclaim
+    msgbox gText_UltraEpisode_PostCosmog_PCResearcher_DetectingReadings MSG_NORMAL
+    applymovement Sakura m_WalkDown
+    applymovement PLAYER m_LookDown
+    msgbox gText_UltraEpisode_PostCosmog_Sakura_ConfirmingReadings MSG_NORMAL
+    msgbox gText_UltraEpisode_PostCosmog_PCResearcher_ConfirmedReadings MSG_NORMAL
+    msgbox gText_UltraEpisode_PostCosmog_Sakura_CongratulatingResearcher MSG_NORMAL
+    fadedefaultbgm
+    applymovement Sakura m_WalkUp
+    waitmovement Sakura
+    applymovement PLAYER m_LookRight
+    applymovement Sakura m_LookLeft
+    special CAMERA_START
+    applymovement CAMERA m_UltraEpisodeCamera_PostCosmog_ReturnToSakura
+    waitmovement CAMERA
+    special CAMERA_END
+    msgbox gText_UltraEpisode_PostCosmog_Sakura_CommentingOnObligations MSG_NORMAL
+    msgbox gText_UltraEpisode_PostCosmog_Sakura_RequestingWormholeClosure MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto UltraEpisode_PostCosmog_AskingToCloseWormholes
+    goto UltraEpisode_PostCosmog_NextSteps
+
+UltraEpisodeCosmogNotCaught:
+    playse 0x1A @ Error
+    msgbox gText_UltraEpisode_PostCosmog_Sakura_DidNotCatchCosmog MSG_NORMAL
+    applymovement Sakura m_SakuraReturnsToMachineAfterCosmog
+    waitmovement Sakura
+    applymovement PLAYER m_LookDown
+    subvar 0x4073 0x1 @ Roll the Ultra Episode back to when Cosmog is available
+    clearflag 0x6E @ Show Challengable Cosmog at Altar of Eclipse
+    end
+
+UltraEpisode_PostCosmog_AskingToCloseWormholes:
+    msgbox gText_UltraEpisode_PostCosmog_Sakura_RequestingWormholeClosure_PlayerTryingToRefuse MSG_YESNO
+    compare LASTRESULT YES
+    if equal _goto UltraEpisode_PostCosmog_NextSteps
+    goto UltraEpisode_PostCosmog_AskingToCloseWormholes
+
+UltraEpisode_PostCosmog_NextSteps:
+    msgbox gText_UltraEpisode_PostCosmog_Sakura_NextSteps1 MSG_NORMAL
+    msgbox gText_UltraEpisode_PostCosmog_Sakura_NextSteps2 MSG_NORMAL
+    applymovement Sakura m_LookDown
+    applymovement PLAYER m_LookDown
+    movesprite2 0x3 0x14 0x3 @ Move researcher in front of Type:Null ball
+    setobjectmovementtype 0x3 look_down
+    special CAMERA_START
+    applymovement CAMERA m_UltraEpisodeCamera_PostCosmog_MoveToResearcher
+    waitmovement CAMERA
+    special CAMERA_END
+    msgbox gText_UltraEpisode_PostCosmog_Sakura_NextSteps3 MSG_NORMAL
+    special CAMERA_START
+    applymovement CAMERA m_UltraEpisodeCamera_PostCosmog_MoveToTypeNull
+    waitmovement CAMERA
+    special CAMERA_END
+    msgbox gText_UltraEpisode_PostCosmog_Sakura_NextSteps4 MSG_NORMAL
+    applymovement PLAYER m_LookRight
+    movesprite2 Sakura 0x2 0x6 @ For after the camera moves across the lab
+    special CAMERA_START
+    applymovement CAMERA m_UltraEpisodeCamera_PostCosmog_ReturnToSakuraFromNull
+    waitmovement CAMERA
+    special CAMERA_END
+    applymovement Sakura m_LookLeft
+    applymovement PLAYER m_LookRight
+    msgbox gText_UltraEpisode_PostCosmog_Sakura_NextSteps5 MSG_NORMAL
+    applymovement Sakura m_SakuraReturnsToMachineAfterCosmog
+    waitmovement Sakura
+    applymovement PLAYER m_LookDown
+    movesprite2 Sakura 0x3 0x5 @ Sakura's usual position
+    clearflag 0x063 @ Nihilego Ultra Wormhole
+    clearflag 0x064 @ Buzzwole Ultra Wormhole
+    clearflag 0x065 @ Pheromosa Ultra Wormhole
+    clearflag 0x066 @ Xurkitree Ultra Wormhole
+    clearflag 0x067 @ Celesteela Ultra Wormhole
+    clearflag 0x068 @ Kartana Ultra Wormhole
+    clearflag 0x069 @ Guzzlord Ultra Wormhole
+    clearflag 0x06A @ Stakataka Ultra Wormhole
+    clearflag 0x06D @ Blacephalon Ultra Wormhole
+    addvar 0x4073 0x1 @ Onto the next part of the Ultra Episode: hunting down ultra wormholes
+    // TODO:
+    // Test test test! (all cosmog paths plus this event, as well as empty world state and ultra space behavior)
+    end
+
 .global EventScript_DaimynCityFacilities_PCResearcher
 EventScript_DaimynCityFacilities_PCResearcher:
+    compare 0x4073 0x2
+    if greaterorequal _goto PCResearcher_UltraEpisodeStarted
     npcchatwithmovement gText_DaimynCityFacilities_IRF_PCResearcher m_LookUp
     end
+
+PCResearcher_UltraEpisodeStarted:
+    lock
+    faceplayer
+    msgbox gText_DaimynCityFacilities_IRF_PCResearcher_BeastBallSales MSG_NORMAL
+    pokemart BeastBallShop
+    msgbox gText_DaimynCityFacilities_IRF_PCResearcher_BeastBallSaleConcluded MSG_NORMAL
+    end
+
+.align 1
+BeastBallShop:
+    .hword ITEM_BEAST_BALL
+    .hword ITEM_NONE 
 
 .global EventScript_DaimynCityFacilities_MachineryResearcher
 EventScript_DaimynCityFacilities_MachineryResearcher:
@@ -267,6 +480,8 @@ EventScript_DaimynCityFacilities_Pokeball:
 .global EventScript_DaimynCityFacilities_ProfessorSakura
 EventScript_DaimynCityFacilities_ProfessorSakura:
     lock
+    compare 0x4073 0x5
+    if equal _call Sakura_UltraEpisode_UltraBeastHunt
     checkflag 0x274 @ Permitted to go to ultra space
     if SET _goto SakuraAsksToGoToUltraSpace
     msgbox gText_DaimynCityFacilities_IRF_SakuraPreoccupied MSG_NORMAL
@@ -278,6 +493,12 @@ EventScript_DaimynCityFacilities_ProfessorSakura:
     faceplayer
     msgbox gText_DaimynCityFacilities_IRF_SakuraTurnsPlayerDown MSG_NORMAL
     applymovement 0x7 m_LookLeft
+    end
+
+Sakura_UltraEpisode_UltraBeastHunt:
+    @ TODO Later: Check if 5+ Ultra Beasts were caught, and goto further plot progression if so
+    buffernumber 0x0 0x40A7 @ Number of beasts quelled
+    npcchatwithmovement gText_UltraEpisode_PostCosmog_Sakura_UltraBeastCount m_LookLeft
     end
 
 SakuraTalksAboutAlistairsRecommendation:
@@ -300,16 +521,6 @@ SakuraAsksToGoToUltraSpace:
     msgbox gText_DaimynCityFacilities_IRF_Sakura_AskingPlayerIfTheyWantToTravelToUltraSpace MSG_YESNO
     compare LASTRESULT NO
     if equal _goto ChoseNotToGoToUltraSpace
-    compare 0x40A7 0x0
-    if notequal _goto SakuraAsksPlayerWhereTheyWantToGo
-    if equal _goto SakuraConfirmsEclipseVillageDestination
-    end
-
-ChoseNotToGoToUltraSpace:
-    npcchatwithmovement gText_DaimynCityFacilities_IRF_Sakura_PlayerChoseNotToTravelToUltraSpace m_LookLeft
-    end
-
-UltraSpaceWarpCommon:
     msgbox gText_DaimynCityFacilities_IRF_Sakura_DirectsPlayerToMachine MSG_NORMAL
     getplayerpos 0x4000 0x4001
     compare 0x4001 0x5 @ Beside
@@ -320,7 +531,12 @@ UltraSpaceWarpCommon:
     applymovement 0x7 m_LookDown
     msgbox gText_DaimynCityFacilities_IRF_Sakura_StartingMachine MSG_NORMAL
     call UltraSpaceWarpEffect
-    return
+    warpmuted 2 32 0xFF 0xB 0x9
+    end
+
+ChoseNotToGoToUltraSpace:
+    npcchatwithmovement gText_DaimynCityFacilities_IRF_Sakura_PlayerChoseNotToTravelToUltraSpace m_LookLeft
+    end
 
 PlayerWalksToMachineFromAbove:
     applymovement PLAYER m_PlayerWalksToUltraSpaceMachineFromAbove
@@ -331,18 +547,6 @@ PlayerWalksToMachineFromAbove:
 PlayerWalksToMachineFromRight:
     applymovement PLAYER m_PlayerWalksToUltraSpaceMachineFromRight
     waitmovement PLAYER
-    return
-
-SakuraAsksPlayerWhereTheyWantToGo:
-    @ TODO Later: Choosing ultra space destination
-    return
-
-SakuraConfirmsEclipseVillageDestination:
-    msgbox gText_DaimynCityFacilities_IRF_Sakura_CanOnlyGoToEclipseVillage_Confirmation MSG_YESNO
-    compare LASTRESULT NO
-    if equal _goto ChoseNotToGoToUltraSpace
-    call UltraSpaceWarpCommon
-    warpmuted 2 32 0xFF 0xB 0x9
     return
 
 .global SignScript_DaimynCityFacilities_UltraSpaceMachine
@@ -376,3 +580,15 @@ m_PlayerLeavesWithRival_South: .byte walk_left, walk_up, walk_up, end_m
 m_PlayerWalksToUltraSpaceMachineFromAbove: .byte walk_right, walk_down, end_m
 m_PlayerWalksToUltraSpaceMachineFromRight: .byte walk_down, walk_left, end_m
 m_PlayerWalksToUltraSpaceMachineFromBelow: .byte walk_left, walk_left, look_down, end_m
+m_SakuraPacesLeft: .byte walk_left_slow, walk_left_slow, look_left, end_m
+m_SakuraPacesRight: .byte walk_right_slow, walk_right_slow, look_right, end_m
+m_SakuraApproachesPlayer: .byte walk_down, walk_down, end_m
+m_UltraEpisodeCamera_MoveToResearcher: .byte run_up, run_up, run_left, run_left, run_left, run_left, run_left, end_m 
+m_UltraEpisodeCamera_MoveToPlayer: .byte run_right, run_right, run_right, run_right, run_right, run_down, run_down, end_m
+m_SakuraReturnToMachine: .byte walk_up, walk_up, walk_left, walk_left, walk_left, walk_left, walk_left, walk_left, walk_left, walk_up, walk_up, walk_up, end_m
+m_SakuraWelcomesPlayerBackAfterCosmog: .byte walk_down, walk_left, end_m
+m_SakuraReturnsToMachineAfterCosmog: .byte walk_right, walk_up, look_left, end_m
+m_UltraEpisodeCamera_PostCosmog_MoveToResearcher: .byte run_down, run_down, end_m
+m_UltraEpisodeCamera_PostCosmog_ReturnToSakura: .byte run_up, run_up, end_m
+m_UltraEpisodeCamera_PostCosmog_MoveToTypeNull: .byte run_right, run_right, run_right, run_right, run_right, run_right, run_right, run_right, run_right, run_right, run_right, run_right, run_right, run_right, run_right, run_right, run_right, run_right, run_up, run_up, run_up, run_up, run_up, end_m
+m_UltraEpisodeCamera_PostCosmog_ReturnToSakuraFromNull: .byte run_left, run_left, run_left, run_left, run_left, run_left, run_left, run_left, run_left, run_left, run_left, run_left, run_left, run_left, run_left, run_left, run_left, run_left, run_down, run_down, run_down, end_m

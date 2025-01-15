@@ -321,6 +321,12 @@ I must now leave for\nanother trip.\pDo not fret, young one.\pI shall return tom
 #org @gText_DaimynCityFacilities_IRF_PCResearcher
 Please don't distract me.\pI'm tracking peculiar energy signals\nwe've detected out in Ultra Space.
 
+#org @gText_DaimynCityFacilities_IRF_PCResearcher_BeastBallSales
+Hello. Professor Sakura told me all\nabout your mission.\pWould you like to buy some Beast\nBalls?
+
+#org @gText_DaimynCityFacilities_IRF_PCResearcher_BeastBallSaleConcluded
+Good luck on your mission.
+
 #org @gText_DaimynCityFacilities_IRF_MachineryResearcher
 I'm testing the equipment to make\nsure it's working properly.\pProfessor Sakura has poured a lot of\ntime and effort into our\lUltra Space research.\pI don't want to let her down.
 
@@ -362,9 +368,6 @@ The ball is labelled "Beast Killer.\"
 
 #org @gText_DaimynCityFacilities_IRF_Sakura_PlayerChoseNotToTravelToUltraSpace
 [RED]Understood. Come see me if you\nchange your mind.
-
-#org @gText_DaimynCityFacilities_IRF_Sakura_CanOnlyGoToEclipseVillage_Confirmation
-[RED]At the moment we can only travel to\na place called "Eclipse Village.\"\pIs that where you'd like to go?
 
 #org @gText_DaimynCityFacilities_IRF_Sakura_DirectsPlayerToMachine
 [RED]Okay. Please step before the\nmachine. We will start momentarily.
@@ -1847,3 +1850,106 @@ Yes, that was quite enjoyable.
 
 #org @gText_Restaurant_Stella_Leaves
 [BLACK]Stella: [RED]Good luck!
+
+// Ultra Episode Strings
+#org @gText_UltraEpisode_Intro_SakuraPondering
+[RED]Hmm[.] If my hypothesis is correct[.]
+
+#org @gText_UltraEpisode_Intro_SakuraPondering2
+[RED]If that's the case, then we'll need\nsome help[.]
+
+#org @gText_UltraEpisode_Intro_SakuraAcknowledgesPlayer
+[RED]Oh, [PLAYER]!\nImpeccable timing.
+
+#org @gText_UltraEpisode_Intro_SakuraAltarOfEclipseQuestion
+[RED]I'll cut to the chase.\pWe've been monitoring the Altar of\nEclipse in Ultra Space.\pYou remember it, surely?
+
+#org @gText_UltraEpisode_Intro_Sakura_PlayerRecallsAltar
+[RED]Perfect!\pSo, you haven't experienced the\namnesia side effect that most\lFallers do[.]
+
+#org @gText_UltraEpisode_Intro_Sakura_PlayerDoesNotRecallAltar
+[RED]The Altar of Eclipse is a monument\noutside of Eclipse Village.\pYou encountered a strange creature\nthere, when you passed through\lUltra Space a short while ago.
+
+#org @gText_UltraEpisode_Intro_Sakura_MentioningReadings
+[RED]We've been monitoring the altar since\nyou visited it.\pJust recently, we've received bizarre\nreadings.\pUltra Wormholes opening suddenly[.]\nAbrupt and fleeting eclipses[.]
+
+#org @gText_UltraEpisode_Intro_Sakura_ExtrapolatingOnFindings
+[RED]It's truly bizarre.\pWe don't know if these phenomena are\nproblematic or not.\pAnd, we also don't know what's\ncausing them.\pWe need an expert on both Ultra\nSpace and Pok\emon battling to\linvestigate.
+
+#org @gText_UltraEpisode_Intro_Sakura_ConcludesFindings
+[RED]Yup, you guessed it! You're the\nonly one that fits the bill.\pAll we'd need from you is to\ninvestigate the Altar of Eclipse.\pIf something really is causing the\nreadings, we'll need you to capture\lit so we can analyze it further.\pSounds complicated, but it'll be a\npiece of cake with these!
+
+#org @gText_UltraEpisode_Intro_Sakura_GivesBeastBalls
+[RED]Those are Beast Balls.\pThey're a specialized Pok\e Ball\ndeveloped by our colleagues in the\lAlola region.\pThese balls are designed to contain\nUltra Beasts.\pNow, I'm not certain that's what we're\ndealing with, but best to be\lprepared, right?
+
+#org @gText_UltraEpisode_Intro_Sakura_CommentsOnBuyingBeastBalls
+[RED]If you run out, you can get more\nfrom my colleague in the lab.\pUnfortunately, they're quite\nexpensive to make so we'll have to\lcharge you for them.
+
+#org @gText_UltraEpisode_Intro_Sakura_PreparingToStart
+[RED]Now, I'm not asking you to go right\naway, if you have things to do.\pBut[.] Once you have time, we'd really\nappeciate your help.\pTalk to me when you're ready, and we\ncan send you to Eclipse Village.\pAnd, thanks in advance, [PLAYER]!
+
+#org @gText_UltraEpisode_PostCosmog_Sakura_WelcomeBack
+[RED]Welcome back, [PLAYER].
+
+#org @gText_UltraEpisode_PostCosmog_Sakura_AsksAboutSource
+[RED]Now, how did it go?\pDid you find the source of the\ndisturbances?
+
+#org @gText_UltraEpisode_PostCosmog_Sakura_LearnsOfWormholes
+[RED]What?\pYou found two Ultra Beasts, and one\ndisappeared into an Ultra Wormhole?
+
+#org @gText_UltraEpisode_PostCosmog_Sakura_Pondering
+[RED]That lines up with our earlier\nfindings[.] Fascinating[.]
+
+#org @gText_UltraEpisode_PostCosmog_Sakura_AsksToSeeCosmog
+[RED]Now, about this Ultra Beast that you\nfound at the Altar[.]\pCan I review it's Pok\edex entry,\nplease?
+
+#org @gText_UltraEpisode_PostCosmog_Sakura_DidNotCatchCosmog
+[RED]Oh[.] You failed to capture it.\pPlease, prepare yourself and return\nto the Altar of Eclipse.\pThe Ultra Beast must be drawn to it.\nI'm sure it will return.\pThen, once it's caught, we can\nexamine it and move forward with\lour investigation.\pJust come see me when you're ready\nto return to Eclipse Village.
+
+#org @gText_UltraEpisode_PostCosmog_Sakura_CaughtCosmog
+[RED]Ah, so this is the Ultra Beast known\nas Cosmog.
+
+#org @gText_UltraEpisode_PostCosmog_Sakura_FindingsDoNotMatch
+[RED]Fascinating, and yet[.]\pThese findings do not match the\nreadings we've received so far.
+
+#org @gText_UltraEpisode_PostCosmog_Sakura_WrongUltraBeast
+[RED]I am sorry, [PLAYER][.]\pIt seems Cosmog is not the source of\nthe disturbances.\pHowever, it is not a total loss!\pThe Cosmog you encountered does\nshow traces of the same energy we\ltracked.\pFurthermore, it is quite anxious due\nto the ordeal it experienced at\lthe Altar of Eclipse.\p[PLAYER], I believe it would do this\nCosmog good to travel with you.\pAs it grows, we may learn more about\nthe disturbances.\pPlease, take it along with you as\nyou travel.\pNow, with that said -
+
+#org @gText_UltraEpisode_PostCosmog_PCResearcher_DetectingReadings
+[BLUE]P-Professor Sakura!\pWe've just detected a spike in energy\nreadings.\pNo[.] There are multiple spikes[.]\pIt appears that Ultra Wormholes\nmay be opening all over the region!
+
+#org @gText_UltraEpisode_PostCosmog_Sakura_ConfirmingReadings
+[RED]What? That can't be possible!\pThe readings were stable until just a\nmoment ago!
+
+#org @gText_UltraEpisode_PostCosmog_PCResearcher_ConfirmedReadings
+[BLUE]Indeed. This might be tied to what\n[PLAYER] experienced at the Altar\lof Eclipse[.]\pWorry not, Professor!\pI've honed in on the readings and\nhave an idea of where these Ultra\lWormholes have opened up.
+
+#org @gText_UltraEpisode_PostCosmog_Sakura_CongratulatingResearcher
+[RED]Excellent work!\nKeep tracking those readings.
+
+#org @gText_UltraEpisode_PostCosmog_Sakura_CommentingOnObligations
+[RED]In all our time researching Ultra\nSpace, we have never seen an Ultra\lWormhole open on it's own.\pIt's unclear what is happening, but I\nhave a feeling it isn't good.\pI will stay here to continue\nresearching the wormholes.\p[PLAYER], I apologize, but I must ask\nanother favour of you.\pAs Kulure's Champion and a firsthand\nexplorer of Ultra Space, I feel\lyou are best equipped to\linvestigate the Ultra Wormholes\lthemselves.
+
+#org @gText_UltraEpisode_PostCosmog_Sakura_RequestingWormholeClosure
+[RED]Ultra Wormholes draw the attention\nof Ultra Beasts.\pWe need you to find these\nwormholes and close them before\lany Ultra Beasts come through.\pPlease, will you do this?
+
+#org @gText_UltraEpisode_PostCosmog_Sakura_RequestingWormholeClosure_PlayerTryingToRefuse
+[RED][PLAYER], I understand this is a lot\nto ask of you.\pPlease, I must ask you to\nreconsider.\pIf not for me, then for the Kulure\nregion.
+
+#org @gText_UltraEpisode_PostCosmog_Sakura_NextSteps1
+[RED]Thank you, truly.\pNow, we won't send you out empty\nhanded, of course.
+
+#org @gText_UltraEpisode_PostCosmog_Sakura_NextSteps2
+[RED]If we're lucky, you won't encounter\nany Ultra Beasts.\pOf course, things are never that\nsimple, are they?\pShould you encounter an\nUltra Beast, please capture it.\pFortunately, Beast Balls are\nequipped for the job.\pCapturing them will prevent them from\nwreaking havoc in our world, of\lcourse.\pHowever, it will also allow us to\nstudy them, which may bring us\lcloser to understanding the\ldisturbances we've detected.
+
+#org @gText_UltraEpisode_PostCosmog_Sakura_NextSteps3
+[RED]Speak to this man here if you need\nmore Beast Balls.\pHe can also point you in the\ndirection of Ultra Wormholes.
+
+#org @gText_UltraEpisode_PostCosmog_Sakura_NextSteps4
+[RED]It would be foolish to ask you to\nchallenge Ultra Beasts alone.\pTo support you, we will lend you\nType: Null.\pThis Pok\emon was created in the\nAether Paradise in the Alola\lregion.\pIt is specifically designed to combat\nUltra Beasts.\pTo this end, it has been designated\nthe title of "Beast Killer.\"\pIt is rather unruly, but I am\nconfident you can manage it.\pPlease, take it with you and DO NOT\napproach an Ultra Wormhole without\lit.\pI'll send word ahead to Type: Null's\nguardian letting him know that\lyou'll take it.
+
+#org @gText_UltraEpisode_PostCosmog_Sakura_NextSteps5
+[RED]Closing every Ultra Wormhole would\nbe ideal, of course.\pHowever, I am confident that closing\neven 5 of them would be enough.\pWe could handle the remaining Ultra\nWormholes, and also find the source\lof them.\pWith luck, we can ensure no harm\ncomes to the region.\pThank you once again, [PLAYER].\nWe are all in your debt.
+
+#org @gText_UltraEpisode_PostCosmog_Sakura_UltraBeastCount
+[RED]Welcome back, [PLAYER].\pI've received word that you've dealt\nwith [BUFFER1] Ultra Wormholes.\pPlease, continue on until you've\nhandled at least 5.\pUntil then, it would not be wise to\nreturn to Ultra Space[.]

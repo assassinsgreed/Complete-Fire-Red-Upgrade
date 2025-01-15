@@ -53,6 +53,20 @@ void TransferPlttBuffer(void)
 }
 
 #ifdef TIME_ENABLED
+u8 GetDNSHour(void)
+{
+	u32 hour = gClock.hour;
+	// Ultra space DNS is the inverse of the main world
+	if (GetCurrentRegionMapSectionId() == MAPSEC_ULTRA_SPACE)
+	{
+		if (hour >= 12)
+			hour -= 12;
+		else
+			hour += 12;	
+	}
+	return hour;
+}
+
 static void FadeDayNightPalettes(void)
 {
 	u32 palsToFade;
@@ -73,17 +87,7 @@ static void FadeDayNightPalettes(void)
 
 			if (fadePalettes)
 			{
-				u32 hour = gClock.hour;
-				
-				// Ultra space DNS is the inverse of the main world
-				if (GetCurrentRegionMapSectionId() == MAPSEC_ULTRA_SPACE)
-				{
-					if (hour >= 12)
-						hour -= 12;
-					else
-						hour += 12;	
-				}
-
+				u32 hour = GetDNSHour();
 				u8 coeff = gDNSNightFadingByTime[hour][gClock.minute / 10].amount;
 				u16 colour = gDNSNightFadingByTime[hour][gClock.minute / 10].colour;
 				bool8 palFadeActive = gPaletteFade->active || gWeatherPtr->palProcessingState == WEATHER_PAL_STATE_SCREEN_FADING_IN;
@@ -423,27 +427,32 @@ void BlendPalettesOptimized(u32 selectedPalettes, u32 coeff, u32 blendColor)
 
 bool8 IsDayTime(void)
 {
-	return gClock.hour >= TIME_MORNING_START && gClock.hour < TIME_NIGHT_START;
+	u8 hour = GetDNSHour();
+	return hour >= TIME_MORNING_START && hour < TIME_NIGHT_START;
 }
 
 bool8 IsOnlyDayTime(void)
 {
-	return gClock.hour >= TIME_DAY_START && gClock.hour < TIME_EVENING_START;
+	u8 hour = GetDNSHour();
+	return hour >= TIME_DAY_START && hour < TIME_EVENING_START;
 }
 
 bool8 IsNightTime(void)
 {
-	return gClock.hour >= TIME_NIGHT_START || gClock.hour < TIME_MORNING_START;
+	u8 hour = GetDNSHour();
+	return hour >= TIME_NIGHT_START || hour < TIME_MORNING_START;
 }
 
 bool8 IsMorning(void)
 {
-	return gClock.hour >= TIME_MORNING_START && gClock.hour < TIME_DAY_START;
+	u8 hour = GetDNSHour();		
+	return hour >= TIME_MORNING_START && hour < TIME_DAY_START;
 }
 
 bool8 IsEvening(void)
 {
-	return gClock.hour >= TIME_EVENING_START && gClock.hour < TIME_NIGHT_START;
+	u8 hour = GetDNSHour();
+	return hour >= TIME_EVENING_START && hour < TIME_NIGHT_START;
 }
 
 static bool8 IsDate1BeforeDate2(u32 y1, u32 m1, u32 d1, u32 y2, u32 m2, u32 d2)
