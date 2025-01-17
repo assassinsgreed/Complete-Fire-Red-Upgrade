@@ -229,3 +229,27 @@ Hmm[.] You don't have enough room in\nyour party to take Poipole with\lyou.\pNo 
 #org @gText_UltraSpace_PoipoleResearcher_PlayerAlreadyHasPoipole
 Take good care of Poipole!
 
+// Ultra Episode
+#org @gText_UltraSpaceWilds_AltarOfEclipse_CosmogSighted
+It's the Ultra Beast from before,\nbut now there are two of them!\pProfessor Sakura wanted me to catch\nit[.] Better hurry!
+
+#org @gText_UltraSpaceWilds_AltarOfEclipse_CosmogPreparingToCatch
+Okay, time to catch it[.]
+
+#org @gText_UltraSpaceWilds_AltarOfEclipse_UltraWormholeOpened
+An Ultra Wormhole opened!
+
+#org @gText_UltraSpaceWilds_AltarOfEclipse_UltraWormholeCosmogCry
+Pew[.]
+
+#org @gText_UltraSpaceWilds_AltarOfEclipse_UltraWormholeClosed
+The Ultra Beast and Ultra Wormhole\nhave vanished[.]\pI still need to capture the remaining\nUltra Beast.
+
+#org @gText_UltraSpaceWilds_AltarOfEclipse_CosmogFight
+The stressed Ultra Beast attacks!
+
+#org @gText_UltraSpaceWilds_AltarOfEclipse_CosmogCaught
+The Ultra Beast was caught!\pBetter report this to Professor\nSakura!
+
+#org @gText_UltraSpaceWilds_AltarOfEclipse_CosmogDefeatedOrFled
+The Ultra Beast fled[.]\pBetter report this to Professor\nSakura[.]

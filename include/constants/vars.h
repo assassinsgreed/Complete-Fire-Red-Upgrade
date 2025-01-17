@@ -158,7 +158,7 @@
 #define VAR_MAP_SCENE_POST_CREDITS                                             0x4070 // Used only on first game clear
 #define VAR_MAP_SCENE_HAWTHORNES_LAB_CONSERVATORY                              0x4071
 #define VAR_MAP_SCENE_VICTORY_ROAD_PEAK_CUTSCENES                              0x4072
-#define VAR_MAP_SCENE_SAFFRON_CITY_POKEMON_TRAINER_FAN_CLUB                    0x4073
+#define VAR_MAP_SCENE_ULTRA_EPISODE_PROGRESSION                                0x4073
 #define VAR_MAP_SCENE_SEVEN_ISLAND_HOUSE_ROOM1                                 0x4074
 #define VAR_MAP_SCENE_ONE_ISLAND_HARBOR                                        0x4075
 #define VAR_MAP_SCENE_ONE_ISLAND_POKEMON_CENTER_1F                             0x4076

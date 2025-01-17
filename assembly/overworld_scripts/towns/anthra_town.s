@@ -634,7 +634,6 @@ m_RivalReturnsToRoute17: .byte walk_right, walk_right, walk_right, walk_right, w
 
 // Post-Credits Party
 LevelScript_PostCreditsParty:
-	playbgm 0x12C
 	showsprite 0x9 @ Mom
 	showsprite 0xA @ Rival
 	showsprite 0xB @ Old man
@@ -728,6 +727,7 @@ LevelScript_PostCreditsParty:
 	addvar 0x4070 0x1
 	showsprite 0xE @ Champion Fanatic
 	playbgm 0x12C 0x1 @ Default theme, permanent
+	setvar 0x4073 0x1 @ Trigger Ultra Episode sequences
 	end
 
 m_RivalBringsPlayerToParty: .byte walk_right, walk_right, walk_right, walk_right, walk_right, walk_right, walk_right, walk_right, look_left, end_m

@@ -1027,6 +1027,7 @@ npc 9 16 29 EventScript_DaimynCityMall_WaitingGirl
 npc 9 16 30 EventScript_DaimynCityMall_Shop_EvolutionaryStones
 npc 9 16 31 EventScript_DaimynCityMall_Shop_UncommonHeldItems
 npc 9 16 32 EventScript_DaimynCityMall_Rocker
+map 9 17 MapScripts_InterdimensionalResearchFacility
 npc 9 17 0 EventScript_DaimynCityFacilities_PCResearcher
 npc 9 17 1 EventScript_DaimynCityFacilities_MachineryResearcher
 npc 9 17 2 EventScript_DaimynCityFacilities_WanderingResearcher
@@ -2649,8 +2650,12 @@ tile 2 37 12 TileScript_UltraSpaceWilds_CosmogEventIncomplete
 tile 2 37 13 TileScript_UltraSpaceWilds_CosmogEventIncomplete
 tile 2 37 14 TileScript_UltraSpaceWilds_CosmogEvent2
 tile 2 37 15 TileScript_UltraSpaceWilds_CosmogEvent2
+map 2 38 MapScript_UltraSpaceWilds_AltarOfEclipse
+npc 2 38 1 EventScript_UltraSpaceWilds_Cosmog
 tile 2 38 0 TileScript_UltraSpaceWilds_AltarOfEclipse_CosmogEvent
-tile 2 38 1 TileScript_UltraSpaceWilds_AltarOfEclipse_CosmogEvent
+tile 2 38 2 TileScript_UltraSpaceWilds_AltarOfEclipse_CosmogEvent
+tile 2 38 2 TileScript_UltraSpaceWilds_AltarOfEclipse_UltraEpisodeIntroduction
+tile 2 38 3 TileScript_UltraSpaceWilds_AltarOfEclipse_UltraEpisodeIntroduction
 ## Ultra Space Hoenn
 map 2 39 MapScript_UltraSpaceHoenn
 npc 2 39 4 EventScript_UltraSpaceHoenn_Wingull1
