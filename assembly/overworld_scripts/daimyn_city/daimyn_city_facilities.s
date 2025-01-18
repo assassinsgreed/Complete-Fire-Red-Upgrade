@@ -241,9 +241,16 @@ MapScripts_InterdimensionalResearchFacility:
 	.byte MAP_SCRIPT_TERMIN
 
 MapScripts_InterdimensionalResearchFacility_MoveSakuraForUltraEpisodeInitialEvents:
+    compare 0x4073 0x5
+    if equal _call MoveTypeNullResearcher
     compare 0x4073 0x1
     if notequal _goto End
     movesprite2 0x7 0xC 0xA @ Move Sakura above player (permanent, because she is otherwise out of in-memory npcs)
+    end
+
+MoveTypeNullResearcher:
+    movesprite2 0x3 0x14 0x3 @ Move researcher in front of Type:Null ball
+    setobjectmovementtype 0x3 look_down
     end
 
 LevelScripts_InterdimensionalResearchFacility:
@@ -426,24 +433,136 @@ UltraEpisode_PostCosmog_NextSteps:
     clearflag 0x06A @ Stakataka Ultra Wormhole
     clearflag 0x06D @ Blacephalon Ultra Wormhole
     addvar 0x4073 0x1 @ Onto the next part of the Ultra Episode: hunting down ultra wormholes
-    // TODO:
-    // Test test test! (all cosmog paths plus this event, as well as empty world state and ultra space behavior)
     end
 
 .global EventScript_DaimynCityFacilities_PCResearcher
 EventScript_DaimynCityFacilities_PCResearcher:
-    compare 0x4073 0x2
-    if greaterorequal _goto PCResearcher_UltraEpisodeStarted
+    lock
+    faceplayer
+    compare 0x4073 2
+    if equal _goto PCResearcher_UltraEpisodeStarted
+    compare 0x4073 5
+    if greaterorequal _goto PCResearcher_UltraWormholeHunt
     npcchatwithmovement gText_DaimynCityFacilities_IRF_PCResearcher m_LookUp
     end
 
 PCResearcher_UltraEpisodeStarted:
-    lock
-    faceplayer
     msgbox gText_DaimynCityFacilities_IRF_PCResearcher_BeastBallSales MSG_NORMAL
     pokemart BeastBallShop
-    msgbox gText_DaimynCityFacilities_IRF_PCResearcher_BeastBallSaleConcluded MSG_NORMAL
+    goto PCResearcher_Conclusion
+
+PCResearcher_UltraWormholeHunt:
+    msgbox gText_DaimynCityFacilities_IRF_PCResearcher_WelcomingPlayer MSG_NORMAL
+    @ Intentional fallthrough
+PCResearcher_UltraWormholeHunt_PromptForAssistance:
+    msgbox gText_DaimynCityFacilities_IRF_PCResearcher_UltraWormholeHunt_ChoicePrompt MSG_KEEPOPEN
+    multichoiceoption gText_DaimynCityFacilities_IRF_PCResearcher_BuyBeastBallsChoice 0
+	multichoiceoption gText_DaimynCityFacilities_IRF_PCResearcher_TrackUltraWormholesChoice 1
+	multichoiceoption gText_End 2
+    multichoice 0x0 0x0 THREE_MULTICHOICE_OPTIONS FALSE
+	copyvar MULTICHOICE_SELECTION LASTRESULT
+	switch LASTRESULT
+	case 0, BuyBeastBalls _goto
+	case 1, TrackUltraWormholes _goto
+	@ End ignored, to allow fallthrough to conclusion
+    goto PCResearcher_Conclusion
+
+PCResearcher_Conclusion:
+    npcchatwithmovement gText_DaimynCityFacilities_IRF_PCResearcher_ConversationConcluded m_LookUp
     end
+
+BuyBeastBalls:
+    msgbox gText_DaimynCityFacilities_IRF_PCResearcher_BuyingBeastBallsAfterIntroduction MSG_NORMAL
+    pokemart BeastBallShop
+    goto PCResearcher_UltraWormholeHunt_PromptForAssistance
+
+TrackUltraWormholes:
+    compare 0x40A7 10
+    if equal _goto AllUltraWormholesClosed
+    msgbox gText_DaimynCityFacilities_IRF_PCResearcher_ChooseUltraWormholePrompt MSG_KEEPOPEN
+    setvar 0x8000 0x13 @ Ultra Wormholes
+    setvar 0x8001 0x8 @ Show 8 at a time
+    setvar 0x8004 0x0
+    special 0x158
+    waitstate
+    copyvar 0x4000 LASTRESULT
+    switch 0x4000
+    case 0, UltraWormholeCheck_Nihilego _call
+    case 1, UltraWormholeCheck_Buzzwole _call
+    case 2, UltraWormholeCheck_Pheromosa _call
+    case 3, UltraWormholeCheck_Xurkitree _call
+    case 4, UltraWormholeCheck_Celesteela _call
+    case 5, UltraWormholeCheck_Kartana _call
+    case 6, UltraWormholeCheck_Guzzlord _call
+    case 7, UltraWormholeCheck_Stakataka _call
+    case 8, UltraWormholeCheck_Blacephalon _call
+    case 9, PCResearcher_UltraWormholeHunt_PromptForAssistance _goto @ End
+    case 0x7F, PCResearcher_UltraWormholeHunt_PromptForAssistance _goto @ Cancelled
+    goto TrackUltraWormholes
+
+AllUltraWormholesClosed:
+    fanfare 0x10C @ Big Celebration
+    msgbox gText_DaimynCityFacilities_IRF_PCResearcher_AllUltraWormholesClosed MSG_KEEPOPEN
+    waitfanfare
+    goto PCResearcher_UltraWormholeHunt_PromptForAssistance
+
+UltraWormholeClosed:
+    msgbox gText_DaimynCityFacilities_IRF_PCResearcher_UltraWormholeClosed MSG_NORMAL
+    goto TrackUltraWormholes    
+
+UltraWormholeCheck_Nihilego:
+    checkflag 0x63
+    if SET _goto UltraWormholeClosed
+    msgbox gText_DaimynCityFacilities_IRF_PCResearcher_UltraWormhole_Nihilego MSG_NORMAL
+    goto TrackUltraWormholes
+
+UltraWormholeCheck_Buzzwole:
+    checkflag 0x64
+    if SET _goto UltraWormholeClosed
+    msgbox gText_DaimynCityFacilities_IRF_PCResearcher_UltraWormhole_Buzzwole MSG_NORMAL
+    goto TrackUltraWormholes
+
+UltraWormholeCheck_Pheromosa:
+    checkflag 0x65
+    if SET _goto UltraWormholeClosed
+    msgbox gText_DaimynCityFacilities_IRF_PCResearcher_UltraWormhole_Pheromosa MSG_NORMAL
+    goto TrackUltraWormholes
+
+UltraWormholeCheck_Xurkitree:
+    checkflag 0x66
+    if SET _goto UltraWormholeClosed
+    msgbox gText_DaimynCityFacilities_IRF_PCResearcher_UltraWormhole_Xurkitree MSG_NORMAL
+    goto TrackUltraWormholes
+
+UltraWormholeCheck_Celesteela:
+    checkflag 0x67
+    if SET _goto UltraWormholeClosed
+    msgbox gText_DaimynCityFacilities_IRF_PCResearcher_UltraWormhole_Celesteela MSG_NORMAL
+    goto TrackUltraWormholes
+
+UltraWormholeCheck_Kartana:
+    checkflag 0x68
+    if SET _goto UltraWormholeClosed
+    msgbox gText_DaimynCityFacilities_IRF_PCResearcher_UltraWormhole_Kartana MSG_NORMAL
+    goto TrackUltraWormholes
+
+UltraWormholeCheck_Guzzlord:
+    checkflag 0x69
+    if SET _goto UltraWormholeClosed
+    msgbox gText_DaimynCityFacilities_IRF_PCResearcher_UltraWormhole_Guzzlord MSG_NORMAL
+    goto TrackUltraWormholes
+
+UltraWormholeCheck_Stakataka:
+    checkflag 0x6A
+    if SET _goto UltraWormholeClosed
+    msgbox gText_DaimynCityFacilities_IRF_PCResearcher_UltraWormhole_Stakataka MSG_NORMAL
+    goto TrackUltraWormholes
+
+UltraWormholeCheck_Blacephalon:
+    checkflag 0x6D
+    if SET _goto UltraWormholeClosed
+    msgbox gText_DaimynCityFacilities_IRF_PCResearcher_UltraWormhole_Blacephalon MSG_NORMAL
+    goto TrackUltraWormholes
 
 .align 1
 BeastBallShop:
@@ -455,9 +574,57 @@ EventScript_DaimynCityFacilities_MachineryResearcher:
     npcchatwithmovement gText_DaimynCityFacilities_IRF_MachineryResearcher m_LookUp
     end
 
-.global EventScript_DaimynCityFacilities_WanderingResearcher
-EventScript_DaimynCityFacilities_WanderingResearcher:
-    npcchat gText_DaimynCityFacilities_IRF_WanderingResearcher
+.global EventScript_DaimynCityFacilities_TypeNullResearcher
+EventScript_DaimynCityFacilities_TypeNullResearcher:
+    compare 0x4073 5
+    if equal _goto GiveTypeNull
+    compare 0x4073 6
+    if equal _goto WishingTypeNullTheBest
+    @ TODO Later: Silvally check
+    npcchat gText_DaimynCityFacilities_IRF_TypeNullResearcher
+    end
+
+GiveTypeNull:
+    lock
+    faceplayer
+    msgbox gText_UltraEpisode_TypeNullResearcher_RequestPlayersSupport MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto WillNotTakeCareOfTypeNull
+    msgbox gText_UltraEpisode_TypeNullResearcher_RequestPlayerSupport_PlayerSaidYes MSG_NORMAL
+    countpokemon
+    compare LASTRESULT 6
+    if equal _goto NotEnoughRoomForTypeNull
+    applymovement LASTTALKED m_LookUp
+    pause DELAY_HALFSECOND
+    hidesprite 6
+    setflag 0x78 @ Hide Type: Null ball
+    pause DELAY_HALFSECOND
+    faceplayer
+    fanfare 0x101
+    addvar 0x4073 1 @ Now at 6
+    msgbox gText_UltraEpisode_TypeNullResearcher_RememberPromise MSG_NORMAL
+    msgbox gText_UltraEpisode_TypeNullResearcher_ReceivedTypeNull MSG_KEEPOPEN
+    waitfanfare
+    setvar 0x8000 MOVE_AERIALACE
+    setvar 0x8001 MOVE_XSCISSOR
+    setvar 0x8002 MOVE_IRONHEAD
+    setvar 0x8003 MOVE_TRIATTACK
+    setvar 0x8004 2 @ Ingame gift 2, Type: Null
+    setvar 0x8005 75 @ Level 75
+    callasm CreateInGameGiftPokemon
+    npcchatwithmovement gText_UltraEpisode_TypeNullResearcher_TakeCare m_LookDown
+    end    
+
+WillNotTakeCareOfTypeNull:
+    npcchatwithmovement gText_UltraEpisode_TypeNullResearcher_RequestPlayerSupport_PlayerSaidNo m_LookDown
+    end
+
+NotEnoughRoomForTypeNull:
+    npcchatwithmovement gText_UltraEpisode_TypeNullResearcher_NoRoomForTypeNull m_LookDown
+    end
+
+WishingTypeNullTheBest:
+    npcchat gText_UltraEpisode_TypeNullResearcher_TakeCare
     end
 
 .global EventScript_DaimynCityFacilities_TableBottomRightResearcher

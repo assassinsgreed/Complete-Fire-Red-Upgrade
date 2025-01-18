@@ -40,6 +40,8 @@ extern u8 gText_InGameTrade_Boris[];
 extern u8 gText_InGameTrade_OTWinona[];
 extern u8 gText_InGameGift_OTSelene[];
 extern u8 gText_InGameGift_Victini[];
+extern u8 gText_InGameGift_OTAether[];
+extern u8 gText_InGameGift_TypeNull[];
 
 static const struct InGameTrade sInGameTrades[] = {
     [INGAME_TRADE_CHINCHOU] = 
@@ -270,6 +272,21 @@ static const struct InGameTrade sInGameGifts[] = {
         .otName = gText_InGameGift_OTSelene,
         .otGender = FEMALE,
         .nature = NATURE_ADAMANT
+    },
+    [INGAME_GIFT_TYPE_NULL] =
+    {
+        .nickname = gText_InGameGift_TypeNull,
+        .species = SPECIES_TYPE_NULL,
+        .ivs = {31, 30, 26, 31, 25, 31},
+        .abilityNum = 0, // Battle Armor
+        .otId = 81116,
+        .conditions = {25, 30, 30, 15, 20},
+        .personality = 0x4c970b89,
+        .heldItem = ITEM_NONE,
+        .mailNum = 0,
+        .otName = gText_InGameGift_OTAether,
+        .otGender = MALE,
+        .nature = NATURE_TIMID
     }
 };
 

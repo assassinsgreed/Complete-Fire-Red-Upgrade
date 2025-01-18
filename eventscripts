@@ -1030,7 +1030,7 @@ npc 9 16 32 EventScript_DaimynCityMall_Rocker
 map 9 17 MapScripts_InterdimensionalResearchFacility
 npc 9 17 0 EventScript_DaimynCityFacilities_PCResearcher
 npc 9 17 1 EventScript_DaimynCityFacilities_MachineryResearcher
-npc 9 17 2 EventScript_DaimynCityFacilities_WanderingResearcher
+npc 9 17 2 EventScript_DaimynCityFacilities_TypeNullResearcher
 npc 9 17 3 EventScript_DaimynCityFacilities_TableBottomRightResearcher
 npc 9 17 4 EventScript_DaimynCityFacilities_TableLeftResearcher
 npc 9 17 5 EventScript_DaimynCityFacilities_Pokeball

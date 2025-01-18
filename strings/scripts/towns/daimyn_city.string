@@ -324,13 +324,64 @@ Please don't distract me.\pI'm tracking peculiar energy signals\nwe've detected 
 #org @gText_DaimynCityFacilities_IRF_PCResearcher_BeastBallSales
 Hello. Professor Sakura told me all\nabout your mission.\pWould you like to buy some Beast\nBalls?
 
-#org @gText_DaimynCityFacilities_IRF_PCResearcher_BeastBallSaleConcluded
+#org @gText_DaimynCityFacilities_IRF_PCResearcher_BuyingBeastBallsAfterIntroduction
+Very good. This is what I can offer.
+
+#org @gText_DaimynCityFacilities_IRF_PCResearcher_WelcomingPlayer
+It's good to see you, [PLAYER].
+
+#org @gText_DaimynCityFacilities_IRF_PCResearcher_UltraWormholeHunt_ChoicePrompt
+What can I do for you?
+
+#org @gText_DaimynCityFacilities_IRF_PCResearcher_BuyBeastBallsChoice
+Buy Beast Balls
+
+#org @gText_DaimynCityFacilities_IRF_PCResearcher_TrackUltraWormholesChoice
+Track Ultra Wormholes
+
+#org @gText_DaimynCityFacilities_IRF_PCResearcher_ChooseUltraWormholePrompt
+Which Ultra Wormhole would you like\nto learn more about?
+
+#org @gText_DaimynCityFacilities_IRF_PCResearcher_AllUltraWormholesClosed
+You've closed every Ultra Wormhole\nI've tracked, [PLAYER]!
+
+#org @gText_DaimynCityFacilities_IRF_PCResearcher_UltraWormholeClosed
+You were able to capture the Ultra\nBeast causing this wormhole.\pGreat work, [PLAYER]!
+
+#org @gText_DaimynCityFacilities_IRF_PCResearcher_UltraWormhole_Nihilego
+This reading is coming from a flooded\ncavern in a secluded corner of the\locean.
+
+#org @gText_DaimynCityFacilities_IRF_PCResearcher_UltraWormhole_Buzzwole
+This reading is coming from a lush\njungle teeming with wildlife.
+
+#org @gText_DaimynCityFacilities_IRF_PCResearcher_UltraWormhole_Pheromosa
+This reading is coming from an arid\nsea of sand.
+
+#org @gText_DaimynCityFacilities_IRF_PCResearcher_UltraWormhole_Xurkitree
+This reading is coming from a place\nsurging with electricity.
+
+#org @gText_DaimynCityFacilities_IRF_PCResearcher_UltraWormhole_Celesteela
+This reading is coming from a\nvolcanic peak covered in craters.
+
+#org @gText_DaimynCityFacilities_IRF_PCResearcher_UltraWormhole_Kartana
+This reading is coming from a\nforest flush with verdant leaves.
+
+#org @gText_DaimynCityFacilities_IRF_PCResearcher_UltraWormhole_Guzzlord
+This reading is coming from[.]\nWithin the city?\pIf no one has seen it, perhaps it is\nunderground[.]
+
+#org @gText_DaimynCityFacilities_IRF_PCResearcher_UltraWormhole_Stakataka
+This reading is coming from the ruins\nof a long lost civilization.
+
+#org @gText_DaimynCityFacilities_IRF_PCResearcher_UltraWormhole_Blacephalon
+This reading is coming from a mansion\nforgotten to time.
+
+#org @gText_DaimynCityFacilities_IRF_PCResearcher_ConversationConcluded
 Good luck on your mission.
 
 #org @gText_DaimynCityFacilities_IRF_MachineryResearcher
 I'm testing the equipment to make\nsure it's working properly.\pProfessor Sakura has poured a lot of\ntime and effort into our\lUltra Space research.\pI don't want to let her down.
 
-#org @gText_DaimynCityFacilities_IRF_WanderingResearcher
+#org @gText_DaimynCityFacilities_IRF_TypeNullResearcher
 We've partnered with the Aether\nFoundation in the Alola Region.\pOur goal is to share information and\nresources to help us both further\lour research.\pWe've sent them information on how to\nstabilize a corridor connected to\lUltra Space.\pIn turn, they've lent us one of their\n"Beast Killer\" projects as a safety\lprecaution.\p[.]Oh, sorry. That might've been too\ntechnical for you.
 
 #org @gText_DaimynCityFacilities_IRF_TableBottomRightResearcher
@@ -1953,3 +2004,24 @@ Yes, that was quite enjoyable.
 
 #org @gText_UltraEpisode_PostCosmog_Sakura_UltraBeastCount
 [RED]Welcome back, [PLAYER].\pI've received word that you've dealt\nwith [BUFFER1] Ultra Wormholes.\pPlease, continue on until you've\nhandled at least 5.\pUntil then, it would not be wise to\nreturn to Ultra Space[.]
+
+#org @gText_UltraEpisode_TypeNullResearcher_RequestPlayersSupport
+I've received word from Professor\nSakura about you.\pYou're here to take Type: Null to\ninvestigate the Ultra Wormholes,\lyes?\pType: Null has a reputation of\nbeing aggressive[.]\pIn reality, it's just scared of this\nplace and it's mission.\pIt needs a confident and caring\ntrainer to help it calm down.\pPlease[.] Assure me you will take\ngood care of Type: Null.
+
+#org @gText_UltraEpisode_TypeNullResearcher_RequestPlayerSupport_PlayerSaidNo
+Then I cannot give you Type: Null in\ngood faith.
+
+#org @gText_UltraEpisode_TypeNullResearcher_RequestPlayerSupport_PlayerSaidYes
+Alright[.] I'll put my faith in you.
+
+#org @gText_UltraEpisode_TypeNullResearcher_NoRoomForTypeNull
+Oh! You don't have room to take it\nwith you.\pPlease, come back when you have\nsome space for it.
+
+#org @gText_UltraEpisode_TypeNullResearcher_RememberPromise
+Make sure you keep your word.
+
+#org @gText_UltraEpisode_TypeNullResearcher_ReceivedTypeNull
+[BLACK][PLAYER] received [GREEN]Type: Null[BLACK]![BLUE]
+
+#org @gText_UltraEpisode_TypeNullResearcher_TakeCare
+Bring Type: Null with you to any\nUltra Wormholes you find.\pAnd, take care of it.\pIt's scared, but I'm trusting in you\nto help it grow in confidence.

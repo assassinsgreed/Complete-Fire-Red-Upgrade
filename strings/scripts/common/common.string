@@ -413,6 +413,12 @@ Selene
 #org @gText_InGameGift_Victini
 Victini
 
+#org @gText_InGameGift_OTAether
+Aether
+
+#org @gText_InGameGift_TypeNull
+Type: Null
+
 // Special NPCs
 
 // Tutors
