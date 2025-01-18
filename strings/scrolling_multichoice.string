@@ -579,4 +579,31 @@ Instant Terrain in Battle
 #org @gText_GameModifiers_InstantFriendship
 Instant Friendship
 
+#org @gText_UltraWormholes_Nihilego
+Symbiont Wormhole
+
+#org @gText_UltraWormholes_Buzzwole
+Absorption Wormhole
+
+#org @gText_UltraWormholes_Pheromosa
+Beauty Wormhole
+
+#org @gText_UltraWormholes_Xurkitree
+Lighting Wormhole
+
+#org @gText_UltraWormholes_Celesteela
+Blaster Wormhole
+
+#org @gText_UltraWormholes_Kartana
+Blade Wormhole
+
+#org @gText_UltraWormholes_Guzzlord
+Glutton Wormhole
+
+#org @gText_UltraWormholes_Stakataka
+Assembly Wormhole
+
+#org @gText_UltraWormholes_Blacephalon
+Burst Wormhole
+
 #endif

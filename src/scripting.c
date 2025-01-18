@@ -3162,6 +3162,17 @@ extern const u8 gText_GameModifiers_InstantBattleWeather[];
 extern const u8 gText_GameModifiers_InstantBattleTerrain[];
 extern const u8 gText_GameModifiers_InstantFriendship[];
 
+// Ultra Wormholes
+extern const u8 gText_UltraWormholes_Nihilego[];
+extern const u8 gText_UltraWormholes_Buzzwole[];
+extern const u8 gText_UltraWormholes_Pheromosa[];
+extern const u8 gText_UltraWormholes_Xurkitree[];
+extern const u8 gText_UltraWormholes_Celesteela[];
+extern const u8 gText_UltraWormholes_Kartana[];
+extern const u8 gText_UltraWormholes_Guzzlord[];
+extern const u8 gText_UltraWormholes_Stakataka[];
+extern const u8 gText_UltraWormholes_Blacephalon[];
+
 //Scrolling Lists
 static const u8* sTutorFerrox[] =
 {
@@ -3456,6 +3467,20 @@ static const u8* sGameModifiers[] =
 	gText_End,
 };
 
+static const u8* sUltraWormholes[] =
+{
+	gText_UltraWormholes_Nihilego,
+	gText_UltraWormholes_Buzzwole,
+	gText_UltraWormholes_Pheromosa,
+	gText_UltraWormholes_Xurkitree,
+	gText_UltraWormholes_Celesteela,
+	gText_UltraWormholes_Kartana,
+	gText_UltraWormholes_Guzzlord,
+	gText_UltraWormholes_Stakataka,
+	gText_UltraWormholes_Blacephalon,
+	gText_End,
+};
+
 // Multichoice Lists
 const struct ScrollingMulti gScrollingSets[] =
 {
@@ -3477,7 +3502,8 @@ const struct ScrollingMulti gScrollingSets[] =
 	{sTutorsUteya, ARRAY_COUNT(sTutorsUteya)},
 	{sNatures, ARRAY_COUNT(sNatures)},
 	{sGameStats, ARRAY_COUNT(sGameStats)},
-	{sGameModifiers, ARRAY_COUNT(sGameModifiers)}
+	{sGameModifiers, ARRAY_COUNT(sGameModifiers)},
+	{sUltraWormholes, ARRAY_COUNT(sUltraWormholes)},
 };
 
 //Link number of opts shown at once to the box height
