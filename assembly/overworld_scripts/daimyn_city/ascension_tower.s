@@ -713,7 +713,7 @@ LevelScript_AscensionTower_HallOfFame_Registration:
     lockall
     pause DELAY_HALFSECOND
     setflag 0x3C @ Hide Selene in HoF Room in repeat visits
-    compare 0x4070 0x2 @ Player has completed the postcredits sequence (i.e. they are now defending their title)
+    compare 0x4070 0x3 @ Player has completed the postcredits sequence (i.e. they are now defending their title)
     if equal _goto HallOfFame_RegistrationTitleDefense
     applymovement 0x1 m_SeleneWalksToHallOfFameMachine 
     applymovement PLAYER m_PlayerWalksToHallOfFameMachine

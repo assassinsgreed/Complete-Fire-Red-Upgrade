@@ -535,6 +535,17 @@ TileScript_UltraSpaceWilds_AltarOfEclipse_UltraEpisodeIntroduction:
     applymovement UltraEpisodeTakenCosmog m_Surprise
     playse 0x15 @ Exclaim
     msgbox gText_UltraSpaceWilds_AltarOfEclipse_UltraWormholeOpened MSG_NORMAL
+    cry SPECIES_NECROZMA 0x0
+    setflag 0x150
+    pause DELAY_HALFSECOND
+    setvar 0x40AF 1
+    pause DELAY_HALFSECOND
+    setvar 0x40AF 2
+    pause DELAY_HALFSECOND
+    setvar 0x40AF 3
+    pause DELAY_HALFSECOND
+    setvar 0x40AF 4
+    msgbox gText_UltraSpaceWilds_AltarOfEclipse_EclipseStarted MSG_NORMAL
     cry SPECIES_COSMOG 0x0
     msgbox gText_UltraSpaceWilds_CosmogPew MSG_NORMAL
     applymovement UltraEpisodeCosmog m_UltraEpisodeCosmogPanic
@@ -560,6 +571,14 @@ TileScript_UltraSpaceWilds_AltarOfEclipse_UltraEpisodeIntroduction:
     hidesprite 4 @ Hide wormhole
     fadescreenspeed FADEIN_WHITE 0x80 @ Slower fade
     pause DELAY_HALFSECOND
+    setvar 0x40AF 3
+    pause DELAY_HALFSECOND
+    setvar 0x40AF 2
+    pause DELAY_HALFSECOND
+    setvar 0x40AF 1
+    pause DELAY_HALFSECOND
+    setvar 0x40AF 0
+    clearflag 0x150
     cry SPECIES_COSMOG 0x3 @ Lower pitch, fainted sound
     msgbox gText_UltraSpaceWilds_AltarOfEclipse_UltraWormholeCosmogCry MSG_NORMAL
     applymovement UltraEpisodeCosmog m_LookDown

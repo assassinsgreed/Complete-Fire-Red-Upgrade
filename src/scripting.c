@@ -3920,3 +3920,18 @@ void ComputeCompletedGameModifierRequirements()
 		FlagSet(FLAG_GAMEMODIFIER_INSTANTBATTLETERRAIN_UNLOCKED);
 	}
 }
+
+/// @brief Checks if Type:Null or Silvally is in the party. 1 if true, 0 if false
+void CheckBeastKillerInParty()
+{
+	gSpecialVar_LastResult = 0; // Not in the party
+	for (u8 i = 0; i < PARTY_SIZE; ++i)
+	{
+		u16 species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES, NULL);
+		if (species == SPECIES_TYPE_NULL || species == SPECIES_SILVALLY)
+		{
+			gSpecialVar_LastResult = 1;
+			break;
+		}
+	}
+}

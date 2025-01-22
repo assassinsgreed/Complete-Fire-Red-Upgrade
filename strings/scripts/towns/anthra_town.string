@@ -161,6 +161,9 @@ Phenomenal.\nTruly[.] Thank you, [PLAYER].
 #org @gText_AnthraTown_PostCredits_NextSteps
 Your journey to become the Champion\nhas concluded.\pHowever, there are many more stories\nto be told in the Kulure region!\pRevisit old locations to see how the\nregion has changed.
 
+#org @gText_AnthraTown_PostCredits_PromptToSeeProfessorSakura
+Perhaps Professor Sakura at the\nInterdimensional Research Facility\lknows something about this[.]
+
 #org @gText_AnthraTown_ChampionFanatic_Intro
 O-oh, Champion [PLAYER]!\nIt's really you!\pI'm a huuuuuge fan!\pI know everything about you and your\njourney.\pI-if you aren't too busy, I could\ntell you about some of the things\lI've seen you accomplish?
 

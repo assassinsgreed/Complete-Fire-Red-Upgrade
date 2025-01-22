@@ -806,6 +806,20 @@ TileScript_EncounterMeltan_Right:
     waitmovement PLAYER
     goto TileScript_EncounterMeltan_Middle
 
+.global EventScript_DaimynFactory_UltraWormhole_Xurkitree
+EventScript_DaimynFactory_UltraWormhole_Xurkitree:
+    call UltraWormholePrompt
+    cry SPECIES_XURKITREE 0x0
+    setflag 0x90B @ Wild custom moves, cleared at the end of battle
+    setvar 0x8000 MOVE_ZAPCANNON
+    setvar 0x8001 MOVE_POWERWHIP
+    setvar 0x8002 MOVE_WRAP
+    setvar 0x8003 MOVE_MAGNETRISE
+    setwildbattle SPECIES_XURKITREE 75 ITEM_NONE
+    call UltraWormholeBattle
+    setflag 0x66 @ Xurkitree caught
+    end
+
 m_PlayerWalksUp: .byte walk_up, walk_up, walk_up, end_m
 m_MeltanSurprise: .byte jump_onspot_down, end_m
 m_MeltanRunsLeft: .byte run_left, run_left, run_left, look_up, end_m

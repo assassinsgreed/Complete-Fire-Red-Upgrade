@@ -109,6 +109,7 @@ npc 1 0 5 ItemScript_Common_Antidote
 npc 1 0 6 ItemScript_Common_Pokeball
 npc 1 0 7 EventScript_VarisiForest_FoongusEncounter1
 npc 1 0 8 EventScript_VarisiForest_FoongusEncounter2
+npc 1 0 9 EventScript_VarisiForest_UltraWormhole_Kartana
 npc 15 0 0 EventScript_VarisiForest_PoisonWarning
 npc 15 0 1 EventScript_VarisiForest_TrainerTip
 npc 15 2 0 EventScript_VarisiForest_SurprisedTrainer
@@ -313,6 +314,7 @@ npc 1 1 28 EventScript_RubarrDesert_TeamPlutoTana
 npc 1 1 29 EventScript_RubarrDesert_StoryEvents
 npc 1 1 30 EventScript_RubarrDesert_StoryEvents
 npc 1 1 40 EventScript_RubarrDesert_Groudon
+npc 1 1 41 EventScript_RubarrDesert_UltraWormhole_Pheromosa
 sign 1 1 0 SignScript_RubarrDesert_Oasis
 
 ## Cave F1
@@ -906,6 +908,7 @@ npc 1 12 3 EventScript_ForgottenManseBF1_ChannelerSana
 npc 1 12 4 ItemScript_Common_EscapeRope
 npc 1 12 5 ItemScript_Common_DestinyKnot
 npc 1 12 6 EventScript_ForgottenManseBF1_TM61WillOWisp
+npc 1 12 7 EventScript_ForgottenManseBF1_UltraWormhole_Blacephalon
 sign 1 12 0 SignScript_ForgottenManse_Journal2
 sign 1 12 1 SignScript_ForgottenManse_Journal5
 sign 1 12 2 SignScript_ForgottenManse_Gate1Switch
@@ -1638,6 +1641,7 @@ npc 1 47 0 EventScript_PlutoHQ_B1F_TM59BrutalSwing
 npc 1 47 1 EventScript_PlutoHQ_B1F_TeamPlutoHeathcliff
 npc 1 47 2 EventScript_PlutoHQ_B1F_ScientistSeamus
 npc 1 47 3 EventScript_PlutoHQ_B1F_TeamPlutoColton
+npc 1 47 5 EventScript_PlutoHQ_UltraWormhole_Guzzlord
 sign 1 47 0 SignScript_PlutoHQ_B1F_Floor
 sign 1 47 1 SignScript_PlutoHQ_B1F_CerberusDoor
 sign 1 47 2 SignScript_PlutoHQ_B1F_CerberusDoor
@@ -1934,6 +1938,7 @@ npc 1 62 19 ItemScript_Common_Calcium
 npc 1 62 20 ItemScript_Common_WaterStone
 ## Side room
 npc 1 72 0 ItemScript_Common_LifeOrb
+npc 1 72 1 EventScript_SeppireCove_UltraWormhole_Nihilego
 ## Kyogre Room
 map 1 73 MapScript_SeppireCove_KyogreRoom 
 npc 1 73 0 EventScript_SeppireCove_Kyogre
@@ -2122,6 +2127,7 @@ npc 1 63 5 ItemScript_Common_Quickball
 npc 1 63 6 EventScript_MimmettJungle_ScientistSilas
 npc 1 63 7 EventScript_MimmettJungle_RuinManiacWinston
 npc 1 63 8 EventScript_MimmettJungle_BlackBeltLouis
+npc 1 63 9 EventScript_MimmettJungle_UltraWormhole_Buzzwole
 npc 1 64 0 ItemScript_Common_StickyBarb
 npc 1 64 1 ItemScript_Common_Ultraball
 npc 1 64 2 EventScript_MimmettJungle_BugCatcherNeil
@@ -2268,6 +2274,7 @@ npc 1 95 10 EventScript_DaimynFactory_BurglarWill
 npc 1 95 11 EventScript_DaimynFactory_EngineerElroy
 npc 1 95 12 EventScript_DaimynFactory_RustedData
 npc 1 95 13 EventScript_DaimynFactory_TM36_SludgeBomb
+npc 1 95 14 EventScript_DaimynFactory_UltraWormhole_Xurkitree
 sign 1 95 0 SignScript_DaimynFactory_BreakersNotice
 sign 1 95 1 SignScript_DaimynFacatory_Breaker
 sign 1 95 2 SignScript_DaimynFacatory_Breaker
@@ -2301,6 +2308,7 @@ npc 1 42 14 EventScript_CarnelidgeVolcano_CharizarditeY
 npc 1 42 15 EventScript_CarnelidgeVolcano_TM50_Overheat
 npc 1 42 16 ItemScript_Common_MaxRepel
 npc 1 42 17 ItemScript_Common_EscapeRope
+npc 1 42 18 EventScript_CarnelidgeVolcano_UltraWormhole_Celesteela
 sign 1 42 0 SignScript_CarnelidgeVolcano_EntrySign
 tile 1 42 0 TileScript_CarnelidgeVolcano_ExtendedSequenceWarning
 tile 1 42 1 TileScript_CarnelidgeVolcano_ExtendedSequenceWarning
@@ -2799,6 +2807,7 @@ npc 1 85 25 EventScript_Common_RockSmash
 npc 1 85 26 EventScript_Common_RockSmash
 npc 1 85 27 EventScript_Common_RockSmash
 npc 1 85 28 EventScript_RivalEvent8
+npc 1 85 29 EventScript_UteyanRuins_UltraWormhole_Stakataka
 sign 1 85 2 SignScript_UteyanRuins_ChamberDoor_Bottom
 sign 1 85 3 SignScript_UteyanRuins_ChamberDoor_Left
 sign 1 85 4 SignScript_UteyanRuins_ChamberDoor_Middle

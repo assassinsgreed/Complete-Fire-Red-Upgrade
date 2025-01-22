@@ -752,7 +752,7 @@ m_SakuraPacesRight: .byte walk_right_slow, walk_right_slow, look_right, end_m
 m_SakuraApproachesPlayer: .byte walk_down, walk_down, end_m
 m_UltraEpisodeCamera_MoveToResearcher: .byte run_up, run_up, run_left, run_left, run_left, run_left, run_left, end_m 
 m_UltraEpisodeCamera_MoveToPlayer: .byte run_right, run_right, run_right, run_right, run_right, run_down, run_down, end_m
-m_SakuraReturnToMachine: .byte walk_up, walk_up, walk_left, walk_left, walk_left, walk_left, walk_left, walk_left, walk_left, walk_up, walk_up, walk_up, end_m
+m_SakuraReturnToMachine: .byte walk_up, walk_up, walk_left, walk_left, walk_left, walk_left, walk_left, walk_left, walk_left, walk_up, walk_up, walk_up, look_left, end_m
 m_SakuraWelcomesPlayerBackAfterCosmog: .byte walk_down, walk_left, end_m
 m_SakuraReturnsToMachineAfterCosmog: .byte walk_right, walk_up, look_left, end_m
 m_UltraEpisodeCamera_PostCosmog_MoveToResearcher: .byte run_down, run_down, end_m

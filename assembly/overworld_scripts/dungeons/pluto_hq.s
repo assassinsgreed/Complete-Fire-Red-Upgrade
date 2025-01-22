@@ -1033,6 +1033,20 @@ SetZubat:
     setvar 0x4000 SPECIES_ZUBAT
     return
 
+.global EventScript_PlutoHQ_UltraWormhole_Guzzlord
+EventScript_PlutoHQ_UltraWormhole_Guzzlord:
+    call UltraWormholePrompt
+    cry SPECIES_GUZZLORD 0x0
+    setflag 0x90B @ Wild custom moves, cleared at the end of battle
+    setvar 0x8000 MOVE_DRAGONRUSH
+    setvar 0x8001 MOVE_STOMPINGTANTRUM
+    setvar 0x8002 MOVE_HEAVYSLAM
+    setvar 0x8003 MOVE_GASTROACID
+    setwildbattle SPECIES_GUZZLORD 75 ITEM_NONE
+    call UltraWormholeBattle
+    setflag 0x69 @ Guzzlord caught
+    end
+
 m_PlayerWalkIntoBase: .byte walk_left, walk_left, look_up, end_m
 m_AlistairWalksToPlayer: .byte walk_down, walk_down, end_m
 m_AlistairLeaves: .byte walk_up, walk_up, walk_up, walk_up, walk_up, end_m

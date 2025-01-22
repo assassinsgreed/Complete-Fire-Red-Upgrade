@@ -645,6 +645,24 @@ CaughtJirachi:
     setflag 0x5A @ Jirachi hidden
     return
 
+.global EventScript_CarnelidgeVolcano_UltraWormhole_Celesteela
+EventScript_CarnelidgeVolcano_UltraWormhole_Celesteela:
+    call UltraWormholePrompt
+    cry SPECIES_CELESTEELA 0x0
+    setflag 0x90B @ Wild custom moves, cleared at the end of battle
+    setvar 0x8000 MOVE_DOUBLEEDGE
+    setvar 0x8001 MOVE_AUTOTOMIZE
+    setvar 0x8002 MOVE_LEECHSEED
+    setvar 0x8003 MOVE_FLASHCANNON
+    setwildbattle SPECIES_CELESTEELA 75 ITEM_NONE
+    call UltraWormholeBattle
+    setflag 0x67 @ Celesteela caught
+    setvar LASTRESULT SPECIES_NECROZMA
+    callasm CheckIfCaught
+    compare LASTRESULT 0x1
+    if notequal _call HandleUltraWormholeEclipse
+    end
+
 m_JirachiFloatsAway: .byte slide_up, slide_up, slide_up, slide_up, slide_up, slide_up, slide_up, end_m
 m_CameraPanUpForVolcanion: .byte walk_up, walk_up, walk_up, end_m
 m_CameraPanDownForVolcanion: .byte walk_down, walk_down, walk_down, end_m

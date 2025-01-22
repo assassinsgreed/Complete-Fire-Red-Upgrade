@@ -560,3 +560,17 @@ FinalizeRotomFormChange:
 Cancelled:
     msgbox gText_ForgottenManse_ApplianceCatalog_ChoseNo MSG_NORMAL
     return
+
+.global EventScript_ForgottenManseBF1_UltraWormhole_Blacephalon
+EventScript_ForgottenManseBF1_UltraWormhole_Blacephalon:
+    call UltraWormholePrompt
+    cry SPECIES_BLACEPHALON 0x0
+    setflag 0x90B @ Wild custom moves, cleared at the end of battle
+    setvar 0x8000 MOVE_MINDBLOWN
+    setvar 0x8001 MOVE_SHADOWBALL
+    setvar 0x8002 MOVE_WILLOWISP
+    setvar 0x8003 MOVE_TRICK
+    setwildbattle SPECIES_BLACEPHALON 75 ITEM_NONE
+    call UltraWormholeBattle
+    setflag 0x6D @ Blacephalon caught
+    end
