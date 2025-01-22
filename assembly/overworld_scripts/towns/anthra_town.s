@@ -29,6 +29,7 @@ MapEntryScript_AnthraTown_FlightSpot:
 LevelScripts_AnthraTown_MeetingWithRival:
 	levelscript StoryEventVar PlayerAllowedToGoOnJourney LevelScript_DepartingWithRival
 	levelscript 0x4070 0x1 LevelScript_PostCreditsParty
+	levelscript 0x4070 0x2 LevelScript_PostCreditsEclipse
 	.hword LEVEL_SCRIPT_TERMIN
 
 LevelScript_DepartingWithRival:
@@ -720,14 +721,26 @@ LevelScript_PostCreditsParty:
 	hidesprite 0xB
 	hidesprite 0xC
 	hidesprite 0xD
+	setflag 0x9D @ Temp disable game clear to hide champion fanatic
 	hidesprite 0xE @ Champion Fanatic, hidden because we are moving the player during the fadeout
 	applymovement PLAYER m_PlayerReturnsToHouse
 	waitmovement PLAYER
 	fadescreen FADEIN_BLACK
 	addvar 0x4070 0x1
 	showsprite 0xE @ Champion Fanatic
+	clearflag 0x9D @ Restore game clear flag
 	playbgm 0x12C 0x1 @ Default theme, permanent
 	setvar 0x4073 0x1 @ Trigger Ultra Episode sequences
+	end
+
+LevelScript_PostCreditsEclipse:
+	pause DELAY_HALFSECOND
+	call StartEclipse
+	pause DELAY_1SECOND
+	call StopEclipse
+	pause DELAY_HALFSECOND
+	msgbox gText_AnthraTown_PostCredits_PromptToSeeProfessorSakura MSG_NORMAL
+	addvar 0x4070 0x1
 	end
 
 m_RivalBringsPlayerToParty: .byte walk_right, walk_right, walk_right, walk_right, walk_right, walk_right, walk_right, walk_right, look_left, end_m

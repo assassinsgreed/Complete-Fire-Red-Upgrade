@@ -88,8 +88,40 @@ static void FadeDayNightPalettes(void)
 			if (fadePalettes)
 			{
 				u32 hour = GetDNSHour();
-				u8 coeff = gDNSNightFadingByTime[hour][gClock.minute / 10].amount;
-				u16 colour = gDNSNightFadingByTime[hour][gClock.minute / 10].colour;
+				u16 r = gDNSNightFadingByTime[gClock.hour][gClock.minute / 10].r;
+				u16 g = gDNSNightFadingByTime[gClock.hour][gClock.minute / 10].g;
+				u16 b = gDNSNightFadingByTime[gClock.hour][gClock.minute / 10].b;
+				u16 colour;
+				
+				u8 coeff = gDNSNightFadingByTime[gClock.hour][gClock.minute / 10].amount;
+
+				// During the Ultra Episode, we simulate an eclipse (yes, even during the night) when a flag is set
+				u16 intensity = VarGet(VAR_ECLIPSE_INTENSITY);
+				if (FlagGet(FLAG_ECLIPSE_ACTIVE) && intensity > 0) // Intensity 0 is used as part of a slow fade back to normal DNS palette fades
+				{
+					if (hour <= 7 || hour >= 17) // Is night / morning, or is evening
+					{
+						// Increment intensity so we don't suddenly jolt back toward daylight hours, during eclipse shading logic
+						intensity += 2;
+						coeff = intensity * 2;
+
+						// Gradually shift whatever color the DNS is already applying to black
+						// We do RGB division instead of subtraction so certain palettes (such as midnight) do not become VERY blue
+						colour = RGB(
+							MathMax(1, r * (10 - intensity) / 10),
+							MathMax(0, g * (10 - intensity) / 10),
+							MathMax(1, b * (10 - intensity) / 10)
+						);
+					}
+					else
+					{
+						coeff = intensity * 2;
+						colour = RGB(1, 0, 1);
+					}
+				}
+				else
+					colour = RGB(r, g, b);
+
 				bool8 palFadeActive = gPaletteFade->active || gWeatherPtr->palProcessingState == WEATHER_PAL_STATE_SCREEN_FADING_IN;
 
 				if (inOverworld)
@@ -351,7 +383,11 @@ void DNSBattleBGPalFade(void)
 
 	u16 i, palOffset;
 	u8 coeff = gDNSNightFadingByTime[gClock.hour][gClock.minute / 10].amount;
-	u32 blendColor = gDNSNightFadingByTime[gClock.hour][gClock.minute / 10].colour;
+	u32 blendColor = RGB(
+		gDNSNightFadingByTime[gClock.hour][gClock.minute / 10].r,
+		gDNSNightFadingByTime[gClock.hour][gClock.minute / 10].g,
+		gDNSNightFadingByTime[gClock.hour][gClock.minute / 10].b
+	);
 	u8 selectedPalettes = BATTLE_DNS_PAL_FADE & 0x1C;
 
 	for (palOffset = 0; selectedPalettes; palOffset += 16)

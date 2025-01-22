@@ -130,6 +130,24 @@ ZeraoraJumpsAroundPlayer:
     waitmovement LASTTALKED
     return
 
+.global EventScript_MimmettJungle_UltraWormhole_Buzzwole
+EventScript_MimmettJungle_UltraWormhole_Buzzwole:
+    call UltraWormholePrompt
+    cry SPECIES_BUZZWOLE 0x0
+    setflag 0x90B @ Wild custom moves, cleared at the end of battle
+    setvar 0x8000 MOVE_SUPERPOWER
+    setvar 0x8001 MOVE_LUNGE
+    setvar 0x8002 MOVE_BULKUP
+    setvar 0x8003 MOVE_COUNTER
+    setwildbattle SPECIES_BUZZWOLE 75 ITEM_NONE
+    call UltraWormholeBattle
+    setflag 0x64 @ Buzzwole caught
+    setvar LASTRESULT SPECIES_NECROZMA
+    callasm CheckIfCaught
+    compare LASTRESULT 0x1
+    if notequal _call HandleUltraWormholeEclipse
+    end
+
 .global SignScript_MimmettJungle_PokerusSign
 SignScript_MimmettJungle_PokerusSign:
     msgbox gText_MimmettJungle_PokerusSign MSG_SIGN

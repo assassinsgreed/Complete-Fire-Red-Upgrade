@@ -511,6 +511,46 @@ Emily
 [RED]Hey! You don't have enough Pok\emon\nto battle us with.
 
 ////////////
+// ULTRA EPISODE
+////////////
+
+#org @gText_Common_UltraWormhole_Found
+[BLACK]It's an Ultra Wormhole!
+
+#org @gText_Common_TypeNull
+Type: Null
+
+#org @gText_Common_Silvally
+Silvally
+
+#org @gText_Common_UltraWormhole_NoBeastKiller
+[BLACK]It wouldn't be safe to interact with\nthis without [BUFFER1][.]
+
+#org @gText_Common_UltraWormhole_CloseWormholePrompt
+[BLACK]Do you want to attempt to close the\nUltra Wormhole?
+
+#org @gText_Common_UltraWormhole_CloseWormholeNo
+[BLACK]Not right now.
+
+#org @gText_Common_UltraWormhole_UltraBeastEmerging
+[BLACK]An Ultra Beast is emerging from the\nUltra Wormhole!\pI need to catch it!
+
+#org @gText_Common_UltraWormhole_UltraBeastDefeated
+[BLACK]The Ultra Beast retreated into the\nUltra Wormhole[.]
+
+#org @gText_Common_UltraWormhole_UltraWormholeClosed
+[BLACK]The Ultra Wormhole was closed!
+
+#org @gText_Common_UltraWormhole_EclipseSolar
+[BLACK]solar
+
+#org @gText_Common_UltraWormhole_EclipseLunar
+[BLACK]lunar
+
+#org @gText_Common_UltraWormhole_Eclipse
+[BLACK]It's a [BUFFER1] eclipse!
+
+////////////
 // GAME CUSTOMIZATION
 ////////////
 

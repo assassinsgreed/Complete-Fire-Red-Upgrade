@@ -343,10 +343,12 @@
 #define FLAG_0x14D               0x14D
 #define FLAG_0x14E               0x14E
 #define FLAG_0x14F               0x14F
-#define FLAG_0x150               0x150
+*/
+#define FLAG_ECLIPSE_ACTIVE                                     0x150
 #define FLAG_DO_NOT_DISABLE_INVERSE_BATTLES                     0x151
 #define FLAG_DO_NOT_DISABLE_CAMOMON_BATTLES                     0x152
 #define FLAG_DO_NOT_DISABLE_TRAINER_LEVEL_SCALING               0x153
+/*
 
 // Item ball hide/show
 #define FLAG_HIDE_ROUTE1_POKEBALL                               0x154

@@ -847,6 +847,123 @@ TurnOffInfiniteRepel:
     end
 
 ////////////
+// ULTRA EPISODE
+////////////
+
+.global UltraWormholePrompt
+UltraWormholePrompt:
+    msgbox gText_Common_UltraWormhole_Found MSG_NORMAL
+    callasm CheckBeastKillerInParty
+    compare LASTRESULT 0
+    if equal _goto UltraWormhole_BeastKillerNotPresent
+    msgbox gText_Common_UltraWormhole_CloseWormholePrompt MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto ChoseNotToCloseWormhole
+    return
+
+UltraWormhole_BeastKillerNotPresent:
+    setvar LASTRESULT SPECIES_SILVALLY
+    callasm CheckIfCaught
+    compare LASTRESULT TRUE
+    if equal _call SilvallyMissing
+    if notequal _call TypeNullMissing
+    msgbox gText_Common_UltraWormhole_NoBeastKiller MSG_NORMAL
+    end
+
+SilvallyMissing:
+    bufferstring 0x0 gText_Common_Silvally
+    return
+
+TypeNullMissing:
+    bufferstring 0x0 gText_Common_TypeNull
+    return
+
+ChoseNotToCloseWormhole:
+    msgbox gText_Common_UltraWormhole_CloseWormholeNo MSG_NORMAL
+    end
+
+.global UltraWormholeBattle
+UltraWormholeBattle:
+    msgbox gText_Common_UltraWormhole_UltraBeastEmerging MSG_KEEPOPEN
+    waitcry
+    setflag 0x90C @ Smarter wild battle, cleared at the end of battle
+    @ setwildbattle and moves set by calling function
+    setflag 0x807
+    special 0x138 @ Setup a legendary encounter (blurred screen transition)
+    waitstate
+    clearflag 0x807
+    special2 LASTRESULT 0xB4 @ Check the result of the battle
+    compare LASTRESULT 0x1 @ Defeated in battle
+    if equal _goto DefeatedOrFledFromUltraBeast
+    compare LASTRESULT 0x4 @ Fled from battle
+    if equal _goto DefeatedOrFledFromUltraBeast
+    @ Else, UB caught
+    addvar 0x40A7 0x1 @ Ultra Beast caught
+    playse 0x24 @ Ice crack
+    waitse
+    pause DELAY_HALFSECOND
+    playse 0x24 @ Ice crack
+    waitse
+    pause DELAY_HALFSECOND
+    playse 0x23 @ Ice shatter
+    fadescreenspeed FADEOUT_WHITE 0x96 @ fast fade
+    hidesprite LASTTALKED @ Hide wormhole
+    fadescreenspeed FADEIN_WHITE 0x80 @ Slower fade
+    pause DELAY_HALFSECOND
+    msgbox gText_Common_UltraWormhole_UltraWormholeClosed MSG_NORMAL
+    return
+
+DefeatedOrFledFromUltraBeast:
+    msgbox gText_Common_UltraWormhole_UltraBeastDefeated MSG_NORMAL
+    end
+
+.global HandleUltraWormholeEclipse
+HandleUltraWormholeEclipse:
+    call StartEclipse
+    pause DELAY_1SECOND
+    call StopEclipse
+    return
+
+.global StartEclipse
+StartEclipse:
+    applymovement PLAYER m_Surprise
+    playse 0x15 @ Exclaim
+    setflag 0x150
+    pause DELAY_HALFSECOND
+    setvar 0x40AF 1
+    pause DELAY_HALFSECOND
+    setvar 0x40AF 2
+    pause DELAY_HALFSECOND
+    setvar 0x40AF 3
+    pause DELAY_HALFSECOND
+    setvar 0x40AF 4
+    setvar 0x8000 0x0 @ Return distinct times of day
+    bufferstring 0x0 gText_Common_UltraWormhole_EclipseLunar
+    pause DELAY_1SECOND
+    special2 LASTRESULT 0xAD
+    compare LASTRESULT 0x2 @ Evening
+    if lessthan _call SolarEclipse
+    msgbox gText_Common_UltraWormhole_Eclipse MSG_NORMAL
+    return
+
+SolarEclipse:
+    bufferstring 0x0 gText_Common_UltraWormhole_EclipseSolar
+    return
+
+.global StopEclipse
+StopEclipse:
+    pause DELAY_HALFSECOND
+    setvar 0x40AF 3
+    pause DELAY_HALFSECOND
+    setvar 0x40AF 2
+    pause DELAY_HALFSECOND
+    setvar 0x40AF 1
+    pause DELAY_HALFSECOND
+    setvar 0x40AF 0
+    clearflag 0x150
+    return
+
+////////////
 // GAME CUSTOMIZATION
 ////////////
 
@@ -854,6 +971,15 @@ TurnOffInfiniteRepel:
 GameCustomizationMain:
 	lock
 	setflag 0x056 @ Hide Ena on Route 11 South
+    setflag 0x063 @ Nihilego Ultra Wormhole
+    setflag 0x064 @ Buzzwole Ultra Wormhole
+    setflag 0x065 @ Pheromosa Ultra Wormhole
+    setflag 0x066 @ Xurkitree Ultra Wormhole
+    setflag 0x067 @ Celesteela Ultra Wormhole
+    setflag 0x068 @ Kartana Ultra Wormhole
+    setflag 0x069 @ Guzzlord Ultra Wormhole
+    setflag 0x06A @ Stakataka Ultra Wormhole
+    setflag 0x06D @ Blacephalon Ultra Wormhole
 	spriteface PLAYER look_down
 	setvar 0x4056 0x1 @ Prevent Game Customization level script from running again
 	sethealingplace 0x01 @ Player's house

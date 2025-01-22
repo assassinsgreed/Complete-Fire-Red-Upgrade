@@ -487,4 +487,22 @@ EventScript_UteyanRuins_BlueOrb:
     finditem ITEM_BLUE_ORB 0x1
     end
 
+.global EventScript_UteyanRuins_UltraWormhole_Stakataka
+EventScript_UteyanRuins_UltraWormhole_Stakataka:
+    call UltraWormholePrompt
+    cry SPECIES_STAKATAKA 0x0
+    setflag 0x90B @ Wild custom moves, cleared at the end of battle
+    setvar 0x8000 MOVE_IRONHEAD
+    setvar 0x8001 MOVE_IRONDEFENSE
+    setvar 0x8002 MOVE_ROCKSLIDE
+    setvar 0x8003 MOVE_STEALTHROCK
+    setwildbattle SPECIES_STAKATAKA 75 ITEM_NONE
+    call UltraWormholeBattle
+    setflag 0x6A @ Stakataka caught
+    setvar LASTRESULT SPECIES_NECROZMA
+    callasm CheckIfCaught
+    compare LASTRESULT 0x1
+    if notequal _call HandleUltraWormholeEclipse
+    end
+
 m_PlayerRunsFromChamberDoor: .byte run_down, run_down, look_up, end_m

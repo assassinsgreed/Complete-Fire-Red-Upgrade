@@ -297,6 +297,20 @@ DefeatedOrFledFromKyogre:
     msgbox gText_Common_KyogreGroudonFledOrDefeated MSG_NORMAL
     return
 
+.global EventScript_SeppireCove_UltraWormhole_Nihilego
+EventScript_SeppireCove_UltraWormhole_Nihilego:
+    call UltraWormholePrompt
+    cry SPECIES_NIHILEGO 0x0
+    setflag 0x90B @ Wild custom moves, cleared at the end of battle
+    setvar 0x8000 MOVE_HEADSMASH
+    setvar 0x8001 MOVE_MIRRORCOAT
+    setvar 0x8002 MOVE_TOXICSPIKES
+    setvar 0x8003 MOVE_VENOSHOCK
+    setwildbattle SPECIES_NIHILEGO 75 ITEM_NONE
+    call UltraWormholeBattle
+    setflag 0x63 @ Nihilego caught
+    end
+
 .global SignScript_SeppireCove_Sign
 SignScript_SeppireCove_Sign:
     msgbox gText_SeppireCove_Overworld_Sign MSG_SIGN

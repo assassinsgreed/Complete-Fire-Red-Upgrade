@@ -27,18 +27,15 @@ MapEntryScript_RubarrDesert_FlightFlag:
     end
 
 MapEntryScript_RubarrDesert_SetWeather:
+    @ If Pheromosa Wormhole is present, weather is clear or sandstorm only (to prevent weirdness from the eclipse being present during the day)
+    checkflag 0x65 @ Pheromosa Wormhole is closed
+    if NOT_SET _goto SetClearOrSandstormWeather
     @ Check time of day
     setvar 0x8000 0x0 @ Return distinct times of day
     special2 LASTRESULT 0xAD
     compare LASTRESULT 0x2 @ Evening
     if lessthan _goto SetAllWeatherTypes @ Is morning or day, set clear, sandstorm, or sunny
-    @ Is evening or night, set clear skies or sandstorm only
-    random 0xA @ Between 0 and 10
-    compare LASTRESULT 0x5 @ "6"
-    if lessthan _call SetWeatherClear
-    compare LASTRESULT 0x5 @ "6"
-    if greaterorequal _call SetWeatherSandstorm
-    end
+    goto SetClearOrSandstormWeather
 
 SetAllWeatherTypes:
     random 0xA @ Between 0 and 10
@@ -47,6 +44,15 @@ SetAllWeatherTypes:
     compare LASTRESULT 0x5 @ "6"
     if greaterorequal _call SetWeatherSandstorm
     @ Otherwise, leave as regular weather
+    end
+
+SetClearOrSandstormWeather:
+    @ Is evening or night, set clear skies or sandstorm only
+    random 0xA @ Between 0 and 10
+    compare LASTRESULT 0x5 @ "6"
+    if lessthan _call SetWeatherClear
+    compare LASTRESULT 0x5 @ "6"
+    if greaterorequal _call SetWeatherSandstorm
     end
 
 MapResumeScript_HideGroudon:
@@ -420,6 +426,24 @@ GroudonAwakens:
 DefeatedOrFledFromGroudon:
     msgbox gText_Common_KyogreGroudonFledOrDefeated MSG_NORMAL
     return
+
+.global EventScript_RubarrDesert_UltraWormhole_Pheromosa
+EventScript_RubarrDesert_UltraWormhole_Pheromosa:
+    call UltraWormholePrompt
+    cry SPECIES_PHEROMOSA 0x0
+    setflag 0x90B @ Wild custom moves, cleared at the end of battle
+    setvar 0x8000 MOVE_HIGHJUMPKICK
+    setvar 0x8001 MOVE_QUIVERDANCE
+    setvar 0x8002 MOVE_BOUNCE
+    setvar 0x8003 MOVE_BUGBUZZ
+    setwildbattle SPECIES_PHEROMOSA 75 ITEM_NONE
+    call UltraWormholeBattle
+    setflag 0x65 @ Pheromosa caught
+    setvar LASTRESULT SPECIES_NECROZMA
+    callasm CheckIfCaught
+    compare LASTRESULT 0x1
+    if notequal _call HandleUltraWormholeEclipse
+    end
 
 m_RivalRunsToMeetPlayer: .byte run_right, run_up, run_up, run_up, run_right, run_right, run_right, run_up, run_up, run_right, run_right, run_right, end_m 
 m_ClancyAngry: .byte jump_onspot_down, pause_short, jump_onspot_down, end_m

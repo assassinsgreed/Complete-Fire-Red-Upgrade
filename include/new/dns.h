@@ -34,7 +34,9 @@ void apply_map_tileset_palette(struct Tileset const* tileset, u16 destOffset, u1
 //Exported Structs
 struct DNSPalFade
 {
-	u16 colour;
+	u8 r;
+	u8 g;
+	u8 b;
 	u8 amount;
 };
 

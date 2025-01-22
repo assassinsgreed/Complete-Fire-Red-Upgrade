@@ -119,6 +119,24 @@ FoongusEncounter:
     release
     return
 
+.global EventScript_VarisiForest_UltraWormhole_Kartana
+EventScript_VarisiForest_UltraWormhole_Kartana:
+    call UltraWormholePrompt
+    cry SPECIES_KARTANA 0x0
+    setflag 0x90B @ Wild custom moves, cleared at the end of battle
+    setvar 0x8000 MOVE_SACREDSWORD
+    setvar 0x8001 MOVE_SYNTHESIS
+    setvar 0x8002 MOVE_DEFOG
+    setvar 0x8003 MOVE_AERIALACE
+    setwildbattle SPECIES_KARTANA 75 ITEM_NONE
+    call UltraWormholeBattle
+    setflag 0x68 @ Kartana caught
+    setvar LASTRESULT SPECIES_NECROZMA
+    callasm CheckIfCaught
+    compare LASTRESULT 0x1
+    if notequal _call HandleUltraWormholeEclipse
+    end
+
 .global SignScript_VarisiForest_AntidoteSign
 SignScript_VarisiForest_AntidoteSign:
     msgbox gText_VarisiForest_AntidoteSign MSG_SIGN
