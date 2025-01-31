@@ -3935,3 +3935,30 @@ void CheckBeastKillerInParty()
 		}
 	}
 }
+
+/// @brief Checks if Type:Null or Silvally is in the party. 1 if true, 0 if false
+// Requires 0x8004 to be set to the species you're looking for
+void CheckSpeciesInParty()
+{
+	gSpecialVar_LastResult = 0; // Not in the party
+	for (u8 i = 0; i < PARTY_SIZE; ++i)
+	{
+		u16 species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES, NULL);
+		if (species == VarGet(Var8004))
+		{
+			gSpecialVar_LastResult = 1;
+			break;
+		}
+	}
+}
+
+/// @brief Checks if Type:Null or Silvally is in the first party slot. 1 if Type: Null, 2 if Silvally, 0 if neither
+void CheckBeastKillerInFirstSlot()
+{
+	gSpecialVar_LastResult = 0; // Not in first slot
+	u16 species = GetMonData(&gPlayerParty[0], MON_DATA_SPECIES, NULL);
+	if (species == SPECIES_TYPE_NULL)
+		gSpecialVar_LastResult = 1;
+	else if (species == SPECIES_SILVALLY)
+		gSpecialVar_LastResult = 2;
+}

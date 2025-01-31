@@ -3065,6 +3065,22 @@ static s8 *GetCurrentPartySlotPtr(void)
         return &gPartyMenu.slotId;
 }
 
+/// @brief Only to be used during Ultra Episode events, when CheckBeastKillerInFirstSlot is used
+void EvolveTypeNull()
+{
+	// Evolve to Silvally, cannot stop it
+	gCB2_AfterEvolution = CB2_ReturnToFieldContinueScript;
+	BeginEvolutionScene(&gPlayerParty[0], SPECIES_SILVALLY, FALSE, 0);
+}
+
+void SetSivallyAsPlayers()
+{
+	// Set Silvally to be owned by the player
+	SetMonData(&gPlayerParty[0], MON_DATA_OT_ID, gSaveBlock2->playerTrainerId);
+	SetMonData(&gPlayerParty[0], MON_DATA_OT_GENDER, &gSaveBlock2->playerGender);
+	SetMonData(&gPlayerParty[0], MON_DATA_OT_NAME, gSaveBlock2->playerName);
+}
+
 #ifdef UNBOUND
 void FieldUseFunc_VsSeeker(u8 taskId)
 {

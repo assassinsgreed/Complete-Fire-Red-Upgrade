@@ -145,7 +145,7 @@ Check your Pok\edex from time to\ntime for empty spaces, to see if\lany Pok\emon
 You're so close to completing your\nPok\edex!
 
 #org @gText_PokedexAssessment_ThreeHundredFiftyOrLessCaught_Advice
-Some incredibly powerful Pok\emon will\nonly reveal themselves to you if\lyou are a champion-level trainer.\pIt's worth revisiting old locations\nto see if anything has changed.
+Some incredibly powerful Pok\emon will\nonly reveal themselves to you if\lyou are a Champion-level trainer.\pIt's worth revisiting old locations\nto see if anything has changed.
 
 #org @gText_PokedexAssessment_ThreeHundredFiftyOrMoreCaught
 You're almost there!
@@ -550,6 +550,12 @@ Silvally
 #org @gText_Common_UltraWormhole_Eclipse
 [BLACK]It's a [BUFFER1] eclipse!
 
+#org @gText_Common_Solgaleo
+Solgaleo
+
+#org @gText_Common_Lunala
+Lunala
+
 ////////////
 // GAME CUSTOMIZATION
 ////////////
@@ -667,7 +673,7 @@ Quick Start is disabled!
 [RED]Continue Screen Pary Icons\n[BLACK]BluRosie\p[RED]RSE Tall Grass\n[BLACK]knizz\p[RED]Nature Changing Code\n[BLACK]Andr\e Freitas\p[RED]Remove Save Confirmation\n[BLACK]Yave Yu
 
 #org @gText_Common_Credits_BattleBackgrounds
-[GREEN]Battle Backgrounds\p[RED]Most backgrounds (Adapted)\n[BLACK]KWharever, Zeo254, WesleyFG\p[RED]Caves (Adapted)\n[BLACK]charchagui\p[RED]Gym (Adapted)\n[BLACK]Princess-Phoenix\p[RED]Swamp (Adapted)\n[BLACK]aveontrainer, 44Tim44, Tacoma29,\ladrix89\p[RED]Volcano (Adapted)\n[BLACK]aveontrainer, Cyangmou, Saint11,\lcharchagui, ThanatosIXII
+[GREEN]Battle Backgrounds\p[RED]Most backgrounds (Adapted)\n[BLACK]KWharever, Zeo254, WesleyFG\p[RED]Caves (Adapted)\n[BLACK]charchagui\p[RED]Gym (Adapted)\n[BLACK]Princess-Phoenix\p[RED]Swamp (Adapted)\n[BLACK]aveontrainer, 44Tim44, Tacoma29,\ladrix89\p[RED]Volcano (Adapted)\n[BLACK]aveontrainer, Cyangmou, Saint11,\lcharchagui, ThanatosIXII\p[RED]Space\n[BLACK]LibertyTwins
 
 #org @gText_Common_Credits_BattleSprites
 [GREEN]Trainer Sprites\p[RED]Nurse (Adapted)\n[BLACK]BaysenAhiru427\p[RED]Dennis & Dee (Adapted)\n[BLACK]Rizon, Falsever\p[RED]Hannah (Adapted)\n[BLACK]Sky High\p[RED]Jenna (Adapted)\n[BLACK]Sky High\p[RED]Thomas (Adapted)\n[BLACK]Greenphx\p[RED]Selene (Adapted)\n[BLACK]Sacredgbc123, Greenphx

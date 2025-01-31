@@ -190,7 +190,7 @@
 #define MAP_NAVEL_ROCK_SUMMIT                         (37 | (2 << 8))
 #define MAP_NAVEL_ROCK_BASE                           (38 | (2 << 8))
 #define MAP_NAVEL_ROCK_SUMMIT_PATH_2F                 (39 | (2 << 8))
-#define MAP_NAVEL_ROCK_SUMMIT_PATH_3F                 (40 | (2 << 8))
+#define MAP_ULTRA_SPACE_DIAS_OF_LIGHT                 (40 | (2 << 8))
 #define MAP_NAVEL_ROCK_SUMMIT_PATH_4F                 (41 | (2 << 8))
 #define MAP_NAVEL_ROCK_SUMMIT_PATH_5F                 (42 | (2 << 8))
 #define MAP_NAVEL_ROCK_BASE_PATH_B1F                  (43 | (2 << 8))

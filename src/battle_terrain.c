@@ -71,7 +71,7 @@ u8 BattleSetup_GetTerrainId(void)
 		else if (MetatileBehavior_IsMountain(tileBehavior))
 			if (MAP_IS(CARNELIDGE_VOLCANO_PEAK))
 					terrain = BATTLE_TERRAIN_CARNELIDGE_PEAK;
-				else 
+				else
 					terrain = BATTLE_TERRAIN_MOUNTAIN;
 
 		#ifdef BRIDGE_FIX
@@ -387,6 +387,8 @@ static u8 TryLoadAlternateAreaTerrain(u8 terrain)
 			}
 			else if (mapSec == MAPSEC_MIMMETT_JUNGLE)
 				terrain = BATTLE_TERRAIN_JUNGLE;
+			else if (MAP_IS(ULTRA_SPACE_DIAS_OF_LIGHT))
+				terrain = BATTLE_TERRAIN_DIAS_OF_LIGHT;
 			break;
 		case BATTLE_TERRAIN_INSIDE:
 			if (mapSec == MAPSEC_FORGOTTEN_MANSE || mapSec == MAPSEC_UTEYAN_RUINS)

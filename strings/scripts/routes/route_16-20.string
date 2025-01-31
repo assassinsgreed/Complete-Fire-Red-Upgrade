@@ -142,7 +142,7 @@ Danger! Wild Pok\emon have been\nsighted. Please be careful.
 [BLACK][RIVAL]: [BLUE]Hey, [PLAYER], you should\nintroduce yourself too!
 
 #org @gText_Route17_RivalsRequest
-[BLACK][RIVAL]: [BLUE]My friend, [PLAYER], and I\nhave been big fans of Champion\lSelene ever since she became\lchampion.\pShe's really nice, and strong, and\nhas never lost a fight. She's so\lcool!\pWe saw her crowning match, and ever\nsince then we've been dying to get\lher autograph.\pSo[.] if it isn't too much trouble[.]\ncould we get one?
+[BLACK][RIVAL]: [BLUE]My friend, [PLAYER], and I\nhave been big fans of Champion\lSelene ever since she became\lChampion.\pShe's really nice, and strong, and\nhas never lost a fight. She's so\lcool!\pWe saw her crowning match, and ever\nsince then we've been dying to get\lher autograph.\pSo[.] if it isn't too much trouble[.]\ncould we get one?
 
 #org @gText_Route17_SelenesResponse
 [BLACK]Selene: [RED]That's all?

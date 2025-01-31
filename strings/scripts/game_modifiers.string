@@ -197,7 +197,7 @@ The password to unlock this modifier\nin new games is [BLUE]BFFS[BLACK].
 [BLUE]Unlock Criteria: [BLACK]Catch all legendary\nand mythical Pok\emon in Kulure.
 
 #org @gText_GameModifiers_UnlockCriteria_ChampionDefense
-[BLUE]Unlock Criteria: [BLACK]Defend your champion\ntitle 3 or more times.
+[BLUE]Unlock Criteria: [BLACK]Defend your Champion\ntitle 3 or more times.
 
 #org @gText_GameModifiers_UnlockCriteria_GymLeaderRematches
 [BLUE]Unlock Criteria: [BLACK]Complete all gym\nleader rematches in a single day.
@@ -209,13 +209,13 @@ The password to unlock this modifier\nin new games is [BLUE]BFFS[BLACK].
 [BLUE]Unlock Criteria: [BLACK]Acquire all 100 TMs\nand all 6 HMs in Kulure.
 
 #org @gText_GameModifiers_UnlockCriteria_3OrMoreLevel25DexNavSearches
-[BLUE]Unlock Criteria: [BLACK]Reach DexNav Search\nLevel 25 with at least 3 Pok\emon\land become the champion.
+[BLUE]Unlock Criteria: [BLACK]Reach DexNav Search\nLevel 25 with at least 3 Pok\emon\land become the Champion.
 
 #org @gText_GameModifiers_UnlockCriteria_BattleBondGreninja
 [BLUE]Unlock Criteria: [BLACK]Obtain an\nunbreakable bond with a Greninja.
 
 #org @gText_GameModifiers_UnlockCriteria_AllUteyanRuinPuzzles
-[BLUE]Unlock Criteria: [BLACK]Solve the mysteries\nof the Uteyan Ruins and become\lchampion.
+[BLUE]Unlock Criteria: [BLACK]Solve the mysteries\nof the Uteyan Ruins and become\lChampion.
 
 // Passwords
 #org @gText_GameModifiers_RandomizerSpecies_Password

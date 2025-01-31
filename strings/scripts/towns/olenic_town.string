@@ -66,7 +66,7 @@ Professor Hawthorne's Conservatory
 Hello, [PLAYER]. You're here to have\nyour Pokedex evaluated, yes?\pVery well, pass it here a moment,\nplease.
 
 #org @gText_OlenicProfessorsLab_ConservatoryAide
-I'm sorry, but the conservatory is a\nsensitive area. Only the professor\land champion may enter.
+I'm sorry, but the conservatory is a\nsensitive area. Only the professor\land Champion may enter.
 
 #org @gText_OlenicProfessorsLab_ConservatoryAide_AfterBecomingChampion
 Ah, Champion [PLAYER].\pYou may enter the professor's\nconservatory at your leisure.

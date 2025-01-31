@@ -1720,6 +1720,12 @@ void FieldCB_RushInjuredPokemonToCenter(void)
 
 bool8 WhiteoutLogic(void)
 {
+	// Clear plot flags, if the player whited out at an inconvenient time
+
+	// Eclipses off
+	VarSet(0x40AF, 0);
+	FlagClear(0x150);
+
 #ifdef SET_HEALING_PLACE_HACK
 	u16 loc = VarGet(VAR_HEALINGMAP);
 	if (loc == 0) return TRUE; // Load from original table
@@ -1819,7 +1825,7 @@ bool8 Overworld_IsBikingAllowed(void)
 
 	return gMapHeader.bikingAllowed
 #ifdef BIKE_ON_ANY_NON_INSIDE_MAP
-	|| !IsMapTypeIndoors(GetCurrentMapType());
+	|| (!IsMapTypeIndoors(GetCurrentMapType()) && !MAP_IS(ULTRA_SPACE_DIAS_OF_LIGHT));
 #endif
 	;
 }

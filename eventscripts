@@ -2674,6 +2674,16 @@ npc 2 39 8 EventScript_UltraSpaceHoenn_Wingull5
 npc 2 39 9 EventScript_UltraSpaceHoenn_Wingull6
 npc 2 39 10 EventScript_UltraSpaceHoenn_Wingull7
 npc 2 39 11 EventScript_UltraSpaceHoenn_Jirachi
+## Dias of Light
+map 2 40 MapScript_UltraSpace_DiasOfLight
+npc 2 40 0 EventScript_UltraSpace_DiasOfLight_Necrozma
+npc 2 40 1 EventScript_UltraSpace_DiasOfLight_ProfessorSakura
+tile 2 40 0 TileScript_UltraSpace_DiasOfLight_FirstEvent
+tile 2 40 1 TileScript_UltraSpace_DiasOfLight_FirstEvent
+tile 2 40 2 TileScript_UltraSpace_DiasOfLight_FirstEvent
+tile 2 40 3 TileScript_UltraSpace_DiasOfLight_SecondEvent
+tile 2 40 4 TileScript_UltraSpace_DiasOfLight_SecondEvent
+tile 2 40 5 TileScript_UltraSpace_DiasOfLight_SecondEvent
 
 # Uteya Village
 ## Overworld
