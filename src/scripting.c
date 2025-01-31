@@ -3800,6 +3800,11 @@ void ResetAllLegendaries()
 			FlagClear(speciesFlags[i]);
 		}
 	}
+
+	// Special: Handle Necrozma by it's unique flag, since it can be caught in either form and is not guaranteed to be unfused
+	if (!FlagGet(0x28D))
+		FlagClear(0x6F);
+	
 }
 
 bool8 AreAllItemsInRangeObtained(u16 startRange, u16 endRange)
@@ -3860,7 +3865,7 @@ void ComputeCompletedGameModifierRequirements()
 		SPECIES_ZERAORA,
 		SPECIES_ARTICUNO_G,
 		SPECIES_ZAPDOS_G,
-		SPECIES_MOLTRES_G
+		SPECIES_MOLTRES_G,
 		// UBs not in Kulure
 	};
 
