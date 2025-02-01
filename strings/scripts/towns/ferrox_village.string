@@ -144,7 +144,7 @@ It was a pleasure battling with you.\nI wish you luck in your gym\lchallenge.
 Umm[.] Congratulations on becoming the\nChampion, [PLAYER].\pYou and your Pok\emon are quite\nstrong.\pI was thinking[.] If I battled you,\nI could get stronger too.\pWould that be okay with you?
 
 #org @gText_FerroxGym_LeaderStella_PreBattle
-Okay[.] I think I'll pick this strategy\ntoday.\pI won't hold back just because\nyou're the champion, [PLAYER]!
+Okay[.] I think I'll pick this strategy\ntoday.\pI won't hold back just because\nyou're the Champion, [PLAYER]!
 
 #org @gText_FerroxGym_LeaderStella_OnPlayerVictory
 Your skills haven't dulled even a\nbit!
@@ -315,7 +315,7 @@ I'm pretty sure I didn't see anyone\nleave. They have to be here still.
 [BLACK][RIVAL]: [BLUE]Yep, that's right! We're\ngoing to get every gym badge and\lchallenge Champion Selene.
 
 #org @gText_FerroxLibrary_Plot_AlistairGivesCutGift
-[BLACK]Alistair: [BLUE]Ah, very good. She\ncertainly has been champion for a\llong time[.] But I digress.\pIt has been lovely talking with you\nboth. Your energy is infectious,\land I'd like to give you both a\lgift before I go.
+[BLACK]Alistair: [BLUE]Ah, very good. She\ncertainly has been Champion for a\llong time[.] But I digress.\pIt has been lovely talking with you\nboth. Your energy is infectious,\land I'd like to give you both a\lgift before I go.
 
 #org @gText_FerroxLibrary_Plot_AlistairExplainsCut
 [BLACK]Alistair: [BLUE]That is the HM for the move\nCut.\pUsing it will allow you to cut down\nsmall trees in your path. It will\lsurely allow you to reach new\lareas.\pOh, but you'll require the gym badge\nfrom the Ferrox Village gym before\lyou can use it.
@@ -324,7 +324,7 @@ I'm pretty sure I didn't see anyone\nleave. They have to be here still.
 [BLACK][RIVAL]: [BLUE]Wow, thank you Alistair!\nThat's very nice of you.
 
 #org @gText_FerroxLibrary_Plot_AlistairLeaves
-[BLACK]Alistair: [BLUE]The pleasure is all mine.\pI used to be a trainer myself,\nactually, and I have a soft spot\lfor those that want to become\lchampions.\pThat being said, I must bid you both\nadieu now.\pGood luck in your pursuit of the\ngym leader, and your gym\lchallenge.\pPerhaps we will meet again someday.
+[BLACK]Alistair: [BLUE]The pleasure is all mine.\pI used to be a trainer myself,\nactually, and I have a soft spot\lfor those that want to become\lChampions.\pThat being said, I must bid you both\nadieu now.\pGood luck in your pursuit of the\ngym leader, and your gym\lchallenge.\pPerhaps we will meet again someday.
 
 #org @gText_FerroxLibrary_Plot_RivalCommentsOnAlistair
 [BLACK][RIVAL]: [BLUE]He was a nice guy.\pBut[.] we still haven't found the gym\nleader. I have to be honest, I'm\lrunning out of ideas[.]

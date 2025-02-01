@@ -411,6 +411,16 @@ const struct TerrainTableStruct gTerrainTable[] =
 			.burmyForm = SPECIES_BURMY,
 		},
 
+	[BATTLE_TERRAIN_DIAS_OF_LIGHT + 4] =
+		{
+			.camouflageType = TYPE_PSYCHIC,
+			.secretPowerEffect = MOVE_EFFECT_ACC_MINUS_2,
+			.secretPowerAnim = MOVE_METEORMASH,
+			.naturePowerMove = MOVE_METEORBEAM,
+			.burmyForm = SPECIES_BURMY,
+		},
+
+
 #ifdef UNBOUND //The ones below are for Pokemon Unbound. Feel free to remove.
 	[BATTLE_TERRAIN_MOLEMAN + 4] =
 		{

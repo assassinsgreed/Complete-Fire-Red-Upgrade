@@ -928,6 +928,18 @@ HandleUltraWormholeEclipse:
 StartEclipse:
     applymovement PLAYER m_Surprise
     playse 0x15 @ Exclaim
+    call PlayEclipseAnimation
+    setvar 0x8000 0x0 @ Return distinct times of day
+    bufferstring 0x0 gText_Common_UltraWormhole_EclipseLunar
+    pause DELAY_1SECOND
+    special2 LASTRESULT 0xAD
+    compare LASTRESULT 0x2 @ Evening
+    if lessthan _call SolarEclipse
+    msgbox gText_Common_UltraWormhole_Eclipse MSG_NORMAL
+    return
+
+.global PlayEclipseAnimation
+PlayEclipseAnimation:
     setflag 0x150
     pause DELAY_HALFSECOND
     setvar 0x40AF 1
@@ -937,13 +949,6 @@ StartEclipse:
     setvar 0x40AF 3
     pause DELAY_HALFSECOND
     setvar 0x40AF 4
-    setvar 0x8000 0x0 @ Return distinct times of day
-    bufferstring 0x0 gText_Common_UltraWormhole_EclipseLunar
-    pause DELAY_1SECOND
-    special2 LASTRESULT 0xAD
-    compare LASTRESULT 0x2 @ Evening
-    if lessthan _call SolarEclipse
-    msgbox gText_Common_UltraWormhole_Eclipse MSG_NORMAL
     return
 
 SolarEclipse:

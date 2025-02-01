@@ -463,7 +463,7 @@ Dennis: This can't be happening!\nDee: Have we been [.] defeated?
 [RED]Hey, long time no see.\pIf you're here, you're probably\nlooking for a battle, huh?
 
 #org @gText_UteyaGym_LeaderDennisAndDee_PreBattle
-[BLUE]Don't think we'll go easy on you just\nbecause you're a kid.\p[RED]You may be the champion, but our\npride is on the line.
+[BLUE]Don't think we'll go easy on you just\nbecause you're a kid.\p[RED]You may be the Champion, but our\npride is on the line.
 
 #org @gText_UteyaGym_LeaderDennisAndDee_OnPlayerVictory
 Dennis: So you've still got it, huh?\nDee: We still can't win[.]

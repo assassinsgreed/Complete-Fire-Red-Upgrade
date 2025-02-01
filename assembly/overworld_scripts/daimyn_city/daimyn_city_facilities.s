@@ -647,8 +647,10 @@ EventScript_DaimynCityFacilities_Pokeball:
 .global EventScript_DaimynCityFacilities_ProfessorSakura
 EventScript_DaimynCityFacilities_ProfessorSakura:
     lock
-    compare 0x4073 0x5
-    if equal _call Sakura_UltraEpisode_UltraBeastHunt
+    faceplayer
+    compare 0x4073 0x6
+    if lessorequal _goto Sakura_UltraEpisode_UltraBeastHunt
+    if greaterthan _goto Sakura_UltraEpisode_PromptForDiasOfLight
     checkflag 0x274 @ Permitted to go to ultra space
     if SET _goto SakuraAsksToGoToUltraSpace
     msgbox gText_DaimynCityFacilities_IRF_SakuraPreoccupied MSG_NORMAL
@@ -663,10 +665,119 @@ EventScript_DaimynCityFacilities_ProfessorSakura:
     end
 
 Sakura_UltraEpisode_UltraBeastHunt:
-    @ TODO Later: Check if 5+ Ultra Beasts were caught, and goto further plot progression if so
-    buffernumber 0x0 0x40A7 @ Number of beasts quelled
-    npcchatwithmovement gText_UltraEpisode_PostCosmog_Sakura_UltraBeastCount m_LookLeft
+    msgbox gText_UltraEpisode_UltraBeastHunt_Sakura_PromptForDestination MSG_KEEPOPEN
+    multichoiceoption gText_UltraEpisode_Sakura_GoToEclipseVillage 0
+	multichoiceoption gText_UltraEpisode_Sakura_TrackTheDistrubances 1
+	multichoiceoption gText_UltraEpisode_Sakura_Nothing 2
+    multichoice 0x0 0x0 THREE_MULTICHOICE_OPTIONS FALSE
+	copyvar MULTICHOICE_SELECTION LASTRESULT
+	switch LASTRESULT
+	case 0, GoToEclipseVillage _goto
+	case 1, TrackDisturbances _goto
+    @ Nothing and cancel ignored, fall through to below
+    npcchatwithmovement gText_UltraEpisode_UltraBeastHunt_Sakura_ChoseNothing m_LookLeft
     end
+
+TrackDisturbances:
+    msgbox gText_UltraEpisode_UltraBeastHunt_Sakura_RequirementsToTrackDisturbance MSG_NORMAL
+    compare 0x40A7 5
+    if lessthan _goto Sakura_UltraEpisode_UltraWormholeRequirement
+    msgbox gText_UltraEpisode_PostUltraWormholes_Sakura_UltraBeastCount_Sufficient MSG_NORMAL
+    goto Sakura_UltraEpisode_SolgaleoOrLunalaRequirement
+
+Sakura_UltraEpisode_UltraWormholeRequirement:
+    buffernumber 0x0 0x40A7 @ Number of beasts captured
+    npcchatwithmovement gText_UltraEpisode_UltraBeastHunt_Sakura_UltraBeastCount_Requirement m_LookLeft
+    end
+
+Sakura_UltraEpisode_SolgaleoOrLunalaRequirement:
+    setvar 0x8004 SPECIES_SOLGALEO
+    callasm CheckSpeciesInParty
+    compare LASTRESULT TRUE
+    if equal _goto SolgaleoCaught
+    setvar 0x8004 SPECIES_LUNALA
+    callasm CheckSpeciesInParty
+    compare LASTRESULT TRUE
+    if equal _goto LunalaCaught
+    npcchatwithmovement gText_UltraEpisode_PostUltraWormholes_Sakura_NoSolgaleoOrLunala m_LookLeft
+    end
+
+SolgaleoCaught:
+    bufferstring 0x0 gText_Common_Solgaleo
+    goto Sakura_PromptForUltraEpisodeConclusion
+
+LunalaCaught:
+    bufferstring 0x0 gText_Common_Lunala
+    goto Sakura_PromptForUltraEpisodeConclusion
+
+Sakura_PromptForUltraEpisodeConclusion:
+    msgbox gText_UltraEpisode_PostUltraWormholes_Sakura_HasCaughtSolgaleoOrLunala MSG_NORMAL
+    fadescreen FADEOUT_BLACK
+    msgbox gText_UltraEpisode_PostUltraWormholes_Sakura_StudyingSolgaleoOrLunala MSG_NORMAL
+    fadescreen FADEIN_BLACK
+    npcchatwithmovement gText_UltraEpisode_PostUltraWormholes_Sakura_FoundNecrozma m_LookLeft
+    addvar 0x4073 0x1 @ Ultra Episode moving to final phase
+    end
+
+Sakura_UltraEpisode_PromptForDiasOfLight:
+    msgbox gText_UltraEpisode_UltraBeastHunt_Sakura_PromptForDestination MSG_KEEPOPEN
+    multichoiceoption gText_UltraEpisode_Sakura_GoToEclipseVillage 0
+	multichoiceoption gText_UltraEpisode_Sakura_GoToDiasOfLight 1
+	multichoiceoption gText_UltraEpisode_Sakura_Nothing 2
+    multichoice 0x0 0x0 THREE_MULTICHOICE_OPTIONS FALSE
+	copyvar MULTICHOICE_SELECTION LASTRESULT
+	switch LASTRESULT
+	case 0, GoToEclipseVillage _goto
+	case 1, GoToDiasOfLight _goto
+    @ Nothing and cancel ignored, fall through to below
+    npcchatwithmovement gText_UltraEpisode_UltraBeastHunt_Sakura_ChoseNothing m_LookLeft
+    end
+
+GoToDiasOfLight:
+    msgbox gText_UltraEpisode_Sakura_GoingToDiasOfLight_Prompt MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto ChoseNotToGoToDiasOfLight
+    checkflag 0x289 @ Ultra Necrozma defeated
+    if NOT_SET _call PreDiasOfLightCheck
+    msgbox gText_UltraEpisode_Sakura_GoingToDiasOfLight_ChoseYes MSG_NORMAL
+    getplayerpos 0x4000 0x4001
+    compare 0x4001 0x5 @ Beside
+    if lessthan _call PlayerWalksToMachineFromAbove
+    if equal _call PlayerWalksToMachineFromRight
+    applymovement PLAYER m_PlayerWalksToUltraSpaceMachineFromBelow
+    waitmovement PLAYER
+    applymovement Sakura m_SakuraJoinsPlayerAtMachine
+    waitmovement ALLEVENTS
+    msgbox gText_UltraEpisode_Sakura_GoingToDiasOfLight MSG_NORMAL
+    msgbox gText_UltraEpisode_Researcher_GoingToDiasOfLight MSG_NORMAL
+    call UltraSpaceWarpEffect_WithSakura
+    warpmuted 2 40 0xFF 0xF 0x2A
+    end
+
+ChoseNotToGoToDiasOfLight:
+    npcchatwithmovement gText_UltraEpisode_Sakura_GoingToDiasOfLight_ChoseNo m_LookLeft
+    end
+
+PreDiasOfLightCheck:
+    callasm CheckBeastKillerInParty
+    compare LASTRESULT 0
+    if equal _goto NoBeastKiller
+    return
+
+NoBeastKiller:
+    npcchatwithmovement gText_UltraEpisode_Sakura_GoingToDiasOfLight_NoBeastKiller m_LookLeft
+    end
+
+UltraSpaceWarpEffect_WithSakura:
+    playse 0x49 @ Escalator
+    waitse
+    pause DELAY_1SECOND
+    playse 0x51 @ Thunder2
+    fadescreenspeed FADEOUT_WHITE 0x96 @ fast fade
+    applymovement PLAYER m_HideSprite
+    applymovement Sakura m_HideSprite
+    fadescreenspeed FADEIN_WHITE 0x64 @ Slow fade
+    return
 
 SakuraTalksAboutAlistairsRecommendation:
     faceplayer
@@ -688,18 +799,7 @@ SakuraAsksToGoToUltraSpace:
     msgbox gText_DaimynCityFacilities_IRF_Sakura_AskingPlayerIfTheyWantToTravelToUltraSpace MSG_YESNO
     compare LASTRESULT NO
     if equal _goto ChoseNotToGoToUltraSpace
-    msgbox gText_DaimynCityFacilities_IRF_Sakura_DirectsPlayerToMachine MSG_NORMAL
-    getplayerpos 0x4000 0x4001
-    compare 0x4001 0x5 @ Beside
-    if lessthan _call PlayerWalksToMachineFromAbove
-    if equal _call PlayerWalksToMachineFromRight
-    applymovement PLAYER m_PlayerWalksToUltraSpaceMachineFromBelow
-    waitmovement PLAYER
-    applymovement 0x7 m_LookDown
-    msgbox gText_DaimynCityFacilities_IRF_Sakura_StartingMachine MSG_NORMAL
-    call UltraSpaceWarpEffect
-    warpmuted 2 32 0xFF 0xB 0x9
-    end
+    goto GoToEclipseVillage
 
 ChoseNotToGoToUltraSpace:
     npcchatwithmovement gText_DaimynCityFacilities_IRF_Sakura_PlayerChoseNotToTravelToUltraSpace m_LookLeft
@@ -715,6 +815,20 @@ PlayerWalksToMachineFromRight:
     applymovement PLAYER m_PlayerWalksToUltraSpaceMachineFromRight
     waitmovement PLAYER
     return
+
+GoToEclipseVillage:
+    msgbox gText_DaimynCityFacilities_IRF_Sakura_DirectsPlayerToMachine MSG_NORMAL
+    getplayerpos 0x4000 0x4001
+    compare 0x4001 0x5 @ Beside
+    if lessthan _call PlayerWalksToMachineFromAbove
+    if equal _call PlayerWalksToMachineFromRight
+    applymovement PLAYER m_PlayerWalksToUltraSpaceMachineFromBelow
+    waitmovement PLAYER
+    applymovement 0x7 m_LookDown
+    msgbox gText_DaimynCityFacilities_IRF_Sakura_StartingMachine MSG_NORMAL
+    call UltraSpaceWarpEffect
+    warpmuted 2 32 0xFF 0xB 0x9
+    end
 
 .global SignScript_DaimynCityFacilities_UltraSpaceMachine
 SignScript_DaimynCityFacilities_UltraSpaceMachine:
@@ -759,3 +873,4 @@ m_UltraEpisodeCamera_PostCosmog_MoveToResearcher: .byte run_down, run_down, end_
 m_UltraEpisodeCamera_PostCosmog_ReturnToSakura: .byte run_up, run_up, end_m
 m_UltraEpisodeCamera_PostCosmog_MoveToTypeNull: .byte run_right, run_right, run_right, run_right, run_right, run_right, run_right, run_right, run_right, run_right, run_right, run_right, run_right, run_right, run_right, run_right, run_right, run_right, run_up, run_up, run_up, run_up, run_up, end_m
 m_UltraEpisodeCamera_PostCosmog_ReturnToSakuraFromNull: .byte run_left, run_left, run_left, run_left, run_left, run_left, run_left, run_left, run_left, run_left, run_left, run_left, run_left, run_left, run_left, run_left, run_left, run_left, run_down, run_down, run_down, end_m
+m_SakuraJoinsPlayerAtMachine: .byte walk_down, walk_left, look_down, end_m

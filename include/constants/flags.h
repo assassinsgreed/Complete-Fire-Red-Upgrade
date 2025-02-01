@@ -114,7 +114,7 @@
 #define FLAG_HIDE_POST_CREDITS_PARTY_NPCS_ON_BY_DEFAULT    0x06C
 #define FLAG_HIDE_ULTRA_WORMHOLE_BLACEPHALON_ON_BY_DEFAULT 0x06D
 #define FLAG_HIDE_ALTAR_OF_ECLIPSE_CHALLENGEABLE_COSMOG_ON_BY_DEFAULT    0x06E
-#define FLAG_HIDE_ALTAR_OF_ECLIPSE_NECROZMA_ON_BY_DEFAULT  0x06F
+#define FLAG_HIDE_DIAS_OF_LIGHT_NECROZMA                   0x06F
 #define FLAG_HIDE_PLOT_COSMOG_AT_ALTAR_OF_ECLIPSE          0x070
 #define FLAG_HIDE_HOENN_WINGULLS                           0x071
 #define FLAG_HIDE_VICTORY_FLAG                             0x072
@@ -675,11 +675,11 @@
 #define FLAG_VICTORY_ROAD_3F_LEFT_PUZZLE_SOLVED          0x286
 #define FLAG_VICTORY_ROAD_3F_RIGHT_PUZZLE_SOLVED         0x287
 #define FLAG_DEFEATED_KURTIS_IN_ROUTE_13_CAVE            0x288
-#define FLAG_SILPH_9F_DOOR_2                             0x289
-#define FLAG_SILPH_9F_DOOR_3                             0x28A
-#define FLAG_SILPH_9F_DOOR_4                             0x28B
-#define FLAG_SILPH_10F_DOOR                              0x28C
-#define FLAG_SILPH_11F_DOOR                              0x28D
+#define FLAG_DEFEATED_ULTRA_NECROZMA                     0x289
+#define FLAG_EVOLVED_TYPE_NULL                           0x28A
+#define FLAG_ECLIPSE_ACTIVE_IN_DIAS_OF_LIGHT             0x28B
+#define FLAG_SAKURA_CONGRATULATED_PLAYER_ON_VICTORY      0x28C
+#define FLAG_NECROZMA_CAUGHT                             0x28D
 #define FLAG_0x28E                                       0x28E
 #define FLAG_0x28F                                       0x28F
 #define FLAG_MET_STICKER_LADY                            0x290

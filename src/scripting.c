@@ -3800,6 +3800,11 @@ void ResetAllLegendaries()
 			FlagClear(speciesFlags[i]);
 		}
 	}
+
+	// Special: Handle Necrozma by it's unique flag, since it can be caught in either form and is not guaranteed to be unfused
+	if (!FlagGet(0x28D))
+		FlagClear(0x6F);
+	
 }
 
 bool8 AreAllItemsInRangeObtained(u16 startRange, u16 endRange)
@@ -3860,7 +3865,7 @@ void ComputeCompletedGameModifierRequirements()
 		SPECIES_ZERAORA,
 		SPECIES_ARTICUNO_G,
 		SPECIES_ZAPDOS_G,
-		SPECIES_MOLTRES_G
+		SPECIES_MOLTRES_G,
 		// UBs not in Kulure
 	};
 
@@ -3934,4 +3939,31 @@ void CheckBeastKillerInParty()
 			break;
 		}
 	}
+}
+
+/// @brief Checks if Type:Null or Silvally is in the party. 1 if true, 0 if false
+// Requires 0x8004 to be set to the species you're looking for
+void CheckSpeciesInParty()
+{
+	gSpecialVar_LastResult = 0; // Not in the party
+	for (u8 i = 0; i < PARTY_SIZE; ++i)
+	{
+		u16 species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES, NULL);
+		if (species == VarGet(Var8004))
+		{
+			gSpecialVar_LastResult = 1;
+			break;
+		}
+	}
+}
+
+/// @brief Checks if Type:Null or Silvally is in the first party slot. 1 if Type: Null, 2 if Silvally, 0 if neither
+void CheckBeastKillerInFirstSlot()
+{
+	gSpecialVar_LastResult = 0; // Not in first slot
+	u16 species = GetMonData(&gPlayerParty[0], MON_DATA_SPECIES, NULL);
+	if (species == SPECIES_TYPE_NULL)
+		gSpecialVar_LastResult = 1;
+	else if (species == SPECIES_SILVALLY)
+		gSpecialVar_LastResult = 2;
 }

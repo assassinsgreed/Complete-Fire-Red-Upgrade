@@ -578,10 +578,10 @@ No sweat! Just swing on by if you\nchange your mind. The lab's always\lopen.
 Alright, that's what I like to\nhear! You'll really love these\lchanges.\pFor example, you can access up to\n25 boxes now! Handy, right?\pYou can also select multiple Pok\emon\nat once by pressing [SELECT_BUTTON].\pYou'll know it's working if the cursor\nturns yellow.\pThen, click and drag to select\nPok\emon and move them in bulk.\pYou can turn it off again by pressing\n[SELECT_BUTTON]. Easy, right?
 
 #org @gText_DaimynCityNPCHouses_PocketPCHint
-I'm working on something else that's\nreally cool, but it's too early to\lshare.\pMaybe I could be convinced, say[.] if\nyou were the champion?\pHeehee! If you manage to achieve\nthat, come back and I'll show you!
+I'm working on something else that's\nreally cool, but it's too early to\lshare.\pMaybe I could be convinced, say[.] if\nyou were the Champion?\pHeehee! If you manage to achieve\nthat, come back and I'll show you!
 
 #org @gText_DaimynCityNPCHouses_GivingPocketPC1
-Oh my!\pWhile I've been tinkering away, you\nwent off and became the champion!\pCongratulations!\nThat's a huge accomplishment!
+Oh my!\pWhile I've been tinkering away, you\nwent off and became the Champion!\pCongratulations!\nThat's a huge accomplishment!
 
 #org @gText_DaimynCityNPCHouses_GivingPocketPC2
 Oh! I've got just the thing.\nHang on a sec, 'kay?
@@ -590,7 +590,7 @@ Oh! I've got just the thing.\nHang on a sec, 'kay?
 Hmm[.] Now where did I put it[.]\nAha!
 
 #org @gText_DaimynCityNPCHouses_GivingPocketPC4
-This is my pride and joy, the\n[GREEN]PortaPC[RED]!\pNow, I know what you're thinking[.]\nAnd yes, you're right!\pThis handy device will allow you to\naccess your PC from anywhere in\lthe world!\pYou can find it in your Tools menu,\nbeside the DexNav. Handy, right?\pPlease, take it! It's a gift from me\nto Kulure's newest champion.
+This is my pride and joy, the\n[GREEN]PortaPC[RED]!\pNow, I know what you're thinking[.]\nAnd yes, you're right!\pThis handy device will allow you to\naccess your PC from anywhere in\lthe world!\pYou can find it in your Tools menu,\nbeside the DexNav. Handy, right?\pPlease, take it! It's a gift from me\nto Kulure's newest Champion.
 
 #org @gText_DaimynCityNPCHouses_GivingPocketPC5
 [RED]Take good care of that, okay?\nIt's a Lana original!
@@ -1409,7 +1409,7 @@ Maybe someday I'll be on here!
 [BLUE]We have arrived at your\ndestination.\pBest of luck in your challenge, yes?
 
 #org @gText_AscensionTower_ElevatorAttendant_PriorToChampion
-[BLUE]Please ensure you are fully prepared\nbefore exiting the elevator.\pI'm certain the champion will be\neager to battle you without delay.
+[BLUE]Please ensure you are fully prepared\nbefore exiting the elevator.\pI'm certain the Champion will be\neager to battle you without delay.
 
 #org @gText_AscensionTower_ElevatorAttendant_PriorToChampion_PlayerIsChampion
 [BLUE]Please ensure you are fully prepared\nbefore exiting the elevator.\pIt is my duty to send your\nchallenger to you posthaste.\pYou will not have another\nopportunity to prepare.
@@ -1469,7 +1469,7 @@ W-what? This is unprecedented[.]
 [RED][PLAYER], what you've accomplished\ntoday cannot be understated.\pYou and your Pok\emon have risen\nabove every challenge you faced.\pThrough the trust and bond you\nshare, you accomplished something\lmany have only dreamed of.\pAnd[.] You have fought to protect\nthe region we all call home.\pThere is no one more deserving of\nthe title of Champion.\pNow, please, come with me to the\nHall of Fame.\pI'd like to make a record of what\nyou and your Pok\emon have\lachieved.
 
 #org @gText_AscensionTower_ChampionSelene_ExplainingHallOfFame
-[RED][PLAYER], we are standing in the Hall\nof Fame.\pIt is a sacred place that only\nchampions may enter.
+[RED][PLAYER], we are standing in the Hall\nof Fame.\pIt is a sacred place that only\nChampions may enter.
 
 #org @gText_AscensionTower_ChampionSelene_UrgingPlayerToEnterHallOfFame
 [RED]This machine will make a record of\nyou and your Pok\emon partners.\pIt will stand as a testiment to\neverything you have accomplished.\p[PLAYER], please place your Pok\e\nBalls into the machine when you\lare ready.\pI will then officially welcome you\nto the Kulure Hall of Fame!
@@ -1524,10 +1524,10 @@ Excellent. You are indeed worthy of\nyour title.
 Aw, nuts!
 
 #org @gText_AscensionTower_TitleDefenseChallenger_Rival_Defeat
-[BLUE]Hahaha!\pAwe, man! You're just too strong for\nme, [PLAYER]!\pI'm glad we were able to go all\nout.\pI'm going to go train some more, and\nthen I'll become the next champion\lfor sure!\pUntil then, [PLAYER]!
+[BLUE]Hahaha!\pAwe, man! You're just too strong for\nme, [PLAYER]!\pI'm glad we were able to go all\nout.\pI'm going to go train some more, and\nthen I'll become the next Champion\lfor sure!\pUntil then, [PLAYER]!
 
 #org @gText_AscensionTower_TitleDefenseChallenger_Joey_Intro
-[BLUE]This is it[.] It's really it[.]\nThe champion!\pOh[.] Focus up, Joey[.]\pY'know, they used to laugh at me and\nmy Rattatas.\pBut look at me now. I'm at the top\nof the world!
+[BLUE]This is it[.] It's really it[.]\nThe Champion!\pOh[.] Focus up, Joey[.]\pY'know, they used to laugh at me and\nmy Rattatas.\pBut look at me now. I'm at the top\nof the world!
 
 #org @gText_AscensionTower_TitleDefenseChallenger_Joey_PreBattle
 [BLUE]I'll prove to you why my Rattatas\nare in the top percentile!
@@ -1539,7 +1539,7 @@ N-No! My Rattatas!
 [BLUE]I can't believe we lost!\pWe can take this in stride, though.\pIt just means that my Rattata and I\nbetter get back to training.\pWe'll show the whole world how\nstrong we are someday!
 
 #org @gText_AscensionTower_TitleDefenseChallenger_Selene_Intro
-[RED]Hey there, Champion [PLAYER]!\pLooks like you've settled into the\nrole of champion quite comfortably.\pYou know what that means, don't\nyou?\pYou're the strongest trainer in the\nregion, the one everyone wants to\lbeat!\p[.] Including me!
+[RED]Hey there, Champion [PLAYER]!\pLooks like you've settled into the\nrole of Champion quite comfortably.\pYou know what that means, don't\nyou?\pYou're the strongest trainer in the\nregion, the one everyone wants to\lbeat!\p[.] Including me!
 
 #org @gText_AscensionTower_TitleDefenseChallenger_Selene_PreBattle
 [RED]I hope you're ready for a challenge,\n[PLAYER], because I won't go easy\lon you!
@@ -1548,7 +1548,7 @@ N-No! My Rattatas!
 Hmm! Very well done!
 
 #org @gText_AscensionTower_TitleDefenseChallenger_Selene_Defeat
-[RED]That was a great battle, [PLAYER]!\pYou've really proven why you're the\nbest around.\pI hope you make the most of your\ntime as Kulure's champion.\pIt was a pleasure battling each\nother. See you!
+[RED]That was a great battle, [PLAYER]!\pYou've really proven why you're the\nbest around.\pI hope you make the most of your\ntime as Kulure's Champion.\pIt was a pleasure battling each\nother. See you!
 
 #org @gText_AscensionTower_TitleDefenseChallenger_Alistair_Intro
 [BLUE][PLAYER], it has been quite some\ntime[.]\pI've spent a lot of time thinking\nsince we last met.\pMy Pok\emon and I are closer than\never, and it's thanks to your\linfluence.\pI --
@@ -1563,7 +1563,7 @@ I[.] I lost?
 [BLUE]Yes, that went exactly how I\nwould've expected.\pAnd yet, I am not disappointed.\p[PLAYER], thank you for sharing that\nbattle with me.\pWe'll take our leave now, but I'm\nsure we'll meet again soon.
 
 #org @gText_AscensionTower_TitleDefenseChallenger_Hawthorne_Intro
-[BLUE]Hohoho!\pAre you surprised to see me,\n[PLAYER]?\pWhen I heard you'd become the\nchampion, well[.]\pI just had to build my own team to\nsee how far you've come!
+[BLUE]Hohoho!\pAre you surprised to see me,\n[PLAYER]?\pWhen I heard you'd become the\nChampion, well[.]\pI just had to build my own team to\nsee how far you've come!
 
 #org @gText_AscensionTower_TitleDefenseChallenger_Hawthorne_PreBattle
 [BLUE]Now, shall we battle?\pI want to see the results of what\nSelene saw way back then[.]
@@ -1623,7 +1623,7 @@ It's over already?
 [RED]Awww, you're just too good[.]\pI couldn't have picked a better role\nmodel, that's for sure!\pI need to train harder so I can put\nup a better fight next time.\pI'll be back to battle you again\nsomeday!
 
 #org @gText_AscensionTower_TitleDefenseChallenger_Foreigner_Intro
-[BLUE]So, you're the champion[.]\pKulure's Pok\emon trainers are the\nreal deal.\pA lot tougher than the ones back\nin my home region, that's for sure.\pBut[.] I'm a lot tougher than them,\ntoo.
+[BLUE]So, you're the Champion[.]\pKulure's Pok\emon trainers are the\nreal deal.\pA lot tougher than the ones back\nin my home region, that's for sure.\pBut[.] I'm a lot tougher than them,\ntoo.
 
 #org @gText_AscensionTower_TitleDefenseChallenger_Foreigner_PreBattle
 [BLUE]I'm curious if you're really the best\nof the best.\pWell, only one way to find out[.]\nI challenge you to a battle!
@@ -1635,7 +1635,7 @@ Tch[.] Came all this way just to lose.
 [BLUE]Yep, you're good alright.\nI can accept my defeat with grace.\pBut, know this[.]\pI will be back to take your title. I\nhope you'll be ready for me then!
 
 #org @gText_AscensionTower_TitleDefenseChallenger_Collin_Intro
-[BLUE]Oh, so you've become the champion?\nThat's great!\pI've brought my most trusted Pok\emon\npartners with me.\pYou could say they helped me become\nchampion, in another lifetime[.]
+[BLUE]Oh, so you've become the Champion?\nThat's great!\pI've brought my most trusted Pok\emon\npartners with me.\pYou could say they helped me become\nChampion, in another lifetime[.]
 
 #org @gText_AscensionTower_TitleDefenseChallenger_Collin_PreBattle
 [BLUE]I wonder if we'll be able to earn\nthe title here, too?\pLet's find out!
@@ -1647,7 +1647,7 @@ And the battle is over!
 [BLUE]You certainly are good, [PLAYER]!\pI hope you and your Pok\emon have\nformed many pleasant memories here.\pAnyways, I gave it my best shot.\pYou'd better register in the Hall\nof Fame now. See you around!
 
 #org @gText_AscensionTower_TitleDefenseChallenger_Crystal_Intro
-[RED]Wow look at you!\nYou are the champion now.\pYou've worked tirelessly to achieve\nsuch an accomplishment.
+[RED]Wow look at you!\nYou are the Champion now.\pYou've worked tirelessly to achieve\nsuch an accomplishment.
 
 #org @gText_AscensionTower_TitleDefenseChallenger_Crystal_PreBattle
 [RED]Let's have a battle, see who will\ncome out on top.
@@ -1656,7 +1656,7 @@ And the battle is over!
 Farewell, hopefully we meet again.
 
 #org @gText_AscensionTower_TitleDefenseChallenger_Crystal_Defeat
-[RED]Ahh! Can't win them all I suppose!\pThat's why you are the champion, I\nsuppose.
+[RED]Ahh! Can't win them all I suppose!\pThat's why you are the Champion, I\nsuppose.
 
 #org @gText_AscensionTower_TitleDefenseChallenger_Irene_Intro
 [RED]My, my[.]\pImagine my surprise to hear you have\nbecome Kulure's Champion.\pI'm sure you know why I'm here, don't\nyou?\pI'm going to repay you for all the\ntrouble you've caused me!
@@ -1671,10 +1671,10 @@ I don't believe this[.]
 [RED]Ngh[.] How frustrating.\nBut, I am nothing if not persistent.\pI will learn from this loss and\nreturn someday.\pOf that, you can be certain.
 
 #org @gText_AscensionTower_TitleDefenseChallenger_Ronald_Intro
-[BLUE]Well, lookie that!\pThe little brat went and became the\nregion champion.\pI'd say congratulations, but I'm not\nthat selfless.\pNow, let's dispense with the\npleasantries, shall we?
+[BLUE]Well, lookie that!\pThe little brat went and became the\nregion Champion.\pI'd say congratulations, but I'm not\nthat selfless.\pNow, let's dispense with the\npleasantries, shall we?
 
 #org @gText_AscensionTower_TitleDefenseChallenger_Ronald_PreBattle
-[BLUE]I'm Ronald, and I'm Kulure's next\nchampion.\pNice to meetcha.
+[BLUE]I'm Ronald, and I'm Kulure's next\nChampion.\pNice to meetcha.
 
 #org @gText_AscensionTower_TitleDefenseChallenger_Ronald_PostBattle
 We couldn't cut the mustard, huh?
@@ -2002,9 +2002,6 @@ Yes, that was quite enjoyable.
 #org @gText_UltraEpisode_PostCosmog_Sakura_NextSteps5
 [RED]Closing every Ultra Wormhole would\nbe ideal, of course.\pHowever, I am confident that closing\neven 5 of them would be enough.\pWe could handle the remaining Ultra\nWormholes, and also find the source\lof them.\pWith luck, we can ensure no harm\ncomes to the region.\pThank you once again, [PLAYER].\nWe are all in your debt.
 
-#org @gText_UltraEpisode_PostCosmog_Sakura_UltraBeastCount
-[RED]Welcome back, [PLAYER].\pI've received word that you've dealt\nwith [BUFFER1] Ultra Wormholes.\pPlease, continue on until you've\nhandled at least 5.\pUntil then, it would not be wise to\nreturn to Ultra Space[.]
-
 #org @gText_UltraEpisode_TypeNullResearcher_RequestPlayersSupport
 I've received word from Professor\nSakura about you.\pYou're here to take Type: Null to\ninvestigate the Ultra Wormholes,\lyes?\pType: Null has a reputation of\nbeing aggressive[.]\pIn reality, it's just scared of this\nplace and it's mission.\pIt needs a confident and caring\ntrainer to help it calm down.\pPlease[.] Assure me you will take\ngood care of Type: Null.
 
@@ -2025,3 +2022,60 @@ Make sure you keep your word.
 
 #org @gText_UltraEpisode_TypeNullResearcher_TakeCare
 Bring Type: Null with you to any\nUltra Wormholes you find.\pAnd, take care of it.\pIt's scared, but I'm trusting in you\nto help it grow in confidence.
+
+#org @gText_UltraEpisode_UltraBeastHunt_Sakura_PromptForDestination
+[RED][PLAYER], it's good to see you.\nWhat can I help you with?
+
+#org @gText_UltraEpisode_Sakura_GoToEclipseVillage
+Go to Eclipse Village
+
+#org @gText_UltraEpisode_Sakura_TrackTheDistrubances
+Track the disturbances
+
+#org @gText_UltraEpisode_Sakura_GoToDiasOfLight
+Go to Dias of Light
+
+#org @gText_UltraEpisode_Sakura_Nothing
+Nothing for now!
+
+#org @gText_UltraEpisode_UltraBeastHunt_Sakura_ChoseNothing
+[RED]Understood. Please speak with me if\nyou change your mind.
+
+#org @gText_UltraEpisode_UltraBeastHunt_Sakura_RequirementsToTrackDisturbance
+[RED]Finding the source of the\ndisturbances will be quite\ldifficult.\pTo do so, we'll need a stronger\nunderstanding of both Ultra\lWormholes and the energy that\lproduces them.\pWith your experience, I'm certain we\ncould make great strides in our\lresearch.\pClosing Ultra Wormholes and studying\nyour Cosmog would surely help us.
+
+#org @gText_UltraEpisode_UltraBeastHunt_Sakura_UltraBeastCount_Requirement
+[RED]I've received word that you've dealt\nwith [BUFFER1] Ultra Wormholes.\pPlease, continue on until you've\nhandled at least 5.\pThat should be enough for us to\nbetter understand how they behave.
+
+#org @gText_UltraEpisode_PostUltraWormholes_Sakura_UltraBeastCount_Sufficient
+[RED]You've done great work, [PLAYER].\pThanks to your efforts in closing the\nUltra Wormholes, we're starting to\lunderstand how they behave.\pI'm confident we can stabilize them\nlong enough for someone to travel\lthrough.
+
+#org @gText_UltraEpisode_PostUltraWormholes_Sakura_NoSolgaleoOrLunala
+[RED]Unfortunately, we would need to\nbetter understand the energy\lsource causing them to do so.\pHmm[.] I recall it being similar to the\nreadings coming from your Cosmog[.]\pIt stands to reason that it's energy\nwould grow stronger as it does,\lyes?\pI've read reports from our\ncolleagues in the Alola Region.\pThey tell of Pok\emon called [GREEN]Solgaleo\n[RED]and [GREEN]Lunala[RED], which could open Ultra\lWormholes at will.\pWhat's more, their papers imply\nthese Beasts evolved from a\lCosmog[.]\p[PLAYER], if your Cosmog ever\nevolves, please bring it here.
+
+#org @gText_UltraEpisode_PostUltraWormholes_Sakura_HasCaughtSolgaleoOrLunala
+[RED]Furthermore, you were able to\nevolve your Cosmog into [BUFFER1]!\pThe energy coming from it is\nimmense.\pIt isn't a stretch to say it has\nresulted in a breakthrough in our\lresearch.\pAs a result of all your efforts, I\nam confident we can pinpoint the\lsource of the disturbances.\pPlease, be patient with us for a\nmoment as we confirm.
+
+#org @gText_UltraEpisode_PostUltraWormholes_Sakura_StudyingSolgaleoOrLunala
+[RED]Hmm[.] I see.\pYes, this energy reading is quite\nsimilar to the one we discovered.\pIt is remarkably more stable\nthough.\pI see[.] So this is how it maintains a\nstable Ultra Wormhole[.]\pIf I scan for disturbances using this\nwavelength, then[.] Aha!
+
+#org @gText_UltraEpisode_PostUltraWormholes_Sakura_FoundNecrozma
+[RED][PLAYER], I have good news and bad\nnews.\pThanks to your findings, we were able\nto pinpoint the source of the\lUltra Wormholes.\p[PLAYER][.] It is not a stretch to say\nthis was only possible thanks to\lyour hard work.\pNow, the bad news[.]\pYou may recall an increase in\nabnormal eclipses as of late.\pIt appears the cause is residing at\nthis same location.\pI have dubbed it the [GREEN]Dias of\nLight[RED].\pOur readings have determined that\nUltra Wormholes are absorbing light\land directing it there.\pOnce it arrives, it appears to be\nabsorbed into an unknown entity.\p[PLAYER], if left unchecked, this\nentity could leave the dias in\lpursuit of more light.\pIt could threaten the Kulure region,\nif not the entire world.\pAnd so, I have one final request for\nyou, as our champion.\pTravel to the Dias of Light and put\na stop to the entity absorbing\llight.\pIt would be best to prepare for\nanything and bring Type: Null with\lyou.\pOf course, I will also be joining\nyou.\pWe don't know what will happen, so\nyou'll need an expert on Ultra\lSpace with you.\pAnd, well, my pride as a\nresearcher simply will not let me\lmiss this opportunity!\pThis is a lot to ask, I know[.]\pTake time to prepare and come see\nme when you are ready.
+
+#org @gText_UltraEpisode_Sakura_GoingToDiasOfLight_Prompt
+[RED]This will be a risky expedition.\nWe don't know what we'll find there.\pAre you sure you're prepared to go?
+
+#org @gText_UltraEpisode_Sakura_GoingToDiasOfLight_ChoseNo
+[RED]Take your time.\nWe can go when you are ready.
+
+#org @gText_UltraEpisode_Sakura_GoingToDiasOfLight_NoBeastKiller
+[RED][PLAYER][.] We don't know what we'll\nfind at the Dias of Light.\pIt would be unwise to go without\nType: Null, for protection[.]\pPlease, return with it when you are\nprepared to go.
+
+#org @gText_UltraEpisode_Sakura_GoingToDiasOfLight_ChoseYes
+[RED]Alright, let's take our positions\nbefore the machine.
+
+#org @gText_UltraEpisode_Sakura_GoingToDiasOfLight
+[RED]We're ready to depart.\nPlease, start the machine.
+
+#org @gText_UltraEpisode_Researcher_GoingToDiasOfLight
+[BLUE]Yes, ma'am!\nGood luck on your expedition.
