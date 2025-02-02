@@ -1291,6 +1291,9 @@ Wonderful! Please, allow me to get\nthe gate for you.
 #org @gText_AscensionTower_EliteFourAttendant_WishingLuck
 You may proceed to the elevator at\nthe back of the room.\pIt will take you to your first\nchallenge.\pShould you succeed, you may return\nto the elevator to be\ldelievered to your next challenge.\pOn behalf of everyone at Ascension\nTower, I wish you the best of\lluck!
 
+#org @gText_AscensionTower_BattleTowerAttendant_GatheringFunding
+Welcome to Ascension Tower!\pI would normally be accepting\nregistrations for the Battle\lFrontier.\pWe're currently undergoing some\nmaintenance, however[.]\pWe can hopefully offer this service\nsomeday soon.\pUntil then, please continue to train\nyour Pok\emon and strive to be the\lbest you can be.
+
 #org @gText_AscensionTower_BattleTowerAttendant_Introduction
 Welcome to Ascension Tower! I accept\nregistrations for the Battle Tower\lChallenge.\pWould you like to take the Battle\nTower Challenge?
 
@@ -1313,7 +1316,10 @@ I like coming here to watch the\nElite Four challengers battle!\pEveryone gives 
 My son dreams of becoming the\nChampion. It's all he talks about.\pI thought I'd come here to see what\nit's all about.\pThis Champion is seriously strong! I'd\nbetter help him train so he can do\lhis best.
 
 #org @gText_AscensionTower_RecordsSign
-It's a board showing the records\nof all the trainers who've\lchallenged the Elite Four and\lBattle Tower.
+It's a board showing the records\nof all the trainers who've\lchallenged the Elite Four.
+
+#org @gText_AscensionTower_RecordsSign_ChampionTitleDefenses
+I've defended my Champion title\n[BUFFER1] times!\pI wonder if I can set a record?
 
 #org @gText_AscensionTower_RecordsSign_NotOnBoard
 Maybe someday I'll be on here!

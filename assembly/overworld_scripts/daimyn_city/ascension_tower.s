@@ -126,27 +126,29 @@ OpenFloorBarrier:
 .global EventScript_AscensionTower_BattleTowerAttendant
 EventScript_AscensionTower_BattleTowerAttendant:
     lock
-    msgbox gText_AscensionTower_BattleTowerAttendant_Introduction MSG_KEEPOPEN
-    multichoiceoption gText_Yes 0
-	multichoiceoption gText_Info 1
-	multichoiceoption gText_No 2
-    multichoice 0x0 0x0 THREE_MULTICHOICE_OPTIONS FALSE
-	copyvar MULTICHOICE_SELECTION LASTRESULT
-	switch LASTRESULT
-	case 0, TakeBattleTowerChallenge
-	case 1, BattleTowerInfo
-	case 2, AttendantChoseNo
-    goto AttendantChoseNo
-
-TakeBattleTowerChallenge:
-    @ Later, perform a check here for the champions flag
-    msgbox gText_AscensionTower_BattleTowerAttendant_NotChampion MSG_NORMAL
-    release
+    msgbox gText_AscensionTower_BattleTowerAttendant_GatheringFunding MSG_NORMAL
     end
+    @ msgbox gText_AscensionTower_BattleTowerAttendant_Introduction MSG_KEEPOPEN
+    @ multichoiceoption gText_Yes 0
+	@ multichoiceoption gText_Info 1
+	@ multichoiceoption gText_No 2
+    @ multichoice 0x0 0x0 THREE_MULTICHOICE_OPTIONS FALSE
+	@ copyvar MULTICHOICE_SELECTION LASTRESULT
+	@ switch LASTRESULT
+	@ case 0, TakeBattleTowerChallenge
+	@ case 1, BattleTowerInfo
+	@ case 2, AttendantChoseNo
+    @ goto AttendantChoseNo
 
-BattleTowerInfo:
-    msgbox gText_AscensionTower_EliteFourAttendant_BattleTowerInfo MSG_NORMAL
-    goto EventScript_AscensionTower_BattleTowerAttendant
+@ TakeBattleTowerChallenge:
+@     @ Later, perform a check here for the champions flag
+@     msgbox gText_AscensionTower_BattleTowerAttendant_NotChampion MSG_NORMAL
+@     release
+@     end
+
+@ BattleTowerInfo:
+@     msgbox gText_AscensionTower_EliteFourAttendant_BattleTowerInfo MSG_NORMAL
+@     goto EventScript_AscensionTower_BattleTowerAttendant
 
 .global EventScript_AscensionTower_EliteFourAttendant
 EventScript_AscensionTower_EliteFourAttendant:
@@ -256,7 +258,11 @@ SignScript_AscensionTower_RecordsBoard:
     end
 
 RecordsBoard_PostChampion:
-    @ TODO: Populate later. Should track # of times player has defended their title and battle tower records
+    setvar 0x8004 10 @ Times entered the hall of fame
+    callasm StoreGameStat
+    subvar LASTRESULT 0x1 @ First time is entry into the hall of fame
+    buffernumber 0x0 LASTRESULT
+    msgbox gText_AscensionTower_RecordsSign_ChampionTitleDefenses MSG_SIGN
     end
 
 m_PlayerWalksToRival: .byte walk_up, walk_up, walk_right, walk_right, walk_up, walk_up, look_right, end_m
