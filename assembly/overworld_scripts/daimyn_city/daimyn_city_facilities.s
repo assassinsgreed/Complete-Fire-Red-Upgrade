@@ -256,6 +256,7 @@ MoveTypeNullResearcher:
 LevelScripts_InterdimensionalResearchFacility:
     levelscript 0x4073 0x1 LevelScript_InterdimensionalResearchFacility_UltraEpisode_InitialEvents
     levelscript 0x4073 0x4 LevelScript_InterdimensionalResearchFacility_UltraEpisode_PostCosmogEvents
+    levelscript 0x4073 0xB LevelScript_InterdimensionalResearchFacility_UltraEpisode_PostUltraNecrozma
     .hword LEVEL_SCRIPT_TERMIN
 
 LevelScript_InterdimensionalResearchFacility_UltraEpisode_InitialEvents:
@@ -435,6 +436,50 @@ UltraEpisode_PostCosmog_NextSteps:
     addvar 0x4073 0x1 @ Onto the next part of the Ultra Episode: hunting down ultra wormholes
     end
 
+LevelScript_InterdimensionalResearchFacility_UltraEpisode_PostUltraNecrozma:
+    getplayerpos 0x4000 0x4001
+    compare 0x4000 0xC @ Player is at the door, after losing to catchable Necrozma
+    applymovement Sakura m_LookDown
+    msgbox gText_UltraEpisode_PostNecrozma_Sakura_WelcomeBack MSG_NORMAL
+    if equal _call UltraEpisode_PostNecrozma_PlayerCalledToSakuraFromDoor
+    if lessthan _call UltraEpisode_PostNecrozma_PlayerCalledToSakuraFromMachine
+    msgbox gText_UltraEpisode_PostNecrozma_Sakura_ExplainingResearcherSupport MSG_NORMAL
+    compare 0x40A7 10
+    if lessthan _call UltraEpisode_PostNecrozma_UltraWormholesRemain
+    checkflag 0x28D @ Necrozma caught
+    if NOT_SET _call UltraEpisode_PostNecrozma_NecrozmaNotCaught
+    msgbox gText_UltraEpisode_PostNecrozma_Sakura_ExplainingTravelToUltraSpace MSG_NORMAL
+    msgbox gText_UltraEpisode_PostNecrozma_Sakura_Farewell MSG_NORMAL
+    applymovement Sakura m_LookLeft
+    addvar 0x4073 0x1 @ Now at 12, end of Ultra Episode
+    end
+
+UltraEpisode_PostNecrozma_PlayerCalledToSakuraFromDoor:
+    applymovement PLAYER m_UltraEpisode_PLayerWalksToSakuraFromDoor
+    waitmovement PLAYER
+    applymovement Sakura m_LookDown
+    return
+
+UltraEpisode_PostNecrozma_PlayerCalledToSakuraFromMachine:
+    applymovement PLAYER m_UltraEpisode_PLayerWalksToSakuraFromMachine
+    waitmovement PLAYER
+    return
+
+UltraEpisode_PostNecrozma_UltraWormholesRemain:
+    setvar 0x4000 10
+    copyvar 0x4001 0x40A7
+    setvar 0x8004 0x4000
+    setvar 0x8005 0x4001
+    special 0x3F @ Subtract
+    compare 0x4000 0
+    buffernumber 0x0 0x4000
+    msgbox gText_UltraEpisode_PostNecrozma_Sakura_UltraWormholesRemain MSG_NORMAL
+    return
+
+UltraEpisode_PostNecrozma_NecrozmaNotCaught:
+    msgbox gText_UltraEpisode_PostNecrozma_Sakura_NecrozmaUncaught MSG_NORMAL
+    return
+
 .global EventScript_DaimynCityFacilities_PCResearcher
 EventScript_DaimynCityFacilities_PCResearcher:
     lock
@@ -571,16 +616,46 @@ BeastBallShop:
 
 .global EventScript_DaimynCityFacilities_MachineryResearcher
 EventScript_DaimynCityFacilities_MachineryResearcher:
+    checkflag 0x28D @ Necrozma caught
+    if equal _goto MachineryResearcher_PostNecrozma
+    checkflag 0x289 @ Ultra Necrozma defeated
+    if equal _goto MachineryResearcher_PostNecrozma_NotCaught
     npcchatwithmovement gText_DaimynCityFacilities_IRF_MachineryResearcher m_LookUp
+    end
+
+MachineryResearcher_PostNecrozma:
+    checkflag 0x28F @ Necrozma items given
+    if NOT_SET _call GiveNecrozmaItems
+    npcchatwithmovement gText_DaimynCityFacilities_IRF_MachineryResearcher_PostNecrozma m_LookUp
+    end
+
+GiveNecrozmaItems:
+    lock
+    faceplayer
+    msgbox gText_DaimynCityFacilities_IRF_MachineryResearcher_CongratulatingPlayer MSG_NORMAL
+    additem ITEM_N_SOLARIZER 0x1
+    additem ITEM_N_LUNARIZER 0x1
+    fanfare 0x13E
+    msgbox gText_DaimynCityFacilities_IRF_MachineryResearcher_ObtainedNecrozmaFusionItems MSG_KEEPOPEN
+    waitfanfare
+    msgbox gText_DaimynCityFacilities_IRF_MachineryResearcher_ExplainNecrozmaFusionItems MSG_NORMAL
+    setflag 0x28F @ Necrozma items given
+    return
+
+MachineryResearcher_PostNecrozma_NotCaught:
+    npcchatwithmovement gText_DaimynCityFacilities_IRF_MachineryResearcher_PostNecrozma_NotCaught m_LookUp
     end
 
 .global EventScript_DaimynCityFacilities_TypeNullResearcher
 EventScript_DaimynCityFacilities_TypeNullResearcher:
     compare 0x4073 5
     if equal _goto GiveTypeNull
+    setvar LASTRESULT SPECIES_SILVALLY
+    callasm CheckIfCaught
+    compare LASTRESULT TRUE
+    if equal _goto PlayerEvolvedSilvally
     compare 0x4073 6
-    if equal _goto WishingTypeNullTheBest
-    @ TODO Later: Silvally check
+    if greaterorequal _goto WishingTypeNullTheBest
     npcchat gText_DaimynCityFacilities_IRF_TypeNullResearcher
     end
 
@@ -627,9 +702,61 @@ WishingTypeNullTheBest:
     npcchat gText_UltraEpisode_TypeNullResearcher_TakeCare
     end
 
+PlayerEvolvedSilvally:
+    checkflag 0x28E @ Silvally memory items given
+    if NOT_SET _call GiveMemoryItems
+    npcchat gText_UltraEpisode_TypeNullResearcher_TakeCareOfSilvally
+    end
+
+GiveMemoryItems:
+    lock
+    faceplayer
+    applymovement LASTTALKED m_Surprise
+    playse 0x15 @ Exclaim
+    npcchat gText_UltraEpisode_TypeNullResearcher_RecognizeSilvally
+    additem ITEM_FIGHTING_MEMORY 0x1
+    additem ITEM_FLYING_MEMORY 0x1
+    additem ITEM_POISON_MEMORY 0x1
+    additem ITEM_GROUND_MEMORY 0x1
+    additem ITEM_ROCK_MEMORY 0x1
+    additem ITEM_BUG_MEMORY 0x1
+    additem ITEM_GHOST_MEMORY 0x1
+    additem ITEM_STEEL_MEMORY 0x1
+    additem ITEM_FIRE_MEMORY 0x1
+    additem ITEM_WATER_MEMORY 0x1
+    additem ITEM_GRASS_MEMORY 0x1
+    additem ITEM_ELECTRIC_MEMORY 0x1
+    additem ITEM_PSYCHIC_MEMORY 0x1
+    additem ITEM_ICE_MEMORY 0x1
+    additem ITEM_DRAGON_MEMORY 0x1
+    additem ITEM_DARK_MEMORY 0x1
+    additem ITEM_FAIRY_MEMORY 0x1
+    setflag 0x28E @ Silvally memory items given
+    fanfare 0x13E
+    lock @ Re-lock so he doesn't start wandering
+    msgbox gText_UltraEpisode_TypeNullResearcher_ObtainedMemories MSG_KEEPOPEN
+    waitfanfare
+    msgbox gText_UltraEpisode_TypeNullResearcher_MemoryDiscsExplained MSG_NORMAL
+    lock @ Re-lock so he doesn't start wandering
+    msgbox gText_UltraEpisode_TypeNullResearcher_GivenSilvally MSG_NORMAL
+    fanfare 0x13E
+    lock @ Re-lock so he doesn't start wandering
+    msgbox gText_UltraEpisode_TypeNullResearcher_ObtainedSilvally MSG_KEEPOPEN
+    waitfanfare
+    lock @ Re-lock so he doesn't start wandering
+    msgbox gText_UltraEpisode_TypeNullResearcher_SilvallyCanBeNicknamed MSG_NORMAL
+    callasm SetSivallyAsPlayers
+    return
+
 .global EventScript_DaimynCityFacilities_TableBottomRightResearcher
 EventScript_DaimynCityFacilities_TableBottomRightResearcher:
+    checkflag 0x289 @ Ultra Necrozma defeated
+    if SET _goto EventScript_DaimynCityFacilities_TableBottomRightResearcher_PostNecrozma
     npcchatwithmovement gText_DaimynCityFacilities_IRF_TableBottomRightResearcher m_LookUp
+    end
+
+EventScript_DaimynCityFacilities_TableBottomRightResearcher_PostNecrozma:
+    npcchatwithmovement gText_DaimynCityFacilities_IRF_TableBottomRightResearcher_PostNecrozma m_LookUp
     end
 
 .global EventScript_DaimynCityFacilities_TableLeftResearcher
@@ -874,3 +1001,5 @@ m_UltraEpisodeCamera_PostCosmog_ReturnToSakura: .byte run_up, run_up, end_m
 m_UltraEpisodeCamera_PostCosmog_MoveToTypeNull: .byte run_right, run_right, run_right, run_right, run_right, run_right, run_right, run_right, run_right, run_right, run_right, run_right, run_right, run_right, run_right, run_right, run_right, run_right, run_up, run_up, run_up, run_up, run_up, end_m
 m_UltraEpisodeCamera_PostCosmog_ReturnToSakuraFromNull: .byte run_left, run_left, run_left, run_left, run_left, run_left, run_left, run_left, run_left, run_left, run_left, run_left, run_left, run_left, run_left, run_left, run_left, run_left, run_down, run_down, run_down, end_m
 m_SakuraJoinsPlayerAtMachine: .byte walk_down, walk_left, look_down, end_m
+m_UltraEpisode_PLayerWalksToSakuraFromDoor: .byte walk_up, walk_up, walk_up, walk_left, walk_left, walk_left, walk_left, walk_left, walk_left, walk_left, walk_up, walk_up, walk_up, walk_up, walk_left, walk_left, look_up, end_m
+m_UltraEpisode_PLayerWalksToSakuraFromMachine: .byte walk_right, walk_right, look_up, end_m

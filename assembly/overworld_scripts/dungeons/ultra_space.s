@@ -1176,8 +1176,6 @@ Sakura_NecrozmaNotCaughtYet:
 
 ReturnHome:
     msgbox gText_DiasOfLight_Sakura_ReturnHomePrompt_ChoseYes MSG_NORMAL
-    applymovement LASTTALKED m_LookDown
-    applymovement PLAYER m_LookDown
     playse 0x49 @ Escalator
     waitse
     pause DELAY_1SECOND
