@@ -288,7 +288,7 @@ The Ultra Beast fled[.]\pBetter report this to Professor\nSakura[.]
 [RED][PLAYER], you've done it!\pYou've put a stop to Necrozma!
 
 #org @gText_DiasOfLight_Sakura_UltraNecrozmaNotCaught
-[RED]It shouldn't be able to cause any\ndamage now.\pThat being said, it'd be foolish to\nput our faith in that assumption[.]\p[PLAYER], I suggest you capture it,\nif you can.\pIf you're able to do that, we can\nsurely put this behind us.\pI'll let you decide when you're\nready for that, of course.
+[RED]It shouldn't be able to cause any\ndamage now.\pThat being said, it'd be foolish to\nput our faith in that assumption[.]\pFor now, though, we are safe, and\nthat's what matters most.
 
 #org @gText_DiasOfLight_Sakura_ReturnHomePrompt
 [RED][PLAYER], do you want to return\nhome?

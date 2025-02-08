@@ -680,8 +680,8 @@
 #define FLAG_ECLIPSE_ACTIVE_IN_DIAS_OF_LIGHT             0x28B
 #define FLAG_SAKURA_CONGRATULATED_PLAYER_ON_VICTORY      0x28C
 #define FLAG_NECROZMA_CAUGHT                             0x28D
-#define FLAG_0x28E                                       0x28E
-#define FLAG_0x28F                                       0x28F
+#define FLAG_SILVALLY_MEMORIES_GIVEN                     0x28E
+#define FLAG_NECROZMA_FUSION_ITEMS_GIVEN                 0x28F
 #define FLAG_MET_STICKER_LADY                            0x290
 #define FLAG_PALLET_LADY_NOT_BLOCKING_SIGN               0x291
 #define FLAG_GOT_VS_SEEKER                               0x292

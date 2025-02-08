@@ -387,6 +387,9 @@ We've partnered with the Aether\nFoundation in the Alola Region.\pOur goal is to
 #org @gText_DaimynCityFacilities_IRF_TableBottomRightResearcher
 We've identified strange creatures\nout in Ultra Space.\pThey are like Pok\emon, but [.] not.\nTheir bodies are utterly bizarre.\pWe need to investigate them further\nto understand exactly what they\lare.\pBecause they were found in Ultra\nSpace, they have been titled\l"Ultra Beasts\" by Alolan\lresearchers.
 
+#org @gText_DaimynCityFacilities_IRF_TableBottomRightResearcher_PostNecrozma
+Oh, it's [PLAYER]!\pI have some news you may be\ninterested in.\pWhen you challenged Necrozma,\nUltra Wormholes opened all over\lKulure briefly.\pShards of light fell from them\nbefore they closed.\pWe've identified them to be [GREEN]Z\nCrystals[BLUE], like the ones used in the\lAlola region.\pThey resonate when held by Pok\emon\nof certain types.\pNaturally, they are too powerful to\nbe left unaccounted for.\pWe gave them to the Gym Trainees\nthat frequent Tsarvosa City for\lsafekeeping.\pThey're experts on specific Pok\emon\ntypes, after all!\pIf you were to defeat them using\nonly the type they specialize in,\lthey would surely recognize your\lskills and gift these shards to you.\pI figured you would be interested in\nhearing about this, [PLAYER]!
+
 #org @gText_DaimynCityFacilities_IRF_TableTopLeftResearcher
 Professor Sakura is brilliant and\nkind, but[.] I'm worried for her.\pShe spends most of her day working\nin the lab, jumping from one\lbreakthrough to the next.\pWe're grateful for her positive can-\ndo attitude, but as her\lcolleagues, we also worry for her.
 
@@ -2029,6 +2032,42 @@ Make sure you keep your word.
 #org @gText_UltraEpisode_TypeNullResearcher_TakeCare
 Bring Type: Null with you to any\nUltra Wormholes you find.\pAnd, take care of it.\pIt's scared, but I'm trusting in you\nto help it grow in confidence.
 
+#org @gText_UltraEpisode_TypeNullResearcher_RecognizeSilvally
+Wh-what's this?\pType: Null has[.] Evolved?!\pThis is truly incredible!\pTyp - Err[.] Silvally was always a\nmisunderstood creature.\pFor the two of you to build a bond\nthis strong in such a short time[.]\pWhy, it touches my heart.\pPlease, take these, I insist!
+
+#org @gText_UltraEpisode_TypeNullResearcher_ObtainedMemories
+[BLACK][PLAYER] obtained a set of Memory\ndiscs!
+
+#org @gText_UltraEpisode_TypeNullResearcher_MemoryDiscsExplained
+[BLUE]These Memory discs were designed to\nbring out Silvally's latent power.\pEach holds data on a powerful\nPok\emon of each respective type.\pSilvally has a special ability called\n[GREEN]RKS System[BLUE].\pBy holding one of these discs, it can\nchange it's own type, as well as\lthe type of it's Multi-Attack move,\lto match that disc.\pI'm certain someone like you can make\ngood use of it.
+
+#org @gText_UltraEpisode_TypeNullResearcher_GivenSilvally
+[BLUE]Seeing how close you two are now[.]\pWell, it would feel wrong to take\nSilvally away from you.\pVery well!\pFrom this moment forth, Silvally is\nyours!
+
+#org @gText_UltraEpisode_TypeNullResearcher_ObtainedSilvally
+[BLACK][PLAYER] became Silvally's trainer!
+
+#org @gText_UltraEpisode_TypeNullResearcher_SilvallyCanBeNicknamed
+Silvally can now be nicknamed as you\nsee fit.
+
+#org @gText_UltraEpisode_TypeNullResearcher_TakeCareOfSilvally
+[BLUE]Please continue to take good care of\nSilvally.
+
+#org @gText_DaimynCityFacilities_IRF_MachineryResearcher_CongratulatingPlayer
+[PLAYER], congratulations are in order\nfor catching Necrozma.\pOh, I should explain myself,\nheheh.\pOnce Professor Sakura realized that\nNecrozma was responsible for the\leclipses, she contacted us.\pShe was so confident that you'd\ncatch it that she told us to\lprepare something for you.\pHere, take it!
+
+#org @gText_DaimynCityFacilities_IRF_MachineryResearcher_ObtainedNecrozmaFusionItems
+[BLACK][PLAYER] received the [GREEN]N-Solarizer[BLACK] and\n[GREEN]N-Lunarizer[BLACK]![BLUE]
+
+#org @gText_DaimynCityFacilities_IRF_MachineryResearcher_ExplainNecrozmaFusionItems
+Those are the [GREEN]N-Solarizer[BLUE] and [GREEN]N-\nLunarizer[BLUE].\pThey can be used to agreeably\nfuse or unfuse Necrozma with\leither Solgaleo or Lunala,\lrespectively.
+
+#org @gText_DaimynCityFacilities_IRF_MachineryResearcher_PostNecrozma
+Take good care of Necrozma.\nWe'll be counting on you.
+
+#org @gText_DaimynCityFacilities_IRF_MachineryResearcher_PostNecrozma_NotCaught
+Ah, [PLAYER].\pProfessor Sakura told me about your\nencounter with Necrozma.\pAfter hearing that, I got right to\nwork on creating a new device.\pHowever, it isn't ready yet[.]\pIf you capture Necrozma, please\nreturn to see me.\pI'm sure by then I'll have finished\nmy work.
+
 #org @gText_UltraEpisode_UltraBeastHunt_Sakura_PromptForDestination
 [RED][PLAYER], it's good to see you.\nWhat can I help you with?
 
@@ -2085,3 +2124,21 @@ Nothing for now!
 
 #org @gText_UltraEpisode_Researcher_GoingToDiasOfLight
 [BLUE]Yes, ma'am!\nGood luck on your expedition.
+
+#org @gText_UltraEpisode_PostNecrozma_Sakura_WelcomeBack
+[RED]Welcome back to Kulure, [PLAYER].\pPlease, come here a moment.
+
+#org @gText_UltraEpisode_PostNecrozma_Sakura_ExplainingResearcherSupport
+[RED]Thanks to your efforts, Kulure is\nsafe once again.\pI got in touch with the researchers\nhere once we learned that Necrozma\lwas responsible.\pPlease, speak with them. I'm sure\nit'll be worth your while.
+
+#org @gText_UltraEpisode_PostNecrozma_Sakura_UltraWormholesRemain
+[RED]There are still [BUFFER1] Ultra\nWormholes left unaccounted for.\pPlease speak with my researcher when\nyou have time to close them.
+
+#org @gText_UltraEpisode_PostNecrozma_Sakura_NecrozmaUncaught
+[RED]And, there's still Necrozma[.]\pIt's calm for now, but we can't be\ncertain it won't lash out again.\pPlease, capture it.\pI'm certain a trainer like you can\ncalm it down.
+
+#org @gText_UltraEpisode_PostNecrozma_Sakura_ExplainingTravelToUltraSpace
+[RED]And, as always, you can speak to me\nif you want to travel to Ultra\lSpace.\pWe can return to either Eclipse\nVillage or the Dias of Light.
+
+#org @gText_UltraEpisode_PostNecrozma_Sakura_Farewell
+[RED]Once again, thank you for your\nefforts, [PLAYER].\pIf not for you, Kulure could've[.]\nWell, let's not dwell on what-ifs!\pNow, I'm certain you're busy, so I\nwon't keep you much longer.\pTake care, [PLAYER].\nYou'll always be welcome here.
