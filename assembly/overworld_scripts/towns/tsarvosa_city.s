@@ -1470,6 +1470,8 @@ EventScript_TsarvosaCity_GymTraineeCafe_Noam:
     setvar 0x4001 ITEM_SILK_SCARF
     setvar 0x4002 ITEM_NORMAL_GEM
     setvar 0x4003 ITEM_CHILAN_BERRY
+    setvar 0x4004 ITEM_NORMALIUM_Z
+    setvar 0x4005 TYPE_NORMAL
     faceplayer
     checktrainerflag 429
     if NOT_SET _call BattleGymTrainee
@@ -1505,6 +1507,8 @@ EventScript_TsarvosaCity_GymTraineeCafe_Ashley:
     setvar 0x4001 ITEM_CHARCOAL
     setvar 0x4002 ITEM_FIRE_GEM
     setvar 0x4003 ITEM_OCCA_BERRY
+    setvar 0x4004 ITEM_FIRIUM_Z
+    setvar 0x4005 TYPE_FIRE
     faceplayer
     checktrainerflag 430
     if NOT_SET _call BattleGymTrainee
@@ -1540,6 +1544,8 @@ EventScript_TsarvosaCity_GymTraineeCafe_Chelsea:
     setvar 0x4001 ITEM_MYSTIC_WATER
     setvar 0x4002 ITEM_WATER_GEM
     setvar 0x4003 ITEM_PASSHO_BERRY
+    setvar 0x4004 ITEM_WATERIUM_Z
+    setvar 0x4005 TYPE_WATER
     faceplayer
     checktrainerflag 431
     if NOT_SET _call BattleGymTrainee
@@ -1575,6 +1581,8 @@ EventScript_TsarvosaCity_GymTraineeCafe_Buddy:
     setvar 0x4001 ITEM_MIRACLE_SEED
     setvar 0x4002 ITEM_GRASS_GEM
     setvar 0x4003 ITEM_RINDO_BERRY
+    setvar 0x4004 ITEM_GRASSIUM_Z
+    setvar 0x4005 TYPE_GRASS
     faceplayer
     checktrainerflag 432
     if NOT_SET _call BattleGymTrainee
@@ -1610,6 +1618,8 @@ EventScript_TsarvosaCity_GymTraineeCafe_Gawain:
     setvar 0x4001 ITEM_BLACK_BELT
     setvar 0x4002 ITEM_FIGHTING_GEM
     setvar 0x4003 ITEM_CHOPLE_BERRY
+    setvar 0x4004 ITEM_FIGHTINIUM_Z
+    setvar 0x4005 TYPE_FIGHTING
     faceplayer
     checktrainerflag 433
     if NOT_SET _call BattleGymTrainee
@@ -1645,6 +1655,8 @@ EventScript_TsarvosaCity_GymTraineeCafe_Skylar:
     setvar 0x4001 ITEM_SHARP_BEAK
     setvar 0x4002 ITEM_FLYING_GEM
     setvar 0x4003 ITEM_COBA_BERRY
+    setvar 0x4004 ITEM_FLYINIUM_Z
+    setvar 0x4005 TYPE_FLYING
     faceplayer
     checktrainerflag 434
     if NOT_SET _call BattleGymTrainee
@@ -1680,6 +1692,8 @@ EventScript_TsarvosaCity_GymTraineeCafe_Bella:
     setvar 0x4001 ITEM_POISON_BARB
     setvar 0x4002 ITEM_POISON_GEM
     setvar 0x4003 ITEM_KEBIA_BERRY
+    setvar 0x4004 ITEM_POISONIUM_Z
+    setvar 0x4005 TYPE_POISON
     faceplayer
     checktrainerflag 435
     if NOT_SET _call BattleGymTrainee
@@ -1715,6 +1729,8 @@ EventScript_TsarvosaCity_GymTraineeCafe_Flash:
     setvar 0x4001 ITEM_MAGNET
     setvar 0x4002 ITEM_ELECTRIC_GEM
     setvar 0x4003 ITEM_WACAN_BERRY
+    setvar 0x4004 ITEM_ELECTRIUM_Z
+    setvar 0x4005 TYPE_ELECTRIC
     faceplayer
     checktrainerflag 436
     if NOT_SET _call BattleGymTrainee
@@ -1750,6 +1766,8 @@ EventScript_TsarvosaCity_GymTraineeCafe_Terra:
     setvar 0x4001 ITEM_SOFT_SAND
     setvar 0x4002 ITEM_GROUND_GEM
     setvar 0x4003 ITEM_SHUCA_BERRY
+    setvar 0x4004 ITEM_GROUNDIUM_Z
+    setvar 0x4005 TYPE_GROUND
     faceplayer
     checktrainerflag 437
     if NOT_SET _call BattleGymTrainee
@@ -1785,6 +1803,8 @@ EventScript_TsarvosaCity_GymTraineeCafe_Seifa:
     setvar 0x4001 ITEM_TWISTED_SPOON
     setvar 0x4002 ITEM_PSYCHIC_GEM
     setvar 0x4003 ITEM_PAYAPA_BERRY
+    setvar 0x4004 ITEM_PSYCHIUM_Z
+    setvar 0x4005 TYPE_PSYCHIC
     faceplayer
     checktrainerflag 438
     if NOT_SET _call BattleGymTrainee
@@ -1820,6 +1840,8 @@ EventScript_TsarvosaCity_GymTraineeCafe_Rocco:
     setvar 0x4001 ITEM_HARD_STONE
     setvar 0x4002 ITEM_ROCK_GEM
     setvar 0x4003 ITEM_CHARTI_BERRY
+    setvar 0x4004 ITEM_ROCKIUM_Z
+    setvar 0x4005 TYPE_ROCK
     faceplayer
     checktrainerflag 439
     if NOT_SET _call BattleGymTrainee
@@ -1856,6 +1878,8 @@ EventScript_TsarvosaCity_GymTraineeCafe_Janice:
     setvar 0x4001 ITEM_NEVER_MELT_ICE
     setvar 0x4002 ITEM_ICE_GEM
     setvar 0x4003 ITEM_YACHE_BERRY
+    setvar 0x4004 ITEM_ICIUM_Z
+    setvar 0x4005 TYPE_ICE
     faceplayer
     checktrainerflag 440
     if NOT_SET _call BattleGymTrainee
@@ -1891,6 +1915,8 @@ EventScript_TsarvosaCity_GymTraineeCafe_Antoinette:
     setvar 0x4001 ITEM_SILVER_POWDER
     setvar 0x4002 ITEM_BUG_GEM
     setvar 0x4003 ITEM_TANGA_BERRY
+    setvar 0x4004 ITEM_BUGINIUM_Z
+    setvar 0x4005 TYPE_BUG
     faceplayer
     checktrainerflag 441
     if NOT_SET _call BattleGymTrainee
@@ -1926,6 +1952,8 @@ EventScript_TsarvosaCity_GymTraineeCafe_Ryu:
     setvar 0x4001 ITEM_DRAGON_FANG
     setvar 0x4002 ITEM_DRAGON_GEM
     setvar 0x4003 ITEM_HABAN_BERRY
+    setvar 0x4004 ITEM_DRAGONIUM_Z
+    setvar 0x4005 TYPE_DRAGON
     faceplayer
     checktrainerflag 442
     if NOT_SET _call BattleGymTrainee
@@ -1961,6 +1989,8 @@ EventScript_TsarvosaCity_GymTraineeCafe_Caspar:
     setvar 0x4001 ITEM_SPELL_TAG
     setvar 0x4002 ITEM_GHOST_GEM
     setvar 0x4003 ITEM_KASIB_BERRY
+    setvar 0x4004 ITEM_GHOSTIUM_Z
+    setvar 0x4005 TYPE_GHOST
     faceplayer
     checktrainerflag 443
     if NOT_SET _call BattleGymTrainee
@@ -1996,6 +2026,8 @@ EventScript_TsarvosaCity_GymTraineeCafe_Darcy:
     setvar 0x4001 ITEM_BLACK_GLASSES
     setvar 0x4002 ITEM_DARK_GEM
     setvar 0x4003 ITEM_COLBUR_BERRY
+    setvar 0x4004 ITEM_DARKINIUM_Z
+    setvar 0x4005 TYPE_DARK
     faceplayer
     checktrainerflag 444
     if NOT_SET _call BattleGymTrainee
@@ -2031,6 +2063,8 @@ EventScript_TsarvosaCity_GymTraineeCafe_Mason:
     setvar 0x4001 ITEM_METAL_COAT
     setvar 0x4002 ITEM_STEEL_GEM
     setvar 0x4003 ITEM_BABIRI_BERRY
+    setvar 0x4004 ITEM_STEELIUM_Z
+    setvar 0x4005 TYPE_STEEL
     faceplayer
     checktrainerflag 445
     if NOT_SET _call BattleGymTrainee
@@ -2066,6 +2100,8 @@ EventScript_TsarvosaCity_GymTraineeCafe_Faye:
     setvar 0x4001 ITEM_PIXIE_PLATE
     setvar 0x4002 ITEM_FAIRY_GEM
     setvar 0x4003 ITEM_ROSELI_BERRY
+    setvar 0x4004 ITEM_FAIRIUM_Z
+    setvar 0x4005 TYPE_FAIRY
     faceplayer
     checktrainerflag 446
     if NOT_SET _call BattleGymTrainee
@@ -2113,6 +2149,8 @@ BattleGymTrainee:
     obtainitem 0x4002 0x1
     pause DELAY_HALFSECOND
     obtainitem 0x4003 0x3
+    checkflag 0x289 @ Ultra Necrozma defeated
+    if SET _call CheckGiveZCrystal
     return
 
 ChoseNotToBattleTrainee:
@@ -2139,6 +2177,22 @@ ChoseNotToTutor:
     msgbox gText_TsarvosaCity_GymTraineeCafe_Trainee_ChoseNotToTutor MSG_NORMAL
     msgbox gText_TsarvosaCity_GymTraineeCafe_Trainee_LeavingAtEndOfDay MSG_NORMAL
     end
+
+CheckGiveZCrystal:
+    callasm CheckIfPartyIsSameType
+    compare LASTRESULT TRUE // Player beat with team sharing the type of the trainee
+    if TRUE _call GiveZCrystal
+    if FALSE _call HintAtZCrystal
+    return
+
+GiveZCrystal:
+    msgbox gText_TsarvosaCity_GymTraineeCafe_Trainee_GiveZCrystal MSG_NORMAL
+    obtainitem 0x4004 0x1 @ Type-Specific Z Crystal
+    return
+
+HintAtZCrystal:
+    msgbox gText_TsarvosaCity_GymTraineeCafe_Trainee_HintZCrystal MSG_NORMAL
+    return
 
 m_CafeAttendantWalksToPlayer: .byte walk_down, walk_down, end_m
 m_CafeAttendnatReturnsToPosition: .byte walk_up, walk_up, look_down, end_m

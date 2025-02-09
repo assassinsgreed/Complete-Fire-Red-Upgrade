@@ -632,6 +632,12 @@ Challenge me again sometime, if\nyou're up to it!
 #org @gText_TsarvosaCity_GymTraineeCafe_Trainee_WonAgainstTrainee
 You're really good!\nHere, a gift from me to you[.]
 
+#org @gText_TsarvosaCity_GymTraineeCafe_Trainee_GiveZCrystal
+Wow, you even beat me with the\nPok\emon type I specialize in!\pPlease, take this[.]\pI know you'll make good use of it!
+
+#org @gText_TsarvosaCity_GymTraineeCafe_Trainee_HintZCrystal
+Say, you're pretty good[.]\pI wonder if you could beat me using\nthe same Pok\emon type I do, too?\pIf you could do that, I might have\nsomething good for you!
+
 #org @gText_TsarvosaCity_GymTraineeCafe_Trainee_OfferingMove
 I've dedicated my life to bringing\nthe best out of [BUFFER2] Pok\emon.\pIf you'd like, I can teach almost\nany [BUFFER2] Pok\emon a unique move!\pToday I'm teaching [BUFFER3].\nWhat do you say?
 
