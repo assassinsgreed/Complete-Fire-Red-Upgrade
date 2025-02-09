@@ -710,3 +710,26 @@ void GetLevelCapIntoLastResult(void)
 {
 	gSpecialVar_LastResult = GetCurrentLevelCap();
 }
+
+/// @brief Sets LastResult to TRUE if all pokemon in the party have the type set in Var4005
+void CheckIfPartyIsSameType(void)
+{
+	gSpecialVar_LastResult = TRUE;
+
+	for (u8 i = 0; i < PARTY_SIZE; i++)
+	{
+		struct Pokemon* mon = &gPlayerParty[i];
+		u16 species = GetMonData(mon, MON_DATA_SPECIES, NULL);
+
+		if (species != SPECIES_NONE && species != SPECIES_EGG)
+		{
+			u8 type1 = GetMonType(mon, 0);
+			u8 type2 = GetMonType(mon, 1);
+			if (type1 != VarGet(VAR_TEMP_5) && type2 != VarGet(VAR_TEMP_5))
+			{
+				gSpecialVar_LastResult = FALSE;
+				break;
+			}
+		}
+	}
+}
