@@ -2301,6 +2301,7 @@ CrushingConfirmation:
     waitfanfare
     obtainitem 0x4000 0x1
     removeitem ITEM_POKE_CHIP 0x4001
+    incrementgamestat 22
     npcchatwithmovement gText_TsarvosaCity_NPCHouses_PokeCrusherItemComeAgain m_LookLeft
     end
 

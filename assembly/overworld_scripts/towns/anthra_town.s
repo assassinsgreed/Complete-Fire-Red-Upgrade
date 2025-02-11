@@ -353,24 +353,29 @@ LearnGameStats:
     case 15, GameStats_ItemsPickedUp _goto
     case 16, GameStats_HiddenItemsFound _goto
     case 17, GameStats_TimesItemFinderWasUsed _goto
-    case 18, GameStats_PokemonLeftAtDaycare _goto
-    case 19, GameStats_EggsHatched _goto
-    case 20, GameStats_TimesHealedAtPokemonCenterOrNurse _goto
-    case 21, GameStats_TimesRestedAtHome _goto
-    case 22, GameStats_TimesEnteredAHotSpring _goto
-    case 23, GameStats_TimesCutWasUsed _goto
-    case 24, GameStats_TimesRockSmashWasUsed _goto
-	case 25, GameStats_NumberOfMealsEaten _goto
-	case 26, GameStats_NumberOfTrainerHousesBeaten _goto
-	case 27, GameStats_TimesLuckyDrawWasWon _goto
-	case 28, GameStats_ChangedIVsAndNature _goto
-	case 29, GameStats_NumberOfJackpots _goto
-	case 30, GameStats_TimesShopped _goto
-	case 31, GameStats_TimesSplashWasUsed _goto
-	case 32, GameStats_TimesStruggleWasUsed _goto
-	case 33, GameStats_TimesLedgesWereHoppedOffOf _goto
-	case 34, GameStats_TimesPlayerWasRainedOn _goto
-    case 35, DoneHearingStats
+	case 18, GameStats_ApricornBallsMade _goto
+	case 19, GameStats_PokeballsSwapped _goto
+	case 20, GameStats_PokeChipItemsCrafted _goto
+    case 21, GameStats_PokemonLeftAtDaycare _goto
+    case 22, GameStats_EggsHatched _goto
+    case 23, GameStats_TimesHealedAtPokemonCenterOrNurse _goto
+    case 24, GameStats_TimesRestedAtHome _goto
+    case 25, GameStats_TimesEnteredAHotSpring _goto
+    case 26, GameStats_TimesCutWasUsed _goto
+    case 27, GameStats_TimesRockSmashWasUsed _goto
+	case 28, GameStats_TimesSurfWasUsed _goto
+	case 29, GameStats_NumberOfMealsEaten _goto
+	case 30, GameStats_NumberOfTrainerHousesBeaten _goto
+	case 31, GameStats_TimesLuckyDrawWasWon _goto
+	case 32, GameStats_ChangedIVsAndNature _goto
+	case 33, GameStats_RareCandiesUsed _goto
+	case 34, GameStats_NumberOfJackpots _goto
+	case 35, GameStats_TimesShopped _goto
+	case 36, GameStats_TimesSplashWasUsed _goto
+	case 37, GameStats_TimesStruggleWasUsed _goto
+	case 38, GameStats_TimesLedgesWereHoppedOffOf _goto
+	case 39, GameStats_TimesPlayerWasRainedOn _goto
+    case 40, DoneHearingStats
     case 0x7F, DoneHearingStats @ When player hits B to close
 	goto DoneHearingStats
 	end
@@ -507,6 +512,27 @@ LearnGameStats:
 		msgbox gText_AnthraTown_ChampionFanatic_GameStats_TimesItemFinderWasUsed MSG_NORMAL
 		goto LearnGameStats
 
+	GameStats_ApricornBallsMade:
+		setvar 0x8004 29 @ Number of apricorn balls made
+		callasm StoreGameStat
+		buffernumber 0x0 LASTRESULT
+		msgbox gText_AnthraTown_ChampionFanatic_GameStats_NumberOfApricornBallsMade MSG_NORMAL
+		goto LearnGameStats
+
+	GameStats_PokeballsSwapped:
+		setvar 0x8004 31 @ Number of pokeballs swapped
+		callasm StoreGameStat
+		buffernumber 0x0 LASTRESULT
+		msgbox gText_AnthraTown_ChampionFanatic_GameStats_NumberOfPokeballsSwapped MSG_NORMAL
+		goto LearnGameStats
+
+	GameStats_PokeChipItemsCrafted:
+		setvar 0x8004 22 @ Number of items crafted by crushing PokeChips
+		callasm StoreGameStat
+		buffernumber 0x0 LASTRESULT
+		msgbox gText_AnthraTown_ChampionFanatic_GameStats_NumberOfPokeChipItemsCrafted MSG_NORMAL
+		goto LearnGameStats
+
 	GameStats_PokemonLeftAtDaycare:
 		setvar 0x8004 47 @ Pokemon left at the daycare
 		callasm StoreGameStat
@@ -556,6 +582,13 @@ LearnGameStats:
 		msgbox gText_AnthraTown_ChampionFanatic_GameStats_TimesRockSmashWasUsed MSG_NORMAL
 		goto LearnGameStats
 
+	GameStats_TimesSurfWasUsed:
+		setvar 0x8004 35 @ Times Surf was used
+		callasm StoreGameStat
+		buffernumber 0x0 LASTRESULT
+		msgbox gText_AnthraTown_ChampionFanatic_GameStats_TimesSurfWasUsed MSG_NORMAL
+		goto LearnGameStats
+
 	GameStats_NumberOfMealsEaten:
 		setvar 0x8004 24 @ Number of meals eaten
 		callasm StoreGameStat
@@ -582,6 +615,13 @@ LearnGameStats:
 		callasm StoreGameStat
 		buffernumber 0x0 LASTRESULT
 		msgbox gText_AnthraTown_ChampionFanatic_GameStats_ChangedIVsAndNature MSG_NORMAL
+		goto LearnGameStats
+
+	GameStats_RareCandiesUsed:
+		setvar 0x8004 50 @ Number of Rare Candies used
+		callasm StoreGameStat
+		buffernumber 0x0 LASTRESULT
+		msgbox gText_AnthraTown_ChampionFanatic_GameStats_RareCandiesUsed MSG_NORMAL
 		goto LearnGameStats
 
 	GameStats_NumberOfJackpots:

@@ -474,6 +474,15 @@ Hidden items found
 #org @gText_GameStats_TimesTheItemFinderWasUsed
 Times the Item Finder was used
 
+#org @gText_GameStats_NumberOfApricornBallsMade
+Apricorn Balls made
+
+#org @gText_GameStats_NumberOfPokeballsSwapped
+Pok\e Balls swapped
+
+#org @gText_GameStats_NumberOfPokeChipItemsCrafted
+Pok\eChip items crafted
+
 #org @gText_GameStats_PokemonWereLeftAtTheDaycare
 Pok\emon left at the Day Care
 
@@ -495,6 +504,9 @@ Times Cut was used in field
 #org @gText_GameStats_TimesRockSmashWasUsed
 Times Rock Smash was used in field
 
+#org @gText_GameStats_TimesSurfWasUsed
+Times Surf was used in field
+
 #org @gText_GameStats_NumberOfMealsEaten
 Restaurant meals eaten
 
@@ -506,6 +518,9 @@ Lucky Draw wins
 
 #org @gText_GameStats_ChangedIVsAndNature
 IVs and Natures changed
+
+#org @gText_GameStats_RareCandiesUsed
+Rare Candies used
 
 #org @gText_GameStats_NumberOfJackpotsAtCasino
 Jackpots at the casino

@@ -489,6 +489,7 @@ EventScript_Defog:
 
 .equ SPECIAL_POKEMON_TYPE_IN_PARTY, 0xB2
 .equ SPECIAL_SPECIES_IN_PARTY, 0x17C
+.equ GAME_STAT_TIMES_SURF_WAS_USED, 35
 
 .global EventScript_UseLavaSurf
 .global EventScript_UseLavaSurf_Debug
@@ -526,6 +527,7 @@ EventScript_UseLavaSurf_SkipAsk:
 	setanimation 0x0 0x8004
 	doanimation 0x9
 	releaseall
+	incrementgamestat GAME_STAT_TIMES_SURF_WAS_USED
 	end
 
 .global EventScript_MagmaGlistens
@@ -633,6 +635,7 @@ EventScript_UseSurf_SkipAsk:
 	setanimation 0x0 0x8004
 	doanimation 0x9
 EventScript_SurfEnd:
+	incrementgamestat GAME_STAT_TIMES_SURF_WAS_USED
 	releaseall
 	end
 
@@ -673,6 +676,7 @@ EventScript_UseADMSurf_SkipAsk:
 	setanimation 0x0 0x8004
 	doanimation 0x9
 	releaseall
+	incrementgamestat GAME_STAT_TIMES_SURF_WAS_USED
 	end
 
 EventScript_UseADMSurf_AskMurkyWater:

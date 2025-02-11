@@ -2810,6 +2810,7 @@ void ItemUseCB_RareCandy(u8 taskId, TaskFunc func)
 	}
 	else
 	{
+		IncrementGameStat(GAME_STAT_RARE_CANDIES_USED);
 		ItemUseCB_RareCandyStep(taskId, func);
 	}
 }
