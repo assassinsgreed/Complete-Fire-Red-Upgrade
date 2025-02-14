@@ -180,7 +180,7 @@ I'll keep track of everything you\nachieve.\pJust say the word and I'll share\ne
 You've saved the game [BUFFER1] times.
 
 #org @gText_AnthraTown_ChampionFanatic_GameStats_StepsTaken
-You've taken [BUFFER1] steps.
+You've walked the maximum number of\nsteps (65,535) [BUFFER2] times.\pYou've taken [BUFFER1] steps since\nthen.
 
 #org @gText_AnthraTown_ChampionFanatic_GameStats_PokeChipsFound
 You've collected [BUFFER1] Pok\eChips.
@@ -195,7 +195,7 @@ You've taught [BUFFER1] tutor moves.
 You've entered the Hall of Fame\n[BUFFER1] times.
 
 #org @gText_AnthraTown_ChampionFanatic_GameStats_SaveTimeOnFirstHoF
-Your save time was [BUFFER1] when you\nfirst entered the Hall of Fame.
+Your save time was [BUFFER1]:[BUFFER2] when you\nfirst entered the Hall of Fame.
 
 #org @gText_AnthraTown_ChampionFanatic_GameStats_TimesPokedexWasChecked
 You've checked the Pok\edex [BUFFER1]\ntimes.

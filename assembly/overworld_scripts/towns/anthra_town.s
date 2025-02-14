@@ -389,8 +389,9 @@ LearnGameStats:
 
 	GameStats_StepsTaken:
 		setvar 0x8004 5 @ Steps taken
-		callasm StoreGameStat
+		callasm StoreStepsGameStat
 		buffernumber 0x0 LASTRESULT
+		buffernumber 0x1 0x4000
 		msgbox gText_AnthraTown_ChampionFanatic_GameStats_StepsTaken MSG_NORMAL
 		goto LearnGameStats
 
@@ -429,9 +430,7 @@ LearnGameStats:
 		goto LearnGameStats
 
 	GameStats_SaveTimeOnFirstHoF:
-		setvar 0x8004 1 @ Save time at first hall of fame
-		callasm StoreGameStat
-		buffernumber 0x0 LASTRESULT
+		callasm StoreHoFTimeGameStat
 		msgbox gText_AnthraTown_ChampionFanatic_GameStats_SaveTimeOnFirstHoF MSG_NORMAL
 		goto LearnGameStats
 
