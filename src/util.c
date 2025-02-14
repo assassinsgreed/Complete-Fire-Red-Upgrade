@@ -9,6 +9,7 @@
 #include "../include/new/mega.h"
 #include "../include/new/util.h"
 #include "../include/money.h"
+#include "../include/string_util.h"
 
 /*
 util.c
@@ -553,6 +554,26 @@ bool8 CanPartyMonBeFrozen(struct Pokemon* mon)
 void StoreGameStat()
 {
 	Var800D = GetGameStat(Var8004);
+}
+
+/// @brief Stores the player's steps into LASTRESULT, with the number of times they've surpassed the u16 limit (65, 535) in 0x4000
+void StoreStepsGameStat()
+{
+	u32 steps = GetGameStat(GAME_STAT_STEPS);
+	gSpecialVar_LastResult = steps % 65535;
+	VarSet(VAR_TEMP_0, steps / 65535);
+}
+
+/// @brief Gets the Hall of Fame save time game stat into string buffers 0 and 1. This is needed because the time value is stored as an integer and needs to be converted, with leading zeroes.
+void StoreHoFTimeGameStat()
+{
+	u32 stat = GetGameStat(GAME_STAT_FIRST_HOF_PLAY_TIME);
+	u16 hours = stat >> 16;
+	u16 minutes = (stat >> 8) & 0xFF;
+
+	// Store formatted hours and minutes into string buffers
+	ConvertIntToDecimalStringN(gStringVar1, hours, STR_CONV_MODE_RIGHT_ALIGN, 2); //Hour - 12hr format
+	ConvertIntToDecimalStringN(gStringVar2, minutes, STR_CONV_MODE_LEADING_ZEROS, 2); //Minute
 }
 
 // Checks if the player has enough money from var 0x8004 and stores the result in 0x800D (LASTRESULT)

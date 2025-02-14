@@ -558,6 +558,7 @@ PurchaseConfirmation:
     msgbox gText_LaplazTownNPCHouses_ApricornSellerBallMade MSG_NORMAL
     obtainitem 0x4001 0x1
     removeitem ITEM_POKE_CHIP 0x2
+    incrementgamestat 29 @ Apricorn balls made
     setflag 0xE11 @ Apricorn ball bought today
     goto ApricornBallAlreadyBoughtToday
 

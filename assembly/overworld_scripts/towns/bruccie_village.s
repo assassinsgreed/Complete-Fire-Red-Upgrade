@@ -679,6 +679,7 @@ PerformBallSwap:
     fanfare 0x101 @ Got Item / Level up
     msgbox gText_BruccieVillageNPCHouses_PokeballSwapper_ProcessComplete MSG_KEEPOPEN
     waitfanfare
+    incrementgamestat 31
     @ Change ball
     special 0x14 @ Perform the ball change
     addvar 0x409A 0x1

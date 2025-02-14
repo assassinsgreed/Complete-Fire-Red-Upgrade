@@ -180,7 +180,7 @@ I'll keep track of everything you\nachieve.\pJust say the word and I'll share\ne
 You've saved the game [BUFFER1] times.
 
 #org @gText_AnthraTown_ChampionFanatic_GameStats_StepsTaken
-You've taken [BUFFER1] steps.
+You've walked the maximum number of\nsteps (65,535) [BUFFER2] times.\pYou've taken [BUFFER1] steps since\nthen.
 
 #org @gText_AnthraTown_ChampionFanatic_GameStats_PokeChipsFound
 You've collected [BUFFER1] Pok\eChips.
@@ -195,7 +195,7 @@ You've taught [BUFFER1] tutor moves.
 You've entered the Hall of Fame\n[BUFFER1] times.
 
 #org @gText_AnthraTown_ChampionFanatic_GameStats_SaveTimeOnFirstHoF
-Your save time was [BUFFER1] when you\nfirst entered the Hall of Fame.
+Your save time was [BUFFER1]:[BUFFER2] when you\nfirst entered the Hall of Fame.
 
 #org @gText_AnthraTown_ChampionFanatic_GameStats_TimesPokedexWasChecked
 You've checked the Pok\edex [BUFFER1]\ntimes.
@@ -230,6 +230,15 @@ You've found [BUFFER1] hidden items.
 #org @gText_AnthraTown_ChampionFanatic_GameStats_TimesItemFinderWasUsed
 You've used the Item Finder [BUFFER1]\ntimes.
 
+#org @gText_AnthraTown_ChampionFanatic_GameStats_NumberOfApricornBallsMade
+You've made [BUFFER1] Apricorn Balls.
+
+#org @gText_AnthraTown_ChampionFanatic_GameStats_NumberOfPokeballsSwapped
+You've swapped your Pok\emon's Pok\e\nBalls [BUFFER1] times.
+
+#org @gText_AnthraTown_ChampionFanatic_GameStats_NumberOfPokeChipItemsCrafted
+You've crafted [BUFFER1] items using\ncrushed Pok\eChips.
+
 #org @gText_AnthraTown_ChampionFanatic_GameStats_PokemonLeftAtDaycare
 You've left [BUFFER1] Pok\emon at the\nDay Care.
 
@@ -251,6 +260,9 @@ You've used Cut in the field [BUFFER1]\ntimes.
 #org @gText_AnthraTown_ChampionFanatic_GameStats_TimesRockSmashWasUsed
 You've used Rock Smash in the field\n[BUFFER1] times.
 
+#org @gText_AnthraTown_ChampionFanatic_GameStats_TimesSurfWasUsed
+You've used Surf in the field\n[BUFFER1] times.
+
 #org @gText_AnthraTown_ChampionFanatic_GameStats_NumberOfMealsEaten
 You've eaten [BUFFER1] meals at the\nDaimyn City Restaurant.
 
@@ -262,6 +274,9 @@ You've won the Lucky Draw [BUFFER1]\ntimes.
 
 #org @gText_AnthraTown_ChampionFanatic_GameStats_ChangedIVsAndNature
 You've changed a Pok\emon's IVs or\nNature [BUFFER1] times.
+
+#org @gText_AnthraTown_ChampionFanatic_GameStats_RareCandiesUsed
+You've used [BUFFER1] Rare Candies.
 
 #org @gText_AnthraTown_ChampionFanatic_GameStats_NumberOfJackpots
 You've hit the jackpot [BUFFER1] times\nat the Daimyn City Gym.

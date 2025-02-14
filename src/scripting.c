@@ -3124,6 +3124,9 @@ extern const u8 gText_GameStats_NumberOfTradesCompleted[];
 extern const u8 gText_GameStats_ItemsPickedUp[];
 extern const u8 gText_GameStats_HiddenItemsFound[];
 extern const u8 gText_GameStats_TimesTheItemFinderWasUsed[];
+extern const u8 gText_GameStats_NumberOfApricornBallsMade[];
+extern const u8 gText_GameStats_NumberOfPokeballsSwapped[];
+extern const u8 gText_GameStats_NumberOfPokeChipItemsCrafted[];
 extern const u8 gText_GameStats_PokemonWereLeftAtTheDaycare[];
 extern const u8 gText_GameStats_EggsHatched[];
 extern const u8 gText_GameStats_TimesHealedAtPokemonCenterOrNurse[];
@@ -3131,10 +3134,12 @@ extern const u8 gText_GameStats_TimesRestedAtHome[];
 extern const u8 gText_GameStats_TimesThePlayerEnteredAHotSpring[];
 extern const u8 gText_GameStats_TimesCutWasUsed[];
 extern const u8 gText_GameStats_TimesRockSmashWasUsed[];
+extern const u8 gText_GameStats_TimesSurfWasUsed[];
 extern const u8 gText_GameStats_NumberOfMealsEaten[];
 extern const u8 gText_GameStats_NumberOfTrainerHousesCleared[];
 extern const u8 gText_GameStats_TimesTheLuckyDrawWasWon[];
 extern const u8 gText_GameStats_ChangedIVsAndNature[];
+extern const u8 gText_GameStats_RareCandiesUsed[];
 extern const u8 gText_GameStats_NumberOfJackpotsAtCasino[];
 extern const u8 gText_GameStats_TimesShopped[];
 extern const u8 gText_GameStats_TimesSplashWasUsed[];
@@ -3424,6 +3429,9 @@ static const u8* sGameStats[] =
 	gText_GameStats_ItemsPickedUp,
 	gText_GameStats_HiddenItemsFound,
 	gText_GameStats_TimesTheItemFinderWasUsed,
+	gText_GameStats_NumberOfApricornBallsMade,
+	gText_GameStats_NumberOfPokeballsSwapped,
+	gText_GameStats_NumberOfPokeChipItemsCrafted,
 	gText_GameStats_PokemonWereLeftAtTheDaycare,
 	gText_GameStats_EggsHatched,
 	gText_GameStats_TimesHealedAtPokemonCenterOrNurse,
@@ -3431,10 +3439,12 @@ static const u8* sGameStats[] =
 	gText_GameStats_TimesThePlayerEnteredAHotSpring,
 	gText_GameStats_TimesCutWasUsed,
 	gText_GameStats_TimesRockSmashWasUsed,
+	gText_GameStats_TimesSurfWasUsed,
 	gText_GameStats_NumberOfMealsEaten,
 	gText_GameStats_NumberOfTrainerHousesCleared,
 	gText_GameStats_TimesTheLuckyDrawWasWon,
 	gText_GameStats_ChangedIVsAndNature,
+	gText_GameStats_RareCandiesUsed,
 	gText_GameStats_NumberOfJackpotsAtCasino,
 	gText_GameStats_TimesShopped,
 	gText_GameStats_TimesSplashWasUsed,
