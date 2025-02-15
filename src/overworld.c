@@ -1945,6 +1945,10 @@ bool8 CanUseEscapeRopeOnCurrMap(void)
 	if ((gFollowerState.inProgress && !(gFollowerState.flags & FOLLOWER_FLAG_CAN_LEAVE_ROUTE)) || FlagGet(FLAG_TSARVOSA_GYM_CHALLENGE_ACTIVE))
 		return FALSE;
 
+	// Handle special cases where using dig/escape rope doesn't make sense
+	if (MAP_IS(VICTORY_ROAD_OUTSIDE) || MAP_IS(CARNELIDGE_VOLCANO_EXTERIOR) || MAP_IS(CARNELIDGE_VOLCANO_PEAK))
+		return FALSE;
+
 	return (gMapHeader.flags & MAP_ALLOW_ESCAPE_ROPE) != 0;
 }
 
