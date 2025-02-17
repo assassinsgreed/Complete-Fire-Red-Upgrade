@@ -111,7 +111,7 @@ const struct WildPokemon gRoute10Cave_LandMonsNight[] =
 	{25, 28, SPECIES_GOLBAT},
 	{26, 29, SPECIES_GOLBAT},
 	{25, 28, SPECIES_LYCANROC_N},
-	{25, 28, SPECIES_LYCANROC_N}, 
+	{25, 28, SPECIES_LYCANROC_N},
 	{26, 29, SPECIES_GOLBAT}
 };
 
@@ -206,9 +206,9 @@ const struct WildPokemon gRoute21AndSecretTrail_LandMonsNight[] =
 	{48, 51, SPECIES_PRIMEAPE},
 	{47, 50, SPECIES_FALINKS},
 	{48, 51, SPECIES_VIBRAVA},
-	{49, 52, SPECIES_HELIOLISK},
+	{49, 52, SPECIES_MANDIBUZZ},
 	{48, 51, SPECIES_VIBRAVA},
-	{49, 52, SPECIES_HELIOLISK}
+	{49, 52, SPECIES_MANDIBUZZ}
 };
 
 const struct WildPokemon gRoute24_LandMonsNight[] =

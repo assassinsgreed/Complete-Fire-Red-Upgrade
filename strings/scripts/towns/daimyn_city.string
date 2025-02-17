@@ -644,7 +644,7 @@ Come see me again, if you want to\nforget more moves.
 Hello, dearie. I am a Pok\emon\ntutor, but I am quite different\lfrom those you may be familiar\lwith.\pYou see, I remind them how to use\nmoves they learn through level\lup, or through their parents.\pFor 1 Pok\eChip, I can teach a move\nthey learn through leveling up.\pFor 10 Pok\eChips, I can teach an\negg move they could have known.
 
 #org @gText_DaimynCityNPCHouses_MoveReminderRemembersPlayer
-Hello, dearie. I remember you.
+Hello, dearie. I remember you.\pSurely you remember me, too, as the\nPok\emon Move Reminder? Ohoho!
 
 #org @gText_DaimynCityNPCHouses_MoveReminderPrompt
 Shall I have one of your Pok\emon\nremember a move? [BLACK](Held: [BUFFER1])
