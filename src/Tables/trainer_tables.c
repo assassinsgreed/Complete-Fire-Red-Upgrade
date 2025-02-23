@@ -4634,7 +4634,7 @@ const struct TrainerMonNoItemCustomMoves sParty_LaplazTownGym_ChannelerVirginia[
             MOVE_METALSOUND,
             MOVE_HEADBUTT
         },
-        .ability = Ability_1 // STurdy
+        .ability = Ability_1 // Sturdy
     }
 };
 
@@ -4699,7 +4699,7 @@ const struct TrainerMonNoItemCustomMoves sParty_LaplazTownGym_ScientistKent[] = 
     }
 };
 
-const struct TrainerMonNoItemCustomMoves sParty_LaplazTownGym_RockerTomas[] = {
+const struct TrainerMonNoItemCustomMoves sParty_LaplazTownGym_RockerTrent[] = {
     {
         .lvl = 38,
         .species = SPECIES_BIBAREL,
@@ -8957,7 +8957,7 @@ const struct TrainerMonItemCustomMoves sParty_AscensionTower_EliteFour_Jenna[] =
             MOVE_FAKEOUT,
             MOVE_POWERUPPUNCH,
             MOVE_CRUNCH,
-            MOVE_RETURN
+            MOVE_FACADE
         },
         .heldItem = ITEM_KANGASKHANITE,
         .ability = Ability_Hidden // Inner Focus
@@ -11380,7 +11380,7 @@ const struct TrainerMonItemCustomMoves sParty_AscensionTower_EliteFour_JennaRema
             MOVE_FAKEOUT,
             MOVE_POWERUPPUNCH,
             MOVE_CRUNCH,
-            MOVE_RETURN
+            MOVE_FACADE
         },
         .heldItem = ITEM_KANGASKHANITE,
         .ability = Ability_Hidden // Inner Focus
@@ -15461,17 +15461,17 @@ const struct Trainer gTrainers[] = {
         .partySize = NELEMS(sParty_LaplazTownGym_ScientistKent),
         .party = {.NoItemCustomMoves = sParty_LaplazTownGym_ScientistKent}
     },
-    [TRAINER_LAPLAZ_GYM_TOMAS] = {
+    [TRAINER_LAPLAZ_GYM_TRENT] = {
         .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
         .trainerClass = CLASS_GUITARIST_RS,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
         .trainerPic = TRAINER_PIC_GUITARIST,
-        .trainerName = {_T, _o, _m, _a, _s, _END},
+        .trainerName = {_T, _r, _e, _n, _t, _END},
         .items = { },
         .doubleBattle = FALSE,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_SETUP_FIRST_TURN,
-        .partySize = NELEMS(sParty_LaplazTownGym_RockerTomas),
-        .party = {.NoItemCustomMoves = sParty_LaplazTownGym_RockerTomas}
+        .partySize = NELEMS(sParty_LaplazTownGym_RockerTrent),
+        .party = {.NoItemCustomMoves = sParty_LaplazTownGym_RockerTrent}
     },
     [TRAINER_LAPLAZ_GYM_LEADER_CASEY_F] = {
         .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,

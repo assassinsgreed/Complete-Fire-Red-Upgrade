@@ -1404,7 +1404,7 @@ npc 10 8 3 EventScript_LaplazGym_Exie
 npc 10 8 4 EventScript_LaplazGym_Virginia
 npc 10 8 5 EventScript_LaplazGym_Nisha
 npc 10 8 6 EventScript_LaplazGym_Kent
-npc 10 8 7 EventScript_LaplazGym_Tomas
+npc 10 8 7 EventScript_LaplazGym_Trent
 sign 10 8 0 SignScript_LaplazGym_GymPlacard
 sign 10 8 1 SignScript_LaplazGym_GymPlacard
 tile 10 8 0 TileScript_LaplazGym_IntroduceCasey

@@ -337,6 +337,7 @@ ItemScript_Common_ChoiceBand:
     finditem ITEM_CHOICE_BAND 0x1
     end
 
+.global ItemScript_Common_ChoiceSpecs
 ItemScript_Common_ChoiceSpecs:
     finditem ITEM_CHOICE_SPECS 0x1
     end
