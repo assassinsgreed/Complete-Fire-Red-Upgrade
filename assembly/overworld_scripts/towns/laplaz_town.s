@@ -932,7 +932,7 @@ EventScript_LaplazGym_LeaderCasey_Defeated:
     settrainerflag 0xE5 @ Virginia cannot be battled now
     settrainerflag 0xE6 @ Nisha cannot be battled now
     settrainerflag 0xE7 @ Kent cannot be battled now
-    settrainerflag 0xE8 @ Tomas cannot be battled now
+    settrainerflag 0xE8 @ Trent cannot be battled now
     call SetCaseyGender @ Reset text color
     msgbox gText_LaplazGym_LeaderCasey_BadgeDescription MSG_NORMAL
     msgbox gText_LaplazGym_LeaderCasey_TMReceived MSG_NORMAL
@@ -1026,10 +1026,10 @@ EventScript_LaplazGym_Kent:
     msgbox gText_LaplazGym_Kent_Chat MSG_NORMAL
     end
 
-.global EventScript_LaplazGym_Tomas
-EventScript_LaplazGym_Tomas:
-    trainerbattle0 0x0 0xE8 0x0 gText_LaplazGym_Tomas_Intro gText_LaplazGym_Tomas_Defeat
-    msgbox gText_LaplazGym_Tomas_Chat MSG_NORMAL
+.global EventScript_LaplazGym_Trent
+EventScript_LaplazGym_Trent:
+    trainerbattle0 0x0 0xE8 0x0 gText_LaplazGym_Trent_Intro gText_LaplazGym_Trent_Defeat
+    msgbox gText_LaplazGym_Trent_Chat MSG_NORMAL
     end
 
 .global SignScript_LaplazGym_GymPlacard

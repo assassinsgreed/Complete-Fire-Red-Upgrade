@@ -261,7 +261,7 @@
 #define TRAINER_LAPLAZ_GYM_VIRGINIA                  229
 #define TRAINER_LAPLAZ_GYM_NISHA                     230
 #define TRAINER_LAPLAZ_GYM_KENT                      231
-#define TRAINER_LAPLAZ_GYM_TOMAS                     232
+#define TRAINER_LAPLAZ_GYM_Trent                     232
 #define TRAINER_LAPLAZ_GYM_LEADER_CASEY_F            233
 #define TRAINER_LAPLAZ_GYM_LEADER_CASEY_M            234
 // Peradon Forest

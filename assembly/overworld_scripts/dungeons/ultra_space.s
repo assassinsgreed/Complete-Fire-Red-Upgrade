@@ -216,7 +216,7 @@ CheckIfPoipoleCanBeGifted:
     fanfare 0x102
     msgbox gText_UltraSpace_PoipoleResearcher_PlayerReceivesPoipole MSG_KEEPOPEN
     waitfanfare
-    givepokemon SPECIES_POIPOLE 50 ITEM_NONE @ Give Poipole
+    givepokemon SPECIES_POIPOLE 60 ITEM_NONE @ Give Poipole
     msgbox gText_UltraSpace_PoipoleResearcher_PoipoleNicknameConfirmation MSG_YESNO
     compare LASTRESULT YES
     if equal _call NicknamePoipole
