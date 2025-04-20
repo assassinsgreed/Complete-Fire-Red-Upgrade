@@ -2003,6 +2003,12 @@ map \map
 	release
 .endm
 
+@ Command cmdc3 in XSE. Used to increment a hidden var at the daycare
+.macro cmdc3 param:req
+	.byte 0xC3
+	.byte \param
+.endm
+
 @ Command A6 in XSE. Used to set up breakable ice floors
 .macro cmda6 param:req
 	.byte 0xA6

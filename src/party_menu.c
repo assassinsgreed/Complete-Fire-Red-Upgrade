@@ -957,10 +957,12 @@ const u8 gFieldMoveBadgeRequirements[FIELD_MOVE_COUNT] =
 	[FIELD_MOVE_SURF] = 6,
 	[FIELD_MOVE_STRENGTH] = 7,
 	[FIELD_MOVE_ROCK_CLIMB] = 8,
+	/** Not used in Amethyst
 	[FIELD_MOVE_FLASH] = 0,
 	[FIELD_MOVE_WATERFALL] = 0,
 	[FIELD_MOVE_DEFOG] = 0,
 	[FIELD_MOVE_DIVE] = 0,
+	*/
 };
 
 #else //For Pokemon Unbound
@@ -1058,14 +1060,16 @@ void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
 			if (Overworld_MapTypeAllowsTeleportAndFly(gMapHeader.mapType) //Only add if usable
 			#ifndef DEBUG_HMS
 			&& HasBadgeToUseFieldMove(FIELD_MOVE_FLY)
+			&& CheckBagHasItem(ITEM_HM02_FLY, 1) > 0
+			&& (!gFollowerState.inProgress || (gFollowerState.flags & FOLLOWER_FLAG_CAN_LEAVE_ROUTE))
 			&& (
 			 #ifdef FLAG_OBTAINED_ADM
-			 FlagGet(FLAG_OBTAINED_ADM) ||
+			 (FlagGet(FLAG_OBTAINED_ADM) && !FlagGet(FLAG_TEMP_1F)) ||
 			 #endif
 			 #ifdef FLAG_SANDBOX_MODE
 			 FlagGet(FLAG_SANDBOX_MODE) ||
 			 #endif
-			 (CheckBagHasItem(ITEM_HM02_FLY, 1) > 0 && CanMonLearnTMTutor(&mons[slotId], ITEM_HM02_FLY, 0) == CAN_LEARN_MOVE))
+			 (CanMonLearnTMTutor(&mons[slotId], ITEM_HM02_FLY, 0) == CAN_LEARN_MOVE))
 			#endif
 			)
 			{
@@ -1074,15 +1078,14 @@ void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
 			}
 		}
 
-		if (knowsDig || FlagGet(FLAG_OBTAINED_ADM)) //Doesn't know 4 field moves
+		if (k < MAX_MON_MOVES && !knowsDig) //Doesn't know 4 field moves
 		{
 			if (CanUseEscapeRopeOnCurrMap() //Only add if usable
 			#ifndef DEBUG_HMS
 			//&& HasBadgeToUseFieldMove(FIELD_MOVE_DIG)
-			// && (
-			//  #ifdef FLAG_OBTAINED_ADM
-			//  FlagGet(FLAG_OBTAINED_ADM) ||
-			//  #endif
+			 #ifdef FLAG_OBTAINED_ADM
+			 && (FlagGet(FLAG_OBTAINED_ADM) && !FlagGet(FLAG_TEMP_1F))
+			 #endif
 			//  #ifdef FLAG_SANDBOX_MODE
 			//  FlagGet(FLAG_SANDBOX_MODE) ||
 			//  #endif

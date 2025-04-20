@@ -120,7 +120,7 @@ SignScript_Route2_TrainerTipsFishing:
 
 .global TileScript_Route2_CapturingPokemonLeft
 TileScript_Route2_CapturingPokemonLeft:
-    special 0xAF @ Dismount bike if on it
+    special 0xAF @ Dismount bike if on it (Casual Mode)
     applymovement PLAYER m_WalkRight
     waitmovement PLAYER
     applymovement PLAYER m_LookUp
@@ -130,7 +130,7 @@ TileScript_Route2_CapturingPokemonLeft:
 .global TileScript_Route2_CapturingPokemonRight
 TileScript_Route2_CapturingPokemonRight:
     lock
-    special 0xAF @ Dismount bike if on it
+    special 0xAF @ Dismount bike if on it (Casual Mode)
     showsprite CatchingTutorialRival
     applymovement CatchingTutorialRival m_RivalWalkDownTowardPlayer
     waitmovement CatchingTutorialRival
@@ -375,7 +375,7 @@ NoDexNavInstructions:
 .global TileScript_Route3_InitiateDexNavEvent
 TileScript_Route3_InitiateDexNavEvent:
     lockall
-    special 0xAF @ Dismount bike if on it
+    special 0xAF @ Dismount bike if on it (Casual Mode)
     clearflag 0x31 @ Show rival and pluto grunts on route 3
     showsprite Rival
     playbgm 0x195
@@ -441,8 +441,8 @@ TileScript_Route3_InitiateDexNavEvent:
     hidesprite PlutoGruntA
     hidesprite PlutoGruntB
     applymovement Rival m_LookUp
-    msgbox gText_Route3_RivalCommentsOnPluto MSG_NORMAL
     playbgm 0x0124 @ Route 3 music
+    msgbox gText_Route3_RivalCommentsOnPluto MSG_NORMAL
     applymovement PLAYER m_MeetAssistant
     applymovement Rival m_MeetAssistant
     waitmovement ALLEVENTS
@@ -514,6 +514,7 @@ TileScript_Route3_PlayerHasNotDefeatedPluto:
     lockall
     compare Route3RubarrStoryEventVar VarStoryPlayerGotDexNav
     if greaterorequal _goto End
+    special 0xAF @ Dismount bike if on it (Casual Mode)
     sound 0x15 @ Exclaim
     applymovement Assistant m_Surprise
     waitmovement ALLEVENTS
@@ -563,16 +564,25 @@ MapScript_Route4:
 	.byte MAP_SCRIPT_TERMIN
 
 LevelScripts_Route4:
-	levelscript FormanEventVar 0x0 LevelScript_Rotue4_ForemanEvent
+	levelscript FormanEventVar 0x1 LevelScript_Route4_ForemanEvent
 	.hword LEVEL_SCRIPT_TERMIN
 
-LevelScript_Rotue4_ForemanEvent:
+LevelScript_Route4_ForemanEvent:
     checkflag 0x35 @ Boulders are cleared
     if NOT_SET _goto ClearForemanEvent
     checkflag 0x36 @ Foreman has left
     if SET _goto ClearForemanEvent
+    getplayerpos 0x4000 0x4001 @ Make sure the player didn't use an escape rope or dig to exit the tunnel, after control var was set
+    compare 0x4001 0x35 @ Past the barricade
+    if equal _goto RemoveBouldersCutscene
+    subvar FormanEventVar 0x1 @ Reset control var; player used dig/escape rope or whited out after "clearing" the cave
+    clearflag 0x35 @ Cleared Torma Cave
+    end
+
+RemoveBouldersCutscene:
     lock
     sound 0x15 @ Exclaim
+    special 0xAF @ Dismount bike if on it (Casual Mode)
     applymovement Foreman m_Surprise
     waitmovement ALLEVENTS
     applymovement Foreman m_MeetPlayer
@@ -590,7 +600,7 @@ LevelScript_Rotue4_ForemanEvent:
     applymovement Foreman m_ForemanLeaves
     waitmovement ALLEVENTS
     hidesprite Foreman
-    setvar FormanEventVar 0x1
+    addvar FormanEventVar 0x1 @ Now 2
     setflag 0x36 @ Foreman has left
     release
     end
@@ -629,12 +639,12 @@ EventScript_Route4_Lass:
 
 .global SignScript_Route4_TormaCaveSign
 SignScript_Route4_TormaCaveSign:
-    msgbox gText_Route4_TormaCaveSign MSG_NORMAL
+    msgbox gText_Route4_TormaCaveSign MSG_SIGN
     end
 
 .global SignScript_Route4_TrainerTips
 SignScript_Route4_TrainerTips:
-    msgbox gText_Route4_TrainerTipsSign MSG_NORMAL
+    msgbox gText_Route4_TrainerTipsSign MSG_SIGN
     end
 
 .global EventScript_Route4_FindTM01WorkUp
@@ -909,6 +919,251 @@ EventScript_Route5_FindTM58Endure:
     call ItemScript_Common_FindTM
     end
 
+.global EventScript_Route5_DaycareWoman
+EventScript_Route5_DaycareWoman:
+    special 0x187
+    compare LASTRESULT 0x2
+    if equal _goto End
+    lock
+    faceplayer
+    special2 LASTRESULT 0xB6
+    compare LASTRESULT 0x1
+    if TRUE _goto DaycareLady_EggAvailableForPickup
+    compare LASTRESULT 0x2
+    if TRUE _goto DaycareLady_OnePokemonBeingRaised
+    compare LASTRESULT 0x3
+    if TRUE _goto DaycareLady_TwoPokemonBeingRaised
+    msgbox gText_Route5_DaycareLady_PromptToRaisePokemon MSG_YESNO
+    compare LASTRESULT 0x1
+    if TRUE _goto DaycareLady_PromptToChoosePokemonToRaise
+    msgbox gText_Route5_DaycareLady_ChoseNo MSG_KEEPOPEN
+    release
+    end
+
+DaycareLady_EggAvailableForPickup:
+    msgbox gText_Route5_DaycareLady_EggIsAvailableForPickup MSG_KEEPOPEN
+    release
+    end
+
+DaycareLady_OnePokemonBeingRaised:
+    msgbox gText_Route5_DaycareLady_PokemonIsDoingWell MSG_KEEPOPEN
+    setvar 0x8004 0x0
+    call DaycareLady_CheckForPokemonLevelUp
+    msgbox gText_Route5_DaycareLady_PromptToRaiseTwoPokemon MSG_YESNO
+    compare LASTRESULT 0x1
+    if equal _goto DaycareLady_PromptToChoosePokemonToRaise
+    msgbox gText_Route5_DaycareLady_PromptToTakePokemonBack MSG_YESNO
+    compare LASTRESULT 0x1
+    if equal _goto DaycareLady_TriggerPokemonReturnProcess
+    goto DaycareLady_ComeAgain
+
+DaycareLady_TwoPokemonBeingRaised:
+    msgbox gText_Route5_DaycareLady_PokemonIsDoingWell MSG_KEEPOPEN
+    setvar 0x8004 0x0 @ First Pokemon
+    call DaycareLady_CheckForPokemonLevelUp
+    setvar 0x8004 0x1 @ Second Pokemon
+    call DaycareLady_CheckForPokemonLevelUp
+    msgbox gText_Route5_DaycareLady_PromptToTakePokemonBack MSG_YESNO
+    compare LASTRESULT 0x1
+    if equal _goto DaycareLady_TriggerPokemonReturnProcess
+    msgbox gText_Route5_DaycareLady_ComeAgain MSG_KEEPOPEN
+    release
+    end
+
+DaycareLady_PromptToChoosePokemonToRaise:
+    special2 LASTRESULT 0x84
+    compare LASTRESULT 0x1
+    if equal _goto DaycareLady_PlayerOnlyHasOnePokemonOnThem
+    msgbox gText_Route5_DaycareLady_PromptToChoosePokemonToRaise MSG_KEEPOPEN
+    fadescreen 0x1
+    special 0xBC
+    waitstate
+    compare 0x8004 0x6
+    if greaterorequal _goto DaycareLady_ComeAgain
+    special2 LASTRESULT 0x85
+    compare LASTRESULT 0x0
+    if equal _goto DaycareLady_PlayerWouldHaveNoPokemonToBattleWith
+    special2 0x8005 0xBA
+    checksound
+    cry 0x8005 0x0
+    msgbox gText_Route5_DaycareLady_RaisedPokemonConfirmation MSG_KEEPOPEN
+    waitcry
+    special 0xBB
+    cmdc3 0x2F
+    special2 LASTRESULT 0xB6
+    compare LASTRESULT 0x2
+    if equal _goto DaycareLady_PromptToRaiseTwoPokemon
+    release
+    end
+
+DaycareLady_CheckForPokemonLevelUp:
+    special2 LASTRESULT 0xBE
+    compare LASTRESULT 0x0
+    if notequal _call DaycareLady_PokemonHasLevelledUp
+    return
+
+DaycareLady_TriggerPokemonReturnProcess:
+    special2 LASTRESULT 0x83
+    compare LASTRESULT 0x6
+    if equal _goto DaycareLady_PlayersPartyIsFull
+    special2 LASTRESULT 0xB6
+    setvar 0x8004 0x0
+    compare LASTRESULT 0x2
+    if equal _goto DaycareLady_PromptForPayment
+    special 0xBD
+    waitstate
+    copyvar 0x8004 LASTRESULT
+    compare LASTRESULT 0x2
+    if equal _goto DaycareLady_ComeAgain
+    goto DaycareLady_PromptForPayment
+
+DaycareLady_ComeAgain:
+    msgbox gText_Route5_DaycareLady_ComeAgain MSG_KEEPOPEN
+    release
+    end
+
+DaycareLady_PlayerOnlyHasOnePokemonOnThem:
+    msgbox gText_Route5_DaycareLady_PlayerOnlyHasOnePokemonWithThem MSG_KEEPOPEN
+    release
+    end
+
+DaycareLady_PlayerWouldHaveNoPokemonToBattleWith:
+    msgbox gText_Route5_DaycareLady_PlayerWontHaveAnyPokemonToBattleWith MSG_KEEPOPEN
+    release
+    end
+
+DaycareLady_PromptToRaiseTwoPokemon:
+    msgbox gText_Route5_DaycareLady_PromptToRaiseTwoPokemon MSG_YESNO
+    compare LASTRESULT 0x1
+    if equal _goto DaycareLady_PromptToChoosePokemonToRaise
+    goto DaycareLady_ComeAgain
+
+DaycareLady_PokemonHasLevelledUp:
+    msgbox gText_Route5_DaycareLady_PokemonLevelledUp MSG_KEEPOPEN
+    return
+
+DaycareLady_PlayersPartyIsFull:
+    msgbox gText_Route5_DaycareLady_PartyIsFull MSG_KEEPOPEN
+    release
+    end
+
+DaycareLady_PromptForPayment:
+    special 0xBF
+    msgbox gText_Route5_DaycareLady_PromptForPayment MSG_YESNO
+    compare LASTRESULT 0x1
+    if equal _goto DaycareLady_PlayerDoesNotHaveEnoughMoney
+    goto DaycareLady_ComeAgain
+
+DaycareLady_PlayerDoesNotHaveEnoughMoney:
+    special2 LASTRESULT 0xC5
+    compare LASTRESULT 0x1
+    if equal _goto DaycareLady_RetrievingPokemon
+    msgbox gText_Route5_DaycareLady_PlayerDoesntHaveEnoughMoney MSG_KEEPOPEN
+    release
+    end
+
+DaycareLady_RetrievingPokemon:
+    applymovement 0x1 m_DayareLadyRetrievesPokemon
+    waitmovement 0x0
+    special2 LASTRESULT 0xC0
+    special 0xC6
+    sound 0x58
+    msgbox gText_Route5_DaycareLady_ReceivingPokemonBack MSG_KEEPOPEN
+    checksound
+    cry LASTRESULT 0x0
+    textcolor 0x3
+    msgbox gText_Route5_DaycareLady_PokemonReceived MSG_KEEPOPEN
+    call DaycareLady_CopyDaycareVars
+    waitcry
+    special2 LASTRESULT 0xB6
+    compare LASTRESULT 0x2
+    if equal _goto DaycareLady_PromptForSecondPokemonReturned
+    goto DaycareLady_ComeAgain
+
+DaycareLady_CopyDaycareVars:
+    copyvar 0x8012 0x8013
+    return
+
+DaycareLady_PromptForSecondPokemonReturned:
+    msgbox gText_Route5_DaycareLady_PromptToTakeOtherPokemonBack MSG_YESNO
+    compare LASTRESULT 0x1
+    if equal _goto DaycareLady_TriggerPokemonReturnProcess
+    goto DaycareLady_ComeAgain
+
+.global EventScript_Route5_DaycareMan
+EventScript_Route5_DaycareMan:
+    special 0x187
+    compare LASTRESULT 0x2
+    if equal _goto End
+    special 0x188
+    lock
+    faceplayer
+    special 0xB5
+    special2 LASTRESULT 0xB6
+    compare LASTRESULT 0x1
+    if equal _goto DaycareMan_EggAvailable
+    compare LASTRESULT 0x2
+    if equal _goto DaycareMan_OnePokemonDoingFine
+    compare LASTRESULT 0x3
+    if equal _goto DaycareMan_TwoPokemonDoingFine
+    msgbox gText_Route5_DaycareMan_TalkWithWife MSG_KEEPOPEN
+    release
+    end
+
+DaycareMan_EggAvailable:
+    msgbox gText_Route5_DaycareMan_PromptForReceivingEgg MSG_YESNO
+    compare LASTRESULT YES
+    if equal _goto DaycareMan_CheckIfEggCanBeGiven
+    msgbox gText_Route5_DaycareMan_WillKeepEgg MSG_YESNO
+    compare LASTRESULT YES
+    if equal _goto DaycareMan_CheckIfEggCanBeGiven
+    msgbox gText_Route5_DaycareMan_ChoseToLetHimKeepEgg MSG_KEEPOPEN
+    clearflag 0x266
+    special 0xB7
+    release
+    end
+
+DaycareMan_OnePokemonDoingFine:
+    special 0xB5
+    msgbox gText_Route5_DaycareMan_OnePokemonDoingFine MSG_KEEPOPEN
+    release
+    end
+
+DaycareMan_TwoPokemonDoingFine:
+    special 0xB5
+    msgbox gText_Route5_DaycareMan_TwoPokemonDoingFine MSG_KEEPOPEN
+    special 0xB9
+    special 0x8D
+    waitmsg
+    waitkeypress
+    release
+    end
+
+DaycareMan_CheckIfEggCanBeGiven:
+    special2 LASTRESULT 0x83
+    compare LASTRESULT 0x6
+    if 0x5 _goto DaycareMan_ReceiveEgg
+    msgbox gText_Route5_DaycareMan_NoRoomForEgg MSG_KEEPOPEN
+    release
+    end
+
+DaycareMan_ReceiveEgg:
+    textcolor 0x3
+    preparemsg gText_Route5_DaycareMan_ReceivedEgg
+    call DaycareMan_CopyEggDetails
+    fanfare 0x101
+    waitfanfare
+    waitkeypress
+    msgbox gText_Route5_DaycareMan_TakeGoodCareOfEgg MSG_KEEPOPEN
+    special 0xB8
+    clearflag 0x266
+    release
+    end
+
+DaycareMan_CopyEggDetails:
+    copyvar 0x8012 0x8013
+    return
+
 .global SignScript_Route5_Daycare
 SignScript_Route5_Daycare:
     msgbox gText_Route5_DaycareSign MSG_SIGN
@@ -918,6 +1173,8 @@ SignScript_Route5_Daycare:
 SignScript_Route5_TrainerTips:
     msgbox gText_Route5_TrainerTips MSG_SIGN
     end
+
+m_DayareLadyRetrievesPokemon: .byte pause_long, pause_long, look_right, pause_long, pause_long, look_left, pause_long, pause_long, look_up, walk_up_very_slow, set_invisible, pause_long, pause_long, pause_long, pause_long, pause_long, look_down, set_visible, walk_down_very_slow, end_m
 
 @@ Heleo Ranch
 .global MapScript_HeleoRanchExterior
@@ -976,7 +1233,7 @@ EvenScript_HeleoRanch_MoomooMilkSeller:
     multichoiceoption gText_HeleoRanch_MoomooMilkSeller_PuchaseOne 0
 	multichoiceoption gText_HeleoRanch_MoomooMilkSeller_PuchaseADozen 1
 	multichoiceoption gText_HeleoRanch_MoomooMilkSeller_PuchaseNone 2
-	multichoice 0x0 0x0 THREE_MULTICHOICE_OPTIONS FALSE
+	multichoice 0x60 0x0 THREE_MULTICHOICE_OPTIONS FALSE
 	copyvar MULTICHOICE_SELECTION LASTRESULT
 	switch LASTRESULT
 	case 0, BuyOneMoomooMilk

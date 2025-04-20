@@ -78,7 +78,7 @@
 #define FLAG_INSTANT_FRIENDSHIP 0x933 //If set, Pokemon reach max friendship after taking a single step
 #define FLAG_DOUBLE_WILD_BATTLES_MODIFIER_ACTIVE 0x934 //If set, the wild double battles flag will not be disabled after battle
 #define FLAG_BATTLE_YOURSELF 0x936 // If set, the player's team is copied to the opponent's
-#define FLAG_OBTAINED_ADM 0x939  	// Flag indicating the ADM tool has been received, which replaces the need for HM compatible pokemon
+#define FLAG_OBTAINED_ADM 0x939 // Flag indicating the ADM tool has been received, which replaces the need for HM compatible pokemon
 #define FLAG_INFINITE_REPEL_ACTIVE 0x93A // If set, the player will not encounter wild Pokemon. This is separate from 0x911 so it can be managed by a menu option and not overridden by certain story events
 #define FLAG_HARD_LEVEL_CAP 0x93B // If set, a hard level cap is enforced before each boss encounter
 #define FLAG_DAILY_EVENTS_START 0xE00 //To flag + 0xFF, resets every new day.

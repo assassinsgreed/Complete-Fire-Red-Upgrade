@@ -1949,8 +1949,8 @@
             "fishing": {
                 "rate": 20,
                 "pokemon": [
-                    { "low": 5, "high": 20, "species": "SPECIES_MAGIKARP" },
-                    { "low": 5, "high": 20, "species": "SPECIES_FRILLISH" },
+                    { "low": 5, "high": 10, "species": "SPECIES_MAGIKARP" },
+                    { "low": 5, "high": 10, "species": "SPECIES_FRILLISH" },
                     { "low": 20, "high": 24, "species": "SPECIES_HORSEA" },
                     { "low": 20, "high": 25, "species": "SPECIES_SHELLDER" },
                     { "low": 21, "high": 25, "species": "SPECIES_BINACLE" },

@@ -117,7 +117,7 @@ s32 GetSpeciesPokedexAreaMarkers(u16 species, struct Subsprite * subsprites)
     
     if (GetRoamerIndex(species) >= 0)
         return GetRoamerPokedexAreaMarkers(species, subsprites);
-    else if (IsDayTime())
+    else if (IsOnlyDayTime())
         headerTable = gWildMonHeaders;
 	else if (IsNightTime())
         headerTable = gWildMonNightHeaders;
@@ -161,7 +161,7 @@ s32 GetSpeciesPokedexAreaMarkers(u16 species, struct Subsprite * subsprites)
     }
 
     // If not daytime, iterate through gWildMonHeaders and skip entries that exist in headerTable
-    if (!IsDayTime())
+    if (!IsOnlyDayTime())
     {
         for (i = 0; gWildMonHeaders[i].mapGroup != MAP_GROUP(UNDEFINED); i++)
         {

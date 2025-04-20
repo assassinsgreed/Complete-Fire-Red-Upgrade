@@ -117,12 +117,14 @@ static const u8* const sDefaultWalkingScripts[] =
 };
 #endif
 
+extern u8 EventScript_Common_AccessPC[];
+
 //Table full of pointers of scripts run when talking to tiles with certain behaviour bytes
 static const u8* const sMetatileInteractionScripts[] =
 {
 	[MB_BOOKSHELF] = (void*) 0x81A7606,
 	[MB_POKEMART_SHELF] = (void*) 0x81A760F,
-	[MB_PC] = (void*) 0x81A6955,
+	[MB_PC] = EventScript_Common_AccessPC, // (void*) 0x81A6955,
 	[MB_REGION_MAP] = (void*) 0x81A6C32,
 	[MB_CABINET] = (void*) 0x81A7657,
 	[MB_KITCHEN] = (void*) 0x81A7660,
@@ -2588,6 +2590,7 @@ const u8* GetInteractedWaterScript(unusedArg u32 unused1, u8 metatileBehavior, u
 	}
 	else if (MetatileBehavior_IsWaterfall(metatileBehavior))
 	{
+		/* Waterfall is not usable in Pokemon Amethyst
 		if (HasBadgeToUseWaterfall())
 		{
 			if (IsPlayerSurfingNorthOrSouth())
@@ -2622,6 +2625,7 @@ const u8* GetInteractedWaterScript(unusedArg u32 unused1, u8 metatileBehavior, u
 				return EventScript_CannotUseWaterfall;
 		}
 		else
+		*/
 			return EventScript_WallOfWater;
 	}
 	else if (IsPlayerFacingRockClimbableWall())

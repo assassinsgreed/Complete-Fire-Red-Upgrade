@@ -162,10 +162,13 @@ StunfiskEncounter:
 
 .global TileScript_TormaCave_SetPathCleared
 TileScript_TormaCave_SetPathCleared:
+    checkflag 0x36 @ Met with Foreman
+    if SET _goto End
     setflag 0x35 @ Cleared Torma Cave
     @ Set the other tile event up to execute
     setvar 0x4000 0x1
     setvar 0x4001 0x0
+    setvar FormanEventVar 0x1
     end
 
 .global TileScript_TormaCave_ClearPathCleared
@@ -178,13 +181,14 @@ TileScript_TormaCave_ClearPathCleared:
     @ Set the other tile event up to execute
     setvar 0x4000 0x0
     setvar 0x4001 0x1
+    setvar FormanEventVar 0x0
     end
 
 .global TileScript_TormaCave_TriggerCaseyBattleL
 TileScript_TormaCave_TriggerCaseyBattleL:
     checkflag 0x255 @ Battled Casey
     if SET _goto End
-    special 0xAF @ Dismount bike if on it
+    special 0xAF @ Dismount bike if on it (Casual Mode)
     applymovement PLAYER m_WalkRight
     waitmovement PLAYER
     goto TileScript_TormaCave_TriggerCaseyBattleM
@@ -193,7 +197,7 @@ TileScript_TormaCave_TriggerCaseyBattleL:
 TileScript_TormaCave_TriggerCaseyBattleM:
     checkflag 0x255 @ Battled Casey
     if SET _goto End
-    special 0xAF @ Dismount bike if on it
+    special 0xAF @ Dismount bike if on it (Casual Mode)
     applymovement PLAYER m_WalkRight
     waitmovement PLAYER
     goto TileScript_TormaCave_TriggerCaseyBattleR

@@ -56,13 +56,13 @@ Alright, let's swap!
 [BLUE]This was really fun, [PLAYER]! I\ncan't wait to see what your egg\lhatches into.
 
 #org @gText_RivalEvent4_FishingRecordChallenge
-Hey, [PLAYER]! Fancy running into you\nhere.\pI was just taking a break with some\nfishing. I don't mean to brag, but\lI'm pretty good at it!\pMy record is reeling in 9 Pok\emon in\na single day! Think you can beat\lthat?
+Hey, [PLAYER]! Fancy running into you\nhere.\pI was just taking a break with some\nfishing. I don't mean to brag, but\lI'm pretty good at it!\pMy record is reeling in 9 Pok\emon!\nThink you can beat that?
 
 #org @gText_RivalEvent4_NotEnoughFishCaught
-Hmm[.] Looks like you only caught\n[BUFFER1] Pok\emon today.\pYou haven't beaten my record, but I\nthink you can do it.\pRemember, you don't have to catch\nthe Pok\emon in a Pok\e Ball for it\lto count. You just have to get it\lon the line.\pI'll be hanging around for a while,\nin case you want to try again.
+Hmm[.] Looks like you only caught\n[BUFFER1] Pok\emon by fishing.\pYou haven't beaten my record, but I\nthink you can do it.\pRemember, you don't have to catch\nthe Pok\emon in a Pok\e Ball for it\lto count. You just have to get it\lon the line.\pI'll be hanging around for a while,\nin case you want to try again.
 
 #org @gText_RivalEvent4_EnoughFishCaught
-Wow, you've caught [BUFFER1] Pok\emon\ntoday, [PLAYER]! Incredible!\pWell, you beat me fair and square,\nso I think it's only fair that I\lgive you these.
+Wow, you've caught [BUFFER1] Pok\emon\nby fishing, [PLAYER]! Incredible!\pWell, you beat me fair and square,\nso I think it's only fair that I\lgive you these.
 
 #org @gText_RivalEvent4_ChallengeOvercome
 That was fun, [PLAYER]! We should\nhave a fishing competition again\lsometime.\pI won't lose next time, though! Haha!

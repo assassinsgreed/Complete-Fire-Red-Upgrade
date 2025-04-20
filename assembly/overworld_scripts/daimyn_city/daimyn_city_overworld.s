@@ -68,7 +68,7 @@ LevelScript_RivalsTour:
     applymovement Rival m_LookRight
     applymovement PLAYER m_LookLeft
     applymovement Selene m_SeleneVisitsThePlayer
-    msgbox gText_DaimynCityOverworld_Story_RivalTour9 MSG_NORMAL
+    msgbox gText_DaimynCityOverworld_Story_RivalTour9 MSG_KEEPOPEN
     waitmovement Selene
     playbgm 0x196 @ Bianca Encounter
     msgbox gText_DaimynCityOverworld_Story_RivalTour10 MSG_NORMAL

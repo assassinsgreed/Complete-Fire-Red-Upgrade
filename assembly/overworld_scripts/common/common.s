@@ -397,7 +397,7 @@ PokedexEvaluation_PCConclusion:
 	compare 0x800A 0x0
     if notequal _call PokedexEvaluation_FromPC_PokedexIncomplete
     if equal _call PokedexEvaluation_FromPC_GiftAvailable
-    goto 0x81A6AB2 @ Vanilla close link & return to PC script
+    goto ClosedLinkToHawthornesPC
 	return
 
 PokedexEvaluation_FromPC_PokedexIncomplete:
@@ -746,7 +746,9 @@ SetupMugshotChampionAndTitleDefense:
 RivalTagBattlePromptAndPartyOrganization:
     signmsg
     msgbox gText_Common_RivalTagBattleExplaination MSG_SIGN
+    setflag 0x01F @ Temp disable ADM
     callasm InitPartyMenuFromField
+    clearflag 0x01F @ Reenable ADM
     pause DELAY_HALFSECOND
     normalmsg
     return
@@ -969,6 +971,133 @@ StopEclipse:
     return
 
 ////////////
+// PC Rewrite
+////////////
+
+@ This rewrite is clunky, but is effectively a rewrite of the PC script in the Vanilla ROM, with unneccessary checks removed.
+@ This circumvents a weird issue with the original that crashes the game when using Fly after accessing any PC, even if you just log off immediately.
+
+.global EventScript_Common_AccessPC
+EventScript_Common_AccessPC:
+    special 0x187
+    compare LASTRESULT 0x2
+    if TRUE _goto End
+    lockall
+    checkflag 0x841 @ Check if PC is inactive
+    if TRUE _goto PCIsInactive
+    setvar 0x8004 0x1B
+    special 0x17D @ Track metadata related to the map type the player is on (indoor, center, shop, etc.)
+    setvar 0x8004 0x0
+    special 0xD6 @ PC login animation
+    sound 0x4
+    msgbox 0x81A5075 MSG_KEEPOPEN @ "[player] booted up the PC."
+    goto AskWhichPCToAccess
+
+PCIsInactive:
+    msgbox 0x81A1390 MSG_KEEPOPEN @ "The usual PC services aren't\navailable[.]\"
+    releaseall
+    end
+
+AskWhichPCToAccess:
+    preparemsg 0x81A508A @ "Which PC should be accessed?"
+    waitmsg
+    special 0x106 @ Opens PC menu and starts tracking player choice
+    waitstate
+    goto ChooseWhichPCToAccess
+
+ChooseWhichPCToAccess:
+    copyvar 0x8000 LASTRESULT
+    compare 0x8000 0x0
+    if TRUE _goto PokemonStorage
+    compare 0x8000 0x1
+    if TRUE _goto PlayersPC
+    compare 0x8000 0x2
+    if TRUE _goto HawthornesPC
+    compare 0x8000 0x3
+    if TRUE _goto HallOfFame @ Access Hall of Fame (or log off, if player hasn't beaten the game yet)
+    compare 0x8000 0x4
+    if TRUE _goto LogOff @ Log off
+    compare 0x8000 0x7F
+    if TRUE _goto LogOff @ Log off
+    end
+
+PokemonStorage:
+    sound 0x2
+    checkflag 0x834 @ PC owner's name is known
+    if FALSE _call AccessSomeonesPC
+    checkflag 0x834
+    if TRUE _call AccessLanasPC
+    msgbox 0x81A50BE MSG_KEEPOPEN @ "Pokémon Storage System opened."
+    special 0x3C @ Activates storage menu
+    waitstate
+    setvar 0x8004 0x1B
+    special 0x17D @ Track metadata related to the map type the player is on (indoor, center, shop, etc.)
+    goto AskWhichPCToAccess
+
+PlayersPC:
+    sound 0x2
+    msgbox 0x81A50DD MSG_KEEPOPEN @ "Accessed [player]'s PC."
+    special 0xFA @ Access the player's PC (no PC on animation)
+    waitstate
+    goto AskWhichPCToAccess
+
+HawthornesPC:
+    checkflag 0x829 @ Has obtained the Pokedex
+    if FALSE _goto LogOff
+    sound 0x2
+    msgbox 0x81A5BC6 MSG_KEEPOPEN @ "Accessed Hawthorne's PC[.]\pAccess..."
+    msgbox 0x81A5C03 MSG_YESNO @ "Would you like to have your\nPokéd..."
+    compare LASTRESULT FALSE
+    if TRUE _goto ClosedLinkToHawthornesPC
+    setflag 0x2FF @ Doing assessment from PC
+    call PokedexEvaluation_Introduction
+    clearflag 0x2FF @ Not doing assessment from PC
+    goto ClosedLinkToHawthornesPC
+
+HallOfFame:
+    checkflag 0x82C @ Game has been cleared
+    if FALSE _goto LogOff
+    sound 0x2
+    setvar 0x8004 0x1F
+    special 0x17E @ Read data related to hall of fame
+    special 0x17D @ Track metadata related to the map type the player is on (indoor, center, shop, etc.)
+    special 0x107 @ Show the Hall of Fame menu
+    waitstate
+    special 0x17F @ Reads data related to hall of fame
+    goto AskWhichPCToAccess
+
+LogOff:
+    setvar 0x8004 0x0
+    sound 0x3
+    special 0xD7
+    special 0x190
+    @ Cleanup vars used by PC scripts. Not doing so can result in crashes when using Fly after accessing a PC.
+    setvar 0x4001 0x0
+    setvar 0x8000 0x0
+    setvar 0x8004 0x0
+    setvar 0x8005 0x0
+    setvar 0x8006 0x0
+    setvar 0x8008 0x0
+    setvar 0x8009 0x0
+    setvar 0x800A 0x0
+    setvar 0x800B 0x0
+    setvar LASTRESULT 0x0
+    releaseall
+    end
+
+AccessSomeonesPC:
+    msgbox 0x81A50A7 MSG_KEEPOPEN  @ "Accessed Someone's PC."
+    return
+
+AccessLanasPC:
+    msgbox 0x81A50EF MSG_KEEPOPEN @ "Accessed Lana's PC."
+    return
+
+ClosedLinkToHawthornesPC:
+    msgbox 0x81A5C2E MSG_KEEPOPEN @ "Closed link to Hawthorne's PC."
+    goto AskWhichPCToAccess
+
+////////////
 // GAME CUSTOMIZATION
 ////////////
 
@@ -1070,6 +1199,10 @@ GiveCasualModeItems:
     setflag 0x24F @ For Mach Bike
     setflag 0x252 @ For Item Finder
     setflag 0x277 @ For Poke Chip Charm
+    setflag 0x935 @ Pocket PC active
+    setflag 0x937 @ Infinite Repel active
+    setflag 0x938 @ Poke Vial Active
+    setflag 0x939 @ Obtained ADM
     setvar 0x40AE 0x3 @ Fully charge the Poke Vial
     addmoney 2000 @ 5000 total
     setvar 0x4000 0x0 @ Reset control var

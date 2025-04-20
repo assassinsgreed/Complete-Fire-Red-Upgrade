@@ -13,7 +13,6 @@ MapScript_LaplazTown:
 
 MapEntryScript_LaplazTown_FlightSpot:
     setworldmapflag 0x896 @ Visited Laplaz Town
-    setvar 0x500B 0x0 @ Use walking script 0, i.e. None, for when the player leaves the gym
     end
 
 .global EventScript_LaplazTown_Girl
@@ -674,6 +673,7 @@ MapScript_LaplazGym_RotatingFloorTiles:
 
 MapEntryScript_LaplazGym_SetWalkingScript:
     setvar 0x500B 0x1 @ Use walking script 1, which is defined below
+    setvar 0x400E 0x1 @ Used to control whether the gym puzzle is active or not
     call SetCaseyGender
     checkflag 0x3F @ Casey is not revealed as leader
     if SET _goto End
@@ -748,6 +748,7 @@ SetQuickAccessTiles:
 @ Assigned as a walking script, to trigger on each step
 .global LaplazGym_RotationSteps
 LaplazGym_RotationSteps:
+    call DisableWalkingScriptIfOnInvalidMap @ Stop the puzzle if the player isn't in the gym
     @ Tiles do not rotate if the player's step results in them stopping on a movement tile
     release
     compare 0x4000 0x4

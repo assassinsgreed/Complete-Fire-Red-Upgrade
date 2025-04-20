@@ -23,6 +23,7 @@ MapEntryScript_ScaldingSpa:
 .global MapScript_GlastrierRoom
 MapScript_GlastrierRoom:
     mapscript MAP_SCRIPT_ON_TRANSITION MapEntryScript_HandleGlastrierWeather
+    mapscript MAP_SCRIPT_ON_RESUME MapResumeScript_HideGlastrierOnResume
     .byte MAP_SCRIPT_TERMIN
 
 MapEntryScript_HandleGlastrierWeather:
@@ -33,6 +34,13 @@ MapEntryScript_HandleGlastrierWeather:
 
 SetNormalSnowfall:
     call SetWeatherThreeSnowflakes
+    end
+
+MapResumeScript_HideGlastrierOnResume:
+    checkflag 0x46 @ Glastrier encountered
+    if notequal _goto End
+    setflag 0x1A @ Temp flag to hide Glastrier
+    hidesprite 1 @ Glastrier
     end
 
 .global EventScript_ScaldingSpa_SpaRoom_PlutoGrunt
@@ -305,6 +313,7 @@ EventScript_GlastrierRoom_Glastrier:
     special 0x138 @ Setup a legendary encounter (blurred screen transition)
     waitstate
     clearflag 0x807
+    setflag 0x46 @ Glastrier caught, defeated, or fled from battle
     special2 LASTRESULT 0xB4 @ Check the result of the battle
     compare LASTRESULT 0x1 @ Defeated in battle
     if equal _call DefeatedGlastrier
@@ -365,7 +374,7 @@ TileScript_GlastrierRoom_LeftTile:
     if SET _goto GlastrierAcceptsPlayer
     msgbox gtext_GlastrierRoom_GlastrierEvaluationFailed MSG_NORMAL
     call GlastrierLeavesCommon
-    clearflag 0x46 @ Clear Glastrier flag; it gets set whenever this event fires. The player should be allowed to be sized up by it as many times as they want
+    setflag 0x1A @ Temp flag to hide Glastrier
     end
 
 GlastrierAcceptsPlayer:
