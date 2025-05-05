@@ -754,3 +754,35 @@ void CheckIfPartyIsSameType(void)
 		}
 	}
 }
+
+/// @brief Cleanup vars used by various scripts (any multichoice). Not doing so can result in crashes when using Fly after accessing any multichoice. 
+void ClearOutCalculationVars(void)
+{
+	VarSet(VAR_TEMP_0, 0x0);
+	VarSet(VAR_TEMP_1, 0x0);
+	VarSet(VAR_TEMP_2, 0x0);
+	VarSet(VAR_TEMP_3, 0x0);
+	VarSet(VAR_TEMP_4, 0x0);
+	VarSet(VAR_TEMP_5, 0x0);
+	VarSet(VAR_TEMP_6, 0x0);
+	VarSet(VAR_TEMP_7, 0x0);
+	VarSet(VAR_TEMP_8, 0x0);
+	VarSet(VAR_TEMP_9, 0x0);
+	VarSet(VAR_TEMP_A, 0x0);
+	VarSet(VAR_TEMP_B, 0x0);
+	VarSet(VAR_TEMP_C, 0x0);
+	VarSet(VAR_TEMP_D, 0x0);
+	VarSet(VAR_0x8000, 0x0);
+	VarSet(VAR_0x8001, 0x0);
+	VarSet(VAR_0x8002, 0x0);
+	VarSet(VAR_0x8003, 0x0);
+	VarSet(VAR_0x8004, 0x0);
+	VarSet(VAR_0x8005, 0x0);
+	VarSet(VAR_0x8006, 0x0);
+	VarSet(VAR_0x8007, 0x0);
+	VarSet(VAR_0x8008, 0x0);
+	VarSet(VAR_0x8009, 0x0);
+	VarSet(VAR_0x800A, 0x0);
+	VarSet(VAR_0x800B, 0x0);
+	VarSet(gSpecialVar_LastResult, 0x0);
+}

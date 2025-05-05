@@ -50,3 +50,4 @@ bool8 CanPartyMonBeParalyzed(struct Pokemon* mon);
 bool8 CanPartyMonBeBurned(struct Pokemon* mon);
 bool8 CanPartyMonBeFrozen(struct Pokemon* mon);
 u8 GetCurrentLevelCap();
+void ClearOutCalculationVars();

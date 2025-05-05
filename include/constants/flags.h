@@ -686,7 +686,7 @@
 #define FLAG_NECROZMA_CAUGHT                             0x28D
 #define FLAG_SILVALLY_MEMORIES_GIVEN                     0x28E
 #define FLAG_NECROZMA_FUSION_ITEMS_GIVEN                 0x28F
-#define FLAG_MET_STICKER_LADY                            0x290
+#define FLAG_GAVE_LIAM_MOOMOO_MILK                       0x290
 #define FLAG_PALLET_LADY_NOT_BLOCKING_SIGN               0x291
 #define FLAG_GOT_VS_SEEKER                               0x292
 #define FLAG_GOT_TM19_FROM_ERIKA                         0x293

@@ -493,6 +493,21 @@ Stay in school kid!
 #org @gText_TsarvosaCityNPCHouses_DevTeam_CrystalClosing
 [RED]I hope you had fun, I know I did!
 
+#org @gText_TsarvosaCityNPCHouses_DevTeam_LiamMilkQuestion
+[BLACK]Liam: [BLUE]Goo Gaga Buh! (Do you have\nany Moomoo Milk? I'm thirsty!)
+
+#org @gText_TsarvosaCityNPCHouses_DevTeam_LiamYes
+[BLACK]Liam: [BLUE]Kyeeeh! (Yay! You're the\nbest!)\pBah buh. (I found this cool rock.)\pGaga mee! (You can have it because\nwe're friends now!)
+
+#org @gText_TsarvosaCityNPCHouses_DevTeam_LiamMilkNo
+[BLACK]Liam: [BLUE]Buh. (That's too bad.)
+
+#org @gText_TsarvosaCityNPCHouses_DevTeam_LiamNoMilkGiven
+[BLACK]Liam: [BLUE]Guh! (What gives? You don't\nhave any!)
+
+#org @gText_TsarvosaCityNPCHouses_DevTeam_LiamMilkChat
+[BLACK]Liam: [BLUE]Gah kyeh! (You're a good\nfriend!)
+
 // Gym Trainee Cafe
 #org @gText_TsarvosaCity_GymTraineeCafe_AttendantSpotsPlayer
 [BLUE]Oh, a new face!
@@ -990,7 +1005,7 @@ That was such a fun battle.\nYou've earned your victory!
 [PLAYER] received TM21 from Iris!
 
 #org @gText_TsarvosaCity_Gym_LeaderIris_Chat
-[RED]Thanks for the battle!\pAnd, best of luck on the rest of\nyour gym challenge!
+[RED]Thanks for the battle!\pYou must be off to Uteya Village\nnow that you have my badge, eh?\pMost trainers head there next.\pBest of luck on the rest of your gym\nchallenge!
 
 #org @gText_TsarvosaCity_Gym_LeaderIris_CommentOnStellaLunch
 [RED]Hmm[.] It's been a while since I\ncaught up with Stella[.]\pMaybe I should invite her for lunch\nin Daimyn City sometime.

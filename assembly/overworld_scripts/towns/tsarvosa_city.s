@@ -158,7 +158,7 @@ MapScript_TsarvosaCity_StatsDojo:
     .byte MAP_SCRIPT_TERMIN
 
 LevelScripts_StatsDojo_AttendantCutscene:
-    levelscript 0x405E 0x0 LevelScript_AttendantWelcomesPlayer
+    levelscript 0x4077 0x0 LevelScript_AttendantWelcomesPlayer
     .hword LEVEL_SCRIPT_TERMIN
 
 LevelScript_AttendantWelcomesPlayer:
@@ -179,11 +179,11 @@ LevelScript_AttendantWelcomesPlayer:
     msgbox gText_TsarvosaCity_StatsDojo_AttendantRegularChat MSG_NORMAL
     applymovement Attendant m_AttendantReturnsToRegularSpot
     waitmovement ALLEVENTS
-    setvar 0x405E 0x1
+    setvar 0x4077 0x1
     end
 
 MapScript_StatsDojo_PositionAttendant:
-    compare 0x405E 0x0
+    compare 0x4077 0x0
     if equal _goto End
     movesprite2 Attendant 0xB 0xB @ Beside the right podium
     setobjectmovementtype Attendant look_down
@@ -272,7 +272,7 @@ KaitoDefeated:
     setflag 0x25F @ Defeated Kaito and got Strength
     obtainitem ITEM_HM04 0x1 @ Strength
     msgbox gText_TsarvosaCity_StatsDojo_KaitoCommentsOnBadge MSG_NORMAL
-    setvar 0x405E 0x2 @ Kaito defeated
+    setvar 0x4077 0x2 @ Kaito defeated
     msgbox gText_TsarvosaCity_StatsDojo_KaitoAsksToExplainServices MSG_YESNO
     compare LASTRESULT NO
     if equal _goto KaitoChoseToDoNothing
@@ -314,7 +314,7 @@ ShopInvestment:
     buffernumber 0x1 0x8004
     msgbox gText_TsarvosaCity_StatsDojo_Kaito_ShopInvestmentCost MSG_NORMAL
     call HandleInvestmentPayment
-    addvar 0x405E 0x1 @ Total Investment in the dojo
+    addvar 0x4077 0x1 @ Total Investment in the dojo
     addvar 0x409D 0x1 @ Internal number
     addvar 0x4000 0x1 @ Number shown in dialog
     buffernumber 0x0 0x4000
@@ -362,7 +362,7 @@ PowerItemInvestment:
     compare 0x409D 0x2 @ Shop level
     if lessthan _call ShopsAreNotMaxedYet
     call HandleInvestmentPayment
-    addvar 0x405E 0x1 @ Total Investment in the dojo
+    addvar 0x4077 0x1 @ Total Investment in the dojo
     addvar 0x409E 0x1 @ Internal number
     addvar 0x4000 0x1 @ Number shown in dialog
     copyvar 0x40A1 0x409E @ Setup Power Item level, which is +1 on the shop level to double/triple EVs
@@ -414,7 +414,7 @@ IVMaxerInvestment:
     buffernumber 0x1 0x8004
     msgbox gText_TsarvosaCity_StatsDojo_Kaito_IVMaxingInvestmentCost MSG_NORMAL
     call HandleInvestmentPayment
-    addvar 0x405E 0x1 @ Total Investment in the dojo
+    addvar 0x4077 0x1 @ Total Investment in the dojo
     addvar 0x409F 0x1 @ Internal number
     addvar 0x4000 0x1 @ Number shown in dialog
     buffernumber 0x0 0x4000
@@ -452,7 +452,7 @@ DisciplesInvestment:
     buffernumber 0x1 0x8004
     msgbox gText_TsarvosaCity_StatsDojo_Kaito_DisciplesInvestmentCost MSG_NORMAL
     call HandleInvestmentPayment
-    addvar 0x405E 0x1 @ Total Investment in the dojo
+    addvar 0x4077 0x1 @ Total Investment in the dojo
     addvar 0x40A0 0x1 @ Internal number
     addvar 0x4000 0x1 @ Number shown in dialog
     buffernumber 0x0 0x4000
@@ -539,7 +539,7 @@ ExplainFacilities:
     waitmovement CAMERA
     special CAMERA_END
     msgbox gText_TsarvosaCity_StatsDojo_KaitoExplainsHimself MSG_NORMAL
-    compare 0x405E 0xA @ 2 levels per shop, plus 2 initial events
+    compare 0x4077 0xA @ 2 levels per shop, plus 2 initial events
     if lessthan _call FundingRemains
     if greaterthan _call FundingIsComplete
     applymovement Kaito m_LookDown
@@ -1398,6 +1398,36 @@ PostDevTeamBattle:
 IncreaseDevTeamReward:
     setvar 0x4000 0x5 @ 5 PokeChip reward
     return
+
+.global EventScript_TsarvosaCity_NPCHouses_DevTeamLiam
+EventScript_TsarvosaCity_NPCHouses_DevTeamLiam:
+    lock
+    faceplayer
+    checkflag 0x290 @ Moomoo Milk given
+    if SET _goto LiamMilkGiven
+    msgbox gText_TsarvosaCityNPCHouses_DevTeam_LiamMilkQuestion MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto LiamMilkNotGiven
+    checkitem ITEM_MOOMOO_MILK 0x1
+    compare LASTRESULT TRUE
+    if FALSE _goto LiamNoMilkOnHand
+    removeitem ITEM_MOOMOO_MILK 0x1
+    msgbox gText_TsarvosaCityNPCHouses_DevTeam_LiamYes MSG_NORMAL
+    obtainitem ITEM_NUGGET 0x1
+    setflag 0x290 @ Moomoo Milk given
+    @ Intentional fall through
+LiamMilkGiven:
+    lock @ Re-lock, in case the player just gave the milk
+    npcchat gText_TsarvosaCityNPCHouses_DevTeam_LiamMilkChat
+    end
+
+LiamMilkNotGiven:
+    npcchat gText_TsarvosaCityNPCHouses_DevTeam_LiamMilkNo
+    end
+
+LiamNoMilkOnHand:
+    npcchat gText_TsarvosaCityNPCHouses_DevTeam_LiamNoMilkGiven
+    end
 
 @ Gym Trainee Cafe
 .equ TraineeMoveChoice, 0x40A2
@@ -2315,7 +2345,7 @@ ChoseNotToCrush:
 
 .global EventScript_TsarvosaCity_NPCHouses_PokeChipCrusherFriend
 EventScript_TsarvosaCity_NPCHouses_PokeChipCrusherFriend:
-    npcchatwithmovement gText_TsarvosaCity_NPCHouses_PokeCrusherFriend m_LookLeft
+    npcchatwithmovement gText_TsarvosaCity_NPCHouses_PokeCrusherFriend m_LookRight
     end
 
 .global EventScript_TsarvosaCity_NPCHouses_MarketBoy

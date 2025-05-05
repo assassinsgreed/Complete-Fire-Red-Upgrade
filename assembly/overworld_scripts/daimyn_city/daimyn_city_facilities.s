@@ -313,6 +313,7 @@ LevelScript_InterdimensionalResearchFacility_UltraEpisode_InitialEvents:
     movesprite Sakura 0x3 0x5 @ Move Sakura back to her original position (while in map)
     movesprite2 Sakura 0x3 0x5 @ Move Sakura back to her original position (permanently)
     setvar 0x4073 0x2 @ Ultra Episode has started
+    setflag 0x274 @ Permitted to go to ultra space (in case player hasn't talked to Sakura before postgame)
     clearflag 0x06E @ Show Challengable Cosmog at Altar of Eclipse
     clearflag 0x77 @ Show Taken Cosmog in ultra space
     end
@@ -775,9 +776,10 @@ EventScript_DaimynCityFacilities_Pokeball:
 EventScript_DaimynCityFacilities_ProfessorSakura:
     lock
     faceplayer
-    compare 0x4073 0x6
-    if lessorequal _goto Sakura_UltraEpisode_UltraBeastHunt
-    if greaterthan _goto Sakura_UltraEpisode_PromptForDiasOfLight
+    setvar LASTRESULT SPECIES_COSMOG
+    callasm CheckIfCaught
+    compare LASTRESULT TRUE
+    if equal _goto Sakura_NavigationRoutingAfterCosmog
     checkflag 0x274 @ Permitted to go to ultra space
     if SET _goto SakuraAsksToGoToUltraSpace
     msgbox gText_DaimynCityFacilities_IRF_SakuraPreoccupied MSG_NORMAL
@@ -790,6 +792,11 @@ EventScript_DaimynCityFacilities_ProfessorSakura:
     msgbox gText_DaimynCityFacilities_IRF_SakuraTurnsPlayerDown MSG_NORMAL
     applymovement 0x7 m_LookLeft
     end
+
+Sakura_NavigationRoutingAfterCosmog:
+    compare 0x4073 0x6
+    if lessorequal _goto Sakura_UltraEpisode_UltraBeastHunt
+    goto Sakura_UltraEpisode_PromptForDiasOfLight @ Must be greater than
 
 Sakura_UltraEpisode_UltraBeastHunt:
     msgbox gText_UltraEpisode_UltraBeastHunt_Sakura_PromptForDestination MSG_KEEPOPEN

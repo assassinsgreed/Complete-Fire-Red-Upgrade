@@ -1071,17 +1071,6 @@ LogOff:
     sound 0x3
     special 0xD7
     special 0x190
-    @ Cleanup vars used by PC scripts. Not doing so can result in crashes when using Fly after accessing a PC.
-    setvar 0x4001 0x0
-    setvar 0x8000 0x0
-    setvar 0x8004 0x0
-    setvar 0x8005 0x0
-    setvar 0x8006 0x0
-    setvar 0x8008 0x0
-    setvar 0x8009 0x0
-    setvar 0x800A 0x0
-    setvar 0x800B 0x0
-    setvar LASTRESULT 0x0
     releaseall
     end
 

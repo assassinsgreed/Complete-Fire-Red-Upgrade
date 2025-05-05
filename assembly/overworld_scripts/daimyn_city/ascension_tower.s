@@ -606,6 +606,8 @@ TitleDefense_Copycat:
     checkgender
     compare LASTRESULT 0x0 @ Gender is opposite of player
     if equal _call TitleDefense_Copycat_Male
+    checkgender
+    compare LASTRESULT 0x0 @ Gender is opposite of player
     if notequal _call TitleDefense_Copycat_Female
     return
 

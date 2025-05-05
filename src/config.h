@@ -243,7 +243,7 @@ enum //These vars need to be one after the other (hence the enum)
 // #define TANOBY_RUINS_ENABLED //The Tanoby Ruins will be the only location Unown can be encountered
 // #define ALTERING_CAVE_ENABLED //The Altering Cave from FR will work as intended provided the proper var is set
 #define SWEET_SCENT_ONLY_IN_CLEAR_WEATHER //Sweet Scent won't attract any wild Pokemon if the weather is not clear
-#define SWEET_SCENT_WILD_DOUBLE_BATTLES //Sweet Scent can be used (with respect to WILD_DOUBLE_RANDOM_CHANCE) to encounter two wild Pokemon at once
+//#define SWEET_SCENT_WILD_DOUBLE_BATTLES //Sweet Scent can be used (with respect to WILD_DOUBLE_RANDOM_CHANCE) to encounter two wild Pokemon at once
 #define OBEDIENCE_BY_BADGE_AMOUNT //Determines obedience based on the number of badges the Player has, rather than which badges the player has
 #define SAVE_BLOCK_EXPANSION //Commenting this requires you to also manually remove Save Expansion Hooks found in hooks. It will also break several features. DO NOT COMMENT OUT!
 #define SELECT_FROM_PC //Comment this out to remove select-from-pc hack
