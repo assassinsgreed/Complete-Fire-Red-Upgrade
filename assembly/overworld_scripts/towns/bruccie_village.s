@@ -296,9 +296,12 @@ EventScript_BruccieVillageFacilities_PokemonCenter_CaughtLocationGirl:
     setvar 0x8003 0x0 @ From party
     setvar 0x8004 0x0 @ First slot
     bufferfirstpokemon 0x0 @ Buffer first pokemon's species (not nickname) to the first buffer
-    special2 LASTRESULT 0xC @ Store the caught location in LASTRESULT
-    callasm BufferMapNameFromLastResult @ Convert it from it's numeric representation to it's name
     msgbox gText_BruccieVillageFacilities_PokemonCenter_CaughtLocationGirl MSG_NORMAL
+    special2 LASTRESULT 0xC @ Store the caught location in LASTRESULT
+    compare LASTRESULT 0xC5 @ Handle if the Pokemon doesn't have a caught location. This covers Pokemon with a catch location of None, Trade, Special Egg, etc.
+    if greaterorequal _goto DefaultCase
+    callasm BufferMapNameFromLastResult @ Convert the caught location from it's numeric representation to it's name
+    msgbox gText_BruccieVillageFacilities_PokemonCenter_CaughtLocationGirl_SensingCaughtLocation MSG_NORMAL
     @ Display flavour text based on the caught location
     switch LASTRESULT
     @ Urban Places
@@ -369,6 +372,8 @@ EventScript_BruccieVillageFacilities_PokemonCenter_CaughtLocationGirl:
     case MAPSEC_VARISI_FOREST, ForestDescription
     case MAPSEC_PERADON_FOREST, ForestDescription
     case MAPSEC_MIMMETT_JUNGLE, ForestDescription
+
+DefaultCase:
     @ Default, when no cases are met (ex. trades, ultra space, etc.)
     npcchatwithmovement gText_BruccieVillageFacilities_PokemonCenter_CaughtLocationGirl_Default m_LookLeft
     end

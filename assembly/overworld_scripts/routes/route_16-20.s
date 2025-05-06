@@ -223,7 +223,7 @@ EventScript_Route17_ChampionSelene_BeforeChoosingStarter:
 TileEvent_MeetingRival:
     getplayerpos 0x4000 0x4001 @ Get player x and y in throwaway vars
     lock
-    special 0xAF @ Dismount bike if on it
+    special 0xAF @ Dismount bike if on it (Casual Mode)
     compare 0x4000 0x11
     if equal _call SetPlayerFacingLeft
     compare 0x4000 0x11
@@ -328,7 +328,7 @@ PlayerWalkToFaceHawthorne:
 
 PlayerMustChooseStarter:
     lock
-    special 0xAF @ Dismount bike if on it
+    special 0xAF @ Dismount bike if on it (Casual Mode)
     msgbox gText_Route17_ChooseAStarterWarning MSG_NORMAL
     special 0x1AA @ Get player facing
     compareplayerfacing INTERNAL_DOWN
@@ -839,6 +839,7 @@ EventScript_OrichelleGarden_Shaymin:
     setvar 0x8003 MOVE_EARTHPOWER
     setflag 0x90C @ Smarter wild battle, cleared at the end of battle
     setwildbattle SPECIES_SHAYMIN 50 ITEM_NONE
+    setflag 0x4B @ Shaymin hidden
     setflag 0x807
     special 0x138 @ Setup a legendary encounter (blurred screen transition)
     waitstate
@@ -848,22 +849,14 @@ EventScript_OrichelleGarden_Shaymin:
     if equal _call DefeatedShaymin
     compare LASTRESULT 0x4 @ Fled from battle
     if equal _call FledFromShaymin
-    compare LASTRESULT 0x7 @ Caught
-    if equal _call CaughtShaymin
     end
 
 DefeatedShaymin:
-    setflag 0x4B @ Shaymin hidden
     msgbox gtext_OrichelleGarden_ShayminDefeated MSG_NORMAL
     end
 
 FledFromShaymin:
-    setflag 0x4B @ Shaymin hidden
     msgbox gtext_OrichelleGarden_ShayminFledFromBattle MSG_NORMAL
-    end
-
-CaughtShaymin:
-    setflag 0x4B @ Shaymin hidden
     end
 
 @ Route 19

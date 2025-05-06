@@ -286,7 +286,7 @@ static void BuildPokeToolsMenu(void)
 	#endif
 		AppendToStartMenuItems(STARTMENU_DEXNAV);
 
-	if (FlagGet(0x828)) // Pokemon menu enabled)
+	if (FlagGet(0x828)) // Pokemon menu enabled
 	{
 		#ifdef FLAG_SYS_POCKETPC
 		if (FlagGet(FLAG_SYS_POCKETPC))
@@ -385,7 +385,11 @@ bool8 StartCB_HandleInput(void)
 			return FALSE;
 		sStartMenuCallback = sStartMenuActionTable[sStartMenuOrder[sStartMenuCursorPos]].func.u8_void;
 
-		if (sStartMenuCursorPos==STARTMENU_EXIT)
+		if (sStartMenuCursorPos==STARTMENU_EXIT ||
+			sStartMenuCallback == StartMenuPocketPCCallback ||
+		    sStartMenuCallback == StartMenuPokeVialCallback ||
+		    sStartMenuCallback == StartMenuInfiniteRepelCallback
+		)
 		    RemoveTimeBox();
 
 		// Do not fade the screen when using certain tools

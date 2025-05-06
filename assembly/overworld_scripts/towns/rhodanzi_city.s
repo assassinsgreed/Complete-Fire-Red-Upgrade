@@ -335,7 +335,6 @@ EventScript_RhodanziGym_Leader_Terrence:
 EventScript_RhodanziGym_Leader_TerrenceDefeated:
     msgbox gText_RhodanziGym_Leader_Terrence_BadgeAwarded MSG_NORMAL
     setflag 0x820 @ Rhodanzi gym badge
-    setflag 0x254 @ Received TM 05 from Terrence
     setflag 0x4B0 @ Defeated Terrence
     setflag 0x25C @ New Pokemart Stock
     fanfare 0x13D @ Gym victory

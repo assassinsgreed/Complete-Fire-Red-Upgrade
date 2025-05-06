@@ -78,7 +78,7 @@
 #define FLAG_INSTANT_FRIENDSHIP 0x933 //If set, Pokemon reach max friendship after taking a single step
 #define FLAG_DOUBLE_WILD_BATTLES_MODIFIER_ACTIVE 0x934 //If set, the wild double battles flag will not be disabled after battle
 #define FLAG_BATTLE_YOURSELF 0x936 // If set, the player's team is copied to the opponent's
-#define FLAG_OBTAINED_ADM 0x939  	// Flag indicating the ADM tool has been received, which replaces the need for HM compatible pokemon
+#define FLAG_OBTAINED_ADM 0x939 // Flag indicating the ADM tool has been received, which replaces the need for HM compatible pokemon
 #define FLAG_INFINITE_REPEL_ACTIVE 0x93A // If set, the player will not encounter wild Pokemon. This is separate from 0x911 so it can be managed by a menu option and not overridden by certain story events
 #define FLAG_HARD_LEVEL_CAP 0x93B // If set, a hard level cap is enforced before each boss encounter
 #define FLAG_DAILY_EVENTS_START 0xE00 //To flag + 0xFF, resets every new day.
@@ -243,7 +243,7 @@ enum //These vars need to be one after the other (hence the enum)
 // #define TANOBY_RUINS_ENABLED //The Tanoby Ruins will be the only location Unown can be encountered
 // #define ALTERING_CAVE_ENABLED //The Altering Cave from FR will work as intended provided the proper var is set
 #define SWEET_SCENT_ONLY_IN_CLEAR_WEATHER //Sweet Scent won't attract any wild Pokemon if the weather is not clear
-#define SWEET_SCENT_WILD_DOUBLE_BATTLES //Sweet Scent can be used (with respect to WILD_DOUBLE_RANDOM_CHANCE) to encounter two wild Pokemon at once
+//#define SWEET_SCENT_WILD_DOUBLE_BATTLES //Sweet Scent can be used (with respect to WILD_DOUBLE_RANDOM_CHANCE) to encounter two wild Pokemon at once
 #define OBEDIENCE_BY_BADGE_AMOUNT //Determines obedience based on the number of badges the Player has, rather than which badges the player has
 #define SAVE_BLOCK_EXPANSION //Commenting this requires you to also manually remove Save Expansion Hooks found in hooks. It will also break several features. DO NOT COMMENT OUT!
 #define SELECT_FROM_PC //Comment this out to remove select-from-pc hack

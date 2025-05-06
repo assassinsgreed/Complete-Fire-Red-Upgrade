@@ -131,7 +131,7 @@ EventScript_AnthraTown_RivalMom:
 
 EventScript_AnthraTown_RivalMomBeforeProfessor:
 	faceplayer
-	msgbox gText_AnthraTown_RivalMom MSG_NORMAL
+	npcchatwithmovement gText_AnthraTown_RivalMom m_LookRight
 	release
 	end
 

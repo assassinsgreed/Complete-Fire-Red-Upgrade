@@ -259,6 +259,9 @@ EventScript_OlenicLab_ToolsDeveloper:
     lock
     faceplayer
     msgbox gText_OlenicLab_ToolDeveloper_Intro MSG_NORMAL
+    checkitem ITEM_POKE_VIAL 0x1 @ Indicating casual mode
+    compare LASTRESULT TRUE
+    if equal _goto PromptForTool
     checkflag 0x4BC @ Beat Selene, became champion
     if NOT_SET _goto ToolsDeveloper_NotChampion
     msgbox gText_OlenicLab_ToolDeveloper_PlayerIsChampion MSG_NORMAL

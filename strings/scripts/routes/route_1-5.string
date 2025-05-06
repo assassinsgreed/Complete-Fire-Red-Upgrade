@@ -555,6 +555,87 @@ Well look at that! You've hatched\n[BUFFER1] eggs. I have a gift for\lyou.
 #org @gText_Route5_TrainerTips
 Trainer Tips!\pYou can press [SELECT_BUTTON] in the party menu\nto quickly rearrange your Pok\emon.
 
+#org @gText_Route5_DaycareLady_PromptToRaisePokemon
+I'm the Daycare Lady.\pWe can raise Pok\emon for you.\pWould you like us to raise one?
+
+#org @gText_Route5_DaycareLady_ChoseNo
+Oh, fine, then.\nCome again.
+
+#org @gText_Route5_DaycareLady_EggIsAvailableForPickup
+My husband was looking for you.
+
+#org @gText_Route5_DaycareLady_PokemonIsDoingWell
+Ah, it's you!\nGood to see you.\pYour Pok\emon can only be doing\ngood!
+
+#org @gText_Route5_DaycareLady_PromptToRaiseTwoPokemon
+We can raise two of your Pok\emon.\pWould you like us to raise one\nmore Pok\emon for you?
+
+#org @gText_Route5_DaycareLady_PromptToTakePokemonBack
+Will you take your Pok\emon back?
+
+#org @gText_Route5_DaycareLady_ComeAgain
+Fine.\nCome again.
+
+#org @gText_Route5_DaycareLady_PromptToChoosePokemonToRaise
+Which Pok\emon should we raise for\nyou?
+
+#org @gText_Route5_DaycareLady_RaisedPokemonConfirmation
+Fine, we'll raise your [BUFFER1]\nfor a while.\pCome back for it later.
+
+#org @gText_Route5_DaycareLady_PlayerOnlyHasOnePokemonWithThem
+Oh? But you have just one\nPok\emon.\pCome back another time.
+
+#org @gText_Route5_DaycareLady_PlayerWontHaveAnyPokemonToBattleWith
+If you leave me that Pok\emon,\nwhat will you battle with?\pCome back another time.
+
+#org @gText_Route5_DaycareLady_PokemonLevelledUp
+By level, your [BUFFER1] has\ngrown by [BUFFER2].
+
+#org @gText_Route5_DaycareLady_PartyIsFull
+Your Pok\emon party is full.\nMake room, then come see me.
+
+#org @gText_Route5_DaycareLady_PromptForPayment
+If you want your [BUFFER1] back,\nit will cost \$[BUFFER2].
+
+#org @gText_Route5_DaycareLady_PlayerDoesntHaveEnoughMoney
+You don't have enough money[.]
+
+#org @gText_Route5_DaycareLady_ReceivingPokemonBack
+Perfect!\nHere's your Pok\emon.
+
+#org @gText_Route5_DaycareLady_PokemonReceived
+[PLAYER] took back [BUFFER1] from\nthe Daycare Lady.
+
+#org @gText_Route5_DaycareLady_PromptToTakeOtherPokemonBack
+Will you take back the other one,\ntoo?
+
+#org @gText_Route5_DaycareMan_TalkWithWife
+I'm the Daycare Man.\pI help take care of the precious\nPok\emon of trainers.\pIf you'd like me to raise your\nPok\emon, have a word with my wife.
+
+#org @gText_Route5_DaycareMan_PromptForReceivingEgg
+Ah, it's you!\pWe were raising your Pok\emon, and\nmy goodness, were we surprised!\pYour Pok\emon had an egg!\pWe don't know how it got there,\nbut your Pok\emon had it.\pYou do want it, yes?
+
+#org @gText_Route5_DaycareMan_WillKeepEgg
+I really will keep it.\nYou do want this, yes?
+
+#org @gText_Route5_DaycareMan_ChoseToLetHimKeepEgg
+Well then, I'll keep it.\nThanks!
+
+#org @gText_Route5_DaycareMan_OnePokemonDoingFine
+Ah, it's you! Good to see you.\nYour [BUFFER1]'s doing fine.
+
+#org @gText_Route5_DaycareMan_TwoPokemonDoingFine
+Ah, it's you! Your [BUFFER1] and\n[BUFFER2] are doing fine.
+
+#org @gText_Route5_DaycareMan_NoRoomForEgg
+You have no room for it[.]\nCome back when you've made room.
+
+#org @gText_Route5_DaycareMan_ReceivedEgg
+[PLAYER] received the egg from\nthe Daycare Man.
+
+#org @gText_Route5_DaycareMan_TakeGoodCareOfEgg
+Take good care of it.
+
 // Heleo Ranch
 
 #org @gText_HeleoRanch_Mareep

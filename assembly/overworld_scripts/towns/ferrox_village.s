@@ -82,7 +82,8 @@ SignScript_FerroxVillage_TownEntrance:
 .global TileScript_FerroxVillage_ApproachedGym
 TileScript_FerroxVillage_ApproachedGym:
     lock
-    pause DELAY_HALFSECOND
+    special 0xAF @ Dismount bike if on it (Casual Mode)
+    pause DELAY_HALFSECOND    
     applymovement PLAYER m_LookUp
     opendoor 0x25 0x10
     waitdooranim

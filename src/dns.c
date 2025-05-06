@@ -88,18 +88,18 @@ static void FadeDayNightPalettes(void)
 			if (fadePalettes)
 			{
 				u32 hour = GetDNSHour();
-				u16 r = gDNSNightFadingByTime[gClock.hour][gClock.minute / 10].r;
-				u16 g = gDNSNightFadingByTime[gClock.hour][gClock.minute / 10].g;
-				u16 b = gDNSNightFadingByTime[gClock.hour][gClock.minute / 10].b;
+				u16 r = gDNSNightFadingByTime[hour][gClock.minute / 10].r;
+				u16 g = gDNSNightFadingByTime[hour][gClock.minute / 10].g;
+				u16 b = gDNSNightFadingByTime[hour][gClock.minute / 10].b;
 				u16 colour;
 				
-				u8 coeff = gDNSNightFadingByTime[gClock.hour][gClock.minute / 10].amount;
+				u8 coeff = gDNSNightFadingByTime[hour][gClock.minute / 10].amount;
 
 				// During the Ultra Episode, we simulate an eclipse (yes, even during the night) when a flag is set
 				u16 intensity = VarGet(VAR_ECLIPSE_INTENSITY);
 				if (FlagGet(FLAG_ECLIPSE_ACTIVE) && intensity > 0) // Intensity 0 is used as part of a slow fade back to normal DNS palette fades
 				{
-					if (hour <= 7 || hour >= 17) // Is night / morning, or is evening
+					if (hour < TIME_DAY_START || hour >= TIME_EVENING_START) // Is night / morning, or is evening
 					{
 						// Increment intensity so we don't suddenly jolt back toward daylight hours, during eclipse shading logic
 						intensity += 2;

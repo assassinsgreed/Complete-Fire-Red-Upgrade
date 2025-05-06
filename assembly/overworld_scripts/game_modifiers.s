@@ -52,56 +52,92 @@ EnterUnlockPassword:
     waitstate
 	return
 
+@ Switch command not used, because choosing a modifier with multiple states (such as species randomization or permanent weather) will override var 0x4000's internal value, resulting in other modifiers being changed without warning.
 GameModifiers_PromptToTurnOff:
 	msgbox gText_GameModifiers_TurnOffPrompt MSG_YESNO
 	compare LASTRESULT NO
 	if equal _goto ChoosingModifier
-	switch 0x4000
-	case 0, GameModifiers_RandomizerSpecies_ClearModifier _call
-	case 1, GameModifiers_RandomizerMovesets_ClearModifier _call
-	case 2, GameModifiers_RandomizerAbilities_ClearModifier _call
-	case 3, GameModifiers_InverseBattles_ClearModifier _call
-	case 4, GameModifiers_CamomonBattles_ClearModifier _call
-	case 5, GameModifiers_DoubleBattles_ClearModifier _call
-	case 6, GameModifiers_GuaranteedCaptures_ClearModifier _call
-	case 7, GameModifiers_CatchTrainerPokemon_ClearModifier _call
-	case 8, GameModifiers_ScaleWildPokemon_ClearModifier _call
-	case 9, GameModifiers_ScaleTrainerPokemon_ClearModifier _call
-	case 10, GameModifiers_HiddenAbilities_ClearModifier _call
-	case 11, GameModifiers_Shinies_ClearModifier _call
-	case 12, GameModifiers_MoveReminderAllMoves_ClearModifier _call
-	case 13, GameModifiers_KeepHeldConsumables_ClearModifier _call
-	case 14, GameModifiers_DexNavShowAll_ClearModifier _call
-	case 15, GameModifiers_InstantBattleWeather_ClearModifier _call
-	case 16, GameModifiers_InstantBattleTerrain_ClearModifier _call
-	case 17, GameModifiers_InstantFriendship_ClearModifier _call
+	compare 0x4000 0
+	if equal _call GameModifiers_RandomizerSpecies_ClearModifier
+	compare 0x4000 1
+	if equal _call GameModifiers_RandomizerMovesets_ClearModifier
+	compare 0x4000 2
+	if equal _call GameModifiers_RandomizerAbilities_ClearModifier
+	compare 0x4000 3
+	if equal _call GameModifiers_InverseBattles_ClearModifier
+	compare 0x4000 4
+	if equal _call GameModifiers_CamomonBattles_ClearModifier
+	compare 0x4000 5
+	if equal _call GameModifiers_DoubleBattles_ClearModifier
+	compare 0x4000 6
+	if equal _call GameModifiers_GuaranteedCaptures_ClearModifier
+	compare 0x4000 7
+	if equal _call GameModifiers_CatchTrainerPokemon_ClearModifier
+	compare 0x4000 8
+	if equal _call GameModifiers_ScaleWildPokemon_ClearModifier
+	compare 0x4000 9
+	if equal _call GameModifiers_ScaleTrainerPokemon_ClearModifier
+	compare 0x4000 10
+	if equal _call GameModifiers_HiddenAbilities_ClearModifier
+	compare 0x4000 11
+	if equal _call GameModifiers_Shinies_ClearModifier
+	compare 0x4000 12
+	if equal _call GameModifiers_MoveReminderAllMoves_ClearModifier
+	compare 0x4000 13
+	if equal _call GameModifiers_KeepHeldConsumables_ClearModifier
+	compare 0x4000 14
+	if equal _call GameModifiers_DexNavShowAll_ClearModifier
+	compare 0x4000 15
+	if equal _call GameModifiers_InstantBattleWeather_ClearModifier
+	compare 0x4000 16
+	if equal _call GameModifiers_InstantBattleTerrain_ClearModifier
+	compare 0x4000 17
+	if equal _call GameModifiers_InstantFriendship_ClearModifier
 	playse 0x30 @ Save
 	msgbox gText_GameModifiers_ModifierNowOff MSG_NORMAL
 	goto ChoosingModifier
 
+@ Switch command not used, because choosing a modifier with multiple states (such as species randomization or permanent weather) will override var 0x4000's internal value, resulting in other modifiers being changed without warning.
 GameModifiers_PromptToTurnOn:
 	msgbox gText_GameModifiers_TurnOnPrompt MSG_YESNO
 	compare LASTRESULT NO
 	if equal _goto ChoosingModifier
-	switch 0x4000
-	case 0, GameModifiers_RandomizerSpecies_SetModifier _call
-	case 1, GameModifiers_RandomizerMovesets_SetModifier _call
-	case 2, GameModifiers_RandomizerAbilities_SetModifier _call
-	case 3, GameModifiers_InverseBattles_SetModifier _call
-	case 4, GameModifiers_CamomonBattles_SetModifier _call
-	case 5, GameModifiers_DoubleBattles_SetModifier _call
-	case 6, GameModifiers_GuaranteedCaptures_SetModifier _call
-	case 7, GameModifiers_CatchTrainerPokemon_SetModifier _call
-	case 8, GameModifiers_ScaleWildPokemon_SetModifier _call
-	case 9, GameModifiers_ScaleTrainerPokemon_SetModifier _call
-	case 10, GameModifiers_HiddenAbilities_SetModifier _call
-	case 11, GameModifiers_Shinies_SetModifier _call
-	case 12, GameModifiers_MoveReminderAllMoves_SetModifier _call
-	case 13, GameModifiers_KeepHeldConsumables_SetModifier _call
-	case 14, GameModifiers_DexNavShowAll_SetModifier _call
-	case 15, GameModifiers_InstantBattleWeather_SetModifier _call
-	case 16, GameModifiers_InstantBattleTerrain_SetModifier _call
-	case 17, GameModifiers_InstantFriendship_SetModifier _call
+	compare 0x4000 0
+	if equal _call GameModifiers_RandomizerSpecies_SetModifier
+	compare 0x4000 1
+	if equal _call GameModifiers_RandomizerMovesets_SetModifier
+	compare 0x4000 2
+	if equal _call GameModifiers_RandomizerAbilities_SetModifier
+	compare 0x4000 3
+	if equal _call GameModifiers_InverseBattles_SetModifier
+	compare 0x4000 4
+	if equal _call GameModifiers_CamomonBattles_SetModifier
+	compare 0x4000 5
+	if equal _call GameModifiers_DoubleBattles_SetModifier
+	compare 0x4000 6
+	if equal _call GameModifiers_GuaranteedCaptures_SetModifier
+	compare 0x4000 7
+	if equal _call GameModifiers_CatchTrainerPokemon_SetModifier
+	compare 0x4000 8
+	if equal _call GameModifiers_ScaleWildPokemon_SetModifier
+	compare 0x4000 9
+	if equal _call GameModifiers_ScaleTrainerPokemon_SetModifier
+	compare 0x4000 10
+	if equal _call GameModifiers_HiddenAbilities_SetModifier
+	compare 0x4000 11
+	if equal _call GameModifiers_Shinies_SetModifier
+	compare 0x4000 12
+	if equal _call GameModifiers_MoveReminderAllMoves_SetModifier
+	compare 0x4000 13
+	if equal _call GameModifiers_KeepHeldConsumables_SetModifier
+	compare 0x4000 14
+	if equal _call GameModifiers_DexNavShowAll_SetModifier
+	compare 0x4000 15
+	if equal _call GameModifiers_InstantBattleWeather_SetModifier
+	compare 0x4000 16
+	if equal _call GameModifiers_InstantBattleTerrain_SetModifier
+	compare 0x4000 17
+	if equal _call GameModifiers_InstantFriendship_SetModifier
 	playse 0x30 @ Save
 	msgbox gText_GameModifiers_ModifierNowOn MSG_NORMAL
 	goto ChoosingModifier
