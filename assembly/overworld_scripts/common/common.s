@@ -660,7 +660,7 @@ PrintUpdatedLevelCaps:
 PrintLevelCapMessage:
     callasm GetLevelCapIntoLastResult
     buffernumber 0x0 LASTRESULT
-    msgbox gText_Common_LevelCapUpdate MSG_KEEPOPEN
+    msgbox gText_Common_LevelCapUpdate MSG_NORMAL
     return
 
 BadgeObedienceMessage:
@@ -675,7 +675,7 @@ BadgeObedienceMessage:
     case 6, SixBadges _call
     case 7, SevenBadges _call
     case 8, EightBadges _call
-    msgbox gText_Common_BadgeObedience MSG_KEEPOPEN
+    msgbox gText_Common_BadgeObedience MSG_NORMAL
     return
 
 NoBadges:

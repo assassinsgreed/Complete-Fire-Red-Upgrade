@@ -807,7 +807,9 @@ void atkF1_trysetcaughtmondexflags(void)
 	u16 species = GetMonData(mon, MON_DATA_SPECIES, NULL);
 	u32 personality = GetMonData(mon, MON_DATA_PERSONALITY, NULL);
 
-	if (GetSetPokedexFlag(SpeciesToNationalPokedexNum(species), FLAG_GET_CAUGHT))
+	// Skip showing the pokedex if the Pokemon has been registered as caught or does not exist in the dex (e.g. randomizers)
+	if (SpeciesToNationalPokedexNum(species) == 0 ||
+	    GetSetPokedexFlag(SpeciesToNationalPokedexNum(species), FLAG_GET_CAUGHT))
 	{
 		gBattlescriptCurrInstr = T1_READ_PTR(gBattlescriptCurrInstr + 1);
 	}
