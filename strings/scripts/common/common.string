@@ -588,19 +588,25 @@ Quick Start
 Done
 
 #org @gText_GameCustomization_GameMode_Prompt
-The game mode dictates how the game\nis structured.\pStandard mode is the default and\nintended experience.\pCasual mode gives the player\nconvenience items from the start\l(such as Exp Share).\pPlease select a mode.
+The game mode dictates how the game\nis structured.\pStandard mode is the default and\nintended experience.\pCasual mode gives the player\nconvenience items from the start\l(such as Exp Share).\pHard mode gives all boss trainers\nstronger Pok\emon and held items.\pWhen hard mode is enabled, a hard\nlevel cap is also enforced.\pPlease select a mode.
 
 #org @gText_GameCustomization_GameModeOption_Standard
-Standard
+Standard Mode
 
 #org @gText_GameCustomization_GameModeOption_Casual
-Casual
+Casual Mode
+
+#org @gText_GameCustomization_GameModeOption_Hard
+Hard Mode
 
 #org @gText_GameCustomization_GameMode_StandardSet
 Standard Mode is enabled!
 
 #org @gText_GameCustomization_GameMode_CasualSet
 Casual Mode is enabled!
+
+#org @gText_GameCustomization_GameMode_HardSet
+Hard Mode and the hard level cap\nare enabled!
 
 #org @gText_GameCustomization_TutorializationQuestion
 Would you like to enable early game\nbattling and catching tutorials?
@@ -631,6 +637,9 @@ Soft Level Caps are enabled!
 
 #org @gText_GameCustomization_HardLevelCapsTurnedOn
 Hard Level Caps are enabled!
+
+#org @gText_GameCustomization_LevelCapsCannotChange
+While Hard Mode is active, hard\nlevel caps are enforced.\pChoose a lower difficulty mode if\nyou wish to change this setting.
 
 #org @gText_GameCustomization_QuickStartQuestion
 This option allows you to skip initial\nplot points, up to receiving your\lStarter Pok\emon.\pIt is only recommended for players in\nrepeat playthroughs, as skipped\lplot is not recapped.\pDo you want to skip initial plot\npoints?

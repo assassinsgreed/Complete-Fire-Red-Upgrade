@@ -821,10 +821,11 @@ EventScript_BruccieVillageGym_LeaderAbby_Defeated:
     waitfanfare
     msgbox gText_BruccieVillageGym_LeaderAbby_BadgeDescription MSG_NORMAL
     msgbox gText_BruccieVillageGym_LeaderAbby_TMReceived MSG_NORMAL
-    loadpointer 0x0 gText_BruccieVillageGym_TMReceived
+    fanfare 0x101
     additem ITEM_TM76 0x1
-    giveitemwithfanfare ITEM_TM76 0x1 0x101 @ MUS_FANFA1
-    msgbox gText_BruccieVillageGym_LeaderAbby_Chat MSG_KEEPOPEN
+    msgbox gText_BruccieVillageGym_TMReceived MSG_KEEPOPEN
+    waitfanfare
+    msgbox gText_BruccieVillageGym_LeaderAbby_Chat MSG_NORMAL
     releaseall
     end
 

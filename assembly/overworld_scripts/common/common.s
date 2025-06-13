@@ -1157,22 +1157,34 @@ GameCustomization_GameMode:
     msgbox gText_GameCustomization_GameMode_Prompt MSG_KEEPOPEN
     multichoiceoption gText_GameCustomization_GameModeOption_Standard 0
     multichoiceoption gText_GameCustomization_GameModeOption_Casual 1
-    multichoice 0x0 0x0 TWO_MULTICHOICE_OPTIONS TRUE
+    multichoiceoption gText_GameCustomization_GameModeOption_Hard 2
+    multichoice 0x0 0x0 THREE_MULTICHOICE_OPTIONS TRUE
     switch LASTRESULT
     case 0, EnableStandardMode _call
     case 1, EnableCasualMode _call
+    case 2, EnableHardMode _call
     goto GameCustomizationMenu
 
 EnableStandardMode:
     setvar 0x4000 0x0
+    clearflag 0x93C @ Disable hard mode
     sound 0x30 @Save
     msgbox gText_GameCustomization_GameMode_StandardSet MSG_NORMAL
     return
 
 EnableCasualMode:
     setvar 0x4000 0x1
+    clearflag 0x93C @ Disable hard mode
     sound 0x30 @Save
     msgbox gText_GameCustomization_GameMode_CasualSet MSG_NORMAL
+    return
+
+EnableHardMode:
+    setvar 0x4000 0x2
+    setflag 0x93C @ Enable hard mode
+    setflag 0x93B @ Hard caps
+    sound 0x30 @Save
+    msgbox gText_GameCustomization_GameMode_HardSet MSG_NORMAL
     return
 
 GiveCasualModeItems:
@@ -1293,6 +1305,8 @@ GameCustomization_GenChoice_Shuffle:
     return
 
 GameCustomization_LevelCaps:
+    checkflag 0x93C @ Hard mode is on
+    if SET _goto CannotChangeLevelCaps
     msgbox gText_GameCustomization_LevelCapsQuestion MSG_KEEPOPEN
     multichoiceoption gText_GameCustomization_LevelCapsOption_Soft 0
     multichoiceoption gText_GameCustomization_LevelCapsOption_Hard 1
@@ -1300,6 +1314,10 @@ GameCustomization_LevelCaps:
     switch LASTRESULT
     case 0, EnableSoftLevelCaps _call
     case 1, EnableHardLevelCaps _call
+    goto GameCustomizationMenu
+
+CannotChangeLevelCaps:
+    msgbox gText_GameCustomization_LevelCapsCannotChange MSG_NORMAL
     goto GameCustomizationMenu
 
 EnableSoftLevelCaps:

@@ -346,10 +346,11 @@ EventScript_RhodanziGym_Leader_TerrenceDefeated:
     settrainerflag 0xD @ Brandon cannot be battled now
     msgbox gText_RhodanziGym_Leader_Terrence_BadgeDescription MSG_NORMAL
     msgbox gText_RhodanziGym_Leader_Terrence_TMReceived MSG_NORMAL
-    loadpointer 0x0 gText_RhodanziGym_TMReceived
+    fanfare 0x101
     additem ITEM_TM05 0x1
-    giveitemwithfanfare ITEM_TM05 0x1 0x101 @ MUS_FANFA1
-    msgbox gText_RhodanziGym_Leader_Terrence_Chat MSG_KEEPOPEN
+    msgbox gText_RhodanziGym_TMReceived MSG_KEEPOPEN
+    waitfanfare
+    msgbox gText_RhodanziGym_Leader_Terrence_Chat MSG_NORMAL
     releaseall
     end
 

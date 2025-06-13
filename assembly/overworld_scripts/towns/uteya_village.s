@@ -1371,9 +1371,10 @@ DennisAndDee_Defeated:
     settrainerflag 484 @ Clarice cannot be battled now
     msgbox gText_LeadersDennisAndDee_BadgeDescription MSG_NORMAL
     msgbox gText_LeadersDennisAndDee_TMReceived MSG_NORMAL
-    loadpointer 0x0 gText_UteyaVillage_Gym_TMReceived
+    fanfare 0x101
     additem ITEM_TM26 0x1
-    giveitemwithfanfare ITEM_TM26 0x1 0x101 @ MUS_FANFA1
+    msgbox gText_UteyaVillage_Gym_TMReceived MSG_KEEPOPEN
+    waitfanfare
     msgbox gText_UteyaVillageGym_LeaderDennis_Chat MSG_NORMAL
     msgbox gText_UteyaVillageGym_LeaderDee_Chat MSG_NORMAL
     end
