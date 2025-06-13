@@ -3176,9 +3176,10 @@ EventScript_TsarvosaCity_Gym_LeaderIris_Defeated:
     waitfanfare
     msgbox gText_TsarvosaCity_Gym_LeaderIris_BadgeDescription MSG_NORMAL
     msgbox gText_TsarvosaCity_Gym_LeaderIris_TMReceived MSG_NORMAL
-    loadpointer 0x0 gText_TsarvosaCity_Gym_TMReceived
+    fanfare 0x101
     additem ITEM_TM21 0x1
-    giveitemwithfanfare ITEM_TM21 0x1 0x101 @ MUS_FANFA1
+    msgbox gText_TsarvosaCity_Gym_TMReceived MSG_KEEPOPEN
+    waitfanfare
     goto EventScript_TsarvosaCity_Gym_LeaderIris_Chat
     end
 

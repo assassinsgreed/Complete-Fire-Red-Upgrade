@@ -121,10 +121,12 @@ typedef u8 TrainerClassNames_t[13];
 #define gOriginalTrainers ((struct Trainer*) 0x823EAC8)
 extern struct TrainerPicCoords gTrainerBackPicCoords[];
 extern const struct Trainer gTrainers[];
+extern const struct Trainer gHardTrainers[];
 
 #define TRAINER_IS_BLANK(trainerId) (gTrainers[trainerId].partyFlags == 0  && gTrainers[trainerId].party.NoItemDefaultMoves == 0)
-#define GET_TRAINER(trainerId) (TRAINER_IS_BLANK(trainerId) ?  gOriginalTrainers[trainerId] : gTrainers[trainerId])
-#define GET_TRAINER_PTR(trainerId) (TRAINER_IS_BLANK(trainerId) ?  &gOriginalTrainers[trainerId] : &gTrainers[trainerId])
+#define HARD_TRAINER_IS_BLANK(trainerId) (gHardTrainers[trainerId].partyFlags == 0  && gHardTrainers[trainerId].party.NoItemDefaultMoves == 0)
+#define GET_TRAINER(trainerId) (TRAINER_IS_BLANK(trainerId) ?  gOriginalTrainers[trainerId] : (FlagGet(FLAG_HARD_MODE) && !HARD_TRAINER_IS_BLANK(trainerId)) ? gHardTrainers[trainerId] : gTrainers[trainerId])
+#define GET_TRAINER_PTR(trainerId) (TRAINER_IS_BLANK(trainerId) ?  &gOriginalTrainers[trainerId] : (FlagGet(FLAG_HARD_MODE) && !HARD_TRAINER_IS_BLANK(trainerId)) ? &gHardTrainers[trainerId] : &gTrainers[trainerId])
 #define sATypeMove_Table ((u8**) 0x83FEA28) //Table of things like "A Normal Move!"
 #define gBattleStringsTable ((u8**) 0x83FDF3C)
 

@@ -156,7 +156,7 @@ Welcome, trainer. I am Terrence, the\nleader of the Rhodanzi Gym.\pMy gym is the
 Excellent! Well done, [PLAYER].
 
 #org @gText_RhodanziGym_Leader_Terrence_Chat
-You battled well, [PLAYER].\pYour gym challenge will take you\nto Ferrox Village in the east.\pBelieve in your Pok\emon and never\ngive up!\pI expect great things from you.
+[BLUE]You battled well, [PLAYER].\pYour gym challenge will take you\nto Ferrox Village in the east.\pBelieve in your Pok\emon and never\ngive up!\pI expect great things from you.
 
 #org @gText_RhodanziGym_Leader_Terrence_BadgeAwarded
 [BLUE]Congratulations! You battled well,\nand have earned the Terrain Badge.\lPlease, take it.
