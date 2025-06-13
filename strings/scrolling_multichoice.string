@@ -540,6 +540,12 @@ Ledges jumped off of
 #org @gText_GameStats_TimesThePlayerWasRainedOn
 Times the player was rained on
 
+#org @gText_GameStats_TimesMined
+Times the player went mining
+
+#org @gText_GameStats_TimesItemsWereFoundWhileMining
+Times items were found while mining
+
 #org @gText_GameModifiers_RandomizerSpecies
 Randomizer (Species)
 

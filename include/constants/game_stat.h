@@ -50,11 +50,11 @@
 #define GAME_STAT_WATCHED_TV                44 //Not used by Pokemon Amethyst
 #define GAME_STAT_DEXNAV_SCANNED            45 //NEW!
 #define GAME_STAT_WON_LUCKY_DRAW            46
-#define GAME_STAT_POKEMON_PUT_IN_DAYCARE    47 // TODO: Not sure this is implemented
-#define GAME_STAT_RAID_BATTLES              48 //NEW! (Not used by Pokemon Amethyst)
+#define GAME_STAT_POKEMON_PUT_IN_DAYCARE    47
+#define GAME_STAT_TIMES_MINED_UNDERGROUND   48 //Repurposed for Pokemon Amethyst
 #define GAME_STAT_ENTERED_HOT_SPRINGS       49
 #define GAME_STAT_RARE_CANDIES_USED         50 //Repurposed for Pokemon Amethyst
-#define GAME_STAT_BERRY_CRUSH_POINTS        51 //Not used by Pokemon Amethyst
+#define GAME_STAT_ITEMS_FOUND_WHILE_MINING  51 //Repurposed for Pokemon Amethyst
 
 #define NUM_USED_GAME_STATS                 52
 #define NUM_GAME_STATS                      64

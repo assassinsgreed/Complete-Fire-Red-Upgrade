@@ -1378,7 +1378,6 @@ void sp118_StartRaidBattle(void)
 	CreateBattleStartTask(transition, GetMUS_ForBattle());
 	IncrementGameStat(GAME_STAT_TOTAL_BATTLES);
 	IncrementGameStat(GAME_STAT_WILD_BATTLES);
-	IncrementGameStat(GAME_STAT_RAID_BATTLES);
 }
 
 //setwildbattle SPECIES LEVEL ITEM

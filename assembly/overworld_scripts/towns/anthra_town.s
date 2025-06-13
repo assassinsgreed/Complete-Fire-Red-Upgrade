@@ -375,7 +375,9 @@ LearnGameStats:
 	case 37, GameStats_TimesStruggleWasUsed _goto
 	case 38, GameStats_TimesLedgesWereHoppedOffOf _goto
 	case 39, GameStats_TimesPlayerWasRainedOn _goto
-    case 40, DoneHearingStats
+	case 40, GameStats_TimesMined _goto
+	case 41, GameStats_TimesItemsFoundWhileMining _goto
+    case 42, DoneHearingStats
     case 0x7F, DoneHearingStats @ When player hits B to close
 	goto DoneHearingStats
 	end
@@ -663,6 +665,20 @@ LearnGameStats:
 		callasm StoreGameStat
 		buffernumber 0x0 LASTRESULT
 		msgbox gText_AnthraTown_ChampionFanatic_GameStats_TimesPlayerWasRainedOn MSG_NORMAL
+		goto LearnGameStats
+
+	GameStats_TimesMined:
+		setvar 0x8004 48 @ Times the player mined
+		callasm StoreGameStat
+		buffernumber 0x0 LASTRESULT
+		msgbox gText_AnthraTown_ChampionFanatic_GameStats_TimesMined MSG_NORMAL
+		goto LearnGameStats
+
+	GameStats_TimesItemsFoundWhileMining:
+		setvar 0x8004 51 @ Times the player found items while mining
+		callasm StoreGameStat
+		buffernumber 0x0 LASTRESULT
+		msgbox gText_AnthraTown_ChampionFanatic_GameStats_TimesItemsFoundWhileMining MSG_NORMAL
 		goto LearnGameStats
 
 m_RivalWalkUp: .byte walk_up, walk_up, walk_right, walk_right, walk_right, walk_up, look_right, end_m
