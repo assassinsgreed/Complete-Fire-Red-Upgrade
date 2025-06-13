@@ -295,3 +295,9 @@ You've hopped off of [BUFFER1] ledges.
 
 #org @gText_AnthraTown_ChampionFanatic_GameStats_TimesPlayerWasRainedOn
 You were caught in the rain [BUFFER1]\ntimes.
+
+#org @gText_AnthraTown_ChampionFanatic_GameStats_TimesMined
+You've mined [BUFFER1] times.
+
+#org @gText_AnthraTown_ChampionFanatic_GameStats_TimesItemsFoundWhileMining
+You've found [BUFFER1] items while\nmining.

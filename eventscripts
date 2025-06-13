@@ -535,6 +535,7 @@ npc 3 3 4 EventScript_FerroxVillage_AppleMan
 npc 3 3 5 EventScript_FerroxVillage_Policeman
 npc 3 3 6 ItemScript_Common_AbsorbBulb
 npc 3 3 7 ItemScript_Common_FullHeal
+npc 3 3 9 EventScript_FerroxVillage_UndergroundMiner
 sign 3 3 0 SignScript_FerroxVillage_Library
 sign 3 3 1 SignScript_FerroxVillage_Gym
 sign 3 3 2 SignScript_FerroxVillage_TownEntrance

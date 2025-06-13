@@ -17,6 +17,39 @@ Hey, kid. We've been getting reports\nof Team Pluto activity in the area.\pIf yo
 #org @gText_FerroxOverworld_Policeman_PlutoDefeated
 We've received word that Team Pluto\nhas been disbanded.\pAll those involved should be behind\nbars now.\pIf you hear anything else about Team\nPluto, though, be sure to run to\lthe nearest police officer, okay?
 
+#org @gText_FerroxOverworld_Policeman_UndergroundMiner_Intro
+This here wall is rife with high\nvalue gems and minerals.\pThere's just one catch[.] Yeh'll need\nan ADM to crack the surface.
+
+#org @gText_FerroxOverworld_Policeman_UndergroundMiner_HaveADM
+Wahoo! That right there is an\nhonest-to-goodness ADM!\pDo yeh want to dig with me?
+
+#org @gText_FerroxOverworld_Policeman_UndergroundMiner_DoNotHaveADM
+Yeh don't have one? That's a shame.\pAh'll lend ya mine if you'd like, for\njust \$1,000. What do yeh say?
+
+#org @gText_FerroxOverworld_Policeman_UndergroundMiner_ExplainationChoice
+How do you mine?
+
+#org @gText_FerroxOverworld_Policeman_UndergroundMiner_Explaination
+Ah! Mah apologies[.] Let me explain.\pWhen we start minin', the ADM will\nping for minerals.\pThen, it's up ta us to find 'em\nbefore the wall comes crashin'\ldown!\pWe can dig with a hammer or a\npickaxe.\pA hammer can dig quickly, but will\nalso damage the wall quickly, too.\pYeh can swap tools with [L_BUTTON] or [R_BUTTON]\nwhile minin'.\pNow, would yeh like to get diggin'?
+
+#org @gText_FerroxOverworld_Policeman_UndergroundMiner_NotGoingMining
+That's a darn shame.\pAh'll be here all day if yeh change\nyer mind.
+
+#org @gText_FerroxOverworld_Policeman_UndergroundMiner_Paying
+Ah'll just get that \$1,000 from yeh\nnow[.]
+
+#org @gText_FerroxOverworld_Policeman_UndergroundMiner_NotEnoughMoney
+Oh, for shame!\nYeh don't have enough cash.\pAh'll be here all day if yeh\nscrounge up the cash.
+
+#org @gText_FerroxOverworld_Policeman_UndergroundMiner_Paid
+Thank'ee kindly.
+
+#org @gText_FerroxOverworld_Policeman_UndergroundMiner_StartingDigging
+Alrighty, let's get ta minin'!\pI'll trade yeh a Pok\eChip for any\nfossils yeh dig up.\pYeh can keep anything else ya find.\pNow, let's get diggin'!
+
+#org @gText_FerroxOverworld_Policeman_UndergroundMiner_DoneDigging
+Whew, what a haul! Come chat with\nme again if yeh want to get diggin'.
+
 #org @gText_FerroxOverworld_LibrarySign
 Ferrox Village Library\nHome to the largest book\lcollection in Kulure!
 

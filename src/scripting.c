@@ -3146,6 +3146,8 @@ extern const u8 gText_GameStats_TimesSplashWasUsed[];
 extern const u8 gText_GameStats_TimesStruggleWasUsed[];
 extern const u8 gText_GameStats_TimesLedgesWereJumpedOffOf[];
 extern const u8 gText_GameStats_TimesThePlayerWasRainedOn[];
+extern const u8 gText_GameStats_TimesMined[];
+extern const u8 gText_GameStats_TimesItemsWereFoundWhileMining[];
 
 // Game Modifiers
 extern const u8 gText_GameModifiers_RandomizerSpecies[];
@@ -3451,6 +3453,8 @@ static const u8* sGameStats[] =
 	gText_GameStats_TimesStruggleWasUsed,
 	gText_GameStats_TimesLedgesWereJumpedOffOf,
 	gText_GameStats_TimesThePlayerWasRainedOn,
+	gText_GameStats_TimesMined,
+	gText_GameStats_TimesItemsWereFoundWhileMining,
 	gText_End,
 };
 
