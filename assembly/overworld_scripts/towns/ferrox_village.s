@@ -140,6 +140,7 @@ UndergroundMiner_Mine:
     msgbox gText_FerroxOverworld_Policeman_UndergroundMiner_StartingDigging MSG_NORMAL
     playbgm 0x149 @ Skyarrow bridge
     callasm InitStartUndergroundMining
+    waitstate
     fadedefaultbgm
     npcchatwithmovement gText_FerroxOverworld_Policeman_UndergroundMiner_DoneDigging m_LookUp
     end
