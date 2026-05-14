@@ -6,6 +6,8 @@ This fork makes use of feature branches from Stevebel's fork for dynamically ins
 
 To use some personal tools which apply ips patches at the time of compilation, you will also need to install docopt: `pip install docopt`.
 
+This is my personal fork of CFRU for the Pokemon Amethyst romhack. External dev resources are required to build and develop the game, but you can play the fully compiled version found on [HackDex](https://www.hackdex.app/hack/pokemon-amethyst)!
+
 ## What is this?
 A complete upgrade for FireRed, including an upgraded Battle Engine. By using this or any assets from this repository, you consent to never making money off your game (unless you have my explicit permission). That includes both pay-walls **as well as optional donations** (which includes ko-fi, Patreon, etc.). If you have a problem with this, feel free to send me a Discord message (Skeli#3917) and I will give you my PayPal so you can pay me $100000 for the hundreds if not thousands of hours I poured into this for **free** (I don't actually want your money - I'm trying to make a point). Not to mention it's illegal to profit off of an IP you don't own.
 
