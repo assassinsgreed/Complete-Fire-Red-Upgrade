@@ -1135,6 +1135,7 @@ GameCustomizationMain:
     setflag 0x069 @ Guzzlord Ultra Wormhole
     setflag 0x06A @ Stakataka Ultra Wormhole
     setflag 0x06D @ Blacephalon Ultra Wormhole
+    clearflag 0x33 @ Show Pluto grunts on route 3 & Rubarr Desert (Also for level capping)
 	spriteface PLAYER look_down
 	setvar 0x4056 0x1 @ Prevent Game Customization level script from running again
 	sethealingplace 0x01 @ Player's house

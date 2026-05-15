@@ -2898,6 +2898,9 @@ static void Task_ChangeNickname(u8 taskId)
 	u16 species = GetMonData(src, MON_DATA_SPECIES, NULL);
 	u8 gender = GetMonGender(src);
 	u16 PID = GetMonData(src, MON_DATA_PERSONALITY, NULL);
+	// Free party pointers before opening the naming screen to avoid leaking
+	// windows/sprites/etc. across repeated openings of the naming screen.
+	FreePartyPointers();
 	DoNamingScreen(NAMING_SCREEN_NAME_RATER, gStringVar3, species, gender, PID, (void*) NicknameMon);
 	DestroyTask(taskId);
 }
