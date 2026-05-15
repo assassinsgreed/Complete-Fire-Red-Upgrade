@@ -1215,7 +1215,6 @@ EnableCasualMode:
 EnableHardMode:
     setvar 0x4000 0x2
     setflag 0x93C @ Enable hard mode
-    setflag 0x93B @ Hard caps
     sound 0x30 @Save
     msgbox gText_GameCustomization_GameMode_HardSet MSG_NORMAL
     return

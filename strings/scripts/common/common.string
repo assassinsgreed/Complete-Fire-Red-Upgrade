@@ -588,7 +588,7 @@ Quick Start
 Done
 
 #org @gText_GameCustomization_GameMode_Prompt
-The game mode dictates how the game\nis structured.\pStandard mode is the default and\nintended experience.\pCasual mode gives the player\nconvenience items from the start\l(such as Exp Share), accessible in\lthe Tools Menu ([START_BUTTON] -> [DPAD_RIGHT]).\pHard mode gives all boss trainers\nstronger Pok\emon and held items.\pWhen hard mode is enabled, a hard\nlevel cap is also enforced.\pPlease select a mode.
+The game mode dictates how the game\nis structured.\pStandard mode is the default and\nintended experience.\pCasual mode gives the player\nconvenience items from the start\l(such as Exp Share), accessible in\lthe Tools Menu ([START_BUTTON] -> [DPAD_RIGHT]).\pHard mode gives all boss trainers\nstronger Pok\emon and held items.\pPlease select a mode.
 
 #org @gText_GameCustomization_GameModeOption_Standard
 Standard Mode

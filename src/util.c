@@ -697,7 +697,7 @@ u8 GetCurrentLevelCap()
 
 	if (FlagGet(FLAG_DEFEATED_TERRENCE))
 		cap++;
-	if (FlagGet(0x33)) // Irene in Rubarr Desert
+	if (FlagGet(FLAG_BEAT_IRENE_IN_RUBARR_DESERT))
 		cap++;
 	if (FlagGet(0x255)) // Torma Cave Casey
 		cap++;

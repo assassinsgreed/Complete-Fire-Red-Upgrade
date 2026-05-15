@@ -4679,7 +4679,7 @@ const struct Trainer gHardTrainers[] = {
         .party = {.ItemCustomMoves = sParty_Rival2_Hard}
     },
     [TRAINER_RUBARR_DESERT_PARTNER_RIVAL] = {
-        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
         .trainerClass = CLASS_RIVAL,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .trainerPic = TRAINER_PIC_RIVAL,
@@ -4995,7 +4995,7 @@ const struct Trainer gHardTrainers[] = {
     // #endregion
     // #region Rubarr Desert
     [TRAINER_RUBARR_DESERT_TEAM_PLUTO_ADMIN_IRENE] = {
-        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
         .trainerClass = CLASS_TEAM_PLUTO_ADMIN,
         .trainerPic = TRAINER_PIC_PLUTO_ADMIN_IRENE,
         .trainerName = {_I, _r, _e, _n, _e, _END},
@@ -5086,7 +5086,7 @@ const struct Trainer gHardTrainers[] = {
     // #endregion
     // #region Route 11 South
     [TRAINER_ROUTE_11_SOUTH_PLUTO_ADMIN_RONALD] = {
-        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
         .trainerClass = CLASS_TEAM_PLUTO_ADMIN,
         .trainerPic = TRAINER_PIC_PLUTO_ADMIN_RONALD,
         .trainerName = {_R, _o, _n, _a, _l, _d, _END},
@@ -5262,7 +5262,7 @@ const struct Trainer gHardTrainers[] = {
         .party = {.ItemCustomMoves = sParty_TsarvosaCity_DevTeam_Crystal2_Hard}
     },
     [TRAINER_TSARVOSA_CITY_GYM_TRAINEE_NOAM] = {
-        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
         .trainerClass = CLASS_GYM_TRAINEE,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .trainerPic = TRAINER_PIC_COOLTRAINER_M,
@@ -5274,7 +5274,7 @@ const struct Trainer gHardTrainers[] = {
         .party = {.ItemCustomMoves = sParty_TsarvosaCity_GymTrainees_Noam_Hard}
     },
     [TRAINER_TSARVOSA_CITY_GYM_TRAINEE_ASHLEY] = {
-        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
         .trainerClass = CLASS_GYM_TRAINEE,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .trainerPic = TRAINER_PIC_BEAUTY,
@@ -5286,7 +5286,7 @@ const struct Trainer gHardTrainers[] = {
         .party = {.ItemCustomMoves = sParty_TsarvosaCity_GymTrainees_Ashley_Hard}
     },
     [TRAINER_TSARVOSA_CITY_GYM_TRAINEE_CHELSEA] = {
-        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
         .trainerClass = CLASS_GYM_TRAINEE,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .trainerPic = TRAINER_PIC_SWIMMER_F,
@@ -5298,7 +5298,7 @@ const struct Trainer gHardTrainers[] = {
         .party = {.ItemCustomMoves = sParty_TsarvosaCity_GymTrainees_Chelsea_Hard}
     },
     [TRAINER_TSARVOSA_CITY_GYM_TRAINEE_BUDDY] = {
-        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
         .trainerClass = CLASS_GYM_TRAINEE,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .trainerPic = TRAINER_PIC_BUG_CATCHER,
@@ -5310,7 +5310,7 @@ const struct Trainer gHardTrainers[] = {
         .party = {.ItemCustomMoves = sParty_TsarvosaCity_GymTrainees_Buddy_Hard}
     },
     [TRAINER_TSARVOSA_CITY_GYM_TRAINEE_GAWAIN] = {
-        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
         .trainerClass = CLASS_GYM_TRAINEE,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .trainerPic = TRAINER_PIC_BLACK_BELT,
@@ -5322,7 +5322,7 @@ const struct Trainer gHardTrainers[] = {
         .party = {.ItemCustomMoves = sParty_TsarvosaCity_GymTrainees_Gawain_Hard}
     },
     [TRAINER_TSARVOSA_CITY_GYM_TRAINEE_SKYLAR] = {
-        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
         .trainerClass = CLASS_GYM_TRAINEE,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .trainerPic = TRAINER_PIC_LASS,
@@ -5334,7 +5334,7 @@ const struct Trainer gHardTrainers[] = {
         .party = {.ItemCustomMoves = sParty_TsarvosaCity_GymTrainees_Skylar_Hard}
     },
     [TRAINER_TSARVOSA_CITY_GYM_TRAINEE_BELLA] = {
-        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
         .trainerClass = CLASS_GYM_TRAINEE,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .trainerPic = TRAINER_PIC_PKMN_BREEDER_F,
@@ -5346,7 +5346,7 @@ const struct Trainer gHardTrainers[] = {
         .party = {.ItemCustomMoves = sParty_TsarvosaCity_GymTrainees_Bella_Hard}
     },
     [TRAINER_TSARVOSA_CITY_GYM_TRAINEE_FLASH] = {
-        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
         .trainerClass = CLASS_GYM_TRAINEE,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .trainerPic = TRAINER_PIC_GUITARIST,
@@ -5358,7 +5358,7 @@ const struct Trainer gHardTrainers[] = {
         .party = {.ItemCustomMoves = sParty_TsarvosaCity_GymTrainees_Flash_Hard}
     },
     [TRAINER_TSARVOSA_CITY_GYM_TRAINEE_TERRA] = {
-        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
         .trainerClass = CLASS_GYM_TRAINEE,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .trainerPic = TRAINER_PIC_PKMN_RANGER_F,
@@ -5370,7 +5370,7 @@ const struct Trainer gHardTrainers[] = {
         .party = {.ItemCustomMoves = sParty_TsarvosaCity_GymTrainees_Terra_Hard}
     },
     [TRAINER_TSARVOSA_CITY_GYM_TRAINEE_SEIFA] = {
-        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
         .trainerClass = CLASS_GYM_TRAINEE,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .trainerPic = TRAINER_PIC_PSYCHIC_F,
@@ -5382,7 +5382,7 @@ const struct Trainer gHardTrainers[] = {
         .party = {.ItemCustomMoves = sParty_TsarvosaCity_GymTrainees_Seifa_Hard}
     },
     [TRAINER_TSARVOSA_CITY_GYM_TRAINEE_ROCCO] = {
-        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
         .trainerClass = CLASS_GYM_TRAINEE,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .trainerPic = TRAINER_PIC_HIKER,
@@ -5394,7 +5394,7 @@ const struct Trainer gHardTrainers[] = {
         .party = {.ItemCustomMoves = sParty_TsarvosaCity_GymTrainees_Rocco_Hard}
     },
     [TRAINER_TSARVOSA_CITY_GYM_TRAINEE_JANICE] = {
-        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
         .trainerClass = CLASS_GYM_TRAINEE,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .trainerPic = TRAINER_PIC_SKIER,
@@ -5406,7 +5406,7 @@ const struct Trainer gHardTrainers[] = {
         .party = {.ItemCustomMoves = sParty_TsarvosaCity_GymTrainees_Janice_Hard}
     },
     [TRAINER_TSARVOSA_CITY_GYM_TRAINEE_ANTOINETTE] = {
-        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
         .trainerClass = CLASS_GYM_TRAINEE,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .trainerPic = TRAINER_PIC_POKEFAN_F,
@@ -5418,7 +5418,7 @@ const struct Trainer gHardTrainers[] = {
         .party = {.ItemCustomMoves = sParty_TsarvosaCity_GymTrainees_Antoinette_Hard}
     },
     [TRAINER_TSARVOSA_CITY_GYM_TRAINEE_RYU] = {
-        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
         .trainerClass = CLASS_GYM_TRAINEE,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .trainerPic = TRAINER_PIC_DRAGON_TAMER,
@@ -5430,7 +5430,7 @@ const struct Trainer gHardTrainers[] = {
         .party = {.ItemCustomMoves = sParty_TsarvosaCity_GymTrainees_Ryu_Hard}
     },
     [TRAINER_TSARVOSA_CITY_GYM_TRAINEE_CASPAR] = {
-        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
         .trainerClass = CLASS_GYM_TRAINEE,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .trainerPic = TRAINER_PIC_PSYCHIC_M,
@@ -5442,7 +5442,7 @@ const struct Trainer gHardTrainers[] = {
         .party = {.ItemCustomMoves = sParty_TsarvosaCity_GymTrainees_Caspar_Hard}
     },
     [TRAINER_TSARVOSA_CITY_GYM_TRAINEE_DARCY] = {
-        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
         .trainerClass = CLASS_GYM_TRAINEE,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .trainerPic = TRAINER_PIC_SUPER_NERD,
@@ -5454,7 +5454,7 @@ const struct Trainer gHardTrainers[] = {
         .party = {.ItemCustomMoves = sParty_TsarvosaCity_GymTrainees_Darcy_Hard}
     },
     [TRAINER_TSARVOSA_CITY_GYM_TRAINEE_MASON] = {
-        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
         .trainerClass = CLASS_GYM_TRAINEE,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .trainerPic = TRAINER_PIC_SCIENTIST_M,
@@ -5466,7 +5466,7 @@ const struct Trainer gHardTrainers[] = {
         .party = {.ItemCustomMoves = sParty_TsarvosaCity_GymTrainees_Mason_Hard}
     },
     [TRAINER_TSARVOSA_CITY_GYM_TRAINEE_FAYE] = {
-        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
         .trainerClass = CLASS_GYM_TRAINEE,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .trainerPic = TRAINER_PIC_PARASOL_LADY,

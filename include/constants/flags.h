@@ -687,7 +687,9 @@
 #define FLAG_SILVALLY_MEMORIES_GIVEN                     0x28E
 #define FLAG_NECROZMA_FUSION_ITEMS_GIVEN                 0x28F
 #define FLAG_GAVE_LIAM_MOOMOO_MILK                       0x290
-#define FLAG_PALLET_LADY_NOT_BLOCKING_SIGN               0x291
+*/
+#define FLAG_BEAT_IRENE_IN_RUBARR_DESERT                 0x291
+/*
 #define FLAG_GOT_VS_SEEKER                               0x292
 #define FLAG_GOT_TM19_FROM_ERIKA                         0x293
 #define FLAG_GOT_TM33_FROM_THIRSTY_GIRL                  0x294
