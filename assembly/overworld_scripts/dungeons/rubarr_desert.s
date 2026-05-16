@@ -301,6 +301,7 @@ EventScript_RubarrDesert_StoryEvents:
     hidesprite PlutoAdminIrene
     setflag 0x33 @ Hide Team Pluto
     setflag 0x34 @ Hide Rival and Irene
+    setflag 0x291 @ Beat Irene in Rubarr Desert
     setvar Route3RubarrStoryEventVar VarStoryPlayerBeatPluto
     checkflag 0x93B @ Hard level caps
     if SET _call PrintUpdatedLevelCaps
@@ -998,7 +999,6 @@ EventScript_RubarrDesertCaves_Garchompite:
     finditem ITEM_GARCHOMPITE 0x1
     end
 
-@ TODO: For some reason this soft locks the game??????
 .global EventScript_RubarrDesertCaves_TM91FlashCannon
 EventScript_RubarrDesertCaves_TM91FlashCannon:
     setvar CHOSEN_ITEM ITEM_TM91
