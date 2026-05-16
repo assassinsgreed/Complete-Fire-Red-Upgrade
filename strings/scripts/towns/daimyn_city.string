@@ -1774,7 +1774,10 @@ My apologies, Master [PLAYER].\nYou do not have zat\lmany Pok\eChips.
 I appreciate your generosity, mon\nami, but we do not need zat many\lPok\eChips!
 
 #org @gText_Restaurant_DonationLevel2Unlocked
-You've now unlocked [GREEN]Lvl 2[BLUE]\ndishes!\pZese dishes are more delicious than\nLvl 1 ones, and will raise stats by\l2 stages!\pYou can unlock our final level,\n[GREEN]Lvl 3[BLUE], by donating [BUFFER2] more\lPok\eChips.
+You've now unlocked [GREEN]Lvl 2[BLUE]\ndishes!\pZese dishes are more delicious than\nLvl 1 ones, and will raise stats by\l2 stages!
+
+#org @gText_Restaurant_DonationLevel3Requirements
+You can unlock our final level,\n[GREEN]Lvl 3[BLUE], by donating [BUFFER2] more\lPok\eChips.
 
 #org @gText_Restaurant_DonationLevel3Unlocked
 You've now unlocked [GREEN]Lvl 3[BLUE]\ndishes!\pZese dishes provide large stat\nbuffs, but come with a cost -\lanother stat will be lowered!\pI've also concocted a most wonderful\ndish - ze Rare Candy Cake!\pZis meal raises all Pok\emon's stats\nby 1, but it can only be prepared\lat level 1. Incroyable, non?

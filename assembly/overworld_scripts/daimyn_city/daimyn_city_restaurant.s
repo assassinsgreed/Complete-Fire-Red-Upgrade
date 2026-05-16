@@ -32,12 +32,14 @@ MapEntryScript_Restaurant_IrisAndStellaMeals:
 
 .global EventScript_DaimynRestaurant_Chef
 EventScript_DaimynRestaurant_Chef:
+    lock
     checkflag 0x250 @ Restaurant has been explained
     if NOT_SET _call FirstRestaurantVisit
     msgbox gText_Restaurant_Intro MSG_KEEPOPEN
     goto RestaurantOptions
 
 FirstRestaurantVisit:
+    giveitem ITEM_POKE_CHIP 100 MSG_OBTAIN
     msgbox gText_Restaurant_FirstVisit MSG_NORMAL
     setvar RestaurantChipsNextVar 0x19 @ 25
     setvar RestaurantChipsTotalVar 0x0
@@ -67,8 +69,8 @@ RestaurantMenu:
     setvar 0x8001 0x6 @ Show 6 menu items
     setvar 0x8004 0x0 @ Ensure multiselect doesn't blow up when reopened
     msgbox gText_Restaurant_MenuPresented MSG_KEEPOPEN
-    compare RestaurantChipsTotalVar 0x32 @ 50
-    if equal _goto MenuWithAll
+    compare RestaurantChipsTotalVar 75
+    if greaterorequal _goto MenuWithAll
     goto MenuStandard
 
 MenuStandard:
@@ -235,7 +237,7 @@ SetupLevelThreeMeal:
     return
 
 RedirectMealLevel:
-    compare RestaurantChipsTotalVar 0x32 @ 50
+    compare RestaurantChipsTotalVar 75
     if equal _goto PromptForThreeLevels
     goto PromptForTwoLevels
 
@@ -539,17 +541,32 @@ RestaurantDonationMet:
     fanfare 0x102
     msgbox gText_Restaurant_DonationMet MSG_KEEPOPEN
     waitfanfare
-    setvar RestaurantChipsNextVar 0x32 @ 50 more
-    compare RestaurantChipsTotalVar 0x32 @ 50
-    if equal _call SetChipsComplete
+    compare RestaurantChipsTotalVar 50
+    if greaterorequal _goto Level3Reached
+    compare RestaurantChipsTotalVar 25
+    if greaterorequal _goto Level2Reached
+    goto EventScript_DaimynRestaurant_Chef
+
+Level2Reached:
+    msgbox gText_Restaurant_DonationLevel2Unlocked MSG_KEEPOPEN
+    setvar RestaurantChipsNextVar 50 @ 50 more, total of 75
+    compare RestaurantChipsTotalVar 75
+    if greaterorequal _goto SetChipsComplete
+    buffernumber 0x1 RestaurantChipsNextVar
+    msgbox gText_Restaurant_DonationLevel3Requirements MSG_KEEPOPEN
+    goto EventScript_DaimynRestaurant_Chef
+
+Level3Reached:
+    compare RestaurantChipsTotalVar 75
+    if greaterorequal _goto SetChipsComplete
     goto EventScript_DaimynRestaurant_Chef
 
 SetChipsComplete:
     setvar RestaurantChipsNextVar 0x0 @ 0 more
     fanfare 0x102
     msgbox gText_Restaurant_DonationLevel3Unlocked MSG_KEEPOPEN
-    waitfanfare
-    return
+    msgbox gText_Restaurant_DonationMet MSG_KEEPOPEN
+    goto EventScript_DaimynRestaurant_Chef
 
 DonationComplete:
     msgbox gText_Restaurant_DonationComplete MSG_NORMAL
