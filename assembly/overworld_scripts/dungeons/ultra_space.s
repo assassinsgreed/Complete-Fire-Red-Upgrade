@@ -55,6 +55,18 @@ BufferNight:
     bufferstring 0x1 gText_Common_Day
     return
 
+@ This is a hacky fix to show the researcher in Ultra Space
+.global MapScript_UltraSpace_EclipseVillage
+MapScript_UltraSpace_EclipseVillage:
+    mapscript MAP_SCRIPT_ON_TRANSITION MapEntryScript_UltraSpace_EclipseVillage_ShowReturnHomeResearcher
+    .byte MAP_SCRIPT_TERMIN
+
+MapEntryScript_UltraSpace_EclipseVillage_ShowReturnHomeResearcher:
+    checkflag 0x4BC @ Beat the game
+    if NOT_SET _goto End
+    clearflag 0x62 @ Show the return home researcher
+    end
+
 .global EventScript_UltraSpace_EclipseVillage_Shopkeeper
 EventScript_UltraSpace_EclipseVillage_Shopkeeper:
     npcchat gText_UltraSpace_EclipseVillage_Shopkeeper

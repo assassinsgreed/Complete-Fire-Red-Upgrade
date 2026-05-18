@@ -2616,6 +2616,7 @@ sign 2 23 7 SignScript_EmptyWorld_MalfunctioningPC
 # Ultra Space
 ### NOTE: For some reason the first event is broken on each map...
 map 2 31 MapScript_UltraSpace_FirstVisit
+map 2 32 MapScript_UltraSpace_EclipseVillage
 npc 2 32 1 EventScript_UltraSpace_EclipseVillage_Man
 npc 2 32 2 EventScript_UltraSpace_EclipseVillage_Lass
 npc 2 32 3 EventScript_UltraSpace_EclipseVillage_Shopkeeper
