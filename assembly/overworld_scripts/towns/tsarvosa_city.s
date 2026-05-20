@@ -2498,7 +2498,7 @@ EventScript_TsarvosaCity_Gym_Merchant10:
 .global EventScript_TsarvosaCity_Gym_Merchant11
 EventScript_TsarvosaCity_Gym_Merchant11:
     call MerchantShopIntro
-    pokemart HerbsShop
+    pokemart EvolutionItemsShop
     call MerchantShopOutro
     end
 
@@ -2594,6 +2594,9 @@ BitterItemsShop:
     .hword ITEM_ENERGY_ROOT
     .hword ITEM_HEAL_POWDER
     .hword ITEM_REVIVAL_HERB
+    .hword ITEM_WHITE_HERB
+    .hword ITEM_MENTAL_HERB
+    .hword ITEM_POWER_HERB
     .hword ITEM_NONE
 
 .align 1 
@@ -2605,10 +2608,12 @@ SeedsShop:
     .hword ITEM_NONE
 
 .align 1
-HerbsShop:
-    .hword ITEM_WHITE_HERB
-    .hword ITEM_MENTAL_HERB
-    .hword ITEM_POWER_HERB
+EvolutionItemsShop:
+    .hword ITEM_LINK_STONE
+    .hword ITEM_KINGS_ROCK
+    .hword ITEM_RAZOR_CLAW
+    .hword ITEM_DRAGON_SCALE
+    .hword ITEM_REAPER_CLOTH
     .hword ITEM_NONE
 
 .align 1
@@ -2621,6 +2626,7 @@ BerryShop:
     .hword ITEM_ASPEAR_BERRY
     .hword ITEM_LEPPA_BERRY
     .hword ITEM_SITRUS_BERRY
+    .hword ITEM_LUM_BERRY
     .hword ITEM_NONE
 
 .align 1

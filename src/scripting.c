@@ -3044,8 +3044,8 @@ extern const u8 gText_ItemExchange_FlameOrb[];
 extern const u8 gText_ItemExchange_RareCandy[];
 extern const u8 gText_ItemExchange_LifeOrb[];
 extern const u8 gText_ItemExchange_AssaultVest[];
-extern const u8 gText_ItemExchange_WeaknessPolicy[];
 extern const u8 gText_ItemExchange_FocusSash[];
+extern const u8 gText_ItemExchange_WeaknessPolicy[];
 extern const u8 gText_ItemExchange_ChoiceBand[];
 extern const u8 gText_ItemExchange_ChoiceSpecs[];
 extern const u8 gText_ItemExchange_ChoiceScarf[];
@@ -3265,8 +3265,8 @@ static const u8* sGameCornerItemExchange[] =
 	gText_ItemExchange_RareCandy,
 	gText_ItemExchange_LifeOrb,
 	gText_ItemExchange_AssaultVest,
-	gText_ItemExchange_WeaknessPolicy,
 	gText_ItemExchange_FocusSash,
+	gText_ItemExchange_WeaknessPolicy,
 	gText_ItemExchange_ChoiceBand,
 	gText_ItemExchange_ChoiceSpecs,
 	gText_ItemExchange_ChoiceScarf,

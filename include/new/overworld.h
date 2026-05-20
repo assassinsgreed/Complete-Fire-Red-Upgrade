@@ -57,6 +57,7 @@ const u8* GetIntroSpeechOfApproachingTrainer(void);
 const u8* GetTrainerCantBattleSpeech(void);
 void SetUpTrainerEncounterMusic(void);
 void SetTrainerFlags(void);
+void PostReleaseAutomaticFixes(void);
 bool8 TryStartStepCountScript(u16 metatileBehavior);
 bool8 TryRunOnFrameMapScript(void);
 bool8 WhiteoutLogic(void);

@@ -755,6 +755,8 @@ EvolutionaryStonesShop:
     .hword ITEM_SHINY_STONE
     .hword ITEM_OVAL_STONE
     .hword ITEM_LINK_STONE
+    .hword ITEM_EVERSTONE
+    .hword ITEM_DESTINY_KNOT
     .hword ITEM_NONE
 
 .global EventScript_DaimynCityMall_Shop_UncommonHeldItems

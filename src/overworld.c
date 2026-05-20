@@ -1677,8 +1677,16 @@ void RunOnResumeMapScript(void)
 		}
 	}
 
+	PostReleaseAutomaticFixes();
 	ForceClockUpdate();
 	MapHeaderRunScriptByTag(5);
+}
+
+// Post-release backward compatible hack: If hard caps are on and the player has the dex nav, mark Irene as beaten too (she must have been)
+void PostReleaseAutomaticFixes(void)
+{
+	if (FlagGet(FLAG_HARD_LEVEL_CAP) && FlagGet(FLAG_SYS_DEXNAV))
+		FlagSet(FLAG_BEAT_IRENE_IN_RUBARR_DESERT);
 }
 
 bool8 TryRunOnFrameMapScript(void)

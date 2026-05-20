@@ -1239,6 +1239,7 @@ GiveCasualModeItems:
     setvar 0x40AE 0x3 @ Fully charge the Poke Vial
     addmoney 2000 @ 5000 total
     setvar 0x4000 0x0 @ Reset control var
+    @ Do not give DexNav (0x91E) - this is used to control hard level caps!
     return
 
 GameCustomization_Tutorials:
