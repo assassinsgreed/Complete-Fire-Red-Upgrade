@@ -363,6 +363,11 @@ ChoseNotToBattleRivalToday:
     npcchatwithmovement gText_DaimynCityOverworld_RivalExhibitionBattle_ChoseNotToBattle m_LookDown
     end
 
+.global EventScript_DaimynCity_AlolanRaichuKid
+EventScript_DaimynCity_AlolanRaichuKid:
+    npcchatwithmovement gText_DaimynCityOverworld_AlolanRaichuKid m_LookDown
+    end
+
 .global SignScript_DaimynCityOverworld_Restaurant
 SignScript_DaimynCityOverworld_Restaurant:
     msgbox gText_DaimynCityOverworld_RestaurantSign MSG_SIGN

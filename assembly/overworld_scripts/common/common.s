@@ -1338,8 +1338,6 @@ GameCustomization_GenChoice_Shuffle:
     return
 
 GameCustomization_LevelCaps:
-    checkflag 0x93C @ Hard mode is on
-    if SET _goto CannotChangeLevelCaps
     msgbox gText_GameCustomization_LevelCapsQuestion MSG_KEEPOPEN
     multichoiceoption gText_GameCustomization_LevelCapsOption_Soft 0
     multichoiceoption gText_GameCustomization_LevelCapsOption_Hard 1
@@ -1347,10 +1345,6 @@ GameCustomization_LevelCaps:
     switch LASTRESULT
     case 0, EnableSoftLevelCaps _call
     case 1, EnableHardLevelCaps _call
-    goto GameCustomizationMenu
-
-CannotChangeLevelCaps:
-    msgbox gText_GameCustomization_LevelCapsCannotChange MSG_NORMAL
     goto GameCustomizationMenu
 
 EnableSoftLevelCaps:

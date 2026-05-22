@@ -61,10 +61,7 @@ HideVolcanionOnResume:
     setvar LASTRESULT SPECIES_VOLCANION
     callasm CheckIfCaught
     compare LASTRESULT 0x1
-    if equal _call HideVolcanion
-    end
-
-HideVolcanion:
+    if notequal _goto End
     hidesprite 8
     end
 
@@ -268,19 +265,18 @@ MapScript_CarnelidgeVolcano_Peak:
     mapscript MAP_SCRIPT_ON_LOAD MapScript_SetCarnelidgeVolcanoPeakState
     mapscript MAP_SCRIPT_ON_FRAME_TABLE LevelScripts_CarnelidgeVolcanoPeak_StoryEvents
     mapscript MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE LevelScripts_CarnelidgeVolcanoPeak_StoryEvents_AfterUltraSpace
-    mapscript MAP_SCRIPT_ON_RESUME HideLegendary
+    mapscript MAP_SCRIPT_ON_RESUME HideJirachiOnResume
 	.byte MAP_SCRIPT_TERMIN
 
 MapScript_SetCarnelidgeVolcanoPeakState:
     playbgm 0x14B 0x1 @ Regular peak theme, set as permanent on the map (in case the player lost to Rival or Alistair)
     end
 
-HideLegendary:
-    checkflag 0x5A @ Jirachi
-    if SET _call HideJirachi
-    end
-
-HideJirachi:
+HideJirachiOnResume:
+    setvar LASTRESULT SPECIES_JIRACHI
+    callasm CheckIfCaught
+    compare LASTRESULT 0x1
+    if notequal _goto End
     hidesprite 5
     end
 
@@ -626,8 +622,6 @@ EventScript_CarnelidgeVolcano_Jirachi:
     if equal _call DefeatedOrFledFromJirachi
     compare LASTRESULT 0x4 @ Fled from battle
     if equal _call DefeatedOrFledFromJirachi
-    compare LASTRESULT 0x7 @ Caught
-    if equal _call CaughtJirachi
     end
 
 DefeatedOrFledFromJirachi:
@@ -640,10 +634,6 @@ DefeatedOrFledFromJirachi:
     setflag 0x5A @ Jirachi hidden
     msgbox gtext_OrichelleGarden_JirachiDefeatedOrPlayerFled MSG_NORMAL
     end
-
-CaughtJirachi:
-    setflag 0x5A @ Jirachi hidden
-    return
 
 .global EventScript_CarnelidgeVolcano_UltraWormhole_Celesteela
 EventScript_CarnelidgeVolcano_UltraWormhole_Celesteela:

@@ -8,6 +8,7 @@ def main():
     """ Load all .ips patches from patches subdirectory and apply them """
     for file in glob.glob(".\\automation\\patches\\*.ips"):
         result = call(["python", ".\\automation\\ips.py", file, ROM_NAME])
+        print("Applying patch: {}.".format(file))
         if (result != 0):
             print(ERROR_COLOR + "Error applying patch: {}. See output for details. Exiting with status code: 1".format(file))
             exit(1)

@@ -259,19 +259,21 @@ SignScript_UteyanRuins_ChamberDoor_Right:
     setvar 0x8004 15 @ Boulder 1
     callasm CalculateEventPosition
     comparevartovalue 0x4002 0x35
-    if notequal _goto End
-    setvar 0x8004 16 @ Boulder 2
-    callasm CalculateEventPosition
-    compare 0x4002 0x35
-    if notequal _goto End
+    @if notequal _goto End
+    @ Boulder is bugged and will not report a position change without entering & exiting the cave. Trying to replace it with a new boulder leads to more chaos. It isn't worth it.
+    @ setvar 0x8004 16 @ Boulder 2
+    @ callasm CalculateEventPosition
+    @ comparevartovalue 0x4002 0x35
+    @ if notequal _goto End
     setvar 0x8004 17 @ Boulder 3
     callasm CalculateEventPosition
-    compare 0x4002 0x35
+    comparevartovalue 0x4002 0x35
     if notequal _goto End
     setvar 0x8004 18 @ Boulder 4
     callasm CalculateEventPosition
-    compare 0x4002 0x35
-    if notequal _goto End
+    buffernumber 0x0 0x4002
+    comparevartovalue 0x4002 0x35
+    @if notequal _goto End
     setvar 0x8004 19 @ Boulder 5
     callasm CalculateEventPosition
     compare 0x4002 0x35

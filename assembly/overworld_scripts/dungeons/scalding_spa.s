@@ -9,6 +9,8 @@
 .equ OldMan, 0x2
 .equ StoryFlag, 0x045
 
+@ TODO: Glastrier hidden state is not working properly when player defeats/runs and revisits map.
+@ Should check all states for Jirachi/Volcanion/Glastrier again when testing this particular part is done
 .global MapScript_ScaldingSpa_SpaRoom
 MapScript_ScaldingSpa_SpaRoom:
     mapscript MAP_SCRIPT_ON_TRANSITION MapEntryScript_ScaldingSpa
@@ -27,7 +29,7 @@ MapScript_GlastrierRoom:
     .byte MAP_SCRIPT_TERMIN
 
 MapEntryScript_HandleGlastrierWeather:
-    checkflag 0x46 @ Glastrier caught or defeated
+    checkflag 0x46 @ Glastrier caught, defeated, or fled from
     if SET _goto SetNormalSnowfall
     call SetWeatherSnowstorm
     end
@@ -36,11 +38,25 @@ SetNormalSnowfall:
     call SetWeatherThreeSnowflakes
     end
 
+@ Glastrier is hidden if (in order of checks):
+@    It is marked as caught
+@    Temp flag from it deciding player is not worthy is set
+@    Player defeated or ran from it
 MapResumeScript_HideGlastrierOnResume:
-    checkflag 0x46 @ Glastrier encountered
-    if notequal _goto End
+    setvar LASTRESULT SPECIES_GLASTRIER
+    callasm CheckIfCaught
+    compare LASTRESULT 0x1
+    if notequal _goto HandleRanOrFled
     setflag 0x1A @ Temp flag to hide Glastrier
     hidesprite 1 @ Glastrier
+    end
+
+HandleRanOrFled:
+    checkflag 0x46 @ Glastrier caught, defeated, or fled from
+    if NOT_SET _goto End
+    setflag 0x1A @ Temp flag to hide Glastrier
+    hidesprite 1 @ Glastrier
+    setvar 0x4000 0x1 @ Temp var to indicate the tile events shouldn't run again
     end
 
 .global EventScript_ScaldingSpa_SpaRoom_PlutoGrunt
@@ -319,8 +335,6 @@ EventScript_GlastrierRoom_Glastrier:
     if equal _call DefeatedGlastrier
     compare LASTRESULT 0x4 @ Fled from battle
     if equal _call FledFromGlastrier
-    compare LASTRESULT 0x7 @ Caught
-    if equal _call CaughtGlastrier
     end
 
 DefeatedGlastrier:
@@ -331,13 +345,6 @@ DefeatedGlastrier:
 FledFromGlastrier:
     call GlastrierLeavesCommon
     msgbox gtext_GlastrierRoom_GlastrierFledFromBattle MSG_NORMAL
-    return
-
-CaughtGlastrier:
-    fadescreen FADEOUT_BLACK
-    hidesprite 0x1
-    setflag 0x46 @ Glastrier caught
-    fadescreen FADEIN_BLACK
     return
 
 GlastrierLeavesCommon:
@@ -357,8 +364,8 @@ MovePlayerOutOfGlastriersWay:
 
 .global TileScript_GlastrierRoom_LeftTile
 TileScript_GlastrierRoom_LeftTile:
-    checkflag 0x46 @ Glastrier caught
-    if SET _goto End
+    checkflag 0x46 @ Glastrier caught, defeated, or fled from
+    if SET _goto HandleRanOrFled
     compare 0x4000 0x1 @ Event already triggered while on map
     if equal _goto End
     lock
@@ -383,8 +390,8 @@ GlastrierAcceptsPlayer:
 
 .global TileScript_GlastrierRoom_RightTile
 TileScript_GlastrierRoom_RightTile:
-    checkflag 0x46 @ Glastrier caught
-    if SET _goto End
+    checkflag 0x46 @ Glastrier caught, defeated, or fled from
+    if SET _goto HandleRanOrFled
     compare 0x4000 0x1 @ Event already triggered while on map
     if equal _goto End
     lock
