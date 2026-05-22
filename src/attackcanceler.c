@@ -1171,6 +1171,14 @@ static u8 IsMonDisobedient(void)
 	#endif
 
 	#ifdef OBEDIENCE_BY_BADGE_AMOUNT
+		// Turn off disobedience for starter (identified by obedience flag set by MarkPokemonAsStarter)
+		struct Pokemon *mon = GetBankPartyData(gBankAttacker);
+		if (GetMonData(mon, MON_DATA_OBEDIENCE, NULL))
+		{
+			// this Pokémon is marked as always obedient (starter)
+			return 0;
+		}
+
 		u8 badgeCount = 0;
 
 		if (FlagGet(FLAG_BADGE08_GET))

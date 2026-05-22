@@ -925,7 +925,7 @@
 #define FLAG_HIDE_ROUTE9_TM66_PAYBACK                    0x376
 #define FLAG_HIDE_DAIMYN_FACTORY_TM36_SLUDGE_BOMB        0x377
 #define FLAG_HIDE_ROUTE18_TM92_TRICK_ROOM                0x378
-#define FLAG_0x379               0x379
+#define FLAG_HIDE_ROUTE8_SWAMPERTITE                     0x379
 #define FLAG_0x37A               0x37A
 #define FLAG_0x37B               0x37B
 #define FLAG_0x37C               0x37C

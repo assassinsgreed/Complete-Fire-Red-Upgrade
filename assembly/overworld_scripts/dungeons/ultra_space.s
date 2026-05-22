@@ -62,7 +62,7 @@ MapScript_UltraSpace_EclipseVillage:
     .byte MAP_SCRIPT_TERMIN
 
 MapEntryScript_UltraSpace_EclipseVillage_ShowReturnHomeResearcher:
-    checkflag 0x4BC @ Beat the game
+    checkflag 0x273 @ Completed Carnelidge Volcano story events
     if NOT_SET _goto End
     clearflag 0x62 @ Show the return home researcher
     end
