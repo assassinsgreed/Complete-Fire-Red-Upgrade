@@ -151,6 +151,7 @@ PlayerSaidYesToRivalsRequest:
     applymovement PLAYER m_LookDown
     waitmovement PLAYER
     setvar 0x8000 0x3 @ Rival follows player
+    setvar 0x8001 0x80 @ Return here on white out (should never happen)
     special 0xD1 @ Set up rival follower
     return
 
@@ -828,9 +829,10 @@ LevelScript_InterdimensionalResearchFacilityStory:
     applymovement SeleneInIDF m_LookLeft
     msgbox gText_EmptyWorld_InterdimensionalResearchFacility_Selene_CannotGoToUltraSpace MSG_NORMAL
     msgbox gText_EmptyWorld_InterdimensionalResearchFacility_Rival_AcceptsSeleneBeingUnableToGo MSG_NORMAL
-    applymovement PLAYER m_LookRight
     applymovement RivalInIDF m_LookLeft
+    applymovement PLAYER m_LookRight
     applymovement SeleneInIDF m_LookUp
+    waitmovement ALLEVENTS
     addvar VarStorySequence 0x1
     clearflag 0x03D @ Show Casey in cutscenes; reused for cutscenes in empty world
     call Level_Script_ShowAllNPCsInInterdimensionalResearchFacility

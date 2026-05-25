@@ -2210,10 +2210,9 @@ static struct Pokemon* GetBaseMonForFusedSpecies(u16 species)
 				// Player has caught a fused Necrozma, so a Solgaleo needs to be generated
 				struct Pokemon* mon = &gEnemyParty[0];
 				CreateMon(mon, SPECIES_SOLGALEO, 75, 32, 0, 0, OT_ID_PLAYER_ID, 0);
-				// TODO: This just is not working
-				SetMonPokedexFlags(mon);
 				gSaveBlock1->fusedSolgaleo = *mon;
 			}
+			SetMonPokedexFlags(&gSaveBlock1->fusedSolgaleo);
 			return &gSaveBlock1->fusedSolgaleo;
 		case SPECIES_NECROZMA_DAWN_WINGS:
 			if (GetMonData(&gSaveBlock1->fusedLunala, MON_DATA_SPECIES, NULL) == SPECIES_NONE)
@@ -2221,9 +2220,9 @@ static struct Pokemon* GetBaseMonForFusedSpecies(u16 species)
 				// Player has caught a fused Necrozma, so a Lunala needs to be generated
 				struct Pokemon* mon = &gEnemyParty[0];
 				CreateMon(mon, SPECIES_LUNALA, 75, 32, 0, 0, OT_ID_PLAYER_ID, 0);
-				SetMonPokedexFlags(mon);
 				gSaveBlock1->fusedLunala = *mon;
 			}
+			SetMonPokedexFlags(&gSaveBlock1->fusedLunala);
 			return &gSaveBlock1->fusedLunala;
 	}
 	
@@ -2612,6 +2611,12 @@ static void Task_ChangeAbility(u8 taskId)
 	{
 		u32 personality = GetMonData(mon, MON_DATA_PERSONALITY, NULL);
 		u8 abilityNum = (personality & 1) ^ 1; //Flip ability bit
+
+		// Hidden -> Ability 1 override
+		if (mon->hiddenAbility)
+		{
+			abilityNum = 0;
+		}
 
 		u32 otId = GetMonData(mon, MON_DATA_OT_ID, NULL);
 		u16 sid = HIHALF(otId);

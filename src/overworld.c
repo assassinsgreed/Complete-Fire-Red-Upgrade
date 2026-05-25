@@ -118,6 +118,9 @@ static const u8* const sDefaultWalkingScripts[] =
 #endif
 
 extern u8 EventScript_Common_AccessPC[];
+extern u8 EventScript_UltraSpaceCommon_InteractableBookshelf[];
+extern u8 EventScript_UltraSpaceCommon_InteractablePainting[];
+extern u8 EventScript_UltraSpaceCommon_InteractableTV[];
 
 //Table full of pointers of scripts run when talking to tiles with certain behaviour bytes
 static const u8* const sMetatileInteractionScripts[] =
@@ -2287,9 +2290,41 @@ void PlayerJumpLedge(u8 direction)
 const u8* GetInteractedMetatileScript(unusedArg struct MapPosition* position, u8 metatileBehavior, u8 direction)
 {
 	gSpecialVar_PlayerFacing = direction;
+	u8 mapSec = GetCurrentRegionMapSectionId();
 
 	switch (metatileBehavior) {
+		// Special cases for Ultra Space things
+		case MB_BOOKSHELF: ;
+			if (direction == DIR_NORTH)
+			{
+				if (mapSec == MAPSEC_ULTRA_SPACE)
+					return EventScript_UltraSpaceCommon_InteractableBookshelf;
+				else
+					return sMetatileInteractionScripts[metatileBehavior];
+				
+			}
+			break;
+		case MB_PAINTING: ;
+			if (direction == DIR_NORTH)
+			{
+				if (mapSec == MAPSEC_ULTRA_SPACE)
+					return EventScript_UltraSpaceCommon_InteractablePainting;
+				else
+					 return sMetatileInteractionScripts[metatileBehavior];
+			}
+			break;
+
 		case MB_TELEVISION:
+			if (direction == DIR_NORTH)
+			{
+				if (mapSec == MAPSEC_ULTRA_SPACE)
+					return EventScript_UltraSpaceCommon_InteractableTV;
+				else
+					return sMetatileInteractionScripts[metatileBehavior];
+			}
+			break;
+
+		// Regular interactables
 		case MB_BERRY_CRUSH_RECORDS:
 		case MB_BATTLE_RECORDS:
 			if (direction == DIR_NORTH)
@@ -2313,7 +2348,6 @@ const u8* GetInteractedMetatileScript(unusedArg struct MapPosition* position, u8
 		#ifdef MB_HEADBUTT_TREE
 		case MB_HEADBUTT_TREE: ;
 			#ifdef UNBOUND
-			u8 mapSec = GetCurrentRegionMapSectionId();
 			if (mapSec != MAPSEC_GRIM_WOODS && mapSec != MAPSEC_VIVILL_WOODS) //Can't headbutt in these places
 				return sMetatileInteractionScripts[metatileBehavior];
 			#endif

@@ -347,3 +347,11 @@ Necrozma fled into an Ultra\nWormhole.\pWill it return later?
 #org @gText_DiasOfLight_NecrozmaCaught
 I caught Necrozma!\pI'd better show the researchers at\nthe Interdimensional Research\lFacility.
 
+#org @gText_UltraSpaceCommon_InteractableBookshelf
+It's a bookshelf full of fantasy\nnovels.
+
+#org @gText_UltraSpaceCommon_InteractablePainting
+It's a picture of people at a\ncampsite.
+
+#org @gText_UltraSpaceCommon_InteractableTelevision
+A dramatic show is playing on the\ntelevision.

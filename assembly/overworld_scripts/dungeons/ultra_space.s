@@ -33,7 +33,9 @@ LevelScript_PlayerAndRivalArriveInUltraSpace:
     applymovement Rival m_WalkLeft
     waitmovement Rival
     setvar 0x8000 Rival @ Rival follows player
+    setvar 0x8001 0x80 @ Return here on white out (should never happen)
     special 0xD1 @ Set up rival follower
+    setflag 0x62 @ Hide researchers in case they weren't hidden for some reason (some players experience this)
     addvar VarEmptyWorldStorySequence 0x1
     end
 
@@ -730,6 +732,7 @@ LevelScript_PlayerAndRivalArriveInHoenn:
     applymovement Rival m_RivalReturnsToPlayer
     waitmovement Rival
     setvar 0x8000 Rival @ Rival follows player
+    setvar 0x8001 0x80 @ Return here on white out (should never happen)
     special 0xD1 @ Set up rival follower
     addvar VarEmptyWorldStorySequence 0x1
     end
@@ -1253,6 +1256,21 @@ PlayerMovesOutOfSakurasWay:
     call PlayerWalkLeft_Return
     applymovement PLAYER m_LookUp
     return
+
+.global EventScript_UltraSpaceCommon_InteractableBookshelf
+EventScript_UltraSpaceCommon_InteractableBookshelf:
+    msgbox gText_UltraSpaceCommon_InteractableBookshelf MSG_NORMAL
+    end
+
+.global EventScript_UltraSpaceCommon_InteractablePainting
+EventScript_UltraSpaceCommon_InteractablePainting:
+    msgbox gText_UltraSpaceCommon_InteractablePainting MSG_NORMAL
+    end
+
+.global EventScript_UltraSpaceCommon_InteractableTV
+EventScript_UltraSpaceCommon_InteractableTV:
+    msgbox gText_UltraSpaceCommon_InteractableTelevision MSG_NORMAL
+    end
 
 m_SakuraWalksToFirstStoppingPoint: .byte walk_up, walk_up, walk_up, walk_up, walk_up, walk_up, walk_up, look_down, end_m
 m_SakuraWalksToSecondStoppingPoint: .byte walk_left, walk_up, walk_up, walk_up, walk_up, walk_up, walk_up, look_down, end_m

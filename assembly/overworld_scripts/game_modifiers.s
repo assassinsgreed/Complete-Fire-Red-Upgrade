@@ -859,7 +859,7 @@ GameModifiers_Shinies_SetModifier:
 
 GameModifiers_Shinies_ClearModifier:
 	clearflag 0x913 @ Turn off Shiny wild pokemon
-	clearflag 0x931 @ Do not cause the modifier to be disabled after battle
+	clearflag 0x931 @ Cause the modifier to be disabled after battle
 	return
 
 GameModifiers_MoveReminderAllMoves_SetModifier:

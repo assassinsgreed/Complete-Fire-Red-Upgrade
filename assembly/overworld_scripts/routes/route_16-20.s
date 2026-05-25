@@ -359,6 +359,8 @@ EventScript_StarterChoice_Grass:
 	if equal _call EventScript_StarterChoice_SetGrookey
 
 	bufferpokemon 0x0 0x4000
+    checkflag 0x931 @ Shiny modifier on
+    if SET _call SetShinyStarter
 	showpokepic 0x4000
     applymovement Hawthorne m_LookLeft
 	msgbox gText_StarterChoice_Confirmation MSG_YESNO
@@ -396,6 +398,8 @@ EventScript_StarterChoice_Fire:
 	if equal _call EventScript_StarterChoice_SetScorbunny
 	
     bufferpokemon 0x0 0x4001
+    checkflag 0x931 @ Shiny modifier on
+    if SET _call SetShinyStarter
 	showpokepic 0x4001
     applymovement Hawthorne m_LookLeft
 	msgbox gText_StarterChoice_Confirmation MSG_YESNO
@@ -433,6 +437,8 @@ EventScript_StarterChoice_Water:
 	if equal _call EventScript_StarterChoice_SetSobble
 	
     bufferpokemon 0x0 0x4002
+    checkflag 0x931 @ Shiny modifier on
+    if SET _call SetShinyStarter
 	showpokepic 0x4002
     applymovement Hawthorne m_LookLeft
 	msgbox gText_StarterChoice_Confirmation MSG_YESNO
@@ -448,6 +454,11 @@ EventScript_StarterChoice_Water:
     hidesprite 0x7 @ Hide Water starter ball on route 17
     goto EventScript_StarterChoice_SelectionMade
 	end
+
+@ Hack to ensure starter is shiny when chosen
+SetShinyStarter:
+    setflag 0x913 @ Make pokemon shiny
+    return
 
 EventScript_StarterChoice_SelectionMade:
     waitmsg
