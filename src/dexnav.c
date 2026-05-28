@@ -1210,16 +1210,36 @@ static u8 GetTotalEncounterChance(u16 species, u8 environment)
 	return chance;
 }
 
+#ifdef FLAG_SCALE_WILD_POKEMON_LEVELS
+static u8 GetLowestMonLevel(const struct Pokemon* const party);
+#endif
+
 static u8 GetEncounterLevel(u16 species, u8 environment, bool8 detectorMode)
 {
+	u8 min = 100;
+	u8 max = 0;
+
+	// If the scale wild pokemon modifier is on, set min & max to the lowest level of the player's party
+	#ifdef FLAG_SCALE_WILD_POKEMON_LEVELS
+	if (FlagGet(FLAG_SCALE_WILD_POKEMON_LEVELS))
+	{
+		min = max = GetLowestMonLevel(gPlayerParty);
+
+		#ifdef FLAG_HARD_LEVEL_CAP
+		u8 levelCap;
+		if (FlagGet(FLAG_HARD_LEVEL_CAP) && max >= (levelCap = GetCurrentLevelCap()))
+			min = max = levelCap;
+		#endif
+
+		return min;
+	}
+	#endif
+
 	u32 i;
 	const struct WildPokemon* monData;
 	const struct WildPokemonInfo* landMonsInfo = LoadProperMonsData(LAND_MONS_HEADER);
 	const struct WildPokemonInfo* waterMonsInfo = LoadProperMonsData(WATER_MONS_HEADER);
 	const struct WildPokemonInfo* fishingMonsInfo = LoadProperMonsData(FISHING_MONS_HEADER);
-
-	u8 min = 100;
-	u8 max = 0;
 
 	switch (environment)
 	{
@@ -3842,6 +3862,29 @@ bool8 StartMenuDexNavCallback(void)
 	return FALSE;
 }
 
+// 1:1 rip of the same function in wild_encounter.c.
+// Just being lazy to have something functional
+#ifdef FLAG_SCALE_WILD_POKEMON_LEVELS
+static u8 GetLowestMonLevel(const struct Pokemon* const party)
+{
+	u8 min = party[0].level;
+
+	for (int i = 1; i < PARTY_SIZE; ++i)
+	{
+		if (min == 1
+		||  party[i].species == SPECIES_NONE)
+			return min;
+
+		if (GetMonData(&party[i], MON_DATA_IS_EGG, NULL))
+			continue;
+
+		if (party[i].level < min)
+			min = party[i].level;
+	}
+
+	return min;
+}
+#endif
 
 // ========================================== //
 // ============ Script Specials ============= //

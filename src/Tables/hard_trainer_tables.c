@@ -4656,6 +4656,47 @@ const struct TrainerMonItemCustomMoves sParty_AscensionTower_TitleDefense_Kurtis
     },
 };
 // #endregion
+// #region Postgame
+// Identical to normal mode but for some reason will crash if not defined
+const struct TrainerMonNoItemCustomMoves sParty_HeleoCity_NurseBrianne_Hard[] = {
+    {
+        .lvl = 1,
+        .species = SPECIES_BLISSEY,
+        .moves = { MOVE_POUND, MOVE_SING, MOVE_HEALPULSE, MOVE_LIGHTSCREEN },
+        .ability = Ability_1 // Natural Cure
+    },
+    {
+        .lvl = 1,
+        .species = SPECIES_BLISSEY,
+        .moves = { MOVE_POUND, MOVE_SING, MOVE_HEALPULSE, MOVE_LIGHTSCREEN },
+        .ability = Ability_1 // Natural Cure
+    },
+    {
+        .lvl = 1,
+        .species = SPECIES_BLISSEY,
+        .moves = { MOVE_POUND, MOVE_SING, MOVE_HEALPULSE, MOVE_LIGHTSCREEN },
+        .ability = Ability_1 // Natural Cure
+    },
+    {
+        .lvl = 1,
+        .species = SPECIES_BLISSEY,
+        .moves = { MOVE_POUND, MOVE_SING, MOVE_HEALPULSE, MOVE_LIGHTSCREEN },
+        .ability = Ability_1 // Natural Cure
+    },
+    {
+        .lvl = 1,
+        .species = SPECIES_BLISSEY,
+        .moves = { MOVE_POUND, MOVE_SING, MOVE_HEALPULSE, MOVE_LIGHTSCREEN },
+        .ability = Ability_1 // Natural Cure
+    },
+    {
+        .lvl = 1,
+        .species = SPECIES_BLISSEY,
+        .moves = { MOVE_POUND, MOVE_SING, MOVE_HEALPULSE, MOVE_LIGHTSCREEN },
+        .ability = Ability_1 // Natural Cure
+    },
+};
+// #endregion
 // #endregion
 
 #define NO_NAME                                                                                      \
@@ -6140,6 +6181,20 @@ const struct Trainer gHardTrainers[] = {
         .partySize = NELEMS(sParty_Rival_PostgameExhibitionBattle_SecondaryTeam_Hard),
         .party = {.ItemCustomMoves = sParty_Rival_PostgameExhibitionBattle_SecondaryTeam_Hard}
     },
+    // #endregion
+    // #region Postgame
+    [TRAINER_HELEO_CITY_NURSE_BRIANNE] = {
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .trainerClass = CLASS_NURSE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .trainerPic = TRAINER_PIC_NURSE,
+        .trainerName = {_B, _r, _i, _a, _n, _n, _e, _END},
+        .items = { },
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = NELEMS(sParty_HeleoCity_NurseBrianne_Hard),
+        .party = {.NoItemCustomMoves = sParty_HeleoCity_NurseBrianne_Hard}
+    }
     // #endregion
     // #endregion
 };

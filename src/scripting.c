@@ -3780,7 +3780,7 @@ void ResetAllLegendaries()
 		if (i < 3 && !(FlagGet(FLAG_HIDE_LAKE_LAPLAZ_GALARIAN_BIRDS)))
 			continue;
 
-		if (i == 4 && !(FlagGet(FLAG_HIDE_ZERAORA_WHEN_CALMED)))
+		if (i == 3 && !(FlagGet(FLAG_HIDE_ZERAORA_WHEN_CALMED)))
 			continue;
 
 		if (!GetSetPokedexFlag(SpeciesToNationalPokedexNum(roamers[i]), FLAG_GET_CAUGHT))

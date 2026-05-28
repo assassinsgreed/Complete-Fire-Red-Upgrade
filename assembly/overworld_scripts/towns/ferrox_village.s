@@ -439,9 +439,10 @@ EventScript_FerroxGym_LeaderStella_Defeated:
     settrainerflag 0x3F @ Vincent cannot be battled now
     msgbox gText_FerroxGym_LeaderStella_BadgeDescription MSG_NORMAL
     msgbox gText_FerroxGym_LeaderStella_TMReceived MSG_NORMAL
-    loadpointer 0x0 gText_FerroxGym_TMReceived
+    fanfare 0x101
     additem ITEM_TM06 0x1
-    giveitemwithfanfare ITEM_TM06 0x1 0x101 @ MUS_FANFA1
+    msgbox gText_FerroxGym_TMReceived MSG_KEEPOPEN
+    waitfanfare
     msgbox gText_FerroxGym_LeaderStella_Chat MSG_KEEPOPEN
     releaseall
     end

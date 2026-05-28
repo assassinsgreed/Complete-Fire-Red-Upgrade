@@ -16,6 +16,8 @@
 #include "../include/constants/items.h"
 #include "../include/new/util.h"
 #include "../include/new/catching.h"
+#include "defines_battle.h" // For Rival name lookup
+#include "../include/new/mega.h" // For Rival name lookup
 
 extern struct TradeAnimationResources * sTradeData;
 
@@ -369,7 +371,14 @@ void CreateInGameTradePokemonInternal(u8 playerSlot, u8 inGameTradeIdx)
     SetMonData(tradeMon, MON_DATA_SPATK_IV, &inGameTrade->ivs[4]);
     SetMonData(tradeMon, MON_DATA_SPDEF_IV, &inGameTrade->ivs[5]);
     SetMonData(tradeMon, MON_DATA_NICKNAME, inGameTrade->nickname);
-    SetMonData(tradeMon, MON_DATA_OT_NAME, inGameTrade->otName);
+    // Handle Rival, who's name is not known until runtime
+    if (inGameTrade->otName == gText_InGameTrade_OTRival)
+    {
+        const u8* name = TryGetRivalNameByTrainerClass(GET_TRAINER(1).trainerClass); // Hard coded to rival
+        SetMonData(tradeMon, MON_DATA_OT_NAME, name);
+    }
+    else
+        SetMonData(tradeMon, MON_DATA_OT_NAME, inGameTrade->otName);
     SetMonData(tradeMon, MON_DATA_OT_GENDER, &inGameTrade->otGender);
     SetMonData(tradeMon, MON_DATA_BEAUTY, &inGameTrade->conditions[1]);
     SetMonData(tradeMon, MON_DATA_CUTE, &inGameTrade->conditions[2]);

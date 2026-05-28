@@ -431,6 +431,14 @@ void CreateTownMapRoamerSprites(void)
 			if (sMapSectionDimensions[regionMapSecId][1] > 1)
 				y += 4 * sMapSectionDimensions[regionMapSecId][1];
 
+			// Hack: If in Uteyan Ruins, hijack their position since it is in bank 1 and cannot be found easily
+			// This avoids us having to handle two banks, which can cause the pokemon to fail to travel between locations properly.
+			if (mapNum == 85) // Represents Uteyan Ruins, more reliable than a mapsec check
+			{
+				x = 148;
+				y = 12;
+			}
+
 			u8 spriteId = CreateMonIcon(gRoamers[i].species, SpriteCB_PokeIcon, x + 36, y + 36 - 8, 0, gRoamers[i].personality, FALSE);
 			if (spriteId < MAX_SPRITES)
 			{

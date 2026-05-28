@@ -292,3 +292,9 @@ FieldUseFunc_EVReducingBerry 872F5CC
 FieldUseFunc_EVReducingBerry 872F5F8
 FieldUseFunc_EVReducingBerry 872F624
 FieldUseFunc_EVReducingBerry 872F650
+
+## Poke Tools (Can use from Start -> Right or from the key items pocket)
+# In Order: PortaPC, PokeVial, Infinite Repel
+FieldUseFunc_PokeTool 8731B44
+FieldUseFunc_PokeTool 8731B70
+FieldUseFunc_PokeTool 8730964

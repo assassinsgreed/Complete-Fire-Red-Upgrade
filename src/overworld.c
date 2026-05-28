@@ -1552,7 +1552,7 @@ bool8 TryStartStepCountScript(u16 metatileBehavior)
 		#endif
 
 		const u8* customWalkingScript = GetCustomWalkingScript();
-		if (customWalkingScript != NULL)
+		if (customWalkingScript != NULL && !IsDexNavHudActive())
 		{
 			ScriptContext1_SetupScript(customWalkingScript);
 			return FALSE; // Return false so wild encounters can occur as the player walks
@@ -1657,25 +1657,27 @@ void RunOnResumeMapScript(void)
 	{
 		struct Pokemon* mon = &gPlayerParty[i];
 		u16 friendship = MAX_FRIENDSHIP;
-		
-		if (FlagGet(FLAG_INSTANT_FRIENDSHIP))
-		{
-			SetMonData(mon, MON_DATA_FRIENDSHIP, &friendship);
-		}
-		
-		// Hack: If the player has any Greninja in the party with the battle bond ability and without the corresponding ribbon, reset them to Torrent
-		u16 species = GetMonData(mon, MON_DATA_SPECIES, NULL);
-		
-		if (species == SPECIES_GRENINJA)
-		{
-			u8 ability = GetMonAbility(mon);
-			Var8004 = i; // Party index
-			Var8005 = 26; // Special Ribbon 7, used to check for Battle Bond eligibility
-			u8 isBattleBondEnabled = sp009_PokemonRibbonChecker();
-
-			if (ability == ABILITY_BATTLEBOND && !isBattleBondEnabled)
+		if (!GetMonData(mon, MON_DATA_IS_EGG, 0))
+		{			
+			if (FlagGet(FLAG_INSTANT_FRIENDSHIP))
 			{
-				GiveMonNatureAndAbility(mon, GetNature(mon), 0, FALSE, TRUE, FALSE); // Ability 1, Torrent
+				SetMonData(mon, MON_DATA_FRIENDSHIP, &friendship);
+			}
+			
+			// Hack: If the player has any Greninja in the party with the battle bond ability and without the corresponding ribbon, reset them to Torrent
+			u16 species = GetMonData(mon, MON_DATA_SPECIES, NULL);
+			
+			if (species == SPECIES_GRENINJA)
+			{
+				u8 ability = GetMonAbility(mon);
+				Var8004 = i; // Party index
+				Var8005 = 26; // Special Ribbon 7, used to check for Battle Bond eligibility
+				u8 isBattleBondEnabled = sp009_PokemonRibbonChecker();
+	
+				if (ability == ABILITY_BATTLEBOND && !isBattleBondEnabled)
+				{
+					GiveMonNatureAndAbility(mon, GetNature(mon), 0, FALSE, TRUE, FALSE); // Ability 1, Torrent
+				}
 			}
 		}
 	}

@@ -2764,6 +2764,7 @@ void FieldUseFunc_Honey(u8 taskId)
 
 extern const u8 gText_ExpShareTurnedOff[];
 extern const u8 gText_ExpShareTurnedOn[];
+extern const u8 gText_PokeTool_FromKeyItems[];
 extern const u8 gText_LevelCapLock[];
 
 void FieldUseFunc_ExpShare(u8 taskId)
@@ -2780,6 +2781,11 @@ void FieldUseFunc_ExpShare(u8 taskId)
 		FlagSet(FLAG_EXP_SHARE);
 		DisplayItemMessageInBag(taskId, 2, gText_ExpShareTurnedOn, Task_ReturnToBagFromContextMenu);
 	}	
+}
+
+void FieldUseFunc_PokeTool(u8 taskId)
+{
+	DisplayItemMessageInBag(taskId, 2, gText_PokeTool_FromKeyItems, Task_ReturnToBagFromContextMenu);
 }
 
 void ItemUseCB_RareCandy(u8 taskId, TaskFunc func)

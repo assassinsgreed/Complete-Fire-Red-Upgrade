@@ -109,7 +109,7 @@ When enabled, all wild Pok\emon will\nbe shiny.
 When enabled, the Move Reminder will\nteach moves regardless of level.
 
 #org @gText_GameModifiers_KeepHeldConsumables_Description
-When enabled, held consumable items\nare returned after battle.
+When enabled, held consumable items\nare returned after battle.\pAny newly acquired held items are\nlost (ex. through Thief or Trick).
 
 #org @gText_GameModifiers_DexNavShowAll_Description
 When enabled, all searchable Pok\emon\nare shown in the DexNav, even if\lthey haven't been encountered yet.

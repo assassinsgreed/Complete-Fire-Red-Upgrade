@@ -8682,8 +8682,8 @@ const struct TrainerMonItemCustomMoves sParty_AscensionTower_TitleDefense_Kurtis
     },
 };
 // #endregion
-// #region Ferrox Village (Postgame)
-const struct TrainerMonNoItemCustomMoves sParty_FerroxVillage_NurseBrianne[] = {
+// #region Heleo City (Postgame)
+const struct TrainerMonNoItemCustomMoves sParty_HeleoCity_NurseBrianne[] = {
     {
         .lvl = 1,
         .species = SPECIES_BLISSEY,
@@ -16017,7 +16017,7 @@ const struct Trainer gTrainers[] = {
     },
     // #endregion
     // #region Ferrox Village (Postgame)
-    [TRAINER_FERROX_VILLAGE_NURSE_BRIANNE] = {
+    [TRAINER_HELEO_CITY_NURSE_BRIANNE] = {
         .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
         .trainerClass = CLASS_NURSE,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -16026,8 +16026,8 @@ const struct Trainer gTrainers[] = {
         .items = { },
         .doubleBattle = FALSE,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
-        .partySize = NELEMS(sParty_FerroxVillage_NurseBrianne),
-        .party = {.NoItemCustomMoves = sParty_FerroxVillage_NurseBrianne}
+        .partySize = NELEMS(sParty_HeleoCity_NurseBrianne),
+        .party = {.NoItemCustomMoves = sParty_HeleoCity_NurseBrianne}
     }
     // #endregion
     // #endregion

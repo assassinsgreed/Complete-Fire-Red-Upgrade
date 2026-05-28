@@ -484,7 +484,7 @@ static u32 AccuracyCalcPassDefAbilityItemEffect(u16 move, u8 bankAtk, u8 bankDef
 					calc = (calc * 8) / 10; // 0.8 Fog loss
 				else
 				#endif
-					calc = (calc * 6) / 10; // 0.6 Fog loss
+					calc = (calc * 8) / 10; // 0.8 Fog loss for Amethyst
 			}
 		}
 	}
