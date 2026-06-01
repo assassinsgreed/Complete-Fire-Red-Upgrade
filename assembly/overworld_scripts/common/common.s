@@ -1162,65 +1162,59 @@ ShuffleStarterGenerations:
 GameCustomizationMenu:
     msgboxsign
     msgbox gText_GameCustomization_CustomizationMenu MSG_KEEPOPEN
-	multichoiceoption gText_GameCustomizationMenu_GameMode 0
+	multichoiceoption gText_GameCustomizationMenu_DifficultyMode 0
     multichoiceoption gText_GameCustomizationMenu_Tutorials 1
     multichoiceoption gText_GameCustomizationMenu_StarterSelection 2
     multichoiceoption gText_GameCustomizationMenu_LevelCaps 3
     multichoiceoption gText_GameCustomizationMenu_QuickStart 4
-    multichoiceoption gText_GameCustomizationMenu_Done 5
-    multichoice 0x0 0x0 SIX_MULTICHOICE_OPTIONS FALSE
+    multichoiceoption gText_GameCustomizationMenu_StartWithQoLItems 5
+    multichoiceoption gText_GameCustomizationMenu_Done 6
+    multichoice 0x0 0x0 SEVEN_MULTICHOICE_OPTIONS FALSE
     switch LASTRESULT
-    case 0, GameCustomization_GameMode _goto
+    case 0, GameCustomization_DifficultyMode _goto
     case 1, GameCustomization_Tutorials _goto
     case 2, GameCustomization_StarterSelection _goto
     case 3, GameCustomization_LevelCaps _goto
     case 4, GameCustomization_QuickStart _goto
+    case 5, GameCustomization_StartWithQoLItems _goto
     // Case n-1 and 0x7F fall through to completion
     goto GameCustomizationComplete
 
 GameCustomizationComplete:
     sound 0x30 @Save
 	msgbox gText_GameCustomization_Complete MSG_KEEPOPEN
-    compare 0x4000 0x1 @ In casual mode
-    if equal _call GiveCasualModeItems
+    compare 0x4000 0x1 @ Giving QoL items
+    if equal _call GiveQoLItemsFromStart
 	msgboxnormal
 	release
 	end
 
-GameCustomization_GameMode:
-    msgbox gText_GameCustomization_GameMode_Prompt MSG_KEEPOPEN
-    multichoiceoption gText_GameCustomization_GameModeOption_Standard 0
-    multichoiceoption gText_GameCustomization_GameModeOption_Casual 1
-    multichoiceoption gText_GameCustomization_GameModeOption_Hard 2
-    multichoice 0x0 0x0 THREE_MULTICHOICE_OPTIONS TRUE
+GameCustomization_DifficultyMode:
+    msgbox gText_GameCustomization_DifficultyMode_Prompt MSG_KEEPOPEN
+    multichoiceoption gText_GameCustomization_DifficultyModeOption_Standard 0
+    multichoiceoption gText_GameCustomization_DifficultyModeOption_Hard 1
+    multichoice 0x0 0x0 TWO_MULTICHOICE_OPTIONS TRUE
     switch LASTRESULT
     case 0, EnableStandardMode _call
-    case 1, EnableCasualMode _call
-    case 2, EnableHardMode _call
+    case 1, EnableHardMode _call
     goto GameCustomizationMenu
 
 EnableStandardMode:
     setvar 0x4000 0x0
     clearflag 0x93C @ Disable hard mode
     sound 0x30 @Save
-    msgbox gText_GameCustomization_GameMode_StandardSet MSG_NORMAL
-    return
-
-EnableCasualMode:
-    setvar 0x4000 0x1
-    clearflag 0x93C @ Disable hard mode
-    sound 0x30 @Save
-    msgbox gText_GameCustomization_GameMode_CasualSet MSG_NORMAL
+    msgbox gText_GameCustomization_DifficultyMode_StandardSet MSG_NORMAL
     return
 
 EnableHardMode:
     setvar 0x4000 0x2
     setflag 0x93C @ Enable hard mode
+    setvar 0x5155 0x1 @ Show hard mode in settings
     sound 0x30 @Save
-    msgbox gText_GameCustomization_GameMode_HardSet MSG_NORMAL
+    msgbox gText_GameCustomization_DifficultyMode_HardSet MSG_NORMAL
     return
 
-GiveCasualModeItems:
+GiveQoLItemsFromStart:
     additem ITEM_EXP_SHARE 0x1
     additem ITEM_PORTA_PC 0x1
     additem ITEM_POKE_VIAL 0x1
@@ -1356,9 +1350,29 @@ EnableSoftLevelCaps:
 
 EnableHardLevelCaps:
     setflag 0x93B @ Hard caps
+    setvar 0x5156 0x1 @ Show hard caps in settings
     sound 0x30 @Save
     msgbox gText_GameCustomization_HardLevelCapsTurnedOn MSG_NORMAL
     return
+
+GameCustomization_StartWithQoLItems:
+    msgbox gText_GameCustomization_QoLFromStart MSG_YESNO
+    compare LASTRESULT NO
+    if notequal _call EnableQoLItems
+    if equal _call DisableQoLItems
+    goto GameCustomizationMenu
+
+EnableQoLItems:
+    setvar 0x4000 0x1 @ Giving QoL items
+    sound 0x30 @Save
+    msgbox gText_GameCustomization_QoLItemsOn MSG_NORMAL
+	return
+
+DisableQoLItems:
+    setvar 0x4000 0x0 @ Not giving QoL items
+    sound 0x30 @Save
+    msgbox gText_GameCustomization_QoLItemsOff MSG_NORMAL
+	return
 
 GameCustomization_QuickStart:
     msgbox gText_GameCustomization_QuickStartQuestion MSG_YESNO

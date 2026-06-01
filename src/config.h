@@ -15,6 +15,10 @@
 
 /*===== Custom code for Pokemon Amethyst =====*/
 #define NEW_BATTLE_BACKGROUNDS //When set, battle backgrounds and intro animations will be dynamically replaced by those defined in src/Tables/battle_background_tables.c 
+#define VAR_AUTO_SORT_BAG 0x5154 //Options for automatically sorting the bag
+#define VAR_GAME_DIFFICULTY 0x5155 //Options for game difficulty (Standard vs Hard)
+#define VAR_LEVEL_CAPS 0x5156 //Options for soft vs hard level caps
+// TODO: Skip cutscenes here later
 
 /*===== General Vars =====*/
 #define VAR_TERRAIN 0x5000 //Set to a terrain type for a battle to begin with the given terrain

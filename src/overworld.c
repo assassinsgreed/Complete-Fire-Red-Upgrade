@@ -1693,8 +1693,13 @@ void RunOnResumeMapScript(void)
 // Post-release backward compatible hack: If hard caps are on and the player has the dex nav, mark Irene as beaten too (she must have been)
 void PostReleaseAutomaticFixes(void)
 {
+	// Fix broken hard level cap flag
 	if (FlagGet(FLAG_HARD_LEVEL_CAP) && FlagGet(FLAG_SYS_DEXNAV))
 		FlagSet(FLAG_BEAT_IRENE_IN_RUBARR_DESERT);
+
+	// Automatically set difficulty mode and caps
+	VarSet(VAR_GAME_DIFFICULTY, FlagGet(FLAG_HARD_MODE) ? 1 : 0);
+	VarSet(VAR_LEVEL_CAPS, FlagGet(FLAG_HARD_LEVEL_CAP) ? 1 : 0);
 }
 
 bool8 TryRunOnFrameMapScript(void)

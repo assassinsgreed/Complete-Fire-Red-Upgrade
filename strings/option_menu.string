@@ -1,0 +1,41 @@
+#org @gText_PickSwitchCancel_Page1
+[L_BUTTON][R_BUTTON]Page 1 [DPAD_UP_DOWN]Pick [DPAD_LEFT_RIGHT]Switch [A_BUTTON][B_BUTTON]Cancel
+
+#org @gText_PickSwitchCancel_Page2
+[L_BUTTON][R_BUTTON]Page 2 [DPAD_UP_DOWN]Pick [DPAD_LEFT_RIGHT]Switch [A_BUTTON][B_BUTTON]Cancel
+
+#org @gText_OptionsMenu_On
+On
+
+#org @gText_OptionsMenu_Off
+Off
+
+#org @gText_OptionsMenu_AutoSortBag
+Auto-Sort Bag
+
+#org @gText_OptionsMenu_AutoSortBag_ByName
+By Name
+
+#org @gText_OptionsMenu_AutoSortBag_ByType
+By Type
+
+#org @gText_OptionsMenu_AutoSortBag_ByAmount
+By Amount
+
+#org @gText_OptionsMenu_GameDifficulty
+Game Difficulty
+
+#org @gText_OptionsMenu_GameDifficulty_Standard
+Standard
+
+#org @gText_OptionsMenu_GameDifficulty_Hard
+Hard
+
+#org @gText_OptionsMenu_LevelCaps
+Level Caps
+
+#org @gText_OptionsMenu_LevelCaps_Soft
+Soft
+
+#org @gText_OptionsMenu_LevelCaps_Hard
+Hard (-2)

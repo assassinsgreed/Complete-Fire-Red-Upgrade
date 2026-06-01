@@ -783,3 +783,15 @@ PrintSkillsPage 081370ec 0
 
 ##Pokedex Region Map Fix
 GetSpeciesPokedexAreaMarkers 0813C9DC 2
+
+##Options Menu
+CB2_OptionsMenuFromStartMenu 08088388 0
+Task_OptionMenu 08088780 1
+CloseAndSaveOptionMenu 08088B00 1
+CB2_OptionMenu 08088454 0
+BufferOptionMenuString 080889A8 1
+OptionMenu_ProcessInput 080888C0 0
+LoadOptionMenuPalette 080886F0 0
+LoadOptionMenuItemNames 08088D8C 0
+OptionMenu_PickSwitchCancel 08088680 0
+StartMenuBagCallback 0806f480 0
