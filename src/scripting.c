@@ -3616,12 +3616,15 @@ void GetLuckyPokemonSpecies()
 void GetSlowpokeNewsSpecies()
 {
 	// Get the species name from LASTRESULT and get it's dex #, then buffer it's name in buffer1
-	u16 dexNum = VarGet(gSpecialVar_LastResult);
-	int species = NationalPokedexNumToSpecies(dexNum);
-	GetSpeciesName(gStringVar1, species);
-
-	// Set LASTRESULT to the dex #
-	gSpecialVar_LastResult = species;
+	do
+	{
+		u16 dexNum = VarGet(gSpecialVar_LastResult);
+		int species = NationalPokedexNumToSpecies(dexNum);
+		GetSpeciesName(gStringVar1, species);
+		// Set LASTRESULT to the species's dex number (not the original dex# as this is for the national dex!)
+		gSpecialVar_LastResult = species;
+	}
+	while (StringCompare(gStringVar1, (const u8*)"/149") == 0);
 }
 
 void CheckIfCaught()

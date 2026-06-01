@@ -209,7 +209,7 @@ MapEntryScript_UteyaVillage_SlowpokeNews_SetSpecies:
     call BufferSpeciesName    
     checkflag 0xE32 @ Species has been set
     if SET _goto End
-    random 0x11F @ up to #287 to avoid exposing starters and legendaries, stored in LastResult
+    random 287 @ up to #287 to avoid exposing starters and legendaries, stored in LastResult
     copyvar 0x40ED LASTRESULT @ Slowpoke news dex #
     setflag 0xE32 @ Species has been set
     call BufferSpeciesName @ Get the species name belonging to this pokedex #
@@ -298,6 +298,7 @@ EventScript_UteyaVillage_SlowpokeNews_Editor:
     end
 
 SlowpokeNewsCompleted_Editor:
+    call BufferSpeciesName 
     npcchatwithmovement gText_UteyaVillage_SlowpokeNews_Editor_PokemonShown m_LookLeft
     end
 
