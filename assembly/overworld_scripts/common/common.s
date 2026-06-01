@@ -1125,6 +1125,7 @@ ClosedLinkToHawthornesPC:
 .global GameCustomizationMain
 GameCustomizationMain:
 	lock
+    callasm SetupNewGameTextSpeedAndSound
 	setflag 0x056 @ Hide Ena on Route 11 South
     setflag 0x063 @ Nihilego Ultra Wormhole
     setflag 0x064 @ Buzzwole Ultra Wormhole

@@ -4017,3 +4017,10 @@ void MakeStarterShinyIfGameModifierIsOn()
 			ForceMonShiny(&gPlayerParty[0]);
 	}
 }
+
+// For making the start of the game more pleasant
+void SetupNewGameTextSpeedAndSound()
+{
+	gSaveBlock2->optionsTextSpeed = 2; // Fast
+	gSaveBlock2->optionsSound = 1; // Stereo
+}
