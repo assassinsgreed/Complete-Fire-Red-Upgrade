@@ -68,7 +68,7 @@ Policeman_PlutoDefeated:
 EventScript_FerroxVillage_UndergroundMiner:
     lock
     faceplayer
-    msgbox gText_FerroxOverworld_Policeman_UndergroundMiner_Intro MSG_NORMAL
+    msgbox gText_FerroxOverworld_UndergroundMiner_Intro MSG_NORMAL
     checkitem ITEM_ADM 0x1
     compare LASTRESULT TRUE
     if equal _goto UndergroundMiner_HaveADM
@@ -78,12 +78,16 @@ ShowMoneyForMiner:
     showmoney 0x0 0x0
     return
 
+UndergroundMiner_HideMoney:
+    hidemoney
+    return
+
 UndergroundMiner_HaveADM:
-    msgbox gText_FerroxOverworld_Policeman_UndergroundMiner_HaveADM MSG_KEEPOPEN
+    msgbox gText_FerroxOverworld_UndergroundMiner_HaveADM MSG_KEEPOPEN
     goto UndergroundMiner_PromtForDigging
 
 UndergroundMiner_DoNotHaveADM:
-    msgbox gText_FerroxOverworld_Policeman_UndergroundMiner_DoNotHaveADM MSG_KEEPOPEN
+    msgbox gText_FerroxOverworld_UndergroundMiner_DoNotHaveADM MSG_KEEPOPEN
     goto UndergroundMiner_PromtForDigging
 
 UndergroundMiner_PromtForDigging:
@@ -92,7 +96,7 @@ UndergroundMiner_PromtForDigging:
     if equal _call ShowMoneyForMiner
     multichoiceoption gText_Yes 0
 	multichoiceoption gText_No 1
-	multichoiceoption gText_FerroxOverworld_Policeman_UndergroundMiner_ExplainationChoice 2
+	multichoiceoption gText_FerroxOverworld_UndergroundMiner_ExplainationChoice 2
     multichoice 0x60 0x0 THREE_MULTICHOICE_OPTIONS FALSE
 	copyvar MULTICHOICE_SELECTION LASTRESULT
 	switch LASTRESULT
@@ -108,7 +112,7 @@ UndergroundMiner_GoMining:
     goto UndergroundMiner_Mine
 
 UndergroundMiner_PayingToMine:
-    msgbox gText_FerroxOverworld_Policeman_UndergroundMiner_Paying MSG_KEEPOPEN
+    msgbox gText_FerroxOverworld_UndergroundMiner_Paying MSG_KEEPOPEN
     checkmoney 1000
     compare LASTRESULT NO
     if equal _goto UndergroundMiner_NotEnoughMoney
@@ -118,31 +122,35 @@ UndergroundMiner_PayingToMine:
     waitse
     pause DELAY_1SECOND
     hidemoney
-    msgbox gText_FerroxOverworld_Policeman_UndergroundMiner_Paid MSG_NORMAL
+    msgbox gText_FerroxOverworld_UndergroundMiner_Paid MSG_NORMAL
     goto UndergroundMiner_Mine
 
 UndergroundMiner_NotEnoughMoney:
     hidemoney
-    npcchatwithmovement gText_FerroxOverworld_Policeman_UndergroundMiner_NotEnoughMoney m_LookUp
+    npcchatwithmovement gText_FerroxOverworld_UndergroundMiner_NotEnoughMoney m_LookUp
     end
 
 UndergroundMiner_DoNotGoMining:
-    hidemoney
-    npcchatwithmovement gText_FerroxOverworld_Policeman_UndergroundMiner_NotGoingMining m_LookUp
+    checkitem ITEM_ADM 0x1
+    compare LASTRESULT FALSE
+    if equal _call UndergroundMiner_HideMoney
+    npcchatwithmovement gText_FerroxOverworld_UndergroundMiner_NotGoingMining m_LookUp
     end
 
 UndergroundMiner_MiningExplaination:
-    hidemoney
-    msgbox gText_FerroxOverworld_Policeman_UndergroundMiner_Explaination MSG_KEEPOPEN
+    checkitem ITEM_ADM 0x1
+    compare LASTRESULT FALSE
+    if equal _call UndergroundMiner_HideMoney
+    msgbox gText_FerroxOverworld_UndergroundMiner_Explaination MSG_KEEPOPEN
     goto UndergroundMiner_PromtForDigging
 
 UndergroundMiner_Mine:
-    msgbox gText_FerroxOverworld_Policeman_UndergroundMiner_StartingDigging MSG_NORMAL
+    msgbox gText_FerroxOverworld_UndergroundMiner_StartingDigging MSG_NORMAL
     playbgm 0x149 @ Skyarrow bridge
     callasm InitStartUndergroundMining
     waitstate
     fadedefaultbgm
-    npcchatwithmovement gText_FerroxOverworld_Policeman_UndergroundMiner_DoneDigging m_LookUp
+    npcchatwithmovement gText_FerroxOverworld_UndergroundMiner_DoneDigging m_LookUp
     end
 
 .global SignScript_FerroxVillage_Library

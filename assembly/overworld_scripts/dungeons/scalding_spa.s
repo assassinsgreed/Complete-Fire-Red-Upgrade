@@ -377,8 +377,15 @@ TileScript_GlastrierRoom_LeftTile:
     cry SPECIES_GLASTRIER 0x0
     waitcry
     msgbox gtext_GlastrierRoom_GlastrierEvaluation MSG_NORMAL
+    checkitem ITEM_VICTORY_FLAG 0x1
+    compare LASTRESULT TRUE
+    if notequal _goto GlastrierFailedEvaluation
     checkflag 0x4BC @ Defeated Champion Selene
     if SET _goto GlastrierAcceptsPlayer
+    goto GlastrierFailedEvaluation
+    end
+
+GlastrierFailedEvaluation:
     msgbox gtext_GlastrierRoom_GlastrierEvaluationFailed MSG_NORMAL
     call GlastrierLeavesCommon
     setflag 0x1A @ Temp flag to hide Glastrier

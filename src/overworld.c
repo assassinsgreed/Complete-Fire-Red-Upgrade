@@ -1676,7 +1676,10 @@ void RunOnResumeMapScript(void)
 	
 				if (ability == ABILITY_BATTLEBOND && !isBattleBondEnabled)
 				{
-					GiveMonNatureAndAbility(mon, GetNature(mon), 0, FALSE, TRUE, FALSE); // Ability 1, Torrent
+					u32 personality = GetMonData(mon, MON_DATA_PERSONALITY, NULL);
+					personality &= ~(1);
+					personality |= 0; // First ability, Torrent
+					mon->personality = personality;
 				}
 			}
 		}

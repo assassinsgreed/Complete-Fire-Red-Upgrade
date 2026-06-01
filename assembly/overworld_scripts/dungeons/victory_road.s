@@ -425,6 +425,7 @@ LevelScript_VictoryRoadPeak_BattleForVictoryFlag:
     waitfanfare
     closemessage
     additem ITEM_VICTORY_FLAG 0x1
+    clearflag 0x4BC @ Champion Selene has not been beaten, in case this was somehow set by another script or cheats
     setflag 0x72 @ Victory Flag claimed
     clearflag 0x06B @ Rival appears in Daimyn City for training battle 
     setvar 0x4072 0x1 @ cutscenes over

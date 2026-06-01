@@ -496,8 +496,16 @@ AscensionTower_ChampionsQuarters_TitleDefense:
     applymovement PLAYER m_ReigningChampionWalksToHallOfFame
     waitmovement PLAYER
     addvar 0x40AA 0x1 @ Player has defended their title one more time
+    clearflag 0x9D @ Postgame NPCs will now appear (in case they weren't before)
+    compare 0x4071 0x2 @ Hawthorne's Conservatory event
+    if lessthan _call PrepareHawthornesConservatoryEvent
     warp 1 80 0
     end
+
+@ This is a repair script for legacy saves. Force Hawthorne's Conservatory cutscene to play in postgame
+PrepareHawthornesConservatoryEvent:
+    setvar 0x4071 0x1
+    return
 
 AscensionTower_ChampionsQuarters_TitleDefense_AfterBeatingKurtis:
     random 14 @ Include Irene, Ronald, and Kurtis

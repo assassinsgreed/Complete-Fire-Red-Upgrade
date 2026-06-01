@@ -543,7 +543,10 @@ static void Task_GiveItemsBeforeFadeOut(u8 taskId)
 						IncrementGameStat(GAME_STAT_ITEMS_FOUND_WHILE_MINING);
 						AddBagItem(item, 1);
 						if (item == ITEM_POKE_CHIP)
+						{
+							AddBagItem(item, 4); // 5 total per fossil find to make them more rewarding 
 							StringExpandPlaceholders(gStringVar4, gText_UndergroundMining_FoundFossil);
+						}
 						else
 							StringExpandPlaceholders(gStringVar4, gText_UndergroundMining_FoundItem);
 					}

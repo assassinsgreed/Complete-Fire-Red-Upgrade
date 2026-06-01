@@ -58,6 +58,18 @@ AM
 #org @gText_StartMenu_PM
 PM
 
+#org @gText_StartMenu_Morning
+ (MRN)
+
+#org @gText_StartMenu_Day
+ (DAY)
+
+#org @gText_StartMenu_Evening
+ (EVE)
+
+#org @gText_StartMenu_Night
+ (NGT)
+
 #org @gText_StartMenu_RedText
 [MAIN_COLOUR][0C][SHADOW_COLOUR][0D]
 

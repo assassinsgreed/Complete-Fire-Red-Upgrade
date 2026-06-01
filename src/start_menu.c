@@ -13,6 +13,7 @@
 
 #include "../include/new/dexnav.h"
 #include "../include/string_util.h"
+#include "../include/new/dns.h"
 
 #ifndef UNBOUND
 /*
@@ -174,7 +175,7 @@ static const struct WindowTemplate sTimeBoxWindowTemplate = {
 	.bg = 0,
 	.tilemapLeft = 1,
 	.tilemapTop = 1,
-	.width = 10,
+	.width = 14,
 	.height = 2,
 	.paletteNum = 15,
 	.baseBlock = 0x008
@@ -502,6 +503,10 @@ extern u8 gText_StartMenu_TimeBase[];
 extern u8 gText_StartMenu_TimeBase_12Hr[];
 extern u8 gText_StartMenu_AM[];
 extern u8 gText_StartMenu_PM[];
+extern u8 gText_StartMenu_Morning[];
+extern u8 gText_StartMenu_Day[];
+extern u8 gText_StartMenu_Evening[];
+extern u8 gText_StartMenu_Night[];
 extern u8 gText_StartMenu_RedText[];
 extern u8 gText_StartMenu_NormalText[];
 extern u8 gText_StartMenu_Sunday[];
@@ -527,12 +532,21 @@ static u8* sDayNames[] =
 
 static void UpdateTimeText()
 {
-	//Prepare string: "DOW. HH:MM AM"
+	//Prepare string: "DOW. HH:MM AM (TimeOfDay)"
 	const u8* amPMString = (gClock.hour >= 12) ? gText_StartMenu_PM : gText_StartMenu_AM;
+	const u8* timeOfDayString = gText_StartMenu_Day;
+	if (IsMorning())
+		timeOfDayString = gText_StartMenu_Morning;
+	else if (IsEvening())
+		timeOfDayString = gText_StartMenu_Evening;
+	else if (IsNightTime())
+		timeOfDayString = gText_StartMenu_Night;
+	StringCopy(gStringVar3, amPMString);
+	StringAppend(gStringVar3, timeOfDayString);
+
+	// HH:MM
 	ConvertIntToDecimalStringN(gStringVar1, (gClock.hour == 0) ? 12 : (gClock.hour > 12) ? gClock.hour - 12 : gClock.hour, STR_CONV_MODE_RIGHT_ALIGN, 2); //Hour - 12hr format
 	ConvertIntToDecimalStringN(gStringVar2, gClock.minute, STR_CONV_MODE_LEADING_ZEROS, 2); //Minute
-
-	StringCopy(gStringVar3, amPMString);
 	StringCopy(gStringVarC, (gClock.dayOfWeek >= 7) ? gText_StartMenu_Error : sDayNames[gClock.dayOfWeek]); //Day of Week
 	StringExpandPlaceholders(gStringVar4, gText_StartMenu_TimeBase_12Hr);
 

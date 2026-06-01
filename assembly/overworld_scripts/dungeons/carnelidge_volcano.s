@@ -140,8 +140,15 @@ EventScript_CarnelidgeVolcano_TM38_FireBlast:
 TileScript_CarnelidgeVolcano_VolcanionRoom:
     checkflag 0x73 @ Volcanion caught or defeated
     if SET _goto End
+    checkitem ITEM_VICTORY_FLAG 0x1
+    compare LASTRESULT TRUE
+    if notequal _goto VolcanionConditionsNotMet
     checkflag 0x4BC @ Became champion
     if SET _goto VolcanionEmerges
+    goto VolcanionConditionsNotMet
+    end
+
+VolcanionConditionsNotMet:
     lock
     msgbox gText_CarnelidgeVolcano_VolcanionPresenceFelt MSG_NORMAL
     setvar 0x4000 0x1 @ Don't trigger this until the player returns

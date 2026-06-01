@@ -3988,3 +3988,13 @@ void CheckBeastKillerInFirstSlot()
 	else if (species == SPECIES_SILVALLY)
 		gSpecialVar_LastResult = 2;
 }
+
+// For some reason, setting the shiny flag does not always result in a shiny, so we do it explicitly in C code
+void MakeStarterShinyIfGameModifierIsOn()
+{
+	if (FlagGet(FLAG_SHINY_CREATION) || FlagGet(FLAG_SHINY_GAME_MODIFIER_ON))
+	{
+		while (!IsMonShiny(&gPlayerParty[0]))
+			ForceMonShiny(&gPlayerParty[0]);
+	}
+}
