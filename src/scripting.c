@@ -3954,7 +3954,26 @@ void CheckBeastKillerInParty()
 	for (u8 i = 0; i < PARTY_SIZE; ++i)
 	{
 		u16 species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES, NULL);
-		if (species == SPECIES_TYPE_NULL || species == SPECIES_SILVALLY)
+		// Each Silvally form is a different species, so check for them all
+		if (species == SPECIES_TYPE_NULL ||
+			species == SPECIES_SILVALLY ||
+			SPECIES_SILVALLY_FIGHT ||
+			SPECIES_SILVALLY_FLYING ||
+			SPECIES_SILVALLY_POISON ||
+			SPECIES_SILVALLY_GROUND ||
+			SPECIES_SILVALLY_ROCK ||
+			SPECIES_SILVALLY_BUG ||
+			SPECIES_SILVALLY_GHOST ||
+			SPECIES_SILVALLY_STEEL ||
+			SPECIES_SILVALLY_FIRE ||
+			SPECIES_SILVALLY_WATER ||
+			SPECIES_SILVALLY_GRASS ||
+			SPECIES_SILVALLY_ELECTRIC ||
+			SPECIES_SILVALLY_PSYCHIC ||
+			SPECIES_SILVALLY_ICE ||
+			SPECIES_SILVALLY_DRAGON ||
+			SPECIES_SILVALLY_DARK ||
+			SPECIES_SILVALLY_FAIRY)
 		{
 			gSpecialVar_LastResult = 1;
 			break;
