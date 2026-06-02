@@ -489,7 +489,7 @@ LifeOrb:
 
 AssaultVest:
     setvar 0x4001 ITEM_ASSAULT_VEST
-    setvar 0x4002 3000
+    setvar 0x4002 2000
     goto ItemTrader_AfterChoiceMade
 
 FocusSash:

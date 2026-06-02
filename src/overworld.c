@@ -1698,7 +1698,7 @@ void PostReleaseAutomaticFixes(void)
 		FlagSet(FLAG_BEAT_IRENE_IN_RUBARR_DESERT);
 
 	// Automatically set difficulty mode and caps
-	VarSet(VAR_GAME_DIFFICULTY, FlagGet(FLAG_HARD_MODE) ? 1 : 0);
+	VarSet(VAR_DIFFICULTY_SETTING, FlagGet(FLAG_HARD_MODE) ? 1 : 0);
 	VarSet(VAR_LEVEL_CAPS, FlagGet(FLAG_HARD_LEVEL_CAP) ? 1 : 0);
 }
 

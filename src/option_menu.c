@@ -230,7 +230,7 @@ void CB2_OptionsMenuFromStartMenu(void)
     sOptionMenuPtr->option[MENUITEM_BUTTONMODE] = gSaveBlock2->optionsButtonMode;
     sOptionMenuPtr->option[MENUITEM_FRAMETYPE] = gSaveBlock2->optionsWindowFrameType;
     sOptionMenuPtr->option_secondPage[MENUITEM_AUTOSORTBAG] = VarGet(VAR_AUTO_SORT_BAG);
-    sOptionMenuPtr->option_secondPage[MENUITEM_GAME_DIFFICULTY] = VarGet(VAR_GAME_DIFFICULTY);
+    sOptionMenuPtr->option_secondPage[MENUITEM_GAME_DIFFICULTY] = VarGet(VAR_DIFFICULTY_SETTING);
     sOptionMenuPtr->option_secondPage[MENUITEM_LEVEL_CAPS] = VarGet(VAR_LEVEL_CAPS);
     sOptionMenuPtr->option_secondPage[MENUITEM_SKIP_CUTSCENES] = FlagGet(FLAG_SKIP_CUTSCENES) ? 1 : 0;
     
@@ -324,7 +324,7 @@ void CloseAndSaveOptionMenu(u8 taskId)
     gSaveBlock2->optionsButtonMode = sOptionMenuPtr->option[MENUITEM_BUTTONMODE];
     gSaveBlock2->optionsWindowFrameType = sOptionMenuPtr->option[MENUITEM_FRAMETYPE];
     VarSet(VAR_AUTO_SORT_BAG, sOptionMenuPtr->option_secondPage[MENUITEM_AUTOSORTBAG]);
-    VarSet(VAR_GAME_DIFFICULTY, sOptionMenuPtr->option_secondPage[MENUITEM_GAME_DIFFICULTY]);
+    VarSet(VAR_DIFFICULTY_SETTING, sOptionMenuPtr->option_secondPage[MENUITEM_GAME_DIFFICULTY]);
     VarSet(VAR_LEVEL_CAPS, sOptionMenuPtr->option_secondPage[MENUITEM_LEVEL_CAPS]);
     // Cleanup difficulty / level cap vars to flags
     sOptionMenuPtr->option_secondPage[MENUITEM_GAME_DIFFICULTY] == 1 ? FlagSet(FLAG_HARD_MODE) : FlagClear(FLAG_HARD_MODE);

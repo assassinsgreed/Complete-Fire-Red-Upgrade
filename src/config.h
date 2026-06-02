@@ -86,7 +86,7 @@
 
 /*===== Options menu settings =====*/
 #define VAR_AUTO_SORT_BAG 0x5154 //Options for automatically sorting the bag
-#define VAR_GAME_DIFFICULTY 0x5155 //Options for game difficulty (Standard vs Hard)
+#define VAR_DIFFICULTY_SETTING 0x5155 //Options for game difficulty (Standard vs Hard) - Different than CFRU's VAR_GAME_DIFFICULTY as that changes a lot of underlying systems
 #define VAR_LEVEL_CAPS 0x5156 //Options for soft vs hard level caps
 #define FLAG_SKIP_CUTSCENES 0x93D //Option to skip cutscenes on or off
 
