@@ -127,6 +127,8 @@ LevelScripts_OlenicLab_ObtainingPokedex:
 	.hword LEVEL_SCRIPT_TERMIN
 
 LevelScript_ReceivingPokedex:
+    checkflag 0x93D @ Skipping Cutscenes
+    if SET _goto SkippingCutscene_OlenicTown_ReceivingPokedex
     sound 0x15 @ Exclaim
 	applymovement Hawthorne m_Surprise
     waitmovement Hawthorne

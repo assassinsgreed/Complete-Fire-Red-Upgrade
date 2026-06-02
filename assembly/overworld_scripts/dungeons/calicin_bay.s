@@ -104,6 +104,8 @@ EventScript_CalicinBay_StoryEvents:
     applymovement PlutoGruntClancy m_LookDown
     applymovement PlutoGruntEna m_LookDown
     waitmovement PlutoGruntEna
+    checkflag 0x93D @ Skipping Cutscenes
+    if SET _goto SkippingCutscenes_CalicinBay_ConfrontingTeamPluto
     sound 0x15 @ Exclaim
     applymovement PlutoGruntClancy m_Surprise
     applymovement PlutoGruntEna m_Surprise

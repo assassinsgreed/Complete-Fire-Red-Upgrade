@@ -32,6 +32,8 @@ LevelScripts_PlutoHQEvents:
     .hword LEVEL_SCRIPT_TERMIN
 
 LevelScript_AlistairRevealsStairs:
+    checkflag 0x93D @ Skipping Cutscenes
+    if SET _goto SkippingCutscenes_DaimynCity_RevealingPlutoHQ
     playbgm 0x173 @ Alistair's Theme
     applymovement PLAYER m_WalkUp
     waitmovement PLAYER
@@ -81,6 +83,7 @@ LevelScript_AlistairRevealsStairs:
     fadedefaultbgm
     end
 
+.global RevealStairs
 RevealStairs:
     setmaptile 0x0 0x2 0x5 0x1 @ Top left corner of stairs, impassable
     setmaptile 0x1 0x2 0x6 0x0 @ Top right corner of stairs, passable

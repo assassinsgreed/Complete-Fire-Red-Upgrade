@@ -362,6 +362,8 @@ LevelScript_VictoryRoadPeak_BattleForVictoryFlag:
     if equal _call PlayerWalkRight_Return
     applymovement PLAYER m_LookUp
     waitmovement PLAYER
+    checkflag 0x93D @ Skipping Cutscenes
+    if SET _goto SkippingCutscenes_VictoryRoad_RivalEncounter
     playse 0x9 @ Exit Room
     showsprite Rival
     pause DELAY_HALFSECOND

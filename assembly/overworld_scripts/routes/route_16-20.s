@@ -162,6 +162,8 @@ EventScript_Route17_ProfessorHawthorne:
     end
 
 EventScript_Route17_HawthorneChooseStarter:
+    checkflag 0x93D @ Skipping Cutscenes
+    if SET _goto SkippingCutscene_Route17_ChoosingStarter
     setvar StoryEventVar PlayerChoosingStarter
     lock
     faceplayer
@@ -199,7 +201,7 @@ EventScript_Route17_HawthorneChooseStarter:
 EventScript_Route17_PlayerChoosingStarter:
     lock
     faceplayer
-    msgbox gText_Route17_HawthorneInvitesPlayerToChooseStarter MSG_NORMAL
+    npcchatwithmovement gText_Route17_HawthorneInvitesPlayerToChooseStarter m_LookRight
     release
     end
 
@@ -221,6 +223,8 @@ EventScript_Route17_ChampionSelene_BeforeChoosingStarter:
     end
 
 TileEvent_MeetingRival:
+    checkflag 0x93D @ Skipping Cutscenes
+    if SET _goto SkippingCutscene_Route17_MeetingHawthorneAndSelene
     getplayerpos 0x4000 0x4001 @ Get player x and y in throwaway vars
     lock
     special 0xAF @ Dismount bike if on it (Casual Mode)
@@ -459,6 +463,8 @@ EventScript_StarterChoice_SelectionMade:
 	msgbox gText_StarterChoice_Finalized MSG_NORMAL
 	setflag 0x828 @ Enable Pokemon Menu
 	clearflag 0x911 @ Enable wild encounters
+    checkflag 0x93D @ Skipping Cutscenes
+    if SET _goto SkippingCutscenes_Route17_BattleRival
     msgbox gText_Route17_HawthorneGettingPokeballs MSG_NORMAL
     getplayerpos 0x4000 0x4001 @ Get player x and y in throwaway vars
     compare 0x4000 0x0F @ Above, below, or to the left of pokeballs

@@ -40,6 +40,8 @@ LevelScripts_DaimynCityGym:
     .hword LEVEL_SCRIPT_TERMIN
 
 LevelScript_IntroduceChance:
+    checkflag 0x93D @ Skipping Cutscenes
+    if SET _goto SkippingCutscene_DaimynCity_GymPuzzleIntroduction
     applymovement Chance m_Joy
     msgbox gText_DaimynCityGym_Cutscene_ChanceLaughs MSG_NORMAL
     applymovement Chance m_ChanceMovesToMeetPlayer

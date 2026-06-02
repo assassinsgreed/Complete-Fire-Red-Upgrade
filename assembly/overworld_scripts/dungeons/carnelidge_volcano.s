@@ -302,6 +302,8 @@ LevelScript_InitiateStoryConclusion:
     applymovement PLAYER m_PlayerWalksToConfrontAlistair
     waitmovement PLAYER
     pause DELAY_HALFSECOND
+    checkflag 0x93D @ Skipping Cutscenes
+    if SET _goto SkippingCutscenes_CarnelidgeVolcanoPeak_StoppingAlistair
     msgbox gText_CarnelidgeVolcanoPeak_AlistairGreetsPlayer MSG_NORMAL
     applymovement Alistair m_LookDown
     playbgm 0x173 @ Alistair's theme
@@ -584,6 +586,7 @@ BattleAlistair:
     if SET _call PrintUpdatedLevelCaps
     end
 
+.global HandleJirachisAwakening
 HandleJirachisAwakening:
     playse 0x5F @ Shiny
 	dofieldeffect 69 @ Screen flash

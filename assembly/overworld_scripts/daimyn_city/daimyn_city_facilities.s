@@ -63,6 +63,8 @@ TileScript_DaimynCity_GuardHouseWest_TriggerRival:
     applymovement PLAYER m_WalkLeft
     applymovement SpriteRival m_RivalMeetsPlayer_West
     waitmovement ALLEVENTS
+    checkflag 0x93D @ Skipping Cutscenes
+    if SET _goto SkippingCutscene_DaimynCityGuardHouseWest_RivalBattle
     call RivalBattleCommon
     applymovement PLAYER m_PlayerMovesOutOfWay_West
     waitmovement ALLEVENTS
@@ -84,6 +86,8 @@ TileScript_DaimynCity_GuardHouseSouth_TriggerRival:
     applymovement PLAYER m_WalkDown
     applymovement SpriteRival m_RivalMeetsPlayer_South
     waitmovement ALLEVENTS
+    checkflag 0x93D @ Skipping Cutscenes
+    if SET _goto SkippingCutscene_DaimynCityGuardHouseSouth_RivalBattle
     call RivalBattleCommon
     applymovement PLAYER m_PlayerMovesOutOfWay_South
     waitmovement ALLEVENTS

@@ -299,6 +299,8 @@ ReturningDexNavs:
     waitmovement ALLEVENTS
     lock
     faceplayer
+    checkflag 0x93D @ Skipping Cutscenes
+    if SET _goto SkippingCutscene_Route3_ReturningDexNavs
     msgbox gText_Route3_AssistantWelcomesPlayerBack MSG_NORMAL
     showsprite Rival
     movesprite Rival 0x49 0x14
@@ -385,6 +387,8 @@ TileScript_Route3_InitiateDexNavEvent:
     call MovePlayerToLineUpWithRival
     applymovement Rival m_RivalMeetsPlayer
     waitmovement ALLEVENTS
+    checkflag 0x93D @ Skipping Cutscenes
+    if SET _goto SkippingCutscene_Route3_InitiatingDexNavEvent
     msgbox gText_Route3_RivalGymBadgeAcknowledgement MSG_YESNO
     compare LASTRESULT NO
     if equal _call PlayerDoesNotKnowWhyRivalIsHere
@@ -581,6 +585,8 @@ LevelScript_Route4_ForemanEvent:
 
 RemoveBouldersCutscene:
     lock
+    checkflag 0x93D
+    if SET _goto SkippingCutscene_Route4_PathCleared
     sound 0x15 @ Exclaim
     special 0xAF @ Dismount bike if on it (Casual Mode)
     applymovement Foreman m_Surprise

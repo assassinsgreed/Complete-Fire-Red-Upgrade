@@ -24,6 +24,7 @@ MapEntryScript_FerroxOverworld_FlightFlag:
     if lessorequal _call HideStellaInGym
     end
 
+.global MoveLoudMan
 MoveLoudMan:
     movesprite2 LoudMan 0xA 0xD
     setobjectmovementtype LoudMan 0x2 @ Walk around
@@ -171,6 +172,8 @@ SignScript_FerroxVillage_TownEntrance:
 .global TileScript_FerroxVillage_ApproachedGym
 TileScript_FerroxVillage_ApproachedGym:
     lock
+    checkflag 0x93D @ Skipping Cutscenes
+    if SET _goto SkippingCutscene_FerroxVillage_ApproachingGym
     special 0xAF @ Dismount bike if on it (Casual Mode)
     pause DELAY_HALFSECOND    
     applymovement PLAYER m_LookUp
@@ -660,6 +663,8 @@ EventScript_FerroxLibrary_PokemonTrainerVincent:
 
 .global EventScript_FerroxLibrary_Alistair
 EventScript_FerroxLibrary_Alistair:
+    checkflag 0x93D @ Skipping Cutscenes
+    if SET _goto SkippingCutscene_FerroxVillage_AlistairInFerroxLibrary
     call AlignPlayerForPlot
     clearflag 0x2F @ Show Rival
     showsprite Rival

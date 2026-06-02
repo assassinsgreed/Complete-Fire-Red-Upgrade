@@ -292,6 +292,8 @@ LevelScripts_PlutoHQKurtisEvent:
 
 LevelScript_ChallengingKurtis:
     hidesprite 0x2 @ Gyaradosite
+    checkflag 0x93D @ Skipping Cutscenes
+    if SET _goto SkippingCutscenes_PlutoHQ_ConfrontingKurtis
     pause DELAY_HALFSECOND
     msgbox gText_PlutoHQ_B1F_KurtisEncounter_KurtisSeesPlayer MSG_NORMAL
     applymovement PLAYER m_PlayerApproachesKurtis

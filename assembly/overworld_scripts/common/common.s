@@ -1163,19 +1163,19 @@ GameCustomizationMenu:
     msgboxsign
     msgbox gText_GameCustomization_CustomizationMenu MSG_KEEPOPEN
 	multichoiceoption gText_GameCustomizationMenu_DifficultyMode 0
-    multichoiceoption gText_GameCustomizationMenu_Tutorials 1
+    multichoiceoption gText_GameCustomizationMenu_LevelCaps 1
     multichoiceoption gText_GameCustomizationMenu_StarterSelection 2
-    multichoiceoption gText_GameCustomizationMenu_LevelCaps 3
-    multichoiceoption gText_GameCustomizationMenu_QuickStart 4
+    multichoiceoption gText_GameCustomizationMenu_SkipCutscenes 3
+    multichoiceoption gText_GameCustomizationMenu_Tutorials 4
     multichoiceoption gText_GameCustomizationMenu_StartWithQoLItems 5
     multichoiceoption gText_GameCustomizationMenu_Done 6
     multichoice 0x0 0x0 SEVEN_MULTICHOICE_OPTIONS FALSE
     switch LASTRESULT
     case 0, GameCustomization_DifficultyMode _goto
-    case 1, GameCustomization_Tutorials _goto
+    case 1, GameCustomization_LevelCaps _goto
     case 2, GameCustomization_StarterSelection _goto
-    case 3, GameCustomization_LevelCaps _goto
-    case 4, GameCustomization_QuickStart _goto
+    case 3, GameCustomization_SkipCutscenes _goto
+    case 4, GameCustomization_Tutorials _goto
     case 5, GameCustomization_StartWithQoLItems _goto
     // Case n-1 and 0x7F fall through to completion
     goto GameCustomizationComplete
@@ -1374,23 +1374,23 @@ DisableQoLItems:
     msgbox gText_GameCustomization_QoLItemsOff MSG_NORMAL
 	return
 
-GameCustomization_QuickStart:
-    msgbox gText_GameCustomization_QuickStartQuestion MSG_YESNO
+GameCustomization_SkipCutscenes:
+    msgbox gText_GameCustomization_SkipCutscenesQuestion MSG_YESNO
     compare LASTRESULT NO
-    if notequal _call EnableQuickStart
-    if equal _call DisableQuickStart
+    if notequal _call EnableCutsceneSkipping
+    if equal _call DisableCutsceneSkipping
     goto GameCustomizationMenu
 
-EnableQuickStart:
-    setvar 0x4055 0x5 @ Anthra / Route 17 story events
-    additem ITEM_TOWN_MAP 0x1
-    setflag 0x82F @ Player can now run
-    setflag 0x914 @ Enable auto run
-    clearflag 0x02B @ Show the professor, champion, and tv crew
-    call SetGameInitializationFlags
-    setflag 0x2F @ Hide Rival in Anthra Town (Not cleared in Disable script as it is set by other game initialization scripts)
+EnableCutsceneSkipping:
+    setflag 0x93D @ Skip Cutscenes
     sound 0x30 @Save
-    msgbox gText_GameCustomization_QuickStartTurnedOn MSG_NORMAL
+    msgbox gText_GameCustomization_SkipCutscenesTurnedOn MSG_NORMAL
+	return
+
+DisableCutsceneSkipping:
+    clearflag 0x93D @ Play Cutscenes
+    sound 0x30 @Save
+    msgbox gText_GameCustomization_SkipCutscenesTurnedOff MSG_NORMAL
 	return
 
 .global SetGameInitializationFlags
@@ -1401,16 +1401,6 @@ SetGameInitializationFlags:
 	setflag 0x029 @ Hide water starter ball on route 17
 	setflag 0x02A @ Hide fire starter ball on route 17
     return
-
-DisableQuickStart:
-    setvar 0x4055 0x0 @ Anthra / Route 17 story events
-    removeitem ITEM_TOWN_MAP 0x1
-    clearflag 0x82F @ Player can no longer run
-    clearflag 0x914 @ Disable auto run
-    setflag 0x02B @ Hide the professor, champion, and tv crew
-    sound 0x30 @Save
-    msgbox gText_GameCustomization_QuickStartTurnedOff MSG_NORMAL
-	return
 
 ////////////
 // CREDITS

@@ -584,14 +584,14 @@ Level Caps
 #org @gText_GameCustomizationMenu_StartWithQoLItems
 QoL Items
 
-#org @gText_GameCustomizationMenu_QuickStart
-Quick Start
+#org @gText_GameCustomizationMenu_SkipCutscenes
+Skip Cutscenes
 
 #org @gText_GameCustomizationMenu_Done
 Done
 
 #org @gText_GameCustomization_DifficultyMode_Prompt
-The difficulty mode dictates how the\ngame is structured.\pStandard mode is the default and\nintended experience.\pHard mode gives all boss trainers\nstronger Pok\emon and held items.\pThis option can be changed later in\nthe Options Page's second page.\pPlease select a mode.
+The difficulty mode dictates how the\ngame is structured.\pStandard mode is the default and\nintended experience.\pHard mode gives all boss trainers\nstronger Pok\emon and held items.\pThis option can be changed later in\nthe Options Menu's second page.\pPlease select a mode.
 
 #org @gText_GameCustomization_DifficultyModeOption_Standard
 Standard Mode
@@ -621,7 +621,7 @@ Choose which Pok\emon generation your\nStarter Pok\emon are from.\pYou may also 
 Starter Generation choice saved!
 
 #org @gText_GameCustomization_LevelCapsQuestion
-You may choose to set soft or hard\nlevel caps.\pWhen soft caps are set, you may\nlevel your Pok\emon freely.\pThey will only obey your commands if\nyou have enough badges, however.\pThis is the intended experience for\nan initial playthrough.\pWhen hard caps are set, you will\nnot be able to level up past\lcertain thresholds, as determined\lby the next boss trainer.\pThis results in a more challenging\nexperience.\pThis option can be changed later in\nthe Options Page's second page.\pWhich level capping do you prefer?
+You may choose to set soft or hard\nlevel caps.\pWhen soft caps are set, you may\nlevel your Pok\emon freely.\pThey will only obey your commands if\nyou have enough badges, however.\pThis is the intended experience for\nan initial playthrough.\pWhen hard caps are set, you will\nnot be able to level up past\lcertain thresholds, as determined\lby the next boss trainer.\pThis results in a more challenging\nexperience.\pThis option can be changed later in\nthe Options Menu's second page.\pWhich level capping do you prefer?
 
 #org @gText_GameCustomization_LevelCapsOption_Soft
 Soft Level Caps
@@ -644,14 +644,14 @@ QoL items will be received when\nthe game starts!
 #org @gText_GameCustomization_QoLItemsOff
 QoL items will not be received when\nthe game starts!
 
-#org @gText_GameCustomization_QuickStartQuestion
-This option allows you to skip initial\nplot points, up to receiving your\lStarter Pok\emon.\pIt is only recommended for players in\nrepeat playthroughs, as skipped\lplot is not recapped.\pDo you want to skip initial plot\npoints?
+#org @gText_GameCustomization_SkipCutscenesQuestion
+This option allows you to replace\ncutscenes with short tips on where\lto go next.\pIt is only recommended for players in\nrepeat playthroughs, as skipped\lplot is not recapped.\pThis option can be changed later in\nthe Options Menu's second page.\pDo you want to skip cutscenes?
 
-#org @gText_GameCustomization_QuickStartTurnedOn
-Quick Start is enabled!
+#org @gText_GameCustomization_SkipCutscenesTurnedOn
+Cutscene skipping is enabled!
 
-#org @gText_GameCustomization_QuickStartTurnedOff
-Quick Start is disabled!
+#org @gText_GameCustomization_SkipCutscenesTurnedOff
+Cutscene skipping is disabled!
 
 ////////////
 // CREDITS

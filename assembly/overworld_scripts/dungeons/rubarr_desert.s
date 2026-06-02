@@ -159,6 +159,8 @@ EventScript_RubarrDesert_StoryEvents:
     call PositionPlayerForRubarrStoryEventsMain
     applymovement PlutoGruntClancy m_LookDown
     applymovement PlutoGruntEna m_LookDown
+    checkflag 0x93D @ Skipping Cutscenes
+    if SET _goto SkippingCutscene_RubarrDesert_ConfrontingTeamPluto
     msgbox gText_RubarrDersert_ClancyCommentsOnPlayer MSG_NORMAL
     msgbox gText_RubarrDersert_EnaCommentsOnPlayer MSG_NORMAL
     clearflag 0x34 @ Show Rival and Irene
@@ -180,7 +182,7 @@ EventScript_RubarrDesert_StoryEvents:
     applymovement Rival m_LookRight
     applymovement PLAYER m_LookLeft
     msgbox gText_RubarrDesert_RivalReadyToFight MSG_NORMAL
-    call PlayerHeal    
+    call PlayerHeal
     call RivalTagBattlePromptAndPartyOrganization
     msgbox gText_RubarrDesert_RivalStartsFight MSG_NORMAL
     applymovement Rival m_LookUp

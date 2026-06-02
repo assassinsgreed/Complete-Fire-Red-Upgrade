@@ -21,6 +21,8 @@ LevelScripts_UteyaVillage:
 	.hword LEVEL_SCRIPT_TERMIN
 
 LevelScript_UteyaVillage_RivalMeetingPlayerAfterAllBadges:
+    checkflag 0x93D @ Skipping cutscenes
+    if SET _goto SkippingCutscenes_UteyaVillage_PromptedToGoToAscensionTower
     showsprite 0x8 @ Rival
     playbgm 0x195
     applymovement 0x8 m_RivalWalksToPlayer

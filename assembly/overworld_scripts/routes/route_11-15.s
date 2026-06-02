@@ -113,6 +113,8 @@ LevelScript_RonaldEncounterCutscene:
     setvar PlutoEncounterVar 0x1
     call ResetParnerState
     playbgm 0x19A 0x1 @ Encounter Team Pluto (Permanent for the cutscene; player warps mean this doesn't need to be overridden again)
+    checkflag 0x93D @ Skipping Cutscenes
+    if SET _goto SkippingCutscene_Route11South_BattleRonald
     msgbox gText_Route11SouthHouse_PlutoEvent_RonaldThreatensRefiner MSG_NORMAL
     msgbox gText_Route11SouthHouse_PlutoEvent_RefinerRefuses MSG_NORMAL
     msgbox gText_Route11SouthHouse_PlutoEvent_RonaldAccepts MSG_NORMAL
@@ -163,7 +165,10 @@ RonaldChecksFemaleDescription:
     msgbox gText_Route11SouthHouse_PlutoEvent_RonaldGivesFemaleDescriptor MSG_NORMAL
     return
 
+.global PostRonaldBattle
 PostRonaldBattle:
+    checkflag 0x93D @ Skipping Cutscenes
+    if SET _goto SkippingCutscene_Route11South_AfterRonaldBattle
     setvar PlutoEncounterVar 0x3
     msgbox gText_Route11SouthHouse_PlutoEvent_RonaldAsksPlayerToJoin MSG_YESNO
     compare LASTRESULT YES
@@ -359,6 +364,8 @@ RivalBattlePrompt:
     msgbox gText_Route11SouthHouse_PlutoEvent_RivalBattleConfirmation MSG_YESNO
     compare LASTRESULT NO
     if equal _goto DeniedRivalBattle
+    checkflag 0x93D @ Skipping Cutscenes
+    if SET _goto SkippingCutscene_Route11South_BattlingRival
     playbgm 0x195
     msgbox gText_Route11SouthHouse_PlutoEvent_RivalEagerToBattle MSG_NORMAL
     applymovement Alistair m_LookLeft
@@ -606,6 +613,8 @@ HandleEnaEvent:
     if NOT_SET _goto End
     checkflag 0x273 @ Has completed the Carnelidge Volcano events
     if SET _goto End
+    checkflag 0x93D @ Skipping Cutscenes
+    if SET _goto SkippingCutscenes_Route11South_EncounteringEna
     applymovement PLAYER m_LookUp
     waitmovement PLAYER
     sound 0x15 @ Exclaim
@@ -715,8 +724,10 @@ ReturnToRoute11Common:
     end
 
 InitiatePlutoEncounter:
-    special 0xAF @ Dismount bike if on it
     lock
+    checkflag 0x93D @ Skipping Cutscenes
+    if SET _goto SkippingCutscene_Route11South_StartingTeamPlutoEvent
+    special 0xAF @ Dismount bike if on it
     sound 0x15 @ Exclaim
     applymovement PLAYER m_Surprise
     msgbox gText_Route11South_PlutoEvent_RivalSpotsPlayer MSG_NORMAL
@@ -850,6 +861,8 @@ PlayerWalkToInFrontOfEna:
 
 ClancyAndEnaSharedEvent:
     applymovement Clancy m_LookDown
+    checkflag 0x93D @ Skipping Cutscenes
+    if SET _goto SkippingCutscene_Route11South_TalkingToClancyAndEna
     pause DELAY_1SECOND
     pause DELAY_1SECOND
     applymovement Clancy m_Question
@@ -1255,6 +1268,8 @@ LevelScripts_Route12_RestHouse_StoryEvents:
     .hword LEVEL_SCRIPT_TERMIN
 
 LevelScript_RestHouse_Cutscene:
+    checkflag 0x93D @ Skipping Cutscenes
+    if SET _goto SkippingCutscene_Route12RestHouse_SeleneAndAlistair
     getplayerpos 0x4000 0x4001
     compare 0x4000 0xD
     if lessorequal _call MovePlayerFromSouthEntrance

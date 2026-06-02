@@ -1055,6 +1055,8 @@ TileScript_LaplazGym_IntroduceCasey:
     lock
     checkflag 0x3F @ Casey is revealed as leader
     if NOT_SET _goto End @ Event already played
+    checkflag 0x93D @ Skipping Cutscenes
+    if SET _goto SkippingCutscene_LaplazTown_IntroducingCasey
     applymovement PLAYER m_LookUp
     waitmovement PLAYER
     call SetCaseyGender

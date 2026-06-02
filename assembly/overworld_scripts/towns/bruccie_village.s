@@ -131,6 +131,8 @@ EventScript_BruccieVillage_Abby:
     callasm CountBadges
     compare LASTRESULT 0x5
     if lessthan _goto NotReadyForGym
+    checkflag 0x93D @ Skipping Cutscenes
+    if SET _goto SkippingCutscene_BruccieVillage_BattlingRival
     msgbox gText_BruccieVillage_Abby_EnoughBadges MSG_NORMAL
     playbgm 0x195 @ Rival's theme
     sound 0x15 @ Exclaim

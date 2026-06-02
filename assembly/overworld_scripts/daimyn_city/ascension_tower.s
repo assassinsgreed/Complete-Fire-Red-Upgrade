@@ -37,6 +37,8 @@ LevelScripts_AscensionTower:
 	.hword LEVEL_SCRIPT_TERMIN
 
 LevelScript_AscensionTower_RegisteringForEliteFourChallenge:
+    checkflag 0x93D @ Skipping Cutscenes
+    if SET _goto SkippingCutscenes_AscensionTower_GoToVictoryRoad
     applymovement PLAYER m_PlayerWalksToRival
     waitmovement PLAYER
     applymovement RivalOnFirstFloor m_LookLeft

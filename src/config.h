@@ -15,10 +15,6 @@
 
 /*===== Custom code for Pokemon Amethyst =====*/
 #define NEW_BATTLE_BACKGROUNDS //When set, battle backgrounds and intro animations will be dynamically replaced by those defined in src/Tables/battle_background_tables.c 
-#define VAR_AUTO_SORT_BAG 0x5154 //Options for automatically sorting the bag
-#define VAR_GAME_DIFFICULTY 0x5155 //Options for game difficulty (Standard vs Hard)
-#define VAR_LEVEL_CAPS 0x5156 //Options for soft vs hard level caps
-// TODO: Skip cutscenes here later
 
 /*===== General Vars =====*/
 #define VAR_TERRAIN 0x5000 //Set to a terrain type for a battle to begin with the given terrain
@@ -87,6 +83,12 @@
 #define FLAG_HARD_LEVEL_CAP 0x93B // If set, a hard level cap is enforced before each boss encounter
 #define FLAG_HARD_MODE 0x93C // If set, the game is in hard mode, which increases the difficulty of battles
 #define FLAG_DAILY_EVENTS_START 0xE00 //To flag + 0xFF, resets every new day.
+
+/*===== Options menu settings =====*/
+#define VAR_AUTO_SORT_BAG 0x5154 //Options for automatically sorting the bag
+#define VAR_GAME_DIFFICULTY 0x5155 //Options for game difficulty (Standard vs Hard)
+#define VAR_LEVEL_CAPS 0x5156 //Options for soft vs hard level caps
+#define FLAG_SKIP_CUTSCENES 0x93D //Option to skip cutscenes on or off
 
 /*===== Start Menu/Poketools Flags =====*/
 #define FLAG_SYS_BAG_HIDE 0x91B		//Toggle bag off

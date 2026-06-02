@@ -177,6 +177,8 @@ EventScript_AnthraTown_MomRestPrompt:
 	end
 
 EventScript_AnthraTown_PersuadingMomToGoOnJourney:
+	checkflag 0x93D @ Skipping Cutscenes
+	if SET _goto SkippingCutscene_AnthraTown_AskingMomToGoOnJourney
 	msgbox gText_AnthraTown_ConvincingPlayerMom MSG_YESNO
 	compare LASTRESULT YES
 	if notequal _goto EventScript_AnthraTown_MomPlayerSaidNoToAccompanyingRival
@@ -208,6 +210,8 @@ LevelScripts_AnthraTown_GenChoice:
 TileScript_AnthraTown_RivalArrival:
 	compare StoryEventVar PlayerCalledDownstairs
 	IF greaterorequal _goto End
+	checkflag 0x93D @ skip cutscenes
+	if SET _goto SkippingCutscene_GameStart_InPlayersRoom
 	sound 0x15 @ Exclaim
 	applymovement PLAYER m_Surprise
 	msgbox gText_AnthraTown_RivalArrival MSG_NORMAL
@@ -227,6 +231,8 @@ LevelScripts_AnthraTown_MeetingRival:
 	.hword LEVEL_SCRIPT_TERMIN
 
 LevelScript_AnthraTown_MeetingRival:
+	checkflag 0x93D @ Skipping Cutscenes
+	if SET _goto SkippingCutscene_GameStart_MeetingRivalDownstairs
 	compare StoryEventVar PlayerMetWithRivalAtHouse
 	if equal _goto End
 	sound 0x15 @ Exclaim
@@ -282,6 +288,14 @@ NotRememberingToday:
 SignScript_AnthraTown_PlayersHouse:
 	lock
 	msgbox gText_AnthraTown_PlayersHouseMailbox MSG_SIGN
+	addvar 0x400B 0x1
+	compare 0x400B 5
+	if equal _goto GiveRareCandies
+	end
+
+@ This is for people who want to nuzlocke
+GiveRareCandies:
+	additem ITEM_RARE_CANDY 999
 	end
 
 .global SignScript_AnthraTown_RivalsHouse

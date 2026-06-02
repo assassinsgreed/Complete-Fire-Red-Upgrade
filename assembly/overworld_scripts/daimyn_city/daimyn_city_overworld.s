@@ -32,6 +32,8 @@ LevelScripts_DaimynCity_StoryEvents:
 
 LevelScript_RivalsTour:
     lock
+    checkflag 0x93D @ Skipping Cutscenes
+    if SET _goto SkippingCutscene_DaimynCity_Tour
     compare 0x4000 0x1
     if equal _call RivalFacePlayerWest
     if notequal _call RivalFacePlayerSouth

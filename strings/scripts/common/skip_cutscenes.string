@@ -1,0 +1,116 @@
+#org @gText_SkippingCutscenes_Header
+[GREEN]SKIPPING CUTSCENE & MOVING NPCS[BLACK]
+
+#org @gText_SkippingCutscenes_AnthraTown_StartOfNewGame_MeetingRivalDownstairs
+Go east to Route 17 to get your\nPok\emon.
+
+#org @gText_SkippingCutscenes_Route17_MeetingHawthorneAndSelene
+Return to speak with your mother.
+
+#org @gText_SkippingCutscenes_AnthraTown_ReceivedMothersBlessing
+[BLACK]Running Shoes have been enabled and\ncan be toggled with [L_BUTTON].\pReturn to Professor Hawthorne and\nChampion Selene on Route 17.
+
+#org @gText_SkippingCutscenes_Route17_ChooseStarter
+[BLACK]Choose your Starter Pok\emon.
+
+#org @gText_SkippingCutscenes_Route17_HasChosenStarter
+[BLACK]Battle [RIVAL] with your new\nPok\emon!
+
+#org @gText_SkippingCutscenes_Route17_HeadToOlenicTown
+[BLACK]Visit Professor Hawthorne at\nhis lab in Olenic Town.
+
+#org @gText_SkippingCutscenes_OlenicTown_ReceivingPokedex
+[BLACK]Received 10 Pok\e Balls and the\nPok\edex.\pTravel north to Rhodanzi City and\nchallenge the gym.
+
+#org @gText_SkippingCutscenes_Route3_BattlingRival
+[BLACK]Battle [RIVAL] to prove how much\nyou've grown stronger.
+
+#org @gText_SkippingCutscenes_Route3_InitiatingDexNav
+[BLACK]Pursue Team Pluto south into Rubarr\nDesert and reclaim the DexNavs.
+
+#org @gText_SkippingCutscenes_RubarrDesert_StoppingTeamPluto
+[BLACK]Team up with [RIVAL] to get the\nDexNavs back from Clancy and Ena.
+
+#org @gText_SkippingCutscenes_RubarrDesert_StoppingTeamPlutoIrene
+[BLACK]Team up with [RIVAL] to stop Team\nPluto Admin Irene!
+
+#org @gText_SkippingCutscenes_RubarrDesert_ReturnDexNavs
+[BLACK]Return the DexNavs to Hawthorne's\nAssistant on Route 3.
+
+#org @gText_SkippingCutscenes_Route3_ReturningDexNavs
+[BLACK]Head north to Ferrox Village, passing\nthrough Torma Cave.
+
+#org @gText_SkippingCutscenes_Route4_ForemanEvent
+[BLACK]Head north to Ferrox Village and\nchallenge the gym.
+
+#org @gText_SkippingCutscenes_FerroxVillage_ApproachedGymWhileEmpty
+[BLACK]Find the gym leader at the Ferrox\nVillage Library.
+
+#org @gText_SkippingCutscenes_FerroxVillage_AlistairAtTheLibrary
+[BLACK]Received HM01 Cut!\nChallenge the Ferrox Village gym.
+
+#org @gText_SkippingCutscenes_DaimynCityGuardHouses_BattleRival
+[BLACK]Battle [RIVAL] to prove your\nstrength!
+
+#org @gText_SkippingCutscenes_DaimynCity_ChallengeGym
+[BLACK]Received the Macho Brace.\pChallenge the gym and head east\ntoward Route 11 South.
+
+#org @gText_SkippingCutscenes_DaimynCity_GymPuzzleIntroduction
+[BLACK]Received the Coin Case and 500\ncoins.\pEarn 2,000 coins and challenge the\ngym leader.
+
+#org @gText_SkippingCutscenes_Route11South_TeamUpToStopPluto
+[BLACK]Team up with [RIVAL] or Alistair to\nstop Team Pluto.
+
+#org @gText_SkippingCutscenes_Route11South_StopClancyAndEna
+[BLACK]Fight Clancy and Ena to save the\nMega Stone Refiner.
+
+#org @gText_SkippingCutscenes_Route11South_BattleRonald
+[BLACK]Fight Team Pluto Admin Ronald to\nsave the Mega Stone Refiner.
+
+#org @gText_SkippingCutscenes_Route11South_AfterRonaldBattle
+[BLACK]Obtained the Mega Ring.\pFight [RIVAL] to test the power of\nMega Evolution.
+
+#org @gText_SkippingCutscenes_Route11South_AfterRivalBattle
+[BLACK]Received HM02 Fly!\pTravel north to Laplaz Town and\nchallenge the gym.
+
+#org @gText_SkippingCutscenes_LaplazTown_ChallengeCasey
+[BLACK]Challenge the gym leader, then\nhead west to Bruccie Village.\pA gym puzzle shortcut has been\nenabled.
+
+#org @gText_SkippingCutscenes_Route12RestHouse_SeleneAndAlistair
+[BLACK]Collect 5 gym badges, then\nhead west to Bruccie Village.
+
+#org @gText_SkippingCutscenes_BruccieVillage_BattlingRival
+[BLACK]Battle [RIVAL] to impress Gym Leader\nAbby.
+
+#org @gText_SkippingCutscenes_BruccieVillage_ChallengeAbby
+[BLACK]Challenge Gym Leader Abby for her\ngym badge.
+
+#org @gText_SkippingCutscenes_CalicinBayTip
+[BLACK]Then, go to Calicin Bay and stop\nTeam Pluto's schemes.
+
+#org @gText_SkippingCutscenes_CalicinBay_StormTeamPlutosBase
+[BLACK]Find Team Pluto's headquarters in\nDaimyn City and end their schemes.
+
+#org @gText_SkippingCutscenes_DaimynCity_ConfrontingKurtis
+[BLACK]Defeat Pluto Leader Kurtis and put a\nstop to Team Pluto!
+
+#org @gText_SkippingCutscenes_DaimynCity_SurfToTsarvosa
+[BLACK]Received HM03 Surf!\pAcquire the Bruccie Village gym\nbadge and travel to Tsarvosa City.
+
+#org @gText_SkippingCutscenes_Route11South_HeadToMountCarnelidge
+[BLACK]Climb Mount Carnelidge and\ninvestigate what's happening.\pMake sure you have collected HM 04\nStrength from Tsarvosa City Stats\lDojo first.
+
+#org @gText_SkippingCutscenes_CarnelidgeVolcanoPeak_StoppingRivalAndAlistair
+[BLACK]Stop [RIVAL] and Alistair from\nusing Jirachi's wishes!
+
+#org @gText_SkippingCutscenes_CarnelidgeVolcanoPeak_SkippingUltraSpace
+[BLACK]Skipping Ultra Space events.\nReceived the Houndoominite.\pHead to Uteya Village and challenge\nthe gym.
+
+#org @gText_SkippingCutscenes_UteyaVillage_GoToAscensionTower
+[BLACK]Go to Ascension Tower in Daimyn City.
+
+#org @gText_SkippingCutscenes_AscensionTower_GoToVictoryRoad
+[BLACK]Go to Victory Road and claim the\nVictory Flag at it's peak.
+
+#org @gText_SkippingCutscenes_VictoryRoad_GoToAscensionTower
+[BLACK]Return to Ascension Tower and\nchallenge the Elite Four.
