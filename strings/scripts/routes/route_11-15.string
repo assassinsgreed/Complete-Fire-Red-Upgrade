@@ -730,16 +730,16 @@ This Rest House sure is handy, isn't\nit?\pIt's got a Pok\emon Center[.] And a\n
 [BLACK]Selene: [RED]You have [BUFFER1] badges[.]
 
 #org @gText_Route12RestHouse_Cutscene_SeleneTwoBadges
-[BLACK]Selene: [RED]You must have faced many hardships\nduring your journey.\pDon't give up though, I'm sure you've\ngot this!
+[BLACK]Selene: [RED]You must have faced many\nhardships during your journey.\pDon't give up though, I'm sure you've\ngot this!
 
 #org @gText_Route12RestHouse_Cutscene_SeleneThreeBadges
-[BLACK]Selene: [RED]Your journey is starting to take\nshape.\pThe road ahead may be tough, but\nI'm sure you'll be resourceful and\lpull through!
+[BLACK]Selene: [RED]Your journey is starting to\ntake shape.\pThe road ahead may be tough, but\nI'm sure you'll be resourceful and\lpull through!
 
 #org @gText_Route12RestHouse_Cutscene_SeleneFourBadges
-[BLACK]Selene: [RED]That's pretty good! You must've met\na lot of unique Pok\emon during\lyour journey.\pI'm sure you and your Pok\emon will\nsee this journey through to the\lend.
+[BLACK]Selene: [RED]That's pretty good! You\nmust've met a lot of unique Pok\emon\lduring your journey.\pI'm sure you and your Pok\emon will\nsee this journey through to the\lend.
 
 #org @gText_Route12RestHouse_Cutscene_SeleneFiveBadges
-[BLACK]Selene: [RED]That's excellent! You must've faced\nevery challenge before you head\lon.\pKeep this up, and you'll give me a\nrun for my money someday, haha!
+[BLACK]Selene: [RED]That's excellent! You must've\nfaced every challenge before you\lhead on.\pKeep this up, and you'll give me a\nrun for my money someday, haha!
 
 #org @gText_Route12RestHouse_Cutscene_SeleneCommentsOnGymThemes
 [BLACK]Selene: [RED]What do you think of the\nKulure gyms?\pI helped the gym leaders refine\ntheir unique battle styles.

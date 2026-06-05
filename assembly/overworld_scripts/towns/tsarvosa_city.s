@@ -840,9 +840,9 @@ ResearchLevel3Services:
 	switch MULTICHOICE_SELECTION
 	case 0, ChooseStatToMaximize
 	case 1, MaximizeAllIVs
-    case 2, ResearchLevel3Services
-	case 0xF, ResearchLevel3Services
-	goto ResearchLevel3Services
+    case 2, ChoseNotToMax
+	case 0xF, ChoseNotToMax
+	goto ChoseNotToMax
 
 ChooseStatToMaximize:
     checkitem ITEM_BOTTLE_CAP 0x1

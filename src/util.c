@@ -670,8 +670,8 @@ void InitializeTreasureBeach()
 	}
 }
 
-// Generally calculated as {Boss's Ace} - 2
-const u8 LevelCaps[] =
+// Generally calculated as {Boss's Ace} - 2 except for Kurtis
+const u8 LevelCaps_MinusTwo[] =
 {
 	11, // Before Gym 1's badge
 	13, // Before Irene
@@ -687,6 +687,26 @@ const u8 LevelCaps[] =
 	61, // Before Gym 8's badge
 	65, // Before Elite Four
 	72, // Before Champion
+	100, // Postgame
+};
+
+// Set to the value used by boss trainers' aces
+const u8 LevelCaps_AtCap[] =
+{
+	13, // Before Gym 1's badge
+	15, // Before Irene
+	17, // Before Casey
+	20, // Before Gym 2's badge
+	26, // Before Gym 3's badge
+	33, // Before Gym 4's badge
+	37, // Before Ronald
+	41, // Before Gym 5's badge
+	47, // Before Gym 6's badge
+	50, // Before Kurtis
+	57, // Before Gym 7's badge & Carnelidge events
+	63, // Before Gym 8's badge
+	65, // Before Elite Four
+	74, // Before Champion
 	100, // Postgame
 };
 
@@ -724,7 +744,10 @@ u8 GetCurrentLevelCap()
 	if (FlagGet(FLAG_DEFEATED_CHAMPION_SELENE))
 		cap++;
 
-	return LevelCaps[cap];
+	if (VarGet(VAR_LEVEL_CAPS) == OPTIONS_AMETHYST_EXTRA_HARD_LEVEL_CAPS) // Extra hard caps (-2)
+		return LevelCaps_MinusTwo[cap];
+	else // Hard caps (=)
+		return LevelCaps_AtCap[cap];
 }
 
 void GetLevelCapIntoLastResult(void)

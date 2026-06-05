@@ -221,7 +221,7 @@ npc 6 8 1 EventScript_RhodanziNPCHouses_OldTrainer
 npc 6 9 0 EventScript_RhodanziNPCHouses_NidoranTrainer
 npc 6 9 1 EventScript_RhodanziNPCHouses_Nidoran
 npc 6 10 0 EventScript_RhodanziNPCHouses_PokedexTrainer
-npc 6 12 0 EventScript_RhodanziNPCHouses_PlantGirl
+npc 6 17 0 EventScript_RhodanziNPCHouses_PlantGirl
 npc 6 13 0 EventScript_RhodanziNPCHouses_MailTrainer
 
 ## Facilities

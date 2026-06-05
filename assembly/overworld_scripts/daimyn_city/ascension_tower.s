@@ -471,6 +471,10 @@ AscensionTower_ChampionsQuarters_TitleDefense:
     pause DELAY_HALFSECOND
     playse 0x8 @ door open
     call SetupMugshotChampionAndTitleDefense
+    special CAMERA_START
+    applymovement CAMERA m_CameraTitleDefensePanDown
+    waitmovement CAMERA
+    special CAMERA_END
     checkflag 0x288 @ Defeated Kurtis in postgame
     random 11
     copyvar 0x4002 LASTRESULT
@@ -494,6 +498,10 @@ AscensionTower_ChampionsQuarters_TitleDefense:
     waitmovement 0x2
     pause DELAY_HALFSECOND
     playse 0x8 @ door open
+    special CAMERA_START
+    applymovement CAMERA m_CameraTitleDefensePanUp
+    waitmovement CAMERA
+    special CAMERA_END
     msgbox gText_AscensionTower_TitleDefense_PlayerSucceeded MSG_NORMAL
     applymovement PLAYER m_ReigningChampionWalksToHallOfFame
     waitmovement PLAYER
@@ -969,3 +977,5 @@ m_PlayerApproachesHallOfFameMachine: .byte walk_up_very_slow, end_m
 m_PlayerWalksToTakeChampionsPlace: .byte  walk_up_slow, walk_up_slow, walk_up_slow, walk_up_slow, walk_up_slow, walk_up_slow, walk_up_slow, walk_up_slow, walk_up_slow, walk_up_slow, walk_up_slow, walk_up_slow, look_down, end_m
 m_ChallengerWalksToPlayerAsChampion: .byte walk_up_slow, walk_up_slow, walk_up_slow, walk_up_slow, walk_up_slow, look_up, pause_long, pause_long, pause_long, pause_long, pause_long, end_m
 m_ChallengerLeavesTheRoom: .byte walk_down_slow, walk_down_slow, walk_down_slow, walk_down_slow, walk_down_slow, look_down, end_m
+m_CameraTitleDefensePanDown: .byte walk_down, walk_down, end_m
+m_CameraTitleDefensePanUp: .byte walk_up, walk_up, end_m

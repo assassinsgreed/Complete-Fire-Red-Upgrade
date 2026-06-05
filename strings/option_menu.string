@@ -31,6 +31,9 @@ Standard
 #org @gText_OptionsMenu_GameDifficulty_Hard
 Hard
 
+#org @gText_OptionsMenu_GameDifficulty_ExtraHard
+Extra Hard
+
 #org @gText_OptionsMenu_LevelCaps
 Level Caps
 
@@ -38,7 +41,13 @@ Level Caps
 Soft
 
 #org @gText_OptionsMenu_LevelCaps_Hard
-Hard (-2)
+Hard (=)
+
+#org @gText_OptionsMenu_LevelCaps_ExtraHard
+Ex Hard (-2)
 
 #org @gText_OptionsMenu_SkipCutscenes
 Skip Story Cutscenes
+
+#org @gText_OptionsMenu_SkipNicknaming
+Skip Nickname Prompt

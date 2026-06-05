@@ -591,7 +591,7 @@ Skip Cutscenes
 Done
 
 #org @gText_GameCustomization_DifficultyMode_Prompt
-The difficulty mode dictates how the\ngame is structured.\pStandard mode is the default and\nintended experience.\pHard mode gives all boss trainers\nstronger Pok\emon and held items.\pThis option can be changed later in\nthe Options Menu's second page.\pPlease select a mode.
+The difficulty mode dictates how the\ngame is structured.\pStandard mode is the default and\nintended experience.\pHard mode gives all boss trainers\nstronger Pok\emon and held items.\pExtra Hard additionally gives each\ntrainer Pok\emon maxed IVs in all\lstats and maxed EVs in their\lhighest 2 stats.\pThis option can be changed later in\nthe Options Menu's second page.\pPlease select a mode.
 
 #org @gText_GameCustomization_DifficultyModeOption_Standard
 Standard Mode
@@ -599,11 +599,17 @@ Standard Mode
 #org @gText_GameCustomization_DifficultyModeOption_Hard
 Hard Mode
 
+#org @gText_GameCustomization_DifficultyModeOption_ExtraHard
+Extra Hard Mode
+
 #org @gText_GameCustomization_DifficultyMode_StandardSet
 Standard Mode is enabled!
 
 #org @gText_GameCustomization_DifficultyMode_HardSet
 Hard Mode is enabled!
+
+#org @gText_GameCustomization_DifficultyMode_ExtraHardSet
+Extra Hard Mode is enabled!
 
 #org @gText_GameCustomization_TutorializationQuestion
 Would you like to enable early game\nbattling and catching tutorials?
@@ -624,16 +630,22 @@ Starter Generation choice saved!
 You may choose to set soft or hard\nlevel caps.\pWhen soft caps are set, you may\nlevel your Pok\emon freely.\pThey will only obey your commands if\nyou have enough badges, however.\pThis is the intended experience for\nan initial playthrough.\pWhen hard caps are set, you will\nnot be able to level up past\lcertain thresholds, as determined\lby the next boss trainer.\pThis results in a more challenging\nexperience.\pThis option can be changed later in\nthe Options Menu's second page.\pWhich level capping do you prefer?
 
 #org @gText_GameCustomization_LevelCapsOption_Soft
-Soft Level Caps
+Soft (no restriction)
 
 #org @gText_GameCustomization_LevelCapsOption_Hard
-Hard Level Caps
+Hard (= next boss's ace)
+
+#org @gText_GameCustomization_LevelCapsOption_ExtraHard
+Extra Hard (-2 next boss's ace)
 
 #org @gText_GameCustomization_SoftLevelCapsTurnedOn
 Soft Level Caps are enabled!
 
 #org @gText_GameCustomization_HardLevelCapsTurnedOn
 Hard Level Caps are enabled!
+
+#org @gText_GameCustomization_ExtraHardLevelCapsTurnedOn
+Extra Hard Level Caps are enabled!
 
 #org @gText_GameCustomization_QoLFromStart
 This option gives QoL items like\nthe Exp. Share and Infinite Repel\lfrom the start of the game.\pThis option is recommended for\nplayers who wish to have a more\lrelaxing experience.\pThe items provided by this setting\nare normally found throughout the\lstory.\pDo you want to start the game\nwith all QoL items?

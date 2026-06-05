@@ -1669,6 +1669,9 @@ void RunOnResumeMapScript(void)
 			
 			if (species == SPECIES_GRENINJA)
 			{
+				u16 originalVar8004 = Var8004; // Greninja requires us to temporarily set the party index which we need to restore afterward
+				u16 originalVar8005 = Var8005; // Greninja requires us to temporarily set the party index which we need to restore afterward
+				
 				u8 ability = GetMonAbility(mon);
 				Var8004 = i; // Party index
 				Var8005 = 26; // Special Ribbon 7, used to check for Battle Bond eligibility
@@ -1681,6 +1684,8 @@ void RunOnResumeMapScript(void)
 					personality |= 0; // First ability, Torrent
 					mon->personality = personality;
 				}
+				Var8004 = originalVar8004; // Restore after messing with Greninja
+				Var8005 = originalVar8005; // Restore after messing with Greninja
 			}
 		}
 	}
@@ -1698,8 +1703,11 @@ void PostReleaseAutomaticFixes(void)
 		FlagSet(FLAG_BEAT_IRENE_IN_RUBARR_DESERT);
 
 	// Automatically set difficulty mode and caps
-	VarSet(VAR_DIFFICULTY_SETTING, FlagGet(FLAG_HARD_MODE) ? 1 : 0);
-	VarSet(VAR_LEVEL_CAPS, FlagGet(FLAG_HARD_LEVEL_CAP) ? 1 : 0);
+	if (!FlagGet(FLAG_HARD_MODE))
+		VarSet(VAR_DIFFICULTY_SETTING, 0);
+	
+	if (!FlagGet(FLAG_HARD_LEVEL_CAP))
+		VarSet(VAR_LEVEL_CAPS, 0);
 }
 
 bool8 TryRunOnFrameMapScript(void)

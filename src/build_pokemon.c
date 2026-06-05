@@ -165,7 +165,7 @@ static bool8 IsPseudoBossTrainerPartyForLevelScaling(u8 trainerPartyFlags);
 static bool8 IsBossTrainerClassForLevelScaling(u16 trainerId);
 static void ModifySpeciesAndLevelForGenericBattle(u16* species, u8* level, u8 minEnemyTeamLevel, u8 highestPlayerTeamLevel, u8 averagePlayerTeamLevel, u8 trainerClass, unusedArg u8 partySize, bool8 shouldEvolve);
 static void ModifySpeciesAndLevelForBossBattle(unusedArg u16* species, unusedArg u8* level, unusedArg u8 maxEnemyTeamLevel, unusedArg u8 maxPlayerTeamLevel, unusedArg bool8 shouldEvolve);
-#ifdef VAR_GAME_DIFFICULTY
+#ifdef VAR_DIFFICULTY_SETTING
 static void GiveMon2BestBaseStatEVs(struct Pokemon* mon);
 #endif
 static u16 TryReplaceNormalTrainerSpecies(u16 species, unusedArg u16 trainerId);
@@ -795,9 +795,9 @@ static u8 CreateNPCTrainerParty(struct Pokemon* const party, const u16 trainerId
 		trainer = GET_TRAINER_PTR(trainerId);
 
 		//Choose Trainer IVs
-		#ifdef VAR_GAME_DIFFICULTY
-		u8 gameDifficulty = VarGet(VAR_GAME_DIFFICULTY);
-		if (gameDifficulty >= OPTIONS_EXPERT_DIFFICULTY && side != B_SIDE_PLAYER) //Not partner
+		#ifdef VAR_DIFFICULTY_SETTING
+		u8 gameDifficulty = VarGet(VAR_DIFFICULTY_SETTING);
+		if (gameDifficulty >= OPTIONS_AMETHYST_EXTRA_HARD_DIFFICULTY && side != B_SIDE_PLAYER) //Not partner
 			baseIV = 31;
 		else
 		#endif
@@ -1158,6 +1158,11 @@ static u8 CreateNPCTrainerParty(struct Pokemon* const party, const u16 trainerId
 				else
 					mon->friendship = 255; //Max friendship
 			}
+			#endif
+
+			#ifdef VAR_DIFFICULTY_SETTING
+			if (VarGet(VAR_DIFFICULTY_SETTING) >= OPTIONS_AMETHYST_EXTRA_HARD_DIFFICULTY && GetMonEVCount(mon) == 0) //Has no EVs already and is on extra hard
+					GiveMon2BestBaseStatEVs(mon);
 			#endif
 
 			//Fix Minior
@@ -1544,7 +1549,7 @@ u8 GetScaledWildBossLevel(u8 level)
 	return level;
 }
 
-#ifdef VAR_GAME_DIFFICULTY
+#ifdef VAR_DIFFICULTY_SETTING
 static void GiveMon2BestBaseStatEVs(struct Pokemon* mon)
 {
 	//Assign random Trainers max EVs in their two best base stats

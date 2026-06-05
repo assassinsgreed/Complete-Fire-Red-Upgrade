@@ -295,7 +295,7 @@ SignScript_AnthraTown_PlayersHouse:
 
 @ This is for people who want to nuzlocke
 GiveRareCandies:
-	additem ITEM_RARE_CANDY 999
+	callasm GiveUpTo999RareCandies
 	end
 
 .global SignScript_AnthraTown_RivalsHouse

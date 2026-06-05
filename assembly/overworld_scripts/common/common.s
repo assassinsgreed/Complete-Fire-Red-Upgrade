@@ -1193,14 +1193,17 @@ GameCustomization_DifficultyMode:
     msgbox gText_GameCustomization_DifficultyMode_Prompt MSG_KEEPOPEN
     multichoiceoption gText_GameCustomization_DifficultyModeOption_Standard 0
     multichoiceoption gText_GameCustomization_DifficultyModeOption_Hard 1
-    multichoice 0x0 0x0 TWO_MULTICHOICE_OPTIONS TRUE
+    multichoiceoption gText_GameCustomization_DifficultyModeOption_ExtraHard 2
+    multichoice 0x0 0x0 THREE_MULTICHOICE_OPTIONS TRUE
     switch LASTRESULT
     case 0, EnableStandardMode _call
     case 1, EnableHardMode _call
+    case 2, EnableExtraHardMode _call
     goto GameCustomizationMenu
 
 EnableStandardMode:
     setvar 0x4000 0x0
+    setvar 0x5155 0x0 @ Standard
     clearflag 0x93C @ Disable hard mode
     sound 0x30 @Save
     msgbox gText_GameCustomization_DifficultyMode_StandardSet MSG_NORMAL
@@ -1208,10 +1211,18 @@ EnableStandardMode:
 
 EnableHardMode:
     setvar 0x4000 0x2
-    setflag 0x93C @ Enable hard mode
-    setvar 0x5155 0x1 @ Show hard mode in settings
+    setvar 0x5155 0x1 @ Hard
+    setflag 0x93C @ Enable hard mode (for trainer team loading)
     sound 0x30 @Save
     msgbox gText_GameCustomization_DifficultyMode_HardSet MSG_NORMAL
+    return
+
+EnableExtraHardMode:
+    setvar 0x4000 0x2
+    setvar 0x5155 0x2 @ Extra Hard
+    setflag 0x93C @ Enable hard mode (for trainer team loading)
+    sound 0x30 @Save
+    msgbox gText_GameCustomization_DifficultyMode_ExtraHardSet MSG_NORMAL
     return
 
 GiveQoLItemsFromStart:
@@ -1336,23 +1347,35 @@ GameCustomization_LevelCaps:
     msgbox gText_GameCustomization_LevelCapsQuestion MSG_KEEPOPEN
     multichoiceoption gText_GameCustomization_LevelCapsOption_Soft 0
     multichoiceoption gText_GameCustomization_LevelCapsOption_Hard 1
-    multichoice 0x0 0x0 TWO_MULTICHOICE_OPTIONS TRUE
+    multichoiceoption gText_GameCustomization_LevelCapsOption_ExtraHard 2
+    multichoice 0x0 0x0 THREE_MULTICHOICE_OPTIONS TRUE
     switch LASTRESULT
     case 0, EnableSoftLevelCaps _call
     case 1, EnableHardLevelCaps _call
+    case 2, EnableExtraHardLevelCaps _call
     goto GameCustomizationMenu
 
 EnableSoftLevelCaps:
     clearflag 0x93B @ Soft caps
+    setvar 0x5156 0 @ Soft cap
     sound 0x30 @Save
     msgbox gText_GameCustomization_SoftLevelCapsTurnedOn MSG_NORMAL
     return
 
 EnableHardLevelCaps:
-    setflag 0x93B @ Hard caps
+    setflag 0x93B @ Hard caps turned on
+    setvar 0x5156 1 @ Hard cap (=)
     setvar 0x5156 0x1 @ Show hard caps in settings
     sound 0x30 @Save
     msgbox gText_GameCustomization_HardLevelCapsTurnedOn MSG_NORMAL
+    return
+
+EnableExtraHardLevelCaps:
+    setflag 0x93B @ Hard caps turned on
+    setvar 0x5156 2 @ Hard cap (-2)
+    setvar 0x5156 0x2 @ Show hard caps in settings
+    sound 0x30 @Save
+    msgbox gText_GameCustomization_ExtraHardLevelCapsTurnedOn MSG_NORMAL
     return
 
 GameCustomization_StartWithQoLItems:

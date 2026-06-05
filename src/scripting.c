@@ -4027,3 +4027,10 @@ void SetupNewGameTextSpeedAndSound()
 	gSaveBlock2->optionsTextSpeed = 2; // Fast
 	gSaveBlock2->optionsSound = 1; // Stereo
 }
+
+void GiveUpTo999RareCandies()
+{
+	u16 candiesToGive = 999 - CountTotalItemQuantityInBag(ITEM_RARE_CANDY);
+	if (candiesToGive > 0)
+		AddBagItem(ITEM_RARE_CANDY, candiesToGive);
+}

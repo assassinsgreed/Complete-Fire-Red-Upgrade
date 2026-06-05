@@ -77,6 +77,7 @@ enum
 	MENUITEM_GAME_DIFFICULTY,
     MENUITEM_LEVEL_CAPS,
     MENUITEM_SKIP_CUTSCENES,
+    MENUITEM_SKIP_NICKNAMING,
     MENUITEM_CANCEL_PAGE_2,
     MENUITEM_PAGE2_COUNT,
 };
@@ -114,6 +115,7 @@ extern const u8 gText_OptionsMenu_AutoSortBag[];
 extern const u8 gText_OptionsMenu_GameDifficulty[];
 extern const u8 gText_OptionsMenu_LevelCaps[];
 extern const u8 gText_OptionsMenu_SkipCutscenes[];
+extern const u8 gText_OptionsMenu_SkipNicknaming[];
 
 static const u8 *const sOptionMenuItemsNames[MENUITEM_COUNT] =
 {
@@ -131,6 +133,7 @@ static const u8 *const sOptionMenuItemsNames_SecondPage[MENUITEM_COUNT] =
 	[MENUITEM_GAME_DIFFICULTY] = gText_OptionsMenu_GameDifficulty,
     [MENUITEM_LEVEL_CAPS] = gText_OptionsMenu_LevelCaps,
     [MENUITEM_SKIP_CUTSCENES] = gText_OptionsMenu_SkipCutscenes,
+    [MENUITEM_SKIP_NICKNAMING] = gText_OptionsMenu_SkipNicknaming,
     [MENUITEM_CANCEL_PAGE_2] = gText_OptionMenuCancel,
 };
 
@@ -155,8 +158,10 @@ extern const u8 gText_OptionsMenu_AutoSortBag_ByType[];
 extern const u8 gText_OptionsMenu_AutoSortBag_ByAmount[];
 extern const u8 gText_OptionsMenu_GameDifficulty_Standard[];
 extern const u8 gText_OptionsMenu_GameDifficulty_Hard[];
+extern const u8 gText_OptionsMenu_GameDifficulty_ExtraHard[];
 extern const u8 gText_OptionsMenu_LevelCaps_Soft[];
 extern const u8 gText_OptionsMenu_LevelCaps_Hard[];
+extern const u8 gText_OptionsMenu_LevelCaps_ExtraHard[];
 
 static const u8 *const sTextSpeedOptions[] =
 {
@@ -197,20 +202,27 @@ static const u8 *const sGameDifficultyOptions[] =
 {
 	gText_OptionsMenu_GameDifficulty_Standard,
 	gText_OptionsMenu_GameDifficulty_Hard,
+	gText_OptionsMenu_GameDifficulty_ExtraHard,
 };
 static const u8 *const sLevelCapsOptions[] =
 {
 	gText_OptionsMenu_LevelCaps_Soft,
 	gText_OptionsMenu_LevelCaps_Hard,
+	gText_OptionsMenu_LevelCaps_ExtraHard,
 };
 static const u8 *const sSkipCutscenesOptions[] =
 {
     gText_OptionsMenu_Off,
     gText_OptionsMenu_On,
 };
+static const u8 *const sSkipNicknamingOptions[] =
+{
+    gText_OptionsMenu_Off,
+    gText_OptionsMenu_On,
+};
 
 static const u16 sOptionMenuItemCounts[MENUITEM_COUNT] = {3, 2, 2, 2, 3, 10, 0};
-static const u16 sOptionMenuItemCounts_SecondPage[MENUITEM_PAGE2_COUNT] = {4, 2, 2, 2, 0}; // # of choices per option, not counting cancel
+static const u16 sOptionMenuItemCounts_SecondPage[MENUITEM_PAGE2_COUNT] = {4, 3, 3, 2, 2, 0}; // # of choices per option, not counting cancel
 
 void CB2_OptionsMenuFromStartMenu(void)
 {
@@ -233,6 +245,7 @@ void CB2_OptionsMenuFromStartMenu(void)
     sOptionMenuPtr->option_secondPage[MENUITEM_GAME_DIFFICULTY] = VarGet(VAR_DIFFICULTY_SETTING);
     sOptionMenuPtr->option_secondPage[MENUITEM_LEVEL_CAPS] = VarGet(VAR_LEVEL_CAPS);
     sOptionMenuPtr->option_secondPage[MENUITEM_SKIP_CUTSCENES] = FlagGet(FLAG_SKIP_CUTSCENES) ? 1 : 0;
+    sOptionMenuPtr->option_secondPage[MENUITEM_SKIP_NICKNAMING] = FlagGet(FLAG_DONT_OFFER_NICKNAMES_BATTLE) ? 1 : 0;
     
     for (i = 0; i < MENUITEM_COUNT - 1; i++)
     {
@@ -327,9 +340,10 @@ void CloseAndSaveOptionMenu(u8 taskId)
     VarSet(VAR_DIFFICULTY_SETTING, sOptionMenuPtr->option_secondPage[MENUITEM_GAME_DIFFICULTY]);
     VarSet(VAR_LEVEL_CAPS, sOptionMenuPtr->option_secondPage[MENUITEM_LEVEL_CAPS]);
     // Cleanup difficulty / level cap vars to flags
-    sOptionMenuPtr->option_secondPage[MENUITEM_GAME_DIFFICULTY] == 1 ? FlagSet(FLAG_HARD_MODE) : FlagClear(FLAG_HARD_MODE);
-    sOptionMenuPtr->option_secondPage[MENUITEM_LEVEL_CAPS] == 1 ? FlagSet(FLAG_HARD_LEVEL_CAP) : FlagClear(FLAG_HARD_LEVEL_CAP);
+    sOptionMenuPtr->option_secondPage[MENUITEM_GAME_DIFFICULTY] >= OPTIONS_AMETHYST_HARD_DIFFICULTY ? FlagSet(FLAG_HARD_MODE) : FlagClear(FLAG_HARD_MODE);
+    sOptionMenuPtr->option_secondPage[MENUITEM_LEVEL_CAPS] >= OPTIONS_AMETHYST_HARD_LEVEL_CAPS ? FlagSet(FLAG_HARD_LEVEL_CAP) : FlagClear(FLAG_HARD_LEVEL_CAP);
     sOptionMenuPtr->option_secondPage[MENUITEM_SKIP_CUTSCENES] == 1 ? FlagSet(FLAG_SKIP_CUTSCENES) : FlagClear(FLAG_SKIP_CUTSCENES);
+    sOptionMenuPtr->option_secondPage[MENUITEM_SKIP_NICKNAMING] == 1 ? FlagSet(FLAG_DONT_OFFER_NICKNAMES_BATTLE) : FlagClear(FLAG_DONT_OFFER_NICKNAMES_BATTLE);
     SetPokemonCryStereo(gSaveBlock2->optionsSound);
     FREE_AND_SET_NULL(sOptionMenuPtr);
     DestroyTask(taskId);
@@ -439,6 +453,9 @@ void BufferOptionMenuString(u8 selection)
                 break;
             case MENUITEM_SKIP_CUTSCENES:
                 AddTextPrinterParameterized3(1, 2, x, y, dst, -1, sSkipCutscenesOptions[sOptionMenuPtr->option_secondPage[selection]]);
+                break;
+            case MENUITEM_SKIP_NICKNAMING:
+                AddTextPrinterParameterized3(1, 2, x, y, dst, -1, sSkipNicknamingOptions[sOptionMenuPtr->option_secondPage[selection]]);
                 break;
             default:
                 break;

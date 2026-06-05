@@ -81,14 +81,15 @@
 #define FLAG_OBTAINED_ADM 0x939 // Flag indicating the ADM tool has been received, which replaces the need for HM compatible pokemon
 #define FLAG_INFINITE_REPEL_ACTIVE 0x93A // If set, the player will not encounter wild Pokemon. This is separate from 0x911 so it can be managed by a menu option and not overridden by certain story events
 #define FLAG_HARD_LEVEL_CAP 0x93B // If set, a hard level cap is enforced before each boss encounter
-#define FLAG_HARD_MODE 0x93C // If set, the game is in hard mode, which increases the difficulty of battles
+#define FLAG_HARD_MODE 0x93C // If set, the game is in hard mode, which increases the difficulty of battles (determines which trainer table to load from)
 #define FLAG_DAILY_EVENTS_START 0xE00 //To flag + 0xFF, resets every new day.
 
 /*===== Options menu settings =====*/
 #define VAR_AUTO_SORT_BAG 0x5154 //Options for automatically sorting the bag
-#define VAR_DIFFICULTY_SETTING 0x5155 //Options for game difficulty (Standard vs Hard) - Different than CFRU's VAR_GAME_DIFFICULTY as that changes a lot of underlying systems
+#define VAR_DIFFICULTY_SETTING 0x5155 //Options for game difficulty (Standard, Hard, and Extra Hard) - Different than CFRU's VAR_GAME_DIFFICULTY as that changes a lot of underlying systems
 #define VAR_LEVEL_CAPS 0x5156 //Options for soft vs hard level caps
 #define FLAG_SKIP_CUTSCENES 0x93D //Option to skip cutscenes on or off
+#define FLAG_DONT_OFFER_NICKNAMES_BATTLE 0x93E //Option to skip nickname prompts after catching / hatching a Pokemon
 
 /*===== Start Menu/Poketools Flags =====*/
 #define FLAG_SYS_BAG_HIDE 0x91B		//Toggle bag off

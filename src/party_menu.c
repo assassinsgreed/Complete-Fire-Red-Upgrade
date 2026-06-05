@@ -47,6 +47,7 @@
 #include "../include/new/party_menu.h"
 #include "../include/new/util.h"
 #include "../include/naming_screen.h"
+#include "../include/item_use.h"
 
 /*
 party_menu.c
@@ -2773,14 +2774,20 @@ void FieldUseFunc_ExpShare(u8 taskId)
 	{
 		PlaySE(SE_PC_OFF);
 		FlagClear(FLAG_EXP_SHARE);
-		DisplayItemMessageInBag(taskId, 2, gText_ExpShareTurnedOff, Task_ReturnToBagFromContextMenu);
+		if (gBagMenuState.bagOpen)
+			DisplayItemMessageInBag(taskId, 2, gText_ExpShareTurnedOff, Task_ReturnToBagFromContextMenu);
+		else
+			DisplayItemMessageInCurrentContext(taskId, TRUE, 2, gText_ExpShareTurnedOff);
 	}
 	else
 	{
 		PlaySE(SE_PC_ON);
 		FlagSet(FLAG_EXP_SHARE);
-		DisplayItemMessageInBag(taskId, 2, gText_ExpShareTurnedOn, Task_ReturnToBagFromContextMenu);
-	}	
+		if (gBagMenuState.bagOpen)
+			DisplayItemMessageInBag(taskId, 2, gText_ExpShareTurnedOn, Task_ReturnToBagFromContextMenu);
+		else
+			DisplayItemMessageInCurrentContext(taskId, TRUE, 2, gText_ExpShareTurnedOn);
+	}
 }
 
 void FieldUseFunc_PokeTool(u8 taskId)
