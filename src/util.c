@@ -670,28 +670,8 @@ void InitializeTreasureBeach()
 	}
 }
 
-// Generally calculated as {Boss's Ace} - 2 except for Kurtis
-const u8 LevelCaps_MinusTwo[] =
-{
-	11, // Before Gym 1's badge
-	13, // Before Irene
-	15, // Before Casey
-	18, // Before Gym 2's badge
-	24, // Before Gym 3's badge
-	31, // Before Gym 4's badge
-	35, // Before Ronald
-	39, // Before Gym 5's badge
-	45, // Before Gym 6's badge
-	49, // Before Kurtis
-	55, // Before Gym 7's badge & Carnelidge events
-	61, // Before Gym 8's badge
-	65, // Before Elite Four
-	72, // Before Champion
-	100, // Postgame
-};
-
-// Set to the value used by boss trainers' aces
-const u8 LevelCaps_AtCap[] =
+// Caps for boss's next ace
+const u8 EqualLevelCaps_Standard[] =
 {
 	13, // Before Gym 1's badge
 	15, // Before Irene
@@ -703,10 +683,29 @@ const u8 LevelCaps_AtCap[] =
 	41, // Before Gym 5's badge
 	47, // Before Gym 6's badge
 	50, // Before Kurtis
-	57, // Before Gym 7's badge & Carnelidge events
+	58, // Before Gym 7's badge & Carnelidge events
 	63, // Before Gym 8's badge
-	65, // Before Elite Four
+	66, // Before Elite Four
 	74, // Before Champion
+	100, // Postgame
+};
+
+const u8 EqualLevelCaps_HardModes[] =
+{
+	13, // Before Gym 1's badge
+	16, // Before Irene
+	17, // Before Casey
+	21, // Before Gym 2's badge
+	27, // Before Gym 3's badge
+	34, // Before Gym 4's badge
+	39, // Before Ronald
+	42, // Before Gym 5's badge
+	48, // Before Gym 6's badge
+	52, // Before Kurtis
+	58, // Before Gym 7's badge & Carnelidge events
+	64, // Before Gym 8's badge
+	68, // Before Elite Four
+	75, // Before Champion
 	100, // Postgame
 };
 
@@ -744,10 +743,16 @@ u8 GetCurrentLevelCap()
 	if (FlagGet(FLAG_DEFEATED_CHAMPION_SELENE))
 		cap++;
 
-	if (VarGet(VAR_LEVEL_CAPS) == OPTIONS_AMETHYST_EXTRA_HARD_LEVEL_CAPS) // Extra hard caps (-2)
-		return LevelCaps_MinusTwo[cap];
-	else // Hard caps (=)
-		return LevelCaps_AtCap[cap];
+	u8 levelCap = 0;
+	if (VarGet(VAR_DIFFICULTY_SETTING) >= OPTIONS_AMETHYST_HARD_DIFFICULTY) // Hard mode sometimes has raised caps
+		levelCap = EqualLevelCaps_HardModes[cap];
+	else // Standard
+		levelCap = EqualLevelCaps_Standard[cap];
+
+	if (VarGet(VAR_LEVEL_CAPS) == OPTIONS_AMETHYST_EXTRA_HARD_LEVEL_CAPS)
+		levelCap = levelCap - 2; // Extra hard level cap reduced by 2
+
+	return levelCap;
 }
 
 void GetLevelCapIntoLastResult(void)

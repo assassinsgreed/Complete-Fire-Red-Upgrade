@@ -39,7 +39,6 @@ EventScript_DaimynRestaurant_Chef:
     goto RestaurantOptions
 
 FirstRestaurantVisit:
-    giveitem ITEM_POKE_CHIP 100 MSG_OBTAIN
     msgbox gText_Restaurant_FirstVisit MSG_NORMAL
     setvar RestaurantChipsNextVar 0x19 @ 25
     setvar RestaurantChipsTotalVar 0x0
