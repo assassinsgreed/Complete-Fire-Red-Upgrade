@@ -2661,6 +2661,7 @@ HeldItemsShop2:
     .hword ITEM_LIGHT_CLAY
     .hword ITEM_WIDE_LENS
     .hword ITEM_QUICK_CLAW
+    .hword ITEM_THROAT_SPRAY
     .hword ITEM_NONE
 
 .align 1

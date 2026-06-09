@@ -1058,6 +1058,7 @@ EventScript_UltraSpace_DiasOfLight_Necrozma:
     normalmsg
     setflag 0x289 @ Ultra Necrozma Defeated
     addvar 0x4073 0x1 @ Now at 11
+    setflag 0xBE @ Instant friendship game modifier unlocked
     end
 
 NeedBeastKillerInFirstSlot:

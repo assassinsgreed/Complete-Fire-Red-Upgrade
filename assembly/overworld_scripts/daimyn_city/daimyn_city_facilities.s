@@ -451,6 +451,7 @@ LevelScript_InterdimensionalResearchFacility_UltraEpisode_PostUltraNecrozma:
     msgbox gText_UltraEpisode_PostNecrozma_Sakura_ExplainingResearcherSupport MSG_NORMAL
     compare 0x40A7 10
     if lessthan _call UltraEpisode_PostNecrozma_UltraWormholesRemain
+OfferToGoToUltraSpace:
     checkflag 0x28D @ Necrozma caught
     if NOT_SET _call UltraEpisode_PostNecrozma_NecrozmaNotCaught
     msgbox gText_UltraEpisode_PostNecrozma_Sakura_ExplainingTravelToUltraSpace MSG_NORMAL
@@ -471,15 +472,20 @@ UltraEpisode_PostNecrozma_PlayerCalledToSakuraFromMachine:
     return
 
 UltraEpisode_PostNecrozma_UltraWormholesRemain:
-    setvar 0x4000 10
+    setvar 0x4000 9
     copyvar 0x4001 0x40A7
     setvar 0x8004 0x4000
     setvar 0x8005 0x4001
     special 0x3F @ Subtract
     compare 0x4000 0
+    if equal _goto UltraEpisode_PostNecrozma_AllWormholesClosed
     buffernumber 0x0 0x4000
     msgbox gText_UltraEpisode_PostNecrozma_Sakura_UltraWormholesRemain MSG_NORMAL
     return
+
+UltraEpisode_PostNecrozma_AllWormholesClosed:
+    msgbox gText_UltraEpisode_PostNecrozma_Sakura_NoUltraWormholesRemain MSG_NORMAL
+    goto OfferToGoToUltraSpace
 
 UltraEpisode_PostNecrozma_NecrozmaNotCaught:
     msgbox gText_UltraEpisode_PostNecrozma_Sakura_NecrozmaUncaught MSG_NORMAL

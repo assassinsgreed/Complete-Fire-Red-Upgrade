@@ -755,4 +755,4 @@ A[BUFFER2] [BUFFER1]\nwas found.\pToo bad! There's no space for it in\nthe bag.
 [L_BUTTON][R_BUTTON]
 
 #org @gText_PokeTool_FromKeyItems
-This item must be used from the\nTools Menu ( [START_BUTTON] - > [DPAD_RIGHT])
+This item must be used from the\nTools Menu ( [START_BUTTON] - > [DPAD_RIGHT])[PAUSE_UNTIL_PRESS]

@@ -2140,6 +2140,9 @@ Nothing for now!
 #org @gText_UltraEpisode_PostNecrozma_Sakura_UltraWormholesRemain
 [RED]There are still [BUFFER1] Ultra\nWormholes left unaccounted for.\pPlease speak with my researcher when\nyou have time to close them.
 
+#org @gText_UltraEpisode_PostNecrozma_Sakura_NoUltraWormholesRemain
+[RED]You've closed every Ultra Wormhole\nwe've detected.\pThank you, [PLAYER]!
+
 #org @gText_UltraEpisode_PostNecrozma_Sakura_NecrozmaUncaught
 [RED]And, there's still Necrozma[.]\pIt's calm for now, but we can't be\ncertain it won't lash out again.\pPlease, capture it.\pI'm certain a trainer like you can\ncalm it down.
 

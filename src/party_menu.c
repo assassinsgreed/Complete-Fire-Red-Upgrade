@@ -2792,7 +2792,10 @@ void FieldUseFunc_ExpShare(u8 taskId)
 
 void FieldUseFunc_PokeTool(u8 taskId)
 {
-	DisplayItemMessageInBag(taskId, 2, gText_PokeTool_FromKeyItems, Task_ReturnToBagFromContextMenu);
+	if (gBagMenuState.bagOpen)
+		DisplayItemMessageInBag(taskId, 2, gText_PokeTool_FromKeyItems, Task_ReturnToBagFromContextMenu);
+	else
+		DisplayItemMessageInCurrentContext(taskId, TRUE, 2, gText_PokeTool_FromKeyItems);
 }
 
 void ItemUseCB_RareCandy(u8 taskId, TaskFunc func)

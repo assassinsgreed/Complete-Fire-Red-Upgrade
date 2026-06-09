@@ -1535,13 +1535,13 @@ void DestroyTypeIcon(struct Sprite* sprite)
 
 u16 GetLastUsedBall(void)
 {
-	#ifdef UNBOUND
-	if (!FlagGet(FLAG_SANDBOX_MODE) //All balls have 100% catch rate so no point in this
-	&& FlagGet(FLAG_SHOW_BEST_BALL))
-		return GetBestBallInBag();
-	#endif
+	// #ifdef UNBOUND
+	// if (!FlagGet(FLAG_SANDBOX_MODE)) //All balls have 100% catch rate so no point in this
+	// && FlagGet(FLAG_SHOW_BEST_BALL))
+	return GetBestBallInBag();
+	// #endif
 
-	return gLastUsedBall;
+	//return gLastUsedBall;
 }
 
 bool8 CantLoadLastBallTrigger(void)

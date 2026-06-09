@@ -207,7 +207,7 @@ EventScript_DaimynCityGym_LeaderChance_Chat:
     end
 
 Chance_Postgame:
-    checkflag 0xE9A @ Chance Rematch beaten today
+    checkflag 0xE3A @ Chance Rematch beaten today
     if SET _goto ChanceRematch_BeatenToday
     msgbox gText_DaimynGym_LeaderChance_AskForRematch MSG_YESNO
     compare LASTRESULT NO
@@ -220,7 +220,7 @@ Chance_Postgame:
     special 0x3E @ Add two vars above, result stored in 0x4000 which is loaded as trainer ID
     call SetupMugshotGymLeaderAndBosses
     trainerbattle3 0x1 0x4000 0x100 gText_DaimynGym_LeaderChance_OnPlayerVictory
-    setflag 0xE9A @ Chance Rematch beaten today
+    setflag 0xE3A @ Chance Rematch beaten today
     goto ChanceRematch_BeatenToday
     end
 
