@@ -223,7 +223,7 @@ S+
 The item was actually a Pok\emon!\nThe startled Pok\emon attacked!
 
 #org @gText_Common_LevelCapUpdate
-[BLACK]The Level Cap has been raised to\n[GREEN][BUFFER1][BLACK].
+[BLACK]The Level Cap has been set to\n[GREEN][BUFFER1][BLACK].
 
 #org @gText_Common_BadgeObedience
 Pok\emon up to level [GREEN][BUFFER1][BLACK] will now\nobey you without fail.

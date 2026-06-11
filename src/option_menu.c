@@ -246,6 +246,8 @@ void CB2_OptionsMenuFromStartMenu(void)
     sOptionMenuPtr->option_secondPage[MENUITEM_LEVEL_CAPS] = VarGet(VAR_LEVEL_CAPS);
     sOptionMenuPtr->option_secondPage[MENUITEM_SKIP_CUTSCENES] = FlagGet(FLAG_SKIP_CUTSCENES) ? 1 : 0;
     sOptionMenuPtr->option_secondPage[MENUITEM_SKIP_NICKNAMING] = FlagGet(FLAG_DONT_OFFER_NICKNAMES_BATTLE) ? 1 : 0;
+
+    VarSet(VAR_TEMP_2, VarGet(VAR_LEVEL_CAPS));
     
     for (i = 0; i < MENUITEM_COUNT - 1; i++)
     {
@@ -325,10 +327,13 @@ void Task_OptionMenu(u8 taskId)
         break;
     }
 }
+
+extern const u8 EventScript_NotifyLevelCapChange[];
+
 void CloseAndSaveOptionMenu(u8 taskId)
 {
-    gFieldCallback = FieldCB_DefaultWarpExit;
-    SetMainCallback2(gMain.savedCallback);
+    bool8 levelCapChanged;
+
     FreeAllWindowBuffers();
     gSaveBlock2->optionsTextSpeed = sOptionMenuPtr->option[MENUITEM_TEXTSPEED];
     gSaveBlock2->optionsBattleSceneOff = sOptionMenuPtr->option[MENUITEM_BATTLESCENE];
@@ -344,6 +349,25 @@ void CloseAndSaveOptionMenu(u8 taskId)
     sOptionMenuPtr->option_secondPage[MENUITEM_LEVEL_CAPS] >= OPTIONS_AMETHYST_HARD_LEVEL_CAPS ? FlagSet(FLAG_HARD_LEVEL_CAP) : FlagClear(FLAG_HARD_LEVEL_CAP);
     sOptionMenuPtr->option_secondPage[MENUITEM_SKIP_CUTSCENES] == 1 ? FlagSet(FLAG_SKIP_CUTSCENES) : FlagClear(FLAG_SKIP_CUTSCENES);
     sOptionMenuPtr->option_secondPage[MENUITEM_SKIP_NICKNAMING] == 1 ? FlagSet(FLAG_DONT_OFFER_NICKNAMES_BATTLE) : FlagClear(FLAG_DONT_OFFER_NICKNAMES_BATTLE);
+
+    levelCapChanged = (VarGet(VAR_TEMP_2) != VarGet(VAR_LEVEL_CAPS));
+
+    if (levelCapChanged)
+    {
+        // Set up the script before switching callbacks. CB2_ReturnToFieldContinueScript
+        // will call ScriptContext2_Enable() after field init, which picks up the script
+        // we've placed here. This mirrors how the underground mining game returns to a
+        // running script: the script pointer survives the callback transition.
+        ScriptContext1_SetupScript(EventScript_NotifyLevelCapChange);
+        gFieldCallback = FieldCB_DefaultWarpExit;
+        SetMainCallback2(CB2_ReturnToFieldContinueScript);
+    }
+    else
+    {
+        gFieldCallback = FieldCB_DefaultWarpExit;
+        SetMainCallback2(gMain.savedCallback);
+    }
+
     SetPokemonCryStereo(gSaveBlock2->optionsSound);
     FREE_AND_SET_NULL(sOptionMenuPtr);
     DestroyTask(taskId);

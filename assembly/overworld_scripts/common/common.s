@@ -681,6 +681,11 @@ SetCaseyMale:
     textcolor BLUE
     return
 
+.global EventScript_NotifyLevelCapChange
+EventScript_NotifyLevelCapChange:
+    call PrintUpdatedLevelCaps
+    end
+
 .global PrintUpdatedLevelCaps
 PrintUpdatedLevelCaps:
     @ Note: The hard level cap is always below the soft cap, so we don't need to show it if hard caps are enabled

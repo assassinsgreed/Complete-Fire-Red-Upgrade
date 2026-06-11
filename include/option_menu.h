@@ -22,6 +22,7 @@ void __attribute__((long_call)) UpdateSettingSelectionDisplay(u16 selection);
 void __attribute__((long_call)) SetOptionMenuTask(void);
 void __attribute__((long_call)) OptionMenu_SetVBlankCallback(void);
 void __attribute__((long_call)) FieldCB_DefaultWarpExit(void);
+void __attribute__((long_call)) PrintTextOnHelpMessageWindow(const u8 * text, u8 mode);
 
 struct TextWindowGraphics
 {
@@ -31,5 +32,7 @@ struct TextWindowGraphics
 
 const struct TextWindowGraphics  __attribute__((long_call)) * GetUserFrameGraphicsInfo(u8 idx);
 void __attribute__((long_call)) DrawWindowBorderWithStdpal3(u8 bgId, u16 tileStart, u8 palette);
+
+extern const u8 PrintUpdatedLevelCaps[];
 
 #endif // GUARD_OPTIONS_MENU_H
