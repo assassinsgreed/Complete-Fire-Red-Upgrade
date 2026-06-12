@@ -87,7 +87,7 @@ CanTakeVictoryRoadChallenge:
     getplayerpos 0x4000 0x4001
     compare 0x4000 0x27
     if equal _call PlayerMovesOutOfGuardsWay
-    applymovement LASTTALKED m_WalkRight
+    applymovement LASTTALKED m_WalkLeft
     waitmovement LASTTALKED
     applymovement LASTTALKED m_LookDown
     movesprite LASTTALKED 0x27 0x6 @ Location while on map
