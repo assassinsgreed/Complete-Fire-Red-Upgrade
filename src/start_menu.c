@@ -388,7 +388,7 @@ bool8 StartCB_HandleInput(void)
 			return FALSE;
 		sStartMenuCallback = sStartMenuActionTable[sStartMenuOrder[sStartMenuCursorPos]].func.u8_void;
 
-		if (sStartMenuCursorPos==STARTMENU_EXIT ||
+		if (sStartMenuCallback == StartMenuExitCallback ||
 			sStartMenuCallback == StartMenuPocketPCCallback ||
 		    sStartMenuCallback == StartMenuPokeVialCallback ||
 		    sStartMenuCallback == StartMenuInfiniteRepelCallback

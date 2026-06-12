@@ -782,6 +782,7 @@ HeldItemShop:
     .hword ITEM_EJECT_BUTTON
     .hword ITEM_RED_CARD
     .hword ITEM_TERRAIN_EXTENDER
+    .hword ITEM_MUSCLE_BAND
     .hword ITEM_NONE
 
 .global EventScript_DaimynCityMall_Rocker
