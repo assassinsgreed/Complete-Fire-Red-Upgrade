@@ -758,6 +758,11 @@ End:
 
 .global DisableTrainerScalingFlag
 DisableTrainerScalingFlag:
+    checkflag 0x93D @ Scaling cannot be disabled
+    if NOT_SET _call ClearTrainerScaling
+    return
+
+ClearTrainerScaling:
     clearflag 0x90E @ Disable trainer level scaling
     return
 

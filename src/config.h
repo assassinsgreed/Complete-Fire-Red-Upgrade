@@ -82,6 +82,7 @@
 #define FLAG_INFINITE_REPEL_ACTIVE 0x93A // If set, the player will not encounter wild Pokemon. This is separate from 0x911 so it can be managed by a menu option and not overridden by certain story events
 #define FLAG_HARD_LEVEL_CAP 0x93B // If set, a hard level cap is enforced before each boss encounter
 #define FLAG_HARD_MODE 0x93C // If set, the game is in hard mode, which increases the difficulty of battles (determines which trainer table to load from)
+#define FLAG_SCALING_TRAINERS_MODIFIER_ACTIVE 0x93D // If set, the game will not turn off the trainer scaling flag after trainer houses, gym trainees, etc.
 #define FLAG_DAILY_EVENTS_START 0xE00 //To flag + 0xFF, resets every new day.
 
 /*===== Options menu settings =====*/

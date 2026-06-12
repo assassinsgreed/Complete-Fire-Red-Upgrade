@@ -838,10 +838,12 @@ GameModifiers_ScaleWildPokemon_ClearModifier:
 
 GameModifiers_ScaleTrainerPokemon_SetModifier:
 	setflag 0x90E @ Turn on Scale Trainer Pokemon
+	setflag 0x93D @ Do not turn off scaling after battles
 	return
 
 GameModifiers_ScaleTrainerPokemon_ClearModifier:
 	clearflag 0x90E @ Turn off Scale Trainer Pokemon
+	clearflag 0x93D @ Scaling can be turned off after certain battles again
 	return
 
 GameModifiers_HiddenAbilities_SetModifier:
