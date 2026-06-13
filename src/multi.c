@@ -131,8 +131,15 @@ static void ShowBattlerHealthbox(u8 bank)
 
 static bool8 IsBattlerAnimDone(u8 bank)
 {
-	return NULL_SPRITE_CALLBACK(gBattleControllerData[bank])
-		&& NULL_SPRITE_CALLBACK(gBattlerSpriteIds[bank]);
+	u8 controlId = gBattleControllerData[bank];
+	u8 spriteId = gBattlerSpriteIds[bank];
+	// Guard control sprite: only check it if a ball anim was actually started for this battler.
+	// Without the guard, battlers whose IntroTrainerBallThrow was never processed have
+	// controlId == 0 (or stale), and NULL_SPRITE_CALLBACK(0) reads an arbitrary sprite.
+	bool8 controlDone = !gBattleSpritesDataPtr->healthBoxesData[bank].ballAnimActive
+	                 || (controlId < MAX_SPRITES && NULL_SPRITE_CALLBACK(controlId));
+	bool8 spriteDone = (spriteId >= MAX_SPRITES) || NULL_SPRITE_CALLBACK(spriteId);
+	return controlDone && spriteDone;
 }
 
 static void SetShinyAnimOver(u8 bank)
@@ -272,7 +279,12 @@ static void MultiIntro_FoeTryShinyAnimShowHealthbox(void)
 	{
 		if (IS_DOUBLE_BATTLE && !(gBattleTypeFlags & BATTLE_TYPE_MULTI))
 		{
-			DestroySprite(&gSprites[gBattleControllerData[partner]]);
+			// Only destroy the partner's control sprite if its ball anim was actually started.
+			// In standard doubles the partner battler never gets IntroTrainerBallThrow, so
+			// gBattleControllerData[partner] is 0 or stale — destroying it corrupts sprites.
+			if (gBattleSpritesDataPtr->healthBoxesData[partner].ballAnimActive
+			 && gBattleControllerData[partner] < MAX_SPRITES)
+				DestroySprite(&gSprites[gBattleControllerData[partner]]);
 			SetBattlerShadowSpriteCallback(partner, GetMonData(GetBankPartyData(partner), MON_DATA_SPECIES, NULL));
 		}
 
@@ -419,7 +431,9 @@ static void PlayerIntro_TryShinyAnimShowHealthbox(void)
 	{
 		m4aMPlayVolumeControl(&gMPlayInfo_BGM, 0xFFFF, 0x100);
 		DestroySprite(&gSprites[gBattleControllerData[gActiveBattler]]);
-		if (IS_DOUBLE_BATTLE && !(gBattleTypeFlags & BATTLE_TYPE_MULTI))
+		if (IS_DOUBLE_BATTLE && !(gBattleTypeFlags & BATTLE_TYPE_MULTI)
+		 && gBattleSpritesDataPtr->healthBoxesData[partner].ballAnimActive
+		 && gBattleControllerData[partner] < MAX_SPRITES)
 			DestroySprite(&gSprites[gBattleControllerData[partner]]);
 
 		gBattleSpritesDataPtr->animationData->introAnimActive = FALSE;
