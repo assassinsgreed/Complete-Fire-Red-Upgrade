@@ -2,6 +2,14 @@
 #include "../include/menu.h"
 #include "../include/pokemon_summary_screen.h"
 #include "../include/string_util.h"
+#include "../include/task.h"
+#include "../include/event_data.h"
+#include "../include/constants/flags.h"
+#include "../include/new/ram_locs.h"
+#include "../include/main.h"
+
+extern void CB2_ShowEvIv(void);
+extern const u8 gText_EvIvDetails[];
 
 // From pokeemerald wiki
 
@@ -96,6 +104,59 @@ static u8 * GetIVAssessment(s32 ivNum)
     return gText_IVRating_SPlus;
 }
 
+static void Task_MonitorSummarySkillsPageForEvIv(u8 taskId)
+{
+    struct Task *task = &gTasks[taskId];
+    static const struct TextColor detailsTextColour =
+    {
+        .bgColor = TEXT_COLOR_TRANSPARENT,
+        .fgColor = TEXT_COLOR_WHITE,
+        .shadowColor = TEXT_COLOR_DARK_GREY,
+    };
+
+    switch (task->data[0])
+    {
+    case 0:
+        if (sMonSummaryScreen->curPageIndex != PSS_PAGE_SKILLS
+            || !FlagGet(FLAG_ENABLE_EV_IV_VIEWER)
+            || sMonSummaryScreen->mode == PSS_MODE_BOX)
+        {
+            DestroyTask(taskId);
+            return;
+        }
+        {
+            // Re-draw after Pokémon switch: the input handler task (created before ours) redraws
+            // key prompts when switchMonTaskState returns to 0. We run after it in the same
+            // RunTasks() call, so we can immediately overdraw in the same frame.
+            bool8 switchInProgress = sMonSummaryScreen->switchMonTaskState != 0;
+            if (switchInProgress)
+            {
+                task->data[1] = 1;
+            }
+            else if (task->data[1])
+            {
+                task->data[1] = 0;
+                FillWindowPixelBuffer(1, PIXEL_FILL(0));
+                WindowPrint(1, FONT_SMALL, 14, 0, &detailsTextColour, 0, gText_EvIvDetails);
+            }
+        }
+        if (JOY_NEW(A_BUTTON))
+        {
+            BeginNormalPaletteFade(0xFFFFFFFF, 0, 0, 16, RGB_BLACK);
+            task->data[0] = 1;
+        }
+        break;
+    case 1:
+        if (!gPaletteFade->active)
+        {
+            DestroyTask(taskId);
+            SetMainCallback2(CB2_ShowEvIv);
+        }
+        break;
+    }
+}
+
+// TODO: This works, it just fires after the page is loading and causes the content here to "pop in"
 void PrintSkillsPage(void)
 {
     // Display Nature colored stats
@@ -134,5 +195,23 @@ void PrintSkillsPage(void)
         AddTextPrinterParameterized3(sMonSummaryScreen->windowIds[POKESUM_WIN_RIGHT_PANE], FONT_SMALL, 44, 56, sIVTextColors[GetIVColor(ivNum)], TEXT_SKIP_DRAW, GetIVAssessment(ivNum));
         ivNum = GetMonData(&sMonSummaryScreen->currentMon, MON_DATA_SPEED_IV, 0);
         AddTextPrinterParameterized3(sMonSummaryScreen->windowIds[POKESUM_WIN_RIGHT_PANE], FONT_SMALL, 44, 68, sIVTextColors[GetIVColor(ivNum)], TEXT_SKIP_DRAW, GetIVAssessment(ivNum));
+    }
+
+    if (FlagGet(FLAG_ENABLE_EV_IV_VIEWER) && sMonSummaryScreen->mode != PSS_MODE_BOX)
+    {
+        static const struct TextColor detailsTextColour =
+        {
+            .bgColor = TEXT_COLOR_TRANSPARENT,
+            .fgColor = TEXT_COLOR_WHITE,
+            .shadowColor = TEXT_COLOR_DARK_GREY,
+        };
+
+        FillWindowPixelBuffer(1, PIXEL_FILL(0)); // Fill with black
+
+        // Write new keyprompts over existing ones
+        WindowPrint(1, FONT_SMALL, 14, 0, &detailsTextColour, 0, gText_EvIvDetails);
+
+        if (!FuncIsActiveTask(Task_MonitorSummarySkillsPageForEvIv))
+            CreateTask(Task_MonitorSummarySkillsPageForEvIv, 0);
     }
 }

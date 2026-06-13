@@ -123,6 +123,9 @@ When enabled, battles will start with\nthe preferred terrain.\pThis is overridde
 #org @gText_GameModifiers_InstantFriendship_Description
 When enabled, Pok\emon instantly\nreach max friendship.
 
+#org @gText_GameModifiers_EVIVViewer_Description
+When enabled, EVs/IVs can be viewed\nby pressing [A_BUTTON] in the Pok\emon\lSummary screen.\pThis is only supported for Pok\emon in\nthe player's party.
+
 // Modifier Password Declarations
 
 #org @gText_GameModifiers_RandomizerSpecies_PasswordDeclaration
@@ -179,6 +182,9 @@ The password to unlock this modifier\nin new games is [BLUE]ALLTERRAIN[BLACK].
 #org @gText_GameModifiers_InstantFriendship_PasswordDeclaration
 The password to unlock this modifier\nin new games is [BLUE]BFFS[BLACK].
 
+#org @gText_GameModifiers_EVIVViewer_PasswordDeclaration
+The password to unlock this modifier\nin new games is [BLUE]OVER9000[BLACK].
+
 // Unlock Criteria
 
 #org @gText_GameModifiers_UnlockCriteria_CompleteUltraSpaceEpisode
@@ -216,6 +222,9 @@ The password to unlock this modifier\nin new games is [BLUE]BFFS[BLACK].
 
 #org @gText_GameModifiers_UnlockCriteria_AllUteyanRuinPuzzles
 [BLUE]Unlock Criteria: [BLACK]Solve the mysteries\nof the Uteyan Ruins and become\lChampion.
+
+#org @gText_GameModifiers_UnlockCriteria_150IVPokemon
+[BLUE]Unlock Criteria: [BLACK]Interact with this PC\nwhile having a Pok\emon with at\lleast 150 IVs, after becoming\lChampion.
 
 // Passwords
 #org @gText_GameModifiers_RandomizerSpecies_Password
@@ -271,3 +280,6 @@ ALLTERRAIN
 
 #org @gText_GameModifiers_InstantFriendship_Password
 BFFS
+
+#org @gText_GameModifiers_EVIVViewer_Password
+OVER9000

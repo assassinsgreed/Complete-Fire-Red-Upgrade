@@ -181,6 +181,7 @@ EventScript_DaimynCityFacilities_PokemonCenterGirl:
 EventScript_DaimynCityFacilities_PokeballTraveller: 
     lock
     faceplayer
+    setflag 0x944 @ FLAG_ENABLE_EV_IV_VIEWER / FLAG_GAMEMODIFIER_EVIVVIEWER_UNLOCKED
     msgbox gText_DaimynCityFacilities_PokemonCenter_TravellingMan_Intro MSG_NORMAL
     showmoney 0x0 0x0
     msgbox gText_DaimynCityFacilities_PokemonCenter_TravellingMan_SaleOffer MSG_YESNO

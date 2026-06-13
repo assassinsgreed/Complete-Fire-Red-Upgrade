@@ -210,7 +210,7 @@ LevelScripts_AnthraTown_GenChoice:
 TileScript_AnthraTown_RivalArrival:
 	compare StoryEventVar PlayerCalledDownstairs
 	IF greaterorequal _goto End
-	checkflag 0x93D @ skip cutscenes
+	checkflag 0x93D @ Skipping Cutscenes
 	if SET _goto SkippingCutscene_GameStart_InPlayersRoom
 	sound 0x15 @ Exclaim
 	applymovement PLAYER m_Surprise

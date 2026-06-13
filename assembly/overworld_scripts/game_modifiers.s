@@ -43,6 +43,7 @@ ChoosingModifier:
 	case 15, GameModifiers_InstantBattleWeather
 	case 16, GameModifiers_InstantBattleTerrain
 	case 17, GameModifiers_InstantFriendship
+	case 18, GameModifiers_EVIVViewer
 	case 0x7F, GameModifiers_End @ When player hits B to close
 	goto GameModifiers_End
 
@@ -93,6 +94,8 @@ GameModifiers_PromptToTurnOff:
 	if equal _call GameModifiers_InstantBattleTerrain_ClearModifier
 	compare 0x4000 17
 	if equal _call GameModifiers_InstantFriendship_ClearModifier
+	compare 0x4000 18
+	if equal _call GameModifiers_EVIVViewer_ClearModifier
 	playse 0x30 @ Save
 	msgbox gText_GameModifiers_ModifierNowOff MSG_NORMAL
 	goto ChoosingModifier
@@ -138,6 +141,8 @@ GameModifiers_PromptToTurnOn:
 	if equal _call GameModifiers_InstantBattleTerrain_SetModifier
 	compare 0x4000 17
 	if equal _call GameModifiers_InstantFriendship_SetModifier
+	compare 0x4000 18
+	if equal _call GameModifiers_EVIVViewer_SetModifier
 	playse 0x30 @ Save
 	msgbox gText_GameModifiers_ModifierNowOn MSG_NORMAL
 	goto ChoosingModifier
@@ -729,10 +734,41 @@ GameModifiers_InstantFriendship_UnlockedWithPassword:
 	goto GameModifiers_InstantFriendship_TogglePrompt
 
 GameModifiers_InstantFriendship_TogglePrompt:
-	checkflag 0x933 @ Instant Friendship active
+	checkflag 0x943 @ Instant Friendship active
 	if SET _goto GameModifiers_PromptToTurnOff
 	goto GameModifiers_PromptToTurnOn
 
+GameModifiers_EVIVViewer:
+	msgbox gText_GameModifiers_EVIVViewer_Description MSG_NORMAL
+	checkflag 0x0C1 @ EV/IV Viewer game modifier unlocked
+	if NOT_SET _goto GameModifiers_EVIVViewer_NotUnlocked
+	msgbox gText_GameModifiers_EVIVViewer_PasswordDeclaration MSG_NORMAL
+	goto GameModifiers_EVIVViewer_TogglePrompt
+
+GameModifiers_EVIVViewer_NotUnlocked:
+	msgbox gText_GameModifiers_UnlockCriteria_150IVPokemon MSG_NORMAL
+	msgbox gText_GameModifiers_ModifierNotYetAchieved MSG_YESNO
+	compare LASTRESULT NO
+	if equal _goto ChoosingModifier
+	call EnterUnlockPassword
+	loadpointer 0x0 gText_GameModifiers_EVIVViewer_Password
+    special 0x12D
+    compare LASTRESULT 0x0
+    if equal _goto GameModifiers_EVIVViewer_UnlockedWithPassword
+	playse 0x1A @ Error
+    msgbox gText_GameModifiers_PasswordIncorrect MSG_NORMAL
+	goto ChoosingModifier
+
+GameModifiers_EVIVViewer_UnlockedWithPassword:
+	playse 0x19 @ Correct
+	setflag 0x0C1 @ EV/IV Viewer modifier unlocked
+	msgbox gText_GameModifiers_PasswordCorrect MSG_NORMAL
+	goto GameModifiers_EVIVViewer_TogglePrompt
+
+GameModifiers_EVIVViewer_TogglePrompt:
+	checkflag 0x944 @ EV/IV Viewer active
+	if SET _goto GameModifiers_PromptToTurnOff
+	goto GameModifiers_PromptToTurnOn
 
 // Set / Clear functions
 GameModifiers_RandomizerSpecies_SetModifier:
@@ -838,12 +874,12 @@ GameModifiers_ScaleWildPokemon_ClearModifier:
 
 GameModifiers_ScaleTrainerPokemon_SetModifier:
 	setflag 0x90E @ Turn on Scale Trainer Pokemon
-	setflag 0x93D @ Do not turn off scaling after battles
+	setflag 0x93F @ Do not turn off scaling after battles
 	return
 
 GameModifiers_ScaleTrainerPokemon_ClearModifier:
 	clearflag 0x90E @ Turn off Scale Trainer Pokemon
-	clearflag 0x93D @ Scaling can be turned off after certain battles again
+	clearflag 0x93F @ Scaling can be turned off after certain battles again
 	return
 
 GameModifiers_HiddenAbilities_SetModifier:
@@ -926,10 +962,18 @@ GameModifiers_InstantBattleTerrain_ClearModifier:
 	return
 
 GameModifiers_InstantFriendship_SetModifier:
-	setflag 0x933 @ Turn on Instant Friendship
+	setflag 0x943 @ Turn on Instant Friendship
 	callasm RunOnResumeMapScript @ Set max friendship for any pokemon already in the party
 	return
 
 GameModifiers_InstantFriendship_ClearModifier:
-	clearflag 0x933 @ Turn off Instant Friendship
+	clearflag 0x943 @ Turn off Instant Friendship
+	return
+
+GameModifiers_EVIVViewer_SetModifier:
+	setflag 0x944 @ Turn on EV/IV Viewer
+	return
+
+GameModifiers_EVIVViewer_ClearModifier:
+	clearflag 0x944 @ Turn off EV/IV Viewer
 	return

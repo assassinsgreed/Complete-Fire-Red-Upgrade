@@ -585,7 +585,7 @@ LevelScript_Route4_ForemanEvent:
 
 RemoveBouldersCutscene:
     lock
-    checkflag 0x93D
+    checkflag 0x93D @ Skipping Cutscenes
     if SET _goto SkippingCutscene_Route4_PathCleared
     sound 0x15 @ Exclaim
     special 0xAF @ Dismount bike if on it (Casual Mode)

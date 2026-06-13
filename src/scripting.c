@@ -3168,6 +3168,7 @@ extern const u8 gText_GameModifiers_DexNavShowAll[];
 extern const u8 gText_GameModifiers_InstantBattleWeather[];
 extern const u8 gText_GameModifiers_InstantBattleTerrain[];
 extern const u8 gText_GameModifiers_InstantFriendship[];
+extern const u8 gText_GameModifiers_EVIVViewer[];
 
 // Ultra Wormholes
 extern const u8 gText_UltraWormholes_Nihilego[];
@@ -3478,6 +3479,7 @@ static const u8* sGameModifiers[] =
 	gText_GameModifiers_InstantBattleWeather,
 	gText_GameModifiers_InstantBattleTerrain,
 	gText_GameModifiers_InstantFriendship,
+	gText_GameModifiers_EVIVViewer,
 	gText_End,
 };
 
@@ -3947,6 +3949,25 @@ void ComputeCompletedGameModifierRequirements()
 		FlagGet(FLAG_SYS_GAME_CLEAR))
 	{
 		FlagSet(FLAG_GAMEMODIFIER_INSTANTBATTLETERRAIN_UNLOCKED);
+	}
+
+	// Pokemon with 150+ IVs in party
+	for (int i = 0; i < PARTY_SIZE; i++)
+	{
+		struct Pokemon* mon = &gPlayerParty[i];
+		u8 ivTotal = 
+			GetMonData(mon, MON_DATA_HP_IV, NULL) +
+			GetMonData(mon, MON_DATA_ATK_IV, NULL) +
+			GetMonData(mon, MON_DATA_DEF_IV, NULL) +
+			GetMonData(mon, MON_DATA_SPEED_IV, NULL) +
+			GetMonData(mon, MON_DATA_SPATK_IV, NULL) +
+			GetMonData(mon, MON_DATA_SPDEF_IV, NULL);
+
+		if (species != SPECIES_NONE && ivTotal >= 150)
+		{
+			FlagSet(FLAG_GAMEMODIFIER_EV_IV_VIEWER_UNLOCKED);
+			break;
+		}
 	}
 }
 

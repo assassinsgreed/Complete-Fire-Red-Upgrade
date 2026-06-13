@@ -600,6 +600,9 @@ Instant Terrain in Battle
 #org @gText_GameModifiers_InstantFriendship
 Instant Friendship
 
+#org @gText_GameModifiers_EVIVViewer
+Enable EV/IV Viewer
+
 #org @gText_UltraWormholes_Nihilego
 Symbiont Wormhole
 
