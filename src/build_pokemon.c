@@ -933,7 +933,7 @@ static u8 CreateNPCTrainerParty(struct Pokemon* const party, const u16 trainerId
 
 			if (setMonGender == 1)
 			{
-				genderOffset = 0x78; //Female
+				genderOffset = 0x0F; //Female (< 31, guarantees female even for 12.5% female species)
 				personalityValue = genderOffset;
 				goto SKIP_SET_RANDOM_PERSONALITY;
 			}

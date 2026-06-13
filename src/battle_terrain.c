@@ -349,7 +349,12 @@ static u8 TryLoadAlternateAreaTerrain(u8 terrain)
 			if (IsCurrentAreaWinter())
 				terrain = BATTLE_TERRAIN_SNOWY;
 			else if (MetatileBehavior_IsMountain(tileBehavior) || mapSec == MAPSEC_CARNELIDGE_VOLCANO || mapSec == MAPSEC_VICTORY_ROAD)
-				terrain = BATTLE_TERRAIN_MOUNTAIN;
+			{
+				if (MAP_IS(CARNELIDGE_VOLCANO_PEAK))
+					terrain = BATTLE_TERRAIN_CARNELIDGE_PEAK;
+				else 
+					terrain = BATTLE_TERRAIN_MOUNTAIN;
+			}
 			else if (IsCurrentAreaOpenOcean())
 				terrain = BATTLE_TERRAIN_SAND;
 			else if (mapSec == MAPSEC_VARISI_FOREST)
