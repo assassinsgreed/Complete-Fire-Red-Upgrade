@@ -557,6 +557,87 @@ static u16 GetDevolution(u16 originalSpecies, u16 backupSpecies)
 	SEARCH_START: ;
 	u16 species = originalSpecies;
 	found = FALSE;
+
+	// Dumb hack: If the pokemon being checked has a mega or gigantamax in it's evolution tree, return SPECIES_NONE so bad data isn't returned.
+	if (
+		originalSpecies == SPECIES_BULBASAUR ||
+		originalSpecies == SPECIES_CHARMANDER ||
+		originalSpecies == SPECIES_SQUIRTLE ||
+		originalSpecies == SPECIES_CATERPIE ||
+		originalSpecies == SPECIES_WEEDLE ||
+		originalSpecies == SPECIES_PIDGEY ||
+		originalSpecies == SPECIES_PICHU ||
+		originalSpecies == SPECIES_PIKACHU_CAP_ORIGINAL ||
+		originalSpecies == SPECIES_MEOWTH ||
+		originalSpecies == SPECIES_ABRA ||
+		originalSpecies == SPECIES_MACHOP ||
+		originalSpecies == SPECIES_SLOWPOKE ||
+		originalSpecies == SPECIES_GASTLY ||
+		originalSpecies == SPECIES_ONIX ||
+		originalSpecies == SPECIES_KRABBY ||
+		originalSpecies == SPECIES_KANGASKHAN ||
+		originalSpecies == SPECIES_PINSIR ||
+		originalSpecies == SPECIES_MAGIKARP ||
+		originalSpecies == SPECIES_SCYTHER ||
+		originalSpecies == SPECIES_EEVEE ||
+		originalSpecies == SPECIES_AERODACTYL ||
+		originalSpecies == SPECIES_MEWTWO ||
+		originalSpecies == SPECIES_MAREEP ||
+		originalSpecies == SPECIES_HERACROSS ||
+		originalSpecies == SPECIES_HOUNDOUR ||
+		originalSpecies == SPECIES_LARVITAR ||
+		originalSpecies == SPECIES_TREECKO ||
+		originalSpecies == SPECIES_TORCHIC ||
+		originalSpecies == SPECIES_MUDKIP ||
+		originalSpecies == SPECIES_SABLEYE ||
+		originalSpecies == SPECIES_CARVANHA ||
+		originalSpecies == SPECIES_ELECTRIKE ||
+		originalSpecies == SPECIES_NUMEL ||
+		originalSpecies == SPECIES_SNORUNT ||
+		originalSpecies == SPECIES_MEDITITE ||
+		originalSpecies == SPECIES_ALTARIA ||
+		originalSpecies == SPECIES_ABSOL ||
+		originalSpecies == SPECIES_BANETTE ||
+		originalSpecies == SPECIES_ARON ||
+		originalSpecies == SPECIES_RALTS ||
+		originalSpecies == SPECIES_BAGON ||
+		originalSpecies == SPECIES_BELDUM ||
+		originalSpecies == SPECIES_KYOGRE ||
+		originalSpecies == SPECIES_GROUDON ||
+		originalSpecies == SPECIES_RAYQUAZA ||
+		originalSpecies == SPECIES_LATIAS ||
+		originalSpecies == SPECIES_LATIOS ||
+		originalSpecies == SPECIES_BUNEARY ||
+		originalSpecies == SPECIES_GIBLE ||
+		originalSpecies == SPECIES_RIOLU ||
+		originalSpecies == SPECIES_SNOVER ||
+		originalSpecies == SPECIES_AUDINO ||
+		originalSpecies == SPECIES_TRUBBISH ||
+		originalSpecies == SPECIES_DIANCIE ||
+		originalSpecies == SPECIES_NECROZMA ||
+		originalSpecies == SPECIES_NECROZMA_DUSK_MANE ||
+		originalSpecies == SPECIES_NECROZMA_DAWN_WINGS ||
+		originalSpecies == SPECIES_MELTAN ||
+		originalSpecies == SPECIES_GROOKEY ||
+		originalSpecies == SPECIES_SCORBUNNY ||
+		originalSpecies == SPECIES_SOBBLE ||
+		originalSpecies == SPECIES_ROOKIDEE ||
+		originalSpecies == SPECIES_BLIPBUG ||
+		originalSpecies == SPECIES_CHEWTLE ||
+		originalSpecies == SPECIES_ROLYCOLY ||
+		originalSpecies == SPECIES_APPLIN ||
+		originalSpecies == SPECIES_SILICOBRA ||
+		originalSpecies == SPECIES_TOXEL ||
+		originalSpecies == SPECIES_SIZZLIPEDE ||
+		originalSpecies == SPECIES_HATENNA ||
+		originalSpecies == SPECIES_IMPIDIMP ||
+		originalSpecies == SPECIES_MILCERY ||
+		originalSpecies == SPECIES_CUFANT ||
+		originalSpecies == SPECIES_COPPERAJAH ||
+		originalSpecies == SPECIES_KUBFU
+	)
+		return SPECIES_NONE;
+
 	for (j = 1; j < NUM_SPECIES; ++j)
 	{
 		for (k = 0; k < EVOS_PER_MON; ++k)
@@ -607,7 +688,11 @@ static u16 GetDevolution(u16 originalSpecies, u16 backupSpecies)
 
 u16 GetMonDevolution(struct Pokemon* mon)
 {
-	return GetDevolution(GetMonData(mon, MON_DATA_SPECIES, NULL), mon->backupSpecies);
+	// Don't use mon->backupSpecies here: it aliases BoxPokemon.checksum at offset 0x1C,
+	// so trainer party pokemon created by vanilla SetBoxMonData have garbage (checksum)
+	// values there instead of SPECIES_NONE. The EVO_MEGA/EVO_GIGANTAMAX redirects in
+	// GetDevolution's main loop already handle Mega/Gmax forms correctly without it.
+	return GetDevolution(GetMonData(mon, MON_DATA_SPECIES, NULL), SPECIES_NONE);
 }
 
 u8 GetMinimumLevel(u16 species)

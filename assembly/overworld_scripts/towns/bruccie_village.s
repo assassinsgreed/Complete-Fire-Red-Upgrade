@@ -504,8 +504,7 @@ ChoosePokemon:
     special2 LASTRESULT 0x7D @ Check if it's a traded pokemon
     compare LASTRESULT TRUE
     if equal _goto CannotChangeForTradedPokemon
-    special2 0x4000 0xB
-    addvar 0x4000 0x1 @ Add 1 - This vanilla special reads the ball in a 0 based format instead of 1 based (#0 is None)
+    special2 0x4000 0xB @ Returns item ID of the pokemon's ball
     compare 0x4000 ITEM_CHERISH_BALL
     if equal _goto CannotChangeCherishBall
     bufferitem 0x1 0x4000

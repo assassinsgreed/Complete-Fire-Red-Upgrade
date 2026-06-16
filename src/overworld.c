@@ -121,6 +121,7 @@ extern u8 EventScript_Common_AccessPC[];
 extern u8 EventScript_UltraSpaceCommon_InteractableBookshelf[];
 extern u8 EventScript_UltraSpaceCommon_InteractablePainting[];
 extern u8 EventScript_UltraSpaceCommon_InteractableTV[];
+extern u8 EventScript_Common_TelevisionHints[];
 
 //Table full of pointers of scripts run when talking to tiles with certain behaviour bytes
 static const u8* const sMetatileInteractionScripts[] =
@@ -154,7 +155,7 @@ static const u8* const sMetatileInteractionScripts[] =
 #if (defined UNBOUND && defined SWARM_CHANGE_HOURLY)
 	[MB_TELEVISION] = EventScript_TVSwarm, //Relates info on the daily swarm
 #else
-	[MB_TELEVISION] = (void*) 0x81A764E,
+	[MB_TELEVISION] = EventScript_Common_TelevisionHints, // (void*) 0x81A764E,
 #endif
 	[MB_BERRY_CRUSH_RECORDS] = (void*) 0x81BBFD8,
 	[MB_BATTLE_RECORDS] = (void*) 0x81BB8A7,
@@ -2338,7 +2339,8 @@ const u8* GetInteractedMetatileScript(unusedArg struct MapPosition* position, u8
 				if (mapSec == MAPSEC_ULTRA_SPACE)
 					return EventScript_UltraSpaceCommon_InteractableTV;
 				else
-					return sMetatileInteractionScripts[metatileBehavior];
+					return EventScript_Common_TelevisionHints;
+					//return sMetatileInteractionScripts[metatileBehavior];
 			}
 			break;
 

@@ -15,7 +15,8 @@ EventScript_DaimynCityMall_LuckyDrawLady:
     compare LASTRESULT NO
     if equal _goto LuckyDrawChoseNo
     msgbox gText_DaimynCityMall_LuckyDrawStarting MSG_NORMAL
-    random 0x11F @ up to #287 to avoid exposing starters and legendaries, stored in LastResult
+    random 0x11F @ 0-286; shift below to make range 1-287
+    addvar LASTRESULT 1
     callasm GetLuckyPokemonSpecies
     showpokepic 0x8000
     cry 0x8000 0x0

@@ -211,7 +211,8 @@ MapEntryScript_UteyaVillage_SlowpokeNews_SetSpecies:
     call BufferSpeciesName    
     checkflag 0xE32 @ Species has been set
     if SET _goto End
-    random 287 @ up to #287 to avoid exposing starters and legendaries, stored in LastResult
+    random 287 @ 0-286; shift below to make range 1-287
+    addvar LASTRESULT 1
     copyvar 0x40ED LASTRESULT @ Slowpoke news dex #
     setflag 0xE32 @ Species has been set
     call BufferSpeciesName @ Get the species name belonging to this pokedex #
@@ -228,6 +229,7 @@ EventScript_UteyaVillage_SlowpokeNews_Producer:
     lock
     checkflag 0xE33 @ Slowpoke News completed today
     if SET _goto SlowpokeNewsCompleted_Producer
+    call BufferSpeciesName @ Refresh in case gStringVar1 was overwritten since map load
     faceplayer
     msgbox gText_UteyaVillage_SlowpokeNews_Producer_Intro MSG_NORMAL
     showpokepic 0x40EE
@@ -247,7 +249,8 @@ EventScript_UteyaVillage_SlowpokeNews_Producer:
     if greaterorequal _goto SlowpokeNews_ChoseNotToShowPokemon
     setvar 0x8003 0x0 @ Check species from party (0x8004 set by special 0x9F above)
     special2 LASTRESULT 0x18 @ Check species
-    comparevartovar LASTRESULT 0x40EE @ Compare value of chosen pokemon to the daily pokemon
+    callasm GetSpeciesNatDex @ Convert to nat dex # so alternate forms are accepted
+    comparevartovar LASTRESULT 0x40ED @ Compare nat dex of shown pokemon to daily nat dex
     if notequal _goto SlowpokeNews_ChoseWrongPokemon
     sound 0x15 @ Exclaim
     applymovement LASTTALKED m_Surprise
@@ -285,6 +288,7 @@ SlowpokeNewsCompleted_Producer:
 EventScript_UteyaVillage_SlowpokeNews_Reporter:
     checkflag 0xE33 @ Slowpoke News completed today
     if SET _goto SlowpokeNewsCompleted_Reporter
+    call BufferSpeciesName @ Refresh in case gStringVar1 was overwritten since map load
     npcchatwithmovement gText_UteyaVillage_SlowpokeNews_Reporter_PokemonNotShown m_LookUp
     end
 
@@ -296,6 +300,7 @@ SlowpokeNewsCompleted_Reporter:
 EventScript_UteyaVillage_SlowpokeNews_Editor:
     checkflag 0xE33 @ Slowpoke News completed today
     if SET _goto SlowpokeNewsCompleted_Editor
+    call BufferSpeciesName @ Refresh in case gStringVar1 was overwritten since map load
     npcchatwithmovement gText_UteyaVillage_SlowpokeNews_Editor_PokemonNotShown m_LookLeft
     end
 

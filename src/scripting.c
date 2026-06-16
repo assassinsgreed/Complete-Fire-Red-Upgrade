@@ -271,7 +271,8 @@ u16 sp00B_CheckPokeball(void)
 	if (partyId >= PARTY_SIZE)
 		return 0;
 
-	return GetMonDataFromVar8003(MON_DATA_POKEBALL);
+	u8 ballType = GetMonDataFromVar8003(MON_DATA_POKEBALL);
+	return BallIdToItemId(ballType);
 }
 
 u8 sp00C_CheckCaptureLocation(void)
@@ -3617,16 +3618,16 @@ void GetLuckyPokemonSpecies()
 
 void GetSlowpokeNewsSpecies()
 {
-	// Get the species name from LASTRESULT and get it's dex #, then buffer it's name in buffer1
-	do
-	{
-		u16 dexNum = VarGet(gSpecialVar_LastResult);
-		int species = NationalPokedexNumToSpecies(dexNum);
-		GetSpeciesName(gStringVar1, species);
-		// Set LASTRESULT to the species's dex number (not the original dex# as this is for the national dex!)
-		gSpecialVar_LastResult = species;
-	}
-	while (StringCompare(gStringVar1, (const u8*)"/149") == 0);
+	u16 dexNum = VarGet(gSpecialVar_LastResult);
+	int species = NationalPokedexNumToSpecies(dexNum);
+	GetSpeciesName(gStringVar1, species);
+	gSpecialVar_LastResult = species;
+}
+
+void GetSpeciesNatDex()
+{
+	// Convert species in LASTRESULT to its national dex number so alternate forms match
+	gSpecialVar_LastResult = SpeciesToNationalPokedexNum(gSpecialVar_LastResult);
 }
 
 void CheckIfCaught()
@@ -3830,7 +3831,32 @@ void ResetAllLegendaries()
 	// Special: Handle Necrozma by it's unique flag, since it can be caught in either form and is not guaranteed to be unfused
 	if (!FlagGet(0x28D))
 		FlagClear(0x6F);
-	
+
+	// Poipole is a gift Pokemon — dex check alone can't detect if they were released,
+	// so scan party and PC boxes to decide whether to restore the gift event.
+	{
+		bool8 hasPoipole = FALSE;
+
+		for (int i = 0; i < PARTY_SIZE; i++)
+		{
+			u16 s = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES, NULL);
+			if (s == SPECIES_POIPOLE || s == SPECIES_NAGANADEL)
+				hasPoipole = TRUE;
+		}
+
+		for (int box = 0; box < TOTAL_BOXES_COUNT && !hasPoipole; box++)
+		{
+			for (int slot = 0; slot < IN_BOX_COUNT && !hasPoipole; slot++)
+			{
+				u16 s = GetBoxMonData(GetBoxedMonPtr(box, slot), MON_DATA_SPECIES, NULL);
+				if (s == SPECIES_POIPOLE || s == SPECIES_NAGANADEL)
+					hasPoipole = TRUE;
+			}
+		}
+
+		if (!hasPoipole && FlagGet(0x276))
+			FlagClear(0x276); // Received Poipole (explanation flag 0x275 stays set)
+	}
 }
 
 bool8 AreAllItemsInRangeObtained(u16 startRange, u16 endRange)

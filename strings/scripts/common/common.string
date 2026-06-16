@@ -510,6 +510,75 @@ Emily
 #org @gText_Common_CannotDoubleBattle_Female
 [RED]Hey! You don't have enough Pok\emon\nto battle us with.
 
+#org @gText_Common_TelevisionHint_Intro
+[BLACK]Oh! It's a television special hosted\nby Gabby!\p[RED]Hello, and welcome to Kulure Korner,\nwhere we discuss what's hip and\lhappening in the Kulure Region.
+
+#org @gText_Common_TelevisionHint_Outro
+[RED]That's all for today, folks!\pRemember to keep that dial on\nKulure Korner to stay in the know![BLACK]
+
+#org @gText_Common_TelevisionHint_SeleneInTheArea
+[RED]We're reporting to you live from\nAnthra Town.\pRumour has it that Champion Selene\nis nearby, conducting field\lresearch with the esteemed\lProfessor Hawthorne.\pOnce we've resolved our hardware\nsituation, we'll head to Route 17\lto interview the esteemed champion.
+
+#org @gText_Common_TelevisionHint_GoToHawthornesLab
+[RED]Today's segment is on Professor\nHawthorne, Kulure's expert on\lPok\emon conservation!\pThis hard working man works out of\nhis lab in Olenic Town.\pDespite how busy he is, he has a\nsoft spot for up-and-coming\ltrainers.\pIt's said that trainers are welcome\nto stop by any time to receive a\lPok\eDex. How kind of him!
+
+#org @gText_Common_TelevisionHint_GoToRhodanziCity
+[RED]We're doing a segment on new trainers\ntoday!\pMany new trainers find themselves\ndeparting for Rhodanzi City, home\lof the gentle Gym Leader Terrence.\pWhen interviewed, Terrence had this\nto say:\p[BLUE]"I love helping new trainers find\ntheir footing by battling them with\leasy-to-counter Grass type\lPok\emon.\pOh! I should also recommend they\nvisit the Rhodanzi City Trainer\lSchool.\pIt's a wellspring of knowledge sure\nto aid both new and seasoned\ltrainers!\"[RED]
+
+#org @gText_Common_TelevisionHint_GoToRubarrDesert
+[RED]We've received exciting word that a\nnew shipment of DexNavs have\larrived in the Kulure Region!\pThese nifty devices help trainers\nfind Pok\emon in the wild.\pIf our sources are true, one of\nHawthorne's aides is delivering them\lfrom Route 3 as we speak!\pTrainers take caution, however -\nwe've also received reports that\lthe nefarious Team Pluto has been\lsighted in the area.\pIf you spot them, do not engage\nthem for your own safety!
+
+#org @gText_Common_TelevisionHint_GoToFerroxVillage
+[RED]Today we're visiting our friends in\nFerrox Village.\pThis town is renowed for it's Berry\nShops, certainly.\pBut did you know it also houses\nKulure's largest library?\pIt's often said Ferrox Village's gym\nleader frequents the library often.\pWhen reached for comment, however,\nthey declined due to feeling shy!
+
+#org @gText_Common_TelevisionHint_GoToHeleoCity
+[RED]Today we're interviewing Gym Leader\nRaine of Heleo City.\pRaine is a weather specialist who\nfocuses on rainy battle tactics.\pWhen asked why she chose to\nspecailize in this field, she had\lthis to say:\p"Plants can't grow without a little\nrain. It's the same for people.\pI encourage any trainer seeking to\nbetter themselves to visit my gym.\"
+
+#org @gText_Common_TelevisionHint_GoToDaimynCity
+[RED]Trainers from all across the region\nare flocking to Daimyn City Mall.\pRumour has it there's a dazzling\ndaily deal being sold today!\pWhen interviewed, many trainers said\nthe sale would help give them a\lleg up in when challenging the gym.
+
+#org @gText_Common_TelevisionHint_GoToRoute11South
+[RED]We are on the way to Route 11\nSouth to conduct an interview with\lthe Mega Stone Refiner that lives\lthere.\pThese impressive stones are\nreported to bring out the best in\lyour Pok\emon.\p[.] What's that? Team Pluto has been\nsighted in the area?\pWell, we're going to put our plans\non hold, and urge trainers to avoid\lthe area.\pWe apologize for the inconvenience!
+
+#org @gText_Common_TelevisionHint_GoToLaplazTown
+[RED]Today we're reporting on the imminent\nclosure of Laplaz Town's gym.\pThis follows the unfortnate decline\nin Gym Leader Monty's health.\pDespite the inevitable closure, the\ntown's gym trainers still dutifully\lfulfill their roles within the gym.\pIt is our sincerest hope that their\nhard work can inspire someone to\ltake up Monty's mantle.
+
+#org @gText_Common_TelevisionHint_GoToBruccieVillage
+[RED]T-T-Today we're reporting from[.]\n*ACHOO!* Bruccie Village.\pWhile this remote village is known\nfor it's blistering cold, it cannot\lkeep Gym Leader Abby down.\pWith a fierce heart, she is known to\nturn down all challengers who have\lyet to acquire 5 gym badges.\pWhen interviewed, she simply said\n"Why would I challenge weaklings?\"\pStraight and to the point, that's Gym\nLeader Abby alright!
+
+#org @gText_Common_TelevisionHint_GoToCalicinBay
+[RED]We're reporting on the migration\npatterns of Bergmite at Calicin\lBay.\pEvery year, they migrate north from\nRoute 12 West to the bay.\pThis year, they - Wait, is that Team\nPluto?\pSorry, folks, but we're going to cut\nthis program short!
+
+#org @gText_Common_TelevisionHint_GoToPlutoHQ
+[RED]Today we're covering a highly\nrequested topic - Team Pluto!\pThese nefarious troublemakers are\nknown for causing trouble for both\lPok\emon trainers and civilians\lalike.\pUntil just recently, they were seen\nloitering in Daimyn City's streets.\pWhere have they gone?\pIf local rumours are to be believed,\nthey've retreated to a nearby\lbase[.]
+
+#org @gText_Common_TelevisionHint_GoToTsarvosaCity
+[RED]Tsarvosa City boasts a longstanding\ntrade alliance with Hoenn.\pThis tropical city is located on the\nsouthern point of Kulure's island.\pWhile it is a commercial hotbed, we\ncannot forget the local ammenities.\pFrom the Gym Trainee Caf\e to the\nStats Dojo, there is much to see.\pAnd, of course, we cannot forget the\nTsarvosa City Gym!\pGym Leader Iris would like to\npublicly welcome all challengers!
+
+#org @gText_Common_TelevisionHint_TalkToEnaAtRoute11
+[RED]The Kulure Redevelopment Committee\nhas opened discussion on travel\lroutes to Uteya Village.\pAt present, the village can only be\nreached via Hesson Pass off of\lRoute 11 South.\pThe redevelopment plans could\npotentially displace Pok\emon local\lto the area.\pThe committee is requesting that\ntrainers travel to Uteya Village\land share their opinions on the\lmatter.
+
+#org @gText_Common_TelevisionHint_GoToCarnelidgeVolcano
+[RED]We've received reports of strange\nactivity occurring at Carnelidge\lVolcano!\pReports indicate the Volcano has\nbeen trembling more often than\lusual.\pIs it a sign of an imminent erruption,\nor someting far greater?\pTrainers are advised to avoid the\narea.
+
+#org @gText_Common_TelevisionHint_GoToUteyaVillage
+[RED]Today we're delivering a historic\nreport on Uteya Village.\pThis village is built close to the\nruins of an ancient civilization.\pThis, paired with the village's\nremote location, cause it to feel\lquite mysterious, don't you think?\pDespite it's location, it is often\nvisited by Trainers hoping to earn\ltheir final gym badge.
+
+#org @gText_Common_TelevisionHint_GoToAscensionTower
+[RED]It's that time of year, folks!\pAscension Tower has opened their\nregistration forms for the Victory\lRoad challenge.\pTrainers who have acquired all of\nKulure's badges are invited to sign\lup.\pThis challenge tasks trainers with\nreaching the peak of Victory Road\lto prove their mettle.\pWe wish all trainers the best of\nluck!
+
+#org @gText_Common_TelevisionHint_GoToVictoryRoad
+[RED]We're reporting from outside of\nVictory Road on Route 21.\pDozens of trainers have arrived\nbright and early to challenge\lVictory Road.\pBut[.] Who will reach the peak and\ncomplete the challenge?\pYou'll have to stay tuned to find\nout!
+
+#org @gText_Common_TelevisionHint_GoToChallengeEliteFour
+[RED]Ladies and gentlemen, this is it!\pTrainers who have completed the\nVictory Road challenge are flocking\lto Ascension Tower.\pCan anyone hope to rival Champion\nSelene's might?\pStay tuned to find out!
+
+#org @gText_Common_TelevisionHint_GoToIDF
+[RED]Breaking news!\pEclipses have been occurring at an\nunprecedented rate across the\lKulure Region.\pProfessor Sakura of the\nInterdimensional Research Facility\lis hard at work examining the\lanomalies.\pPerhaps once they have been\ninvestigated we will be able to\linterview Champion [PLAYER][.]\pStay tuned to find out!
+
+#org @gText_Common_TelevisionHint_TrackingPlayerAsChampion
+[RED]Breaking News!\pThe eclipses were the result of an\nunusual creature called an Ultra\lBeast.\pWhile Professor Sakura was tight\nlipped about what that meant, she\lwas able to share one thing[.]\p"Champion [PLAYER] has saved the\nKulure Region from catastrophe.\"\pWay to go, Champion! Kulure is in\ngood hands under your watch.\pWe'll eagerly watch what you do\nnext.
+
 ////////////
 // ULTRA EPISODE
 ////////////

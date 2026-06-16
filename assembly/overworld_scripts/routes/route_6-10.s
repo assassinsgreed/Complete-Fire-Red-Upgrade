@@ -742,10 +742,17 @@ CaseyLeavesCommon:
     setflag 0x03D @ Hide Casey
     setflag 0x256 @ Battled Casey on route 10
     playbgm 0x15E 0x1 @ Regular route 10 track (Replace override from cutscene)
+    checkitem ITEM_EXP_SHARE 0x1
+    compare LASTRESULT TRUE
+    if FALSE _call ExpShareHint
+    end
+
+.global ExpShareHint
+ExpShareHint:
     signmsg
     msgbox gText_Route10_ExpShareHint MSG_SIGN
     normalmsg
-    end
+    return
 
 m_WalkToPlayer: .byte walk_left, walk_left, walk_left, walk_left, walk_left, walk_left, walk_left, end_m
 m_WalkAwayFromPlayer: .byte walk_right, walk_right, walk_right, walk_right, walk_right, walk_right, walk_right, end_m

@@ -1071,6 +1071,21 @@ static void Task_ManageDexNavHUD(u8 taskId)
 		return;
 	}
 
+	//Check if player stepped on a coord event tile (tilescript). These can run and finish
+	//within a single frame, causing ScriptContext2_IsEnabled to return FALSE by the time
+	//this task runs, yet the script's BG window operations will have already cleared the
+	//DexNav's grey bar from VRAM while leaving OAM sprites intact.
+	{
+		u16 playerX = gSaveBlock1->pos.x + 7;
+		u16 playerY = gSaveBlock1->pos.y + 7;
+		if (GetCoordEventScriptAtPosition(&gMapHeader, gSaveBlock1->pos.x, gSaveBlock1->pos.y, MapGridGetZCoordAt(playerX, playerY)))
+		{
+			DexNavFreeHUD();
+			DestroyTask(taskId);
+			return;
+		}
+	}
+
 	//Check if script just executed
 	if (ScriptContext2_IsEnabled() == TRUE)
 	{
@@ -1909,13 +1924,25 @@ bool8 InitDexNavHUD(u16 species, u8 environment, bool8 detectorMode)
 	u8 randVal = (GetSetPokedexFlag(dexNum, FLAG_GET_CAUGHT)) ? 0 : Random() % 100; //Pokemon already caught are easy to catch again
 	sDexNavHudPtr->elevation = gEventObjects[gPlayerAvatar->eventObjectId].currentElevation; //Constant elevation for all tiles (helps prevent crashes in caves)
 	//*((u8*) 0x2023D70) = randVal; //For debugging
-	if ((!detectorMode && randVal >= totalEncounterChance * 2) //Harder Pokemon to find in the area are half as hard to find with the DexNav
-	|| (!detectorMode && gDexNavCooldown)
-	|| (!detectorMode && VarGet(VAR_REPEL_STEP_COUNT) == 1) //1 step remaining on the repel - player takes a step, repel wears off and they can search again
-	|| !ShakingGrass(environment, SCAN_SIZE_X_START, SCAN_SIZE_Y_START, detectorMode)) //Draw shaking tile
+	if (!detectorMode && (randVal >= totalEncounterChance * 2 //Harder Pokemon to find in the area are half as hard to find with the DexNav
+	|| gDexNavCooldown
+	|| VarGet(VAR_REPEL_STEP_COUNT) == 1)) //1 step remaining on the repel - player takes a step, repel wears off and they can search again
 	{
 		Free(sDexNavHudPtr);
-		gDexNavCooldown = TRUE; //A Pokemon can't be found until the player takes at least one step or searches for another Pokemon manually
+		gDexNavCooldown = TRUE;
+		DexNavShowFieldMessage(FIELD_MSG_LOOK_IN_OTHER_SPOT);
+		return FALSE;
+	}
+
+	//Try to place shaking grass up to 3 times before giving up.
+	//First attempt uses a tighter radius so the Pokemon appears close to the player when possible.
+	//Subsequent attempts use the full radius and give the random rate check extra rolls.
+	if (!ShakingGrass(environment, SCAN_SIZE_X_START / 2, SCAN_SIZE_Y_START / 2, detectorMode)
+	&& !ShakingGrass(environment, SCAN_SIZE_X_START, SCAN_SIZE_Y_START, detectorMode)
+	&& !ShakingGrass(environment, SCAN_SIZE_X_START, SCAN_SIZE_Y_START, detectorMode))
+	{
+		Free(sDexNavHudPtr);
+		gDexNavCooldown = TRUE;
 		DexNavShowFieldMessage(FIELD_MSG_LOOK_IN_OTHER_SPOT);
 		return FALSE;
 	}

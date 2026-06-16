@@ -1128,6 +1128,141 @@ ClosedLinkToHawthornesPC:
     msgbox 0x81A5C2E MSG_KEEPOPEN @ "Closed link to Hawthorne's PC."
     goto AskWhichPCToAccess
 
+.global EventScript_Common_TelevisionHints
+EventScript_Common_TelevisionHints:
+    playbgm 0x1B0 @ TV Hint System (Humilau City)
+    msgbox gText_Common_TelevisionHint_Intro MSG_NORMAL
+    checkflag 0x02B @ Player has gotten starter
+    if NOT_SET _goto TelevisionHint_SeleneInTheArea
+    checkflag 0x3A @ Got Pokedex
+    if NOT_SET _goto TelevisionHint_GoToHawthornesLab
+    checkflag 0x4B0 @ Beaten Terrence
+    if NOT_SET _goto TelevisionHint_GoToRhodanziCity
+    checkitem ITEM_DEX_NAV 0x1
+    compare LASTRESULT FALSE
+    if TRUE _goto TelevisionHint_GoToRubarrDesert
+    checkflag 0x4B1 @ Beaten Stella
+    if NOT_SET _goto TelevisionHint_GoToFerroxVillage
+    checkflag 0x4B2 @ Beaten Stella
+    if NOT_SET _goto TelevisionHint_GoToHeleoCity
+    checkflag 0x4B3 @ Beaten Chance
+    if NOT_SET _goto TelevisionHint_GoToDaimynCity
+    checkflag 0x41 @ Beaten Pluto at Route 11 South
+    if NOT_SET _goto TelevisionHint_GoToRoute11South
+    checkflag 0x4B4 @ Beaten Casey
+    if NOT_SET _goto TelevisionHint_GoToLaplazTown
+    checkflag 0x4B5 @ Beaten Abby
+    if NOT_SET _goto TelevisionHint_GoToBruccieVillage
+    checkflag 0x48 @ Dealt with Team Pluto at Calicin Bay
+    if NOT_SET _goto TelevisionHint_GoToCalicinBay
+    checkflag 0x4A @ Beaten Pluto Leader Kurtis
+    if NOT_SET _goto TelevisionHint_GoToPlutoHQ
+    checkflag 0x4B6 @ Beaten Iris
+    if NOT_SET _goto TelevisionHint_GoToTsarvosaCity
+    checkflag 0x26F @ Talked to Ena at Route 11 South
+    if NOT_SET _goto TelevisionHint_TalkToEnaAtRoute11
+    checkflag 0x273 @ Finished Carnelidge Volcano story
+    if NOT_SET _goto TelevisionHint_GoToCarnelidgeVolcano
+    checkflag 0x4B7 @ Beaten Dennis & Dee
+    if NOT_SET _goto TelevisionHint_GoToUteyaVillage
+    checkflag 0x27F @ Can enter Victory Road
+    if NOT_SET _goto TelevisionHint_GoToAscensionTower
+    checkflag 0x72 @ Retrieved Victory Flag
+    if NOT_SET _goto TelevisionHint_GoToVictoryRoad
+    checkflag 0x4BC @ Beaten Selene
+    if NOT_SET _goto TelevisionHint_GoToChallengeEliteFour
+    checkflag 0x289 @ Beaten Ultra Necrozma
+    if NOT_SET _goto TelevisionHint_GoToIDF
+    goto TelevisionHint_TrackingPlayerAsChampion
+TelevisionOutro:
+    msgbox gText_Common_TelevisionHint_Outro MSG_NORMAL
+    fadedefaultbgm
+    end
+
+TelevisionHint_SeleneInTheArea:
+    msgbox gText_Common_TelevisionHint_SeleneInTheArea MSG_NORMAL
+    goto TelevisionOutro
+
+TelevisionHint_GoToHawthornesLab:
+    msgbox gText_Common_TelevisionHint_GoToHawthornesLab MSG_NORMAL
+    goto TelevisionOutro
+
+TelevisionHint_GoToRhodanziCity:
+    msgbox gText_Common_TelevisionHint_GoToRhodanziCity MSG_NORMAL
+    goto TelevisionOutro
+
+TelevisionHint_GoToRubarrDesert:
+    msgbox gText_Common_TelevisionHint_GoToRubarrDesert MSG_NORMAL
+    goto TelevisionOutro
+
+TelevisionHint_GoToFerroxVillage:
+    msgbox gText_Common_TelevisionHint_GoToFerroxVillage MSG_NORMAL
+    goto TelevisionOutro
+
+TelevisionHint_GoToHeleoCity:
+    msgbox gText_Common_TelevisionHint_GoToHeleoCity MSG_NORMAL
+    goto TelevisionOutro
+
+TelevisionHint_GoToDaimynCity:
+    msgbox gText_Common_TelevisionHint_GoToDaimynCity MSG_NORMAL
+    goto TelevisionOutro
+
+TelevisionHint_GoToRoute11South:
+    msgbox gText_Common_TelevisionHint_GoToRoute11South MSG_NORMAL
+    goto TelevisionOutro
+
+TelevisionHint_GoToLaplazTown:
+    msgbox gText_Common_TelevisionHint_GoToLaplazTown MSG_NORMAL
+    goto TelevisionOutro
+
+TelevisionHint_GoToBruccieVillage:
+    msgbox gText_Common_TelevisionHint_GoToBruccieVillage MSG_NORMAL
+    goto TelevisionOutro
+
+TelevisionHint_GoToCalicinBay:
+    msgbox gText_Common_TelevisionHint_GoToCalicinBay MSG_NORMAL
+    goto TelevisionOutro
+
+TelevisionHint_GoToPlutoHQ:
+    msgbox gText_Common_TelevisionHint_GoToPlutoHQ MSG_NORMAL
+    goto TelevisionOutro
+
+TelevisionHint_GoToTsarvosaCity:
+    msgbox gText_Common_TelevisionHint_GoToTsarvosaCity MSG_NORMAL
+    goto TelevisionOutro
+
+TelevisionHint_TalkToEnaAtRoute11:
+    msgbox gText_Common_TelevisionHint_TalkToEnaAtRoute11 MSG_NORMAL
+    goto TelevisionOutro
+
+TelevisionHint_GoToCarnelidgeVolcano:
+    msgbox gText_Common_TelevisionHint_GoToCarnelidgeVolcano MSG_NORMAL
+    goto TelevisionOutro
+
+TelevisionHint_GoToUteyaVillage:
+    msgbox gText_Common_TelevisionHint_GoToUteyaVillage MSG_NORMAL
+    goto TelevisionOutro
+
+TelevisionHint_GoToAscensionTower:
+    msgbox gText_Common_TelevisionHint_GoToAscensionTower MSG_NORMAL
+    goto TelevisionOutro
+
+TelevisionHint_GoToVictoryRoad:
+    msgbox gText_Common_TelevisionHint_GoToVictoryRoad MSG_NORMAL
+    goto TelevisionOutro
+
+TelevisionHint_GoToChallengeEliteFour:
+    msgbox gText_Common_TelevisionHint_GoToChallengeEliteFour MSG_NORMAL
+    goto TelevisionOutro
+
+TelevisionHint_GoToIDF:
+    msgbox gText_Common_TelevisionHint_GoToIDF MSG_NORMAL
+    goto TelevisionOutro
+
+TelevisionHint_TrackingPlayerAsChampion:
+    msgbox gText_Common_TelevisionHint_TrackingPlayerAsChampion MSG_NORMAL
+    goto TelevisionOutro
+
 ////////////
 // GAME CUSTOMIZATION
 ////////////
@@ -1399,6 +1534,7 @@ EnableQoLItems:
     setvar 0x4000 0x1 @ Giving QoL items
     sound 0x30 @Save
     msgbox gText_GameCustomization_QoLItemsOn MSG_NORMAL
+    call ExpShareHint
 	return
 
 DisableQoLItems:
