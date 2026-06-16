@@ -54,6 +54,11 @@ SignScript_OlenicOverworld_TrainerTips:
     msgbox gText_OlenicOverworld_TrainerTips MSG_SIGN
     end
 
+.global EventScript_OlenicOverworld_TVTip
+EventScript_OlenicOverworld_TVTip:
+    npcchatwithmovement gText_OlenicOverworld_TvTips m_LookLeft
+    end
+
 @ Facilities
 .global EventScript_OlenicFacilities_Mart_StockUp
 EventScript_OlenicFacilities_Mart_StockUp:
