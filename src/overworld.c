@@ -1857,7 +1857,7 @@ bool8 Overworld_IsBikingAllowed(void)
 
 	return gMapHeader.bikingAllowed
 #ifdef BIKE_ON_ANY_NON_INSIDE_MAP
-	|| (!IsMapTypeIndoors(GetCurrentMapType()) && !MAP_IS(ULTRA_SPACE_DIAS_OF_LIGHT));
+	|| (!IsMapTypeIndoors(GetCurrentMapType()) && !MAP_IS(ULTRA_SPACE_DAIS_OF_LIGHT));
 #endif
 	;
 }

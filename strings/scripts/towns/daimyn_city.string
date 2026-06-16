@@ -2083,8 +2083,8 @@ Go to Eclipse Village
 #org @gText_UltraEpisode_Sakura_TrackTheDistrubances
 Track the disturbances
 
-#org @gText_UltraEpisode_Sakura_GoToDiasOfLight
-Go to Dias of Light
+#org @gText_UltraEpisode_Sakura_GoToDaisOfLight
+Go to Dais of Light
 
 #org @gText_UltraEpisode_Sakura_Nothing
 Nothing for now!
@@ -2111,24 +2111,24 @@ Nothing for now!
 [RED]Hmm[.] I see.\pYes, this energy reading is quite\nsimilar to the one we discovered.\pIt is remarkably more stable\nthough.\pI see[.] So this is how it maintains a\nstable Ultra Wormhole[.]\pIf I scan for disturbances using this\nwavelength, then[.] Aha!
 
 #org @gText_UltraEpisode_PostUltraWormholes_Sakura_FoundNecrozma
-[RED][PLAYER], I have good news and bad\nnews.\pThanks to your findings, we were able\nto pinpoint the source of the\lUltra Wormholes.\p[PLAYER][.] It is not a stretch to say\nthis was only possible thanks to\lyour hard work.\pNow, the bad news[.]\pYou may recall an increase in\nabnormal eclipses as of late.\pIt appears the cause is residing at\nthis same location.\pI have dubbed it the [GREEN]Dias of\nLight[RED].\pOur readings have determined that\nUltra Wormholes are absorbing light\land directing it there.\pOnce it arrives, it appears to be\nabsorbed into an unknown entity.\p[PLAYER], if left unchecked, this\nentity could leave the dias in\lpursuit of more light.\pIt could threaten the Kulure region,\nif not the entire world.\pAnd so, I have one final request for\nyou, as our champion.\pTravel to the Dias of Light and put\na stop to the entity absorbing\llight.\pIt would be best to prepare for\nanything and bring Type: Null with\lyou.\pOf course, I will also be joining\nyou.\pWe don't know what will happen, so\nyou'll need an expert on Ultra\lSpace with you.\pAnd, well, my pride as a\nresearcher simply will not let me\lmiss this opportunity!\pThis is a lot to ask, I know[.]\pTake time to prepare and come see\nme when you are ready.
+[RED][PLAYER], I have good news and bad\nnews.\pThanks to your findings, we were able\nto pinpoint the source of the\lUltra Wormholes.\p[PLAYER][.] It is not a stretch to say\nthis was only possible thanks to\lyour hard work.\pNow, the bad news[.]\pYou may recall an increase in\nabnormal eclipses as of late.\pIt appears the cause is residing at\nthis same location.\pI have dubbed it the [GREEN]Dais of\nLight[RED].\pOur readings have determined that\nUltra Wormholes are absorbing light\land directing it there.\pOnce it arrives, it appears to be\nabsorbed into an unknown entity.\p[PLAYER], if left unchecked, this\nentity could leave the Dais in\lpursuit of more light.\pIt could threaten the Kulure region,\nif not the entire world.\pAnd so, I have one final request for\nyou, as our champion.\pTravel to the Dais of Light and put\na stop to the entity absorbing\llight.\pIt would be best to prepare for\nanything and bring Type: Null with\lyou.\pOf course, I will also be joining\nyou.\pWe don't know what will happen, so\nyou'll need an expert on Ultra\lSpace with you.\pAnd, well, my pride as a\nresearcher simply will not let me\lmiss this opportunity!\pThis is a lot to ask, I know[.]\pTake time to prepare and come see\nme when you are ready.
 
-#org @gText_UltraEpisode_Sakura_GoingToDiasOfLight_Prompt
+#org @gText_UltraEpisode_Sakura_GoingToDaisOfLight_Prompt
 [RED]This will be a risky expedition.\nWe don't know what we'll find there.\pIt would be wise to stock up on\nBeast Balls, just to be safe[.]\pAre you sure you're prepared to go?
 
-#org @gText_UltraEpisode_Sakura_GoingToDiasOfLight_ChoseNo
+#org @gText_UltraEpisode_Sakura_GoingToDaisOfLight_ChoseNo
 [RED]Take your time.\nWe can go when you are ready.
 
-#org @gText_UltraEpisode_Sakura_GoingToDiasOfLight_NoBeastKiller
-[RED][PLAYER][.] We don't know what we'll\nfind at the Dias of Light.\pIt would be unwise to go without\nType: Null, for protection[.]\pPlease, return with it when you are\nprepared to go.
+#org @gText_UltraEpisode_Sakura_GoingToDaisOfLight_NoBeastKiller
+[RED][PLAYER][.] We don't know what we'll\nfind at the Dais of Light.\pIt would be unwise to go without\nType: Null, for protection[.]\pPlease, return with it when you are\nprepared to go.
 
-#org @gText_UltraEpisode_Sakura_GoingToDiasOfLight_ChoseYes
+#org @gText_UltraEpisode_Sakura_GoingToDaisOfLight_ChoseYes
 [RED]Alright, let's take our positions\nbefore the machine.
 
-#org @gText_UltraEpisode_Sakura_GoingToDiasOfLight
+#org @gText_UltraEpisode_Sakura_GoingToDaisOfLight
 [RED]We're ready to depart.\nPlease, start the machine.
 
-#org @gText_UltraEpisode_Researcher_GoingToDiasOfLight
+#org @gText_UltraEpisode_Researcher_GoingToDaisOfLight
 [BLUE]Yes, ma'am!\nGood luck on your expedition.
 
 #org @gText_UltraEpisode_PostNecrozma_Sakura_WelcomeBack
@@ -2147,7 +2147,7 @@ Nothing for now!
 [RED]And, there's still Necrozma[.]\pIt's calm for now, but we can't be\ncertain it won't lash out again.\pPlease, capture it.\pI'm certain a trainer like you can\ncalm it down.
 
 #org @gText_UltraEpisode_PostNecrozma_Sakura_ExplainingTravelToUltraSpace
-[RED]And, as always, you can speak to me\nif you want to travel to Ultra\lSpace.\pWe can return to either Eclipse\nVillage or the Dias of Light.
+[RED]And, as always, you can speak to me\nif you want to travel to Ultra\lSpace.\pWe can return to either Eclipse\nVillage or the Dais of Light.
 
 #org @gText_UltraEpisode_PostNecrozma_Sakura_Farewell
 [RED]Once again, thank you for your\nefforts, [PLAYER].\pIf not for you, Kulure could've[.]\nWell, let's not dwell on what-ifs!\pNow, I'm certain you're busy, so I\nwon't keep you much longer.\pTake care, [PLAYER].\nYou'll always be welcome here.

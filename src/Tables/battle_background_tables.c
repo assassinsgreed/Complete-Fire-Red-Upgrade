@@ -98,9 +98,9 @@ extern const u8 BG_CarnelidgePeakPal[];
 extern const u8 BG_ChampionTiles[];
 extern const u8 BG_ChampionMap[];
 extern const u8 BG_ChampionPal[];
-extern const u8 BG_DiasOfLightTiles[];
-extern const u8 BG_DiasOfLightMap[];
-extern const u8 BG_DiasOfLightPal[];
+extern const u8 BG_DaisOfLightTiles[];
+extern const u8 BG_DaisOfLightMap[];
+extern const u8 BG_DaisOfLightPal[];
 
 // Palette swaps (interiors)
 extern const u8 BG_Pond_Cave_TormaPal[];
@@ -425,13 +425,13 @@ const struct BattleBackground gBattleTerrainTable[] =
 		.entryTilemap = gBattleTerrainAnimTilemap_Building,
 		.palette = BG_ChampionPal,
 	},
-	[BATTLE_TERRAIN_DIAS_OF_LIGHT] =
+	[BATTLE_TERRAIN_DAIS_OF_LIGHT] =
 	{
-		.tileset = BG_DiasOfLightTiles,
-		.tilemap = BG_DiasOfLightMap,
+		.tileset = BG_DaisOfLightTiles,
+		.tilemap = BG_DaisOfLightMap,
 		.entryTileset = gBattleTerrainAnimTiles_Rock,
 		.entryTilemap = gBattleTerrainAnimTilemap_Rock,
-		.palette = BG_DiasOfLightPal,
+		.palette = BG_DaisOfLightPal,
 	},
 };
 
@@ -709,13 +709,13 @@ const struct BattleBackground gBattleTerrainTableMorning[] =
 		.entryTilemap = gBattleTerrainAnimTilemap_Building,
 		.palette = BG_ChampionPal,
 	},
-	[BATTLE_TERRAIN_DIAS_OF_LIGHT] =
+	[BATTLE_TERRAIN_DAIS_OF_LIGHT] =
 	{
-		.tileset = BG_DiasOfLightTiles,
-		.tilemap = BG_DiasOfLightMap,
+		.tileset = BG_DaisOfLightTiles,
+		.tilemap = BG_DaisOfLightMap,
 		.entryTileset = gBattleTerrainAnimTiles_Rock,
 		.entryTilemap = gBattleTerrainAnimTilemap_Rock,
-		.palette = BG_DiasOfLightPal,
+		.palette = BG_DaisOfLightPal,
 	},
 };
 
@@ -994,13 +994,13 @@ const struct BattleBackground gBattleTerrainTableEvening[] =
 		.entryTilemap = gBattleTerrainAnimTilemap_Building,
 		.palette = BG_ChampionPal,
 	},
-	[BATTLE_TERRAIN_DIAS_OF_LIGHT] =
+	[BATTLE_TERRAIN_DAIS_OF_LIGHT] =
 	{
-		.tileset = BG_DiasOfLightTiles,
-		.tilemap = BG_DiasOfLightMap,
+		.tileset = BG_DaisOfLightTiles,
+		.tilemap = BG_DaisOfLightMap,
 		.entryTileset = gBattleTerrainAnimTiles_Rock,
 		.entryTilemap = gBattleTerrainAnimTilemap_Rock,
-		.palette = BG_DiasOfLightPal,
+		.palette = BG_DaisOfLightPal,
 	},
 };
 
@@ -1278,13 +1278,13 @@ const struct BattleBackground gBattleTerrainTableNight[] =
 		.entryTilemap = gBattleTerrainAnimTilemap_Building,
 		.palette = BG_ChampionPal,
 	},
-	[BATTLE_TERRAIN_DIAS_OF_LIGHT] =
+	[BATTLE_TERRAIN_DAIS_OF_LIGHT] =
 	{
-		.tileset = BG_DiasOfLightTiles,
-		.tilemap = BG_DiasOfLightMap,
+		.tileset = BG_DaisOfLightTiles,
+		.tilemap = BG_DaisOfLightMap,
 		.entryTileset = gBattleTerrainAnimTiles_Rock,
 		.entryTilemap = gBattleTerrainAnimTilemap_Rock,
-		.palette = BG_DiasOfLightPal,
+		.palette = BG_DaisOfLightPal,
 	},
 };
 #endif

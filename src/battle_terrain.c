@@ -392,8 +392,8 @@ static u8 TryLoadAlternateAreaTerrain(u8 terrain)
 			}
 			else if (mapSec == MAPSEC_MIMMETT_JUNGLE)
 				terrain = BATTLE_TERRAIN_JUNGLE;
-			else if (MAP_IS(ULTRA_SPACE_DIAS_OF_LIGHT))
-				terrain = BATTLE_TERRAIN_DIAS_OF_LIGHT;
+			else if (MAP_IS(ULTRA_SPACE_DAIS_OF_LIGHT))
+				terrain = BATTLE_TERRAIN_DAIS_OF_LIGHT;
 			break;
 		case BATTLE_TERRAIN_INSIDE:
 			if (mapSec == MAPSEC_FORGOTTEN_MANSE || mapSec == MAPSEC_UTEYAN_RUINS)

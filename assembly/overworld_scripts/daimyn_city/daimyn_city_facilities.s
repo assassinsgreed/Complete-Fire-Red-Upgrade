@@ -807,7 +807,7 @@ EventScript_DaimynCityFacilities_ProfessorSakura:
 Sakura_NavigationRoutingAfterCosmog:
     compare 0x4073 0x6
     if lessorequal _goto Sakura_UltraEpisode_UltraBeastHunt
-    goto Sakura_UltraEpisode_PromptForDiasOfLight @ Must be greater than
+    goto Sakura_UltraEpisode_PromptForDaisOfLight @ Must be greater than
 
 Sakura_UltraEpisode_UltraBeastHunt:
     msgbox gText_UltraEpisode_UltraBeastHunt_Sakura_PromptForDestination MSG_KEEPOPEN
@@ -864,27 +864,27 @@ Sakura_PromptForUltraEpisodeConclusion:
     addvar 0x4073 0x1 @ Ultra Episode moving to final phase
     end
 
-Sakura_UltraEpisode_PromptForDiasOfLight:
+Sakura_UltraEpisode_PromptForDaisOfLight:
     msgbox gText_UltraEpisode_UltraBeastHunt_Sakura_PromptForDestination MSG_KEEPOPEN
     multichoiceoption gText_UltraEpisode_Sakura_GoToEclipseVillage 0
-	multichoiceoption gText_UltraEpisode_Sakura_GoToDiasOfLight 1
+	multichoiceoption gText_UltraEpisode_Sakura_GoToDaisOfLight 1
 	multichoiceoption gText_UltraEpisode_Sakura_Nothing 2
     multichoice 0x0 0x0 THREE_MULTICHOICE_OPTIONS FALSE
 	copyvar MULTICHOICE_SELECTION LASTRESULT
 	switch LASTRESULT
 	case 0, GoToEclipseVillage _goto
-	case 1, GoToDiasOfLight _goto
+	case 1, GoToDaisOfLight _goto
     @ Nothing and cancel ignored, fall through to below
     npcchatwithmovement gText_UltraEpisode_UltraBeastHunt_Sakura_ChoseNothing m_LookLeft
     end
 
-GoToDiasOfLight:
-    msgbox gText_UltraEpisode_Sakura_GoingToDiasOfLight_Prompt MSG_YESNO
+GoToDaisOfLight:
+    msgbox gText_UltraEpisode_Sakura_GoingToDaisOfLight_Prompt MSG_YESNO
     compare LASTRESULT NO
-    if equal _goto ChoseNotToGoToDiasOfLight
+    if equal _goto ChoseNotToGoToDaisOfLight
     checkflag 0x289 @ Ultra Necrozma defeated
-    if NOT_SET _call PreDiasOfLightCheck
-    msgbox gText_UltraEpisode_Sakura_GoingToDiasOfLight_ChoseYes MSG_NORMAL
+    if NOT_SET _call PreDaisOfLightCheck
+    msgbox gText_UltraEpisode_Sakura_GoingToDaisOfLight_ChoseYes MSG_NORMAL
     getplayerpos 0x4000 0x4001
     compare 0x4001 0x5 @ Beside
     if lessthan _call PlayerWalksToMachineFromAbove
@@ -893,24 +893,24 @@ GoToDiasOfLight:
     waitmovement PLAYER
     applymovement Sakura m_SakuraJoinsPlayerAtMachine
     waitmovement ALLEVENTS
-    msgbox gText_UltraEpisode_Sakura_GoingToDiasOfLight MSG_NORMAL
-    msgbox gText_UltraEpisode_Researcher_GoingToDiasOfLight MSG_NORMAL
+    msgbox gText_UltraEpisode_Sakura_GoingToDaisOfLight MSG_NORMAL
+    msgbox gText_UltraEpisode_Researcher_GoingToDaisOfLight MSG_NORMAL
     call UltraSpaceWarpEffect_WithSakura
     warpmuted 2 40 0xFF 0xF 0x2A
     end
 
-ChoseNotToGoToDiasOfLight:
-    npcchatwithmovement gText_UltraEpisode_Sakura_GoingToDiasOfLight_ChoseNo m_LookLeft
+ChoseNotToGoToDaisOfLight:
+    npcchatwithmovement gText_UltraEpisode_Sakura_GoingToDaisOfLight_ChoseNo m_LookLeft
     end
 
-PreDiasOfLightCheck:
+PreDaisOfLightCheck:
     callasm CheckBeastKillerInParty
     compare LASTRESULT 0
     if equal _goto NoBeastKiller
     return
 
 NoBeastKiller:
-    npcchatwithmovement gText_UltraEpisode_Sakura_GoingToDiasOfLight_NoBeastKiller m_LookLeft
+    npcchatwithmovement gText_UltraEpisode_Sakura_GoingToDaisOfLight_NoBeastKiller m_LookLeft
     end
 
 UltraSpaceWarpEffect_WithSakura:

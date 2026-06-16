@@ -897,18 +897,18 @@ m_PlayerWalksToJirachiFromLeft: .byte walk_down, walk_right, look_up, end_m
 m_PlayerWalksToJirachiFromRight: .byte walk_down, walk_left, look_up, end_m
 
 ////////////////
-// Dias of Light
+// Dais of Light
 ////////////////
 .equ Sakura, 0x2
 
-.global MapScript_UltraSpace_DiasOfLight
-MapScript_UltraSpace_DiasOfLight:
-    mapscript MAP_SCRIPT_ON_LOAD MapScript_UltraSpace_DiasOfLight_SetNecrozmaVisibilityAndForm
-    mapscript MAP_SCRIPT_ON_FRAME_TABLE LevelScripts_UltraSpace_DiasOfLight
+.global MapScript_UltraSpace_DaisOfLight
+MapScript_UltraSpace_DaisOfLight:
+    mapscript MAP_SCRIPT_ON_LOAD MapScript_UltraSpace_DaisOfLight_SetNecrozmaVisibilityAndForm
+    mapscript MAP_SCRIPT_ON_FRAME_TABLE LevelScripts_UltraSpace_DaisOfLight
     mapscript MAP_SCRIPT_ON_RESUME MapResumeScript_HideNecrozma
     .byte MAP_SCRIPT_TERMIN
 
-MapScript_UltraSpace_DiasOfLight_SetNecrozmaVisibilityAndForm:
+MapScript_UltraSpace_DaisOfLight_SetNecrozmaVisibilityAndForm:
     checkflag 0x28B @ Eclipses active
     if SET _call TriggerEclipseOnLoad
     checkflag 0x06F @ Necrozma caught
@@ -948,28 +948,28 @@ HandleNecrozmaCry:
 
 DuskManeCry:
     cry SPECIES_NECROZMA_DUSK_MANE 0x0
-    msgbox gText_DiasOfLight_DuskManeNecrozmaCry MSG_NORMAL
+    msgbox gText_DaisOfLight_DuskManeNecrozmaCry MSG_NORMAL
     waitcry
     return
 
 DawnWingsCry:
     cry SPECIES_NECROZMA_DAWN_WINGS 0x0
-    msgbox gText_DiasOfLight_DawnWingsNecrozmaCry MSG_NORMAL
+    msgbox gText_DaisOfLight_DawnWingsNecrozmaCry MSG_NORMAL
     waitcry
     return
 
-LevelScripts_UltraSpace_DiasOfLight:
-    levelscript 0x4073 0x7 LevelScript_UltraSpace_DiasOfLight_FirstArrival
+LevelScripts_UltraSpace_DaisOfLight:
+    levelscript 0x4073 0x7 LevelScript_UltraSpace_DaisOfLight_FirstArrival
     .hword LEVEL_SCRIPT_TERMIN
 
-LevelScript_UltraSpace_DiasOfLight_FirstArrival:
+LevelScript_UltraSpace_DaisOfLight_FirstArrival:
     pause DELAY_HALFSECOND
     applymovement Sakura m_LookLeft
     applymovement PLAYER m_LookRight
-    msgbox gText_DiasOfLight_ArrivedAtDiasOfLight MSG_NORMAL
+    msgbox gText_DaisOfLight_ArrivedAtDaisOfLight MSG_NORMAL
     applymovement Sakura m_WalkUp
     applymovement PLAYER m_LookUp
-    msgbox gText_DiasOfLight_SakuraCommentsOnDiasOfLight MSG_NORMAL
+    msgbox gText_DaisOfLight_SakuraCommentsOnDaisOfLight MSG_NORMAL
     call HandleNecrozmaCry
     applymovement PLAYER m_Surprise
     applymovement Sakura m_Surprise
@@ -981,7 +981,7 @@ LevelScript_UltraSpace_DiasOfLight_FirstArrival:
     waitmovement Sakura
     applymovement Sakura m_LookLeft
     applymovement PLAYER m_LookRight
-    msgbox gText_DiasOfLight_SakuraCommentsOnEclipse MSG_NORMAL
+    msgbox gText_DaisOfLight_SakuraCommentsOnEclipse MSG_NORMAL
     applymovement Sakura m_SakuraWalksToFirstStoppingPoint
     pause DELAY_HALFSECOND
     applymovement PLAYER m_LookUp
@@ -997,15 +997,15 @@ MapResumeScript_HideNecrozma:
     hidesprite 1
     end
 
-.global EventScript_UltraSpace_DiasOfLight_Necrozma
-EventScript_UltraSpace_DiasOfLight_Necrozma:
+.global EventScript_UltraSpace_DaisOfLight_Necrozma
+EventScript_UltraSpace_DaisOfLight_Necrozma:
     lock
     faceplayer
     call HandleNecrozmaCry
     checkflag 0x289 @ Ultra Necrozma Defeated
     if SET _goto ChallengeCatchableNecrozma
     setflag 0x28B @ Eclipses active here (in the event of failure)
-    msgbox gText_DiasOfLight_ApproachingNecrozma MSG_NORMAL
+    msgbox gText_DaisOfLight_ApproachingNecrozma MSG_NORMAL
     callasm CheckBeastKillerInFirstSlot
     compare LASTRESULT 1
     if lessthan _goto NeedBeastKillerInFirstSlot
@@ -1015,7 +1015,7 @@ EventScript_UltraSpace_DiasOfLight_Necrozma:
     compare LASTRESULT TRUE
     if TRUE _call TriggerDawnWingsNecrozmaFight
     if FALSE _call TriggerDuskManeNecrozmaFight
-    msgbox gText_DiasOfLight_NecrozmaDefeatedFakeOut MSG_NORMAL
+    msgbox gText_DaisOfLight_NecrozmaDefeatedFakeOut MSG_NORMAL
     sound 0x51 @ Thunder2
     call HandleNecrozmaCry
     fadescreen FADEOUT_BLACK
@@ -1029,21 +1029,21 @@ EventScript_UltraSpace_DiasOfLight_Necrozma:
     setvar 0x40AF 0 @ Instantly stop eclipse
     clearflag 0x150
     cry SPECIES_NECROZMA_ULTRA 0x0
-    msgbox gText_DiasOfLight_UltraNecrozmaCry MSG_NORMAL
+    msgbox gText_DaisOfLight_UltraNecrozmaCry MSG_NORMAL
     waitcry
     applymovement PLAYER m_Surprise
     playse 0x15 @ Exclaim
-    msgbox gText_DiasOfLight_NecrozmaTransformed MSG_NORMAL
+    msgbox gText_DaisOfLight_NecrozmaTransformed MSG_NORMAL
     checkflag 0x28A @ Evolved Type Null
     if NOT_SET _call TriggerTypeNullEvolution
     special 0x0 @ Heal party
-    msgbox gText_DiasOfLight_SilvallyCourage MSG_NORMAL
+    msgbox gText_DaisOfLight_SilvallyCourage MSG_NORMAL
     setflag 0x904 @ Cannot catch or run from battle; cleared after battle
     call TriggerUltraNecrozmaFight
     clearflag 0x28B @ No eclipses active here (in the event of future failure)
     pause 0x10 @ Quarter second
     cry SPECIES_NECROZMA_ULTRA 0x3
-    msgbox gText_DiasOfLight_UltraNecrozmaCry_Defeated MSG_NORMAL
+    msgbox gText_DaisOfLight_UltraNecrozmaCry_Defeated MSG_NORMAL
     waitcry
     fadescreenspeed FADEOUT_WHITE 0x80 @ Faster fade
     hidesprite LASTTALKED
@@ -1052,9 +1052,9 @@ EventScript_UltraSpace_DiasOfLight_Necrozma:
     clearflag 0x6F @ Show fused Necrozma again if the player loses (gets set by hide/show sprite commands)
     faceplayer @ Reappears facing down when sprite changes
     fadescreen FADEIN_WHITE
-    msgbox gText_DiasOfLight_UltraNecrozmaStopped MSG_NORMAL
+    msgbox gText_DaisOfLight_UltraNecrozmaStopped MSG_NORMAL
     signmsg
-    msgbox gText_DiasOfLight_UltraNecrozmaCatchablePrompt MSG_SIGN
+    msgbox gText_DaisOfLight_UltraNecrozmaCatchablePrompt MSG_SIGN
     normalmsg
     setflag 0x289 @ Ultra Necrozma Defeated
     addvar 0x4073 0x1 @ Now at 11
@@ -1065,7 +1065,7 @@ NeedBeastKillerInFirstSlot:
     checkflag 0x28A @ Evolved Type Null
     bufferstring 0x0 gText_Common_TypeNull
     if SET _call BufferSilvallyName
-    npcchatwithmovement gText_DiasOfLight_TypeNullNotAtFrontOfParty m_LookDown
+    npcchatwithmovement gText_DaisOfLight_TypeNullNotAtFrontOfParty m_LookDown
     end
 
 BufferSilvallyName:
@@ -1116,15 +1116,15 @@ TriggerUltraNecrozmaFight:
 
 TriggerTypeNullEvolution:
     cry SPECIES_TYPE_NULL 0x0
-    msgbox gText_DiasOfLight_TypeNullCry MSG_NORMAL
+    msgbox gText_DaisOfLight_TypeNullCry MSG_NORMAL
     waitcry
-    msgbox gText_DiasOfLight_TypeNullEvolving MSG_KEEPOPEN
+    msgbox gText_DaisOfLight_TypeNullEvolving MSG_KEEPOPEN
     setvar 0x8003 0x0 @ From party
     setvar 0x8004 0x0 @ First slot
     callasm EvolveTypeNull
     waitstate
     playbgm  0x181 @ Necrozma appearance
-    msgbox gText_DiasOfLight_SilvallyEvolved MSG_NORMAL
+    msgbox gText_DaisOfLight_SilvallyEvolved MSG_NORMAL
     setvar 0x8005 0x00FF @ Max friendship
     special 0x13 @ Set friendship on Silvally
     setflag 0x28A @ Evolved Type Null
@@ -1147,51 +1147,51 @@ ChallengeCatchableNecrozma:
     end
 
 DefeatedOrFledFromNecrozma:
-    msgbox gText_DiasOfLight_NecrozmaFled MSG_NORMAL
+    msgbox gText_DaisOfLight_NecrozmaFled MSG_NORMAL
     end
 
 CaughtNecrozma:
-    msgbox gText_DiasOfLight_NecrozmaCaught MSG_NORMAL
+    msgbox gText_DaisOfLight_NecrozmaCaught MSG_NORMAL
     setflag 0x28D @ Necrozma caught (this is easier to check than the various forms!)
     end
 
-.global EventScript_UltraSpace_DiasOfLight_ProfessorSakura
-EventScript_UltraSpace_DiasOfLight_ProfessorSakura:
+.global EventScript_UltraSpace_DaisOfLight_ProfessorSakura
+EventScript_UltraSpace_DaisOfLight_ProfessorSakura:
     checkflag 0x289 @ Ultra Necrozma defeated
     if NOT_SET _goto SakuraBeforeUltraNecrozma
     lock
     faceplayer
     checkflag 0x28C @ Sakura congratulated player
     if NOT_SET _call Sakura_UltraNecrozmaDefeated
-    msgbox gText_DiasOfLight_Sakura_ReturnHomePrompt MSG_YESNO
+    msgbox gText_DaisOfLight_Sakura_ReturnHomePrompt MSG_YESNO
     compare LASTRESULT YES
     if equal _goto ReturnHome
-    msgbox gText_DiasOfLight_Sakura_ReturnHomePrompt_ChoseNo MSG_NORMAL
+    msgbox gText_DaisOfLight_Sakura_ReturnHomePrompt_ChoseNo MSG_NORMAL
     end
 
 SakuraBeforeUltraNecrozma:
     compare 0x4073 10
-    if lessthan _goto SakuraBeforeApproachingDias
-    npcchat gText_DiasOfLight_Sakura_BeforeDefeatingUltraNecrozma
+    if lessthan _goto SakuraBeforeApproachingDais
+    npcchat gText_DaisOfLight_Sakura_BeforeDefeatingUltraNecrozma
     end
 
-SakuraBeforeApproachingDias:
-    npcchat gText_DiasOfLight_Sakura_BeforeReachingDias
+SakuraBeforeApproachingDais:
+    npcchat gText_DaisOfLight_Sakura_BeforeReachingDais
     end
 
 Sakura_UltraNecrozmaDefeated:
-    msgbox gText_DiasOfLight_Sakura_UltraNecrozmaDefeated MSG_NORMAL
+    msgbox gText_DaisOfLight_Sakura_UltraNecrozmaDefeated MSG_NORMAL
     checkflag 0x6F @ Necrozma hidden
     if NOT_SET _call Sakura_NecrozmaNotCaughtYet
     setflag 0x28C @ Sakura congratulated player
     return
 
 Sakura_NecrozmaNotCaughtYet:
-    msgbox gText_DiasOfLight_Sakura_UltraNecrozmaNotCaught MSG_NORMAL
+    msgbox gText_DaisOfLight_Sakura_UltraNecrozmaNotCaught MSG_NORMAL
     return
 
 ReturnHome:
-    msgbox gText_DiasOfLight_Sakura_ReturnHomePrompt_ChoseYes MSG_NORMAL
+    msgbox gText_DaisOfLight_Sakura_ReturnHomePrompt_ChoseYes MSG_NORMAL
     playse 0x49 @ Escalator
     waitse
     pause DELAY_1SECOND
@@ -1203,12 +1203,12 @@ ReturnHome:
     warpmuted 9 17 1 @ In front of the ultra space wormhole machine
     end
 
-.global TileScript_UltraSpace_DiasOfLight_FirstEvent
-TileScript_UltraSpace_DiasOfLight_FirstEvent:
+.global TileScript_UltraSpace_DaisOfLight_FirstEvent
+TileScript_UltraSpace_DaisOfLight_FirstEvent:
     lock
     applymovement Sakura m_LookLeft
     applymovement PLAYER m_LookRight
-    msgbox gText_DiasOfLight_SakuraCommentsOnUltraSpace MSG_NORMAL
+    msgbox gText_DaisOfLight_SakuraCommentsOnUltraSpace MSG_NORMAL
     getplayerpos 0x4000 0x4001
     compare 0x4000 0xD
     if equal _call PlayerMovesOutOfSakurasWay
@@ -1219,12 +1219,12 @@ TileScript_UltraSpace_DiasOfLight_FirstEvent:
     addvar 0x4073 0x1 @ Now at 9
     end
 
-.global TileScript_UltraSpace_DiasOfLight_SecondEvent
-TileScript_UltraSpace_DiasOfLight_SecondEvent:
+.global TileScript_UltraSpace_DaisOfLight_SecondEvent
+TileScript_UltraSpace_DaisOfLight_SecondEvent:
     lock
     applymovement Sakura m_LookLeft
     applymovement PLAYER m_LookRight
-    msgbox gText_DiasOfLight_SakuraCommentsOnSourceOfEclipses MSG_NORMAL
+    msgbox gText_DaisOfLight_SakuraCommentsOnSourceOfEclipses MSG_NORMAL
     getplayerpos 0x4000 0x4001
     compare 0x4000 0xE
     if equal _call PlayerWalkRight_Return
@@ -1232,18 +1232,18 @@ TileScript_UltraSpace_DiasOfLight_SecondEvent:
     if equal _call PlayerMovesOutOfSakurasWay
     applymovement Sakura m_WalkLeft
     waitmovement Sakura
-    applymovement PLAYER m_SakuraAndPlayerApproachTheDias
-    applymovement Sakura m_SakuraAndPlayerApproachTheDias
+    applymovement PLAYER m_SakuraAndPlayerApproachTheDais
+    applymovement Sakura m_SakuraAndPlayerApproachTheDais
     waitmovement Sakura
     playbgm 0x181 @ Necrozma appearance
     call HandleNecrozmaCry
     applymovement PLAYER m_Surprise
     applymovement Sakura m_Surprise
     playse 0x15 @ Exclaim
-    msgbox gText_DiasOfLight_Sakura_SeeingNecrozma MSG_NORMAL
+    msgbox gText_DaisOfLight_Sakura_SeeingNecrozma MSG_NORMAL
     applymovement PLAYER m_LookRight
     applymovement Sakura m_LookLeft
-    msgbox gText_DiasOfLight_Sakura_PreparingToFightNecrozma MSG_NORMAL
+    msgbox gText_DaisOfLight_Sakura_PreparingToFightNecrozma MSG_NORMAL
     applymovement PLAYER m_LookUp
     applymovement Sakura m_SakuraDeparts
     waitmovement Sakura
@@ -1275,5 +1275,5 @@ EventScript_UltraSpaceCommon_InteractableTV:
 
 m_SakuraWalksToFirstStoppingPoint: .byte walk_up, walk_up, walk_up, walk_up, walk_up, walk_up, walk_up, look_down, end_m
 m_SakuraWalksToSecondStoppingPoint: .byte walk_left, walk_up, walk_up, walk_up, walk_up, walk_up, walk_up, look_down, end_m
-m_SakuraAndPlayerApproachTheDias: .byte walk_up_slow, walk_up_slow, walk_up_slow, walk_up_slow, walk_up_slow, walk_up_slow, walk_up_slow, look_up, end_m
+m_SakuraAndPlayerApproachTheDais: .byte walk_up_slow, walk_up_slow, walk_up_slow, walk_up_slow, walk_up_slow, walk_up_slow, walk_up_slow, look_up, end_m
 m_SakuraDeparts: .byte walk_down, walk_down, walk_down, walk_down, walk_down, walk_down, walk_down, end_m

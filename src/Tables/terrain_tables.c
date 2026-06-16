@@ -411,7 +411,7 @@ const struct TerrainTableStruct gTerrainTable[] =
 			.burmyForm = SPECIES_BURMY,
 		},
 
-	[BATTLE_TERRAIN_DIAS_OF_LIGHT + 4] =
+	[BATTLE_TERRAIN_DAIS_OF_LIGHT + 4] =
 		{
 			.camouflageType = TYPE_PSYCHIC,
 			.secretPowerEffect = MOVE_EFFECT_ACC_MINUS_2,

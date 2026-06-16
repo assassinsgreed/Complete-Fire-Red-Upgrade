@@ -257,94 +257,94 @@ The Ultra Beast was caught!\pBetter report this to Professor\nSakura!
 #org @gText_UltraSpaceWilds_AltarOfEclipse_CosmogDefeatedOrFled
 The Ultra Beast fled[.]\pBetter report this to Professor\nSakura[.]
 
-#org @gText_DiasOfLight_ArrivedAtDiasOfLight
+#org @gText_DaisOfLight_ArrivedAtDaisOfLight
 [RED][PLAYER], it looks like we both\narrived safely. That's great news.
 
-#org @gText_DiasOfLight_SakuraCommentsOnDiasOfLight
-[RED]So, this is the Dias of Light.\nIt's quite impressive.
+#org @gText_DaisOfLight_SakuraCommentsOnDaisOfLight
+[RED]So, this is the Dais of Light.\nIt's quite impressive.
 
-#org @gText_DiasOfLight_SakuraCommentsOnEclipse
+#org @gText_DaisOfLight_SakuraCommentsOnEclipse
 [RED]It's another eclipse[.]\p[PLAYER], we'd better hurry.\pIf the entity continues to absorb\nlight, there's no telling what will\lhappen[.]\pI'll meet you up ahead.
 
-#org @gText_DiasOfLight_SakuraCommentsOnUltraSpace
+#org @gText_DaisOfLight_SakuraCommentsOnUltraSpace
 [RED]These islands[.]\nThey're floating in the sky.\pUltra Space is truly an unusual\nplace.\pWe'd best watch our step. There's no\ntelling what could happen here.
 
-#org @gText_DiasOfLight_SakuraCommentsOnSourceOfEclipses
+#org @gText_DaisOfLight_SakuraCommentsOnSourceOfEclipses
 [RED]The eclipse here is much stronger\nthan the ones back home.\pI recall seeing something in our\nAlolan colleagues' notes about a\lsimilar phenomenon occuring there.\pIt was the result of an Ultra Beast\nthat threatened the region.\pIf something similar is happening now,\nthen[.]\p[PLAYER], we'd better hurry. Surely\nwe must be close to the source.
 
-#org @gText_DiasOfLight_Sakura_BeforeReachingDias
-[RED][PLAYER], let's continue on to the\npeak of the Dias of Light[.]
+#org @gText_DaisOfLight_Sakura_BeforeReachingDais
+[RED][PLAYER], let's continue on to the\npeak of the Dais of Light[.]
 
-#org @gText_DiasOfLight_Sakura_SeeingNecrozma
+#org @gText_DaisOfLight_Sakura_SeeingNecrozma
 [RED]So, it really is the same Ultra\nBeast[.] [GREEN]Necrozma[RED].\pExcept, this one doesn't look right.\pAnd, it's readings are off the charts.
 
-#org @gText_DiasOfLight_Sakura_BeforeDefeatingUltraNecrozma
+#org @gText_DaisOfLight_Sakura_BeforeDefeatingUltraNecrozma
 [RED][PLAYER], it's up to you to stop\nNecrozma.\pIf you don't, it might absorb all the\nlight here, and then move on to\lother dimensions.\pYou're the only one that can do it,\n[PLAYER]. I'm counting on you.
 
-#org @gText_DiasOfLight_Sakura_PreparingToFightNecrozma
+#org @gText_DaisOfLight_Sakura_PreparingToFightNecrozma
 [RED][PLAYER], I don't have much time to\nexplain, so please listen carefully.\pYears ago, in the Alola Region, an\nUltra Beast called Necrozma\lwreaked havoc.\pIt forcibly took control over another\nUltra Beast, a being of light.\pAnd, when it did, it began to feed\nupon the limitless light they gave\loff.\pOnce it had it's fill, it transformed\ninto a terrible beast and began to\lrampage[.]\pIf not for a powerful trainer, the\nAlola region, and perhaps every\lother region and dimension, would\lhave been destroyed.\pI suspect it's done the same, now,\nwith the other Cosmog you saw[.]\pWe're short on time, [PLAYER], so\nI'll cut to the chase.\pCapture is not an option this time;\nit's power has grown too strong\lalready.\pIf you can't defeat it in battle,\nthen all may be lost.\pYou must have Type: Null battle it.\nIt is the very reason it was\lcreated.\pI am not a battler, and I'll only\nget in your way.\pI'll stay back, instead.\p[PLAYER], I'm counting on you.\nWe all are.\pGood luck.
 
-#org @gText_DiasOfLight_Sakura_UltraNecrozmaDefeated
+#org @gText_DaisOfLight_Sakura_UltraNecrozmaDefeated
 [RED][PLAYER], you've done it!\pYou've put a stop to Necrozma!
 
-#org @gText_DiasOfLight_Sakura_UltraNecrozmaNotCaught
+#org @gText_DaisOfLight_Sakura_UltraNecrozmaNotCaught
 [RED]It shouldn't be able to cause any\ndamage now.\pThat being said, it'd be foolish to\nput our faith in that assumption[.]\pFor now, though, we are safe, and\nthat's what matters most.
 
-#org @gText_DiasOfLight_Sakura_ReturnHomePrompt
+#org @gText_DaisOfLight_Sakura_ReturnHomePrompt
 [RED][PLAYER], do you want to return\nhome?
 
-#org @gText_DiasOfLight_Sakura_ReturnHomePrompt_ChoseYes
+#org @gText_DaisOfLight_Sakura_ReturnHomePrompt_ChoseYes
 [RED]Okay, wait a moment.\pI'll contact my team to open an\nUltra Wormhole.
 
-#org @gText_DiasOfLight_Sakura_ReturnHomePrompt_ChoseNo
+#org @gText_DaisOfLight_Sakura_ReturnHomePrompt_ChoseNo
 [RED]Alright. Come see me once you are\nready.
 
-#org @gText_DiasOfLight_DuskManeNecrozmaCry
+#org @gText_DaisOfLight_DuskManeNecrozmaCry
 Gwooooahhh!
 
-#org @gText_DiasOfLight_DawnWingsNecrozmaCry
+#org @gText_DaisOfLight_DawnWingsNecrozmaCry
 Kyaaaahhh!
 
-#org @gText_DiasOfLight_UltraNecrozmaCry
+#org @gText_DaisOfLight_UltraNecrozmaCry
 Shhkkeeeee!
 
-#org @gText_DiasOfLight_UltraNecrozmaCry_Defeated
+#org @gText_DaisOfLight_UltraNecrozmaCry_Defeated
 Shhkk[.] eee[.] ee[.]
 
-#org @gText_DiasOfLight_TypeNullCry
+#org @gText_DaisOfLight_TypeNullCry
 Guugoooh!
 
-#org @gText_DiasOfLight_ApproachingNecrozma
+#org @gText_DaisOfLight_ApproachingNecrozma
 Necrozma has grown powerful from the\nlight it has absorbed[.]\pIt must be stopped!
 
-#org @gText_DiasOfLight_TypeNullNotAtFrontOfParty
+#org @gText_DaisOfLight_TypeNullNotAtFrontOfParty
 I shouldn't challenge it without\n[BUFFER1] out front[.]
 
-#org @gText_DiasOfLight_NecrozmaDefeatedFakeOut
+#org @gText_DaisOfLight_NecrozmaDefeatedFakeOut
 Yes! It's been def-
 
-#org @gText_DiasOfLight_NecrozmaTransformed
+#org @gText_DaisOfLight_NecrozmaTransformed
 Necrozma absorbed enough light to\ntransform!\pI was[.] too late[.]
 
-#org @gText_DiasOfLight_TypeNullEvolving
+#org @gText_DaisOfLight_TypeNullEvolving
 Type: Null refuses to give up!\pA brilliant light covers it's body.\nIs it[.] Evolving?!
 
-#org @gText_DiasOfLight_SilvallyEvolved
+#org @gText_DaisOfLight_SilvallyEvolved
 Type: Null evolved into Silvally!
 
-#org @gText_DiasOfLight_SilvallyCourage
+#org @gText_DaisOfLight_SilvallyCourage
 Silvally's unrelenting courage has\ninspired my Pok\emon!\pThey've regained the will to\nbattle.\pOkay! It's time to stop Necrozma!
 
-#org @gText_DiasOfLight_UltraNecrozmaStopped
+#org @gText_DaisOfLight_UltraNecrozmaStopped
 Yes! I was able to stop Necrozma,\nwith Silvally's help.\pThat should put a stop to the Ultra\nWormholes and eclipses[.]
 
-#org @gText_DiasOfLight_UltraNecrozmaCatchablePrompt
-Ultra Necrozma has been defeated!\pYou may now leave the Dias of Light,\nor attempt to defeat or catch it.
+#org @gText_DaisOfLight_UltraNecrozmaCatchablePrompt
+Ultra Necrozma has been defeated!\pYou may now leave the Dais of Light,\nor attempt to defeat or catch it.
 
-#org @gText_DiasOfLight_NecrozmaFled
+#org @gText_DaisOfLight_NecrozmaFled
 Necrozma fled into an Ultra\nWormhole.\pWill it return later?
 
-#org @gText_DiasOfLight_NecrozmaCaught
+#org @gText_DaisOfLight_NecrozmaCaught
 I caught Necrozma!\pI'd better show the researchers at\nthe Interdimensional Research\lFacility.
 
 #org @gText_UltraSpaceCommon_InteractableBookshelf
