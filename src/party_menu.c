@@ -3036,6 +3036,18 @@ void Task_HandleChooseMonInput(u8 taskId)
 					PlaySE(SE_SELECT);
 					MoveCursorToConfirm();
 				}
+				else if (gPartyMenu.menuType == PARTY_MENU_TYPE_FIELD
+					  && gPartyMenu.action != PARTY_ACTION_SWITCH
+					  && *slotPtr > 0
+					  && *slotPtr < PARTY_SIZE)
+				{
+					// Mirror the normal Select-then-A switch flow but with slot 0 pre-selected
+					// as the target. HandleChooseMonSelection routes through SwitchSelectedMons,
+					// which handles sprite destruction/recreation and the slide animation.
+					gPartyMenu.action = PARTY_ACTION_SWITCH;
+					gPartyMenu.slotId2 = 0;
+					HandleChooseMonSelection(taskId, &gPartyMenu.slotId2);
+				}
 				break;
 			case 9:
 				DestroyTask(taskId);

@@ -553,7 +553,7 @@ Well look at that! You've hatched\n[BUFFER1] eggs. I have a gift for\lyou.
 [BLUE]Just by having this charm, you'll be\nmore likely to find eggs at the\ldaycare.\pIsn't that handy?
 
 #org @gText_Route5_TrainerTips
-Trainer Tips!\pYou can press [SELECT_BUTTON] in the party menu\nto quickly rearrange your Pok\emon.
+Trainer Tips!\pYou can press [SELECT_BUTTON] in the party menu\nto quickly rearrange your Pok\emon.\pYou can also press [START_BUTTON] to\nmove a Pok\emon to the first slot!
 
 #org @gText_Route5_DaycareLady_PromptToRaisePokemon
 I'm the Daycare Lady.\pWe can raise Pok\emon for you.\pWould you like us to raise one?
