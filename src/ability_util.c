@@ -118,11 +118,12 @@ const u8* GetAbilityNameOverride(const u8 ability, const u16 species) //Bypasses
 				case NATIONAL_DEX_RHYPERIOR:
 				case NATIONAL_DEX_TIRTOUGA:
 				case NATIONAL_DEX_CARRACOSTA:
+				#endif
 				#ifdef NATIONAL_DEX_STONJOURNER
 				case NATIONAL_DEX_STONJOURNER:
 				#endif
+				case NATIONAL_DEX_COALOSSAL:
 					return gText_AbilityName_SolidRock;
-				#endif
 			}
 			break;
 		case ABILITY_MOLDBREAKER:

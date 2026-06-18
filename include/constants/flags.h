@@ -1269,35 +1269,22 @@
 */
 
 // Boss clear flags, 1200
-#define FLAG_DEFEATED_TERRENCE        0x4B0
-#define FLAG_DEFEATED_STELLA          0x4B1
-#define FLAG_DEFEATED_RAINE           0x4B2
-#define FLAG_DEFEATED_CHANCE          0x4B3
-#define FLAG_DEFEATED_CASEY           0x4B4
-#define FLAG_DEFEATED_ABBY            0x4B5
-#define FLAG_DEFEATED_IRIS            0x4B6
-#define FLAG_DEFEATED_DENNIS_AND_DEE  0x4B7
-#define FLAG_DEFEATED_E4_HANNAH       0x4B8
-#define FLAG_DEFEATED_E4_LUCAS        0x4B9
-#define FLAG_DEFEATED_E4_JENNA        0x4BA
-#define FLAG_DEFEATED_E4_THOMAS       0x4BB
-#define FLAG_DEFEATED_CHAMPION_SELENE 0x4BC
+#define FLAG_DEFEATED_TERRENCE        0x4B0 // 200
+#define FLAG_DEFEATED_STELLA          0x4B1 // 201
+#define FLAG_DEFEATED_RAINE           0x4B2 // 202
+#define FLAG_DEFEATED_CHANCE          0x4B3 // 203
+#define FLAG_DEFEATED_CASEY           0x4B4 // 204
+#define FLAG_DEFEATED_ABBY            0x4B5 // 205
+#define FLAG_DEFEATED_IRIS            0x4B6 // 206
+#define FLAG_DEFEATED_DENNIS_AND_DEE  0x4B7 // 207
+#define FLAG_DEFEATED_E4_HANNAH       0x4B8 // 208
+#define FLAG_DEFEATED_E4_LUCAS        0x4B9 // 209
+#define FLAG_DEFEATED_E4_JENNA        0x4BA // 210
+#define FLAG_DEFEATED_E4_THOMAS       0x4BB // 211
+#define FLAG_DEFEATED_CHAMPION_SELENE 0x4BC // 212
 
 /*
 // Repurposed as hidden items
-#define FLAG_HIDDEN_ITEM_ROUTE23_MAX_REVIVE                           200
-#define FLAG_HIDDEN_ITEM_ROUTE23_MAX_REPEL                            201
-#define FLAG_HIDDEN_ITEM_ROUTE23_LEMONADE                             202
-#define FLAG_HIDDEN_ITEM_ROUTE20_DUSK_BALL                            203
-#define FLAG_HIDDEN_ITEM_ROUTE20_GREPA_BERRIES_3                      204
-#define FLAG_HIDDEN_ITEM_ROUTE22_EVERSTONE                            205
-#define FLAG_HIDDEN_ITEM_ROUTE22_MOOMOO_MILK                          206
-#define FLAG_HIDDEN_ITEM_ROUTE21_ROCK_GEM                             207
-#define FLAG_HIDDEN_ITEM_ROUTE21_ZINC                                 208
-#define FLAG_HIDDEN_ITEM_ROUTE21_STARPIECE                            209
-#define FLAG_HIDDEN_ITEM_ROUTE21_REVIVE                               210
-#define FLAG_HIDDEN_ITEM_SECRET_PATH_HARD_STONE                       211
-#define FLAG_HIDDEN_ITEM_SECRET_PATH_PP_UP                            212
 #define FLAG_HIDDEN_ITEM_SECRET_PATH_MAX_POTION                       213
 #define FLAG_HIDDEN_ITEM_MIMMETT_JUNGLE_HEAL_BALL                     214
 #define FLAG_HIDDEN_ITEM_MIMMETT_JUNGLE_WHITE_HERB                    215
@@ -1330,17 +1317,18 @@
 #define FLAG_HIDDEN_ITEM_VICTORY_ROAD_OUTSIDE_ULTRA_BALL              242
 #define FLAG_HIDDEN_ITEM_VICTORY_ROAD_OUTSIDE_RARE_CANDY              243
 #define FLAG_HIDDEN_ITEM_VICTORY_ROAD_BACK_ROOM_KINGS_ROCK            244
-#define FLAG_0x4EA                            0x4EA
-#define FLAG_0x4EB                            0x4EB
-#define FLAG_0x4EC                            0x4EC
-#define FLAG_0x4ED                            0x4ED
-#define FLAG_0x4EE                            0x4EE
-#define FLAG_0x4EF                            0x4EF
-#define FLAG_0x4F0                            0x4F0
-#define FLAG_0x4F1                            0x4F1
-#define FLAG_0x4F2                            0x4F2
-#define FLAG_0x4F3                            0x4F3
-#define FLAG_0x4F4                            0x4F4
+// flag = FLAG_HIDDEN_ITEMS_START (1000) + id. id is a u8, so id 255 -> 0x4E7 is the highest flag any hidden item can ever use; ids 256+ are unreachable.
+#define FLAG_HIDDEN_ITEM_ROUTE23_MAX_REVIVE                           245  // 0x4DD
+#define FLAG_HIDDEN_ITEM_ROUTE23_MAX_REPEL                            246  // 0x4DE
+#define FLAG_HIDDEN_ITEM_ROUTE23_LEMONADE                             247  // 0x4DF
+#define FLAG_HIDDEN_ITEM_ROUTE20_DUSK_BALL                            248  // 0x4E0
+#define FLAG_HIDDEN_ITEM_ROUTE20_GREPA_BERRIES_3                      249  // 0x4E1
+#define FLAG_HIDDEN_ITEM_SECRET_PATH_PP_UP                            250  // 0x4E2         (RETIRE for FLAG_HIDDEN_ITEM_SECRET_PATH_PP_UP)
+#define FLAG_HIDDEN_ITEM_ROUTE22_MOOMOO_MILK                          251  // 0x4E3
+#define FLAG_HIDDEN_ITEM_ROUTE21_ROCK_GEM                             252  // 0x4E4         (THIS IS STARPIECE IN THE GAME!)
+#define FLAG_HIDDEN_ITEM_ROUTE21_ZINC                                 253  // 0x4E5
+#define FLAG_HIDDEN_ITEM_ROUTE21_STARPIECE                            254  // 0x4E6
+#define FLAG_HIDDEN_ITEM_ROUTE21_REVIVE                               255  // 0x4E7 (last reachable hidden-item flag)
 #define FLAG_0x4F5                            0x4F5
 #define FLAG_0x4F6                            0x4F6
 #define FLAG_0x4F7                            0x4F7

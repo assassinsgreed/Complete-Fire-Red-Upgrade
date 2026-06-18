@@ -636,7 +636,8 @@ SkippingCutscenes_PlutoHQ_ConfrontingKurtis:
     hidesprite 0x5 @ Ronald
     clearflag 0x21B @ Show Gyaradosite
     showsprite 0x2 @ Gyaradosite
-    additem ITEM_HM03 0x1 @ Surfsetflag 0x4A @ Pluto grunts and admins should all disappear
+    additem ITEM_HM03 0x1 @ Surf
+    setflag 0x4A @ Pluto grunts and admins should all disappear
     setvar 0x405D 0x4 @ Pluto events complete
     checkflag 0x93B @ Hard level caps
     if SET _call PrintUpdatedLevelCaps

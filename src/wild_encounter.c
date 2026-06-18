@@ -679,7 +679,7 @@ SKIP_INDEX_SEARCH:
 		CreateWildMon(wildMonInfo->wildPokemon[wildMonIndex].species, level, wildMonIndex, TRUE);
 
 	#ifdef FLAG_DOUBLE_WILD_BATTLE
-	if (FlagGet(FLAG_DOUBLE_WILD_BATTLE) || FlagGet(FLAG_DOUBLE_WILD_BATTLES_MODIFIER_ACTIVE))
+	if ((FlagGet(FLAG_DOUBLE_WILD_BATTLE) || FlagGet(FLAG_DOUBLE_WILD_BATTLES_MODIFIER_ACTIVE)) &&  ViableMonCount(gPlayerParty) >= 2)
 	{
 		wildMonIndex = 0;
 
@@ -729,7 +729,7 @@ static species_t GenerateFishingWildMon(const struct WildPokemonInfo* wildMonInf
 	CreateWildMon(wildMonInfo->wildPokemon[wildMonIndex].species, level, wildMonIndex, TRUE);
 
 	#ifdef FLAG_DOUBLE_WILD_BATTLE
-	if (FlagGet(FLAG_DOUBLE_WILD_BATTLE) || FlagGet(FLAG_DOUBLE_WILD_BATTLES_MODIFIER_ACTIVE))
+	if ((FlagGet(FLAG_DOUBLE_WILD_BATTLE) || FlagGet(FLAG_DOUBLE_WILD_BATTLES_MODIFIER_ACTIVE)) &&  ViableMonCount(gPlayerParty) >= 2)
 	{
 		u8 wildMonIndex = ChooseWildMonIndex_Fishing(rod);
 		u8 level = ChooseWildMonLevel(&wildMonInfo->wildPokemon[wildMonIndex]);
@@ -1238,7 +1238,7 @@ void DoStandardWildBattle(void)
 	gBattleTypeFlags = 0;
 
 	#ifdef FLAG_DOUBLE_WILD_BATTLE
-	if (FlagGet(FLAG_DOUBLE_WILD_BATTLE) || FlagGet(FLAG_DOUBLE_WILD_BATTLES_MODIFIER_ACTIVE))
+	if ((FlagGet(FLAG_DOUBLE_WILD_BATTLE) || FlagGet(FLAG_DOUBLE_WILD_BATTLES_MODIFIER_ACTIVE)) &&  ViableMonCount(gPlayerParty) >= 2)
 	{
 		gBattleTypeFlags |= BATTLE_TYPE_DOUBLE;
 
@@ -1283,7 +1283,7 @@ void sp138_StartLegendaryBattle(void)
 	gBattleTypeFlags = BATTLE_TYPE_SCRIPTED_WILD_1 | BATTLE_TYPE_LEGENDARY_FRLG;
 
 	#ifdef FLAG_DOUBLE_WILD_BATTLE
-	if ((FlagGet(FLAG_DOUBLE_WILD_BATTLE) || FlagGet(FLAG_DOUBLE_WILD_BATTLES_MODIFIER_ACTIVE))
+	if (((FlagGet(FLAG_DOUBLE_WILD_BATTLE) || FlagGet(FLAG_DOUBLE_WILD_BATTLES_MODIFIER_ACTIVE)) &&  ViableMonCount(gPlayerParty) >= 2)
 	&& gEnemyParty[1].species != SPECIES_NONE
 	&& (FlagGet(FLAG_TAG_BATTLE) || ViableMonCount(gPlayerParty) > 1)) //At least two alive Pokemon
 	{
@@ -1511,7 +1511,7 @@ static void CreateScriptedWildMon(u16 species, u8 level, u16 item, u16* moves, b
 void TrySetWildDoubleBattleTypeScripted()
 {
 	#ifdef FLAG_DOUBLE_WILD_BATTLE
-	if (FlagGet(FLAG_DOUBLE_WILD_BATTLE) || FlagGet(FLAG_DOUBLE_WILD_BATTLES_MODIFIER_ACTIVE))
+	if ((FlagGet(FLAG_DOUBLE_WILD_BATTLE) || FlagGet(FLAG_DOUBLE_WILD_BATTLES_MODIFIER_ACTIVE)) &&  ViableMonCount(gPlayerParty) >= 2)
 		gBattleTypeFlags |= BATTLE_TYPE_DOUBLE;
 	#endif
 }
