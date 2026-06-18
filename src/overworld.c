@@ -1709,6 +1709,13 @@ void PostReleaseAutomaticFixes(void)
 	
 	if (!FlagGet(FLAG_HARD_LEVEL_CAP))
 		VarSet(VAR_LEVEL_CAPS, 0);
+
+	// Scorched earth fix for the champion flag bug. Clear it if any of the following are true:
+	//    - The player hasn't finished Victory Road (has the victory flag)
+	//    - Postgame NPCs are still hidden (Flag 9D, cleared on HoF entry)
+	//    - The player has never initiated an E4 run (var 406C is less than 2)
+	if (!CheckBagHasItem(ITEM_VICTORY_FLAG, 1) || FlagGet(0x9D) || VarGet(0x406C) < 2)
+		FlagClear(FLAG_DEFEATED_CHAMPION_SELENE);
 }
 
 bool8 TryRunOnFrameMapScript(void)

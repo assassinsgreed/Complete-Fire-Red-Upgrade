@@ -501,6 +501,11 @@ u32 MultiMoneyCalc(void)
 	return money;
 }
 
+u32 CalcSingleTrainerPrizeMoney(void)
+{
+	return CalcPrizeiMoneyForTrainer(gTrainerBattleOpponent_A);
+}
+
 #define gTrainerMoneyTable ((struct TrainerMoney*) *((u32*) 0x80259CC))
 static u32 CalcPrizeiMoneyForTrainer(u16 trainerId)
 {

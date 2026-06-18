@@ -2849,7 +2849,8 @@ static void CursorCb_Nickname(u8 taskId)
 	PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[1]);
 	PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[0]);
 
-	if (IsTradedMon(&gPlayerParty[gPartyMenu.slotId]))
+	if (IsTradedMon(&gPlayerParty[gPartyMenu.slotId]) &&
+		!(GetMonData(&gPlayerParty[gPartyMenu.slotId], MON_DATA_SPECIES, NULL) == SPECIES_SILVALLY && FlagGet(FLAG_SILVALLY_MEMORIES_GIVEN))) // Let player nickname silvally even if the OT didn't change
 	{
 		PlaySE(SE_ERROR);
 		GetMonData(&gPlayerParty[gPartyMenu.slotId], MON_DATA_NICKNAME, gStringVar1);

@@ -27,6 +27,11 @@ extern const u8 BattleScript_RaidMonRanAway[];
 extern const u8 BattleScript_TryTakeWildMonItem[];
 extern const u8 BattleScript_TakeWildMonItem[];
 extern const u8 BattleScript_CheckPokeChip[];
+extern const u8 BattleScript_GiveMoneyThenPickup[];
+extern const u8 BattleScript_WildPickupAndEnd[];
+
+//Callasm functions
+void GivePrizeMoney(void);
 
 //Strings
 extern const u8 gText_TookCaughtItemToCube[];

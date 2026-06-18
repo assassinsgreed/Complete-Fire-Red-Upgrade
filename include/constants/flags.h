@@ -684,7 +684,9 @@
 #define FLAG_ECLIPSE_ACTIVE_IN_DAIS_OF_LIGHT             0x28B
 #define FLAG_SAKURA_CONGRATULATED_PLAYER_ON_VICTORY      0x28C
 #define FLAG_NECROZMA_CAUGHT                             0x28D
+*/
 #define FLAG_SILVALLY_MEMORIES_GIVEN                     0x28E
+/*
 #define FLAG_NECROZMA_FUSION_ITEMS_GIVEN                 0x28F
 #define FLAG_GAVE_LIAM_MOOMOO_MILK                       0x290
 */

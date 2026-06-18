@@ -24,6 +24,8 @@ end_battle_battle_scripts.s
 .global BattleScript_TryTakeWildMonItem
 .global BattleScript_TakeWildMonItem
 .global BattleScript_CheckPokeChip
+.global BattleScript_GiveMoneyThenPickup
+.global BattleScript_WildPickupAndEnd
 
 @;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
@@ -75,7 +77,7 @@ PostBeatString:
 
 CheckJumpLocForEndBattle:
 	jumpifword ANDS BATTLE_TYPE BATTLE_FRONTIER 0x81D8900 @No Money Give
-	jumpifword NOTANDS BATTLE_TYPE BATTLE_TRAINER_TOWER 0x81D87F8 @Give Money
+	jumpifword NOTANDS BATTLE_TYPE BATTLE_TRAINER_TOWER BattleScript_GiveMoneyThenPickup @Give Money + Custom Pickup
 	jumpifword NOTANDS BATTLE_TYPE BATTLE_DOUBLE 0x81D88FF @Just Pickup Calc
 	printstring 0x177 @Buffer Trainer Tower Win Text
 	goto 0x81D88FF @Just Pickup Calc
@@ -227,11 +229,20 @@ BattleScript_CheckPokeChip:
 BattleScript_CheckPokeChipContinued:
 	callasm WipeYesNoBattleBoxes
 	callasm HandlePokeChip
-	jumpifword NOTEQUALS BATTLE_STRING_LOADER gText_HoldingPokeChip BattleScript_ExitFromPokeChipEarly
+	jumpifword NOTEQUALS BATTLE_STRING_LOADER gText_HoldingPokeChip BattleScript_WildPickupAndEnd
 	printstring 0x184
-	waitmessage DELAY_1SECOND
+	waitmessage DELAY_HALFSECOND
+BattleScript_WildPickupAndEnd:
+	pickupitemcalculation
 	end2
-BattleScript_ExitFromPokeChipEarly:
+
+@;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+BattleScript_GiveMoneyThenPickup:
+	callasm GivePrizeMoney
+	printstring 0x1E @STRINGID_PLAYERGOTMONEY
+	waitmessage DELAY_HALFSECOND
+	pickupitemcalculation
 	end2
 
 @;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@

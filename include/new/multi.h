@@ -34,6 +34,7 @@ void BattleIntroOpponent1SendsOutMonAnimation(void);
 void MultiInitPokemonOrder(void);
 void MultiBattleAddSecondOpponent(void);
 u32 MultiMoneyCalc(void);
+u32 CalcSingleTrainerPrizeMoney(void);
 void ChooseProperPartnerController(void);
 
 //Exported Constants

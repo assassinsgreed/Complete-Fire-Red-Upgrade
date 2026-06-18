@@ -5285,6 +5285,17 @@ void atkE4_getsecretpowereffect(void)
 	gBattlescriptCurrInstr++;
 }
 
+void GivePrizeMoney(void)
+{
+	u32 money;
+	if (gBattleTypeFlags & (BATTLE_TYPE_MULTI | BATTLE_TYPE_TWO_OPPONENTS))
+		money = MultiMoneyCalc();
+	else
+		money = CalcSingleTrainerPrizeMoney();
+	AddMoney(&gSaveBlock1->money, money);
+	PREPARE_WORD_NUMBER_BUFFER(gBattleTextBuff1, 10, money);
+}
+
 void atkE5_pickupitemcalculation(void)
 {
 	for (; gNewBS->pickupMonId < PARTY_SIZE; ++gNewBS->pickupMonId)
