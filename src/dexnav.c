@@ -211,7 +211,7 @@ static void DexNavGetMon(u16 species, u8 potential, u8 level, u8 ability, u16* m
 	//https://bulbapedia.bulbagarden.net/wiki/DexNav#Shiny_probability
 	u32 i, otherValue, numChecks, chainBonus, randBonus;
 	otherValue = 0;
-	chainBonus = (chain == 50) ? 5 : (chain == 100) ? 10 : 0;
+	chainBonus = (chain >= 100) ? 10 : (chain >= 50) ? 5 : 0;
 	randBonus = (Random() % 100 < 4 ? 4 : 0);
 	numChecks = 1 + chainBonus + randBonus; //Shiny Charm is handled elsewhere
 

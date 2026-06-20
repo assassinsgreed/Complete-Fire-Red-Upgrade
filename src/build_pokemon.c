@@ -1315,14 +1315,20 @@ static u8 GetPlayerBiasedAverageLevel(u8 maxLevel)
 		if (species != SPECIES_NONE && species != SPECIES_EGG) //Viable mon
 		{
 			u8 level = GetMonData(&gPlayerParty[i], MON_DATA_LEVEL, NULL);
-			
-			if (maxLevel - level <= 5) //This level is within 5 levels of the max
+
+			//Within 5 levels of the max. The "level >= maxLevel" half also catches
+			//mons at/above the detected max (e.g. if maxLevel was under-reported)
+			//instead of letting the u8 subtraction underflow and wrongly exclude them.
+			if (level >= maxLevel || maxLevel - level <= 5)
 			{
 				sum += level;
 				++count;
 			}
 		}
 	}
+
+	if (count == 0)
+		return maxLevel; //No viable mon in range; fall back to the party's highest level (avoids divide-by-zero)
 
 	return sum / count;
 }
@@ -1396,7 +1402,10 @@ static void ModifySpeciesAndLevelForGenericBattle(unusedArg u16* species, unused
 	minEnemyLevel = sLevelScales[badgeCount].minLevel;
 	startScalingAtLevel = sLevelScales[badgeCount].startScalingAtLevel;
 	prevStartScalingAtLevel = (badgeCount == 0) ? 0 : sLevelScales[badgeCount - 1].startScalingAtLevel;
-	levelRange = *level - minEnemyTeamLevel; //The offset in the team
+	//Clamp to 0 to avoid u8 underflow: with FLAG_SCALE_TRAINER_LEVELS set, *level is
+	//the player's highest level, which can be below the trainer's defined min level
+	//(an underleveled player), producing a wrapped-around ~246 offset.
+	levelRange = (*level > minEnemyTeamLevel) ? (*level - minEnemyTeamLevel) : 0; //The offset in the team
 	newLevel = minEnemyLevel + levelRange;
 	
 	if (IsPseudoBossTrainerPartyForLevelScaling(trainerPartyFlags)
@@ -3950,25 +3959,29 @@ static u8 GetPartyIdFromPartyData(struct Pokemon* mon)
 
 static u8 GetHighestMonLevel(const struct Pokemon* const party)
 {
-	u8 max = GetMonData(&party[0], MON_DATA_LEVEL, NULL);
+	u8 max = 0;
 
-	for (int i = 1; i < PARTY_SIZE; ++i)
+	for (int i = 0; i < PARTY_SIZE; ++i)
 	{
 		u8 level;
 		u16 species = GetMonData(&party[i], MON_DATA_SPECIES2, NULL);
-	
-		if (max == MAX_LEVEL || species == SPECIES_NONE)
-			return max;
 
-		if (species == SPECIES_EGG)
+		//Skip empty slots and Eggs so they can never define the max level.
+		//Don't early-return on an empty slot either, in case the party has a
+		//gap with a higher-level mon after it (which would otherwise under-report
+		//the max and break callers that bias against it).
+		if (species == SPECIES_NONE || species == SPECIES_EGG)
 			continue;
 
 		level = GetMonData(&party[i], MON_DATA_LEVEL, NULL);
 		if (level > max)
 			max = level;
+
+		if (max >= MAX_LEVEL)
+			break; //Can't go any higher
 	}
 
-	return max;
+	return (max == 0) ? 1 : max; //Guarantee a sane, non-zero level even for an all-Egg/empty party
 }
 
 u8 GetMonPokeBall(struct PokemonSubstruct0* data)
@@ -4184,7 +4197,10 @@ static void CheckShinyMon(struct Pokemon* mon)
 	}
 
 	if (forceShiny)
-		ForceMonShiny(mon);
+	{
+		while (!IsMonShiny(mon))
+			ForceMonShiny(mon);
+	}
 }
 
 void ForceMonShiny(struct Pokemon* mon)
