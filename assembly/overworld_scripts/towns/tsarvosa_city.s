@@ -242,24 +242,19 @@ ChoseNotToBattleKaito:
 
 PrepareKaitoBattle:
     setflag 0x915 @ Can't use items
-    setvar 0x8003 0x0 @ Remove held items from party (Failures are ignored, such as eggs or empty slots)
-    setvar 0x8005 0x0 @ 0 = Removal
-    setvar 0x8004 0x0 @ First slot
-    special 0x15
-    setvar 0x8004 0x1 @ Second slot
-    special 0x15
-    setvar 0x8004 0x2 @ Third slot
-    special 0x15
-    setvar 0x8004 0x3 @ Fourth slot
-    special 0x15
-    setvar 0x8004 0x4 @ Fifth slot
-    special 0x15
-    setvar 0x8004 0x5 @ Sixth slot
-    special 0x15
+    setvar 0x8005 0x0 @ 0 = Stash & strip held items from the whole party (eggs/empty slots ignored)
+    callasm StashOrRestoreHeldItems
     setvar 0x8000 0xFEFE @ Continue lost battles
     return
 
+RestoreItemsAfterKaito:
+    setvar 0x8005 0x1 @ 1 = Restore the stashed held items to the party
+    callasm StashOrRestoreHeldItems
+    setvar 0x8005 0x0 @ Cleanup
+    return
+
 LostToKaito:
+    call RestoreItemsAfterKaito
     msgbox gText_TsarvosaCity_StatsDojo_LostToKaito MSG_NORMAL
     call PlayerHeal
     cleartrainerflag 406 @ Player needs to battle Kaito again to proceed
@@ -268,6 +263,7 @@ LostToKaito:
     end
 
 KaitoDefeated:
+    call RestoreItemsAfterKaito
     msgbox gText_TsarvosaCity_StatsDojo_KaitoGivesStrength MSG_NORMAL
     setflag 0x25F @ Defeated Kaito and got Strength
     obtainitem ITEM_HM04 0x1 @ Strength

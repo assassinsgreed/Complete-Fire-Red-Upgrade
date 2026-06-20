@@ -4081,3 +4081,23 @@ void GiveUpTo999RareCandies()
 	if (candiesToGive > 0)
 		AddBagItem(ITEM_RARE_CANDY, candiesToGive);
 }
+
+// Stores / retrieves the party's held item into/from RAM
+// Var8005 = 0 -> stash & clear ;  1 -> restore
+void StashOrRestoreHeldItems(void)
+{
+    u16 none = ITEM_NONE;
+    for (u8 i = 0; i < PARTY_SIZE; ++i)
+    {
+        if (Var8005 == 0) // stash + clear (empty slots/eggs simply stash ITEM_NONE)
+        {
+            gStashedHeldItems[i] = GetMonData(&gPlayerParty[i], MON_DATA_HELD_ITEM, NULL);
+            SetMonData(&gPlayerParty[i], MON_DATA_HELD_ITEM, &none);
+        }
+        else // restore
+        {
+            SetMonData(&gPlayerParty[i], MON_DATA_HELD_ITEM, &gStashedHeldItems[i]);
+            gStashedHeldItems[i] = ITEM_NONE;
+        }
+    }
+}

@@ -77,10 +77,10 @@ Disgraceful[.]
 [BLUE]I am disappointed in that battle.\pTrain up, get stronger, and face me\nagain.\pThe strong must care for the weak,\nso I shall heal your Pok\emon.
 
 #org @gText_TsarvosaCity_StatsDojo_KaitoUrgesThePlayerToReturn
-[BLUE]I expect to see you on the field of\nbattle again someday.
+[BLUE]Your precious items have been\nreturned to your Pok\emon[.]\pI expect to see you on the field of\nbattle again someday.
 
 #org @gText_TsarvosaCity_StatsDojo_KaitoGivesStrength
-[BLUE]Congratulations on a well earned\nvictory. May I know your name?\p[PLAYER]?\p[PLAYER]! You and your Pok\emon\nbattled valiantly.\pIt is my honour to bestow upon you\nthis HM containing Strength.
+[BLUE]Congratulations on a well earned\nvictory.\pI see your items do not substitute\nyour talent, but enhance it!\pYour items have been returned to\nyour Pok\emon.\pYou have earned my respsect.\nMay I know your name?\p[PLAYER]?\p[PLAYER]! You and your Pok\emon\nbattled valiantly.\pIt is my honour to bestow upon you\nthis HM containing Strength.
 
 #org @gText_TsarvosaCity_StatsDojo_KaitoCommentsOnBadge
 [BLUE]This will allow you to push aside\nboulders with relative ease.\pUnfortunately, you will need this\ncity's gym badge to use it[.]\pNevertheless[.] You have left an\nimpression on me, [PLAYER].\pMy Stats Dojo and it's facilities are\nyours to use at your leisure!
