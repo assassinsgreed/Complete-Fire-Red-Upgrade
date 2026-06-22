@@ -93,6 +93,7 @@
 #define VAR_LEVEL_CAPS 0x5156 //Options for soft vs hard level caps
 #define FLAG_SKIP_CUTSCENES 0x93D //Option to skip cutscenes on or off
 #define FLAG_DONT_OFFER_NICKNAMES_BATTLE 0x93E //Option to skip nickname prompts after catching / hatching a Pokemon
+#define FLAG_DIVERGENT_WILD_ENCOUNTERS 0x93F // Option for whether the standard encounter table or divergent table should be loaded
 
 /*===== Start Menu/Poketools Flags =====*/
 #define FLAG_SYS_BAG_HIDE 0x91B		//Toggle bag off
