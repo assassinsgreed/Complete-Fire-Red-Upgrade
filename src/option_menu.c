@@ -117,7 +117,7 @@ extern const u8 gText_OptionsMenu_GameDifficulty[];
 extern const u8 gText_OptionsMenu_LevelCaps[];
 extern const u8 gText_OptionsMenu_SkipCutscenes[];
 extern const u8 gText_OptionsMenu_SkipNicknaming[];
-extern const u8 gText_OptionsMenu_WildEncounters[];
+extern const u8 gText_OptionsMenu_PokemonSelection[];
 
 static const u8 *const sOptionMenuItemsNames[MENUITEM_COUNT] =
 {
@@ -136,7 +136,7 @@ static const u8 *const sOptionMenuItemsNames_SecondPage[MENUITEM_COUNT] =
     [MENUITEM_LEVEL_CAPS] = gText_OptionsMenu_LevelCaps,
     [MENUITEM_SKIP_CUTSCENES] = gText_OptionsMenu_SkipCutscenes,
     [MENUITEM_SKIP_NICKNAMING] = gText_OptionsMenu_SkipNicknaming,
-    [MENUITEM_WILD_ENCOUNTERS] = gText_OptionsMenu_WildEncounters,
+    [MENUITEM_WILD_ENCOUNTERS] = gText_OptionsMenu_PokemonSelection,
     [MENUITEM_CANCEL_PAGE_2] = gText_OptionMenuCancel,
 };
 
@@ -165,8 +165,8 @@ extern const u8 gText_OptionsMenu_GameDifficulty_ExtraHard[];
 extern const u8 gText_OptionsMenu_LevelCaps_Soft[];
 extern const u8 gText_OptionsMenu_LevelCaps_Hard[];
 extern const u8 gText_OptionsMenu_LevelCaps_ExtraHard[];
-extern const u8 gText_OptionsMenu_WildEncounters_Standard[];
-extern const u8 gText_OptionsMenu_WildEncounters_Divergent[];
+extern const u8 gText_OptionsMenu_PokemonSelection_Standard[];
+extern const u8 gText_OptionsMenu_PokemonSelection_Divergent[];
 
 static const u8 *const sTextSpeedOptions[] =
 {
@@ -227,8 +227,8 @@ static const u8 *const sSkipNicknamingOptions[] =
 };
 static const u8 *const sWildEncountersOptions[] =
 {
-    gText_OptionsMenu_WildEncounters_Standard,
-    gText_OptionsMenu_WildEncounters_Divergent,
+    gText_OptionsMenu_PokemonSelection_Standard,
+    gText_OptionsMenu_PokemonSelection_Divergent,
 };
 
 static const u16 sOptionMenuItemCounts[MENUITEM_COUNT] = {3, 2, 2, 2, 3, 10, 0};

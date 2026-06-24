@@ -52,11 +52,11 @@ Skip Story Cutscenes
 #org @gText_OptionsMenu_SkipNicknaming
 Skip Nickname Prompt
 
-#org @gText_OptionsMenu_WildEncounters
-Wild Encounters
+#org @gText_OptionsMenu_PokemonSelection
+Pok\emon Selection
 
-#org @gText_OptionsMenu_WildEncounters_Standard
+#org @gText_OptionsMenu_PokemonSelection_Standard
 Standard
 
-#org @gText_OptionsMenu_WildEncounters_Divergent
+#org @gText_OptionsMenu_PokemonSelection_Divergent
 Divergent

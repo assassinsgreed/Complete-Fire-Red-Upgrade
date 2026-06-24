@@ -769,6 +769,30 @@ void sp06B_ReplacePlayerTeamWithMultiTrainerTeam(void)
 	BuildFrontierMultiParty(Var8000);
 }
 
+//Resolves which trainer table to load for a given trainer ID based on the active difficulty/divergent flags.
+//Priority (highest first): Hard+Divergent, Divergent, Hard, Standard. Each override set is only used when it
+//actually defines (non-blank) data for this trainer; otherwise the next set down is tried. If the Standard set
+//itself is blank, the vanilla FireRed trainer (gOriginalTrainers) is used. See GET_TRAINER/GET_TRAINER_PTR.
+struct Trainer* GetTrainerData(u16 trainerId)
+{
+	if (TRAINER_IS_BLANK(trainerId))
+		return &gOriginalTrainers[trainerId];
+
+	bool8 hard = FlagGet(FLAG_HARD_MODE);
+	bool8 divergent = FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS);
+
+	if (hard && divergent && !HARD_DIVERGENT_TRAINER_IS_BLANK(trainerId))
+		return (struct Trainer*) &gHardDivergentTrainers[trainerId];
+
+	if (divergent && !DIVERGENT_TRAINER_IS_BLANK(trainerId))
+		return (struct Trainer*) &gDivergentTrainers[trainerId];
+
+	if (hard && !HARD_TRAINER_IS_BLANK(trainerId))
+		return (struct Trainer*) &gHardTrainers[trainerId];
+
+	return (struct Trainer*) &gTrainers[trainerId];
+}
+
 //Returns the number of Pokemon
 static u8 CreateNPCTrainerParty(struct Pokemon* const party, const u16 trainerId, const bool8 firstTrainer, const bool8 side)
 {
@@ -4246,7 +4270,12 @@ void ForceMonShiny(struct Pokemon* mon)
 u16 IsSpeciesBannedFromRandomizer(u16 species) //Exported
 {
 	if (FlagGet(FLAG_POKEMON_RANDOMIZER_KULURE_ONLY))
-		return !gSpecialSpeciesFlags[species].randomizerKulureOnly;
+	{
+		if (FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS))
+			return (!gSpecialSpeciesFlags[species].randomizerDivergentKulureOnly);
+		else
+			return (!gSpecialSpeciesFlags[species].randomizerKulureOnly);
+	}
 	else
 		return gSpecialSpeciesFlags[species].randomizerBan;
 }
