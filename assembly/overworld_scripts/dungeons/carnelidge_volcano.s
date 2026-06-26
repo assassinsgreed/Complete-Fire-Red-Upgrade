@@ -249,16 +249,6 @@ SignScript_CarnelidgeVolcano_HotSpringSign:
     msgbox gText_CarnelidgeVolcano_HotSpringsSign MSG_SIGN
     end
 
-.global TileScript_CarnelidgeVolcano_ExtendedSequenceWarning
-TileScript_CarnelidgeVolcano_ExtendedSequenceWarning:
-    lock
-    msgboxsign
-    msgbox gText_CarnelidgeVolcano_ExtendedSequenceWarning MSG_SIGN
-    msgboxnormal
-    addvar VarStorySequence 1
-    release
-    end
-
 ### Carnelidge Volcano Peak
 .equ VarStorySequence, 0x4062
 .equ JirachiDormant, 0x1
@@ -288,12 +278,13 @@ HideJirachiOnResume:
     end
 
 LevelScripts_CarnelidgeVolcanoPeak_StoryEvents:
-    levelscript VarStorySequence 0x1 LevelScript_InitiateStoryConclusion
+    levelscript VarStorySequence 0x0 LevelScript_InitiateStoryConclusion
     levelscript VarStorySequence 0xE LevelScript_StoryConclusionCutscene
 	.hword LEVEL_SCRIPT_TERMIN
 
 LevelScript_InitiateStoryConclusion:
     special 0xAF @ Dismount bike if on it
+    addvar VarStorySequence 0x1 @ Sequence started
     getplayerpos 0x4000 0x4001
     compare 0x4000 0xA
     if equal _call PlayerWalkRight_Return
@@ -449,8 +440,8 @@ BattleAlistair:
     setvar 0x5039 0x9 @ Y coordinate
     setflag 0x92D @ Just a dream whiteout text
     msgbox gText_CarnelidgeVolcanoPeak_Conclusion_RivalInitiatesBattle MSG_NORMAL
-    special 0x28 @ Restore party
-    special 0x0 @ Heal player party
+    callasm RestorePartyFromSafeBackup @ Rebuild the party stashed in gSaveBlock1->safeBackupParty when entering the empty world
+    special 0x0 @ Heal player party (also tops off HP/PP after the box-format restore)
     addvar VarStorySequence 0x1 @ Big hack - add 1 so the cutscene doesn't reset when exiting the party menu
     call RivalTagBattlePromptAndPartyOrganization
     subvar VarStorySequence 0x1 @ Big hack - subtract 1 so the cutscene does play again if the player loses to Alistair

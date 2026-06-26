@@ -743,6 +743,37 @@ u8 sp063_StatusChecker(void)
 	return gPlayerParty[Var8004].condition;
 }
 
+//Stashes the entire live party into gSaveBlock1->safeBackupParty (box format) and clears the
+//live party. Used by the Carnelidge Volcano climax, where the player walks a long, multi-map
+//"no Pokemon" segment (empty world -> Ultra Space -> return). safeBackupParty is never touched
+//by the normal save flow, so the backup survives even if the player saves and continues mid-
+//segment - unlike the old special 0x27, which stashed into the volatile gSaveBlock1->playerParty
+//slot that a save would overwrite with the (erased) party. Restore with RestorePartyFromSafeBackup.
+void BackupPartyToSafeBackupAndErase(void)
+{
+	for (u32 i = 0; i < PARTY_SIZE; ++i)
+		gSaveBlock1->safeBackupParty[i] = *(struct BoxPokemon*) &gPlayerParty[i];
+
+	ZeroPlayerPartyMons(); //Cleanly clear the live party (no uninitialized data, unlike special 0xEF)
+	CalculatePlayerPartyCount();
+}
+
+//Rebuilds the live party from gSaveBlock1->safeBackupParty. Stats/HP/status are recalculated by
+//BoxMonToMon (the same path as withdrawing from a PC box); the climax heals the party right after,
+//so nothing player-meaningful is lost.
+void RestorePartyFromSafeBackup(void)
+{
+	ZeroPlayerPartyMons();
+
+	for (u32 i = 0; i < PARTY_SIZE; ++i)
+	{
+		if (GetBoxMonData(&gSaveBlock1->safeBackupParty[i], MON_DATA_SPECIES, NULL) != SPECIES_NONE)
+			BoxMonToMon(&gSaveBlock1->safeBackupParty[i], &gPlayerParty[i]);
+	}
+
+	CalculatePlayerPartyCount();
+}
+
 
 static void TryAssignStatusToMon(struct Pokemon* mon, u32 status, bool8 checkAffected)
 {
