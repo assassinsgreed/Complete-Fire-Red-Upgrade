@@ -68,4 +68,4 @@ struct TradeAnimationResources {
 
 #define MAIL_WORDS_COUNT 9
 
-bool8 __attribute__((long_call)) ItemIsMail(u16 itemId);
+#define ItemIsMail(itemId) IsMail(itemId)

@@ -113,6 +113,11 @@ bool8 IsMegaStone(u16 item)
 	return ItemId_GetHoldEffect(item) == ITEM_EFFECT_MEGA_STONE;
 }
 
+bool8 IsMail(u16 item)
+{
+    return gItemsByType[SanitizeItemId(item)] == ITEM_TYPE_MAIL;
+}
+
 bool8 IsPrimalOrb(u16 item)
 {
 	return ItemId_GetHoldEffect(item) == ITEM_EFFECT_PRIMAL_ORB;

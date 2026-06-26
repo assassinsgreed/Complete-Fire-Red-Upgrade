@@ -922,7 +922,7 @@ MoveRelearnerCursorCallback = 0x80E553C | 1;
 
 
 /* Item Functions */
-IsMail = 0x80980F8 | 1;
+//IsMail = 0x80980F8 | 1;
 ResetItemMenuIconState = 0x80984D8 | 1;
 AddItemIconSprite = 0x8098758 | 1;
 AddCustomItemIconSprite = 0x809881C | 1;
@@ -2076,7 +2076,7 @@ DMA0_CNT_H = 0x40000BA;
 /* In-Game Trades */
 sNatureStatTable = 0x8252B48;
 sInGameTradeMailMessages = 0x826d1a8;
-ItemIsMail = 0x80980f8 | 1;
+//ItemIsMail = 0x80980f8 | 1;
 gLinkPartnerMail = 0x2031CCC;
 
 /* TM Case Redesign */

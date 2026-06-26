@@ -183,7 +183,7 @@ u8 GetBattleTerrainOverride(void)
 			{
 				terrain = BATTLE_TERRAIN_INSIDE_4;
 			}
-			else if (MAP_IS(POKEMON_LEAGUE_CHAMPIONS_ROOM))
+			else if (MAP_IS(ASCENSION_TOWER_CHAMPIONS_ROOM))
 			{
 				terrain = BATTLE_TERRAIN_CHAMPION;
 			}
@@ -365,7 +365,7 @@ static u8 TryLoadAlternateAreaTerrain(u8 terrain)
 				terrain = BATTLE_TERRAIN_JUNGLE;
 			break;
 		case BATTLE_TERRAIN_POND:
-			if (MAP_IS(ROUTE17_CAVE_1F) || MAP_IS(ROUTE23_CAVE) || mapSec == MAPSEC_FORGOTTEN_MANSE)
+			if (MAP_IS(ROUTE17_CAVE_1F) || MAP_IS(ROUTE_23_CAVE) || mapSec == MAPSEC_FORGOTTEN_MANSE)
 				terrain = BATTLE_TERRAIN_POND_CAVE;
 			else if (mapSec == MAPSEC_TORMA_CAVE || MAP_IS(ROUTE13_CAVE_1F))
 				terrain = BATTLE_TERRAIN_POND_CAVE_TORMA;
