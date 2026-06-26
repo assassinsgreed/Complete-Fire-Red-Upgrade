@@ -1259,7 +1259,7 @@ MapScript_Route12RestHouse:
 
 MapEntryScript_Route12_RestHouse_FlightFlag:
     setworldmapflag 0x8A3 @ Visited Route 12 Rest House
-    sethealingplace 0xD @ Route 12 Rest House
+    sethealingplace 0xC @ Route 12 Rest House
     call ResetUteyaVillageGymFlagsOnWhiteout
     end
 
@@ -1588,6 +1588,7 @@ MapScript_Route13_RestHouse:
 
 MapEntryScript_Route13_RestHouse_FlightFlag:
     setworldmapflag 0x8A2
+    sethealingplace 0xD @ Route 13 Rest House
     end
 
 .global EventScript_Route13_RestHouse_PCGuy

@@ -127,7 +127,7 @@ MapScript_TsarvosaCity_PokemonCenter:
 	.byte MAP_SCRIPT_TERMIN
 
 MapScript_TsarvosaCity_PokemonCenter_SetHealingSpot:
-    sethealingplace 0xB
+    sethealingplace 0xA
     call ResetUteyaVillageGymFlagsOnWhiteout
     end
 
