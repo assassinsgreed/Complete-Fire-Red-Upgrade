@@ -18,6 +18,12 @@ pokemon_storage_system.c
 	handles pokemon storage expansion and related functions
 */
 
+// The compressed box format only preserves the first 8 bytes of the Misc substruct
+// (pokerus, metLocation, metInfo, ivs) to save space. There are 3 bits free though,
+// which we use to store the obedience override & battle bond eligibility ribbon
+#define COMPRESSED_OBEDIENT_BIT    (1 << 12) // substruct3.blank bit 0
+#define COMPRESSED_GIFTRIBBON7_BIT (1 << 13) // substruct3.blank bit 1
+
 enum
 {
 	WALLPAPER_FOREST,
@@ -308,6 +314,11 @@ void CreateBoxMonFromCompressedMon(struct BoxPokemon* boxMon, struct CompressedP
 	Memcpy(&boxMon->substruct2, &compMon->hpEv, NUM_STATS); //Copy EVs
 	Memcpy(&boxMon->substruct3, &compMon->pokerus, 8); //Copy some of substruct misc
 
+	//Restore the flags stashed in the met-info word's spare bits, then clear those bits
+	boxMon->substruct3.obedient = (boxMon->substruct3.blank & 1) ? TRUE : FALSE;
+	boxMon->substruct3.giftRibbon7 = (boxMon->substruct3.blank & 2) ? TRUE : FALSE;
+	boxMon->substruct3.blank = 0;
+
 	boxMon->substruct1.moves[0] = compMon->move1;
 	boxMon->substruct1.moves[1] = compMon->move2;
 	boxMon->substruct1.moves[2] = compMon->move3;
@@ -325,6 +336,13 @@ void CreateCompressedMonFromBoxMon(struct BoxPokemon* boxMon, struct CompressedP
 	Memcpy(&compMon->substruct0, &boxMon->substruct0, sizeof(struct CompressedPokemonSubstruct0));
 	Memcpy(&compMon->hpEv, &boxMon->substruct2, NUM_STATS); //Copy EVs
 	Memcpy(&compMon->pokerus, &boxMon->substruct3, 8); //Copy some of substruct misc
+
+	//Stash the flags that must survive boxing into the kept met-info word's spare bits
+	compMon->metInfo &= ~(COMPRESSED_OBEDIENT_BIT | COMPRESSED_GIFTRIBBON7_BIT);
+	if (boxMon->substruct3.obedient)
+		compMon->metInfo |= COMPRESSED_OBEDIENT_BIT;
+	if (boxMon->substruct3.giftRibbon7)
+		compMon->metInfo |= COMPRESSED_GIFTRIBBON7_BIT;
 
 	compMon->move1 = boxMon->substruct1.moves[0];
 	compMon->move2 = boxMon->substruct1.moves[1];
