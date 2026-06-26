@@ -42,7 +42,7 @@
                 ]
             },
             "surfing": {
-                "rate": 1,
+                "rate": 50,
                 "pokemon": [
                     { "low": 15, "high": 25, "species": "SPECIES_HIPPOPOTAS" },
                     { "low": 25, "high": 30, "species": "SPECIES_HIPPOWDON" },
