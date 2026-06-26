@@ -281,6 +281,9 @@ FieldUseFunc_FormChangeItem 873371C
 # N-Solarizer and N-Lunarizer
 FieldUseFunc_FormChangeItem 8734C14
 FieldUseFunc_FormChangeItem 8734C40
+# Reveal Glass and Prison Bottle
+FieldUseFunc_FormChangeItem 8733774
+FieldUseFunc_FormChangeItem 87337A0
 
 FieldUseFunc_Honey 872E788
 FieldUseFunc_ExpShare 872FA70
