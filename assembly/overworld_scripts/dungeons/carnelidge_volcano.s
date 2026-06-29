@@ -278,13 +278,14 @@ HideJirachiOnResume:
     end
 
 LevelScripts_CarnelidgeVolcanoPeak_StoryEvents:
-    levelscript VarStorySequence 0x0 LevelScript_InitiateStoryConclusion
+    levelscript VarStorySequence 0x0 LevelScript_InitiateStoryConclusion @ New saves
+    levelscript VarStorySequence 0x1 LevelScript_InitiateStoryConclusion @ Historic saves that stepped on tile already
     levelscript VarStorySequence 0xE LevelScript_StoryConclusionCutscene
 	.hword LEVEL_SCRIPT_TERMIN
 
 LevelScript_InitiateStoryConclusion:
     special 0xAF @ Dismount bike if on it
-    addvar VarStorySequence 0x1 @ Sequence started
+    setvar VarStorySequence 0x1 @ Sequence started
     getplayerpos 0x4000 0x4001
     compare 0x4000 0xA
     if equal _call PlayerWalkRight_Return
