@@ -63,6 +63,12 @@ extern const u8 gSwarmOrders[31][24];
 extern const struct SwarmData gSwarmTable[];
 extern const u16 gSwarmTableLength;
 
+// Divergent Encounters
+extern const struct WildPokemonHeader gDivergentWildMonDefaultHeaders[];
+extern const struct WildPokemonHeader gDivergentWildMonEveningNightHeaders[];
+extern const struct SwarmData gDivergentSwarmTable[];
+extern const u16 gDivergentSwarmTableLength;
+
 extern bool8 CheckAndSetDailyEvent(u16 eventVar, bool8 setDailyEventVar);
 
 //This file's functions
@@ -198,11 +204,11 @@ static const struct WildPokemonHeader* GetCurrentMapWildMonHeader(void)
 		const struct WildPokemonHeader* headerTable = NULL;
 
 		if (IsNightTime())
-			headerTable = gWildMonNightHeaders;
+			headerTable = FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS) ? gDivergentWildMonEveningNightHeaders : gWildMonNightHeaders;
 		else if (IsMorning())
-			headerTable = gWildMonMorningHeaders;
+			headerTable = FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS) ? gDivergentWildMonDefaultHeaders : gWildMonMorningHeaders;
 		else if (IsEvening())
-			headerTable = gWildMonEveningHeaders;
+			headerTable = FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS) ? gDivergentWildMonEveningNightHeaders : gWildMonEveningHeaders;
 
 		if (headerTable != NULL) //Not Daytime
 		{
@@ -215,6 +221,17 @@ static const struct WildPokemonHeader* GetCurrentMapWildMonHeader(void)
 		}
 	#endif
 
+	if (FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS))
+	{
+		u32 i;
+		for (i = 0; gDivergentWildMonDefaultHeaders[i].mapGroup != 0xFF; ++i)
+		{
+			if (gDivergentWildMonDefaultHeaders[i].mapGroup == gSaveBlock1->location.mapGroup
+			&&  gDivergentWildMonDefaultHeaders[i].mapNum == gSaveBlock1->location.mapNum)
+				return &gDivergentWildMonDefaultHeaders[i];
+		}
+		return NULL;
+	}
 	return GetCurrentMapWildMonDaytimeHeader();
 }
 
@@ -521,7 +538,7 @@ static void Task_UpdateDailyValues(u8 taskId)
 			#ifdef SWARM_CHANGE_HOURLY
 			VarSet(VAR_SWARM_INDEX, 0xFFFF); //Reset override daily
 			#else
-			u16 index = Random() % gSwarmTableLength;
+			u16 index = Random() % (FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS) ? gDivergentSwarmTableLength : gSwarmTableLength);
 			VarSet(VAR_SWARM_INDEX, index);
 			#endif
 
@@ -575,13 +592,13 @@ u8 GetCurrentSwarmIndex(void)
 	#ifdef SWARM_CHANGE_HOURLY
 	u8 index;
 
-	if (VarGet(VAR_SWARM_INDEX) < gSwarmTableLength)
+	if (VarGet(VAR_SWARM_INDEX) < (FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS) ? gDivergentSwarmTableLength : gSwarmTableLength))
 	{
 		index = VarGet(VAR_SWARM_INDEX); //Override
 	}
-	else if (gSwarmTableLength == 24) //24 different species: 1 for each hour
+	else if ((FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS) ? gDivergentSwarmTableLength : gSwarmTableLength) == 24) //24 different species: 1 for each hour
 	{
-		index = gSwarmOrders[gClock.day - 1][gClock.hour];
+		index = (FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS) ? gDivergentSwarmOrders : gSwarmOrders)[gClock.day - 1][gClock.hour];
 	}
 	else
 	{
@@ -590,7 +607,7 @@ u8 GetCurrentSwarmIndex(void)
 		u8 day = (gClock.day == 0) ? 32 : gClock.day;
 		u8 month = (gClock.month == 0) ? 13 : gClock.month;
 		u32 val = ((hour * (day + month)) + ((hour * (day + month)) ^ dayOfWeek)) ^ T1_READ_32(gSaveBlock2->playerTrainerId);
-		index = val % gSwarmTableLength;
+		index = val % (FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS) ? gDivergentSwarmTableLength : gSwarmTableLength);
 	}
 	#else
 	u8 index = VarGet(VAR_SWARM_INDEX);
@@ -601,19 +618,19 @@ u8 GetCurrentSwarmIndex(void)
 
 bool8 IsValidSwarmIndex(u8 index)
 {
-	return index < gSwarmTableLength;
+	return index < (FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS) ? gDivergentSwarmTableLength : gSwarmTableLength);
 }
 
 static bool8 TryGenerateSwarmMon(u8 level, u8 wildMonIndex, bool8 purgeParty)
 {
-	if (gSwarmTableLength == 0)
+	if ((FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS) ? gDivergentSwarmTableLength : gSwarmTableLength) == 0)
 		return FALSE;
 
 	u8 index = GetCurrentSwarmIndex();
 	if (IsValidSwarmIndex(index))
 	{
-		u8 mapName = gSwarmTable[index].mapName;
-		u16 species = gSwarmTable[index].species;
+		u8 mapName = (FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS) ? gDivergentSwarmTable : gSwarmTable)[index].mapName;
+		u16 species = (FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS) ? gDivergentSwarmTable : gSwarmTable)[index].species;
 
 		if (mapName == GetCurrentRegionMapSectionId()
 		&& Random() % 100 < SWARM_CHANCE)
@@ -666,6 +683,12 @@ static bool8 TryGenerateWildMon(const struct WildPokemonInfo* wildMonInfo, u8 ar
 	}
 
 SKIP_INDEX_SEARCH:
+
+	// An empty encounter slot (e.g. a map wired to gDivergentEmpty) must never start
+	// a battle. The encounter-rate buff accumulated while walking can bridge a rate-0
+	// water area while surfing, which otherwise spawns a SPECIES_NONE "??????" Lv0 mon.
+	if (wildMonInfo->wildPokemon[wildMonIndex].species == SPECIES_NONE)
+		return FALSE;
 
 	level = ChooseWildMonLevel(&wildMonInfo->wildPokemon[wildMonIndex]);
 

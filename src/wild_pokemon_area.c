@@ -16,6 +16,9 @@ extern const struct WildPokemonHeader gWildMonMorningHeaders[];
 extern const struct WildPokemonHeader gWildMonEveningHeaders[];
 extern const struct WildPokemonHeader gWildMonNightHeaders[];
 
+extern const struct WildPokemonHeader gDivergentWildMonDefaultHeaders[];
+extern const struct WildPokemonHeader gDivergentWildMonEveningNightHeaders[];
+
 static const u16 sDexAreas_Kulure[][2] = {
     { MAPSEC_ANTHRA_TOWN,          1 },
     { MAPSEC_OLENIC_TOWN,          2 },
@@ -117,14 +120,28 @@ s32 GetSpeciesPokedexAreaMarkers(u16 species, struct Subsprite * subsprites)
     
     if (GetRoamerIndex(species) >= 0)
         return GetRoamerPokedexAreaMarkers(species, subsprites);
-    else if (IsOnlyDayTime())
-        headerTable = gWildMonHeaders;
-	else if (IsNightTime())
-        headerTable = gWildMonNightHeaders;
-    else if (IsMorning())
-        headerTable = gWildMonMorningHeaders;
-    else if (IsEvening())
-        headerTable = gWildMonEveningHeaders;
+
+    // Species with dex entries >= 288 are shared species (ex. legendaries or divergent pokemon) and should be present in divergent mode
+    u16 speciesNum = SpeciesToNationalPokedexNum(species);
+    if (FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS) && speciesNum > 390)
+    {
+        if (IsEvening() || IsNightTime())
+            headerTable = gDivergentWildMonEveningNightHeaders;
+        else
+            headerTable = gDivergentWildMonDefaultHeaders;
+    }
+    // Handle normal mode & shared pokemon in divergent mode
+    else if (!FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS) || (speciesNum >= 288 && speciesNum <=390))
+    {
+        if (IsOnlyDayTime())
+            headerTable = gWildMonHeaders;
+        else if (IsNightTime())
+            headerTable = gWildMonNightHeaders;
+        else if (IsMorning())
+            headerTable = gWildMonMorningHeaders;
+        else if (IsEvening())
+            headerTable = gWildMonEveningHeaders;
+    }
 
     for (i = 0, areaCount = 0; headerTable[i].mapGroup != MAP_GROUP(UNDEFINED); i++)
     {
