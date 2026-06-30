@@ -118,6 +118,10 @@ EventScript_MimmettJungle_Zeraora:
     setvar 0x8002 0x1 @ Can roam on land
     setvar 0x8003 0x0 @ Cannot roam on water
     special 0x129 @ Create roaming Pokemon
+    @ Divergent-mode island counterpart (level/land vars carry over). Both coexist in
+    @ gRoamers; only the one matching the divergent flag can be encountered.
+    setvar 0x8000 SPECIES_ZARUDE
+    special 0x129 @ Create roaming Pokemon
     hidesprite LASTTALKED
     end
 

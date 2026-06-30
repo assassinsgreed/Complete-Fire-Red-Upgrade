@@ -98,6 +98,39 @@ static const u8 sRoamerLocations[][NUM_MAPS_IN_SET] =
 static void CreateInitialRoamerMon(u16 species, u8 level, bool8 allowedOnLand, bool8 allowedOnWater);
 static bool8 IsRoamerAt(u8 mapGroup, u8 mapNum, u8 id);
 static void CreateRoamerMonInstance(u8 id);
+static bool8 IsDivergentRoamerSpecies(u16 species);
+static bool8 IsIslandRoamerSpecies(u16 species);
+static bool8 IsRoamerInCurrentMode(u16 species);
+
+//Both the normal and divergent roamer sets live in gRoamers at the same time (8 roamers
+//across the 10 available slots), so each Pokemon is generated exactly once and keeps its
+//own HP/status/IVs/nature regardless of how often the player toggles divergent mode. The
+//two sets are distinguished purely by species: a roamer is only encounterable and only
+//drawn on the town map while the game is in its matching mode.
+static bool8 IsDivergentRoamerSpecies(u16 species)
+{
+	switch (species)
+	{
+		case SPECIES_TORNADUS:
+		case SPECIES_THUNDURUS:
+		case SPECIES_LANDORUS:
+		case SPECIES_ZARUDE:
+			return TRUE;
+		default:
+			return FALSE;
+	}
+}
+
+//ZERAORA (normal) and ZARUDE (divergent) roam the Sevii islands rather than the mainland.
+static bool8 IsIslandRoamerSpecies(u16 species)
+{
+	return species == SPECIES_ZERAORA || species == SPECIES_ZARUDE;
+}
+
+static bool8 IsRoamerInCurrentMode(u16 species)
+{
+	return IsDivergentRoamerSpecies(species) == (FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS) != FALSE);
+}
 
 void ClearRoamersData(void)
 {
@@ -173,7 +206,7 @@ static void CreateInitialRoamerMon(u16 species, u8 level, bool8 allowedOnLand, b
 	roamer.canAppearOnWater = allowedOnWater;
 	roamer.location[MAP_GRP] = ROAMING_MAP_BANK;
 	roamer.location[MAP_NUM] =
-		species == SPECIES_ZERAORA ?
+		IsIslandRoamerSpecies(species) ?
 			sIslandRoamerLocations[Random() % (ARRAY_COUNT(sIslandRoamerLocations) - 1)][0] :
 			sMainlandRoamerLocations[Random() % (ARRAY_COUNT(sMainlandRoamerLocations) - 1)][0];
 
@@ -242,7 +275,7 @@ void RoamersMoveToOtherLocationSet(void)
 			while (TRUE)
 			{
 				mapNum =
-					roamer->species == SPECIES_ZERAORA ?
+					IsIslandRoamerSpecies(roamer->species) ?
 						sIslandRoamerLocations[Random() % (ARRAY_COUNT(sIslandRoamerLocations) - 1)][0] :
 						sMainlandRoamerLocations[Random() % (ARRAY_COUNT(sMainlandRoamerLocations) - 1)][0];
 				if (roamer->location[MAP_NUM] != mapNum)
@@ -271,16 +304,16 @@ void RoamersMove(void)
 
 			if (roamer->species != SPECIES_NONE)
 			{
-				u8 count = roamer->species == SPECIES_ZERAORA ? (ARRAY_COUNT(sIslandRoamerLocations) - 1) : (ARRAY_COUNT(sMainlandRoamerLocations) - 1);
+				u8 count = IsIslandRoamerSpecies(roamer->species) ? (ARRAY_COUNT(sIslandRoamerLocations) - 1) : (ARRAY_COUNT(sMainlandRoamerLocations) - 1);
 				while (locSet < count)
 				{
-					u8 location = roamer->species == SPECIES_ZERAORA ? sIslandRoamerLocations[locSet][0] : sMainlandRoamerLocations[locSet][0];
+					u8 location = IsIslandRoamerSpecies(roamer->species) ? sIslandRoamerLocations[locSet][0] : sMainlandRoamerLocations[locSet][0];
 					if (roamer->location[MAP_NUM] == location)
 					{
 						u8 mapNum;
 						while (TRUE)
 						{
-							mapNum = roamer->species == SPECIES_ZERAORA ? sIslandRoamerLocations[locSet][Random() % NUM_MAPS_IN_SET] : sMainlandRoamerLocations[locSet][Random() % NUM_MAPS_IN_SET];
+							mapNum = IsIslandRoamerSpecies(roamer->species) ? sIslandRoamerLocations[locSet][Random() % NUM_MAPS_IN_SET] : sMainlandRoamerLocations[locSet][Random() % NUM_MAPS_IN_SET];
 							if (!(roamer->locationHistory[2][MAP_GRP] == ROAMING_MAP_BANK && roamer->locationHistory[2][MAP_NUM] == mapNum) && mapNum != 0xFF)
 								break;
 						}
@@ -316,6 +349,9 @@ bool8 TryStartRoamerEncounter(u8 environment)
 {
 	for (int i = 0; i < MAX_NUM_ROAMERS; ++i)
 	{
+		if (!IsRoamerInCurrentMode(gRoamers[i].species))
+			continue; //The other mode's roamers share the array but can't be encountered now
+
 		if (IsRoamerAt(gSaveBlock1->location.mapGroup, gSaveBlock1->location.mapNum, i) && (Random() % 4) == 0)
 		{
 			switch (environment) {
@@ -415,7 +451,7 @@ void CreateTownMapRoamerSprites(void)
 	for (int i = 0; i < MAX_NUM_ROAMERS; ++i)
 	{
 		//FlagSet(FLAG_SYS_SEVII_MAP_123); //For debugging
-		if (gRoamers[i].species != SPECIES_NONE)
+		if (gRoamers[i].species != SPECIES_NONE && IsRoamerInCurrentMode(gRoamers[i].species))
 		{
 			LoadMonIconPalettes();
 			u8 mapGroup = gRoamers[i].location[MAP_GRP];

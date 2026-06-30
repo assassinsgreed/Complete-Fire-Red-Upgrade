@@ -3809,17 +3809,27 @@ void CheckIfPokemonKnowsMove()
 
 void ResetAllLegendaries()
 {
-	// Handle roamers (This will have to be kept in sync with ASM scripts if levels are changed)
-	int roamers[4] = { SPECIES_ARTICUNO_G, SPECIES_ZAPDOS_G,  SPECIES_MOLTRES_G, SPECIES_ZERAORA };
-	int roamerLevels[4] = { 50, 50, 50, 70 };
+	// Handle roamers (This will have to be kept in sync with ASM scripts if levels are changed).
+	// Both the normal and divergent sets are restored regardless of the current mode — they
+	// coexist in gRoamers and the divergent flag only filters which set can be encountered.
+	int roamers[8] = {
+		SPECIES_ARTICUNO_G, SPECIES_ZAPDOS_G, SPECIES_MOLTRES_G,  // normal mainland
+		SPECIES_TORNADUS, SPECIES_THUNDURUS, SPECIES_LANDORUS,    // divergent mainland
+		SPECIES_ZERAORA,                                         // normal island
+		SPECIES_ZARUDE,                                          // divergent island
+	};
+	int roamerLevels[8] = { 50, 50, 50, 50, 50, 50, 70, 70 };
 
-	for (int i = 0; i < 4; i++)
+	for (int i = 0; i < 8; i++)
 	{
-		// Skip respawning the Galarian Birds or Zeraora if they haven't been found yet
-		if (i < 3 && !(FlagGet(FLAG_HIDE_LAKE_LAPLAZ_GALARIAN_BIRDS)))
+		bool8 isIsland = (roamers[i] == SPECIES_ZERAORA || roamers[i] == SPECIES_ZARUDE);
+
+		// Skip respawning until that island's roaming event has happened. Each set shares the
+		// event (and thus the flag) of its mode-counterpart since both are created together.
+		if (!isIsland && !FlagGet(FLAG_HIDE_LAKE_LAPLAZ_GALARIAN_BIRDS))
 			continue;
 
-		if (i == 3 && !(FlagGet(FLAG_HIDE_ZERAORA_WHEN_CALMED)))
+		if (isIsland && !FlagGet(FLAG_HIDE_ZERAORA_WHEN_CALMED))
 			continue;
 
 		if (!GetSetPokedexFlag(SpeciesToNationalPokedexNum(roamers[i]), FLAG_GET_CAUGHT))

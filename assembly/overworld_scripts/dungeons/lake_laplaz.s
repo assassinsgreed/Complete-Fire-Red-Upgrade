@@ -170,6 +170,14 @@ SetupRoamers:
     special 0x129 @ Create roaming Pokemon
     setvar 0x8000 SPECIES_MOLTRES_G
     special 0x129 @ Create roaming Pokemon
+    @ Divergent-mode counterparts roam the same mainland (level/land vars carry over from above).
+    @ Both sets coexist in gRoamers; only the set matching the divergent flag can be encountered.
+    setvar 0x8000 SPECIES_TORNADUS
+    special 0x129 @ Create roaming Pokemon
+    setvar 0x8000 SPECIES_THUNDURUS
+    special 0x129 @ Create roaming Pokemon
+    setvar 0x8000 SPECIES_LANDORUS
+    special 0x129 @ Create roaming Pokemon
     return
 
 m_PlayerWalksUp: .byte walk_up, walk_up, end_m
