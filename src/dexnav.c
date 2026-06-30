@@ -73,6 +73,7 @@ dexnav.c
 #define IS_NEWER_UNOWN_LETTER(species) (species >= SPECIES_UNOWN_B && species <= SPECIES_UNOWN_QUESTION)
 
 extern const struct SwarmData gSwarmTable[];
+extern const struct SwarmData gDivergentSwarmTable[];
 
 //External functions
 extern void sp09A_StopSounds(void);
@@ -1183,8 +1184,9 @@ static u8 GetTotalEncounterChance(u16 species, u8 environment)
 			u8 swarmIndex = GetCurrentSwarmIndex();
 			if (IsValidSwarmIndex(swarmIndex))
 			{
-				if (GetCurrentRegionMapSectionId() == gSwarmTable[swarmIndex].mapName
-				&& species == gSwarmTable[swarmIndex].species)
+				const struct SwarmData* swarmTable = FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS) ? gDivergentSwarmTable : gSwarmTable;
+				if (GetCurrentRegionMapSectionId() == swarmTable[swarmIndex].mapName
+				&& species == swarmTable[swarmIndex].species)
 				{
 					chance += SWARM_CHANCE;
 					break;
@@ -1277,14 +1279,15 @@ static u8 GetEncounterLevel(u16 species, u8 environment, bool8 detectorMode)
 			{
 				//Check swarming mon
 				u8 swarmIndex = GetCurrentSwarmIndex();
+				const struct SwarmData* swarmTable = FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS) ? gDivergentSwarmTable : gSwarmTable;
 				if (detectorMode)
 				{
 					goto PICK_RANDOM_LAND_LEVEL;
 				}
 				else if (IsValidSwarmIndex(swarmIndex))
 				{
-					if (GetCurrentRegionMapSectionId() == gSwarmTable[swarmIndex].mapName
-					&& species == gSwarmTable[swarmIndex].species)
+					if (GetCurrentRegionMapSectionId() == swarmTable[swarmIndex].mapName
+					&& species == swarmTable[swarmIndex].species)
 					{
 						//Pick index at random and choose min and max from there
 						PICK_RANDOM_LAND_LEVEL:
@@ -2070,10 +2073,11 @@ static bool8 CapturedAllLandBasedPokemon(void)
 
 		//Check swarming mon
 		u8 swarmIndex = GetCurrentSwarmIndex();
+		const struct SwarmData* swarmTable = FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS) ? gDivergentSwarmTable : gSwarmTable;
 		if (IsValidSwarmIndex(swarmIndex)
-		&& GetCurrentRegionMapSectionId() == gSwarmTable[swarmIndex].mapName)
+		&& GetCurrentRegionMapSectionId() == swarmTable[swarmIndex].mapName)
 		{
-			if (!GetSetPokedexFlag(SpeciesToNationalPokedexNum(gSwarmTable[swarmIndex].species), FLAG_GET_CAUGHT))
+			if (!GetSetPokedexFlag(SpeciesToNationalPokedexNum(swarmTable[swarmIndex].species), FLAG_GET_CAUGHT))
 				return FALSE;
 		}
 
@@ -2248,8 +2252,9 @@ static void DexNavPopulateEncounterList(void)
 		u8 swarmIndex = GetCurrentSwarmIndex();
 		if (IsValidSwarmIndex(swarmIndex))
 		{
-			u16 swarmSpecies = gSwarmTable[swarmIndex].species;
-			if (GetCurrentRegionMapSectionId() == gSwarmTable[swarmIndex].mapName
+			const struct SwarmData* swarmTable = FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS) ? gDivergentSwarmTable : gSwarmTable;
+			u16 swarmSpecies = swarmTable[swarmIndex].species;
+			if (GetCurrentRegionMapSectionId() == swarmTable[swarmIndex].mapName
 			&& grassIndex < NELEMS(sDexNavGUIPtr->grassSpecies)
 			&& TryAddSpeciesToArray(swarmSpecies, ENCOUNTER_METHOD_SWARM, MAX_TOTAL_LAND_MONS, PickUnownLetter(swarmSpecies, 0)))
 			{

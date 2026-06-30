@@ -76,6 +76,7 @@ extern u8 AddPalRef(u8 Type, u16 PalTag);
 extern u8 BuildFrontierParty(struct Pokemon* party, u16 trainerNum, bool8 firstTrainer, bool8 ForPlayer, u8 side);
 
 extern const struct SwarmData gSwarmTable[];
+extern const struct SwarmData gDivergentSwarmTable[];
 extern const species_t gSkyBattleBannedSpeciesList[];
 
 #ifdef AUTO_NAMING_SCREEN_SWAP
@@ -1240,8 +1241,9 @@ u16 sp058_BufferSwarmText(void)
 
 	if (IsValidSwarmIndex(index))
 	{
-		u8 mapName = gSwarmTable[index].mapName;
-		u16 species = gSwarmTable[index].species;
+		const struct SwarmData* swarmTable = FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS) ? gDivergentSwarmTable : gSwarmTable;
+		u8 mapName = swarmTable[index].mapName;
+		u16 species = swarmTable[index].species;
 		TryRandomizeSpecies(&species);
 
 		GetMapName(sScriptStringVars[0], mapName, 0);

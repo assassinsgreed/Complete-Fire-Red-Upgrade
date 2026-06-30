@@ -62,9 +62,9 @@ const struct WildPokemon gDivergentRubarrDesert_LandMonsDefault[] =
 	{8, 11, SPECIES_BALTOY}, // 5
 	{7, 11, SPECIES_SILICOBRA}, // 5
 	{8, 10, SPECIES_SILICOBRA}, // 4
-	{9, 12, SPECIES_CUBONE_A}, // 4
-	{10, 12, SPECIES_CUBONE_A}, // 1
-	{9, 12, SPECIES_CUBONE_A}, // 1
+	{9, 12, SPECIES_DIGLETT_A}, // 4
+	{10, 12, SPECIES_DIGLETT_A}, // 1
+	{9, 12, SPECIES_DIGLETT_A}, // 1
 };
 
 const struct WildPokemon gDivergentRubarrDesert_WaterMonsDefault[] =
@@ -168,7 +168,7 @@ const struct WildPokemon gDivergentTormaCaveB2f_LandMonsDefault[] =
 	{9, 13, SPECIES_VANILLITE}, // 20
 	{10, 12, SPECIES_SPHEAL}, // 20
 	{11, 14, SPECIES_SMOOCHUM}, // 10
-	{8, 13, SPECIES_SWINUB}, // 10
+	{8, 13, SPECIES_VANILLITE}, // 10
 	{9, 14, SPECIES_SANDSHREW_A}, // 10
 	{10, 13, SPECIES_VANILLITE}, // 10
 	{11, 14, SPECIES_SMOOCHUM}, // 5
@@ -234,52 +234,20 @@ const struct WildPokemon gDivergentForgottenManseExterior_LandMonsDefault[] =
 	{20, 24, SPECIES_DUOSION}, // 1
 };
 
-const struct WildPokemon gDivergentForgottenManse1f_LandMonsDefault[] =
+const struct WildPokemon gDivergentForgottenManseCommon_LandMonsDefault[] =
 {
 	{22, 25, SPECIES_SHUPPET}, // 20
 	{21, 26, SPECIES_SINISTEA}, // 20
 	{21, 25, SPECIES_LITWICK}, // 10
 	{22, 25, SPECIES_SINISTEA}, // 10
 	{21, 26, SPECIES_SHUPPET}, // 10
-	{22, 26, SPECIES_LITWICK}, // 10
+	{22, 26, SPECIES_KLEFKI}, // 10
 	{22, 25, SPECIES_ROTOM}, // 5
-	{21, 24, SPECIES_POLTEAGEIST}, // 5
-	{21, 25, SPECIES_POLTEAGEIST}, // 4
-	{22, 26, SPECIES_POLTEAGEIST}, // 4
-	{23, 25, SPECIES_POLTEAGEIST_CHIPPED}, // 1
-	{23, 25, SPECIES_POLTEAGEIST_CHIPPED}, // 1
-};
-
-const struct WildPokemon gDivergentForgottenManse2f_LandMonsDefault[] =
-{
-	{22, 25, SPECIES_SHUPPET}, // 20
-	{21, 26, SPECIES_SINISTEA}, // 20
-	{21, 25, SPECIES_LITWICK}, // 10
-	{22, 25, SPECIES_SINISTEA}, // 10
-	{21, 26, SPECIES_SHUPPET}, // 10
-	{22, 26, SPECIES_LITWICK}, // 10
-	{22, 25, SPECIES_ROTOM}, // 5
-	{21, 24, SPECIES_POLTEAGEIST}, // 5
-	{21, 25, SPECIES_POLTEAGEIST}, // 4
-	{22, 26, SPECIES_POLTEAGEIST}, // 4
-	{23, 25, SPECIES_POLTEAGEIST_CHIPPED}, // 1
-	{23, 25, SPECIES_POLTEAGEIST_CHIPPED}, // 1
-};
-
-const struct WildPokemon gDivergentForgottenManseBasement_LandMonsDefault[] =
-{
-	{22, 25, SPECIES_SHUPPET}, // 20
-	{21, 26, SPECIES_SINISTEA}, // 20
-	{21, 25, SPECIES_LITWICK}, // 10
-	{22, 25, SPECIES_SINISTEA}, // 10
-	{21, 26, SPECIES_SHUPPET}, // 10
-	{22, 26, SPECIES_LITWICK}, // 10
-	{22, 25, SPECIES_ROTOM}, // 5
-	{21, 24, SPECIES_POLTEAGEIST}, // 5
-	{21, 25, SPECIES_POLTEAGEIST}, // 4
-	{22, 26, SPECIES_POLTEAGEIST}, // 4
-	{23, 25, SPECIES_POLTEAGEIST_CHIPPED}, // 1
-	{23, 25, SPECIES_POLTEAGEIST_CHIPPED}, // 1
+	{21, 24, SPECIES_LITWICK}, // 5
+	{21, 25, SPECIES_KLEFKI}, // 4
+	{22, 26, SPECIES_KLEFKI}, // 4
+	{23, 25, SPECIES_SINISTEA}, // 1
+	{23, 25, SPECIES_SINISTEA}, // 1
 };
 
 const struct WildPokemon gDivergentDaimynCityFactory_LandMonsDefault[] =
@@ -730,9 +698,9 @@ const struct WildPokemon gDivergentHessonPass1f_LandMonsDefault[] =
 	{30, 34, SPECIES_DIGGERSBY}, // 10
 	{31, 33, SPECIES_ANORITH}, // 5
 	{30, 34, SPECIES_ANORITH}, // 5
-	{31, 33, SPECIES_ANORITH}, // 4
+	{31, 33, SPECIES_DUGTRIO_A}, // 4
 	{30, 35, SPECIES_PUPITAR}, // 4
-	{31, 34, SPECIES_ANORITH}, // 1
+	{31, 34, SPECIES_DUGTRIO_A}, // 1
 	{29, 33, SPECIES_PUPITAR}, // 1
 };
 
@@ -836,91 +804,91 @@ const struct WildPokemon gDivergentCalicinBay_FishingMonsDefault[] =
 
 const struct WildPokemon gDivergentUteyanRuinsOverworld_LandMonsDefault[] =
 {
-	{53, 56, SPECIES_ELGYEM}, // 20
-	{53, 56, SPECIES_DOTTLER}, // 20
-	{54, 57, SPECIES_RUNERIGUS}, // 10
-	{54, 57, SPECIES_BEHEEYEM}, // 10
-	{54, 58, SPECIES_HATTREM}, // 10
-	{54, 57, SPECIES_HATTREM}, // 10
-	{53, 56, SPECIES_ORBEETLE}, // 5
-	{54, 57, SPECIES_ORBEETLE}, // 5
-	{54, 57, SPECIES_GARDEVOIR}, // 4
-	{54, 58, SPECIES_GARDEVOIR}, // 4
-	{54, 58, SPECIES_HATTERENE}, // 1
-	{54, 58, SPECIES_HATTERENE}, // 1
+	{53, 56, SPECIES_ORICORIO_P}, // 20
+	{53, 56, SPECIES_XATU}, // 20
+	{54, 57, SPECIES_INDEEDEE}, // 10
+	{54, 57, SPECIES_DUOSION}, // 10
+	{54, 58, SPECIES_KADABRA}, // 10
+	{54, 57, SPECIES_INDEEDEE}, // 10
+	{53, 56, SPECIES_DUOSION}, // 5
+	{54, 57, SPECIES_MUSHARNA}, // 5
+	{54, 57, SPECIES_MUSHARNA}, // 4
+	{54, 58, SPECIES_MUSHARNA}, // 4
+	{54, 58, SPECIES_REUNICLUS}, // 1
+	{54, 58, SPECIES_REUNICLUS}, // 1
+};
+
+const struct WildPokemon gDivergentUteyanRuinsOverworld_LandMonsEveningNight[] =
+{
+	{53, 56, SPECIES_ORICORIO_P}, // 20
+	{53, 56, SPECIES_XATU}, // 20
+	{54, 57, SPECIES_INDEEDEE}, // 10
+	{54, 57, SPECIES_DRAKLOAK}, // 10
+	{54, 58, SPECIES_LAMPENT}, // 10
+	{54, 57, SPECIES_INDEEDEE}, // 10
+	{53, 56, SPECIES_DRAKLOAK}, // 5
+	{54, 57, SPECIES_MUSHARNA}, // 5
+	{54, 57, SPECIES_MUSHARNA}, // 4
+	{54, 58, SPECIES_MUSHARNA}, // 4
+	{54, 58, SPECIES_GENGAR}, // 1
+	{54, 58, SPECIES_GENGAR}, // 1
 };
 
 const struct WildPokemon gDivergentUteyanRuinsOverworld_RockMonsDefault[] =
 {
-	{55, 60, SPECIES_BOLDORE}, // 60
-	{55, 60, SPECIES_GIGALITH}, // 30
-	{55, 60, SPECIES_KLINKLANG}, // 5
-	{55, 60, SPECIES_KLINKLANG}, // 4
-	{55, 60, SPECIES_KLINKLANG}, // 1
+	{55, 60, SPECIES_NOSEPASS}, // 60
+	{55, 60, SPECIES_DWEBBLE}, // 30
+	{55, 60, SPECIES_CRUSTLE}, // 5
+	{55, 60, SPECIES_PROBOPASS}, // 4
+	{55, 60, SPECIES_PROBOPASS}, // 1
 };
 
-const struct WildPokemon gDivergentUteyanRuinsCave1f_LandMonsDefault[] =
+const struct WildPokemon gDivergentUteyanRuinsCaveCommon_LandMonsDefault[] =
 {
-	{53, 56, SPECIES_NOIBAT}, // 20
-	{53, 56, SPECIES_GOLBAT}, // 20
-	{54, 57, SPECIES_DRILBUR}, // 10
-	{54, 57, SPECIES_DRILBUR}, // 10
-	{54, 58, SPECIES_HAKAMO_O}, // 10
-	{54, 57, SPECIES_EXCADRILL}, // 10
-	{53, 56, SPECIES_KLANG}, // 5
-	{54, 57, SPECIES_KLANG}, // 5
-	{54, 57, SPECIES_CROBAT}, // 4
-	{54, 58, SPECIES_NOIVERN}, // 4
-	{54, 58, SPECIES_NOIVERN}, // 1
-	{54, 58, SPECIES_CROBAT}, // 1
+	{53, 56, SPECIES_MEDICHAM}, // 20
+	{53, 56, SPECIES_BANETTE}, // 20
+	{54, 57, SPECIES_CLAYDOL}, // 10
+	{54, 57, SPECIES_CLAYDOL}, // 10
+	{54, 58, SPECIES_GOLETT}, // 10
+	{54, 57, SPECIES_GOLETT}, // 10
+	{53, 56, SPECIES_CLAYDOL}, // 5
+	{54, 57, SPECIES_GOLURK}, // 5
+	{54, 57, SPECIES_MEDICHAM}, // 4
+	{54, 58, SPECIES_METANG}, // 4
+	{54, 58, SPECIES_MEDICHAM}, // 1
+	{54, 58, SPECIES_METANG}, // 1
 };
 
 const struct WildPokemon gDivergentUteyanRuinsCave1f_RockMonsDefault[] =
 {
-	{55, 60, SPECIES_BOLDORE}, // 60
-	{55, 60, SPECIES_GIGALITH}, // 30
-	{55, 60, SPECIES_KLINKLANG}, // 5
-	{55, 60, SPECIES_KLINKLANG}, // 4
-	{55, 60, SPECIES_KLINKLANG}, // 1
+	{55, 60, SPECIES_NOSEPASS}, // 60
+	{55, 60, SPECIES_DWEBBLE}, // 30
+	{55, 60, SPECIES_CRUSTLE}, // 5
+	{55, 60, SPECIES_PROBOPASS}, // 4
+	{55, 60, SPECIES_PROBOPASS}, // 1
 };
 
 const struct WildPokemon gDivergentUteyanRuinsCave1f_WaterMonsDefault[] =
 {
-	{52, 56, SPECIES_MAREANIE}, // 60
-	{55, 57, SPECIES_CORSOLA_G}, // 30
-	{55, 57, SPECIES_TOXAPEX}, // 5
-	{57, 58, SPECIES_CORSOLA_G}, // 4
-	{56, 59, SPECIES_CORSOLA_G}, // 1
+	{52, 56, SPECIES_KRABBY}, // 60
+	{55, 57, SPECIES_KINGLER}, // 30
+	{55, 57, SPECIES_QWILFISH}, // 5
+	{57, 58, SPECIES_QWILFISH}, // 4
+	{56, 59, SPECIES_QWILFISH}, // 1
 };
 
 const struct WildPokemon gDivergentUteyanRuinsCave1f_FishingMonsDefault[] =
 {
-	{5, 20, SPECIES_MAGIKARP}, // 70
-	{5, 20, SPECIES_MAGIKARP}, // 30
-	{30, 40, SPECIES_MAGIKARP}, // 60
-	{30, 40, SPECIES_BINACLE}, // 20
-	{30, 40, SPECIES_BINACLE}, // 20
-	{50, 60, SPECIES_BARBARACLE}, // 40
-	{50, 60, SPECIES_GYARADOS}, // 40
-	{50, 60, SPECIES_BINACLE}, // 15
-	{50, 60, SPECIES_BINACLE}, // 4
-	{50, 60, SPECIES_MAGIKARP}, // 1
-};
-
-const struct WildPokemon gDivergentUteyanRuinsCave2f_LandMonsDefault[] =
-{
-	{53, 56, SPECIES_NOIBAT}, // 20
-	{53, 56, SPECIES_GOLBAT}, // 20
-	{54, 57, SPECIES_DRILBUR}, // 10
-	{54, 57, SPECIES_DRILBUR}, // 10
-	{54, 58, SPECIES_HAKAMO_O}, // 10
-	{54, 57, SPECIES_EXCADRILL}, // 10
-	{53, 56, SPECIES_KLANG}, // 5
-	{54, 57, SPECIES_KLANG}, // 5
-	{54, 57, SPECIES_CROBAT}, // 4
-	{54, 58, SPECIES_NOIVERN}, // 4
-	{54, 58, SPECIES_NOIVERN}, // 1
-	{54, 58, SPECIES_CROBAT}, // 1
+	{5, 20, SPECIES_KRABBY}, // 70
+	{5, 20, SPECIES_QWILFISH}, // 30
+	{30, 40, SPECIES_KRABBY}, // 60
+	{30, 40, SPECIES_KINGLER}, // 20
+	{30, 40, SPECIES_QWILFISH}, // 20
+	{50, 60, SPECIES_KRABBY}, // 40
+	{50, 60, SPECIES_KINGLER}, // 40
+	{50, 60, SPECIES_KINGLER}, // 15
+	{50, 60, SPECIES_QWILFISH}, // 4
+	{50, 60, SPECIES_QWILFISH}, // 1
 };
 
 const struct WildPokemon gDivergentDaimynFactoryInterior_LandMonsDefault[] =
@@ -939,210 +907,114 @@ const struct WildPokemon gDivergentDaimynFactoryInterior_LandMonsDefault[] =
 	{52, 58, SPECIES_MAGNEZONE}, // 1
 };
 
-const struct WildPokemon gDivergentVictoryRoad1f_LandMonsDefault[] =
+const struct WildPokemon gDivergentVictoryRoadCommon_LandMonsDefault[] =
 {
-	{54, 57, SPECIES_GOLBAT}, // 20
-	{54, 57, SPECIES_BOLDORE}, // 20
-	{55, 58, SPECIES_SCRAFTY}, // 10
-	{55, 58, SPECIES_KANGASKHAN}, // 10
-	{55, 59, SPECIES_HOUNDOOM}, // 10
-	{55, 58, SPECIES_COALOSSAL}, // 10
-	{54, 57, SPECIES_KLINKLANG}, // 5
-	{55, 58, SPECIES_NOIVERN}, // 5
-	{55, 58, SPECIES_CROBAT}, // 4
-	{55, 59, SPECIES_MAMOSWINE}, // 4
-	{55, 59, SPECIES_GARCHOMP}, // 1
-	{55, 59, SPECIES_GARCHOMP}, // 1
+	{54, 57, SPECIES_RHYDON}, // 20
+	{54, 57, SPECIES_GRAPPLOCT}, // 20
+	{55, 58, SPECIES_EELEKTRIK}, // 10
+	{55, 58, SPECIES_EELEKTRIK}, // 10
+	{55, 59, SPECIES_RHYDON}, // 10
+	{55, 58, SPECIES_SPIRITOMB}, // 10
+	{54, 57, SPECIES_PROBOPASS}, // 5
+	{55, 58, SPECIES_EELEKTROSS}, // 5
+	{55, 58, SPECIES_AGGRON}, // 4
+	{55, 59, SPECIES_AGGRON}, // 4
+	{55, 59, SPECIES_TYRANITAR}, // 1
+	{55, 59, SPECIES_TYRANITAR}, // 1
 };
 
 const struct WildPokemon gDivergentVictoryRoad1f_WaterMonsDefault[] =
 {
-	{54, 59, SPECIES_MAREANIE}, // 60
-	{55, 60, SPECIES_TOXAPEX}, // 30
-	{55, 60, SPECIES_DHELMISE}, // 5
-	{57, 60, SPECIES_TOXAPEX}, // 4
-	{56, 59, SPECIES_TOXAPEX}, // 1
+	{54, 59, SPECIES_PALPITOAD}, // 60
+	{55, 60, SPECIES_GRAPPLOCT}, // 30
+	{55, 60, SPECIES_SEISMITOAD}, // 5
+	{57, 60, SPECIES_SEISMITOAD}, // 4
+	{56, 59, SPECIES_SEISMITOAD}, // 1
 };
 
 const struct WildPokemon gDivergentVictoryRoad1f_FishingMonsDefault[] =
 {
-	{5, 20, SPECIES_SLOWPOKE}, // 70
-	{5, 20, SPECIES_SLOWPOKE}, // 30
-	{25, 50, SPECIES_SLOWPOKE}, // 60
-	{25, 50, SPECIES_SLOWPOKE}, // 20
-	{25, 50, SPECIES_DRATINI}, // 20
-	{55, 60, SPECIES_SLOWBRO}, // 40
-	{55, 60, SPECIES_DRATINI}, // 40
-	{55, 60, SPECIES_DRAGONAIR}, // 15
-	{55, 60, SPECIES_DRATINI}, // 4
-	{55, 60, SPECIES_DRAGONAIR}, // 1
-};
-
-const struct WildPokemon gDivergentVictoryRoad2f_LandMonsDefault[] =
-{
-	{54, 57, SPECIES_GOLBAT}, // 20
-	{54, 57, SPECIES_BOLDORE}, // 20
-	{55, 58, SPECIES_SCRAFTY}, // 10
-	{55, 58, SPECIES_KANGASKHAN}, // 10
-	{55, 59, SPECIES_HOUNDOOM}, // 10
-	{55, 58, SPECIES_COALOSSAL}, // 10
-	{54, 57, SPECIES_KLINKLANG}, // 5
-	{55, 58, SPECIES_NOIVERN}, // 5
-	{55, 58, SPECIES_CROBAT}, // 4
-	{55, 59, SPECIES_MAMOSWINE}, // 4
-	{55, 59, SPECIES_GARCHOMP}, // 1
-	{55, 59, SPECIES_GARCHOMP}, // 1
-};
-
-const struct WildPokemon gDivergentVictoryRoad3f_LandMonsDefault[] =
-{
-	{54, 57, SPECIES_GOLBAT}, // 20
-	{54, 57, SPECIES_BOLDORE}, // 20
-	{55, 58, SPECIES_SCRAFTY}, // 10
-	{55, 58, SPECIES_KANGASKHAN}, // 10
-	{55, 59, SPECIES_HOUNDOOM}, // 10
-	{55, 58, SPECIES_COALOSSAL}, // 10
-	{54, 57, SPECIES_KLINKLANG}, // 5
-	{55, 58, SPECIES_NOIVERN}, // 5
-	{55, 58, SPECIES_CROBAT}, // 4
-	{55, 59, SPECIES_MAMOSWINE}, // 4
-	{55, 59, SPECIES_GARCHOMP}, // 1
-	{55, 59, SPECIES_GARCHOMP}, // 1
+	{5, 20, SPECIES_TYMPOLE}, // 70
+	{5, 20, SPECIES_CLOBBOPUS}, // 30
+	{25, 50, SPECIES_TYMPOLE}, // 60
+	{25, 50, SPECIES_CLOBBOPUS}, // 20
+	{25, 50, SPECIES_CLOBBOPUS}, // 20
+	{55, 60, SPECIES_TYMPOLE}, // 40
+	{55, 60, SPECIES_PALPITOAD}, // 40
+	{55, 60, SPECIES_SEISMITOAD}, // 15
+	{55, 60, SPECIES_SEISMITOAD}, // 4
+	{55, 60, SPECIES_SEISMITOAD}, // 1
 };
 
 const struct WildPokemon gDivergentVictoryRoadOutside_LandMonsDefault[] =
 {
-	{54, 57, SPECIES_MIENSHAO}, // 20
-	{54, 57, SPECIES_SKARMORY}, // 20
-	{55, 58, SPECIES_WEEZING_G}, // 10
-	{55, 58, SPECIES_HELIOLISK}, // 10
-	{55, 59, SPECIES_MORPEKO}, // 10
-	{55, 58, SPECIES_PRIMEAPE}, // 10
-	{54, 57, SPECIES_HELIOLISK}, // 5
-	{55, 58, SPECIES_CRABOMINABLE}, // 5
-	{55, 58, SPECIES_KOMMO_O}, // 4
-	{55, 59, SPECIES_HATTERENE}, // 4
-	{55, 59, SPECIES_KOMMO_O}, // 1
-	{55, 59, SPECIES_HATTERENE}, // 1
+	{54, 57, SPECIES_ALTARIA}, // 20
+	{54, 57, SPECIES_SWALOT}, // 20
+	{55, 58, SPECIES_PIDGEOT}, // 10
+	{55, 58, SPECIES_PANGORO}, // 10
+	{55, 59, SPECIES_ZWEILOUS}, // 10
+	{55, 58, SPECIES_GLISCOR}, // 10
+	{54, 57, SPECIES_GLISCOR}, // 5
+	{55, 58, SPECIES_SHELGON}, // 5
+	{55, 58, SPECIES_PANGORO}, // 4
+	{55, 59, SPECIES_PANGORO}, // 4
+	{55, 59, SPECIES_DRAGAPULT}, // 1
+	{55, 59, SPECIES_DRAGAPULT}, // 1
 };
 
 const struct WildPokemon gDivergentVictoryRoadOutside_WaterMonsDefault[] =
 {
-	{54, 59, SPECIES_LANTURN}, // 60
-	{55, 60, SPECIES_SEADRA}, // 30
-	{55, 60, SPECIES_SEADRA}, // 5
-	{57, 60, SPECIES_LAPRAS}, // 4
-	{56, 59, SPECIES_LAPRAS}, // 1
+	{54, 59, SPECIES_GRAPPLOCT}, // 60
+	{55, 60, SPECIES_SKRELP}, // 30
+	{55, 60, SPECIES_DRAGALGE}, // 5
+	{57, 60, SPECIES_DRAGALGE}, // 4
+	{56, 59, SPECIES_DRAGALGE}, // 1
 };
 
 const struct WildPokemon gDivergentVictoryRoadOutside_FishingMonsDefault[] =
 {
-	{5, 20, SPECIES_SLOWPOKE}, // 70
-	{5, 20, SPECIES_SLOWPOKE}, // 30
-	{25, 50, SPECIES_SLOWPOKE}, // 60
-	{25, 50, SPECIES_SLOWPOKE}, // 20
-	{25, 50, SPECIES_DRATINI}, // 20
-	{55, 60, SPECIES_SLOWBRO}, // 40
-	{55, 60, SPECIES_DRATINI}, // 40
-	{55, 60, SPECIES_DRAGONAIR}, // 15
-	{55, 60, SPECIES_DRATINI}, // 4
-	{55, 60, SPECIES_DRAGONITE}, // 1
+	{5, 20, SPECIES_SKRELP}, // 70
+	{5, 20, SPECIES_CLOBBOPUS}, // 30
+	{25, 50, SPECIES_SKRELP}, // 60
+	{25, 50, SPECIES_CLOBBOPUS}, // 20
+	{25, 50, SPECIES_CLOBBOPUS}, // 20
+	{55, 60, SPECIES_SKRELP}, // 40
+	{55, 60, SPECIES_DRAGALGE}, // 40
+	{55, 60, SPECIES_GRAPPLOCT}, // 15
+	{55, 60, SPECIES_GRAPPLOCT}, // 4
+	{55, 60, SPECIES_GRAPPLOCT}, // 1
 };
 
 const struct WildPokemon gDivergentVictoryRoadBackRoom_LandMonsDefault[] =
 {
-	{54, 57, SPECIES_GOLBAT}, // 20
-	{54, 57, SPECIES_BOLDORE}, // 20
-	{55, 58, SPECIES_SCRAFTY}, // 10
-	{55, 58, SPECIES_KANGASKHAN}, // 10
-	{55, 59, SPECIES_HOUNDOOM}, // 10
-	{55, 58, SPECIES_COALOSSAL}, // 10
-	{54, 57, SPECIES_KLINKLANG}, // 5
-	{55, 58, SPECIES_NOIVERN}, // 5
-	{55, 58, SPECIES_CROBAT}, // 4
-	{55, 59, SPECIES_MAMOSWINE}, // 4
-	{55, 59, SPECIES_DURALUDON}, // 1
-	{55, 59, SPECIES_DURALUDON}, // 1
+	{54, 57, SPECIES_RHYDON}, // 20
+	{54, 57, SPECIES_GRAPPLOCT}, // 20
+	{55, 58, SPECIES_EELEKTRIK}, // 10
+	{55, 58, SPECIES_EELEKTRIK}, // 10
+	{55, 59, SPECIES_RHYDON}, // 10
+	{55, 58, SPECIES_SPIRITOMB}, // 10
+	{54, 57, SPECIES_PROBOPASS}, // 5
+	{55, 58, SPECIES_EELEKTROSS}, // 5
+	{55, 58, SPECIES_AGGRON}, // 4
+	{55, 59, SPECIES_AGGRON}, // 4
+	{55, 59, SPECIES_KUBFU}, // 1
+	{55, 59, SPECIES_KUBFU}, // 1
 };
 
-const struct WildPokemon gDivergentUteyanRuinsChamber1_LandMonsDefault[] =
+const struct WildPokemon gDivergentUteyanRuinsChamberCommon_LandMonsDefault[] =
 {
-	{53, 56, SPECIES_YAMASK_G}, // 20
-	{53, 56, SPECIES_YAMASK_G}, // 20
-	{54, 57, SPECIES_WOBBUFFET}, // 10
-	{54, 57, SPECIES_WOBBUFFET}, // 10
-	{54, 58, SPECIES_WOBBUFFET}, // 10
-	{54, 57, SPECIES_MIMIKYU}, // 10
-	{53, 56, SPECIES_MIMIKYU}, // 5
-	{54, 57, SPECIES_RUNERIGUS}, // 5
-	{54, 57, SPECIES_RUNERIGUS}, // 4
-	{54, 58, SPECIES_CARBINK}, // 4
-	{54, 58, SPECIES_RUNERIGUS}, // 1
-	{54, 58, SPECIES_CARBINK}, // 1
-};
-
-const struct WildPokemon gDivergentUteyanRuinsChamber2_LandMonsDefault[] =
-{
-	{53, 56, SPECIES_YAMASK_G}, // 20
-	{53, 56, SPECIES_YAMASK_G}, // 20
-	{54, 57, SPECIES_WOBBUFFET}, // 10
-	{54, 57, SPECIES_WOBBUFFET}, // 10
-	{54, 58, SPECIES_WOBBUFFET}, // 10
-	{54, 57, SPECIES_MIMIKYU}, // 10
-	{53, 56, SPECIES_MIMIKYU}, // 5
-	{54, 57, SPECIES_RUNERIGUS}, // 5
-	{54, 57, SPECIES_RUNERIGUS}, // 4
-	{54, 58, SPECIES_CARBINK}, // 4
-	{54, 58, SPECIES_RUNERIGUS}, // 1
-	{54, 58, SPECIES_CARBINK}, // 1
-};
-
-const struct WildPokemon gDivergentUteyanRuinsChamber3_LandMonsDefault[] =
-{
-	{53, 56, SPECIES_YAMASK_G}, // 20
-	{53, 56, SPECIES_YAMASK_G}, // 20
-	{54, 57, SPECIES_WOBBUFFET}, // 10
-	{54, 57, SPECIES_WOBBUFFET}, // 10
-	{54, 58, SPECIES_WOBBUFFET}, // 10
-	{54, 57, SPECIES_MIMIKYU}, // 10
-	{53, 56, SPECIES_MIMIKYU}, // 5
-	{54, 57, SPECIES_RUNERIGUS}, // 5
-	{54, 57, SPECIES_RUNERIGUS}, // 4
-	{54, 58, SPECIES_CARBINK}, // 4
-	{54, 58, SPECIES_RUNERIGUS}, // 1
-	{54, 58, SPECIES_CARBINK}, // 1
-};
-
-const struct WildPokemon gDivergentUteyanRuinsChamber4_LandMonsDefault[] =
-{
-	{53, 56, SPECIES_YAMASK_G}, // 20
-	{53, 56, SPECIES_YAMASK_G}, // 20
-	{54, 57, SPECIES_WOBBUFFET}, // 10
-	{54, 57, SPECIES_WOBBUFFET}, // 10
-	{54, 58, SPECIES_WOBBUFFET}, // 10
-	{54, 57, SPECIES_MIMIKYU}, // 10
-	{53, 56, SPECIES_MIMIKYU}, // 5
-	{54, 57, SPECIES_RUNERIGUS}, // 5
-	{54, 57, SPECIES_RUNERIGUS}, // 4
-	{54, 58, SPECIES_CARBINK}, // 4
-	{54, 58, SPECIES_RUNERIGUS}, // 1
-	{54, 58, SPECIES_CARBINK}, // 1
-};
-
-const struct WildPokemon gDivergentUteyanRuinsChamber5_LandMonsDefault[] =
-{
-	{53, 56, SPECIES_YAMASK_G}, // 20
-	{53, 56, SPECIES_YAMASK_G}, // 20
-	{54, 57, SPECIES_WOBBUFFET}, // 10
-	{54, 57, SPECIES_WOBBUFFET}, // 10
-	{54, 58, SPECIES_WOBBUFFET}, // 10
-	{54, 57, SPECIES_MIMIKYU}, // 10
-	{53, 56, SPECIES_MIMIKYU}, // 5
-	{54, 57, SPECIES_RUNERIGUS}, // 5
-	{54, 57, SPECIES_RUNERIGUS}, // 4
-	{54, 58, SPECIES_CARBINK}, // 4
-	{54, 58, SPECIES_RUNERIGUS}, // 1
-	{54, 58, SPECIES_CARBINK}, // 1
+	{53, 56, SPECIES_GOLETT}, // 20
+	{53, 56, SPECIES_GOLETT}, // 20
+	{54, 57, SPECIES_SHUPPET}, // 10
+	{54, 57, SPECIES_SHUPPET}, // 10
+	{54, 58, SPECIES_CUBONE_A}, // 10
+	{54, 57, SPECIES_ONIX}, // 10
+	{53, 56, SPECIES_CUBONE_A}, // 5
+	{54, 57, SPECIES_BANETTE}, // 5
+	{54, 57, SPECIES_CUBONE_A}, // 4
+	{54, 58, SPECIES_MAROWAK_A}, // 4
+	{54, 58, SPECIES_CUBONE_A}, // 1
+	{54, 58, SPECIES_MAROWAK_A}, // 1
 };
 
 const struct WildPokemon gDivergentRubarrDesertConnectingRooms_LandMonsDefault[] =
@@ -1197,27 +1069,27 @@ const struct WildPokemon gDivergentRubarrDesertB1f_RockMonsDefault[] =
 
 const struct WildPokemon gDivergentRoute18Cave_LandMonsDefault[] =
 {
-	{40, 47, SPECIES_TYRUNT}, // 20
-	{40, 47, SPECIES_SHIELDON}, // 20
-	{40, 47, SPECIES_LILEEP}, // 10
-	{40, 47, SPECIES_LILEEP}, // 10
-	{40, 47, SPECIES_AMAURA}, // 10
-	{40, 47, SPECIES_AMAURA}, // 10
-	{40, 47, SPECIES_YAMASK_G}, // 5
-	{40, 47, SPECIES_YAMASK_G}, // 5
-	{40, 47, SPECIES_YAMASK_G}, // 4
-	{40, 47, SPECIES_YAMASK_G}, // 4
-	{40, 47, SPECIES_YAMASK_G}, // 1
-	{40, 47, SPECIES_YAMASK_G}, // 1
+	{40, 47, SPECIES_ANORITH}, // 20
+	{40, 47, SPECIES_AERODACTYL}, // 20
+	{40, 47, SPECIES_ARCTOZOLT}, // 10
+	{40, 47, SPECIES_ARCTOZOLT}, // 10
+	{40, 47, SPECIES_DRACOVISH}, // 10
+	{40, 47, SPECIES_DRACOVISH}, // 10
+	{40, 47, SPECIES_GOLETT}, // 5
+	{40, 47, SPECIES_GOLETT}, // 5
+	{40, 47, SPECIES_GOLETT}, // 4
+	{40, 47, SPECIES_GOLETT}, // 4
+	{40, 47, SPECIES_GOLETT}, // 1
+	{40, 47, SPECIES_GOLETT}, // 1
 };
 
 const struct WildPokemon gDivergentRoute18Cave_RockMonsDefault[] =
 {
-	{35, 48, SPECIES_ROLYCOLY}, // 60
-	{35, 48, SPECIES_CARKOL}, // 30
-	{35, 48, SPECIES_CARBINK}, // 5
-	{35, 48, SPECIES_CARBINK}, // 4
-	{35, 48, SPECIES_CARBINK}, // 1
+	{35, 48, SPECIES_NOSEPASS}, // 60
+	{35, 48, SPECIES_NOSEPASS}, // 30
+	{35, 48, SPECIES_PROBOPASS}, // 5
+	{35, 48, SPECIES_PROBOPASS}, // 4
+	{35, 48, SPECIES_PROBOPASS}, // 1
 };
 
 const struct WildPokemon gDivergentRoute13Cave1f_LandMonsDefault[] =
@@ -1340,9 +1212,9 @@ const struct WildPokemon gDivergentLaplazTown_FishingMonsDefault[] =
 	{25, 30, SPECIES_BARBOACH}, // 20
 	{30, 35, SPECIES_QUAGSIRE}, // 20
 	{40, 45, SPECIES_QUAGSIRE}, // 40
-	{40, 45, SPECIES_CRAWDAUNT}, // 40
-	{40, 45, SPECIES_CRAWDAUNT}, // 15
-	{40, 45, SPECIES_CRAWDAUNT}, // 4
+	{40, 45, SPECIES_WHISCASH}, // 40
+	{40, 45, SPECIES_WHISCASH}, // 15
+	{40, 45, SPECIES_WHISCASH}, // 4
 	{40, 45, SPECIES_QUAGSIRE}, // 1
 };
 
@@ -1761,11 +1633,11 @@ const struct WildPokemon gDivergentRoute9_LandMonsDefault[] =
 	{26, 29, SPECIES_SMEARGLE}, // 10
 	{25, 28, SPECIES_TANGELA}, // 10
 	{25, 28, SPECIES_TANGELA}, // 10
-	{25, 28, SPECIES_FURRET}, // 5
+	{25, 28, SPECIES_MEOWTH_G}, // 5
 	{25, 28, SPECIES_MUNCHLAX}, // 5
-	{26, 29, SPECIES_FURRET}, // 4
+	{26, 29, SPECIES_MEOWTH_G}, // 4
 	{25, 28, SPECIES_SMEARGLE}, // 4
-	{25, 28, SPECIES_FURRET}, // 1
+	{25, 28, SPECIES_MEOWTH_G}, // 1
 	{26, 29, SPECIES_SMEARGLE}, // 1
 };
 
@@ -1963,41 +1835,41 @@ const struct WildPokemon gDivergentRoute17_FishingMonsDefault[] =
 
 const struct WildPokemon gDivergentRoute18_LandMonsDefault[] =
 {
-	{43, 46, SPECIES_ROSELIA}, // 20
-	{42, 45, SPECIES_SHROOMISH}, // 20
-	{43, 46, SPECIES_FLOETTE_YELLOW}, // 10
-	{44, 46, SPECIES_RIBOMBEE}, // 10
-	{43, 46, SPECIES_COMFEY}, // 10
-	{42, 45, SPECIES_MORELULL}, // 10
-	{43, 46, SPECIES_BRELOOM}, // 5
-	{42, 45, SPECIES_MORELULL}, // 5
-	{42, 45, SPECIES_CUTIEFLY}, // 4
-	{43, 46, SPECIES_FLABEBE_ORANGE}, // 4
-	{44, 46, SPECIES_CUTIEFLY}, // 1
-	{44, 46, SPECIES_FLABEBE_WHITE}, // 1
+	{43, 46, SPECIES_DEERLING}, // 20
+	{42, 45, SPECIES_APPLETUN}, // 20
+	{43, 46, SPECIES_SKIPLOOM}, // 10
+	{44, 46, SPECIES_PANSAGE}, // 10
+	{43, 46, SPECIES_DREDNAW}, // 10
+	{42, 45, SPECIES_DREDNAW}, // 10
+	{43, 46, SPECIES_SWADLOON}, // 5
+	{42, 45, SPECIES_TANGELA}, // 5
+	{42, 45, SPECIES_TANGELA}, // 4
+	{43, 46, SPECIES_TANGELA}, // 4
+	{44, 46, SPECIES_TANGELA}, // 1
+	{44, 46, SPECIES_TANGELA}, // 1
 };
 
 const struct WildPokemon gDivergentRoute18_WaterMonsDefault[] =
 {
-	{44, 48, SPECIES_FRILLISH}, // 60
-	{45, 48, SPECIES_MAREANIE}, // 30
-	{44, 48, SPECIES_FRILLISH}, // 5
-	{45, 48, SPECIES_TOXAPEX}, // 4
-	{44, 48, SPECIES_TOXAPEX}, // 1
+	{44, 48, SPECIES_WISHIWASHI}, // 60
+	{45, 48, SPECIES_KRABBY}, // 30
+	{44, 48, SPECIES_KINGLER}, // 5
+	{45, 48, SPECIES_KINGLER}, // 4
+	{44, 48, SPECIES_KINGLER}, // 1
 };
 
 const struct WildPokemon gDivergentRoute18_FishingMonsDefault[] =
 {
-	{5, 40, SPECIES_MAGIKARP}, // 70
-	{5, 40, SPECIES_HORSEA}, // 30
-	{25, 40, SPECIES_HORSEA}, // 60
-	{25, 40, SPECIES_SEADRA}, // 20
-	{25, 40, SPECIES_MAGIKARP}, // 20
-	{45, 55, SPECIES_GYARADOS}, // 40
-	{45, 55, SPECIES_SEADRA}, // 40
-	{45, 55, SPECIES_MAGIKARP}, // 15
-	{45, 55, SPECIES_HORSEA}, // 4
-	{45, 55, SPECIES_HORSEA}, // 1
+	{5, 40, SPECIES_STARYU}, // 70
+	{5, 40, SPECIES_SKRELP}, // 30
+	{25, 40, SPECIES_STARYU}, // 60
+	{25, 40, SPECIES_SKRELP}, // 20
+	{25, 40, SPECIES_SKRELP}, // 20
+	{45, 55, SPECIES_STARYU}, // 40
+	{45, 55, SPECIES_DRAGALGE}, // 40
+	{45, 55, SPECIES_STARMIE}, // 15
+	{45, 55, SPECIES_STARMIE}, // 4
+	{45, 55, SPECIES_STARMIE}, // 1
 };
 
 const struct WildPokemon gDivergentRoute19_LandMonsDefault[] =
@@ -2032,54 +1904,29 @@ const struct WildPokemon gDivergentRoute20_LandMonsDefault[] =
 	{44, 48, SPECIES_SCYTHER}, // 1
 };
 
-const struct WildPokemon gDivergentRoute21_LandMonsDefault[] =
+const struct WildPokemon gDivergentRoute21_AndSecretTrail_LandMonsDefault[] =
 {
-	{47, 50, SPECIES_FALINKS}, // 20
-	{48, 51, SPECIES_PRIMEAPE}, // 20
-	{47, 50, SPECIES_GOGOAT}, // 10
-	{48, 51, SPECIES_GOGOAT}, // 10
-	{47, 50, SPECIES_MINIOR_SHIELD}, // 10
-	{48, 51, SPECIES_VIBRAVA}, // 10
-	{48, 51, SPECIES_PRIMEAPE}, // 5
-	{47, 50, SPECIES_FALINKS}, // 5
-	{48, 51, SPECIES_VIBRAVA}, // 4
-	{49, 52, SPECIES_HELIOLISK}, // 4
-	{48, 51, SPECIES_VIBRAVA}, // 1
-	{49, 52, SPECIES_HELIOLISK}, // 1
+	{47, 50, SPECIES_RAPIDASH}, // 20
+	{48, 51, SPECIES_STUFFUL}, // 20
+	{47, 50, SPECIES_GLIGAR}, // 10
+	{48, 51, SPECIES_HAWLUCHA}, // 10
+	{47, 50, SPECIES_GLIGAR}, // 10
+	{48, 51, SPECIES_TOGEDEMARU}, // 10
+	{48, 51, SPECIES_TOGEDEMARU}, // 5
+	{47, 50, SPECIES_BAGON}, // 5
+	{48, 51, SPECIES_SCYTHER}, // 4
+	{49, 52, SPECIES_SCYTHER}, // 4
+	{48, 51, SPECIES_AUDINO}, // 1
+	{49, 52, SPECIES_AUDINO}, // 1
 };
 
-const struct WildPokemon gDivergentRoute21_RockMonsDefault[] =
+const struct WildPokemon gDivergentRoute21_AndSecretTrail_RockMonsDefault[] =
 {
-	{50, 55, SPECIES_CARBINK}, // 60
-	{50, 55, SPECIES_BOLDORE}, // 30
-	{50, 55, SPECIES_GIGALITH}, // 5
-	{50, 55, SPECIES_BOLDORE}, // 4
-	{50, 55, SPECIES_BOLDORE}, // 1
-};
-
-const struct WildPokemon gDivergentSecretPath_LandMonsDefault[] =
-{
-	{47, 50, SPECIES_FALINKS}, // 20
-	{48, 51, SPECIES_PRIMEAPE}, // 20
-	{47, 50, SPECIES_GOGOAT}, // 10
-	{48, 51, SPECIES_GOGOAT}, // 10
-	{47, 50, SPECIES_MINIOR_SHIELD}, // 10
-	{48, 51, SPECIES_VIBRAVA}, // 10
-	{48, 51, SPECIES_PRIMEAPE}, // 5
-	{47, 50, SPECIES_FALINKS}, // 5
-	{48, 51, SPECIES_VIBRAVA}, // 4
-	{49, 52, SPECIES_HELIOLISK}, // 4
-	{48, 51, SPECIES_VIBRAVA}, // 1
-	{49, 52, SPECIES_HELIOLISK}, // 1
-};
-
-const struct WildPokemon gDivergentSecretPath_RockMonsDefault[] =
-{
-	{50, 55, SPECIES_CARBINK}, // 60
-	{50, 55, SPECIES_BOLDORE}, // 30
-	{50, 55, SPECIES_GIGALITH}, // 5
-	{50, 55, SPECIES_BOLDORE}, // 4
-	{50, 55, SPECIES_BOLDORE}, // 1
+	{50, 55, SPECIES_GRAVELER_A}, // 60
+	{50, 55, SPECIES_GOLEM_A}, // 30
+	{50, 55, SPECIES_NOSEPASS}, // 5
+	{50, 55, SPECIES_NOSEPASS}, // 4
+	{50, 55, SPECIES_NOSEPASS}, // 1
 };
 
 const struct WildPokemon gDivergentRoute22_LandMonsDefault[] =
@@ -2123,10 +1970,10 @@ const struct WildPokemon gDivergentRoute22_FishingMonsDefault[] =
 
 const struct WildPokemon gDivergentRoute23_LandMonsDefault[] =
 {
-	{47, 51, SPECIES_MEOWTH_G}, // 20
+	{47, 51, SPECIES_PERRSERKER}, // 20
 	{47, 52, SPECIES_STEENEE}, // 20
 	{48, 51, SPECIES_LURANTIS}, // 10
-	{47, 52, SPECIES_MEOWTH_G}, // 10
+	{47, 52, SPECIES_PERRSERKER}, // 10
 	{47, 52, SPECIES_EXEGGCUTE_A}, // 10
 	{46, 52, SPECIES_EXEGGCUTE_A}, // 10
 	{46, 52, SPECIES_LURANTIS}, // 5
@@ -2147,10 +1994,10 @@ const struct WildPokemon gDivergentRoute24_LandMonsDefault[] =
 	{54, 57, SPECIES_DONPHAN}, // 10
 	{53, 56, SPECIES_DONPHAN}, // 5
 	{54, 57, SPECIES_MUNNA}, // 5
-	{54, 57, SPECIES_XATU}, // 4
-	{54, 58, SPECIES_DONPHAN}, // 4
-	{54, 58, SPECIES_XATU}, // 1
-	{54, 58, SPECIES_DONPHAN}, // 1
+	{54, 57, SPECIES_PERRSERKER}, // 4
+	{54, 58, SPECIES_PERRSERKER}, // 4
+	{54, 58, SPECIES_PERRSERKER}, // 1
+	{54, 58, SPECIES_PERRSERKER}, // 1
 };
 
 const struct WildPokemon gDivergentRoute24_LandMonsEveningNight[] =
@@ -2302,45 +2149,6 @@ const struct WildPokemon gDivergentRoute11North_LandMonsDefault[] =
 	{30, 32, SPECIES_PANPOUR}, // 4
 	{30, 33, SPECIES_PANPOUR}, // 1
 	{29, 32, SPECIES_PANPOUR}, // 1
-};
-
-const struct WildPokemon gDivergentRoute15South_LandMonsDefault[] =
-{
-	{44, 47, SPECIES_MANKEY}, // 20
-	{43, 46, SPECIES_VIGOROTH}, // 20
-	{44, 47, SPECIES_SUNFLORA}, // 10
-	{45, 47, SPECIES_TRUMBEAK}, // 10
-	{44, 47, SPECIES_TRUMBEAK}, // 10
-	{43, 46, SPECIES_FLOETTE_BLUE}, // 10
-	{44, 47, SPECIES_EMOLGA}, // 5
-	{43, 46, SPECIES_EMOLGA}, // 5
-	{43, 46, SPECIES_SLOWBRO}, // 4
-	{44, 47, SPECIES_TOUCANNON}, // 4
-	{45, 47, SPECIES_SLOWBRO}, // 1
-	{45, 47, SPECIES_TOUCANNON}, // 1
-};
-
-const struct WildPokemon gDivergentRoute15South_WaterMonsDefault[] =
-{
-	{42, 45, SPECIES_CARVANHA}, // 60
-	{43, 46, SPECIES_SEADRA}, // 30
-	{42, 45, SPECIES_LAPRAS}, // 5
-	{43, 46, SPECIES_SHARPEDO}, // 4
-	{44, 47, SPECIES_SHARPEDO}, // 1
-};
-
-const struct WildPokemon gDivergentRoute15South_FishingMonsDefault[] =
-{
-	{5, 40, SPECIES_MAGIKARP}, // 70
-	{5, 40, SPECIES_SHELLDER}, // 30
-	{25, 40, SPECIES_MAGIKARP}, // 60
-	{25, 40, SPECIES_SHELLDER}, // 20
-	{25, 40, SPECIES_SHELLDER}, // 20
-	{45, 55, SPECIES_SHELLDER}, // 40
-	{45, 55, SPECIES_DHELMISE}, // 40
-	{45, 55, SPECIES_CLOYSTER}, // 15
-	{45, 55, SPECIES_GYARADOS}, // 4
-	{45, 55, SPECIES_CLOYSTER}, // 1
 };
 
 const struct WildPokemon gDivergentRoute23Cave_LandMonsDefault[] =
@@ -2562,9 +2370,7 @@ const struct WildPokemonInfo gDivergentTormaCaveB2f_RockMonsDefaultInfo = {50, g
 const struct WildPokemonInfo gDivergentForgottenManseTunnel_LandMonsDefaultInfo = {10, gDivergentForgottenManseTunnel_LandMonsDefault};
 const struct WildPokemonInfo gDivergentForgottenManseTunnel_FishingMonsDefaultInfo = {20, gDivergentForgottenManseTunnel_FishingMonsDefault};
 const struct WildPokemonInfo gDivergentForgottenManseExterior_LandMonsDefaultInfo = {21, gDivergentForgottenManseExterior_LandMonsDefault};
-const struct WildPokemonInfo gDivergentForgottenManse1f_LandMonsDefaultInfo = {7, gDivergentForgottenManse1f_LandMonsDefault};
-const struct WildPokemonInfo gDivergentForgottenManse2f_LandMonsDefaultInfo = {7, gDivergentForgottenManse2f_LandMonsDefault};
-const struct WildPokemonInfo gDivergentForgottenManseBasement_LandMonsDefaultInfo = {7, gDivergentForgottenManseBasement_LandMonsDefault};
+const struct WildPokemonInfo gDivergentForgottenManseCommon_LandMonsDefaultInfo = {7, gDivergentForgottenManseCommon_LandMonsDefault};
 const struct WildPokemonInfo gDivergentDaimynCityFactory_LandMonsDefaultInfo = {21, gDivergentDaimynCityFactory_LandMonsDefault};
 const struct WildPokemonInfo gDivergentDaimynCityFactory_RockMonsDefaultInfo = {50, gDivergentDaimynCityFactory_RockMonsDefault};
 const struct WildPokemonInfo gDivergentRoute10Cave_LandMonsDefaultInfo = {5, gDivergentRoute10Cave_LandMonsDefault};
@@ -2609,27 +2415,21 @@ const struct WildPokemonInfo gDivergentCalicinBay_LandMonsDefaultInfo = {21, gDi
 const struct WildPokemonInfo gDivergentCalicinBay_WaterMonsDefaultInfo = {1, gDivergentCalicinBay_WaterMonsDefault};
 const struct WildPokemonInfo gDivergentCalicinBay_FishingMonsDefaultInfo = {20, gDivergentCalicinBay_FishingMonsDefault};
 const struct WildPokemonInfo gDivergentUteyanRuinsOverworld_LandMonsDefaultInfo = {21, gDivergentUteyanRuinsOverworld_LandMonsDefault};
+const struct WildPokemonInfo gDivergentUteyanRuinsOverworld_LandMonsEveningNightInfo = {21, gDivergentUteyanRuinsOverworld_LandMonsEveningNight};
 const struct WildPokemonInfo gDivergentUteyanRuinsOverworld_RockMonsDefaultInfo = {50, gDivergentUteyanRuinsOverworld_RockMonsDefault};
-const struct WildPokemonInfo gDivergentUteyanRuinsCave1f_LandMonsDefaultInfo = {7, gDivergentUteyanRuinsCave1f_LandMonsDefault};
+const struct WildPokemonInfo gDivergentUteyanRuinsCaveCommon_LandMonsDefaultInfo = {7, gDivergentUteyanRuinsCaveCommon_LandMonsDefault};
 const struct WildPokemonInfo gDivergentUteyanRuinsCave1f_RockMonsDefaultInfo = {50, gDivergentUteyanRuinsCave1f_RockMonsDefault};
 const struct WildPokemonInfo gDivergentUteyanRuinsCave1f_WaterMonsDefaultInfo = {13, gDivergentUteyanRuinsCave1f_WaterMonsDefault};
 const struct WildPokemonInfo gDivergentUteyanRuinsCave1f_FishingMonsDefaultInfo = {20, gDivergentUteyanRuinsCave1f_FishingMonsDefault};
-const struct WildPokemonInfo gDivergentUteyanRuinsCave2f_LandMonsDefaultInfo = {7, gDivergentUteyanRuinsCave2f_LandMonsDefault};
 const struct WildPokemonInfo gDivergentDaimynFactoryInterior_LandMonsDefaultInfo = {5, gDivergentDaimynFactoryInterior_LandMonsDefault};
-const struct WildPokemonInfo gDivergentVictoryRoad1f_LandMonsDefaultInfo = {3, gDivergentVictoryRoad1f_LandMonsDefault};
+const struct WildPokemonInfo gDivergentVictoryRoadCommon_LandMonsDefaultInfo = {3, gDivergentVictoryRoadCommon_LandMonsDefault};
 const struct WildPokemonInfo gDivergentVictoryRoad1f_WaterMonsDefaultInfo = {13, gDivergentVictoryRoad1f_WaterMonsDefault};
 const struct WildPokemonInfo gDivergentVictoryRoad1f_FishingMonsDefaultInfo = {20, gDivergentVictoryRoad1f_FishingMonsDefault};
-const struct WildPokemonInfo gDivergentVictoryRoad2f_LandMonsDefaultInfo = {3, gDivergentVictoryRoad2f_LandMonsDefault};
-const struct WildPokemonInfo gDivergentVictoryRoad3f_LandMonsDefaultInfo = {3, gDivergentVictoryRoad3f_LandMonsDefault};
 const struct WildPokemonInfo gDivergentVictoryRoadOutside_LandMonsDefaultInfo = {21, gDivergentVictoryRoadOutside_LandMonsDefault};
 const struct WildPokemonInfo gDivergentVictoryRoadOutside_WaterMonsDefaultInfo = {13, gDivergentVictoryRoadOutside_WaterMonsDefault};
 const struct WildPokemonInfo gDivergentVictoryRoadOutside_FishingMonsDefaultInfo = {20, gDivergentVictoryRoadOutside_FishingMonsDefault};
 const struct WildPokemonInfo gDivergentVictoryRoadBackRoom_LandMonsDefaultInfo = {5, gDivergentVictoryRoadBackRoom_LandMonsDefault};
-const struct WildPokemonInfo gDivergentUteyanRuinsChamber1_LandMonsDefaultInfo = {7, gDivergentUteyanRuinsChamber1_LandMonsDefault};
-const struct WildPokemonInfo gDivergentUteyanRuinsChamber2_LandMonsDefaultInfo = {7, gDivergentUteyanRuinsChamber2_LandMonsDefault};
-const struct WildPokemonInfo gDivergentUteyanRuinsChamber3_LandMonsDefaultInfo = {7, gDivergentUteyanRuinsChamber3_LandMonsDefault};
-const struct WildPokemonInfo gDivergentUteyanRuinsChamber4_LandMonsDefaultInfo = {7, gDivergentUteyanRuinsChamber4_LandMonsDefault};
-const struct WildPokemonInfo gDivergentUteyanRuinsChamber5_LandMonsDefaultInfo = {7, gDivergentUteyanRuinsChamber5_LandMonsDefault};
+const struct WildPokemonInfo gDivergentUteyanRuinsChamberCommon_LandMonsDefaultInfo = {7, gDivergentUteyanRuinsChamberCommon_LandMonsDefault};
 const struct WildPokemonInfo gDivergentRubarrDesertConnectingRooms_LandMonsDefaultInfo = {5, gDivergentRubarrDesertConnectingRooms_LandMonsDefault};
 const struct WildPokemonInfo gDivergentRubarrDesertConnectingRooms_RockMonsDefaultInfo = {50, gDivergentRubarrDesertConnectingRooms_RockMonsDefault};
 const struct WildPokemonInfo gDivergentRubarrDesertB1f_LandMonsDefaultInfo = {5, gDivergentRubarrDesertB1f_LandMonsDefault};
@@ -2698,10 +2498,8 @@ const struct WildPokemonInfo gDivergentRoute18_WaterMonsDefaultInfo = {13, gDive
 const struct WildPokemonInfo gDivergentRoute18_FishingMonsDefaultInfo = {20, gDivergentRoute18_FishingMonsDefault};
 const struct WildPokemonInfo gDivergentRoute19_LandMonsDefaultInfo = {21, gDivergentRoute19_LandMonsDefault};
 const struct WildPokemonInfo gDivergentRoute20_LandMonsDefaultInfo = {21, gDivergentRoute20_LandMonsDefault};
-const struct WildPokemonInfo gDivergentRoute21_LandMonsDefaultInfo = {21, gDivergentRoute21_LandMonsDefault};
-const struct WildPokemonInfo gDivergentRoute21_RockMonsDefaultInfo = {50, gDivergentRoute21_RockMonsDefault};
-const struct WildPokemonInfo gDivergentSecretPath_LandMonsDefaultInfo = {21, gDivergentSecretPath_LandMonsDefault};
-const struct WildPokemonInfo gDivergentSecretPath_RockMonsDefaultInfo = {50, gDivergentSecretPath_RockMonsDefault};
+const struct WildPokemonInfo gDivergentRoute21_AndSecretTrail_LandMonsDefaultInfo = {21, gDivergentRoute21_AndSecretTrail_LandMonsDefault};
+const struct WildPokemonInfo gDivergentRoute21_AndSecretTrail_RockMonsDefaultInfo = {50, gDivergentRoute21_AndSecretTrail_RockMonsDefault};
 const struct WildPokemonInfo gDivergentRoute22_LandMonsDefaultInfo = {21, gDivergentRoute22_LandMonsDefault};
 const struct WildPokemonInfo gDivergentRoute22_WaterMonsDefaultInfo = {13, gDivergentRoute22_WaterMonsDefault};
 const struct WildPokemonInfo gDivergentRoute22_FishingMonsDefaultInfo = {20, gDivergentRoute22_FishingMonsDefault};
@@ -2718,9 +2516,6 @@ const struct WildPokemonInfo gDivergentProfessorsConservatoryGrassArea_LandMonsD
 const struct WildPokemonInfo gDivergentProfessorsConservatoryFireArea_LandMonsDefaultInfo = {21, gDivergentProfessorsConservatoryFireArea_LandMonsDefault};
 const struct WildPokemonInfo gDivergentProfessorsConservatoryWaterArea_LandMonsDefaultInfo = {21, gDivergentProfessorsConservatoryWaterArea_LandMonsDefault};
 const struct WildPokemonInfo gDivergentRoute11North_LandMonsDefaultInfo = {21, gDivergentRoute11North_LandMonsDefault};
-const struct WildPokemonInfo gDivergentRoute15South_LandMonsDefaultInfo = {21, gDivergentRoute15South_LandMonsDefault};
-const struct WildPokemonInfo gDivergentRoute15South_WaterMonsDefaultInfo = {2, gDivergentRoute15South_WaterMonsDefault};
-const struct WildPokemonInfo gDivergentRoute15South_FishingMonsDefaultInfo = {20, gDivergentRoute15South_FishingMonsDefault};
 const struct WildPokemonInfo gDivergentRoute23Cave_LandMonsDefaultInfo = {21, gDivergentRoute23Cave_LandMonsDefault};
 const struct WildPokemonInfo gDivergentRoute23Cave_WaterMonsDefaultInfo = {13, gDivergentRoute23Cave_WaterMonsDefault};
 const struct WildPokemonInfo gDivergentRoute23Cave_FishingMonsDefaultInfo = {20, gDivergentRoute23Cave_FishingMonsDefault};
@@ -2811,7 +2606,7 @@ const struct WildPokemonHeader gDivergentWildMonDefaultHeaders[] =
 	{
 		.mapGroup = MAP_GROUP(FORGOTTEN_MANSE_1F),
 		.mapNum = MAP_NUM(FORGOTTEN_MANSE_1F),
-		.landMonsInfo = &gDivergentForgottenManse1f_LandMonsDefaultInfo,
+		.landMonsInfo = &gDivergentForgottenManseCommon_LandMonsDefaultInfo,
 		.waterMonsInfo = &gDivergentEmpty,
 		.rockSmashMonsInfo = &gDivergentEmpty,
 		.fishingMonsInfo = &gDivergentEmpty,
@@ -2819,7 +2614,7 @@ const struct WildPokemonHeader gDivergentWildMonDefaultHeaders[] =
 	{
 		.mapGroup = MAP_GROUP(FORGOTTEN_MANSE_2F),
 		.mapNum = MAP_NUM(FORGOTTEN_MANSE_2F),
-		.landMonsInfo = &gDivergentForgottenManse2f_LandMonsDefaultInfo,
+		.landMonsInfo = &gDivergentForgottenManseCommon_LandMonsDefaultInfo,
 		.waterMonsInfo = &gDivergentEmpty,
 		.rockSmashMonsInfo = &gDivergentEmpty,
 		.fishingMonsInfo = &gDivergentEmpty,
@@ -2827,7 +2622,7 @@ const struct WildPokemonHeader gDivergentWildMonDefaultHeaders[] =
 	{
 		.mapGroup = MAP_GROUP(FORGOTTEN_MANSE_BASEMENT),
 		.mapNum = MAP_NUM(FORGOTTEN_MANSE_BASEMENT),
-		.landMonsInfo = &gDivergentForgottenManseBasement_LandMonsDefaultInfo,
+		.landMonsInfo = &gDivergentForgottenManseCommon_LandMonsDefaultInfo,
 		.waterMonsInfo = &gDivergentEmpty,
 		.rockSmashMonsInfo = &gDivergentEmpty,
 		.fishingMonsInfo = &gDivergentEmpty,
@@ -3043,7 +2838,7 @@ const struct WildPokemonHeader gDivergentWildMonDefaultHeaders[] =
 	{
 		.mapGroup = MAP_GROUP(UTEYAN_RUINS_CAVE_1F),
 		.mapNum = MAP_NUM(UTEYAN_RUINS_CAVE_1F),
-		.landMonsInfo = &gDivergentUteyanRuinsCave1f_LandMonsDefaultInfo,
+		.landMonsInfo = &gDivergentUteyanRuinsCaveCommon_LandMonsDefaultInfo,
 		.waterMonsInfo = &gDivergentUteyanRuinsCave1f_WaterMonsDefaultInfo,
 		.rockSmashMonsInfo = &gDivergentUteyanRuinsCave1f_RockMonsDefaultInfo,
 		.fishingMonsInfo = &gDivergentUteyanRuinsCave1f_FishingMonsDefaultInfo,
@@ -3051,7 +2846,7 @@ const struct WildPokemonHeader gDivergentWildMonDefaultHeaders[] =
 	{
 		.mapGroup = MAP_GROUP(UTEYAN_RUINS_CAVE_2F),
 		.mapNum = MAP_NUM(UTEYAN_RUINS_CAVE_2F),
-		.landMonsInfo = &gDivergentUteyanRuinsCave2f_LandMonsDefaultInfo,
+		.landMonsInfo = &gDivergentUteyanRuinsCaveCommon_LandMonsDefaultInfo,
 		.waterMonsInfo = &gDivergentEmpty,
 		.rockSmashMonsInfo = &gDivergentEmpty,
 		.fishingMonsInfo = &gDivergentEmpty,
@@ -3067,7 +2862,7 @@ const struct WildPokemonHeader gDivergentWildMonDefaultHeaders[] =
 	{
 		.mapGroup = MAP_GROUP(VICTORY_ROAD_1F),
 		.mapNum = MAP_NUM(VICTORY_ROAD_1F),
-		.landMonsInfo = &gDivergentVictoryRoad1f_LandMonsDefaultInfo,
+		.landMonsInfo = &gDivergentVictoryRoadCommon_LandMonsDefaultInfo,
 		.waterMonsInfo = &gDivergentVictoryRoad1f_WaterMonsDefaultInfo,
 		.rockSmashMonsInfo = &gDivergentEmpty,
 		.fishingMonsInfo = &gDivergentVictoryRoad1f_FishingMonsDefaultInfo,
@@ -3075,7 +2870,7 @@ const struct WildPokemonHeader gDivergentWildMonDefaultHeaders[] =
 	{
 		.mapGroup = MAP_GROUP(VICTORY_ROAD_2F),
 		.mapNum = MAP_NUM(VICTORY_ROAD_2F),
-		.landMonsInfo = &gDivergentVictoryRoad2f_LandMonsDefaultInfo,
+		.landMonsInfo = &gDivergentVictoryRoadCommon_LandMonsDefaultInfo,
 		.waterMonsInfo = &gDivergentEmpty,
 		.rockSmashMonsInfo = &gDivergentEmpty,
 		.fishingMonsInfo = &gDivergentEmpty,
@@ -3083,7 +2878,7 @@ const struct WildPokemonHeader gDivergentWildMonDefaultHeaders[] =
 	{
 		.mapGroup = MAP_GROUP(VICTORY_ROAD_3F),
 		.mapNum = MAP_NUM(VICTORY_ROAD_3F),
-		.landMonsInfo = &gDivergentVictoryRoad3f_LandMonsDefaultInfo,
+		.landMonsInfo = &gDivergentVictoryRoadCommon_LandMonsDefaultInfo,
 		.waterMonsInfo = &gDivergentEmpty,
 		.rockSmashMonsInfo = &gDivergentEmpty,
 		.fishingMonsInfo = &gDivergentEmpty,
@@ -3107,7 +2902,7 @@ const struct WildPokemonHeader gDivergentWildMonDefaultHeaders[] =
 	{
 		.mapGroup = MAP_GROUP(UTEYAN_RUINS_CHAMBER_1),
 		.mapNum = MAP_NUM(UTEYAN_RUINS_CHAMBER_1),
-		.landMonsInfo = &gDivergentUteyanRuinsChamber1_LandMonsDefaultInfo,
+		.landMonsInfo = &gDivergentUteyanRuinsChamberCommon_LandMonsDefaultInfo,
 		.waterMonsInfo = &gDivergentEmpty,
 		.rockSmashMonsInfo = &gDivergentEmpty,
 		.fishingMonsInfo = &gDivergentEmpty,
@@ -3115,7 +2910,7 @@ const struct WildPokemonHeader gDivergentWildMonDefaultHeaders[] =
 	{
 		.mapGroup = MAP_GROUP(UTEYAN_RUINS_CHAMBER_2),
 		.mapNum = MAP_NUM(UTEYAN_RUINS_CHAMBER_2),
-		.landMonsInfo = &gDivergentUteyanRuinsChamber2_LandMonsDefaultInfo,
+		.landMonsInfo = &gDivergentUteyanRuinsChamberCommon_LandMonsDefaultInfo,
 		.waterMonsInfo = &gDivergentEmpty,
 		.rockSmashMonsInfo = &gDivergentEmpty,
 		.fishingMonsInfo = &gDivergentEmpty,
@@ -3123,7 +2918,7 @@ const struct WildPokemonHeader gDivergentWildMonDefaultHeaders[] =
 	{
 		.mapGroup = MAP_GROUP(UTEYAN_RUINS_CHAMBER_3),
 		.mapNum = MAP_NUM(UTEYAN_RUINS_CHAMBER_3),
-		.landMonsInfo = &gDivergentUteyanRuinsChamber3_LandMonsDefaultInfo,
+		.landMonsInfo = &gDivergentUteyanRuinsChamberCommon_LandMonsDefaultInfo,
 		.waterMonsInfo = &gDivergentEmpty,
 		.rockSmashMonsInfo = &gDivergentEmpty,
 		.fishingMonsInfo = &gDivergentEmpty,
@@ -3131,7 +2926,7 @@ const struct WildPokemonHeader gDivergentWildMonDefaultHeaders[] =
 	{
 		.mapGroup = MAP_GROUP(UTEYAN_RUINS_CHAMBER_4),
 		.mapNum = MAP_NUM(UTEYAN_RUINS_CHAMBER_4),
-		.landMonsInfo = &gDivergentUteyanRuinsChamber4_LandMonsDefaultInfo,
+		.landMonsInfo = &gDivergentUteyanRuinsChamberCommon_LandMonsDefaultInfo,
 		.waterMonsInfo = &gDivergentEmpty,
 		.rockSmashMonsInfo = &gDivergentEmpty,
 		.fishingMonsInfo = &gDivergentEmpty,
@@ -3139,7 +2934,7 @@ const struct WildPokemonHeader gDivergentWildMonDefaultHeaders[] =
 	{
 		.mapGroup = MAP_GROUP(UTEYAN_RUINS_CHAMBER_5),
 		.mapNum = MAP_NUM(UTEYAN_RUINS_CHAMBER_5),
-		.landMonsInfo = &gDivergentUteyanRuinsChamber5_LandMonsDefaultInfo,
+		.landMonsInfo = &gDivergentUteyanRuinsChamberCommon_LandMonsDefaultInfo,
 		.waterMonsInfo = &gDivergentEmpty,
 		.rockSmashMonsInfo = &gDivergentEmpty,
 		.fishingMonsInfo = &gDivergentEmpty,
@@ -3387,17 +3182,17 @@ const struct WildPokemonHeader gDivergentWildMonDefaultHeaders[] =
 	{
 		.mapGroup = MAP_GROUP(ROUTE_21),
 		.mapNum = MAP_NUM(ROUTE_21),
-		.landMonsInfo = &gDivergentRoute21_LandMonsDefaultInfo,
+		.landMonsInfo = &gDivergentRoute21_AndSecretTrail_LandMonsDefaultInfo,
 		.waterMonsInfo = &gDivergentEmpty,
-		.rockSmashMonsInfo = &gDivergentRoute21_RockMonsDefaultInfo,
+		.rockSmashMonsInfo = &gDivergentRoute21_AndSecretTrail_RockMonsDefaultInfo,
 		.fishingMonsInfo = &gDivergentEmpty,
 	},
 	{
 		.mapGroup = MAP_GROUP(SECRET_PATH),
 		.mapNum = MAP_NUM(SECRET_PATH),
-		.landMonsInfo = &gDivergentSecretPath_LandMonsDefaultInfo,
+		.landMonsInfo = &gDivergentRoute21_AndSecretTrail_LandMonsDefaultInfo,
 		.waterMonsInfo = &gDivergentEmpty,
-		.rockSmashMonsInfo = &gDivergentSecretPath_RockMonsDefaultInfo,
+		.rockSmashMonsInfo = &gDivergentRoute21_AndSecretTrail_RockMonsDefaultInfo,
 		.fishingMonsInfo = &gDivergentEmpty,
 	},
 	{
@@ -3459,10 +3254,10 @@ const struct WildPokemonHeader gDivergentWildMonDefaultHeaders[] =
 	{
 		.mapGroup = MAP_GROUP(ROUTE_15_SOUTH),
 		.mapNum = MAP_NUM(ROUTE_15_SOUTH),
-		.landMonsInfo = &gDivergentRoute15South_LandMonsDefaultInfo,
-		.waterMonsInfo = &gDivergentRoute15South_WaterMonsDefaultInfo,
+		.landMonsInfo = &gDivergentOceanGeneric_LandMonsDefaultInfo,
+		.waterMonsInfo = &gDivergentOceanGeneric_WaterMonsDefaultInfo,
 		.rockSmashMonsInfo = &gDivergentEmpty,
-		.fishingMonsInfo = &gDivergentRoute15South_FishingMonsDefaultInfo,
+		.fishingMonsInfo = &gDivergentOceanGeneric_FishingMonsDefaultInfo,
 	},
 	{
 		.mapGroup = MAP_GROUP(ROUTE_23_CAVE),
@@ -3616,6 +3411,14 @@ const struct WildPokemonHeader gDivergentWildMonEveningNightHeaders[] =
 		.rockSmashMonsInfo = &gDivergentEmpty,
 		.fishingMonsInfo = &gDivergentPeradonForestCommon_FishingMonsDefaultInfo,
 	},
+	{
+		.mapGroup = MAP_GROUP(UTEYAN_RUINS_OVERWORLD),
+		.mapNum = MAP_NUM(UTEYAN_RUINS_OVERWORLD),
+		.landMonsInfo = &gDivergentUteyanRuinsOverworld_LandMonsEveningNightInfo,
+		.waterMonsInfo = &gDivergentEmpty,
+		.rockSmashMonsInfo = &gDivergentUteyanRuinsOverworld_RockMonsDefaultInfo,
+		.fishingMonsInfo = &gDivergentEmpty,
+	},
 
 	// Terminator -- required so nighttime lookups for maps with no entry
 	// fall through to the default table instead of reading past the array.
@@ -3631,10 +3434,74 @@ const struct WildPokemonHeader gDivergentWildMonEveningNightHeaders[] =
 
 const struct SwarmData gDivergentSwarmTable[] =
 {
-	// {
-	// 	.mapName = MAPSEC_ROUTE_3,
-	// 	.species = SPECIES_RATTATA,
-	// },
+	{
+		.mapName = MAPSEC_ROUTE_1,
+		.species = SPECIES_ZIGZAGOON,
+	},
+	{
+		.mapName = MAPSEC_ROUTE_8,
+		.species = SPECIES_LINOONE,
+	},
+	{
+		.mapName = MAPSEC_RUBARR_DESERT,
+		.species = SPECIES_DIGLETT,
+	},
+	{
+		.mapName = MAPSEC_HESSON_PASS,
+		.species = SPECIES_DUGTRIO,
+	},
+	{
+		.mapName = MAPSEC_ROUTE_9,
+		.species = SPECIES_MEOWTH,
+	},
+	{
+		.mapName = MAPSEC_ROUTE_23,
+		.species = SPECIES_PERSIAN,
+	},
+	{
+		.mapName = MAPSEC_ROUTE_3,
+		.species = SPECIES_GEODUDE,
+	},
+	{
+		.mapName = MAPSEC_ROUTE_11_SOUTH,
+		.species = SPECIES_GRAVELER,
+	},
+	{
+		.mapName = MAPSEC_ROUTE_21,
+		.species = SPECIES_GOLEM,
+	},
+	{
+		.mapName = MAPSEC_TORMA_CAVE,
+		.species = SPECIES_SANDSHREW,
+	},
+	{
+		.mapName = MAPSEC_ROUTE_12_WEST,
+		.species = SPECIES_SANDSLASH,
+	},
+	{
+		.mapName = MAPSEC_ROUTE_13,
+		.species = SPECIES_VULPIX_A,
+	},
+	{
+		.mapName = MAPSEC_SCALDING_SPA,
+		.species = SPECIES_NINETALES_A,
+	},
+	{
+		.mapName = MAPSEC_UTEYAN_RUINS,
+		.species = SPECIES_MAROWAK,
+	},
+	{
+		.mapName = MAPSEC_ROUTE_19,
+		.species = SPECIES_EXEGGUTOR,
+	},
+	{
+		.mapName = MAPSEC_ROUTE_10,
+		.species = SPECIES_PONYTA_G,
+	},
+	{
+		.mapName = MAPSEC_CARNELIDGE_VOLCANO,
+		.species = SPECIES_RAPIDASH_G,
+	},
 };
 
 #ifdef SWARM_CHANGE_HOURLY
