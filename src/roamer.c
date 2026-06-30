@@ -7,6 +7,7 @@
 #include "../include/random.h"
 #include "../include/region_map.h"
 #include "../include/script.h"
+#include "../include/field_weather.h"
 #include "../include/pokemon_icon.h"
 #include "../include/constants/maps.h"
 #include "../include/constants/region_map_sections.h"
@@ -34,6 +35,12 @@ enum
 
 #define ROAMING_MAP_BANK 3
 #define NUM_MAPS_IN_SET 7
+
+//Weather a Force of Nature broadcasts while roaming the player's route (script-side setweather IDs).
+#define ROAMER_WEATHER_RAIN          3    //WEATHER_RAIN        (Tornadus)
+#define ROAMER_WEATHER_THUNDERSTORM  5    //WEATHER_THUNDERSTORM (Thundurus)
+#define ROAMER_WEATHER_SANDSTORM     8    //WEATHER_SANDSTORM   (Landorus)
+#define ROAMER_WEATHER_NONE          0xFF //Sentinel: no roamer-forced weather here
 
 #ifndef UNBOUND //Modify this
 
@@ -101,6 +108,7 @@ static void CreateRoamerMonInstance(u8 id);
 static bool8 IsDivergentRoamerSpecies(u16 species);
 static bool8 IsIslandRoamerSpecies(u16 species);
 static bool8 IsRoamerInCurrentMode(u16 species);
+static u8 GetForcesOfNatureWeatherOnCurrentMap(void);
 
 //Both the normal and divergent roamer sets live in gRoamers at the same time (8 roamers
 //across the 10 available slots), so each Pokemon is generated exactly once and keeps its
@@ -130,6 +138,64 @@ static bool8 IsIslandRoamerSpecies(u16 species)
 static bool8 IsRoamerInCurrentMode(u16 species)
 {
 	return IsDivergentRoamerSpecies(species) == (FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS) != FALSE);
+}
+
+//Returns the weather a Force of Nature wants applied while it shares the player's current map,
+//or ROAMER_WEATHER_NONE if none is here. Only roamers active in the current mode count, so the
+//weather never appears for a roamer the player can't actually encounter.
+static u8 GetForcesOfNatureWeatherOnCurrentMap(void)
+{
+	for (int i = 0; i < MAX_NUM_ROAMERS; ++i)
+	{
+		struct Roamer* roamer = &gRoamers[i];
+
+		if (roamer->species == SPECIES_NONE || !IsRoamerInCurrentMode(roamer->species))
+			continue;
+
+		if (roamer->location[MAP_GRP] != gSaveBlock1->location.mapGroup
+		 || roamer->location[MAP_NUM] != gSaveBlock1->location.mapNum)
+			continue;
+
+		switch (roamer->species)
+		{
+			case SPECIES_TORNADUS:  return ROAMER_WEATHER_RAIN;
+			case SPECIES_THUNDURUS: return ROAMER_WEATHER_THUNDERSTORM;
+			case SPECIES_LANDORUS:  return ROAMER_WEATHER_SANDSTORM;
+		}
+	}
+
+	return ROAMER_WEATHER_NONE;
+}
+
+//Forces the weather to advertise a Force of Nature roaming the player's current route, overriding
+//the map's own weather. Once that roamer leaves the route (wanders off, is defeated, or is caught)
+//the map's normal weather is restored. Pass applyNow=FALSE during a map transition (the map load
+//applies the queued weather itself) and applyNow=TRUE on field resume (a live fade is needed).
+void UpdateForcesOfNatureWeather(bool8 applyNow)
+{
+	u8 weather = GetForcesOfNatureWeatherOnCurrentMap();
+
+	if (weather != ROAMER_WEATHER_NONE)
+	{
+		gForcedRoamerWeatherActive = TRUE;
+
+		if (gSaveBlock1->weather == weather)
+			return; //Already showing it - don't restart the fade
+
+		SetSav1Weather(weather);
+	}
+	else if (gForcedRoamerWeatherActive)
+	{
+		SetSav1Weather(gMapHeader.weather); //Roamer is gone - restore the map's own weather
+		gForcedRoamerWeatherActive = FALSE;
+	}
+	else
+	{
+		return; //No override active and none needed; leave any script-set weather untouched
+	}
+
+	if (applyNow)
+		DoCurrentWeather();
 }
 
 void ClearRoamersData(void)
@@ -325,6 +391,10 @@ void RoamersMove(void)
 			}
 		}
 	}
+
+	//Roamers move during the map-load sequence (just after RunOnTransitionMapScript), so refresh
+	//here with the post-move positions to keep the route's weather in sync with where they now are.
+	UpdateForcesOfNatureWeather(FALSE);
 }
 
 static bool8 IsRoamerAt(u8 mapGroup, u8 mapNum, u8 id)

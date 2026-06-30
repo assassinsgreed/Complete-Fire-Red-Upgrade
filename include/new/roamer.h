@@ -20,6 +20,7 @@ void GetRoamerLocation(u8* mapGroup, u8* mapNum, u8 id);
 bool8 IsSpeciesRoaming(u16 species);
 void GetMapGroupAndMapNumOfRoamer(u16 species, u8* mapGroup, u8* mapNum);
 void BattleSetup_StartRoamerBattle(void);
+void UpdateForcesOfNatureWeather(bool8 applyNow);
 
 //Exported Constants
 #ifdef SAVE_BLOCK_EXPANSION

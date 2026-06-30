@@ -140,7 +140,9 @@ extern u16 gLastUsedBall; //0x203B774
 
 #define gStashedHeldItems ((u16*) 0x0203B776) //PARTY_SIZE u16s (12 bytes); holds party held items during scripted no-item battles
 
-//FREE: 0x203B782
+#define gForcedRoamerWeatherActive (*((bool8*) 0x0203B782)) //TRUE while a Force of Nature roamer is overriding the map's weather
+
+//FREE: 0x203B783
 
 #define gPcSelectionTracker ((u8* 0x203B7AC)	// state tracker for pc selection
 #define gCreateSpriteTableSetter 0x203B7AD  // allow createsprite to load from a table as well

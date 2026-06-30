@@ -55,6 +55,7 @@
 #include "../include/new/overworld_data.h"
 #include "../include/new/party_menu.h"
 #include "../include/new/read_keys.h"
+#include "../include/new/roamer.h"
 #include "../include/new/wild_encounter.h"
 #include "../include/new/build_pokemon.h"
 
@@ -1649,6 +1650,7 @@ void RunOnTransitionMapScript(void)
 	gDontFadeWhite = FALSE;
 	ResetMiningSpots();
 	ForceClockUpdate();
+	UpdateForcesOfNatureWeather(FALSE); //Override weather for a roamer on this route; map load applies it
 	MapHeaderRunScriptByTag(3);
 }
 
@@ -1693,6 +1695,7 @@ void RunOnResumeMapScript(void)
 
 	PostReleaseAutomaticFixes();
 	ForceClockUpdate();
+	UpdateForcesOfNatureWeather(TRUE); //Re-apply/clear roamer weather after battles & menus (live fade)
 	MapHeaderRunScriptByTag(5);
 }
 
