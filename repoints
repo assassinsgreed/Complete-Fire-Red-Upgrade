@@ -104,7 +104,17 @@ sText_LostAgaintWild 083FDF8C
 
 sText_LostAgainstTrainer 083FE4C0
 sText_PaidPrizeMoney 083FE4C4
+gText_PkmnTransferredSomeonesPC 083FE4C8
+gText_PkmnTransferredLanasPC 083FE4CC
+gText_PkmnBoxSomeonesPCFull 083FE4D0
+gText_PkmnBoxLanasPCFull 083FE4D4
 sText_BlackedOut 083FE4F0
+
+##Naming Screen Sent-To-PC Message Table - original strings were erased in the base ROM
+gText_PkmnTransferredSomeonesPC 083E2280
+gText_PkmnTransferredLanasPC 083E2284
+gText_PkmnBoxSomeonesPCFull 083E2288
+gText_PkmnBoxLanasPCFull 083E228C
 
 gText_UsedVar2WildStronger 080A1B3C
 gText_UsedVar2WildWeaker 080A1AEC

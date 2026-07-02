@@ -166,6 +166,18 @@ You paid [B7][BUFFER][00] as the prize\nmoney[.]\p[.] [.] [.] [.]\pYou were over
 #org @sText_BlackedOut
 You were overwhelmed by your\ndefeat![FC][09]
 
+#org @gText_PkmnTransferredSomeonesPC
+[BUFFER2] was transferred to\nSomeone's PC.\pIt was placed in \n"[BUFFER1].\"
+
+#org @gText_PkmnTransferredLanasPC
+[BUFFER2] was transferred to\nLana's PC.\pIt was placed in \n"[BUFFER1].\"
+
+#org @gText_PkmnBoxSomeonesPCFull
+"[BUFFER3]\" on\nSomeone's PC was full.\p[BUFFER2] was transferred to\n"[BUFFER1]\" instead.
+
+#org @gText_PkmnBoxLanasPCFull
+"[BUFFER3]\" on\nLana's PC was full.\p[BUFFER2] was transferred to\n"[BUFFER1]\" instead.
+
 #org @sText_SwitchingMove
 [FD][0F] went back\nto their trainer!
 
