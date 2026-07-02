@@ -367,6 +367,10 @@ pcSelect_SkipWithdrawCount 0808c53c 1
 pcSelect_SwapDecision 0808ed8c 1
 #endif
 
+##PC Box Menu Reorder
+pcBoxMenu_RemapInput 0808c45c 0
+pcBoxMenu_ReturnCursorRemap 0808c700 2
+
 ##Keypad
 ReadKeys 080005E8 0
 DiveCheckEmergeHook 806CB30 0

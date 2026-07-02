@@ -173,6 +173,14 @@ pcSelect_OperationsTable 0808fbc8
 pcSelect_OperationsTable 0808fce4
 #endif
 
+##PC Box Menu Reorder - Task_PCMainMenu name/desc table (orig 0x83CDA20)
+pcBoxMenu_ReorderedTexts 0808c444
+pcBoxMenu_ReorderedTexts 0808c508
+pcBoxMenu_ReorderedTexts 0808c5d4
+pcBoxMenu_ReorderedTexts 0808c620
+pcBoxMenu_ReorderedTexts 0808c67c
+pcBoxMenu_ReorderedTexts 0808c7b0
+
 ##Expanded Text Buffers
 sScriptStringVars 0806bcc0
 sScriptStringVars 0806bd08
