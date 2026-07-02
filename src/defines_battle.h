@@ -122,11 +122,22 @@ typedef u8 TrainerClassNames_t[13];
 extern struct TrainerPicCoords gTrainerBackPicCoords[];
 extern const struct Trainer gTrainers[];
 extern const struct Trainer gHardTrainers[];
+extern const struct Trainer gDivergentTrainers[];
+extern const struct Trainer gHardDivergentTrainers[];
 
 #define TRAINER_IS_BLANK(trainerId) (gTrainers[trainerId].partyFlags == 0  && gTrainers[trainerId].party.NoItemDefaultMoves == 0)
 #define HARD_TRAINER_IS_BLANK(trainerId) (gHardTrainers[trainerId].partyFlags == 0  && gHardTrainers[trainerId].party.NoItemDefaultMoves == 0)
-#define GET_TRAINER(trainerId) (TRAINER_IS_BLANK(trainerId) ?  gOriginalTrainers[trainerId] : (FlagGet(FLAG_HARD_MODE) && !HARD_TRAINER_IS_BLANK(trainerId)) ? gHardTrainers[trainerId] : gTrainers[trainerId])
-#define GET_TRAINER_PTR(trainerId) (TRAINER_IS_BLANK(trainerId) ?  &gOriginalTrainers[trainerId] : (FlagGet(FLAG_HARD_MODE) && !HARD_TRAINER_IS_BLANK(trainerId)) ? &gHardTrainers[trainerId] : &gTrainers[trainerId])
+#define DIVERGENT_TRAINER_IS_BLANK(trainerId) (gDivergentTrainers[trainerId].partyFlags == 0  && gDivergentTrainers[trainerId].party.NoItemDefaultMoves == 0)
+#define HARD_DIVERGENT_TRAINER_IS_BLANK(trainerId) (gHardDivergentTrainers[trainerId].partyFlags == 0  && gHardDivergentTrainers[trainerId].party.NoItemDefaultMoves == 0)
+
+// Resolves which trainer table to use for a given trainer ID, honouring the difficulty/divergent
+// flags. Priority (highest first): Hard+Divergent, Divergent, Hard, Standard. A set is only used
+// if it actually defines (non-blank) data for this trainer; otherwise the next set down is tried.
+// Implemented as a function (see build_pokemon.c) so the flag/blank logic is evaluated once instead
+// of being re-expanded — and the argument re-evaluated — at every call site.
+struct Trainer* GetTrainerData(u16 trainerId);
+#define GET_TRAINER(trainerId) (*GetTrainerData(trainerId))
+#define GET_TRAINER_PTR(trainerId) (GetTrainerData(trainerId))
 #define sATypeMove_Table ((u8**) 0x83FEA28) //Table of things like "A Normal Move!"
 #define gBattleStringsTable ((u8**) 0x83FDF3C)
 
