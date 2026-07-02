@@ -1695,7 +1695,7 @@ void RunOnResumeMapScript(void)
 
 	PostReleaseAutomaticFixes();
 	ForceClockUpdate();
-	UpdateForcesOfNatureWeather(TRUE); //Re-apply/clear roamer weather after battles & menus (live fade)
+	UpdateForcesOfNatureWeather(TRUE); //Re-apply/clear roamer weather after battles, menus & game load
 	MapHeaderRunScriptByTag(5);
 }
 

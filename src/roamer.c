@@ -109,6 +109,7 @@ static bool8 IsDivergentRoamerSpecies(u16 species);
 static bool8 IsIslandRoamerSpecies(u16 species);
 static bool8 IsRoamerInCurrentMode(u16 species);
 static u8 GetForcesOfNatureWeatherOnCurrentMap(void);
+static bool8 IsForcesOfNatureWeather(u8 weather);
 
 //Both the normal and divergent roamer sets live in gRoamers at the same time (8 roamers
 //across the 10 available slots), so each Pokemon is generated exactly once and keeps its
@@ -167,10 +168,17 @@ static u8 GetForcesOfNatureWeatherOnCurrentMap(void)
 	return ROAMER_WEATHER_NONE;
 }
 
+static bool8 IsForcesOfNatureWeather(u8 weather)
+{
+	return weather == ROAMER_WEATHER_RAIN
+		|| weather == ROAMER_WEATHER_THUNDERSTORM
+		|| weather == ROAMER_WEATHER_SANDSTORM;
+}
+
 //Forces the weather to advertise a Force of Nature roaming the player's current route, overriding
 //the map's own weather. Once that roamer leaves the route (wanders off, is defeated, or is caught)
 //the map's normal weather is restored. Pass applyNow=FALSE during a map transition (the map load
-//applies the queued weather itself) and applyNow=TRUE on field resume (a live fade is needed).
+//applies the queued weather itself) and applyNow=TRUE on field resume.
 void UpdateForcesOfNatureWeather(bool8 applyNow)
 {
 	u8 weather = GetForcesOfNatureWeatherOnCurrentMap();
@@ -184,8 +192,12 @@ void UpdateForcesOfNatureWeather(bool8 applyNow)
 
 		SetSav1Weather(weather);
 	}
-	else if (gForcedRoamerWeatherActive)
+	else if (gForcedRoamerWeatherActive
+	 || (IsForcesOfNatureWeather(gSaveBlock1->weather) && gSaveBlock1->weather != gMapHeader.weather))
 	{
+		//gForcedRoamerWeatherActive lives in unsaved RAM, so after the game is reloaded a
+		//leftover override is recognized by its signature instead: the save holds a Force
+		//of Nature weather that the map itself doesn't use.
 		SetSav1Weather(gMapHeader.weather); //Roamer is gone - restore the map's own weather
 		gForcedRoamerWeatherActive = FALSE;
 	}
@@ -195,7 +207,24 @@ void UpdateForcesOfNatureWeather(bool8 applyNow)
 	}
 
 	if (applyNow)
-		DoCurrentWeather();
+	{
+		if (!gWeatherPtr->readyForInit)
+		{
+			//The weather system was just restarted for this field resume (game load, battle
+			//or menu exit) and hasn't initialized yet, but it was seeded with the outgoing
+			//weather. Queuing a normal transition here loses a race: the stale weather still
+			//initializes first, starts its looping rain SE, and only then fades out - leaving
+			//the SE playing forever. Snap both current and next weather up front (like
+			//ResumePausedWeather does) so the stale weather never initializes at all.
+			PlayRainStoppingSoundEffect();
+			gWeatherPtr->currWeather = gSaveBlock1->weather;
+			gWeatherPtr->nextWeather = gSaveBlock1->weather;
+		}
+		else
+		{
+			DoCurrentWeather(); //Weather is running on a visible field - change it with a live fade
+		}
+	}
 }
 
 void ClearRoamersData(void)

@@ -879,30 +879,30 @@ const struct TrainerMonItemCustomMoves sParty_CarnelidgeVolcano_PartnerRival_Div
 const struct TrainerMonItemCustomMoves sParty_CarnelidgeVolcano_Alistair_Divergent[] = {
     {
         .lvl = 55,
-        .species = SPECIES_GOLBAT,
-        .moves = { MOVE_TOXIC, MOVE_VENOSHOCK, MOVE_LEECHLIFE, MOVE_MEANLOOK },
-        .heldItem = ITEM_EVIOLITE,
-        .ability = Ability_Hidden // Infiltrator
+        .species = SPECIES_PERRSERKER,
+        .moves = { MOVE_FAKEOUT, MOVE_IRONHEAD, MOVE_SCREECH, MOVE_KNOCKOFF },
+        .heldItem = ITEM_ROCKY_HELMET,
+        .ability = Ability_Hidden // Steely Spirit
     },
     {
         .lvl = 54,
-        .species = SPECIES_AMOONGUSS,
-        .moves = { MOVE_INGRAIN, MOVE_GIGADRAIN, MOVE_SUBSTITUTE, MOVE_CLEARSMOG },
-        .ability = Ability_Hidden // Regenerator
+        .species = SPECIES_GLISCOR,
+        .moves = { MOVE_THUNDERFANG, MOVE_POISONJAB, MOVE_KNOCKOFF, MOVE_ACROBATICS },
+        .ability = Ability_Hidden // Poison Heal
     },
     {
         .lvl = 56,
-        .species = SPECIES_SHARPEDO,
-        .moves = { MOVE_AQUAJET, MOVE_LIQUIDATION, MOVE_CRUNCH, MOVE_ICEFANG },
-        .heldItem = ITEM_WATER_GEM,
-        .ability = Ability_Hidden // Speed Boost
+        .species = SPECIES_POLIWRATH,
+        .moves = { MOVE_BODYSLAM, MOVE_CIRCLETHROW, MOVE_WORKUP, MOVE_ROCKSLIDE },
+        .heldItem = ITEM_SITRUS_BERRY,
+        .ability = Ability_1 // Water Absorb
     },
     {
         .lvl = 57,
-        .species = SPECIES_HOUNDOOM,
-        .moves = { MOVE_SUNNYDAY, MOVE_DARKPULSE, MOVE_FLAMETHROWER, MOVE_THUNDERFANG },
-        .heldItem = ITEM_HOUNDOOMINITE,
-        .ability = Ability_2 // Flash Fire
+        .species = SPECIES_TYRANITAR,
+        .moves = { MOVE_CRUNCH, MOVE_ICEFANG, MOVE_EARTHQUAKE, MOVE_ROCKSLIDE },
+        .heldItem = ITEM_TYRANITARITE,
+        .ability = Ability_1 // Sand Stream
     }
 };
 
@@ -1251,31 +1251,31 @@ const struct TrainerMonItemCustomMoves sParty_Rival_ExhibitionBattle_SecondaryTe
 const struct TrainerMonItemCustomMoves sParty_PostCredits_Alistair_Divergent[] = {
     {
         .lvl = 70,
-        .species = SPECIES_CROBAT,
-        .moves = { MOVE_ACROBATICS, MOVE_LEECHLIFE, MOVE_CROSSPOISON, MOVE_HAZE },
-        .heldItem = ITEM_FLYING_GEM,
-        .ability = Ability_Hidden // Infiltrator
+        .species = SPECIES_PERRSERKER,
+        .moves = { MOVE_FAKEOUT, MOVE_IRONHEAD, MOVE_SCREECH, MOVE_KNOCKOFF },
+        .heldItem = ITEM_ROCKY_HELMET,
+        .ability = Ability_Hidden // Steely Spirit
     },
     {
         .lvl = 70,
-        .species = SPECIES_AMOONGUSS,
-        .moves = { MOVE_SPORE, MOVE_TOXIC, MOVE_BODYSLAM, MOVE_PROTECT },
-        .heldItem = ITEM_BLACK_SLUDGE,
-        .ability = Ability_Hidden // Regenerator
+        .species = SPECIES_GLISCOR,
+        .moves = { MOVE_THUNDERFANG, MOVE_POISONJAB, MOVE_KNOCKOFF, MOVE_PROTECT },
+        .heldItem = ITEM_TOXIC_ORB,
+        .ability = Ability_Hidden // Poison Heal
     },
     {
         .lvl = 70,
-        .species = SPECIES_SHARPEDO,
-        .moves = { MOVE_AQUAJET, MOVE_LIQUIDATION, MOVE_CRUNCH, MOVE_ICEFANG },
-        .heldItem = ITEM_WATER_GEM,
-        .ability = Ability_Hidden // Speed Boost
+        .species = SPECIES_POLIWRATH,
+        .moves = { MOVE_BODYSLAM, MOVE_CIRCLETHROW, MOVE_WORKUP, MOVE_ROCKSLIDE },
+        .heldItem = ITEM_SITRUS_BERRY,
+        .ability = Ability_1 // Water Absorb
     },
     {
         .lvl = 70,
-        .species = SPECIES_HOUNDOOM,
-        .moves = { MOVE_DESTINYBOND, MOVE_DARKPULSE, MOVE_FLAMETHROWER, MOVE_THUNDERFANG },
-        .heldItem = ITEM_HOUNDOOMINITE,
-        .ability = Ability_2 // Flash Fire
+        .species = SPECIES_TYRANITAR,
+        .moves = { MOVE_CRUNCH, MOVE_ICEFANG, MOVE_EARTHQUAKE, MOVE_STONEEDGE },
+        .heldItem = ITEM_TYRANITARITE,
+        .ability = Ability_1 // Sand Stream
     },
     {
         .lvl = 72,
@@ -8230,38 +8230,31 @@ const struct TrainerMonItemCustomMoves sParty_AscensionTower_TitleDefense_Selene
 const struct TrainerMonItemCustomMoves sParty_AscensionTower_TitleDefense_Alistair_Divergent[] = {
     {
         .lvl = 73,
-        .species = SPECIES_CROBAT,
-        .moves = { MOVE_ACROBATICS, MOVE_LEECHLIFE, MOVE_CROSSPOISON, MOVE_HAZE },
-        .heldItem = ITEM_FLYING_GEM,
-        .ability = Ability_Hidden // Infiltrator
+        .species = SPECIES_PERRSERKER,
+        .moves = { MOVE_FAKEOUT, MOVE_IRONHEAD, MOVE_SCREECH, MOVE_KNOCKOFF },
+        .heldItem = ITEM_ROCKY_HELMET,
+        .ability = Ability_Hidden // Steely Spirit
     },
     {
         .lvl = 73,
-        .species = SPECIES_AMOONGUSS,
-        .moves = { MOVE_SPORE, MOVE_TOXIC, MOVE_BODYSLAM, MOVE_PROTECT },
-        .heldItem = ITEM_BLACK_SLUDGE,
-        .ability = Ability_Hidden // Regenerator
+        .species = SPECIES_GLISCOR,
+        .moves = { MOVE_THUNDERFANG, MOVE_POISONJAB, MOVE_KNOCKOFF, MOVE_PROTECT },
+        .heldItem = ITEM_TOXIC_ORB,
+        .ability = Ability_Hidden // Poison Heal
     },
     {
         .lvl = 73,
-        .species = SPECIES_GALLADE,
-        .moves = { MOVE_CLOSECOMBAT, MOVE_LEAFBLADE, MOVE_PSYCHOCUT, MOVE_SWORDSDANCE },
-        .heldItem = ITEM_LIFE_ORB,
-        .ability = Ability_Hidden // Justified
-    },
-    {
-        .lvl = 73,
-        .species = SPECIES_SHARPEDO,
-        .moves = { MOVE_AQUAJET, MOVE_LIQUIDATION, MOVE_CRUNCH, MOVE_ICEFANG },
-        .heldItem = ITEM_WATER_GEM,
-        .ability = Ability_Hidden // Speed Boost
+        .species = SPECIES_POLIWRATH,
+        .moves = { MOVE_BODYSLAM, MOVE_CIRCLETHROW, MOVE_WORKUP, MOVE_ROCKSLIDE },
+        .heldItem = ITEM_SITRUS_BERRY,
+        .ability = Ability_1 // Water Absorb
     },
     {
         .lvl = 74,
-        .species = SPECIES_HOUNDOOM,
-        .moves = { MOVE_DESTINYBOND, MOVE_DARKPULSE, MOVE_FLAMETHROWER, MOVE_THUNDERFANG },
-        .heldItem = ITEM_HOUNDOOMINITE,
-        .ability = Ability_2 // Flash Fire
+        .species = SPECIES_TYRANITAR,
+        .moves = { MOVE_CRUNCH, MOVE_ICEFANG, MOVE_EARTHQUAKE, MOVE_STONEEDGE },
+        .heldItem = ITEM_TYRANITARITE,
+        .ability = Ability_1 // Sand Stream
     },
     {
         .lvl = 75,
@@ -8269,7 +8262,7 @@ const struct TrainerMonItemCustomMoves sParty_AscensionTower_TitleDefense_Alista
         .moves = { MOVE_HEADSMASH, MOVE_FLAREBLITZ, MOVE_WILDCHARGE, MOVE_TAKEDOWN },
         .heldItem = ITEM_LEFTOVERS,
         .ability = Ability_Hidden // Reckless
-    },
+    }
 };
 
 const struct TrainerMonItemCustomMoves sParty_AscensionTower_TitleDefense_Hawthorne_Divergent[] = {
