@@ -605,7 +605,12 @@ bool8 BT_Phase2Mugshot_WaitForOpponentInPlace(struct Task *task)
 	{
 		task->tState++;
 		IncreaseMugshotFuncState(task->tPlayerSpriteId);
-		IncreaseMugshotFuncState(task->tPartnerSpriteId);
+		//Only bump the partner sprite when one was actually created (see
+		//Mugshots_CreateOpponentPlayerSprites); otherwise tPartnerSpriteId is 0
+		//and this corrupts gSprites[0]'s state machine, which can hang the
+		//transition on a black screen when slot 0 holds a mugshot sprite.
+		if (VarGet(VAR_PRE_BATTLE_MUGSHOT_SPRITE) == MUGSHOT_PLAYER && IsTrainerBattleModeWithPartner())
+			IncreaseMugshotFuncState(task->tPartnerSpriteId);
 	}
 
 	return FALSE;

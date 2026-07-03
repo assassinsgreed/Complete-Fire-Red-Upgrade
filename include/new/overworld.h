@@ -68,6 +68,7 @@ s32 DoPoisonFieldEffect(void);
 void TaskRepel(u8 taskId);
 bool8 UpdateRepelCounter(void);
 const u8* GetInteractedWaterScript(u32 unused1, u8 metatileBehavior, u8 direction);
+u8 MovementType_CopyPlayer_Step1_Fixed(struct EventObject* eventObject, struct Sprite* sprite);
 
 //Exported Constants
 enum

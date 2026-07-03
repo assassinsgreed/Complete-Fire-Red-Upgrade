@@ -1227,7 +1227,11 @@ void SetUpTrainerEncounterMusic(void)
 void SetTrainerFlags(void)
 {
 	if (IsTwoOpponentBattle()) //Prevent bugs from happening when the second Trainer wasn't actually fought
-		FlagSet(FLAG_TRAINER_FLAG_START + SECOND_OPPONENT);
+	{
+		//VAR_SECOND_OPPONENT was already zeroed by EndBattleFlagClear during battle teardown;
+		//gTrainerBattleOpponent_B is deliberately preserved through it for post-battle use.
+		FlagSet(FLAG_TRAINER_FLAG_START + gTrainerBattleOpponent_B);
+	}
 	FlagSet(FLAG_TRAINER_FLAG_START + gTrainerBattleOpponent_A);
 }
 
@@ -1342,12 +1346,32 @@ void MoveCameraToTrainerB(void)
 	else
 		newObj = GetEventObjectIdByLocalId(ExtensionState.spotted.firstTrainerNPCId);
 
+	if (gSelectedEventObject >= NUM_FIELD_OBJECTS || newObj >= NUM_FIELD_OBJECTS)
+	{
+		gSpecialVar_LastResult = 0xFFFF; //Skips the camera pan in WalkCall
+		Var8005 = 0x7F; //Camera
+		return;
+	}
+
 	s16 currentX = gEventObjects[gSelectedEventObject].currentCoords.x;
 	s16 currentY = gEventObjects[gSelectedEventObject].currentCoords.y;
 	s16 toX = gEventObjects[newObj].currentCoords.x;
 	s16 toY = gEventObjects[newObj].currentCoords.y;
 
-	GetProperDirection(currentX, currentY, toX, toY);
+	if (!GetProperDirection(currentX, currentY, toX, toY))
+	{
+		//Diagonal NPCs: pick the dominant axis. The view is never recentred by
+		//CAMERA_END, so the pan to Trainer B and the pan back must be exact
+		//opposites or the camera stays permanently offset from the player.
+		s16 dx = toX - currentX;
+		s16 dy = toY - currentY;
+
+		if (abs(dx) > abs(dy))
+			gSpecialVar_LastResult = (dx > 0) ? DIR_EAST : DIR_WEST;
+		else
+			gSpecialVar_LastResult = (dy > 0) ? DIR_SOUTH : DIR_NORTH;
+	}
+
 	Var8005 = 0x7F; //Camera
 }
 
@@ -2880,6 +2904,26 @@ bool8 TrySetupDiveEmergeScript(void)
 bool8 MetatileBehavior_IsDiveable(u8 metatileBehavior)
 {
 	return metatileBehavior == MB_DIVEABLE;
+}
+
+typedef bool8 (*CopyablePlayerMovementFunc)(struct EventObject* eventObj, struct Sprite* sprite, u8 playerDirection, bool8 (*tileCallback)(u8));
+#define gCopyPlayerMovementFuncs ((const CopyablePlayerMovementFunc*) 0x83A6390) //Vanilla table indexed by playerCopyableMovement
+
+//Replaces the vanilla MovementType_CopyPlayer_Step1 (0x80628E4), which re-copies the player's
+//movement if the NPC's copied action finishes while the player's is still playing. Bumping into
+//a wall holds the player in place twice as long as a normal step, so a copycat NPC with a clear
+//path would move two tiles per bump. Consuming the copyable movement after dispatching it
+//ensures each player action is only mirrored once.
+u8 MovementType_CopyPlayer_Step1_Fixed(struct EventObject* eventObject, struct Sprite* sprite)
+{
+	struct EventObject* player = &gEventObjects[gPlayerAvatar->eventObjectId];
+
+	if (player->movementActionId == 0xFF || gPlayerAvatar->tileTransitionState == T_TILE_CENTER)
+		return FALSE;
+
+	u8 copyableMovement = player->playerCopyableMovement;
+	player->playerCopyableMovement = 0; //COPY_MOVE_NONE
+	return gCopyPlayerMovementFuncs[copyableMovement](eventObject, sprite, GetPlayerMovementDirection(), NULL);
 }
 
 bool8 MetatileBehavior_IsUnableToEmerge(u8 metatileBehavior)
