@@ -13,6 +13,7 @@ void __attribute__((long_call)) SummaryScreen_DestroyUnknownTask(void);
 u8 __attribute__((long_call)) GetLastViewedMonIndex(void);
 void __attribute__((long_call)) ShowPokemonSummaryScreen(struct Pokemon * party, u8 cursorPos, u8 lastIdx, void (*callback)(void), u8 a4);
 void __attribute__((long_call)) SetPokemonSummaryScreenMode(u8);
+void ShowPokemonSummaryScreenOnSkillsPage(struct Pokemon * party, u8 cursorPos, u8 lastIdx, void (*callback)(void), u8 mode);
 
 // The Pokemon Summary Screen can operate in different modes. Certain features,
 // such as move re-ordering, are available in the different modes.

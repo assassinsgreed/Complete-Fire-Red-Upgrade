@@ -26,6 +26,7 @@
 #include "../include/constants/songs.h"
 #include "../include/new/ability_util.h"
 #include "../include/item.h"
+#include "../include/pokemon_summary_screen.h"
 
 // 1 = ON, 0 = OFF.  Activates or deactivates the sprite jump
 #define SPRITE_JUMP             0
@@ -40,11 +41,12 @@
 #define PICMON_X    18
 #define PICMON_Y     5
 
+void CB2_ShowEvIv(void);
 static void Task_EvIvInit(u8);
 static u8 EvIvLoadGfx(void);
 static void EvIvVblankHandler(void);
 static void Task_WaitForExit(u8);
-static void Task_EvIvReturnToOverworld(u8);
+static void Task_EvIvExit(u8);
 static void ShowSprite(struct Pokemon *mon);
 static void EvIvPrintText(struct Pokemon *mon);
 static void ShowPokemonPic2(u16 species, u32 otId, u32 personality, u8 x, u8 y);
@@ -141,6 +143,8 @@ struct EvIv
     u16 totalStatsBS;
     u16 tilemapBuffer[0x400];
     u16 monSpriteId;
+    MainCallback summaryCallback; //where the summary screen the viewer was opened from would have returned to
+    u8 summaryMode;
 };
 
 extern struct EvIv *gEvIv;
@@ -244,9 +248,25 @@ static void CB2_EvIv(void)
     UpdatePaletteFade();
 }
 
-void CB2_ShowEvIv(void)
+//Called from Task_MonitorSummarySkillsPageForEvIv in pokemon_summary_screen.c.
+//Routes the launch through the summary screen's own teardown (which frees all of
+//its resources) instead of hijacking the main callback out from under it, and
+//stashes where that summary screen would have returned to so the viewer can
+//reopen it on exit.
+void LaunchEvIvViewerFromSummaryScreen(void)
 {
     gEvIv = AllocZeroed(sizeof(*gEvIv));
+    gEvIv->summaryCallback = sMonSummaryScreen->savedCallback;
+    gEvIv->summaryMode = sMonSummaryScreen->mode;
+
+    sMonSummaryScreen->savedCallback = CB2_ShowEvIv;
+    sMonSummaryScreen->state3270 = PSS_STATE3270_ATEXIT_FADEOUT;
+}
+
+void CB2_ShowEvIv(void)
+{
+    if (gEvIv == NULL) //not launched from the summary screen
+        gEvIv = AllocZeroed(sizeof(*gEvIv));
     gState = 0;
     gGfxStep = 0;
     gCallbackStep = 0;
@@ -349,19 +369,32 @@ static void Task_WaitForExit(u8 taskId)
         break;
     case 2:
         if (!IsCryPlaying())
-            Task_EvIvReturnToOverworld(taskId);
+        {
+            HidePokemonPic2(gSpriteTaskId); //have Task_ScriptShowMonPic free the mon pic resources
+            gState++;
+        }
+        break;
+    case 3:
+        if (!gPaletteFade->active && !FuncIsActiveTask(Task_ScriptShowMonPic))
+            Task_EvIvExit(taskId);
         break;
     }
 }
 
-static void Task_EvIvReturnToOverworld(u8 taskId)
+static void Task_EvIvExit(u8 taskId)
 {
-    if (gPaletteFade->active)
-        return;
+    MainCallback summaryCallback = gEvIv->summaryCallback;
+    u8 summaryMode = gEvIv->summaryMode;
+    u8 cursorPos = gCurrentMon;
+
     DestroyTask(taskId);
     FreeAllWindowBuffers();
     FREE_AND_SET_NULL(gEvIv);
-    SetMainCallback2(CB2_ReturnToFieldFromDiploma);
+
+    if (summaryCallback == NULL) //viewer wasn't opened from the summary screen
+        SetMainCallback2(CB2_ReturnToFieldFromDiploma);
+    else //return to the summary screen's skills page for the mon the viewer was showing
+        ShowPokemonSummaryScreenOnSkillsPage(gPlayerParty, cursorPos, gPlayerPartyCount - 1, summaryCallback, summaryMode);
 }
 
 static void ResetBGPos(void)

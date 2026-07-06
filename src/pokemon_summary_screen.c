@@ -7,8 +7,10 @@
 #include "../include/constants/flags.h"
 #include "../include/new/ram_locs.h"
 #include "../include/main.h"
+#include "../include/gpu_regs.h"
+#include "../include/sprite.h"
 
-extern void CB2_ShowEvIv(void);
+extern void LaunchEvIvViewerFromSummaryScreen(void); //from TaskEvIvInit.c
 extern const u8 gText_EvIvDetails[];
 
 // From pokeemerald wiki
@@ -104,55 +106,51 @@ static u8 * GetIVAssessment(s32 ivNum)
     return gText_IVRating_SPlus;
 }
 
+static const struct TextColor sEvIvDetailsTextColour =
+{
+    .bgColor = TEXT_COLOR_TRANSPARENT,
+    .fgColor = TEXT_COLOR_WHITE,
+    .shadowColor = TEXT_COLOR_DARK_GREY,
+};
+
+static void PrintEvIvDetailsPrompt(void)
+{
+    FillWindowPixelBuffer(1, PIXEL_FILL(0));
+    WindowPrint(1, FONT_SMALL, 14, 0, &sEvIvDetailsTextColour, 0, gText_EvIvDetails);
+}
+
 static void Task_MonitorSummarySkillsPageForEvIv(u8 taskId)
 {
     struct Task *task = &gTasks[taskId];
-    static const struct TextColor detailsTextColour =
-    {
-        .bgColor = TEXT_COLOR_TRANSPARENT,
-        .fgColor = TEXT_COLOR_WHITE,
-        .shadowColor = TEXT_COLOR_DARK_GREY,
-    };
+    bool8 switchInProgress;
 
-    switch (task->data[0])
+    if (sMonSummaryScreen->curPageIndex != PSS_PAGE_SKILLS
+        || !FlagGet(FLAG_ENABLE_EV_IV_VIEWER)
+        || sMonSummaryScreen->mode == PSS_MODE_BOX)
     {
-    case 0:
-        if (sMonSummaryScreen->curPageIndex != PSS_PAGE_SKILLS
-            || !FlagGet(FLAG_ENABLE_EV_IV_VIEWER)
-            || sMonSummaryScreen->mode == PSS_MODE_BOX)
-        {
-            DestroyTask(taskId);
-            return;
-        }
-        {
-            // Re-draw after Pokémon switch: the input handler task (created before ours) redraws
-            // key prompts when switchMonTaskState returns to 0. We run after it in the same
-            // RunTasks() call, so we can immediately overdraw in the same frame.
-            bool8 switchInProgress = sMonSummaryScreen->switchMonTaskState != 0;
-            if (switchInProgress)
-            {
-                task->data[1] = 1;
-            }
-            else if (task->data[1])
-            {
-                task->data[1] = 0;
-                FillWindowPixelBuffer(1, PIXEL_FILL(0));
-                WindowPrint(1, FONT_SMALL, 14, 0, &detailsTextColour, 0, gText_EvIvDetails);
-            }
-        }
-        if (JOY_NEW(A_BUTTON))
-        {
-            BeginNormalPaletteFade(0xFFFFFFFF, 0, 0, 16, RGB_BLACK);
-            task->data[0] = 1;
-        }
-        break;
-    case 1:
-        if (!gPaletteFade->active)
-        {
-            DestroyTask(taskId);
-            SetMainCallback2(CB2_ShowEvIv);
-        }
-        break;
+        DestroyTask(taskId);
+        return;
+    }
+
+    // Re-draw after Pokémon switch: the input handler task (created before ours) redraws
+    // key prompts when switchMonTaskState returns to 0. We run after it in the same
+    // RunTasks() call, so we can immediately overdraw in the same frame.
+    switchInProgress = sMonSummaryScreen->switchMonTaskState != 0;
+    if (switchInProgress)
+    {
+        task->data[1] = 1;
+    }
+    else if (task->data[1])
+    {
+        task->data[1] = 0;
+        PrintEvIvDetailsPrompt();
+    }
+
+    if (JOY_NEW(A_BUTTON) && !switchInProgress
+        && sMonSummaryScreen->state3270 == PSS_STATE3270_HANDLEINPUT)
+    {
+        LaunchEvIvViewerFromSummaryScreen();
+        DestroyTask(taskId);
     }
 }
 
@@ -199,19 +197,58 @@ void PrintSkillsPage(void)
 
     if (FlagGet(FLAG_ENABLE_EV_IV_VIEWER) && sMonSummaryScreen->mode != PSS_MODE_BOX)
     {
-        static const struct TextColor detailsTextColour =
-        {
-            .bgColor = TEXT_COLOR_TRANSPARENT,
-            .fgColor = TEXT_COLOR_WHITE,
-            .shadowColor = TEXT_COLOR_DARK_GREY,
-        };
-
-        FillWindowPixelBuffer(1, PIXEL_FILL(0)); // Fill with black
-
         // Write new keyprompts over existing ones
-        WindowPrint(1, FONT_SMALL, 14, 0, &detailsTextColour, 0, gText_EvIvDetails);
+        PrintEvIvDetailsPrompt();
 
         if (!FuncIsActiveTask(Task_MonitorSummarySkillsPageForEvIv))
             CreateTask(Task_MonitorSummarySkillsPageForEvIv, 0);
     }
+}
+
+static void Task_BeginSummaryScreenOnSkillsPage(u8 taskId)
+{
+    u32 i;
+
+    // This task first runs on the first CB2_RunPokemonSummaryScreen frame, right after the
+    // vanilla setup (which laid the BGs out for an info page start) finishes behind the black
+    // fade. Replicate the end state of a vanilla info->skills page flip: the vanilla setup
+    // already loaded the skills tilemap on BG1 and the info tilemap on BG2, so only the BG
+    // priorities, the parked scroll, and the flip bookkeeping need to change.
+    SetGpuReg(REG_OFFSET_BG0CNT, (GetGpuReg(REG_OFFSET_BG0CNT) & ~3) | 0);
+    SetGpuReg(REG_OFFSET_BG1CNT, (GetGpuReg(REG_OFFSET_BG1CNT) & ~3) | 1); // Skills page art in front
+    SetGpuReg(REG_OFFSET_BG2CNT, (GetGpuReg(REG_OFFSET_BG2CNT) & ~3) | 2); // Info page art behind
+    SetGpuReg(REG_OFFSET_BG2HOFS, -240); // Park the info art on the blank half of its 512px map
+    sMonSummaryScreen->whichBgLayerToTranslate = 1;
+    sMonSummaryScreen->flipPagesBgHofs = 240;
+
+    // The HP/EXP bars rest at BG0 priority on the skills page, peeking through
+    // the transparent cutout in the skills page art
+    for (i = 0; i < MAX_SPRITES; ++i)
+    {
+        if (gSprites[i].inUse
+            && (gSprites[i].template->tileTag == TAG_PSS_UNK_78 || gSprites[i].template->tileTag == TAG_PSS_UNK_82))
+            gSprites[i].oam.priority = 0;
+    }
+
+    // The vanilla setup prints the page header key prompts after the skills page
+    // text, wiping the EV/IV prompt PrintSkillsPage drew - draw it again
+    if (FlagGet(FLAG_ENABLE_EV_IV_VIEWER) && sMonSummaryScreen->mode != PSS_MODE_BOX)
+        PrintEvIvDetailsPrompt();
+
+    DestroyTask(taskId);
+}
+
+void ShowPokemonSummaryScreenOnSkillsPage(struct Pokemon *party, u8 cursorPos, u8 lastIdx, void (*callback)(void), u8 mode)
+{
+    ShowPokemonSummaryScreen(party, cursorPos, lastIdx, callback, mode);
+
+    if (sMonSummaryScreen == NULL // Alloc failed - the summary screen is already exiting to the callback
+        || GetMonData(&party[cursorPos], MON_DATA_IS_EGG, NULL)) // Egg summaries only have the info page
+        return;
+
+    // The vanilla setup only supports starting on the info page; force the page index now so
+    // the setup creates the skills windows/text, then patch the BG state up once it finishes.
+    // The task survives the setup (which never resets tasks) and first runs after it completes.
+    sMonSummaryScreen->curPageIndex = PSS_PAGE_SKILLS;
+    CreateTask(Task_BeginSummaryScreenOnSkillsPage, 0);
 }

@@ -1532,6 +1532,7 @@ PrepareToEvolveMonWithItem = 0x8126BD4 | 1;
 PartyMenu_DisplayMonNeedsToReplaceMove = 0x8126770 | 1;
 GetItemEffectType = 0x8126C68 | 1;
 InitChooseHalfPartyForBattle = 0x81274A8 | 1;
+ShowPokemonSummaryScreen = 0x81344F8 | 1;
 ShowSelectMovePokemonSummaryScreen = 0x8134738 | 1;
 CreateHpBarObjs = 0x813A45C | 1;
 GetMoveSlotToReplace = 0x8138B2C | 1;
