@@ -6109,7 +6109,7 @@ const struct TrainerMonItemCustomMoves sParty_AscensionTower_EliteFour_Hannah_Di
     },
     {
         .lvl = 66,
-        .species = SPECIES_COFAGRIGUS,
+        .species = SPECIES_LURANTIS,
         .moves = { MOVE_NIGHTSLASH, MOVE_LEAFBLADE, MOVE_KNOCKOFF, MOVE_SLASH },
         .heldItem = ITEM_ASSAULT_VEST,
         .ability = Ability_Hidden // Contrary
@@ -8099,7 +8099,7 @@ const struct TrainerMonItemCustomMoves sParty_AscensionTower_TitleDefense_Youngs
     },
     {
         .lvl = 75,
-        .species = SPECIES_RATICATE_A,
+        .species = SPECIES_OBSTAGOON,
         .moves = { MOVE_OBSTRUCT, MOVE_CROSSPOISON, MOVE_XSCISSOR, MOVE_KNOCKOFF },
         .heldItem = ITEM_LIFE_ORB,
         .ability = Ability_Hidden // Defiant
@@ -8434,42 +8434,42 @@ const struct TrainerMonItemCustomMoves sParty_AscensionTower_TitleDefense_Felix_
 
 const struct TrainerMonItemCustomMoves sParty_AscensionTower_TitleDefense_Collin_Divergent[] = {
     {
-        .lvl = 73, // Minimum, scales to player
+        .lvl = 73,
         .species = SPECIES_MAGMORTAR,
         .moves = { MOVE_PSYCHIC, MOVE_FIREBLAST, MOVE_THUNDERBOLT, MOVE_HYPERVOICE },
         .heldItem = ITEM_ASSAULT_VEST,
         .ability = Ability_1 // Flame Body
     },
     {
-        .lvl = 73, // Minimum, scales to player
+        .lvl = 73,
         .species = SPECIES_FERALIGATR,
         .moves = { MOVE_DRAGONDANCE, MOVE_ICEPUNCH, MOVE_CRUNCH, MOVE_EARTHQUAKE },
         .heldItem = ITEM_LIFE_ORB,
         .ability = Ability_1 // Torrent
     },
     {
-        .lvl = 73, // Minimum, scales to player
+        .lvl = 73,
         .species = SPECIES_GOLEM_A,
         .moves = { MOVE_THUNDERPUNCH, MOVE_STONEEDGE, MOVE_EARTHQUAKE, MOVE_HEAVYSLAM },
         .heldItem = ITEM_AIR_BALLOON,
         .ability = Ability_2 // Sturdy
     },
     {
-        .lvl = 73, // Minimum, scales to player
+        .lvl = 73,
         .species = SPECIES_NINETALES_A,
         .moves = { MOVE_FREEZEDRY, MOVE_EXTRASENSORY, MOVE_NASTYPLOT, MOVE_DAZZLINGGLEAM },
         .heldItem = ITEM_SITRUS_BERRY,
         .ability = Ability_Hidden // Snow Warning
     },
     {
-        .lvl = 74, // Minimum, scales to player
+        .lvl = 74,
         .species = SPECIES_PORYGON_Z,
         .moves = { MOVE_HYPERBEAM, MOVE_ICEBEAM, MOVE_THUNDERBOLT, MOVE_RECOVER },
         .heldItem = ITEM_LIFE_ORB,
         .ability = Ability_1 // Adaptability
     },
     {
-        .lvl = 75, // Minimum, scales to player
+        .lvl = 75,
         .species = SPECIES_SALAMENCE,
         .moves = { MOVE_DOUBLEEDGE, MOVE_DRAGONCLAW, MOVE_CRUNCH, MOVE_PROTECT },
         .heldItem = ITEM_SALAMENCITE,
@@ -8479,42 +8479,42 @@ const struct TrainerMonItemCustomMoves sParty_AscensionTower_TitleDefense_Collin
 
 const struct TrainerMonItemCustomMoves sParty_AscensionTower_TitleDefense_Crystal_Divergent[] = {
     {
-        .lvl = 73, // Minimum, scales to player
+        .lvl = 73,
         .species = SPECIES_QUAGSIRE,
         .moves = { MOVE_SPIKES, MOVE_TOXIC, MOVE_EARTHQUAKE, MOVE_RECOVER },
         .heldItem = ITEM_HEAVY_DUTY_BOOTS,
         .ability = Ability_Hidden // Unaware
     },
     {
-        .lvl = 73, // Minimum, scales to player
+        .lvl = 73,
         .species = SPECIES_METAGROSS,
         .moves = { MOVE_HEAVYSLAM, MOVE_KNOCKOFF, MOVE_EARTHQUAKE, MOVE_BULLETPUNCH },
         .heldItem = ITEM_CHOICE_BAND,
         .ability = Ability_1 // Clear Body
     },
     {
-        .lvl = 73, // Minimum, scales to player
+        .lvl = 73,
         .species = SPECIES_SNORLAX,
         .moves = { MOVE_CURSE, MOVE_BODYSLAM, MOVE_HEATCRASH, MOVE_REST },
         .heldItem = ITEM_LEFTOVERS,
         .ability = Ability_2 // Thick Fat
     },
     {
-        .lvl = 73, // Minimum, scales to player
+        .lvl = 73,
         .species = SPECIES_HARIYAMA,
         .moves = { MOVE_BULKUP, MOVE_DRAINPUNCH, MOVE_KNOCKOFF, MOVE_BULLETPUNCH },
         .heldItem = ITEM_FLAME_ORB,
         .ability = Ability_2 // Guts
     },
     {
-        .lvl = 74, // Minimum, scales to player
+        .lvl = 74,
         .species = SPECIES_MAROWAK_A,
         .moves = { MOVE_SHADOWBONE, MOVE_BONEMERANG, MOVE_STEALTHROCK, MOVE_FIREBLAST },
         .heldItem = ITEM_THICK_CLUB,
         .ability = Ability_2 // Lightning Rod
     },
     {
-        .lvl = 75, // Minimum, scales to player
+        .lvl = 75,
         .species = SPECIES_GENGAR,
         .moves = { MOVE_NASTYPLOT, MOVE_SHADOWBALL, MOVE_SLUDGEWAVE, MOVE_FOCUSBLAST },
         .heldItem = ITEM_GENGARITE,
@@ -8593,12 +8593,14 @@ const struct TrainerMonItemCustomMoves sParty_AscensionTower_TitleDefense_Ronald
         .lvl = 73,
         .species = SPECIES_GOLURK,
         .moves = { MOVE_SHADOWPUNCH, MOVE_IRONDEFENSE, MOVE_HAMMERARM, MOVE_THUNDERPUNCH },
+        .heldItem = ITEM_MUSCLE_BAND,
         .ability = Ability_1 // Iron Fist
     },
     {
         .lvl = 74,
         .species = SPECIES_POLIWRATH,
         .moves = { MOVE_BODYSLAM, MOVE_BELLYDRUM, MOVE_LIQUIDATION, MOVE_DRAINPUNCH },
+        .heldItem = ITEM_LIFE_ORB,
         .ability = Ability_1 // Water Absorb
     },
     {
