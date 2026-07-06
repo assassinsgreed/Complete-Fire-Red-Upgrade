@@ -430,9 +430,9 @@ npc 1 4 17 EventScript_Common_RockSmash
 npc 1 4 18 EventScript_Common_RockSmash
 tile 1 4 0 TileScript_TormaCave_SetPathCleared
 tile 1 4 1 TileScript_TormaCave_ClearPathCleared
-tile 1 4 2 TileScript_TormaCave_StunfiskEncounter1
-tile 1 4 3 TileScript_TormaCave_StunfiskEncounter2
-tile 1 4 4 TileScript_TormaCave_StunfiskEncounter3
+tile 1 4 2 TileScript_TormaCave_TrapEncounter1
+tile 1 4 3 TileScript_TormaCave_TrapEncounter2
+tile 1 4 4 TileScript_TormaCave_TrapEncounter3
 tile 1 4 5 TileScript_TormaCave_TriggerCaseyBattleL
 tile 1 4 6 TileScript_TormaCave_TriggerCaseyBattleM
 tile 1 4 7 TileScript_TormaCave_TriggerCaseyBattleR

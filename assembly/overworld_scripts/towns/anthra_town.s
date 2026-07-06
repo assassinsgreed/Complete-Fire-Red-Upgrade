@@ -246,6 +246,9 @@ LevelScript_AnthraTown_MeetingRival:
 	case YES, RememberingToday _call
 	case NO, NotRememberingToday _call
 	msgbox gText_AnthraTown_RivalExplainingChampionSeleneComing MSG_NORMAL
+	checkflag 0x945 @ Divergent mode
+	if NOT_SET _call RivalRaceStandard
+	if SET _call RivalRaceDivergent
 	applymovement Rival m_RivalRunOut
 	waitmovement ALLEVENTS
 	msgbox gText_AnthraTown_RivalPause MSG_NORMAL
@@ -282,6 +285,14 @@ RememberingToday:
 
 NotRememberingToday:
 	msgbox gText_AnthraTown_RivalNotRememberingToday MSG_NORMAL
+	return
+
+RivalRaceStandard:
+	msgbox gText_AnthraTown_RivalExplainingChampionSeleneComing_RaceStandard MSG_NORMAL
+	return
+
+RivalRaceDivergent:
+	msgbox gText_AnthraTown_RivalExplainingChampionSeleneComing_RaceDivergent MSG_NORMAL
 	return
 
 .global SignScript_AnthraTown_PlayersHouse

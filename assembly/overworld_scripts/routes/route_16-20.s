@@ -141,11 +141,13 @@ TileScript_Route17_StoryCaveBlocker:
     compare StoryEventVar PlayerJourneyHasStarted
     if equal _goto End @ Do not block the player if they have chosen a starter
     applymovement Hawthorne m_LookUp
+    lock
     msgbox gText_Route17_HawthorneBlocker MSG_NORMAL
     applymovement PLAYER m_WalkDown
     compare StoryEventVar PlayerAndRivalCanGoOnJourney
     if greaterorequal _goto HawthorneLookDown
     applymovement Hawthorne m_LookRight
+    release
     end
 
 HawthorneLookDown:

@@ -124,6 +124,18 @@ Okay, let's trade!
 #org @gText_FerroxNPCHouses_ChinchouTrade_Complete
 Take good care of Cosmo! They're a\nvery special little Chinchou.
 
+#org @gText_FerroxNPCHouses_TradeGirlDad_Divergent
+My daughter and I saw a Vanillite\nwhile hiking through Torma Cave.\pIt's all she can talk about now.
+
+#org @gText_FerroxNPCHouses_MagnemiteTrade_Request_Divergent
+I saw a Vanillite the other day and\nI've been obsessed with those\lcuties ever since!\pIf you happen to have one, would\nyou be willing to trade it for my\lMagnemite?
+
+#org @gText_FerroxNPCHouses_MagnemiteTrade_WrongPokemon_Divergent
+Hey, that's not funny! I wanted a\nVanillite.
+
+#org @gText_FerroxNPCHouses_MagnemiteTrade_Complete_Divergent
+Take good care of Tommy! They're a\nvery special little Magnemite.
+
 // Gym
 #org @gText_FerroxGym_Winners
 Ferrox Village Gym\nVictors: Casey
@@ -333,7 +345,13 @@ I'm pretty sure I didn't see anyone\nleave. They have to be here still.
 [BLACK][RIVAL]: [BLUE]Oh, that's pretty cool!\nHave you been able to prove\lanything yet?
 
 #org @gText_FerroxLibrary_Plot_AlistairDeadEnds
-[BLACK]Alistair: [BLUE]I'm afraid not. Most myths\nhave led to dead ends.\pAlthough, there is this interesting\nrumour about a Pok\emon that can\leject steam from it's cannons[.]
+[BLACK]Alistair: [BLUE]I'm afraid not. Most myths\nhave led to dead ends.
+
+#org @gText_FerroxLibrary_Plot_AlistairDeadEnds_Volcanion
+Although, there is this interesting\nrumour about a Pok\emon that can\leject steam from it's cannons[.]
+
+#org @gText_FerroxLibrary_Plot_AlistairDeadEnds_Heatran
+Although, there is this interesting\nrumour about a Pok\emon that can\lconsume magma[.]
 
 #org @gText_FerroxLibrary_Plot_AlistairNoticesTheTime
 [BLACK]Alistair: [BLUE]Oh my! I just noticed the\ntime. Please excuse me, I have an\lappointment with an old colleague\lof mine and must go.

@@ -21,40 +21,40 @@ MapEntryScript_TormaCave_FlightFlag:
 
 HideTrapPokemon:
     checkflag 0xE03
-    if NOT_SET _call SetStunfisk1Visibility
-    if SET _call HideStunfisk1
+    if NOT_SET _call SetTrap1Visibility
+    if SET _call HideTrap1
     checkflag 0xE04
-    if NOT_SET _call SetStunfisk2Visibility
-    if SET _call HideStunfisk2
+    if NOT_SET _call SetTrap2Visibility
+    if SET _call HideTrap2
     checkflag 0xE05
-    if NOT_SET _call SetStunfisk3Visibility
-    if SET _call HideStunfisk3
+    if NOT_SET _call SetTrap3Visibility
+    if SET _call HideTrap3
     end
 
-SetStunfisk1Visibility:
+SetTrap1Visibility:
     setmaptile 0x10 0x20 0x30B 0x0
     return
 
-HideStunfisk1:
+HideTrap1:
     setmaptile 0x10 0x20 0x281 0x0
     special 0x8E
     return
 
-HideStunfisk2:
+HideTrap2:
     setmaptile 0x30 0xF 0x281 0x0
     special 0x8E
     return
 
-HideStunfisk3:
+HideTrap3:
     setmaptile 0x1C 0xA 0x281 0x0
     special 0x8E
     return
 
-SetStunfisk2Visibility:
+SetTrap2Visibility:
     setmaptile 0x30 0xF 0x30B 0x0
     return
 
-SetStunfisk3Visibility:
+SetTrap3Visibility:
     setmaptile 0x1C 0xA 0x30B 0x0
     return
 
@@ -71,7 +71,13 @@ EventScript_TormaCave_Glalitite:
 .global EventScript_TormaCave_FishermanAlfie
 EventScript_TormaCave_FishermanAlfie:
     trainerbattle0 0x0 0x2D 0x0 gText_TormaCave_FishermanAlfie_Intro gText_TormaCave_FishermanAlfie_Defeat
+    checkflag 0x945 @ Divergent Mode
+    if SET _goto AlfieChatDivergent
     msgbox gText_TormaCave_FishermanAlfie_Chat MSG_NORMAL
+    end
+
+AlfieChatDivergent:
+    msgbox gText_TormaCave_FishermanAlfie_Chat_Divergent MSG_NORMAL
     end
 
 .global EventScript_TormaCave_HikerNob
@@ -121,31 +127,37 @@ EventScript_TormaCave_TM79_FrostBreath:
     call ItemScript_Common_FindTM
     end
 
-.global TileScript_TormaCave_StunfiskEncounter1
-TileScript_TormaCave_StunfiskEncounter1:
+.global TileScript_TormaCave_TrapEncounter1
+TileScript_TormaCave_TrapEncounter1:
     checkflag 0xE03
     if SET _goto End
     setflag 0xE03
-    call StunfiskEncounter
-    call HideStunfisk1
+    checkflag 0x945 @ Divergent Mode
+    if NOT_SET _call StunfiskEncounter
+    if SET _call SkorupiEncounter
+    call HideTrap1
     end
 
-.global TileScript_TormaCave_StunfiskEncounter2
-TileScript_TormaCave_StunfiskEncounter2:
+.global TileScript_TormaCave_TrapEncounter2
+TileScript_TormaCave_TrapEncounter2:
     checkflag 0xE04
     if SET _goto End
     setflag 0xE04
-    call StunfiskEncounter
-    call HideStunfisk2
+    checkflag 0x945 @ Divergent Mode
+    if NOT_SET _call StunfiskEncounter
+    if SET _call SkorupiEncounter
+    call HideTrap2
     end
 
-.global TileScript_TormaCave_StunfiskEncounter3
-TileScript_TormaCave_StunfiskEncounter3:
+.global TileScript_TormaCave_TrapEncounter3
+TileScript_TormaCave_TrapEncounter3:
     checkflag 0xE05
     if SET _goto End
     setflag 0xE05
-    call StunfiskEncounter
-    call HideStunfisk3
+    checkflag 0x945 @ Divergent Mode
+    if NOT_SET _call StunfiskEncounter
+    if SET _call SkorupiEncounter
+    call HideTrap3
     end
 
 StunfiskEncounter:
@@ -154,8 +166,20 @@ StunfiskEncounter:
     cry SPECIES_STUNFISK_G 0x0
     sound 0x15 @ Exclaim
     applymovement PLAYER m_Surprise
-    msgbox gText_TormaCave_StunfiskEncounter MSG_KEEPOPEN
+    msgbox gText_TormaCave_TrapEncounter MSG_KEEPOPEN
     wildbattle SPECIES_STUNFISK_G 0xE 0x0
+    hidesprite LASTTALKED
+    release
+    return
+
+SkorupiEncounter:
+    lock
+    checksound
+    cry SPECIES_SKORUPI 0x0
+    sound 0x15 @ Exclaim
+    applymovement PLAYER m_Surprise
+    msgbox gText_TormaCave_TrapEncounter MSG_KEEPOPEN
+    wildbattle SPECIES_SKORUPI 0xE 0x0
     hidesprite LASTTALKED
     release
     return

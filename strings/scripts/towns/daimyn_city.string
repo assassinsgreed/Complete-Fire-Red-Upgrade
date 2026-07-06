@@ -1539,16 +1539,16 @@ Aw, nuts!
 [BLUE]Hahaha!\pAwe, man! You're just too strong for\nme, [PLAYER]!\pI'm glad we were able to go all\nout.\pI'm going to go train some more, and\nthen I'll become the next Champion\lfor sure!\pUntil then, [PLAYER]!
 
 #org @gText_AscensionTower_TitleDefenseChallenger_Joey_Intro
-[BLUE]This is it[.] It's really it[.]\nThe Champion!\pOh[.] Focus up, Joey[.]\pY'know, they used to laugh at me and\nmy Rattatas.\pBut look at me now. I'm at the top\nof the world!
+[BLUE]This is it[.] It's really it[.]\nThe Champion!\pOh[.] Focus up, Joey[.]\pY'know, they used to laugh at me and\nmy Pok\emon.\pBut look at me now. I'm at the top\nof the world!
 
 #org @gText_AscensionTower_TitleDefenseChallenger_Joey_PreBattle
-[BLUE]I'll prove to you why my Rattatas\nare in the top percentile!
+[BLUE]I'll prove to you why my Pok\emon\nare in the top percentile!
 
 #org @gText_AscensionTower_TitleDefenseChallenger_Joey_PostBattle
-N-No! My Rattatas!
+N-No! My Pok\emon!
 
 #org @gText_AscensionTower_TitleDefenseChallenger_Joey_Defeat
-[BLUE]I can't believe we lost!\pWe can take this in stride, though.\pIt just means that my Rattata and I\nbetter get back to training.\pWe'll show the whole world how\nstrong we are someday!
+[BLUE]I can't believe we lost!\pWe can take this in stride, though.\pIt just means that my Pok\emon and I\nbetter get back to training.\pWe'll show the whole world how\nstrong we are someday!
 
 #org @gText_AscensionTower_TitleDefenseChallenger_Selene_Intro
 [RED]Hey there, Champion [PLAYER]!\pLooks like you've settled into the\nrole of Champion quite comfortably.\pYou know what that means, don't\nyou?\pYou're the strongest trainer in the\nregion, the one everyone wants to\lbeat!\p[.] Including me!

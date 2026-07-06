@@ -87,7 +87,14 @@ EventScript_VarisiForest_SurprisedTrainer:
 
 .global EventScript_VarisiForest_TimeOfDay
 EventScript_VarisiForest_TimeOfDay:
-    npcchatwithmovement gText_VarisiForest_TimeOfDay m_LookRight
+    msgbox gText_VarisiForest_TimeOfDay MSG_NORMAL
+    checkflag 0x945 @ Divergent Mode
+    if SET _goto DNS_Divergent
+    npcchatwithmovement gText_VarisiForest_TimeOfDay_Pikipek m_LookRight
+    end
+
+DNS_Divergent:
+    npcchatwithmovement gText_VarisiForest_TimeOfDay_Caterpie m_LookRight
     end
 
 .global EventScript_VarisiForest_FriendlyTrainer
@@ -109,15 +116,27 @@ EventScript_VarisiForest_FoongusEncounter2:
 
 FoongusEncounter:
     lock
+    checkflag 0x945 @ Divergent Mode
+    if SET _goto VoltorbEncounter
     checksound
     cry SPECIES_FOONGUS 0x0
     sound 0x15 @ Exclaim
     applymovement PLAYER m_Surprise
-    msgbox gText_Common_FoongusOrAmoongussTrap MSG_KEEPOPEN
+    msgbox gText_Common_PokeballTrap MSG_KEEPOPEN
     wildbattle SPECIES_FOONGUS 0x7 0x0
     hidesprite LASTTALKED
     release
     return
+
+VoltorbEncounter:
+    cry SPECIES_VOLTORB 0x0
+    sound 0x15 @ Exclaim
+    applymovement PLAYER m_Surprise
+    msgbox gText_Common_PokeballTrap MSG_KEEPOPEN
+    wildbattle SPECIES_VOLTORB 0x7 0x0
+    hidesprite LASTTALKED
+    release
+    end
 
 .global EventScript_VarisiForest_UltraWormhole_Kartana
 EventScript_VarisiForest_UltraWormhole_Kartana:

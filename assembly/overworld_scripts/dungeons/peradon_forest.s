@@ -95,7 +95,7 @@ AmoongussEncounter:
     cry SPECIES_AMOONGUSS 0x0
     sound 0x15 @ Exclaim
     applymovement PLAYER m_Surprise
-    msgbox gText_Common_FoongusOrAmoongussTrap MSG_KEEPOPEN
+    msgbox gText_Common_PokeballTrap MSG_KEEPOPEN
     wildbattle SPECIES_AMOONGUSS 40 0x0
     hidesprite LASTTALKED
     release
@@ -107,7 +107,7 @@ FoongusEncounter:
     cry SPECIES_FOONGUS 0x0
     sound 0x15 @ Exclaim
     applymovement PLAYER m_Surprise
-    msgbox gText_Common_FoongusOrAmoongussTrap MSG_KEEPOPEN
+    msgbox gText_Common_PokeballTrap MSG_KEEPOPEN
     wildbattle SPECIES_FOONGUS 38 0x0
     hidesprite LASTTALKED
     release

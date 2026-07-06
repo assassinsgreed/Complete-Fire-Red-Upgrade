@@ -18,10 +18,10 @@ My cute Pok\emon!
 Make sure you take good care of\nyour Pok\emon!\pIf they're hurt, take them to a\nPok\emon Center.
 
 #org @gText_Route1_YoungsterHarlan_Intro
-I've had Yamper as my Pok\emon since\nI was a baby!
+I've had my Pok\emon since I was a\nbaby!
 
 #org @gText_Route1_YoungsterHarlan_Defeat
-Yamper isn't used to Pok\emon battles\nyet[.]
+Hey, he isn't used to Pok\emon battles\nyet[.]
 
 #org @gText_Route1_YoungsterHarlan_Chat
 Many trainers start their journeys\nfrom Anthra Town or Olenic Town.
@@ -30,7 +30,10 @@ Many trainers start their journeys\nfrom Anthra Town or Olenic Town.
 My love lives across the sea. If\nonly I had a Pok\emon that could\lSurf! Then I could visit her.
 
 #org @gText_Route1_SandygastEncounter
-The sandcastle was actually a\nPok\emon! The startled Pok\emon\lattacked!
+The sandcastle was actually a\nPok\emon!\lThe startled Pok\emon attacked!
+
+#org @gText_Route1_DiglettEncounter
+A Pok\emon was hiding in the\nsandcastle!\lThe startled Pok\emon attacked!
 
 #org @gText_Route1_SwimmerRebecca_Intro
 If you can beat me, I'll tell you\nsomething cool.\pGood deal, right? Let's go!
@@ -58,7 +61,7 @@ I only have one Pok\emon, but he's\nthe strongest one ever!
 What? That's not possible! You\ncheated!
 
 #org @gText_Route2_YoungsterJoey_Chat
-My Rattata is the strongest one in\nthe world. How did you beat it?
+My Pok\emon is the strongest one in\nthe world. How did you beat it?
 
 #org @gText_Route2_LassKimberly_Intro
 You're a new trainer, right? Let's\nbattle!
@@ -76,7 +79,7 @@ Did you know the same kind of\nPok\emon can look different?
 Even though they looked different,\nthe outcome was the same[.]
 
 #org @gText_Route2_LassRikki_Chat
-Weren't my Flab\eb\e's pretty?
+Weren't my babies pretty?
 
 #org @gText_Route2_CoolTrainerAndy_Intro
 What's a cool guy like me doing in a\ncool place like this? Beat me and\lmaybe I'll tell you!
@@ -88,7 +91,7 @@ No way! I didn't think you could\nactually do it!
 Alright, I'll tell you why I'm here.\nIt's peaceful and I like the\lsolitude.
 
 #org @gText_Route2_TrainerTips
-Trainer Tips!\pThe Old Rod usually hooks Magikarp,\nbut can catch other Pok\emon\las well.\pSeasoned fishermen know to\ncheck every body of water for\lnew Pok\emon.
+Trainer Tips!\pThe Old Rod can catch different\nPok\emon.\pSeasoned fishermen know to\ncheck every body of water for\lnew Pok\emon.
 
 #org @gText_Route2_CatchingTutorial_RivalGreetsPlayer
 [BLACK][RIVAL]: [BLUE]Oh, [PLAYER]!

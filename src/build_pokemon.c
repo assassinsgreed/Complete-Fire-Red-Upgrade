@@ -1252,6 +1252,8 @@ static u8 GetTrainerMonGender(struct Trainer* trainer)
 		case CLASS_RIVAL:
 		case CLASS_RIVAL_2:
 		case CLASS_BOSS:
+		case CLASS_LASS:
+		case CLASS_BEAUTY:
 		#ifdef UNBOUND
 		case CLASS_LOR:
 		case CLASS_SUCCESSOR:

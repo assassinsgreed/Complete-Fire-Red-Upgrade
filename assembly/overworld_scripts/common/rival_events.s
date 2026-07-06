@@ -105,11 +105,11 @@ EventScript_RivalEvent3:
     waitfanfare
     random 0x3 @ Random between 0 and 3
     compare LASTRESULT 0x0
-    if equal _call RivalEvent3_SetLitleoEgg
+    if equal _call RivalEvent3_SetLitleoOrAipomEgg
     compare LASTRESULT 0x1
-    if equal _call RivalEvent3_SetShellosEgg
+    if equal _call RivalEvent3_SetShellosOrImpidimpEgg
     compare LASTRESULT 0x2
-    if equal _call RivalEvent3_SetScraggyEgg
+    if equal _call RivalEvent3_SetScraggyOrSphealEgg
     callasm GiveCustomEgg
     setflag 0x2C2 @ Traded with Rival
     goto RivalEvent3_TradeConcluded
@@ -126,19 +126,37 @@ RivalEvent3_BackedOutOnEgg:
     msgbox gText_RivalEvent3_RejectedEggChoice MSG_NORMAL
     goto End
 
-RivalEvent3_SetLitleoEgg:
+RivalEvent3_SetLitleoOrAipomEgg:
     setvar 0x8005 SPECIES_LITLEO
     setvar 0x8006 0x8
+    checkflag 0x945 @ Divergent Mode
+    if SET _call OverrideEggToAipom
     return
 
-RivalEvent3_SetShellosEgg:
+RivalEvent3_SetShellosOrImpidimpEgg:
     setvar 0x8005 SPECIES_SHELLOS
     setvar 0x8006 0x9
+    checkflag 0x945 @ Divergent Mode
+    if SET _call OverrideEggToImpidimp
     return
 
-RivalEvent3_SetScraggyEgg:
+RivalEvent3_SetScraggyOrSphealEgg:
     setvar 0x8005 SPECIES_SCRAGGY
     setvar 0x8006 0xA
+    checkflag 0x945 @ Divergent Mode
+    if SET _call OverrideEggToSpheal
+    return
+
+OverrideEggToAipom:
+    setvar 0x8005 SPECIES_AIPOM
+    return
+
+OverrideEggToImpidimp:
+    setvar 0x8005 SPECIES_IMPIDIMP
+    return
+
+OverrideEggToSpheal:
+    setvar 0x8005 SPECIES_SPHEAL
     return
 
 RivalEvent3_TradeConcluded:

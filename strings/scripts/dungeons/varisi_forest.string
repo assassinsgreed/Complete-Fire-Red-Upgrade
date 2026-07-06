@@ -47,7 +47,13 @@ Here, I have a spare. Take it!
 I'm surprised to see you here.\nMost trainers don't come this way.\pTheir loss though!\nIt's a nice shortcut.
 
 #org @gText_VarisiForest_TimeOfDay
-Some Pok\emon only appear during\ncertain times of day.\pFor example, you'll only find\nPikipek in Varisi Forest during the\lday.
+Some Pok\emon only appear during\ncertain times of day.
+
+#org @gText_VarisiForest_TimeOfDay_Pikipek
+For example, you'll only find\nPikipek in Varisi Forest during the\lday.
+
+#org @gText_VarisiForest_TimeOfDay_Caterpie
+For example, you'll only find\nCaterpie in Varisi Forest during the\lday.
 
 #org @gText_VarisiForest_FriendlyTrainer
 Oh, you're going on an adventure with\nyour friend? How nice! Make sure\lyou enjoy it.

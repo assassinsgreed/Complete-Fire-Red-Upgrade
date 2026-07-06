@@ -38,7 +38,13 @@ Oh, good! You and your\nPok\emon are looking great.\lTake care now!
 [BLUE]Whaaaat? We've been planning this for\nages! How could you forget?
 
 #org @gText_AnthraTown_RivalExplainingChampionSeleneComing
-[BLUE]Champion Selene is coming to Anthra\nTown today to do field research\lwith Professor Hawthorne!\pToday is our best chance to get\nher autograph. Can you believe our\lluck?\pI already talked to your mom, and\nyou're covered. Come on, let's\lgo! Last one there is a rotten\lTogepi!
+[BLUE]Champion Selene is coming to Anthra\nTown today to do field research\lwith Professor Hawthorne!\pToday is our best chance to get\nher autograph. Can you believe our\lluck?\pI already talked to your mom, and\nyou're covered.
+
+#org @gText_AnthraTown_RivalExplainingChampionSeleneComing_RaceStandard
+[BLUE]Come on, let's go!\nLast one there is a rotten Togepi!
+
+#org @gText_AnthraTown_RivalExplainingChampionSeleneComing_RaceDivergent
+[BLUE]Come on, let's go!\nLast one there is a rotten\lExeggcute!
 
 #org @gText_AnthraTown_RivalPause
 [BLUE]Oh!

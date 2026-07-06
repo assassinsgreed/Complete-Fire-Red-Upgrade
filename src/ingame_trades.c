@@ -320,7 +320,7 @@ static const struct InGameTrade sInGameTrades_Divergent[] = {
         .otName = gText_InGameTrade_OTMillie,
         .otGender = FEMALE,
         .nature = NATURE_BOLD,
-        .requestedSpecies = SPECIES_VANILLISH
+        .requestedSpecies = SPECIES_VANILLITE
     },
     [INGAME_TRADE_DIVERGENT_JYNX] = {
         .nickname = gText_InGameTrade_Divergent_Diva,

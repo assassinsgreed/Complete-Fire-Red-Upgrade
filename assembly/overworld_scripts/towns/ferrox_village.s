@@ -326,13 +326,21 @@ EventScript_FerroxNPCHouses_TutorsInTowns:
 
 .global EventScript_FerroxNPCHouses_TradeGirlDad
 EventScript_FerroxNPCHouses_TradeGirlDad:
+    checkflag 0x945 @ Divergent Mode
+    if SET _goto TraderGirlDadDivergent
     npcchatwithmovement gText_FerroxNPCHouses_TradeGirlDad m_LookRight
+    end
+
+TraderGirlDadDivergent:
+    npcchatwithmovement gText_FerroxNPCHouses_TradeGirlDad_Divergent m_LookRight
     end
 
 .global EventScript_FerroxNPCHouses_ChinchouTrade
 EventScript_FerroxNPCHouses_ChinchouTrade:
     lock
     faceplayer
+    checkflag 0x945 @ Divergent Mode
+    if SET _goto MagnemiteTrade
     checkflag 0x248
     if SET _goto EventScript_ChinchouTradeComplete
     msgbox gText_FerroxNPCHouses_ChinchouTrade_Request MSG_YESNO
@@ -364,6 +372,35 @@ EventScript_ChinchouTradeWrongPokemon:
 
 EventScript_ChinchouTradeComplete:
     msgbox gText_FerroxNPCHouses_ChinchouTrade_Complete MSG_NORMAL
+    goto End
+
+MagnemiteTrade:
+    checkflag 0x248
+    if SET _goto EventScript_MagnemiteTradeComplete
+    msgbox gText_FerroxNPCHouses_MagnemiteTrade_Request_Divergent MSG_YESNO
+    compare LASTRESULT NO
+    if TRUE _goto EventScript_ChinchouTradeDeclined
+    setvar 0x8008 13 @ Set Trade #13 (Magnemite)
+    copyvar 0x8004 0x8008 @ Set expected mon from Trade #13 (Vanillish)
+    special2 LASTRESULT 0xFC // Checks the trade set in 0x8004 and buffers the name of the Pokemon wanted and the given Pokemon
+    copyvar 0x8009 LASTRESULT
+    call SelectTradePokemon
+    compare 0x8004 0x6
+    if greaterorequal _goto EventScript_ChinchouTradeDeclined
+    call CheckTradePokemonSelected
+    comparevars LASTRESULT 0x8009
+    if notequal _goto EventScript_MagnemiteTradeWrongPokemon
+    msgbox gText_FerroxNPCHouses_ChinchouTrade_InitiatingTrade MSG_NORMAL
+    call InitiateTrade
+    setflag 0x248
+    goto EventScript_MagnemiteTradeComplete
+
+EventScript_MagnemiteTradeWrongPokemon:
+    msgbox gText_FerroxNPCHouses_MagnemiteTrade_WrongPokemon_Divergent MSG_NORMAL
+    goto End
+
+EventScript_MagnemiteTradeComplete:
+    msgbox gText_FerroxNPCHouses_MagnemiteTrade_Complete_Divergent MSG_NORMAL
     goto End
 
 @ Gym
@@ -689,6 +726,9 @@ EventScript_FerroxLibrary_Alistair:
     msgbox gText_FerroxLibrary_Plot_AlistairIntroducesHimself MSG_NORMAL
     msgbox gText_FerroxLibrary_Plot_RivalAsksWhatAlistairIsStudying MSG_NORMAL
     msgbox gText_FerroxLibrary_Plot_AlistairDeadEnds MSG_NORMAL
+    checkflag 0x945 @ Divergent Mode
+    if NOT_SET _call AlistairHintsAtVolcanion
+    if SET _call AlistairHintsAtHeatran
     sound 0x15 @ Exclaim
     applymovement Alistair m_Surprise
     msgbox gText_FerroxLibrary_Plot_AlistairNoticesTheTime MSG_NORMAL
@@ -764,6 +804,14 @@ MovePlayerDown:
 MovePlayerUp:
     applymovement PLAYER m_WalkUp
     waitmovement ALLEVENTS
+    return
+
+AlistairHintsAtVolcanion:
+    msgbox gText_FerroxLibrary_Plot_AlistairDeadEnds_Volcanion MSG_NORMAL
+    return
+
+AlistairHintsAtHeatran:
+    msgbox gText_FerroxLibrary_Plot_AlistairDeadEnds_Heatran MSG_NORMAL
     return
 
 AgreeWithRival:

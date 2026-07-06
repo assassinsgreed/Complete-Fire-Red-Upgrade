@@ -46,6 +46,8 @@ EventScript_Route1_LonelyMan:
 .global EventScript_Route1_SandygastEncounter
 EventScript_Route1_SandygastEncounter:
     lock
+    checkflag 0x945 @ Divergent mode
+    if SET _goto DiglettEncounter
     checksound
     cry SPECIES_SANDYGAST 0x0
     sound 0x15 @ Exclaim
@@ -53,6 +55,17 @@ EventScript_Route1_SandygastEncounter:
     msgbox gText_Route1_SandygastEncounter MSG_KEEPOPEN
     setflag 0xE00
     wildbattle SPECIES_SANDYGAST 0x5 0x0
+    release
+    end
+
+DiglettEncounter:
+    checksound
+    cry SPECIES_DIGLETT_A 0x0
+    sound 0x15 @ Exclaim
+    applymovement PLAYER m_Surprise
+    msgbox gText_Route1_DiglettEncounter MSG_KEEPOPEN
+    setflag 0xE00
+    wildbattle SPECIES_DIGLETT_A 0x5 0x0
     release
     end
 
@@ -157,7 +170,9 @@ TileScript_Route2_CapturingPokemonRight:
     sound 0x15 @ Exclaim
     applymovement CatchingTutorialRival m_Surprise
     msgbox gText_Route2_CatchingTutorialIntro_RivalFindsAPokemon MSG_NORMAL
-    setvar 0x8004 SPECIES_ROOKIDEE
+    checkflag 0x945 @ Divergent mode
+    if NOT_SET _call SetCatchingTutorialRookidee
+    if SET _call SetCatchingTutorialPidgey
     setvar 0x8005 5
     special 0x9C @ Catching tutorial
     waitstate
@@ -171,6 +186,14 @@ TileScript_Route2_CapturingPokemonRight:
     playbgm 0x123 0x1 @ Main route theme, permanent
     addvar 0x40FF 0x1
     end
+
+SetCatchingTutorialRookidee:
+    setvar 0x8004 SPECIES_ROOKIDEE
+    return
+
+SetCatchingTutorialPidgey:
+    setvar 0x8004 SPECIES_PIDGEY
+    return
 
 m_RivalWalkDownTowardPlayer: .byte walk_down, walk_down, walk_down, walk_down, end_m
 m_RivalMeetsPlayerForCapturingTutorial: .byte walk_down, walk_down, end_m
@@ -837,21 +860,21 @@ ReceivePokemonEgg:
     msgbox gText_Route5_EggGiver_ReceiveEggComment MSG_NORMAL
     copyvar 0x8006 0x408C @ Copy index of the player's grass starter gen into egg var
     compare 0x8006 0x0
-    if equal _call SetPichu
+    if equal _call SetPichuOrCleffa
     compare 0x8006 0x1
-    if equal _call SetTogepi
+    if equal _call SetTogepiOrTyrogue
     compare 0x8006 0x2
-    if equal _call SetWynaut
+    if equal _call SetWynautOrZangoose
     compare 0x8006 0x3
-    if equal _call SetRiolu
+    if equal _call SetRioluOrShinx
     compare 0x8006 0x4
-    if equal _call SetLarvesta
+    if equal _call SetLarvestaOrTrubbish
     compare 0x8006 0x5
-    if equal _call SetHappiny
+    if equal _call SetHappinyOrPancham
     compare 0x8006 0x6
-    if equal _call SetEevee
+    if equal _call SetEeveeOrDewpider
     compare 0x8006 0x7
-    if equal _call SetToxel
+    if equal _call SetToxelOrApplin
     callasm GiveCustomEgg
     setflag 0x233 @ Received custom egg
     return
@@ -864,36 +887,84 @@ PartyFull:
     msgbox gText_Route5_EggGiver_NoRoomForEgg MSG_NORMAL
     goto ResetEggMan
 
-SetPichu:
+SetPichuOrCleffa:
     setvar 0x8005 SPECIES_PICHU
+    checkflag 0x945 @ Divergent mode
+    if SET _call OverrideEggCleffa
     return
 
-SetTogepi:
+SetTogepiOrTyrogue:
     setvar 0x8005 SPECIES_TOGEPI
+    checkflag 0x945 @ Divergent mode
+    if SET _call OverrideEggTyrogue
     return
 
-SetWynaut:
+SetWynautOrZangoose:
     setvar 0x8005 SPECIES_WYNAUT
+    checkflag 0x945 @ Divergent mode
+    if SET _call OverrideEggZangoose
     return
 
-SetRiolu:
+SetRioluOrShinx:
     setvar 0x8005 SPECIES_RIOLU
+    checkflag 0x945 @ Divergent mode
+    if SET _call OverrideEggShinx
     return
 
-SetLarvesta:
+SetLarvestaOrTrubbish:
     setvar 0x8005 SPECIES_LARVESTA
+    checkflag 0x945 @ Divergent mode
+    if SET _call OverrideEggTrubbish
     return
 
-SetHappiny:
+SetHappinyOrPancham:
     setvar 0x8005 SPECIES_HAPPINY
+    checkflag 0x945 @ Divergent mode
+    if SET _call OverrideEggPancham
     return
 
-SetEevee:
+SetEeveeOrDewpider:
     setvar 0x8005 SPECIES_EEVEE
+    checkflag 0x945 @ Divergent mode
+    if SET _call OverrideEggDewpider
     return
 
-SetToxel:
+SetToxelOrApplin:
     setvar 0x8005 SPECIES_TOXEL
+    checkflag 0x945 @ Divergent mode
+    if SET _call OverrideEggApplin
+    return
+
+OverrideEggCleffa:
+    setvar 0x8005 SPECIES_CLEFFA
+    return
+
+OverrideEggTyrogue:
+    setvar 0x8005 SPECIES_TYROGUE
+    return
+
+OverrideEggZangoose:
+    setvar 0x8005 SPECIES_ZANGOOSE
+    return
+
+OverrideEggShinx:
+    setvar 0x8005 SPECIES_SHINX
+    return
+
+OverrideEggTrubbish:
+    setvar 0x8005 SPECIES_TRUBBISH
+    return
+
+OverrideEggPancham:
+    setvar 0x8005 SPECIES_PANCHAM
+    return
+
+OverrideEggDewpider:
+    setvar 0x8005 SPECIES_DEWPIDER
+    return
+
+OverrideEggApplin:
+    setvar 0x8005 SPECIES_APPLIN
     return
 
 CheckForOvalCharmGift:
