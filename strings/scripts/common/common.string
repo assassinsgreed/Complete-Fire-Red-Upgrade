@@ -386,6 +386,36 @@ Boomer
 #org @gText_InGameTrade_Strawberry
 Strawberry
 
+#org @gText_InGameTrade_Divergent_Tommy
+Tommy
+
+#org @gText_InGameTrade_Divergent_Diva
+Diva
+
+#org @gText_InGameTrade_Divergent_Otto
+Otto
+
+#org @gText_InGameTrade_Divergent_Tsu
+Tsu
+
+#org @gText_InGameTrade_Divergent_Peeks
+Peeks
+
+#org @gText_InGameTrade_Divergent_Chompy
+Chompy
+
+#org @gText_InGameTrade_Divergent_Bruce
+Bruce
+
+#org @gText_InGameTrade_Divergent_Raspberry
+Raspberry
+
+#org @gText_InGameTrade_Divergent_Cookie
+Cookie
+
+#org @gText_InGameTrade_Divergent_Tina
+Tina
+
 #org @gText_InGameTrade_OTSylvestre
 Sylvestre
 
@@ -403,6 +433,9 @@ Rival
 
 #org @gText_InGameTrade_Boris
 Boris
+
+#org @gText_InGameTrade_Tina
+Tina
 
 #org @gText_InGameTrade_OTWinona
 Winona

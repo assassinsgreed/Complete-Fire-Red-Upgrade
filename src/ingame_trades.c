@@ -45,6 +45,18 @@ extern u8 gText_InGameGift_Victini[];
 extern u8 gText_InGameGift_OTAether[];
 extern u8 gText_InGameGift_TypeNull[];
 
+// Divergent nicknames
+extern u8 gText_InGameTrade_Divergent_Tommy[];
+extern u8 gText_InGameTrade_Divergent_Diva[];
+extern u8 gText_InGameTrade_Divergent_Otto[];
+extern u8 gText_InGameTrade_Divergent_Tsu[];
+extern u8 gText_InGameTrade_Divergent_Peeks[];
+extern u8 gText_InGameTrade_Divergent_Chompy[];
+extern u8 gText_InGameTrade_Divergent_Bruce[];
+extern u8 gText_InGameTrade_Divergent_Raspberry[];
+extern u8 gText_InGameTrade_Divergent_Cookie[];
+extern u8 gText_InGameTrade_Divergent_Tina[];
+
 static const struct InGameTrade sInGameTrades[] = {
     [INGAME_TRADE_CHINCHOU] = 
     {
@@ -292,6 +304,206 @@ static const struct InGameTrade sInGameGifts[] = {
     }
 };
 
+// Divergent trades
+static const struct InGameTrade sInGameTrades_Divergent[] = {
+    [INGAME_TRADE_DIVERGENT_MAGNEMITE] = 
+    {
+        .nickname = gText_InGameTrade_Divergent_Tommy,
+        .species = SPECIES_MAGNEMITE,
+        .ivs = {23, 12, 19, 23, 29, 17},
+        .abilityNum = 1, // Sturdy
+        .otId = 1999,
+        .conditions = {5, 5, 5, 30, 5},
+        .personality = 0x00009cae,
+        .heldItem = ITEM_NONE,
+        .mailNum = 0,
+        .otName = gText_InGameTrade_OTMillie,
+        .otGender = FEMALE,
+        .nature = NATURE_BOLD,
+        .requestedSpecies = SPECIES_VANILLISH
+    },
+    [INGAME_TRADE_DIVERGENT_JYNX] = {
+        .nickname = gText_InGameTrade_Divergent_Diva,
+        .species = SPECIES_JYNX,
+        .ivs = {21, 18, 25, 28, 12, 19},
+        .abilityNum = 0, // Oblivious
+        .otId = 90210,
+        .conditions = {10, 15, 10, 30, 5},
+        .personality = 0x498a2e1d,
+        .heldItem = ITEM_SITRUS_BERRY,
+        .mailNum = 0,
+        .otName = gText_InGameTrade_OTSylvestre,
+        .otGender = MALE,
+        .nature = NATURE_TIMID,
+        .requestedSpecies = SPECIES_POLIWHIRL
+    },
+    [INGAME_TRADE_DIVERGENT_XATU] = {
+        .nickname = gText_InGameTrade_Divergent_Otto,
+        .species = SPECIES_XATU,
+        .ivs = {23, 22, 19, 21, 15, 19},
+        .abilityNum = 0, // Synchronize
+        .otId = 90210,
+        .conditions = {20, 10, 20, 20, 30},
+        .personality = 0x4c970b89,
+        .heldItem = ITEM_SITRUS_BERRY,
+        .mailNum = 0,
+        .otName = gText_InGameTrade_OTSylvestre,
+        .otGender = MALE,
+        .nature = NATURE_MODEST,
+        .requestedSpecies = SPECIES_HAUNTER
+    },
+    [INGAME_TRADE_DIVERGENT_MAKUHITA] = {
+        .nickname = gText_InGameTrade_Divergent_Tsu,
+        .species = SPECIES_MAKUHITA,
+        .ivs = {29, 15, 19, 19, 24, 9},
+        .abilityNum = 0, // Thick Fat
+        .otId = 90210,
+        .conditions = {5, 15, 15, 10, 20},
+        .personality = 0x151943d7,
+        .heldItem = ITEM_SITRUS_BERRY,
+        .mailNum = 0,
+        .otName = gText_InGameTrade_OTSylvestre,
+        .otGender = MALE,
+        .nature = NATURE_BRAVE,
+        .requestedSpecies = SPECIES_SENTRET
+    },
+    [INGAME_TRADE_DIVERGENT_HAUNTER] = {
+        .nickname = gText_InGameTrade_Divergent_Peeks,
+        .species = SPECIES_HAUNTER,
+        .ivs = {12, 17, 24, 27, 25, 19},
+        .abilityNum = 0, // Levitate
+        .otId = 90210,
+        .conditions = {10, 10, 5, 10, 15},
+        .personality = 0x00eeca15,
+        .heldItem = ITEM_SITRUS_BERRY,
+        .mailNum = 0,
+        .otName = gText_InGameTrade_OTSylvestre,
+        .otGender = MALE,
+        .nature = NATURE_NAUGHTY,
+        .requestedSpecies = SPECIES_MEDICHAM
+    },
+    [INGAME_TRADE_DIVERGENT_MUNCHLAX] = {
+        .nickname = gText_InGameTrade_Divergent_Chompy,
+        .species = SPECIES_MUNCHLAX,
+        .ivs = {24, 17, 18, 9, 29, 27},
+        .abilityNum = 0, // Pickup
+        .otId = 90210,
+        .conditions = {15, 20, 5, 5, 30},
+        .personality = 0x451308ab,
+        .heldItem = ITEM_SITRUS_BERRY,
+        .mailNum = 0,
+        .otName = gText_InGameTrade_OTSylvestre,
+        .otGender = MALE,
+        .nature = NATURE_JOLLY,
+        .requestedSpecies = SPECIES_DITTO
+    },
+    [INGAME_TRADE_DIVERGENT_STEELIX] = {
+        .nickname = gText_InGameTrade_Divergent_Bruce,
+        .species = SPECIES_STEELIX,
+        .ivs = {17, 24, 28, 22, 16, 13},
+        .abilityNum = 0, // Rock Head
+        .otId = 90210,
+        .conditions = {20, 20, 10, 10, 15},
+        .personality = 0x06341016,
+        .heldItem = ITEM_SITRUS_BERRY,
+        .mailNum = 0,
+        .otName = gText_InGameTrade_OTSylvestre,
+        .otGender = MALE,
+        .nature = NATURE_ADAMANT,
+        .requestedSpecies = SPECIES_VILEPLUME
+    },
+    [INGAME_TRADE_DIVERGENT_STEENEE] = {
+        .nickname = gText_InGameTrade_Divergent_Raspberry,
+        .species = SPECIES_STEENEE,
+        .ivs = {14, 23, 17, 19, 22, 26},
+        .abilityNum = 0, // Leaf Guard
+        .otId = 90210,
+        .conditions = {5, 5, 25, 20, 15},
+        .personality = 0x5c77ecfa,
+        .heldItem = ITEM_SITRUS_BERRY,
+        .mailNum = 0,
+        .otName = gText_InGameTrade_OTSylvestre,
+        .otGender = MALE,
+        .nature = NATURE_SASSY,
+        .requestedSpecies = SPECIES_GRANBULL
+    },
+    [INGAME_TRADE_DIVERGENT_MEOWTH] = {
+        .nickname = gText_InGameTrade_Divergent_Cookie,
+        .species = SPECIES_MEOWTH,
+        .ivs = {19, 27, 19, 21, 16, 22},
+        .abilityNum = 0, // Pickup
+        .otId = 90210,
+        .conditions = {10, 5, 10, 15, 30},
+        .personality = 0x5c77ecfa,
+        .heldItem = ITEM_SITRUS_BERRY,
+        .mailNum = 0,
+        .otName = gText_InGameTrade_OTSylvestre,
+        .otGender = MALE,
+        .nature = NATURE_BASHFUL,
+        .requestedSpecies = SPECIES_MEOWTH_G
+    },
+    [INGAME_TRADE_DIVERGENT_GRAVELER_A] = {
+        .nickname = gText_InGameTrade_Rocky,
+        .species = SPECIES_GRAVELER_A,
+        .ivs = {24, 17, 26, 8, 23, 13},
+        .abilityNum = 0xFF, // Galvanize (Hidden)
+        .otId = 35846,
+        .conditions = {15, 15, 20, 10, 25},
+        .personality = 0x451308ab,
+        .heldItem = ITEM_SITRUS_BERRY,
+        .mailNum = 0,
+        .otName = gText_InGameTrade_OTRival,
+        .otGender = MALE,
+        .nature = NATURE_IMPISH,
+        .requestedSpecies = SPECIES_NONE // Species check is skipped
+    },
+    [INGAME_TRADE_DIVERGENT_MACHOKE] = {
+        .nickname = gText_InGameTrade_Chopper,
+        .species = SPECIES_MACHOKE,
+        .ivs = {25, 29, 22, 10, 18, 5},
+        .abilityNum = 0xFF, // Steadfast (Hidden)
+        .otId = 35846,
+        .conditions = {30, 25, 10, 15, 10},
+        .personality = 0x451308ab,
+        .heldItem = ITEM_SITRUS_BERRY,
+        .mailNum = 0,
+        .otName = gText_InGameTrade_OTRival,
+        .otGender = MALE,
+        .nature = NATURE_ADAMANT,
+        .requestedSpecies = SPECIES_NONE // Species check is skipped
+    },
+    [INGAME_TRADE_DIVERGENT_KADABRA] = {
+        .nickname = gText_InGameTrade_Autumn,
+        .species = SPECIES_KADABRA,
+        .ivs = {23, 18, 26, 17, 22, 16},
+        .abilityNum = 0xFF, // Magic Guard (Hidden)
+        .otId = 35846,
+        .conditions = {20, 15, 15, 10, 25},
+        .personality = 0x451308ab,
+        .heldItem = ITEM_SITRUS_BERRY,
+        .mailNum = 0,
+        .otName = gText_InGameTrade_OTRival,
+        .otGender = FEMALE,
+        .nature = NATURE_TIMID,
+        .requestedSpecies = SPECIES_NONE // Species check is skipped
+    },
+    [INGAME_TRADE_DIVERGENT_RAPIDASH_G] = {
+        .nickname = gText_InGameTrade_Divergent_Tina,
+        .species = SPECIES_SLOWBRO,
+        .ivs = {28, 24, 18, 22, 23, 8},
+        .abilityNum = 0xFF, // Anticipation (Hidden)
+        .otId = 79525,
+        .conditions = {5, 10, 10, 25, 20},
+        .personality = 0x4c970b89,
+        .heldItem = ITEM_BERRY_JUICE,
+        .mailNum = 0,
+        .otName = gText_InGameTrade_OTWinona,
+        .otGender = FEMALE,
+        .nature = NATURE_BOLD,
+        .requestedSpecies = SPECIES_RAPIDASH
+    }
+};
+
 extern const u16 sInGameTradeMailMessages[][10];
 
 static void GetInGameTradeMail(struct MailStructDaycare * mail, const struct InGameTrade * inGameTrade)
@@ -324,7 +536,7 @@ void TradeBufferOTnameAndNicknames(void)
     }
     else
     {
-        inGameTrade = &sInGameTrades[Var8004];
+        inGameTrade = FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS) ? &sInGameTrades_Divergent[Var8004] : &sInGameTrades[Var8004];
         StringCopy(gStringVar1, inGameTrade->otName);
         StringCopy_Nickname(gStringVar3, inGameTrade->nickname);
         GetMonData(&gPlayerParty[Var8005], MON_DATA_NICKNAME, nickname);
@@ -337,7 +549,7 @@ u16 GetInGameTradeSpeciesInfo(void)
     // Populates gStringVar1 with the name of the requested species and
     // gStringVar2 with the name of the offered species.
     // Returns the requested species.
-    const struct InGameTrade * inGameTrade = &sInGameTrades[Var8004];
+    const struct InGameTrade * inGameTrade = FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS) ? &sInGameTrades_Divergent[Var8004] : &sInGameTrades[Var8004];
     StringCopy(gStringVar1, gSpeciesNames[inGameTrade->requestedSpecies]);
     StringCopy(gStringVar2, gSpeciesNames[inGameTrade->species]);
     return inGameTrade->requestedSpecies;
@@ -348,7 +560,7 @@ void BufferInGameTradeMonName(void)
     // Populates gStringVar1 with the nickname of the sent Pokemon and
     // gStringVar2 with the name of the offered species.
     u8 nickname[30];
-    const struct InGameTrade * inGameTrade = &sInGameTrades[Var8004];
+    const struct InGameTrade * inGameTrade = FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS) ? &sInGameTrades_Divergent[Var8004] : &sInGameTrades[Var8004];
     GetMonData(&gPlayerParty[Var8005], MON_DATA_NICKNAME, nickname);
     StringCopy_Nickname(gStringVar1, nickname);
     StringCopy(gStringVar2, gSpeciesNames[inGameTrade->species]);
@@ -356,7 +568,7 @@ void BufferInGameTradeMonName(void)
 
 void CreateInGameTradePokemonInternal(u8 playerSlot, u8 inGameTradeIdx)
 {
-    const struct InGameTrade * inGameTrade = &sInGameTrades[inGameTradeIdx];
+    const struct InGameTrade * inGameTrade = FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS) ? &sInGameTrades_Divergent[inGameTradeIdx] : &sInGameTrades[inGameTradeIdx];
     u8 level = GetMonData(&gPlayerParty[playerSlot], MON_DATA_LEVEL, 0);
     struct MailStructDaycare mail;
     u8 metLocation = METLOC_IN_GAME_TRADE;

@@ -23,6 +23,20 @@
 #define INGAME_TRADE_GURDURR   10
 #define INGAME_TRADE_PHANTUMP  11
 #define INGAME_TRADE_SLOWBRO_G 12
+// Divergent
+#define INGAME_TRADE_DIVERGENT_MAGNEMITE 13 // Give Vanillish
+#define INGAME_TRADE_DIVERGENT_JYNX      14 // Give Poliwhirl
+#define INGAME_TRADE_DIVERGENT_XATU      15 // Give Haunter 
+#define INGAME_TRADE_DIVERGENT_MAKUHITA  16 // Give Sentret (in place of Slakoth)
+#define INGAME_TRADE_DIVERGENT_HAUNTER   17 // Give Medicham
+#define INGAME_TRADE_DIVERGENT_MUNCHLAX  18 // Give Ditto (in place of Cinncino)
+#define INGAME_TRADE_DIVERGENT_STEELIX   19 // Give Vileplume (in place of Luvdisc)
+#define INGAME_TRADE_DIVERGENT_STEENEE   20 // Give Granbull 
+#define INGAME_TRADE_DIVERGENT_MEOWTH    21 // Give Meowth-G
+#define INGAME_TRADE_DIVERGENT_GRAVELER_A 22 // Give any
+#define INGAME_TRADE_DIVERGENT_MACHOKE    23 // Give any
+#define INGAME_TRADE_DIVERGENT_KADABRA    24 // Give any
+#define INGAME_TRADE_DIVERGENT_RAPIDASH_G 25 // Give Rapidash
 
 // In-Game Gift IDs
 #define INGAME_GIFT_PIKACHU_ORIGINAL_CAP 0
