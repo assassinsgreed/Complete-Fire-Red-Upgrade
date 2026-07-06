@@ -234,6 +234,13 @@ static const u8 *const sWildEncountersOptions[] =
 static const u16 sOptionMenuItemCounts[MENUITEM_COUNT] = {3, 2, 2, 2, 3, 10, 0};
 static const u16 sOptionMenuItemCounts_SecondPage[MENUITEM_PAGE2_COUNT] = {4, 3, 3, 2, 2, 2, 0}; // # of choices per option, not counting cancel
 
+static u8 Page2VisualRow(u8 menuItem)
+{
+    if (!FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS_OPTION_SHOWN) && menuItem > MENUITEM_WILD_ENCOUNTERS)
+        return menuItem - 1;
+    return menuItem;
+}
+
 void CB2_OptionsMenuFromStartMenu(void)
 {
     u8 i;
@@ -299,7 +306,10 @@ void Task_OptionMenu(u8 taskId)
             BufferOptionMenuString(sOptionMenuPtr->cursorPos);
             break;
         case 3:
-            UpdateSettingSelectionDisplay(sOptionMenuPtr->cursorPos);
+            if (sOptionMenuPtr->page == 1)
+                UpdateSettingSelectionDisplay(Page2VisualRow(sOptionMenuPtr->cursorPos));
+            else
+                UpdateSettingSelectionDisplay(sOptionMenuPtr->cursorPos);
             break;
         case 4:
             BufferOptionMenuString(sOptionMenuPtr->cursorPos);
@@ -360,7 +370,8 @@ void CloseAndSaveOptionMenu(u8 taskId)
     sOptionMenuPtr->option_secondPage[MENUITEM_LEVEL_CAPS] >= OPTIONS_AMETHYST_HARD_LEVEL_CAPS ? FlagSet(FLAG_HARD_LEVEL_CAP) : FlagClear(FLAG_HARD_LEVEL_CAP);
     sOptionMenuPtr->option_secondPage[MENUITEM_SKIP_CUTSCENES] == 1 ? FlagSet(FLAG_SKIP_CUTSCENES) : FlagClear(FLAG_SKIP_CUTSCENES);
     sOptionMenuPtr->option_secondPage[MENUITEM_SKIP_NICKNAMING] == 1 ? FlagSet(FLAG_DONT_OFFER_NICKNAMES_BATTLE) : FlagClear(FLAG_DONT_OFFER_NICKNAMES_BATTLE);
-    sOptionMenuPtr->option_secondPage[MENUITEM_WILD_ENCOUNTERS] == 1 ? FlagSet(FLAG_DIVERGENT_WILD_ENCOUNTERS) : FlagClear(FLAG_DIVERGENT_WILD_ENCOUNTERS);
+    if (FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS_OPTION_SHOWN))
+        sOptionMenuPtr->option_secondPage[MENUITEM_WILD_ENCOUNTERS] == 1 ? FlagSet(FLAG_DIVERGENT_WILD_ENCOUNTERS) : FlagClear(FLAG_DIVERGENT_WILD_ENCOUNTERS);
 
     levelCapChanged = (VarGet(VAR_TEMP_2) != VarGet(VAR_LEVEL_CAPS));
 
@@ -379,6 +390,8 @@ void CloseAndSaveOptionMenu(u8 taskId)
         gFieldCallback = FieldCB_DefaultWarpExit;
         SetMainCallback2(gMain.savedCallback);
     }
+
+    // TODO: Restore item / legendary flags based on mode & pokedex completion
 
     SetPokemonCryStereo(gSaveBlock2->optionsSound);
     FREE_AND_SET_NULL(sOptionMenuPtr);    
@@ -476,6 +489,13 @@ void BufferOptionMenuString(u8 selection)
     }
     else
     {
+        if (selection == MENUITEM_WILD_ENCOUNTERS && !FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS_OPTION_SHOWN))
+            return;
+        if (!FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS_OPTION_SHOWN) && selection > MENUITEM_WILD_ENCOUNTERS)
+        {
+            y = ((GetFontAttribute(2, FONTATTR_MAX_LETTER_HEIGHT) - 1) * (selection - 1)) + 2;
+            FillWindowPixelRect(1, 1, x, y, 0x46, GetFontAttribute(2, FONTATTR_MAX_LETTER_HEIGHT));
+        }
         switch (selection)
         {
             case MENUITEM_AUTOSORTBAG:
@@ -569,12 +589,16 @@ u8 OptionMenu_ProcessInput(void)
         }
         else
         {
-            if (sOptionMenuPtr->cursorPos == MENUITEM_AUTOSORTBAG) // TODO: What to do with this
+            if (sOptionMenuPtr->cursorPos == MENUITEM_AUTOSORTBAG)
                 sOptionMenuPtr->cursorPos = MENUITEM_CANCEL_PAGE_2;
             else
-                sOptionMenuPtr->cursorPos = sOptionMenuPtr->cursorPos - 1;
+            {
+                sOptionMenuPtr->cursorPos--;
+                if (sOptionMenuPtr->cursorPos == MENUITEM_WILD_ENCOUNTERS && !FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS_OPTION_SHOWN))
+                    sOptionMenuPtr->cursorPos--;
+            }
         }
-        return 3;        
+        return 3;
     }
     else if (JOY_REPT(DPAD_DOWN))
     {
@@ -588,9 +612,13 @@ u8 OptionMenu_ProcessInput(void)
         else
         {
             if (sOptionMenuPtr->cursorPos == MENUITEM_CANCEL_PAGE_2)
-                sOptionMenuPtr->cursorPos = MENUITEM_AUTOSORTBAG; // TODO: What to do with this
+                sOptionMenuPtr->cursorPos = MENUITEM_AUTOSORTBAG;
             else
-                sOptionMenuPtr->cursorPos = sOptionMenuPtr->cursorPos + 1;
+            {
+                sOptionMenuPtr->cursorPos++;
+                if (sOptionMenuPtr->cursorPos == MENUITEM_WILD_ENCOUNTERS && !FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS_OPTION_SHOWN))
+                    sOptionMenuPtr->cursorPos++;
+            }
         }
         return 3;
     }
@@ -655,10 +683,14 @@ void LoadOptionMenuItemNames(void)
     }
     else
     {
+        u8 row = 0;
         for (i = 0; i < MENUITEM_PAGE2_COUNT; i++)
         {
-            AddTextPrinterParameterized(WIN_OPTIONS, 2, sOptionMenuItemsNames_SecondPage[i], 8, (u8)((i * (GetFontAttribute(2, FONTATTR_MAX_LETTER_HEIGHT))) + 2) - i, TEXT_SPEED_FF, NULL);       
-        } 
+            if (i == MENUITEM_WILD_ENCOUNTERS && !FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS_OPTION_SHOWN))
+                continue;
+            AddTextPrinterParameterized(WIN_OPTIONS, 2, sOptionMenuItemsNames_SecondPage[i], 8, (u8)((row * (GetFontAttribute(2, FONTATTR_MAX_LETTER_HEIGHT))) + 2) - row, TEXT_SPEED_FF, NULL);
+            row++;
+        }
     }
 }
 

@@ -94,6 +94,7 @@
 #define FLAG_SKIP_CUTSCENES 0x93D //Option to skip cutscenes on or off
 #define FLAG_DONT_OFFER_NICKNAMES_BATTLE 0x93E //Option to skip nickname prompts after catching / hatching a Pokemon
 #define FLAG_DIVERGENT_WILD_ENCOUNTERS 0x945 // Option for whether the standard encounter table or divergent table should be loaded
+#define FLAG_DIVERGENT_WILD_ENCOUNTERS_OPTION_SHOWN 0x946 // Whether the ability to toggle divergent mode in the options page is shown
 
 /*===== Start Menu/Poketools Flags =====*/
 #define FLAG_SYS_BAG_HIDE 0x91B		//Toggle bag off

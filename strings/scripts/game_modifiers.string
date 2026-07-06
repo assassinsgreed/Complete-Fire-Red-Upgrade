@@ -126,6 +126,9 @@ When enabled, Pok\emon instantly\nreach max friendship.
 #org @gText_GameModifiers_EVIVViewer_Description
 When enabled, EVs/IVs can be viewed\nby pressing [A_BUTTON] in the Pok\emon\lSummary screen.\pThis is only supported for Pok\emon in\nthe player's party.
 
+#org @gText_GameModifiers_DivergentToggle_Description
+When enabled, you can swap between\nStandard and Divergent Pok\emon\lselections in the Options Menu.\pThis affects which Pok\emon appear\nin the wild and in trainer teams.\pAfter swapping, you may need to\nreload the map to see certain\lchanges (ex. legendaries).
+
 // Modifier Password Declarations
 
 #org @gText_GameModifiers_RandomizerSpecies_PasswordDeclaration
@@ -185,6 +188,9 @@ The password to unlock this modifier\nin new games is [BLUE]BFFS[BLACK].
 #org @gText_GameModifiers_EVIVViewer_PasswordDeclaration
 The password to unlock this modifier\nin new games is [BLUE]OVER9000[BLACK].
 
+#org @gText_GameModifiers_DivergentToggle_PasswordDeclaration
+The password to unlock this modifier\nin new games is [BLUE]MIRRORMODE[BLACK].
+
 // Unlock Criteria
 
 #org @gText_GameModifiers_UnlockCriteria_CompleteUltraSpaceEpisode
@@ -225,6 +231,9 @@ The password to unlock this modifier\nin new games is [BLUE]OVER9000[BLACK].
 
 #org @gText_GameModifiers_UnlockCriteria_150IVPokemon
 [BLUE]Unlock Criteria: [BLACK]Interact with this PC\nwhile having a Pok\emon with at\lleast 150 IVs, after becoming\lChampion.
+
+#org @gText_GameModifiers_UnlockCriteria_BeatGameInDivergent
+[BLUE]Unlock Criteria: [BLACK]Enter the Hall of\nFame in Divergent Mode.
 
 // Passwords
 #org @gText_GameModifiers_RandomizerSpecies_Password
@@ -283,3 +292,6 @@ BFFS
 
 #org @gText_GameModifiers_EVIVViewer_Password
 OVER9000
+
+#org @gText_GameModifiers_DivergentToggle_Password
+MIRRORMODE

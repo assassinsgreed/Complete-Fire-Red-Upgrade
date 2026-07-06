@@ -666,7 +666,7 @@ Lunala
 Welcome to Pok\emon Amethyst!\pDo you want to customize your\nexperience with the game?
 
 #org @gText_GameCustomization_CustomizationMenu
-Please choose which feature(s) you\nwould like to customize.
+Choose which feature(s) you would\nlike to customize. ([B_BUTTON] to close).
 
 #org @gText_GameCustomization_Complete
 Selections have been saved.\pSome settings can be changed in the\nOptions Menu's second page.\pWe hope you enjoy Pok\emon Amethyst!
@@ -685,6 +685,9 @@ Level Caps
 
 #org @gText_GameCustomizationMenu_StartWithQoLItems
 QoL Items
+
+#org @gText_GameCustomizationMenu_PokemonSelection
+Pok\emon Selection
 
 #org @gText_GameCustomizationMenu_SkipCutscenes
 Skip Cutscenes
@@ -766,6 +769,21 @@ Cutscene skipping is enabled!
 
 #org @gText_GameCustomization_SkipCutscenesTurnedOff
 Cutscene skipping is disabled!
+
+#org @gText_GameCustomization_PokemonSelectionQuestion
+You may choose whether to play with\nthe Standard Pok\emon selection or\lan alternative set.\pWild encounters, trainers, and some\nitems will change depending on your\lchoice.\pStandard is recommended for a first\nplaythrough. Which do you prefer?
+
+#org @gText_GameCustomization_PokemonSelection_Standard
+Standard
+
+#org @gText_GameCustomization_PokemonSelection_Divergent
+Divergent
+
+#org @gText_GameCustomization_PokemonSelection_StandardSet
+Standard Pok\emon selection is set!
+
+#org @gText_GameCustomization_PokemonSelection_DivergentSet
+Divergent Pok\emon selection is set!
 
 ////////////
 // CREDITS

@@ -3203,6 +3203,7 @@ extern const u8 gText_GameModifiers_InstantBattleWeather[];
 extern const u8 gText_GameModifiers_InstantBattleTerrain[];
 extern const u8 gText_GameModifiers_InstantFriendship[];
 extern const u8 gText_GameModifiers_EVIVViewer[];
+extern const u8 gText_GameModifiers_DivergentToggle[];
 
 // Ultra Wormholes
 extern const u8 gText_UltraWormholes_Nihilego[];
@@ -3514,6 +3515,7 @@ static const u8* sGameModifiers[] =
 	gText_GameModifiers_InstantBattleTerrain,
 	gText_GameModifiers_InstantFriendship,
 	gText_GameModifiers_EVIVViewer,
+	gText_GameModifiers_DivergentToggle,
 	gText_End,
 };
 
@@ -4038,6 +4040,10 @@ void ComputeCompletedGameModifierRequirements()
 			break;
 		}
 	}
+
+	// Entered HoF in Divergent Mode
+	if (FlagGet(FLAG_DEFEATED_CHAMPION_SELENE) && FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS))
+		FlagSet(FLAG_GAMEMODIFIER_DIVERGNET_TOGGLE_UNLOCKED);
 }
 
 /// @brief Checks if Type:Null or Silvally is in the party. 1 if true, 0 if false

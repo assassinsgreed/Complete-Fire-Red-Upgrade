@@ -44,6 +44,7 @@ ChoosingModifier:
 	case 16, GameModifiers_InstantBattleTerrain
 	case 17, GameModifiers_InstantFriendship
 	case 18, GameModifiers_EVIVViewer
+	case 19, GameModifiers_DivergentToggle
 	case 0x7F, GameModifiers_End @ When player hits B to close
 	goto GameModifiers_End
 
@@ -96,6 +97,8 @@ GameModifiers_PromptToTurnOff:
 	if equal _call GameModifiers_InstantFriendship_ClearModifier
 	compare 0x4000 18
 	if equal _call GameModifiers_EVIVViewer_ClearModifier
+	compare 0x4000 19
+	if equal _call GameModifiers_DivergentToggle_ClearModifier
 	playse 0x30 @ Save
 	msgbox gText_GameModifiers_ModifierNowOff MSG_NORMAL
 	goto ChoosingModifier
@@ -143,6 +146,8 @@ GameModifiers_PromptToTurnOn:
 	if equal _call GameModifiers_InstantFriendship_SetModifier
 	compare 0x4000 18
 	if equal _call GameModifiers_EVIVViewer_SetModifier
+	compare 0x4000 19
+	if equal _call GameModifiers_DivergentToggle_SetModifier
 	playse 0x30 @ Save
 	msgbox gText_GameModifiers_ModifierNowOn MSG_NORMAL
 	goto ChoosingModifier
@@ -770,6 +775,38 @@ GameModifiers_EVIVViewer_TogglePrompt:
 	if SET _goto GameModifiers_PromptToTurnOff
 	goto GameModifiers_PromptToTurnOn
 
+GameModifiers_DivergentToggle:
+	msgbox gText_GameModifiers_DivergentToggle_Description MSG_NORMAL
+	checkflag 0x0C2 @ Divergent toggle game modifier unlocked
+	if NOT_SET _goto GameModifiers_DivergentToggle_NotUnlocked
+	msgbox gText_GameModifiers_DivergentToggle_PasswordDeclaration MSG_NORMAL
+	goto GameModifiers_DivergentToggle_TogglePrompt
+
+GameModifiers_DivergentToggle_NotUnlocked:
+	msgbox gText_GameModifiers_UnlockCriteria_BeatGameInDivergent MSG_NORMAL
+	msgbox gText_GameModifiers_ModifierNotYetAchieved MSG_YESNO
+	compare LASTRESULT NO
+	if equal _goto ChoosingModifier
+	call EnterUnlockPassword
+	loadpointer 0x0 gText_GameModifiers_DivergentToggle_Password
+    special 0x12D
+    compare LASTRESULT 0x0
+    if equal _goto GameModifiers_DivergentToggle_UnlockedWithPassword
+	playse 0x1A @ Error
+    msgbox gText_GameModifiers_PasswordIncorrect MSG_NORMAL
+	goto ChoosingModifier
+
+GameModifiers_DivergentToggle_UnlockedWithPassword:
+	playse 0x19 @ Correct
+	setflag 0x0C2 @ Divergent Toggle game modifier unlocked
+	msgbox gText_GameModifiers_PasswordCorrect MSG_NORMAL
+	goto GameModifiers_DivergentToggle_TogglePrompt
+
+GameModifiers_DivergentToggle_TogglePrompt:
+	checkflag 0x946 @ Divergent Toggle active in options menu
+	if SET _goto GameModifiers_PromptToTurnOff
+	goto GameModifiers_PromptToTurnOn
+
 // Set / Clear functions
 GameModifiers_RandomizerSpecies_SetModifier:
 	msgbox gText_GameModifiers_RandomizerSpecies_RandomizationQuestion MSG_KEEPOPEN
@@ -976,4 +1013,12 @@ GameModifiers_EVIVViewer_SetModifier:
 
 GameModifiers_EVIVViewer_ClearModifier:
 	clearflag 0x944 @ Turn off EV/IV Viewer
+	return
+
+GameModifiers_DivergentToggle_SetModifier:
+	setflag 0x946 @ Turn on Divergent Toggle option in the options menu
+	return
+
+GameModifiers_DivergentToggle_ClearModifier:
+	clearflag 0x946 @ Turn off Divergent Toggle option in the options menu
 	return

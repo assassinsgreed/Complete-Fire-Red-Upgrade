@@ -603,6 +603,9 @@ Instant Friendship
 #org @gText_GameModifiers_EVIVViewer
 Enable EV/IV Viewer
 
+#org @gText_GameModifiers_DivergentToggle
+Enable Pokemon Selection Toggle
+
 #org @gText_UltraWormholes_Nihilego
 Symbiont Wormhole
 

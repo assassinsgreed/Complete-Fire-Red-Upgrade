@@ -1313,7 +1313,7 @@ GameCustomizationMenu:
     multichoiceoption gText_GameCustomizationMenu_SkipCutscenes 3
     multichoiceoption gText_GameCustomizationMenu_Tutorials 4
     multichoiceoption gText_GameCustomizationMenu_StartWithQoLItems 5
-    multichoiceoption gText_GameCustomizationMenu_Done 6
+    multichoiceoption gText_GameCustomizationMenu_PokemonSelection 6
     multichoice 0x0 0x0 SEVEN_MULTICHOICE_OPTIONS FALSE
     switch LASTRESULT
     case 0, GameCustomization_DifficultyMode _goto
@@ -1322,6 +1322,7 @@ GameCustomizationMenu:
     case 3, GameCustomization_SkipCutscenes _goto
     case 4, GameCustomization_Tutorials _goto
     case 5, GameCustomization_StartWithQoLItems _goto
+    case 6, GameCustomization_PokemonSelection _goto
     // Case n-1 and 0x7F fall through to completion
     goto GameCustomizationComplete
 
@@ -1560,6 +1561,28 @@ DisableCutsceneSkipping:
     clearflag 0x93D @ Play Cutscenes
     sound 0x30 @Save
     msgbox gText_GameCustomization_SkipCutscenesTurnedOff MSG_NORMAL
+	return
+
+GameCustomization_PokemonSelection:
+    msgbox gText_GameCustomization_PokemonSelectionQuestion MSG_KEEPOPEN
+    multichoiceoption gText_GameCustomization_PokemonSelection_Standard 0
+    multichoiceoption gText_GameCustomization_PokemonSelection_Divergent 1
+    multichoice 0x0 0x0 TWO_MULTICHOICE_OPTIONS TRUE
+    switch LASTRESULT
+    case 0, EnableStandardPokemonSelection _call
+    case 1, EnableDivergentPokemonSelection _call
+    goto GameCustomizationMenu
+
+EnableStandardPokemonSelection:
+    clearflag 0x945 @ Divergent mode off
+    sound 0x30 @Save
+    msgbox gText_GameCustomization_PokemonSelection_StandardSet MSG_NORMAL @ TODO
+	return
+
+EnableDivergentPokemonSelection:
+    setflag 0x945 @ Divergent mode on
+    sound 0x30 @Save
+    msgbox gText_GameCustomization_PokemonSelection_DivergentSet MSG_NORMAL
 	return
 
 .global SetGameInitializationFlags
