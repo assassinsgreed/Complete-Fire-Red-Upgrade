@@ -34,17 +34,17 @@
 const struct TrainerMonItemCustomMoves sParty_Rival2_Hard_Divergent[] = {
     {
         .lvl = 12,
-        .species = SPECIES_ROOKIDEE,
-        .moves = { MOVE_FURYATTACK, MOVE_HONECLAWS, MOVE_PECK, MOVE_ROCKSMASH },
-        .heldItem = ITEM_SILK_SCARF,
-        .ability = Ability_1 // Keen Eye
+        .species = SPECIES_MILCERY,
+        .moves = { MOVE_SWEETSCENT, MOVE_TACKLE, MOVE_AROMATICMIST, MOVE_SWEETKISS },
+        .heldItem = ITEM_ORAN_BERRY,
+        .ability = Ability_Hidden // Aroma Veil
     },
     {
         .lvl = 13,
-        .species = SPECIES_FARFETCHD_G,
-        .moves = { MOVE_PECK, MOVE_FURYCUTTER, MOVE_FINALGAMBIT, MOVE_LEER },
-        .heldItem = ITEM_LEEK,
-        .ability = Ability_1 // Steadfast
+        .species = SPECIES_PIDGEY,
+        .moves = { MOVE_GUST, MOVE_TACKLE, MOVE_QUICKATTACK, MOVE_GROWL },
+        .heldItem = ITEM_SILK_SCARF,
+        .ability = Ability_1 // Keen Eye
     },
     {
         .lvl = 14,
@@ -58,53 +58,53 @@ const struct TrainerMonItemCustomMoves sParty_Rival2_Hard_Divergent[] = {
 const struct TrainerMonItemCustomMoves sParty_PartnerRival1_Hard_Divergent[] = {
     {
         .lvl = 13,
-        .species = SPECIES_ROOKIDEE,
-        .moves = { MOVE_FURYATTACK, MOVE_HONECLAWS, MOVE_PECK, MOVE_ROCKSMASH },
+        .species = SPECIES_MILCERY,
+        .moves = { MOVE_SWEETSCENT, MOVE_TACKLE, MOVE_AROMATICMIST, MOVE_SWEETKISS },
+        .heldItem = ITEM_SITRUS_BERRY,
+        .ability = Ability_Hidden // Aroma Veil
+    },
+    {
+        .lvl = 14,
+        .species = SPECIES_PIDGEY,
+        .moves = { MOVE_GUST, MOVE_TACKLE, MOVE_QUICKATTACK, MOVE_GROWL },
         .heldItem = ITEM_SILK_SCARF,
         .ability = Ability_1 // Keen Eye
     },
     {
-        .lvl = 14,
-        .species = SPECIES_FARFETCHD_G,
-        .moves = { MOVE_PECK, MOVE_FURYCUTTER, MOVE_FINALGAMBIT, MOVE_LEER },
-        .heldItem = ITEM_LEEK,
-        .ability = Ability_1 // Steadfast
-    },
-    {
         .lvl = 15,
         .species = SPECIES_EEVEE,
-        .moves = { MOVE_QUICKATTACK, MOVE_HELPINGHAND, MOVE_TAILWHIP, MOVE_SANDATTACK },
+        .moves = { MOVE_QUICKATTACK, MOVE_TICKLE, MOVE_SANDATTACK, MOVE_YAWN },
         .heldItem = ITEM_BERRY_JUICE,
         .ability = Ability_2 // Adaptability
-    }
+    },
 };
 
 const struct TrainerMonItemCustomMoves sParty_Rival3_Hard_Divergent[] = {
     {
         .lvl = 30,
-        .species = SPECIES_CORVISQUIRE,
-        .moves = { MOVE_TAUNT, MOVE_PLUCK, MOVE_TAILWIND, MOVE_FURYATTACK },
-        .heldItem = ITEM_SILK_SCARF,
-        .ability = Ability_1 // Keen Eye 
+        .species = SPECIES_MILCERY,
+        .moves = { MOVE_ACIDARMOR, MOVE_DRAININGKISS, MOVE_ATTRACT, MOVE_AROMATHERAPY },
+        .heldItem = ITEM_SITRUS_BERRY,
+        .ability = Ability_Hidden // Aroma Veil
     },
     {
         .lvl = 30,
-        .species = SPECIES_FARFETCHD_G,
-        .moves = { MOVE_KNOCKOFF, MOVE_BRICKBREAK, MOVE_PECK, MOVE_FURYCUTTER },
-        .heldItem = ITEM_LEEK,
-        .ability = Ability_1 // Steadfast
+        .species = SPECIES_CUBONE_A,
+        .moves = { MOVE_HEADBUTT, MOVE_DETECT, MOVE_BULLDOZE, MOVE_BRUTALSWING },
+        .heldItem = ITEM_ROCKY_HELMET,
+        .ability = Ability_2 // Lightning Rod
     },
     {
-        .lvl = 31,
-        .species = SPECIES_FLAAFFY,
-        .moves = { MOVE_ELECTROBALL, MOVE_THUNDERWAVE, MOVE_FIREPUNCH, MOVE_TAKEDOWN },
-        .heldItem = ITEM_MAGNET,
-        .ability = Ability_1 // Static 
+        .lvl = 30,
+        .species = SPECIES_PIDGEOTTO,
+        .moves = { MOVE_FEATHERDANCE, MOVE_TWISTER, MOVE_GUST, MOVE_WHIRLWIND },
+        .heldItem = ITEM_SHARP_BEAK,
+        .ability = Ability_Hidden // Big Pecks 
     },
     {
         .lvl = 32,
         .species = SPECIES_EEVEE,
-        .moves = { MOVE_BITE, MOVE_COVET, MOVE_DOUBLEKICK, MOVE_TICKLE },
+        .moves = { MOVE_BITE, MOVE_COVET, MOVE_DOUBLEKICK, MOVE_BABYDOLLEYES },
         .heldItem = ITEM_BERRY_JUICE,
         .ability = Ability_2 // Adaptability
     }
@@ -113,48 +113,48 @@ const struct TrainerMonItemCustomMoves sParty_Rival3_Hard_Divergent[] = {
 const struct TrainerMonItemCustomMoves sParty_Casey1_Hard_Divergent[] = {
     {
         .lvl = 15,
-        .species = SPECIES_ELGYEM,
-        .moves = { MOVE_CONFUSION, MOVE_GROWL, MOVE_DESTINYBOND, MOVE_DISABLE},
-        .heldItem = ITEM_EVIOLITE,
+        .species = SPECIES_MUNNA,
+        .moves = { MOVE_PSYBEAM, MOVE_DEFENSECURL, MOVE_STOREDPOWER, MOVE_HYPNOSIS},
+        .heldItem = ITEM_ORAN_BERRY,
         .ability = Ability_2 // Synchronize
     },
     {
         .lvl = 16,
-        .species = SPECIES_SCRAGGY,
-        .moves = { MOVE_FACADE, MOVE_LOWKICK, MOVE_PAYBACK, MOVE_FAKEOUT },
-        .heldItem = ITEM_TOXIC_ORB,
-        .ability = Ability_Hidden // Intimidate
+        .species = SPECIES_PANCHAM,
+        .moves = { MOVE_TACKLE, MOVE_TAUNT, MOVE_BRICKBREAK, MOVE_LEER },
+        .heldItem = ITEM_MUSCLE_BAND,
+        .ability = Ability_1 // Iron Fist
     },
     {
         .lvl = 17,
-        .species = SPECIES_HORSEA,
-        .moves = { MOVE_OCTAZOOKA, MOVE_SMOKESCREEN, MOVE_FOCUSENERGY, MOVE_SCALESHOT },
-        .heldItem = ITEM_SITRUS_BERRY,
-        .ability = Ability_2 // Sniper
+        .species = SPECIES_MURKROW,
+        .moves = { MOVE_GUST, MOVE_HAZE, MOVE_CALMMIND, MOVE_WINGATTACK },
+        .heldItem = ITEM_BERRY_JUICE,
+        .ability = Ability_2 // Super Luck
     }
 };
 
 const struct TrainerMonItemCustomMoves sParty_Casey2_Hard_Divergent[] = {
     {
-        .lvl = 34,
-        .species = SPECIES_ELGYEM,
-        .moves = { MOVE_THUNDERBOLT, MOVE_PSYCHIC, MOVE_COSMICPOWER, MOVE_AGILITY },
-        .heldItem = ITEM_EVIOLITE,
+        .lvl = 33,
+        .species = SPECIES_MUSHARNA,
+        .moves = { MOVE_CALMMIND, MOVE_MOONBLAST, MOVE_STOREDPOWER, MOVE_MOONLIGHT},
+        .heldItem = ITEM_LEFTOVERS,
         .ability = Ability_2 // Synchronize
     },
     {
         .lvl = 34,
-        .species = SPECIES_SCRAGGY,
-        .moves = { MOVE_FACADE, MOVE_BRICKBREAK, MOVE_KNOCKOFF, MOVE_DRAINPUNCH },
-        .heldItem = ITEM_TOXIC_ORB,
-        .ability = Ability_Hidden // Intimidate
+        .species = SPECIES_PANGORO,
+        .moves = { MOVE_NIGHTSLASH, MOVE_BULLETPUNCH, MOVE_PARTINGSHOT, MOVE_BULKUP},
+        .heldItem = ITEM_MUSCLE_BAND,
+        .ability = Ability_1 // Iron Fist
     },
     {
-        .lvl = 36,
-        .species = SPECIES_SEADRA,
-        .moves = { MOVE_FOCUSENERGY, MOVE_MUDDYWATER, MOVE_ICEBEAM, MOVE_CLEARSMOG },
-        .heldItem = ITEM_SCOPE_LENS,
-        .ability = Ability_2 // Sniper
+        .lvl = 35,
+        .species = SPECIES_HONCHKROW,
+        .moves = { MOVE_TAILWIND, MOVE_NASTYPLOT, MOVE_DARKPULSE, MOVE_PSYCHIC },
+        .heldItem = ITEM_SITRUS_BERRY,
+        .ability = Ability_2 // Super Luck
     }
 };
 

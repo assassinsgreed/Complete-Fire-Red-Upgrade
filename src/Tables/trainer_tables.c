@@ -4449,111 +4449,111 @@ const struct TrainerMonNoItemCustomMoves sParty_TsarvosaCity_StatsDojo_Kaito[] =
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_TsarvosaCity_StatsDojo_ZacharyHP1[] = {
-    { .lvl = 1, .species = SPECIES_SLAKOTH },
-    { .lvl = 1, .species = SPECIES_SHROOMISH },
-    { .lvl = 1, .species = SPECIES_HAPPINY }
+    { .lvl = 15, .species = SPECIES_SLAKOTH },
+    { .lvl = 15, .species = SPECIES_SHROOMISH },
+    { .lvl = 15, .species = SPECIES_HAPPINY }
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_TsarvosaCity_StatsDojo_ZacharyHP2[] = {
-    { .lvl = 1, .species = SPECIES_NOCTOWL },
-    { .lvl = 1, .species = SPECIES_VAPOREON },
-    { .lvl = 1, .species = SPECIES_CHANSEY }
+    { .lvl = 30, .species = SPECIES_NOCTOWL },
+    { .lvl = 30, .species = SPECIES_VAPOREON },
+    { .lvl = 30, .species = SPECIES_CHANSEY }
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_TsarvosaCity_StatsDojo_ZacharyHP3[] = {
-    { .lvl = 1, .species = SPECIES_SLAKING },
-    { .lvl = 1, .species = SPECIES_SLAKING },
-    { .lvl = 1, .species = SPECIES_BLISSEY }
+    { .lvl = 45, .species = SPECIES_SLAKING },
+    { .lvl = 45, .species = SPECIES_SLAKING },
+    { .lvl = 45, .species = SPECIES_BLISSEY }
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_TsarvosaCity_StatsDojo_NelsonAttack1[] = {
-    { .lvl = 1, .species = SPECIES_NIDORAN_M },
-    { .lvl = 1, .species = SPECIES_MUDKIP },
-    { .lvl = 1, .species = SPECIES_PIKIPEK }
+    { .lvl = 15, .species = SPECIES_NIDORAN_M },
+    { .lvl = 15, .species = SPECIES_MUDKIP },
+    { .lvl = 15, .species = SPECIES_PIKIPEK }
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_TsarvosaCity_StatsDojo_NelsonAttack2[] = {
-    { .lvl = 1, .species = SPECIES_NIDORINO },
-    { .lvl = 1, .species = SPECIES_MARSHTOMP },
-    { .lvl = 1, .species = SPECIES_TRUMBEAK }
+    { .lvl = 30, .species = SPECIES_NIDORINO },
+    { .lvl = 30, .species = SPECIES_MARSHTOMP },
+    { .lvl = 30, .species = SPECIES_TRUMBEAK }
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_TsarvosaCity_StatsDojo_NelsonAttack3[] = {
-    { .lvl = 1, .species = SPECIES_NIDOKING },
-    { .lvl = 1, .species = SPECIES_SWAMPERT },
-    { .lvl = 1, .species = SPECIES_TOUCANNON }
+    { .lvl = 45, .species = SPECIES_NIDOKING },
+    { .lvl = 45, .species = SPECIES_SWAMPERT },
+    { .lvl = 45, .species = SPECIES_TOUCANNON }
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_TsarvosaCity_StatsDojo_DionDefense1[] = {
-    { .lvl = 1, .species = SPECIES_KLINK },
-    { .lvl = 1, .species = SPECIES_CHESPIN },
-    { .lvl = 1, .species = SPECIES_ROLYCOLY }
+    { .lvl = 15, .species = SPECIES_KLINK },
+    { .lvl = 15, .species = SPECIES_CHESPIN },
+    { .lvl = 15, .species = SPECIES_ROLYCOLY }
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_TsarvosaCity_StatsDojo_DionDefense2[] = {
-    { .lvl = 1, .species = SPECIES_KLANG },
-    { .lvl = 1, .species = SPECIES_QUILLADIN },
-    { .lvl = 1, .species = SPECIES_CARKOL }
+    { .lvl = 30, .species = SPECIES_KLANG },
+    { .lvl = 30, .species = SPECIES_QUILLADIN },
+    { .lvl = 30, .species = SPECIES_CARKOL }
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_TsarvosaCity_StatsDojo_DionDefense3[] = {
-    { .lvl = 1, .species = SPECIES_KLINKLANG },
-    { .lvl = 1, .species = SPECIES_CHESNAUGHT },
-    { .lvl = 1, .species = SPECIES_COALOSSAL }
+    { .lvl = 45, .species = SPECIES_KLINKLANG },
+    { .lvl = 45, .species = SPECIES_CHESNAUGHT },
+    { .lvl = 45, .species = SPECIES_COALOSSAL }
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_TsarvosaCity_StatsDojo_SeymourSpecialAttack1[] = {
-    { .lvl = 1, .species = SPECIES_MAREEP },
-    { .lvl = 1, .species = SPECIES_RALTS },
-    { .lvl = 1, .species = SPECIES_OSHAWOTT }
+    { .lvl = 15, .species = SPECIES_MAREEP },
+    { .lvl = 15, .species = SPECIES_RALTS },
+    { .lvl = 15, .species = SPECIES_OSHAWOTT }
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_TsarvosaCity_StatsDojo_SeymourSpecialAttack2[] = {
-    { .lvl = 1, .species = SPECIES_FLAAFFY },
-    { .lvl = 1, .species = SPECIES_KIRLIA },
-    { .lvl = 1, .species = SPECIES_DEWOTT }
+    { .lvl = 30, .species = SPECIES_FLAAFFY },
+    { .lvl = 30, .species = SPECIES_KIRLIA },
+    { .lvl = 30, .species = SPECIES_DEWOTT }
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_TsarvosaCity_StatsDojo_SeymourSpecialAttack3[] = {
-    { .lvl = 1, .species = SPECIES_AMPHAROS },
-    { .lvl = 1, .species = SPECIES_GARDEVOIR },
-    { .lvl = 1, .species = SPECIES_SAMUROTT }
+    { .lvl = 45, .species = SPECIES_AMPHAROS },
+    { .lvl = 45, .species = SPECIES_GARDEVOIR },
+    { .lvl = 45, .species = SPECIES_SAMUROTT }
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_TsarvosaCity_StatsDojo_GarlandSpecialDefense1[] = {
-    { .lvl = 1, .species = SPECIES_FLABEBE_ORANGE },
-    { .lvl = 1, .species = SPECIES_BLIPBUG },
-    { .lvl = 1, .species = SPECIES_GOOMY }
+    { .lvl = 15, .species = SPECIES_FLABEBE_ORANGE },
+    { .lvl = 15, .species = SPECIES_BLIPBUG },
+    { .lvl = 15, .species = SPECIES_GOOMY }
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_TsarvosaCity_StatsDojo_GarlandSpecialDefense2[] = {
-    { .lvl = 1, .species = SPECIES_FLOETTE_ORANGE },
-    { .lvl = 1, .species = SPECIES_DOTTLER },
-    { .lvl = 1, .species = SPECIES_SLIGGOO }
+    { .lvl = 30, .species = SPECIES_FLOETTE_ORANGE },
+    { .lvl = 30, .species = SPECIES_DOTTLER },
+    { .lvl = 30, .species = SPECIES_SLIGGOO }
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_TsarvosaCity_StatsDojo_GarlandSpecialDefense3[] = {
-    { .lvl = 1, .species = SPECIES_FLORGES_ORANGE },
-    { .lvl = 1, .species = SPECIES_ORBEETLE },
-    { .lvl = 1, .species = SPECIES_GOODRA }
+    { .lvl = 45, .species = SPECIES_FLORGES_ORANGE },
+    { .lvl = 45, .species = SPECIES_ORBEETLE },
+    { .lvl = 45, .species = SPECIES_GOODRA }
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_TsarvosaCity_StatsDojo_SidneySpeed1[] = {
-    { .lvl = 1, .species = SPECIES_SNIVY },
-    { .lvl = 1, .species = SPECIES_ZUBAT },
-    { .lvl = 1, .species = SPECIES_SCORBUNNY }
+    { .lvl = 15, .species = SPECIES_SNIVY },
+    { .lvl = 15, .species = SPECIES_ZUBAT },
+    { .lvl = 15, .species = SPECIES_SCORBUNNY }
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_TsarvosaCity_StatsDojo_SidneySpeed2[] = {
-    { .lvl = 1, .species = SPECIES_SERVINE },
-    { .lvl = 1, .species = SPECIES_GOLBAT },
-    { .lvl = 1, .species = SPECIES_RABOOT }
+    { .lvl = 30, .species = SPECIES_SERVINE },
+    { .lvl = 30, .species = SPECIES_GOLBAT },
+    { .lvl = 30, .species = SPECIES_RABOOT }
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_TsarvosaCity_StatsDojo_SidneySpeed3[] = {
-    { .lvl = 1, .species = SPECIES_SERPERIOR },
-    { .lvl = 1, .species = SPECIES_CROBAT },
-    { .lvl = 1, .species = SPECIES_CINDERACE }
+    { .lvl = 45, .species = SPECIES_SERPERIOR },
+    { .lvl = 45, .species = SPECIES_CROBAT },
+    { .lvl = 45, .species = SPECIES_CINDERACE }
 };
 
 const struct TrainerMonItemCustomMoves sParty_TsarvosaCity_DevTeam_Collin1[] = {
@@ -6722,7 +6722,7 @@ const struct TrainerMonItemCustomMoves sParty_GymLeaderRematches_Raine_3[] = {
         .lvl = 72,
         .species = SPECIES_GIGALITH,
         .moves = { MOVE_STEALTHROCK, MOVE_STONEEDGE, MOVE_IRONDEFENSE, MOVE_BULLDOZE },
-        .heldItem = ITEM_ASSAULT_VEST,
+        .heldItem = ITEM_ROCKY_HELMET,
         .ability = Ability_2 // Sand Stream
     }
 };

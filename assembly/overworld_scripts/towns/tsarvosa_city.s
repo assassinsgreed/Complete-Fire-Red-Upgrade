@@ -1168,7 +1168,6 @@ DoBattleCommon:
     if equal _goto ChooseBattleLevel
     msgbox gText_TsarvosaCity_StatsDojo_EVDiscipleBattleLevelConfirmationYes MSG_NORMAL
     setvar 0x8000 0xFEFE @ Continue lost battles
-    setflag 0x90E @ Scale disciple teams
     trainerbattle9 0x0 0x4001 0x0 gText_TsarvosaCity_StatsDojo_EVDiscipleBattlePostBattle gText_TsarvosaCity_StatsDojo_EVDiscipleBattlePostBattle
     setvar 0x8000 0x0 @ Does not continue after lost battles
     checkflag 0x153 @ Trainer level scaling modifier
