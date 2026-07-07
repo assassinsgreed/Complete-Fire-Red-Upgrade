@@ -223,16 +223,16 @@ MapEntryScript_Route8_SetWeather:
 
 HideTrapPokemon:
     checkflag 0xE0C
-    if SET _call HideSandygast1
+    if SET _call HideTrap1
     checkflag 0xE0D
-    if SET _call HideSandygast2
+    if SET _call HideTrap2
     end
 
-HideSandygast1:
+HideTrap1:
     hidesprite 14
     return
 
-HideSandygast2:
+HideTrap2:
     hidesprite 15
     return
 
@@ -278,15 +278,19 @@ SignScript_Route8_TrainerTips_FoggyWeather:
     msgbox gText_Route8_FoggyWeather MSG_SIGN
     end
 
-.global EventScript_Route8_SandygastEncounter1
-EventScript_Route8_SandygastEncounter1:
+.global EventScript_Route8_TrapEncounter1
+EventScript_Route8_TrapEncounter1:
     setflag 0xE0C
+    checkflag 0x945 @ Divergent Mode
+    if SET _goto DiglettEncounter
     call SandygastEncounter
     end
 
-.global EventScript_Route8_SandygastEncounter2
-EventScript_Route8_SandygastEncounter2:
+.global EventScript_Route8_TrapEncounter2
+EventScript_Route8_TrapEncounter2:
     setflag 0xE0D
+    checkflag 0x945 @ Divergent Mode
+    if SET _goto DiglettEncounter
     call SandygastEncounter
     end
 
@@ -300,6 +304,17 @@ SandygastEncounter:
     wildbattle SPECIES_SANDYGAST 0x19 0x0 @ Level 25
     release
     return
+
+DiglettEncounter:
+    lock
+    checksound
+    cry SPECIES_DIGLETT_A 0x0
+    sound 0x15 @ Exclaim
+    applymovement PLAYER m_Surprise
+    msgbox gText_Route1_DiglettEncounter MSG_KEEPOPEN
+    wildbattle SPECIES_DIGLETT_A 0x19 0x0 @ Level 25
+    release
+    end
 
 .global EventScript_Route8_Swampertite
 EventScript_Route8_Swampertite:

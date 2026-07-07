@@ -17,6 +17,8 @@ EventScript_DaimynCityMall_LuckyDrawLady:
     msgbox gText_DaimynCityMall_LuckyDrawStarting MSG_NORMAL
     random 0x11F @ 0-286; shift below to make range 1-287
     addvar LASTRESULT 1
+    checkflag 0x945 @ Divergent Mode
+    if SET _call UpdateLuckyDrawForDivergent
     callasm GetLuckyPokemonSpecies
     showpokepic 0x8000
     cry 0x8000 0x0
@@ -27,6 +29,10 @@ EventScript_DaimynCityMall_LuckyDrawLady:
     if lessthan _goto LuckySpeciesDidNotWin
     if equal _goto LuckySpeciesSeen
     if greaterthan _goto LuckySpeciesCaught
+
+UpdateLuckyDrawForDivergent:
+    addvar LASTRESULT 390 @ Shift into divergent list by jumping past the original dex
+    return
 
 LuckyDrawChoseNo:
     msgbox gText_DaimynCityMall_LuckyDrawChoseNo MSG_NORMAL
@@ -414,8 +420,28 @@ DailyDealNotEnoughMoney:
 
 .global EventScript_DaimynCityMall_MagazineSeller
 EventScript_DaimynCityMall_MagazineSeller:
+    checkflag 0x945 @ Divergent Mode
+    if SET _goto SweetsSeller
     npcchat gText_DaimynCityMall_MagazineSeller
     end
+
+SweetsSeller:
+    msgbox gText_DaimynCityMall_SweetsSeller MSG_KEEPOPEN
+    pokemart SweetsShop
+    goto EventScript_EndMart
+
+.align 1
+SweetsShop:
+    .hword ITEM_TART_APPLE
+    .hword ITEM_SWEET_APPLE
+    .hword ITEM_STRAWBERRY_SWEET
+    .hword ITEM_BERRY_SWEET
+    .hword ITEM_LOVE_SWEET
+    .hword ITEM_FLOWER_SWEET
+    .hword ITEM_STAR_SWEET
+    .hword ITEM_CLOVER_SWEET
+    .hword ITEM_RIBBON_SWEET
+    .hword ITEM_NONE
 
 .global EventScript_DaimynCityMall_Shop_Pokeballs
 EventScript_DaimynCityMall_Shop_Pokeballs:
@@ -581,9 +607,11 @@ TypeBoostingShop:
 EventScript_DaimynCityMall_FishSeller:
     lock
     faceplayer
-    checkflag 0x253 @ Bough carvanha
+    checkflag 0x253 @ Bought carvanha
     if SET _goto FishSellerBought
-    showpokepic SPECIES_CARVANHA
+    checkflag 0x945 @ Divergent Mode
+    if NOT_SET _call ShowCarvanha
+    if SET _call ShowWishiwashi
     showmoney 0x0 0x0
     msgbox gText_DaimynCityMall_FishSeller_Question MSG_YESNO
     hidepokepic
@@ -600,14 +628,35 @@ EventScript_DaimynCityMall_FishSeller:
     sound 0xF8 @ Money SE
     waitse
     hidemoney
-    givepokemon SPECIES_CARVANHA 0x19 ITEM_NONE @ Give lvl 25 Carvanha
-    fanfare 0x101
-    msgbox gText_DaimynCityMall_FishSeller_BoughtCarvanhaFanfare MSG_NORMAL
-    waitfanfare
+    checkflag 0x945 @ Divergent Mode
+    if NOT_SET _call GiveCarvanha
+    if SET _call GiveWishiwashi
     msgbox gText_DaimynCityMall_FishSeller_BoughtCarvanha MSG_NORMAL
     setflag 0x253 @ Bought Carvanha
     release
     end
+
+ShowCarvanha:
+    showpokepic SPECIES_CARVANHA
+    return
+
+ShowWishiwashi:
+    showpokepic SPECIES_WISHIWASHI
+    return
+
+GiveCarvanha:
+    givepokemon SPECIES_CARVANHA 0x19 ITEM_NONE @ Give lvl 25 Carvanha
+    fanfare 0x101
+    msgbox gText_DaimynCityMall_FishSeller_BoughtCarvanhaFanfare MSG_NORMAL
+    waitfanfare
+    return
+
+GiveWishiwashi:
+    givepokemon SPECIES_WISHIWASHI 0x19 ITEM_NONE @ Give lvl 25 Wishiwashi
+    fanfare 0x101
+    msgbox gText_DaimynCityMall_FishSeller_BoughtWishiwashiFanfare MSG_NORMAL
+    waitfanfare
+    return
 
 FishSellerBought:
     msgbox gText_DaimynCityMall_FishSeller_CarvanhaAlreadyBought MSG_NORMAL

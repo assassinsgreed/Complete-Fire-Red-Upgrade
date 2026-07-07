@@ -290,7 +290,16 @@ Uh[.] I thought this was a swim club,\nnot a Pok\emon club.\pI've made a terribl
 Pok\emon are so wonderful!\pThey're soft[.]\pThey're warm[.]\pThey're friendly[.]\pThey're cute[.]\pThey're simply the best!
 
 #org @gText_HeleoNPCHouses_PokemonFanClubHallwayBoy
-The Pok\emon fan club can get pretty\nrowdy sometimes[.]\pJust last week they had a debate\nover whether Stunfisk or Pincurchin\lwere cuter.\pThey were arguing for just over 6\nhours[.]
+The Pok\emon fan club can get pretty\nrowdy sometimes[.]
+
+#org @gText_HeleoNPCHouses_PokemonFanClubHallwayBoy_Argument
+Just last week they had a debate\nover whether Stunfisk or Pincurchin\lwere cuter.
+
+#org @gText_HeleoNPCHouses_PokemonFanClubHallwayBoy_Argument_Divergent
+Just last week they had a debate\nover whether Voltorb or Pansear\lwere cuter.
+
+#org @gText_HeleoNPCHouses_PokemonFanClubHallwayBoy_Timespan
+They were arguing for just over 6\nhours[.]
 
 #org @gText_HeleoCity_NurseBrianne_Intro
 Uuuugghhh[.]\pI wanna make a fresh start as a\nPok\emon Trainer, but I just can't\lwin.\pHmm[.] You[.]

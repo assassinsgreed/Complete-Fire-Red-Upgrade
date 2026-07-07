@@ -191,6 +191,24 @@ Turtonator[ALIGN][65]2000
 #org @gText_PokemonExchange_Dratini
 Dratini[ALIGN][65]3000
 
+#org @gText_PokemonExchange_Divergent_Aipom
+Aipom[ALIGN][65]500
+
+#org @gText_PokemonExchange_Divergent_Yanma
+Yanma[ALIGN][65]500
+
+#org @gText_PokemonExchange_Divergent_Snover
+Snover[ALIGN][65]500
+
+#org @gText_PokemonExchange_Divergent_Druddigon
+Druddigon[ALIGN][65]1000
+
+#org @gText_PokemonExchange_Divergent_Heatmor
+Heatmor[ALIGN][65]2000
+
+#org @gText_PokemonExchange_Divergent_Beldum
+Beldum[ALIGN][65]3000
+
 #org @gText_ApricornBalls_FastBall
 Fast Ball
 

@@ -38,6 +38,9 @@ Why are there so many members of\nteam Pluto in the city? That's a\lsecret!
 #org @gText_DaimynCityOverworld_AlolanRaichuKid
 My buddy went to the beach lately.\pHe said when he evolved his Pikachu\nwhile standing on the shore, it got\lsome weird psychic powers.\pThat's so strange! Everyone knows\nRaichu doesn't have psychic powers!
 
+#org @gText_DaimynCityOverworld_AlolanRaichuKid_Divergent
+I was at the beach and ran into a\nskittish bug Pok\emon.\pIt ran away the moment I saw it!
+
 #org @gText_DaimynCityOverworld_RestaurantSign
 Daimyn City Restaurant\nDelicious meals for Pok\emon!
 
@@ -555,6 +558,30 @@ I have a [GREEN]Noibat[BLUE] in my\npossession and seek a [GREEN]Lillipup[BLUE].
 
 #org @gText_DaimynCityNPCHouses_TraderRequestHatenna
 I have a [GREEN]Hatenna[BLUE] in my\npossession and seek a [GREEN]Cacnea[BLUE].\pWould you be interested in trading\nwith me?
+
+#org @gText_DaimynCityNPCHouses_TraderRequestJynx
+I have a [GREEN]Jynx[BLUE] in my\npossession and seek a [GREEN]Poliwhirl[BLUE].\pWould you be interested in trading\nwith me?
+
+#org @gText_DaimynCityNPCHouses_TraderRequestXatu
+I have a [GREEN]Xatu[BLUE] in my\npossession and seek a [GREEN]Haunter[BLUE].\pWould you be interested in trading\nwith me?
+
+#org @gText_DaimynCityNPCHouses_TraderRequestMakuhita
+I have a [GREEN]Makuhita[BLUE] in my\npossession and seek a [GREEN]Sentret[BLUE].\pWould you be interested in trading\nwith me?
+
+#org @gText_DaimynCityNPCHouses_TraderRequestHaunter
+I have a [GREEN]Haunter[BLUE] in my\npossession and seek a [GREEN]Medicham[BLUE].\pWould you be interested in trading\nwith me?
+
+#org @gText_DaimynCityNPCHouses_TraderRequestMunchlax
+I have a [GREEN]Munchlax[BLUE] in my\npossession and seek a [GREEN]Ditto[BLUE].\pWould you be interested in trading\nwith me?
+
+#org @gText_DaimynCityNPCHouses_TraderRequestSteelix
+I have a [GREEN]Steelix[BLUE] in my\npossession and seek a [GREEN]Vileplume[BLUE].\pWould you be interested in trading\nwith me?
+
+#org @gText_DaimynCityNPCHouses_TraderRequestSteenee
+I have a [GREEN]Steenee[BLUE] in my\npossession and seek a [GREEN]Granbull[BLUE].\pWould you be interested in trading\nwith me?
+
+#org @gText_DaimynCityNPCHouses_TraderRequestMeowth
+I have a [GREEN]Kantonian Meowth[BLUE] in my\npossession and seek a [GREEN]Galarian\lMeowth[BLUE].\pWould you be interested in trading\nwith me?
 
 #org @gText_DaimynCityNPCHouses_TraderTradeComplete
 Thank you for trading with me.\pI will take good care of your\nPok\emon. Please also do the same.
@@ -1140,6 +1167,9 @@ Today's deal is [GREEN]a pack of evolution\nstones for \$6000[BLUE]. Are you\lin
 #org @gText_DaimynCityMall_MagazineSeller
 Hello! I sell magazines. Can I\ninterest you in one? No?
 
+#org @gText_DaimynCityMall_SweetsSeller
+Hello! I'm selling some sweet treats.\nCan I interest you in some?
+
 #org @gText_DaimynCityMall_PokeballSeller
 [BLACK]Rare Pok\e Balls! Come get your Rare\nPok\e Balls here!
 
@@ -1184,6 +1214,9 @@ Wise kid! [.] But you don't have any\nroom. Come back when you do.
 
 #org @gText_DaimynCityMall_FishSeller_BoughtCarvanhaFanfare
 [BLACK]Bought a Carvanha!
+
+#org @gText_DaimynCityMall_FishSeller_BoughtWishiwashiFanfare
+[BLACK]Bought a Wishiwashi!
 
 #org @gText_DaimynCityMall_FishSeller_BoughtCarvanha
 [BLUE]Wise kid! I'm sure the two of you\nwill have a great time or whatever.

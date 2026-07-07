@@ -630,156 +630,30 @@ EventScript_HeleoCity_SwamiResearcher:
     lock
     faceplayer
     msgbox gText_HeleoNPCHouses_SwamiResearcher MSG_NORMAL
-    compare 0x4053 0x11 @ 17 swarm pokemon
+    compare 0x4053 0x22 @ 34 swarm pokemon (17 normal + 17 divergent)
     if equal _goto End
     msgbox gText_HeleoNPCHouses_SwamiResearcherRequest MSG_YESNO
     compare LASTRESULT NO
     if equal _goto SwamiResearcherRejected
     setvar 0x8003 0x0 @ From Party
     setvar 0x8004 0x0 @ First Slot
-    special2 LASTRESULT 0x18 @ Check species
-    switch LASTRESULT
-    case SPECIES_RATTATA, ResearcherRattata
-    case SPECIES_RATICATE, ResearcherRaticate
-    case SPECIES_RAICHU_A, ResearcherRaichuA
-    case SPECIES_GRIMER, ResearcherGrimer
-    case SPECIES_MUK, ResearcherMuk
-    case SPECIES_SLOWPOKE_G, ResearcherSlowpokeG
-    case SPECIES_SLOWBRO_G, ResearcherSlowbroG
-    case SPECIES_SLOWKING_G, ResearcherSlowkingG
-    case SPECIES_FARFETCHD, ResearcherFarfetchd
-    case SPECIES_KOFFING, ResearcherKoffing
-    case SPECIES_WEEZING, ResearcherWeezing
-    case SPECIES_MIME_JR, ResearcherMimeJr
-    case SPECIES_MR_MIME, ResearcherMrMime
-    case SPECIES_CORSOLA, ResearcherCorsola
-    case SPECIES_DARUMAKA, ResearcherDarumaka
-    case SPECIES_DARMANITAN, ResearcherDarmanitan
-    case SPECIES_STUNFISK, ResearcherStunfisk
-    msgbox gText_HeleoNPCHouses_SwamiResearcherRequestWrongPokemon MSG_NORMAL
+    special2 LASTRESULT 0x18 @ Get species of slot 0
+    copyvar 0x8001 LASTRESULT @ Store for sp1AF/sp1B0
+    special2 LASTRESULT 0x1AF @ 0=invalid species, 1=already shown, 2=new
+    compare LASTRESULT 0x0
+    if equal _goto SwamiResearcherWrongPokemon
+    compare LASTRESULT 0x1
+    if equal _goto AlreadyShownPokemon
+    special 0x1B0 @ Mark species shown before giving reward
+    call GiveSwarmItem
     goto End
 
 SwamiResearcherRejected:
     msgbox gText_HeleoNPCHouses_SwamiResearcherRequestDenied MSG_NORMAL
     goto End
 
-ResearcherRattata:
-    checkflag 0x236 @ Shown Rattata
-    if SET _goto AlreadyShownPokemon
-    call GiveSwarmItem
-    setflag 0x236 @ Shown Rattata
-    goto End
-
-ResearcherRaticate:
-    checkflag 0x237 @ Shown Raticate
-    if SET _goto AlreadyShownPokemon
-    call GiveSwarmItem
-    setflag 0x237 @ Shown Raticate
-    goto End
-
-ResearcherRaichuA:
-    checkflag 0x238 @ Shown Alolan Raichu
-    if SET _goto AlreadyShownPokemon
-    call GiveSwarmItem
-    setflag 0x238 @ Shown Alolan Raichu
-    goto End
-
-ResearcherGrimer:
-    checkflag 0x239 @ Shown Grimer
-    if SET _goto AlreadyShownPokemon
-    call GiveSwarmItem
-    setflag 0x239 @ Shown Grimer
-    goto End
-
-ResearcherMuk:
-    checkflag 0x23A @ Shown Muk
-    if SET _goto AlreadyShownPokemon
-    call GiveSwarmItem
-    setflag 0x23A @ Shown Muk
-    goto End
-
-ResearcherSlowpokeG:
-    checkflag 0x23B @ Shown Galarian Slowpoke
-    if SET _goto AlreadyShownPokemon
-    call GiveSwarmItem
-    setflag 0x23B @ Shown Galarian Slowpoke
-    goto End
-
-ResearcherSlowbroG:
-    checkflag 0x23C @ Shown Galarian Slowbro
-    if SET _goto AlreadyShownPokemon
-    call GiveSwarmItem
-    setflag 0x23C @ Shown Galarian Slowbro
-    goto End
-
-ResearcherSlowkingG:
-    checkflag 0x23D @ Shown Galarian Slowking
-    if SET _goto AlreadyShownPokemon
-    call GiveSwarmItem
-    setflag 0x23D @ Shown Galarian Slowking
-    goto End
-
-ResearcherFarfetchd:
-    checkflag 0x23E @ Shown Farfetch'd
-    if SET _goto AlreadyShownPokemon
-    call GiveSwarmItem
-    setflag 0x23E @ Shown Farfetch'd
-    goto End
-
-ResearcherKoffing:
-    checkflag 0x23F @ Shown Koffing
-    if SET _goto AlreadyShownPokemon
-    call GiveSwarmItem
-    setflag 0x23F @ Shown Koffing
-    goto End
-
-ResearcherWeezing:
-    checkflag 0x240 @ Shown Weezing
-    if SET _goto AlreadyShownPokemon
-    call GiveSwarmItem
-    setflag 0x240 @ Shown Weezing
-    goto End
-
-ResearcherMimeJr:
-    checkflag 0x241 @ Shown Mime Jr
-    if SET _goto AlreadyShownPokemon
-    call GiveSwarmItem
-    setflag 0x241 @ Shown Mime Jr
-    goto End
-
-ResearcherMrMime:
-    checkflag 0x242 @ Shown Mr Mime
-    if SET _goto AlreadyShownPokemon
-    call GiveSwarmItem
-    setflag 0x242 @ Shown Mr Mime
-    goto End
-
-ResearcherCorsola:
-    checkflag 0x243 @ Shown Corsola
-    if SET _goto AlreadyShownPokemon
-    call GiveSwarmItem
-    setflag 0x243 @ Shown Corsola
-    goto End
-
-ResearcherDarumaka:
-    checkflag 0x244 @ Shown Darumaka
-    if SET _goto AlreadyShownPokemon
-    call GiveSwarmItem
-    setflag 0x244 @ Shown Darumaka
-    goto End
-
-ResearcherDarmanitan:
-    checkflag 0x245 @ Shown Darmanitan
-    if SET _goto AlreadyShownPokemon
-    call GiveSwarmItem
-    setflag 0x245 @ Shown Darmanitan
-    goto End
-
-ResearcherStunfisk:
-    checkflag 0x246 @ Shown Stunfisk
-    if SET _goto AlreadyShownPokemon
-    call GiveSwarmItem
-    setflag 0x246 @ Shown Stunfisk
+SwamiResearcherWrongPokemon:
+    msgbox gText_HeleoNPCHouses_SwamiResearcherRequestWrongPokemon MSG_NORMAL
     goto End
 
 GiveSwarmItem:
@@ -788,6 +662,8 @@ GiveSwarmItem:
     addvar 0x4053 0x1
     compare 0x4053 0x11 @ 17 swarm pokemon
     if equal _goto AllSwarmPokemonShown
+    compare 0x4053 0x22 @ 34 swarm pokemon
+    if equal _goto AllSwarmPokemonShown @ Second reward - for those flipping between modes
     obtainitem ITEM_BOTTLE_CAP 0x1
     msgbox gText_HeleoNPCHouses_SwamiResearcherRequestShownPokemonConclusion MSG_NORMAL
     return
@@ -955,8 +831,20 @@ EventScript_HeleoCity_PokemonFanClubMother:
 
 .global EventScript_HeleoCity_HallwayBoy
 EventScript_HeleoCity_HallwayBoy:
-    npcchatwithmovement gText_HeleoNPCHouses_PokemonFanClubHallwayBoy m_LookLeft
+    npcchat gText_HeleoNPCHouses_PokemonFanClubHallwayBoy
+    checkflag 0x945 @ Divergent Mode
+    if NOT_SET _call CuterArgument
+    if SET _call CuterArgumentDivergent
+    npcchatwithmovement gText_HeleoNPCHouses_PokemonFanClubHallwayBoy_Timespan m_LookLeft
     end
+
+CuterArgument:
+    msgbox gText_HeleoNPCHouses_PokemonFanClubHallwayBoy_Argument MSG_NORMAL
+    return
+
+CuterArgumentDivergent:
+    msgbox gText_HeleoNPCHouses_PokemonFanClubHallwayBoy_Argument_Divergent MSG_NORMAL
+    return
 
 .global EventScript_HeleoCity_BlisseyTrainer
 EventScript_HeleoCity_BlisseyTrainer:

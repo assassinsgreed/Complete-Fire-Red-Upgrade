@@ -1240,32 +1240,33 @@ static u8 CreateNPCTrainerParty(struct Pokemon* const party, const u16 trainerId
 
 static u8 GetTrainerMonGender(struct Trainer* trainer)
 {
-	switch (trainer->trainerClass)
-	{
-		case CLASS_TEAM_PLUTO: //Otherwise all Grunts have the same genders
-		case CLASS_TEAM_PLUTO_ADMIN:
-		case CLASS_TEAM_PLUTO_LEADER:
-		case CLASS_LEADER:
-		case CLASS_ELITE_4:
-		case CLASS_CHAMPION:
-		case CLASS_CHALLENGER:
-		case CLASS_RIVAL:
-		case CLASS_RIVAL_2:
-		case CLASS_BOSS:
-		case CLASS_LASS:
-		case CLASS_BEAUTY:
-		#ifdef UNBOUND
-		case CLASS_LOR:
-		case CLASS_SUCCESSOR:
-		case CLASS_SHADOW_ADMIN:
-		case CLASS_LOR_ADMIN:
-		case CLASS_LOR_LEADER:
-		case CLASS_AGENT:
-		#endif
-			return trainer->gender; //These Trainer classes always match the gender of the Trainer
-		default:
-			return 0xFF; //Randomly assign gender based on hash
-	}
+	return trainer->gender;
+	// switch (trainer->trainerClass)
+	// {
+	// 	case CLASS_TEAM_PLUTO: //Otherwise all Grunts have the same genders
+	// 	case CLASS_TEAM_PLUTO_ADMIN:
+	// 	case CLASS_TEAM_PLUTO_LEADER:
+	// 	case CLASS_LEADER:
+	// 	case CLASS_ELITE_4:
+	// 	case CLASS_CHAMPION:
+	// 	case CLASS_CHALLENGER:
+	// 	case CLASS_RIVAL:
+	// 	case CLASS_RIVAL_2:
+	// 	case CLASS_BOSS:
+	// 	case CLASS_LASS:
+	// 	case CLASS_BEAUTY:
+	// 	#ifdef UNBOUND
+	// 	case CLASS_LOR:
+	// 	case CLASS_SUCCESSOR:
+	// 	case CLASS_SHADOW_ADMIN:
+	// 	case CLASS_LOR_ADMIN:
+	// 	case CLASS_LOR_LEADER:
+	// 	case CLASS_AGENT:
+	// 	#endif
+	// 		return trainer->gender; //These Trainer classes always match the gender of the Trainer
+	// 	default:
+	// 		return 0xFF; //Randomly assign gender based on hash
+	// }
 }
 
 static u8 GetTrainerMonMovePPBonus(void)

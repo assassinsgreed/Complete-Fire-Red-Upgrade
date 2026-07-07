@@ -3093,6 +3093,13 @@ extern const u8 gText_PokemonExchange_Minior[];
 extern const u8 gText_PokemonExchange_Turtonator[];
 extern const u8 gText_PokemonExchange_Dratini[];
 
+extern const u8 gText_PokemonExchange_Divergent_Aipom[];
+extern const u8 gText_PokemonExchange_Divergent_Yanma[];
+extern const u8 gText_PokemonExchange_Divergent_Snover[];
+extern const u8 gText_PokemonExchange_Divergent_Druddigon[];
+extern const u8 gText_PokemonExchange_Divergent_Heatmor[];
+extern const u8 gText_PokemonExchange_Divergent_Beldum[];
+
 // Apricorn balls
 extern const u8 gText_ApricornBalls_FastBall[];
 extern const u8 gText_ApricornBalls_LevelBall[];
@@ -3319,6 +3326,17 @@ static const u8* sGameCornerPokemonExchange[] =
 	gText_PokemonExchange_Minior,
 	gText_PokemonExchange_Turtonator,
 	gText_PokemonExchange_Dratini,
+	gText_End,
+};
+
+static const u8* sGameCornerPokemonExchange_Divergent[] =
+{
+	gText_PokemonExchange_Divergent_Aipom,
+	gText_PokemonExchange_Divergent_Yanma,
+	gText_PokemonExchange_Divergent_Snover,
+	gText_PokemonExchange_Divergent_Druddigon,
+	gText_PokemonExchange_Divergent_Heatmor,
+	gText_PokemonExchange_Divergent_Beldum,
 	gText_End,
 };
 
@@ -3556,6 +3574,7 @@ const struct ScrollingMulti gScrollingSets[] =
 	{sGameStats, ARRAY_COUNT(sGameStats)},
 	{sGameModifiers, ARRAY_COUNT(sGameModifiers)},
 	{sUltraWormholes, ARRAY_COUNT(sUltraWormholes)},
+	{sGameCornerPokemonExchange_Divergent, ARRAY_COUNT(sGameCornerPokemonExchange_Divergent)},
 };
 
 //Link number of opts shown at once to the box height
@@ -4129,6 +4148,82 @@ void GiveUpTo999RareCandies()
 	u16 candiesToGive = 999 - CountTotalItemQuantityInBag(ITEM_RARE_CANDY);
 	if (candiesToGive > 0)
 		AddBagItem(ITEM_RARE_CANDY, candiesToGive);
+}
+
+// Swami researcher species table — mirrors gSwarmTable then gDivergentSwarmTable order.
+// Adding a new swarm species: append to the matching block below; sp1AF/sp1B0 pick it up automatically.
+static const u16 sResearchSpecies[] = {
+    // Normal mode swarms (indices 0-16)
+    SPECIES_RATTATA, SPECIES_RATICATE, SPECIES_RAICHU_A,
+    SPECIES_GRIMER, SPECIES_MUK,
+    SPECIES_SLOWPOKE_G, SPECIES_SLOWBRO_G, SPECIES_SLOWKING_G,
+    SPECIES_FARFETCHD,
+    SPECIES_KOFFING, SPECIES_WEEZING,
+    SPECIES_MIME_JR, SPECIES_MR_MIME,
+    SPECIES_CORSOLA,
+    SPECIES_DARUMAKA, SPECIES_DARMANITAN,
+    SPECIES_STUNFISK,
+    // Divergent mode swarms (indices 17-33)
+    SPECIES_ZIGZAGOON, SPECIES_LINOONE,
+    SPECIES_DIGLETT, SPECIES_DUGTRIO,
+    SPECIES_MEOWTH, SPECIES_PERSIAN,
+    SPECIES_GEODUDE, SPECIES_GRAVELER, SPECIES_GOLEM,
+    SPECIES_SANDSHREW, SPECIES_SANDSLASH,
+    SPECIES_VULPIX_A, SPECIES_NINETALES_A,
+    SPECIES_MAROWAK,
+    SPECIES_EXEGGUTOR,
+    SPECIES_PONYTA_G, SPECIES_RAPIDASH_G,
+};
+
+// sp1AF — Var8001 = species. Returns: 0=not a research species, 1=already shown, 2=new valid species.
+u8 sp1AF_CheckResearchSpecies(void)
+{
+    u16 species = Var8001;
+    u8 index;
+
+    for (index = 0; index < ARRAY_COUNT(sResearchSpecies); index++)
+    {
+        if (sResearchSpecies[index] == species)
+            break;
+    }
+
+    if (index == ARRAY_COUNT(sResearchSpecies))
+    {
+        gSpecialVar_LastResult = 0;
+        return 0;
+    }
+
+    u16 varId = VAR_SWARM_RESEARCHER_SHOWN_1 + (index / 16);
+    u16 bit = 1u << (index % 16);
+
+    if (VarGet(varId) & bit)
+    {
+        gSpecialVar_LastResult = 1;
+        return 1;
+    }
+
+    gSpecialVar_LastResult = 2;
+    return 2;
+}
+
+// sp1B0 — Var8001 = species. Marks it shown. Call only after sp1AF returns 2.
+void sp1B0_MarkResearchSpeciesShown(void)
+{
+    u16 species = Var8001;
+    u8 index;
+
+    for (index = 0; index < ARRAY_COUNT(sResearchSpecies); index++)
+    {
+        if (sResearchSpecies[index] == species)
+            break;
+    }
+
+    if (index == ARRAY_COUNT(sResearchSpecies))
+        return;
+
+    u16 varId = VAR_SWARM_RESEARCHER_SHOWN_1 + (index / 16);
+    u16 bit = 1u << (index % 16);
+    VarSet(varId, VarGet(varId) | bit);
 }
 
 // Stores / retrieves the party's held item into/from RAM

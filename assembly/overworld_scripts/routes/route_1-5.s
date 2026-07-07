@@ -1262,6 +1262,14 @@ MapScript_HeleoRanchExterior:
 
 MapEntryScript_HeleoRanch_FlightFlag:
     setworldmapflag 0x8A7 @ Been to Heleo Ranch
+    checkflag 0x945 @ Divergent Mode
+    if SET _goto HideAmpharos
+    checkflag 0x950 @ Ampharos beaten in normal mode
+    if SET _goto End @ Already beaten: leave 0x03E set
+    clearflag 0x03E @ Not divergent, not beaten: restore Ampharos
+    goto End
+HideAmpharos:
+    setflag 0x03E
     end
 
 MapEntryScript_HeleoRanch_HandleMareepVisibility:
@@ -1270,7 +1278,7 @@ MapEntryScript_HeleoRanch_HandleMareepVisibility:
     special2 LASTRESULT 0xAD
     compare LASTRESULT 0x2 @ Evening
     if lessthan _goto End
-    setflag 0xE07 @ Evenining or night, hide all mareeps on field and Moomoo Milk seller, by setting daily flag
+    setflag 0xE07 @ Evening or night, hide all mareeps on field and Moomoo Milk seller, by setting daily flag
     end
 
 .global MapScript_HeleoRanchInterior
@@ -1369,6 +1377,7 @@ EvenScript_HeleoRanch_Ampharos:
     setflag 0x903 @ Disable running
     msgbox gText_HeleoRanch_AgitatedAmpharos_BattleStarted MSG_NORMAL
     wildbattle SPECIES_AMPHAROS 0x1E ITEM_SITRUS_BERRY
+    setflag 0x950 @ Track that Ampharos was beaten in normal mode
     setflag 0x03E @ Hide Ampharos
     hidesprite LASTTALKED
     msgbox gText_HeleoRanch_AgitatedAmpharos_BattleEnded MSG_NORMAL
@@ -1411,9 +1420,15 @@ EventScript_HeleoRanch_FindTM45Attract:
     call ItemScript_Common_FindTM
     end
 
-.global EventScript_HeleoRanch_Ampharosite
-EventScript_HeleoRanch_Ampharosite:
+.global EventScript_HeleoRanch_Ampharosite_OrPidgeotite
+EventScript_HeleoRanch_Ampharosite_OrPidgeotite:
+    checkflag 0x945 @ Divergent Mode
+    if SET _goto FindPidgeotite
     finditem ITEM_AMPHAROSITE 0x1
+    end
+
+FindPidgeotite:
+    finditem ITEM_PIDGEOTITE 0x1
     end
 
 .global SignScript_HeleoRanch_RanchGlade
@@ -1433,8 +1448,13 @@ EventScript_HeleoRanch_Dad:
 
 .global EventScript_HeleoRanch_Daughter
 EventScript_HeleoRanch_Daughter:
+    checkflag 0x945 @ Divergent mode
+    if SET _goto Daughter_Divergent
     npcchatwithmovement gText_HeleoRanch_Daughter m_LookUp
     end
+
+Daughter_Divergent:
+    npcchatwithmovement gText_HeleoRanch_Daughter_Divergent m_LookUp
 
 .global EventScript_HeleoRanch_Mom
 EventScript_HeleoRanch_Mom:
@@ -1444,4 +1464,7 @@ EventScript_HeleoRanch_Mom:
 .global EventScript_HeleoRanch_Son
 EventScript_HeleoRanch_Son:
     npcchat gText_HeleoRanch_Son
+    checkflag 0x945 @ Divergent Mode
+    if SET _goto End
+    msgbox gText_HeleoRanch_Son_OrneryAmpharos MSG_NORMAL
     end

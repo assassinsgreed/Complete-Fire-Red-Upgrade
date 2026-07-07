@@ -419,11 +419,15 @@
 #define FLAG_HIDE_HELEO_RANCH_TERRAIN_EXTENDER                  0x191
 #define FLAG_HIDE_HELEO_RANCH_AMPHAROSITE                       0x192
 #define FLAG_HIDE_ROUTE_11_ELECTRIC_SEED                        0x193
-#define FLAG_HIDE_ROUTE_7_STICK                                 0x194
+*/
+#define FLAG_HIDE_ROUTE_7_STICK_OR_SACHET                       0x194
+/*
 #define FLAG_HIDE_ROUTE_7_GREAT_BALL                            0x195
 #define FLAG_HIDE_ROUTE_7_BLACK_BELT                            0x196
 #define FLAG_HIDE_ROUTE_7_TM09_VENOSHOCK                        0x197
-#define FLAG_HIDE_ROUTE_6_AMPHAROSITE                           0x198
+*/
+#define FLAG_HIDE_ROUTE_6_AMPHAROSITE_OR_PIDGEOTITE             0x198
+/*
 #define FLAG_HIDE_ROUTE_6_TM78_BULLDOZE                         0x199
 #define FLAG_HIDE_ROUTE_6_FRESH_WATER                           0x19A
 #define FLAG_HIDE_ROUTE_6_LINK_CORD                             0x19B
@@ -456,7 +460,9 @@
 #define FLAG_HIDE_FORGOTTEN_MANSE_BF1_DESTINY_KNOT              0x1B6
 #define FLAG_HIDE_FORGOTTEN_MANSE_2F_TM60_HEX                   0x1B7
 #define FLAG_HIDE_FORGOTTEN_MANSE_BF1_TM61_WILL_O_WISP          0x1B8
-#define FLAG_HIDE_FORGOTTEN_MANSE_1F_SABLENITE                  0x1B9
+*/
+#define FLAG_HIDE_FORGOTTEN_MANSE_1F_SABLENITE_OR_BANETTITE     0x1B9
+/*
 #define FLAG_HIDE_DAIMYN_CITY_TM46_THIEF                        0x1BA
 #define FLAG_HIDE_DAIMYN_CITY_TM54_FALSE_SWIPE                  0x1BB
 #define FLAG_HIDE_DAIMYN_FACTORY_OVERWORLD_SUPER_POTION         0x1BC
@@ -1038,6 +1044,7 @@
 #define FLAG_0x3E5               0x3E5
 #define FLAG_0x3E6               0x3E6
 #define FLAG_0x3E7               0x3E7
+#define FLAG_AMPHAROS_BEATEN_IN_NORMAL 0x950 @ Used to programmatically handle Ampharos visibility when swapping between standard and divergent modes
 */
 
 #define FLAG_HIDDEN_ITEMS_START 1000 // 0x3E8

@@ -771,7 +771,7 @@ Cutscene skipping is enabled!
 Cutscene skipping is disabled!
 
 #org @gText_GameCustomization_PokemonSelectionQuestion
-You may choose whether to play with\nthe Standard Pok\emon selection or\lan alternative set.\pWild encounters, trainers, and some\nitems will change depending on your\lchoice.\pStandard is recommended for a first\nplaythrough. Which do you prefer?
+You may choose whether to play with\nthe Standard Pok\emon selection or\lan alternative set.\pWild encounters, trainers, and some\nitems will change depending on your\lchoice. Certain Pok\emon do not\lchange.\pStandard is recommended for a first\nplaythrough. Which do you prefer?
 
 #org @gText_GameCustomization_PokemonSelection_Standard
 Standard

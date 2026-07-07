@@ -207,9 +207,15 @@ NurseLucyHeal:
     msgbox gText_ForgottenManseExterior_NurseLucy_HealingComplete MSG_NORMAL
     end
 
-.global EventScript_ForgottenManse1F_Sablenite
-EventScript_ForgottenManse1F_Sablenite:
+.global EventScript_ForgottenManse1F_SableniteOrBanettite
+EventScript_ForgottenManse1F_SableniteOrBanettite:
+    checkflag 0x945 @ Divergent Mode
+    if SET _goto FindBanettite
     finditem ITEM_SABLENITE 0x1
+    end
+
+FindBanettite:
+    finditem ITEM_BANETTITE 0x1
     end
 
 .global EventScript_ForgottenManse2F_TM60Hex
@@ -269,7 +275,13 @@ EventScript_ForgottenManse2F_BurglarBarry:
 .global EventScript_ForgottenManse2F_YoungsterChester
 EventScript_ForgottenManse2F_YoungsterChester:
     trainerbattle0 0x0 0x82 0x0 gText_ForgottenManse2F_YoungsterChester_Intro gText_ForgottenManse2F_YoungsterChester_Defeat
+    checkflag 0x945 @ Divergent Mode
+    if SET _goto ChesterChatDivergent
     msgbox gText_ForgottenManse2F_YoungsterChester_Chat MSG_NORMAL
+    end
+
+ChesterChatDivergent:
+    msgbox gText_ForgottenManse2F_YoungsterChester_Chat_Divergent MSG_NORMAL
     end
 
 .global EventScript_ForgottenManse2F_ChannelerElaine

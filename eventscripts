@@ -246,7 +246,7 @@ npc 6 16 3 EventScript_RhodanziGym_Leader_Terrence
 # Route 7
 npc 3 25 0 EventScript_Route7_CamperCarlisle
 npc 3 25 1 EventScript_Route5And7_Cut
-npc 3 25 2 ItemScript_Common_Stick
+npc 3 25 2 ItemScript_Common_Stick_OrSachet
 npc 3 25 3 EventScript_Route7_RockerJonas
 npc 3 25 4 EventScript_Route7_LassEden
 npc 3 25 5 EventScript_Route7_HikerDanny
@@ -646,7 +646,7 @@ npc 1 6 14 ItemScript_Common_MiracleSeed
 npc 1 6 15 ItemScript_Common_Nestball
 npc 1 6 16 EventScript_HeleoRanch_FindTM45Attract
 npc 1 6 17 ItemScript_Common_TerrainExtender
-npc 1 6 18 EventScript_HeleoRanch_Ampharosite
+npc 1 6 18 EventScript_HeleoRanch_Ampharosite_OrPidgeotite
 npc 1 7 0 EventScript_HeleoRanch_Dad
 npc 1 7 1 EventScript_HeleoRanch_Daughter
 npc 1 7 2 EventScript_HeleoRanch_Mom
@@ -811,8 +811,8 @@ npc 3 26 9 EventScript_Common_RockSmash
 npc 3 26 10 EventScript_Common_RockSmash
 npc 3 26 11 EventScript_Common_RockSmash
 npc 3 26 12 EventScript_Common_RockSmash
-npc 3 26 13 EventScript_Route8_SandygastEncounter1
-npc 3 26 14 EventScript_Route8_SandygastEncounter2
+npc 3 26 13 EventScript_Route8_TrapEncounter1
+npc 3 26 14 EventScript_Route8_TrapEncounter2
 npc 3 26 15 EventScript_Route8_Swampertite
 npc 3 26 16 EventScript_Route8_FindTM40AerialAce
 npc 3 26 17 EventScript_Route8_FindTM48Round
@@ -865,7 +865,7 @@ sign 1 9 0 SignScript_ForgottenManseExterior_MansePlacard
 tile 1 9 0 TileScript_ForgottenManseExterior_FrontDoor
 ## 1F
 map 1 10 MapScript_ForgottenManse_1F
-npc 1 10 0 EventScript_ForgottenManse1F_Sablenite
+npc 1 10 0 EventScript_ForgottenManse1F_SableniteOrBanettite
 npc 1 10 1 EventScript_Common_Strength
 npc 1 10 2 EventScript_Common_Strength
 npc 1 10 3 EventScript_Common_Strength

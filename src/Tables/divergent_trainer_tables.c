@@ -1970,8 +1970,8 @@ const struct TrainerMonNoItemDefaultMoves sParty_Route7_HikerDanny_Divergent[] =
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_Route7_CrushGirlEden_Divergent[] = {
-    { .lvl = 18, .species = SPECIES_COMBUSKEN },
-    { .lvl = 19, .species = SPECIES_MACHOP },
+    { .lvl = 18, .species = SPECIES_SPRITZEE },
+    { .lvl = 19, .species = SPECIES_CLEFAIRY },
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_Route7_PsychicIshaan_Divergent[] = {
@@ -2593,7 +2593,7 @@ const struct TrainerMonNoItemDefaultMoves sParty_ForgottenManse_2F_ChannelerElai
 
 const struct TrainerMonNoItemDefaultMoves sParty_ForgottenManse_BF1_SuperNerdGlenn_Divergent[] = {
     { .lvl = 27, .species = SPECIES_MEOWTH_G },
-    { .lvl = 27, .species = SPECIES_MEOWTH_A }
+    { .lvl = 27, .species = SPECIES_MEOWTH }
 };
 const struct TrainerMonNoItemDefaultMoves sParty_ForgottenManse_BF1_BurglarPavle_Divergent[] = {
     { .lvl = 25, .species = SPECIES_STUNKY },

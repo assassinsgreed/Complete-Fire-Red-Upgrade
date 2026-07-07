@@ -266,6 +266,7 @@ void CB2_OptionsMenuFromStartMenu(void)
     sOptionMenuPtr->option_secondPage[MENUITEM_WILD_ENCOUNTERS] = FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS) ? 1 : 0;
 
     VarSet(VAR_TEMP_2, VarGet(VAR_LEVEL_CAPS));
+    FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS) ? FlagSet(FLAG_TEMP_C) : FlagClear(FLAG_TEMP_C);
     
     for (i = 0; i < MENUITEM_COUNT - 1; i++)
     {
@@ -354,6 +355,7 @@ extern const u8 EventScript_NotifyLevelCapChange[];
 void CloseAndSaveOptionMenu(u8 taskId)
 {
     bool8 levelCapChanged;
+    bool8 pokemonSelectionChanged;
 
     FreeAllWindowBuffers();
     gSaveBlock2->optionsTextSpeed = sOptionMenuPtr->option[MENUITEM_TEXTSPEED];
@@ -374,6 +376,7 @@ void CloseAndSaveOptionMenu(u8 taskId)
         sOptionMenuPtr->option_secondPage[MENUITEM_WILD_ENCOUNTERS] == 1 ? FlagSet(FLAG_DIVERGENT_WILD_ENCOUNTERS) : FlagClear(FLAG_DIVERGENT_WILD_ENCOUNTERS);
 
     levelCapChanged = (VarGet(VAR_TEMP_2) != VarGet(VAR_LEVEL_CAPS));
+    pokemonSelectionChanged = (FlagGet(FLAG_TEMP_C) != FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS));
 
     if (levelCapChanged)
     {
@@ -392,6 +395,12 @@ void CloseAndSaveOptionMenu(u8 taskId)
     }
 
     // TODO: Restore item / legendary flags based on mode & pokedex completion
+    if (pokemonSelectionChanged)
+    {
+        FlagClear(FLAG_HIDE_ROUTE_7_STICK_OR_SACHET);
+        FlagClear(FLAG_HIDE_ROUTE_6_AMPHAROSITE_OR_PIDGEOTITE);
+        FlagClear(FLAG_HIDE_FORGOTTEN_MANSE_1F_SABLENITE_OR_BANETTITE);
+    }
 
     SetPokemonCryStereo(gSaveBlock2->optionsSound);
     FREE_AND_SET_NULL(sOptionMenuPtr);    

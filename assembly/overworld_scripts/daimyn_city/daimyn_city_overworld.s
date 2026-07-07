@@ -367,7 +367,13 @@ ChoseNotToBattleRivalToday:
 
 .global EventScript_DaimynCity_AlolanRaichuKid
 EventScript_DaimynCity_AlolanRaichuKid:
+    checkflag 0x945 @ Divergent Mode
+    if SET _goto WimpodKid
     npcchatwithmovement gText_DaimynCityOverworld_AlolanRaichuKid m_LookDown
+    end
+
+WimpodKid:
+    npcchatwithmovement gText_DaimynCityOverworld_AlolanRaichuKid_Divergent m_LookDown
     end
 
 .global SignScript_DaimynCityOverworld_Restaurant

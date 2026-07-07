@@ -347,9 +347,15 @@ ItemScript_Common_ChoiceScarf:
     finditem ITEM_CHOICE_SCARF 0x1
     end
 
-.global ItemScript_Common_Stick
-ItemScript_Common_Stick:
+.global ItemScript_Common_Stick_OrSachet
+ItemScript_Common_Stick_OrSachet:
+    checkflag 0x945 @ Divergent mode
+    if SET _goto GiveSachet
     finditem ITEM_STICK 0x1
+    end
+
+GiveSachet:
+    finditem ITEM_SACHET 0x1
     end
 
 .global ItemScript_Common_StickyBarb

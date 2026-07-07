@@ -145,6 +145,9 @@ Well, a deal's a deal.
 #org @gText_ForgottenManse2F_YoungsterChester_Chat
 Alright, I'll tell you where I found\nthese Corsola[.]\pYou can find it in the cave leading\nup to the Manse, but you'll need a\lGood Rod first!
 
+#org @gText_ForgottenManse2F_YoungsterChester_Chat_Divergent
+Alright, I'll tell you where I found\nthese Dreepy[.]\pThey're in a cave under the Manse!
+
 #org @gText_ForgottenManse2F_ChannelerElaine_Intro
 My Pok\emon and I have battled\ntogether for over thirty years.
 
@@ -155,13 +158,13 @@ M-my Pok\emon[.] I put a curse on you!
 My curse will follow you forever,\nyou insolent whelp!
 
 #org @gText_ForgottenManseBF1_SuperNerdGlenn_Intro
-My favorite Pok\emon is Slowpoke.\nHere, I'll show you in battle!
+My favorite Pok\emon is really strong.\nHere, I'll show you in battle!
 
 #org @gText_ForgottenManseBF1_SuperNerdGlenn_Defeat
-Oh no, my Slowpokes!
+Oh no, my Pok\emon!
 
 #org @gText_ForgottenManseBF1_SuperNerdGlenn_Chat
-I bet you've never seen a Slowpoke\nas cool and rare as mine!
+I bet you've never seen a Pok\emon\nas cool and rare as mine!
 
 #org @gText_ForgottenManseBF1_BurglarPavle_Intro
 Ah, Ah, Achoo!\pMy allergies are driving me nuts, but\nI can still beat you in battle.

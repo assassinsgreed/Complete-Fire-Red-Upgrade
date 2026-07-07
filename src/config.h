@@ -135,6 +135,10 @@ enum //These vars need to be one after the other (hence the enum)
 #define VAR_PLAYER_HM_USE 0x5022			//Change field move usage sprite. 0x4057 in JPAN engine.
 #define VAR_PLAYER_FISHING 0x5023			//Change fishing sprite. 0x4058 in JPAN engine.
 #define VAR_PLAYER_VS_SEEKER 0x503D         //Change vs seeker usage sprite. NOT in JPAN's engine
+
+#define VAR_SWARM_RESEARCHER_SHOWN_1 0x503E // Swami researcher: species shown bitmask, indices 0-15
+#define VAR_SWARM_RESEARCHER_SHOWN_2 0x503F // Swami researcher: species shown bitmask, indices 16-31
+#define VAR_SWARM_RESEARCHER_SHOWN_3 0x5040 // Swami researcher: species shown bitmask, indices 32-33
 #define VAR_PLAYER_VS_SEEKER_ON_BIKE 0x5024	//Change vs seeker on bike sprite. 0x4059 in JPAN engine.
 #define VAR_PLAYER_UNDERWATER 0x5025		//Change underwater sprite.
 #define VAR_TRAINERCARD_MALE 0x5026			//Change trainer card image (male). 0x4060 in JPAN engine.

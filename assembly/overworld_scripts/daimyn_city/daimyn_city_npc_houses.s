@@ -311,6 +311,8 @@ EventScript_DaimynCityNPCHouses_Trader:
     checkflag 0x254 @ Did starter based trade
     if SET _goto DaimynTradeComplete
     msgbox gText_DaimynCityNPCHouses_TraderIntro MSG_NORMAL
+    checkflag 0x945 @ Divergent Mode
+    if SET _goto TraderDivergent
     switch 0x408D @ Fire starter generation
     case 0, TradeRequestMrMime
     case 1, TradeRequestDratini
@@ -393,6 +395,58 @@ DaimynTradeComplete:
     msgbox gText_DaimynCityNPCHouses_TraderTradeComplete MSG_NORMAL
     release
     end
+
+TraderDivergent:
+    switch 0x408D @ Fire starter generation
+    case 0, TradeRequestJynx
+    case 1, TradeRequestXatu
+    case 2, TradeRequestMakuhita
+    case 3, TradeRequestHaunter
+    case 4, TradeRequestMunchlax
+    case 5, TradeRequestSteelix
+    case 6, TradeRequestSteenee
+    case 7, TradeRequestMeowth
+    end
+
+TradeRequestJynx:
+    msgbox gText_DaimynCityNPCHouses_TraderRequestJynx MSG_YESNO
+    setvar 0x8008 14
+    goto HandleTrade
+
+TradeRequestXatu:
+    msgbox gText_DaimynCityNPCHouses_TraderRequestXatu MSG_YESNO
+    setvar 0x8008 15
+    goto HandleTrade
+
+TradeRequestMakuhita:
+    msgbox gText_DaimynCityNPCHouses_TraderRequestMakuhita MSG_YESNO
+    setvar 0x8008 16
+    goto HandleTrade
+
+TradeRequestHaunter:
+    msgbox gText_DaimynCityNPCHouses_TraderRequestHaunter MSG_YESNO
+    setvar 0x8008 17
+    goto HandleTrade
+
+TradeRequestMunchlax:
+    msgbox gText_DaimynCityNPCHouses_TraderRequestMunchlax MSG_YESNO
+    setvar 0x8008 18
+    goto HandleTrade
+
+TradeRequestSteelix:
+    msgbox gText_DaimynCityNPCHouses_TraderRequestSteelix MSG_YESNO
+    setvar 0x8008 19
+    goto HandleTrade
+
+TradeRequestSteenee:
+    msgbox gText_DaimynCityNPCHouses_TraderRequestSteenee MSG_YESNO
+    setvar 0x8008 20
+    goto HandleTrade
+
+TradeRequestMeowth:
+    msgbox gText_DaimynCityNPCHouses_TraderRequestMeowth MSG_YESNO
+    setvar 0x8008 21
+    goto HandleTrade
 
 .global EventScript_DaimynCityNPCHouses_Lana
 EventScript_DaimynCityNPCHouses_Lana:

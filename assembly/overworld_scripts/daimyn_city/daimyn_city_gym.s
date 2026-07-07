@@ -352,6 +352,8 @@ EventScript_DaimynCityGym_PokemonTrader:
 PokemonTraderShopList:
     msgbox gText_DaimynCityGym_GenericTrader_OpenShopPrompt MSG_KEEPOPEN
     showcoins 0x14 0x0
+    checkflag 0x945 @ Divergent Mode
+    if SET _goto PokemonExchangeDivergent
     setvar 0x8000 0x7 @ Pokemon exchange list
     setvar 0x8001 0x6 @ Show 6 at a time
     setvar 0x8004 0x0
@@ -395,6 +397,53 @@ Turtonator:
 
 Dratini:
     setvar 0x4001 SPECIES_DRATINI
+    setvar 0x4002 3000
+    goto PokemonTrader_AfterChoiceMade
+
+PokemonExchangeDivergent:
+    setvar 0x8000 0x14 @ Pokemon exchange list (divergent)
+    setvar 0x8001 0x6 @ Show 6 at a time
+    setvar 0x8004 0x0
+	special 0x158
+    waitstate
+    switch LASTRESULT
+    case 0, Aipom
+    case 1, Yanma
+    case 2, Snover
+    case 3, Druddigon
+    case 4, Heatmor
+    case 5, Beldum
+    case 6, DeclineTradeExchange
+    case 0x7F, DeclineTradeExchange @ When player hits B to close
+    end
+
+Aipom:
+    setvar 0x4001 SPECIES_AIPOM
+    setvar 0x4002 500
+    goto PokemonTrader_AfterChoiceMade
+
+Yanma:
+    setvar 0x4001 SPECIES_YANMA
+    setvar 0x4002 500
+    goto PokemonTrader_AfterChoiceMade
+
+Snover:
+    setvar 0x4001 SPECIES_SNOVER
+    setvar 0x4002 500
+    goto PokemonTrader_AfterChoiceMade
+
+Druddigon:
+    setvar 0x4001 SPECIES_DRUDDIGON
+    setvar 0x4002 1000
+    goto PokemonTrader_AfterChoiceMade
+
+Heatmor:
+    setvar 0x4001 SPECIES_HEATMOR
+    setvar 0x4002 2000
+    goto PokemonTrader_AfterChoiceMade
+
+Beldum:
+    setvar 0x4001 SPECIES_BELDUM
     setvar 0x4002 3000
     goto PokemonTrader_AfterChoiceMade
 
