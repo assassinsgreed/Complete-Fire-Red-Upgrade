@@ -428,13 +428,27 @@ EventScript_LaplazNPCHouses_CaseysGrandmother:
 EventScript_LaplazNPCHouses_HeracrossKid:
     lock
     faceplayer
+    checkflag 0x945 @ Divergent Mode
+    if NOT_SET _call ShowHeracross
+    if SET _call ShowPinsir
+    applymovement LASTTALKED m_LookRight
+    end
+
+ShowHeracross:
     msgbox gText_LaplazTownNPCHouses_HeracrossKid MSG_NORMAL
     showpokepic SPECIES_HERACROSS
     msgbox gText_LaplazTownNPCHouses_HeracrossKidDuringPic MSG_NORMAL
     hidepokepic
     msgbox gText_LaplazTownNPCHouses_HeracrossKidAfterPic MSG_NORMAL
-    applymovement LASTTALKED m_LookRight
-    end
+    return
+
+ShowPinsir:
+    msgbox gText_LaplazTownNPCHouses_HeracrossKid_PinsirInDivergent MSG_NORMAL
+    showpokepic SPECIES_PINSIR
+    msgbox gText_LaplazTownNPCHouses_HeracrossKidDuringPic MSG_NORMAL
+    hidepokepic
+    msgbox gText_LaplazTownNPCHouses_HeracrossKidAfterPic_PinsirInDivergent MSG_NORMAL
+    return
 
 .global EventScript_LaplazNPCHouses_HeracrossKidsSister
 EventScript_LaplazNPCHouses_HeracrossKidsSister:

@@ -82,6 +82,18 @@ extern const u8 DuskManeNecrozmaTiles[];
 extern const u8 DawnWingsNecrozmaTiles[];
 extern const u8 UltraNecrozmaTiles[];
 
+// Divergent Overworld
+extern const u8 TornadusTiles[];
+extern const u8 ThundurusTiles[];
+extern const u8 LandorusTiles[];
+extern const u8 XerneasTiles[];
+extern const u8 LugiaTiles[];
+extern const u8 HoopaTiles[];
+extern const u8 HeatranTiles[];
+extern const u8 ZarudeTiles[];
+extern const u8 SpectrierTiles[];
+extern const u8 GenesectTiles[];
+
 #define EVENT_OBJ_PAL_TAG_NONE 0x1102
 #define gEventObjectBaseOam_16x16 ((const struct OamData*) 0x83A36F8)
 #define gEventObjectBaseOam_16x32 ((const struct OamData*) 0x83A3710)
@@ -1025,6 +1037,136 @@ static const struct SpriteFrameImage Table_UltraNecrozma[] =
     overworld_frame(UltraNecrozmaTiles, 8, 8, 6),
     overworld_frame(UltraNecrozmaTiles, 8, 8, 7),
     overworld_frame(UltraNecrozmaTiles, 8, 8, 8),
+};
+
+static const struct SpriteFrameImage Table_Tornadus[] =
+{
+    overworld_frame(TornadusTiles, 4, 4, 0),
+    overworld_frame(TornadusTiles, 4, 4, 1),
+    overworld_frame(TornadusTiles, 4, 4, 2),
+    overworld_frame(TornadusTiles, 4, 4, 3),
+    overworld_frame(TornadusTiles, 4, 4, 4),
+    overworld_frame(TornadusTiles, 4, 4, 5),
+    overworld_frame(TornadusTiles, 4, 4, 6),
+    overworld_frame(TornadusTiles, 4, 4, 7),
+    overworld_frame(TornadusTiles, 4, 4, 8),
+};
+
+static const struct SpriteFrameImage Table_Thundurus[] =
+{
+    overworld_frame(ThundurusTiles, 4, 4, 0),
+    overworld_frame(ThundurusTiles, 4, 4, 1),
+    overworld_frame(ThundurusTiles, 4, 4, 2),
+    overworld_frame(ThundurusTiles, 4, 4, 3),
+    overworld_frame(ThundurusTiles, 4, 4, 4),
+    overworld_frame(ThundurusTiles, 4, 4, 5),
+    overworld_frame(ThundurusTiles, 4, 4, 6),
+    overworld_frame(ThundurusTiles, 4, 4, 7),
+    overworld_frame(ThundurusTiles, 4, 4, 8),
+};
+
+static const struct SpriteFrameImage Table_Landorus[] =
+{
+    overworld_frame(LandorusTiles, 4, 4, 0),
+    overworld_frame(LandorusTiles, 4, 4, 1),
+    overworld_frame(LandorusTiles, 4, 4, 2),
+    overworld_frame(LandorusTiles, 4, 4, 3),
+    overworld_frame(LandorusTiles, 4, 4, 4),
+    overworld_frame(LandorusTiles, 4, 4, 5),
+    overworld_frame(LandorusTiles, 4, 4, 6),
+    overworld_frame(LandorusTiles, 4, 4, 7),
+    overworld_frame(LandorusTiles, 4, 4, 8),
+};
+
+static const struct SpriteFrameImage Table_Xerneas[] =
+{
+    overworld_frame(XerneasTiles, 8, 8, 0),
+    overworld_frame(XerneasTiles, 8, 8, 1),
+    overworld_frame(XerneasTiles, 8, 8, 2),
+    overworld_frame(XerneasTiles, 8, 8, 3),
+    overworld_frame(XerneasTiles, 8, 8, 4),
+    overworld_frame(XerneasTiles, 8, 8, 5),
+    overworld_frame(XerneasTiles, 8, 8, 6),
+    overworld_frame(XerneasTiles, 8, 8, 7),
+    overworld_frame(XerneasTiles, 8, 8, 8),
+};
+
+static const struct SpriteFrameImage Table_Lugia[] =
+{
+    overworld_frame(LugiaTiles, 8, 8, 0),
+    overworld_frame(LugiaTiles, 8, 8, 1),
+    overworld_frame(LugiaTiles, 8, 8, 2),
+    overworld_frame(LugiaTiles, 8, 8, 3),
+    overworld_frame(LugiaTiles, 8, 8, 4),
+    overworld_frame(LugiaTiles, 8, 8, 5),
+    overworld_frame(LugiaTiles, 8, 8, 6),
+    overworld_frame(LugiaTiles, 8, 8, 7),
+    overworld_frame(LugiaTiles, 8, 8, 8),
+};
+
+static const struct SpriteFrameImage Table_Hoopa[] =
+{
+    overworld_frame(HoopaTiles, 4, 4, 0),
+    overworld_frame(HoopaTiles, 4, 4, 1),
+    overworld_frame(HoopaTiles, 4, 4, 2),
+    overworld_frame(HoopaTiles, 4, 4, 3),
+    overworld_frame(HoopaTiles, 4, 4, 4),
+    overworld_frame(HoopaTiles, 4, 4, 5),
+    overworld_frame(HoopaTiles, 4, 4, 6),
+    overworld_frame(HoopaTiles, 4, 4, 7),
+    overworld_frame(HoopaTiles, 4, 4, 8),
+};
+
+static const struct SpriteFrameImage Table_Heatran[] =
+{
+    overworld_frame(HeatranTiles, 4, 4, 0),
+    overworld_frame(HeatranTiles, 4, 4, 1),
+    overworld_frame(HeatranTiles, 4, 4, 2),
+    overworld_frame(HeatranTiles, 4, 4, 3),
+    overworld_frame(HeatranTiles, 4, 4, 4),
+    overworld_frame(HeatranTiles, 4, 4, 5),
+    overworld_frame(HeatranTiles, 4, 4, 6),
+    overworld_frame(HeatranTiles, 4, 4, 7),
+    overworld_frame(HeatranTiles, 4, 4, 8),
+};
+
+static const struct SpriteFrameImage Table_Zarude[] =
+{
+    overworld_frame(ZarudeTiles, 4, 4, 0),
+    overworld_frame(ZarudeTiles, 4, 4, 1),
+    overworld_frame(ZarudeTiles, 4, 4, 2),
+    overworld_frame(ZarudeTiles, 4, 4, 3),
+    overworld_frame(ZarudeTiles, 4, 4, 4),
+    overworld_frame(ZarudeTiles, 4, 4, 5),
+    overworld_frame(ZarudeTiles, 4, 4, 6),
+    overworld_frame(ZarudeTiles, 4, 4, 7),
+    overworld_frame(ZarudeTiles, 4, 4, 8),
+};
+
+static const struct SpriteFrameImage Table_Spectrier[] =
+{
+    overworld_frame(SpectrierTiles, 4, 4, 0),
+    overworld_frame(SpectrierTiles, 4, 4, 1),
+    overworld_frame(SpectrierTiles, 4, 4, 2),
+    overworld_frame(SpectrierTiles, 4, 4, 3),
+    overworld_frame(SpectrierTiles, 4, 4, 4),
+    overworld_frame(SpectrierTiles, 4, 4, 5),
+    overworld_frame(SpectrierTiles, 4, 4, 6),
+    overworld_frame(SpectrierTiles, 4, 4, 7),
+    overworld_frame(SpectrierTiles, 4, 4, 8),
+};
+
+static const struct SpriteFrameImage Table_Genesect[] =
+{
+    overworld_frame(GenesectTiles, 4, 4, 0),
+    overworld_frame(GenesectTiles, 4, 4, 1),
+    overworld_frame(GenesectTiles, 4, 4, 2),
+    overworld_frame(GenesectTiles, 4, 4, 3),
+    overworld_frame(GenesectTiles, 4, 4, 4),
+    overworld_frame(GenesectTiles, 4, 4, 5),
+    overworld_frame(GenesectTiles, 4, 4, 6),
+    overworld_frame(GenesectTiles, 4, 4, 7),
+    overworld_frame(GenesectTiles, 4, 4, 8),
 };
 
 // #region MC
@@ -2507,5 +2649,205 @@ const struct EventObjectGraphicsInfo GraphicsInfo_UltraNecrozma =
     .subspriteTables = gEventObjectSpriteOamTables_64x64,
     .anims = gEventObjectImageAnimTable_Standard,
     .images = Table_UltraNecrozma,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+const struct EventObjectGraphicsInfo GraphicsInfo_Tornadus =
+{
+    .tileTag = 0xFFFF,
+    .paletteTag1 = 0x1240,
+    .paletteTag2 = EVENT_OBJ_PAL_TAG_NONE,
+    .size = (32 * 32) / 2,
+    .width = 32,
+    .height = 32,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .disableReflectionPaletteLoad = FALSE,
+    .tracks = TRACKS_NONE,
+    .gender = MALE,
+    .oam = gEventObjectBaseOam_32x32,
+    .subspriteTables = gEventObjectSpriteOamTables_32x32,
+    .anims = gEventObjectImageAnimTable_Standard,
+    .images = Table_Tornadus,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+const struct EventObjectGraphicsInfo GraphicsInfo_Thundurus =
+{
+    .tileTag = 0xFFFF,
+    .paletteTag1 = 0x1241,
+    .paletteTag2 = EVENT_OBJ_PAL_TAG_NONE,
+    .size = (32 * 32) / 2,
+    .width = 32,
+    .height = 32,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .disableReflectionPaletteLoad = FALSE,
+    .tracks = TRACKS_NONE,
+    .gender = MALE,
+    .oam = gEventObjectBaseOam_32x32,
+    .subspriteTables = gEventObjectSpriteOamTables_32x32,
+    .anims = gEventObjectImageAnimTable_Standard,
+    .images = Table_Thundurus,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+const struct EventObjectGraphicsInfo GraphicsInfo_Landorus =
+{
+    .tileTag = 0xFFFF,
+    .paletteTag1 = 0x1242,
+    .paletteTag2 = EVENT_OBJ_PAL_TAG_NONE,
+    .size = (32 * 32) / 2,
+    .width = 32,
+    .height = 32,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .disableReflectionPaletteLoad = FALSE,
+    .tracks = TRACKS_NONE,
+    .gender = MALE,
+    .oam = gEventObjectBaseOam_32x32,
+    .subspriteTables = gEventObjectSpriteOamTables_32x32,
+    .anims = gEventObjectImageAnimTable_Standard,
+    .images = Table_Landorus,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+const struct EventObjectGraphicsInfo GraphicsInfo_Xerneas =
+{
+    .tileTag = 0xFFFF,
+    .paletteTag1 = 0x1243,
+    .paletteTag2 = EVENT_OBJ_PAL_TAG_NONE,
+    .size = (64 * 64) / 2,
+    .width = 64,
+    .height = 64,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .disableReflectionPaletteLoad = FALSE,
+    .tracks = TRACKS_NONE,
+    .gender = MALE,
+    .oam = gEventObjectBaseOam_64x64,
+    .subspriteTables = gEventObjectSpriteOamTables_64x64,
+    .anims = gEventObjectImageAnimTable_Standard,
+    .images = Table_Xerneas,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+const struct EventObjectGraphicsInfo GraphicsInfo_Lugia =
+{
+    .tileTag = 0xFFFF,
+    .paletteTag1 = 0x1244,
+    .paletteTag2 = EVENT_OBJ_PAL_TAG_NONE,
+    .size = (64 * 64) / 2,
+    .width = 64,
+    .height = 64,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .disableReflectionPaletteLoad = FALSE,
+    .tracks = TRACKS_NONE,
+    .gender = MALE,
+    .oam = gEventObjectBaseOam_64x64,
+    .subspriteTables = gEventObjectSpriteOamTables_64x64,
+    .anims = gEventObjectImageAnimTable_Standard,
+    .images = Table_Lugia,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+const struct EventObjectGraphicsInfo GraphicsInfo_Hoopa =
+{
+    .tileTag = 0xFFFF,
+    .paletteTag1 = 0x1245,
+    .paletteTag2 = EVENT_OBJ_PAL_TAG_NONE,
+    .size = (32 * 32) / 2,
+    .width = 32,
+    .height = 32,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .disableReflectionPaletteLoad = FALSE,
+    .tracks = TRACKS_NONE,
+    .gender = MALE,
+    .oam = gEventObjectBaseOam_32x32,
+    .subspriteTables = gEventObjectSpriteOamTables_32x32,
+    .anims = gEventObjectImageAnimTable_Standard,
+    .images = Table_Hoopa,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+const struct EventObjectGraphicsInfo GraphicsInfo_Heatran =
+{
+    .tileTag = 0xFFFF,
+    .paletteTag1 = 0x1246,
+    .paletteTag2 = EVENT_OBJ_PAL_TAG_NONE,
+    .size = (32 * 32) / 2,
+    .width = 32,
+    .height = 32,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .disableReflectionPaletteLoad = FALSE,
+    .tracks = TRACKS_NONE,
+    .gender = MALE,
+    .oam = gEventObjectBaseOam_32x32,
+    .subspriteTables = gEventObjectSpriteOamTables_32x32,
+    .anims = gEventObjectImageAnimTable_Standard,
+    .images = Table_Heatran,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+const struct EventObjectGraphicsInfo GraphicsInfo_Zarude =
+{
+    .tileTag = 0xFFFF,
+    .paletteTag1 = 0x1247,
+    .paletteTag2 = EVENT_OBJ_PAL_TAG_NONE,
+    .size = (32 * 32) / 2,
+    .width = 32,
+    .height = 32,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .disableReflectionPaletteLoad = FALSE,
+    .tracks = TRACKS_NONE,
+    .gender = MALE,
+    .oam = gEventObjectBaseOam_32x32,
+    .subspriteTables = gEventObjectSpriteOamTables_32x32,
+    .anims = gEventObjectImageAnimTable_Standard,
+    .images = Table_Zarude,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+const struct EventObjectGraphicsInfo GraphicsInfo_Spectrier =
+{
+    .tileTag = 0xFFFF,
+    .paletteTag1 = 0x1248,
+    .paletteTag2 = EVENT_OBJ_PAL_TAG_NONE,
+    .size = (32 * 32) / 2,
+    .width = 32,
+    .height = 32,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .disableReflectionPaletteLoad = FALSE,
+    .tracks = TRACKS_NONE,
+    .gender = MALE,
+    .oam = gEventObjectBaseOam_32x32,
+    .subspriteTables = gEventObjectSpriteOamTables_32x32,
+    .anims = gEventObjectImageAnimTable_Standard,
+    .images = Table_Spectrier,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+const struct EventObjectGraphicsInfo GraphicsInfo_Genesect =
+{
+    .tileTag = 0xFFFF,
+    .paletteTag1 = 0x1249,
+    .paletteTag2 = EVENT_OBJ_PAL_TAG_NONE,
+    .size = (32 * 32) / 2,
+    .width = 32,
+    .height = 32,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .disableReflectionPaletteLoad = FALSE,
+    .tracks = TRACKS_NONE,
+    .gender = MALE,
+    .oam = gEventObjectBaseOam_32x32,
+    .subspriteTables = gEventObjectSpriteOamTables_32x32,
+    .anims = gEventObjectImageAnimTable_Standard,
+    .images = Table_Genesect,
     .affineAnims = gDummySpriteAffineAnimTable,
 };

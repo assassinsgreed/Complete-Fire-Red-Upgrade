@@ -1012,6 +1012,11 @@ void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
 		{
 			if (GetMonData(&mons[slotId], MON_DATA_MOVE1 + i, NULL) == gFieldMoves[j])
 			{
+				if (gFieldMoves[j] == MOVE_FLASH
+				|| gFieldMoves[j] == MOVE_DIVE
+				|| gFieldMoves[j] == MOVE_WATERFALL)
+					continue; //Don't allow these field moves to appear in the list
+
 				#ifdef ONLY_CHECK_ITEM_FOR_HM_USAGE
 				if (gFieldMoves[j] == MOVE_ROCKCLIMB
 				&& !CheckBagHasItem(ITEM_HM08_ROCK_CLIMB, 1))

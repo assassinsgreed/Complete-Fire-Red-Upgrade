@@ -974,6 +974,8 @@ RefinerExpandStock:
 
 RefinerShopCommon:
     msgbox gText_Route11SouthHouse_RefinerShop MSG_KEEPOPEN
+    checkflag 0x945 @ Divergent Mode
+    if SET _goto DivergentMegaStoneShop
     checkitem ITEM_RUSTED_DATA 0x1
     compare LASTRESULT TRUE
     if equal _call HandleExpandedMegaStoneShop
@@ -1026,6 +1028,33 @@ MegaStoneShop:
     .hword ITEM_HATTERITE
     .hword ITEM_COPPERITE
     .hword ITEM_DURALUDITE
+    .hword ITEM_NONE
+
+DivergentMegaStoneShop:
+    pokemart DivergentMegaStoneShopItems
+    msgbox gText_Route11SouthHouse_RefinerFarewell MSG_NORMAL
+    end
+
+.align 1
+DivergentMegaStoneShopItems:
+    .hword ITEM_VENUSAURITE_G
+    .hword ITEM_CHARIZARDITE_G
+    .hword ITEM_BLASTOISINITE_G
+    .hword ITEM_BUTTERFRITE
+    .hword ITEM_MACHAMPITE
+    .hword ITEM_GENGARITE_G
+    .hword ITEM_KINGLERITE
+    .hword ITEM_SNORLAXITE
+    .hword ITEM_GARBODORITE
+    .hword ITEM_RILLABITE
+    .hword ITEM_CINDERITE
+    .hword ITEM_INTELLEITE
+    .hword ITEM_DREDNAWITE
+    .hword ITEM_APPLITE
+    .hword ITEM_SANDACONDITE
+    .hword ITEM_GRIMMSNARITE
+    .hword ITEM_ALCREMITE
+    .hword ITEM_URSHIFITE
     .hword ITEM_NONE
 
 m_RivalWalksToMeetPlayer: .byte walk_left, walk_left, walk_left, walk_left, walk_left, walk_left, walk_left, walk_left, end_m

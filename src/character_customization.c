@@ -93,6 +93,18 @@ extern const u16 DuskManeNecrozmaPal[];
 extern const u16 DawnWingsNecrozmaPal[];
 extern const u16 UltraNecrozmaPal[];
 
+// Divergent Overworld events
+extern const u16 TornadusPal[];
+extern const u16 ThundurusPal[];
+extern const u16 LandorusPal[];
+extern const u16 XerneasPal[];
+extern const u16 LugiaPal[];
+extern const u16 HoopaPal[];
+extern const u16 HeatranPal[];
+extern const u16 ZarudePal[];
+extern const u16 SpectrierPal[];
+extern const u16 GenesectPal[];
+
 #ifdef UNBOUND
 //extern const u16 MalePlayer_Trainer_Outfit_RedPal[];
 extern const u16 MalePlayer_Trainer_Outfit_BlackPal[];
@@ -390,6 +402,16 @@ static const u16* sPlayerMarlonOutfitColours[] =
 		{ DuskManeNecrozmaPal, 0x123D },
 		{ DawnWingsNecrozmaPal, 0x123E },
 		{ UltraNecrozmaPal, 0x123F },
+		{ TornadusPal, 0x1240 },
+		{ ThundurusPal, 0x1241 },
+		{ LandorusPal, 0x1242 },
+		{ XerneasPal, 0x1243 },
+		{ LugiaPal, 0x1244 },
+		{ HoopaPal, 0x1245 },
+		{ HeatranPal, 0x1246 },
+		{ ZarudePal, 0x1247 },
+		{ SpectrierPal, 0x1248 },
+		{ GenesectPal, 0x1249 },
 		{ NULL, 0x11FF }
 	};
 	const struct SpritePalette* const gObjectEventSpritePalettesSwitcher[255] = {

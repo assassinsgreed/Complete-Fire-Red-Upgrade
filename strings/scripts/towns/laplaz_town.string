@@ -37,7 +37,7 @@ Laplaz Town\nThe resting hills town
 
 // Facilities
 #org @gText_LaplazTownFacilities_GalarBirdsGirl
-I saw it! I saw it!\pWeird looking bird Pok\emon, flying\nout of Lake Laplaz!\pMy sister doesn't believe me and\nwon't let me go, though[.]
+I saw it! I saw it!\pWeird looking Pok\emon, flying\nout of Lake Laplaz!\pMy sister doesn't believe me and\nwon't let me go, though[.]
 
 #org @gText_LaplazTownFacilities_GalarBirdsGirlsSister
 My little sister said she saw weird\nPok\emon over Lake Laplaz.\pDon't listen to her. She must've\njust been confused[.]\pPlenty of people visit the lake, and\nthey've never seen anything like it.
@@ -166,11 +166,17 @@ Oooh, that son of mine! He gets ill\nand refuses to rest.\pWho cares about the g
 #org @gText_LaplazTownNPCHouses_HeracrossKid
 There's this super cool Pok\emon in\nPeradon Forest called Heracross.\pHere, I'll show you what it looks\nlike!
 
+#org @gText_LaplazTownNPCHouses_HeracrossKid_PinsirInDivergent
+There's this super cool Pok\emon in\nPeradon Forest called Pinsir.\pHere, I'll show you what it looks\nlike!
+
 #org @gText_LaplazTownNPCHouses_HeracrossKidDuringPic
 See? Isn't it super cool?\nLook at that awesome horn!
 
 #org @gText_LaplazTownNPCHouses_HeracrossKidAfterPic
 You've seen what it looks like now,\nso you have no excuses!\pGo catch a Heracross of your own.\nYou won't be disappointed, I'm sure\lof it!
+
+#org @gText_LaplazTownNPCHouses_HeracrossKidAfterPic_PinsirInDivergent
+You've seen what it looks like now,\nso you have no excuses!\pGo catch a Pinsir of your own.\nYou won't be disappointed, I'm sure\lof it!
 
 #org @gText_LaplazTownNPCHouses_HeracrossKidsSister
 My little brother is totally obsessed\nwith bug Pok\emon. But, like[.]\pEEEWWWW!\pBug Pok\emon are so GROSS!

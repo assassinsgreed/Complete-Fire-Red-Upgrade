@@ -412,6 +412,8 @@ GraphicsInfo_CactusAndVictoryFlag 839FF58
 GraphicsInfo_UltraWormhole 839FF5C
 ## Replace SS Anne (108)
 GraphicsInfo_Truck 839FF60
+## Replace Snorlax (109)
+GraphicsInfo_Tornadus 839FF64
 ## Replace Spearow (110)
 GraphicsInfo_Sandygast 839FF68
 ## Replace Marowak (111)
@@ -428,6 +430,8 @@ GraphicsInfo_Ditto 839FF7C
 GraphicsInfo_Ampharos 839FF80
 ## Replace Omanyte (118)
 GraphicsInfo_Mareep 839FF88
+## Replace Kangaskhan (119)
+GraphicsInfo_Thundurus 839FF8C
 ## Update Pikachu (120)
 GraphicsInfo_Pikachu 839FF90
 ## Replace Psyduck (121)
@@ -446,12 +450,24 @@ GraphicsInfo_Jirachi 839FFAC
 GraphicsInfo_JirachiDormant 839FFB8
 ## Replace Wigglytuff (131)
 GraphicsInfo_Cosmog 839FFBC
+## Replace Doduo (132)
+GraphicsInfo_Landorus 839FFC0
+## Replace Fearow (133)
+GraphicsInfo_Xerneas 839ffC4
+## Replace Machoke (134)
+GraphicsInfo_Lugia 839FF8C8
+## Replace Lapras (135)
+GraphicsInfo_Hoopa 839FFCC
 ## Replace Zapdos (136)
 GraphicsInfo_ZapdosG 839FFD0
 ## Replace Moltres (137)
 GraphicsInfo_MoltresG 839FFD4
 ## Replace Articuno (138)
 GraphicsInfo_ArticunoG 839FFD8
+## Replace Mewtwo (139)
+GraphicsInfo_Heatran 839FFDC
+## Replace Mew (140)
+GraphicsInfo_Zarude 839FFE0
 ## Replace Entei (141)
 GraphicsInfo_DuskManeNecrozma 839FFE4
 ## Replace Suicune (142)
@@ -462,6 +478,10 @@ GraphicsInfo_UltraNecrozma 839FFEC
 GraphicsInfo_Kyogre 839FFF0
 ## Replace Ho-oh (145)
 GraphicsInfo_Groudon 839FFF4
+## Replace Celebi (146)
+GraphicsInfo_Zarude 839FFF8
+## Replace Kabuto (147)
+GraphicsInfo_Genesect 839FFFC
 ## Replace Deoxys Defense (148)
 GraphicsInfo_Glastrier 83A0000
 ## Replace Deoxys Attack (149)
