@@ -49,7 +49,18 @@ SetNormalSnowfall:
 @    Temp flag from it deciding player is not worthy is set
 @    Player defeated or ran from it
 MapResumeScript_HideGlastrierOnResume:
+    checkflag 0x945 @ Divergent Mode
+    if SET _goto CheckSpectrierVisibility
     setvar LASTRESULT SPECIES_GLASTRIER
+    callasm CheckIfCaught
+    compare LASTRESULT 0x1
+    if notequal _goto HandleRanOrFled
+    setflag 0x1A @ Temp flag to hide Glastrier
+    hidesprite 1 @ Glastrier
+    end
+
+CheckSpectrierVisibility:
+    setvar LASTRESULT SPECIES_SPECTRIER
     callasm CheckIfCaught
     compare LASTRESULT 0x1
     if notequal _goto HandleRanOrFled
