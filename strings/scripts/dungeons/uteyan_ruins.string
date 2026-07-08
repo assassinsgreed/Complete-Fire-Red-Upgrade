@@ -88,6 +88,18 @@ REDUCE SEVEN\nTO JUST TWO
 #org @gText_UteyanRuins_ChamberLeftDecoded
 ITS NEWFOUND\nWEAKNESS IS\lITS STRENGTH
 
+#org @gText_UteyanRuins_ChamberLeft_1_Divergent
+[BRAILLE]IT WITHOLDS
+
+#org @gText_UteyanRuins_ChamberLeft_2_Divergent
+[BRAILLE]FURIOUS SOULS
+         
+#org @gText_UteyanRuins_ChamberLeft_3_Divergent
+[BRAILLE]WITHIN
+
+#org @gText_UteyanRuins_ChamberLeftDecoded_Divergent
+IT WITHOLDS\nFURIOUS SOULS\lWITHIN
+
 #org @gText_UteyanRuins_ChamberLeft_IncorrectChoice
 Nothing happened[.]
 

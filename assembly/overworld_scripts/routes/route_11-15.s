@@ -232,9 +232,15 @@ EventScript_Route11South_TM32DoubleTeam:
     call ItemScript_Common_FindTM
     end
 
-.global EventScript_Route11South_Mawilite
-EventScript_Route11South_Mawilite:
+.global EventScript_Route11South_MawiliteOrMedichamite
+EventScript_Route11South_MawiliteOrMedichamite:
+    checkflag 0x945 @ Divergent Mode
+    if SET _goto FindMedichamite
     finditem ITEM_MAWILITE 0x1
+    end
+
+FindMedichamite:
+    finditem ITEM_MEDICHAMITE 0x1
     end
 
 .global EventScript_Route11South_TeamPlutoRoss
@@ -1145,6 +1151,11 @@ EventScript_Route11North_FishermanJonah:
     msgbox gText_Route11North_FishermanJonah_Chat MSG_NORMAL
     end
 
+.global EventScript_Route11North_Beedrillite
+EventScript_Route11North_Beedrillite:
+    finditem ITEM_BEEDRILLITE 0x1
+    end
+
 @ Route 12 East
 .global EventScript_Route12East_TriathleteJoanne
 EventScript_Route12East_TriathleteJoanne:
@@ -1218,9 +1229,15 @@ EventScript_Route12West_TM13IceBeam:
     call ItemScript_Common_FindTM
     end
 
-.global EventScript_Route12West_Slowbronite
-EventScript_Route12West_Slowbronite:
+.global EventScript_Route12West_SlowbroniteOrAbomasite
+EventScript_Route12West_SlowbroniteOrAbomasite:
+    checkflag 0x945 @ Divergent Mode
+    if SET _goto FindAbomasite
     finditem ITEM_SLOWBRONITE 0x1
+    end
+
+FindAbomasite:
+    finditem ITEM_ABOMASITE 0x1
     end
 
 .global EventScript_Route12West_BugCatcherBrendan
@@ -1625,6 +1642,11 @@ EventScript_Route13_Hiker_Right:
     msgbox gText_Route13_HikerRight MSG_NORMAL
     faceplayer
     npcchatwithmovement gText_Route13_HikerCommon m_LookLeft
+    end
+
+.global EventScript_Route13_Cameruptite
+EventScript_Route13_Cameruptite:
+    finditem ITEM_CAMERUPTITE 0x1
     end
 
 @@@@@@@@@@ Route 13 Rest House @@@@@@@@@@

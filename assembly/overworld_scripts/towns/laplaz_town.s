@@ -391,11 +391,59 @@ EventScript_LaplazFacilities_TrainerHouse_Girl:
 EventScript_LaplazNPCHouses_Monty:
     checkflag 0x03F @ Casey hidden in gym
     if SET _goto MontyCaseyNotMet
+    checkflag 0x945 @ Divergent Mode
+    if SET _goto MontyDarkraiCheck
+MontyMetWithCasey:
     msgbox gText_LaplazTownNPCHouses_MontyMetWithCasey MSG_NORMAL
     end
 
 MontyCaseyNotMet:
     msgbox gText_LaplazTownNPCHouses_MontyHaventMetWithCasey MSG_NORMAL
+    end
+
+MontyDarkraiCheck:
+    checkflag 0x4BC @ Beat Selene
+    if NOT_SET _goto MontyMetWithCasey
+    checkflag 0x298 @ Darkrai caught
+    if SET _goto MontyMetWithCasey
+    msgbox gText_LaplazTownNPCHouses_MontySufferingFromNightmare MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto ChoseNotToHelpMonty
+    cry SPECIES_DARKRAI 0x0
+    pause DELAY_HALFSECOND
+    applymovement PLAYER m_Surprise
+    sound 0x15 @ Exclaim
+    pause DELAY_HALFSECOND
+    playse 0x49 @ Escalator
+    fadescreen FADEOUT_BLACK
+    pause DELAY_HALFSECOND
+    msgbox gText_LaplazTownNPCHouses_MontyYes MSG_NORMAL
+    setflag 0x90B @ Wild custom moves, cleared at the end of battle
+    setvar 0x8000 MOVE_DARKVOID
+    setvar 0x8001 MOVE_DREAMEATER
+    setvar 0x8002 MOVE_DARKPULSE
+    setvar 0x8003 MOVE_NASTYPLOT
+    setflag 0x90C @ Smarter wild battle, cleared at the end of battle
+    setwildbattle SPECIES_DARKRAI 75 ITEM_NONE
+    setflag 0x807
+    special 0x138 @ Setup a legendary encounter (blurred screen transition)
+    waitstate
+    clearflag 0x807
+    special2 LASTRESULT 0xB4 @ Check the result of the battle
+    compare LASTRESULT 0x1 @ Defeated in battle
+    if equal _goto DarkraiRetreats
+    compare LASTRESULT 0x4 @ Fled from battle
+    if equal _goto DarkraiRetreats
+    msgbox gText_LaplazTownNPCHouses_MontyWakesUp MSG_NORMAL
+    setflag 0x298 @ Darkrai caught
+    end
+
+ChoseNotToHelpMonty:
+    msgbox gText_LaplazTownNPCHouses_Monty_No MSG_NORMAL
+    end
+
+DarkraiRetreats:
+    msgbox gText_LaplazTownNPCHouses_MontyDarkraiRetreated MSG_NORMAL
     end
 
 .global EventScript_LaplazNPCHouses_CaseysMom

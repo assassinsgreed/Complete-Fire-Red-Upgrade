@@ -147,9 +147,15 @@ VoltorbEncounter:
     release
     end
 
-.global EventScript_PeradonForest_Heracronite
-EventScript_PeradonForest_Heracronite:
+.global EventScript_PeradonForest_HeracroniteOrPinsirite
+EventScript_PeradonForest_HeracroniteOrPinsirite:
+    checkflag 0x945 @ Divergent Mode
+    if SET _goto FindPinsirite
     finditem ITEM_HERACRONITE 0x1
+    end
+
+FindPinsirite:
+    finditem ITEM_PINSIRITE 0x1
     end
 
 .global EventScript_PeradonForest_TM86_GrassKnot

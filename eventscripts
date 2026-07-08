@@ -411,7 +411,7 @@ sign 3 22 1 SignScript_Route4_TrainerTips
 map 1 4 MapScript_TormaCave
 npc 1 4 0 ItemScript_Common_Repel
 npc 1 4 1 ItemScript_Common_SmoothRock
-npc 1 4 2 EventScript_TormaCave_Glalitite
+npc 1 4 2 EventScript_TormaCave_GlalititeOrSteelixite
 npc 1 4 3 ItemScript_Common_SuperPotion
 npc 1 4 4 EventScript_TormaCave_RockyHelmet
 npc 1 4 5 ItemScript_Common_Greatball
@@ -490,6 +490,8 @@ npc 3 31 24 EventScript_Route13_CollectorBenji
 ## Story grunts
 npc 3 31 25 EventScript_Route13_Hiker_Left
 npc 3 31 26 EventScript_Route13_Hiker_Right
+## Cameruptite (Divergent mode only)
+npc 3 31 27 EventScript_Route13_Cameruptite
 ## Route 13 Rest House
 map 17 1 MapScript_Route13_RestHouse
 npc 17 1 0 EventScript_Route13_RestHouse_PCGuy
@@ -1143,7 +1145,7 @@ npc 1 30 8 EventScript_DaimynFactoryOverworld_PicknickerShanna
 npc 1 30 9 EventScript_DaimynFactoryOverworld_EngineerKliff
 npc 1 30 10 ItemScript_Common_SuperPotion
 npc 1 30 11 ItemScript_Common_SuperRepel
-npc 1 30 12 EventScript_DaimynFactoryOverworld_Lucarionite
+npc 1 30 12 EventScript_DaimynFactoryOverworld_LucarioniteOrMetagrossite
 npc 1 30 13 EventScript_DaimynFactoryOverworld_FindTM57_WildCharge
 npc 1 30 14 ItemScript_Common_EjectButton
 npc 1 30 15 ItemScript_Common_Magnet
@@ -1191,7 +1193,7 @@ npc 3 28 0 ItemScript_Common_RockIncense
 npc 3 28 1 ItemScript_Common_PsychicSeed
 npc 3 28 2 EventScript_Route10_TM64_Explosion
 npc 3 28 3 EventScript_Route10_TM41_Torment
-npc 3 28 4 EventScript_Route10_Lopunnite
+npc 3 28 4 EventScript_Route10_LopunniteOrManectite
 npc 3 28 5 ItemScript_Common_DragonScale
 npc 3 28 6 EventScript_Common_Cut
 npc 3 28 7 EventScript_Route10_PsychicDarius
@@ -1229,7 +1231,7 @@ npc 3 29 2 ItemScript_Common_RazorClaw
 npc 3 29 3 EventScript_Route11South_TM68GigaImpact
 npc 3 29 4 EventScript_Route11South_TM51SteelWing
 npc 3 29 5 ItemScript_Common_HeatRock
-npc 3 29 6 EventScript_Route11South_Mawilite
+npc 3 29 6 EventScript_Route11South_MawiliteOrMedichamite
 npc 3 29 7 ItemScript_Common_Carbos
 npc 3 29 8 EventScript_Common_RockSmash
 npc 3 29 9 EventScript_Common_RockSmash
@@ -1354,6 +1356,7 @@ npc 3 54 15 EventScript_Route11North_ParasolLadyTina
 npc 3 54 16 EventScript_Route11North_FishermanJonah
 npc 3 54 17 EventScript_RivalEvent5
 npc 3 54 18 EventScript_Common_Cut
+npc 3 54 19 EventScript_Route11North_Beedrillite
 sign 3 54 0 SignScript_LaplazTown_Entrance
 sign 3 54 1 SignScript_Route11North_LaplazTenets
 
@@ -1428,7 +1431,7 @@ npc 1 40 7 EventScript_PeradonForest_AmoongussEncounter3
 npc 1 40 8 EventScript_PeradonForest_FoongusEncounter2
 npc 1 40 9 ItemScript_Common_BlackSludge
 npc 1 40 10 ItemScript_Common_HyperPotion
-npc 1 40 11 EventScript_PeradonForest_Heracronite
+npc 1 40 11 EventScript_PeradonForest_HeracroniteOrPinsirite
 npc 1 40 12 ItemScript_Common_LeafStone
 npc 1 40 13 EventScript_PeradonForest_TM86_GrassKnot
 npc 1 40 14 EventScript_PeradonForest_PokefanClark
@@ -1570,7 +1573,7 @@ npc 3 11 12 ItemScript_Common_Ultraball
 npc 3 11 13 ItemScript_Common_Zinc
 npc 3 11 14 EventScript_Route12West_TM13IceBeam
 npc 3 11 15 ItemScript_Common_Revive
-npc 3 11 16 EventScript_Route12West_Slowbronite
+npc 3 11 16 EventScript_Route12West_SlowbroniteOrAbomasite
 npc 3 11 17 ItemScript_Common_IceStone
 npc 3 11 18 EventScript_Route12West_BugCatcherBrendan
 npc 3 11 19 EventScript_Route12West_SkierChantal
@@ -1843,7 +1846,8 @@ npc 3 34 9 EventScript_Route16_TuberLeslie
 npc 3 34 10 EventScript_Route16_SwimmerFClementine
 npc 3 34 12 ItemScript_Common_SilkScarf
 npc 3 34 13 ItemScript_Common_FocusBand
-npc 3 34 18 EventScript_Route16_Sharpedonite
+npc 3 34 18 EventScript_Route16_SharpedoniteOrSalamencite
+npc 3 34 19 EventScript_Route16_Audinite
 
 ## Route 14
 map 3 32 MapScript_WaterRoutes_SetRivalBruccieGymFlag
@@ -1960,6 +1964,7 @@ npc 3 37 7 ItemScript_Common_Zinc
 npc 3 37 8 ItemScript_Common_LuminousMoss
 npc 3 37 9 EventScript_Route19_PalossandOrDugtrio
 npc 3 37 13 EventScript_Route19_Selene
+npc 3 37 14 EventScript_Route19_Altarianite
 sign 3 37 0 SignScript_Route19_LookoutPointSign
 
 # Emraldin Quay
@@ -2026,7 +2031,7 @@ npc 10 16 0 ItemScript_Common_FullRestore
 npc 3 38 0 EventScript_Common_Cut
 npc 3 38 1 EventScript_Common_Cut
 npc 3 38 2 EventScript_Common_Cut
-npc 3 38 3 EventScript_Route20_Kangaskhanite
+npc 3 38 3 EventScript_Route20_KangaskhaniteOrScizorite
 npc 3 38 4 EventScript_Route20_TM19Roost
 npc 3 38 5 EventScript_Route20_PsychicMcKenzie
 npc 3 38 6 EventScript_Route20_PicnickerWhitney
@@ -2056,6 +2061,7 @@ npc 10 17 5 EventScript_Common_RockSmash
 npc 10 17 6 EventScript_Common_RockSmash
 npc 10 17 7 EventScript_Common_RockSmash
 npc 10 17 8 EventScript_Route20Cave_TM69RockPolish
+npc 10 17 9 EventScript_Route20Cave_Aggronite
 
 # Treasure Beach
 map 3 46 MapScript_Route20_TreasureBeach
@@ -2532,7 +2538,7 @@ sign 2 30 6 EventScript_FerroxLibrary_ReadBookPromptY
 npc 2 18 0 EventScript_EmptyWorld_Common_Strength
 npc 2 18 1 ItemScript_Common_ElectricSeed
 ### For some reason, event #2 is always broken...
-npc 2 18 3 EventScript_Route11South_Mawilite
+npc 2 18 3 EventScript_Route11South_MawiliteOrMedichamite
 npc 2 18 4 ItemScript_Common_Carbos
 npc 2 18 5 EventScript_EmptyWorld_Common_RockSmash
 npc 2 18 6 EventScript_EmptyWorld_Common_RockSmash
@@ -2560,7 +2566,7 @@ npc 2 19 0 ItemScript_Common_RockIncense
 npc 2 19 1 ItemScript_Common_PsychicSeed
 npc 2 19 2 EventScript_Route10_TM64_Explosion
 npc 2 19 3 EventScript_Route10_TM41_Torment
-npc 2 19 4 EventScript_Route10_Lopunnite
+npc 2 19 4 EventScript_Route10_LopunniteOrManectite
 npc 2 19 5 EventScript_EmptyWorld_Common_Cut
 npc 2 19 6 EventScript_EmptyWorld_Route10_Psychic
 npc 2 19 7 EventScript_EmptyWorld_Route10_BirdKeeper

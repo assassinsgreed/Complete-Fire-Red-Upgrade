@@ -161,6 +161,8 @@ SignScript_UteyanRuins_ChamberDoor_Left:
     lock
     checkflag 0x27C @ Left chamber solved
     if SET _goto UtyeanRuins_ChambersCommon_ChamberHasBeenOpened
+    checkflag 0x945 @ Divergent Mode
+    if SET _goto ChamberDoor_Left_DivergentHandling
     checkitem ITEM_DECODER 0x1
     compare LASTRESULT TRUE
     if notequal _call ChamberDoor_Left
@@ -196,6 +198,39 @@ ChamberDoor_Left:
 ChamberDoor_Left_Decoded:
     call UteyanRuins_ChambersCommon_Decoding
     msgbox gText_UteyanRuins_ChamberLeftDecoded MSG_NORMAL
+    return
+
+ChamberDoor_Left_DivergentHandling:
+    checkitem ITEM_DECODER 0x1
+    compare LASTRESULT TRUE
+    if notequal _call ChamberDoor_Left_Divergent
+    if equal _call ChamberDoor_Left_Decoded_Divergent
+    @ Check for solved puzzle
+    special 0x9F @ Choose pokemon from party
+    waitstate
+    compare 0x8004 0x6 @ Cancelled out
+    if greaterorequal _goto ChamberDoor_Left_WrongChoice
+    setvar 0x8003 0x0 @ Check from party; 0x8004 holds index
+    special2 LASTRESULT 0x18 @ Get species from chosen index
+    compare LASTRESULT SPECIES_SPIRITOMB
+    if notequal _goto ChamberDoor_Left_WrongChoice
+    @ Puzzle solved!
+    setflag 0x27C @ Left chamber solved
+    call UtyeanRuins_ChambersCommon_DoorOpening
+    call OpenLeftChamber
+    special 0x8E
+    msgbox gText_UteyanRuins_ChamberCommon_ChamberOpened MSG_NORMAL
+    end
+
+ChamberDoor_Left_Divergent:
+    braillemsgbox gText_UteyanRuins_ChamberLeft_1_Divergent
+    braillemsgbox gText_UteyanRuins_ChamberLeft_2_Divergent
+    braillemsgbox gText_UteyanRuins_ChamberLeft_3_Divergent
+    return
+
+ChamberDoor_Left_Decoded_Divergent:
+    call UteyanRuins_ChambersCommon_Decoding
+    msgbox gText_UteyanRuins_ChamberLeftDecoded_Divergent MSG_NORMAL
     return
 
 OpenLeftChamber:
@@ -471,7 +506,13 @@ EventScript_UteyanRuins_LassDorothy:
 
 .global EventScript_UteyanRuins_Gardevoirite
 EventScript_UteyanRuins_Gardevoirite:
+    checkflag 0x945 @ Divergent Mode
+    if SET _goto FindAlakazite
     finditem ITEM_GARDEVOIRITE 0x1
+    end
+
+FindAlakazite:
+    finditem ITEM_ALAKAZITE 0x1
     end
 
 .global EventScript_UteyanRuins_SacredAsh
@@ -481,12 +522,24 @@ EventScript_UteyanRuins_SacredAsh:
 
 .global EventScript_UteyanRuins_RedOrb
 EventScript_UteyanRuins_RedOrb:
+    checkflag 0x945 @ Divergent Mode
+    if SET _goto FindPrisonBottle
     finditem ITEM_RED_ORB 0x1
+    end
+
+FindPrisonBottle:
+    finditem ITEM_PRISON_BOTTLE 0x1
     end
 
 .global EventScript_UteyanRuins_BlueOrb
 EventScript_UteyanRuins_BlueOrb:
+    checkflag 0x945 @ Divergent Mode
+    if SET _goto FindRevealGlass
     finditem ITEM_BLUE_ORB 0x1
+    end
+
+FindRevealGlass:
+    finditem ITEM_REVEAL_GLASS 0x1
     end
 
 .global EventScript_UteyanRuins_UltraWormhole_Stakataka

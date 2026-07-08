@@ -75,13 +75,17 @@
 /*
 #define FLAG_HIDE_ROUTE_12_REST_HOUSE_SELENE_AND_ALISTAIR  0x044
 #define FLAG_HIDE_SCALDING_SPA_PLUTO_GRUNT                 0x045
+*/
 #define FLAG_HIDE_GLASTRIER                                0x046
+/*
 #define FLAG_HIDE_ABBY_IN_BRUCCIE_VILLAGE                  0x047
 #define FLAG_HIDE_TEAM_PLUTO_IN_CALICIN_BAY                0x048
 #define FLAG_HIDE_TEAM_PLUTO_YOLENA_CALICIN_BAY            0x049
 #define FLAG_HIDE_TEAM_PLUTO_GRUNTS_AND_KURTIS_IN_HQ       0x04A
+*/
 #define FLAG_HIDE_SHAYMIN                                  0x04B
 #define FLAG_HIDE_KYOGRE                                   0x04C
+/*
 #define FLAG_HIDE_SEPPIRE_COVE_UPPER_FLOOR_NE_BOULDER      0x04D
 #define FLAG_HIDE_SEPPIRE_COVE_UPPER_FLOOR_W_BOULDER       0x04E
 #define FLAG_HIDE_IRIS_AND_STELLA_IN_DAIMYN_RESTAURANT_ON_BY_DEFAULT  0x04F
@@ -91,13 +95,17 @@
 #define FLAG_HIDE_SEPPIRE_COVE_UPPER_FLOOR_E_BOULDER       0x053
 */
 #define FLAG_HIDE_ZERAORA_WHEN_CALMED                      0x054
-/**
 #define FLAG_HIDE_DAIMYN_FACTORY_MELTAN                    0x055
+/*
 #define FLAG_HIDE_ENA_ON_ROUTE_11_SOUTH_POST_BADGE7        0x056
+*/
 #define FLAG_HIDE_GROUDON                                  0x057
+/*
 #define FLAG_HIDE_RUBARR_DESERT_BF1_STATUE_LEFT            0x058
 #define FLAG_HIDE_RUBARR_DESERT_BF1_STATUE_LEFT_UPPER      0x059
+*/
 #define FLAG_HIDE_JIRACHI_ON_CARNELIDGE_VOLCANO_ON_BY_DEFAULT 0x05A
+/*
 #define FLAG_HIDE_RUBARR_DESERT_BF1_STATUE_CENTER          0x05B
 #define FLAG_HIDE_RUBARR_DESERT_BF1_STATUE_CENTER_LOWER    0x05C
 #define FLAG_HIDE_RUBARR_DESERT_BF1_STATUE_RIGHT_UPPER     0x05D
@@ -122,7 +130,9 @@
 #define FLAG_HIDE_PLOT_COSMOG_AT_ALTAR_OF_ECLIPSE          0x070
 #define FLAG_HIDE_HOENN_WINGULLS                           0x071
 #define FLAG_HIDE_VICTORY_FLAG                             0x072
+*/
 #define FLAG_HIDE_VOLCANION                                0x073
+/*
 #define FLAG_HIDE_TWO_ISLAND_GAME_CORNER_BIKER             0x074 // On by default
 #define FLAG_HIDE_TWO_ISLAND_GAME_CORNER_LOSTELLE          0x075
 #define FLAG_HIDE_LOSTELLE_IN_HER_HOME                     0x076
@@ -390,7 +400,9 @@
 #define FLAG_HIDE_ROUTE_4_ROSE_INCENSE                          0x174
 #define FLAG_HIDE_TORMA_CAVE_BF1_REPEL                          0x175
 #define FLAG_HIDE_TORMA_CAVE_BF1_SMOOTH_ROCK                    0x176
-#define FLAG_HIDE_TORMA_CAVE_BF1_GLALITITE                      0x177
+*/
+#define FLAG_HIDE_TORMA_CAVE_BF1_GLALITITE_OR_STEELIXITE        0x177
+/*
 #define FLAG_HIDE_TORMA_CAVE_BF1_SUPER_POTION                   0x178
 #define FLAG_HIDE_TORMA_CAVE_BF1_ROCKY_HELMET                   0x179
 #define FLAG_HIDE_TORMA_CAVE_BF1_GREAT_BALL                     0x17A
@@ -417,7 +429,9 @@
 #define FLAG_HIDE_HELEO_RANCH_NEST_BALL                         0x18F
 #define FLAG_HIDE_HELEO_RANCH_TM45_ATTRACT                      0x190
 #define FLAG_HIDE_HELEO_RANCH_TERRAIN_EXTENDER                  0x191
-#define FLAG_HIDE_HELEO_RANCH_AMPHAROSITE                       0x192
+*/
+#define FLAG_HIDE_HELEO_RANCH_AMPHAROSITE_OR_PIDGEOTITE         0x192
+/*
 #define FLAG_HIDE_ROUTE_11_ELECTRIC_SEED                        0x193
 */
 #define FLAG_HIDE_ROUTE_7_STICK_OR_SACHET                       0x194
@@ -426,7 +440,7 @@
 #define FLAG_HIDE_ROUTE_7_BLACK_BELT                            0x196
 #define FLAG_HIDE_ROUTE_7_TM09_VENOSHOCK                        0x197
 */
-#define FLAG_HIDE_ROUTE_6_AMPHAROSITE_OR_PIDGEOTITE             0x198
+#define FLAG_HIDE_ROUTE_6_BLASTOISINITE                         0x198
 /*
 #define FLAG_HIDE_ROUTE_6_TM78_BULLDOZE                         0x199
 #define FLAG_HIDE_ROUTE_6_FRESH_WATER                           0x19A
@@ -470,10 +484,14 @@
 #define FLAG_HIDE_DAIMYN_FACTORY_OVERWORLD_SUPER_REPEL          0x1BE
 #define FLAG_HIDE_DAIMYN_FACTORY_OVERWORLD_MAGNET               0x1BF
 #define FLAG_HIDE_DAIMYN_FACTORY_OVERWORLD_REVIVE               0x1C0
-#define FLAG_HIDE_DAIMYN_FACTORY_OVERWORLD_LUCARIONITE          0x1C1
+*/
+#define FLAG_HIDE_DAIMYN_FACTORY_OVERWORLD_LUCARIONITE_OR_METAGROSSITE 0x1C1
+/*
 #define FLAG_HIDE_DAIMYN_FACTORY_OVERWORLD_TM57_CHARGE_BEAM     0x1C2
 #define FLAG_HIDE_DAIMYN_FACTORY_OVERWORLD_EJECT_BUTTON         0x1C3
+*/
 #define FLAG_HIDE_ROUTE9_SCEPTILITE                             0x1C4
+/*
 #define FLAG_HIDE_ROUTE9_SHARP_BEAK                             0x1C5
 #define FLAG_HIDE_ROUTE9_THUNDER_STONE                          0x1C6
 #define FLAG_HIDE_ROUTE9_TM62_ACROBATICS                        0x1C7
@@ -481,7 +499,9 @@
 #define FLAG_HIDE_ROUTE10_PSYCHIC_SEED                          0x1C9
 #define FLAG_HIDE_ROUTE10_TM64_EXPLOSION                        0x1CA
 #define FLAG_HIDE_ROUTE10_TM41_TORMENT                          0x1CB
-#define FLAG_HIDE_ROUTE10_LOPUNNITE                             0x1CC
+*/
+#define FLAG_HIDE_ROUTE10_LOPUNNITE_OR_MANECTITE                0x1CC
+/*
 #define FLAG_HIDE_ROUTE10_DRAGON_SCALE                          0x1CD
 #define FLAG_HIDE_ROUTE10_ELIXER                                0x1CE
 #define FLAG_HIDE_ROUTE10_TM23_SMACK_DOWN                       0x1CF
@@ -489,13 +509,17 @@
 #define FLAG_HIDE_ROUTE11_SOUTH_TM68_GIGA_IMPACT                0x1D1
 #define FLAG_HIDE_ROUTE11_SOUTH_TM51_STEEL_WING                 0x1D2
 #define FLAG_HIDE_ROUTE11_SOUTH_HEAT_ROCK                       0x1D3
-#define FLAG_HIDE_ROUTE11_SOUTH_MAWILITE                        0x1D4
+*/
+#define FLAG_HIDE_ROUTE11_SOUTH_MAWILITE_OR_MEDICHAMITE         0x1D4
+/*
 #define FLAG_HIDE_ROUTE11_SOUTH_CARBOS                          0x1D5
 #define FLAG_HIDE_HESSON_PASS_F1_HYPER_POTION                   0x1D6
 #define FLAG_HIDE_HESSON_PASS_F1_HP_UP                          0x1D7
 #define FLAG_HIDE_HESSON_PASS_F1_ULTRA_BALL                     0x1D8
 #define FLAG_HIDE_HESSON_PASS_BF1_STAR_PIECE                    0x1D9
+*/
 #define FLAG_HIDE_HESSON_PASS_BF1_CHARIZARDITE_X                0x1DA
+/*
 #define FLAG_HIDE_HESSON_PASS_F2_TM67_SMART_STRIKE              0x1DB
 #define FLAG_HIDE_HESSON_PASS_F2_ELIXIR                         0x1DC
 #define FLAG_HIDE_ROUTE11_NORTH_TM03_PSYSHOCK                   0x1DD
@@ -506,7 +530,9 @@
 #define FLAG_HIDE_LAPLAZ_TOWN_LAGGING_TAIL                      0x1E2
 #define FLAG_HIDE_PERADON_FOREST_BLACK_SLUDGE                   0x1E3
 #define FLAG_HIDE_PERADON_FOREST_HYPER_POTION                   0x1E4
-#define FLAG_HIDE_PERADON_FOREST_HERACRONITE                    0x1E5
+*/
+#define FLAG_HIDE_PERADON_FOREST_HERACRONITE_OR_PINSIRITE       0x1E5
+/*
 #define FLAG_HIDE_PERADON_FOREST_LEAF_STONE                     0x1E6
 #define FLAG_HIDE_PERADON_FOREST_TM86_GRASS_KNOT                0x1E7
 #define FLAG_HIDE_PERADON_FOREST_TM81_X_SCISSOR                 0x1E8
@@ -520,14 +546,18 @@
 #define FLAG_HIDE_ROUTE12_EAST_HYPER_POTION                     0x1F0
 #define FLAG_HIDE_ROUTE12_EAST_TM95_SNARL                       0x1F1
 #define FLAG_HIDE_SCALDING_SPA_TM35_FLAMETHROWER                0x1F2
+*/
 #define FLAG_HIDE_SCALDING_SPA_BLAZIKENITE                      0x1F3
+/*
 #define FLAG_HIDE_SCALDING_SPA_FIRE_STONE                       0x1F4
 #define FLAG_HIDE_TORMA_CAVE_TM79_FROST_BREATH                  0x1F5
 #define FLAG_HIDE_ROUTE_12_WEST_ULTRA_BALL                      0x1F6
 #define FLAG_HIDE_ROUTE_12_WEST_ZINC                            0x1F7
 #define FLAG_HIDE_ROUTE_12_WEST_TM13_ICE_BEAM                   0x1F8
 #define FLAG_HIDE_ROUTE_12_WEST_REVIVE                          0x1F9
-#define FLAG_HIDE_ROUTE_12_WEST_SLOWBRONITE                     0x1FA
+*/
+#define FLAG_HIDE_ROUTE_12_WEST_SLOWBRONITE_OR_ABOMASITE        0x1FA
+/*
 #define FLAG_HIDE_ROUTE_12_WEST_ICE_STONE                       0x1FB
 #define FLAG_HIDE_BRUCCIE_VILLAGE_RARE_CANDY                    0x1FC
 #define FLAG_HIDE_CALICIN_BAY_TM14_BLIZZARD                     0x1FD
@@ -701,14 +731,16 @@
 #define FLAG_GAVE_LIAM_MOOMOO_MILK                       0x290
 */
 #define FLAG_BEAT_IRENE_IN_RUBARR_DESERT                 0x291
+#define FLAG_ROUTE11_NORTH_BEEDRILLITE                   0x292 // Divergent Mode only
+#define FLAG_ROUTE20CAVE_AGGRONITE                       0x293 // Divergent Mode only
+#define FLAG_ROUTE13_CAMERUPTITE                         0x294 // Divergent Mode only
+#define FLAG_ROUTE19_ALTARIANITE                         0x295 // Divergent Mode only
+#define FLAG_ROUTE16_AUDINITE                            0x296 // Divergent Mode only
 /*
-#define FLAG_GOT_VS_SEEKER                               0x292
-#define FLAG_GOT_TM19_FROM_ERIKA                         0x293
-#define FLAG_GOT_TM33_FROM_THIRSTY_GIRL                  0x294
-#define FLAG_GOT_TM20_FROM_THIRSTY_GIRL                  0x295
-#define FLAG_GOT_TM16_FROM_THIRSTY_GIRL                  0x296
 #define FLAG_GOT_TM06_FROM_STELLA                        0x297
-#define FLAG_GOT_TM26_FROM_GIOVANNI                      0x298
+*/
+#define FLAG_CAUGHT_DARKRAI                              0x298
+/*
 #define FLAG_0x299                                       0x299
 #define FLAG_GOT_TM76_FROM_ABBY                          0x29A
 #define FLAG_GOT_FAME_CHECKER                            0x29B
@@ -842,7 +874,9 @@
 #define FLAG_HIDE_ROUTE19_TM84_POISON_JAB                0x317
 #define FLAG_HIDE_ROUTE19_ZINC                           0x318
 #define FLAG_HIDE_ROUTE19_LUMINOUS_MOSS                  0x319
-#define FLAG_HIDE_ROUTE16_SHARPEDONITE                   0x31A
+*/
+#define FLAG_HIDE_ROUTE16_SHARPEDONITE_OR_SALAMENCITE    0x31A
+/*
 #define FLAG_HIDE_ROUTE23CAVE_FULL_RESTORE               0x31B
 #define FLAG_HIDE_ROUTE23_TM24_THUNDERBOLT               0x31C
 #define FLAG_HIDE_ROUTE23_FULL_HEAL                      0x31D
@@ -851,7 +885,9 @@
 #define FLAG_HIDE_ROUTE23_REVIVE                         0x320
 #define FLAG_HIDE_ROUTE23_MAX_ETHER                      0x321
 #define FLAG_HIDE_ROUTE23_TM15_HYPER_BEAM                0x322
-#define FLAG_HIDE_ROUTE20_KANGASKHANITE                  0x323
+*/
+#define FLAG_HIDE_ROUTE20_KANGASKHANITE_OR_SCIZORITE     0x323
+/*
 #define FLAG_HIDE_ROUTE20_TM19_ROOST                     0x324
 #define FLAG_HIDE_ROUTE20_TM69_ROCKPOLISH                0x325
 #define FLAG_HIDE_ROUTE20_HEAL_BALL                      0x326
@@ -872,7 +908,9 @@
 #define FLAG_HIDE_SECRET_PATH_IRON_BALL                  0x335
 #define FLAG_HIDE_MIMMETT_JUNGLE_TM28_LEECH_LIFE         0x336
 #define FLAG_HIDE_MIMMETT_JUNGLE_TM22_SOLAR_BEAM         0x337
+*/
 #define FLAG_HIDE_MIMMETT_JUNGLE_VENUSAURITE             0x338
+/*
 #define FLAG_HIDE_MIMMETT_JUNGLE_ULTRA_BALL              0x339
 #define FLAG_HIDE_MIMMETT_JUNGLE_ABSORB_BULB             0x33A
 #define FLAG_HIDE_MIMMETT_JUNGLE_HYPER_POTION            0x33B
@@ -897,7 +935,9 @@
 #define FLAG_HIDE_RUBARR_DESERT_BF2_GROUND_GEM           0x34C
 #define FLAG_HIDE_RUBARR_DESERT_BF2_DUSK_BALL            0x34D
 #define FLAG_HIDE_RUBARR_DESERT_BF2_ROCK_GEM             0x34E
+*/
 #define FLAG_HIDE_CARNELIDGE_VOLCANO_OVERWORLD_CHARIZARDITE_Y 0x34F
+/*
 #define FLAG_HIDE_CARNELIDGE_VOLCANO_OVERWORLD_TM50_OVERHEAT  0x350
 #define FLAG_HIDE_CARNELIDGE_VOLCANO_OVERWORLD_MAX_REPEL      0x351
 #define FLAG_HIDE_CARNELIDGE_VOLCANO_F1_FIRE_STONE            0x352
@@ -916,10 +956,12 @@
 #define FLAG_HIDE_ROUTE24_MAX_ETHER                      0x35F
 #define FLAG_HIDE_ROUTE24_DUSK_BALL                      0x360
 #define FLAG_HIDE_UTEYAN_RUINS_HM06_ROCK_CLIMB           0x361
-#define FLAG_HIDE_UTEYAN_RUINS_GARDEVOIRITE              0x362
+*/
+#define FLAG_HIDE_UTEYAN_RUINS_GARDEVOIRITE_OR_ALAKAZITE 0x362
 #define FLAG_HIDE_UTEYAN_RUINS_SACRED_ASH                0x363
-#define FLAG_HIDE_UTEYAN_RUINS_RED_ORB                   0x364
-#define FLAG_HIDE_UTEYAN_RUINS_BLUE_ORB                  0x365
+#define FLAG_HIDE_UTEYAN_RUINS_RED_ORB_OR_PRISON_BOTTLE  0x364
+#define FLAG_HIDE_UTEYAN_RUINS_BLUE_ORB_OR_REVEAL_GLASS  0x365
+/*
 #define FLAG_HIDE_UTEYAN_RUINS_PSYCHIC_SEED              0x366
 #define FLAG_HIDE_UTEYAN_RUINS_TM04_CALM_MIND            0x367
 #define FLAG_HIDE_UTEYAN_RUINS_CAVE_REVIVE               0x368
@@ -939,7 +981,9 @@
 #define FLAG_HIDE_ROUTE9_TM66_PAYBACK                    0x376
 #define FLAG_HIDE_DAIMYN_FACTORY_TM36_SLUDGE_BOMB        0x377
 #define FLAG_HIDE_ROUTE18_TM92_TRICK_ROOM                0x378
+*/
 #define FLAG_HIDE_ROUTE8_SWAMPERTITE                     0x379
+/*
 #define FLAG_0x37A               0x37A
 #define FLAG_0x37B               0x37B
 #define FLAG_0x37C               0x37C

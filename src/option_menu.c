@@ -394,28 +394,77 @@ void CloseAndSaveOptionMenu(u8 taskId)
         SetMainCallback2(gMain.savedCallback);
     }
 
-    // TODO: Restore item / legendary flags based on mode & pokedex completion
     if (pokemonSelectionChanged)
     {
         // Give story mega stones (Houndoominite / Tyranitarite) if past carnelidge volcano and swapping, and they aren't in the bag
         if (FlagGet(FLAG_COMPLETED_CARNELIDGE_VOLCANO_STORY))
         {
             if (FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS))
+            {
                 if (!CheckBagHasItem(ITEM_TYRANITARITE, 1))
                     AddBagItem(ITEM_TYRANITARITE, 1);
+
+                // Reenable Divergent-only mode stones
+                FlagClear(FLAG_ROUTE11_NORTH_BEEDRILLITE);
+		        FlagClear(FLAG_ROUTE20CAVE_AGGRONITE);
+		        FlagClear(FLAG_ROUTE13_CAMERUPTITE);
+		        FlagClear(FLAG_ROUTE19_ALTARIANITE);
+		        FlagClear(FLAG_ROUTE16_AUDINITE);
+            }
             else
+            {
                 if (!CheckBagHasItem(ITEM_HOUNDOOMINITE, 1))
                     AddBagItem(ITEM_HOUNDOOMINITE, 1);
+            }
         }
 
         // Mega Stones
-        FlagClear(FLAG_HIDE_ROUTE_6_AMPHAROSITE_OR_PIDGEOTITE);
+        FlagClear(FLAG_HIDE_MIMMETT_JUNGLE_VENUSAURITE);
+        FlagClear(FLAG_HIDE_CARNELIDGE_VOLCANO_OVERWORLD_CHARIZARDITE_Y);
+        FlagClear(FLAG_HIDE_HESSON_PASS_BF1_CHARIZARDITE_X);
+        FlagClear(FLAG_HIDE_ROUTE_6_BLASTOISINITE);
+        FlagClear(FLAG_HIDE_ROUTE9_SCEPTILITE);
+        FlagClear(FLAG_HIDE_SCALDING_SPA_BLAZIKENITE);
+        FlagClear(FLAG_HIDE_ROUTE8_SWAMPERTITE);
+        FlagClear(FLAG_HIDE_HELEO_RANCH_AMPHAROSITE_OR_PIDGEOTITE);
         FlagClear(FLAG_HIDE_FORGOTTEN_MANSE_1F_SABLENITE_OR_BANETTITE);
+        FlagClear(FLAG_HIDE_ROUTE10_LOPUNNITE_OR_MANECTITE);
+        FlagClear(FLAG_HIDE_ROUTE11_SOUTH_MAWILITE_OR_MEDICHAMITE);
         FlagClear(FLAG_HIDE_RUBARR_DESERT_BF1_GARCHOMPITE_OR_AERODACTYLITE);
+        FlagClear(FLAG_HIDE_TORMA_CAVE_BF1_GLALITITE_OR_STEELIXITE);
+        FlagClear(FLAG_HIDE_DAIMYN_FACTORY_OVERWORLD_LUCARIONITE_OR_METAGROSSITE);
+        FlagClear(FLAG_HIDE_PERADON_FOREST_HERACRONITE_OR_PINSIRITE);
+        FlagClear(FLAG_HIDE_ROUTE_12_WEST_SLOWBRONITE_OR_ABOMASITE);
+        FlagClear(FLAG_HIDE_ROUTE16_SHARPEDONITE_OR_SALAMENCITE);
         FlagClear(FLAG_HIDE_ROUTE18_GALLADITE_OR_ABSOLITE);
-        // Held Items
+        FlagClear(FLAG_HIDE_ROUTE20_KANGASKHANITE_OR_SCIZORITE);
+        FlagClear(FLAG_HIDE_UTEYAN_RUINS_GARDEVOIRITE_OR_ALAKAZITE);
+        /*
+            Beedrillnite, Aggronite, Cameruptite, Altarianite, and Audinite are Divergent-only and are hidden in
+            overworld.c, so they are hidden in historic saves in standard mode
+        */
+       FlagClear(FLAG_ROUTE11_NORTH_BEEDRILLITE);
+       FlagClear(FLAG_ROUTE20CAVE_AGGRONITE);
+       FlagClear(FLAG_ROUTE13_CAMERUPTITE);
+       FlagClear(FLAG_ROUTE19_ALTARIANITE);
+       FlagClear(FLAG_ROUTE16_AUDINITE);
+        // Held Items & Key Items
         FlagClear(FLAG_HIDE_ROUTE_7_STICK_OR_SACHET);
         FlagClear(FLAG_HIDE_DAIMYN_FACTORY_RUSTED_DATA_OR_DRIVES);
+        FlagClear(FLAG_HIDE_UTEYAN_RUINS_RED_ORB_OR_PRISON_BOTTLE);
+        FlagClear(FLAG_HIDE_UTEYAN_RUINS_BLUE_ORB_OR_REVEAL_GLASS);
+
+        // Restore legendaries
+        FlagClear(FLAG_HIDE_SHAYMIN); // Xerneas in divergent
+        FlagClear(FLAG_HIDE_KYOGRE); // Lugia in divergent
+        FlagClear(FLAG_HIDE_GROUDON); // Hoopa in divergent
+        FlagClear(FLAG_HIDE_VOLCANION); // Heatran in divergent
+        FlagClear(FLAG_HIDE_GLASTRIER); // Spectrier in divergent
+        FlagClear(FLAG_HIDE_DAIMYN_FACTORY_MELTAN); // Genesect in divergent
+        FlagClear(FLAG_CAUGHT_DARKRAI); // n/a in standard (slot is Melmetal)
+
+        if (FlagGet(FLAG_COMPLETED_CARNELIDGE_VOLCANO_STORY))
+            FlagClear(FLAG_HIDE_JIRACHI_ON_CARNELIDGE_VOLCANO_ON_BY_DEFAULT); // Jirachi in both
     }
 
     SetPokemonCryStereo(gSaveBlock2->optionsSound);

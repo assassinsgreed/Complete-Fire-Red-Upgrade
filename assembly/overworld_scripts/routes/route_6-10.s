@@ -585,9 +585,15 @@ EventScript_Route10_TM41_Torment:
     call ItemScript_Common_FindTM
     end
 
-.global EventScript_Route10_Lopunnite
-EventScript_Route10_Lopunnite:
+.global EventScript_Route10_LopunniteOrManectite
+EventScript_Route10_LopunniteOrManectite:
+    checkflag 0x945 @ Divergent Mode
+    if SET _goto FindManectite
     finditem ITEM_LOPUNNITE 0x1
+    end
+
+FindManectite:
+    finditem ITEM_MANECTITE 0x1
     end
 
 .global EventScript_Route10_PsychicDarius

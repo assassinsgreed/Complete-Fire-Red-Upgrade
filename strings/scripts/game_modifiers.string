@@ -127,7 +127,7 @@ When enabled, Pok\emon instantly\nreach max friendship.
 When enabled, EVs/IVs can be viewed\nby pressing [A_BUTTON] in the Pok\emon\lSummary screen.\pThis is only supported for Pok\emon in\nthe player's party.
 
 #org @gText_GameModifiers_DivergentToggle_Description
-When enabled, you can swap between\nStandard and Divergent Pok\emon\lselections in the Options Menu.\pThis affects which Pok\emon appear\nin the wild and in trainer teams.\pAfter swapping, you may need to\nreload the map to see certain\lchanges (ex. legendaries).
+When enabled, you can swap between\nStandard and Divergent Pok\emon\lselections in the Options Menu.\pThis affects which Pok\emon appear\nin the wild and in trainer teams.\pWhen swapping, all legendaries\nbecome available again.\pAfter swapping, you may need to\nreload the map to see certain\lchanges (ex. legendaries).
 
 // Modifier Password Declarations
 

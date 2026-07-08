@@ -396,7 +396,7 @@ static u8 TryLoadAlternateAreaTerrain(u8 terrain)
 				terrain = BATTLE_TERRAIN_DAIS_OF_LIGHT;
 			break;
 		case BATTLE_TERRAIN_INSIDE:
-			if (mapSec == MAPSEC_FORGOTTEN_MANSE || mapSec == MAPSEC_UTEYAN_RUINS)
+			if (mapSec == MAPSEC_FORGOTTEN_MANSE || mapSec == MAPSEC_UTEYAN_RUINS || MAP_IS(LAPLAZ_TOWN_CASEYS_HOUSE))
 				terrain = BATTLE_TERRAIN_SPOOKY;
 			else if (MAP_IS(PLUTO_HQ_KURTIS_OFFICE))
 				terrain = BATTLE_TERRAIN_PLUTO_LEADER;

@@ -63,9 +63,15 @@ EventScript_TormaCave_RockyHelmet:
     finditem ITEM_ROCKY_HELMET 0x1
     end
 
-.global EventScript_TormaCave_Glalitite
-EventScript_TormaCave_Glalitite:
+.global EventScript_TormaCave_GlalititeOrSteelixite
+EventScript_TormaCave_GlalititeOrSteelixite:
+    checkflag 0x945 @ Divergent Mode
+    if SET _goto FindSteelixite
     finditem ITEM_GLALITITE 0x1
+    end
+
+FindSteelixite:
+    finditem ITEM_STEELIXITE 0x1
     end
 
 .global EventScript_TormaCave_FishermanAlfie

@@ -72,9 +72,20 @@ EventScript_Route16_SwimmerFClementine:
     msgbox gText_Route16_SwimmerClementine_Chat MSG_NORMAL
     end
 
-.global EventScript_Route16_Sharpedonite
-EventScript_Route16_Sharpedonite:
+.global EventScript_Route16_SharpedoniteOrSalamencite
+EventScript_Route16_SharpedoniteOrSalamencite:
+    checkflag 0x945 @ Divergent Mode
+    if SET _goto FindSalamencite
     finditem ITEM_SHARPEDONITE 0x1
+    end
+
+FindSalamencite:
+    finditem ITEM_SALAMENCITE 0x1
+    end
+
+.global EventScript_Route16_Audinite
+EventScript_Route16_Audinite:
+    finditem ITEM_AUDINITE 0x1
     end
 
 @ Route 17
@@ -1087,15 +1098,26 @@ Selene_GreninjaAlreadyHasBattleBond:
     npcchatwithmovement gText_Route19_Selene_BattleBondGreninjaAlradyKnowsBattleBond m_LookDown
     end
 
+.global EventScript_Route19_Altarianite
+EventScript_Route19_Altarianite:
+    finditem ITEM_ALTARIANITE 0x1
+    end
+
 .global SignScript_Route19_LookoutPointSign
 SignScript_Route19_LookoutPointSign:
     msgbox gText_Route19_LookoutPoint_Sign MSG_SIGN
     end
 
 @ Route 20
-.global EventScript_Route20_Kangaskhanite
-EventScript_Route20_Kangaskhanite:
+.global EventScript_Route20_KangaskhaniteOrScizorite
+EventScript_Route20_KangaskhaniteOrScizorite:
+    checkflag 0x945 @ Divergent Mode
+    if SET _goto FindScizorite
     finditem ITEM_KANGASKHANITE 0x1
+    end
+
+FindScizorite:
+    finditem ITEM_SCIZORITE 0x1
     end
 
 .global EventScript_Route20_TM19Roost
@@ -1193,6 +1215,11 @@ SignScript_Route20_MimmettJungle:
 EventScript_Route20Cave_TM69RockPolish:
     setvar CHOSEN_ITEM ITEM_TM69
     call ItemScript_Common_FindTM
+    end
+
+.global EventScript_Route20Cave_Aggronite
+EventScript_Route20Cave_Aggronite:
+    finditem ITEM_AGGRONITE 0x1
     end
 
 @ Treasure Beach

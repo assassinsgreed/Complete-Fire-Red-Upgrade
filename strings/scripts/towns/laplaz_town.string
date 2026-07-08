@@ -151,6 +151,21 @@ I[.] I have to lead the gym. If I\ndon't, it will[.]\pOoooh! My stomach hurts[.]
 #org @gText_LaplazTownNPCHouses_MontyMetWithCasey
 What's that? Casey will lead the\ngym?\pHow wonderful! I can focus on my\nrecovery in peace.
 
+#org @gText_LaplazTownNPCHouses_MontySufferingFromNightmare
+[BLACK]Monty is writhing in discomfort.\nCheck more closely?
+
+#org @gText_LaplazTownNPCHouses_Monty_No
+[BLACK]Better not.
+
+#org @gText_LaplazTownNPCHouses_MontyYes
+[BLACK]A Pok\emon is attacking!
+
+#org @gText_LaplazTownNPCHouses_MontyDarkraiRetreated
+[BLACK]The Pok\emon retreated back into\nMonty's dreams.
+
+#org @gText_LaplazTownNPCHouses_MontyWakesUp
+[BLACK]Monty has woken up peacefully.
+
 #org @gText_LaplazTownNPCHouses_CaseysMomHaventMetWithCasey
 My husband is ill, but refuses to\nrest as long as the gym is without\lit's leader.\pHe says that trainers can't complete\ntheir gym challenge as long as the\lLaplaz gym isn't accepting\lchallengers.\pHe's thoughtful, but he needs to\nfocus on his own health right now.
 

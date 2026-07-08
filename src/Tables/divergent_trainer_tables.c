@@ -6127,7 +6127,7 @@ const struct TrainerMonItemCustomMoves sParty_AscensionTower_EliteFour_Lucas_Div
     {
         .lvl = 66,
         .species = SPECIES_REUNICLUS,
-        .moves = { MOVE_PSYSHOCK, MOVE_RECOVER, MOVE_SHADOWBALL, MOVE_ENERGYBALL },
+        .moves = { MOVE_PSYSHOCK, MOVE_CALMMIND, MOVE_SHADOWBALL, MOVE_ENERGYBALL },
         .heldItem = ITEM_LEFTOVERS,
         .ability = Ability_Hidden // Regenerator
     },

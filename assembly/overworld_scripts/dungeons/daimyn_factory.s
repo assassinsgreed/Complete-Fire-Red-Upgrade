@@ -86,9 +86,15 @@ EventScript_DaimynFactoryOverworld_EngineerKliff:
     msgbox gText_DaimynFactoryOverworld_EngineerKliff_Chat MSG_NORMAL
     end
 
-.global EventScript_DaimynFactoryOverworld_Lucarionite
-EventScript_DaimynFactoryOverworld_Lucarionite:
+.global EventScript_DaimynFactoryOverworld_LucarioniteOrMetagrossite
+EventScript_DaimynFactoryOverworld_LucarioniteOrMetagrossite:
+    checkflag 0x945 @ Divergent Mode
+    if SET _goto FindMetagrossite
     finditem ITEM_LUCARIONITE 0x1
+    end
+
+FindMetagrossite:
+    finditem ITEM_METAGROSSITE 0x1
     end
 
 .global EventScript_DaimynFactoryOverworld_FindTM57_WildCharge

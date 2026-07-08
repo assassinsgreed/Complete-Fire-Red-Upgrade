@@ -1744,6 +1744,17 @@ void PostReleaseAutomaticFixes(void)
 	//    - The player has never initiated an E4 run (var 406C is less than 2)
 	if (!CheckBagHasItem(ITEM_VICTORY_FLAG, 1) || FlagGet(0x9D) || VarGet(0x406C) < 2)
 		FlagClear(FLAG_DEFEATED_CHAMPION_SELENE);
+
+	// Hide divergent mode-only mega stones when not in divergent mode
+	// Both for historic saves and for saves flipping between modes
+	if (!FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS))
+	{
+		FlagSet(FLAG_ROUTE11_NORTH_BEEDRILLITE);
+		FlagSet(FLAG_ROUTE20CAVE_AGGRONITE);
+		FlagSet(FLAG_ROUTE13_CAMERUPTITE);
+		FlagSet(FLAG_ROUTE19_ALTARIANITE);
+		FlagSet(FLAG_ROUTE16_AUDINITE);
+	}
 }
 
 bool8 TryRunOnFrameMapScript(void)
@@ -1792,6 +1803,9 @@ bool8 WhiteoutLogic(void)
 	// Eclipses off
 	VarSet(0x40AF, 0);
 	FlagClear(0x150);
+
+	// Refill PokeVial
+	VarSet(0x40AE, 3); // Fully charge the Poke Vial
 
 #ifdef SET_HEALING_PLACE_HACK
 	u16 loc = VarGet(VAR_HEALINGMAP);

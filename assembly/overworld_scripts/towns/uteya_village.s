@@ -213,11 +213,17 @@ MapEntryScript_UteyaVillage_SlowpokeNews_SetSpecies:
     if SET _goto End
     random 287 @ 0-286; shift below to make range 1-287
     addvar LASTRESULT 1
+    checkflag 0x945 @ Divergent Mode
+    if SET _call OffsetSlowpokeNewsForDivergentMode
     copyvar 0x40ED LASTRESULT @ Slowpoke news dex #
     setflag 0xE32 @ Species has been set
     call BufferSpeciesName @ Get the species name belonging to this pokedex #
     copyvar 0x40EE LASTRESULT @ Get the species # out
     end
+
+OffsetSlowpokeNewsForDivergentMode:
+    addvar LASTRESULT 390 @ Offset 390 spaces to get divergent mode species
+    return
 
 BufferSpeciesName:
     copyvar LASTRESULT 0x40ED @ Slowpoke news species
