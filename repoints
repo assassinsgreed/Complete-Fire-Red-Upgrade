@@ -568,3 +568,8 @@ ProfessorHawthorneBPal 8239E3C
 ## Replace Female Rocket Grunt (137)
 PlutoGruntFTiles 82399C4
 PlutoGruntFPal 8239E64
+
+## Whiteout revive script (skips nurse sequence at custom respawn locations)
+#ifdef SET_HEALING_PLACE_HACK
+EventScript_WhiteoutRevive 0807F5CC
+#endif

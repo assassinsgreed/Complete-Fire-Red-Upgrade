@@ -460,6 +460,7 @@ FindObjectEventPaletteIndexByTag 0805F5A0 1
 DynamicWhiteoutMap 080BFD54 0
 WhiteoutScreenFix 0807F542 0
 FieldCB_RushInjuredPokemonToCenter 0807F5F0 0
+FldEff_PokecenterHeal 08083B8C 0
 
 ##Summary Screen
 CamomonsSummaryScreenHook 08136168 0

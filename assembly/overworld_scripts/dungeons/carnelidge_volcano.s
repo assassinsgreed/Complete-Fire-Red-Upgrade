@@ -523,7 +523,9 @@ BattleAlistair:
     pause DELAY_1SECOND
     applymovement Alistair m_LookDown
     pause DELAY_HALFSECOND
-    obtainitem ITEM_HOUNDOOMINITE 0x1
+    checkflag 0x945 @ Divergent Mode
+    if NOT_SET _call ObtainHoundoominite
+    if SET _call ObtainTyranitarite
     applymovement Alistair m_LookRight
     msgbox gText_CarnelidgeVolcanoPeak_Conclusion_RivalThanksAlistairForMegaStones MSG_NORMAL
     applymovement Alistair m_LookDown
@@ -595,6 +597,16 @@ HandleJirachisAwakening:
     waitfieldeffect 69
     waitse
     cry SPECIES_JIRACHI 0x0
+    return
+
+.global ObtainHoundoominite
+ObtainHoundoominite:
+    obtainitem ITEM_HOUNDOOMINITE 0x1
+    return
+
+.global ObtainTyranitarite
+ObtainTyranitarite:
+    obtainitem ITEM_TYRANITARITE 0x1
     return
 
 m_PlayerWalksToConfrontAlistair: .byte walk_up, walk_up, walk_up, walk_up, walk_up, walk_up, end_m

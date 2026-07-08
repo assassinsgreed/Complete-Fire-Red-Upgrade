@@ -35,6 +35,7 @@
 #include "../include/sound.h"
 #include "../include/string_util.h"
 
+#include "../include/constants/field_effects.h"
 #include "../include/constants/flags.h"
 #include "../include/constants/items.h"
 #include "../include/constants/maps.h"
@@ -1794,17 +1795,40 @@ bool8 WhiteoutLogic(void)
 
 #ifdef SET_HEALING_PLACE_HACK
 	u16 loc = VarGet(VAR_HEALINGMAP);
-	if (loc == 0) return TRUE; // Load from original table
+	if (loc != 0)
+	{
+		gWarp1->mapNum = (loc >> 8) & 0xFF;	// upper byte
+		gWarp1->mapGroup = loc & 0xFF;	// lower byte
+		gWarp1->warpId = 0xFF;
+		gWarp1->x = VarGet(VAR_HEALING_XPOS);
+		gWarp1->y = VarGet(VAR_HEALING_YPOS);
+		return FALSE;
+	}
 
-	gWarp1->mapNum = (loc >> 8) & 0xFF;	// upper byte
-	gWarp1->mapGroup = loc & 0xFF;	// lower byte
-	gWarp1->warpId = 0xFF;
-	gWarp1->x = VarGet(VAR_HEALING_XPOS);
-	gWarp1->y = VarGet(VAR_HEALING_YPOS);
-	return FALSE;
+	// The vanilla respawn placement is hard-coded for standard Pokemon Center
+	// layouts; the Route 13 Rest House healer sits away from the counter.
+	if (gSaveBlock1->lastHealLocation.mapGroup == MAP_GROUP(ROUTE_13)
+	&&  gSaveBlock1->lastHealLocation.mapNum == MAP_NUM(ROUTE_13))
+	{
+		gWarp1->mapGroup = MAP_GROUP(ROUTE13_REST_HOUSE);
+		gWarp1->mapNum = MAP_NUM(ROUTE13_REST_HOUSE);
+		gWarp1->warpId = 0xFF;
+		gWarp1->x = 11; // In front of the nurse
+		gWarp1->y = 6;
+		return FALSE;
+	}
+
+	return TRUE; // Load from original table
 #else
 	return TRUE;	// load from original table
 #endif
+}
+
+void IsCustomWhiteoutRespawn(void)
+{
+	// Mirrors the custom respawn cases in WhiteoutLogic; the whiteout revive
+	// script skips the Pokemon Center nurse sequence at these locations.
+	gSpecialVar_LastResult = VarGet(VAR_HEALINGMAP) != 0 || MAP_IS(ROUTE13_REST_HOUSE);
 }
 
 #define sText_ScurriedHome (const u8*) 0x841B5B6
@@ -1829,6 +1853,25 @@ const u8* LoadProperWhiteoutString(const u8* string)
 	#endif
 
 	return string;
+}
+
+void __attribute__((long_call)) Task_PokecenterHeal(u8 taskId);
+u8 __attribute__((long_call)) CountPartyNonEggMons(void);
+u32 FldEff_PokecenterHeal(void)
+{
+	if (MAP_IS(ROUTE13_REST_HOUSE) || MAP_IS(CARNELIDGE_VOLCANO_PEAK)) //No healing machine in this map
+	{
+		FieldEffectActiveListRemove(FLDEFF_POKECENTER_HEAL);
+		return FALSE;
+	}
+
+	u8 taskId = CreateTask(Task_PokecenterHeal, 0xFF);
+	gTasks[taskId].data[1] = CountPartyNonEggMons(); //Eggs don't get a ball in the machine
+	gTasks[taskId].data[2] = 0x5D; //Machine animation screen coords
+	gTasks[taskId].data[3] = 0x24;
+	gTasks[taskId].data[4] = 0x80;
+	gTasks[taskId].data[5] = 0x18;
+	return FALSE;
 }
 
 bool8 ShouldPlayerRun(u16 heldKeys)

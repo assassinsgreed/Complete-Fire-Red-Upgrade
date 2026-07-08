@@ -663,7 +663,9 @@
 #define FLAG_IN_THE_EMPTY_WORLD                          0x271
 /*
 #define FLAG_TRAVELLED_TO_ULTRA_SPACE                    0x272
+*/
 #define FLAG_COMPLETED_CARNELIDGE_VOLCANO_STORY          0x273
+/*
 #define FLAG_PERMITTED_TO_GO_TO_ULTRA_SPACE              0x274
 #define FLAG_POIPOLE_EXPLAINED                           0x275
 #define FLAG_RECEIVED_POIPOLE_GIFT                       0x276

@@ -694,7 +694,9 @@ SkippingCutscenes_CarnelidgeVolcanoPeak_StoppingAlistair:
     addvar 0x40A5 0x1 @ Skip rival commenting on rude people in ultra space
 
     @ Normal world events
-    additem ITEM_HOUNDOOMINITE 0x1
+    checkflag 0x945 @ Divergent Mode
+    if NOT_SET _call ObtainHoundoominite
+    if SET _call ObtainTyranitarite
     special 0x0 @ Heal player party
     hidesprite 0x2 @ Rival
     hidesprite 0x3 @ Alistair

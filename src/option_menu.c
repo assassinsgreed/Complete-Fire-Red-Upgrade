@@ -397,6 +397,17 @@ void CloseAndSaveOptionMenu(u8 taskId)
     // TODO: Restore item / legendary flags based on mode & pokedex completion
     if (pokemonSelectionChanged)
     {
+        // Give story mega stones (Houndoominite / Tyranitarite) if past carnelidge volcano and swapping, and they aren't in the bag
+        if (FlagGet(FLAG_COMPLETED_CARNELIDGE_VOLCANO_STORY))
+        {
+            if (FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS))
+                if (!CheckBagHasItem(ITEM_TYRANITARITE, 1))
+                    AddBagItem(ITEM_TYRANITARITE, 1);
+            else
+                if (!CheckBagHasItem(ITEM_HOUNDOOMINITE, 1))
+                    AddBagItem(ITEM_HOUNDOOMINITE, 1);
+        }
+
         // Mega Stones
         FlagClear(FLAG_HIDE_ROUTE_6_AMPHAROSITE_OR_PIDGEOTITE);
         FlagClear(FLAG_HIDE_FORGOTTEN_MANSE_1F_SABLENITE_OR_BANETTITE);

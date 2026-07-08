@@ -341,6 +341,40 @@ PlayerHeal:
     fadescreenswapbuffers 0x0
     return
 
+@ Whiteout revive script, repointed over the vanilla one at 0x0807F5CC.
+@ Custom respawn locations set by WhiteoutLogic have no Pokemon Center nurse,
+@ so the nurse dialogue and movements are skipped there.
+.equ VanillaText_Whiteout_RestoreHealth, 0x081A5E89
+.equ VanillaScript_Whiteout_TakeAndHealMons, 0x081A65CE
+.equ VanillaScript_Whiteout_HealedMsg, 0x081A8DC6
+.equ VanillaScript_Whiteout_HealedMsgExcel, 0x081A8DCF
+.equ VanillaMovement_Whiteout_NurseBow, 0x081A666C
+
+.global EventScript_WhiteoutRevive
+EventScript_WhiteoutRevive:
+    lockall
+    textcolor 1
+    callasm IsCustomWhiteoutRespawn
+    compare LASTRESULT TRUE
+    if TRUE _goto EventScript_WhiteoutRevive_CustomLocation
+    msgbox VanillaText_Whiteout_RestoreHealth MSG_KEEPOPEN
+    call VanillaScript_Whiteout_TakeAndHealMons
+    checkflag 0x4B0
+    if NOT_SET _call VanillaScript_Whiteout_HealedMsg
+    checkflag 0x4B0
+    if SET _call VanillaScript_Whiteout_HealedMsgExcel
+    applymovement 0x0 VanillaMovement_Whiteout_NurseBow
+    waitmovement 0x0
+    fadedefault
+    releaseall
+    end
+
+EventScript_WhiteoutRevive_CustomLocation:
+    special 0x0 @ Heal player party
+    fadedefault
+    releaseall
+    end
+
 .global SetupRoute11RivalPartner
 SetupRoute11RivalPartner:
     call SetupPartner
