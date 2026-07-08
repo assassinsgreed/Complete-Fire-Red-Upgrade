@@ -53,6 +53,7 @@ MapEntryScript_SeppireCoveB1F_SetBoulderVisibilityAndCurrents:
 
 .global MapScript_SeppireCove_KyogreRoom
 MapScript_SeppireCove_KyogreRoom:
+    mapscript MAP_SCRIPT_ON_LOAD MapLoadScript_SetLegendarySprite
     mapscript MAP_SCRIPT_ON_RESUME MapResumeScript_HideKyogre
 	.byte MAP_SCRIPT_TERMIN
 
@@ -60,6 +61,14 @@ MapResumeScript_HideKyogre:
     checkflag 0x4C @ Kyogre caught, defeated, or run from
     if NOT_SET _goto End
     hidesprite 1
+    end
+
+MapLoadScript_SetLegendarySprite:
+    setvar 0x5029 144 @ Kyogre
+    checkflag 0x945 @ Divergent Mode
+    if NOT_SET _goto End
+    setvar 0x5029 134 @ Lugia
+    setobjectmovementtype 1 64 @ Walk on the spot, facing down (Lugia is always active)
     end
 
 @ Map tile events
@@ -227,6 +236,8 @@ ItemScript_SeppireCove_TM98_Waterfall:
 
 .global EventScript_SeppireCove_Kyogre
 EventScript_SeppireCove_Kyogre:
+    checkflag 0x945 @ Divergent Mode
+    if SET _goto EncounterLugia
     msgbox gText_Common_EncounterKyogreGroudon MSG_NORMAL
     checkitem ITEM_BLUE_ORB 0x1
     compare LASTRESULT TRUE
@@ -294,8 +305,41 @@ KyogreAwakens:
     end
 
 DefeatedOrFledFromKyogre:
+    checkflag 0x945 @ Divergent Mode
+    if NOT_SET _call KyogreLeavingMessage
+    if SET _call LugiaLeavingMessage
+    return
+
+KyogreLeavingMessage:
     msgbox gText_Common_KyogreGroudonFledOrDefeated MSG_NORMAL
     return
+
+LugiaLeavingMessage:
+    msgbox gText_Common_LugiaHoopaFledOrDefeated MSG_NORMAL
+    return
+
+EncounterLugia:
+    cry SPECIES_LUGIA 0x0
+    msgbox gText_SeppireCove_LugiaCry MSG_NORMAL
+    waitcry
+    setflag 0x90B @ Wild custom moves, cleared at the end of battle
+    setvar 0x8000 MOVE_AEROBLAST
+    setvar 0x8001 MOVE_EXTRASENSORY
+    setvar 0x8002 MOVE_CALMMIND
+    setvar 0x8003 MOVE_HYDROPUMP
+    setflag 0x90C @ Smarter wild battle, cleared at the end of battle
+    setwildbattle SPECIES_LUGIA 70
+    setflag 0x4C @ Hide KYOGRE
+    setflag 0x807
+    special 0x138 @ Setup a legendary encounter (blurred screen transition)
+    waitstate
+    clearflag 0x807
+    special2 LASTRESULT 0xB4 @ Check the result of the battle
+    compare LASTRESULT 0x1 @ Defeated in battle
+    if equal _call DefeatedOrFledFromKyogre
+    compare LASTRESULT 0x4 @ Fled from battle
+    if equal _call DefeatedOrFledFromKyogre
+    end
 
 .global EventScript_SeppireCove_UltraWormhole_Nihilego
 EventScript_SeppireCove_UltraWormhole_Nihilego:

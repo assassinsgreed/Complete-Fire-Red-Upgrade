@@ -25,10 +25,19 @@
 [BLACK]Alistair: [BLUE]Exactly. Now Pok\emon cannot\nbe used to bring harm to others.
 
 #org @gText_EmptyWorld_RivalAttemptsToBattle
-[BLACK][RIVAL]: [BLUE]This isn't what we agreed\nto, Alistair!\pI just wanted to be strong enough\nto face [PLAYER] as an equal!\pYou've left me with no choice[.]\pI'll have to battle you to get you\nto see reason.\pCorviknight, go!
+[BLACK][RIVAL]: [BLUE]This isn't what we agreed\nto, Alistair!\pI just wanted to be strong enough\nto face [PLAYER] as an equal!\pYou've left me with no choice[.]\pI'll have to battle you to get you\nto see reason.
+
+#org @gText_EmptyWorld_RivalAttemptsToBattle_SendsOutCorviknight
+[BLACK][RIVAL]: [BLUE]Corviknight, go!
 
 #org @gText_EmptyWorld_RivalRealizesWhatHappened
 [BLACK][RIVAL]: [BLUE]N-No! That's right[.]\nCorviknight is[.]
+
+#org @gText_EmptyWorld_RivalAttemptsToBattle_SendsOutPidgeot
+[BLACK][RIVAL]: [BLUE]Pidgeot, go!
+
+#org @gText_EmptyWorld_RivalRealizesWhatHappened_Divergent
+[BLACK][RIVAL]: [BLUE]N-No! That's right[.]\nPidgeot is[.]
 
 #org @gText_EmptyWorld_AlistairConcludesHisPoint1
 [BLACK]Alistair: [BLUE]You've just made my point,\n[RIVAL].\pYou disagreed with me, and intended\nto make me submit through force.
@@ -133,11 +142,17 @@ Is it eerily quiet to you, too?\nOr is it just me?
 #org @gText_EmptyWorld_Route13_LycanrocGirl
 Lycanroc?\nWhere did you go, buddy?
 
+#org @gText_EmptyWorld_Route13_LycanrocGirl_Divergent
+Haunter?\nWhere did you go, buddy?
+
 #org @gText_EmptyWorld_Route13RestHouse_PCGuy
 The PC is malfunctioning.\pSorry about that, I'll try to get it\nfixed soon!\pThen you can use it to store and\nwithdraw your Pok\emon again.
 
 #org @gText_EmptyWorld_Route13RestHouse_Hiker
 I'm going to go hiking with my son\nand our Pok\emon soon!\pIt's going to be so much fun!\nHe loves the family Boldore.
+
+#org @gText_EmptyWorld_Route13RestHouse_Hiker_Divergent
+I'm going to go hiking with my son\nand our Pok\emon soon!\pIt's going to be so much fun!\nHe loves the family Graveler.
 
 #org @gText_EmptyWorld_Route13RestHouse_Nurse
 I'd offer to heal you and your\nPok\emon, but[.]\pOh, why is this happening? What did\nwe do to deserve this?
@@ -184,8 +199,14 @@ A lot of people are going to Ferrox\nVillage until things get sorted out.\pAre y
 #org @gText_EmptyWorld_Route4_OldLady
 Oh, Yamper[.] Where did you go?\pCome here, sweetie[.]
 
+#org @gText_EmptyWorld_Route4_OldLady_Divergent
+Oh, Growlithe[.] Where did you go?\pCome here, sweetie[.]
+
 #org @gText_EmptyWorld_Route4_Boy
 Where did my Wynaut go?\pIt was right here, but now it's\ngone[.]\pYou didn't steal it, did you?
+
+#org @gText_EmptyWorld_Route4_Boy_Divergent
+Where did my Natu go?\pIt was right here, but now it's\ngone[.]\pYou didn't steal it, did you?
 
 #org @gText_EmptyWorld_FerroxVillage_Blackbelt
 I don't know what's going on, but now\neveryone is yelling, and that is[.]\pAWESOME! Gyahahahaha!\pTake that, library!
@@ -223,6 +244,9 @@ Have you heard the news? They say\nPok\emon have stared disappearing!
 #org @gText_EmptyWorld_FerroxVillage_NPCHouses_BerryDaughter
 I can't find my darling Shuckle.\pWithout him, I don't know how I'll\ntend to my berries[.]
 
+#org @gText_EmptyWorld_FerroxVillage_NPCHouses_BerryDaughter_Divergent
+I can't find my darling Aipom.\pWithout him, I don't know how I'll\ntend to my berries[.]
+
 #org @EmptyWorld_FerroxVillage_Pokemart_MainShop
 We've been asked to stop selling\nmerchandise for the time being.\pPlease understand.
 
@@ -246,6 +270,12 @@ My little Cosmo is missing! Waaah!\nWhere did it go?
 
 #org @EmptyWorld_FerroxVillage_ChinchouHouse_DaughterSnom
 Waaah! My Snom!! Where did it go?
+
+#org @EmptyWorld_FerroxVillage_ChinchouHouse_DaughterChinchou_Divergent
+My little Tommy is missing! Waaah!\nWhere did it go?
+
+#org @EmptyWorld_FerroxVillage_ChinchouHouse_DaughterSnom_Divergent
+Waaah! My Vanllite!! Where did it\ngo?
 
 #org @gText_EmptyWorld_FerroxVillage_Gym_Attendee
 Yo, superstar.\pI'll level with you; things aren't\nlooking good right now.\pWord on the street is that all\nPok\emon suddenly vanished.\pI don't know what this means for\npeople like me and you, but[.]\pTry to hang in there.\pThings'll work themselves out,\nsomehow. I'm sure of it.
@@ -358,8 +388,14 @@ Can you describe what your family\nlooks like?\pOr where you saw them last?
 #org @gText_EmptyWorld_DaimynCity_LittleGirl
 (Sniff) I don't know where my mommy\nand daddy are.\pLillipup usually helps me but he ran\naway.
 
+#org @gText_EmptyWorld_DaimynCity_LittleGirl_Divergent
+(Sniff) I don't know where my mommy\nand daddy are.\pSmeargle usually helps me but he ran\naway.
+
 #org @gText_EmptyWorld_DaimynCity_Boy
 We were going to watch the Passimian\nAces play a soccer game.\pBut now, I don't think the game'll be\non.\pAnd[.] I don't really feel up to\nwatching it, even if it was[.]
+
+#org @gText_EmptyWorld_DaimynCity_Boy_Divergent
+We were going to watch the Ambipom\nAces play a soccer game.\pBut now, I don't think the game'll be\non.\pAnd[.] I don't really feel up to\nwatching it, even if it was[.]
 
 #org @gText_EmptyWorld_DaimynCity_Girl
 This guard won't tell me what's\nhappening.\pDo you know? Can you tell me?

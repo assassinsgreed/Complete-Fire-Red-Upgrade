@@ -745,9 +745,15 @@ EventScript_Route18_TM92_TrickRoom:
     call ItemScript_Common_FindTM
     end
 
-.global EventScript_Route18_Galladite
-EventScript_Route18_Galladite:
+.global EventScript_Route18_GalladiteOrAbsolite
+EventScript_Route18_GalladiteOrAbsolite:
+    checkflag 0x945 @ Divergent Mode
+    if SET _goto GetAbsolite
     finditem ITEM_GALLADITE 0x1
+    end
+
+GetAbsolite:
+    finditem ITEM_ABSOLITE 0x1
     end
 
 .global EventScript_Route18_Fisherman
@@ -776,6 +782,10 @@ EventScript_Route18_ShayminFormChangeGirl:
     callasm HasSpeciesInParty
     compare LASTRESULT TRUE
     if TRUE _goto GiveGracidea
+    setvar 0x8005 SPECIES_XERNEAS
+    callasm HasSpeciesInParty
+    compare LASTRESULT TRUE
+    if TRUE _goto GratitudeForXerneas
     applymovement LASTTALKED m_LookLeft
     end
 
@@ -787,6 +797,11 @@ GiveGracidea:
 
 ExplainGracideaUsage:
     msgbox gText_Route18_ShayminGirl_GracideaExplanation MSG_NORMAL
+    applymovement LASTTALKED m_LookLeft
+    end
+
+GratitudeForXerneas:
+    msgbox gText_Route18_ShayminGirl_XerneasRecognized MSG_NORMAL
     applymovement LASTTALKED m_LookLeft
     end
 
@@ -822,6 +837,10 @@ MapScript_OrichelleGarden:
 
 MapEntryScript_OrichelleGarden_SetWorldMapFlag:
     setworldmapflag 0x8AD @ Been to Orichelle Garden
+    setvar 0x5029 125 @ Shaymin
+    checkflag 0x945 @ Divergent Mode
+    if NOT_SET _goto End
+    setvar 0x5029 133 @ Xerneas
     end
 
 HideLegendary:
@@ -837,16 +856,15 @@ HideShaymin:
 EventScript_OrichelleGarden_Shaymin:
     lock
     faceplayer
-    cry SPECIES_SHAYMIN 0x0
+    checkflag 0x945 @ Divergent Mode
+    if NOT_SET _call ShayminCry
+    if SET _call XerneasCry
     waitcry
     msgbox gtext_OrichelleGarden_ShayminBattleStart MSG_NORMAL
     setflag 0x90B @ Wild custom moves, cleared at the end of battle
-    setvar 0x8000 MOVE_DAZZLINGGLEAM
-    setvar 0x8001 MOVE_SYNTHESIS
-    setvar 0x8002 MOVE_SEEDBOMB
-    setvar 0x8003 MOVE_EARTHPOWER
-    setflag 0x90C @ Smarter wild battle, cleared at the end of battle
-    setwildbattle SPECIES_SHAYMIN 50 ITEM_NONE
+    checkflag 0x945 @ Divergent Mode
+    if NOT_SET _call SetupShayminBattle
+    if SET _call SetupXerneasBattle
     setflag 0x4B @ Shaymin hidden
     setflag 0x807
     special 0x138 @ Setup a legendary encounter (blurred screen transition)
@@ -858,6 +876,32 @@ EventScript_OrichelleGarden_Shaymin:
     compare LASTRESULT 0x4 @ Fled from battle
     if equal _call FledFromShaymin
     end
+
+ShayminCry:
+    cry SPECIES_SHAYMIN 0x0
+    return
+
+XerneasCry:
+    cry SPECIES_XERNEAS 0x0
+    return
+
+SetupShayminBattle:
+    setvar 0x8000 MOVE_DAZZLINGGLEAM
+    setvar 0x8001 MOVE_SYNTHESIS
+    setvar 0x8002 MOVE_SEEDBOMB
+    setvar 0x8003 MOVE_EARTHPOWER
+    setflag 0x90C @ Smarter wild battle, cleared at the end of battle
+    setwildbattle SPECIES_SHAYMIN 50 ITEM_NONE
+    return
+
+SetupXerneasBattle:
+    setvar 0x8000 MOVE_GEOMANCY
+    setvar 0x8001 MOVE_MOONBLAST
+    setvar 0x8002 MOVE_MEGAHORN
+    setvar 0x8003 MOVE_HORNLEECH
+    setflag 0x90C @ Smarter wild battle, cleared at the end of battle
+    setwildbattle SPECIES_XERNEAS 50 ITEM_NONE
+    return
 
 DefeatedShaymin:
     msgbox gtext_OrichelleGarden_ShayminDefeated MSG_NORMAL

@@ -27,6 +27,7 @@ MapEntryScript_RubarrDesert_FlightFlag:
     end
 
 MapEntryScript_RubarrDesert_SetWeather:
+    call SetLegendarySprite @ Done here to avoid issues with multiple load scripts
     @ If Pheromosa Wormhole is present, weather is clear or sandstorm only (to prevent weirdness from the eclipse being present during the day)
     checkflag 0x65 @ Pheromosa Wormhole is closed
     if NOT_SET _goto SetClearOrSandstormWeather
@@ -60,6 +61,17 @@ MapResumeScript_HideGroudon:
     if NOT_SET _goto End
     hidesprite 41
     end
+
+SetLegendarySprite:
+    setvar 0x5029 145 @ Groudon
+    checkflag 0x945 @ Divergent Mode
+    if SET _call SetHoopaSprite
+    return
+
+SetHoopaSprite:
+    setvar 0x5029 135 @ Hoopa
+    setobjectmovementtype 41 64 @ Walk on the spot, facing down (Hoopa is always active)
+    return
 
 .global EventScript_RubarrDesert_NurseJaina
 EventScript_RubarrDesert_NurseJaina:
@@ -361,6 +373,8 @@ PlayerDeflectsTheBlame:
 
 .global EventScript_RubarrDesert_Groudon
 EventScript_RubarrDesert_Groudon:
+    checkflag 0x945 @ Divergent Mode
+    if SET _goto EncounterHoopa
     msgbox gText_Common_EncounterKyogreGroudon MSG_NORMAL
     checkitem ITEM_RED_ORB 0x1
     compare LASTRESULT TRUE
@@ -426,8 +440,41 @@ GroudonAwakens:
     msgbox gText_Common_OrbCalmed MSG_NORMAL
     end
 
+EncounterHoopa:
+    cry SPECIES_HOOPA 0x0
+    msgbox gText_RubarrDesert_HoopaCry MSG_NORMAL
+    waitcry
+    setflag 0x90B @ Wild custom moves, cleared at the end of battle
+    setvar 0x8000 MOVE_SHADOWBALL
+    setvar 0x8001 MOVE_HYPERSPACEHOLE
+    setvar 0x8002 MOVE_WONDERROOM
+    setvar 0x8003 MOVE_NASTYPLOT
+    setflag 0x90C @ Smarter wild battle, cleared at the end of battle
+    setwildbattle SPECIES_HOOPA 70
+    setflag 0x57 @ Hide Hoopa
+    setflag 0x807
+    special 0x138 @ Setup a legendary encounter (blurred screen transition)
+    waitstate
+    clearflag 0x807
+    special2 LASTRESULT 0xB4 @ Check the result of the battle
+    compare LASTRESULT 0x1 @ Defeated in battle
+    if equal _call DefeatedOrFledFromGroudon
+    compare LASTRESULT 0x4 @ Fled from battle
+    if equal _call DefeatedOrFledFromGroudon
+    end
+
 DefeatedOrFledFromGroudon:
+    checkflag 0x945 @ Divergent Mode
+    if NOT_SET _call HoopaLeavingMessage
+    if SET _call GroudonLeavingMessage
+    return
+
+GroudonLeavingMessage:
     msgbox gText_Common_KyogreGroudonFledOrDefeated MSG_NORMAL
+    return
+
+HoopaLeavingMessage:
+    msgbox gText_Common_LugiaHoopaFledOrDefeated MSG_NORMAL
     return
 
 .global EventScript_RubarrDesert_UltraWormhole_Pheromosa
@@ -996,9 +1043,15 @@ SetMountainCornerForLevel1Pit:
     setmaptile 0x41 0x2A 0x319 Impassable @ Mountain on desert
     return
 
-.global EventScript_RubarrDesertCaves_Garchompite
-EventScript_RubarrDesertCaves_Garchompite:
+.global EventScript_RubarrDesertCaves_GarchompiteOrAerodactylite
+EventScript_RubarrDesertCaves_GarchompiteOrAerodactylite:
+    checkflag 0x945 @ Divergent Mode
+    if SET _goto FindAerodactylite
     finditem ITEM_GARCHOMPITE 0x1
+    end
+
+FindAerodactylite:
+    finditem ITEM_AERODACTYLITE 0x1
     end
 
 .global EventScript_RubarrDesertCaves_TM91FlashCannon

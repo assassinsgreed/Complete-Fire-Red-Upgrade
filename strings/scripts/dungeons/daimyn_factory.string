@@ -5,8 +5,14 @@ Oooh[.] It's so sad to see that the\nold factory has been shut down.\pI used to 
 #org @gText_DaimynFactoryOverworld_OldManAsksToSeePokedex
 Hmm? You say you've encountered and\ncaught an interesting Pok\emon?\pDo you mind if I see your Pok\edex\nfor a moment?
 
-#org @gText_DaimynFactoryOverworld_OldManSuggestsTeachingPokemon
-Why, that's it! Meltan!\pIt does my old heart good to see\nthe little fellow is doing well.\pSeeing it again invigorates this old\nman's spirit! Ohohoho!
+#org @gText_DaimynFactoryOverworld_OldManRecognizesMeltan
+Why, that's it! Meltan!
+
+#org @gText_DaimynFactoryOverworld_OldManRecognizesGenesect
+Why, that's it! Genesect!
+
+#org @gText_DaimynFactoryOverworld_OldManSuggestsTeachingPokemon_AfterIdentifyingPokemon
+It does my old heart good to see\nthe little fellow is doing well.\pSeeing it again invigorates this old\nman's spirit! Ohohoho!
 
 #org @gText_DaimynFactoryOverworld_OldManAsksToTeachSteelBeam
 It has been quite some time, but I'm\nsure I could teach your Steel type\lPok\emon a few tricks from my past.\pWould you like me to teach a Steel\nPok\emon the move Steel Beam?

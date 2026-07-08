@@ -344,7 +344,7 @@ npc 1 123 14 EventScript_Common_RockSmash
 npc 1 123 15 EventScript_Common_RockSmash
 npc 1 123 16 EventScript_Common_RockSmash
 npc 1 123 17 EventScript_Common_RockSmash
-npc 1 123 18 EventScript_RubarrDesertCaves_Garchompite
+npc 1 123 18 EventScript_RubarrDesertCaves_GarchompiteOrAerodactylite
 npc 1 123 19 ItemScript_Common_MaxPotion
 npc 1 123 20 ItemScript_Common_EscapeRope
 npc 1 123 21 EventScript_RubarrDesertCaves_TM02DragonClaw
@@ -1790,7 +1790,7 @@ npc 3 36 2 EventScript_Route18_SwimmerJudie
 npc 3 36 3 EventScript_Route18_BirdKeeperKirk
 npc 3 36 4 EventScript_Route18_LassEmma
 npc 3 36 5 EventScript_Route18_TM99_DazzlingGleam
-npc 3 36 6 EventScript_Route18_Galladite
+npc 3 36 6 EventScript_Route18_GalladiteOrAbsolite
 npc 3 36 7 ItemScript_Common_SodaPop
 npc 3 36 8 ItemScript_Common_BigPearl
 npc 3 36 9 ItemScript_Common_Revive
@@ -2122,6 +2122,7 @@ npc 3 40 7 EventScript_SecretTrail_ChannelerHeather
 # Mimmett Jungle
 map 1 65 MapScript_MimmettJungle
 map 1 67 MapScript_MimmettJungle
+map 1 71 MapScript_MimmettJungle_ZeraoraRoom
 npc 1 63 0 EventScript_MimmettJungle_Venusaurite
 npc 1 63 1 EventScript_MimmettJungle_TM22_SolarBeam
 npc 1 63 2 ItemScript_Common_AbsorbBulb

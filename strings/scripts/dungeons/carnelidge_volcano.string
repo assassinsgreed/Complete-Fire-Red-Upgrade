@@ -35,13 +35,16 @@ You have honed your skills as well!
 True dragons are unbothered by the\nheat of Carnelidge Volcano.
 
 #org @gText_CarnelidgeVolcano_BirdKeeperFalco_Intro
-Hey, clear out! You're scaring the\nwild Skarmory away.
+Hey, clear out! You're scaring the\nwild Pok\emon away.
 
 #org @gText_CarnelidgeVolcano_BirdKeeperFalco_Defeat
 Aw, phooey!
 
 #org @gText_CarnelidgeVolcano_BirdKeeperFalco_Chat
 If you encounter a Skarmory, be sure\nto catch it!\pIt's quite an uncommon find.
+
+#org @gText_CarnelidgeVolcano_BirdKeeperFalco_ChatDivergent
+If you encounter a Staraptor, be\nsure to catch it!\pIt's quite an uncommon find.
 
 #org @gText_CarnelidgeVolcano_CrushGirlEunice_Intro
 What do we have here? A trainer,\nworn down by Carnelidge's heat?
@@ -53,13 +56,13 @@ This heat will not break us!
 My Pok\emon have trained in the heat\nof this volcano for months.
 
 #org @gText_CarnelidgeVolcano_SuperNerdNathan_Intro
-If you've come here seeking the rare\nSun Pok\emon, then prepare to leave\ldisappointed!
+If you've come here seeking rare\nPok\emon, then prepare to leave\ldisappointed!
 
 #org @gText_CarnelidgeVolcano_SuperNerdNathan_Defeat
 How disappointing!
 
 #org @gText_CarnelidgeVolcano_SuperNerdNathan_Chat
-They say the Sun Pok\emon roosts\nhere, but I haven't seen it.\pIs it really possible that Volcarona\nexists? I wonder[.]
+They say a mythical Pok\emon can be\nfound here, but I haven't seen it.\pIs it really possible that it exists?\nI wonder[.]
 
 #org @gText_CarnelidgeVolcano_HikerHugh_Intro
 I'm taking a break from hiking.\nLet's battle!
@@ -269,7 +272,7 @@ No[.] No! This cannot be happening!
 [BLACK]Selene: [RED]And to top it all off, an\nunusual Pok\emon as well?\pWhat's going on here?
 
 #org @gText_CarnelidgeVolcanoPeak_Conclusion_AlistairCommentsOnSelenesArrival
-[BLACK]Alistair: [BLUE]Indeed, there is no truth\nto the rumours.\pHowever[.] There was certainly a\nthreat that was stopped here.\pSelene, I think we need to talk.
+[BLACK]Alistair: [BLUE]Indeed, there is no truth\nto the rumours.\pHowever[.] There was certainly a\ntragedy that was prevented here.\pSelene, I think we need to talk.
 
 #org @gText_CarnelidgeVolcanoPeak_Conclusion_SeleneAsksAlistairToGoToRestaurant
 [BLACK]Selene: [RED]I don't think I really\nget it, but yes, we should talk[.]\pThere are things I need to tell you,\nas well.\pI know a great restaurant in Daimyn\nCity. Want to go there?

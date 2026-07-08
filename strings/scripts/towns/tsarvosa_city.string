@@ -433,6 +433,18 @@ Umm[.] Thanks, but no thanks[.]\nI wanted a regular Slowbro.
 #org @gText_TsarvosaCityNPCHouses_SlowbroTrade_Complete
 Isn't it neat how different our\nSlowbros look?\pI guess Pok\emon really do come in\nall shapes and sizes!
 
+#org @gText_TsarvosaCityNPCHouses_RapidashTrade_Request
+Hi! I just moved here from the Galar\nregion.\pI heard the Rapidashes around here\nare different from the ones back\lhome.\pIf you have one, would you be\nwilling to trade it for my Galarian\lRapidash?
+
+#org @gText_TsarvosaCityNPCHouses_RapidashTrade_ChoosingPokemon
+Oh, I'm so excited! Which Rapidash\nwill you trade me, I wonder[.]
+
+#org @gText_TsarvosaCityNPCHouses_RapidashTrade_WrongPokemon
+Umm[.] Thanks, but no thanks[.]\nI wanted a regular Rapidash.
+
+#org @gText_TsarvosaCityNPCHouses_RapidashTrade_Complete
+Isn't it neat how different our\nRapidashes look?\pI guess Pok\emon really do come in\nall shapes and sizes!
+
 #org @gText_TsarvosaCityNPCHouses_SlowbroTradeMother
 My daughter has been awfully lonely\nsince we moved.\pShe would never say so, though!\pIf you aren't too busy, would you\nkindly talk to her?\pI'm sure she would appreciate it.
 

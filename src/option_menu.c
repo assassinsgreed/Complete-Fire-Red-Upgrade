@@ -397,9 +397,14 @@ void CloseAndSaveOptionMenu(u8 taskId)
     // TODO: Restore item / legendary flags based on mode & pokedex completion
     if (pokemonSelectionChanged)
     {
-        FlagClear(FLAG_HIDE_ROUTE_7_STICK_OR_SACHET);
+        // Mega Stones
         FlagClear(FLAG_HIDE_ROUTE_6_AMPHAROSITE_OR_PIDGEOTITE);
         FlagClear(FLAG_HIDE_FORGOTTEN_MANSE_1F_SABLENITE_OR_BANETTITE);
+        FlagClear(FLAG_HIDE_RUBARR_DESERT_BF1_GARCHOMPITE_OR_AERODACTYLITE);
+        FlagClear(FLAG_HIDE_ROUTE18_GALLADITE_OR_ABSOLITE);
+        // Held Items
+        FlagClear(FLAG_HIDE_ROUTE_7_STICK_OR_SACHET);
+        FlagClear(FLAG_HIDE_DAIMYN_FACTORY_RUSTED_DATA_OR_DRIVES);
     }
 
     SetPokemonCryStereo(gSaveBlock2->optionsSound);

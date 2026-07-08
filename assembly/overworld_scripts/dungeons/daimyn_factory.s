@@ -120,9 +120,19 @@ OldManTalksAboutSteelBeam:
     msgbox gText_DaimynFactoryOverworld_OldManAsksToSeePokedex MSG_NORMAL
     sound 0x15 @ Exclaim
     applymovement LASTTALKED m_Surprise
-    msgbox gText_DaimynFactoryOverworld_OldManSuggestsTeachingPokemon MSG_NORMAL
+    checkflag 0x945 @ Divergent Mode
+    if NOT_SET _call ManRecognizesMeltan
+    if SET _call ManRecognizesGenesect
     setflag 0x26E @ Steel beam tutor unlocked
     goto TeachSteelBeamQuestion
+
+ManRecognizesMeltan:
+    msgbox gText_DaimynFactoryOverworld_OldManRecognizesMeltan MSG_NORMAL
+    return
+
+ManRecognizesGenesect:
+    msgbox gText_DaimynFactoryOverworld_OldManRecognizesGenesect MSG_NORMAL
+    return
 
 TeachSteelBeamQuestion:
     faceplayer
@@ -223,6 +233,9 @@ MapScript_DaimynFactoryInterior:
     .byte MAP_SCRIPT_TERMIN
 
 MapLoadScript_SetMeltanLocationAndBreakerState:
+    setvar 0x5029 126 @ Meltan
+    checkflag 0x945 @ Divergent Mode
+    if SET _call SetGenesectSprite
     compare VarMeltanEvents 0x1
     if lessthan _goto End
     movesprite2 Meltan 0x18 0x6
@@ -254,7 +267,9 @@ LevelScript_PlayerSurprisesMeltan:
     waitmovement Meltan
     applymovement Meltan m_LookDown
     pause 0x10
-    cry SPECIES_MELTAN 0x0
+    checkflag 0x945 @ Divergent Mode
+    if NOT_SET _call MeltanCry
+    if SET _call GenesectCry
     applymovement Meltan m_MeltanSurprise
     waitmovement Meltan
     pause DELAY_HALFSECOND
@@ -269,7 +284,9 @@ LevelScript_PlayerSurprisesMeltan:
     setflag 0x264 @ Power is on
     applymovement Meltan m_MeltanRunsRight
     waitmovement Meltan
-    cry SPECIES_MELTAN 0x0
+    checkflag 0x945 @ Divergent Mode
+    if NOT_SET _call MeltanCry
+    if SET _call GenesectCry
     pause DELAY_HALFSECOND
     applymovement Meltan m_MeltanRunsUp
     waitmovement Meltan
@@ -288,6 +305,10 @@ MapResumeScript_HideLegendary:
 HideMeltan:    
     hidesprite Meltan
     end
+
+SetGenesectSprite:
+    setvar 0x5029 147 @ Genesect
+    return
 
 DoorStateChangeCommon:
     playse 0x8 @ Door open
@@ -641,16 +662,15 @@ CloseLowerRightDoorB:
 EventScript_DaimynFactory_Meltan:
     lock
     faceplayer
-    cry SPECIES_MELTAN 0x0
+    checkflag 0x945 @ Divergent Mode
+    if NOT_SET _call MeltanCry
+    if SET _call GenesectCry
     waitcry
     msgbox gtext_DaimynFactory_MeltanBattleStart MSG_NORMAL
     setflag 0x90B @ Wild custom moves, cleared at the end of battle
-    setvar 0x8000 MOVE_THUNDERWAVE
-    setvar 0x8001 MOVE_THUNDERBOLT
-    setvar 0x8002 MOVE_ACIDARMOR
-    setvar 0x8003 MOVE_FLASHCANNON
-    setflag 0x90C @ Smarter wild battle, cleared at the end of battle
-    setwildbattle SPECIES_MELTAN 60 ITEM_PETAYA_BERRY
+    checkflag 0x945 @ Divergent Mode
+    if NOT_SET _call SetupMeltanBattle
+    if SET _call SetupGenesectBattle
     setflag 0x55 @ Meltan hidden
     setflag 0x807
     special 0x138 @ Setup a legendary encounter (blurred screen transition)
@@ -670,6 +690,32 @@ DefeatedMeltan:
 FledFromMeltan:
     msgbox gtext_DaimynFactory_MeltanFledFromBattle MSG_NORMAL
     end
+
+MeltanCry:
+    cry SPECIES_MELTAN 0x0
+    return
+
+GenesectCry:
+    cry SPECIES_GENESECT 0x0
+    return
+
+SetupMeltanBattle:
+    setvar 0x8000 MOVE_THUNDERWAVE
+    setvar 0x8001 MOVE_THUNDERBOLT
+    setvar 0x8002 MOVE_ACIDARMOR
+    setvar 0x8003 MOVE_FLASHCANNON
+    setflag 0x90C @ Smarter wild battle, cleared at the end of battle
+    setwildbattle SPECIES_MELTAN 60 ITEM_PETAYA_BERRY
+    return
+
+SetupGenesectBattle:
+    setvar 0x8000 MOVE_BUGBUZZ
+    setvar 0x8001 MOVE_FLASHCANNON
+    setvar 0x8002 MOVE_TECHNOBLAST
+    setvar 0x8003 MOVE_SIMPLEBEAM
+    setflag 0x90C @ Smarter wild battle, cleared at the end of battle
+    setwildbattle SPECIES_GENESECT 60 ITEM_NONE
+    return
 
 .global EventScript_DaimynFactory_FindTM25Thunder
 EventScript_DaimynFactory_FindTM25Thunder:
@@ -709,7 +755,19 @@ EventScript_DaimynFactory_EngineerElroy:
 
 .global EventScript_DaimynFactory_RustedData
 EventScript_DaimynFactory_RustedData:
+    checkflag 0x945 @ Divergent Mode
+    if SET _goto GetGenesectDrives
     finditem ITEM_RUSTED_DATA 0x1
+    end
+
+GetGenesectDrives:
+    finditem ITEM_BURN_DRIVE 0x1
+    pause DELAY_HALFSECOND
+    finditem ITEM_SHOCK_DRIVE 0x1
+    pause DELAY_HALFSECOND
+    finditem ITEM_DOUSE_DRIVE 0x1
+    pause DELAY_HALFSECOND
+    finditem ITEM_CHILL_DRIVE 0x1
     end
 
 .global SignScript_DaimynFactory_BreakersNotice
@@ -777,7 +835,9 @@ TileScript_EncounterMeltan_Middle:
     sound 0x15 @ Exclaim
     applymovement Meltan m_Surprise
     waitmovement Meltan
-    cry SPECIES_MELTAN 0x0
+    checkflag 0x945 @ Divergent Mode
+    if NOT_SET _call MeltanCry
+    if SET _call GenesectCry
     applymovement Meltan m_MeltanJumps
     waitmovement Meltan
     pause DELAY_HALFSECOND
@@ -796,7 +856,9 @@ TileScript_EncounterMeltan_Middle:
     pause DELAY_HALFSECOND
     sound 0x15 @ Exclaim
     applymovement Meltan m_MeltanBigSurprise
-    cry SPECIES_MELTAN 0x0
+    checkflag 0x945 @ Divergent Mode
+    if NOT_SET _call MeltanCry
+    if SET _call GenesectCry
     msgbox gText_DaimynFactory_GeneratorOn MSG_NORMAL
     setvar VarMeltanEvents 0x2
     end

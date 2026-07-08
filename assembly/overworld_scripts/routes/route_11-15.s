@@ -1635,7 +1635,7 @@ MapScript_Route13_RestHouse:
 
 MapEntryScript_Route13_RestHouse_FlightFlag:
     setworldmapflag 0x8A2
-    sethealingplace 0xD @ Route 13 Rest House
+    @ sethealingplace 0xD @ Route 13 Rest House
     end
 
 .global EventScript_Route13_RestHouse_PCGuy

@@ -14,6 +14,18 @@ MapEntryScript_MimmettJungle_FlightFlag:
     setworldmapflag 0x8AE
     end
 
+.global MapScript_MimmettJungle_ZeraoraRoom
+MapScript_MimmettJungle_ZeraoraRoom:
+    mapscript MAP_SCRIPT_ON_LOAD MapLoadScript_SetLegendarySprite
+    .byte MAP_SCRIPT_TERMIN
+
+MapLoadScript_SetLegendarySprite:
+    setvar 0x5029 149 @ Zeraora
+    checkflag 0x945 @ Divergent Mode
+    if NOT_SET _goto End
+    setvar 0x5029 140 @ Zarude
+    end
+
 .global EventScript_MimmettJungle_TM28_LeechLife
 EventScript_MimmettJungle_TM28_LeechLife:
     setvar CHOSEN_ITEM ITEM_TM28
@@ -86,24 +98,25 @@ EventScript_MimmettJungle_Zeraora:
     compare LASTRESULT NO
     if equal _goto ZeraoraChoseNo
     faceplayer
-    cry SPECIES_ZERAORA 0x0
+    checkflag 0x945 @ Divergent Mode
+    if NOT_SET _call ZeraoraCry
+    if SET _call ZarudeCry
     msgbox gText_MimmettJungle_Zeraora_ChoseYes MSG_NORMAL
     waitcry
     @ Legendary battle setup
     setflag 0x904 @ Can't run or catch, cleared after battle
     setflag 0x90B @ Wild custom moves, cleared at the end of battle
-    setvar 0x8000 MOVE_HONECLAWS
-    setvar 0x8001 MOVE_PLASMAFISTS
-    setvar 0x8002 MOVE_KNOCKOFF
-    setvar 0x8003 MOVE_BRICKBREAK
-    setflag 0x90C @ Smarter wild battle, cleared at the end of battle
-    setwildbattle SPECIES_ZERAORA 70 ITEM_SITRUS_BERRY
+    checkflag 0x945 @ Divergent Mode
+    if NOT_SET _call SetupZeraoraFight
+    if SET _call SetupZarudeFight
     setflag 0x807
     special 0x138 @ Setup a legendary encounter (blurred screen transition)
     waitstate
     clearflag 0x807
     @ After battle
-    cry SPECIES_ZERAORA 0x0
+    checkflag 0x945 @ Divergent Mode
+    if NOT_SET _call ZeraoraCry
+    if SET _call ZarudeCry
     msgbox gText_MimmettJungle_Zeraora_AfterBattle MSG_NORMAL
     waitcry
     compare PLAYERFACING UP
@@ -134,6 +147,32 @@ ZeraoraJumpsAroundPlayer:
     waitmovement LASTTALKED
     return
 
+ZeraoraCry:
+    cry SPECIES_ZERAORA 0x0
+    return
+
+ZarudeCry:
+    cry SPECIES_ZARUDE 0x0
+    return
+
+SetupZeraoraFight:
+    setvar 0x8000 MOVE_HONECLAWS
+    setvar 0x8001 MOVE_PLASMAFISTS
+    setvar 0x8002 MOVE_KNOCKOFF
+    setvar 0x8003 MOVE_BRICKBREAK
+    setflag 0x90C @ Smarter wild battle, cleared at the end of battle
+    setwildbattle SPECIES_ZERAORA 70 ITEM_SITRUS_BERRY
+    return
+
+SetupZarudeFight:
+    setvar 0x8000 MOVE_ENERGYBALL
+    setvar 0x8001 MOVE_SYNTHESIS
+    setvar 0x8002 MOVE_UTURN
+    setvar 0x8003 MOVE_BITE
+    setflag 0x90C @ Smarter wild battle, cleared at the end of battle
+    setwildbattle SPECIES_ZARUDE 70 ITEM_SITRUS_BERRY
+    return
+
 .global EventScript_MimmettJungle_UltraWormhole_Buzzwole
 EventScript_MimmettJungle_UltraWormhole_Buzzwole:
     call UltraWormholePrompt
@@ -162,5 +201,5 @@ SignScript_MimmettJungle_SwampSign:
     msgbox gText_MimmettJungle_SwampSign MSG_SIGN
     end
 
-m_ZeraoraGoesAroundPlayer: .byte run_right, run_down, jump_2_down, run_left, end_m
+m_ZeraoraGoesAroundPlayer: .byte run_right, run_down, enable_jump_landing_ground_effect, jump_2_down, disable_jump_landing_ground_effect, run_left, end_m
 m_ZeraoraLeaves: .byte run_down, run_down, run_down, run_down, run_down, run_down, end_m

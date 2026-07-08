@@ -54,10 +54,15 @@ LevelScript_ContinueStoryConclusion:
     msgbox gText_EmptyWorld_RivalChallengesAlistairsDecision MSG_NORMAL
     msgbox gText_EmptyWorld_AlistairConfirmsHisDecision MSG_NORMAL
     msgbox gText_EmptyWorld_RivalAttemptsToBattle MSG_NORMAL
+    checkflag 0x945 @ Divergent Mode
+    if NOT_SET _call RivalAttemptsToSendOutCorviknight
+    if SET _call RivalAttemptsToSendOutPidgeot    
     pause DELAY_HALFSECOND
     sound 0x15 @ Exclaim
     applymovement Rival m_Surprise
-    msgbox gText_EmptyWorld_RivalRealizesWhatHappened MSG_NORMAL
+    checkflag 0x945 @ Divergent Mode
+    if NOT_SET _call RivalRealizesPokemonAreGone
+    if SET _call RivalRealizesPokemonAreGone_Divergent
     msgbox gText_EmptyWorld_AlistairConcludesHisPoint1 MSG_NORMAL
     applymovement Alistair m_LookDown
     msgbox gText_EmptyWorld_AlistairConcludesHisPoint2 MSG_NORMAL
@@ -128,6 +133,22 @@ LevelScript_ContinueStoryConclusion:
     @ gSaveBlock1->playerParty slot that a save would overwrite with the erased party.
     callasm BackupPartyToSafeBackupAndErase
     end
+
+RivalAttemptsToSendOutCorviknight:
+    msgbox gText_EmptyWorld_RivalAttemptsToBattle_SendsOutCorviknight MSG_NORMAL
+    return
+
+RivalAttemptsToSendOutPidgeot:
+    msgbox gText_EmptyWorld_RivalAttemptsToBattle_SendsOutPidgeot MSG_NORMAL
+    return
+
+RivalRealizesPokemonAreGone:
+    msgbox gText_EmptyWorld_RivalRealizesWhatHappened MSG_NORMAL
+    return
+
+RivalRealizesPokemonAreGone_Divergent:
+    msgbox gText_EmptyWorld_RivalRealizesWhatHappened_Divergent MSG_NORMAL
+    return
 
 PlayerSaidNoToRivalsRequest:
     msgbox gText_EmptyWorld_PlayerDoesNotWantToGoToUltraSpace MSG_NORMAL
@@ -253,7 +274,13 @@ EventScript_EmptyWorld_Route13_Picknicker:
 
 .global EventScript_EmptyWorld_Route13_LycanrocGirl
 EventScript_EmptyWorld_Route13_LycanrocGirl:
+    checkflag 0x945 @ Divergent Mode
+    if SET _goto LycanrocGirlDivergent
     npcchat gText_EmptyWorld_Route13_LycanrocGirl
+    end
+
+LycanrocGirlDivergent:
+    npcchat gText_EmptyWorld_Route13_LycanrocGirl_Divergent
     end
 
 .global EventScript_EmptyWorld_Route13RestHouse_PCGuy
@@ -263,7 +290,13 @@ EventScript_EmptyWorld_Route13RestHouse_PCGuy:
 
 .global EventScript_EmptyWorld_Route13RestHouse_Hiker
 EventScript_EmptyWorld_Route13RestHouse_Hiker:
+    checkflag 0x945 @ Divergent Mode
+    if SET _goto HikerDivergent
     npcchat gText_EmptyWorld_Route13RestHouse_Hiker
+    end
+
+HikerDivergent:
+    npcchat gText_EmptyWorld_Route13RestHouse_Hiker_Divergent
     end
 
 .global EventScript_EmptyWorld_Route13RestHouse_Nurse
@@ -338,12 +371,24 @@ EventScript_EmptyWorld_Route4_BirdKeeper2:
 
 .global EventScript_EmptyWorld_Route4_OldLady
 EventScript_EmptyWorld_Route4_OldLady:
+    checkflag 0x945 @ Divergent Mode
+    if SET _goto OldLadyDivergent
     npcchat gText_EmptyWorld_Route4_OldLady
+    end
+
+OldLadyDivergent:
+    npcchat gText_EmptyWorld_Route4_OldLady_Divergent
     end
 
 .global EventScript_EmptyWorld_Route4_Boy
 EventScript_EmptyWorld_Route4_Boy:
+    checkflag 0x945 @ Divergent Mode
+    if SET _goto BoyDivergent
     npcchat gText_EmptyWorld_Route4_Boy
+    end
+
+BoyDivergent:
+    npcchat gText_EmptyWorld_Route4_Boy_Divergent
     end
 
 .global EventScript_EmptyWorld_FerroxVillage_Blackbelt
@@ -403,7 +448,13 @@ EventScript_EmptyWorld_FerroxVillage_NPCHouses_BerryMom:
 
 .global EventScript_EmptyWorld_FerroxVillage_NPCHouses_BerryDaughter
 EventScript_EmptyWorld_FerroxVillage_NPCHouses_BerryDaughter:
+    checkflag 0x945 @ Divergent Mode
+    if SET _goto BerryDaughterDivergent
     npcchatwithmovement gText_EmptyWorld_FerroxVillage_NPCHouses_BerryDaughter m_LookLeft
+    end
+
+BerryDaughterDivergent:
+    npcchatwithmovement gText_EmptyWorld_FerroxVillage_NPCHouses_BerryDaughter_Divergent m_LookLeft
     end
 
 .global EventScript_EmptyWorld_FerroxVillage_Pokemart_MainShop
@@ -435,6 +486,8 @@ EventScript_EmptyWorld_FerroxVillage_ChinchouHouse_Dad:
 
 .global EventScript_EmptyWorld_FerroxVillage_ChinchouHouse_Daughter
 EventScript_EmptyWorld_FerroxVillage_ChinchouHouse_Daughter:
+    checkflag 0x945 @ Divergent Mode
+    if SET _goto TradeGirlDivergent
     checkflag 0x248 @ Did Cosmo trade
     if SET _goto DaughterSnom
     msgbox EmptyWorld_FerroxVillage_ChinchouHouse_DaughterChinchou MSG_NORMAL
@@ -442,6 +495,16 @@ EventScript_EmptyWorld_FerroxVillage_ChinchouHouse_Daughter:
 
 DaughterSnom:
     msgbox EmptyWorld_FerroxVillage_ChinchouHouse_DaughterSnom MSG_NORMAL
+    end
+
+TradeGirlDivergent:
+    checkflag 0x248 @ Did Cosmo trade
+    if SET _goto DaughterVanillite
+    msgbox EmptyWorld_FerroxVillage_ChinchouHouse_DaughterChinchou_Divergent MSG_NORMAL
+    end
+
+DaughterVanillite:
+    msgbox EmptyWorld_FerroxVillage_ChinchouHouse_DaughterSnom_Divergent MSG_NORMAL
     end
 
 .global EventScript_EmptyWorld_FerroxVillage_Gym_Attendee
@@ -626,12 +689,24 @@ EventScript_EmptyWorld_DaimynCity_LittleGirlGuard:
 
 .global EventScript_EmptyWorld_DaimynCity_LittleGirl
 EventScript_EmptyWorld_DaimynCity_LittleGirl:
+    checkflag 0x945 @ Divergent Mode
+    if SET _goto LittleGirlDivergent
     msgbox gText_EmptyWorld_DaimynCity_LittleGirl MSG_NORMAL
+    end
+
+LittleGirlDivergent:
+    msgbox gText_EmptyWorld_DaimynCity_LittleGirl_Divergent MSG_NORMAL
     end
 
 .global EventScript_EmptyWorld_DaimynCity_Boy
 EventScript_EmptyWorld_DaimynCity_Boy:
+    checkflag 0x945 @ Divergent Mode
+    if SET _goto DaimynCityBoyDivergent 
     npcchat gText_EmptyWorld_DaimynCity_Boy
+    end
+
+DaimynCityBoyDivergent:
+    npcchat gText_EmptyWorld_DaimynCity_Boy_Divergent
     end
 
 .global EventScript_EmptyWorld_DaimynCity_Girl

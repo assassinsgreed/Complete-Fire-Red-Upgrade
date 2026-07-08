@@ -92,7 +92,13 @@ EventScript_CarnelidgeVolcano_DragonTamerFlynn:
 .global EventScript_CarnelidgeVolcano_BirdKeeperFalco
 EventScript_CarnelidgeVolcano_BirdKeeperFalco:
     trainerbattle0 0x0 464 0x0 gText_CarnelidgeVolcano_BirdKeeperFalco_Intro gText_CarnelidgeVolcano_BirdKeeperFalco_Defeat
+    checkflag 0x945 @ Divergent Mode
+    if SET _goto FalcoChatDivergent
     msgbox gText_CarnelidgeVolcano_BirdKeeperFalco_Chat MSG_NORMAL
+    end
+
+FalcoChatDivergent:
+    msgbox gText_CarnelidgeVolcano_BirdKeeperFalco_ChatDivergent MSG_NORMAL
     end
 
 .global EventScript_CarnelidgeVolcano_CrushGirlEunice
