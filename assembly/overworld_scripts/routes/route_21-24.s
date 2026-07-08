@@ -271,7 +271,13 @@ EventScript_Route23_CrushGirlLily:
 .global EventScript_Route23_BeautyMiranda
 EventScript_Route23_BeautyMiranda:
     trainerbattle0 0x0 374 0x0 gText_Route23_BeautyMiranda_Intro gText_Route23_BeautyMiranda_Defeat
+    checkflag 0x945 @ Divergent Mode
+    if SET _goto MirandaChatDivergent
     msgbox gText_Route23_BeautyMiranda_Chat MSG_NORMAL
+    end
+
+MirandaChatDivergent:
+    msgbox gText_Route23_BeautyMiranda_ChatDivergent MSG_NORMAL
     end
 
 .global EventScript_Route23_Palossand1

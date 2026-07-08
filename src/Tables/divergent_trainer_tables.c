@@ -2697,10 +2697,10 @@ const struct TrainerMonItemCustomMoves sParty_DaimynCityGym_YoungsterJacob_Diver
 const struct TrainerMonItemCustomMoves sParty_DaimynCityGym_PokefanKanesha_Divergent[] = {
     {
         .lvl = 32,
-        .species = SPECIES_PORYGON2,
-        .moves = { MOVE_CONVERSION, MOVE_CONVERSION2, MOVE_RECOVER, MOVE_THUNDERSHOCK },
+        .species = SPECIES_DOUBLADE,
+        .moves = { MOVE_POWERTRICK, MOVE_SHADOWSNEAK, MOVE_PSYCHOCUT, MOVE_IRONDEFENSE },
         .heldItem = ITEM_ORAN_BERRY,
-        .ability = Ability_Hidden // Natural Cure
+        .ability = Ability_Hidden // No Guard
     }
 };
 

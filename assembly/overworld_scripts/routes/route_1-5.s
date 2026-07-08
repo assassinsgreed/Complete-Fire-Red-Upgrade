@@ -78,7 +78,13 @@ ItemScript_Route1_FindTMEnergyBall:
 .global EventScript_Route1_SwimmerRebecca
 EventScript_Route1_SwimmerRebecca:
     trainerbattle0 0x0 320 0x0 gText_Route1_SwimmerRebecca_Intro gText_Route1_SwimmerRebecca_Defeat
+    checkflag 0x945 @ Divergent Mode
+    if SET _goto RebeccaChatDivergent
     msgbox gText_Route1_SwimmerRebecca_Chat MSG_NORMAL
+    end
+
+RebeccaChatDivergent:
+    msgbox gText_Route1_SwimmerRebecca_ChatDivergent MSG_NORMAL
     end
 
 .global EventScript_Route1_BurglarBryce

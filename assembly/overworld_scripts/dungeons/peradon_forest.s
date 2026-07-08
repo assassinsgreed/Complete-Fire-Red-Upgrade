@@ -167,7 +167,13 @@ EventScript_PeradonForest_PokefanClark:
 .global EventScript_PeradonForest_CollectorFernando
 EventScript_PeradonForest_CollectorFernando:
     trainerbattle0 0x0 236 0x0 gText_PeradonForest_CollectorFernando_Intro gText_PeradonForest_CollectorFernando_Defeat
+    checkflag 0x945 @ Divergent Mode
+    if SET _goto FernandoChatDivergent
     msgbox gText_PeradonForest_CollectorFernando_Chat MSG_NORMAL
+    end
+
+FernandoChatDivergent:
+    msgbox gText_PeradonForest_CollectorFernando_ChatDivergent MSG_NORMAL
     end
 
 .global EventScript_PeradonForest_BugCatcherLyle

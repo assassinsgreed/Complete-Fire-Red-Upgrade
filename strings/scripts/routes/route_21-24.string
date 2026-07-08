@@ -206,13 +206,16 @@ We shall accept our defeat with\npride, too.
 Thank you for that battle.
 
 #org @gText_Route23_BeautyMiranda_Intro
-I think one of my Slowpokes is sick.\nHe looks a little sunburnt[.]
+I think one of my Pok\emon is sick.\nHe looks a little off[.]
 
 #org @gText_Route23_BeautyMiranda_Defeat
 He isn't battling well either, it\nseems.
 
 #org @gText_Route23_BeautyMiranda_Chat
-I bought these cute Galarica\naccessories from a girl in Emraldin\lQuay.\pFor some reason, my Slowpoke can't\nget enough of it[.]
+I bought these cute Galarica\naccessories from a girl in Emraldin\lQuay.\pFor some reason, my Pok\emon can't\nget enough of it[.]
+
+#org @gText_Route23_BeautyMiranda_ChatDivergent
+I swear I just saw my Ponyta move\nsomething with it's mind[.]\pNo, I must be imagining things.
 
 #org @gText_Route23_TsarvosaAnthraDirectionsSign
 West: Tsarvosa City\nEast: Anthra Town
@@ -285,13 +288,13 @@ H-Huh?
 Know your opponent's strengths to\nbetter understand their weaknesses.\pI think I know what my mentor meant\nnow.
 
 #org @gText_Route24_FishermanHumphrey_Intro
-I swear I saw a Dratini in this pond,\nbut nobody believes me[.]\pI'm so frustrated! I know, I'll take\nit out on you!
+I swear I saw a rare Pok\emon in this\npond, but nobody believes me[.]\pI'm so frustrated! I know, I'll take\nit out on you!
 
 #org @gText_Route24_FishermanHumphrey_Defeat
 Grr[.]
 
 #org @gText_Route24_FishermanHumphrey_Chat
-I'll prove it to everyone[.]\pI'm not leaving this spot until I fish\nthat Dratini up!\pI just need to pick the right rod[.]\nHmmm[.]
+I'll prove it to everyone[.]\pI'm not leaving this spot until I fish\nthat Pok\emon up!\pI just need to pick the right rod[.]\nHmmm[.]
 
 #org @gText_Route24_TriathleteWillow_Intro
 Greetings! I think I'll take a break\nfrom training to battle you.

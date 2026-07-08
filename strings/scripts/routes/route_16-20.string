@@ -284,7 +284,7 @@ Warning!\pA recent rock slide has caved in\npart of the cave ahead.\pBe cautious
 
 // Route 18
 #org @gText_Route18_SwimmerJasper_Intro
-Hey, careful! There are Frillish in\nthese waters. Don't get shocked!
+Hey, careful! There are Poisonous\nPok\emon in these waters.\pBe careful!
 
 #org @gText_Route18_SwimmerJasper_Defeat
 What a shock that was.

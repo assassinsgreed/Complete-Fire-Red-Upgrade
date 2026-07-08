@@ -53,12 +53,30 @@ LightTremor:
 
 .global MapScript_CarnelidgeVolcano_VolcanionRoom
 MapScript_CarnelidgeVolcano_VolcanionRoom:
+    mapscript MAP_SCRIPT_ON_LOAD MapLoadScript_SetLegendarySprite
     mapscript MAP_SCRIPT_ON_TRANSITION MapEntryScript_CarnelidgeVolcano_FlightFlagAndWalkingScript
     mapscript MAP_SCRIPT_ON_RESUME HideVolcanionOnResume
     .byte MAP_SCRIPT_TERMIN
 
+MapLoadScript_SetLegendarySprite:
+    setvar 0x5029 150 @ Volcanion
+    checkflag 0x945 @ Divergent Mode
+    if NOT_SET _goto End
+    setvar 0x5029 139 @ Heatran
+    end
+
 HideVolcanionOnResume:
+    checkflag 0x945 @ Divergent Mode
+    if SET _goto HideHeatranOnResume
     setvar LASTRESULT SPECIES_VOLCANION
+    callasm CheckIfCaught
+    compare LASTRESULT 0x1
+    if notequal _goto End
+    hidesprite 8
+    end
+
+HideHeatranOnResume:
+    setvar LASTRESULT SPECIES_HEATRAN
     callasm CheckIfCaught
     compare LASTRESULT 0x1
     if notequal _goto End
@@ -189,26 +207,35 @@ VolcanionEmerges:
     applymovement CAMERA m_CameraPanDownForVolcanion
     waitmovement CAMERA
     special CAMERA_END
-    cry SPECIES_VOLCANION 0x0
-    msgbox gText_CarnelidgeVolcano_VolcanionCry MSG_NORMAL
+    checkflag 0x945 @ Divergent Mode
+    if NOT_SET _call VolcanionCry
+    if SET _call HeatranCry 
     waitcry
     msgbox gText_CarnelidgeVolcano_VolcanionEmerged MSG_NORMAL
     setvar 0x4000 0x1 @ Don't trigger this until the player returns
     end
 
+VolcanionCry:
+    cry SPECIES_VOLCANION 0x0
+    msgbox gText_CarnelidgeVolcano_VolcanionCry MSG_NORMAL
+    return
+
+HeatranCry:
+    cry SPECIES_HEATRAN 0x0
+    msgbox gText_CarnelidgeVolcano_HeatranCry MSG_NORMAL
+    return
+
 EventScript_CarnelidgeVolcano_Volcanion:
     lock
     faceplayer
-    cry SPECIES_VOLCANION 0x0
-    msgbox gText_CarnelidgeVolcano_VolcanionCry MSG_NORMAL
+    checkflag 0x945 @ Divergent Mode
+    if NOT_SET _call VolcanionCry
+    if SET _call HeatranCry 
     waitcry
     setflag 0x90B @ Wild custom moves, cleared at the end of battle
-    setvar 0x8000 MOVE_STEAMERUPTION
-    setvar 0x8001 MOVE_MIST
-    setvar 0x8002 MOVE_FIRESPIN
-    setvar 0x8003 MOVE_EARTHPOWER
-    setflag 0x90C @ Smarter wild battle, cleared at the end of battle
-    setwildbattle SPECIES_VOLCANION 75 ITEM_NONE
+    checkflag 0x945 @ Divergent Mode
+    if NOT_SET _call SetupVolcanionBattle
+    if SET _call SetupHeatranBattle
     setflag 0x807
     special 0x138 @ Setup a legendary encounter (blurred screen transition)
     waitstate
@@ -220,6 +247,24 @@ EventScript_CarnelidgeVolcano_Volcanion:
     compare LASTRESULT 0x4 @ Fled from battle
     if equal _call FledFromVolcanion
     end
+
+SetupVolcanionBattle:
+    setvar 0x8000 MOVE_STEAMERUPTION
+    setvar 0x8001 MOVE_MIST
+    setvar 0x8002 MOVE_FIRESPIN
+    setvar 0x8003 MOVE_EARTHPOWER
+    setflag 0x90C @ Smarter wild battle, cleared at the end of battle
+    setwildbattle SPECIES_VOLCANION 75 ITEM_NONE
+    return
+
+SetupHeatranBattle:
+    setvar 0x8000 MOVE_MAGMASTORM
+    setvar 0x8001 MOVE_STONEEDGE
+    setvar 0x8002 MOVE_EARTHPOWER
+    setvar 0x8003 MOVE_CRUNCH
+    setflag 0x90C @ Smarter wild battle, cleared at the end of battle
+    setwildbattle SPECIES_HEATRAN 75 ITEM_NONE
+    return
 
 DefeatedVolcanion:
     call VolcanionLeavesCommon
