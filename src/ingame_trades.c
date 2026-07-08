@@ -55,6 +55,7 @@ extern u8 gText_InGameTrade_Divergent_Chompy[];
 extern u8 gText_InGameTrade_Divergent_Bruce[];
 extern u8 gText_InGameTrade_Divergent_Raspberry[];
 extern u8 gText_InGameTrade_Divergent_Cookie[];
+extern u8 gText_InGameTrade_Divergent_Pascal[];
 extern u8 gText_InGameTrade_Divergent_Tina[];
 
 static const struct InGameTrade sInGameTrades[] = {
@@ -473,9 +474,9 @@ static const struct InGameTrade sInGameTrades_Divergent[] = {
         .requestedSpecies = SPECIES_NONE // Species check is skipped
     },
     [INGAME_TRADE_DIVERGENT_KADABRA] = {
-        .nickname = gText_InGameTrade_Autumn,
+        .nickname = gText_InGameTrade_Divergent_Pascal,
         .species = SPECIES_KADABRA,
-        .ivs = {23, 18, 26, 17, 22, 16},
+        .ivs = {23, 18, 17, 26, 16, 22},
         .abilityNum = 0xFF, // Magic Guard (Hidden)
         .otId = 35846,
         .conditions = {20, 15, 15, 10, 25},
@@ -483,13 +484,13 @@ static const struct InGameTrade sInGameTrades_Divergent[] = {
         .heldItem = ITEM_SITRUS_BERRY,
         .mailNum = 0,
         .otName = gText_InGameTrade_OTRival,
-        .otGender = FEMALE,
+        .otGender = MALE,
         .nature = NATURE_TIMID,
         .requestedSpecies = SPECIES_NONE // Species check is skipped
     },
     [INGAME_TRADE_DIVERGENT_RAPIDASH_G] = {
         .nickname = gText_InGameTrade_Divergent_Tina,
-        .species = SPECIES_SLOWBRO,
+        .species = SPECIES_RAPIDASH_G,
         .ivs = {28, 24, 18, 22, 23, 8},
         .abilityNum = 0xFF, // Anticipation (Hidden)
         .otId = 79525,

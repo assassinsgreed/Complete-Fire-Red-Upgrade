@@ -13,8 +13,20 @@
 
 .global MapScript_LakeLaplaz
 MapScript_LakeLaplaz:
+    mapscript MAP_SCRIPT_ON_LOAD MapLoadScript_LakeLaplaz_SetLegendarySprites
     mapscript MAP_SCRIPT_ON_TRANSITION MapEntryScript_LakeLaplaz_FlightFlag
 	.byte MAP_SCRIPT_TERMIN
+
+MapLoadScript_LakeLaplaz_SetLegendarySprites:
+    setvar 0x5029 138 @ Articuno
+    setvar 0x5030 136 @ Zapdos
+    setvar 0x5031 137 @ Moltres
+    checkflag 0x945 @ Divergent Mode
+    if NOT_SET _goto End @ Already showing the birds
+    setvar 0x5029 109 @ Articuno -> Tornadus
+    setvar 0x5030 119 @ Zapdos -> Thundurus
+    setvar 0x5031 132 @ Moltres -> Landorus
+    end
 
 MapEntryScript_LakeLaplaz_FlightFlag:
     setworldmapflag 0x8A9
@@ -50,6 +62,8 @@ TileScript_LakeLaplaz_GalarianBirdsCommon:
     waitmovement PLAYER
     sound 0x15 @ Exclaim
 	applymovement PLAYER m_Surprise
+    checkflag 0x945 @ Divergent Mode
+    if SET _goto KamiTrio
     msgbox gText_LakeLaplaz_GalarianBirdsDiscovered MSG_NORMAL
     applymovement PLAYER m_PlayerWalksUp
     waitmovement PLAYER
@@ -75,6 +89,7 @@ TileScript_LakeLaplaz_GalarianBirdsCommon:
     callasm MarkGalarianBirdsAsSeen
     call SetupRoamers
     msgbox gText_LakeLaplaz_GalarianBirdsFled MSG_NORMAL
+    msgbox gText_LakeLaplaz_PursueRoamersTip MSG_NORMAL
     end
 
 ZapdosMovement:
@@ -160,6 +175,68 @@ MoltresMovement:
     pause DELAY_HALFSECOND
     return
 
+KamiTrio:
+    msgbox gText_LakeLaplaz_KamiTrioDiscovered MSG_NORMAL
+    applymovement PLAYER m_PlayerWalksUp
+    waitmovement PLAYER
+    applymovement Articuno m_LookDown @ = Tornadus
+    applymovement Zapdos m_LookDown  @ = Thundurus
+    applymovement Moltres m_LookDown @ = Landorus
+    waitmovement Moltres
+    pause DELAY_HALFSECOND
+    sound 0x15 @ Exclaim
+	applymovement Articuno m_Surprise
+    applymovement Zapdos m_Surprise
+    applymovement Moltres m_Surprise
+    msgbox gText_LakeLaplaz_KamiTrioSeesPlayer MSG_NORMAL
+    @ Tornadus Fleeing
+    call SetWeatherRain
+    pause DELAY_1SECOND
+    showpokepic SPECIES_TORNADUS
+    waitkeypress
+    hidepokepic
+    pause DELAY_HALFSECOND
+    applymovement Articuno m_KamiTrioFliesAway
+    pause DELAY_1SECOND
+    call SetWeatherClear
+    waitmovement Articuno
+    pause DELAY_HALFSECOND
+    @ Landorus Fleeing
+    call SetWeatherSandstorm
+    pause DELAY_1SECOND
+    showpokepic SPECIES_LANDORUS
+    waitkeypress
+    hidepokepic
+    pause DELAY_HALFSECOND
+    applymovement Moltres m_KamiTrioFliesAway
+    pause DELAY_1SECOND
+    call SetWeatherClear
+    waitmovement Moltres
+    pause DELAY_HALFSECOND
+    @ Thundurus Fleeing
+    call SetWeatherThunderstorm
+    pause DELAY_1SECOND
+    showpokepic SPECIES_THUNDURUS
+    waitkeypress
+    hidepokepic
+    pause DELAY_HALFSECOND
+    applymovement Zapdos m_KamiTrioFliesAway
+    pause DELAY_1SECOND
+    call SetWeatherClear
+    waitmovement Zapdos
+    pause DELAY_HALFSECOND
+    @ Cleanup
+    setflag GalarianBirdsFlag
+    setvar GalarianBirdsVariable 0x1
+    hidesprite Articuno
+    hidesprite Zapdos
+    hidesprite Moltres
+    callasm MarkGalarianBirdsAsSeen
+    call SetupRoamers
+    msgbox gText_LakeLaplaz_KamiTrioFled MSG_NORMAL
+    msgbox gText_LakeLaplaz_PursueRoamersTip MSG_NORMAL
+    end
+
 SetupRoamers:
     setvar 0x8000 SPECIES_ARTICUNO_G
     setvar 0x8001 50 @ Level 50
@@ -189,3 +266,4 @@ m_ArticunoHide: .byte set_invisible, end_m
 m_ArticunoShow: .byte set_visible, end_m
 m_MoltresFliesUp: .byte lock_facing, walk_up_very_slow, walk_up_very_slow, unlock_facing, run_left, run_left, run_left, run_left, run_down, run_down, run_right, run_right, look_down, end_m
 m_MoltresFliesAway: .byte run_right, run_up, run_up, run_up, run_up, run_up, end_m
+m_KamiTrioFliesAway: .byte lock_facing, run_up, run_up, run_up, run_up, run_up, run_up, run_up, end_m

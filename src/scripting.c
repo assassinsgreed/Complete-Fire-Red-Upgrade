@@ -3700,6 +3700,11 @@ void MarkGalarianBirdsAsSeen()
 	GetSetPokedexFlag(288, FLAG_SET_SEEN);
 	GetSetPokedexFlag(289, FLAG_SET_SEEN);
 	GetSetPokedexFlag(290, FLAG_SET_SEEN);
+
+	// Divergent Mode
+	GetSetPokedexFlag(288 + 390, FLAG_SET_SEEN);
+	GetSetPokedexFlag(289 + 390, FLAG_SET_SEEN);
+	GetSetPokedexFlag(290 + 390, FLAG_SET_SEEN);
 }
 
 void CountBadges()

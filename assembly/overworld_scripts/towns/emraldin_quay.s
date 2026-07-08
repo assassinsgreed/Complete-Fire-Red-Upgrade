@@ -32,6 +32,8 @@ FarmersMarket:
 
 .global EventScript_EmraldinQuay_GalaricaGirl
 EventScript_EmraldinQuay_GalaricaGirl:
+    checkflag 0x945 @ Divergent Mode
+    if SET _goto GalaricaGirlDivergent
     msgbox gText_EmraldinQuay_Overworld_GalaricaGirlIntro MSG_NORMAL
     pokemart GalaricaMart
     msgbox gText_EmraldinQuay_Overworld_GalaricaGirlOutro MSG_NORMAL
@@ -42,6 +44,10 @@ GalaricaMart:
     .hword ITEM_GALARICA_CUFF
     .hword ITEM_GALARICA_WREATH
     .hword ITEM_NONE
+
+GalaricaGirlDivergent:
+    msgbox gText_EmraldinQuay_Overworld_GalaricaGirlDivergent MSG_NORMAL
+    end
 
 .global EventScript_EmraldinQuay_Boy
 EventScript_EmraldinQuay_Boy:

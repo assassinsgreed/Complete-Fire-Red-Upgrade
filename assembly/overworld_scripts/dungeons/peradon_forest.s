@@ -17,34 +17,34 @@ MapEntryScript_PeradonForest_FlightFlag:
 
 HideTrapPokemon:
     checkflag 0xE13
-    if SET _call HideAmoonguss1
+    if SET _call HideTrap1
     checkflag 0xE14
-    if SET _call HideAmoonguss2
+    if SET _call HideTrap2
     checkflag 0xE15
-    if SET _call HideAmoonguss3
+    if SET _call HideTrap3
     checkflag 0xE16
-    if SET _call HideFoongus1
+    if SET _call HideTrap4
     checkflag 0xE17
-    if SET _call HideFoongus2
+    if SET _call HideTrap5
     end
 
-HideAmoonguss1:
+HideTrap1:
     hidesprite 5
     return
 
-HideAmoonguss2:
+HideTrap2:
     hidesprite 6
     return
 
-HideAmoonguss3:
+HideTrap3:
     hidesprite 8
     return
 
-HideFoongus1:
+HideTrap4:
     hidesprite 7
     return
 
-HideFoongus2:
+HideTrap5:
     hidesprite 9
     return
 
@@ -62,30 +62,40 @@ EventScript_PeradonForest_GuardHouse_Girl:
 .global EventScript_PeradonForest_AmoongussEncounter1
 EventScript_PeradonForest_AmoongussEncounter1:
     setflag 0xE13
+    checkflag 0x945 @ Divergent Mode
+    if SET _goto ElectrodeEncounter
     call AmoongussEncounter
     end
 
 .global EventScript_PeradonForest_AmoongussEncounter2
 EventScript_PeradonForest_AmoongussEncounter2:
     setflag 0xE14
+    checkflag 0x945 @ Divergent Mode
+    if SET _goto ElectrodeEncounter
     call AmoongussEncounter
     end
 
 .global EventScript_PeradonForest_AmoongussEncounter3
 EventScript_PeradonForest_AmoongussEncounter3:
     setflag 0xE15
+    checkflag 0x945 @ Divergent Mode
+    if SET _goto ElectrodeEncounter
     call AmoongussEncounter
     end
 
 .global EventScript_PeradonForest_FoongusEncounter1
 EventScript_PeradonForest_FoongusEncounter1:
     setflag 0xE16
+    checkflag 0x945 @ Divergent Mode
+    if SET _goto VoltorbEncounter
     call FoongusEncounter
     end
 
 .global EventScript_PeradonForest_FoongusEncounter2
 EventScript_PeradonForest_FoongusEncounter2:
     setflag 0xE17
+    checkflag 0x945 @ Divergent Mode
+    if SET _goto VoltorbEncounter
     call FoongusEncounter
     end
 
@@ -112,6 +122,30 @@ FoongusEncounter:
     hidesprite LASTTALKED
     release
     return
+
+ElectrodeEncounter:
+    lock
+    checksound
+    cry SPECIES_ELECTRODE 0x0
+    sound 0x15 @ Exclaim
+    applymovement PLAYER m_Surprise
+    msgbox gText_Common_PokeballTrap MSG_KEEPOPEN
+    wildbattle SPECIES_ELECTRODE 40 0x0
+    hidesprite LASTTALKED
+    release
+    end
+
+VoltorbEncounter:
+    lock
+    checksound
+    cry SPECIES_VOLTORB 0x0
+    sound 0x15 @ Exclaim
+    applymovement PLAYER m_Surprise
+    msgbox gText_Common_PokeballTrap MSG_KEEPOPEN
+    wildbattle SPECIES_VOLTORB 38 0x0
+    hidesprite LASTTALKED
+    release
+    end
 
 .global EventScript_PeradonForest_Heracronite
 EventScript_PeradonForest_Heracronite:

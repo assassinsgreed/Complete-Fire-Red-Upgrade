@@ -928,16 +928,28 @@ EventScript_Route19_TM84PoisonJab:
     call ItemScript_Common_FindTM
     end
 
-.global EventScript_Route19_Palossand
-EventScript_Route19_Palossand:
+.global EventScript_Route19_PalossandOrDugtrio
+EventScript_Route19_PalossandOrDugtrio:
     lock
     checksound
+    checkflag 0x945 @ Divergent Mode
+    if SET _goto EncounterDugtrio
     cry SPECIES_PALOSSAND 0x0
     sound 0x15 @ Exclaim
     applymovement PLAYER m_Surprise
     msgbox gText_Route1_SandygastEncounter MSG_KEEPOPEN
     setflag 0xE19
     wildbattle SPECIES_PALOSSAND 50 0x0
+    release
+    end
+
+EncounterDugtrio:
+    cry SPECIES_DUGTRIO_A 0x0
+    sound 0x15 @ Exclaim
+    applymovement PLAYER m_Surprise
+    msgbox gText_Route1_SandygastEncounter MSG_KEEPOPEN
+    setflag 0xE19
+    wildbattle SPECIES_DUGTRIO_A 50 0x0
     release
     end
 

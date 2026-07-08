@@ -708,8 +708,17 @@ I'm taking my kids out on a hike to\nsee the wild Mamoswine!
 #org @gText_Route12RestHouse_GameboyKid
 Meh. Mamoswines, who cares?\nI'd rather just play my Gameboy[.]
 
+#org @gText_Route12RestHouse_Girl_Divergent
+My dad is so excited to see these\nwild Dewgongs, tee hee!
+
+#org @gText_Route12RestHouse_Dad_Divergent
+I'm taking my kids out on a hike to\nsee the wild Dewgongs!
+
+#org @gText_Route12RestHouse_GameboyKid_Divergent
+Meh. Dewgongs, who cares?\nI'd rather just play my Gameboy[.]
+
 #org @gText_Route12RestHouse_Hiker
-Be careful if you choose to go out\ninto Route 12's mountainside.\pPeople have reported seeing a\nstrange icy Pok\emon.\pIt usually stares at people and\nleaves, but you'd best be careful\lif you see it.
+Be careful if you choose to go out\ninto Route 12's mountainside.\pPeople have reported seeing a\nstrange horse Pok\emon.\pIt usually stares at people and\nleaves, but you'd best be careful\lif you see it.
 
 #org @gText_Route12RestHouse_PokemartMan
 This is your last chance before\nBruccie Village to restock your\lsupplies.\pMake sure you're prepared before\ngoing out onto Route 12!
@@ -793,7 +802,7 @@ This Rest House sure is handy, isn't\nit?\pIt's got a Pok\emon Center[.] And a\n
 [BLACK]Alistair: [BLUE]5 years, Selene. It's been\n5 years.\pIn all that time, you couldn't even\nstop by to say hello?\pYou say you're doing what you must\nto keep people from getting hurt.\pIt's all a sham. You haven't even\nseen your own mother in 5 years.\pIf it weren't for me, she would be\nall alone.
 
 #org @gText_Route12RestHouse_Cutscene_AlistairLeaves
-[BLACK]Alistair: [BLUE]The position of Champion\nneeds to be removed.\pAll it does is hurt people and hinder\nthe region's progress.
+[BLACK]Alistair: [BLUE]The world would be better\noff without the role of Champion.\pAll it does is hurt people and hinder\nthe region's progress.
 
 #org @gText_Route12RestHouse_Cutscene_SeleneLeaves
 [BLACK]Selene: [RED]I'm sorry you had to see\nthat, [PLAYER].\pBut[.] He's right, about all of it.\pI've made some mistakes and hurt\npeople dear to me.\p[PLAYER], please remember to cherish\nyour journey, even if you can't\lachieve what you set out to.\pIf you're planning to collect all the\ngym badges, you'll want to head to\lBruccie Village.\pI'm sure [RIVAL] has headed there\nas well.\pPlease excuse me. I need to catch\nup to Alistair before he's gone.

@@ -11,4 +11,16 @@ Unusual bird Pok\emon are eating\nofferings left in the grove[.]
 The bird Pok\emon spotted you!
 
 #org @gText_LakeLaplaz_GalarianBirdsFled
-The unusual bird Pok\emon fled!\pMaybe they can be found again, if\nyou search Kulure's mainland[.]\pCheck the Town Map to see if they\ncan be found!
+The unusual bird Pok\emon fled!
+
+#org @gText_LakeLaplaz_PursueRoamersTip
+Maybe they can be found again, if\nyou search Kulure's mainland[.]\pCheck the Town Map to see if they\ncan be found!
+
+#org @gText_LakeLaplaz_KamiTrioDiscovered
+Unusual humanoid Pok\emon are eating\nofferings left in the grove[.]
+
+#org @gText_LakeLaplaz_KamiTrioSeesPlayer
+The humanoid Pok\emon spotted you!
+
+#org @gText_LakeLaplaz_KamiTrioFled
+The unusual humanoid Pok\emon fled!

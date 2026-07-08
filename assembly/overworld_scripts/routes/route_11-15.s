@@ -1477,17 +1477,35 @@ EventScript_Route12RestHouse_OldMan:
 
 .global EventScript_Route12RestHouse_Girl
 EventScript_Route12RestHouse_Girl:
+    checkflag 0x945 @ Divergent Mode
+    if SET _goto Route12RestHouse_GirlDivergent
     npcchatwithmovement gText_Route12RestHouse_Girl m_LookRight
     end
 
 .global EventScript_Route12RestHouse_Dad
 EventScript_Route12RestHouse_Dad:
+    checkflag 0x945 @ Divergent Mode
+    if SET _goto Route12RestHouse_DadDivergent
     npcchatwithmovement gText_Route12RestHouse_Dad m_LookLeft
     end
 
 .global EventScript_Route12RestHouse_GameboyKid
 EventScript_Route12RestHouse_GameboyKid:
+    checkflag 0x945 @ Divergent Mode
+    if SET _goto Route12RestHouse_GameboyKidDivergent
     npcchatwithmovement gText_Route12RestHouse_GameboyKid m_LookDown
+    end
+
+Route12RestHouse_GirlDivergent:
+    npcchatwithmovement gText_Route12RestHouse_Girl_Divergent m_LookRight
+    end
+
+Route12RestHouse_DadDivergent:
+    npcchatwithmovement gText_Route12RestHouse_Dad_Divergent m_LookLeft
+    end
+
+Route12RestHouse_GameboyKidDivergent:
+    npcchatwithmovement gText_Route12RestHouse_GameboyKid_Divergent m_LookDown
     end
 
 .global EventScript_Route12RestHouse_Hiker

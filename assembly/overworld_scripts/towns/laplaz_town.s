@@ -1001,6 +1001,8 @@ CaseyRematch_BeatenToday:
 
 .global EventScript_LaplazGym_GymExpert
 EventScript_LaplazGym_GymExpert:
+    checkflag 0x4B4
+    if SET _goto GymExpert_AfterCaseyBeaten
     npcchat gText_LaplazGym_GymExpertCommonIntro
     checkflag 0x3F @ Casey is not revealed as leader yet
     if SET _goto GymExpert_MontyDescription
@@ -1009,6 +1011,10 @@ EventScript_LaplazGym_GymExpert:
 
 GymExpert_MontyDescription:
     msgbox gText_LaplazGym_GymExpertMontyIntro MSG_NORMAL
+    end
+
+GymExpert_AfterCaseyBeaten:
+    npcchat gText_LaplazGym_GymExpertCaseyBeaten
     end
 
 .global EventScript_LaplazGym_Jeremiah

@@ -440,13 +440,20 @@ LevelScript_ChallengingKurtis:
     setvar PlutoStoryEventVar 0x4 @ Pluto events complete
     checkflag 0x93B @ Hard level caps
     if SET _call PrintUpdatedLevelCaps
-    warpmuted 3 5 5 @ Warp back to Daimyn City outside the building 
+    warpmuted 3 5 5 @ Warp back to Daimyn City outside the building
     end
 
 .global EventScript_PlutoHQ_B1F_Gyaradosite
 EventScript_PlutoHQ_B1F_Gyaradosite:
     @ Note: These are workarounds because the gyaradosite keeps behaving oddly
+    checkflag 0x945 @ Divergent Mode
+    if SET _goto GiveGengarite
     finditem ITEM_GYARADOSITE 0x1
+    setvar PlutoStoryEventVar 0x5
+    end
+
+GiveGengarite:
+    finditem ITEM_GENGARITE 0x1
     setvar PlutoStoryEventVar 0x5
     end
 
@@ -1003,7 +1010,9 @@ NotChangingMachineState:
 .global TileScript_PlutoHQ_WildBattle
 TileScript_PlutoHQ_WildBattle:
     lock
-    call ChooseWildSpecies
+    checkflag 0x945 @ Divergent Mode
+    if NOT_SET _call ChooseWildSpecies
+    if SET _call ChooseWildSpeciesDivergent
     checksound
     cry 0x4000 0x0
     sound 0x15 @ Exclaim
@@ -1033,6 +1042,29 @@ SetRattata:
 
 SetZubat:
     setvar 0x4000 SPECIES_ZUBAT
+    return
+
+
+ChooseWildSpeciesDivergent:
+    random 0x3
+    compare LASTRESULT 0x0
+    if equal _call SetStunky
+    compare LASTRESULT 0x1
+    if equal _call SetShuppet
+    compare LASTRESULT 0x2
+    if equal _call SetMeowthG
+    return
+
+SetStunky:
+    setvar 0x4000 SPECIES_STUNKY
+    return
+
+SetShuppet:
+    setvar 0x4000 SPECIES_SHUPPET
+    return
+
+SetMeowthG:
+    setvar 0x4000 SPECIES_MEOWTH_G
     return
 
 .global EventScript_PlutoHQ_UltraWormhole_Guzzlord

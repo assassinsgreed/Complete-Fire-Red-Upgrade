@@ -251,13 +251,23 @@ EventScript_RivalEvent6:
     if equal _goto RivalEvent6_Declined
     msgbox gText_RivalEvent6_Confirmed MSG_NORMAL
     random 0x3
-    setvar 0x8008 0x9 @ First trade option
+    checkflag 0x945 @ Divergent Mode
+    if NOT_SET _call SetupNormalModeTrade
+    if SET _call SetupDivergentModeTrade
     setvar 0x8004 0x8008
     setvar 0x8005 LASTRESULT @ 0-2, based on randomization
     special 0x3E @ Add two vars above, result stored in 0x8008
     call InitiateTrade
     setflag 0x2C5 @ Traded with Rival
     goto RivalEvent6_TradeConcluded
+
+SetupNormalModeTrade:
+    setvar 0x8008 0x9 @ First trade option
+    return
+
+SetupDivergentModeTrade:
+    setvar 0x8008 22 @ First trade option
+    return
 
 RivalEvent6_Declined:
     msgbox gText_RivalEvent6_Declined MSG_NORMAL

@@ -176,6 +176,12 @@ SetWeatherRain:
     doweather
     return
 
+.global SetWeatherThunderstorm
+SetWeatherThunderstorm:
+    setweather WEATHER_THUNDERSTORM
+    doweather
+    return
+
 .global SetWeatherThreeSnowflakes
 SetWeatherThreeSnowflakes:
     setweather WEATHER_THREE_SNOWFLAKES

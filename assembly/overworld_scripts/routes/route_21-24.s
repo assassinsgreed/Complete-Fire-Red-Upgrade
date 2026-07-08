@@ -278,6 +278,8 @@ EventScript_Route23_BeautyMiranda:
 EventScript_Route23_Palossand1:
     lock
     checksound
+    checkflag 0x945 @ Divergent Mode
+    if SET _goto EncounterDugtrio1
     cry SPECIES_PALOSSAND 0x0
     sound 0x15 @ Exclaim
     applymovement PLAYER m_Surprise
@@ -291,12 +293,34 @@ EventScript_Route23_Palossand1:
 EventScript_Route23_Palossand2:
     lock
     checksound
+    checkflag 0x945 @ Divergent Mode
+    if SET _goto EncounterDugtrio2
     cry SPECIES_PALOSSAND 0x0
     sound 0x15 @ Exclaim
     applymovement PLAYER m_Surprise
     msgbox gText_Route1_SandygastEncounter MSG_KEEPOPEN
     setflag 0xE1C
     wildbattle SPECIES_PALOSSAND 53 0x0
+    release
+    end
+
+EncounterDugtrio1:
+    cry SPECIES_DUGTRIO_A 0x0
+    sound 0x15 @ Exclaim
+    applymovement PLAYER m_Surprise
+    msgbox gText_Route1_SandygastEncounter MSG_KEEPOPEN
+    setflag 0xE1B
+    wildbattle SPECIES_DUGTRIO_A 50 0x0
+    release
+    end
+
+EncounterDugtrio2:
+    cry SPECIES_DUGTRIO_A 0x0
+    sound 0x15 @ Exclaim
+    applymovement PLAYER m_Surprise
+    msgbox gText_Route1_SandygastEncounter MSG_KEEPOPEN
+    setflag 0xE1C
+    wildbattle SPECIES_DUGTRIO_A 50 0x0
     release
     end
 

@@ -55,6 +55,9 @@ The hot springs are so hot that they\nsap my strength.\pI'm choosing to swim her
 #org @gtext_ScaldingSpa_SpaRoom_GameboyKid
 My friend said his Crabrawler evolved\non Route 12's snowy side.\pIt didn't work when I tried on the\ngrassy side though[.]\pI just used an Ice Stone instead!
 
+#org @gtext_ScaldingSpa_SpaRoom_GameboyKid_Divergent
+Did you know some Pok\emon can\nevolve in different ways?\pMy buddy said his Nosepass evolved\nwhen he was hiking in Hesson Pass!
+
 #org @gtext_ScaldingSpa_SpaRoom_HealingSpa
 The warmth of the hotspring has\nhealed your Pok\emon fully.
 
@@ -65,16 +68,19 @@ Think you can handle a double battle\nwith two fierce dudes?
 Hohoho! We were no match for you.
 
 #org @gtext_ScaldingSpa_HikerEugene_Chat
-My pal here said he's looking for\nMiniors, and asked me to help\lsearch.\pMy tough Pok\emon will crush these\nrocks and find those Miniors!
+My pal here said he's looking for\nrare Pok\emon in the rocks, and\lasked me to help search.\pMy tough Pok\emon will crush these\nrocks and find them all!
 
 #org @gtext_ScaldingSpa_SupernerdStephen_Intro
-Do you have a Minior?
+Hey you, show me your rare Pok\emon[.]
 
 #org @gtext_ScaldingSpa_SupernerdStephen_Defeat
 Bah! Don't waste my time.
 
 #org @gtext_ScaldingSpa_SupernerdStephen_Chat
 I heard there are many forms of\nMinior to be found in this cave.\pI'm going to find them all!
+
+#org @gtext_ScaldingSpa_SupernerdStephen_Chat_Divergent
+I heard there are Nosepasses hidden\nin these rocks.\pI'm trying to find as many as I can.
 
 #org @gtext_ScaldingSpa_JugglerJohan_Intro
 You'd better watch out, or else\nyou'll get burned!

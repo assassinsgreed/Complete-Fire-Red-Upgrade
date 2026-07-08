@@ -9,8 +9,6 @@
 .equ OldMan, 0x2
 .equ StoryFlag, 0x045
 
-@ TODO: Glastrier hidden state is not working properly when player defeats/runs and revisits map.
-@ Should check all states for Jirachi/Volcanion/Glastrier again when testing this particular part is done
 .global MapScript_ScaldingSpa_SpaRoom
 MapScript_ScaldingSpa_SpaRoom:
     mapscript MAP_SCRIPT_ON_TRANSITION MapEntryScript_ScaldingSpa
@@ -24,9 +22,17 @@ MapEntryScript_ScaldingSpa:
 
 .global MapScript_GlastrierRoom
 MapScript_GlastrierRoom:
+    mapscript MAP_SCRIPT_ON_LOAD MapLoadScript_SetLegendarySprite
     mapscript MAP_SCRIPT_ON_TRANSITION MapEntryScript_HandleGlastrierWeather
     mapscript MAP_SCRIPT_ON_RESUME MapResumeScript_HideGlastrierOnResume
     .byte MAP_SCRIPT_TERMIN
+
+MapLoadScript_SetLegendarySprite:
+    setvar 0x5029 148 @ Glastrier
+    checkflag 0x945 @ Divergent Mode
+    if NOT_SET _goto End
+    setvar 0x5029 146 @ Spectrier
+    end
 
 MapEntryScript_HandleGlastrierWeather:
     checkflag 0x46 @ Glastrier caught, defeated, or fled from
@@ -235,7 +241,13 @@ EventScript_ScaldingSpa_SpaRoom_Swimmer:
 
 .global EventScript_ScaldingSpa_SpaRoom_GameboyKid
 EventScript_ScaldingSpa_SpaRoom_GameboyKid:
+    checkflag 0x945 @ Divergent Mode
+    if SET _goto GameboyKidDivergent
     npcchatwithmovement gtext_ScaldingSpa_SpaRoom_GameboyKid m_LookDown
+    end
+
+GameboyKidDivergent:
+    npcchatwithmovement gtext_ScaldingSpa_SpaRoom_GameboyKid_Divergent m_LookDown
     end
 
 .global TileScript_ScaldingSpa_SpaRoom_Heal
@@ -286,7 +298,13 @@ EventScript_ScaldingSpa_SuperNerdStephen:
     compare PLAYERFACING RIGHT
     if equal _call EugeneAndStephenLookLeft
     trainerbattle11 0x0 251 252 14 15 0x0 gtext_ScaldingSpa_HikerEugene_Intro gtext_ScaldingSpa_SupernerdStephen_Intro gtext_ScaldingSpa_HikerEugene_Defeat gtext_ScaldingSpa_SupernerdStephen_Defeat gText_Common_CannotDoubleBattle_Male gText_Common_CannotDoubleBattle_Male
+    checkflag 0x945 @ Divergent Mode
+    if SET _goto SuperNerdStephen_ChatDivergent
     msgbox gtext_ScaldingSpa_SupernerdStephen_Chat MSG_NORMAL
+    end
+
+SuperNerdStephen_ChatDivergent:
+    msgbox gtext_ScaldingSpa_SupernerdStephen_Chat_Divergent MSG_NORMAL
     end
 
 EugeneAndStephenLookRight:
@@ -315,16 +333,14 @@ EventScript_ScaldingSpa_BlackbeltKieran:
 EventScript_GlastrierRoom_Glastrier:
     lock
     faceplayer
-    cry SPECIES_GLASTRIER 0x0
-    waitcry
+    checkflag 0x945 @ Divergent Mode
+    if NOT_SET _call GlastrierCry
+    if SET _call SpectrierCry
     msgbox gtext_GlastrierRoom_GlastrierBattleStart MSG_NORMAL
     setflag 0x90B @ Wild custom moves, cleared at the end of battle
-    setvar 0x8000 MOVE_ICICLECRASH
-    setvar 0x8001 MOVE_IRONDEFENSE
-    setvar 0x8002 MOVE_DOUBLEEDGE
-    setvar 0x8003 MOVE_TAUNT
-    setflag 0x90C @ Smarter wild battle, cleared at the end of battle
-    setwildbattle SPECIES_GLASTRIER 75 ITEM_NONE
+    checkflag 0x945 @ Divergent Mode
+    if NOT_SET _call SetupGlastrierFight
+    if SET _call SetupSpectrierFight
     setflag 0x807
     special 0x138 @ Setup a legendary encounter (blurred screen transition)
     waitstate
@@ -336,6 +352,34 @@ EventScript_GlastrierRoom_Glastrier:
     compare LASTRESULT 0x4 @ Fled from battle
     if equal _call FledFromGlastrier
     end
+
+GlastrierCry:
+    cry SPECIES_GLASTRIER 0x0
+    waitcry
+    return
+
+SpectrierCry:
+    cry SPECIES_SPECTRIER 0x0
+    waitcry
+    return
+
+SetupGlastrierFight:
+    setvar 0x8000 MOVE_ICICLECRASH
+    setvar 0x8001 MOVE_IRONDEFENSE
+    setvar 0x8002 MOVE_DOUBLEEDGE
+    setvar 0x8003 MOVE_TAUNT
+    setflag 0x90C @ Smarter wild battle, cleared at the end of battle
+    setwildbattle SPECIES_GLASTRIER 75 ITEM_NONE
+    return
+
+SetupSpectrierFight:
+    setvar 0x8000 MOVE_SHADOWBALL
+    setvar 0x8001 MOVE_NASTYPLOT
+    setvar 0x8002 MOVE_AGILITY
+    setvar 0x8003 MOVE_DOUBLEEDGE
+    setflag 0x90C @ Smarter wild battle, cleared at the end of battle
+    setwildbattle SPECIES_SPECTRIER 75 ITEM_NONE
+    return
 
 DefeatedGlastrier:
     call GlastrierLeavesCommon
@@ -374,8 +418,9 @@ TileScript_GlastrierRoom_LeftTile:
     applymovement PLAYER m_WalkToGlastrier
     waitmovement PLAYER
     pause DELAY_HALFSECOND
-    cry SPECIES_GLASTRIER 0x0
-    waitcry
+    checkflag 0x945 @ Divergent Mode
+    if NOT_SET _call GlastrierCry
+    if SET _call SpectrierCry
     msgbox gtext_GlastrierRoom_GlastrierEvaluation MSG_NORMAL
     checkitem ITEM_VICTORY_FLAG 0x1
     compare LASTRESULT TRUE
