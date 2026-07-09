@@ -825,6 +825,7 @@ HeldItemShop:
     .hword ITEM_WHITE_HERB
     .hword ITEM_QUICK_CLAW
     .hword ITEM_WIDE_LENS
+    .hword ITEM_SCOPE_LENS
     .hword ITEM_BRIGHT_POWDER
     .hword ITEM_BIG_ROOT
     .hword ITEM_AIR_BALLOON

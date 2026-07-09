@@ -246,7 +246,9 @@ MapLoadScript_SetMeltanLocationAndBreakerState:
     if lessthan _goto End
     movesprite2 Meltan 0x18 0x6
     setobjectmovementtype Meltan 64 @ Walk down on the spot, facing down
-    clearflag 0x264 @ Power is off
+    checkflag 0x264 @ Power state
+    if NOT_SET _call HandlePowerOffOnReload
+    if SET _call HandlePowerOnOnReload
     special 0x8E
     compare VarMeltanEvents 0x2
     if notequal _goto End
@@ -256,6 +258,18 @@ MapLoadScript_SetMeltanLocationAndBreakerState:
     call OpenBDoors
     setflag 0x264 @ Power is on
     end
+
+HandlePowerOffOnReload:
+    call OpenBDoors
+    call CloseADoors
+    call SetWeatherDark
+    return
+
+HandlePowerOnOnReload:
+    call OpenADoors
+    call CloseBDoors
+    call SetWeatherClear
+    return
 
 MapEntryScript_DaimynFactory_FlightFlag:
     setworldmapflag 0x8B4 @ Been to Daimyn Factory
