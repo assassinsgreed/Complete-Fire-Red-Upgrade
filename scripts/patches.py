@@ -46,10 +46,28 @@ def ApplyBWMusicPatch():
         romfile.seek(0x4A32A0)
         romfile.write(b'\xA0\xFA\x03\x02')
 
-        # Set obtained Item fanfare duration to 0s, to avoid awkward silence when learning a new move. This is to bypass a problem with the music patch
+        # The music patch reassigns every fanfare song to music player 2 (shared with sound effects) at
+        # priority 0, while SEs like the A-press blip use priority 5. MPlayStart refuses to start a
+        # lower-priority song on a busy player, so a fanfare command running in the same frame as a
+        # message box closing was rejected - but the BGM still stopped and waited out the fanfare
+        # duration, leaving dead air. Raise each fanfare song's priority to match the SEs so fanfares
+        # preempt a lingering blip instead of being dropped.
+        romfile.seek(0x1DD11C)
+        songTable = int.from_bytes(romfile.read(4), 'little') - 0x08000000
+        for i in range(14): # Fanfare table at 0x3AC990, entries are {u16 songId, u16 duration}
+            romfile.seek(0x3AC990 + i * 4)
+            songId = int.from_bytes(romfile.read(2), 'little')
+            romfile.seek(songTable + songId * 8)
+            songHeader = int.from_bytes(romfile.read(4), 'little') - 0x08000000
+            romfile.seek(songHeader + 2) # Priority byte of the m4a song header
+            romfile.write(b'\x05')
+
+        # Restore the vanilla duration (80 frames) of the level up/obtained item fanfare. It was
+        # previously zeroed to hide the dead air described above; now that the jingle actually
+        # plays, the wait belongs back.
         romfile.seek(0x3AC992)
-        romfile.write(b'\x00\x00')
-        
+        romfile.write(b'\x50\x00')
+
         romfile.close()
 
 if __name__ == '__main__':

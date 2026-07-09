@@ -1036,3 +1036,33 @@ You're really good, [PLAYER]!
 
 #org @gText_TsarvosaGym_LeaderIris_BeatenToday
 [RED]If I've gotten stronger, then\nyou've gotten twice as strong!\pNow I'm motivated to train my\nPok\emon even harder.\pLet's battle again sometime!
+
+#org @gText_TsarvosaCity_PokemonDonator_Intro
+Hello there, Champion [PLAYER]!\pI organize Pok\emon donations for\ntrainers in need.\pIf you donate one of your Pok\emon,\nI'll thank you with Pok\eChips!\pThe stronger the Pok\emon, the more\nchips I can offer.\pWould you like to donate one?
+
+#org @gText_TsarvosaCity_PokemonDonator_ChoosePokemon
+Great! Which Pok\emon would you\nlike to donate?
+
+#org @gText_TsarvosaCity_PokemonDonator_ChoseEgg
+Oh, no, I couldn't take an Egg.\nOnly grown Pok\emon, please!
+
+#org @gText_TsarvosaCity_PokemonDonator_LastPokemon
+Whoa, hold on! I can't take your\nonly battle-ready Pok\emon!
+
+#org @gText_TsarvosaCity_PokemonDonator_Confirmation
+Let's see[.] [BUFFER1], eh?\pI'd say it's worth [BUFFER2]\nPok\eChips.\pAre you sure? Once you donate it,\nyou can't take it back!
+
+#org @gText_TsarvosaCity_PokemonDonator_DonationComplete
+[PLAYER] handed over [BUFFER1]\nand received [BUFFER2] Pok\eChips!
+
+#org @gText_TsarvosaCity_PokemonDonator_DonateAnotherQuestion
+Thank you! I promise [BUFFER1]\nwill go to a loving home.\pWould you like to donate another\nPok\emon?
+
+#org @gText_TsarvosaCity_PokemonDonator_NoBagSpace
+Oh dear, your Bag is stuffed full.\pMake some room so I can hand over\nthe Pok\eChips and anything your\lPok\emon might be holding.
+
+#org @gText_TsarvosaCity_PokemonDonator_ChoseNotToDonate
+No worries!\nIt's a big decision, after all.
+
+#org @gText_TsarvosaCity_PokemonDonator_Declined
+Alright! Come back anytime you\nhave a Pok\emon to spare.

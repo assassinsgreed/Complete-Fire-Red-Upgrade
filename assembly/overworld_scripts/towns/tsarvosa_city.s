@@ -2377,6 +2377,70 @@ EventScript_TsarvosaCity_NPCHouses_PokeChipCrusherFriend:
     npcchatwithmovement gText_TsarvosaCity_NPCHouses_PokeCrusherFriend m_LookRight
     end
 
+.global EventScript_TsarvosaCity_PokemonDonator
+EventScript_TsarvosaCity_PokemonDonator:
+    lock
+    faceplayer
+    msgbox gText_TsarvosaCity_PokemonDonator_Intro MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto PokemonDonator_Declined
+    goto PokemonDonator_ChoosePokemon
+
+PokemonDonator_ChoosePokemon:
+    msgbox gText_TsarvosaCity_PokemonDonator_ChoosePokemon MSG_NORMAL
+    special 0x9F @ Select a Pokemon and store it's position in 0x8004
+    waitstate
+    compare 0x8004 0x6 @ Don't continue if user backed out
+    if greaterorequal _goto PokemonDonator_Declined
+    copyvar 0x4001 0x8004 @ Keep the chosen slot safe from anything that resets 0x8004
+    bufferpartypokemon 0x0 0x8004
+    callasm StoreIsPartyMonEgg
+    compare LASTRESULT TRUE
+    if TRUE _goto PokemonDonator_ChoseEgg
+    callasm StorePokeChipDonationValue @ Chip value for slot 0x8004, stored in LASTRESULT
+    compare LASTRESULT 0xFFFE
+    if equal _goto PokemonDonator_LastPokemon
+    buffernumber 0x1 0x800D @ Chip value from LASTRESULT
+    msgbox gText_TsarvosaCity_PokemonDonator_Confirmation MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto PokemonDonator_ChoseNotToDonate
+    copyvar 0x8004 0x4001
+    callasm FinalizePokeChipDonation @ Adds the chips, returns any held item, removes the Pokemon
+    compare LASTRESULT 0xFFFF
+    if equal _goto PokemonDonator_NoBagSpace
+    buffernumber 0x1 0x800D @ Chips received
+    fanfare 0x101 @ Got Item
+    msgbox gText_TsarvosaCity_PokemonDonator_DonationComplete MSG_KEEPOPEN
+    waitfanfare
+    msgbox gText_TsarvosaCity_PokemonDonator_DonateAnotherQuestion MSG_YESNO
+    compare LASTRESULT YES
+    if equal _goto PokemonDonator_ChoosePokemon
+    goto PokemonDonator_Declined
+
+PokemonDonator_ChoseEgg:
+    msgbox gText_TsarvosaCity_PokemonDonator_ChoseEgg MSG_NORMAL
+    goto PokemonDonator_ChoosePokemon
+
+PokemonDonator_LastPokemon:
+    msgbox gText_TsarvosaCity_PokemonDonator_LastPokemon MSG_NORMAL
+    goto PokemonDonator_End
+
+PokemonDonator_NoBagSpace:
+    msgbox gText_TsarvosaCity_PokemonDonator_NoBagSpace MSG_NORMAL
+    goto PokemonDonator_End
+
+PokemonDonator_ChoseNotToDonate:
+    msgbox gText_TsarvosaCity_PokemonDonator_ChoseNotToDonate MSG_NORMAL
+    goto PokemonDonator_End
+
+PokemonDonator_Declined:
+    msgbox gText_TsarvosaCity_PokemonDonator_Declined MSG_NORMAL
+    goto PokemonDonator_End
+
+PokemonDonator_End:
+    release
+    end
+
 .global EventScript_TsarvosaCity_NPCHouses_MarketBoy
 EventScript_TsarvosaCity_NPCHouses_MarketBoy:
     npcchatwithmovement gText_TsarvosaCity_NPCHouses_MarketBoy m_LookRight

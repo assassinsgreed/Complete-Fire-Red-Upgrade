@@ -744,6 +744,114 @@ u8 sp063_StatusChecker(void)
 	return gPlayerParty[Var8004].condition;
 }
 
+//Base PokeChip value thresholds for Pokemon donations. Each entry is (50n - 25)^2,
+//so the base value works out to round(sqrt(level * base stat total) / 50). The
+//square root curve keeps late-game donations rewarding without letting high-level
+//Pokemon print chips (a Rare Candy from the PokeChip Crusher should never pay for itself).
+static const u32 sPokeChipDonationScoreThresholds[] = {5625, 15625, 30625, 50625};
+
+//Calculates how many PokeChips the party Pokemon in Var8004 is worth when donated.
+//Level and base stat total set the base value on the curve above, Pokemon at level 60
+//and up earn a growing bonus on top, exceptionally good or bad IVs shift the result by
+//one chip in either direction, heavy EV training adds one more, and shininess doubles
+//the final value.
+//LASTRESULT: The chip value (1-24), 0xFFFE if donating would leave the player with no
+//usable Pokemon, or 0 for an empty slot or an Egg.
+void StorePokeChipDonationValue(void)
+{
+	u32 i;
+	u8 slot = Var8004;
+
+	Var800D = 0;
+	if (slot >= PARTY_SIZE)
+		return;
+
+	struct Pokemon* mon = &gPlayerParty[slot];
+	u16 species = GetMonData(mon, MON_DATA_SPECIES, NULL);
+	if (species == SPECIES_NONE || GetMonData(mon, MON_DATA_IS_EGG, NULL))
+		return;
+
+	for (i = 0; i < PARTY_SIZE; ++i)
+	{
+		if (i != slot
+		&& GetMonData(&gPlayerParty[i], MON_DATA_SPECIES, NULL) != SPECIES_NONE
+		&& !GetMonData(&gPlayerParty[i], MON_DATA_IS_EGG, NULL))
+			break;
+	}
+
+	if (i == PARTY_SIZE) //Every other slot is empty or an Egg
+	{
+		Var800D = 0xFFFE;
+		return;
+	}
+
+	u8 level = GetMonData(mon, MON_DATA_LEVEL, NULL);
+	u32 score = level * GetBaseStatsTotal(species);
+	u32 chips = 1;
+	for (i = 0; i < ARRAY_COUNT(sPokeChipDonationScoreThresholds); ++i)
+	{
+		if (score >= sPokeChipDonationScoreThresholds[i])
+			++chips;
+	}
+
+	if (level >= 60) //Long-term partners keep gaining value where the sqrt curve flattens out
+		chips += (level - 50) / 10; //+1 at 60, +2 at 70, up to +5 at 100
+
+	u32 totalIVs = 0;
+	for (i = 0; i < NUM_STATS; ++i)
+		totalIVs += GetMonData(mon, MON_DATA_HP_IV + i, NULL);
+
+	if (totalIVs >= 140) //Exceptional IVs - roughly the top 2% of random spreads
+		++chips;
+	else if (totalIVs <= 46 && chips > 1) //Dreadful IVs - roughly the bottom 2%
+		--chips;
+
+	u32 totalEVs = 0;
+	for (i = 0; i < NUM_STATS; ++i)
+		totalEVs += GetMonData(mon, MON_DATA_HP_EV + i, NULL);
+
+	if (totalEVs >= 400) //A heavily trained Pokemon is worth a little extra
+		++chips;
+
+	if (IsMonShiny(mon))
+		chips *= 2;
+
+	Var800D = chips;
+}
+
+//Completes the donation of the party Pokemon in Var8004: pays out the PokeChip value
+//calculated by StorePokeChipDonationValue, returns any held item to the bag, and
+//removes the Pokemon from the party. Nothing is changed unless everything fits in the bag.
+//LASTRESULT: The number of PokeChips received, or 0xFFFF if the bag was too full.
+void FinalizePokeChipDonation(void)
+{
+	struct Pokemon* mon = &gPlayerParty[Var8004];
+
+	StorePokeChipDonationValue(); //Guarantees the payout matches the quoted value
+	u16 chips = Var800D;
+	if (chips == 0 || chips >= 0xFFFE) //The script's guards were bypassed somehow
+		return;
+
+	u16 heldItem = GetMonData(mon, MON_DATA_HELD_ITEM, NULL);
+	if (!AddBagItem(ITEM_POKE_CHIP, chips))
+	{
+		Var800D = 0xFFFF;
+		return;
+	}
+
+	if (heldItem != ITEM_NONE && !AddBagItem(heldItem, 1))
+	{
+		RemoveBagItem(ITEM_POKE_CHIP, chips); //Leave everything untouched
+		Var800D = 0xFFFF;
+		return;
+	}
+
+	ZeroMonData(mon);
+	CompactPartySlots();
+	CalculatePlayerPartyCount();
+	Var800D = chips;
+}
+
 //Stashes the entire live party into gSaveBlock1->safeBackupParty (box format) and clears the
 //live party. Used by the Carnelidge Volcano climax, where the player walks a long, multi-map
 //"no Pokemon" segment (empty world -> Ultra Space -> return). safeBackupParty is never touched
