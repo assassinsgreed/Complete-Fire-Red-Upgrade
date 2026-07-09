@@ -523,7 +523,9 @@
 #define FLAG_HIDE_HESSON_PASS_F2_TM67_SMART_STRIKE              0x1DB
 #define FLAG_HIDE_HESSON_PASS_F2_ELIXIR                         0x1DC
 #define FLAG_HIDE_ROUTE11_NORTH_TM03_PSYSHOCK                   0x1DD
-#define FLAG_HIDE_ROUTE11_NORTH_REAPER_CLOTH                    0x1DE
+*/
+#define FLAG_HIDE_ROUTE11_NORTH_REAPER_CLOTH_OR_DUBIOUS_DISC    0x1DE
+/*
 #define FLAG_HIDE_ROUTE11_NORTH_ULTRA_BALL                      0x1DF
 #define FLAG_HIDE_ROUTE11_NORTH_RED_CARD                        0x1E0
 #define FLAG_HIDE_ROUTE11_NORTH_TM47_LOW_SWEEP                  0x1E1

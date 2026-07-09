@@ -184,7 +184,13 @@ ItemScript_Common_LinkCord:
 
 .global ItemScript_Common_ReaperCloth
 ItemScript_Common_ReaperCloth:
+    checkflag 0x945 @ Divergent Mode
+    if SET _goto FindDubiousDisc
     finditem ITEM_REAPER_CLOTH 0x1
+    end
+
+FindDubiousDisc:
+    finditem ITEM_DUBIOUS_DISC 0x1
     end
 
 .global ItemScript_Common_CleanseTag
