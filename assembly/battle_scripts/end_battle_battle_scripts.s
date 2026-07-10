@@ -233,6 +233,7 @@ BattleScript_CheckPokeChipContinued:
 	printstring 0x184
 	waitmessage DELAY_HALFSECOND
 BattleScript_WildPickupAndEnd:
+	givepaydaymoney
 	pickupitemcalculation
 	end2
 
@@ -242,6 +243,7 @@ BattleScript_GiveMoneyThenPickup:
 	callasm GivePrizeMoney
 	printstring 0x1E @STRINGID_PLAYERGOTMONEY
 	waitmessage DELAY_HALFSECOND
+	givepaydaymoney
 	pickupitemcalculation
 	end2
 

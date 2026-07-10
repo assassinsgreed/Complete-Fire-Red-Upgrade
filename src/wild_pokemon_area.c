@@ -84,7 +84,7 @@ static const u16 sDexAreas_KulureExpanded1[][2] = {
 
 // Formerly Sevii Island 2
 static const u16 sDexAreas_KulureExpanded2[][2] = {
-	{ MAPSEC_SECRET_TRAIL, 57 },
+	{ MAPSEC_SECRET_TRAIL, 32 }, // Same as Route 21
 	{ MAPSEC_PLUTO_HQ,     49 }
 };
 

@@ -385,9 +385,15 @@ EventScript_AscensionTower_Elevator_Attendant:
 
 .global MapScript_AscensionTower_E4Room
 MapScript_AscensionTower_E4Room:
+    mapscript MAP_SCRIPT_ON_RESUME LevelScript_AscensionTower_E4Room_FloorLighting
     mapscript MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE LevelScripts_AscensionTower_E4_OnWarp
     mapscript MAP_SCRIPT_ON_FRAME_TABLE LevelScripts_AscensionTower_E4_ChallengingEliteFour
     .byte MAP_SCRIPT_TERMIN
+
+LevelScript_AscensionTower_E4Room_FloorLighting:
+    setflag 0x2 @ Temp flag gating the light pulse task; cleared on every map load, so re-set here
+    special 0x1A1 @ DoPokemonLeagueLightingEffect - pulses the floor lights, choosing the champion or E4 palette by current map
+    end
 
 LevelScripts_AscensionTower_E4_OnWarp:
     levelscript 0x406C 0x3 LevelScript_AscensionTower_SetPlayerFacing_ForE4Battle @ Hannah
