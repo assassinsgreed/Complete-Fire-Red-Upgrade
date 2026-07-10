@@ -421,6 +421,13 @@
 083FEBB9 01
 083FEBD2 02
 
+#Tutorial Battle Voiceover Text (match normal battle textbox style)
+#Window 24 text info (12-byte entries @0x83FEB64): fill color 15, fg/bg/shadow like window 0
+083FEC84 FF
+083FEC8B 01 0F 06
+#Window 24 template: palette 7 -> 0
+082483F5 00
+
 ##Dexnav##
 083A5B56 08
 083A5B5A 08
@@ -699,3 +706,8 @@
 08132036 AC
 08463191 0E
 084631A9 02
+
+# White HP numbers in doubles Start toggle: digit fill color {COLOR 01} -> {COLOR 02}
+# in UpdateHpTextInHealthboxInDoubles' format string (healthbar pal slot 1 is the
+# dark bar-frame color, slot 2 is white; outline stays default dark slot 3)
+08260544 02
