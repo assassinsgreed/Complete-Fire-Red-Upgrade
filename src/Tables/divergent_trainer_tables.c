@@ -1817,7 +1817,7 @@ const struct TrainerMonNoItemDefaultMoves sParty_RubarrDesert_TeamPlutoMika_Dive
 
 const struct TrainerMonNoItemDefaultMoves sParty_RubarrDesert_TeamPlutoMarcel_Divergent[] = {
     { .lvl = 11, .species = SPECIES_WOOBAT },
-    { .lvl = 11, .species = SPECIES_DRIFBLIM },
+    { .lvl = 11, .species = SPECIES_DRIFLOON },
     { .lvl = 13, .species = SPECIES_SOLOSIS },
 };
 
