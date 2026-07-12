@@ -446,7 +446,7 @@ void CloseAndSaveOptionMenu(u8 taskId)
         }
 
         // Only restore Gyaradosite/Gengarite when Pluto HQ is completed
-        if (VarGet(VAR_MAP_SCENE_PLUTO_HQ_EVENTS) == 4) // Pluto HQ complete
+        if (VarGet(VAR_MAP_SCENE_PLUTO_HQ_EVENTS) >= 4) // Pluto HQ complete
             FlagClear(FLAG_HIDE_PLUTO_HQ_GYARADOSITE_OR_GENGARITE);
         
         // Held Items & Key Items
