@@ -456,6 +456,11 @@ void CloseAndSaveOptionMenu(u8 taskId)
         FlagClear(FLAG_HIDE_UTEYAN_RUINS_RED_ORB_OR_PRISON_BOTTLE);
         FlagClear(FLAG_HIDE_UTEYAN_RUINS_BLUE_ORB_OR_REVEAL_GLASS);
 
+        // Trades
+        FlagClear(FLAG_DID_COSMO_OR_TOMMY_TRADE);
+        FlagClear(FLAG_DID_STARTER_BASED_TRADE);
+        FlagClear(FLAG_DID_BORIS_OR_TINA_TRADE);
+
         // Restore legendaries
         FlagClear(FLAG_HIDE_SHAYMIN); // Xerneas in divergent
         FlagClear(FLAG_HIDE_KYOGRE); // Lugia in divergent

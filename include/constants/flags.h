@@ -646,7 +646,9 @@
 #define FLAG_GOT_SWARM_GIFT_DARMANITAN                   0x245
 #define FLAG_GOT_SWARM_GIFT_STUNFISK                     0x246
 #define FLAG_GOT_QUICK_TIMER_BALL_GIFT_IN_HELEO_CITY     0x247
-#define FLAG_DID_COSMO_TRADE                             0x248
+*/
+#define FLAG_DID_COSMO_OR_TOMMY_TRADE                    0x248
+/*
 #define FLAG_GOT_AIR_BALLOON_IN_HELEO_CITY               0x249
 #define FLAG_GOT_OLD_ROD                                 0x24A
 #define FLAG_GOT_GOOD_ROD                                0x24B
@@ -658,7 +660,9 @@
 #define FLAG_HIDE_DAIMYN_CITY_STORY_NPCS                 0x251
 #define FLAG_GOT_ITEMFINDER                              0x252
 #define FLAG_BOUGHT_CARVANHA                             0x253
+*/
 #define FLAG_DID_STARTER_BASED_TRADE                     0x254
+/*
 #define FLAG_BATTLED_CASEY_IN_TORMA_CAVE                 0x255
 #define FLAG_BATTLED_CASEY_ON_ROUTE_10                   0x256
 #define FLAG_GOT_HIDDEN_POWER_FROM_PSYCHIC_SIBLINGS      0x257
@@ -670,7 +674,8 @@
 #define FLAG_PLUTO_HQ_REST_GRUNT_EXPLAINED               0x25D
 #define FLAG_TREASURE_BEACH_INITIALIZED                  0x25E
 #define FLAG_GOT_STRENGTH_FROM_KAITO                     0x25F
-#define FLAG_DID_BORIS_TRADE                             0x260
+*/
+#define FLAG_DID_BORIS_OR_TINA_TRADE                     0x260
 #define FLAG_RECEIVED_FLAME_ORB_GIFT                     0x261
 */
 #define FLAG_TSARVOSA_GYM_CHALLENGE_ACTIVE               0x262
