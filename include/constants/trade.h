@@ -24,7 +24,7 @@
 #define INGAME_TRADE_PHANTUMP  11
 #define INGAME_TRADE_SLOWBRO_G 12
 // Divergent
-#define INGAME_TRADE_DIVERGENT_MAGNEMITE 13 // Give Vanillish
+#define INGAME_TRADE_DIVERGENT_EELEKTRIK 13 // Give Vanillite
 #define INGAME_TRADE_DIVERGENT_JYNX      14 // Give Poliwhirl
 #define INGAME_TRADE_DIVERGENT_XATU      15 // Give Haunter 
 #define INGAME_TRADE_DIVERGENT_MAKUHITA  16 // Give Sentret (in place of Slakoth)

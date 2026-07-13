@@ -223,14 +223,14 @@ const struct WildPokemon gDivergentForgottenManseExterior_LandMonsDefault[] =
 	{19, 23, SPECIES_ORICORIO_S}, // 20
 	{19, 23, SPECIES_DRIFLOON}, // 20
 	{19, 23, SPECIES_SOLOSIS}, // 10
-	{20, 24, SPECIES_INDEEDEE}, // 10
+	{20, 24, SPECIES_IMPIDIMP}, // 10
 	{19, 25, SPECIES_GASTLY}, // 10
 	{19, 24, SPECIES_GASTLY}, // 10
 	{20, 24, SPECIES_ORICORIO_S}, // 5
-	{20, 24, SPECIES_IMPIDIMP}, // 5
-	{20, 24, SPECIES_IMPIDIMP}, // 4
+	{20, 24, SPECIES_INDEEDEE}, // 5
+	{20, 24, SPECIES_INDEEDEE_FEMALE}, // 4
 	{20, 23, SPECIES_DUOSION}, // 4
-	{20, 25, SPECIES_IMPIDIMP}, // 1
+	{20, 25, SPECIES_INDEEDEE_FEMALE}, // 1
 	{20, 24, SPECIES_DUOSION}, // 1
 };
 
@@ -809,7 +809,7 @@ const struct WildPokemon gDivergentUteyanRuinsOverworld_LandMonsDefault[] =
 	{54, 57, SPECIES_INDEEDEE}, // 10
 	{54, 57, SPECIES_DUOSION}, // 10
 	{54, 58, SPECIES_KADABRA}, // 10
-	{54, 57, SPECIES_INDEEDEE}, // 10
+	{54, 57, SPECIES_INDEEDEE_FEMALE}, // 10
 	{53, 56, SPECIES_DUOSION}, // 5
 	{54, 57, SPECIES_MUSHARNA}, // 5
 	{54, 57, SPECIES_MUSHARNA}, // 4
@@ -825,7 +825,7 @@ const struct WildPokemon gDivergentUteyanRuinsOverworld_LandMonsEveningNight[] =
 	{54, 57, SPECIES_INDEEDEE}, // 10
 	{54, 57, SPECIES_DRAKLOAK}, // 10
 	{54, 58, SPECIES_LAMPENT}, // 10
-	{54, 57, SPECIES_INDEEDEE}, // 10
+	{54, 57, SPECIES_INDEEDEE_FEMALE}, // 10
 	{53, 56, SPECIES_DRAKLOAK}, // 5
 	{54, 57, SPECIES_MUSHARNA}, // 5
 	{54, 57, SPECIES_MUSHARNA}, // 4

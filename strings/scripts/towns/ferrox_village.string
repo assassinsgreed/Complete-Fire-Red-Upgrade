@@ -127,14 +127,14 @@ Take good care of Cosmo! They're a\nvery special little Chinchou.
 #org @gText_FerroxNPCHouses_TradeGirlDad_Divergent
 My daughter and I saw a Vanillite\nwhile hiking through Torma Cave.\pIt's all she can talk about now.
 
-#org @gText_FerroxNPCHouses_MagnemiteTrade_Request_Divergent
-I saw a Vanillite the other day and\nI've been obsessed with those\lcuties ever since!\pIf you happen to have one, would\nyou be willing to trade it for my\lMagnemite?
+#org @gText_FerroxNPCHouses_EelektrikTrade_Request_Divergent
+I saw a Vanillite the other day and\nI've been obsessed with those\lcuties ever since!\pIf you happen to have one, would\nyou be willing to trade it for my\lEelektrik?
 
-#org @gText_FerroxNPCHouses_MagnemiteTrade_WrongPokemon_Divergent
+#org @gText_FerroxNPCHouses_EelektrikTrade_WrongPokemon_Divergent
 Hey, that's not funny! I wanted a\nVanillite.
 
-#org @gText_FerroxNPCHouses_MagnemiteTrade_Complete_Divergent
-Take good care of Tommy! They're a\nvery special little Magnemite.
+#org @gText_FerroxNPCHouses_EelektrikTrade_Complete_Divergent
+Take good care of Tommy! They're a\nvery special little Eelektrik.
 
 // Gym
 #org @gText_FerroxGym_Winners

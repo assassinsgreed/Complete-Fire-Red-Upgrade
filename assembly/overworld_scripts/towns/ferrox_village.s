@@ -377,7 +377,7 @@ EventScript_ChinchouTradeComplete:
 MagnemiteTrade:
     checkflag 0x248
     if SET _goto EventScript_MagnemiteTradeComplete
-    msgbox gText_FerroxNPCHouses_MagnemiteTrade_Request_Divergent MSG_YESNO
+    msgbox gText_FerroxNPCHouses_EelektrikTrade_Request_Divergent MSG_YESNO
     compare LASTRESULT NO
     if TRUE _goto EventScript_ChinchouTradeDeclined
     setvar 0x8008 13 @ Set Trade #13 (Magnemite)
@@ -396,11 +396,11 @@ MagnemiteTrade:
     goto EventScript_MagnemiteTradeComplete
 
 EventScript_MagnemiteTradeWrongPokemon:
-    msgbox gText_FerroxNPCHouses_MagnemiteTrade_WrongPokemon_Divergent MSG_NORMAL
+    msgbox gText_FerroxNPCHouses_EelektrikTrade_WrongPokemon_Divergent MSG_NORMAL
     goto End
 
 EventScript_MagnemiteTradeComplete:
-    msgbox gText_FerroxNPCHouses_MagnemiteTrade_Complete_Divergent MSG_NORMAL
+    msgbox gText_FerroxNPCHouses_EelektrikTrade_Complete_Divergent MSG_NORMAL
     goto End
 
 @ Gym

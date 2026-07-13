@@ -307,12 +307,12 @@ static const struct InGameTrade sInGameGifts[] = {
 
 // Divergent trades
 static const struct InGameTrade sInGameTrades_Divergent[] = {
-    [INGAME_TRADE_DIVERGENT_MAGNEMITE] = 
+    [INGAME_TRADE_DIVERGENT_EELEKTRIK] = 
     {
         .nickname = gText_InGameTrade_Divergent_Tommy,
-        .species = SPECIES_MAGNEMITE,
+        .species = SPECIES_EELEKTRIK,
         .ivs = {23, 12, 19, 23, 29, 17},
-        .abilityNum = 1, // Sturdy
+        .abilityNum = 1, // Levitate
         .otId = 1999,
         .conditions = {5, 5, 5, 30, 5},
         .personality = 0x00009cae,
