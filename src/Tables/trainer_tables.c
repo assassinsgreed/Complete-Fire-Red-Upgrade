@@ -56,8 +56,14 @@
 // #region Trainer Structs
 
 // #region Important trainers
-const struct TrainerMonNoItemDefaultMoves sParty_Rival1[] = {
-    { .iv = 0, .lvl = 5, .species = SPECIES_EEVEE },
+const struct TrainerMonNoItemCustomMoves sParty_Rival1[] = {
+    {
+        .iv = 0,
+        .lvl = 5,
+        .species = SPECIES_EEVEE,
+        .moves = { MOVE_TACKLE, MOVE_TAILWHIP, MOVE_NONE, MOVE_NONE },
+        .ability = Ability_1 // Run Away, for first fight
+    }
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_Rival2[] = {
@@ -8735,7 +8741,7 @@ const struct Trainer gTrainers[] = {
     },
     // #region Important trainers
     [TRAINER_RIVAL1] = {
-        .partyFlags = 0,
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
         .trainerClass = CLASS_RIVAL,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .trainerPic = TRAINER_PIC_RIVAL,
@@ -8745,7 +8751,7 @@ const struct Trainer gTrainers[] = {
         .doubleBattle = FALSE,
         .aiFlags = AI_SCRIPT_FIRST_BATTLE,
         .partySize = NELEMS(sParty_Rival1),
-        .party = {.NoItemDefaultMoves = sParty_Rival1}
+        .party = {.NoItemCustomMoves = sParty_Rival1}
     },
     [TRAINER_RIVAL2] = {
         .partyFlags = 0,

@@ -68,8 +68,14 @@
 // #region Trainer Structs
 
 // #region Important trainers
-const struct TrainerMonNoItemDefaultMoves sParty_Rival1_Divergent[] = {
-    { .iv = 0, .lvl = 5, .species = SPECIES_EEVEE }, // Identical to base, but kept in for simplicity
+const struct TrainerMonNoItemCustomMoves sParty_Rival1_Divergent[] = {
+    {
+        .iv = 0,
+        .lvl = 5,
+        .species = SPECIES_EEVEE,
+        .moves = { MOVE_TACKLE, MOVE_TAILWHIP, MOVE_NONE, MOVE_NONE },
+        .ability = Ability_1 // Run Away, for first fight
+    }
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_Rival2_Divergent[] = {
@@ -8706,7 +8712,7 @@ const struct Trainer gDivergentTrainers[] = {
     },
     // #region Important trainers
     [TRAINER_RIVAL1] = {
-        .partyFlags = 0,
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
         .trainerClass = CLASS_RIVAL,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
         .trainerPic = TRAINER_PIC_RIVAL,
@@ -8716,7 +8722,7 @@ const struct Trainer gDivergentTrainers[] = {
         .doubleBattle = FALSE,
         .aiFlags = AI_SCRIPT_FIRST_BATTLE,
         .partySize = NELEMS(sParty_Rival1_Divergent),
-        .party = {.NoItemDefaultMoves = sParty_Rival1_Divergent}
+        .party = {.NoItemCustomMoves = sParty_Rival1_Divergent}
     },
     [TRAINER_RIVAL2] = {
         .partyFlags = 0,
