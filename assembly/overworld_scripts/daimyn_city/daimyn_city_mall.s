@@ -686,6 +686,8 @@ EventScript_DaimynCityMall_Shop_Incense:
     lock
     faceplayer
     msgbox gText_DaimynCityMall_IncenseSeller MSG_KEEPOPEN
+    checkflag 0x945 @ Divergent Mode
+    if SET _goto IncenseShopDivergentPrompt
     pokemart IncenseShop
     goto EventScript_EndMart
 
@@ -696,6 +698,23 @@ IncenseShop:
     .hword ITEM_ODD_INCENSE
     .hword ITEM_ROCK_INCENSE
     .hword ITEM_ROSE_INCENSE
+    .hword ITEM_NONE
+
+IncenseShopDivergentPrompt:
+    pokemart IncenseShopDivergent
+    goto EventScript_EndMart
+
+.align 1
+IncenseShopDivergent:
+    .hword ITEM_LAX_INCENSE
+    .hword ITEM_LUCK_INCENSE
+    .hword ITEM_ODD_INCENSE
+    .hword ITEM_ROCK_INCENSE
+    .hword ITEM_ROSE_INCENSE
+    .hword ITEM_RED_NECTAR
+    .hword ITEM_YELLOW_NECTAR
+    .hword ITEM_PINK_NECTAR
+    .hword ITEM_PURPLE_NECTAR
     .hword ITEM_NONE
 
 .global EventScript_DaimynCityMall_Shop_TypeWeaknessBerries
@@ -828,6 +847,7 @@ HeldItemShop:
     .hword ITEM_SCOPE_LENS
     .hword ITEM_BRIGHT_POWDER
     .hword ITEM_BIG_ROOT
+    .hword ITEM_METRONOME
     .hword ITEM_AIR_BALLOON
     .hword ITEM_CELL_BATTERY
     .hword ITEM_EJECT_BUTTON

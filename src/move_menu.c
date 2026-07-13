@@ -57,6 +57,7 @@ static void ReloadMoveNamesIfNecessary(void);
 static void CloseZMoveDetails(void);
 static void CloseMaxMoveDetails(void);
 static void HighlightPossibleTargets(void);
+static u32 GetBattlerPaletteMask(u8 battler);
 static void LoadShadowColourForGreyedOutBagText(void);
 #ifdef TEAM_PREVIEW_TRIGGER
 static void HandleInputTeamPreview(void);
@@ -1604,8 +1605,8 @@ static void HighlightPossibleTargets(void)
 				break;
 			case MOVE_TARGET_BOTH:
 			case MOVE_TARGET_OPPONENTS_FIELD:
-				bitMask = (gBitTable[GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT)] 
-						 | gBitTable[GetBattlerAtPosition(B_POSITION_OPPONENT_RIGHT)]) << 16; 
+				bitMask = GetBattlerPaletteMask(GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT))
+						| GetBattlerPaletteMask(GetBattlerAtPosition(B_POSITION_OPPONENT_RIGHT));
 				startY = 8;
 				break;
 			case MOVE_TARGET_USER:
@@ -1656,32 +1657,44 @@ static void HighlightPossibleTargets(void)
 					case MOVE_MAGNETICFLUX:
 					case MOVE_LIFEDEW:
 					case MOVE_JUNGLEHEALING:
-						bitMask = (gBitTable[GetBattlerAtPosition(B_POSITION_PLAYER_LEFT)] 
-								 | gBitTable[GetBattlerAtPosition(B_POSITION_PLAYER_RIGHT)]) << 16; 
+						bitMask = GetBattlerPaletteMask(GetBattlerAtPosition(B_POSITION_PLAYER_LEFT))
+								| GetBattlerPaletteMask(GetBattlerAtPosition(B_POSITION_PLAYER_RIGHT));
 						break;
 
 					//Moves the affect the user's partner
 					case MOVE_HELPINGHAND:
 					case MOVE_AROMATICMIST:
 					case MOVE_COACHING:
-						bitMask = (gBitTable[GetBattlerAtPosition(GetBattlerPosition(gActiveBattler) ^ BIT_FLANK)]) << 16;
+						bitMask = GetBattlerPaletteMask(GetBattlerAtPosition(GetBattlerPosition(gActiveBattler) ^ BIT_FLANK));
 						break;
 					default:
-						bitMask = (gBitTable[gActiveBattler]) << 16;
+						bitMask = GetBattlerPaletteMask(gActiveBattler);
 						break;
 				}
 				startY = 8;
 				break;
 			case MOVE_TARGET_FOES_AND_ALLY:
-				bitMask = (gBitTable[GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT)] 
-						 | gBitTable[GetBattlerAtPosition(GetBattlerPosition(gActiveBattler) ^ BIT_FLANK)] 
-						 | gBitTable[GetBattlerAtPosition(B_POSITION_OPPONENT_RIGHT)]) << 16;
+				bitMask = GetBattlerPaletteMask(GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT))
+						| GetBattlerPaletteMask(GetBattlerAtPosition(GetBattlerPosition(gActiveBattler) ^ BIT_FLANK))
+						| GetBattlerPaletteMask(GetBattlerAtPosition(B_POSITION_OPPONENT_RIGHT));
 				startY = 8;
 				break;
 		}
 
 		BeginNormalPaletteFade(bitMask, 8, startY, 0, RGB_WHITE);
 	}
+}
+
+// Battlers do not always retain their bank number as their OBJ palette number.
+// Use the palette assigned to the sprite so both opponents are highlighted.
+static u32 GetBattlerPaletteMask(u8 battler)
+{
+	u8 spriteId = gBattlerSpriteIds[battler];
+
+	if (spriteId >= MAX_SPRITES)
+		return 0;
+
+	return 1 << (gSprites[spriteId].oam.paletteNum + 16);
 }
 
 u8 TrySetCantSelectMoveBattleScript(void)

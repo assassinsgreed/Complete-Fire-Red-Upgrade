@@ -142,6 +142,17 @@ static bool8 IsBattlerAnimDone(u8 bank)
 	return controlDone && spriteDone;
 }
 
+static bool8 ShouldRestoreBattleBgm(bool8 battlerAnimsDone)
+{
+	if (battlerAnimsDone)
+		return TRUE;
+
+	// In standard doubles the partner battler never gets a separate intro ball anim,
+	// so waiting for both battlers to finish can leave the music at reduced volume
+	// until the first turn. Restore it once the active battler's intro is done.
+	return IS_DOUBLE_BATTLE && !(gBattleTypeFlags & (BATTLE_TYPE_MULTI | BATTLE_TYPE_TWO_OPPONENTS | BATTLE_TYPE_INGAME_PARTNER));
+}
+
 static void SetShinyAnimOver(u8 bank)
 {
 	gBattleSpritesDataPtr->healthBoxesData[bank].triedShinyMonAnim = FALSE;
@@ -275,7 +286,7 @@ static void MultiIntro_FoeTryShinyAnimShowHealthbox(void)
 			battlerAnimsDone = TRUE;
 	}
 
-	if (bgmRestored && battlerAnimsDone)
+	if (bgmRestored && ShouldRestoreBattleBgm(battlerAnimsDone))
 	{
 		if (IS_DOUBLE_BATTLE && !(gBattleTypeFlags & BATTLE_TYPE_MULTI))
 		{
@@ -427,7 +438,7 @@ static void PlayerIntro_TryShinyAnimShowHealthbox(void)
 	}
 
 	//Clean up
-	if (bgmRestored && battlerAnimsDone)
+	if (bgmRestored && ShouldRestoreBattleBgm(battlerAnimsDone))
 	{
 		m4aMPlayVolumeControl(&gMPlayInfo_BGM, 0xFFFF, 0x100);
 		DestroySprite(&gSprites[gBattleControllerData[gActiveBattler]]);

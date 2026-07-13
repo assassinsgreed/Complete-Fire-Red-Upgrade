@@ -2234,7 +2234,7 @@ bool8 HandleFaintedMonActions(void)
 					if (gNewBS->handleSetSwitchIns & gBitTable[gBattleStruct->faintedActionsBank])
 					{
 						++gBattleStruct->faintedActionsBank;
-						gAbsentBattlerFlags &= ~(gBitTable[gBattleStruct->faintedActionsBank]);
+						gAbsentBattlerFlags &= ~(gBitTable[gBankFainted]);
 						gNewBS->ai.switchingCooldown[gBankFainted] = 1; //AI shouldn't switch out again until after the next time an end turn is reached
 						BattleScriptExecute(BattleScript_HandleFaintedMonDoublesPart2);
 						return TRUE;

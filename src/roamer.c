@@ -109,7 +109,6 @@ static bool8 IsDivergentRoamerSpecies(u16 species);
 static bool8 IsIslandRoamerSpecies(u16 species);
 static bool8 IsRoamerInCurrentMode(u16 species);
 static u8 GetForcesOfNatureWeatherOnCurrentMap(void);
-static bool8 IsForcesOfNatureWeather(u8 weather);
 
 //Both the normal and divergent roamer sets live in gRoamers at the same time (8 roamers
 //across the 10 available slots), so each Pokemon is generated exactly once and keeps its
@@ -168,13 +167,6 @@ static u8 GetForcesOfNatureWeatherOnCurrentMap(void)
 	return ROAMER_WEATHER_NONE;
 }
 
-static bool8 IsForcesOfNatureWeather(u8 weather)
-{
-	return weather == ROAMER_WEATHER_RAIN
-		|| weather == ROAMER_WEATHER_THUNDERSTORM
-		|| weather == ROAMER_WEATHER_SANDSTORM;
-}
-
 //Forces the weather to advertise a Force of Nature roaming the player's current route, overriding
 //the map's own weather. Once that roamer leaves the route (wanders off, is defeated, or is caught)
 //the map's normal weather is restored. Pass applyNow=FALSE during a map transition (the map load
@@ -185,21 +177,19 @@ void UpdateForcesOfNatureWeather(bool8 applyNow)
 
 	if (weather != ROAMER_WEATHER_NONE)
 	{
-		gForcedRoamerWeatherActive = TRUE;
+		//Weather IDs are shared with ordinary script weather.  Keep an explicit marker so a
+		//script-set sandstorm (also ID 8) is never mistaken for Landorus's weather after a reload.
+		FlagSet(FLAG_TEMP_9);
 
 		if (gSaveBlock1->weather == weather)
 			return; //Already showing it - don't restart the fade
 
 		SetSav1Weather(weather);
 	}
-	else if (gForcedRoamerWeatherActive
-	 || (IsForcesOfNatureWeather(gSaveBlock1->weather) && gSaveBlock1->weather != gMapHeader.weather))
+	else if (FlagGet(FLAG_TEMP_9))
 	{
-		//gForcedRoamerWeatherActive lives in unsaved RAM, so after the game is reloaded a
-		//leftover override is recognized by its signature instead: the save holds a Force
-		//of Nature weather that the map itself doesn't use.
 		SetSav1Weather(gMapHeader.weather); //Roamer is gone - restore the map's own weather
-		gForcedRoamerWeatherActive = FALSE;
+		FlagClear(FLAG_TEMP_9);
 	}
 	else
 	{
