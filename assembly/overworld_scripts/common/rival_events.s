@@ -25,6 +25,7 @@ EventScript_RivalEvent1:
     sound 0xF8 @ Money SE
     waitse
     setflag 0x2C0
+    hidemoney
     call RivalEvent1_ThankPlayer
 
 RivalEvent1_Declined:
@@ -36,7 +37,6 @@ RivalEvent1_NotEnoughPokeballs:
     call RivalEvent1_ResetPosition
 
 RivalEvent1_ThankPlayer:
-    hidemoney
     msgbox gText_RivalEvent1_ThankPlayer MSG_NORMAL
     call RivalEvent1_ResetPosition
 

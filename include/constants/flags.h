@@ -677,9 +677,8 @@
 */
 #define FLAG_DID_BORIS_OR_TINA_TRADE                     0x260
 #define FLAG_RECEIVED_FLAME_ORB_GIFT                     0x261
-*/
 #define FLAG_TSARVOSA_GYM_CHALLENGE_ACTIVE               0x262
-/**
+/*
 #define FLAG_FOUND_DAIMYN_FACTORY_KEY                    0x263
 */
 #define FLAG_DAIMYN_FACTORY_POWER_IS_ON                  0x264
