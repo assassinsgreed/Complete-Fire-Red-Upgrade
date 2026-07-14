@@ -68,6 +68,7 @@ extern const u8 gText_DexNav_NoInfo[];
 extern const u8 gText_DexNav_CaptureToSee[];
 extern const u8 gText_DexNav_Unavailable[];
 extern const u8 gText_DexNav_Walk[];
+extern const u8 gText_DexNav_Rocks[];
 extern const u8 gText_DexNav_Surf[];
 extern const u8 gText_DexNav_LavaSurf[];
 extern const u8 gText_DexNav_Fish[];
@@ -117,6 +118,7 @@ extern const u8 gText_DexNavHUDChainNumber[];
 #define ICONX 0x10
 #define ICONY 0x92
 
+#define NUM_ROCK_SMASH_MONS 5
 #define NUM_WATER_MONS 5
 #define NUM_OLD_ROD_MONS 2
 #define NUM_GOOD_ROD_MONS 3
@@ -192,6 +194,7 @@ enum EncounterTypes
 	ENCOUNTER_METHOD_SURF_GOOD_ROD,
 	ENCOUNTER_METHOD_SURF_SUPER_ROD,
 	ENCOUNTER_METHOD_SWARM,
+	ENCOUNTER_METHOD_ROCK_SMASH,
 	ENCOUNTER_METHOD_COUNT,
 };
 

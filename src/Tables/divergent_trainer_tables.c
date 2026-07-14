@@ -2303,12 +2303,7 @@ const struct TrainerMonNoItemCustomMoves sParty_HeleoCityGym_SwimmerTessa_Diverg
     {
         .lvl = 25,
         .species = SPECIES_SMEARGLE,
-        .moves = {
-            MOVE_RAINDANCE,
-            MOVE_SUNNYDAY,
-            MOVE_HAIL,
-            MOVE_WEATHERBALL
-        },
+        .moves = { MOVE_RAINDANCE, MOVE_SUNNYDAY, MOVE_HAIL, MOVE_WEATHERBALL },
         .ability = Ability_2 // Technician
     }
 };
@@ -3124,9 +3119,19 @@ const struct TrainerMonNoItemDefaultMoves sParty_HessonPass_GentlemanGordy_Diver
 // #endregion
 
 // #region Route 11 North
-const struct TrainerMonNoItemDefaultMoves sParty_Route11North_PainterIsobel_Divergent[] = {
-    { .lvl = 35, .species = SPECIES_IVYSAUR },
-    { .lvl = 36, .species = SPECIES_SMEARGLE }
+const struct TrainerMonNoItemCustomMoves sParty_Route11North_PainterIsobel_Divergent[] = {
+    {
+        .lvl = 35,
+        .species = SPECIES_IVYSAUR,
+        .moves = { MOVE_SYNTHESIS, MOVE_SWEETSCENT, MOVE_TAKEDOWN, MOVE_SEEDBOMB },
+        .ability = Ability_Random_1_2
+    },
+    {
+        .lvl = 36,
+        .species = SPECIES_SMEARGLE,
+        .moves = { MOVE_SHELLSMASH, MOVE_EXPLOSION, MOVE_DRAINPUNCH, MOVE_PROTECT },
+        .ability = Ability_Random_1_2
+    }
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_Route11North_FishermanClint_Divergent[] = {
@@ -3346,9 +3351,19 @@ const struct TrainerMonNoItemDefaultMoves sParty_PeradonForest_BeautyErica_Diver
     { .lvl = 40, .species = SPECIES_PRIMARINA },
 };
 
-const struct TrainerMonNoItemDefaultMoves sParty_PeradonForest_PainterSheena_Divergent[] = {
-    { .lvl = 38, .species = SPECIES_SMEARGLE },
-    { .lvl = 38, .species = SPECIES_BELLOSSOM },
+const struct TrainerMonNoItemCustomMoves sParty_PeradonForest_PainterSheena_Divergent[] = {
+    {
+        .lvl = 38,
+        .species = SPECIES_SMEARGLE,
+        .moves = { MOVE_QUIVERDANCE, MOVE_GIGADRAIN, MOVE_ANCIENTPOWER, MOVE_PROTECT },
+        .ability = Ability_Random_1_2
+    },
+    {
+        .lvl = 38,
+        .species = SPECIES_BELLOSSOM,
+        .moves = { MOVE_PETALBLIZZARD, MOVE_MOONLIGHT, MOVE_POISONPOWDER, MOVE_QUIVERDANCE },
+        .ability = Ability_Random_1_2
+    },
 };
 
 const struct TrainerMonNoItemDefaultMoves sParty_PeradonForest_CamperRupert_Divergent[] = {
@@ -6523,7 +6538,7 @@ const struct TrainerMonItemCustomMoves sParty_GymLeaderRematches_Stella_3_Diverg
     {
         .lvl = 70,
         .species = SPECIES_SMEARGLE,
-        .moves = { MOVE_DARKVOID, MOVE_DREAMEATER, MOVE_NIGHTMARE, MOVE_RECOVER },
+        .moves = { MOVE_SPORE, MOVE_DREAMEATER, MOVE_NIGHTMARE, MOVE_RECOVER },
         .heldItem = ITEM_LEFTOVERS,
         .ability = Ability_Hidden // Moody
     },
@@ -11763,7 +11778,7 @@ const struct Trainer gDivergentTrainers[] = {
     // #endregion
     // #region Route 11 North
     [TRAINER_ROUTE_11_NORTH_PAINTER_ISOBEL] = {
-        .partyFlags = 0,
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
         .trainerClass = CLASS_PAINTER,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .trainerPic = TRAINER_PIC_PAINTER,
@@ -11773,7 +11788,7 @@ const struct Trainer gDivergentTrainers[] = {
         .doubleBattle = FALSE,
         .aiFlags = TrainerAIFlags_Painter_Standard,
         .partySize = NELEMS(sParty_Route11North_PainterIsobel_Divergent),
-        .party = {.NoItemDefaultMoves = sParty_Route11North_PainterIsobel_Divergent}
+        .party = {.NoItemCustomMoves = sParty_Route11North_PainterIsobel_Divergent}
     },
     [TRAINER_ROUTE_11_NORTH_FISHERMAN_CLINT] = {
         .partyFlags = 0,
@@ -12053,7 +12068,7 @@ const struct Trainer gDivergentTrainers[] = {
         .party = {.NoItemDefaultMoves = sParty_PeradonForest_BeautyErica_Divergent}
     },
     [TRAINER_PERADON_FOREST_PAINTER_SHEENA] = {
-        .partyFlags = 0,
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
         .trainerClass = CLASS_PAINTER,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .trainerPic = TRAINER_PIC_PAINTER,
@@ -12063,7 +12078,7 @@ const struct Trainer gDivergentTrainers[] = {
         .doubleBattle = FALSE,
         .aiFlags = TrainerAIFlags_Painter_Standard,
         .partySize = NELEMS(sParty_PeradonForest_PainterSheena_Divergent),
-        .party = {.NoItemDefaultMoves = sParty_PeradonForest_PainterSheena_Divergent}
+        .party = {.NoItemCustomMoves = sParty_PeradonForest_PainterSheena_Divergent}
     },
     [TRAINER_PERADON_FOREST_CAMPER_RUPERT] = {
         .partyFlags = 0,

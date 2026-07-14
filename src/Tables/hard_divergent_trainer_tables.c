@@ -1918,7 +1918,7 @@ const struct TrainerMonItemCustomMoves sParty_DaimynCityGym_LeaderChance_Hard_Di
     {
         .lvl = 33,
         .species = SPECIES_SMEARGLE,
-        .moves = { MOVE_DARKVOID, MOVE_DREAMEATER, MOVE_TAILWIND, MOVE_PARTINGSHOT },
+        .moves = { MOVE_SPORE, MOVE_DREAMEATER, MOVE_TAILWIND, MOVE_PARTINGSHOT },
         .heldItem = ITEM_LEFTOVERS,
         .ability = Ability_1 // Own Tempo
     },
@@ -1949,7 +1949,7 @@ const struct TrainerMonItemCustomMoves sParty_DaimynCityGym_LeaderChance2_Hard_D
     {
         .lvl = 41,
         .species = SPECIES_SMEARGLE,
-        .moves = { MOVE_DARKVOID, MOVE_DREAMEATER, MOVE_TAILWIND, MOVE_PARTINGSHOT },
+        .moves = { MOVE_SPORE, MOVE_DREAMEATER, MOVE_TAILWIND, MOVE_PARTINGSHOT },
         .heldItem = ITEM_LEFTOVERS,
         .ability = Ability_1 // Own Tempo
     },

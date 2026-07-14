@@ -2157,7 +2157,30 @@ static bool8 TryAddSpeciesToArray(u16 species, u8 encounterMethod, u8 indexCount
 				break;
 			}
 			else if (sDexNavGUIPtr->hiddenSpecies[i] == dexNum) //Already in array
+			{
+				//Keep the hidden mon's method in sync with how a visible mon of the same
+				//species would be shown - if it's already Surf and this call is adding a
+				//rod method, upgrade it to the combined Surf + Rod method.
+				if (indexCount == MAX_TOTAL_WATER_MONS
+				&& i < NELEMS(sDexNavGUIPtr->hiddenWaterEncounterMethod)
+				&& sDexNavGUIPtr->hiddenWaterEncounterMethod[i] == ENCOUNTER_METHOD_WATER)
+				{
+					switch (encounterMethod)
+					{
+						case ENCOUNTER_METHOD_OLD_ROD:
+							sDexNavGUIPtr->hiddenWaterEncounterMethod[i] = ENCOUNTER_METHOD_SURF_OLD_ROD;
+							break;
+						case ENCOUNTER_METHOD_GOOD_ROD:
+							sDexNavGUIPtr->hiddenWaterEncounterMethod[i] = ENCOUNTER_METHOD_SURF_GOOD_ROD;
+							break;
+						case ENCOUNTER_METHOD_SUPER_ROD:
+							sDexNavGUIPtr->hiddenWaterEncounterMethod[i] = ENCOUNTER_METHOD_SURF_SUPER_ROD;
+							break;
+					}
+				}
+
 				return FALSE;
+			}
 		}
 
 		if (indexCount == MAX_TOTAL_LAND_MONS)
@@ -2216,6 +2239,7 @@ static void DexNavPopulateEncounterList(void)
 	u8 waterIndex = 0;
 	u16 species, i, j;
 
+	const struct WildPokemonInfo* rockSmashMonsInfo = LoadProperMonsData(ROCK_SMASH_MONS_HEADER);
 	const struct WildPokemonInfo* landMonsInfo = LoadProperMonsData(LAND_MONS_HEADER);
 	const struct WildPokemonInfo* waterMonsInfo = LoadProperMonsData(WATER_MONS_HEADER);
 	const struct WildPokemonInfo* fishingMonsInfo = LoadProperMonsData(FISHING_MONS_HEADER);
@@ -2244,7 +2268,8 @@ static void DexNavPopulateEncounterList(void)
 					sDexNavGUIPtr->unownFormsByDNavIndices[grassIndex] = PickUnownLetter(species, i);
 				}
 
-				sDexNavGUIPtr->grassSpecies[grassIndex++] = landMonsInfo->wildPokemon[i].species;
+				sDexNavGUIPtr->landEncounterMethod[grassIndex] = ENCOUNTER_METHOD_GRASS;
+           		sDexNavGUIPtr->grassSpecies[grassIndex++] = landMonsInfo->wildPokemon[i].species;
 			}
 		}
 
@@ -2265,6 +2290,21 @@ static void DexNavPopulateEncounterList(void)
 	}
 
 	Memset(sDexNavGUIPtr->hiddenSpecies, HIDDEN_SPEECIES_TERMIN & 0xFF, sizeof(sDexNavGUIPtr->hiddenSpecies)); //Used in TryAddSpeciesToArray
+
+	if (rockSmashMonsInfo != NULL)
+	{
+		for (i = 0; i < NUM_ROCK_SMASH_MONS; ++i) //use whatever your table size constant is
+		{
+			species = rockSmashMonsInfo->wildPokemon[i].species;
+			if (species != SPECIES_NONE
+			&& grassIndex < NELEMS(sDexNavGUIPtr->grassSpecies)
+			&& TryAddSpeciesToArray(species, ENCOUNTER_METHOD_ROCK_SMASH, MAX_TOTAL_LAND_MONS, PickUnownLetter(species, i)))
+			{
+				sDexNavGUIPtr->landEncounterMethod[grassIndex] = ENCOUNTER_METHOD_ROCK_SMASH;
+				sDexNavGUIPtr->grassSpecies[grassIndex++] = species;
+			}
+		}
+	}
 
 	if (waterMonsInfo != NULL)
 	{
@@ -2781,6 +2821,9 @@ static void PrintGUIEncounterMethod(u8 encounterMethod)
 			case ENCOUNTER_METHOD_GRASS:
 				text = gText_DexNav_Walk;
 				break;
+			case ENCOUNTER_METHOD_ROCK_SMASH:
+				text = gText_DexNav_Rocks;
+				break;
 			case ENCOUNTER_METHOD_WATER:
 				if (IsCurrentAreaVolcano())
 					text = gText_DexNav_LavaSurf;
@@ -2939,7 +2982,7 @@ static void DexNavDisplaySpeciesData(void)
 			else
 				newMethod = sDexNavGUIPtr->landEncounterMethod[landSlot];
 
-			if (newMethod == ENCOUNTER_METHOD_SWARM)
+			if (newMethod == ENCOUNTER_METHOD_SWARM || newMethod == ENCOUNTER_METHOD_ROCK_SMASH)
 				method = newMethod;
 		}
 	}
