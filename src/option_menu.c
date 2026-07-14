@@ -703,19 +703,11 @@ u8 OptionMenu_ProcessInput(void)
         }
         return 3;
     }
-    else if (JOY_NEW(R_BUTTON))
-    {   if(sOptionMenuPtr->page == 1)
-        return 0;
-        sOptionMenuPtr->page = 1;
+    else if (JOY_NEW(R_BUTTON) || JOY_NEW(L_BUTTON))
+    {
+        sOptionMenuPtr->page = (sOptionMenuPtr->page == 0) ? 1 : 0;
         PlaySE(SE_SELECT);
-        return 5;
-    }
-    else if (JOY_NEW(L_BUTTON))
-    {   if(sOptionMenuPtr->page == 0)
-        return 0;
-        sOptionMenuPtr->page = 0;
-        PlaySE(SE_SELECT);
-        return 6;
+        return (sOptionMenuPtr->page == 1) ? 5 : 6;
     }
     else if (JOY_NEW(B_BUTTON) || JOY_NEW(A_BUTTON))
     {
