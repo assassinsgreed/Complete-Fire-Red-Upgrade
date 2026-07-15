@@ -66,7 +66,7 @@ extern const u16 InterviewerPal[];
 extern const u16 CactusAndVictoryFlagPal[];
 extern const u16 MegaStonePal[];
 extern const u16 DittoPal[];
-extern const u16 AmpharosPal[];
+extern const u16 AmpharosAndPidgeotPal[];
 extern const u16 MareepPal[];
 extern const u16 CastformPal[];
 extern const u16 PikachuPal[];
@@ -362,7 +362,7 @@ static const u16* sPlayerMarlonOutfitColours[] =
 		{ AlistairPal, 0x1215 },
 		{ LeaderStellaPal, 0x1216 },
 		{ DittoPal, 0x1217 },
-		{ AmpharosPal, 0x1218 },
+		{ AmpharosAndPidgeotPal, 0x1218 },
 		{ MareepPal, 0x1219 },
 		{ CastformPal, 0x121A },
 		{ TrainerHouseHostPal, 0x121B },

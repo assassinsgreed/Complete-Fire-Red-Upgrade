@@ -671,17 +671,20 @@ That's okay. If you change your\nmind, I'd be happy to sell you\lsome.
 #org @gText_HeleoRanch_AgitatedAmpharos_Sound
 Phaar! Phaar!!
 
-#org @gText_HeleoRanch_AgitatedAmpharos_Prompt
-The Ampharos appears to be very\nagitated.\pDo you want to battle it? You won't\nbe able to run.
+#org @gText_HeleoRanch_AgitatedPidgeot_Sound
+Skreee-oo!!
 
-#org @gText_HeleoRanch_AgitatedAmpharos_LeftAlone
+#org @gText_HeleoRanch_AgitatedAmpharosOrPidgeot_Prompt
+The Pok\emon appears to be very\nagitated.\pDo you want to battle it? You won't\nbe able to run.
+
+#org @gText_HeleoRanch_AgitatedAmpharosOrPidgeot_LeftAlone
 You decided to leave it alone.
 
-#org @gText_HeleoRanch_AgitatedAmpharos_BattleStarted
-The Ampharos attacks!
+#org @gText_HeleoRanch_AgitatedAmpharosOrPidgeot_BattleStarted
+The Pok\emon attacks!
 
-#org @gText_HeleoRanch_AgitatedAmpharos_BattleEnded
-The Ampharos calmed down.
+#org @gText_HeleoRanch_AgitatedAmpharosOrPidgeot_BattleEnded
+The Pok\emon calmed down and\nleft the glade.
 
 #org @gText_HeleoRanch_BurglarCole_Intro
 Eheheh[.] I'm gonna make a killing\noffa all the Mareep wool I'm gonna\lshear!
@@ -740,5 +743,5 @@ I've sold out of all the Moomoo Milk\nI had today. Come back tomorrow if\lyou'd 
 #org @gText_HeleoRanch_Son
 Mah Pa said that visitors are\nwelcome t'catch any Pok\emon they\lfind out in the fields.
 
-#org @gText_HeleoRanch_Son_OrneryAmpharos
+#org @gText_HeleoRanch_Son_OrneryAmpharosOrPidgeot
 He also said there's a real ornery\nPok\emon deep in the woods that\ldon't take kindly to strangers.\pYou'd best keep your distance.

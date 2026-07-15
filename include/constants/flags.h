@@ -1102,7 +1102,6 @@
 #define FLAG_0x3E5               0x3E5
 #define FLAG_0x3E6               0x3E6
 #define FLAG_0x3E7               0x3E7
-#define FLAG_AMPHAROS_BEATEN_IN_NORMAL 0x950 @ Used to programmatically handle Ampharos visibility when swapping between standard and divergent modes
 */
 
 #define FLAG_HIDDEN_ITEMS_START 1000 // 0x3E8

@@ -54,7 +54,7 @@ extern const u8 CameramanTiles[];
 extern const u8 CactusAndVictoryFlagTiles[];
 extern const u8 MegaStoneTiles[];
 extern const u8 DittoTiles[];
-extern const u8 AmpharosTiles[];
+extern const u8 AmpharosAndPidgeotTiles[];
 extern const u8 MareepTiles[];
 extern const u8 CastformTiles[];
 extern const u8 PikachuTiles[];
@@ -711,17 +711,17 @@ static const struct SpriteFrameImage Table_Ditto[] =
     overworld_frame(DittoTiles, 2, 2, 8),
 };
 
-static const struct SpriteFrameImage Table_Ampharos[] =
+static const struct SpriteFrameImage Table_AmpharosAndPidgeot[] =
 {
-    overworld_frame(AmpharosTiles, 2, 2, 0),
-    overworld_frame(AmpharosTiles, 2, 2, 1),
-    overworld_frame(AmpharosTiles, 2, 2, 2),
-    overworld_frame(AmpharosTiles, 2, 2, 3),
-    overworld_frame(AmpharosTiles, 2, 2, 4),
-    overworld_frame(AmpharosTiles, 2, 2, 5),
-    overworld_frame(AmpharosTiles, 2, 2, 6),
-    overworld_frame(AmpharosTiles, 2, 2, 7),
-    overworld_frame(AmpharosTiles, 2, 2, 8),
+    overworld_frame(AmpharosAndPidgeotTiles, 4, 4, 0),
+    overworld_frame(AmpharosAndPidgeotTiles, 4, 4, 1),
+    overworld_frame(AmpharosAndPidgeotTiles, 4, 4, 2),
+    overworld_frame(AmpharosAndPidgeotTiles, 4, 4, 3),
+    overworld_frame(AmpharosAndPidgeotTiles, 4, 4, 4),
+    overworld_frame(AmpharosAndPidgeotTiles, 4, 4, 5),
+    overworld_frame(AmpharosAndPidgeotTiles, 4, 4, 6),
+    overworld_frame(AmpharosAndPidgeotTiles, 4, 4, 7),
+    overworld_frame(AmpharosAndPidgeotTiles, 4, 4, 8),
 };
 
 static const struct SpriteFrameImage Table_Mareep[] =
@@ -2112,23 +2112,23 @@ const struct EventObjectGraphicsInfo GraphicsInfo_Ditto =
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 
-const struct EventObjectGraphicsInfo GraphicsInfo_Ampharos =
+const struct EventObjectGraphicsInfo GraphicsInfo_AmpharosAndPidgeot =
 {
     .tileTag = 0xFFFF,
     .paletteTag1 = 0x1218,
     .paletteTag2 = EVENT_OBJ_PAL_TAG_NONE,
-    .size = (16 * 16) / 2,
-    .width = 16,
-    .height = 16,
-    .shadowSize = SHADOW_SIZE_S,
+    .size = (32 * 32) / 2,
+    .width = 32,
+    .height = 32,
+    .shadowSize = SHADOW_SIZE_M,
     .inanimate = FALSE,
     .disableReflectionPaletteLoad = FALSE,
     .tracks = TRACKS_NONE,
     .gender = MALE,
-    .oam = gEventObjectBaseOam_16x16,
-    .subspriteTables = gEventObjectSpriteOamTables_16x16,
+    .oam = gEventObjectBaseOam_32x32,
+    .subspriteTables = gEventObjectSpriteOamTables_32x32,
     .anims = gEventObjectImageAnimTable_Standard,
-    .images = Table_Ampharos,
+    .images = Table_AmpharosAndPidgeot,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 

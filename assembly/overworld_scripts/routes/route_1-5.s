@@ -1269,13 +1269,11 @@ MapScript_HeleoRanchExterior:
 MapEntryScript_HeleoRanch_FlightFlag:
     setworldmapflag 0x8A7 @ Been to Heleo Ranch
     checkflag 0x945 @ Divergent Mode
-    if SET _goto HideAmpharos
-    checkflag 0x950 @ Ampharos beaten in normal mode
-    if SET _goto End @ Already beaten: leave 0x03E set
-    clearflag 0x03E @ Not divergent, not beaten: restore Ampharos
-    goto End
-HideAmpharos:
-    setflag 0x03E
+    if SET _goto SetPidgeotSprite
+    end
+
+SetPidgeotSprite:
+    setobjectmovementtype 10 65 @ Walk on the spot, facing up (Pidgeot shares Ampharos' spritesheet and occupies all "face up" indexes)
     end
 
 MapEntryScript_HeleoRanch_HandleMareepVisibility:
@@ -1373,27 +1371,53 @@ EndMoomooMilkSeller:
 .global EvenScript_HeleoRanch_Ampharos
 EvenScript_HeleoRanch_Ampharos:
     lock
-    faceplayer
     checksound
-    cry SPECIES_AMPHAROS 0x0
-    msgbox gText_HeleoRanch_AgitatedAmpharos_Sound MSG_NORMAL
-    msgbox gText_HeleoRanch_AgitatedAmpharos_Prompt MSG_YESNO
+    checkflag 0x945 @ Divergent Mode
+    if NOT_SET _call AmpharosCry
+    if SET _call PidgeotCry
+    msgbox gText_HeleoRanch_AgitatedAmpharosOrPidgeot_Prompt MSG_YESNO
     compare LASTRESULT NO
     if equal _goto AmpharosLeftAlone
     setflag 0x903 @ Disable running
-    msgbox gText_HeleoRanch_AgitatedAmpharos_BattleStarted MSG_NORMAL
-    wildbattle SPECIES_AMPHAROS 0x1E ITEM_SITRUS_BERRY
-    setflag 0x950 @ Track that Ampharos was beaten in normal mode
-    setflag 0x03E @ Hide Ampharos
+    msgbox gText_HeleoRanch_AgitatedAmpharosOrPidgeot_BattleStarted MSG_NORMAL
+    checkflag 0x945 @ Divergent Mode
+    if NOT_SET _call BattleAmpharos
+    if SET _call BattlePidgeot
+    fadescreen FADEOUT_BLACK
+    pause DELAY_HALFSECOND
+    playse 9 @ Exit room
+    setflag 0x03E @ Hide Ampharos / Pidgeot after battle
     hidesprite LASTTALKED
-    msgbox gText_HeleoRanch_AgitatedAmpharos_BattleEnded MSG_NORMAL
+    msgbox gText_HeleoRanch_AgitatedAmpharosOrPidgeot_BattleEnded MSG_NORMAL
+    fadescreen FADEIN_BLACK
     clearflag 0x903 @ Enable running
     release
     end
 
+AmpharosCry:
+    cry SPECIES_AMPHAROS 0x0
+    msgbox gText_HeleoRanch_AgitatedAmpharos_Sound MSG_NORMAL
+    return
+
+PidgeotCry:
+    cry SPECIES_PIDGEOT 0x0
+    msgbox gText_HeleoRanch_AgitatedPidgeot_Sound MSG_NORMAL
+    return
+
+BattleAmpharos:    
+    wildbattle SPECIES_AMPHAROS 0x1E ITEM_SITRUS_BERRY
+    cry SPECIES_AMPHAROS 0x3 @ Fainted cry, pitched down
+    waitcry
+    return
+
+BattlePidgeot:
+    wildbattle SPECIES_PIDGEOT 0x1E ITEM_SITRUS_BERRY
+    cry SPECIES_PIDGEOT 0x3 @ Fainted cry, pitched down
+    waitcry
+    return
+
 AmpharosLeftAlone:
-    msgbox gText_HeleoRanch_AgitatedAmpharos_LeftAlone MSG_NORMAL
-    applymovement 0xA m_LookDown
+    msgbox gText_HeleoRanch_AgitatedAmpharosOrPidgeot_LeftAlone MSG_NORMAL
     end
 
 .global EvenScript_HeleoRanch_BurglarCole
@@ -1469,8 +1493,15 @@ EventScript_HeleoRanch_Mom:
 
 .global EventScript_HeleoRanch_Son
 EventScript_HeleoRanch_Son:
-    npcchat gText_HeleoRanch_Son
-    checkflag 0x945 @ Divergent Mode
-    if SET _goto End
-    msgbox gText_HeleoRanch_Son_OrneryAmpharos MSG_NORMAL
+    lockall
+    faceplayer
+    msgbox gText_HeleoRanch_Son MSG_NORMAL
+    checkflag 0x03E @ Ampharos / Pidgeot beaten
+    if NOT_SET _call SonBeforeOrneryPokemon
+    release
     end
+
+SonBeforeOrneryPokemon:
+    lockall
+    msgbox gText_HeleoRanch_Son_OrneryAmpharosOrPidgeot MSG_NORMAL
+    return
