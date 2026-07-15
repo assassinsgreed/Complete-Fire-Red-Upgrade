@@ -2727,8 +2727,11 @@ EvolutionItemsShopDivergent:
     .hword ITEM_MAGMARIZER
     .hword ITEM_ELECTIRIZER
     .hword ITEM_PROTECTOR
+    .hword ITEM_UPGRADE
+    .hword ITEM_DUBIOUS_DISC
     .hword ITEM_PRISM_SCALE
     .hword ITEM_CRACKED_POT
+    .hword ITEM_SACHET
     .hword ITEM_NONE
 
 .align 1
