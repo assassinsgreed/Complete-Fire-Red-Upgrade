@@ -4263,6 +4263,13 @@ void GiveUpTo999RareCandies()
 		AddBagItem(ITEM_RARE_CANDY, candiesToGive);
 }
 
+void GiveUpTo999PokeChips()
+{
+	u16 chipsToGive = 999 - CountTotalItemQuantityInBag(ITEM_POKE_CHIP);
+	if (chipsToGive > 0)
+		AddBagItem(ITEM_POKE_CHIP, chipsToGive);
+}
+
 // Swami researcher species table — mirrors gSwarmTable then gDivergentSwarmTable order.
 // Adding a new swarm species: append to the matching block below; sp1AF/sp1B0 pick it up automatically.
 static const u16 sResearchSpecies[] = {

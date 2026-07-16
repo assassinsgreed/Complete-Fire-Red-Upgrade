@@ -313,6 +313,14 @@ GiveRareCandies:
 SignScript_AnthraTown_RivalsHouse:
 	lock
 	msgbox gText_AnthraTown_RivalsHouseMailbox MSG_SIGN
+	addvar 0x400C 0x1
+	compare 0x400C 5
+	if equal _goto GivePokeChips
+	end
+
+@ This is also for nuzlockers
+GivePokeChips:
+	callasm GiveUpTo999PokeChips
 	end
 
 .global SignScript_AnthraTown_TownPlacard
@@ -801,14 +809,12 @@ LevelScript_PostCreditsParty:
 	hidesprite 0xB
 	hidesprite 0xC
 	hidesprite 0xD
-	setflag 0x9D @ Temp disable game clear to hide champion fanatic
 	hidesprite 0xE @ Champion Fanatic, hidden because we are moving the player during the fadeout
 	applymovement PLAYER m_PlayerReturnsToHouse
 	waitmovement PLAYER
 	fadescreen FADEIN_BLACK
 	addvar 0x4070 0x1
 	showsprite 0xE @ Champion Fanatic
-	clearflag 0x9D @ Restore game clear flag
 	playbgm 0x12C 0x1 @ Default theme, permanent
 	setvar 0x4073 0x1 @ Trigger Ultra Episode sequences
 	end
