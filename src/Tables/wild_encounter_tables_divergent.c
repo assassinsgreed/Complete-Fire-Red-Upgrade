@@ -416,7 +416,7 @@ const struct WildPokemon gDivergentCarnelidgeVolcanoExterior_LandMonsDefault[] =
 	{50, 53, SPECIES_STARAPTOR}, // 20
 	{49, 52, SPECIES_SIMISEAR}, // 10
 	{49, 52, SPECIES_DRAMPA}, // 10
-	{49, 52, SPECIES_PANSEAR}, // 10
+	{49, 52, SPECIES_DRAMPA}, // 10
 	{50, 53, SPECIES_NUMEL}, // 10
 	{50, 53, SPECIES_RAPIDASH}, // 5
 	{49, 52, SPECIES_RAPIDASH}, // 5

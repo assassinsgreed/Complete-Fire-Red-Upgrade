@@ -1277,6 +1277,8 @@ EventScript_SlowbroGTradeWrongPokemon:
     goto End
 
 EventScript_SlowbroGTradeComplete:
+    checkflag 0x945 @ Divergent Mode
+    if SET _goto EventScript_RapidashGTradeComplete
     npcchatwithmovement gText_TsarvosaCityNPCHouses_SlowbroTrade_Complete m_LookRight
     goto End
 

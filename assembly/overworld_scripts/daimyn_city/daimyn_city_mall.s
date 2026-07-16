@@ -434,6 +434,7 @@ SweetsSeller:
 SweetsShop:
     .hword ITEM_TART_APPLE
     .hword ITEM_SWEET_APPLE
+    .hword ITEM_CRACKED_POT
     .hword ITEM_STRAWBERRY_SWEET
     .hword ITEM_BERRY_SWEET
     .hword ITEM_LOVE_SWEET

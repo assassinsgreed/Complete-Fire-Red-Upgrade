@@ -643,6 +643,13 @@ static bool8 TryGenerateSwarmMon(u8 level, u8 wildMonIndex, bool8 purgeParty)
 	return FALSE;
 }
 
+static bool8 IsValidEncounterSpecies(const struct WildPokemonInfo* wildMonInfo, u8 wildMonIndex)
+{
+	return wildMonInfo != NULL
+		&& wildMonInfo->wildPokemon != NULL
+		&& wildMonInfo->wildPokemon[wildMonIndex].species != SPECIES_NONE;
+}
+
 static bool8 TryGenerateWildMon(const struct WildPokemonInfo* wildMonInfo, u8 area, u8 flags)
 {
 	u8 level;
@@ -687,7 +694,7 @@ SKIP_INDEX_SEARCH:
 	// An empty encounter slot (e.g. a map wired to gDivergentEmpty) must never start
 	// a battle. The encounter-rate buff accumulated while walking can bridge a rate-0
 	// water area while surfing, which otherwise spawns a SPECIES_NONE "??????" Lv0 mon.
-	if (wildMonInfo->wildPokemon[wildMonIndex].species == SPECIES_NONE)
+	if (!IsValidEncounterSpecies(wildMonInfo, wildMonIndex))
 		return FALSE;
 
 	level = ChooseWildMonLevel(&wildMonInfo->wildPokemon[wildMonIndex]);
@@ -735,9 +742,15 @@ SKIP_INDEX_SEARCH:
 		}
 
 		SKIP_INDEX_SEARCH_2:
+		if (!IsValidEncounterSpecies(wildMonInfo, wildMonIndex))
+			goto SKIP_CREATE_SECOND_MON;
+
 		level = ChooseWildMonLevel(&wildMonInfo->wildPokemon[wildMonIndex]);
 		if (area != WILD_AREA_LAND || !TryGenerateSwarmMon(level, wildMonIndex, FALSE))
 			CreateWildMon(wildMonInfo->wildPokemon[wildMonIndex].species, level, wildMonIndex, FALSE);
+
+		SKIP_CREATE_SECOND_MON:
+		;
 	}
 	#endif
 
@@ -747,6 +760,10 @@ SKIP_INDEX_SEARCH:
 static species_t GenerateFishingWildMon(const struct WildPokemonInfo* wildMonInfo, u8 rod)
 {
 	u8 wildMonIndex = ChooseWildMonIndex_Fishing(rod);
+
+	if (!IsValidEncounterSpecies(wildMonInfo, wildMonIndex))
+		return SPECIES_NONE;
+
 	u8 level = ChooseWildMonLevel(&wildMonInfo->wildPokemon[wildMonIndex]);
 
 	CreateWildMon(wildMonInfo->wildPokemon[wildMonIndex].species, level, wildMonIndex, TRUE);
@@ -755,6 +772,8 @@ static species_t GenerateFishingWildMon(const struct WildPokemonInfo* wildMonInf
 	if ((FlagGet(FLAG_DOUBLE_WILD_BATTLE) || FlagGet(FLAG_DOUBLE_WILD_BATTLES_MODIFIER_ACTIVE)) &&  ViableMonCount(gPlayerParty) >= 2)
 	{
 		u8 wildMonIndex = ChooseWildMonIndex_Fishing(rod);
+		if (!IsValidEncounterSpecies(wildMonInfo, wildMonIndex))
+			return SPECIES_NONE;
 		u8 level = ChooseWildMonLevel(&wildMonInfo->wildPokemon[wildMonIndex]);
 		CreateWildMon(wildMonInfo->wildPokemon[wildMonIndex].species, level, wildMonIndex, FALSE);
 	}

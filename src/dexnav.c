@@ -2178,6 +2178,12 @@ static bool8 TryAddSpeciesToArray(u16 species, u8 encounterMethod, u8 indexCount
 							break;
 					}
 				}
+				else if (indexCount == MAX_TOTAL_LAND_MONS
+				&& i < NELEMS(sDexNavGUIPtr->hiddenLandEncounterMethod)
+				&& encounterMethod == ENCOUNTER_METHOD_SWARM)
+				{
+					sDexNavGUIPtr->hiddenLandEncounterMethod[i] = ENCOUNTER_METHOD_SWARM;
+				}
 
 				return FALSE;
 			}
@@ -2217,7 +2223,14 @@ static bool8 TryAddSpeciesToArray(u16 species, u8 encounterMethod, u8 indexCount
 				u16 wildSpecies = sDexNavGUIPtr->grassSpecies[i];
 				TryRandomizeSpecies(&wildSpecies);
 				if (SpeciesToNationalPokedexNum(wildSpecies) == dexNum)
+				{
+					if (encounterMethod == ENCOUNTER_METHOD_SWARM
+					&& i < NELEMS(sDexNavGUIPtr->landEncounterMethod))
+					{
+						sDexNavGUIPtr->landEncounterMethod[i] = ENCOUNTER_METHOD_SWARM;
+					}
 					return FALSE;
+				}
 			}
 		}
 		else
