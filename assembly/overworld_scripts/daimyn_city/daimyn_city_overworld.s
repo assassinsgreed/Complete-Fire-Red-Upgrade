@@ -138,7 +138,7 @@ LevelScript_RivalsTour:
     applymovement Rival m_LookUp
     applymovement PLAYER m_LookUp
     msgbox gText_DaimynCityOverworld_Story_RivalTour33 MSG_NORMAL
-    clearflag 0x03C @ Temporary, used to hide rival in guardhouse
+    clearflag 0x3C @ Temporary, used to hide rival in guardhouse
     opendoor 0x1D 0x9
     waitdooranim
     showsprite AscensionTowerEmployee
@@ -159,7 +159,7 @@ LevelScript_RivalsTour:
     pause DELAY_HALFSECOND
     playse 0x8 @ door open
     hidesprite AscensionTowerEmployee
-    setflag 0x03C @ Hide employee and rival in guardhouse again
+    setflag 0x3C @ Hide employee and rival in guardhouse again
     closedoor 0x1D 0x9
     waitdooranim
     applymovement Selene m_LookDown

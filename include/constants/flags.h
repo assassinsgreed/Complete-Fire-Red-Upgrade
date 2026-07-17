@@ -24,7 +24,7 @@
 #define FLAG_TEMP_16 0x016
 #define FLAG_TEMP_17 0x017
 #define FLAG_TEMP_18 0x018
-#define FLAG_TEMP_19 0x019
+#define FLAG_TEMP_19 0x019 // Used to hide partygoers in Anthra Town
 #define FLAG_TEMP_1A 0x01A
 #define FLAG_TEMP_1B 0x01B
 #define FLAG_TEMP_1C 0x01C

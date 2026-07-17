@@ -17,9 +17,16 @@
 
 .global MapScript_AnthraTown
 MapScript_AnthraTown:
+	mapscript MAP_SCRIPT_ON_LOAD MapLoadScript_HidePostCreditsNPCs
 	mapscript MAP_SCRIPT_ON_TRANSITION MapEntryScript_AnthraTown_FlightSpot
 	mapscript MAP_SCRIPT_ON_FRAME_TABLE LevelScripts_AnthraTown_MeetingWithRival
 	.byte MAP_SCRIPT_TERMIN
+
+MapLoadScript_HidePostCreditsNPCs:
+	compare 0x4070 0x1 @ Post-credits sequence is active
+	if equal _goto End @ In post-credits; partygoers are shown
+	setflag 0x19 @ Temp flag used to hide partygoers
+	end
 
 MapEntryScript_AnthraTown_FlightSpot:
     setworldmapflag 0x890

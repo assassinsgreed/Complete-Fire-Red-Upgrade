@@ -323,7 +323,7 @@ DaimynCityGuardHouseCommon:
     
     @ Going to Daimyn City 
     setvar 0x4054 0x1 @ Prevent rival battles in guard house 
-    setflag 0x03C
+    setflag 0x3C
     return
 
 .global SkippingCutscene_DaimynCityGuardHouseSouth_RivalBattle
