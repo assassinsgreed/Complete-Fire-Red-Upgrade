@@ -239,7 +239,7 @@ const struct WildPokemon gDivergentForgottenManseCommon_LandMonsDefault[] =
 	{22, 25, SPECIES_SHUPPET}, // 20
 	{21, 26, SPECIES_SINISTEA}, // 20
 	{21, 25, SPECIES_LITWICK}, // 10
-	{22, 25, SPECIES_SINISTEA}, // 10
+	{22, 25, SPECIES_MEOWTH_G}, // 10
 	{21, 26, SPECIES_SHUPPET}, // 10
 	{22, 26, SPECIES_KLEFKI}, // 10
 	{22, 25, SPECIES_ROTOM}, // 5
@@ -3487,8 +3487,8 @@ const struct SwarmData gDivergentSwarmTable[] =
 		.species = SPECIES_NINETALES_A,
 	},
 	{
-		.mapName = MAPSEC_UTEYAN_RUINS,
-		.species = SPECIES_MAROWAK,
+		.mapName = MAPSEC_FORGOTTEN_MANSE,
+		.species = SPECIES_MEOWTH_A,
 	},
 	{
 		.mapName = MAPSEC_ROUTE_19,

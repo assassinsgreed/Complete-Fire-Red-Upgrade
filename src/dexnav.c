@@ -2222,7 +2222,7 @@ static bool8 TryAddSpeciesToArray(u16 species, u8 encounterMethod, u8 indexCount
 			{
 				u16 wildSpecies = sDexNavGUIPtr->grassSpecies[i];
 				TryRandomizeSpecies(&wildSpecies);
-				if (SpeciesToNationalPokedexNum(wildSpecies) == dexNum)
+				if (wildSpecies == species) // Match by the exact species and not the dex num
 				{
 					if (encounterMethod == ENCOUNTER_METHOD_SWARM
 					&& i < NELEMS(sDexNavGUIPtr->landEncounterMethod))
@@ -2237,7 +2237,7 @@ static bool8 TryAddSpeciesToArray(u16 species, u8 encounterMethod, u8 indexCount
 		{
 			u16 wildSpecies = sDexNavGUIPtr->waterSpecies[i];
 			TryRandomizeSpecies(&wildSpecies);
-			if (SpeciesToNationalPokedexNum(wildSpecies) == dexNum)
+			if (wildSpecies == species) // Match by the exact species and not the dex num
 				return FALSE;
 		}
 	}
