@@ -539,6 +539,28 @@ EventScript_LavaSurfEnd:
 
 @;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
+.global EventScript_UseADMLavaSurf
+EventScript_UseADMLavaSurf:
+	callasm GetFirstNonEggIn8004
+	checkflag FLAG_AUTO_HMS
+	if SET _goto EventScript_UseADMLavaSurf_SkipAsk
+	msgbox gText_OfferLavaSurfWithADM MSG_YESNO
+	compare LASTRESULT NO
+	if equal _goto EventScript_LavaSurfEnd
+	lockall
+	bufferpartypokemon 0x0 0x8004
+	msgbox gText_ADMBlewUpInflatablePokemon MSG_KEEPOPEN
+
+EventScript_UseADMLavaSurf_SkipAsk:
+	lockall
+	setanimation 0x0 0x8004
+	doanimation 0x9
+	releaseall
+	incrementgamestat GAME_STAT_TIMES_SURF_WAS_USED
+	end
+
+@;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
 .global EventScript_UseWaterfall
 EventScript_UseWaterfall:
 	bufferpartypokemon 0x0 0x8004

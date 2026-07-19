@@ -54,6 +54,7 @@ extern const u8 EventScript_UseSandboxSurf[];
 extern const u8 EventScript_WaterDyedBlue[];
 extern const u8 EventScript_WaterMurkyBrown[];
 extern const u8 EventScript_UseLavaSurf[];
+extern const u8 EventScript_UseADMLavaSurf[];
 extern const u8 EventScript_MagmaGlistens[];
 extern const u8 EventScript_UseWaterfall[];
 extern const u8 EventScript_UseADMWaterfall[];

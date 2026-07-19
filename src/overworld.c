@@ -2696,6 +2696,15 @@ const u8* GetInteractedWaterScript(unusedArg u32 unused1, u8 metatileBehavior, u
 				Var8004 = 0;
 				return EventScript_UseLavaSurf_Debug;
 				#else
+				#ifdef ONLY_CHECK_ITEM_FOR_HM_USAGE
+				item = ITEM_HM03_SURF;
+				#endif
+
+				#ifdef FLAG_OBTAINED_ADM
+				if (FlagGet(FLAG_OBTAINED_ADM) && CheckBagHasItem(item, 1) > 0)
+					return EventScript_UseADMLavaSurf; //No Fire-type needed with the ADM
+				#endif
+
 				return EventScript_UseLavaSurf; //Fire-type check done in script
 				#endif
 			}
