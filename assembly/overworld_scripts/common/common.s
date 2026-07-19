@@ -1209,7 +1209,7 @@ EventScript_Common_TelevisionHints:
     if NOT_SET _goto TelevisionHint_GoToAscensionTower
     checkflag 0x72 @ Retrieved Victory Flag
     if NOT_SET _goto TelevisionHint_GoToVictoryRoad
-    checkflag 0x4BC @ Beaten Selene
+    checkflag 0x82C @ Game cleared
     if NOT_SET _goto TelevisionHint_GoToChallengeEliteFour
     checkflag 0x289 @ Beaten Ultra Necrozma
     if NOT_SET _goto TelevisionHint_GoToIDF

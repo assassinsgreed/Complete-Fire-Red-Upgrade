@@ -436,7 +436,7 @@ TileScript_GlastrierRoom_LeftTile:
     checkitem ITEM_VICTORY_FLAG 0x1
     compare LASTRESULT TRUE
     if notequal _goto GlastrierFailedEvaluation
-    checkflag 0x4BC @ Defeated Champion Selene
+    checkflag 0x82C @ Game cleared
     if SET _goto GlastrierAcceptsPlayer
     goto GlastrierFailedEvaluation
     end

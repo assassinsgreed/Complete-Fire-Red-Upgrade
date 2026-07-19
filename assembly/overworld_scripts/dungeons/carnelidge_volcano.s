@@ -167,7 +167,7 @@ TileScript_CarnelidgeVolcano_VolcanionRoom:
     checkitem ITEM_VICTORY_FLAG 0x1
     compare LASTRESULT TRUE
     if notequal _goto VolcanionConditionsNotMet
-    checkflag 0x4BC @ Became champion
+    checkflag 0x82C @ Game cleared
     if SET _goto VolcanionEmerges
     goto VolcanionConditionsNotMet
     end

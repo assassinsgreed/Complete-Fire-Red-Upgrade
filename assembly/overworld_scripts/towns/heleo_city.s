@@ -851,7 +851,7 @@ EventScript_HeleoCity_BlisseyTrainer:
     lock
     faceplayer
     msgbox gText_HeleoCity_NurseBrianne_Intro MSG_NORMAL
-    checkflag 0x4BC @ Beaten Selene
+    checkflag 0x82C @ Game cleared
     if NOT_SET _goto BrianneBeforePostgame
     callasm StorePokeChipCount
 	buffernumber 0x0 0x8005 @ Take stored PokeChip count

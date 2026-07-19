@@ -232,7 +232,7 @@ EventScript_OlenicLab_Hawthorne:
 
 .global EventScript_OlenicLab_HawthornesConservatoryAide
 EventScript_OlenicLab_HawthornesConservatoryAide:
-    checkflag 0x4BC @ Player is champion
+    checkflag 0x82C @ Game cleared
     if SET _goto ConservatoryAide_AfterChampion
     npcchatwithmovement gText_OlenicProfessorsLab_ConservatoryAide m_LookDown
     end
@@ -269,7 +269,7 @@ EventScript_OlenicLab_ToolsDeveloper:
     checkitem ITEM_POKE_VIAL 0x1 @ Indicating casual mode
     compare LASTRESULT TRUE
     if equal _goto PromptForTool
-    checkflag 0x4BC @ Beat Selene, became champion
+    checkflag 0x82C @ Game cleared
     if NOT_SET _goto ToolsDeveloper_NotChampion
     msgbox gText_OlenicLab_ToolDeveloper_PlayerIsChampion MSG_NORMAL
 PromptForTool:

@@ -154,7 +154,7 @@ EventScript_AscensionTower_BattleTowerAttendant:
 .global EventScript_AscensionTower_EliteFourAttendant
 EventScript_AscensionTower_EliteFourAttendant:
     lock
-    checkflag 0x4BC @ Player has beaten Selene
+    checkflag 0x82C @ Game cleared
     if SET _call EliteFourAttendantIntro_PlayerIsChampion
     if NOT_SET _call EliteFourAttendantIntro_PlayerIsChallenging
     multichoiceoption gText_Yes 0
@@ -184,7 +184,7 @@ TakeEliteFourChallenge:
     clearflag 0x4B9 @ E4 Lucas defeated
     clearflag 0x4BA @ E4 Jenna defeated
     clearflag 0x4BB @ E4 Thomas defeated 
-    checkflag 0x4BC @ Player has beaten Selene
+    checkflag 0x82C @ Game cleared
     if SET _call EliteFourAttendantGettingTheGate_PlayerIsChampion
     if NOT_SET _call EliteFourAttendantGettingTheGate_PlayerIsChallenging
     applymovement LASTTALKED m_LookLeft
@@ -253,7 +253,7 @@ EventScript_AscensionTower_BigMan:
 .global SignScript_AscensionTower_RecordsBoard
 SignScript_AscensionTower_RecordsBoard:
     msgbox gText_AscensionTower_RecordsSign MSG_SIGN
-    checkflag 0x4BC @ Beat Selene
+    checkflag 0x82C @ Game cleared
     if SET _goto RecordsBoard_PostChampion
     msgbox gText_AscensionTower_RecordsSign_NotOnBoard MSG_SIGN
     end
@@ -350,7 +350,7 @@ AscensionTowerElevatorTravel:
     end
 
 YaelBeforeChampion:
-    checkflag 0x4BC @ Player beat Selene
+    checkflag 0x82C @ Game cleared
     if SET _goto YaelBeforeChampion_PlayerIsChampion
     npcchatwithmovement gText_AscensionTower_ElevatorAttendant_PriorToChampion m_LookDown
     end
@@ -433,7 +433,7 @@ LevelScript_AscensionTower_WalkForward_ForE4Battle_Common:
 
 LevelScript_AscensionTower_WalkForward_ForChampionBattle:
     pause DELAY_HALFSECOND
-    checkflag 0x4BC @ Selene has already been defeated
+    checkflag 0x82C @ Game cleared
     if SET _goto AscensionTower_ChampionsQuarters_TitleDefense
     applymovement PLAYER m_ApproachChampion
     waitmovement PLAYER

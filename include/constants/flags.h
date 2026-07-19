@@ -174,7 +174,9 @@
 #define FLAG_HIDE_BIRTH_ISLAND_METEORITE                   0x09A
 #define FLAG_HIDE_LUGIA                                    0x09B
 #define FLAG_HIDE_HO_OH                                    0x09C
+*/
 #define FLAG_HIDE_POSTGAME_NPCS_ON_BY_DEFAULT              0x09D
+/*
 #define FLAG_HIDE_FAME_CHECKER_ERIKA_JOURNALS              0x09E
 #define FLAG_HIDE_FAME_CHECKER_KOGA_JOURNAL                0x09F
 #define FLAG_HIDE_FAME_CHECKER_LT_SURGE_JOURNAL            0x0A0

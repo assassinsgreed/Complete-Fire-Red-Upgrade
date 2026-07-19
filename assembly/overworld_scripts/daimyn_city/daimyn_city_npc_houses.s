@@ -471,11 +471,6 @@ DoesNotUsePC:
     msgbox gText_DaimynCityNPCHouses_LanaDoesNotUsePC MSG_NORMAL
     return
 
-HandlePocketPCCheck:
-    checkflag 0x4BC @ Is champion
-    if SET _goto GivePocketPC
-    goto RevisitingLana
-
 RevisitingLana:    
     msgbox gText_DaimynCityNPCHouses_LanaRevisited MSG_NORMAL
     goto LearnAboutPCPrompt
@@ -488,7 +483,7 @@ LearnAboutPCPrompt:
     goto HandleLanaFarewell
 
 HandleLanaFarewell:
-    checkflag 0x4BC @ Is champion
+    checkflag 0x82C @ Game cleared
     if SET _goto GivePocketPC
     msgbox gText_DaimynCityNPCHouses_PocketPCHint MSG_NORMAL
     goto LanaFarewell

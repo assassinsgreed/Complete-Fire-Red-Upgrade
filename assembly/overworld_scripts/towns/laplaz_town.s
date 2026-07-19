@@ -402,7 +402,7 @@ MontyCaseyNotMet:
     end
 
 MontyDarkraiCheck:
-    checkflag 0x4BC @ Beat Selene
+    checkflag 0x82C @ Game cleared
     if NOT_SET _goto MontyMetWithCasey
     checkflag 0x298 @ Darkrai caught
     if SET _goto MontyMetWithCasey

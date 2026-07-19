@@ -1745,6 +1745,11 @@ void PostReleaseAutomaticFixes(void)
 	if (!CheckBagHasItem(ITEM_VICTORY_FLAG, 1) || FlagGet(0x9D) || VarGet(0x406C) < 2)
 		FlagClear(FLAG_DEFEATED_CHAMPION_SELENE);
 
+	// If the player has cleared the game (separate flag from Selene), show all postgame NPCs
+	// This is to circumvent the weird case where Selene's flag inexplicably gets cleared
+	if (FlagGet(FLAG_SYS_GAME_CLEAR))
+		FlagClear(FLAG_HIDE_POSTGAME_NPCS_ON_BY_DEFAULT);
+
 	// Hide divergent mode-only mega stones when not in divergent mode
 	// Both for historic saves and for saves flipping between modes
 	if (!FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS))
