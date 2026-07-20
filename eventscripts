@@ -1390,6 +1390,7 @@ npc 10 2 2 EventScript_LaplazFacilities_TrainerHouse_Rocker
 npc 10 2 3 EventScript_LaplazFacilities_TrainerHouse_Girl
 ### Events 4-6 are hidden opponents
 ## NPC Houses
+map 10 3 MapScript_LaplazNPCHouses
 npc 10 3 0 EventScript_LaplazNPCHouses_Monty
 npc 10 3 1 EventScript_LaplazNPCHouses_CaseysMom
 npc 10 3 2 EventScript_LaplazNPCHouses_CaseysGrandmother

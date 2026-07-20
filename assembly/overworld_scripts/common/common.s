@@ -411,6 +411,7 @@ ResetRoute11PlutoEventOnWhiteout:
 
 .global ResetUteyaVillageGymFlagsOnWhiteout
 ResetUteyaVillageGymFlagsOnWhiteout:
+    @call SetWeatherClear
     checkflag 0x3C
     if SET _goto End
     setflag 0x82F @ Player can run again

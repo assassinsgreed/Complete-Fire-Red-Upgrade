@@ -387,8 +387,37 @@ EventScript_LaplazFacilities_TrainerHouse_Girl:
     end
 
 @ NPC Houses
+.equ Monty, 0x1
+
+.global MapScript_LaplazNPCHouses
+MapScript_LaplazNPCHouses:
+    mapscript MAP_SCRIPT_ON_TRANSITION MapEntryScript_LaplazNPCHouses_MontyRecovery
+    .byte MAP_SCRIPT_TERMIN
+
+MapEntryScript_LaplazNPCHouses_MontyRecovery:
+    checkflag 0x82C @ Game cleared
+    if NOT_SET _goto End
+    checkflag 0x945 @ Divergent Mode
+    if NOT_SET _goto MontyIsRecovered
+    checkflag 0x298 @ Darkrai caught
+    if NOT_SET _goto End
+    movesprite2 Monty 0x1 0x4 @ In bed
+MontyIsRecovered:
+    movesprite2 Monty 0x4 0x4 @ Move off the bed tile so he doesn't walk around in it
+    setobjectmovementtype Monty 0x2 @ Walk around
+    setflag 0x1B @ Temp flag, for when players swap from Standard mode to Divergent & haven't caught Darkrai yet
+    end
+
 .global EventScript_LaplazNPCHouses_Monty
 EventScript_LaplazNPCHouses_Monty:
+    checkflag 0x82C @ Game cleared
+    if NOT_SET _goto Monty_BeforeRetirement
+    checkflag 0x945 @ Divergent Mode
+    if NOT_SET _goto MontyRetired
+    checkflag 0x298 @ Darkrai caught
+    if SET _goto MontyRetired
+
+Monty_BeforeRetirement:
     checkflag 0x03F @ Casey hidden in gym
     if SET _goto MontyCaseyNotMet
     checkflag 0x945 @ Divergent Mode
@@ -403,18 +432,22 @@ MontyCaseyNotMet:
 
 MontyDarkraiCheck:
     checkflag 0x82C @ Game cleared
-    if NOT_SET _goto MontyMetWithCasey
+    if NOT_SET _goto MontyRestlessSleep
+    checkflag 0x1B @ Monty moved from standard mode / post Darkrai mode
+    if SET _goto MontyRetired
     checkflag 0x298 @ Darkrai caught
     if SET _goto MontyMetWithCasey
     msgbox gText_LaplazTownNPCHouses_MontySufferingFromNightmare MSG_YESNO
     compare LASTRESULT NO
     if equal _goto ChoseNotToHelpMonty
+    call SetWeatherDark
     cry SPECIES_DARKRAI 0x0
-    pause DELAY_HALFSECOND
+    pause DELAY_1SECOND
     applymovement PLAYER m_Surprise
     sound 0x15 @ Exclaim
     pause DELAY_HALFSECOND
     playse 0x49 @ Escalator
+    pause DELAY_HALFSECOND
     fadescreen FADEOUT_BLACK
     pause DELAY_HALFSECOND
     msgbox gText_LaplazTownNPCHouses_MontyYes MSG_NORMAL
@@ -429,6 +462,7 @@ MontyDarkraiCheck:
     special 0x138 @ Setup a legendary encounter (blurred screen transition)
     waitstate
     clearflag 0x807
+    call SetWeatherClear
     special2 LASTRESULT 0xB4 @ Check the result of the battle
     compare LASTRESULT 0x1 @ Defeated in battle
     if equal _goto DarkraiRetreats
@@ -436,6 +470,16 @@ MontyDarkraiCheck:
     if equal _goto DarkraiRetreats
     msgbox gText_LaplazTownNPCHouses_MontyWakesUp MSG_NORMAL
     setflag 0x298 @ Darkrai caught
+    faceplayer
+    msgbox gText_LaplazTownNPCHouses_MontyFogLifted MSG_NORMAL
+    fadescreen FADEOUT_BLACK
+    movesprite Monty 0x4 0x4 @ Move off the bed tile so he doesn't walk around in it (while on map)
+    movesprite2 Monty 0x4 0x4 @ Move off the bed tile so he doesn't walk around in it (permanently)
+    setflag 0x1B @ Temp flag, for when players swap from Standard mode to Divergent & haven't caught Darkrai yet
+    applymovement LASTTALKED m_LookDown
+    setobjectmovementtype Monty 0x2 @ Walk around
+    special 0x8E
+    fadescreen FADEIN_BLACK
     end
 
 ChoseNotToHelpMonty:
@@ -446,8 +490,24 @@ DarkraiRetreats:
     msgbox gText_LaplazTownNPCHouses_MontyDarkraiRetreated MSG_NORMAL
     end
 
+MontyRestlessSleep:
+    msgbox gText_LaplazTownNPCHouses_MontyRestlessSleep MSG_NORMAL
+    end
+
+MontyRetired:
+    npcchat gText_LaplazTownNPCHouses_MontyRetired
+    end
+
 .global EventScript_LaplazNPCHouses_CaseysMom
 EventScript_LaplazNPCHouses_CaseysMom:
+    checkflag 0x82C @ Game cleared
+    if NOT_SET _goto CaseysMom_BeforeMontyRecovered
+    checkflag 0x945 @ Divergent Mode
+    if NOT_SET _goto CaseysMomMontyRecovered
+    checkflag 0x298 @ Darkrai caught
+    if SET _goto CaseysMomMontyRecovered
+
+CaseysMom_BeforeMontyRecovered:
     checkflag 0x03F @ Casey hidden in gym
     if SET _goto CaseysMomCaseyNotMet
     checkgender
@@ -467,9 +527,25 @@ MaleCaseyWillLeadGym:
     npcchatwithmovement gText_LaplazTownNPCHouses_CaseysMomMetWithCasey_Male m_LookRight
     end
 
+CaseysMomMontyRecovered:
+    npcchatwithmovement gText_LaplazTownNPCHouses_CaseysMomMontyRecovered m_LookRight
+    end
+
 .global EventScript_LaplazNPCHouses_CaseysGrandmother
 EventScript_LaplazNPCHouses_CaseysGrandmother:
+    checkflag 0x82C @ Game cleared
+    if NOT_SET _goto CaseysGrandmother_BeforeMontyRecovered
+    checkflag 0x945 @ Divergent Mode
+    if NOT_SET _goto CaseysGrandmotherMontyRecovered
+    checkflag 0x298 @ Darkrai caught
+    if SET _goto CaseysGrandmotherMontyRecovered
+
+CaseysGrandmother_BeforeMontyRecovered:
     npcchatwithmovement gText_LaplazTownNPCHouses_CaseysGrandmother m_LookRight
+    end
+
+CaseysGrandmotherMontyRecovered:
+    npcchatwithmovement gText_LaplazTownNPCHouses_CaseysGrandmotherMontyRecovered m_LookRight
     end
 
 .global EventScript_LaplazNPCHouses_HeracrossKid
@@ -1015,6 +1091,18 @@ EventScript_LaplazTownGym_LeaderCasey_Chat:
 Casey_Postgame:
     checkflag 0xE3B @ Casey Rematch beaten today
     if SET _goto CaseyRematch_BeatenToday
+    checkflag 0x945 @ Divergent Mode
+    if NOT_SET _goto Casey_PostgameMontyRecovered
+    checkflag 0x298 @ Darkrai caught
+    if SET _goto Casey_PostgameMontyRecovered
+    msgbox gText_LaplazGym_LeaderCasey_DistractedHint MSG_NORMAL
+    goto Casey_PostgameAskForRematch
+
+Casey_PostgameMontyRecovered:
+    msgbox gText_LaplazGym_LeaderCasey_PostgameIntro MSG_NORMAL
+    msgbox gText_LaplazGym_LeaderCasey_MontyRecoveredHint MSG_NORMAL
+
+Casey_PostgameAskForRematch:
     msgbox gText_LaplazGym_LeaderCasey_AskForRematch MSG_YESNO
     compare LASTRESULT NO
     if equal _goto CaseyRematch_ChoseNotToBattle
@@ -1043,9 +1131,16 @@ CaseyRematch_ChoseNotToBattle:
     end
 
 CaseyRematch_BeatenToday:
+    checkflag 0x945 @ Divergent Mode
+    if NOT_SET _goto CaseyBeatenStandardOrDarkraiCaught
+    checkflag 0x298 @ Darkrai caught
+    if SET _goto CaseyBeatenStandardOrDarkraiCaught
+    npcchatwithmovement gText_LaplazGym_LeaderCasey_PostRematchDistractedHint m_LookDown
+    goto GymLeaderRematch_HandleAllCleared
+
+CaseyBeatenStandardOrDarkraiCaught:
     npcchatwithmovement gText_LaplazGym_LeaderCasey_BeatenToday m_LookDown
     goto GymLeaderRematch_HandleAllCleared
-    end
 
 .global EventScript_LaplazGym_GymExpert
 EventScript_LaplazGym_GymExpert:

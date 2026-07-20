@@ -152,7 +152,7 @@ I[.] I have to lead the gym. If I\ndon't, it will[.]\pOoooh! My stomach hurts[.]
 What's that? Casey will lead the\ngym?\pHow wonderful! I can focus on my\nrecovery in peace.
 
 #org @gText_LaplazTownNPCHouses_MontySufferingFromNightmare
-[BLACK]Monty is writhing in discomfort.\nCheck more closely?
+Ngh[.] D-Dar[.]\p[BLACK]Monty is writhing in discomfort.\nCheck more closely?
 
 #org @gText_LaplazTownNPCHouses_Monty_No
 [BLACK]Better not.
@@ -166,6 +166,15 @@ What's that? Casey will lead the\ngym?\pHow wonderful! I can focus on my\nrecove
 #org @gText_LaplazTownNPCHouses_MontyWakesUp
 [BLACK]Monty has woken up peacefully.
 
+#org @gText_LaplazTownNPCHouses_MontyFogLifted
+Huh[.]? I feel like a fog has\nlifted from my mind.\pI haven't felt this clear-headed in\nweeks!\pI've been laying around for far too\nlong! Wahaha!\pExcuse me, I need to get outta this\nbed!
+
+#org @gText_LaplazTownNPCHouses_MontyRestlessSleep
+Ngh[.] D-Dar[.]\p[BLACK]Monty seemed to be sleeping\nrestlessly, mumbling something\lunder his breath.\pAfter a moment, though, he calmed\ndown again.
+
+#org @gText_LaplazTownNPCHouses_MontyRetired
+I feel great these days!\nNo more aches, no more worries.\pI've decided[.] I'm retiring as gym\nleader, officially.\pCasey has done a great job running\nthe gym in my absence, and seems\lto really enjoy it, to boot!\pIt would be cruel to take it from\nthem.
+
 #org @gText_LaplazTownNPCHouses_CaseysMomHaventMetWithCasey
 My husband is ill, but refuses to\nrest as long as the gym is without\lit's leader.\pHe says that trainers can't complete\ntheir gym challenge as long as the\lLaplaz gym isn't accepting\lchallengers.\pHe's thoughtful, but he needs to\nfocus on his own health right now.
 
@@ -175,8 +184,14 @@ Casey will lead the gym, after\nall? He was so unsure when he\lleft town.\pSomet
 #org @gText_LaplazTownNPCHouses_CaseysMomMetWithCasey_Female
 Casey will lead the gym, after\nall? She was so unsure when she\lleft town.\pSomething - or someone - must've\nchanged her mind.\pI'm happy for her, though. It seems\nshe has found her calling.\pAnd, I'm sure my husband can rest,\nknowing the gym is in good hands.
 
+#org @gText_LaplazTownNPCHouses_CaseysMomMontyRecovered
+My husband's finally back on his\nfeet again.\pYou should see him, he's been up\nand about all day.\pIt's such a relief to have him\nhealthy again.
+
 #org @gText_LaplazTownNPCHouses_CaseysGrandmother
 Oooh, that son of mine! He gets ill\nand refuses to rest.\pWho cares about the gym? We need\nhim here, happy and healthy.
+
+#org @gText_LaplazTownNPCHouses_CaseysGrandmotherMontyRecovered
+My son is finally healthy again. Now\nhe can help us with the housework.\pIf you ask me, I think he was faking\nhis illness.\pJust don't tell him that - it would\nupset him! Ohoho!
 
 #org @gText_LaplazTownNPCHouses_HeracrossKid
 There's this super cool Pok\emon in\nPeradon Forest called Heracross.\pHere, I'll show you what it looks\nlike!
@@ -428,8 +443,17 @@ Please take this TM as well.\pIt contains Swords Dance, and it's\na favorite of 
 #org @gText_LaplazGym_LeaderCasey_Chat
 [PLAYER], thank you for such an\nincredible battle.\pMy gym challenge has ended, but\nyours is going strong!\pI'll cheer you on from here.\pI'd better see you face off against\nChampion Selene, someday!\pDon't let me down, okay? And, take\ncare, [PLAYER].
 
+#org @gText_LaplazGym_LeaderCasey_DistractedHint
+Oh, hey, [PLAYER][.]\pSorry, I'm a little distracted\ntoday.\pDad's been having these awful\nnightmares lately. He wakes up\lshaking, mumbling some name[.]\pI don't know what it means, but it's\nlike something's watching him while\lhe sleeps.\pAnyway! Don't mind me. You didn't\ncome here to hear about that,\lright?
+
+#org @gText_LaplazGym_LeaderCasey_MontyRecoveredHint
+I was really down in the dumps\nbecause my Dad was unwell.\pBut you'll never believe it - he's\ndoing much better now!
+
+#org @gText_LaplazGym_LeaderCasey_PostgameIntro
+Oh, [PLAYER]! Or should I say\n"Champion [PLAYER]?\"
+
 #org @gText_LaplazGym_LeaderCasey_AskForRematch
-Oh, [PLAYER]! Or should I say\n"Champion [PLAYER]?\"\pIt's so good to see you again!\pIf you're here, it can only mean one\nthing[.] You want a battle, right?
+If you're here, it can only mean one\nthing[.] You want a battle, right?
 
 #org @gText_LaplazGym_LeaderCasey_PreBattle
 That's what I like to hear!\pI'm going to pick these Pok\emon,\nthen[.]\pDon't think I'll go easy on you just\nbecause we're friends!
@@ -442,3 +466,6 @@ Aw, that's too bad[.]\pI'll gladly take you on any time you\nwant, though!
 
 #org @gText_LaplazGym_LeaderCasey_BeatenToday
 You're a good battler, [PLAYER]!\pIf you're in the neighborhood again\nsometime, let's have another\lbattle.
+
+#org @gText_LaplazGym_LeaderCasey_PostRematchDistractedHint
+[.] Sorry, ignore me. I keep spacing\nout during our matches lately.\pI just can't get Dad's illness out\nof my mind.\pI wish I knew how to help him.
