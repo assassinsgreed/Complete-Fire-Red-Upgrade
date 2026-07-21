@@ -10,6 +10,7 @@
 
 //Exported Functions
 u8 GetAllEggMoves(struct Pokemon* mon, u16* moves, bool8 ignoreAlreadyKnownMoves);
+void UpdateDaycareManMovementType(void);
 
 //Functions Hooked In
 void BuildEggMoveset(struct Pokemon* egg, struct BoxPokemon* father, struct BoxPokemon* mother);

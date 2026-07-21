@@ -1360,6 +1360,7 @@ OverrideTemplateCoordsForEventObject = 0x805FE5C | 1;
 OverrideMovementTypeForEventObject = 0x805FE7C | 1;
 TryOverrideEventObjectTemplateCoords = 0x805FE94 | 1;
 InitEventObjectPalettes = 0x805FECC | 1;
+SetTrainerMovementType = 0x8063610 | 1;
 GetTrainerFacingDirectionMovementType = 0x806365C | 1;
 EventObjectIsMovementOverridden = 0x8063C70 | 1;
 EventObjectSetHeldMovement = 0x8063CA4 | 1;

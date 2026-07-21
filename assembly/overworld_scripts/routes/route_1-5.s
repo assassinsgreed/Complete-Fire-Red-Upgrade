@@ -752,6 +752,27 @@ m_MeetPlayer: .byte walk_up, walk_up, walk_up, walk_up, walk_right, walk_right, 
 m_ForemanLeaves: .byte walk_left, walk_left, walk_left, walk_left, walk_left, walk_left, walk_up, walk_up, walk_up, walk_up, walk_up, walk_up, walk_up, end_m
 
 @ Route 5
+.equ DaycareMan, 0x1C @ Person # 27
+
+.global MapScript_Route5
+MapScript_Route5:
+    mapscript MAP_SCRIPT_ON_TRANSITION MapEntryScript_Route5
+    mapscript MAP_SCRIPT_ON_RESUME MapResumeScript_Route5
+    .byte MAP_SCRIPT_TERMIN
+
+MapEntryScript_Route5:
+    checkflag 0x266 @ Egg waiting to be picked up from the Day Care
+    if SET _goto MapEntryScript_Route5_DaycareEggReady
+    end
+
+MapEntryScript_Route5_DaycareEggReady:
+    setobjectmovementtype DaycareMan 0x4E @ VS Seeker hand-raise, set before he spawns so it reads correctly as the player approaches
+    end
+
+MapResumeScript_Route5:
+    callasm UpdateDaycareManMovementType @ Re-sync his pose + "!" on every field resume (covers entry paths that skip ON_TRANSITION, e.g. loading a save); only restarts his animation if it's actually wrong
+    end
+
 .global EventScript_Route5_Biker
 EventScript_Route5_Biker:
     msgbox gText_Route5_Biker MSG_NORMAL
@@ -1204,6 +1225,7 @@ DaycareMan_EggAvailable:
     clearflag 0x266
     special 0xB7
     release
+    callasm UpdateDaycareManMovementType @ Egg turned down: go back to looking down (after release, so the live sprite isn't frozen)
     end
 
 DaycareMan_OnePokemonDoingFine:
@@ -1241,6 +1263,7 @@ DaycareMan_ReceiveEgg:
     special 0xB8
     clearflag 0x266
     release
+    callasm UpdateDaycareManMovementType @ Egg taken: go back to looking down (after release, so the live sprite isn't frozen)
     end
 
 DaycareMan_CopyEggDetails:

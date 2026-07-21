@@ -117,6 +117,7 @@ u8 __attribute__((long_call)) GetPlayerRunMovementAction(u32);
 u8 __attribute__((long_call)) GetJumpInPlaceMovementAction(u32);
 u8 __attribute__((long_call)) GetWalkInPlaceNormalMovementAction(u32);
 void __attribute__((long_call)) OverrideMovementTypeForEventObject(const struct EventObject* eventObject, u8 movementType);
+void __attribute__((long_call)) SetTrainerMovementType(struct EventObject* eventObject, u8 movementType); //Changes a live object's movement type (callback + state), unlike the template-only OverrideMovementTypeForEventObject
 void __attribute__((long_call)) TryOverrideTemplateCoordsForEventObject(const struct EventObject* eventObject, u8 movementType);
 void __attribute__((long_call)) OverrideTemplateCoordsForEventObject(const struct EventObject* eventObject);
 u8 __attribute__((long_call)) GetTrainerFacingDirectionMovementType(u8 direction);

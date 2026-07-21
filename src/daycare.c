@@ -1,9 +1,16 @@
 #include "defines.h"
 #include "../include/daycare.h"
+#include "../include/event_object_movement.h"
+#include "../include/field_effect.h"
+#include "../include/overworld.h"
+#include "../include/script.h"
+#include "../include/task.h"
 #include "../include/pokemon.h"
 #include "../include/pokemon_storage_system.h"
 #include "../include/random.h"
 #include "../include/constants/abilities.h"
+#include "../include/constants/event_object_movement_constants.h"
+#include "../include/constants/field_effects.h"
 #include "../include/constants/hold_effects.h"
 #include "../include/constants/items.h"
 #include "../include/constants/moves.h"
@@ -748,6 +755,8 @@ void TriggerPendingDaycareEgg(unusedArg struct DayCare *daycare)
 	#else
 		FlagSet(FLAG_PENDING_DAYCARE_EGG);
 	#endif
+
+	UpdateDaycareManMovementType(); //Have him raise his hand right away if the player is standing on Route 5
 }
 
 bool8 IsEggPending(unusedArg struct DayCare *daycare)
@@ -757,6 +766,99 @@ bool8 IsEggPending(unusedArg struct DayCare *daycare)
 	#else
 		return FlagGet(FLAG_PENDING_DAYCARE_EGG);
 	#endif
+}
+
+//While an egg is waiting to be picked up, the Route 5 Day Care Man raises his hand (the VS Seeker
+//animation) and periodically pops an "!" over his head so the player notices from a distance. Both
+//stop the moment the egg is taken or turned down, and neither plays while the player is talking to him.
+//The movement type is set on the saved template (not just the live sprite), so it reflects the egg
+//state as he loads in when the player approaches, without needing to reload the map first.
+#define DAYCARE_MAN_LOCAL_ID 0x1C //Person event #27 on Route 5
+#define ROUTE5_MAP_GROUP 3
+#define ROUTE5_MAP_NUM 23
+#define MOVEMENT_TYPE_VS_SEEKER 0x4E //Hand-raise animation
+#define DAYCARE_MAN_EXCLAIM_INTERVAL 180 //Frames between "!" emotes (~3 seconds)
+
+static bool8 IsPlayerOnRoute5(void)
+{
+	return gSaveBlock1->location.mapGroup == ROUTE5_MAP_GROUP
+		&& gSaveBlock1->location.mapNum == ROUTE5_MAP_NUM;
+}
+
+//Returns MAP_OBJECTS_COUNT if the Day Care Man isn't currently loaded on-screen
+static u8 GetLoadedDaycareManObjectId(void)
+{
+	u8 i;
+	for (i = 0; i < MAP_OBJECTS_COUNT; ++i)
+	{
+		if (gEventObjects[i].active && !gEventObjects[i].isPlayer
+		 && gEventObjects[i].localId == DAYCARE_MAN_LOCAL_ID)
+			return i;
+	}
+
+	return MAP_OBJECTS_COUNT;
+}
+
+static void Task_DaycareManExclaim(u8 taskId)
+{
+	u8 objId;
+
+	//Tear down once the player leaves Route 5 or the egg is dealt with
+	if (!IsPlayerOnRoute5() || !IsEggPending(NULL))
+	{
+		DestroyTask(taskId);
+		return;
+	}
+
+	//Hold off while a script owns the field, so it never fires while the player is talking to him
+	if (ScriptContext2_IsEnabled())
+		return;
+
+	if (++gTasks[taskId].data[0] < DAYCARE_MAN_EXCLAIM_INTERVAL)
+		return;
+
+	gTasks[taskId].data[0] = 0;
+
+	objId = GetLoadedDaycareManObjectId();
+	if (objId < MAP_OBJECTS_COUNT)
+	{
+		gFieldEffectArguments[0] = DAYCARE_MAN_LOCAL_ID;
+		gFieldEffectArguments[1] = ROUTE5_MAP_NUM;
+		gFieldEffectArguments[2] = ROUTE5_MAP_GROUP;
+		FieldEffectStart(FLDEFF_EXCLAMATION_MARK_ICON);
+	}
+}
+
+//Starts the periodic "!" if an egg is waiting; the task cleans itself up otherwise.
+//Idempotent, so it's safe to call on every field resume.
+static void SyncDaycareManExclaim(void)
+{
+	if (IsPlayerOnRoute5() && IsEggPending(NULL) && !FuncIsActiveTask(Task_DaycareManExclaim))
+		CreateTask(Task_DaycareManExclaim, 0x50);
+}
+
+void UpdateDaycareManMovementType(void)
+{
+	u8 objId;
+	u8 movementType = IsEggPending(NULL) ? MOVEMENT_TYPE_VS_SEEKER : MOVEMENT_TYPE_FACE_DOWN;
+
+	//The template array belongs to the current map, so only touch the Day Care Man's map
+	if (!IsPlayerOnRoute5())
+		return;
+
+	//Update the saved template so he spawns in the right pose as the player draws near
+	Overworld_SetEventObjTemplateMovementType(DAYCARE_MAN_LOCAL_ID, movementType);
+
+	//If he's already loaded on-screen, restart his movement now so the change is instant, but only
+	//when it's actually different. This way ON_RESUME can re-sync him on every field resume (covering
+	//entry paths that skip ON_TRANSITION, e.g. loading a save) without visibly restarting his animation
+	//each time a menu closes. SetTrainerMovementType (not OverrideMovementTypeForEventObject, which only
+	//edits the template) swaps the live sprite callback, so the animation truly changes without a respawn.
+	objId = GetLoadedDaycareManObjectId();
+	if (objId < MAP_OBJECTS_COUNT && gEventObjects[objId].movementType != movementType)
+		SetTrainerMovementType(&gEventObjects[objId], movementType);
+
+	SyncDaycareManExclaim(); //Keep the "!" emote in sync with the egg state
 }
 
 void CreateHatchedMon(struct Pokemon *egg, struct Pokemon *temp)

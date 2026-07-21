@@ -595,6 +595,7 @@ sign 7 9 5 EventScript_FerroxLibrary_ReadBookPromptR2
 sign 7 9 6 EventScript_FerroxLibrary_ReadBookPromptY
 
 # Route 5
+map 3 23 MapScript_Route5
 npc 3 23 0 EventScript_Route5_Biker
 npc 3 23 1 EventScript_Route5_Biker
 npc 3 23 2 EventScript_Route5_Biker
