@@ -13,8 +13,9 @@ PokedexScreenStats:
 	str r6, [sp, #4]
 	mov r0, r10
 	cmp r0, #0
-	beq unknown_base_stats
-	
+	bne hp
+	b unknown_base_stats @ trampoline: target is beyond beq's range
+
 hp:
 	mov r0, #0
 	ldrh r1, [sp, #0x1C]
@@ -39,7 +40,7 @@ def:
 	mov r0, #2
 	ldrh r1, [sp, #0x1C]
 	bl print_stat
-	mov r3, #18 @ y co-ord
+	mov r3, #15 @ y co-ord
 	str r3, [sp]
 	mov r3, #0 @ x co-ord
 	ldr r5, write_method
@@ -49,7 +50,7 @@ spa:
 	mov r0, #4
 	ldrh r1, [sp, #0x1C]
 	bl print_stat
-	mov r3, #18 @ y co-ord
+	mov r3, #15 @ y co-ord
 	str r3, [sp]
 	mov r3, #0x2C @ x co-ord
 	ldr r5, write_method
@@ -59,7 +60,7 @@ spd:
 	mov r0, #5
 	ldrh r1, [sp, #0x1C]
 	bl print_stat
-	mov r3, #32 @ y co-ord
+	mov r3, #26 @ y co-ord
 	str r3, [sp]
 	mov r3, #0 @ x co-ord
 	ldr r5, write_method
@@ -69,7 +70,7 @@ spe:
 	mov r0, #3
 	ldrh r1, [sp, #0x1C]
 	bl print_stat
-	mov r3, #32 @ y co-ord
+	mov r3, #26 @ y co-ord
 	str r3, [sp]
 	mov r3, #0x2C @ x co-ord
 	ldr r5, write_method
@@ -87,11 +88,12 @@ print_ability_one:
 	ldrb r1, [r1]
 	mov r0, r1
 	mov r1, #0
-	mov r3, #46
+	mov r3, #41
 	str r3, [sp]
 	mov r3, #0
 	ldr r5, write_method
 	bl call_via_r5
+	mov r4, #52 @ default y for the next ability line
 
 print_ability_two:
 	ldrh r0, [sp, #0x1C]
@@ -101,9 +103,9 @@ print_ability_two:
 	bl GetAbility2
 
 	cmp r5, r0 @Ability 1 == Ability 2
-	beq return
+	beq print_ability_hidden
 	cmp r0, #0 @Ability 2 == 0
-	beq return
+	beq print_ability_hidden
 	ldrh r1, [sp, #0x1C]
 	bl GetAbilityName
    	mov r2, r0
@@ -113,9 +115,51 @@ print_ability_two:
 	ldrb r1, [r1]
 	mov r0, r1
 	mov r1, #0
-	mov r3, #60
+	mov r3, #52
 	str r3, [sp]
 	mov r3, #0
+	ldr r5, write_method
+	bl call_via_r5
+	mov r4, #63 @ a second ability was shown, push the hidden line down
+
+print_ability_hidden:
+	ldrh r0, [sp, #0x1C] @Species
+	bl GetHiddenAbility
+	cmp r0, #0 @Hidden Ability == 0 (none)
+	beq return
+	mov r5, r0 @Save the hidden ability id (r5 survives the C call)
+	ldrh r0, [sp, #0x1C]
+	bl GetAbility1
+	cmp r0, r5 @Hidden Ability == Ability 1?
+	beq return @Don't print a hidden ability that matches ability 1
+	ldrh r0, [sp, #0x1C]
+	bl GetAbility2
+	cmp r0, r5 @Hidden Ability == Ability 2?
+	beq return @Don't print a hidden ability that matches ability 2
+
+	mov r0, r5 @Restore the hidden ability id
+	ldrh r1, [sp, #0x1C]
+	bl GetAbilityName
+	push {r0} @Stash the ability name pointer (do NOT clobber r6 - the base code needs it)
+
+	@ Build "HA: " + name into gStringVar1
+	ldr r0, =gStringVar1
+	ldr r1, =ha_string
+	ldr r5, =StringCopy
+	bl call_via_r5 @r0 = pointer to the terminator after the prefix
+	pop {r1} @r1 = ability name pointer
+	ldr r5, =StringCopy
+	bl call_via_r5 @Append the name after the prefix (dst still in r0)
+
+	ldr r2, =gStringVar1
+	ldr r1, [r7]
+	add r1, #0x53
+	ldrb r1, [r1]
+	mov r0, r1
+	mov r1, #0
+	mov r3, r4 @ y co-ord (48 if no second ability, else 59)
+	str r3, [sp]
+	mov r3, #0 @ x co-ord
 	ldr r5, write_method
 	bl call_via_r5
 	b return
@@ -213,3 +257,6 @@ stat_spd:
 	
 capture:
 	.byte 0xBD, 0xD5, 0xE4, 0xE8, 0xE9, 0xE6, 0xD9, 0x0, 0xDA, 0xE3, 0xE6, 0xFE, 0xE1, 0xE3, 0xE6, 0xD9, 0x0, 0xDD, 0xE2, 0xDA, 0xE3, 0xE6, 0xE1, 0xD5, 0xE8, 0xDD, 0xE3, 0xE2, 0xAB, 0xFF
+
+ha_string: @ "H: "
+	.byte 0xC2, 0xF0, 0x0, 0xFF
