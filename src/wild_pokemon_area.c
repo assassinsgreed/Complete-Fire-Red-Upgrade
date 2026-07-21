@@ -103,10 +103,31 @@ static const struct
     { sDexAreas_KulureExpanded3, ARRAY_COUNT(sDexAreas_KulureExpanded3) }
 };
 
-// Scans for the given species and populates 'subsprites' with the area markers.
-// Returns the number of areas where the species was found.
-// Revised for time-based and CFRU injected encounters.
-s32 GetSpeciesPokedexAreaMarkers(u16 species, struct Subsprite * subsprites)
+// Ditto, Rotom, Victini, Jirachi and every species with a Dex entry >= 300 are
+// shared between standard and divergent modes. These live only in the standard
+// encounter tables (they were never duplicated into the divergent file), so in
+// divergent mode the Area screen must fall back to the standard tables for them.
+// A species NOT in this set is mode-specific: in divergent mode it should only
+// ever surface from the divergent tables, never from the standard fallback.
+static bool8 IsSharedAreaSpecies(u16 species)
+{
+    switch (species)
+    {
+    case SPECIES_DITTO:
+    case SPECIES_ROTOM:
+    case SPECIES_VICTINI:
+    case SPECIES_JIRACHI:
+        return TRUE;
+    }
+
+    return SpeciesToNationalPokedexNum(species) >= 300;
+}
+
+// Scans one mode's encounter tables for the given species and writes its area
+// markers into 'subsprites', returning the number of areas found. The caller
+// resets 'subsprites' by passing a fresh count-0 scan, so a later scan safely
+// overwrites the markers of an earlier scan that found nothing.
+static s32 ScanAreaMarkers(u16 species, struct Subsprite * subsprites, bool8 useDivergentTables)
 {
     s32 areaCount;
     s32 mapSecId;
@@ -115,32 +136,30 @@ s32 GetSpeciesPokedexAreaMarkers(u16 species, struct Subsprite * subsprites)
     u32 i, j;
     bool8 foundInExpandedEncounterTables;
 
-    // Day has it's headerTable set to null
-    const struct WildPokemonHeader* headerTable = NULL;
-    
-    if (GetRoamerIndex(species) >= 0)
-        return GetRoamerPokedexAreaMarkers(species, subsprites);
+    const struct WildPokemonHeader* headerTable;
+    // The mode's day/default table, used as the fallback for maps with no
+    // time-specific entry when it isn't currently daytime.
+    const struct WildPokemonHeader* dayFallbackTable;
 
-    // Species with dex entries >= 288 are shared species (ex. legendaries or divergent pokemon) and should be present in divergent mode
-    u16 speciesNum = SpeciesToNationalPokedexNum(species);
-    if (FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS) && speciesNum > 390)
+    if (useDivergentTables)
     {
+        dayFallbackTable = gDivergentWildMonDefaultHeaders;
         if (IsEvening() || IsNightTime())
             headerTable = gDivergentWildMonEveningNightHeaders;
         else
             headerTable = gDivergentWildMonDefaultHeaders;
     }
-    // Handle normal mode & shared pokemon in divergent mode
-    else if (!FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS) || (speciesNum >= 288 && speciesNum <=390))
+    else
     {
-        if (IsOnlyDayTime())
-            headerTable = gWildMonHeaders;
-        else if (IsNightTime())
+        dayFallbackTable = gWildMonHeaders;
+        if (IsNightTime())
             headerTable = gWildMonNightHeaders;
         else if (IsMorning())
             headerTable = gWildMonMorningHeaders;
         else if (IsEvening())
             headerTable = gWildMonEveningHeaders;
+        else // daytime
+            headerTable = gWildMonHeaders;
     }
 
     for (i = 0, areaCount = 0; headerTable[i].mapGroup != MAP_GROUP(UNDEFINED); i++)
@@ -177,16 +196,16 @@ s32 GetSpeciesPokedexAreaMarkers(u16 species, struct Subsprite * subsprites)
         }
     }
 
-    // If not daytime, iterate through gWildMonHeaders and skip entries that exist in headerTable
+    // If not daytime, iterate through the day fallback table and skip entries that exist in headerTable
     if (!IsOnlyDayTime())
     {
-        for (i = 0; gWildMonHeaders[i].mapGroup != MAP_GROUP(UNDEFINED); i++)
+        for (i = 0; dayFallbackTable[i].mapGroup != MAP_GROUP(UNDEFINED); i++)
         {
             bool8 skipEntry = FALSE;
             for (j = 0; headerTable[j].mapGroup != MAP_GROUP(UNDEFINED); j++)
             {
-                if (gWildMonHeaders[i].mapGroup == headerTable[j].mapGroup &&
-                    gWildMonHeaders[i].mapNum == headerTable[j].mapNum)
+                if (dayFallbackTable[i].mapGroup == headerTable[j].mapGroup &&
+                    dayFallbackTable[i].mapNum == headerTable[j].mapNum)
                 {
                     skipEntry = TRUE;
                     break;
@@ -197,9 +216,9 @@ s32 GetSpeciesPokedexAreaMarkers(u16 species, struct Subsprite * subsprites)
                 continue;
 
             foundInExpandedEncounterTables = FALSE;
-            mapSecId = GetMapSecIdFromWildMonHeader(&gWildMonHeaders[i]);
+            mapSecId = GetMapSecIdFromWildMonHeader(&dayFallbackTable[i]);
 
-            if (IsSpeciesOnMap(&gWildMonHeaders[i], species))
+            if (IsSpeciesOnMap(&dayFallbackTable[i], species))
             {
                 for (j = 0; j < ARRAY_COUNT(sKulureExpandedDexAreas); j++)
                 {
@@ -228,4 +247,31 @@ s32 GetSpeciesPokedexAreaMarkers(u16 species, struct Subsprite * subsprites)
     }
 
     return areaCount;
+}
+
+// Scans for the given species and populates 'subsprites' with the area markers.
+// Returns the number of areas where the species was found.
+// Revised for time-based and CFRU injected encounters.
+s32 GetSpeciesPokedexAreaMarkers(u16 species, struct Subsprite * subsprites)
+{
+    s32 areaCount;
+
+    if (GetRoamerIndex(species) >= 0)
+        return GetRoamerPokedexAreaMarkers(species, subsprites);
+
+    if (FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS))
+    {
+        // In divergent mode a species is placed in the divergent tables no
+        // matter its Dex number, so scan those first. Only if it is absent
+        // there AND it is a shared species (never duplicated into the divergent
+        // file) do we fall back to the standard tables. A mode-specific species
+        // that is missing from the divergent tables correctly shows nothing.
+        areaCount = ScanAreaMarkers(species, subsprites, TRUE);
+        if (areaCount == 0 && IsSharedAreaSpecies(species))
+            areaCount = ScanAreaMarkers(species, subsprites, FALSE);
+
+        return areaCount;
+    }
+
+    return ScanAreaMarkers(species, subsprites, FALSE);
 }
