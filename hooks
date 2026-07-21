@@ -807,3 +807,8 @@ IsMail 80980F8 1
 ##Tutorial Battle Voiceover Frame (fix textbox corruption after Oak/Poke Dude text)
 BtlCtrl_DrawVoiceoverMessageFrame 80EB30C 0
 BtlCtrl_RemoveVoiceoverMessageFrame 80EB524 0
+
+##Diploma region name chosen by divergent-mode flag (0x945) instead of HasAllMons()
+DiplomaChooseRegionNameByMode 080F502A 0
+##Diploma background half chosen by divergent-mode flag (0x945) instead of HasAllMons()
+DiplomaSetBackgroundByMode 080F4CDC 0

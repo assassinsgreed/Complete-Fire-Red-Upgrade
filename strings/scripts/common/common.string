@@ -165,6 +165,12 @@ Incredible! You've captured every\nPok\emon in the region. You are a\ltruly spec
 #org @gText_PokedexAssessment_AllCaughtDiploma
 [BLUE]I'll present you with this Diploma,\nwhich celebrates your achievement.
 
+#org @gText_DiplomaRegion_KulureDivergent
+Kulure (Divergent)
+
+#org @gText_DiplomaRegion_KulureStandard
+Kulure (Standard)
+
 #org @gText_GuardHouseBinoculars
 A pair of binoculars! What can be\nseen[.]
 
