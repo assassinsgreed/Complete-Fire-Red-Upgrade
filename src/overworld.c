@@ -3327,6 +3327,8 @@ const union AnimCmd gEventObjectImageAnim_RunEast[] =
 void SwitchMonNature()
 {
 	gSpecialVar_LastResult = FALSE; // Did not perform the nature change
+	if (Var8005 >= PARTY_SIZE) // Guard against OOB read/write-back into SaveBlock2
+		return;
 	struct Pokemon* mon = &gPlayerParty[Var8005];
 	u32 speciesPersonality = GetMonData(mon, MON_DATA_PERSONALITY, NULL);
 	if (VarGet(Var8006) == GetNatureFromPersonality(speciesPersonality))

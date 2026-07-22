@@ -729,7 +729,7 @@ void sp062_PokemonEraser(void)
 	u8 slot = Var8004;
 	if (slot == 0xF)
 		ZeroPlayerPartyMons();
-	else
+	else if (slot < PARTY_SIZE) // Guard against OOB writes into SaveBlock2 (e.g. leftover Var8004 = 7 from a cancelled party menu)
 	{
 		ZeroMonData(&gPlayerParty[slot]);
 		CompactPartySlots();

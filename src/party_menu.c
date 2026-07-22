@@ -2945,7 +2945,10 @@ void StoreIsPartyMonEgg()
 {
 	u16 partyId = Var8004;
 	if (partyId >= PARTY_SIZE)
+	{
 		Var800D = FALSE;
+		return;
+	}
 
 	Var800D = GetMonData(&gPlayerParty[Var8004], MON_DATA_IS_EGG, NULL);
 }
@@ -2969,7 +2972,10 @@ void StoreIsPartyMonRotom()
 {
 	u16 partyId = Var8004;
 	if (partyId >= PARTY_SIZE)
+	{
 		Var800D = FALSE;
+		return;
+	}
 
 	u16 species = GetMonData(&gPlayerParty[Var8004], MON_DATA_SPECIES, NULL);
 	switch (species)
