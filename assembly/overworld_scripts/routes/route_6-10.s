@@ -573,6 +573,17 @@ SignScript_Route9_Route12RestHouse:
 @ Route 10
 .equ Casey, 0x11
 
+.global MapScript_Route10
+MapScript_Route10:
+    mapscript MAP_SCRIPT_ON_LOAD MapLoadScript_Route10_SetCaseySprite
+    .byte MAP_SCRIPT_TERMIN
+
+MapLoadScript_Route10_SetCaseySprite:
+    @ Avoid a sprite issue if Casey was battled & lost to, then a dynamic-gfx map (e.g. Rubarr Desert) was visited, then returning here
+    setflag 0x03D @ Hide Casey
+    call SetCaseyGender
+    end
+
 .global EventScript_Route10_TM64_Explosion
 EventScript_Route10_TM64_Explosion:
     setvar CHOSEN_ITEM ITEM_TM64

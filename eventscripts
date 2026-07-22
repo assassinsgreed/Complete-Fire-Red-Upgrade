@@ -1190,6 +1190,7 @@ sign 3 27 2 SignScript_Route9_Route12RestHouse
 npc 19 0 0 EventScript_Route9_Flutist
 
 # Route 10
+map 3 28 MapScript_Route10
 npc 3 28 0 ItemScript_Common_RockIncense
 npc 3 28 1 ItemScript_Common_PsychicSeed
 npc 3 28 2 EventScript_Route10_TM64_Explosion

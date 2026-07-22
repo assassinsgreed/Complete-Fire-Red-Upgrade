@@ -10,9 +10,16 @@
 
 .global MapScript_TormaCave
 MapScript_TormaCave:
+    mapscript MAP_SCRIPT_ON_LOAD MapLoadScript_TormaCave_SetCaseySprite
     mapscript MAP_SCRIPT_ON_TRANSITION MapEntryScript_TormaCave_FlightFlag
     mapscript MAP_SCRIPT_ON_RESUME HideTrapPokemon
 	.byte MAP_SCRIPT_TERMIN
+
+MapLoadScript_TormaCave_SetCaseySprite:
+    @ Avoid a sprite issue if Casey was battled & lost to, then Rubarr Desert was visited (setting the legendary sprite), then returning here
+    setflag 0x03D @ Show Casey
+    call SetCaseyGender
+    end
 
 MapEntryScript_TormaCave_FlightFlag:
     setworldmapflag 0x8A6 @ Been to Torma Cave
