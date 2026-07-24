@@ -3976,15 +3976,21 @@ void ResetAllLegendaries()
 		}
 	}
 
-	// Handle non-roamers
+	// Handle non-roamers. Each hide flag guards a single overworld slot, but the species that
+	// occupies that slot differs between Standard and Divergent mode (Shaymin/Xerneas share 0x4B,
+	// Kyogre/Lugia share 0x4C, etc.). Dex-check the species that actually lives in the current
+	// mode, otherwise a Divergent player who never caught the Standard species would always fail
+	// the check and get the flag cleared on every Hall of Fame entry (respawning the legendary).
+	bool8 divergent = FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS);
+
 	int species[7] = {
-		SPECIES_JIRACHI,
-		SPECIES_SHAYMIN,
-		SPECIES_KYOGRE,
-		SPECIES_GROUDON,
-		SPECIES_VOLCANION,
-		SPECIES_GLASTRIER,
-		SPECIES_MELTAN,
+		SPECIES_JIRACHI, // Jirachi in both modes
+		divergent ? SPECIES_XERNEAS   : SPECIES_SHAYMIN,
+		divergent ? SPECIES_LUGIA     : SPECIES_KYOGRE,
+		divergent ? SPECIES_HOOPA     : SPECIES_GROUDON,
+		divergent ? SPECIES_HEATRAN   : SPECIES_VOLCANION,
+		divergent ? SPECIES_SPECTRIER : SPECIES_GLASTRIER,
+		divergent ? SPECIES_GENESECT  : SPECIES_MELTAN,
 	};
 
 	int speciesFlags[7] = {
