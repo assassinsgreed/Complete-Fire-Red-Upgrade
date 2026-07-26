@@ -1,5 +1,6 @@
 #include "defines.h"
 #include "defines_battle.h"
+#include "../include/m4a.h"
 #include "../include/battle_anim.h"
 #include "../include/menu.h"
 #include "../include/sprite.h"
@@ -1842,6 +1843,9 @@ void PlayerHandleChooseAction(void)
 	int i;
 	u16 itemId = gBattleBufferA[gActiveBattler][2] | (gBattleBufferA[gActiveBattler][3] << 8);
 	bool8 raidBattleEnd = RAID_BATTLE_END;
+
+	// Restore full volume BGM once all Pokemon are sent out (specifically for doubles/partner battles)
+	m4aMPlayVolumeControl(&gMPlayInfo_BGM, 0xFFFF, 0x100);
 
 	gNewBS->zMoveData.toBeUsed[gActiveBattler] = FALSE;
 
