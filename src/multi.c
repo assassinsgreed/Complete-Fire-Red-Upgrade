@@ -147,7 +147,14 @@ static bool8 ShouldRestoreBattleBgm(bool8 battlerAnimsDone)
 	if (battlerAnimsDone)
 		return TRUE;
 
-	return IS_DOUBLE_BATTLE && !(gBattleTypeFlags & (BATTLE_TYPE_MULTI | BATTLE_TYPE_TWO_OPPONENTS));
+	// In standard doubles the partner battler never gets a separate intro ball anim,
+	// so waiting for both battlers to finish can leave the music at reduced volume
+	// until the first turn. Restore it once the active battler's intro is done.
+	// INGAME_PARTNER is excluded: its battlers have real send-out anims, and this same
+	// gate finalizes the intro control-sprite teardown, so advancing early would tear
+	// down a control sprite mid-throw. The BGM there is covered by the action-select
+	// safety net in PlayerHandleChooseAction instead.
+	return IS_DOUBLE_BATTLE && !(gBattleTypeFlags & (BATTLE_TYPE_MULTI | BATTLE_TYPE_TWO_OPPONENTS | BATTLE_TYPE_INGAME_PARTNER));
 }
 
 static void SetShinyAnimOver(u8 bank)
