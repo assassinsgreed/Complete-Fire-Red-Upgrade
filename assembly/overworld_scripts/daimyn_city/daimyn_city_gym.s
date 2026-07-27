@@ -727,7 +727,13 @@ SignScript_DaimynCityGym_GymPlacard:
     end
 
 SignScript_DaimynCityGym_PlacardWithBadgeAfterPluto:
+    checkflag 0x823 @ Daimyn gym badge
+    if NOT_SET _goto SignScript_DaimynCityGym_PlacardAfterPlutoNoBadge
     msgbox gText_DaimynCityGym_WinnersWithBadgeAndRival MSG_SIGN
+    end
+
+SignScript_DaimynCityGym_PlacardAfterPlutoNoBadge:
+    msgbox gText_DaimynCityGym_WinnersWithNoBadgeAndRival MSG_SIGN
     end
 
 SignScript_DaimynCityGym_PlacardWithBadge:

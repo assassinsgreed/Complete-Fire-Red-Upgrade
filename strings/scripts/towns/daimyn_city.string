@@ -1007,6 +1007,9 @@ Daimyn City Gym\nVictors: Casey, [PLAYER]
 #org @gText_DaimynCityGym_WinnersWithBadgeAndRival
 Daimyn City Gym\nVictors: Casey, [PLAYER], [RIVAL]
 
+#org @gText_DaimynCityGym_WinnersWithNoBadgeAndRival
+Daimyn City Gym\nVictors: Casey, [RIVAL]
+
 #org @gText_DaimynCityGym_SlotMachinePrompt
 It's a slot machine! Want to play?
 
