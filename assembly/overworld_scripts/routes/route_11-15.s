@@ -1756,13 +1756,17 @@ LevelScript_HandleBreakableIce:
 
 .global MapScript_Route13Cave_KurtisRoom
 MapScript_Route13Cave_KurtisRoom:
-    mapscript MAP_SCRIPT_ON_LOAD Route13Cave_KurtisRoom
+    mapscript MAP_SCRIPT_ON_LOAD Route13Cave_KurtisRoom @ Handle map load upon entry
+    mapscript MAP_SCRIPT_ON_RETURN_TO_FIELD Route13Cave_KurtisRoom @ Handle map refreshing from menu, save reload, etc.
     .byte MAP_SCRIPT_TERMIN
 
 Route13Cave_KurtisRoom:
+    setflag 0x1B @ Hide Kurtis by default
     checkflag 0x288 @ Kurtis beaten in Route 13 Cave
+    if SET _goto End
+    checkflag 0x82C @ Game cleared
     if NOT_SET _goto End
-    hidesprite 0x1 @ Hide Kurtis when defeated
+    clearflag 0x1B @ Kurtis not beaten and in postgame currently; show him
     end
 
 .global EventScript_Route13Cave_TM65ShadowClaw
@@ -1785,6 +1789,7 @@ EventScript_Route13Cave_Kurtis:
     msgbox gText_Route13Cave_KurtisCommentsOnPlutoRisingUp MSG_NORMAL
     fadescreen FADEOUT_BLACK
     hidesprite LASTTALKED
+    setflag 0x1B @ Hide Kurtis when defeated
     setflag 0x288 @ Kurtis beaten in Route 13 Cave
     setflag 0x0B4 @ Catch Trainers' Pokemon Unlocked
     fadescreen FADEIN_BLACK

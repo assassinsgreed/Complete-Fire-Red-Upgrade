@@ -26,7 +26,7 @@
 #define FLAG_TEMP_18 0x018
 #define FLAG_TEMP_19 0x019 // Used to hide partygoers in Anthra Town
 #define FLAG_TEMP_1A 0x01A // Used to hide Glastrier / Spectrier
-#define FLAG_TEMP_1B 0x01B // Used to get Monty out of bed
+#define FLAG_TEMP_1B 0x01B // Used to get Monty out of bed & hide Kurtis in Route 13 cave
 #define FLAG_TEMP_1C 0x01C
 #define FLAG_TEMP_1D 0x01D
 #define FLAG_TEMP_1E 0x01E
