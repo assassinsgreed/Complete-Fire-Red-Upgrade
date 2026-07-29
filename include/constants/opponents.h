@@ -1,4 +1,6 @@
 // Vanilla FR has 742 Trainer slots
+// NOTE: IDs 917-921 (0x395-0x399) are reserved by the Battle Frontier engine.
+// See the reserved block at the bottom of this file before expanding past 916.
 #define TRAINER_NONE                                 0
 #define TRAINER_RIVAL1                               1
 // Route 1
@@ -668,3 +670,23 @@
 #define TRAINER_POSTGAME_RIVAL_EXHIBITION_BATTLE_EMRALDIN 599
 // Heleo City Blissey Trainer
 #define TRAINER_HELEO_CITY_NURSE_BRIANNE             600
+
+// ---------------------------------------------------------------------------
+// RESERVED: 917-921 (0x395-0x399) - Battle Frontier trainer IDs.
+// DO NOT assign these to real trainers.
+//
+// The frontier engine uses these to dynamically populate trainers via IsFrontierTrainerId() (src/frontier.c)
+// then tests against them to decide whether to build a party from the frontier
+// spread tables instead of the normal trainer data. A real trainer given one of
+// these IDs would have its team silently replaced by a generated frontier team.
+//
+//   917  0x395  RAID_BATTLE_MULTI_TRAINER_TID
+//   918  0x396  BATTLE_FACILITY_MULTI_TRAINER_TID
+//   919  0x397  FRONTIER_BRAIN_TID
+//   920  0x398  BATTLE_TOWER_SPECIAL_TID
+//   921  0x399  BATTLE_TOWER_TID
+//
+// Defined in include/new/frontier.h. Vanilla FR has 742 trainer slots, so these
+// only become reachable if the trainer table is expanded past 916 - which is the
+// case this note exists to catch.
+// ---------------------------------------------------------------------------
