@@ -1616,12 +1616,24 @@ GameCustomization_PokemonSelection:
 
 EnableStandardPokemonSelection:
     clearflag 0x945 @ Divergent mode off
+    @ Set Divergent-exclusive mega stone pickup flags so they don't appear
+	setflag 0x292 @ Hide Beedrillite
+	setflag 0x293 @ Hide Aggronite
+	setflag 0x294 @ Hide Cameruptite
+	setflag 0x295 @ Hide Altarinite
+	setflag 0x296 @ Hide Audinite
     sound 0x30 @Save
     msgbox gText_GameCustomization_PokemonSelection_StandardSet MSG_NORMAL @ TODO
 	return
 
 EnableDivergentPokemonSelection:
     setflag 0x945 @ Divergent mode on
+    @ Clear Divergent-exclusive mega stone pickup flags so they appear
+	clearflag 0x292 @ Show Beedrillite
+	clearflag 0x293 @ Show Aggronite
+	clearflag 0x294 @ Show Cameruptite
+	clearflag 0x295 @ Show Altarinite
+	clearflag 0x296 @ Show Audinite
     sound 0x30 @Save
     msgbox gText_GameCustomization_PokemonSelection_DivergentSet MSG_NORMAL
 	return

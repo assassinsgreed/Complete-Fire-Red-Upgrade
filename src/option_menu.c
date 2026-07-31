@@ -425,24 +425,27 @@ void CloseAndSaveOptionMenu(u8 taskId)
             {
                 if (!CheckBagHasItem(ITEM_TYRANITARITE, 1))
                     AddBagItem(ITEM_TYRANITARITE, 1);
-
-                // Reenable Divergent-only mode stones
-                FlagClear(FLAG_ROUTE11_NORTH_BEEDRILLITE);
-		        FlagClear(FLAG_ROUTE20CAVE_AGGRONITE);
-		        FlagClear(FLAG_ROUTE13_CAMERUPTITE);
-		        FlagClear(FLAG_ROUTE19_ALTARIANITE);
-		        FlagClear(FLAG_ROUTE16_AUDINITE);
             }
             else
             {
                 if (!CheckBagHasItem(ITEM_HOUNDOOMINITE, 1))
                     AddBagItem(ITEM_HOUNDOOMINITE, 1);
 
-                /*
-                    Beedrillnite, Aggronite, Cameruptite, Altarianite, and Audinite are Divergent-only and are hidden in
-                    overworld.c, so they are hidden in historic saves in standard mode
-                */
+                }
             }
+            
+        /*
+            Beedrillnite, Aggronite, Cameruptite, Altarianite, and Audinite are Divergent-only and are hidden in
+            overworld.c, so they are hidden in historic saves in standard mode
+        */
+        if (FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS))
+        {
+            // Reenable Divergent-only mode stones
+            FlagClear(FLAG_ROUTE11_NORTH_BEEDRILLITE);
+            FlagClear(FLAG_ROUTE20CAVE_AGGRONITE);
+            FlagClear(FLAG_ROUTE13_CAMERUPTITE);
+            FlagClear(FLAG_ROUTE19_ALTARIANITE);
+            FlagClear(FLAG_ROUTE16_AUDINITE);
         }
 
         // Only restore Gyaradosite/Gengarite when Pluto HQ is completed
