@@ -15,6 +15,7 @@
 #define BGM_EYE_PSYCHIC 0x16F
 #define BGM_EYE_ROUGHNECK 0x170
 #define BGM_EYE_TWINS 0x171
+#define BGM_EYE_BATTLE_FRONTIER_BOSS 0x19B
 
 #define BGM_VICTORY_TRAINER_BATTLE 0x136
 #define BGM_VICTORY_SPECIAL 0x138
@@ -61,6 +62,9 @@
 #define BGM_BATTLE_ALISTAIR 0x15C // N final battle theme BW
 #define BGM_BATTLE_TRAINER_HOUSE 0x12B // Champion Iris battle theme
 #define BGM_BATTLE_CASEY 0x1AF // Champion Alder battle theme
+#define BGM_BATTLE_FRONTIER_TRAINER 0x15B // Battle Subway trainer theme
+#define BGM_BATTLE_FRONTIER_BOSS 0x18D // Colress battle theme
+#define BGM_BATTLE_UNWAVERING_HEART 0x114 // Unwavering Emotions BW
 
 // See here for additional SE in Vanilla FR: https://www.pokecommunity.com/showthread.php?p=5610866#post5610866
 #define MUS_DUMMY 0

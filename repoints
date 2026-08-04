@@ -562,6 +562,9 @@ Rival2Pal 8239DFC
 ## Replace Rival 3 (125)
 Rival3Tiles 8239964
 Rival3Pal 8239E04
+## Replace CoolTrainer Duo (128)
+MortTiles 823997C
+MortPal 8239E1C
 ## Replace Professor Oak (132)
 ProfessorHawthorneBTiles 823999C
 ProfessorHawthorneBPal 8239E3C
