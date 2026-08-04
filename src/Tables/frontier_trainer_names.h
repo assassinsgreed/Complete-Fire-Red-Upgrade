@@ -150,7 +150,7 @@ extern const u8 sTrainerName_Savannah[];
 extern const u8 sTrainerName_Brooklyn[];
 extern const u8 sTrainerName_Leah[];
 extern const u8 sTrainerName_Zoe[];
-extern const u8 sTrainerName_Stella[];
+extern const u8 sTrainerName_Stacy[];
 extern const u8 sTrainerName_Hazel[];
 extern const u8 sTrainerName_Ellie[];
 extern const u8 sTrainerName_Paisley[];
@@ -357,7 +357,7 @@ const u8* const gFemaleFrontierNamesTable[] =
 	sTrainerName_Brooklyn,
 	sTrainerName_Leah,
 	sTrainerName_Zoe,
-	sTrainerName_Stella,
+	sTrainerName_Stacy,
 	sTrainerName_Hazel,
 	sTrainerName_Ellie,
 	sTrainerName_Paisley,

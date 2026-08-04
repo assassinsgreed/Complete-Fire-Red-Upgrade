@@ -506,7 +506,7 @@ const struct BattleTowerSpread gFrontierSpreads[] =
 		.spDefEv = 4,
 		.spdEv = 252,
 		.ability = FRONTIER_ABILITY_1, //ABILITY_COMPOUNDEYES
-		.item = ITEM_BUTTERFRITE_G,
+		.item = ITEM_BUTTERFRITE,
 		.moves =
 		{
 			MOVE_BUGBUZZ,
@@ -5106,7 +5106,7 @@ const struct BattleTowerSpread gFrontierSpreads[] =
 			MOVE_EXPANDINGFORCE,
 			MOVE_NASTYPLOT,
 			MOVE_SUBSTITUTE,
-			MOVE_PYSCHICTERRAIN,
+			MOVE_PSYCHICTERRAIN,
 		},
 		.ball = BALL_TYPE_RANDOM,
 		.forSingles = TRUE,
@@ -44557,7 +44557,7 @@ const struct BattleTowerSpread gFrontierSpreads[] =
 		.atkEv = 252,
 		.spdEv = 156,
 		.ability = FRONTIER_ABILITY_HIDDEN, //ABILITY_GRASSYSURGE
-		.item = ITEM_RILLABOOMITE,
+		.item = ITEM_RILLABITE,
 		.moves =
 		{
 			MOVE_GRASSYGLIDE,

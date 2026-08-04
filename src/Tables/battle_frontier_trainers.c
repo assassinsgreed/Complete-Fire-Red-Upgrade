@@ -41,8 +41,6 @@ extern const u8 sFrontierText_Youngster_PlayerLose_2[];
 extern const u8 sFrontierText_Youngster_PreBattle_3[];
 extern const u8 sFrontierText_Youngster_PlayerWin_3[];
 extern const u8 sFrontierText_Youngster_PlayerLose_3[];
-
-#ifdef UNBOUND
 extern const u8 sFrontierText_Bugcatcher_PreBattle_1[];
 extern const u8 sFrontierText_Bugcatcher_PlayerWin_1[];
 extern const u8 sFrontierText_Bugcatcher_PlayerLose_1[];
@@ -124,15 +122,6 @@ extern const u8 sFrontierText_Biker_PlayerLose_2[];
 extern const u8 sFrontierText_Biker_PreBattle_3[];
 extern const u8 sFrontierText_Biker_PlayerWin_3[];
 extern const u8 sFrontierText_Biker_PlayerLose_3[];
-extern const u8 sFrontierText_Cyclist_PreBattle_1[];
-extern const u8 sFrontierText_Cyclist_PlayerWin_1[];
-extern const u8 sFrontierText_Cyclist_PlayerLose_1[];
-extern const u8 sFrontierText_Cyclist_PreBattle_2[];
-extern const u8 sFrontierText_Cyclist_PlayerWin_2[];
-extern const u8 sFrontierText_Cyclist_PlayerLose_2[];
-extern const u8 sFrontierText_Cyclist_PreBattle_3[];
-extern const u8 sFrontierText_Cyclist_PlayerWin_3[];
-extern const u8 sFrontierText_Cyclist_PlayerLose_3[];
 extern const u8 sFrontierText_Worker_PreBattle_1[];
 extern const u8 sFrontierText_Worker_PlayerWin_1[];
 extern const u8 sFrontierText_Worker_PlayerLose_1[];
@@ -160,15 +149,6 @@ extern const u8 sFrontierText_Fisherman_PlayerLose_2[];
 extern const u8 sFrontierText_Fisherman_PreBattle_3[];
 extern const u8 sFrontierText_Fisherman_PlayerWin_3[];
 extern const u8 sFrontierText_Fisherman_PlayerLose_3[];
-extern const u8 sFrontierText_Roughneck_PreBattle_1[];
-extern const u8 sFrontierText_Roughneck_PlayerWin_1[];
-extern const u8 sFrontierText_Roughneck_PlayerLose_1[];
-extern const u8 sFrontierText_Roughneck_PreBattle_2[];
-extern const u8 sFrontierText_Roughneck_PlayerWin_2[];
-extern const u8 sFrontierText_Roughneck_PlayerLose_2[];
-extern const u8 sFrontierText_Roughneck_PreBattle_3[];
-extern const u8 sFrontierText_Roughneck_PlayerWin_3[];
-extern const u8 sFrontierText_Roughneck_PlayerLose_3[];
 extern const u8 sFrontierText_Gambler_PreBattle_1[];
 extern const u8 sFrontierText_Gambler_PlayerWin_1[];
 extern const u8 sFrontierText_Gambler_PlayerLose_1[];
@@ -334,24 +314,6 @@ extern const u8 sFrontierText_Pkmnbreeder_PlayerLose_5[];
 extern const u8 sFrontierText_Pkmnbreeder_PreBattle_6[];
 extern const u8 sFrontierText_Pkmnbreeder_PlayerWin_6[];
 extern const u8 sFrontierText_Pkmnbreeder_PlayerLose_6[];
-extern const u8 sFrontierText_Pkmnranger_PreBattle_1[];
-extern const u8 sFrontierText_Pkmnranger_PlayerWin_1[];
-extern const u8 sFrontierText_Pkmnranger_PlayerLose_1[];
-extern const u8 sFrontierText_Pkmnranger_PreBattle_2[];
-extern const u8 sFrontierText_Pkmnranger_PlayerWin_2[];
-extern const u8 sFrontierText_Pkmnranger_PlayerLose_2[];
-extern const u8 sFrontierText_Pkmnranger_PreBattle_3[];
-extern const u8 sFrontierText_Pkmnranger_PlayerWin_3[];
-extern const u8 sFrontierText_Pkmnranger_PlayerLose_3[];
-extern const u8 sFrontierText_Pkmnranger_PreBattle_4[];
-extern const u8 sFrontierText_Pkmnranger_PlayerWin_4[];
-extern const u8 sFrontierText_Pkmnranger_PlayerLose_4[];
-extern const u8 sFrontierText_Pkmnranger_PreBattle_5[];
-extern const u8 sFrontierText_Pkmnranger_PlayerWin_5[];
-extern const u8 sFrontierText_Pkmnranger_PlayerLose_5[];
-extern const u8 sFrontierText_Pkmnranger_PreBattle_6[];
-extern const u8 sFrontierText_Pkmnranger_PlayerWin_6[];
-extern const u8 sFrontierText_Pkmnranger_PlayerLose_6[];
 extern const u8 sFrontierText_Aromalady_PreBattle_1[];
 extern const u8 sFrontierText_Aromalady_PlayerWin_1[];
 extern const u8 sFrontierText_Aromalady_PlayerLose_1[];
@@ -370,24 +332,6 @@ extern const u8 sFrontierText_Ruinmaniac_PlayerLose_2[];
 extern const u8 sFrontierText_Ruinmaniac_PreBattle_3[];
 extern const u8 sFrontierText_Ruinmaniac_PlayerWin_3[];
 extern const u8 sFrontierText_Ruinmaniac_PlayerLose_3[];
-extern const u8 sFrontierText_Richboy_PreBattle_1[];
-extern const u8 sFrontierText_Richboy_PlayerWin_1[];
-extern const u8 sFrontierText_Richboy_PlayerLose_1[];
-extern const u8 sFrontierText_Richboy_PreBattle_2[];
-extern const u8 sFrontierText_Richboy_PlayerWin_2[];
-extern const u8 sFrontierText_Richboy_PlayerLose_2[];
-extern const u8 sFrontierText_Richboy_PreBattle_3[];
-extern const u8 sFrontierText_Richboy_PlayerWin_3[];
-extern const u8 sFrontierText_Richboy_PlayerLose_3[];
-extern const u8 sFrontierText_Richgirl_PreBattle_1[];
-extern const u8 sFrontierText_Richgirl_PlayerWin_1[];
-extern const u8 sFrontierText_Richgirl_PlayerLose_1[];
-extern const u8 sFrontierText_Richgirl_PreBattle_2[];
-extern const u8 sFrontierText_Richgirl_PlayerWin_2[];
-extern const u8 sFrontierText_Richgirl_PlayerLose_2[];
-extern const u8 sFrontierText_Richgirl_PreBattle_3[];
-extern const u8 sFrontierText_Richgirl_PlayerWin_3[];
-extern const u8 sFrontierText_Richgirl_PlayerLose_3[];
 extern const u8 sFrontierText_Painter_PreBattle_1[];
 extern const u8 sFrontierText_Painter_PlayerWin_1[];
 extern const u8 sFrontierText_Painter_PlayerLose_1[];
@@ -397,69 +341,6 @@ extern const u8 sFrontierText_Painter_PlayerLose_2[];
 extern const u8 sFrontierText_Painter_PreBattle_3[];
 extern const u8 sFrontierText_Painter_PlayerWin_3[];
 extern const u8 sFrontierText_Painter_PlayerLose_3[];
-extern const u8 sFrontierText_Waiter_PreBattle_1[];
-extern const u8 sFrontierText_Waiter_PlayerWin_1[];
-extern const u8 sFrontierText_Waiter_PlayerLose_1[];
-extern const u8 sFrontierText_Waiter_PreBattle_2[];
-extern const u8 sFrontierText_Waiter_PlayerWin_2[];
-extern const u8 sFrontierText_Waiter_PlayerLose_2[];
-extern const u8 sFrontierText_Waiter_PreBattle_3[];
-extern const u8 sFrontierText_Waiter_PlayerWin_3[];
-extern const u8 sFrontierText_Waiter_PlayerLose_3[];
-extern const u8 sFrontierText_Waitress_PreBattle_1[];
-extern const u8 sFrontierText_Waitress_PlayerWin_1[];
-extern const u8 sFrontierText_Waitress_PlayerLose_1[];
-extern const u8 sFrontierText_Waitress_PreBattle_2[];
-extern const u8 sFrontierText_Waitress_PlayerWin_2[];
-extern const u8 sFrontierText_Waitress_PlayerLose_2[];
-extern const u8 sFrontierText_Waitress_PreBattle_3[];
-extern const u8 sFrontierText_Waitress_PlayerWin_3[];
-extern const u8 sFrontierText_Waitress_PlayerLose_3[];
-extern const u8 sFrontierText_Idol_PreBattle_1[];
-extern const u8 sFrontierText_Idol_PlayerWin_1[];
-extern const u8 sFrontierText_Idol_PlayerLose_1[];
-extern const u8 sFrontierText_Idol_PreBattle_2[];
-extern const u8 sFrontierText_Idol_PlayerWin_2[];
-extern const u8 sFrontierText_Idol_PlayerLose_2[];
-extern const u8 sFrontierText_Idol_PreBattle_3[];
-extern const u8 sFrontierText_Idol_PlayerWin_3[];
-extern const u8 sFrontierText_Idol_PlayerLose_3[];
-extern const u8 sFrontierText_Pokekid_PreBattle_1[];
-extern const u8 sFrontierText_Pokekid_PlayerWin_1[];
-extern const u8 sFrontierText_Pokekid_PlayerLose_1[];
-extern const u8 sFrontierText_Pokekid_PreBattle_2[];
-extern const u8 sFrontierText_Pokekid_PlayerWin_2[];
-extern const u8 sFrontierText_Pokekid_PlayerLose_2[];
-extern const u8 sFrontierText_Pokekid_PreBattle_3[];
-extern const u8 sFrontierText_Pokekid_PlayerWin_3[];
-extern const u8 sFrontierText_Pokekid_PlayerLose_3[];
-extern const u8 sFrontierText_Jogger_PreBattle_1[];
-extern const u8 sFrontierText_Jogger_PlayerWin_1[];
-extern const u8 sFrontierText_Jogger_PlayerLose_1[];
-extern const u8 sFrontierText_Jogger_PreBattle_2[];
-extern const u8 sFrontierText_Jogger_PlayerWin_2[];
-extern const u8 sFrontierText_Jogger_PlayerLose_2[];
-extern const u8 sFrontierText_Jogger_PreBattle_3[];
-extern const u8 sFrontierText_Jogger_PlayerWin_3[];
-extern const u8 sFrontierText_Jogger_PlayerLose_3[];
-extern const u8 sFrontierText_Rancher_PreBattle_1[];
-extern const u8 sFrontierText_Rancher_PlayerWin_1[];
-extern const u8 sFrontierText_Rancher_PlayerLose_1[];
-extern const u8 sFrontierText_Rancher_PreBattle_2[];
-extern const u8 sFrontierText_Rancher_PlayerWin_2[];
-extern const u8 sFrontierText_Rancher_PlayerLose_2[];
-extern const u8 sFrontierText_Rancher_PreBattle_3[];
-extern const u8 sFrontierText_Rancher_PlayerWin_3[];
-extern const u8 sFrontierText_Rancher_PlayerLose_3[];
-extern const u8 sFrontierText_Rancher_PreBattle_4[];
-extern const u8 sFrontierText_Rancher_PlayerWin_4[];
-extern const u8 sFrontierText_Rancher_PlayerLose_4[];
-extern const u8 sFrontierText_Rancher_PreBattle_5[];
-extern const u8 sFrontierText_Rancher_PlayerWin_5[];
-extern const u8 sFrontierText_Rancher_PlayerLose_5[];
-extern const u8 sFrontierText_Rancher_PreBattle_6[];
-extern const u8 sFrontierText_Rancher_PlayerWin_6[];
-extern const u8 sFrontierText_Rancher_PlayerLose_6[];
 extern const u8 sFrontierText_ExpertM_PreBattle_1[];
 extern const u8 sFrontierText_ExpertM_PlayerWin_1[];
 extern const u8 sFrontierText_ExpertM_PlayerLose_1[];
@@ -496,70 +377,120 @@ extern const u8 sFrontierText_Nurse_PlayerLose_2[];
 extern const u8 sFrontierText_Nurse_PreBattle_3[];
 extern const u8 sFrontierText_Nurse_PlayerWin_3[];
 extern const u8 sFrontierText_Nurse_PlayerLose_3[];
+extern const u8 sFrontierText_Swimmer_PreBattle_1[];
+extern const u8 sFrontierText_Swimmer_PlayerWin_1[];
+extern const u8 sFrontierText_Swimmer_PlayerLose_1[];
+extern const u8 sFrontierText_Swimmer_PreBattle_2[];
+extern const u8 sFrontierText_Swimmer_PlayerWin_2[];
+extern const u8 sFrontierText_Swimmer_PlayerLose_2[];
+extern const u8 sFrontierText_Swimmer_PreBattle_3[];
+extern const u8 sFrontierText_Swimmer_PlayerWin_3[];
+extern const u8 sFrontierText_Swimmer_PlayerLose_3[];
+extern const u8 sFrontierText_Swimmer_PreBattle_1[];
+extern const u8 sFrontierText_Swimmer_PlayerWin_1[];
+extern const u8 sFrontierText_Swimmer_PlayerLose_1[];
+extern const u8 sFrontierText_Swimmer_PreBattle_2[];
+extern const u8 sFrontierText_Swimmer_PlayerWin_2[];
+extern const u8 sFrontierText_Swimmer_PlayerLose_2[];
+extern const u8 sFrontierText_Swimmer_PreBattle_3[];
+extern const u8 sFrontierText_Swimmer_PlayerWin_3[];
+extern const u8 sFrontierText_Swimmer_PlayerLose_3[];
+extern const u8 sFrontierText_NinjaBoy_PreBattle_1[];
+extern const u8 sFrontierText_NinjaBoy_PlayerWin_1[];
+extern const u8 sFrontierText_NinjaBoy_PlayerLose_1[];
+extern const u8 sFrontierText_NinjaBoy_PreBattle_2[];
+extern const u8 sFrontierText_NinjaBoy_PlayerWin_2[];
+extern const u8 sFrontierText_NinjaBoy_PlayerLose_2[];
+extern const u8 sFrontierText_NinjaBoy_PreBattle_3[];
+extern const u8 sFrontierText_NinjaBoy_PlayerWin_3[];
+extern const u8 sFrontierText_NinjaBoy_PlayerLose_3[];
+extern const u8 sFrontierText_Channeler_PreBattle_1[];
+extern const u8 sFrontierText_Channeler_PlayerWin_1[];
+extern const u8 sFrontierText_Channeler_PlayerLose_1[];
+extern const u8 sFrontierText_Channeler_PreBattle_2[];
+extern const u8 sFrontierText_Channeler_PlayerWin_2[];
+extern const u8 sFrontierText_Channeler_PlayerLose_2[];
+extern const u8 sFrontierText_Channeler_PreBattle_3[];
+extern const u8 sFrontierText_Channeler_PlayerWin_3[];
+extern const u8 sFrontierText_Channeler_PlayerLose_3[];
+extern const u8 sFrontierText_Skier_PreBattle_1[];
+extern const u8 sFrontierText_Skier_PlayerWin_1[];
+extern const u8 sFrontierText_Skier_PlayerLose_1[];
+extern const u8 sFrontierText_Skier_PreBattle_2[];
+extern const u8 sFrontierText_Skier_PlayerWin_2[];
+extern const u8 sFrontierText_Skier_PlayerLose_2[];
+extern const u8 sFrontierText_Skier_PreBattle_3[];
+extern const u8 sFrontierText_Skier_PlayerWin_3[];
+extern const u8 sFrontierText_Skier_PlayerLose_3[];
 
-extern const u8 sTrainerName_Palmer[];
-extern const u8 sTrainerName_Pat[];
-extern const u8 sTrainerName_Pablo[];
-extern const u8 sTrainerName_Paula[];
-extern const u8 sTrainerName_Skeli[];
-extern const u8 sTrainerName_Golche[];
-extern const u8 sTrainerName_Gail[];
-extern const u8 sTrainerName_Lixdel[];
-extern const u8 sTrainerName_Cynthia[];
-extern const u8 sTrainerName_Red[];
-extern const u8 sTrainerName_BigMo[];
-extern const u8 sTrainerName_Galavan[];
-extern const u8 sTrainerName_Candice[];
-extern const u8 sTrainerName_Giovanni[];
+extern const u8 sTrainerName_Mort[];
+extern const u8 sTrainerName_Rival[];
+extern const u8 sTrainerName_Selene[];
+extern const u8 sTrainerName_Alistair[];
+extern const u8 sTrainerName_Collin[];
+extern const u8 sTrainerName_Crystal[];
+extern const u8 sTrainerName_Brendan[];
+extern const u8 sTrainerName_May[];
+extern const u8 sTrainerName_Terrence[];
+extern const u8 sTrainerName_Stella[];
+extern const u8 sTrainerName_Raine[];
+extern const u8 sTrainerName_Chance[];
+extern const u8 sTrainerName_Casey[];
+extern const u8 sTrainerName_Abby[];
+extern const u8 sTrainerName_Iris[];
+extern const u8 sTrainerName_Dennis[];
 
-extern const u8 sFrontierText_Pat_PlayerWin[];
-extern const u8 sFrontierText_Pat_PlayerLose[];
+// Aces - Randomly chosen at streak 20
+extern const u8 sFrontierText_Mort_PreBattle[];
+extern const u8 sFrontierText_Mort_PlayerWin[];
+extern const u8 sFrontierText_Mort_PlayerLose[];
+extern const u8 sFrontierText_Rival_PreBattle[];
+extern const u8 sFrontierText_Rival_PlayerWin[];
+extern const u8 sFrontierText_Rival_PlayerLose[];
+extern const u8 sFrontierText_Selene_PreBattle[];
+extern const u8 sFrontierText_Selene_PlayerWin[];
+extern const u8 sFrontierText_Selene_PlayerLose[];
+extern const u8 sFrontierText_Alistair_PreBattle[];
+extern const u8 sFrontierText_Alistair_PlayerWin[];
+extern const u8 sFrontierText_Alistair_PlayerLose[];
+extern const u8 sFrontierText_Collin_PreBattle[];
+extern const u8 sFrontierText_Collin_PlayerWin[];
+extern const u8 sFrontierText_Collin_PlayerLose[];
+extern const u8 sFrontierText_Crystal_PreBattle[];
+extern const u8 sFrontierText_Crystal_PlayerWin[];
+extern const u8 sFrontierText_Crystal_PlayerLose[];
+extern const u8 sFrontierText_Brendan_PreBattle[];
+extern const u8 sFrontierText_Brendan_PlayerWin[];
+extern const u8 sFrontierText_Brendan_PlayerLose[];
+extern const u8 sFrontierText_May_PreBattle[];
+extern const u8 sFrontierText_May_PlayerWin[];
+extern const u8 sFrontierText_May_PlayerLose[];
 
-extern const u8 sFrontierText_Pablo_PlayerWin[];
-extern const u8 sFrontierText_Pablo_PlayerLose[];
-
-extern const u8 sFrontierText_Paula_PlayerWin[];
-extern const u8 sFrontierText_Paula_PlayerLose[];
-
-extern const u8 sFrontierText_Skeli_PreBattle[];
-extern const u8 sFrontierText_Skeli_PlayerWin[];
-extern const u8 sFrontierText_Skeli_PlayerLose[];
-
-extern const u8 sFrontierText_Golche_PreBattle[];
-extern const u8 sFrontierText_Golche_PlayerWin[];
-extern const u8 sFrontierText_Golche_PlayerLose[];
-
-extern const u8 sFrontierText_Gail_PreBattle[];
-extern const u8 sFrontierText_Gail_PlayerWin[];
-extern const u8 sFrontierText_Gail_PlayerLose[];
-
-extern const u8 sFrontierText_Lixdel_PreBattle[];
-extern const u8 sFrontierText_Lixdel_PlayerWin[];
-extern const u8 sFrontierText_Lixdel_PlayerLose[];
-
-extern const u8 sFrontierText_Cynthia_PreBattle[];
-extern const u8 sFrontierText_Cynthia_PlayerWin[];
-extern const u8 sFrontierText_Cynthia_PlayerLose[];
-
-extern const u8 sFrontierText_Red_PreBattle[];
-extern const u8 sFrontierText_Red_PlayerWin[];
-extern const u8 sFrontierText_Red_PlayerLose[];
-
-extern const u8 sFrontierText_BigMo_PreBattle[];
-extern const u8 sFrontierText_BigMo_PlayerWin[];
-extern const u8 sFrontierText_BigMo_PlayerLose[];
-
-extern const u8 sFrontierText_Galavan_PreBattle[];
-extern const u8 sFrontierText_Galavan_PlayerWin[];
-extern const u8 sFrontierText_Galavan_PlayerLose[];
-
-extern const u8 sFrontierText_Candice_PreBattle[];
-extern const u8 sFrontierText_Candice_PlayerWin[];
-extern const u8 sFrontierText_Candice_PlayerLose[];
-
-extern const u8 sFrontierText_Giovanni_PreBattle[];
-extern const u8 sFrontierText_Giovanni_PlayerWin[];
-extern const u8 sFrontierText_Giovanni_PlayerLose[];
+// Brains - Specifically chosen by facility ID at streak 50
+extern const u8 sFrontierText_Terrence_PreBattle[];
+extern const u8 sFrontierText_Terrence_PlayerWin[];
+extern const u8 sFrontierText_Terrence_PlayerLose[];
+extern const u8 sFrontierText_Stella_PreBattle[];
+extern const u8 sFrontierText_Stella_PlayerWin[];
+extern const u8 sFrontierText_Stella_PlayerLose[];
+extern const u8 sFrontierText_Raine_PreBattle[];
+extern const u8 sFrontierText_Raine_PlayerWin[];
+extern const u8 sFrontierText_Raine_PlayerLose[];
+extern const u8 sFrontierText_Chance_PreBattle[];
+extern const u8 sFrontierText_Chance_PlayerWin[];
+extern const u8 sFrontierText_Chance_PlayerLose[];
+extern const u8 sFrontierText_Casey_PreBattle[];
+extern const u8 sFrontierText_Casey_PlayerWin[];
+extern const u8 sFrontierText_Casey_PlayerLose[];
+extern const u8 sFrontierText_Abby_PreBattle[];
+extern const u8 sFrontierText_Abby_PlayerWin[];
+extern const u8 sFrontierText_Abby_PlayerLose[];
+extern const u8 sFrontierText_Iris_PreBattle[];
+extern const u8 sFrontierText_Iris_PlayerWin[];
+extern const u8 sFrontierText_Iris_PlayerLose[];
+extern const u8 sFrontierText_Dennis_PreBattle[];
+extern const u8 sFrontierText_Dennis_PlayerWin[];
+extern const u8 sFrontierText_Dennis_PlayerLose[];
 
 const struct BattleTowerTrainer gTowerTrainers[] =
 {
@@ -807,7 +738,7 @@ const struct BattleTowerTrainer gTowerTrainers[] =
 		.playerLoseText = 	sFrontierText_Hiker_PlayerLose_3,
 	},
 	{
-		.owNum = 			EVENT_OBJ_GFX_BIKER,
+		.owNum = 			EVENT_OBJ_GFX_BIKER_BALL,
 		.trainerClass = 	CLASS_BIKER,
 		.trainerSprite = 	TRAINER_PIC_BIKER,
 		.gender = 			BATTLE_FACILITY_MALE,
@@ -816,7 +747,7 @@ const struct BattleTowerTrainer gTowerTrainers[] =
 		.playerLoseText = 	sFrontierText_Biker_PlayerLose_1,
 	},
 	{
-		.owNum = 			EVENT_OBJ_GFX_BIKER,
+		.owNum = 			EVENT_OBJ_GFX_BIKER_BALL,
 		.trainerClass = 	CLASS_BIKER,
 		.trainerSprite = 	TRAINER_PIC_BIKER,
 		.gender = 			BATTLE_FACILITY_MALE,
@@ -825,7 +756,7 @@ const struct BattleTowerTrainer gTowerTrainers[] =
 		.playerLoseText = 	sFrontierText_Biker_PlayerLose_2,
 	},
 	{
-		.owNum = 			EVENT_OBJ_GFX_BIKER,
+		.owNum = 			EVENT_OBJ_GFX_BIKER_BALL,
 		.trainerClass = 	CLASS_BIKER,
 		.trainerSprite = 	TRAINER_PIC_BIKER,
 		.gender = 			BATTLE_FACILITY_MALE,
@@ -834,34 +765,7 @@ const struct BattleTowerTrainer gTowerTrainers[] =
 		.playerLoseText = 	sFrontierText_Biker_PlayerLose_3,
 	},
 	{
-		.owNum = 			EVENT_OBJ_GFX_CYCLIST_M,
-		.trainerClass = 	CLASS_CYCLIST,
-		.trainerSprite = 	TRAINER_PIC_CYCLIST_M,
-		.gender = 			BATTLE_FACILITY_MALE,
-		.preBattleText = 	sFrontierText_Cyclist_PreBattle_1,
-		.playerWinText = 	sFrontierText_Cyclist_PlayerWin_1,
-		.playerLoseText = 	sFrontierText_Cyclist_PlayerLose_1,
-	},
-	{
-		.owNum = 			EVENT_OBJ_GFX_CYCLIST_F,
-		.trainerClass = 	CLASS_CYCLIST,
-		.trainerSprite = 	TRAINER_PIC_CYCLIST_F,
-		.gender = 			BATTLE_FACILITY_FEMALE,
-		.preBattleText = 	sFrontierText_Cyclist_PreBattle_2,
-		.playerWinText = 	sFrontierText_Cyclist_PlayerWin_2,
-		.playerLoseText = 	sFrontierText_Cyclist_PlayerLose_2,
-	},
-	{
-		.owNum = 			EVENT_OBJ_GFX_CYCLIST_M,
-		.trainerClass = 	CLASS_CYCLIST,
-		.trainerSprite = 	TRAINER_PIC_CYCLIST_M,
-		.gender = 			BATTLE_FACILITY_MALE,
-		.preBattleText = 	sFrontierText_Cyclist_PreBattle_3,
-		.playerWinText = 	sFrontierText_Cyclist_PlayerWin_3,
-		.playerLoseText = 	sFrontierText_Cyclist_PlayerLose_3,
-	},
-	{
-		.owNum = 			EVENT_OBJ_GFX_BURGLAR,
+		.owNum = 			EVENT_OBJ_GFX_FAT_GUY,
 		.trainerClass = 	CLASS_BURGLAR,
 		.trainerSprite = 	TRAINER_PIC_BURGLAR,
 		.gender = 			BATTLE_FACILITY_MALE,
@@ -870,7 +774,7 @@ const struct BattleTowerTrainer gTowerTrainers[] =
 		.playerLoseText = 	sFrontierText_Burglar_PlayerLose_1,
 	},
 	{
-		.owNum = 			EVENT_OBJ_GFX_BURGLAR,
+		.owNum = 			EVENT_OBJ_GFX_FAT_GUY,
 		.trainerClass = 	CLASS_BURGLAR,
 		.trainerSprite = 	TRAINER_PIC_BURGLAR,
 		.gender = 			BATTLE_FACILITY_MALE,
@@ -879,7 +783,7 @@ const struct BattleTowerTrainer gTowerTrainers[] =
 		.playerLoseText = 	sFrontierText_Burglar_PlayerLose_2,
 	},
 	{
-		.owNum = 			EVENT_OBJ_GFX_BURGLAR,
+		.owNum = 			EVENT_OBJ_GFX_FAT_GUY,
 		.trainerClass = 	CLASS_BURGLAR,
 		.trainerSprite = 	TRAINER_PIC_BURGLAR,
 		.gender = 			BATTLE_FACILITY_MALE,
@@ -888,8 +792,8 @@ const struct BattleTowerTrainer gTowerTrainers[] =
 		.playerLoseText = 	sFrontierText_Burglar_PlayerLose_3,
 	},
 	{
-		.owNum = 			EVENT_OBJ_GFX_WORKER,
-		.trainerClass = 	CLASS_WORKER,
+		.owNum = 			EVENT_OBJ_GFX_MIDDLE_AGED_MAN,
+		.trainerClass = 	CLASS_ENGINEER,
 		.trainerSprite = 	TRAINER_PIC_WORKER,
 		.gender = 			BATTLE_FACILITY_MALE,
 		.preBattleText = 	sFrontierText_Worker_PreBattle_1,
@@ -897,8 +801,8 @@ const struct BattleTowerTrainer gTowerTrainers[] =
 		.playerLoseText = 	sFrontierText_Worker_PlayerLose_1,
 	},
 	{
-		.owNum = 			EVENT_OBJ_GFX_WORKER,
-		.trainerClass = 	CLASS_WORKER,
+		.owNum = 			EVENT_OBJ_GFX_MIDDLE_AGED_MAN,
+		.trainerClass = 	CLASS_ENGINEER,
 		.trainerSprite = 	TRAINER_PIC_WORKER,
 		.gender = 			BATTLE_FACILITY_MALE,
 		.preBattleText = 	sFrontierText_Worker_PreBattle_2,
@@ -906,8 +810,8 @@ const struct BattleTowerTrainer gTowerTrainers[] =
 		.playerLoseText = 	sFrontierText_Worker_PlayerLose_2,
 	},
 	{
-		.owNum = 			EVENT_OBJ_GFX_WORKER,
-		.trainerClass = 	CLASS_WORKER,
+		.owNum = 			EVENT_OBJ_GFX_MIDDLE_AGED_MAN,
+		.trainerClass = 	CLASS_ENGINEER,
 		.trainerSprite = 	TRAINER_PIC_WORKER,
 		.gender = 			BATTLE_FACILITY_MALE,
 		.preBattleText = 	sFrontierText_Worker_PreBattle_3,
@@ -941,35 +845,9 @@ const struct BattleTowerTrainer gTowerTrainers[] =
 		.playerWinText = 	sFrontierText_Fisherman_PlayerWin_3,
 		.playerLoseText = 	sFrontierText_Fisherman_PlayerLose_3,
 	},
+
 	{
-		.owNum = 			EVENT_OBJ_GFX_ROUGHNECK,
-		.trainerClass = 	CLASS_ROUGHNECK,
-		.trainerSprite = 	TRAINER_PIC_ROUGHNECK,
-		.gender = 			BATTLE_FACILITY_MALE,
-		.preBattleText = 	sFrontierText_Roughneck_PreBattle_1,
-		.playerWinText = 	sFrontierText_Roughneck_PlayerWin_1,
-		.playerLoseText = 	sFrontierText_Roughneck_PlayerLose_1,
-	},
-	{
-		.owNum = 			EVENT_OBJ_GFX_ROUGHNECK,
-		.trainerClass = 	CLASS_ROUGHNECK,
-		.trainerSprite = 	TRAINER_PIC_ROUGHNECK,
-		.gender = 			BATTLE_FACILITY_MALE,
-		.preBattleText = 	sFrontierText_Roughneck_PreBattle_2,
-		.playerWinText = 	sFrontierText_Roughneck_PlayerWin_2,
-		.playerLoseText = 	sFrontierText_Roughneck_PlayerLose_2,
-	},
-	{
-		.owNum = 			EVENT_OBJ_GFX_ROUGHNECK,
-		.trainerClass = 	CLASS_ROUGHNECK,
-		.trainerSprite = 	TRAINER_PIC_ROUGHNECK,
-		.gender = 			BATTLE_FACILITY_MALE,
-		.preBattleText = 	sFrontierText_Roughneck_PreBattle_3,
-		.playerWinText = 	sFrontierText_Roughneck_PlayerWin_3,
-		.playerLoseText = 	sFrontierText_Roughneck_PlayerLose_3,
-	},
-	{
-		.owNum = 			EVENT_OBJ_GFX_GAMBLER,
+		.owNum = 			EVENT_OBJ_GFX_OLD_MAN,
 		.trainerClass = 	CLASS_GAMBLER,
 		.trainerSprite = 	TRAINER_PIC_GAMBLER,
 		.gender = 			BATTLE_FACILITY_MALE,
@@ -978,7 +856,7 @@ const struct BattleTowerTrainer gTowerTrainers[] =
 		.playerLoseText = 	sFrontierText_Gambler_PlayerLose_1,
 	},
 	{
-		.owNum = 			EVENT_OBJ_GFX_GAMBLER,
+		.owNum = 			EVENT_OBJ_GFX_OLD_MAN,
 		.trainerClass = 	CLASS_GAMBLER,
 		.trainerSprite = 	TRAINER_PIC_GAMBLER,
 		.gender = 			BATTLE_FACILITY_MALE,
@@ -987,7 +865,7 @@ const struct BattleTowerTrainer gTowerTrainers[] =
 		.playerLoseText = 	sFrontierText_Gambler_PlayerLose_2,
 	},
 	{
-		.owNum = 			EVENT_OBJ_GFX_GAMBLER,
+		.owNum = 			EVENT_OBJ_GFX_OLD_MAN,
 		.trainerClass = 	CLASS_GAMBLER,
 		.trainerSprite = 	TRAINER_PIC_GAMBLER,
 		.gender = 			BATTLE_FACILITY_MALE,
@@ -1023,7 +901,7 @@ const struct BattleTowerTrainer gTowerTrainers[] =
 		.playerLoseText = 	sFrontierText_Beauty_PlayerLose_3,
 	},
 	{
-		.owNum = 			EVENT_OBJ_GFX_PSYCHIC_M,
+		.owNum = 			EVENT_OBJ_GFX_COOLTRAINER_M,
 		.trainerClass = 	CLASS_PSYCHIC,
 		.trainerSprite = 	TRAINER_PIC_PSYCHIC_M,
 		.gender = 			BATTLE_FACILITY_MALE,
@@ -1032,7 +910,7 @@ const struct BattleTowerTrainer gTowerTrainers[] =
 		.playerLoseText = 	sFrontierText_Psychic_PlayerLose_1,
 	},
 	{
-		.owNum = 			EVENT_OBJ_GFX_PSYCHIC_M,
+		.owNum = 			EVENT_OBJ_GFX_COOLTRAINER_M,
 		.trainerClass = 	CLASS_PSYCHIC,
 		.trainerSprite = 	TRAINER_PIC_PSYCHIC_M,
 		.gender = 			BATTLE_FACILITY_MALE,
@@ -1041,7 +919,7 @@ const struct BattleTowerTrainer gTowerTrainers[] =
 		.playerLoseText = 	sFrontierText_Psychic_PlayerLose_2,
 	},
 	{
-		.owNum = 			EVENT_OBJ_GFX_PSYCHIC_M,
+		.owNum = 			EVENT_OBJ_GFX_COOLTRAINER_M,
 		.trainerClass = 	CLASS_PSYCHIC,
 		.trainerSprite = 	TRAINER_PIC_PSYCHIC_M,
 		.gender = 			BATTLE_FACILITY_MALE,
@@ -1050,7 +928,7 @@ const struct BattleTowerTrainer gTowerTrainers[] =
 		.playerLoseText = 	sFrontierText_Psychic_PlayerLose_3,
 	},
 	{
-		.owNum = 			EVENT_OBJ_GFX_PSYCHIC_F,
+		.owNum = 			EVENT_OBJ_GFX_COOLTRAINER_F,
 		.trainerClass = 	CLASS_PSYCHIC,
 		.trainerSprite = 	TRAINER_PIC_PSYCHIC_F,
 		.gender = 			BATTLE_FACILITY_FEMALE,
@@ -1059,7 +937,7 @@ const struct BattleTowerTrainer gTowerTrainers[] =
 		.playerLoseText = 	sFrontierText_Psychic_PlayerLose_4,
 	},
 	{
-		.owNum = 			EVENT_OBJ_GFX_PSYCHIC_F,
+		.owNum = 			EVENT_OBJ_GFX_COOLTRAINER_F,
 		.trainerClass = 	CLASS_PSYCHIC,
 		.trainerSprite = 	TRAINER_PIC_PSYCHIC_F,
 		.gender = 			BATTLE_FACILITY_FEMALE,
@@ -1068,7 +946,7 @@ const struct BattleTowerTrainer gTowerTrainers[] =
 		.playerLoseText = 	sFrontierText_Psychic_PlayerLose_5,
 	},
 	{
-		.owNum = 			EVENT_OBJ_GFX_PSYCHIC_F,
+		.owNum = 			EVENT_OBJ_GFX_COOLTRAINER_F,
 		.trainerClass = 	CLASS_PSYCHIC,
 		.trainerSprite = 	TRAINER_PIC_PSYCHIC_F,
 		.gender = 			BATTLE_FACILITY_FEMALE,
@@ -1078,7 +956,7 @@ const struct BattleTowerTrainer gTowerTrainers[] =
 	},
 	{
 		.owNum = 			EVENT_OBJ_GFX_GUITARIST,
-		.trainerClass = 	CLASS_GUITARIST,
+		.trainerClass = 	CLASS_GUITARIST_RS,
 		.trainerSprite = 	TRAINER_PIC_GUITARIST,
 		.gender = 			BATTLE_FACILITY_MALE,
 		.preBattleText = 	sFrontierText_Guitarist_PreBattle_1,
@@ -1087,7 +965,7 @@ const struct BattleTowerTrainer gTowerTrainers[] =
 	},
 	{
 		.owNum = 			EVENT_OBJ_GFX_GUITARIST,
-		.trainerClass = 	CLASS_GUITARIST,
+		.trainerClass = 	CLASS_GUITARIST_RS,
 		.trainerSprite = 	TRAINER_PIC_GUITARIST,
 		.gender = 			BATTLE_FACILITY_MALE,
 		.preBattleText = 	sFrontierText_Guitarist_PreBattle_2,
@@ -1096,7 +974,7 @@ const struct BattleTowerTrainer gTowerTrainers[] =
 	},
 	{
 		.owNum = 			EVENT_OBJ_GFX_GUITARIST,
-		.trainerClass = 	CLASS_GUITARIST,
+		.trainerClass = 	CLASS_GUITARIST_RS,
 		.trainerSprite = 	TRAINER_PIC_GUITARIST,
 		.gender = 			BATTLE_FACILITY_MALE,
 		.preBattleText = 	sFrontierText_Guitarist_PreBattle_3,
@@ -1104,7 +982,7 @@ const struct BattleTowerTrainer gTowerTrainers[] =
 		.playerLoseText = 	sFrontierText_Guitarist_PlayerLose_3,
 	},
 	{
-		.owNum = 			EVENT_OBJ_GFX_JUGGLER,
+		.owNum = 			EVENT_OBJ_GFX_FAT_GUY,
 		.trainerClass = 	CLASS_JUGGLER,
 		.trainerSprite = 	TRAINER_PIC_JUGGLER,
 		.gender = 			BATTLE_FACILITY_MALE,
@@ -1113,7 +991,7 @@ const struct BattleTowerTrainer gTowerTrainers[] =
 		.playerLoseText = 	sFrontierText_Juggler_PlayerLose_1,
 	},
 	{
-		.owNum = 			EVENT_OBJ_GFX_JUGGLER,
+		.owNum = 			EVENT_OBJ_GFX_FAT_GUY,
 		.trainerClass = 	CLASS_JUGGLER,
 		.trainerSprite = 	TRAINER_PIC_JUGGLER,
 		.gender = 			BATTLE_FACILITY_MALE,
@@ -1122,7 +1000,7 @@ const struct BattleTowerTrainer gTowerTrainers[] =
 		.playerLoseText = 	sFrontierText_Juggler_PlayerLose_2,
 	},
 	{
-		.owNum = 			EVENT_OBJ_GFX_JUGGLER,
+		.owNum = 			EVENT_OBJ_GFX_FAT_GUY,
 		.trainerClass = 	CLASS_JUGGLER,
 		.trainerSprite = 	TRAINER_PIC_JUGGLER,
 		.gender = 			BATTLE_FACILITY_MALE,
@@ -1131,7 +1009,7 @@ const struct BattleTowerTrainer gTowerTrainers[] =
 		.playerLoseText = 	sFrontierText_Juggler_PlayerLose_3,
 	},
 	{
-		.owNum = 			EVENT_OBJ_GFX_DRAGON_TAMER,
+		.owNum = 			EVENT_OBJ_GFX_POKEMANIAC,
 		.trainerClass = 	CLASS_DRAGON_TAMER,
 		.trainerSprite = 	TRAINER_PIC_DRAGON_TAMER,
 		.gender = 			BATTLE_FACILITY_MALE,
@@ -1140,7 +1018,7 @@ const struct BattleTowerTrainer gTowerTrainers[] =
 		.playerLoseText = 	sFrontierText_DragonTamer_PlayerLose_1,
 	},
 	{
-		.owNum = 			EVENT_OBJ_GFX_DRAGON_TAMER,
+		.owNum = 			EVENT_OBJ_GFX_POKEMANIAC,
 		.trainerClass = 	CLASS_DRAGON_TAMER,
 		.trainerSprite = 	TRAINER_PIC_DRAGON_TAMER,
 		.gender = 			BATTLE_FACILITY_MALE,
@@ -1149,7 +1027,7 @@ const struct BattleTowerTrainer gTowerTrainers[] =
 		.playerLoseText = 	sFrontierText_DragonTamer_PlayerLose_2,
 	},
 	{
-		.owNum = 			EVENT_OBJ_GFX_DRAGON_TAMER,
+		.owNum = 			EVENT_OBJ_GFX_POKEMANIAC,
 		.trainerClass = 	CLASS_DRAGON_TAMER,
 		.trainerSprite = 	TRAINER_PIC_DRAGON_TAMER,
 		.gender = 			BATTLE_FACILITY_MALE,
@@ -1158,27 +1036,27 @@ const struct BattleTowerTrainer gTowerTrainers[] =
 		.playerLoseText = 	sFrontierText_DragonTamer_PlayerLose_3,
 	},
 	{
-		.owNum = 			EVENT_OBJ_GFX_BIRD_KEEPER,
+		.owNum = 			EVENT_OBJ_GFX_RANDOM_GUY,
 		.trainerClass = 	CLASS_BIRD_KEEPER,
-		.trainerSprite = 	TRAINER_PIC_BIRD_KEEPER_M,
+		.trainerSprite = 	TRAINER_PIC_BIRD_KEEPER,
 		.gender = 			BATTLE_FACILITY_MALE,
 		.preBattleText = 	sFrontierText_Birdkeeper_PreBattle_1,
 		.playerWinText = 	sFrontierText_Birdkeeper_PlayerWin_1,
 		.playerLoseText = 	sFrontierText_Birdkeeper_PlayerLose_1,
 	},
 	{
-		.owNum = 			EVENT_OBJ_GFX_BIRD_KEEPER,
+		.owNum = 			EVENT_OBJ_GFX_RANDOM_GUY,
 		.trainerClass = 	CLASS_BIRD_KEEPER,
-		.trainerSprite = 	TRAINER_PIC_BIRD_KEEPER_M,
+		.trainerSprite = 	TRAINER_PIC_BIRD_KEEPER,
 		.gender = 			BATTLE_FACILITY_MALE,
 		.preBattleText = 	sFrontierText_Birdkeeper_PreBattle_2,
 		.playerWinText = 	sFrontierText_Birdkeeper_PlayerWin_2,
 		.playerLoseText = 	sFrontierText_Birdkeeper_PlayerLose_2,
 	},
 	{
-		.owNum = 			EVENT_OBJ_GFX_BIRD_KEEPER,
+		.owNum = 			EVENT_OBJ_GFX_RANDOM_GUY,
 		.trainerClass = 	CLASS_BIRD_KEEPER,
-		.trainerSprite = 	TRAINER_PIC_BIRD_KEEPER_M,
+		.trainerSprite = 	TRAINER_PIC_BIRD_KEEPER,
 		.gender = 			BATTLE_FACILITY_MALE,
 		.preBattleText = 	sFrontierText_Birdkeeper_PreBattle_3,
 		.playerWinText = 	sFrontierText_Birdkeeper_PlayerWin_3,
@@ -1266,63 +1144,63 @@ const struct BattleTowerTrainer gTowerTrainers[] =
 		.playerLoseText = 	sFrontierText_Scientist_PlayerLose_3,
 	},
 	{
-		.owNum = 			EVENT_OBJ_GFX_SCIENTIST_F,
+		.owNum = 			EVENT_OBJ_GFX_SCIENTIST_MALE,
 		.trainerClass = 	CLASS_SCIENTIST,
-		.trainerSprite = 	TRAINER_PIC_SCIENTIST_F,
-		.gender = 			BATTLE_FACILITY_FEMALE,
+		.trainerSprite = 	TRAINER_PIC_SCIENTIST_M,
+		.gender = 			BATTLE_FACILITY_MALE,
 		.preBattleText = 	sFrontierText_Scientist_PreBattle_4,
 		.playerWinText = 	sFrontierText_Scientist_PlayerWin_4,
 		.playerLoseText = 	sFrontierText_Scientist_PlayerLose_4,
 	},
 	{
-		.owNum = 			EVENT_OBJ_GFX_ACE_TRAINER_M,
-		.trainerClass = 	CLASS_ACE_TRAINER,
-		.trainerSprite = 	TRAINER_PIC_ACE_TRAINER_M,
+		.owNum = 			EVENT_OBJ_GFX_COOLTRAINER_M,
+		.trainerClass = 	CLASS_COOLTRAINER,
+		.trainerSprite = 	TRAINER_PIC_COOLTRAINER_M,
 		.gender = 			BATTLE_FACILITY_MALE,
 		.preBattleText = 	sFrontierText_Acetrainer_PreBattle_1,
 		.playerWinText = 	sFrontierText_Acetrainer_PlayerWin_1,
 		.playerLoseText = 	sFrontierText_Acetrainer_PlayerLose_1,
 	},
 	{
-		.owNum = 			EVENT_OBJ_GFX_ACE_TRAINER_M,
-		.trainerClass = 	CLASS_ACE_TRAINER,
-		.trainerSprite = 	TRAINER_PIC_ACE_TRAINER_M,
+		.owNum = 			EVENT_OBJ_GFX_COOLTRAINER_M,
+		.trainerClass = 	CLASS_COOLTRAINER,
+		.trainerSprite = 	TRAINER_PIC_COOLTRAINER_M,
 		.gender = 			BATTLE_FACILITY_MALE,
 		.preBattleText = 	sFrontierText_Acetrainer_PreBattle_2,
 		.playerWinText = 	sFrontierText_Acetrainer_PlayerWin_2,
 		.playerLoseText = 	sFrontierText_Acetrainer_PlayerLose_2,
 	},
 	{
-		.owNum = 			EVENT_OBJ_GFX_ACE_TRAINER_M,
-		.trainerClass = 	CLASS_ACE_TRAINER,
-		.trainerSprite = 	TRAINER_PIC_ACE_TRAINER_M,
+		.owNum = 			EVENT_OBJ_GFX_COOLTRAINER_M,
+		.trainerClass = 	CLASS_COOLTRAINER,
+		.trainerSprite = 	TRAINER_PIC_COOLTRAINER_M,
 		.gender = 			BATTLE_FACILITY_MALE,
 		.preBattleText = 	sFrontierText_Acetrainer_PreBattle_3,
 		.playerWinText = 	sFrontierText_Acetrainer_PlayerWin_3,
 		.playerLoseText = 	sFrontierText_Acetrainer_PlayerLose_3,
 	},
 	{
-		.owNum = 			EVENT_OBJ_GFX_ACE_TRAINER_F,
-		.trainerClass = 	CLASS_ACE_TRAINER,
-		.trainerSprite = 	TRAINER_PIC_ACE_TRAINER_F,
+		.owNum = 			EVENT_OBJ_GFX_COOLTRAINER_F,
+		.trainerClass = 	CLASS_COOLTRAINER,
+		.trainerSprite = 	TRAINER_PIC_COOLTRAINER_F,
 		.gender = 			BATTLE_FACILITY_FEMALE,
 		.preBattleText = 	sFrontierText_Acetrainer_PreBattle_4,
 		.playerWinText = 	sFrontierText_Acetrainer_PlayerWin_4,
 		.playerLoseText = 	sFrontierText_Acetrainer_PlayerLose_4,
 	},
 	{
-		.owNum = 			EVENT_OBJ_GFX_ACE_TRAINER_F,
-		.trainerClass = 	CLASS_ACE_TRAINER,
-		.trainerSprite = 	TRAINER_PIC_ACE_TRAINER_F,
+		.owNum = 			EVENT_OBJ_GFX_COOLTRAINER_F,
+		.trainerClass = 	CLASS_COOLTRAINER,
+		.trainerSprite = 	TRAINER_PIC_COOLTRAINER_F,
 		.gender = 			BATTLE_FACILITY_FEMALE,
 		.preBattleText = 	sFrontierText_Acetrainer_PreBattle_5,
 		.playerWinText = 	sFrontierText_Acetrainer_PlayerWin_5,
 		.playerLoseText = 	sFrontierText_Acetrainer_PlayerLose_5,
 	},
 	{
-		.owNum = 			EVENT_OBJ_GFX_ACE_TRAINER_F,
-		.trainerClass = 	CLASS_ACE_TRAINER,
-		.trainerSprite = 	TRAINER_PIC_ACE_TRAINER_F,
+		.owNum = 			EVENT_OBJ_GFX_COOLTRAINER_F,
+		.trainerClass = 	CLASS_COOLTRAINER,
+		.trainerSprite = 	TRAINER_PIC_COOLTRAINER_F,
 		.gender = 			BATTLE_FACILITY_FEMALE,
 		.preBattleText = 	sFrontierText_Acetrainer_PreBattle_6,
 		.playerWinText = 	sFrontierText_Acetrainer_PlayerWin_6,
@@ -1358,7 +1236,7 @@ const struct BattleTowerTrainer gTowerTrainers[] =
 	{
 		.owNum = 			EVENT_OBJ_GFX_TUBER_M,
 		.trainerClass = 	CLASS_TUBER,
-		.trainerSprite = 	TRAINER_PIC_TUBER_M,
+		.trainerSprite = 	TRAINER_PIC_RS_TUBER_M,
 		.gender = 			BATTLE_FACILITY_MALE,
 		.preBattleText = 	sFrontierText_Tuber_PreBattle_1,
 		.playerWinText = 	sFrontierText_Tuber_PlayerWin_1,
@@ -1367,7 +1245,7 @@ const struct BattleTowerTrainer gTowerTrainers[] =
 	{
 		.owNum = 			EVENT_OBJ_GFX_TUBER_M,
 		.trainerClass = 	CLASS_TUBER,
-		.trainerSprite = 	TRAINER_PIC_TUBER_M,
+		.trainerSprite = 	TRAINER_PIC_RS_TUBER_M,
 		.gender = 			BATTLE_FACILITY_MALE,
 		.preBattleText = 	sFrontierText_Tuber_PreBattle_2,
 		.playerWinText = 	sFrontierText_Tuber_PlayerWin_2,
@@ -1376,7 +1254,7 @@ const struct BattleTowerTrainer gTowerTrainers[] =
 	{
 		.owNum = 			EVENT_OBJ_GFX_TUBER_M,
 		.trainerClass = 	CLASS_TUBER,
-		.trainerSprite = 	TRAINER_PIC_TUBER_M,
+		.trainerSprite = 	TRAINER_PIC_RS_TUBER_M,
 		.gender = 			BATTLE_FACILITY_MALE,
 		.preBattleText = 	sFrontierText_Tuber_PreBattle_3,
 		.playerWinText = 	sFrontierText_Tuber_PlayerWin_3,
@@ -1385,7 +1263,7 @@ const struct BattleTowerTrainer gTowerTrainers[] =
 	{
 		.owNum = 			EVENT_OBJ_GFX_TUBER_F,
 		.trainerClass = 	CLASS_TUBER,
-		.trainerSprite = 	TRAINER_PIC_TUBER_F,
+		.trainerSprite = 	TRAINER_PIC_RS_TUBER_F,
 		.gender = 			BATTLE_FACILITY_FEMALE,
 		.preBattleText = 	sFrontierText_Tuber_PreBattle_4,
 		.playerWinText = 	sFrontierText_Tuber_PlayerWin_4,
@@ -1394,7 +1272,7 @@ const struct BattleTowerTrainer gTowerTrainers[] =
 	{
 		.owNum = 			EVENT_OBJ_GFX_TUBER_F,
 		.trainerClass = 	CLASS_TUBER,
-		.trainerSprite = 	TRAINER_PIC_TUBER_F,
+		.trainerSprite = 	TRAINER_PIC_RS_TUBER_F,
 		.gender = 			BATTLE_FACILITY_FEMALE,
 		.preBattleText = 	sFrontierText_Tuber_PreBattle_5,
 		.playerWinText = 	sFrontierText_Tuber_PlayerWin_5,
@@ -1403,41 +1281,41 @@ const struct BattleTowerTrainer gTowerTrainers[] =
 	{
 		.owNum = 			EVENT_OBJ_GFX_TUBER_F,
 		.trainerClass = 	CLASS_TUBER,
-		.trainerSprite = 	TRAINER_PIC_TUBER_F,
+		.trainerSprite = 	TRAINER_PIC_RS_TUBER_F,
 		.gender = 			BATTLE_FACILITY_FEMALE,
 		.preBattleText = 	sFrontierText_Tuber_PreBattle_6,
 		.playerWinText = 	sFrontierText_Tuber_PlayerWin_6,
 		.playerLoseText = 	sFrontierText_Tuber_PlayerLose_6,
 	},
 	{
-		.owNum = 			EVENT_OBJ_GFX_BREEDER_M,
+		.owNum = 			EVENT_OBJ_GFX_MIDDLE_AGED_WOMAN,
 		.trainerClass = 	CLASS_PKMN_BREEDER,
-		.trainerSprite = 	TRAINER_PIC_PKMN_BREEDER_M,
-		.gender = 			BATTLE_FACILITY_MALE,
+		.trainerSprite = 	TRAINER_PIC_PKMN_BREEDER_F,
+		.gender = 			BATTLE_FACILITY_FEMALE,
 		.preBattleText = 	sFrontierText_Pkmnbreeder_PreBattle_1,
 		.playerWinText = 	sFrontierText_Pkmnbreeder_PlayerWin_1,
 		.playerLoseText = 	sFrontierText_Pkmnbreeder_PlayerLose_1,
 	},
 	{
-		.owNum = 			EVENT_OBJ_GFX_BREEDER_M,
+		.owNum = 			EVENT_OBJ_GFX_MIDDLE_AGED_WOMAN,
 		.trainerClass = 	CLASS_PKMN_BREEDER,
-		.trainerSprite = 	TRAINER_PIC_PKMN_BREEDER_M,
-		.gender = 			BATTLE_FACILITY_MALE,
+		.trainerSprite = 	TRAINER_PIC_PKMN_BREEDER_F,
+		.gender = 			BATTLE_FACILITY_FEMALE,
 		.preBattleText = 	sFrontierText_Pkmnbreeder_PreBattle_2,
 		.playerWinText = 	sFrontierText_Pkmnbreeder_PlayerWin_2,
 		.playerLoseText = 	sFrontierText_Pkmnbreeder_PlayerLose_2,
 	},
 	{
-		.owNum = 			EVENT_OBJ_GFX_BREEDER_M,
+		.owNum = 			EVENT_OBJ_GFX_MIDDLE_AGED_WOMAN,
 		.trainerClass = 	CLASS_PKMN_BREEDER,
-		.trainerSprite = 	TRAINER_PIC_PKMN_BREEDER_M,
-		.gender = 			BATTLE_FACILITY_MALE,
+		.trainerSprite = 	TRAINER_PIC_PKMN_BREEDER_F,
+		.gender = 			BATTLE_FACILITY_FEMALE,
 		.preBattleText = 	sFrontierText_Pkmnbreeder_PreBattle_3,
 		.playerWinText = 	sFrontierText_Pkmnbreeder_PlayerWin_3,
 		.playerLoseText = 	sFrontierText_Pkmnbreeder_PlayerLose_3,
 	},
 	{
-		.owNum = 			EVENT_OBJ_GFX_BREEDER_F,
+		.owNum = 			EVENT_OBJ_GFX_MIDDLE_AGED_WOMAN,
 		.trainerClass = 	CLASS_PKMN_BREEDER,
 		.trainerSprite = 	TRAINER_PIC_PKMN_BREEDER_F,
 		.gender = 			BATTLE_FACILITY_FEMALE,
@@ -1446,7 +1324,7 @@ const struct BattleTowerTrainer gTowerTrainers[] =
 		.playerLoseText = 	sFrontierText_Pkmnbreeder_PlayerLose_4,
 	},
 	{
-		.owNum = 			EVENT_OBJ_GFX_BREEDER_F,
+		.owNum = 			EVENT_OBJ_GFX_MIDDLE_AGED_WOMAN,
 		.trainerClass = 	CLASS_PKMN_BREEDER,
 		.trainerSprite = 	TRAINER_PIC_PKMN_BREEDER_F,
 		.gender = 			BATTLE_FACILITY_FEMALE,
@@ -1455,67 +1333,13 @@ const struct BattleTowerTrainer gTowerTrainers[] =
 		.playerLoseText = 	sFrontierText_Pkmnbreeder_PlayerLose_5,
 	},
 	{
-		.owNum = 			EVENT_OBJ_GFX_BREEDER_F,
+		.owNum = 			EVENT_OBJ_GFX_MIDDLE_AGED_WOMAN,
 		.trainerClass = 	CLASS_PKMN_BREEDER,
 		.trainerSprite = 	TRAINER_PIC_PKMN_BREEDER_F,
 		.gender = 			BATTLE_FACILITY_FEMALE,
 		.preBattleText = 	sFrontierText_Pkmnbreeder_PreBattle_6,
 		.playerWinText = 	sFrontierText_Pkmnbreeder_PlayerWin_6,
 		.playerLoseText = 	sFrontierText_Pkmnbreeder_PlayerLose_6,
-	},
-	{
-		.owNum = 			EVENT_OBJ_GFX_RANGER_M,
-		.trainerClass = 	CLASS_PKMN_RANGER,
-		.trainerSprite = 	TRAINER_PIC_PKMN_RANGER_M,
-		.gender = 			BATTLE_FACILITY_MALE,
-		.preBattleText = 	sFrontierText_Pkmnranger_PreBattle_1,
-		.playerWinText = 	sFrontierText_Pkmnranger_PlayerWin_1,
-		.playerLoseText = 	sFrontierText_Pkmnranger_PlayerLose_1,
-	},
-	{
-		.owNum = 			EVENT_OBJ_GFX_RANGER_M,
-		.trainerClass = 	CLASS_PKMN_RANGER,
-		.trainerSprite = 	TRAINER_PIC_PKMN_RANGER_M,
-		.gender = 			BATTLE_FACILITY_MALE,
-		.preBattleText = 	sFrontierText_Pkmnranger_PreBattle_2,
-		.playerWinText = 	sFrontierText_Pkmnranger_PlayerWin_2,
-		.playerLoseText = 	sFrontierText_Pkmnranger_PlayerLose_2,
-	},
-	{
-		.owNum = 			EVENT_OBJ_GFX_RANGER_M,
-		.trainerClass = 	CLASS_PKMN_RANGER,
-		.trainerSprite = 	TRAINER_PIC_PKMN_RANGER_M,
-		.gender = 			BATTLE_FACILITY_MALE,
-		.preBattleText = 	sFrontierText_Pkmnranger_PreBattle_3,
-		.playerWinText = 	sFrontierText_Pkmnranger_PlayerWin_3,
-		.playerLoseText = 	sFrontierText_Pkmnranger_PlayerLose_3,
-	},
-	{
-		.owNum = 			EVENT_OBJ_GFX_RANGER_F,
-		.trainerClass = 	CLASS_PKMN_RANGER,
-		.trainerSprite = 	TRAINER_PIC_PKMN_RANGER_F,
-		.gender = 			BATTLE_FACILITY_FEMALE,
-		.preBattleText = 	sFrontierText_Pkmnranger_PreBattle_4,
-		.playerWinText = 	sFrontierText_Pkmnranger_PlayerWin_4,
-		.playerLoseText = 	sFrontierText_Pkmnranger_PlayerLose_4,
-	},
-	{
-		.owNum = 			EVENT_OBJ_GFX_RANGER_F,
-		.trainerClass = 	CLASS_PKMN_RANGER,
-		.trainerSprite = 	TRAINER_PIC_PKMN_RANGER_F,
-		.gender = 			BATTLE_FACILITY_FEMALE,
-		.preBattleText = 	sFrontierText_Pkmnranger_PreBattle_5,
-		.playerWinText = 	sFrontierText_Pkmnranger_PlayerWin_5,
-		.playerLoseText = 	sFrontierText_Pkmnranger_PlayerLose_5,
-	},
-	{
-		.owNum = 			EVENT_OBJ_GFX_RANGER_F,
-		.trainerClass = 	CLASS_PKMN_RANGER,
-		.trainerSprite = 	TRAINER_PIC_PKMN_RANGER_F,
-		.gender = 			BATTLE_FACILITY_FEMALE,
-		.preBattleText = 	sFrontierText_Pkmnranger_PreBattle_6,
-		.playerWinText = 	sFrontierText_Pkmnranger_PlayerWin_6,
-		.playerLoseText = 	sFrontierText_Pkmnranger_PlayerLose_6,
 	},
 	{
 		.owNum = 			EVENT_OBJ_GFX_AROMA_LADY,
@@ -1545,7 +1369,7 @@ const struct BattleTowerTrainer gTowerTrainers[] =
 		.playerLoseText = 	sFrontierText_Aromalady_PlayerLose_3,
 	},
 	{
-		.owNum = 			EVENT_OBJ_GFX_RUIN_MANIAC,
+		.owNum = 			EVENT_OBJ_GFX_HIKER,
 		.trainerClass = 	CLASS_RUIN_MANIAC,
 		.trainerSprite = 	TRAINER_PIC_RUIN_MANIAC,
 		.gender = 			BATTLE_FACILITY_MALE,
@@ -1554,7 +1378,7 @@ const struct BattleTowerTrainer gTowerTrainers[] =
 		.playerLoseText = 	sFrontierText_Ruinmaniac_PlayerLose_1,
 	},
 	{
-		.owNum = 			EVENT_OBJ_GFX_RUIN_MANIAC,
+		.owNum = 			EVENT_OBJ_GFX_HIKER,
 		.trainerClass = 	CLASS_RUIN_MANIAC,
 		.trainerSprite = 	TRAINER_PIC_RUIN_MANIAC,
 		.gender = 			BATTLE_FACILITY_MALE,
@@ -1563,7 +1387,7 @@ const struct BattleTowerTrainer gTowerTrainers[] =
 		.playerLoseText = 	sFrontierText_Ruinmaniac_PlayerLose_2,
 	},
 	{
-		.owNum = 			EVENT_OBJ_GFX_RUIN_MANIAC,
+		.owNum = 			EVENT_OBJ_GFX_HIKER,
 		.trainerClass = 	CLASS_RUIN_MANIAC,
 		.trainerSprite = 	TRAINER_PIC_RUIN_MANIAC,
 		.gender = 			BATTLE_FACILITY_MALE,
@@ -1572,277 +1396,34 @@ const struct BattleTowerTrainer gTowerTrainers[] =
 		.playerLoseText = 	sFrontierText_Ruinmaniac_PlayerLose_3,
 	},
 	{
-		.owNum = 			EVENT_OBJ_GFX_RICH_BOY,
-		.trainerClass = 	CLASS_RICH_BOY,
-		.trainerSprite = 	TRAINER_PIC_RICH_BOY,
-		.gender = 			BATTLE_FACILITY_MALE,
-		.preBattleText = 	sFrontierText_Richboy_PreBattle_1,
-		.playerWinText = 	sFrontierText_Richboy_PlayerWin_1,
-		.playerLoseText = 	sFrontierText_Richboy_PlayerLose_1,
-	},
-	{
-		.owNum = 			EVENT_OBJ_GFX_RICH_BOY,
-		.trainerClass = 	CLASS_RICH_BOY,
-		.trainerSprite = 	TRAINER_PIC_RICH_BOY,
-		.gender = 			BATTLE_FACILITY_MALE,
-		.preBattleText = 	sFrontierText_Richboy_PreBattle_2,
-		.playerWinText = 	sFrontierText_Richboy_PlayerWin_2,
-		.playerLoseText = 	sFrontierText_Richboy_PlayerLose_2,
-	},
-	{
-		.owNum = 			EVENT_OBJ_GFX_RICH_BOY,
-		.trainerClass = 	CLASS_RICH_BOY,
-		.trainerSprite = 	TRAINER_PIC_RICH_BOY,
-		.gender = 			BATTLE_FACILITY_MALE,
-		.preBattleText = 	sFrontierText_Richboy_PreBattle_3,
-		.playerWinText = 	sFrontierText_Richboy_PlayerWin_3,
-		.playerLoseText = 	sFrontierText_Richboy_PlayerLose_3,
-	},
-	{
-		.owNum = 			EVENT_OBJ_GFX_RICH_GIRL,
-		.trainerClass = 	CLASS_RICH_GIRL,
-		.trainerSprite = 	TRAINER_PIC_RICH_GIRL,
-		.gender = 			BATTLE_FACILITY_FEMALE,
-		.preBattleText = 	sFrontierText_Richgirl_PreBattle_1,
-		.playerWinText = 	sFrontierText_Richgirl_PlayerWin_1,
-		.playerLoseText = 	sFrontierText_Richgirl_PlayerLose_1,
-	},
-	{
-		.owNum = 			EVENT_OBJ_GFX_RICH_GIRL,
-		.trainerClass = 	CLASS_RICH_GIRL,
-		.trainerSprite = 	TRAINER_PIC_RICH_GIRL,
-		.gender = 			BATTLE_FACILITY_FEMALE,
-		.preBattleText = 	sFrontierText_Richgirl_PreBattle_2,
-		.playerWinText = 	sFrontierText_Richgirl_PlayerWin_2,
-		.playerLoseText = 	sFrontierText_Richgirl_PlayerLose_2,
-	},
-	{
-		.owNum = 			EVENT_OBJ_GFX_RICH_GIRL,
-		.trainerClass = 	CLASS_RICH_GIRL,
-		.trainerSprite = 	TRAINER_PIC_RICH_GIRL,
-		.gender = 			BATTLE_FACILITY_FEMALE,
-		.preBattleText = 	sFrontierText_Richgirl_PreBattle_3,
-		.playerWinText = 	sFrontierText_Richgirl_PlayerWin_3,
-		.playerLoseText = 	sFrontierText_Richgirl_PlayerLose_3,
-	},
-	{
-		.owNum = 			EVENT_OBJ_GFX_PAINTER,
+		.owNum = 			EVENT_OBJ_GFX_LASS,
 		.trainerClass = 	CLASS_PAINTER,
 		.trainerSprite = 	TRAINER_PIC_PAINTER,
-		.gender = 			BATTLE_FACILITY_MALE,
+		.gender = 			BATTLE_FACILITY_FEMALE,
 		.preBattleText = 	sFrontierText_Painter_PreBattle_1,
 		.playerWinText = 	sFrontierText_Painter_PlayerWin_1,
 		.playerLoseText = 	sFrontierText_Painter_PlayerLose_1,
 	},
 	{
-		.owNum = 			EVENT_OBJ_GFX_PAINTER,
+		.owNum = 			EVENT_OBJ_GFX_LASS,
 		.trainerClass = 	CLASS_PAINTER,
 		.trainerSprite = 	TRAINER_PIC_PAINTER,
-		.gender = 			BATTLE_FACILITY_MALE,
+		.gender = 			BATTLE_FACILITY_FEMALE,
 		.preBattleText = 	sFrontierText_Painter_PreBattle_2,
 		.playerWinText = 	sFrontierText_Painter_PlayerWin_2,
 		.playerLoseText = 	sFrontierText_Painter_PlayerLose_2,
 	},
 	{
-		.owNum = 			EVENT_OBJ_GFX_PAINTER,
+		.owNum = 			EVENT_OBJ_GFX_LASS,
 		.trainerClass = 	CLASS_PAINTER,
 		.trainerSprite = 	TRAINER_PIC_PAINTER,
-		.gender = 			BATTLE_FACILITY_MALE,
+		.gender = 			BATTLE_FACILITY_FEMALE,
 		.preBattleText = 	sFrontierText_Painter_PreBattle_3,
 		.playerWinText = 	sFrontierText_Painter_PlayerWin_3,
 		.playerLoseText = 	sFrontierText_Painter_PlayerLose_3,
 	},
 	{
-		.owNum = 			EVENT_OBJ_GFX_WAITER,
-		.trainerClass = 	CLASS_WAITER,
-		.trainerSprite = 	TRAINER_PIC_WAITER,
-		.gender = 			BATTLE_FACILITY_MALE,
-		.preBattleText = 	sFrontierText_Waiter_PreBattle_1,
-		.playerWinText = 	sFrontierText_Waiter_PlayerWin_1,
-		.playerLoseText = 	sFrontierText_Waiter_PlayerLose_1,
-	},
-	{
-		.owNum = 			EVENT_OBJ_GFX_WAITER,
-		.trainerClass = 	CLASS_WAITER,
-		.trainerSprite = 	TRAINER_PIC_WAITER,
-		.gender = 			BATTLE_FACILITY_MALE,
-		.preBattleText = 	sFrontierText_Waiter_PreBattle_2,
-		.playerWinText = 	sFrontierText_Waiter_PlayerWin_2,
-		.playerLoseText = 	sFrontierText_Waiter_PlayerLose_2,
-	},
-	{
-		.owNum = 			EVENT_OBJ_GFX_WAITER,
-		.trainerClass = 	CLASS_WAITER,
-		.trainerSprite = 	TRAINER_PIC_WAITER,
-		.gender = 			BATTLE_FACILITY_MALE,
-		.preBattleText = 	sFrontierText_Waiter_PreBattle_3,
-		.playerWinText = 	sFrontierText_Waiter_PlayerWin_3,
-		.playerLoseText = 	sFrontierText_Waiter_PlayerLose_3,
-	},
-	{
-		.owNum = 			EVENT_OBJ_GFX_WAITRESS,
-		.trainerClass = 	CLASS_WAITRESS,
-		.trainerSprite = 	TRAINER_PIC_WAITRESS,
-		.gender = 			BATTLE_FACILITY_FEMALE,
-		.preBattleText = 	sFrontierText_Waitress_PreBattle_1,
-		.playerWinText = 	sFrontierText_Waitress_PlayerWin_1,
-		.playerLoseText = 	sFrontierText_Waitress_PlayerLose_1,
-	},
-	{
-		.owNum = 			EVENT_OBJ_GFX_WAITRESS,
-		.trainerClass = 	CLASS_WAITRESS,
-		.trainerSprite = 	TRAINER_PIC_WAITRESS,
-		.gender = 			BATTLE_FACILITY_FEMALE,
-		.preBattleText = 	sFrontierText_Waitress_PreBattle_2,
-		.playerWinText = 	sFrontierText_Waitress_PlayerWin_2,
-		.playerLoseText = 	sFrontierText_Waitress_PlayerLose_2,
-	},
-	{
-		.owNum = 			EVENT_OBJ_GFX_WAITRESS,
-		.trainerClass = 	CLASS_WAITRESS,
-		.trainerSprite = 	TRAINER_PIC_WAITRESS,
-		.gender = 			BATTLE_FACILITY_FEMALE,
-		.preBattleText = 	sFrontierText_Waitress_PreBattle_3,
-		.playerWinText = 	sFrontierText_Waitress_PlayerWin_3,
-		.playerLoseText = 	sFrontierText_Waitress_PlayerLose_3,
-	},
-	{
-		.owNum = 			EVENT_OBJ_GFX_IDOL,
-		.trainerClass = 	CLASS_IDOL,
-		.trainerSprite = 	TRAINER_PIC_IDOL,
-		.gender = 			BATTLE_FACILITY_FEMALE,
-		.preBattleText = 	sFrontierText_Idol_PreBattle_1,
-		.playerWinText = 	sFrontierText_Idol_PlayerWin_1,
-		.playerLoseText = 	sFrontierText_Idol_PlayerLose_1,
-	},
-	{
-		.owNum = 			EVENT_OBJ_GFX_IDOL,
-		.trainerClass = 	CLASS_IDOL,
-		.trainerSprite = 	TRAINER_PIC_IDOL,
-		.gender = 			BATTLE_FACILITY_FEMALE,
-		.preBattleText = 	sFrontierText_Idol_PreBattle_2,
-		.playerWinText = 	sFrontierText_Idol_PlayerWin_2,
-		.playerLoseText = 	sFrontierText_Idol_PlayerLose_2,
-	},
-	{
-		.owNum = 			EVENT_OBJ_GFX_IDOL,
-		.trainerClass = 	CLASS_IDOL,
-		.trainerSprite = 	TRAINER_PIC_IDOL,
-		.gender = 			BATTLE_FACILITY_FEMALE,
-		.preBattleText = 	sFrontierText_Idol_PreBattle_3,
-		.playerWinText = 	sFrontierText_Idol_PlayerWin_3,
-		.playerLoseText = 	sFrontierText_Idol_PlayerLose_3,
-	},
-	{
-		.owNum = 			EVENT_OBJ_GFX_POKE_KID,
-		.trainerClass = 	CLASS_POKE_KID,
-		.trainerSprite = 	TRAINER_PIC_POKE_KID,
-		.gender = 			BATTLE_FACILITY_MALE,
-		.preBattleText = 	sFrontierText_Pokekid_PreBattle_1,
-		.playerWinText = 	sFrontierText_Pokekid_PlayerWin_1,
-		.playerLoseText = 	sFrontierText_Pokekid_PlayerLose_1,
-	},
-	{
-		.owNum = 			EVENT_OBJ_GFX_POKE_KID,
-		.trainerClass = 	CLASS_POKE_KID,
-		.trainerSprite = 	TRAINER_PIC_POKE_KID,
-		.gender = 			BATTLE_FACILITY_MALE,
-		.preBattleText = 	sFrontierText_Pokekid_PreBattle_2,
-		.playerWinText = 	sFrontierText_Pokekid_PlayerWin_2,
-		.playerLoseText = 	sFrontierText_Pokekid_PlayerLose_2,
-	},
-	{
-		.owNum = 			EVENT_OBJ_GFX_POKE_KID,
-		.trainerClass = 	CLASS_POKE_KID,
-		.trainerSprite = 	TRAINER_PIC_POKE_KID,
-		.gender = 			BATTLE_FACILITY_MALE,
-		.preBattleText = 	sFrontierText_Pokekid_PreBattle_3,
-		.playerWinText = 	sFrontierText_Pokekid_PlayerWin_3,
-		.playerLoseText = 	sFrontierText_Pokekid_PlayerLose_3,
-	},
-	{
-		.owNum = 			EVENT_OBJ_GFX_JOGGER,
-		.trainerClass = 	CLASS_JOGGER,
-		.trainerSprite = 	TRAINER_PIC_JOGGER,
-		.gender = 			BATTLE_FACILITY_MALE,
-		.preBattleText = 	sFrontierText_Jogger_PreBattle_1,
-		.playerWinText = 	sFrontierText_Jogger_PlayerWin_1,
-		.playerLoseText = 	sFrontierText_Jogger_PlayerLose_1,
-	},
-	{
-		.owNum = 			EVENT_OBJ_GFX_JOGGER,
-		.trainerClass = 	CLASS_JOGGER,
-		.trainerSprite = 	TRAINER_PIC_JOGGER,
-		.gender = 			BATTLE_FACILITY_MALE,
-		.preBattleText = 	sFrontierText_Jogger_PreBattle_2,
-		.playerWinText = 	sFrontierText_Jogger_PlayerWin_2,
-		.playerLoseText = 	sFrontierText_Jogger_PlayerLose_2,
-	},
-	{
-		.owNum = 			EVENT_OBJ_GFX_JOGGER,
-		.trainerClass = 	CLASS_JOGGER,
-		.trainerSprite = 	TRAINER_PIC_JOGGER,
-		.gender = 			BATTLE_FACILITY_MALE,
-		.preBattleText = 	sFrontierText_Jogger_PreBattle_3,
-		.playerWinText = 	sFrontierText_Jogger_PlayerWin_3,
-		.playerLoseText = 	sFrontierText_Jogger_PlayerLose_3,
-	},
-	{
-		.owNum = 			EVENT_OBJ_GFX_RANCHER_M,
-		.trainerClass = 	CLASS_RANCHER,
-		.trainerSprite = 	TRAINER_PIC_RANCHER_M,
-		.gender = 			BATTLE_FACILITY_MALE,
-		.preBattleText = 	sFrontierText_Rancher_PreBattle_1,
-		.playerWinText = 	sFrontierText_Rancher_PlayerWin_1,
-		.playerLoseText = 	sFrontierText_Rancher_PlayerLose_1,
-	},
-	{
-		.owNum = 			EVENT_OBJ_GFX_RANCHER_M,
-		.trainerClass = 	CLASS_RANCHER,
-		.trainerSprite = 	TRAINER_PIC_RANCHER_M,
-		.gender = 			BATTLE_FACILITY_MALE,
-		.preBattleText = 	sFrontierText_Rancher_PreBattle_2,
-		.playerWinText = 	sFrontierText_Rancher_PlayerWin_2,
-		.playerLoseText = 	sFrontierText_Rancher_PlayerLose_2,
-	},
-	{
-		.owNum = 			EVENT_OBJ_GFX_RANCHER_M,
-		.trainerClass = 	CLASS_RANCHER,
-		.trainerSprite = 	TRAINER_PIC_RANCHER_M,
-		.gender = 			BATTLE_FACILITY_MALE,
-		.preBattleText = 	sFrontierText_Rancher_PreBattle_3,
-		.playerWinText = 	sFrontierText_Rancher_PlayerWin_3,
-		.playerLoseText = 	sFrontierText_Rancher_PlayerLose_3,
-	},
-	{
-		.owNum = 			EVENT_OBJ_GFX_RANCHER_F,
-		.trainerClass = 	CLASS_RANCHER,
-		.trainerSprite = 	TRAINER_PIC_RANCHER_F,
-		.gender = 			BATTLE_FACILITY_FEMALE,
-		.preBattleText = 	sFrontierText_Rancher_PreBattle_4,
-		.playerWinText = 	sFrontierText_Rancher_PlayerWin_4,
-		.playerLoseText = 	sFrontierText_Rancher_PlayerLose_4,
-	},
-	{
-		.owNum = 			EVENT_OBJ_GFX_RANCHER_F,
-		.trainerClass = 	CLASS_RANCHER,
-		.trainerSprite = 	TRAINER_PIC_RANCHER_F,
-		.gender = 			BATTLE_FACILITY_FEMALE,
-		.preBattleText = 	sFrontierText_Rancher_PreBattle_5,
-		.playerWinText = 	sFrontierText_Rancher_PlayerWin_5,
-		.playerLoseText = 	sFrontierText_Rancher_PlayerLose_5,
-	},
-	{
-		.owNum = 			EVENT_OBJ_GFX_RANCHER_F,
-		.trainerClass = 	CLASS_RANCHER,
-		.trainerSprite = 	TRAINER_PIC_RANCHER_F,
-		.gender = 			BATTLE_FACILITY_FEMALE,
-		.preBattleText = 	sFrontierText_Rancher_PreBattle_6,
-		.playerWinText = 	sFrontierText_Rancher_PlayerWin_6,
-		.playerLoseText = 	sFrontierText_Rancher_PlayerLose_6,
-	},
-	{
-		.owNum = 			EVENT_OBJ_GFX_EXPERT_M,
+		.owNum = 			EVENT_OBJ_GFX_OLD_MAN,
 		.trainerClass = 	CLASS_EXPERT,
 		.trainerSprite = 	TRAINER_PIC_EXPERT_M,
 		.gender = 			BATTLE_FACILITY_MALE,
@@ -1851,7 +1432,7 @@ const struct BattleTowerTrainer gTowerTrainers[] =
 		.playerLoseText = 	sFrontierText_ExpertM_PlayerLose_1,
 	},
 	{
-		.owNum = 			EVENT_OBJ_GFX_EXPERT_M,
+		.owNum = 			EVENT_OBJ_GFX_OLD_MAN,
 		.trainerClass = 	CLASS_EXPERT,
 		.trainerSprite = 	TRAINER_PIC_EXPERT_M,
 		.gender = 			BATTLE_FACILITY_MALE,
@@ -1860,7 +1441,7 @@ const struct BattleTowerTrainer gTowerTrainers[] =
 		.playerLoseText = 	sFrontierText_ExpertM_PlayerLose_2,
 	},
 	{
-		.owNum = 			EVENT_OBJ_GFX_EXPERT_M,
+		.owNum = 			EVENT_OBJ_GFX_OLD_MAN,
 		.trainerClass = 	CLASS_EXPERT,
 		.trainerSprite = 	TRAINER_PIC_EXPERT_M,
 		.gender = 			BATTLE_FACILITY_MALE,
@@ -1869,7 +1450,7 @@ const struct BattleTowerTrainer gTowerTrainers[] =
 		.playerLoseText = 	sFrontierText_ExpertM_PlayerLose_3,
 	},
 	{
-		.owNum = 			EVENT_OBJ_GFX_EXPERT_F,
+		.owNum = 			EVENT_OBJ_GFX_OLD_WOMAN,
 		.trainerClass = 	CLASS_EXPERT,
 		.trainerSprite = 	TRAINER_PIC_EXPERT_F,
 		.gender = 			BATTLE_FACILITY_FEMALE,
@@ -1878,7 +1459,7 @@ const struct BattleTowerTrainer gTowerTrainers[] =
 		.playerLoseText = 	sFrontierText_ExpertF_PlayerLose_1,
 	},
 	{
-		.owNum = 			EVENT_OBJ_GFX_EXPERT_F,
+		.owNum = 			EVENT_OBJ_GFX_OLD_WOMAN,
 		.trainerClass = 	CLASS_EXPERT,
 		.trainerSprite = 	TRAINER_PIC_EXPERT_F,
 		.gender = 			BATTLE_FACILITY_FEMALE,
@@ -1887,7 +1468,7 @@ const struct BattleTowerTrainer gTowerTrainers[] =
 		.playerLoseText = 	sFrontierText_ExpertF_PlayerLose_2,
 	},
 	{
-		.owNum = 			EVENT_OBJ_GFX_EXPERT_F,
+		.owNum = 			EVENT_OBJ_GFX_OLD_WOMAN,
 		.trainerClass = 	CLASS_EXPERT,
 		.trainerSprite = 	TRAINER_PIC_EXPERT_F,
 		.gender = 			BATTLE_FACILITY_FEMALE,
@@ -1896,7 +1477,7 @@ const struct BattleTowerTrainer gTowerTrainers[] =
 		.playerLoseText = 	sFrontierText_ExpertF_PlayerLose_3,
 	},
 	{
-		.owNum = 			EVENT_OBJ_GFX_POKEFAN_M,
+		.owNum = 			EVENT_OBJ_GFX_MIDDLE_AGED_MAN,
 		.trainerClass = 	CLASS_POKEFAN,
 		.trainerSprite = 	TRAINER_PIC_POKEFAN_M,
 		.gender = 			BATTLE_FACILITY_MALE,
@@ -1905,7 +1486,7 @@ const struct BattleTowerTrainer gTowerTrainers[] =
 		.playerLoseText = 	sFrontierText_PokefanM_PlayerLose_1,
 	},
 	{
-		.owNum = 			EVENT_OBJ_GFX_POKEFAN_M,
+		.owNum = 			EVENT_OBJ_GFX_MIDDLE_AGED_MAN,
 		.trainerClass = 	CLASS_POKEFAN,
 		.trainerSprite = 	TRAINER_PIC_POKEFAN_M,
 		.gender = 			BATTLE_FACILITY_MALE,
@@ -1914,7 +1495,7 @@ const struct BattleTowerTrainer gTowerTrainers[] =
 		.playerLoseText = 	sFrontierText_PokefanM_PlayerLose_2,
 	},
 	{
-		.owNum = 			EVENT_OBJ_GFX_POKEFAN_M,
+		.owNum = 			EVENT_OBJ_GFX_MIDDLE_AGED_MAN,
 		.trainerClass = 	CLASS_POKEFAN,
 		.trainerSprite = 	TRAINER_PIC_POKEFAN_M,
 		.gender = 			BATTLE_FACILITY_MALE,
@@ -1949,209 +1530,305 @@ const struct BattleTowerTrainer gTowerTrainers[] =
 		.playerWinText = 	sFrontierText_Nurse_PlayerWin_3,
 		.playerLoseText = 	sFrontierText_Nurse_PlayerLose_3,
 	},
+	{
+		.owNum = 			EVENT_OBJ_GFX_STANDING_SWIMMER_M,
+		.trainerClass = 	CLASS_SWIMMER_M,
+		.trainerSprite = 	TRAINER_PIC_SWIMMER_M,
+		.gender = 			BATTLE_FACILITY_MALE,
+		.preBattleText = 	sFrontierText_Swimmer_PreBattle_1,
+		.playerWinText = 	sFrontierText_Swimmer_PlayerWin_1,
+		.playerLoseText = 	sFrontierText_Swimmer_PlayerLose_1,
+	},
+	{
+		.owNum = 			EVENT_OBJ_GFX_STANDING_SWIMMER_M,
+		.trainerClass = 	CLASS_SWIMMER_M,
+		.trainerSprite = 	TRAINER_PIC_SWIMMER_M,
+		.gender = 			BATTLE_FACILITY_MALE,
+		.preBattleText = 	sFrontierText_Swimmer_PreBattle_2,
+		.playerWinText = 	sFrontierText_Swimmer_PlayerWin_2,
+		.playerLoseText = 	sFrontierText_Swimmer_PlayerLose_2,
+	},
+	{
+		.owNum = 			EVENT_OBJ_GFX_STANDING_SWIMMER_M,
+		.trainerClass = 	CLASS_SWIMMER_M,
+		.trainerSprite = 	TRAINER_PIC_SWIMMER_M,
+		.gender = 			BATTLE_FACILITY_MALE,
+		.preBattleText = 	sFrontierText_Swimmer_PreBattle_3,
+		.playerWinText = 	sFrontierText_Swimmer_PlayerWin_3,
+		.playerLoseText = 	sFrontierText_Swimmer_PlayerLose_3,
+	},
+	{
+		.owNum = 			EVENT_OBJ_GFX_STANDING_SWIMMER_F,
+		.trainerClass = 	CLASS_SWIMMER_F,
+		.trainerSprite = 	TRAINER_PIC_SWIMMER_F,
+		.gender = 			BATTLE_FACILITY_FEMALE,
+		.preBattleText = 	sFrontierText_Swimmer_PreBattle_1,
+		.playerWinText = 	sFrontierText_Swimmer_PlayerWin_1,
+		.playerLoseText = 	sFrontierText_Swimmer_PlayerLose_1,
+	},
+	{
+		.owNum = 			EVENT_OBJ_GFX_STANDING_SWIMMER_F,
+		.trainerClass = 	CLASS_SWIMMER_F,
+		.trainerSprite = 	TRAINER_PIC_SWIMMER_F,
+		.gender = 			BATTLE_FACILITY_FEMALE,
+		.preBattleText = 	sFrontierText_Swimmer_PreBattle_2,
+		.playerWinText = 	sFrontierText_Swimmer_PlayerWin_2,
+		.playerLoseText = 	sFrontierText_Swimmer_PlayerLose_2,
+	},
+	{
+		.owNum = 			EVENT_OBJ_GFX_STANDING_SWIMMER_F,
+		.trainerClass = 	CLASS_SWIMMER_F,
+		.trainerSprite = 	TRAINER_PIC_SWIMMER_F,
+		.gender = 			BATTLE_FACILITY_FEMALE,
+		.preBattleText = 	sFrontierText_Swimmer_PreBattle_3,
+		.playerWinText = 	sFrontierText_Swimmer_PlayerWin_3,
+		.playerLoseText = 	sFrontierText_Swimmer_PlayerLose_3,
+	},
+	{
+		.owNum = 			EVENT_OBJ_GFX_LITTLE_BOY,
+		.trainerClass = 	CLASS_NINJA_BOY,
+		.trainerSprite = 	TRAINER_PIC_NINJA_BOY,
+		.gender = 			BATTLE_FACILITY_MALE,
+		.preBattleText = 	sFrontierText_NinjaBoy_PreBattle_1,
+		.playerWinText = 	sFrontierText_NinjaBoy_PlayerWin_1,
+		.playerLoseText = 	sFrontierText_NinjaBoy_PlayerLose_1,
+	},
+	{
+		.owNum = 			EVENT_OBJ_GFX_LITTLE_BOY,
+		.trainerClass = 	CLASS_NINJA_BOY,
+		.trainerSprite = 	TRAINER_PIC_NINJA_BOY,
+		.gender = 			BATTLE_FACILITY_MALE,
+		.preBattleText = 	sFrontierText_NinjaBoy_PreBattle_2,
+		.playerWinText = 	sFrontierText_NinjaBoy_PlayerWin_2,
+		.playerLoseText = 	sFrontierText_NinjaBoy_PlayerLose_2,
+	},
+	{
+		.owNum = 			EVENT_OBJ_GFX_LITTLE_BOY,
+		.trainerClass = 	CLASS_NINJA_BOY,
+		.trainerSprite = 	TRAINER_PIC_NINJA_BOY,
+		.gender = 			BATTLE_FACILITY_MALE,
+		.preBattleText = 	sFrontierText_NinjaBoy_PreBattle_3,
+		.playerWinText = 	sFrontierText_NinjaBoy_PlayerWin_3,
+		.playerLoseText = 	sFrontierText_NinjaBoy_PlayerLose_3,
+	},
+	{
+		.owNum = 			EVENT_OBJ_GFX_CHANELLER,
+		.trainerClass = 	CLASS_CHANNELER,
+		.trainerSprite = 	TRAINER_PIC_CHANNELER,
+		.gender = 			BATTLE_FACILITY_FEMALE,
+		.preBattleText = 	sFrontierText_Channeler_PreBattle_1,
+		.playerWinText = 	sFrontierText_Channeler_PlayerWin_1,
+		.playerLoseText = 	sFrontierText_Channeler_PlayerLose_1,
+	},
+	{
+		.owNum = 			EVENT_OBJ_GFX_CHANELLER,
+		.trainerClass = 	CLASS_CHANNELER,
+		.trainerSprite = 	TRAINER_PIC_CHANNELER,
+		.gender = 			BATTLE_FACILITY_FEMALE,
+		.preBattleText = 	sFrontierText_Channeler_PreBattle_2,
+		.playerWinText = 	sFrontierText_Channeler_PlayerWin_2,
+		.playerLoseText = 	sFrontierText_Channeler_PlayerLose_2,
+	},
+	{
+		.owNum = 			EVENT_OBJ_GFX_CHANELLER,
+		.trainerClass = 	CLASS_CHANNELER,
+		.trainerSprite = 	TRAINER_PIC_CHANNELER,
+		.gender = 			BATTLE_FACILITY_FEMALE,
+		.preBattleText = 	sFrontierText_Channeler_PreBattle_3,
+		.playerWinText = 	sFrontierText_Channeler_PlayerWin_3,
+		.playerLoseText = 	sFrontierText_Channeler_PlayerLose_3,
+	},
+	{
+		.owNum = 			EVENT_OBJ_GFX_SKIER,
+		.trainerClass = 	CLASS_SKIER,
+		.trainerSprite = 	TRAINER_PIC_SKIER,
+		.gender = 			BATTLE_FACILITY_FEMALE,
+		.preBattleText = 	sFrontierText_Skier_PreBattle_1,
+		.playerWinText = 	sFrontierText_Skier_PlayerWin_1,
+		.playerLoseText = 	sFrontierText_Skier_PlayerLose_1,
+	},
+	{
+		.owNum = 			EVENT_OBJ_GFX_SKIER,
+		.trainerClass = 	CLASS_SKIER,
+		.trainerSprite = 	TRAINER_PIC_SKIER,
+		.gender = 			BATTLE_FACILITY_FEMALE,
+		.preBattleText = 	sFrontierText_Skier_PreBattle_2,
+		.playerWinText = 	sFrontierText_Skier_PlayerWin_2,
+		.playerLoseText = 	sFrontierText_Skier_PlayerLose_2,
+	},
+	{
+		.owNum = 			EVENT_OBJ_GFX_SKIER,
+		.trainerClass = 	CLASS_SKIER,
+		.trainerSprite = 	TRAINER_PIC_SKIER,
+		.gender = 			BATTLE_FACILITY_FEMALE,
+		.preBattleText = 	sFrontierText_Skier_PreBattle_3,
+		.playerWinText = 	sFrontierText_Skier_PlayerWin_3,
+		.playerLoseText = 	sFrontierText_Skier_PlayerLose_3,
+	},
 };
 
 const struct SpecialBattleFrontierTrainer gSpecialTowerTrainers[] =
 {
+	// Used for streak 20 trainers
 	{
-		.owNum = 			EVENT_OBJ_GFX_SKELI,
-		.trainerClass = 	CLASS_DEVELOPER,
-		.trainerSprite = 	TRAINER_PIC_SKELI,
+		.owNum = 			EVENT_OBJ_GFX_MORT,
+		.trainerClass = 	CLASS_BATTLE_FRONTIER_ACE,
+		.trainerSprite = 	TRAINER_PIC_MORT,
 		.gender = 			BATTLE_FACILITY_MALE,
-		.name =				sTrainerName_Skeli,
-		.preBattleText = 	sFrontierText_Skeli_PreBattle,
-		.playerWinText = 	sFrontierText_Skeli_PlayerWin,
-		.playerLoseText = 	sFrontierText_Skeli_PlayerLose,
-		.regularSpreads =	gSpecialTowerSpread_Skeli,
-		.middleCupSpreads = gMiddleCupTowerSpread_Skeli,
-		.littleCupSpreads = gLittleCupTowerSpread_Skeli,
-		.legendarySpreads = gLegendaryTowerSpread_Skeli,
-		.regSpreadSize = 	NELEMS(gSpecialTowerSpread_Skeli),
-		.mcSpreadSize =		NELEMS(gMiddleCupTowerSpread_Skeli),
-		.lcSpreadSize =		NELEMS(gLittleCupTowerSpread_Skeli),
-		.legSpreadSize =	NELEMS(gLegendaryTowerSpread_Skeli),
-		.songId = 			BGM_BATTLE_LOR_LEADER,
+		.name =				sTrainerName_Mort,
+		.preBattleText = 	sFrontierText_Mort_PreBattle,
+		.playerWinText = 	sFrontierText_Mort_PlayerWin,
+		.playerLoseText = 	sFrontierText_Mort_PlayerLose,
+		.regularSpreads =	gSpecialTowerSpread_Mort,
+		.middleCupSpreads = gSpecialTowerSpread_Mort,
+		.littleCupSpreads = gSpecialTowerSpread_Mort,
+		.legendarySpreads = gSpecialTowerSpread_MortLegendary,
+		.regSpreadSize = 	NELEMS(gSpecialTowerSpread_Mort),
+		.mcSpreadSize =		NELEMS(gSpecialTowerSpread_Mort),
+		.lcSpreadSize =		NELEMS(gSpecialTowerSpread_Mort),
+		.legSpreadSize =	NELEMS(gSpecialTowerSpread_MortLegendary),
+		.songId = 			BGM_BATTLE_FRONTIER_BOSS,
 		.isMonotype = 		FALSE,
 	},
 	{
-		.owNum = 			EVENT_OBJ_GFX_GOLCHE,
-		.trainerClass = 	CLASS_DEVELOPER,
-		.trainerSprite = 	TRAINER_PIC_GOLCHE,
+		.owNum = 			EVENT_OBJ_GFX_RIVAL,
+		.trainerClass = 	CLASS_BATTLE_FRONTIER_ACE,
+		.trainerSprite = 	TRAINER_PIC_RIVAL,
 		.gender = 			BATTLE_FACILITY_MALE,
-		.name =				sTrainerName_Golche,
-		.preBattleText = 	sFrontierText_Golche_PreBattle,
-		.playerWinText = 	sFrontierText_Golche_PlayerWin,
-		.playerLoseText = 	sFrontierText_Golche_PlayerLose,
-		.regularSpreads =	gSpecialTowerSpread_Golche,
-		.middleCupSpreads = gMiddleCupTowerSpread_Golche,
-		.littleCupSpreads = gLittleCupTowerSpread_Golche,
-		.legendarySpreads = gLegendaryTowerSpread_Golche,
-		.regSpreadSize = 	NELEMS(gSpecialTowerSpread_Golche),
-		.mcSpreadSize =		NELEMS(gMiddleCupTowerSpread_Golche),
-		.lcSpreadSize =		NELEMS(gLittleCupTowerSpread_Golche),
-		.legSpreadSize =	NELEMS(gLegendaryTowerSpread_Golche),
-		.songId = 			BGM_BATTLE_GALACTIC_BOSS,
+		.name =				sTrainerName_Rival,
+		.preBattleText = 	sFrontierText_Rival_PreBattle,
+		.playerWinText = 	sFrontierText_Rival_PlayerWin,
+		.playerLoseText = 	sFrontierText_Rival_PlayerLose,
+		.regularSpreads =	gSpecialTowerSpread_Rival,
+		.middleCupSpreads = gSpecialTowerSpread_Rival,
+		.littleCupSpreads = gSpecialTowerSpread_Rival,
+		.legendarySpreads = gSpecialTowerSpread_RivalLegendary,
+		.regSpreadSize = 	NELEMS(gSpecialTowerSpread_Rival),
+		.mcSpreadSize =		NELEMS(gSpecialTowerSpread_Rival),
+		.lcSpreadSize =		NELEMS(gSpecialTowerSpread_Rival),
+		.legSpreadSize =	NELEMS(gSpecialTowerSpread_RivalLegendary),
+		.songId = 			BGM_BATTLE_FRONTIER_BOSS,
 		.isMonotype = 		FALSE,
 	},
 	{
-		.owNum = 			EVENT_OBJ_GFX_GAIL,
-		.trainerClass = 	CLASS_PKMN_TRAINER_2,
-		.trainerSprite = 	TRAINER_PIC_GAIL,
-		.gender = 			BATTLE_FACILITY_MALE,
-		.name =				sTrainerName_Gail,
-		.preBattleText = 	sFrontierText_Gail_PreBattle,
-		.playerWinText = 	sFrontierText_Gail_PlayerWin,
-		.playerLoseText = 	sFrontierText_Gail_PlayerLose,
-		.regularSpreads =	gSpecialTowerSpread_Gail,
-		.middleCupSpreads = gMiddleCupTowerSpread_Gail,
-		.littleCupSpreads = gLittleCupTowerSpread_Gail,
-		.legendarySpreads =	gLegendaryTowerSpread_Gail,
-		.regSpreadSize = 	NELEMS(gSpecialTowerSpread_Gail),
-		.mcSpreadSize =		NELEMS(gMiddleCupTowerSpread_Gail),
-		.lcSpreadSize =		NELEMS(gLittleCupTowerSpread_Gail),
-		.legSpreadSize =	NELEMS(gLegendaryTowerSpread_Gail),
-		.songId = 			BGM_BATTLE_DIALGA_PALKIA,
-		.isMonotype = 		FALSE,
-	},
-	{
-		.owNum = 			EVENT_OBJ_GFX_LIXDEL,
-		.trainerClass = 	CLASS_PKMN_TRAINER_2,
-		.trainerSprite = 	TRAINER_PIC_LIXDEL,
-		.gender = 			BATTLE_FACILITY_MALE,
-		.name =				sTrainerName_Lixdel,
-		.preBattleText = 	sFrontierText_Lixdel_PreBattle,
-		.playerWinText = 	sFrontierText_Lixdel_PlayerWin,
-		.playerLoseText = 	sFrontierText_Lixdel_PlayerLose,
-		.regularSpreads =	gSpecialTowerSpread_Lixdel,
-		.middleCupSpreads = gMiddleCupTowerSpread_Lixdel,
-		.littleCupSpreads = gLittleCupTowerSpread_Lixdel,
-		.legendarySpreads = gLegendaryTowerSpread_Lixdel,
-		.regSpreadSize = 	NELEMS(gSpecialTowerSpread_Lixdel),
-		.mcSpreadSize =		NELEMS(gMiddleCupTowerSpread_Lixdel),
-		.lcSpreadSize =		NELEMS(gLittleCupTowerSpread_Lixdel),
-		.legSpreadSize =	NELEMS(gLegendaryTowerSpread_Lixdel),
-		.songId = 			BGM_BATTLE_JAX,
-		.isMonotype = 		FALSE,
-	},
-	{
-		.owNum = 			EVENT_OBJ_GFX_CYNTHIA,
-		.trainerClass = 	CLASS_CHAMPION,
-		.trainerSprite = 	TRAINER_PIC_CYNTHIA,
+		.owNum = 			EVENT_OBJ_GFX_SELENE,
+		.trainerClass = 	CLASS_BATTLE_FRONTIER_ACE,
+		.trainerSprite = 	TRAINER_PIC_CHAMPION_SELENE,
 		.gender = 			BATTLE_FACILITY_FEMALE,
-		.name =				sTrainerName_Cynthia,
-		.preBattleText = 	sFrontierText_Cynthia_PreBattle,
-		.playerWinText = 	sFrontierText_Cynthia_PlayerWin,
-		.playerLoseText = 	sFrontierText_Cynthia_PlayerLose,
-		.regularSpreads =	gSpecialTowerSpread_Cynthia,
-		.middleCupSpreads = gMiddleCupTowerSpread_Cynthia,
-		.littleCupSpreads = gLittleCupTowerSpread_Cynthia,
-		.legendarySpreads = gLegendaryTowerSpread_Cynthia,
-		.regSpreadSize = 	NELEMS(gSpecialTowerSpread_Cynthia),
-		.mcSpreadSize =		NELEMS(gMiddleCupTowerSpread_Cynthia),
-		.lcSpreadSize =		NELEMS(gLittleCupTowerSpread_Cynthia),
-		.legSpreadSize = 	NELEMS(gLegendaryTowerSpread_Cynthia),
-		.songId = 			BGM_BATTLE_CYNTHIA,
+		.name =				sTrainerName_Selene,
+		.preBattleText = 	sFrontierText_Selene_PreBattle,
+		.playerWinText = 	sFrontierText_Selene_PlayerWin,
+		.playerLoseText = 	sFrontierText_Selene_PlayerLose,
+		.regularSpreads =	gSpecialTowerSpread_Selene,
+		.middleCupSpreads = gSpecialTowerSpread_Selene,
+		.littleCupSpreads = gSpecialTowerSpread_Selene,
+		.legendarySpreads = gSpecialTowerSpread_SeleneLegendary,
+		.regSpreadSize = 	NELEMS(gSpecialTowerSpread_Selene),
+		.mcSpreadSize =		NELEMS(gSpecialTowerSpread_Selene),
+		.lcSpreadSize =		NELEMS(gSpecialTowerSpread_Selene),
+		.legSpreadSize =	NELEMS(gSpecialTowerSpread_SeleneLegendary),
+		.songId = 			BGM_BATTLE_FRONTIER_BOSS,
 		.isMonotype = 		FALSE,
 	},
 	{
-		.owNum = 			EVENT_OBJ_GFX_RED,
-		.trainerClass = 	CLASS_PKMN_TRAINER_2,
-		.trainerSprite = 	TRAINER_PIC_RED,
+		.owNum = 			EVENT_OBJ_GFX_ALISTAIR,
+		.trainerClass = 	CLASS_BATTLE_FRONTIER_ACE,
+		.trainerSprite = 	TRAINER_PIC_ALISTAIR,
 		.gender = 			BATTLE_FACILITY_MALE,
-		.name =				sTrainerName_Red,
-		.preBattleText = 	sFrontierText_Red_PreBattle,
-		.playerWinText = 	sFrontierText_Red_PlayerWin,
-		.playerLoseText = 	sFrontierText_Red_PlayerLose,
-		.regularSpreads =	gSpecialTowerSpread_Red,
-		.middleCupSpreads = gMiddleCupTowerSpread_Red,
-		.littleCupSpreads = gLittleCupTowerSpread_Red,
-		.legendarySpreads = gLegendaryTowerSpread_Red,
-		.regSpreadSize = 	NELEMS(gSpecialTowerSpread_Red),
-		.mcSpreadSize =		NELEMS(gMiddleCupTowerSpread_Red),
-		.lcSpreadSize =		NELEMS(gLittleCupTowerSpread_Red),
-		.legSpreadSize = 	NELEMS(gLegendaryTowerSpread_Red),
-		.songId = 			BGM_BATTLE_RED,
+		.name =				sTrainerName_Alistair,
+		.preBattleText = 	sFrontierText_Alistair_PreBattle,
+		.playerWinText = 	sFrontierText_Alistair_PlayerWin,
+		.playerLoseText = 	sFrontierText_Alistair_PlayerLose,
+		.regularSpreads =	gSpecialTowerSpread_Alistair,
+		.middleCupSpreads = gSpecialTowerSpread_Alistair,
+		.littleCupSpreads = gSpecialTowerSpread_Alistair,
+		.legendarySpreads = gSpecialTowerSpread_AlistairLegendary,
+		.regSpreadSize = 	NELEMS(gSpecialTowerSpread_Alistair),
+		.mcSpreadSize =		NELEMS(gSpecialTowerSpread_Alistair),
+		.lcSpreadSize =		NELEMS(gSpecialTowerSpread_Alistair),
+		.legSpreadSize =	NELEMS(gSpecialTowerSpread_AlistairLegendary),
+		.songId = 			BGM_BATTLE_FRONTIER_BOSS,
 		.isMonotype = 		FALSE,
 	},
 	{
-		.owNum = 			EVENT_OBJ_GFX_BIG_MO,
-		.trainerClass = 	CLASS_LEADER,
-		.trainerSprite = 	TRAINER_PIC_BIG_MO,
+		.owNum = 			EVENT_OBJ_GFX_COOLTRAINER_M,
+		.trainerClass = 	CLASS_BATTLE_FRONTIER_ACE,
+		.trainerSprite = 	TRAINER_PIC_RS_COOLTRAINER_M,
 		.gender = 			BATTLE_FACILITY_MALE,
-		.name =				sTrainerName_BigMo,
-		.preBattleText = 	sFrontierText_BigMo_PreBattle,
-		.playerWinText = 	sFrontierText_BigMo_PlayerWin,
-		.playerLoseText = 	sFrontierText_BigMo_PlayerLose,
-		.regularSpreads =	gSpecialTowerSpread_BigMo,
-		.middleCupSpreads = gMiddleCupTowerSpread_BigMo,
-		.littleCupSpreads = gLittleCupTowerSpread_BigMo,
-		.legendarySpreads = gLegendaryTowerSpread_BigMo,
-		.regSpreadSize = 	NELEMS(gSpecialTowerSpread_BigMo),
-		.mcSpreadSize =		NELEMS(gMiddleCupTowerSpread_BigMo),
-		.lcSpreadSize =		NELEMS(gLittleCupTowerSpread_BigMo),
-		.legSpreadSize =	NELEMS(gLegendaryTowerSpread_BigMo),
-		.songId = 			BGM_BATTLE_GYM_LEADER,
-		.isMonotype = 		TRUE,
+		.name =				sTrainerName_Collin,
+		.preBattleText = 	sFrontierText_Collin_PreBattle,
+		.playerWinText = 	sFrontierText_Collin_PlayerWin,
+		.playerLoseText = 	sFrontierText_Collin_PlayerLose,
+		.regularSpreads =	gSpecialTowerSpread_Collin,
+		.middleCupSpreads = gSpecialTowerSpread_Collin,
+		.littleCupSpreads = gSpecialTowerSpread_Collin,
+		.legendarySpreads = gSpecialTowerSpread_CollinLegendary,
+		.regSpreadSize = 	NELEMS(gSpecialTowerSpread_Collin),
+		.mcSpreadSize =		NELEMS(gSpecialTowerSpread_Collin),
+		.lcSpreadSize =		NELEMS(gSpecialTowerSpread_Collin),
+		.legSpreadSize =	NELEMS(gSpecialTowerSpread_CollinLegendary),
+		.songId = 			BGM_BATTLE_FRONTIER_BOSS,
+		.isMonotype = 		FALSE,
 	},
 	{
-		.owNum = 			EVENT_OBJ_GFX_GALAVAN,
-		.trainerClass = 	CLASS_LEADER,
-		.trainerSprite = 	TRAINER_PIC_GALAVAN,
-		.gender = 			BATTLE_FACILITY_MALE,
-		.name =				sTrainerName_Galavan,
-		.preBattleText = 	sFrontierText_Galavan_PreBattle,
-		.playerWinText = 	sFrontierText_Galavan_PlayerWin,
-		.playerLoseText = 	sFrontierText_Galavan_PlayerLose,
-		.regularSpreads =	gSpecialTowerSpread_Galavan,
-		.middleCupSpreads = gMiddleCupTowerSpread_Galavan,
-		.littleCupSpreads = gLittleCupTowerSpread_Galavan,
-		.legendarySpreads = gLegendaryTowerSpread_Galavan,
-		.regSpreadSize = 	NELEMS(gSpecialTowerSpread_Galavan),
-		.mcSpreadSize =		NELEMS(gMiddleCupTowerSpread_Galavan),
-		.lcSpreadSize =		NELEMS(gLittleCupTowerSpread_Galavan),
-		.legSpreadSize =	NELEMS(gLegendaryTowerSpread_Galavan),
-		.songId = 			BGM_BATTLE_GYM_LEADER,
-		.isMonotype = 		TRUE,
-	},
-	{
-		.owNum = 			EVENT_OBJ_GFX_CANDICE,
-		.trainerClass = 	CLASS_LEADER,
-		.trainerSprite = 	TRAINER_PIC_CANDICE,
+		.owNum = 			EVENT_OBJ_GFX_COOLTRAINER_F,
+		.trainerClass = 	CLASS_BATTLE_FRONTIER_ACE,
+		.trainerSprite = 	TRAINER_PIC_RS_COOLTRAINER_F,
 		.gender = 			BATTLE_FACILITY_FEMALE,
-		.name =				sTrainerName_Candice,
-		.preBattleText = 	sFrontierText_Candice_PreBattle,
-		.playerWinText = 	sFrontierText_Candice_PlayerWin,
-		.playerLoseText = 	sFrontierText_Candice_PlayerLose,
-		.regularSpreads =	gSpecialTowerSpread_Candice,
-		.middleCupSpreads = gMiddleCupTowerSpread_Candice,
-		.littleCupSpreads = gLittleCupTowerSpread_Candice,
-		.legendarySpreads = gLegendaryTowerSpread_Candice,
-		.regSpreadSize = 	NELEMS(gSpecialTowerSpread_Candice),
-		.mcSpreadSize =		NELEMS(gMiddleCupTowerSpread_Candice),
-		.lcSpreadSize =		NELEMS(gLittleCupTowerSpread_Candice),
-		.legSpreadSize =	NELEMS(gLegendaryTowerSpread_Candice),
-		.songId = 			BGM_BATTLE_SINNOH_GYM_LEADER,
-		.isMonotype = 		TRUE,
+		.name =				sTrainerName_Crystal,
+		.preBattleText = 	sFrontierText_Crystal_PreBattle,
+		.playerWinText = 	sFrontierText_Crystal_PlayerWin,
+		.playerLoseText = 	sFrontierText_Crystal_PlayerLose,
+		.regularSpreads =	gSpecialTowerSpread_Crystal,
+		.middleCupSpreads = gSpecialTowerSpread_Crystal,
+		.littleCupSpreads = gSpecialTowerSpread_Crystal,
+		.legendarySpreads = gSpecialTowerSpread_CrystalLegendary,
+		.regSpreadSize = 	NELEMS(gSpecialTowerSpread_Crystal),
+		.mcSpreadSize =		NELEMS(gSpecialTowerSpread_Crystal),
+		.lcSpreadSize =		NELEMS(gSpecialTowerSpread_Crystal),
+		.legSpreadSize =	NELEMS(gSpecialTowerSpread_CrystalLegendary),
+		.songId = 			BGM_BATTLE_FRONTIER_BOSS,
+		.isMonotype = 		FALSE,
 	},
 	{
-		.owNum = 			EVENT_OBJ_GFX_GIOVANNI,
-		.trainerClass = 	CLASS_BOSS,
-		.trainerSprite = 	TRAINER_PIC_GIOVANNI,
+		.owNum = 			EVENT_OBJ_GFX_BRENDAN,
+		.trainerClass = 	CLASS_BATTLE_FRONTIER_ACE,
+		.trainerSprite = 	TRAINER_PIC_BRENDAN,
 		.gender = 			BATTLE_FACILITY_MALE,
-		.name =				sTrainerName_Giovanni,
-		.preBattleText = 	sFrontierText_Giovanni_PreBattle,
-		.playerWinText = 	sFrontierText_Giovanni_PlayerWin,
-		.playerLoseText = 	sFrontierText_Giovanni_PlayerLose,
-		.regularSpreads =	gSpecialTowerSpread_Giovanni,
-		.middleCupSpreads = gMiddleCupTowerSpread_Giovanni,
-		.littleCupSpreads = gLittleCupTowerSpread_Giovanni,
-		.legendarySpreads = gLegendaryTowerSpread_Giovanni,
-		.regSpreadSize = 	NELEMS(gSpecialTowerSpread_Giovanni),
-		.mcSpreadSize =		NELEMS(gMiddleCupTowerSpread_Giovanni),
-		.lcSpreadSize =		NELEMS(gLittleCupTowerSpread_Giovanni),
-		.legSpreadSize =	NELEMS(gLegendaryTowerSpread_Giovanni),
-		.songId = 			BGM_BATTLE_TERROR_GRANBULL_GOON, //TODO BGM_BATTLE_BLACK_HORIZON_BOSS,
-		.isMonotype = 		TRUE,
+		.name =				sTrainerName_Brendan,
+		.preBattleText = 	sFrontierText_Brendan_PreBattle,
+		.playerWinText = 	sFrontierText_Brendan_PlayerWin,
+		.playerLoseText = 	sFrontierText_Brendan_PlayerLose,
+		.regularSpreads =	gSpecialTowerSpread_Brendan,
+		.middleCupSpreads = gSpecialTowerSpread_Brendan,
+		.littleCupSpreads = gSpecialTowerSpread_Brendan,
+		.legendarySpreads = gSpecialTowerSpread_BrendanLegendary,
+		.regSpreadSize = 	NELEMS(gSpecialTowerSpread_Brendan),
+		.mcSpreadSize =		NELEMS(gSpecialTowerSpread_Brendan),
+		.lcSpreadSize =		NELEMS(gSpecialTowerSpread_Brendan),
+		.legSpreadSize =	NELEMS(gSpecialTowerSpread_BrendanLegendary),
+		.songId = 			BGM_BATTLE_FRONTIER_BOSS,
+		.isMonotype = 		FALSE,
+	},
+	{
+		.owNum = 			EVENT_OBJ_GFX_MAY,
+		.trainerClass = 	CLASS_BATTLE_FRONTIER_ACE,
+		.trainerSprite = 	TRAINER_PIC_MAY,
+		.gender = 			BATTLE_FACILITY_FEMALE,
+		.name =				sTrainerName_May,
+		.preBattleText = 	sFrontierText_May_PreBattle,
+		.playerWinText = 	sFrontierText_May_PlayerWin,
+		.playerLoseText = 	sFrontierText_May_PlayerLose,
+		.regularSpreads =	gSpecialTowerSpread_May,
+		.middleCupSpreads = gSpecialTowerSpread_May,
+		.littleCupSpreads = gSpecialTowerSpread_May,
+		.legendarySpreads = gSpecialTowerSpread_MayLegendary,
+		.regSpreadSize = 	NELEMS(gSpecialTowerSpread_May),
+		.mcSpreadSize =		NELEMS(gSpecialTowerSpread_May),
+		.lcSpreadSize =		NELEMS(gSpecialTowerSpread_May),
+		.legSpreadSize =	NELEMS(gSpecialTowerSpread_MayLegendary),
+		.songId = 			BGM_BATTLE_FRONTIER_BOSS,
+		.isMonotype = 		FALSE,
 	},
 };
 
@@ -2159,334 +1836,195 @@ const struct SpecialBattleFrontierTrainer gFrontierBrains[] =
 {
 	[0] =
 		{
-			.owNum = 			EVENT_OBJ_GFX_PALMER,
-			.trainerClass = 	CLASS_FRONTIER_BRAIN,
-			.trainerSprite = 	TRAINER_PIC_PALMER,
+			.owNum = 			EVENT_OBJ_GFX_TERRENCE,
+			.trainerClass = 	CLASS_BATTLE_FRONTIER_BRAIN,
+			.trainerSprite = 	TRAINER_PIC_TERRENCE,
 			.gender = 			BATTLE_FACILITY_MALE,
-			.name =				sTrainerName_Palmer,
-			.regularSpreads =	gSpecialTowerSpread_Palmer1,
-			.legendarySpreads = gLegendaryTowerSpread_Palmer1,
-			.middleCupSpreads = gMiddleCupTowerSpread_Palmer1,
-			.littleCupSpreads = gLittleCupTowerSpread_Palmer1,
-			.regSpreadSize = 	NELEMS(gSpecialTowerSpread_Palmer1),
-			.legSpreadSize =	NELEMS(gLegendaryTowerSpread_Palmer1),
-			.mcSpreadSize =		NELEMS(gMiddleCupTowerSpread_Palmer1),
-			.lcSpreadSize =		NELEMS(gLittleCupTowerSpread_Palmer1),
+			.name =				sTrainerName_Terrence,
+			.preBattleText = 	sFrontierText_Terrence_PreBattle,
+			.playerWinText = 	sFrontierText_Terrence_PlayerWin,
+			.playerLoseText = 	sFrontierText_Terrence_PlayerLose,
+			.regularSpreads =	gSpecialTowerSpread_Terrence,
+			.legendarySpreads = gSpecialTowerSpread_TerrenceLegendary,
+			.middleCupSpreads = gSpecialTowerSpread_Terrence,
+			.littleCupSpreads = gSpecialTowerSpread_Terrence,
+			.regSpreadSize = 	NELEMS(gSpecialTowerSpread_Terrence),
+			.legSpreadSize =	NELEMS(gSpecialTowerSpread_TerrenceLegendary),
+			.mcSpreadSize =		NELEMS(gSpecialTowerSpread_Terrence),
+			.lcSpreadSize =		NELEMS(gSpecialTowerSpread_Terrence),
+			.songId = 			BGM_BATTLE_FRONTIER_BOSS,
+			.isMonotype = 		FALSE,
 		},
 	[1] =
 		{
-			.owNum = 			EVENT_OBJ_GFX_PALMER,
-			.trainerClass = 	CLASS_FRONTIER_BRAIN,
-			.trainerSprite = 	TRAINER_PIC_PALMER,
-			.gender = 			BATTLE_FACILITY_MALE,
-			.name =				sTrainerName_Palmer,
-			.regularSpreads =	gSpecialTowerSpread_Palmer2,
-			.legendarySpreads = gLegendaryTowerSpread_Palmer1,
-			.middleCupSpreads = gMiddleCupTowerSpread_Palmer1,
-			.littleCupSpreads = gLittleCupTowerSpread_Palmer2,
-			.regSpreadSize = 	NELEMS(gSpecialTowerSpread_Palmer2),
-			.legSpreadSize =	NELEMS(gLegendaryTowerSpread_Palmer1),
-			.mcSpreadSize =		NELEMS(gMiddleCupTowerSpread_Palmer1),
-			.lcSpreadSize =		NELEMS(gLittleCupTowerSpread_Palmer2),
+			.owNum = 			EVENT_OBJ_GFX_STELLA,
+			.trainerClass = 	CLASS_BATTLE_FRONTIER_BRAIN,
+			.trainerSprite = 	TRAINER_PIC_STELLA,
+			.gender = 			BATTLE_FACILITY_FEMALE,
+			.name =				sTrainerName_Stella,
+			.preBattleText = 	sFrontierText_Stella_PreBattle,
+			.playerWinText = 	sFrontierText_Stella_PlayerWin,
+			.playerLoseText = 	sFrontierText_Stella_PlayerLose,
+			.regularSpreads =	gSpecialTowerSpread_Stella,
+			.legendarySpreads = gSpecialTowerSpread_StellaLegendary,
+			.middleCupSpreads = gSpecialTowerSpread_Stella,
+			.littleCupSpreads = gSpecialTowerSpread_Stella,
+			.regSpreadSize = 	NELEMS(gSpecialTowerSpread_Stella),
+			.legSpreadSize =	NELEMS(gSpecialTowerSpread_StellaLegendary),
+			.mcSpreadSize =		NELEMS(gSpecialTowerSpread_Stella),
+			.lcSpreadSize =		NELEMS(gSpecialTowerSpread_Stella),
+			.songId = 			BGM_BATTLE_FRONTIER_BOSS,
+			.isMonotype = 		FALSE,
 		},
 	[2] =
 		{
-			.owNum = 			EVENT_OBJ_GFX_PAT,
-			.trainerClass = 	CLASS_FRONTIER_BRAIN,
-			.trainerSprite = 	TRAINER_PIC_PAT,
-			.gender = 			BATTLE_FACILITY_MALE,
-			.name =				sTrainerName_Pat,
-			.playerWinText = 	sFrontierText_Pat_PlayerWin,
-			.playerLoseText = 	sFrontierText_Pat_PlayerLose,
-			.regularSpreads =	gSpecialTowerSpread_Pat1,
-			.legendarySpreads = gLegendaryTowerSpread_Pat1,
-			.middleCupSpreads = gMiddleCupTowerSpread_Pat1,
-			.littleCupSpreads = gLittleCupTowerSpread_Pat1,
-			.regSpreadSize = 	NELEMS(gSpecialTowerSpread_Pat1),
-			.mcSpreadSize =		NELEMS(gMiddleCupTowerSpread_Pat1),
-			.lcSpreadSize =		NELEMS(gLittleCupTowerSpread_Pat1),
-			.legSpreadSize =	NELEMS(gLegendaryTowerSpread_Pat1),
+			.owNum = 			EVENT_OBJ_GFX_RAINE,
+			.trainerClass = 	CLASS_BATTLE_FRONTIER_BRAIN,
+			.trainerSprite = 	TRAINER_PIC_RAINE,
+			.gender = 			BATTLE_FACILITY_FEMALE,
+			.name =				sTrainerName_Raine,
+			.preBattleText = 	sFrontierText_Raine_PreBattle,
+			.playerWinText = 	sFrontierText_Raine_PlayerWin,
+			.playerLoseText = 	sFrontierText_Raine_PlayerLose,
+			.regularSpreads =	gSpecialTowerSpread_Raine,
+			.legendarySpreads = gSpecialTowerSpread_RaineLegendary,
+			.middleCupSpreads = gSpecialTowerSpread_Raine,
+			.littleCupSpreads = gSpecialTowerSpread_Raine,
+			.regSpreadSize = 	NELEMS(gSpecialTowerSpread_Raine),
+			.legSpreadSize =	NELEMS(gSpecialTowerSpread_RaineLegendary),
+			.mcSpreadSize =		NELEMS(gSpecialTowerSpread_Raine),
+			.lcSpreadSize =		NELEMS(gSpecialTowerSpread_Raine),
+			.songId = 			BGM_BATTLE_FRONTIER_BOSS,
+			.isMonotype = 		FALSE,
 		},
 	[3] =
 		{
-			.owNum = 			EVENT_OBJ_GFX_PAT,
-			.trainerClass = 	CLASS_FRONTIER_BRAIN,
-			.trainerSprite = 	TRAINER_PIC_PAT,
+			.owNum = 			EVENT_OBJ_GFX_CHANCE,
+			.trainerClass = 	CLASS_BATTLE_FRONTIER_BRAIN,
+			.trainerSprite = 	TRAINER_PIC_CHANCE,
 			.gender = 			BATTLE_FACILITY_MALE,
-			.name =				sTrainerName_Pat,
-			.playerWinText = 	sFrontierText_Pat_PlayerWin,
-			.playerLoseText = 	sFrontierText_Pat_PlayerLose,
-			.regularSpreads =	gSpecialTowerSpread_Pat2,
-			.legendarySpreads = gLegendaryTowerSpread_Pat2,
-			.middleCupSpreads = gMiddleCupTowerSpread_Pat2,
-			.littleCupSpreads = gLittleCupTowerSpread_Pat2,
-			.regSpreadSize = 	NELEMS(gSpecialTowerSpread_Pat2),
-			.mcSpreadSize =		NELEMS(gMiddleCupTowerSpread_Pat2),
-			.lcSpreadSize =		NELEMS(gLittleCupTowerSpread_Pat2),
-			.legSpreadSize =	NELEMS(gLegendaryTowerSpread_Pat2),
+			.name =				sTrainerName_Chance,
+			.preBattleText = 	sFrontierText_Chance_PreBattle,
+			.playerWinText = 	sFrontierText_Chance_PlayerWin,
+			.playerLoseText = 	sFrontierText_Chance_PlayerLose,
+			.regularSpreads =	gSpecialTowerSpread_Chance,
+			.legendarySpreads = gSpecialTowerSpread_ChanceLegendary,
+			.middleCupSpreads = gSpecialTowerSpread_Chance,
+			.littleCupSpreads = gSpecialTowerSpread_Chance,
+			.regSpreadSize = 	NELEMS(gSpecialTowerSpread_Chance),
+			.legSpreadSize =	NELEMS(gSpecialTowerSpread_ChanceLegendary),
+			.mcSpreadSize =		NELEMS(gSpecialTowerSpread_Chance),
+			.lcSpreadSize =		NELEMS(gSpecialTowerSpread_Chance),
+			.songId = 			BGM_BATTLE_FRONTIER_BOSS,
+			.isMonotype = 		FALSE,
 		},
-	[4] =
+	[4] = //Swapped to the female graphics at runtime if the player is male - see UseFemaleCaseyFrontierBrain
 		{
-			.owNum = 			EVENT_OBJ_GFX_PABLO,
-			.trainerClass = 	CLASS_FRONTIER_BRAIN,
-			.trainerSprite = 	TRAINER_PIC_PABLO,
+			.owNum = 			EVENT_OBJ_GFX_CASEY_M,
+			.trainerClass = 	CLASS_BATTLE_FRONTIER_BRAIN,
+			.trainerSprite = 	TRAINER_PIC_CASEY_M,
 			.gender = 			BATTLE_FACILITY_MALE,
-			.name =				sTrainerName_Pablo,
-			.playerWinText = 	sFrontierText_Pablo_PlayerWin,
-			.playerLoseText = 	sFrontierText_Pablo_PlayerLose,
-			.regularSpreads =	gSpecialTowerSpread_Pablo1Format1,
-			.legendarySpreads = gSpecialTowerSpread_Pablo1Format2,
-			.middleCupSpreads = gSpecialTowerSpread_Pablo1Format2,
-			.littleCupSpreads = gSpecialTowerSpread_Pablo1Format2,
-			.regSpreadSize = 	NELEMS(gSpecialTowerSpread_Pablo1Format1),
-			.mcSpreadSize =		NELEMS(gSpecialTowerSpread_Pablo1Format2),
-			.lcSpreadSize =		NELEMS(gSpecialTowerSpread_Pablo1Format2),
-			.legSpreadSize =	NELEMS(gSpecialTowerSpread_Pablo1Format2),
+			.name =				sTrainerName_Casey,
+			.preBattleText = 	sFrontierText_Casey_PreBattle,
+			.playerWinText = 	sFrontierText_Casey_PlayerWin,
+			.playerLoseText = 	sFrontierText_Casey_PlayerLose,
+			.regularSpreads =	gSpecialTowerSpread_Casey,
+			.legendarySpreads = gSpecialTowerSpread_CaseyLegendary,
+			.middleCupSpreads = gSpecialTowerSpread_Casey,
+			.littleCupSpreads = gSpecialTowerSpread_Casey,
+			.regSpreadSize = 	NELEMS(gSpecialTowerSpread_Casey),
+			.legSpreadSize =	NELEMS(gSpecialTowerSpread_CaseyLegendary),
+			.mcSpreadSize =		NELEMS(gSpecialTowerSpread_Casey),
+			.lcSpreadSize =		NELEMS(gSpecialTowerSpread_Casey),
+			.songId = 			BGM_BATTLE_FRONTIER_BOSS,
+			.isMonotype = 		FALSE,
 		},
 	[5] =
 		{
-			.owNum = 			EVENT_OBJ_GFX_PABLO,
-			.trainerClass = 	CLASS_FRONTIER_BRAIN,
-			.trainerSprite = 	TRAINER_PIC_PABLO,
-			.gender = 			BATTLE_FACILITY_MALE,
-			.name =				sTrainerName_Pablo,
-			.playerWinText = 	sFrontierText_Pablo_PlayerWin,
-			.playerLoseText = 	sFrontierText_Pablo_PlayerLose,
-			.regularSpreads =	gSpecialTowerSpread_Pablo2Format1,
-			.legendarySpreads = gSpecialTowerSpread_Pablo2Format2,
-			.middleCupSpreads = gSpecialTowerSpread_Pablo2Format2,
-			.littleCupSpreads = gSpecialTowerSpread_Pablo2Format2,
-			.regSpreadSize = 	NELEMS(gSpecialTowerSpread_Pablo2Format1),
-			.mcSpreadSize =		NELEMS(gSpecialTowerSpread_Pablo2Format2),
-			.lcSpreadSize =		NELEMS(gSpecialTowerSpread_Pablo2Format2),
-			.legSpreadSize =	NELEMS(gSpecialTowerSpread_Pablo2Format2),
+			.owNum = 			EVENT_OBJ_GFX_ABBY,
+			.trainerClass = 	CLASS_BATTLE_FRONTIER_BRAIN,
+			.trainerSprite = 	TRAINER_PIC_ABBY,
+			.gender = 			BATTLE_FACILITY_FEMALE,
+			.name =				sTrainerName_Abby,
+			.preBattleText = 	sFrontierText_Abby_PreBattle,
+			.playerWinText = 	sFrontierText_Abby_PlayerWin,
+			.playerLoseText = 	sFrontierText_Abby_PlayerLose,
+			.regularSpreads =	gSpecialTowerSpread_Abby,
+			.legendarySpreads = gSpecialTowerSpread_AbbyLegendary,
+			.middleCupSpreads = gSpecialTowerSpread_Abby,
+			.littleCupSpreads = gSpecialTowerSpread_Abby,
+			.regSpreadSize = 	NELEMS(gSpecialTowerSpread_Abby),
+			.legSpreadSize =	NELEMS(gSpecialTowerSpread_AbbyLegendary),
+			.mcSpreadSize =		NELEMS(gSpecialTowerSpread_Abby),
+			.lcSpreadSize =		NELEMS(gSpecialTowerSpread_Abby),
+			.songId = 			BGM_BATTLE_FRONTIER_BOSS,
+			.isMonotype = 		FALSE,
 		},
 	[6] =
 		{
-			.owNum = 			EVENT_OBJ_GFX_PAULA,
-			.trainerClass = 	CLASS_FRONTIER_BRAIN,
-			.trainerSprite = 	TRAINER_PIC_PAULA,
+			.owNum = 			EVENT_OBJ_GFX_IRIS,
+			.trainerClass = 	CLASS_BATTLE_FRONTIER_BRAIN,
+			.trainerSprite = 	TRAINER_PIC_IRIS,
 			.gender = 			BATTLE_FACILITY_FEMALE,
-			.name =				sTrainerName_Paula,
-			.playerWinText = 	sFrontierText_Paula_PlayerWin,
-			.playerLoseText = 	sFrontierText_Paula_PlayerLose,
-			.regularSpreads =	gSpecialTowerSpread_Paula1,
-			.legendarySpreads = gLegendaryTowerSpread_Paula1,
-			.middleCupSpreads = gMiddleCupTowerSpread_Paula1,
-			.littleCupSpreads = gLittleCupTowerSpread_Paula1,
-			.regSpreadSize = 	NELEMS(gSpecialTowerSpread_Paula1),
-			.legSpreadSize =	NELEMS(gLegendaryTowerSpread_Paula1),
-			.mcSpreadSize =	  	NELEMS(gMiddleCupTowerSpread_Paula1),
-			.lcSpreadSize =		NELEMS(gLittleCupTowerSpread_Paula1),
+			.name =				sTrainerName_Iris,
+			.preBattleText = 	sFrontierText_Iris_PreBattle,
+			.playerWinText = 	sFrontierText_Iris_PlayerWin,
+			.playerLoseText = 	sFrontierText_Iris_PlayerLose,
+			.regularSpreads =	gSpecialTowerSpread_Iris,
+			.legendarySpreads = gSpecialTowerSpread_IrisLegendary,
+			.middleCupSpreads = gSpecialTowerSpread_Iris,
+			.littleCupSpreads = gSpecialTowerSpread_Iris,
+			.regSpreadSize = 	NELEMS(gSpecialTowerSpread_Iris),
+			.legSpreadSize =	NELEMS(gSpecialTowerSpread_IrisLegendary),
+			.mcSpreadSize =		NELEMS(gSpecialTowerSpread_Iris),
+			.lcSpreadSize =		NELEMS(gSpecialTowerSpread_Iris),
+			.songId = 			BGM_BATTLE_FRONTIER_BOSS,
+			.isMonotype = 		FALSE,
 		},
 	[7] =
 		{
-			.owNum = 			EVENT_OBJ_GFX_PAULA,
-			.trainerClass = 	CLASS_FRONTIER_BRAIN,
-			.trainerSprite = 	TRAINER_PIC_PAULA,
-			.gender = 			BATTLE_FACILITY_FEMALE,
-			.name =				sTrainerName_Paula,
-			.playerWinText = 	sFrontierText_Paula_PlayerWin,
-			.playerLoseText = 	sFrontierText_Paula_PlayerLose,
-			.regularSpreads =	gSpecialTowerSpread_Paula2,
-			.legendarySpreads = gLegendaryTowerSpread_Paula2,
-			.middleCupSpreads = gMiddleCupTowerSpread_Paula2,
-			.littleCupSpreads = gLittleCupTowerSpread_Paula2,
-			.regSpreadSize = 	NELEMS(gSpecialTowerSpread_Paula2),
-			.legSpreadSize =	NELEMS(gLegendaryTowerSpread_Paula2),
-			.mcSpreadSize =	  	NELEMS(gMiddleCupTowerSpread_Paula2),
-			.lcSpreadSize =		NELEMS(gLittleCupTowerSpread_Paula2),
-		},
-	[8] =
-		{
-			.owNum = 			EVENT_OBJ_GFX_BIG_MO,
-			.trainerClass = 	CLASS_LEADER,
-			.trainerSprite = 	TRAINER_PIC_BIG_MO,
+			.owNum = 			EVENT_OBJ_GFX_DENNIS,
+			.trainerClass = 	CLASS_BATTLE_FRONTIER_BRAIN,
+			.trainerSprite = 	TRAINER_PIC_LEADER_DENNIS,
 			.gender = 			BATTLE_FACILITY_MALE,
-			.name =				sTrainerName_BigMo,
-			.playerWinText = 	sFrontierText_BigMo_PlayerWin,
-			.playerLoseText = 	sFrontierText_BigMo_PlayerLose,
-			.regularSpreads =	gSpecialTowerSpread_BigMo,
-			.regSpreadSize = 	NELEMS(gSpecialTowerSpread_BigMo),
-			.songId = 			BGM_BATTLE_GYM_LEADER,
-			.isMonotype = 		TRUE,
-		},
-	[9] =
-		{
-			.owNum = 			EVENT_OBJ_GFX_BIG_MO,
-			.trainerClass = 	CLASS_LEADER,
-			.trainerSprite = 	TRAINER_PIC_BIG_MO,
-			.gender = 			BATTLE_FACILITY_MALE,
-			.name =				sTrainerName_BigMo,
-			.playerWinText = 	sFrontierText_BigMo_PlayerWin,
-			.playerLoseText = 	sFrontierText_BigMo_PlayerLose,
-			.regularSpreads =	gLegendaryTowerSpread_BigMo, //Uses legal legendary Pokemon in second battle
-			.regSpreadSize = 	NELEMS(gLegendaryTowerSpread_BigMo),
-			.songId = 			BGM_BATTLE_GYM_LEADER,
-			.isMonotype = 		TRUE,
-		},
-	[10] =
-		{
-			.owNum = 			EVENT_OBJ_GFX_BIG_MO,
-			.trainerClass = 	CLASS_LEADER,
-			.trainerSprite = 	TRAINER_PIC_BIG_MO,
-			.gender = 			BATTLE_FACILITY_MALE,
-			.name =				sTrainerName_BigMo,
-			.playerWinText = 	sFrontierText_BigMo_PlayerWin,
-			.playerLoseText = 	sFrontierText_BigMo_PlayerLose,
-			.regularSpreads =	gSpecialTowerSpread_BigMo3,
-			.regSpreadSize = 	NELEMS(gSpecialTowerSpread_BigMo3),
-			.songId = 			BGM_BATTLE_GYM_LEADER,
-			.isMonotype = 		TRUE,
-		},
+			.name =				sTrainerName_Dennis,
+			.preBattleText = 	sFrontierText_Dennis_PreBattle,
+			.playerWinText = 	sFrontierText_Dennis_PlayerWin,
+			.playerLoseText = 	sFrontierText_Dennis_PlayerLose,
+			.regularSpreads =	gSpecialTowerSpread_Dennis,
+			.legendarySpreads = gSpecialTowerSpread_DennisLegendary,
+			.middleCupSpreads = gSpecialTowerSpread_Dennis,
+			.littleCupSpreads = gSpecialTowerSpread_Dennis,
+			.regSpreadSize = 	NELEMS(gSpecialTowerSpread_Dennis),
+			.legSpreadSize =	NELEMS(gSpecialTowerSpread_DennisLegendary),
+			.mcSpreadSize =		NELEMS(gSpecialTowerSpread_Dennis),
+			.lcSpreadSize =		NELEMS(gSpecialTowerSpread_Dennis),
+			.songId = 			BGM_BATTLE_FRONTIER_BOSS,
+			.isMonotype = 		FALSE,
+		}
 };
 
+// Not supported in Amethyst. An example multi trainer is kept here in case that changes someday.
 const struct MultiBattleTowerTrainer gFrontierMultiBattleTrainers[] =
 {
-	{
-		.owNum = EVENT_OBJ_GFX_POKE_KID,
-		.trainerClass = CLASS_POKE_KID,
-		.backSpriteId = TRAINER_BACK_PIC_POKE_KID,
-		.gender = MALE,
-		.name = sTrainerName_Milo,
-		.otId = 0x3E16ECA,
-		.regularSpreads = gMultiTowerSpread_Milo,
-		.legendarySpreads = gMultiLegendaryTowerSpread_Milo,
-		.littleCupSpreads = gMultiLittleCupTowerSpread_Milo,
-		.regSpreadSize = NELEMS(gMultiTowerSpread_Milo),
-		.legSpreadSize = NELEMS(gMultiLegendaryTowerSpread_Milo),
-		.lcSpreadSize = NELEMS(gMultiLittleCupTowerSpread_Milo),
-	},
-	{
-		.owNum = EVENT_OBJ_GFX_MARLON_POST_GAME,
-		.trainerClass = CLASS_SHADOW_ADMIN,
-		.backSpriteId = TRAINER_BACK_PIC_MARLON,
-		.gender = MALE,
-		.name = sTrainerName_Marlon,
-		.otId = 0x4156010,
-		.regularSpreads = gMultiTowerSpread_Marlon,
-		.legendarySpreads = gMultiLegendaryTowerSpread_Marlon,
-		.littleCupSpreads = gMultiLittleCupTowerSpread_Marlon,
-		.regSpreadSize = NELEMS(gMultiTowerSpread_Marlon),
-		.legSpreadSize = NELEMS(gMultiLegendaryTowerSpread_Marlon),
-		.lcSpreadSize = NELEMS(gMultiLittleCupTowerSpread_Marlon),
-	},
-	{
-		.owNum = EVENT_OBJ_GFX_JAX,
-		.trainerClass = CLASS_PKMN_TRAINER_2,
-		.backSpriteId = TRAINER_BACK_PIC_JAX,
-		.gender = MALE,
-		.name = sTrainerName_Jax,
-		.otId = 0x95746426,
-		.regularSpreads = gMultiTowerSpread_Jax,
-		.legendarySpreads = gMultiLegendaryTowerSpread_Jax,
-		.littleCupSpreads = gMultiLittleCupTowerSpread_Jax,
-		.regSpreadSize = NELEMS(gMultiTowerSpread_Jax),
-		.legSpreadSize = NELEMS(gMultiLegendaryTowerSpread_Jax),
-		.lcSpreadSize = NELEMS(gMultiLittleCupTowerSpread_Jax),
-	},
-	{
-		.owNum = EVENT_OBJ_GFX_RIVAL,
-		.trainerClass = CLASS_RIVAL,
-		.backSpriteId = TRAINER_BACK_PIC_RIVAL,
-		.gender = MALE,
-		.name = NULL, //Predefined ingame
-		.otId = 0xECBAA1AD,
-		.regularSpreads = gMultiTowerSpread_RivalV1,
-		.legendarySpreads = gMultiLegendaryTowerSpread_Rival,
-		.littleCupSpreads = gMultiLittleCupTowerSpread_Rival,
-		.regSpreadSize = NELEMS(gMultiTowerSpread_RivalV1),
-		.legSpreadSize = NELEMS(gMultiLegendaryTowerSpread_Rival),
-		.lcSpreadSize = NELEMS(gMultiLittleCupTowerSpread_Rival),
-	},
-	{
-		.owNum = EVENT_OBJ_GFX_TESSY,
-		.trainerClass = CLASS_LEADER,
-		.backSpriteId = TRAINER_BACK_PIC_TESSY,
-		.gender = FEMALE,
-		.name = sTrainerName_Tessy,
-		.otId = 0x77777777,
-		/*.regularSpreads = gMultiTowerSpread_Tessy,
-		.legendarySpreads = gMultiLegendaryTowerSpread_Tessy,
-		.littleCupSpreads = gMultiLittleCupTowerSpread_Tessy,
-		.regSpreadSize = NELEMS(gMultiTowerSpread_Tessy),
-		.legSpreadSize = NELEMS(gMultiLegendaryTowerSpread_Tessy),
-		.lcSpreadSize = NELEMS(gMultiLittleCupTowerSpread_Tessy),*/
-	},
-
-	//Raid Partners - Used in Battle Sands & Random Multi Battles
-	{
-		.owNum = EVENT_OBJ_GFX_CATHERINE,
-		.trainerClass = CLASS_PKMN_TRAINER_2,
-		.backSpriteId = TRAINER_BACK_PIC_CATHERINE,
-		.gender = FEMALE,
-		.otId = 0xCD2F27AB,
-		.name = sTrainerName_Catherine,
-	},
-	{
-		.owNum = EVENT_OBJ_GFX_GINGER,
-		.trainerClass = CLASS_PKMN_TRAINER_2,
-		.backSpriteId = TRAINER_BACK_PIC_GINGER,
-		.gender = FEMALE,
-		.otId = 0xAD5C417B,
-		.name = sTrainerName_Ginger,
-	},
-	{
-		.owNum = EVENT_OBJ_GFX_ABIMBOLA,
-		.trainerClass = CLASS_PKMN_TRAINER_2,
-		.backSpriteId = TRAINER_BACK_PIC_ABIMBOLA,
-		.gender = MALE,
-		.otId = 0x2EC3AEBC,
-		.name = sTrainerName_Abimbola,
-	},
-	{
-		.owNum = EVENT_OBJ_GFX_MAHINA,
-		.trainerClass = CLASS_PKMN_TRAINER_2,
-		.backSpriteId = TRAINER_BACK_PIC_MAHINA,
-		.gender = FEMALE,
-		.otId = 0x87116209,
-		.name = sTrainerName_Mahina,
-	},
-	{
-		.owNum = EVENT_OBJ_GFX_ALFORD,
-		.trainerClass = CLASS_PKMN_TRAINER_2,
-		.backSpriteId = TRAINER_BACK_PIC_ALFORD,
-		.gender = MALE,
-		.otId = 0x61AC8B90,
-		.name = sTrainerName_Alford,
-	},
+	// {
+	// 	.owNum = EVENT_OBJ_GFX_POKE_KID,
+	// 	.trainerClass = CLASS_POKE_KID,
+	// 	.backSpriteId = TRAINER_BACK_PIC_POKE_KID,
+	// 	.gender = MALE,
+	// 	.name = sTrainerName_Milo,
+	// 	.otId = 0x3E16ECA,
+	// 	.regularSpreads = gMultiTowerSpread_Milo,
+	// 	.legendarySpreads = gMultiLegendaryTowerSpread_Milo,
+	// 	.littleCupSpreads = gMultiLittleCupTowerSpread_Milo,
+	// 	.regSpreadSize = NELEMS(gMultiTowerSpread_Milo),
+	// 	.legSpreadSize = NELEMS(gMultiLegendaryTowerSpread_Milo),
+	// 	.lcSpreadSize = NELEMS(gMultiLittleCupTowerSpread_Milo),
+	// },
 };
 
 const u8 gNumFrontierMultiTrainers = NELEMS(gFrontierMultiBattleTrainers);
 
-#else
-	const struct BattleTowerTrainer gTowerTrainers[] =
-	{
-		{
-			.owNum = 			EVENT_OBJ_GFX_YOUNGSTER,
-			.trainerClass = 	CLASS_YOUNGSTER,
-			.trainerSprite = 	TRAINER_PIC_YOUNGSTER,
-			.gender = 			BATTLE_FACILITY_MALE,
-			.preBattleText = 	sFrontierText_Youngster_PreBattle_1,
-			.playerWinText = 	sFrontierText_Youngster_PlayerWin_1,
-			.playerLoseText = 	sFrontierText_Youngster_PlayerLose_1,
-		},
-	};
-
-	const struct SpecialBattleFrontierTrainer gSpecialTowerTrainers[] =
-	{
-	};
-
-	const struct SpecialBattleFrontierTrainer gFrontierBrains[] =
-	{
-	};
-
-	const struct MultiBattleTowerTrainer gFrontierMultiBattleTrainers[] =
-	{
-	};
-
-	const u8 gNumFrontierMultiTrainers = NELEMS(gFrontierMultiBattleTrainers);
-#endif
-
 const u16 gNumTowerTrainers = NELEMS(gTowerTrainers);
 const u16 gNumSpecialTowerTrainers = NELEMS(gSpecialTowerTrainers);
+const u16 gNumFrontierBrains = NELEMS(gFrontierBrains);
