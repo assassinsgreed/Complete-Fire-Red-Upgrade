@@ -1192,8 +1192,13 @@ You're enjoying Amethyst, I hope?
 Keep getting stronger.\nI know you can do it!
 
 #org @sFrontierText_Crystal_PreBattle
+Hi! Long time no see! Let's battle to\nsee if you've gotten any stronger!
+
 #org @sFrontierText_Crystal_PlayerWin
+Great game! (And I'm talking about\nAmethyst[.] And our battle!)
+
 #org @sFrontierText_Crystal_PlayerLose
+Better luck next time! I look\nforward to our next battle.
 
 #org @sFrontierText_Brendan_PreBattle
 I'm something of a big shot overseas.\nThink you can handle me?
