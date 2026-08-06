@@ -1,23 +1,37 @@
-#org @gText_SingleBattleRecord
-Single Battle Record
+// Facility names, indexed by gBattleFacilityNames.
 
-#org @gText_DoubleBattleRecord
-Double Battle Record
+#org @gText_BattleTower
+Battle Tower
 
-#org @gText_MultiBattleRecord
-Multi Battle Record
+#org @gText_BattleSands
+Battle Sands
 
-#org @gText_LinkMultiBattleRecord
-Link Multi Battle Record
+#org @gText_BattleMine
+Battle Mine
 
-#org @gText_SingleRandomBattleRecord
-Rand Single Btl Record
+#org @gText_BattleCircus
+Battle Circus
 
-#org @gText_DoubleRandomBattleRecord
-Rand Double Btl Record
+#org @gText_BattleFactory
+Battle Factory
 
-#org @gText_MultiRandomBattleRecord
-Rand Multi Btl Record
+#org @gText_BattleRing
+Battle Ring
+
+#org @gText_BattleIsle
+Battle Isle
+
+#org @gText_BattleMaze
+Battle Maze
+
+#org @gText_FrontierRecordsTitle
+Battle Record
+
+#org @gText_FrontierRecordSingles
+Singles
+
+#org @gText_FrontierRecordDoubles
+Doubles
 
 #org @gText_SingleBattle
 Single Battle
@@ -40,29 +54,11 @@ Random Double Battle
 #org @gText_RandomMultiBattle
 Random Multi Battle
 
-#org @gText_FrontierRecordLevel5
-Level 5
-
-#org @gText_FrontierRecordLevel50
-Level 50
-
-#org @gText_FrontierRecordLevel100
-Level 100
-
 #org @gText_CurrentStreak
 Current Streak:\nRecord Streak:
 
 #org @gText_MaxStreak
 Record Streak:
-
-#org @gText_3v3
-3 v 3
-
-#org @gText_4v4
-4 v 4
-
-#org @gText_6v6
-6 v 6
 
 #org @gText_BattleTowerStandard
 Standard

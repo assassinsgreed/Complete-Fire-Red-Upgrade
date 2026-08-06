@@ -1803,6 +1803,18 @@ u16 GetMUS_ForBattle(void)
 					return song;
 			}
 
+			// Player can override their music choice in the battle frontier,
+			// protected by an "are they in the frontier" check.
+			if (gBattleTypeFlags & BATTLE_TYPE_FRONTIER)
+			{
+				song = VarGet(VAR_BATTLE_FACILITY_SONG_OVERRIDE);
+				if (song == BGM_RANDOM_BATTLE_MUSIC)
+					song = GetRandomBattleBGM();
+
+				if (song != 0)
+					return song;
+			}
+
 			//Then try to load class based music for either trainer
 			trainerClass = GetFrontierTrainerClassId(gTrainerBattleOpponent_A, BATTLE_FACILITY_TRAINER_A);
 
@@ -1817,16 +1829,8 @@ u16 GetMUS_ForBattle(void)
 					return gClassBasedBattleBGM[trainerClass];
 			}
 
-			if (gBattleTypeFlags & BATTLE_TYPE_FRONTIER)
-			{
-				//Then try loading the song override only in the actual Frontier
-				song = VarGet(VAR_BATTLE_FACILITY_SONG_OVERRIDE);
-				if (song == BGM_RANDOM_BATTLE_MUSIC)
-					song = GetRandomBattleBGM();
-
-				if (song != 0)
-					return song;
-			}
+			// If we didn't reach anything, this is an actual frontier trainer
+			return BGM_BATTLE_FRONTIER_TRAINER;
 		}
 		else
 		{

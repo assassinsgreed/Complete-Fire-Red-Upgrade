@@ -35,6 +35,7 @@ extern const struct BattleBackground gAttackTerrainTable[];
 
 //This file's functions:
 static void LoadBattleBG_EntryOverlay(u8 terrainId);
+static u8 GetBattleBackgroundToDraw(u8 terrainId);
 static u8 TryLoadAlternateAreaTerrain(u8 terrain);
 
 u8 BattleSetup_GetTerrainId(void)
@@ -238,6 +239,15 @@ void DrawBattleEntryBackground(void)
 	}
 }
 
+// Frontier background overrides do not apply to Nature Power, Camoflage, etc. 
+static u8 GetBattleBackgroundToDraw(u8 terrainId)
+{
+	if ((gBattleTypeFlags & BATTLE_TYPE_FRONTIER) && !(gBattleTypeFlags & BATTLE_TYPE_LINK))
+		return GetFrontierBattleBackground();
+
+	return terrainId;
+}
+
 void LoadBattleTerrainGfx(u8 terrainId)
 {
 	struct BattleBackground* table = gBattleTerrainTable;
@@ -249,6 +259,8 @@ void LoadBattleTerrainGfx(u8 terrainId)
 		LoadCompressedPalette(gAttackTerrainTable[gTerrainType - 1].palette, 0x20, 0x60);
 		return;
 	}
+
+	terrainId = GetBattleBackgroundToDraw(terrainId);
 
 	#ifdef NEW_BATTLE_BACKGROUNDS //Load different BGs depending on time of day
 		u8 mapType = GetCurrentMapType();
@@ -275,6 +287,8 @@ void LoadBattleTerrainGfx(u8 terrainId)
 static void LoadBattleBG_EntryOverlay(u8 terrainId)
 {
 	struct BattleBackground* table = gBattleTerrainTable;
+
+	terrainId = GetBattleBackgroundToDraw(terrainId);
 
 	#ifdef NEW_BATTLE_BACKGROUNDS //Load different BGs depending on time of day
 	u8 mapType = GetCurrentMapType();

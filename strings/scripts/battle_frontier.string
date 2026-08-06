@@ -1,0 +1,291 @@
+// Facility-agnostic strings to be shared by attendants in each facility, with var substitution:
+//   - FrontierChallenge_BufferFacilityInfo fills in [BUFFER1] with the facility name, [BUFFER2] with the format and [BUFFER3] with the current streak.
+//   - BufferNumMonsToEnter overwrites [BUFFER3] with the number of Pokemon to enter.
+//   - StoreChipsToGive overwrites [BUFFER2] with the PokeChip reward.
+
+//------------------------------------------------------------------
+// Lobby
+//------------------------------------------------------------------
+
+#org @gText_BattleFrontier_Welcome
+Welcome to the [BUFFER1]!\nWhat can I do for you?
+
+#org @gText_BattleFrontier_Farewell
+We hope to see you again!
+
+#org @gText_BattleFrontier_ChoiceChallenge
+Challenge
+
+#org @gText_BattleFrontier_ChoiceRules
+Rules
+
+#org @gText_BattleFrontier_ChoiceRecords
+Records
+
+#org @gText_BattleFrontier_ChoiceBackground
+Customize Background
+
+#org @gText_BattleFrontier_ChoiceMusic
+Customize Music
+
+#org @gText_BattleFrontier_ChoiceLeave
+Nothing
+
+#org @gText_BattleFrontier_ChoiceCancel
+Cancel
+
+//------------------------------------------------------------------
+// Battle background
+//------------------------------------------------------------------
+
+// The list these label is built in src/frontier_challenge.c, which also holds the background
+// each one draws. Keep the two in the same order.
+
+#org @gText_BattleFrontier_ChooseBackground
+You're currently battling in\n[BUFFER1].\pWhere would you like your battles\nto take place?
+
+#org @gText_BattleFrontier_BackgroundChosen
+[BUFFER1] it is!
+
+#org @gText_BattleFrontier_BackgroundGym
+Gym Arena (Default)
+
+#org @gText_BattleFrontier_BackgroundRandom
+Random
+
+#org @gText_BattleFrontier_BackgroundGrassland
+Grassland
+
+#org @gText_BattleFrontier_BackgroundTallGrass
+Marshland Grass
+
+#org @gText_BattleFrontier_BackgroundForest
+Varisi Forest
+
+#org @gText_BattleFrontier_BackgroundPeradonForest
+Peradon Forest
+
+#org @gText_BattleFrontier_BackgroundJungle
+Mimmett Jungle
+
+#org @gText_BattleFrontier_BackgroundMountain
+Mountainside
+
+#org @gText_BattleFrontier_BackgroundVolcanoPeak
+Carnelidge Volcano Peak
+
+#org @gText_BattleFrontier_BackgroundCave
+Cave
+
+#org @gText_BattleFrontier_BackgroundTormaCave
+Torma Cave
+
+#org @gText_BattleFrontier_BackgroundTormaDepths
+Torma Depths
+
+#org @gText_BattleFrontier_BackgroundLavaPool
+Lava Pool
+
+#org @gText_BattleFrontier_BackgroundHotSpring
+Hot Spring
+
+#org @gText_BattleFrontier_BackgroundBeach
+Beach
+
+#org @gText_BattleFrontier_BackgroundDesert
+Rubarr Desert
+
+#org @gText_BattleFrontier_BackgroundSnowfield
+Snowfield
+
+#org @gText_BattleFrontier_BackgroundOcean
+Open Ocean
+
+#org @gText_BattleFrontier_BackgroundPond
+Pond
+
+#org @gText_BattleFrontier_BackgroundUndergroundLake
+Underground Lake
+
+#org @gText_BattleFrontier_BackgroundHauntedHouse
+Haunted House
+
+#org @gText_BattleFrontier_BackgroundBuilding
+Indoors
+
+#org @gText_BattleFrontier_BackgroundPlutoHQ
+Team Pluto HQ
+
+#org @gText_BattleFrontier_BackgroundChampionsRoom
+Champion's Room
+
+#org @gText_BattleFrontier_BackgroundDaisOfLight
+Dais of Light
+
+//------------------------------------------------------------------
+// Battle music
+//------------------------------------------------------------------
+
+// The list these label is built in src/frontier_challenge.c, which also holds the song each
+// one plays. Keep the two in the same order.
+
+#org @gText_BattleFrontier_ChooseMusic
+Right now we're playing\n[BUFFER1].\pWhat would you like to hear during\nyour battles?
+
+#org @gText_BattleFrontier_MusicChosen
+[BUFFER1] it is!
+
+#org @gText_BattleFrontier_MusicDefault
+Frontier Trainer (Default)
+
+#org @gText_BattleFrontier_MusicRandom
+Random
+
+#org @gText_BattleFrontier_MusicTrainer
+Trainer Battle
+
+#org @gText_BattleFrontier_MusicGymLeader
+Gym Leader Battle
+
+#org @gText_BattleFrontier_MusicRival
+Rival Battle
+
+#org @gText_BattleFrontier_MusicAlistair
+Alistair Battle
+
+#org @gText_BattleFrontier_MusicCasey
+Casey Battle
+
+#org @gText_BattleFrontier_MusicKurtis
+Kurtis Battle
+
+#org @gText_BattleFrontier_MusicEliteFour
+Elite Four Battle
+
+#org @gText_BattleFrontier_MusicChampion
+Champion Battle
+
+#org @gText_BattleFrontier_MusicLegendary
+Legendary Pok\emon Encounter
+
+#org @gText_BattleFrontier_MusicJirachi
+Jirachi Encounter
+
+#org @gText_BattleFrontier_MusicUnwaveringHeart
+Unwavering Heart
+
+//------------------------------------------------------------------
+// Rules
+//------------------------------------------------------------------
+
+#org @gText_BattleFrontier_CommonRules
+Here at the [BUFFER1], you'll take\non challenger after challenger.\pWin, and you go straight into the\nnext battle. Lose, and your streak\lends there.\pEvery Pok\emon battles at Level 50,\nso bring whichever you like -\lnothing is too strong or too weak.\pYour team is fully healed before\nevery battle, and you'll earn Pok\e\lChips for each win.\pIf you ever need a break, you can\nRest - we'll save your streak and\lhold it until you return.\pPlease make sure to complete a\nbattle before resting - otherwise\lyour streak will be lost!
+
+#org @gText_BattleFrontier_TowerRules
+The Battle Tower plays it straight -\nno gimmicks, no special conditions.\pJust you, your team, and one\nchallenger after another.
+
+//------------------------------------------------------------------
+// Choosing a format and entering a team
+//------------------------------------------------------------------
+
+#org @gText_BattleFrontier_ChooseFormat
+Which format would you like to\nchallenge?
+
+#org @gText_BattleFrontier_ChoiceSingles
+Singles
+
+#org @gText_BattleFrontier_ChoiceDoubles
+Doubles
+
+// Swapped in for the two above when that format has a run waiting to be picked back up.
+
+#org @gText_BattleFrontier_ChoiceSinglesOnHold
+Singles (on hold)
+
+#org @gText_BattleFrontier_ChoiceDoublesOnHold
+Doubles (on hold)
+
+#org @gText_BattleFrontier_ConfirmChallenge
+The [BUFFER1], [BUFFER2] format.\pYou'll need to enter [BUFFER3] Pok\emon.\pShall we begin?
+
+#org @gText_BattleFrontier_ChooseTeam
+Please choose the Pok\emon you'd\nlike to enter.
+
+//------------------------------------------------------------------
+// Battles
+//------------------------------------------------------------------
+
+// Fallbacks only - in a Frontier battle the engine prints the opponent's own
+// lines from the trainer table instead of these.
+
+#org @gText_BattleFrontier_OpponentDefeated
+I couldn't keep up with you!
+
+#org @gText_BattleFrontier_OpponentVictorious
+Better luck next time!
+
+#org @gText_BattleFrontier_WinReward
+That's [BUFFER3] straight in the\n[BUFFER1]!\pHere are [BUFFER2] Pok\e Chips for\nyour trouble.
+
+//------------------------------------------------------------------
+// Continue / Rest / Give up
+//------------------------------------------------------------------
+
+#org @gText_BattleFrontier_ChallengeMenuPrompt
+Your [BUFFER1] [BUFFER2] streak\nstands at [BUFFER3].\pWould you like to continue?
+
+// The two below replace the prompt above when a milestone battle is next, so the player is
+// never surprised into one - see FrontierChallenge_GetNextOpponentKind.
+
+#org @gText_BattleFrontier_ChallengeMenuPromptSpecial
+Your [BUFFER1] [BUFFER2] streak\nstands at [BUFFER3].\pA word of warning - an especially\nstrong Trainer is next up.\pWould you like to continue?
+
+#org @gText_BattleFrontier_ChallengeMenuPromptBrain
+Your [BUFFER1] [BUFFER2] streak\nstands at [BUFFER3].\pWaiting in the next room is\nthe master of the [BUFFER1]\lthemselves!\pWould you like to continue?
+
+#org @gText_BattleFrontier_ChoiceContinue
+Continue
+
+#org @gText_BattleFrontier_ChoiceRest
+Rest
+
+#org @gText_BattleFrontier_ChoiceAbandon
+Give up
+
+#org @gText_BattleFrontier_ConfirmRest
+We'll save your progress and hold\nyour streak until you come back\lfor it.\pYou're free to go wherever you\nlike in the meantime - even to\lanother facility.\pWould you like to Rest?
+
+#org @gText_BattleFrontier_Resting
+We'll be waiting for you!
+
+//------------------------------------------------------------------
+// Picking a run back up
+//------------------------------------------------------------------
+
+#org @gText_BattleFrontier_WelcomeBackRested
+Welcome back to the [BUFFER1]!\pYour [BUFFER2] streak of [BUFFER3]\nis right where you left it.\pFeel free to bring a different\nteam this time, if you like.
+
+#org @gText_BattleFrontier_OnHoldMenuPrompt
+What would you like to do with it?
+
+// Variant for when a player resumes before an Ace/Brain
+#org @gText_BattleFrontier_OnHoldMenuPromptSpecial
+Before you decide - an especially\nstrong Trainer is up next.\pWhat would you like to do?
+
+#org @gText_BattleFrontier_OnHoldMenuPromptBrain
+Before you decide - waiting in the\nnext room is the master of the\l[BUFFER1] themselves.\pWhat would you like to do?
+
+#org @gText_BattleFrontier_ChoiceKeepOnHold
+Nothing
+
+#org @gText_BattleFrontier_ResumeWarning
+Then let's pick up where you left\noff!\pJust remember[.] Once the next battle\nbegins, you'll have to see it\lthrough.\pStopping partway will cost you\nyour streak.\pWith that said, let's begin[.]
+
+#org @gText_BattleFrontier_ConfirmAbandon
+Giving up will end your run, and\nyour [BUFFER1] [BUFFER2] streak of\l[BUFFER3] will be lost.\pAre you sure?
+
+#org @gText_BattleFrontier_Abandoned
+Thank you for challenging the\n[BUFFER1]!\pWe hope to see you again.
+
+#org @gText_BattleFrontier_Lost
+Your [BUFFER1] challenge\nhas come to an end.\pThank you for battling, and please\ncome again!

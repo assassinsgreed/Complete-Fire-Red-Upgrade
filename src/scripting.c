@@ -37,6 +37,7 @@
 #include "../include/new/catching.h"
 #include "../include/new/damage_calc.h"
 #include "../include/new/dns.h"
+#include "../include/new/frontier.h"
 #include "../include/new/util.h"
 #include "../include/new/item.h"
 #include "../include/new/learn_move.h"
@@ -3662,27 +3663,29 @@ static const u8* sUltraWormholes[] =
 // Multichoice Lists
 const struct ScrollingMulti gScrollingSets[] =
 {
-	{sTutorFerrox, ARRAY_COUNT(sTutorFerrox)},
-	{sTutorHeleo, ARRAY_COUNT(sTutorHeleo)},
-	{sMealOptions, ARRAY_COUNT(sMealOptions)},
-	{sMealOptionsWithAll, ARRAY_COUNT(sMealOptionsWithAll)},
-	{sTutorDaimyn, ARRAY_COUNT(sTutorDaimyn)},
-	{sFavoriteRegion, ARRAY_COUNT(sFavoriteRegion)},
-	{sGameCornerItemExchange, ARRAY_COUNT(sGameCornerItemExchange)},
-	{sGameCornerPokemonExchange, ARRAY_COUNT(sGameCornerPokemonExchange)},
-	{sTutorRhodanzi, ARRAY_COUNT(sTutorRhodanzi)},
-	{sApricornBalls, ARRAY_COUNT(sApricornBalls)},
-	{sTutorsLaplaz, ARRAY_COUNT(sTutorsLaplaz)},
-	{sTutorsBruccie, ARRAY_COUNT(sTutorsBruccie)},
-	{sTutorsEmraldin, ARRAY_COUNT(sTutorsEmraldin)},
-	{sTutorsTsarvosa, ARRAY_COUNT(sTutorsTsarvosa)},
-	{sPokeChipCrusher, ARRAY_COUNT(sPokeChipCrusher)},
-	{sTutorsUteya, ARRAY_COUNT(sTutorsUteya)},
-	{sNatures, ARRAY_COUNT(sNatures)},
-	{sGameStats, ARRAY_COUNT(sGameStats)},
-	{sGameModifiers, ARRAY_COUNT(sGameModifiers)},
-	{sUltraWormholes, ARRAY_COUNT(sUltraWormholes)},
-	{sGameCornerPokemonExchange_Divergent, ARRAY_COUNT(sGameCornerPokemonExchange_Divergent)},
+	{.set = sTutorFerrox, .count = ARRAY_COUNT(sTutorFerrox)},
+	{.set = sTutorHeleo, .count = ARRAY_COUNT(sTutorHeleo)},
+	{.set = sMealOptions, .count = ARRAY_COUNT(sMealOptions)},
+	{.set = sMealOptionsWithAll, .count = ARRAY_COUNT(sMealOptionsWithAll)},
+	{.set = sTutorDaimyn, .count = ARRAY_COUNT(sTutorDaimyn)},
+	{.set = sFavoriteRegion, .count = ARRAY_COUNT(sFavoriteRegion)},
+	{.set = sGameCornerItemExchange, .count = ARRAY_COUNT(sGameCornerItemExchange)},
+	{.set = sGameCornerPokemonExchange, .count = ARRAY_COUNT(sGameCornerPokemonExchange)},
+	{.set = sTutorRhodanzi, .count = ARRAY_COUNT(sTutorRhodanzi)},
+	{.set = sApricornBalls, .count = ARRAY_COUNT(sApricornBalls)},
+	{.set = sTutorsLaplaz, .count = ARRAY_COUNT(sTutorsLaplaz)},
+	{.set = sTutorsBruccie, .count = ARRAY_COUNT(sTutorsBruccie)},
+	{.set = sTutorsEmraldin, .count = ARRAY_COUNT(sTutorsEmraldin)},
+	{.set = sTutorsTsarvosa, .count = ARRAY_COUNT(sTutorsTsarvosa)},
+	{.set = sPokeChipCrusher, .count = ARRAY_COUNT(sPokeChipCrusher)},
+	{.set = sTutorsUteya, .count = ARRAY_COUNT(sTutorsUteya)},
+	{.set = sNatures, .count = ARRAY_COUNT(sNatures)},
+	{.set = sGameStats, .count = ARRAY_COUNT(sGameStats)},
+	{.set = sGameModifiers, .count = ARRAY_COUNT(sGameModifiers)},
+	{.set = sUltraWormholes, .count = ARRAY_COUNT(sUltraWormholes)},
+	{.set = sGameCornerPokemonExchange_Divergent, .count = ARRAY_COUNT(sGameCornerPokemonExchange_Divergent)},
+	{.set = gFrontierMusicChoiceNames, .count = NUM_FRONTIER_MUSIC_CHOICES + 1, .getHighlightedIndex = GetCurrentFrontierMusicChoice},
+	{.set = gFrontierBackgroundChoiceNames, .count = NUM_FRONTIER_BACKGROUND_CHOICES + 1, .getHighlightedIndex = GetCurrentFrontierBackgroundChoice},
 };
 
 //Link number of opts shown at once to the box height
@@ -3710,6 +3713,23 @@ static const struct ScrollingSizePerOpts sScrollingSizes[] =
 #define MIN_NUM_SHOWED 2
 #define MAX_NUM_SHOWED 6
 
+//The list's item array, allocated by CustomScrollingMultichoiceHook in main.s and freed with the
+//menu. A highlighting list borrows the tail of it - see GetScrollingMultiAllocSize.
+#define sScrollingMultiItems (*(struct ListMenuItem**) 0x2039A14)
+
+//Room for the colour codes below and the longest name a highlighting list offers.
+#define HIGHLIGHTED_ENTRY_SIZE 48
+
+//Prefixed to the highlighted entry's name. Inline colour codes are what keep this off the string
+//file: a green copy of the entry is built when the list opens rather than written out beside
+//every plain one. 6 and 7 are the green pair in the standard text palette.
+static const u8 sHighlightColours[] =
+{
+	EXT_CTRL_CODE_BEGIN, 1, TEXT_COLOR_GREEN,
+	EXT_CTRL_CODE_BEGIN, 3, TEXT_COLOR_LIGHT_GREEN,
+	EOS,
+};
+
 #endif
 
 u32 GetSizeOfMultiList(void)
@@ -3721,10 +3741,48 @@ u32 GetSizeOfMultiList(void)
 #endif
 }
 
+// How much space the scrolling multi-choice needs - menus with highlighting text (ex frontier)
+// need extra space at the end for the highlighted index 
+u32 GetScrollingMultiAllocSize(u32 count)
+{
+#ifdef SCROLLING_MULTICHOICE
+	u32 size = count * sizeof(struct ListMenuItem);
+
+	if (gScrollingSets[Var8000].getHighlightedIndex != NULL)
+		size += (count * sizeof(const u8*)) + HIGHLIGHTED_ENTRY_SIZE;
+
+	return size;
+#else
+	return count * sizeof(struct ListMenuItem);
+#endif
+}
+
 const u8* const* GetScrollingMultiList(void)
 {
 #ifdef SCROLLING_MULTICHOICE
-	return gScrollingSets[Var8000].set;
+	const struct ScrollingMulti* set = &gScrollingSets[Var8000];
+
+	if (set->getHighlightedIndex == NULL)
+		return set->set;
+
+	u8 highlighted = set->getHighlightedIndex();
+	if (highlighted >= set->count)
+		return set->set;
+
+	// The RAM GetScrollingMultiAllocSize reserved, straight after the items. The table is only
+	// read by the loop that copies it into those items, but the name it points at is read again on
+	// every redraw, so it has to outlast this call.
+	const u8** names = (const u8**) &sScrollingMultiItems[set->count];
+	u8* highlightedName = (u8*) &names[set->count];
+
+	for (u32 i = 0; i < set->count; ++i)
+		names[i] = set->set[i];
+
+	StringCopy(highlightedName, sHighlightColours);
+	StringAppend(highlightedName, set->set[highlighted]);
+	names[highlighted] = highlightedName;
+
+	return names;
 #else
 	return 0;
 #endif
