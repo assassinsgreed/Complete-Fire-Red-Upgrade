@@ -106,6 +106,7 @@ struct TeamBuilder
 	u8 numStalls;
 	u8 numChoiceItems;
 	u8 numMegas;
+	bool8 allowLegendaries; //Opponent side only - see PlayerTeamHasLegendary
 	u16 trainerId;
 };
 
@@ -1636,6 +1637,23 @@ static u16 TryReplaceNormalTrainerSpecies(u16 species, unusedArg u16 trainerId)
 	#endif
 }
 
+// The opponents may only bring a legendary if the player has.
+// gPlayerParty holds the entered frontier team at opponent-build time, the same assumption
+// AddPlayerMoveTypesToBuilder already relies on. Recomputed per battle rather than cached,
+// because the player may Continue a rested run with a different team.
+static bool8 PlayerTeamHasLegendary(void)
+{
+	for (u32 i = 0; i < PARTY_SIZE; ++i)
+	{
+		u16 species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES, NULL);
+
+		if (species != SPECIES_NONE && gSpecialSpeciesFlags[species].battleTowerStandardBan)
+			return TRUE;
+	}
+
+	return FALSE;
+}
+
 //Returns the number of Pokemon
 static u8 BuildFrontierParty(struct Pokemon* const party, const u16 trainerId, const u8 tier, const bool8 firstTrainer, const bool8 forPlayer, const u8 side)
 {
@@ -1667,8 +1685,10 @@ static u8 BuildFrontierParty(struct Pokemon* const party, const u16 trainerId, c
 			trainerGender = trainer->gender;
 			break;
 		case BATTLE_TOWER_SPECIAL_TID:
-		case FRONTIER_BRAIN_TID:
 			trainerGender = specialTrainer->gender;
+			break;
+		case FRONTIER_BRAIN_TID:
+			trainerGender = GetFrontierBrainGender(tableId);
 			break;
 		case BATTLE_FACILITY_MULTI_TRAINER_TID:
 			trainerGender = multiPartner->gender;
@@ -1697,6 +1717,8 @@ static u8 BuildFrontierParty(struct Pokemon* const party, const u16 trainerId, c
 	builder->battleType = battleType;
 	builder->monsCount = monsCount;
 	builder->trainerId = trainerId;
+	//Rentals are always allowed to draw legendaries; only opponents mirror the player.
+	builder->allowLegendaries = forPlayer || PlayerTeamHasLegendary();
 	Memset(builder->partyIndex, 0xFF, sizeof(builder->partyIndex));
 
 	if (!forPlayer
@@ -1735,6 +1757,9 @@ static u8 BuildFrontierParty(struct Pokemon* const party, const u16 trainerId, c
 						case BATTLE_FACILITY_UBER:
 						case BATTLE_FACILITY_NO_RESTRICTIONS:
 						case BATTLE_FACILITY_UBER_CAMOMONS:
+							//Milestone challengers are opponents too, so the mirror rule applies.
+							if (!builder->allowLegendaries)
+								goto SPECIAL_TRAINER_REGULAR_SPREADS;
 						SPECIAL_TRAINER_LEGENDARY_SPREADS:
 							if (specialTrainer->legendarySpreads != NULL)
 								spread = &specialTrainer->legendarySpreads[Random() % specialTrainer->legSpreadSize];
@@ -1921,6 +1946,9 @@ static u8 BuildFrontierParty(struct Pokemon* const party, const u16 trainerId, c
 						case BATTLE_FACILITY_UBER:
 						case BATTLE_FACILITY_NO_RESTRICTIONS:
 						case BATTLE_FACILITY_UBER_CAMOMONS:
+							// The player-side path jumps straight to SPECIAL_UBERS_SPREADS below, so rentals bypass this deliberately.
+							if (!builder->allowLegendaries)
+								goto REGULAR_SPREADS;
 							SPECIAL_UBERS_SPREADS:
 							if (Random() % 100 < 75) //75% chance per mon of being non-legend good for Ubers (in reality a lot lower because standard spreads are much bigger)
 							{
@@ -2023,7 +2051,7 @@ static u8 BuildFrontierParty(struct Pokemon* const party, const u16 trainerId, c
 							if (trainerId != BATTLE_TOWER_TID) //Multi partner team
 								goto REGULAR_SPREADS;
 
-							u16 streak = GetCurrentBattleTowerStreak();
+							u16 streak = GetCurrentBattleFacilityStreak();
 							if (streak < 2)
 							{
 								spread = &gLittleCupSpreads[Random() % TOTAL_LITTLE_CUP_SPREADS]; //Load Little Cup spreads for first two battles to make them easier
@@ -2180,7 +2208,7 @@ static u8 BuildFrontierParty(struct Pokemon* const party, const u16 trainerId, c
 			//Prevent duplicate species and items
 			//Only allow one Mega Stone & Z-Crystal per team
 			if (!IsPokemonBannedBasedOnStreak(species, item, builder->speciesArray, monsCount, trainerId, tier, forPlayer)
-			&& (!builder->speciesOnTeam[dexNum] || tier == BATTLE_FACILITY_NO_RESTRICTIONS)
+			&& !builder->speciesOnTeam[dexNum]
 			&& !(ItemAlreadyOnTeam(item, monsCount, builder->itemArray) && DuplicateItemsAreBannedInTier(builder->tier, builder->battleType))
 			&& (tier == BATTLE_FACILITY_MEGA_BRAWL || itemEffect != ITEM_EFFECT_MEGA_STONE || item == ITEM_ULTRANECROZIUM_Z || !builder->itemEffectOnTeam[ITEM_EFFECT_MEGA_STONE])
 			&& ((itemEffect != ITEM_EFFECT_Z_CRYSTAL && item != ITEM_ULTRANECROZIUM_Z) || !builder->itemEffectOnTeam[ITEM_EFFECT_Z_CRYSTAL])
@@ -2739,10 +2767,10 @@ static bool8 IsPokemonBannedBasedOnStreak(u16 species, u16 item, u16* speciesArr
 	if (!(gBattleTypeFlags & BATTLE_TYPE_FRONTIER))
 		return FALSE; //There are no streaks outside of the Frontier
 
-	u16 streak = GetCurrentBattleTowerStreak();
+	u16 streak = GetCurrentBattleFacilityStreak();
 	bool8 megasZMovesBannedInTier = AreMegasZMovesBannedInTier(tier) || BATTLE_FACILITY_NUM == IN_RING_CHALLENGE;
 
-	if (!forPlayer && trainerId == BATTLE_TOWER_TID && IsStandardTier(tier))
+	if (!forPlayer && trainerId == BATTLE_TOWER_TID && StreakRampAppliesInTier(tier))
 	{
 		if (megasZMovesBannedInTier
 		&& (IsZCrystal(item) || IsMegaStone(item))) //Don't give the AI Pokemon with bad items
@@ -2775,10 +2803,11 @@ static bool8 IsPokemonBannedBasedOnStreak(u16 species, u16 item, u16* speciesArr
 		}
 	}
 	else if ((forPlayer || trainerId == BATTLE_FACILITY_MULTI_TRAINER_TID)
-	&& IsStandardTier(tier))
+	&& StreakRampAppliesInTier(tier))
 	{
-		streak = GetMaxBattleTowerStreakForTier(tier);
-
+		// Rentals ramp on the current streak, same as the opponent ramp. This used to reassign
+		// streak = GetMaxBattleTowerStreakForTier(tier), so a fresh attempt opened with endgame
+		// rentals because of a previous run.
 		if (megasZMovesBannedInTier
 		&& (IsZCrystal(item) || IsMegaStone(item))) //Don't give the player Pokemon with bad items
 			return TRUE;
@@ -2808,10 +2837,10 @@ static bool8 IsPokemonBannedBasedOnStreak(u16 species, u16 item, u16* speciesArr
 		if (megasZMovesBannedInTier && IsMegaStone(item)) //Don't give special Trainers Pokemon with bad items
 			return TRUE;
 
-		if (streak < 20 && IsStandardTier(tier))
+		if (streak < FRONTIER_FIRST_MILESTONE_STREAK && StreakRampAppliesInTier(tier))
 		{
-			if (IsMegaStone(item)) //Special trainers aren't allowed to Mega Evolve
-				return TRUE;	   //before the player has beaten Palmer in the 20th battle.
+			if (IsMegaStone(item)) // Special trainers aren't allowed to Mega Evolve
+				return TRUE;	   // before the player has beaten the first milestone challenger at streak 20.
 		}
 	}
 	else if (trainerId == FRONTIER_BRAIN_TID)
@@ -2944,7 +2973,7 @@ static bool8 TeamDoesntHaveSynergy(const struct BattleTowerSpread* const spread,
 		&& !IsFrontierMulti(battleType) //Teams are built seperately, so even though maxWeaknesses is 1, there may be up to 2 with the other team factored in
 		&& gBattleTypeFlags & BATTLE_TYPE_FRONTIER) //Streaks are only in Frontier
 		{
-			u16 streak = GetCurrentBattleTowerStreak();
+			u16 streak = GetCurrentBattleFacilityStreak();
 
 			if (IsStandardTier(builder->tier))
 			{

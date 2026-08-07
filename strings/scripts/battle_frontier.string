@@ -178,8 +178,17 @@ Unwavering Heart
 // Rules
 //------------------------------------------------------------------
 
+#org @gText_BattleFrontier_RulesPrompt
+What would you like to know\nabout the [BUFFER1]?
+
+#org @gText_BattleFrontier_ChoiceFrontierRules
+Frontier Rules
+
+#org @gText_BattleFrontier_ChoiceFacilityRules
+Facility Rules
+
 #org @gText_BattleFrontier_CommonRules
-Here at the [BUFFER1], you'll take\non challenger after challenger.\pWin, and you go straight into the\nnext battle. Lose, and your streak\lends there.\pEvery Pok\emon battles at Level 50,\nso bring whichever you like -\lnothing is too strong or too weak.\pYour team is fully healed before\nevery battle, and you'll earn Pok\e\lChips for each win.\pIf you ever need a break, you can\nRest - we'll save your streak and\lhold it until you return.\pPlease make sure to complete a\nbattle before resting - otherwise\lyour streak will be lost!
+At the Battle Frontier, you'll take\non challengers one after another.\pEvery Pok\emon battles at level 50\nand is healed before each fight.\pAs you win, your streak will grow\nand you'll face stronger trainers.\pYou'll earn Pok\e Chips for each win.\nJust remember you can only hold\lup to 999 Pok\e Chips at a time!\pIf you ever need a break, you can\nRest - we'll save your streak and\lhold it until you return.\pPlease make sure to complete a\nbattle before resting - otherwise\lyour streak will be lost!
 
 #org @gText_BattleFrontier_TowerRules
 The Battle Tower plays it straight -\nno gimmicks, no special conditions.\pJust you, your team, and one\nchallenger after another.
@@ -227,6 +236,9 @@ Better luck next time!
 #org @gText_BattleFrontier_WinReward
 That's [BUFFER3] straight in the\n[BUFFER1]!\pHere are [BUFFER2] Pok\e Chips for\nyour trouble.
 
+#org @gText_BattleFrontier_WinRewardCaseFull
+That's [BUFFER3] straight in the\n[BUFFER1]!\pYou'll have to spend some Pok\e Chips\nto make room for more!
+
 //------------------------------------------------------------------
 // Continue / Rest / Give up
 //------------------------------------------------------------------
@@ -237,7 +249,7 @@ Your [BUFFER1] [BUFFER2] streak\nstands at [BUFFER3].\pWould you like to continu
 // The two below replace the prompt above when a milestone battle is next, so the player is
 // never surprised into one - see FrontierChallenge_GetNextOpponentKind.
 
-#org @gText_BattleFrontier_ChallengeMenuPromptSpecial
+#org @gText_BattleFrontier_ChallengeMenuPromptAce
 Your [BUFFER1] [BUFFER2] streak\nstands at [BUFFER3].\pA word of warning - an especially\nstrong Trainer is next up.\pWould you like to continue?
 
 #org @gText_BattleFrontier_ChallengeMenuPromptBrain

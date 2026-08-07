@@ -371,16 +371,9 @@ void TryLoadTileset2OnCameraTransition(struct MapLayout* oldMapLayout)
 }
 
 #if (defined TIME_ENABLED && defined DNS_IN_BATTLE)
+// The background itself decides if a tint occurs (this allows the frontier customization (map is always indoor) to function)
 void DNSBattleBGPalFade(void)
 {
-	switch (GetCurrentMapType()) {
-		case MAP_TYPE_0:			//No fading in these areas
-		case MAP_TYPE_UNDERGROUND:
-		case MAP_TYPE_INDOOR:
-		case MAP_TYPE_SECRET_BASE:
-			return;
-	}
-
 	u16 i, palOffset;
 	u8 coeff = gDNSNightFadingByTime[gClock.hour][gClock.minute / 10].amount;
 	u32 blendColor = RGB(

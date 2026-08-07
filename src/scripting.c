@@ -4322,16 +4322,16 @@ void SetupNewGameTextSpeedAndSound()
 
 void GiveUpTo999RareCandies()
 {
-	u16 candiesToGive = 999 - CountTotalItemQuantityInBag(ITEM_RARE_CANDY);
-	if (candiesToGive > 0)
-		AddBagItem(ITEM_RARE_CANDY, candiesToGive);
+	u16 held = CountTotalItemQuantityInBag(ITEM_RARE_CANDY);
+	if (held < 999)
+		AddBagItem(ITEM_RARE_CANDY, 999 - held);
 }
 
 void GiveUpTo999PokeChips()
 {
-	u16 chipsToGive = 999 - CountTotalItemQuantityInBag(ITEM_POKE_CHIP);
-	if (chipsToGive > 0)
-		AddBagItem(ITEM_POKE_CHIP, chipsToGive);
+	u16 held = CountTotalItemQuantityInBag(ITEM_POKE_CHIP);
+	if (held < 999)
+		AddBagItem(ITEM_POKE_CHIP, 999 - held);
 }
 
 // Swami researcher species table — mirrors gSwarmTable then gDivergentSwarmTable order.

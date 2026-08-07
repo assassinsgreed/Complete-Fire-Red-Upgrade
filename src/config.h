@@ -120,6 +120,8 @@
 #define VAR_BATTLE_FACILITY_TRAINER1_NAME 0x5019 //Empty var. Will be set to 0xFFFF after every battle.
 #define VAR_BATTLE_FACILITY_TRAINER2_NAME 0x501A //Empty var. Will be set to 0xFFFF after every battle.
 #define VAR_BATTLE_FACILITY_SONG_OVERRIDE 0x501B //Set this var to the song id to be played during Link Battles and in the Battle Tower.
+#define FLAG_FRONTIER_DATA_INITIALISED 0x947 // Indicates the Battle Frontier has been initialized (cutscenes, etc.)
+#define FRONTIER_LEVEL 50 // Base level for Battle Frontier battles (can be adjusted by Battle Mine randomization)
 
 enum //These vars need to be one after the other (hence the enum)
 {

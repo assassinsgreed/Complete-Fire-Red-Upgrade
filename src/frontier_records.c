@@ -26,16 +26,12 @@ frontier_records.c
 #define BRONZE_STAR_STREAK 20
 #define SILVER_STAR_STREAK 50
 #define GOLD_STAR_STREAK 100
-#define STAR_SPRITE_COUNT 4
+#define STAR_SPRITE_COUNT NUM_FRONTIER_FORMATS //One star per format block
 
+// Amethyst has a single tier per facility/format pair
 struct FrontierRecords
 {
 	u8* tilemapPtr;
-	const u8* tierList;
-	u8 battleType;
-	u8 battleTier;
-	u8 battleTierId;
-	u8 numTiers;
 	u8 facilityNum;
 	u16 scrollArrowDummy;
 	u8 starSpriteIds[STAR_SPRITE_COUNT];
@@ -51,52 +47,32 @@ extern const u8 Frontier_Record_BronzeStarPal[];
 extern const u8 Frontier_Record_SilverStarPal[];
 extern const u8 Frontier_Record_GoldStarPal[];
 
-extern const u8 gText_BattleTower[];
-extern const u8 gText_SingleBattleRecord[];
-extern const u8 gText_DoubleBattleRecord[];
-extern const u8 gText_MultiBattleRecord[];
-extern const u8 gText_LinkMultiBattleRecord[];
-extern const u8 gText_SingleRandomBattleRecord[];
-extern const u8 gText_DoubleRandomBattleRecord[];
-extern const u8 gText_MultiRandomBattleRecord[];
-extern const u8 gText_FrontierRecordLevel5[];
-extern const u8 gText_FrontierRecordLevel50[];
-extern const u8 gText_FrontierRecordLevel100[];
+extern const u8 gText_FrontierRecordsTitle[];
+extern const u8 gText_FrontierRecordSingles[];
+extern const u8 gText_FrontierRecordDoubles[];
 extern const u8 gText_CurrentStreak[];
 extern const u8 gText_MaxStreak[];
-extern const u8 gText_3v3[];
-extern const u8 gText_4v4[];
-extern const u8 gText_6v6[];
 
 enum Windows
 {
 	WIN_BATTLE_FACILITY_NAME,
 	WIN_BATTLE_TYPE,
-	WIN_LEVEL_50,
-	WIN_3V3_LEVEL_50,
-	WIN_6V6_LEVEL_50,
-	WIN_CURRENT_STREAK_LEVEL_50,
-	WIN_MAX_STREAK_LEVEL_50,
-	WIN_LEVEL_100,
-	WIN_3V3_LEVEL_100,
-	WIN_6V6_LEVEL_100,
-	WIN_CURRENT_STREAK_LEVEL_100,
-	WIN_MAX_STREAK_LEVEL_100,
-	WIN_TIER,
+	WIN_SINGLES,
+	WIN_SINGLES_CURRENT_STREAK,
+	WIN_SINGLES_MAX_STREAK,
+	WIN_DOUBLES,
+	WIN_DOUBLES_CURRENT_STREAK,
+	WIN_DOUBLES_MAX_STREAK,
 
 //Buffered Data
-	WIN_CURRENT_STREAK_3V3_LEVEL_50,
-	WIN_MAX_STREAK_3V3_LEVEL_50,
-	WIN_CURRENT_STREAK_6V6_LEVEL_50,
-	WIN_MAX_STREAK_6V6_LEVEL_50,
-	WIN_CURRENT_STREAK_3V3_LEVEL_100,
-	WIN_MAX_STREAK_3V3_LEVEL_100,
-	WIN_CURRENT_STREAK_6V6_LEVEL_100,
-	WIN_MAX_STREAK_6V6_LEVEL_100,
+	WIN_SINGLES_CURRENT_STREAK_NUM,
+	WIN_SINGLES_MAX_STREAK_NUM,
+	WIN_DOUBLES_CURRENT_STREAK_NUM,
+	WIN_DOUBLES_MAX_STREAK_NUM,
 	WINDOW_COUNT,
 };
 
-static const struct WindowTemplate sFrontierRecordsWinTemplates[WINDOW_COUNT + 1] =
+static const struct WindowTemplate sFrontierRecordsWinTemplates[WINDOW_COUNT + 1] __attribute__((aligned(4))) =
 {
 	[WIN_BATTLE_FACILITY_NAME] =
 	{
@@ -118,198 +94,107 @@ static const struct WindowTemplate sFrontierRecordsWinTemplates[WINDOW_COUNT + 1
 		.paletteNum = 15,
 		.baseBlock = 31,
 	},
-	[WIN_LEVEL_50] =
+	[WIN_SINGLES] =
 	{
 		.bg = 0,
 		.tilemapLeft = 2,
-		.tilemapTop = 5,
+		.tilemapTop = 4,
 		.width = 6,
 		.height = 2,
 		.paletteNum = 15,
 		.baseBlock = 85,
 	},
-	[WIN_3V3_LEVEL_50] =
+	[WIN_SINGLES_CURRENT_STREAK] =
 	{
 		.bg = 0,
-		.tilemapLeft = 15,
-		.tilemapTop = 5,
-		.width = 4,
+		.tilemapLeft = 2,
+		.tilemapTop = 6,
+		.width = 10,
 		.height = 2,
 		.paletteNum = 15,
 		.baseBlock = 97,
 	},
-	[WIN_6V6_LEVEL_50] =
-	{
-		.bg = 0,
-		.tilemapLeft = 23,
-		.tilemapTop = 5,
-		.width = 4,
-		.height = 2,
-		.paletteNum = 15,
-		.baseBlock = 105,
-	},
-	[WIN_CURRENT_STREAK_LEVEL_50] =
+	[WIN_SINGLES_MAX_STREAK] =
 	{
 		.bg = 0,
 		.tilemapLeft = 2,
-		.tilemapTop = 7,
+		.tilemapTop = 8,
 		.width = 10,
 		.height = 2,
 		.paletteNum = 15,
-		.baseBlock = 113,
+		.baseBlock = 117,
 	},
-	[WIN_MAX_STREAK_LEVEL_50] =
+	[WIN_DOUBLES] =
 	{
 		.bg = 0,
 		.tilemapLeft = 2,
-		.tilemapTop = 9,
-		.width = 10,
-		.height = 2,
-		.paletteNum = 15,
-		.baseBlock = 133,
-	},
-	[WIN_LEVEL_100] =
-	{
-		.bg = 0,
-		.tilemapLeft = 2,
-		.tilemapTop = 12,
+		.tilemapTop = 11,
 		.width = 6,
 		.height = 2,
 		.paletteNum = 15,
-		.baseBlock = 153,
+		.baseBlock = 137,
 	},
-	[WIN_3V3_LEVEL_100] =
-	{
-		.bg = 0,
-		.tilemapLeft = 15,
-		.tilemapTop = 12,
-		.width = 4,
-		.height = 2,
-		.paletteNum = 15,
-		.baseBlock = 165,
-	},
-	[WIN_6V6_LEVEL_100] =
-	{
-		.bg = 0,
-		.tilemapLeft = 23,
-		.tilemapTop = 12,
-		.width = 4,
-		.height = 2,
-		.paletteNum = 15,
-		.baseBlock = 173,
-	},
-	[WIN_CURRENT_STREAK_LEVEL_100] =
+	[WIN_DOUBLES_CURRENT_STREAK] =
 	{
 		.bg = 0,
 		.tilemapLeft = 2,
-		.tilemapTop = 14,
+		.tilemapTop = 13,
 		.width = 10,
 		.height = 2,
 		.paletteNum = 15,
-		.baseBlock = 181,
+		.baseBlock = 149,
 	},
-	[WIN_MAX_STREAK_LEVEL_100] =
+	[WIN_DOUBLES_MAX_STREAK] =
 	{
 		.bg = 0,
 		.tilemapLeft = 2,
-		.tilemapTop = 16,
+		.tilemapTop = 15,
 		.width = 10,
 		.height = 2,
 		.paletteNum = 15,
-		.baseBlock = 201,
+		.baseBlock = 169,
 	},
-	[WIN_TIER] =
-	{
-		.bg = 0,
-		.tilemapLeft = 2,
-		.tilemapTop = 3,
-		.width = 18,
-		.height = 2,
-		.paletteNum = 15,
-		.baseBlock = 221,
-	},
-
 
 //Buffered Data Windows
-	[WIN_CURRENT_STREAK_3V3_LEVEL_50] =
+	[WIN_SINGLES_CURRENT_STREAK_NUM] =
 	{
 		.bg = 0,
 		.tilemapLeft = 15,
-		.tilemapTop = 7,
+		.tilemapTop = 6,
 		.width = 4,
 		.height = 2,
 		.paletteNum = 15,
-		.baseBlock = 257,
+		.baseBlock = 189,
 	},
-	[WIN_MAX_STREAK_3V3_LEVEL_50] =
+	[WIN_SINGLES_MAX_STREAK_NUM] =
 	{
 		.bg = 0,
 		.tilemapLeft = 15,
-		.tilemapTop = 9,
+		.tilemapTop = 8,
 		.width = 4,
 		.height = 2,
 		.paletteNum = 15,
-		.baseBlock = 265,
+		.baseBlock = 197,
 	},
-	[WIN_CURRENT_STREAK_6V6_LEVEL_50] =
-	{
-		.bg = 0,
-		.tilemapLeft = 23,
-		.tilemapTop = 7,
-		.width = 4,
-		.height = 2,
-		.paletteNum = 15,
-		.baseBlock = 273,
-	},
-	[WIN_MAX_STREAK_6V6_LEVEL_50] =
-	{
-		.bg = 0,
-		.tilemapLeft = 23,
-		.tilemapTop = 9,
-		.width = 4,
-		.height = 2,
-		.paletteNum = 15,
-		.baseBlock = 281,
-	},
-	[WIN_CURRENT_STREAK_3V3_LEVEL_100] =
+	[WIN_DOUBLES_CURRENT_STREAK_NUM] =
 	{
 		.bg = 0,
 		.tilemapLeft = 15,
-		.tilemapTop = 14,
+		.tilemapTop = 13,
 		.width = 4,
 		.height = 2,
 		.paletteNum = 15,
-		.baseBlock = 289,
+		.baseBlock = 205,
 	},
-	[WIN_MAX_STREAK_3V3_LEVEL_100] =
+	[WIN_DOUBLES_MAX_STREAK_NUM] =
 	{
 		.bg = 0,
 		.tilemapLeft = 15,
-		.tilemapTop = 16,
+		.tilemapTop = 15,
 		.width = 4,
 		.height = 2,
 		.paletteNum = 15,
-		.baseBlock = 297,
-	},
-	[WIN_CURRENT_STREAK_6V6_LEVEL_100] =
-	{
-		.bg = 0,
-		.tilemapLeft = 23,
-		.tilemapTop = 14,
-		.width = 4,
-		.height = 2,
-		.paletteNum = 15,
-		.baseBlock = 305,
-	},
-	[WIN_MAX_STREAK_6V6_LEVEL_100] =
-	{
-		.bg = 0,
-		.tilemapLeft = 23,
-		.tilemapTop = 16,
-		.width = 4,
-		.height = 2,
-		.paletteNum = 15,
-		.baseBlock = 313,
+		.baseBlock = 213,
 	},
 
 	DUMMY_WIN_TEMPLATE,
@@ -344,17 +229,6 @@ static const struct BgTemplate sFrontierRecordsBgTemplates[] =
         .priority = 0,
         .baseTile = 0,
     }
-};
-
-static const u8* const sBattleTypeStrings[NUM_TOWER_BATTLE_TYPES] =
-{
-	gText_SingleBattleRecord,
-	gText_DoubleBattleRecord,
-	gText_MultiBattleRecord,
-	gText_LinkMultiBattleRecord,
-	gText_SingleRandomBattleRecord,
-	gText_DoubleRandomBattleRecord,
-	gText_MultiRandomBattleRecord,
 };
 
 enum
@@ -405,7 +279,7 @@ static const struct SpriteTemplate sGoldStarTemplate =
 	.callback = SpriteCallbackDummy,
 };
 
-static const struct CompressedSpriteSheet sStarsSpriteSheet = {Frontier_Record_BronzeStarTiles, (8 * 24) / 2, STAR_TAG_BRONZE};
+static const struct CompressedSpriteSheet sStarsSpriteSheet = {Frontier_Record_BronzeStarTiles, TILE_SIZE_4BPP, STAR_TAG_BRONZE};
 static const struct CompressedSpritePalette sBronzeStarSpritePalette = {Frontier_Record_BronzeStarPal, STAR_TAG_BRONZE};
 static const struct CompressedSpritePalette sSilverStarSpritePalette = {Frontier_Record_SilverStarPal, STAR_TAG_SILVER};
 static const struct CompressedSpritePalette sGoldStarSpritePalette = {Frontier_Record_GoldStarPal, STAR_TAG_GOLD};
@@ -471,12 +345,10 @@ static void Task_FrontierRecordsWaitForKeyPress(u8 taskId)
 	}
 	else if (gMain.newKeys & DPAD_LEFT)
 	{
-		if (sFrontierRecordsPtr->battleTierId == 0)
-			sFrontierRecordsPtr->battleTierId = sFrontierRecordsPtr->numTiers; //Wrap around
+		if (sFrontierRecordsPtr->facilityNum == 0)
+			sFrontierRecordsPtr->facilityNum = NUM_BATTLE_FACILITIES; //Wrap around
 
-		--sFrontierRecordsPtr->battleTierId;
-
-		sFrontierRecordsPtr->battleTier = sFrontierRecordsPtr->tierList[sFrontierRecordsPtr->battleTierId];
+		--sFrontierRecordsPtr->facilityNum;
 
 		DestroyStarSprites();
 		PrintCurrentRecords();
@@ -484,12 +356,10 @@ static void Task_FrontierRecordsWaitForKeyPress(u8 taskId)
 	}
 	else if (gMain.newKeys & DPAD_RIGHT)
 	{
-		if (sFrontierRecordsPtr->battleTierId == sFrontierRecordsPtr->numTiers - 1)
-			sFrontierRecordsPtr->battleTierId = 0; //Wrap around
+		if (sFrontierRecordsPtr->facilityNum == NUM_BATTLE_FACILITIES - 1)
+			sFrontierRecordsPtr->facilityNum = 0; //Wrap around
 		else
-			++sFrontierRecordsPtr->battleTierId;
-		
-		sFrontierRecordsPtr->battleTier = sFrontierRecordsPtr->tierList[sFrontierRecordsPtr->battleTierId];
+			++sFrontierRecordsPtr->facilityNum;
 
 		DestroyStarSprites();
 		PrintCurrentRecords();
@@ -515,15 +385,15 @@ static void TryCreateStarSprite(s16 x, s16 y, u8 arrayIndex, u16 maxStreak)
 {
 	u8 spriteId = MAX_SPRITES;
 
-	if (sFrontierRecordsPtr->starSpriteIds[arrayIndex] == MAX_SPRITES) //Star hasn't been created already
-	{
-		if (maxStreak >= GOLD_STAR_STREAK)
-			spriteId = CreateSprite(&sGoldStarTemplate, x, y, 0);
-		else if (maxStreak >= SILVER_STAR_STREAK)
-			spriteId = CreateSprite(&sSilverStarTemplate, x, y, 0);
-		else if (maxStreak >= BRONZE_STAR_STREAK)
-			spriteId = CreateSprite(&sBronzeStarTemplate, x, y, 0);
-	}
+	if (sFrontierRecordsPtr->starSpriteIds[arrayIndex] != MAX_SPRITES)
+		return; //Star already exists - overwriting its id here would leak the sprite
+
+	if (maxStreak >= GOLD_STAR_STREAK)
+		spriteId = CreateSprite(&sGoldStarTemplate, x, y, 0);
+	else if (maxStreak >= SILVER_STAR_STREAK)
+		spriteId = CreateSprite(&sSilverStarTemplate, x, y, 0);
+	else if (maxStreak >= BRONZE_STAR_STREAK)
+		spriteId = CreateSprite(&sBronzeStarTemplate, x, y, 0);
 
 	sFrontierRecordsPtr->starSpriteIds[arrayIndex] = spriteId;
 }
@@ -544,9 +414,7 @@ static void DestroyStarSprites(void)
 
 static void PrintCurrentRecords(void)
 {
-	u16 currStreak, maxStreak;
-	u8 tier = sFrontierRecordsPtr->battleTier;
-	const u8* string;
+	u32 format;
 
 	static const struct TextColor titleColour =
 	{
@@ -555,25 +423,11 @@ static void PrintCurrentRecords(void)
 		.shadowColor = 10, //Light Gray
 	};
 
-	static const struct TextColor tierNameColour =
-	{
-		.bgColor = 0, //Transparent
-		.fgColor = 8, //Blue
-		.shadowColor = 9, //Light Blue
-	};
-
-	static const struct TextColor levelColour =
+	static const struct TextColor formatColour =
 	{
 		.bgColor = 0, //Transparent
 		.fgColor = 4, //Red
 		.shadowColor = 5, //Orange
-	};
-
-	static const struct TextColor partySizeColour =
-	{
-		.bgColor = 0, //Transparent
-		.fgColor = 6, //Green
-		.shadowColor = 7, //Light Green
 	};
 
 	static const struct TextColor generalColour =
@@ -583,116 +437,35 @@ static void PrintCurrentRecords(void)
 		.shadowColor = 3, //Light Gray
 	};
 
+	static const u8 sSinglesWindows[] = {WIN_SINGLES, WIN_SINGLES_CURRENT_STREAK, WIN_SINGLES_MAX_STREAK,
+										 WIN_SINGLES_CURRENT_STREAK_NUM, WIN_SINGLES_MAX_STREAK_NUM};
+	static const u8 sDoublesWindows[] = {WIN_DOUBLES, WIN_DOUBLES_CURRENT_STREAK, WIN_DOUBLES_MAX_STREAK,
+										 WIN_DOUBLES_CURRENT_STREAK_NUM, WIN_DOUBLES_MAX_STREAK_NUM};
+
 	CleanWindows();
 
-	//Print battle facility
-	GetMapName(gStringVar4, GetCurrentRegionMapSectionId(), 0);
-	WindowPrint(WIN_BATTLE_FACILITY_NAME, 1, 0, 6, &titleColour, 0, gStringVar4);
+	//Facility name and screen title
+	WindowPrint(WIN_BATTLE_FACILITY_NAME, 1, 0, 6, &titleColour, 0, gBattleFacilityNames[sFrontierRecordsPtr->facilityNum]);
+	WindowPrint(WIN_BATTLE_TYPE, 1, 0, 6, &titleColour, 0, gText_FrontierRecordsTitle);
 
-	//Print Tier Name
-	string = GetFrontierTierName(tier, sFrontierRecordsPtr->battleType);
-	WindowPrint(WIN_TIER, 0, 0, 4, &tierNameColour, 0, string);
-
-	//Print Current & Max Streak
-	WindowPrint(WIN_CURRENT_STREAK_LEVEL_50, 0, 0, 4, &generalColour, 0, gText_CurrentStreak);
-	WindowPrint(WIN_MAX_STREAK_LEVEL_50, 0, 0, 4, &generalColour, 0, gText_MaxStreak);
-
-	if (BATTLE_FACILITY_NUM == IN_BATTLE_MINE) //Battle Mine is special
+	// One block per format: Singles on top, Doubles below.
+	for (format = FRONTIER_FORMAT_SINGLES; format < NUM_FRONTIER_FORMATS; ++format)
 	{
-		currStreak = GetBattleMineStreak(CURR_STREAK, sFrontierRecordsPtr->battleTier);
-		maxStreak = GetBattleMineStreak(MAX_STREAK, sFrontierRecordsPtr->battleTier);
+		const u8* const windows = (format == FRONTIER_FORMAT_SINGLES) ? sSinglesWindows : sDoublesWindows;
+		u16 currStreak = GetFrontierStreak(sFrontierRecordsPtr->facilityNum, format, CURR_STREAK);
+		u16 maxStreak = GetFrontierStreak(sFrontierRecordsPtr->facilityNum, format, MAX_STREAK);
+
 		ConvertIntToDecimalStringN(gStringVar1, currStreak, 0, 5);
 		ConvertIntToDecimalStringN(gStringVar2, maxStreak, 0, 5);
 
-		WindowPrint(WIN_CURRENT_STREAK_3V3_LEVEL_50, 0, 0, 4, &generalColour, 0, gStringVar1);
-		WindowPrint(WIN_MAX_STREAK_3V3_LEVEL_50, 0, 0, 4, &generalColour, 0, gStringVar2);
-		TryCreateStarSprite(114, 84, 0, maxStreak);
-		CommitWindows();
-		return;
-	}
+		WindowPrint(windows[0], 0, 0, 4, &formatColour, 0,
+			(format == FRONTIER_FORMAT_SINGLES) ? gText_FrontierRecordSingles : gText_FrontierRecordDoubles);
+		WindowPrint(windows[1], 0, 0, 4, &generalColour, 0, gText_CurrentStreak);
+		WindowPrint(windows[2], 0, 0, 4, &generalColour, 0, gText_MaxStreak);
+		WindowPrint(windows[3], 0, 0, 4, &generalColour, 0, gStringVar1);
+		WindowPrint(windows[4], 0, 0, 4, &generalColour, 0, gStringVar2);
 
-	//Print record battle type
-	string = sBattleTypeStrings[sFrontierRecordsPtr->battleType];
-	u8 leftShift = (StringLength(gText_LinkMultiBattleRecord) - StringLength(string)) * 5;
-	WindowPrint(WIN_BATTLE_TYPE, 1, leftShift, 6, &titleColour, 0, string);
-
-	//Print Level 50 Party Sizes Numbers
-	string = (IsFrontierSingles(sFrontierRecordsPtr->battleType)) ? gText_3v3 : gText_4v4;
-	WindowPrint(WIN_3V3_LEVEL_50, 0, 0, 4, &partySizeColour, 0, string);
-	WindowPrint(WIN_6V6_LEVEL_50, 0, 0, 4, &partySizeColour, 0, gText_6v6);
-
-	//Print Level 50 General Text
-	if (IsLittleCupTier(tier))
-		WindowPrint(WIN_LEVEL_50, 0, 0, 4, &levelColour, 0, gText_FrontierRecordLevel5);
-	else if (IS_SINGLE_100_RECORD_TIER(tier))
-		WindowPrint(WIN_LEVEL_50, 0, 0, 4, &levelColour, 0, gText_FrontierRecordLevel100);
-	else
-		WindowPrint(WIN_LEVEL_50, 0, 0, 4, &levelColour, 0, gText_FrontierRecordLevel50);
-
-	if (!IsLittleCupTier(tier) && !IS_SINGLE_100_RECORD_TIER(tier)) //Little Cup only has Lv. 5, Monotype only has Lv. 100 in Battle Tower
-	{
-		//Print Level 100 Party Sizes Numbers
-		string = (IsFrontierSingles(sFrontierRecordsPtr->battleType)) ? gText_3v3 : gText_4v4;
-		WindowPrint(WIN_3V3_LEVEL_100, 0, 0, 4, &partySizeColour, 0, string);
-		WindowPrint(WIN_6V6_LEVEL_100, 0, 0, 4, &partySizeColour, 0, gText_6v6);
-
-		//Print Level 100 General Text
-		WindowPrint(WIN_LEVEL_100, 0, 0, 4, &levelColour, 0, gText_FrontierRecordLevel100);
-		WindowPrint(WIN_CURRENT_STREAK_LEVEL_100, 0, 0, 4, &generalColour, 0, gText_CurrentStreak);
-		WindowPrint(WIN_MAX_STREAK_LEVEL_100, 0, 0, 4, &generalColour, 0, gText_MaxStreak);
-	}
-
-	//Get Streaks
-	for (u8 level = 50; level <= 100; level += 50)
-	{
-		for (u8 partySize = 1; partySize <= 6; partySize += 5) //1 represents one record, 6 represents another
-		{
-			if (IsLittleCupTier(tier))
-				level = 5;
-
-			if (IS_SINGLE_100_RECORD_TIER(tier))
-				level = 100;
-
-			currStreak = GetBattleTowerStreak(CURR_STREAK, sFrontierRecordsPtr->battleType, sFrontierRecordsPtr->battleTier, partySize, level);
-			maxStreak = GetBattleTowerStreak(MAX_STREAK, sFrontierRecordsPtr->battleType, sFrontierRecordsPtr->battleTier, partySize, level);
-
-			ConvertIntToDecimalStringN(gStringVar1, currStreak, 0, 5);
-			ConvertIntToDecimalStringN(gStringVar2, maxStreak, 0, 5);
-
-			if (partySize < 6)
-			{
-				if (level <= 50 || IS_SINGLE_100_RECORD_TIER(tier)) //3v3 Level 50
-				{
-					WindowPrint(WIN_CURRENT_STREAK_3V3_LEVEL_50, 0, 0, 4, &generalColour, 0, gStringVar1);
-					WindowPrint(WIN_MAX_STREAK_3V3_LEVEL_50, 0, 0, 4, &generalColour, 0, gStringVar2);
-					TryCreateStarSprite(114, 84, 0, maxStreak);
-				}
-				else if (!IsLittleCupTier(sFrontierRecordsPtr->battleTier)) //3v3 Level 100
-				{
-					WindowPrint(WIN_CURRENT_STREAK_3V3_LEVEL_100, 0, 0, 4, &generalColour, 0, gStringVar1);
-					WindowPrint(WIN_MAX_STREAK_3V3_LEVEL_100, 0, 0, 4, &generalColour, 0, gStringVar2);
-					TryCreateStarSprite(114, 140, 1, maxStreak);
-				}
-			}
-			else
-			{
-				if (level <= 50 || IS_SINGLE_100_RECORD_TIER(tier)) //6v6 Level 50
-				{
-					WindowPrint(WIN_CURRENT_STREAK_6V6_LEVEL_50, 0, 0, 4, &generalColour, 0, gStringVar1);
-					WindowPrint(WIN_MAX_STREAK_6V6_LEVEL_50, 0, 0, 4, &generalColour, 0, gStringVar2);
-					TryCreateStarSprite(178, 84, 2, maxStreak);
-				}
-				else if (!IsLittleCupTier(sFrontierRecordsPtr->battleTier)) //6v6 Level 100
-				{
-					WindowPrint(WIN_CURRENT_STREAK_6V6_LEVEL_100, 0, 0, 4, &generalColour, 0, gStringVar1);
-					WindowPrint(WIN_MAX_STREAK_6V6_LEVEL_100, 0, 0, 4, &generalColour, 0, gStringVar2);
-					TryCreateStarSprite(178, 140, 3, maxStreak);
-				}
-			}
-		}
-
-		if (IsLittleCupTier(tier) || IS_SINGLE_100_RECORD_TIER(tier))
-			break; //Only one set of levels for LC & Monotype
+		TryCreateStarSprite(114, (format == FRONTIER_FORMAT_SINGLES) ? 76 : 132, format, maxStreak);
 	}
 
 	CommitWindows();
@@ -832,27 +605,12 @@ static void Task_InitFrontierRecords(u8 taskId)
 {
 	if (!gPaletteFade->active)
 	{
+		u8 facility = BATTLE_FACILITY_NUM;
+
 		sFrontierRecordsPtr = Calloc(sizeof(struct FrontierRecords));
-		sFrontierRecordsPtr->battleType = (Var8000 >= NUM_TOWER_BATTLE_TYPES) ? BATTLE_FACILITY_SINGLE : Var8000;
-		sFrontierRecordsPtr->facilityNum = BATTLE_FACILITY_NUM;
+		// Open on the facility the player is in; left/right pages through the rest.
+		sFrontierRecordsPtr->facilityNum = (facility < NUM_BATTLE_FACILITIES) ? facility : IN_BATTLE_TOWER;
 		Memset(sFrontierRecordsPtr->starSpriteIds, MAX_SPRITES, sizeof(sFrontierRecordsPtr->starSpriteIds));
-
-		switch (sFrontierRecordsPtr->facilityNum) {
-			case IN_BATTLE_MINE:
-				sFrontierRecordsPtr->numTiers = gNumBattleMineTiers;
-				sFrontierRecordsPtr->tierList = gBattleMineTiers;
-				break;
-			case IN_BATTLE_CIRCUS:
-				sFrontierRecordsPtr->numTiers = gNumBattleCircusTiers;
-				sFrontierRecordsPtr->tierList = gBattleCircusTiers;
-				break;
-			default: //Battle Tower + Battle Sands
-				sFrontierRecordsPtr->numTiers = gNumBattleTowerTiers;
-				sFrontierRecordsPtr->tierList = gBattleTowerTiers;
-				break;
-		}
-
-		sFrontierRecordsPtr->battleTier = sFrontierRecordsPtr->tierList[0];
 
 		PlayRainStoppingSoundEffect();
 		SetMainCallback2(CB2_FrontierRecords);
@@ -860,13 +618,10 @@ static void Task_InitFrontierRecords(u8 taskId)
 	}
 }
 
-//@Details: Opens up the Battle Tower records screen.
-//@Inputs:
-//		Var8000: Battle Type
-//@Returns: If the Pokemon was added or not.
+//@Details: Opens up the Battle Frontier records screen. Shows the current and record streak
+//			for both formats of the facility the player is in; left/right pages by facility.
 void sp057_ShowFrontierRecords(void)
 {
-	VarSet(VAR_BATTLE_FACILITY_BATTLE_TYPE, BATTLE_FACILITY_SINGLE); //So the records get loaded correctly
 	FadeScreen(FADE_TO_BLACK, 0);
 	CreateTask(Task_InitFrontierRecords, 0);
 }

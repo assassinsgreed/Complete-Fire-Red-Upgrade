@@ -868,7 +868,7 @@ static void TryPrepareTotemBoostInBattleSands(void)
 		}
 
 		//The farther the "player" gets, the higher chance a stat will be raised more than 1
-		u8 currStreak = GetCurrentBattleTowerStreak();
+		u8 currStreak = GetCurrentBattleFacilityStreak();
 		if (currStreak < 35)
 			increaseMax = 1;
 		else if (currStreak < 50)

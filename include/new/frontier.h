@@ -2,6 +2,7 @@
 
 #include "../global.h"
 #include "dynamax.h"
+#include "pokemon_storage_system.h"
 
 //Exported Functions
 bool8 IsFrontierTrainerId(u16 trainerId);
@@ -10,6 +11,9 @@ void CopyFrontierTrainerName(u8* dst, u16 trainerId, u8 battlerNum);
 const u8* GetFrontierTrainerName(u16 trainerId, u8 battlerNum);
 void CopyFrontierTrainerText(u8 whichText, u16 trainerId, u8 battlerNum);
 u8 GetFrontierTrainerFrontSpriteId(u16 trainerId, u8 battlerNum);
+u16 GetFrontierBrainOwNum(u16 brainId);
+u8 GetFrontierBrainFrontSpriteId(u16 brainId);
+u8 GetFrontierBrainGender(u16 brainId);
 u16 TryGetSpecialFrontierTrainerMusic(u16 trainerId, u8 battlerNum);
 u32 GetAIFlagsInBattleFrontier(unusedArg u8 bank);
 u8 GetNumMonsOnTeamInFrontier(void);
@@ -47,21 +51,21 @@ bool8 IsMoveBannedInRingChallengeByMon(u16 move, struct Pokemon* mon);
 bool8 PokemonTierBan(const u16 species, const u16 item, const struct BattleTowerSpread* const spread, const struct Pokemon* const mon, const u8 tier, const u8 checkFromLocationType);
 bool8 IsMonBannedInTier(struct Pokemon* mon, u8 tier);
 bool8 IsSpeciesBannedInTier(u16 species, u16 tier, u16 battleFormat);
-u16 GetCurrentBattleTowerStreak(void);
-u16 GetBattleMineStreak(u8 type, u8 tier);
-u16 GetRingChallengeSteak(u8 type);
-u16 GetMaxBattleTowerStreakForTier(u8 tier);
-u16 GetBattleTowerStreak(u8 currentOrMax, u16 inputBattleStyle, u16 inputTier, u16 partySize, u8 level);
+bool8 StreakRampAppliesInTier(u8 tier);
+u8 GetCurrentFrontierFormat(void);
+u16 GetFrontierStreak(u8 facility, u8 format, u8 currentOrMax);
+void SetFrontierStreak(u8 facility, u8 format, u8 currentOrMax, u16 value);
+u16 GetCurrentBattleFacilityStreak(void);
+u8 GetFrontierBattleBackground(void);
 
 //Functions Hooked In:
 u16 sp052_GenerateFacilityTrainer(void);
 void sp053_LoadFrontierIntroBattleMessage(void);
 u16 sp054_GetBattleFacilityStreak(void);
 void sp055_UpdateBattleFacilityStreak(void);
-u16 sp056_DetermineBattlePointsToGive(void);
+u16 sp056_DetermineChipsToGive(void);
 void sp06C_SpliceFrontierTeamWithPlayerTeam(void);
 u16 sp06D_LoadFrontierMultiTrainerById(void);
-void sp06E_BufferBattleSandsRecords(void);
 void sp06F_CanTeamParticipateInBattleMine(void);
 u8 sp070_RandomizeBattleMineBattleOptions(void);
 
@@ -72,6 +76,7 @@ u8 sp070_RandomizeBattleMineBattleOptions(void);
 #define NUM_FEMALE_NAMES gNumFemaleFrontierTrainerNames
 #define NUM_TOWER_TRAINERS gNumTowerTrainers
 #define NUM_SPECIAL_TOWER_TRAINERS gNumSpecialTowerTrainers
+#define NUM_FRONTIER_BRAINS gNumFrontierBrains
 
 #define RAID_BATTLE_MULTI_TRAINER_TID 0x395 //Trainer Index
 #define BATTLE_FACILITY_MULTI_TRAINER_TID 0x396 //Trainer Index
@@ -89,10 +94,12 @@ enum BattleFacilities
 	IN_BATTLE_FACTORY,
 	IN_RING_CHALLENGE,
 	IN_ISLE_CHALLENGE,
+	IN_BATTLE_MAZE,
 	NUM_BATTLE_FACILITIES,
 };
 
-#define BATTLE_FACILITY_NUM VarGet(0x403A) //Temp Var
+#define BATTLE_FACILITY_NUM VarGet(0x403A)
+#define SET_BATTLE_FACILITY_NUM(num) VarSet(0x403A, (num))
 
 enum
 {
@@ -180,6 +187,9 @@ enum
 	MAX_STREAK,
 };
 
+#define FRONTIER_FIRST_MILESTONE_STREAK 20
+#define FRONTIER_SECOND_MILESTONE_STREAK 50
+
 enum
 {
 	DOUBLES_ANY_TEAM,
@@ -200,6 +210,7 @@ extern const u16 gNumMaleFrontierTrainerNames;
 extern const u16 gNumFemaleFrontierTrainerNames;
 extern const u16 gNumTowerTrainers;
 extern const u16 gNumSpecialTowerTrainers;
+extern const u16 gNumFrontierBrains;
 
 struct BattleTowerSpread
 {
@@ -307,42 +318,68 @@ struct MultiRaidTrainer
 extern const struct MultiRaidTrainer gRaidPartners[];
 extern const u8 gNumRaidPartners;
 
-struct BattleSandsStreak
+// Amethyst only supports a single tier per facility/format
+enum FrontierStreakFormats
 {
-	/*0x0*/ u16 tier : 10;
-	/*0x1*/ u16 format : 4;
-	/*0x1*/ u16 level : 1;
-	/*0x1*/ u16 inverse : 1;
-	/*0x2*/ u16 species1;
-	/*0x4*/ u16 species2;
-	/*0x6*/ u16 species3;
-	/*0x8*/ u16 streakLength;
-}; /*SIZE = 0xA*/
+	FRONTIER_FORMAT_SINGLES,
+	FRONTIER_FORMAT_DOUBLES,
+	NUM_FRONTIER_FORMATS,
+};
 
-struct RingChallengeStreak
+enum FrontierChallengeStates
 {
-	/*0x0*/ u16 streakLength;
-	/*0x2*/ u16 species1;
-	/*0x4*/ u16 species2;
-	/*0x6*/ u16 species3;
+	FRONTIER_NONE,
+	FRONTIER_ACTIVE,	//Only ever seen on disk after a session that ended without Resting
+	FRONTIER_RESTING,
+};
+
+// The number of music choices - enforced by a #define so newly added songs trigger compilation errors
+// if they are not fully configured (ex. here, in multichoice lists, etc.)
+#define NUM_FRONTIER_MUSIC_CHOICES 13
+#define FRONTIER_MUSIC_DEFAULT_CHOICE 0
+
+extern const u8* const gFrontierMusicChoiceNames[NUM_FRONTIER_MUSIC_CHOICES + 1];
+extern const u16 gFrontierMusicChoiceSongs[NUM_FRONTIER_MUSIC_CHOICES];
+
+// Which song is currently selected (highlighted in green)
+u8 GetCurrentFrontierMusicChoice(void);
+u8 GetCurrentFrontierBackgroundChoice(void);
+
+// Like music above, but with the default background called out explicitly so it can be referenced
+// in scripts setting the background graphic (since Random isn't a background itself)
+#define NUM_FRONTIER_BACKGROUND_CHOICES 25
+#define FRONTIER_BACKGROUND_DEFAULT_CHOICE 0
+#define FRONTIER_BACKGROUND_RANDOM_CHOICE 1
+
+extern const u8* const gFrontierBackgroundChoiceNames[NUM_FRONTIER_BACKGROUND_CHOICES + 1];
+extern const u8 gFrontierBackgroundChoiceTerrains[NUM_FRONTIER_BACKGROUND_CHOICES];
+
+// The player's pick, and what "Random" turned into for the battle about to be fought.
+struct FrontierBackground
+{
+	u8 choice;			// Index into gFrontierBackgroundChoiceNames
+	u8 rolledChoice;	// The same, standing in for choice while it reads Random
+};
+
+// Game modifiers are disabled during the frontier and restored after; this captures the state
+// of modifiers for restoration (incl. which are overridden and which choices are selected for things like weather)
+struct FrontierModifierBackup
+{
+	/*0x0*/ u8 overridden;
+	/*0x1*/ u8 weather;
+	/*0x2*/ u8 terrain;
+	/*0x4*/ u32 flags; //Bit n = gFrontierOverriddenModifierFlags[n] was set
 }; /*SIZE = 0x8*/
 
-extern struct BattleSandsStreak gBattleSandsStreaks[/*PREVIOUS_OR_MAX*/ 2]; //0x202682C
-extern u16 gBattleTowerStreaks[NUM_TOWER_BATTLE_TYPES][NUM_FORMATS_OLD][/*PARTY_SIZE*/ 2][/*LEVEL*/ 2][/*CURRENT_OR_MAX*/ 2]; //0x2026840
-extern u16 gBattleMineStreaks[NUM_BATTLE_MINE_TIERS][/*CURRENT_OR_MAX*/ 2]; //0x2026B40
-extern u16 gBattleCircusStreaks[NUM_BATTLE_CIRCUS_TIERS][NUM_TOWER_BATTLE_TYPES][/*PARTY_SIZE*/ 2][/*LEVEL*/ 2][/*CURRENT_OR_MAX*/ 2]; //0x2026B50 - sizeof(1) = 0x70
-extern struct RingChallengeStreak gRingChallengeStreaks[/*CURRENT_OR_MAX*/ 2]; //0x2028FC0
+//Addresses in BPRE.ld. SaveBlock1.frontierRecords free space is 0x202682C - 0x2027434.
+extern u16 gFrontierStreaks[NUM_BATTLE_FACILITIES][NUM_FRONTIER_FORMATS][/*CURRENT_OR_MAX*/ 2]; //0x2026840
+// Every facility/format/streak is saved individually, to allow the player to pause and resume any streak without interrupting others
+extern u8 gFrontierRunStates[NUM_BATTLE_FACILITIES][NUM_FRONTIER_FORMATS]; //0x2026880
+extern struct FrontierModifierBackup gFrontierModifierBackup; //0x2026890
+extern struct FrontierBackground gFrontierBackground; //0x2026898
 
-//FREE SPACE FROM SLIDESHOW 0x202682C - 0x2027434
-//FREE SPACE POST CIRCUS - 0x2027170: 0x2C4 bytes
-
-extern const u8 gBattleTowerTiers[];
-extern const u8 gBattleMineTiers[];
-extern const u8 gBattleCircusTiers[];
-extern const u8 gNumBattleTowerTiers;
-extern const u8 gNumBattleMineTiers;
-extern const u8 gNumBattleCircusTiers;
 extern const u8* const gBattleFrontierTierNames[NUM_TIERS];
+extern const u8* const gBattleFacilityNames[NUM_BATTLE_FACILITIES];
 
 extern const species_t gGSCup_LegendarySpeciesList[];
 extern const species_t gSmogonLittleCup_SpeciesList[];
