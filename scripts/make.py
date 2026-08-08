@@ -9,6 +9,8 @@ import sys
 ############
 
 ROM_NAME = "BPRE0.gba"  # The name of your rom
+ROM_NAME_OUT = "test.gba"  # The rom the build writes out
+CART_SIZE = 0x2000000  # 32MB, the largest size a GBA cart can be
 OFFSET_TO_PUT = 0x830000
 SEARCH_FREE_SPACE = False  # Set to True if you want the script to search for free space
                            # Set to False if you don't want to search for free space as you for example update the engine
@@ -91,7 +93,7 @@ def InsertCode():
 
 
 def ApplyCustomHacks():
-    with open("test.gba", 'rb+') as romfile:
+    with open(ROM_NAME_OUT, 'rb+') as romfile:
         originalPokedexEvalAddress = b'\xE0\x73\x1A\x08'
         updatedPokedexEvalAddress = b''
         
@@ -121,6 +123,22 @@ def InjectWildEncounters():
     print("Done!")
 
 
+def PadRomToCartSize():
+    # Pad the game to 32MB to ensure cart flashers can handle the game data properly
+    with open(ROM_NAME_OUT, 'rb+') as rom:
+        rom.seek(0, 2)
+        size = rom.tell()
+
+        if size > CART_SIZE:
+            print("Error: " + ROM_NAME_OUT + " is " + hex(size)
+                  + " bytes, past the " + hex(CART_SIZE) + " a GBA cart can address.")
+            sys.exit(1)
+
+        if size < CART_SIZE:
+            rom.write(b'\xFF' * (CART_SIZE - size))
+            print("Padded " + ROM_NAME_OUT + " from " + hex(size) + " to " + hex(CART_SIZE) + " bytes.")
+
+
 def ClearFromTo(rom, from_: int, to_: int):
     rom.seek(from_)
     for i in range(0, to_ - from_):
@@ -144,6 +162,7 @@ def main():
             InsertCode()
             ApplyCustomHacks()
             InjectWildEncounters()
+            PadRomToCartSize()  # Must stay last; everything above assumes the base ROM's length
             rom.close()
 
     except FileNotFoundError:

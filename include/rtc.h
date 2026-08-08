@@ -17,6 +17,12 @@
 
 #define RTC_ERR_FLAG_MASK      0x0FF0
 
+// Deliberately outside RTC_ERR_FLAG_MASK so the existing consumers, which all
+// test against that mask, keep ignoring them. These two are latched once and
+// must survive the plain assignments to sRTCErrorStatus in RtcInit.
+#define RTC_PROBE_DONE         0x1000
+#define RTC_NO_HARDWARE        0x2000
+
 void RtcDisableInterrupts(void);
 void RtcRestoreInterrupts(void);
 u32 ConvertBcdToBinary(u8 bcd);
