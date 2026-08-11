@@ -298,6 +298,9 @@ static const struct WildPokemonHeader* GetCurrentMapWildMonDaytimeHeader(void)
 }
 
 
+// Raids grant their own star-based number of perfect IVs, so the perfect wild IV modifier is suppressed.
+static bool8 sSkipPerfectWildIVs = FALSE;
+
 static u8 PickWildMonNature(void)
 {
 	//Check Synchronize for a pokemon with the same ability
@@ -363,6 +366,12 @@ void CreateWildMon(u16 species, u8 level, u8 monHeaderIndex, bool8 purgeParty)
 	if (FlagGet(FLAG_GIGANTAMAXABLE))
 		gEnemyParty[enemyMonIndex].gigantamax = TRUE;
 	#endif
+
+	if (FlagGet(FLAG_PERFECT_WILD_IVS) && !sSkipPerfectWildIVs)
+	{
+		GiveMonXPerfectIVs(&gEnemyParty[enemyMonIndex], NUM_STATS);
+		CalculateMonStatsNew(&gEnemyParty[enemyMonIndex]); // Raising the IVs raised max HP, which the mon is still sitting at
+	}
 
 	#ifdef FLAG_WILD_CUSTOM_MOVES
 	//Custom moves
@@ -431,7 +440,9 @@ void sp117_CreateRaidMon(void)
 	FlagClear(FLAG_WILD_CUSTOM_MOVES); //We'll set custom moves later
 	#endif
 
+	sSkipPerfectWildIVs = TRUE; // The raid's own star-based IVs are applied below
 	CreateWildMon(gRaidBattleSpecies, gRaidBattleLevel, 0, TRUE);
+	sSkipPerfectWildIVs = FALSE;
 
 	if (abilityNum == RAID_ABILITY_1 || abilityNum == RAID_ABILITY_2)
 		GiveMonNatureAndAbility(mon, GetNature(mon), abilityNum - RAID_ABILITY_1, IsMonShiny(mon), FALSE, FALSE);

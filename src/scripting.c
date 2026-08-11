@@ -3318,6 +3318,7 @@ extern const u8 gText_GameModifiers_DexNavShowAll[];
 extern const u8 gText_GameModifiers_InstantBattleWeather[];
 extern const u8 gText_GameModifiers_InstantBattleTerrain[];
 extern const u8 gText_GameModifiers_InstantFriendship[];
+extern const u8 gText_GameModifiers_PerfectWildIVs[];
 extern const u8 gText_GameModifiers_EVIVViewer[];
 extern const u8 gText_GameModifiers_DivergentToggle[];
 
@@ -3641,6 +3642,7 @@ static const u8* sGameModifiers[] =
 	gText_GameModifiers_InstantBattleWeather,
 	gText_GameModifiers_InstantBattleTerrain,
 	gText_GameModifiers_InstantFriendship,
+	gText_GameModifiers_PerfectWildIVs,
 	gText_GameModifiers_EVIVViewer,
 	gText_GameModifiers_DivergentToggle,
 	gText_End,
@@ -4240,6 +4242,17 @@ void ComputeCompletedGameModifierRequirements()
 	// Entered HoF in Divergent Mode
 	if (FlagGet(FLAG_DEFEATED_CHAMPION_SELENE) && FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS))
 		FlagSet(FLAG_GAMEMODIFIER_DIVERGNET_TOGGLE_UNLOCKED);
+
+	// A 20+ win streak at any battle facility, in either format. Reads the max streak rather than the
+	// current one so the unlock sticks once earned instead of needing the player to still be mid-run.
+	for (u32 facility = 0; facility < NUM_BATTLE_FACILITIES; ++facility)
+	{
+		for (u32 format = 0; format < NUM_FRONTIER_FORMATS; ++format)
+		{
+			if (GetFrontierStreak(facility, format, MAX_STREAK) >= 20)
+				FlagSet(FLAG_GAMEMODIFIER_PERFECT_WILD_IVS_UNLOCKED);
+		}
+	}
 }
 
 /// @brief Checks if Type:Null or Silvally is in the party. 1 if true, 0 if false

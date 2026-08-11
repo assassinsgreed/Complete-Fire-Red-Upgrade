@@ -1959,7 +1959,8 @@ bool8 InitDexNavHUD(u16 species, u8 environment, bool8 detectorMode)
 	DexNavGenerateMoveset(sDexNavHudPtr->species, searchLevel, sDexNavHudPtr->pokemonLevel, &sDexNavHudPtr->moveId[0]);
 	sDexNavHudPtr->heldItem = DexNavGenerateHeldItem(species, searchLevel);
 	sDexNavHudPtr->ability = DexNavGenerateHiddenAbility(species, searchLevel);
-	sDexNavHudPtr->potential = DexNavGeneratePotential(searchLevel);
+	// Show max stars while the modifier is on, otherwise the HUD understates what the player will catch
+	sDexNavHudPtr->potential = FlagGet(FLAG_PERFECT_WILD_IVS) ? 3 : DexNavGeneratePotential(searchLevel);
 	DexNavProximityUpdate();
 
 	//Draw icons

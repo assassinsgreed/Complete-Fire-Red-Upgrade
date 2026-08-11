@@ -618,6 +618,9 @@ Instant Terrain in Battle
 #org @gText_GameModifiers_InstantFriendship
 Instant Friendship
 
+#org @gText_GameModifiers_PerfectWildIVs
+Perfect Wild Pok\emon IVs
+
 #org @gText_GameModifiers_EVIVViewer
 Enable EV/IV Viewer
 
