@@ -147,6 +147,18 @@ Trainer Battle
 #org @gText_BattleFrontier_MusicGymLeader
 Gym Leader Battle
 
+#org @gText_BattleFrontier_MusicKantoGymTrainee
+Kanto Gym Trainee
+
+#org @gText_BattleFrontier_MusicJohtoGymTrainee
+Johto Gym Trainee
+
+#org @gText_BattleFrontier_MusicHoennGymTrainee
+Hoenn Gym Trainee
+
+#org @gText_BattleFrontier_MusicSinnohGymTrainee
+Sinnoh Gym Trainee
+
 #org @gText_BattleFrontier_MusicRival
 Rival Battle
 

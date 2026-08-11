@@ -56,6 +56,10 @@ extern const u8 gText_BattleFrontier_MusicDefault[]; // Battle Subway Trainer
 extern const u8 gText_BattleFrontier_MusicRandom[];
 extern const u8 gText_BattleFrontier_MusicTrainer[];
 extern const u8 gText_BattleFrontier_MusicGymLeader[];
+extern const u8 gText_BattleFrontier_MusicKantoGymTrainee[];
+extern const u8 gText_BattleFrontier_MusicJohtoGymTrainee[];
+extern const u8 gText_BattleFrontier_MusicHoennGymTrainee[];
+extern const u8 gText_BattleFrontier_MusicSinnohGymTrainee[];
 extern const u8 gText_BattleFrontier_MusicRival[];
 extern const u8 gText_BattleFrontier_MusicAlistair[];
 extern const u8 gText_BattleFrontier_MusicCasey[];
@@ -99,6 +103,10 @@ const u8* const gFrontierMusicChoiceNames[NUM_FRONTIER_MUSIC_CHOICES + 1] =
 	gText_BattleFrontier_MusicRandom,
 	gText_BattleFrontier_MusicTrainer,
 	gText_BattleFrontier_MusicGymLeader,
+	gText_BattleFrontier_MusicKantoGymTrainee,
+	gText_BattleFrontier_MusicJohtoGymTrainee,
+	gText_BattleFrontier_MusicHoennGymTrainee,
+	gText_BattleFrontier_MusicSinnohGymTrainee,
 	gText_BattleFrontier_MusicRival,
 	gText_BattleFrontier_MusicAlistair,
 	gText_BattleFrontier_MusicCasey,
@@ -117,6 +125,10 @@ const u16 gFrontierMusicChoiceSongs[NUM_FRONTIER_MUSIC_CHOICES] =
 	BGM_RANDOM_BATTLE_MUSIC,
 	BGM_BATTLE_TRAINER,
 	BGM_BATTLE_GYM_LEADER,
+	BGM_BATTLE_KANTO_LEADER,
+	BGM_BATTLE_JOHTO_LEADER,
+	BGM_BATTLE_HOENN_LEADER,
+	BGM_BATTLE_SINNOH_LEADER,
 	BGM_BATTLE_RIVAL,
 	BGM_BATTLE_ALISTAIR,
 	BGM_BATTLE_CASEY,

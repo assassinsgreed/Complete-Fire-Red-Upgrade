@@ -335,7 +335,7 @@ enum FrontierChallengeStates
 
 // The number of music choices - enforced by a #define so newly added songs trigger compilation errors
 // if they are not fully configured (ex. here, in multichoice lists, etc.)
-#define NUM_FRONTIER_MUSIC_CHOICES 13
+#define NUM_FRONTIER_MUSIC_CHOICES 17
 #define FRONTIER_MUSIC_DEFAULT_CHOICE 0
 
 extern const u8* const gFrontierMusicChoiceNames[NUM_FRONTIER_MUSIC_CHOICES + 1];
