@@ -2052,14 +2052,9 @@ static u8 BuildFrontierParty(struct Pokemon* const party, const u16 trainerId, c
 								goto REGULAR_SPREADS;
 
 							u16 streak = GetCurrentBattleFacilityStreak();
-							if (streak < 2)
+							if (streak < 5)
 							{
-								spread = &gLittleCupSpreads[Random() % TOTAL_LITTLE_CUP_SPREADS]; //Load Little Cup spreads for first two battles to make them easier
-								break;
-							}
-							else if (streak < 5)
-							{
-								spread = &gMiddleCupSpreads[Random() % TOTAL_MIDDLE_CUP_SPREADS]; //Load Middle Cup spreads for battles 3-5 to make them easier
+								spread = &gMiddleCupSpreads[Random() % TOTAL_MIDDLE_CUP_SPREADS]; //Load Middle Cup spreads for the first five battles to make them easier
 								break;
 							}
 							__attribute__ ((fallthrough));
@@ -3400,22 +3395,18 @@ void CreateFrontierRaidMon(u16 originalSpecies)
 static const struct BattleTowerSpread* GetSpreadBySpecies(const u16 species, const struct BattleTowerSpread* const spreads, const u16 spreadCount)
 {
 	u32 i;
+	u32 numMatches = 0;
+	const struct BattleTowerSpread* chosen = NULL;
 
+	// Read every possible spread for this species
 	for (i = 0; i < spreadCount; ++i)
 	{
-		if (spreads[i].species == species)
-			break;
+		if (spreads[i].species == species
+		&& umodsi(Random(), ++numMatches) == 0)
+			chosen = &spreads[i];
 	}
 
-	if (i == spreadCount)
-		return NULL; //Species not found
-
-	u8 offset = Random() % 5; //Max number of possible spreads for a given Pokemon
-
-	while (spreads[i + offset].species != species) //Overshot
-		offset = Random() % 5;
-
-	return &spreads[i + offset];
+	return chosen;
 }
 
 static void TryGetSpecialSpeciesSpreadTable(u16 species, const struct BattleTowerSpread** table, u16* spreadCount)
