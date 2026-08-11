@@ -95,6 +95,9 @@
 #define FLAG_DONT_OFFER_NICKNAMES_BATTLE 0x93E //Option to skip nickname prompts after catching / hatching a Pokemon
 #define FLAG_DIVERGENT_WILD_ENCOUNTERS 0x945 // Option for whether the standard encounter table or divergent table should be loaded
 #define FLAG_DIVERGENT_WILD_ENCOUNTERS_OPTION_SHOWN 0x946 // Whether the ability to toggle divergent mode in the options page is shown
+#define FLAG_OPTIONS_LAST_USED_BALL 0x948 // Option for whether the in-battle L shortcut offers the last used ball instead of the optimal one
+#define FLAG_OPTIONS_SHORT_NURSE_HEAL 0x949 // Option to shorten the Pokemon Center / route nurse healing sequence
+#define VAR_LAST_USED_BALL 0x5157 // Saved copy of gLastUsedBall (which lives in unsaved RAM) to restore after reloading the game
 
 /*===== Start Menu/Poketools Flags =====*/
 #define FLAG_SYS_BAG_HIDE 0x91B		//Toggle bag off

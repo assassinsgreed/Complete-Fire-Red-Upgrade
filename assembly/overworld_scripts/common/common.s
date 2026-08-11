@@ -326,10 +326,19 @@ PlayerWalkDown_Return:
     waitmovement PLAYER
     return
 
+@ Heals performed by a nurse, which the shortened healing option applies to.
+@ Story heals, spas, and Trainer Houses call PlayerHeal directly and always play the full sequence.
 .global PlayerHealNurse
 PlayerHealNurse:
     incrementgamestat 15
+    checkflag 0x949 @ Short nurse healing option
+    if SET _goto PlayerHealNurse_Short
     call PlayerHeal
+    return
+
+PlayerHealNurse_Short:
+    sound 0x1 @ Healing item SE
+    special 0x0
     return
 
 .global PlayerHeal

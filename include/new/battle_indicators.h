@@ -20,6 +20,8 @@ void TryLoadZTrigger(void);
 void TryLoadDynamaxTrigger(void);
 void TryLoadLastUsedBallTrigger(void);
 u16 GetLastUsedBall(void);
+u16 GetPersistedLastUsedBall(void);
+void SetPersistedLastUsedBall(u16 ball);
 bool8 CantLoadLastBallTrigger(void);
 void TryLoadTeamPreviewTrigger(void);
 bool8 CantLoadTeamPreviewTrigger(void);

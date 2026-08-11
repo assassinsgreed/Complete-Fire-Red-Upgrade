@@ -13,6 +13,7 @@
 #include "../include/constants/items.h"
 #include "../include/constants/songs.h"
 
+#include "../include/new/battle_indicators.h"
 #include "../include/new/battle_util.h"
 #include "../include/new/catching.h"
 #include "../include/new/dns.h"
@@ -220,13 +221,14 @@ void atkEF_handleballthrow(void)
 
 	u8 ballType = ItemId_GetType(gLastUsedItem);
 	gNewBS->threwBall = TRUE;
-	if (ballType != BALL_TYPE_QUICK_BALL //Useless to offer to player after initial use
+	if (FlagGet(FLAG_OPTIONS_LAST_USED_BALL) //The player asked for the literal last used ball, Quick Balls included
+	|| ballType != BALL_TYPE_QUICK_BALL //Useless to offer to player after initial use
 	|| gBattleResults.battleTurnCounter > 0 //Unless the player explictly chose it after the first turn
 	#ifdef FLAG_SANDBOX_MODE
 	|| FlagGet(FLAG_SANDBOX_MODE) //Unless all balls have a 100% catch rate
 	#endif
 	)
-		gLastUsedBall = gLastUsedItem;
+		SetPersistedLastUsedBall(gLastUsedItem);
 
 	if (gNewBS->isTrainerBattle) //Doesn't use BATTLE_TYPE_TRAINER because that's removed by the Catch Trainers Pokemon cheat
 	{

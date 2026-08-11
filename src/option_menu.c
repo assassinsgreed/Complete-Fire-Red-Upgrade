@@ -74,14 +74,24 @@ enum
 enum
 {
     MENUITEM_AUTOSORTBAG,
-	MENUITEM_GAME_DIFFICULTY,
-    MENUITEM_LEVEL_CAPS,
     MENUITEM_SKIP_CUTSCENES,
     MENUITEM_SKIP_NICKNAMING,
+    MENUITEM_BALL_SHORTCUT,
+    MENUITEM_NURSE_HEALING,
     MENUITEM_WILD_ENCOUNTERS,
     MENUITEM_CANCEL_PAGE_2,
     MENUITEM_PAGE2_COUNT,
 };
+
+enum
+{
+	MENUITEM_GAME_DIFFICULTY,
+    MENUITEM_LEVEL_CAPS,
+    MENUITEM_CANCEL_PAGE_3,
+    MENUITEM_PAGE3_COUNT,
+};
+
+#define OPTION_MENU_PAGE_COUNT 3
 
 // Window Ids
 enum
@@ -99,6 +109,7 @@ struct OptionMenu
     /*0x??*/ u8 loadPaletteState;
     /*0x??*/ u8 page;
     /*0x??*/ u16 option_secondPage[MENUITEM_PAGE2_COUNT];
+    /*0x??*/ u16 option_thirdPage[MENUITEM_PAGE3_COUNT];
 };
 
 extern struct OptionMenu *sOptionMenuPtr;
@@ -117,6 +128,8 @@ extern const u8 gText_OptionsMenu_GameDifficulty[];
 extern const u8 gText_OptionsMenu_LevelCaps[];
 extern const u8 gText_OptionsMenu_SkipCutscenes[];
 extern const u8 gText_OptionsMenu_SkipNicknaming[];
+extern const u8 gText_OptionsMenu_BallShortcut[];
+extern const u8 gText_OptionsMenu_NurseHealing[];
 extern const u8 gText_OptionsMenu_PokemonSelection[];
 
 static const u8 *const sOptionMenuItemsNames[MENUITEM_COUNT] =
@@ -129,15 +142,21 @@ static const u8 *const sOptionMenuItemsNames[MENUITEM_COUNT] =
     [MENUITEM_FRAMETYPE]   = gText_Frame,
     [MENUITEM_CANCEL]      = gText_OptionMenuCancel,
 };
-static const u8 *const sOptionMenuItemsNames_SecondPage[MENUITEM_COUNT] =
+static const u8 *const sOptionMenuItemsNames_SecondPage[MENUITEM_PAGE2_COUNT] =
 {
     [MENUITEM_AUTOSORTBAG] = gText_OptionsMenu_AutoSortBag,
-	[MENUITEM_GAME_DIFFICULTY] = gText_OptionsMenu_GameDifficulty,
-    [MENUITEM_LEVEL_CAPS] = gText_OptionsMenu_LevelCaps,
     [MENUITEM_SKIP_CUTSCENES] = gText_OptionsMenu_SkipCutscenes,
     [MENUITEM_SKIP_NICKNAMING] = gText_OptionsMenu_SkipNicknaming,
+    [MENUITEM_BALL_SHORTCUT] = gText_OptionsMenu_BallShortcut,
+    [MENUITEM_NURSE_HEALING] = gText_OptionsMenu_NurseHealing,
     [MENUITEM_WILD_ENCOUNTERS] = gText_OptionsMenu_PokemonSelection,
     [MENUITEM_CANCEL_PAGE_2] = gText_OptionMenuCancel,
+};
+static const u8 *const sOptionMenuItemsNames_ThirdPage[MENUITEM_PAGE3_COUNT] =
+{
+	[MENUITEM_GAME_DIFFICULTY] = gText_OptionsMenu_GameDifficulty,
+    [MENUITEM_LEVEL_CAPS] = gText_OptionsMenu_LevelCaps,
+    [MENUITEM_CANCEL_PAGE_3] = gText_OptionMenuCancel,
 };
 
 extern const u8 gText_TextSpeedSlow[];
@@ -165,6 +184,10 @@ extern const u8 gText_OptionsMenu_GameDifficulty_ExtraHard[];
 extern const u8 gText_OptionsMenu_LevelCaps_Soft[];
 extern const u8 gText_OptionsMenu_LevelCaps_Hard[];
 extern const u8 gText_OptionsMenu_LevelCaps_ExtraHard[];
+extern const u8 gText_OptionsMenu_BallShortcut_Optimal[];
+extern const u8 gText_OptionsMenu_BallShortcut_LastUsed[];
+extern const u8 gText_OptionsMenu_NurseHealing_Default[];
+extern const u8 gText_OptionsMenu_NurseHealing_Short[];
 extern const u8 gText_OptionsMenu_PokemonSelection_Standard[];
 extern const u8 gText_OptionsMenu_PokemonSelection_Divergent[];
 
@@ -225,18 +248,115 @@ static const u8 *const sSkipNicknamingOptions[] =
     gText_OptionsMenu_Off,
     gText_OptionsMenu_On,
 };
+static const u8 *const sBallShortcutOptions[] =
+{
+    gText_OptionsMenu_BallShortcut_Optimal,
+    gText_OptionsMenu_BallShortcut_LastUsed,
+};
+static const u8 *const sNurseHealingOptions[] =
+{
+    gText_OptionsMenu_NurseHealing_Default,
+    gText_OptionsMenu_NurseHealing_Short,
+};
 static const u8 *const sWildEncountersOptions[] =
 {
     gText_OptionsMenu_PokemonSelection_Standard,
     gText_OptionsMenu_PokemonSelection_Divergent,
 };
 
-static const u16 sOptionMenuItemCounts[MENUITEM_COUNT] = {3, 2, 2, 2, 3, 10, 0};
-static const u16 sOptionMenuItemCounts_SecondPage[MENUITEM_PAGE2_COUNT] = {4, 3, 3, 2, 2, 2, 0}; // # of choices per option, not counting cancel
-
-static u8 Page2VisualRow(u8 menuItem)
+// The frame type row builds its text at runtime, so it has no table here
+static const u8 *const *const sOptionMenuItemChoices[MENUITEM_COUNT] =
 {
-    if (!FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS_OPTION_SHOWN) && menuItem > MENUITEM_WILD_ENCOUNTERS)
+    [MENUITEM_TEXTSPEED]   = sTextSpeedOptions,
+    [MENUITEM_BATTLESCENE] = sBattleSceneOptions,
+    [MENUITEM_BATTLESTYLE] = sBattleStyleOptions,
+    [MENUITEM_SOUND]       = sSoundOptions,
+    [MENUITEM_BUTTONMODE]  = sButtonTypeOptions,
+    [MENUITEM_FRAMETYPE]   = NULL,
+    [MENUITEM_CANCEL]      = NULL,
+};
+static const u8 *const *const sOptionMenuItemChoices_SecondPage[MENUITEM_PAGE2_COUNT] =
+{
+    [MENUITEM_AUTOSORTBAG] = sAutoSortBagOptions,
+    [MENUITEM_SKIP_CUTSCENES] = sSkipCutscenesOptions,
+    [MENUITEM_SKIP_NICKNAMING] = sSkipNicknamingOptions,
+    [MENUITEM_BALL_SHORTCUT] = sBallShortcutOptions,
+    [MENUITEM_NURSE_HEALING] = sNurseHealingOptions,
+    [MENUITEM_WILD_ENCOUNTERS] = sWildEncountersOptions,
+    [MENUITEM_CANCEL_PAGE_2] = NULL,
+};
+static const u8 *const *const sOptionMenuItemChoices_ThirdPage[MENUITEM_PAGE3_COUNT] =
+{
+	[MENUITEM_GAME_DIFFICULTY] = sGameDifficultyOptions,
+    [MENUITEM_LEVEL_CAPS] = sLevelCapsOptions,
+    [MENUITEM_CANCEL_PAGE_3] = NULL,
+};
+
+// # of choices per option, not counting cancel
+static const u16 sOptionMenuItemCounts[MENUITEM_COUNT] = {3, 2, 2, 2, 3, 10, 0};
+static const u16 sOptionMenuItemCounts_SecondPage[MENUITEM_PAGE2_COUNT] = {4, 2, 2, 2, 2, 2, 0};
+static const u16 sOptionMenuItemCounts_ThirdPage[MENUITEM_PAGE3_COUNT] = {3, 3, 0};
+
+static u16 *GetPageOptions(u8 page)
+{
+    switch (page)
+    {
+        case 1:  return sOptionMenuPtr->option_secondPage;
+        case 2:  return sOptionMenuPtr->option_thirdPage;
+        default: return sOptionMenuPtr->option;
+    }
+}
+
+static const u8 *const *GetPageItemNames(u8 page)
+{
+    switch (page)
+    {
+        case 1:  return sOptionMenuItemsNames_SecondPage;
+        case 2:  return sOptionMenuItemsNames_ThirdPage;
+        default: return sOptionMenuItemsNames;
+    }
+}
+
+static const u8 *const *const *GetPageItemChoices(u8 page)
+{
+    switch (page)
+    {
+        case 1:  return sOptionMenuItemChoices_SecondPage;
+        case 2:  return sOptionMenuItemChoices_ThirdPage;
+        default: return sOptionMenuItemChoices;
+    }
+}
+
+static const u16 *GetPageItemCounts(u8 page)
+{
+    switch (page)
+    {
+        case 1:  return sOptionMenuItemCounts_SecondPage;
+        case 2:  return sOptionMenuItemCounts_ThirdPage;
+        default: return sOptionMenuItemCounts;
+    }
+}
+
+static u8 GetPageItemCount(u8 page) // Rows on the page, including cancel
+{
+    switch (page)
+    {
+        case 1:  return MENUITEM_PAGE2_COUNT;
+        case 2:  return MENUITEM_PAGE3_COUNT;
+        default: return MENUITEM_COUNT;
+    }
+}
+
+static bool8 IsPageRowHidden(u8 page, u8 menuItem)
+{
+    return page == 1
+        && menuItem == MENUITEM_WILD_ENCOUNTERS
+        && !FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS_OPTION_SHOWN);
+}
+
+static u8 GetPageVisualRow(u8 page, u8 menuItem) // Rows below a hidden one move up to close the gap
+{
+    if (page == 1 && !FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS_OPTION_SHOWN) && menuItem > MENUITEM_WILD_ENCOUNTERS)
         return menuItem - 1;
     return menuItem;
 }
@@ -259,11 +379,13 @@ void CB2_OptionsMenuFromStartMenu(void)
     sOptionMenuPtr->option[MENUITEM_BUTTONMODE] = gSaveBlock2->optionsButtonMode;
     sOptionMenuPtr->option[MENUITEM_FRAMETYPE] = gSaveBlock2->optionsWindowFrameType;
     sOptionMenuPtr->option_secondPage[MENUITEM_AUTOSORTBAG] = VarGet(VAR_AUTO_SORT_BAG);
-    sOptionMenuPtr->option_secondPage[MENUITEM_GAME_DIFFICULTY] = VarGet(VAR_DIFFICULTY_SETTING);
-    sOptionMenuPtr->option_secondPage[MENUITEM_LEVEL_CAPS] = VarGet(VAR_LEVEL_CAPS);
     sOptionMenuPtr->option_secondPage[MENUITEM_SKIP_CUTSCENES] = FlagGet(FLAG_SKIP_CUTSCENES) ? 1 : 0;
     sOptionMenuPtr->option_secondPage[MENUITEM_SKIP_NICKNAMING] = FlagGet(FLAG_DONT_OFFER_NICKNAMES_BATTLE) ? 1 : 0;
+    sOptionMenuPtr->option_secondPage[MENUITEM_BALL_SHORTCUT] = FlagGet(FLAG_OPTIONS_LAST_USED_BALL) ? 1 : 0;
+    sOptionMenuPtr->option_secondPage[MENUITEM_NURSE_HEALING] = FlagGet(FLAG_OPTIONS_SHORT_NURSE_HEAL) ? 1 : 0;
     sOptionMenuPtr->option_secondPage[MENUITEM_WILD_ENCOUNTERS] = FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS) ? 1 : 0;
+    sOptionMenuPtr->option_thirdPage[MENUITEM_GAME_DIFFICULTY] = VarGet(VAR_DIFFICULTY_SETTING);
+    sOptionMenuPtr->option_thirdPage[MENUITEM_LEVEL_CAPS] = VarGet(VAR_LEVEL_CAPS);
 
     VarSet(VAR_TEMP_2, VarGet(VAR_LEVEL_CAPS));
     FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS) ? FlagSet(FLAG_TEMP_C) : FlagClear(FLAG_TEMP_C);
@@ -307,28 +429,15 @@ void Task_OptionMenu(u8 taskId)
             BufferOptionMenuString(sOptionMenuPtr->cursorPos);
             break;
         case 3:
-            if (sOptionMenuPtr->page == 1)
-                UpdateSettingSelectionDisplay(Page2VisualRow(sOptionMenuPtr->cursorPos));
-            else
-                UpdateSettingSelectionDisplay(sOptionMenuPtr->cursorPos);
+            UpdateSettingSelectionDisplay(GetPageVisualRow(sOptionMenuPtr->page, sOptionMenuPtr->cursorPos));
             break;
         case 4:
             BufferOptionMenuString(sOptionMenuPtr->cursorPos);
             break;
-        case 5:
-            sOptionMenuPtr->page = 1;
+        case 5: // The page changed, so redraw whichever one is now current
             LoadOptionMenuItemNames();
-            for(i = 0; i < MENUITEM_PAGE2_COUNT; i++)
-            BufferOptionMenuString(i);
-            sOptionMenuPtr->cursorPos = 0;
-            UpdateSettingSelectionDisplay(sOptionMenuPtr->cursorPos);
-            OptionMenu_PickSwitchCancel();
-            break;
-        case 6:
-            sOptionMenuPtr->page = 0;
-            LoadOptionMenuItemNames();
-            for(i = 0; i < MENUITEM_COUNT; i++)
-            BufferOptionMenuString(i);
+            for (i = 0; i < GetPageItemCount(sOptionMenuPtr->page); i++)
+                BufferOptionMenuString(i);
             sOptionMenuPtr->cursorPos = 0;
             UpdateSettingSelectionDisplay(sOptionMenuPtr->cursorPos);
             OptionMenu_PickSwitchCancel();
@@ -365,13 +474,15 @@ void CloseAndSaveOptionMenu(u8 taskId)
     gSaveBlock2->optionsButtonMode = sOptionMenuPtr->option[MENUITEM_BUTTONMODE];
     gSaveBlock2->optionsWindowFrameType = sOptionMenuPtr->option[MENUITEM_FRAMETYPE];
     VarSet(VAR_AUTO_SORT_BAG, sOptionMenuPtr->option_secondPage[MENUITEM_AUTOSORTBAG]);
-    VarSet(VAR_DIFFICULTY_SETTING, sOptionMenuPtr->option_secondPage[MENUITEM_GAME_DIFFICULTY]);
-    VarSet(VAR_LEVEL_CAPS, sOptionMenuPtr->option_secondPage[MENUITEM_LEVEL_CAPS]);
+    VarSet(VAR_DIFFICULTY_SETTING, sOptionMenuPtr->option_thirdPage[MENUITEM_GAME_DIFFICULTY]);
+    VarSet(VAR_LEVEL_CAPS, sOptionMenuPtr->option_thirdPage[MENUITEM_LEVEL_CAPS]);
     // Cleanup difficulty / level cap vars to flags
-    sOptionMenuPtr->option_secondPage[MENUITEM_GAME_DIFFICULTY] >= OPTIONS_AMETHYST_HARD_DIFFICULTY ? FlagSet(FLAG_HARD_MODE) : FlagClear(FLAG_HARD_MODE);
-    sOptionMenuPtr->option_secondPage[MENUITEM_LEVEL_CAPS] >= OPTIONS_AMETHYST_HARD_LEVEL_CAPS ? FlagSet(FLAG_HARD_LEVEL_CAP) : FlagClear(FLAG_HARD_LEVEL_CAP);
+    sOptionMenuPtr->option_thirdPage[MENUITEM_GAME_DIFFICULTY] >= OPTIONS_AMETHYST_HARD_DIFFICULTY ? FlagSet(FLAG_HARD_MODE) : FlagClear(FLAG_HARD_MODE);
+    sOptionMenuPtr->option_thirdPage[MENUITEM_LEVEL_CAPS] >= OPTIONS_AMETHYST_HARD_LEVEL_CAPS ? FlagSet(FLAG_HARD_LEVEL_CAP) : FlagClear(FLAG_HARD_LEVEL_CAP);
     sOptionMenuPtr->option_secondPage[MENUITEM_SKIP_CUTSCENES] == 1 ? FlagSet(FLAG_SKIP_CUTSCENES) : FlagClear(FLAG_SKIP_CUTSCENES);
     sOptionMenuPtr->option_secondPage[MENUITEM_SKIP_NICKNAMING] == 1 ? FlagSet(FLAG_DONT_OFFER_NICKNAMES_BATTLE) : FlagClear(FLAG_DONT_OFFER_NICKNAMES_BATTLE);
+    sOptionMenuPtr->option_secondPage[MENUITEM_BALL_SHORTCUT] == 1 ? FlagSet(FLAG_OPTIONS_LAST_USED_BALL) : FlagClear(FLAG_OPTIONS_LAST_USED_BALL);
+    sOptionMenuPtr->option_secondPage[MENUITEM_NURSE_HEALING] == 1 ? FlagSet(FLAG_OPTIONS_SHORT_NURSE_HEAL) : FlagClear(FLAG_OPTIONS_SHORT_NURSE_HEAL);
     if (FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS_OPTION_SHOWN))
         sOptionMenuPtr->option_secondPage[MENUITEM_WILD_ENCOUNTERS] == 1 ? FlagSet(FLAG_DIVERGENT_WILD_ENCOUNTERS) : FlagClear(FLAG_DIVERGENT_WILD_ENCOUNTERS);
 
@@ -535,182 +646,103 @@ void BufferOptionMenuString(u8 selection)
     u8 str[20];
     u8 buf[12];
     u8 dst[3];
-    u8 x, y;
-    
+    u8 x, y, page;
+    const u8 *const *choices;
+
+    page = sOptionMenuPtr->page;
+    if (IsPageRowHidden(page, selection))
+        return;
+
     memcpy(dst, sOptionMenuTextColor, 3);
     x = 0x82;
-    y = ((GetFontAttribute(2, FONTATTR_MAX_LETTER_HEIGHT) - 1) * (selection)) + 2;
+    y = ((GetFontAttribute(2, FONTATTR_MAX_LETTER_HEIGHT) - 1) * GetPageVisualRow(page, selection)) + 2;
     FillWindowPixelRect(1, 1, x, y, 0x46, GetFontAttribute(2, FONTATTR_MAX_LETTER_HEIGHT));
-    if(sOptionMenuPtr->page == 0)
+
+    if (page == 0 && selection == MENUITEM_FRAMETYPE)
     {
-        switch (selection)
-        {
-        case MENUITEM_TEXTSPEED:
-            AddTextPrinterParameterized3(1, 2, x, y, dst, -1, sTextSpeedOptions[sOptionMenuPtr->option[selection]]);
-            break;
-        case MENUITEM_BATTLESCENE:
-            AddTextPrinterParameterized3(1, 2, x, y, dst, -1, sBattleSceneOptions[sOptionMenuPtr->option[selection]]);
-            break;
-        case MENUITEM_BATTLESTYLE:
-            AddTextPrinterParameterized3(1, 2, x, y, dst, -1, sBattleStyleOptions[sOptionMenuPtr->option[selection]]);
-            break;
-        case MENUITEM_SOUND:
-            AddTextPrinterParameterized3(1, 2, x, y, dst, -1, sSoundOptions[sOptionMenuPtr->option[selection]]);
-            break;
-        case MENUITEM_BUTTONMODE:
-            AddTextPrinterParameterized3(1, 2, x, y, dst, -1, sButtonTypeOptions[sOptionMenuPtr->option[selection]]);
-            break;
-        case MENUITEM_FRAMETYPE:
-            StringCopy(str, gText_FrameType);
-            ConvertIntToDecimalStringN(buf, sOptionMenuPtr->option[selection] + 1, 1, 2);
-            StringAppendN(str, buf, 3);
-            AddTextPrinterParameterized3(1, 2, x, y, dst, -1, str);
-            break;
-        
-        default:
-            break;
-        }
+        StringCopy(str, gText_FrameType);
+        ConvertIntToDecimalStringN(buf, sOptionMenuPtr->option[selection] + 1, 1, 2);
+        StringAppendN(str, buf, 3);
+        AddTextPrinterParameterized3(1, 2, x, y, dst, -1, str);
     }
     else
     {
-        if (selection == MENUITEM_WILD_ENCOUNTERS && !FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS_OPTION_SHOWN))
-            return;
-        if (!FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS_OPTION_SHOWN) && selection > MENUITEM_WILD_ENCOUNTERS)
-        {
-            y = ((GetFontAttribute(2, FONTATTR_MAX_LETTER_HEIGHT) - 1) * (selection - 1)) + 2;
-            FillWindowPixelRect(1, 1, x, y, 0x46, GetFontAttribute(2, FONTATTR_MAX_LETTER_HEIGHT));
-        }
-        switch (selection)
-        {
-            case MENUITEM_AUTOSORTBAG:
-                AddTextPrinterParameterized3(1, 2, x, y, dst, -1, sAutoSortBagOptions[sOptionMenuPtr->option_secondPage[selection]]);
-                break;
-            case MENUITEM_GAME_DIFFICULTY:
-                AddTextPrinterParameterized3(1, 2, x, y, dst, -1, sGameDifficultyOptions[sOptionMenuPtr->option_secondPage[selection]]);
-                break;
-            case MENUITEM_LEVEL_CAPS:
-                AddTextPrinterParameterized3(1, 2, x, y, dst, -1, sLevelCapsOptions[sOptionMenuPtr->option_secondPage[selection]]);
-                break;
-            case MENUITEM_SKIP_CUTSCENES:
-                AddTextPrinterParameterized3(1, 2, x, y, dst, -1, sSkipCutscenesOptions[sOptionMenuPtr->option_secondPage[selection]]);
-                break;
-            case MENUITEM_SKIP_NICKNAMING:
-                AddTextPrinterParameterized3(1, 2, x, y, dst, -1, sSkipNicknamingOptions[sOptionMenuPtr->option_secondPage[selection]]);
-                break;
-            case MENUITEM_WILD_ENCOUNTERS:
-                AddTextPrinterParameterized3(1, 2, x, y, dst, -1, sWildEncountersOptions[sOptionMenuPtr->option_secondPage[selection]]);
-                break;
-            default:
-                break;
-        }
+        choices = GetPageItemChoices(page)[selection];
+        if (choices != NULL) // Cancel has no value to show
+            AddTextPrinterParameterized3(1, 2, x, y, dst, -1, choices[GetPageOptions(page)[selection]]);
     }
+
     PutWindowTilemap(1);
     CopyWindowToVram(1, COPYWIN_BOTH);
 }
 
 u8 OptionMenu_ProcessInput(void)
-{ 
-    u16 current;
-    u16* curr;
+{
+    u8 page = sOptionMenuPtr->page;
+    u16* options = GetPageOptions(page);
+    const u16* counts = GetPageItemCounts(page);
+    u8 cursorPos = sOptionMenuPtr->cursorPos;
+    u8 lastItem = GetPageItemCount(page) - 1; // The cancel row
+
     if (JOY_REPT(DPAD_RIGHT))
     {
-        if(sOptionMenuPtr->page == 0)
-        {
-            current = sOptionMenuPtr->option[(sOptionMenuPtr->cursorPos)];
-            if (current == (sOptionMenuItemCounts[sOptionMenuPtr->cursorPos] - 1))
-                sOptionMenuPtr->option[sOptionMenuPtr->cursorPos] = 0;
-            else
-                sOptionMenuPtr->option[sOptionMenuPtr->cursorPos] = current + 1;
-            if (sOptionMenuPtr->cursorPos == MENUITEM_FRAMETYPE)
-                return 2;
-            else
-                return 4;
-        }
+        if (counts[cursorPos] == 0) // Cancel has nothing to cycle through
+            return 0;
+
+        if (options[cursorPos] == counts[cursorPos] - 1)
+            options[cursorPos] = 0;
         else
-        {
-            current = sOptionMenuPtr->option_secondPage[(sOptionMenuPtr->cursorPos)];
-            if (current == (sOptionMenuItemCounts_SecondPage[sOptionMenuPtr->cursorPos] - 1))
-                sOptionMenuPtr->option_secondPage[sOptionMenuPtr->cursorPos] = 0;
-            else
-                sOptionMenuPtr->option_secondPage[sOptionMenuPtr->cursorPos] = current + 1;
-            return 4;
-        }
+            options[cursorPos]++;
+
+        return (page == 0 && cursorPos == MENUITEM_FRAMETYPE) ? 2 : 4;
     }
     else if (JOY_REPT(DPAD_LEFT))
     {
-        if(sOptionMenuPtr->page == 0)
-        {
-            curr = &sOptionMenuPtr->option[sOptionMenuPtr->cursorPos];
-            if (*curr == 0)
-                *curr = sOptionMenuItemCounts[sOptionMenuPtr->cursorPos] - 1;
-            else
-                --*curr;
-            
-            if (sOptionMenuPtr->cursorPos == MENUITEM_FRAMETYPE)
-                return 2;
-            else
-                return 4;
-        }
-        else
-        {
-            curr = &sOptionMenuPtr->option_secondPage[sOptionMenuPtr->cursorPos];
-            if (*curr == 0)
-                *curr = sOptionMenuItemCounts_SecondPage[sOptionMenuPtr->cursorPos] - 1;
-            else
-                --*curr;
+        if (counts[cursorPos] == 0)
+            return 0;
 
-            return 4;
-        }
+        if (options[cursorPos] == 0)
+            options[cursorPos] = counts[cursorPos] - 1;
+        else
+            options[cursorPos]--;
+
+        return (page == 0 && cursorPos == MENUITEM_FRAMETYPE) ? 2 : 4;
     }
     else if (JOY_REPT(DPAD_UP))
     {
-        if(sOptionMenuPtr->page == 0)
-        {
-            if (sOptionMenuPtr->cursorPos == MENUITEM_TEXTSPEED)
-                sOptionMenuPtr->cursorPos = MENUITEM_CANCEL;
-            else
-                sOptionMenuPtr->cursorPos = sOptionMenuPtr->cursorPos - 1;
-        }
+        if (cursorPos == 0)
+            sOptionMenuPtr->cursorPos = lastItem;
         else
         {
-            if (sOptionMenuPtr->cursorPos == MENUITEM_AUTOSORTBAG)
-                sOptionMenuPtr->cursorPos = MENUITEM_CANCEL_PAGE_2;
-            else
-            {
+            sOptionMenuPtr->cursorPos--;
+            if (IsPageRowHidden(page, sOptionMenuPtr->cursorPos))
                 sOptionMenuPtr->cursorPos--;
-                if (sOptionMenuPtr->cursorPos == MENUITEM_WILD_ENCOUNTERS && !FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS_OPTION_SHOWN))
-                    sOptionMenuPtr->cursorPos--;
-            }
         }
         return 3;
     }
     else if (JOY_REPT(DPAD_DOWN))
     {
-        if(sOptionMenuPtr->page == 0)
-        {
-            if (sOptionMenuPtr->cursorPos == MENUITEM_CANCEL)
-                sOptionMenuPtr->cursorPos = MENUITEM_TEXTSPEED;
-            else
-                sOptionMenuPtr->cursorPos = sOptionMenuPtr->cursorPos + 1;
-        }
+        if (cursorPos == lastItem)
+            sOptionMenuPtr->cursorPos = 0;
         else
         {
-            if (sOptionMenuPtr->cursorPos == MENUITEM_CANCEL_PAGE_2)
-                sOptionMenuPtr->cursorPos = MENUITEM_AUTOSORTBAG;
-            else
-            {
+            sOptionMenuPtr->cursorPos++;
+            if (IsPageRowHidden(page, sOptionMenuPtr->cursorPos))
                 sOptionMenuPtr->cursorPos++;
-                if (sOptionMenuPtr->cursorPos == MENUITEM_WILD_ENCOUNTERS && !FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS_OPTION_SHOWN))
-                    sOptionMenuPtr->cursorPos++;
-            }
         }
         return 3;
     }
-    else if (JOY_NEW(R_BUTTON) || JOY_NEW(L_BUTTON))
+    else if (JOY_NEW(R_BUTTON))
     {
-        sOptionMenuPtr->page = (sOptionMenuPtr->page == 0) ? 1 : 0;
+        sOptionMenuPtr->page = (page + 1) % OPTION_MENU_PAGE_COUNT;
         PlaySE(SE_SELECT);
-        return (sOptionMenuPtr->page == 1) ? 5 : 6;
+        return 5;
+    }
+    else if (JOY_NEW(L_BUTTON))
+    {
+        sOptionMenuPtr->page = (page + OPTION_MENU_PAGE_COUNT - 1) % OPTION_MENU_PAGE_COUNT;
+        PlaySE(SE_SELECT);
+        return 5;
     }
     else if (JOY_NEW(B_BUTTON) || JOY_NEW(A_BUTTON))
     {
@@ -747,49 +779,41 @@ bool8 LoadOptionMenuPalette(void)
 }
 void LoadOptionMenuItemNames(void)
 {
-    u8 i;
-    
+    u8 i, row, page;
+    const u8 *const *names;
+
+    page = sOptionMenuPtr->page;
+    names = GetPageItemNames(page);
+
     FillWindowPixelBuffer(1, PIXEL_FILL(1));
-    if(sOptionMenuPtr->page == 0)
+    for (i = 0, row = 0; i < GetPageItemCount(page); i++)
     {
-        for (i = 0; i < MENUITEM_COUNT; i++)
-        {
-            AddTextPrinterParameterized(WIN_OPTIONS, 2, sOptionMenuItemsNames[i], 8, (u8)((i * (GetFontAttribute(2, FONTATTR_MAX_LETTER_HEIGHT))) + 2) - i, TEXT_SPEED_FF, NULL);    
-        }
-    }
-    else
-    {
-        u8 row = 0;
-        for (i = 0; i < MENUITEM_PAGE2_COUNT; i++)
-        {
-            if (i == MENUITEM_WILD_ENCOUNTERS && !FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS_OPTION_SHOWN))
-                continue;
-            AddTextPrinterParameterized(WIN_OPTIONS, 2, sOptionMenuItemsNames_SecondPage[i], 8, (u8)((row * (GetFontAttribute(2, FONTATTR_MAX_LETTER_HEIGHT))) + 2) - row, TEXT_SPEED_FF, NULL);
-            row++;
-        }
+        if (IsPageRowHidden(page, i))
+            continue;
+        AddTextPrinterParameterized(WIN_OPTIONS, 2, names[i], 8, (u8)((row * (GetFontAttribute(2, FONTATTR_MAX_LETTER_HEIGHT))) + 2) - row, TEXT_SPEED_FF, NULL);
+        row++;
     }
 }
 
 extern const u8 gText_PickSwitchCancel_Page1[];
 extern const u8 gText_PickSwitchCancel_Page2[];
+extern const u8 gText_PickSwitchCancel_Page3[];
+
+static const u8 *const sPickSwitchCancelTexts[OPTION_MENU_PAGE_COUNT] =
+{
+    gText_PickSwitchCancel_Page1,
+    gText_PickSwitchCancel_Page2,
+    gText_PickSwitchCancel_Page3,
+};
 
 void OptionMenu_PickSwitchCancel(void)
 {
     s32 x;
-    if(sOptionMenuPtr->page == 0)
-    {
-        x = 0xE4 - GetStringWidth(0, gText_PickSwitchCancel_Page1, 0);
-        FillWindowPixelBuffer(2, PIXEL_FILL(15)); 
-        AddTextPrinterParameterized3(2, 0, x, 0, sOptionMenuPickSwitchCancelTextColor, 0, gText_PickSwitchCancel_Page1);
-        PutWindowTilemap(2);
-        CopyWindowToVram(2, COPYWIN_BOTH);   
-    }
-    else
-    {
-        x = 0xE4 - GetStringWidth(0, gText_PickSwitchCancel_Page2, 0);
-        FillWindowPixelBuffer(2, PIXEL_FILL(15)); 
-        AddTextPrinterParameterized3(2, 0, x, 0, sOptionMenuPickSwitchCancelTextColor, 0, gText_PickSwitchCancel_Page2);
-        PutWindowTilemap(2);
-        CopyWindowToVram(2, COPYWIN_BOTH);
-    }
+    const u8 *text = sPickSwitchCancelTexts[sOptionMenuPtr->page];
+
+    x = 0xE4 - GetStringWidth(0, text, 0);
+    FillWindowPixelBuffer(2, PIXEL_FILL(15));
+    AddTextPrinterParameterized3(2, 0, x, 0, sOptionMenuPickSwitchCancelTextColor, 0, text);
+    PutWindowTilemap(2);
+    CopyWindowToVram(2, COPYWIN_BOTH);
 }
