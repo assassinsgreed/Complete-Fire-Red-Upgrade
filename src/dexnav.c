@@ -256,8 +256,13 @@ static void DexNavGetMon(u16 species, u8 potential, u8 level, u8 ability, u16* m
 	TryRandomizeSpecies(&species);
 	if (GetHiddenAbility(species) == ability)
 		mon->hiddenAbility = TRUE;
-	else if (gBaseStats[species].ability2 != ABILITY_NONE) //Helps fix a bug where Unown would crash the game in the below function
-		GiveMonNatureAndAbility(mon, GetNature(mon), (GetAbility2(species) == ability) ? 1 : 0, IsMonShiny(mon), TRUE, TRUE); //Make sure details match what was on the HUD
+	else
+	{
+		mon->hiddenAbility = FALSE; //The wild generator may have rolled one, which GetMonAbility would use over the ability on the HUD
+
+		if (gBaseStats[species].ability2 != ABILITY_NONE) //Helps fix a bug where Unown would crash the game in the below function
+			GiveMonNatureAndAbility(mon, GetNature(mon), (GetAbility2(species) == ability) ? 1 : 0, IsMonShiny(mon), TRUE, TRUE); //Make sure details match what was on the HUD
+	}
 
 	//Set moves
 	for (i = 0; i < MAX_MON_MOVES; ++i)

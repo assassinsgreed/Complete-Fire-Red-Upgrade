@@ -8,7 +8,7 @@
 #define FLAG_TEMP_6 0x006
 #define FLAG_TEMP_7 0x007
 #define FLAG_TEMP_8 0x008
-#define FLAG_TEMP_9 0x009 // Used for Divergent roamer weather overrides
+#define FLAG_TEMP_9 0x009
 #define FLAG_TEMP_A 0x00A
 #define FLAG_TEMP_B 0x00B
 #define FLAG_TEMP_C 0x00C
@@ -29,8 +29,8 @@
 #define FLAG_TEMP_1B 0x01B // Used to get Monty out of bed
 #define FLAG_TEMP_1C 0x01C
 #define FLAG_TEMP_1D 0x01D
-#define FLAG_TEMP_1E 0x01E
-#define FLAG_TEMP_1F 0x01F
+#define FLAG_TEMP_ROAMER_WEATHER 0x01E // Used for Divergent roamer weather overrides; do not use in map events or scripts
+#define FLAG_TEMP_ADM_AVAILABILITY 0x01F // Used by ADM disabling/enabling; do not use in map events or scripts
 
 #define FLAG_0x020 0x020
 #define FLAG_0x021 0x021

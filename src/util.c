@@ -749,8 +749,8 @@ u8 GetCurrentLevelCap()
 	else // Standard
 		levelCap = EqualLevelCaps_Standard[cap];
 
-	if (VarGet(VAR_LEVEL_CAPS) == OPTIONS_AMETHYST_EXTRA_HARD_LEVEL_CAPS)
-		levelCap = levelCap - 2; // Extra hard level cap reduced by 2
+	if (VarGet(VAR_LEVEL_CAPS) == OPTIONS_AMETHYST_EXTRA_HARD_LEVEL_CAPS && !FlagGet(FLAG_SYS_GAME_CLEAR))
+		levelCap = levelCap - 2; // Extra hard level cap reduced by 2 if game isn't beaten
 
 	return levelCap;
 }

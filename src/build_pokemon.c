@@ -206,6 +206,8 @@ extern void TryGiveSpecialTrainerStatusCondition(u16 trainerId, struct Pokemon* 
 extern u8 GetCurrentLevelCap(void); //Must be implemented yourself
 #endif
 static void SetAbilityFromEnum(struct Pokemon* mon, u8 abilityNum);
+extern bool8 sp009_PokemonRibbonChecker(void);
+extern void sp011_RibbonSetterCleaner(void);
 
 #ifdef OPEN_WORLD_TRAINERS
 
@@ -1295,10 +1297,12 @@ static void SetAbilityFromEnum(struct Pokemon* mon, u8 abilityNum)
 		case Ability_1:
 		case Ability_2:
 			GiveMonNatureAndAbility(mon, GetNature(mon), MathMin(1, abilityNum - 1), FALSE, TRUE, FALSE);
+			mon->hiddenAbility = FALSE; // GetMonAbility ignores the personality's ability bit while this is set
 			break;
 		case Ability_Random_1_2:
 		GIVE_RANDOM_ABILITY:
 			GiveMonNatureAndAbility(mon, GetNature(mon), Random() % 2, FALSE, TRUE, FALSE);
+			mon->hiddenAbility = FALSE; // GetMonAbility ignores the personality's ability bit while this is set
 			break;
 		case Ability_RandomAll: ;
 			u8 random = Random() % 3;
@@ -4808,13 +4812,20 @@ void SetGreninjaAbilityToBattleBond()
 	
 	struct Pokemon* mon = &gPlayerParty[partyId];
 	u16 species = GetMonData(mon, MON_DATA_SPECIES, NULL);
-	u8 ability = GetMonAbility(mon);
 
-	if (species == SPECIES_GRENINJA && ability != ABILITY_BATTLEBOND)
-	{
-		SetAbilityFromEnum(mon, Ability_2);
-		Var8005 = 26; // Special Ribbon 7, used to check for Battle Bond eligibility
-		sp011_RibbonSetterCleaner();
-		gSpecialVar_LastResult = TRUE;
-	}
+	if (species != SPECIES_GRENINJA)
+		return;
+
+	Var8005 = 26; // Special Ribbon 7, used to check for Battle Bond eligibility
+	u8 isEligible = sp009_PokemonRibbonChecker();
+
+	if (isEligible && GetMonAbility(mon) == ABILITY_BATTLEBOND)
+		return;
+
+	// Only bit 0 of the personality picks the ability slot, so set it in place. Rerouting
+	// through SetAbilityFromEnum would reroll the whole personality and lose shininess.
+	mon->personality |= 1; // Second ability, Battle Bond
+	mon->hiddenAbility = FALSE; // GetMonAbility returns Protean over the ability bit while this is set
+	sp011_RibbonSetterCleaner();
+	gSpecialVar_LastResult = TRUE;
 }

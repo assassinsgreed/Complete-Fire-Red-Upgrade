@@ -1070,7 +1070,7 @@ void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
 			&& (!gFollowerState.inProgress || (gFollowerState.flags & FOLLOWER_FLAG_CAN_LEAVE_ROUTE))
 			&& (
 			 #ifdef FLAG_OBTAINED_ADM
-			 (FlagGet(FLAG_OBTAINED_ADM) && !FlagGet(FLAG_TEMP_1F)) ||
+			 (FlagGet(FLAG_OBTAINED_ADM) && !FlagGet(FLAG_TEMP_ADM_AVAILABILITY)) ||
 			 #endif
 			 #ifdef FLAG_SANDBOX_MODE
 			 FlagGet(FLAG_SANDBOX_MODE) ||
@@ -1090,7 +1090,7 @@ void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
 			#ifndef DEBUG_HMS
 			//&& HasBadgeToUseFieldMove(FIELD_MOVE_DIG)
 			 #ifdef FLAG_OBTAINED_ADM
-			 && (FlagGet(FLAG_OBTAINED_ADM) && !FlagGet(FLAG_TEMP_1F))
+			 && (FlagGet(FLAG_OBTAINED_ADM) && !FlagGet(FLAG_TEMP_ADM_AVAILABILITY))
 			 #endif
 			//  #ifdef FLAG_SANDBOX_MODE
 			//  FlagGet(FLAG_SANDBOX_MODE) ||
