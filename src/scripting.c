@@ -3333,6 +3333,22 @@ extern const u8 gText_UltraWormholes_Guzzlord[];
 extern const u8 gText_UltraWormholes_Stakataka[];
 extern const u8 gText_UltraWormholes_Blacephalon[];
 
+// Game Customization
+extern const u8 gText_GameCustomization_DifficultyModeOption_Standard[];
+extern const u8 gText_GameCustomization_DifficultyModeOption_Hard[];
+extern const u8 gText_GameCustomization_DifficultyModeOption_ExtraHard[];
+extern const u8 gText_GameCustomization_LevelCapsOption_Soft[];
+extern const u8 gText_GameCustomization_LevelCapsOption_Hard[];
+extern const u8 gText_GameCustomization_LevelCapsOption_ExtraHard[];
+extern const u8 gText_GameCustomization_PokemonSelection_Standard[];
+extern const u8 gText_GameCustomization_PokemonSelection_Divergent[];
+extern const u8 gText_GameCustomization_SkipCutscenesOption_Play[];
+extern const u8 gText_GameCustomization_SkipCutscenesOption_Skip[];
+extern const u8 gText_GameCustomization_TutorialsOption_Enable[];
+extern const u8 gText_GameCustomization_TutorialsOption_Disable[];
+extern const u8 gText_GameCustomization_QoLItemsOption_Start[];
+extern const u8 gText_GameCustomization_QoLItemsOption_Skip[];
+
 //Scrolling Lists
 static const u8* sTutorFerrox[] =
 {
@@ -3398,7 +3414,7 @@ static const u8* sMealOptionsWithAll[] =
 	gText_End,  
 };
 
-static const u8* sFavoriteRegion[] =
+static const u8* sStarterGeneration[] =
 {
 	gText_RegionKanto,
 	gText_RegionJohto,
@@ -3662,6 +3678,90 @@ static const u8* sUltraWormholes[] =
 	gText_End,
 };
 
+static const u8* sGameCustomizationDifficulty[] =
+{
+	gText_GameCustomization_DifficultyModeOption_Standard,
+	gText_GameCustomization_DifficultyModeOption_Hard,
+	gText_GameCustomization_DifficultyModeOption_ExtraHard,
+};
+
+static const u8* sGameCustomizationLevelCaps[] =
+{
+	gText_GameCustomization_LevelCapsOption_Soft,
+	gText_GameCustomization_LevelCapsOption_Hard,
+	gText_GameCustomization_LevelCapsOption_ExtraHard,
+};
+
+static const u8* sGameCustomizationPokemonSelection[] =
+{
+	gText_GameCustomization_PokemonSelection_Standard,
+	gText_GameCustomization_PokemonSelection_Divergent,
+};
+
+static const u8* sGameCustomizationCutscenes[] =
+{
+	gText_GameCustomization_SkipCutscenesOption_Play,
+	gText_GameCustomization_SkipCutscenesOption_Skip,
+};
+
+static const u8* sGameCustomizationTutorials[] =
+{
+	gText_GameCustomization_TutorialsOption_Enable,
+	gText_GameCustomization_TutorialsOption_Disable,
+};
+
+static const u8* sGameCustomizationQoLItems[] =
+{
+	gText_GameCustomization_QoLItemsOption_Start,
+	gText_GameCustomization_QoLItemsOption_Skip,
+};
+
+//The setting each game customization list is currently on, so the menu can draw that entry green.
+//The order of each list below has to match the order the script's switch reads back.
+
+static u8 GetGameCustomizationDifficulty(void)
+{
+	return VarGet(VAR_DIFFICULTY_SETTING);
+}
+
+static u8 GetGameCustomizationLevelCaps(void)
+{
+	return VarGet(VAR_LEVEL_CAPS);
+}
+
+static u8 GetGameCustomizationPokemonSelection(void)
+{
+	return FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS) ? 1 : 0;
+}
+
+static u8 GetGameCustomizationCutscenes(void)
+{
+	return FlagGet(FLAG_SKIP_CUTSCENES) ? 1 : 0;
+}
+
+static u8 GetGameCustomizationTutorials(void)
+{
+	return FlagGet(FLAG_ACTIVATE_TUTORIAL) ? 0 : 1;
+}
+
+static u8 GetGameCustomizationQoLItems(void)
+{
+	//The player's choice stays in temp var 1 until customization is complete
+	return (VarGet(VAR_TEMP_1) == 1) ? 0 : 1;
+}
+
+// Shuffle mode rolls each starter's generation separately, so three matching generations is the
+// only thing that can be reported as a single generation - and it plays out identically anyway.
+static u8 GetGameCustomizationStarterGeneration(void)
+{
+	u16 grass = VarGet(VAR_GRASS_STARTER_GEN);
+
+	if (grass == VarGet(VAR_FIRE_STARTER_GEN) && grass == VarGet(VAR_WATER_STARTER_GEN))
+		return grass;
+
+	return ARRAY_COUNT(sStarterGeneration) - 1; //Shuffle
+}
+
 // Multichoice Lists
 const struct ScrollingMulti gScrollingSets[] =
 {
@@ -3670,7 +3770,7 @@ const struct ScrollingMulti gScrollingSets[] =
 	{.set = sMealOptions, .count = ARRAY_COUNT(sMealOptions)},
 	{.set = sMealOptionsWithAll, .count = ARRAY_COUNT(sMealOptionsWithAll)},
 	{.set = sTutorDaimyn, .count = ARRAY_COUNT(sTutorDaimyn)},
-	{.set = sFavoriteRegion, .count = ARRAY_COUNT(sFavoriteRegion)},
+	{.set = sStarterGeneration, .count = ARRAY_COUNT(sStarterGeneration), .getHighlightedIndex = GetGameCustomizationStarterGeneration},
 	{.set = sGameCornerItemExchange, .count = ARRAY_COUNT(sGameCornerItemExchange)},
 	{.set = sGameCornerPokemonExchange, .count = ARRAY_COUNT(sGameCornerPokemonExchange)},
 	{.set = sTutorRhodanzi, .count = ARRAY_COUNT(sTutorRhodanzi)},
@@ -3688,6 +3788,12 @@ const struct ScrollingMulti gScrollingSets[] =
 	{.set = sGameCornerPokemonExchange_Divergent, .count = ARRAY_COUNT(sGameCornerPokemonExchange_Divergent)},
 	{.set = gFrontierMusicChoiceNames, .count = NUM_FRONTIER_MUSIC_CHOICES + 1, .getHighlightedIndex = GetCurrentFrontierMusicChoice},
 	{.set = gFrontierBackgroundChoiceNames, .count = NUM_FRONTIER_BACKGROUND_CHOICES + 1, .getHighlightedIndex = GetCurrentFrontierBackgroundChoice},
+	{.set = sGameCustomizationDifficulty, .count = ARRAY_COUNT(sGameCustomizationDifficulty), .getHighlightedIndex = GetGameCustomizationDifficulty},
+	{.set = sGameCustomizationLevelCaps, .count = ARRAY_COUNT(sGameCustomizationLevelCaps), .getHighlightedIndex = GetGameCustomizationLevelCaps},
+	{.set = sGameCustomizationPokemonSelection, .count = ARRAY_COUNT(sGameCustomizationPokemonSelection), .getHighlightedIndex = GetGameCustomizationPokemonSelection},
+	{.set = sGameCustomizationCutscenes, .count = ARRAY_COUNT(sGameCustomizationCutscenes), .getHighlightedIndex = GetGameCustomizationCutscenes},
+	{.set = sGameCustomizationTutorials, .count = ARRAY_COUNT(sGameCustomizationTutorials), .getHighlightedIndex = GetGameCustomizationTutorials},
+	{.set = sGameCustomizationQoLItems, .count = ARRAY_COUNT(sGameCustomizationQoLItems), .getHighlightedIndex = GetGameCustomizationQoLItems},
 };
 
 //Link number of opts shown at once to the box height
@@ -3697,10 +3803,12 @@ struct ScrollingSizePerOpts
 	u8 height;
 };
 
+//Height is in 8px tiles and each row is a 14px line of font 2, so a list needs ceil(14 * opts / 8)
+//tiles or its last row is drawn clipped.
 static const struct ScrollingSizePerOpts sScrollingSizes[] =
 {
-	{.maxShowed = 2, .height = 3},
-	{.maxShowed = 3, .height = 5},
+	{.maxShowed = 2, .height = 4},
+	{.maxShowed = 3, .height = 6},
 	{.maxShowed = 4, .height = 7},
 	{.maxShowed = 5, .height = 9},
 	{.maxShowed = 6, .height = 11},

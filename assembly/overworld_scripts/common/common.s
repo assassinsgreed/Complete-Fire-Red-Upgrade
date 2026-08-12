@@ -1317,6 +1317,15 @@ TelevisionHint_TrackingPlayerAsChampion:
 // GAME CUSTOMIZATION
 ////////////
 
+@ Customization options (done via scrolling multichoice to leverage green "selected" highlighting)
+.equ MULTICHOICE_SET_GAMECUST_DIFFICULTY, 0x17
+.equ MULTICHOICE_SET_GAMECUST_LEVEL_CAPS, 0x18
+.equ MULTICHOICE_SET_GAMECUST_POKEMON_SELECTION, 0x19
+.equ MULTICHOICE_SET_GAMECUST_CUTSCENES, 0x1A
+.equ MULTICHOICE_SET_GAMECUST_TUTORIALS, 0x1B
+.equ MULTICHOICE_SET_GAMECUST_QOL_ITEMS, 0x1C
+.equ SPECIAL_SCROLLING_MULTICHOICE, 0x158
+
 .global GameCustomizationMain
 GameCustomizationMain:
 	lock
@@ -1338,7 +1347,7 @@ GameCustomizationMain:
     setflag 0x911 @ Disable wild encounters
 	clearflag 0x82F @ Ability to run
 	call ShuffleStarterGenerations
-    setvar 0x4000 0x0 @ Standard difficulty on
+    setvar 0x4001 0x0 @ Not giving QoL items
 	msgboxsign
 	msgbox gText_GameCustomization_CustomizationPrompt MSG_YESNO
 	compare LASTRESULT NO
@@ -1379,26 +1388,28 @@ GameCustomizationMenu:
 GameCustomizationComplete:
     sound 0x30 @Save
 	msgbox gText_GameCustomization_Complete MSG_KEEPOPEN
-    compare 0x4000 0x1 @ Giving QoL items
+    compare 0x4001 0x1 @ Giving QoL items
     if equal _call GiveQoLItemsFromStart
+    setvar 0x4001 0x0 @ Reset QOL item control var
 	msgboxnormal
 	release
 	end
 
 GameCustomization_DifficultyMode:
     msgbox gText_GameCustomization_DifficultyMode_Prompt MSG_KEEPOPEN
-    multichoiceoption gText_GameCustomization_DifficultyModeOption_Standard 0
-    multichoiceoption gText_GameCustomization_DifficultyModeOption_Hard 1
-    multichoiceoption gText_GameCustomization_DifficultyModeOption_ExtraHard 2
-    multichoice 0x0 0x0 THREE_MULTICHOICE_OPTIONS TRUE
+    setvar SCROLL_MULTICHOICE_NUM MULTICHOICE_SET_GAMECUST_DIFFICULTY
+    setvar SCROLL_MULTICHOICE_HEIGHT 0x3
+    setvar 0x8004 0x0 @ Always 0, so the menu cleans itself up when called again
+    special SPECIAL_SCROLLING_MULTICHOICE
+    waitstate
     switch LASTRESULT
     case 0, EnableStandardMode _call
     case 1, EnableHardMode _call
     case 2, EnableExtraHardMode _call
+    @ Case 0x7F (B pressed) falls through, leaving the difficulty as it was
     goto GameCustomizationMenu
 
 EnableStandardMode:
-    setvar 0x4000 0x0
     setvar 0x5155 0x0 @ Standard
     clearflag 0x93C @ Disable hard mode
     sound 0x30 @Save
@@ -1406,7 +1417,6 @@ EnableStandardMode:
     return
 
 EnableHardMode:
-    setvar 0x4000 0x2
     setvar 0x5155 0x1 @ Hard
     setflag 0x93C @ Enable hard mode (for trainer team loading)
     sound 0x30 @Save
@@ -1414,7 +1424,6 @@ EnableHardMode:
     return
 
 EnableExtraHardMode:
-    setvar 0x4000 0x2
     setvar 0x5155 0x2 @ Extra Hard
     setflag 0x93C @ Enable hard mode (for trainer team loading)
     sound 0x30 @Save
@@ -1440,15 +1449,20 @@ GiveQoLItemsFromStart:
     setflag 0x939 @ Obtained ADM
     setvar 0x40AE 0x3 @ Fully charge the Poke Vial
     addmoney 2000 @ 5000 total
-    setvar 0x4000 0x0 @ Reset control var
     @ Do not give DexNav (0x91E) - this is used to control hard level caps!
     return
 
 GameCustomization_Tutorials:
-    msgbox gText_GameCustomization_TutorializationQuestion MSG_YESNO
-    compare LASTRESULT NO
-    if notequal _call EnableTutorialization
-    if equal _call DisableTutorialization
+    msgbox gText_GameCustomization_TutorializationQuestion MSG_KEEPOPEN
+    setvar SCROLL_MULTICHOICE_NUM MULTICHOICE_SET_GAMECUST_TUTORIALS
+    setvar SCROLL_MULTICHOICE_HEIGHT 0x2
+    setvar 0x8004 0x0 @ Always 0, so the menu cleans itself up when called again
+    special SPECIAL_SCROLLING_MULTICHOICE
+    waitstate
+    switch LASTRESULT
+    case 0, EnableTutorialization _call
+    case 1, DisableTutorialization _call
+    @ Case 0x7F (B pressed) falls through, leaving tutorials as they were
     goto GameCustomizationMenu
 
 EnableTutorialization:
@@ -1541,14 +1555,16 @@ GameCustomization_GenChoice_Shuffle:
 
 GameCustomization_LevelCaps:
     msgbox gText_GameCustomization_LevelCapsQuestion MSG_KEEPOPEN
-    multichoiceoption gText_GameCustomization_LevelCapsOption_Soft 0
-    multichoiceoption gText_GameCustomization_LevelCapsOption_Hard 1
-    multichoiceoption gText_GameCustomization_LevelCapsOption_ExtraHard 2
-    multichoice 0x0 0x0 THREE_MULTICHOICE_OPTIONS TRUE
+    setvar SCROLL_MULTICHOICE_NUM MULTICHOICE_SET_GAMECUST_LEVEL_CAPS
+    setvar SCROLL_MULTICHOICE_HEIGHT 0x3
+    setvar 0x8004 0x0 @ Always 0, so the menu cleans itself up when called again
+    special SPECIAL_SCROLLING_MULTICHOICE
+    waitstate
     switch LASTRESULT
     case 0, EnableSoftLevelCaps _call
     case 1, EnableHardLevelCaps _call
     case 2, EnableExtraHardLevelCaps _call
+    @ Case 0x7F (B pressed) falls through, leaving the level caps as they were
     goto GameCustomizationMenu
 
 EnableSoftLevelCaps:
@@ -1575,30 +1591,42 @@ EnableExtraHardLevelCaps:
     return
 
 GameCustomization_StartWithQoLItems:
-    msgbox gText_GameCustomization_QoLFromStart MSG_YESNO
-    compare LASTRESULT NO
-    if notequal _call EnableQoLItems
-    if equal _call DisableQoLItems
+    msgbox gText_GameCustomization_QoLFromStart MSG_KEEPOPEN
+    setvar SCROLL_MULTICHOICE_NUM MULTICHOICE_SET_GAMECUST_QOL_ITEMS
+    setvar SCROLL_MULTICHOICE_HEIGHT 0x2
+    setvar 0x8004 0x0 @ Always 0, so the menu cleans itself up when called again
+    special SPECIAL_SCROLLING_MULTICHOICE
+    waitstate
+    switch LASTRESULT
+    case 0, EnableQoLItems _call
+    case 1, DisableQoLItems _call
+    @ Case 0x7F (B pressed) falls through, leaving the QoL item choice as it was
     goto GameCustomizationMenu
 
 EnableQoLItems:
-    setvar 0x4000 0x1 @ Giving QoL items
+    setvar 0x4001 0x1 @ Giving QoL items
     sound 0x30 @Save
     msgbox gText_GameCustomization_QoLItemsOn MSG_NORMAL
     call ExpShareHint
 	return
 
 DisableQoLItems:
-    setvar 0x4000 0x0 @ Not giving QoL items
+    setvar 0x4001 0x0 @ Not giving QoL items
     sound 0x30 @Save
     msgbox gText_GameCustomization_QoLItemsOff MSG_NORMAL
 	return
 
 GameCustomization_SkipCutscenes:
-    msgbox gText_GameCustomization_SkipCutscenesQuestion MSG_YESNO
-    compare LASTRESULT NO
-    if notequal _call EnableCutsceneSkipping
-    if equal _call DisableCutsceneSkipping
+    msgbox gText_GameCustomization_SkipCutscenesQuestion MSG_KEEPOPEN
+    setvar SCROLL_MULTICHOICE_NUM MULTICHOICE_SET_GAMECUST_CUTSCENES
+    setvar SCROLL_MULTICHOICE_HEIGHT 0x2
+    setvar 0x8004 0x0 @ Always 0, so the menu cleans itself up when called again
+    special SPECIAL_SCROLLING_MULTICHOICE
+    waitstate
+    switch LASTRESULT
+    case 0, DisableCutsceneSkipping _call
+    case 1, EnableCutsceneSkipping _call
+    @ Case 0x7F (B pressed) falls through, leaving cutscene skipping as it was
     goto GameCustomizationMenu
 
 EnableCutsceneSkipping:
@@ -1615,12 +1643,15 @@ DisableCutsceneSkipping:
 
 GameCustomization_PokemonSelection:
     msgbox gText_GameCustomization_PokemonSelectionQuestion MSG_KEEPOPEN
-    multichoiceoption gText_GameCustomization_PokemonSelection_Standard 0
-    multichoiceoption gText_GameCustomization_PokemonSelection_Divergent 1
-    multichoice 0x0 0x0 TWO_MULTICHOICE_OPTIONS TRUE
+    setvar SCROLL_MULTICHOICE_NUM MULTICHOICE_SET_GAMECUST_POKEMON_SELECTION
+    setvar SCROLL_MULTICHOICE_HEIGHT 0x2
+    setvar 0x8004 0x0 @ Always 0, so the menu cleans itself up when called again
+    special SPECIAL_SCROLLING_MULTICHOICE
+    waitstate
     switch LASTRESULT
     case 0, EnableStandardPokemonSelection _call
     case 1, EnableDivergentPokemonSelection _call
+    @ Case 0x7F (B pressed) falls through, leaving the Pokemon selection as it was
     goto GameCustomizationMenu
 
 EnableStandardPokemonSelection:
