@@ -4232,16 +4232,9 @@ void ComputeCompletedGameModifierRequirements()
 		FlagSet(FLAG_GAMEMODIFIER_DOUBLEBATTLES_UNLOCKED);
 	}
 
-	// Pokedex is complete
-	bool8 isPokedexComplete = TRUE;
-	for (u32 i = 1; i <= NATIONAL_DEX_COUNT; i++)
-	{
-		if (!GetSetPokedexFlag(i, FLAG_GET_CAUGHT))
-		{
-			isPokedexComplete = FALSE;
-			break;
-		}
-	}
+	// Pokedex is complete. Dex numbers 1 - NATIONAL_DEX_COUNT only cover the standard dex, so this
+	// has to go through the mode-aware count rather than walking a fixed range of dex numbers.
+	bool8 isPokedexComplete = GetNationalPokedexCount(FLAG_GET_CAUGHT) >= NATIONAL_DEX_COUNT;
 
 	if (isPokedexComplete)
 	{

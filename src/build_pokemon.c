@@ -91,7 +91,10 @@ struct TeamBuilder
 {
 	u16 speciesArray[PARTY_SIZE];
 	u16 itemArray[PARTY_SIZE];
-	bool8 speciesOnTeam[NATIONAL_DEX_COUNT];
+	//Indexed by dex number, which is 1-based and spans both modes - standard species map to
+	//1 - NATIONAL_DEX_COUNT and divergent-exclusive ones continue above that, currently up to 690.
+	//Sizing this to NATIONAL_DEX_COUNT overflowed into the fields below for any divergent species.
+	bool8 speciesOnTeam[NATIONAL_DEX_COUNT * 2];
 	bool8 moveOnTeam[MOVES_COUNT];
 	bool8 abilityOnTeam[ABILITIES_COUNT];
 	bool8 itemEffectOnTeam[ITEM_EFFECT_COUNT];
