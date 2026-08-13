@@ -1348,6 +1348,30 @@ Oh, my apologies. You must be a Gym\nLeader, Elite Four member, or the\lChampion
 #org @gText_AscensionTower_AttendantChoseNo
 Understood. Please speak to me again\nif you change your mind.
 
+#org @gText_AscensionTower_TrainerCardClerk_Introduction
+[BLUE]I print trainers' Pok\emon onto their\nTrainer Cards.\pYou're in luck! I'm running a promo\nwhere the service is free.\pWould you like me to print your\nPok\emon onto your Trainer Card?[BLACK]
+
+#org @gText_AscensionTower_TrainerCardClerk_OptionPrint
+Print
+
+#org @gText_AscensionTower_TrainerCardClerk_OptionErase
+Erase
+
+#org @gText_AscensionTower_TrainerCardClerk_Printing
+[BLUE]Perfect! Now, just hold it out for\nme please[.]
+
+#org @gText_AscensionTower_TrainerCardClerk_PrintingDone
+[BLUE]All done!\pYour team is on the back of your\nTrainer Card now.\pCome back any time you'd like to\nprint a different team.[BLACK]
+
+#org @gText_AscensionTower_TrainerCardClerk_ConfirmErase
+[BLUE]You'd like the Pok\emon cleared off\nyour Trainer Card?
+
+#org @gText_AscensionTower_TrainerCardClerk_EraseDone
+[BLUE]There we are, wiped clean.\pJust say the word if you'd like a\nnew team printed.[BLACK]
+
+#org @gText_AscensionTower_TrainerCardClerk_ChoseNo
+[BLUE]Do come back if you change your\nmind![BLACK]
+
 #org @gText_AscensionTower_KarateMan
 Wrrrrooooaaaggghhh!\pI almost beat Lucas this time!\pI'll train up and wipe that smug grin\noff his face, just you wait and\lsee.
 

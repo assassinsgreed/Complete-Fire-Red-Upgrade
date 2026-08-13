@@ -171,6 +171,18 @@ Kulure (Divergent)
 #org @gText_DiplomaRegion_KulureStandard
 Kulure (Standard)
 
+#org @gText_TrainerCardTitleDefenses
+Title Defenses
+
+#org @gText_TrainerCardEggsHatched
+Eggs Hatched
+
+#org @gText_TrainerCardPokemonCaught
+Total Pok\emon Caught
+
+#org @gText_TrainerCardCenterHeals
+Pok\emon Center / Nurse Heals
+
 #org @gText_GuardHouseBinoculars
 A pair of binoculars! What can be\nseen[.]
 

@@ -151,37 +151,27 @@ void SetMonPokedexFlags(struct Pokemon* mon)
 	}
 }
 
+// The dex changes dynamically between standard and divergent mode.
+// Instead of counting the correct dex's caught pokemon in multiple places (Ex. trainer card & critical captures)
+// it is computed here, based on actual caught flags for the active dex.
+#define GetRegionalDexCount ((u16 (*)(u8 caseId)) (0x08088EDC | 1))
 u16 GetNationalPokedexCount(u8 caseID)
 {
-	u32 i;
-	u16 count = 0;
-	u8 byte;
-	u8* flags;
+	return GetRegionalDexCount((caseID == FLAG_GET_SEEN) ? FLAG_GET_SEEN : FLAG_GET_CAUGHT);
+}
 
-	switch (caseID) {
-		case FLAG_GET_SEEN:
-			flags = (u8*) SEEN_DEX_FLAGS;
-			break;
+// The species lists behind each mode's dex, laid out as a u16 count followed by that many species.
+// The two modes do not share dex numbers - standard species map to 1 - 390 and divergent-exclusive
+// ones to 391 - 780 - so flags set for one mode never collide with the other's.
+#define sRegionalDexTableStandard  ((const u16*) 0x09C1BA30)
+#define sRegionalDexTableDivergent ((const u16*) 0x09C1AAE4)
 
-		default: //case FLAG_GET_CAUGHT:
-			flags = (u8*) CAUGHT_DEX_FLAGS;
-			break;
-	}
+const u16* GetRegionalDexSpeciesTable(bool8 divergent, u16* count)
+{
+	const u16* table = divergent ? sRegionalDexTableDivergent : sRegionalDexTableStandard;
 
-	for (i = 0; i <= (NATIONAL_DEX_COUNT - 1) / 8; ++i) //8 Pokemon per byte
-	{
-		byte = flags[i];
-
-		while (byte != 0)
-		{
-			if (byte & 1)
-				++count;
-
-			byte >>= 1;
-		}
-	}
-
-	return count;
+	*count = table[0];
+	return &table[1];
 }
 
 bool8 SpeciesWithDexNumOnTeam(u16 dexNum)

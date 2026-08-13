@@ -177,12 +177,23 @@ void DebugMenu_ShinyTeam(void)
 
 void DebugMenu_SetAllPokemonCaught(void)
 {
-	for (u32 i = 0; i <= NATIONAL_DEX_COUNT; ++i)
+	// Dex numbers 1 - NATIONAL_DEX_COUNT only cover the standard dex, so walk each mode's species
+	// list and convert instead. Both are filled, since the two modes' dex numbers don't overlap and
+	// the dex should stay complete across a mode switch.
+	for (u32 divergent = FALSE; divergent <= TRUE; ++divergent)
 	{
-		GetSetPokedexFlag(i, FLAG_SET_SEEN);
-		if (gSpecialVar_LastResult == 1)
+		u16 count;
+		const u16* speciesTable = GetRegionalDexSpeciesTable(divergent, &count);
+
+		for (u32 i = 0; i < count; ++i)
 		{
-			GetSetPokedexFlag(i, FLAG_SET_CAUGHT);
+			u16 dexNum = SpeciesToNationalPokedexNum(speciesTable[i]);
+
+			GetSetPokedexFlag(dexNum, FLAG_SET_SEEN);
+			if (gSpecialVar_LastResult == 1)
+			{
+				GetSetPokedexFlag(dexNum, FLAG_SET_CAUGHT);
+			}
 		}
 	}
 }

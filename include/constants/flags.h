@@ -729,7 +729,9 @@
 #define FLAG_VICTORY_ROAD_3F_LEFT_PUZZLE_SOLVED          0x286
 #define FLAG_VICTORY_ROAD_3F_RIGHT_PUZZLE_SOLVED         0x287
 #define FLAG_DEFEATED_KURTIS_IN_ROUTE_13_CAVE            0x288
+*/
 #define FLAG_DEFEATED_ULTRA_NECROZMA                     0x289
+/*
 #define FLAG_EVOLVED_TYPE_NULL                           0x28A
 #define FLAG_ECLIPSE_ACTIVE_IN_DAIS_OF_LIGHT             0x28B
 #define FLAG_SAKURA_CONGRATULATED_PLAYER_ON_VICTORY      0x28C
@@ -750,8 +752,8 @@
 #define FLAG_GOT_TM06_FROM_STELLA                        0x297
 */
 #define FLAG_CAUGHT_DARKRAI                              0x298
+#define FLAG_ALL_ZCRYSTALS_OBTAINED                      0x299
 /*
-#define FLAG_0x299                                       0x299
 #define FLAG_GOT_TM76_FROM_ABBY                          0x29A
 #define FLAG_GOT_FAME_CHECKER                            0x29B
 #define FLAG_GOT_RECORD_SETTING_MAGIKARP                 0x29C

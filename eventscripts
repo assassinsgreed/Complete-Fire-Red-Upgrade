@@ -940,6 +940,7 @@ npc 2 10 2 EventScript_AscensionTower_EliteFourAttendant
 npc 2 10 3 EventScript_AscensionTower_Blackbelt
 npc 2 10 4 EventScript_AscensionTower_Girl
 npc 2 10 5 EventScript_AscensionTower_BigMan
+npc 2 10 9 EventScript_AscensionTower_TrainerCardClerk
 npc 2 10 8 EventScript_Pokemart
 sign 2 10 0 SignScript_AscensionTower_RecordsBoard
 map 1 107 MapScript_AscensionTower_Elevator

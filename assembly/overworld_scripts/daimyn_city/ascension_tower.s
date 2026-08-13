@@ -235,6 +235,47 @@ AttendantChoseNo:
     release
     end
 
+.global EventScript_AscensionTower_TrainerCardClerk
+EventScript_AscensionTower_TrainerCardClerk:
+    lock
+    faceplayer
+    msgbox gText_AscensionTower_TrainerCardClerk_Introduction MSG_KEEPOPEN
+    multichoiceoption gText_AscensionTower_TrainerCardClerk_OptionPrint 0
+    multichoiceoption gText_AscensionTower_TrainerCardClerk_OptionErase 1
+    multichoiceoption gText_No 2
+    multichoice 0x0 0x0 THREE_MULTICHOICE_OPTIONS FALSE
+    copyvar MULTICHOICE_SELECTION LASTRESULT
+    switch LASTRESULT
+    case 0, TrainerCardClerk_PrintParty
+    case 1, TrainerCardClerk_ErasePartyPrompt
+    case 2, TrainerCardClerk_ChoseNo
+    case 0x7F, TrainerCardClerk_ChoseNo @ When player hit B to close
+    goto TrainerCardClerk_ChoseNo
+
+TrainerCardClerk_PrintParty:
+    msgbox gText_AscensionTower_TrainerCardClerk_Printing MSG_NORMAL
+    pause DELAY_HALFSECOND
+    callasm PrintPartyOnTrainerCard
+    fanfare 0x101 @ Obtained an item
+    waitfanfare
+    msgbox gText_AscensionTower_TrainerCardClerk_PrintingDone MSG_NORMAL
+    release
+    end
+
+TrainerCardClerk_ErasePartyPrompt:
+    msgbox gText_AscensionTower_TrainerCardClerk_ConfirmErase MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto TrainerCardClerk_ChoseNo
+    callasm ErasePartyFromTrainerCard
+    msgbox gText_AscensionTower_TrainerCardClerk_EraseDone MSG_NORMAL
+    release
+    end
+
+TrainerCardClerk_ChoseNo:
+    msgbox gText_AscensionTower_TrainerCardClerk_ChoseNo MSG_NORMAL
+    release
+    end
+
 .global EventScript_AscensionTower_Blackbelt
 EventScript_AscensionTower_Blackbelt:
     npcchat gText_AscensionTower_KarateMan
