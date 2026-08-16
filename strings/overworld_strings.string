@@ -294,3 +294,9 @@ Stop zooming!
 
 #org @gText_AllJustADream
 [PLAYER] had a bad dream where they\nlost a crucial battle.\pBetter focus!\p
+
+#org @gText_DowserUnderwater
+It won't work underwater.
+
+#org @gText_DowserTooDark
+It's too dark to read the display.

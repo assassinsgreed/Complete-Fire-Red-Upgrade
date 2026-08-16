@@ -24,6 +24,7 @@
 #include "../include/map_preview_screen.h"
 #include "../include/map_scripts.h"
 #include "../include/metatile_behavior.h"
+#include "../include/new_menu_helpers.h"
 #include "../include/overworld.h"
 #include "../include/party_menu.h"
 #include "../include/quest_log.h"
@@ -38,6 +39,7 @@
 #include "../include/constants/field_effects.h"
 #include "../include/constants/flags.h"
 #include "../include/constants/items.h"
+#include "../include/constants/map_types.h"
 #include "../include/constants/maps.h"
 #include "../include/constants/metatile_behaviors.h"
 #include "../include/constants/region_map_sections.h"
@@ -55,6 +57,7 @@
 #include "../include/new/overworld.h"
 #include "../include/new/overworld_data.h"
 #include "../include/new/party_menu.h"
+#include "../include/new/ram_locs.h"
 #include "../include/new/read_keys.h"
 #include "../include/new/roamer.h"
 #include "../include/new/wild_encounter.h"
@@ -1679,6 +1682,429 @@ void RunOnTransitionMapScript(void)
 	MapHeaderRunScriptByTag(3);
 }
 
+// Item Finder indicator: a screen-fixed icon showing a circle, an arrow toward the
+// nearest uncollected hidden item, or a star when the player is standing on it.
+#define SE_DOWSER_ON    SE_PC_LOGON
+#define SE_DOWSER_OFF   SE_PC_OFF
+#define SE_DOWSER_ARROW SE_NOTE_C
+#define SE_DOWSER_STAR  SE_NOTE_C1
+
+extern void __attribute__((long_call)) Task_ItemFinderNoResponse_CleanUp(u8 taskId);
+
+extern const u8 gText_DowserUnderwater[];
+extern const u8 gText_DowserTooDark[];
+
+#define DOWSER_TAG 0xFDE0 //Picked because the tags right next to it are already used by other sprites
+
+extern const u8 ItemFinderIndicatorTiles[];
+extern const u16 ItemFinderIndicatorPal[];
+
+#define DOWSER_SHEET_SIZE ((16 * 16 * 10) / 2)
+#define DOWSER_SHEET_TILES (DOWSER_SHEET_SIZE / 32)
+#define DOWSER_OBJ_VRAM 0x6010000
+
+// Write the item finder's dowsing functionality at the end of the tiles used by the map
+#define DOWSER_TILE_START (1024 - DOWSER_SHEET_TILES)
+
+static const struct SpritePalette sDowserSpritePalette =
+{
+	ItemFinderIndicatorPal, DOWSER_TAG
+};
+
+#define DOWSER_NO_SPRITE 0xFF // Marks that no indicator sprite currently exists
+
+#define DOWSER_ANIM_CIRCLE   0
+#define DOWSER_ANIM_ARROW_N  1
+#define DOWSER_ANIM_ARROW_NE 2
+#define DOWSER_ANIM_ARROW_E  3
+#define DOWSER_ANIM_ARROW_SE 4
+#define DOWSER_ANIM_ARROW_S  5
+#define DOWSER_ANIM_ARROW_SW 6
+#define DOWSER_ANIM_ARROW_W  7
+#define DOWSER_ANIM_ARROW_NW 8
+#define DOWSER_ANIM_STAR     9
+
+// Distance bands the arrow's colour can be in; also index sDowserArrowRamps below.
+#define DOWSER_BAND_FAR    0
+#define DOWSER_BAND_NEARER 1
+#define DOWSER_BAND_CLOSE  2
+
+#define DOWSER_X 8
+#define DOWSER_Y 8
+
+// data[0] caches the last anim so StartSpriteAnim is not restarted every frame
+#define sLastAnim data[0]
+// data[1] caches the last distance band the arrow was recoloured to, so the palette is
+// only rewritten on an actual colour change rather than every frame
+#define sLastBand data[1]
+
+static const struct OamData sDowserOam =
+{
+	.affineMode = ST_OAM_AFFINE_OFF,
+	.objMode = ST_OAM_OBJ_NORMAL,
+	.shape = SPRITE_SHAPE(16x16),
+	.size = SPRITE_SIZE(16x16),
+	.priority = 0,
+};
+
+static const union AnimCmd sDowserAnim0[] = {ANIMCMD_FRAME(0 * 4, 0), ANIMCMD_END};
+static const union AnimCmd sDowserAnim1[] = {ANIMCMD_FRAME(1 * 4, 0), ANIMCMD_END};
+static const union AnimCmd sDowserAnim2[] = {ANIMCMD_FRAME(2 * 4, 0), ANIMCMD_END};
+static const union AnimCmd sDowserAnim3[] = {ANIMCMD_FRAME(3 * 4, 0), ANIMCMD_END};
+static const union AnimCmd sDowserAnim4[] = {ANIMCMD_FRAME(4 * 4, 0), ANIMCMD_END};
+static const union AnimCmd sDowserAnim5[] = {ANIMCMD_FRAME(5 * 4, 0), ANIMCMD_END};
+static const union AnimCmd sDowserAnim6[] = {ANIMCMD_FRAME(6 * 4, 0), ANIMCMD_END};
+static const union AnimCmd sDowserAnim7[] = {ANIMCMD_FRAME(7 * 4, 0), ANIMCMD_END};
+static const union AnimCmd sDowserAnim8[] = {ANIMCMD_FRAME(8 * 4, 0), ANIMCMD_END};
+static const union AnimCmd sDowserAnim9[] = {ANIMCMD_FRAME(9 * 4, 0), ANIMCMD_END};
+
+static const union AnimCmd *const sDowserAnimTable[] =
+{
+	sDowserAnim0, sDowserAnim1, sDowserAnim2, sDowserAnim3, sDowserAnim4,
+	sDowserAnim5, sDowserAnim6, sDowserAnim7, sDowserAnim8, sDowserAnim9,
+};
+
+static void SpriteCB_DowserIndicator(struct Sprite *sprite);
+static void SetDowserArrowColor(u8 band);
+
+static const struct SpriteTemplate sDowserSpriteTemplate =
+{
+	.tileTag = DOWSER_TAG,
+	.paletteTag = DOWSER_TAG,
+	.oam = &sDowserOam,
+	.anims = sDowserAnimTable,
+	.images = NULL,
+	.affineAnims = gDummySpriteAffineAnimTable,
+	.callback = SpriteCB_DowserIndicator,
+};
+
+void StopDowserIndicator(void)
+{
+	// gDowserSpriteId reads as zero before the indicator has ever been used, so without
+	// confirming the slot is actually in use and actually ours, this would tear down
+	// whatever unrelated sprite happens to occupy slot zero.
+	if (gDowserSpriteId < MAX_SPRITES
+	&&  gSprites[gDowserSpriteId].inUse
+	&&  gSprites[gDowserSpriteId].callback == SpriteCB_DowserIndicator)
+		DestroySprite(&gSprites[gDowserSpriteId]);
+
+	// Released even when there was no sprite left to destroy, because a battle or a menu sweeps
+	// the sprite away while the icon's claim on memory and colours lives on. Both only ever
+	// release something claimed under the icon's own name, so calling them is safe either way.
+	FreeSpriteTilesByTag(DOWSER_TAG);
+	FreeSpritePaletteByTag(DOWSER_TAG);
+
+	gDowserSpriteId = DOWSER_NO_SPRITE;
+}
+
+static void StartDowserIndicator(void)
+{
+	u8 spriteId;
+
+	StopDowserIndicator(); // Never leak a previous sprite or its VRAM
+
+	// The game keeps a list of who owns which video memory, and it does not check whether that
+	// list is full before writing to it. Asking first is the only thing standing between a full
+	// list and it scribbling over unrelated memory.
+	if (IndexOfSpriteTileTag(0xFFFF) == 0xFF)
+		return;
+
+	// Claim the icon's own corner of video memory by name rather than asking the game to find a
+	// free spot for it, then put the picture there ourselves.
+	AllocSpriteTileRange(DOWSER_TAG, DOWSER_TILE_START, DOWSER_SHEET_TILES);
+
+	// If the icon's name didn't take, the sprite would be built pointing at nothing in
+	// particular and would draw whatever else happens to live there, so don't build one.
+	if (GetSpriteTileStartByTag(DOWSER_TAG) != DOWSER_TILE_START)
+		return;
+
+	CpuCopy16(ItemFinderIndicatorTiles, (void*) (DOWSER_OBJ_VRAM + DOWSER_TILE_START * 32), DOWSER_SHEET_SIZE);
+
+	// No free sprite palette slot; the icon just won't appear this time, and the flag stays on
+	if (LoadSpritePalette(&sDowserSpritePalette) == 0xFF)
+	{
+		FreeSpriteTilesByTag(DOWSER_TAG);
+		return;
+	}
+
+	spriteId = CreateSprite(&sDowserSpriteTemplate, DOWSER_X, DOWSER_Y, 0);
+	if (spriteId >= MAX_SPRITES)
+	{
+		FreeSpriteTilesByTag(DOWSER_TAG);
+		FreeSpritePaletteByTag(DOWSER_TAG);
+		return;
+	}
+
+	gDowserSpriteId = spriteId;
+	gSprites[spriteId].sLastAnim = -1;
+	gSprites[spriteId].sLastBand = DOWSER_BAND_FAR;
+	SetDowserArrowColor(DOWSER_BAND_FAR); // So a freshly created icon's arrow is the right colour immediately
+	StartSpriteAnim(&gSprites[spriteId], DOWSER_ANIM_CIRCLE);
+}
+
+#define BG_EVENT_HIDDEN_ITEM 7
+// How far the indicator can see a hidden item, in tiles from the player.
+#define DOWSER_RANGE_X 7
+#define DOWSER_RANGE_Y 5
+
+// Looks for the closest uncollected hidden item within range and reports its position
+// relative to the player. Only fills outDx/outDy when it returns TRUE.
+static bool8 FindNearestHiddenItem(s16 *outDx, s16 *outDy)
+{
+	const struct MapEvents *events = gMapHeader.events;
+	s16 playerX, playerY;
+	s32 i, bestDist = 0x7FFF;
+	bool8 found = FALSE;
+
+	if (events == NULL || events->bgEvents == NULL)
+		return FALSE;
+
+	PlayerGetDestCoords(&playerX, &playerY);
+
+	for (i = 0; i < events->bgEventCount; ++i)
+	{
+		const struct BgEvent *bg = &events->bgEvents[i];
+		s16 dx, dy;
+		s32 dist;
+
+		if (bg->kind != BG_EVENT_HIDDEN_ITEM)
+			continue;
+
+		if (FlagGet(FLAG_HIDDEN_ITEMS_START + bg->bgUnion.hiddenItemStr.hiddenItemId))
+			continue;
+
+		// Hidden item coordinates leave out the map border the player's position includes,
+		// so this shift puts both back on the same footing before comparing them.
+		dx = (s16) bg->x + 7 - playerX;
+		dy = (s16) bg->y + 7 - playerY;
+
+		if (bg->bgUnion.hiddenItemStr.isUnderfoot)
+		{
+			if (dx != 0 || dy != 0)
+				continue; // Underfoot items only register on the exact tile
+		}
+		else
+		{
+			if (dx < -DOWSER_RANGE_X || dx > DOWSER_RANGE_X)
+				continue;
+			if (dy < -DOWSER_RANGE_Y || dy > DOWSER_RANGE_Y)
+				continue;
+		}
+
+		dist = abs(dx) + abs(dy);
+		if (dist < bestDist)
+		{
+			bestDist = dist;
+			*outDx = dx;
+			*outDy = dy;
+			found = TRUE;
+		}
+	}
+
+	return found;
+}
+
+// How close an item needs to be for its arrow to switch colour. The detection box is
+// 7 tiles horizontally and 5 vertically, so the largest possible distance is 12
+#define DOWSER_DIST_VERY_CLOSE 3
+#define DOWSER_DIST_NEARER     6
+
+// Determines which of the 8 directional arrows (or star) should be shown
+static u8 GetDowserAnimForDelta(s16 dx, s16 dy)
+{
+	s32 ax = abs(dx), ay = abs(dy);
+
+	if (dx == 0 && dy == 0)
+		return DOWSER_ANIM_STAR;
+
+	if (ax > ay * 2)                      // Mostly horizontal
+		return (dx > 0) ? DOWSER_ANIM_ARROW_E : DOWSER_ANIM_ARROW_W;
+	if (ay > ax * 2)                      // Mostly vertical
+		return (dy > 0) ? DOWSER_ANIM_ARROW_S : DOWSER_ANIM_ARROW_N;
+	if (dx > 0)
+		return (dy > 0) ? DOWSER_ANIM_ARROW_SE : DOWSER_ANIM_ARROW_NE;
+	return (dy > 0) ? DOWSER_ANIM_ARROW_SW : DOWSER_ANIM_ARROW_NW;
+}
+
+// Determines if a directional arrow is shown; used to emit a sound effect when switching in/out of
+// a directional arrow (from no detection or star)
+static bool8 DowserAnimIsArrow(s16 anim)
+{
+	return anim >= DOWSER_ANIM_ARROW_N && anim <= DOWSER_ANIM_ARROW_NW;
+}
+
+static u8 GetDowserBandForDist(s32 dist)
+{
+	if (dist <= DOWSER_DIST_VERY_CLOSE)
+		return DOWSER_BAND_CLOSE;
+	if (dist <= DOWSER_DIST_NEARER)
+		return DOWSER_BAND_NEARER;
+	return DOWSER_BAND_FAR;
+}
+
+static const u16 sDowserArrowRamps[3][3] =
+{
+	[DOWSER_BAND_FAR]    = {RGB(16, 16, 17), RGB(24, 24, 25), RGB(31, 31, 31)},
+	[DOWSER_BAND_NEARER] = {RGB(21, 14, 2),  RGB(28, 21, 5),  RGB(31, 27, 11)},
+	[DOWSER_BAND_CLOSE]  = {RGB(18, 2, 3),   RGB(26, 6, 5),   RGB(31, 14, 12)},
+};
+
+#define DOWSER_ARROW_RAMP_FIRST_INDEX 5
+
+// Recolours the icon's arrow to the given distance band by overwriting its own palette
+// in place. Sprite palettes live in the upper half of the palette buffers (the lower half
+// holds backgrounds, 256 colours per half), with each sprite's own 16-colour palette
+// found at IndexOfSpritePaletteTag()'s slot number within that half.
+static void SetDowserArrowColor(u8 band)
+{
+	u8 palSlot = IndexOfSpritePaletteTag(DOWSER_TAG);
+	u16 offset;
+	u8 i;
+
+	if (palSlot == 0xFF)
+		return; // Palette isn't currently loaded; nothing to recolour
+
+	offset = palSlot * 16 + 256 + DOWSER_ARROW_RAMP_FIRST_INDEX;
+
+	// Both buffers need the new colour, or a screen fade (which blends from the unfaded
+	// buffer back into the faded one) would quietly undo the recolour on the next fade.
+	for (i = 0; i < 3; ++i)
+	{
+		gPlttBufferUnfaded[offset + i] = sDowserArrowRamps[band][i];
+		gPlttBufferFaded[offset + i] = sDowserArrowRamps[band][i];
+	}
+}
+
+static void SpriteCB_DowserIndicator(struct Sprite *sprite)
+{
+	s16 dx = 0, dy = 0;
+	u8 anim;
+
+	if (!gDowserActive)
+	{
+		StopDowserIndicator();
+		return;
+	}
+
+	// Don't show the icon whenever anything is drawn in the top left corner (menus, coin case, map-entry name, etc.)
+	sprite->invisible = ScriptContext2_IsEnabled() || IsMapNamePopupTaskActive();
+
+	if (sprite->invisible)
+		return;
+
+	// Searched fresh every frame on purpose: if the player picks up the item while standing
+	// still, the position hasn't moved, so a cached result would keep showing the star.
+	if (FindNearestHiddenItem(&dx, &dy))
+	{
+		anim = GetDowserAnimForDelta(dx, dy);
+
+		// The circle and star have their own palette entries, so only an arrow frame ever
+		// needs a recolour. The band is recomputed fresh from the current dx/dy rather than
+		// carried over from whatever it last was, so it can't ever go stale: the next arrow
+		// shown, however the player got there, always gets the colour its own distance calls for.
+		if (DowserAnimIsArrow(anim))
+		{
+			u8 band = GetDowserBandForDist(abs(dx) + abs(dy));
+			if (band != (u8) sprite->sLastBand)
+			{
+				SetDowserArrowColor(band);
+				sprite->sLastBand = band;
+			}
+		}
+	}
+	else
+	{
+		anim = DOWSER_ANIM_CIRCLE;
+	}
+
+	if (anim != (u8) sprite->sLastAnim)
+	{
+		// Swinging between arrow directions while walking past an item should stay silent;
+		// only entering the star, or entering the arrow state from something else, cues a sound.
+		if (anim == DOWSER_ANIM_STAR)
+			PlaySE(SE_DOWSER_STAR);
+		else if (anim != DOWSER_ANIM_CIRCLE && !DowserAnimIsArrow(sprite->sLastAnim))
+			PlaySE(SE_DOWSER_ARROW);
+
+		sprite->sLastAnim = anim;
+		StartSpriteAnim(sprite, anim);
+	}
+}
+
+// Returns the message to show when the indicator can't be used here, or NULL if it can.
+static const u8 *GetDowserRefusalMessage(void)
+{
+	if (gMapHeader.mapType == MAP_TYPE_UNDERWATER)
+		return gText_DowserUnderwater;
+
+	if (Overworld_GetFlashLevel() != 0)
+		return gText_DowserTooDark;
+
+	return NULL;
+}
+
+static bool8 DowserIsUsableHere(void)
+{
+	return GetDowserRefusalMessage() == NULL;
+}
+
+void ItemUseCB_DowserToggle(u8 taskId)
+{
+	if (gDowserActive)
+	{
+		gDowserActive = FALSE;
+		StopDowserIndicator();
+		PlaySE(SE_DOWSER_OFF);
+	}
+	else
+	{
+		const u8 *refusal = GetDowserRefusalMessage();
+
+		if (refusal != NULL)
+		{
+			DisplayItemMessageOnField(taskId, 2, refusal, Task_ItemFinderNoResponse_CleanUp);
+			return;
+		}
+
+		gDowserActive = TRUE;
+		StartDowserIndicator();
+		PlaySE(SE_DOWSER_ON);
+	}
+
+	gTasks[taskId].func = Task_ItemFinderNoResponse_CleanUp;
+}
+
+// The only place the icon is rebuilt after a battle, a menu or a map change, and it has to stay
+// that way: anything that builds it earlier hands it a sprite slot the map is still expecting to
+// get for its own people and objects, and the map then drives the icon around the screen as if
+// it were one of them.
+static void TryKeepDowserIndicatorAlive(void)
+{
+	if (!gDowserActive)
+		return;
+
+	if (gDowserSpriteId < MAX_SPRITES
+	&&  gSprites[gDowserSpriteId].inUse
+	&&  gSprites[gDowserSpriteId].callback == SpriteCB_DowserIndicator)
+		return;
+
+	// Wait until the map has finished arriving before building anything on it. The game only
+	// reaches this code at all on frames where the player has control of the field, so this is
+	// the last part of the transition left to wait out.
+	if (gPaletteFade->active)
+		return;
+
+	// If the item finder can't be used on this map (ex. dark caves and underwater), clean it up
+	if (!DowserIsUsableHere())
+	{
+		gDowserActive = FALSE;
+		gDowserSpriteId = DOWSER_NO_SPRITE;
+		return;
+	}
+
+	StartDowserIndicator();
+}
+
 void RunOnResumeMapScript(void)
 {
 	for (int i = 0; i < PARTY_SIZE; i++)
@@ -1765,6 +2191,7 @@ void PostReleaseAutomaticFixes(void)
 bool8 TryRunOnFrameMapScript(void)
 {
 	TryUpdateSwarm();
+	TryKeepDowserIndicatorAlive();
 
 	//if (gQuestLogMode != 3)
 	{

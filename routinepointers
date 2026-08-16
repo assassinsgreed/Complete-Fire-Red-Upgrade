@@ -310,3 +310,6 @@ FieldUseFunc_EVReducingBerry 872F650
 FieldUseFunc_PokeTool 8731B44
 FieldUseFunc_PokeTool 8731B70
 FieldUseFunc_PokeTool 8730964
+
+## Item Finder 8-Directional Indicator (Dousing Machine Style)
+ItemUseCB_DowserToggle 080A145C
