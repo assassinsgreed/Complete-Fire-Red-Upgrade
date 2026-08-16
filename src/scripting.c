@@ -4340,9 +4340,9 @@ void ComputeCompletedGameModifierRequirements()
 		}
 	}
 
-	// Entered HoF in Divergent Mode
-	if (FlagGet(FLAG_DEFEATED_CHAMPION_SELENE) && FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS))
-		FlagSet(FLAG_GAMEMODIFIER_DIVERGNET_TOGGLE_UNLOCKED);
+	// Entered HoF and show 5+ swarm species
+	if (FlagGet(FLAG_SYS_GAME_CLEAR) && VarGet(VAR_SWARM_POKEMON_SHOWN) >= 5)
+		FlagSet(FLAG_GAMEMODIFIER_DIVERGENT_TOGGLE_UNLOCKED);
 
 	// A 20+ win streak at any battle facility, in either format. Reads the max streak rather than the
 	// current one so the unlock sticks once earned instead of needing the player to still be mid-run.

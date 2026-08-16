@@ -820,7 +820,7 @@ GameModifiers_DivergentToggle:
 	goto GameModifiers_DivergentToggle_TogglePrompt
 
 GameModifiers_DivergentToggle_NotUnlocked:
-	msgbox gText_GameModifiers_UnlockCriteria_BeatGameInDivergent MSG_NORMAL
+	msgbox gText_GameModifiers_UnlockCriteria_SwarmingPokemon MSG_NORMAL
 	msgbox gText_GameModifiers_ModifierNotYetAchieved MSG_YESNO
 	compare LASTRESULT NO
 	if equal _goto ChoosingModifier
