@@ -113,16 +113,16 @@ The imposing Pok\emon fled.\nWill it return later?
 The imposing Pok\emon left.\nWill it return later?
 
 #org @gText_CarnelidgeVolcanoPeak_AlistairGreetsPlayer
-[BLACK]???: [BLUE]So, [PLAYER], you've come[.]\nI should have expected this.\pYou do have a tendency to appear\nwhenever something big happens[.]
+[BLACK]???: [BLUE]So, [PLAYER], you've come[.]\nI should have expected this.\pYou do have a tendency to appear\nat pivotal moments[.]
 
 #org @gText_CarnelidgeVolcanoPeak_AlistairFacesPlayer
-[BLACK]Alistair: [BLUE]Perhaps you are surprised\nto see me, however?\pI, who detested Team Pluto so much,\nbenefitting from their research?\pPlease, allow me to explain.\pI'm certain you'll understand my\nsituation.
+[BLACK]Alistair: [BLUE]Perhaps you are surprised\nto see me, however?\pI, who detested Team Pluto so much,\nbenefitting from their research?\pPlease, allow me to explain.\pI'm certain you'll understand the\nposition I am in.
 
 #org @gText_CarnelidgeVolcanoPeak_AlistairExplainsMotivations1
-[BLACK]Alistair: [BLUE]When I was a child, I had\none small dream.\pTo become the Kulure region's finest\nChampion.\pNow, I'm sure I don't need to tell\nyou that it never happened[.]\pThe honours went to my good\n"friend,\" Selene.\pSupportive friends and family[.]\pNatural talent, both in connecting\nwith and battling with Pok\emon[.]\pAn unbreakable bond with the\nlegendary Victory Pok\emon, Victini[.]\pShe had it all[.] A true force of\nnature.\pHow could I compete?\nHow could any of us?\pPeople like me, why[.] Our dreams may\nas well have never existed.
+[BLACK]Alistair: [BLUE]When I was a child, I had\na dream.\pThat dream was to become the Kulure\nregion's finest Champion.\pNow, I'm sure I don't need to tell\nyou that I never achieved that[.]\pThe honours went to my good\n"friend,\" Selene.\pSupportive friends and family[.]\pNatural talent, both in connecting\nwith and battling with Pok\emon[.]\pAn unbreakable bond with the\nlegendary Victory Pok\emon, Victini[.]\pShe had it all[.] A true force of\nnature.\pHow could I compete?\nHow could any of us?\pPeople like me, why[.] Our dreams may\nas well have never existed.
 
 #org @gText_CarnelidgeVolcanoPeak_AlistairExplainsMotivations2
-[BLACK]Alistair: [BLUE]Those Team Pluto thugs\nare the same as me, in a way.\pLosers with nowhere to go.\nNo hope of achieving their goals.\pWhy should our dreams be any\nless valuable than others'?\pThe simple truth is that most who\ndare to dream will become broken.
+[BLACK]Alistair: [BLUE]Those Team Pluto thugs\nare the same as me, in a way.\pLosers with nowhere to go.\nNo hope of achieving their goals.\pWhy should our dreams be any\nless valuable than others'?\pThe simple truth is that most who\ndare to dream will fail.
 
 #org @gText_CarnelidgeVolcanoPeak_AlistairExplainsMotivations3
 [BLACK]Alistair: [BLUE]Are you starting\nto understand now, [PLAYER]?
@@ -143,7 +143,7 @@ The imposing Pok\emon left.\nWill it return later?
 [BLACK]Alistair: [BLUE]Do you understand now,\n[PLAYER]?\pUsing Jirachi's wishes, I can level\nthe playing field.\pEveryone will be equal. Everyone can\nachieve their dreams.\pAll I must do is write my wishes upon\nthe tags on Jirachi's head before\lit wakes.\pNow, [PLAYER], will you still oppose\nme, knowing my intentions?
 
 #org @gText_CarnelidgeVolcanoPeak_PlayerWillOpposeAlistair
-[BLACK]Alistair: [BLUE][.] Of course.\nI should not be surprised, really.\pYou are an accomplished trainer,\nmuch like Selene.\pIt's your very nature to oppose\nthose that cannot compete.\pThen, I am unfortunately left with no\nchoice.\pForgive me, [PLAYER], but I must\nensure my wishes are granted.
+[BLACK]Alistair: [BLUE][.] Of course.\nI should not be surprised, really.\pYou are an accomplished trainer,\nmuch like Selene.\pYou could never understand the\nposition the less fortunate are in.\pThen, I am unfortunately left with no\nchoice.\pForgive me, [PLAYER], but I must\nensure my wishes are granted.
 
 #org @gText_CarnelidgeVolcanoPeak_PlayerWillNotOpposeAlistair
 [BLACK]Alistair: [BLUE]I want to believe you,\n[PLAYER], but I find I cannot.\pYou, much like Selene, are an\naccomplished trainer.\pIt is your very nature to tower over\nthose that cannot compete against\lyou.\pAs such, I must take necessary\nprecations.\pYou see, my wishes must be granted,\nat any and all costs.
@@ -158,7 +158,7 @@ The imposing Pok\emon left.\nWill it return later?
 No[.] No! This can't be happening!
 
 #org @gText_CarnelidgeVolcanoPeak_RivalCannotHandleLoss
-[BLACK][RIVAL]: [BLUE]Ahhh! This can't be\nhappening[.]\pWhy can't you lose just for once?
+[BLACK][RIVAL]: [BLUE]Ahhh! This can't be\nhappening[.]\pWhy can't you just lose for once?
 
 #org @gText_CarnelidgeVolcanoPeak_AlistairCommentsOnRivalsLoss
 [BLACK]Alistair: [BLUE]It's fine, [RIVAL], Jirachi\nhas almost awoken.\pI'll keep [PLAYER] busy until then.
