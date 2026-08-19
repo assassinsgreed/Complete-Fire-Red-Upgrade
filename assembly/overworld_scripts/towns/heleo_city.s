@@ -430,6 +430,7 @@ TrainerHouseTier3Prizes:
 
 TrainerHouseCheckForGrandPrize:
     incrementgamestat 25
+    setflag 0x2A9 @ Heleo City Trainer House cleared
     checkflag 0x24F @ Got the bike
     if NOT_SET _call TrainerHouseGiveGrandPrize
     return

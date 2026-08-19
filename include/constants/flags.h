@@ -769,10 +769,12 @@
 #define FLAG_GOT_TEA                                     0x2A6
 #define FLAG_GOT_AURORA_TICKET                           0x2A7
 #define FLAG_GOT_MYSTIC_TICKET                           0x2A8
-#define FLAG_0x2A9                                       0x2A9
-#define FLAG_0x2AA                                       0x2AA
-#define FLAG_0x2AB                                       0x2AB
-#define FLAG_0x2AC                                       0x2AC
+*/
+#define FLAG_TRAINER_HOUSE_HELEO_CITY_CLEARED            0x2A9
+#define FLAG_TRAINER_HOUSE_EMRALDIN_QUAY_CLEARED         0x2AA
+#define FLAG_TRAINER_HOUSE_LAPLAZ_TOWN_CLEARED           0x2AB
+#define FLAG_TRAINER_HOUSE_UTEYA_VILLAGE_CLEARED         0x2AC
+/*
 #define FLAG_0x2AD                                       0x2AD
 #define FLAG_0x2AE                                       0x2AE
 #define FLAG_0x2AF                                       0x2AF

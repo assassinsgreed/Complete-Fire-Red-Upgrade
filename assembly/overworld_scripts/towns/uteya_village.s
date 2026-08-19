@@ -735,6 +735,7 @@ TrainerHouseTier3Prizes:
 
 TrainerHouseCheckForGrandPrize:
     incrementgamestat 25
+    setflag 0x2AC @ Uteya Village Trainer House cleared
     checkflag 0x277 @ Got the Pokechip charm
     if NOT_SET _call TrainerHouseGiveGrandPrize
     return

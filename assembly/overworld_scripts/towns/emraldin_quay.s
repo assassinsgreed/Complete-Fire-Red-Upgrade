@@ -281,6 +281,7 @@ TrainerHouseTier3Prizes:
 
 TrainerHouseCheckForGrandPrize:
     incrementgamestat 25
+    setflag 0x2AA @ Emraldin Quay Trainer House cleared
     checkflag 0x252 @ Got the item finder
     if NOT_SET _call TrainerHouseGiveGrandPrize
     return
