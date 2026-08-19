@@ -146,7 +146,7 @@ TeachSteelBeamQuestion:
     compare LASTRESULT NO
     if equal _goto ChoseNotToLearnSteelBeam
     msgbox gText_DaimynFactoryOverworld_OldManPlayerWantsTutoring MSG_NORMAL
-    setvar 0x8005 72 @ Steel Beam
+    setvar 0x8005 TUTOR_SPECIAL_STEEL_BEAM @ Steel Beam
     special 0x18D
     waitstate
     compare LASTRESULT YES

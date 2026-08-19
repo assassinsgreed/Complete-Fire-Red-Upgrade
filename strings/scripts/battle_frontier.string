@@ -1,3 +1,18 @@
+#org @gText_BattleFrontier_MoveTutor_Confirmation
+Welcome, welcome!\pI teach Pok\emon incredible moves in\nexchange for just 5 Pok\eChips.\pAre you interested?\n[BLACK](Held: [BUFFER1])
+
+#org @gText_BattleFrontier_MoveTutor_ConfirmationAccepted
+Great! What can I teach you?
+
+#org @gText_BattleFrontier_MoveTutor_Complete
+All done; your Pok\emon is a quick\nlearner!
+
+#org @gText_BattleFrontier_MoveTutor_Rejected
+No? Well that's a shame!
+
+#org @gText_BattleFrontier_MoveTutor_NotEnoughPokeChips
+Oh dear[.] You don't have enough\nPok\eChips for my tutelage!
+
 // Facility-agnostic strings to be shared by attendants in each facility, with var substitution:
 //   - FrontierChallenge_BufferFacilityInfo fills in [BUFFER1] with the facility name, [BUFFER2] with the format and [BUFFER3] with the current streak.
 //   - BufferNumMonsToEnter overwrites [BUFFER3] with the number of Pokemon to enter.

@@ -2922,6 +2922,12 @@ sign 3 48 0 SignScript_OlenicTown_HawthornesConservatory_FireAreaSign
 sign 3 49 0 SignScript_OlenicTown_HawthornesConservatory_WaterAreaSign
 
 # Battle Frontier
+map 3 17 MapScript_BattleFrontier
+npc 3 17 0 EventScript_BattleFrontier_SE_Tutor1
+npc 3 17 1 EventScript_BattleFrontier_SE_Tutor2
+npc 3 17 2 EventScript_BattleFrontier_SE_Tutor3
+npc 3 17 3 EventScript_BattleFrontier_SE_Tutor4
+
 # No map exists yet. To make the Battle Tower reachable, place an attendant NPC on
 # whichever map the facility ends up on and register it here as:
 #

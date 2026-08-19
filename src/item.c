@@ -569,7 +569,7 @@ bool8 CanMonLearnTutorMove(struct Pokemon* mon, u8 tutorId)
 		case TUTOR_SPECIAL_PAYDAY:
 			return gBaseStats[species].type1 == TYPE_NORMAL
 				|| gBaseStats[species].type2 == TYPE_NORMAL;
-		case TUTOR_SPECIAL_FIREFANG:
+		case TUTOR_SPECIAL_FLAMEBURST:
 		case TUTOR_SPECIAL_MYSTICALFIRE:
 		case TUTOR_SPECIAL_INCINERATE:
 			return gBaseStats[species].type1 == TYPE_FIRE
@@ -595,7 +595,7 @@ bool8 CanMonLearnTutorMove(struct Pokemon* mon, u8 tutorId)
 			return gBaseStats[species].type1 == TYPE_ICE
 				|| gBaseStats[species].type2 == TYPE_ICE;
 		case TUTOR_SPECIAL_KARATECHOP:
-		case TUTOR_SPECIAL_AURASPHERE:
+		case TUTOR_SPECIAL_VACUUMWAVE:
 		case TUTOR_SPECIAL_STORMTHROW:
 			return gBaseStats[species].type1 == TYPE_FIGHTING
 				|| gBaseStats[species].type2 == TYPE_FIGHTING;
@@ -610,7 +610,7 @@ bool8 CanMonLearnTutorMove(struct Pokemon* mon, u8 tutorId)
 			return gBaseStats[species].type1 == TYPE_GROUND
 				|| gBaseStats[species].type2 == TYPE_GROUND;
 		case TUTOR_SPECIAL_CHATTER:
-		case TUTOR_SPECIAL_DUALWINGBEAT:
+		case TUTOR_SPECIAL_PLUCK:
 		case TUTOR_SPECIAL_SKYDROP:
 			return gBaseStats[species].type1 == TYPE_FLYING
 				|| gBaseStats[species].type2 == TYPE_FLYING;
@@ -686,8 +686,8 @@ u16 GetExpandedTutorMove(u8 tutorId)
 			return MOVE_SECRETPOWER;
 		case TUTOR_SPECIAL_PAYDAY:
 			return MOVE_PAYDAY;
-		case TUTOR_SPECIAL_FIREFANG:
-			return MOVE_FIREFANG;
+		case TUTOR_SPECIAL_FLAMEBURST:
+			return MOVE_FLAMEBURST;
 		case TUTOR_SPECIAL_MYSTICALFIRE:
 			return MOVE_MYSTICALFIRE;
 		case TUTOR_SPECIAL_INCINERATE:
@@ -718,8 +718,8 @@ u16 GetExpandedTutorMove(u8 tutorId)
 			return MOVE_AURORABEAM;
 		case TUTOR_SPECIAL_KARATECHOP:
 			return MOVE_KARATECHOP;
-		case TUTOR_SPECIAL_AURASPHERE:
-			return MOVE_AURASPHERE;
+		case TUTOR_SPECIAL_VACUUMWAVE:
+			return MOVE_VACUUMWAVE;
 		case TUTOR_SPECIAL_STORMTHROW:
 			return MOVE_STORMTHROW;
 		case TUTOR_SPECIAL_SLUDGE:
@@ -736,8 +736,8 @@ u16 GetExpandedTutorMove(u8 tutorId)
 			return MOVE_MAGNITUDE;
 		case TUTOR_SPECIAL_CHATTER:
 			return MOVE_CHATTER;
-		case TUTOR_SPECIAL_DUALWINGBEAT:
-			return MOVE_DUALWINGBEAT;
+		case TUTOR_SPECIAL_PLUCK:
+			return MOVE_PLUCK;
 		case TUTOR_SPECIAL_SKYDROP:
 			return MOVE_SKYDROP;
 		case TUTOR_SPECIAL_HEALBLOCK:

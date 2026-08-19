@@ -1544,17 +1544,17 @@ EventScript_TsarvosaCity_GymTraineeCafe_Noam:
     end
 
 TutorNormal1:
-    setvar 0x8005 73
+    setvar 0x8005 TUTOR_SPECIAL_ASSIST
     bufferattack 0x2 MOVE_ASSIST
     goto TutorPokemon
 
 TutorNormal2:
-    setvar 0x8005 74
+    setvar 0x8005 TUTOR_SPECIAL_SECRETPOWER
     bufferattack 0x2 MOVE_SECRETPOWER
     goto TutorPokemon
 
 TutorNormal3:
-    setvar 0x8005 75
+    setvar 0x8005 TUTOR_SPECIAL_PAYDAY
     bufferattack 0x2 MOVE_PAYDAY
     goto TutorPokemon
 
@@ -1581,17 +1581,17 @@ EventScript_TsarvosaCity_GymTraineeCafe_Ashley:
     end
 
 TutorFire1:
-    setvar 0x8005 76
-    bufferattack 0x2 MOVE_FIREFANG
+    setvar 0x8005 TUTOR_SPECIAL_FLAMEBURST
+    bufferattack 0x2 MOVE_FLAMEBURST
     goto TutorPokemon
 
 TutorFire2:
-    setvar 0x8005 77
+    setvar 0x8005 TUTOR_SPECIAL_MYSTICALFIRE
     bufferattack 0x2 MOVE_MYSTICALFIRE
     goto TutorPokemon
 
 TutorFire3:
-    setvar 0x8005 78
+    setvar 0x8005 TUTOR_SPECIAL_INCINERATE
     bufferattack 0x2 MOVE_INCINERATE
     goto TutorPokemon
 
@@ -1618,17 +1618,17 @@ EventScript_TsarvosaCity_GymTraineeCafe_Chelsea:
     end
 
 TutorWater1:
-    setvar 0x8005 79
+    setvar 0x8005 TUTOR_SPECIAL_AQUARING
     bufferattack 0x2 MOVE_AQUARING
     goto TutorPokemon
 
 TutorWater2:
-    setvar 0x8005 80
+    setvar 0x8005 TUTOR_SPECIAL_BRINE
     bufferattack 0x2 MOVE_BRINE
     goto TutorPokemon
 
 TutorWater3:
-    setvar 0x8005 81
+    setvar 0x8005 TUTOR_SPECIAL_RAZORSHELL
     bufferattack 0x2 MOVE_RAZORSHELL
     goto TutorPokemon
 
@@ -1655,17 +1655,17 @@ EventScript_TsarvosaCity_GymTraineeCafe_Buddy:
     end
 
 TutorGrass1:
-    setvar 0x8005 85
+    setvar 0x8005 TUTOR_SPECIAL_COTTONSPORE
     bufferattack 0x2 MOVE_COTTONSPORE
     goto TutorPokemon
 
 TutorGrass2:
-    setvar 0x8005 86
+    setvar 0x8005 TUTOR_SPECIAL_FORESTSCURSE
     bufferattack 0x2 MOVE_FORESTSCURSE
     goto TutorPokemon
 
 TutorGrass3:
-    setvar 0x8005 87
+    setvar 0x8005 TUTOR_SPECIAL_MEGADRAIN
     bufferattack 0x2 MOVE_MEGADRAIN
     goto TutorPokemon
 
@@ -1692,17 +1692,17 @@ EventScript_TsarvosaCity_GymTraineeCafe_Gawain:
     end
 
 TutorFighting1:
-    setvar 0x8005 91
+    setvar 0x8005 TUTOR_SPECIAL_KARATECHOP
     bufferattack 0x2 MOVE_KARATECHOP
     goto TutorPokemon
 
 TutorFighting2:
-    setvar 0x8005 92
-    bufferattack 0x2 MOVE_AURASPHERE
+    setvar 0x8005 TUTOR_SPECIAL_VACUUMWAVE
+    bufferattack 0x2 MOVE_VACUUMWAVE
     goto TutorPokemon
 
 TutorFighting3:
-    setvar 0x8005 93
+    setvar 0x8005 TUTOR_SPECIAL_STORMTHROW
     bufferattack 0x2 MOVE_STORMTHROW
     goto TutorPokemon
 
@@ -1729,17 +1729,17 @@ EventScript_TsarvosaCity_GymTraineeCafe_Skylar:
     end
 
 TutorFlying1:
-    setvar 0x8005 100
+    setvar 0x8005 TUTOR_SPECIAL_CHATTER
     bufferattack 0x2 MOVE_CHATTER
     goto TutorPokemon
 
 TutorFlying2:
-    setvar 0x8005 101
-    bufferattack 0x2 MOVE_DUALWINGBEAT
+    setvar 0x8005 TUTOR_SPECIAL_PLUCK
+    bufferattack 0x2 MOVE_PLUCK
     goto TutorPokemon
 
 TutorFlying3:
-    setvar 0x8005 102
+    setvar 0x8005 TUTOR_SPECIAL_SKYDROP
     bufferattack 0x2 MOVE_SKYDROP
     goto TutorPokemon
 
@@ -1766,17 +1766,17 @@ EventScript_TsarvosaCity_GymTraineeCafe_Bella:
     end
 
 TutorPoison1:
-    setvar 0x8005 94
+    setvar 0x8005 TUTOR_SPECIAL_SLUDGE
     bufferattack 0x2 MOVE_SLUDGE
     goto TutorPokemon
 
 TutorPoison2:
-    setvar 0x8005 95
+    setvar 0x8005 TUTOR_SPECIAL_ACIDSPRAY
     bufferattack 0x2 MOVE_ACIDSPRAY
     goto TutorPokemon
 
 TutorPoison3:
-    setvar 0x8005 96
+    setvar 0x8005 TUTOR_SPECIAL_COIL
     bufferattack 0x2 MOVE_COIL
     goto TutorPokemon
 
@@ -1803,17 +1803,17 @@ EventScript_TsarvosaCity_GymTraineeCafe_Flash:
     end
 
 TutorElectric1:
-    setvar 0x8005 82
+    setvar 0x8005 TUTOR_SPECIAL_SPARK
     bufferattack 0x2 MOVE_SPARK
     goto TutorPokemon
 
 TutorElectric2:
-    setvar 0x8005 83
+    setvar 0x8005 TUTOR_SPECIAL_SHOCKWAVE
     bufferattack 0x2 MOVE_SHOCKWAVE
     goto TutorPokemon
 
 TutorElectric3:
-    setvar 0x8005 84
+    setvar 0x8005 TUTOR_SPECIAL_PARABOLICCHARGE
     bufferattack 0x2 MOVE_PARABOLICCHARGE
     goto TutorPokemon
 
@@ -1840,17 +1840,17 @@ EventScript_TsarvosaCity_GymTraineeCafe_Terra:
     end
 
 TutorGround1:
-    setvar 0x8005 97
+    setvar 0x8005 TUTOR_SPECIAL_MUDSHOT
     bufferattack 0x2 MOVE_MUDSHOT
     goto TutorPokemon
 
 TutorGround2:
-    setvar 0x8005 98
+    setvar 0x8005 TUTOR_SPECIAL_SPIKES
     bufferattack 0x2 MOVE_SPIKES
     goto TutorPokemon
 
 TutorGround3:
-    setvar 0x8005 99
+    setvar 0x8005 TUTOR_SPECIAL_MAGNITUDE
     bufferattack 0x2 MOVE_MAGNITUDE
     goto TutorPokemon
 
@@ -1877,17 +1877,17 @@ EventScript_TsarvosaCity_GymTraineeCafe_Seifa:
     end
 
 TutorPsychic1:
-    setvar 0x8005 103
+    setvar 0x8005 TUTOR_SPECIAL_HEALBLOCK
     bufferattack 0x2 MOVE_HEALBLOCK
     goto TutorPokemon
 
 TutorPsychic2:
-    setvar 0x8005 104
+    setvar 0x8005 TUTOR_SPECIAL_PSYWAVE
     bufferattack 0x2 MOVE_PSYWAVE
     goto TutorPokemon
 
 TutorPsychic3:
-    setvar 0x8005 105
+    setvar 0x8005 TUTOR_SPECIAL_MAGICPOWDER
     bufferattack 0x2 MOVE_MAGICPOWDER
     goto TutorPokemon
 
@@ -1914,17 +1914,17 @@ EventScript_TsarvosaCity_GymTraineeCafe_Rocco:
     end
 
 TutorRock1:
-    setvar 0x8005 109
+    setvar 0x8005 TUTOR_SPECIAL_ROLLOUT
     bufferattack 0x2 MOVE_ROLLOUT
     goto TutorPokemon
 
 TutorRock2:
-    setvar 0x8005 110
+    setvar 0x8005 TUTOR_SPECIAL_WIDEGUARD
     bufferattack 0x2 MOVE_WIDEGUARD
     goto TutorPokemon
 
 TutorRock3:
-    setvar 0x8005 111
+    setvar 0x8005 TUTOR_SPECIAL_ANCIENTPOWER
     bufferattack 0x2 MOVE_ANCIENTPOWER
     goto TutorPokemon
 
@@ -1952,17 +1952,17 @@ EventScript_TsarvosaCity_GymTraineeCafe_Janice:
     end
 
 TutorIce1:
-    setvar 0x8005 88
+    setvar 0x8005 TUTOR_SPECIAL_ICESHARD
     bufferattack 0x2 MOVE_ICESHARD
     goto TutorPokemon
 
 TutorIce2:
-    setvar 0x8005 89
+    setvar 0x8005 TUTOR_SPECIAL_FREEZEDRY
     bufferattack 0x2 MOVE_FREEZEDRY
     goto TutorPokemon
 
 TutorIce3:
-    setvar 0x8005 90
+    setvar 0x8005 TUTOR_SPECIAL_AURORABEAM
     bufferattack 0x2 MOVE_AURORABEAM
     goto TutorPokemon
 
@@ -1989,17 +1989,17 @@ EventScript_TsarvosaCity_GymTraineeCafe_Antoinette:
     end
 
 TutorBug1:
-    setvar 0x8005 106
+    setvar 0x8005 TUTOR_SPECIAL_FURYCUTTER
     bufferattack 0x2 MOVE_FURYCUTTER
     goto TutorPokemon
 
 TutorBug2:
-    setvar 0x8005 107
+    setvar 0x8005 TUTOR_SPECIAL_FELLSTINGER
     bufferattack 0x2 MOVE_FELLSTINGER
     goto TutorPokemon
 
 TutorBug3:
-    setvar 0x8005 108
+    setvar 0x8005 TUTOR_SPECIAL_RAGEPOWDER
     bufferattack 0x2 MOVE_RAGEPOWDER
     goto TutorPokemon
 
@@ -2026,17 +2026,17 @@ EventScript_TsarvosaCity_GymTraineeCafe_Ryu:
     end
 
 TutorDragon1:
-    setvar 0x8005 115
+    setvar 0x8005 TUTOR_SPECIAL_BREAKINGSWIPE
     bufferattack 0x2 MOVE_BREAKINGSWIPE
     goto TutorPokemon
 
 TutorDragon2:
-    setvar 0x8005 116
+    setvar 0x8005 TUTOR_SPECIAL_SCALESHOT
     bufferattack 0x2 MOVE_SCALESHOT
     goto TutorPokemon
 
 TutorDragon3:
-    setvar 0x8005 117
+    setvar 0x8005 TUTOR_SPECIAL_DRAGONRUSH
     bufferattack 0x2 MOVE_DRAGONRUSH
     goto TutorPokemon
 
@@ -2063,17 +2063,17 @@ EventScript_TsarvosaCity_GymTraineeCafe_Caspar:
     end
 
 TutorGhost1:
-    setvar 0x8005 112
+    setvar 0x8005 TUTOR_SPECIAL_DESTINYBOND
     bufferattack 0x2 MOVE_DESTINYBOND
     goto TutorPokemon
 
 TutorGhost2:
-    setvar 0x8005 113
+    setvar 0x8005 TUTOR_SPECIAL_SHADOWSNEAK
     bufferattack 0x2 MOVE_SHADOWSNEAK
     goto TutorPokemon
 
 TutorGhost3:
-    setvar 0x8005 114
+    setvar 0x8005 TUTOR_SPECIAL_GRUDGE
     bufferattack 0x2 MOVE_GRUDGE
     goto TutorPokemon
 
@@ -2100,17 +2100,17 @@ EventScript_TsarvosaCity_GymTraineeCafe_Darcy:
     end
 
 TutorDark1:
-    setvar 0x8005 118
+    setvar 0x8005 TUTOR_SPECIAL_FAKETEARS
     bufferattack 0x2 MOVE_FAKETEARS
     goto TutorPokemon
 
 TutorDark2:
-    setvar 0x8005 119
+    setvar 0x8005 TUTOR_SPECIAL_SUCKERPUNCH
     bufferattack 0x2 MOVE_SUCKERPUNCH
     goto TutorPokemon
 
 TutorDark3:
-    setvar 0x8005 120
+    setvar 0x8005 TUTOR_SPECIAL_PURSUIT
     bufferattack 0x2 MOVE_PURSUIT
     goto TutorPokemon
 
@@ -2137,17 +2137,17 @@ EventScript_TsarvosaCity_GymTraineeCafe_Mason:
     end
 
 TutorSteel1:
-    setvar 0x8005 121
+    setvar 0x8005 TUTOR_SPECIAL_AUTOMIZE
     bufferattack 0x2 MOVE_AUTOTOMIZE
     goto TutorPokemon
 
 TutorSteel2:
-    setvar 0x8005 122
+    setvar 0x8005 TUTOR_SPECIAL_METALBURST
     bufferattack 0x2 MOVE_METALBURST
     goto TutorPokemon
 
 TutorSteel3:
-    setvar 0x8005 123
+    setvar 0x8005 TUTOR_SPECIAL_HEAVYSLAM
     bufferattack 0x2 MOVE_HEAVYSLAM
     goto TutorPokemon
 
@@ -2174,17 +2174,17 @@ EventScript_TsarvosaCity_GymTraineeCafe_Faye:
     end
 
 TutorFairy1:
-    setvar 0x8005 124
+    setvar 0x8005 TUTOR_SPECIAL_CRAFTYSHIELD
     bufferattack 0x2 MOVE_CRAFTYSHIELD
     goto TutorPokemon
 
 TutorFairy2:
-    setvar 0x8005 125
+    setvar 0x8005 TUTOR_SPECIAL_DRAININGKISS
     bufferattack 0x2 MOVE_DRAININGKISS
     goto TutorPokemon
 
 TutorFairy3:
-    setvar 0x8005 126
+    setvar 0x8005 TUTOR_SPECIAL_SPIRITBREAK
     bufferattack 0x2 MOVE_SPIRITBREAK
     goto TutorPokemon
 

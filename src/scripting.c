@@ -3158,6 +3158,39 @@ extern const u8 gText_GunkShot[];
 extern const u8 gText_HeatWave[];
 extern const u8 gText_HyperVoice[];
 extern const u8 gText_Superpower[];
+// Battle Frontier
+extern const u8 gText_GigaDrain[];
+extern const u8 gText_CloseCombat[];
+extern const u8 gText_Avalanche[];
+extern const u8 gText_DragonDance[];
+extern const u8 gText_GrassyGlide[];
+extern const u8 gText_WeatherBall[];
+extern const u8 gText_BraveBird[];
+extern const u8 gText_ScorchingSands[];
+extern const u8 gText_BodyPress[];
+extern const u8 gText_Hurricane[];
+extern const u8 gText_PollenPuff[];
+extern const u8 gText_BatonPass[];
+extern const u8 gText_PsychicFangs[];
+extern const u8 gText_Defog[];
+extern const u8 gText_PlayRough[];
+extern const u8 gText_FireFang[];
+extern const u8 gText_ThunderFang[];
+extern const u8 gText_IceFang[];
+extern const u8 gText_PowerWhip[];
+extern const u8 gText_CosmicPower[];
+extern const u8 gText_StoredPower[];
+extern const u8 gText_DualWingbeat[];
+extern const u8 gText_BurningJealousy[];
+extern const u8 gText_CrossPoison[];
+extern const u8 gText_LeafBlade[];
+extern const u8 gText_PowerGem[];
+extern const u8 gText_DarkestLariat[];
+extern const u8 gText_Moonblast[];
+extern const u8 gText_AuraSphere[];
+extern const u8 gText_SkitterSmack[];
+extern const u8 gText_Poltergeist[];
+extern const u8 gText_HighHorsepower[];
 extern const u8 gText_End[];
 
 // Restaurant Options
@@ -3535,6 +3568,58 @@ static const u8* sTutorsTsarvosa[] =
 	gText_End,
 };
 
+static const u8* sTutorsBattleFrontier1[] =
+{
+	gText_GigaDrain,
+	gText_BatonPass,
+	gText_BodyPress,
+	gText_LeafBlade,
+	gText_PollenPuff,
+	gText_SkitterSmack,
+	gText_CrossPoison,
+	gText_WeatherBall,
+	gText_End,
+};
+
+static const u8* sTutorsBattleFrontier2[] =
+{
+	gText_PsychicFangs,
+	gText_FireFang,
+	gText_ThunderFang,
+	gText_IceFang,
+	gText_CosmicPower,
+	gText_StoredPower,
+	gText_DragonDance,
+	gText_Defog,
+	gText_End,
+};
+
+static const u8* sTutorsBattleFrontier3[] =
+{
+	gText_DarkestLariat,
+	gText_DualWingbeat,
+	gText_BurningJealousy,
+	gText_ScorchingSands,
+	gText_BraveBird,
+	gText_CloseCombat,
+	gText_Avalanche,
+	gText_AuraSphere,
+	gText_End,
+};
+
+static const u8* sTutorsBattleFrontier4[] =
+{
+	gText_GrassyGlide,
+	gText_PowerWhip,
+	gText_Hurricane,
+	gText_PlayRough,
+	gText_PowerGem,
+	gText_Moonblast,
+	gText_Poltergeist,
+	gText_HighHorsepower,
+	gText_End,
+};
+
 static const u8* sPokeChipCrusher[] =
 {
 	gText_PokeChipCrusher_MaxRevive,
@@ -3794,6 +3879,10 @@ const struct ScrollingMulti gScrollingSets[] =
 	{.set = sGameCustomizationCutscenes, .count = ARRAY_COUNT(sGameCustomizationCutscenes), .getHighlightedIndex = GetGameCustomizationCutscenes},
 	{.set = sGameCustomizationTutorials, .count = ARRAY_COUNT(sGameCustomizationTutorials), .getHighlightedIndex = GetGameCustomizationTutorials},
 	{.set = sGameCustomizationQoLItems, .count = ARRAY_COUNT(sGameCustomizationQoLItems), .getHighlightedIndex = GetGameCustomizationQoLItems},
+	{.set = sTutorsBattleFrontier1, .count = ARRAY_COUNT(sTutorsBattleFrontier1)},
+	{.set = sTutorsBattleFrontier2, .count = ARRAY_COUNT(sTutorsBattleFrontier2)},
+	{.set = sTutorsBattleFrontier3, .count = ARRAY_COUNT(sTutorsBattleFrontier3)},
+	{.set = sTutorsBattleFrontier4, .count = ARRAY_COUNT(sTutorsBattleFrontier4)},
 };
 
 //Link number of opts shown at once to the box height
@@ -4224,8 +4313,12 @@ bool8 AreAllItemsInRangeObtained(u16 startRange, u16 endRange)
 
 void ComputeCompletedGameModifierRequirements()
 {
-	// All Trainer Houses cleared (indicated by their grand prize flags) + became champion
-	if (FlagGet(0x24F) && FlagGet(0x26C) && FlagGet(0x252) && FlagGet(0x277) && FlagGet(FLAG_SYS_GAME_CLEAR))
+	// All Trainer Houses cleared + became champion. Cannot check trainer house rewards because these are given with NG QoL items.
+	if (FlagGet(FLAG_TRAINER_HOUSE_HELEO_CITY_CLEARED)
+	&&  FlagGet(FLAG_TRAINER_HOUSE_EMRALDIN_QUAY_CLEARED)
+	&&  FlagGet(FLAG_TRAINER_HOUSE_LAPLAZ_TOWN_CLEARED)
+	&&  FlagGet(FLAG_TRAINER_HOUSE_UTEYA_VILLAGE_CLEARED)
+	&&  FlagGet(FLAG_SYS_GAME_CLEAR))
 	{
 		FlagSet(FLAG_GAMEMODIFIER_INVERSEBATTLES_UNLOCKED);
 		FlagSet(FLAG_GAMEMODIFIER_CAMOMONBATTLES_UNLOCKED);
@@ -4245,30 +4338,33 @@ void ComputeCompletedGameModifierRequirements()
 		FlagSet(FLAG_GAMEMODIFIER_SHINIES_UNLOCKED);
 	}
 
-	// All legendaries caught
-	int species[15] = {
-		SPECIES_JIRACHI,
-		SPECIES_SHAYMIN,
-		SPECIES_KYOGRE,
-		SPECIES_GROUDON,
-		SPECIES_VOLCANION,
-		SPECIES_GLASTRIER,
-		SPECIES_MELTAN,
-		SPECIES_MELMETAL,
+	// All legendaries caught. Checks based on the current mode (standard or divergent)
+	bool8 divergent = FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS);
+
+	u16 legendaries[] = {
+		SPECIES_JIRACHI,  // Jirachi, Victini, Type: Null and Silvally are the same in both modes
 		SPECIES_VICTINI,
 		SPECIES_TYPE_NULL,
 		SPECIES_SILVALLY,
-		SPECIES_ZERAORA,
-		SPECIES_ARTICUNO_G,
-		SPECIES_ZAPDOS_G,
-		SPECIES_MOLTRES_G,
+		divergent ? SPECIES_XERNEAS    : SPECIES_SHAYMIN,
+		divergent ? SPECIES_LUGIA      : SPECIES_KYOGRE,
+		divergent ? SPECIES_HOOPA      : SPECIES_GROUDON,
+		divergent ? SPECIES_HEATRAN    : SPECIES_VOLCANION,
+		divergent ? SPECIES_SPECTRIER  : SPECIES_GLASTRIER,
+		divergent ? SPECIES_GENESECT   : SPECIES_MELTAN,
+		divergent ? SPECIES_ZARUDE     : SPECIES_ZERAORA,
+		divergent ? SPECIES_TORNADUS   : SPECIES_ARTICUNO_G,
+		divergent ? SPECIES_THUNDURUS  : SPECIES_ZAPDOS_G,
+		divergent ? SPECIES_LANDORUS   : SPECIES_MOLTRES_G,
+		// Genesect has no evolution, so Divergent mode fields Monty's Darkrai in Melmetal's place
+		divergent ? SPECIES_DARKRAI    : SPECIES_MELMETAL,
 		// UBs not in Kulure
 	};
 
 	bool8 areAllLegendariesCaught = TRUE;
-	for (int i = 0; i < 15; i++)
+	for (u32 i = 0; i < ARRAY_COUNT(legendaries); i++)
 	{
-		if (!GetSetPokedexFlag(SpeciesToNationalPokedexNum(species[i]), FLAG_GET_CAUGHT))
+		if (!GetSetPokedexFlag(SpeciesToNationalPokedexNum(legendaries[i]), FLAG_GET_CAUGHT))
 		{
 			areAllLegendariesCaught = FALSE;
 			break;
@@ -4325,6 +4421,7 @@ void ComputeCompletedGameModifierRequirements()
 	for (int i = 0; i < PARTY_SIZE; i++)
 	{
 		struct Pokemon* mon = &gPlayerParty[i];
+		u16 species = GetMonData(mon, MON_DATA_SPECIES, NULL);
 		u8 ivTotal = 
 			GetMonData(mon, MON_DATA_HP_IV, NULL) +
 			GetMonData(mon, MON_DATA_ATK_IV, NULL) +

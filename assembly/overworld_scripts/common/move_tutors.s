@@ -629,6 +629,310 @@ Superpower:
     call teachmove
     return
 
+.global EventScript_Tutors_BattleFrontier1
+EventScript_Tutors_BattleFrontier1:
+    setvar 0x8000 0x1D
+    setvar 0x8001 0x5
+    setvar 0x8004 0x0
+	special 0x158
+    waitstate
+    switch LASTRESULT
+	case 0, GigaDrain
+	case 1, BatonPass
+	case 2, BodyPress
+	case 3, LeafBlade
+    case 4, PollenPuff
+	case 5, SkitterSmack
+	case 6, CrossPoison
+	case 7, WeatherBall
+    case 8, cancelled
+    case 0x7F, cancelled @ When player hit B to close
+    return
+
+GigaDrain:
+    bufferattack 0x0 MOVE_GIGADRAIN
+    setvar 0x8005 64
+    setvar 0x4000 5
+    call teachmove
+    return
+
+BatonPass:
+    bufferattack 0x0 MOVE_BATONPASS
+    setvar 0x8005 75
+    setvar 0x4000 5
+    call teachmove
+    return
+
+BodyPress:
+    bufferattack 0x0 MOVE_BODYPRESS
+    setvar 0x8005 72
+    setvar 0x4000 5
+    call teachmove
+    return
+
+LeafBlade:
+    bufferattack 0x0 MOVE_LEAFBLADE
+    setvar 0x8005 88
+    setvar 0x4000 5
+    call teachmove
+    return
+
+PollenPuff:
+    bufferattack 0x0 MOVE_POLLENPUFF
+    setvar 0x8005 74
+    setvar 0x4000 5
+    call teachmove
+    return
+
+SkitterSmack:
+    bufferattack 0x0 MOVE_SKITTERSMACK
+    setvar 0x8005 93
+    setvar 0x4000 5
+    call teachmove
+    return
+
+CrossPoison:
+    bufferattack 0x0 MOVE_CROSSPOISON
+    setvar 0x8005 87
+    setvar 0x4000 5
+    call teachmove
+    return
+
+WeatherBall:
+    bufferattack 0x0 MOVE_WEATHERBALL
+    setvar 0x8005 69
+    setvar 0x4000 5
+    call teachmove
+    return
+
+.global EventScript_Tutors_BattleFrontier2
+EventScript_Tutors_BattleFrontier2:
+    setvar 0x8000 0x1E
+    setvar 0x8001 0x5
+    setvar 0x8004 0x0
+	special 0x158
+    waitstate
+    switch LASTRESULT
+	case 0, PsychicFangs
+	case 1, FireFang
+	case 2, ThunderFang
+	case 3, IceFang
+    case 4, CosmicPower
+	case 5, StoredPower
+	case 6, DragonDance
+	case 7, Defog
+    case 8, cancelled
+    case 0x7F, cancelled @ When player hit B to close
+    return
+
+PsychicFangs:
+    bufferattack 0x0 MOVE_PSYCHICFANGS
+    setvar 0x8005 76
+    setvar 0x4000 5
+    call teachmove
+    return
+
+FireFang:
+    bufferattack 0x0 MOVE_FIREFANG
+    setvar 0x8005 79
+    setvar 0x4000 5
+    call teachmove
+    return
+
+ThunderFang:
+    bufferattack 0x0 MOVE_THUNDERFANG
+    setvar 0x8005 80
+    setvar 0x4000 5
+    call teachmove
+    return
+
+IceFang:
+    bufferattack 0x0 MOVE_ICEFANG
+    setvar 0x8005 81
+    setvar 0x4000 5
+    call teachmove
+    return
+
+CosmicPower:
+    bufferattack 0x0 MOVE_COSMICPOWER
+    setvar 0x8005 83
+    setvar 0x4000 5
+    call teachmove
+    return
+
+StoredPower:
+    bufferattack 0x0 MOVE_STOREDPOWER
+    setvar 0x8005 84
+    setvar 0x4000 5
+    call teachmove
+    return
+
+DragonDance:
+    bufferattack 0x0 MOVE_DRAGONDANCE
+    setvar 0x8005 67
+    setvar 0x4000 5
+    call teachmove
+    return
+
+Defog:
+    bufferattack 0x0 MOVE_DEFOG
+    setvar 0x8005 77
+    setvar 0x4000 5
+    call teachmove
+    return
+
+.global EventScript_Tutors_BattleFrontier3
+EventScript_Tutors_BattleFrontier3:
+    setvar 0x8000 0x1F
+    setvar 0x8001 0x5
+    setvar 0x8004 0x0
+	special 0x158
+    waitstate
+    switch LASTRESULT
+	case 0, DarkestLariat
+	case 1, DualWingbeat
+	case 2, BurningJealousy
+	case 3, ScorchingSands
+    case 4, BraveBird
+	case 5, CloseCombat
+	case 6, Avalanche
+	case 7, AuraSphere
+    case 8, cancelled
+    case 0x7F, cancelled @ When player hit B to close
+    return
+
+DarkestLariat:
+    bufferattack 0x0 MOVE_DARKESTLARIAT
+    setvar 0x8005 90
+    setvar 0x4000 5
+    call teachmove
+    return
+
+DualWingbeat:
+    bufferattack 0x0 MOVE_DUALWINGBEAT
+    setvar 0x8005 85
+    setvar 0x4000 5
+    call teachmove
+    return
+
+BurningJealousy:
+    bufferattack 0x0 MOVE_BURNINGJEALOUSY
+    setvar 0x8005 86
+    setvar 0x4000 5
+    call teachmove
+    return
+
+ScorchingSands:
+    bufferattack 0x0 MOVE_SCORCHINGSANDS
+    setvar 0x8005 71
+    setvar 0x4000 5
+    call teachmove
+    return
+
+BraveBird:
+    bufferattack 0x0 MOVE_BRAVEBIRD
+    setvar 0x8005 70
+    setvar 0x4000 5
+    call teachmove
+    return
+
+CloseCombat:
+    bufferattack 0x0 MOVE_CLOSECOMBAT
+    setvar 0x8005 65
+    setvar 0x4000 5
+    call teachmove
+    return
+
+Avalanche:
+    bufferattack 0x0 MOVE_AVALANCHE
+    setvar 0x8005 66
+    setvar 0x4000 5
+    call teachmove
+    return
+
+AuraSphere:
+    bufferattack 0x0 MOVE_AURASPHERE
+    setvar 0x8005 92
+    setvar 0x4000 5
+    call teachmove
+    return
+
+.global EventScript_Tutors_BattleFrontier4
+EventScript_Tutors_BattleFrontier4:
+    setvar 0x8000 0x20
+    setvar 0x8001 0x5
+    setvar 0x8004 0x0
+	special 0x158
+    waitstate
+    switch LASTRESULT
+	case 0, GrassyGlide
+	case 1, PowerWhip
+	case 2, Hurricane
+	case 3, PlayRough
+    case 4, PowerGem
+	case 5, Moonblast
+	case 6, Poltergeist
+	case 7, HighHorsepower
+    case 8, cancelled
+    case 0x7F, cancelled @ When player hit B to close
+    return
+
+GrassyGlide:
+    bufferattack 0x0 MOVE_GRASSYGLIDE
+    setvar 0x8005 68
+    setvar 0x4000 5
+    call teachmove
+    return
+
+PowerWhip:
+    bufferattack 0x0 MOVE_POWERWHIP
+    setvar 0x8005 82
+    setvar 0x4000 5
+    call teachmove
+    return
+
+Hurricane:
+    bufferattack 0x0 MOVE_HURRICANE
+    setvar 0x8005 73
+    setvar 0x4000 5
+    call teachmove
+    return
+
+PlayRough:
+    bufferattack 0x0 MOVE_PLAYROUGH
+    setvar 0x8005 78
+    setvar 0x4000 5
+    call teachmove
+    return
+
+PowerGem:
+    bufferattack 0x0 MOVE_POWERGEM
+    setvar 0x8005 89
+    setvar 0x4000 5
+    call teachmove
+    return
+
+Moonblast:
+    bufferattack 0x0 MOVE_MOONBLAST
+    setvar 0x8005 91
+    setvar 0x4000 5
+    call teachmove
+    return
+
+Poltergeist:
+    bufferattack 0x0 MOVE_POLTERGEIST
+    setvar 0x8005 94
+    setvar 0x4000 5
+    call teachmove
+    return
+
+HighHorsepower:
+    bufferattack 0x0 MOVE_HIGHHORSEPOWER
+    setvar 0x8005 95
+    setvar 0x4000 5
+    call teachmove
+    return
+
 // Common
 teachmove:
     msgbox gText_Tutors_ChoosePokemon MSG_NORMAL

@@ -592,7 +592,7 @@
 ## Fix Ghost Battle String
 083FD35B FD 06 AB FB FE FF
 
-##Increase Tutors to 72 (64 Regular + 8 Special)
+##Increase Tutors to 159 (96 Regular + 63 Special)
 0811F456 LAST_TOTAL_TUTOR_NUM
 08127824 LAST_TOTAL_TUTOR_NUM
 

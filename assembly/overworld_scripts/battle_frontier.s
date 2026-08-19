@@ -5,8 +5,75 @@
 .include "../xse_defines.s"
 .include "../asm_defines.s"
 
+.global MapScript_BattleFrontier
+MapScript_BattleFrontier:
+    mapscript MAP_SCRIPT_ON_TRANSITION MapEntryScript_BattleFrontier_FlightSpot
+    .byte MAP_SCRIPT_TERMIN
+
+MapEntryScript_BattleFrontier_FlightSpot:
+    setworldmapflag 0x8B3 @ Visited the Battle Frontier
+    end
+
+.global EventScript_BattleFrontier_SE_Tutor1
+EventScript_BattleFrontier_SE_Tutor1:
+    call TutorIntro
+    call EventScript_Tutors_BattleFrontier1
+    compare LASTRESULT TRUE
+    if equal _goto TutoringComplete
+    end
+
+.global EventScript_BattleFrontier_SE_Tutor2
+EventScript_BattleFrontier_SE_Tutor2:
+    call TutorIntro
+    call EventScript_Tutors_BattleFrontier2
+    compare LASTRESULT TRUE
+    if equal _goto TutoringComplete
+    end
+
+.global EventScript_BattleFrontier_SE_Tutor3
+EventScript_BattleFrontier_SE_Tutor3:
+    call TutorIntro
+    call EventScript_Tutors_BattleFrontier3
+    compare LASTRESULT TRUE
+    if equal _goto TutoringComplete
+    end
+
+.global EventScript_BattleFrontier_SE_Tutor4
+EventScript_BattleFrontier_SE_Tutor4:
+    call TutorIntro
+    call EventScript_Tutors_BattleFrontier4
+    compare LASTRESULT TRUE
+    if equal _goto TutoringComplete
+    end
+
+TutorIntro:
+    lock
+    faceplayer
+    callasm StorePokeChipCount
+    buffernumber 0x0 0x8005 @ Take stored PokeChip count
+    msgbox gText_BattleFrontier_MoveTutor_Confirmation MSG_YESNO
+    compare LASTRESULT YES
+    IF FALSE _goto TutoringRejected
+    checkitem ITEM_POKE_CHIP 5
+    compare LASTRESULT TRUE
+    if FALSE _goto NotEnoughPokeChips
+    msgbox gText_BattleFrontier_MoveTutor_ConfirmationAccepted MSG_KEEPOPEN
+    return
+
+TutoringComplete:
+    msgbox gText_BattleFrontier_MoveTutor_Complete MSG_NORMAL
+    return
+
+TutoringRejected:
+    npcchatwithmovement gText_BattleFrontier_MoveTutor_Rejected m_LookDown
+    goto End
+
+NotEnoughPokeChips:
+    npcchatwithmovement gText_BattleFrontier_MoveTutor_NotEnoughPokeChips m_LookDown
+    goto End
+
 @ ============================================================================
-@ Battle Frontier
+@ Battle Frontier Facility scripts
 @
 @ One shared attendant script drives every facility. A facility is identified only by
 @ VAR_BATTLE_FACILITY_NUM, so the format choice, party entry, battle loop,
