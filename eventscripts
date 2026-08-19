@@ -2339,6 +2339,7 @@ npc 1 74 6 EventScript_CarnelidgeVolcano_DragonTamerFlynn
 npc 1 74 7 EventScript_CarnelidgeVolcano_TM38_FireBlast
 npc 1 74 8 ItemScript_Common_FullRestore
 npc 1 74 9 ItemScript_Common_FireGem
+npc 1 74 10 EventScript_CarnelidgeVolcano_MagmaStone
 ## Interior, F1
 map 1 43 MapScript_CarnelidgeVolcano
 npc 1 43 0 EventScript_Common_RockSmash

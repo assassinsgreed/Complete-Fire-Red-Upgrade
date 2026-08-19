@@ -941,11 +941,12 @@ static u8 GetEggStepsToSubtract(void)
 		}
 	}
 
+	if (CheckBagHasItem(ITEM_MAGMA_STONE, 1))
+		steps += 1;
+
 	#ifdef UNBOUND
 	if (FlagGet(FLAG_SANDBOX_MODE))
 		steps = 100; //Basically insta-hatch
-	else if (CheckBagHasItem(ITEM_MAGMA_STONE, 1))
-		steps += 1;
 	#endif
 
 	return steps;

@@ -998,7 +998,7 @@
 */
 #define FLAG_HIDE_ROUTE8_SWAMPERTITE                     0x379
 /*
-#define FLAG_0x37A               0x37A
+#define FLAG_HIDE_CARNELIDGE_VOLCANO_MAGMA_STONE         0x37A
 #define FLAG_0x37B               0x37B
 #define FLAG_0x37C               0x37C
 #define FLAG_0x37D               0x37D
