@@ -20998,7 +20998,7 @@ const struct BattleTowerSpread gLegendaryTowerSpread[] =
 		.defEv = 252,
 		.spAtkEv = 248,
 		.ability = FRONTIER_ABILITY_1, //ABILITY_TURBOBLAZE
-		.item = ITEM_RED_CARD,
+		.item = ITEM_EJECT_PACK,
 		.moves =
 		{
 			MOVE_DRACOMETEOR,

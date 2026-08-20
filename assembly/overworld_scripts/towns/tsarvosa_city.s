@@ -2730,7 +2730,7 @@ EvolutionItemsShop:
 EvolutionItemsShopDivergent:
     .hword ITEM_LINK_STONE
     .hword ITEM_KINGS_ROCK
-    .hword ITEM_RAZOR_CLAW
+    .hword ITEM_RAZOR_FANG
     .hword ITEM_MAGMARIZER
     .hword ITEM_ELECTIRIZER
     .hword ITEM_PROTECTOR
@@ -2773,10 +2773,12 @@ RocksShop:
 HeldItemsShop1:
     .hword ITEM_ROCKY_HELMET
     .hword ITEM_RED_CARD
+    .hword ITEM_EJECT_PACK
     .hword ITEM_AIR_BALLOON
     .hword ITEM_CELL_BATTERY
     .hword ITEM_ABSORB_BULB
     .hword ITEM_SNOWBALL
+    .hword ITEM_EXPERT_BELT
     .hword ITEM_NONE
 
 .align 1
@@ -2787,6 +2789,7 @@ HeldItemsShop2:
     .hword ITEM_WIDE_LENS
     .hword ITEM_QUICK_CLAW
     .hword ITEM_THROAT_SPRAY
+    .hword ITEM_PROTECTIVE_PADS
     .hword ITEM_NONE
 
 .align 1
@@ -2796,6 +2799,9 @@ HeldItemsShop3:
     .hword ITEM_BRIGHT_POWDER
     .hword ITEM_TOXIC_ORB
     .hword ITEM_FLAME_ORB
+    .hword ITEM_RING_TARGET
+    .hword ITEM_ADRENALINE_ORB
+    .hword ITEM_ROOM_SERVICE
     .hword ITEM_NONE
 
 .align 1
@@ -2805,6 +2811,7 @@ HeldItemsShop4:
     .hword ITEM_LAGGING_TAIL
     .hword ITEM_SHED_SHELL
     .hword ITEM_HEAVY_DUTY_BOOTS
+    .hword ITEM_FLOAT_STONE
     .hword ITEM_NONE
 
 .global EventScript_TsarvosaCity_Gym_LeaderIris

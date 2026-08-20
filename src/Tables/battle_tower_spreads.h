@@ -7652,7 +7652,7 @@ const struct BattleTowerSpread gFrontierSpreads[] =
 		.defEv = 4,
 		.spdEv = 252,
 		.ability = FRONTIER_ABILITY_1, //ABILITY_SWIFTSWIM
-		.item = ITEM_SITRUS_BERRY,
+		.item = ITEM_EJECT_PACK,
 		.moves =
 		{
 			MOVE_STONEEDGE,
@@ -8333,7 +8333,7 @@ const struct BattleTowerSpread gFrontierSpreads[] =
 		.spDefEv = 4,
 		.spdEv = 252,
 		.ability = FRONTIER_ABILITY_HIDDEN, //ABILITY_MULTISCALE
-		.item = ITEM_WEAKNESS_POLICY,
+		.item = ITEM_BLUNDER_POLICY,
 		.moves =
 		{
 			MOVE_DRAGONRUSH,
@@ -13408,7 +13408,7 @@ const struct BattleTowerSpread gFrontierSpreads[] =
 		.spDefEv = 20,
 		.spdEv = 4,
 		.ability = FRONTIER_ABILITY_1, //ABILITY_INTIMIDATE
-		.item = ITEM_RED_CARD,
+		.item = ITEM_EJECT_PACK,
 		.moves =
 		{
 			MOVE_CLOSECOMBAT,
@@ -15384,7 +15384,7 @@ const struct BattleTowerSpread gFrontierSpreads[] =
 		.spDefEv = 4,
 		.spdEv = 252,
 		.ability = FRONTIER_ABILITY_HIDDEN, //ABILITY_TECHNICIAN
-		.item = ITEM_RED_CARD,
+		.item = ITEM_EJECT_PACK,
 		.moves =
 		{
 			MOVE_BULLETSEED,
@@ -21451,7 +21451,7 @@ const struct BattleTowerSpread gFrontierSpreads[] =
 		.defEv = 4,
 		.spdEv = 252,
 		.ability = FRONTIER_ABILITY_HIDDEN, //ABILITY_IRONFIST
-		.item = ITEM_RED_CARD,
+		.item = ITEM_EJECT_PACK,
 		.moves =
 		{
 			MOVE_CLOSECOMBAT,
@@ -21659,7 +21659,7 @@ const struct BattleTowerSpread gFrontierSpreads[] =
 		.atkEv = 68,
 		.spdEv = 188,
 		.ability = FRONTIER_ABILITY_1, //ABILITY_INTIMIDATE
-		.item = ITEM_RED_CARD,
+		.item = ITEM_EJECT_PACK,
 		.moves =
 		{
 			MOVE_BRAVEBIRD,
@@ -23521,7 +23521,7 @@ const struct BattleTowerSpread gFrontierSpreads[] =
 		.defEv = 4,
 		.spdEv = 252,
 		.ability = FRONTIER_ABILITY_HIDDEN, //ABILITY_DEFIANT
-		.item = ITEM_WEAKNESS_POLICY,
+		.item = ITEM_BLUNDER_POLICY,
 		.moves =
 		{
 			MOVE_STOMPINGTANTRUM,
@@ -25482,7 +25482,7 @@ const struct BattleTowerSpread gFrontierSpreads[] =
 		.spAtkEv = 252,
 		.spdEv = 252,
 		.ability = FRONTIER_ABILITY_1, //ABILITY_MOTORDRIVE
-		.item = ITEM_WEAKNESS_POLICY,
+		.item = ITEM_BLUNDER_POLICY,
 		.moves =
 		{
 			MOVE_THUNDER,
@@ -29617,7 +29617,7 @@ const struct BattleTowerSpread gFrontierSpreads[] =
 		.defEv = 4,
 		.spdEv = 252,
 		.ability = FRONTIER_ABILITY_2, //ABILITY_INNERFOCUS
-		.item = ITEM_RED_CARD,
+		.item = ITEM_EJECT_PACK,
 		.moves =
 		{
 			MOVE_CLOSECOMBAT,
@@ -33178,7 +33178,7 @@ const struct BattleTowerSpread gFrontierSpreads[] =
 		.spDefEv = 4,
 		.spdEv = 252,
 		.ability = FRONTIER_ABILITY_1, //ABILITY_FLASHFIRE
-		.item = ITEM_RED_CARD,
+		.item = ITEM_EJECT_PACK,
 		.moves =
 		{
 			MOVE_OVERHEAT,
@@ -34794,7 +34794,7 @@ const struct BattleTowerSpread gFrontierSpreads[] =
 		.spAtkEv = 252,
 		.spdEv = 252,
 		.ability = FRONTIER_ABILITY_1, //ABILITY_LEVITATE
-		.item = ITEM_RED_CARD,
+		.item = ITEM_EJECT_PACK,
 		.moves =
 		{
 			MOVE_DRACOMETEOR,
@@ -34975,7 +34975,7 @@ const struct BattleTowerSpread gFrontierSpreads[] =
 		.spDefEv = 4,
 		.spdEv = 252,
 		.ability = FRONTIER_ABILITY_1, //ABILITY_JUSTIFIED
-		.item = ITEM_RED_CARD,
+		.item = ITEM_EJECT_PACK,
 		.moves =
 		{
 			MOVE_IRONHEAD,
@@ -39420,7 +39420,7 @@ const struct BattleTowerSpread gFrontierSpreads[] =
 		.spDefEv = 116,
 		.spdEv = 12,
 		.ability = FRONTIER_ABILITY_HIDDEN, //ABILITY_INTIMIDATE
-		.item = ITEM_RED_CARD,
+		.item = ITEM_EJECT_PACK,
 		.moves =
 		{
 			MOVE_FLAREBLITZ,
@@ -39808,7 +39808,7 @@ const struct BattleTowerSpread gFrontierSpreads[] =
 		.spAtkEv = 252,
 		.spdEv = 252,
 		.ability = FRONTIER_ABILITY_1, //ABILITY_LEVITATE
-		.item = ITEM_WEAKNESS_POLICY,
+		.item = ITEM_BLUNDER_POLICY,
 		.moves =
 		{
 			MOVE_ZAPCANNON,
@@ -40521,7 +40521,7 @@ const struct BattleTowerSpread gFrontierSpreads[] =
 		.defEv = 128,
 		.spDefEv = 128,
 		.ability = FRONTIER_ABILITY_HIDDEN, //ABILITY_REGENERATOR
-		.item = ITEM_RED_CARD,
+		.item = ITEM_EJECT_PACK,
 		.moves =
 		{
 			MOVE_TOXIC,
@@ -42313,7 +42313,7 @@ const struct BattleTowerSpread gFrontierSpreads[] =
 		.spAtkEv = 252,
 		.spDefEv = 252,
 		.ability = FRONTIER_ABILITY_1, //ABILITY_SHELLARMOR
-		.item = ITEM_RED_CARD,
+		.item = ITEM_EJECT_PACK,
 		.moves =
 		{
 			MOVE_HEATWAVE,
@@ -42624,7 +42624,7 @@ const struct BattleTowerSpread gFrontierSpreads[] =
 		.atkEv = 252,
 		.spdEv = 252,
 		.ability = FRONTIER_ABILITY_1, //ABILITY_DAZZLING
-		.item = ITEM_RED_CARD,
+		.item = ITEM_EJECT_PACK,
 		.moves =
 		{
 			MOVE_WATERFALL,
@@ -44237,7 +44237,7 @@ const struct BattleTowerSpread gFrontierSpreads[] =
 		.spDefEv = 4,
 		.spdEv = 252,
 		.ability = FRONTIER_ABILITY_1, //ABILITY_BEASTBOOST
-		.item = ITEM_RED_CARD,
+		.item = ITEM_EJECT_PACK,
 		.moves =
 		{
 			MOVE_DRACOMETEOR,
@@ -44445,7 +44445,7 @@ const struct BattleTowerSpread gFrontierSpreads[] =
 		.spAtkEv = 252,
 		.spdEv = 252,
 		.ability = FRONTIER_ABILITY_1, //ABILITY_BEASTBOOST
-		.item = ITEM_RED_CARD,
+		.item = ITEM_EJECT_PACK,
 		.moves =
 		{
 			MOVE_OVERHEAT,
@@ -48899,7 +48899,7 @@ const struct BattleTowerSpread gFrontierSpreads[] =
 		.atkEv = 252,
 		.spdEv = 252,
 		.ability = FRONTIER_ABILITY_2, //ABILITY_HUSTLE
-		.item = ITEM_WEAKNESS_POLICY,
+		.item = ITEM_BLUNDER_POLICY,
 		.moves =
 		{
 			MOVE_BOLTBEAK,
@@ -48977,7 +48977,7 @@ const struct BattleTowerSpread gFrontierSpreads[] =
 		.atkEv = 252,
 		.spdEv = 252,
 		.ability = FRONTIER_ABILITY_2, //ABILITY_HUSTLE
-		.item = ITEM_WEAKNESS_POLICY,
+		.item = ITEM_BLUNDER_POLICY,
 		.moves =
 		{
 			MOVE_BOLTBEAK,
@@ -49159,7 +49159,7 @@ const struct BattleTowerSpread gFrontierSpreads[] =
 		.atkEv = 252,
 		.spdEv = 252,
 		.ability = FRONTIER_ABILITY_2, //ABILITY_STRONGJAW
-		.item = ITEM_WEAKNESS_POLICY,
+		.item = ITEM_BLUNDER_POLICY,
 		.moves =
 		{
 			MOVE_FISHIOUSREND,
@@ -49368,7 +49368,7 @@ const struct BattleTowerSpread gFrontierSpreads[] =
 		.spAtkEv = 252,
 		.spdEv = 176,
 		.ability = FRONTIER_ABILITY_1, //ABILITY_LIGHTMETAL
-		.item = ITEM_WEAKNESS_POLICY,
+		.item = ITEM_BLUNDER_POLICY,
 		.moves =
 		{
 			MOVE_DRACOMETEOR,
@@ -53820,7 +53820,7 @@ const struct BattleTowerSpread gFrontierLegendarySpreads[] =
 		.spAtkEv = 252,
 		.spdEv = 252,
 		.ability = FRONTIER_ABILITY_1, //ABILITY_TURBOBLAZE
-		.item = ITEM_RED_CARD,
+		.item = ITEM_EJECT_PACK,
 		.moves =
 		{
 			MOVE_HEATWAVE,
@@ -54003,7 +54003,7 @@ const struct BattleTowerSpread gFrontierLegendarySpreads[] =
 		.spDefEv = 4,
 		.spdEv = 252,
 		.ability = FRONTIER_ABILITY_1, //ABILITY_PRESSURE
-		.item = ITEM_RED_CARD,
+		.item = ITEM_EJECT_PACK,
 		.moves =
 		{
 			MOVE_DRACOMETEOR,
@@ -54626,7 +54626,7 @@ const struct BattleTowerSpread gFrontierLegendarySpreads[] =
 		.defEv = 4,
 		.spdEv = 252,
 		.ability = FRONTIER_ABILITY_1, //ABILITY_FAIRYAURA
-		.item = ITEM_RED_CARD,
+		.item = ITEM_EJECT_PACK,
 		.moves =
 		{
 			MOVE_RETURN,
@@ -55406,7 +55406,7 @@ const struct BattleTowerSpread gFrontierLegendarySpreads[] =
 		.spAtkEv = 4,
 		.spdEv = 252,
 		.ability = FRONTIER_ABILITY_1, //ABILITY_MAGICIAN
-		.item = ITEM_RED_CARD,
+		.item = ITEM_EJECT_PACK,
 		.moves =
 		{
 			MOVE_HYPERSPACEHOLE,
@@ -56554,7 +56554,7 @@ const struct BattleTowerSpread gFrontierLegendarySpreads[] =
 		.atkEv = 252,
 		.spdEv = 252,
 		.ability = FRONTIER_ABILITY_1, //ABILITY_VOLTABSORB
-		.item = ITEM_RED_CARD,
+		.item = ITEM_EJECT_PACK,
 		.moves =
 		{
 			MOVE_PLASMAFISTS,
@@ -62064,7 +62064,7 @@ const struct BattleTowerSpread gMiddleCupSpreads[] =
 		.spDefEv = 4,
 		.spdEv = 252,
 		.ability = FRONTIER_ABILITY_1, //ABILITY_RIVALRY
-		.item = ITEM_RED_CARD,
+		.item = ITEM_EJECT_PACK,
 		.moves =
 		{
 			MOVE_DRAGONCLAW,
@@ -62662,7 +62662,7 @@ const struct BattleTowerSpread gMiddleCupSpreads[] =
 		.spAtkEv = 252,
 		.spdEv = 164,
 		.ability = FRONTIER_ABILITY_1, //ABILITY_SAPSIPPER
-		.item = ITEM_RED_CARD,
+		.item = ITEM_EJECT_PACK,
 		.moves =
 		{
 			MOVE_DRACOMETEOR,
@@ -62792,7 +62792,7 @@ const struct BattleTowerSpread gMiddleCupSpreads[] =
 		.spAtkEv = 4,
 		.spdEv = 252,
 		.ability = FRONTIER_ABILITY_HIDDEN, //ABILITY_INTIMIDATE
-		.item = ITEM_RED_CARD,
+		.item = ITEM_EJECT_PACK,
 		.moves =
 		{
 			MOVE_OVERHEAT,
@@ -63027,7 +63027,7 @@ const struct BattleTowerSpread gMiddleCupSpreads[] =
 		.atkEv = 252,
 		.spAtkEv = 4,
 		.ability = FRONTIER_ABILITY_HIDDEN, //ABILITY_OVERCOAT
-		.item = ITEM_RED_CARD,
+		.item = ITEM_EJECT_PACK,
 		.moves =
 		{
 			MOVE_CLANGINGSCALES,
