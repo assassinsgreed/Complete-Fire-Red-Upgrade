@@ -158,6 +158,10 @@ UteyaVillagePokemart_StatBoostingBerryStock:
     .hword ITEM_STARF_BERRY   // Random stat, when below 1/4 hp
     .hword ITEM_KEE_BERRY     // Defense, when hit by a physical move
     .hword ITEM_MARANGA_BERRY // Sp. Defense, when hit by a special move
+    .hword ITEM_MICLE_BERRY   // Accuracy increased by 1.2x when consumed below 1/4 hp
+    .hword ITEM_CUSTAP_BERRY  // Holder goes first when consumed below 1/4 hp
+    .hword ITEM_JABOCA_BERRY  // Taking physical damage harms opponent
+    .hword ITEM_ROWAP_BERRY   // Taking special damage harms opponent
     .hword ITEM_NONE
 
 .global EventScript_UteyaVillage_Pokemart_Girl
