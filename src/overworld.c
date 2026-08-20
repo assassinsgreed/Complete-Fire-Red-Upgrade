@@ -923,6 +923,9 @@ const u8* BattleSetup_ConfigureTrainerBattle(const u8* data)
 			else //Regular trainer battle 9
 			#endif
 			{
+				// Ensure Oak's tutorial is disabled, if "Continue Lost Battles" was enabled
+				sTrainerBattleOakTutorialHelper = 0;
+
 				TrainerBattleLoadArgs(sContinueLostBattleParams, data);
 				gTrainerBattleOpponent_A = VarGet(gTrainerBattleOpponent_A); //Allow dynamic loading
 				if (FlagGet(FLAG_TWO_OPPONENTS))

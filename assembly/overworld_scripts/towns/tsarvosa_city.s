@@ -1496,6 +1496,7 @@ MapEntryScript_GymTraineeCafe_RotateTrainers:
     copyvar TraineeMoveChoice LASTRESULT
     callasm InitializeGymTraineesCafe
     setflag 0xE1F @ Trainees have been rotated today
+End:
     end
 
 LevelScripts_GymTraineeCafe_AttendantCutscene:
@@ -1541,7 +1542,7 @@ EventScript_TsarvosaCity_GymTraineeCafe_Noam:
     case 0, TutorNormal1
     case 1, TutorNormal2
     case 2, TutorNormal3
-    end
+    goto EndTraineeChat
 
 TutorNormal1:
     setvar 0x8005 TUTOR_SPECIAL_ASSIST
@@ -1578,7 +1579,7 @@ EventScript_TsarvosaCity_GymTraineeCafe_Ashley:
     case 0, TutorFire1
     case 1, TutorFire2
     case 2, TutorFire3
-    end
+    goto EndTraineeChat
 
 TutorFire1:
     setvar 0x8005 TUTOR_SPECIAL_FLAMEBURST
@@ -1615,7 +1616,7 @@ EventScript_TsarvosaCity_GymTraineeCafe_Chelsea:
     case 0, TutorWater1
     case 1, TutorWater2
     case 2, TutorWater3
-    end
+    goto EndTraineeChat
 
 TutorWater1:
     setvar 0x8005 TUTOR_SPECIAL_AQUARING
@@ -1652,7 +1653,7 @@ EventScript_TsarvosaCity_GymTraineeCafe_Buddy:
     case 0, TutorGrass1
     case 1, TutorGrass2
     case 2, TutorGrass3
-    end
+    goto EndTraineeChat
 
 TutorGrass1:
     setvar 0x8005 TUTOR_SPECIAL_COTTONSPORE
@@ -1689,7 +1690,7 @@ EventScript_TsarvosaCity_GymTraineeCafe_Gawain:
     case 0, TutorFighting1
     case 1, TutorFighting2
     case 2, TutorFighting3
-    end
+    goto EndTraineeChat
 
 TutorFighting1:
     setvar 0x8005 TUTOR_SPECIAL_KARATECHOP
@@ -1726,7 +1727,7 @@ EventScript_TsarvosaCity_GymTraineeCafe_Skylar:
     case 0, TutorFlying1
     case 1, TutorFlying2
     case 2, TutorFlying3
-    end
+    goto EndTraineeChat
 
 TutorFlying1:
     setvar 0x8005 TUTOR_SPECIAL_CHATTER
@@ -1763,7 +1764,7 @@ EventScript_TsarvosaCity_GymTraineeCafe_Bella:
     case 0, TutorPoison1
     case 1, TutorPoison2
     case 2, TutorPoison3
-    end
+    goto EndTraineeChat
 
 TutorPoison1:
     setvar 0x8005 TUTOR_SPECIAL_SLUDGE
@@ -1800,7 +1801,7 @@ EventScript_TsarvosaCity_GymTraineeCafe_Flash:
     case 0, TutorElectric1
     case 1, TutorElectric2
     case 2, TutorElectric3
-    end
+    goto EndTraineeChat
 
 TutorElectric1:
     setvar 0x8005 TUTOR_SPECIAL_SPARK
@@ -1837,7 +1838,7 @@ EventScript_TsarvosaCity_GymTraineeCafe_Terra:
     case 0, TutorGround1
     case 1, TutorGround2
     case 2, TutorGround3
-    end
+    goto EndTraineeChat
 
 TutorGround1:
     setvar 0x8005 TUTOR_SPECIAL_MUDSHOT
@@ -1874,7 +1875,7 @@ EventScript_TsarvosaCity_GymTraineeCafe_Seifa:
     case 0, TutorPsychic1
     case 1, TutorPsychic2
     case 2, TutorPsychic3
-    end
+    goto EndTraineeChat
 
 TutorPsychic1:
     setvar 0x8005 TUTOR_SPECIAL_HEALBLOCK
@@ -1911,7 +1912,7 @@ EventScript_TsarvosaCity_GymTraineeCafe_Rocco:
     case 0, TutorRock1
     case 1, TutorRock2
     case 2, TutorRock3
-    end
+    goto EndTraineeChat
 
 TutorRock1:
     setvar 0x8005 TUTOR_SPECIAL_ROLLOUT
@@ -1949,7 +1950,7 @@ EventScript_TsarvosaCity_GymTraineeCafe_Janice:
     case 0, TutorIce1
     case 1, TutorIce2
     case 2, TutorIce3
-    end
+    goto EndTraineeChat
 
 TutorIce1:
     setvar 0x8005 TUTOR_SPECIAL_ICESHARD
@@ -1986,7 +1987,7 @@ EventScript_TsarvosaCity_GymTraineeCafe_Antoinette:
     case 0, TutorBug1
     case 1, TutorBug2
     case 2, TutorBug3
-    end
+    goto EndTraineeChat
 
 TutorBug1:
     setvar 0x8005 TUTOR_SPECIAL_FURYCUTTER
@@ -2023,7 +2024,7 @@ EventScript_TsarvosaCity_GymTraineeCafe_Ryu:
     case 0, TutorDragon1
     case 1, TutorDragon2
     case 2, TutorDragon3
-    end
+    goto EndTraineeChat
 
 TutorDragon1:
     setvar 0x8005 TUTOR_SPECIAL_BREAKINGSWIPE
@@ -2060,7 +2061,7 @@ EventScript_TsarvosaCity_GymTraineeCafe_Caspar:
     case 0, TutorGhost1
     case 1, TutorGhost2
     case 2, TutorGhost3
-    end
+    goto EndTraineeChat
 
 TutorGhost1:
     setvar 0x8005 TUTOR_SPECIAL_DESTINYBOND
@@ -2097,7 +2098,7 @@ EventScript_TsarvosaCity_GymTraineeCafe_Darcy:
     case 0, TutorDark1
     case 1, TutorDark2
     case 2, TutorDark3
-    end
+    goto EndTraineeChat
 
 TutorDark1:
     setvar 0x8005 TUTOR_SPECIAL_FAKETEARS
@@ -2134,7 +2135,7 @@ EventScript_TsarvosaCity_GymTraineeCafe_Mason:
     case 0, TutorSteel1
     case 1, TutorSteel2
     case 2, TutorSteel3
-    end
+    goto EndTraineeChat
 
 TutorSteel1:
     setvar 0x8005 TUTOR_SPECIAL_AUTOMIZE
@@ -2171,7 +2172,7 @@ EventScript_TsarvosaCity_GymTraineeCafe_Faye:
     case 0, TutorFairy1
     case 1, TutorFairy2
     case 2, TutorFairy3
-    end
+    goto EndTraineeChat
 
 TutorFairy1:
     setvar 0x8005 TUTOR_SPECIAL_CRAFTYSHIELD
@@ -2216,11 +2217,15 @@ BattleGymTrainee:
 
 ChoseNotToBattleTrainee:
     msgbox gText_TsarvosaCity_GymTraineeCafe_Trainee_ChoseNotToBattle MSG_NORMAL
-    end
+    goto EndTraineeChat
 
 LostToTrainee:
     msgbox gText_TsarvosaCity_GymTraineeCafe_Trainee_LostToTrainee MSG_NORMAL
-    end
+    goto EndTraineeChat
+
+EndTraineeChat:
+    textcolor 0xFF @ Reset text colour overrides (ex. Janice)
+    goto End
 
 TutorPokemon:
     msgbox gText_TsarvosaCity_GymTraineeCafe_Trainee_OfferingMove MSG_YESNO
@@ -2232,12 +2237,12 @@ TutorPokemon:
     compare LASTRESULT YES
     if false _goto ChoseNotToTutor @ Pokemon couldn't learn move, or player cancelled
     msgbox gText_TsarvosaCity_GymTraineeCafe_Trainee_OfferingToTeachMore MSG_NORMAL
-    end
+    goto EndTraineeChat
 
 ChoseNotToTutor:
     msgbox gText_TsarvosaCity_GymTraineeCafe_Trainee_ChoseNotToTutor MSG_NORMAL
     msgbox gText_TsarvosaCity_GymTraineeCafe_Trainee_LeavingAtEndOfDay MSG_NORMAL
-    end
+    goto EndTraineeChat
 
 CheckGiveZCrystal:
     callasm CheckIfPartyIsSameType

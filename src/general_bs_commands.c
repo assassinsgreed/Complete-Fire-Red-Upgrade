@@ -5440,7 +5440,7 @@ void atkE7_trycastformdatachange(void)
 				if (ABILITY(bank) == ABILITY_ICEFACE && !IS_TRANSFORMED(bank)
 				&& WEATHER_HAS_EFFECT && gBattleWeather & WEATHER_HAIL_ANY)
 				{
-					DoFormChange(bank, SPECIES_EISCUE, FALSE, FALSE, FALSE);
+					DoFormChange(bank, SPECIES_EISCUE, FALSE, TRUE, FALSE); // Stats must be reloaded - Eiscue and Noice Face have different Def/SpDef/Speed
 					BattleScriptPushCursorAndCallback(BattleScript_IceFaceRestoreFace);
 				}
 				break;

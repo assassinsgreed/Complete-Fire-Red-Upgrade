@@ -635,12 +635,6 @@ void FrontierChallenge_SetUpNextOpponent(void)
 
 	gFrontierBackground.rolledChoice = RollBattleBackground();
 
-	//The script uses trainerbattle9 so that losing returns to the attendant instead of whiting
-	//the player out. That relies on CONTINUE_LOST_BATTLES, whose patch to CB2_EndTrainerBattle
-	//only skips the whiteout when sTrainerBattleOakTutorialHelper has bit 0 clear. Nothing
-	//resets it after Oak's tutorial, so clear it here.
-	sTrainerBattleOakTutorialHelper = 0;
-
 	Var8000 = BATTLE_FACILITY_TRAINER_A;
 	Var8001 = kind;
 	// gFrontierBrains is one brain per facility, in facility order, so this is a direct index.

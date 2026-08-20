@@ -1222,7 +1222,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 bank, u8 ability, u8 special, u16 moveArg)
 			if (!IS_TRANSFORMED(bank) && SPECIES(bank) == SPECIES_EISCUE_NOICE
 			&& WEATHER_HAS_EFFECT && (gBattleWeather & WEATHER_HAIL_ANY))
 			{
-				DoFormChange(bank, SPECIES_EISCUE, FALSE, FALSE, FALSE);
+				DoFormChange(bank, SPECIES_EISCUE, FALSE, TRUE, FALSE); // Stats must be reloaded - Eiscue and Noice Face have different Def/SpDef/Speed
 				BattleScriptPushCursorAndCallback(BattleScript_TransformedEnd3);
 				++effect;
 			}

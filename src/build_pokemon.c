@@ -1540,9 +1540,11 @@ static void ModifySpeciesAndLevelForBossBattle(unusedArg u16* species, unusedArg
 		newLevel = maxPlayerTeamLevel; //Just give full team of level 100 since AI can't overlevel
 	else
 	{
-		levelRange = maxEnemyTeamLevel - *level; //The offset in the team from the strongest mon
-		newLevel = (maxPlayerTeamLevel - levelRange) + 1; //Boss battles always have a Pokemon 1 level higher than the player's strongest mon
+		levelRange = (maxEnemyTeamLevel > *level) ? (maxEnemyTeamLevel - *level) : 0; //The offset in the team from the strongest mon
+		newLevel = (maxPlayerTeamLevel >= levelRange) ? (maxPlayerTeamLevel - levelRange) + 1 : 1; //Boss battles always have a Pokemon 1 level higher than the player's strongest mon
 	}
+
+	newLevel = MathMin(newLevel, MAX_LEVEL);
 
 	if (*level < newLevel)
 	{
