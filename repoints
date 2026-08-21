@@ -579,3 +579,7 @@ PlutoGruntFPal 8239E64
 #ifdef SET_HEALING_PLACE_HACK
 EventScript_WhiteoutRevive 0807F5CC
 #endif
+
+## Trainer card background palettes, extended with a sixth entry for the five-star card.
+gTrainerCardPalettes_Layout1 0808AD74
+gTrainerCardPalettes_Layout0 0808AD90

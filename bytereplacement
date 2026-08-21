@@ -716,3 +716,9 @@
 # in UpdateHpTextInHealthboxInDoubles' format string (healthbar pal slot 1 is the
 # dark bar-frame color, slot 2 is white; outline stays default dark slot 3)
 08260544 02
+
+# Trainer card stars: move the row up beside the player's name and across above the trainer pic.
+# 0808AFAC is the x argument of the FillBgTilemapBufferRect that stamps tile 0x8F once per star;
+# 083CD95C is that call's y, indexed by the card layout byte (0 = the player's own card, 1 = RS/E).
+0808AFAC 16
+083CD95C 05 04

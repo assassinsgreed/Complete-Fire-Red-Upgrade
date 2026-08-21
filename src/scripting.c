@@ -4299,18 +4299,6 @@ void ResetAllLegendaries()
 	}
 }
 
-bool8 AreAllItemsInRangeObtained(u16 startRange, u16 endRange)
-{
-	for (u32 i = startRange; i <= endRange; ++i)
-	{
-		if (!CheckBagHasItem(i, 1))
-		{
-			return FALSE;
-		}
-	}
-	return TRUE;
-}
-
 void ComputeCompletedGameModifierRequirements()
 {
 	// All Trainer Houses cleared + became champion. Cannot check trainer house rewards because these are given with NG QoL items.
@@ -4325,9 +4313,8 @@ void ComputeCompletedGameModifierRequirements()
 		FlagSet(FLAG_GAMEMODIFIER_DOUBLEBATTLES_UNLOCKED);
 	}
 
-	// Pokedex is complete. Dex numbers 1 - NATIONAL_DEX_COUNT only cover the standard dex, so this
-	// has to go through the mode-aware count rather than walking a fixed range of dex numbers.
-	bool8 isPokedexComplete = GetNationalPokedexCount(FLAG_GET_CAUGHT) >= NATIONAL_DEX_COUNT;
+	// Pokedex is complete. Filling either mode's dex counts, so these stay unlocked across a switch.
+	bool8 isPokedexComplete = IsPokedexComplete();
 
 	if (isPokedexComplete)
 	{
@@ -4391,15 +4378,7 @@ void ComputeCompletedGameModifierRequirements()
 	}
 
 	// All TMs and HMs
-	bool8 areAllTMsAndHMsObtained = 
-		AreAllItemsInRangeObtained(ITEM_TM01_WORK_UP, ITEM_TM50_OVERHEAT) &&
-		AreAllItemsInRangeObtained(ITEM_TM51_STEEL_WING, ITEM_TM58_ENDURE) &&
-		AreAllItemsInRangeObtained(ITEM_TM59_BRUTAL_SWING, ITEM_TM100_CONFIDE) &&
-		AreAllItemsInRangeObtained(ITEM_HM01_CUT, ITEM_HM04_STRENGTH) &&
-		CheckBagHasItem(ITEM_HM06_ROCK_SMASH, 1) &&
-		CheckBagHasItem(ITEM_HM08_ROCK_CLIMB, 1);
-
-	if (areAllTMsAndHMsObtained)
+	if (HasEveryTMAndHM())
 		FlagSet(FLAG_GAMEMODIFIER_KEEPHELDCONSUMABLES_UNLOCKED);
 
 	// 3+ Level 25 DexNav Search Levels

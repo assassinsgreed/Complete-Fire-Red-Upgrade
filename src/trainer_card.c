@@ -76,7 +76,6 @@ extern const u8 gText_TrainerCardCenterHeals[];
 
 //This file's functions:
 static bool8 HasBecomeTheChampion(void);
-static bool8 HasCompletedThePokedex(void);
 static bool8 HasMilestoneStreakAtAnyFacility(void);
 static bool8 HasEveryGymTraineeZCrystal(void);
 static u32 AddZCrystalToMask(u32 mask, u16 item);
@@ -89,12 +88,6 @@ bool8 PrintAllOnTrainerCardBack(void);
 static bool8 HasBecomeTheChampion(void)
 {
 	return FlagGet(FLAG_SYS_GAME_CLEAR);
-}
-
-static bool8 HasCompletedThePokedex(void)
-{
-	//Standard and divergent mode share a species count, so this needs no mode check
-	return GetNationalPokedexCount(FLAG_GET_CAUGHT) >= NATIONAL_DEX_COUNT;
 }
 
 static bool8 HasMilestoneStreakAtAnyFacility(void)
@@ -155,8 +148,44 @@ static bool8 HasEveryGymTraineeZCrystal(void)
 	return TRUE;
 }
 
-//Four criteria is the hard ceiling: the card's background palette tables at 0x083CD8B8 and
-//0x083CD8CC are indexed by the star count and only hold five entries (0 - 4 stars).
+// Colours for stars 0-4 match Fire Red, #5 is a dark card unique to Amethyst.
+// Slots 8-12 and 15 are the frame and the title/badge bars. The lightest of that group
+// (layout 0 slot 8, layout 1 slot 9) is the "TRAINER CARD" ink and slot 12 is "BADGES",
+// both baked into the card graphic, so neither can sit near the bar colours.
+static const u16 sBlackCardPalette_Layout1[] =
+{
+	0x3991, 0x5AD6, 0x56B5, 0x35AD, 0x294A, 0x2508, 0x20E5, 0x45A7, 0x6228, 0x6739, 0x1CE7, 0x18C6, 0x1084, 0x7EED, 0x4E73, 0x0000,
+	0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x6ACD, 0x51E5, 0x0000, 0x0000,
+	0x398C, 0x7FFF, 0x779C, 0x5294, 0x3DEF, 0x7FFF, 0x779C, 0x5294, 0x3DEF, 0x7FFF, 0x779C, 0x5294, 0x3DEF, 0x7EED, 0x6739, 0x0000,
+};
+
+static const u16 sBlackCardPalette_Layout0[] =
+{
+	0x3991, 0x5AD6, 0x56B5, 0x5AD6, 0x56B5, 0x4E73, 0x35AD, 0x2508, 0x6739, 0x1CE7, 0x18C6, 0x14A5, 0x1084, 0x5AD6, 0x5EF7, 0x1CE7,
+	0x3991, 0x7C1F, 0x7C1F, 0x7C1F, 0x7C1F, 0x7C1F, 0x7C1F, 0x7C1F, 0x7C1F, 0x7C1F, 0x0A57, 0x2B5F, 0x5B2A, 0x52A8, 0x6318, 0x2D6B,
+	0x0000, 0x3D04, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000,
+};
+
+const u16* const gTrainerCardPalettes_Layout1[] =
+{
+	(const u16*) 0x08E9986C,
+	(const u16*) 0x083CCF80,
+	(const u16*) 0x083CD040,
+	(const u16*) 0x083CD100,
+	(const u16*) 0x083CD1C0,
+	sBlackCardPalette_Layout1,
+};
+
+const u16* const gTrainerCardPalettes_Layout0[] =
+{
+	(const u16*) 0x08E99198,
+	(const u16*) 0x083CCFE0,
+	(const u16*) 0x083CD0A0,
+	(const u16*) 0x083CD160,
+	(const u16*) 0x083CD220,
+	sBlackCardPalette_Layout0,
+};
+
 void CountTrainerCardStars(u8* trainerCard)
 {
 	u8 stars = 0;
@@ -164,13 +193,17 @@ void CountTrainerCardStars(u8* trainerCard)
 	if (HasBecomeTheChampion())
 		++stars;
 
-	if (HasCompletedThePokedex())
+	// Either mode's dex counts; don't revoke a star when switching
+	if (IsPokedexComplete())
 		++stars;
 
 	if (HasMilestoneStreakAtAnyFacility())
 		++stars;
 
 	if (HasEveryGymTraineeZCrystal())
+		++stars;
+
+	if (HasEveryTMAndHM())
 		++stars;
 
 	trainerCard[TRAINER_CARD_STARS_OFFSET] = stars;

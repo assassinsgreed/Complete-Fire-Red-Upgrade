@@ -1,6 +1,7 @@
 #include "defines.h"
 #include "../include/random.h"
 #include "../include/constants/abilities.h"
+#include "../include/constants/items.h"
 
 #include "../include/new/ability_tables.h"
 #include "../include/new/damage_calc.h"
@@ -163,8 +164,9 @@ u16 GetNationalPokedexCount(u8 caseID)
 // The species lists behind each mode's dex, laid out as a u16 count followed by that many species.
 // The two modes do not share dex numbers - standard species map to 1 - 390 and divergent-exclusive
 // ones to 391 - 780 - so flags set for one mode never collide with the other's.
-#define sRegionalDexTableStandard  ((const u16*) 0x09C1BA30)
-#define sRegionalDexTableDivergent ((const u16*) 0x09C1AAE4)
+// These are the same two tables GetRegionalDexCount picks between off FLAG_DIVERGENT_WILD_ENCOUNTERS.
+#define sRegionalDexTableStandard  ((const u16*) 0x09C1CE00)
+#define sRegionalDexTableDivergent ((const u16*) 0x09C1BEB4)
 
 const u16* GetRegionalDexSpeciesTable(bool8 divergent, u16* count)
 {
@@ -172,6 +174,48 @@ const u16* GetRegionalDexSpeciesTable(bool8 divergent, u16* count)
 
 	*count = table[0];
 	return &table[1];
+}
+
+// Checks the dex for the active mode only
+bool8 IsPokedexComplete(void)
+{
+	for (u32 divergent = FALSE; divergent <= TRUE; ++divergent)
+	{
+		u16 count;
+		const u16* speciesTable = GetRegionalDexSpeciesTable(divergent, &count);
+		bool8 complete = TRUE;
+
+		for (u32 i = 0; i < count && complete; ++i)
+			complete = GetSetPokedexFlag(SpeciesToNationalPokedexNum(speciesTable[i]), FLAG_GET_CAUGHT);
+
+		if (complete)
+			return TRUE;
+	}
+
+	return FALSE;
+}
+
+// Checks if items from start to end index are held in the bag
+static bool8 AreAllItemsInRangeObtained(u16 startRange, u16 endRange)
+{
+	for (u32 i = startRange; i <= endRange; ++i)
+	{
+		if (!CheckBagHasItem(i, 1))
+			return FALSE;
+	}
+
+	return TRUE;
+}
+
+// Reminder: TMs are in split ranges and HMs 5 and 7 are unused.
+bool8 HasEveryTMAndHM(void)
+{
+	return AreAllItemsInRangeObtained(ITEM_TM01_WORK_UP, ITEM_TM50_OVERHEAT)
+	    && AreAllItemsInRangeObtained(ITEM_TM51_STEEL_WING, ITEM_TM58_ENDURE)
+	    && AreAllItemsInRangeObtained(ITEM_TM59_BRUTAL_SWING, ITEM_TM100_CONFIDE)
+	    && AreAllItemsInRangeObtained(ITEM_HM01_CUT, ITEM_HM04_STRENGTH)
+	    && CheckBagHasItem(ITEM_HM06_ROCK_SMASH, 1)
+	    && CheckBagHasItem(ITEM_HM08_ROCK_CLIMB, 1);
 }
 
 bool8 SpeciesWithDexNumOnTeam(u16 dexNum)
