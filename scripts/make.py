@@ -11,7 +11,7 @@ import sys
 ROM_NAME = "BPRE0.gba"  # The name of your rom
 ROM_NAME_OUT = "test.gba"  # The rom the build writes out
 CART_SIZE = 0x2000000  # 32MB, the largest size a GBA cart can be
-OFFSET_TO_PUT = 0x830000
+OFFSET_TO_PUT = 0x850000
 SEARCH_FREE_SPACE = False  # Set to True if you want the script to search for free space
                            # Set to False if you don't want to search for free space as you for example update the engine
 

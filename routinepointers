@@ -281,6 +281,8 @@ CB2_ItemMenuFromField 801D800
 FieldUseFunc_AbilityCapsule 87343A8
 FieldUseFunc_AbilityCapsule 8731A10
 FieldUseFunc_FormChangeItem 873371C
+# DNA Splicers
+FieldUseFunc_FormChangeItem 8733748
 # N-Solarizer and N-Lunarizer
 FieldUseFunc_FormChangeItem 8734C14
 FieldUseFunc_FormChangeItem 8734C40

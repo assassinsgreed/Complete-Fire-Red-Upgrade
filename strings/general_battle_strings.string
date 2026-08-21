@@ -235,7 +235,7 @@ You were overwhelmed by your\ndefeat![FC][09]
 //Exp String
 
 #org @String_TeamExpGain
-The rest of your team gained Exp.\nPoints thanks to the Exp. Share!
+The rest of your team gained Exp.\nPoints thanks to the Exp. Share!\p
 
 //Other
 #org @gStatusConditionString_Frostbite
