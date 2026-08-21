@@ -72,6 +72,165 @@ NotEnoughPokeChips:
     npcchatwithmovement gText_BattleFrontier_MoveTutor_NotEnoughPokeChips m_LookDown
     goto End
 
+EventScript_BattleFrontier_SE_BattleItems1:
+    lock
+    faceplayer
+    msgbox gText_BattleFrontier_BattleItems_Intro MSG_NORMAL
+    pokemart BattleItems1
+    msgbox gText_BattleFrontier_BattleItems_Outro MSG_NORMAL
+    release
+    end
+
+EventScript_BattleFrontier_SE_BattleItems2:
+    lock
+    faceplayer
+    msgbox gText_BattleFrontier_BattleItems_Intro MSG_NORMAL
+    pokemart BattleItems2
+    msgbox gText_BattleFrontier_BattleItems_Outro MSG_NORMAL
+    release
+    end
+
+EventScript_BattleFrontier_SE_ZCrystals1:
+    lock
+    faceplayer
+    msgbox gText_BattleFrontier_ZCrystals_Intro MSG_NORMAL
+    pokemart ZCrystals1
+    msgbox gText_BattleFrontier_ZCrystals_Outro MSG_NORMAL
+    release
+    end
+
+EventScript_BattleFrontier_SE_ZCrystals2:
+    lock
+    faceplayer
+    msgbox gText_BattleFrontier_ZCrystals_Intro MSG_NORMAL
+    pokemart ZCrystals2
+    msgbox gText_BattleFrontier_ZCrystals_Outro MSG_NORMAL
+    release
+    end
+
+.align 1
+BattleItems1:
+    .hword ITEM_LIFE_ORB
+    .hword ITEM_FLAME_ORB
+    .hword ITEM_TOXIC_ORB
+    .hword ITEM_WEAKNESS_POLICY
+    .hword ITEM_BLUNDER_POLICY
+    .hword ITEM_FOCUS_SASH
+    .hword ITEM_LEFTOVERS
+    .hword ITEM_HEAVY_DUTY_BOOTS
+    .hword ITEM_NONE
+
+.align 1
+BattleItems2:
+    .hword ITEM_CHOICE_BAND
+    .hword ITEM_CHOICE_SPECS
+    .hword ITEM_CHOICE_SCARF
+    .hword ITEM_PROTECTIVE_PADS
+    .hword ITEM_RED_CARD
+    .hword ITEM_EJECT_PACK
+    .hword ITEM_EVIOLITE
+    .hword ITEM_SAFETY_GOGGLES
+    .hword ITEM_NONE
+
+.align 1
+ZCrystals1:
+    .hword ITEM_PIKANIUM_Z
+    .hword ITEM_PIKASHUNIUM_Z
+    .hword ITEM_ALORAICHIUM_Z
+    .hword ITEM_EEVIUM_Z
+    .hword ITEM_DECIDIUM_Z
+    .hword ITEM_INCINIUM_Z
+    .hword ITEM_PRIMARIUM_Z
+    .hword ITEM_NONE
+
+.align 1
+ZCrystals2:
+    .hword ITEM_KOMMONIUM_Z
+    .hword ITEM_MIMIKIUM_Z
+    .hword ITEM_SNORLIUM_Z
+    .hword ITEM_LYCANIUM_Z
+    .hword ITEM_LUNALIUM_Z
+    .hword ITEM_SOLGANIUM_Z
+    .hword ITEM_NONE
+
+.global EventScript_BattleFrontier_SE_ShadyRelicSeller
+EventScript_BattleFrontier_SE_ShadyRelicSeller:
+    lock
+    faceplayer
+    callasm StorePokeChipCount
+	buffernumber 0x0 0x8005 @ Take stored PokeChip count
+    msgbox gText_BattleFrontier_RelicSellerIntro MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto RelicSellerRejected
+    checkitem ITEM_POKE_CHIP 0x2
+    compare LASTRESULT TRUE
+    if FALSE _goto RelicSellerNotEnoughPokeChips
+    removeitem ITEM_POKE_CHIP 0x2
+    sound 0xF8 @ Money SE
+    waitse
+    random 7
+    switch LASTRESULT
+    case 0, RelicSellerCopper
+    case 1, RelicSellerSilver
+    case 2, RelicSellerGold
+    case 3, RelicSellerVase
+    case 4, RelicSellerBand
+    case 5, RelicSellerStatue
+    case 6, RelicSellerCrown
+    goto End
+
+RelicSellerCopper:
+    msgbox gText_BattleFrontier_RelicSellerChoseYes MSG_NORMAL
+    obtainitem ITEM_RELIC_COPPER 1
+    goto RelicSellerTradeComplete
+
+RelicSellerSilver:
+    msgbox gText_BattleFrontier_RelicSellerChoseYes MSG_NORMAL
+    obtainitem ITEM_RELIC_SILVER 1
+    goto RelicSellerTradeComplete
+
+RelicSellerGold:
+    msgbox gText_BattleFrontier_RelicSellerChoseYes MSG_NORMAL
+    obtainitem ITEM_RELIC_GOLD 1
+    goto RelicSellerTradeComplete
+
+RelicSellerVase:
+    msgbox gText_BattleFrontier_RelicSellerChoseYes MSG_NORMAL
+    obtainitem ITEM_RELIC_VASE 1
+    goto RelicSellerTradeComplete
+
+RelicSellerBand:
+    msgbox gText_BattleFrontier_RelicSellerChoseYes MSG_NORMAL
+    obtainitem ITEM_RELIC_BAND 1
+    goto RelicSellerTradeComplete
+
+RelicSellerStatue:
+    msgbox gText_BattleFrontier_RelicSellerChoseYes MSG_NORMAL
+    obtainitem ITEM_RELIC_STATUE 1
+    goto RelicSellerTradeComplete
+
+RelicSellerCrown:
+    msgbox gText_BattleFrontier_RelicSellerChoseYes MSG_NORMAL
+    obtainitem ITEM_RELIC_CROWN 1
+    goto RelicSellerTradeComplete
+
+RelicSellerRejected:
+    msgbox gText_BattleFrontier_RelicSellerChoseNo MSG_NORMAL
+    goto End
+
+RelicSellerNotEnoughPokeChips:
+    msgbox gText_BattleFrontier_RelicSellerNotEnoughChips MSG_NORMAL
+    goto End
+
+RelicSellerTradeComplete:
+    msgbox gText_BattleFrontier_RelicSellerLeavingForTheDay MSG_NORMAL
+    fadescreen FADEOUT_BLACK
+    setflag 0xE40 @ Hide relic seller
+    hidesprite LASTTALKED
+    pause DELAY_1SECOND
+    fadescreen FADEIN_BLACK
+    goto End
+
 @ ============================================================================
 @ Battle Frontier Facility scripts
 @

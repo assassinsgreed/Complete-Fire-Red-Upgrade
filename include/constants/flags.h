@@ -1480,6 +1480,7 @@ Daily Flags, cleared at the start of each day.  Goes up to 0xEFF
 #define FLAG_GYM_LEADER_REMATCH_IRIS          0xE3D
 #define FLAG_GYM_LEADER_REMATCH_DENNIS_AND_DEE 0xE3E
 #define FLAG_BLISSEY_TRAINER                  0xE3F
+#define FLAG_BATTLE_FRONTIER_RELIC_SELLER     0xE40
 */
 
 #define FLAG_TRAINER_FLAG_START 0x500
