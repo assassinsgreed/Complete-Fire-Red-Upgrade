@@ -78,7 +78,7 @@ LevelScript_PlayerReturnsToRivalAndAlistair:
     call PlayerWalkLeft_Return
     applymovement PLAYER m_LookUp
     fanfare 0x13E
-    msgbox gText_Route11SouthHouse_PlutoEvent_GiveRivalHisMegaStone MSG_KEEPOPEN
+    msgbox gText_Route11SouthHouse_PlutoEvent_GiveRivalHisMegaRing MSG_KEEPOPEN
     waitfanfare
     msgbox gText_Route11SouthHouse_PlutoEvent_RivalAppreciatesMegaRing MSG_NORMAL
     applymovement Alistair m_LookLeft

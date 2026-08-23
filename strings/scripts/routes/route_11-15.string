@@ -362,8 +362,8 @@ Heh, so you're the real deal[.]
 #org @gText_Route11SouthHouse_PlutoEvent_AlistairCommentsOnMegaRing
 [BLACK]Alistair:[BLUE] What's that? The old coot\ngave you a Mega Ring?\pAnd there's one for [RIVAL] too?
 
-#org @gText_Route11SouthHouse_PlutoEvent_GiveRivalHisMegaStone
-Gave [RIVAL] his Mega Stone!
+#org @gText_Route11SouthHouse_PlutoEvent_GiveRivalHisMegaRing
+Gave [RIVAL] his Mega Ring!
 
 #org @gText_Route11SouthHouse_PlutoEvent_RivalAppreciatesMegaRing
 [BLACK][RIVAL]:[BLUE] Wow, thanks [PLAYER]! I\ndon't know what to say!
