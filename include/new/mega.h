@@ -19,6 +19,7 @@ const u8* DoPrimalReversion(u8 bank, u8 caseId);
 void MegaRevert(pokemon_t* mon);
 void TryRevertMega(pokemon_t* mon);
 bool8 MegaEvolutionEnabled(u8 bank);
+bool8 CanMegaEvolveRepeatedly(u8 bank);
 bool8 BankMegaEvolved(u8 bank, bool8 checkUB);
 bool8 IsMega(u8 bank);
 bool8 IsBluePrimal(u8 bank);

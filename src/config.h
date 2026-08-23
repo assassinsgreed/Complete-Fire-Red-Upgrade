@@ -85,6 +85,7 @@
 #define FLAG_INSTANT_FRIENDSHIP 0x943 //If set, Pokemon reach max friendship after taking a single step
 #define FLAG_ENABLE_EV_IV_VIEWER 0x944 // If set, the EV/IV Viewer can be accessed from the Pokemon summary screen
 #define FLAG_PERFECT_WILD_IVS 0x94A // If set, wild Pokemon are generated with 31 IVs in every stat. Raids are excluded so their star-based IV curve still means something.
+#define FLAG_REPEATED_MEGA_EVOLUTION 0x94B // If set, the player can Mega Evolve multiple times per battle
 
 #define FLAG_DAILY_EVENTS_START 0xE00 //To flag + 0xFF, resets every new day.
 

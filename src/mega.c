@@ -377,6 +377,15 @@ bool8 MegaEvolutionEnabled(u8 bank)
 		return TRUE;
 }
 
+// The Mega Brawl tier and the Repeated Mega Evolution game modifier both allow you to mega evolve multiple times per battle
+bool8 CanMegaEvolveRepeatedly(u8 bank)
+{
+	if (gBattleTypeFlags & BATTLE_TYPE_MEGA_BRAWL)
+		return TRUE;
+
+	return SIDE(bank) == B_SIDE_PLAYER && FlagGet(FLAG_REPEATED_MEGA_EVOLUTION);
+}
+
 bool8 BankMegaEvolved(u8 bank, bool8 checkUB)
 {
 	if ((SIDE(bank) == B_SIDE_PLAYER && gBattleTypeFlags & BATTLE_TYPE_INGAME_PARTNER)

@@ -3353,6 +3353,7 @@ extern const u8 gText_GameModifiers_InstantBattleTerrain[];
 extern const u8 gText_GameModifiers_InstantFriendship[];
 extern const u8 gText_GameModifiers_PerfectWildIVs[];
 extern const u8 gText_GameModifiers_EVIVViewer[];
+extern const u8 gText_GameModifiers_RepeatedMegaEvolution[];
 extern const u8 gText_GameModifiers_DivergentToggle[];
 
 // Ultra Wormholes
@@ -3745,6 +3746,7 @@ static const u8* sGameModifiers[] =
 	gText_GameModifiers_InstantFriendship,
 	gText_GameModifiers_PerfectWildIVs,
 	gText_GameModifiers_EVIVViewer,
+	gText_GameModifiers_RepeatedMegaEvolution,
 	gText_GameModifiers_DivergentToggle,
 	gText_End,
 };
@@ -4419,6 +4421,10 @@ void ComputeCompletedGameModifierRequirements()
 	// Entered HoF and show 5+ swarm species
 	if (FlagGet(FLAG_SYS_GAME_CLEAR) && VarGet(VAR_SWARM_POKEMON_SHOWN) >= 5)
 		FlagSet(FLAG_GAMEMODIFIER_DIVERGENT_TOGGLE_UNLOCKED);
+
+	// The player has all mega stones for their current mode (in bag, party, or box)
+	if (!FlagGet(FLAG_GAMEMODIFIER_REPEATED_MEGA_EVOLUTION_UNLOCKED) && HasEveryMegaStoneForCurrentMode())
+		FlagSet(FLAG_GAMEMODIFIER_REPEATED_MEGA_EVOLUTION_UNLOCKED);
 
 	// A 20+ win streak at any battle facility, in either format. Reads the max streak rather than the
 	// current one so the unlock sticks once earned instead of needing the player to still be mid-run.

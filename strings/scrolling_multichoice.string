@@ -720,6 +720,9 @@ Perfect Wild Pok\emon IVs
 #org @gText_GameModifiers_EVIVViewer
 Enable EV/IV Viewer
 
+#org @gText_GameModifiers_RepeatedMegaEvolution
+Unlimited Mega Evolution
+
 #org @gText_GameModifiers_DivergentToggle
 Enable Pok\emon Selection Toggle
 

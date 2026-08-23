@@ -26,6 +26,7 @@ u16 GetNationalPokedexCount(u8 caseID);
 const u16* GetRegionalDexSpeciesTable(bool8 divergent, u16* count);
 bool8 IsPokedexComplete(void);
 bool8 HasEveryTMAndHM(void);
+bool8 HasEveryMegaStoneForCurrentMode(void);
 bool8 SpeciesWithDexNumOnTeam(u16 dexNum);
 bool8 CanSpeciesEvolve(u16 species);
 bool8 CanEvolve(struct Pokemon* mon);

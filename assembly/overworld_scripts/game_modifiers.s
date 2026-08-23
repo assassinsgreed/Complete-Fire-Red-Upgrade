@@ -45,7 +45,8 @@ ChoosingModifier:
 	case 17, GameModifiers_InstantFriendship
 	case 18, GameModifiers_PerfectWildIVs
 	case 19, GameModifiers_EVIVViewer
-	case 20, GameModifiers_DivergentToggle
+	case 20, GameModifiers_RepeatedMegaEvolution
+	case 21, GameModifiers_DivergentToggle
 	case 0x7F, GameModifiers_End @ When player hits B to close
 	goto GameModifiers_End
 
@@ -101,6 +102,8 @@ GameModifiers_PromptToTurnOff:
 	compare 0x4000 19
 	if equal _call GameModifiers_EVIVViewer_ClearModifier
 	compare 0x4000 20
+	if equal _call GameModifiers_RepeatedMegaEvolution_ClearModifier
+	compare 0x4000 21
 	if equal _call GameModifiers_DivergentToggle_ClearModifier
 	playse 0x30 @ Save
 	msgbox gText_GameModifiers_ModifierNowOff MSG_NORMAL
@@ -152,6 +155,8 @@ GameModifiers_PromptToTurnOn:
 	compare 0x4000 19
 	if equal _call GameModifiers_EVIVViewer_SetModifier
 	compare 0x4000 20
+	if equal _call GameModifiers_RepeatedMegaEvolution_SetModifier
+	compare 0x4000 21
 	if equal _call GameModifiers_DivergentToggle_SetModifier
 	playse 0x30 @ Save
 	msgbox gText_GameModifiers_ModifierNowOn MSG_NORMAL
@@ -812,6 +817,38 @@ GameModifiers_EVIVViewer_TogglePrompt:
 	if SET _goto GameModifiers_PromptToTurnOff
 	goto GameModifiers_PromptToTurnOn
 
+GameModifiers_RepeatedMegaEvolution:
+	msgbox gText_GameModifiers_RepeatedMegaEvolution_Description MSG_NORMAL
+	checkflag 0x0C4 @ Repeated Mega Evolution game modifier unlocked
+	if NOT_SET _goto GameModifiers_RepeatedMegaEvolution_NotUnlocked
+	msgbox gText_GameModifiers_RepeatedMegaEvolution_PasswordDeclaration MSG_NORMAL
+	goto GameModifiers_RepeatedMegaEvolution_TogglePrompt
+
+GameModifiers_RepeatedMegaEvolution_NotUnlocked:
+	msgbox gText_GameModifiers_UnlockCriteria_AllMegaStones MSG_NORMAL
+	msgbox gText_GameModifiers_ModifierNotYetAchieved MSG_YESNO
+	compare LASTRESULT NO
+	if equal _goto ChoosingModifier
+	call EnterUnlockPassword
+	loadpointer 0x0 gText_GameModifiers_RepeatedMegaEvolution_Password
+    special 0x12D
+    compare LASTRESULT 0x0
+    if equal _goto GameModifiers_RepeatedMegaEvolution_UnlockedWithPassword
+	playse 0x1A @ Error
+    msgbox gText_GameModifiers_PasswordIncorrect MSG_NORMAL
+	goto ChoosingModifier
+
+GameModifiers_RepeatedMegaEvolution_UnlockedWithPassword:
+	playse 0x19 @ Correct
+	setflag 0x0C4 @ Repeated Mega Evolution game modifier unlocked
+	msgbox gText_GameModifiers_PasswordCorrect MSG_NORMAL
+	goto GameModifiers_RepeatedMegaEvolution_TogglePrompt
+
+GameModifiers_RepeatedMegaEvolution_TogglePrompt:
+	checkflag 0x94B @ Repeated Mega Evolution active
+	if SET _goto GameModifiers_PromptToTurnOff
+	goto GameModifiers_PromptToTurnOn
+
 GameModifiers_DivergentToggle:
 	msgbox gText_GameModifiers_DivergentToggle_Description MSG_NORMAL
 	checkflag 0x0C2 @ Divergent toggle game modifier unlocked
@@ -1058,6 +1095,14 @@ GameModifiers_EVIVViewer_SetModifier:
 
 GameModifiers_EVIVViewer_ClearModifier:
 	clearflag 0x944 @ Turn off EV/IV Viewer
+	return
+
+GameModifiers_RepeatedMegaEvolution_SetModifier:
+	setflag 0x94B @ Turn on Repeated Mega Evolution
+	return
+
+GameModifiers_RepeatedMegaEvolution_ClearModifier:
+	clearflag 0x94B @ Turn off Repeated Mega Evolution
 	return
 
 GameModifiers_DivergentToggle_SetModifier:

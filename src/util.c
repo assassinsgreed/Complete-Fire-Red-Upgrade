@@ -10,7 +10,9 @@
 #include "../include/new/mega.h"
 #include "../include/new/util.h"
 #include "../include/money.h"
+#include "../include/pokemon_storage_system.h"
 #include "../include/string_util.h"
+#include "../include/new/pokemon_storage_system.h"
 
 /*
 util.c
@@ -216,6 +218,154 @@ bool8 HasEveryTMAndHM(void)
 	    && AreAllItemsInRangeObtained(ITEM_HM01_CUT, ITEM_HM04_STRENGTH)
 	    && CheckBagHasItem(ITEM_HM06_ROCK_SMASH, 1)
 	    && CheckBagHasItem(ITEM_HM08_ROCK_CLIMB, 1);
+}
+
+// Starter mega stones are shared between Standard and Divergent modes
+static const u16 sSharedMegaStones[] =
+{
+	ITEM_VENUSAURITE,
+	ITEM_CHARIZARDITE_X,
+	ITEM_CHARIZARDITE_Y,
+	ITEM_BLASTOISINITE,
+	ITEM_SCEPTILITE,
+	ITEM_BLAZIKENITE,
+	ITEM_SWAMPERTITE,
+	ITEM_VENUSAURITE_G,
+	ITEM_CHARIZARDITE_G,
+	ITEM_BLASTOISINITE_G,
+	ITEM_RILLABITE,
+	ITEM_CINDERITE,
+	ITEM_INTELLEITE,
+};
+
+static const u16 sStandardOnlyMegaStones[] =
+{
+	ITEM_AMPHAROSITE,
+	ITEM_SABLENITE,
+	ITEM_LOPUNNITE,
+	ITEM_MAWILITE,
+	ITEM_GARCHOMPITE,
+	ITEM_GLALITITE,
+	ITEM_LUCARIONITE,
+	ITEM_HERACRONITE,
+	ITEM_SLOWBRONITE,
+	ITEM_SHARPEDONITE,
+	ITEM_GALLADITE,
+	ITEM_KANGASKHANITE,
+	ITEM_GARDEVOIRITE,
+	ITEM_GYARADOSITE,
+	ITEM_HOUNDOOMINITE,
+	ITEM_LAPRASITE,
+	ITEM_MELMETALITE,
+	ITEM_CORVIKNITE,
+	ITEM_ORBEETLITE,
+	ITEM_COALOSSITE,
+	ITEM_TOXTRICITE,
+	ITEM_CENTISKORITE,
+	ITEM_HATTERITE,
+	ITEM_COPPERITE,
+	ITEM_DURALUDITE,
+};
+
+static const u16 sDivergentOnlyMegaStones[] =
+{
+	ITEM_PIDGEOTITE,
+	ITEM_BANETTITE,
+	ITEM_MANECTITE,
+	ITEM_MEDICHAMITE,
+	ITEM_AERODACTYLITE,
+	ITEM_STEELIXITE,
+	ITEM_METAGROSSITE,
+	ITEM_PINSIRITE,
+	ITEM_ABOMASITE,
+	ITEM_SALAMENCITE,
+	ITEM_ABSOLITE,
+	ITEM_SCIZORITE,
+	ITEM_ALAKAZITE,
+	ITEM_GENGARITE,
+	ITEM_TYRANITARITE,
+	ITEM_BEEDRILLITE,
+	ITEM_AGGRONITE,
+	ITEM_CAMERUPTITE,
+	ITEM_ALTARIANITE,
+	ITEM_AUDINITE,
+	ITEM_BUTTERFRITE,
+	ITEM_MACHAMPITE,
+	ITEM_GENGARITE_G,
+	ITEM_KINGLERITE,
+	ITEM_SNORLAXITE,
+	ITEM_GARBODORITE,
+	ITEM_DREDNAWITE,
+	ITEM_APPLITE,
+	ITEM_SANDACONDITE,
+	ITEM_GRIMMSNARITE,
+	ITEM_ALCREMITE,
+	ITEM_URSHIFITE,
+};
+
+// Sized for whichever mode list is longer (in case future changes make Divergent have less)
+#define NUM_MODE_MEGA_STONES (ARRAY_COUNT(sStandardOnlyMegaStones) > ARRAY_COUNT(sDivergentOnlyMegaStones) \
+	? ARRAY_COUNT(sStandardOnlyMegaStones) : ARRAY_COUNT(sDivergentOnlyMegaStones))
+#define MAX_REQUIRED_MEGA_STONES (ARRAY_COUNT(sSharedMegaStones) + NUM_MODE_MEGA_STONES)
+
+// Appends the stones from the given list that aren't sitting in the bag, returning the new total
+static u32 AddMegaStonesMissingFromBag(const u16* stones, u32 numStones, u16* missing, u32 numMissing)
+{
+	for (u32 i = 0; i < numStones; ++i)
+	{
+		if (!CheckBagHasItem(stones[i], 1))
+			missing[numMissing++] = stones[i];
+	}
+
+	return numMissing;
+}
+
+// Drops item from the missing list if it's on it, returning how many are still unaccounted for
+static u32 RemoveMegaStoneFromMissingList(u16* missing, u32 numMissing, u16 item)
+{
+	for (u32 i = 0; i < numMissing; ++i)
+	{
+		if (missing[i] == item)
+		{
+			missing[i] = missing[--numMissing]; // Order doesn't matter, so backfill from the end
+			break;
+		}
+	}
+
+	return numMissing;
+}
+
+bool8 HasEveryMegaStoneForCurrentMode(void)
+{
+	u16 missing[MAX_REQUIRED_MEGA_STONES];
+	const u16* modeStones;
+	u32 numModeStones, numMissing;
+
+	if (FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS))
+	{
+		modeStones = sDivergentOnlyMegaStones;
+		numModeStones = ARRAY_COUNT(sDivergentOnlyMegaStones);
+	}
+	else
+	{
+		modeStones = sStandardOnlyMegaStones;
+		numModeStones = ARRAY_COUNT(sStandardOnlyMegaStones);
+	}
+
+	numMissing = AddMegaStonesMissingFromBag(sSharedMegaStones, ARRAY_COUNT(sSharedMegaStones), missing, 0);
+	numMissing = AddMegaStonesMissingFromBag(modeStones, numModeStones, missing, numMissing);
+
+	// Anything not in the bag can still be held by a Pokemon, so sweep the party and the boxes for it
+	for (u32 i = 0; i < PARTY_SIZE && numMissing > 0; ++i)
+		numMissing = RemoveMegaStoneFromMissingList(missing, numMissing, GetMonData(&gPlayerParty[i], MON_DATA_HELD_ITEM, NULL));
+
+	for (u32 box = 0; box < TOTAL_BOXES_COUNT && numMissing > 0; ++box)
+	{
+		for (u32 pos = 0; pos < IN_BOX_COUNT && numMissing > 0; ++pos)
+			numMissing = RemoveMegaStoneFromMissingList(missing, numMissing, GetBoxMonDataAt(box, pos, MON_DATA_HELD_ITEM));
+	}
+
+	return numMissing == 0;
 }
 
 bool8 SpeciesWithDexNumOnTeam(u16 dexNum)

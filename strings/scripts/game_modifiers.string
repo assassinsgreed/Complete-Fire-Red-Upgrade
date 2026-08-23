@@ -129,6 +129,9 @@ When enabled, wild Pok\emon are\ngenerated with 31 IVs in every\lstat, including
 #org @gText_GameModifiers_EVIVViewer_Description
 When enabled, EVs/IVs can be viewed\nby pressing [A_BUTTON] in the Pok\emon\lSummary screen.\pThis is only supported for Pok\emon in\nthe player's party.
 
+#org @gText_GameModifiers_RepeatedMegaEvolution_Description
+When enabled, you may Mega Evolve\nmultiple times per battle.\pOpponents are still limited to one\nMega Evolution per battle.
+
 #org @gText_GameModifiers_DivergentToggle_Description
 When enabled, you can swap between\nStandard and Divergent Pok\emon\lselections in the Options Menu.\pThis affects which Pok\emon appear\nin the wild and in trainer teams.\pWhen swapping, all legendaries\nbecome available again.\pAfter swapping, you may need to\nreload the map to see certain\lchanges (ex. legendaries).
 
@@ -194,6 +197,9 @@ The password to unlock this modifier\nin new games is [BLUE]PRETTYGOOD[BLACK].
 #org @gText_GameModifiers_EVIVViewer_PasswordDeclaration
 The password to unlock this modifier\nin new games is [BLUE]OVER9000[BLACK].
 
+#org @gText_GameModifiers_RepeatedMegaEvolution_PasswordDeclaration
+The password to unlock this modifier\nin new games is [BLUE]UPTOELEVEN[BLACK].
+
 #org @gText_GameModifiers_DivergentToggle_PasswordDeclaration
 The password to unlock this modifier\nin new games is [BLUE]MIRRORMODE[BLACK].
 
@@ -243,6 +249,9 @@ The password to unlock this modifier\nin new games is [BLUE]MIRRORMODE[BLACK].
 
 #org @gText_GameModifiers_UnlockCriteria_SwarmingPokemon
 [BLUE]Unlock Criteria: [BLACK]Enter the Hall of\nFame and show 5+ swarming species\lto the Swarm Swami's assistant.
+
+#org @gText_GameModifiers_UnlockCriteria_AllMegaStones
+[BLUE]Unlock Criteria: [BLACK]Collect every Mega\nStone.
 
 // Passwords
 #org @gText_GameModifiers_RandomizerSpecies_Password
@@ -304,6 +313,9 @@ PRETTYGOOD
 
 #org @gText_GameModifiers_EVIVViewer_Password
 OVER9000
+
+#org @gText_GameModifiers_RepeatedMegaEvolution_Password
+UPTOELEVEN
 
 #org @gText_GameModifiers_DivergentToggle_Password
 MIRRORMODE
