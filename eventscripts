@@ -2931,8 +2931,8 @@ npc 3 17 2 EventScript_BattleFrontier_SE_Tutor3
 npc 3 17 3 EventScript_BattleFrontier_SE_Tutor4
 npc 3 17 4 EventScript_BattleFrontier_SE_BattleItems1
 npc 3 17 5 EventScript_BattleFrontier_SE_BattleItems2
-npc 3 17 6 EventScript_BattleFrontier_SE_ZCrystals1
-npc 3 17 7 EventScript_BattleFrontier_SE_ZCrystals2
+npc 3 17 6 EventScript_BattleFrontier_SE_ZCrystals
+npc 3 17 7 EventScript_BattleFrontier_SE_SpecialItems
 npc 3 17 8 EventScript_BattleFrontier_SE_ShadyRelicSeller
 ## Pokemon Center
 ## Battle Tower

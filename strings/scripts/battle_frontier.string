@@ -25,6 +25,12 @@ I've smuggled some incredible Z-\nCrystals from Alola. Want some?
 #org @gText_BattleFrontier_ZCrystals_Outro
 Use them to dominate your opponents\nin battle[.]
 
+#org @gText_BattleFrontier_SpecialItems_Intro
+I sell one-of-a-kind items that your\nPok\emon will just love!
+
+#org @gText_BattleFrontier_SpecialItems_Outro
+I hope to see you again soon!
+
 #org @gText_BattleFrontier_RelicSellerIntro
 Hey, you look like a smart kid.\pI have a rare treasure ethically\nsourced from a ruin in Unova.\pIt could be yours, for 2 Pok\eChips[.]\n[BLACK](Held: [BUFFER1])[BLUE]
 

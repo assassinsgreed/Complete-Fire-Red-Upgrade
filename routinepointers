@@ -313,5 +313,19 @@ FieldUseFunc_PokeTool 8731B44
 FieldUseFunc_PokeTool 8731B70
 FieldUseFunc_PokeTool 8730964
 
+## Zeromin - wipes every EV on the chosen mon
+FieldUseFunc_EVEraser 873064C
+
+## IV Booster Wings
+FieldUseFunc_IVUpItem 87343D4
+FieldUseFunc_IVUpItem 8734400
+FieldUseFunc_IVUpItem 873442C
+FieldUseFunc_IVUpItem 8734458
+FieldUseFunc_IVUpItem 8734484
+FieldUseFunc_IVUpItem 87344B0
+
+## Shimmering Stone - toggles the chosen mon between normal and shiny
+FieldUseFunc_ShimmeringStone 872EA48
+
 ## Item Finder 8-Directional Indicator (Dousing Machine Style)
 ItemUseCB_DowserToggle 080A145C

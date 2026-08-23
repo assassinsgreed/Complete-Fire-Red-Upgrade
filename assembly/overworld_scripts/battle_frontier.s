@@ -72,6 +72,7 @@ NotEnoughPokeChips:
     npcchatwithmovement gText_BattleFrontier_MoveTutor_NotEnoughPokeChips m_LookDown
     goto End
 
+.global EventScript_BattleFrontier_SE_BattleItems1
 EventScript_BattleFrontier_SE_BattleItems1:
     lock
     faceplayer
@@ -81,6 +82,7 @@ EventScript_BattleFrontier_SE_BattleItems1:
     release
     end
 
+.global EventScript_BattleFrontier_SE_BattleItems2
 EventScript_BattleFrontier_SE_BattleItems2:
     lock
     faceplayer
@@ -90,21 +92,23 @@ EventScript_BattleFrontier_SE_BattleItems2:
     release
     end
 
-EventScript_BattleFrontier_SE_ZCrystals1:
+.global EventScript_BattleFrontier_SE_ZCrystals
+EventScript_BattleFrontier_SE_ZCrystals:
     lock
     faceplayer
     msgbox gText_BattleFrontier_ZCrystals_Intro MSG_NORMAL
-    pokemart ZCrystals1
+    pokemart ZCrystals
     msgbox gText_BattleFrontier_ZCrystals_Outro MSG_NORMAL
     release
     end
 
-EventScript_BattleFrontier_SE_ZCrystals2:
+.global EventScript_BattleFrontier_SE_SpecialItems
+EventScript_BattleFrontier_SE_SpecialItems:
     lock
     faceplayer
-    msgbox gText_BattleFrontier_ZCrystals_Intro MSG_NORMAL
-    pokemart ZCrystals2
-    msgbox gText_BattleFrontier_ZCrystals_Outro MSG_NORMAL
+    msgbox gText_BattleFrontier_SpecialItems_Intro MSG_NORMAL
+    pokemart SpecialItems
+    msgbox gText_BattleFrontier_SpecialItems_Outro MSG_NORMAL
     release
     end
 
@@ -133,7 +137,7 @@ BattleItems2:
     .hword ITEM_NONE
 
 .align 1
-ZCrystals1:
+ZCrystals:
     .hword ITEM_PIKANIUM_Z
     .hword ITEM_PIKASHUNIUM_Z
     .hword ITEM_ALORAICHIUM_Z
@@ -141,16 +145,24 @@ ZCrystals1:
     .hword ITEM_DECIDIUM_Z
     .hword ITEM_INCINIUM_Z
     .hword ITEM_PRIMARIUM_Z
-    .hword ITEM_NONE
-
-.align 1
-ZCrystals2:
     .hword ITEM_KOMMONIUM_Z
     .hword ITEM_MIMIKIUM_Z
     .hword ITEM_SNORLIUM_Z
     .hword ITEM_LYCANIUM_Z
     .hword ITEM_LUNALIUM_Z
     .hword ITEM_SOLGANIUM_Z
+    .hword ITEM_NONE
+
+.align 1
+SpecialItems:
+    .hword ITEM_SHIMMER_STONE
+    .hword ITEM_ZEROMIN
+    .hword ITEM_HEALTH_WING
+    .hword ITEM_MUSCLE_WING
+    .hword ITEM_RESIST_WING
+    .hword ITEM_GENIUS_WING
+    .hword ITEM_CLEVER_WING
+    .hword ITEM_SWIFT_WING
     .hword ITEM_NONE
 
 .global EventScript_BattleFrontier_SE_ShadyRelicSeller

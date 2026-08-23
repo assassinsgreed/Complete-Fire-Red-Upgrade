@@ -3779,11 +3779,11 @@
 .equ ITEM_PRETTY_WING, 0x267
 
 @;Random Normal Items
-.equ ITEM_ODD_KEYSTONE, 0xFB
+.equ ITEM_ZEROMIN, 0xFB // Was Odd Keystone, originally
 .equ ITEM_BOTTLE_CAP, 0x268
 .equ ITEM_GOLD_BOTTLE_CAP, 0x269
 .equ ITEM_ABILITY_CAPSULE, 0x260
-.equ ITEM_WISHING_PIECE, 0x58
+.equ ITEM_SHIMMER_STONE, 0x58 // Was Wishing Piece, originally
 
 @;Nectars
 .equ ITEM_RED_NECTAR, 0x26A

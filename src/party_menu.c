@@ -1590,7 +1590,10 @@ static void CursorCb_MoveItem(u8 taskId)
 //Functions relating to staying on the party screen after an item is used
 static bool8 IsUsePartyMenuItemHPEVModifier(struct Pokemon* mon, u16 oldHP, u16 item);
 static void AdjustFriendshipForEVReducingBerry(struct Pokemon* mon);
+static void AdjustPartyMonHPAfterMaxHPChange(struct Pokemon* mon, u16 oldHP, u16 oldMaxHP);
 static void ItemUseCB_EVReducingBerry(u8 taskId, TaskFunc func);
+static void ItemUseCB_EVEraser(u8 taskId, TaskFunc func);
+static void ItemUseCB_IVUpItem(u8 taskId, TaskFunc func);
 static void ItemUseCB_FormChangeItem(u8 taskId, TaskFunc func);
 static void FormChangeItem_ShowPartyMenuFromField(u8 taskId);
 static void ItemUseCB_DNASplicersStep(u8 taskId, TaskFunc func);
@@ -1601,6 +1604,10 @@ static u8 GetAbilityCapsuleNewAbility(struct Pokemon* mon);
 static void Task_OfferAbilityChange(u8 taskId);
 static void Task_HandleAbilityChangeYesNoInput(u8 taskId);
 static void Task_ChangeAbility(u8 taskId);
+static void ItemUseCB_ShimmeringStone(u8 taskId, TaskFunc func);
+static void Task_OfferShinyChange(u8 taskId);
+static void Task_HandleShinyChangeYesNoInput(u8 taskId);
+static void Task_ChangeShininess(u8 taskId);
 static void ItemUseCB_MaxPowder(u8 taskId, TaskFunc func);
 static void Task_OfferGigantamaxChange(u8 taskId);
 static void Task_HandleGigantamaxChangeYesNoInput(u8 taskId);
@@ -1851,6 +1858,39 @@ static void AdjustFriendshipForEVReducingBerry(struct Pokemon* mon)
 	SetMonData(mon, MON_DATA_FRIENDSHIP, &friendship);
 }
 
+static void AdjustPartyMonHPAfterMaxHPChange(struct Pokemon* mon, u16 oldHP, u16 oldMaxHP)
+{
+	u16 newMaxHP = GetMonData(mon, MON_DATA_MAX_HP, NULL);
+
+	if (newMaxHP == oldMaxHP)
+		return;
+
+	#ifdef SPECIES_SHEDINJA
+	if (GetMonData(mon, MON_DATA_SPECIES, NULL) == SPECIES_SHEDINJA)
+		return;
+	#endif
+
+	if (oldHP == 0) // Mon was fainted before
+	{
+		SetMonData(mon, MON_DATA_HP, &oldHP); // Keep it fainted
+	}
+	else if (GetMonData(mon, MON_DATA_HP, NULL) == oldHP) // HP didn't change for some reason
+	{
+		u16 newHP;
+
+		if (newMaxHP > oldMaxHP)
+			newHP = MathMin(newMaxHP, oldHP + (newMaxHP - oldMaxHP));
+		else if (oldMaxHP - newMaxHP >= oldHP)
+			newHP = 1; //Don't faint it
+		else
+			newHP = oldHP - (oldMaxHP - newMaxHP);
+
+		SetMonData(mon, MON_DATA_HP, &newHP);
+	}
+
+	UpdateMonDisplayInfoAfterRareCandy(gPartyMenu.slotId, mon); // So Max HP Updates
+}
+
 #define gStatNamesTable ((const u8**) 0x83FD5D0)
 extern const u8 gText_EVReducingBerryBothEffects[];
 extern const u8 gText_EVReducingBerryLoweredStat[];
@@ -1900,40 +1940,115 @@ static void ItemUseCB_EVReducingBerry(u8 taskId, TaskFunc func)
 			StringExpandPlaceholders(gStringVar4, gText_EVReducingBerryIncreasedFriendship);
 		}
 		
-		if (oldMaxHP != GetMonData(mon, MON_DATA_MAX_HP, NULL) //Pomeg Berry
-		#ifdef SPECIES_SHEDINJA
-		&& GetMonData(mon, MON_DATA_SPECIES, NULL) != SPECIES_SHEDINJA
-		#endif
-		)
-		{
-			u16 hpDiff = oldMaxHP - GetMonData(mon, MON_DATA_MAX_HP, NULL);
-			if (oldHP == 0) //Mon was fainted before
-				SetMonData(mon, MON_DATA_HP, &oldHP); //Keep it fainted
-			else if (GetMonData(mon, MON_DATA_HP, NULL) == oldHP) //HP didn't change for some reason
-			{
-				if (hpDiff > oldHP)
-					oldHP = 1; //Don't faint it
-				else
-					oldHP = MathMax(1, oldHP - hpDiff);
-
-				SetMonData(mon, MON_DATA_HP, &oldHP);
-			}
-
-			UpdateMonDisplayInfoAfterRareCandy(gPartyMenu.slotId, mon); //So Max HP Updates
-		}
+		AdjustPartyMonHPAfterMaxHPChange(mon, oldHP, oldMaxHP); // Pomeg Berry
 
 		RemoveBagItem(item, 1);
 		DisplayPartyMenuMessage(gStringVar4, TRUE);
 		ScheduleBgCopyTilemapToVram(2);
 		gTasks[taskId].func = func;
 	}
-	else //No Effect
+	else // No Effect
 	{
 		gPartyMenuUseExitCallback = FALSE;
 		DisplayPartyMenuMessage(gText_WontHaveEffect, TRUE);
 		ScheduleBgCopyTilemapToVram(2);
 		gTasks[taskId].func = func;
 	}
+}
+
+void FieldUseFunc_EVEraser(u8 taskId)
+{
+	gItemUseCB = ItemUseCB_EVEraser;
+	SetUpItemUseCallback(taskId);
+}
+
+extern const u8 gText_EVEraserResetEVs[];
+static void ItemUseCB_EVEraser(u8 taskId, TaskFunc func)
+{
+	u8 i;
+	u8 zero = 0;
+	struct Pokemon* mon = &gPlayerParty[gPartyMenu.slotId];
+	u16 item = Var800E;
+	u16 oldHP = GetMonData(mon, MON_DATA_HP, NULL);
+	u16 oldMaxHP = GetMonData(mon, MON_DATA_MAX_HP, NULL);
+	bool8 hasEVs = FALSE;
+
+	PlaySE(SE_SELECT);
+
+	for (i = 0; i < NUM_STATS; ++i)
+	{
+		if (GetMonData(mon, MON_DATA_HP_EV + i, NULL) > 0)
+		{
+			hasEVs = TRUE;
+			break;
+		}
+	}
+
+	if (!hasEVs) // Nothing left to reset
+	{
+		gPartyMenuUseExitCallback = FALSE;
+		DisplayPartyMenuMessage(gText_WontHaveEffect, TRUE);
+		ScheduleBgCopyTilemapToVram(2);
+		gTasks[taskId].func = func;
+		return;
+	}
+
+	for (i = 0; i < NUM_STATS; ++i)
+		SetMonData(mon, MON_DATA_HP_EV + i, &zero);
+
+	CalculateMonStats(mon);
+	AdjustPartyMonHPAfterMaxHPChange(mon, oldHP, oldMaxHP);
+
+	GetMonNickname(mon, gStringVar1);
+	StringExpandPlaceholders(gStringVar4, gText_EVEraserResetEVs);
+
+	RemoveBagItem(item, 1);
+	DisplayPartyMenuMessage(gStringVar4, TRUE);
+	ScheduleBgCopyTilemapToVram(2);
+	gTasks[taskId].func = func;
+}
+
+void FieldUseFunc_IVUpItem(u8 taskId)
+{
+	gItemUseCB = ItemUseCB_IVUpItem;
+	SetUpItemUseCallback(taskId);
+}
+
+#define MAX_IV 31
+extern const u8 gText_IVUpItemRaisedStat[];
+static void ItemUseCB_IVUpItem(u8 taskId, TaskFunc func)
+{
+	struct Pokemon* mon = &gPlayerParty[gPartyMenu.slotId];
+	u16 item = Var800E;
+	u8 stat = ItemId_GetHoldEffectParam(item) - 1; // Based on item's Quality stat
+	u16 oldHP = GetMonData(mon, MON_DATA_HP, NULL);
+	u16 oldMaxHP = GetMonData(mon, MON_DATA_MAX_HP, NULL);
+	u8 iv = (stat < NUM_STATS) ? GetMonData(mon, MON_DATA_HP_IV + stat, NULL) : MAX_IV;
+
+	PlaySE(SE_SELECT);
+
+	if (iv >= MAX_IV) // Already perfect, or the item's quality doesn't associate to an actual stat
+	{
+		gPartyMenuUseExitCallback = FALSE;
+		DisplayPartyMenuMessage(gText_WontHaveEffect, TRUE);
+		ScheduleBgCopyTilemapToVram(2);
+		gTasks[taskId].func = func;
+		return;
+	}
+
+	++iv;
+	SetMonData(mon, MON_DATA_HP_IV + stat, &iv);
+	CalculateMonStats(mon);
+	AdjustPartyMonHPAfterMaxHPChange(mon, oldHP, oldMaxHP);
+
+	GetMonNickname(mon, gStringVar1);
+	StringCopy(gStringVar2, gStatNamesTable[stat]);
+	StringExpandPlaceholders(gStringVar4, gText_IVUpItemRaisedStat);
+
+	RemoveBagItem(item, 1);
+	DisplayPartyMenuMessage(gStringVar4, TRUE);
+	ScheduleBgCopyTilemapToVram(2);
+	gTasks[taskId].func = func;
 }
 
 void FieldUseFunc_FormChangeItem(u8 taskId)
@@ -2663,6 +2778,103 @@ static void Task_ChangeAbility(u8 taskId)
 	GetMonNickname(mon, gStringVar1);
 	CopyAbilityName(gStringVar2, GetMonAbility(mon), species);
 	StringExpandPlaceholders(gStringVar4, gText_AbilityCapsuleChangedAbility);
+	DisplayPartyMenuMessage(gStringVar4, TRUE);
+	ScheduleBgCopyTilemapToVram(2);
+	gTasks[taskId].func = Task_ClosePartyMenuAfterText;
+	RemoveBagItem(item, 1);
+}
+
+void FieldUseFunc_ShimmeringStone(u8 taskId)
+{
+	gItemUseCB = ItemUseCB_ShimmeringStone;
+	SetUpItemUseCallback(taskId);
+}
+
+extern const u8 gText_ShimmeringStoneOfferShiny[];
+extern const u8 gText_ShimmeringStoneOfferNormal[];
+static void ItemUseCB_ShimmeringStone(u8 taskId, UNUSED TaskFunc func)
+{
+	struct Pokemon* mon = &gPlayerParty[gPartyMenu.slotId];
+
+	PlaySE(SE_SELECT);
+	GetMonNickname(mon, gStringVar1);
+	StringExpandPlaceholders(gStringVar4, IsMonShiny(mon) ? gText_ShimmeringStoneOfferNormal : gText_ShimmeringStoneOfferShiny);
+	DisplayPartyMenuMessage(gStringVar4, TRUE);
+	ScheduleBgCopyTilemapToVram(2);
+	gTasks[taskId].func = Task_OfferShinyChange;
+}
+
+static void Task_OfferShinyChange(u8 taskId)
+{
+	if (IsPartyMenuTextPrinterActive() != TRUE)
+	{
+		PartyMenuDisplayYesNoMenu();
+		gTasks[taskId].func = Task_HandleShinyChangeYesNoInput;
+	}
+}
+
+static void Task_HandleShinyChangeYesNoInput(u8 taskId)
+{
+	switch (Menu_ProcessInputNoWrapClearOnChoose())
+	{
+		case 0:
+			gTasks[taskId].func = Task_ChangeShininess;
+			break;
+		case MENU_B_PRESSED:
+			PlaySE(SE_SELECT);
+			// Fallthrough
+		case 1:
+			gTasks[taskId].func = Task_ClosePartyMenuAfterText;
+			break;
+	}
+}
+
+extern const u8 gText_ShimmeringStoneTurnedShiny[];
+extern const u8 gText_ShimmeringStoneTurnedNormal[];
+static void Task_ChangeShininess(u8 taskId)
+{
+	u16 item = Var800E;
+	struct Pokemon* mon = &gPlayerParty[gPartyMenu.slotId];
+	u32 personality = GetMonData(mon, MON_DATA_PERSONALITY, NULL);
+	u32 otId = GetMonData(mon, MON_DATA_OT_ID, NULL);
+	u16 species = GetMonData(mon, MON_DATA_SPECIES, NULL);
+	u16 sid = HIHALF(otId);
+	u16 tid = LOHALF(otId);
+	bool8 makeShiny = !IsMonShiny(mon);
+
+	// Everything the personality decides that the stone must not disturb
+	u8 abilityNum = personality & 1;
+	u8 gender = GetGenderFromSpeciesAndPersonality(species, personality);
+	u8 nature = GetNatureFromPersonality(personality);
+	u8 letter = GetUnownLetterFromPersonality(personality);
+	bool8 isMinior = IsMinior(species);
+	u16 miniorCore = GetMiniorCoreFromPersonality(personality);
+
+	PlaySE(SE_USE_ITEM);
+
+	do
+	{
+		personality = Random32();
+
+		if (makeShiny) // Force the halves to XOR into the shiny window instead of waiting on odds
+		{
+			u8 shinyRange = Random() % SHINY_ODDS;
+			personality = (((shinyRange ^ (sid ^ tid)) ^ LOHALF(personality)) << 16) | LOHALF(personality);
+		}
+
+		personality &= ~(1);
+		personality |= abilityNum;
+
+	} while (GetNatureFromPersonality(personality) != nature
+	|| GetGenderFromSpeciesAndPersonality(species, personality) != gender
+	|| IsShinyOtIdPersonality(otId, personality) != makeShiny // Writing the ability bit above can shift the halves back out of the shiny window
+	|| (species == SPECIES_UNOWN && GetUnownLetterFromPersonality(personality) != letter)
+	|| (isMinior && GetMiniorCoreFromPersonality(personality) != miniorCore));
+
+	SetMonData(mon, MON_DATA_PERSONALITY, &personality);
+
+	GetMonNickname(mon, gStringVar1);
+	StringExpandPlaceholders(gStringVar4, makeShiny ? gText_ShimmeringStoneTurnedShiny : gText_ShimmeringStoneTurnedNormal);
 	DisplayPartyMenuMessage(gStringVar4, TRUE);
 	ScheduleBgCopyTilemapToVram(2);
 	gTasks[taskId].func = Task_ClosePartyMenuAfterText;
