@@ -40,6 +40,15 @@ If you come back tomorrow, we might\nbe able to scratch each others'\lbacks agai
 #org @gText_BattleFrontier_RelicSellerChoseNo
 Feh, I'm not running a charity!\nScram!
 
+#org @gText_BattleFrontier_TowerBoy
+The Battle Tower is a pretty simple\nfacility, all things considered.\pThat doesn't mean it's boring,\nthough!\pSometimes a traditional Pok\emon\nbattle is just what the doctor\lordered.
+
+#org @gText_BattleFrontier_TowerChild
+Mom said I can watch the battles on\nthe TV! Yaay!
+
+#org @gText_BattleFrontier_TowerRocker
+Ugh. I've been training for months\nand I still can't get past a streak\lof 3 wins.\pMaybe I should just throw in the\ntowel[.]
+
 // Facility-agnostic strings to be shared by attendants in each facility, with var substitution:
 //   - FrontierChallenge_BufferFacilityInfo fills in [BUFFER1] with the facility name, [BUFFER2] with the format and [BUFFER3] with the current streak.
 //   - BufferNumMonsToEnter overwrites [BUFFER3] with the number of Pokemon to enter.
@@ -80,9 +89,7 @@ Cancel
 // Battle background
 //------------------------------------------------------------------
 
-// The list these label is built in src/frontier_challenge.c, which also holds the background
-// each one draws. Keep the two in the same order.
-
+// The list these label is built in src/frontier_challenge.c, which also holds the background each one draws. Keep the two in the same order.
 #org @gText_BattleFrontier_ChooseBackground
 You're currently battling in\n[BUFFER1].\pWhere would you like your battles\nto take place?
 
@@ -168,8 +175,7 @@ Dais of Light
 // Battle music
 //------------------------------------------------------------------
 
-// The list these label is built in src/frontier_challenge.c, which also holds the song each
-// one plays. Keep the two in the same order.
+// The list these label is built in src/frontier_challenge.c, which also holds the song each one plays. Keep the two in the same order.
 
 #org @gText_BattleFrontier_ChooseMusic
 Right now we're playing\n[BUFFER1].\pWhat would you like to hear during\nyour battles?
@@ -245,7 +251,7 @@ Facility Rules
 At the Battle Frontier, you'll take\non challengers one after another.\pEvery Pok\emon battles at level 50\nand is healed before each fight.\pAs you win, your streak will grow\nand you'll face stronger trainers.\pYou'll earn Pok\e Chips for each win.\nJust remember you can only hold\lup to 999 Pok\e Chips at a time!\pIf you ever need a break, you can\nRest - we'll save your streak and\lhold it until you return.\pPlease make sure to complete a\nbattle before resting - otherwise\lyour streak will be lost!
 
 #org @gText_BattleFrontier_TowerRules
-The Battle Tower plays it straight -\nno gimmicks, no special conditions.\pJust you, your team, and one\nchallenger after another.
+The Battle Tower emphasizes\ntraditionl battles - no gimmicks.\pJust you, your team, and one\nchallenger after another.
 
 //------------------------------------------------------------------
 // Choosing a format and entering a team
@@ -269,23 +275,42 @@ Singles (on hold)
 Doubles (on hold)
 
 #org @gText_BattleFrontier_ConfirmChallenge
-The [BUFFER1], [BUFFER2] format.\pYou'll need to enter [BUFFER3] Pok\emon.\pShall we begin?
+The [BUFFER2] format? That will\nrequire [BUFFER3] Pok\emon to enter.\pIs that okay?
 
 #org @gText_BattleFrontier_ChooseTeam
 Please choose the Pok\emon you'd\nlike to enter.
 
 //------------------------------------------------------------------
+// Walking to and from the battle area
+//------------------------------------------------------------------
+#org @gText_BattleFrontier_LeadToBattlePosition
+Please follow me, and we'll get your\nchallenge started.
+
+#org @gText_BattleFrontier_LeadToLobby
+Let me lead you out of the battle\nspace. Right this way.
+
+#org @gText_BattleFrontier_CallingOpponent
+We'll call your next opponent in\nnow.
+
+//------------------------------------------------------------------
 // Battles
 //------------------------------------------------------------------
 
-// Fallbacks only - in a Frontier battle the engine prints the opponent's own
-// lines from the trainer table instead of these.
-
+// Fallbacks only - in a Frontier battle the engine prints the opponent's own lines from the trainer table instead of these.
 #org @gText_BattleFrontier_OpponentDefeated
 I couldn't keep up with you!
 
 #org @gText_BattleFrontier_OpponentVictorious
 Better luck next time!
+
+#org @gText_BattleFrontier_AttendantWin
+Congratulations on your win!
+
+#org @gText_BattleFrontier_AttendantWinMilestone
+Incredible! Overcoming such a\npowerful trainer is no small feat.
+
+#org @gText_BattleFrontier_AttendantLoss
+Oh dear[.] This loss has ended your\nchallenge.
 
 #org @gText_BattleFrontier_WinReward
 That's [BUFFER3] straight in the\n[BUFFER1]!\pHere are [BUFFER2] Pok\e Chips for\nyour trouble.
@@ -300,9 +325,7 @@ That's [BUFFER3] straight in the\n[BUFFER1]!\pYou'll have to spend some Pok\e Ch
 #org @gText_BattleFrontier_ChallengeMenuPrompt
 Your [BUFFER1] [BUFFER2] streak\nstands at [BUFFER3].\pWould you like to continue?
 
-// The two below replace the prompt above when a milestone battle is next, so the player is
-// never surprised into one - see FrontierChallenge_GetNextOpponentKind.
-
+// The two below replace the prompt above when a milestone battle is next, so the player is never surprised into one - see FrontierChallenge_GetNextOpponentKind.
 #org @gText_BattleFrontier_ChallengeMenuPromptAce
 Your [BUFFER1] [BUFFER2] streak\nstands at [BUFFER3].\pA word of warning - an especially\nstrong Trainer is next up.\pWould you like to continue?
 
@@ -329,7 +352,7 @@ We'll be waiting for you!
 //------------------------------------------------------------------
 
 #org @gText_BattleFrontier_WelcomeBackRested
-Welcome back to the [BUFFER1]!\pYour [BUFFER2] streak of [BUFFER3]\nis right where you left it.\pFeel free to bring a different\nteam this time, if you like.
+Your [BUFFER2] streak of [BUFFER3]\nis currently on hold.\pFeel free to bring a different\nteam this time, if you like.
 
 #org @gText_BattleFrontier_OnHoldMenuPrompt
 What would you like to do with it?
@@ -345,7 +368,7 @@ Before you decide - waiting in the\nnext room is the master of the\l[BUFFER1] th
 Nothing
 
 #org @gText_BattleFrontier_ResumeWarning
-Then let's pick up where you left\noff!\pJust remember[.] Once the next battle\nbegins, you'll have to see it\lthrough.\pStopping partway will cost you\nyour streak.\pWith that said, let's begin[.]
+Understood.\pJust remember[.] Once the next battle\nbegins, you'll have to see it\lthrough.\pStopping partway will cost you\nyour streak.\pWith that said, let's begin[.]
 
 #org @gText_BattleFrontier_ConfirmAbandon
 Giving up will end your run, and\nyour [BUFFER1] [BUFFER2] streak of\l[BUFFER3] will be lost.\pAre you sure?

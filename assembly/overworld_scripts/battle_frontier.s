@@ -231,22 +231,38 @@ RelicSellerTradeComplete:
     fadescreen FADEIN_BLACK
     goto End
 
+.global EventScript_BattleFrontier_TowerBoy
+EventScript_BattleFrontier_TowerBoy:
+    npcchat gText_BattleFrontier_TowerBoy
+    end
+
+.global EventScript_BattleFrontier_TowerChild
+EventScript_BattleFrontier_TowerChild:
+    npcchatwithmovement gText_BattleFrontier_TowerChild m_LookUp
+    end
+
+.global EventScript_BattleFrontier_TowerRocker
+EventScript_BattleFrontier_TowerRocker:
+    npcchat gText_BattleFrontier_TowerRocker
+    end
+
 @ ============================================================================
 @ Battle Frontier Facility scripts
 @
 @ One shared attendant script drives every facility. A facility is identified only by
 @ VAR_BATTLE_FACILITY_NUM, so the format choice, party entry, battle loop,
 @ Continue/Rest/Give up prompts and records board below are all shared. The only
-@ per-facility code is the hook each one runs before a battle, dispatched from
-@ BattleFrontier_Common_PerBattleSetup.
+@ per-facility code sits behind the hooks dispatched from the "Per-facility hooks"
+@ section, which is where each facility's own cutscene and movements live.
 @
 @ A run belongs to one facility/format pair, allowing every facility to hold onto
 @ a paused streak that can be resumed at any time. The player is free to wanter while a
 @ streak is paused.
 @
 @ Adding a facility is: an entry point that sets VAR_BATTLE_FACILITY_NUM and jumps to
-@ BattleFrontier_Common_Attendant, a case in BattleFrontier_Common_PerBattleSetup, and a rules
-@ string with a case in BattleFrontier_Common_FacilityRules. See the Battle Tower as a reference.
+@ BattleFrontier_Common_Attendant, a rules string with a case in
+@ BattleFrontier_Common_FacilityRules, and a case in each per-facility hook it needs. See the
+@ Battle Tower as a reference.
 @ ============================================================================
 
 @ enum BattleFacilities, from include/new/frontier.h
@@ -290,6 +306,11 @@ RelicSellerTradeComplete:
 .equ SPECIAL_SHOW_FRONTIER_RECORDS, 0x57
 .equ SPECIAL_MODIFY_TEAM_FOR_FRONTIER, 0x73
 
+@ From include/constants/songs.h
+.equ MUS_BIG_CELEBRATION, 0x10C
+.equ MUS_CELEBRATION, 0x10D
+.equ MUS_FAILED, 0x10E
+
 .equ STREAK_INCREMENT, 0x0
 .equ STREAK_RESET, 0x1
 
@@ -300,6 +321,11 @@ RelicSellerTradeComplete:
 
 @ Var8000 value that makes trainerbattle9 continue the script after a loss (no white out)
 .equ CONTINUE_AFTER_LOSS, 0xFEFE
+.equ VAR_DYNAMIC_OW_SPRITE, 0x5029
+
+@ Each battle facilities key NPC IDs
+.equ BATTLE_TOWER_ATTENDANT, 0x1
+.equ BATTLE_TOWER_OPPONENT, 0x2
 
 @ ============================================================================
 @ Per-facility entry points
@@ -500,6 +526,7 @@ BattleFrontier_Common_StartRun:
     call BattleFrontier_Common_CommitRun
     callasm FrontierChallenge_OverrideGameModifiers
     special SPECIAL_MODIFY_TEAM_FOR_FRONTIER
+    call BattleFrontier_Common_EnterBattlePosition @ After CommitRun's save, so a reset returns the player to the lobby
     goto BattleFrontier_Common_BattleLoop
 
 @ Handles both a new run and a resumed run.
@@ -546,6 +573,9 @@ BattleFrontier_Common_BattleLoop:
     call BattleFrontier_Common_PerBattleSetup
     callasm FrontierChallenge_SetUpNextOpponent
     special2 LASTRESULT SPECIAL_GENERATE_FACILITY_TRAINER
+    copyvar VAR_DYNAMIC_OW_SPRITE LASTRESULT
+    call BattleFrontier_Common_OpponentArrives
+    setvar 0x8000 0x0
     special SPECIAL_LOAD_FRONTIER_INTRO_MESSAGE
     callstd MSG_KEEPOPEN @ Prints the line sp053 left in gLoadPointer
     callasm FrontierChallenge_RestoreTextColour
@@ -568,22 +598,104 @@ BattleFrontier_Common_BattleFrontierBrain:
     goto BattleFrontier_Common_BattleEnded
 
 BattleFrontier_Common_BattleEnded:
+    call BattleFrontier_Common_PostBattleReset
     setvar 0x8000 0x0
     callasm FrontierChallenge_DidPlayerWin
     compare LASTRESULT TRUE
     if notequal _goto BattleFrontier_Common_Loss
     goto BattleFrontier_Common_Win
 
-@ Circus randomizes its field effects here (special 0x72), Mine its battle options (0x70),
-@ Factory and Maze swap or reroll the team. The Tower is the baseline and does nothing.
+@ Once per run, as it starts. Both a new run and one picked back up come through here.
+BattleFrontier_Common_EnterBattlePosition:
+    switch VAR_BATTLE_FACILITY_NUM
+    case IN_BATTLE_TOWER, BattleFrontier_Tower_EnterBattlePosition, _call
+    return
+
+@ Before every battle. Circus randomizes its field effects here (special 0x72), Factory and Maze swap or reroll the team.
 BattleFrontier_Common_PerBattleSetup:
     switch VAR_BATTLE_FACILITY_NUM
     case IN_BATTLE_TOWER, BattleFrontier_Tower_PerBattleSetup, _call
     return
 
-BattleFrontier_Tower_PerBattleSetup:
-    @ TODO: Handle NPC walking in, leaving, etc.
+BattleFrontier_Common_OpponentArrives:
+    switch VAR_BATTLE_FACILITY_NUM
+    case IN_BATTLE_TOWER, BattleFrontier_Tower_OpponentArrives, _call
     return
+
+BattleFrontier_Common_PostBattleReset:
+    switch VAR_BATTLE_FACILITY_NUM
+    case IN_BATTLE_TOWER, BattleFrontier_Tower_PostBattleReset, _call
+    return
+
+BattleFrontier_Common_LeaveBattlePosition:
+    switch VAR_BATTLE_FACILITY_NUM
+    case IN_BATTLE_TOWER, BattleFrontier_Tower_LeaveBattlePosition, _call
+    return
+
+BattleFrontier_Common_CommentOnResult:
+    callasm FrontierChallenge_DidPlayerWin
+    compare LASTRESULT TRUE
+    if notequal _goto BattleFrontier_Common_CommentOnLoss
+    callasm FrontierChallenge_GetNextOpponentKind
+    compare LASTRESULT FRONTIER_OPPONENT_REGULAR
+    if notequal _goto BattleFrontier_Common_CommentOnMilestoneWin
+    fanfare MUS_CELEBRATION
+    msgbox gText_BattleFrontier_AttendantWin MSG_NORMAL
+    return
+
+BattleFrontier_Common_CommentOnMilestoneWin:
+    fanfare MUS_BIG_CELEBRATION
+    msgbox gText_BattleFrontier_AttendantWinMilestone MSG_NORMAL
+    return
+
+BattleFrontier_Common_CommentOnLoss:
+    fanfare MUS_FAILED
+    msgbox gText_BattleFrontier_AttendantLoss MSG_NORMAL
+    return
+
+BattleFrontier_Tower_EnterBattlePosition:
+    msgbox gText_BattleFrontier_LeadToBattlePosition MSG_NORMAL
+    applymovement PLAYER m_BattleTower_PlayerToBattlePosition
+    applymovement BATTLE_TOWER_ATTENDANT m_BattleTower_AttendantToBattlePosition
+    waitmovement ALLEVENTS
+    return
+
+BattleFrontier_Tower_PerBattleSetup:
+    applymovement PLAYER m_LookRight
+    applymovement BATTLE_TOWER_ATTENDANT m_LookRight
+    waitmovement ALLEVENTS
+    return
+
+BattleFrontier_Tower_OpponentArrives:
+    msgbox gText_BattleFrontier_CallingOpponent MSG_NORMAL
+    showsprite BATTLE_TOWER_OPPONENT
+    applymovement BATTLE_TOWER_OPPONENT m_BattleTower_OpponentToBattlePosition
+    waitmovement ALLEVENTS
+    return
+
+BattleFrontier_Tower_PostBattleReset:
+    applymovement PLAYER m_LookDown
+    applymovement BATTLE_TOWER_ATTENDANT m_LookUp
+    applymovement BATTLE_TOWER_OPPONENT m_BattleTower_OpponentLeaves
+    call BattleFrontier_Common_CommentOnResult @ Before the wait, so it plays over the opponent leaving
+    waitmovement ALLEVENTS
+    hidesprite BATTLE_TOWER_OPPONENT
+    return
+
+BattleFrontier_Tower_LeaveBattlePosition:
+    msgbox gText_BattleFrontier_LeadToLobby MSG_NORMAL
+    applymovement PLAYER m_BattleTower_PlayerToLobby
+    applymovement BATTLE_TOWER_ATTENDANT m_BattleTower_AttendantToLobby
+    waitmovement ALLEVENTS
+    return
+
+@ Movements
+m_BattleTower_PlayerToBattlePosition: .byte walk_up, walk_up, walk_up, walk_up, walk_up, walk_up, walk_up, walk_up, walk_left, walk_left, walk_left, look_right, end_m
+m_BattleTower_AttendantToBattlePosition: .byte walk_up, walk_up, walk_up, walk_up, walk_up, walk_up, walk_left, pause_long, pause_long, walk_left, walk_left, look_right, end_m
+m_BattleTower_OpponentToBattlePosition: .byte walk_up, walk_up, walk_up, walk_up, walk_up, walk_up, walk_up, walk_right, walk_right, walk_right, look_left, end_m
+m_BattleTower_OpponentLeaves: .byte walk_left, walk_left, walk_left, walk_down, walk_down, walk_down, walk_down, walk_down, walk_down, walk_down, end_m
+m_BattleTower_PlayerToLobby: .byte walk_right, walk_right, walk_right, walk_down, walk_down, walk_down, walk_down, walk_down, walk_down, walk_down, walk_down, look_up, end_m
+m_BattleTower_AttendantToLobby: .byte walk_right, walk_right, walk_right, walk_down, walk_down, walk_down, walk_down, walk_down, walk_left, look_right, pause_long, walk_right, walk_down, look_down, end_m
 
 @ ============================================================================
 @ Winning, and the Continue / Rest / Give up prompt
@@ -697,8 +809,8 @@ BattleFrontier_Common_Rest:
     if equal _goto BattleFrontier_Common_ChallengeMenu
     special SPECIAL_LOAD_PLAYER_PARTY
     callasm FrontierChallenge_SetResting
-    @ Before the save, or the facility state would be on disk as well as in RAM.
-    callasm FrontierChallenge_ClearFacilityVars
+    callasm FrontierChallenge_ClearFacilityVars @ Before the save, or the facility state would be on disk as well as in RAM.
+    call BattleFrontier_Common_LeaveBattlePosition @ Also before the save, so the run is picked back up from the lobby.
     msgbox gText_BattleFrontier_Resting MSG_KEEPOPEN
     callasm FrontierChallenge_ForceSave
     waitstate
@@ -713,6 +825,7 @@ BattleFrontier_Common_ConfirmAbandon:
     compare LASTRESULT NO
     if equal _goto BattleFrontier_Common_ChallengeMenu
     call BattleFrontier_Common_EndLiveRun
+    call BattleFrontier_Common_LeaveBattlePosition
     goto BattleFrontier_Common_Abandoned
 
 BattleFrontier_Common_ConfirmAbandonOnHold:
@@ -733,6 +846,7 @@ BattleFrontier_Common_Abandoned:
 
 BattleFrontier_Common_Loss:
     call BattleFrontier_Common_EndLiveRun
+    call BattleFrontier_Common_LeaveBattlePosition
     callasm FrontierChallenge_BufferFacilityInfo
     msgbox gText_BattleFrontier_Lost MSG_KEEPOPEN
     goto BattleFrontier_Common_Exit

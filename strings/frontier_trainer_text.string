@@ -1059,19 +1059,19 @@ Guess not!
 Isn't this swimsuit neat?\nIt's built to hold Pok\e Balls!
 
 #org @sFrontierText_Swimmer_PlayerWin_3
-Better luck next time!
+I lost? Oh no!
 
 #org @sFrontierText_Swimmer_PlayerLose_3
-I lost? Oh no!
+Better luck next time!
 
 #org @sFrontierText_NinjaBoy_PreBattle_1
 I've trained under my master for\nseven months. You can't win!
 
 #org @sFrontierText_NinjaBoy_PlayerWin_1
-Heh, all according to keikaku.\n(Editor's note: keikaku means plan)
+Must I train even harder?
 
 #org @sFrontierText_NinjaBoy_PlayerLose_1
-Must I train even harder?
+Heh, all according to keikaku.\n(Editor's note: keikaku means plan)
 
 #org @sFrontierText_NinjaBoy_PreBattle_2
 Don't cry when you lose, got it?\nI have an image to maintain.
@@ -1244,7 +1244,7 @@ Greetings, [PLAYER].\pDo you see the crowd? They've come\nout to see our magnifi
 Exquisite!
 
 #org @sFrontierText_Raine_PlayerLose
-You've tripped up a bit.
+Try to regain your composure.
 
 #org @sFrontierText_Chance_PreBattle
 Wahaha! [PLAYER], long time no see!\pI assume it isn't luck that has\nbrought you this far, huh?\pCome on, show me how you can play\nthe field!
