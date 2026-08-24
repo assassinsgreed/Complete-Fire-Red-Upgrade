@@ -898,19 +898,22 @@ static void EndBattleFlagClear(void)
 		}
 	}
 
-	//Reset Totem Vars
-	int mealBuffDurationRemaining = VarGet(0x4095);
-	if (mealBuffDurationRemaining > 0)
+	//Reset Totem Vars (when not in the Battle Frontier, which prohibits meal effects)
+	if (!(gBattleTypeFlags & BATTLE_TYPE_FRONTIER))
 	{
-		VarSet(0x4095, mealBuffDurationRemaining -= 1);
-	}
+		int mealBuffDurationRemaining = VarGet(0x4095);
+		if (mealBuffDurationRemaining > 0)
+		{
+			VarSet(0x4095, mealBuffDurationRemaining -= 1);
+		}
 
-	if (mealBuffDurationRemaining == 0)
-	{
-		VarSet(VAR_TOTEM + 0, 0);	//Bank B_POSITION_PLAYER_LEFT's Stat
-		VarSet(VAR_TOTEM + 1, 0);	//Bank B_POSITION_PLAYER_LEFT's Stat
-		VarSet(VAR_TOTEM + 2, 0);	//Bank B_POSITION_PLAYER_RIGHT's Stat
-		VarSet(VAR_TOTEM + 3, 0);	//Bank B_POSITION_PLAYER_RIGHT's Stat
+		if (mealBuffDurationRemaining == 0)
+		{
+			VarSet(VAR_TOTEM + 0, 0);	//Bank B_POSITION_PLAYER_LEFT's Stat
+			VarSet(VAR_TOTEM + 1, 0);	//Bank B_POSITION_PLAYER_LEFT's Stat
+			VarSet(VAR_TOTEM + 2, 0);	//Bank B_POSITION_PLAYER_RIGHT's Stat
+			VarSet(VAR_TOTEM + 3, 0);	//Bank B_POSITION_PLAYER_RIGHT's Stat
+		}
 	}
 
 	VarSet(VAR_TERRAIN, 0);
@@ -1001,7 +1004,8 @@ void HandlePokeChip()
 void CheckForMealEffectEnd(void)
 {
 	// Check if the active meal effect is about to conclude; don't want to display this message every time the player doesn't have an active meal
-	if (VarGet(VAR_RESTAURANT_BATTLE_DUR) == 1)
+	// Frontier battles don't count down, so nothing concludes at the end of one either
+	if (VarGet(VAR_RESTAURANT_BATTLE_DUR) == 1 && !(gBattleTypeFlags & BATTLE_TYPE_FRONTIER))
 	{
 		gBattleStringLoader = BattleText_MealEffectEnded;
 		PrepareStringBattle(0x184, 0);

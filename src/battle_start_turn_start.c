@@ -809,6 +809,10 @@ s8 TotemRaiseAmountToStatMod(u8 raiseAmount)
 
 u8 CanActivateTotemBoost(u8 bank)
 {
+	// No meal effects can trigger in the battle frontier
+	if (gBattleTypeFlags & BATTLE_TYPE_FRONTIER)
+		return TOTEM_NO_BOOST;
+
 	u16 val = VarGet(VAR_TOTEM + bank);
 	u16 stat = GetTotemStat(bank, FALSE);
 
