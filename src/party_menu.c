@@ -2564,6 +2564,9 @@ static void Task_TryLearnPostFormeChangeMove(u8 taskId)
 			case SPECIES_PIKACHU_PHD:
 				gMoveToLearn = MOVE_ELECTRICTERRAIN;
 				break;
+			case SPECIES_PIKACHU_COSPLAY:
+				gMoveToLearn = MOVE_THUNDERSHOCK; // Everyday has no costume move; this is only hit if Cosplay Pikachu only knew another costume's move when changing back to everyday
+				break;
 		}
 
 		if (gMoveToLearn != MOVE_NONE)
@@ -3310,7 +3313,8 @@ void ChangeCosplayPikachuFormInOverworld()
 			}
 		}
 
-		if (newSpecies != SPECIES_PIKACHU_COSPLAY)
+		// Everyday only needs the learn flow when stripping the old costume's move left the mon with nothing to use
+		if (newSpecies != SPECIES_PIKACHU_COSPLAY || GetMonData(src, MON_DATA_MOVE1, NULL) == MOVE_NONE)
 		{
 			InitPartyMenu(PARTY_MENU_TYPE_FIELD, PARTY_LAYOUT_SINGLE, PARTY_ACTION_CHOOSE_AND_CLOSE, TRUE, PARTY_MSG_NONE, Task_TryLearnPostFormeChangeMove, CB2_ReturnToFieldContinueScript);
 		}

@@ -52,6 +52,9 @@ Her wardrobe is still packed away in\nmy trunk, of course.\pStop by any time and
 #org @gText_BattleFrontier_CosplayLady_CostumePrompt
 How is Piki doing?\nShall I change her costume?
 
+#org @gText_BattleFrontier_CosplayLady_ChoosePikiPrompt
+Great! Can I see her, please?
+
 #org @gText_BattleFrontier_CosplayLady_DeclinedCostume
 Another time, then.
 
@@ -151,6 +154,12 @@ If you come back tomorrow, we might\nbe able to scratch each others'\lbacks agai
 #org @gText_BattleFrontier_RelicSellerChoseNo
 Feh, I'm not running a charity!\nScram!
 
+#org @gText_BattleFrontier_MarketGirl
+I'm preparing for my next challenge\nat the market.\pNow, let's see[.] Which moves should I\nteach my Incineroar[.]
+
+#org @gText_BattleFrontier_SE_Blackbelt
+I need to buff up my Pok\emon's stats\nor I'm never gonna get a win!
+
 #org @gText_BattleFrontier_TowerBoy
 The Battle Tower is a pretty simple\nfacility, all things considered.\pThat doesn't mean it's boring,\nthough!\pSometimes a traditional Pok\emon\nbattle is just what the doctor\lordered.
 
@@ -159,6 +168,99 @@ Mom said I can watch the battles on\nthe TV! Yaay!
 
 #org @gText_BattleFrontier_TowerRocker
 Ugh. I've been training for months\nand I still can't get past a streak\lof 3 wins.\pMaybe I should just throw in the\ntowel[.]
+
+#org @gText_BattleFrontier_QuarryHiker
+We work in this quarry when battles\naren't happening.\pWe don't mind though - watching the\nbattles is a nice break!
+
+#org @gText_BattleFrontier_QuarryBlackbelt
+Battles at the Quarry disable 2 of\n4 moveslots each turn.\pI just lost a battle because all my\ndamaging moves were disabled.\pI guess I should've brought a more\ndiverse moveset[.]
+
+#org @gText_BattleFrontier_NWOldWoman
+I spend all day watching the\nbattles at the various facilities.\pBeing retired has it's perks!\nOhohoho!
+
+#org @gText_BattleFrontier_NWBoy
+Do you think the Pok\emon ever get\nconfused when deciding which move\lto use at the Battle Sands?
+
+#org @gText_BattleFrontier_NWFisherman
+I feel really proud when I see my\nPok\emon performing well at the\lSands.\pIt's like I can see our training\npaying off, right before my eyes.
+
+#org @gText_BattleFrontier_NWFatGuy
+Oh, bother[.] This isn't the Battle\nMaz.\pI think I'll just wait for my friends\nto find me.
+
+#org @gText_BattleFrontier_NEOldMan
+The battles here remind me of how\nthings used to be when I was a\lboy.\pIt's fun! The younger generation just\nneeds to open their minds to it.
+
+#org @gText_BattleFrontier_NEFisherman
+Do you see that tower to the west?\pI wonder how hard it would be to\nfish off the top of it[.]
+
+#org @gText_BattleFrontier_NELittleBoy
+My Gyarados felt weaker at the\nBattle Isle.\pI don't get it! Isn't Waterfall the\nstrongest move ever?
+
+#org @gText_BattleFrontier_NEBoy
+The Battle Maze is interesting.\pYou can't prep anything beforehand,\nbut that also kind of makes it\lexciting, you know?
+
+#org @gText_BattleFrontier_NEBugCatcher
+It's wonderful how many flowers can\ngrow here.\pI would have thought they'd die out,\nwith how much foot traffic there\lis.
+
+#org @gText_BattleFrontier_SEPsychic
+I lost at the Battle Factory, but\nthat's fine.\pI'll just use my psycic powers to\nsummon better options next time!
+
+#org @gText_BattleFrontier_SEChanneler
+The spirit of battle is strong here.
+
+#org @gText_BattleFrontier_SEWoman
+Do you think anyone has ever\nconquered every facility here?
+
+#org @gText_BattleFrontier_SimPicknicker
+The Battle Sim causes random effects\nto trigger in each battle.\pI heard that the higher your streak\nis, the more effects there are.\pThat'll make battles pretty tough,\nwon't it..?
+
+#org @gText_BattleFrontier_SimScientist
+The Battle Sim is the pride and joy\nof many researchers at the\lBattle Frontier.\pIt took years of hard work to build\nthe simulation systems you will see.\pOf course, the data we can extract\nfrom battlers is invaluable to us.\pPlease, enjoy the facility to it's\nfullest.
+
+#org @gText_BattleFrontier_SimSuperNerd
+Ehehehe[.] The Battle Sim is so\ndynamic.\pPerfect for a Pok\emon battling\nprodigee like me!
+
+#org @gText_BattleFrontier_FactoryWorker
+You can swap one Pok\emon with your\nopponent after you win.\pThat helps you build the perfect\nteam as your streak grows.
+
+#org @gText_BattleFrontier_FactoryFatGuy
+My kids love battling here because\nthey can rent battle-ready\lPok\emon.\pIt's the perfect facility for anyone\nnew to the Battle Frontier!
+
+#org @gText_BattleFrontier_ObservatoryGirl
+The Battle Observatory's ruleset\nleads to very fast battles.\pIt's great if you need to earn\nPok\eChips quickly!\pIt's also very punishing, if your\nopponent out-predicts you.
+
+#org @gText_BattleFrontier_ObservatoryGentleman
+The Battle Observatory is such an\nexciting facility.\pI like to pretend I'm a samurai\nchallenging my opponent to a duel.\pOh! Pretend you didn't hear that.
+
+#org @gText_BattleFrontier_ObservatoryCamper
+If I bring electric types, my\nopponent is more likely to bring\lground types to counter that.\pSo, I'll predict their prediction,\nand choose a water type instead!\pI'm playing both sides, so I always\ncome out on top!
+
+#org @gText_BattleFrontier_BattleTowerSign
+Battle Tower\nClassic battles happen here!
+
+#org @gText_BattleFrontier_BattleQuarrySign
+Battle Quarry\nMoves lock out each turn!
+
+#org @gText_BattleFrontier_BattleSandsSign
+Battle Quarry\nPok\emon battle independently!
+
+#org @gText_BattleFrontier_BattleIsleSign
+Battle Isle\nNo items/abilities, classic moves!
+
+#org @gText_BattleFrontier_BattleMazeSign
+Battle Isle\nA new, random team each battle!
+
+#org @gText_BattleFrontier_SE_BattleSimSign
+Battle Sim\nEach battle has random effects!
+
+#org @gText_BattleFrontier_SE_BattleFrontierMarketSign
+Battle Frontier Market\nPrepare for your next win streak!
+
+#org @gText_BattleFrontier_BattleFactorySign
+Battle Factory\nRent Pok\emon to battle with!
+
+#org @gText_BattleFrontier_BattleObservatorySign
+Battle Observatory\nReveal Pok\emon then showdown!
 
 // Facility-agnostic strings to be shared by attendants in each facility, with var substitution:
 //   - FrontierChallenge_BufferFacilityInfo fills in [BUFFER1] with the facility name, [BUFFER2] with the format and [BUFFER3] with the current streak.

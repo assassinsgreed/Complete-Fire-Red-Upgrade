@@ -119,6 +119,7 @@ CosplayLady_OfferCostumeChange:
     msgbox gText_BattleFrontier_CosplayLady_CostumePrompt MSG_YESNO
     compare LASTRESULT NO
     if equal _goto CosplayLady_DeclinedCostume
+    msgbox gText_BattleFrontier_CosplayLady_ChoosePikiPrompt MSG_NORMAL
     special 0x9F @ Select a Pokemon and store its position in 0x8004
     waitstate
     compare 0x8004 0x6 @ Don't continue if the player backed out
@@ -147,15 +148,15 @@ CosplayLady_OfferCostumeChange:
     end
 
 CosplayLady_DeclinedCostume:
-    npcchatwithmovement gText_BattleFrontier_CosplayLady_DeclinedCostume m_LookDown
+    npcchatwithmovement gText_BattleFrontier_CosplayLady_DeclinedCostume m_LookLeft
     end
 
 CosplayLady_WrongPokemon:
-    npcchatwithmovement gText_BattleFrontier_CosplayLady_WrongPokemon m_LookDown
+    npcchatwithmovement gText_BattleFrontier_CosplayLady_WrongPokemon m_LookLeft
     end
 
 CosplayLady_CostumeCancelled:
-    npcchatwithmovement gText_BattleFrontier_CosplayLady_DeclinedCostume m_LookDown
+    npcchatwithmovement gText_BattleFrontier_CosplayLady_DeclinedCostume m_LookLeft
     end
 
 SetCosplayPikachuEveryday:
@@ -258,32 +259,32 @@ Junichi_TradeComplete:
     msgbox gText_BattleFrontier_Junichi_TradeComplete MSG_NORMAL
     goto End
 
-.global EventScript_BattleFrontier_SE_Tutor1
-EventScript_BattleFrontier_SE_Tutor1:
+.global EventScript_BattleFrontier_SWTutor1
+EventScript_BattleFrontier_SWTutor1:
     call TutorIntro
     call EventScript_Tutors_BattleFrontier1
     compare LASTRESULT TRUE
     if equal _goto TutoringComplete
     end
 
-.global EventScript_BattleFrontier_SE_Tutor2
-EventScript_BattleFrontier_SE_Tutor2:
+.global EventScript_BattleFrontier_SWTutor2
+EventScript_BattleFrontier_SWTutor2:
     call TutorIntro
     call EventScript_Tutors_BattleFrontier2
     compare LASTRESULT TRUE
     if equal _goto TutoringComplete
     end
 
-.global EventScript_BattleFrontier_SE_Tutor3
-EventScript_BattleFrontier_SE_Tutor3:
+.global EventScript_BattleFrontier_SWTutor3
+EventScript_BattleFrontier_SWTutor3:
     call TutorIntro
     call EventScript_Tutors_BattleFrontier3
     compare LASTRESULT TRUE
     if equal _goto TutoringComplete
     end
 
-.global EventScript_BattleFrontier_SE_Tutor4
-EventScript_BattleFrontier_SE_Tutor4:
+.global EventScript_BattleFrontier_SWTutor4
+EventScript_BattleFrontier_SWTutor4:
     call TutorIntro
     call EventScript_Tutors_BattleFrontier4
     compare LASTRESULT TRUE
@@ -316,8 +317,8 @@ NotEnoughPokeChips:
     npcchatwithmovement gText_BattleFrontier_MoveTutor_NotEnoughPokeChips m_LookDown
     goto End
 
-.global EventScript_BattleFrontier_SE_BattleItems1
-EventScript_BattleFrontier_SE_BattleItems1:
+.global EventScript_BattleFrontier_SWBattleItems1
+EventScript_BattleFrontier_SWBattleItems1:
     lock
     faceplayer
     msgbox gText_BattleFrontier_BattleItems_Intro MSG_NORMAL
@@ -326,8 +327,8 @@ EventScript_BattleFrontier_SE_BattleItems1:
     release
     end
 
-.global EventScript_BattleFrontier_SE_BattleItems2
-EventScript_BattleFrontier_SE_BattleItems2:
+.global EventScript_BattleFrontier_SWBattleItems2
+EventScript_BattleFrontier_SWBattleItems2:
     lock
     faceplayer
     msgbox gText_BattleFrontier_BattleItems_Intro MSG_NORMAL
@@ -336,8 +337,8 @@ EventScript_BattleFrontier_SE_BattleItems2:
     release
     end
 
-.global EventScript_BattleFrontier_SE_ZCrystals
-EventScript_BattleFrontier_SE_ZCrystals:
+.global EventScript_BattleFrontier_SWZCrystals
+EventScript_BattleFrontier_SWZCrystals:
     lock
     faceplayer
     msgbox gText_BattleFrontier_ZCrystals_Intro MSG_NORMAL
@@ -346,8 +347,8 @@ EventScript_BattleFrontier_SE_ZCrystals:
     release
     end
 
-.global EventScript_BattleFrontier_SE_SpecialItems
-EventScript_BattleFrontier_SE_SpecialItems:
+.global EventScript_BattleFrontier_SWSpecialItems
+EventScript_BattleFrontier_SWSpecialItems:
     lock
     faceplayer
     msgbox gText_BattleFrontier_SpecialItems_Intro MSG_NORMAL
@@ -409,8 +410,8 @@ SpecialItems:
     .hword ITEM_SWIFT_WING
     .hword ITEM_NONE
 
-.global EventScript_BattleFrontier_SE_ShadyRelicSeller
-EventScript_BattleFrontier_SE_ShadyRelicSeller:
+.global EventScript_BattleFrontier_SWShadyRelicSeller
+EventScript_BattleFrontier_SWShadyRelicSeller:
     lock
     faceplayer
     callasm StorePokeChipCount
@@ -487,6 +488,31 @@ RelicSellerTradeComplete:
     fadescreen FADEIN_BLACK
     goto End
 
+.global EventScript_BattleFrontier_SWMarketGirl
+EventScript_BattleFrontier_SWMarketGirl:
+    npcchat gText_BattleFrontier_MarketGirl
+    end
+
+.global EventScript_BattleFrontier_SWBlackbelt
+EventScript_BattleFrontier_SWBlackbelt:
+    npcchatwithmovement gText_BattleFrontier_SE_Blackbelt m_LookUp
+    end
+
+.global EventScript_BattleFrontier_SEPsychic
+EventScript_BattleFrontier_SEPsychic:
+    npcchat gText_BattleFrontier_SEPsychic
+    end
+
+.global EventScript_BattleFrontier_SEChanneler
+EventScript_BattleFrontier_SEChanneler:
+    npcchat gText_BattleFrontier_SEChanneler
+    end
+
+.global EventScript_BattleFrontier_SEWoman
+EventScript_BattleFrontier_SEWoman:
+    npcchat gText_BattleFrontier_SEWoman
+    end
+
 .global EventScript_BattleFrontier_TowerBoy
 EventScript_BattleFrontier_TowerBoy:
     npcchat gText_BattleFrontier_TowerBoy
@@ -500,6 +526,146 @@ EventScript_BattleFrontier_TowerChild:
 .global EventScript_BattleFrontier_TowerRocker
 EventScript_BattleFrontier_TowerRocker:
     npcchat gText_BattleFrontier_TowerRocker
+    end
+
+.global EventScript_BattleFrontier_QuarryHiker
+EventScript_BattleFrontier_QuarryHiker:
+    npcchat gText_BattleFrontier_QuarryHiker
+    end
+
+.global EventScript_BattleFrontier_QuarryBlackbelt
+EventScript_BattleFrontier_QuarryBlackbelt:
+    npcchatwithmovement gText_BattleFrontier_QuarryBlackbelt m_LookDown
+    end
+
+.global EventScript_BattleFrontier_NWOldWoman
+EventScript_BattleFrontier_NWOldWoman:
+    npcchat gText_BattleFrontier_NWOldWoman
+    end
+
+.global EventScript_BattleFrontier_NWBoy
+EventScript_BattleFrontier_NWBoy:
+    npcchat gText_BattleFrontier_NWBoy
+    end
+
+.global EventScript_BattleFrontier_NWFisherman
+EventScript_BattleFrontier_NWFisherman:
+    npcchat gText_BattleFrontier_NWFisherman
+    end
+
+.global EventScript_BattleFrontier_NWFatGuy
+EventScript_BattleFrontier_NWFatGuy:
+    npcchat gText_BattleFrontier_NWFatGuy
+    end
+
+.global EventScript_BattleFrontier_NEOldMan
+EventScript_BattleFrontier_NEOldMan:
+    npcchatwithmovement gText_BattleFrontier_NEOldMan m_LookDown
+    end
+
+.global EventScript_BattleFrontier_NEFisherman
+EventScript_BattleFrontier_NEFisherman:
+    npcchatwithmovement gText_BattleFrontier_NEFisherman m_LookLeft
+    end
+
+.global EventScript_BattleFrontier_NELittleBoy
+EventScript_BattleFrontier_NELittleBoy:
+    npcchat gText_BattleFrontier_NELittleBoy
+    end
+
+.global EventScript_BattleFrontier_NEBoy
+EventScript_BattleFrontier_NEBoy:
+    npcchat gText_BattleFrontier_NEBoy
+    end
+
+.global EventScript_BattleFrontier_NEBugCatcher
+EventScript_BattleFrontier_NEBugCatcher:
+    npcchatwithmovement gText_BattleFrontier_NEBugCatcher m_LookRight
+    end
+
+.global EventScript_BattleFrontier_SimPicknicker
+EventScript_BattleFrontier_SimPicknicker:
+    npcchat gText_BattleFrontier_SimPicknicker
+    end
+
+.global EventScript_BattleFrontier_SimScientist
+EventScript_BattleFrontier_SimScientist:
+    npcchatwithmovement gText_BattleFrontier_SimScientist m_LookDown
+    end
+
+.global EventScript_BattleFrontier_SimSuperNerd
+EventScript_BattleFrontier_SimSuperNerd:
+    npcchat gText_BattleFrontier_SimSuperNerd
+    end
+
+.global EventScript_BattleFrontier_FactoryWorker
+EventScript_BattleFrontier_FactoryWorker:
+    npcchatwithmovement gText_BattleFrontier_FactoryWorker m_LookDown
+    end
+
+.global EventScript_BattleFrontier_FactoryFatGuy
+EventScript_BattleFrontier_FactoryFatGuy:
+    npcchat gText_BattleFrontier_FactoryFatGuy
+    end
+
+.global EventScript_BattleFrontier_ObservatoryGirl
+EventScript_BattleFrontier_ObservatoryGirl:
+    npcchatwithmovement gText_BattleFrontier_ObservatoryGirl m_LookLeft
+    end
+
+.global EventScript_BattleFrontier_ObservatoryGentleman
+EventScript_BattleFrontier_ObservatoryGentleman:
+    npcchat gText_BattleFrontier_ObservatoryGentleman
+    end
+
+.global EventScript_BattleFrontier_ObservatoryCamper
+EventScript_BattleFrontier_ObservatoryCamper:
+    npcchatwithmovement gText_BattleFrontier_ObservatoryCamper m_LookUp
+    end
+
+.global SignScript_BattleFrontier_BattleTower
+SignScript_BattleFrontier_BattleTower:
+    msgbox gText_BattleFrontier_BattleTowerSign MSG_SIGN
+    end
+
+.global SignScript_BattleFrontier_BattleQuarry
+SignScript_BattleFrontier_BattleQuarry:
+    msgbox gText_BattleFrontier_BattleQuarrySign MSG_SIGN
+    end
+
+.global SignScript_BattleFrontier_BattleSands
+SignScript_BattleFrontier_BattleSands:
+    msgbox gText_BattleFrontier_BattleSandsSign MSG_SIGN
+    end
+
+.global SignScript_BattleFrontier_BattleIsle
+SignScript_BattleFrontier_BattleIsle:
+    msgbox gText_BattleFrontier_BattleIsleSign MSG_SIGN
+    end
+
+.global SignScript_BattleFrontier_BattleMaze
+SignScript_BattleFrontier_BattleMaze:
+    msgbox gText_BattleFrontier_BattleMazeSign MSG_SIGN
+    end
+
+.global SignScript_BattleFrontier_SWBattleSim
+SignScript_BattleFrontier_SWBattleSim:
+    msgbox gText_BattleFrontier_SE_BattleSimSign MSG_SIGN
+    end
+
+.global SignScript_BattleFrontier_SWBattleFrontierMarket
+SignScript_BattleFrontier_SWBattleFrontierMarket:
+    msgbox gText_BattleFrontier_SE_BattleFrontierMarketSign MSG_SIGN
+    end
+
+.global SignScript_BattleFrontier_BattleFactory
+SignScript_BattleFrontier_BattleFactory:
+    msgbox gText_BattleFrontier_BattleFactorySign MSG_SIGN
+    end
+
+.global SignScript_BattleFrontier_BattleObservatory
+SignScript_BattleFrontier_BattleObservatory:
+    msgbox gText_BattleFrontier_BattleObservatorySign MSG_SIGN
     end
 
 @ ============================================================================
@@ -590,6 +756,41 @@ EventScript_BattleFrontier_TowerRocker:
 .global EventScript_BattleFrontier_TowerAttendant
 EventScript_BattleFrontier_TowerAttendant:
     setvar VAR_BATTLE_FACILITY_NUM IN_BATTLE_TOWER
+    goto BattleFrontier_Common_Attendant
+
+.global EventScript_BattleFrontier_QuarryAttendant
+EventScript_BattleFrontier_QuarryAttendant:
+    setvar VAR_BATTLE_FACILITY_NUM IN_BATTLE_MINE @ TODO: Becomes battle quarry
+    goto BattleFrontier_Common_Attendant
+
+.global EventScript_BattleFrontier_SandsAttendant
+EventScript_BattleFrontier_SandsAttendant:
+    setvar VAR_BATTLE_FACILITY_NUM IN_BATTLE_SANDS
+    goto BattleFrontier_Common_Attendant
+
+.global EventScript_BattleFrontier_IsleAttendant
+EventScript_BattleFrontier_IsleAttendant:
+    setvar VAR_BATTLE_FACILITY_NUM IN_ISLE_CHALLENGE @ TODO: Rename to Battle Isle
+    goto BattleFrontier_Common_Attendant
+
+.global EventScript_BattleFrontier_MazeAttendant
+EventScript_BattleFrontier_MazeAttendant:
+    setvar VAR_BATTLE_FACILITY_NUM IN_BATTLE_MAZE
+    goto BattleFrontier_Common_Attendant
+
+.global EventScript_BattleFrontier_SimAttendant
+EventScript_BattleFrontier_SimAttendant:
+    setvar VAR_BATTLE_FACILITY_NUM IN_BATTLE_CIRCUS @ TODO: Becomes battle sim
+    goto BattleFrontier_Common_Attendant
+
+.global EventScript_BattleFrontier_FactoryAttendant
+EventScript_BattleFrontier_FactoryAttendant:
+    setvar VAR_BATTLE_FACILITY_NUM IN_BATTLE_FACTORY
+    goto BattleFrontier_Common_Attendant
+
+.global EventScript_BattleFrontier_ObservatoryAttendant
+EventScript_BattleFrontier_ObservatoryAttendant:
+    setvar VAR_BATTLE_FACILITY_NUM IN_RING_CHALLENGE @ TODO: Becomes battle observatory
     goto BattleFrontier_Common_Attendant
 
 @ ============================================================================

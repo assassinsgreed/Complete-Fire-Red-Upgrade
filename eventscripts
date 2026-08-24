@@ -2924,16 +2924,49 @@ sign 3 49 0 SignScript_OlenicTown_HawthornesConservatory_WaterAreaSign
 
 # Battle Frontier
 ## Overworld
+### NW Corner
+npc 3 15 0 EventScript_BattleFrontier_SandsAttendant
+### npc 1 is opponent
+npc 3 15 2 EventScript_BattleFrontier_NWOldWoman
+npc 3 15 3 EventScript_BattleFrontier_NWBoy
+npc 3 15 4 EventScript_BattleFrontier_NWFisherman
+npc 3 15 5 EventScript_BattleFrontier_NWFatGuy
+sign 3 15 0 SignScript_BattleFrontier_BattleTower
+sign 3 15 1 SignScript_BattleFrontier_BattleQuarry
+sign 3 15 2 SignScript_BattleFrontier_BattleSands
+### NE Corner
+npc 3 16 0 EventScript_BattleFrontier_IsleAttendant
+### npc 1 is opponent (Isle)
+npc 3 16 2 EventScript_BattleFrontier_NEOldMan
+npc 3 16 3 EventScript_BattleFrontier_NEFisherman
+npc 3 16 4 EventScript_BattleFrontier_MazeAttendant
+### npc 5 is opponent (Maze)
+npc 3 16 6 EventScript_BattleFrontier_NELittleBoy
+npc 3 16 7 EventScript_BattleFrontier_NEBoy
+npc 3 16 8 EventScript_BattleFrontier_NEBugCatcher
+sign 3 16 0 SignScript_BattleFrontier_BattleIsle
+sign 3 16 1 SignScript_BattleFrontier_BattleMaze
+### SW Corner
 map 3 17 MapScript_BattleFrontier
-npc 3 17 0 EventScript_BattleFrontier_SE_Tutor1
-npc 3 17 1 EventScript_BattleFrontier_SE_Tutor2
-npc 3 17 2 EventScript_BattleFrontier_SE_Tutor3
-npc 3 17 3 EventScript_BattleFrontier_SE_Tutor4
-npc 3 17 4 EventScript_BattleFrontier_SE_BattleItems1
-npc 3 17 5 EventScript_BattleFrontier_SE_BattleItems2
-npc 3 17 6 EventScript_BattleFrontier_SE_ZCrystals
-npc 3 17 7 EventScript_BattleFrontier_SE_SpecialItems
-npc 3 17 8 EventScript_BattleFrontier_SE_ShadyRelicSeller
+npc 3 17 0 EventScript_BattleFrontier_SWTutor1
+npc 3 17 1 EventScript_BattleFrontier_SWTutor2
+npc 3 17 2 EventScript_BattleFrontier_SWTutor3
+npc 3 17 3 EventScript_BattleFrontier_SWTutor4
+npc 3 17 4 EventScript_BattleFrontier_SWBattleItems1
+npc 3 17 5 EventScript_BattleFrontier_SWBattleItems2
+npc 3 17 6 EventScript_BattleFrontier_SWZCrystals
+npc 3 17 7 EventScript_BattleFrontier_SWSpecialItems
+npc 3 17 8 EventScript_BattleFrontier_SWShadyRelicSeller
+npc 3 17 9 EventScript_BattleFrontier_SWMarketGirl
+npc 3 17 10 EventScript_BattleFrontier_SWBlackbelt
+sign 3 17 0 SignScript_BattleFrontier_SWBattleSim
+sign 3 17 1 SignScript_BattleFrontier_SWBattleFrontierMarket
+### SE Corner
+npc 3 18 0 EventScript_BattleFrontier_SEPsychic
+npc 3 18 1 EventScript_BattleFrontier_SEChanneler
+npc 3 18 2 EventScript_BattleFrontier_SEWoman
+sign 3 18 0 SignScript_BattleFrontier_BattleFactory
+sign 3 18 1 SignScript_BattleFrontier_BattleObservatory
 ## Pokemon Center
 npc 2 41 0 EventScript_PokemonCenter_Main
 npc 2 41 1 EventScript_BattleFrontier_PokemonCenterResearcher
@@ -2948,12 +2981,30 @@ npc 2 42 2 EventScript_BattleFrontier_TowerBoy
 npc 2 42 3 EventScript_BattleFrontier_TowerChild
 npc 2 42 4 EventScript_BattleFrontier_TowerRocker
 ## Battle Quarry
+npc 2 43 0 EventScript_BattleFrontier_QuarryAttendant
+### npc 1 is opponent
+npc 2 43 2 EventScript_BattleFrontier_QuarryHiker
+npc 2 43 3 EventScript_BattleFrontier_QuarryBlackbelt
 ## Battle Sands
 ## Battle Maze
 ## Battle Isle
 ## Battle Sim
+npc 2 44 0 EventScript_BattleFrontier_SimAttendant
+### npc 1 is opponent
+npc 2 44 2 EventScript_BattleFrontier_SimPicknicker
+npc 2 44 3 EventScript_BattleFrontier_SimScientist
+npc 2 44 4 EventScript_BattleFrontier_SimSuperNerd
 ## Battle Factory
+npc 2 45 0 EventScript_BattleFrontier_FactoryAttendant
+### npc 1 is opponent
+npc 2 45 2 EventScript_BattleFrontier_FactoryWorker
+npc 2 45 3 EventScript_BattleFrontier_FactoryFatGuy
 ## Battle Observatory
+npc 2 46 0 EventScript_BattleFrontier_ObservatoryAttendant
+### npc 1 is opponent
+npc 2 46 2 EventScript_BattleFrontier_ObservatoryGirl
+npc 2 46 3 EventScript_BattleFrontier_ObservatoryGentleman
+npc 2 46 4 EventScript_BattleFrontier_ObservatoryCamper
 
 # No map exists yet. To make the Battle Tower reachable, place an attendant NPC on
 # whichever map the facility ends up on and register it here as:
