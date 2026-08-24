@@ -44,6 +44,8 @@ extern u8 gText_InGameGift_OTSelene[];
 extern u8 gText_InGameGift_Victini[];
 extern u8 gText_InGameGift_OTAether[];
 extern u8 gText_InGameGift_TypeNull[];
+extern u8 gText_InGameTrade_OTMasuda[];
+extern u8 gText_InGameTrade_Junichi[];
 extern u8 gText_InGameGift_OTBelle[];
 extern u8 gText_InGameGift_Piki[];
 
@@ -256,6 +258,21 @@ static const struct InGameTrade sInGameTrades[] = {
         .otGender = FEMALE,
         .nature = NATURE_BOLD,
         .requestedSpecies = SPECIES_SLOWBRO
+    },
+    [INGAME_TRADE_JUNICHI_DITTO] = {
+        .nickname = gText_InGameTrade_Junichi,
+        .species = SPECIES_DITTO,
+        .ivs = {31, 31, 31, 31, 31, 31},
+        .abilityNum = 0xFF, // Imposter (Hidden)
+        .otId = 1968,
+        .conditions = {20, 20, 20, 20, 20},
+        .personality = 0x1d84f60c,
+        .heldItem = ITEM_DESTINY_KNOT,
+        .mailNum = 0,
+        .otName = gText_InGameTrade_OTMasuda,
+        .otGender = MALE,
+        .nature = NATURE_QUIRKY,
+        .requestedSpecies = SPECIES_ROTOM_HEAT
     }
 };
 
@@ -519,6 +536,21 @@ static const struct InGameTrade sInGameTrades_Divergent[] = {
         .otGender = FEMALE,
         .nature = NATURE_BOLD,
         .requestedSpecies = SPECIES_RAPIDASH
+    },
+    [INGAME_TRADE_DIVERGENT_JUNICHI_DITTO] = {
+        .nickname = gText_InGameTrade_Junichi,
+        .species = SPECIES_DITTO,
+        .ivs = {31, 31, 31, 31, 31, 31},
+        .abilityNum = 0xFF, // Imposter (Hidden)
+        .otId = 1968,
+        .conditions = {20, 20, 20, 20, 20},
+        .personality = 0x1d84f60c,
+        .heldItem = ITEM_DESTINY_KNOT,
+        .mailNum = 0,
+        .otName = gText_InGameTrade_OTMasuda,
+        .otGender = MALE,
+        .nature = NATURE_QUIRKY,
+        .requestedSpecies = SPECIES_ROTOM_HEAT
     }
 };
 

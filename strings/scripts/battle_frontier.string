@@ -85,6 +85,24 @@ Hold still[.] there!\nOh, Piki, that's why you're a star!
 #org @gText_BattleFrontier_CosplayLady_CostumeRemoved
 Out of costume and back to yourself.\nEvery star needs a day off!
 
+#org @gText_BattleFrontier_MasudaDittoTrader_Intro
+I'm just no good at battling.\pI think I'll give up and get into\ncamping instead.\pBefore I do, I'd like to make sure\nmy Ditto is in good hands.\pIf you know anyone who's skilled at\nbattling, could you let me know?\pA win streak of[.] 5 at any battle\nfacility should do it.
+
+#org @gText_BattleFrontier_MasudaDittoTrader_TradeOffer
+Oh! You've done it?\pYou're just the kind of trainer I've\nbeen looking for!\pWould you be willing to trade a\n[GREEN]Rotom-Heat[BLUE] for my Ditto?
+
+#org @gText_BattleFrontier_Junichi_Declined
+Ah, I understand. I'll put my camping\ndreams on hold for now.
+
+#org @gText_BattleFrontier_Junichi_WrongPokemon
+I appreciate the offer, but I'm\nreally looking for a [GREEN]Rotom-Heat[BLUE].\pThat little fella will help me get my\ncamping dreams started.
+
+#org @gText_BattleFrontier_Junichi_InitiatingTrade
+Alright, let's trade!
+
+#org @gText_BattleFrontier_Junichi_TradeComplete
+Take good care of Junichi for me.\nHe has great genes!
+
 #org @gText_BattleFrontier_MoveTutor_Confirmation
 Welcome, welcome!\pI teach Pok\emon incredible moves in\nexchange for just 5 Pok\eChips.\pAre you interested?\n[BLACK](Held: [BUFFER1])
 

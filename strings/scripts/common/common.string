@@ -476,11 +476,17 @@ Aether
 #org @gText_InGameGift_TypeNull
 Type: Null
 
+#org @gText_InGameGift_OTBelle
+Belle
+
 #org @gText_InGameGift_Piki
 Piki
 
-#org @gText_InGameGift_OTBelle
-Belle
+#org @gText_InGameTrade_OTMasuda
+Masuda
+
+#org @gText_InGameTrade_Junichi
+Junichi
 
 // Special NPCs
 

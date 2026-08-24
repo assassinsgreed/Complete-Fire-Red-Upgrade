@@ -4426,16 +4426,9 @@ void ComputeCompletedGameModifierRequirements()
 	if (!FlagGet(FLAG_GAMEMODIFIER_REPEATED_MEGA_EVOLUTION_UNLOCKED) && HasEveryMegaStoneForCurrentMode())
 		FlagSet(FLAG_GAMEMODIFIER_REPEATED_MEGA_EVOLUTION_UNLOCKED);
 
-	// A 20+ win streak at any battle facility, in either format. Reads the max streak rather than the
-	// current one so the unlock sticks once earned instead of needing the player to still be mid-run.
-	for (u32 facility = 0; facility < NUM_BATTLE_FACILITIES; ++facility)
-	{
-		for (u32 format = 0; format < NUM_FRONTIER_FORMATS; ++format)
-		{
-			if (GetFrontierStreak(facility, format, MAX_STREAK) >= 20)
-				FlagSet(FLAG_GAMEMODIFIER_PERFECT_WILD_IVS_UNLOCKED);
-		}
-	}
+	// A 20+ win streak at any battle facility, in either format
+	if (HasAchievedFrontierStreak(20))
+		FlagSet(FLAG_GAMEMODIFIER_PERFECT_WILD_IVS_UNLOCKED);
 }
 
 /// @brief Checks if Type:Null or Silvally is in the party. 1 if true, 0 if false

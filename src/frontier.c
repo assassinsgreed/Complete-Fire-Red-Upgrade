@@ -1486,6 +1486,27 @@ u16 sp054_GetBattleFacilityStreak(void)
 	return GetFrontierStreak(facility, format, Var8000);
 }
 
+// Reads the max streaks rather than the current ones, so reaching the target once is enough - losing the streak afterwards doesn't take it back.
+bool8 HasAchievedFrontierStreak(u16 target)
+{
+	for (u32 facility = 0; facility < NUM_BATTLE_FACILITIES; ++facility)
+	{
+		for (u32 format = 0; format < NUM_FRONTIER_FORMATS; ++format)
+		{
+			if (GetFrontierStreak(facility, format, MAX_STREAK) >= target)
+				return TRUE;
+		}
+	}
+
+	return FALSE;
+}
+
+// Stores whether the player has ever reached a streak of Var8000 at any facility in LASTRESULT
+void StoreHasAchievedFrontierStreak(void)
+{
+	Var800D = HasAchievedFrontierStreak(Var8000);
+}
+
 u16 GetCurrentBattleFacilityStreak(void)
 {
 	return GetFrontierStreak(BATTLE_FACILITY_NUM, GetCurrentFrontierFormat(), CURR_STREAK);

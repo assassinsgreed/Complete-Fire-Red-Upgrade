@@ -207,6 +207,57 @@ FinalizeCosplayPikachuFormChange:
 EventScript_BattleFrontier_PokemonCenterOldMan:
     npcchatwithmovement gText_BattleFrontier_PokemonCenterOldMan m_LookUp
     end
+
+.global EventScript_BattleFrontier_PokemonCenterDittoTrader
+EventScript_BattleFrontier_PokemonCenterDittoTrader:
+    lock
+    faceplayer
+    checkflag 0x29C @ Did the Junichi trade
+    if SET _goto Junichi_TradeComplete
+    msgbox gText_BattleFrontier_MasudaDittoTrader_Intro MSG_NORMAL
+    setvar 0x8000 2 @ Streak at any facility/format required for trade
+    callasm StoreHasAchievedFrontierStreak
+    compare LASTRESULT TRUE
+    if notequal _goto End
+    checkflag 0x945 @ Divergent Mode
+    if SET _goto Junichi_SetDivergentTrade
+    setvar 0x8008 13 @ Set Trade #13 (Junichi the Ditto)
+    goto Junichi_Offer
+
+Junichi_SetDivergentTrade:
+    setvar 0x8008 26 @ Set Trade #26 (Junichi the Ditto)
+    goto Junichi_Offer
+
+Junichi_Offer:
+    copyvar 0x8004 0x8008 @ Set expected mon from Junichi's trade (Rotom-Heat)
+    special2 LASTRESULT 0xFC @ Checks the trade set in 0x8004 and buffers the name of the Pokemon wanted and the given Pokemon
+    copyvar 0x8009 LASTRESULT
+    msgbox gText_BattleFrontier_MasudaDittoTrader_TradeOffer MSG_YESNO
+    compare LASTRESULT NO
+    if TRUE _goto Junichi_TradeDeclined
+    call SelectTradePokemon
+    compare 0x8004 0x6
+    if greaterorequal _goto Junichi_TradeDeclined
+    call CheckTradePokemonSelected
+    comparevars LASTRESULT 0x8009
+    if notequal _goto Junichi_WrongPokemon
+    msgbox gText_BattleFrontier_Junichi_InitiatingTrade MSG_NORMAL
+    call InitiateTrade
+    setflag 0x29C @ Did the Junichi trade
+    goto Junichi_TradeComplete
+
+Junichi_TradeDeclined:
+    msgbox gText_BattleFrontier_Junichi_Declined MSG_NORMAL
+    goto End
+
+Junichi_WrongPokemon:
+    msgbox gText_BattleFrontier_Junichi_WrongPokemon MSG_NORMAL
+    goto End
+
+Junichi_TradeComplete:
+    msgbox gText_BattleFrontier_Junichi_TradeComplete MSG_NORMAL
+    goto End
+
 .global EventScript_BattleFrontier_SE_Tutor1
 EventScript_BattleFrontier_SE_Tutor1:
     call TutorIntro

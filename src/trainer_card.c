@@ -92,16 +92,7 @@ static bool8 HasBecomeTheChampion(void)
 
 static bool8 HasMilestoneStreakAtAnyFacility(void)
 {
-	for (u8 facility = 0; facility < NUM_BATTLE_FACILITIES; ++facility)
-	{
-		for (u8 format = 0; format < NUM_FRONTIER_FORMATS; ++format)
-		{
-			if (GetFrontierStreak(facility, format, MAX_STREAK) >= FRONTIER_SECOND_MILESTONE_STREAK)
-				return TRUE;
-		}
-	}
-
-	return FALSE;
+	return HasAchievedFrontierStreak(FRONTIER_SECOND_MILESTONE_STREAK);
 }
 
 static u32 AddZCrystalToMask(u32 mask, u16 item)

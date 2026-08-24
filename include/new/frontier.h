@@ -56,6 +56,7 @@ u8 GetCurrentFrontierFormat(void);
 u16 GetFrontierStreak(u8 facility, u8 format, u8 currentOrMax);
 void SetFrontierStreak(u8 facility, u8 format, u8 currentOrMax, u16 value);
 u16 GetCurrentBattleFacilityStreak(void);
+bool8 HasAchievedFrontierStreak(u16 target);
 u8 GetFrontierBattleBackground(void);
 
 //Functions Hooked In:
