@@ -1,3 +1,90 @@
+#org @gText_BattleFrontier_Researcher
+Me? No, I don't battle.\pI'm from an institute that studies\nPok\emon battle strategies.\pWe're investigating whether a\nfoolproof strategy exists.\pMaybe we'll watch your battles, too?
+
+#org @gText_BattleFrontier_PokeChipBuyer_Prompt
+I've been watching how fired up the\nyoungsters get here.\pYou could say their passion has\ngotten me fired up too, ohohoho!\pThere is just one problem[.] I am not\na skilled battler. I am rich,\lhowever!\pI will buy any spare Pok\eChips you\nhave for \$2,000 each.\pAre you interested?
+
+#org @gText_BattleFrontier_PokeChipBuyer_YesToSell
+Wonderful! How many will you sell?\n[BLACK](Held: [BUFFER1])[BLUE]
+
+#org @gText_BattleFrontier_PokeChipBuyer_No
+What a pity!
+
+#org @gText_BattleFrontier_PokeChipBuyer_HaveZeroChips
+You don't even have any!\nDo you take me for a rube?
+
+#org @gText_BattleFrontier_PokeChipBuyer_ChoseZeroChips
+Zero Pok\eChips?? My, how stingy!\nMy time is more valuable than this.
+
+#org @gText_BattleFrontier_PokeChipBuyer_ChoseMoreChipsThanPlayerHas
+Do you take me for a fool?\nYou don't have that many!
+
+#org @gText_BattleFrontier_PokeChipBuyer_YesToConfirmChipsChosen
+[BUFFER2]? I can offer you \$[BUFFER3]\nfor that. Are you sure?
+
+#org @gText_BattleFrontier_PokemonCenterOldMan
+I've come here to watch my grandson\nbattle.\pI have to be honest. I don't\nunderstand Pok\emon battling.\pBut, it makes my grandson happy and\nI want to support him!
+
+#org @gText_BattleFrontier_PokeChipBuyer_SaleCompleted
+Very good! Our transaction is\ncomplete.\pI will use these Pok\eChips to tutor\nmy Pok\emon and rise to the top of\lthis "Battle Frontier.\"
+
+#org @gText_BattleFrontier_CosplayLady_Intro
+Oh! Don't mind me - I'm just between\nshows.\pI used to tour the contest halls in\nHoenn with my little co-star.\pShe adored the costumes, the crowds,\nthe lights[.] All of it!\pBut these days I'm on the road more\nthan I'm on a stage[.]
+
+#org @gText_BattleFrontier_CosplayLady_OffersPikachu
+A performer deserves an audience.\pWould you take her with you?
+
+#org @gText_BattleFrontier_CosplayLady_DeclinedGift
+I understand - she's a handful!\nCome find me if you change your mind.
+
+#org @gText_BattleFrontier_CosplayLady_NoPartyRoom
+Goodness, your team is packed!\pMake a little room for her and come\nback, won't you?
+
+#org @gText_BattleFrontier_CosplayLady_GivesPikachu
+Then she's yours. Go on, say hello!
+
+#org @gText_BattleFrontier_CosplayLady_PikachuObtained
+[PLAYER] received a Cosplay Pikachu\nfrom Belle!
+
+#org @gText_BattleFrontier_CosplayLady_ExplainsCostumes
+Her wardrobe is still packed away in\nmy trunk, of course.\pStop by any time and I'll dress her\nup for whatever role you like.
+
+#org @gText_BattleFrontier_CosplayLady_CostumePrompt
+How is Piki doing?\nShall I change her costume?
+
+#org @gText_BattleFrontier_CosplayLady_DeclinedCostume
+Another time, then.
+
+#org @gText_BattleFrontier_CosplayLady_WrongPokemon
+[BUFFER1]? Oh dear - nothing in my\ntrunk would fit!\pThese costumes were tailored for Piki\nand Piki alone.
+
+#org @gText_BattleFrontier_CosplayLady_ChooseCostume
+Wonderful! Which role is [BUFFER1]\nplaying today?
+
+#org @gText_BattleFrontier_CosplayLady_ChoiceEveryday
+Everyday
+
+#org @gText_BattleFrontier_CosplayLady_ChoiceRockStar
+Rock Star
+
+#org @gText_BattleFrontier_CosplayLady_ChoiceBelle
+Belle
+
+#org @gText_BattleFrontier_CosplayLady_ChoicePopStar
+Pop Star
+
+#org @gText_BattleFrontier_CosplayLady_ChoicePhD
+Ph.D.
+
+#org @gText_BattleFrontier_CosplayLady_ChoiceLibre
+Libre
+
+#org @gText_BattleFrontier_CosplayLady_CostumeChanging
+Hold still[.] there!\nOh, Piki, that's why you're a star!
+
+#org @gText_BattleFrontier_CosplayLady_CostumeRemoved
+Out of costume and back to yourself.\nEvery star needs a day off!
+
 #org @gText_BattleFrontier_MoveTutor_Confirmation
 Welcome, welcome!\pI teach Pok\emon incredible moves in\nexchange for just 5 Pok\eChips.\pAre you interested?\n[BLACK](Held: [BUFFER1])
 

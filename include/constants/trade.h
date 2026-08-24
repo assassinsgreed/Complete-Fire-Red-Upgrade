@@ -42,6 +42,7 @@
 #define INGAME_GIFT_PIKACHU_ORIGINAL_CAP 0
 #define INGAME_GIFT_VICTINI              1
 #define INGAME_GIFT_TYPE_NULL            2
+#define INGAME_GIFT_PIKACHU_COSPLAY      3
 
 // Flag IDs for sending link data
 #define INITIATE_TRADE  1

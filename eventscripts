@@ -2935,6 +2935,12 @@ npc 3 17 6 EventScript_BattleFrontier_SE_ZCrystals
 npc 3 17 7 EventScript_BattleFrontier_SE_SpecialItems
 npc 3 17 8 EventScript_BattleFrontier_SE_ShadyRelicSeller
 ## Pokemon Center
+npc 2 41 0 EventScript_PokemonCenter_Main
+npc 2 41 1 EventScript_BattleFrontier_PokemonCenterResearcher
+npc 2 41 2 EventScript_BattleFrontier_PokemonCenterPokeChipBuyer
+npc 2 41 3 EventScript_BattleFrontier_PokemonCenterCosplayPikachuLady
+npc 2 41 4 EventScript_BattleFrontier_PokemonCenterOldMan
+npc 2 41 5 EventScript_BattleFrontier_PokemonCenterDittoTrader
 ## Battle Tower
 npc 2 42 0 EventScript_BattleFrontier_TowerAttendant
 ### npc 1 is opponent

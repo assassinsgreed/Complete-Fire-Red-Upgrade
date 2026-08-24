@@ -14,6 +14,199 @@ MapEntryScript_BattleFrontier_FlightSpot:
     setworldmapflag 0x8B3 @ Visited the Battle Frontier
     end
 
+.global EventScript_BattleFrontier_PokemonCenterResearcher
+EventScript_BattleFrontier_PokemonCenterResearcher:
+    npcchatwithmovement gText_BattleFrontier_Researcher m_LookDown
+    end
+
+.global EventScript_BattleFrontier_PokemonCenterPokeChipBuyer
+EventScript_BattleFrontier_PokemonCenterPokeChipBuyer:
+    lock
+    faceplayer
+    callasm StorePokeChipCount
+    buffernumber 0x0 0x8005 @ Take stored PokeChip count
+    msgbox gText_BattleFrontier_PokeChipBuyer_Prompt MSG_YESNO
+    compare LASTRESULT YES
+    if notequal _goto PokeChipBuyer_ChoseNo
+    compare 0x8005 0
+    if equal _goto PokeChipBuyer_HaveZero
+    msgbox gText_BattleFrontier_PokeChipBuyer_YesToSell MSG_NORMAL
+    special 0xB3 @ Choose number, stored in LASTRESULT
+    waitstate
+    compare LASTRESULT 0x0
+    if equal _goto PokeChipBuyer_ChoseZero
+    comparevars LASTRESULT 0x8005
+    if greaterthan _goto PokeChipBuyer_ChoseMoreChipsThanHeld
+    buffernumber 0x1 LASTRESULT
+    copyvar 0x4006 LASTRESULT @ Chips being sold; both sale helpers read this
+    callasm StorePokeChipSaleValue @ BUFFER3 = 2000 per chip, buffered as a string since the total passes 0xFFFF
+    showmoney 0x0 0x0
+    msgbox gText_BattleFrontier_PokeChipBuyer_YesToConfirmChipsChosen MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto PokeChipBuyer_ChoseNoDuringPayment
+    playse 0xF8 @ Money
+    callasm PayForPokeChipSale @ Pays out var 0x4006 chips and removes them from the bag
+    updatemoney 0x0 0x0
+    waitse
+    pause DELAY_HALFSECOND
+    hidemoney
+    npcchatwithmovement gText_BattleFrontier_PokeChipBuyer_SaleCompleted m_LookDown
+    end
+
+PokeChipBuyer_HaveZero:
+    npcchatwithmovement gText_BattleFrontier_PokeChipBuyer_HaveZeroChips m_LookDown
+    release
+    end
+
+PokeChipBuyer_ChoseNo:
+    npcchatwithmovement gText_BattleFrontier_PokeChipBuyer_No m_LookDown
+    release
+    end
+
+PokeChipBuyer_ChoseZero:
+    npcchatwithmovement gText_BattleFrontier_PokeChipBuyer_ChoseZeroChips m_LookDown
+    release
+    end
+
+PokeChipBuyer_ChoseMoreChipsThanHeld:
+    npcchatwithmovement gText_BattleFrontier_PokeChipBuyer_ChoseMoreChipsThanPlayerHas m_LookDown
+    release
+    end
+
+PokeChipBuyer_ChoseNoDuringPayment:
+    hidemoney
+    goto PokeChipBuyer_ChoseNo
+
+.global EventScript_BattleFrontier_PokemonCenterCosplayPikachuLady
+EventScript_BattleFrontier_PokemonCenterCosplayPikachuLady:
+    lock
+    faceplayer
+    checkflag 0x29B @ Received Cosplay Pikachu
+    if SET _goto CosplayLady_OfferCostumeChange
+    msgbox gText_BattleFrontier_CosplayLady_Intro MSG_NORMAL
+    showpokepic SPECIES_PIKACHU_POP_STAR
+    msgbox gText_BattleFrontier_CosplayLady_OffersPikachu MSG_YESNO
+    hidepokepic
+    compare LASTRESULT NO
+    if equal _goto CosplayLady_DeclinedGift
+    countpokemon
+    compare LASTRESULT 0x6
+    if equal _goto CosplayLady_NoPartyRoom
+    msgbox gText_BattleFrontier_CosplayLady_GivesPikachu MSG_NORMAL
+    setvar 0x8000 MOVE_THUNDERBOLT
+    setvar 0x8001 MOVE_NUZZLE
+    setvar 0x8002 MOVE_DRAININGKISS
+    setvar 0x8003 MOVE_QUICKATTACK
+    setvar 0x8004 0x3 @ Ingame gift 3, Cosplay Pikachu
+    setvar 0x8005 50 @ Level 50
+    setflag 0x29B @ Received Cosplay Pikachu
+    fanfare 0x101
+    callasm CreateInGameGiftPokemon
+    msgbox gText_BattleFrontier_CosplayLady_PikachuObtained MSG_KEEPOPEN
+    waitfanfare
+    npcchatwithmovement gText_BattleFrontier_CosplayLady_ExplainsCostumes m_LookLeft
+    end
+
+CosplayLady_DeclinedGift:
+    npcchatwithmovement gText_BattleFrontier_CosplayLady_DeclinedGift m_LookLeft
+    end
+
+CosplayLady_NoPartyRoom:
+    npcchatwithmovement gText_BattleFrontier_CosplayLady_NoPartyRoom m_LookLeft
+    end
+
+CosplayLady_OfferCostumeChange:
+    msgbox gText_BattleFrontier_CosplayLady_CostumePrompt MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto CosplayLady_DeclinedCostume
+    special 0x9F @ Select a Pokemon and store its position in 0x8004
+    waitstate
+    compare 0x8004 0x6 @ Don't continue if the player backed out
+    if greaterorequal _goto CosplayLady_DeclinedCostume
+    bufferpartypokemon 0x0 0x8004
+    callasm StoreIsPartyMonCosplayPikachu
+    compare LASTRESULT TRUE
+    if notequal _goto CosplayLady_WrongPokemon
+    msgbox gText_BattleFrontier_CosplayLady_ChooseCostume MSG_KEEPOPEN
+    multichoiceoption gText_BattleFrontier_CosplayLady_ChoiceEveryday 0
+    multichoiceoption gText_BattleFrontier_CosplayLady_ChoiceRockStar 1
+    multichoiceoption gText_BattleFrontier_CosplayLady_ChoiceBelle 2
+    multichoiceoption gText_BattleFrontier_CosplayLady_ChoicePopStar 3
+    multichoiceoption gText_BattleFrontier_CosplayLady_ChoicePhD 4
+    multichoiceoption gText_BattleFrontier_CosplayLady_ChoiceLibre 5
+    multichoiceoption gText_End 6
+    multichoice 0x0 0x0 SEVEN_MULTICHOICE_OPTIONS FALSE
+    switch LASTRESULT
+    case 0, SetCosplayPikachuEveryday
+    case 1, SetCosplayPikachuRockStar
+    case 2, SetCosplayPikachuBelle
+    case 3, SetCosplayPikachuPopStar
+    case 4, SetCosplayPikachuPhD
+    case 5, SetCosplayPikachuLibre
+    goto CosplayLady_CostumeCancelled
+    end
+
+CosplayLady_DeclinedCostume:
+    npcchatwithmovement gText_BattleFrontier_CosplayLady_DeclinedCostume m_LookDown
+    end
+
+CosplayLady_WrongPokemon:
+    npcchatwithmovement gText_BattleFrontier_CosplayLady_WrongPokemon m_LookDown
+    end
+
+CosplayLady_CostumeCancelled:
+    npcchatwithmovement gText_BattleFrontier_CosplayLady_DeclinedCostume m_LookDown
+    end
+
+SetCosplayPikachuEveryday:
+    checksound
+    cry SPECIES_PIKACHU_COSPLAY 0x0
+    msgbox gText_BattleFrontier_CosplayLady_CostumeRemoved MSG_NORMAL
+    setvar 0x8005 SPECIES_PIKACHU_COSPLAY
+    goto FinalizeCosplayPikachuFormChange
+
+SetCosplayPikachuRockStar:
+    call ChangeCosplayPikachuFormCommon
+    setvar 0x8005 SPECIES_PIKACHU_ROCK_STAR
+    goto FinalizeCosplayPikachuFormChange
+
+SetCosplayPikachuBelle:
+    call ChangeCosplayPikachuFormCommon
+    setvar 0x8005 SPECIES_PIKACHU_BELLE
+    goto FinalizeCosplayPikachuFormChange
+
+SetCosplayPikachuPopStar:
+    call ChangeCosplayPikachuFormCommon
+    setvar 0x8005 SPECIES_PIKACHU_POP_STAR
+    goto FinalizeCosplayPikachuFormChange
+
+SetCosplayPikachuPhD:
+    call ChangeCosplayPikachuFormCommon
+    setvar 0x8005 SPECIES_PIKACHU_PHD
+    goto FinalizeCosplayPikachuFormChange
+
+SetCosplayPikachuLibre:
+    call ChangeCosplayPikachuFormCommon
+    setvar 0x8005 SPECIES_PIKACHU_LIBRE
+    goto FinalizeCosplayPikachuFormChange
+
+ChangeCosplayPikachuFormCommon:
+    checksound
+    cry SPECIES_PIKACHU_COSPLAY 0x0
+    fanfare 0x101 @ Get Item / Level Up
+    msgbox gText_BattleFrontier_CosplayLady_CostumeChanging MSG_NORMAL
+    waitfanfare
+    return
+
+FinalizeCosplayPikachuFormChange:
+    callasm ChangeCosplayPikachuFormInOverworld
+    release
+    end
+
+.global EventScript_BattleFrontier_PokemonCenterOldMan
+EventScript_BattleFrontier_PokemonCenterOldMan:
+    npcchatwithmovement gText_BattleFrontier_PokemonCenterOldMan m_LookUp
+    end
 .global EventScript_BattleFrontier_SE_Tutor1
 EventScript_BattleFrontier_SE_Tutor1:
     call TutorIntro

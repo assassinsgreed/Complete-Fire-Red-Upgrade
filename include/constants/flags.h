@@ -755,8 +755,8 @@
 #define FLAG_ALL_ZCRYSTALS_OBTAINED                      0x299
 /*
 #define FLAG_GOT_TM76_FROM_ABBY                          0x29A
-#define FLAG_GOT_FAME_CHECKER                            0x29B
-#define FLAG_GOT_RECORD_SETTING_MAGIKARP                 0x29C
+#define FLAG_RECEIVED_COSPLAY_PIKACHU                    0x29B
+#define FLAG_DID_JUNICHI_TRADE                           0x29C
 #define FLAG_TWO_ISLAND_SHOP_INTRODUCED                  0x29D
 #define FLAG_TWO_ISLAND_SHOP_EXPANDED_1                  0x29E
 #define FLAG_TWO_ISLAND_SHOP_EXPANDED_2                  0x29F

@@ -2549,6 +2549,21 @@ static void Task_TryLearnPostFormeChangeMove(u8 taskId)
 			case SPECIES_ROTOM_WASH:
 				gMoveToLearn = MOVE_HYDROPUMP;
 				break;
+			case SPECIES_PIKACHU_LIBRE:
+				gMoveToLearn = MOVE_FLYINGPRESS;
+				break;
+			case SPECIES_PIKACHU_POP_STAR:
+				gMoveToLearn = MOVE_DRAININGKISS;
+				break;
+			case SPECIES_PIKACHU_ROCK_STAR:
+				gMoveToLearn = MOVE_METEORMASH;
+				break;
+			case SPECIES_PIKACHU_BELLE:
+				gMoveToLearn = MOVE_ICICLECRASH;
+				break;
+			case SPECIES_PIKACHU_PHD:
+				gMoveToLearn = MOVE_ELECTRICTERRAIN;
+				break;
 		}
 
 		if (gMoveToLearn != MOVE_NONE)
@@ -3234,6 +3249,68 @@ void ChangeRotomFormInOverworld()
 		}
 
 		if (newSpecies != SPECIES_ROTOM)
+		{
+			InitPartyMenu(PARTY_MENU_TYPE_FIELD, PARTY_LAYOUT_SINGLE, PARTY_ACTION_CHOOSE_AND_CLOSE, TRUE, PARTY_MSG_NONE, Task_TryLearnPostFormeChangeMove, CB2_ReturnToFieldContinueScript);
+		}
+	}
+}
+
+// Checks if party Pokemon in var 0x8004 is any Cosplay Pikachu form, and stores it in LASTRESULT (0x800D)
+void StoreIsPartyMonCosplayPikachu()
+{
+	u16 partyId = Var8004;
+	if (partyId >= PARTY_SIZE)
+	{
+		Var800D = FALSE;
+		return;
+	}
+
+	u16 species = GetMonData(&gPlayerParty[Var8004], MON_DATA_SPECIES, NULL);
+	switch (species)
+	{
+		case SPECIES_PIKACHU_COSPLAY:
+		case SPECIES_PIKACHU_LIBRE:
+		case SPECIES_PIKACHU_POP_STAR:
+		case SPECIES_PIKACHU_ROCK_STAR:
+		case SPECIES_PIKACHU_BELLE:
+		case SPECIES_PIKACHU_PHD:
+			Var800D = TRUE;
+			break;
+
+		default:
+			Var800D = FALSE;
+			break;
+	}
+}
+
+// Changes the Pokemon at var 0x8004 to the Cosplay Pikachu form in var 0x8005, handling form-specific moves in the process
+void ChangeCosplayPikachuFormInOverworld()
+{
+	if (Var8004 >= PARTY_SIZE)
+		return;
+
+	u16 newSpecies = Var8005;
+	void* src = &gPlayerParty[Var8004];
+
+	if (newSpecies != GetMonData(src, MON_DATA_SPECIES, NULL))
+	{
+		SetMonData(src, MON_DATA_SPECIES, &Var8005);
+		CalculateMonStats(&gPlayerParty[Var8004]);
+
+		// Remove previous form's unique move
+		u16 costumeMoves[] = { MOVE_FLYINGPRESS, MOVE_DRAININGKISS, MOVE_METEORMASH, MOVE_ICICLECRASH, MOVE_ELECTRICTERRAIN };
+		for (u8 i = 0; i < NELEMS(costumeMoves); ++i)
+		{
+			u8 moveIndex = FindMovePositionInMonMoveset(costumeMoves[i], src);
+			if (moveIndex < MAX_MON_MOVES)
+			{
+				Var8005 = moveIndex;
+				Var8006 = 0x0;
+				Special_0DD_DeleteMove();
+			}
+		}
+
+		if (newSpecies != SPECIES_PIKACHU_COSPLAY)
 		{
 			InitPartyMenu(PARTY_MENU_TYPE_FIELD, PARTY_LAYOUT_SINGLE, PARTY_ACTION_CHOOSE_AND_CLOSE, TRUE, PARTY_MSG_NONE, Task_TryLearnPostFormeChangeMove, CB2_ReturnToFieldContinueScript);
 		}

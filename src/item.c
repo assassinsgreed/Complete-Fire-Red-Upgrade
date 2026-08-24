@@ -2435,3 +2435,21 @@ void SubtractPokeChipByVar(void)
 {
 	RemoveBagItem(ITEM_POKE_CHIP, VarGet(0x4006));
 }
+
+#define POKE_CHIP_SALE_PRICE 2000
+
+// Buffers the payout for selling var 0x4006 PokeChips into BUFFER3. The total passes 0xFFFF
+// from 33 chips up, so it's written straight into the string buffer instead of through a var.
+void StorePokeChipSaleValue(void)
+{
+	ConvertIntToDecimalStringN(gStringVar3, VarGet(0x4006) * POKE_CHIP_SALE_PRICE, STR_CONV_MODE_LEFT_ALIGN, 8);
+}
+
+// Pays out the sale of var 0x4006 PokeChips and takes them out of the bag
+void PayForPokeChipSale(void)
+{
+	u16 chips = VarGet(0x4006);
+
+	AddMoney(&gSaveBlock1->money, chips * POKE_CHIP_SALE_PRICE);
+	RemoveBagItem(ITEM_POKE_CHIP, chips);
+}
