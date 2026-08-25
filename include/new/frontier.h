@@ -33,6 +33,7 @@ bool8 DuplicateItemsAreBannedInTier(u8 tier, u8 battleType);
 bool8 ShouldDisablePartyMenuItemsBattleTower(void);
 const u8* GetFrontierTierName(u8 tier, u8 format);
 bool8 InBattleSands(void);
+bool8 IsBattleIsleBattle(void);
 bool8 IsAIControlledBattle(void);
 bool8 IsStandardTier(u8 tier);
 bool8 IsCamomonsTier(u8 tier);
@@ -92,7 +93,7 @@ enum BattleFacilities
 	IN_BATTLE_SIM,
 	IN_BATTLE_FACTORY,
 	IN_RING_CHALLENGE,
-	IN_ISLE_CHALLENGE,
+	IN_BATTLE_ISLE,
 	IN_BATTLE_MAZE,
 	NUM_BATTLE_FACILITIES,
 };

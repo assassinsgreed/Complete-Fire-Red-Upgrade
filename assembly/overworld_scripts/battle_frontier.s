@@ -694,7 +694,7 @@ SignScript_BattleFrontier_BattleObservatory:
 .equ IN_BATTLE_SIM, 0x3
 .equ IN_BATTLE_FACTORY, 0x4
 .equ IN_RING_CHALLENGE, 0x5
-.equ IN_ISLE_CHALLENGE, 0x6
+.equ IN_BATTLE_ISLE, 0x6
 .equ IN_BATTLE_MAZE, 0x7
 
 @ enum FrontierStreakFormats
@@ -755,6 +755,8 @@ SignScript_BattleFrontier_BattleObservatory:
 .equ BATTLE_QUARRY_OPPONENT, 0x2
 .equ BATTLE_SIM_ATTENDANT, 0x1
 .equ BATTLE_SIM_OPPONENT, 0x2
+.equ BATTLE_ISLE_ATTENDANT, 0x1
+.equ BATTLE_ISLE_OPPONENT, 0x2
 .equ BATTLE_MAZE_ATTENDANT, 0x5
 .equ BATTLE_MAZE_OPPONENT, 0x6
 
@@ -779,7 +781,7 @@ EventScript_BattleFrontier_SandsAttendant:
 
 .global EventScript_BattleFrontier_IsleAttendant
 EventScript_BattleFrontier_IsleAttendant:
-    setvar VAR_BATTLE_FACILITY_NUM IN_ISLE_CHALLENGE @ TODO: Rename to Battle Isle
+    setvar VAR_BATTLE_FACILITY_NUM IN_BATTLE_ISLE
     goto BattleFrontier_Common_Attendant
 
 .global EventScript_BattleFrontier_MazeAttendant
@@ -871,6 +873,7 @@ BattleFrontier_Common_FacilityRules:
     case IN_BATTLE_QUARRY, BattleFrontier_Quarry_Rules, _call
     case IN_BATTLE_SIM, BattleFrontier_Sim_Rules, _call
     case IN_BATTLE_MAZE, BattleFrontier_Maze_Rules, _call
+    case IN_BATTLE_ISLE, BattleFrontier_Isle_Rules, _call
     goto BattleFrontier_Common_Rules
 
 BattleFrontier_Tower_Rules:
@@ -891,6 +894,10 @@ BattleFrontier_Sim_Rules:
 
 BattleFrontier_Maze_Rules:
     msgbox gText_BattleFrontier_MazeRules MSG_KEEPOPEN
+    return
+
+BattleFrontier_Isle_Rules:
+    msgbox gText_BattleFrontier_IsleRules MSG_KEEPOPEN
     return
 
 BattleFrontier_Common_Records:
@@ -1115,6 +1122,7 @@ BattleFrontier_Common_EnterBattlePosition:
     case IN_BATTLE_QUARRY, BattleFrontier_Quarry_EnterBattlePosition, _call
     case IN_BATTLE_SIM, BattleFrontier_Sim_EnterBattlePosition, _call
     case IN_BATTLE_MAZE, BattleFrontier_Maze_EnterBattlePosition, _call
+    case IN_BATTLE_ISLE, BattleFrontier_Isle_EnterBattlePosition, _call
     return
 
 @ Before every battle. Sim randomizes its field effects here (special 0x72), Factory swaps the team.
@@ -1126,6 +1134,7 @@ BattleFrontier_Common_PerBattleSetup:
     case IN_BATTLE_QUARRY, BattleFrontier_Quarry_PerBattleSetup, _call
     case IN_BATTLE_SIM, BattleFrontier_Sim_PerBattleSetup, _call
     case IN_BATTLE_MAZE, BattleFrontier_Maze_PerBattleSetup, _call
+    case IN_BATTLE_ISLE, BattleFrontier_Isle_PerBattleSetup, _call
     return
 
 BattleFrontier_Common_OpponentArrives:
@@ -1135,6 +1144,7 @@ BattleFrontier_Common_OpponentArrives:
     case IN_BATTLE_QUARRY, BattleFrontier_Quarry_OpponentArrives, _call
     case IN_BATTLE_SIM, BattleFrontier_Sim_OpponentArrives, _call
     case IN_BATTLE_MAZE, BattleFrontier_Maze_OpponentArrives, _call
+    case IN_BATTLE_ISLE, BattleFrontier_Isle_OpponentArrives, _call
     return
 
 BattleFrontier_Common_PostBattleReset:
@@ -1144,6 +1154,7 @@ BattleFrontier_Common_PostBattleReset:
     case IN_BATTLE_QUARRY, BattleFrontier_Quarry_PostBattleReset, _call
     case IN_BATTLE_SIM, BattleFrontier_Sim_PostBattleReset, _call
     case IN_BATTLE_MAZE, BattleFrontier_Maze_PostBattleReset, _call
+    case IN_BATTLE_ISLE, BattleFrontier_Isle_PostBattleReset, _call
     return
 
 BattleFrontier_Common_LeaveBattlePosition:
@@ -1153,6 +1164,7 @@ BattleFrontier_Common_LeaveBattlePosition:
     case IN_BATTLE_QUARRY, BattleFrontier_Quarry_LeaveBattlePosition, _call
     case IN_BATTLE_SIM, BattleFrontier_Sim_LeaveBattlePosition, _call
     case IN_BATTLE_MAZE, BattleFrontier_Maze_LeaveBattlePosition, _call
+    case IN_BATTLE_ISLE, BattleFrontier_Isle_LeaveBattlePosition, _call
     return
 
 @ These three MUST stay MSG_KEEPOPEN. The opponent is already walking offscreen, and MSG_NORMAL ends
@@ -1496,6 +1508,83 @@ m_BattleMaze_OpponentToArena: .byte walk_left, walk_left, walk_left, walk_left, 
 m_BattleMaze_OpponentLeaves: .byte walk_right, walk_right, walk_right, walk_right, walk_right, end_m
 m_BattleMaze_PlayerToLobby: .byte walk_left, walk_left, pause_long, pause_long, walk_left, walk_up, end_m
 m_BattleMaze_AttendantToLobby: .byte walk_left, walk_left, walk_left, walk_up, walk_up, walk_up, look_down, end_m
+
+@ ----------------------------------------------------------------------------
+@ Battle Isle Movements
+@ ----------------------------------------------------------------------------
+
+BattleFrontier_Isle_EnterBattlePosition:
+    msgbox gText_BattleFrontier_LeadToBattlePosition MSG_NORMAL
+    getplayerpos 0x8004 0x8005
+    compare 0x8005 14 @ Above the attendant
+    if equal _goto BattleFrontier_Isle_EnterBattlePositionFromNorth
+    compare 0x8005 16 @ Below the attendant
+    if equal _goto BattleFrontier_Isle_EnterBattlePositionFromSouth
+    applymovement PLAYER m_BattleIsle_PlayerToArenaFromWest
+    goto BattleFrontier_Isle_EnterBattlePositionAttendant
+
+BattleFrontier_Isle_EnterBattlePositionFromNorth:
+    applymovement PLAYER m_BattleIsle_PlayerToArenaFromNorth
+    goto BattleFrontier_Isle_EnterBattlePositionAttendant
+
+BattleFrontier_Isle_EnterBattlePositionFromSouth:
+    applymovement PLAYER m_BattleIsle_PlayerToArenaFromSouth
+    applymovement BATTLE_ISLE_ATTENDANT m_BattleIsle_AttendantToArena_WhenBelow
+    waitmovement BATTLE_ISLE_ATTENDANT
+
+BattleFrontier_Isle_EnterBattlePositionAttendant:
+    applymovement BATTLE_ISLE_ATTENDANT m_BattleIsle_AttendantToArena
+    waitmovement ALLEVENTS
+    special CAMERA_START
+    applymovement CAMERA m_BattleFacility_CameraMoveRight_2
+    waitmovement CAMERA
+    special CAMERA_END
+    return
+
+BattleFrontier_Isle_PerBattleSetup:
+    applymovement PLAYER m_LookRight
+    applymovement BATTLE_ISLE_ATTENDANT m_LookRight
+    return
+
+BattleFrontier_Isle_OpponentArrives:
+    msgbox gText_BattleFrontier_CallingOpponent MSG_NORMAL
+    showsprite BATTLE_ISLE_OPPONENT
+    applymovement BATTLE_ISLE_OPPONENT m_BattleIsle_OpponentToArena
+    waitmovement ALLEVENTS
+    return
+
+BattleFrontier_Isle_PostBattleReset:
+    applymovement PLAYER m_LookDown
+    applymovement BATTLE_ISLE_ATTENDANT m_LookUp
+    applymovement BATTLE_ISLE_OPPONENT m_BattleIsle_OpponentLeaves
+    call BattleFrontier_Common_CommentOnResult @ Before the wait, so it plays over the opponent leaving
+    waitmovement ALLEVENTS
+    closeonkeypress
+    hidesprite BATTLE_ISLE_OPPONENT
+    return
+
+BattleFrontier_Isle_LeaveBattlePosition:
+    msgbox gText_BattleFrontier_LeadToLobby MSG_NORMAL
+    special CAMERA_START
+    applymovement CAMERA m_BattleFacility_CameraMoveLeft_2
+    waitmovement CAMERA
+    special CAMERA_END
+    @ The attendant leads on the way back - it is standing on the player's first step
+    applymovement BATTLE_ISLE_ATTENDANT m_BattleIsle_AttendantToLobby
+    applymovement PLAYER m_BattleIsle_PlayerToLobby
+    waitmovement ALLEVENTS
+    return
+
+@ Movements
+m_BattleIsle_PlayerToArenaFromNorth: .byte walk_left, walk_up, walk_up, walk_up, look_right, end_m
+m_BattleIsle_PlayerToArenaFromWest: .byte walk_up, walk_up, walk_up, walk_up, look_right, end_m
+m_BattleIsle_PlayerToArenaFromSouth: .byte walk_left, walk_up, walk_up, walk_up, walk_up, walk_up, look_right, end_m
+m_BattleIsle_AttendantToArena_WhenBelow: .byte pause_long, pause_long, end_m
+m_BattleIsle_AttendantToArena: .byte  walk_left, walk_up, walk_up, walk_up, look_right, end_m
+m_BattleIsle_OpponentToArena: .byte walk_up, walk_up, walk_up, walk_up, walk_up, walk_up, walk_left, look_left, end_m
+m_BattleIsle_OpponentLeaves: .byte walk_right, walk_down, walk_down, walk_down, walk_down, walk_down, walk_down, end_m
+m_BattleIsle_AttendantToLobby: .byte walk_down, walk_down, walk_down, walk_right, look_down, end_m
+m_BattleIsle_PlayerToLobby: .byte walk_down, walk_down, walk_down, walk_down, walk_down, walk_right, look_up, end_m
 
 @ ============================================================================
 @ Common Movements

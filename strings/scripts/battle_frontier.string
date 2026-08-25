@@ -478,6 +478,9 @@ The Battle Sim runs every battle as\na simulation, and no two are alike.\pBefore
 #org @gText_BattleFrontier_MazeRules
 In the Battle Maze, you're handed a\nrandom team to battle with.\pThis team is built from the same pool\nyour opponents may have.\pYour team is changed after every\nbattle.\pThere is nothing to prepare for this\nfacility - just do your best!
 
+#org @gText_BattleFrontier_IsleRules
+Battles at the Battle Isle are\nfought in the traditional way.\pHeld items and abilities do not\nactiavate.\pMega Evolution and Z-Moves have no\nplace here either.\pAll moves are physical or special\nbased on their type.
+
 #org @gText_BattleFrontier_SandsRules
 In the Battle Sands, you put your\ntrust in your Pok\emon.\pYou choose if they fight or switch,\nbut they choose their own moves.\pWhenever a Pok\emon enters battle,\nthey are empowered by the sands.\pThis raises a random stat, with the\nintensity growing with your streak.
 

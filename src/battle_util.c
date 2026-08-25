@@ -1581,8 +1581,21 @@ bool8 IsMoveAffectedByParentalBond(u16 move, u8 bankAtk)
 	return FALSE;
 }
 
+// The Gen 1-3 rule: Phys/spec is based on move type (fairy is special)
+static u8 CalcMoveSplitByType(u16 move)
+{
+	if (SPLIT(move) == SPLIT_STATUS)
+		return SPLIT_STATUS;
+
+	return (gBattleMoves[move].type < TYPE_FIRE) ? SPLIT_PHYSICAL : SPLIT_SPECIAL;
+}
+
 u8 CalcMoveSplit(u16 move, u8 bankAtk, u8 bankDef)
 {
+	// Takes priority over the moves that pick their own physicality - on the Isle the type is the only rule
+	if (IsBattleIsleBattle())
+		return CalcMoveSplitByType(move);
+
 	if (gSpecialMoveFlags[move].gMovesThatChangePhysicality
 	&&  SPLIT(move) != SPLIT_STATUS)
 	{
@@ -1615,6 +1628,9 @@ u8 CalcMoveSplit(u16 move, u8 bankAtk, u8 bankDef)
 
 u8 CalcMoveSplitFromParty(u16 move, struct Pokemon* mon)
 {
+	if (IsBattleIsleBattle())
+		return CalcMoveSplitByType(move);
+
 	if (gSpecialMoveFlags[move].gMovesThatChangePhysicality)
 	{
 		if (mon->spAttack >= mon->attack)
@@ -2438,7 +2454,8 @@ bool8 IsTrickRoomOnLastTurn(void)
 bool8 IsMagicRoomActive(void)
 {
 	return gNewBS->MagicRoomTimer > 0
-		|| (IS_BATTLE_SIM && gBattleSimFlags & BATTLE_SIM_MAGIC_ROOM);
+		|| (IS_BATTLE_SIM && gBattleSimFlags & BATTLE_SIM_MAGIC_ROOM)
+		|| IsBattleIsleBattle();
 }
 
 bool8 IsWonderRoomActive(void)
@@ -2661,7 +2678,8 @@ bool8 IsAbilitySuppressed(u8 bank)
 
 bool8 AreAbilitiesSuppressed(void)
 {
-	return IS_BATTLE_SIM && gBattleSimFlags & BATTLE_SIM_ABILITY_SUPPRESSION;
+	return (IS_BATTLE_SIM && gBattleSimFlags & BATTLE_SIM_ABILITY_SUPPRESSION)
+		|| IsBattleIsleBattle();
 }
 
 bool8 CantScoreACrit(u8 bank, struct Pokemon* mon)

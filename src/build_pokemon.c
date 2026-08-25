@@ -2145,10 +2145,10 @@ static u8 BuildFrontierParty(struct Pokemon* const party, const u16 trainerId, c
 			species = spread->species;
 			dexNum = SpeciesToNationalPokedexNum(species);
 			item = spread->item;
-			ability = (gMain.inBattle && gBattleTypeFlags & BATTLE_TYPE_BATTLE_SIM && gBattleSimFlags & BATTLE_SIM_ABILITY_SUPPRESSION) ? 0
+			ability = (gMain.inBattle && AreAbilitiesSuppressed()) ? 0
 					: ConvertFrontierAbilityNumToAbility(spread->ability, species);
 			itemEffect = (ability == ABILITY_KLUTZ
-					  || (gMain.inBattle && gBattleTypeFlags & BATTLE_TYPE_BATTLE_SIM && gBattleSimFlags & BATTLE_SIM_MAGIC_ROOM)) ? 0 : ItemId_GetHoldEffect(item);
+					  || (gMain.inBattle && IsMagicRoomActive())) ? 0 : ItemId_GetHoldEffect(item);
 
 			if (IsFrontierSingles(battleType))
 			{
@@ -2772,7 +2772,9 @@ static bool8 IsPokemonBannedBasedOnStreak(u16 species, u16 item, u16* speciesArr
 		return FALSE; //There are no streaks outside of the Frontier
 
 	u16 streak = GetCurrentBattleFacilityStreak();
-	bool8 megasZMovesBannedInTier = AreMegasZMovesBannedInTier(tier) || BATTLE_FACILITY_NUM == IN_RING_CHALLENGE;
+	bool8 megasZMovesBannedInTier = AreMegasZMovesBannedInTier(tier)
+								 || BATTLE_FACILITY_NUM == IN_RING_CHALLENGE
+								 || BATTLE_FACILITY_NUM == IN_BATTLE_ISLE;
 
 	// A Choice-locked mon Struggles about half its turns in the Quarry.
 	if (!forPlayer && BATTLE_FACILITY_NUM == IN_BATTLE_QUARRY
@@ -2869,10 +2871,10 @@ static bool8 TeamDoesntHaveSynergy(const struct BattleTowerSpread* const spread,
 {
 	int i;
 
-	u8 ability = (gMain.inBattle && gBattleTypeFlags & BATTLE_TYPE_BATTLE_SIM && gBattleSimFlags & BATTLE_SIM_ABILITY_SUPPRESSION) ? 0
+	u8 ability = (gMain.inBattle && AreAbilitiesSuppressed()) ? 0
 			   : ConvertFrontierAbilityNumToAbility(spread->ability, spread->species);
 	u8 itemEffect = (ability == ABILITY_KLUTZ
-				 || (gMain.inBattle && gBattleTypeFlags & BATTLE_TYPE_BATTLE_SIM && gBattleSimFlags & BATTLE_SIM_MAGIC_ROOM)) ? 0 : ItemId_GetHoldEffect(spread->item);
+				 || (gMain.inBattle && IsMagicRoomActive())) ? 0 : ItemId_GetHoldEffect(spread->item);
 	u8 battleType = builder->battleType;
 
 	bool8 hasTailwinder = builder->moveOnTeam[MOVE_TAILWIND];

@@ -131,7 +131,7 @@ const u8* const gBattleFacilityNames[NUM_BATTLE_FACILITIES] =
 	[IN_BATTLE_SIM] = gText_BattleSim,
 	[IN_BATTLE_FACTORY] = gText_BattleFactory,
 	[IN_RING_CHALLENGE] = gText_BattleRing,
-	[IN_ISLE_CHALLENGE] = gText_BattleIsle,
+	[IN_BATTLE_ISLE] = gText_BattleIsle,
 	[IN_BATTLE_MAZE] = gText_BattleMaze,
 };
 
@@ -627,6 +627,13 @@ bool8 InBattleSands(void)
 	return (gBattleTypeFlags & BATTLE_TYPE_BATTLE_SANDS) != 0;
 }
 
+bool8 IsBattleIsleBattle(void)
+{
+	return (gBattleTypeFlags & BATTLE_TYPE_BATTLE_TOWER)
+		&& FlagGet(FLAG_BATTLE_FACILITY)
+		&& BATTLE_FACILITY_NUM == IN_BATTLE_ISLE;
+}
+
 bool8 IsAIControlledBattle(void)
 {
 	return InBattleSands() || (gBattleTypeFlags & BATTLE_TYPE_MOCK_BATTLE) != 0;
@@ -727,6 +734,7 @@ bool8 IsMegaZMoveBannedBattle(void)
 	return gBattleTypeFlags & BATTLE_TYPE_TRAINER //Excludes Raid Battles
 	&& FlagGet(FLAG_BATTLE_FACILITY)
 	&& (AreMegasZMovesBannedInTier(VarGet(VAR_BATTLE_FACILITY_TIER))
+	 || BATTLE_FACILITY_NUM == IN_BATTLE_ISLE // Mega Stones and Z-Crystals are held items like any other here
 	 || (gBattleTypeFlags & BATTLE_TYPE_BATTLE_SIM && gBattleSimFlags & BATTLE_SIM_DYNAMAX));
 }
 
