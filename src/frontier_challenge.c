@@ -94,6 +94,7 @@ extern const u8 gText_BattleFrontier_BackgroundUndergroundLake[];
 extern const u8 gText_BattleFrontier_BackgroundHauntedHouse[];
 extern const u8 gText_BattleFrontier_BackgroundBuilding[];
 extern const u8 gText_BattleFrontier_BackgroundPlutoHQ[];
+extern const u8 gText_BattleFrontier_BackgroundGymArena[];
 extern const u8 gText_BattleFrontier_BackgroundChampionsRoom[];
 extern const u8 gText_BattleFrontier_BackgroundDaisOfLight[];
 
@@ -165,6 +166,7 @@ const u8* const gFrontierBackgroundChoiceNames[NUM_FRONTIER_BACKGROUND_CHOICES +
 	gText_BattleFrontier_BackgroundHauntedHouse,
 	gText_BattleFrontier_BackgroundBuilding,
 	gText_BattleFrontier_BackgroundPlutoHQ,
+	gText_BattleFrontier_BackgroundGymArena,
 	gText_BattleFrontier_BackgroundChampionsRoom,
 	gText_BattleFrontier_BackgroundDaisOfLight,
 	gText_BattleFrontier_ChoiceCancel,
@@ -172,8 +174,8 @@ const u8* const gFrontierBackgroundChoiceNames[NUM_FRONTIER_BACKGROUND_CHOICES +
 
 const u8 gFrontierBackgroundChoiceTerrains[NUM_FRONTIER_BACKGROUND_CHOICES] =
 {
-	BATTLE_TERRAIN_GYM,
-	BATTLE_TERRAIN_GYM, // To handle a case where random (in this slot in the UI) rolls this same index
+	BATTLE_TERRAIN_GYM, // Unused - Default resolves through gFacilityDefaultBackgrounds instead
+	BATTLE_TERRAIN_GYM, // Unused - Random resolves through gFrontierBackground.rolledChoice instead
 	BATTLE_TERRAIN_GRASS,
 	BATTLE_TERRAIN_LONG_GRASS,
 	BATTLE_TERRAIN_FOREST,
@@ -195,6 +197,7 @@ const u8 gFrontierBackgroundChoiceTerrains[NUM_FRONTIER_BACKGROUND_CHOICES] =
 	BATTLE_TERRAIN_SPOOKY,
 	BATTLE_TERRAIN_INSIDE,
 	BATTLE_TERRAIN_PLUTO_LEADER,
+	BATTLE_TERRAIN_GYM,
 	BATTLE_TERRAIN_CHAMPION,
 	BATTLE_TERRAIN_DAIS_OF_LIGHT,
 };
@@ -283,6 +286,24 @@ static void RestoreGameModifiers(void)
 	gFrontierModifierBackup.flags = 0;
 }
 
+static u8 SanitizeFacility(u8 facility)
+{
+	return (facility < NUM_BATTLE_FACILITIES) ? facility : IN_BATTLE_TOWER;
+}
+
+// What the Default row draws, per facility
+static const u8 gFacilityDefaultBackgrounds[NUM_BATTLE_FACILITIES] =
+{
+	[IN_BATTLE_TOWER]   = BATTLE_TERRAIN_GYM,
+	[IN_BATTLE_SANDS]   = BATTLE_TERRAIN_SAND,
+	[IN_BATTLE_MINE]    = BATTLE_TERRAIN_CAVE,
+	[IN_BATTLE_CIRCUS]  = BATTLE_TERRAIN_CHAMPION,
+	[IN_BATTLE_FACTORY] = BATTLE_TERRAIN_INSIDE,
+	[IN_RING_CHALLENGE] = BATTLE_TERRAIN_PLUTO_LEADER,
+	[IN_ISLE_CHALLENGE] = BATTLE_TERRAIN_GRASS,
+	[IN_BATTLE_MAZE]    = BATTLE_TERRAIN_GRASS,
+};
+
 static u8 SanitizeBackgroundChoice(u8 choice)
 {
 	return (choice < NUM_FRONTIER_BACKGROUND_CHOICES) ? choice : FRONTIER_BACKGROUND_DEFAULT_CHOICE;
@@ -296,12 +317,10 @@ u8 GetCurrentFrontierBackgroundChoice(void)
 
 static u8 RollBattleBackground(void)
 {
-	u8 choice = Random() % (NUM_FRONTIER_BACKGROUND_CHOICES - 1);
+	// Default and Random are UI rows with no background of their own, and occupy the first two slots
+	u8 numRealChoices = NUM_FRONTIER_BACKGROUND_CHOICES - FIRST_REAL_FRONTIER_BACKGROUND_CHOICE;
 
-	if (choice >= FRONTIER_BACKGROUND_RANDOM_CHOICE) // Don't land on Random (a UI item with no matching background)
-		++choice;
-
-	return choice;
+	return FIRST_REAL_FRONTIER_BACKGROUND_CHOICE + (Random() % numRealChoices);
 }
 
 // The background a facility battle should draw, done at runtime through GetBattleBackgroundToDraw in battle_terrain.c.
@@ -312,12 +331,11 @@ u8 GetFrontierBattleBackground(void)
 	if (choice == FRONTIER_BACKGROUND_RANDOM_CHOICE)
 		choice = SanitizeBackgroundChoice(gFrontierBackground.rolledChoice);
 
-	return gFrontierBackgroundChoiceTerrains[choice];
-}
+	// A frontier battle fought outside a facility clamps to the Tower's background rather than reading garbage
+	if (choice == FRONTIER_BACKGROUND_DEFAULT_CHOICE)
+		return gFacilityDefaultBackgrounds[SanitizeFacility(BATTLE_FACILITY_NUM)];
 
-static u8 SanitizeFacility(u8 facility)
-{
-	return (facility < NUM_BATTLE_FACILITIES) ? facility : IN_BATTLE_TOWER;
+	return gFrontierBackgroundChoiceTerrains[choice];
 }
 
 static u8 SanitizeFormat(u8 format)

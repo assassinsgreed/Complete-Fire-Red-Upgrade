@@ -310,7 +310,7 @@ You're currently battling in\n[BUFFER1].\pWhere would you like your battles\nto 
 [BUFFER1] it is!
 
 #org @gText_BattleFrontier_BackgroundGym
-Gym Arena (Default)
+Facility Default
 
 #org @gText_BattleFrontier_BackgroundRandom
 Random
@@ -377,6 +377,9 @@ Indoors
 
 #org @gText_BattleFrontier_BackgroundPlutoHQ
 Team Pluto HQ
+
+#org @gText_BattleFrontier_BackgroundGymArena
+Gym Arena
 
 #org @gText_BattleFrontier_BackgroundChampionsRoom
 Champion's Room

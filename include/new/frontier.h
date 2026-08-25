@@ -348,9 +348,10 @@ u8 GetCurrentFrontierBackgroundChoice(void);
 
 // Like music above, but with the default background called out explicitly so it can be referenced
 // in scripts setting the background graphic (since Random isn't a background itself)
-#define NUM_FRONTIER_BACKGROUND_CHOICES 25
+#define NUM_FRONTIER_BACKGROUND_CHOICES 26
 #define FRONTIER_BACKGROUND_DEFAULT_CHOICE 0
 #define FRONTIER_BACKGROUND_RANDOM_CHOICE 1
+#define FIRST_REAL_FRONTIER_BACKGROUND_CHOICE 2 // 0 = facility default, 1 = random
 
 extern const u8* const gFrontierBackgroundChoiceNames[NUM_FRONTIER_BACKGROUND_CHOICES + 1];
 extern const u8 gFrontierBackgroundChoiceTerrains[NUM_FRONTIER_BACKGROUND_CHOICES];
