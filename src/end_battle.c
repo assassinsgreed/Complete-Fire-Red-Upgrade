@@ -930,12 +930,8 @@ static void EndBattleFlagClear(void)
 	if (gDexNavStartedBattle
 	&& (gBattleOutcome == B_OUTCOME_WON || gBattleOutcome == B_OUTCOME_CAUGHT))
 	{
-		if (gCurrentDexNavChain == 0)
-			gCurrentDexNavChain = 2; //Next battle would be battle 2
-		else if (gCurrentDexNavChain < 100)
-			++gCurrentDexNavChain;
-		else
-			gCurrentDexNavChain = 1; //Restart from 1 (101 % 100 = 1)
+		if (gCurrentDexNavChain < 100)
+			++gCurrentDexNavChain; // Stays at 100 so the maxed shiny rate lasts until the chain is broken
 	}
 	else
 		gCurrentDexNavChain = 0;

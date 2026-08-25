@@ -1715,10 +1715,10 @@ static void DexNavDrawChainNumber(u8* spriteIdNumAddr, u8* spriteIdStarAddr)
 			OutlinedFontDraw(spriteIdNum, 0, 16 * 8);
 
 			//Try create a star if there's a higher chance of a shiny being found
-			if (gCurrentDexNavChain == 50 || gCurrentDexNavChain == 100)
+			if (gCurrentDexNavChain >= 50) //Lit for as long as the chain is in a boosted shiny tier
 			{
 				s16 xPos = ICONX + 188;
-				if (gCurrentDexNavChain == 100)
+				if (gCurrentDexNavChain >= 100) //Shift left to make room for the third digit
 					xPos -= 4;
 				spriteIdStar = CreateSprite(&sStarLitTemplate, xPos, ICONY - 6, 0x0);
 			}
@@ -2702,8 +2702,8 @@ static void PrintGUIAreaName(void)
 
 static void PrintGUIChainLength(void)
 {
-	u8 chainLength = (gCurrentDexNavChain == 0) ? 0 : gCurrentDexNavChain - 1; //Always 1 less than what's stored internally
-	const struct TextColor* colour = (chainLength == 49 || chainLength == 99) ? &sLightRedText : &sWhiteText;
+	u8 chainLength = gCurrentDexNavChain;
+	const struct TextColor* colour = (chainLength >= 50) ? &sLightRedText : &sWhiteText;
 
 	CleanWindow(WIN_CHAIN_LENGTH);
 	StringCopy(gStringVar4, gText_DexNav_Chain);
