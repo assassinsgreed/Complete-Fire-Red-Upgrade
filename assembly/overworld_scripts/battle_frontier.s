@@ -1100,6 +1100,8 @@ BattleFrontier_Common_LeaveBattlePosition:
     case IN_BATTLE_SANDS, BattleFrontier_Sands_LeaveBattlePosition, _call
     return
 
+@ These three MUST stay MSG_KEEPOPEN. The opponent is already walking offscreen, and MSG_NORMAL ends
+@ in a release call that would destroy the task for the opponent's movement, resulting in a soft crash!
 BattleFrontier_Common_CommentOnResult:
     callasm FrontierChallenge_DidPlayerWin
     compare LASTRESULT TRUE
@@ -1108,17 +1110,17 @@ BattleFrontier_Common_CommentOnResult:
     compare LASTRESULT FRONTIER_OPPONENT_REGULAR
     if notequal _goto BattleFrontier_Common_CommentOnMilestoneWin
     fanfare MUS_CELEBRATION
-    msgbox gText_BattleFrontier_AttendantWin MSG_NORMAL
+    msgbox gText_BattleFrontier_AttendantWin MSG_KEEPOPEN
     return
 
 BattleFrontier_Common_CommentOnMilestoneWin:
     fanfare MUS_BIG_CELEBRATION
-    msgbox gText_BattleFrontier_AttendantWinMilestone MSG_NORMAL
+    msgbox gText_BattleFrontier_AttendantWinMilestone MSG_KEEPOPEN
     return
 
 BattleFrontier_Common_CommentOnLoss:
     fanfare MUS_FAILED
-    msgbox gText_BattleFrontier_AttendantLoss MSG_NORMAL
+    msgbox gText_BattleFrontier_AttendantLoss MSG_KEEPOPEN
     return
 
 @ ----------------------------------------------------------------------------
@@ -1153,6 +1155,7 @@ BattleFrontier_Tower_PostBattleReset:
     applymovement BATTLE_TOWER_OPPONENT m_BattleTower_OpponentLeaves
     call BattleFrontier_Common_CommentOnResult @ Before the wait, so it plays over the opponent leaving
     waitmovement ALLEVENTS
+    closeonkeypress
     hidesprite BATTLE_TOWER_OPPONENT
     return
 
@@ -1217,6 +1220,7 @@ BattleFrontier_Sands_PostBattleReset:
     applymovement BATTLE_SANDS_OPPONENT m_BattleSands_OpponentLeaves
     call BattleFrontier_Common_CommentOnResult @ Before the wait, so it plays over the opponent leaving
     waitmovement ALLEVENTS
+    closeonkeypress
     hidesprite BATTLE_SANDS_OPPONENT
     return
 

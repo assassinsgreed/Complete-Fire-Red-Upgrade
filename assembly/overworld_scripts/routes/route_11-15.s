@@ -1332,8 +1332,11 @@ LevelScript_RestHouse_Cutscene:
     msgbox gText_Route12RestHouse_Cutscene_SeleneAsksAboutBadges MSG_NORMAL
     call CountBadgesForAppraisal
     applymovement Alistair m_AlistairArrives
-    msgbox gText_Route12RestHouse_Cutscene_SeleneCommentsOnGymThemes MSG_NORMAL
+    @ MUST stay MSG_KEEPOPEN - Alistair is already walking and is waited on below. MSG_NORMAL ends
+    @ in `release`, which destroys the task for his movement, resulting in a soft crash.
+    msgbox gText_Route12RestHouse_Cutscene_SeleneCommentsOnGymThemes MSG_KEEPOPEN
     waitmovement Alistair
+    closeonkeypress
     playbgm 0x173 @ Alistair's Theme
     applymovement PLAYER m_LookLeft
     msgbox gText_Route12RestHouse_Cutscene_AlistairArrives MSG_NORMAL
