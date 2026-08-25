@@ -475,6 +475,9 @@ In the Battle Quarry, the rock face\nshifts before every turn.\pIt seals off two
 #org @gText_BattleFrontier_SimRules
 The Battle Sim runs every battle as\na simulation, and no two are alike.\pBefore each one, the machines roll a\nnew set of conditions for the field.\pThe longer your streak, the more\nconditions they will stack on.
 
+#org @gText_BattleFrontier_MazeRules
+In the Battle Maze, you're handed a\nrandom team to battle with.\pThis team is built from the same pool\nyour opponents may have.\pYour team is changed after every\nbattle.\pThere is nothing to prepare for this\nfacility - just do your best!
+
 #org @gText_BattleFrontier_SandsRules
 In the Battle Sands, you put your\ntrust in your Pok\emon.\pYou choose if they fight or switch,\nbut they choose their own moves.\pWhenever a Pok\emon enters battle,\nthey are empowered by the sands.\pThis raises a random stat, with the\nintensity growing with your streak.
 
@@ -501,6 +504,10 @@ Doubles (on hold)
 
 #org @gText_BattleFrontier_ConfirmChallenge
 The [BUFFER2] format? That will\nrequire [BUFFER3] Pok\emon to enter.\pIs that okay?
+
+// Shown for the Battle Maze, since the player doesn't bring their own Pokemon
+#org @gText_BattleFrontier_ConfirmChallengeRandom
+The [BUFFER2] format? I'll give you\n[BUFFER3] Pok\emon per battle.\pIs that okay?
 
 #org @gText_BattleFrontier_ChooseTeam
 Please choose the Pok\emon you'd\nlike to enter.

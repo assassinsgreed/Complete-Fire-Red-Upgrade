@@ -755,6 +755,8 @@ SignScript_BattleFrontier_BattleObservatory:
 .equ BATTLE_QUARRY_OPPONENT, 0x2
 .equ BATTLE_SIM_ATTENDANT, 0x1
 .equ BATTLE_SIM_OPPONENT, 0x2
+.equ BATTLE_MAZE_ATTENDANT, 0x5
+.equ BATTLE_MAZE_OPPONENT, 0x6
 
 @ ============================================================================
 @ Per-facility entry points
@@ -868,6 +870,7 @@ BattleFrontier_Common_FacilityRules:
     case IN_BATTLE_SANDS, BattleFrontier_Sands_Rules, _call
     case IN_BATTLE_QUARRY, BattleFrontier_Quarry_Rules, _call
     case IN_BATTLE_SIM, BattleFrontier_Sim_Rules, _call
+    case IN_BATTLE_MAZE, BattleFrontier_Maze_Rules, _call
     goto BattleFrontier_Common_Rules
 
 BattleFrontier_Tower_Rules:
@@ -884,6 +887,10 @@ BattleFrontier_Quarry_Rules:
 
 BattleFrontier_Sim_Rules:
     msgbox gText_BattleFrontier_SimRules MSG_KEEPOPEN
+    return
+
+BattleFrontier_Maze_Rules:
+    msgbox gText_BattleFrontier_MazeRules MSG_KEEPOPEN
     return
 
 BattleFrontier_Common_Records:
@@ -982,7 +989,16 @@ BattleFrontier_Common_FormatChosen:
 BattleFrontier_Common_BeginChallenge:
     callasm FrontierChallenge_BufferFacilityInfo
     callasm FrontierChallenge_BufferNumMonsToEnter
+    compare VAR_BATTLE_FACILITY_NUM IN_BATTLE_MAZE
+    if equal _goto BattleFrontier_Common_ConfirmRandomTeamChallenge
     msgbox gText_BattleFrontier_ConfirmChallenge MSG_YESNO
+    goto BattleFrontier_Common_ChallengeConfirmed
+
+@ The Battle Maze and Battle Factory don't ask the player to bring their own teams
+BattleFrontier_Common_ConfirmRandomTeamChallenge:
+    msgbox gText_BattleFrontier_ConfirmChallengeRandom MSG_YESNO
+
+BattleFrontier_Common_ChallengeConfirmed:
     compare LASTRESULT NO
     if equal _goto BattleFrontier_Common_LobbyMenu
     call BattleFrontier_Common_EnterTeam
@@ -1029,6 +1045,8 @@ BattleFrontier_Common_CommitRunDone:
 @ Returns FALSE if the player backed out.
 BattleFrontier_Common_EnterTeam:
     special SPECIAL_SAVE_PLAYER_PARTY
+    compare VAR_BATTLE_FACILITY_NUM IN_BATTLE_MAZE
+    if equal _goto BattleFrontier_Common_EnterTeamRolled
     msgbox gText_BattleFrontier_ChooseTeam MSG_KEEPOPEN
     special SPECIAL_CHOOSE_FRONTIER_TEAM
     waitstate
@@ -1041,6 +1059,12 @@ BattleFrontier_Common_EnterTeam:
 
 BattleFrontier_Common_EnterTeamCancelled:
     setvar LASTRESULT FALSE
+    return
+
+@ The Battle Maze picks a random team so we skip the party selection.
+@ The player's party is still saved & restored.
+BattleFrontier_Common_EnterTeamRolled:
+    setvar LASTRESULT TRUE
     return
 
 @ ============================================================================
@@ -1090,15 +1114,18 @@ BattleFrontier_Common_EnterBattlePosition:
     case IN_BATTLE_SANDS, BattleFrontier_Sands_EnterBattlePosition, _call
     case IN_BATTLE_QUARRY, BattleFrontier_Quarry_EnterBattlePosition, _call
     case IN_BATTLE_SIM, BattleFrontier_Sim_EnterBattlePosition, _call
+    case IN_BATTLE_MAZE, BattleFrontier_Maze_EnterBattlePosition, _call
     return
 
-@ Before every battle. Sim randomizes its field effects here (special 0x72), Factory and Maze swap or reroll the team.
+@ Before every battle. Sim randomizes its field effects here (special 0x72), Factory swaps the team.
+@ The Maze picks a random team via BuildTrainerPartySetup every time.
 BattleFrontier_Common_PerBattleSetup:
     switch VAR_BATTLE_FACILITY_NUM
     case IN_BATTLE_TOWER, BattleFrontier_Tower_PerBattleSetup, _call
     case IN_BATTLE_SANDS, BattleFrontier_Sands_PerBattleSetup, _call
     case IN_BATTLE_QUARRY, BattleFrontier_Quarry_PerBattleSetup, _call
     case IN_BATTLE_SIM, BattleFrontier_Sim_PerBattleSetup, _call
+    case IN_BATTLE_MAZE, BattleFrontier_Maze_PerBattleSetup, _call
     return
 
 BattleFrontier_Common_OpponentArrives:
@@ -1107,6 +1134,7 @@ BattleFrontier_Common_OpponentArrives:
     case IN_BATTLE_SANDS, BattleFrontier_Sands_OpponentArrives, _call
     case IN_BATTLE_QUARRY, BattleFrontier_Quarry_OpponentArrives, _call
     case IN_BATTLE_SIM, BattleFrontier_Sim_OpponentArrives, _call
+    case IN_BATTLE_MAZE, BattleFrontier_Maze_OpponentArrives, _call
     return
 
 BattleFrontier_Common_PostBattleReset:
@@ -1115,6 +1143,7 @@ BattleFrontier_Common_PostBattleReset:
     case IN_BATTLE_SANDS, BattleFrontier_Sands_PostBattleReset, _call
     case IN_BATTLE_QUARRY, BattleFrontier_Quarry_PostBattleReset, _call
     case IN_BATTLE_SIM, BattleFrontier_Sim_PostBattleReset, _call
+    case IN_BATTLE_MAZE, BattleFrontier_Maze_PostBattleReset, _call
     return
 
 BattleFrontier_Common_LeaveBattlePosition:
@@ -1123,6 +1152,7 @@ BattleFrontier_Common_LeaveBattlePosition:
     case IN_BATTLE_SANDS, BattleFrontier_Sands_LeaveBattlePosition, _call
     case IN_BATTLE_QUARRY, BattleFrontier_Quarry_LeaveBattlePosition, _call
     case IN_BATTLE_SIM, BattleFrontier_Sim_LeaveBattlePosition, _call
+    case IN_BATTLE_MAZE, BattleFrontier_Maze_LeaveBattlePosition, _call
     return
 
 @ These three MUST stay MSG_KEEPOPEN. The opponent is already walking offscreen, and MSG_NORMAL ends
@@ -1399,6 +1429,73 @@ m_BattleSim_OpponentToStage: .byte walk_up, walk_up, walk_up, walk_up, walk_up, 
 m_BattleSim_OpponentLeaves: .byte walk_left, walk_left, walk_down, walk_down, walk_down, walk_down, walk_down, walk_down, end_m
 m_BattleSim_PlayerToLobby: .byte walk_right, walk_right, walk_right, walk_down, walk_down, walk_down, walk_down, walk_down, walk_down, walk_down, walk_down, look_up, end_m
 m_BattleSim_AttendantToLobby: .byte walk_right, walk_right, walk_right, walk_down, walk_down, walk_down, walk_down, walk_down, walk_left, look_right, pause_long, walk_right, walk_down, look_down, end_m
+
+@ ----------------------------------------------------------------------------
+@ Battle Maze Movements
+@ ----------------------------------------------------------------------------
+
+BattleFrontier_Maze_EnterBattlePosition:
+    msgbox gText_BattleFrontier_LeadToBattlePosition MSG_NORMAL
+    getplayerpos 0x8004 0x8005
+    compare 0x8005 35 @ Beside the attendant rather than below them
+    if equal _goto BattleFrontier_Maze_EnterBattlePositionFromEast
+    applymovement PLAYER m_BattleMaze_PlayerToArenaFromSouth
+    applymovement BATTLE_MAZE_ATTENDANT m_BattleMaze_AttendantToArena
+    goto BattleFrontier_Maze_EnterBattlePositionCamera
+
+BattleFrontier_Maze_EnterBattlePositionFromEast:
+    applymovement PLAYER m_BattleMaze_PlayerToArenaFromEast
+    applymovement BATTLE_MAZE_ATTENDANT m_BattleMaze_AttendantToArena
+
+BattleFrontier_Maze_EnterBattlePositionCamera:
+    waitmovement ALLEVENTS
+    special CAMERA_START
+    applymovement CAMERA m_BattleFacility_CameraMoveRight
+    waitmovement CAMERA
+    special CAMERA_END
+    return
+
+BattleFrontier_Maze_PerBattleSetup:
+    applymovement PLAYER m_LookRight
+    applymovement BATTLE_MAZE_ATTENDANT m_LookRight
+    return
+
+BattleFrontier_Maze_OpponentArrives:
+    msgbox gText_BattleFrontier_CallingOpponent MSG_NORMAL
+    showsprite BATTLE_MAZE_OPPONENT
+    applymovement BATTLE_MAZE_OPPONENT m_BattleMaze_OpponentToArena
+    waitmovement ALLEVENTS
+    return
+
+BattleFrontier_Maze_PostBattleReset:
+    applymovement PLAYER m_LookDown
+    applymovement BATTLE_MAZE_ATTENDANT m_LookUp
+    applymovement BATTLE_MAZE_OPPONENT m_BattleMaze_OpponentLeaves
+    call BattleFrontier_Common_CommentOnResult @ Before the wait, so it plays over the opponent leaving
+    waitmovement ALLEVENTS
+    closeonkeypress
+    hidesprite BATTLE_MAZE_OPPONENT
+    return
+
+BattleFrontier_Maze_LeaveBattlePosition:
+    msgbox gText_BattleFrontier_LeadToLobby MSG_NORMAL
+    special CAMERA_START
+    applymovement CAMERA m_BattleFacility_CameraMoveLeft
+    waitmovement CAMERA
+    special CAMERA_END
+    applymovement PLAYER m_BattleMaze_PlayerToLobby
+    applymovement BATTLE_MAZE_ATTENDANT m_BattleMaze_AttendantToLobby
+    waitmovement ALLEVENTS
+    return
+
+@ Movements
+m_BattleMaze_PlayerToArenaFromEast: .byte walk_down, walk_down, pause_long, pause_long, walk_right, walk_right, end_m
+m_BattleMaze_PlayerToArenaFromSouth: .byte walk_down, walk_right, pause_long, pause_long, walk_right, walk_right, end_m
+m_BattleMaze_AttendantToArena: .byte walk_down, walk_down, walk_down, walk_right, walk_right, walk_right, end_m
+m_BattleMaze_OpponentToArena: .byte walk_left, walk_left, walk_left, walk_left, walk_left, look_left, end_m
+m_BattleMaze_OpponentLeaves: .byte walk_right, walk_right, walk_right, walk_right, walk_right, end_m
+m_BattleMaze_PlayerToLobby: .byte walk_left, walk_left, pause_long, pause_long, walk_left, walk_up, end_m
+m_BattleMaze_AttendantToLobby: .byte walk_left, walk_left, walk_left, walk_up, walk_up, walk_up, look_down, end_m
 
 @ ============================================================================
 @ Common Movements

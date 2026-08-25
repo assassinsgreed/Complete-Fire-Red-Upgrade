@@ -59,6 +59,12 @@ build_pokemon.c
 #define TOTAL_LITTLE_CUP_SPREADS ARRAY_COUNT(gLittleCupSpreads)
 #define TOTAL_MIDDLE_CUP_SPREADS ARRAY_COUNT(gMiddleCupSpreads)
 
+// BuildFrontierParty's forPlayer argument
+//  - FOR_PLAYER_RENTAL is the borrowed team handed out by the Battle Maze/Factory
+//  - FOR_PLAYER_TEAM is sized to VAR_BATTLE_FACILITY_POKE_NUM rather than filling all six slots.
+#define FOR_PLAYER_TEAM   TRUE
+#define FOR_PLAYER_RENTAL (TRUE + 1)
+
 enum
 {
 	HAZARDS_SETUP,
@@ -257,7 +263,7 @@ void BuildTrainerPartySetup(void)
 			&& !FlagGet(FLAG_PRESET_RANDOM_TEAM)
 			#endif
 			)
-				BuildFrontierParty(gPlayerParty, 0, towerTier, TRUE, TRUE + 1, B_SIDE_PLAYER);
+				BuildFrontierParty(gPlayerParty, 0, towerTier, TRUE, FOR_PLAYER_RENTAL, B_SIDE_PLAYER);
 		}
 	}
 	else if (gBattleTypeFlags & BATTLE_TYPE_TWO_OPPONENTS)
@@ -544,7 +550,7 @@ void sp067_GenerateRandomBattleTowerTeam(void)
 	FlagSet(FLAG_PRESET_RANDOM_TEAM);
 	#endif
 	VarSet(VAR_BATTLE_FACILITY_TIER, tier);
-	BuildFrontierParty(gPlayerParty, 0, tier, TRUE, TRUE, B_SIDE_PLAYER);
+	BuildFrontierParty(gPlayerParty, 0, tier, TRUE, FOR_PLAYER_TEAM, B_SIDE_PLAYER);
 
 	if (Var8001) //Keep team lead from previous battle
 	{
@@ -1709,7 +1715,7 @@ static u8 BuildFrontierParty(struct Pokemon* const party, const u16 trainerId, c
 	else if (firstTrainer && firstTrainer != 3) //Clear if not multi partner
 		ZeroEnemyPartyMons();
 
-	if (forPlayer == TRUE) //Excludes random battles
+	if (forPlayer == FOR_PLAYER_TEAM) //Excludes random battles
 		monsCount = PARTY_SIZE;
 	else if (gBattleTypeFlags & BATTLE_TYPE_TWO_OPPONENTS && battleTowerPokeNum > 3 && side == B_SIDE_OPPONENT)
 		monsCount = 3;
@@ -1727,7 +1733,7 @@ static u8 BuildFrontierParty(struct Pokemon* const party, const u16 trainerId, c
 	builder->monsCount = monsCount;
 	builder->trainerId = trainerId;
 	//Rentals are always allowed to draw legendaries; only opponents mirror the player.
-	builder->allowLegendaries = forPlayer || PlayerTeamHasLegendary();
+	builder->allowLegendaries = forPlayer || (!IsRandomBattleTowerBattle() && PlayerTeamHasLegendary());
 	Memset(builder->partyIndex, 0xFF, sizeof(builder->partyIndex));
 
 	if (!forPlayer
@@ -2071,8 +2077,11 @@ static u8 BuildFrontierParty(struct Pokemon* const party, const u16 trainerId, c
 
 				default: //forPlayer
 					switch (tier) {
-						case BATTLE_FACILITY_UBER:
 						case BATTLE_FACILITY_NO_RESTRICTIONS:
+							if (forPlayer == FOR_PLAYER_RENTAL)
+								goto REGULAR_SPREADS;
+							__attribute__ ((fallthrough));
+						case BATTLE_FACILITY_UBER:
 						case BATTLE_FACILITY_UBER_CAMOMONS:
 							goto SPECIAL_UBERS_SPREADS;
 						case BATTLE_FACILITY_LITTLE_CUP:
@@ -2811,6 +2820,10 @@ static bool8 IsPokemonBannedBasedOnStreak(u16 species, u16 item, u16* speciesArr
 		if (megasZMovesBannedInTier
 		&& (IsZCrystal(item) || IsMegaStone(item))) //Don't give the player Pokemon with bad items
 			return TRUE;
+
+		// Player rentals are exempt from streak based ramp-ups.
+		if (forPlayer == FOR_PLAYER_RENTAL)
+			return FALSE;
 
 		//Better Pokemon are given to the player the better the streak
 		if (streak < 10)

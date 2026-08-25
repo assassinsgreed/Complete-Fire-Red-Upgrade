@@ -1665,6 +1665,10 @@ void sp072_LoadBattleSimEffects(void)
 //@Details: Sets the appropriate team levels for the battle facility.
 void sp073_ModifyTeamForBattleTower(void)
 {
+	// Skip modifying the player's team for any facilities that use borrowed Pokemon (Maze & Factory)
+	if (IsRandomBattleTowerBattle())
+		return;
+
 	//Scales in both directions. gPlayerParty is replaced with the entered copies, so nothing
 	//may save between here and the end of the run without restoring the real team first - it
 	//is waiting in SaveBlock1.playerParty, and special 0x28 brings it back when the run ends.

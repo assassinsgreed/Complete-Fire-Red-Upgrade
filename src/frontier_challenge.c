@@ -348,6 +348,20 @@ static u8 NumMonsInFormat(u8 format)
 	return (format == FRONTIER_FORMAT_DOUBLES) ? NUM_MONS_DOUBLES : NUM_MONS_SINGLES;
 }
 
+// The Battle Maze and Battle Factory use Pokemon from the opponents' pool
+static bool8 FacilityRollsItsOwnTeams(u8 facility)
+{
+	return facility == IN_BATTLE_MAZE;
+}
+
+static u8 BattleTypeForFormat(u8 facility, u8 format)
+{
+	if (FacilityRollsItsOwnTeams(facility))
+		return (format == FRONTIER_FORMAT_DOUBLES) ? BATTLE_FACILITY_DOUBLE_RANDOM : BATTLE_FACILITY_SINGLE_RANDOM;
+
+	return (format == FRONTIER_FORMAT_DOUBLES) ? BATTLE_FACILITY_DOUBLE : BATTLE_FACILITY_SINGLE;
+}
+
 static u8* GetRunState(u8 facility, u8 format)
 {
 	return &gFrontierRunStates[SanitizeFacility(facility)][SanitizeFormat(format)];
@@ -366,7 +380,7 @@ static void LoadFacilityVars(u8 facility, u8 format)
 	SET_BATTLE_FACILITY_NUM(facility);
 	VarSet(VAR_BATTLE_FACILITY_TIER, FRONTIER_TIER); // Fixed as No Restrictions in Amethyst
 	VarSet(VAR_BATTLE_FACILITY_POKE_LEVEL, FRONTIER_LEVEL); // Fixed as Lvl 50 in Amethyst
-	VarSet(VAR_BATTLE_FACILITY_BATTLE_TYPE, (format == FRONTIER_FORMAT_DOUBLES) ? BATTLE_FACILITY_DOUBLE : BATTLE_FACILITY_SINGLE);
+	VarSet(VAR_BATTLE_FACILITY_BATTLE_TYPE, BattleTypeForFormat(facility, format));
 	VarSet(VAR_BATTLE_FACILITY_POKE_NUM, NumMonsInFormat(format));
 
 	FlagSet(FLAG_BATTLE_FACILITY);
