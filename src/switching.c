@@ -894,6 +894,9 @@ void atk52_switchineffects(void)
 		__attribute__ ((fallthrough));
 
 		case SwitchIn_TotemPokemon: ;
+			if (InBattleSands()) // The sands stir every Pokemon that enters, not just the lead
+				RollBattleSandsTotemBoost(gActiveBattler);
+
 			u8 totemBoostType = CanActivateTotemBoost(gActiveBattler);
 
 			if (totemBoostType == TOTEM_SINGLE_BOOST)

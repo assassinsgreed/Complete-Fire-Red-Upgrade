@@ -9,6 +9,9 @@
 
 //Exported Functions
 bool8 TryActivateOWTerrain(void);
+u16 GetTotemValue(u8 bank);
+void RollBattleSandsTotemBoost(u8 bank);
+void SetTotemValue(u8 bank, u16 value);
 u8 GetTotemStat(u8 bank, bool8 multiBoost);
 u8 GetTotemRaiseAmount(u8 bank, bool8 multiBoost);
 s8 TotemRaiseAmountToStatMod(u8 raiseAmount);

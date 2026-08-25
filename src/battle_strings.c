@@ -246,7 +246,7 @@ void BufferStringBattle(u16 stringID)
 			if (gBattleTypeFlags & BATTLE_TYPE_INGAME_PARTNER && GetBattlerPosition(gActiveBattler) == B_POSITION_PLAYER_RIGHT)
 				stringPtr = BattleText_PartnerWithdrewPkmn;
 			else if (IsAIControlledBattle())
-				stringPtr = BattleText_PartnerWithdrewPkmn;
+				stringPtr = BattleText_WithdrewPkmn_BattleSands;
 			else if (gBattleStruct->hpScale == 0)
 				stringPtr = BattleText_PkmnThatsEnough; //0x83FD4CD
 			else if (gBattleStruct->hpScale == 1 || gBattleTypeFlags & BATTLE_TYPE_DOUBLE)
@@ -279,7 +279,7 @@ void BufferStringBattle(u16 stringID)
 			if (gBattleTypeFlags & BATTLE_TYPE_INGAME_PARTNER && GetBattlerPosition(gBattleScripting.bank) == B_POSITION_PLAYER_RIGHT)
 				stringPtr = BattleText_PartnerSaysGo;
 			else if (IsAIControlledBattle())
-				stringPtr = BattleText_PartnerSaysGo;
+				stringPtr = BattleText_SaysGo_BattleSands;
 			else if (gBattleStruct->hpScale == 0 || gBattleTypeFlags & BATTLE_TYPE_DOUBLE)
 				stringPtr = BattleText_GoPkmn2;  //0x83FD475
 			else if (gBattleStruct->hpScale == 1)

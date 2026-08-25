@@ -72,7 +72,7 @@ BattleScript_TotemOmniboost:
 
 BattleScript_TotemRet:
 	playanimation BANK_ATTACKER ANIM_TOTEM_BOOST 0x0
-	setword BATTLE_STRING_LOADER BattleText_MealActivated
+	callasm LoadTotemBoostActivationString
 	printstring 0x184
 	waitmessage DELAY_1SECOND
 	statbuffchange STAT_ATTACKER | STAT_BS_PTR .LReturn
@@ -86,7 +86,7 @@ BattleScript_TotemRet:
 
 BattleScript_TotemMultiBoostRet:
 	playanimation BANK_ATTACKER ANIM_TOTEM_BOOST 0x0
-	setword BATTLE_STRING_LOADER BattleText_MealActivated
+	callasm LoadTotemBoostActivationString
 	printstring 0x184
 	waitmessage DELAY_1SECOND
 	callasm ToggleTotemOmniboostByte
@@ -108,7 +108,7 @@ BattleScript_TotemMultiBoost_SecondStat:
 
 BattleScript_TotemOmniboostRet:
 	playanimation BANK_ATTACKER ANIM_TOTEM_BOOST 0x0
-	setword BATTLE_STRING_LOADER BattleText_MealActivated
+	callasm LoadTotemBoostActivationString
 	printstring 0x184
 	waitmessage DELAY_1SECOND
 	callasm ToggleTotemOmniboostByte

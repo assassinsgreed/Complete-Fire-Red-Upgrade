@@ -748,6 +748,8 @@ SignScript_BattleFrontier_BattleObservatory:
 @ Each battle facilities key NPC IDs
 .equ BATTLE_TOWER_ATTENDANT, 0x1
 .equ BATTLE_TOWER_OPPONENT, 0x2
+.equ BATTLE_SANDS_ATTENDANT, 0x1
+.equ BATTLE_SANDS_OPPONENT, 0x2
 
 @ ============================================================================
 @ Per-facility entry points
@@ -830,6 +832,7 @@ BattleFrontier_Common_LobbyMenu:
 
 BattleFrontier_Common_Farewell:
     msgbox gText_BattleFrontier_Farewell MSG_NORMAL
+    applymovement LASTTALKED m_LookDown
     goto BattleFrontier_Common_Exit
 
 @ ============================================================================
@@ -857,10 +860,15 @@ BattleFrontier_Common_FrontierRules:
 BattleFrontier_Common_FacilityRules:
     switch VAR_BATTLE_FACILITY_NUM
     case IN_BATTLE_TOWER, BattleFrontier_Tower_Rules, _call
+    case IN_BATTLE_SANDS, BattleFrontier_Sands_Rules, _call
     goto BattleFrontier_Common_Rules
 
 BattleFrontier_Tower_Rules:
     msgbox gText_BattleFrontier_TowerRules MSG_KEEPOPEN
+    return
+
+BattleFrontier_Sands_Rules:
+    msgbox gText_BattleFrontier_SandsRules MSG_KEEPOPEN
     return
 
 BattleFrontier_Common_Records:
@@ -971,11 +979,9 @@ BattleFrontier_Common_BeginChallenge:
 @ The last steps before a run's first battle, shared by a new run and one picked back up.
 @ The order of these three is load-bearing and must not be shuffled:
 @
-@   - the save must occur while gPlayerParty still holds the player's real team. Saving
-@     serialises gPlayerParty into SaveBlock1.playerParty (SaveSerializedGame calls
-@     SavePlayerParty), so a save made after sp073 writes the Level 50 entered copies over
-@     both the live party and the backup special 0x28 restores from. A reset after that
-@     strands the player with the frontier team and no way back to their own.
+@   - the save must occur while gPlayerParty still is the player's real team. Saving
+@     serialises gPlayerParty into SaveBlock1.playerParty, effectively replacing their party
+@     with the level 50 normalized copy.
 @   - the modifier override has to follow the save, so the player's preferred modifiers
 @     remain set in the save file - see FrontierChallenge_OverrideGameModifiers.
 @   - sp073 goes last, because replacing the party is exactly what it does.
@@ -1066,27 +1072,32 @@ BattleFrontier_Common_BattleEnded:
 BattleFrontier_Common_EnterBattlePosition:
     switch VAR_BATTLE_FACILITY_NUM
     case IN_BATTLE_TOWER, BattleFrontier_Tower_EnterBattlePosition, _call
+    case IN_BATTLE_SANDS, BattleFrontier_Sands_EnterBattlePosition, _call
     return
 
 @ Before every battle. Circus randomizes its field effects here (special 0x72), Factory and Maze swap or reroll the team.
 BattleFrontier_Common_PerBattleSetup:
     switch VAR_BATTLE_FACILITY_NUM
     case IN_BATTLE_TOWER, BattleFrontier_Tower_PerBattleSetup, _call
+    case IN_BATTLE_SANDS, BattleFrontier_Sands_PerBattleSetup, _call
     return
 
 BattleFrontier_Common_OpponentArrives:
     switch VAR_BATTLE_FACILITY_NUM
     case IN_BATTLE_TOWER, BattleFrontier_Tower_OpponentArrives, _call
+    case IN_BATTLE_SANDS, BattleFrontier_Sands_OpponentArrives, _call
     return
 
 BattleFrontier_Common_PostBattleReset:
     switch VAR_BATTLE_FACILITY_NUM
     case IN_BATTLE_TOWER, BattleFrontier_Tower_PostBattleReset, _call
+    case IN_BATTLE_SANDS, BattleFrontier_Sands_PostBattleReset, _call
     return
 
 BattleFrontier_Common_LeaveBattlePosition:
     switch VAR_BATTLE_FACILITY_NUM
     case IN_BATTLE_TOWER, BattleFrontier_Tower_LeaveBattlePosition, _call
+    case IN_BATTLE_SANDS, BattleFrontier_Sands_LeaveBattlePosition, _call
     return
 
 BattleFrontier_Common_CommentOnResult:
@@ -1110,17 +1121,23 @@ BattleFrontier_Common_CommentOnLoss:
     msgbox gText_BattleFrontier_AttendantLoss MSG_NORMAL
     return
 
+@ ----------------------------------------------------------------------------
+@ Battle Tower Movements
+@ ----------------------------------------------------------------------------
 BattleFrontier_Tower_EnterBattlePosition:
     msgbox gText_BattleFrontier_LeadToBattlePosition MSG_NORMAL
     applymovement PLAYER m_BattleTower_PlayerToBattlePosition
     applymovement BATTLE_TOWER_ATTENDANT m_BattleTower_AttendantToBattlePosition
     waitmovement ALLEVENTS
+    special CAMERA_START
+    applymovement CAMERA m_BattleFacility_CameraMoveRight
+    waitmovement CAMERA
+    special CAMERA_END
     return
 
 BattleFrontier_Tower_PerBattleSetup:
     applymovement PLAYER m_LookRight
     applymovement BATTLE_TOWER_ATTENDANT m_LookRight
-    waitmovement ALLEVENTS
     return
 
 BattleFrontier_Tower_OpponentArrives:
@@ -1141,6 +1158,10 @@ BattleFrontier_Tower_PostBattleReset:
 
 BattleFrontier_Tower_LeaveBattlePosition:
     msgbox gText_BattleFrontier_LeadToLobby MSG_NORMAL
+    special CAMERA_START
+    applymovement CAMERA m_BattleFacility_CameraMoveLeft
+    waitmovement CAMERA
+    special CAMERA_END
     applymovement PLAYER m_BattleTower_PlayerToLobby
     applymovement BATTLE_TOWER_ATTENDANT m_BattleTower_AttendantToLobby
     waitmovement ALLEVENTS
@@ -1153,6 +1174,78 @@ m_BattleTower_OpponentToBattlePosition: .byte walk_up, walk_up, walk_up, walk_up
 m_BattleTower_OpponentLeaves: .byte walk_left, walk_left, walk_left, walk_down, walk_down, walk_down, walk_down, walk_down, walk_down, walk_down, end_m
 m_BattleTower_PlayerToLobby: .byte walk_right, walk_right, walk_right, walk_down, walk_down, walk_down, walk_down, walk_down, walk_down, walk_down, walk_down, look_up, end_m
 m_BattleTower_AttendantToLobby: .byte walk_right, walk_right, walk_right, walk_down, walk_down, walk_down, walk_down, walk_down, walk_left, look_right, pause_long, walk_right, walk_down, look_down, end_m
+
+@ ----------------------------------------------------------------------------
+@ Battle Sands Movements
+@ ----------------------------------------------------------------------------
+
+BattleFrontier_Sands_EnterBattlePosition:
+    msgbox gText_BattleFrontier_SandsLeadToArena MSG_NORMAL
+    getplayerpos 0x8004 0x8005
+    compare 0x8005 34 @ Above attendant
+    if equal _goto BattleFrontier_Sands_EnterBattlePositionFromNorth
+    applymovement PLAYER m_BattleSands_PlayerToArenaFromSouth
+    goto BattleFrontier_Sands_EnterBattlePositionAttendant
+
+BattleFrontier_Sands_EnterBattlePositionFromNorth:
+    applymovement PLAYER m_BattleSands_PlayerToArenaFromNorth
+
+BattleFrontier_Sands_EnterBattlePositionAttendant:
+    applymovement BATTLE_SANDS_ATTENDANT m_BattleSands_AttendantToArena
+    waitmovement ALLEVENTS
+    special CAMERA_START
+    applymovement CAMERA m_BattleFacility_CameraMoveLeft
+    waitmovement CAMERA
+    special CAMERA_END
+    return
+
+BattleFrontier_Sands_PerBattleSetup:
+    applymovement PLAYER m_LookLeft
+    applymovement BATTLE_SANDS_ATTENDANT m_LookLeft
+    return
+
+BattleFrontier_Sands_OpponentArrives:
+    msgbox gText_BattleFrontier_CallingOpponent MSG_NORMAL
+    showsprite BATTLE_SANDS_OPPONENT
+    applymovement BATTLE_SANDS_OPPONENT m_BattleSands_OpponentToArena
+    waitmovement ALLEVENTS
+    return
+
+BattleFrontier_Sands_PostBattleReset:
+    applymovement PLAYER m_LookDown
+    applymovement BATTLE_SANDS_ATTENDANT m_LookUp
+    applymovement BATTLE_SANDS_OPPONENT m_BattleSands_OpponentLeaves
+    call BattleFrontier_Common_CommentOnResult @ Before the wait, so it plays over the opponent leaving
+    waitmovement ALLEVENTS
+    hidesprite BATTLE_SANDS_OPPONENT
+    return
+
+BattleFrontier_Sands_LeaveBattlePosition:
+    msgbox gText_BattleFrontier_LeadToLobby MSG_NORMAL
+    special CAMERA_START
+    applymovement CAMERA m_BattleFacility_CameraMoveRight
+    waitmovement CAMERA
+    special CAMERA_END
+    applymovement PLAYER m_BattleSands_PlayerToLobby
+    applymovement BATTLE_SANDS_ATTENDANT m_BattleSands_AttendantToLobby
+    waitmovement ALLEVENTS
+    return
+
+@ Movements
+m_BattleSands_PlayerToArenaFromSouth: .byte walk_left, walk_left, walk_left, look_left, end_m
+m_BattleSands_PlayerToArenaFromNorth: .byte walk_left, walk_left, walk_down, walk_down, walk_left, look_left, end_m
+m_BattleSands_AttendantToArena: .byte walk_down, walk_left, walk_left, walk_down, walk_left, look_left, end_m
+m_BattleSands_OpponentToArena: .byte walk_right, walk_right, walk_right, walk_right, walk_right, look_right, end_m
+m_BattleSands_OpponentLeaves: .byte walk_left, walk_left, walk_left, walk_left, walk_left, end_m
+m_BattleSands_PlayerToLobby: .byte pause_long, look_right, pause_long, walk_right, walk_right, walk_right, look_up, end_m
+m_BattleSands_AttendantToLobby: .byte walk_right, walk_up, walk_right, walk_right, walk_up, look_down, end_m
+
+@ ============================================================================
+@ Common Movements
+@ ============================================================================
+
+m_BattleFacility_CameraMoveRight: .byte walk_right, walk_right, walk_right, end_m
+m_BattleFacility_CameraMoveLeft: .byte walk_left, walk_left, walk_left, end_m
 
 @ ============================================================================
 @ Winning, and the Continue / Rest / Give up prompt

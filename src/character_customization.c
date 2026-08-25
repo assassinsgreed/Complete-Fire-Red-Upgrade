@@ -781,9 +781,11 @@ u16 GetBackspriteId(void)
 	{
 		trainerPicId = LoadPartnerBackspriteIndex();
 	}
-	else if (IsAIControlledBattle())
+	else if (gBattleTypeFlags & BATTLE_TYPE_MOCK_BATTLE && !InBattleSands())
 	{
-		trainerPicId = LoadPartnerBackspriteIndex(); //The trainer's backsprite for the Battle Sands is stored in the multi partner var
+		// A mock battle stands in for someone else, so it borrows the multi partner var.
+		// Battle Sands are always controlled by the player (BATTLE_TYPE_MOCK_BATTLE is used for automatic battling and is still needed)
+		trainerPicId = LoadPartnerBackspriteIndex();
 	}
 	else
 	{

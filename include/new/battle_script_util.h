@@ -21,6 +21,7 @@ void AcupressureFunc(void);
 void SetStatSwapSplit(void);
 void ResetTargetStats(void);
 void ToggleSpectralThiefByte(void);
+void LoadTotemBoostActivationString(void);
 void ToggleTotemOmniboostByte(void);
 void LoadTotemMultiBoostSecondStat(void);
 void CheeckPouchFunc(void);

@@ -958,6 +958,7 @@ struct NewBattleStruct
 	u8 criticalHitsThisBattle[PARTY_SIZE];
 	u8 pickupMonId;
 	u8 shellSideArmSplit[MAX_BATTLERS_COUNT][MAX_BATTLERS_COUNT];
+	u16 sandsTotemBoosts[MAX_BATTLERS_COUNT]; // Battle Sands can't share VAR_TOTEM - the player's meal buff lives there between battles
 
 	//Things for Spread Moves
 	s32 DamageTaken[MAX_BATTLERS_COUNT];

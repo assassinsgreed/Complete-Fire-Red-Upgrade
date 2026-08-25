@@ -775,12 +775,30 @@ bool8 TryActivateOWTerrain(void)
 	return effect;
 }
 
+// The Battle Sands totem boost lasts a single battle, so it lives in gNewBS instead of
+// VAR_TOTEM, which holds the player's Daimyn Restaurant meal buff across battles.
+u16 GetTotemValue(u8 bank)
+{
+	if (InBattleSands())
+		return gNewBS->sandsTotemBoosts[bank];
+
+	return VarGet(VAR_TOTEM + bank);
+}
+
+void SetTotemValue(u8 bank, u16 value)
+{
+	if (InBattleSands())
+		gNewBS->sandsTotemBoosts[bank] = value;
+	else
+		VarSet(VAR_TOTEM + bank, value);
+}
+
 u8 GetTotemStat(u8 bank, bool8 multiBoost)
 {
 	if (multiBoost)
 		bank = PARTNER(bank);
 
-	return VarGet(VAR_TOTEM + bank) & 0x7;
+	return GetTotemValue(bank) & 0x7;
 }
 
 u8 GetTotemRaiseAmount(u8 bank, bool8 multiBoost)
@@ -788,7 +806,7 @@ u8 GetTotemRaiseAmount(u8 bank, bool8 multiBoost)
 	if (multiBoost)
 		bank = PARTNER(bank);
 
-	return VarGet(VAR_TOTEM + bank) & ~(0xF);
+	return GetTotemValue(bank) & ~(0xF);
 }
 
 s8 TotemRaiseAmountToStatMod(u8 raiseAmount)
@@ -809,11 +827,11 @@ s8 TotemRaiseAmountToStatMod(u8 raiseAmount)
 
 u8 CanActivateTotemBoost(u8 bank)
 {
-	// No meal effects can trigger in the battle frontier
-	if (gBattleTypeFlags & BATTLE_TYPE_FRONTIER)
+	// No meal effects can trigger in the battle frontier (the Battle Sands boost isn't one)
+	if (gBattleTypeFlags & BATTLE_TYPE_FRONTIER && !InBattleSands())
 		return TOTEM_NO_BOOST;
 
-	u16 val = VarGet(VAR_TOTEM + bank);
+	u16 val = GetTotemValue(bank);
 	u16 stat = GetTotemStat(bank, FALSE);
 
 	if (bank < gBattlersCount && stat != 0)
@@ -825,7 +843,7 @@ u8 CanActivateTotemBoost(u8 bank)
 			|| FlagGet(FLAG_SINGLE_TRAINER_MON_TOTEM_BOOST)
 			#endif
 			)
-				VarSet(VAR_TOTEM + bank, 0); //Only first Pokemon gets boost in battle sands
+				SetTotemValue(bank, 0); //Only first Pokemon gets boost in battle sands
 
 			return TOTEM_OMNIBOOST;
 		}
@@ -842,10 +860,11 @@ u8 CanActivateTotemBoost(u8 bank)
 			|| FlagGet(FLAG_SINGLE_TRAINER_MON_TOTEM_BOOST)
 			#endif
 			)
-				VarSet(VAR_TOTEM + bank, 0); //Only first Pokemon gets boost in battle sands
+				SetTotemValue(bank, 0); //Only first Pokemon gets boost in battle sands
 
-			if (VarGet(VAR_TOTEM + PARTNER(bank)) != 0 && // Second stat is stored in partner's var
-				VarGet(VAR_TOTEM + bank) != VarGet(VAR_TOTEM + PARTNER(bank))) // Stat changes are unique & we're in a single battle
+			if (!InBattleSands() // In the sands a partner's slot is its own boost, not a second stat for this mon
+			&& GetTotemValue(PARTNER(bank)) != 0 // Second stat is stored in partner's var
+			&& GetTotemValue(bank) != GetTotemValue(PARTNER(bank))) // Stat changes are unique & we're in a single battle
 			 	return TOTEM_MULTI_BOOST;
 
 			return TOTEM_SINGLE_BOOST;
@@ -855,44 +874,41 @@ u8 CanActivateTotemBoost(u8 bank)
 	return TOTEM_NO_BOOST;
 }
 
+//The farther the "player" gets, the higher chance a stat will be raised more than 1
+static u8 GetBattleSandsMaxStatIncrease(void)
+{
+	u8 currStreak = GetCurrentBattleFacilityStreak();
+
+	if (currStreak < 20)
+		return 1;
+	if (currStreak < 40)
+		return 2;
+	if (currStreak < 60)
+		return 3;
+	if (currStreak < 80)
+		return 4;
+	if (currStreak < 100)
+		return 5;
+
+	return 6;
+}
+
+void RollBattleSandsTotemBoost(u8 bank)
+{
+	u8 stat = RandRange(STAT_STAGE_ATK, STAT_STAGE_ACC + 1); // No Evasion boost
+	u8 increase = (Random() % GetBattleSandsMaxStatIncrease()) + 1;
+	u8 contraryShift = (ABILITY(bank) == ABILITY_CONTRARY) ? 0x80 : 0; // Makes it so Contrary has no effect on the stat boost
+
+	SetTotemValue(bank, stat | (increase * 0x10 + contraryShift));
+}
+
 static void TryPrepareTotemBoostInBattleSands(void)
 {
 	if (InBattleSands())
 	{
-		u8 playerId = 0;
-		u8 enemyId = 1;
-		u8 playerStat = RandRange(STAT_STAGE_ATK, STAT_STAGE_ACC + 1); //No Evasion boost
-		u8 enemyStat = RandRange(STAT_STAGE_ATK, STAT_STAGE_ACC + 1);
-		u8 increaseMax, increase;
-
-		if (IS_DOUBLE_BATTLE)
-		{
-			playerId |= (Random() & BIT_FLANK);
-			enemyId |= (Random() & BIT_FLANK);
-		}
-
-		//The farther the "player" gets, the higher chance a stat will be raised more than 1
-		u8 currStreak = GetCurrentBattleFacilityStreak();
-		if (currStreak < 35)
-			increaseMax = 1;
-		else if (currStreak < 50)
-			increaseMax = 2;
-		else if (currStreak < 65)
-			increaseMax = 3;
-		else if (currStreak < 80)
-			increaseMax = 4;
-		else if (currStreak < 100)
-			increaseMax = 5;
-		else
-			increaseMax = 6;
-
-		//Makes it so Contrary has no effect on the stat boost
-		u8 contraryShiftPlayer = (ABILITY(playerId) == ABILITY_CONTRARY) ? 0x80 : 0;
-		u8 contraryShiftEnemy = (ABILITY(enemyId) == ABILITY_CONTRARY) ? 0x80 : 0;
-
-		increase = (Random() % increaseMax) + 1; //Player and enemy get the same amount of boost
-		VarSet(VAR_TOTEM + playerId, playerStat | (increase * 0x10 + contraryShiftPlayer));
-		VarSet(VAR_TOTEM + enemyId, enemyStat | (increase * 0x10 + contraryShiftEnemy));
+		// Everyone starting the battle is fed, each rolling its own stat and magnitude
+		for (u32 bank = 0; bank < gBattlersCount; ++bank)
+			RollBattleSandsTotemBoost(bank);
 	}
 }
 
