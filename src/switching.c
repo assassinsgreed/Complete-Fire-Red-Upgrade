@@ -416,6 +416,7 @@ void atk4D_switchindataupdate(void)
 	if (!(gStatuses3[gActiveBattler] & STATUS3_LEVITATING))
 		gNewBS->MagnetRiseTimers[gActiveBattler] = 0;
 
+	gNewBS->quarryDisabledSlots[gActiveBattler] = 0; // A swapped in mon is not restricted until the next turn
 	{
 		u32 backupStatus2[gBattlersCount];
 		for (i = 0; i < gBattlersCount; ++i)

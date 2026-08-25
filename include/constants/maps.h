@@ -623,7 +623,6 @@
 #define MAP_POKEMON_LEAGUE_CHAMP_ROOM            ((1 << 8) | 79)
 #define MAP_POKEMON_LEAGUE_HALL_OF_FAME          ((1 << 8) | 80)
 
-#define MAP_BATTLE_MINE_ROOM                     ((2 << 8) | 4)
 #define MAP_BATTLE_CIRCUS_SALON                  ((2 << 8) | 6)
 #define MAP_BATTLE_TOWER_SALON                   ((2 << 8) | 7)
 

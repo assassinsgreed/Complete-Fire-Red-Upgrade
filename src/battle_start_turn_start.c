@@ -236,6 +236,7 @@ void BattleBeginFirstTurn(void)
 				SavePartyItems();
 				TryBackupEnemyTeam();
 				TryClearLevelCapKeptOn();
+				RollQuarryDisabledMoves(); // BattleTurnPassed only runs from turn 2 onwards
 				++*state;
 				break;
 

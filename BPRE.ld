@@ -5,7 +5,7 @@
 /* Battle Frontier save data. All of it lives in SaveBlock1.frontierRecords
    (0x202682C - 0x2027434; PC boxes 23/24 begin at 0x2027434, so never go past it).
    gFrontierStreaks[facility][format][curr/max] replaces gBattleTowerStreaks,
-   gBattleMineStreaks and gBattleCircusStreaks; their old space now holds
+   gBattleQuarryStreaks and gBattleCircusStreaks; their old space now holds
    gFrontierRunStates, which is keyed the same way so a run and its streak share indices. */
 gFrontierStreaks = 0x2026840;        /* 0x40 bytes */
 gFrontierRunStates = 0x2026880;      /* 0x10 bytes */

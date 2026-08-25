@@ -1802,9 +1802,6 @@ static u8 BuildFrontierParty(struct Pokemon* const party, const u16 trainerId, c
 							}
 							break;
 						case BATTLE_FACILITY_SCALEMONS: ;
-							if (trainerId == FRONTIER_BRAIN_TID && BATTLE_FACILITY_NUM == IN_BATTLE_MINE)
-								goto SPECIAL_TRAINER_LITTLE_SPREADS;
-
 							rand = Random() & 7;
 							switch (rand) {
 								case 0: //High prevalence of baby spreads b/c they
@@ -1819,9 +1816,6 @@ static u8 BuildFrontierParty(struct Pokemon* const party, const u16 trainerId, c
 							goto SPECIAL_TRAINER_REGULAR_SPREADS;
 						case BATTLE_FACILITY_350_CUP: ;
 						SPECIAL_TRAINER_350_SPREADS:
-							if (trainerId == FRONTIER_BRAIN_TID && BATTLE_FACILITY_NUM == IN_BATTLE_MINE)
-								goto SPECIAL_TRAINER_LITTLE_SPREADS;
-
 							rand = Random() & 3;
 							switch (rand) {
 								case 0:
@@ -1842,9 +1836,6 @@ static u8 BuildFrontierParty(struct Pokemon* const party, const u16 trainerId, c
 							}
 							break;
 						case BATTLE_FACILITY_AVERAGE_MONS: ;
-							if (trainerId == FRONTIER_BRAIN_TID && BATTLE_FACILITY_NUM == IN_BATTLE_MINE)
-								goto SPECIAL_TRAINER_LITTLE_SPREADS;
-
 							rand = Random() & 3;
 							switch (rand) {
 								case 0:
@@ -2773,6 +2764,11 @@ static bool8 IsPokemonBannedBasedOnStreak(u16 species, u16 item, u16* speciesArr
 
 	u16 streak = GetCurrentBattleFacilityStreak();
 	bool8 megasZMovesBannedInTier = AreMegasZMovesBannedInTier(tier) || BATTLE_FACILITY_NUM == IN_RING_CHALLENGE;
+
+	// A Choice-locked mon Struggles about half its turns in the Quarry.
+	if (!forPlayer && BATTLE_FACILITY_NUM == IN_BATTLE_QUARRY
+	 && ItemId_GetHoldEffect(item) == ITEM_EFFECT_CHOICE_BAND)
+		return TRUE;
 
 	if (!forPlayer && trainerId == BATTLE_TOWER_TID && StreakRampAppliesInTier(tier))
 	{

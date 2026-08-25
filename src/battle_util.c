@@ -749,6 +749,8 @@ bool8 IsUnusableMove(u16 move, u8 bank, u8 check, u8 pp, u8 ability, u8 holdEffe
 		return TRUE;
 	else if (!isMaxMove && move == gDisableStructs[bank].disabledMove && check & MOVE_LIMITATION_DISABLED)
 		return TRUE;
+	else if (!isMaxMove && check & MOVE_LIMITATION_DISABLED && IsMoveQuarryDisabledByMoveslot(bank, move))
+		return TRUE;
 	else if (!isMaxMove && move == gLastUsedMoves[bank] && check & MOVE_LIMITATION_TORMENTED && IsTormented(bank))
 		return TRUE;
 	else if (IsTaunted(bank) && check & MOVE_LIMITATION_TAUNT && SPLIT(move) == SPLIT_STATUS)
@@ -2689,4 +2691,52 @@ u16 TryFixDynamaxTransformSpecies(u8 bank, u16 species)
 		species = gBattleSpritesDataPtr->bankData[bank].transformSpecies;
 
 	return species;
+}
+
+bool8 IsQuarryBattle(void)
+{
+	return (gBattleTypeFlags & BATTLE_TYPE_BATTLE_QUARRY) != 0;
+}
+
+bool8 IsMoveQuarryDisabled(u8 bank, u8 movePos)
+{
+	return IsQuarryBattle() && (gNewBS->quarryDisabledSlots[bank] & gBitTable[movePos]) != 0;
+}
+
+// IsUnusableMove works in moves rather than slots, so map back to the slot the move sits in.
+bool8 IsMoveQuarryDisabledByMoveslot(u8 bank, u16 move)
+{
+	u32 i;
+
+	if (!IsQuarryBattle() || move == MOVE_NONE)
+		return FALSE;
+
+	for (i = 0; i < MAX_MON_MOVES; ++i)
+	{
+		if (gBattleMons[bank].moves[i] == move && IsMoveQuarryDisabled(bank, i))
+			return TRUE;
+	}
+
+	return FALSE;
+}
+
+// Empty slots are eligible on purpose: a Pokemon with fewer than four moves gambles on the roll
+// landing on its blanks rather than being guaranteed to Struggle.
+void RollQuarryDisabledMoves(void)
+{
+	u32 bank;
+
+	if (!IsQuarryBattle())
+		return;
+
+	for (bank = 0; bank < gBattlersCount; ++bank)
+	{
+		u8 first = Random() % MAX_MON_MOVES;
+		u8 second = Random() % (MAX_MON_MOVES - 1);
+
+		if (second >= first) // Picks the second slot out of the remaining three without a rejection loop
+			++second;
+
+		gNewBS->quarryDisabledSlots[bank] = gBitTable[first] | gBitTable[second];
+	}
 }

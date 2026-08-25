@@ -469,6 +469,9 @@ At the Battle Frontier, you'll take\non challengers one after another.\pEvery Po
 #org @gText_BattleFrontier_TowerRules
 The Battle Tower emphasizes\ntraditionl battles - no gimmicks.\pJust you, your team, and one\nchallenger after another.
 
+#org @gText_BattleFrontier_QuarryRules
+In the Battle Quarry, the rock face\nshifts before every turn.\pIt seals off two of the four move\nslots of every Pok\emon in the pit.\pBoth sides are sealed. If a Pok\emon\ncannot act, it must Struggle.
+
 #org @gText_BattleFrontier_SandsRules
 In the Battle Sands, you put your\ntrust in your Pok\emon.\pYou choose if they fight or switch,\nbut they choose their own moves.\pWhenever a Pok\emon enters battle,\nthey are empowered by the sands.\pThis raises a random stat, with the\nintensity growing with your streak.
 

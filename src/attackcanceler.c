@@ -453,8 +453,9 @@ static u8 AtkCanceller_UnableToUseMove(void)
 			break;
 
 		case CANCELLER_DISABLED: // disabled move
-			if (gDisableStructs[gBankAttacker].disabledMove == gCurrentMove
-			&& gDisableStructs[gBankAttacker].disabledMove != 0
+			if (((gDisableStructs[gBankAttacker].disabledMove == gCurrentMove
+			   && gDisableStructs[gBankAttacker].disabledMove != 0)
+			  || IsMoveQuarryDisabledByMoveslot(gBankAttacker, gCurrentMove))
 			&& !gNewBS->zMoveData.active
 			&& !IsAnyMaxMove(gCurrentMove))
 			{

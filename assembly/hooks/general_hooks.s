@@ -264,6 +264,7 @@ TrainerSlidingEndTurnHook:
 	str r0, [r1]
 	bl CheckLastMonLowHPSlide
 	bl HandleDeadRaidMonAndDeadPlayer
+	bl RollQuarryDisabledMoves
 	ldr r2, =Random
 	bl bxr2
 	ldr r1, =0x8013D1C | 1

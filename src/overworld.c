@@ -1035,13 +1035,16 @@ void BattleSetup_StartTrainerBattle(void)
 	if (FlagGet(FLAG_BATTLE_FACILITY))
 	{
 		gBattleTypeFlags = BATTLE_TYPE_TRAINER;
+
+		// Set outside the switch: the Quarry bit is not part of BATTLE_TYPE_FRONTIER, so the facility
+		// still has to reach the default case for BATTLE_TYPE_BATTLE_TOWER.
+		if (BATTLE_FACILITY_NUM == IN_BATTLE_QUARRY)
+			gBattleTypeFlags |= BATTLE_TYPE_BATTLE_QUARRY;
+
 		switch (BATTLE_FACILITY_NUM) {
 			case IN_BATTLE_SANDS:
 				gBattleTypeFlags |= (BATTLE_TYPE_BATTLE_SANDS | BATTLE_TYPE_MOCK_BATTLE);
 				break;
-			//case IN_BATTLE_MINE:
-			//	gBattleTypeFlags |= BATTLE_TYPE_BATTLE_MINE;
-			//	break;
 			case IN_BATTLE_CIRCUS:
 				gBattleTypeFlags |= BATTLE_TYPE_BATTLE_CIRCUS;
 				break;

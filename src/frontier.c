@@ -25,10 +25,6 @@ frontier.c
 	all supporting and master functions for developing a battle frontier
 
 tables to edit:
-	gBattleMineFormat1Tiers
-	gBattleMineFormat2Tiers
-	gBattleMineFormat3Tiers
-	gBattleMineFormat4Tiers
 	gBattleFacilityNames
 	gBattleFrontierTierNames
 	gBattleFrontierFormats
@@ -43,7 +39,7 @@ extern const u8 sTrainerName_Rival[]; //Sentinel - swapped for the player's chos
 
 extern const u8 gText_BattleTower[];
 extern const u8 gText_BattleSands[];
-extern const u8 gText_BattleMine[];
+extern const u8 gText_BattleQuarry[];
 extern const u8 gText_BattleCircus[];
 extern const u8 gText_BattleFactory[];
 extern const u8 gText_BattleRing[];
@@ -83,11 +79,6 @@ extern const u8 gText_SmogonMetronome[];
 extern const u8 gText_SmogonGen7UU[];
 extern const u8 gText_SmogonGen7RU[];
 extern const u8 gText_SmogonGen7NU[];
-extern const u8 gText_BattleMineFormat1[];
-extern const u8 gText_BattleMineFormat2[];
-extern const u8 gText_BattleMineFormat3[];
-extern const u8 gText_BattleMineFormat4[];
-
 extern const u8 gText_On[];
 extern const u8 gText_Off[];
 extern const u8 gText_BeAble[];
@@ -131,39 +122,12 @@ extern const u8 gText_BattleCircusDescriptionNoCrits[];
 extern const u8 gText_BattleCircusDescriptionAbilitySuppression[];
 
 // The battle frontier does not use tiers in Amethyst.
-// The Battle Mine format tables remain because sp06F still uses them to decide whether a team may enter.
-
-const u8 gBattleMineFormat1Tiers[] =
-{
-	BATTLE_FACILITY_OU,
-	BATTLE_FACILITY_CAMOMONS,
-	BATTLE_FACILITY_BENJAMIN_BUTTERFREE,
-};
-
-const u8 gBattleMineFormat2Tiers[] =
-{
-	BATTLE_FACILITY_SCALEMONS,
-	BATTLE_FACILITY_350_CUP,
-	BATTLE_FACILITY_AVERAGE_MONS,
-};
-
-const u8 gBattleMineFormat3Tiers[] =
-{
-	BATTLE_FACILITY_LITTLE_CUP,
-	BATTLE_FACILITY_LC_CAMOMONS,
-};
-
-const u8 gBattleMineFormat4Tiers[] =
-{
-	BATTLE_FACILITY_UBER,
-	BATTLE_FACILITY_UBER_CAMOMONS,
-};
 
 const u8* const gBattleFacilityNames[NUM_BATTLE_FACILITIES] =
 {
 	[IN_BATTLE_TOWER] = gText_BattleTower,
 	[IN_BATTLE_SANDS] = gText_BattleSands,
-	[IN_BATTLE_MINE] = gText_BattleMine,
+	[IN_BATTLE_QUARRY] = gText_BattleQuarry,
 	[IN_BATTLE_CIRCUS] = gText_BattleCircus,
 	[IN_BATTLE_FACTORY] = gText_BattleFactory,
 	[IN_RING_CHALLENGE] = gText_BattleRing,
@@ -195,10 +159,6 @@ const u8* const gBattleFrontierTierNames[NUM_TIERS] =
 	[BATTLE_FACILITY_UU] = gText_SmogonGen7UU,
 	[BATTLE_FACILITY_NU] = gText_SmogonGen7RU,
 	[BATTLE_FACILITY_RU] = gText_SmogonGen7NU,
-	[BATTLE_MINE_FORMAT_1] = gText_BattleMineFormat1,
-	[BATTLE_MINE_FORMAT_2] = gText_BattleMineFormat2,
-	[BATTLE_MINE_FORMAT_3] = gText_BattleMineFormat3,
-	[BATTLE_MINE_FORMAT_4] = gText_BattleMineFormat4,
 };
 
 const u8* const gBattleFrontierFormats[NUM_TOWER_BATTLE_TYPES] =
@@ -532,7 +492,7 @@ bool8 DynamaxAllowedInTier(u8 tier)
 	return FALSE;
 }
 
-// Everything fights at FRONTIER_LEVEL, except the Battle Mine, which re-rolls VAR_BATTLE_FACILITY_POKE_LEVEL per battle within 47-53.
+// Everything fights at FRONTIER_LEVEL.
 u8 GetBattleFacilityLevel(unusedArg u8 tier)
 {
 	u8 level = VarGet(VAR_BATTLE_FACILITY_POKE_LEVEL);
@@ -705,8 +665,7 @@ bool8 IsCamomonsTier(u8 tier)
 bool8 IsLittleCupTier(u8 tier)
 {
 	return tier == BATTLE_FACILITY_LITTLE_CUP
-		|| tier == BATTLE_FACILITY_LC_CAMOMONS
-		|| tier == BATTLE_MINE_FORMAT_3;
+		|| tier == BATTLE_FACILITY_LC_CAMOMONS;
 }
 
 bool8 IsMiddleCupTier(u8 tier)
@@ -1319,25 +1278,6 @@ bool8 IsSpeciesBannedInTier(u16 species, u16 tier, u16 battleFormat)
 			if (gSpecialSpeciesFlags[species].smogonBenjaminButterfreeBan)
 				return TRUE;
 			goto STANDARD_OU_CHECK;
-
-		case BATTLE_MINE_FORMAT_1:
-			return IsSpeciesBannedInTier(species, BATTLE_FACILITY_OU, BATTLE_FACILITY_SINGLE)
-				|| IsSpeciesBannedInTier(species, BATTLE_FACILITY_OU, BATTLE_FACILITY_DOUBLE) //OU Doubles has its own ban list
-				|| IsSpeciesBannedInTier(species, BATTLE_FACILITY_CAMOMONS, battleFormat)
-				|| IsSpeciesBannedInTier(species, BATTLE_FACILITY_BENJAMIN_BUTTERFREE, battleFormat);
-
-		case BATTLE_MINE_FORMAT_2:
-			return IsSpeciesBannedInTier(species, BATTLE_FACILITY_SCALEMONS, battleFormat)
-				|| IsSpeciesBannedInTier(species, BATTLE_FACILITY_350_CUP, battleFormat)
-				|| IsSpeciesBannedInTier(species, BATTLE_FACILITY_AVERAGE_MONS, battleFormat);
-
-		case BATTLE_MINE_FORMAT_3:
-			return IsSpeciesBannedInTier(species, BATTLE_FACILITY_LITTLE_CUP, battleFormat)
-				|| IsSpeciesBannedInTier(species, BATTLE_FACILITY_LC_CAMOMONS, battleFormat);
-
-		case BATTLE_MINE_FORMAT_4:
-			return IsSpeciesBannedInTier(species, BATTLE_FACILITY_UBER, battleFormat)
-				|| IsSpeciesBannedInTier(species, BATTLE_FACILITY_UBER_CAMOMONS, battleFormat);
 	}
 
 	return FALSE;
@@ -1613,241 +1553,6 @@ u16 sp06D_LoadFrontierMultiTrainerById(void)
 
 	StringCopy(gStringVar2, GetFrontierTrainerName(BATTLE_FACILITY_MULTI_TRAINER_TID, 0));
 	return gFrontierMultiBattleTrainers[id].owNum;
-}
-
-//@Details: Checks if the player's team can enter the Battle Mine.
-//			Also sets the Battle Tower Tier var to the chosen tier.
-//@Inputs:
-//		Var8000: 0 = Check Battle Mine Format 1.
-//				 1 = Check Battle Mine Format 2.
-//				 2 = Check Battle Mine Format 3.
-//@Returns: LastResult: TRUE if the team can participate.
-void sp06F_CanTeamParticipateInBattleMine(void)
-{
-	int i, j, tier;
-	u16 choice = Var8000;
-	const u8* tiers = choice == 0 ? gBattleMineFormat1Tiers
-					: choice == 1 ? gBattleMineFormat2Tiers
-					: choice == 2 ? gBattleMineFormat3Tiers
-					: gBattleMineFormat4Tiers;
-	u8 numTiers = choice == 0 ? NELEMS(gBattleMineFormat1Tiers)
-				: choice == 1 ? NELEMS(gBattleMineFormat2Tiers)
-				: choice == 2 ? NELEMS(gBattleMineFormat3Tiers)
-				: NELEMS(gBattleMineFormat4Tiers);
-
-	gSpecialVar_LastResult = FALSE;
-
-	//Check if party of 6 where every Pokemon can participate in every tier in the requested format
-	for (i = 0; i < PARTY_SIZE; ++i)
-	{
-		struct Pokemon* mon = &gPlayerParty[i];
-
-		if (GetMonData(mon, MON_DATA_SPECIES, NULL) == SPECIES_NONE
-		||  GetMonData(mon, MON_DATA_IS_EGG, NULL))
-			return;
-
-		for (j = 0, tier = tiers[j]; j < numTiers; ++j, tier = tiers[j]) //Check every tier in requested format
-		{
-			u16 varBackup = VarGet(VAR_BATTLE_FACILITY_BATTLE_TYPE);
-
-			//Check if mon is banned in singles
-			VarSet(VAR_BATTLE_FACILITY_BATTLE_TYPE, BATTLE_FACILITY_SINGLE);
-			if (IsMonBannedInTier(mon, tier))
-			{
-				VarSet(VAR_BATTLE_FACILITY_BATTLE_TYPE, varBackup);
-				Var8004 = i;
-				return;
-			}
-
-			//Check if mon is banned in doubles
-			VarSet(VAR_BATTLE_FACILITY_BATTLE_TYPE, BATTLE_FACILITY_DOUBLE);
-			if (IsMonBannedInTier(mon, tier))
-			{
-				VarSet(VAR_BATTLE_FACILITY_BATTLE_TYPE, varBackup);
-				Var8004 = i;
-				return;
-			}
-
-			VarSet(VAR_BATTLE_FACILITY_BATTLE_TYPE, varBackup);
-		}
-	}
-
-	VarSet(VAR_BATTLE_FACILITY_TIER, BATTLE_MINE_FORMAT_1 + MathMin(choice, BATTLE_MINE_FORMAT_4 - BATTLE_MINE_FORMAT_1));
-	gSpecialVar_LastResult = TRUE;
-}
-
-//@Details: Randomizes various battle options for a battle in the Battle Mine.
-//@Returns: To given var the original tier to back up.
-//			gStringVar7: Tier name.
-//			gStringVar8: Battle format name.
-//			gStringVar9: Level.
-//			gStringVarA: Party size.
-//			gStringVarB: Inverse on or off.
-//			gStringVarC: Dynamax on or off.
-//NOTE: the Battle Mine is not wired up yet. Beyond the Dynamax roll removed below, its tier
-//randomisation, 1-6 party-size roll and 1-100 level roll all still need reworking before the
-//facility is reachable: drop tiers, clamp the level to 47-53, clamp party size to the
-//entered team size.
-u8 sp070_RandomizeBattleMineBattleOptions(void)
-{
-	u8 format, tier, level, partySize, inverse, dynamax;
-
-	u8 originalTier = VarGet(VAR_BATTLE_FACILITY_TIER);
-	const u8* tiers = originalTier == BATTLE_MINE_FORMAT_1 ? gBattleMineFormat1Tiers
-					: originalTier == BATTLE_MINE_FORMAT_2 ? gBattleMineFormat2Tiers
-					: originalTier == BATTLE_MINE_FORMAT_3 ? gBattleMineFormat3Tiers
-					: gBattleMineFormat4Tiers;
-	u8 numTiers = originalTier == BATTLE_MINE_FORMAT_1 ? NELEMS(gBattleMineFormat1Tiers)
-				: originalTier == BATTLE_MINE_FORMAT_2 ? NELEMS(gBattleMineFormat2Tiers)
-				: originalTier == BATTLE_MINE_FORMAT_3 ? NELEMS(gBattleMineFormat3Tiers)
-				: NELEMS(gBattleMineFormat4Tiers);
-
-	u16 streak = GetCurrentBattleFacilityStreak();
-
-	//Choose Battle Format
-	switch (streak) {
-		case 0 ... 44:
-			format = BATTLE_FACILITY_SINGLE + (Random() & 1);
-			break;
-		default: ; //Random Battles become available starting battle 45
-			u8 randomOption = Random() % 10;
-			if (randomOption == 0) //10 % chance of getting random option
-				format = BATTLE_FACILITY_SINGLE_RANDOM + (randomOption & 1);
-			else
-				format = BATTLE_FACILITY_SINGLE + (randomOption & 1);
-	}
-
-	//Choose Tier
-	tier = tiers[Random() % numTiers];
-
-	//Choose Level
-	if (IsLittleCupTier(tier))
-		level = 5;
-	else
-	{
-		switch (streak) {
-			case 0 ... 9:
-				level = 50;
-				break;
-			case 10 ... 18:
-				if (Random() & 1)
-					level = 50;
-				else
-					level = MAX_LEVEL;
-				break;
-			case 19: //Frontier Brain 1
-				level = 50;
-				break;
-			case 49: //Frontier Brain 2
-				level = MAX_LEVEL;
-				break;
-			default:
-				level = (Random() % MAX_LEVEL) + 1; //Randomize level completely after battle 20
-		}
-	}
-
-	//Choose Party Size
-	switch (streak) {
-		case 0 ... 9:
-			if (IsFrontierSingles(format))
-				partySize = 3; //3v3
-			else
-				partySize = 4; //4v4
-			break;
-		case 11 ... 39:
-			partySize = Random() % (PARTY_SIZE - 1) + 2; //2v2 - 6v6
-
-			if (partySize == 2 && !IsFrontierSingles(format))
-				partySize = 3; //3v3
-			break;
-		default:
-			partySize = Random() % PARTY_SIZE + 1; //1v1 - 6v6
-
-			if (partySize == 1 && !IsFrontierSingles(format))
-				partySize = 2; //2v2
-	}
-
-	dynamax = FALSE;
-	switch (streak) {
-		case 0 ... 19:
-			inverse = FALSE;
-			break;
-		default:
-			inverse = Random() & TRUE;
-	}
-
-	VarSet(VAR_BATTLE_FACILITY_POKE_LEVEL, level);
-	VarSet(VAR_BATTLE_FACILITY_BATTLE_TYPE, format);
-	VarSet(VAR_BATTLE_FACILITY_TIER, tier);
-	VarSet(VAR_BATTLE_FACILITY_POKE_NUM, partySize);
-	if (inverse)
-	{
-		#ifdef FLAG_INVERSE
-		FlagSet(FLAG_INVERSE);
-		#endif
-	}
-
-	StringCopy(gStringVar7, GetFrontierTierName(tier, format));
-	StringCopy(gStringVar8, gBattleFrontierFormats[format]);
-	ConvertIntToDecimalStringN(gStringVar9, level, 0, 3);
-	ConvertIntToDecimalStringN(gStringVarA, partySize, 0, 1);
-	StringCopy(gStringVarB, (inverse) ? gText_On : gText_Off);
-	StringCopy(gStringVarC, (dynamax) ? gText_BeAble : gText_NotBeAble);
-
-	return originalTier;
-}
-
-//@Details: Sets the tier var to the correct tier the Battle Mine streaks are recorded in.
-void sp071_LoadBattleMineRecordTier(void)
-{
-	u32 i, tier;
-	u8 currTier = VarGet(VAR_BATTLE_FACILITY_TIER);
-
-	if (currTier == BATTLE_MINE_FORMAT_1
-	||  currTier == BATTLE_MINE_FORMAT_2
-	||  currTier == BATTLE_MINE_FORMAT_3
-	||  currTier == BATTLE_MINE_FORMAT_4)
-		return;
-
-	for (i = 0; i < NELEMS(gBattleMineFormat1Tiers); ++i)
-	{
-		tier = gBattleMineFormat1Tiers[i];
-		if (currTier == tier)
-		{
-			VarSet(VAR_BATTLE_FACILITY_TIER, BATTLE_MINE_FORMAT_1);
-			return;
-		}
-	}
-
-	for (i = 0; i < NELEMS(gBattleMineFormat2Tiers); ++i)
-	{
-		tier = gBattleMineFormat2Tiers[i];
-		if (currTier == tier)
-		{
-			VarSet(VAR_BATTLE_FACILITY_TIER, BATTLE_MINE_FORMAT_2);
-			return;
-		}
-	}
-
-	for (i = 0; i < NELEMS(gBattleMineFormat3Tiers); ++i)
-	{
-		tier = gBattleMineFormat3Tiers[i];
-		if (currTier == tier)
-		{
-			VarSet(VAR_BATTLE_FACILITY_TIER, BATTLE_MINE_FORMAT_3);
-			return;
-		}
-	}
-
-	for (i = 0; i < NELEMS(gBattleMineFormat4Tiers); ++i)
-	{
-		tier = gBattleMineFormat4Tiers[i];
-		if (currTier == tier)
-		{
-			VarSet(VAR_BATTLE_FACILITY_TIER, BATTLE_MINE_FORMAT_4);
-			return;
-		}
-	}
 }
 
 //@Details: Loads random effects for Battle Circus battles.

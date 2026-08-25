@@ -67,8 +67,6 @@ void sp055_UpdateBattleFacilityStreak(void);
 u16 sp056_DetermineChipsToGive(void);
 void sp06C_SpliceFrontierTeamWithPlayerTeam(void);
 u16 sp06D_LoadFrontierMultiTrainerById(void);
-void sp06F_CanTeamParticipateInBattleMine(void);
-u8 sp070_RandomizeBattleMineBattleOptions(void);
 
 //Exported Constants
 //#define TOTAL_SPREADS 0x4A0 //sizeof(gFrontierSpreads) / sizeof(struct BattleTowerSpreads)
@@ -90,7 +88,7 @@ enum BattleFacilities
 {
 	IN_BATTLE_TOWER,
 	IN_BATTLE_SANDS,
-	IN_BATTLE_MINE,
+	IN_BATTLE_QUARRY,
 	IN_BATTLE_CIRCUS,
 	IN_BATTLE_FACTORY,
 	IN_RING_CHALLENGE,
@@ -146,10 +144,6 @@ enum BattleTowerFormats
 	BATTLE_FACILITY_UU,
 	BATTLE_FACILITY_RU,
 	BATTLE_FACILITY_NU,
-	BATTLE_MINE_FORMAT_1, //OU, Camomons, Benjamin Butterfree
-	BATTLE_MINE_FORMAT_2, //Scalemons, 350 Cup, Averagemons
-	BATTLE_MINE_FORMAT_3, //Little Cup, Little Cup Camomons
-	BATTLE_MINE_FORMAT_4, //Ubers, Ubers Camomons
 	NUM_TIERS
 };
 
@@ -158,7 +152,6 @@ enum BattleTowerFormats
 #define BATTLE_FACILITY_GS_CUP BATTLE_FACILITY_MIDDLE_CUP //Replaces Middle Cup in Doubles
 
 #define NUM_BATTLE_TOWER_TIERS 8
-#define NUM_BATTLE_MINE_TIERS 3
 #define NUM_BATTLE_CIRCUS_TIERS 14
 #define IS_SINGLE_100_RECORD_TIER(tier) (BATTLE_FACILITY_NUM == IN_BATTLE_TOWER && (tier == BATTLE_FACILITY_MONOTYPE || tier == BATTLE_FACILITY_DYNAMAX_STANDARD))
 

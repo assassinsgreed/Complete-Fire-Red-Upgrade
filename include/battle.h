@@ -782,6 +782,7 @@ struct NewBattleStruct
 	u8 SlowStartTimers[MAX_BATTLERS_COUNT];
 	u8 StakeoutCounters[MAX_BATTLERS_COUNT];
 	u8 StompingTantrumTimers[MAX_BATTLERS_COUNT];
+	u8 quarryDisabledSlots[MAX_BATTLERS_COUNT]; // Move slots the Battle Quarry locked this turn
 	u8 splinterTimer[MAX_BATTLERS_COUNT];
 	u8 splinterAttackerBank[MAX_BATTLERS_COUNT];
 	u8 splinterAttackerMonId[MAX_BATTLERS_COUNT];

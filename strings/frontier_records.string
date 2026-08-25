@@ -6,8 +6,8 @@ Battle Tower
 #org @gText_BattleSands
 Battle Sands
 
-#org @gText_BattleMine
-Battle Mine
+#org @gText_BattleQuarry
+Battle Quarry
 
 #org @gText_BattleCircus
 Battle Circus
@@ -134,18 +134,6 @@ Smogon Gen 7 RU
 
 #org @gText_SmogonGen7NU
 Smogon Gen 7 NU
-
-#org @gText_BattleMineFormat1
-Cave Format
-
-#org @gText_BattleMineFormat2
-Mountain Format
-
-#org @gText_BattleMineFormat3
-Pebble Format
-
-#org @gText_BattleMineFormat4
-Cordillera Format
 
 #org @gText_On
 on
