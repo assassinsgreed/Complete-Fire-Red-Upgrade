@@ -155,14 +155,14 @@
 .equ BATTLE_RING_CHALLENGE, 0x800000
 .equ BATTLE_MOCK_BATTLE, 0x1000000
 .equ BATTLE_BATTLE_SANDS, 0x2000000
-.equ BATTLE_BATTLE_CIRCUS, 0x4000000
+.equ BATTLE_BATTLE_SIM, 0x4000000
 .equ BATTLE_BATTLE_BENJAMIN_BUTTERFREE, 0x8000000
 .equ BATTLE_CAMOMONS, 0x10000000
 .equ BATTLE_MEGA_BRAWL, 0x20000000
 .equ BATTLE_DYNAMAX, 0x40000000
 
 .equ BATTLE_SHADOW_WARRIOR, 0x80000000 @;Used in Pokemon Unbound
-.equ BATTLE_FRONTIER, (BATTLE_TOWER | BATTLE_BATTLE_SANDS | BATTLE_BATTLE_CIRCUS)
+.equ BATTLE_FRONTIER, (BATTLE_TOWER | BATTLE_BATTLE_SANDS | BATTLE_BATTLE_SIM)
 
 @Outcomes
 .equ OUTCOME_MISSED, 0x1
@@ -1481,7 +1481,7 @@
 .equ weather_heavy_rain, 0x1000
 .equ weather_air_current, 0x2000
 .equ weather_vicious_sandstorm, 0x4000
-.equ weather_circus, 0x8000
+.equ weather_sim, 0x8000
 
 .equ WEATHER_SUN_ANY, weather_sun | weather_permament_sun | weather_harsh_sun
 .equ WEATHER_RAIN_ANY, weather_rain | weather_downpour | weather_permament_rain | weather_heavy_rain

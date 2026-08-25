@@ -178,7 +178,7 @@ extern u8 gDexNavSearchLevels[999]; //0x203C75C -999 slots
 #define gPokeBackupPtr (*((const void**) 0x203E034)) //Not used during battle
 //#define sDexNavStatePtr/sFrontierRecordsPtr/gNewBS //0x203E038
 extern bool8 gInShop; //0x203E043
-#define gBattleCircusFlags (*((u32*) 0x203E044))
+#define gBattleSimFlags (*((u32*) 0x203E044))
 #define gFishingByte *((u8*) 0x203E048)
 #define gLastRecordedFadeCoeff (*((u8*) 0x203E049))
 #define gLastRecordedFadeColour (*((u16*) 0x203E04A))

@@ -1992,7 +1992,7 @@ u32 GetBadThoughtsDamage(u8 bank)
 	{
 		if (gBattleTypeFlags & BATTLE_TYPE_FRONTIER)
 		{
-			divisor = 12; //1/12 of HP in Battle Circus
+			divisor = 12; //1/12 of HP in Battle Sim
 		}
 		else
 		{

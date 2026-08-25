@@ -472,6 +472,9 @@ The Battle Tower emphasizes\ntraditionl battles - no gimmicks.\pJust you, your t
 #org @gText_BattleFrontier_QuarryRules
 In the Battle Quarry, the rock face\nshifts before every turn.\pIt seals off two of the four move\nslots of every Pok\emon in the pit.\pBoth sides are sealed. If a Pok\emon\ncannot act, it must Struggle.
 
+#org @gText_BattleFrontier_SimRules
+The Battle Sim runs every battle as\na simulation, and no two are alike.\pBefore each one, the machines roll a\nnew set of conditions for the field.\pThe longer your streak, the more\nconditions they will stack on.
+
 #org @gText_BattleFrontier_SandsRules
 In the Battle Sands, you put your\ntrust in your Pok\emon.\pYou choose if they fight or switch,\nbut they choose their own moves.\pWhenever a Pok\emon enters battle,\nthey are empowered by the sands.\pThis raises a random stat, with the\nintensity growing with your streak.
 
@@ -513,6 +516,13 @@ Step up to the sands, please.
 
 #org @gText_BattleFrontier_LeadToLobby
 Let me lead you out of the battle\nspace. Right this way.
+
+#org @gText_BattleFrontier_SimCalibrating
+Hold still - the simulator is\ncalibrating the field[.]
+
+// gStringVarC is filled in by sp072. Its descriptions are written to follow this exact prefix, so do not reword the first line.
+#org @gText_BattleFrontier_SimEffectRolled
+The next battle will take place\n[BUFFER][0C]
 
 #org @gText_BattleFrontier_CallingOpponent
 We'll call your next opponent in\nnow.

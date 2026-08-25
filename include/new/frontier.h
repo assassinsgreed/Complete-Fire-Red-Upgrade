@@ -89,7 +89,7 @@ enum BattleFacilities
 	IN_BATTLE_TOWER,
 	IN_BATTLE_SANDS,
 	IN_BATTLE_QUARRY,
-	IN_BATTLE_CIRCUS,
+	IN_BATTLE_SIM,
 	IN_BATTLE_FACTORY,
 	IN_RING_CHALLENGE,
 	IN_ISLE_CHALLENGE,
@@ -147,12 +147,8 @@ enum BattleTowerFormats
 	NUM_TIERS
 };
 
-#define NUM_FORMATS_OLD (BATTLE_FACILITY_MIDDLE_CUP + 1) //Monotype not included b/c wasn't included in Battle Tower Demo original release
-
 #define BATTLE_FACILITY_GS_CUP BATTLE_FACILITY_MIDDLE_CUP //Replaces Middle Cup in Doubles
 
-#define NUM_BATTLE_TOWER_TIERS 8
-#define NUM_BATTLE_CIRCUS_TIERS 14
 #define IS_SINGLE_100_RECORD_TIER(tier) (BATTLE_FACILITY_NUM == IN_BATTLE_TOWER && (tier == BATTLE_FACILITY_MONOTYPE || tier == BATTLE_FACILITY_DYNAMAX_STANDARD))
 
 enum BattleTowerGenders

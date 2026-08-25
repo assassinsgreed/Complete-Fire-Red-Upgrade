@@ -406,7 +406,7 @@ void atk4D_switchindataupdate(void)
 	{
 		ClearBehindSubstituteBit(gActiveBattler);
 
-		if (AreAbilitiesSuppressed()) //Most likely circus
+		if (AreAbilitiesSuppressed()) //Most likely sim
 		{
 			gNewBS->SuppressedAbilities[gActiveBattler] = gBattleMons[gActiveBattler].ability;
 			gBattleMons[gActiveBattler].ability = 0;

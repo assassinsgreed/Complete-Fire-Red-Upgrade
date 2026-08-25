@@ -4949,19 +4949,19 @@ u8 GetAIMoveEffectForMaxMove(u16 move, u8 bankAtk, u8 bankDef)
 			break;
 
 		case MAX_EFFECT_SUN:
-			if (!(gBattleWeather & (WEATHER_SUN_ANY | WEATHER_PRIMAL_ANY | WEATHER_CIRCUS)))
+			if (!(gBattleWeather & (WEATHER_SUN_ANY | WEATHER_PRIMAL_ANY | WEATHER_SIM)))
 				moveEffect = EFFECT_SUNNY_DAY;
 			break;
 		case MAX_EFFECT_RAIN:
-			if (!(gBattleWeather & (WEATHER_RAIN_ANY | WEATHER_PRIMAL_ANY | WEATHER_CIRCUS)))
+			if (!(gBattleWeather & (WEATHER_RAIN_ANY | WEATHER_PRIMAL_ANY | WEATHER_SIM)))
 				moveEffect = EFFECT_RAIN_DANCE;
 			break;
 		case MAX_EFFECT_SANDSTORM:
-			if (!(gBattleWeather & (WEATHER_SANDSTORM_ANY | WEATHER_PRIMAL_ANY | WEATHER_CIRCUS)))
+			if (!(gBattleWeather & (WEATHER_SANDSTORM_ANY | WEATHER_PRIMAL_ANY | WEATHER_SIM)))
 				moveEffect = EFFECT_SANDSTORM;
 			break;
 		case MAX_EFFECT_HAIL:
-			if (!(gBattleWeather & (WEATHER_HAIL_ANY | WEATHER_PRIMAL_ANY | WEATHER_CIRCUS)))
+			if (!(gBattleWeather & (WEATHER_HAIL_ANY | WEATHER_PRIMAL_ANY | WEATHER_SIM)))
 				moveEffect = EFFECT_HAIL;
 			break;
 
@@ -4969,7 +4969,7 @@ u8 GetAIMoveEffectForMaxMove(u16 move, u8 bankAtk, u8 bankDef)
 		case MAX_EFFECT_GRASSY_TERRAIN:
 		case MAX_EFFECT_MISTY_TERRAIN:
 		case MAX_EFFECT_PSYCHIC_TERRAIN:
-			if (!(gBattleTypeFlags & BATTLE_TYPE_BATTLE_CIRCUS && gBattleCircusFlags & BATTLE_CIRCUS_TERRAIN)
+			if (!(gBattleTypeFlags & BATTLE_TYPE_BATTLE_SIM && gBattleSimFlags & BATTLE_SIM_TERRAIN)
 			&& gTerrainType != (maxEffect - MAX_EFFECT_ELECTRIC_TERRAIN) + 1)
 				moveEffect = EFFECT_SET_TERRAIN;
 			break;

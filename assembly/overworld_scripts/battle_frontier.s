@@ -691,7 +691,7 @@ SignScript_BattleFrontier_BattleObservatory:
 .equ IN_BATTLE_TOWER, 0x0
 .equ IN_BATTLE_SANDS, 0x1
 .equ IN_BATTLE_QUARRY, 0x2
-.equ IN_BATTLE_CIRCUS, 0x3
+.equ IN_BATTLE_SIM, 0x3
 .equ IN_BATTLE_FACTORY, 0x4
 .equ IN_RING_CHALLENGE, 0x5
 .equ IN_ISLE_CHALLENGE, 0x6
@@ -727,6 +727,7 @@ SignScript_BattleFrontier_BattleObservatory:
 .equ SPECIAL_UPDATE_FACILITY_STREAK, 0x55
 .equ SPECIAL_SHOW_FRONTIER_RECORDS, 0x57
 .equ SPECIAL_MODIFY_TEAM_FOR_FRONTIER, 0x73
+.equ SPECIAL_LOAD_BATTLE_SIM_EFFECTS, 0x72
 
 @ From include/constants/songs.h
 .equ MUS_BIG_CELEBRATION, 0x10C
@@ -752,6 +753,8 @@ SignScript_BattleFrontier_BattleObservatory:
 .equ BATTLE_SANDS_OPPONENT, 0x2
 .equ BATTLE_QUARRY_ATTENDANT, 0x1
 .equ BATTLE_QUARRY_OPPONENT, 0x2
+.equ BATTLE_SIM_ATTENDANT, 0x1
+.equ BATTLE_SIM_OPPONENT, 0x2
 
 @ ============================================================================
 @ Per-facility entry points
@@ -784,7 +787,7 @@ EventScript_BattleFrontier_MazeAttendant:
 
 .global EventScript_BattleFrontier_SimAttendant
 EventScript_BattleFrontier_SimAttendant:
-    setvar VAR_BATTLE_FACILITY_NUM IN_BATTLE_CIRCUS @ TODO: Becomes battle sim
+    setvar VAR_BATTLE_FACILITY_NUM IN_BATTLE_SIM
     goto BattleFrontier_Common_Attendant
 
 .global EventScript_BattleFrontier_FactoryAttendant
@@ -864,6 +867,7 @@ BattleFrontier_Common_FacilityRules:
     case IN_BATTLE_TOWER, BattleFrontier_Tower_Rules, _call
     case IN_BATTLE_SANDS, BattleFrontier_Sands_Rules, _call
     case IN_BATTLE_QUARRY, BattleFrontier_Quarry_Rules, _call
+    case IN_BATTLE_SIM, BattleFrontier_Sim_Rules, _call
     goto BattleFrontier_Common_Rules
 
 BattleFrontier_Tower_Rules:
@@ -876,6 +880,10 @@ BattleFrontier_Sands_Rules:
 
 BattleFrontier_Quarry_Rules:
     msgbox gText_BattleFrontier_QuarryRules MSG_KEEPOPEN
+    return
+
+BattleFrontier_Sim_Rules:
+    msgbox gText_BattleFrontier_SimRules MSG_KEEPOPEN
     return
 
 BattleFrontier_Common_Records:
@@ -1081,14 +1089,16 @@ BattleFrontier_Common_EnterBattlePosition:
     case IN_BATTLE_TOWER, BattleFrontier_Tower_EnterBattlePosition, _call
     case IN_BATTLE_SANDS, BattleFrontier_Sands_EnterBattlePosition, _call
     case IN_BATTLE_QUARRY, BattleFrontier_Quarry_EnterBattlePosition, _call
+    case IN_BATTLE_SIM, BattleFrontier_Sim_EnterBattlePosition, _call
     return
 
-@ Before every battle. Circus randomizes its field effects here (special 0x72), Factory and Maze swap or reroll the team.
+@ Before every battle. Sim randomizes its field effects here (special 0x72), Factory and Maze swap or reroll the team.
 BattleFrontier_Common_PerBattleSetup:
     switch VAR_BATTLE_FACILITY_NUM
     case IN_BATTLE_TOWER, BattleFrontier_Tower_PerBattleSetup, _call
     case IN_BATTLE_SANDS, BattleFrontier_Sands_PerBattleSetup, _call
     case IN_BATTLE_QUARRY, BattleFrontier_Quarry_PerBattleSetup, _call
+    case IN_BATTLE_SIM, BattleFrontier_Sim_PerBattleSetup, _call
     return
 
 BattleFrontier_Common_OpponentArrives:
@@ -1096,6 +1106,7 @@ BattleFrontier_Common_OpponentArrives:
     case IN_BATTLE_TOWER, BattleFrontier_Tower_OpponentArrives, _call
     case IN_BATTLE_SANDS, BattleFrontier_Sands_OpponentArrives, _call
     case IN_BATTLE_QUARRY, BattleFrontier_Quarry_OpponentArrives, _call
+    case IN_BATTLE_SIM, BattleFrontier_Sim_OpponentArrives, _call
     return
 
 BattleFrontier_Common_PostBattleReset:
@@ -1103,6 +1114,7 @@ BattleFrontier_Common_PostBattleReset:
     case IN_BATTLE_TOWER, BattleFrontier_Tower_PostBattleReset, _call
     case IN_BATTLE_SANDS, BattleFrontier_Sands_PostBattleReset, _call
     case IN_BATTLE_QUARRY, BattleFrontier_Quarry_PostBattleReset, _call
+    case IN_BATTLE_SIM, BattleFrontier_Sim_PostBattleReset, _call
     return
 
 BattleFrontier_Common_LeaveBattlePosition:
@@ -1110,6 +1122,7 @@ BattleFrontier_Common_LeaveBattlePosition:
     case IN_BATTLE_TOWER, BattleFrontier_Tower_LeaveBattlePosition, _call
     case IN_BATTLE_SANDS, BattleFrontier_Sands_LeaveBattlePosition, _call
     case IN_BATTLE_QUARRY, BattleFrontier_Quarry_LeaveBattlePosition, _call
+    case IN_BATTLE_SIM, BattleFrontier_Sim_LeaveBattlePosition, _call
     return
 
 @ These three MUST stay MSG_KEEPOPEN. The opponent is already walking offscreen, and MSG_NORMAL ends
@@ -1311,6 +1324,81 @@ m_BattleQuarry_OpponentToPit: .byte walk_up, walk_up, walk_up, walk_up, walk_up,
 m_BattleQuarry_OpponentLeaves: .byte walk_left, walk_left, walk_down, walk_down, walk_down, walk_down, walk_down, end_m
 m_BattleQuarry_PlayerToLobby: .byte walk_right, walk_right, walk_down, walk_down, walk_down, walk_down, walk_down, walk_down, walk_down, look_up, end_m
 m_BattleQuarry_AttendantToLobby: .byte walk_right, walk_right, walk_down, walk_down, walk_down, walk_left, look_right, pause_long, walk_right, walk_down, walk_down, look_down, end_m
+
+@ ----------------------------------------------------------------------------
+@ Battle Sim Movements
+@ ----------------------------------------------------------------------------
+
+BattleFrontier_Sim_EnterBattlePosition:
+    msgbox gText_BattleFrontier_LeadToBattlePosition MSG_NORMAL
+    applymovement PLAYER m_BattleSim_PlayerToStage
+    applymovement BATTLE_SIM_ATTENDANT m_BattleSim_AttendantToStage
+    waitmovement ALLEVENTS
+    special CAMERA_START
+    applymovement CAMERA m_BattleFacility_CameraMoveRight_2
+    waitmovement CAMERA
+    special CAMERA_END
+    return
+
+@ sp072 adds one effect per call, describes it in gStringVarC and returns TRUE once the
+@ streak's quota is full, so the roll has to be a loop rather than a single call.
+@ It can trigger weather which needs to be set & reset here for overworld effects
+BattleFrontier_Sim_PerBattleSetup:
+    applymovement PLAYER m_LookRight
+    applymovement BATTLE_SIM_ATTENDANT m_LookRight
+    resetweather
+    msgbox gText_BattleFrontier_SimCalibrating MSG_KEEPOPEN
+
+BattleFrontier_Sim_RollEffect:
+    special SPECIAL_LOAD_BATTLE_SIM_EFFECTS
+    compare LASTRESULT TRUE
+    if equal _goto BattleFrontier_Sim_RollEffectsDone
+    msgbox gText_BattleFrontier_SimEffectRolled MSG_KEEPOPEN
+    goto BattleFrontier_Sim_RollEffect
+
+BattleFrontier_Sim_RollEffectsDone:
+    doweather
+    return
+
+BattleFrontier_Sim_OpponentArrives:
+    msgbox gText_BattleFrontier_CallingOpponent MSG_NORMAL
+    showsprite BATTLE_SIM_OPPONENT
+    applymovement BATTLE_SIM_OPPONENT m_BattleSim_OpponentToStage
+    waitmovement ALLEVENTS
+    return
+
+BattleFrontier_Sim_PostBattleReset:
+    applymovement PLAYER m_LookDown
+    applymovement BATTLE_SIM_ATTENDANT m_LookUp
+    applymovement BATTLE_SIM_OPPONENT m_BattleSim_OpponentLeaves
+    call BattleFrontier_Common_CommentOnResult @ Before the wait, so it plays over the opponent leaving
+    waitmovement ALLEVENTS
+    closeonkeypress
+    hidesprite BATTLE_SIM_OPPONENT
+    return
+
+@ The run is over, so the last battle's simulated weather gets torn down here rather than
+@ being left running over the salon.
+BattleFrontier_Sim_LeaveBattlePosition:
+    msgbox gText_BattleFrontier_LeadToLobby MSG_NORMAL
+    resetweather
+    doweather
+    special CAMERA_START
+    applymovement CAMERA m_BattleFacility_CameraMoveLeft_2
+    waitmovement CAMERA
+    special CAMERA_END
+    applymovement PLAYER m_BattleSim_PlayerToLobby
+    applymovement BATTLE_SIM_ATTENDANT m_BattleSim_AttendantToLobby
+    waitmovement ALLEVENTS
+    return
+
+@ Movements
+m_BattleSim_PlayerToStage: .byte walk_up, walk_up, walk_up, walk_up, walk_up, walk_up, walk_up, walk_up, walk_left, walk_left, walk_left, look_right, end_m
+m_BattleSim_AttendantToStage: .byte walk_up, walk_up, walk_up, walk_up, walk_up, walk_up, walk_left, pause_long, pause_long, walk_left, walk_left, look_right, end_m
+m_BattleSim_OpponentToStage: .byte walk_up, walk_up, walk_up, walk_up, walk_up, walk_up, walk_right, walk_right, look_left, end_m
+m_BattleSim_OpponentLeaves: .byte walk_left, walk_left, walk_down, walk_down, walk_down, walk_down, walk_down, walk_down, end_m
+m_BattleSim_PlayerToLobby: .byte walk_right, walk_right, walk_right, walk_down, walk_down, walk_down, walk_down, walk_down, walk_down, walk_down, walk_down, look_up, end_m
+m_BattleSim_AttendantToLobby: .byte walk_right, walk_right, walk_right, walk_down, walk_down, walk_down, walk_down, walk_down, walk_left, look_right, pause_long, walk_right, walk_down, look_down, end_m
 
 @ ============================================================================
 @ Common Movements

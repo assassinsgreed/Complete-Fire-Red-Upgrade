@@ -672,7 +672,7 @@ void EndOfBattleThings(void)
 			&& weather != WEATHER_SUNNY)
 				SetSav1Weather(WEATHER_RAIN_LIGHT); //Reset weather in Battle Sands
 		}
-		else if (gBattleTypeFlags & BATTLE_TYPE_BATTLE_CIRCUS)
+		else if (gBattleTypeFlags & BATTLE_TYPE_BATTLE_SIM)
 		{
 			SetSav1Weather(WEATHER_NONE);
 		}
@@ -944,7 +944,7 @@ static void EndBattleFlagClear(void)
 	u16 backup = gTrainerBattleOpponent_B;
 	Memset(&ExtensionState, 0x0, sizeof(struct BattleExtensionState));
 	gTrainerBattleOpponent_B = backup;
-	gBattleCircusFlags = 0;
+	gBattleSimFlags = 0;
 	Memset(gStatuses3, 0, sizeof(gStatuses3));
 }
 

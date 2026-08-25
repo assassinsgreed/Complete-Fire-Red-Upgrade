@@ -198,7 +198,7 @@ u8 __attribute__((long_call)) GetCurrentRegionMapSectionId(void);
 #define MAPSEC_BATTLE_FRONTIER               0xA7
 #define MAPSEC_BATTLE_TOWER                  0xB3
 #define MAPSEC_BATTLE_QUARRY                 0xB2
-#define MAPSEC_BATTLE_CIRCUS                 0xB4
+#define MAPSEC_BATTLE_SIM                 0xB4
 #define MAPSEC_POLDER_TOWN                   0x90
 #define MAPSEC_SAFARI_ZONE                   0xA4
 #define MAPSEC_COOTES_BOG                    0xB5

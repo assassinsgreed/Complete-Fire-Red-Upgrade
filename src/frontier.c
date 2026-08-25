@@ -28,7 +28,7 @@ tables to edit:
 	gBattleFacilityNames
 	gBattleFrontierTierNames
 	gBattleFrontierFormats
-	sBattleCircusEffectDescriptions
+	sBattleSimEffectDescriptions
 
 */
 
@@ -40,7 +40,7 @@ extern const u8 sTrainerName_Rival[]; //Sentinel - swapped for the player's chos
 extern const u8 gText_BattleTower[];
 extern const u8 gText_BattleSands[];
 extern const u8 gText_BattleQuarry[];
-extern const u8 gText_BattleCircus[];
+extern const u8 gText_BattleSim[];
 extern const u8 gText_BattleFactory[];
 extern const u8 gText_BattleRing[];
 extern const u8 gText_BattleIsle[];
@@ -88,38 +88,38 @@ extern const u8 gText_Current[];
 extern const u8 gText_Max[];
 extern const u8 gText_None[];
 
-extern const u8 gText_BattleCircusDescriptionElectricTerrain[];
-extern const u8 gText_BattleCircusDescriptionGrassyTerrain[];
-extern const u8 gText_BattleCircusDescriptionMistyTerrain[];
-extern const u8 gText_BattleCircusDescriptionPsychicTerrain[];
-extern const u8 gText_BattleCircusDescriptionRain[];
-extern const u8 gText_BattleCircusDescriptionSun[];
-extern const u8 gText_BattleCircusDescriptionSandstorm[];
-extern const u8 gText_BattleCircusDescriptionHail[];
-extern const u8 gText_BattleCircusDescriptionDeltaStream[];
-extern const u8 gText_BattleCircusDescriptionTrickRoom[];
-extern const u8 gText_BattleCircusDescriptionMagicRoom[];
-extern const u8 gText_BattleCircusDescriptionWonderRoom[];
-extern const u8 gText_BattleCircusDescriptionGravity[];
-extern const u8 gText_BattleCircusDescriptionMagnetRise[];
-extern const u8 gText_BattleCircusDescriptionFairyLock[];
-extern const u8 gText_BattleCircusDescriptionPixies[];
-extern const u8 gText_BattleCircusDescriptionBadThoughts[];
-extern const u8 gText_BattleCircusDescriptionInverseBattle[];
-extern const u8 gText_BattleCircusDescriptionDynamax[];
-extern const u8 gText_BattleCircusDescriptionTradeMon[];
-extern const u8 gText_BattleCircusDescriptionSafeguard[];
-extern const u8 gText_BattleCircusDescriptionMist[];
-extern const u8 gText_BattleCircusDescriptionSeaOfFire[];
-extern const u8 gText_BattleCircusDescriptionRainbow[];
-extern const u8 gText_BattleCircusDescriptionConfused[];
-extern const u8 gText_BattleCircusDescriptionTaunt[];
-extern const u8 gText_BattleCircusDescriptionTorment[];
-extern const u8 gText_BattleCircusDescriptionHealBlock[];
-extern const u8 gText_BattleCircusDescriptionThroatChop[];
-extern const u8 gText_BattleCircusDescriptionAlwaysCrit[];
-extern const u8 gText_BattleCircusDescriptionNoCrits[];
-extern const u8 gText_BattleCircusDescriptionAbilitySuppression[];
+extern const u8 gText_BattleSimDescriptionElectricTerrain[];
+extern const u8 gText_BattleSimDescriptionGrassyTerrain[];
+extern const u8 gText_BattleSimDescriptionMistyTerrain[];
+extern const u8 gText_BattleSimDescriptionPsychicTerrain[];
+extern const u8 gText_BattleSimDescriptionRain[];
+extern const u8 gText_BattleSimDescriptionSun[];
+extern const u8 gText_BattleSimDescriptionSandstorm[];
+extern const u8 gText_BattleSimDescriptionHail[];
+extern const u8 gText_BattleSimDescriptionDeltaStream[];
+extern const u8 gText_BattleSimDescriptionTrickRoom[];
+extern const u8 gText_BattleSimDescriptionMagicRoom[];
+extern const u8 gText_BattleSimDescriptionWonderRoom[];
+extern const u8 gText_BattleSimDescriptionGravity[];
+extern const u8 gText_BattleSimDescriptionMagnetRise[];
+extern const u8 gText_BattleSimDescriptionFairyLock[];
+extern const u8 gText_BattleSimDescriptionPixies[];
+extern const u8 gText_BattleSimDescriptionBadThoughts[];
+extern const u8 gText_BattleSimDescriptionInverseBattle[];
+extern const u8 gText_BattleSimDescriptionDynamax[];
+extern const u8 gText_BattleSimDescriptionTradeMon[];
+extern const u8 gText_BattleSimDescriptionSafeguard[];
+extern const u8 gText_BattleSimDescriptionMist[];
+extern const u8 gText_BattleSimDescriptionSeaOfFire[];
+extern const u8 gText_BattleSimDescriptionRainbow[];
+extern const u8 gText_BattleSimDescriptionConfused[];
+extern const u8 gText_BattleSimDescriptionTaunt[];
+extern const u8 gText_BattleSimDescriptionTorment[];
+extern const u8 gText_BattleSimDescriptionHealBlock[];
+extern const u8 gText_BattleSimDescriptionThroatChop[];
+extern const u8 gText_BattleSimDescriptionAlwaysCrit[];
+extern const u8 gText_BattleSimDescriptionNoCrits[];
+extern const u8 gText_BattleSimDescriptionAbilitySuppression[];
 
 // The battle frontier does not use tiers in Amethyst.
 
@@ -128,7 +128,7 @@ const u8* const gBattleFacilityNames[NUM_BATTLE_FACILITIES] =
 	[IN_BATTLE_TOWER] = gText_BattleTower,
 	[IN_BATTLE_SANDS] = gText_BattleSands,
 	[IN_BATTLE_QUARRY] = gText_BattleQuarry,
-	[IN_BATTLE_CIRCUS] = gText_BattleCircus,
+	[IN_BATTLE_SIM] = gText_BattleSim,
 	[IN_BATTLE_FACTORY] = gText_BattleFactory,
 	[IN_RING_CHALLENGE] = gText_BattleRing,
 	[IN_ISLE_CHALLENGE] = gText_BattleIsle,
@@ -172,42 +172,42 @@ const u8* const gBattleFrontierFormats[NUM_TOWER_BATTLE_TYPES] =
 	[BATTLE_FACILITY_MULTI_RANDOM] = gText_RandomMultiBattle,
 };
 
-const u8* const sBattleCircusEffectDescriptions[] =
+const u8* const sBattleSimEffectDescriptions[] =
 {
-	gText_BattleCircusDescriptionElectricTerrain,
-	gText_BattleCircusDescriptionGrassyTerrain,
-	gText_BattleCircusDescriptionMistyTerrain,
-	gText_BattleCircusDescriptionPsychicTerrain,
-	gText_BattleCircusDescriptionRain,
-	gText_BattleCircusDescriptionSun,
-	gText_BattleCircusDescriptionSandstorm,
-	gText_BattleCircusDescriptionHail,
-	gText_BattleCircusDescriptionDeltaStream,
-	gText_BattleCircusDescriptionTrickRoom,
-	gText_BattleCircusDescriptionMagicRoom,
-	gText_BattleCircusDescriptionWonderRoom,
-	gText_BattleCircusDescriptionGravity,
-	gText_BattleCircusDescriptionMagnetRise,
-	gText_BattleCircusDescriptionFairyLock,
-	gText_BattleCircusDescriptionPixies,
-	gText_BattleCircusDescriptionBadThoughts,
-	gText_BattleCircusDescriptionInverseBattle,
-	gText_BattleCircusDescriptionDynamax,
-	gText_BattleCircusDescriptionTradeMon,
+	gText_BattleSimDescriptionElectricTerrain,
+	gText_BattleSimDescriptionGrassyTerrain,
+	gText_BattleSimDescriptionMistyTerrain,
+	gText_BattleSimDescriptionPsychicTerrain,
+	gText_BattleSimDescriptionRain,
+	gText_BattleSimDescriptionSun,
+	gText_BattleSimDescriptionSandstorm,
+	gText_BattleSimDescriptionHail,
+	gText_BattleSimDescriptionDeltaStream,
+	gText_BattleSimDescriptionTrickRoom,
+	gText_BattleSimDescriptionMagicRoom,
+	gText_BattleSimDescriptionWonderRoom,
+	gText_BattleSimDescriptionGravity,
+	gText_BattleSimDescriptionMagnetRise,
+	gText_BattleSimDescriptionFairyLock,
+	gText_BattleSimDescriptionPixies,
+	gText_BattleSimDescriptionBadThoughts,
+	gText_BattleSimDescriptionInverseBattle,
+	gText_BattleSimDescriptionDynamax,
+	gText_BattleSimDescriptionTradeMon,
 	//Side Effects
-	gText_BattleCircusDescriptionSafeguard,
-	gText_BattleCircusDescriptionMist,
-	gText_BattleCircusDescriptionSeaOfFire,
-	gText_BattleCircusDescriptionRainbow,
+	gText_BattleSimDescriptionSafeguard,
+	gText_BattleSimDescriptionMist,
+	gText_BattleSimDescriptionSeaOfFire,
+	gText_BattleSimDescriptionRainbow,
 	//Personal Effects
-	gText_BattleCircusDescriptionConfused,
-	gText_BattleCircusDescriptionTaunt,
-	gText_BattleCircusDescriptionTorment,
-	gText_BattleCircusDescriptionHealBlock,
-	gText_BattleCircusDescriptionThroatChop,
-	gText_BattleCircusDescriptionAlwaysCrit,
-	gText_BattleCircusDescriptionNoCrits,
-	gText_BattleCircusDescriptionAbilitySuppression,
+	gText_BattleSimDescriptionConfused,
+	gText_BattleSimDescriptionTaunt,
+	gText_BattleSimDescriptionTorment,
+	gText_BattleSimDescriptionHealBlock,
+	gText_BattleSimDescriptionThroatChop,
+	gText_BattleSimDescriptionAlwaysCrit,
+	gText_BattleSimDescriptionNoCrits,
+	gText_BattleSimDescriptionAbilitySuppression,
 };
 
 
@@ -727,7 +727,7 @@ bool8 IsMegaZMoveBannedBattle(void)
 	return gBattleTypeFlags & BATTLE_TYPE_TRAINER //Excludes Raid Battles
 	&& FlagGet(FLAG_BATTLE_FACILITY)
 	&& (AreMegasZMovesBannedInTier(VarGet(VAR_BATTLE_FACILITY_TIER))
-	 || (gBattleTypeFlags & BATTLE_TYPE_BATTLE_CIRCUS && gBattleCircusFlags & BATTLE_CIRCUS_DYNAMAX));
+	 || (gBattleTypeFlags & BATTLE_TYPE_BATTLE_SIM && gBattleSimFlags & BATTLE_SIM_DYNAMAX));
 }
 
 bool8 IsMoveBannedInRingChallenge(u16 move, u8 bank)
@@ -1555,10 +1555,10 @@ u16 sp06D_LoadFrontierMultiTrainerById(void)
 	return gFrontierMultiBattleTrainers[id].owNum;
 }
 
-//@Details: Loads random effects for Battle Circus battles.
+//@Details: Loads random effects for Battle Sim battles.
 //@Returns: Lastresult: TRUE if all effects loaded.
 //			gStringVarC: A description of the effect just activated.
-void sp072_LoadBattleCircusEffects(void)
+void sp072_LoadBattleSimEffects(void)
 {
 	u32 i;
 	u8 numActive = 0;
@@ -1566,10 +1566,10 @@ void sp072_LoadBattleCircusEffects(void)
 
 	for (i = 0; ; ++i)
 	{
-		if (gBattleCircusFlags & gBitTable[i])
+		if (gBattleSimFlags & gBitTable[i])
 			++numActive;
 
-		if (gBitTable[i] == LAST_BATTLE_CIRCUS_FLAG)
+		if (gBitTable[i] == LAST_BATTLE_SIM_FLAG)
 			break;
 	}
 
@@ -1622,42 +1622,42 @@ void sp072_LoadBattleCircusEffects(void)
 
 	if (numActive < totalEffects)
 	{
-		bool8 weatherActive = (gBattleCircusFlags & BATTLE_CIRCUS_WEATHER) != 0;
-		bool8 terrainActive = (gBattleCircusFlags & BATTLE_CIRCUS_TERRAIN) != 0;
-		bool8 critEffectActive = (gBattleCircusFlags & BATTLE_CIRCUS_CRIT_EFFECT) != 0;
+		bool8 weatherActive = (gBattleSimFlags & BATTLE_SIM_WEATHER) != 0;
+		bool8 terrainActive = (gBattleSimFlags & BATTLE_SIM_TERRAIN) != 0;
+		bool8 critEffectActive = (gBattleSimFlags & BATTLE_SIM_CRIT_EFFECT) != 0;
 		bool8 randomBattleActive = VarGet(VAR_BATTLE_FACILITY_BATTLE_TYPE) >= BATTLE_FACILITY_SINGLE_RANDOM;
 
 		u8 effectNum;
 		do
 		{
 			effectNum = Random() % (i + 1);
-		} while (gBattleCircusFlags & gBitTable[effectNum] //Only add non active effects
-			|| (weatherActive && gBitTable[effectNum] & BATTLE_CIRCUS_WEATHER) //One weather effect at a time
-			|| (terrainActive && gBitTable[effectNum] & BATTLE_CIRCUS_TERRAIN) //One terrain effect at a time
-			|| (critEffectActive && gBitTable[effectNum] & BATTLE_CIRCUS_CRIT_EFFECT) //One critical hit effect at a time
-			|| (gBitTable[effectNum] & BATTLE_CIRCUS_DYNAMAX) // Prevent Dynamax from being rolled. It also can't silently ban megas or Z-Moves
-			|| (randomBattleActive && gBitTable[effectNum] & BATTLE_CIRCUS_TRADE_MON) //No point in swapping mons in a random battle
-			|| (!tradeMonAllowed && gBitTable[effectNum] & BATTLE_CIRCUS_TRADE_MON) //Swapping mons becomes available later on depending on team size
-			|| (!sideEffectsAllowed && gBitTable[effectNum] >= FIRST_BATTLE_CIRCUS_SIDE_EFFECT_FLAG && gBitTable[effectNum] <= LAST_BATTLE_CIRCUS_SIDE_EFFECT_FLAG)
-			|| (!personalEffectsAllowed && gBitTable[effectNum] >= FIRST_BATTLE_CIRCUS_PERSONAL_EFFECT_FLAG));
+		} while (gBattleSimFlags & gBitTable[effectNum] //Only add non active effects
+			|| (weatherActive && gBitTable[effectNum] & BATTLE_SIM_WEATHER) //One weather effect at a time
+			|| (terrainActive && gBitTable[effectNum] & BATTLE_SIM_TERRAIN) //One terrain effect at a time
+			|| (critEffectActive && gBitTable[effectNum] & BATTLE_SIM_CRIT_EFFECT) //One critical hit effect at a time
+			|| (gBitTable[effectNum] & BATTLE_SIM_DYNAMAX) // Prevent Dynamax from being rolled. It also can't silently ban megas or Z-Moves
+			|| (randomBattleActive && gBitTable[effectNum] & BATTLE_SIM_TRADE_MON) //No point in swapping mons in a random battle
+			|| (!tradeMonAllowed && gBitTable[effectNum] & BATTLE_SIM_TRADE_MON) //Swapping mons becomes available later on depending on team size
+			|| (!sideEffectsAllowed && gBitTable[effectNum] >= FIRST_BATTLE_SIM_SIDE_EFFECT_FLAG && gBitTable[effectNum] <= LAST_BATTLE_SIM_SIDE_EFFECT_FLAG)
+			|| (!personalEffectsAllowed && gBitTable[effectNum] >= FIRST_BATTLE_SIM_PERSONAL_EFFECT_FLAG));
 
-		if (gBitTable[effectNum] & BATTLE_CIRCUS_WEATHER)
+		if (gBitTable[effectNum] & BATTLE_SIM_WEATHER)
 		{
 			u8 weather = 0;
-			if (gBitTable[effectNum] == BATTLE_CIRCUS_RAIN)
+			if (gBitTable[effectNum] == BATTLE_SIM_RAIN)
 				weather = WEATHER_RAIN_LIGHT;
-			else if (gBitTable[effectNum] == BATTLE_CIRCUS_SUN)
+			else if (gBitTable[effectNum] == BATTLE_SIM_SUN)
 				weather = WEATHER_DROUGHT;
-			else if (gBitTable[effectNum] == BATTLE_CIRCUS_SANDSTORM)
+			else if (gBitTable[effectNum] == BATTLE_SIM_SANDSTORM)
 				weather = WEATHER_SANDSTORM;
-			else if (gBitTable[effectNum] == BATTLE_CIRCUS_HAIL)
+			else if (gBitTable[effectNum] == BATTLE_SIM_HAIL)
 				weather = WEATHER_STEADY_SNOW;
 
 			SetSav1Weather(weather); //Followed up by a doweather in the script
 		}
 
-		gBattleCircusFlags |= gBitTable[effectNum];
-		StringCopy(gStringVarC, sBattleCircusEffectDescriptions[effectNum]);
+		gBattleSimFlags |= gBitTable[effectNum];
+		StringCopy(gStringVarC, sBattleSimEffectDescriptions[effectNum]);
 		gSpecialVar_LastResult = FALSE;
 	}
 }

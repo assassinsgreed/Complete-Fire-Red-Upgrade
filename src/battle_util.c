@@ -24,7 +24,7 @@ battle_util.c
 	general functions for aiding in battle logic for everything
 */
 
-#define IS_BATTLE_CIRCUS (gBattleTypeFlags & BATTLE_TYPE_BATTLE_CIRCUS)
+#define IS_BATTLE_SIM (gBattleTypeFlags & BATTLE_TYPE_BATTLE_SIM)
 
 static void TryRemoveUnburdenBoost(u8 bank);
 static bool8 CanBeGeneralStatused(u8 bankDef, u8 defAbility, u8 atkAbility, bool8 checkFlowerVeil);
@@ -1899,7 +1899,7 @@ bool8 WeatherHasEffect(void)
 bool8 RainCanBeEvaporated(void)
 {
 	return gBattleWeather & WEATHER_RAIN_ANY
-		&& !(gBattleWeather & (WEATHER_PRIMAL_ANY | WEATHER_CIRCUS));
+		&& !(gBattleWeather & (WEATHER_PRIMAL_ANY | WEATHER_SIM));
 }
 
 bool8 ItemEffectIgnoresSunAndRain(u8 itemEffect)
@@ -2420,12 +2420,12 @@ bool8 IsTrickRoomActive(void)
 		#ifdef FLAG_TRICK_ROOM_BATTLE
 		|| FlagGet(FLAG_TRICK_ROOM_BATTLE)
 		#endif
-		|| (IS_BATTLE_CIRCUS && gBattleCircusFlags & BATTLE_CIRCUS_TRICK_ROOM);
+		|| (IS_BATTLE_SIM && gBattleSimFlags & BATTLE_SIM_TRICK_ROOM);
 }
 
 bool8 IsTrickRoomOnLastTurn(void)
 {
-	if ((IS_BATTLE_CIRCUS && gBattleCircusFlags & BATTLE_CIRCUS_TRICK_ROOM)
+	if ((IS_BATTLE_SIM && gBattleSimFlags & BATTLE_SIM_TRICK_ROOM)
 	#ifdef FLAG_TRICK_ROOM_BATTLE
 	|| FlagGet(FLAG_TRICK_ROOM_BATTLE)
 	#endif
@@ -2438,19 +2438,19 @@ bool8 IsTrickRoomOnLastTurn(void)
 bool8 IsMagicRoomActive(void)
 {
 	return gNewBS->MagicRoomTimer > 0
-		|| (IS_BATTLE_CIRCUS && gBattleCircusFlags & BATTLE_CIRCUS_MAGIC_ROOM);
+		|| (IS_BATTLE_SIM && gBattleSimFlags & BATTLE_SIM_MAGIC_ROOM);
 }
 
 bool8 IsWonderRoomActive(void)
 {
 	return gNewBS->WonderRoomTimer > 0
-		|| (IS_BATTLE_CIRCUS && gBattleCircusFlags & BATTLE_CIRCUS_WONDER_ROOM);
+		|| (IS_BATTLE_SIM && gBattleSimFlags & BATTLE_SIM_WONDER_ROOM);
 }
 
 bool8 IsGravityActive(void)
 {
 	return gNewBS->GravityTimer > 0
-		|| (IS_BATTLE_CIRCUS && gBattleCircusFlags & BATTLE_CIRCUS_GRAVITY);
+		|| (IS_BATTLE_SIM && gBattleSimFlags & BATTLE_SIM_GRAVITY);
 }
 
 bool8 IsIonDelugeActive(void)
@@ -2461,7 +2461,7 @@ bool8 IsIonDelugeActive(void)
 bool8 IsFairyLockActive(void)
 {
 	return gNewBS->FairyLockTimer > 0
-		|| (IS_BATTLE_CIRCUS && gBattleCircusFlags & BATTLE_CIRCUS_FAIRY_LOCK);
+		|| (IS_BATTLE_SIM && gBattleSimFlags & BATTLE_SIM_FAIRY_LOCK);
 }
 
 bool8 IsMudSportActive(void)
@@ -2480,7 +2480,7 @@ bool8 IsDeltaStreamBattle(void)
 		#ifdef FLAG_DELTA_STREAM_BATTLE
 		FlagGet(FLAG_DELTA_STREAM_BATTLE) ||
 		#endif
-		(IS_BATTLE_CIRCUS && gBattleCircusFlags & BATTLE_CIRCUS_DELTA_STREAM);
+		(IS_BATTLE_SIM && gBattleSimFlags & BATTLE_SIM_DELTA_STREAM);
 }
 
 bool8 IsMagnetRiseBattle(void)
@@ -2489,7 +2489,7 @@ bool8 IsMagnetRiseBattle(void)
 		#ifdef FLAG_MAGNET_RISE_BATTLE
 		FlagGet(FLAG_MAGNET_RISE_BATTLE) ||
 		#endif
-		(IS_BATTLE_CIRCUS && gBattleCircusFlags & BATTLE_CIRCUS_MAGNET_RISE);
+		(IS_BATTLE_SIM && gBattleSimFlags & BATTLE_SIM_MAGNET_RISE);
 }
 
 bool8 IsBadThoughtsBattle(void)
@@ -2498,7 +2498,7 @@ bool8 IsBadThoughtsBattle(void)
 		#ifdef FLAG_BAD_THOUGHTS_BATTLE
 		FlagGet(FLAG_BAD_THOUGHTS_BATTLE) ||
 		#endif
-		(IS_BATTLE_CIRCUS && gBattleCircusFlags & BATTLE_CIRCUS_BAD_THOUGHTS);
+		(IS_BATTLE_SIM && gBattleSimFlags & BATTLE_SIM_BAD_THOUGHTS);
 }
 
 bool8 IsShadowShieldBattle(void)
@@ -2516,7 +2516,7 @@ bool8 IsPixieBattle(void)
 		#ifdef FLAG_PIXIE_BATTLE
 		FlagGet(FLAG_PIXIE_BATTLE) ||
 		#endif
-		(IS_BATTLE_CIRCUS && gBattleCircusFlags & BATTLE_CIRCUS_PIXIES);
+		(IS_BATTLE_SIM && gBattleSimFlags & BATTLE_SIM_PIXIES);
 }
 
 bool8 IsInverseBattle(void)
@@ -2525,13 +2525,13 @@ bool8 IsInverseBattle(void)
 		#ifdef FLAG_INVERSE
 		FlagGet(FLAG_INVERSE) ||
 		#endif
-		(IS_BATTLE_CIRCUS && gBattleCircusFlags & BATTLE_CIRCUS_INVERSE);
+		(IS_BATTLE_SIM && gBattleSimFlags & BATTLE_SIM_INVERSE);
 }
 
 bool8 BankSideHasSafeguard(u8 bank)
 {
 	return gSideStatuses[SIDE(bank)] & SIDE_STATUS_SAFEGUARD
-		|| (IS_BATTLE_CIRCUS && gBattleCircusFlags & BATTLE_CIRCUS_SAFEGUARD);
+		|| (IS_BATTLE_SIM && gBattleSimFlags & BATTLE_SIM_SAFEGUARD);
 }
 
 bool8 BankSideHasMist(u8 bank)
@@ -2540,7 +2540,7 @@ bool8 BankSideHasMist(u8 bank)
 
 	return gSideStatuses[side] & SIDE_STATUS_MIST
 		|| gSideTimers[side].mistTimer > 0 //Guard Spec
-		|| (IS_BATTLE_CIRCUS && gBattleCircusFlags & BATTLE_CIRCUS_MIST);
+		|| (IS_BATTLE_SIM && gBattleSimFlags & BATTLE_SIM_MIST);
 }
 
 bool8 BankHasTailwind(u8 bank)
@@ -2569,7 +2569,7 @@ bool8 MonHasTailwind(unusedArg struct Pokemon* mon, u8 side)
 bool8 BankSideHasSeaOfFire(u8 bank)
 {
 	return gNewBS->SeaOfFireTimers[SIDE(bank)]
-		|| (IS_BATTLE_CIRCUS && gBattleCircusFlags & BATTLE_CIRCUS_SEA_OF_FIRE);
+		|| (IS_BATTLE_SIM && gBattleSimFlags & BATTLE_SIM_SEA_OF_FIRE);
 }
 
 bool8 BankHasRainbow(u8 bank)
@@ -2584,7 +2584,7 @@ bool8 BankHasRainbow(u8 bank)
 bool8 BankSideHasRainbow(u8 bank)
 {
 	return gNewBS->RainbowTimers[SIDE(bank)]
-		|| (IS_BATTLE_CIRCUS && gBattleCircusFlags & BATTLE_CIRCUS_RAINBOW);
+		|| (IS_BATTLE_SIM && gBattleSimFlags & BATTLE_SIM_RAINBOW);
 }
 
 bool8 BankSideHasSwamp(u8 bank)
@@ -2620,37 +2620,37 @@ bool8 BankSideHasGMaxVolcalith(u8 bank)
 bool8 IsConfused(u8 bank)
 {
 	return (gBattleMons[bank].status2 & STATUS2_CONFUSION) != 0
-		|| (IS_BATTLE_CIRCUS && gBattleCircusFlags & BATTLE_CIRCUS_CONFUSED && ABILITY(bank) != ABILITY_OWNTEMPO);
+		|| (IS_BATTLE_SIM && gBattleSimFlags & BATTLE_SIM_CONFUSED && ABILITY(bank) != ABILITY_OWNTEMPO);
 }
 
 bool8 IsTaunted(u8 bank)
 {
 	return gDisableStructs[bank].tauntTimer > 0
-		|| (IS_BATTLE_CIRCUS && gBattleCircusFlags & BATTLE_CIRCUS_TAUNT && ABILITY(bank) != ABILITY_OBLIVIOUS);
+		|| (IS_BATTLE_SIM && gBattleSimFlags & BATTLE_SIM_TAUNT && ABILITY(bank) != ABILITY_OBLIVIOUS);
 }
 
 bool8 IsTormented(u8 bank)
 {
 	return (gBattleMons[bank].status2 & STATUS2_TORMENT) != 0
-		|| (IS_BATTLE_CIRCUS && gBattleCircusFlags & BATTLE_CIRCUS_TORMENT);
+		|| (IS_BATTLE_SIM && gBattleSimFlags & BATTLE_SIM_TORMENT);
 }
 
 bool8 IsHealBlocked(u8 bank)
 {
 	return gNewBS->HealBlockTimers[bank] > 0
-		|| (IS_BATTLE_CIRCUS && gBattleCircusFlags & BATTLE_CIRCUS_HEAL_BLOCK);
+		|| (IS_BATTLE_SIM && gBattleSimFlags & BATTLE_SIM_HEAL_BLOCK);
 }
 
 bool8 CantUseSoundMoves(u8 bank)
 {
 	return gNewBS->ThroatChopTimers[bank] > 0
-		|| (IS_BATTLE_CIRCUS && gBattleCircusFlags & BATTLE_CIRCUS_THROAT_CHOP);
+		|| (IS_BATTLE_SIM && gBattleSimFlags & BATTLE_SIM_THROAT_CHOP);
 }
 
 bool8 IsLaserFocused(u8 bank)
 {
 	return gNewBS->LaserFocusTimers[bank] > 0
-		|| (IS_BATTLE_CIRCUS && gBattleCircusFlags & BATTLE_CIRCUS_ALWAYS_CRIT);
+		|| (IS_BATTLE_SIM && gBattleSimFlags & BATTLE_SIM_ALWAYS_CRIT);
 }
 
 bool8 IsAbilitySuppressed(u8 bank)
@@ -2661,7 +2661,7 @@ bool8 IsAbilitySuppressed(u8 bank)
 
 bool8 AreAbilitiesSuppressed(void)
 {
-	return IS_BATTLE_CIRCUS && gBattleCircusFlags & BATTLE_CIRCUS_ABILITY_SUPPRESSION;
+	return IS_BATTLE_SIM && gBattleSimFlags & BATTLE_SIM_ABILITY_SUPPRESSION;
 }
 
 bool8 CantScoreACrit(u8 bank, struct Pokemon* mon)
@@ -2670,7 +2670,7 @@ bool8 CantScoreACrit(u8 bank, struct Pokemon* mon)
 		return FALSE;
 
 	return (gStatuses3[bank] & STATUS3_CANT_SCORE_A_CRIT) != 0
-		|| (IS_BATTLE_CIRCUS && gBattleCircusFlags & BATTLE_CIRCUS_NO_CRITS);
+		|| (IS_BATTLE_SIM && gBattleSimFlags & BATTLE_SIM_NO_CRITS);
 }
 
 void ClearTemporarySpeciesSpriteData(u8 bank, bool8 dontClearSubstitute)

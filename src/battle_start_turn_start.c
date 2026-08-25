@@ -305,7 +305,7 @@ void BattleBeginFirstTurn(void)
 				{
 					gBattleMons[*bank].type3 =  TYPE_BLANK;
 
-					if (AreAbilitiesSuppressed()) //Most likely Circus
+					if (AreAbilitiesSuppressed()) //Most likely Sim
 					{
 						gNewBS->SuppressedAbilities[*bank] = gBattleMons[*bank].ability;
 						gBattleMons[*bank].ability = 0;
@@ -398,7 +398,7 @@ void BattleBeginFirstTurn(void)
 
 			case BTSTART_BAD_THOUGHTS_BATTLE:
 				#ifdef FLAG_BAD_THOUGHTS_BATTLE
-				if (FlagGet(FLAG_BAD_THOUGHTS_BATTLE)) //Only print the message when the flag is set, not in Battle Circus
+				if (FlagGet(FLAG_BAD_THOUGHTS_BATTLE)) //Only print the message when the flag is set, not in Battle Sim
 				{
 					gBankAttacker = GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT);
 					gBattleStringLoader = gText_BadThoughtsBattleStart;
@@ -472,7 +472,7 @@ void BattleBeginFirstTurn(void)
 
 			case BTSTART_PIXIE_BATTLE:
 				#ifdef FLAG_PIXIE_BATTLE
-				if (FlagGet(FLAG_PIXIE_BATTLE)) //Only print the message when the flag is set, not in Battle Circus
+				if (FlagGet(FLAG_PIXIE_BATTLE)) //Only print the message when the flag is set, not in Battle Sim
 				{
 					gBattleStringLoader = gText_PixieBattleStart;
 					BattleScriptPushCursorAndCallback(BattleScript_PrintCustomStringEnd3);
@@ -699,20 +699,20 @@ bool8 TryActivateOWTerrain(void)
 	bool8 effect = FALSE;
 	u8 owTerrain = VarGet(VAR_TERRAIN);
 
-	if (gBattleTypeFlags & BATTLE_TYPE_BATTLE_CIRCUS)
+	if (gBattleTypeFlags & BATTLE_TYPE_BATTLE_SIM)
 	{
 		//Can have at most one of these set at a time
-		switch (gBattleCircusFlags & BATTLE_CIRCUS_TERRAIN) {
-			case BATTLE_CIRCUS_ELECTRIC_TERRAIN:
+		switch (gBattleSimFlags & BATTLE_SIM_TERRAIN) {
+			case BATTLE_SIM_ELECTRIC_TERRAIN:
 				owTerrain = ELECTRIC_TERRAIN;
 				break;
-			case BATTLE_CIRCUS_GRASSY_TERRAIN:
+			case BATTLE_SIM_GRASSY_TERRAIN:
 				owTerrain = GRASSY_TERRAIN;
 				break;
-			case BATTLE_CIRCUS_MISTY_TERRAIN:
+			case BATTLE_SIM_MISTY_TERRAIN:
 				owTerrain = MISTY_TERRAIN;
 				break;
-			case BATTLE_CIRCUS_PSYCHIC_TERRAIN:
+			case BATTLE_SIM_PSYCHIC_TERRAIN:
 				owTerrain = PSYCHIC_TERRAIN;
 				break;
 		}

@@ -1045,8 +1045,8 @@ void BattleSetup_StartTrainerBattle(void)
 			case IN_BATTLE_SANDS:
 				gBattleTypeFlags |= (BATTLE_TYPE_BATTLE_SANDS | BATTLE_TYPE_MOCK_BATTLE);
 				break;
-			case IN_BATTLE_CIRCUS:
-				gBattleTypeFlags |= BATTLE_TYPE_BATTLE_CIRCUS;
+			case IN_BATTLE_SIM:
+				gBattleTypeFlags |= BATTLE_TYPE_BATTLE_SIM;
 				break;
 			case IN_RING_CHALLENGE:
 				gBattleTypeFlags |= BATTLE_TYPE_RING_CHALLENGE;
@@ -1064,7 +1064,7 @@ void BattleSetup_StartTrainerBattle(void)
 		else if (tier == BATTLE_FACILITY_MEGA_BRAWL)
 			gBattleTypeFlags |= BATTLE_TYPE_MEGA_BRAWL;
 
-		if (DynamaxAllowedInTier(tier) || (gBattleTypeFlags & BATTLE_TYPE_BATTLE_CIRCUS && gBattleCircusFlags & BATTLE_CIRCUS_DYNAMAX))
+		if (DynamaxAllowedInTier(tier) || (gBattleTypeFlags & BATTLE_TYPE_BATTLE_SIM && gBattleSimFlags & BATTLE_SIM_DYNAMAX))
 			gBattleTypeFlags |= BATTLE_TYPE_DYNAMAX;
 
 		switch (VarGet(VAR_BATTLE_FACILITY_BATTLE_TYPE)) {
