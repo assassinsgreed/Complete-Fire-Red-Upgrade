@@ -370,6 +370,13 @@ extern u8 gFrontierRunStates[NUM_BATTLE_FACILITIES][NUM_FRONTIER_FORMATS]; //0x2
 extern struct FrontierModifierBackup gFrontierModifierBackup; //0x2026890
 extern struct FrontierBackground gFrontierBackground; //0x2026898
 
+// The Battle Factory's rented team (3 for singles and 4 for doubles).
+// The full 6 options are trimmed to the ones selected when saving the selections when resting.
+#define MAX_FRONTIER_TEAM_SIZE 4
+extern struct Pokemon gFrontierRentalTeams[NUM_FRONTIER_FORMATS][MAX_FRONTIER_TEAM_SIZE]; // 0x202689C
+extern u8 gFrontierPendingSwapSlot; // 0x2026BBC
+extern struct Pokemon gFrontierRentalPool[PARTY_SIZE]; //0x2026BC0
+
 extern const u8* const gBattleFrontierTierNames[NUM_TIERS];
 extern const u8* const gBattleFacilityNames[NUM_BATTLE_FACILITIES];
 

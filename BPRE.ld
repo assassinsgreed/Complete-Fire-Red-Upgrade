@@ -10,7 +10,13 @@
 gFrontierStreaks = 0x2026840;        /* 0x40 bytes */
 gFrontierRunStates = 0x2026880;      /* 0x10 bytes */
 gFrontierModifierBackup = 0x2026890; /* 0x8 bytes */
-gFrontierBackground = 0x2026898;     /* 0x2 bytes; next free 0x202689A */
+gFrontierBackground = 0x2026898;     /* 0x2 bytes */
+/* Battle Factory rentals, one team per restable format (singles/doubles). 4-aligned for struct Pokemon. */
+gFrontierRentalTeams = 0x202689C;    /* 0x320 bytes */
+/* Which rental the player is giving up when taking a Factory opponent's Pokemon, held across the second party screen. */
+gFrontierPendingSwapSlot = 0x2026BBC; /* 0x1 bytes */
+/* The six rentals on offer, snapshotted before the party screen opens. Special 0xF5 zeroes gPlayerParty and refills three slots from an uninitialised buffer, which we need to avoid. */
+gFrontierRentalPool = 0x2026BC0;     /* 0x258 bytes; next free 0x2026E18 */
 gLastUsedBall = 0x203B774;
 gFollowerState = 0x203B818;
 gDontFadeWhite = 0x203C756;

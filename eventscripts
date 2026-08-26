@@ -2969,6 +2969,8 @@ sign 3 17 1 SignScript_BattleFrontier_SWBattleFrontierMarket
 npc 3 18 0 EventScript_BattleFrontier_SEPsychic
 npc 3 18 1 EventScript_BattleFrontier_SEChanneler
 npc 3 18 2 EventScript_BattleFrontier_SEWoman
+### NPCs 3 - 9 are various Pokemon shown out of bounds 
+npc 3 18 10 EventScript_BattleFrontier_SEAceTrainer
 sign 3 18 0 SignScript_BattleFrontier_BattleFactory
 sign 3 18 1 SignScript_BattleFrontier_BattleObservatory
 ## Pokemon Center

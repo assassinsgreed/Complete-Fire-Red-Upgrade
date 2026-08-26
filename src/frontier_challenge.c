@@ -8,7 +8,9 @@
 #include "../include/string_util.h"
 #include "../include/constants/battle.h"
 #include "../include/constants/songs.h"
+#include "../include/pokemon.h"
 
+#include "../include/new/build_pokemon.h"
 #include "../include/new/frontier.h"
 #include "../include/new/util.h"
 #include "../include/new/Vanilla_functions.h"
@@ -26,6 +28,10 @@ frontier_challenge.c
 	these same functions drive all eight facilities. The only per-facility work is the
 	hook each one runs before a battle, which lives in battle_frontier.s.
 
+	The Battle Factory is the one facility that owns state of its own: it rents the player a
+	team instead of letting them bring one, so the rented team must be restored after resting. It lives in
+	gFrontierRentalTeams, keyed by format so a held Singles run and a held Doubles run cannot overwrite each other.
+
 	All functionality callable via callasm instead of new specials, for simplicity
 */
 
@@ -34,6 +40,12 @@ frontier_challenge.c
 
 #define NUM_MONS_SINGLES 3
 #define NUM_MONS_DOUBLES 4
+
+// gFrontierRentalTeams is sized for the larger format rather than per format, so growing a team
+// past MAX_FRONTIER_TEAM_SIZE would silently drop Pokemon off the end of a rested Battle Factory run.
+#if NUM_MONS_DOUBLES > MAX_FRONTIER_TEAM_SIZE
+#error "MAX_FRONTIER_TEAM_SIZE in frontier.h must cover the largest format's team"
+#endif
 
 enum FrontierOpponentKinds
 {
@@ -286,6 +298,8 @@ static void RestoreGameModifiers(void)
 	gFrontierModifierBackup.flags = 0;
 }
 
+static void ClearRentalTeam(u8 format);
+
 static u8 SanitizeFacility(u8 facility)
 {
 	return (facility < NUM_BATTLE_FACILITIES) ? facility : IN_BATTLE_TOWER;
@@ -354,6 +368,13 @@ static bool8 FacilityRollsItsOwnTeams(u8 facility)
 	return facility == IN_BATTLE_MAZE;
 }
 
+// The Battle Factory rents a team once and keeps it for the whole run, so unlike the Maze it stays on the
+// non-random battle types - that is what stops BuildTrainerPartySetup re-rolling gPlayerParty before every battle.
+static bool8 FacilityRentsItsTeam(u8 facility)
+{
+	return facility == IN_BATTLE_FACTORY;
+}
+
 static u8 BattleTypeForFormat(u8 facility, u8 format)
 {
 	if (FacilityRollsItsOwnTeams(facility))
@@ -414,6 +435,7 @@ void FrontierChallenge_InitDataIfNeeded(void)
 		Memset(gFrontierRunStates, 0, sizeof(gFrontierRunStates));
 		Memset(&gFrontierModifierBackup, 0, sizeof(gFrontierModifierBackup));
 		Memset(&gFrontierBackground, 0, sizeof(gFrontierBackground));
+		Memset(gFrontierRentalTeams, 0, sizeof(gFrontierRentalTeams));
 		FlagSet(FLAG_FRONTIER_DATA_INITIALISED);
 		return;
 	}
@@ -428,6 +450,9 @@ void FrontierChallenge_InitDataIfNeeded(void)
 			{
 				SetFrontierStreak(facility, format, CURR_STREAK, 0);
 				*state = FRONTIER_NONE;
+
+				if (facility == IN_BATTLE_FACTORY)
+					ClearRentalTeam(format); // The forfeited run's rented team goes with it
 			}
 		}
 	}
@@ -502,6 +527,9 @@ void FrontierChallenge_End(void)
 	SetFrontierStreak(SanitizeFacility(BATTLE_FACILITY_NUM), GetCurrentFrontierFormat(), CURR_STREAK, 0);
 
 	*GetSelectedRunState() = FRONTIER_NONE;
+
+	if (FacilityRentsItsTeam(SanitizeFacility(BATTLE_FACILITY_NUM)))
+		ClearRentalTeam(GetCurrentFrontierFormat()); // The rented team is only ever on loan for one run
 
 	RestoreGameModifiers();
 }
@@ -692,4 +720,171 @@ void FrontierChallenge_StoreChipsToGive(void)
 void FrontierChallenge_RestoreTextColour(void)
 {
 	gTextColourCurrent = gTextColourBackup;
+}
+
+// ============================================================================
+// Battle Factory rentals
+// ============================================================================
+
+// The slot holding the rented team for the run currently selected. The facility vars name that run, so this is only meaningful once LoadFacilityVars has run.
+static struct Pokemon* GetRentalTeam(void)
+{
+	return gFrontierRentalTeams[GetCurrentFrontierFormat()];
+}
+
+static void ClearRentalTeam(u8 format)
+{
+	Memset(gFrontierRentalTeams[SanitizeFormat(format)], 0, sizeof(gFrontierRentalTeams[0]));
+}
+
+// How many slots of the rented team are in play.
+// Clamped because the save slot is sized for the larger of the two formats rather than per format.
+static u8 NumRentedMons(void)
+{
+	return MathMin(GetNumMonsOnTeamInFrontier(), MAX_FRONTIER_TEAM_SIZE);
+}
+
+// Banks the live team. gPlayerParty is compacted by the time any of this runs, so slot i of the party is slot i of the team.
+static void StoreRentalTeam(void)
+{
+	Memset(GetRentalTeam(), 0, sizeof(gFrontierRentalTeams[0]));
+	Memcpy(GetRentalTeam(), gPlayerParty, sizeof(struct Pokemon) * NumRentedMons());
+}
+
+static void RestoreRentalTeam(void)
+{
+	ZeroPlayerPartyMons();
+	Memcpy(gPlayerParty, GetRentalTeam(), sizeof(struct Pokemon) * NumRentedMons());
+	CalculatePlayerPartyCount();
+}
+
+// Whether the selected facility hands the player a team instead of asking them to bring one.
+// Returns: LastResult: TRUE at the Battle Factory.
+void FrontierChallenge_IsRentalFacility(void)
+{
+	gSpecialVar_LastResult = FacilityRentsItsTeam(SanitizeFacility(BATTLE_FACILITY_NUM));
+}
+
+// Whether the facility supplies the team rather than asking the player to bring one - the Maze rolls
+// a fresh one every battle, the Factory rents one for the whole run. Either way there is no team for
+// the player to re-enter when they pick a held run back up.
+// Returns: LastResult: TRUE at the Battle Maze and the Battle Factory.
+void FrontierChallenge_IsProvidedTeamFacility(void)
+{
+	u8 facility = SanitizeFacility(BATTLE_FACILITY_NUM);
+
+	gSpecialVar_LastResult = FacilityRollsItsOwnTeams(facility) || FacilityRentsItsTeam(facility);
+}
+
+// Fills gPlayerParty with the six rentals the player picks their team out of, and keeps a copy. The
+// real party must already be backed up (special 0x27); special 0x28 brings it back once the choice is made.
+//
+// The copy is not redundant. Special 0xF5 does not merely reorder gPlayerParty - it CpuFastSets all
+// six slots to zero and then refills three of them from an uninitialised Alloc buffer, because the
+// vanilla routine still reads the selection order from 0x203B0D4 and CFRU moved that array to
+// 0x203C750. Every other caller gets away with it by restoring the real party straight afterwards;
+// the rental pool has nowhere to be restored from, so it is snapshotted here instead.
+void FrontierChallenge_GenerateRentalPool(void)
+{
+	BuildBattleFactoryRentalPool();
+	Memcpy(gFrontierRentalPool, gPlayerParty, sizeof(gFrontierRentalPool));
+}
+
+// Banks the team the player just picked out of the pool.
+// Reads the snapshot rather than gPlayerParty, which special 0xF5 has already destroyed, and which
+// only ever gets three slots written back - Doubles enters four.
+void FrontierChallenge_StoreRentalPoolChoice(void)
+{
+	u32 i;
+	u8 numMons = NumRentedMons();
+	struct Pokemon* team = GetRentalTeam();
+
+	Memset(team, 0, sizeof(gFrontierRentalTeams[0]));
+
+	for (i = 0; i < numMons && gSelectedOrderFromParty[i] != 0; ++i)
+		Memcpy(&team[i], &gFrontierRentalPool[gSelectedOrderFromParty[i] - 1], sizeof(struct Pokemon));
+
+	Memset(gFrontierRentalPool, 0, sizeof(gFrontierRentalPool)); // Done with, and it rides the save file
+}
+
+// Puts the rented team into gPlayerParty. Stands in for sp073 at the Factory, whose team is already
+// built and level-adjusted and whose gSelectedOrderFromParty points at a rental pool long gone.
+void FrontierChallenge_RestoreRentalTeam(void)
+{
+	RestoreRentalTeam();
+}
+
+// Banks the live team so a Rest can be picked back up with it. A no-op away from the Factory, so the
+// shared Rest path can call it without asking which facility it is in.
+void FrontierChallenge_StoreRentalTeam(void)
+{
+	if (FacilityRentsItsTeam(SanitizeFacility(BATTLE_FACILITY_NUM)))
+		StoreRentalTeam();
+}
+
+// Swaps the opponent's team into gPlayerParty so the party screen can show it off. The player's own
+// team is banked on the way out, which is where the swap and every back-out path read it back from.
+// Inputs:
+//		Var8004: slot of the Pokemon the player is giving up, from the first party screen. Handled
+//				 here rather than left in a script var, which the second screen is free to reuse.
+void FrontierChallenge_LoadOpponentTeamForSwap(void)
+{
+	u32 i;
+	u8 numMons = NumRentedMons();
+
+	gFrontierPendingSwapSlot = Var8004;
+
+	StoreRentalTeam();
+	ZeroPlayerPartyMons();
+
+	for (i = 0; i < numMons; ++i)
+	{
+		if (GetMonData(&gEnemyParty[i], MON_DATA_SPECIES, NULL) == SPECIES_NONE)
+			break;
+
+		gPlayerParty[i] = gEnemyParty[i];
+		HealMon(&gPlayerParty[i]); // Shown, and handed over, in the state the player would receive it
+	}
+
+	CalculatePlayerPartyCount();
+}
+
+// Trades one of the player's Pokemon for one of the opponent's and banks the result.
+// Inputs:
+//		Var8004: slot of the opponent's Pokemon the player is taking, from the second party screen.
+//		gFrontierPendingSwapSlot: slot they are giving up, handled by the call before this one.
+// Returns: LastResult: TRUE if a trade actually happened. FALSE means nothing changed and the
+//			     player still owes the caller a decision - never report a trade they did not make.
+//			gStringVar1: the Pokemon given up.
+//			gStringVar2: the Pokemon taken.
+void FrontierChallenge_ApplySwap(void)
+{
+	u8 numMons = NumRentedMons();
+	u8 giveUp = gFrontierPendingSwapSlot;
+	u8 takeOn = Var8004;
+	struct Pokemon taken;
+
+	// gPlayerParty still holds the opponent's team at this point, and the player's is banked.
+	if (giveUp >= numMons || takeOn >= numMons
+	|| GetMonData(&gPlayerParty[takeOn], MON_DATA_SPECIES, NULL) == SPECIES_NONE)
+	{
+		RestoreRentalTeam(); // Nothing to trade, so put the player's team back untouched
+		gSpecialVar_LastResult = FALSE;
+		return;
+	}
+
+	taken = gPlayerParty[takeOn]; // Already healed by FrontierChallenge_LoadOpponentTeamForSwap
+	RestoreRentalTeam();
+
+	GetSpeciesName(gStringVar1, GetMonData(&gPlayerParty[giveUp], MON_DATA_SPECIES, NULL));
+	GetSpeciesName(gStringVar2, GetMonData(&taken, MON_DATA_SPECIES, NULL));
+
+	gPlayerParty[giveUp] = taken;
+	CalculateMonStats(&gPlayerParty[giveUp]); // Before the heal, so the HP it is topped up to is right
+	HealMon(&gPlayerParty[giveUp]);
+
+	StoreRentalTeam();
+	CalculatePlayerPartyCount();
+
+	gSpecialVar_LastResult = TRUE;
 }

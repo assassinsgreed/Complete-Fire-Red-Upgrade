@@ -67,7 +67,7 @@ Cancel
 // Modifier Descriptions
 
 #org @gText_GameModifiers_RandomizerSpecies_Description
-When enabled, randomizes Pok\emon\nspecies.\pRandomization can be done against\nthe Kulure dex or gens 1-8.\p[RED]NOTE: Gens 1-8 randomizaiton is\nnot guaranteed to be stable!
+When enabled, randomizes Pok\emon\nspecies.\pRandomization can be done against\nthe Kulure dex or gens 1-8.\p[RED]NOTE: Some items are unavailable\nin Gens 1- 8 randomizaiton.
 
 #org @gText_GameModifiers_RandomizerMovesets_Description
 When enabled, randomizes Pok\emon\nmovesets.

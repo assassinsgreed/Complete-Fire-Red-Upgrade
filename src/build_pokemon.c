@@ -62,8 +62,11 @@ build_pokemon.c
 // BuildFrontierParty's forPlayer argument
 //  - FOR_PLAYER_RENTAL is the borrowed team handed out by the Battle Maze/Factory
 //  - FOR_PLAYER_TEAM is sized to VAR_BATTLE_FACILITY_POKE_NUM rather than filling all six slots.
-#define FOR_PLAYER_TEAM   TRUE
-#define FOR_PLAYER_RENTAL (TRUE + 1)
+//  - FOR_PLAYER_RENTAL_POOL is a rental drawn a full six at a time, for the Battle Factory to offer as a pool.
+#define FOR_PLAYER_TEAM        TRUE
+#define FOR_PLAYER_RENTAL      (TRUE + 1)
+#define FOR_PLAYER_RENTAL_POOL (TRUE + 2)
+#define IS_RENTAL(forPlayer) ((forPlayer) == FOR_PLAYER_RENTAL || (forPlayer) == FOR_PLAYER_RENTAL_POOL)
 
 enum
 {
@@ -486,6 +489,14 @@ static void TryGiveMonOnlyMetronome(struct Pokemon* mon)
 
 		SetMonData(mon, MON_DATA_HELD_ITEM, &item);
 	}
+}
+
+// Fills gPlayerParty with the six rentals the Battle Factory offers the player to choose from.
+// Overwrites every party slot, so callers must back up the player party first!
+void BuildBattleFactoryRentalPool(void)
+{
+	BuildFrontierParty(gPlayerParty, 0, VarGet(VAR_BATTLE_FACILITY_TIER), TRUE, FOR_PLAYER_RENTAL_POOL, B_SIDE_PLAYER);
+	CalculatePlayerPartyCount();
 }
 
 extern void SortItemsInBag(u8 pocket, u8 type);
@@ -1715,7 +1726,8 @@ static u8 BuildFrontierParty(struct Pokemon* const party, const u16 trainerId, c
 	else if (firstTrainer && firstTrainer != 3) //Clear if not multi partner
 		ZeroEnemyPartyMons();
 
-	if (forPlayer == FOR_PLAYER_TEAM) //Excludes random battles
+	if (forPlayer == FOR_PLAYER_TEAM //Excludes random battles
+	||  forPlayer == FOR_PLAYER_RENTAL_POOL) //The Factory offers six and lets the player choose from those options
 		monsCount = PARTY_SIZE;
 	else if (gBattleTypeFlags & BATTLE_TYPE_TWO_OPPONENTS && battleTowerPokeNum > 3 && side == B_SIDE_OPPONENT)
 		monsCount = 3;
@@ -2078,7 +2090,7 @@ static u8 BuildFrontierParty(struct Pokemon* const party, const u16 trainerId, c
 				default: //forPlayer
 					switch (tier) {
 						case BATTLE_FACILITY_NO_RESTRICTIONS:
-							if (forPlayer == FOR_PLAYER_RENTAL)
+							if (IS_RENTAL(forPlayer))
 								goto REGULAR_SPREADS;
 							__attribute__ ((fallthrough));
 						case BATTLE_FACILITY_UBER:
@@ -2824,7 +2836,7 @@ static bool8 IsPokemonBannedBasedOnStreak(u16 species, u16 item, u16* speciesArr
 			return TRUE;
 
 		// Player rentals are exempt from streak based ramp-ups.
-		if (forPlayer == FOR_PLAYER_RENTAL)
+		if (IS_RENTAL(forPlayer))
 			return FALSE;
 
 		//Better Pokemon are given to the player the better the streak

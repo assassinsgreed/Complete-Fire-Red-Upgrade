@@ -211,6 +211,9 @@ The spirit of battle is strong here.
 #org @gText_BattleFrontier_SEWoman
 Do you think anyone has ever\nconquered every facility here?
 
+#org @gText_BattleFrontier_SEAceTrainer
+Many trainers new to the Battle\nFrontier like to visit the Battle\lFactory and Battle Maze first.\pThose facilities let you borrow\nPok\emon, so you can rack up\lPok\eChips while you strengthen your\lown Pok\emon.
+
 #org @gText_BattleFrontier_SimPicknicker
 The Battle Sim causes random effects\nto trigger in each battle.\pI heard that the higher your streak\nis, the more effects there are.\pThat'll make battles pretty tough,\nwon't it..?
 
@@ -478,6 +481,9 @@ The Battle Sim runs every battle as\na simulation, and no two are alike.\pBefore
 #org @gText_BattleFrontier_MazeRules
 In the Battle Maze, you're handed a\nrandom team to battle with.\pThis team is built from the same pool\nyour opponents may have.\pYour team is changed after every\nbattle.\pThere is nothing to prepare for this\nfacility - just do your best!
 
+#org @gText_BattleFrontier_FactoryRules
+At the Battle Factory, you rent a\nteam to battle with from us.\pI'll lay out six Pok\emon, drawn from\nthe same pool as your opponents.\pYou choose which of them to enter,\nand they are yours for the run.\pAfter every win, you may trade one\nof yours for one you just faced.\pIf you choose to rest, the team you\nwere using is used when you return.
+
 #org @gText_BattleFrontier_IsleRules
 Battles at the Battle Isle are\nfought in the traditional way.\pHeld items and abilities do not\nactiavate.\pMega Evolution and Z-Moves have no\nplace here either.\pAll moves are physical or special\nbased on their type.
 
@@ -514,6 +520,28 @@ The [BUFFER2] format? I'll give you\n[BUFFER3] Pok\emon per battle.\pIs that oka
 
 #org @gText_BattleFrontier_ChooseTeam
 Please choose the Pok\emon you'd\nlike to enter.
+
+// Shown for the Battle Factory, which lays out a pool and lets the player choose 3/4 from there
+#org @gText_BattleFrontier_ConfirmChallengeRental
+The [BUFFER2] format? I'll provide six\nPok\emon for you to choose from.\pYou'll enter [BUFFER3] of them.\nIs that okay?
+
+#org @gText_BattleFrontier_FactoryChooseRentals
+Here are your options. Please choose\nthe ones you'd like to rent.
+
+#org @gText_BattleFrontier_FactorySwapPrompt
+You may swap one of your Pok\emon\nwith one your opponent had.\pWould you like to swap?
+
+#org @gText_BattleFrontier_FactorySwapChooseOwn
+Which of your Pok\emon will you\ngive up?
+
+#org @gText_BattleFrontier_FactorySwapChooseTheirs
+And which of theirs would you\nlike to take?
+
+#org @gText_BattleFrontier_FactorySwapDone
+Done! [BUFFER1] has gone with your\nopponent, and [BUFFER2] joins you.
+
+#org @gText_BattleFrontier_FactorySwapDeclined
+Very well - you'll continue with\nthe team you have.
 
 //------------------------------------------------------------------
 // Walking to and from the battle area
@@ -598,6 +626,10 @@ We'll be waiting for you!
 
 #org @gText_BattleFrontier_WelcomeBackRested
 Your [BUFFER2] streak of [BUFFER3]\nis currently on hold.\pFeel free to bring a different\nteam this time, if you like.
+
+// Variant for the Maze and Factory, which hand the player their team
+#org @gText_BattleFrontier_WelcomeBackRestedProvidedTeam
+Your [BUFFER2] streak of [BUFFER3]\nis currently on hold.
 
 #org @gText_BattleFrontier_OnHoldMenuPrompt
 What would you like to do with it?

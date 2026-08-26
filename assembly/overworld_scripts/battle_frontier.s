@@ -513,6 +513,11 @@ EventScript_BattleFrontier_SEWoman:
     npcchat gText_BattleFrontier_SEWoman
     end
 
+.global EventScript_BattleFrontier_SEAceTrainer
+EventScript_BattleFrontier_SEAceTrainer:
+    npcchat gText_BattleFrontier_SEAceTrainer
+    end
+
 .global EventScript_BattleFrontier_TowerBoy
 EventScript_BattleFrontier_TowerBoy:
     npcchat gText_BattleFrontier_TowerBoy
@@ -727,7 +732,9 @@ SignScript_BattleFrontier_BattleObservatory:
 .equ SPECIAL_UPDATE_FACILITY_STREAK, 0x55
 .equ SPECIAL_SHOW_FRONTIER_RECORDS, 0x57
 .equ SPECIAL_MODIFY_TEAM_FOR_FRONTIER, 0x73
+.equ SPECIAL_CHOOSE_PARTY_MON, 0x9F
 .equ SPECIAL_LOAD_BATTLE_SIM_EFFECTS, 0x72
+.equ PARTY_MENU_CANCELLED, 0x6
 
 @ From include/constants/songs.h
 .equ MUS_BIG_CELEBRATION, 0x10C
@@ -755,6 +762,8 @@ SignScript_BattleFrontier_BattleObservatory:
 .equ BATTLE_QUARRY_OPPONENT, 0x2
 .equ BATTLE_SIM_ATTENDANT, 0x1
 .equ BATTLE_SIM_OPPONENT, 0x2
+.equ BATTLE_FACTORY_ATTENDANT, 0x1
+.equ BATTLE_FACTORY_OPPONENT, 0x2
 .equ BATTLE_ISLE_ATTENDANT, 0x1
 .equ BATTLE_ISLE_OPPONENT, 0x2
 .equ BATTLE_MAZE_ATTENDANT, 0x5
@@ -872,6 +881,7 @@ BattleFrontier_Common_FacilityRules:
     case IN_BATTLE_SANDS, BattleFrontier_Sands_Rules, _call
     case IN_BATTLE_QUARRY, BattleFrontier_Quarry_Rules, _call
     case IN_BATTLE_SIM, BattleFrontier_Sim_Rules, _call
+    case IN_BATTLE_FACTORY, BattleFrontier_Factory_Rules, _call
     case IN_BATTLE_MAZE, BattleFrontier_Maze_Rules, _call
     case IN_BATTLE_ISLE, BattleFrontier_Isle_Rules, _call
     goto BattleFrontier_Common_Rules
@@ -890,6 +900,10 @@ BattleFrontier_Quarry_Rules:
 
 BattleFrontier_Sim_Rules:
     msgbox gText_BattleFrontier_SimRules MSG_KEEPOPEN
+    return
+
+BattleFrontier_Factory_Rules:
+    msgbox gText_BattleFrontier_FactoryRules MSG_KEEPOPEN
     return
 
 BattleFrontier_Maze_Rules:
@@ -998,10 +1012,17 @@ BattleFrontier_Common_BeginChallenge:
     callasm FrontierChallenge_BufferNumMonsToEnter
     compare VAR_BATTLE_FACILITY_NUM IN_BATTLE_MAZE
     if equal _goto BattleFrontier_Common_ConfirmRandomTeamChallenge
+    compare VAR_BATTLE_FACILITY_NUM IN_BATTLE_FACTORY
+    if equal _goto BattleFrontier_Common_ConfirmRentalChallenge
     msgbox gText_BattleFrontier_ConfirmChallenge MSG_YESNO
     goto BattleFrontier_Common_ChallengeConfirmed
 
-@ The Battle Maze and Battle Factory don't ask the player to bring their own teams
+@ The Battle Factory lays out a pool of six and asks the player to cut it down to a team
+BattleFrontier_Common_ConfirmRentalChallenge:
+    msgbox gText_BattleFrontier_ConfirmChallengeRental MSG_YESNO
+    goto BattleFrontier_Common_ChallengeConfirmed
+
+@ The Battle Maze doesn't ask the player to bring, or even to pick, their own team
 BattleFrontier_Common_ConfirmRandomTeamChallenge:
     msgbox gText_BattleFrontier_ConfirmChallengeRandom MSG_YESNO
 
@@ -1022,13 +1043,24 @@ BattleFrontier_Common_ChallengeConfirmed:
 @     with the level 50 normalized copy.
 @   - the modifier override has to follow the save, so the player's preferred modifiers
 @     remain set in the save file - see FrontierChallenge_OverrideGameModifiers.
-@   - sp073 goes last, because replacing the party is exactly what it does.
+@   - loading the entered team goes last, because replacing the party is exactly what it does.
 BattleFrontier_Common_StartRun:
     call BattleFrontier_Common_CommitRun
     callasm FrontierChallenge_OverrideGameModifiers
-    special SPECIAL_MODIFY_TEAM_FOR_FRONTIER
+    call BattleFrontier_Common_LoadEnteredTeam
     call BattleFrontier_Common_EnterBattlePosition @ After CommitRun's save, so a reset returns the player to the lobby
     goto BattleFrontier_Common_BattleLoop
+
+BattleFrontier_Common_LoadEnteredTeam:
+    callasm FrontierChallenge_IsRentalFacility
+    compare LASTRESULT TRUE
+    if equal _goto BattleFrontier_Common_LoadRentedTeam
+    special SPECIAL_MODIFY_TEAM_FOR_FRONTIER
+    return
+
+BattleFrontier_Common_LoadRentedTeam:
+    callasm FrontierChallenge_RestoreRentalTeam
+    return
 
 @ Handles both a new run and a resumed run.
 @ The run is set to ACTIVE in the player save so FrontierChallenge_InitDataIfNeeded will cancel
@@ -1054,6 +1086,8 @@ BattleFrontier_Common_EnterTeam:
     special SPECIAL_SAVE_PLAYER_PARTY
     compare VAR_BATTLE_FACILITY_NUM IN_BATTLE_MAZE
     if equal _goto BattleFrontier_Common_EnterTeamRolled
+    compare VAR_BATTLE_FACILITY_NUM IN_BATTLE_FACTORY
+    if equal _goto BattleFrontier_Common_EnterTeamRented
     msgbox gText_BattleFrontier_ChooseTeam MSG_KEEPOPEN
     special SPECIAL_CHOOSE_FRONTIER_TEAM
     waitstate
@@ -1065,6 +1099,26 @@ BattleFrontier_Common_EnterTeam:
     return
 
 BattleFrontier_Common_EnterTeamCancelled:
+    setvar LASTRESULT FALSE
+    return
+
+@ The player rents a party for the Battle Factory using gPlayerParty to present options,
+@ so every exit path has to put the real party back.
+BattleFrontier_Common_EnterTeamRented:
+    callasm FrontierChallenge_GenerateRentalPool
+    msgbox gText_BattleFrontier_FactoryChooseRentals MSG_KEEPOPEN
+    special SPECIAL_CHOOSE_FRONTIER_TEAM
+    waitstate
+    callasm FrontierChallenge_DidChooseTeam
+    compare LASTRESULT FALSE
+    if equal _goto BattleFrontier_Common_EnterTeamRentedCancelled
+    callasm FrontierChallenge_StoreRentalPoolChoice
+    special SPECIAL_LOAD_PLAYER_PARTY
+    setvar LASTRESULT TRUE
+    return
+
+BattleFrontier_Common_EnterTeamRentedCancelled:
+    special SPECIAL_LOAD_PLAYER_PARTY @ Unlike the normal path, the pool is live in gPlayerParty
     setvar LASTRESULT FALSE
     return
 
@@ -1121,6 +1175,7 @@ BattleFrontier_Common_EnterBattlePosition:
     case IN_BATTLE_SANDS, BattleFrontier_Sands_EnterBattlePosition, _call
     case IN_BATTLE_QUARRY, BattleFrontier_Quarry_EnterBattlePosition, _call
     case IN_BATTLE_SIM, BattleFrontier_Sim_EnterBattlePosition, _call
+    case IN_BATTLE_FACTORY, BattleFrontier_Factory_EnterBattlePosition, _call
     case IN_BATTLE_MAZE, BattleFrontier_Maze_EnterBattlePosition, _call
     case IN_BATTLE_ISLE, BattleFrontier_Isle_EnterBattlePosition, _call
     return
@@ -1133,6 +1188,7 @@ BattleFrontier_Common_PerBattleSetup:
     case IN_BATTLE_SANDS, BattleFrontier_Sands_PerBattleSetup, _call
     case IN_BATTLE_QUARRY, BattleFrontier_Quarry_PerBattleSetup, _call
     case IN_BATTLE_SIM, BattleFrontier_Sim_PerBattleSetup, _call
+    case IN_BATTLE_FACTORY, BattleFrontier_Factory_PerBattleSetup, _call
     case IN_BATTLE_MAZE, BattleFrontier_Maze_PerBattleSetup, _call
     case IN_BATTLE_ISLE, BattleFrontier_Isle_PerBattleSetup, _call
     return
@@ -1143,6 +1199,7 @@ BattleFrontier_Common_OpponentArrives:
     case IN_BATTLE_SANDS, BattleFrontier_Sands_OpponentArrives, _call
     case IN_BATTLE_QUARRY, BattleFrontier_Quarry_OpponentArrives, _call
     case IN_BATTLE_SIM, BattleFrontier_Sim_OpponentArrives, _call
+    case IN_BATTLE_FACTORY, BattleFrontier_Factory_OpponentArrives, _call
     case IN_BATTLE_MAZE, BattleFrontier_Maze_OpponentArrives, _call
     case IN_BATTLE_ISLE, BattleFrontier_Isle_OpponentArrives, _call
     return
@@ -1153,6 +1210,7 @@ BattleFrontier_Common_PostBattleReset:
     case IN_BATTLE_SANDS, BattleFrontier_Sands_PostBattleReset, _call
     case IN_BATTLE_QUARRY, BattleFrontier_Quarry_PostBattleReset, _call
     case IN_BATTLE_SIM, BattleFrontier_Sim_PostBattleReset, _call
+    case IN_BATTLE_FACTORY, BattleFrontier_Factory_PostBattleReset, _call
     case IN_BATTLE_MAZE, BattleFrontier_Maze_PostBattleReset, _call
     case IN_BATTLE_ISLE, BattleFrontier_Isle_PostBattleReset, _call
     return
@@ -1163,6 +1221,7 @@ BattleFrontier_Common_LeaveBattlePosition:
     case IN_BATTLE_SANDS, BattleFrontier_Sands_LeaveBattlePosition, _call
     case IN_BATTLE_QUARRY, BattleFrontier_Quarry_LeaveBattlePosition, _call
     case IN_BATTLE_SIM, BattleFrontier_Sim_LeaveBattlePosition, _call
+    case IN_BATTLE_FACTORY, BattleFrontier_Factory_LeaveBattlePosition, _call
     case IN_BATTLE_MAZE, BattleFrontier_Maze_LeaveBattlePosition, _call
     case IN_BATTLE_ISLE, BattleFrontier_Isle_LeaveBattlePosition, _call
     return
@@ -1443,6 +1502,96 @@ m_BattleSim_PlayerToLobby: .byte walk_right, walk_right, walk_right, walk_down, 
 m_BattleSim_AttendantToLobby: .byte walk_right, walk_right, walk_right, walk_down, walk_down, walk_down, walk_down, walk_down, walk_left, look_right, pause_long, walk_right, walk_down, look_down, end_m
 
 @ ----------------------------------------------------------------------------
+@ Battle Factory Movements
+@ ----------------------------------------------------------------------------
+
+BattleFrontier_Factory_EnterBattlePosition:
+    msgbox gText_BattleFrontier_LeadToBattlePosition MSG_NORMAL
+    applymovement PLAYER m_BattleFactory_PlayerToBattlePosition
+    applymovement BATTLE_FACTORY_ATTENDANT m_BattleFactory_AttendantToBattlePosition
+    waitmovement ALLEVENTS
+    special CAMERA_START
+    applymovement CAMERA m_BattleFacility_CameraMoveRight_2
+    waitmovement CAMERA
+    special CAMERA_END
+    return
+
+BattleFrontier_Factory_PerBattleSetup:
+    applymovement PLAYER m_LookRight
+    applymovement BATTLE_FACTORY_ATTENDANT m_LookRight
+    return
+
+BattleFrontier_Factory_OpponentArrives:
+    msgbox gText_BattleFrontier_CallingOpponent MSG_NORMAL
+    showsprite BATTLE_FACTORY_OPPONENT
+    applymovement BATTLE_FACTORY_OPPONENT m_BattleFactory_OpponentToBattlePosition
+    waitmovement ALLEVENTS
+    return
+
+BattleFrontier_Factory_PostBattleReset:
+    applymovement PLAYER m_LookDown
+    applymovement BATTLE_FACTORY_ATTENDANT m_LookUp
+    applymovement BATTLE_FACTORY_OPPONENT m_BattleFactory_OpponentLeaves
+    call BattleFrontier_Common_CommentOnResult @ Before the wait, so it plays over the opponent leaving
+    waitmovement ALLEVENTS
+    closeonkeypress
+    hidesprite BATTLE_FACTORY_OPPONENT
+    return
+
+BattleFrontier_Factory_LeaveBattlePosition:
+    msgbox gText_BattleFrontier_LeadToLobby MSG_NORMAL
+    special CAMERA_START
+    applymovement CAMERA m_BattleFacility_CameraMoveLeft_2
+    waitmovement CAMERA
+    special CAMERA_END
+    applymovement PLAYER m_BattleFactory_PlayerToLobby
+    applymovement BATTLE_FACTORY_ATTENDANT m_BattleFactory_AttendantToLobby
+    waitmovement ALLEVENTS
+    return
+
+@ The player can swap a Pokemon for their opponents after each battle.
+@ This uses 2 party select screens to show the player's rented party and their opponent's
+BattleFrontier_Factory_OfferSwap:
+    msgbox gText_BattleFrontier_FactorySwapPrompt MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto BattleFrontier_Factory_SwapDeclined
+
+BattleFrontier_Factory_SwapChooseOwn:
+    msgbox gText_BattleFrontier_FactorySwapChooseOwn MSG_KEEPOPEN
+    special SPECIAL_CHOOSE_PARTY_MON
+    waitstate
+    compare 0x8004 PARTY_MENU_CANCELLED
+    if greaterorequal _goto BattleFrontier_Factory_SwapDeclined
+    callasm FrontierChallenge_LoadOpponentTeamForSwap @ Captures 0x8004 before the opponent's team reuses it
+    msgbox gText_BattleFrontier_FactorySwapChooseTheirs MSG_KEEPOPEN
+    special SPECIAL_CHOOSE_PARTY_MON
+    waitstate
+    compare 0x8004 PARTY_MENU_CANCELLED
+    if greaterorequal _goto BattleFrontier_Factory_SwapCancelled
+    callasm FrontierChallenge_ApplySwap
+    compare LASTRESULT FALSE @ The swap was cancelled, ask again
+    if equal _goto BattleFrontier_Factory_SwapCancelled
+    msgbox gText_BattleFrontier_FactorySwapDone MSG_KEEPOPEN
+    return
+
+@ Backed out of the second screen; restore the player's rented for displaying again
+BattleFrontier_Factory_SwapCancelled:
+    callasm FrontierChallenge_RestoreRentalTeam
+    goto BattleFrontier_Factory_SwapChooseOwn
+
+BattleFrontier_Factory_SwapDeclined:
+    msgbox gText_BattleFrontier_FactorySwapDeclined MSG_KEEPOPEN
+    return
+
+@ Movements
+m_BattleFactory_PlayerToBattlePosition: .byte walk_up, walk_up, walk_up, walk_up, walk_up, walk_up, walk_up, walk_left, walk_left, look_right, end_m
+m_BattleFactory_AttendantToBattlePosition: .byte walk_up, walk_up, walk_up, walk_up, walk_up, walk_left, pause_long, pause_long, walk_left, look_right, end_m
+m_BattleFactory_OpponentToBattlePosition: .byte walk_up, walk_up, walk_up, walk_up, walk_up, walk_right, walk_right, look_left, end_m
+m_BattleFactory_OpponentLeaves: .byte walk_left, walk_left, walk_down, walk_down, walk_down, walk_down, walk_down, end_m
+m_BattleFactory_PlayerToLobby: .byte walk_right, walk_right, walk_down, walk_down, walk_down, walk_down, walk_down, walk_down, walk_down, look_up, end_m
+m_BattleFactory_AttendantToLobby: .byte walk_right, walk_right, walk_down, walk_down, walk_left, look_right, pause_long, walk_right, walk_down, walk_down, walk_down, look_down, end_m
+
+@ ----------------------------------------------------------------------------
 @ Battle Maze Movements
 @ ----------------------------------------------------------------------------
 
@@ -1610,12 +1759,23 @@ BattleFrontier_Common_Win:
     setvar 0x8000 ITEM_POKE_CHIP
     copyvar 0x8001 LASTRESULT
     callstd MSG_OBTAIN
-    goto BattleFrontier_Common_ChallengeMenu
+    goto BattleFrontier_Common_AfterWin
 
 @ Reminder: Player can only hold 999 PokeChips so they may get reduced (or no) rewards based on bag stock
 BattleFrontier_Common_WinNoRoomForChips:
     msgbox gText_BattleFrontier_WinRewardCaseFull MSG_KEEPOPEN
+    goto BattleFrontier_Common_AfterWin
+
+@ After the reward and before the Continue / Rest / Give up menu, so players at the
+@ Battle Factory can choose to adjust their team before saving it via resting
+BattleFrontier_Common_AfterWin:
+    call BattleFrontier_Common_PostWinSetup
     goto BattleFrontier_Common_ChallengeMenu
+
+BattleFrontier_Common_PostWinSetup:
+    switch VAR_BATTLE_FACILITY_NUM
+    case IN_BATTLE_FACTORY, BattleFrontier_Factory_OfferSwap, _call
+    return
 
 @ Offer to continue, rest, or abandon (can't press B to choose)
 @ This handles special text for Ace / Brain battles
@@ -1655,7 +1815,15 @@ BattleFrontier_Common_ChallengeMenuOptions:
 @ Only hit when choosing a paused run. Player can still choose to cancel out without losing their streak
 BattleFrontier_Common_RunOnHold:
     callasm FrontierChallenge_BufferFacilityInfo
+    callasm FrontierChallenge_IsProvidedTeamFacility
+    compare LASTRESULT TRUE
+    if equal _goto BattleFrontier_Common_RunOnHoldProvidedTeam
     msgbox gText_BattleFrontier_WelcomeBackRested MSG_KEEPOPEN
+    goto BattleFrontier_Common_OnHoldMenu
+
+@ The Maze and the Factory hand the player their team, so there is nothing to invite them to bring
+BattleFrontier_Common_RunOnHoldProvidedTeam:
+    msgbox gText_BattleFrontier_WelcomeBackRestedProvidedTeam MSG_KEEPOPEN
     goto BattleFrontier_Common_OnHoldMenu
 
 @ Warned about the same way as the mid-run menu. The streak is whatever Rest left behind and the
@@ -1694,9 +1862,18 @@ BattleFrontier_Common_OnHoldMenuOptions:
 BattleFrontier_Common_ResumeRun:
     callasm FrontierChallenge_BufferFacilityInfo
     callasm FrontierChallenge_BufferNumMonsToEnter
+    callasm FrontierChallenge_IsRentalFacility
+    compare LASTRESULT TRUE
+    if equal _goto BattleFrontier_Common_ResumeRentedRun
     call BattleFrontier_Common_EnterTeam
     compare LASTRESULT FALSE
     if equal _goto BattleFrontier_Common_OnHoldMenu
+    goto BattleFrontier_Common_StartRun
+
+@ A Battle Factory challenge is resumed with the team they had at the time of rest.
+@ The player's real party still has to be backed up, or StartRun would overwrite it with the rentals.
+BattleFrontier_Common_ResumeRentedRun:
+    special SPECIAL_SAVE_PLAYER_PARTY
     goto BattleFrontier_Common_StartRun
 
 @ When resting, the streak is saved and game modifiers are restored. The player
@@ -1705,6 +1882,7 @@ BattleFrontier_Common_Rest:
     msgbox gText_BattleFrontier_ConfirmRest MSG_YESNO
     compare LASTRESULT NO
     if equal _goto BattleFrontier_Common_ChallengeMenu
+    callasm FrontierChallenge_StoreRentalTeam @ Before 0x28, while a rented team is still live in gPlayerParty
     special SPECIAL_LOAD_PLAYER_PARTY
     callasm FrontierChallenge_SetResting
     callasm FrontierChallenge_ClearFacilityVars @ Before the save, or the facility state would be on disk as well as in RAM.
