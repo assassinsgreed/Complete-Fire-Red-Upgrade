@@ -252,6 +252,11 @@ static const u16 gFrontierOverriddenModifierFlags[] =
 
 #define NUM_OVERRIDDEN_MODIFIER_FLAGS ARRAY_COUNT(gFrontierOverriddenModifierFlags)
 
+// Each flag's saved state is one bit of gFrontierModifierBackup.flags. Overflowing that would not fail
+// quietly: RestoreGameModifiers clears any flag whose bit reads 0, so a 33rd entry would turn the
+// player's own setting off every time a run ended.
+_Static_assert(NUM_OVERRIDDEN_MODIFIER_FLAGS <= 32, "gFrontierModifierBackup.flags cannot hold this many modifier flags");
+
 static void OverrideGameModifiers(void)
 {
 	u32 i;
@@ -820,6 +825,13 @@ void FrontierChallenge_StoreRentalPoolChoice(void)
 	Memset(gFrontierRentalPool, 0, sizeof(gFrontierRentalPool)); // Done with, and it rides the save file
 }
 
+// Drops the pool without renting anything, for a player who backs out of the Factory's offer.
+// The pool is 0x258 bytes of save space, so it does not get to sit there holding six Pokemon nobody rented.
+void FrontierChallenge_DiscardRentalPool(void)
+{
+	Memset(gFrontierRentalPool, 0, sizeof(gFrontierRentalPool));
+}
+
 // Puts the rented team into gPlayerParty. Stands in for sp073 at the Factory, whose team is already
 // built and level-adjusted and whose gSelectedOrderFromParty points at a rental pool long gone.
 void FrontierChallenge_RestoreRentalTeam(void)
@@ -840,6 +852,9 @@ bool8 IsFrontierPartySubmenuOpen(void)
 {
 	u8 facility = SanitizeFacility(BATTLE_FACILITY_NUM);
 
+	if (!FlagGet(FLAG_BATTLE_FACILITY))
+		return FALSE;
+
 	return (gFrontierPartyScreen == FRONTIER_SCREEN_FACTORY_GIVE
 		 || gFrontierPartyScreen == FRONTIER_SCREEN_FACTORY_TAKE
 		 || gFrontierPartyScreen == FRONTIER_SCREEN_OBSERVATORY_VIEW)
@@ -850,7 +865,8 @@ bool8 IsFrontierPartySubmenuOpen(void)
 // the Observatory reuses that same screen to choose which of an already-entered team is sent out.
 u8 GetNumMonsToSelectInFrontier(void)
 {
-	if (gFrontierPartyScreen == FRONTIER_SCREEN_OBSERVATORY_PICK
+	if (FlagGet(FLAG_BATTLE_FACILITY)
+	&& gFrontierPartyScreen == FRONTIER_SCREEN_OBSERVATORY_PICK
 	&& SanitizeFacility(BATTLE_FACILITY_NUM) == IN_BATTLE_OBSERVATORY)
 		return NumObservatoryPicks();
 

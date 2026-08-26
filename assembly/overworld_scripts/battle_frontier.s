@@ -19,6 +19,10 @@ EventScript_BattleFrontier_PokemonCenterResearcher:
     npcchatwithmovement gText_BattleFrontier_Researcher m_LookDown
     end
 
+.equ POKE_CHIP_SALE_WALLET_FULL, 0x0
+.equ POKE_CHIP_SALE_CLAMPED, 0x1
+.equ POKE_CHIP_SALE_WHOLE_AMOUNT, 0x2
+
 .global EventScript_BattleFrontier_PokemonCenterPokeChipBuyer
 EventScript_BattleFrontier_PokemonCenterPokeChipBuyer:
     lock
@@ -37,9 +41,12 @@ EventScript_BattleFrontier_PokemonCenterPokeChipBuyer:
     if equal _goto PokeChipBuyer_ChoseZero
     comparevars LASTRESULT 0x8005
     if greaterthan _goto PokeChipBuyer_ChoseMoreChipsThanHeld
-    buffernumber 0x1 LASTRESULT
     copyvar 0x4006 LASTRESULT @ Chips being sold; both sale helpers read this
-    callasm StorePokeChipSaleValue @ BUFFER3 = 2000 per chip, buffered as a string since the total passes 0xFFFF
+    callasm StorePokeChipSaleValue @ Trims 0x4006 to what the wallet can hold; BUFFER2 = that count, BUFFER3 = the payout
+    compare LASTRESULT POKE_CHIP_SALE_WALLET_FULL
+    if equal _goto PokeChipBuyer_WalletFull
+    compare LASTRESULT POKE_CHIP_SALE_CLAMPED @ The sale below is for fewer chips than the player asked to sell, so say so first
+    if equal _call PokeChipBuyer_WarnWalletNearlyFull
     showmoney 0x0 0x0
     msgbox gText_BattleFrontier_PokeChipBuyer_YesToConfirmChipsChosen MSG_YESNO
     compare LASTRESULT NO
@@ -72,6 +79,18 @@ PokeChipBuyer_ChoseMoreChipsThanHeld:
     npcchatwithmovement gText_BattleFrontier_PokeChipBuyer_ChoseMoreChipsThanPlayerHas m_LookDown
     release
     end
+
+@ Not one chip can be paid for, so there is no sale to offer
+PokeChipBuyer_WalletFull:
+    npcchatwithmovement gText_BattleFrontier_PokeChipBuyer_WalletFull m_LookDown
+    release
+    end
+
+@ Some of them can. Names the trimmed count before the confirmation quotes it, so the player is never
+@ silently asked to agree to a smaller sale than the one they chose.
+PokeChipBuyer_WarnWalletNearlyFull:
+    msgbox gText_BattleFrontier_PokeChipBuyer_WalletNearlyFull MSG_KEEPOPEN
+    return
 
 PokeChipBuyer_ChoseNoDuringPayment:
     hidemoney
@@ -216,7 +235,7 @@ EventScript_BattleFrontier_PokemonCenterDittoTrader:
     checkflag 0x29C @ Did the Junichi trade
     if SET _goto Junichi_TradeComplete
     msgbox gText_BattleFrontier_MasudaDittoTrader_Intro MSG_NORMAL
-    setvar 0x8000 2 @ Streak at any facility/format required for trade
+    setvar 0x8000 5 @ Streak at any facility/format required for trade
     callasm StoreHasAchievedFrontierStreak
     compare LASTRESULT TRUE
     if notequal _goto End
@@ -1126,6 +1145,7 @@ BattleFrontier_Common_EnterTeamRented:
 
 BattleFrontier_Common_EnterTeamRentedCancelled:
     special SPECIAL_LOAD_PLAYER_PARTY @ Unlike the normal path, the pool is live in gPlayerParty
+    callasm FrontierChallenge_DiscardRentalPool @ Nothing was rented, so clear it from the save file
     setvar LASTRESULT FALSE
     return
 

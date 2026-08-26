@@ -22,6 +22,12 @@ Do you take me for a fool?\nYou don't have that many!
 #org @gText_BattleFrontier_PokeChipBuyer_YesToConfirmChipsChosen
 [BUFFER2]? I can offer you \$[BUFFER3]\nfor that. Are you sure?
 
+#org @gText_BattleFrontier_PokeChipBuyer_WalletNearlyFull
+Ah, hold on - you couldn't carry all\nthat money!\pI'll take [BUFFER2] of them for now and\nyou can keep the rest.\pDo come back once you've spent a\nlittle, won't you?
+
+#org @gText_BattleFrontier_PokeChipBuyer_WalletFull
+My word! Your wallet is bursting at\nthe seams.\pAs much as I'd like to take your\nPok\eChips for free, I have class.\pCome back once you've spent some\ncash and can accept my payment.
+
 #org @gText_BattleFrontier_PokemonCenterOldMan
 I've come here to watch my grandson\nbattle.\pI have to be honest. I don't\nunderstand Pok\emon battling.\pBut, it makes my grandson happy and\nI want to support him!
 

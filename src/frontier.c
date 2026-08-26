@@ -140,7 +140,7 @@ const u8* const gBattleFrontierTierNames[NUM_TIERS] =
 	[BATTLE_FACILITY_STANDARD] = gText_BattleTowerStandard,
 	[BATTLE_FACILITY_NO_RESTRICTIONS] = gText_NoRestrictions,
 	[BATTLE_FACILITY_OU] = gText_SmogonGen7OU,
-	[BATTLE_FACILITY_UBER] gText_SmogonGen7Uber,
+	[BATTLE_FACILITY_UBER] = gText_SmogonGen7Uber,
 	[BATTLE_FACILITY_LITTLE_CUP] = gText_SmogonLittleCup,
 	[BATTLE_FACILITY_MIDDLE_CUP] = gText_MiddleCup,
 	[BATTLE_FACILITY_MONOTYPE] = gText_SmogonMonotype,
@@ -157,8 +157,8 @@ const u8* const gBattleFrontierTierNames[NUM_TIERS] =
 	[BATTLE_FACILITY_NATIONAL_DEX_OU] = gText_NationalDexOU,
 	[BATTLE_FACILITY_METRONOME] = gText_SmogonMetronome,
 	[BATTLE_FACILITY_UU] = gText_SmogonGen7UU,
-	[BATTLE_FACILITY_NU] = gText_SmogonGen7RU,
-	[BATTLE_FACILITY_RU] = gText_SmogonGen7NU,
+	[BATTLE_FACILITY_RU] = gText_SmogonGen7RU,
+	[BATTLE_FACILITY_NU] = gText_SmogonGen7NU,
 };
 
 const u8* const gBattleFrontierFormats[NUM_TOWER_BATTLE_TYPES] =

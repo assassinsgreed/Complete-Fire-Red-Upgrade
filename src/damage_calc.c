@@ -1533,10 +1533,12 @@ static void ModulateDmgByType(u8 multiplier, const u16 move, const u8 moveType, 
 	if (move == MOVE_FREEZEDRY && defType == TYPE_WATER) //Always Super-Effective, even in Inverse Battles
 		multiplier = TYPE_MUL_SUPER_EFFECTIVE;
 
-	if (moveType == TYPE_FIRE && gNewBS->tarShotBits & gBitTable[bankDef]) //Fire always Super-Effective if covered in tar
+	// gNewBS is freed at the end of a battle and gBattleWeather keeps the last battle's value, so both
+	// of these are gated on a battle actually running - this is also reached from the Frontier overworld.
+	if (moveType == TYPE_FIRE && gMain.inBattle && gNewBS != NULL && gNewBS->tarShotBits & gBitTable[bankDef]) //Fire always Super-Effective if covered in tar
 		multiplier = TYPE_MUL_SUPER_EFFECTIVE;
 
-	if (defType == TYPE_FLYING && multiplier == TYPE_MUL_SUPER_EFFECTIVE && gBattleWeather & WEATHER_AIR_CURRENT_PRIMAL && move != MOVE_STEALTHROCK && WEATHER_HAS_EFFECT)
+	if (defType == TYPE_FLYING && multiplier == TYPE_MUL_SUPER_EFFECTIVE && gMain.inBattle && gBattleWeather & WEATHER_AIR_CURRENT_PRIMAL && move != MOVE_STEALTHROCK && WEATHER_HAS_EFFECT)
 		multiplier = TYPE_MUL_NORMAL; //Actually changes the modifier including the "it's super effective" string
 
 	if (checkMonDef)

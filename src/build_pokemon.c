@@ -68,6 +68,10 @@ build_pokemon.c
 #define FOR_PLAYER_RENTAL_POOL (TRUE + 2)
 #define IS_RENTAL(forPlayer) ((forPlayer) == FOR_PLAYER_RENTAL || (forPlayer) == FOR_PLAYER_RENTAL_POOL)
 
+// Ensure that very restrictive formats don't have an opportunity to run out of available opponent options (clamp to 100 attempts)
+#define MAX_SPREAD_ROLLS 100
+#define SPREAD_ROLLS_BEFORE_RELAXING_RAMP 50
+
 enum
 {
 	HAZARDS_SETUP,
@@ -194,7 +198,7 @@ static bool8 ItemAlreadyOnTeam(const u16 item, const u8 partySize, const item_t*
 static void AdjustTypesForMegas(const u16 species, const u16 item, u8* const type1, u8* const type2);
 static bool8 TeamNotAllSameType(const u16 species, const u16 item, const u8 partySize, const species_t* const speciesArray, const item_t* const itemArray);
 static bool8 TooManyLegendariesOnGSCupTeam(const u16 species, const u8 partySize, const species_t* const speciesArray);
-static bool8 IsPokemonBannedBasedOnStreak(u16 species, u16 item, u16* speciesArray, u8 monsCount, u16 trainerId, u8 tier, bool8 forPlayer);
+static bool8 IsPokemonBannedBasedOnStreak(u16 species, u16 item, u16* speciesArray, u8 monsCount, u16 trainerId, u8 tier, bool8 forPlayer, bool8 relaxBstRamp);
 static bool8 TeamDoesntHaveSynergy(const struct BattleTowerSpread* const spread, const struct TeamBuilder* const builder, bool8 forPlayer);
 static void AddPlayerMoveTypesToBuilder(struct TeamBuilder* builder, u8 monsCount);
 static void UpdateBuilderAfterSpread(struct TeamBuilder* builder, const struct BattleTowerSpread* spread, u16 species, u8 ability, u16 item, u8 itemEffect, u32 partyId);
@@ -741,11 +745,14 @@ u16 GiveRandomFrontierMonByTier(u8 side, u8 tier, u16 spreadType)
 			break;
 	}
 
-	do
+	for (u32 rolls = 0; rolls < MAX_SPREAD_ROLLS; ++rolls)
 	{
 		spread = TryAdjustSpreadForSpecies(&spreads[Random() % spreadCount]);
-	} while (IsPokemonBannedBasedOnStreak(spread->species, spread->item, NULL, 0, 0, tier, TRUE)
-		  || PokemonTierBan(spread->species, spread->item, spread, NULL, tier, CHECK_BATTLE_TOWER_SPREADS));
+
+		if (!IsPokemonBannedBasedOnStreak(spread->species, spread->item, NULL, 0, 0, tier, TRUE, rolls >= SPREAD_ROLLS_BEFORE_RELAXING_RAMP)
+		&& !PokemonTierBan(spread->species, spread->item, spread, NULL, tier, CHECK_BATTLE_TOWER_SPREADS))
+			break;
+	}
 
 	CreateFrontierMon(&mon, level, spread, 0, 0, 0, TRUE);
 
@@ -1734,12 +1741,15 @@ static u8 BuildFrontierParty(struct Pokemon* const party, const u16 trainerId, c
 	else if (firstTrainer && firstTrainer != 3) //Clear if not multi partner
 		ZeroEnemyPartyMons();
 
+	bool8 twoOpponents = IsFrontierMulti(battleType) && trainerId != FRONTIER_BRAIN_TID;
+	bool8 ingamePartner = battleType == BATTLE_FACILITY_MULTI || battleType == BATTLE_FACILITY_MULTI_RANDOM;
+
 	if (forPlayer == FOR_PLAYER_TEAM //Excludes random battles
 	||  forPlayer == FOR_PLAYER_RENTAL_POOL) //The Factory offers six and lets the player choose from those options
 		monsCount = PARTY_SIZE;
-	else if (gBattleTypeFlags & BATTLE_TYPE_TWO_OPPONENTS && battleTowerPokeNum > 3 && side == B_SIDE_OPPONENT)
+	else if (twoOpponents && battleTowerPokeNum > 3 && side == B_SIDE_OPPONENT)
 		monsCount = 3;
-	else if (gBattleTypeFlags & BATTLE_TYPE_INGAME_PARTNER && battleTowerPokeNum > 3 && side == B_SIDE_PLAYER)
+	else if (ingamePartner && battleTowerPokeNum > 3 && side == B_SIDE_PLAYER)
 		monsCount = 3;
 	else
 		monsCount = MathMax(1, MathMin(PARTY_SIZE, battleTowerPokeNum));
@@ -1765,6 +1775,7 @@ static u8 BuildFrontierParty(struct Pokemon* const party, const u16 trainerId, c
 	for (i = 0; i < monsCount; ++i)
 	{
 		bool8 loop = TRUE;
+		u16 rolls = 0;
 		u16 species, dexNum, item;
 		u8 ability, itemEffect;
 		const struct BattleTowerSpread* spread = NULL;
@@ -2231,7 +2242,7 @@ static u8 BuildFrontierParty(struct Pokemon* const party, const u16 trainerId, c
 
 			//Prevent duplicate species and items
 			//Only allow one Mega Stone & Z-Crystal per team
-			if (!IsPokemonBannedBasedOnStreak(species, item, builder->speciesArray, monsCount, trainerId, tier, forPlayer)
+			if (!IsPokemonBannedBasedOnStreak(species, item, builder->speciesArray, monsCount, trainerId, tier, forPlayer, rolls >= SPREAD_ROLLS_BEFORE_RELAXING_RAMP)
 			&& !builder->speciesOnTeam[dexNum]
 			&& !(ItemAlreadyOnTeam(item, monsCount, builder->itemArray) && DuplicateItemsAreBannedInTier(builder->tier, builder->battleType))
 			&& (tier == BATTLE_FACILITY_MEGA_BRAWL || itemEffect != ITEM_EFFECT_MEGA_STONE || item == ITEM_ULTRANECROZIUM_Z || !builder->itemEffectOnTeam[ITEM_EFFECT_MEGA_STONE])
@@ -2243,7 +2254,9 @@ static u8 BuildFrontierParty(struct Pokemon* const party, const u16 trainerId, c
 			{
 				loop = FALSE;
 			}
-		} while (loop);
+		// Counted here rather than at the top so at least one pass always completes, which is what
+		// leaves spread - and the species/item/ability read off it - set when the cap is what ends this.
+		} while (loop && ++rolls < MAX_SPREAD_ROLLS);
 
 		UpdateBuilderAfterSpread(builder, spread, species, ability, item, itemEffect, i);
 		CreateFrontierMon(&party[i], level, spread, trainerId, firstTrainer ^ 1, trainerGender, forPlayer);
@@ -2786,9 +2799,14 @@ static bool8 TooManyLegendariesOnGSCupTeam(const u16 species, const u8 partySize
 	return FALSE;
 }
 
-static bool8 IsPokemonBannedBasedOnStreak(u16 species, u16 item, u16* speciesArray, u8 monsCount, u16 trainerId, u8 tier, bool8 forPlayer)
+// relaxBstRamp drops the streak's difficulty ramp for a caller that has re-rolled so many times
+// that the ramp is the likeliest reason nothing fits - see the roll cap in BuildFrontierParty.
+static bool8 IsPokemonBannedBasedOnStreak(u16 species, u16 item, u16* speciesArray, u8 monsCount, u16 trainerId, u8 tier, bool8 forPlayer, bool8 relaxBstRamp)
 {
-	if (!(gBattleTypeFlags & BATTLE_TYPE_FRONTIER))
+	// Keyed off the facility flag rather than gBattleTypeFlags: facilities like the Observatory build
+	// their teams from an overworld script, where gBattleTypeFlags still holds the previous battle's
+	// value and the streak would be ramped or ignored depending on what the player last fought.
+	if (!FlagGet(FLAG_BATTLE_FACILITY))
 		return FALSE; //There are no streaks outside of the Frontier
 
 	u16 streak = GetCurrentBattleFacilityStreak();
@@ -2806,6 +2824,9 @@ static bool8 IsPokemonBannedBasedOnStreak(u16 species, u16 item, u16* speciesArr
 		if (megasZMovesBannedInTier
 		&& (IsZCrystal(item) || IsMegaStone(item))) //Don't give the AI Pokemon with bad items
 			return TRUE;
+
+		if (relaxBstRamp)
+			return FALSE; // Difficulty tuning, given up on rather than re-rolling forever
 
 		//Battles get more difficult the higher the streak.
 		if (streak < 10)
@@ -2846,6 +2867,9 @@ static bool8 IsPokemonBannedBasedOnStreak(u16 species, u16 item, u16* speciesArr
 		// Player rentals are exempt from streak based ramp-ups.
 		if (IS_RENTAL(forPlayer))
 			return FALSE;
+
+		if (relaxBstRamp)
+			return FALSE; // Difficulty tuning, given up on rather than re-rolling forever
 
 		//Better Pokemon are given to the player the better the streak
 		if (streak < 10)

@@ -2437,18 +2437,55 @@ void SubtractPokeChipByVar(void)
 }
 
 #define POKE_CHIP_SALE_PRICE 2000
+#define MAX_PLAYER_MONEY 999999 // AddMoney clamps here, so anything past it would be paid for and not received
 
-// Buffers the payout for selling var 0x4006 PokeChips into BUFFER3. The total passes 0xFFFF
-// from 33 chips up, so it's written straight into the string buffer instead of through a var.
-void StorePokeChipSaleValue(void)
+// How StorePokeChipSaleValue describes the sale it just trimmed, so the script can account for a trim
+// instead of quoting the player a number they never asked for.
+enum PokeChipSaleOutcomes
 {
-	ConvertIntToDecimalStringN(gStringVar3, VarGet(0x4006) * POKE_CHIP_SALE_PRICE, STR_CONV_MODE_LEFT_ALIGN, 8);
+	POKE_CHIP_SALE_WALLET_FULL,		// Not a single chip can be paid for
+	POKE_CHIP_SALE_CLAMPED,			// Some of them can
+	POKE_CHIP_SALE_WHOLE_AMOUNT,	// All of them can
+};
+
+// Trims a sale down to the chips the player's wallet can actually pay for (499 chips at most)
+static u16 PokeChipsAffordable(u16 chips)
+{
+	u32 money = GetMoney(&gSaveBlock1->money);
+	u32 room = (money >= MAX_PLAYER_MONEY) ? 0 : MAX_PLAYER_MONEY - money;
+	u32 affordable = room / POKE_CHIP_SALE_PRICE;
+
+	return (chips > affordable) ? affordable : chips;
 }
 
-// Pays out the sale of var 0x4006 PokeChips and takes them out of the bag
+// Trims var 0x4006 to what can be paid for and buffers the sale for the confirmation line, so the
+// figures quoted are the ones PayForPokeChipSale goes on to honour.
+// Returns: LastResult: one of PokeChipSaleOutcomes, so the game can explain why they aren't paying for more than the player's wallet can hold.
+//			BUFFER2: chips actually being bought, replacing the number the player asked to sell.
+//			BUFFER3: the payout. It passes 0xFFFF from 33 chips up, so it goes straight into the
+//				     string buffer instead of through a var.
+void StorePokeChipSaleValue(void)
+{
+	u16 requested = VarGet(0x4006);
+	u16 chips = PokeChipsAffordable(requested);
+
+	VarSet(0x4006, chips);
+	ConvertIntToDecimalStringN(gStringVar2, chips, STR_CONV_MODE_LEFT_ALIGN, 3);
+	ConvertIntToDecimalStringN(gStringVar3, chips * POKE_CHIP_SALE_PRICE, STR_CONV_MODE_LEFT_ALIGN, 8);
+
+	if (chips == 0)
+		gSpecialVar_LastResult = POKE_CHIP_SALE_WALLET_FULL;
+	else if (chips < requested)
+		gSpecialVar_LastResult = POKE_CHIP_SALE_CLAMPED;
+	else
+		gSpecialVar_LastResult = POKE_CHIP_SALE_WHOLE_AMOUNT;
+}
+
+// Pays out the sale of var 0x4006 PokeChips and takes them out of the bag. StorePokeChipSaleValue has
+// already trimmed that var to what fits, so every chip removed here is one the player was paid for.
 void PayForPokeChipSale(void)
 {
-	u16 chips = VarGet(0x4006);
+	u16 chips = PokeChipsAffordable(VarGet(0x4006));
 
 	AddMoney(&gSaveBlock1->money, chips * POKE_CHIP_SALE_PRICE);
 	RemoveBagItem(ITEM_POKE_CHIP, chips);
