@@ -67,7 +67,7 @@
 #define BATTLE_TYPE_BATTLE_QUARRY		0x100000
 #define BATTLE_TYPE_TWO_OPPONENTS   	0x200000 //Chosen number for FR, in Emerald its 0x8000
 #define BATTLE_TYPE_INGAME_PARTNER  	0x400000
-#define BATTLE_TYPE_RING_CHALLENGE		0x800000
+//0x800000 is free - it belonged to the Ring Challenge, which the Battle Observatory replaced
 #define BATTLE_TYPE_MOCK_BATTLE			0x1000000
 #define BATTLE_TYPE_BATTLE_SANDS		0x2000000
     #define BATTLE_TYPE_BATTLE_SIM		0x4000000

@@ -772,8 +772,6 @@ bool8 IsUnusableMove(u16 move, u8 bank, u8 check, u8 pp, u8 ability, u8 holdEffe
 	else if (gSpecialMoveFlags[move].gSkyBattleBannedMoves && FlagGet(FLAG_SKY_BATTLE) && check & MOVE_LIMITATION_ENCORE)
 		return TRUE;
 	#endif
-	else if (gBattleTypeFlags & BATTLE_TYPE_RING_CHALLENGE && IsMoveBannedInRingChallenge(move, bank) && check & MOVE_LIMITATION_ENCORE)
-		return TRUE;
 	else if (gSpecialMoveFlags[move].gGravityBannedMoves && IsGravityActive() && check & MOVE_LIMITATION_DISABLED)
 		return TRUE;
 	else if (CheckSoundMove(move) && CantUseSoundMoves(bank) && check & MOVE_LIMITATION_DISABLED)
@@ -804,8 +802,6 @@ u8 CheckMoveLimitationsFromParty(struct Pokemon* mon, u8 unusableMoves, u8 check
 		else if (check & MOVE_LIMITATION_ENCORE && FlagGet(FLAG_SKY_BATTLE) && gSpecialMoveFlags[move].gSkyBattleBannedMoves)
 			unusableMoves |= gBitTable[i];
 		#endif
-		else if (check & MOVE_LIMITATION_ENCORE && gBattleTypeFlags & BATTLE_TYPE_RING_CHALLENGE && IsMoveBannedInRingChallengeByMon(move, mon))
-			unusableMoves |= gBitTable[i];
 		else if (check & MOVE_LIMITATION_DISABLED && IsGravityActive() && gSpecialMoveFlags[move].gGravityBannedMoves)
 			unusableMoves |= gBitTable[i];
 		else if (check & MOVE_LIMITATION_ENCORE && IsRaidBattle() && gSpecialMoveFlags[move].gRaidBattleBannedMoves)

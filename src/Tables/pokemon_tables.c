@@ -393,7 +393,7 @@ const item_t gBattleTowerStandard_ItemBanList[] =
 	ITEM_TABLES_TERMIN
 };
 
-const move_t gRingChallenge_MoveBanList[] =
+const move_t gBattleObservatory_MoveBanList[] =
 {
 	MOVE_SELFDESTRUCT,
 	MOVE_EXPLOSION,

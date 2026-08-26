@@ -810,16 +810,7 @@ static u8 AtkCanceller_UnableToUseMove(void)
 				gHitMarker |= HITMARKER_UNABLE_TO_USE_MOVE;
 				effect = 1;
 			}
-			else
 		#endif
-			if (gBattleTypeFlags & BATTLE_TYPE_RING_CHALLENGE && IsMoveBannedInRingChallenge(gCurrentMove, gBankAttacker))
-			{
-				gBattleScripting.bank = gBankAttacker;
-				CancelMultiTurnMoves(gBankAttacker);
-				gBattlescriptCurrInstr = BattleScript_MoveUsedRingChallengePrevents;
-				gHitMarker |= HITMARKER_UNABLE_TO_USE_MOVE;
-				effect = 1;
-			}
 			gBattleStruct->atkCancellerTracker++;
 			break;
 

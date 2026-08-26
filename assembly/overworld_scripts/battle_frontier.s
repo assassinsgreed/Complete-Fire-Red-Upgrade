@@ -698,7 +698,7 @@ SignScript_BattleFrontier_BattleObservatory:
 .equ IN_BATTLE_QUARRY, 0x2
 .equ IN_BATTLE_SIM, 0x3
 .equ IN_BATTLE_FACTORY, 0x4
-.equ IN_RING_CHALLENGE, 0x5
+.equ IN_BATTLE_OBSERVATORY, 0x5
 .equ IN_BATTLE_ISLE, 0x6
 .equ IN_BATTLE_MAZE, 0x7
 
@@ -768,6 +768,8 @@ SignScript_BattleFrontier_BattleObservatory:
 .equ BATTLE_ISLE_OPPONENT, 0x2
 .equ BATTLE_MAZE_ATTENDANT, 0x5
 .equ BATTLE_MAZE_OPPONENT, 0x6
+.equ BATTLE_OBSERVATORY_ATTENDANT, 0x1
+.equ BATTLE_OBSERVATORY_OPPONENT, 0x2
 
 @ ============================================================================
 @ Per-facility entry points
@@ -810,7 +812,7 @@ EventScript_BattleFrontier_FactoryAttendant:
 
 .global EventScript_BattleFrontier_ObservatoryAttendant
 EventScript_BattleFrontier_ObservatoryAttendant:
-    setvar VAR_BATTLE_FACILITY_NUM IN_RING_CHALLENGE @ TODO: Becomes battle observatory
+    setvar VAR_BATTLE_FACILITY_NUM IN_BATTLE_OBSERVATORY
     goto BattleFrontier_Common_Attendant
 
 @ ============================================================================
@@ -884,6 +886,7 @@ BattleFrontier_Common_FacilityRules:
     case IN_BATTLE_FACTORY, BattleFrontier_Factory_Rules, _call
     case IN_BATTLE_MAZE, BattleFrontier_Maze_Rules, _call
     case IN_BATTLE_ISLE, BattleFrontier_Isle_Rules, _call
+    case IN_BATTLE_OBSERVATORY, BattleFrontier_Observatory_Rules, _call
     goto BattleFrontier_Common_Rules
 
 BattleFrontier_Tower_Rules:
@@ -912,6 +915,10 @@ BattleFrontier_Maze_Rules:
 
 BattleFrontier_Isle_Rules:
     msgbox gText_BattleFrontier_IsleRules MSG_KEEPOPEN
+    return
+
+BattleFrontier_Observatory_Rules:
+    msgbox gText_BattleFrontier_ObservatoryRules MSG_KEEPOPEN
     return
 
 BattleFrontier_Common_Records:
@@ -1142,9 +1149,11 @@ BattleFrontier_Common_BattleLoop:
     special SPECIAL_LOAD_FRONTIER_INTRO_MESSAGE
     callstd MSG_KEEPOPEN @ Prints the line sp053 left in gLoadPointer
     callasm FrontierChallenge_RestoreTextColour
-    compare 0x8001 FRONTIER_OPPONENT_ACE
+    call BattleFrontier_Common_PreBattlePrompt
+    callasm FrontierChallenge_GetNextOpponentKind
+    compare LASTRESULT FRONTIER_OPPONENT_ACE
     if equal _goto BattleFrontier_Common_BattleSpecialTrainer
-    compare 0x8001 FRONTIER_OPPONENT_BRAIN
+    compare LASTRESULT FRONTIER_OPPONENT_BRAIN
     if equal _goto BattleFrontier_Common_BattleFrontierBrain
     setvar 0x8000 CONTINUE_AFTER_LOSS
     trainerbattle9 0x9 BATTLE_TOWER_TID 0x0 gText_BattleFrontier_OpponentDefeated gText_BattleFrontier_OpponentVictorious
@@ -1178,6 +1187,7 @@ BattleFrontier_Common_EnterBattlePosition:
     case IN_BATTLE_FACTORY, BattleFrontier_Factory_EnterBattlePosition, _call
     case IN_BATTLE_MAZE, BattleFrontier_Maze_EnterBattlePosition, _call
     case IN_BATTLE_ISLE, BattleFrontier_Isle_EnterBattlePosition, _call
+    case IN_BATTLE_OBSERVATORY, BattleFrontier_Observatory_EnterBattlePosition, _call
     return
 
 @ Before every battle. Sim randomizes its field effects here (special 0x72), Factory swaps the team.
@@ -1191,6 +1201,7 @@ BattleFrontier_Common_PerBattleSetup:
     case IN_BATTLE_FACTORY, BattleFrontier_Factory_PerBattleSetup, _call
     case IN_BATTLE_MAZE, BattleFrontier_Maze_PerBattleSetup, _call
     case IN_BATTLE_ISLE, BattleFrontier_Isle_PerBattleSetup, _call
+    case IN_BATTLE_OBSERVATORY, BattleFrontier_Observatory_PerBattleSetup, _call
     return
 
 BattleFrontier_Common_OpponentArrives:
@@ -1202,6 +1213,14 @@ BattleFrontier_Common_OpponentArrives:
     case IN_BATTLE_FACTORY, BattleFrontier_Factory_OpponentArrives, _call
     case IN_BATTLE_MAZE, BattleFrontier_Maze_OpponentArrives, _call
     case IN_BATTLE_ISLE, BattleFrontier_Isle_OpponentArrives, _call
+    case IN_BATTLE_OBSERVATORY, BattleFrontier_Observatory_OpponentArrives, _call
+    return
+
+@ Between the opponent's intro line and the battle. The Observatory reveals both teams here,
+@ because it needs the opponent picked and standing there before either side commits to a Pokemon.
+BattleFrontier_Common_PreBattlePrompt:
+    switch VAR_BATTLE_FACILITY_NUM
+    case IN_BATTLE_OBSERVATORY, BattleFrontier_Observatory_PreBattlePrompt, _call
     return
 
 BattleFrontier_Common_PostBattleReset:
@@ -1213,6 +1232,7 @@ BattleFrontier_Common_PostBattleReset:
     case IN_BATTLE_FACTORY, BattleFrontier_Factory_PostBattleReset, _call
     case IN_BATTLE_MAZE, BattleFrontier_Maze_PostBattleReset, _call
     case IN_BATTLE_ISLE, BattleFrontier_Isle_PostBattleReset, _call
+    case IN_BATTLE_OBSERVATORY, BattleFrontier_Observatory_PostBattleReset, _call
     return
 
 BattleFrontier_Common_LeaveBattlePosition:
@@ -1224,6 +1244,7 @@ BattleFrontier_Common_LeaveBattlePosition:
     case IN_BATTLE_FACTORY, BattleFrontier_Factory_LeaveBattlePosition, _call
     case IN_BATTLE_MAZE, BattleFrontier_Maze_LeaveBattlePosition, _call
     case IN_BATTLE_ISLE, BattleFrontier_Isle_LeaveBattlePosition, _call
+    case IN_BATTLE_OBSERVATORY, BattleFrontier_Observatory_LeaveBattlePosition, _call
     return
 
 @ These three MUST stay MSG_KEEPOPEN. The opponent is already walking offscreen, and MSG_NORMAL ends
@@ -1738,6 +1759,124 @@ m_BattleIsle_OpponentToArena: .byte walk_up, walk_up, walk_up, walk_up, walk_up,
 m_BattleIsle_OpponentLeaves: .byte walk_right, walk_down, walk_down, walk_down, walk_down, walk_down, walk_down, end_m
 m_BattleIsle_AttendantToLobby: .byte walk_down, walk_down, walk_down, walk_right, look_down, end_m
 m_BattleIsle_PlayerToLobby: .byte walk_down, walk_down, walk_down, walk_down, walk_down, walk_right, look_up, end_m
+
+@ ----------------------------------------------------------------------------
+@ Battle Observatory Movements
+@ ----------------------------------------------------------------------------
+
+BattleFrontier_Observatory_EnterBattlePosition:
+    msgbox gText_BattleFrontier_LeadToBattlePosition MSG_NORMAL
+    applymovement PLAYER m_BattleObservatory_PlayerToBattlePosition
+    applymovement BATTLE_OBSERVATORY_ATTENDANT m_BattleObservatory_AttendantToBattlePosition
+    waitmovement ALLEVENTS
+    special CAMERA_START
+    applymovement CAMERA m_BattleFacility_CameraMoveRight_2
+    waitmovement CAMERA
+    special CAMERA_END
+    return
+
+BattleFrontier_Observatory_PerBattleSetup:
+    applymovement PLAYER m_LookRight
+    applymovement BATTLE_OBSERVATORY_ATTENDANT m_LookRight
+    return
+
+BattleFrontier_Observatory_OpponentArrives:
+    msgbox gText_BattleFrontier_CallingOpponent MSG_NORMAL
+    showsprite BATTLE_OBSERVATORY_OPPONENT
+    applymovement BATTLE_OBSERVATORY_OPPONENT m_BattleObservatory_OpponentToBattlePosition
+    waitmovement ALLEVENTS
+    return
+
+@ The player's full entry of 3-4 Pokemon must be restored here, after 1-2 were chosen based on format
+BattleFrontier_Observatory_PostBattleReset:
+    callasm FrontierChallenge_RestoreObservatoryTeam
+    applymovement PLAYER m_LookDown
+    applymovement BATTLE_OBSERVATORY_ATTENDANT m_LookUp
+    applymovement BATTLE_OBSERVATORY_OPPONENT m_BattleObservatory_OpponentLeaves
+    call BattleFrontier_Common_CommentOnResult @ Before the wait, so it plays over the opponent leaving
+    waitmovement ALLEVENTS
+    closeonkeypress
+    hidesprite BATTLE_OBSERVATORY_OPPONENT
+    return
+
+BattleFrontier_Observatory_LeaveBattlePosition:
+    msgbox gText_BattleFrontier_LeadToLobby MSG_NORMAL
+    special CAMERA_START
+    applymovement CAMERA m_BattleFacility_CameraMoveLeft_2
+    waitmovement CAMERA
+    special CAMERA_END
+    applymovement PLAYER m_BattleObservatory_PlayerToLobby
+    applymovement BATTLE_OBSERVATORY_ATTENDANT m_BattleObservatory_AttendantToLobby
+    waitmovement ALLEVENTS
+    return
+
+@ Both trainers reveal their teams, then send out 1 (singles) or 2 (doubles).
+@ Both the player and oppponent can view the others' full options (species, moveset, items, etc.) to make an informed decision
+BattleFrontier_Observatory_PreBattlePrompt:
+    callasm FrontierChallenge_RevealObservatoryTeams
+    callasm FrontierChallenge_NumObservatoryPicks
+    compare LASTRESULT 0x2
+    if equal _goto BattleFrontier_Observatory_RevealDoubles
+    msgbox gText_BattleFrontier_ObservatoryReveal MSG_KEEPOPEN
+    goto BattleFrontier_Observatory_OfferLook
+
+@ Four revealed names instead of three, read out of the buffers in a different order
+BattleFrontier_Observatory_RevealDoubles:
+    msgbox gText_BattleFrontier_ObservatoryRevealDouble MSG_KEEPOPEN
+
+@ Re-openable, so the player can look at as many of them as they like before deciding.
+BattleFrontier_Observatory_OfferLook:
+    msgbox gText_BattleFrontier_ObservatoryOfferLook MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto BattleFrontier_Observatory_ChoosePicks
+    callasm FrontierChallenge_BeginObservatoryView
+    special SPECIAL_CHOOSE_PARTY_MON
+    waitstate
+    callasm FrontierChallenge_EndObservatoryView
+    goto BattleFrontier_Observatory_OfferLook
+
+BattleFrontier_Observatory_ChoosePicks:
+    callasm FrontierChallenge_NumObservatoryPicks
+    compare LASTRESULT 0x2
+    if equal _goto BattleFrontier_Observatory_ChoosePicksDoubles
+    msgbox gText_BattleFrontier_ObservatoryChoosePrompt MSG_KEEPOPEN
+    goto BattleFrontier_Observatory_OpenPickScreen
+
+BattleFrontier_Observatory_ChoosePicksDoubles:
+    msgbox gText_BattleFrontier_ObservatoryChoosePromptDouble MSG_KEEPOPEN
+
+@ Player picks 1 (singles) or 2 (doubles) pokemon to battle with
+BattleFrontier_Observatory_OpenPickScreen:
+    callasm FrontierChallenge_BeginObservatoryPick
+    special SPECIAL_CHOOSE_FRONTIER_TEAM
+    waitstate
+    callasm FrontierChallenge_SendOutObservatoryPicks
+    compare LASTRESULT FALSE
+    if equal _goto BattleFrontier_Observatory_ChoosePicks
+    callasm FrontierChallenge_NumObservatoryPicks
+    compare LASTRESULT 0x2
+    if equal _goto BattleFrontier_Observatory_AnnounceDoubles
+    msgbox gText_BattleFrontier_ObservatoryPlayerChoice MSG_KEEPOPEN
+    callasm FrontierChallenge_ChooseObservatoryOpponentMons
+    msgbox gText_BattleFrontier_ObservatoryOpponentChoice MSG_KEEPOPEN
+    msgbox gText_BattleFrontier_ObservatoryBattleStarting MSG_NORMAL
+    return
+
+@ The opponent picks after the player, so it cannot be chosen around.
+BattleFrontier_Observatory_AnnounceDoubles:
+    msgbox gText_BattleFrontier_ObservatoryPlayerChoiceDouble MSG_KEEPOPEN
+    callasm FrontierChallenge_ChooseObservatoryOpponentMons
+    msgbox gText_BattleFrontier_ObservatoryOpponentChoiceDouble MSG_KEEPOPEN
+    msgbox gText_BattleFrontier_ObservatoryBattleStarting MSG_NORMAL
+    return
+
+@ Movements
+m_BattleObservatory_PlayerToBattlePosition: .byte walk_up, walk_up, walk_up, walk_up, walk_up, walk_up, walk_up, walk_up, walk_left, walk_left, look_right, end_m
+m_BattleObservatory_AttendantToBattlePosition: .byte walk_up, walk_up, walk_up, walk_up, walk_up, walk_up, walk_left, pause_long, pause_long, walk_left, look_right, end_m
+m_BattleObservatory_OpponentToBattlePosition: .byte walk_up, walk_up, walk_up, walk_up, walk_up, walk_up, walk_right, walk_right, look_left, end_m
+m_BattleObservatory_OpponentLeaves: .byte walk_left, walk_left, walk_down, walk_down, walk_down, walk_down, walk_down, walk_down, end_m
+m_BattleObservatory_PlayerToLobby: .byte walk_right, walk_right, walk_down, walk_down, walk_down, walk_down, walk_down, walk_down, walk_down, walk_down, look_up, end_m
+m_BattleObservatory_AttendantToLobby: .byte walk_right, walk_right, walk_down, walk_down, walk_down, walk_down, walk_down, walk_left, look_right, pause_long, walk_right, walk_down, look_down, end_m
 
 @ ============================================================================
 @ Common Movements

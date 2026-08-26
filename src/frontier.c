@@ -42,7 +42,7 @@ extern const u8 gText_BattleSands[];
 extern const u8 gText_BattleQuarry[];
 extern const u8 gText_BattleSim[];
 extern const u8 gText_BattleFactory[];
-extern const u8 gText_BattleRing[];
+extern const u8 gText_BattleObservatory[];
 extern const u8 gText_BattleIsle[];
 extern const u8 gText_BattleMaze[];
 
@@ -130,7 +130,7 @@ const u8* const gBattleFacilityNames[NUM_BATTLE_FACILITIES] =
 	[IN_BATTLE_QUARRY] = gText_BattleQuarry,
 	[IN_BATTLE_SIM] = gText_BattleSim,
 	[IN_BATTLE_FACTORY] = gText_BattleFactory,
-	[IN_RING_CHALLENGE] = gText_BattleRing,
+	[IN_BATTLE_OBSERVATORY] = gText_BattleObservatory,
 	[IN_BATTLE_ISLE] = gText_BattleIsle,
 	[IN_BATTLE_MAZE] = gText_BattleMaze,
 };
@@ -727,39 +727,20 @@ bool8 AreMegasZMovesBannedInTier(u8 tier)
 
 bool8 IsMegaZMoveBannedBattle(void)
 {
-	if (gBattleTypeFlags & BATTLE_TYPE_RING_CHALLENGE
-	&& gBattleTypeFlags & BATTLE_TYPE_BATTLE_TOWER) //Only in Frontier - works fine in regular Gym Battles
-		return TRUE;
-
 	return gBattleTypeFlags & BATTLE_TYPE_TRAINER //Excludes Raid Battles
 	&& FlagGet(FLAG_BATTLE_FACILITY)
 	&& (AreMegasZMovesBannedInTier(VarGet(VAR_BATTLE_FACILITY_TIER))
 	 || BATTLE_FACILITY_NUM == IN_BATTLE_ISLE // Mega Stones and Z-Crystals are held items like any other here
+	 || BATTLE_FACILITY_NUM == IN_BATTLE_OBSERVATORY // One Pokemon a side is lopsided enough without them
 	 || (gBattleTypeFlags & BATTLE_TYPE_BATTLE_SIM && gBattleSimFlags & BATTLE_SIM_DYNAMAX));
 }
 
-bool8 IsMoveBannedInRingChallenge(u16 move, u8 bank)
+// A Battle Observatory battle, which is fought one Pokemon a side after both trainers reveal their team.
+bool8 IsBattleObservatoryBattle(void)
 {
-	if (FlagGet(FLAG_BATTLE_FACILITY) && gBattleMoves[move].effect == EFFECT_PERISH_SONG)
-		return TRUE;
-
-	u8 moveType = GetMoveTypeSpecial(bank, move);
-
-	return gNewBS->ringChallengeBannedTypes[0] == moveType
-		|| gNewBS->ringChallengeBannedTypes[1] == moveType
-		|| gNewBS->ringChallengeBannedTypes[2] == moveType;
-}
-
-bool8 IsMoveBannedInRingChallengeByMon(u16 move, struct Pokemon* mon)
-{
-	if (FlagGet(FLAG_BATTLE_FACILITY) && gBattleMoves[move].effect == EFFECT_PERISH_SONG)
-		return TRUE;
-
-	u8 moveType = GetMonMoveTypeSpecial(mon, move);
-
-	return gNewBS->ringChallengeBannedTypes[0] == moveType
-		|| gNewBS->ringChallengeBannedTypes[1] == moveType
-		|| gNewBS->ringChallengeBannedTypes[2] == moveType;
+	return (gBattleTypeFlags & BATTLE_TYPE_BATTLE_TOWER)
+		&& FlagGet(FLAG_BATTLE_FACILITY)
+		&& BATTLE_FACILITY_NUM == IN_BATTLE_OBSERVATORY;
 }
 
 #define LOAD_TIER_CHECKING_ABILITY										\
@@ -803,23 +784,23 @@ bool8 PokemonTierBan(const u16 species, const u16 item, const struct BattleTower
 
 			if (gSpecialSpeciesFlags[species].battleTowerStandardBan
 			||  CheckTableForItem(item, gBattleTowerStandard_ItemBanList)
-			|| (ability == ABILITY_BATTLEBOND && tier != BATTLE_FACILITY_MEGA_BRAWL && BATTLE_FACILITY_NUM != IN_RING_CHALLENGE)) //Battle Bond is banned in Standard
+			|| (ability == ABILITY_BATTLEBOND && tier != BATTLE_FACILITY_MEGA_BRAWL && BATTLE_FACILITY_NUM != IN_BATTLE_OBSERVATORY)) //Battle Bond is banned in Standard
 				return TRUE;
 
-			if (BATTLE_FACILITY_NUM == IN_RING_CHALLENGE) //1v1
+			if (BATTLE_FACILITY_NUM == IN_BATTLE_OBSERVATORY) //1v1
 			{
 				#ifdef UNBOUND
 				if (species == SPECIES_REGIGIGAS && ability == ABILITY_STALL && !FlagGet(FLAG_ABILITY_RANDOMIZER)) //Too OP 1v1
 					return TRUE;
 				#endif
 
-				if (item == ITEM_FOCUS_SASH) //No Focus Sash in Ring Challenge
+				if (item == ITEM_FOCUS_SASH) //No Focus Sash in a 1v1
 					return TRUE;
 
 				//Check Banned Moves
 				for (i = 0; i < MAX_MON_MOVES; ++i)
 				{
-					if (CheckTableForMove(moveLoc[i], gRingChallenge_MoveBanList))
+					if (CheckTableForMove(moveLoc[i], gBattleObservatory_MoveBanList))
 						return TRUE;
 				}
 			}
@@ -1230,7 +1211,7 @@ bool8 IsSpeciesBannedInTier(u16 species, u16 tier, u16 battleFormat)
 			if (gSpecialSpeciesFlags[species].battleTowerStandardBan)
 				return TRUE;
 
-			return species == SPECIES_ASHGRENINJA && tier != BATTLE_FACILITY_MEGA_BRAWL && BATTLE_FACILITY_NUM != IN_RING_CHALLENGE;
+			return species == SPECIES_ASHGRENINJA && tier != BATTLE_FACILITY_MEGA_BRAWL && BATTLE_FACILITY_NUM != IN_BATTLE_OBSERVATORY;
 
 		case BATTLE_FACILITY_OU:
 		case BATTLE_FACILITY_NATIONAL_DEX_OU:
@@ -1695,168 +1676,4 @@ void sp073_ModifyTeamForBattleTower(void)
 
 	Memcpy(gPlayerParty, enteredMons, sizeof(struct Pokemon) * PARTY_SIZE); //Overwrite old team
 	Free(enteredMons);
-}
-
-//@Details: Buffers details of the opposing team for the Ring Challenge.
-//@Returns: gStringVar1: Opponent Pokemon 1 species
-//			gStringVar2: Opponent Pokemon 2 species
-//			gStringVar3: Opponent Pokemon 3 species
-void sp0E8_BufferRingChallengeOpponentTeamDetails(void)
-{
-	GetSpeciesName(gStringVar1, GetMonData(&gEnemyParty[0], MON_DATA_SPECIES, NULL));
-	GetSpeciesName(gStringVar2, GetMonData(&gEnemyParty[1], MON_DATA_SPECIES, NULL));
-	GetSpeciesName(gStringVar3, GetMonData(&gEnemyParty[2], MON_DATA_SPECIES, NULL));
-}
-
-//@Details: Chooses one of the opponent's Pokemon to participate in the Ring Challenge.
-void sp0E9_ChooseRingChallengeOpponentMon(void)
-{
-	#if (defined VAR_RING_CHALLENGE_BANNED_TYPE_1 && defined VAR_RING_CHALLENGE_BANNED_TYPE_2 && defined VAR_RING_CHALLENGE_BANNED_TYPE_3)
-	u32 i, j, k;
-	u8 moveCount[3] = {0}; //[aiMonId]
-	u8 bannedMoveCount[3] = {0}; //[aiMonId]
-	u8 superEffectiveCount[3] = {0}; //[aiMonId]
-	u8 decentMoveCount[3] = {0}; //[aiMonId]
-	bool8 hasFocusSash[3] = {FALSE}; //[aiMonId]
-	bool8 hasPriorityMove[3] = {FALSE}; //[aiMonId]
-	u8 resultFlags[3][3][MAX_MON_MOVES] = {0}; //[aiMonId][playerMonId][moveSlot]
-	u8 bannedTypes[3] =
-	{
-		VarGet(VAR_RING_CHALLENGE_BANNED_TYPE_1),
-		VarGet(VAR_RING_CHALLENGE_BANNED_TYPE_2),
-		VarGet(VAR_RING_CHALLENGE_BANNED_TYPE_3),
-	};
-
-	//Initial calculations for figuring out the best Pokemon to pick
-	for (i = 0; i < 3; ++i) //Each AI mon
-	{
-		struct Pokemon* mon = &gEnemyParty[i];
-		u8 atkAbility = GetMonAbility(mon); 
-		hasFocusSash[i] = GetMonData(mon, MON_DATA_HELD_ITEM, NULL) == ITEM_FOCUS_SASH || atkAbility == ABILITY_STURDY;
-
-		//Go through each of the AI mon's moves
-		for (j = 0; j < MAX_MON_MOVES; ++j)
-		{
-			u16 move = GetMonData(mon, MON_DATA_MOVE1 + j, NULL);
-			if (move != MOVE_NONE)
-			{
-				u8 moveType = GetMonMoveTypeSpecial(mon, move);
-				bool8 isBanned = FALSE;
-				++moveCount[i];
-
-				//Check if the move is usable
-				if (gBattleMoves[move].effect == EFFECT_PERISH_SONG) //Cheap move
-				{
-					isBanned = TRUE;
-					++bannedMoveCount[i]; //Increase count of banned moves
-				}
-				else
-				{
-					for (k = 0; k < NELEMS(bannedTypes); ++k)
-					{
-						if (moveType == bannedTypes[k])
-						{
-							isBanned = TRUE;
-							++bannedMoveCount[i]; //Increase count of banned moves
-							break;
-						}
-					}
-				}
-
-				if (!isBanned && SPLIT(move) != SPLIT_STATUS) //If the move can be used and can do damage
-				{
-					if (gBattleMoves[move].effect != EFFECT_COUNTER && gBattleMoves[move].effect != EFFECT_MIRROR_COAT)
-					{
-						//Get the result flags of the moves against each opponent
-						for (k = 0; k < 3; ++k)
-							TypeDamageModificationPartyMon(atkAbility, &gPlayerParty[k], move, moveType, &resultFlags[i][k][j]);
-					}
-					else //Reflection moves
-					{
-						for (k = 0; k < 3; ++k)
-						{
-							TypeDamageModificationPartyMon(atkAbility, &gPlayerParty[k], move, moveType, &resultFlags[i][k][j]);
-							if (!(resultFlags[i][k][j] & MOVE_RESULT_NO_EFFECT))
-								resultFlags[i][k][j] = MOVE_RESULT_SUPER_EFFECTIVE; //Always count as super effective if they can hit
-						}
-					}
-
-					if (PriorityCalcMon(mon, move) > 0)
-						++hasPriorityMove[i];
-				}
-				else //Otherwise the move can't be used to do damage
-				{
-					for (k = 0; k < 3; ++k)
-						resultFlags[i][k][j] = MOVE_RESULT_NO_EFFECT;
-				}
-			}
-		}
-
-		//Count effectiveness of this AI mon
-		for (j = 0; j < 3; ++j)
-		{
-			for (k = 0; k < MAX_MON_MOVES; ++k)
-			{
-				if (resultFlags[i][j][k] & MOVE_RESULT_SUPER_EFFECTIVE)
-				{
-					++superEffectiveCount[i]; //Has super effective move against this opponent
-					break;
-				}
-				else if (!(resultFlags[i][j][k] & (MOVE_RESULT_NO_EFFECT | MOVE_RESULT_NOT_VERY_EFFECTIVE)))
-				{
-					++decentMoveCount[i]; //Has at least one decent move that can be used against this opponent
-					break;
-				}
-			}
-		}
-	}
-
-	//Decide which Pokemon to use
-	u8 bestMonId = 0xFF;
-	u8 bestMonScore = 0;
-
-	for (i = 0; i < 3; ++i) //Each AI mon
-	{
-		u8 currMonScore = 0;
-		
-		if (bannedMoveCount[i] == moveCount[i]) //Mon has no usable moves
-			continue;
-
-		if (hasFocusSash[i])
-		{
-			if (hasPriorityMove[i])
-				currMonScore += 3; //Having a Focus Sash and a priority move helps a ton
-			else
-				currMonScore += 1;
-		}
-		else if (hasPriorityMove[i])
-			currMonScore += 1;
-
-		currMonScore += superEffectiveCount[i] * 2; //+ 0:6 Having super effective moves is ranked better
-		currMonScore += decentMoveCount[i]; //+ 0:3
-
-		if (currMonScore > bestMonScore)
-		{
-			bestMonScore = currMonScore;
-			bestMonId = i;
-		}
-		else if (currMonScore == bestMonScore)
-		{
-			if (bannedMoveCount[i] < bannedMoveCount[bestMonId] //This mon has less banned moves
-			||  superEffectiveCount[i] > superEffectiveCount[bestMonId]) //This mon can deal super effective damage to more foes
-			{
-				//Replace the old best mon
-				bestMonId = i;
-			}
-		}
-	}
-
-	if (bestMonScore == 0) //Sucky team as a whole
-		bestMonId = Random() % 3; //Pick Pokemon at random
-
-	//Give the AI the chosen Pokemon
-	struct Pokemon mon = gEnemyParty[bestMonId];
-	ZeroEnemyPartyMons();
-	gEnemyParty[0] = mon;
-	#endif
 }

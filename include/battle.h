@@ -954,7 +954,6 @@ struct NewBattleStruct
 	u32 maxGoldrushMoney;
 	u16 itemBackup[PARTY_SIZE];
 	u8 hiddenHealthboxFlags[MAX_SPRITES / 8]; //~2017AD8
-	u8 ringChallengeBannedTypes[3];
 	u16 knockedOffWildItem;
 	u8 criticalHitsThisBattle[PARTY_SIZE];
 	u8 pickupMonId;

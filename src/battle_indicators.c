@@ -1670,7 +1670,7 @@ bool8 CantLoadTeamPreviewTrigger(void)
 		return TRUE; //No enemy team
 
 	if (gBattleTypeFlags & BATTLE_TYPE_FRONTIER
-	&& BATTLE_FACILITY_NUM == IN_RING_CHALLENGE)
+	&& BATTLE_FACILITY_NUM == IN_BATTLE_OBSERVATORY)
 		return TRUE; //No point in showing here
 
 	if (gBattleTypeFlags & BATTLE_TYPE_LINK)

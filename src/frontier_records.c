@@ -79,7 +79,7 @@ static const struct WindowTemplate sFrontierRecordsWinTemplates[WINDOW_COUNT + 1
 		.bg = 0,
 		.tilemapLeft = 1,
 		.tilemapTop = 0,
-		.width = 10,
+		.width = 13,
 		.height = 3,
 		.paletteNum = 15,
 		.baseBlock = 1,
@@ -87,12 +87,12 @@ static const struct WindowTemplate sFrontierRecordsWinTemplates[WINDOW_COUNT + 1
 	[WIN_BATTLE_TYPE] =
 	{
 		.bg = 0,
-		.tilemapLeft = 12,
+		.tilemapLeft = 16,
 		.tilemapTop = 0,
-		.width = 18,
+		.width = 14,
 		.height = 3,
 		.paletteNum = 15,
-		.baseBlock = 31,
+		.baseBlock = 40,
 	},
 	[WIN_SINGLES] =
 	{
@@ -102,7 +102,7 @@ static const struct WindowTemplate sFrontierRecordsWinTemplates[WINDOW_COUNT + 1
 		.width = 6,
 		.height = 2,
 		.paletteNum = 15,
-		.baseBlock = 85,
+		.baseBlock = 82,
 	},
 	[WIN_SINGLES_CURRENT_STREAK] =
 	{
@@ -112,7 +112,7 @@ static const struct WindowTemplate sFrontierRecordsWinTemplates[WINDOW_COUNT + 1
 		.width = 10,
 		.height = 2,
 		.paletteNum = 15,
-		.baseBlock = 97,
+		.baseBlock = 94,
 	},
 	[WIN_SINGLES_MAX_STREAK] =
 	{
@@ -122,7 +122,7 @@ static const struct WindowTemplate sFrontierRecordsWinTemplates[WINDOW_COUNT + 1
 		.width = 10,
 		.height = 2,
 		.paletteNum = 15,
-		.baseBlock = 117,
+		.baseBlock = 114,
 	},
 	[WIN_DOUBLES] =
 	{
@@ -132,7 +132,7 @@ static const struct WindowTemplate sFrontierRecordsWinTemplates[WINDOW_COUNT + 1
 		.width = 6,
 		.height = 2,
 		.paletteNum = 15,
-		.baseBlock = 137,
+		.baseBlock = 134,
 	},
 	[WIN_DOUBLES_CURRENT_STREAK] =
 	{
@@ -142,7 +142,7 @@ static const struct WindowTemplate sFrontierRecordsWinTemplates[WINDOW_COUNT + 1
 		.width = 10,
 		.height = 2,
 		.paletteNum = 15,
-		.baseBlock = 149,
+		.baseBlock = 146,
 	},
 	[WIN_DOUBLES_MAX_STREAK] =
 	{
@@ -152,7 +152,7 @@ static const struct WindowTemplate sFrontierRecordsWinTemplates[WINDOW_COUNT + 1
 		.width = 10,
 		.height = 2,
 		.paletteNum = 15,
-		.baseBlock = 169,
+		.baseBlock = 166,
 	},
 
 //Buffered Data Windows
@@ -164,7 +164,7 @@ static const struct WindowTemplate sFrontierRecordsWinTemplates[WINDOW_COUNT + 1
 		.width = 4,
 		.height = 2,
 		.paletteNum = 15,
-		.baseBlock = 189,
+		.baseBlock = 186,
 	},
 	[WIN_SINGLES_MAX_STREAK_NUM] =
 	{
@@ -174,7 +174,7 @@ static const struct WindowTemplate sFrontierRecordsWinTemplates[WINDOW_COUNT + 1
 		.width = 4,
 		.height = 2,
 		.paletteNum = 15,
-		.baseBlock = 197,
+		.baseBlock = 194,
 	},
 	[WIN_DOUBLES_CURRENT_STREAK_NUM] =
 	{
@@ -184,7 +184,7 @@ static const struct WindowTemplate sFrontierRecordsWinTemplates[WINDOW_COUNT + 1
 		.width = 4,
 		.height = 2,
 		.paletteNum = 15,
-		.baseBlock = 205,
+		.baseBlock = 202,
 	},
 	[WIN_DOUBLES_MAX_STREAK_NUM] =
 	{
@@ -194,7 +194,7 @@ static const struct WindowTemplate sFrontierRecordsWinTemplates[WINDOW_COUNT + 1
 		.width = 4,
 		.height = 2,
 		.paletteNum = 15,
-		.baseBlock = 213,
+		.baseBlock = 210,
 	},
 
 	DUMMY_WIN_TEMPLATE,

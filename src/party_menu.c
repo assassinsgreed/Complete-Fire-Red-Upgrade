@@ -144,7 +144,7 @@ static bool8 SetUpFieldMove_Defog(void);
 static void CursorCb_MoveItemCallback(u8 taskId);
 static void CursorCb_MoveItem(u8 taskId);
 static void CursorCb_Nickname(u8 taskId);
-static void CursorCb_FactorySwap(u8 taskId);
+static void CursorCb_FrontierChooseMon(u8 taskId);
 static s8 *GetCurrentPartySlotPtr(void); 
 u16 PartyMenuButtonHandler(s8 *ptr); 
 void Task_HandleChooseMonInput(u8 taskId);
@@ -589,7 +589,7 @@ static const u8* const sOrderStrings[PARTY_SIZE] =
 
 u8 ChoosePokemon_LoadMaxPKMNStr(const u8** strPtr, bool8 loadString)
 {
-	u8 max = GetNumMonsOnTeamInFrontier();
+	u8 max = GetNumMonsToSelectInFrontier();
 
 	if (FlagGet(FLAG_BATTLE_FACILITY))
 	{
@@ -708,7 +708,7 @@ void CursorCb_NoEntry(u8 taskId)
 	gTasks[taskId].func = Task_HandleChooseMonInput;
 }
 
-static void CursorCb_FactorySwap(u8 taskId)
+static void CursorCb_FrontierChooseMon(u8 taskId)
 {
 	PlaySE(SE_SELECT);
 	PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[0]);
@@ -722,7 +722,7 @@ static void CursorCb_FactorySwap(u8 taskId)
 
 void OpenPartyMenuForScriptSpecial(u8 menuType)
 {
-	u8 action = IsBattleFactorySwapScreenOpen() ? PARTY_ACTION_CHOOSE_MON : PARTY_ACTION_CHOOSE_AND_CLOSE;
+	u8 action = IsFrontierPartySubmenuOpen() ? PARTY_ACTION_CHOOSE_MON : PARTY_ACTION_CHOOSE_AND_CLOSE;
 
 	gFieldCallback2 = (void*) (0x81283E4 | 1); // Fades the overworld back in and lets the waiting script go
 	InitPartyMenu(menuType, PARTY_LAYOUT_SINGLE, action, FALSE, PARTY_MSG_CHOOSE_MON,
@@ -792,7 +792,7 @@ u8 CanPokemonSelectedBeEnteredInBattleTower(void)
 	u8 i, j;
 	u8 tier = VarGet(VAR_BATTLE_FACILITY_TIER);
 	struct Pokemon* party = gPlayerParty;
-	u8 maxLength = GetNumMonsOnTeamInFrontier();
+	u8 maxLength = GetNumMonsToSelectInFrontier();
 
 	if (gSelectedOrderFromParty[maxLength - 1] == 0) //Not enough mon's entered
 	{
@@ -892,8 +892,8 @@ struct
 	[MENU_TRADE2] =	{(void*) 0x84169bc, (void*) 0x81245a1},
 	[MENU_MOVE_ITEM] = {gMenuText_Move, CursorCb_MoveItem},
 	[MENU_NICKNAME] = {gMenuText_Nickname, CursorCb_Nickname},
-	[MENU_FACTORY_GIVE] = {(void*) 0x84161B2, CursorCb_FactorySwap}, //"Give"
-	[MENU_FACTORY_TAKE] = {(void*) 0x84161DE, CursorCb_FactorySwap}, //"Take"
+	[MENU_FACTORY_GIVE] = {(void*) 0x84161B2, CursorCb_FrontierChooseMon}, //"Give"
+	[MENU_FACTORY_TAKE] = {(void*) 0x84161DE, CursorCb_FrontierChooseMon}, //"Take"
 
 	//Field Moves
 	[MENU_FIELD_MOVES + FIELD_MOVE_FLASH] =	      {gMoveNames[MOVE_FLASH], CursorCb_FieldMove},
@@ -911,6 +911,16 @@ struct
 	[MENU_FIELD_MOVES + FIELD_MOVE_ROCK_CLIMB] =  {gMoveNames[MOVE_ROCKCLIMB], CursorCb_FieldMove},
 	[MENU_FIELD_MOVES + FIELD_MOVE_DEFOG] =	      {gMoveNames[MOVE_DEFOG], CursorCb_FieldMove},
 	[MENU_FIELD_MOVES + FIELD_MOVE_DIVE] =	 	  {gMoveNames[MOVE_DIVE], CursorCb_FieldMove},
+};
+
+// Custom menu options for the Battle Frontier (Factory & Observatory, where viewing opponent parties is possible)
+static const u8 sFrontierScreenCursorOptions[NUM_FRONTIER_PARTY_SCREENS][3] =
+{
+	[FRONTIER_SCREEN_NONE]             = {MENU_SUMMARY, MENU_CANCEL1},
+	[FRONTIER_SCREEN_FACTORY_GIVE]     = {MENU_SUMMARY, MENU_FACTORY_GIVE, MENU_CANCEL1},
+	[FRONTIER_SCREEN_FACTORY_TAKE]     = {MENU_SUMMARY, MENU_FACTORY_TAKE, MENU_CANCEL1},
+	[FRONTIER_SCREEN_OBSERVATORY_VIEW] = {MENU_SUMMARY, MENU_CANCEL1},
+	[FRONTIER_SCREEN_OBSERVATORY_PICK] = {MENU_SUMMARY, MENU_CANCEL1},
 };
 
 struct
@@ -1020,16 +1030,23 @@ void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
 	#endif
 
 	sPartyMenuInternal->numActions = 0;
-	AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_SUMMARY);
 
-	if (IsBattleFactorySwapScreenOpen())
+	if (IsFrontierPartySubmenuOpen())
 	{
-		// Append Give/Take after Summary, depending on what the player is doing in the factory
-		AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions,
-			(gFrontierSwapScreenMode == SWAP_SCREEN_OPPONENT) ? MENU_FACTORY_TAKE : MENU_FACTORY_GIVE);
-		AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_CANCEL1);
+		const u8* list = sFrontierScreenCursorOptions[gFrontierPartyScreen];
+
+		for (i = 0; ; ++i)
+		{
+			AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, list[i]);
+
+			if (list[i] == MENU_CANCEL1)
+				break;
+		}
+
 		return;
 	}
+
+	AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_SUMMARY);
 
 	#ifdef FLAG_SANDBOX_MODE
 	if (FlagGet(FLAG_SANDBOX_MODE) && FlagGet(FLAG_SYS_GAME_CLEAR))

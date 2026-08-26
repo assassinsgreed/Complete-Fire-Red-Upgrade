@@ -7,10 +7,13 @@
 #include "../include/script.h"
 #include "../include/string_util.h"
 #include "../include/constants/battle.h"
+#include "../include/constants/items.h"
 #include "../include/constants/songs.h"
 #include "../include/pokemon.h"
 
+#include "../include/new/battle_start_turn_start.h"
 #include "../include/new/build_pokemon.h"
+#include "../include/new/damage_calc.h"
 #include "../include/new/frontier.h"
 #include "../include/new/util.h"
 #include "../include/new/Vanilla_functions.h"
@@ -60,6 +63,7 @@ u8 __attribute__((long_call)) SaveDialogCB_PrintAskSaveText(void);
 u8 __attribute__((long_call)) SaveDialogCB_DisplaySavingMessage(void);
 
 extern const u8 gText_FrontierRecordSingles[];
+extern const u8 gText_ObservatoryNameJoiner[];
 extern const u8 gText_FrontierRecordDoubles[];
 
 // Music customization options (Ace/Brain trainers do not get overriden)
@@ -299,6 +303,8 @@ static void RestoreGameModifiers(void)
 }
 
 static void ClearRentalTeam(u8 format);
+static void ClearObservatoryTeam(void);
+static u8 NumObservatoryPicks(void);
 
 static u8 SanitizeFacility(u8 facility)
 {
@@ -313,7 +319,7 @@ static const u8 gFacilityDefaultBackgrounds[NUM_BATTLE_FACILITIES] =
 	[IN_BATTLE_QUARRY]  = BATTLE_TERRAIN_CAVE,
 	[IN_BATTLE_SIM]  	= BATTLE_TERRAIN_CHAMPION,
 	[IN_BATTLE_FACTORY] = BATTLE_TERRAIN_INSIDE,
-	[IN_RING_CHALLENGE] = BATTLE_TERRAIN_PLUTO_LEADER,
+	[IN_BATTLE_OBSERVATORY] = BATTLE_TERRAIN_PLUTO_LEADER,
 	[IN_BATTLE_ISLE]    = BATTLE_TERRAIN_GRASS,
 	[IN_BATTLE_MAZE]    = BATTLE_TERRAIN_GRASS,
 };
@@ -423,7 +429,7 @@ static void LoadFacilityVars(u8 facility, u8 format)
 void FrontierChallenge_InitDataIfNeeded(void)
 {
 	u32 facility, format;
-	gFrontierSwapScreenMode = SWAP_SCREEN_NONE;
+	gFrontierPartyScreen = FRONTIER_SCREEN_NONE;
 
 	// Initializes default song to Frontier Trainer
 	// This will not conflict with Alistair's post-credits battle because the facility is only accessible after it
@@ -454,6 +460,9 @@ void FrontierChallenge_InitDataIfNeeded(void)
 
 				if (facility == IN_BATTLE_FACTORY)
 					ClearRentalTeam(format); // The forfeited run's rented team goes with it
+
+				if (facility == IN_BATTLE_OBSERVATORY)
+					ClearObservatoryTeam(); // Not per format - only one run is ever mid-battle
 			}
 		}
 	}
@@ -531,6 +540,9 @@ void FrontierChallenge_End(void)
 
 	if (FacilityRentsItsTeam(SanitizeFacility(BATTLE_FACILITY_NUM)))
 		ClearRentalTeam(GetCurrentFrontierFormat()); // The rented team is only ever on loan for one run
+
+	if (SanitizeFacility(BATTLE_FACILITY_NUM) == IN_BATTLE_OBSERVATORY)
+		ClearObservatoryTeam();
 
 	RestoreGameModifiers();
 }
@@ -738,9 +750,9 @@ static void ClearRentalTeam(u8 format)
 	Memset(gFrontierRentalTeams[SanitizeFormat(format)], 0, sizeof(gFrontierRentalTeams[0]));
 }
 
-// How many slots of the rented team are in play.
+// How many slots of an entered/rented team are in play.
 // Clamped because the save slot is sized for the larger of the two formats rather than per format.
-static u8 NumRentedMons(void)
+static u8 NumEnteredMons(void)
 {
 	return MathMin(GetNumMonsOnTeamInFrontier(), MAX_FRONTIER_TEAM_SIZE);
 }
@@ -749,13 +761,13 @@ static u8 NumRentedMons(void)
 static void StoreRentalTeam(void)
 {
 	Memset(GetRentalTeam(), 0, sizeof(gFrontierRentalTeams[0]));
-	Memcpy(GetRentalTeam(), gPlayerParty, sizeof(struct Pokemon) * NumRentedMons());
+	Memcpy(GetRentalTeam(), gPlayerParty, sizeof(struct Pokemon) * NumEnteredMons());
 }
 
 static void RestoreRentalTeam(void)
 {
 	ZeroPlayerPartyMons();
-	Memcpy(gPlayerParty, GetRentalTeam(), sizeof(struct Pokemon) * NumRentedMons());
+	Memcpy(gPlayerParty, GetRentalTeam(), sizeof(struct Pokemon) * NumEnteredMons());
 	CalculatePlayerPartyCount();
 }
 
@@ -797,7 +809,7 @@ void FrontierChallenge_GenerateRentalPool(void)
 void FrontierChallenge_StoreRentalPoolChoice(void)
 {
 	u32 i;
-	u8 numMons = NumRentedMons();
+	u8 numMons = NumEnteredMons();
 	struct Pokemon* team = GetRentalTeam();
 
 	Memset(team, 0, sizeof(gFrontierRentalTeams[0]));
@@ -823,26 +835,41 @@ void FrontierChallenge_StoreRentalTeam(void)
 		StoreRentalTeam();
 }
 
-// A custom party menu options list to show Summary, Give/Take, and Cancel, for the Battle Factory
-bool8 IsBattleFactorySwapScreenOpen(void)
+// Whether the party menu should present one of the frontier's own lists rather than the default.
+bool8 IsFrontierPartySubmenuOpen(void)
 {
-	return gFrontierSwapScreenMode != SWAP_SCREEN_NONE
-		&& SanitizeFacility(BATTLE_FACILITY_NUM) == IN_BATTLE_FACTORY;
+	u8 facility = SanitizeFacility(BATTLE_FACILITY_NUM);
+
+	return (gFrontierPartyScreen == FRONTIER_SCREEN_FACTORY_GIVE
+		 || gFrontierPartyScreen == FRONTIER_SCREEN_FACTORY_TAKE
+		 || gFrontierPartyScreen == FRONTIER_SCREEN_OBSERVATORY_VIEW)
+		&& (facility == IN_BATTLE_FACTORY || facility == IN_BATTLE_OBSERVATORY);
+}
+
+// How many Pokemon the party screen should ask for. Normally the whole team the format takes, but
+// the Observatory reuses that same screen to choose which of an already-entered team is sent out.
+u8 GetNumMonsToSelectInFrontier(void)
+{
+	if (gFrontierPartyScreen == FRONTIER_SCREEN_OBSERVATORY_PICK
+	&& SanitizeFacility(BATTLE_FACILITY_NUM) == IN_BATTLE_OBSERVATORY)
+		return NumObservatoryPicks();
+
+	return GetNumMonsOnTeamInFrontier();
 }
 
 void FrontierChallenge_BeginSwapScreenOwn(void)
 {
-	gFrontierSwapScreenMode = SWAP_SCREEN_OWN;
+	gFrontierPartyScreen = FRONTIER_SCREEN_FACTORY_GIVE;
 }
 
 void FrontierChallenge_BeginSwapScreenOpponent(void)
 {
-	gFrontierSwapScreenMode = SWAP_SCREEN_OPPONENT;
+	gFrontierPartyScreen = FRONTIER_SCREEN_FACTORY_TAKE;
 }
 
 void FrontierChallenge_EndSwapScreen(void)
 {
-	gFrontierSwapScreenMode = SWAP_SCREEN_NONE;
+	gFrontierPartyScreen = FRONTIER_SCREEN_NONE;
 }
 
 // Swaps the opponent's team into gPlayerParty so the party screen can show it off. The player's own
@@ -853,7 +880,7 @@ void FrontierChallenge_EndSwapScreen(void)
 void FrontierChallenge_LoadOpponentTeamForSwap(void)
 {
 	u32 i;
-	u8 numMons = NumRentedMons();
+	u8 numMons = NumEnteredMons();
 
 	gFrontierPendingSwapSlot = Var8004;
 
@@ -882,7 +909,7 @@ void FrontierChallenge_LoadOpponentTeamForSwap(void)
 //			gStringVar2: the Pokemon taken.
 void FrontierChallenge_ApplySwap(void)
 {
-	u8 numMons = NumRentedMons();
+	u8 numMons = NumEnteredMons();
 	u8 giveUp = gFrontierPendingSwapSlot;
 	u8 takeOn = Var8004;
 	struct Pokemon taken;
@@ -910,4 +937,393 @@ void FrontierChallenge_ApplySwap(void)
 	CalculatePlayerPartyCount();
 
 	gSpecialVar_LastResult = TRUE;
+}
+
+/* ============================================================================
+ * Battle Observatory specific functionality
+ * ============================================================================
+ *
+ * Both trainers reveal their whole team, then send out one Pokemon each (two in Doubles) to
+ * battle with. The team the player entered is stored in gObservatoryEnteredTeam for the battle
+ * because gPlayerParty has to be cut down to what is actually fighting.
+ */
+
+#define OBSERVATORY_MAX_PICKS 2 // Doubles sends out two
+
+// A Pokemon with nothing to attack with. Still pickable, so a team of them cannot leave the AI
+// with no one to send out, but it loses to anything that can hit back.
+#define OBSERVATORY_SCORE_NO_OFFENCE -100
+
+// How many of the revealed Pokemon are actually sent out.
+static u8 NumObservatoryPicks(void)
+{
+	return (GetCurrentFrontierFormat() == FRONTIER_FORMAT_DOUBLES) ? 2 : 1;
+}
+
+static void StoreObservatoryTeam(void)
+{
+	Memset(gObservatoryEnteredTeam, 0, sizeof(gObservatoryEnteredTeam));
+	Memcpy(gObservatoryEnteredTeam, gPlayerParty, sizeof(struct Pokemon) * NumEnteredMons());
+}
+
+static void RestoreObservatoryTeam(void)
+{
+	ZeroPlayerPartyMons();
+	Memcpy(gPlayerParty, gObservatoryEnteredTeam, sizeof(struct Pokemon) * NumEnteredMons());
+	CalculatePlayerPartyCount();
+}
+
+static void ClearObservatoryTeam(void)
+{
+	Memset(gObservatoryEnteredTeam, 0, sizeof(gObservatoryEnteredTeam));
+	Memset(gObservatoryChosenSlots, 0, sizeof(gObservatoryChosenSlots));
+}
+
+// How many Pokemon each side sends out. Used to drive the party selection screen & follow-up pre-battle messages
+void FrontierChallenge_NumObservatoryPicks(void)
+{
+	gSpecialVar_LastResult = NumObservatoryPicks();
+}
+
+// Opens the reveal: builds the opponent's team where the player can be shown it, stores the
+// player's own team, and names every Pokemon it revealed for the reveal message.
+//
+// The order here is load-bearing in both directions. The team has to be built while gPlayerParty
+// still holds the whole entered team, because the team builder reads it to counter the player -
+// and it has to be stored before anything cuts gPlayerParty down, because the stored copy is the only
+// copy the picks, the AI and the post-battle merge all read from.
+// Doubles reveal 4, captured in gStringVar1 (the only one big enough to hold 2 names).
+// Returns: gStringVar1/2/3: the revealed Pokemon, as one message's worth of names.
+void FrontierChallenge_RevealObservatoryTeams(void)
+{
+	u8 kind = GetNextOpponentKind();
+	u16 trainerId = (kind == FRONTIER_OPPONENT_BRAIN) ? FRONTIER_BRAIN_TID
+				  : (kind == FRONTIER_OPPONENT_ACE) ? BATTLE_TOWER_SPECIAL_TID
+				  : BATTLE_TOWER_TID;
+	u8 numMons = NumEnteredMons();
+
+	ZeroEnemyPartyMons();
+	BuildFrontierOpponentTeam(trainerId);
+	StoreObservatoryTeam();
+
+	if (numMons > 3)
+	{
+		u8 name[POKEMON_NAME_LENGTH + 1];
+
+		GetSpeciesName(gStringVar2, GetMonData(&gEnemyParty[0], MON_DATA_SPECIES, NULL));
+		GetSpeciesName(gStringVar3, GetMonData(&gEnemyParty[1], MON_DATA_SPECIES, NULL));
+		GetSpeciesName(gStringVar1, GetMonData(&gEnemyParty[2], MON_DATA_SPECIES, NULL));
+		GetSpeciesName(name, GetMonData(&gEnemyParty[3], MON_DATA_SPECIES, NULL));
+		StringAppend(gStringVar1, gText_ObservatoryNameJoiner);
+		StringAppend(gStringVar1, name);
+	}
+	else
+	{
+		GetSpeciesName(gStringVar1, GetMonData(&gEnemyParty[0], MON_DATA_SPECIES, NULL));
+		GetSpeciesName(gStringVar2, GetMonData(&gEnemyParty[1], MON_DATA_SPECIES, NULL));
+		GetSpeciesName(gStringVar3, GetMonData(&gEnemyParty[2], MON_DATA_SPECIES, NULL));
+	}
+}
+
+// Swaps the opponent's revealed team into gPlayerParty so the party screen can show it off, with
+// the summaries the player needs to choose against it.
+void FrontierChallenge_BeginObservatoryView(void)
+{
+	u32 i;
+	u8 numMons = NumEnteredMons();
+
+	ZeroPlayerPartyMons();
+
+	for (i = 0; i < numMons; ++i)
+	{
+		if (GetMonData(&gEnemyParty[i], MON_DATA_SPECIES, NULL) == SPECIES_NONE)
+			break;
+
+		gPlayerParty[i] = gEnemyParty[i];
+	}
+
+	CalculatePlayerPartyCount();
+	gFrontierPartyScreen = FRONTIER_SCREEN_OBSERVATORY_VIEW;
+}
+
+// Puts the player's own team back.
+void FrontierChallenge_EndObservatoryView(void)
+{
+	gFrontierPartyScreen = FRONTIER_SCREEN_NONE;
+	RestoreObservatoryTeam();
+}
+
+// Opens the screen the player sends out from - the same multi-select the frontier team is entered
+// on, so Doubles picks both of its Pokemon at once and either format can read a summary first.
+// GetNumMonsToSelectInFrontier reads the screen mode set here to ask for one or two rather than
+// for a whole team.
+void FrontierChallenge_BeginObservatoryPick(void)
+{
+	Memset(gSelectedOrderFromParty, 0, PARTY_SIZE);
+	gFrontierPartyScreen = FRONTIER_SCREEN_OBSERVATORY_PICK;
+}
+
+// Cuts gPlayerParty down to the Pokemon being sent out, and says whether the player picked at all.
+// gPlayerParty is rebuilt from the stored data rather than read: special 0xF5 zeroes it and refills three
+// slots from an uninitialised buffer on the way out, which is exactly why the stored data exists.
+//
+// Returns: LastResult: FALSE if the player backed out without filling every slot, in which case
+//			the team is put back and the script asks again.
+//			gStringVar1 (and gStringVar2 in Doubles): the Pokemon being sent out.
+void FrontierChallenge_SendOutObservatoryPicks(void)
+{
+	u32 i;
+	u8 numPicks = NumObservatoryPicks();
+	struct Pokemon picks[OBSERVATORY_MAX_PICKS];
+
+	gFrontierPartyScreen = FRONTIER_SCREEN_NONE;
+
+	for (i = 0; i < numPicks; ++i)
+	{
+		u32 j;
+		u8 slot = gSelectedOrderFromParty[i];
+
+		// 1-indexed, 0 meaning nothing was picked here. The screen will not offer the same
+		// Pokemon twice, but two copies of one slot would be a whole battle fought wrong.
+		if (slot == 0 || slot > NumEnteredMons())
+			break;
+
+		for (j = 0; j < i; ++j)
+		{
+			if (gSelectedOrderFromParty[j] == slot)
+				break;
+		}
+
+		if (j < i)
+			break;
+
+		gObservatoryChosenSlots[i] = slot - 1;
+		picks[i] = gObservatoryEnteredTeam[slot - 1];
+	}
+
+	if (i < numPicks)
+	{
+		RestoreObservatoryTeam();
+		gSpecialVar_LastResult = FALSE;
+		return;
+	}
+
+	ZeroPlayerPartyMons();
+
+	for (i = 0; i < numPicks; ++i)
+		gPlayerParty[i] = picks[i];
+
+	CalculatePlayerPartyCount();
+
+	GetSpeciesName(gStringVar1, GetMonData(&gPlayerParty[0], MON_DATA_SPECIES, NULL));
+	GetSpeciesName(gStringVar2, GetMonData(&gPlayerParty[1], MON_DATA_SPECIES, NULL));
+	gSpecialVar_LastResult = TRUE;
+}
+
+// Rebuilds the entered team after the battle, with whatever fought put back in the slot it came
+// from. The frontier heals its Pokemon between battles, but end_battle.c only ever saw the one or
+// two that were sent out, so the rest of the team is healed here.
+void FrontierChallenge_RestoreObservatoryTeam(void)
+{
+	u32 i;
+	u8 numPicks = NumObservatoryPicks();
+	struct Pokemon fought[OBSERVATORY_MAX_PICKS];
+
+	for (i = 0; i < numPicks; ++i)
+		fought[i] = gPlayerParty[i];
+
+	RestoreObservatoryTeam();
+
+	for (i = 0; i < numPicks; ++i)
+	{
+		u8 slot = gObservatoryChosenSlots[i];
+
+		if (slot < NumEnteredMons())
+			gPlayerParty[slot] = fought[i];
+	}
+
+	for (i = 0; i < PARTY_SIZE; ++i)
+	{
+		if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES, NULL) != SPECIES_NONE)
+			HealMon(&gPlayerParty[i]);
+	}
+
+	CalculatePlayerPartyCount();
+}
+
+// Scores one of the AI's Pokemon against the team the player revealed.
+// It can only read the same information the player could: the revealed Pokemon's species, types, ability and
+// item, never which of them the player is actually sending out.
+static s16 ScoreObservatoryMon(struct Pokemon* mon, struct Pokemon* revealed, u8 numRevealed)
+{
+	u32 i, j;
+	s16 score = 0;
+	u8 ability = GetMonAbility(mon);
+	u8 damagingMoves = 0;
+	bool8 hasPriority = FALSE;
+	bool8 endures = GetMonData(mon, MON_DATA_HELD_ITEM, NULL) == ITEM_FOCUS_SASH
+				 || ability == ABILITY_STURDY;
+
+	for (j = 0; j < MAX_MON_MOVES; ++j)
+	{
+		u16 move = GetMonData(mon, MON_DATA_MOVE1 + j, NULL);
+
+		if (move == MOVE_NONE || SPLIT(move) == SPLIT_STATUS)
+			continue;
+
+		++damagingMoves;
+
+		if (PriorityCalcMon(mon, move) > 0)
+			hasPriority = TRUE;
+	}
+
+	if (damagingMoves == 0)
+		return OBSERVATORY_SCORE_NO_OFFENCE;
+
+	for (i = 0; i < numRevealed; ++i)
+	{
+		struct Pokemon* foe = &revealed[i];
+		u8 foeAbility;
+		u8 best = 0; // 0 = cannot touch it, 1 = hits it for normal damage, 2 = super effective
+
+		if (GetMonData(foe, MON_DATA_SPECIES, NULL) == SPECIES_NONE)
+			continue;
+
+		for (j = 0; j < MAX_MON_MOVES; ++j)
+		{
+			u16 move = GetMonData(mon, MON_DATA_MOVE1 + j, NULL);
+			u8 moveType, flags = 0;
+
+			if (move == MOVE_NONE || SPLIT(move) == SPLIT_STATUS)
+				continue;
+
+			moveType = GetMonMoveTypeSpecial(mon, move);
+			TypeDamageModificationPartyMon(ability, foe, move, moveType, &flags);
+
+			// Counter and Mirror Coat ignore the type chart; landing at all is the whole trick.
+			if (gBattleMoves[move].effect == EFFECT_COUNTER || gBattleMoves[move].effect == EFFECT_MIRROR_COAT)
+			{
+				if (!(flags & MOVE_RESULT_NO_EFFECT))
+					best = 2;
+			}
+			else if (flags & MOVE_RESULT_SUPER_EFFECTIVE)
+				best = 2;
+			else if (!(flags & (MOVE_RESULT_NO_EFFECT | MOVE_RESULT_NOT_VERY_EFFECTIVE)) && best < 1)
+				best = 1;
+
+			if (best == 2)
+				break;
+		}
+
+		score += best;
+
+		if (best == 2)
+			score += 1; // Threatening a Pokemon outright is worth more than chipping it
+
+		// And the other half of the matchup: a revealed Pokemon whose own types would come off it
+		// super effectively is one this Pokemon would rather not be looking at.
+		foeAbility = GetMonAbility(foe);
+
+		for (j = 0; j < 2; ++j)
+		{
+			u8 flags = 0;
+			u8 foeType = GetMonType(foe, j);
+
+			if (j == 1 && foeType == GetMonType(foe, 0))
+				break; // Single-typed
+
+			TypeDamageModificationPartyMon(foeAbility, mon, MOVE_NONE, foeType, &flags);
+
+			if (flags & MOVE_RESULT_SUPER_EFFECTIVE)
+			{
+				score -= 2;
+				break;
+			}
+		}
+	}
+
+	if (endures)
+		score += hasPriority ? 3 : 1;
+	else if (hasPriority)
+		score += 1;
+
+	return score;
+}
+
+// Whether a beats b for the purposes of picking. Speed settles equal matchups, because moving
+// first matters most in a battle neither side can switch out of, and a coin flip settles the rest
+// so identical spreads do not always send out the same slot.
+static bool8 IsBetterObservatoryPick(s16 scoreA, struct Pokemon* a, s16 scoreB, struct Pokemon* b)
+{
+	u16 speedA, speedB;
+
+	if (scoreA != scoreB)
+		return scoreA > scoreB;
+
+	speedA = GetMonData(a, MON_DATA_SPEED, NULL);
+	speedB = GetMonData(b, MON_DATA_SPEED, NULL);
+
+	if (speedA != speedB)
+		return speedA > speedB;
+
+	return (Random() & 1) != 0;
+}
+
+// Picks who the AI sends out and cuts gEnemyParty down to them, the same way the player's picks
+// cut down gPlayerParty. Doubles takes the two best.
+// Returns: gStringVar1 (and gStringVar2 in Doubles): the Pokemon the opponent is sending out.
+void FrontierChallenge_ChooseObservatoryOpponentMons(void)
+{
+	u32 i, j;
+	u8 count = 0;
+	u8 numPicks = NumObservatoryPicks();
+	u8 numMons = NumEnteredMons();
+	s16 scores[MAX_FRONTIER_TEAM_SIZE];
+	u8 order[MAX_FRONTIER_TEAM_SIZE];
+	struct Pokemon picks[OBSERVATORY_MAX_PICKS];
+
+	for (i = 0; i < numMons; ++i)
+	{
+		if (GetMonData(&gEnemyParty[i], MON_DATA_SPECIES, NULL) == SPECIES_NONE)
+			continue;
+
+		scores[count] = ScoreObservatoryMon(&gEnemyParty[i], gObservatoryEnteredTeam, numMons);
+		order[count] = i;
+		++count;
+	}
+
+	if (count == 0)
+		return; // Nothing was built, so leave the team alone rather than emptying it
+
+	// Selection sort, best first. Never more than four entries.
+	for (i = 0; i < count; ++i)
+	{
+		for (j = i + 1; j < count; ++j)
+		{
+			if (IsBetterObservatoryPick(scores[j], &gEnemyParty[order[j]], scores[i], &gEnemyParty[order[i]]))
+			{
+				s16 score = scores[i];
+				u8 slot = order[i];
+
+				scores[i] = scores[j];
+				order[i] = order[j];
+				scores[j] = score;
+				order[j] = slot;
+			}
+		}
+	}
+
+	if (numPicks > count)
+		numPicks = count;
+
+	for (i = 0; i < numPicks; ++i)
+		picks[i] = gEnemyParty[order[i]];
+
+	ZeroEnemyPartyMons();
+
+	for (i = 0; i < numPicks; ++i)
+		gEnemyParty[i] = picks[i];
+
+	GetSpeciesName(gStringVar1, GetMonData(&gEnemyParty[0], MON_DATA_SPECIES, NULL));
+	GetSpeciesName(gStringVar2, GetMonData(&gEnemyParty[1], MON_DATA_SPECIES, NULL));
 }

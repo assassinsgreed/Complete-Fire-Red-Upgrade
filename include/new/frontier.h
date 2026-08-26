@@ -47,8 +47,7 @@ bool8 IsCamomonsBattle(void);
 bool8 IsBenjaminButterfreeBattle(void);
 bool8 AreMegasZMovesBannedInTier(u8 tier);
 bool8 IsMegaZMoveBannedBattle(void);
-bool8 IsMoveBannedInRingChallenge(u16 move, u8 bank);
-bool8 IsMoveBannedInRingChallengeByMon(u16 move, struct Pokemon* mon);
+bool8 IsBattleObservatoryBattle(void);
 bool8 PokemonTierBan(const u16 species, const u16 item, const struct BattleTowerSpread* const spread, const struct Pokemon* const mon, const u8 tier, const u8 checkFromLocationType);
 bool8 IsMonBannedInTier(struct Pokemon* mon, u8 tier);
 bool8 IsSpeciesBannedInTier(u16 species, u16 tier, u16 battleFormat);
@@ -92,7 +91,7 @@ enum BattleFacilities
 	IN_BATTLE_QUARRY,
 	IN_BATTLE_SIM,
 	IN_BATTLE_FACTORY,
-	IN_RING_CHALLENGE,
+	IN_BATTLE_OBSERVATORY,
 	IN_BATTLE_ISLE,
 	IN_BATTLE_MAZE,
 	NUM_BATTLE_FACILITIES,
@@ -376,13 +375,25 @@ extern struct FrontierBackground gFrontierBackground; //0x2026898
 extern struct Pokemon gFrontierRentalTeams[NUM_FRONTIER_FORMATS][MAX_FRONTIER_TEAM_SIZE]; // 0x202689C
 extern u8 gFrontierPendingSwapSlot; // 0x2026BBC
 
-// Which of the Factory's two swap screens is open, if either. Tells it whether to offer a give or take action.
-#define SWAP_SCREEN_NONE     0
-#define SWAP_SCREEN_OWN      1
-#define SWAP_SCREEN_OPPONENT 2
-extern u8 gFrontierSwapScreenMode; // 0x2026BBD
-bool8 IsBattleFactorySwapScreenOpen(void);
+enum FrontierPartyScreens
+{
+	FRONTIER_SCREEN_NONE,
+	FRONTIER_SCREEN_FACTORY_GIVE,
+	FRONTIER_SCREEN_FACTORY_TAKE,
+	FRONTIER_SCREEN_OBSERVATORY_VIEW,
+	FRONTIER_SCREEN_OBSERVATORY_PICK,
+	NUM_FRONTIER_PARTY_SCREENS,
+};
+
+extern u8 gFrontierPartyScreen; // 0x2026BBD
+bool8 IsFrontierPartySubmenuOpen(void);
+u8 GetNumMonsToSelectInFrontier(void);
 extern struct Pokemon gFrontierRentalPool[PARTY_SIZE]; //0x2026BC0
+
+// The Battle Observatory's entered team, saved while the revealed Pokemon fight,
+// as well as which slots were sent out. See the Battle Observatory section of frontier_challenge.c.
+extern struct Pokemon gObservatoryEnteredTeam[MAX_FRONTIER_TEAM_SIZE]; // 0x2026E18
+extern u8 gObservatoryChosenSlots[2]; // 0x2026FA8
 
 extern const u8* const gBattleFrontierTierNames[NUM_TIERS];
 extern const u8* const gBattleFacilityNames[NUM_BATTLE_FACILITIES];
@@ -414,7 +425,7 @@ extern const item_t gSmogonMetronome_ItemBanList[];
 extern const item_t gSmogonUU_ItemBanList[];
 extern const item_t gSmogonRU_ItemBanList[];
 extern const item_t gSmogonNU_ItemBanList[];
-extern const move_t gRingChallenge_MoveBanList[];
+extern const move_t gBattleObservatory_MoveBanList[];
 extern const move_t gSmogon_MoveBanList[];
 extern const move_t gSmogonOUDoubles_MoveBanList[];
 extern const move_t gSmogonLittleCup_MoveBanList[];

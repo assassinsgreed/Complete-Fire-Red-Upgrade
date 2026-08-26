@@ -128,19 +128,6 @@ void HandleNewBattleRamClearBeforeBattle(void)
 		gNewBS->dynamaxData.backupRaidMonItem = GetMonData(&gEnemyParty[0], MON_DATA_HELD_ITEM, NULL); //For Frontier
 	}
 
-	if (gBattleTypeFlags & BATTLE_TYPE_RING_CHALLENGE)
-	{
-		#ifdef VAR_RING_CHALLENGE_BANNED_TYPE_1
-		gNewBS->ringChallengeBannedTypes[0] = VarGet(VAR_RING_CHALLENGE_BANNED_TYPE_1);
-		#endif
-		#ifdef VAR_RING_CHALLENGE_BANNED_TYPE_2
-		gNewBS->ringChallengeBannedTypes[1] = VarGet(VAR_RING_CHALLENGE_BANNED_TYPE_2);
-		#endif
-		#ifdef VAR_RING_CHALLENGE_BANNED_TYPE_3
-		gNewBS->ringChallengeBannedTypes[2] = VarGet(VAR_RING_CHALLENGE_BANNED_TYPE_3);
-		#endif
-	}
-
 	#ifdef FLAG_BENJAMIN_BUTTERFREE_BATTLE
 	if (FlagGet(FLAG_BENJAMIN_BUTTERFREE_BATTLE))
 		SavePlayerParty(); //Backup party to be restored after the battle

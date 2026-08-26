@@ -1799,20 +1799,6 @@ u8 TrySetCantSelectMoveBattleScript(void)
 		++limitations;
 	}
 	#endif
-	else if (gBattleTypeFlags & BATTLE_TYPE_RING_CHALLENGE && IsMoveBannedInRingChallenge(move, gActiveBattler))
-	{
-		if (gBattleMoves[move].effect == EFFECT_PERISH_SONG)
-		{
-			gSelectionBattleScripts[gActiveBattler] = Battlescript_SelectingSpecificMoveNotAllowedInRingChallenge;
-		}
-		else
-		{
-			PREPARE_TYPE_BUFFER(gBattleTextBuff1, GetMoveTypeSpecial(gActiveBattler, move));
-			gSelectionBattleScripts[gActiveBattler] = BattleScript_SelectingNotAllowedRingChallenge;
-		}
-	
-		++limitations;
-	}
 	else if (!gNewBS->zMoveData.toBeUsed[gActiveBattler] //Can still use status Z-Moves even during Gravity - they'll just fail after
 	&& IsGravityActive() && gSpecialMoveFlags[move].gGravityBannedMoves)
 	{

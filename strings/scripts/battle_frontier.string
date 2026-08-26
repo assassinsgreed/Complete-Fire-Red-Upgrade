@@ -487,6 +487,45 @@ At the Battle Factory, you rent a\nteam to battle with from us.\pI'll lay out si
 #org @gText_BattleFrontier_IsleRules
 Battles at the Battle Isle are\nfought in the traditional way.\pHeld items and abilities do not\nactiavate.\pMega Evolution and Z-Moves have no\nplace here either.\pAll moves are physical or special\nbased on their type.
 
+#org @gText_BattleFrontier_ObservatoryRules
+The Battle Observatory hosts a\nseries of duels between battlers.\pYou and your opponent reveal every\nPok\emon you brought.\pStudy your opponent, then choose\nyour Pok\emon to duel with.\pDuels are 1v1 in singles, and 2v2\nin doubles.\pDuel with honour! Mega Evolution and\nZ- Moves are not permitted.
+
+#org @gText_BattleFrontier_ObservatoryReveal
+The observatory lights come up on\nboth teams!\pYour opponent revealed [BUFFER1],\n[BUFFER2] and [BUFFER3]!
+
+// Doubles reveals four Pokemon and there are only three buffers, so the last two share one - and
+// it has to be BUFFER1, the only one wide enough to hold a pair. Hence the out-of-order reads:
+// BUFFER2 is the first Pokemon, BUFFER3 the second, BUFFER1 the third and fourth together.
+#org @gText_BattleFrontier_ObservatoryRevealDouble
+The observatory lights come up on\nboth teams!\pYour opponent revealed [BUFFER2],\n[BUFFER3], [BUFFER1]!
+
+#org @gText_ObservatoryNameJoiner
+ and 
+
+#org @gText_BattleFrontier_ObservatoryOfferLook
+Would you like a closer look at\ntheir team?
+
+#org @gText_BattleFrontier_ObservatoryChoosePrompt
+Which Pok\emon will you send out?
+
+#org @gText_BattleFrontier_ObservatoryChoosePromptDouble
+Which two Pok\emon will you send out?
+
+#org @gText_BattleFrontier_ObservatoryPlayerChoice
+You chose [BUFFER1]!
+
+#org @gText_BattleFrontier_ObservatoryPlayerChoiceDouble
+You chose [BUFFER1] and [BUFFER2]!
+
+#org @gText_BattleFrontier_ObservatoryOpponentChoice
+Your opponent chose [BUFFER1]!
+
+#org @gText_BattleFrontier_ObservatoryOpponentChoiceDouble
+Your opponent chose [BUFFER1]\nand [BUFFER2]!
+
+#org @gText_BattleFrontier_ObservatoryBattleStarting
+Let the duel begin!
+
 #org @gText_BattleFrontier_SandsRules
 In the Battle Sands, you put your\ntrust in your Pok\emon.\pYou choose if they fight or switch,\nbut they choose their own moves.\pWhenever a Pok\emon enters battle,\nthey are empowered by the sands.\pThis raises a random stat, with the\nintensity growing with your streak.
 
@@ -596,14 +635,14 @@ That's [BUFFER3] straight in the\n[BUFFER1]!\pYou'll have to spend some Pok\e Ch
 //------------------------------------------------------------------
 
 #org @gText_BattleFrontier_ChallengeMenuPrompt
-Your [BUFFER1] [BUFFER2] streak\nstands at [BUFFER3].\pWould you like to continue?
+Your [BUFFER1] [BUFFER2]\nstreak stands at [BUFFER3].\pWould you like to continue?
 
 // The two below replace the prompt above when a milestone battle is next, so the player is never surprised into one - see FrontierChallenge_GetNextOpponentKind.
 #org @gText_BattleFrontier_ChallengeMenuPromptAce
-Your [BUFFER1] [BUFFER2] streak\nstands at [BUFFER3].\pA word of warning - an especially\nstrong Trainer is next up.\pWould you like to continue?
+Your [BUFFER1] [BUFFER2]\nstreak stands at [BUFFER3].\pA word of warning - an especially\nstrong Trainer is next up.\pWould you like to continue?
 
 #org @gText_BattleFrontier_ChallengeMenuPromptBrain
-Your [BUFFER1] [BUFFER2] streak\nstands at [BUFFER3].\pWaiting in the next room is\nthe master of the [BUFFER1]\lthemselves!\pWould you like to continue?
+Your [BUFFER1] [BUFFER2]\nstreak stands at [BUFFER3].\pWaiting in the next room is\nthe master of the [BUFFER1]\lthemselves!\pWould you like to continue?
 
 #org @gText_BattleFrontier_ChoiceContinue
 Continue

@@ -247,7 +247,7 @@ void BuildTrainerPartySetup(void)
 	}
 	else if (gBattleTypeFlags & BATTLE_TYPE_FRONTIER)
 	{
-		if (!(gBattleTypeFlags & BATTLE_TYPE_RING_CHALLENGE)
+		if (!IsBattleObservatoryBattle()
 		#ifdef FLAG_PRESET_FRONTIER_OPPONENT_TEAM
 		&& !FlagGet(FLAG_PRESET_FRONTIER_OPPONENT_TEAM)
 		#endif
@@ -686,12 +686,20 @@ u16 sp069_GivePlayerRandomFrontierMonByTier(void)
 	return GiveRandomFrontierMonByTier(B_SIDE_PLAYER, Var8000, Var8001);
 }
 
+// Builds a Frontier opponent's whole team outside of battle, for facilities that show it to the
+// player before the battle starts. gPlayerParty must still capture the player's entered team - the
+// opponent team builder reads it to counter them.
+void BuildFrontierOpponentTeam(u16 trainerId)
+{
+	BuildFrontierParty(&gEnemyParty[0], trainerId, VarGet(VAR_BATTLE_FACILITY_TIER), TRUE, FALSE, B_SIDE_OPPONENT);
+}
+
 //@Details: Creates the opposing team for a Frontier battle in the overworld.
 //@Inputs:
 //		Var8000: Trainer Id
 void sp0E7_CreateFrontierOpponentTeamBeforeBattle(void)
 {
-	BuildFrontierParty(&gEnemyParty[0], Var8000, VarGet(VAR_BATTLE_FACILITY_TIER), TRUE, FALSE, B_SIDE_OPPONENT);
+	BuildFrontierOpponentTeam(Var8000);
 }
 
 u16 GiveRandomFrontierMonByTier(u8 side, u8 tier, u16 spreadType)
@@ -2785,7 +2793,7 @@ static bool8 IsPokemonBannedBasedOnStreak(u16 species, u16 item, u16* speciesArr
 
 	u16 streak = GetCurrentBattleFacilityStreak();
 	bool8 megasZMovesBannedInTier = AreMegasZMovesBannedInTier(tier)
-								 || BATTLE_FACILITY_NUM == IN_RING_CHALLENGE
+								 || BATTLE_FACILITY_NUM == IN_BATTLE_OBSERVATORY
 								 || BATTLE_FACILITY_NUM == IN_BATTLE_ISLE;
 
 	// A Choice-locked mon Struggles about half its turns in the Quarry.
@@ -2872,7 +2880,7 @@ static bool8 IsPokemonBannedBasedOnStreak(u16 species, u16 item, u16* speciesArr
 	}
 	else if (trainerId == FRONTIER_BRAIN_TID)
 	{
-		if (BATTLE_FACILITY_NUM == IN_RING_CHALLENGE)
+		if (BATTLE_FACILITY_NUM == IN_BATTLE_OBSERVATORY)
 			return IsZCrystal(item) || IsMegaStone(item); //Don't give the frontier Brain Pokemon with bad items
 	}
 

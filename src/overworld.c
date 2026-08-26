@@ -1048,9 +1048,6 @@ void BattleSetup_StartTrainerBattle(void)
 			case IN_BATTLE_SIM:
 				gBattleTypeFlags |= BATTLE_TYPE_BATTLE_SIM;
 				break;
-			case IN_RING_CHALLENGE:
-				gBattleTypeFlags |= BATTLE_TYPE_RING_CHALLENGE;
-				//Fallthrough
 			default:
 				gBattleTypeFlags |= BATTLE_TYPE_BATTLE_TOWER;
 				break;
@@ -1122,11 +1119,6 @@ void BattleSetup_StartTrainerBattle(void)
 		#ifdef FLAG_BENJAMIN_BUTTERFREE_BATTLE
 		if (FlagGet(FLAG_BENJAMIN_BUTTERFREE_BATTLE))
 			gBattleTypeFlags |= BATTLE_TYPE_BENJAMIN_BUTTERFREE;
-		#endif
-
-		#ifdef FLAG_RING_CHALLENGE_BATTLE
-		if (FlagGet(FLAG_RING_CHALLENGE_BATTLE))
-			gBattleTypeFlags |= BATTLE_TYPE_RING_CHALLENGE;
 		#endif
 
 		#ifdef FLAG_AI_CONTROL_BATTLE
