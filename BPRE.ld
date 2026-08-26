@@ -15,6 +15,8 @@ gFrontierBackground = 0x2026898;     /* 0x2 bytes */
 gFrontierRentalTeams = 0x202689C;    /* 0x320 bytes */
 /* Which rental the player is giving up when taking a Factory opponent's Pokemon, held across the second party screen. */
 gFrontierPendingSwapSlot = 0x2026BBC; /* 0x1 bytes */
+/* Which of the Factory's two swap screens is open. The party menu's action list is shared with the overworld's, so it has to be told which one it is drawing. */
+gFrontierSwapScreenMode = 0x2026BBD; /* 0x1 bytes */
 /* The six rentals on offer, snapshotted before the party screen opens. Special 0xF5 zeroes gPlayerParty and refills three slots from an uninitialised buffer, which we need to avoid. */
 gFrontierRentalPool = 0x2026BC0;     /* 0x258 bytes; next free 0x2026E18 */
 gLastUsedBall = 0x203B774;

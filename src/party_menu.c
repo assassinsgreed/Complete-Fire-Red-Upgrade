@@ -40,6 +40,7 @@
 #include "../include/new/evolution.h"
 #include "../include/new/follow_me.h"
 #include "../include/new/form_change.h"
+#include "../include/new/frontier.h"
 #include "../include/new/item.h"
 #include "../include/new/learn_move.h"
 #include "../include/new/multi.h"
@@ -123,6 +124,7 @@ void __attribute__((long_call)) MoveCursorToConfirm(void);
 void __attribute__((long_call)) HandleChooseMonSelection(u8 taskId, s8 *slotPtr);
 void __attribute__((long_call)) CursorCB_Switch(u8 taskId); 
 void __attribute__((long_call)) UpdateCurrentPartySelection(s8 *slotPtr, s8 movementDir);
+void __attribute__((long_call)) Task_ClosePartyMenu(u8 taskId);
 
 //This file's functions:
 static void OpenSummary(u8 taskId);
@@ -142,6 +144,7 @@ static bool8 SetUpFieldMove_Defog(void);
 static void CursorCb_MoveItemCallback(u8 taskId);
 static void CursorCb_MoveItem(u8 taskId);
 static void CursorCb_Nickname(u8 taskId);
+static void CursorCb_FactorySwap(u8 taskId);
 static s8 *GetCurrentPartySlotPtr(void); 
 u16 PartyMenuButtonHandler(s8 *ptr); 
 void Task_HandleChooseMonInput(u8 taskId);
@@ -705,6 +708,27 @@ void CursorCb_NoEntry(u8 taskId)
 	gTasks[taskId].func = Task_HandleChooseMonInput;
 }
 
+static void CursorCb_FactorySwap(u8 taskId)
+{
+	PlaySE(SE_SELECT);
+	PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[0]);
+	PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[1]);
+
+	Var8004 = gPartyMenu.slotId;
+	sPartyMenuInternal->exitCallback = NULL;
+	gPartyMenuUseExitCallback = FALSE;
+	Task_ClosePartyMenu(taskId);
+}
+
+void OpenPartyMenuForScriptSpecial(u8 menuType)
+{
+	u8 action = IsBattleFactorySwapScreenOpen() ? PARTY_ACTION_CHOOSE_MON : PARTY_ACTION_CHOOSE_AND_CLOSE;
+
+	gFieldCallback2 = (void*) (0x81283E4 | 1); // Fades the overworld back in and lets the waiting script go
+	InitPartyMenu(menuType, PARTY_LAYOUT_SINGLE, action, FALSE, PARTY_MSG_CHOOSE_MON,
+		(void*) (0x811FB28 | 1), CB2_ReturnToFieldContinueScript); // Vanilla Task_HandleChooseMonInput
+}
+
 void DisplayPartyPokemonSelectForBattle(u8 slot)
 {
 	u8 max;
@@ -868,6 +892,8 @@ struct
 	[MENU_TRADE2] =	{(void*) 0x84169bc, (void*) 0x81245a1},
 	[MENU_MOVE_ITEM] = {gMenuText_Move, CursorCb_MoveItem},
 	[MENU_NICKNAME] = {gMenuText_Nickname, CursorCb_Nickname},
+	[MENU_FACTORY_GIVE] = {(void*) 0x84161B2, CursorCb_FactorySwap}, //"Give"
+	[MENU_FACTORY_TAKE] = {(void*) 0x84161DE, CursorCb_FactorySwap}, //"Take"
 
 	//Field Moves
 	[MENU_FIELD_MOVES + FIELD_MOVE_FLASH] =	      {gMoveNames[MOVE_FLASH], CursorCb_FieldMove},
@@ -995,6 +1021,15 @@ void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
 
 	sPartyMenuInternal->numActions = 0;
 	AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_SUMMARY);
+
+	if (IsBattleFactorySwapScreenOpen())
+	{
+		// Append Give/Take after Summary, depending on what the player is doing in the factory
+		AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions,
+			(gFrontierSwapScreenMode == SWAP_SCREEN_OPPONENT) ? MENU_FACTORY_TAKE : MENU_FACTORY_GIVE);
+		AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_CANCEL1);
+		return;
+	}
 
 	#ifdef FLAG_SANDBOX_MODE
 	if (FlagGet(FLAG_SANDBOX_MODE) && FlagGet(FLAG_SYS_GAME_CLEAR))

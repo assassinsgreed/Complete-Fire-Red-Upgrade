@@ -1558,14 +1558,18 @@ BattleFrontier_Factory_OfferSwap:
 
 BattleFrontier_Factory_SwapChooseOwn:
     msgbox gText_BattleFrontier_FactorySwapChooseOwn MSG_KEEPOPEN
+    callasm FrontierChallenge_BeginSwapScreenOwn @ Puts Summary and Give on the screen in place of the field moves
     special SPECIAL_CHOOSE_PARTY_MON
     waitstate
+    callasm FrontierChallenge_EndSwapScreen
     compare 0x8004 PARTY_MENU_CANCELLED
     if greaterorequal _goto BattleFrontier_Factory_SwapDeclined
     callasm FrontierChallenge_LoadOpponentTeamForSwap @ Captures 0x8004 before the opponent's team reuses it
     msgbox gText_BattleFrontier_FactorySwapChooseTheirs MSG_KEEPOPEN
+    callasm FrontierChallenge_BeginSwapScreenOpponent
     special SPECIAL_CHOOSE_PARTY_MON
     waitstate
+    callasm FrontierChallenge_EndSwapScreen
     compare 0x8004 PARTY_MENU_CANCELLED
     if greaterorequal _goto BattleFrontier_Factory_SwapCancelled
     callasm FrontierChallenge_ApplySwap

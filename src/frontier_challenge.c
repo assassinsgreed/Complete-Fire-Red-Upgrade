@@ -423,6 +423,7 @@ static void LoadFacilityVars(u8 facility, u8 format)
 void FrontierChallenge_InitDataIfNeeded(void)
 {
 	u32 facility, format;
+	gFrontierSwapScreenMode = SWAP_SCREEN_NONE;
 
 	// Initializes default song to Frontier Trainer
 	// This will not conflict with Alistair's post-credits battle because the facility is only accessible after it
@@ -820,6 +821,28 @@ void FrontierChallenge_StoreRentalTeam(void)
 {
 	if (FacilityRentsItsTeam(SanitizeFacility(BATTLE_FACILITY_NUM)))
 		StoreRentalTeam();
+}
+
+// A custom party menu options list to show Summary, Give/Take, and Cancel, for the Battle Factory
+bool8 IsBattleFactorySwapScreenOpen(void)
+{
+	return gFrontierSwapScreenMode != SWAP_SCREEN_NONE
+		&& SanitizeFacility(BATTLE_FACILITY_NUM) == IN_BATTLE_FACTORY;
+}
+
+void FrontierChallenge_BeginSwapScreenOwn(void)
+{
+	gFrontierSwapScreenMode = SWAP_SCREEN_OWN;
+}
+
+void FrontierChallenge_BeginSwapScreenOpponent(void)
+{
+	gFrontierSwapScreenMode = SWAP_SCREEN_OPPONENT;
+}
+
+void FrontierChallenge_EndSwapScreen(void)
+{
+	gFrontierSwapScreenMode = SWAP_SCREEN_NONE;
 }
 
 // Swaps the opponent's team into gPlayerParty so the party screen can show it off. The player's own

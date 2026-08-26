@@ -375,6 +375,13 @@ extern struct FrontierBackground gFrontierBackground; //0x2026898
 #define MAX_FRONTIER_TEAM_SIZE 4
 extern struct Pokemon gFrontierRentalTeams[NUM_FRONTIER_FORMATS][MAX_FRONTIER_TEAM_SIZE]; // 0x202689C
 extern u8 gFrontierPendingSwapSlot; // 0x2026BBC
+
+// Which of the Factory's two swap screens is open, if either. Tells it whether to offer a give or take action.
+#define SWAP_SCREEN_NONE     0
+#define SWAP_SCREEN_OWN      1
+#define SWAP_SCREEN_OPPONENT 2
+extern u8 gFrontierSwapScreenMode; // 0x2026BBD
+bool8 IsBattleFactorySwapScreenOpen(void);
 extern struct Pokemon gFrontierRentalPool[PARTY_SIZE]; //0x2026BC0
 
 extern const u8* const gBattleFrontierTierNames[NUM_TIERS];
