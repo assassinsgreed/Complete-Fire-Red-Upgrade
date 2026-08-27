@@ -8,6 +8,7 @@
 #include "../include/new/evolution.h"
 #include "../include/new/frontier.h"
 #include "../include/new/build_pokemon.h"
+#include "../include/new/catching.h"
 #include "../include/new/mega.h"
 #include "../include/new/util.h"
 #include "../include/money.h"
@@ -983,9 +984,17 @@ static bool8 IsSpeciesInList(u16 species, const u16* list, u32 count)
 	return FALSE;
 }
 
+enum FrontierSpreadFormats
+{
+	FRONTIER_SPREAD_ANY_FORMAT,
+	FRONTIER_SPREAD_SINGLES,
+	FRONTIER_SPREAD_DOUBLES,
+};
+
 // Walks the spread table from a random point so each pick is effectively random, but still
-// terminates once every spread has been rejected. Returns 0xFFFF when nothing is left to pick.
-static u16 PickFrontierSpreadForBox(bool8 forDoubles, const u16* usedSpecies, u32 numUsed)
+// terminates once every spread has been rejected. usedSpecies rejects repeats and may be NULL
+// when they don't matter. Returns 0xFFFF when nothing is left to pick.
+static u16 PickRandomFrontierSpread(u8 format, const u16* usedSpecies, u32 numUsed)
 {
 	u16 start = Random() % gNumFrontierSpreads;
 
@@ -994,7 +1003,10 @@ static u16 PickFrontierSpreadForBox(bool8 forDoubles, const u16* usedSpecies, u3
 		u16 index = (start + i) % gNumFrontierSpreads;
 		const struct BattleTowerSpread* spread = &gFrontierSpreads[index];
 
-		if (forDoubles ? !spread->forDoubles : !spread->forSingles)
+		if (format == FRONTIER_SPREAD_SINGLES && !spread->forSingles)
+			continue;
+
+		if (format == FRONTIER_SPREAD_DOUBLES && !spread->forDoubles)
 			continue;
 
 		if (!IsSpeciesInList(spread->species, usedSpecies, numUsed))
@@ -1005,7 +1017,7 @@ static u16 PickFrontierSpreadForBox(bool8 forDoubles, const u16* usedSpecies, u3
 }
 
 // Overwrites every slot in the box, so whatever was in it is discarded
-static void FillBoxWithFrontierSpreads(u8 boxId, bool8 forDoubles, const u8* boxName)
+static void FillBoxWithFrontierSpreads(u8 boxId, u8 format, const u8* boxName)
 {
 	u16 usedSpecies[IN_BOX_COUNT];
 	u32 numUsed = 0;
@@ -1013,7 +1025,7 @@ static void FillBoxWithFrontierSpreads(u8 boxId, bool8 forDoubles, const u8* box
 	for (u32 pos = 0; pos < IN_BOX_COUNT; ++pos)
 	{
 		struct Pokemon mon;
-		u16 index = PickFrontierSpreadForBox(forDoubles, usedSpecies, numUsed);
+		u16 index = PickRandomFrontierSpread(format, usedSpecies, numUsed);
 
 		if (index == 0xFFFF) // Ran out of unique species for this format
 		{
@@ -1034,8 +1046,37 @@ static void FillBoxWithFrontierSpreads(u8 boxId, bool8 forDoubles, const u8* box
 ///	Species are unique within a box, but the same species can appear in both.
 void FillBoxesWithFrontierSpreads(void)
 {
-	FillBoxWithFrontierSpreads(0, FALSE, sBoxName_Singles);
-	FillBoxWithFrontierSpreads(1, TRUE, sBoxName_Doubles);
+	FillBoxWithFrontierSpreads(0, FRONTIER_SPREAD_SINGLES, sBoxName_Singles);
+	FillBoxWithFrontierSpreads(1, FRONTIER_SPREAD_DOUBLES, sBoxName_Doubles);
+}
+
+/// Hands the player a random Battle Frontier ready Pokemon for the Wonder Pick (minus legendaries).
+///	The script charges for the pick and reports the outcome, so nothing here touches the player's PokeChips.
+/// Returns LASTRESULT: TRUE if the Pokemon is received, FALSE if it isn't so the script can refund.
+///	        BUFFER1: the name of the Pokemon picked.
+///	        Var 0x8000: its species, for the script to show off with showpokepic and cry.
+void WonderPickFrontierMon(void)
+{
+	struct Pokemon mon;
+	u16 species;
+	u16 index = PickRandomFrontierSpread(FRONTIER_SPREAD_ANY_FORMAT, NULL, 0);
+
+	gSpecialVar_LastResult = FALSE;
+
+	// The script checks for room first, but bailing here too stops a full party from quietly
+	// diverting a paid-for pick into the PC, where the script's refund would double up on it
+	if (index == 0xFFFF || GetMonData(&gPlayerParty[PARTY_SIZE - 1], MON_DATA_SPECIES, NULL) != SPECIES_NONE)
+		return;
+
+	CreateFrontierMon(&mon, 50, &gFrontierSpreads[index], 0, 0, 0, TRUE);
+
+	// Read back off the mon rather than the spread, since aesthetic forms are picked during creation
+	species = GetMonData(&mon, MON_DATA_SPECIES, NULL);
+	StringCopy(gStringVar1, gSpeciesNames[species]);
+	VarSet(VAR_0x8000, species);
+
+	SetMonPokedexFlags(&mon);
+	gSpecialVar_LastResult = GiveMonToPlayer(&mon) == MON_GIVEN_TO_PARTY;
 }
 
 /// @brief Cleanup vars used by various scripts (any multichoice). Not doing so can result in crashes when using Fly after accessing any multichoice. 

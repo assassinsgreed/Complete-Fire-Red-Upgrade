@@ -55,4 +55,5 @@ bool8 CanPartyMonBeBurned(struct Pokemon* mon);
 bool8 CanPartyMonBeFrozen(struct Pokemon* mon);
 u8 GetCurrentLevelCap();
 void FillBoxesWithFrontierSpreads(void);
+void WonderPickFrontierMon(void);
 void ClearOutCalculationVars();

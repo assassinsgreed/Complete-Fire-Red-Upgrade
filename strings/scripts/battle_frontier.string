@@ -141,6 +141,33 @@ Alright, let's trade!
 #org @gText_BattleFrontier_Junichi_TradeComplete
 Take good care of Junichi for me.\nHe has great genes!
 
+#org @gText_BattleFrontier_WonderPick_PromptFirst
+I'm running a Wonder Pick promotion!\pIn exchange for some Pok\eChips, I'll\ntake a secret Pok\emon from the\lFrontier's collection to give you.\pThe first pick of the day is only\n[BUFFER2] Pok\eChips.\pWill you take the chance?\n[BLACK](Held: [BUFFER1])[BLUE]
+
+#org @gText_BattleFrontier_WonderPick_PromptRepeat
+Welcome back!\pYou've pulled a Pok\emon today\nalready, so the next pick would\lcost [BUFFER2] Pok\eChips.\pStill want to take the chance?\n[BLACK](Held: [BUFFER1])[BLUE]
+
+#org @gText_BattleFrontier_WonderPick_Picking
+Alright, let me just grab a Pok\e\nBall here[.]
+
+#org @gText_BattleFrontier_WonderPick_Obtained
+[BLACK][PLAYER] picked a [GREEN][BUFFER1][BLACK]!
+
+#org @gText_BattleFrontier_WonderPick_Outro
+[BLUE]Congratulations!\nIt's battle-ready and raring to go.\pPlease return if you'd like to\nparticipate in another Wonder Pick.
+
+#org @gText_BattleFrontier_WonderPick_Declined
+Not feeling luck today?\nThat's no problem!
+
+#org @gText_BattleFrontier_WonderPick_NotEnoughPokeChips
+This pick costs [BUFFER2] Pok\eChips,\nand you're a little short.\pWin a few more battles, then come\nback and see me.
+
+#org @gText_BattleFrontier_WonderPick_NoPartyRoom
+You need to make some room in your\nparty before you can Wonder Pick!
+
+#org @gText_BattleFrontier_WonderPick_Failed
+I-Impossible! The collection is\nempty? That's an embarrassment!\pPlease, take your Pok\eChips and let\nus not speak of this ever again.
+
 #org @gText_BattleFrontier_MoveTutor_Confirmation
 Welcome, welcome!\pI teach Pok\emon incredible moves in\nexchange for just 5 Pok\eChips.\pAre you interested?\n[BLACK](Held: [BUFFER1])
 

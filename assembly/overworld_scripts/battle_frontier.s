@@ -322,6 +322,69 @@ Junichi_TradeComplete:
     msgbox gText_BattleFrontier_Junichi_TradeComplete MSG_NORMAL
     goto End
 
+.global EventScript_BattleFrontier_PokemonCenterWonderPick
+EventScript_BattleFrontier_PokemonCenterWonderPick:
+    lock
+    faceplayer
+    callasm StorePokeChipCount
+    buffernumber 0x0 0x8005 @ Take stored PokeChip count
+    checkflag 0xE41 @ Discount already claimed today
+    if SET _goto WonderPick_OfferAtFullPrice
+    setvar 0x8006 25
+    buffernumber 0x1 0x8006
+    msgbox gText_BattleFrontier_WonderPick_PromptFirst MSG_YESNO
+    goto WonderPick_AnswerGiven
+
+WonderPick_OfferAtFullPrice:
+    setvar 0x8006 50
+    buffernumber 0x1 0x8006
+    msgbox gText_BattleFrontier_WonderPick_PromptRepeat MSG_YESNO
+
+WonderPick_AnswerGiven:
+    compare LASTRESULT NO
+    if equal _goto WonderPick_Declined
+    checkitem ITEM_POKE_CHIP 0x8006
+    compare LASTRESULT TRUE
+    if FALSE _goto WonderPick_NotEnoughPokeChips
+    countpokemon
+    compare LASTRESULT 0x6 @ Checked before paying, so a full party never costs the player chips
+    if equal _goto WonderPick_NoPartyRoom
+    removeitem ITEM_POKE_CHIP 0x8006
+    playse 0xF8 @ Money
+    waitse
+    msgbox gText_BattleFrontier_WonderPick_Picking MSG_NORMAL
+    callasm WonderPickFrontierMon @ BUFFER1 = what was picked, 0x8000 = its species, LASTRESULT = whether it was given
+    compare LASTRESULT TRUE
+    if notequal _goto WonderPick_Failed
+    setflag 0xE41 @ Only set once a pick has been handed over, so a refund doesn't spend the discount
+    showpokepic 0x8000
+    checksound
+    cry 0x8000 0x0
+    fanfare 0x101 @ Get Item / Level Up
+    msgbox gText_BattleFrontier_WonderPick_Obtained MSG_KEEPOPEN
+    waitfanfare
+    hidepokepic
+    npcchatwithmovement gText_BattleFrontier_WonderPick_Outro m_LookDown
+    end
+
+WonderPick_Declined:
+    npcchatwithmovement gText_BattleFrontier_WonderPick_Declined m_LookDown
+    end
+
+WonderPick_NotEnoughPokeChips:
+    npcchatwithmovement gText_BattleFrontier_WonderPick_NotEnoughPokeChips m_LookDown
+    end
+
+WonderPick_NoPartyRoom:
+    npcchatwithmovement gText_BattleFrontier_WonderPick_NoPartyRoom m_LookDown
+    end
+
+@ This should never happen, but refunds chips if the frontier pokemon couldn't be given
+WonderPick_Failed:
+    additem ITEM_POKE_CHIP 0x8006
+    npcchatwithmovement gText_BattleFrontier_WonderPick_Failed m_LookDown
+    end
+
 .global EventScript_BattleFrontier_SWTutor1
 EventScript_BattleFrontier_SWTutor1:
     call TutorIntro

@@ -2983,6 +2983,7 @@ npc 2 41 2 EventScript_BattleFrontier_PokemonCenterPokeChipBuyer
 npc 2 41 3 EventScript_BattleFrontier_PokemonCenterCosplayPikachuLady
 npc 2 41 4 EventScript_BattleFrontier_PokemonCenterOldMan
 npc 2 41 5 EventScript_BattleFrontier_PokemonCenterDittoTrader
+npc 2 41 6 EventScript_BattleFrontier_PokemonCenterWonderPick
 ## Battle Tower
 npc 2 42 0 EventScript_BattleFrontier_TowerAttendant
 ### npc 1 is opponent
