@@ -46,8 +46,15 @@ GalaricaMart:
     .hword ITEM_NONE
 
 GalaricaGirlDivergent:
-    msgbox gText_EmraldinQuay_Overworld_GalaricaGirlDivergent MSG_NORMAL
+    msgbox gText_EmraldinQuay_Overworld_GalaricaGirlIntroDivergent MSG_NORMAL
+    pokemart GalaricaMartDivergent
+    msgbox gText_EmraldinQuay_Overworld_GalaricaGirlOutro MSG_NORMAL
     end
+
+.align 1
+GalaricaMartDivergent:
+    .hword ITEM_BLACK_AUGURITE
+    .hword ITEM_NONE
 
 .global EventScript_EmraldinQuay_Boy
 EventScript_EmraldinQuay_Boy:

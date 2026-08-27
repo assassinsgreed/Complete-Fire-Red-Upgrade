@@ -492,6 +492,7 @@ BattleItems1:
     .hword ITEM_BLUNDER_POLICY
     .hword ITEM_FOCUS_SASH
     .hword ITEM_LEFTOVERS
+    .hword ITEM_BLACK_SLUDGE
     .hword ITEM_HEAVY_DUTY_BOOTS
     .hword ITEM_NONE
 
@@ -505,6 +506,7 @@ BattleItems2:
     .hword ITEM_EJECT_PACK
     .hword ITEM_EVIOLITE
     .hword ITEM_SAFETY_GOGGLES
+    .hword ITEM_ROCKY_HELMET
     .hword ITEM_NONE
 
 .align 1

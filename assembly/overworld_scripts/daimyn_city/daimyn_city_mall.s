@@ -828,6 +828,7 @@ EvolutionaryStonesShop:
     .hword ITEM_OVAL_STONE
     .hword ITEM_LINK_STONE
     .hword ITEM_EVERSTONE
+    .hword ITEM_HISUI_ROCK
     .hword ITEM_DESTINY_KNOT
     .hword ITEM_NONE
 
