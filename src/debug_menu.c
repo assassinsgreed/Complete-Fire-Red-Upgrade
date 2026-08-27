@@ -129,8 +129,10 @@ void DebugMenu_ProcessGiveItem(void)
 			for (i = ITEM_TM59_BRUTAL_SWING; i <= ITEM_TM100_CONFIDE; ++i)
 				AddBagItem(i, 1);
 
-			for (i = ITEM_HM01_CUT; i <= ITEM_HM08_ROCK_CLIMB; ++i)
+			for (i = ITEM_HM01_CUT; i <= ITEM_HM04_STRENGTH; ++i)
 				AddBagItem(i, 1);
+			AddBagItem(ITEM_HM06_ROCK_SMASH, 1);
+			AddBagItem(ITEM_HM08_ROCK_CLIMB, 1);
 			// #endif
 			break;
 		case 5: //All items
@@ -140,6 +142,18 @@ void DebugMenu_ProcessGiveItem(void)
 				if (name[0] != 0xAC && name[0] != 0xFF) //'?', ' '
 					AddBagItem(i, 1);
 			}
+			break;
+		case 6: // Mega Stones and Typed Z-Crystals
+			for (i = ITEM_VENUSAURITE; i <= ITEM_DIANCITE; ++i)
+				AddBagItem(i, 1);
+			for (i = ITEM_VENUSAURITE_G; i <= ITEM_URSHIFITE; ++i)
+				AddBagItem(i, 1);
+			for (i = ITEM_CENTISKORITE; i <= ITEM_DURALUDITE; ++i)
+				AddBagItem(i, 1);
+			for (i = ITEM_LAPRASITE; i <= ITEM_TOXTRICITE; ++i)
+				AddBagItem(i, 1);
+			for (i = ITEM_NORMALIUM_Z; i <= ITEM_FAIRIUM_Z; ++i)
+				AddBagItem(i, 1);
 			break;
 	}
 }

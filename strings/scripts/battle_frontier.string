@@ -204,6 +204,9 @@ Understood! Please come aboard and\nwe'll set off momentarily.
 #org @gText_BattleFrontier_Captain_TsarvosaCityNo
 Very well. We'll wait here for you,\nin case you change your mind.
 
+#org @gText_BattleFrontier_Captain_InBattleFrontierSandbox
+Welcome to the Battle Frontier\nSandbox! Enjoy your stay.
+
 #org @gText_BattleFrontier_TowerBoy
 The Battle Tower is a pretty simple\nfacility, all things considered.\pThat doesn't mean it's boring,\nthough!\pSometimes a traditional Pok\emon\nbattle is just what the doctor\lordered.
 
@@ -731,7 +734,7 @@ Nothing
 Understood.\pJust remember[.] Once the next battle\nbegins, you'll have to see it\lthrough.\pStopping partway will cost you\nyour streak.\pWith that said, let's begin[.]
 
 #org @gText_BattleFrontier_ConfirmAbandon
-Giving up will end your run, and\nyour [BUFFER1] [BUFFER2] streak of\l[BUFFER3] will be lost.\pAre you sure?
+Giving up will end your run, and\nyour [BUFFER1] [BUFFER2]\lstreak of [BUFFER3] will be lost.\pAre you sure?
 
 #org @gText_BattleFrontier_Abandoned
 Thank you for challenging the\n[BUFFER1]!\pWe hope to see you again.

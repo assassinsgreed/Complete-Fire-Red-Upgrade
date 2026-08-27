@@ -24,12 +24,13 @@ sign 3 0 0 SignScript_AnthraTown_PlayersHouse
 sign 3 0 1 SignScript_AnthraTown_RivalsHouse
 sign 3 0 2 SignScript_AnthraTown_TownPlacard
 npc 4 0 0 EventScript_AnthraTown_MomMain
+sign 4 1 1 SignScript_AnthraTown_GameModifiersPC
 sign 4 1 2 EventScript_AnthraTown_PlayersPoster
 sign 4 1 3 EventScript_AnthraTown_NESClassic
+sign 4 1 4 EventScript_AnthraTown_BattleFrontierSandbox
 npc 4 2 0 EventScript_AnthraTown_RivalMom
 npc 4 2 1 EventScript_AnthraTown_RivalInTheirHome
 npc 4 3 0 EventScript_AnthraTown_OldMan
-sign 4 1 1 SignScript_AnthraTown_GameModifiersPC
 tile 4 1 0 TileScript_AnthraTown_RivalArrival
 sign 4 2 0 SignScript_AnthraTown_RivalsBooks
 sign 4 2 1 SignScript_AnthraTown_RivalsBooks

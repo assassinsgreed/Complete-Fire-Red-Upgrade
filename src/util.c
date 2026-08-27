@@ -7,11 +7,13 @@
 #include "../include/new/damage_calc.h"
 #include "../include/new/evolution.h"
 #include "../include/new/frontier.h"
+#include "../include/new/build_pokemon.h"
 #include "../include/new/mega.h"
 #include "../include/new/util.h"
 #include "../include/money.h"
 #include "../include/pokemon_storage_system.h"
 #include "../include/string_util.h"
+#include "../include/text.h"
 #include "../include/new/pokemon_storage_system.h"
 
 /*
@@ -965,6 +967,75 @@ void CheckIfPartyIsSameType(void)
 			}
 		}
 	}
+}
+
+static const u8 sBoxName_Singles[] = {CHAR_S, CHAR_i, CHAR_n, CHAR_g, CHAR_l, CHAR_e, CHAR_s, EOS};
+static const u8 sBoxName_Doubles[] = {CHAR_D, CHAR_o, CHAR_u, CHAR_b, CHAR_l, CHAR_e, CHAR_s, EOS};
+
+static bool8 IsSpeciesInList(u16 species, const u16* list, u32 count)
+{
+	for (u32 i = 0; i < count; ++i)
+	{
+		if (list[i] == species)
+			return TRUE;
+	}
+
+	return FALSE;
+}
+
+// Walks the spread table from a random point so each pick is effectively random, but still
+// terminates once every spread has been rejected. Returns 0xFFFF when nothing is left to pick.
+static u16 PickFrontierSpreadForBox(bool8 forDoubles, const u16* usedSpecies, u32 numUsed)
+{
+	u16 start = Random() % gNumFrontierSpreads;
+
+	for (u32 i = 0; i < gNumFrontierSpreads; ++i)
+	{
+		u16 index = (start + i) % gNumFrontierSpreads;
+		const struct BattleTowerSpread* spread = &gFrontierSpreads[index];
+
+		if (forDoubles ? !spread->forDoubles : !spread->forSingles)
+			continue;
+
+		if (!IsSpeciesInList(spread->species, usedSpecies, numUsed))
+			return index;
+	}
+
+	return 0xFFFF;
+}
+
+// Overwrites every slot in the box, so whatever was in it is discarded
+static void FillBoxWithFrontierSpreads(u8 boxId, bool8 forDoubles, const u8* boxName)
+{
+	u16 usedSpecies[IN_BOX_COUNT];
+	u32 numUsed = 0;
+
+	for (u32 pos = 0; pos < IN_BOX_COUNT; ++pos)
+	{
+		struct Pokemon mon;
+		u16 index = PickFrontierSpreadForBox(forDoubles, usedSpecies, numUsed);
+
+		if (index == 0xFFFF) // Ran out of unique species for this format
+		{
+			ZeroBoxMonAt(boxId, pos);
+			continue;
+		}
+
+		usedSpecies[numUsed++] = gFrontierSpreads[index].species;
+		CreateFrontierMon(&mon, 50, &gFrontierSpreads[index], 0, 0, 0, TRUE);
+		SetBoxMonAt(boxId, pos, (struct BoxPokemon*) &mon);
+	}
+
+	StringCopy(GetBoxNamePtr(boxId), boxName);
+}
+
+/// Stocks the first two PC boxes with random Battle Frontier spreads for the sandbox - 30 Singles
+///	legal ones in box 1 and 30 Doubles legal ones in box 2, renaming both boxes to match.
+///	Species are unique within a box, but the same species can appear in both.
+void FillBoxesWithFrontierSpreads(void)
+{
+	FillBoxWithFrontierSpreads(0, FALSE, sBoxName_Singles);
+	FillBoxWithFrontierSpreads(1, TRUE, sBoxName_Doubles);
 }
 
 /// @brief Cleanup vars used by various scripts (any multichoice). Not doing so can result in crashes when using Fly after accessing any multichoice. 

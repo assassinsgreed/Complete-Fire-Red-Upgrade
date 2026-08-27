@@ -565,6 +565,8 @@ EventScript_BattleFrontier_SWBlackbelt:
 EventScript_BattleFrontier_SWCaptain:
     lock
     faceplayer
+    checkflag 0x29D @ In battle frontier sandbox
+    if SET _goto CaptainInSandbox
     msgbox gText_BattleFrontier_Captain_TsarvosaCityPrompt MSG_YESNO
     compare LASTRESULT NO
     if equal _goto ChoseNotToGoToTheBattleFrontier
@@ -602,6 +604,10 @@ PlayerEntersFromRight:
 
 ChoseNotToGoToTheBattleFrontier:
     npcchatwithmovement gText_BattleFrontier_Captain_TsarvosaCityNo m_LookUp
+    end
+
+CaptainInSandbox:
+    npcchatwithmovement gText_BattleFrontier_Captain_InBattleFrontierSandbox m_LookUp
     end
 
 .global EventScript_BattleFrontier_SEPsychic
