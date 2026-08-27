@@ -1336,14 +1336,8 @@ You may proceed to the elevator at\nthe back of the room.\pIt will take you to y
 #org @gText_AscensionTower_BattleTowerAttendant_GatheringFunding
 Welcome to Ascension Tower!\pI would normally be accepting\nregistrations for the Battle\lFrontier.\pWe're currently undergoing some\nmaintenance, however[.]\pWe can hopefully offer this service\nsomeday soon.\pUntil then, please continue to train\nyour Pok\emon and strive to be the\lbest you can be.
 
-#org @gText_AscensionTower_BattleTowerAttendant_Introduction
-Welcome to Ascension Tower! I accept\nregistrations for the Battle Tower\lChallenge.\pWould you like to take the Battle\nTower Challenge?
-
-#org @gText_AscensionTower_EliteFourAttendant_BattleTowerInfo
-Trainers who have become Gym\nLeaders, Elite Four members, or\lthe Champion are eligible to\lpartake in the Battle Tower\lChallenge.\pThese trainers may choose 3 Pok\emon\nwith which they will battle as many\ltrainers as possible.\pUpon losing, they will be awarded\nbattle points (BP) based on their\lperformance.\pBP can be traded for exciting prizes\nthat can't be found elsewhere.
-
-#org @gText_AscensionTower_BattleTowerAttendant_NotChampion
-Oh, my apologies. You must be a Gym\nLeader, Elite Four member, or the\lChampion to partake in this\lchallenge.\pPlease see me again if you attain\nany of these titles.
+#org @gText_AscensionTower_BattleTowerAttendant_FrontierOpen
+Champion [PLAYER], welcome!\pI've just received word that the\nBattle Frontier has opened.\pSince you are our champion, you\nhave been invited to participate.\pPlease, visit the docks at Tsarvosa\nCity at your leisure.
 
 #org @gText_AscensionTower_AttendantChoseNo
 Understood. Please speak to me again\nif you change your mind.

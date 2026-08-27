@@ -127,29 +127,14 @@ OpenFloorBarrier:
 .global EventScript_AscensionTower_BattleTowerAttendant
 EventScript_AscensionTower_BattleTowerAttendant:
     lock
+    checkflag 0x82C @ Game Cleared
+    if SET _goto BattleTowerAttendant_AfterChampion
     msgbox gText_AscensionTower_BattleTowerAttendant_GatheringFunding MSG_NORMAL
     end
-    @ msgbox gText_AscensionTower_BattleTowerAttendant_Introduction MSG_KEEPOPEN
-    @ multichoiceoption gText_Yes 0
-	@ multichoiceoption gText_Info 1
-	@ multichoiceoption gText_No 2
-    @ multichoice 0x0 0x0 THREE_MULTICHOICE_OPTIONS FALSE
-	@ copyvar MULTICHOICE_SELECTION LASTRESULT
-	@ switch LASTRESULT
-	@ case 0, TakeBattleTowerChallenge
-	@ case 1, BattleTowerInfo
-	@ case 2, AttendantChoseNo
-    @ goto AttendantChoseNo
 
-@ TakeBattleTowerChallenge:
-@     @ Later, perform a check here for the champions flag
-@     msgbox gText_AscensionTower_BattleTowerAttendant_NotChampion MSG_NORMAL
-@     release
-@     end
-
-@ BattleTowerInfo:
-@     msgbox gText_AscensionTower_EliteFourAttendant_BattleTowerInfo MSG_NORMAL
-@     goto EventScript_AscensionTower_BattleTowerAttendant
+BattleTowerAttendant_AfterChampion:
+    msgbox gText_AscensionTower_BattleTowerAttendant_FrontierOpen MSG_NORMAL
+    end
 
 .global EventScript_AscensionTower_EliteFourAttendant
 EventScript_AscensionTower_EliteFourAttendant:

@@ -43,7 +43,51 @@ LevelScript_TsarvosaCity_StartCredits:
 
 .global EventScript_TsarvosaCity_Captain
 EventScript_TsarvosaCity_Captain:
+    checkflag 0x82C @ Game Cleared
+    if SET _goto CaptainAsChampion
     npcchatwithmovement gText_TsarvosaCity_Captain m_LookUp
+    end
+
+CaptainAsChampion:
+    lock
+    faceplayer
+    msgbox gText_TsarvosaCity_Captain_BattleFrontierPrompt MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto ChoseNotToGoToTheBattleFrontier
+    msgbox gText_TsarvosaCity_Captain_BattleFrontierYes MSG_KEEPOPEN
+    applymovement LASTTALKED m_LookDown
+    pause DELAY_HALFSECOND
+    playse 0x8 @ door open
+    pause DELAY_HALFSECOND
+    hidesprite LASTTALKED
+    getplayerpos 0x4000 0x4001
+    compare 0x4000 0xD @ Above
+    if lessthan _goto PlayerEntersFromLeft
+    if greaterthan _goto PlayerEntersFromRight
+    applymovement PLAYER m_WalkDown
+EnterShipCommon:
+    pause DELAY_HALFSECOND
+    playse 0x8 @ door open
+    pause DELAY_HALFSECOND
+    warp 3 17 0xFF 0x1D 0x1B @ Dock, above captain
+    waitstate
+    release
+    end
+
+PlayerEntersFromLeft:
+    applymovement PLAYER m_WalkRight
+    waitmovement PLAYER
+    applymovement PLAYER m_LookDown
+    goto EnterShipCommon
+
+PlayerEntersFromRight:
+    applymovement PLAYER m_WalkLeft
+    waitmovement PLAYER
+    applymovement PLAYER m_LookDown
+    goto EnterShipCommon
+
+ChoseNotToGoToTheBattleFrontier:
+    npcchatwithmovement gText_TsarvosaCity_Captain_BattleFrontierNo m_LookUp
     end
 
 .global EventScript_TsarvosaCity_DockWorker

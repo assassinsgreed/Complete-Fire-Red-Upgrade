@@ -2963,6 +2963,8 @@ npc 3 17 9 EventScript_BattleFrontier_SWMarketGirl
 npc 3 17 10 EventScript_BattleFrontier_SWBlackbelt
 ### NPCs 11-18 are flags + their clones in other maps
 npc 3 17 19 EventScript_Route9_Slowbro
+### NPC 20 is an NPC clone from an adjacent map
+npc 3 17 21 EventScript_BattleFrontier_SWCaptain
 sign 3 17 0 SignScript_BattleFrontier_SWBattleSim
 sign 3 17 1 SignScript_BattleFrontier_SWBattleFrontierMarket
 ### SE Corner

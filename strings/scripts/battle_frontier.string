@@ -1,3 +1,32 @@
+// Cutscenes
+#org @gText_BattleFrontier_Cutscene1_CaptainSaysFarewell
+[BLUE]That's as far as I go!\pI do believe the host of the Battle\nFrontier is here today.\pI assume you'll want to see them\nbefore doing anything else.\pCome see me whenever you want to\nferry between Tsarvosa City and\lthe Battle Frontier.
+
+#org @gText_BattleFrontier_Cutscene2_MortTalksToBroadcaster
+[BLUE]Now, make sure you get a wide shot\nof the Battle Sim arena, okay?\pI want to show the world how premier\nour tech is!
+
+#org @gText_BattleFrontier_Cutscene3_MortSeesPlayer
+[BLUE]Well, I'll be! Is that Champion\n[PLAYER], in the flesh?\pCome on over here!
+
+#org @gText_BattleFrontier_Cutscene3_MortExplainsWhyHeIsThere
+[BLUE]Can you believe it?\pLittle ol' Mort being asked to run\nthe Battle Frontier?\pAn honour, truly!\pA shindig this prestigious calls for\nthe best of the best.\pThat's precisely why I called\nupon Kulure's Gym Leaders to help\lme run this place!
+
+#org @gText_BattleFrontier_Cutscene4_MortOpensRules
+[BLUE]Now, I'm sure you're just itching to\nget into it, so I won't keep you\llong.\pThe bigwigs gave me something to\nread to new challengers.\pOne second[.]
+
+#org @gText_BattleFrontier_Cutscene5_MortFindsTheSummary
+[BLUE]Yikes! That is a LOT of text.\nHold on[.]\pOh, there's a summary at the end,\nsweet. I'll just read that.\pAhem!
+
+#org @gText_BattleFrontier_Cutscene6_MortReadsTheRules
+[BLACK]Welcome to the Battle Frontier!\pThis is where the pinnacle of Pok\emon\nbattling happens.\pTrainers from all over the world\nflock here, and you can expect to\lsee Pok\emon and movesets not\lnormally seen in your home region.\pChallenge 8 different facilities to\nprove your mastery over battle.\pEach facility hosts different rules\nthat'll put your skills to the test.\pChallenge Aces and Brains - [BLUE]that's\nthe gym leaders, by the way[BLACK] - at\la streak of 20 and 50 battles\lrespectively.\pEach win earns you\nPokeChips, with the payout growing\levery 10 wins.\pYou get extra PokeChips when an Ace\nor Brain is beaten.\pActive Game Modifiers are disabled\nfor the duration of your challenge\l- [BLUE]whatever that means!
+
+#org @gText_BattleFrontier_Cutscene7_MortAfterInstructions
+[BLUE][.]And that's the gist.\pYou're a smart kid, I'm sure you can\nfigure out the rest on your own.\pIf you ever need a refresher, just\nask the attendant at any facility\land they'll sort you out.
+
+#org @gText_BattleFrontier_Cutscene8_MortDeparts
+[BLUE]Ciao, champ!\pShow me some good battling, yeah?\nIt's good for business.
+
+// NPCs
 #org @gText_BattleFrontier_Researcher
 Me? No, I don't battle.\pI'm from an institute that studies\nPok\emon battle strategies.\pWe're investigating whether a\nfoolproof strategy exists.\pMaybe we'll watch your battles, too?
 
@@ -165,6 +194,15 @@ I'm preparing for my next challenge\nat the market.\pNow, let's see[.] Which mov
 
 #org @gText_BattleFrontier_SE_Blackbelt
 I need to buff up my Pok\emon's stats\nor I'm never gonna get a win!
+
+#org @gText_BattleFrontier_Captain_TsarvosaCityPrompt
+Well I'll be, it's Champion [PLAYER]!\pFind yourself missing the Kulurian\nmainland and want to return?
+
+#org @gText_BattleFrontier_Captain_TsarvosaCityYes
+Understood! Please come aboard and\nwe'll set off momentarily.
+
+#org @gText_BattleFrontier_Captain_TsarvosaCityNo
+Very well. We'll wait here for you,\nin case you change your mind.
 
 #org @gText_BattleFrontier_TowerBoy
 The Battle Tower is a pretty simple\nfacility, all things considered.\pThat doesn't mean it's boring,\nthough!\pSometimes a traditional Pok\emon\nbattle is just what the doctor\lordered.

@@ -8,6 +8,7 @@
 .global MapScript_BattleFrontier
 MapScript_BattleFrontier:
     mapscript MAP_SCRIPT_ON_TRANSITION MapEntryScript_BattleFrontier_FlightSpot
+    mapscript MAP_SCRIPT_ON_FRAME_TABLE LevelScripts_BattleFrontier
     .byte MAP_SCRIPT_TERMIN
 
 MapEntryScript_BattleFrontier_FlightSpot:
@@ -19,6 +20,49 @@ EventScript_BattleFrontier_PokemonCenterResearcher:
     npcchatwithmovement gText_BattleFrontier_Researcher m_LookDown
     end
 
+LevelScripts_BattleFrontier:
+    levelscript 0x4074 0x0 LevelScript_BattleFrontier_InitialCutscene
+    .hword LEVEL_SCRIPT_TERMIN
+
+.equ Mort, 23
+LevelScript_BattleFrontier_InitialCutscene:
+    msgbox gText_BattleFrontier_Cutscene1_CaptainSaysFarewell MSG_NORMAL
+    applymovement PLAYER m_BattleFrontier_PlayerWalksToMort
+    waitmovement PLAYER
+    msgbox gText_BattleFrontier_Cutscene2_MortTalksToBroadcaster MSG_NORMAL
+    applymovement 24 m_BattleFrontier_BroadcasterDeparts @ Broadcaster, no need to wait for this
+    applymovement Mort m_LookDown
+    pause DELAY_HALFSECOND
+    applymovement Mort m_Surprise
+    playse 0x15 @ Exclaim
+    msgbox gText_BattleFrontier_Cutscene3_MortSeesPlayer MSG_NORMAL
+    applymovement PLAYER m_WalkUp
+    msgbox gText_BattleFrontier_Cutscene3_MortExplainsWhyHeIsThere MSG_NORMAL
+    msgbox gText_BattleFrontier_Cutscene4_MortOpensRules MSG_NORMAL
+    pause DELAY_HALFSECOND
+    applymovement Mort m_Surprise
+    playse 0x15 @ Exclaim
+    msgbox gText_BattleFrontier_Cutscene5_MortFindsTheSummary MSG_NORMAL
+    playbgm 0x110 @ Follow me (instructions)
+    msgboxsign
+    msgbox gText_BattleFrontier_Cutscene6_MortReadsTheRules MSG_SIGN
+    msgboxnormal
+    fadedefaultbgm
+    msgbox gText_BattleFrontier_Cutscene7_MortAfterInstructions MSG_NORMAL
+    msgbox gText_BattleFrontier_Cutscene8_MortDeparts MSG_NORMAL
+    applymovement Mort m_BattleFrontier_MortLeaves
+    waitmovement Mort
+    hidesprite Mort
+    hidesprite 24 @ Broadcaster
+    callasm FrontierChallenge_InitDataIfNeeded
+    setvar 0x4074 1
+    end
+
+m_BattleFrontier_PlayerWalksToMort: .byte walk_up, walk_up, walk_up, walk_up, walk_up, walk_up, walk_up, walk_up, walk_up, walk_up, walk_up, walk_up, walk_up, end_m @ 1 space before Mort
+m_BattleFrontier_BroadcasterDeparts: .byte walk_left, walk_left, walk_left, walk_left, walk_left, walk_left, walk_left, walk_left, walk_left, end_m
+m_BattleFrontier_MortLeaves: .byte walk_up, walk_up, walk_up, walk_up, walk_up, walk_up, end_m
+
+// NPCs
 .equ POKE_CHIP_SALE_WALLET_FULL, 0x0
 .equ POKE_CHIP_SALE_CLAMPED, 0x1
 .equ POKE_CHIP_SALE_WHOLE_AMOUNT, 0x2
@@ -515,6 +559,49 @@ EventScript_BattleFrontier_SWMarketGirl:
 .global EventScript_BattleFrontier_SWBlackbelt
 EventScript_BattleFrontier_SWBlackbelt:
     npcchatwithmovement gText_BattleFrontier_SE_Blackbelt m_LookUp
+    end
+
+.global EventScript_BattleFrontier_SWCaptain
+EventScript_BattleFrontier_SWCaptain:
+    lock
+    faceplayer
+    msgbox gText_BattleFrontier_Captain_TsarvosaCityPrompt MSG_YESNO
+    compare LASTRESULT NO
+    if equal _goto ChoseNotToGoToTheBattleFrontier
+    msgbox gText_BattleFrontier_Captain_TsarvosaCityYes MSG_KEEPOPEN
+    applymovement LASTTALKED m_LookDown
+    pause DELAY_HALFSECOND
+    playse 0x8 @ door open
+    pause DELAY_HALFSECOND
+    hidesprite LASTTALKED
+    getplayerpos 0x4000 0x4001
+    compare 0x4000 0x1D @ Above
+    if lessthan _goto PlayerEntersFromLeft
+    if greaterthan _goto PlayerEntersFromRight
+    applymovement PLAYER m_WalkDown
+EnterShipCommon:
+    pause DELAY_HALFSECOND
+    playse 0x8 @ door open
+    pause DELAY_HALFSECOND
+    warp 3 9 0xFF 0xD 0x2A @ Dock, above captain
+    waitstate
+    release
+    end
+
+PlayerEntersFromLeft:
+    applymovement PLAYER m_WalkRight
+    waitmovement PLAYER
+    applymovement PLAYER m_LookDown
+    goto EnterShipCommon
+
+PlayerEntersFromRight:
+    applymovement PLAYER m_WalkLeft
+    waitmovement PLAYER
+    applymovement PLAYER m_LookDown
+    goto EnterShipCommon
+
+ChoseNotToGoToTheBattleFrontier:
+    npcchatwithmovement gText_BattleFrontier_Captain_TsarvosaCityNo m_LookUp
     end
 
 .global EventScript_BattleFrontier_SEPsychic
