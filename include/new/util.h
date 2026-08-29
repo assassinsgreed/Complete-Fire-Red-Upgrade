@@ -44,6 +44,8 @@ bool8 IsMonOfType(struct Pokemon* mon, u8 type);
 bool8 IsSpeciesOfType(u16 species, u8 type);
 bool8 IsMiniorCore(u16 species);
 bool8 IsMinior(u16 species);
+bool8 IsArceus(u16 species);
+bool8 IsGenesect(u16 species);
 bool8 IsSpeciesAffectedByScalemons(u16 species);
 u8 GetVisualBaseStat(u8 statId, u16 species);
 //void DestroyMonIconSprite(struct Sprite* sprite);

@@ -4066,29 +4066,38 @@ static u16 AdjustBasePower(struct DamageCalc* data, u16 power)
 				power = (power * 12) / 10;
 			break;
 
-		#ifdef NATIONAL_DEX_DIALGA
+		#ifdef SPECIES_DIALGA
 		case ITEM_EFFECT_ADAMANT_ORB:
 		//1.2x Boost
-			if (SpeciesToNationalPokedexNum(data->atkSpecies) == NATIONAL_DEX_DIALGA
-			&& (data->moveType == TYPE_STEEL || data->moveType == TYPE_DRAGON))
+			if ((data->atkSpecies == SPECIES_DIALGA
+			#ifdef SPECIES_DIALGA_ORIGIN
+			  || data->atkSpecies == SPECIES_DIALGA_ORIGIN
+			#endif
+			) && (data->moveType == TYPE_STEEL || data->moveType == TYPE_DRAGON))
 				power = (power * 12) / 10;
 			break;
 		#endif
 
-		#ifdef NATIONAL_DEX_PALKIA
+		#ifdef SPECIES_PALKIA
 		case ITEM_EFFECT_LUSTROUS_ORB:
 		//1.2x Boost
-			if (SpeciesToNationalPokedexNum(data->atkSpecies) == NATIONAL_DEX_PALKIA
-			&& (data->moveType == TYPE_WATER || data->moveType == TYPE_DRAGON))
+			if ((data->atkSpecies == SPECIES_PALKIA
+			#ifdef SPECIES_PALKIA_ORIGIN
+			  || data->atkSpecies == SPECIES_PALKIA_ORIGIN
+			#endif
+			) && (data->moveType == TYPE_WATER || data->moveType == TYPE_DRAGON))
 				power = (power * 12) / 10;
 			break;
 		#endif
 
-		#ifdef NATIONAL_DEX_GIRATINA
+		#ifdef SPECIES_GIRATINA
 		case ITEM_EFFECT_GRISEOUS_ORB:
 		//1.2x Boost
-			if (SpeciesToNationalPokedexNum(data->atkSpecies) == NATIONAL_DEX_GIRATINA
-			&& (data->moveType == TYPE_GHOST || data->moveType == TYPE_DRAGON))
+			if ((data->atkSpecies == SPECIES_GIRATINA
+			#ifdef SPECIES_GIRATINA_ORIGIN
+			  || data->atkSpecies == SPECIES_GIRATINA_ORIGIN
+			#endif
+			) && (data->moveType == TYPE_GHOST || data->moveType == TYPE_DRAGON))
 				power = (power * 12) / 10;
 			break;
 		#endif

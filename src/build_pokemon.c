@@ -3475,6 +3475,16 @@ static const struct BattleTowerSpread* GetSpreadBySpecies(const u16 species, con
 
 static void TryGetSpecialSpeciesSpreadTable(u16 species, const struct BattleTowerSpread** table, u16* spreadCount)
 {
+	#ifdef SPECIES_ARCEUS
+	//Matched by species because Arceus has no national dex number here
+	if (IsArceus(species))
+	{
+		*table = gArceusSpreads;
+		*spreadCount = TOTAL_ARCEUS_SPREADS;
+		return;
+	}
+	#endif
+
 	switch (SpeciesToNationalPokedexNum(species))
 	{
 		#ifdef NATIONAL_DEX_PIKACHU
@@ -3493,12 +3503,6 @@ static void TryGetSpecialSpeciesSpreadTable(u16 species, const struct BattleTowe
 		case NATIONAL_DEX_ROTOM:
 			*table = gRotomSpreads;
 			*spreadCount = TOTAL_ROTOM_SPREADS;
-			break;
-		#endif
-		#ifdef NATIONAL_DEX_ARCEUS
-		case NATIONAL_DEX_ARCEUS:
-			*table = gArceusSpreads;
-			*spreadCount = TOTAL_ARCEUS_SPREADS;
 			break;
 		#endif
 		#ifdef NATIONAL_DEX_ORICORIO

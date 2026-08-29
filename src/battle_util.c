@@ -1307,32 +1307,44 @@ bool8 CanTransferItem(u16 species, u16 item)
 		case ITEM_EFFECT_Z_CRYSTAL:
 			return FALSE;
 
-		#ifdef NATIONAL_DEX_GIRATINA
+		#ifdef SPECIES_GIRATINA
 		case ITEM_EFFECT_GRISEOUS_ORB:
-			if (dexNum == NATIONAL_DEX_GIRATINA)
+			if (species == SPECIES_GIRATINA
+			#ifdef SPECIES_GIRATINA_ORIGIN
+			 || species == SPECIES_GIRATINA_ORIGIN
+			#endif
+			)
 				return FALSE;
 			break;
 		#endif
 
 	#ifdef PLA_HELD_ORIGIN_ORBS
-		#ifdef NATIONAL_DEX_DIALGA
+		#ifdef SPECIES_DIALGA
 		case ITEM_EFFECT_ADAMANT_ORB:
-			if (dexNum == NATIONAL_DEX_DIALGA)
+			if (species == SPECIES_DIALGA
+			#ifdef SPECIES_DIALGA_ORIGIN
+			 || species == SPECIES_DIALGA_ORIGIN
+			#endif
+			)
 				return FALSE;
 			break;
 		#endif
 
-		#ifdef NATIONAL_DEX_PALKIA
+		#ifdef SPECIES_PALKIA
 		case ITEM_EFFECT_LUSTROUS_ORB:
-			if (dexNum == NATIONAL_DEX_PALKIA)
+			if (species == SPECIES_PALKIA
+			#ifdef SPECIES_PALKIA_ORIGIN
+			 || species == SPECIES_PALKIA_ORIGIN
+			#endif
+			)
 				return FALSE;
 			break;
 		#endif
 	#endif
 
-		#ifdef NATIONAL_DEX_ARCEUS
+		#ifdef SPECIES_ARCEUS
 		case ITEM_EFFECT_PLATE:
-			if (dexNum == NATIONAL_DEX_ARCEUS)
+			if (IsArceus(species))
 				return FALSE;
 			break;
 		#endif
@@ -1344,9 +1356,9 @@ bool8 CanTransferItem(u16 species, u16 item)
 			break;
 		#endif
 
-		#ifdef NATIONAL_DEX_GENESECT
+		#ifdef SPECIES_GENESECT
 		case ITEM_EFFECT_DRIVE:
-			if (dexNum == NATIONAL_DEX_GENESECT)
+			if (IsGenesect(species))
 				return FALSE;
 			break;
 		#endif

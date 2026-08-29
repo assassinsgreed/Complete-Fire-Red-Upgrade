@@ -1869,6 +1869,12 @@ void ItemUseCB_EvolutionStone(u8 taskId, TaskFunc func)
 	}
 }
 
+void FieldUseFunc_EvolutionStone(u8 taskId)
+{
+	gItemUseCB = ItemUseCB_EvolutionStone;
+	SetUpItemUseCallback(taskId);
+}
+
 void FieldUseFunc_EVReducingBerry(u8 taskId)
 {
 	gItemUseCB = ItemUseCB_EVReducingBerry;

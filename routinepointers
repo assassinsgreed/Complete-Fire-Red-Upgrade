@@ -213,6 +213,10 @@ MovementType_CopyPlayer_Step1_Fixed 083A6388
 ##Item Functions
 ItemUseCB_EvolutionStone 080A1768
 
+# Black Augurite (0x293) and Peat Block (0x294) used from bag
+FieldUseFunc_EvolutionStone 8734C6C
+FieldUseFunc_EvolutionStone 8734C98
+
 ##Nicknaming
 KeyboardKeyHandler_Character 083E23D0
 
