@@ -3183,7 +3183,7 @@ extern const u8 gText_StoredPower[];
 extern const u8 gText_DualWingbeat[];
 extern const u8 gText_BurningJealousy[];
 extern const u8 gText_CrossPoison[];
-extern const u8 gText_LeafBlade[];
+extern const u8 gText_PowerShift[];
 extern const u8 gText_PowerGem[];
 extern const u8 gText_DarkestLariat[];
 extern const u8 gText_Moonblast[];
@@ -3574,7 +3574,7 @@ static const u8* sTutorsBattleFrontier1[] =
 	gText_GigaDrain,
 	gText_BatonPass,
 	gText_BodyPress,
-	gText_LeafBlade,
+	gText_PowerShift,
 	gText_PollenPuff,
 	gText_SkitterSmack,
 	gText_CrossPoison,

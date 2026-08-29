@@ -640,7 +640,7 @@ EventScript_Tutors_BattleFrontier1:
 	case 0, GigaDrain
 	case 1, BatonPass
 	case 2, BodyPress
-	case 3, LeafBlade
+	case 3, PowerShift
     case 4, PollenPuff
 	case 5, SkitterSmack
 	case 6, CrossPoison
@@ -670,8 +670,8 @@ BodyPress:
     call teachmove
     return
 
-LeafBlade:
-    bufferattack 0x0 MOVE_LEAFBLADE
+PowerShift:
+    bufferattack 0x0 MOVE_POWERSHIFT
     setvar 0x8005 88
     setvar 0x4000 5
     call teachmove
