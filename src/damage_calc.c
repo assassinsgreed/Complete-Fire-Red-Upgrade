@@ -3958,7 +3958,10 @@ static u16 AdjustBasePower(struct DamageCalc* data, u16 power)
 
 		case ABILITY_STRONGJAW:
 		//1.5x Boost
-			if (gSpecialMoveFlags[move].gBitingMoves)
+			// Handle Sharpness override for Kleavor & Samurott-H
+			if (SpeciesHasSharpness(useMonAtk ? data->atkSpecies : GetProperAbilityPopUpSpecies(bankAtk))
+			 ? gSpecialMoveFlags[move].gSlicingMoves
+			 : gSpecialMoveFlags[move].gBitingMoves)
 				power = (power * 15) / 10;
 			break;
 

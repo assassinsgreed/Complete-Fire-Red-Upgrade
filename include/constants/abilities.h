@@ -260,5 +260,6 @@
 
 #define ABILITY_EVAPORATE ABILITY_STORMDRAIN //Leech off of Storm Drain
 #define ABILITY_DRILLBEAK ABILITY_MERCILESS
+#define ABILITY_SHARPNESS ABILITY_STRONGJAW //Boosts slicing moves rather than biting ones
 
 #define ABILITIES_COUNT (ABILITY_PASTELVEIL + 1)

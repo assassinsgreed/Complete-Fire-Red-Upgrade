@@ -26,6 +26,7 @@ bool8 SpeciesHasDrillBeak(u16 species);
 bool8 SpeciesHasGrassDash(u16 species);
 bool8 SpeciesHasEvaporate(u16 species);
 bool8 SpeciesHasSlipperyTail(u16 species);
+bool8 SpeciesHasSharpness(u16 species);
 bool8 IsClearBodyAbility(u8 ability);
 bool8 IsMoldBreakerAbility(u8 ability);
 bool8 IsMoxieAbility(u8 ability);
