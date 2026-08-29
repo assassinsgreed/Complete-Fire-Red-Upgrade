@@ -4546,6 +4546,22 @@ static const u16 sResearchSpecies[] = {
     SPECIES_MEOWTH_A,
     SPECIES_EXEGGUTOR,
     SPECIES_PONYTA_G, SPECIES_RAPIDASH_G,
+    // Appended species following 1.3's release here - saves are storing this as a bit mask
+	// so we can't put them next to their sibling species (ex. Persian-A beside Meowth-A)
+	// Standard swarmers
+	SPECIES_SNEASEL_H, SPECIES_SNEASLER,
+    SPECIES_ZORUA_H, SPECIES_ZOROARK_H,
+    SPECIES_SLIGGOO_H, SPECIES_GOODRA_H,
+    SPECIES_AVALUGG_H,
+    // Divergent swarmers
+    SPECIES_GROWLITHE_H, SPECIES_ARCANINE_H,
+    SPECIES_VOLTORB_H, SPECIES_ELECTRODE_H,
+    SPECIES_QWILFISH_H, SPECIES_OVERQWIL,
+    SPECIES_LILLIGANT_H,
+    // Appended divergent swarmer
+    SPECIES_PERSIAN_A,
+    // Appended — Hisuian starters, reachable in both modes (indices 49-51)
+    SPECIES_TYPHLOSION_H, SPECIES_SAMUROTT_H, SPECIES_DECIDUEYE_H,
 };
 
 // sp1AF — Var8001 = species. Returns: 0=not a research species, 1=already shown, 2=new valid species.

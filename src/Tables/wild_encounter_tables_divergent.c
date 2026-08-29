@@ -3439,52 +3439,24 @@ const struct SwarmData gDivergentSwarmTable[] =
 		.species = SPECIES_ZIGZAGOON,
 	},
 	{
-		.mapName = MAPSEC_ROUTE_8,
-		.species = SPECIES_LINOONE,
-	},
-	{
 		.mapName = MAPSEC_RUBARR_DESERT,
 		.species = SPECIES_DIGLETT,
-	},
-	{
-		.mapName = MAPSEC_HESSON_PASS,
-		.species = SPECIES_DUGTRIO,
 	},
 	{
 		.mapName = MAPSEC_ROUTE_9,
 		.species = SPECIES_MEOWTH,
 	},
 	{
-		.mapName = MAPSEC_ROUTE_23,
-		.species = SPECIES_PERSIAN,
-	},
-	{
 		.mapName = MAPSEC_ROUTE_3,
 		.species = SPECIES_GEODUDE,
-	},
-	{
-		.mapName = MAPSEC_ROUTE_11_SOUTH,
-		.species = SPECIES_GRAVELER,
-	},
-	{
-		.mapName = MAPSEC_ROUTE_21,
-		.species = SPECIES_GOLEM,
 	},
 	{
 		.mapName = MAPSEC_TORMA_CAVE,
 		.species = SPECIES_SANDSHREW,
 	},
 	{
-		.mapName = MAPSEC_ROUTE_12_WEST,
-		.species = SPECIES_SANDSLASH,
-	},
-	{
 		.mapName = MAPSEC_ROUTE_13,
 		.species = SPECIES_VULPIX_A,
-	},
-	{
-		.mapName = MAPSEC_SCALDING_SPA,
-		.species = SPECIES_NINETALES_A,
 	},
 	{
 		.mapName = MAPSEC_FORGOTTEN_MANSE,
@@ -3501,6 +3473,22 @@ const struct SwarmData gDivergentSwarmTable[] =
 	{
 		.mapName = MAPSEC_CARNELIDGE_VOLCANO,
 		.species = SPECIES_RAPIDASH_G,
+	},
+	{
+		.mapName = MAPSEC_DAIMYN_CITY,
+		.species = SPECIES_GROWLITHE_H,
+	},
+	{
+		.mapName = MAPSEC_VARISI_FOREST,
+		.species = SPECIES_VOLTORB_H,
+	},
+	{
+		.mapName = MAPSEC_ROUTE_8,
+		.species = SPECIES_QWILFISH_H,
+	},
+	{
+		.mapName = MAPSEC_ORICHELLE_GARDEN,
+		.species = SPECIES_LILLIGANT_H,
 	},
 };
 

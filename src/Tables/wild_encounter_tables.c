@@ -814,10 +814,6 @@ const struct SwarmData gSwarmTable[] =
 		.species = SPECIES_RATTATA,
 	},
 	{
-		.mapName = MAPSEC_FORGOTTEN_MANSE,
-		.species = SPECIES_RATICATE,
-	},
-	{
 		.mapName = MAPSEC_ROUTE_14,
 		.species = SPECIES_RAICHU_A,
 	},
@@ -826,20 +822,8 @@ const struct SwarmData gSwarmTable[] =
 		.species = SPECIES_GRIMER,
 	},
 	{
-		.mapName = MAPSEC_ROUTE_24,
-		.species = SPECIES_MUK,
-	},
-	{
 		.mapName = MAPSEC_ROUTE_8,
 		.species = SPECIES_SLOWPOKE_G,
-	},
-	{
-		.mapName = MAPSEC_ROUTE_22,
-		.species = SPECIES_SLOWBRO_G,
-	},
-	{
-		.mapName = MAPSEC_SEPPIRE_COVE,
-		.species = SPECIES_SLOWKING_G,
 	},
 	{
 		.mapName = MAPSEC_ROUTE_7,
@@ -848,14 +832,6 @@ const struct SwarmData gSwarmTable[] =
 	{
 		.mapName = MAPSEC_DAIMYN_CITY,
 		.species = SPECIES_KOFFING,
-	},
-	{
-		.mapName = MAPSEC_VICTORY_ROAD,
-		.species = SPECIES_WEEZING,
-	},
-	{
-		.mapName = MAPSEC_ROUTE_6,
-		.species = SPECIES_MIME_JR,
 	},
 	{
 		.mapName = MAPSEC_ROUTE_9,
@@ -870,12 +846,24 @@ const struct SwarmData gSwarmTable[] =
 		.species = SPECIES_DARUMAKA,
 	},
 	{
-		.mapName = MAPSEC_ROUTE_12_WEST,
-		.species = SPECIES_DARMANITAN,
-	},
-	{
 		.mapName = MAPSEC_ROUTE_11_SOUTH,
 		.species = SPECIES_STUNFISK,
+	},
+	{
+		.mapName = MAPSEC_ROUTE_12_WEST,
+		.species = SPECIES_SNEASEL_H,
+	},
+	{
+		.mapName = MAPSEC_FORGOTTEN_MANSE,
+		.species = SPECIES_ZORUA_H,
+	},
+	{
+		.mapName = MAPSEC_ROUTE_8,
+		.species = SPECIES_SLIGGOO_H,
+	},
+	{
+		.mapName = MAPSEC_CALICIN_BAY,
+		.species = SPECIES_AVALUGG_H,
 	},
 };
 
