@@ -1439,6 +1439,9 @@ GiveQoLItemsFromStart:
     additem ITEM_MACH_BIKE 0x1
     additem ITEM_ITEMFINDER 0x1
     additem ITEM_POKE_CHIP_CHARM 0x1
+    additem ITEM_OVAL_CHARM 0x1
+    additem ITEM_CATCHING_CHARM 0x1
+    additem ITEM_SHINY_CHARM 0x1
     @ Flags for Trainer House rewards
     setflag 0x24F @ For Mach Bike
     setflag 0x252 @ For Item Finder
