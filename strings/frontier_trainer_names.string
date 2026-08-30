@@ -423,8 +423,8 @@ Leah
 #org @sTrainerName_Zoe
 Zoe
 
-#org @sTrainerName_Stella
-Stella
+#org @sTrainerName_Stacy
+Stacy
 
 #org @sTrainerName_Hazel
 Hazel
@@ -600,84 +600,57 @@ Mackenzie
 #org @sTrainerName_Madeline
 Madeline
 
-#ifdef UNBOUND
+#ifndef UNBOUND
 
-//Special Trainers
-#org @sTrainerName_Palmer
-Palmer
+// Frontier Aces (20 streak)
+#org @sTrainerName_Mort
+Mort
 
-#org @sTrainerName_Pat
-Patroz
+// Populated at runtime
+#org @sTrainerName_Rival
+Rival
 
-#org @sTrainerName_Pablo
-Pablo
+#org @sTrainerName_Selene
+Selene
 
-#org @sTrainerName_Paula
-Paula
+#org @sTrainerName_Alistair
+Alistair
 
-#org @sTrainerName_Skeli
-Skeli
+#org @sTrainerName_Collin
+Collin
 
-#org @sTrainerName_Golche
-Golche
+#org @sTrainerName_Crystal
+Crystal
 
-#org @sTrainerName_Gail
-Thanasis
+#org @sTrainerName_Brendan
+Brendan
 
-#org @sTrainerName_Lixdel
-Lixdel
+#org @sTrainerName_May
+May
 
-#org @sTrainerName_Cynthia
-Cynthia
+// Frontier Brains (50 streak)
+#org @sTrainerName_Terrence
+Terrence
 
-#org @sTrainerName_Red
-Red
+#org @sTrainerName_Stella
+Stella
 
-#org @sTrainerName_Vega
-V\ega
+#org @sTrainerName_Raine
+Raine
 
-#org @sTrainerName_Mel
-Mel
+#org @sTrainerName_Chance
+Chance
 
-#org @sTrainerName_BigMo
-Big Mo
+#org @sTrainerName_Casey
+Casey
 
-#org @sTrainerName_Galavan
-Galavan
+#org @sTrainerName_Abby
+Abby
 
-#org @sTrainerName_Candice
-Candice
+#org @sTrainerName_Iris
+Iris
 
-#org @sTrainerName_Giovanni
-Giovanni
-
-//Multi Trainers
-#org @sTrainerName_Milo
-Milo
-
-#org @sTrainerName_Marlon
-Marlon
-
-#org @sTrainerName_Jax
-Jax
-
-#org @sTrainerName_Tessy
-Tessy
-
-//Raid Multi Trainers
-#org @sTrainerName_Catherine
-Cathy
-
-#org @sTrainerName_Ginger
-Ginger
-
-#org @sTrainerName_Abimbola
-Abimbola
-
-#org @sTrainerName_Mahina
-Mahina
-
-#org @sTrainerName_Alford
-Alford
+#org @sTrainerName_Dennis
+Dennis
 
 #endif

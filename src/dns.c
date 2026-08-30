@@ -23,6 +23,17 @@ dns.c
 typedef bool8 IgnoredPalT[16];
 #define gIgnoredDNSPalIndices ((IgnoredPalT*) 0x203B830)
 
+// Clamp hours and minutes so they don't exceed logical bounds (24 hours and 60 min)
+static inline u32 DNSHourIndex(u32 hour)
+{
+	return (hour < 24) ? hour : 0;
+}
+
+static inline u32 DNSMinuteIndex(u32 minute)
+{
+	return (minute < 60) ? minute / 10 : 0;
+}
+
 //This file's functions:
 #ifdef TIME_ENABLED
 static void FadeDayNightPalettes(void);
@@ -87,13 +98,14 @@ static void FadeDayNightPalettes(void)
 
 			if (fadePalettes)
 			{
-				u32 hour = GetDNSHour();
-				u16 r = gDNSNightFadingByTime[hour][gClock.minute / 10].r;
-				u16 g = gDNSNightFadingByTime[hour][gClock.minute / 10].g;
-				u16 b = gDNSNightFadingByTime[hour][gClock.minute / 10].b;
+				u32 hour = DNSHourIndex(GetDNSHour());
+				u32 minute = DNSMinuteIndex(gClock.minute);
+				u16 r = gDNSNightFadingByTime[hour][minute].r;
+				u16 g = gDNSNightFadingByTime[hour][minute].g;
+				u16 b = gDNSNightFadingByTime[hour][minute].b;
 				u16 colour;
-				
-				u8 coeff = gDNSNightFadingByTime[hour][gClock.minute / 10].amount;
+
+				u8 coeff = gDNSNightFadingByTime[hour][minute].amount;
 
 				// During the Ultra Episode, we simulate an eclipse (yes, even during the night) when a flag is set
 				u16 intensity = VarGet(VAR_ECLIPSE_INTENSITY);
@@ -371,22 +383,17 @@ void TryLoadTileset2OnCameraTransition(struct MapLayout* oldMapLayout)
 }
 
 #if (defined TIME_ENABLED && defined DNS_IN_BATTLE)
+// The background itself decides if a tint occurs (this allows the frontier customization (map is always indoor) to function)
 void DNSBattleBGPalFade(void)
 {
-	switch (GetCurrentMapType()) {
-		case MAP_TYPE_0:			//No fading in these areas
-		case MAP_TYPE_UNDERGROUND:
-		case MAP_TYPE_INDOOR:
-		case MAP_TYPE_SECRET_BASE:
-			return;
-	}
-
 	u16 i, palOffset;
-	u8 coeff = gDNSNightFadingByTime[gClock.hour][gClock.minute / 10].amount;
+	u32 hour = DNSHourIndex(gClock.hour);
+	u32 minute = DNSMinuteIndex(gClock.minute);
+	u8 coeff = gDNSNightFadingByTime[hour][minute].amount;
 	u32 blendColor = RGB(
-		gDNSNightFadingByTime[gClock.hour][gClock.minute / 10].r,
-		gDNSNightFadingByTime[gClock.hour][gClock.minute / 10].g,
-		gDNSNightFadingByTime[gClock.hour][gClock.minute / 10].b
+		gDNSNightFadingByTime[hour][minute].r,
+		gDNSNightFadingByTime[hour][minute].g,
+		gDNSNightFadingByTime[hour][minute].b
 	);
 	u8 selectedPalettes = BATTLE_DNS_PAL_FADE & 0x1C;
 

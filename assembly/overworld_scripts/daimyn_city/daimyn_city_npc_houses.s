@@ -274,7 +274,7 @@ OldTrainer_GiftReceived:
     compare LASTRESULT NO
     if equal _goto OldTrainer_DeniedVoltTackleTutoring
     msgbox gText_DaimynCityNPCHouses_OldTrainer_ChoosePokemon MSG_NORMAL
-    setvar 0x8005 67 @ Volt Tackle
+    setvar 0x8005 TUTOR_SPECIAL_VOLT_TACKLE @ Volt Tackle
     special 0x18D
     waitstate
     compare LASTRESULT YES

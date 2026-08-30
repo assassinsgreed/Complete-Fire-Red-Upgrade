@@ -2,11 +2,27 @@
 ===========RAM==============
 ==========================*/
 /* New RAM */
-gBattleSandsStreaks = 0x202682C;
-gBattleTowerStreaks = 0x2026840;
-gBattleMineStreaks = 0x2026B40;
-gBattleCircusStreaks = 0x2026B50;
-gRingChallengeStreaks = 0x2028FC0;
+/* Battle Frontier save data. All of it lives in SaveBlock1.frontierRecords
+   (0x202682C - 0x2027434; PC boxes 23/24 begin at 0x2027434, so never go past it).
+   gFrontierStreaks[facility][format][curr/max] replaces gBattleTowerStreaks,
+   gBattleQuarryStreaks and gBattleSimStreaks; their old space now holds
+   gFrontierRunStates, which is keyed the same way so a run and its streak share indices. */
+gFrontierStreaks = 0x2026840;        /* 0x40 bytes */
+gFrontierRunStates = 0x2026880;      /* 0x10 bytes */
+gFrontierModifierBackup = 0x2026890; /* 0x8 bytes */
+gFrontierBackground = 0x2026898;     /* 0x2 bytes */
+/* Battle Factory rentals, one team per restable format (singles/doubles). 4-aligned for struct Pokemon. */
+gFrontierRentalTeams = 0x202689C;    /* 0x320 bytes */
+/* Which rental the player is giving up when taking a Factory opponent's Pokemon, held across the second party screen. */
+gFrontierPendingSwapSlot = 0x2026BBC; /* 0x1 bytes */
+/* Which Battle Frontier party screen is open, if any. The party menu's action list is shared with the overworld's, so it has to be told which one it is drawing. */
+gFrontierPartyScreen = 0x2026BBD; /* 0x1 bytes */
+/* The six rentals on offer, snapshotted before the party screen opens. Special 0xF5 zeroes gPlayerParty and refills three slots from an uninitialised buffer, which we need to avoid. */
+gFrontierRentalPool = 0x2026BC0;     /* 0x258 bytes */
+/* The Battle Observatory's entered team, stored while the revealed Pokemon fight alone. 4-aligned for struct Pokemon. */
+gObservatoryEnteredTeam = 0x2026E18; /* 0x190 bytes */
+/* Which slots of that team the player revealed and sent out, so they go back to the same slots after battle. */
+gObservatoryChosenSlots = 0x2026FA8; /* 0x2 bytes; next free 0x2026FAA */
 gLastUsedBall = 0x203B774;
 gFollowerState = 0x203B818;
 gDontFadeWhite = 0x203C756;
@@ -328,6 +344,7 @@ sDrawStartMenuState = 0x20370FF;
 sSafariZoneStatsWindowId = 0x2037101;
 sStartMenuWindowId = 0x203ABE0;
 sTimeWindowId = 0x2037101;
+sSaveDialogCallback = 0x3000FA4;
 
 /* Trade RAM */
 gSelectedTradeMonPositions = 0x2031DA4;
@@ -1668,7 +1685,10 @@ StartMenuExitCallback = 0x806F540 | 1;
 StartMenuSafariZoneRetireCallback = 0x806F554 | 1;
 StartMenuLinkModePlayerCallback = 0x806F56C | 1;
 PrintSaveTextWithFollowupFunc = 0x806F69C | 1;
+Field_AskSaveTheGame = 0x806F67C | 1;
+SaveDialogCB_PrintAskSaveText = 0x806F7A8 | 1;
 SaveDialogCB_AskSavePrintYesNoMenu = 0x806F7DC | 1;
+SaveDialogCB_DisplaySavingMessage = 0x806F924 | 1;
 PrintSaveStatsOld = 0x806FCF4 | 1;
 CloseStartMenu = 0x806FEA0 | 1;
 AppendToList = 0x806FEC8 | 1;

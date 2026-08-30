@@ -46,8 +46,15 @@ GalaricaMart:
     .hword ITEM_NONE
 
 GalaricaGirlDivergent:
-    msgbox gText_EmraldinQuay_Overworld_GalaricaGirlDivergent MSG_NORMAL
+    msgbox gText_EmraldinQuay_Overworld_GalaricaGirlIntroDivergent MSG_NORMAL
+    pokemart GalaricaMartDivergent
+    msgbox gText_EmraldinQuay_Overworld_GalaricaGirlOutro MSG_NORMAL
     end
+
+.align 1
+GalaricaMartDivergent:
+    .hword ITEM_BLACK_AUGURITE
+    .hword ITEM_NONE
 
 .global EventScript_EmraldinQuay_Boy
 EventScript_EmraldinQuay_Boy:
@@ -281,6 +288,7 @@ TrainerHouseTier3Prizes:
 
 TrainerHouseCheckForGrandPrize:
     incrementgamestat 25
+    setflag 0x2AA @ Emraldin Quay Trainer House cleared
     checkflag 0x252 @ Got the item finder
     if NOT_SET _call TrainerHouseGiveGrandPrize
     return

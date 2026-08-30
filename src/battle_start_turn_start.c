@@ -128,19 +128,6 @@ void HandleNewBattleRamClearBeforeBattle(void)
 		gNewBS->dynamaxData.backupRaidMonItem = GetMonData(&gEnemyParty[0], MON_DATA_HELD_ITEM, NULL); //For Frontier
 	}
 
-	if (gBattleTypeFlags & BATTLE_TYPE_RING_CHALLENGE)
-	{
-		#ifdef VAR_RING_CHALLENGE_BANNED_TYPE_1
-		gNewBS->ringChallengeBannedTypes[0] = VarGet(VAR_RING_CHALLENGE_BANNED_TYPE_1);
-		#endif
-		#ifdef VAR_RING_CHALLENGE_BANNED_TYPE_2
-		gNewBS->ringChallengeBannedTypes[1] = VarGet(VAR_RING_CHALLENGE_BANNED_TYPE_2);
-		#endif
-		#ifdef VAR_RING_CHALLENGE_BANNED_TYPE_3
-		gNewBS->ringChallengeBannedTypes[2] = VarGet(VAR_RING_CHALLENGE_BANNED_TYPE_3);
-		#endif
-	}
-
 	#ifdef FLAG_BENJAMIN_BUTTERFREE_BATTLE
 	if (FlagGet(FLAG_BENJAMIN_BUTTERFREE_BATTLE))
 		SavePlayerParty(); //Backup party to be restored after the battle
@@ -236,6 +223,7 @@ void BattleBeginFirstTurn(void)
 				SavePartyItems();
 				TryBackupEnemyTeam();
 				TryClearLevelCapKeptOn();
+				RollQuarryDisabledMoves(); // BattleTurnPassed only runs from turn 2 onwards
 				++*state;
 				break;
 
@@ -304,7 +292,7 @@ void BattleBeginFirstTurn(void)
 				{
 					gBattleMons[*bank].type3 =  TYPE_BLANK;
 
-					if (AreAbilitiesSuppressed()) //Most likely Circus
+					if (AreAbilitiesSuppressed()) //Most likely Sim
 					{
 						gNewBS->SuppressedAbilities[*bank] = gBattleMons[*bank].ability;
 						gBattleMons[*bank].ability = 0;
@@ -397,7 +385,7 @@ void BattleBeginFirstTurn(void)
 
 			case BTSTART_BAD_THOUGHTS_BATTLE:
 				#ifdef FLAG_BAD_THOUGHTS_BATTLE
-				if (FlagGet(FLAG_BAD_THOUGHTS_BATTLE)) //Only print the message when the flag is set, not in Battle Circus
+				if (FlagGet(FLAG_BAD_THOUGHTS_BATTLE)) //Only print the message when the flag is set, not in Battle Sim
 				{
 					gBankAttacker = GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT);
 					gBattleStringLoader = gText_BadThoughtsBattleStart;
@@ -471,7 +459,7 @@ void BattleBeginFirstTurn(void)
 
 			case BTSTART_PIXIE_BATTLE:
 				#ifdef FLAG_PIXIE_BATTLE
-				if (FlagGet(FLAG_PIXIE_BATTLE)) //Only print the message when the flag is set, not in Battle Circus
+				if (FlagGet(FLAG_PIXIE_BATTLE)) //Only print the message when the flag is set, not in Battle Sim
 				{
 					gBattleStringLoader = gText_PixieBattleStart;
 					BattleScriptPushCursorAndCallback(BattleScript_PrintCustomStringEnd3);
@@ -698,20 +686,20 @@ bool8 TryActivateOWTerrain(void)
 	bool8 effect = FALSE;
 	u8 owTerrain = VarGet(VAR_TERRAIN);
 
-	if (gBattleTypeFlags & BATTLE_TYPE_BATTLE_CIRCUS)
+	if (gBattleTypeFlags & BATTLE_TYPE_BATTLE_SIM)
 	{
 		//Can have at most one of these set at a time
-		switch (gBattleCircusFlags & BATTLE_CIRCUS_TERRAIN) {
-			case BATTLE_CIRCUS_ELECTRIC_TERRAIN:
+		switch (gBattleSimFlags & BATTLE_SIM_TERRAIN) {
+			case BATTLE_SIM_ELECTRIC_TERRAIN:
 				owTerrain = ELECTRIC_TERRAIN;
 				break;
-			case BATTLE_CIRCUS_GRASSY_TERRAIN:
+			case BATTLE_SIM_GRASSY_TERRAIN:
 				owTerrain = GRASSY_TERRAIN;
 				break;
-			case BATTLE_CIRCUS_MISTY_TERRAIN:
+			case BATTLE_SIM_MISTY_TERRAIN:
 				owTerrain = MISTY_TERRAIN;
 				break;
-			case BATTLE_CIRCUS_PSYCHIC_TERRAIN:
+			case BATTLE_SIM_PSYCHIC_TERRAIN:
 				owTerrain = PSYCHIC_TERRAIN;
 				break;
 		}
@@ -775,12 +763,30 @@ bool8 TryActivateOWTerrain(void)
 	return effect;
 }
 
+// The Battle Sands totem boost lasts a single battle, so it lives in gNewBS instead of
+// VAR_TOTEM, which holds the player's Daimyn Restaurant meal buff across battles.
+u16 GetTotemValue(u8 bank)
+{
+	if (InBattleSands())
+		return gNewBS->sandsTotemBoosts[bank];
+
+	return VarGet(VAR_TOTEM + bank);
+}
+
+void SetTotemValue(u8 bank, u16 value)
+{
+	if (InBattleSands())
+		gNewBS->sandsTotemBoosts[bank] = value;
+	else
+		VarSet(VAR_TOTEM + bank, value);
+}
+
 u8 GetTotemStat(u8 bank, bool8 multiBoost)
 {
 	if (multiBoost)
 		bank = PARTNER(bank);
 
-	return VarGet(VAR_TOTEM + bank) & 0x7;
+	return GetTotemValue(bank) & 0x7;
 }
 
 u8 GetTotemRaiseAmount(u8 bank, bool8 multiBoost)
@@ -788,7 +794,7 @@ u8 GetTotemRaiseAmount(u8 bank, bool8 multiBoost)
 	if (multiBoost)
 		bank = PARTNER(bank);
 
-	return VarGet(VAR_TOTEM + bank) & ~(0xF);
+	return GetTotemValue(bank) & ~(0xF);
 }
 
 s8 TotemRaiseAmountToStatMod(u8 raiseAmount)
@@ -809,7 +815,11 @@ s8 TotemRaiseAmountToStatMod(u8 raiseAmount)
 
 u8 CanActivateTotemBoost(u8 bank)
 {
-	u16 val = VarGet(VAR_TOTEM + bank);
+	// No meal effects can trigger in the battle frontier (the Battle Sands boost isn't one)
+	if (gBattleTypeFlags & BATTLE_TYPE_FRONTIER && !InBattleSands())
+		return TOTEM_NO_BOOST;
+
+	u16 val = GetTotemValue(bank);
 	u16 stat = GetTotemStat(bank, FALSE);
 
 	if (bank < gBattlersCount && stat != 0)
@@ -821,7 +831,7 @@ u8 CanActivateTotemBoost(u8 bank)
 			|| FlagGet(FLAG_SINGLE_TRAINER_MON_TOTEM_BOOST)
 			#endif
 			)
-				VarSet(VAR_TOTEM + bank, 0); //Only first Pokemon gets boost in battle sands
+				SetTotemValue(bank, 0); //Only first Pokemon gets boost in battle sands
 
 			return TOTEM_OMNIBOOST;
 		}
@@ -838,10 +848,11 @@ u8 CanActivateTotemBoost(u8 bank)
 			|| FlagGet(FLAG_SINGLE_TRAINER_MON_TOTEM_BOOST)
 			#endif
 			)
-				VarSet(VAR_TOTEM + bank, 0); //Only first Pokemon gets boost in battle sands
+				SetTotemValue(bank, 0); //Only first Pokemon gets boost in battle sands
 
-			if (VarGet(VAR_TOTEM + PARTNER(bank)) != 0 && // Second stat is stored in partner's var
-				VarGet(VAR_TOTEM + bank) != VarGet(VAR_TOTEM + PARTNER(bank))) // Stat changes are unique & we're in a single battle
+			if (!InBattleSands() // In the sands a partner's slot is its own boost, not a second stat for this mon
+			&& GetTotemValue(PARTNER(bank)) != 0 // Second stat is stored in partner's var
+			&& GetTotemValue(bank) != GetTotemValue(PARTNER(bank))) // Stat changes are unique & we're in a single battle
 			 	return TOTEM_MULTI_BOOST;
 
 			return TOTEM_SINGLE_BOOST;
@@ -851,44 +862,41 @@ u8 CanActivateTotemBoost(u8 bank)
 	return TOTEM_NO_BOOST;
 }
 
+//The farther the "player" gets, the higher chance a stat will be raised more than 1
+static u8 GetBattleSandsMaxStatIncrease(void)
+{
+	u8 currStreak = GetCurrentBattleFacilityStreak();
+
+	if (currStreak < 20)
+		return 1;
+	if (currStreak < 40)
+		return 2;
+	if (currStreak < 60)
+		return 3;
+	if (currStreak < 80)
+		return 4;
+	if (currStreak < 100)
+		return 5;
+
+	return 6;
+}
+
+void RollBattleSandsTotemBoost(u8 bank)
+{
+	u8 stat = RandRange(STAT_STAGE_ATK, STAT_STAGE_ACC + 1); // No Evasion boost
+	u8 increase = (Random() % GetBattleSandsMaxStatIncrease()) + 1;
+	u8 contraryShift = (ABILITY(bank) == ABILITY_CONTRARY) ? 0x80 : 0; // Makes it so Contrary has no effect on the stat boost
+
+	SetTotemValue(bank, stat | (increase * 0x10 + contraryShift));
+}
+
 static void TryPrepareTotemBoostInBattleSands(void)
 {
 	if (InBattleSands())
 	{
-		u8 playerId = 0;
-		u8 enemyId = 1;
-		u8 playerStat = RandRange(STAT_STAGE_ATK, STAT_STAGE_ACC + 1); //No Evasion boost
-		u8 enemyStat = RandRange(STAT_STAGE_ATK, STAT_STAGE_ACC + 1);
-		u8 increaseMax, increase;
-
-		if (IS_DOUBLE_BATTLE)
-		{
-			playerId |= (Random() & BIT_FLANK);
-			enemyId |= (Random() & BIT_FLANK);
-		}
-
-		//The farther the "player" gets, the higher chance a stat will be raised more than 1
-		u8 currStreak = GetCurrentBattleTowerStreak();
-		if (currStreak < 35)
-			increaseMax = 1;
-		else if (currStreak < 50)
-			increaseMax = 2;
-		else if (currStreak < 65)
-			increaseMax = 3;
-		else if (currStreak < 80)
-			increaseMax = 4;
-		else if (currStreak < 100)
-			increaseMax = 5;
-		else
-			increaseMax = 6;
-
-		//Makes it so Contrary has no effect on the stat boost
-		u8 contraryShiftPlayer = (ABILITY(playerId) == ABILITY_CONTRARY) ? 0x80 : 0;
-		u8 contraryShiftEnemy = (ABILITY(enemyId) == ABILITY_CONTRARY) ? 0x80 : 0;
-
-		increase = (Random() % increaseMax) + 1; //Player and enemy get the same amount of boost
-		VarSet(VAR_TOTEM + playerId, playerStat | (increase * 0x10 + contraryShiftPlayer));
-		VarSet(VAR_TOTEM + enemyId, enemyStat | (increase * 0x10 + contraryShiftEnemy));
+		// Everyone starting the battle is fed, each rolling its own stat and magnitude
+		for (u32 bank = 0; bank < gBattlersCount; ++bank)
+			RollBattleSandsTotemBoost(bank);
 	}
 }
 
@@ -1118,19 +1126,21 @@ void RunTurnActionsFunctions(void)
 					const u8* script = DoMegaEvolution(bank);
 					if (script != NULL)
 					{
-						if (!(gBattleTypeFlags & BATTLE_TYPE_MEGA_BRAWL)) //As many mons can Mega Evolve as you want
+						if (!CanMegaEvolveRepeatedly(bank)) // As many mons can Mega Evolve as you want
 							gNewBS->megaData.done[bank] = TRUE;
 
 						gNewBS->megaData.chosen[bank] = 0;
 						gNewBS->megaData.megaEvoInProgress = TRUE;
 						gNewBS->megaData.script = script;
-						if (!(gBattleTypeFlags & (BATTLE_TYPE_INGAME_PARTNER | BATTLE_TYPE_MULTI | BATTLE_TYPE_MEGA_BRAWL))
+						if (!(gBattleTypeFlags & (BATTLE_TYPE_INGAME_PARTNER | BATTLE_TYPE_MULTI))
+						&& !CanMegaEvolveRepeatedly(bank)
 						&& SIDE(bank) == B_SIDE_PLAYER)
 						{
 							gNewBS->megaData.chosen[PARTNER(bank)] = 0;
 							gNewBS->megaData.done[PARTNER(bank)] = TRUE;
 						}
-						else if (!(gBattleTypeFlags & (BATTLE_TYPE_TWO_OPPONENTS | BATTLE_TYPE_MULTI | BATTLE_TYPE_MEGA_BRAWL))
+						else if (!(gBattleTypeFlags & (BATTLE_TYPE_TWO_OPPONENTS | BATTLE_TYPE_MULTI))
+						&& !CanMegaEvolveRepeatedly(bank)
 						&& SIDE(bank) == B_SIDE_OPPONENT)
 						{
 							gNewBS->megaData.chosen[PARTNER(bank)] = 0;
@@ -1803,6 +1813,18 @@ u16 GetMUS_ForBattle(void)
 					return song;
 			}
 
+			// Player can override their music choice in the battle frontier,
+			// protected by an "are they in the frontier" check.
+			if (gBattleTypeFlags & BATTLE_TYPE_FRONTIER)
+			{
+				song = VarGet(VAR_BATTLE_FACILITY_SONG_OVERRIDE);
+				if (song == BGM_RANDOM_BATTLE_MUSIC)
+					song = GetRandomBattleBGM();
+
+				if (song != 0)
+					return song;
+			}
+
 			//Then try to load class based music for either trainer
 			trainerClass = GetFrontierTrainerClassId(gTrainerBattleOpponent_A, BATTLE_FACILITY_TRAINER_A);
 
@@ -1817,16 +1839,8 @@ u16 GetMUS_ForBattle(void)
 					return gClassBasedBattleBGM[trainerClass];
 			}
 
-			if (gBattleTypeFlags & BATTLE_TYPE_FRONTIER)
-			{
-				//Then try loading the song override only in the actual Frontier
-				song = VarGet(VAR_BATTLE_FACILITY_SONG_OVERRIDE);
-				if (song == BGM_RANDOM_BATTLE_MUSIC)
-					song = GetRandomBattleBGM();
-
-				if (song != 0)
-					return song;
-			}
+			// If we didn't reach anything, this is an actual frontier trainer
+			return BGM_BATTLE_FRONTIER_TRAINER;
 		}
 		else
 		{

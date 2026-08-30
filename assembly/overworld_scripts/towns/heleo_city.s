@@ -430,6 +430,7 @@ TrainerHouseTier3Prizes:
 
 TrainerHouseCheckForGrandPrize:
     incrementgamestat 25
+    setflag 0x2A9 @ Heleo City Trainer House cleared
     checkflag 0x24F @ Got the bike
     if NOT_SET _call TrainerHouseGiveGrandPrize
     return
@@ -630,7 +631,7 @@ EventScript_HeleoCity_SwamiResearcher:
     lock
     faceplayer
     msgbox gText_HeleoNPCHouses_SwamiResearcher MSG_NORMAL
-    compare 0x4053 0x22 @ 34 swarm pokemon (17 normal + 17 divergent)
+    compare 0x4053 0x34 @ 52 research species - every one in both modes
     if equal _goto End
     msgbox gText_HeleoNPCHouses_SwamiResearcherRequest MSG_YESNO
     compare LASTRESULT NO
@@ -660,9 +661,16 @@ GiveSwarmItem:
     bufferpartypokemon 0x0 0x0
     msgbox gText_HeleoNPCHouses_SwamiResearcherRequestShownPokemon MSG_NORMAL
     addvar 0x4053 0x1
-    compare 0x4053 0x11 @ 17 swarm pokemon
+    compare 0x4053 0x34 @ 52 - every research species in both modes
     if equal _goto AllSwarmPokemonShown
-    compare 0x4053 0x22 @ 34 swarm pokemon
+    checkflag 0x945 @ Divergent Mode - the two modes have different totals
+    if SET _goto GiveSwarmItem_DivergentModeComplete
+    compare 0x4053 0x1B @ 27 - standard mode species count
+    if equal _goto AllSwarmPokemonShown
+    @ Intentional fallthrough
+
+GiveSwarmItem_DivergentModeComplete:
+    compare 0x4053 0x1C @ 28 - divergent mode species count
     if equal _goto AllSwarmPokemonShown @ Second reward - for those flipping between modes
     obtainitem ITEM_BOTTLE_CAP 0x1
     msgbox gText_HeleoNPCHouses_SwamiResearcherRequestShownPokemonConclusion MSG_NORMAL

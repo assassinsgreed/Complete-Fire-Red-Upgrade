@@ -592,7 +592,7 @@
 ## Fix Ghost Battle String
 083FD35B FD 06 AB FB FE FF
 
-##Increase Tutors to 72 (64 Regular + 8 Special)
+##Increase Tutors to 159 (96 Regular + 63 Special)
 0811F456 LAST_TOTAL_TUTOR_NUM
 08127824 LAST_TOTAL_TUTOR_NUM
 
@@ -675,6 +675,11 @@
 0845A148 02 16 0B 07 08 0E 73 03
 #endif
 
+## Party Menu Confirm (OK / Cancel) Button Corruption Fix
+0845A046 DF
+0845A086 DF
+0845A0C6 DF
+
 #ifdef REPLACE_ASH_WEATHER_WITH_WHITE_SANDSTORM
 083C2C30 FD D2 07 08 AD D3 07 08 7D D3 07 08 29 D4 07 08
 #endif
@@ -711,3 +716,9 @@
 # in UpdateHpTextInHealthboxInDoubles' format string (healthbar pal slot 1 is the
 # dark bar-frame color, slot 2 is white; outline stays default dark slot 3)
 08260544 02
+
+# Trainer card stars: move the row up beside the player's name and across above the trainer pic.
+# 0808AFAC is the x argument of the FillBgTilemapBufferRect that stamps tile 0x8F once per star;
+# 083CD95C is that call's y, indexed by the card layout byte (0 = the player's own card, 1 = RS/E).
+0808AFAC 16
+083CD95C 05 04

@@ -108,9 +108,14 @@ enum
 #define MENU_TRADE1 16
 #define MENU_TRADE2 17
 #define MENU_MOVE_ITEM 18
-#define MENU_FIELD_MOVES 19
+// The Battle Factory's swap screens. These have to stay below MENU_FIELD_MOVES: every id past
+// MENU_FIELD_MOVES_MINUS_1 is read as a field move, down to the description window it opens.
+// Both constants are patched into the ROM by bytereplacement, so moving them is safe.
+#define MENU_FACTORY_GIVE 19
+#define MENU_FACTORY_TAKE 20
+#define MENU_FIELD_MOVES 21
 
-#define MENU_FIELD_MOVES_MINUS_1 18
+#define MENU_FIELD_MOVES_MINUS_1 20
 
 struct PartyMenu
 {

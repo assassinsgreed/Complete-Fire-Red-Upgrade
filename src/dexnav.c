@@ -256,8 +256,13 @@ static void DexNavGetMon(u16 species, u8 potential, u8 level, u8 ability, u16* m
 	TryRandomizeSpecies(&species);
 	if (GetHiddenAbility(species) == ability)
 		mon->hiddenAbility = TRUE;
-	else if (gBaseStats[species].ability2 != ABILITY_NONE) //Helps fix a bug where Unown would crash the game in the below function
-		GiveMonNatureAndAbility(mon, GetNature(mon), (GetAbility2(species) == ability) ? 1 : 0, IsMonShiny(mon), TRUE, TRUE); //Make sure details match what was on the HUD
+	else
+	{
+		mon->hiddenAbility = FALSE; //The wild generator may have rolled one, which GetMonAbility would use over the ability on the HUD
+
+		if (gBaseStats[species].ability2 != ABILITY_NONE) //Helps fix a bug where Unown would crash the game in the below function
+			GiveMonNatureAndAbility(mon, GetNature(mon), (GetAbility2(species) == ability) ? 1 : 0, IsMonShiny(mon), TRUE, TRUE); //Make sure details match what was on the HUD
+	}
 
 	//Set moves
 	for (i = 0; i < MAX_MON_MOVES; ++i)
@@ -1710,10 +1715,10 @@ static void DexNavDrawChainNumber(u8* spriteIdNumAddr, u8* spriteIdStarAddr)
 			OutlinedFontDraw(spriteIdNum, 0, 16 * 8);
 
 			//Try create a star if there's a higher chance of a shiny being found
-			if (gCurrentDexNavChain == 50 || gCurrentDexNavChain == 100)
+			if (gCurrentDexNavChain >= 50) //Lit for as long as the chain is in a boosted shiny tier
 			{
 				s16 xPos = ICONX + 188;
-				if (gCurrentDexNavChain == 100)
+				if (gCurrentDexNavChain >= 100) //Shift left to make room for the third digit
 					xPos -= 4;
 				spriteIdStar = CreateSprite(&sStarLitTemplate, xPos, ICONY - 6, 0x0);
 			}
@@ -1954,7 +1959,8 @@ bool8 InitDexNavHUD(u16 species, u8 environment, bool8 detectorMode)
 	DexNavGenerateMoveset(sDexNavHudPtr->species, searchLevel, sDexNavHudPtr->pokemonLevel, &sDexNavHudPtr->moveId[0]);
 	sDexNavHudPtr->heldItem = DexNavGenerateHeldItem(species, searchLevel);
 	sDexNavHudPtr->ability = DexNavGenerateHiddenAbility(species, searchLevel);
-	sDexNavHudPtr->potential = DexNavGeneratePotential(searchLevel);
+	// Show max stars while the modifier is on, otherwise the HUD understates what the player will catch
+	sDexNavHudPtr->potential = FlagGet(FLAG_PERFECT_WILD_IVS) ? 3 : DexNavGeneratePotential(searchLevel);
 	DexNavProximityUpdate();
 
 	//Draw icons
@@ -2696,8 +2702,8 @@ static void PrintGUIAreaName(void)
 
 static void PrintGUIChainLength(void)
 {
-	u8 chainLength = (gCurrentDexNavChain == 0) ? 0 : gCurrentDexNavChain - 1; //Always 1 less than what's stored internally
-	const struct TextColor* colour = (chainLength == 49 || chainLength == 99) ? &sLightRedText : &sWhiteText;
+	u8 chainLength = gCurrentDexNavChain;
+	const struct TextColor* colour = (chainLength >= 50) ? &sLightRedText : &sWhiteText;
 
 	CleanWindow(WIN_CHAIN_LENGTH);
 	StringCopy(gStringVar4, gText_DexNav_Chain);

@@ -197,6 +197,7 @@ RemoveWalkThroughWallCheat 8058E28 0
 ##Party Menu Hooks
 DisplayPartyPokemonSelectForBattle 811F388 1
 CursorCb_Summary 8122D4C 1
+OpenPartyMenuForScriptSpecial 81283A8 1
 SetPartyMonFieldSelectionActions 81229FC 2
 CursorCb_NoEntry 8124278 1
 LoadMaxNumPokemonChooseBattleTowerStringHook 8124184 0
@@ -812,3 +813,8 @@ BtlCtrl_RemoveVoiceoverMessageFrame 80EB524 0
 DiplomaChooseRegionNameByMode 080F502A 0
 ##Diploma background half chosen by divergent-mode flag (0x945) instead of HasAllMons()
 DiplomaSetBackgroundByMode 080F4CDC 0
+
+##Trainer card stars use Amethyst's criteria instead of the vanilla dex/minigame ones
+TrainerCardStarHook 08089960 0
+##Trainer card back page prints Amethyst's stat rows instead of the link/minigame ones
+PrintAllOnTrainerCardBack 08089E40 0

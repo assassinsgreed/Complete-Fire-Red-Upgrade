@@ -35,6 +35,10 @@ extern const struct BattleBackground gAttackTerrainTable[];
 
 //This file's functions:
 static void LoadBattleBG_EntryOverlay(u8 terrainId);
+static bool8 IsFrontierBackgroundOverride(void);
+static u8 GetBattleBackgroundToDraw(u8 terrainId);
+static bool8 DoesBattleBackgroundFollowTimeOfDay(u8 terrainId);
+static struct BattleBackground* GetBattleTerrainTable(u8 terrainId);
 static u8 TryLoadAlternateAreaTerrain(u8 terrain);
 
 u8 BattleSetup_GetTerrainId(void)
@@ -238,9 +242,72 @@ void DrawBattleEntryBackground(void)
 	}
 }
 
+// Frontier background overrides do not apply to Nature Power, Camoflage, etc. 
+static bool8 IsFrontierBackgroundOverride(void)
+{
+	return (gBattleTypeFlags & BATTLE_TYPE_FRONTIER) && !(gBattleTypeFlags & BATTLE_TYPE_LINK);
+}
+
+static u8 GetBattleBackgroundToDraw(u8 terrainId)
+{
+	if (IsFrontierBackgroundOverride())
+		return GetFrontierBattleBackground();
+
+	return terrainId;
+}
+
+// Whether the background about to be drawn shows the sky (and thus needs to respect DNS tintin).
+// This allows the game to tint regardless of the map type (indoor, outdoor, etc.) to allow
+// the battle frontier to customize the background and receive DNS tinting.
+static bool8 DoesBattleBackgroundFollowTimeOfDay(u8 terrainId)
+{
+	if (IsFrontierBackgroundOverride())
+	{
+		// Switch only includes "outdoor" backgrounds that would be tinted
+		switch (terrainId) {
+			case BATTLE_TERRAIN_GRASS:
+			case BATTLE_TERRAIN_LONG_GRASS:
+			case BATTLE_TERRAIN_SAND:
+			case BATTLE_TERRAIN_SNOWY:
+			case BATTLE_TERRAIN_WATER:
+			case BATTLE_TERRAIN_POND:
+			case BATTLE_TERRAIN_MOUNTAIN:
+			case BATTLE_TERRAIN_PLAIN:
+			case BATTLE_TERRAIN_DESERT:
+			case BATTLE_TERRAIN_FOREST:
+			case BATTLE_TERRAIN_FOREST_PERADON:
+			case BATTLE_TERRAIN_JUNGLE:
+			case BATTLE_TERRAIN_CARNELIDGE_PEAK:
+				return TRUE;
+			default:
+				return FALSE;
+		}
+	}
+
+	u8 mapType = GetCurrentMapType();
+	return !IsMapTypeIndoors(mapType) && IsMapTypeOutdoors(mapType);
+}
+
+static struct BattleBackground* GetBattleTerrainTable(u8 terrainId)
+{
+	#ifdef NEW_BATTLE_BACKGROUNDS //Load different BGs depending on time of day
+		if (DoesBattleBackgroundFollowTimeOfDay(terrainId))
+		{
+			if (IsMorning())
+				return gBattleTerrainTableMorning;
+			else if (IsNightTime())
+				return gBattleTerrainTableNight;
+			else if (IsEvening())
+				return gBattleTerrainTableEvening;
+		}
+	#endif
+
+	return gBattleTerrainTable;
+}
+
 void LoadBattleTerrainGfx(u8 terrainId)
 {
-	struct BattleBackground* table = gBattleTerrainTable;
+	struct BattleBackground* table;
 
 	if (gTerrainType) //A terrain like Electric Terrain is active
 	{
@@ -250,44 +317,25 @@ void LoadBattleTerrainGfx(u8 terrainId)
 		return;
 	}
 
-	#ifdef NEW_BATTLE_BACKGROUNDS //Load different BGs depending on time of day
-		u8 mapType = GetCurrentMapType();
-		if (!IsMapTypeIndoors(mapType) && IsMapTypeOutdoors(mapType))
-		{
-			if (IsMorning())
-				table = gBattleTerrainTableMorning;
-			else if (IsNightTime())
-				table = gBattleTerrainTableNight;
-			else if (IsEvening())
-				table = gBattleTerrainTableEvening;
-		}
-	#endif
+	terrainId = GetBattleBackgroundToDraw(terrainId);
+	table = GetBattleTerrainTable(terrainId);
 
 	LZDecompressVram(table[terrainId].tileset, (void*) 0x6008000);
 	LZDecompressVram(table[terrainId].tilemap, (void*) 0x600d000);
 	LoadCompressedPalette(table[terrainId].palette, 0x20, 0x60);
 
 	#ifdef DNS_IN_BATTLE
-		DNSBattleBGPalFade();
+		if (DoesBattleBackgroundFollowTimeOfDay(terrainId))
+			DNSBattleBGPalFade();
 	#endif
 }
 
 static void LoadBattleBG_EntryOverlay(u8 terrainId)
 {
-	struct BattleBackground* table = gBattleTerrainTable;
+	struct BattleBackground* table;
 
-	#ifdef NEW_BATTLE_BACKGROUNDS //Load different BGs depending on time of day
-	u8 mapType = GetCurrentMapType();
-	if (!IsMapTypeIndoors(mapType) && IsMapTypeOutdoors(mapType))
-	{
-		if (IsMorning())
-			table = gBattleTerrainTableMorning;
-		else if (IsNightTime())
-			table = gBattleTerrainTableNight;
-		else if (IsEvening())
-			table = gBattleTerrainTableEvening;
-	}
-	#endif
+	terrainId = GetBattleBackgroundToDraw(terrainId);
+	table = GetBattleTerrainTable(terrainId);
 
 	LZDecompressVram(table[terrainId].entryTileset, (void*) 0x6004000);
 	LZDecompressVram(table[terrainId].entryTilemap, (void*) 0x600E000);

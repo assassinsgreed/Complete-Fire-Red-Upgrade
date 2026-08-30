@@ -75,6 +75,37 @@ EventScript_AnthraTown_NESClassic:
 	msgbox gText_AnthraTown_NESClassic MSG_NORMAL
 	end
 
+.global EventScript_AnthraTown_BattleFrontierSandbox
+EventScript_AnthraTown_BattleFrontierSandbox:
+	lock
+	checkflag 0x828 @ Pokemon menu enabled, indicates player has taken a starter pokemon
+	if SET _goto End @ Sandbox no longer available
+	msgbox gText_AnthraTown_BattleFrontierSandbox MSG_YESNO
+	compare LASTRESULT NO
+	if equal _goto AnthraTown_ChoseNotToGoToBattleFrontierSandbox
+	setflag 0x29D @ In the frontier sandbox; used to prevent leaving the sandbox
+	setvar LASTRESULT 4
+	callasm DebugMenu_ProcessGiveItem @ Give TMs and HMs
+	setvar LASTRESULT 6
+	callasm DebugMenu_ProcessGiveItem @ Give Mega stones and typed Z-Crystals
+	additem ITEM_MEGA_RING 1
+	givepokemon SPECIES_JIRACHI 50 ITEM_STAR_PIECE
+	additem ITEM_POKE_CHIP 100
+	addmoney 50000
+	setflag 0x82F @ Enable running shoes
+	setflag 0x914 @ Enable auto run
+	setflag 0x828 @ Enable Pokemon Menu
+	callasm FrontierChallenge_InitDataIfNeeded
+	setvar 0x4074 1 @ Cancel frontier cutscene
+	callasm FillBoxesWithFrontierSpreads
+	warp 3 15 0 @ Pokemon Center
+	release
+	end
+
+AnthraTown_ChoseNotToGoToBattleFrontierSandbox:
+	msgbox gText_LaplazTownNPCHouses_Monty_No MSG_NORMAL @ Reusing this
+	end
+
 .global EventScript_AnthraTown_FlowerGirl
 EventScript_AnthraTown_FlowerGirl:
     npcchatwithmovement gText_AnthraTown_FlowerGirl m_LookLeft

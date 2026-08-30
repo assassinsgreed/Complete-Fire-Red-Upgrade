@@ -297,6 +297,8 @@ EventScript_PokemonCenter_Main:
     special 0x187
 	compare LASTRESULT 0x2
 	if TRUE _goto EventScript_PokemonCenter_End
+    checkflag 0x949 @ Short nurse healing option
+	if SET _goto EventScript_PokemonCenter_HealShort
     msgbox gText_Common_PokemonCenterHealChoice MSG_YESNO
 	compare LASTRESULT YES
 	if TRUE _goto EventScript_PokemonCenter_Heal
@@ -326,6 +328,25 @@ EventScript_PokemonCenter_Heal:
 	compare 0x8008 TRUE
 	if TRUE _goto EventScript_PokemonCenter_HealComplete
 	end
+
+EventScript_PokemonCenter_HealShort:
+	sound 0x1 @ Healing item SE
+	special 0x0
+	setvar 0x40AE 0x3 @ Refilled Poke Vial
+	special 0x169
+	special2 LASTRESULT 0x1B1
+	compare LASTRESULT TRUE
+	if TRUE _goto EventScript_PokemonCenter_HealCompleteShort
+	special2 LASTRESULT 0x183
+	copyvar 0x8008 LASTRESULT
+	compare 0x8008 TRUE
+	if TRUE _goto EventScript_PokemonCenter_HealCompleteShort
+	end
+
+EventScript_PokemonCenter_HealCompleteShort:
+	incrementgamestat 15
+	msgbox gText_Common_PokemonCenterHealed MSG_NORMAL
+	return
 
 EventScript_PokemonCenter_Farewell:
 	msgbox gText_Common_PokemonFarewell MSG_NORMAL

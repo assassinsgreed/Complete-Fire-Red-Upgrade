@@ -569,7 +569,7 @@ bool8 CanMonLearnTutorMove(struct Pokemon* mon, u8 tutorId)
 		case TUTOR_SPECIAL_PAYDAY:
 			return gBaseStats[species].type1 == TYPE_NORMAL
 				|| gBaseStats[species].type2 == TYPE_NORMAL;
-		case TUTOR_SPECIAL_FIREFANG:
+		case TUTOR_SPECIAL_FLAMEBURST:
 		case TUTOR_SPECIAL_MYSTICALFIRE:
 		case TUTOR_SPECIAL_INCINERATE:
 			return gBaseStats[species].type1 == TYPE_FIRE
@@ -595,7 +595,7 @@ bool8 CanMonLearnTutorMove(struct Pokemon* mon, u8 tutorId)
 			return gBaseStats[species].type1 == TYPE_ICE
 				|| gBaseStats[species].type2 == TYPE_ICE;
 		case TUTOR_SPECIAL_KARATECHOP:
-		case TUTOR_SPECIAL_AURASPHERE:
+		case TUTOR_SPECIAL_VACUUMWAVE:
 		case TUTOR_SPECIAL_STORMTHROW:
 			return gBaseStats[species].type1 == TYPE_FIGHTING
 				|| gBaseStats[species].type2 == TYPE_FIGHTING;
@@ -610,7 +610,7 @@ bool8 CanMonLearnTutorMove(struct Pokemon* mon, u8 tutorId)
 			return gBaseStats[species].type1 == TYPE_GROUND
 				|| gBaseStats[species].type2 == TYPE_GROUND;
 		case TUTOR_SPECIAL_CHATTER:
-		case TUTOR_SPECIAL_DUALWINGBEAT:
+		case TUTOR_SPECIAL_PLUCK:
 		case TUTOR_SPECIAL_SKYDROP:
 			return gBaseStats[species].type1 == TYPE_FLYING
 				|| gBaseStats[species].type2 == TYPE_FLYING;
@@ -686,8 +686,8 @@ u16 GetExpandedTutorMove(u8 tutorId)
 			return MOVE_SECRETPOWER;
 		case TUTOR_SPECIAL_PAYDAY:
 			return MOVE_PAYDAY;
-		case TUTOR_SPECIAL_FIREFANG:
-			return MOVE_FIREFANG;
+		case TUTOR_SPECIAL_FLAMEBURST:
+			return MOVE_FLAMEBURST;
 		case TUTOR_SPECIAL_MYSTICALFIRE:
 			return MOVE_MYSTICALFIRE;
 		case TUTOR_SPECIAL_INCINERATE:
@@ -718,8 +718,8 @@ u16 GetExpandedTutorMove(u8 tutorId)
 			return MOVE_AURORABEAM;
 		case TUTOR_SPECIAL_KARATECHOP:
 			return MOVE_KARATECHOP;
-		case TUTOR_SPECIAL_AURASPHERE:
-			return MOVE_AURASPHERE;
+		case TUTOR_SPECIAL_VACUUMWAVE:
+			return MOVE_VACUUMWAVE;
 		case TUTOR_SPECIAL_STORMTHROW:
 			return MOVE_STORMTHROW;
 		case TUTOR_SPECIAL_SLUDGE:
@@ -736,8 +736,8 @@ u16 GetExpandedTutorMove(u8 tutorId)
 			return MOVE_MAGNITUDE;
 		case TUTOR_SPECIAL_CHATTER:
 			return MOVE_CHATTER;
-		case TUTOR_SPECIAL_DUALWINGBEAT:
-			return MOVE_DUALWINGBEAT;
+		case TUTOR_SPECIAL_PLUCK:
+			return MOVE_PLUCK;
 		case TUTOR_SPECIAL_SKYDROP:
 			return MOVE_SKYDROP;
 		case TUTOR_SPECIAL_HEALBLOCK:
@@ -2434,4 +2434,59 @@ void StoreGoldBottleCapCount(void)
 void SubtractPokeChipByVar(void)
 {
 	RemoveBagItem(ITEM_POKE_CHIP, VarGet(0x4006));
+}
+
+#define POKE_CHIP_SALE_PRICE 2000
+#define MAX_PLAYER_MONEY 999999 // AddMoney clamps here, so anything past it would be paid for and not received
+
+// How StorePokeChipSaleValue describes the sale it just trimmed, so the script can account for a trim
+// instead of quoting the player a number they never asked for.
+enum PokeChipSaleOutcomes
+{
+	POKE_CHIP_SALE_WALLET_FULL,		// Not a single chip can be paid for
+	POKE_CHIP_SALE_CLAMPED,			// Some of them can
+	POKE_CHIP_SALE_WHOLE_AMOUNT,	// All of them can
+};
+
+// Trims a sale down to the chips the player's wallet can actually pay for (499 chips at most)
+static u16 PokeChipsAffordable(u16 chips)
+{
+	u32 money = GetMoney(&gSaveBlock1->money);
+	u32 room = (money >= MAX_PLAYER_MONEY) ? 0 : MAX_PLAYER_MONEY - money;
+	u32 affordable = room / POKE_CHIP_SALE_PRICE;
+
+	return (chips > affordable) ? affordable : chips;
+}
+
+// Trims var 0x4006 to what can be paid for and buffers the sale for the confirmation line, so the
+// figures quoted are the ones PayForPokeChipSale goes on to honour.
+// Returns: LastResult: one of PokeChipSaleOutcomes, so the game can explain why they aren't paying for more than the player's wallet can hold.
+//			BUFFER2: chips actually being bought, replacing the number the player asked to sell.
+//			BUFFER3: the payout. It passes 0xFFFF from 33 chips up, so it goes straight into the
+//				     string buffer instead of through a var.
+void StorePokeChipSaleValue(void)
+{
+	u16 requested = VarGet(0x4006);
+	u16 chips = PokeChipsAffordable(requested);
+
+	VarSet(0x4006, chips);
+	ConvertIntToDecimalStringN(gStringVar2, chips, STR_CONV_MODE_LEFT_ALIGN, 3);
+	ConvertIntToDecimalStringN(gStringVar3, chips * POKE_CHIP_SALE_PRICE, STR_CONV_MODE_LEFT_ALIGN, 8);
+
+	if (chips == 0)
+		gSpecialVar_LastResult = POKE_CHIP_SALE_WALLET_FULL;
+	else if (chips < requested)
+		gSpecialVar_LastResult = POKE_CHIP_SALE_CLAMPED;
+	else
+		gSpecialVar_LastResult = POKE_CHIP_SALE_WHOLE_AMOUNT;
+}
+
+// Pays out the sale of var 0x4006 PokeChips and takes them out of the bag. StorePokeChipSaleValue has
+// already trimmed that var to what fits, so every chip removed here is one the player was paid for.
+void PayForPokeChipSale(void)
+{
+	u16 chips = PokeChipsAffordable(VarGet(0x4006));
+
+	AddMoney(&gSaveBlock1->money, chips * POKE_CHIP_SALE_PRICE);
+	RemoveBagItem(ITEM_POKE_CHIP, chips);
 }

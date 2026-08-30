@@ -2547,7 +2547,7 @@ void atk7C_trymirrormove(void)
 
 bool8 SetRainyWeather(void)
 {
-	if (gBattleWeather & (WEATHER_RAIN_ANY | WEATHER_PRIMAL_ANY | WEATHER_CIRCUS))
+	if (gBattleWeather & (WEATHER_RAIN_ANY | WEATHER_PRIMAL_ANY | WEATHER_SIM))
 	{
 		gBattleCommunication[MULTISTRING_CHOOSER] = 2;
 		return FALSE;
@@ -3168,7 +3168,7 @@ void atk94_damagetohalftargethp(void) { //Super Fang
 
 bool8 SetSandstormWeather(void)
 {
-	if (gBattleWeather & (WEATHER_SANDSTORM_ANY | WEATHER_PRIMAL_ANY | WEATHER_CIRCUS))
+	if (gBattleWeather & (WEATHER_SANDSTORM_ANY | WEATHER_PRIMAL_ANY | WEATHER_SIM))
 	{
 		gBattleCommunication[MULTISTRING_CHOOSER] = 2;
 		return FALSE;
@@ -4438,7 +4438,7 @@ void atkBA_jumpifnopursuitswitchdmg(void)
 
 bool8 SetSunnyWeather(void)
 {
-	if (gBattleWeather & (WEATHER_SUN_ANY | WEATHER_PRIMAL_ANY | WEATHER_CIRCUS))
+	if (gBattleWeather & (WEATHER_SUN_ANY | WEATHER_PRIMAL_ANY | WEATHER_SIM))
 	{
 		gBattleCommunication[MULTISTRING_CHOOSER] = 2;
 		return FALSE;
@@ -4628,7 +4628,7 @@ void atkBE_rapidspinfree(void)
 			TEXT_BUFFER_SIDE_STATUS(MOVE_AURORAVEIL, 0, sideDef);
 		}
 		else if (gTerrainType != 0 //Since Gen 8
-		&& !(gBattleTypeFlags & BATTLE_TYPE_BATTLE_CIRCUS && gBattleCircusFlags & BATTLE_CIRCUS_TERRAIN)) //Terrain is permanent
+		&& !(gBattleTypeFlags & BATTLE_TYPE_BATTLE_SIM && gBattleSimFlags & BATTLE_SIM_TERRAIN)) //Terrain is permanent
 		{
 			BattleScriptPushCursor();
 			gBattlescriptCurrInstr = BattleScript_SetTerrain; //Removes the Terrain
@@ -4791,7 +4791,7 @@ void atkC6_clearsemiinvulnerablebit(void)
 
 bool8 SetHailWeather(void)
 {
-	if (gBattleWeather & (WEATHER_HAIL_ANY | WEATHER_PRIMAL_ANY | WEATHER_CIRCUS))
+	if (gBattleWeather & (WEATHER_HAIL_ANY | WEATHER_PRIMAL_ANY | WEATHER_SIM))
 	{
 		gBattleCommunication[MULTISTRING_CHOOSER] = 2;
 		return FALSE;
@@ -5440,7 +5440,7 @@ void atkE7_trycastformdatachange(void)
 				if (ABILITY(bank) == ABILITY_ICEFACE && !IS_TRANSFORMED(bank)
 				&& WEATHER_HAS_EFFECT && gBattleWeather & WEATHER_HAIL_ANY)
 				{
-					DoFormChange(bank, SPECIES_EISCUE, FALSE, FALSE, FALSE);
+					DoFormChange(bank, SPECIES_EISCUE, FALSE, TRUE, FALSE); // Stats must be reloaded - Eiscue and Noice Face have different Def/SpDef/Speed
 					BattleScriptPushCursorAndCallback(BattleScript_IceFaceRestoreFace);
 				}
 				break;

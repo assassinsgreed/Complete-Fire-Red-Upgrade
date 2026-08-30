@@ -75,9 +75,6 @@ const u16 gEndBattleFlagClearTable[] =
 // #ifdef FLAG_CAMOMONS_BATTLE
 // 	FLAG_CAMOMONS_BATTLE,
 // #endif
-#ifdef FLAG_RING_CHALLENGE_BATTLE
-	FLAG_RING_CHALLENGE_BATTLE,
-#endif
 #ifdef FLAG_PRESET_FRONTIER_OPPONENT_TEAM
 	FLAG_PRESET_FRONTIER_OPPONENT_TEAM,
 #endif
@@ -672,7 +669,7 @@ void EndOfBattleThings(void)
 			&& weather != WEATHER_SUNNY)
 				SetSav1Weather(WEATHER_RAIN_LIGHT); //Reset weather in Battle Sands
 		}
-		else if (gBattleTypeFlags & BATTLE_TYPE_BATTLE_CIRCUS)
+		else if (gBattleTypeFlags & BATTLE_TYPE_BATTLE_SIM)
 		{
 			SetSav1Weather(WEATHER_NONE);
 		}
@@ -898,19 +895,22 @@ static void EndBattleFlagClear(void)
 		}
 	}
 
-	//Reset Totem Vars
-	int mealBuffDurationRemaining = VarGet(0x4095);
-	if (mealBuffDurationRemaining > 0)
+	//Reset Totem Vars (when not in the Battle Frontier, which prohibits meal effects)
+	if (!(gBattleTypeFlags & BATTLE_TYPE_FRONTIER))
 	{
-		VarSet(0x4095, mealBuffDurationRemaining -= 1);
-	}
+		int mealBuffDurationRemaining = VarGet(0x4095);
+		if (mealBuffDurationRemaining > 0)
+		{
+			VarSet(0x4095, mealBuffDurationRemaining -= 1);
+		}
 
-	if (mealBuffDurationRemaining == 0)
-	{
-		VarSet(VAR_TOTEM + 0, 0);	//Bank B_POSITION_PLAYER_LEFT's Stat
-		VarSet(VAR_TOTEM + 1, 0);	//Bank B_POSITION_PLAYER_LEFT's Stat
-		VarSet(VAR_TOTEM + 2, 0);	//Bank B_POSITION_PLAYER_RIGHT's Stat
-		VarSet(VAR_TOTEM + 3, 0);	//Bank B_POSITION_PLAYER_RIGHT's Stat
+		if (mealBuffDurationRemaining == 0)
+		{
+			VarSet(VAR_TOTEM + 0, 0);	//Bank B_POSITION_PLAYER_LEFT's Stat
+			VarSet(VAR_TOTEM + 1, 0);	//Bank B_POSITION_PLAYER_LEFT's Stat
+			VarSet(VAR_TOTEM + 2, 0);	//Bank B_POSITION_PLAYER_RIGHT's Stat
+			VarSet(VAR_TOTEM + 3, 0);	//Bank B_POSITION_PLAYER_RIGHT's Stat
+		}
 	}
 
 	VarSet(VAR_TERRAIN, 0);
@@ -927,12 +927,8 @@ static void EndBattleFlagClear(void)
 	if (gDexNavStartedBattle
 	&& (gBattleOutcome == B_OUTCOME_WON || gBattleOutcome == B_OUTCOME_CAUGHT))
 	{
-		if (gCurrentDexNavChain == 0)
-			gCurrentDexNavChain = 2; //Next battle would be battle 2
-		else if (gCurrentDexNavChain < 100)
-			++gCurrentDexNavChain;
-		else
-			gCurrentDexNavChain = 1; //Restart from 1 (101 % 100 = 1)
+		if (gCurrentDexNavChain < 100)
+			++gCurrentDexNavChain; // Stays at 100 so the maxed shiny rate lasts until the chain is broken
 	}
 	else
 		gCurrentDexNavChain = 0;
@@ -941,7 +937,7 @@ static void EndBattleFlagClear(void)
 	u16 backup = gTrainerBattleOpponent_B;
 	Memset(&ExtensionState, 0x0, sizeof(struct BattleExtensionState));
 	gTrainerBattleOpponent_B = backup;
-	gBattleCircusFlags = 0;
+	gBattleSimFlags = 0;
 	Memset(gStatuses3, 0, sizeof(gStatuses3));
 }
 
@@ -1001,7 +997,8 @@ void HandlePokeChip()
 void CheckForMealEffectEnd(void)
 {
 	// Check if the active meal effect is about to conclude; don't want to display this message every time the player doesn't have an active meal
-	if (VarGet(VAR_RESTAURANT_BATTLE_DUR) == 1)
+	// Frontier battles don't count down, so nothing concludes at the end of one either
+	if (VarGet(VAR_RESTAURANT_BATTLE_DUR) == 1 && !(gBattleTypeFlags & BATTLE_TYPE_FRONTIER))
 	{
 		gBattleStringLoader = BattleText_MealEffectEnded;
 		PrepareStringBattle(0x184, 0);

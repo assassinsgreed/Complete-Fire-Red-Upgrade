@@ -338,6 +338,102 @@ Hyper Voice
 #org @gText_Superpower
 Superpower
 
+#org @gText_GigaDrain
+Giga Drain
+
+#org @gText_CloseCombat
+Close Combat
+
+#org @gText_Avalanche
+Avalanche
+
+#org @gText_DragonDance
+Dragon Dance
+
+#org @gText_GrassyGlide
+Grassy Glide
+
+#org @gText_WeatherBall
+Weather Ball
+
+#org @gText_BraveBird
+Brave Bird
+
+#org @gText_ScorchingSands
+Scorch Sands
+
+#org @gText_BodyPress
+Body Press
+
+#org @gText_Hurricane
+Hurricane
+
+#org @gText_PollenPuff
+Pollen Puff
+
+#org @gText_BatonPass
+Baton Pass
+
+#org @gText_PsychicFangs
+Psychic Fang
+
+#org @gText_Defog
+Defog
+
+#org @gText_PlayRough
+Play Rough
+
+#org @gText_FireFang
+Fire Fang
+
+#org @gText_ThunderFang
+Thunder Fang
+
+#org @gText_IceFang
+Ice Fang
+
+#org @gText_PowerWhip
+Power Whip
+
+#org @gText_CosmicPower
+Cosmic Power
+
+#org @gText_StoredPower
+Stored Power
+
+#org @gText_DualWingbeat
+DualWingbeat
+
+#org @gText_BurningJealousy
+Jealous Burn
+
+#org @gText_CrossPoison
+Cross Poison
+
+#org @gText_PowerShift
+Power Shift
+
+#org @gText_PowerGem
+Power Gem
+
+#org @gText_DarkestLariat
+Dark Lariat
+
+#org @gText_Moonblast
+Moonblast
+
+#org @gText_AuraSphere
+Aura Sphere
+
+#org @gText_SkitterSmack
+SkitterSmack
+
+#org @gText_Poltergeist
+Poltergeist
+
+#org @gText_HighHorsepower
+HiHorsepower
+
 #org @gText_PokeChipCrusher_MaxRevive
 Max Revive[ALIGN][65]05 Pok\eChips
 
@@ -618,8 +714,14 @@ Instant Terrain in Battle
 #org @gText_GameModifiers_InstantFriendship
 Instant Friendship
 
+#org @gText_GameModifiers_PerfectWildIVs
+Perfect Wild Pok\emon IVs
+
 #org @gText_GameModifiers_EVIVViewer
 Enable EV/IV Viewer
+
+#org @gText_GameModifiers_RepeatedMegaEvolution
+Unlimited Mega Evolution
 
 #org @gText_GameModifiers_DivergentToggle
 Enable Pok\emon Selection Toggle

@@ -160,6 +160,11 @@ EventScript_CarnelidgeVolcano_TM38_FireBlast:
     call ItemScript_Common_FindTM
     end
 
+.global EventScript_CarnelidgeVolcano_MagmaStone
+EventScript_CarnelidgeVolcano_MagmaStone:
+    finditem ITEM_MAGMA_STONE 0x1
+    end
+
 .global TileScript_CarnelidgeVolcano_VolcanionRoom
 TileScript_CarnelidgeVolcano_VolcanionRoom:
     checkflag 0x73 @ Volcanion caught or defeated

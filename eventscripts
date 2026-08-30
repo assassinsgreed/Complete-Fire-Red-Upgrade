@@ -24,12 +24,13 @@ sign 3 0 0 SignScript_AnthraTown_PlayersHouse
 sign 3 0 1 SignScript_AnthraTown_RivalsHouse
 sign 3 0 2 SignScript_AnthraTown_TownPlacard
 npc 4 0 0 EventScript_AnthraTown_MomMain
+sign 4 1 1 SignScript_AnthraTown_GameModifiersPC
 sign 4 1 2 EventScript_AnthraTown_PlayersPoster
 sign 4 1 3 EventScript_AnthraTown_NESClassic
+sign 4 1 4 EventScript_AnthraTown_BattleFrontierSandbox
 npc 4 2 0 EventScript_AnthraTown_RivalMom
 npc 4 2 1 EventScript_AnthraTown_RivalInTheirHome
 npc 4 3 0 EventScript_AnthraTown_OldMan
-sign 4 1 1 SignScript_AnthraTown_GameModifiersPC
 tile 4 1 0 TileScript_AnthraTown_RivalArrival
 sign 4 2 0 SignScript_AnthraTown_RivalsBooks
 sign 4 2 1 SignScript_AnthraTown_RivalsBooks
@@ -940,6 +941,7 @@ npc 2 10 2 EventScript_AscensionTower_EliteFourAttendant
 npc 2 10 3 EventScript_AscensionTower_Blackbelt
 npc 2 10 4 EventScript_AscensionTower_Girl
 npc 2 10 5 EventScript_AscensionTower_BigMan
+npc 2 10 9 EventScript_AscensionTower_TrainerCardClerk
 npc 2 10 8 EventScript_Pokemart
 sign 2 10 0 SignScript_AscensionTower_RecordsBoard
 map 1 107 MapScript_AscensionTower_Elevator
@@ -2338,6 +2340,7 @@ npc 1 74 6 EventScript_CarnelidgeVolcano_DragonTamerFlynn
 npc 1 74 7 EventScript_CarnelidgeVolcano_TM38_FireBlast
 npc 1 74 8 ItemScript_Common_FullRestore
 npc 1 74 9 ItemScript_Common_FireGem
+npc 1 74 10 EventScript_CarnelidgeVolcano_MagmaStone
 ## Interior, F1
 map 1 43 MapScript_CarnelidgeVolcano
 npc 1 43 0 EventScript_Common_RockSmash
@@ -2919,3 +2922,96 @@ map 31 6 MapScript_Common_Credits
 sign 3 47 0 SignScript_OlenicTown_HawthornesConservatory_GrassAreaSign
 sign 3 48 0 SignScript_OlenicTown_HawthornesConservatory_FireAreaSign
 sign 3 49 0 SignScript_OlenicTown_HawthornesConservatory_WaterAreaSign
+
+# Battle Frontier
+## Overworld
+### NW Corner
+npc 3 15 0 EventScript_BattleFrontier_SandsAttendant
+### npc 1 is opponent
+npc 3 15 2 EventScript_BattleFrontier_NWOldWoman
+npc 3 15 3 EventScript_BattleFrontier_NWBoy
+npc 3 15 4 EventScript_BattleFrontier_NWFisherman
+npc 3 15 5 EventScript_BattleFrontier_NWFatGuy
+### NPCs 6-23 are flags + their clones in other maps
+sign 3 15 0 SignScript_BattleFrontier_BattleTower
+sign 3 15 1 SignScript_BattleFrontier_BattleQuarry
+sign 3 15 2 SignScript_BattleFrontier_BattleSands
+### NE Corner
+npc 3 16 0 EventScript_BattleFrontier_IsleAttendant
+### npc 1 is opponent (Isle)
+npc 3 16 2 EventScript_BattleFrontier_NEOldMan
+npc 3 16 3 EventScript_BattleFrontier_NEFisherman
+npc 3 16 4 EventScript_BattleFrontier_MazeAttendant
+### npc 5 is opponent (Maze)
+npc 3 16 6 EventScript_BattleFrontier_NELittleBoy
+npc 3 16 7 EventScript_BattleFrontier_NEBoy
+npc 3 16 8 EventScript_BattleFrontier_NEBugCatcher
+### NPCs 9-18 are flags + their clones in other maps
+sign 3 16 0 SignScript_BattleFrontier_BattleIsle
+sign 3 16 1 SignScript_BattleFrontier_BattleMaze
+### SW Corner
+map 3 17 MapScript_BattleFrontier
+npc 3 17 0 EventScript_BattleFrontier_SWTutor1
+npc 3 17 1 EventScript_BattleFrontier_SWTutor2
+npc 3 17 2 EventScript_BattleFrontier_SWTutor3
+npc 3 17 3 EventScript_BattleFrontier_SWTutor4
+npc 3 17 4 EventScript_BattleFrontier_SWBattleItems1
+npc 3 17 5 EventScript_BattleFrontier_SWBattleItems2
+npc 3 17 6 EventScript_BattleFrontier_SWZCrystals
+npc 3 17 7 EventScript_BattleFrontier_SWSpecialItems
+npc 3 17 8 EventScript_BattleFrontier_SWShadyRelicSeller
+npc 3 17 9 EventScript_BattleFrontier_SWMarketGirl
+npc 3 17 10 EventScript_BattleFrontier_SWBlackbelt
+### NPCs 11-18 are flags + their clones in other maps
+npc 3 17 19 EventScript_Route9_Slowbro
+### NPC 20 is an NPC clone from an adjacent map
+npc 3 17 21 EventScript_BattleFrontier_SWCaptain
+sign 3 17 0 SignScript_BattleFrontier_SWBattleSim
+sign 3 17 1 SignScript_BattleFrontier_SWBattleFrontierMarket
+### SE Corner
+npc 3 18 0 EventScript_BattleFrontier_SEPsychic
+npc 3 18 1 EventScript_BattleFrontier_SEChanneler
+npc 3 18 2 EventScript_BattleFrontier_SEWoman
+### NPCs 3 - 9 are various Pokemon shown out of bounds 
+npc 3 18 10 EventScript_BattleFrontier_SEAceTrainer
+sign 3 18 0 SignScript_BattleFrontier_BattleFactory
+sign 3 18 1 SignScript_BattleFrontier_BattleObservatory
+## Pokemon Center
+npc 2 41 0 EventScript_PokemonCenter_Main
+npc 2 41 1 EventScript_BattleFrontier_PokemonCenterResearcher
+npc 2 41 2 EventScript_BattleFrontier_PokemonCenterPokeChipBuyer
+npc 2 41 3 EventScript_BattleFrontier_PokemonCenterCosplayPikachuLady
+npc 2 41 4 EventScript_BattleFrontier_PokemonCenterOldMan
+npc 2 41 5 EventScript_BattleFrontier_PokemonCenterDittoTrader
+npc 2 41 6 EventScript_BattleFrontier_PokemonCenterWonderPick
+## Battle Tower
+npc 2 42 0 EventScript_BattleFrontier_TowerAttendant
+### npc 1 is opponent
+npc 2 42 2 EventScript_BattleFrontier_TowerBoy
+npc 2 42 3 EventScript_BattleFrontier_TowerChild
+npc 2 42 4 EventScript_BattleFrontier_TowerRocker
+## Battle Quarry
+npc 2 43 0 EventScript_BattleFrontier_QuarryAttendant
+### npc 1 is opponent
+npc 2 43 2 EventScript_BattleFrontier_QuarryHiker
+npc 2 43 3 EventScript_BattleFrontier_QuarryBlackbelt
+## Battle Sands
+## Battle Maze
+## Battle Isle
+## Battle Sim
+npc 2 44 0 EventScript_BattleFrontier_SimAttendant
+### npc 1 is opponent
+npc 2 44 2 EventScript_BattleFrontier_SimPicknicker
+npc 2 44 3 EventScript_BattleFrontier_SimScientist
+npc 2 44 4 EventScript_BattleFrontier_SimSuperNerd
+## Battle Factory
+npc 2 45 0 EventScript_BattleFrontier_FactoryAttendant
+### npc 1 is opponent
+npc 2 45 2 EventScript_BattleFrontier_FactoryWorker
+npc 2 45 3 EventScript_BattleFrontier_FactoryFatGuy
+## Battle Observatory
+npc 2 46 0 EventScript_BattleFrontier_ObservatoryAttendant
+### npc 1 is opponent
+npc 2 46 2 EventScript_BattleFrontier_ObservatoryGirl
+npc 2 46 3 EventScript_BattleFrontier_ObservatoryGentleman
+npc 2 46 4 EventScript_BattleFrontier_ObservatoryCamper

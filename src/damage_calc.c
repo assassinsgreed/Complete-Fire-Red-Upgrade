@@ -1533,10 +1533,12 @@ static void ModulateDmgByType(u8 multiplier, const u16 move, const u8 moveType, 
 	if (move == MOVE_FREEZEDRY && defType == TYPE_WATER) //Always Super-Effective, even in Inverse Battles
 		multiplier = TYPE_MUL_SUPER_EFFECTIVE;
 
-	if (moveType == TYPE_FIRE && gNewBS->tarShotBits & gBitTable[bankDef]) //Fire always Super-Effective if covered in tar
+	// gNewBS is freed at the end of a battle and gBattleWeather keeps the last battle's value, so both
+	// of these are gated on a battle actually running - this is also reached from the Frontier overworld.
+	if (moveType == TYPE_FIRE && gMain.inBattle && gNewBS != NULL && gNewBS->tarShotBits & gBitTable[bankDef]) //Fire always Super-Effective if covered in tar
 		multiplier = TYPE_MUL_SUPER_EFFECTIVE;
 
-	if (defType == TYPE_FLYING && multiplier == TYPE_MUL_SUPER_EFFECTIVE && gBattleWeather & WEATHER_AIR_CURRENT_PRIMAL && move != MOVE_STEALTHROCK && WEATHER_HAS_EFFECT)
+	if (defType == TYPE_FLYING && multiplier == TYPE_MUL_SUPER_EFFECTIVE && gMain.inBattle && gBattleWeather & WEATHER_AIR_CURRENT_PRIMAL && move != MOVE_STEALTHROCK && WEATHER_HAS_EFFECT)
 		multiplier = TYPE_MUL_NORMAL; //Actually changes the modifier including the "it's super effective" string
 
 	if (checkMonDef)
@@ -3956,7 +3958,10 @@ static u16 AdjustBasePower(struct DamageCalc* data, u16 power)
 
 		case ABILITY_STRONGJAW:
 		//1.5x Boost
-			if (gSpecialMoveFlags[move].gBitingMoves)
+			// Handle Sharpness override for Kleavor & Samurott-H
+			if (SpeciesHasSharpness(useMonAtk ? data->atkSpecies : GetProperAbilityPopUpSpecies(bankAtk))
+			 ? gSpecialMoveFlags[move].gSlicingMoves
+			 : gSpecialMoveFlags[move].gBitingMoves)
 				power = (power * 15) / 10;
 			break;
 
@@ -4061,29 +4066,38 @@ static u16 AdjustBasePower(struct DamageCalc* data, u16 power)
 				power = (power * 12) / 10;
 			break;
 
-		#ifdef NATIONAL_DEX_DIALGA
+		#ifdef SPECIES_DIALGA
 		case ITEM_EFFECT_ADAMANT_ORB:
 		//1.2x Boost
-			if (SpeciesToNationalPokedexNum(data->atkSpecies) == NATIONAL_DEX_DIALGA
-			&& (data->moveType == TYPE_STEEL || data->moveType == TYPE_DRAGON))
+			if ((data->atkSpecies == SPECIES_DIALGA
+			#ifdef SPECIES_DIALGA_ORIGIN
+			  || data->atkSpecies == SPECIES_DIALGA_ORIGIN
+			#endif
+			) && (data->moveType == TYPE_STEEL || data->moveType == TYPE_DRAGON))
 				power = (power * 12) / 10;
 			break;
 		#endif
 
-		#ifdef NATIONAL_DEX_PALKIA
+		#ifdef SPECIES_PALKIA
 		case ITEM_EFFECT_LUSTROUS_ORB:
 		//1.2x Boost
-			if (SpeciesToNationalPokedexNum(data->atkSpecies) == NATIONAL_DEX_PALKIA
-			&& (data->moveType == TYPE_WATER || data->moveType == TYPE_DRAGON))
+			if ((data->atkSpecies == SPECIES_PALKIA
+			#ifdef SPECIES_PALKIA_ORIGIN
+			  || data->atkSpecies == SPECIES_PALKIA_ORIGIN
+			#endif
+			) && (data->moveType == TYPE_WATER || data->moveType == TYPE_DRAGON))
 				power = (power * 12) / 10;
 			break;
 		#endif
 
-		#ifdef NATIONAL_DEX_GIRATINA
+		#ifdef SPECIES_GIRATINA
 		case ITEM_EFFECT_GRISEOUS_ORB:
 		//1.2x Boost
-			if (SpeciesToNationalPokedexNum(data->atkSpecies) == NATIONAL_DEX_GIRATINA
-			&& (data->moveType == TYPE_GHOST || data->moveType == TYPE_DRAGON))
+			if ((data->atkSpecies == SPECIES_GIRATINA
+			#ifdef SPECIES_GIRATINA_ORIGIN
+			  || data->atkSpecies == SPECIES_GIRATINA_ORIGIN
+			#endif
+			) && (data->moveType == TYPE_GHOST || data->moveType == TYPE_DRAGON))
 				power = (power * 12) / 10;
 			break;
 		#endif

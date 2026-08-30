@@ -1,0 +1,770 @@
+// Cutscenes
+#org @gText_BattleFrontier_Cutscene1_CaptainSaysFarewell
+[BLUE]That's as far as I go!\pI do believe the host of the Battle\nFrontier is here today.\pI assume you'll want to see them\nbefore doing anything else.\pCome see me whenever you want to\nferry between Tsarvosa City and\lthe Battle Frontier.
+
+#org @gText_BattleFrontier_Cutscene2_MortTalksToBroadcaster
+[BLUE]Now, make sure you get a wide shot\nof the Battle Sim arena, okay?\pI want to show the world how premier\nour tech is!
+
+#org @gText_BattleFrontier_Cutscene3_MortSeesPlayer
+[BLUE]Well, I'll be! Is that Champion\n[PLAYER], in the flesh?\pCome on over here!
+
+#org @gText_BattleFrontier_Cutscene3_MortExplainsWhyHeIsThere
+[BLUE]Can you believe it?\pLittle ol' Mort being asked to run\nthe Battle Frontier?\pAn honour, truly!\pA shindig this prestigious calls for\nthe best of the best.\pThat's precisely why I called\nupon Kulure's Gym Leaders to help\lme run this place!
+
+#org @gText_BattleFrontier_Cutscene4_MortOpensRules
+[BLUE]Now, I'm sure you're just itching to\nget into it, so I won't keep you\llong.\pThe bigwigs gave me something to\nread to new challengers.\pOne second[.]
+
+#org @gText_BattleFrontier_Cutscene5_MortFindsTheSummary
+[BLUE]Yikes! That is a LOT of text.\nHold on[.]\pOh, there's a summary at the end,\nsweet. I'll just read that.\pAhem!
+
+#org @gText_BattleFrontier_Cutscene6_MortReadsTheRules
+[BLACK]Welcome to the Battle Frontier!\pThis is where the pinnacle of Pok\emon\nbattling happens.\pTrainers from all over the world\nflock here, and you can expect to\lsee Pok\emon and movesets not\lnormally seen in your home region.\pChallenge 8 different facilities to\nprove your mastery over battle.\pEach facility hosts different rules\nthat'll put your skills to the test.\pChallenge Aces and Brains - [BLUE]that's\nthe gym leaders, by the way[BLACK] - at\la streak of 20 and 50 battles\lrespectively.\pEach win earns you\nPokeChips, with the payout growing\levery 10 wins.\pYou get extra PokeChips when an Ace\nor Brain is beaten.\pActive Game Modifiers are disabled\nfor the duration of your challenge\l- [BLUE]whatever that means!
+
+#org @gText_BattleFrontier_Cutscene7_MortAfterInstructions
+[BLUE][.]And that's the gist.\pYou're a smart kid, I'm sure you can\nfigure out the rest on your own.\pIf you ever need a refresher, just\nask the attendant at any facility\land they'll sort you out.
+
+#org @gText_BattleFrontier_Cutscene8_MortDeparts
+[BLUE]Ciao, champ!\pShow me some good battling, yeah?\nIt's good for business.
+
+// NPCs
+#org @gText_BattleFrontier_Researcher
+Me? No, I don't battle.\pI'm from an institute that studies\nPok\emon battle strategies.\pWe're investigating whether a\nfoolproof strategy exists.\pMaybe we'll watch your battles, too?
+
+#org @gText_BattleFrontier_PokeChipBuyer_Prompt
+I've been watching how fired up the\nyoungsters get here.\pYou could say their passion has\ngotten me fired up too, ohohoho!\pThere is just one problem[.] I am not\na skilled battler. I am rich,\lhowever!\pI will buy any spare Pok\eChips you\nhave for \$2,000 each.\pAre you interested?
+
+#org @gText_BattleFrontier_PokeChipBuyer_YesToSell
+Wonderful! How many will you sell?\n[BLACK](Held: [BUFFER1])[BLUE]
+
+#org @gText_BattleFrontier_PokeChipBuyer_No
+What a pity!
+
+#org @gText_BattleFrontier_PokeChipBuyer_HaveZeroChips
+You don't even have any!\nDo you take me for a rube?
+
+#org @gText_BattleFrontier_PokeChipBuyer_ChoseZeroChips
+Zero Pok\eChips?? My, how stingy!\nMy time is more valuable than this.
+
+#org @gText_BattleFrontier_PokeChipBuyer_ChoseMoreChipsThanPlayerHas
+Do you take me for a fool?\nYou don't have that many!
+
+#org @gText_BattleFrontier_PokeChipBuyer_YesToConfirmChipsChosen
+[BUFFER2]? I can offer you \$[BUFFER3]\nfor that. Are you sure?
+
+#org @gText_BattleFrontier_PokeChipBuyer_WalletNearlyFull
+Ah, hold on - you couldn't carry all\nthat money!\pI'll take [BUFFER2] of them for now and\nyou can keep the rest.\pDo come back once you've spent a\nlittle, won't you?
+
+#org @gText_BattleFrontier_PokeChipBuyer_WalletFull
+My word! Your wallet is bursting at\nthe seams.\pAs much as I'd like to take your\nPok\eChips for free, I have class.\pCome back once you've spent some\ncash and can accept my payment.
+
+#org @gText_BattleFrontier_PokemonCenterOldMan
+I've come here to watch my grandson\nbattle.\pI have to be honest. I don't\nunderstand Pok\emon battling.\pBut, it makes my grandson happy and\nI want to support him!
+
+#org @gText_BattleFrontier_PokeChipBuyer_SaleCompleted
+Very good! Our transaction is\ncomplete.\pI will use these Pok\eChips to tutor\nmy Pok\emon and rise to the top of\lthis "Battle Frontier.\"
+
+#org @gText_BattleFrontier_CosplayLady_Intro
+Oh! Don't mind me - I'm just between\nshows.\pI used to tour the contest halls in\nHoenn with my little co-star.\pShe adored the costumes, the crowds,\nthe lights[.] All of it!\pBut these days I'm on the road more\nthan I'm on a stage[.]
+
+#org @gText_BattleFrontier_CosplayLady_OffersPikachu
+A performer deserves an audience.\pWould you take her with you?
+
+#org @gText_BattleFrontier_CosplayLady_DeclinedGift
+I understand - she's a handful!\nCome find me if you change your mind.
+
+#org @gText_BattleFrontier_CosplayLady_NoPartyRoom
+Goodness, your team is packed!\pMake a little room for her and come\nback, won't you?
+
+#org @gText_BattleFrontier_CosplayLady_GivesPikachu
+Then she's yours. Go on, say hello!
+
+#org @gText_BattleFrontier_CosplayLady_PikachuObtained
+[PLAYER] received a Cosplay Pikachu\nfrom Belle!
+
+#org @gText_BattleFrontier_CosplayLady_ExplainsCostumes
+Her wardrobe is still packed away in\nmy trunk, of course.\pStop by any time and I'll dress her\nup for whatever role you like.
+
+#org @gText_BattleFrontier_CosplayLady_CostumePrompt
+How is Piki doing?\nShall I change her costume?
+
+#org @gText_BattleFrontier_CosplayLady_ChoosePikiPrompt
+Great! Can I see her, please?
+
+#org @gText_BattleFrontier_CosplayLady_DeclinedCostume
+Another time, then.
+
+#org @gText_BattleFrontier_CosplayLady_WrongPokemon
+[BUFFER1]? Oh dear - nothing in my\ntrunk would fit!\pThese costumes were tailored for Piki\nand Piki alone.
+
+#org @gText_BattleFrontier_CosplayLady_ChooseCostume
+Wonderful! Which role is [BUFFER1]\nplaying today?
+
+#org @gText_BattleFrontier_CosplayLady_ChoiceEveryday
+Everyday
+
+#org @gText_BattleFrontier_CosplayLady_ChoiceRockStar
+Rock Star
+
+#org @gText_BattleFrontier_CosplayLady_ChoiceBelle
+Belle
+
+#org @gText_BattleFrontier_CosplayLady_ChoicePopStar
+Pop Star
+
+#org @gText_BattleFrontier_CosplayLady_ChoicePhD
+Ph.D.
+
+#org @gText_BattleFrontier_CosplayLady_ChoiceLibre
+Libre
+
+#org @gText_BattleFrontier_CosplayLady_CostumeChanging
+Hold still[.] there!\nOh, Piki, that's why you're a star!
+
+#org @gText_BattleFrontier_CosplayLady_CostumeRemoved
+Out of costume and back to yourself.\nEvery star needs a day off!
+
+#org @gText_BattleFrontier_MasudaDittoTrader_Intro
+I'm just no good at battling.\pI think I'll give up and get into\ncamping instead.\pBefore I do, I'd like to make sure\nmy Ditto is in good hands.\pIf you know anyone who's skilled at\nbattling, could you let me know?\pA win streak of[.] 5 at any battle\nfacility should do it.
+
+#org @gText_BattleFrontier_MasudaDittoTrader_TradeOffer
+Oh! You've done it?\pYou're just the kind of trainer I've\nbeen looking for!\pWould you be willing to trade a\n[GREEN]Rotom-Heat[BLUE] for my Ditto?
+
+#org @gText_BattleFrontier_Junichi_Declined
+Ah, I understand. I'll put my camping\ndreams on hold for now.
+
+#org @gText_BattleFrontier_Junichi_WrongPokemon
+I appreciate the offer, but I'm\nreally looking for a [GREEN]Rotom-Heat[BLUE].\pThat little fella will help me get my\ncamping dreams started.
+
+#org @gText_BattleFrontier_Junichi_InitiatingTrade
+Alright, let's trade!
+
+#org @gText_BattleFrontier_Junichi_TradeComplete
+Take good care of Junichi for me.\nHe has great genes!
+
+#org @gText_BattleFrontier_WonderPick_PromptFirst
+I'm running a Wonder Pick promotion!\pIn exchange for some Pok\eChips, I'll\ntake a secret Pok\emon from the\lFrontier's collection to give you.\pThe first pick of the day is only\n[BUFFER2] Pok\eChips.\pWill you take the chance?\n[BLACK](Held: [BUFFER1])[BLUE]
+
+#org @gText_BattleFrontier_WonderPick_PromptRepeat
+Welcome back!\pYou've pulled a Pok\emon today\nalready, so the next pick would\lcost [BUFFER2] Pok\eChips.\pStill want to take the chance?\n[BLACK](Held: [BUFFER1])[BLUE]
+
+#org @gText_BattleFrontier_WonderPick_Picking
+Alright, let me just grab a Pok\e\nBall here[.]
+
+#org @gText_BattleFrontier_WonderPick_Obtained
+[BLACK][PLAYER] picked a [GREEN][BUFFER1][BLACK]!
+
+#org @gText_BattleFrontier_WonderPick_Outro
+[BLUE]Congratulations!\nIt's battle-ready and raring to go.\pPlease return if you'd like to\nparticipate in another Wonder Pick.
+
+#org @gText_BattleFrontier_WonderPick_Declined
+Not feeling luck today?\nThat's no problem!
+
+#org @gText_BattleFrontier_WonderPick_NotEnoughPokeChips
+This pick costs [BUFFER2] Pok\eChips,\nand you're a little short.\pWin a few more battles, then come\nback and see me.
+
+#org @gText_BattleFrontier_WonderPick_NoPartyRoom
+You need to make some room in your\nparty before you can Wonder Pick!
+
+#org @gText_BattleFrontier_WonderPick_Failed
+I-Impossible! The collection is\nempty? That's an embarrassment!\pPlease, take your Pok\eChips and let\nus not speak of this ever again.
+
+#org @gText_BattleFrontier_MoveTutor_Confirmation
+Welcome, welcome!\pI teach Pok\emon incredible moves in\nexchange for just 5 Pok\eChips.\pAre you interested?\n[BLACK](Held: [BUFFER1])
+
+#org @gText_BattleFrontier_MoveTutor_ConfirmationAccepted
+Great! What can I teach you?
+
+#org @gText_BattleFrontier_MoveTutor_Complete
+All done; your Pok\emon is a quick\nlearner!
+
+#org @gText_BattleFrontier_MoveTutor_Rejected
+No? Well that's a shame!
+
+#org @gText_BattleFrontier_MoveTutor_NotEnoughPokeChips
+Oh dear[.] You don't have enough\nPok\eChips for my tutelage!
+
+#org @gText_BattleFrontier_BattleItems_Intro
+I'm selling battle-ready items.\nCan I interest you in anything?
+
+#org @gText_BattleFrontier_BattleItems_Outro
+Come again!
+
+#org @gText_BattleFrontier_ZCrystals_Intro
+I've smuggled some incredible Z-\nCrystals from Alola. Want some?
+
+#org @gText_BattleFrontier_ZCrystals_Outro
+Use them to dominate your opponents\nin battle[.]
+
+#org @gText_BattleFrontier_SpecialItems_Intro
+I sell one-of-a-kind items that your\nPok\emon will just love!
+
+#org @gText_BattleFrontier_SpecialItems_Outro
+I hope to see you again soon!
+
+#org @gText_BattleFrontier_RelicSellerIntro
+Hey, you look like a smart kid.\pI have a rare treasure ethically\nsourced from a ruin in Unova.\pIt could be yours, for 2 Pok\eChips[.]\n[BLACK](Held: [BUFFER1])[BLUE]
+
+#org @gText_BattleFrontier_RelicSellerNotEnoughChips
+What gives? You don't even have\nenough Pok\eChips! Your loss!
+
+#org @gText_BattleFrontier_RelicSellerChoseYes
+Smart choice. Now, take this and\ndon't ask too many questions.
+
+#org @gText_BattleFrontier_RelicSellerLeavingForTheDay
+If you come back tomorrow, we might\nbe able to scratch each others'\lbacks again, capiche?
+
+#org @gText_BattleFrontier_RelicSellerChoseNo
+Feh, I'm not running a charity!\nScram!
+
+#org @gText_BattleFrontier_MarketGirl
+I'm preparing for my next challenge\nat the market.\pNow, let's see[.] Which moves should I\nteach my Incineroar[.]
+
+#org @gText_BattleFrontier_SE_Blackbelt
+I need to buff up my Pok\emon's stats\nor I'm never gonna get a win!
+
+#org @gText_BattleFrontier_Captain_TsarvosaCityPrompt
+Well I'll be, it's Champion [PLAYER]!\pFind yourself missing the Kulurian\nmainland and want to return?
+
+#org @gText_BattleFrontier_Captain_TsarvosaCityYes
+Understood! Please come aboard and\nwe'll set off momentarily.
+
+#org @gText_BattleFrontier_Captain_TsarvosaCityNo
+Very well. We'll wait here for you,\nin case you change your mind.
+
+#org @gText_BattleFrontier_Captain_InBattleFrontierSandbox
+Welcome to the Battle Frontier\nSandbox! Enjoy your stay.
+
+#org @gText_BattleFrontier_TowerBoy
+The Battle Tower is a pretty simple\nfacility, all things considered.\pThat doesn't mean it's boring,\nthough!\pSometimes a traditional Pok\emon\nbattle is just what the doctor\lordered.
+
+#org @gText_BattleFrontier_TowerChild
+Mom said I can watch the battles on\nthe TV! Yaay!
+
+#org @gText_BattleFrontier_TowerRocker
+Ugh. I've been training for months\nand I still can't get past a streak\lof 3 wins.\pMaybe I should just throw in the\ntowel[.]
+
+#org @gText_BattleFrontier_QuarryHiker
+We work in this quarry when battles\naren't happening.\pWe don't mind though - watching the\nbattles is a nice break!
+
+#org @gText_BattleFrontier_QuarryBlackbelt
+Battles at the Quarry disable 2 of\n4 moveslots each turn.\pI just lost a battle because all my\ndamaging moves were disabled.\pI guess I should've brought a more\ndiverse moveset[.]
+
+#org @gText_BattleFrontier_NWOldWoman
+I spend all day watching the\nbattles at the various facilities.\pBeing retired has it's perks!\nOhohoho!
+
+#org @gText_BattleFrontier_NWBoy
+Do you think the Pok\emon ever get\nconfused when deciding which move\lto use at the Battle Sands?
+
+#org @gText_BattleFrontier_NWFisherman
+I feel really proud when I see my\nPok\emon performing well at the\lSands.\pIt's like I can see our training\npaying off, right before my eyes.
+
+#org @gText_BattleFrontier_NWFatGuy
+Oh, bother[.] This isn't the Battle\nMaz.\pI think I'll just wait for my friends\nto find me.
+
+#org @gText_BattleFrontier_NEOldMan
+The battles here remind me of how\nthings used to be when I was a\lboy.\pIt's fun! The younger generation just\nneeds to open their minds to it.
+
+#org @gText_BattleFrontier_NEFisherman
+Do you see that tower to the west?\pI wonder how hard it would be to\nfish off the top of it[.]
+
+#org @gText_BattleFrontier_NELittleBoy
+My Gyarados felt weaker at the\nBattle Isle.\pI don't get it! Isn't Waterfall the\nstrongest move ever?
+
+#org @gText_BattleFrontier_NEBoy
+The Battle Maze is interesting.\pYou can't prep anything beforehand,\nbut that also kind of makes it\lexciting, you know?
+
+#org @gText_BattleFrontier_NEBugCatcher
+It's wonderful how many flowers can\ngrow here.\pI would have thought they'd die out,\nwith how much foot traffic there\lis.
+
+#org @gText_BattleFrontier_SEPsychic
+I lost at the Battle Factory, but\nthat's fine.\pI'll just use my psycic powers to\nsummon better options next time!
+
+#org @gText_BattleFrontier_SEChanneler
+The spirit of battle is strong here.
+
+#org @gText_BattleFrontier_SEWoman
+Do you think anyone has ever\nconquered every facility here?
+
+#org @gText_BattleFrontier_SEAceTrainer
+Many trainers new to the Battle\nFrontier like to visit the Battle\lFactory and Battle Maze first.\pThose facilities let you borrow\nPok\emon, so you can rack up\lPok\eChips while you strengthen your\lown Pok\emon.
+
+#org @gText_BattleFrontier_SimPicknicker
+The Battle Sim causes random effects\nto trigger in each battle.\pI heard that the higher your streak\nis, the more effects there are.\pThat'll make battles pretty tough,\nwon't it..?
+
+#org @gText_BattleFrontier_SimScientist
+The Battle Sim is the pride and joy\nof many researchers at the\lBattle Frontier.\pIt took years of hard work to build\nthe simulation systems you will see.\pOf course, the data we can extract\nfrom battlers is invaluable to us.\pPlease, enjoy the facility to it's\nfullest.
+
+#org @gText_BattleFrontier_SimSuperNerd
+Ehehehe[.] The Battle Sim is so\ndynamic.\pPerfect for a Pok\emon battling\nprodigee like me!
+
+#org @gText_BattleFrontier_FactoryWorker
+You can swap one Pok\emon with your\nopponent after you win.\pThat helps you build the perfect\nteam as your streak grows.
+
+#org @gText_BattleFrontier_FactoryFatGuy
+My kids love battling here because\nthey can rent battle-ready\lPok\emon.\pIt's the perfect facility for anyone\nnew to the Battle Frontier!
+
+#org @gText_BattleFrontier_ObservatoryGirl
+The Battle Observatory's ruleset\nleads to very fast battles.\pIt's great if you need to earn\nPok\eChips quickly!\pIt's also very punishing, if your\nopponent out-predicts you.
+
+#org @gText_BattleFrontier_ObservatoryGentleman
+The Battle Observatory is such an\nexciting facility.\pI like to pretend I'm a samurai\nchallenging my opponent to a duel.\pOh! Pretend you didn't hear that.
+
+#org @gText_BattleFrontier_ObservatoryCamper
+If I bring electric types, my\nopponent is more likely to bring\lground types to counter that.\pSo, I'll predict their prediction,\nand choose a water type instead!\pI'm playing both sides, so I always\ncome out on top!
+
+#org @gText_BattleFrontier_BattleTowerSign
+Battle Tower\nClassic battles happen here!
+
+#org @gText_BattleFrontier_BattleQuarrySign
+Battle Quarry\nMoves lock out each turn!
+
+#org @gText_BattleFrontier_BattleSandsSign
+Battle Sands\nPok\emon battle independently!
+
+#org @gText_BattleFrontier_BattleIsleSign
+Battle Isle\nNo items/abilities, classic moves!
+
+#org @gText_BattleFrontier_BattleMazeSign
+Battle Maze\nA new, random team each battle!
+
+#org @gText_BattleFrontier_SE_BattleSimSign
+Battle Sim\nEach battle has random effects!
+
+#org @gText_BattleFrontier_SE_BattleFrontierMarketSign
+Battle Frontier Market\nPrepare for your next win streak!
+
+#org @gText_BattleFrontier_BattleFactorySign
+Battle Factory\nRent Pok\emon to battle with!
+
+#org @gText_BattleFrontier_BattleObservatorySign
+Battle Observatory\nReveal Pok\emon then showdown!
+
+// Facility-agnostic strings to be shared by attendants in each facility, with var substitution:
+//   - FrontierChallenge_BufferFacilityInfo fills in [BUFFER1] with the facility name, [BUFFER2] with the format and [BUFFER3] with the current streak.
+//   - BufferNumMonsToEnter overwrites [BUFFER3] with the number of Pokemon to enter.
+//   - StoreChipsToGive overwrites [BUFFER2] with the PokeChip reward.
+
+//------------------------------------------------------------------
+// Lobby
+//------------------------------------------------------------------
+
+#org @gText_BattleFrontier_Welcome
+Welcome to the [BUFFER1]!\nWhat can I do for you?
+
+#org @gText_BattleFrontier_Farewell
+We hope to see you again!
+
+#org @gText_BattleFrontier_ChoiceChallenge
+Challenge
+
+#org @gText_BattleFrontier_ChoiceRules
+Rules
+
+#org @gText_BattleFrontier_ChoiceRecords
+Records
+
+#org @gText_BattleFrontier_ChoiceBackground
+Customize Background
+
+#org @gText_BattleFrontier_ChoiceMusic
+Customize Music
+
+#org @gText_BattleFrontier_ChoiceLeave
+Nothing
+
+#org @gText_BattleFrontier_ChoiceCancel
+Cancel
+
+//------------------------------------------------------------------
+// Battle background
+//------------------------------------------------------------------
+
+// The list these label is built in src/frontier_challenge.c, which also holds the background each one draws. Keep the two in the same order.
+#org @gText_BattleFrontier_ChooseBackground
+You're currently battling in\n[BUFFER1].\pWhere would you like your battles\nto take place?
+
+#org @gText_BattleFrontier_BackgroundChosen
+[BUFFER1] it is!
+
+#org @gText_BattleFrontier_BackgroundGym
+Facility Default
+
+#org @gText_BattleFrontier_BackgroundRandom
+Random
+
+#org @gText_BattleFrontier_BackgroundGrassland
+Grassland
+
+#org @gText_BattleFrontier_BackgroundTallGrass
+Marshland Grass
+
+#org @gText_BattleFrontier_BackgroundForest
+Varisi Forest
+
+#org @gText_BattleFrontier_BackgroundPeradonForest
+Peradon Forest
+
+#org @gText_BattleFrontier_BackgroundJungle
+Mimmett Jungle
+
+#org @gText_BattleFrontier_BackgroundMountain
+Mountainside
+
+#org @gText_BattleFrontier_BackgroundVolcanoPeak
+Carnelidge Volcano Peak
+
+#org @gText_BattleFrontier_BackgroundCave
+Cave
+
+#org @gText_BattleFrontier_BackgroundTormaCave
+Torma Cave
+
+#org @gText_BattleFrontier_BackgroundTormaDepths
+Torma Depths
+
+#org @gText_BattleFrontier_BackgroundLavaPool
+Lava Pool
+
+#org @gText_BattleFrontier_BackgroundHotSpring
+Hot Spring
+
+#org @gText_BattleFrontier_BackgroundBeach
+Beach
+
+#org @gText_BattleFrontier_BackgroundDesert
+Rubarr Desert
+
+#org @gText_BattleFrontier_BackgroundSnowfield
+Snowfield
+
+#org @gText_BattleFrontier_BackgroundOcean
+Open Ocean
+
+#org @gText_BattleFrontier_BackgroundPond
+Pond
+
+#org @gText_BattleFrontier_BackgroundUndergroundLake
+Underground Lake
+
+#org @gText_BattleFrontier_BackgroundHauntedHouse
+Haunted House
+
+#org @gText_BattleFrontier_BackgroundBuilding
+Indoors
+
+#org @gText_BattleFrontier_BackgroundPlutoHQ
+Team Pluto HQ
+
+#org @gText_BattleFrontier_BackgroundGymArena
+Gym Arena
+
+#org @gText_BattleFrontier_BackgroundChampionsRoom
+Champion's Room
+
+#org @gText_BattleFrontier_BackgroundDaisOfLight
+Dais of Light
+
+//------------------------------------------------------------------
+// Battle music
+//------------------------------------------------------------------
+
+// The list these label is built in src/frontier_challenge.c, which also holds the song each one plays. Keep the two in the same order.
+
+#org @gText_BattleFrontier_ChooseMusic
+Right now we're playing\n[BUFFER1].\pWhat would you like to hear during\nyour battles?
+
+#org @gText_BattleFrontier_MusicChosen
+[BUFFER1] it is!
+
+#org @gText_BattleFrontier_MusicDefault
+Frontier Trainer (Default)
+
+#org @gText_BattleFrontier_MusicRandom
+Random
+
+#org @gText_BattleFrontier_MusicTrainer
+Trainer Battle
+
+#org @gText_BattleFrontier_MusicGymLeader
+Gym Leader Battle
+
+#org @gText_BattleFrontier_MusicKantoGymTrainee
+Kanto Gym Trainee
+
+#org @gText_BattleFrontier_MusicJohtoGymTrainee
+Johto Gym Trainee
+
+#org @gText_BattleFrontier_MusicHoennGymTrainee
+Hoenn Gym Trainee
+
+#org @gText_BattleFrontier_MusicSinnohGymTrainee
+Sinnoh Gym Trainee
+
+#org @gText_BattleFrontier_MusicRival
+Rival Battle
+
+#org @gText_BattleFrontier_MusicAlistair
+Alistair Battle
+
+#org @gText_BattleFrontier_MusicCasey
+Casey Battle
+
+#org @gText_BattleFrontier_MusicKurtis
+Kurtis Battle
+
+#org @gText_BattleFrontier_MusicEliteFour
+Elite Four Battle
+
+#org @gText_BattleFrontier_MusicChampion
+Champion Battle
+
+#org @gText_BattleFrontier_MusicLegendary
+Legendary Pok\emon Encounter
+
+#org @gText_BattleFrontier_MusicJirachi
+Jirachi Encounter
+
+#org @gText_BattleFrontier_MusicUnwaveringHeart
+Unwavering Heart
+
+//------------------------------------------------------------------
+// Rules
+//------------------------------------------------------------------
+
+#org @gText_BattleFrontier_RulesPrompt
+What would you like to know\nabout the [BUFFER1]?
+
+#org @gText_BattleFrontier_ChoiceFrontierRules
+Frontier Rules
+
+#org @gText_BattleFrontier_ChoiceFacilityRules
+Facility Rules
+
+#org @gText_BattleFrontier_CommonRules
+At the Battle Frontier, you'll take\non challengers one after another.\pEvery Pok\emon battles at level 50\nand is healed before each fight.\pAs you win, your streak will grow\nand you'll face stronger trainers.\pYou'll earn Pok\e Chips for each win.\nJust remember you can only hold\lup to 999 Pok\e Chips at a time!\pIf you ever need a break, you can\nRest - we'll save your streak and\lhold it until you return.\pPlease make sure to complete a\nbattle before resting - otherwise\lyour streak will be lost!
+
+#org @gText_BattleFrontier_TowerRules
+The Battle Tower emphasizes\ntraditionl battles - no gimmicks.\pJust you, your team, and one\nchallenger after another.
+
+#org @gText_BattleFrontier_QuarryRules
+In the Battle Quarry, the rock face\nshifts before every turn.\pIt seals off two of the four move\nslots of every Pok\emon in the pit.\pBoth sides are sealed. If a Pok\emon\ncannot act, it must Struggle.
+
+#org @gText_BattleFrontier_SimRules
+The Battle Sim runs every battle as\na simulation, and no two are alike.\pBefore each one, the machines roll a\nnew set of conditions for the field.\pThe longer your streak, the more\nconditions they will stack on.
+
+#org @gText_BattleFrontier_MazeRules
+In the Battle Maze, you're handed a\nrandom team to battle with.\pThis team is built from the same pool\nyour opponents may have.\pYour team is changed after every\nbattle.\pThere is nothing to prepare for this\nfacility - just do your best!
+
+#org @gText_BattleFrontier_FactoryRules
+At the Battle Factory, you rent a\nteam to battle with from us.\pI'll lay out six Pok\emon, drawn from\nthe same pool as your opponents.\pYou choose which of them to enter,\nand they are yours for the run.\pAfter every win, you may trade one\nof yours for one you just faced.\pIf you choose to rest, the team you\nwere using is used when you return.
+
+#org @gText_BattleFrontier_IsleRules
+Battles at the Battle Isle are\nfought in the traditional way.\pHeld items and abilities do not\nactiavate.\pMega Evolution and Z-Moves have no\nplace here either.\pAll moves are physical or special\nbased on their type.
+
+#org @gText_BattleFrontier_ObservatoryRules
+The Battle Observatory hosts a\nseries of duels between battlers.\pYou and your opponent reveal every\nPok\emon you brought.\pStudy your opponent, then choose\nyour Pok\emon to duel with.\pDuels are 1v1 in singles, and 2v2\nin doubles.\pDuel with honour! Mega Evolution and\nZ- Moves are not permitted.
+
+#org @gText_BattleFrontier_ObservatoryReveal
+The observatory lights come up on\nboth teams!\pYour opponent revealed [BUFFER1],\n[BUFFER2] and [BUFFER3]!
+
+// Doubles reveals four Pokemon and there are only three buffers, so the last two share one - and
+// it has to be BUFFER1, the only one wide enough to hold a pair. Hence the out-of-order reads:
+// BUFFER2 is the first Pokemon, BUFFER3 the second, BUFFER1 the third and fourth together.
+#org @gText_BattleFrontier_ObservatoryRevealDouble
+The observatory lights come up on\nboth teams!\pYour opponent revealed [BUFFER2],\n[BUFFER3], [BUFFER1]!
+
+#org @gText_ObservatoryNameJoiner
+ and 
+
+#org @gText_BattleFrontier_ObservatoryOfferLook
+Would you like a closer look at\ntheir team?
+
+#org @gText_BattleFrontier_ObservatoryChoosePrompt
+Which Pok\emon will you send out?
+
+#org @gText_BattleFrontier_ObservatoryChoosePromptDouble
+Which two Pok\emon will you send out?
+
+#org @gText_BattleFrontier_ObservatoryPlayerChoice
+You chose [BUFFER1]!
+
+#org @gText_BattleFrontier_ObservatoryPlayerChoiceDouble
+You chose [BUFFER1] and [BUFFER2]!
+
+#org @gText_BattleFrontier_ObservatoryOpponentChoice
+Your opponent chose [BUFFER1]!
+
+#org @gText_BattleFrontier_ObservatoryOpponentChoiceDouble
+Your opponent chose [BUFFER1]\nand [BUFFER2]!
+
+#org @gText_BattleFrontier_ObservatoryBattleStarting
+Let the duel begin!
+
+#org @gText_BattleFrontier_SandsRules
+In the Battle Sands, you put your\ntrust in your Pok\emon.\pYou choose if they fight or switch,\nbut they choose their own moves.\pWhenever a Pok\emon enters battle,\nthey are empowered by the sands.\pThis raises a random stat, with the\nintensity growing with your streak.
+
+//------------------------------------------------------------------
+// Choosing a format and entering a team
+//------------------------------------------------------------------
+
+#org @gText_BattleFrontier_ChooseFormat
+Which format would you like to\nchallenge?
+
+#org @gText_BattleFrontier_ChoiceSingles
+Singles
+
+#org @gText_BattleFrontier_ChoiceDoubles
+Doubles
+
+// Swapped in for the two above when that format has a run waiting to be picked back up.
+
+#org @gText_BattleFrontier_ChoiceSinglesOnHold
+Singles (on hold)
+
+#org @gText_BattleFrontier_ChoiceDoublesOnHold
+Doubles (on hold)
+
+#org @gText_BattleFrontier_ConfirmChallenge
+The [BUFFER2] format? That will\nrequire [BUFFER3] Pok\emon to enter.\pIs that okay?
+
+// Shown for the Battle Maze, since the player doesn't bring their own Pokemon
+#org @gText_BattleFrontier_ConfirmChallengeRandom
+The [BUFFER2] format? I'll give you\n[BUFFER3] Pok\emon per battle.\pIs that okay?
+
+#org @gText_BattleFrontier_ChooseTeam
+Please choose the Pok\emon you'd\nlike to enter.
+
+// Shown for the Battle Factory, which lays out a pool and lets the player choose 3/4 from there
+#org @gText_BattleFrontier_ConfirmChallengeRental
+The [BUFFER2] format? I'll provide six\nPok\emon for you to choose from.\pYou'll enter [BUFFER3] of them.\nIs that okay?
+
+#org @gText_BattleFrontier_FactoryChooseRentals
+Here are your options. Please choose\nthe ones you'd like to rent.
+
+#org @gText_BattleFrontier_FactorySwapPrompt
+You may swap one of your Pok\emon\nwith one your opponent had.\pWould you like to swap?
+
+#org @gText_BattleFrontier_FactorySwapChooseOwn
+Which of your Pok\emon will you\ngive up?
+
+#org @gText_BattleFrontier_FactorySwapChooseTheirs
+And which of theirs would you\nlike to take?
+
+#org @gText_BattleFrontier_FactorySwapDone
+Done! [BUFFER1] has gone with your\nopponent, and [BUFFER2] joins you.
+
+#org @gText_BattleFrontier_FactorySwapDeclined
+Very well - you'll continue with\nthe team you have.
+
+//------------------------------------------------------------------
+// Walking to and from the battle area
+//------------------------------------------------------------------
+#org @gText_BattleFrontier_LeadToBattlePosition
+Please follow me, and we'll get your\nchallenge started.
+
+#org @gText_BattleFrontier_SandsLeadToArena
+Step up to the sands, please.
+
+#org @gText_BattleFrontier_LeadToLobby
+Let me lead you out of the battle\nspace. Right this way.
+
+#org @gText_BattleFrontier_SimCalibrating
+Hold still - the simulator is\ncalibrating the field[.]
+
+// gStringVarC is filled in by sp072. Its descriptions are written to follow this exact prefix, so do not reword the first line.
+#org @gText_BattleFrontier_SimEffectRolled
+The next battle will take place\n[BUFFER][0C]
+
+#org @gText_BattleFrontier_CallingOpponent
+We'll call your next opponent in\nnow.
+
+//------------------------------------------------------------------
+// Battles
+//------------------------------------------------------------------
+
+// Fallbacks only - in a Frontier battle the engine prints the opponent's own lines from the trainer table instead of these.
+#org @gText_BattleFrontier_OpponentDefeated
+I couldn't keep up with you!
+
+#org @gText_BattleFrontier_OpponentVictorious
+Better luck next time!
+
+#org @gText_BattleFrontier_AttendantWin
+Congratulations on your win!
+
+#org @gText_BattleFrontier_AttendantWinMilestone
+Incredible! Overcoming such a\npowerful trainer is no small feat.
+
+#org @gText_BattleFrontier_AttendantLoss
+Oh dear[.] This loss has ended your\nchallenge.
+
+#org @gText_BattleFrontier_WinReward
+That's [BUFFER3] straight in the\n[BUFFER1]!\pHere are [BUFFER2] Pok\e Chips for\nyour trouble.
+
+#org @gText_BattleFrontier_WinRewardCaseFull
+That's [BUFFER3] straight in the\n[BUFFER1]!\pYou'll have to spend some Pok\e Chips\nto make room for more!
+
+//------------------------------------------------------------------
+// Continue / Rest / Give up
+//------------------------------------------------------------------
+
+#org @gText_BattleFrontier_ChallengeMenuPrompt
+Your [BUFFER1] [BUFFER2]\nstreak stands at [BUFFER3].\pWould you like to continue?
+
+// The two below replace the prompt above when a milestone battle is next, so the player is never surprised into one - see FrontierChallenge_GetNextOpponentKind.
+#org @gText_BattleFrontier_ChallengeMenuPromptAce
+Your [BUFFER1] [BUFFER2]\nstreak stands at [BUFFER3].\pA word of warning - an especially\nstrong Trainer is next up.\pWould you like to continue?
+
+#org @gText_BattleFrontier_ChallengeMenuPromptBrain
+Your [BUFFER1] [BUFFER2]\nstreak stands at [BUFFER3].\pWaiting in the next room is\nthe master of the [BUFFER1]\lthemselves!\pWould you like to continue?
+
+#org @gText_BattleFrontier_ChoiceContinue
+Continue
+
+#org @gText_BattleFrontier_ChoiceRest
+Rest
+
+#org @gText_BattleFrontier_ChoiceAbandon
+Give up
+
+#org @gText_BattleFrontier_ConfirmRest
+We'll save your progress and hold\nyour streak until you come back\lfor it.\pYou're free to go wherever you\nlike in the meantime - even to\lanother facility.\pWould you like to Rest?
+
+#org @gText_BattleFrontier_Resting
+We'll be waiting for you!
+
+//------------------------------------------------------------------
+// Picking a run back up
+//------------------------------------------------------------------
+
+#org @gText_BattleFrontier_WelcomeBackRested
+Your [BUFFER2] streak of [BUFFER3]\nis currently on hold.\pFeel free to bring a different\nteam this time, if you like.
+
+// Variant for the Maze and Factory, which hand the player their team
+#org @gText_BattleFrontier_WelcomeBackRestedProvidedTeam
+Your [BUFFER2] streak of [BUFFER3]\nis currently on hold.
+
+#org @gText_BattleFrontier_OnHoldMenuPrompt
+What would you like to do with it?
+
+// Variant for when a player resumes before an Ace/Brain
+#org @gText_BattleFrontier_OnHoldMenuPromptSpecial
+Before you decide - an especially\nstrong Trainer is up next.\pWhat would you like to do?
+
+#org @gText_BattleFrontier_OnHoldMenuPromptBrain
+Before you decide - waiting in the\nnext room is the master of the\l[BUFFER1] themselves.\pWhat would you like to do?
+
+#org @gText_BattleFrontier_ChoiceKeepOnHold
+Nothing
+
+#org @gText_BattleFrontier_ResumeWarning
+Understood.\pJust remember[.] Once the next battle\nbegins, you'll have to see it\lthrough.\pStopping partway will cost you\nyour streak.\pWith that said, let's begin[.]
+
+#org @gText_BattleFrontier_ConfirmAbandon
+Giving up will end your run, and\nyour [BUFFER1] [BUFFER2]\lstreak of [BUFFER3] will be lost.\pAre you sure?
+
+#org @gText_BattleFrontier_Abandoned
+Thank you for challenging the\n[BUFFER1]!\pWe hope to see you again.
+
+#org @gText_BattleFrontier_Lost
+Your [BUFFER1] challenge\nhas come to an end.\pThank you for battling, and please\ncome again!

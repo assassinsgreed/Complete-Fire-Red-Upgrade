@@ -1,23 +1,37 @@
-#org @gText_SingleBattleRecord
-Single Battle Record
+// Facility names, indexed by gBattleFacilityNames.
 
-#org @gText_DoubleBattleRecord
-Double Battle Record
+#org @gText_BattleTower
+Battle Tower
 
-#org @gText_MultiBattleRecord
-Multi Battle Record
+#org @gText_BattleSands
+Battle Sands
 
-#org @gText_LinkMultiBattleRecord
-Link Multi Battle Record
+#org @gText_BattleQuarry
+Battle Quarry
 
-#org @gText_SingleRandomBattleRecord
-Rand Single Btl Record
+#org @gText_BattleSim
+Battle Sim
 
-#org @gText_DoubleRandomBattleRecord
-Rand Double Btl Record
+#org @gText_BattleFactory
+Battle Factory
 
-#org @gText_MultiRandomBattleRecord
-Rand Multi Btl Record
+#org @gText_BattleObservatory
+Battle Observatory
+
+#org @gText_BattleIsle
+Battle Isle
+
+#org @gText_BattleMaze
+Battle Maze
+
+#org @gText_FrontierRecordsTitle
+Battle Record
+
+#org @gText_FrontierRecordSingles
+Singles
+
+#org @gText_FrontierRecordDoubles
+Doubles
 
 #org @gText_SingleBattle
 Single Battle
@@ -40,29 +54,11 @@ Random Double Battle
 #org @gText_RandomMultiBattle
 Random Multi Battle
 
-#org @gText_FrontierRecordLevel5
-Level 5
-
-#org @gText_FrontierRecordLevel50
-Level 50
-
-#org @gText_FrontierRecordLevel100
-Level 100
-
 #org @gText_CurrentStreak
 Current Streak:\nRecord Streak:
 
 #org @gText_MaxStreak
 Record Streak:
-
-#org @gText_3v3
-3 v 3
-
-#org @gText_4v4
-4 v 4
-
-#org @gText_6v6
-6 v 6
 
 #org @gText_BattleTowerStandard
 Standard
@@ -139,18 +135,6 @@ Smogon Gen 7 RU
 #org @gText_SmogonGen7NU
 Smogon Gen 7 NU
 
-#org @gText_BattleMineFormat1
-Cave Format
-
-#org @gText_BattleMineFormat2
-Mountain Format
-
-#org @gText_BattleMineFormat3
-Pebble Format
-
-#org @gText_BattleMineFormat4
-Cordillera Format
-
 #org @gText_On
 on
 
@@ -177,98 +161,98 @@ None
 
 //Preceded by "The next battle will take place"
 
-#org @gText_BattleCircusDescriptionElectricTerrain
+#org @gText_BattleSimDescriptionElectricTerrain
 with the battlefield electrified!\pGrounded Pok\emon can't fall asleep\nand have stronger Electric-moves!
 
-#org @gText_BattleCircusDescriptionGrassyTerrain
+#org @gText_BattleSimDescriptionGrassyTerrain
 with the battlefield grassy!\pGrounded Pok\emon have stronger\nGrass-moves and heal every turn!
 
-#org @gText_BattleCircusDescriptionMistyTerrain
+#org @gText_BattleSimDescriptionMistyTerrain
 with the battlefield misty!\pGrounded Pok\emon have stronger\nFairy-moves and can't be afflicted\lwith status conditions!
 
-#org @gText_BattleCircusDescriptionPsychicTerrain
+#org @gText_BattleSimDescriptionPsychicTerrain
 with the battlefield weird!\pGrounded Pok\emon have stronger\nPsychic-moves and can't be hit\lby priority moves!
 
-#org @gText_BattleCircusDescriptionRain
+#org @gText_BattleSimDescriptionRain
 in the rain!
 
-#org @gText_BattleCircusDescriptionSun
+#org @gText_BattleSimDescriptionSun
 in the sun!
 
-#org @gText_BattleCircusDescriptionSandstorm
+#org @gText_BattleSimDescriptionSandstorm
 in a sandstorm!
 
-#org @gText_BattleCircusDescriptionHail
+#org @gText_BattleSimDescriptionHail
 in a hailstorm!
 
-#org @gText_BattleCircusDescriptionDeltaStream
+#org @gText_BattleSimDescriptionDeltaStream
 with strong winds blowing!\pFlying-type Pok\emon take less\ndamage from super effective moves!
 
-#org @gText_BattleCircusDescriptionTrickRoom
+#org @gText_BattleSimDescriptionTrickRoom
 in a Trick Room!\pSlower Pok\emon get to move first!
 
-#org @gText_BattleCircusDescriptionMagicRoom
+#org @gText_BattleSimDescriptionMagicRoom
 in a Magic Room!\pMost held items have no effect!
 
-#org @gText_BattleCircusDescriptionWonderRoom
+#org @gText_BattleSimDescriptionWonderRoom
 in a Wonder Room!\pDefense and Sp. Def stats are\nswapped!
 
-#org @gText_BattleCircusDescriptionGravity
+#org @gText_BattleSimDescriptionGravity
 with intense gravity!\pNo Pok\emon will remain airborne!
 
-#org @gText_BattleCircusDescriptionMagnetRise
+#org @gText_BattleSimDescriptionMagnetRise
 with electromagnetism on the field!\pElectric- and Steel-type Pok\emon\ncan't be hit by Ground-type moves!
 
-#org @gText_BattleCircusDescriptionFairyLock
+#org @gText_BattleSimDescriptionFairyLock
 with the battlefield locked down!\pNo Pok\emon will be able to switch\nout!
 
-#org @gText_BattleCircusDescriptionPixies
+#org @gText_BattleSimDescriptionPixies
 with pixies in the air!\pFairy-type Pok\emon will have their\nlowest defensive stat boosted!
 
-#org @gText_BattleCircusDescriptionBadThoughts
+#org @gText_BattleSimDescriptionBadThoughts
 with negative emotions in the air!\pPok\emon that aren't part Dark-\ntype, Ghost-type, Psychic-type,\lor have one of the Abilities\lUnaware, Oblivious, or Magic Guard\lwill be hurt each turn!
 
-#org @gText_BattleCircusDescriptionInverseBattle
+#org @gText_BattleSimDescriptionInverseBattle
 in an Inverse Battle!\pAll type matchups are reversed!
 
-#org @gText_BattleCircusDescriptionDynamax
+#org @gText_BattleSimDescriptionDynamax
 with a Power Spot active!\pAll Pok\emon will be able to\nDynamax!\pHowever, no Pok\emon may Mega\nEvolve, undergo Primal Reversion,\lUltra Burst, or use Z-Moves!
 
-#org @gText_BattleCircusDescriptionTradeMon
+#org @gText_BattleSimDescriptionTradeMon
 with Pok\emon swapped!\pEach side will use one of the\nopposing side's Pok\emon at random!
 
-#org @gText_BattleCircusDescriptionSafeguard
+#org @gText_BattleSimDescriptionSafeguard
 with a veil protecting both sides\lof the battlefield!\pNo Pok\emon may inflict status\nconditions on another!
 
-#org @gText_BattleCircusDescriptionMist
+#org @gText_BattleSimDescriptionMist
 with Mist surrounding both sides\lof the battlefield!\pNo Pok\emon may have their stats\nlowered by another!
 
-#org @gText_BattleCircusDescriptionSeaOfFire
+#org @gText_BattleSimDescriptionSeaOfFire
 with a Sea of Fire engulfing both\lsides of the battlefield!\pAll non-Fire-type Pok\emon will be\ndamaged each turn!
 
-#org @gText_BattleCircusDescriptionRainbow
+#org @gText_BattleSimDescriptionRainbow
 with a Rainbow present on both\lsides of the battlefield!\pAll moves have their secondary\neffect chance doubled!
 
-#org @gText_BattleCircusDescriptionConfused
+#org @gText_BattleSimDescriptionConfused
 with all Pok\emon confused!
 
-#org @gText_BattleCircusDescriptionTaunt
+#org @gText_BattleSimDescriptionTaunt
 with all Pok\emon taunted!\pNo status moves can be used!
 
-#org @gText_BattleCircusDescriptionTorment
+#org @gText_BattleSimDescriptionTorment
 with all Pok\emon tormented!\pNo move can be used twice in a row.
 
-#org @gText_BattleCircusDescriptionHealBlock
+#org @gText_BattleSimDescriptionHealBlock
 with all Pok\emon Heal Blocked!\pNo Pok\emon will be able to heal!
 
-#org @gText_BattleCircusDescriptionThroatChop
+#org @gText_BattleSimDescriptionThroatChop
 with all Pok\emon Throat Chopped!\pNo sound-based moves can be used!
 
-#org @gText_BattleCircusDescriptionAlwaysCrit
+#org @gText_BattleSimDescriptionAlwaysCrit
 with all Pok\emon Laser Focused!\pMoves will always score critical\nhits!
 
-#org @gText_BattleCircusDescriptionNoCrits
+#org @gText_BattleSimDescriptionNoCrits
 with no Pok\emon being able to\lscore a critical hit!
 
-#org @gText_BattleCircusDescriptionAbilitySuppression
+#org @gText_BattleSimDescriptionAbilitySuppression
 with all Pok\emon having their\labilities suppressed!

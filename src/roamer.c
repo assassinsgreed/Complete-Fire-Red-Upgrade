@@ -179,17 +179,17 @@ void UpdateForcesOfNatureWeather(bool8 applyNow)
 	{
 		//Weather IDs are shared with ordinary script weather.  Keep an explicit marker so a
 		//script-set sandstorm (also ID 8) is never mistaken for Landorus's weather after a reload.
-		FlagSet(FLAG_TEMP_9);
+		FlagSet(FLAG_TEMP_ROAMER_WEATHER);
 
 		if (gSaveBlock1->weather == weather)
 			return; //Already showing it - don't restart the fade
 
 		SetSav1Weather(weather);
 	}
-	else if (FlagGet(FLAG_TEMP_9))
+	else if (FlagGet(FLAG_TEMP_ROAMER_WEATHER))
 	{
 		SetSav1Weather(gMapHeader.weather); //Roamer is gone - restore the map's own weather
-		FlagClear(FLAG_TEMP_9);
+		FlagClear(FLAG_TEMP_ROAMER_WEATHER);
 	}
 	else
 	{

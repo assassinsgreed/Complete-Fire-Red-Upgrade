@@ -23,6 +23,7 @@
 #define INGAME_TRADE_GURDURR   10
 #define INGAME_TRADE_PHANTUMP  11
 #define INGAME_TRADE_SLOWBRO_G 12
+#define INGAME_TRADE_JUNICHI_DITTO 13 // Give Rotom-Heat
 // Divergent
 #define INGAME_TRADE_DIVERGENT_EELEKTRIK 13 // Give Vanillite
 #define INGAME_TRADE_DIVERGENT_JYNX      14 // Give Poliwhirl
@@ -37,11 +38,13 @@
 #define INGAME_TRADE_DIVERGENT_MACHOKE    23 // Give any
 #define INGAME_TRADE_DIVERGENT_KADABRA    24 // Give any
 #define INGAME_TRADE_DIVERGENT_RAPIDASH_G 25 // Give Rapidash
+#define INGAME_TRADE_DIVERGENT_JUNICHI_DITTO 26 // Give Rotom-Heat (identical to standard mode)
 
 // In-Game Gift IDs
 #define INGAME_GIFT_PIKACHU_ORIGINAL_CAP 0
 #define INGAME_GIFT_VICTINI              1
 #define INGAME_GIFT_TYPE_NULL            2
+#define INGAME_GIFT_PIKACHU_COSPLAY      3
 
 // Flag IDs for sending link data
 #define INITIATE_TRADE  1

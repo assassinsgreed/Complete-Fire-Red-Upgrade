@@ -428,12 +428,12 @@ struct PlayerGraphics
 
 static const struct PlayerGraphics sPlayerAvatarGfxIds[][2] =
 {
-	[PLAYER_AVATAR_STATE_NORMAL] =     {{EVENT_OBJ_GFX_RED_NORMAL, PLAYER_AVATAR_FLAG_ON_FOOT},          {EVENT_OBJ_GFX_LEAF_NORMAL, PLAYER_AVATAR_FLAG_ON_FOOT}},
-	[PLAYER_AVATAR_STATE_BIKE] =       {{EVENT_OBJ_GFX_RED_BIKE, PLAYER_AVATAR_FLAG_BIKE},               {EVENT_OBJ_GFX_LEAF_BIKE, PLAYER_AVATAR_FLAG_BIKE}},
-	[PLAYER_AVATAR_STATE_SURFING] =    {{EVENT_OBJ_GFX_RED_SURFING, PLAYER_AVATAR_FLAG_SURFING},         {EVENT_OBJ_GFX_LEAF_SURFING, PLAYER_AVATAR_FLAG_SURFING}},
-	[PLAYER_AVATAR_STATE_FIELD_MOVE] = {{EVENT_OBJ_GFX_RED_FIELD_MOVE, PLAYER_AVATAR_FLAG_FIELD_MOVE},   {EVENT_OBJ_GFX_LEAF_FIELD_MOVE, PLAYER_AVATAR_FLAG_FIELD_MOVE}},
-	[PLAYER_AVATAR_STATE_FISHING] =    {{EVENT_OBJ_GFX_RED_FISHING, 0},                                  {EVENT_OBJ_GFX_LEAF_FISHING, 0}},
-	[PLAYER_AVATAR_STATE_VS_SEEKER] =  {{EVENT_OBJ_GFX_RED_VS_SEEKER, 0},                                {EVENT_OBJ_GFX_LEAF_VS_SEEKER, 0}},
+	[PLAYER_AVATAR_STATE_NORMAL] =     {{EVENT_OBJ_GFX_MC_NORMAL, PLAYER_AVATAR_FLAG_ON_FOOT},          {EVENT_OBJ_GFX_FEMC_NORMAL, PLAYER_AVATAR_FLAG_ON_FOOT}},
+	[PLAYER_AVATAR_STATE_BIKE] =       {{EVENT_OBJ_GFX_MC_BIKE, PLAYER_AVATAR_FLAG_BIKE},               {EVENT_OBJ_GFX_FEMC_BIKE, PLAYER_AVATAR_FLAG_BIKE}},
+	[PLAYER_AVATAR_STATE_SURFING] =    {{EVENT_OBJ_GFX_MC_SURFING, PLAYER_AVATAR_FLAG_SURFING},         {EVENT_OBJ_GFX_FEMC_SURFING, PLAYER_AVATAR_FLAG_SURFING}},
+	[PLAYER_AVATAR_STATE_FIELD_MOVE] = {{EVENT_OBJ_GFX_MC_FIELD_MOVE, PLAYER_AVATAR_FLAG_FIELD_MOVE},   {EVENT_OBJ_GFX_FEMC_FIELD_MOVE, PLAYER_AVATAR_FLAG_FIELD_MOVE}},
+	[PLAYER_AVATAR_STATE_FISHING] =    {{EVENT_OBJ_GFX_MC_FISHING, 0},                                  {EVENT_OBJ_GFX_FEMC_FISHING, 0}},
+	[PLAYER_AVATAR_STATE_VS_SEEKER] =  {{EVENT_OBJ_GFX_MC_VS_SEEKER, 0},                                {EVENT_OBJ_GFX_FEMC_VS_SEEKER, 0}},
 	[PLAYER_AVATAR_STATE_UNDERWATER] = {{EVENT_OBJ_GFX_RED_UNDERWATER, PLAYER_AVATAR_FLAG_UNDERWATER},   {EVENT_OBJ_GFX_LEAF_UNDERWATER, PLAYER_AVATAR_FLAG_UNDERWATER}},
 };
 
@@ -456,8 +456,8 @@ NPCPtr GetEventObjectGraphicsInfo(u16 graphicsId)
 	else
 	{
 		switch (spriteId) {
-			case EVENT_OBJ_GFX_RED_BIKE_VS_SEEKER:
-			case EVENT_OBJ_GFX_LEAF_BIKE_VS_SEEKER:
+			case EVENT_OBJ_GFX_MC_BIKE_VS_SEEKER:
+			case EVENT_OBJ_GFX_FEMC_BIKE_VS_SEEKER:
 				if (tableId == 0) //Actually the Vs. Seeker sprites
 				{
 					newId = VarGet(VAR_PLAYER_VS_SEEKER_ON_BIKE);
@@ -781,9 +781,11 @@ u16 GetBackspriteId(void)
 	{
 		trainerPicId = LoadPartnerBackspriteIndex();
 	}
-	else if (IsAIControlledBattle())
+	else if (gBattleTypeFlags & BATTLE_TYPE_MOCK_BATTLE && !InBattleSands())
 	{
-		trainerPicId = LoadPartnerBackspriteIndex(); //The trainer's backsprite for the Battle Sands is stored in the multi partner var
+		// A mock battle stands in for someone else, so it borrows the multi partner var.
+		// Battle Sands are always controlled by the player (BATTLE_TYPE_MOCK_BATTLE is used for automatic battling and is still needed)
+		trainerPicId = LoadPartnerBackspriteIndex();
 	}
 	else
 	{

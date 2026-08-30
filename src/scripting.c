@@ -37,6 +37,7 @@
 #include "../include/new/catching.h"
 #include "../include/new/damage_calc.h"
 #include "../include/new/dns.h"
+#include "../include/new/frontier.h"
 #include "../include/new/util.h"
 #include "../include/new/item.h"
 #include "../include/new/learn_move.h"
@@ -3157,6 +3158,39 @@ extern const u8 gText_GunkShot[];
 extern const u8 gText_HeatWave[];
 extern const u8 gText_HyperVoice[];
 extern const u8 gText_Superpower[];
+// Battle Frontier
+extern const u8 gText_GigaDrain[];
+extern const u8 gText_CloseCombat[];
+extern const u8 gText_Avalanche[];
+extern const u8 gText_DragonDance[];
+extern const u8 gText_GrassyGlide[];
+extern const u8 gText_WeatherBall[];
+extern const u8 gText_BraveBird[];
+extern const u8 gText_ScorchingSands[];
+extern const u8 gText_BodyPress[];
+extern const u8 gText_Hurricane[];
+extern const u8 gText_PollenPuff[];
+extern const u8 gText_BatonPass[];
+extern const u8 gText_PsychicFangs[];
+extern const u8 gText_Defog[];
+extern const u8 gText_PlayRough[];
+extern const u8 gText_FireFang[];
+extern const u8 gText_ThunderFang[];
+extern const u8 gText_IceFang[];
+extern const u8 gText_PowerWhip[];
+extern const u8 gText_CosmicPower[];
+extern const u8 gText_StoredPower[];
+extern const u8 gText_DualWingbeat[];
+extern const u8 gText_BurningJealousy[];
+extern const u8 gText_CrossPoison[];
+extern const u8 gText_PowerShift[];
+extern const u8 gText_PowerGem[];
+extern const u8 gText_DarkestLariat[];
+extern const u8 gText_Moonblast[];
+extern const u8 gText_AuraSphere[];
+extern const u8 gText_SkitterSmack[];
+extern const u8 gText_Poltergeist[];
+extern const u8 gText_HighHorsepower[];
 extern const u8 gText_End[];
 
 // Restaurant Options
@@ -3317,7 +3351,9 @@ extern const u8 gText_GameModifiers_DexNavShowAll[];
 extern const u8 gText_GameModifiers_InstantBattleWeather[];
 extern const u8 gText_GameModifiers_InstantBattleTerrain[];
 extern const u8 gText_GameModifiers_InstantFriendship[];
+extern const u8 gText_GameModifiers_PerfectWildIVs[];
 extern const u8 gText_GameModifiers_EVIVViewer[];
+extern const u8 gText_GameModifiers_RepeatedMegaEvolution[];
 extern const u8 gText_GameModifiers_DivergentToggle[];
 
 // Ultra Wormholes
@@ -3330,6 +3366,22 @@ extern const u8 gText_UltraWormholes_Kartana[];
 extern const u8 gText_UltraWormholes_Guzzlord[];
 extern const u8 gText_UltraWormholes_Stakataka[];
 extern const u8 gText_UltraWormholes_Blacephalon[];
+
+// Game Customization
+extern const u8 gText_GameCustomization_DifficultyModeOption_Standard[];
+extern const u8 gText_GameCustomization_DifficultyModeOption_Hard[];
+extern const u8 gText_GameCustomization_DifficultyModeOption_ExtraHard[];
+extern const u8 gText_GameCustomization_LevelCapsOption_Soft[];
+extern const u8 gText_GameCustomization_LevelCapsOption_Hard[];
+extern const u8 gText_GameCustomization_LevelCapsOption_ExtraHard[];
+extern const u8 gText_GameCustomization_PokemonSelection_Standard[];
+extern const u8 gText_GameCustomization_PokemonSelection_Divergent[];
+extern const u8 gText_GameCustomization_SkipCutscenesOption_Play[];
+extern const u8 gText_GameCustomization_SkipCutscenesOption_Skip[];
+extern const u8 gText_GameCustomization_TutorialsOption_Enable[];
+extern const u8 gText_GameCustomization_TutorialsOption_Disable[];
+extern const u8 gText_GameCustomization_QoLItemsOption_Start[];
+extern const u8 gText_GameCustomization_QoLItemsOption_Skip[];
 
 //Scrolling Lists
 static const u8* sTutorFerrox[] =
@@ -3396,7 +3448,7 @@ static const u8* sMealOptionsWithAll[] =
 	gText_End,  
 };
 
-static const u8* sFavoriteRegion[] =
+static const u8* sStarterGeneration[] =
 {
 	gText_RegionKanto,
 	gText_RegionJohto,
@@ -3514,6 +3566,58 @@ static const u8* sTutorsTsarvosa[] =
 	gText_DragonPulse,
 	gText_BadTantrum,
 	gText_NastyPlot,
+	gText_End,
+};
+
+static const u8* sTutorsBattleFrontier1[] =
+{
+	gText_GigaDrain,
+	gText_BatonPass,
+	gText_BodyPress,
+	gText_PowerShift,
+	gText_PollenPuff,
+	gText_SkitterSmack,
+	gText_CrossPoison,
+	gText_WeatherBall,
+	gText_End,
+};
+
+static const u8* sTutorsBattleFrontier2[] =
+{
+	gText_PsychicFangs,
+	gText_FireFang,
+	gText_ThunderFang,
+	gText_IceFang,
+	gText_CosmicPower,
+	gText_StoredPower,
+	gText_DragonDance,
+	gText_Defog,
+	gText_End,
+};
+
+static const u8* sTutorsBattleFrontier3[] =
+{
+	gText_DarkestLariat,
+	gText_DualWingbeat,
+	gText_BurningJealousy,
+	gText_ScorchingSands,
+	gText_BraveBird,
+	gText_CloseCombat,
+	gText_Avalanche,
+	gText_AuraSphere,
+	gText_End,
+};
+
+static const u8* sTutorsBattleFrontier4[] =
+{
+	gText_GrassyGlide,
+	gText_PowerWhip,
+	gText_Hurricane,
+	gText_PlayRough,
+	gText_PowerGem,
+	gText_Moonblast,
+	gText_Poltergeist,
+	gText_HighHorsepower,
 	gText_End,
 };
 
@@ -3640,7 +3744,9 @@ static const u8* sGameModifiers[] =
 	gText_GameModifiers_InstantBattleWeather,
 	gText_GameModifiers_InstantBattleTerrain,
 	gText_GameModifiers_InstantFriendship,
+	gText_GameModifiers_PerfectWildIVs,
 	gText_GameModifiers_EVIVViewer,
+	gText_GameModifiers_RepeatedMegaEvolution,
 	gText_GameModifiers_DivergentToggle,
 	gText_End,
 };
@@ -3659,30 +3765,126 @@ static const u8* sUltraWormholes[] =
 	gText_End,
 };
 
+static const u8* sGameCustomizationDifficulty[] =
+{
+	gText_GameCustomization_DifficultyModeOption_Standard,
+	gText_GameCustomization_DifficultyModeOption_Hard,
+	gText_GameCustomization_DifficultyModeOption_ExtraHard,
+};
+
+static const u8* sGameCustomizationLevelCaps[] =
+{
+	gText_GameCustomization_LevelCapsOption_Soft,
+	gText_GameCustomization_LevelCapsOption_Hard,
+	gText_GameCustomization_LevelCapsOption_ExtraHard,
+};
+
+static const u8* sGameCustomizationPokemonSelection[] =
+{
+	gText_GameCustomization_PokemonSelection_Standard,
+	gText_GameCustomization_PokemonSelection_Divergent,
+};
+
+static const u8* sGameCustomizationCutscenes[] =
+{
+	gText_GameCustomization_SkipCutscenesOption_Play,
+	gText_GameCustomization_SkipCutscenesOption_Skip,
+};
+
+static const u8* sGameCustomizationTutorials[] =
+{
+	gText_GameCustomization_TutorialsOption_Enable,
+	gText_GameCustomization_TutorialsOption_Disable,
+};
+
+static const u8* sGameCustomizationQoLItems[] =
+{
+	gText_GameCustomization_QoLItemsOption_Start,
+	gText_GameCustomization_QoLItemsOption_Skip,
+};
+
+//The setting each game customization list is currently on, so the menu can draw that entry green.
+//The order of each list below has to match the order the script's switch reads back.
+
+static u8 GetGameCustomizationDifficulty(void)
+{
+	return VarGet(VAR_DIFFICULTY_SETTING);
+}
+
+static u8 GetGameCustomizationLevelCaps(void)
+{
+	return VarGet(VAR_LEVEL_CAPS);
+}
+
+static u8 GetGameCustomizationPokemonSelection(void)
+{
+	return FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS) ? 1 : 0;
+}
+
+static u8 GetGameCustomizationCutscenes(void)
+{
+	return FlagGet(FLAG_SKIP_CUTSCENES) ? 1 : 0;
+}
+
+static u8 GetGameCustomizationTutorials(void)
+{
+	return FlagGet(FLAG_ACTIVATE_TUTORIAL) ? 0 : 1;
+}
+
+static u8 GetGameCustomizationQoLItems(void)
+{
+	//The player's choice stays in temp var 1 until customization is complete
+	return (VarGet(VAR_TEMP_1) == 1) ? 0 : 1;
+}
+
+// Shuffle mode rolls each starter's generation separately, so three matching generations is the
+// only thing that can be reported as a single generation - and it plays out identically anyway.
+static u8 GetGameCustomizationStarterGeneration(void)
+{
+	u16 grass = VarGet(VAR_GRASS_STARTER_GEN);
+
+	if (grass == VarGet(VAR_FIRE_STARTER_GEN) && grass == VarGet(VAR_WATER_STARTER_GEN))
+		return grass;
+
+	return ARRAY_COUNT(sStarterGeneration) - 1; //Shuffle
+}
+
 // Multichoice Lists
 const struct ScrollingMulti gScrollingSets[] =
 {
-	{sTutorFerrox, ARRAY_COUNT(sTutorFerrox)},
-	{sTutorHeleo, ARRAY_COUNT(sTutorHeleo)},
-	{sMealOptions, ARRAY_COUNT(sMealOptions)},
-	{sMealOptionsWithAll, ARRAY_COUNT(sMealOptionsWithAll)},
-	{sTutorDaimyn, ARRAY_COUNT(sTutorDaimyn)},
-	{sFavoriteRegion, ARRAY_COUNT(sFavoriteRegion)},
-	{sGameCornerItemExchange, ARRAY_COUNT(sGameCornerItemExchange)},
-	{sGameCornerPokemonExchange, ARRAY_COUNT(sGameCornerPokemonExchange)},
-	{sTutorRhodanzi, ARRAY_COUNT(sTutorRhodanzi)},
-	{sApricornBalls, ARRAY_COUNT(sApricornBalls)},
-	{sTutorsLaplaz, ARRAY_COUNT(sTutorsLaplaz)},
-	{sTutorsBruccie, ARRAY_COUNT(sTutorsBruccie)},
-	{sTutorsEmraldin, ARRAY_COUNT(sTutorsEmraldin)},
-	{sTutorsTsarvosa, ARRAY_COUNT(sTutorsTsarvosa)},
-	{sPokeChipCrusher, ARRAY_COUNT(sPokeChipCrusher)},
-	{sTutorsUteya, ARRAY_COUNT(sTutorsUteya)},
-	{sNatures, ARRAY_COUNT(sNatures)},
-	{sGameStats, ARRAY_COUNT(sGameStats)},
-	{sGameModifiers, ARRAY_COUNT(sGameModifiers)},
-	{sUltraWormholes, ARRAY_COUNT(sUltraWormholes)},
-	{sGameCornerPokemonExchange_Divergent, ARRAY_COUNT(sGameCornerPokemonExchange_Divergent)},
+	{.set = sTutorFerrox, .count = ARRAY_COUNT(sTutorFerrox)},
+	{.set = sTutorHeleo, .count = ARRAY_COUNT(sTutorHeleo)},
+	{.set = sMealOptions, .count = ARRAY_COUNT(sMealOptions)},
+	{.set = sMealOptionsWithAll, .count = ARRAY_COUNT(sMealOptionsWithAll)},
+	{.set = sTutorDaimyn, .count = ARRAY_COUNT(sTutorDaimyn)},
+	{.set = sStarterGeneration, .count = ARRAY_COUNT(sStarterGeneration), .getHighlightedIndex = GetGameCustomizationStarterGeneration},
+	{.set = sGameCornerItemExchange, .count = ARRAY_COUNT(sGameCornerItemExchange)},
+	{.set = sGameCornerPokemonExchange, .count = ARRAY_COUNT(sGameCornerPokemonExchange)},
+	{.set = sTutorRhodanzi, .count = ARRAY_COUNT(sTutorRhodanzi)},
+	{.set = sApricornBalls, .count = ARRAY_COUNT(sApricornBalls)},
+	{.set = sTutorsLaplaz, .count = ARRAY_COUNT(sTutorsLaplaz)},
+	{.set = sTutorsBruccie, .count = ARRAY_COUNT(sTutorsBruccie)},
+	{.set = sTutorsEmraldin, .count = ARRAY_COUNT(sTutorsEmraldin)},
+	{.set = sTutorsTsarvosa, .count = ARRAY_COUNT(sTutorsTsarvosa)},
+	{.set = sPokeChipCrusher, .count = ARRAY_COUNT(sPokeChipCrusher)},
+	{.set = sTutorsUteya, .count = ARRAY_COUNT(sTutorsUteya)},
+	{.set = sNatures, .count = ARRAY_COUNT(sNatures)},
+	{.set = sGameStats, .count = ARRAY_COUNT(sGameStats)},
+	{.set = sGameModifiers, .count = ARRAY_COUNT(sGameModifiers)},
+	{.set = sUltraWormholes, .count = ARRAY_COUNT(sUltraWormholes)},
+	{.set = sGameCornerPokemonExchange_Divergent, .count = ARRAY_COUNT(sGameCornerPokemonExchange_Divergent)},
+	{.set = gFrontierMusicChoiceNames, .count = NUM_FRONTIER_MUSIC_CHOICES + 1, .getHighlightedIndex = GetCurrentFrontierMusicChoice},
+	{.set = gFrontierBackgroundChoiceNames, .count = NUM_FRONTIER_BACKGROUND_CHOICES + 1, .getHighlightedIndex = GetCurrentFrontierBackgroundChoice},
+	{.set = sGameCustomizationDifficulty, .count = ARRAY_COUNT(sGameCustomizationDifficulty), .getHighlightedIndex = GetGameCustomizationDifficulty},
+	{.set = sGameCustomizationLevelCaps, .count = ARRAY_COUNT(sGameCustomizationLevelCaps), .getHighlightedIndex = GetGameCustomizationLevelCaps},
+	{.set = sGameCustomizationPokemonSelection, .count = ARRAY_COUNT(sGameCustomizationPokemonSelection), .getHighlightedIndex = GetGameCustomizationPokemonSelection},
+	{.set = sGameCustomizationCutscenes, .count = ARRAY_COUNT(sGameCustomizationCutscenes), .getHighlightedIndex = GetGameCustomizationCutscenes},
+	{.set = sGameCustomizationTutorials, .count = ARRAY_COUNT(sGameCustomizationTutorials), .getHighlightedIndex = GetGameCustomizationTutorials},
+	{.set = sGameCustomizationQoLItems, .count = ARRAY_COUNT(sGameCustomizationQoLItems), .getHighlightedIndex = GetGameCustomizationQoLItems},
+	{.set = sTutorsBattleFrontier1, .count = ARRAY_COUNT(sTutorsBattleFrontier1)},
+	{.set = sTutorsBattleFrontier2, .count = ARRAY_COUNT(sTutorsBattleFrontier2)},
+	{.set = sTutorsBattleFrontier3, .count = ARRAY_COUNT(sTutorsBattleFrontier3)},
+	{.set = sTutorsBattleFrontier4, .count = ARRAY_COUNT(sTutorsBattleFrontier4)},
 };
 
 //Link number of opts shown at once to the box height
@@ -3692,10 +3894,12 @@ struct ScrollingSizePerOpts
 	u8 height;
 };
 
+//Height is in 8px tiles and each row is a 14px line of font 2, so a list needs ceil(14 * opts / 8)
+//tiles or its last row is drawn clipped.
 static const struct ScrollingSizePerOpts sScrollingSizes[] =
 {
-	{.maxShowed = 2, .height = 3},
-	{.maxShowed = 3, .height = 5},
+	{.maxShowed = 2, .height = 4},
+	{.maxShowed = 3, .height = 6},
 	{.maxShowed = 4, .height = 7},
 	{.maxShowed = 5, .height = 9},
 	{.maxShowed = 6, .height = 11},
@@ -3710,6 +3914,23 @@ static const struct ScrollingSizePerOpts sScrollingSizes[] =
 #define MIN_NUM_SHOWED 2
 #define MAX_NUM_SHOWED 6
 
+//The list's item array, allocated by CustomScrollingMultichoiceHook in main.s and freed with the
+//menu. A highlighting list borrows the tail of it - see GetScrollingMultiAllocSize.
+#define sScrollingMultiItems (*(struct ListMenuItem**) 0x2039A14)
+
+//Room for the colour codes below and the longest name a highlighting list offers.
+#define HIGHLIGHTED_ENTRY_SIZE 48
+
+//Prefixed to the highlighted entry's name. Inline colour codes are what keep this off the string
+//file: a green copy of the entry is built when the list opens rather than written out beside
+//every plain one. 6 and 7 are the green pair in the standard text palette.
+static const u8 sHighlightColours[] =
+{
+	EXT_CTRL_CODE_BEGIN, 1, TEXT_COLOR_GREEN,
+	EXT_CTRL_CODE_BEGIN, 3, TEXT_COLOR_LIGHT_GREEN,
+	EOS,
+};
+
 #endif
 
 u32 GetSizeOfMultiList(void)
@@ -3721,10 +3942,48 @@ u32 GetSizeOfMultiList(void)
 #endif
 }
 
+// How much space the scrolling multi-choice needs - menus with highlighting text (ex frontier)
+// need extra space at the end for the highlighted index 
+u32 GetScrollingMultiAllocSize(u32 count)
+{
+#ifdef SCROLLING_MULTICHOICE
+	u32 size = count * sizeof(struct ListMenuItem);
+
+	if (gScrollingSets[Var8000].getHighlightedIndex != NULL)
+		size += (count * sizeof(const u8*)) + HIGHLIGHTED_ENTRY_SIZE;
+
+	return size;
+#else
+	return count * sizeof(struct ListMenuItem);
+#endif
+}
+
 const u8* const* GetScrollingMultiList(void)
 {
 #ifdef SCROLLING_MULTICHOICE
-	return gScrollingSets[Var8000].set;
+	const struct ScrollingMulti* set = &gScrollingSets[Var8000];
+
+	if (set->getHighlightedIndex == NULL)
+		return set->set;
+
+	u8 highlighted = set->getHighlightedIndex();
+	if (highlighted >= set->count)
+		return set->set;
+
+	// The RAM GetScrollingMultiAllocSize reserved, straight after the items. The table is only
+	// read by the loop that copies it into those items, but the name it points at is read again on
+	// every redraw, so it has to outlast this call.
+	const u8** names = (const u8**) &sScrollingMultiItems[set->count];
+	u8* highlightedName = (u8*) &names[set->count];
+
+	for (u32 i = 0; i < set->count; ++i)
+		names[i] = set->set[i];
+
+	StringCopy(highlightedName, sHighlightColours);
+	StringAppend(highlightedName, set->set[highlighted]);
+	names[highlighted] = highlightedName;
+
+	return names;
 #else
 	return 0;
 #endif
@@ -4042,38 +4301,22 @@ void ResetAllLegendaries()
 	}
 }
 
-bool8 AreAllItemsInRangeObtained(u16 startRange, u16 endRange)
-{
-	for (u32 i = startRange; i <= endRange; ++i)
-	{
-		if (!CheckBagHasItem(i, 1))
-		{
-			return FALSE;
-		}
-	}
-	return TRUE;
-}
-
 void ComputeCompletedGameModifierRequirements()
 {
-	// All Trainer Houses cleared (indicated by their grand prize flags) + became champion
-	if (FlagGet(0x24F) && FlagGet(0x26C) && FlagGet(0x252) && FlagGet(0x277) && FlagGet(FLAG_SYS_GAME_CLEAR))
+	// All Trainer Houses cleared + became champion. Cannot check trainer house rewards because these are given with NG QoL items.
+	if (FlagGet(FLAG_TRAINER_HOUSE_HELEO_CITY_CLEARED)
+	&&  FlagGet(FLAG_TRAINER_HOUSE_EMRALDIN_QUAY_CLEARED)
+	&&  FlagGet(FLAG_TRAINER_HOUSE_LAPLAZ_TOWN_CLEARED)
+	&&  FlagGet(FLAG_TRAINER_HOUSE_UTEYA_VILLAGE_CLEARED)
+	&&  FlagGet(FLAG_SYS_GAME_CLEAR))
 	{
 		FlagSet(FLAG_GAMEMODIFIER_INVERSEBATTLES_UNLOCKED);
 		FlagSet(FLAG_GAMEMODIFIER_CAMOMONBATTLES_UNLOCKED);
 		FlagSet(FLAG_GAMEMODIFIER_DOUBLEBATTLES_UNLOCKED);
 	}
 
-	// Pokedex is complete
-	bool8 isPokedexComplete = TRUE;
-	for (u32 i = 1; i <= NATIONAL_DEX_COUNT; i++)
-	{
-		if (!GetSetPokedexFlag(i, FLAG_GET_CAUGHT))
-		{
-			isPokedexComplete = FALSE;
-			break;
-		}
-	}
+	// Pokedex is complete. Filling either mode's dex counts, so these stay unlocked across a switch.
+	bool8 isPokedexComplete = IsPokedexComplete();
 
 	if (isPokedexComplete)
 	{
@@ -4084,30 +4327,33 @@ void ComputeCompletedGameModifierRequirements()
 		FlagSet(FLAG_GAMEMODIFIER_SHINIES_UNLOCKED);
 	}
 
-	// All legendaries caught
-	int species[15] = {
-		SPECIES_JIRACHI,
-		SPECIES_SHAYMIN,
-		SPECIES_KYOGRE,
-		SPECIES_GROUDON,
-		SPECIES_VOLCANION,
-		SPECIES_GLASTRIER,
-		SPECIES_MELTAN,
-		SPECIES_MELMETAL,
+	// All legendaries caught. Checks based on the current mode (standard or divergent)
+	bool8 divergent = FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS);
+
+	u16 legendaries[] = {
+		SPECIES_JIRACHI,  // Jirachi, Victini, Type: Null and Silvally are the same in both modes
 		SPECIES_VICTINI,
 		SPECIES_TYPE_NULL,
 		SPECIES_SILVALLY,
-		SPECIES_ZERAORA,
-		SPECIES_ARTICUNO_G,
-		SPECIES_ZAPDOS_G,
-		SPECIES_MOLTRES_G,
+		divergent ? SPECIES_XERNEAS    : SPECIES_SHAYMIN,
+		divergent ? SPECIES_LUGIA      : SPECIES_KYOGRE,
+		divergent ? SPECIES_HOOPA      : SPECIES_GROUDON,
+		divergent ? SPECIES_HEATRAN    : SPECIES_VOLCANION,
+		divergent ? SPECIES_SPECTRIER  : SPECIES_GLASTRIER,
+		divergent ? SPECIES_GENESECT   : SPECIES_MELTAN,
+		divergent ? SPECIES_ZARUDE     : SPECIES_ZERAORA,
+		divergent ? SPECIES_TORNADUS   : SPECIES_ARTICUNO_G,
+		divergent ? SPECIES_THUNDURUS  : SPECIES_ZAPDOS_G,
+		divergent ? SPECIES_LANDORUS   : SPECIES_MOLTRES_G,
+		// Genesect has no evolution, so Divergent mode fields Monty's Darkrai in Melmetal's place
+		divergent ? SPECIES_DARKRAI    : SPECIES_MELMETAL,
 		// UBs not in Kulure
 	};
 
 	bool8 areAllLegendariesCaught = TRUE;
-	for (int i = 0; i < 15; i++)
+	for (u32 i = 0; i < ARRAY_COUNT(legendaries); i++)
 	{
-		if (!GetSetPokedexFlag(SpeciesToNationalPokedexNum(species[i]), FLAG_GET_CAUGHT))
+		if (!GetSetPokedexFlag(SpeciesToNationalPokedexNum(legendaries[i]), FLAG_GET_CAUGHT))
 		{
 			areAllLegendariesCaught = FALSE;
 			break;
@@ -4134,15 +4380,7 @@ void ComputeCompletedGameModifierRequirements()
 	}
 
 	// All TMs and HMs
-	bool8 areAllTMsAndHMsObtained = 
-		AreAllItemsInRangeObtained(ITEM_TM01_WORK_UP, ITEM_TM50_OVERHEAT) &&
-		AreAllItemsInRangeObtained(ITEM_TM51_STEEL_WING, ITEM_TM58_ENDURE) &&
-		AreAllItemsInRangeObtained(ITEM_TM59_BRUTAL_SWING, ITEM_TM100_CONFIDE) &&
-		AreAllItemsInRangeObtained(ITEM_HM01_CUT, ITEM_HM04_STRENGTH) &&
-		CheckBagHasItem(ITEM_HM06_ROCK_SMASH, 1) &&
-		CheckBagHasItem(ITEM_HM08_ROCK_CLIMB, 1);
-
-	if (areAllTMsAndHMsObtained)
+	if (HasEveryTMAndHM())
 		FlagSet(FLAG_GAMEMODIFIER_KEEPHELDCONSUMABLES_UNLOCKED);
 
 	// 3+ Level 25 DexNav Search Levels
@@ -4164,6 +4402,7 @@ void ComputeCompletedGameModifierRequirements()
 	for (int i = 0; i < PARTY_SIZE; i++)
 	{
 		struct Pokemon* mon = &gPlayerParty[i];
+		u16 species = GetMonData(mon, MON_DATA_SPECIES, NULL);
 		u8 ivTotal = 
 			GetMonData(mon, MON_DATA_HP_IV, NULL) +
 			GetMonData(mon, MON_DATA_ATK_IV, NULL) +
@@ -4179,9 +4418,17 @@ void ComputeCompletedGameModifierRequirements()
 		}
 	}
 
-	// Entered HoF in Divergent Mode
-	if (FlagGet(FLAG_DEFEATED_CHAMPION_SELENE) && FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS))
-		FlagSet(FLAG_GAMEMODIFIER_DIVERGNET_TOGGLE_UNLOCKED);
+	// Entered HoF and show 5+ swarm species
+	if (FlagGet(FLAG_SYS_GAME_CLEAR) && VarGet(VAR_SWARM_POKEMON_SHOWN) >= 5)
+		FlagSet(FLAG_GAMEMODIFIER_DIVERGENT_TOGGLE_UNLOCKED);
+
+	// The player has all mega stones for their current mode (in bag, party, or box)
+	if (!FlagGet(FLAG_GAMEMODIFIER_REPEATED_MEGA_EVOLUTION_UNLOCKED) && HasEveryMegaStoneForCurrentMode())
+		FlagSet(FLAG_GAMEMODIFIER_REPEATED_MEGA_EVOLUTION_UNLOCKED);
+
+	// A 20+ win streak at any battle facility, in either format
+	if (HasAchievedFrontierStreak(20))
+		FlagSet(FLAG_GAMEMODIFIER_PERFECT_WILD_IVS_UNLOCKED);
 }
 
 /// @brief Checks if Type:Null or Silvally is in the party. 1 if true, 0 if false
@@ -4264,16 +4511,16 @@ void SetupNewGameTextSpeedAndSound()
 
 void GiveUpTo999RareCandies()
 {
-	u16 candiesToGive = 999 - CountTotalItemQuantityInBag(ITEM_RARE_CANDY);
-	if (candiesToGive > 0)
-		AddBagItem(ITEM_RARE_CANDY, candiesToGive);
+	u16 held = CountTotalItemQuantityInBag(ITEM_RARE_CANDY);
+	if (held < 999)
+		AddBagItem(ITEM_RARE_CANDY, 999 - held);
 }
 
 void GiveUpTo999PokeChips()
 {
-	u16 chipsToGive = 999 - CountTotalItemQuantityInBag(ITEM_POKE_CHIP);
-	if (chipsToGive > 0)
-		AddBagItem(ITEM_POKE_CHIP, chipsToGive);
+	u16 held = CountTotalItemQuantityInBag(ITEM_POKE_CHIP);
+	if (held < 999)
+		AddBagItem(ITEM_POKE_CHIP, 999 - held);
 }
 
 // Swami researcher species table — mirrors gSwarmTable then gDivergentSwarmTable order.
@@ -4296,9 +4543,25 @@ static const u16 sResearchSpecies[] = {
     SPECIES_GEODUDE, SPECIES_GRAVELER, SPECIES_GOLEM,
     SPECIES_SANDSHREW, SPECIES_SANDSLASH,
     SPECIES_VULPIX_A, SPECIES_NINETALES_A,
-    SPECIES_MAROWAK,
+    SPECIES_MEOWTH_A,
     SPECIES_EXEGGUTOR,
     SPECIES_PONYTA_G, SPECIES_RAPIDASH_G,
+    // Appended species following 1.3's release here - saves are storing this as a bit mask
+	// so we can't put them next to their sibling species (ex. Persian-A beside Meowth-A)
+	// Standard swarmers
+	SPECIES_SNEASEL_H, SPECIES_SNEASLER,
+    SPECIES_ZORUA_H, SPECIES_ZOROARK_H,
+    SPECIES_SLIGGOO_H, SPECIES_GOODRA_H,
+    SPECIES_AVALUGG_H,
+    // Divergent swarmers
+    SPECIES_GROWLITHE_H, SPECIES_ARCANINE_H,
+    SPECIES_VOLTORB_H, SPECIES_ELECTRODE_H,
+    SPECIES_QWILFISH_H, SPECIES_OVERQWIL,
+    SPECIES_LILLIGANT_H,
+    // Appended divergent swarmer
+    SPECIES_PERSIAN_A,
+    // Appended — Hisuian starters, reachable in both modes (indices 49-51)
+    SPECIES_TYPHLOSION_H, SPECIES_SAMUROTT_H, SPECIES_DECIDUEYE_H,
 };
 
 // sp1AF — Var8001 = species. Returns: 0=not a research species, 1=already shown, 2=new valid species.

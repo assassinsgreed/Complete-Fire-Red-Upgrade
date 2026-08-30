@@ -3,6 +3,7 @@
 #include "../include/bg.h"
 #include "../include/battle_anim.h"
 #include "../include/dma3.h"
+#include "../include/event_data.h"
 #include "../include/item_icon.h"
 #include "../include/m4a.h"
 #include "../include/menu.h"
@@ -1533,15 +1534,35 @@ void DestroyTypeIcon(struct Sprite* sprite)
 	FreeSpritePaletteByTag(TYPE_ICON_TAG_2);
 }
 
+// gLastUsedBall lives in unsaved RAM, so it's mirrored to a var that survives a reload
+u16 GetPersistedLastUsedBall(void)
+{
+	if (gLastUsedBall != ITEM_NONE)
+		return gLastUsedBall;
+
+	return VarGet(VAR_LAST_USED_BALL);
+}
+
+void SetPersistedLastUsedBall(u16 ball)
+{
+	gLastUsedBall = ball;
+	VarSet(VAR_LAST_USED_BALL, ball);
+}
+
 u16 GetLastUsedBall(void)
 {
-	// #ifdef UNBOUND
-	// if (!FlagGet(FLAG_SANDBOX_MODE)) //All balls have 100% catch rate so no point in this
-	// && FlagGet(FLAG_SHOW_BEST_BALL))
-	return GetBestBallInBag();
-	// #endif
+	u16 lastBall;
 
-	//return gLastUsedBall;
+	if (!FlagGet(FLAG_OPTIONS_LAST_USED_BALL))
+		return GetBestBallInBag();
+
+	lastBall = GetPersistedLastUsedBall();
+	if (lastBall != ITEM_NONE
+	&& GetPocketByItemId(lastBall) == POCKET_POKEBALLS
+	&& CheckBagHasItem(lastBall, 1))
+		return lastBall;
+
+	return ITEM_POKE_BALL; //Never threw one, or ran out of it
 }
 
 bool8 CantLoadLastBallTrigger(void)
@@ -1649,7 +1670,7 @@ bool8 CantLoadTeamPreviewTrigger(void)
 		return TRUE; //No enemy team
 
 	if (gBattleTypeFlags & BATTLE_TYPE_FRONTIER
-	&& BATTLE_FACILITY_NUM == IN_RING_CHALLENGE)
+	&& BATTLE_FACILITY_NUM == IN_BATTLE_OBSERVATORY)
 		return TRUE; //No point in showing here
 
 	if (gBattleTypeFlags & BATTLE_TYPE_LINK)
@@ -1719,7 +1740,6 @@ static bool8 CanShowEnemyMonIcon(u8 monId)
 	if (gBattleTypeFlags & BATTLE_TYPE_FRONTIER)
 	{
 		if (!IsRandomBattleTowerBattle()
-		&& BATTLE_FACILITY_NUM != IN_BATTLE_MINE //No team preview here
 		&& VarGet(VAR_BATTLE_FACILITY_POKE_NUM) >= PARTY_SIZE) //Normal 6v6 Battle
 			return TRUE; //Gain access to team preview
 	}

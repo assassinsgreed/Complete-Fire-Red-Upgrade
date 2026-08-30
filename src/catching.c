@@ -13,7 +13,9 @@
 #include "../include/constants/items.h"
 #include "../include/constants/songs.h"
 
+#include "../include/new/battle_indicators.h"
 #include "../include/new/battle_util.h"
+#include "../include/new/build_pokemon.h"
 #include "../include/new/catching.h"
 #include "../include/new/dns.h"
 #include "../include/new/dynamax.h"
@@ -220,13 +222,14 @@ void atkEF_handleballthrow(void)
 
 	u8 ballType = ItemId_GetType(gLastUsedItem);
 	gNewBS->threwBall = TRUE;
-	if (ballType != BALL_TYPE_QUICK_BALL //Useless to offer to player after initial use
+	if (FlagGet(FLAG_OPTIONS_LAST_USED_BALL) //The player asked for the literal last used ball, Quick Balls included
+	|| ballType != BALL_TYPE_QUICK_BALL //Useless to offer to player after initial use
 	|| gBattleResults.battleTurnCounter > 0 //Unless the player explictly chose it after the first turn
 	#ifdef FLAG_SANDBOX_MODE
 	|| FlagGet(FLAG_SANDBOX_MODE) //Unless all balls have a 100% catch rate
 	#endif
 	)
-		gLastUsedBall = gLastUsedItem;
+		SetPersistedLastUsedBall(gLastUsedItem);
 
 	if (gNewBS->isTrainerBattle) //Doesn't use BATTLE_TYPE_TRAINER because that's removed by the Catch Trainers Pokemon cheat
 	{
@@ -671,6 +674,14 @@ void atkF0_givecaughtmon(void)
 	SetMonData(mon, MON_DATA_PP_BONUSES, &none); //In case it was set for a boss battle
 	FixOverflownPP(mon);
 	#endif
+
+	// Roamers are maxed at capture time to avoid issues with their IVs suddenly changing
+	// (ex. bringing a 31IV to 1 hp then returning to it's original IVs, causing HP to drop below 0)
+	if (FlagGet(FLAG_PERFECT_WILD_IVS) && (gBattleTypeFlags & BATTLE_TYPE_ROAMER))
+	{
+		GiveMonXPerfectIVs(mon, NUM_STATS);
+		CalculateMonStatsNew(mon); // Carries the damage dealt over to the new max HP. Primarily for when they go right into the party
+	}
 
 	if (GiveMonToPlayer(mon) != MON_GIVEN_TO_PARTY)
 	{

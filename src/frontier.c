@@ -2,10 +2,13 @@
 #include "defines_battle.h"
 #include "../include/event_data.h"
 #include "../include/field_weather.h"
+#include "../include/item.h"
 #include "../include/random.h"
 #include "../include/script.h"
 #include "../include/string_util.h"
+#include "../include/constants/event_objects.h"
 #include "../include/constants/items.h"
+#include "../include/constants/trainers.h"
 
 #include "../include/new/battle_start_turn_start.h"
 #include "../include/new/build_pokemon.h"
@@ -22,21 +25,26 @@ frontier.c
 	all supporting and master functions for developing a battle frontier
 
 tables to edit:
-	gBattleTowerTiers
-	gBattleMineFormat1Tiers
-	gBattleMineFormat2Tiers
-	gBattleMineFormat3Tiers
-	gBattleMineFormat4Tiers
-	gBattleMineTiers
-	gBattleCircusTiers
+	gBattleFacilityNames
 	gBattleFrontierTierNames
 	gBattleFrontierFormats
-	sBattleCircusEffectDescriptions
+	sBattleSimEffectDescriptions
 
 */
 
 extern u8* gMaleFrontierNamesTable[];
 extern u8* gFemaleFrontierNamesTable[];
+
+extern const u8 sTrainerName_Rival[]; //Sentinel - swapped for the player's chosen rival name below
+
+extern const u8 gText_BattleTower[];
+extern const u8 gText_BattleSands[];
+extern const u8 gText_BattleQuarry[];
+extern const u8 gText_BattleSim[];
+extern const u8 gText_BattleFactory[];
+extern const u8 gText_BattleObservatory[];
+extern const u8 gText_BattleIsle[];
+extern const u8 gText_BattleMaze[];
 
 extern const u8 gText_SingleBattle[];
 extern const u8 gText_DoubleBattle[];
@@ -71,11 +79,6 @@ extern const u8 gText_SmogonMetronome[];
 extern const u8 gText_SmogonGen7UU[];
 extern const u8 gText_SmogonGen7RU[];
 extern const u8 gText_SmogonGen7NU[];
-extern const u8 gText_BattleMineFormat1[];
-extern const u8 gText_BattleMineFormat2[];
-extern const u8 gText_BattleMineFormat3[];
-extern const u8 gText_BattleMineFormat4[];
-
 extern const u8 gText_On[];
 extern const u8 gText_Off[];
 extern const u8 gText_BeAble[];
@@ -85,115 +88,59 @@ extern const u8 gText_Current[];
 extern const u8 gText_Max[];
 extern const u8 gText_None[];
 
-extern const u8 gText_BattleCircusDescriptionElectricTerrain[];
-extern const u8 gText_BattleCircusDescriptionGrassyTerrain[];
-extern const u8 gText_BattleCircusDescriptionMistyTerrain[];
-extern const u8 gText_BattleCircusDescriptionPsychicTerrain[];
-extern const u8 gText_BattleCircusDescriptionRain[];
-extern const u8 gText_BattleCircusDescriptionSun[];
-extern const u8 gText_BattleCircusDescriptionSandstorm[];
-extern const u8 gText_BattleCircusDescriptionHail[];
-extern const u8 gText_BattleCircusDescriptionDeltaStream[];
-extern const u8 gText_BattleCircusDescriptionTrickRoom[];
-extern const u8 gText_BattleCircusDescriptionMagicRoom[];
-extern const u8 gText_BattleCircusDescriptionWonderRoom[];
-extern const u8 gText_BattleCircusDescriptionGravity[];
-extern const u8 gText_BattleCircusDescriptionMagnetRise[];
-extern const u8 gText_BattleCircusDescriptionFairyLock[];
-extern const u8 gText_BattleCircusDescriptionPixies[];
-extern const u8 gText_BattleCircusDescriptionBadThoughts[];
-extern const u8 gText_BattleCircusDescriptionInverseBattle[];
-extern const u8 gText_BattleCircusDescriptionDynamax[];
-extern const u8 gText_BattleCircusDescriptionTradeMon[];
-extern const u8 gText_BattleCircusDescriptionSafeguard[];
-extern const u8 gText_BattleCircusDescriptionMist[];
-extern const u8 gText_BattleCircusDescriptionSeaOfFire[];
-extern const u8 gText_BattleCircusDescriptionRainbow[];
-extern const u8 gText_BattleCircusDescriptionConfused[];
-extern const u8 gText_BattleCircusDescriptionTaunt[];
-extern const u8 gText_BattleCircusDescriptionTorment[];
-extern const u8 gText_BattleCircusDescriptionHealBlock[];
-extern const u8 gText_BattleCircusDescriptionThroatChop[];
-extern const u8 gText_BattleCircusDescriptionAlwaysCrit[];
-extern const u8 gText_BattleCircusDescriptionNoCrits[];
-extern const u8 gText_BattleCircusDescriptionAbilitySuppression[];
+extern const u8 gText_BattleSimDescriptionElectricTerrain[];
+extern const u8 gText_BattleSimDescriptionGrassyTerrain[];
+extern const u8 gText_BattleSimDescriptionMistyTerrain[];
+extern const u8 gText_BattleSimDescriptionPsychicTerrain[];
+extern const u8 gText_BattleSimDescriptionRain[];
+extern const u8 gText_BattleSimDescriptionSun[];
+extern const u8 gText_BattleSimDescriptionSandstorm[];
+extern const u8 gText_BattleSimDescriptionHail[];
+extern const u8 gText_BattleSimDescriptionDeltaStream[];
+extern const u8 gText_BattleSimDescriptionTrickRoom[];
+extern const u8 gText_BattleSimDescriptionMagicRoom[];
+extern const u8 gText_BattleSimDescriptionWonderRoom[];
+extern const u8 gText_BattleSimDescriptionGravity[];
+extern const u8 gText_BattleSimDescriptionMagnetRise[];
+extern const u8 gText_BattleSimDescriptionFairyLock[];
+extern const u8 gText_BattleSimDescriptionPixies[];
+extern const u8 gText_BattleSimDescriptionBadThoughts[];
+extern const u8 gText_BattleSimDescriptionInverseBattle[];
+extern const u8 gText_BattleSimDescriptionDynamax[];
+extern const u8 gText_BattleSimDescriptionTradeMon[];
+extern const u8 gText_BattleSimDescriptionSafeguard[];
+extern const u8 gText_BattleSimDescriptionMist[];
+extern const u8 gText_BattleSimDescriptionSeaOfFire[];
+extern const u8 gText_BattleSimDescriptionRainbow[];
+extern const u8 gText_BattleSimDescriptionConfused[];
+extern const u8 gText_BattleSimDescriptionTaunt[];
+extern const u8 gText_BattleSimDescriptionTorment[];
+extern const u8 gText_BattleSimDescriptionHealBlock[];
+extern const u8 gText_BattleSimDescriptionThroatChop[];
+extern const u8 gText_BattleSimDescriptionAlwaysCrit[];
+extern const u8 gText_BattleSimDescriptionNoCrits[];
+extern const u8 gText_BattleSimDescriptionAbilitySuppression[];
 
-const u8 gBattleTowerTiers[] =
+// The battle frontier does not use tiers in Amethyst.
+
+const u8* const gBattleFacilityNames[NUM_BATTLE_FACILITIES] =
 {
-	BATTLE_FACILITY_STANDARD,
-	BATTLE_FACILITY_NO_RESTRICTIONS,
-	BATTLE_FACILITY_OU,
-	BATTLE_FACILITY_UBER,
-	BATTLE_FACILITY_LITTLE_CUP,
-	BATTLE_FACILITY_MIDDLE_CUP,
-	BATTLE_FACILITY_MONOTYPE,
-	BATTLE_FACILITY_DYNAMAX_STANDARD,
+	[IN_BATTLE_TOWER] = gText_BattleTower,
+	[IN_BATTLE_SANDS] = gText_BattleSands,
+	[IN_BATTLE_QUARRY] = gText_BattleQuarry,
+	[IN_BATTLE_SIM] = gText_BattleSim,
+	[IN_BATTLE_FACTORY] = gText_BattleFactory,
+	[IN_BATTLE_OBSERVATORY] = gText_BattleObservatory,
+	[IN_BATTLE_ISLE] = gText_BattleIsle,
+	[IN_BATTLE_MAZE] = gText_BattleMaze,
 };
-
-const u8 gNumBattleTowerTiers = NELEMS(gBattleTowerTiers);
-
-const u8 gBattleMineFormat1Tiers[] =
-{
-	BATTLE_FACILITY_OU,
-	BATTLE_FACILITY_CAMOMONS,
-	BATTLE_FACILITY_BENJAMIN_BUTTERFREE,
-};
-
-const u8 gBattleMineFormat2Tiers[] =
-{
-	BATTLE_FACILITY_SCALEMONS,
-	BATTLE_FACILITY_350_CUP,
-	BATTLE_FACILITY_AVERAGE_MONS,
-};
-
-const u8 gBattleMineFormat3Tiers[] =
-{
-	BATTLE_FACILITY_LITTLE_CUP,
-	BATTLE_FACILITY_LC_CAMOMONS,
-};
-
-const u8 gBattleMineFormat4Tiers[] =
-{
-	BATTLE_FACILITY_UBER,
-	BATTLE_FACILITY_UBER_CAMOMONS,
-};
-
-const u8 gBattleMineTiers[] =
-{
-	BATTLE_MINE_FORMAT_1,
-	BATTLE_MINE_FORMAT_2,
-	BATTLE_MINE_FORMAT_3,
-	BATTLE_MINE_FORMAT_4,
-};
-
-const u8 gNumBattleMineTiers = NELEMS(gBattleMineTiers);
-
-const u8 gBattleCircusTiers[] =
-{
-	BATTLE_FACILITY_STANDARD,
-	BATTLE_FACILITY_NO_RESTRICTIONS,
-	BATTLE_FACILITY_MONOTYPE,
-	BATTLE_FACILITY_CAMOMONS,
-	BATTLE_FACILITY_UBER_CAMOMONS,
-	BATTLE_FACILITY_LC_CAMOMONS,
-	BATTLE_FACILITY_MC_CAMOMONS,
-	BATTLE_FACILITY_SCALEMONS,
-	BATTLE_FACILITY_350_CUP,
-	BATTLE_FACILITY_AVERAGE_MONS,
-	BATTLE_FACILITY_BENJAMIN_BUTTERFREE,
-	BATTLE_FACILITY_MEGA_BRAWL,
-	BATTLE_FACILITY_DYNAMAX_STANDARD,
-	BATTLE_FACILITY_NATIONAL_DEX_OU,
-};
-
-const u8 gNumBattleCircusTiers = NELEMS(gBattleCircusTiers);
 
 const u8* const gBattleFrontierTierNames[NUM_TIERS] =
 {
 	[BATTLE_FACILITY_STANDARD] = gText_BattleTowerStandard,
 	[BATTLE_FACILITY_NO_RESTRICTIONS] = gText_NoRestrictions,
 	[BATTLE_FACILITY_OU] = gText_SmogonGen7OU,
-	[BATTLE_FACILITY_UBER] gText_SmogonGen7Uber,
+	[BATTLE_FACILITY_UBER] = gText_SmogonGen7Uber,
 	[BATTLE_FACILITY_LITTLE_CUP] = gText_SmogonLittleCup,
 	[BATTLE_FACILITY_MIDDLE_CUP] = gText_MiddleCup,
 	[BATTLE_FACILITY_MONOTYPE] = gText_SmogonMonotype,
@@ -210,12 +157,8 @@ const u8* const gBattleFrontierTierNames[NUM_TIERS] =
 	[BATTLE_FACILITY_NATIONAL_DEX_OU] = gText_NationalDexOU,
 	[BATTLE_FACILITY_METRONOME] = gText_SmogonMetronome,
 	[BATTLE_FACILITY_UU] = gText_SmogonGen7UU,
-	[BATTLE_FACILITY_NU] = gText_SmogonGen7RU,
-	[BATTLE_FACILITY_RU] = gText_SmogonGen7NU,
-	[BATTLE_MINE_FORMAT_1] = gText_BattleMineFormat1,
-	[BATTLE_MINE_FORMAT_2] = gText_BattleMineFormat2,
-	[BATTLE_MINE_FORMAT_3] = gText_BattleMineFormat3,
-	[BATTLE_MINE_FORMAT_4] = gText_BattleMineFormat4,
+	[BATTLE_FACILITY_RU] = gText_SmogonGen7RU,
+	[BATTLE_FACILITY_NU] = gText_SmogonGen7NU,
 };
 
 const u8* const gBattleFrontierFormats[NUM_TOWER_BATTLE_TYPES] =
@@ -229,47 +172,65 @@ const u8* const gBattleFrontierFormats[NUM_TOWER_BATTLE_TYPES] =
 	[BATTLE_FACILITY_MULTI_RANDOM] = gText_RandomMultiBattle,
 };
 
-const u8* const sBattleCircusEffectDescriptions[] =
+const u8* const sBattleSimEffectDescriptions[] =
 {
-	gText_BattleCircusDescriptionElectricTerrain,
-	gText_BattleCircusDescriptionGrassyTerrain,
-	gText_BattleCircusDescriptionMistyTerrain,
-	gText_BattleCircusDescriptionPsychicTerrain,
-	gText_BattleCircusDescriptionRain,
-	gText_BattleCircusDescriptionSun,
-	gText_BattleCircusDescriptionSandstorm,
-	gText_BattleCircusDescriptionHail,
-	gText_BattleCircusDescriptionDeltaStream,
-	gText_BattleCircusDescriptionTrickRoom,
-	gText_BattleCircusDescriptionMagicRoom,
-	gText_BattleCircusDescriptionWonderRoom,
-	gText_BattleCircusDescriptionGravity,
-	gText_BattleCircusDescriptionMagnetRise,
-	gText_BattleCircusDescriptionFairyLock,
-	gText_BattleCircusDescriptionPixies,
-	gText_BattleCircusDescriptionBadThoughts,
-	gText_BattleCircusDescriptionInverseBattle,
-	gText_BattleCircusDescriptionDynamax,
-	gText_BattleCircusDescriptionTradeMon,
+	gText_BattleSimDescriptionElectricTerrain,
+	gText_BattleSimDescriptionGrassyTerrain,
+	gText_BattleSimDescriptionMistyTerrain,
+	gText_BattleSimDescriptionPsychicTerrain,
+	gText_BattleSimDescriptionRain,
+	gText_BattleSimDescriptionSun,
+	gText_BattleSimDescriptionSandstorm,
+	gText_BattleSimDescriptionHail,
+	gText_BattleSimDescriptionDeltaStream,
+	gText_BattleSimDescriptionTrickRoom,
+	gText_BattleSimDescriptionMagicRoom,
+	gText_BattleSimDescriptionWonderRoom,
+	gText_BattleSimDescriptionGravity,
+	gText_BattleSimDescriptionMagnetRise,
+	gText_BattleSimDescriptionFairyLock,
+	gText_BattleSimDescriptionPixies,
+	gText_BattleSimDescriptionBadThoughts,
+	gText_BattleSimDescriptionInverseBattle,
+	gText_BattleSimDescriptionDynamax,
+	gText_BattleSimDescriptionTradeMon,
 	//Side Effects
-	gText_BattleCircusDescriptionSafeguard,
-	gText_BattleCircusDescriptionMist,
-	gText_BattleCircusDescriptionSeaOfFire,
-	gText_BattleCircusDescriptionRainbow,
+	gText_BattleSimDescriptionSafeguard,
+	gText_BattleSimDescriptionMist,
+	gText_BattleSimDescriptionSeaOfFire,
+	gText_BattleSimDescriptionRainbow,
 	//Personal Effects
-	gText_BattleCircusDescriptionConfused,
-	gText_BattleCircusDescriptionTaunt,
-	gText_BattleCircusDescriptionTorment,
-	gText_BattleCircusDescriptionHealBlock,
-	gText_BattleCircusDescriptionThroatChop,
-	gText_BattleCircusDescriptionAlwaysCrit,
-	gText_BattleCircusDescriptionNoCrits,
-	gText_BattleCircusDescriptionAbilitySuppression,
+	gText_BattleSimDescriptionConfused,
+	gText_BattleSimDescriptionTaunt,
+	gText_BattleSimDescriptionTorment,
+	gText_BattleSimDescriptionHealBlock,
+	gText_BattleSimDescriptionThroatChop,
+	gText_BattleSimDescriptionAlwaysCrit,
+	gText_BattleSimDescriptionNoCrits,
+	gText_BattleSimDescriptionAbilitySuppression,
 };
 
-//This file's functions:
-static u8 AdjustLevelForTier(u8 level, u8 tier);
-static void LoadProperStreakData(u8* facilityNum, u8* currentOrMax, u8* battleStyle, u8* tier, u8* partySize, u8* level);
+
+// The trainer table holds Male Casey, but needs to be flipped based on player gender
+static bool8 UseFemaleCaseyFrontierBrain(u16 brainId)
+{
+	return gFrontierBrains[brainId].owNum == EVENT_OBJ_GFX_CASEY_M && gSaveBlock2->playerGender == MALE;
+}
+
+u16 GetFrontierBrainOwNum(u16 brainId)
+{
+	return UseFemaleCaseyFrontierBrain(brainId) ? EVENT_OBJ_GFX_CASEY_F : gFrontierBrains[brainId].owNum;
+}
+
+u8 GetFrontierBrainFrontSpriteId(u16 brainId)
+{
+	return UseFemaleCaseyFrontierBrain(brainId) ? TRAINER_PIC_CASEY_F : gFrontierBrains[brainId].trainerSprite;
+}
+
+u8 GetFrontierBrainGender(u16 brainId)
+{
+	return UseFemaleCaseyFrontierBrain(brainId) ? BATTLE_FACILITY_FEMALE : gFrontierBrains[brainId].gender;
+}
 
 u8 GetFrontierTrainerClassId(u16 trainerId, u8 battlerNum)
 {
@@ -370,6 +331,11 @@ const u8* GetFrontierTrainerName(u16 trainerId, u8 battlerNum)
 			break;
 	}
 
+	// Any trainer with this name will have it replaced with the player-given rival name.
+	// Realistically, this is only used for the actual rival.
+	if (name == sTrainerName_Rival)
+		name = GetExpandedPlaceholder(ExpandPlaceholder_RivalName);
+
 	return ReturnEmptyStringIfNull(name);
 }
 
@@ -437,7 +403,7 @@ u8 GetFrontierTrainerFrontSpriteId(u16 trainerId, u8 battlerNum)
 		case BATTLE_TOWER_SPECIAL_TID:
 			return gSpecialTowerTrainers[VarGet(VAR_FACILITY_TRAINER_ID + battlerNum)].trainerSprite;
 		case FRONTIER_BRAIN_TID:
-			return gFrontierBrains[VarGet(VAR_FACILITY_TRAINER_ID + battlerNum)].trainerSprite;
+			return GetFrontierBrainFrontSpriteId(VarGet(VAR_FACILITY_TRAINER_ID + battlerNum));
 		default:
 			return GET_TRAINER(trainerId).trainerPic;
 	}
@@ -523,19 +489,15 @@ bool8 RayquazaCanMegaEvolveInFrontierBattle(void)
 
 bool8 DynamaxAllowedInTier(u8 tier)
 {
-	switch (tier) {
-		case BATTLE_FACILITY_NO_RESTRICTIONS:
-		case BATTLE_FACILITY_DYNAMAX_STANDARD:
-		case BATTLE_FACILITY_NATIONAL_DEX_OU:
-			return TRUE;
-	}
-
 	return FALSE;
 }
 
-u8 GetBattleFacilityLevel(u8 tier)
+// Everything fights at FRONTIER_LEVEL.
+u8 GetBattleFacilityLevel(unusedArg u8 tier)
 {
-	return AdjustLevelForTier(VarGet(VAR_BATTLE_FACILITY_POKE_LEVEL), tier);
+	u8 level = VarGet(VAR_BATTLE_FACILITY_POKE_LEVEL);
+
+	return MathMax(1, MathMin(level, MAX_LEVEL));
 }
 
 u8 GetHiddenPowerSafeCamomonMoveType(struct Pokemon* mon, u16 move)
@@ -665,6 +627,13 @@ bool8 InBattleSands(void)
 	return (gBattleTypeFlags & BATTLE_TYPE_BATTLE_SANDS) != 0;
 }
 
+bool8 IsBattleIsleBattle(void)
+{
+	return (gBattleTypeFlags & BATTLE_TYPE_BATTLE_TOWER)
+		&& FlagGet(FLAG_BATTLE_FACILITY)
+		&& BATTLE_FACILITY_NUM == IN_BATTLE_ISLE;
+}
+
 bool8 IsAIControlledBattle(void)
 {
 	return InBattleSands() || (gBattleTypeFlags & BATTLE_TYPE_MOCK_BATTLE) != 0;
@@ -674,6 +643,22 @@ bool8 IsStandardTier(u8 tier)
 {
 	return tier == BATTLE_FACILITY_STANDARD
 		|| tier == BATTLE_FACILITY_DYNAMAX_STANDARD;
+}
+
+// For Amethyst, the streak always ramps up:
+// 	- Legendaries only if the player has them
+//  - Megas at streak 20+
+//  - Z-Crystals at any streak
+//  - BST based on streak progress:
+//		- 520 under 10
+//		- 540 under 20
+//		- 570 under 30
+//		- 570 + dupes under 50
+//		- no BST cap at 50+
+bool8 StreakRampAppliesInTier(u8 tier)
+{
+	return IsStandardTier(tier)
+		|| tier == BATTLE_FACILITY_NO_RESTRICTIONS;
 }
 
 bool8 IsCamomonsTier(u8 tier)
@@ -687,8 +672,7 @@ bool8 IsCamomonsTier(u8 tier)
 bool8 IsLittleCupTier(u8 tier)
 {
 	return tier == BATTLE_FACILITY_LITTLE_CUP
-		|| tier == BATTLE_FACILITY_LC_CAMOMONS
-		|| tier == BATTLE_MINE_FORMAT_3;
+		|| tier == BATTLE_FACILITY_LC_CAMOMONS;
 }
 
 bool8 IsMiddleCupTier(u8 tier)
@@ -743,38 +727,20 @@ bool8 AreMegasZMovesBannedInTier(u8 tier)
 
 bool8 IsMegaZMoveBannedBattle(void)
 {
-	if (gBattleTypeFlags & BATTLE_TYPE_RING_CHALLENGE
-	&& gBattleTypeFlags & BATTLE_TYPE_BATTLE_TOWER) //Only in Frontier - works fine in regular Gym Battles
-		return TRUE;
-
 	return gBattleTypeFlags & BATTLE_TYPE_TRAINER //Excludes Raid Battles
 	&& FlagGet(FLAG_BATTLE_FACILITY)
 	&& (AreMegasZMovesBannedInTier(VarGet(VAR_BATTLE_FACILITY_TIER))
-	 || (gBattleTypeFlags & BATTLE_TYPE_BATTLE_CIRCUS && gBattleCircusFlags & BATTLE_CIRCUS_DYNAMAX));
+	 || BATTLE_FACILITY_NUM == IN_BATTLE_ISLE // Mega Stones and Z-Crystals are held items like any other here
+	 || BATTLE_FACILITY_NUM == IN_BATTLE_OBSERVATORY // One Pokemon a side is lopsided enough without them
+	 || (gBattleTypeFlags & BATTLE_TYPE_BATTLE_SIM && gBattleSimFlags & BATTLE_SIM_DYNAMAX));
 }
 
-bool8 IsMoveBannedInRingChallenge(u16 move, u8 bank)
+// A Battle Observatory battle, which is fought one Pokemon a side after both trainers reveal their team.
+bool8 IsBattleObservatoryBattle(void)
 {
-	if (FlagGet(FLAG_BATTLE_FACILITY) && gBattleMoves[move].effect == EFFECT_PERISH_SONG)
-		return TRUE;
-
-	u8 moveType = GetMoveTypeSpecial(bank, move);
-
-	return gNewBS->ringChallengeBannedTypes[0] == moveType
-		|| gNewBS->ringChallengeBannedTypes[1] == moveType
-		|| gNewBS->ringChallengeBannedTypes[2] == moveType;
-}
-
-bool8 IsMoveBannedInRingChallengeByMon(u16 move, struct Pokemon* mon)
-{
-	if (FlagGet(FLAG_BATTLE_FACILITY) && gBattleMoves[move].effect == EFFECT_PERISH_SONG)
-		return TRUE;
-
-	u8 moveType = GetMonMoveTypeSpecial(mon, move);
-
-	return gNewBS->ringChallengeBannedTypes[0] == moveType
-		|| gNewBS->ringChallengeBannedTypes[1] == moveType
-		|| gNewBS->ringChallengeBannedTypes[2] == moveType;
+	return (gBattleTypeFlags & BATTLE_TYPE_BATTLE_TOWER)
+		&& FlagGet(FLAG_BATTLE_FACILITY)
+		&& BATTLE_FACILITY_NUM == IN_BATTLE_OBSERVATORY;
 }
 
 #define LOAD_TIER_CHECKING_ABILITY										\
@@ -818,23 +784,23 @@ bool8 PokemonTierBan(const u16 species, const u16 item, const struct BattleTower
 
 			if (gSpecialSpeciesFlags[species].battleTowerStandardBan
 			||  CheckTableForItem(item, gBattleTowerStandard_ItemBanList)
-			|| (ability == ABILITY_BATTLEBOND && tier != BATTLE_FACILITY_MEGA_BRAWL && BATTLE_FACILITY_NUM != IN_RING_CHALLENGE)) //Battle Bond is banned in Standard
+			|| (ability == ABILITY_BATTLEBOND && tier != BATTLE_FACILITY_MEGA_BRAWL && BATTLE_FACILITY_NUM != IN_BATTLE_OBSERVATORY)) //Battle Bond is banned in Standard
 				return TRUE;
 
-			if (BATTLE_FACILITY_NUM == IN_RING_CHALLENGE) //1v1
+			if (BATTLE_FACILITY_NUM == IN_BATTLE_OBSERVATORY) //1v1
 			{
 				#ifdef UNBOUND
 				if (species == SPECIES_REGIGIGAS && ability == ABILITY_STALL && !FlagGet(FLAG_ABILITY_RANDOMIZER)) //Too OP 1v1
 					return TRUE;
 				#endif
 
-				if (item == ITEM_FOCUS_SASH) //No Focus Sash in Ring Challenge
+				if (item == ITEM_FOCUS_SASH) //No Focus Sash in a 1v1
 					return TRUE;
 
 				//Check Banned Moves
 				for (i = 0; i < MAX_MON_MOVES; ++i)
 				{
-					if (CheckTableForMove(moveLoc[i], gRingChallenge_MoveBanList))
+					if (CheckTableForMove(moveLoc[i], gBattleObservatory_MoveBanList))
 						return TRUE;
 				}
 			}
@@ -1245,7 +1211,7 @@ bool8 IsSpeciesBannedInTier(u16 species, u16 tier, u16 battleFormat)
 			if (gSpecialSpeciesFlags[species].battleTowerStandardBan)
 				return TRUE;
 
-			return species == SPECIES_ASHGRENINJA && tier != BATTLE_FACILITY_MEGA_BRAWL && BATTLE_FACILITY_NUM != IN_RING_CHALLENGE;
+			return species == SPECIES_ASHGRENINJA && tier != BATTLE_FACILITY_MEGA_BRAWL && BATTLE_FACILITY_NUM != IN_BATTLE_OBSERVATORY;
 
 		case BATTLE_FACILITY_OU:
 		case BATTLE_FACILITY_NATIONAL_DEX_OU:
@@ -1301,25 +1267,6 @@ bool8 IsSpeciesBannedInTier(u16 species, u16 tier, u16 battleFormat)
 			if (gSpecialSpeciesFlags[species].smogonBenjaminButterfreeBan)
 				return TRUE;
 			goto STANDARD_OU_CHECK;
-
-		case BATTLE_MINE_FORMAT_1:
-			return IsSpeciesBannedInTier(species, BATTLE_FACILITY_OU, BATTLE_FACILITY_SINGLE)
-				|| IsSpeciesBannedInTier(species, BATTLE_FACILITY_OU, BATTLE_FACILITY_DOUBLE) //OU Doubles has its own ban list
-				|| IsSpeciesBannedInTier(species, BATTLE_FACILITY_CAMOMONS, battleFormat)
-				|| IsSpeciesBannedInTier(species, BATTLE_FACILITY_BENJAMIN_BUTTERFREE, battleFormat);
-
-		case BATTLE_MINE_FORMAT_2:
-			return IsSpeciesBannedInTier(species, BATTLE_FACILITY_SCALEMONS, battleFormat)
-				|| IsSpeciesBannedInTier(species, BATTLE_FACILITY_350_CUP, battleFormat)
-				|| IsSpeciesBannedInTier(species, BATTLE_FACILITY_AVERAGE_MONS, battleFormat);
-
-		case BATTLE_MINE_FORMAT_3:
-			return IsSpeciesBannedInTier(species, BATTLE_FACILITY_LITTLE_CUP, battleFormat)
-				|| IsSpeciesBannedInTier(species, BATTLE_FACILITY_LC_CAMOMONS, battleFormat);
-
-		case BATTLE_MINE_FORMAT_4:
-			return IsSpeciesBannedInTier(species, BATTLE_FACILITY_UBER, battleFormat)
-				|| IsSpeciesBannedInTier(species, BATTLE_FACILITY_UBER_CAMOMONS, battleFormat);
 	}
 
 	return FALSE;
@@ -1383,7 +1330,7 @@ u16 sp052_GenerateFacilityTrainer(void)
 		id = Var8002;
 		VarSet(VAR_FACILITY_TRAINER_ID + battler, id);
 		StringCopy(gStringVar1, GetFrontierTrainerName(FRONTIER_BRAIN_TID, battler));
-		return gFrontierBrains[id].owNum;
+		return GetFrontierBrainOwNum(id);
 	}
 }
 
@@ -1413,7 +1360,7 @@ void sp053_LoadFrontierIntroBattleMessage(void)
 	else
 	{
 		text = gFrontierBrains[id].preBattleText;
-		gender = gFrontierBrains[id].gender;
+		gender = GetFrontierBrainGender(id);
 	}
 
 	gLoadPointer = text;
@@ -1431,406 +1378,123 @@ void sp053_LoadFrontierIntroBattleMessage(void)
 	}
 }
 
-//u16 Streaks[BATTLE_STYLE (4)][TIER (6)][PARTY_SIZE (2)][LEVEL (4)][CURRENT_OR_MAX (2)]
+u8 GetCurrentFrontierFormat(void)
+{
+	return IsFrontierSingles(VarGet(VAR_BATTLE_FACILITY_BATTLE_TYPE)) ? FRONTIER_FORMAT_SINGLES : FRONTIER_FORMAT_DOUBLES;
+}
 
-//@Details: Gets the streak for the requested Battle Tower format.
+u16 GetFrontierStreak(u8 facility, u8 format, u8 currentOrMax)
+{
+	if (facility >= NUM_BATTLE_FACILITIES)
+		facility = IN_BATTLE_TOWER;
+
+	return gFrontierStreaks[facility][MathMin(format, FRONTIER_FORMAT_DOUBLES)][MathMin(currentOrMax, MAX_STREAK)];
+}
+
+void SetFrontierStreak(u8 facility, u8 format, u8 currentOrMax, u16 value)
+{
+	if (facility >= NUM_BATTLE_FACILITIES)
+		return;
+
+	gFrontierStreaks[facility][MathMin(format, FRONTIER_FORMAT_DOUBLES)][MathMin(currentOrMax, MAX_STREAK)] = value;
+}
+
+//@Details: Gets the streak for a Battle Frontier facility.
 //@Input:
 //		Var8000: 0 = Current Streak
 //				 1 = Max Streak
-//		Var8001: 0xFFFF = Load Style From Var
-//				 0+ = Given Style
-//		Var8002: 0xFFFF = Load Tier From Var
-//				 0+ = Given Tier
-//		Var8003: 1 - 6 = Party Size (Options are split into 6 v 6 and NOT 6 v 6)
-//				 0xFFFF = Load Party Size From Var
-//		Var8004: 0 = Load level from var
-//				 1+ = Given Level
+//		Var8001: 0xFFFF = Use the facility the player is currently in
+//				 0+ = Given facility
+//		Var8002: 0xFFFF = Use the format currently selected
+//				 0 = Singles, 1 = Doubles
 u16 sp054_GetBattleFacilityStreak(void)
 {
-	return GetBattleTowerStreak(Var8000, Var8001, Var8002, Var8003, Var8004);
+	u8 facility = (Var8001 == 0xFFFF) ? BATTLE_FACILITY_NUM : Var8001;
+	u8 format = (Var8002 == 0xFFFF) ? GetCurrentFrontierFormat() : Var8002;
+
+	return GetFrontierStreak(facility, format, Var8000);
 }
 
-u16 GetCurrentBattleTowerStreak(void)
+// Reads the max streaks rather than the current ones, so reaching the target once is enough - losing the streak afterwards doesn't take it back.
+bool8 HasAchievedFrontierStreak(u16 target)
 {
-	return GetBattleTowerStreak(CURR_STREAK, 0xFFFF, 0xFFFF, 0xFFFF, 0);
-}
-
-u16 GetBattleMineStreak(u8 type, u8 tier)
-{
-	return GetBattleTowerStreak(type, 0xFFFF, tier, 0xFFFF, 0);
-}
-
-u16 GetRingChallengeSteak(u8 type)
-{
-	return GetBattleTowerStreak(type, 0xFFFF, 0xFFFF, 0xFFFF, 0);
-}
-
-u16 GetMaxBattleTowerStreakForTier(u8 tier)
-{
-	u8 battleType, level, partySize;
-	u16 streak = 0;
-	u16 max = 0;
-
-	for (battleType = 0; battleType < NUM_TOWER_BATTLE_TYPES; ++battleType)
+	for (u32 facility = 0; facility < NUM_BATTLE_FACILITIES; ++facility)
 	{
-		for (level = 50; level <= 100; level += 50)
+		for (u32 format = 0; format < NUM_FRONTIER_FORMATS; ++format)
 		{
-			for (partySize = 3; partySize <= 6; partySize += 3) //3 represents one record, 6 represents another
-			{
-				streak = GetBattleTowerStreak(MAX_STREAK, battleType, tier, partySize, level);
-
-				if (streak > max)
-					max = streak;
-			}
+			if (GetFrontierStreak(facility, format, MAX_STREAK) >= target)
+				return TRUE;
 		}
 	}
 
-	return max;
+	return FALSE;
 }
 
-static u8 AdjustLevelForTier(u8 level, u8 tier)
+// Stores whether the player has ever reached a streak of Var8000 at any facility in LASTRESULT
+void StoreHasAchievedFrontierStreak(void)
 {
-	if (IsLittleCupTier(tier))
-		return 5;
-
-	if (IS_SINGLE_100_RECORD_TIER(tier))
-		return 100;
-
-	return level;
+	Var800D = HasAchievedFrontierStreak(Var8000);
 }
 
-u16 GetBattleTowerStreak(u8 currentOrMax, u16 inputBattleStyle, u16 inputTier, u16 partySize, u8 level)
+u16 GetCurrentBattleFacilityStreak(void)
 {
-	u8 facilityNum = BATTLE_FACILITY_NUM;
-	u8 battleStyle = (inputBattleStyle == 0xFFFF) ? VarGet(VAR_BATTLE_FACILITY_BATTLE_TYPE) : inputBattleStyle;
-	u8 tier = (inputTier == 0xFFFF) ? VarGet(VAR_BATTLE_FACILITY_TIER) : inputTier;
-	u8 size = (partySize == 0xFFFF) ? VarGet(VAR_BATTLE_FACILITY_POKE_NUM) : partySize;
-	level = (level == 0) ? VarGet(VAR_BATTLE_FACILITY_POKE_LEVEL) : level;
-	level = AdjustLevelForTier(level, tier);
-
-	if (tier == BATTLE_FACILITY_METRONOME)
-		return 0; //No streak is kept for Metronome battles
-
-	LoadProperStreakData(&facilityNum, &currentOrMax, &battleStyle, &tier, &size, &level);
-
-	switch (facilityNum) {
-		case IN_BATTLE_TOWER:
-		default:
-			return gBattleTowerStreaks[battleStyle][tier][size][level][currentOrMax];
-		case IN_BATTLE_SANDS:
-			return gBattleSandsStreaks[currentOrMax].streakLength;
-		case IN_BATTLE_MINE:
-			return gBattleMineStreaks[tier][currentOrMax];
-		case IN_BATTLE_CIRCUS:
-			return gBattleCircusStreaks[tier][battleStyle][size][level][currentOrMax];
-		case IN_RING_CHALLENGE:
-			return gRingChallengeStreaks[currentOrMax].streakLength;
-	}
+	return GetFrontierStreak(BATTLE_FACILITY_NUM, GetCurrentFrontierFormat(), CURR_STREAK);
 }
 
-//@Details: Updates the streak for the current Battle Tower format.
+//@Details: Updates the streak for the facility and format the player is currently in.
 //@Input:
 //		Var8000: 0 = Increment by 1
 //				 1 = Reset
 void sp055_UpdateBattleFacilityStreak(void)
 {
-	u8 facilityNum = BATTLE_FACILITY_NUM;
-	u8 dummy = 0;
-	u8 battleStyle = VarGet(VAR_BATTLE_FACILITY_BATTLE_TYPE);
-	u8 tier = VarGet(VAR_BATTLE_FACILITY_TIER);
-	u8 partySize = VarGet(VAR_BATTLE_FACILITY_POKE_NUM);
-	u8 level = AdjustLevelForTier(VarGet(VAR_BATTLE_FACILITY_POKE_LEVEL), tier);
+	u8 facility = BATTLE_FACILITY_NUM;
+	u8 format = GetCurrentFrontierFormat();
 
-	if (tier == BATTLE_FACILITY_METRONOME)
-		return; //This tier has no streaks
+	if (facility >= NUM_BATTLE_FACILITIES)
+		return;
 
-	LoadProperStreakData(&facilityNum, &dummy, &battleStyle, &tier, &partySize, &level);
-
-	u16* currentStreak, *maxStreak;
-	bool8 inBattleSands = FALSE;
-	bool8 inRingChallenge = FALSE;
-
-	switch (facilityNum) {
-		case IN_BATTLE_TOWER:
-		default:
-			currentStreak = &gBattleTowerStreaks[battleStyle][tier][partySize][level][CURR_STREAK]; //Current Streak
-			maxStreak = &gBattleTowerStreaks[battleStyle][tier][partySize][level][MAX_STREAK]; //Max Streak
-			break;
-		case IN_BATTLE_SANDS:
-			currentStreak = &gBattleSandsStreaks[CURR_STREAK].streakLength;
-			maxStreak = &gBattleSandsStreaks[MAX_STREAK].streakLength;
-			inBattleSands = TRUE;
-			break;
-		case IN_BATTLE_MINE:
-			currentStreak = &gBattleMineStreaks[tier][CURR_STREAK];
-			maxStreak = &gBattleMineStreaks[tier][MAX_STREAK];
-			break;
-		case IN_BATTLE_CIRCUS:
-			currentStreak = &gBattleCircusStreaks[tier][battleStyle][partySize][level][CURR_STREAK]; //Current Streak
-			maxStreak = &gBattleCircusStreaks[tier][battleStyle][partySize][level][MAX_STREAK]; //Max Streak
-			break;
-		case IN_RING_CHALLENGE:
-			currentStreak = &gRingChallengeStreaks[CURR_STREAK].streakLength;
-			maxStreak = &gRingChallengeStreaks[MAX_STREAK].streakLength;
-			inRingChallenge = TRUE;
-			break;
-	}
+	u16* currentStreak = &gFrontierStreaks[facility][format][CURR_STREAK];
+	u16* maxStreak = &gFrontierStreaks[facility][format][MAX_STREAK];
 
 	switch (Var8000) {
 		case 0: //Increment by 1
 			if (*currentStreak < 0xFFFF) //Prevent overflow
-			{
 				*currentStreak += 1;
-	
-				if (inRingChallenge)
-				{
-					gRingChallengeStreaks[CURR_STREAK].species1 = GetMonData(&gPlayerParty[0], MON_DATA_SPECIES, NULL);
-					gRingChallengeStreaks[CURR_STREAK].species2 = GetMonData(&gPlayerParty[1], MON_DATA_SPECIES, NULL);
-					gRingChallengeStreaks[CURR_STREAK].species3 = GetMonData(&gPlayerParty[2], MON_DATA_SPECIES, NULL);
-				}
-			}
 
 			if (*maxStreak < *currentStreak)
 			{
 				*maxStreak = *currentStreak;
 				if (GetGameStat(GAME_STAT_BATTLE_FACILITY_BEST_STREAK) < *currentStreak)
 					SetGameStat(GAME_STAT_BATTLE_FACILITY_BEST_STREAK, *currentStreak);
-
-				if (inBattleSands)
-				{
-					gBattleSandsStreaks[MAX_STREAK].tier = VarGet(VAR_BATTLE_FACILITY_TIER); //Actual Tier
-					gBattleSandsStreaks[MAX_STREAK].format = battleStyle;
-					gBattleSandsStreaks[MAX_STREAK].level = level;
-					#ifdef FLAG_INVERSE
-					gBattleSandsStreaks[MAX_STREAK].inverse = FlagGet(FLAG_INVERSE);
-					#endif
-					gBattleSandsStreaks[MAX_STREAK].species1 = GetMonData(&gPlayerParty[0], MON_DATA_SPECIES, NULL);
-					gBattleSandsStreaks[MAX_STREAK].species2 = GetMonData(&gPlayerParty[1], MON_DATA_SPECIES, NULL);
-					gBattleSandsStreaks[MAX_STREAK].species3 = GetMonData(&gPlayerParty[2], MON_DATA_SPECIES, NULL);
-				}
-				else if (inRingChallenge)
-				{
-					gRingChallengeStreaks[MAX_STREAK].species1 = GetMonData(&gPlayerParty[0], MON_DATA_SPECIES, NULL);
-					gRingChallengeStreaks[MAX_STREAK].species2 = GetMonData(&gPlayerParty[1], MON_DATA_SPECIES, NULL);
-					gRingChallengeStreaks[MAX_STREAK].species3 = GetMonData(&gPlayerParty[2], MON_DATA_SPECIES, NULL);
-				}
 			}
 			break;
 
 		case 1: //Reset
-			*currentStreak = 0; //Rest current streak
-
-			if (inBattleSands)
-			{
-				gBattleSandsStreaks[CURR_STREAK].tier = VarGet(VAR_BATTLE_FACILITY_TIER); //Actual Tier
-				gBattleSandsStreaks[CURR_STREAK].format = battleStyle;
-				gBattleSandsStreaks[CURR_STREAK].level = level;
-				#ifdef FLAG_INVERSE
-				gBattleSandsStreaks[CURR_STREAK].inverse = FlagGet(FLAG_INVERSE);
-				#endif
-				gBattleSandsStreaks[CURR_STREAK].species1 = GetMonData(&gPlayerParty[0], MON_DATA_SPECIES, NULL);
-				gBattleSandsStreaks[CURR_STREAK].species2 = GetMonData(&gPlayerParty[1], MON_DATA_SPECIES, NULL);
-				gBattleSandsStreaks[CURR_STREAK].species3 = GetMonData(&gPlayerParty[2], MON_DATA_SPECIES, NULL);
-			}
-			else if (inRingChallenge)
-			{
-				gRingChallengeStreaks[CURR_STREAK].species1 = SPECIES_NONE;
-				gRingChallengeStreaks[CURR_STREAK].species2 = SPECIES_NONE;
-				gRingChallengeStreaks[CURR_STREAK].species3 = SPECIES_NONE;
-			}
+			*currentStreak = 0;
 			break;
 	}
 }
 
-//@Details: Determines the number of battle points to give for
-//			the current Battle Tower format.
-//@Returns: The number of battle points to give.
-u16 sp056_DetermineBattlePointsToGive(void)
+//@Details: Determines how many PokeChips to award for the win that just happened (BP is not a currency in Amethyst)
+//@Returns: The number of PokeChips to give, trimmed to what the player can still hold.
+u16 sp056_DetermineChipsToGive(void)
 {
 	u16 toGive;
-	u16 streakLength = GetCurrentBattleTowerStreak();
-	u8 tier = VarGet(VAR_BATTLE_FACILITY_TIER);
+	u16 streakLength = GetCurrentBattleFacilityStreak();
+	u16 held = CountTotalItemQuantityInBag(ITEM_POKE_CHIP);
 
-	if (tier == BATTLE_FACILITY_METRONOME)
-		return 10; //Metronome battles always give 10 BP due to their sheer length
-
-	if (streakLength <= 10)
-	{
-		if (tier == BATTLE_FACILITY_STANDARD || tier == BATTLE_FACILITY_DYNAMAX_STANDARD)
-			toGive = 2;
-		else
-			toGive = 3;
-	}
-	else if (streakLength <= 19)
-		toGive = 3;
-	else if (streakLength == 20)
-	{
-		toGive = 3; //Just a special trainer
-
-		switch (BATTLE_FACILITY_NUM) {
-			case IN_BATTLE_TOWER:
-				if (tier != BATTLE_FACILITY_MONOTYPE)
-					toGive = 20; //Battle against frontier brain
-				break;
-
-			case IN_BATTLE_SANDS:
-				if (tier != BATTLE_FACILITY_MONOTYPE)
-					toGive = 20; //Battle against frontier brain
-				break;
-
-			case IN_BATTLE_MINE:
-				toGive = 20; //Always battle against frontier brain
-				break;
-
-			case IN_BATTLE_CIRCUS:
-				if (tier != BATTLE_FACILITY_MONOTYPE)
-					toGive = 20; //Battle against frontier brain
-				break;
-
-			case IN_RING_CHALLENGE:
-				toGive = 20; //Always battle against frontier brain
-				break;
-		}
-	}
-	else if (streakLength <= 30)
-		toGive = 4;
-	else if (streakLength <= 40)
-		toGive = 5;
-	else if (streakLength <= 49)
-		toGive = 6;
-	else if (streakLength == 50)
-	{
-		toGive = 6; //Just a special trainer
-
-		switch (BATTLE_FACILITY_NUM) {
-			case IN_BATTLE_TOWER:
-				if (tier != BATTLE_FACILITY_MONOTYPE)
-					toGive = 50; //Battle against frontier brain
-				break;
-
-			case IN_BATTLE_SANDS:
-				if (tier != BATTLE_FACILITY_MONOTYPE)
-					toGive = 50; //Battle against frontier brain
-				break;
-
-			case IN_BATTLE_MINE:
-				toGive = 50; //Always battle against frontier brain
-				break;
-
-			case IN_BATTLE_CIRCUS:
-				if (tier != BATTLE_FACILITY_MONOTYPE)
-					toGive = 50; //Battle against frontier brain
-				break;
-
-			case IN_RING_CHALLENGE:
-				toGive = 50; //Always battle against frontier brain
-				break;
-		}
-	}
-	else if (streakLength <= 70)
-		toGive = 7;
-	else if (streakLength <= 80)
-		toGive = 8;
-	else if (streakLength <= 99)
-		toGive = 9;
-	else if (streakLength == 100)
-		toGive = 100;
-	else if (streakLength == 500)
-		toGive = 500;
-	//Why not lol, if you get here you deserve it
-	else if ((streakLength % 10000) == 0 && streakLength != 0) //Every 10000 wins give 10000
-		toGive = 10000;
-	else if ((streakLength % 1000) == 0 && streakLength != 0) //Every 1000 wins give 1000
-		toGive = 1000;
-	else if (streakLength > 10000)
-		toGive = 50;
-	else if (streakLength > 5000)
-		toGive = 30;
-	else if (streakLength > 1000)
-		toGive = 20;
-	else if (streakLength > 500)
-		toGive = 15;
+	//Milestone challengers pay out their streak number.
+	if (streakLength == FRONTIER_FIRST_MILESTONE_STREAK)
+		toGive = FRONTIER_FIRST_MILESTONE_STREAK;
+	else if (streakLength == FRONTIER_SECOND_MILESTONE_STREAK)
+		toGive = FRONTIER_SECOND_MILESTONE_STREAK;
 	else
-		toGive = 10;
+		toGive = 2 + (streakLength / 10); //Win 9 -> 2, win 10 -> 3, win 20 -> 4, ...
 
-	//Give half the amount of BP rounded up in the Battle Sands
-	if (BATTLE_FACILITY_NUM == IN_BATTLE_SANDS)
-	{
-		if (toGive & 1) //Odd number
-			toGive = (toGive / 2) + 1; //Round up
-		else
-			toGive /= 2;
-	}
-	else if (BATTLE_FACILITY_NUM != IN_BATTLE_MINE) //Party size constantly changes so not good idea
-	{
-		if (VarGet(VAR_BATTLE_FACILITY_POKE_NUM) >= PARTY_SIZE)
-			toGive *= 2; //Battles are twice as long, so give twice as much BP
-	}
+	if (held >= 999)
+		return 0;
 
-	return toGive;
-}
-
-static void LoadProperStreakData(u8* facilityNum, u8* currentOrMax, u8* battleStyle, u8* tier, u8* partySize, u8* level)
-{
-	u32 i;
-
-	switch (*facilityNum) {
-		case IN_BATTLE_TOWER:
-			switch (*tier) {
-				case BATTLE_FACILITY_MONOTYPE:
-					*tier = BATTLE_FACILITY_LITTLE_CUP; //Hijack Little Cup level 100 slot
-					*level = 100;
-					break;
-				case BATTLE_FACILITY_DYNAMAX_STANDARD:
-					*facilityNum = IN_BATTLE_CIRCUS; //Hijack Battle Circus Little Cup level 100 slot
-					*tier = BATTLE_FACILITY_LC_CAMOMONS;
-					*level = 100;
-					return LoadProperStreakData(facilityNum, currentOrMax, battleStyle, tier, partySize, level);
-			}
-
-			for (i = 0; i < gNumBattleTowerTiers; ++i)
-			{
-				if (gBattleTowerTiers[i] == *tier)
-				{
-					*tier = i;
-					break;
-				}
-			}
-
-			if (i == gNumBattleTowerTiers)
-				*tier = 0;
-			break;
-
-		case IN_BATTLE_SANDS:
-			*tier = MathMin(*tier, gNumBattleTowerTiers);
-			break;
-
-		case IN_BATTLE_MINE:
-			*tier = MathMin(*tier - BATTLE_MINE_FORMAT_1, BATTLE_MINE_FORMAT_4 - BATTLE_MINE_FORMAT_1);
-			break;
-
-		case IN_BATTLE_CIRCUS:
-			for (i = 0; i < gNumBattleCircusTiers; ++i)
-			{
-				if (gBattleCircusTiers[i] == *tier)
-				{
-					*tier = i;
-					break;
-				}
-			}
-
-			if (i == gNumBattleCircusTiers)
-				*tier = 0;
-			break;
-	}
-
-	if (IsFrontierMulti(*battleStyle))
-		*partySize *= 2; //Each player gets half the team
-
-	*currentOrMax = MathMin(*currentOrMax, 1);
-	*battleStyle = MathMin(*battleStyle, NUM_TOWER_BATTLE_TYPES);
-	*partySize = (*partySize < 6) ? 0 : 1;
-	*level = (*level < 100) ? 0 : 1;
+	return MathMin(toGive, 999 - held);
 }
 
 //@Details: To be used after sp06B. Merges the player's choice of partner Pokemon onto their team.
@@ -1880,293 +1544,10 @@ u16 sp06D_LoadFrontierMultiTrainerById(void)
 	return gFrontierMultiBattleTrainers[id].owNum;
 }
 
-//@Details: Buffers text relating to battle sands records.
-//@Inputs:
-//		Var8000: 0 = Previous Streak
-//				 1 = Max Streak
-//@Returns: LastResult: TRUE if the requested record exists.
-//			gStringVar1: Tier name.
-//			gStringVar2: Battle format name.
-//			gStringVar3: Level.
-//			gStringVar7: Inverse on or off.
-//			gStringVar8: Species 1.
-//			gStringVar9: Species 2.
-//			gStringVarA: Species 3.
-//			gStringVarB: Streak length.
-//			gStringVarC: "previous" or "max"
-void sp06E_BufferBattleSandsRecords(void)
-{
-	static const u8* const requestStrings[] =
-	{
-		gText_Previous,
-		gText_Max,
-	};
-
-	gSpecialVar_LastResult = FALSE;
-
-	struct BattleSandsStreak* streak = (Var8000 == 0) ? &gBattleSandsStreaks[CURR_STREAK] : &gBattleSandsStreaks[MAX_STREAK];
-	if (streak->species1 != SPECIES_NONE)
-	{
-		StringCopy(gStringVar1, GetFrontierTierName(streak->tier, streak->format));
-		StringCopy(gStringVar2, gBattleFrontierFormats[streak->format]);
-		ConvertIntToDecimalStringN(gStringVar3, (streak->level == 0) ? 50 : 100, 0, 3);
-		StringCopy(gStringVar7, (streak->inverse) ? gText_On : gText_Off);
-		GetSpeciesName(gStringVar8, streak->species1);
-		GetSpeciesName(gStringVar9, streak->species2);
-		if (IsFrontierSingles(streak->format))
-			StringCopy(gStringVarA, gText_None);
-		else
-			GetSpeciesName(gStringVarA, streak->species3);
-		ConvertIntToDecimalStringN(gStringVarB, streak->streakLength, 0, 5);
-		StringCopy(gStringVarC, requestStrings[(Var8000 == 0) ? 0 : 1]);
-
-		gSpecialVar_LastResult = TRUE;
-	}
-}
-
-//@Details: Checks if the player's team can enter the Battle Mine.
-//			Also sets the Battle Tower Tier var to the chosen tier.
-//@Inputs:
-//		Var8000: 0 = Check Battle Mine Format 1.
-//				 1 = Check Battle Mine Format 2.
-//				 2 = Check Battle Mine Format 3.
-//@Returns: LastResult: TRUE if the team can participate.
-void sp06F_CanTeamParticipateInBattleMine(void)
-{
-	int i, j, tier;
-	u16 choice = Var8000;
-	const u8* tiers = choice == 0 ? gBattleMineFormat1Tiers
-					: choice == 1 ? gBattleMineFormat2Tiers
-					: choice == 2 ? gBattleMineFormat3Tiers
-					: gBattleMineFormat4Tiers;
-	u8 numTiers = choice == 0 ? NELEMS(gBattleMineFormat1Tiers)
-				: choice == 1 ? NELEMS(gBattleMineFormat2Tiers)
-				: choice == 2 ? NELEMS(gBattleMineFormat3Tiers)
-				: NELEMS(gBattleMineFormat4Tiers);
-
-	gSpecialVar_LastResult = FALSE;
-
-	//Check if party of 6 where every Pokemon can participate in every tier in the requested format
-	for (i = 0; i < PARTY_SIZE; ++i)
-	{
-		struct Pokemon* mon = &gPlayerParty[i];
-
-		if (GetMonData(mon, MON_DATA_SPECIES, NULL) == SPECIES_NONE
-		||  GetMonData(mon, MON_DATA_IS_EGG, NULL))
-			return;
-
-		for (j = 0, tier = tiers[j]; j < numTiers; ++j, tier = tiers[j]) //Check every tier in requested format
-		{
-			u16 varBackup = VarGet(VAR_BATTLE_FACILITY_BATTLE_TYPE);
-
-			//Check if mon is banned in singles
-			VarSet(VAR_BATTLE_FACILITY_BATTLE_TYPE, BATTLE_FACILITY_SINGLE);
-			if (IsMonBannedInTier(mon, tier))
-			{
-				VarSet(VAR_BATTLE_FACILITY_BATTLE_TYPE, varBackup);
-				Var8004 = i;
-				return;
-			}
-
-			//Check if mon is banned in doubles
-			VarSet(VAR_BATTLE_FACILITY_BATTLE_TYPE, BATTLE_FACILITY_DOUBLE);
-			if (IsMonBannedInTier(mon, tier))
-			{
-				VarSet(VAR_BATTLE_FACILITY_BATTLE_TYPE, varBackup);
-				Var8004 = i;
-				return;
-			}
-
-			VarSet(VAR_BATTLE_FACILITY_BATTLE_TYPE, varBackup);
-		}
-	}
-
-	VarSet(VAR_BATTLE_FACILITY_TIER, BATTLE_MINE_FORMAT_1 + MathMin(choice, BATTLE_MINE_FORMAT_4 - BATTLE_MINE_FORMAT_1));
-	gSpecialVar_LastResult = TRUE;
-}
-
-//@Details: Randomizes various battle options for a battle in the Battle Mine.
-//@Returns: To given var the original tier to back up.
-//			gStringVar7: Tier name.
-//			gStringVar8: Battle format name.
-//			gStringVar9: Level.
-//			gStringVarA: Party size.
-//			gStringVarB: Inverse on or off.
-//			gStringVarC: Dynamax on or off.
-u8 sp070_RandomizeBattleMineBattleOptions(void)
-{
-	u8 format, tier, level, partySize, inverse, dynamax;
-
-	u8 originalTier = VarGet(VAR_BATTLE_FACILITY_TIER);
-	const u8* tiers = originalTier == BATTLE_MINE_FORMAT_1 ? gBattleMineFormat1Tiers
-					: originalTier == BATTLE_MINE_FORMAT_2 ? gBattleMineFormat2Tiers
-					: originalTier == BATTLE_MINE_FORMAT_3 ? gBattleMineFormat3Tiers
-					: gBattleMineFormat4Tiers;
-	u8 numTiers = originalTier == BATTLE_MINE_FORMAT_1 ? NELEMS(gBattleMineFormat1Tiers)
-				: originalTier == BATTLE_MINE_FORMAT_2 ? NELEMS(gBattleMineFormat2Tiers)
-				: originalTier == BATTLE_MINE_FORMAT_3 ? NELEMS(gBattleMineFormat3Tiers)
-				: NELEMS(gBattleMineFormat4Tiers);
-
-	u16 streak = GetCurrentBattleTowerStreak();
-
-	//Choose Battle Format
-	switch (streak) {
-		case 0 ... 44:
-			format = BATTLE_FACILITY_SINGLE + (Random() & 1);
-			break;
-		default: ; //Random Battles become available starting battle 45
-			u8 randomOption = Random() % 10;
-			if (randomOption == 0) //10 % chance of getting random option
-				format = BATTLE_FACILITY_SINGLE_RANDOM + (randomOption & 1);
-			else
-				format = BATTLE_FACILITY_SINGLE + (randomOption & 1);
-	}
-
-	//Choose Tier
-	tier = tiers[Random() % numTiers];
-
-	//Choose Level
-	if (IsLittleCupTier(tier))
-		level = 5;
-	else
-	{
-		switch (streak) {
-			case 0 ... 9:
-				level = 50;
-				break;
-			case 10 ... 18:
-				if (Random() & 1)
-					level = 50;
-				else
-					level = MAX_LEVEL;
-				break;
-			case 19: //Frontier Brain 1
-				level = 50;
-				break;
-			case 49: //Frontier Brain 2
-				level = MAX_LEVEL;
-				break;
-			default:
-				level = (Random() % MAX_LEVEL) + 1; //Randomize level completely after battle 20
-		}
-	}
-
-	//Choose Party Size
-	switch (streak) {
-		case 0 ... 9:
-			if (IsFrontierSingles(format))
-				partySize = 3; //3v3
-			else
-				partySize = 4; //4v4
-			break;
-		case 11 ... 39:
-			partySize = Random() % (PARTY_SIZE - 1) + 2; //2v2 - 6v6
-
-			if (partySize == 2 && !IsFrontierSingles(format))
-				partySize = 3; //3v3
-			break;
-		default:
-			partySize = Random() % PARTY_SIZE + 1; //1v1 - 6v6
-
-			if (partySize == 1 && !IsFrontierSingles(format))
-				partySize = 2; //2v2
-	}
-
-	//Choose Inverse & Dynamax
-	switch (streak) {
-		case 0 ... 19:
-			inverse = FALSE;
-			dynamax = FALSE;
-			break;
-		default:
-			inverse = Random() & TRUE;
-			dynamax = Random() & TRUE;
-	}
-
-	VarSet(VAR_BATTLE_FACILITY_POKE_LEVEL, level);
-	VarSet(VAR_BATTLE_FACILITY_BATTLE_TYPE, format);
-	VarSet(VAR_BATTLE_FACILITY_TIER, tier);
-	VarSet(VAR_BATTLE_FACILITY_POKE_NUM, partySize);
-	if (inverse)
-	{
-		#ifdef FLAG_INVERSE
-		FlagSet(FLAG_INVERSE);
-		#endif
-	}
-	if (dynamax)
-	{
-		#ifdef FLAG_DYNAMAX_BATTLE
-		FlagSet(FLAG_DYNAMAX_BATTLE);
-		#endif
-	}
-
-	StringCopy(gStringVar7, GetFrontierTierName(tier, format));
-	StringCopy(gStringVar8, gBattleFrontierFormats[format]);
-	ConvertIntToDecimalStringN(gStringVar9, level, 0, 3);
-	ConvertIntToDecimalStringN(gStringVarA, partySize, 0, 1);
-	StringCopy(gStringVarB, (inverse) ? gText_On : gText_Off);
-	StringCopy(gStringVarC, (dynamax) ? gText_BeAble : gText_NotBeAble);
-
-	return originalTier;
-}
-
-//@Details: Sets the tier var to the correct tier the Battle Mine streaks are recorded in.
-void sp071_LoadBattleMineRecordTier(void)
-{
-	u32 i, tier;
-	u8 currTier = VarGet(VAR_BATTLE_FACILITY_TIER);
-
-	if (currTier == BATTLE_MINE_FORMAT_1
-	||  currTier == BATTLE_MINE_FORMAT_2
-	||  currTier == BATTLE_MINE_FORMAT_3
-	||  currTier == BATTLE_MINE_FORMAT_4)
-		return;
-
-	for (i = 0; i < NELEMS(gBattleMineFormat1Tiers); ++i)
-	{
-		tier = gBattleMineFormat1Tiers[i];
-		if (currTier == tier)
-		{
-			VarSet(VAR_BATTLE_FACILITY_TIER, BATTLE_MINE_FORMAT_1);
-			return;
-		}
-	}
-
-	for (i = 0; i < NELEMS(gBattleMineFormat2Tiers); ++i)
-	{
-		tier = gBattleMineFormat2Tiers[i];
-		if (currTier == tier)
-		{
-			VarSet(VAR_BATTLE_FACILITY_TIER, BATTLE_MINE_FORMAT_2);
-			return;
-		}
-	}
-
-	for (i = 0; i < NELEMS(gBattleMineFormat3Tiers); ++i)
-	{
-		tier = gBattleMineFormat3Tiers[i];
-		if (currTier == tier)
-		{
-			VarSet(VAR_BATTLE_FACILITY_TIER, BATTLE_MINE_FORMAT_3);
-			return;
-		}
-	}
-
-	for (i = 0; i < NELEMS(gBattleMineFormat4Tiers); ++i)
-	{
-		tier = gBattleMineFormat4Tiers[i];
-		if (currTier == tier)
-		{
-			VarSet(VAR_BATTLE_FACILITY_TIER, BATTLE_MINE_FORMAT_4);
-			return;
-		}
-	}
-}
-
-//@Details: Loads random effects for Battle Circus battles.
+//@Details: Loads random effects for Battle Sim battles.
 //@Returns: Lastresult: TRUE if all effects loaded.
 //			gStringVarC: A description of the effect just activated.
-void sp072_LoadBattleCircusEffects(void)
+void sp072_LoadBattleSimEffects(void)
 {
 	u32 i;
 	u8 numActive = 0;
@@ -2174,10 +1555,10 @@ void sp072_LoadBattleCircusEffects(void)
 
 	for (i = 0; ; ++i)
 	{
-		if (gBattleCircusFlags & gBitTable[i])
+		if (gBattleSimFlags & gBitTable[i])
 			++numActive;
 
-		if (gBitTable[i] == LAST_BATTLE_CIRCUS_FLAG)
+		if (gBitTable[i] == LAST_BATTLE_SIM_FLAG)
 			break;
 	}
 
@@ -2186,7 +1567,7 @@ void sp072_LoadBattleCircusEffects(void)
 	bool8 sideEffectsAllowed = FALSE;
 	bool8 personalEffectsAllowed = FALSE;
 	bool8 tradeMonAllowed = FALSE;
-	u16 streak = GetCurrentBattleTowerStreak();
+	u16 streak = GetCurrentBattleFacilityStreak();
 
 	switch (streak) {
 		case 0 ... 9:
@@ -2230,43 +1611,42 @@ void sp072_LoadBattleCircusEffects(void)
 
 	if (numActive < totalEffects)
 	{
-		bool8 weatherActive = (gBattleCircusFlags & BATTLE_CIRCUS_WEATHER) != 0;
-		bool8 terrainActive = (gBattleCircusFlags & BATTLE_CIRCUS_TERRAIN) != 0;
-		bool8 critEffectActive = (gBattleCircusFlags & BATTLE_CIRCUS_CRIT_EFFECT) != 0;
-		bool8 dynamaxActive = DynamaxAllowedInTier(VarGet(VAR_BATTLE_FACILITY_TIER));
+		bool8 weatherActive = (gBattleSimFlags & BATTLE_SIM_WEATHER) != 0;
+		bool8 terrainActive = (gBattleSimFlags & BATTLE_SIM_TERRAIN) != 0;
+		bool8 critEffectActive = (gBattleSimFlags & BATTLE_SIM_CRIT_EFFECT) != 0;
 		bool8 randomBattleActive = VarGet(VAR_BATTLE_FACILITY_BATTLE_TYPE) >= BATTLE_FACILITY_SINGLE_RANDOM;
 
 		u8 effectNum;
 		do
 		{
 			effectNum = Random() % (i + 1);
-		} while (gBattleCircusFlags & gBitTable[effectNum] //Only add non active effects
-			|| (weatherActive && gBitTable[effectNum] & BATTLE_CIRCUS_WEATHER) //One weather effect at a time
-			|| (terrainActive && gBitTable[effectNum] & BATTLE_CIRCUS_TERRAIN) //One terrain effect at a time
-			|| (critEffectActive && gBitTable[effectNum] & BATTLE_CIRCUS_CRIT_EFFECT) //One critical hit effect at a time
-			|| (dynamaxActive && gBitTable[effectNum] & BATTLE_CIRCUS_DYNAMAX) //No point in stacking Dynamax effect
-			|| (randomBattleActive && gBitTable[effectNum] & BATTLE_CIRCUS_TRADE_MON) //No point in swapping mons in a random battle
-			|| (!tradeMonAllowed && gBitTable[effectNum] & BATTLE_CIRCUS_TRADE_MON) //Swapping mons becomes available later on depending on team size
-			|| (!sideEffectsAllowed && gBitTable[effectNum] >= FIRST_BATTLE_CIRCUS_SIDE_EFFECT_FLAG && gBitTable[effectNum] <= LAST_BATTLE_CIRCUS_SIDE_EFFECT_FLAG)
-			|| (!personalEffectsAllowed && gBitTable[effectNum] >= FIRST_BATTLE_CIRCUS_PERSONAL_EFFECT_FLAG));
+		} while (gBattleSimFlags & gBitTable[effectNum] //Only add non active effects
+			|| (weatherActive && gBitTable[effectNum] & BATTLE_SIM_WEATHER) //One weather effect at a time
+			|| (terrainActive && gBitTable[effectNum] & BATTLE_SIM_TERRAIN) //One terrain effect at a time
+			|| (critEffectActive && gBitTable[effectNum] & BATTLE_SIM_CRIT_EFFECT) //One critical hit effect at a time
+			|| (gBitTable[effectNum] & BATTLE_SIM_DYNAMAX) // Prevent Dynamax from being rolled. It also can't silently ban megas or Z-Moves
+			|| (randomBattleActive && gBitTable[effectNum] & BATTLE_SIM_TRADE_MON) //No point in swapping mons in a random battle
+			|| (!tradeMonAllowed && gBitTable[effectNum] & BATTLE_SIM_TRADE_MON) //Swapping mons becomes available later on depending on team size
+			|| (!sideEffectsAllowed && gBitTable[effectNum] >= FIRST_BATTLE_SIM_SIDE_EFFECT_FLAG && gBitTable[effectNum] <= LAST_BATTLE_SIM_SIDE_EFFECT_FLAG)
+			|| (!personalEffectsAllowed && gBitTable[effectNum] >= FIRST_BATTLE_SIM_PERSONAL_EFFECT_FLAG));
 
-		if (gBitTable[effectNum] & BATTLE_CIRCUS_WEATHER)
+		if (gBitTable[effectNum] & BATTLE_SIM_WEATHER)
 		{
 			u8 weather = 0;
-			if (gBitTable[effectNum] == BATTLE_CIRCUS_RAIN)
+			if (gBitTable[effectNum] == BATTLE_SIM_RAIN)
 				weather = WEATHER_RAIN_LIGHT;
-			else if (gBitTable[effectNum] == BATTLE_CIRCUS_SUN)
+			else if (gBitTable[effectNum] == BATTLE_SIM_SUN)
 				weather = WEATHER_DROUGHT;
-			else if (gBitTable[effectNum] == BATTLE_CIRCUS_SANDSTORM)
+			else if (gBitTable[effectNum] == BATTLE_SIM_SANDSTORM)
 				weather = WEATHER_SANDSTORM;
-			else if (gBitTable[effectNum] == BATTLE_CIRCUS_HAIL)
+			else if (gBitTable[effectNum] == BATTLE_SIM_HAIL)
 				weather = WEATHER_STEADY_SNOW;
 
 			SetSav1Weather(weather); //Followed up by a doweather in the script
 		}
 
-		gBattleCircusFlags |= gBitTable[effectNum];
-		StringCopy(gStringVarC, sBattleCircusEffectDescriptions[effectNum]);
+		gBattleSimFlags |= gBitTable[effectNum];
+		StringCopy(gStringVarC, sBattleSimEffectDescriptions[effectNum]);
 		gSpecialVar_LastResult = FALSE;
 	}
 }
@@ -2274,11 +1654,14 @@ void sp072_LoadBattleCircusEffects(void)
 //@Details: Sets the appropriate team levels for the battle facility.
 void sp073_ModifyTeamForBattleTower(void)
 {
-	u8 tier = VarGet(VAR_BATTLE_FACILITY_TIER);
-	u8 level = (tier == BATTLE_FACILITY_LITTLE_CUP || tier == BATTLE_FACILITY_LC_CAMOMONS) ? 5
-			 : (IS_SINGLE_100_RECORD_TIER(tier)) ? 100 : VarGet(VAR_BATTLE_FACILITY_POKE_LEVEL);
+	// Skip modifying the player's team for any facilities that use borrowed Pokemon (Maze & Factory)
+	if (IsRandomBattleTowerBattle())
+		return;
 
-	level = MathMax(1, MathMin(level, MAX_LEVEL));
+	//Scales in both directions. gPlayerParty is replaced with the entered copies, so nothing
+	//may save between here and the end of the run without restoring the real team first - it
+	//is waiting in SaveBlock1.playerParty, and special 0x28 brings it back when the run ends.
+	u8 level = GetBattleFacilityLevel(VarGet(VAR_BATTLE_FACILITY_TIER));
 	struct Pokemon* enteredMons = Calloc(sizeof(struct Pokemon) * PARTY_SIZE);
 
 	for (int i = 0; i < PARTY_SIZE && gSelectedOrderFromParty[i] != 0; ++i) //Copy mons entered
@@ -2293,212 +1676,4 @@ void sp073_ModifyTeamForBattleTower(void)
 
 	Memcpy(gPlayerParty, enteredMons, sizeof(struct Pokemon) * PARTY_SIZE); //Overwrite old team
 	Free(enteredMons);
-}
-
-//@Details: Buffers details of the opposing team for the Ring Challenge.
-//@Returns: gStringVar1: Opponent Pokemon 1 species
-//			gStringVar2: Opponent Pokemon 2 species
-//			gStringVar3: Opponent Pokemon 3 species
-void sp0E8_BufferRingChallengeOpponentTeamDetails(void)
-{
-	GetSpeciesName(gStringVar1, GetMonData(&gEnemyParty[0], MON_DATA_SPECIES, NULL));
-	GetSpeciesName(gStringVar2, GetMonData(&gEnemyParty[1], MON_DATA_SPECIES, NULL));
-	GetSpeciesName(gStringVar3, GetMonData(&gEnemyParty[2], MON_DATA_SPECIES, NULL));
-}
-
-//@Details: Chooses one of the opponent's Pokemon to participate in the Ring Challenge.
-void sp0E9_ChooseRingChallengeOpponentMon(void)
-{
-	#if (defined VAR_RING_CHALLENGE_BANNED_TYPE_1 && defined VAR_RING_CHALLENGE_BANNED_TYPE_2 && defined VAR_RING_CHALLENGE_BANNED_TYPE_3)
-	u32 i, j, k;
-	u8 moveCount[3] = {0}; //[aiMonId]
-	u8 bannedMoveCount[3] = {0}; //[aiMonId]
-	u8 superEffectiveCount[3] = {0}; //[aiMonId]
-	u8 decentMoveCount[3] = {0}; //[aiMonId]
-	bool8 hasFocusSash[3] = {FALSE}; //[aiMonId]
-	bool8 hasPriorityMove[3] = {FALSE}; //[aiMonId]
-	u8 resultFlags[3][3][MAX_MON_MOVES] = {0}; //[aiMonId][playerMonId][moveSlot]
-	u8 bannedTypes[3] =
-	{
-		VarGet(VAR_RING_CHALLENGE_BANNED_TYPE_1),
-		VarGet(VAR_RING_CHALLENGE_BANNED_TYPE_2),
-		VarGet(VAR_RING_CHALLENGE_BANNED_TYPE_3),
-	};
-
-	//Initial calculations for figuring out the best Pokemon to pick
-	for (i = 0; i < 3; ++i) //Each AI mon
-	{
-		struct Pokemon* mon = &gEnemyParty[i];
-		u8 atkAbility = GetMonAbility(mon); 
-		hasFocusSash[i] = GetMonData(mon, MON_DATA_HELD_ITEM, NULL) == ITEM_FOCUS_SASH || atkAbility == ABILITY_STURDY;
-
-		//Go through each of the AI mon's moves
-		for (j = 0; j < MAX_MON_MOVES; ++j)
-		{
-			u16 move = GetMonData(mon, MON_DATA_MOVE1 + j, NULL);
-			if (move != MOVE_NONE)
-			{
-				u8 moveType = GetMonMoveTypeSpecial(mon, move);
-				bool8 isBanned = FALSE;
-				++moveCount[i];
-
-				//Check if the move is usable
-				if (gBattleMoves[move].effect == EFFECT_PERISH_SONG) //Cheap move
-				{
-					isBanned = TRUE;
-					++bannedMoveCount[i]; //Increase count of banned moves
-				}
-				else
-				{
-					for (k = 0; k < NELEMS(bannedTypes); ++k)
-					{
-						if (moveType == bannedTypes[k])
-						{
-							isBanned = TRUE;
-							++bannedMoveCount[i]; //Increase count of banned moves
-							break;
-						}
-					}
-				}
-
-				if (!isBanned && SPLIT(move) != SPLIT_STATUS) //If the move can be used and can do damage
-				{
-					if (gBattleMoves[move].effect != EFFECT_COUNTER && gBattleMoves[move].effect != EFFECT_MIRROR_COAT)
-					{
-						//Get the result flags of the moves against each opponent
-						for (k = 0; k < 3; ++k)
-							TypeDamageModificationPartyMon(atkAbility, &gPlayerParty[k], move, moveType, &resultFlags[i][k][j]);
-					}
-					else //Reflection moves
-					{
-						for (k = 0; k < 3; ++k)
-						{
-							TypeDamageModificationPartyMon(atkAbility, &gPlayerParty[k], move, moveType, &resultFlags[i][k][j]);
-							if (!(resultFlags[i][k][j] & MOVE_RESULT_NO_EFFECT))
-								resultFlags[i][k][j] = MOVE_RESULT_SUPER_EFFECTIVE; //Always count as super effective if they can hit
-						}
-					}
-
-					if (PriorityCalcMon(mon, move) > 0)
-						++hasPriorityMove[i];
-				}
-				else //Otherwise the move can't be used to do damage
-				{
-					for (k = 0; k < 3; ++k)
-						resultFlags[i][k][j] = MOVE_RESULT_NO_EFFECT;
-				}
-			}
-		}
-
-		//Count effectiveness of this AI mon
-		for (j = 0; j < 3; ++j)
-		{
-			for (k = 0; k < MAX_MON_MOVES; ++k)
-			{
-				if (resultFlags[i][j][k] & MOVE_RESULT_SUPER_EFFECTIVE)
-				{
-					++superEffectiveCount[i]; //Has super effective move against this opponent
-					break;
-				}
-				else if (!(resultFlags[i][j][k] & (MOVE_RESULT_NO_EFFECT | MOVE_RESULT_NOT_VERY_EFFECTIVE)))
-				{
-					++decentMoveCount[i]; //Has at least one decent move that can be used against this opponent
-					break;
-				}
-			}
-		}
-	}
-
-	//Decide which Pokemon to use
-	u8 bestMonId = 0xFF;
-	u8 bestMonScore = 0;
-
-	for (i = 0; i < 3; ++i) //Each AI mon
-	{
-		u8 currMonScore = 0;
-		
-		if (bannedMoveCount[i] == moveCount[i]) //Mon has no usable moves
-			continue;
-
-		if (hasFocusSash[i])
-		{
-			if (hasPriorityMove[i])
-				currMonScore += 3; //Having a Focus Sash and a priority move helps a ton
-			else
-				currMonScore += 1;
-		}
-		else if (hasPriorityMove[i])
-			currMonScore += 1;
-
-		currMonScore += superEffectiveCount[i] * 2; //+ 0:6 Having super effective moves is ranked better
-		currMonScore += decentMoveCount[i]; //+ 0:3
-
-		if (currMonScore > bestMonScore)
-		{
-			bestMonScore = currMonScore;
-			bestMonId = i;
-		}
-		else if (currMonScore == bestMonScore)
-		{
-			if (bannedMoveCount[i] < bannedMoveCount[bestMonId] //This mon has less banned moves
-			||  superEffectiveCount[i] > superEffectiveCount[bestMonId]) //This mon can deal super effective damage to more foes
-			{
-				//Replace the old best mon
-				bestMonId = i;
-			}
-		}
-	}
-
-	if (bestMonScore == 0) //Sucky team as a whole
-		bestMonId = Random() % 3; //Pick Pokemon at random
-
-	//Give the AI the chosen Pokemon
-	struct Pokemon mon = gEnemyParty[bestMonId];
-	ZeroEnemyPartyMons();
-	gEnemyParty[0] = mon;
-	#endif
-}
-
-//@Details: Buffers text relating to battle sands records.
-//@Inputs:
-//		Var8000: 0 = Previous Streak
-//				 1 = Max Streak
-//@Returns: LastResult: TRUE if the requested record exists.
-//			gStringVar1: "previous" or "max"
-//			gStringVar2: Streak length.
-//			gStringVar3: "s" if streak length is not 1.
-//			gStringVar7: Last used species 1.
-//			gStringVar8: Last used species 2.
-//			gStringVar9: Last used species 3.
-void sp0EA_BufferRingChallengeRecords(void)
-{
-	static const u8* const requestStrings[] =
-	{
-		gText_Current,
-		gText_Max,
-	};
-
-	gSpecialVar_LastResult = FALSE;
-
-	struct RingChallengeStreak* streak = (Var8000 == 0) ? &gRingChallengeStreaks[CURR_STREAK] : &gRingChallengeStreaks[MAX_STREAK];
-	if (streak->streakLength != 0)
-	{
-		StringCopy(gStringVar1, requestStrings[(Var8000 == 0) ? 0 : 1]);
-		ConvertIntToDecimalStringN(gStringVar2, streak->streakLength, 0, 5);
-		GetSpeciesName(gStringVar7, streak->species1);
-		GetSpeciesName(gStringVar8, streak->species2);
-		GetSpeciesName(gStringVar9, streak->species3);
-		
-		if (streak->streakLength != 1)
-		{
-			gStringVar3[0] = CHAR_s;
-			gStringVar3[1] = EOS;
-		}
-		else
-		{
-			gStringVar3[0] = EOS;
-		}
-
-		gSpecialVar_LastResult = TRUE;
-	}
 }

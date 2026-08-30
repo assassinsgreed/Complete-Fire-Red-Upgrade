@@ -171,6 +171,18 @@ Kulure (Divergent)
 #org @gText_DiplomaRegion_KulureStandard
 Kulure (Standard)
 
+#org @gText_TrainerCardTitleDefenses
+Title Defenses
+
+#org @gText_TrainerCardEggsHatched
+Eggs Hatched
+
+#org @gText_TrainerCardPokemonCaught
+Total Pok\emon Caught
+
+#org @gText_TrainerCardCenterHeals
+Pok\emon Center / Nurse Heals
+
 #org @gText_GuardHouseBinoculars
 A pair of binoculars! What can be\nseen[.]
 
@@ -464,6 +476,18 @@ Aether
 #org @gText_InGameGift_TypeNull
 Type: Null
 
+#org @gText_InGameGift_OTBelle
+Belle
+
+#org @gText_InGameGift_Piki
+Piki
+
+#org @gText_InGameTrade_OTMasuda
+Masuda
+
+#org @gText_InGameTrade_Junichi
+Junichi
+
 // Special NPCs
 
 // Tutors
@@ -729,7 +753,13 @@ Hard Mode is enabled!
 Extra Hard Mode is enabled!
 
 #org @gText_GameCustomization_TutorializationQuestion
-Would you like to enable early game\nbattling and catching tutorials?
+Early game battling and catching\ntutorials can be enabled or\lskipped.\pPlease choose.
+
+#org @gText_GameCustomization_TutorialsOption_Enable
+Enable tutorials
+
+#org @gText_GameCustomization_TutorialsOption_Disable
+Disable tutorials
 
 #org @gText_GameCustomization_TutorializationTurnedOn
 Tutorialization is enabled!
@@ -765,7 +795,13 @@ Hard Level Caps are enabled!
 Extra Hard Level Caps are enabled!
 
 #org @gText_GameCustomization_QoLFromStart
-This option gives QoL items like\nthe Exp. Share and Infinite Repel\lfrom the start of the game.\pThis option is recommended for\nplayers who wish to have a more\lrelaxing experience.\pThe items provided by this setting\nare normally found throughout the\lstory.\pDo you want to start the game\nwith all QoL items?
+This option gives QoL items like\nthe Exp. Share and Infinite Repel\lfrom the start of the game.\pThis option is recommended for\nplayers who wish to have a more\lrelaxing experience.\pThe items provided by this setting\nare normally found throughout the\lstory.\pWhich do you prefer?
+
+#org @gText_GameCustomization_QoLItemsOption_Start
+Start with QoL items
+
+#org @gText_GameCustomization_QoLItemsOption_Skip
+Start without them
 
 #org @gText_GameCustomization_QoLItemsOn
 QoL items will be received when\nthe game starts!
@@ -774,7 +810,13 @@ QoL items will be received when\nthe game starts!
 QoL items will not be received when\nthe game starts!
 
 #org @gText_GameCustomization_SkipCutscenesQuestion
-This option allows you to replace\ncutscenes with short tips on where\lto go next.\pIt is only recommended for players in\nrepeat playthroughs, as skipped\lplot is not recapped.\pThis option can be changed later in\nthe Options Menu's second page.\pDo you want to skip cutscenes?
+This option allows you to replace\ncutscenes with short tips on where\lto go next.\pIt is only recommended for players in\nrepeat playthroughs, as skipped\lplot is not recapped.\pThis option can be changed later in\nthe Options Menu's second page.\pWhich do you prefer?
+
+#org @gText_GameCustomization_SkipCutscenesOption_Play
+Play cutscenes
+
+#org @gText_GameCustomization_SkipCutscenesOption_Skip
+Skip cutscenes
 
 #org @gText_GameCustomization_SkipCutscenesTurnedOn
 Cutscene skipping is enabled!

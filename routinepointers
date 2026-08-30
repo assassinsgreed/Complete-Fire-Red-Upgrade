@@ -79,7 +79,7 @@ sp052_GenerateFacilityTrainer 0815FEA8
 sp053_LoadFrontierIntroBattleMessage 0815FEAC
 sp054_GetBattleFacilityStreak 0815FEB0
 sp055_UpdateBattleFacilityStreak 0815FEB4
-sp056_DetermineBattlePointsToGive 0815FEB8
+sp056_DetermineChipsToGive 0815FEB8
 sp057_ShowFrontierRecords 0815FEBC
 sp058_BufferSwarmText 0815FEC0 
 sp059_BufferSpeciesRoamingText 0815FEC4 
@@ -99,11 +99,7 @@ sp06A_GivePlayerFrontierMonByLoadedSpread 0815FF08
 sp06B_ReplacePlayerTeamWithMultiTrainerTeam 0815FF0C
 sp06C_SpliceFrontierTeamWithPlayerTeam 0815FF10
 sp06D_LoadFrontierMultiTrainerById 0815FF14
-sp06E_BufferBattleSandsRecords 0815FF18
-sp06F_CanTeamParticipateInBattleMine 0815FF1C
-sp070_RandomizeBattleMineBattleOptions 0815FF20
-sp071_LoadBattleMineRecordTier 0815FF24
-sp072_LoadBattleCircusEffects 0815FF28
+sp072_LoadBattleSimEffects 0815FF28
 sp073_ModifyTeamForBattleTower 0815FF2C
 #sp074_IsPokemonStorageFull 0815FF30 - Predefined in vanilla FR
 sp075_MeasurePokemon1 0815FF34
@@ -158,9 +154,6 @@ sp0E4_ShowItemSpriteOnFindObtain 81600F0
 sp0E5_ClearItemSpriteAfterFindObtain 81600F4
 
 sp0E7_CreateFrontierOpponentTeamBeforeBattle 081600FC
-sp0E8_BufferRingChallengeOpponentTeamDetails 08160100
-sp0E9_ChooseRingChallengeOpponentMon 08160104
-sp0EA_BufferRingChallengeRecords 08160108
 
 sp100_CanPlayerUseFlashInCurrentLocation 08160160
 sp101_CanPlayerFlyInCurrentLocation 08160164
@@ -219,6 +212,10 @@ MovementType_CopyPlayer_Step1_Fixed 083A6388
 
 ##Item Functions
 ItemUseCB_EvolutionStone 080A1768
+
+# Black Augurite (0x293) and Peat Block (0x294) used from bag
+FieldUseFunc_EvolutionStone 8734C6C
+FieldUseFunc_EvolutionStone 8734C98
 
 ##Nicknaming
 KeyboardKeyHandler_Character 083E23D0
@@ -283,6 +280,8 @@ CB2_ItemMenuFromField 801D800
 FieldUseFunc_AbilityCapsule 87343A8
 FieldUseFunc_AbilityCapsule 8731A10
 FieldUseFunc_FormChangeItem 873371C
+# DNA Splicers
+FieldUseFunc_FormChangeItem 8733748
 # N-Solarizer and N-Lunarizer
 FieldUseFunc_FormChangeItem 8734C14
 FieldUseFunc_FormChangeItem 8734C40
@@ -312,3 +311,20 @@ FieldUseFunc_EVReducingBerry 872F650
 FieldUseFunc_PokeTool 8731B44
 FieldUseFunc_PokeTool 8731B70
 FieldUseFunc_PokeTool 8730964
+
+## Zeromin - wipes every EV on the chosen mon
+FieldUseFunc_EVEraser 873064C
+
+## IV Booster Wings
+FieldUseFunc_IVUpItem 87343D4
+FieldUseFunc_IVUpItem 8734400
+FieldUseFunc_IVUpItem 873442C
+FieldUseFunc_IVUpItem 8734458
+FieldUseFunc_IVUpItem 8734484
+FieldUseFunc_IVUpItem 87344B0
+
+## Shimmering Stone - toggles the chosen mon between normal and shiny
+FieldUseFunc_ShimmeringStone 872EA48
+
+## Item Finder 8-Directional Indicator (Dousing Machine Style)
+ItemUseCB_DowserToggle 080A145C

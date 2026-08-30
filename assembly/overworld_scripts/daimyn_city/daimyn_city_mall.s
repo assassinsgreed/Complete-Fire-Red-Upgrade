@@ -699,6 +699,7 @@ IncenseShop:
     .hword ITEM_ODD_INCENSE
     .hword ITEM_ROCK_INCENSE
     .hword ITEM_ROSE_INCENSE
+    .hword ITEM_FULL_INCENSE
     .hword ITEM_NONE
 
 IncenseShopDivergentPrompt:
@@ -712,6 +713,7 @@ IncenseShopDivergent:
     .hword ITEM_ODD_INCENSE
     .hword ITEM_ROCK_INCENSE
     .hword ITEM_ROSE_INCENSE
+    .hword ITEM_FULL_INCENSE
     .hword ITEM_RED_NECTAR
     .hword ITEM_YELLOW_NECTAR
     .hword ITEM_PINK_NECTAR
@@ -826,6 +828,7 @@ EvolutionaryStonesShop:
     .hword ITEM_OVAL_STONE
     .hword ITEM_LINK_STONE
     .hword ITEM_EVERSTONE
+    .hword ITEM_HISUI_ROCK
     .hword ITEM_DESTINY_KNOT
     .hword ITEM_NONE
 
@@ -853,8 +856,12 @@ HeldItemShop:
     .hword ITEM_CELL_BATTERY
     .hword ITEM_EJECT_BUTTON
     .hword ITEM_RED_CARD
+    .hword ITEM_EJECT_PACK
     .hword ITEM_TERRAIN_EXTENDER
     .hword ITEM_MUSCLE_BAND
+    .hword ITEM_WISE_GLASSES
+    .hword ITEM_ZOOM_LENS
+    .hword ITEM_BINDING_BAND
     .hword ITEM_NONE
 
 .global EventScript_DaimynCityMall_Rocker

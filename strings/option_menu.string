@@ -1,8 +1,11 @@
 #org @gText_PickSwitchCancel_Page1
-[L_BUTTON][R_BUTTON]Page 1 [DPAD_UP_DOWN]Pick [DPAD_LEFT_RIGHT]Switch [A_BUTTON][B_BUTTON]Save & Close
+[L_BUTTON][R_BUTTON]Page 1/3 [DPAD_UP_DOWN]Pick [DPAD_LEFT_RIGHT]Switch [A_BUTTON][B_BUTTON]Save & Close
 
 #org @gText_PickSwitchCancel_Page2
-[L_BUTTON][R_BUTTON]Page 2 [DPAD_UP_DOWN]Pick [DPAD_LEFT_RIGHT]Switch [A_BUTTON][B_BUTTON]Save & Close
+[L_BUTTON][R_BUTTON]Page 2/3 [DPAD_UP_DOWN]Pick [DPAD_LEFT_RIGHT]Switch [A_BUTTON][B_BUTTON]Save & Close
+
+#org @gText_PickSwitchCancel_Page3
+[L_BUTTON][R_BUTTON]Page 3/3 [DPAD_UP_DOWN]Pick [DPAD_LEFT_RIGHT]Switch [A_BUTTON][B_BUTTON]Save & Close
 
 #org @gText_OptionsMenu_On
 On
@@ -51,6 +54,24 @@ Skip Story Cutscenes
 
 #org @gText_OptionsMenu_SkipNicknaming
 Skip Nickname Prompt
+
+#org @gText_OptionsMenu_BallShortcut
+Ball Shortcut
+
+#org @gText_OptionsMenu_BallShortcut_Optimal
+Optimal
+
+#org @gText_OptionsMenu_BallShortcut_LastUsed
+Last Used
+
+#org @gText_OptionsMenu_NurseHealing
+Nurse Healing
+
+#org @gText_OptionsMenu_NurseHealing_Default
+Default
+
+#org @gText_OptionsMenu_NurseHealing_Short
+Short
 
 #org @gText_OptionsMenu_PokemonSelection
 Pok\emon Selection

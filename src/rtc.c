@@ -61,7 +61,7 @@ void RtcInit(void)
 
 	if ((sRTCProbeResult & 0xF) != 1)
 	{
-		sRTCErrorStatus = RTC_INIT_ERROR;
+		sRTCErrorStatus = RTC_INIT_ERROR | RTC_NO_HARDWARE;
 		return;
 	}
 
@@ -189,9 +189,31 @@ void RtcCalcLocalTime(void)
 {
 	if (sRTCFrameCount == 0)
 	{
-		RtcInit();
+		// SiiRtcProbe() drives the cartridge GPIO lines, which on a cart without an
+		// RTC are just ROM address space. Probe at most once and remember the answer:
+		// this runs every second for the whole session, and on a flash-based repro
+		// cart a burst of writes into ROM space can latch the chip into command mode,
+		// after which every instruction fetch returns chip ID data instead of code.
+		if (!(sRTCErrorStatus & RTC_PROBE_DONE))
+		{
+			RtcInit();
+			sRTCErrorStatus |= RTC_PROBE_DONE;
+		}
+		else if (!(sRTCErrorStatus & RTC_NO_HARDWARE))
+		{
+			// Re-read where a probe did find hardware, and re-check the values rather
+			// than latching the first result, so a clock caught mid-update recovers.
+			RtcDisableInterrupts();
+			SiiRtcUnprotect(); // Clears sLocked, which an interrupted read would otherwise wedge TRUE forever
+			RtcRestoreInterrupts();
 
-		if (sRTCErrorStatus & RTC_ERR_FLAG_MASK)
+			RtcGetRawInfo(&sRtc);
+			sRTCErrorStatus = RtcCheckInfo(&sRtc) | RTC_PROBE_DONE;
+		}
+
+		// RTC_INIT_ERROR sits outside RTC_ERR_FLAG_MASK, so a failed probe used to
+		// leave sRtc untouched and feed whatever was already in it to the clock.
+		if (sRTCErrorStatus & (RTC_ERR_FLAG_MASK | RTC_NO_HARDWARE))
 			sRtc = sRtcDummy;
 
 		//u8 prevSecond = gClock.second;

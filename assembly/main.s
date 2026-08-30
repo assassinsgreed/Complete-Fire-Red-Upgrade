@@ -61,7 +61,9 @@ CustomScrollingMultichoiceHook:
 	bl GetSizeOfMultiList
 	mov r1, #0xA
 	strh r0, [r5, r1]
-	lsl r0, r0, #0x3
+	@ Was the item array on its own (count * 8). A list that highlights an entry needs RAM space
+	@ that lives and dies with the menu, and takes it from the tail of this same block.
+	bl GetScrollingMultiAllocSize
 	bl Calloc
 	ldr r4, =(0x2039A14) @RAM to hold pointer to malloc data
 	str r0, [r4]

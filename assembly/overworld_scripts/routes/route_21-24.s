@@ -477,7 +477,7 @@ EventScript_Route24_House_DragonMaster:
     compare LASTRESULT 0x0
     if equal _goto DragonMaster_NoDragons
     msgbox gText_Route24_House_DragonMaster_ChosePokemonPrompt MSG_NORMAL
-    setvar 0x8005 64 @ Draco Meteor
+    setvar 0x8005 TUTOR_SPECIAL_DRACO_METEOR @ Draco Meteor
     special 0x18D
     waitstate
     compare LASTRESULT YES

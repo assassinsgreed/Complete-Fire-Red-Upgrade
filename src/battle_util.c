@@ -24,7 +24,7 @@ battle_util.c
 	general functions for aiding in battle logic for everything
 */
 
-#define IS_BATTLE_CIRCUS (gBattleTypeFlags & BATTLE_TYPE_BATTLE_CIRCUS)
+#define IS_BATTLE_SIM (gBattleTypeFlags & BATTLE_TYPE_BATTLE_SIM)
 
 static void TryRemoveUnburdenBoost(u8 bank);
 static bool8 CanBeGeneralStatused(u8 bankDef, u8 defAbility, u8 atkAbility, bool8 checkFlowerVeil);
@@ -749,6 +749,8 @@ bool8 IsUnusableMove(u16 move, u8 bank, u8 check, u8 pp, u8 ability, u8 holdEffe
 		return TRUE;
 	else if (!isMaxMove && move == gDisableStructs[bank].disabledMove && check & MOVE_LIMITATION_DISABLED)
 		return TRUE;
+	else if (!isMaxMove && check & MOVE_LIMITATION_DISABLED && IsMoveQuarryDisabledByMoveslot(bank, move))
+		return TRUE;
 	else if (!isMaxMove && move == gLastUsedMoves[bank] && check & MOVE_LIMITATION_TORMENTED && IsTormented(bank))
 		return TRUE;
 	else if (IsTaunted(bank) && check & MOVE_LIMITATION_TAUNT && SPLIT(move) == SPLIT_STATUS)
@@ -770,8 +772,6 @@ bool8 IsUnusableMove(u16 move, u8 bank, u8 check, u8 pp, u8 ability, u8 holdEffe
 	else if (gSpecialMoveFlags[move].gSkyBattleBannedMoves && FlagGet(FLAG_SKY_BATTLE) && check & MOVE_LIMITATION_ENCORE)
 		return TRUE;
 	#endif
-	else if (gBattleTypeFlags & BATTLE_TYPE_RING_CHALLENGE && IsMoveBannedInRingChallenge(move, bank) && check & MOVE_LIMITATION_ENCORE)
-		return TRUE;
 	else if (gSpecialMoveFlags[move].gGravityBannedMoves && IsGravityActive() && check & MOVE_LIMITATION_DISABLED)
 		return TRUE;
 	else if (CheckSoundMove(move) && CantUseSoundMoves(bank) && check & MOVE_LIMITATION_DISABLED)
@@ -802,8 +802,6 @@ u8 CheckMoveLimitationsFromParty(struct Pokemon* mon, u8 unusableMoves, u8 check
 		else if (check & MOVE_LIMITATION_ENCORE && FlagGet(FLAG_SKY_BATTLE) && gSpecialMoveFlags[move].gSkyBattleBannedMoves)
 			unusableMoves |= gBitTable[i];
 		#endif
-		else if (check & MOVE_LIMITATION_ENCORE && gBattleTypeFlags & BATTLE_TYPE_RING_CHALLENGE && IsMoveBannedInRingChallengeByMon(move, mon))
-			unusableMoves |= gBitTable[i];
 		else if (check & MOVE_LIMITATION_DISABLED && IsGravityActive() && gSpecialMoveFlags[move].gGravityBannedMoves)
 			unusableMoves |= gBitTable[i];
 		else if (check & MOVE_LIMITATION_ENCORE && IsRaidBattle() && gSpecialMoveFlags[move].gRaidBattleBannedMoves)
@@ -1309,32 +1307,44 @@ bool8 CanTransferItem(u16 species, u16 item)
 		case ITEM_EFFECT_Z_CRYSTAL:
 			return FALSE;
 
-		#ifdef NATIONAL_DEX_GIRATINA
+		#ifdef SPECIES_GIRATINA
 		case ITEM_EFFECT_GRISEOUS_ORB:
-			if (dexNum == NATIONAL_DEX_GIRATINA)
+			if (species == SPECIES_GIRATINA
+			#ifdef SPECIES_GIRATINA_ORIGIN
+			 || species == SPECIES_GIRATINA_ORIGIN
+			#endif
+			)
 				return FALSE;
 			break;
 		#endif
 
 	#ifdef PLA_HELD_ORIGIN_ORBS
-		#ifdef NATIONAL_DEX_DIALGA
+		#ifdef SPECIES_DIALGA
 		case ITEM_EFFECT_ADAMANT_ORB:
-			if (dexNum == NATIONAL_DEX_DIALGA)
+			if (species == SPECIES_DIALGA
+			#ifdef SPECIES_DIALGA_ORIGIN
+			 || species == SPECIES_DIALGA_ORIGIN
+			#endif
+			)
 				return FALSE;
 			break;
 		#endif
 
-		#ifdef NATIONAL_DEX_PALKIA
+		#ifdef SPECIES_PALKIA
 		case ITEM_EFFECT_LUSTROUS_ORB:
-			if (dexNum == NATIONAL_DEX_PALKIA)
+			if (species == SPECIES_PALKIA
+			#ifdef SPECIES_PALKIA_ORIGIN
+			 || species == SPECIES_PALKIA_ORIGIN
+			#endif
+			)
 				return FALSE;
 			break;
 		#endif
 	#endif
 
-		#ifdef NATIONAL_DEX_ARCEUS
+		#ifdef SPECIES_ARCEUS
 		case ITEM_EFFECT_PLATE:
-			if (dexNum == NATIONAL_DEX_ARCEUS)
+			if (IsArceus(species))
 				return FALSE;
 			break;
 		#endif
@@ -1346,9 +1356,9 @@ bool8 CanTransferItem(u16 species, u16 item)
 			break;
 		#endif
 
-		#ifdef NATIONAL_DEX_GENESECT
+		#ifdef SPECIES_GENESECT
 		case ITEM_EFFECT_DRIVE:
-			if (dexNum == NATIONAL_DEX_GENESECT)
+			if (IsGenesect(species))
 				return FALSE;
 			break;
 		#endif
@@ -1579,8 +1589,21 @@ bool8 IsMoveAffectedByParentalBond(u16 move, u8 bankAtk)
 	return FALSE;
 }
 
+// The Gen 1-3 rule: Phys/spec is based on move type (fairy is special)
+static u8 CalcMoveSplitByType(u16 move)
+{
+	if (SPLIT(move) == SPLIT_STATUS)
+		return SPLIT_STATUS;
+
+	return (gBattleMoves[move].type < TYPE_FIRE) ? SPLIT_PHYSICAL : SPLIT_SPECIAL;
+}
+
 u8 CalcMoveSplit(u16 move, u8 bankAtk, u8 bankDef)
 {
+	// Takes priority over the moves that pick their own physicality - on the Isle the type is the only rule
+	if (IsBattleIsleBattle())
+		return CalcMoveSplitByType(move);
+
 	if (gSpecialMoveFlags[move].gMovesThatChangePhysicality
 	&&  SPLIT(move) != SPLIT_STATUS)
 	{
@@ -1613,6 +1636,9 @@ u8 CalcMoveSplit(u16 move, u8 bankAtk, u8 bankDef)
 
 u8 CalcMoveSplitFromParty(u16 move, struct Pokemon* mon)
 {
+	if (IsBattleIsleBattle())
+		return CalcMoveSplitByType(move);
+
 	if (gSpecialMoveFlags[move].gMovesThatChangePhysicality)
 	{
 		if (mon->spAttack >= mon->attack)
@@ -1897,7 +1923,7 @@ bool8 WeatherHasEffect(void)
 bool8 RainCanBeEvaporated(void)
 {
 	return gBattleWeather & WEATHER_RAIN_ANY
-		&& !(gBattleWeather & (WEATHER_PRIMAL_ANY | WEATHER_CIRCUS));
+		&& !(gBattleWeather & (WEATHER_PRIMAL_ANY | WEATHER_SIM));
 }
 
 bool8 ItemEffectIgnoresSunAndRain(u8 itemEffect)
@@ -2418,12 +2444,12 @@ bool8 IsTrickRoomActive(void)
 		#ifdef FLAG_TRICK_ROOM_BATTLE
 		|| FlagGet(FLAG_TRICK_ROOM_BATTLE)
 		#endif
-		|| (IS_BATTLE_CIRCUS && gBattleCircusFlags & BATTLE_CIRCUS_TRICK_ROOM);
+		|| (IS_BATTLE_SIM && gBattleSimFlags & BATTLE_SIM_TRICK_ROOM);
 }
 
 bool8 IsTrickRoomOnLastTurn(void)
 {
-	if ((IS_BATTLE_CIRCUS && gBattleCircusFlags & BATTLE_CIRCUS_TRICK_ROOM)
+	if ((IS_BATTLE_SIM && gBattleSimFlags & BATTLE_SIM_TRICK_ROOM)
 	#ifdef FLAG_TRICK_ROOM_BATTLE
 	|| FlagGet(FLAG_TRICK_ROOM_BATTLE)
 	#endif
@@ -2436,19 +2462,20 @@ bool8 IsTrickRoomOnLastTurn(void)
 bool8 IsMagicRoomActive(void)
 {
 	return gNewBS->MagicRoomTimer > 0
-		|| (IS_BATTLE_CIRCUS && gBattleCircusFlags & BATTLE_CIRCUS_MAGIC_ROOM);
+		|| (IS_BATTLE_SIM && gBattleSimFlags & BATTLE_SIM_MAGIC_ROOM)
+		|| IsBattleIsleBattle();
 }
 
 bool8 IsWonderRoomActive(void)
 {
 	return gNewBS->WonderRoomTimer > 0
-		|| (IS_BATTLE_CIRCUS && gBattleCircusFlags & BATTLE_CIRCUS_WONDER_ROOM);
+		|| (IS_BATTLE_SIM && gBattleSimFlags & BATTLE_SIM_WONDER_ROOM);
 }
 
 bool8 IsGravityActive(void)
 {
 	return gNewBS->GravityTimer > 0
-		|| (IS_BATTLE_CIRCUS && gBattleCircusFlags & BATTLE_CIRCUS_GRAVITY);
+		|| (IS_BATTLE_SIM && gBattleSimFlags & BATTLE_SIM_GRAVITY);
 }
 
 bool8 IsIonDelugeActive(void)
@@ -2459,7 +2486,7 @@ bool8 IsIonDelugeActive(void)
 bool8 IsFairyLockActive(void)
 {
 	return gNewBS->FairyLockTimer > 0
-		|| (IS_BATTLE_CIRCUS && gBattleCircusFlags & BATTLE_CIRCUS_FAIRY_LOCK);
+		|| (IS_BATTLE_SIM && gBattleSimFlags & BATTLE_SIM_FAIRY_LOCK);
 }
 
 bool8 IsMudSportActive(void)
@@ -2478,7 +2505,7 @@ bool8 IsDeltaStreamBattle(void)
 		#ifdef FLAG_DELTA_STREAM_BATTLE
 		FlagGet(FLAG_DELTA_STREAM_BATTLE) ||
 		#endif
-		(IS_BATTLE_CIRCUS && gBattleCircusFlags & BATTLE_CIRCUS_DELTA_STREAM);
+		(IS_BATTLE_SIM && gBattleSimFlags & BATTLE_SIM_DELTA_STREAM);
 }
 
 bool8 IsMagnetRiseBattle(void)
@@ -2487,7 +2514,7 @@ bool8 IsMagnetRiseBattle(void)
 		#ifdef FLAG_MAGNET_RISE_BATTLE
 		FlagGet(FLAG_MAGNET_RISE_BATTLE) ||
 		#endif
-		(IS_BATTLE_CIRCUS && gBattleCircusFlags & BATTLE_CIRCUS_MAGNET_RISE);
+		(IS_BATTLE_SIM && gBattleSimFlags & BATTLE_SIM_MAGNET_RISE);
 }
 
 bool8 IsBadThoughtsBattle(void)
@@ -2496,7 +2523,7 @@ bool8 IsBadThoughtsBattle(void)
 		#ifdef FLAG_BAD_THOUGHTS_BATTLE
 		FlagGet(FLAG_BAD_THOUGHTS_BATTLE) ||
 		#endif
-		(IS_BATTLE_CIRCUS && gBattleCircusFlags & BATTLE_CIRCUS_BAD_THOUGHTS);
+		(IS_BATTLE_SIM && gBattleSimFlags & BATTLE_SIM_BAD_THOUGHTS);
 }
 
 bool8 IsShadowShieldBattle(void)
@@ -2514,7 +2541,7 @@ bool8 IsPixieBattle(void)
 		#ifdef FLAG_PIXIE_BATTLE
 		FlagGet(FLAG_PIXIE_BATTLE) ||
 		#endif
-		(IS_BATTLE_CIRCUS && gBattleCircusFlags & BATTLE_CIRCUS_PIXIES);
+		(IS_BATTLE_SIM && gBattleSimFlags & BATTLE_SIM_PIXIES);
 }
 
 bool8 IsInverseBattle(void)
@@ -2523,13 +2550,13 @@ bool8 IsInverseBattle(void)
 		#ifdef FLAG_INVERSE
 		FlagGet(FLAG_INVERSE) ||
 		#endif
-		(IS_BATTLE_CIRCUS && gBattleCircusFlags & BATTLE_CIRCUS_INVERSE);
+		(IS_BATTLE_SIM && gBattleSimFlags & BATTLE_SIM_INVERSE);
 }
 
 bool8 BankSideHasSafeguard(u8 bank)
 {
 	return gSideStatuses[SIDE(bank)] & SIDE_STATUS_SAFEGUARD
-		|| (IS_BATTLE_CIRCUS && gBattleCircusFlags & BATTLE_CIRCUS_SAFEGUARD);
+		|| (IS_BATTLE_SIM && gBattleSimFlags & BATTLE_SIM_SAFEGUARD);
 }
 
 bool8 BankSideHasMist(u8 bank)
@@ -2538,7 +2565,7 @@ bool8 BankSideHasMist(u8 bank)
 
 	return gSideStatuses[side] & SIDE_STATUS_MIST
 		|| gSideTimers[side].mistTimer > 0 //Guard Spec
-		|| (IS_BATTLE_CIRCUS && gBattleCircusFlags & BATTLE_CIRCUS_MIST);
+		|| (IS_BATTLE_SIM && gBattleSimFlags & BATTLE_SIM_MIST);
 }
 
 bool8 BankHasTailwind(u8 bank)
@@ -2567,7 +2594,7 @@ bool8 MonHasTailwind(unusedArg struct Pokemon* mon, u8 side)
 bool8 BankSideHasSeaOfFire(u8 bank)
 {
 	return gNewBS->SeaOfFireTimers[SIDE(bank)]
-		|| (IS_BATTLE_CIRCUS && gBattleCircusFlags & BATTLE_CIRCUS_SEA_OF_FIRE);
+		|| (IS_BATTLE_SIM && gBattleSimFlags & BATTLE_SIM_SEA_OF_FIRE);
 }
 
 bool8 BankHasRainbow(u8 bank)
@@ -2582,7 +2609,7 @@ bool8 BankHasRainbow(u8 bank)
 bool8 BankSideHasRainbow(u8 bank)
 {
 	return gNewBS->RainbowTimers[SIDE(bank)]
-		|| (IS_BATTLE_CIRCUS && gBattleCircusFlags & BATTLE_CIRCUS_RAINBOW);
+		|| (IS_BATTLE_SIM && gBattleSimFlags & BATTLE_SIM_RAINBOW);
 }
 
 bool8 BankSideHasSwamp(u8 bank)
@@ -2618,37 +2645,37 @@ bool8 BankSideHasGMaxVolcalith(u8 bank)
 bool8 IsConfused(u8 bank)
 {
 	return (gBattleMons[bank].status2 & STATUS2_CONFUSION) != 0
-		|| (IS_BATTLE_CIRCUS && gBattleCircusFlags & BATTLE_CIRCUS_CONFUSED && ABILITY(bank) != ABILITY_OWNTEMPO);
+		|| (IS_BATTLE_SIM && gBattleSimFlags & BATTLE_SIM_CONFUSED && ABILITY(bank) != ABILITY_OWNTEMPO);
 }
 
 bool8 IsTaunted(u8 bank)
 {
 	return gDisableStructs[bank].tauntTimer > 0
-		|| (IS_BATTLE_CIRCUS && gBattleCircusFlags & BATTLE_CIRCUS_TAUNT && ABILITY(bank) != ABILITY_OBLIVIOUS);
+		|| (IS_BATTLE_SIM && gBattleSimFlags & BATTLE_SIM_TAUNT && ABILITY(bank) != ABILITY_OBLIVIOUS);
 }
 
 bool8 IsTormented(u8 bank)
 {
 	return (gBattleMons[bank].status2 & STATUS2_TORMENT) != 0
-		|| (IS_BATTLE_CIRCUS && gBattleCircusFlags & BATTLE_CIRCUS_TORMENT);
+		|| (IS_BATTLE_SIM && gBattleSimFlags & BATTLE_SIM_TORMENT);
 }
 
 bool8 IsHealBlocked(u8 bank)
 {
 	return gNewBS->HealBlockTimers[bank] > 0
-		|| (IS_BATTLE_CIRCUS && gBattleCircusFlags & BATTLE_CIRCUS_HEAL_BLOCK);
+		|| (IS_BATTLE_SIM && gBattleSimFlags & BATTLE_SIM_HEAL_BLOCK);
 }
 
 bool8 CantUseSoundMoves(u8 bank)
 {
 	return gNewBS->ThroatChopTimers[bank] > 0
-		|| (IS_BATTLE_CIRCUS && gBattleCircusFlags & BATTLE_CIRCUS_THROAT_CHOP);
+		|| (IS_BATTLE_SIM && gBattleSimFlags & BATTLE_SIM_THROAT_CHOP);
 }
 
 bool8 IsLaserFocused(u8 bank)
 {
 	return gNewBS->LaserFocusTimers[bank] > 0
-		|| (IS_BATTLE_CIRCUS && gBattleCircusFlags & BATTLE_CIRCUS_ALWAYS_CRIT);
+		|| (IS_BATTLE_SIM && gBattleSimFlags & BATTLE_SIM_ALWAYS_CRIT);
 }
 
 bool8 IsAbilitySuppressed(u8 bank)
@@ -2659,7 +2686,8 @@ bool8 IsAbilitySuppressed(u8 bank)
 
 bool8 AreAbilitiesSuppressed(void)
 {
-	return IS_BATTLE_CIRCUS && gBattleCircusFlags & BATTLE_CIRCUS_ABILITY_SUPPRESSION;
+	return (IS_BATTLE_SIM && gBattleSimFlags & BATTLE_SIM_ABILITY_SUPPRESSION)
+		|| IsBattleIsleBattle();
 }
 
 bool8 CantScoreACrit(u8 bank, struct Pokemon* mon)
@@ -2668,7 +2696,7 @@ bool8 CantScoreACrit(u8 bank, struct Pokemon* mon)
 		return FALSE;
 
 	return (gStatuses3[bank] & STATUS3_CANT_SCORE_A_CRIT) != 0
-		|| (IS_BATTLE_CIRCUS && gBattleCircusFlags & BATTLE_CIRCUS_NO_CRITS);
+		|| (IS_BATTLE_SIM && gBattleSimFlags & BATTLE_SIM_NO_CRITS);
 }
 
 void ClearTemporarySpeciesSpriteData(u8 bank, bool8 dontClearSubstitute)
@@ -2689,4 +2717,52 @@ u16 TryFixDynamaxTransformSpecies(u8 bank, u16 species)
 		species = gBattleSpritesDataPtr->bankData[bank].transformSpecies;
 
 	return species;
+}
+
+bool8 IsQuarryBattle(void)
+{
+	return (gBattleTypeFlags & BATTLE_TYPE_BATTLE_QUARRY) != 0;
+}
+
+bool8 IsMoveQuarryDisabled(u8 bank, u8 movePos)
+{
+	return IsQuarryBattle() && (gNewBS->quarryDisabledSlots[bank] & gBitTable[movePos]) != 0;
+}
+
+// IsUnusableMove works in moves rather than slots, so map back to the slot the move sits in.
+bool8 IsMoveQuarryDisabledByMoveslot(u8 bank, u16 move)
+{
+	u32 i;
+
+	if (!IsQuarryBattle() || move == MOVE_NONE)
+		return FALSE;
+
+	for (i = 0; i < MAX_MON_MOVES; ++i)
+	{
+		if (gBattleMons[bank].moves[i] == move && IsMoveQuarryDisabled(bank, i))
+			return TRUE;
+	}
+
+	return FALSE;
+}
+
+// Empty slots are eligible on purpose: a Pokemon with fewer than four moves gambles on the roll
+// landing on its blanks rather than being guaranteed to Struggle.
+void RollQuarryDisabledMoves(void)
+{
+	u32 bank;
+
+	if (!IsQuarryBattle())
+		return;
+
+	for (bank = 0; bank < gBattlersCount; ++bank)
+	{
+		u8 first = Random() % MAX_MON_MOVES;
+		u8 second = Random() % (MAX_MON_MOVES - 1);
+
+		if (second >= first) // Picks the second slot out of the remaining three without a rejection loop
+			++second;
+
+		gNewBS->quarryDisabledSlots[bank] = gBitTable[first] | gBitTable[second];
+	}
 }

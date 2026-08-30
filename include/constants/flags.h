@@ -8,7 +8,7 @@
 #define FLAG_TEMP_6 0x006
 #define FLAG_TEMP_7 0x007
 #define FLAG_TEMP_8 0x008
-#define FLAG_TEMP_9 0x009 // Used for Divergent roamer weather overrides
+#define FLAG_TEMP_9 0x009
 #define FLAG_TEMP_A 0x00A
 #define FLAG_TEMP_B 0x00B
 #define FLAG_TEMP_C 0x00C
@@ -29,8 +29,8 @@
 #define FLAG_TEMP_1B 0x01B // Used to get Monty out of bed & hide Kurtis in Route 13 cave
 #define FLAG_TEMP_1C 0x01C
 #define FLAG_TEMP_1D 0x01D
-#define FLAG_TEMP_1E 0x01E
-#define FLAG_TEMP_1F 0x01F
+#define FLAG_TEMP_ROAMER_WEATHER 0x01E // Used for Divergent roamer weather overrides; do not use in map events or scripts
+#define FLAG_TEMP_ADM_AVAILABILITY 0x01F // Used by ADM disabling/enabling; do not use in map events or scripts
 
 #define FLAG_0x020 0x020
 #define FLAG_0x021 0x021
@@ -216,10 +216,10 @@
 #define FLAG_GAMEMODIFIER_RANDOMIZERMOVESETS_UNLOCKED      0x0BF
 #define FLAG_GAMEMODIFIER_RANDOMIZERABILITIES_UNLOCKED     0x0C0
 #define FLAG_GAMEMODIFIER_EV_IV_VIEWER_UNLOCKED            0x0C1
-#define FLAG_GAMEMODIFIER_DIVERGNET_TOGGLE_UNLOCKED        0x0C2
+#define FLAG_GAMEMODIFIER_DIVERGENT_TOGGLE_UNLOCKED        0x0C2
+#define FLAG_GAMEMODIFIER_PERFECT_WILD_IVS_UNLOCKED        0x0C3
+#define FLAG_GAMEMODIFIER_REPEATED_MEGA_EVOLUTION_UNLOCKED 0x0C4
 /*
-#define FLAG_0x0C3               0x0C3
-#define FLAG_0x0C4               0x0C4
 #define FLAG_0x0C5               0x0C5
 #define FLAG_0x0C6               0x0C6
 #define FLAG_0x0C7               0x0C7
@@ -729,7 +729,9 @@
 #define FLAG_VICTORY_ROAD_3F_LEFT_PUZZLE_SOLVED          0x286
 #define FLAG_VICTORY_ROAD_3F_RIGHT_PUZZLE_SOLVED         0x287
 #define FLAG_DEFEATED_KURTIS_IN_ROUTE_13_CAVE            0x288
+*/
 #define FLAG_DEFEATED_ULTRA_NECROZMA                     0x289
+/*
 #define FLAG_EVOLVED_TYPE_NULL                           0x28A
 #define FLAG_ECLIPSE_ACTIVE_IN_DAIS_OF_LIGHT             0x28B
 #define FLAG_SAKURA_CONGRATULATED_PLAYER_ON_VICTORY      0x28C
@@ -750,12 +752,12 @@
 #define FLAG_GOT_TM06_FROM_STELLA                        0x297
 */
 #define FLAG_CAUGHT_DARKRAI                              0x298
+#define FLAG_ALL_ZCRYSTALS_OBTAINED                      0x299
 /*
-#define FLAG_0x299                                       0x299
 #define FLAG_GOT_TM76_FROM_ABBY                          0x29A
-#define FLAG_GOT_FAME_CHECKER                            0x29B
-#define FLAG_GOT_RECORD_SETTING_MAGIKARP                 0x29C
-#define FLAG_TWO_ISLAND_SHOP_INTRODUCED                  0x29D
+#define FLAG_RECEIVED_COSPLAY_PIKACHU                    0x29B
+#define FLAG_DID_JUNICHI_TRADE                           0x29C
+#define FLAG_ENTERED_BATTLE_FRONTIER_SANDBOX             0x29D
 #define FLAG_TWO_ISLAND_SHOP_EXPANDED_1                  0x29E
 #define FLAG_TWO_ISLAND_SHOP_EXPANDED_2                  0x29F
 #define FLAG_TWO_ISLAND_SHOP_EXPANDED_3                  0x2A0
@@ -767,10 +769,12 @@
 #define FLAG_GOT_TEA                                     0x2A6
 #define FLAG_GOT_AURORA_TICKET                           0x2A7
 #define FLAG_GOT_MYSTIC_TICKET                           0x2A8
-#define FLAG_0x2A9                                       0x2A9
-#define FLAG_0x2AA                                       0x2AA
-#define FLAG_0x2AB                                       0x2AB
-#define FLAG_0x2AC                                       0x2AC
+*/
+#define FLAG_TRAINER_HOUSE_HELEO_CITY_CLEARED            0x2A9
+#define FLAG_TRAINER_HOUSE_EMRALDIN_QUAY_CLEARED         0x2AA
+#define FLAG_TRAINER_HOUSE_LAPLAZ_TOWN_CLEARED           0x2AB
+#define FLAG_TRAINER_HOUSE_UTEYA_VILLAGE_CLEARED         0x2AC
+/*
 #define FLAG_0x2AD                                       0x2AD
 #define FLAG_0x2AE                                       0x2AE
 #define FLAG_0x2AF                                       0x2AF
@@ -994,7 +998,7 @@
 */
 #define FLAG_HIDE_ROUTE8_SWAMPERTITE                     0x379
 /*
-#define FLAG_0x37A               0x37A
+#define FLAG_HIDE_CARNELIDGE_VOLCANO_MAGMA_STONE         0x37A
 #define FLAG_0x37B               0x37B
 #define FLAG_0x37C               0x37C
 #define FLAG_0x37D               0x37D
@@ -1476,6 +1480,8 @@ Daily Flags, cleared at the start of each day.  Goes up to 0xEFF
 #define FLAG_GYM_LEADER_REMATCH_IRIS          0xE3D
 #define FLAG_GYM_LEADER_REMATCH_DENNIS_AND_DEE 0xE3E
 #define FLAG_BLISSEY_TRAINER                  0xE3F
+#define FLAG_BATTLE_FRONTIER_RELIC_SELLER     0xE40
+#define FLAG_BATTLE_FRONTIER_WONDER_PICK      0xE41
 */
 
 #define FLAG_TRAINER_FLAG_START 0x500

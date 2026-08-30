@@ -129,8 +129,10 @@ void DebugMenu_ProcessGiveItem(void)
 			for (i = ITEM_TM59_BRUTAL_SWING; i <= ITEM_TM100_CONFIDE; ++i)
 				AddBagItem(i, 1);
 
-			for (i = ITEM_HM01_CUT; i <= ITEM_HM08_ROCK_CLIMB; ++i)
+			for (i = ITEM_HM01_CUT; i <= ITEM_HM04_STRENGTH; ++i)
 				AddBagItem(i, 1);
+			AddBagItem(ITEM_HM06_ROCK_SMASH, 1);
+			AddBagItem(ITEM_HM08_ROCK_CLIMB, 1);
 			// #endif
 			break;
 		case 5: //All items
@@ -140,6 +142,18 @@ void DebugMenu_ProcessGiveItem(void)
 				if (name[0] != 0xAC && name[0] != 0xFF) //'?', ' '
 					AddBagItem(i, 1);
 			}
+			break;
+		case 6: // Mega Stones and Typed Z-Crystals
+			for (i = ITEM_VENUSAURITE; i <= ITEM_DIANCITE; ++i)
+				AddBagItem(i, 1);
+			for (i = ITEM_VENUSAURITE_G; i <= ITEM_URSHIFITE; ++i)
+				AddBagItem(i, 1);
+			for (i = ITEM_CENTISKORITE; i <= ITEM_DURALUDITE; ++i)
+				AddBagItem(i, 1);
+			for (i = ITEM_LAPRASITE; i <= ITEM_TOXTRICITE; ++i)
+				AddBagItem(i, 1);
+			for (i = ITEM_NORMALIUM_Z; i <= ITEM_FAIRIUM_Z; ++i)
+				AddBagItem(i, 1);
 			break;
 	}
 }
@@ -177,12 +191,23 @@ void DebugMenu_ShinyTeam(void)
 
 void DebugMenu_SetAllPokemonCaught(void)
 {
-	for (u32 i = 0; i <= NATIONAL_DEX_COUNT; ++i)
+	// Dex numbers 1 - NATIONAL_DEX_COUNT only cover the standard dex, so walk each mode's species
+	// list and convert instead. Both are filled, since the two modes' dex numbers don't overlap and
+	// the dex should stay complete across a mode switch.
+	for (u32 divergent = FALSE; divergent <= TRUE; ++divergent)
 	{
-		GetSetPokedexFlag(i, FLAG_SET_SEEN);
-		if (gSpecialVar_LastResult == 1)
+		u16 count;
+		const u16* speciesTable = GetRegionalDexSpeciesTable(divergent, &count);
+
+		for (u32 i = 0; i < count; ++i)
 		{
-			GetSetPokedexFlag(i, FLAG_SET_CAUGHT);
+			u16 dexNum = SpeciesToNationalPokedexNum(speciesTable[i]);
+
+			GetSetPokedexFlag(dexNum, FLAG_SET_SEEN);
+			if (gSpecialVar_LastResult == 1)
+			{
+				GetSetPokedexFlag(dexNum, FLAG_SET_CAUGHT);
+			}
 		}
 	}
 }

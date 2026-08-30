@@ -183,7 +183,7 @@ void atkFF06_setterrain(void)
 	if (ITEM_EFFECT(gBankAttacker) == ITEM_EFFECT_TERRAIN_EXTENDER)
 		duration = 8;
 
-	if (gBattleTypeFlags & BATTLE_TYPE_BATTLE_CIRCUS && gBattleCircusFlags & BATTLE_CIRCUS_TERRAIN)
+	if (gBattleTypeFlags & BATTLE_TYPE_BATTLE_SIM && gBattleSimFlags & BATTLE_SIM_TERRAIN)
 		type = 0xFF; //Can't be changed
 	else
 	{

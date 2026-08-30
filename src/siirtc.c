@@ -63,6 +63,16 @@
 #define GPIO_PORT_DIRECTION   (*(vu16 *)0x80000C6)
 #define GPIO_PORT_READ_ENABLE (*(vu16 *)0x80000C8)
 
+// Flashcarts (EZ-Flash, EverDrive) and emulators decide whether to emulate the
+// GPIO/RTC hardware by scanning the ROM image for this exact ASCII string, the
+// way Ruby/Sapphire/Emerald carry it. FireRed has no RTC, so without the string
+// nothing above enables GPIO emulation and the writes below reach the cart bus
+// directly. On hardware that maps the ROM into writable memory (EZ-Flash Omega
+// running from PSRAM) they land in the loaded image, so ReadData() reads back
+// whatever was last written and SiiRtcProbe() sees a phantom RTC answering with
+// garbage instead of cleanly failing. Keep it contiguous to support these devices
+__attribute__((used)) static const char sRtcLibrarySignature[] = "SIIRTC_V001";
+
 //extern vu16 GPIOPortDirection;
 
 extern bool8 sLocked;

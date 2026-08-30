@@ -1,15 +1,21 @@
 #include "defines.h"
 #include "../include/random.h"
 #include "../include/constants/abilities.h"
+#include "../include/constants/items.h"
 
 #include "../include/new/ability_tables.h"
 #include "../include/new/damage_calc.h"
 #include "../include/new/evolution.h"
 #include "../include/new/frontier.h"
+#include "../include/new/build_pokemon.h"
+#include "../include/new/catching.h"
 #include "../include/new/mega.h"
 #include "../include/new/util.h"
 #include "../include/money.h"
+#include "../include/pokemon_storage_system.h"
 #include "../include/string_util.h"
+#include "../include/text.h"
+#include "../include/new/pokemon_storage_system.h"
 
 /*
 util.c
@@ -151,37 +157,218 @@ void SetMonPokedexFlags(struct Pokemon* mon)
 	}
 }
 
+// The dex changes dynamically between standard and divergent mode.
+// Instead of counting the correct dex's caught pokemon in multiple places (Ex. trainer card & critical captures)
+// it is computed here, based on actual caught flags for the active dex.
+#define GetRegionalDexCount ((u16 (*)(u8 caseId)) (0x08088EDC | 1))
 u16 GetNationalPokedexCount(u8 caseID)
 {
-	u32 i;
-	u16 count = 0;
-	u8 byte;
-	u8* flags;
+	return GetRegionalDexCount((caseID == FLAG_GET_SEEN) ? FLAG_GET_SEEN : FLAG_GET_CAUGHT);
+}
 
-	switch (caseID) {
-		case FLAG_GET_SEEN:
-			flags = (u8*) SEEN_DEX_FLAGS;
-			break;
+// The species lists behind each mode's dex, laid out as a u16 count followed by that many species.
+// The two modes do not share dex numbers - standard species map to 1 - 390 and divergent-exclusive
+// ones to 391 - 780 - so flags set for one mode never collide with the other's.
+// These are the same two tables GetRegionalDexCount picks between off FLAG_DIVERGENT_WILD_ENCOUNTERS.
+#define sRegionalDexTableStandard  ((const u16*) 0x09C1CE00)
+#define sRegionalDexTableDivergent ((const u16*) 0x09C1BEB4)
 
-		default: //case FLAG_GET_CAUGHT:
-			flags = (u8*) CAUGHT_DEX_FLAGS;
-			break;
+const u16* GetRegionalDexSpeciesTable(bool8 divergent, u16* count)
+{
+	const u16* table = divergent ? sRegionalDexTableDivergent : sRegionalDexTableStandard;
+
+	*count = table[0];
+	return &table[1];
+}
+
+// Checks the dex for the active mode only
+bool8 IsPokedexComplete(void)
+{
+	for (u32 divergent = FALSE; divergent <= TRUE; ++divergent)
+	{
+		u16 count;
+		const u16* speciesTable = GetRegionalDexSpeciesTable(divergent, &count);
+		bool8 complete = TRUE;
+
+		for (u32 i = 0; i < count && complete; ++i)
+			complete = GetSetPokedexFlag(SpeciesToNationalPokedexNum(speciesTable[i]), FLAG_GET_CAUGHT);
+
+		if (complete)
+			return TRUE;
 	}
 
-	for (i = 0; i <= (NATIONAL_DEX_COUNT - 1) / 8; ++i) //8 Pokemon per byte
+	return FALSE;
+}
+
+// Checks if items from start to end index are held in the bag
+static bool8 AreAllItemsInRangeObtained(u16 startRange, u16 endRange)
+{
+	for (u32 i = startRange; i <= endRange; ++i)
 	{
-		byte = flags[i];
+		if (!CheckBagHasItem(i, 1))
+			return FALSE;
+	}
 
-		while (byte != 0)
+	return TRUE;
+}
+
+// Reminder: TMs are in split ranges and HMs 5 and 7 are unused.
+bool8 HasEveryTMAndHM(void)
+{
+	return AreAllItemsInRangeObtained(ITEM_TM01_WORK_UP, ITEM_TM50_OVERHEAT)
+	    && AreAllItemsInRangeObtained(ITEM_TM51_STEEL_WING, ITEM_TM58_ENDURE)
+	    && AreAllItemsInRangeObtained(ITEM_TM59_BRUTAL_SWING, ITEM_TM100_CONFIDE)
+	    && AreAllItemsInRangeObtained(ITEM_HM01_CUT, ITEM_HM04_STRENGTH)
+	    && CheckBagHasItem(ITEM_HM06_ROCK_SMASH, 1)
+	    && CheckBagHasItem(ITEM_HM08_ROCK_CLIMB, 1);
+}
+
+// Starter mega stones are shared between Standard and Divergent modes
+static const u16 sSharedMegaStones[] =
+{
+	ITEM_VENUSAURITE,
+	ITEM_CHARIZARDITE_X,
+	ITEM_CHARIZARDITE_Y,
+	ITEM_BLASTOISINITE,
+	ITEM_SCEPTILITE,
+	ITEM_BLAZIKENITE,
+	ITEM_SWAMPERTITE,
+	ITEM_VENUSAURITE_G,
+	ITEM_CHARIZARDITE_G,
+	ITEM_BLASTOISINITE_G,
+	ITEM_RILLABITE,
+	ITEM_CINDERITE,
+	ITEM_INTELLEITE,
+};
+
+static const u16 sStandardOnlyMegaStones[] =
+{
+	ITEM_AMPHAROSITE,
+	ITEM_SABLENITE,
+	ITEM_LOPUNNITE,
+	ITEM_MAWILITE,
+	ITEM_GARCHOMPITE,
+	ITEM_GLALITITE,
+	ITEM_LUCARIONITE,
+	ITEM_HERACRONITE,
+	ITEM_SLOWBRONITE,
+	ITEM_SHARPEDONITE,
+	ITEM_GALLADITE,
+	ITEM_KANGASKHANITE,
+	ITEM_GARDEVOIRITE,
+	ITEM_GYARADOSITE,
+	ITEM_HOUNDOOMINITE,
+	ITEM_LAPRASITE,
+	ITEM_MELMETALITE,
+	ITEM_CORVIKNITE,
+	ITEM_ORBEETLITE,
+	ITEM_COALOSSITE,
+	ITEM_TOXTRICITE,
+	ITEM_CENTISKORITE,
+	ITEM_HATTERITE,
+	ITEM_COPPERITE,
+	ITEM_DURALUDITE,
+};
+
+static const u16 sDivergentOnlyMegaStones[] =
+{
+	ITEM_PIDGEOTITE,
+	ITEM_BANETTITE,
+	ITEM_MANECTITE,
+	ITEM_MEDICHAMITE,
+	ITEM_AERODACTYLITE,
+	ITEM_STEELIXITE,
+	ITEM_METAGROSSITE,
+	ITEM_PINSIRITE,
+	ITEM_ABOMASITE,
+	ITEM_SALAMENCITE,
+	ITEM_ABSOLITE,
+	ITEM_SCIZORITE,
+	ITEM_ALAKAZITE,
+	ITEM_GENGARITE,
+	ITEM_TYRANITARITE,
+	ITEM_BEEDRILLITE,
+	ITEM_AGGRONITE,
+	ITEM_CAMERUPTITE,
+	ITEM_ALTARIANITE,
+	ITEM_AUDINITE,
+	ITEM_BUTTERFRITE,
+	ITEM_MACHAMPITE,
+	ITEM_GENGARITE_G,
+	ITEM_KINGLERITE,
+	ITEM_SNORLAXITE,
+	ITEM_GARBODORITE,
+	ITEM_DREDNAWITE,
+	ITEM_APPLITE,
+	ITEM_SANDACONDITE,
+	ITEM_GRIMMSNARITE,
+	ITEM_ALCREMITE,
+	ITEM_URSHIFITE,
+};
+
+// Sized for whichever mode list is longer (in case future changes make Divergent have less)
+#define NUM_MODE_MEGA_STONES (ARRAY_COUNT(sStandardOnlyMegaStones) > ARRAY_COUNT(sDivergentOnlyMegaStones) \
+	? ARRAY_COUNT(sStandardOnlyMegaStones) : ARRAY_COUNT(sDivergentOnlyMegaStones))
+#define MAX_REQUIRED_MEGA_STONES (ARRAY_COUNT(sSharedMegaStones) + NUM_MODE_MEGA_STONES)
+
+// Appends the stones from the given list that aren't sitting in the bag, returning the new total
+static u32 AddMegaStonesMissingFromBag(const u16* stones, u32 numStones, u16* missing, u32 numMissing)
+{
+	for (u32 i = 0; i < numStones; ++i)
+	{
+		if (!CheckBagHasItem(stones[i], 1))
+			missing[numMissing++] = stones[i];
+	}
+
+	return numMissing;
+}
+
+// Drops item from the missing list if it's on it, returning how many are still unaccounted for
+static u32 RemoveMegaStoneFromMissingList(u16* missing, u32 numMissing, u16 item)
+{
+	for (u32 i = 0; i < numMissing; ++i)
+	{
+		if (missing[i] == item)
 		{
-			if (byte & 1)
-				++count;
-
-			byte >>= 1;
+			missing[i] = missing[--numMissing]; // Order doesn't matter, so backfill from the end
+			break;
 		}
 	}
 
-	return count;
+	return numMissing;
+}
+
+bool8 HasEveryMegaStoneForCurrentMode(void)
+{
+	u16 missing[MAX_REQUIRED_MEGA_STONES];
+	const u16* modeStones;
+	u32 numModeStones, numMissing;
+
+	if (FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS))
+	{
+		modeStones = sDivergentOnlyMegaStones;
+		numModeStones = ARRAY_COUNT(sDivergentOnlyMegaStones);
+	}
+	else
+	{
+		modeStones = sStandardOnlyMegaStones;
+		numModeStones = ARRAY_COUNT(sStandardOnlyMegaStones);
+	}
+
+	numMissing = AddMegaStonesMissingFromBag(sSharedMegaStones, ARRAY_COUNT(sSharedMegaStones), missing, 0);
+	numMissing = AddMegaStonesMissingFromBag(modeStones, numModeStones, missing, numMissing);
+
+	// Anything not in the bag can still be held by a Pokemon, so sweep the party and the boxes for it
+	for (u32 i = 0; i < PARTY_SIZE && numMissing > 0; ++i)
+		numMissing = RemoveMegaStoneFromMissingList(missing, numMissing, GetMonData(&gPlayerParty[i], MON_DATA_HELD_ITEM, NULL));
+
+	for (u32 box = 0; box < TOTAL_BOXES_COUNT && numMissing > 0; ++box)
+	{
+		for (u32 pos = 0; pos < IN_BOX_COUNT && numMissing > 0; ++pos)
+			numMissing = RemoveMegaStoneFromMissingList(missing, numMissing, GetBoxMonDataAt(box, pos, MON_DATA_HELD_ITEM));
+	}
+
+	return numMissing == 0;
 }
 
 bool8 SpeciesWithDexNumOnTeam(u16 dexNum)
@@ -749,8 +936,8 @@ u8 GetCurrentLevelCap()
 	else // Standard
 		levelCap = EqualLevelCaps_Standard[cap];
 
-	if (VarGet(VAR_LEVEL_CAPS) == OPTIONS_AMETHYST_EXTRA_HARD_LEVEL_CAPS)
-		levelCap = levelCap - 2; // Extra hard level cap reduced by 2
+	if (VarGet(VAR_LEVEL_CAPS) == OPTIONS_AMETHYST_EXTRA_HARD_LEVEL_CAPS && !FlagGet(FLAG_SYS_GAME_CLEAR))
+		levelCap = levelCap - 2; // Extra hard level cap reduced by 2 if game isn't beaten
 
 	return levelCap;
 }
@@ -781,6 +968,115 @@ void CheckIfPartyIsSameType(void)
 			}
 		}
 	}
+}
+
+static const u8 sBoxName_Singles[] = {CHAR_S, CHAR_i, CHAR_n, CHAR_g, CHAR_l, CHAR_e, CHAR_s, EOS};
+static const u8 sBoxName_Doubles[] = {CHAR_D, CHAR_o, CHAR_u, CHAR_b, CHAR_l, CHAR_e, CHAR_s, EOS};
+
+static bool8 IsSpeciesInList(u16 species, const u16* list, u32 count)
+{
+	for (u32 i = 0; i < count; ++i)
+	{
+		if (list[i] == species)
+			return TRUE;
+	}
+
+	return FALSE;
+}
+
+enum FrontierSpreadFormats
+{
+	FRONTIER_SPREAD_ANY_FORMAT,
+	FRONTIER_SPREAD_SINGLES,
+	FRONTIER_SPREAD_DOUBLES,
+};
+
+// Walks the spread table from a random point so each pick is effectively random, but still
+// terminates once every spread has been rejected. usedSpecies rejects repeats and may be NULL
+// when they don't matter. Returns 0xFFFF when nothing is left to pick.
+static u16 PickRandomFrontierSpread(u8 format, const u16* usedSpecies, u32 numUsed)
+{
+	u16 start = Random() % gNumFrontierSpreads;
+
+	for (u32 i = 0; i < gNumFrontierSpreads; ++i)
+	{
+		u16 index = (start + i) % gNumFrontierSpreads;
+		const struct BattleTowerSpread* spread = &gFrontierSpreads[index];
+
+		if (format == FRONTIER_SPREAD_SINGLES && !spread->forSingles)
+			continue;
+
+		if (format == FRONTIER_SPREAD_DOUBLES && !spread->forDoubles)
+			continue;
+
+		if (!IsSpeciesInList(spread->species, usedSpecies, numUsed))
+			return index;
+	}
+
+	return 0xFFFF;
+}
+
+// Overwrites every slot in the box, so whatever was in it is discarded
+static void FillBoxWithFrontierSpreads(u8 boxId, u8 format, const u8* boxName)
+{
+	u16 usedSpecies[IN_BOX_COUNT];
+	u32 numUsed = 0;
+
+	for (u32 pos = 0; pos < IN_BOX_COUNT; ++pos)
+	{
+		struct Pokemon mon;
+		u16 index = PickRandomFrontierSpread(format, usedSpecies, numUsed);
+
+		if (index == 0xFFFF) // Ran out of unique species for this format
+		{
+			ZeroBoxMonAt(boxId, pos);
+			continue;
+		}
+
+		usedSpecies[numUsed++] = gFrontierSpreads[index].species;
+		CreateFrontierMon(&mon, 50, &gFrontierSpreads[index], 0, 0, 0, TRUE);
+		SetBoxMonAt(boxId, pos, (struct BoxPokemon*) &mon);
+	}
+
+	StringCopy(GetBoxNamePtr(boxId), boxName);
+}
+
+/// Stocks the first two PC boxes with random Battle Frontier spreads for the sandbox - 30 Singles
+///	legal ones in box 1 and 30 Doubles legal ones in box 2, renaming both boxes to match.
+///	Species are unique within a box, but the same species can appear in both.
+void FillBoxesWithFrontierSpreads(void)
+{
+	FillBoxWithFrontierSpreads(0, FRONTIER_SPREAD_SINGLES, sBoxName_Singles);
+	FillBoxWithFrontierSpreads(1, FRONTIER_SPREAD_DOUBLES, sBoxName_Doubles);
+}
+
+/// Hands the player a random Battle Frontier ready Pokemon for the Wonder Pick (minus legendaries).
+///	The script charges for the pick and reports the outcome, so nothing here touches the player's PokeChips.
+/// Returns LASTRESULT: TRUE if the Pokemon is received, FALSE if it isn't so the script can refund.
+///	        BUFFER1: the name of the Pokemon picked.
+///	        Var 0x8000: its species, for the script to show off with showpokepic and cry.
+void WonderPickFrontierMon(void)
+{
+	struct Pokemon mon;
+	u16 species;
+	u16 index = PickRandomFrontierSpread(FRONTIER_SPREAD_ANY_FORMAT, NULL, 0);
+
+	gSpecialVar_LastResult = FALSE;
+
+	// The script checks for room first, but bailing here too stops a full party from quietly
+	// diverting a paid-for pick into the PC, where the script's refund would double up on it
+	if (index == 0xFFFF || GetMonData(&gPlayerParty[PARTY_SIZE - 1], MON_DATA_SPECIES, NULL) != SPECIES_NONE)
+		return;
+
+	CreateFrontierMon(&mon, 50, &gFrontierSpreads[index], 0, 0, 0, TRUE);
+
+	// Read back off the mon rather than the spread, since aesthetic forms are picked during creation
+	species = GetMonData(&mon, MON_DATA_SPECIES, NULL);
+	StringCopy(gStringVar1, gSpeciesNames[species]);
+	VarSet(VAR_0x8000, species);
+
+	SetMonPokedexFlags(&mon);
+	gSpecialVar_LastResult = GiveMonToPlayer(&mon) == MON_GIVEN_TO_PARTY;
 }
 
 /// @brief Cleanup vars used by various scripts (any multichoice). Not doing so can result in crashes when using Fly after accessing any multichoice. 

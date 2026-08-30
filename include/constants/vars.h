@@ -159,7 +159,7 @@
 #define VAR_MAP_SCENE_HAWTHORNES_LAB_CONSERVATORY                              0x4071
 #define VAR_MAP_SCENE_VICTORY_ROAD_PEAK_CUTSCENES                              0x4072
 #define VAR_MAP_SCENE_ULTRA_EPISODE_PROGRESSION                                0x4073
-#define VAR_MAP_SCENE_SEVEN_ISLAND_HOUSE_ROOM1                                 0x4074
+#define VAR_MAP_SCENE_BATTLE_FRONTIER_INITIALIZATION                           0x4074
 #define VAR_MAP_SCENE_ONE_ISLAND_HARBOR                                        0x4075
 #define VAR_MAP_SCENE_ONE_ISLAND_POKEMON_CENTER_1F                             0x4076
 #define VAR_MAP_SCENE_TSARVOSA_STATS_DOJO_PROGRESSION                          0x4077

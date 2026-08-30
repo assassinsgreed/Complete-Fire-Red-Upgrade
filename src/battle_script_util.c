@@ -11,6 +11,7 @@
 #include "../include/new/ability_tables.h"
 #include "../include/new/battle_indicators.h"
 #include "../include/new/battle_script_util.h"
+#include "../include/new/battle_start_turn_start.h"
 #include "../include/new/battle_start_turn_start_battle_scripts.h"
 #include "../include/new/battle_util.h"
 #include "../include/new/catching.h"
@@ -20,6 +21,7 @@
 #include "../include/new/end_battle.h"
 #include "../include/new/end_turn_battle_scripts.h"
 #include "../include/new/frontier.h"
+#include "../include/new/general_battle_strings.h"
 #include "../include/new/general_bs_commands.h"
 #include "../include/new/item.h"
 #include "../include/new/item_battle_scripts.h"
@@ -232,6 +234,12 @@ void ToggleSpectralThiefByte(void)
 	gNewBS->SpectralThiefActive ^= TRUE;
 }
 
+void LoadTotemBoostActivationString(void)
+{
+	// Outside the sands the only source of a totem boost is a Daimyn Restaurant meal
+	gBattleStringLoader = (InBattleSands()) ? BattleText_BattleSandsBoost : BattleText_MealActivated;
+}
+
 void ToggleTotemOmniboostByte(void)
 {
 	gNewBS->totemOmniboostActive ^= TRUE;
@@ -239,7 +247,7 @@ void ToggleTotemOmniboostByte(void)
 
 void LoadTotemMultiBoostSecondStat(void)
 {
-	u16 val = VarGet(VAR_TOTEM + PARTNER(gBankAttacker));
+	u16 val = GetTotemValue(PARTNER(gBankAttacker));
 	u16 stat = val & 0x7;
 	u8 raiseAmount = val & ~(0xF);
 
@@ -248,7 +256,7 @@ void LoadTotemMultiBoostSecondStat(void)
 	|| FlagGet(FLAG_SINGLE_TRAINER_MON_TOTEM_BOOST)
 	#endif
 	)
-		VarSet(VAR_TOTEM + PARTNER(gBankAttacker), 0); //Only first Pokemon gets boost in battle sands
+		SetTotemValue(PARTNER(gBankAttacker), 0); // Every pokemon in the Battle Sands gets a boost
 
 	gBattleScripting.statChanger = stat | raiseAmount;
 }

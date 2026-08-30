@@ -320,6 +320,7 @@ TrainerHouseTier3Prizes:
 
 TrainerHouseCheckForGrandPrize:
     incrementgamestat 25
+    setflag 0x2AB @ Laplaz Town Trainer House cleared
     checkflag 0x26C @ Got the lucky egg
     if NOT_SET _call TrainerHouseGiveGrandPrize
     return

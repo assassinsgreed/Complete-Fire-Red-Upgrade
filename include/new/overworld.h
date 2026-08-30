@@ -60,6 +60,8 @@ void SetTrainerFlags(void);
 void PostReleaseAutomaticFixes(void);
 bool8 TryStartStepCountScript(u16 metatileBehavior);
 bool8 TryRunOnFrameMapScript(void);
+void ItemUseCB_DowserToggle(u8 taskId);
+void StopDowserIndicator(void);
 bool8 WhiteoutLogic(void);
 bool8 IsRunningDisallowedByMetatile(u8 tile);
 bool8 Overworld_IsBikingAllowed(void);

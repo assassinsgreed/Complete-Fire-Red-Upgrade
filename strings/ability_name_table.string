@@ -51,7 +51,7 @@ Compound Eyes
 Insomnia
 
 #org @NAME_COLOR_CHANGE
-Color Change
+Colour Change
 
 #org @NAME_IMMUNITY
 Immunity
@@ -883,3 +883,6 @@ Face Shield
 
 #org @gText_AbilityName_RoyalRoar
 Royal Roar
+
+#org @gText_AbilityName_Sharpness
+Sharpness

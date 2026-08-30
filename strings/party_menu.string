@@ -31,6 +31,12 @@ Dive underwater.
 #org @gText_EVReducingBerryIncreasedFriendship
 [BUFFER1] became more friendly.\nIts base [BUFFER2] can't go lower.[PAUSE_UNTIL_PRESS]
 
+#org @gText_EVEraserResetEVs
+[BUFFER1]'s base EVs were reset to 0![PAUSE_UNTIL_PRESS]
+
+#org @gText_IVUpItemRaisedStat
+[BUFFER1]'s [BUFFER2] potential\nwas raised![PAUSE_UNTIL_PRESS]
+
 #org @gText_FormChangeItem
 [BUFFER1] changed Forme![PAUSE_UNTIL_PRESS]
 
@@ -51,6 +57,18 @@ Change [BUFFER1]'s Ability\nto [BUFFER2]?
 
 #org @gText_AbilityCapsuleChangedAbility
 [BUFFER1]'s Ability has been\nchanged to [BUFFER2].[PAUSE_UNTIL_PRESS]
+
+#org @gText_ShimmeringStoneOfferShiny
+Make [BUFFER1] shiny?
+
+#org @gText_ShimmeringStoneOfferNormal
+Return [BUFFER1] to its normal colour?
+
+#org @gText_ShimmeringStoneTurnedShiny
+[BUFFER1] is shiny now![PAUSE_UNTIL_PRESS]
+
+#org @gText_ShimmeringStoneTurnedNormal
+[BUFFER1] is back to its normal colour.[PAUSE_UNTIL_PRESS]
 
 #org @gText_MaxPowderOfferGive
 Give the Gigantamax factor to\n[BUFFER1]?

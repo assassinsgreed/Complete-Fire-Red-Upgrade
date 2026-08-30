@@ -538,19 +538,34 @@ const u8 sText_StabMoveInterfaceType[] = {0xFC, 0x05, 0x05, 0xFC, 0x04, 0x09, 0x
 static void MoveNameToDisplayedStringBattle(u8 moveIndex)
 {
 	struct ChooseMoveStruct *moveInfo = (struct ChooseMoveStruct*)(&gBattleBufferA[gActiveBattler][4]);
+	u8* string = gDisplayedStringBattle;
+
+	// Matches the greyed out Bag entry in gText_BattleMenuNoItems. A lone EXT_CTRL_CODE_COLOR
+	// only moves the foreground, which leaves the glyphs looking untouched.
+	if (IsMoveQuarryDisabled(gActiveBattler, moveIndex))
+	{
+		*(string++) = EXT_CTRL_CODE_BEGIN;
+		*(string++) = EXT_CTRL_CODE_PALETTE;
+		*(string++) = 0x5;
+		*(string++) = EXT_CTRL_CODE_BEGIN;
+		*(string++) = EXT_CTRL_CODE_COLOR_HIGHLIGHT_SHADOW;
+		*(string++) = 0xF;
+		*(string++) = 0xE;
+		*(string++) = 0xB;
+	}
 
 	if (moveInfo->dynamaxed && moveInfo->moves[moveIndex] != MOVE_NONE)
 	{
 		if (IsGMaxMove(moveInfo->possibleMaxMoves[moveIndex]))
-			gDisplayedStringBattle[0] = PC_G; //Short for G-Max
+			string[0] = PC_G; //Short for G-Max
 		else
-			gDisplayedStringBattle[0] = PC_M; //Short for Max
+			string[0] = PC_M; //Short for Max
 
-		gDisplayedStringBattle[1] = TXT_MINUS;
-		StringCopy(gDisplayedStringBattle + 2, gMoveNames[moveInfo->possibleMaxMoves[moveIndex]]);
+		string[1] = TXT_MINUS;
+		StringCopy(string + 2, gMoveNames[moveInfo->possibleMaxMoves[moveIndex]]);
 	}
 	else
-		StringCopy(gDisplayedStringBattle, gMoveNames[moveInfo->moves[moveIndex]]);
+		StringCopy(string, gMoveNames[moveInfo->moves[moveIndex]]);
 }
 
 static void MoveSelectionDisplayMoveNames(void)
@@ -1734,7 +1749,8 @@ u8 TrySetCantSelectMoveBattleScript(void)
 		gSelectionBattleScripts[gActiveBattler] = BattleScript_MustSelectEncoredMove;
 		++limitations;
 	}
-	else if (gDisableStructs[gActiveBattler].disabledMove == move && move != MOVE_NONE)
+	else if ((gDisableStructs[gActiveBattler].disabledMove == move && move != MOVE_NONE)
+	      || IsMoveQuarryDisabledByMoveslot(gActiveBattler, move))
 	{
 		gSelectionBattleScripts[gActiveBattler] = BattleScript_SelectingDisabledMove;
 		++limitations;
@@ -1783,20 +1799,6 @@ u8 TrySetCantSelectMoveBattleScript(void)
 		++limitations;
 	}
 	#endif
-	else if (gBattleTypeFlags & BATTLE_TYPE_RING_CHALLENGE && IsMoveBannedInRingChallenge(move, gActiveBattler))
-	{
-		if (gBattleMoves[move].effect == EFFECT_PERISH_SONG)
-		{
-			gSelectionBattleScripts[gActiveBattler] = Battlescript_SelectingSpecificMoveNotAllowedInRingChallenge;
-		}
-		else
-		{
-			PREPARE_TYPE_BUFFER(gBattleTextBuff1, GetMoveTypeSpecial(gActiveBattler, move));
-			gSelectionBattleScripts[gActiveBattler] = BattleScript_SelectingNotAllowedRingChallenge;
-		}
-	
-		++limitations;
-	}
 	else if (!gNewBS->zMoveData.toBeUsed[gActiveBattler] //Can still use status Z-Moves even during Gravity - they'll just fail after
 	&& IsGravityActive() && gSpecialMoveFlags[move].gGravityBannedMoves)
 	{

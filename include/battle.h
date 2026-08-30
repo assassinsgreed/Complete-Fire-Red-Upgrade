@@ -153,7 +153,7 @@
 #ifdef UNBOUND
 
 #define BATTLE_TERRAIN_BATTLE_TOWER			0xA
-#define BATTLE_TERRAIN_BATTLE_CIRCUS		0xB
+#define BATTLE_TERRAIN_BATTLE_SIM			0xB
 #define BATTLE_TERRAIN_MOLEMAN       		0xF
 #define BATTLE_TERRAIN_ELIAS 				0x10
 #define BATTLE_TERRAIN_ANABELLE       		0x11
@@ -782,6 +782,7 @@ struct NewBattleStruct
 	u8 SlowStartTimers[MAX_BATTLERS_COUNT];
 	u8 StakeoutCounters[MAX_BATTLERS_COUNT];
 	u8 StompingTantrumTimers[MAX_BATTLERS_COUNT];
+	u8 quarryDisabledSlots[MAX_BATTLERS_COUNT]; // Move slots the Battle Quarry locked this turn
 	u8 splinterTimer[MAX_BATTLERS_COUNT];
 	u8 splinterAttackerBank[MAX_BATTLERS_COUNT];
 	u8 splinterAttackerMonId[MAX_BATTLERS_COUNT];
@@ -953,11 +954,11 @@ struct NewBattleStruct
 	u32 maxGoldrushMoney;
 	u16 itemBackup[PARTY_SIZE];
 	u8 hiddenHealthboxFlags[MAX_SPRITES / 8]; //~2017AD8
-	u8 ringChallengeBannedTypes[3];
 	u16 knockedOffWildItem;
 	u8 criticalHitsThisBattle[PARTY_SIZE];
 	u8 pickupMonId;
 	u8 shellSideArmSplit[MAX_BATTLERS_COUNT][MAX_BATTLERS_COUNT];
+	u16 sandsTotemBoosts[MAX_BATTLERS_COUNT]; // Battle Sands can't share VAR_TOTEM - the player's meal buff lives there between battles
 
 	//Things for Spread Moves
 	s32 DamageTaken[MAX_BATTLERS_COUNT];

@@ -440,6 +440,53 @@ bool8 IsMinior(u16 species)
 		IsMiniorCore(species);
 }
 
+bool8 IsArceus(unusedArg u16 species)
+{
+	#ifdef SPECIES_ARCEUS
+	switch (species)
+	{
+		case SPECIES_ARCEUS:
+		case SPECIES_ARCEUS_FIGHT:
+		case SPECIES_ARCEUS_FLYING:
+		case SPECIES_ARCEUS_POISON:
+		case SPECIES_ARCEUS_GROUND:
+		case SPECIES_ARCEUS_ROCK:
+		case SPECIES_ARCEUS_BUG:
+		case SPECIES_ARCEUS_GHOST:
+		case SPECIES_ARCEUS_STEEL:
+		case SPECIES_ARCEUS_FIRE:
+		case SPECIES_ARCEUS_WATER:
+		case SPECIES_ARCEUS_GRASS:
+		case SPECIES_ARCEUS_ELECTRIC:
+		case SPECIES_ARCEUS_PSYCHIC:
+		case SPECIES_ARCEUS_ICE:
+		case SPECIES_ARCEUS_DRAGON:
+		case SPECIES_ARCEUS_DARK:
+		case SPECIES_ARCEUS_FAIRY:
+			return TRUE;
+	}
+	#endif
+
+	return FALSE;
+}
+
+bool8 IsGenesect(unusedArg u16 species)
+{
+	#ifdef SPECIES_GENESECT
+	switch (species)
+	{
+		case SPECIES_GENESECT:
+		case SPECIES_GENESECT_BURN:
+		case SPECIES_GENESECT_CHILL:
+		case SPECIES_GENESECT_DOUSE:
+		case SPECIES_GENESECT_SHOCK:
+			return TRUE;
+	}
+	#endif
+
+	return FALSE;
+}
+
 void HandleFormChange(void)
 {
 	struct Pokemon* mon = GetBankPartyData(gActiveBattler);

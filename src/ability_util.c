@@ -52,11 +52,13 @@ extern const u8 gText_AbilityName_CrabbyTactics[];
 extern const u8 gText_AbilityName_HoneyArmor[];
 extern const u8 gText_AbilityName_FaceShield[];
 extern const u8 gText_AbilityName_RoyalRoar[];
+extern const u8 gText_AbilityName_Sharpness[];
 
 extern const u8 gText_AbilityDescription_Evaporate[];
 extern const u8 gText_AbilityDescription_GrassDash[];
 extern const u8 gText_AbilityDescription_SlipperyTail[];
 extern const u8 gText_AbilityDescription_DrillBeak[];
+extern const u8 gText_AbilityDescription_Sharpness[];
 
 const u8* GetAbilityNameOverride(const u8 ability, const u16 species) //Bypasses the 255 Ability limitation and implements clone Abilities
 {
@@ -259,6 +261,10 @@ const u8* GetAbilityNameOverride(const u8 ability, const u16 species) //Bypasses
 			if (SpeciesHasDrillBeak(species))
 				return gText_AbilityName_DrillBeak;
 			break;
+		case ABILITY_STRONGJAW:
+			if (SpeciesHasSharpness(species))
+				return gText_AbilityName_Sharpness;
+			break;
 		case ABILITY_STALWART:
 			switch (dexNum)
 			{
@@ -386,6 +392,10 @@ const u8* GetAbilityDescriptionOverride(const u8 ability, const u16 species) //B
 			if (SpeciesHasDrillBeak(species))
 				return gText_AbilityDescription_DrillBeak;
 			break;
+		case ABILITY_STRONGJAW:
+			if (SpeciesHasSharpness(species))
+				return gText_AbilityDescription_Sharpness;
+			break;
 	}
 
 	return NULL;
@@ -480,6 +490,15 @@ bool8 SpeciesHasDrillBeak(unusedArg u16 species) //Custom Unbound Ability
 {
 	#if (defined SPECIES_SPEAROW && defined SPECIES_FEAROW)
 	return species == SPECIES_SPEAROW || species == SPECIES_FEAROW;
+	#else
+	return FALSE;
+	#endif
+}
+
+bool8 SpeciesHasSharpness(unusedArg u16 species) //Gen 9 Ability, cloned onto Strong Jaw
+{
+	#if (defined SPECIES_KLEAVOR && defined SPECIES_SAMUROTT_H)
+	return species == SPECIES_KLEAVOR || species == SPECIES_SAMUROTT_H;
 	#else
 	return FALSE;
 	#endif

@@ -406,7 +406,7 @@ void atk4D_switchindataupdate(void)
 	{
 		ClearBehindSubstituteBit(gActiveBattler);
 
-		if (AreAbilitiesSuppressed()) //Most likely circus
+		if (AreAbilitiesSuppressed()) //Most likely sim
 		{
 			gNewBS->SuppressedAbilities[gActiveBattler] = gBattleMons[gActiveBattler].ability;
 			gBattleMons[gActiveBattler].ability = 0;
@@ -416,6 +416,7 @@ void atk4D_switchindataupdate(void)
 	if (!(gStatuses3[gActiveBattler] & STATUS3_LEVITATING))
 		gNewBS->MagnetRiseTimers[gActiveBattler] = 0;
 
+	gNewBS->quarryDisabledSlots[gActiveBattler] = 0; // A swapped in mon is not restricted until the next turn
 	{
 		u32 backupStatus2[gBattlersCount];
 		for (i = 0; i < gBattlersCount; ++i)
@@ -894,6 +895,9 @@ void atk52_switchineffects(void)
 		__attribute__ ((fallthrough));
 
 		case SwitchIn_TotemPokemon: ;
+			if (InBattleSands()) // The sands stir every Pokemon that enters, not just the lead
+				RollBattleSandsTotemBoost(gActiveBattler);
+
 			u8 totemBoostType = CanActivateTotemBoost(gActiveBattler);
 
 			if (totemBoostType == TOTEM_SINGLE_BOOST)

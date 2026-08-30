@@ -84,6 +84,8 @@
 #define FLAG_SCALING_TRAINERS_MODIFIER_ACTIVE 0x93F // If set, the game will not turn off the trainer scaling flag after trainer houses, gym trainees, etc.
 #define FLAG_INSTANT_FRIENDSHIP 0x943 //If set, Pokemon reach max friendship after taking a single step
 #define FLAG_ENABLE_EV_IV_VIEWER 0x944 // If set, the EV/IV Viewer can be accessed from the Pokemon summary screen
+#define FLAG_PERFECT_WILD_IVS 0x94A // If set, wild Pokemon are generated with 31 IVs in every stat. Raids are excluded so their star-based IV curve still means something.
+#define FLAG_REPEATED_MEGA_EVOLUTION 0x94B // If set, the player can Mega Evolve multiple times per battle
 
 #define FLAG_DAILY_EVENTS_START 0xE00 //To flag + 0xFF, resets every new day.
 
@@ -95,6 +97,9 @@
 #define FLAG_DONT_OFFER_NICKNAMES_BATTLE 0x93E //Option to skip nickname prompts after catching / hatching a Pokemon
 #define FLAG_DIVERGENT_WILD_ENCOUNTERS 0x945 // Option for whether the standard encounter table or divergent table should be loaded
 #define FLAG_DIVERGENT_WILD_ENCOUNTERS_OPTION_SHOWN 0x946 // Whether the ability to toggle divergent mode in the options page is shown
+#define FLAG_OPTIONS_LAST_USED_BALL 0x948 // Option for whether the in-battle L shortcut offers the last used ball instead of the optimal one
+#define FLAG_OPTIONS_SHORT_NURSE_HEAL 0x949 // Option to shorten the Pokemon Center / route nurse healing sequence
+#define VAR_LAST_USED_BALL 0x5157 // Saved copy of gLastUsedBall (which lives in unsaved RAM) to restore after reloading the game
 
 /*===== Start Menu/Poketools Flags =====*/
 #define FLAG_SYS_BAG_HIDE 0x91B		//Toggle bag off
@@ -120,6 +125,8 @@
 #define VAR_BATTLE_FACILITY_TRAINER1_NAME 0x5019 //Empty var. Will be set to 0xFFFF after every battle.
 #define VAR_BATTLE_FACILITY_TRAINER2_NAME 0x501A //Empty var. Will be set to 0xFFFF after every battle.
 #define VAR_BATTLE_FACILITY_SONG_OVERRIDE 0x501B //Set this var to the song id to be played during Link Battles and in the Battle Tower.
+#define FLAG_FRONTIER_DATA_INITIALISED 0x947 // Indicates the Battle Frontier has been initialized (cutscenes, etc.)
+#define FRONTIER_LEVEL 50 // Base level for Battle Frontier battles
 
 enum //These vars need to be one after the other (hence the enum)
 {
@@ -138,7 +145,8 @@ enum //These vars need to be one after the other (hence the enum)
 
 #define VAR_SWARM_RESEARCHER_SHOWN_1 0x503E // Swami researcher: species shown bitmask, indices 0-15
 #define VAR_SWARM_RESEARCHER_SHOWN_2 0x503F // Swami researcher: species shown bitmask, indices 16-31
-#define VAR_SWARM_RESEARCHER_SHOWN_3 0x5040 // Swami researcher: species shown bitmask, indices 32-33
+#define VAR_SWARM_RESEARCHER_SHOWN_3 0x5040 // Swami researcher: species shown bitmask, indices 32-47
+#define VAR_SWARM_RESEARCHER_SHOWN_4 0x5041 // Swami researcher: species shown bitmask, indices 48-63
 #define VAR_PLAYER_VS_SEEKER_ON_BIKE 0x5024	//Change vs seeker on bike sprite. 0x4059 in JPAN engine.
 #define VAR_PLAYER_UNDERWATER 0x5025		//Change underwater sprite.
 #define VAR_TRAINERCARD_MALE 0x5026			//Change trainer card image (male). 0x4060 in JPAN engine.
@@ -156,8 +164,8 @@ enum //These vars need to be one after the other (hence the enum)
 #define EXPANDED_MOVE_TUTORS //Comment this out if you want to keep 16 move tutors and the ultimate elemental moves being exclusive to Kantonian starters
 #define NUM_TMS 100	//keep this defined even if EXPANDED_TMSHMS is not!!
 #define NUM_HMS 6	//keep this defined even if EXPANDED_TMSHMS is not!!
-#define NUM_MOVE_TUTORS 64 //keep this defined even if EXPANDED_MOVE_TUTORS is not!! If using DPE, set to 128.
-#define LAST_TOTAL_TUTOR_NUM 126 //Should be equal to (NUM_MOVE_TUTORS - 1) + 9. Must be set to an actual integer or the compilation will not work.
+#define NUM_MOVE_TUTORS 96 //keep this defined even if EXPANDED_MOVE_TUTORS is not!! If using DPE, set to 128.
+#define LAST_TOTAL_TUTOR_NUM 158 //Should be equal to (NUM_MOVE_TUTORS - 1) + 63 special tutors. Must be set to an actual integer or the compilation will not work.
 #define TMS_BEFORE_HMS  //Uncomment this if you want the HMs to appear after the TMs in your bag
 #define DELETABLE_HMS //Uncomment this if you want HMs to be deletable without the Move Deleter
 #define REUSABLE_TMS	//if defined, don't forget to give all TMs a Mystery byte of 1!
@@ -314,7 +322,7 @@ enum //These vars need to be one after the other (hence the enum)
 //#define OLD_MOVE_SPLIT //Uncomment this line to use the Physical/Special split based on move types. Status moves are still set with the split byte.
 //#define OLD_CONFUSION_HEAL_BERRIES //Uncomment this line for berries like Figy and Wiki Berry to restore only 1/8 max HP when HP is below 1/2
 //#define GEN_7_CONFUSION_HEAL_BERRIES //Uncomment this line for berries like Figy and Wiki Berry to restore 1/2 max HP (Gen 8 is 1/3) when HP is below 1/4
-//#define PLA_HELD_ORIGIN_ORBS //Dialga and Palkia change into their Origin forms when they hold their respective orbs
+#define PLA_HELD_ORIGIN_ORBS //Dialga and Palkia change into their Origin forms when they hold their respective orbs
 
 /*===== Ability Options =====*/
 //#define OLD_GALE_WINGS //Uncomment this line if you want Gale Wings to activate regardless of the user's HP
