@@ -705,7 +705,7 @@ Welcome to Pok\emon Amethyst!\pDo you want to customize your\nexperience with th
 Choose which feature(s) you would\nlike to customize. ([B_BUTTON] to close).
 
 #org @gText_GameCustomization_Complete
-Selections have been saved.\pSome settings can be changed in the\nOptions Menu's second page.\pWe hope you enjoy Pok\emon Amethyst!
+Selections have been saved.\pSome settings can be changed in the\nOptions Menu's additional pages.\pWe hope you enjoy Pok\emon Amethyst!
 
 #org @gText_GameCustomizationMenu_DifficultyMode
 Difficulty Mode
@@ -732,7 +732,7 @@ Skip Cutscenes
 Done
 
 #org @gText_GameCustomization_DifficultyMode_Prompt
-The difficulty mode dictates how the\ngame is structured.\pStandard mode is the default and\nintended experience.\pHard mode gives all boss trainers\nstronger Pok\emon and held items.\pExtra Hard additionally gives each\ntrainer Pok\emon maxed IVs in all\lstats and maxed EVs in their\lhighest 2 stats.\pThis option can be changed later in\nthe Options Menu's second page.\pPlease select a mode.
+The difficulty mode dictates how the\ngame is structured.\pStandard mode is the default and\nintended experience.\pHard mode gives all boss trainers\nstronger Pok\emon and held items.\pExtra Hard additionally gives each\ntrainer Pok\emon maxed IVs in all\lstats and maxed EVs in their\lhighest 2 stats.\pThis option can be changed later in\nthe Options Menu's third page.\pPlease select a mode.
 
 #org @gText_GameCustomization_DifficultyModeOption_Standard
 Standard Mode
@@ -774,7 +774,7 @@ Choose which Pok\emon generation your\nStarter Pok\emon are from.\pYou may also 
 Starter Generation choice saved!
 
 #org @gText_GameCustomization_LevelCapsQuestion
-You may choose to set soft or hard\nlevel caps.\pWhen soft caps are set, you may\nlevel your Pok\emon freely.\pThey will only obey your commands if\nyou have enough badges, however.\pThis is the intended experience for\nan initial playthrough.\pWhen hard caps are set, you will\nnot be able to level up past\lcertain thresholds, as determined\lby the next boss trainer.\pThis results in a more challenging\nexperience.\pThis option can be changed later in\nthe Options Menu's second page.\pWhich level capping do you prefer?
+You may choose to set soft or hard\nlevel caps.\pWhen soft caps are set, you may\nlevel your Pok\emon freely.\pThey will only obey your commands if\nyou have enough badges, however.\pThis is the intended experience for\nan initial playthrough.\pWhen hard caps are set, you will\nnot be able to level up past\lcertain thresholds, as determined\lby the next boss trainer.\pThis results in a more challenging\nexperience.\pThis option can be changed later in\nthe Options Menu's third page.\pWhich level capping do you prefer?
 
 #org @gText_GameCustomization_LevelCapsOption_Soft
 Soft (no restriction)
