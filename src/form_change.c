@@ -557,8 +557,8 @@ void TryCrownZacianZamazenta(struct Pokemon* party)
 				{
 					SetMonMoveSlot(mon, MOVE_NONE, moveIndex);
 					RemoveMonPPBonus(mon, moveIndex);
-					for (i = moveIndex; i < MAX_MON_MOVES - 1; ++i)
-						ShiftMoveSlot(mon, i, i + 1);
+					for (u32 j = moveIndex; j < MAX_MON_MOVES - 1; ++j) //Not i: that's the party index
+						ShiftMoveSlot(mon, j, j + 1);
 				}
 			}
 			else
