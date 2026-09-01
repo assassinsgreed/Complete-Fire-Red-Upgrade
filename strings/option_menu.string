@@ -81,3 +81,18 @@ Standard
 
 #org @gText_OptionsMenu_PokemonSelection_Divergent
 Divergent
+
+#org @gText_OptionsMenu_BattleSpeed
+Battle Anim. Speed
+
+#org @gText_OptionsMenu_BattleSpeed_Normal
+1x
+
+#org @gText_OptionsMenu_BattleSpeed_2x
+2x
+
+#org @gText_OptionsMenu_BattleSpeed_3x
+3x
+
+#org @gText_OptionsMenu_BattleSpeed_4x
+4x

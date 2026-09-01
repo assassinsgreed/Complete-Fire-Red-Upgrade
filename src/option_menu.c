@@ -87,6 +87,8 @@ enum
 {
 	MENUITEM_GAME_DIFFICULTY,
     MENUITEM_LEVEL_CAPS,
+    MENUITEM_OVERWORLD_SPEED,
+    MENUITEM_BATTLE_SPEED,
     MENUITEM_CANCEL_PAGE_3,
     MENUITEM_PAGE3_COUNT,
 };
@@ -126,6 +128,8 @@ extern const u8 gText_WildLevelScaling[];
 extern const u8 gText_OptionsMenu_AutoSortBag[];
 extern const u8 gText_OptionsMenu_GameDifficulty[];
 extern const u8 gText_OptionsMenu_LevelCaps[];
+extern const u8 gText_OptionsMenu_OverworldSpeed[];
+extern const u8 gText_OptionsMenu_BattleSpeed[];
 extern const u8 gText_OptionsMenu_SkipCutscenes[];
 extern const u8 gText_OptionsMenu_SkipNicknaming[];
 extern const u8 gText_OptionsMenu_BallShortcut[];
@@ -156,6 +160,8 @@ static const u8 *const sOptionMenuItemsNames_ThirdPage[MENUITEM_PAGE3_COUNT] =
 {
 	[MENUITEM_GAME_DIFFICULTY] = gText_OptionsMenu_GameDifficulty,
     [MENUITEM_LEVEL_CAPS] = gText_OptionsMenu_LevelCaps,
+    [MENUITEM_OVERWORLD_SPEED] = gText_OptionsMenu_OverworldSpeed,
+    [MENUITEM_BATTLE_SPEED] = gText_OptionsMenu_BattleSpeed,
     [MENUITEM_CANCEL_PAGE_3] = gText_OptionMenuCancel,
 };
 
@@ -190,6 +196,14 @@ extern const u8 gText_OptionsMenu_NurseHealing_Default[];
 extern const u8 gText_OptionsMenu_NurseHealing_Short[];
 extern const u8 gText_OptionsMenu_PokemonSelection_Standard[];
 extern const u8 gText_OptionsMenu_PokemonSelection_Divergent[];
+extern const u8 gText_OptionsMenu_OverworldSpeed_Normal[];
+extern const u8 gText_OptionsMenu_OverworldSpeed_2x[];
+extern const u8 gText_OptionsMenu_OverworldSpeed_3x[];
+extern const u8 gText_OptionsMenu_OverworldSpeed_4x[];
+extern const u8 gText_OptionsMenu_BattleSpeed_Normal[];
+extern const u8 gText_OptionsMenu_BattleSpeed_2x[];
+extern const u8 gText_OptionsMenu_BattleSpeed_3x[];
+extern const u8 gText_OptionsMenu_BattleSpeed_4x[];
 
 static const u8 *const sTextSpeedOptions[] =
 {
@@ -258,6 +272,20 @@ static const u8 *const sNurseHealingOptions[] =
     gText_OptionsMenu_NurseHealing_Default,
     gText_OptionsMenu_NurseHealing_Short,
 };
+static const u8 *const sOverworldSpeedOptions[] =
+{
+    [OPTIONS_OVERWORLD_SPEED_NORMAL] = gText_OptionsMenu_OverworldSpeed_Normal,
+    [OPTIONS_OVERWORLD_SPEED_2X] = gText_OptionsMenu_OverworldSpeed_2x,
+    [OPTIONS_OVERWORLD_SPEED_3X] = gText_OptionsMenu_OverworldSpeed_3x,
+    [OPTIONS_OVERWORLD_SPEED_4X] = gText_OptionsMenu_OverworldSpeed_4x,
+};
+static const u8 *const sBattleSpeedOptions[] =
+{
+    [OPTIONS_BATTLE_SPEED_NORMAL] = gText_OptionsMenu_BattleSpeed_Normal,
+    [OPTIONS_BATTLE_SPEED_2X] = gText_OptionsMenu_BattleSpeed_2x,
+    [OPTIONS_BATTLE_SPEED_3X] = gText_OptionsMenu_BattleSpeed_3x,
+    [OPTIONS_BATTLE_SPEED_4X] = gText_OptionsMenu_BattleSpeed_4x,
+};
 static const u8 *const sWildEncountersOptions[] =
 {
     gText_OptionsMenu_PokemonSelection_Standard,
@@ -289,13 +317,15 @@ static const u8 *const *const sOptionMenuItemChoices_ThirdPage[MENUITEM_PAGE3_CO
 {
 	[MENUITEM_GAME_DIFFICULTY] = sGameDifficultyOptions,
     [MENUITEM_LEVEL_CAPS] = sLevelCapsOptions,
+    [MENUITEM_OVERWORLD_SPEED] = sOverworldSpeedOptions,
+    [MENUITEM_BATTLE_SPEED] = sBattleSpeedOptions,
     [MENUITEM_CANCEL_PAGE_3] = NULL,
 };
 
 // # of choices per option, not counting cancel
 static const u16 sOptionMenuItemCounts[MENUITEM_COUNT] = {3, 2, 2, 2, 3, 10, 0};
 static const u16 sOptionMenuItemCounts_SecondPage[MENUITEM_PAGE2_COUNT] = {4, 2, 2, 2, 2, 2, 0};
-static const u16 sOptionMenuItemCounts_ThirdPage[MENUITEM_PAGE3_COUNT] = {3, 3, 0};
+static const u16 sOptionMenuItemCounts_ThirdPage[MENUITEM_PAGE3_COUNT] = {3, 3, OPTIONS_OVERWORLD_SPEED_COUNT, OPTIONS_BATTLE_SPEED_COUNT, 0};
 
 static u16 *GetPageOptions(u8 page)
 {
@@ -386,6 +416,12 @@ void CB2_OptionsMenuFromStartMenu(void)
     sOptionMenuPtr->option_secondPage[MENUITEM_WILD_ENCOUNTERS] = FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS) ? 1 : 0;
     sOptionMenuPtr->option_thirdPage[MENUITEM_GAME_DIFFICULTY] = VarGet(VAR_DIFFICULTY_SETTING);
     sOptionMenuPtr->option_thirdPage[MENUITEM_LEVEL_CAPS] = VarGet(VAR_LEVEL_CAPS);
+    sOptionMenuPtr->option_thirdPage[MENUITEM_OVERWORLD_SPEED] = VarGet(VAR_OVERWORLD_SPEED);
+    if (sOptionMenuPtr->option_thirdPage[MENUITEM_OVERWORLD_SPEED] >= OPTIONS_OVERWORLD_SPEED_COUNT)
+        sOptionMenuPtr->option_thirdPage[MENUITEM_OVERWORLD_SPEED] = OPTIONS_OVERWORLD_SPEED_NORMAL;
+    sOptionMenuPtr->option_thirdPage[MENUITEM_BATTLE_SPEED] = VarGet(VAR_BATTLE_SPEED);
+    if (sOptionMenuPtr->option_thirdPage[MENUITEM_BATTLE_SPEED] >= OPTIONS_BATTLE_SPEED_COUNT)
+        sOptionMenuPtr->option_thirdPage[MENUITEM_BATTLE_SPEED] = OPTIONS_BATTLE_SPEED_NORMAL;
 
     VarSet(VAR_TEMP_2, VarGet(VAR_LEVEL_CAPS));
     FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS) ? FlagSet(FLAG_TEMP_C) : FlagClear(FLAG_TEMP_C);
@@ -476,6 +512,8 @@ void CloseAndSaveOptionMenu(u8 taskId)
     VarSet(VAR_AUTO_SORT_BAG, sOptionMenuPtr->option_secondPage[MENUITEM_AUTOSORTBAG]);
     VarSet(VAR_DIFFICULTY_SETTING, sOptionMenuPtr->option_thirdPage[MENUITEM_GAME_DIFFICULTY]);
     VarSet(VAR_LEVEL_CAPS, sOptionMenuPtr->option_thirdPage[MENUITEM_LEVEL_CAPS]);
+    VarSet(VAR_OVERWORLD_SPEED, sOptionMenuPtr->option_thirdPage[MENUITEM_OVERWORLD_SPEED]);
+    VarSet(VAR_BATTLE_SPEED, sOptionMenuPtr->option_thirdPage[MENUITEM_BATTLE_SPEED]);
     // Cleanup difficulty / level cap vars to flags
     sOptionMenuPtr->option_thirdPage[MENUITEM_GAME_DIFFICULTY] >= OPTIONS_AMETHYST_HARD_DIFFICULTY ? FlagSet(FLAG_HARD_MODE) : FlagClear(FLAG_HARD_MODE);
     sOptionMenuPtr->option_thirdPage[MENUITEM_LEVEL_CAPS] >= OPTIONS_AMETHYST_HARD_LEVEL_CAPS ? FlagSet(FLAG_HARD_LEVEL_CAP) : FlagClear(FLAG_HARD_LEVEL_CAP);

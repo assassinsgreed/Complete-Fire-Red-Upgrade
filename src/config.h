@@ -99,6 +99,8 @@
 #define FLAG_DIVERGENT_WILD_ENCOUNTERS_OPTION_SHOWN 0x946 // Whether the ability to toggle divergent mode in the options page is shown
 #define FLAG_OPTIONS_LAST_USED_BALL 0x948 // Option for whether the in-battle L shortcut offers the last used ball instead of the optimal one
 #define FLAG_OPTIONS_SHORT_NURSE_HEAL 0x949 // Option to shorten the Pokemon Center / route nurse healing sequence
+#define VAR_OVERWORLD_SPEED 0x5158 // Option for how fast the player walks, runs, bikes and surfs. Followers and copycat NPCs match it
+#define VAR_BATTLE_SPEED 0x5159 // Option for how fast battle animations, text, and logic run at. This scales each frame pace according to the multiplier
 #define VAR_LAST_USED_BALL 0x5157 // Saved copy of gLastUsedBall (which lives in unsaved RAM) to restore after reloading the game
 
 /*===== Start Menu/Poketools Flags =====*/

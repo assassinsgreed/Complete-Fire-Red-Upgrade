@@ -546,6 +546,7 @@ MonKnowsMove = 0x8125AC0 | 1;
 GetBattlePartyIdFromPartyId = 0x8128030 | 1;
 
 /* Battle Setup Functions */
+BattleMainCB1 = 0x80123E4 | 1;
 BattleMainCB2 = 0x8011100 | 1;
 HandleOpponentPokeSlide = 0x8011D64 | 1;
 SetEnemyElevation = 0x8076494 | 1;

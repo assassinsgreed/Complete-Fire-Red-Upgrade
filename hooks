@@ -12,6 +12,7 @@ DrawBattleEntryBackground 800FAE0 0
 
 ##Other Battle Stuff
 BuildTrainerPartyHook 800FF7E 0
+NewBattleMainCB2 8011100 0
 SpriteCB_WildMon 8011D64 1
 SpriteCB_WildMonShowHealthbox 8011DC8 1
 LoadProperAbilityBattleDataHook 8013144 0

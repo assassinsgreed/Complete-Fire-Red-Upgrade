@@ -5479,9 +5479,14 @@ void AnimTask_PlayAttackerCry(u8 taskId)
 	gTasks[taskId].func = AnimTask_WaitAttackerCry;	
 }
 
+// Handle cries that need to play at 2x+ speed (ex. primal/mega evolutions)
+#define ATTACKER_CRY_START_TIMEOUT 60
+
 static void AnimTask_WaitAttackerCry(u8 taskId)
 {
-	if (!IsCryPlaying())
+	if (IsCryPlaying())
+		gTasks[taskId].data[0] = TRUE;
+	else if (gTasks[taskId].data[0] || ++gTasks[taskId].data[1] >= ATTACKER_CRY_START_TIMEOUT)
 	{
 		ClearPokemonCrySongs(); //Reset memory state
 		DestroyAnimVisualTask(taskId);
