@@ -583,3 +583,8 @@ EventScript_WhiteoutRevive 0807F5CC
 ## Trainer card background palettes, extended with a sixth entry for the five-star card.
 gTrainerCardPalettes_Layout1 0808AD74
 gTrainerCardPalettes_Layout0 0808AD90
+
+##Overworld Movemetn Speed Up - extend the step tables with a 3 frames per tile tier.
+##These two literals inside NpcTakeStep are the only references to the vanilla tables.
+gOverworldStepSeqLengths 08068BAC
+gOverworldStepSpeeds 08068BB0

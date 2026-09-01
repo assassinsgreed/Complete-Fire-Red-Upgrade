@@ -82,6 +82,21 @@ Standard
 #org @gText_OptionsMenu_PokemonSelection_Divergent
 Divergent
 
+#org @gText_OptionsMenu_OverworldSpeed
+Overworld Speed
+
+#org @gText_OptionsMenu_OverworldSpeed_Normal
+1x
+
+#org @gText_OptionsMenu_OverworldSpeed_2x
+2x
+
+#org @gText_OptionsMenu_OverworldSpeed_3x
+3x
+
+#org @gText_OptionsMenu_OverworldSpeed_4x
+4x
+
 #org @gText_OptionsMenu_BattleSpeed
 Battle Anim. Speed
 

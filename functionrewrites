@@ -1,3 +1,8 @@
 ##
 Task_HandleChooseMonInput 0x0811fb28 1 0
 PartyMenuButtonHandler 0x0811fefc 1 1
+
+##Overworld Movement Speed Up
+NewInitMovementNormal 0x080646FC 4 0
+NewStartRunningAnim 0x08064758 3 0
+NewUpdateMovementNormal 0x08064788 2 1
