@@ -208,7 +208,8 @@ extern u16 gLastDexNavSpecies; //0x203E086
 extern u8 gScored3CritsInBattle; //0x203E0C6
 #define gDowserActive   (*((bool8*) 0x203E0C7)) // Item finder indicator on/off, unsaved
 #define gDowserSpriteId (*((u8*)    0x203E0C8)) // DOWSER_NO_SPRITE in src/overworld.c means no icon exists
-//FREE: 0x203E0C9
+#define gInBattleSpeedExtraPass (*((bool8*) 0x203E0C9)) // Set while Battle Speed is running a pass past the first this frame, unsaved
+//FREE: 0x203E0CA
 
 //DON'T GO PAST 0x203E0D4 for BTS!
 //extern struct CompressedPokemon gTempTeamBackup[6] //0x203E1A4

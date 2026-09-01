@@ -11,6 +11,7 @@
 #include "../include/new/ai_switching.h"
 #include "../include/new/ai_util.h"
 #include "../include/new/battle_anims.h"
+#include "../include/new/battle_speed.h"
 #include "../include/new/battle_util.h"
 #include "../include/new/build_pokemon.h"
 #include "../include/new/dynamax.h"
@@ -191,7 +192,7 @@ static void MultiIntro_FoeWaitForShinyAnimAndHealthbox(void)
 		twoMons = TRUE;
 	}
 
-	if (IsCryPlayingOrClearCrySongs())
+	if (IsCryPlayingOrClearCrySongsSafe())
 		healthboxAnimDone = FALSE;
 
 	if (healthboxAnimDone)
@@ -262,7 +263,7 @@ static void MultiIntro_FoeTryShinyAnimShowHealthbox(void)
 	if (!gBattleSpritesDataPtr->healthBoxesData[gActiveBattler].waitForCry
 	&& gBattleSpritesDataPtr->healthBoxesData[gActiveBattler].healthboxSlideInStarted
 	&& !gBattleSpritesDataPtr->healthBoxesData[partner].waitForCry
-	&& !IsCryPlayingOrClearCrySongs())
+	&& !IsCryPlayingOrClearCrySongsSafe())
 	{
 		if (!gBattleSpritesDataPtr->healthBoxesData[gActiveBattler].bgmRestored)
 		{
@@ -415,7 +416,7 @@ static void PlayerIntro_TryShinyAnimShowHealthbox(void)
 	if (!gBattleSpritesDataPtr->healthBoxesData[gActiveBattler].waitForCry
 	&& gBattleSpritesDataPtr->healthBoxesData[gActiveBattler].healthboxSlideInStarted
 	&& !gBattleSpritesDataPtr->healthBoxesData[partner].waitForCry
-	&& !IsCryPlayingOrClearCrySongs())
+	&& !IsCryPlayingOrClearCrySongsSafe())
 	{
 		if (!gBattleSpritesDataPtr->healthBoxesData[gActiveBattler].bgmRestored)
 		{

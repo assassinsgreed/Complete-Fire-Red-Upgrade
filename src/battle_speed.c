@@ -1,6 +1,7 @@
 #include "defines.h"
 #include "defines_battle.h"
 #include "../include/main.h"
+#include "../include/sound.h"
 #include "../include/text.h"
 
 #include "../include/new/battle_speed.h"
@@ -50,6 +51,20 @@ static u8 GetBattleStepsPerFrame(void)
 	return setting + 1;
 }
 
+/*
+	A cry only starts during V-Blank, so on an extra pass a cry queued this frame hasn't
+	started yet. Vanilla IsCryPlayingOrClearCrySongs would see "not playing" and throw the
+	cry away before it ever sounded, so answer TRUE and let next frame's first pass decide.
+	Cries then take the same real time at every battle speed.
+*/
+bool8 IsCryPlayingOrClearCrySongsSafe(void)
+{
+	if (gInBattleSpeedExtraPass)
+		return TRUE;
+
+	return IsCryPlayingOrClearCrySongs();
+}
+
 void NewBattleMainCB2(void)
 {
 	u8 i, steps;
@@ -67,6 +82,7 @@ void NewBattleMainCB2(void)
 		gMain.newKeys = 0;
 		gMain.newKeysRaw = 0;
 		gMain.newAndRepeatedKeys = 0;
+		gInBattleSpeedExtraPass = TRUE;
 
 		for (i = 1; i < steps; ++i)
 		{
@@ -77,6 +93,7 @@ void NewBattleMainCB2(void)
 			RunBattleFrame();
 		}
 
+		gInBattleSpeedExtraPass = FALSE;
 		gMain.newKeys = newKeys;
 		gMain.newKeysRaw = newKeysRaw;
 		gMain.newAndRepeatedKeys = newAndRepeatedKeys;

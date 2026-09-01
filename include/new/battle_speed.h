@@ -5,4 +5,6 @@ void __attribute__((long_call)) BattleMainCB1(void); //Vanilla, address in BPRE.
 
 void NewBattleMainCB2(void); //Hooked over the vanilla BattleMainCB2
 
+bool8 IsCryPlayingOrClearCrySongsSafe(void); //Call instead of the vanilla IsCryPlayingOrClearCrySongs anywhere inside a battle
+
 #endif
