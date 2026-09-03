@@ -722,3 +722,11 @@
 # 083CD95C is that call's y, indexed by the card layout byte (0 = the player's own card, 1 = RS/E).
 0808AFAC 16
 083CD95C 05 04
+
+# Voice 9 of voicegroup 0x092FB0B0 has a bad pointer in this version of the B2W2 music patch: it's
+# flagged as a keysplit but its sub-voicegroup/table pointers were never relocated and land in song
+# track data, so song 0x1AD reads junk ToneData through it and walks the sound driver off the end of
+# its channel array, hard-freezing the game. The instrument it wanted was never built into the patch,
+# so point voice 9 at the stock GM 9 sample the pack's other voicegroups use in this slot.
+# Might be fixed in newer versions of the patch, but it's too big for Amethyst's ROM.
+092FB11C 00 3C 00 00 34 FC 5B 09 FF F0 00 B9
