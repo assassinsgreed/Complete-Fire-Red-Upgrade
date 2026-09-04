@@ -594,7 +594,9 @@ void TryUpdateSwarm(void)
 
 u8 GetCurrentSwarmIndex(void)
 {
-	if (gSwarmTableLength == 0)
+	u16 tableLength = FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS) ? gDivergentSwarmTableLength : gSwarmTableLength;
+
+	if (tableLength == 0)
 		return 0xFF;
 
 	if (gMapHeader.mapType == MAP_TYPE_UNDERWATER) //No swarms underwater
@@ -603,11 +605,11 @@ u8 GetCurrentSwarmIndex(void)
 	#ifdef SWARM_CHANGE_HOURLY
 	u8 index;
 
-	if (VarGet(VAR_SWARM_INDEX) < (FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS) ? gDivergentSwarmTableLength : gSwarmTableLength))
+	if (VarGet(VAR_SWARM_INDEX) < tableLength)
 	{
 		index = VarGet(VAR_SWARM_INDEX); //Override
 	}
-	else if ((FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS) ? gDivergentSwarmTableLength : gSwarmTableLength) == 24) //24 different species: 1 for each hour
+	else if (tableLength == 24) //24 different species: 1 for each hour
 	{
 		index = (FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS) ? gDivergentSwarmOrders : gSwarmOrders)[gClock.day - 1][gClock.hour];
 	}
@@ -618,11 +620,14 @@ u8 GetCurrentSwarmIndex(void)
 		u8 day = (gClock.day == 0) ? 32 : gClock.day;
 		u8 month = (gClock.month == 0) ? 13 : gClock.month;
 		u32 val = ((hour * (day + month)) + ((hour * (day + month)) ^ dayOfWeek)) ^ T1_READ_32(gSaveBlock2->playerTrainerId);
-		index = val % (FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS) ? gDivergentSwarmTableLength : gSwarmTableLength);
+		index = val % tableLength;
 	}
 	#else
 	u8 index = VarGet(VAR_SWARM_INDEX);
 	#endif
+
+	if (index >= tableLength) // Save was made when the swarm table was longer - stay in range until the next daily re-roll
+		index %= tableLength;
 
 	return index;
 }
