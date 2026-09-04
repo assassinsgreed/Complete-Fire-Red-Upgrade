@@ -9,8 +9,8 @@
 /*
 battle_speed.c
 	Replaces the vanilla battle main callback so that the entire per-frame battle step -
-	the script engine, the battler controllers, tasks, sprites, palette fades and text -
-	can be run several times per V-Blank, as chosen by the Battle Speed option.
+	the script engine, the battler controllers, tasks, sprites and text - can be run
+	several times per V-Blank, as chosen by the Battle Speed option.
 
 	Music and sound are untouched by this. m4aSoundMain is called from the V-Blank
 	interrupt, not from the main loop, so the sound engine still ticks exactly once per
@@ -28,7 +28,13 @@ static void RunBattleFrame(void)
 	AnimateSprites();
 	BuildOamBuffer();
 	RunTextPrinters();
-	UpdatePaletteFade();
+
+	//V-Blank ends a fade by reading a one bit "finishing" flag that this call toggles, so an
+	//even number of calls per frame hides it and the fade back in after the bag or party menu
+	//never clears gPaletteFade.active, hanging every controller that waits on it
+	if (!gInBattleSpeedExtraPass)
+		UpdatePaletteFade();
+
 	RunTasks();
 }
 
@@ -90,6 +96,10 @@ void NewBattleMainCB2(void)
 				break; //The battle handed the screen off mid-step, so stop stepping it
 
 			BattleMainCB1(); //gBattleMainFunc + every gBattlerControllerFuncs entry
+
+			if (gMain.callback2 != BattleMainCB2)
+				break; //Opening the bag or party menu frees the battle's windows, so RunTextPrinters would render into freed memory
+
 			RunBattleFrame();
 		}
 
