@@ -830,8 +830,8 @@ const struct SwarmData gSwarmTable[] =
 		.species = SPECIES_FARFETCHD,
 	},
 	{
-		.mapName = MAPSEC_DAIMYN_CITY,
-		.species = SPECIES_KOFFING,
+		.mapName = MAPSEC_VICTORY_ROAD,
+		.species = SPECIES_WEEZING,
 	},
 	{
 		.mapName = MAPSEC_ROUTE_9,
