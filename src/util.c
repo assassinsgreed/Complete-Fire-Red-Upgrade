@@ -170,12 +170,14 @@ u16 GetNationalPokedexCount(u8 caseID)
 // The two modes do not share dex numbers - standard species map to 1 - 390 and divergent-exclusive
 // ones to 391 - 780 - so flags set for one mode never collide with the other's.
 // These are the same two tables GetRegionalDexCount picks between off FLAG_DIVERGENT_WILD_ENCOUNTERS.
-#define sRegionalDexTableStandard  ((const u16*) 0x09C1CE00)
-#define sRegionalDexTableDivergent ((const u16*) 0x09C1BEB4)
+// Their addresses come from DPE's offsets.ini via BPRE.ld, so a rebuilt base ROM cannot silently
+// move them out from under this file - see SyncRegionalDexTables in scripts/make.py.
+extern const u16 gRegionalDexTableStandard[];
+extern const u16 gRegionalDexTableDivergent[];
 
 const u16* GetRegionalDexSpeciesTable(bool8 divergent, u16* count)
 {
-	const u16* table = divergent ? sRegionalDexTableDivergent : sRegionalDexTableStandard;
+	const u16* table = divergent ? gRegionalDexTableDivergent : gRegionalDexTableStandard;
 
 	*count = table[0];
 	return &table[1];

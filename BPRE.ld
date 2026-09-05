@@ -465,6 +465,11 @@ gText_OptionDescription = 0x841A0B7;
 gText_ExitDescription = 0x841A0F9;
 gText_RetireDescription = 0x841A111;
 gPokedexEntries = 0x844E850;
+/* Amethyst's two regional dex species lists, each a u16 count followed by that many species.
+   Don't edit by hand; this is updated by the build script based on where DPE puts it.
+   Do not edit by hand. */
+gRegionalDexTableStandard = 0x9AF3392;
+gRegionalDexTableDivergent = 0x9AF2444;
 sPartyMenuFontColorTable = 0x8459FFC;
 MonHoverShadowPal = 0x8D11B84;
 MonHoverShadowSprite = 0x8E7BAD4;
