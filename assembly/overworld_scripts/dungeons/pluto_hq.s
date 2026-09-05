@@ -662,6 +662,7 @@ SignScript_PlutoHQ_B1F_CerberusDoor:
 SignScript_PlutoHQ_B1F_Hall_OwlDoor:
     checkflag 0x201
     if SET _goto End
+    lock
     msgbox PlutoHQ_OwlDoorSign MSG_NORMAL
     checkitem ITEM_OWL_KEY 0x1
     compare LASTRESULT FALSE
@@ -673,12 +674,14 @@ SignScript_PlutoHQ_B1F_Hall_OwlDoor:
     bufferitem 0x0 ITEM_OWL_KEY
     msgbox PlutoHQ_DoorOpened MSG_NORMAL
     setflag 0x201
+    release
     end
 
 .global SignScript_PlutoHQ_B1F_Hall_CypressDoor
 SignScript_PlutoHQ_B1F_Hall_CypressDoor:
     checkflag 0x202
     if SET _goto End
+    lock
     msgbox PlutoHQ_CypressDoorSign MSG_NORMAL
     checkitem ITEM_CYPRESS_KEY 0x1
     compare LASTRESULT FALSE
@@ -690,12 +693,14 @@ SignScript_PlutoHQ_B1F_Hall_CypressDoor:
     bufferitem 0x0 ITEM_CYPRESS_KEY
     msgbox PlutoHQ_DoorOpened MSG_NORMAL
     setflag 0x202
+    release
     end
 
 .global SignScript_PlutoHQ_B1F_Hall_SerpentDoor
 SignScript_PlutoHQ_B1F_Hall_SerpentDoor:
     checkflag 0x203
     if SET _goto End
+    lock
     msgbox PlutoHQ_SerpentDoorSign MSG_NORMAL
     checkitem ITEM_SERPENT_KEY 0x1
     compare LASTRESULT FALSE
@@ -707,12 +712,14 @@ SignScript_PlutoHQ_B1F_Hall_SerpentDoor:
     bufferitem 0x0 ITEM_SERPENT_KEY
     msgbox PlutoHQ_DoorOpened MSG_NORMAL
     setflag 0x203
+    release
     end
 
 .global SignScript_PlutoHQ_B1F_Hall_CerberusDoor
 SignScript_PlutoHQ_B1F_Hall_CerberusDoor:
     checkflag 0x204
     if SET _goto End
+    lock
     msgbox PlutoHQ_CerberusDoorSign MSG_NORMAL
     checkitem ITEM_CERBERUS_KEY 0x1
     compare LASTRESULT FALSE
@@ -724,12 +731,14 @@ SignScript_PlutoHQ_B1F_Hall_CerberusDoor:
     bufferitem 0x0 ITEM_CERBERUS_KEY
     msgbox PlutoHQ_DoorOpened MSG_NORMAL
     setflag 0x204
+    release
     end
 
 .global SignScript_PlutoHQ_B2F_OwlDoor
 SignScript_PlutoHQ_B2F_OwlDoor:
     checkflag 0x205
     if SET _goto End
+    lock
     msgbox PlutoHQ_OwlDoorSign MSG_NORMAL
     checkitem ITEM_OWL_KEY 0x1
     compare LASTRESULT FALSE
@@ -741,12 +750,14 @@ SignScript_PlutoHQ_B2F_OwlDoor:
     bufferitem 0x0 ITEM_OWL_KEY
     msgbox PlutoHQ_DoorOpened MSG_NORMAL
     setflag 0x205
+    release
     end
 
 .global SignScript_PlutoHQ_B3F_CypressDoor
 SignScript_PlutoHQ_B3F_CypressDoor:
     checkflag 0x206
     if SET _goto End
+    lock
     msgbox PlutoHQ_CypressDoorSign MSG_NORMAL
     checkitem ITEM_CYPRESS_KEY 0x1
     compare LASTRESULT FALSE
@@ -758,12 +769,14 @@ SignScript_PlutoHQ_B3F_CypressDoor:
     bufferitem 0x0 ITEM_CYPRESS_KEY
     msgbox PlutoHQ_DoorOpened MSG_NORMAL
     setflag 0x206
+    release
     end
 
 .global SignScript_PlutoHQ_B4F_OwlDoor
 SignScript_PlutoHQ_B4F_OwlDoor:
     checkflag 0x207
     if SET _goto End
+    lock
     msgbox PlutoHQ_OwlDoorSign MSG_NORMAL
     checkitem ITEM_OWL_KEY 0x1
     compare LASTRESULT FALSE
@@ -775,12 +788,14 @@ SignScript_PlutoHQ_B4F_OwlDoor:
     bufferitem 0x0 ITEM_OWL_KEY
     msgbox PlutoHQ_DoorOpened MSG_NORMAL
     setflag 0x207
+    release
     end
 
 .global SignScript_PlutoHQ_B4F_CerberusDoor
 SignScript_PlutoHQ_B4F_CerberusDoor:
     checkflag 0x208
     if SET _goto End
+    lock
     msgbox PlutoHQ_CerberusDoorSign MSG_NORMAL
     checkitem ITEM_CERBERUS_KEY 0x1
     compare LASTRESULT FALSE
@@ -792,12 +807,14 @@ SignScript_PlutoHQ_B4F_CerberusDoor:
     bufferitem 0x0 ITEM_CERBERUS_KEY
     msgbox PlutoHQ_DoorOpened MSG_NORMAL
     setflag 0x208
+    release
     end
 
 .global SignScript_PlutoHQ_B5F_CypressDoor
 SignScript_PlutoHQ_B5F_CypressDoor:
     checkflag 0x209
     if SET _goto End
+    lock
     msgbox PlutoHQ_CypressDoorSign MSG_NORMAL
     checkitem ITEM_CYPRESS_KEY 0x1
     compare LASTRESULT FALSE
@@ -809,12 +826,14 @@ SignScript_PlutoHQ_B5F_CypressDoor:
     bufferitem 0x0 ITEM_CYPRESS_KEY
     msgbox PlutoHQ_DoorOpened MSG_NORMAL
     setflag 0x209
+    release
     end
 
 .global SignScript_PlutoHQ_B6F_OwlDoor
 SignScript_PlutoHQ_B6F_OwlDoor:
     checkflag 0x20A
     if SET _goto End
+    lock
     msgbox PlutoHQ_OwlDoorSign MSG_NORMAL
     checkitem ITEM_OWL_KEY 0x1
     compare LASTRESULT FALSE
@@ -826,12 +845,14 @@ SignScript_PlutoHQ_B6F_OwlDoor:
     bufferitem 0x0 ITEM_OWL_KEY
     msgbox PlutoHQ_DoorOpened MSG_NORMAL
     setflag 0x20A
+    release
     end
 
 .global SignScript_PlutoHQ_B7F_CypressDoor
 SignScript_PlutoHQ_B7F_CypressDoor:
     checkflag 0x20B
     if SET _goto End
+    lock
     msgbox PlutoHQ_CypressDoorSign MSG_NORMAL
     checkitem ITEM_CYPRESS_KEY 0x1
     compare LASTRESULT FALSE
@@ -843,12 +864,14 @@ SignScript_PlutoHQ_B7F_CypressDoor:
     bufferitem 0x0 ITEM_CYPRESS_KEY
     msgbox PlutoHQ_DoorOpened MSG_NORMAL
     setflag 0x20B
+    release
     end
 
 .global SignScript_PlutoHQ_B7F_SerpentDoor
 SignScript_PlutoHQ_B7F_SerpentDoor:
     checkflag 0x20C
     if SET _goto End
+    lock
     msgbox PlutoHQ_SerpentDoorSign MSG_NORMAL
     checkitem ITEM_SERPENT_KEY 0x1
     compare LASTRESULT FALSE
@@ -860,6 +883,7 @@ SignScript_PlutoHQ_B7F_SerpentDoor:
     bufferitem 0x0 ITEM_SERPENT_KEY
     msgbox PlutoHQ_DoorOpened MSG_NORMAL
     setflag 0x20C
+    release
     end
 
 HideB1FCerberusDoor:
