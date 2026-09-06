@@ -745,3 +745,8 @@
 # DPE palette lookups
 09856566 0F
 098565A6 0F
+
+# Vanilla CanBGMChangeOnMap refuses to swap in the bike (0x11A) or surf (0x131) theme on region map
+# sections 0x61, 0x7B and 0x84 - Kanto's Indigo Plateau, Route 23 and Viridian Forest, which in
+# Amethyst are Tsarvosa City, Route 23 and Peradon Forest. Return TRUE unconditionally so both themes play.
+08056124 01 20 70 47
