@@ -2798,6 +2798,7 @@ static u8 GetAbilityCapsuleNewAbility(struct Pokemon* mon)
 		}
 		else // Allow the pokemon to switch from Ability2 or it's hidden ability to it's first ability
 		{
+			// Greninja intentionally can swap back from Battle Bond to Torrent
 			if (ability1 != ABILITY_NONE)
 				changeTo = ability1;
 		}

@@ -2610,11 +2610,57 @@ void GiveMonNatureAndAbility(struct Pokemon* mon, u8 nature, u8 abilityNum, bool
 		}
 	} while (GetNatureFromPersonality(personality) != nature
 	|| (keepGender && GetGenderFromSpeciesAndPersonality(species, personality) != gender)
+	|| (forceShiny && !IsShinyOtIdPersonality(otId, personality)) //Writing the ability bit above can shift the halves back out of the shiny window
 	|| (!forceShiny && IsShinyOtIdPersonality(otId, personality)) //Prevent NPCs from accidentally getting shinies
 	|| (keepLetterCore && species == SPECIES_UNOWN && GetUnownLetterFromPersonality(personality) != letter) //Make sure the Unown letter doesn't change
 	|| (keepLetterCore && isMinior && GetMiniorCoreFromPersonality(personality) != miniorCore)); //Make sure the Minior core doesn't change
 
 	mon->personality = personality;
+}
+
+//Bit 0 of the personality picks between the first and second ability, but the personality also
+//holds the nature (personality % 25), the gender and the shininess, so writing that bit in place
+//shifts the nature by one. Roll a personality that keeps the wanted ability bit and leaves
+//everything else the player can see alone instead.
+void SetMonAbilityNumKeepingTraits(struct Pokemon* mon, u8 abilityNum)
+{
+	u32 personality = GetMonData(mon, MON_DATA_PERSONALITY, NULL);
+
+	abilityNum = MathMin(1, abilityNum);
+	if ((personality & 1) == abilityNum)
+		return;
+
+	u16 species = GetMonData(mon, MON_DATA_SPECIES, NULL);
+	u32 otId = GetMonData(mon, MON_DATA_OT_ID, NULL);
+	u16 sid = HIHALF(otId);
+	u16 tid = LOHALF(otId);
+	u8 nature = GetNatureFromPersonality(personality);
+	u8 gender = GetGenderFromSpeciesAndPersonality(species, personality);
+	u8 letter = GetUnownLetterFromPersonality(personality);
+	bool8 isMinior = IsMinior(species);
+	species_t miniorCore = GetMiniorCoreFromPersonality(personality);
+	bool8 isShiny = IsShinyOtIdPersonality(otId, personality);
+
+	do
+	{
+		personality = Random32();
+
+		if (isShiny) //Force the halves to XOR back into the shiny window
+		{
+			u8 shinyRange = 1; //Stays inside the window when the ability bit is written below
+			personality = (((shinyRange ^ (sid ^ tid)) ^ LOHALF(personality)) << 16) | LOHALF(personality);
+		}
+
+		personality &= ~(1);
+		personality |= abilityNum;
+
+	} while (GetNatureFromPersonality(personality) != nature
+	|| GetGenderFromSpeciesAndPersonality(species, personality) != gender
+	|| (!isShiny && IsShinyOtIdPersonality(otId, personality)) //No free shinies
+	|| (species == SPECIES_UNOWN && GetUnownLetterFromPersonality(personality) != letter)
+	|| (isMinior && GetMiniorCoreFromPersonality(personality) != miniorCore));
+
+	SetMonData(mon, MON_DATA_PERSONALITY, &personality);
 }
 
 void GiveMonXPerfectIVs(struct Pokemon* mon, u8 totalPerfectStats)
@@ -4880,16 +4926,19 @@ void SetGreninjaAbilityToBattleBond()
 	if (species != SPECIES_GRENINJA)
 		return;
 
+	u16 originalVar8005 = Var8005; // Both ribbon specials read the ribbon id out of this scratch var
 	Var8005 = 26; // Special Ribbon 7, used to check for Battle Bond eligibility
 	u8 isEligible = sp009_PokemonRibbonChecker();
 
 	if (isEligible && GetMonAbility(mon) == ABILITY_BATTLEBOND)
+	{
+		Var8005 = originalVar8005;
 		return;
+	}
 
-	// Only bit 0 of the personality picks the ability slot, so set it in place. Rerouting
-	// through SetAbilityFromEnum would reroll the whole personality and lose shininess.
-	mon->personality |= 1; // Second ability, Battle Bond
+	SetMonAbilityNumKeepingTraits(mon, 1); // Second ability, Battle Bond
 	mon->hiddenAbility = FALSE; // GetMonAbility returns Protean over the ability bit while this is set
-	sp011_RibbonSetterCleaner();
+	sp011_RibbonSetterCleaner(); // Grants the ribbon, so Var8005 must still be 26 here
+	Var8005 = originalVar8005;
 	gSpecialVar_LastResult = TRUE;
 }

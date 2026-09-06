@@ -83,6 +83,7 @@ extern const u16 gClassBasedTrainerEncounterBGM[NUM_TRAINER_CLASSES];
 
 //External functions
 extern void sp09A_StopSounds(void);
+extern bool8 sp009_PokemonRibbonChecker(void);
 
 //This file's functions:
 static bool8 CheckTrainerSpotting(u8 eventObjId);
@@ -2116,26 +2117,25 @@ void RunOnResumeMapScript(void)
 				SetMonData(mon, MON_DATA_FRIENDSHIP, &friendship);
 			}
 			
-			// Hack: If the player has any Greninja in the party with the battle bond ability and without the corresponding ribbon, reset them to Torrent
+			// Hack: Greninja's second ability slot is Battle Bond, so every Greninja with an odd
+			// personality gets it for free the moment it evolves. If it doesn't have the ribbon
+			// indicating it received Battle Bond through Selene's event, rever to Torrent.
 			u16 species = GetMonData(mon, MON_DATA_SPECIES, NULL);
-			
-			if (species == SPECIES_GRENINJA)
+
+			// Facility Pokemon are built with their spread's ability and never have ribbons; skip removal
+			if (species == SPECIES_GRENINJA && !FlagGet(FLAG_BATTLE_FACILITY))
 			{
 				u16 originalVar8004 = Var8004; // Greninja requires us to temporarily set the party index which we need to restore afterward
 				u16 originalVar8005 = Var8005; // Greninja requires us to temporarily set the party index which we need to restore afterward
-				
-				u8 ability = GetMonAbility(mon);
+
 				Var8004 = i; // Party index
 				Var8005 = 26; // Special Ribbon 7, used to check for Battle Bond eligibility
 				u8 isBattleBondEnabled = sp009_PokemonRibbonChecker();
-	
-				if (ability == ABILITY_BATTLEBOND && !isBattleBondEnabled)
-				{
-					u32 personality = GetMonData(mon, MON_DATA_PERSONALITY, NULL);
-					personality &= ~(1);
-					personality |= 0; // First ability, Torrent
-					mon->personality = personality;
-				}
+
+				// Test the ability slot rather than GetMonAbility:.
+				if (!isBattleBondEnabled && GetAbility2(species) == ABILITY_BATTLEBOND)
+					SetMonAbilityNumKeepingTraits(mon, 0); // First ability, Torrent
+
 				Var8004 = originalVar8004; // Restore after messing with Greninja
 				Var8005 = originalVar8005; // Restore after messing with Greninja
 			}

@@ -730,3 +730,18 @@
 # so point voice 9 at the stock GM 9 sample the pack's other voicegroups use in this slot.
 # Might be fixed in newer versions of the patch, but it's too big for Amethyst's ROM.
 092FB11C 00 3C 00 00 34 FC 5B 09 FF F0 00 B9
+
+# Base shiny odds 1/8192 -> 1/4096. Shininess has no stored bit and is recomputed based on personality
+# CreateMon, OT_ID_RANDOM_NO_SHINY reroll loop
+0803DB5E 0F
+# GetMonSpritePalFromSpeciesAndPersonality
+08044120 0F
+# GetMonSpritePalStructFromOtIdPersonality
+08044196 0F
+# IsShinyOtIdPersonality - what IsMonShiny and all CFRU code call
+080444B0 0F
+# TryShinyAnimation, the battle sparkle
+080F1776 0F
+# DPE palette lookups
+09856566 0F
+098565A6 0F

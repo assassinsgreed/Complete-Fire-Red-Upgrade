@@ -100,9 +100,9 @@
 #define EVO_MODE_NORMAL     0
 #define EVO_MODE_TRADE      1
 #define EVO_MODE_ITEM_USE   2
-#define EVO_MODE_ITEM_CHECK 3 // If an Everstone is being held, still want to show that the stone *could* be used on that Pokémon to evolve
+#define EVO_MODE_ITEM_CHECK 3 // If an Everstone is being held, still want to show that the stone *could* be used on that Pokemon to evolve
 
-#define SHINY_ODDS 16 // Actual probability is SHINY_ODDS/65536
+#define SHINY_ODDS 16 // 1/4096. Must match the shiny window the ROM compares against, which the bytereplacement file widens to 16 at every inline copy of the check
 
 // Learning moves
 #define MON_ALREADY_KNOWS_MOVE 0xFFFE
