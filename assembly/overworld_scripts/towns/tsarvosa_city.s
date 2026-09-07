@@ -2264,6 +2264,7 @@ ChoseNotToBattleTrainee:
     goto EndTraineeChat
 
 LostToTrainee:
+    cleartrainerflag 0x4000 @ Set by trainerbattle9 even on loss; player has to actually win to be tutorable
     msgbox gText_TsarvosaCity_GymTraineeCafe_Trainee_LostToTrainee MSG_NORMAL
     goto EndTraineeChat
 
