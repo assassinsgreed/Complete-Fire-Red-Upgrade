@@ -1548,6 +1548,7 @@ IsHPRecoveryItem = 0x8125018 | 1;
 NotUsingHPEVItemOnShedinja = 0x8125218 | 1;
 IsItemFlute = 0x812524C | 1;
 ExecuteTableBasedItemEffect_ = 0x8125268 | 1;
+ItemUseCB_Medicine = 0x81252D0 | 1;
 Task_DisplayHPRestoredMessage = 0x8125554 | 1;
 ReturnToUseOnWhichMon = 0x81257D4 | 1;
 ItemUseCB_RareCandyStep = 0x8126350 | 1;

@@ -106,6 +106,7 @@ bool8 __attribute__((long_call)) NotUsingHPEVItemOnShedinja(struct Pokemon *mon,
 bool8 __attribute__((long_call)) IsItemFlute(u16 item);
 bool8 __attribute__((long_call)) ExecuteTableBasedItemEffect_(u8 partyMonIndex, u16 item, u8 monMoveIndex);
 bool8 __attribute__((long_call)) IsHPRecoveryItem(u16 item);
+void __attribute__((long_call)) ItemUseCB_Medicine(u8 taskId, TaskFunc func);
 void __attribute__((long_call)) SetPartyMonAilmentGfx(struct Pokemon *mon, struct PartyMenuBox *menuBox);
 void __attribute__((long_call)) Task_PartyMenuModifyHP(u8 taskId);
 void __attribute__((long_call)) ResetHPTaskData(u8 taskId, u8 caseId, u32 hp);
@@ -1647,7 +1648,7 @@ static void ItemUseCB_EVReducingBerry(u8 taskId, TaskFunc func);
 static void ItemUseCB_EVEraser(u8 taskId, TaskFunc func);
 static void ItemUseCB_IVUpItem(u8 taskId, TaskFunc func);
 static void ItemUseCB_FormChangeItem(u8 taskId, TaskFunc func);
-static void FormChangeItem_ShowPartyMenuFromField(u8 taskId);
+static void ItemUse_ShowPartyMenuFromField(u8 taskId);
 static void ItemUseCB_DNASplicersStep(u8 taskId, TaskFunc func);
 static void Task_TryLearnPostFormeChangeMove(u8 taskId);
 static struct Pokemon* GetBaseMonForFusedSpecies(u16 species);
@@ -2121,11 +2122,11 @@ void FieldUseFunc_FormChangeItem(u8 taskId)
 	else //From Overworld
 	{
 		FadeScreen(FADE_TO_BLACK, 0);
-		gTasks[taskId].func = FormChangeItem_ShowPartyMenuFromField;
+		gTasks[taskId].func = ItemUse_ShowPartyMenuFromField;
 	}
 }
 
-static void FormChangeItem_ShowPartyMenuFromField(u8 taskId)
+static void ItemUse_ShowPartyMenuFromField(u8 taskId)
 {
 	if (!gPaletteFade->active)
 	{
@@ -3129,6 +3130,53 @@ void FieldUseFunc_PokeTool(u8 taskId)
 		DisplayItemMessageInBag(taskId, 2, gText_PokeTool_FromKeyItems, Task_ReturnToBagFromContextMenu);
 	else
 		DisplayItemMessageInCurrentContext(taskId, TRUE, 2, gText_PokeTool_FromKeyItems);
+}
+
+extern const u8 gText_UsedVar2WildStronger[];
+extern const u8 gText_UsedVar2WildWeaker[];
+static void Task_UseBlackWhiteFlute(u8 taskId);
+
+void FieldUseFunc_Medicine(u8 taskId)
+{
+	gItemUseCB = ItemUseCB_Medicine;
+
+	if (gTasks[taskId].data[3] == 0) //From Bag
+	{
+		SetUpItemUseCallback(taskId);
+	}
+	else //From Overworld
+	{
+		FadeScreen(FADE_TO_BLACK, 0);
+		gTasks[taskId].func = ItemUse_ShowPartyMenuFromField;
+	}
+}
+
+void FieldUseFunc_BlackWhiteFlute(u8 taskId)
+{
+	if (Var800E == ITEM_WHITE_FLUTE)
+	{
+		FlagSet(FLAG_SYS_WHITE_FLUTE_ACTIVE);
+		FlagClear(FLAG_SYS_BLACK_FLUTE_ACTIVE);
+	}
+	else
+	{
+		FlagSet(FLAG_SYS_BLACK_FLUTE_ACTIVE);
+		FlagClear(FLAG_SYS_WHITE_FLUTE_ACTIVE);
+	}
+
+	CopyItemName(Var800E, gStringVar2);
+	gTasks[taskId].data[8] = 0;
+	gTasks[taskId].func = Task_UseBlackWhiteFlute;
+}
+
+static void Task_UseBlackWhiteFlute(u8 taskId)
+{
+	if (++gTasks[taskId].data[8] > 7) //Short delay so the flute jingle doesn't overlap the menu sound
+	{
+		PlaySE(SE_FLUTE);
+		DisplayItemMessageInCurrentContext(taskId, gTasks[taskId].data[3], 2,
+			(Var800E == ITEM_WHITE_FLUTE) ? gText_UsedVar2WildWeaker : gText_UsedVar2WildStronger);
+	}
 }
 
 void ItemUseCB_RareCandy(u8 taskId, TaskFunc func)

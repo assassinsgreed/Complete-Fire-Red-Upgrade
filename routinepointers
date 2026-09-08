@@ -328,5 +328,13 @@ FieldUseFunc_IVUpItem 87344B0
 ## Shimmering Stone - toggles the chosen mon between normal and shiny
 FieldUseFunc_ShimmeringStone 872EA48
 
+## Flutes - Overwritten here because vanilla Fire Red doesn't allow these to be used as registered key items
+## Without this overwrite, they will crash the bag because they try to close the menu
+# Blue Flute
+FieldUseFunc_Medicine 872E1DC
+# Black Flute / White Flute
+FieldUseFunc_BlackWhiteFlute 872E260
+FieldUseFunc_BlackWhiteFlute 872E28C
+
 ## Item Finder 8-Directional Indicator (Dousing Machine Style)
 ItemUseCB_DowserToggle 080A145C
