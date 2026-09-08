@@ -538,6 +538,7 @@ SizeMinigameLoadAlternateHeightHook 080A0774 2
 PokedexScreenStats 08106370 0
 GetVisualBaseStat 0801D77C 2
 FixPokedexCheckNullSpeciesHook 08104ACA 0
+GetDisplayedPokedexNum 08043F90 1
 
 ##Daycare
 GiveEggFromDaycare 080460D4 1

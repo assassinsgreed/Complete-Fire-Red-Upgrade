@@ -24,6 +24,7 @@ void HealMon(struct Pokemon* mon);
 void SetMonPokedexFlags(struct Pokemon* mon);
 u16 GetNationalPokedexCount(u8 caseID);
 const u16* GetRegionalDexSpeciesTable(bool8 divergent, u16* count);
+u16 GetDisplayedPokedexNum(u16 species);
 bool8 IsPokedexComplete(void);
 bool8 HasEveryTMAndHM(void);
 bool8 HasEveryMegaStoneForCurrentMode(void);

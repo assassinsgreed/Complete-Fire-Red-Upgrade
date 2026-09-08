@@ -183,6 +183,40 @@ const u16* GetRegionalDexSpeciesTable(bool8 divergent, u16* count)
 	return &table[1];
 }
 
+// A species' position in a dex, or 0 if not in the dex doesn't list it.
+// Used to ensure divergent mons show the right dex number.
+static u16 GetPositionInRegionalDex(u16 dexNum, bool8 divergent)
+{
+	u16 count;
+	const u16* speciesTable = GetRegionalDexSpeciesTable(divergent, &count);
+
+	for (u32 i = 0; i < count; ++i)
+	{
+		if (SpeciesToNationalPokedexNum(speciesTable[i]) == dexNum)
+			return i + 1;
+	}
+
+	return 0;
+}
+
+// The number the summary screen and the Hall of Fame print for a Pokemon.
+u16 GetDisplayedPokedexNum(u16 species)
+{
+	bool8 divergent = FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS);
+	u16 dexNum = SpeciesToNationalPokedexNum(species);
+	u16 position;
+
+	if (dexNum == 0)
+		return 0; // Nothing to search the dexes for
+
+	position = GetPositionInRegionalDex(dexNum, divergent);
+	if (position == 0)
+		position = GetPositionInRegionalDex(dexNum, !divergent);
+
+	// Species in neither dex (evolutions that don't count towards completion, like Kleavor) appear as 0.
+	return position;
+}
+
 // Checks the dex for the active mode only
 bool8 IsPokedexComplete(void)
 {
