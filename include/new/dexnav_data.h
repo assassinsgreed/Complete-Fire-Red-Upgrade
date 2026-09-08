@@ -164,6 +164,7 @@ struct DexNavGUIData
 	u8 selectedArea;
 	u8 registeredIndex;
 	u8 registeredArea;
+	u8 waterScrollArrowTaskId;
 	bool8 registeredIconVisible;
 	u16 landRowScroll;
 	u16 waterRowScroll;

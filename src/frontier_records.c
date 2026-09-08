@@ -330,6 +330,7 @@ static void Task_FrontierRecordsFadeOut(u8 taskId)
 		SetMainCallback2(CB2_ReturnToFieldContinueScript);
 		Free(sFrontierRecordsPtr->tilemapPtr);
 		Free(sFrontierRecordsPtr);
+		sFrontierRecordsPtr = NULL; //Shared with gNewBS, which battle code reads as "no battle struct" when NULL
 		FreeAllWindowBuffers();
 		DestroyTask(taskId);
 	}

@@ -38,6 +38,7 @@ wild_encounter.c
 //Chain Fishing
 
 #define NUM_TANOBY_CHAMBERS 7
+#define NUM_OLD_ROD_SLOTS 2 //Fishing table indices 0-1 are the Old Rod's
 
 struct EncounterRate
 {
@@ -637,21 +638,30 @@ bool8 IsValidSwarmIndex(u8 index)
 	return index < (FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS) ? gDivergentSwarmTableLength : gSwarmTableLength);
 }
 
-static bool8 TryGenerateSwarmMon(u8 level, u8 wildMonIndex, bool8 purgeParty)
+static bool8 CanSwarmAppearInArea(const struct SwarmData* swarm, u8 area, u8 wildMonIndex)
 {
-	if ((FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS) ? gDivergentSwarmTableLength : gSwarmTableLength) == 0)
-		return FALSE;
+	if (!swarm->waterSwarm)
+		return area == WILD_AREA_LAND;
 
+	if (area == WILD_AREA_WATER)
+		return TRUE;
+
+	// The Old Rod's slots are left alone so its early-game filler encounters stay intact.
+	return area == WILD_AREA_FISHING && wildMonIndex >= NUM_OLD_ROD_SLOTS;
+}
+
+static bool8 TryGenerateSwarmMon(u8 area, u8 level, u8 wildMonIndex, bool8 purgeParty)
+{
 	u8 index = GetCurrentSwarmIndex();
 	if (IsValidSwarmIndex(index))
 	{
-		u8 mapName = (FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS) ? gDivergentSwarmTable : gSwarmTable)[index].mapName;
-		u16 species = (FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS) ? gDivergentSwarmTable : gSwarmTable)[index].species;
+		const struct SwarmData* swarm = &(FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS) ? gDivergentSwarmTable : gSwarmTable)[index];
 
-		if (mapName == GetCurrentRegionMapSectionId()
+		if (swarm->mapName == GetCurrentRegionMapSectionId()
+		&& CanSwarmAppearInArea(swarm, area, wildMonIndex)
 		&& Random() % 100 < SWARM_CHANCE)
 		{
-			CreateWildMon(species, level, wildMonIndex, purgeParty);
+			CreateWildMon(swarm->species, level, wildMonIndex, purgeParty);
 			return TRUE;
 		}
 	}
@@ -721,7 +731,7 @@ SKIP_INDEX_SEARCH:
 	else if (flags & WILD_CHECK_KEEN_EYE && !IsAbilityAllowingEncounter(level))
 		return FALSE;
 
-	else if (area != WILD_AREA_LAND || !TryGenerateSwarmMon(level, wildMonIndex, TRUE)) //Swarms can only appear on land
+	else if (!TryGenerateSwarmMon(area, level, wildMonIndex, TRUE))
 		CreateWildMon(wildMonInfo->wildPokemon[wildMonIndex].species, level, wildMonIndex, TRUE);
 
 	#ifdef FLAG_DOUBLE_WILD_BATTLE
@@ -762,7 +772,7 @@ SKIP_INDEX_SEARCH:
 			goto SKIP_CREATE_SECOND_MON;
 
 		level = ChooseWildMonLevel(&wildMonInfo->wildPokemon[wildMonIndex]);
-		if (area != WILD_AREA_LAND || !TryGenerateSwarmMon(level, wildMonIndex, FALSE))
+		if (!TryGenerateSwarmMon(area, level, wildMonIndex, FALSE))
 			CreateWildMon(wildMonInfo->wildPokemon[wildMonIndex].species, level, wildMonIndex, FALSE);
 
 		SKIP_CREATE_SECOND_MON:
@@ -782,7 +792,8 @@ static species_t GenerateFishingWildMon(const struct WildPokemonInfo* wildMonInf
 
 	u8 level = ChooseWildMonLevel(&wildMonInfo->wildPokemon[wildMonIndex]);
 
-	CreateWildMon(wildMonInfo->wildPokemon[wildMonIndex].species, level, wildMonIndex, TRUE);
+	if (!TryGenerateSwarmMon(WILD_AREA_FISHING, level, wildMonIndex, TRUE))
+		CreateWildMon(wildMonInfo->wildPokemon[wildMonIndex].species, level, wildMonIndex, TRUE);
 
 	#ifdef FLAG_DOUBLE_WILD_BATTLE
 	if ((FlagGet(FLAG_DOUBLE_WILD_BATTLE) || FlagGet(FLAG_DOUBLE_WILD_BATTLES_MODIFIER_ACTIVE)) &&  ViableMonCount(gPlayerParty) >= 2)
@@ -791,11 +802,12 @@ static species_t GenerateFishingWildMon(const struct WildPokemonInfo* wildMonInf
 		if (!IsValidEncounterSpecies(wildMonInfo, wildMonIndex))
 			return SPECIES_NONE;
 		u8 level = ChooseWildMonLevel(&wildMonInfo->wildPokemon[wildMonIndex]);
-		CreateWildMon(wildMonInfo->wildPokemon[wildMonIndex].species, level, wildMonIndex, FALSE);
+		if (!TryGenerateSwarmMon(WILD_AREA_FISHING, level, wildMonIndex, FALSE))
+			CreateWildMon(wildMonInfo->wildPokemon[wildMonIndex].species, level, wildMonIndex, FALSE);
 	}
 	#endif
 
-	return wildMonInfo->wildPokemon[wildMonIndex].species;
+	return GetMonData(&gEnemyParty[0], MON_DATA_SPECIES, NULL); // A swarm may have replaced the rolled slot
 }
 
 void FishingWildEncounter(u8 rod)

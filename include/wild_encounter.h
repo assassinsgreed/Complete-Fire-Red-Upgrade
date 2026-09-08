@@ -36,6 +36,7 @@ struct WildPokemonHeader
 struct SwarmData
 {
 	u8 mapName;
+	u8 waterSwarm; // TRUE swarms into surf and the Good/Super Rod instead of the grass. Sits in the struct's pad byte, so entries stay 4 bytes.
 	u16 species;
 };
 

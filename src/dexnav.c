@@ -92,7 +92,7 @@ static u8 ShakingGrass(u8 environment, u8 xSize, u8 ySize, bool8 mustFindTile);
 static void DexNavProximityUpdate(void);
 static void StopDexNavFieldEffect(void);
 static void DexNavFreeHUD(void);
-static void DexNavShowFieldMessage(u8 id);
+static void DexNavShowFieldMessage(u8 id, u16 species);
 static void OutlinedFontDraw(u8 spriteId, u16 tileNum, u16 size);
 static void DexNavSightUpdate(u8 sight);
 static void DexNavIconsVisionUpdate(u8 proximity, u8 searchLevel);
@@ -710,12 +710,12 @@ static void DexNavFreeHUD(void)
 	FreeSpritePaletteByTag(0x3039);
 
 	Free(sDexNavHudPtr);
+	sDexNavHudPtr = NULL;
 }
 
 extern const u8 SystemScript_DisplayDexnavMsg[];
-static void DexNavShowFieldMessage(u8 id)
+static void DexNavShowFieldMessage(u8 id, u16 species)
 {
-	u16 species = sDexNavHudPtr->species;
 	TryRandomizeSpecies(&species);
 
 	ScriptContext2_Enable();
@@ -1045,9 +1045,10 @@ static void Task_ManageDexNavHUD(u8 taskId)
 	if (sDexNavHudPtr->totalProximity > 20
 	|| IsMapNamePopupTaskActive())
 	{
+		u16 species = sDexNavHudPtr->species;
 		DestroyTask(taskId);
 		DexNavFreeHUD();
-		DexNavShowFieldMessage(FIELD_MSG_LOST_SIGNAL);
+		DexNavShowFieldMessage(FIELD_MSG_LOST_SIGNAL, species);
 		return;
 	}
 
@@ -1055,24 +1056,26 @@ static void Task_ManageDexNavHUD(u8 taskId)
 	gTasks[taskId].data[1]++;
 	if (gTasks[taskId].data[1] > DEXNAV_TIMEOUT * 60)
 	{
+		u16 species = sDexNavHudPtr->species;
 		gCurrentDexNavChain = 0; //A Pokemon running like this resets the chain
 		DestroyTask(taskId);
 		DexNavFreeHUD();
 		if (gTasks[taskId].data[7]) //Detector Mode
-			DexNavShowFieldMessage(FIELD_MSG_GOT_AWAY_DETECTOR);
+			DexNavShowFieldMessage(FIELD_MSG_GOT_AWAY_DETECTOR, species);
 		else
-			DexNavShowFieldMessage(FIELD_MSG_GOT_AWAY);
+			DexNavShowFieldMessage(FIELD_MSG_GOT_AWAY, species);
 		return;
 	}
 
 	if (sDexNavHudPtr->totalProximity <= SNEAKING_PROXIMITY && TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_DASH | PLAYER_AVATAR_FLAG_BIKE)) //If player is close and running then the Pokemon should flee
 	{
+		u16 species = sDexNavHudPtr->species;
 		gCurrentDexNavChain = 0; //A Pokemon running like this resets the chain
 		DexNavFreeHUD();
 		if (gTasks[taskId].data[7]) //Detector Mode
-			DexNavShowFieldMessage(FIELD_MSG_SNEAK_NEXT_TIME_DETECTOR);
+			DexNavShowFieldMessage(FIELD_MSG_SNEAK_NEXT_TIME_DETECTOR, species);
 		else
-			DexNavShowFieldMessage(FIELD_MSG_SNEAK_NEXT_TIME);
+			DexNavShowFieldMessage(FIELD_MSG_SNEAK_NEXT_TIME, species);
 		DestroyTask(taskId);
 		return;
 	}
@@ -1119,8 +1122,30 @@ static void Task_ManageDexNavHUD(u8 taskId)
 	&& sDexNavHudPtr->totalProximity < 2
 	&& sDexNavHudPtr->movementTimes < 2)
 	{
+		u32 tries;
+
 		StopDexNavFieldEffect();
-		while(!ShakingGrass(sDexNavHudPtr->environment, SCAN_SIZE_X_REPEAT, SCAN_SIZE_Y_REPEAT, TRUE));
+
+		//Try to pick a spot up to 16 time before giving up with a "not found" message (preventing softlocks)
+		for (tries = 0; tries < 16; ++tries)
+		{
+			if (ShakingGrass(sDexNavHudPtr->environment, SCAN_SIZE_X_REPEAT, SCAN_SIZE_Y_REPEAT, TRUE))
+				break;
+		}
+
+		if (tries >= 16) //Nowhere left for it to move to
+		{
+			u16 species = sDexNavHudPtr->species;
+			gCurrentDexNavChain = 0;
+			DexNavFreeHUD();
+			if (gTasks[taskId].data[7]) //Detector Mode
+				DexNavShowFieldMessage(FIELD_MSG_GOT_AWAY_DETECTOR, species);
+			else
+				DexNavShowFieldMessage(FIELD_MSG_GOT_AWAY, species);
+			DestroyTask(taskId);
+			return;
+		}
+
 		sDexNavHudPtr->movementTimes += 1;
 	}
 	#endif
@@ -1149,10 +1174,12 @@ static void Task_ManageDexNavHUD(u8 taskId)
 
 		//Freeing only the state, objects and hblank cleared on battle start.
 		Free(sDexNavHudPtr);
+		sDexNavHudPtr = NULL;
 
 		gDexNavStartedBattle = TRUE;
 		DismissMapNamePopup();
 		ScriptContext1_SetupScript(SystemScript_StartDexNavBattle);
+		return; //The task is destroyed and the HUD state is freed - nothing below should run
 	};
 
 	//HUD needs updating iff player has moved
@@ -1168,6 +1195,24 @@ static void Task_ManageDexNavHUD(u8 taskId)
 // ===================================== //
 // ================ HUD ================ //
 // ===================================== //
+static const struct SwarmData* GetCurrentMapSwarm(bool8 water)
+{
+	u8 index = GetCurrentSwarmIndex();
+
+	if (!IsValidSwarmIndex(index))
+		return NULL;
+
+	const struct SwarmData* swarm = &(FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS) ? gDivergentSwarmTable : gSwarmTable)[index];
+
+	if (swarm->mapName != GetCurrentRegionMapSectionId())
+		return NULL;
+
+	if ((swarm->waterSwarm != 0) != (water != 0))
+		return NULL;
+
+	return swarm;
+}
+
 static const u8 sLandEncounterRates[] = {20, 20, 10, 10, 10, 10, 5, 5, 4, 4, 1, 1};
 static const u8 sWaterEncounterRates[] = {60, 30, 5, 4, 1};
 static const u8 sFishingEncounterRates[] = {70, 30, 60, 20, 20, 40, 40, 15, 4, 1};
@@ -1186,16 +1231,11 @@ static u8 GetTotalEncounterChance(u16 species, u8 environment)
 				break; //Hidden pokemon should only appear on walkable tiles or surf tiles
 
 			//Check swarming mon first
-			u8 swarmIndex = GetCurrentSwarmIndex();
-			if (IsValidSwarmIndex(swarmIndex))
+			const struct SwarmData* landSwarm = GetCurrentMapSwarm(FALSE);
+			if (landSwarm != NULL && species == landSwarm->species)
 			{
-				const struct SwarmData* swarmTable = FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS) ? gDivergentSwarmTable : gSwarmTable;
-				if (GetCurrentRegionMapSectionId() == swarmTable[swarmIndex].mapName
-				&& species == swarmTable[swarmIndex].species)
-				{
-					chance += SWARM_CHANCE;
-					break;
-				}
+				chance += SWARM_CHANCE;
+				break;
 			}
 
 			for (i = 0; i < MAX_TOTAL_LAND_MONS; ++i)
@@ -1206,7 +1246,14 @@ static u8 GetTotalEncounterChance(u16 species, u8 environment)
 			}
 			break;
 
-		case ENCOUNTER_TYPE_WATER:
+		case ENCOUNTER_TYPE_WATER: ;
+			const struct SwarmData* waterSwarm = GetCurrentMapSwarm(TRUE);
+			if (waterSwarm != NULL && species == waterSwarm->species)
+			{
+				chance += SWARM_CHANCE;
+				break;
+			}
+
 			if (waterMonsInfo != NULL)
 			{
 				for (i = 0; i < NUM_WATER_MONS; ++i)
@@ -1283,25 +1330,20 @@ static u8 GetEncounterLevel(u16 species, u8 environment, bool8 detectorMode)
 			if (i >= MAX_TOTAL_LAND_MONS) //Pokemon not found here
 			{
 				//Check swarming mon
-				u8 swarmIndex = GetCurrentSwarmIndex();
-				const struct SwarmData* swarmTable = FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS) ? gDivergentSwarmTable : gSwarmTable;
+				const struct SwarmData* landSwarm = GetCurrentMapSwarm(FALSE);
 				if (detectorMode)
 				{
 					goto PICK_RANDOM_LAND_LEVEL;
 				}
-				else if (IsValidSwarmIndex(swarmIndex))
+				else if (landSwarm != NULL && species == landSwarm->species)
 				{
-					if (GetCurrentRegionMapSectionId() == swarmTable[swarmIndex].mapName
-					&& species == swarmTable[swarmIndex].species)
-					{
-						//Pick index at random and choose min and max from there
-						PICK_RANDOM_LAND_LEVEL:
-						i = RandRange(0, NELEMS(landMonsInfo->wildPokemon));
-						monData = &landMonsInfo->wildPokemon[Random() % MAX_TOTAL_LAND_MONS];
-						min = monData->minLevel;
-						max = monData->maxLevel;
-						break;
-					}
+					//Pick index at random and choose min and max from there
+					PICK_RANDOM_LAND_LEVEL:
+					i = RandRange(0, NELEMS(landMonsInfo->wildPokemon));
+					monData = &landMonsInfo->wildPokemon[Random() % MAX_TOTAL_LAND_MONS];
+					min = monData->minLevel;
+					max = monData->maxLevel;
+					break;
 				}
 
 				return MAX_LEVEL + 1;
@@ -1355,6 +1397,24 @@ static u8 GetEncounterLevel(u16 species, u8 environment, bool8 detectorMode)
 				{
 					i = RandRange(0, NELEMS(fishingMonsInfo->wildPokemon));
 					monData = &fishingMonsInfo->wildPokemon[Random() % NUM_FISHING_MONS];
+					min = monData->minLevel;
+					max = monData->maxLevel;
+					break;
+				}
+			}
+
+			{
+				//Check swarming mon - it has no slot of its own, so borrow a real one's level range
+				const struct SwarmData* waterSwarm = GetCurrentMapSwarm(TRUE);
+				if (waterSwarm != NULL && species == waterSwarm->species)
+				{
+					if (waterMonsInfo != NULL)
+						monData = &waterMonsInfo->wildPokemon[Random() % NUM_WATER_MONS];
+					else if (fishingMonsInfo != NULL)
+						monData = &fishingMonsInfo->wildPokemon[Random() % NUM_FISHING_MONS];
+					else
+						return MAX_LEVEL + 1;
+
 					min = monData->minLevel;
 					max = monData->maxLevel;
 					break;
@@ -1890,7 +1950,7 @@ bool8 InitDexNavHUD(u16 species, u8 environment, bool8 detectorMode)
 {
 	if (Overworld_GetFlashLevel() > 0)
 	{
-		DexNavShowFieldMessage(FIELD_MSG_TOO_DARK);
+		DexNavShowFieldMessage(FIELD_MSG_TOO_DARK, species);
 		return FALSE;
 	}
 
@@ -1923,8 +1983,10 @@ bool8 InitDexNavHUD(u16 species, u8 environment, bool8 detectorMode)
 
 	if (sDexNavHudPtr->pokemonLevel < 1)
 	{
+		u16 unrandomizedSpecies = sDexNavHudPtr->species;
 		Free(sDexNavHudPtr);
-		DexNavShowFieldMessage(FIELD_MSG_NOT_IN_AREA);
+		sDexNavHudPtr = NULL;
+		DexNavShowFieldMessage(FIELD_MSG_NOT_IN_AREA, unrandomizedSpecies);
 		return FALSE;
 	}
 
@@ -1936,9 +1998,11 @@ bool8 InitDexNavHUD(u16 species, u8 environment, bool8 detectorMode)
 	|| gDexNavCooldown
 	|| VarGet(VAR_REPEL_STEP_COUNT) == 1)) //1 step remaining on the repel - player takes a step, repel wears off and they can search again
 	{
+		u16 unrandomizedSpecies = sDexNavHudPtr->species;
 		Free(sDexNavHudPtr);
+		sDexNavHudPtr = NULL;
 		gDexNavCooldown = TRUE;
-		DexNavShowFieldMessage(FIELD_MSG_LOOK_IN_OTHER_SPOT);
+		DexNavShowFieldMessage(FIELD_MSG_LOOK_IN_OTHER_SPOT, unrandomizedSpecies);
 		return FALSE;
 	}
 
@@ -1949,9 +2013,11 @@ bool8 InitDexNavHUD(u16 species, u8 environment, bool8 detectorMode)
 	&& !ShakingGrass(environment, SCAN_SIZE_X_START, SCAN_SIZE_Y_START, detectorMode)
 	&& !ShakingGrass(environment, SCAN_SIZE_X_START, SCAN_SIZE_Y_START, detectorMode))
 	{
+		u16 unrandomizedSpecies = sDexNavHudPtr->species;
 		Free(sDexNavHudPtr);
+		sDexNavHudPtr = NULL;
 		gDexNavCooldown = TRUE;
-		DexNavShowFieldMessage(FIELD_MSG_LOOK_IN_OTHER_SPOT);
+		DexNavShowFieldMessage(FIELD_MSG_LOOK_IN_OTHER_SPOT, unrandomizedSpecies);
 		return FALSE;
 	}
 
@@ -2078,14 +2144,10 @@ static bool8 CapturedAllLandBasedPokemon(void)
 		}
 
 		//Check swarming mon
-		u8 swarmIndex = GetCurrentSwarmIndex();
-		const struct SwarmData* swarmTable = FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS) ? gDivergentSwarmTable : gSwarmTable;
-		if (IsValidSwarmIndex(swarmIndex)
-		&& GetCurrentRegionMapSectionId() == swarmTable[swarmIndex].mapName)
-		{
-			if (!GetSetPokedexFlag(SpeciesToNationalPokedexNum(swarmTable[swarmIndex].species), FLAG_GET_CAUGHT))
-				return FALSE;
-		}
+		const struct SwarmData* landSwarm = GetCurrentMapSwarm(FALSE);
+		if (landSwarm != NULL
+		&& !GetSetPokedexFlag(SpeciesToNationalPokedexNum(landSwarm->species), FLAG_GET_CAUGHT))
+			return FALSE;
 
 		if (i >= MAX_TOTAL_LAND_MONS && num > 0) //All land mons caught and there were land mons to catch
 			return TRUE;
@@ -2135,6 +2197,12 @@ static bool8 CapturedAllWaterBasedPokemon(void)
 		}
 	}
 
+	//Check swarming mon
+	const struct SwarmData* waterSwarm = GetCurrentMapSwarm(TRUE);
+	if (waterSwarm != NULL
+	&& !GetSetPokedexFlag(SpeciesToNationalPokedexNum(waterSwarm->species), FLAG_GET_CAUGHT))
+		return FALSE;
+
 	return TRUE;
 }
 
@@ -2165,9 +2233,18 @@ static bool8 TryAddSpeciesToArray(u16 species, u8 encounterMethod, u8 indexCount
 			else if (sDexNavGUIPtr->hiddenSpecies[i] == dexNum) //Already in array
 			{
 				//Keep the hidden mon's method in sync with how a visible mon of the same
-				//species would be shown - if it's already Surf and this call is adding a
-				//rod method, upgrade it to the combined Surf + Rod method.
-				if (indexCount == MAX_TOTAL_WATER_MONS
+				//species would be shown.
+				if (encounterMethod == ENCOUNTER_METHOD_SWARM)
+				{
+					if (indexCount == MAX_TOTAL_LAND_MONS
+					&& i < NELEMS(sDexNavGUIPtr->hiddenLandEncounterMethod))
+						sDexNavGUIPtr->hiddenLandEncounterMethod[i] = ENCOUNTER_METHOD_SWARM;
+					else if (indexCount == MAX_TOTAL_WATER_MONS
+					&& i < NELEMS(sDexNavGUIPtr->hiddenWaterEncounterMethod))
+						sDexNavGUIPtr->hiddenWaterEncounterMethod[i] = ENCOUNTER_METHOD_SWARM;
+				}
+				//If it's already Surf and this call is adding a rod method, upgrade it to the combined Surf + Rod method.
+				else if (indexCount == MAX_TOTAL_WATER_MONS
 				&& i < NELEMS(sDexNavGUIPtr->hiddenWaterEncounterMethod)
 				&& sDexNavGUIPtr->hiddenWaterEncounterMethod[i] == ENCOUNTER_METHOD_WATER)
 				{
@@ -2183,12 +2260,6 @@ static bool8 TryAddSpeciesToArray(u16 species, u8 encounterMethod, u8 indexCount
 							sDexNavGUIPtr->hiddenWaterEncounterMethod[i] = ENCOUNTER_METHOD_SURF_SUPER_ROD;
 							break;
 					}
-				}
-				else if (indexCount == MAX_TOTAL_LAND_MONS
-				&& i < NELEMS(sDexNavGUIPtr->hiddenLandEncounterMethod)
-				&& encounterMethod == ENCOUNTER_METHOD_SWARM)
-				{
-					sDexNavGUIPtr->hiddenLandEncounterMethod[i] = ENCOUNTER_METHOD_SWARM;
 				}
 
 				return FALSE;
@@ -2244,7 +2315,14 @@ static bool8 TryAddSpeciesToArray(u16 species, u8 encounterMethod, u8 indexCount
 			u16 wildSpecies = sDexNavGUIPtr->waterSpecies[i];
 			TryRandomizeSpecies(&wildSpecies);
 			if (wildSpecies == species) // Match by the exact species and not the dex num
+			{
+				if (encounterMethod == ENCOUNTER_METHOD_SWARM
+				&& i < NELEMS(sDexNavGUIPtr->waterEncounterMethod))
+				{
+					sDexNavGUIPtr->waterEncounterMethod[i] = ENCOUNTER_METHOD_SWARM;
+				}
 				return FALSE;
+			}
 		}
 	}
 
@@ -2293,18 +2371,13 @@ static void DexNavPopulateEncounterList(void)
 		}
 
 		//Add swarming mon
-		u8 swarmIndex = GetCurrentSwarmIndex();
-		if (IsValidSwarmIndex(swarmIndex))
+		const struct SwarmData* landSwarm = GetCurrentMapSwarm(FALSE);
+		if (landSwarm != NULL
+		&& grassIndex < NELEMS(sDexNavGUIPtr->grassSpecies)
+		&& TryAddSpeciesToArray(landSwarm->species, ENCOUNTER_METHOD_SWARM, MAX_TOTAL_LAND_MONS, PickUnownLetter(landSwarm->species, 0)))
 		{
-			const struct SwarmData* swarmTable = FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS) ? gDivergentSwarmTable : gSwarmTable;
-			u16 swarmSpecies = swarmTable[swarmIndex].species;
-			if (GetCurrentRegionMapSectionId() == swarmTable[swarmIndex].mapName
-			&& grassIndex < NELEMS(sDexNavGUIPtr->grassSpecies)
-			&& TryAddSpeciesToArray(swarmSpecies, ENCOUNTER_METHOD_SWARM, MAX_TOTAL_LAND_MONS, PickUnownLetter(swarmSpecies, 0)))
-			{
-				sDexNavGUIPtr->landEncounterMethod[grassIndex] = ENCOUNTER_METHOD_SWARM;
-				sDexNavGUIPtr->grassSpecies[grassIndex++] = swarmSpecies;
-			}
+			sDexNavGUIPtr->landEncounterMethod[grassIndex] = ENCOUNTER_METHOD_SWARM;
+			sDexNavGUIPtr->grassSpecies[grassIndex++] = landSwarm->species;
 		}
 	}
 
@@ -2335,6 +2408,19 @@ static void DexNavPopulateEncounterList(void)
 				sDexNavGUIPtr->waterEncounterMethod[waterIndex] = ENCOUNTER_METHOD_WATER;
 				sDexNavGUIPtr->waterSpecies[waterIndex++] = waterMonsInfo->wildPokemon[i].species;
 			}
+		}
+	}
+
+	//Add swarming mon - it rides the map's existing surf and rod slots, so it needs one of those tables to exist
+	if (waterMonsInfo != NULL || fishingMonsInfo != NULL)
+	{
+		const struct SwarmData* waterSwarm = GetCurrentMapSwarm(TRUE);
+		if (waterSwarm != NULL
+		&& waterIndex < NELEMS(sDexNavGUIPtr->waterSpecies)
+		&& TryAddSpeciesToArray(waterSwarm->species, ENCOUNTER_METHOD_SWARM, MAX_TOTAL_WATER_MONS, PickUnownLetter(waterSwarm->species, 0)))
+		{
+			sDexNavGUIPtr->waterEncounterMethod[waterIndex] = ENCOUNTER_METHOD_SWARM;
+			sDexNavGUIPtr->waterSpecies[waterIndex++] = waterSwarm->species;
 		}
 	}
 
@@ -2977,7 +3063,7 @@ static void DexNavDisplaySpeciesData(void)
 			else
 				newMethod = sDexNavGUIPtr->waterEncounterMethod[waterSlot];
 
-			if (IsFishingEncounterMethod(newMethod))
+			if (IsFishingEncounterMethod(newMethod) || newMethod == ENCOUNTER_METHOD_SWARM)
 				method = newMethod;
 
 			#ifdef UNBOUND
@@ -3533,7 +3619,14 @@ static void Task_HandleContextMenu(u8 taskId)
 
 static void FreeAndCloseDexNav(u8 taskId)
 {
+	if (sDexNavGUIPtr->waterScrollArrowTaskId != 0xFF)
+	{
+		RemoveScrollIndicatorArrowPair(sDexNavGUIPtr->waterScrollArrowTaskId);
+		sDexNavGUIPtr->waterScrollArrowTaskId = 0xFF;
+	}
+
 	Free(sDexNavGUIPtr);
+	sDexNavGUIPtr = NULL;
 	FreeAllWindowBuffers();
 	BGMVolumeMax_EnableHelpSystemReduction();
 	DestroyTask(taskId);
@@ -3717,13 +3810,15 @@ static void DexNavLoadMonIcons(void)
 
 static void CreateWaterScrollArrows(void)
 {
+	sDexNavGUIPtr->waterScrollArrowTaskId = 0xFF;
+
 	if (GetWaterRowCount() > 2)
 	{
 		s16 rowCount = (s32) GetWaterRowCount() - 2 + 1; //Max 2 showed at a time
 		if (rowCount < 0)
 			rowCount = 0;
 			
-		AddScrollIndicatorArrowPairParameterized(
+		sDexNavGUIPtr->waterScrollArrowTaskId = AddScrollIndicatorArrowPairParameterized(
 			SCROLL_ARROW_DOWN,
 			79, //X
 			25, //Top Y
@@ -3949,6 +4044,7 @@ bool8 StartMenuDexNavCallback(void)
 		DestroySafariZoneStatsWindow();
 		CleanupOverworldWindowsAndTilemaps();
 		sDexNavGUIPtr = Calloc(sizeof(struct DexNavGUIData));
+		sDexNavGUIPtr->waterScrollArrowTaskId = 0xFF;
 		SetMainCallback2(CB2_DexNav);
 		return TRUE;
 	}

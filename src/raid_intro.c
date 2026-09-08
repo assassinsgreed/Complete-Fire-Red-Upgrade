@@ -403,6 +403,7 @@ static void Task_RaidBattleIntroFadeOut(u8 taskId)
 		SetMainCallback2(CB2_ReturnToFieldContinueScript);
 		Free(sRaidBattleIntroPtr->tilemapPtr);
 		Free(sRaidBattleIntroPtr);
+		sRaidBattleIntroPtr = NULL; //Shared with gNewBS, which battle code reads as "no battle struct" when NULL
 		FreeAllWindowBuffers();
 		DestroyTask(taskId);
 	}
