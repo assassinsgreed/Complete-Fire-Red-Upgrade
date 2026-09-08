@@ -25,7 +25,6 @@ LevelScript_PlayerAndRivalArriveInUltraSpace:
     msgbox gText_UltraSpace_IntroCutscene_Rival_SurprisedAtArrival MSG_NORMAL
     applymovement Rival m_LookUp
     applymovement PLAYER m_LookUp
-    call BufferTimeOfDay
     msgbox gText_UltraSpace_IntroCutscene_Rival_CommentsOnTimeOfDay MSG_NORMAL
     applymovement PLAYER m_LookRight
     applymovement Rival m_LookLeft
@@ -38,24 +37,6 @@ LevelScript_PlayerAndRivalArriveInUltraSpace:
     setflag 0x62 @ Hide researchers in case they weren't hidden for some reason (some players experience this)
     addvar VarEmptyWorldStorySequence 0x1
     end
-
-BufferTimeOfDay:
-    setvar 0x8000 0x1 @ Merge morning, day, and evening into "Day"
-    special2 LASTRESULT 0xAD @ Get time of day int
-    compare LASTRESULT 0x1 @ Morning/Day/Evening
-    if equal _call BufferDay
-    if notequal _call BufferNight
-    return
-
-BufferDay:
-    bufferstring 0x0 gText_Common_Day
-    bufferstring 0x1 gText_Common_Night
-    return
-
-BufferNight:
-    bufferstring 0x0 gText_Common_Night
-    bufferstring 0x1 gText_Common_Day
-    return
 
 @ This is a hacky fix to show the researcher in Ultra Space
 .global MapScript_UltraSpace_EclipseVillage

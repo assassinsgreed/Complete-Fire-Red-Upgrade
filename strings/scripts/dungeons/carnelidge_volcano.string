@@ -290,7 +290,7 @@ No[.] No! This cannot be happening!
 [BLACK][RIVAL]: [BLUE]Aw, you don't need to thank\nus.\pWe're just glad we were able to help\nyou, Alistair.
 
 #org @gText_CarnelidgeVolcanoPeak_Conclusion_AlistairGivesMegaStones
-[BLACK]Alistair: [BLUE]Even still, I'd like to\nshow my appreciation.\pAs I'm sure you're\nboth aware, Mega Evolution is only\lachievable when the bond between a\lperson and Pok\emon is strong.\pYou both reminded me how important\nthose bonds truly are.\pPlease[.] I'd like you to take these\nHoundoomites.\pI'm sure you'll use them well.
+[BLACK]Alistair: [BLUE]Even still, I'd like to\nshow my appreciation.\pAs I'm sure you're\nboth aware, Mega Evolution is only\lachievable when the bond between a\lperson and Pok\emon is strong.\pYou both reminded me how important\nthose bonds truly are.\pPlease[.] I'd like you to take these\nMega Stones.\pI'm sure you'll use them well.
 
 #org @gText_CarnelidgeVolcanoPeak_Conclusion_RivalThanksAlistairForMegaStones
 [BLACK][RIVAL]: [BLUE]Thank you, Alistair.\pYou can be sure we'll put them to\ngood use.
@@ -327,9 +327,6 @@ No[.] No! This cannot be happening!
 
 #org @gText_CarnelidgeVolcanoPeak_Conclusion_PlayerAvertedTragedy
 Thanks to the bonds shared with your\nPok\emon, tragedy was averted.
-
-#org @gText_CarnelidgeVolcanoPeak_Conclusion_PlayerCanSaveAgain
-You are now free to explore once\nagain and save your progress.
 
 #org @gtext_OrichelleGarden_JirachiDefeatedOrPlayerFled
 Jirachi floated away.\nWill it return later?
