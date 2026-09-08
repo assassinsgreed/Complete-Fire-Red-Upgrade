@@ -750,3 +750,16 @@
 # sections 0x61, 0x7B and 0x84 - Kanto's Indigo Plateau, Route 23 and Viridian Forest, which in
 # Amethyst are Tsarvosa City, Route 23 and Peradon Forest. Return TRUE unconditionally so both themes play.
 08056124 01 20 70 47
+
+# Vanilla Fire Red gives Pokedex and intro cutscene Pokemon an OT of 8 and personality of 0, which is 
+# normally outside of the shiny range. Now that it's 1 in 4096, it's actually _always_ in the range and
+# appears as shiny. Instead, we set the OT ID to 80, well beyond the shiny range
+# GetPokedexMonPersonality-based dex sprite helper (dex list and search results)
+08104A24 80
+# Dex info page, also the entry shown right after a catch
+0810654E 80
+# Intro sequence mons
+080F41DA 80
+080F4218 80
+080F4258 80
+080F42A0 80
