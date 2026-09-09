@@ -1053,7 +1053,6 @@ static void Task_UseRockClimb(u8 taskId)
 	while (sRockClimbFieldEffectFuncs[gTasks[taskId].tState](&gTasks[taskId], &gEventObjects[gPlayerAvatar->eventObjectId]));
 }
 
-extern void sp09A_StopSounds(void);
 static bool8 RockClimb_Init(struct Task *task, struct EventObject* eventObject)
 {
 	ScriptContext2_Enable();
@@ -1061,24 +1060,7 @@ static bool8 RockClimb_Init(struct Task *task, struct EventObject* eventObject)
 	gPlayerAvatar->preventStep = TRUE;
 	PlayerGetDestCoords(&task->tDestX, &task->tDestY);
 	MoveCoords(eventObject->movementDirection, &task->tDestX, &task->tDestY);
-
-	#ifdef FLAG_OBTAINED_ADM
-	if (FlagGet(FLAG_OBTAINED_ADM))
-	{
-		task->tState = STATE_ROCK_CLIMB_JUMP_ON;
-		sp09A_StopSounds();
-	}
-	else
-	#endif
-	#ifdef FLAG_SANDBOX_MODE
-	if (FlagGet(FLAG_SANDBOX_MODE))
-	{
-		task->tState = STATE_ROCK_CLIMB_JUMP_ON;
-		sp09A_StopSounds();
-	}
-	else
-	#endif
-		task->tState++;
+	task->tState++; //The ADM and Sandbox mode still pose and show the mon, the same way Surf does
 
 	return FALSE;
 }

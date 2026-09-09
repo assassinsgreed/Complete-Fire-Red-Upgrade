@@ -422,7 +422,7 @@ EventScript_UseRockClimb_Ask:
 	if equal _goto EventScript_RockClimbEnd
 
 EventScript_UseRockClimb_SkipAsk:
-	msgbox 0x81BDFD7 MSG_NORMAL @;[BUFFER1] used [BUFFER2]!
+	msgbox 0x81BDFD7 MSG_KEEPOPEN @;[BUFFER1] used [BUFFER2]!
 	setfieldeffectarg 0, 0x8004
 	goto EventScript_RockClimb
 
@@ -449,6 +449,8 @@ EventScript_RockClimb:
 
 .global EventScript_UseADMRockClimb
 EventScript_UseADMRockClimb:
+	callasm GetFirstNonEggIn8004
+	setfieldeffectarg 0, 0x8004
 	checkflag FLAG_AUTO_HMS
 	if SET _goto EventScript_RockClimb
 	msgbox gText_WantToScaleCliffWithADM MSG_YESNO
@@ -461,6 +463,8 @@ EventScript_UseADMRockClimb:
 
 .global EventScript_UseSandboxRockClimb
 EventScript_UseSandboxRockClimb:
+	callasm GetFirstNonEggIn8004
+	setfieldeffectarg 0, 0x8004
 	checkflag FLAG_AUTO_HMS
 	if SET _goto EventScript_RockClimb
 	msgbox gText_WantToScaleCliffSandbox MSG_YESNO
