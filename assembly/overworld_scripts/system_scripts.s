@@ -322,9 +322,9 @@ SystemScript_ObtainItemMessage:
 	compare 0x8005 1
 	if greaterthan _call ObtainedMultipleItemMsg
 	waitfanfare
+	special SPECIAL_CLEAR_ITEM_SPRITE_AFTER_FIND_OBTAIN
 	msgbox 0x81A5218 MSG_KEEPOPEN @;[PLAYER] put the item in the...
 	setvar LASTRESULT 0x1
-	special SPECIAL_CLEAR_ITEM_SPRITE_AFTER_FIND_OBTAIN
 	return
 
 ObtainedSingleItemMsg:
