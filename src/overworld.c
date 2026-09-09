@@ -2162,17 +2162,18 @@ void PostReleaseAutomaticFixes(void)
 	if (!FlagGet(FLAG_HARD_LEVEL_CAP))
 		VarSet(VAR_LEVEL_CAPS, 0);
 
-	// Scorched earth fix for the champion flag bug. Clear it if any of the following are true:
-	//    - The player hasn't finished Victory Road (has the victory flag)
-	//    - Postgame NPCs are still hidden (Flag 9D, cleared on HoF entry)
-	//    - The player has never initiated an E4 run (var 406C is less than 2)
-	if (!CheckBagHasItem(ITEM_VICTORY_FLAG, 1) || FlagGet(0x9D) || VarGet(0x406C) < 2)
-		FlagClear(FLAG_DEFEATED_CHAMPION_SELENE);
-
-	// If the player has cleared the game (separate flag from Selene), show all postgame NPCs
-	// This is to circumvent the weird case where Selene's flag inexplicably gets cleared
+	// If the game has been cleared, force postgame NPCs to be shown and hide Selene in the champions room
 	if (FlagGet(FLAG_SYS_GAME_CLEAR))
+	{
 		FlagClear(FLAG_HIDE_POSTGAME_NPCS_ON_BY_DEFAULT);
+		FlagSet(FLAG_DEFEATED_CHAMPION_SELENE);
+	}
+	// If the player doesn't have the victory flag and E4 progress doesn't indicate it has been initiated,
+	// mark Selene as seen in the champions room again
+	else if (!FlagGet(FLAG_HIDE_VICTORY_FLAG) || VarGet(0x406C) < 2)
+	{
+		FlagClear(FLAG_DEFEATED_CHAMPION_SELENE);
+	}
 
 	// Hide divergent mode-only mega stones when not in divergent mode
 	// Both for historic saves and for saves flipping between modes

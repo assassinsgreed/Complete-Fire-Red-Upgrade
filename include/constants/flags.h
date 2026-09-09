@@ -129,8 +129,8 @@
 #define FLAG_HIDE_DAIS_OF_LIGHT_NECROZMA                   0x06F
 #define FLAG_HIDE_PLOT_COSMOG_AT_ALTAR_OF_ECLIPSE          0x070
 #define FLAG_HIDE_HOENN_WINGULLS                           0x071
-#define FLAG_HIDE_VICTORY_FLAG                             0x072
 */
+#define FLAG_HIDE_VICTORY_FLAG                             0x072
 #define FLAG_HIDE_VOLCANION                                0x073
 /*
 #define FLAG_HIDE_TWO_ISLAND_GAME_CORNER_BIKER             0x074 // On by default
