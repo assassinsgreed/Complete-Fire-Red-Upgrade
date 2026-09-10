@@ -3440,7 +3440,7 @@ const struct TrainerMonItemCustomMoves sParty_AscensionTower_EliteFour_Jenna_Har
         .lvl = 71,
         .species = SPECIES_ALTARIA,
         .moves = { MOVE_HYPERVOICE, MOVE_MOONBLAST, MOVE_COTTONGUARD, MOVE_ROOST },
-        .heldItem = ITEM_KANGASKHANITE,
+        .heldItem = ITEM_ALTARIANITE,
         .ability = Ability_1 // Natural Cure
     }
 };
@@ -3668,7 +3668,7 @@ const struct TrainerMonItemCustomMoves sParty_AscensionTower_EliteFour_JennaRema
         .lvl = 75,
         .species = SPECIES_ALTARIA,
         .moves = { MOVE_HYPERVOICE, MOVE_MOONBLAST, MOVE_COTTONGUARD, MOVE_ROOST },
-        .heldItem = ITEM_KANGASKHANITE,
+        .heldItem = ITEM_ALTARIANITE,
         .ability = Ability_1 // Natural Cure
     }
 };
