@@ -66,7 +66,7 @@ const item_t sPickupCommonItems[PU_NUM_COMMON_ITEMS] =
 
 const item_t sPickupRareItems[PU_NUM_RARE_ITEMS] =
 {
-#ifndef UNBOUND //Modify this
+#ifdef UNBOUND //Original rare drop table
 	ITEM_HYPER_POTION,
 	ITEM_NUGGET,
 	ITEM_KINGS_ROCK,
@@ -79,7 +79,7 @@ const item_t sPickupRareItems[PU_NUM_RARE_ITEMS] =
 	ITEM_LEFTOVERS,
 	ITEM_DESTINY_KNOT,
 
-#else //For Pokemon Unbound
+#else //Reusing Unbound's rare table
 	ITEM_HYPER_POTION,    //Lv.  1 - 10
 	ITEM_NUGGET,          //Lv.  1 - 20
 	ITEM_ETHER,           //Lv. 11 - 30
