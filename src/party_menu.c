@@ -3471,6 +3471,15 @@ void ChangeCosplayPikachuFormInOverworld()
 	}
 }
 
+// TRUE while a fusion item (DNA Splicers / N-Solarizer / N-Lunarizer / Reins of Unity)
+// has the party menu open on its "Fuse with which Pokemon?" prompt. In that state the
+// menu action is still USE_ITEM, so the Select/Start party-reorder shortcuts would spawn
+// a competing input task the splicers' state machine never tears down.
+static bool8 InFusionPartnerSelection(void)
+{
+	return gItemUseCB == ItemUseCB_DNASplicersStep && gPartyMenu.action == PARTY_ACTION_USE_ITEM;
+}
+
 void Task_HandleChooseMonInput(u8 taskId)
 {
     if (!gPaletteFade->active && sub_80BF748() != TRUE)
@@ -3493,6 +3502,7 @@ void Task_HandleChooseMonInput(u8 taskId)
 				}
 				else if (gPartyMenu.menuType == PARTY_MENU_TYPE_FIELD
 					  && gPartyMenu.action != PARTY_ACTION_SWITCH
+					  && !InFusionPartnerSelection()
 					  && *slotPtr > 0
 					  && *slotPtr < PARTY_SIZE)
 				{
@@ -3546,7 +3556,7 @@ u16 PartyMenuButtonHandler(s8 *slotPtr)
     }
     if (JOY_NEW(START_BUTTON))
         return 8;
-    if (JOY_NEW(SELECT_BUTTON) && CalculatePlayerPartyCount() > 1)
+    if (JOY_NEW(SELECT_BUTTON) && CalculatePlayerPartyCount() > 1 && !InFusionPartnerSelection())
     {
         if (gPartyMenu.menuType != PARTY_MENU_TYPE_FIELD)
             return 8;

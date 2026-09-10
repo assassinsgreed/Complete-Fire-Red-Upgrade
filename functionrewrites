@@ -6,3 +6,6 @@ PartyMenuButtonHandler 0x0811fefc 1 1
 NewInitMovementNormal 0x080646FC 4 0
 NewStartRunningAnim 0x08064758 3 0
 NewUpdateMovementNormal 0x08064788 2 1
+
+##Summary screen EV/IV Viewer Details button, when flag is enabled
+SummaryDrawBottomBarPrompt 0x08136DF0 1 0

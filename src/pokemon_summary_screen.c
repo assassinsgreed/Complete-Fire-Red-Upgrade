@@ -13,6 +13,26 @@
 extern void LaunchEvIvViewerFromSummaryScreen(void); //from TaskEvIvInit.c
 extern const u8 gText_EvIvDetails[];
 
+// {0, 1, 2} = transparent / white / dark-grey
+static const struct TextColor sSummaryPromptTextColour = {0, 1, 2};
+
+// FunctionWrap over the vanilla routine that draws window 1 (the bottom key-prompt)
+// for every summary page. Inserts the "Details" prompt for the EV/IV Viewer when flag is on
+void SummaryDrawBottomBarPrompt(const u8 *str)
+{
+    u8 windowId = sMonSummaryScreen->windowIds[1];
+
+    if (sMonSummaryScreen->curPageIndex == PSS_PAGE_SKILLS
+        && sMonSummaryScreen->mode != PSS_MODE_BOX
+        && FlagGet(FLAG_ENABLE_EV_IV_VIEWER))
+        str = gText_EvIvDetails;
+
+    FillWindowPixelBuffer(windowId, PIXEL_FILL(0));
+    WindowPrint(windowId, FONT_SMALL, 0x54 - GetStringWidth(FONT_SMALL, str, 0), 0,
+                &sSummaryPromptTextColour, 0, str);
+    PutWindowTilemap(windowId);
+}
+
 // From pokeemerald wiki
 
 static const s8 sNatureStatTable[NUM_NATURES][NUM_NATURE_STATS] =
@@ -106,31 +126,10 @@ static u8 * GetIVAssessment(s32 ivNum)
     return gText_IVRating_SPlus;
 }
 
-static const struct TextColor sEvIvDetailsTextColour =
-{
-    .bgColor = TEXT_COLOR_TRANSPARENT,
-    .fgColor = TEXT_COLOR_WHITE,
-    .shadowColor = TEXT_COLOR_DARK_GREY,
-};
-
-static void PrintEvIvDetailsPrompt(void)
-{
-    FillWindowPixelBuffer(1, PIXEL_FILL(0));
-    WindowPrint(1, FONT_SMALL, 14, 0, &sEvIvDetailsTextColour, 0, gText_EvIvDetails);
-}
-
 static void Task_MonitorSummarySkillsPageForEvIv(u8 taskId)
 {
-    struct Task *task = &gTasks[taskId];
-    bool8 switchInProgress;
-
-    if (sMonSummaryScreen == NULL)
-    {
-        DestroyTask(taskId);
-        return;
-    }
-
-    if (sMonSummaryScreen->curPageIndex != PSS_PAGE_SKILLS
+    if (sMonSummaryScreen == NULL
+        || sMonSummaryScreen->curPageIndex != PSS_PAGE_SKILLS
         || !FlagGet(FLAG_ENABLE_EV_IV_VIEWER)
         || sMonSummaryScreen->mode == PSS_MODE_BOX)
     {
@@ -138,21 +137,8 @@ static void Task_MonitorSummarySkillsPageForEvIv(u8 taskId)
         return;
     }
 
-    // Re-draw after Pokémon switch: the input handler task (created before ours) redraws
-    // key prompts when switchMonTaskState returns to 0. We run after it in the same
-    // RunTasks() call, so we can immediately overdraw in the same frame.
-    switchInProgress = sMonSummaryScreen->switchMonTaskState != 0;
-    if (switchInProgress)
-    {
-        task->data[1] = 1;
-    }
-    else if (task->data[1])
-    {
-        task->data[1] = 0;
-        PrintEvIvDetailsPrompt();
-    }
-
-    if (JOY_NEW(A_BUTTON) && !switchInProgress
+    if (JOY_NEW(A_BUTTON)
+        && sMonSummaryScreen->switchMonTaskState == 0
         && sMonSummaryScreen->state3270 == PSS_STATE3270_HANDLEINPUT)
     {
         LaunchEvIvViewerFromSummaryScreen();
@@ -160,7 +146,6 @@ static void Task_MonitorSummarySkillsPageForEvIv(u8 taskId)
     }
 }
 
-// TODO: This works, it just fires after the page is loading and causes the content here to "pop in"
 void PrintSkillsPage(void)
 {
     // Display Nature colored stats
@@ -201,14 +186,10 @@ void PrintSkillsPage(void)
         AddTextPrinterParameterized3(sMonSummaryScreen->windowIds[POKESUM_WIN_RIGHT_PANE], FONT_SMALL, 44, 68, sIVTextColors[GetIVColor(ivNum)], TEXT_SKIP_DRAW, GetIVAssessment(ivNum));
     }
 
-    if (FlagGet(FLAG_ENABLE_EV_IV_VIEWER) && sMonSummaryScreen->mode != PSS_MODE_BOX)
-    {
-        // Write new keyprompts over existing ones
-        PrintEvIvDetailsPrompt();
-
-        if (!FuncIsActiveTask(Task_MonitorSummarySkillsPageForEvIv))
-            CreateTask(Task_MonitorSummarySkillsPageForEvIv, 0);
-    }
+    // SummaryDrawBottomBarPrompt substitutes the prompt text in the vanilla page build
+    if (FlagGet(FLAG_ENABLE_EV_IV_VIEWER) && sMonSummaryScreen->mode != PSS_MODE_BOX
+        && !FuncIsActiveTask(Task_MonitorSummarySkillsPageForEvIv))
+        CreateTask(Task_MonitorSummarySkillsPageForEvIv, 0);
 }
 
 static void Task_BeginSummaryScreenOnSkillsPage(u8 taskId)
@@ -235,11 +216,6 @@ static void Task_BeginSummaryScreenOnSkillsPage(u8 taskId)
             && (gSprites[i].template->tileTag == TAG_PSS_UNK_78 || gSprites[i].template->tileTag == TAG_PSS_UNK_82))
             gSprites[i].oam.priority = 0;
     }
-
-    // The vanilla setup prints the page header key prompts after the skills page
-    // text, wiping the EV/IV prompt PrintSkillsPage drew - draw it again
-    if (FlagGet(FLAG_ENABLE_EV_IV_VIEWER) && sMonSummaryScreen->mode != PSS_MODE_BOX)
-        PrintEvIvDetailsPrompt();
 
     DestroyTask(taskId);
 }

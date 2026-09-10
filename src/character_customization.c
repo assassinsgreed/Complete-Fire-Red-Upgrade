@@ -347,7 +347,7 @@ static const u16* sPlayerMarlonOutfitColours[] =
 		{ PlutoGruntMalePal, 0x1201 },  // Applies to both grunt genders, but must match one of their filenames
 		{ ChampionSelenePal, 0x1202 },
 		{ SandygastPal, 0x1203 },
-		{ FoongusPal, 0x1204 },
+		{ FoongusPal, 0x1204 }, // Intentionally shared by Foongus and Stunfisk
 		{ StunfiskPal, 0x1204 },
 		{ TMPokeballPal, 0x1205 },
 		{ LeaderTerrencePal, 0x1206 },

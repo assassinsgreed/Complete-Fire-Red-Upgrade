@@ -31,6 +31,7 @@
 #define MAX_PRIZE_AMOUNT 4
 #define MAX_BEDROCK_AMOUNT 5
 #define COLLAPSE_STRESS_LEVEL 50
+#define MAX_OBJECT_REROLLS 16
 
 #define SE_HAMMER 124
 #define SE_PICK_AXE 132
@@ -1356,6 +1357,7 @@ static void ScatterPrizes(void)
 	for (i = 0; i < sUndergroundMiningPtr->numPrizes; ++i)
 	{
 		bool8 placed = FALSE;
+		u8 rerolls = 0;
 
 		do //Loop until a prize that fits is found
 		{
@@ -1420,7 +1422,13 @@ static void ScatterPrizes(void)
 
 			sUndergroundMiningPtr->prizeIds[i] = prizeId;
 			placed = TRUE;
-		} while (!placed);
+		} while (!placed && ++rerolls < MAX_OBJECT_REROLLS);
+
+		if (!placed) // Board too crowded to fit another prize - end the run with fewer instead of hanging
+		{
+			sUndergroundMiningPtr->numPrizes = i; // Only count the prizes actually placed
+			break;
+		}
 	}
 }
 
@@ -1435,6 +1443,7 @@ static void ScatterBedrock(void)
 	for (i = 0; i < numBedrocks; ++i)
 	{
 		bool8 placed = FALSE;
+		u8 rerolls = 0;
 
 		do //Loop until a bedrock that fits is found
 		{
@@ -1490,7 +1499,10 @@ static void ScatterBedrock(void)
 			gSprites[sUndergroundMiningPtr->bedrockSpriteIds[i]].oam.priority = 3; //Put on BG 3
 			StartSpriteAnim(&gSprites[sUndergroundMiningPtr->bedrockSpriteIds[i]], shapeNum); //Rotate the bedrock if necessary
 			placed = TRUE;
-		} while (!placed);
+		} while (!placed && ++rerolls < MAX_OBJECT_REROLLS);
+
+		if (!placed) // Board too crowded to fit another bedrock - stop placing instead of hanging
+			break;
 	}
 }
 
