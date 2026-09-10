@@ -1039,6 +1039,11 @@ static void DexNavIconsVisionUpdate(u8 proximity, u8 searchLevel)
 }
 
 extern const u8 SystemScript_StartDexNavBattle[];
+
+#ifdef DEXNAV_POKEMON_MOVE_IN_CAVES_WATER
+static const u8 sDexNavMovementChances[] = DEXNAV_MOVEMENT_CHANCES;
+#endif
+
 static void Task_ManageDexNavHUD(u8 taskId)
 {
 	//Check for out of range
@@ -1120,33 +1125,40 @@ static void Task_ManageDexNavHUD(u8 taskId)
 	&& GetCurrentRegionMapSectionId() != MAPSEC_FLOWER_PARADISE
 	#endif
 	&& sDexNavHudPtr->totalProximity < 2
-	&& sDexNavHudPtr->movementTimes < 2)
+	&& sDexNavHudPtr->movementTimes < ARRAY_COUNT(sDexNavMovementChances))
 	{
-		u32 tries;
-
-		StopDexNavFieldEffect();
-
-		//Try to pick a spot up to 16 time before giving up with a "not found" message (preventing softlocks)
-		for (tries = 0; tries < 16; ++tries)
+		if (Random() % 100 < sDexNavMovementChances[sDexNavHudPtr->movementTimes])
 		{
-			if (ShakingGrass(sDexNavHudPtr->environment, SCAN_SIZE_X_REPEAT, SCAN_SIZE_Y_REPEAT, TRUE))
-				break;
-		}
+			u32 tries;
 
-		if (tries >= 16) //Nowhere left for it to move to
+			StopDexNavFieldEffect();
+
+			//Try to pick a spot up to 16 time before giving up with a "not found" message (preventing softlocks)
+			for (tries = 0; tries < 16; ++tries)
+			{
+				if (ShakingGrass(sDexNavHudPtr->environment, SCAN_SIZE_X_REPEAT, SCAN_SIZE_Y_REPEAT, TRUE))
+					break;
+			}
+
+			if (tries >= 16) //Nowhere left for it to move to
+			{
+				u16 species = sDexNavHudPtr->species;
+				gCurrentDexNavChain = 0;
+				DexNavFreeHUD();
+				if (gTasks[taskId].data[7]) //Detector Mode
+					DexNavShowFieldMessage(FIELD_MSG_GOT_AWAY_DETECTOR, species);
+				else
+					DexNavShowFieldMessage(FIELD_MSG_GOT_AWAY, species);
+				DestroyTask(taskId);
+				return;
+			}
+
+			sDexNavHudPtr->movementTimes += 1;
+		}
+		else
 		{
-			u16 species = sDexNavHudPtr->species;
-			gCurrentDexNavChain = 0;
-			DexNavFreeHUD();
-			if (gTasks[taskId].data[7]) //Detector Mode
-				DexNavShowFieldMessage(FIELD_MSG_GOT_AWAY_DETECTOR, species);
-			else
-				DexNavShowFieldMessage(FIELD_MSG_GOT_AWAY, species);
-			DestroyTask(taskId);
-			return;
+			sDexNavHudPtr->movementTimes = ARRAY_COUNT(sDexNavMovementChances);
 		}
-
-		sDexNavHudPtr->movementTimes += 1;
 	}
 	#endif
 

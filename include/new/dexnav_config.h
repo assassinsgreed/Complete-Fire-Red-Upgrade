@@ -12,6 +12,10 @@
 //Tile amount
 #define SNEAKING_PROXIMITY 5
 
+//Percent chance the Pokemon relocates on each successive approach in caves and on water
+//(requires DEXNAV_POKEMON_MOVE_IN_CAVES_WATER). The entry count caps how many times it can move.
+#define DEXNAV_MOVEMENT_CHANCES {40, 20}
+
 //Chance of encountering egg move at search levels
 #define SEARCHLEVEL0_MOVECHANCE 0
 #define SEARCHLEVEL5_MOVECHANCE 21
