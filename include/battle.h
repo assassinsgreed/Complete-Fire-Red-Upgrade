@@ -902,6 +902,7 @@ struct NewBattleStruct
 	bool8 criticalCapture : 1;
 	bool8 criticalCaptureSuccess : 1;
 	bool8 trainerSlideLowHpMsgDone : 1;
+	bool8 trainerSlideTextDoneThisTurn : 1;
 	bool8 TeleportBit : 1;
 	bool8 restartEndTurnSwitching : 1;
 	bool8 skipCertainSwitchInAbilities : 1;

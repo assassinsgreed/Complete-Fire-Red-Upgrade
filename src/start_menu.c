@@ -94,6 +94,7 @@ extern u8 sStartMenuOpen;
 // Timebox
 extern u8 sTimeWindowId;
 void DrawTime(void);
+static bool8 IsTimeBoxOnScreen(void);
 static void UpdateTimeText(void);
 static void RemoveTimeBox(void);
 
@@ -486,16 +487,31 @@ bool8 StartMenuInfiniteRepelCallback(void)
 }
 
 // Timebox
+static bool8 IsTimeBoxOnScreen(void)
+{
+	if (sTimeWindowId >= WINDOWS_MAX)
+		return FALSE;
+
+	return GetWindowAttribute(sTimeWindowId, WINDOW_TILE_DATA) != 0
+		&& GetWindowAttribute(sTimeWindowId, WINDOW_BG) == sTimeBoxWindowTemplate.bg
+		&& GetWindowAttribute(sTimeWindowId, WINDOW_TILEMAP_LEFT) == sTimeBoxWindowTemplate.tilemapLeft
+		&& GetWindowAttribute(sTimeWindowId, WINDOW_TILEMAP_TOP) == sTimeBoxWindowTemplate.tilemapTop
+		&& GetWindowAttribute(sTimeWindowId, WINDOW_WIDTH) == sTimeBoxWindowTemplate.width
+		&& GetWindowAttribute(sTimeWindowId, WINDOW_HEIGHT) == sTimeBoxWindowTemplate.height
+		&& GetWindowAttribute(sTimeWindowId, WINDOW_BASE_BLOCK) == sTimeBoxWindowTemplate.baseBlock;
+}
+
 void DrawTime(void)
 {
-	sTimeWindowId = AddWindow(&sTimeBoxWindowTemplate);
-	
-	if (sTimeWindowId != 0xFF)
-	{
-		DrawStdWindowFrame(sTimeWindowId, FALSE);
-		PutWindowTilemap(sTimeWindowId);
-		FillWindowPixelBuffer(sTimeWindowId, PIXEL_FILL(1));
-	}
+	if (!IsTimeBoxOnScreen())
+		sTimeWindowId = AddWindow(&sTimeBoxWindowTemplate);
+
+	if (sTimeWindowId == 0xFF)
+		return; // Window table is full
+
+	DrawStdWindowFrame(sTimeWindowId, FALSE);
+	PutWindowTilemap(sTimeWindowId);
+	FillWindowPixelBuffer(sTimeWindowId, PIXEL_FILL(1));
 
 	//Print Text
 	UpdateTimeText();
@@ -563,6 +579,7 @@ static void RemoveTimeBox(void)
 		ClearStdWindowAndFrameToTransparent(sTimeWindowId, FALSE);
 		CopyWindowToVram(sTimeWindowId, COPYWIN_GFX);
 		RemoveWindow(sTimeWindowId);
+		sTimeWindowId = 0xFF;
 	}
 }
 

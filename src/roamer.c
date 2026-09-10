@@ -375,8 +375,6 @@ void RoamersMoveToOtherLocationSet(void)
 
 void RoamersMove(void)
 {
-	u8 locSet = 0;
-
 	if ((Random() % 16) == 0)
 	{
 		RoamersMoveToOtherLocationSet();
@@ -389,6 +387,9 @@ void RoamersMove(void)
 
 			if (roamer->species != SPECIES_NONE)
 			{
+				//Each roamer must rescan the location table from the start; a shared cursor
+				//would leave later roamers stuck once an earlier one advanced or exhausted it.
+				u8 locSet = 0;
 				u8 count = IsIslandRoamerSpecies(roamer->species) ? (ARRAY_COUNT(sIslandRoamerLocations) - 1) : (ARRAY_COUNT(sMainlandRoamerLocations) - 1);
 				while (locSet < count)
 				{

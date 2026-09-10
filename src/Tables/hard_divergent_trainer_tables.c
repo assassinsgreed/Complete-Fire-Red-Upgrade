@@ -2276,7 +2276,7 @@ const struct TrainerMonItemCustomMoves sParty_PlutoHQ_B1F_TeamPlutoLeaderKurtis_
 // #endregion
 
 // #region Tsarvosa City
-const struct TrainerMonItemCustomMoves sParty_TsarvosaCity_StatsDojo_Kaito_Hard_Divergent[] = {
+const struct TrainerMonNoItemCustomMoves sParty_TsarvosaCity_StatsDojo_Kaito_Hard_Divergent[] = {
     {
         .lvl = 52,
         .species = SPECIES_CRUSTLE,
@@ -5300,7 +5300,7 @@ const struct Trainer gHardDivergentTrainers[] = {
         .doubleBattle = FALSE,
         .aiFlags = AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_TRY_TO_FAINT,
         .partySize = NELEMS(sParty_TsarvosaCity_StatsDojo_Kaito_Hard_Divergent),
-        .party = {.ItemCustomMoves = sParty_TsarvosaCity_StatsDojo_Kaito_Hard_Divergent}
+        .party = {.NoItemCustomMoves = sParty_TsarvosaCity_StatsDojo_Kaito_Hard_Divergent}
     },
     [TRAINER_TSARVOSA_CITY_DEV_TEAM_COLLIN_1] = {
         .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,

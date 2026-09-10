@@ -2647,6 +2647,9 @@ static void Task_TryLearnPostFormeChangeMove(u8 taskId)
 			case SPECIES_ROTOM_WASH:
 				gMoveToLearn = MOVE_HYDROPUMP;
 				break;
+			case SPECIES_ROTOM:
+				gMoveToLearn = MOVE_THUNDERSHOCK; // Base Rotom has no form move; only hit if it changed back knowing only another form's move
+				break;
 			case SPECIES_PIKACHU_LIBRE:
 				gMoveToLearn = MOVE_FLYINGPRESS;
 				break;
@@ -3386,7 +3389,7 @@ void ChangeRotomFormInOverworld()
 		CalculateMonStats(&gPlayerParty[Var8004]);
 
 		u16 rotomMoves[] = { MOVE_OVERHEAT, MOVE_BLIZZARD, MOVE_HYDROPUMP, MOVE_AIRSLASH, MOVE_LEAFSTORM };
-		for (u8 i = 0; i < MAX_MON_MOVES; ++i)
+		for (u8 i = 0; i < NELEMS(rotomMoves); ++i)
 		{
 			u8 moveIndex = FindMovePositionInMonMoveset(rotomMoves[i], src);
 			if (moveIndex < MAX_MON_MOVES)
@@ -3397,7 +3400,8 @@ void ChangeRotomFormInOverworld()
 			}
 		}
 
-		if (newSpecies != SPECIES_ROTOM)
+		// Base Rotom has no signature move - run it if the form change left it with no moves so it learns Thundershock.
+		if (newSpecies != SPECIES_ROTOM || GetMonData(src, MON_DATA_MOVE1, NULL) == MOVE_NONE)
 		{
 			InitPartyMenu(PARTY_MENU_TYPE_FIELD, PARTY_LAYOUT_SINGLE, PARTY_ACTION_CHOOSE_AND_CLOSE, TRUE, PARTY_MSG_NONE, Task_TryLearnPostFormeChangeMove, CB2_ReturnToFieldContinueScript);
 		}

@@ -5642,7 +5642,7 @@ const struct TrainerMonNoItemCustomMoves sParty_UteyaVillageGym_Hannibal_Diverge
     }
 };
 
-const struct TrainerMonItemCustomMoves sParty_UteyaVillageGym_Clarice_Divergent[] = {
+const struct TrainerMonNoItemCustomMoves sParty_UteyaVillageGym_Clarice_Divergent[] = {
     {
         .lvl = 58,
         .species = SPECIES_BELLOSSOM,
@@ -10534,7 +10534,7 @@ const struct Trainer gDivergentTrainers[] = {
         .party = {.NoItemCustomMoves = sParty_HeleoCityGym_SwimmerTessa_Divergent}
     },
     [TRAINER_HELEO_CITY_GYM_BYRON] = {
-        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
         .trainerClass = CLASS_SWIMMER_M,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .trainerPic = TRAINER_PIC_SWIMMER_M,
@@ -10547,7 +10547,7 @@ const struct Trainer gDivergentTrainers[] = {
         .party = {.ItemCustomMoves = sParty_HeleoCityGym_SwimmerByron_Divergent}
     },
     [TRAINER_HELEO_CITY_GYM_DANETTE] = {
-        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
         .trainerClass = CLASS_SWIMMER_F,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .trainerPic = TRAINER_PIC_SWIMMER_F,
@@ -10560,7 +10560,7 @@ const struct Trainer gDivergentTrainers[] = {
         .party = {.ItemCustomMoves = sParty_HeleoCityGym_SwimmerDanette_Divergent}
     },
     [TRAINER_HELEO_CITY_GYM_MAISEY] = {
-        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
         .trainerClass = CLASS_SWIMMER_F,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .trainerPic = TRAINER_PIC_SWIMMER_F,
@@ -14980,7 +14980,7 @@ const struct Trainer gDivergentTrainers[] = {
         .party = {.NoItemDefaultMoves = sParty_UteyaVillage_ScientistWilford_Divergent}
     },
     [TRAINER_UTEYA_VILLAGE_GYM_MICHAEL] = {
-        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
         .trainerClass = CLASS_HIKER,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
         .trainerPic = TRAINER_PIC_HIKER,
@@ -15071,7 +15071,7 @@ const struct Trainer gDivergentTrainers[] = {
         .party = {.NoItemCustomMoves = sParty_UteyaVillageGym_Mike_Divergent}
     },
     [TRAINER_UTEYA_VILLAGE_GYM_DIANE] = {
-        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
         .trainerClass = CLASS_POKEFAN,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .trainerPic = TRAINER_PIC_POKEFAN_F,
@@ -15107,7 +15107,7 @@ const struct Trainer gDivergentTrainers[] = {
         .doubleBattle = TRUE,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_HP_AWARE | AI_SCRIPT_DOUBLE_BATTLE,
         .partySize = NELEMS(sParty_UteyaVillageGym_Clarice_Divergent),
-        .party = {.ItemCustomMoves = sParty_UteyaVillageGym_Clarice_Divergent}
+        .party = {.NoItemCustomMoves = sParty_UteyaVillageGym_Clarice_Divergent}
     },
     [TRAINER_UTEYA_VILLAGE_GYM_LEADERS_DENNIS_AND_DEE] = {
         .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,

@@ -167,6 +167,7 @@ const u16 gEndBattleFlagClearTable[] =
 #endif
 	FLAG_TAG_BATTLE,
 	FLAG_TWO_OPPONENTS,
+	FLAG_TEMP_1, // Honey / Sweet Scent PokeChip boost; cleared so it doesn't persist to the next battle
 };
 
 //This file's functions:

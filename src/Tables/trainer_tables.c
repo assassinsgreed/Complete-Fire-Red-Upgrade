@@ -10548,7 +10548,7 @@ const struct Trainer gTrainers[] = {
         .party = {.NoItemCustomMoves = sParty_HeleoCityGym_SwimmerTessa}
     },
     [TRAINER_HELEO_CITY_GYM_BYRON] = {
-        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
         .trainerClass = CLASS_SWIMMER_M,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .trainerPic = TRAINER_PIC_SWIMMER_M,
@@ -10561,7 +10561,7 @@ const struct Trainer gTrainers[] = {
         .party = {.ItemCustomMoves = sParty_HeleoCityGym_SwimmerByron}
     },
     [TRAINER_HELEO_CITY_GYM_DANETTE] = {
-        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
         .trainerClass = CLASS_SWIMMER_F,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .trainerPic = TRAINER_PIC_SWIMMER_F,
@@ -10574,7 +10574,7 @@ const struct Trainer gTrainers[] = {
         .party = {.ItemCustomMoves = sParty_HeleoCityGym_SwimmerDanette}
     },
     [TRAINER_HELEO_CITY_GYM_MAISEY] = {
-        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
         .trainerClass = CLASS_SWIMMER_F,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
         .trainerPic = TRAINER_PIC_SWIMMER_F,
@@ -14994,7 +14994,7 @@ const struct Trainer gTrainers[] = {
         .party = {.NoItemDefaultMoves = sParty_UteyaVillage_ScientistWilford}
     },
     [TRAINER_UTEYA_VILLAGE_GYM_MICHAEL] = {
-        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
         .trainerClass = CLASS_HIKER,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
         .trainerPic = TRAINER_PIC_HIKER,
@@ -15085,7 +15085,7 @@ const struct Trainer gTrainers[] = {
         .party = {.NoItemCustomMoves = sParty_UteyaVillageGym_Mike}
     },
     [TRAINER_UTEYA_VILLAGE_GYM_DIANE] = {
-        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
         .trainerClass = CLASS_POKEFAN,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .trainerPic = TRAINER_PIC_POKEFAN_F,
@@ -15111,7 +15111,7 @@ const struct Trainer gTrainers[] = {
         .party = {.NoItemCustomMoves = sParty_UteyaVillageGym_Hannibal}
     },
     [TRAINER_UTEYA_VILLAGE_GYM_CLARICE] = {
-        .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
+        .partyFlags = PARTY_FLAG_CUSTOM_MOVES | PARTY_FLAG_HAS_ITEM,
         .trainerClass = CLASS_NURSE,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .trainerPic = TRAINER_PIC_NURSE,

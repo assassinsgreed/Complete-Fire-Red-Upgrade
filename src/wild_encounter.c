@@ -1185,7 +1185,9 @@ bool8 SweetScentWildEncounter(void)
 		}
 
 		TrySetDoubleSweetScentBattle();
-		TryGenerateWildMon(landMonsInfo, WILD_AREA_LAND, 0);
+		if (TryGenerateWildMon(landMonsInfo, WILD_AREA_LAND, 0) != TRUE)
+			return FALSE;
+
 		BattleSetup_StartWildBattle();
 		return TRUE;
 	}
@@ -1201,7 +1203,9 @@ bool8 SweetScentWildEncounter(void)
 		}
 
 		TrySetDoubleSweetScentBattle();
-		TryGenerateWildMon(waterMonsInfo, WILD_AREA_WATER, 0);
+		if (TryGenerateWildMon(waterMonsInfo, WILD_AREA_WATER, 0) != TRUE)
+			return FALSE;
+
 		BattleSetup_StartWildBattle();
 		return TRUE;
 	}
@@ -1225,7 +1229,9 @@ bool8 StartRandomWildEncounter(bool8 waterMon)
 			return TRUE;
 		}
 
-		TryGenerateWildMon(landMonsInfo, WILD_AREA_LAND, 0);
+		if (TryGenerateWildMon(landMonsInfo, WILD_AREA_LAND, 0) != TRUE)
+			return FALSE;
+
 		BattleSetup_StartWildBattle();
 		return TRUE;
 	}
@@ -1240,7 +1246,9 @@ bool8 StartRandomWildEncounter(bool8 waterMon)
 			return TRUE;
 		}
 
-		TryGenerateWildMon(waterMonsInfo, WILD_AREA_WATER, 0);
+		if (TryGenerateWildMon(waterMonsInfo, WILD_AREA_WATER, 0) != TRUE)
+			return FALSE;
+
 		BattleSetup_StartWildBattle();
 		return TRUE;
 	}

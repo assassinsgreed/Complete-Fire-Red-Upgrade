@@ -1,6 +1,6 @@
 #pragma once
 
-#define FLAG_TEMP_1 0x001
+#define FLAG_TEMP_1 0x001 // Used for Honey & Sweet Scent PokeChip boosts
 #define FLAG_TEMP_2 0x002
 #define FLAG_TEMP_3 0x003
 #define FLAG_TEMP_4 0x004

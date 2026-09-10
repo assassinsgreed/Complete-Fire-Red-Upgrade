@@ -289,7 +289,7 @@ bool8 ShouldDoTrainerSlide(u8 bank, u16 trainerId, u8 caseId)
 {
 	u32 i;
 
-	if (!(gBattleTypeFlags & BATTLE_TYPE_TRAINER) || SIDE(bank) != B_SIDE_OPPONENT || FlagGet(FLAG_TEMP_1))
+	if (!(gBattleTypeFlags & BATTLE_TYPE_TRAINER) || SIDE(bank) != B_SIDE_OPPONENT || gNewBS->trainerSlideTextDoneThisTurn)
 		return FALSE;
 
 	for (i = 0; i < ARRAY_COUNT(sTrainerSlides); ++i)
@@ -314,7 +314,7 @@ bool8 ShouldDoTrainerSlide(u8 bank, u16 trainerId, u8 caseId)
 								PlayBGM(BGM_BATTLE_GYM_LEADER_LAST_POKEMON);
 							}
 
-						FlagSet(FLAG_TEMP_1); // Prevent more switch in text this turn
+						gNewBS->trainerSlideTextDoneThisTurn = TRUE; // Prevent more switch in text this turn
 						return TRUE;
 					}
 					break;
@@ -379,14 +379,14 @@ void TryDoDynamaxTrainerSlide(void)
 	gBattlescriptCurrInstr = BattleScript_TrainerSlideMsgRet - 5;
 }
 
-//Hook in Battle Main
+//Hook in Battle Main; runs from BattleTurnPassed, i.e. once at every turn boundary from turn 2 on
 void CheckLastMonLowHPSlide(void)
 {
-	if (!FlagGet(FLAG_TEMP_1) && (
-		ShouldDoTrainerSlide(GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT), gTrainerBattleOpponent_A, TRAINER_SLIDE_LAST_LOW_HP)
-		|| (IsTwoOpponentBattle() && ShouldDoTrainerSlide(GetBattlerAtPosition(B_POSITION_OPPONENT_RIGHT), gTrainerBattleOpponent_B, TRAINER_SLIDE_LAST_LOW_HP))
-		|| (IS_DOUBLE_BATTLE && ShouldDoTrainerSlide(GetBattlerAtPosition(B_POSITION_OPPONENT_RIGHT), gTrainerBattleOpponent_A, TRAINER_SLIDE_LAST_LOW_HP)))
-	)
+	gNewBS->trainerSlideTextDoneThisTurn = FALSE;
+
+	if (ShouldDoTrainerSlide(GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT), gTrainerBattleOpponent_A, TRAINER_SLIDE_LAST_LOW_HP)
+	|| (IsTwoOpponentBattle() && ShouldDoTrainerSlide(GetBattlerAtPosition(B_POSITION_OPPONENT_RIGHT), gTrainerBattleOpponent_B, TRAINER_SLIDE_LAST_LOW_HP))
+	|| (IS_DOUBLE_BATTLE && ShouldDoTrainerSlide(GetBattlerAtPosition(B_POSITION_OPPONENT_RIGHT), gTrainerBattleOpponent_A, TRAINER_SLIDE_LAST_LOW_HP)))
 		BattleScriptExecute(BattleScript_TrainerSlideMsgEnd2);
 }
 

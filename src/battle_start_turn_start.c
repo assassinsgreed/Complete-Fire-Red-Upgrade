@@ -210,7 +210,7 @@ void BattleBeginFirstTurn(void)
 	int i, j;
 	u8* state = &(gBattleStruct->switchInAbilitiesCounter);
 	u8* bank = &(gBattleStruct->switchInItemsCounter);
-	FlagClear(FLAG_TEMP_1); // Used to prevent duplicate trainer sliding text
+	gNewBS->trainerSlideTextDoneThisTurn = FALSE; // Used to prevent duplicate trainer sliding text
 
 	if (!gBattleExecBuffer) //Inlclude Safari Check Here?
 	{
@@ -1212,6 +1212,7 @@ void RunTurnActionsFunctions(void)
 			return;
 
 		case Mega_SwitchInAbilities:
+			effect = 0; //Uninitialised otherwise; garbage 0xFF wraps on ++ and drops the queued switch-in ability script
 			while (*megaBank < gBattlersCount) {
 				if (BATTLER_ALIVE(gBanksByTurnOrder[*megaBank])
 				&& AbilityBattleEffects(ABILITYEFFECT_ON_SWITCHIN, gBanksByTurnOrder[*megaBank], 0, 0, 0))
@@ -1907,7 +1908,7 @@ u16 GetMUS_ForBattle(void)
 	&& gWildSpeciesBasedBattleBGM[species] != 0)
 		return gWildSpeciesBasedBattleBGM[species];
 
-	if (FlagGet(FLAG_DOUBLE_WILD_BATTLE || FlagGet(FLAG_DOUBLE_WILD_BATTLES_MODIFIER_ACTIVE))
+	if ((FlagGet(FLAG_DOUBLE_WILD_BATTLE) || FlagGet(FLAG_DOUBLE_WILD_BATTLES_MODIFIER_ACTIVE))
 	&& gEnemyParty[1].species != SPECIES_NONE
 	&& gEnemyParty[1].species < gWildSpeciesBasedBattleBGMLength
 	&& gWildSpeciesBasedBattleBGM[gEnemyParty[1].species] != 0)
