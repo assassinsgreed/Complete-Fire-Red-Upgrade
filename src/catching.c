@@ -168,6 +168,9 @@ void AttemptCapture(u8 ballType, u8 defLevel)
 				odds += (Sqrt(odds * 5)); //Bigger gains for lower numbers
 			#endif
 
+			if (odds == 0)
+				odds = 1; // udivsi below divides by odds; the doubles/difficulty modifiers and a 1x ball multiplier can all floor it to zero
+
 			odds = udivsi(0xFFFF0, Sqrt(Sqrt(udivsi(0xFF0000, odds))));
 			for (shakes = 0; shakes < maxShakes && Random() < odds; ++shakes) ;
 		}

@@ -694,10 +694,16 @@ void CreateInGameGiftPokemon()
     SetMonData(giftMon, MON_DATA_MET_LOCATION, &metLocation); // NOTE: When OT Name & ID don't match player, the FR engine will always set a met location of Trade
     GiveMonNatureAndAbility(giftMon, ingameGift->nature, ingameGift->abilityNum, IsMonShiny(giftMon), TRUE, TRUE);
     
+    u8 noPpBonuses = 0;
+    SetMonData(giftMon, MON_DATA_PP_BONUSES, &noPpBonuses); // Scripted moves start with no bonus PP
     for (u8 i = 0; i < MAX_MON_MOVES; ++i)
     {
         if (moves[i] < MOVES_COUNT)
+        {
+            u8 pp = CalculatePPWithBonus(moves[i], 0, i);
             SetMonData(giftMon, MON_DATA_MOVE1 + i, &moves[i]);
+            SetMonData(giftMon, MON_DATA_PP1 + i, &pp); // Match PP to the scripted move, not the level-up moveset
+        }
     }
     
     mailNum = 0;

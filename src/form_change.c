@@ -329,6 +329,8 @@ bool8 TryFormRevert(struct Pokemon* mon)
 			u16 newMove = MOVE_IRONHEAD; //Zacian's Behemoth Blade changes to Iron Head in its base forme
 			SetMonData(mon, MON_DATA_MOVE1 + moveIndex, &newMove);
 		}
+		CalculateMonStats(mon); // Drop the Crowned stat block
+		return TRUE;
 	}
 	#endif
 	#if (defined SPECIES_ZAMAZENTA && defined SPECIES_ZAMAZENTA_CROWNED)
@@ -341,6 +343,8 @@ bool8 TryFormRevert(struct Pokemon* mon)
 			u16 newMove = MOVE_IRONHEAD; //Zamazenta's Behemoth Bash changes to Iron Head in its base forme
 			SetMonData(mon, MON_DATA_MOVE1 + moveIndex, &newMove);
 		}
+		CalculateMonStats(mon); // Drop the Crowned stat block
+		return TRUE;
 	}
 	#endif
 	#ifdef SPECIES_SHADOW_WARRIOR

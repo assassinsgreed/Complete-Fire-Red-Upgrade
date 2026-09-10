@@ -1806,7 +1806,7 @@ const struct TrainerMonNoItemDefaultMoves sParty_RubarrDesert_RuinManiacKent_Div
     { .lvl = 13, .species = SPECIES_SILICOBRA },
 };
 
-const struct TrainerMonItemDefaultMoves sParty_RubarrDesert_BlackbeltKobiyashi_Divergent[] = {
+const struct TrainerMonNoItemDefaultMoves sParty_RubarrDesert_BlackbeltKobiyashi_Divergent[] = {
     { .lvl = 13, .species = SPECIES_MAKUHITA },
     { .lvl = 14, .species = SPECIES_MACHOP },
 };
@@ -1880,7 +1880,7 @@ const struct TrainerMonNoItemDefaultMoves sParty_Route4_Beauty_Beatrice_Divergen
     { .lvl = 14, .species = SPECIES_BUNNELBY },
 };
 
-const struct TrainerMonItemDefaultMoves sParty_Route4_Lady_Alda_Divergent[] = {
+const struct TrainerMonNoItemDefaultMoves sParty_Route4_Lady_Alda_Divergent[] = {
     { .lvl = 14, .species = SPECIES_WOOPER },
     { .lvl = 14, .species = SPECIES_PIDGEY },
     { .lvl = 14, .species = SPECIES_MEOWTH_G },
@@ -1895,7 +1895,7 @@ const struct TrainerMonNoItemDefaultMoves sParty_Route4_Bird_Keeper_Rowley_Diver
     { .lvl = 17, .species = SPECIES_DARTRIX }
 };
 
-const struct TrainerMonItemDefaultMoves sParty_Route4_Crush_Girl_Elise_Divergent[] = {
+const struct TrainerMonNoItemDefaultMoves sParty_Route4_Crush_Girl_Elise_Divergent[] = {
     { .lvl = 14, .species = SPECIES_MAKUHITA },
     { .lvl = 15, .species = SPECIES_TYROGUE },
     { .lvl = 15, .species = SPECIES_MACHOP }
@@ -2114,7 +2114,7 @@ const struct TrainerMonItemCustomMoves sParty_FerroxGym_GymLeaderStella_Divergen
 // #endregion
 
 // #region Route 5
-const struct TrainerMonItemDefaultMoves sParty_Route5_LadyFaith_Divergent[] = {
+const struct TrainerMonNoItemDefaultMoves sParty_Route5_LadyFaith_Divergent[] = {
     { .lvl = 17, .species = SPECIES_APPLIN },
     { .lvl = 17, .species = SPECIES_PETILIL },
 };
@@ -9555,7 +9555,7 @@ const struct Trainer gDivergentTrainers[] = {
         .doubleBattle = FALSE,
         .aiFlags = TrainerAIFlags_BlackBelt_Standard,
         .partySize = NELEMS(sParty_RubarrDesert_BlackbeltKobiyashi_Divergent),
-        .party = {.ItemDefaultMoves = sParty_RubarrDesert_BlackbeltKobiyashi_Divergent}
+        .party = {.NoItemDefaultMoves = sParty_RubarrDesert_BlackbeltKobiyashi_Divergent}
     },
     [TRAINER_RUBARR_DESERT_RUIN_MANIAC_ALBERT] = {
         .partyFlags = 0,
@@ -9694,7 +9694,7 @@ const struct Trainer gDivergentTrainers[] = {
         .doubleBattle = FALSE,
         .aiFlags = TrainerAIFlags_Lady_Standard,
         .partySize = NELEMS(sParty_Route4_Lady_Alda_Divergent),
-        .party = {.ItemDefaultMoves = sParty_Route4_Lady_Alda_Divergent}
+        .party = {.NoItemDefaultMoves = sParty_Route4_Lady_Alda_Divergent}
     },
     [TRAINER_ROUTE_4_LASS_ISABELA] = {
         .partyFlags = 0,
@@ -9733,7 +9733,7 @@ const struct Trainer gDivergentTrainers[] = {
         .doubleBattle = FALSE,
         .aiFlags = TrainerAIFlags_CrushGirl_Standard,
         .partySize = NELEMS(sParty_Route4_Crush_Girl_Elise_Divergent),
-        .party = {.ItemDefaultMoves = sParty_Route4_Crush_Girl_Elise_Divergent}
+        .party = {.NoItemDefaultMoves = sParty_Route4_Crush_Girl_Elise_Divergent}
     },
     [TRAINER_ROUTE_4_GENTLEMAN_PORTER] = {
         .partyFlags = 0,
@@ -10055,7 +10055,7 @@ const struct Trainer gDivergentTrainers[] = {
         .doubleBattle = FALSE,
         .aiFlags = TrainerAIFlags_Lady_Standard,
         .partySize = NELEMS(sParty_Route5_LadyFaith_Divergent),
-        .party = {.ItemDefaultMoves = sParty_Route5_LadyFaith_Divergent}
+        .party = {.NoItemDefaultMoves = sParty_Route5_LadyFaith_Divergent}
     },
     [TRAINER_ROUTE_5_BUG_CATCHER_BEN] = {
         .partyFlags = 0,

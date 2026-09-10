@@ -124,6 +124,12 @@ static void Task_MonitorSummarySkillsPageForEvIv(u8 taskId)
     struct Task *task = &gTasks[taskId];
     bool8 switchInProgress;
 
+    if (sMonSummaryScreen == NULL)
+    {
+        DestroyTask(taskId);
+        return;
+    }
+
     if (sMonSummaryScreen->curPageIndex != PSS_PAGE_SKILLS
         || !FlagGet(FLAG_ENABLE_EV_IV_VIEWER)
         || sMonSummaryScreen->mode == PSS_MODE_BOX)

@@ -271,6 +271,8 @@ void CB2_ShowEvIv(void)
     gGfxStep = 0;
     gCallbackStep = 0;
     gCurrentMon = sLastViewedMonIndex;
+    if (gCurrentMon >= gPlayerPartyCount) //stale summary/party cursor can point past the live party
+        gCurrentMon = 0;
     EvIvBgInit();
     CreateTask(Task_EvIvInit, 0);
     SetMainCallback2(CB2_EvIv);
@@ -346,7 +348,7 @@ static void Task_WaitForExit(u8 taskId)
         }
         if (JOY_REPT(DPAD_DOWN) && gPlayerPartyCount > 1)
         {
-            if (gCurrentMon == (gPlayerPartyCount - 1))
+            if (gCurrentMon >= (gPlayerPartyCount - 1)) // >= so a stale index self-corrects instead of running off the end
                 gCurrentMon = 0;
             else
                 gCurrentMon++;
@@ -357,7 +359,7 @@ static void Task_WaitForExit(u8 taskId)
         }
         if (JOY_REPT(DPAD_UP) && gPlayerPartyCount > 1)
         {
-            if (gCurrentMon == 0)
+            if (gCurrentMon == 0 || gCurrentMon >= gPlayerPartyCount) // || so a stale index snaps back to the last valid slot
                 gCurrentMon = (gPlayerPartyCount - 1);
             else
                 gCurrentMon--;

@@ -1793,7 +1793,7 @@ const struct TrainerMonNoItemDefaultMoves sParty_RubarrDesert_RuinManiacKent[] =
     { .lvl = 13, .species = SPECIES_ROGGENROLA },
 };
 
-const struct TrainerMonItemDefaultMoves sParty_RubarrDesert_BlackbeltKobiyashi[] = {
+const struct TrainerMonNoItemDefaultMoves sParty_RubarrDesert_BlackbeltKobiyashi[] = {
     { .lvl = 13, .species = SPECIES_FARFETCHD_G },
     { .lvl = 14, .species = SPECIES_SCRAGGY },
 };
@@ -1867,7 +1867,7 @@ const struct TrainerMonNoItemDefaultMoves sParty_Route4_Beauty_Beatrice[] = {
     { .lvl = 14, .species = SPECIES_BUNEARY },
 };
 
-const struct TrainerMonItemDefaultMoves sParty_Route4_Lady_Alda[] = {
+const struct TrainerMonNoItemDefaultMoves sParty_Route4_Lady_Alda[] = {
     { .lvl = 14, .species = SPECIES_BUDEW },
     { .lvl = 14, .species = SPECIES_COMBEE },
     { .lvl = 14, .species = SPECIES_FLABEBE_YELLOW },
@@ -1882,7 +1882,7 @@ const struct TrainerMonNoItemDefaultMoves sParty_Route4_Bird_Keeper_Rowley[] = {
     { .lvl = 17, .species = SPECIES_DARTRIX }
 };
 
-const struct TrainerMonItemDefaultMoves sParty_Route4_Crush_Girl_Elise[] = {
+const struct TrainerMonNoItemDefaultMoves sParty_Route4_Crush_Girl_Elise[] = {
     { .lvl = 14, .species = SPECIES_CROAGUNK },
     { .lvl = 15, .species = SPECIES_FARFETCHD_G },
     { .lvl = 15, .species = SPECIES_TIMBURR }
@@ -2101,7 +2101,7 @@ const struct TrainerMonItemCustomMoves sParty_FerroxGym_GymLeaderStella[] = {
 // #endregion
 
 // #region Route 5
-const struct TrainerMonItemDefaultMoves sParty_Route5_LadyFaith[] = {
+const struct TrainerMonNoItemDefaultMoves sParty_Route5_LadyFaith[] = {
     { .lvl = 17, .species = SPECIES_ROSELIA },
     { .lvl = 17, .species = SPECIES_COTTONEE },
 };
@@ -9569,7 +9569,7 @@ const struct Trainer gTrainers[] = {
         .doubleBattle = FALSE,
         .aiFlags = TrainerAIFlags_BlackBelt_Standard,
         .partySize = NELEMS(sParty_RubarrDesert_BlackbeltKobiyashi),
-        .party = {.ItemDefaultMoves = sParty_RubarrDesert_BlackbeltKobiyashi}
+        .party = {.NoItemDefaultMoves = sParty_RubarrDesert_BlackbeltKobiyashi}
     },
     [TRAINER_RUBARR_DESERT_RUIN_MANIAC_ALBERT] = {
         .partyFlags = 0,
@@ -9708,7 +9708,7 @@ const struct Trainer gTrainers[] = {
         .doubleBattle = FALSE,
         .aiFlags = TrainerAIFlags_Lady_Standard,
         .partySize = NELEMS(sParty_Route4_Lady_Alda),
-        .party = {.ItemDefaultMoves = sParty_Route4_Lady_Alda}
+        .party = {.NoItemDefaultMoves = sParty_Route4_Lady_Alda}
     },
     [TRAINER_ROUTE_4_LASS_ISABELA] = {
         .partyFlags = 0,
@@ -9747,7 +9747,7 @@ const struct Trainer gTrainers[] = {
         .doubleBattle = FALSE,
         .aiFlags = TrainerAIFlags_CrushGirl_Standard,
         .partySize = NELEMS(sParty_Route4_Crush_Girl_Elise),
-        .party = {.ItemDefaultMoves = sParty_Route4_Crush_Girl_Elise}
+        .party = {.NoItemDefaultMoves = sParty_Route4_Crush_Girl_Elise}
     },
     [TRAINER_ROUTE_4_GENTLEMAN_PORTER] = {
         .partyFlags = 0,
@@ -10069,7 +10069,7 @@ const struct Trainer gTrainers[] = {
         .doubleBattle = FALSE,
         .aiFlags = TrainerAIFlags_Lady_Standard,
         .partySize = NELEMS(sParty_Route5_LadyFaith),
-        .party = {.ItemDefaultMoves = sParty_Route5_LadyFaith}
+        .party = {.NoItemDefaultMoves = sParty_Route5_LadyFaith}
     },
     [TRAINER_ROUTE_5_BUG_CATCHER_BEN] = {
         .partyFlags = 0,

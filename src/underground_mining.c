@@ -526,6 +526,7 @@ static void Task_GiveItemsBeforeFadeOut(u8 taskId)
 				if (sUndergroundMiningPtr->foundPrizes[i]) //Is valid found item
 				{
 					u16 item = sMiningPrizes[sUndergroundMiningPtr->prizeIds[i]].itemId;
+					u16 quantity = (item == ITEM_POKE_CHIP) ? 5 : 1; //Poke Chips come as a stack of 5 to make fossil trades more rewarding
 					sUndergroundMiningPtr->foundPrizes[i] = FALSE; //Record item has been given
 					CopyItemName(item, gStringVar1);
 					if (gStringVar1[0] == CHAR_A || gStringVar1[0] == CHAR_E || gStringVar1[0] == CHAR_I || gStringVar1[0] == CHAR_O || gStringVar1[0] == CHAR_U) //Starts with vowel
@@ -536,17 +537,14 @@ static void Task_GiveItemsBeforeFadeOut(u8 taskId)
 					else
 						gStringVar2[0] = 0xFF; //A
 
-					if (!CheckBagHasSpace(item, 1))
+					if (!CheckBagHasSpace(item, quantity))
 						StringExpandPlaceholders(gStringVar4, gText_UndergroundMining_NoSpace);
 					else
 					{
 						IncrementGameStat(GAME_STAT_ITEMS_FOUND_WHILE_MINING);
-						AddBagItem(item, 1);
+						AddBagItem(item, quantity);
 						if (item == ITEM_POKE_CHIP)
-						{
-							AddBagItem(item, 4); // 5 total per fossil find to make them more rewarding 
 							StringExpandPlaceholders(gStringVar4, gText_UndergroundMining_FoundFossil);
-						}
 						else
 							StringExpandPlaceholders(gStringVar4, gText_UndergroundMining_FoundItem);
 					}
