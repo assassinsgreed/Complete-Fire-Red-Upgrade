@@ -473,6 +473,7 @@ LevelScript_AscensionTower_WalkForward_ForChampionBattle:
     msgbox gText_AscensionTower_ChampionSelene_PreBattle3 MSG_NORMAL
     call SetupMugshotChampionAndTitleDefense
     trainerbattle3 0x0 524 0x100 gText_AscensionTower_ChampionSelene_Defeat
+    setflag 0x4BC @ Champion Selene defeated. This is never reset as it's used to determine if the player is in the postgame
     checkflag 0x93B @ Hard level caps
     if SET _call PrintUpdatedLevelCaps
     playbgm 345 @ N's farewell
@@ -480,7 +481,6 @@ LevelScript_AscensionTower_WalkForward_ForChampionBattle:
     applymovement 0x1 m_ReigningChampionWalksToHallOfFame
     applymovement PLAYER m_PlayerWalksToHallOfFame
     waitmovement PLAYER
-    setflag 0x4BC @ Champion Selene defeated. This is never reset as it's used to determine if the player is in the postgame
     clearflag 0x6C @ Post-Credits NPCs will appear
     clearflag 0x9D @ Postgame NPCs will now appear
     clearflag 0x3C @ Show Selene in HoF Room
