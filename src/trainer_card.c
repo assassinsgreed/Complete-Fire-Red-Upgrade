@@ -247,17 +247,21 @@ bool8 PrintAllOnTrainerCardBack(void)
 	PrintNameOnTrainerCardBack();
 	PrintHallOfFameDebutOnCard();
 
-	PrintTrainerCardStatRow(TRAINER_CARD_ROW_2_Y, gText_TrainerCardTitleDefenses,
-		GetTimesChampionTitleDefended(), TRAINER_CARD_SCRATCH_1);
+	if (GetGameStat(GAME_STAT_ENTERED_HOF) != 0)
+		PrintTrainerCardStatRow(TRAINER_CARD_ROW_2_Y, gText_TrainerCardTitleDefenses,
+			GetTimesChampionTitleDefended(), TRAINER_CARD_SCRATCH_1);
 
-	PrintTrainerCardStatRow(TRAINER_CARD_ROW_3_Y, gText_TrainerCardEggsHatched,
-		GetGameStat(GAME_STAT_HATCHED_EGGS), TRAINER_CARD_SCRATCH_2);
+	if (GetGameStat(GAME_STAT_HATCHED_EGGS) != 0)
+		PrintTrainerCardStatRow(TRAINER_CARD_ROW_3_Y, gText_TrainerCardEggsHatched,
+			GetGameStat(GAME_STAT_HATCHED_EGGS), TRAINER_CARD_SCRATCH_2);
 
-	PrintTrainerCardStatRow(TRAINER_CARD_ROW_4_Y, gText_TrainerCardPokemonCaught,
-		GetGameStat(GAME_STAT_POKEMON_CAPTURES), TRAINER_CARD_SCRATCH_3);
+	if (GetGameStat(GAME_STAT_POKEMON_CAPTURES) != 0)
+		PrintTrainerCardStatRow(TRAINER_CARD_ROW_4_Y, gText_TrainerCardPokemonCaught,
+			GetGameStat(GAME_STAT_POKEMON_CAPTURES), TRAINER_CARD_SCRATCH_3);
 
-	PrintTrainerCardStatRow(TRAINER_CARD_ROW_5_Y, gText_TrainerCardCenterHeals,
-		GetGameStat(GAME_STAT_USED_POKECENTER_OR_NURSE), TRAINER_CARD_SCRATCH_4);
+	if (GetGameStat(GAME_STAT_USED_POKECENTER_OR_NURSE) != 0)
+		PrintTrainerCardStatRow(TRAINER_CARD_ROW_5_Y, gText_TrainerCardCenterHeals,
+			GetGameStat(GAME_STAT_USED_POKECENTER_OR_NURSE), TRAINER_CARD_SCRATCH_4);
 
 	PrintTrainerCardBackRules();
 	PrintTrainerCardBackTrim();
