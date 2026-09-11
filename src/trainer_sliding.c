@@ -393,10 +393,9 @@ void CheckLastMonLowHPSlide(void)
 //handletrainerslidemsg BANK CASE
 void atkFF1C_handletrainerslidemsg(void)
 {
+	//The trainer picture is drawn over this bank's mon graphics and sprite slot, so this has to be the
+	//same bank the slide runs on. Repairing a different one leaves the real mon as a ghost on screen.
 	gActiveBattler = GetBankForBattleScript(gBattlescriptCurrInstr[1]);
-
-	if (IS_DOUBLE_BATTLE)
-		gActiveBattler &= BIT_SIDE; //Always mon on enemy left in doubles
 
 	u8 caseId = gBattlescriptCurrInstr[2];
 
