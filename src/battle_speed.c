@@ -1,6 +1,7 @@
 #include "defines.h"
 #include "defines_battle.h"
 #include "../include/main.h"
+#include "../include/gba/m4a_internal.h"
 #include "../include/sound.h"
 #include "../include/text.h"
 
@@ -15,6 +16,11 @@ battle_speed.c
 	Music and sound are untouched by this. m4aSoundMain is called from the V-Blank
 	interrupt, not from the main loop, so the sound engine still ticks exactly once per
 	frame no matter how many times the main callbacks run.
+
+	That split is also what the two sound helpers at the bottom of this file are for. Running
+	the main callbacks several times per frame leaves the main loop still executing when the
+	V-Blank interrupt fires, where at 1x it would have been idling in the V-Blank wait, so
+	interrupts start landing inside main loop code that was written assuming they never do.
 */
 
 //Vanilla callback the Poke Dude tutorial hands off to when the player backs out of it
@@ -117,4 +123,49 @@ void NewBattleMainCB2(void)
 		BeginNormalPaletteFade(0xFFFFFFFF, 0, 0, 0x10, RGB_BLACK);
 		SetMainCallback2(CB2_QuitPokeDudeBattle);
 	}
+}
+
+// There's a very rare chance that certain battle actions like mega evolution will result in
+// a constant ringing sound when used which remains after battle. This code replaces the vanilla  sound effect
+// loop with one that handles sound effect locks better. 
+#define TRACK_WIPE_WORDS (64 / sizeof(u32)) // Vanilla clears exactly 64 bytes, leaving cmdPtr at 0x40 intact
+
+void MPlayImmInitSafe(struct MusicPlayerInfo* mplayInfo)
+{
+	s32 trackCount;
+	struct MusicPlayerTrack* track;
+	volatile u32* ident = (volatile u32*) &mplayInfo->ident;
+
+	if (*ident != ID_NUMBER)
+		return; // Another m4a routine already owns this player
+
+	*ident = ID_NUMBER + 1; // Locks MPlayMain out until the tracks are consistent again
+	asm volatile ("" ::: "memory"); // The lock is worthless if the compiler sinks this store past the wipe below
+
+	trackCount = mplayInfo->trackCount;
+	track = mplayInfo->tracks;
+
+	while (trackCount > 0)
+	{
+		if ((track->flags & MPT_FLG_EXIST) && (track->flags & MPT_FLG_START))
+		{
+			u32 i;
+			u32* wipe = (u32*) track;
+
+			for (i = 0; i < TRACK_WIPE_WORDS; ++i)
+				wipe[i] = 0;
+
+			track->flags = MPT_FLG_EXIST;
+			track->bendRange = 2;
+			track->volX = 64;
+			track->lfoSpeed = 22;
+			track->tone.type = 1;
+		}
+
+		--trackCount;
+		++track;
+	}
+
+	asm volatile ("" ::: "memory");
+	*ident = ID_NUMBER;
 }

@@ -820,3 +820,6 @@ DiplomaSetBackgroundByMode 080F4CDC 0
 TrainerCardStarHook 08089960 0
 ##Trainer card back page prints Amethyst's stat rows instead of the link/minigame ones
 PrintAllOnTrainerCardBack 08089E40 0
+
+##Fix for MPlayImmInit to not crash when called with a NULL pointer
+MPlayImmInitSafe 081DD314 1
