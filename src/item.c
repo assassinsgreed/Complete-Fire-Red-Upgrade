@@ -22,6 +22,7 @@
 #include "../include/new/catching.h"
 #include "../include/new/dynamax.h"
 #include "../include/new/item.h"
+#include "../include/new/new_game_plus.h"
 #include "../include/new/learn_move.h"
 #include "../include/new/set_z_effect.h"
 #include "../include/new/util.h"
@@ -1425,6 +1426,12 @@ void HandleItemRegistration(u16 item)
 #error "The total number of bag items has exceeded 650! Please reduce the possible number of items in the bag."
 #endif
 
+//New Game Plus copies over all bag contents except key items.
+_Static_assert(NUM_REGULAR_ITEMS == NGP_BAG_ITEMS_COUNT, "NGP_BAG_ITEMS_COUNT is stale");
+_Static_assert(NUM_POKE_BALLS == NGP_BAG_BALLS_COUNT, "NGP_BAG_BALLS_COUNT is stale");
+_Static_assert(NUM_BERRIES == NGP_BAG_BERRIES_COUNT, "NGP_BAG_BERRIES_COUNT is stale");
+_Static_assert(NUM_TMS + NUM_HMS == NGP_TMHM_COUNT, "NGP_TMHM_COUNT is stale");
+
 struct BagSlots
 {
 	struct ItemSlot bagPocket_Items[NUM_REGULAR_ITEMS];
@@ -1436,7 +1443,7 @@ struct BagSlots
 	u16 pocket;
 };
 
-static const struct BagPockets sBagPocketArrangement =
+const struct BagPockets sBagPocketArrangement =
 {
 	.itemRam = sBagRegularItems,
 	.itemAmount = NUM_REGULAR_ITEMS,

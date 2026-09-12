@@ -15,6 +15,7 @@
 #include "../include/new/build_pokemon.h"
 #include "../include/new/damage_calc.h"
 #include "../include/new/frontier.h"
+#include "../include/new/new_game_plus.h"
 #include "../include/new/util.h"
 #include "../include/new/Vanilla_functions.h"
 
@@ -220,7 +221,7 @@ const u8 gFrontierBackgroundChoiceTerrains[NUM_FRONTIER_BACKGROUND_CHOICES] =
 
 // Track the game modifiers that should be disabled while in a battle frontier challenge.
 // Notably the Restore Held Consumeables modifier is missing - this should always be ON in frontiers!
-static const u16 gFrontierOverriddenModifierFlags[] =
+const u16 gFrontierOverriddenModifierFlags[] =
 {
 	FLAG_POKEMON_RANDOMIZER,
 	FLAG_POKEMON_RANDOMIZER_KULURE_ONLY,
@@ -256,6 +257,7 @@ static const u16 gFrontierOverriddenModifierFlags[] =
 // quietly: RestoreGameModifiers clears any flag whose bit reads 0, so a 33rd entry would turn the
 // player's own setting off every time a run ended.
 _Static_assert(NUM_OVERRIDDEN_MODIFIER_FLAGS <= 32, "gFrontierModifierBackup.flags cannot hold this many modifier flags");
+_Static_assert(NUM_OVERRIDDEN_MODIFIER_FLAGS == NGP_ACTIVE_FLAG_COUNT, "NGP_ACTIVE_FLAG_COUNT in src/new_game_plus.c is stale");
 
 static void OverrideGameModifiers(void)
 {

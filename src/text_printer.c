@@ -17,10 +17,10 @@ bool8 IsAutoScrollEnabled(void)
 		return TRUE;
 	#endif
 
-	#ifdef FLAG_NEW_GAME_PLUS
-	if (FlagGet(FLAG_NEW_GAME_PLUS))
-		return TRUE;
-	#endif
+	// #ifdef FLAG_NEW_GAME_PLUS
+	// if (FlagGet(FLAG_NEW_GAME_PLUS))
+	// 	return TRUE;
+	// #endif
 
 	#ifdef UNBOUND
 	if (FlagGet(FLAG_SYS_GAME_CLEAR))

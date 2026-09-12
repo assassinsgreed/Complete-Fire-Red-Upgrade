@@ -47,6 +47,8 @@ gLastDexNavSpecies = 0x203E086;
 gMultiChoice = 0x203E088;
 gPartyPresetTeamIndices = 0x203E0C0;
 gScored3CritsInBattle = 0x203E0C6;
+sNewGamePlusPending = 0x203E0CA;
+sNewGamePlusBackup = 0x203E0CC;
 ExtensionState = 0x3000F28;
 gLastClockSecond = 0x300539C; /*Can add 3 bytes after this, but make sure to change to u8*/
 sPlayTimeCounterState = 0x3000E7C;
@@ -1718,6 +1720,14 @@ ListMenuCallSelectionChangedCallback = 0x8107A74 | 1;
 /* Play Time Functions */
 PlayTimeCounter_Reset = 0x8054814 | 1;
 PlayTimeCounter_Start = 0x8054838 | 1;
+
+/* Main Menu Functions (used by New Game Plus; these are unlabelled in the base ROM) */
+MainMenuLoadMessageBoxGfx = 0x800D094 | 1; /* Loads the dialog border tiles and clears the frame */
+MainMenuDrawMessageFrame = 0x800D0B4 | 1; /* Draws the dialog frame for a window template */
+MainMenuPrintMessage = 0x800CDF8 | 1; /* Draws the dialog frame and prints into main menu window 4 */
+MainMenuEraseMessageFrame = 0x800D1E8 | 1; /* Blanks the tilemap under a window template's frame */
+MainMenuRedrawBackground = 0x800D044 | 1; /* Restores the menu background after a message closes */
+StartNewGameIntro = 0x812EB2C | 1; /* What the New Game row itself calls, from 0x800CB3E */
 
 /* Save State Functions */
 PrintSaveErrorStatus = 0x800C634 | 1;

@@ -1147,6 +1147,8 @@ static u8 IsMonDisobedient(void)
 	else if (FlagGet(FLAG_USE_HALF_PARTNER_TEAM))
 		return 0; //Otherwise the partner's Pokemon might disobey
 	#endif
+	else if (FlagGet(FLAG_DISABLE_OBEDIENCE_CHECKS))
+		return 0; // Only set by NG+, where the player's carried-over Pokemon should always obey. This also lets them use new Pokemon beyond the caps
 
 	#ifdef DEBUG_OBEDIENCE
 	return 0;

@@ -8,6 +8,7 @@
 
 #include "../include/new/dns.h"
 #include "../include/new/save.h"
+#include "../include/new/new_game_plus.h"
 #include "../include/new/ram_locs_battle.h"
 /*
 save.c
@@ -504,6 +505,10 @@ u8 SaveDataAfterLinkTrade(void)
 
 void NewGameWipeNewSaveData(void)
 {
+	//Runs at the very start of new-game init, before anything has been cleared.
+	//The matching restore runs after this wipe and the three vanilla clears have all run.
+	NewGamePlusCapture();
+
 	#ifdef UNBOUND
 	extern void WipeUnboundNewSaveRAM(void);
 	WipeUnboundNewSaveRAM();

@@ -10,6 +10,24 @@ WARNING!\pThe correct system time could\nnot be read.\pEnable the Real Time Cloc
 #org @gText_MainMenuTimeSetInFuture
 WARNING!\pRTC tampering has been detected\nin your save file!\pThe current ingame date is set to\n[BUFFER1]/[BUFFER2]/[BUFFER3].\pAll daily events such as gifts\nand Raids may cease to function\lproperly until the day after.\pPlease refrain from tampering\nwith the RTC again.
 
+#org @gText_MainMenuNewGameOrPlus
+New Game / New Game Plus
+
+#org @gText_NewGamePlusConfirm
+You can choose to start a new game\nwhile carrying over data from your\lold save.\pYour PC Boxes, Pok\edex completion,\nbag items, money and PokeChips will\lcarry over.\pSelected options and Game Modifier\nsettings will also carry over.\pThe Pok\emon in your party and\nKey Items will not carry over.\pAny Pok\emon carried over will gain\nboosted EXP, and Pok\emon will\lalways obey you.\pDo you want to continue into New\nGame or New Game Plus?
+
+#org @gText_NewGamePlusChoices
+New Game\nNew Game Plus\nCancel
+
+#org @gText_NewGamePlusStartingNewGame
+Starting a new game in New Game mode.
+
+#org @gText_NewGamePlusStartingNewGamePlus
+Starting a new game in New Game Plus mode.
+
+#org @gText_NewGamePlusReturning
+Returning to the main menu.
+
 #org @gText_UsedVar2WildStronger
 [BUFFER][01] used the\n[BUFFER][03].\pThe chance of encountering strong\nwild Pok\emon in this area increased.[FC][09]
 

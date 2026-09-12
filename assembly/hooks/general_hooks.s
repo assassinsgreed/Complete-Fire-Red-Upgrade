@@ -360,6 +360,56 @@ NewGameSaveClearHook:
 	bx r0
 
 .pool
+@0x8054B42 with r0
+@Conclusion of new-game init. Used to support New Game Plus restoring data from the previous save.
+NewGamePlusRestoreHook:
+	bl NewGamePlusRestore
+	add sp, sp, #0x8
+	pop {r3}
+	mov r8, r3
+	pop {r4-r6}
+	pop {r0}
+	bx r0
+
+.pool
+@0x800C8A0 with r3
+@The main menu prints its New Game row from a fixed string. This swaps in a different one
+@once the game has been beaten, which includes New Game Plus.
+@The hook eats the store plus the three argument setups that followed it, so it redoes
+@them and rejoins at 0x800C8A8. lr is free here: the menu saved it on entry.
+NewGameMenuLabelHook:
+	push {lr}
+	bl GetMainMenuNewGameLabel
+	pop {r1}
+	str r0, [sp, #0x8]
+	mov r0, #0x2
+	mov r1, #0x2
+	mov r2, #0x2
+	ldr r3, =0x800C8A8 | 1
+	bx r3
+
+.pool
+@0x800CB2E with r0
+@Runs when the player picks the New Game row. On a beaten save this opens the New Game
+@Plus prompt and stays in the menu; otherwise it does nothing and the normal new game
+@goes ahead. The C call handles both cases and says which happened.
+@The hook eats the first three instructions of the normal path, so that path resumes at
+@0x800CB38 and the prompt jumps straight to the menu handler's exit at 0x800CB84.
+NewGameRowSelectedHook:
+	push {lr}
+	mov r0, r6
+	bl NewGamePlusNewGameRowSelected
+	pop {r1}
+	cmp r0, #0x0
+	bne NewGameRowSelectedHook_Prompted
+	ldr r0, =0x800CB38 | 1
+	bx r0
+
+NewGameRowSelectedHook_Prompted:
+	ldr r0, =0x800CB84 | 1
+	bx r0
+
+.pool
 @0x80CEDD4 with r1
 EvolutionMovesHook:
 	ldrb r1, [r5, #0x10]

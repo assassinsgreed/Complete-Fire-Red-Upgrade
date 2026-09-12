@@ -323,6 +323,9 @@ HandleSavingData 80DA248 1
 LinkTradeSaveHook 805415E 0
 LinkBattleSaveHook 806FC84 0
 NewGameSaveClearHook 8054A60 0
+NewGamePlusRestoreHook 8054B42 0
+NewGameMenuLabelHook 800C8A0 3
+NewGameRowSelectedHook 800CB2E 0
 ExpandedVarsHook 806E454 1
 ExpandedFlagsHook 806E5C0 1
 
