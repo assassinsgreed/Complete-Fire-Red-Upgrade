@@ -26,10 +26,12 @@ new_game_plus.c
 	all four of the clears that between them cover the boxes have run.
 */
 
-#define NGP_BOXES_LOW_RAM   ((struct CompressedPokemon*) 0x2029318)
-#define NGP_BOXES_20_22_RAM ((struct CompressedPokemon*) 0x203CB44)
-#define NGP_BOXES_23_24_RAM ((struct CompressedPokemon*) 0x2027434)
-#define NGP_BOX_25_RAM      ((struct CompressedPokemon*) 0x2024638)
+//Box contents, names and wallpapers each live in several disjointed RAM regions.
+//src/pokemon_storage_system.c already maps all three, so borrow its tables instead of
+//naming those addresses a second time.
+extern struct CompressedPokemon* const sPokemonBoxPtrs[TOTAL_BOXES_COUNT];
+extern u8 (* const sPokemonBoxNamePtrs[TOTAL_BOXES_COUNT])[NGP_BOX_NAME_BYTES];
+extern u8* const sPokemonBoxWallpaperPtrs[TOTAL_BOXES_COUNT];
 
 extern const struct BagPockets sBagPocketArrangement;
 
@@ -39,8 +41,11 @@ extern const struct BagPockets sBagPocketArrangement;
 #define NGP_UNLOCK_FLAG_COUNT (NGP_LAST_UNLOCK_FLAG - NGP_FIRST_UNLOCK_FLAG + 1)
 
 //The active toggles are not contiguous. Reuse the frontier's list rather than duplicating it;
-//src/frontier_challenge.c asserts the count below still matches.
+//src/frontier_challenge.c asserts NGP_ACTIVE_FLAG_COUNT still matches its length.
 extern const u16 gFrontierOverriddenModifierFlags[];
+
+//The backup packs both the unlock flags and toggles into one bit field: the unlock flags first, then the toggles.
+#define NGP_MODIFIER_FLAG_COUNT (NGP_UNLOCK_FLAG_COUNT + NGP_ACTIVE_FLAG_COUNT)
 
 //The options the player can set outside SaveBlock2, all written by the new Options Menu code.
 static const u16 sNewGamePlusOptionVars[] =
@@ -69,7 +74,11 @@ static const u16 sNewGamePlusOptionFlags[] =
 _Static_assert(ARRAY_COUNT(sNewGamePlusOptionVars) == NGP_OPTION_VAR_COUNT, "NGP_OPTION_VAR_COUNT is stale");
 _Static_assert(ARRAY_COUNT(sNewGamePlusOptionFlags) == NGP_OPTION_FLAG_COUNT, "NGP_OPTION_FLAG_COUNT is stale");
 
-_Static_assert(NGP_UNLOCK_FLAG_COUNT + NGP_ACTIVE_FLAG_COUNT <= NGP_MODIFIER_FLAG_WORDS * 32, "modifierFlags cannot hold this many flags");
+_Static_assert(NGP_MODIFIER_FLAG_COUNT <= NGP_MODIFIER_FLAG_WORDS * 32, "modifierFlags cannot hold this many flags");
+_Static_assert(sizeof(gSaveBlock1->dexSeenFlags) == NGP_DEX_FLAG_BYTES, "NGP_DEX_FLAG_BYTES is stale");
+_Static_assert(sizeof(gSaveBlock1->dexCaughtFlags) == NGP_DEX_FLAG_BYTES, "NGP_DEX_FLAG_BYTES is stale");
+//The options are copied as a byte run, so they have to stay a byte run that stops short of the Pokedex.
+_Static_assert(offsetof(struct SaveBlock2, pokedex) - offsetof(struct SaveBlock2, optionsButtonMode) >= NGP_OPTION_BYTES, "the options no longer fit before the Pokedex");
 
 void NewGamePlusBegin(void)
 {
@@ -82,40 +91,61 @@ void NewGamePlusClearPending(void)
 	sNewGamePlusPending = FALSE;
 }
 
+static u16 GetModifierFlagByIndex(u32 i)
+{
+	if (i < NGP_UNLOCK_FLAG_COUNT)
+		return NGP_FIRST_UNLOCK_FLAG + i;
+
+	return gFrontierOverriddenModifierFlags[i - NGP_UNLOCK_FLAG_COUNT];
+}
+
 static void CaptureModifierFlags(struct NewGamePlusBackup* backup)
 {
-	u32 i, bit = 0;
+	u32 i;
 
-	backup->modifierFlags[0] = 0;
-	backup->modifierFlags[1] = 0;
+	for (i = 0; i < NGP_MODIFIER_FLAG_WORDS; ++i)
+		backup->modifierFlags[i] = 0;
 
-	for (i = 0; i < NGP_UNLOCK_FLAG_COUNT; ++i, ++bit)
+	//1u, not 1: the packed runs reach bit 31 of the first word.
+	for (i = 0; i < NGP_MODIFIER_FLAG_COUNT; ++i)
 	{
-		if (FlagGet(NGP_FIRST_UNLOCK_FLAG + i))
-			backup->modifierFlags[bit / 32] |= 1 << (bit % 32);
-	}
-
-	for (i = 0; i < NGP_ACTIVE_FLAG_COUNT; ++i, ++bit)
-	{
-		if (FlagGet(gFrontierOverriddenModifierFlags[i]))
-			backup->modifierFlags[bit / 32] |= 1 << (bit % 32);
+		if (FlagGet(GetModifierFlagByIndex(i)))
+			backup->modifierFlags[i / 32] |= 1u << (i % 32);
 	}
 }
 
 static void RestoreModifierFlags(struct NewGamePlusBackup* backup)
 {
-	u32 i, bit = 0;
+	u32 i;
 
-	for (i = 0; i < NGP_UNLOCK_FLAG_COUNT; ++i, ++bit)
+	for (i = 0; i < NGP_MODIFIER_FLAG_COUNT; ++i)
 	{
-		if (backup->modifierFlags[bit / 32] & (1 << (bit % 32)))
-			FlagSet(NGP_FIRST_UNLOCK_FLAG + i);
+		if (backup->modifierFlags[i / 32] & (1u << (i % 32)))
+			FlagSet(GetModifierFlagByIndex(i));
 	}
+}
 
-	for (i = 0; i < NGP_ACTIVE_FLAG_COUNT; ++i, ++bit)
+static void CaptureBoxes(struct NewGamePlusBackup* backup)
+{
+	u32 box;
+
+	for (box = 0; box < TOTAL_BOXES_COUNT; ++box)
 	{
-		if (backup->modifierFlags[bit / 32] & (1 << (bit % 32)))
-			FlagSet(gFrontierOverriddenModifierFlags[i]);
+		Memcpy(&backup->boxes[box * IN_BOX_COUNT], sPokemonBoxPtrs[box], IN_BOX_COUNT * sizeof(struct CompressedPokemon));
+		Memcpy(backup->boxNames[box], sPokemonBoxNamePtrs[box], NGP_BOX_NAME_BYTES);
+		backup->boxWallpapers[box] = *sPokemonBoxWallpaperPtrs[box];
+	}
+}
+
+static void RestoreBoxes(struct NewGamePlusBackup* backup)
+{
+	u32 box;
+
+	for (box = 0; box < TOTAL_BOXES_COUNT; ++box)
+	{
+		Memcpy(sPokemonBoxPtrs[box], &backup->boxes[box * IN_BOX_COUNT], IN_BOX_COUNT * sizeof(struct CompressedPokemon));
+		Memcpy(sPokemonBoxNamePtrs[box], backup->boxNames[box], NGP_BOX_NAME_BYTES);
+		*sPokemonBoxWallpaperPtrs[box] = backup->boxWallpapers[box];
 	}
 }
 
@@ -133,11 +163,8 @@ void NewGamePlusCapture(void)
 	if (backup == NULL)
 		return; //Transfer is skipped and the run proceeds as a plain New Game
 
-	// Copy all 25 boxes. The player party is intentionally not copied
-	Memcpy(backup->boxesLow, NGP_BOXES_LOW_RAM, sizeof(backup->boxesLow));
-	Memcpy(backup->boxes20To22, NGP_BOXES_20_22_RAM, sizeof(backup->boxes20To22));
-	Memcpy(backup->boxes23To24, NGP_BOXES_23_24_RAM, sizeof(backup->boxes23To24));
-	Memcpy(backup->box25, NGP_BOX_25_RAM, sizeof(backup->box25));
+	// Copy all 25 boxes, with their names and wallpapers. The player party is intentionally not copied
+	CaptureBoxes(backup);
 
 	// Copy dex seen/caught flags
 	Memcpy(backup->dexSeen, gSaveBlock1->dexSeenFlags, sizeof(backup->dexSeen));
@@ -189,10 +216,7 @@ void NewGamePlusRestore(void)
 	if (backup == NULL)
 		return;
 
-	Memcpy(NGP_BOXES_LOW_RAM, backup->boxesLow, sizeof(backup->boxesLow));
-	Memcpy(NGP_BOXES_20_22_RAM, backup->boxes20To22, sizeof(backup->boxes20To22));
-	Memcpy(NGP_BOXES_23_24_RAM, backup->boxes23To24, sizeof(backup->boxes23To24));
-	Memcpy(NGP_BOX_25_RAM, backup->box25, sizeof(backup->box25));
+	RestoreBoxes(backup);
 
 	Memcpy(gSaveBlock1->dexSeenFlags, backup->dexSeen, sizeof(backup->dexSeen));
 	Memcpy(gSaveBlock1->dexCaughtFlags, backup->dexCaught, sizeof(backup->dexCaught));
@@ -268,9 +292,22 @@ static const u8 sNewGamePlusChoiceColours[3] = {1, 2, 3};
 
 // Hand the task back here and the menu redraws itself from scratch, so cancelling has nothing to clean up.
 #define NGP_MENU_REBUILD_TASK ((TaskFunc) (0x0800C780 | 1))
+#define NGP_STATE(taskId) (gTasks[taskId].data[9])
 #define NGP_PROMPT_WINDOW_ID(taskId) (gTasks[taskId].data[10])
 #define NGP_CHOICE_WINDOW_ID(taskId) (gTasks[taskId].data[11])
 #define NGP_PENDING_EXIT(taskId) (gTasks[taskId].data[12])
+
+enum
+{
+	NGP_STATE_OPEN_PROMPT,
+	NGP_STATE_WAIT_FADE_IN,
+	NGP_STATE_READ_PROMPT,
+	NGP_STATE_AWAIT_CHOICE,
+	NGP_STATE_FADE_TO_NEW_GAME,
+	NGP_STATE_FADE_TO_MAIN_MENU,
+	NGP_STATE_PRINT_CHOICE_MADE,
+	NGP_STATE_AWAIT_DISMISS,
+};
 
 enum
 {
@@ -374,7 +411,7 @@ static void ShowChoiceMade(u8 taskId, const u8* str)
 {
 	MainMenuEraseMessageFrame(&sNewGamePlusChoiceWindow);
 	PrintPrompt(NGP_PROMPT_WINDOW_ID(taskId), str);
-	gTasks[taskId].data[9] = 6;
+	NGP_STATE(taskId) = NGP_STATE_PRINT_CHOICE_MADE;
 }
 
 static void ClosePrompt(u8 taskId)
@@ -388,13 +425,13 @@ static void ClosePrompt(u8 taskId)
 static void StartFadeToNewGame(u8 taskId)
 {
 	BeginNormalPaletteFade(0xFFFFFFFF, 0, 0, 16, RGB_BLACK);
-	gTasks[taskId].data[9] = 4;
+	NGP_STATE(taskId) = NGP_STATE_FADE_TO_NEW_GAME;
 }
 
 static void StartFadeToMainMenu(u8 taskId)
 {
 	BeginNormalPaletteFade(0xFFFFFFFF, 0, 0, 16, RGB_WHITE);
-	gTasks[taskId].data[9] = 5;
+	NGP_STATE(taskId) = NGP_STATE_FADE_TO_MAIN_MENU;
 }
 
 // Leaves the menu exactly the way the New Game row does at 0x800CB38.
@@ -420,39 +457,39 @@ bool8 NewGamePlusNewGameRowSelected(u8 taskId)
 		return FALSE;
 	}
 
-	gTasks[taskId].data[9] = 0;
+	NGP_STATE(taskId) = NGP_STATE_OPEN_PROMPT;
 	gTasks[taskId].func = Task_NewGamePlusConfirm;
 	return TRUE;
 }
 
 void Task_NewGamePlusConfirm(u8 taskId)
 {
-	switch (gTasks[taskId].data[9])
+	switch (NGP_STATE(taskId))
 	{
-		case 0:
+		case NGP_STATE_OPEN_PROMPT:
 			ClearMainMenuScreen();
 			OpenPrompt(taskId);
 			BeginNormalPaletteFade(0xFFFFFFFF, 0, 16, 0, RGB_BLACK);
-			++gTasks[taskId].data[9];
+			NGP_STATE(taskId) = NGP_STATE_WAIT_FADE_IN;
 			break;
 
-		case 1:
+		case NGP_STATE_WAIT_FADE_IN:
 			if (!gPaletteFade->active)
-				++gTasks[taskId].data[9];
+				NGP_STATE(taskId) = NGP_STATE_READ_PROMPT;
 			break;
 
-		case 2:
+		case NGP_STATE_READ_PROMPT:
 			// The explanation is several pages long, so this waits out a few A presses.
 			RunTextPrinters();
 			if (!IsTextPrinterActive(NGP_PROMPT_WINDOW_ID(taskId)))
 			{
 				// The cursor starts on Cancel on purpose. Someone mashing A through the pages then backs out instead of wiping a cleared save.
 				OpenChoiceBox(taskId);
-				++gTasks[taskId].data[9];
+				NGP_STATE(taskId) = NGP_STATE_AWAIT_CHOICE;
 			}
 			break;
 
-		case 3:
+		case NGP_STATE_AWAIT_CHOICE:
 			switch (Menu_ProcessInput())
 			{
 				case NGP_CHOICE_NEW_GAME:
@@ -479,12 +516,12 @@ void Task_NewGamePlusConfirm(u8 taskId)
 			}
 			break;
 
-		case 4:
+		case NGP_STATE_FADE_TO_NEW_GAME:
 			if (!gPaletteFade->active)
 				EnterNewGame(taskId);
 			break;
 
-		case 5:
+		case NGP_STATE_FADE_TO_MAIN_MENU:
 			if (!gPaletteFade->active)
 			{
 				ClosePrompt(taskId);
@@ -492,13 +529,13 @@ void Task_NewGamePlusConfirm(u8 taskId)
 			}
 			break;
 
-		case 6:
+		case NGP_STATE_PRINT_CHOICE_MADE:
 			RunTextPrinters();
 			if (!IsTextPrinterActive(NGP_PROMPT_WINDOW_ID(taskId)))
-				++gTasks[taskId].data[9];
+				NGP_STATE(taskId) = NGP_STATE_AWAIT_DISMISS;
 			break;
 
-		case 7:
+		case NGP_STATE_AWAIT_DISMISS:
 			// The message is a single page, so it is on this to wait rather than the text
 			// engine. Without it the whole thing would be gone in a quarter of a second.
 			if (gMain.newKeys & (A_BUTTON | B_BUTTON))

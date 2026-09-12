@@ -2,6 +2,7 @@
 
 #include "../global.h"
 #include "../../src/config.h"
+#include "../pokemon_storage_system.h"
 #include "pokemon_storage_system.h"
 
 /**
@@ -11,12 +12,12 @@
  *		  from a save that has already beaten the game.
  */
 
-// The 25 boxes are not one contiguous block. They sit in four disjointed regions, each
-// zeroed by a different mechanism during new-game init, so all four are snapshotted.
-#define NGP_BOXES_LOW_COUNT   570 // Boxes 1-19, contiguous from 0x2029318
-#define NGP_BOXES_20_22_COUNT 90
-#define NGP_BOXES_23_24_COUNT 60
-#define NGP_BOX_25_COUNT      30
+// The 25 boxes are not one contiguous block. Their contents, names and wallpapers each sit
+// in several disjointed regions, zeroed by different mechanisms during new-game init, so
+// every box is snapshotted. The snapshot is flat and is filled a box at a time through the
+// storage system's own pointer tables, so it never has to name those regions itself.
+#define NGP_BOX_MON_COUNT     (TOTAL_BOXES_COUNT * IN_BOX_COUNT)
+#define NGP_BOX_NAME_BYTES    9 // Eight characters plus the terminator, the width the storage system stores
 
 // Bag pocket sizes.
 #define NGP_BAG_ITEMS_COUNT   450
@@ -39,10 +40,9 @@
 
 struct NewGamePlusBackup
 {
-	struct CompressedPokemon boxesLow[NGP_BOXES_LOW_COUNT];
-	struct CompressedPokemon boxes20To22[NGP_BOXES_20_22_COUNT];
-	struct CompressedPokemon boxes23To24[NGP_BOXES_23_24_COUNT];
-	struct CompressedPokemon box25[NGP_BOX_25_COUNT];
+	struct CompressedPokemon boxes[NGP_BOX_MON_COUNT];
+	u8 boxNames[TOTAL_BOXES_COUNT][NGP_BOX_NAME_BYTES];
+	u8 boxWallpapers[TOTAL_BOXES_COUNT];
 	u8 dexSeen[NGP_DEX_FLAG_BYTES];
 	u8 dexCaught[NGP_DEX_FLAG_BYTES];
 	// Key items are deliberately absent.
