@@ -389,7 +389,7 @@ You really are something, I'll\ngive you that!\p
 We're not done yet!\p
 
 #org @sText_HannahRematch_FirstMonDown
-You're quite strong, Champion\n[PLAYER]!\pBut, do recall that I've grown\nstronger, too!\p
+You're quite strong, Champion!\pBut, do recall that I've grown\nstronger, too!\p
 
 #org @sText_HannahRematch_LastSwitchIn
 Allow me to show you just how much\nwe've improved!\p
@@ -467,7 +467,7 @@ We won't give up until the very end!\nYou'd better give it your all too!\p
 // Title Defense slide-ins
 /// Rival
 #org @sText_TitleDefense_Rival_FirstMonDown
-You've gotten a lot better too,\nhaven't you [PLAYER]?\p
+You've gotten a lot better too,\nhaven't you?\p
 
 #org @sText_TitleDefense_Rival_LastSwitchIn
 We'll show you just how much\nstronger we've gotten!\p
@@ -513,7 +513,7 @@ My, my[.] I never expected you would\nbe this strong!\p
 Hohoho! I see now what Selene saw\nin you so long ago.\p
 
 #org @sText_TitleDefense_Hawthorne_LowHP
-I'm grateful to have seen how\nmuch you've grown, [PLAYER].\p
+I'm grateful to have seen how\nmuch you've grown.\p
 
 /// Clancy
 #org @sText_TitleDefense_Clancy_FirstMonDown
