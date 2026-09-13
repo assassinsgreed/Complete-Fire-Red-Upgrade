@@ -804,6 +804,7 @@ HallOfFameCommon:
     pause 0x28
     special 0xA9 @ Unclear, but Vanilla FR does it here
     special 0x0 @ Heal the party
+    setvar 0x40AE 0x3 @ Fully charge the Poke Vial
     callasm ResetAllLegendaries
     sethealingplace 0x1 @ Player healing place is now their home
     fadescreenspeed FADEOUT_BLACK 0x18
