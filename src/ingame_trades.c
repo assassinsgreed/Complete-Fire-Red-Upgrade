@@ -665,6 +665,7 @@ void CreateInGameTradePokemonInternal(u8 playerSlot, u8 inGameTradeIdx)
         }
     }
     CalculateMonStats(&gEnemyParty[0]);
+    HealMon(tradeMon);
 }
 
 void CreateInGameGiftPokemon()
