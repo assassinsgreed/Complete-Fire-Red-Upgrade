@@ -27,7 +27,29 @@ battle_speed.c
 #define CB2_QuitPokeDudeBattle ((MainCallback) (0x080111BC | 1))
 
 static void RunBattleFrame(void);
+static void AdvanceNormalPaletteFade(void);
 static u8 GetBattleStepsPerFrame(void);
+
+/*
+	Normal fades only step once per real frame, because they wait on a flag that V-Blank
+	clears. We clear it ourselves so the fade keeps up with the sped-up battle instead of
+	playing out in slow motion - it still looks the same, it just finishes in the same amount
+	of battle time as everything else. This matters because move animations (e.g. Hyper Beam)
+	fade the textbox palette to black and don't wait for it to restore before continuing; at
+	1x there's enough time before the action menu needs it, but at higher speeds the menu can
+	appear while it's still faded out.
+
+	Hardware fades (bag/party menu transitions) are left alone, since forcing them here would
+	let them finish before V-Blank notices, and V-Blank is what everything else waits on.
+*/
+static void AdvanceNormalPaletteFade(void)
+{
+	if (!gPaletteFade->active || gPaletteFade->mode != NORMAL_FADE)
+		return;
+
+	sPlttBufferTransferPending = 0;
+	UpdatePaletteFade();
+}
 
 static void RunBattleFrame(void)
 {
@@ -35,10 +57,9 @@ static void RunBattleFrame(void)
 	BuildOamBuffer();
 	RunTextPrinters();
 
-	//V-Blank ends a fade by reading a one bit "finishing" flag that this call toggles, so an
-	//even number of calls per frame hides it and the fade back in after the bag or party menu
-	//never clears gPaletteFade.active, hanging every controller that waits on it
-	if (!gInBattleSpeedExtraPass)
+	if (gInBattleSpeedExtraPass)
+		AdvanceNormalPaletteFade();
+	else
 		UpdatePaletteFade();
 
 	RunTasks();
