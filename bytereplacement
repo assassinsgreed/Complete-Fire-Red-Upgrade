@@ -9,6 +9,8 @@
 08083B8E 08 F0 D5 FA
 ##Extend Direct Sound Tracks
 081DD0C8 00 CC
+##Use static "Enigma Berry" name instead of the dynamic save-block name. This uses the expected name for item 175 but disables custom names.
+0809C8AA 00 20 00 00
 ##Fix Movement Type 0xC (Hidden)
 0839FBF8 B5 FF 05 08
 ##Remove GF Evolution Limiters
