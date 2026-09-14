@@ -529,6 +529,7 @@ ZCrystals:
 .align 1
 SpecialItems:
     .hword ITEM_SHIMMER_STONE
+    .hword ITEM_RARE_CANDY
     .hword ITEM_ZEROMIN
     .hword ITEM_HEALTH_WING
     .hword ITEM_MUSCLE_WING
