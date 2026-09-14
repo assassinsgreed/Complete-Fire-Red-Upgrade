@@ -765,3 +765,6 @@
 080F4218 80
 080F4258 80
 080F42A0 80
+
+## Point the Laplaz interior save-name special case at its populated name
+080C4DA0 80 FD 45 08

@@ -836,3 +836,9 @@ SummaryScreenExpDisplay2:
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 .org 0x45fd52, 0xff		@pal slot of scroll arrow in Fame Checker
 	.byte 0x9
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@ Laplaz Town name used by the save-dialog map-name special case
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.org 0x45fd80, 0xff
+	.byte 0xC6, 0xD5, 0xE4, 0xE0, 0xD5, 0xEE, 0x00, 0xCE, 0xE3, 0xEB, 0xE2, 0xFF
