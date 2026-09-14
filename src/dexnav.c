@@ -2004,9 +2004,12 @@ bool8 InitDexNavHUD(u16 species, u8 environment, bool8 detectorMode)
 
 	u8 totalEncounterChance = GetTotalEncounterChance(sDexNavHudPtr->species, environment);
 	u8 randVal = (GetSetPokedexFlag(dexNum, FLAG_GET_CAUGHT)) ? 0 : Random() % 100; //Pokemon already caught are easy to catch again
+	u8 findChance = totalEncounterChance * 2;
+	if (findChance < DEXNAV_MIN_FIND_CHANCE)
+		findChance = DEXNAV_MIN_FIND_CHANCE;
 	sDexNavHudPtr->elevation = gEventObjects[gPlayerAvatar->eventObjectId].currentElevation; //Constant elevation for all tiles (helps prevent crashes in caves)
 	//*((u8*) 0x2023D70) = randVal; //For debugging
-	if (!detectorMode && (randVal >= totalEncounterChance * 2 //Harder Pokemon to find in the area are half as hard to find with the DexNav
+	if (!detectorMode && (randVal >= findChance //Harder Pokemon to find in the area are half as hard to find with the DexNav
 	|| gDexNavCooldown
 	|| VarGet(VAR_REPEL_STEP_COUNT) == 1)) //1 step remaining on the repel - player takes a step, repel wears off and they can search again
 	{

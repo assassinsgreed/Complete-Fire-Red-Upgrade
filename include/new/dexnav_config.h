@@ -12,6 +12,9 @@
 //Tile amount
 #define SNEAKING_PROXIMITY 5
 
+//Minimum chance of finding a searched Pokemon before tile placement is attempted
+#define DEXNAV_MIN_FIND_CHANCE 60
+
 //Percent chance the Pokemon relocates on each successive approach in caves and on water
 //(requires DEXNAV_POKEMON_MOVE_IN_CAVES_WATER). The entry count caps how many times it can move.
 #define DEXNAV_MOVEMENT_CHANCES {40, 20}
