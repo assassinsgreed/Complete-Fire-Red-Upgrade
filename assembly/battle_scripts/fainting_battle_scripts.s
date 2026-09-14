@@ -96,6 +96,11 @@ BattleScript_PrintCaughtMonInfo:
 	displaydexinfo
 BattleScript_CaughtPokemonSkipNewDex:
 	callasm TrySkipBattleNicknameOffer
+	callasm HandlePokeChip
+	jumpifword NOTEQUALS BATTLE_STRING_LOADER gText_HoldingPokeChip BattleScript_CaughtPokemonContinue
+	printstring 0x184
+	waitmessage DELAY_HALFSECOND
+BattleScript_CaughtPokemonContinue:
 	goto 0x81D9A63
 	
 BattleScript_BenjaminButterfreeDevolution:
