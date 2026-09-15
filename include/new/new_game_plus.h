@@ -8,8 +8,9 @@
 /**
  * \file new_game_plus.h
  * \brief New Game+ : starts a fresh save that inherits the PC boxes, the Pokedex,
- *		  every bag pocket except key items, money, the game modifiers and the trainer ID
- *		  from a save that has already beaten the game.
+ *		  every bag pocket, money, the game modifiers and the trainer ID
+ *		  from a save that has already beaten the game, except for a few story
+ *		  key items that must not carry over.
  */
 
 // The 25 boxes are not one contiguous block. Their contents, names and wallpapers each sit
@@ -20,10 +21,11 @@
 #define NGP_BOX_NAME_BYTES    9 // Eight characters plus the terminator, the width the storage system stores
 
 // Bag pocket sizes.
-#define NGP_BAG_ITEMS_COUNT   450
-#define NGP_BAG_BALLS_COUNT   50
-#define NGP_TMHM_COUNT        106
-#define NGP_BAG_BERRIES_COUNT 75
+#define NGP_BAG_ITEMS_COUNT    450
+#define NGP_BAG_KEY_ITEMS_COUNT 75
+#define NGP_BAG_BALLS_COUNT    50
+#define NGP_TMHM_COUNT         106
+#define NGP_BAG_BERRIES_COUNT  75
 
 #define NGP_DEX_FLAG_BYTES    125 // (999 / 8) + 1, matching SaveBlock1's dex arrays
 
@@ -33,7 +35,7 @@
 //Amethyst's custom ones are covered by vars and flags, listed in src/new_game_plus.c.
 #define NGP_OPTION_BYTES      3
 #define NGP_OPTION_VAR_COUNT  5
-#define NGP_OPTION_FLAG_COUNT 8
+#define NGP_OPTION_FLAG_COUNT 9
 
 #define NGP_ACTIVE_FLAG_COUNT 26
 #define NGP_MODIFIER_FLAG_WORDS 2
@@ -45,8 +47,8 @@ struct NewGamePlusBackup
 	u8 boxWallpapers[TOTAL_BOXES_COUNT];
 	u8 dexSeen[NGP_DEX_FLAG_BYTES];
 	u8 dexCaught[NGP_DEX_FLAG_BYTES];
-	// Key items are deliberately absent.
 	struct ItemSlot bagItems[NGP_BAG_ITEMS_COUNT];
+	struct ItemSlot bagKeyItems[NGP_BAG_KEY_ITEMS_COUNT];
 	struct ItemSlot bagBalls[NGP_BAG_BALLS_COUNT];
 	struct ItemSlot bagTMHM[NGP_TMHM_COUNT];
 	struct ItemSlot bagBerries[NGP_BAG_BERRIES_COUNT];

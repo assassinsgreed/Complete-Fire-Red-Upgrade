@@ -1391,6 +1391,8 @@ GameCustomizationComplete:
     compare 0x4001 0x1 @ Giving QoL items
     if equal _call GiveQoLItemsFromStart
     setvar 0x4001 0x0 @ Reset QOL item control var
+    checkflag 0x94C @ in NG+
+    if SET _call SetupNGPlusItems
 	msgboxnormal
 	release
 	end
@@ -1453,6 +1455,32 @@ GiveQoLItemsFromStart:
     setvar 0x40AE 0x3 @ Fully charge the Poke Vial
     addmoney 2000 @ 5000 total
     @ Do not give DexNav (0x91E) - this is used to control hard level caps!
+    return
+
+SetupNGPlusItems:
+    checkitem ITEM_PORTA_PC 1
+    compare LASTRESULT TRUE
+    IF FALSE _goto CheckInfiniteRepel
+    setflag 0x935 @ Portable PC active
+CheckInfiniteRepel:
+    checkitem ITEM_INFINITE_REPEL 1
+    compare LASTRESULT TRUE
+    IF FALSE _goto CheckPokeVial
+    setflag 0x937 @ Infinite Repel active
+CheckPokeVial:
+    checkitem ITEM_POKE_VIAL 1
+    compare LASTRESULT TRUE
+    IF FALSE _goto CheckADM
+    setflag 0x938 @ PokeVial active
+    setvar 0x40AE 0x3 @ Fully charge the Poke Vial
+CheckADM:
+    checkitem ITEM_ADM 1
+    compare LASTRESULT TRUE
+    IF FALSE _goto GiveDexNav
+    setflag 0x939 @ ADM active
+GiveDexNav:
+    setflag 0x91E @ DexNav; player must have this to be in NG+ (must get pokedex)
+    setflag 0x92A @ Show held items in DexNav UI
     return
 
 GameCustomization_Tutorials:

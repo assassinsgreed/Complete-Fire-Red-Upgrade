@@ -69,6 +69,7 @@ static const u16 sNewGamePlusOptionFlags[] =
 	FLAG_OPTIONS_SHORT_NURSE_HEAL,
 	FLAG_DIVERGENT_WILD_ENCOUNTERS,
 	FLAG_DIVERGENT_WILD_ENCOUNTERS_OPTION_SHOWN,
+	FLAG_SHOW_IVS_IN_SUMMARY,
 };
 
 _Static_assert(ARRAY_COUNT(sNewGamePlusOptionVars) == NGP_OPTION_VAR_COUNT, "NGP_OPTION_VAR_COUNT is stale");
@@ -149,6 +150,15 @@ static void RestoreBoxes(struct NewGamePlusBackup* backup)
 	}
 }
 
+static void RemoveTransferredStoryKeyItems(void)
+{
+	RemoveBagItem(ITEM_SERPENT_KEY, 1);
+	RemoveBagItem(ITEM_CYPRESS_KEY, 1);
+	RemoveBagItem(ITEM_CERBERUS_KEY, 1);
+	RemoveBagItem(ITEM_OWL_KEY, 1);
+	RemoveBagItem(ITEM_VICTORY_FLAG, 1);
+}
+
 void NewGamePlusCapture(void)
 {
 	struct NewGamePlusBackup* backup;
@@ -170,8 +180,9 @@ void NewGamePlusCapture(void)
 	Memcpy(backup->dexSeen, gSaveBlock1->dexSeenFlags, sizeof(backup->dexSeen));
 	Memcpy(backup->dexCaught, gSaveBlock1->dexCaughtFlags, sizeof(backup->dexCaught));
 
-	// Copy player bag contents, minus key items. Verbatim is safe because bag quantities are plaintext
+	// Copy player bag contents, including key items. The story keys below are stripped when restored.
 	Memcpy(backup->bagItems, sBagPocketArrangement.itemRam, sizeof(backup->bagItems));
+	Memcpy(backup->bagKeyItems, sBagPocketArrangement.keyItemRam, sizeof(backup->bagKeyItems));
 	Memcpy(backup->bagBalls, sBagPocketArrangement.pokeBallRam, sizeof(backup->bagBalls));
 	Memcpy(backup->bagTMHM, sBagPocketArrangement.tmRam, sizeof(backup->bagTMHM));
 	Memcpy(backup->bagBerries, sBagPocketArrangement.berryRam, sizeof(backup->bagBerries));
@@ -222,14 +233,20 @@ void NewGamePlusRestore(void)
 	Memcpy(gSaveBlock1->dexCaughtFlags, backup->dexCaught, sizeof(backup->dexCaught));
 
 	Memcpy(sBagPocketArrangement.itemRam, backup->bagItems, sizeof(backup->bagItems));
+	Memcpy(sBagPocketArrangement.keyItemRam, backup->bagKeyItems, sizeof(backup->bagKeyItems));
 	Memcpy(sBagPocketArrangement.pokeBallRam, backup->bagBalls, sizeof(backup->bagBalls));
 	Memcpy(sBagPocketArrangement.tmRam, backup->bagTMHM, sizeof(backup->bagTMHM));
 	Memcpy(sBagPocketArrangement.berryRam, backup->bagBerries, sizeof(backup->bagBerries));
 
-	// Both are key items and must be given so their "pouches" are accessible
-	AddBagItem(ITEM_TM_CASE, 1);
-	AddBagItem(ITEM_BERRY_POUCH, 1);
-	FlagSet(FLAG_SYS_GOT_BERRY_POUCH);
+	// Both are key items and must exist so their "pouches" are accessible.
+	if (!CheckBagHasItem(ITEM_TM_CASE, 1))
+		AddBagItem(ITEM_TM_CASE, 1);
+	if (!CheckBagHasItem(ITEM_BERRY_POUCH, 1))
+	{
+		AddBagItem(ITEM_BERRY_POUCH, 1);
+		FlagSet(FLAG_SYS_GOT_BERRY_POUCH);
+	}
+	RemoveTransferredStoryKeyItems();
 
 	RestoreModifierFlags(backup);
 
