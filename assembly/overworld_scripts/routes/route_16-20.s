@@ -122,6 +122,8 @@ EventScript_Route17_Rival:
     compare StoryEventVar PlayerAndRivalCanGoOnJourney
     if greaterorequal _goto EventScript_Route17_Rival_BeforeChoosingStarter
     lock
+    checkflag 0x93D @ Skipping Cutscenes
+    if SET _goto SkippingCutscene_Route17_MeetingHawthorneAndSelene
     faceplayer
     msgbox gText_Route17_MetWithRival MSG_NORMAL
     applymovement Rival m_LookUp

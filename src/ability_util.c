@@ -468,12 +468,14 @@ bool8 IsTargetAbilityIgnoredNoMove(u8 defAbility, u8 atkAbility)
 
 bool8 SpeciesHasTurboblaze(unusedArg u16 species)
 {
+	return species == SPECIES_CHARIZARD_GIGA
 	#if (defined SPECIES_RESHIRAM && defined SPECIES_KYUREM_WHITE)
-	return species == SPECIES_RESHIRAM
-		|| species == SPECIES_KYUREM_WHITE;
+	    || species == SPECIES_RESHIRAM
+		|| species == SPECIES_KYUREM_WHITE
 	#else
-	return FALSE;
+	return FALSE
 	#endif
+	;
 }
 
 bool8 SpeciesHasTeravolt(unusedArg u16 species)
