@@ -768,3 +768,15 @@
 
 ## Point the Laplaz interior save-name special case at its populated name
 080C4DA0 80 FD 45 08
+
+## Adding a 6th option to the PC Box menu (Sort)
+0808C76C 06
+# Resize each Pokemon box row so the 6th option fits without overlapping the textbox
+0808C766 0E
+# Menu WindowTemplate height: 6 rows at 14px plus the 2px top inset needs 11 tiles.
+# Takes the window from BG0 blocks 1-170 to 1-187; the field message box starts at 408.
+083CDA4C 0B
+# Cursor up-wrap target
+0808C49E 05
+# Cursor down-wrap limit
+0808C4B6 05

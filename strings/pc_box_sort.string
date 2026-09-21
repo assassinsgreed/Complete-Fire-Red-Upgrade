@@ -1,0 +1,59 @@
+#org @gText_PCBoxSortMenuName
+Sort Boxes
+
+#org @gText_PCBoxSortMenuDescription
+Sort the Pok\emon in your boxes,\nleaving no gaps between Pok\emon.
+
+#org @gText_PCBoxSortSpeciesAZ
+Species A-Z
+
+#org @gText_PCBoxSortSpeciesAZDescription
+Sorts every Box by species name,\nfrom A to Z.
+
+#org @gText_PCBoxSortSpeciesZA
+Species Z-A
+
+#org @gText_PCBoxSortSpeciesZADescription
+Sorts every Box by species name,\nfrom Z to A.
+
+#org @gText_PCBoxSortDexLowHigh
+Pok\edex Low-High
+
+#org @gText_PCBoxSortDexLowHighDescription
+Sorts every Box by Pok\edex number,\nlowest first.
+
+#org @gText_PCBoxSortDexHighLow
+Pok\edex High-Low
+
+#org @gText_PCBoxSortDexHighLowDescription
+Sorts every Box by Pok\edex number,\nhighest first.
+
+#org @gText_PCBoxSortLevelLowHigh
+Level Low-High
+
+#org @gText_PCBoxSortLevelLowHighDescription
+Sorts every Box by level, lowest\nfirst.
+
+#org @gText_PCBoxSortLevelHighLow
+Level High-Low
+
+#org @gText_PCBoxSortLevelHighLowDescription
+Sorts every Box by level, highest\nfirst.
+
+#org @gText_PCBoxSortNevermindDescription
+Return to all Box options.
+
+#org @gText_PCBoxSortConfirm
+Every Pok\emon will be moved and\nall gaps closed up. Is that okay?
+
+#org @gText_PCBoxSortWorking
+Sorting your Boxes[.]
+
+#org @gText_PCBoxSortDone
+Your Boxes have been sorted!
+
+#org @gText_PCBoxSortNothingToDo
+There are no Pok\emon in the Boxes.
+
+#org @gText_PCBoxSortFailed
+The Boxes couldn't be sorted.

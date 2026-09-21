@@ -375,6 +375,7 @@ pcSelect_SwapDecision 0808ed8c 1
 ##PC Box Menu Reorder
 pcBoxMenu_RemapInput 0808c45c 0
 pcBoxMenu_ReturnCursorRemap 0808c700 2
+pcBoxMenu_CheckSortSelection 0808c598 0
 
 ##Keypad
 ReadKeys 080005E8 0
