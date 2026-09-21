@@ -1070,6 +1070,9 @@ void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
 				|| gFieldMoves[j] == MOVE_WATERFALL)
 					continue; //Don't allow these field moves to appear in the list
 
+				if (gFieldMoves[j] == MOVE_SURF && !IsSurfUnlocked())
+					continue; //Don't allow Surfing until the Pluto HQ story sequence is done
+
 				#ifdef ONLY_CHECK_ITEM_FOR_HM_USAGE
 				if (gFieldMoves[j] == MOVE_ROCKCLIMB
 				&& !CheckBagHasItem(ITEM_HM08_ROCK_CLIMB, 1))
@@ -1202,6 +1205,9 @@ static bool8 SetUpFieldMove_Surf(void)
 		return FALSE;
 
 	if (IsCurrentAreaVolcano())
+		return FALSE;
+
+	if (!IsSurfUnlocked())
 		return FALSE;
 
 	u16 item = ITEM_NONE;
@@ -1358,9 +1364,19 @@ bool8 HasBadgeToUseFieldMove(unusedArg u8 id)
 	#endif
 }
 
+bool8 IsSurfUnlocked(void)
+{
+	#ifdef DEBUG_HMS
+		return TRUE;
+	#else
+		//New Game Plus carries HMs over, so the story flag is what unlocks Surf
+		return FlagGet(FLAG_HIDE_TEAM_PLUTO_GRUNTS_AND_KURTIS_IN_HQ);
+	#endif
+}
+
 bool8 HasBadgeToUseSurf(void)
 {
-	return HasBadgeToUseFieldMove(FIELD_MOVE_SURF);
+	return IsSurfUnlocked() && HasBadgeToUseFieldMove(FIELD_MOVE_SURF);
 }
 
 bool8 HasBadgeToUseFlash(void)

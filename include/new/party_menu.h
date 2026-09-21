@@ -23,6 +23,7 @@ void CursorCb_NoEntry(u8 taskId);
 void DisplayPartyPokemonSelectForBattle(u8 slot);
 u8 CanPokemonSelectedBeEnteredInBattleTower(void);
 bool8 HasBadgeToUseFieldMove(u8 id);
+bool8 IsSurfUnlocked(void);
 bool8 HasBadgeToUseSurf(void);
 bool8 HasBadgeToUseFlash(void);
 bool8 HasBadgeToUseWaterfall(void);

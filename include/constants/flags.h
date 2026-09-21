@@ -81,8 +81,8 @@
 #define FLAG_HIDE_ABBY_IN_BRUCCIE_VILLAGE                  0x047
 #define FLAG_HIDE_TEAM_PLUTO_IN_CALICIN_BAY                0x048
 #define FLAG_HIDE_TEAM_PLUTO_YOLENA_CALICIN_BAY            0x049
-#define FLAG_HIDE_TEAM_PLUTO_GRUNTS_AND_KURTIS_IN_HQ       0x04A
 */
+#define FLAG_HIDE_TEAM_PLUTO_GRUNTS_AND_KURTIS_IN_HQ       0x04A
 #define FLAG_HIDE_SHAYMIN                                  0x04B
 #define FLAG_HIDE_KYOGRE                                   0x04C
 /*
