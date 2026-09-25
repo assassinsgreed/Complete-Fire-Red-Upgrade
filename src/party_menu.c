@@ -3297,7 +3297,7 @@ static void Task_HandleNicknameChangeYesNoInput(u8 taskId)
 
 void NicknameMon()
 {
-	if (gStringVar3[0] != '\0')
+	if (gStringVar3[0] != EOS)
 	{
 		SetMonData(&gPlayerParty[gPartyMenu.slotId], MON_DATA_NICKNAME, gStringVar3);
 	}
@@ -3306,7 +3306,7 @@ void NicknameMon()
 
 static void Task_NicknameChangedMsg(u8 taskId)
 {
-	if (gStringVar3[0] != '\0')
+	if (gStringVar3[0] != EOS)
 	{
 		GetMonData(&gPlayerParty[gPartyMenu.slotId], MON_DATA_NICKNAME, gStringVar1);
 		StringExpandPlaceholders(gStringVar4, gText_NicknameChanged);
@@ -3326,6 +3326,11 @@ static void Task_ChangeNickname(u8 taskId)
 	// Free party pointers before opening the naming screen to avoid leaking
 	// windows/sprites/etc. across repeated openings of the naming screen.
 	FreePartyPointers();
+	// The naming screen writes its destination buffer only when at least one
+	// non-blank character was entered, so blank it first: whatever gStringVar3
+	// already held (the start menu's clock text, for one) would otherwise read
+	// back as the entered nickname.
+	gStringVar3[0] = EOS;
 	DoNamingScreen(NAMING_SCREEN_NAME_RATER, gStringVar3, species, gender, PID, (void*) NicknameMon);
 	DestroyTask(taskId);
 }
