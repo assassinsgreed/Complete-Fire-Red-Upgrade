@@ -1021,6 +1021,28 @@ const u8 gFieldMoveBadgeRequirements[FIELD_MOVE_COUNT] =
 
 #endif
 
+//sPartyMenuInternal->numActions must cap at 8 to avoid graphical bugs
+#define MAX_PARTY_MENU_ACTIONS 8
+
+static void AppendPartyMenuAction(u8 action)
+{
+	if (sPartyMenuInternal->numActions >= MAX_PARTY_MENU_ACTIONS - 1)
+		return;
+
+	AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, action);
+}
+
+//Only allow field moves that fill in space alongside required options
+static bool8 HasRoomForOptionalFieldMove(struct Pokemon *mons)
+{
+	u8 pending = 1; //Cancel
+
+	if (!ShouldDisablePartyMenuItemsBattleTower())
+		pending += (GetMonData(&mons[1], MON_DATA_SPECIES, NULL) != SPECIES_NONE) ? 3 : 2; //Switch, Item, Nickname
+
+	return sPartyMenuInternal->numActions + pending < MAX_PARTY_MENU_ACTIONS;
+}
+
 void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
 {
 	u8 i, j, k;
@@ -1047,7 +1069,7 @@ void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
 		return;
 	}
 
-	AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_SUMMARY);
+	AppendPartyMenuAction(MENU_SUMMARY);
 
 	#ifdef FLAG_SANDBOX_MODE
 	if (FlagGet(FLAG_SANDBOX_MODE) && FlagGet(FLAG_SYS_GAME_CLEAR))
@@ -1079,7 +1101,7 @@ void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
 					continue; //Don't allow Rock Climbing until the item is obtained
 				#endif
 
-				AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, j + MENU_FIELD_MOVES);
+				AppendPartyMenuAction(j + MENU_FIELD_MOVES);
 				++k;
 
 				#ifdef ONLY_CHECK_ITEM_FOR_HM_USAGE
@@ -1100,7 +1122,7 @@ void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
 	if (species != SPECIES_NONE && species != SPECIES_EGG)
 	{
 		#ifdef UNBOUND
-		if (k < MAX_MON_MOVES && !knowsCut) //Doesn't know 4 field moves
+		if (k < MAX_MON_MOVES && !knowsCut && HasRoomForOptionalFieldMove(mons)) //Doesn't know 4 field moves, and the menu can spare a slot
 		{
 			if (GetCurrentRegionMapSectionId() == MAPSEC_GRIM_WOODS
 			&& VarGet(VAR_SQ_WEED_WHACKER) > 0 && VarGet(VAR_SQ_WEED_WHACKER) < 2 //Weed Whacker in progress
@@ -1111,13 +1133,13 @@ void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
 			#endif
 			)
 			{
-				AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_FIELD_MOVES + FIELD_MOVE_CUT);
+				AppendPartyMenuAction(MENU_FIELD_MOVES + FIELD_MOVE_CUT);
 				++k;
 			}
 		}
 		#endif
 
-		if (k < MAX_MON_MOVES && !knowsFly) //Doesn't know 4 field moves
+		if (k < MAX_MON_MOVES && !knowsFly && HasRoomForOptionalFieldMove(mons)) //Doesn't know 4 field moves, and the menu can spare a slot
 		{
 			if (Overworld_MapTypeAllowsTeleportAndFly(gMapHeader.mapType) //Only add if usable
 			#ifndef DEBUG_HMS
@@ -1135,12 +1157,12 @@ void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
 			#endif
 			)
 			{
-				AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_FIELD_MOVES + FIELD_MOVE_FLY);
+				AppendPartyMenuAction(MENU_FIELD_MOVES + FIELD_MOVE_FLY);
 				++k;
 			}
 		}
 
-		if (k < MAX_MON_MOVES && !knowsDig) //Doesn't know 4 field moves
+		if (k < MAX_MON_MOVES && !knowsDig && HasRoomForOptionalFieldMove(mons)) //Doesn't know 4 field moves, and the menu can spare a slot
 		{
 			if (CanUseEscapeRopeOnCurrMap() //Only add if usable
 			#ifndef DEBUG_HMS
@@ -1155,7 +1177,7 @@ void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
 			#endif
 			)
 			{
-				AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_FIELD_MOVES + FIELD_MOVE_DIG);
+				AppendPartyMenuAction(MENU_FIELD_MOVES + FIELD_MOVE_DIG);
 				++k;
 			}
 		}
@@ -1168,14 +1190,15 @@ SKIP_FIELD_MOVES:
 	if (!ShouldDisablePartyMenuItemsBattleTower())
 	{
 		if (GetMonData(&mons[1], MON_DATA_SPECIES, NULL) != SPECIES_NONE)
-			AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_SWITCH);
+			AppendPartyMenuAction(MENU_SWITCH);
 		if (IsMail(GetMonData(&mons[slotId], MON_DATA_HELD_ITEM, NULL)))
-			AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_MAIL);
+			AppendPartyMenuAction(MENU_MAIL);
 		else
-			AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_ITEM);
-		AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_NICKNAME);
+			AppendPartyMenuAction(MENU_ITEM);
+		AppendPartyMenuAction(MENU_NICKNAME);
 	}
 
+	//Guaranteed to fit: AppendPartyMenuAction reserves the last slot for this
 	AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_CANCEL1);
 }
 

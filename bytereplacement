@@ -19,6 +19,8 @@
 080CF566 17 E0
 08126C26 C0 46 C0 46 C0 46 C0 46
 08126C4C 08 E0
+##Replace Vanilla Fire Red's "Cycling" text on maps 3,35 and 3,36 (Routes 17 and 18) with the surfing text.
+08124A60 0C E0
 ##Disable Plot Related Trade Restrictions
 08009754 C0 46 01 20
 0800975C C0 46 01 20
