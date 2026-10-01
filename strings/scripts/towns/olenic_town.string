@@ -74,6 +74,9 @@ I'm sorry, but the conservatory is a\nsensitive area. Only the professor\land Ch
 #org @gText_OlenicProfessorsLab_ConservatoryAide_AfterBecomingChampion
 Ah, Champion [PLAYER].\pYou may enter the professor's\nconservatory at your leisure.
 
+#org @gText_OlenicProfessorsLab_ConservatoryAide_InNGPlus
+Ah, [PLAYER].\pIn recognition of your past\naccomplishments, you may enter the\lprofessor's conservatory at your\lleisure.
+
 #org @gText_OlenicProfessorsLab_Researcher
 We're hard at work researching the\nhabitats of Pok\emon.
 

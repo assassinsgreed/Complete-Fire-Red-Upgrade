@@ -121,8 +121,11 @@ MapScript_OlenicLab:
 	.byte MAP_SCRIPT_TERMIN
 
 MapScript_MoveConservatoryAide:
+    checkflag 0x94C @ NG+ Obedience checks
+    if SET _goto MoveAide
     compare 0x4071 0x2
     if notequal _goto End
+MoveAide:
     movesprite2 0x3 0x3 0x2
     end
 
@@ -183,6 +186,8 @@ LevelScript_ReceivingPokedex:
 	end
 
 LevelScript_GainingAccessToConservatory:
+    checkflag 0x94C @ NG+ Obedience checks
+    if SET _goto ConservatoryAccessComplete
     pause DELAY_HALFSECOND
     sound 0x15 @ Exclaim
 	applymovement Hawthorne m_Surprise
@@ -212,6 +217,7 @@ LevelScript_GainingAccessToConservatory:
     msgbox gText_OlenicProfessorsLab_HawthorneGivesPlayerBlessingToCatchPokemonInGarden MSG_NORMAL
     applymovement Hawthorne m_HawthorneReturnsToDeskFromConservatory
     waitmovement Hawthorne
+ConservatoryAccessComplete:
     addvar 0x4071 0x1 @ End cutscene
     end
 
@@ -234,11 +240,17 @@ EventScript_OlenicLab_Hawthorne:
 EventScript_OlenicLab_HawthornesConservatoryAide:
     checkflag 0x82C @ Game cleared
     if SET _goto ConservatoryAide_AfterChampion
+    checkflag 0x94C @ NG+ Obedience checks
+    if SET _goto ConservatoryAide_InNGPlus
     npcchatwithmovement gText_OlenicProfessorsLab_ConservatoryAide m_LookDown
     end
 
 ConservatoryAide_AfterChampion:
     npcchatwithmovement gText_OlenicProfessorsLab_ConservatoryAide_AfterBecomingChampion m_LookDown
+    end
+
+ConservatoryAide_InNGPlus:
+    npcchatwithmovement gText_OlenicProfessorsLab_ConservatoryAide_InNGPlus m_LookDown
     end
 
 .global EventScript_OlenicLab_Researcher
