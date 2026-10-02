@@ -537,12 +537,12 @@ SpecialItems:
     .hword ITEM_GENIUS_WING
     .hword ITEM_CLEVER_WING
     .hword ITEM_SWIFT_WING
-    .hword ITEM_NEGATIVE_HEALTH_WING
-    .hword ITEM_NEGATIVE_MUSCLE_WING
-    .hword ITEM_NEGATIVE_RESIST_WING
-    .hword ITEM_NEGATIVE_GENIUS_WING
-    .hword ITEM_NEGATIVE_CLEVER_WING
-    .hword ITEM_NEGATIVE_SWIFT_WING
+    .hword ITEM_WEAK_WING
+    .hword ITEM_FRAIL_WING
+    .hword ITEM_EXPOSED_WING
+    .hword ITEM_DENSE_WING
+    .hword ITEM_SIMPLE_WING
+    .hword ITEM_SLOW_WING
     .hword ITEM_NONE
 
 .global EventScript_BattleFrontier_SWShadyRelicSeller
