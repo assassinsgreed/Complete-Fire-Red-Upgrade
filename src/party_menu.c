@@ -1686,6 +1686,7 @@ static void AdjustPartyMonHPAfterMaxHPChange(struct Pokemon* mon, u16 oldHP, u16
 static void ItemUseCB_EVReducingBerry(u8 taskId, TaskFunc func);
 static void ItemUseCB_EVEraser(u8 taskId, TaskFunc func);
 static void ItemUseCB_IVUpItem(u8 taskId, TaskFunc func);
+static void ItemUseCB_IVDownItem(u8 taskId, TaskFunc func);
 static void ItemUseCB_FormChangeItem(u8 taskId, TaskFunc func);
 static void ItemUse_ShowPartyMenuFromField(u8 taskId);
 static void ItemUseCB_DNASplicersStep(u8 taskId, TaskFunc func);
@@ -2143,6 +2144,49 @@ static void ItemUseCB_IVUpItem(u8 taskId, TaskFunc func)
 	GetMonNickname(mon, gStringVar1);
 	StringCopy(gStringVar2, gStatNamesTable[stat]);
 	StringExpandPlaceholders(gStringVar4, gText_IVUpItemRaisedStat);
+
+	RemoveBagItem(item, 1);
+	DisplayPartyMenuMessage(gStringVar4, TRUE);
+	ScheduleBgCopyTilemapToVram(2);
+	gTasks[taskId].func = func;
+}
+
+void FieldUseFunc_IVDownItem(u8 taskId)
+{
+	gItemUseCB = ItemUseCB_IVDownItem;
+	SetUpItemUseCallback(taskId);
+}
+
+#define MIN_IV 0
+extern const u8 gText_IVDownItemLoweredStat[];
+static void ItemUseCB_IVDownItem(u8 taskId, TaskFunc func)
+{
+	struct Pokemon* mon = &gPlayerParty[gPartyMenu.slotId];
+	u16 item = Var800E;
+	u8 stat = ItemId_GetHoldEffectParam(item) - 1; // Based on item's Quality stat
+	u16 oldHP = GetMonData(mon, MON_DATA_HP, NULL);
+	u16 oldMaxHP = GetMonData(mon, MON_DATA_MAX_HP, NULL);
+	u8 iv = (stat < NUM_STATS) ? GetMonData(mon, MON_DATA_HP_IV + stat, NULL) : MIN_IV;
+
+	PlaySE(SE_SELECT);
+
+	if (iv == MIN_IV) // Already at rock bottom, or the item's quality doesn't associate to an actual stat
+	{
+		gPartyMenuUseExitCallback = FALSE;
+		DisplayPartyMenuMessage(gText_WontHaveEffect, TRUE);
+		ScheduleBgCopyTilemapToVram(2);
+		gTasks[taskId].func = func;
+		return;
+	}
+
+	--iv;
+	SetMonData(mon, MON_DATA_HP_IV + stat, &iv);
+	CalculateMonStats(mon);
+	AdjustPartyMonHPAfterMaxHPChange(mon, oldHP, oldMaxHP);
+
+	GetMonNickname(mon, gStringVar1);
+	StringCopy(gStringVar2, gStatNamesTable[stat]);
+	StringExpandPlaceholders(gStringVar4, gText_IVDownItemLoweredStat);
 
 	RemoveBagItem(item, 1);
 	DisplayPartyMenuMessage(gStringVar4, TRUE);

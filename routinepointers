@@ -325,6 +325,14 @@ FieldUseFunc_IVUpItem 8734458
 FieldUseFunc_IVUpItem 8734484
 FieldUseFunc_IVUpItem 87344B0
 
+## IV Reducing Wings
+FieldUseFunc_IVDownItem 87334B4
+FieldUseFunc_IVDownItem 87334E0
+FieldUseFunc_IVDownItem 873350C
+FieldUseFunc_IVDownItem 8733538
+FieldUseFunc_IVDownItem 8733564
+FieldUseFunc_IVDownItem 8733590
+
 ## Shimmering Stone - toggles the chosen mon between normal and shiny
 FieldUseFunc_ShimmeringStone 872EA48
 

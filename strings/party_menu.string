@@ -37,6 +37,9 @@ Dive underwater.
 #org @gText_IVUpItemRaisedStat
 [BUFFER1]'s [BUFFER2] potential\nwas raised![PAUSE_UNTIL_PRESS]
 
+#org @gText_IVDownItemLoweredStat
+[BUFFER1]'s [BUFFER2] potential\nwas lowered![PAUSE_UNTIL_PRESS]
+
 #org @gText_FormChangeItem
 [BUFFER1] changed Forme![PAUSE_UNTIL_PRESS]
 
