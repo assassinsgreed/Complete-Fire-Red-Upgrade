@@ -621,6 +621,7 @@ BattleAlistair:
     msgboxsign
     msgbox gText_CarnelidgeVolcanoPeak_Conclusion_PlayerAvertedTragedy MSG_KEEPOPEN
     waitfanfare
+    closeonkeypress
     msgboxnormal
     special 0x0 @ Heal player party
     setflag 0x829 @ ShowHide Pokedex in menu
