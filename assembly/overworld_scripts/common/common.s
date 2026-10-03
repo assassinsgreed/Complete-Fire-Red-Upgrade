@@ -90,6 +90,8 @@ EventScript_Common_RockSmash:
     applymovement LASTTALKED m_SmashRock
     waitmovement ALLEVENTS
     hidesprite LASTTALKED
+    checkflag 0x93A @ Infinite Repel active
+    if SET _goto ReleaseAll
     special 0xAB @ Attempt to trigger battle
     goto ReleaseAll
 
