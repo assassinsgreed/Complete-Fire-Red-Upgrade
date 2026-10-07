@@ -645,7 +645,11 @@ u8 ContextNpcGetTextColor(void)
 {
 	u16 gfxId;
 
-	if (gSpecialVar_TextColor != 0xFF)
+	if (FlagGet(FLAG_OPTIONS_BLACK_TEXT))
+	{
+		return 2; //Black
+	}
+	else if (gSpecialVar_TextColor != 0xFF)
 	{
 		return gSpecialVar_TextColor;
 	}

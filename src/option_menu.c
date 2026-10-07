@@ -89,6 +89,8 @@ enum
     MENUITEM_LEVEL_CAPS,
     MENUITEM_OVERWORLD_SPEED,
     MENUITEM_BATTLE_SPEED,
+    MENUITEM_SIGN_BOX,
+    MENUITEM_TEXT_COLOURS,
     MENUITEM_CANCEL_PAGE_3,
     MENUITEM_PAGE3_COUNT,
 };
@@ -135,6 +137,8 @@ extern const u8 gText_OptionsMenu_SkipNicknaming[];
 extern const u8 gText_OptionsMenu_BallShortcut[];
 extern const u8 gText_OptionsMenu_NurseHealing[];
 extern const u8 gText_OptionsMenu_PokemonSelection[];
+extern const u8 gText_OptionsMenu_SignBox[];
+extern const u8 gText_OptionsMenu_TextColours[];
 
 static const u8 *const sOptionMenuItemsNames[MENUITEM_COUNT] =
 {
@@ -162,6 +166,8 @@ static const u8 *const sOptionMenuItemsNames_ThirdPage[MENUITEM_PAGE3_COUNT] =
     [MENUITEM_LEVEL_CAPS] = gText_OptionsMenu_LevelCaps,
     [MENUITEM_OVERWORLD_SPEED] = gText_OptionsMenu_OverworldSpeed,
     [MENUITEM_BATTLE_SPEED] = gText_OptionsMenu_BattleSpeed,
+    [MENUITEM_SIGN_BOX] = gText_OptionsMenu_SignBox,
+    [MENUITEM_TEXT_COLOURS] = gText_OptionsMenu_TextColours,
     [MENUITEM_CANCEL_PAGE_3] = gText_OptionMenuCancel,
 };
 
@@ -204,6 +210,10 @@ extern const u8 gText_OptionsMenu_BattleSpeed_Normal[];
 extern const u8 gText_OptionsMenu_BattleSpeed_2x[];
 extern const u8 gText_OptionsMenu_BattleSpeed_3x[];
 extern const u8 gText_OptionsMenu_BattleSpeed_4x[];
+extern const u8 gText_OptionsMenu_SignBox_Beige[];
+extern const u8 gText_OptionsMenu_SignBox_Plain[];
+extern const u8 gText_OptionsMenu_TextColours_Default[];
+extern const u8 gText_OptionsMenu_TextColours_BlackOnly[];
 
 static const u8 *const sTextSpeedOptions[] =
 {
@@ -286,6 +296,16 @@ static const u8 *const sBattleSpeedOptions[] =
     [OPTIONS_BATTLE_SPEED_3X] = gText_OptionsMenu_BattleSpeed_3x,
     [OPTIONS_BATTLE_SPEED_4X] = gText_OptionsMenu_BattleSpeed_4x,
 };
+static const u8 *const sSignBoxOptions[] =
+{
+    gText_OptionsMenu_SignBox_Beige,
+    gText_OptionsMenu_SignBox_Plain,
+};
+static const u8 *const sTextColoursOptions[] =
+{
+    gText_OptionsMenu_TextColours_Default,
+    gText_OptionsMenu_TextColours_BlackOnly,
+};
 static const u8 *const sWildEncountersOptions[] =
 {
     gText_OptionsMenu_PokemonSelection_Standard,
@@ -319,13 +339,15 @@ static const u8 *const *const sOptionMenuItemChoices_ThirdPage[MENUITEM_PAGE3_CO
     [MENUITEM_LEVEL_CAPS] = sLevelCapsOptions,
     [MENUITEM_OVERWORLD_SPEED] = sOverworldSpeedOptions,
     [MENUITEM_BATTLE_SPEED] = sBattleSpeedOptions,
+    [MENUITEM_SIGN_BOX] = sSignBoxOptions,
+    [MENUITEM_TEXT_COLOURS] = sTextColoursOptions,
     [MENUITEM_CANCEL_PAGE_3] = NULL,
 };
 
 // # of choices per option, not counting cancel
 static const u16 sOptionMenuItemCounts[MENUITEM_COUNT] = {3, 2, 2, 2, 3, 10, 0};
 static const u16 sOptionMenuItemCounts_SecondPage[MENUITEM_PAGE2_COUNT] = {4, 2, 2, 2, 2, 2, 0};
-static const u16 sOptionMenuItemCounts_ThirdPage[MENUITEM_PAGE3_COUNT] = {3, 3, OPTIONS_OVERWORLD_SPEED_COUNT, OPTIONS_BATTLE_SPEED_COUNT, 0};
+static const u16 sOptionMenuItemCounts_ThirdPage[MENUITEM_PAGE3_COUNT] = {3, 3, OPTIONS_OVERWORLD_SPEED_COUNT, OPTIONS_BATTLE_SPEED_COUNT, 2, 2, 0};
 
 static u16 *GetPageOptions(u8 page)
 {
@@ -422,6 +444,8 @@ void CB2_OptionsMenuFromStartMenu(void)
     sOptionMenuPtr->option_thirdPage[MENUITEM_BATTLE_SPEED] = VarGet(VAR_BATTLE_SPEED);
     if (sOptionMenuPtr->option_thirdPage[MENUITEM_BATTLE_SPEED] >= OPTIONS_BATTLE_SPEED_COUNT)
         sOptionMenuPtr->option_thirdPage[MENUITEM_BATTLE_SPEED] = OPTIONS_BATTLE_SPEED_NORMAL;
+    sOptionMenuPtr->option_thirdPage[MENUITEM_SIGN_BOX] = FlagGet(FLAG_OPTIONS_PLAIN_SIGN_BOX) ? 1 : 0;
+    sOptionMenuPtr->option_thirdPage[MENUITEM_TEXT_COLOURS] = FlagGet(FLAG_OPTIONS_BLACK_TEXT) ? 1 : 0;
 
     VarSet(VAR_TEMP_2, VarGet(VAR_LEVEL_CAPS));
     FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS) ? FlagSet(FLAG_TEMP_C) : FlagClear(FLAG_TEMP_C);
@@ -521,6 +545,8 @@ void CloseAndSaveOptionMenu(u8 taskId)
     sOptionMenuPtr->option_secondPage[MENUITEM_SKIP_NICKNAMING] == 1 ? FlagSet(FLAG_DONT_OFFER_NICKNAMES_BATTLE) : FlagClear(FLAG_DONT_OFFER_NICKNAMES_BATTLE);
     sOptionMenuPtr->option_secondPage[MENUITEM_BALL_SHORTCUT] == 1 ? FlagSet(FLAG_OPTIONS_LAST_USED_BALL) : FlagClear(FLAG_OPTIONS_LAST_USED_BALL);
     sOptionMenuPtr->option_secondPage[MENUITEM_NURSE_HEALING] == 1 ? FlagSet(FLAG_OPTIONS_SHORT_NURSE_HEAL) : FlagClear(FLAG_OPTIONS_SHORT_NURSE_HEAL);
+    sOptionMenuPtr->option_thirdPage[MENUITEM_SIGN_BOX] == 1 ? FlagSet(FLAG_OPTIONS_PLAIN_SIGN_BOX) : FlagClear(FLAG_OPTIONS_PLAIN_SIGN_BOX);
+    sOptionMenuPtr->option_thirdPage[MENUITEM_TEXT_COLOURS] == 1 ? FlagSet(FLAG_OPTIONS_BLACK_TEXT) : FlagClear(FLAG_OPTIONS_BLACK_TEXT);
     if (FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS_OPTION_SHOWN))
         sOptionMenuPtr->option_secondPage[MENUITEM_WILD_ENCOUNTERS] == 1 ? FlagSet(FLAG_DIVERGENT_WILD_ENCOUNTERS) : FlagClear(FLAG_DIVERGENT_WILD_ENCOUNTERS);
 

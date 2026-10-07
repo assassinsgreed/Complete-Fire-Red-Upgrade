@@ -808,6 +808,10 @@ LoadOptionMenuItemNames 08088D8C 0
 OptionMenu_PickSwitchCancel 08088680 0
 StartMenuBagCallback 0806f480 0
 
+##Accessibility options: plain sign box and black-only message text
+IsMsgSignPost 08069A38 0
+CreateTask_DrawFieldMessage 0806940C 0
+
 ##Replace Mail with New Items
 IsMail 80980F8 1
 

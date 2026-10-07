@@ -698,6 +698,18 @@ Lunala
 // GAME CUSTOMIZATION
 ////////////
 
+#org @gText_ScrollingMultichoice_Selected
+ (ACTIVE)
+
+#org @gText_GameCustomization_PlainSignBoxPrompt
+Signs normally use a beige message\nbox, which some find hard to read.\pWould you like signs to use this\nmessage box instead?
+
+#org @gText_GameCustomization_BlackTextPrompt
+Some text is shown in different\ncolours throughout the game.\pWould you like all message text to\nbe shown in black only?
+
+#org @gText_GameCustomization_TextAccessibilitySaved
+Your text preferences have been\nsaved.\pThey can be changed later in the\nOptions Menu's third page.
+
 #org @gText_GameCustomization_CustomizationPrompt
 Welcome to Pok\emon Amethyst!\pDo you want to customize your\nexperience with the game?
 

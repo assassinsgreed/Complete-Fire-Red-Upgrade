@@ -3931,6 +3931,9 @@ static const u8 sHighlightColours[] =
 	EOS,
 };
 
+//Black-only accessibility text shows "Active" next to the chosen option
+extern const u8 gText_ScrollingMultichoice_Selected[];
+
 #endif
 
 u32 GetSizeOfMultiList(void)
@@ -3979,8 +3982,16 @@ const u8* const* GetScrollingMultiList(void)
 	for (u32 i = 0; i < set->count; ++i)
 		names[i] = set->set[i];
 
-	StringCopy(highlightedName, sHighlightColours);
-	StringAppend(highlightedName, set->set[highlighted]);
+	if (FlagGet(FLAG_OPTIONS_BLACK_TEXT))
+	{
+		StringCopy(highlightedName, set->set[highlighted]);
+		StringAppend(highlightedName, gText_ScrollingMultichoice_Selected);
+	}
+	else
+	{
+		StringCopy(highlightedName, sHighlightColours);
+		StringAppend(highlightedName, set->set[highlighted]);
+	}
 	names[highlighted] = highlightedName;
 
 	return names;

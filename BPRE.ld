@@ -1336,6 +1336,7 @@ StringCompare = 0x8008E28 | 1;
 StringCompareN = 0x8008E4C | 1;
 ConvertIntToDecimalStringN = 0x8008E78 | 1;
 StringExpandPlaceholders = 0x8008FCC | 1;
+GetExtCtrlCodeLength = 0x8009330 | 1;
 GetExpandedPlaceholder = 0x80091E0 | 1;
 StringCopyPadded = 0x8009230 | 1;
 TextboxFdecodeAutoAndCreateTask = 0x80694C8 | 1;

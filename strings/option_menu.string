@@ -111,3 +111,21 @@ Battle Anim. Speed
 
 #org @gText_OptionsMenu_BattleSpeed_4x
 4x
+
+#org @gText_OptionsMenu_SignBox
+Sign Message Box
+
+#org @gText_OptionsMenu_SignBox_Beige
+Beige
+
+#org @gText_OptionsMenu_SignBox_Plain
+Plain
+
+#org @gText_OptionsMenu_TextColours
+Text Colours
+
+#org @gText_OptionsMenu_TextColours_Default
+Default
+
+#org @gText_OptionsMenu_TextColours_BlackOnly
+Black Only

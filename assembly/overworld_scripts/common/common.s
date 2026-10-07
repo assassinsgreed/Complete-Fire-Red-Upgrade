@@ -1350,11 +1350,30 @@ GameCustomizationMain:
 	clearflag 0x82F @ Ability to run
 	call ShuffleStarterGenerations
     setvar 0x4001 0x0 @ Not giving QoL items
+	call GameCustomization_TextAccessibility
 	msgboxsign
 	msgbox gText_GameCustomization_CustomizationPrompt MSG_YESNO
 	compare LASTRESULT NO
 	if equal _goto GameCustomizationComplete
 	goto GameCustomizationMenu
+
+@ Asked before welcome text to support players who prefer accessibility options
+GameCustomization_TextAccessibility:
+	msgboxnormal
+	clearflag 0x94D @ Plain sign box
+	clearflag 0x94E @ Black only text
+	msgbox gText_GameCustomization_PlainSignBoxPrompt MSG_YESNO
+	compare LASTRESULT NO
+	if equal _goto GameCustomization_TextColoursPrompt
+	setflag 0x94D @ Plain sign box
+GameCustomization_TextColoursPrompt:
+	msgbox gText_GameCustomization_BlackTextPrompt MSG_YESNO
+	compare LASTRESULT NO
+	if equal _goto GameCustomization_TextAccessibilityEnd
+	setflag 0x94E @ Black only text
+GameCustomization_TextAccessibilityEnd:
+	msgbox gText_GameCustomization_TextAccessibilitySaved MSG_KEEPOPEN
+	return
 
 ShuffleStarterGenerations:
 	random 0x8
