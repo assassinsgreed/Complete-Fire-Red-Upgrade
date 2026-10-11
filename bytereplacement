@@ -782,3 +782,8 @@
 0808C49E 05
 # Cursor down-wrap limit
 0808C4B6 05
+
+# Keep the "HP" label when a status is shown; the BW2 HP boxes don't overlap a status with the HP text like vanilla does
+08049B76 01 20
+08049B98 09 E0
+08049BE0 10 00 00 04

@@ -84,6 +84,7 @@ static void SpriteCB_LastBallTrigger(struct Sprite* self);
 static void SpriteCB_TeamPreviewTrigger(struct Sprite* self);
 static void SpriteCB_RaidShield(struct Sprite* sprite);
 static void SpriteCB_CamomonsTypeIcon(struct Sprite* sprite);
+static void SpriteCB_ShinyIndicator(struct Sprite* self);
 static void DestroyMegaTriggers(struct Sprite* sprite);
 static void DestroyZTrigger(struct Sprite* sprite);
 static void DestroyDynamaxTrigger(struct Sprite* sprite);
@@ -109,6 +110,7 @@ enum MegaGraphicsTags
 	GFX_TAG_TEAM_PREVIEW_TRIGGER,
 	GFX_TAG_FAINTED_TEAM_PREVIEW_ICON,
 	GFX_TAG_TEAM_PREVIEW_STATUS_ICON,
+	GFX_TAG_SHINY_INDICATOR,
 };
 
 enum
@@ -278,6 +280,27 @@ static const union AffineAnimCmd* const sSpriteAffineAnimTable_RaidShield[] =
 {
 	sSpriteAffineAnim_RaidShieldCreate,
 	sSpriteAffineAnim_RaidShieldDestroy,
+};
+
+// Tiles for the shiny indicator, drawn at half the size seen in the Summary screen.
+static const u32 sShinyIndicatorTiles[] =
+{
+	0x00001000, 0x00111110, 0x00011100, 0x00010100,
+	0x00000000, 0x00000000, 0x00000000, 0x00000000,
+};
+static const u16 sShinyIndicatorPal[16] = {0x0000, 0x2B5F};
+static const struct SpriteSheet sShinyIndicatorSpriteSheet = {(const u8*) sShinyIndicatorTiles, sizeof(sShinyIndicatorTiles), GFX_TAG_SHINY_INDICATOR};
+static const struct SpritePalette sShinyIndicatorPalette = {sShinyIndicatorPal, GFX_TAG_SHINY_INDICATOR};
+
+static const struct SpriteTemplate sShinyIndicatorSpriteTemplate =
+{
+	.tileTag = GFX_TAG_SHINY_INDICATOR,
+	.paletteTag = GFX_TAG_SHINY_INDICATOR,
+	.oam = &sIndicatorOam,
+	.anims = gDummySpriteAnimTable,
+	.images = NULL,
+	.affineAnims = gDummySpriteAffineAnimTable,
+	.callback = SpriteCB_ShinyIndicator,
 };
 
 static const struct SpriteTemplate sMegaIndicatorSpriteTemplate =
@@ -770,6 +793,36 @@ static void SpriteCB_MegaIndicator(struct Sprite* self)
 		self->invisible = TRUE;
 }
 
+// Recomputed every frame instead of tracking switches/faints/reshows
+static void SpriteCB_ShinyIndicator(struct Sprite* self)
+{
+	u8 healthboxId = gHealthboxSpriteIds[INDICATOR_BANK];
+	self->invisible = TRUE;
+
+	// Healthbox ids are stale until the healthboxes are (re)created
+	if (healthboxId >= MAX_SPRITES || !gSprites[healthboxId].inUse)
+		return;
+
+	u8 healthbarId = gSprites[healthboxId].data[5];
+	if (healthbarId >= MAX_SPRITES || !gSprites[healthbarId].inUse)
+		return;
+
+	struct Sprite* healthbox = &gSprites[healthboxId];
+	struct Sprite* healthbar = &gSprites[healthbarId];
+
+	if (healthbox->invisible || healthbar->invisible
+	|| !IsMonShiny(GetIllusionPartyData(INDICATOR_BANK)))
+		return;
+
+	// Place the star to the right of the level text
+	self->invisible = FALSE;
+	self->pos1.x = healthbar->pos1.x + 51;
+	self->pos1.y = healthbar->pos1.y - 3;
+	self->pos2.x = healthbar->pos2.x;
+	self->pos2.y = healthbar->pos2.y;
+	self->oam.priority = healthbar->oam.priority;
+}
+
 static void SpriteCB_ZTrigger(struct Sprite* self)
 {
 	s16 xShift = 0;
@@ -1108,9 +1161,43 @@ void LoadRaidShieldGfx(void)
 		LoadCompressedSpriteSheetUsingHeap(&sRaidShieldSpriteSheet);
 }
 
+static bool8 ShinyIndicatorExists(u8 bank)
+{
+	for (u32 i = 0; i < MAX_SPRITES; ++i)
+	{
+		if (gSprites[i].inUse && gSprites[i].callback == SpriteCB_ShinyIndicator && gSprites[i].data[0] == bank)
+			return TRUE;
+	}
+
+	return FALSE;
+}
+
+static void TryCreateShinyIndicators(void)
+{
+	for (u32 bank = 0; bank < gBattlersCount; ++bank)
+	{
+		if (SIDE(bank) != B_SIDE_OPPONENT || ShinyIndicatorExists(bank))
+			continue;
+
+		if (IndexOfSpriteTileTag(GFX_TAG_SHINY_INDICATOR) == 0xFF)
+			LoadSpriteSheet(&sShinyIndicatorSpriteSheet);
+		LoadSpritePalette(&sShinyIndicatorPalette);
+
+		u8 spriteId = CreateSprite(&sShinyIndicatorSpriteTemplate, 0, 0, 0);
+		if (spriteId < MAX_SPRITES)
+		{
+			gSprites[spriteId].data[0] = bank;
+			gSprites[spriteId].invisible = TRUE;
+		}
+	}
+}
+
 void LoadMegaGraphics(u8 state)
 {
 	u8 spriteId;
+
+	if (state == 2) // Also runs when leaving the bag/party screens
+		TryCreateShinyIndicators();
 
 	if (state == 2 || state == 0xFF)
 	{
