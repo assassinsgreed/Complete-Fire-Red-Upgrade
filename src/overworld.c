@@ -60,6 +60,7 @@
 #include "../include/new/ram_locs.h"
 #include "../include/new/read_keys.h"
 #include "../include/new/roamer.h"
+#include "../include/new/trainer_card.h"
 #include "../include/new/wild_encounter.h"
 #include "../include/new/build_pokemon.h"
 
@@ -2143,6 +2144,7 @@ void RunOnResumeMapScript(void)
 	}
 
 	PostReleaseAutomaticFixes();
+	GetEarnedTrainerCardStars(); // Calculate earned stars so NG+ carries them over even if the card is never checked
 	ForceClockUpdate();
 	UpdateForcesOfNatureWeather(TRUE); //Re-apply/clear roamer weather after battles, menus & game load
 	MapHeaderRunScriptByTag(5);

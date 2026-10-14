@@ -433,6 +433,18 @@ static void LoadFacilityVars(u8 facility, u8 format)
 	#endif
 }
 
+// New Game Plus calls this before writing its carried records back, so the first visit to the
+// Frontier doesn't wipe them.
+void FrontierChallenge_ResetData(void)
+{
+	Memset(gFrontierStreaks, 0, sizeof(gFrontierStreaks));
+	Memset(gFrontierRunStates, 0, sizeof(gFrontierRunStates));
+	Memset(&gFrontierModifierBackup, 0, sizeof(gFrontierModifierBackup));
+	Memset(&gFrontierBackground, 0, sizeof(gFrontierBackground));
+	Memset(gFrontierRentalTeams, 0, sizeof(gFrontierRentalTeams));
+	FlagSet(FLAG_FRONTIER_DATA_INITIALISED);
+}
+
 void FrontierChallenge_InitDataIfNeeded(void)
 {
 	u32 facility, format;
@@ -445,12 +457,7 @@ void FrontierChallenge_InitDataIfNeeded(void)
 
 	if (!FlagGet(FLAG_FRONTIER_DATA_INITIALISED))
 	{
-		Memset(gFrontierStreaks, 0, sizeof(gFrontierStreaks));
-		Memset(gFrontierRunStates, 0, sizeof(gFrontierRunStates));
-		Memset(&gFrontierModifierBackup, 0, sizeof(gFrontierModifierBackup));
-		Memset(&gFrontierBackground, 0, sizeof(gFrontierBackground));
-		Memset(gFrontierRentalTeams, 0, sizeof(gFrontierRentalTeams));
-		FlagSet(FLAG_FRONTIER_DATA_INITIALISED);
+		FrontierChallenge_ResetData();
 		return;
 	}
 

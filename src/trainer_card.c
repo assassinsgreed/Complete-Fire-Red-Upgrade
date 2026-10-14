@@ -7,6 +7,7 @@
 
 #include "../include/new/frontier.h"
 #include "../include/new/pokemon_storage_system.h"
+#include "../include/new/trainer_card.h"
 #include "../include/new/util.h"
 
 /*
@@ -107,12 +108,6 @@ static bool8 HasEveryGymTraineeZCrystal(void)
 {
 	u32 mask = 0;
 
-	// We record that all Z-Crystals are obtained once we find them all in the bag/party/box Pokemon.
-	// After that has been proven, we set a flag so we don't do the expensive check anymore.
-	// This also means that tossing a Z-Crystal after getting the star doesn't cause the star to be revoked.
-	if (FlagGet(FLAG_ALL_ZCRYSTALS_OBTAINED))
-		return TRUE;
-
 	// No trainee hands out a crystal before this, so the box sweep below can be skipped outright
 	if (!FlagGet(FLAG_DEFEATED_ULTRA_NECROZMA))
 		return FALSE;
@@ -132,11 +127,47 @@ static bool8 HasEveryGymTraineeZCrystal(void)
 			mask = AddZCrystalToMask(mask, GetBoxMonDataAt(box, pos, MON_DATA_HELD_ITEM));
 	}
 
-	if (mask != ALL_ZCRYSTALS_MASK)
-		return FALSE;
+	return mask == ALL_ZCRYSTALS_MASK;
+}
 
-	FlagSet(FLAG_ALL_ZCRYSTALS_OBTAINED);
-	return TRUE;
+// Each star sets its flag the first time its criteria is met, so it is kept even when entering NG+.
+static const struct
+{
+	bool8 (*hasEarned)(void);
+	u16 latchFlag;
+} sTrainerCardStars[] =
+{
+	{HasBecomeTheChampion,             FLAG_STAR_CHAMPION},
+	{IsPokedexComplete,                FLAG_STAR_POKEDEX}, // Either mode's dex counts
+	{HasMilestoneStreakAtAnyFacility,  FLAG_STAR_FRONTIER_STREAK},
+	{HasEveryGymTraineeZCrystal,       FLAG_ALL_ZCRYSTALS_OBTAINED},
+	{HasEveryTMAndHM,                  FLAG_STAR_TMS_AND_HMS},
+};
+
+// Returns one bit per star, in sTrainerCardStars order.
+u32 GetEarnedTrainerCardStars(void)
+{
+	u32 earnedStars = 0;
+
+	for (u32 i = 0; i < ARRAY_COUNT(sTrainerCardStars); ++i)
+	{
+		if (FlagGet(sTrainerCardStars[i].latchFlag) || sTrainerCardStars[i].hasEarned())
+		{
+			FlagSet(sTrainerCardStars[i].latchFlag);
+			earnedStars |= 1 << i;
+		}
+	}
+
+	return earnedStars;
+}
+
+void RestoreEarnedTrainerCardStars(u32 earnedStars)
+{
+	for (u32 i = 0; i < ARRAY_COUNT(sTrainerCardStars); ++i)
+	{
+		if (earnedStars & (1 << i))
+			FlagSet(sTrainerCardStars[i].latchFlag);
+	}
 }
 
 // Colours for stars 0-4 match Fire Red, #5 is a dark card unique to Amethyst.
@@ -179,23 +210,11 @@ const u16* const gTrainerCardPalettes_Layout0[] =
 
 void CountTrainerCardStars(u8* trainerCard)
 {
+	u32 earnedStars = GetEarnedTrainerCardStars();
 	u8 stars = 0;
 
-	if (HasBecomeTheChampion())
-		++stars;
-
-	// Either mode's dex counts; don't revoke a star when switching
-	if (IsPokedexComplete())
-		++stars;
-
-	if (HasMilestoneStreakAtAnyFacility())
-		++stars;
-
-	if (HasEveryGymTraineeZCrystal())
-		++stars;
-
-	if (HasEveryTMAndHM())
-		++stars;
+	for (; earnedStars != 0; earnedStars >>= 1)
+		stars += earnedStars & 1;
 
 	trainerCard[TRAINER_CARD_STARS_OFFSET] = stars;
 }

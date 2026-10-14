@@ -4,12 +4,13 @@
 #include "../../src/config.h"
 #include "../pokemon_storage_system.h"
 #include "pokemon_storage_system.h"
+#include "frontier.h"
 
 /**
  * \file new_game_plus.h
  * \brief New Game+ : starts a fresh save that inherits the PC boxes, the Pokedex,
  *		  every bag pocket, money, the game modifiers and the trainer ID
- *		  from a save that has already beaten the game, except for a few story
+ *		  trainer card stars and Battle Frontier records from a save that has already beaten the game, except for a few story
  *		  key items that must not carry over.
  */
 
@@ -60,6 +61,9 @@ struct NewGamePlusBackup
 	u8 options[NGP_OPTION_BYTES];
 	u16 optionVars[NGP_OPTION_VAR_COUNT];
 	u32 optionFlags;
+	u32 trainerCardStars;
+	u16 frontierMaxStreaks[NUM_BATTLE_FACILITIES][NUM_FRONTIER_FORMATS];
+	u32 frontierBestStreakStat;
 };
 
 // Set when the player picks New Game Plus at the main menu, read at new-game init.

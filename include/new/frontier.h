@@ -368,6 +368,7 @@ extern u16 gFrontierStreaks[NUM_BATTLE_FACILITIES][NUM_FRONTIER_FORMATS][/*CURRE
 extern u8 gFrontierRunStates[NUM_BATTLE_FACILITIES][NUM_FRONTIER_FORMATS]; //0x2026880
 extern struct FrontierModifierBackup gFrontierModifierBackup; //0x2026890
 extern struct FrontierBackground gFrontierBackground; //0x2026898
+void FrontierChallenge_ResetData(void);
 
 // The Battle Factory's rented team (3 for singles and 4 for doubles).
 // The full 6 options are trimmed to the ones selected when saving the selections when resting.

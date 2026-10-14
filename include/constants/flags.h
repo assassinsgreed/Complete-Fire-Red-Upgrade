@@ -752,7 +752,11 @@
 #define FLAG_GOT_TM06_FROM_STELLA                        0x297
 */
 #define FLAG_CAUGHT_DARKRAI                              0x298
-#define FLAG_ALL_ZCRYSTALS_OBTAINED                      0x299
+#define FLAG_ALL_ZCRYSTALS_OBTAINED                      0x299 // Used for a trainer card star
+#define FLAG_STAR_CHAMPION                               0x94F // Used for a trainer card star
+#define FLAG_STAR_POKEDEX                                0x950 // Used for a trainer card star
+#define FLAG_STAR_FRONTIER_STREAK                        0x951 // Used for a trainer card star
+#define FLAG_STAR_TMS_AND_HMS                            0x952 // Used for a trainer card star
 /*
 #define FLAG_GOT_TM76_FROM_ABBY                          0x29A
 #define FLAG_RECEIVED_COSPLAY_PIKACHU                    0x29B

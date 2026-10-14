@@ -1,7 +1,9 @@
 #include "defines.h"
 #include "../include/money.h"
+#include "../include/new/frontier.h"
 #include "../include/new/item.h"
 #include "../include/new/new_game_plus.h"
+#include "../include/new/trainer_card.h"
 #include "../include/constants/flags.h"
 #include "../include/constants/items.h"
 #include "../include/constants/vars.h"
@@ -150,6 +152,37 @@ static void RestoreBoxes(struct NewGamePlusBackup* backup)
 	}
 }
 
+// Only the best streaks carry over. Current streaks and held runs are cut.
+static void CaptureFrontierRecords(struct NewGamePlusBackup* backup)
+{
+	u32 facility, format;
+
+	for (facility = 0; facility < NUM_BATTLE_FACILITIES; ++facility)
+	{
+		for (format = 0; format < NUM_FRONTIER_FORMATS; ++format)
+			backup->frontierMaxStreaks[facility][format] = GetFrontierStreak(facility, format, MAX_STREAK);
+	}
+
+	backup->frontierBestStreakStat = GetGameStat(GAME_STAT_BATTLE_FACILITY_BEST_STREAK);
+}
+
+// The Frontier zeroes its records the first time it is entered on a save, so they are
+// initialised here first, or that first visit would wipe what was just carried over.
+static void RestoreFrontierRecords(struct NewGamePlusBackup* backup)
+{
+	u32 facility, format;
+
+	FrontierChallenge_ResetData();
+
+	for (facility = 0; facility < NUM_BATTLE_FACILITIES; ++facility)
+	{
+		for (format = 0; format < NUM_FRONTIER_FORMATS; ++format)
+			SetFrontierStreak(facility, format, MAX_STREAK, backup->frontierMaxStreaks[facility][format]);
+	}
+
+	SetGameStat(GAME_STAT_BATTLE_FACILITY_BEST_STREAK, backup->frontierBestStreakStat);
+}
+
 static void RemoveTransferredStoryKeyItems(void)
 {
 	RemoveBagItem(ITEM_SERPENT_KEY, 1);
@@ -211,6 +244,11 @@ void NewGamePlusCapture(void)
 		if (FlagGet(sNewGamePlusOptionFlags[i]))
 			backup->optionFlags |= 1 << i;
 	}
+
+	// Carry forward trainer card stars
+	backup->trainerCardStars = GetEarnedTrainerCardStars();
+
+	CaptureFrontierRecords(backup);
 
 	sNewGamePlusBackup = backup;
 }
@@ -274,6 +312,9 @@ void NewGamePlusRestore(void)
 		else
 			FlagClear(sNewGamePlusOptionFlags[i]);
 	}
+
+	RestoreEarnedTrainerCardStars(backup->trainerCardStars);
+	RestoreFrontierRecords(backup);
 
 	FlagSet(FLAG_DISABLE_OBEDIENCE_CHECKS);
 
