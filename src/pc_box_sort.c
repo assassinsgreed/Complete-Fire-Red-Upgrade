@@ -54,10 +54,12 @@ enum
 	SORTMENU_RETURN_TO_PC_MENU,
 };
 
-//Eggs go to the very end and are never affected by the chosen direction, so that sorting cannot reveal what's inside
+//Groups are ordered individually. Eggs go to the very end so that sorting cannot reveal what's inside.
 enum
 {
 	BOXSORT_GROUP_MAIN,
+	BOXSORT_GROUP_ALT_DEX,	//Dex sorts: species only the inactive mode's dex lists, so its 1 - 390 never interleave with the active one's
+	BOXSORT_GROUP_NO_DEX,	//Dex sorts: species in neither dex, which display as 0
 	BOXSORT_GROUP_TAIL,
 };
 
@@ -190,6 +192,7 @@ struct BoxSortWork
 static struct CompressedPokemon* GetPCSlotPtr(u16 slot);
 static void SwapPCSlots(u16 slotA, u16 slotB);
 static u8 GetPCSlotLevel(struct CompressedPokemon* mon);
+static u16 GetRegionalDexPosition(u16 dexNum, bool8 divergent);
 static s32 CompareSpeciesNames(u16 speciesA, u16 speciesB);
 static bool8 IsSpeciesNameSort(u8 option);
 static bool8 IsDescendingSort(u8 option);
@@ -235,6 +238,21 @@ static u8 GetPCSlotLevel(struct CompressedPokemon* mon)
 
 //Not StringCompare, which returns EOS minus the other character and so places a name
 //after every name it is a prefix of - "Mew" after "Mewtwo"
+//Matches on national dex number rather than species, like GetDisplayedPokedexNum, so alternate forms share their base form's position
+static u16 GetRegionalDexPosition(u16 dexNum, bool8 divergent)
+{
+	u16 count;
+	const u16* speciesTable = GetRegionalDexSpeciesTable(divergent, &count);
+
+	for (u32 i = 0; i < count; ++i)
+	{
+		if (SpeciesToNationalPokedexNum(speciesTable[i]) == dexNum)
+			return i + 1;
+	}
+
+	return 0;
+}
+
 static s32 CompareSpeciesNames(u16 speciesA, u16 speciesB)
 {
 	const u8* a = gSpeciesNames[speciesA];
@@ -276,8 +294,10 @@ static bool8 IsDescendingSort(u8 option)
 
 static void BoxSortCollectAndKey(struct BoxSortWork* work)
 {
+	bool8 divergent = FlagGet(FLAG_DIVERGENT_WILD_ENCOUNTERS);
 	u16 lastSpecies = SPECIES_NONE;
-	u16 lastDexNum = 0;
+	u16 lastDexPos = 0;
+	u8 lastDexGroup = BOXSORT_GROUP_MAIN;
 	u16 slot = 0;
 
 	for (u32 boxId = 0; boxId < TOTAL_BOXES_COUNT; ++boxId)
@@ -309,17 +329,28 @@ static void BoxSortCollectAndKey(struct BoxSortWork* work)
 
 				case PC_BOX_SORT_DEX_LOW_HIGH:
 				case PC_BOX_SORT_DEX_HIGH_LOW:
-					//GetDisplayedPokedexNum scans up to 390 entries, and both dexes on a
-					//miss, so it is called once per Pokemon here and never per comparison
+					//The lookup scans up to 390 entries, and both dexes on a miss,
+					//so it runs once per Pokemon here and never per comparison
 					if (species != lastSpecies)
 					{
+						u16 dexNum = SpeciesToNationalPokedexNum(species);
+
 						lastSpecies = species;
-						lastDexNum = GetDisplayedPokedexNum(species);
+						lastDexGroup = BOXSORT_GROUP_MAIN;
+						lastDexPos = (dexNum == 0) ? 0 : GetRegionalDexPosition(dexNum, divergent);
+
+						if (lastDexPos == 0)
+						{
+							lastDexGroup = BOXSORT_GROUP_ALT_DEX;
+							lastDexPos = (dexNum == 0) ? 0 : GetRegionalDexPosition(dexNum, !divergent);
+
+							if (lastDexPos == 0)
+								lastDexGroup = BOXSORT_GROUP_NO_DEX;
+						}
 					}
 
-					//Species in neither mode's dex come back as 0, which is also the number
-					//the game displays for them, so 0 sorts as an ordinary low number
-					work->key[slot] = lastDexNum;
+					work->group[slot] = lastDexGroup;
+					work->key[slot] = lastDexPos;
 					break;
 
 				case PC_BOX_SORT_LEVEL_LOW_HIGH:
@@ -336,7 +367,7 @@ static bool8 BoxSortOriginPlacedBefore(struct BoxSortWork* work, u16 originA, u1
 	if (work->group[originA] != work->group[originB])
 		return work->group[originA] < work->group[originB];
 
-	if (work->group[originA] == BOXSORT_GROUP_MAIN)
+	if (work->group[originA] != BOXSORT_GROUP_TAIL)
 	{
 		s32 cmp;
 
