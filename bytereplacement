@@ -787,3 +787,9 @@
 08049B76 01 20
 08049B98 09 E0
 08049BE0 10 00 00 04
+
+# Sitrus Berry heals 25% HP when used from bag
+082528B8 FE
+
+# Cut wasted frames from the Level up / found item jingle (80 -> 64 frames)
+083AC992 40 00

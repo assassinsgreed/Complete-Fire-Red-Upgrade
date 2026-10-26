@@ -2980,16 +2980,16 @@
                 "pokemon": [
                     { "low": 5, "high": 5, "species": "SPECIES_TREECKO" },
                     { "low": 5, "high": 5, "species": "SPECIES_TURTWIG" },
-                    { "low": 5, "high": 5, "species": "SPECIES_ROWLET" },
+                    { "low": 5, "high": 5, "species": "SPECIES_CHESPIN" },
                     { "low": 5, "high": 5, "species": "SPECIES_GROOKEY" },
                     { "low": 5, "high": 5, "species": "SPECIES_BULBASAUR" },
                     { "low": 5, "high": 5, "species": "SPECIES_CHIKORITA" },
-                    { "low": 5, "high": 5, "species": "SPECIES_ROWLET" },
+                    { "low": 5, "high": 5, "species": "SPECIES_CHESPIN" },
                     { "low": 5, "high": 5, "species": "SPECIES_GROOKEY" },
                     { "low": 5, "high": 5, "species": "SPECIES_SNIVY" },
-                    { "low": 5, "high": 5, "species": "SPECIES_CHESPIN" },
+                    { "low": 5, "high": 5, "species": "SPECIES_ROWLET" },
                     { "low": 5, "high": 5, "species": "SPECIES_SNIVY" }, 
-                    { "low": 5, "high": 5, "species": "SPECIES_CHESPIN" }
+                    { "low": 5, "high": 5, "species": "SPECIES_ROWLET" }
                 ]
             }
         },

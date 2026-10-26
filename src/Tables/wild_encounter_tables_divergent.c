@@ -2091,16 +2091,16 @@ const struct WildPokemon gDivergentProfessorsConservatoryGrassArea_LandMonsDefau
 {
 	{5, 5, SPECIES_TREECKO}, // 20
 	{5, 5, SPECIES_TURTWIG}, // 20
-	{5, 5, SPECIES_ROWLET}, // 10
+	{5, 5, SPECIES_CHESPIN}, // 10
 	{5, 5, SPECIES_GROOKEY}, // 10
 	{5, 5, SPECIES_BULBASAUR}, // 10
 	{5, 5, SPECIES_CHIKORITA}, // 10
-	{5, 5, SPECIES_ROWLET}, // 5
+	{5, 5, SPECIES_CHESPIN}, // 5
 	{5, 5, SPECIES_GROOKEY}, // 5
 	{5, 5, SPECIES_SNIVY}, // 4
-	{5, 5, SPECIES_CHESPIN}, // 4
+	{5, 5, SPECIES_ROWLET}, // 4
 	{5, 5, SPECIES_SNIVY}, // 1
-	{5, 5, SPECIES_CHESPIN}, // 1
+	{5, 5, SPECIES_ROWLET}, // 1
 };
 
 const struct WildPokemon gDivergentProfessorsConservatoryFireArea_LandMonsDefault[] =
@@ -2133,6 +2133,54 @@ const struct WildPokemon gDivergentProfessorsConservatoryWaterArea_LandMonsDefau
 	{5, 5, SPECIES_SQUIRTLE}, // 4
 	{5, 5, SPECIES_POPPLIO}, // 1
 	{5, 5, SPECIES_SQUIRTLE}, // 1
+};
+
+const struct WildPokemon gDivergentProfessorsConservatoryGrassArea_LandMonsEveningNight[] =
+{
+	{5, 5, SPECIES_SNIVY}, // 20
+	{5, 5, SPECIES_ROWLET}, // 20
+	{5, 5, SPECIES_BULBASAUR}, // 10
+	{5, 5, SPECIES_CHIKORITA}, // 10
+	{5, 5, SPECIES_CHESPIN}, // 10
+	{5, 5, SPECIES_GROOKEY}, // 10
+	{5, 5, SPECIES_BULBASAUR}, // 5
+	{5, 5, SPECIES_CHIKORITA}, // 5
+	{5, 5, SPECIES_TREECKO}, // 4
+	{5, 5, SPECIES_TURTWIG}, // 4
+	{5, 5, SPECIES_TREECKO}, // 1
+	{5, 5, SPECIES_TURTWIG}, // 1
+};
+
+const struct WildPokemon gDivergentProfessorsConservatoryFireArea_LandMonsEveningNight[] =
+{
+	{5, 5, SPECIES_CYNDAQUIL}, // 20
+	{5, 5, SPECIES_TEPIG}, // 20
+	{5, 5, SPECIES_CHIMCHAR}, // 10
+	{5, 5, SPECIES_LITTEN}, // 10
+	{5, 5, SPECIES_TORCHIC}, // 10
+	{5, 5, SPECIES_FENNEKIN}, // 10
+	{5, 5, SPECIES_CHIMCHAR}, // 5
+	{5, 5, SPECIES_LITTEN}, // 5
+	{5, 5, SPECIES_CHARMANDER}, // 4
+	{5, 5, SPECIES_SCORBUNNY}, // 4
+	{5, 5, SPECIES_CHARMANDER}, // 1
+	{5, 5, SPECIES_SCORBUNNY}, // 1
+};
+
+const struct WildPokemon gDivergentProfessorsConservatoryWaterArea_LandMonsEveningNight[] =
+{
+	{5, 5, SPECIES_POPPLIO}, // 20
+	{5, 5, SPECIES_SQUIRTLE}, // 20
+	{5, 5, SPECIES_TOTODILE}, // 10
+	{5, 5, SPECIES_MUDKIP}, // 10
+	{5, 5, SPECIES_SOBBLE}, // 10
+	{5, 5, SPECIES_FROAKIE}, // 10
+	{5, 5, SPECIES_TOTODILE}, // 5
+	{5, 5, SPECIES_MUDKIP}, // 5
+	{5, 5, SPECIES_PIPLUP}, // 4
+	{5, 5, SPECIES_OSHAWOTT}, // 4
+	{5, 5, SPECIES_PIPLUP}, // 1
+	{5, 5, SPECIES_OSHAWOTT}, // 1
 };
 
 const struct WildPokemon gDivergentRoute11North_LandMonsDefault[] =
@@ -2376,11 +2424,9 @@ const struct WildPokemonInfo gDivergentDaimynCityFactory_RockMonsDefaultInfo = {
 const struct WildPokemonInfo gDivergentRoute10Cave_LandMonsDefaultInfo = {5, gDivergentRoute10Cave_LandMonsDefault};
 const struct WildPokemonInfo gDivergentRoute10Cave_RockMonsDefaultInfo = {50, gDivergentRoute10Cave_RockMonsDefault};
 const struct WildPokemonInfo gDivergentLakeLaplaz_LandMonsDefaultInfo = {21, gDivergentLakeLaplaz_LandMonsDefault};
-const struct WildPokemonInfo gDivergentLakeLaplaz_LandMonsEveningNightInfo = {21, gDivergentLakeLaplaz_LandMonsEveningNight};
 const struct WildPokemonInfo gDivergentLakeLaplaz_WaterMonsDefaultInfo = {1, gDivergentLakeLaplaz_WaterMonsDefault};
 const struct WildPokemonInfo gDivergentLakeLaplaz_FishingMonsDefaultInfo = {20, gDivergentLakeLaplaz_FishingMonsDefault};
 const struct WildPokemonInfo gDivergentPeradonForestCommon_LandMonsDefaultInfo = {5, gDivergentPeradonForestCommon_LandMonsDefault};
-const struct WildPokemonInfo gDivergentPeradonForestCommon_LandMonsEveningNightInfo = {5, gDivergentPeradonForestCommon_LandMonsEveningNight};
 const struct WildPokemonInfo gDivergentPeradonForestCommon_WaterMonsDefaultInfo = {1, gDivergentPeradonForestCommon_WaterMonsDefault};
 const struct WildPokemonInfo gDivergentPeradonForestCommon_FishingMonsDefaultInfo = {20, gDivergentPeradonForestCommon_FishingMonsDefault};
 const struct WildPokemonInfo gDivergentCarnelidgeVolcanoExterior_LandMonsDefaultInfo = {21, gDivergentCarnelidgeVolcanoExterior_LandMonsDefault};
@@ -2415,7 +2461,6 @@ const struct WildPokemonInfo gDivergentCalicinBay_LandMonsDefaultInfo = {21, gDi
 const struct WildPokemonInfo gDivergentCalicinBay_WaterMonsDefaultInfo = {1, gDivergentCalicinBay_WaterMonsDefault};
 const struct WildPokemonInfo gDivergentCalicinBay_FishingMonsDefaultInfo = {20, gDivergentCalicinBay_FishingMonsDefault};
 const struct WildPokemonInfo gDivergentUteyanRuinsOverworld_LandMonsDefaultInfo = {21, gDivergentUteyanRuinsOverworld_LandMonsDefault};
-const struct WildPokemonInfo gDivergentUteyanRuinsOverworld_LandMonsEveningNightInfo = {21, gDivergentUteyanRuinsOverworld_LandMonsEveningNight};
 const struct WildPokemonInfo gDivergentUteyanRuinsOverworld_RockMonsDefaultInfo = {50, gDivergentUteyanRuinsOverworld_RockMonsDefault};
 const struct WildPokemonInfo gDivergentUteyanRuinsCaveCommon_LandMonsDefaultInfo = {7, gDivergentUteyanRuinsCaveCommon_LandMonsDefault};
 const struct WildPokemonInfo gDivergentUteyanRuinsCave1f_RockMonsDefaultInfo = {50, gDivergentUteyanRuinsCave1f_RockMonsDefault};
@@ -2450,7 +2495,6 @@ const struct WildPokemonInfo gDivergentHeleoRanchExterior_LandMonsDefaultInfo = 
 const struct WildPokemonInfo gDivergentHeleoRanchExterior_WaterMonsDefaultInfo = {13, gDivergentHeleoRanchExterior_WaterMonsDefault};
 const struct WildPokemonInfo gDivergentHeleoRanchExterior_FishingMonsDefaultInfo = {20, gDivergentHeleoRanchExterior_FishingMonsDefault};
 const struct WildPokemonInfo gDivergentDaimynCity_LandMonsDefaultInfo = {21, gDivergentDaimynCity_LandMonsDefault};
-const struct WildPokemonInfo gDivergentDaimynCity_LandMonsEveningNightInfo = {21, gDivergentDaimynCity_LandMonsEveningNight};
 const struct WildPokemonInfo gDivergentRoute12West_LandMonsDefaultInfo = {21, gDivergentRoute12West_LandMonsDefault};
 const struct WildPokemonInfo gDivergentRoute12West_RockMonsDefaultInfo = {50, gDivergentRoute12West_RockMonsDefault};
 const struct WildPokemonInfo gDivergentRoute12West_WaterMonsDefaultInfo = {13, gDivergentRoute12West_WaterMonsDefault};
@@ -2459,7 +2503,6 @@ const struct WildPokemonInfo gDivergentRoute1_LandMonsDefaultInfo = {21, gDiverg
 const struct WildPokemonInfo gDivergentRoute1_WaterMonsDefaultInfo = {1, gDivergentRoute1_WaterMonsDefault};
 const struct WildPokemonInfo gDivergentRoute1_FishingMonsDefaultInfo = {20, gDivergentRoute1_FishingMonsDefault};
 const struct WildPokemonInfo gDivergentRoute2_LandMonsDefaultInfo = {21, gDivergentRoute2_LandMonsDefault};
-const struct WildPokemonInfo gDivergentRoute2_LandMonsEveningNightInfo = {21, gDivergentRoute2_LandMonsEveningNight};
 const struct WildPokemonInfo gDivergentRoute2_WaterMonsDefaultInfo = {13, gDivergentRoute2_WaterMonsDefault};
 const struct WildPokemonInfo gDivergentRoute2_FishingMonsDefaultInfo = {20, gDivergentRoute2_FishingMonsDefault};
 const struct WildPokemonInfo gDivergentRoute3_LandMonsDefaultInfo = {21, gDivergentRoute3_LandMonsDefault};
@@ -2472,7 +2515,6 @@ const struct WildPokemonInfo gDivergentRoute6_RockMonsDefaultInfo = {50, gDiverg
 const struct WildPokemonInfo gDivergentRoute6_WaterMonsDefaultInfo = {1, gDivergentRoute6_WaterMonsDefault};
 const struct WildPokemonInfo gDivergentRoute6_FishingMonsDefaultInfo = {20, gDivergentRoute6_FishingMonsDefault};
 const struct WildPokemonInfo gDivergentRoute7_LandMonsDefaultInfo = {21, gDivergentRoute7_LandMonsDefault};
-const struct WildPokemonInfo gDivergentRoute7_LandMonsEveningNightInfo = {21, gDivergentRoute7_LandMonsEveningNight};
 const struct WildPokemonInfo gDivergentRoute8_LandMonsDefaultInfo = {21, gDivergentRoute8_LandMonsDefault};
 const struct WildPokemonInfo gDivergentRoute8_RockMonsDefaultInfo = {50, gDivergentRoute8_RockMonsDefault};
 const struct WildPokemonInfo gDivergentRoute8_WaterMonsDefaultInfo = {1, gDivergentRoute8_WaterMonsDefault};
@@ -2484,7 +2526,6 @@ const struct WildPokemonInfo gDivergentRoute10_FishingMonsDefaultInfo = {20, gDi
 const struct WildPokemonInfo gDivergentRoute11South_LandMonsDefaultInfo = {21, gDivergentRoute11South_LandMonsDefault};
 const struct WildPokemonInfo gDivergentRoute11South_RockMonsDefaultInfo = {50, gDivergentRoute11South_RockMonsDefault};
 const struct WildPokemonInfo gDivergentRoute12East_LandMonsDefaultInfo = {21, gDivergentRoute12East_LandMonsDefault};
-const struct WildPokemonInfo gDivergentRoute12East_LandMonsEveningNightInfo = {21, gDivergentRoute12East_LandMonsEveningNight};
 const struct WildPokemonInfo gDivergentRoute12East_RockMonsDefaultInfo = {50, gDivergentRoute12East_RockMonsDefault};
 const struct WildPokemonInfo gDivergentRoute13_LandMonsDefaultInfo = {5, gDivergentRoute13_LandMonsDefault};
 const struct WildPokemonInfo gDivergentRoute13_RockMonsDefaultInfo = {50, gDivergentRoute13_RockMonsDefault};
@@ -2505,7 +2546,6 @@ const struct WildPokemonInfo gDivergentRoute22_WaterMonsDefaultInfo = {13, gDive
 const struct WildPokemonInfo gDivergentRoute22_FishingMonsDefaultInfo = {20, gDivergentRoute22_FishingMonsDefault};
 const struct WildPokemonInfo gDivergentRoute23_LandMonsDefaultInfo = {21, gDivergentRoute23_LandMonsDefault};
 const struct WildPokemonInfo gDivergentRoute24_LandMonsDefaultInfo = {21, gDivergentRoute24_LandMonsDefault};
-const struct WildPokemonInfo gDivergentRoute24_LandMonsEveningNightInfo = {21, gDivergentRoute24_LandMonsEveningNight};
 const struct WildPokemonInfo gDivergentRoute24_RockMonsDefaultInfo = {50, gDivergentRoute24_RockMonsDefault};
 const struct WildPokemonInfo gDivergentRoute24_WaterMonsDefaultInfo = {2, gDivergentRoute24_WaterMonsDefault};
 const struct WildPokemonInfo gDivergentRoute24_FishingMonsDefaultInfo = {20, gDivergentRoute24_FishingMonsDefault};
@@ -2522,7 +2562,6 @@ const struct WildPokemonInfo gDivergentRoute23Cave_FishingMonsDefaultInfo = {20,
 const struct WildPokemonInfo gDivergentRoute20Cave_LandMonsDefaultInfo = {7, gDivergentRoute20Cave_LandMonsDefault};
 const struct WildPokemonInfo gDivergentRoute20Cave_RockMonsDefaultInfo = {50, gDivergentRoute20Cave_RockMonsDefault};
 const struct WildPokemonInfo gDivergentRoute12ScaldingSpa_LandMonsDefaultInfo = {3, gDivergentRoute12ScaldingSpa_LandMonsDefault};
-const struct WildPokemonInfo gDivergentRoute12ScaldingSpa_LandMonsEveningNightInfo = {3, gDivergentRoute12ScaldingSpa_LandMonsEveningNight};
 const struct WildPokemonInfo gDivergentRoute12ScaldingSpa_RockMonsDefaultInfo = {150, gDivergentRoute12ScaldingSpa_RockMonsDefault};
 const struct WildPokemonInfo gDivergentRoute17Cave1f_LandMonsDefaultInfo = {5, gDivergentRoute17Cave1f_LandMonsDefault};
 const struct WildPokemonInfo gDivergentRoute17Cave1f_RockMonsDefaultInfo = {50, gDivergentRoute17Cave1f_RockMonsDefault};
@@ -2534,6 +2573,18 @@ const struct WildPokemonInfo gDivergentRoute17CaveB1f_RockMonsDefaultInfo = {50,
 
 // Evening / Night
 const struct WildPokemonInfo gDivergentVarisiForest_LandMonsEveningNightInfo = {14, gDivergentVarisiForest_LandMonsEveningNight};
+const struct WildPokemonInfo gDivergentLakeLaplaz_LandMonsEveningNightInfo = {21, gDivergentLakeLaplaz_LandMonsEveningNight};
+const struct WildPokemonInfo gDivergentPeradonForestCommon_LandMonsEveningNightInfo = {5, gDivergentPeradonForestCommon_LandMonsEveningNight};
+const struct WildPokemonInfo gDivergentUteyanRuinsOverworld_LandMonsEveningNightInfo = {21, gDivergentUteyanRuinsOverworld_LandMonsEveningNight};
+const struct WildPokemonInfo gDivergentDaimynCity_LandMonsEveningNightInfo = {21, gDivergentDaimynCity_LandMonsEveningNight};
+const struct WildPokemonInfo gDivergentRoute2_LandMonsEveningNightInfo = {21, gDivergentRoute2_LandMonsEveningNight};
+const struct WildPokemonInfo gDivergentRoute7_LandMonsEveningNightInfo = {21, gDivergentRoute7_LandMonsEveningNight};
+const struct WildPokemonInfo gDivergentRoute12East_LandMonsEveningNightInfo = {21, gDivergentRoute12East_LandMonsEveningNight};
+const struct WildPokemonInfo gDivergentRoute24_LandMonsEveningNightInfo = {21, gDivergentRoute24_LandMonsEveningNight};
+const struct WildPokemonInfo gDivergentRoute12ScaldingSpa_LandMonsEveningNightInfo = {3, gDivergentRoute12ScaldingSpa_LandMonsEveningNight};
+const struct WildPokemonInfo gDivergentProfessorsConservatoryGrassArea_LandMonsEveningNightInfo = {21, gDivergentProfessorsConservatoryGrassArea_LandMonsEveningNight};
+const struct WildPokemonInfo gDivergentProfessorsConservatoryFireArea_LandMonsEveningNightInfo = {21, gDivergentProfessorsConservatoryFireArea_LandMonsEveningNight};
+const struct WildPokemonInfo gDivergentProfessorsConservatoryWaterArea_LandMonsEveningNightInfo = {21, gDivergentProfessorsConservatoryWaterArea_LandMonsEveningNight};
 
 // Null entries fall back to the first encounter table in the divergentDefault header table, so all must be defined!
 const struct WildPokemonHeader gDivergentWildMonDefaultHeaders[] =
@@ -3417,6 +3468,31 @@ const struct WildPokemonHeader gDivergentWildMonEveningNightHeaders[] =
 		.landMonsInfo = &gDivergentUteyanRuinsOverworld_LandMonsEveningNightInfo,
 		.waterMonsInfo = &gDivergentEmpty,
 		.rockSmashMonsInfo = &gDivergentUteyanRuinsOverworld_RockMonsDefaultInfo,
+		.fishingMonsInfo = &gDivergentEmpty,
+	},
+
+	{
+		.mapGroup = MAP_GROUP(PROFESSORS_CONSERVATORY_GRASS_AREA),
+		.mapNum = MAP_NUM(PROFESSORS_CONSERVATORY_GRASS_AREA),
+		.landMonsInfo = &gDivergentProfessorsConservatoryGrassArea_LandMonsEveningNightInfo,
+		.waterMonsInfo = &gDivergentEmpty,
+		.rockSmashMonsInfo = &gDivergentEmpty,
+		.fishingMonsInfo = &gDivergentEmpty,
+	},
+	{
+		.mapGroup = MAP_GROUP(PROFESSORS_CONSERVATORY_FIRE_AREA),
+		.mapNum = MAP_NUM(PROFESSORS_CONSERVATORY_FIRE_AREA),
+		.landMonsInfo = &gDivergentProfessorsConservatoryFireArea_LandMonsEveningNightInfo,
+		.waterMonsInfo = &gDivergentEmpty,
+		.rockSmashMonsInfo = &gDivergentEmpty,
+		.fishingMonsInfo = &gDivergentEmpty,
+	},
+	{
+		.mapGroup = MAP_GROUP(PROFESSORS_CONSERVATORY_WATER_AREA),
+		.mapNum = MAP_NUM(PROFESSORS_CONSERVATORY_WATER_AREA),
+		.landMonsInfo = &gDivergentProfessorsConservatoryWaterArea_LandMonsEveningNightInfo,
+		.waterMonsInfo = &gDivergentEmpty,
+		.rockSmashMonsInfo = &gDivergentEmpty,
 		.fishingMonsInfo = &gDivergentEmpty,
 	},
 
