@@ -744,7 +744,7 @@ Skip Cutscenes
 Done
 
 #org @gText_GameCustomization_DifficultyMode_Prompt
-The difficulty mode dictates how the\ngame is structured.\pStandard mode is the default and\nintended experience.\pHard mode gives all boss trainers\nstronger Pok\emon and held items.\pExtra Hard additionally gives each\ntrainer Pok\emon maxed IVs in all\lstats and maxed EVs in their\lhighest 2 stats.\pThis option can be changed later in\nthe Options Menu's third page.\pPlease select a mode.
+The difficulty mode dictates how the\ngame is structured.\pStandard mode is the default and\nintended experience.\pHard mode gives all boss trainers\nstronger Pok\emon (higher levels,\lbeneficial natures, and held items).\pExtra Hard additionally gives each\ntrainer Pok\emon maxed IVs in all\lstats and maxed EVs in their\lhighest 2 stats.\pThis option can be changed later in\nthe Options Menu's third page.\pPlease select a mode.
 
 #org @gText_GameCustomization_DifficultyModeOption_Standard
 Standard Mode

@@ -184,6 +184,7 @@ static void ModifySpeciesAndLevelForGenericBattle(u16* species, u8* level, u8 mi
 static void ModifySpeciesAndLevelForBossBattle(unusedArg u16* species, unusedArg u8* level, unusedArg u8 maxEnemyTeamLevel, unusedArg u8 maxPlayerTeamLevel, unusedArg bool8 shouldEvolve);
 #ifdef VAR_DIFFICULTY_SETTING
 static void GiveMon2BestBaseStatEVs(struct Pokemon* mon);
+static void GiveMonBestStatNature(struct Pokemon* mon);
 #endif
 static u16 TryReplaceNormalTrainerSpecies(u16 species, unusedArg u16 trainerId);
 static u8 BuildFrontierParty(struct Pokemon* const party, const u16 trainerNum, const u8 tier, const bool8 firstTrainer, const bool8 forPlayer, const u8 side);
@@ -1225,6 +1226,9 @@ static u8 CreateNPCTrainerParty(struct Pokemon* const party, const u16 trainerId
 			#ifdef VAR_DIFFICULTY_SETTING
 			if (VarGet(VAR_DIFFICULTY_SETTING) >= OPTIONS_AMETHYST_EXTRA_HARD_DIFFICULTY && GetMonEVCount(mon) == 0) //Has no EVs already and is on extra hard
 					GiveMon2BestBaseStatEVs(mon);
+
+			if (gameDifficulty >= OPTIONS_AMETHYST_HARD_DIFFICULTY && side == B_SIDE_OPPONENT)
+				GiveMonBestStatNature(mon);
 			#endif
 
 			//Fix Minior
@@ -1665,6 +1669,134 @@ static void GiveMon2BestBaseStatEVs(struct Pokemon* mon)
 	u8 maxEV = EV_CAP;
 	SetMonData(mon, MON_DATA_HP_EV + bestStat1, &maxEV);
 	SetMonData(mon, MON_DATA_HP_EV + bestStat2, &maxEV);
+}
+
+static const u16 sSpeedBoostingMoves[] =
+{
+	MOVE_AGILITY,
+	MOVE_AUTOTOMIZE,
+	MOVE_DRAGONDANCE,
+	MOVE_ESPERWING,
+	MOVE_FLAMECHARGE,
+	MOVE_GEOMANCY,
+	MOVE_QUIVERDANCE,
+	MOVE_ROCKPOLISH,
+	MOVE_SHELLSMASH,
+	MOVE_SHIFTGEAR,
+	MOVE_VICTORYDANCE,
+	MOVE_TABLES_TERMIN
+};
+
+#define VARIABLE_POWER_ESTIMATE 70 // Low Kick, Return, Grass Knot etc. are stored as power 1
+
+// Chooses the nature based on the Pokemon's base stats and moveset.
+// Each attacking stat is scored as base stat x total power of the moves using it. A stat scoring under
+// half the other's is only along for coverage (Snarl, Icy Wind), so it's the free stat to lower.
+static void GiveMonBestStatNature(struct Pokemon* mon)
+{
+	u32 i, physPower = 0, specPower = 0;
+	u8 statId, bestStat = 0, worstStat = 0, dumpStat = 0, leanStat = 0;
+	bool8 canRaise[NUM_STATS], canLower[NUM_STATS];
+	bool8 speedBooster = FALSE;
+	u16 species = GetMonData(mon, MON_DATA_SPECIES, NULL);
+	bool8 slowMon = MoveInMonMoveset(MOVE_TRICKROOM, mon) || MoveInMonMoveset(MOVE_GYROBALL, mon);
+
+	for (i = 0; i < MAX_MON_MOVES; ++i)
+	{
+		u16 move = GetMonData(mon, MON_DATA_MOVE1 + i, NULL);
+		u32 power;
+
+		if (CheckTableForMove(move, sSpeedBoostingMoves))
+			speedBooster = TRUE;
+
+		if (move == MOVE_NONE || SPLIT(move) == SPLIT_STATUS
+		|| move == MOVE_FOULPLAY || move == MOVE_BODYPRESS) // Read the target's Atk / the user's Def
+			continue;
+
+		switch (gBattleMoves[move].effect) { // Fixed damage, so no attacking stat is read
+			case EFFECT_0HKO:
+			case EFFECT_SUPER_FANG:
+			case EFFECT_DRAGON_RAGE:
+			case EFFECT_SONICBOOM:
+			case EFFECT_LEVEL_DAMAGE:
+			case EFFECT_PSYWAVE:
+			case EFFECT_COUNTER:
+			case EFFECT_MIRROR_COAT:
+			case EFFECT_BIDE:
+			case EFFECT_ENDEAVOR:
+			case EFFECT_MEMENTO:
+				continue;
+		}
+
+		power = gBattleMoves[move].power;
+		if (power <= 1)
+			power = VARIABLE_POWER_ESTIMATE;
+
+		if (move == MOVE_PHOTONGEYSER || move == MOVE_SHELLSIDEARM) // Use whichever attacking stat is higher
+		{
+			physPower += power;
+			specPower += power;
+		}
+		else if (SPLIT(move) == SPLIT_PHYSICAL)
+			physPower += power;
+		else if (SPLIT(move) == SPLIT_SPECIAL)
+			specPower += power;
+	}
+
+	for (statId = STAT_ATK; statId <= STAT_SPDEF; ++statId)
+		canRaise[statId] = canLower[statId] = TRUE;
+
+	u32 atkScore = GetVisualBaseStat(STAT_ATK, species) * physPower;
+	u32 spAtkScore = GetVisualBaseStat(STAT_SPATK, species) * specPower;
+
+	if (atkScore > 0 || spAtkScore > 0)
+	{
+		leanStat = (atkScore >= spAtkScore) ? STAT_ATK : STAT_SPATK;
+		canRaise[leanStat == STAT_ATK ? STAT_SPATK : STAT_ATK] = FALSE;
+
+		if (MathMin(atkScore, spAtkScore) * 2 >= MathMax(atkScore, spAtkScore)) // Genuinely mixed
+			canLower[STAT_ATK] = canLower[STAT_SPATK] = FALSE;
+		else
+			dumpStat = (leanStat == STAT_ATK) ? STAT_SPATK : STAT_ATK;
+	}
+
+	if (slowMon)
+	{
+		canRaise[STAT_SPEED] = FALSE;
+		dumpStat = STAT_SPEED;
+	}
+	else if (speedBooster)
+		canLower[STAT_SPEED] = FALSE;
+
+	for (statId = STAT_ATK; statId <= STAT_SPDEF; ++statId)
+	{
+		if (!canRaise[statId])
+			continue;
+
+		if (bestStat == 0
+		|| GetVisualBaseStat(statId, species) > GetVisualBaseStat(bestStat, species)
+		|| (GetVisualBaseStat(statId, species) == GetVisualBaseStat(bestStat, species) && statId == leanStat))
+			bestStat = statId;
+	}
+
+	if (dumpStat != 0)
+		worstStat = dumpStat;
+	else
+	{
+		for (statId = STAT_ATK; statId <= STAT_SPDEF; ++statId)
+		{
+			if (statId == bestStat || !canLower[statId]) // Skipping bestStat keeps flat stat lines from rolling a neutral nature
+				continue;
+
+			if (worstStat == 0 || GetVisualBaseStat(statId, species) < GetVisualBaseStat(worstStat, species))
+				worstStat = statId;
+		}
+	}
+
+	// Nature order raises/lowers Atk, Def, Spe, SpAtk, SpDef, which is STAT_ATK..STAT_SPDEF
+	u8 nature = (bestStat - STAT_ATK) * 5 + (worstStat - STAT_ATK);
+	u8 abilityNum = mon->hiddenAbility ? 0xFF : (GetMonData(mon, MON_DATA_PERSONALITY, NULL) & 1);
+	GiveMonNatureAndAbility(mon, nature, abilityNum, IsMonShiny(mon), TRUE, TRUE);
 }
 #endif
 
