@@ -1269,6 +1269,18 @@ HideOrShowRoamerIconTownMapHook:
 	pop {r4-r7, pc}
 
 .pool
+@0x811E804 with r3
+DrawLevelUpWindowPg1Hook:
+	ldr r3, [sp, #0x50] @Fg Colour
+	str r3, [sp] @Param Fg Colour
+	ldr r3, [sp, #0x54] @Shadow Colour
+	str r3, [sp, #0x4] @Param Shadow Colour
+	mov r3, r4 @Bg Colour
+	bl DrawLevelUpWindowPg1
+	ldr r0, =0x811E920 | 1
+	bx r0
+
+.pool
 @0x811E950 with r4
 DrawLevelUpWindowPg2Hook:
 	ldr r4, [sp, #0x4C] @Shadow Colour

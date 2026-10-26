@@ -211,7 +211,9 @@ extern u8 gScored3CritsInBattle; //0x203E0C6
 #define gInBattleSpeedExtraPass (*((bool8*) 0x203E0C9)) // Set while Battle Speed is running a pass past the first this frame, unsaved
 extern bool8 sNewGamePlusPending; //0x203E0CA - Set in the main menu, read during new-game init; above the player data wipe so it survives
 //extern struct NewGamePlusBackup* sNewGamePlusBackup; //0x203E0CC - 4-byte aligned, see include/new/new_game_plus.h
-//FREE: 0x203E0D0
+#define gMultiCandyFromLevel (*((u8*) 0x203E0D0)) // Non-zero while a multi Rare Candy use is offering moves for the levels above this one up to gMultiCandyToLevel, unsaved
+#define gMultiCandyToLevel   (*((u8*) 0x203E0D1)) // Non-zero while a multi Rare Candy use may chain evolutions, unsaved
+#define gMultiCandyEvoSpecies (*((u16*) 0x203E0D2)) // Species going into the current chained evolution scene, unsaved
 
 //DON'T GO PAST 0x203E0D4 for BTS!
 //extern struct CompressedPokemon gTempTeamBackup[6] //0x203E1A4

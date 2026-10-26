@@ -4,6 +4,7 @@
 #include "../include/list_menu.h"
 #include "../include/menu.h"
 #include "../include/move_reminder.h"
+#include "../include/party_menu.h"
 #include "../include/string_util.h"
 #include "../include/constants/moves.h"
 
@@ -64,12 +65,73 @@ void GiveBoxMonInitialMoveset(struct BoxPokemon* boxMon)
 	while (index < k && GiveMoveToBoxMon(boxMon, moveStack[index++]) != 0xFFFF);
 }
 
+static bool8 IsMultiCandyMoveRangeActive(struct Pokemon* mon)
+{
+	if (gMultiCandyFromLevel == 0)
+		return FALSE;
+
+	// A soft reset mid-flow leaves the range in RAM, and Rare Candies are never used in battle,
+	// so a battle level up must clear this if it remains in RAM.
+	if (gMain.inBattle || mon != &gPlayerParty[gPartyMenu.slotId] || mon->level != gMultiCandyToLevel)
+	{
+		gMultiCandyFromLevel = 0;
+		return FALSE;
+	}
+
+	return TRUE;
+}
+
+// Offers every move learned above gMultiCandyFromLevel up to and including mon->level, in learnset order.
+// The starting level is excluded because its moves were already offered when the mon reached it.
+static u16 MonTryLearningNewMoveInMultiCandyRange(struct Pokemon* mon, bool8 firstMove)
+{
+	u16 species = mon->species;
+	struct LevelUpMove lvlUpMove;
+
+	if (firstMove)
+		sLearningMoveTableID = 0;
+
+	for (;; ++sLearningMoveTableID)
+	{
+		lvlUpMove = gLevelUpLearnsets[species][sLearningMoveTableID];
+		if (lvlUpMove.move == 0 && lvlUpMove.level == 0xFF)
+		{
+			gMultiCandyFromLevel = 0;
+			return 0;
+		}
+
+		if (lvlUpMove.level > gMultiCandyFromLevel && lvlUpMove.level <= mon->level)
+			break;
+	}
+
+	gMoveToLearn = lvlUpMove.move;
+
+	#ifdef FLAG_POKEMON_LEARNSET_RANDOMIZER
+	if (FlagGet(FLAG_POKEMON_LEARNSET_RANDOMIZER) && !FlagGet(FLAG_BATTLE_FACILITY))
+		gMoveToLearn = RandomizeMove(gMoveToLearn);
+	#endif
+
+	++sLearningMoveTableID;
+
+	#if (defined SPECIES_ZACIAN_CROWNED && defined SPECIES_ZAMAZENTA_CROWNED)
+	if (gMoveToLearn == MOVE_IRONHEAD
+	&& ((species == SPECIES_ZACIAN_CROWNED && MoveInMonMoveset(MOVE_BEHEMOTHBLADE, mon))
+	 || (species == SPECIES_ZAMAZENTA_CROWNED && MoveInMonMoveset(MOVE_BEHEMOTHBASH, mon))))
+		return MON_ALREADY_KNOWS_MOVE;
+	#endif
+
+	return GiveMoveToMon(mon, gMoveToLearn);
+}
+
 u16 MonTryLearningNewMove(struct Pokemon* mon, bool8 firstMove)
 {
 	u32 retVal = 0;
 	u16 species = mon->species;
 	u8 level = mon->level;
 	struct LevelUpMove lvlUpMove;
+
+	if (IsMultiCandyMoveRangeActive(mon))
+		return MonTryLearningNewMoveInMultiCandyRange(mon, firstMove);
 
 	// since you can learn more than one move per level
 	// the game needs to know whether you decided to

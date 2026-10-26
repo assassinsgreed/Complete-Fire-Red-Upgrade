@@ -699,10 +699,10 @@ Incredible! Overcoming such a\npowerful trainer is no small feat.
 Oh dear[.] This loss has ended your\nchallenge.
 
 #org @gText_BattleFrontier_WinReward
-That's [BUFFER3] straight in the\n[BUFFER1]!\pHere are [BUFFER2] Pok\e Chips for\nyour trouble.
+Here are [BUFFER2] Pok\e Chips for\nyour trouble.
 
 #org @gText_BattleFrontier_WinRewardCaseFull
-That's [BUFFER3] straight in the\n[BUFFER1]!\pYou'll have to spend some Pok\e Chips\nto make room for more!
+You'll have to spend some Pok\e Chips\nto make room for more!
 
 //------------------------------------------------------------------
 // Continue / Rest / Give up

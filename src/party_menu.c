@@ -116,10 +116,10 @@ void __attribute__((long_call)) UpdateMonDisplayInfoAfterRareCandy(u8 slot, stru
 void __attribute__((long_call)) PartyMenu_DisplayMonNeedsToReplaceMove(u8 taskId);
 void __attribute__((long_call)) PartyMenu_DisplayMonLearnedMove(u8 taskId, u16 move);
 void __attribute__((long_call)) ShiftMoveSlot(struct Pokemon *mon, u8 slotTo, u8 slotFrom);
-void __attribute__((long_call)) PartyMenuTryEvolution(u8 taskId);
 void __attribute__((long_call)) FreePartyPointers(void);
 void __attribute__((long_call)) PartyMenuDisplayYesNoMenu(void);
 void __attribute__((long_call)) ItemUseCB_RareCandyStep(u8 taskId, UNUSED TaskFunc func);
+void __attribute__((long_call)) GetMonLevelUpWindowStats(struct Pokemon *mon, u16 *currStats);
 void __attribute__((long_call)) sub_8124DC0(u8 taskId);
 void __attribute__((long_call)) MoveCursorToConfirm(void);
 void __attribute__((long_call)) HandleChooseMonSelection(u8 taskId, s8 *slotPtr);
@@ -1836,6 +1836,32 @@ void Task_DoLearnedMoveFanfareAfterText(u8 taskId)
 }
 
 #define sLevelUpWindowStatNames ((const u8**) 0x8459B48)
+#define gText_LevelUpWindowPlus ((const u8*) 0x841B2DC)
+#define gText_LevelUpWindowMinus ((const u8*) 0x841B2E5)
+// Rewrite the vanilla function to support 3 digits (for multiple rare candy usages)
+void DrawLevelUpWindowPg1(u16 windowId, u16 *statsBefore, u16 *statsAfter, u8 bgColor, u8 fgColor, u8 shadowColor)
+{
+	static const u8 sStatOrder[NUM_STATS] = {0, 1, 2, 4, 5, 3};
+	u8 textbuf[8];
+	struct TextColor textColor = {bgColor, fgColor, shadowColor};
+	u32 i, ndigits, gain;
+	s16 diff;
+
+	FillWindowPixelBuffer(windowId, PIXEL_FILL(bgColor));
+
+	for (i = 0; i < NUM_STATS; ++i)
+	{
+		diff = statsAfter[sStatOrder[i]] - statsBefore[sStatOrder[i]];
+		gain = (diff < 0) ? -diff : diff;
+		ndigits = (gain >= 100) ? 3 : (gain >= 10) ? 2 : 1;
+
+		ConvertIntToDecimalStringN(textbuf, gain, STR_CONV_MODE_LEFT_ALIGN, ndigits);
+		WindowPrint(windowId, 2, 0, i * 15, &textColor, TEXT_SPEED_FF, sLevelUpWindowStatNames[i]);
+		WindowPrint(windowId, 2, 56, i * 15, &textColor, TEXT_SPEED_FF, (diff < 0) ? gText_LevelUpWindowMinus : gText_LevelUpWindowPlus);
+		WindowPrint(windowId, 2, 80 - 6 * ndigits, i * 15, &textColor, TEXT_SPEED_FF, textbuf); // Right aligned where vanilla ended
+	}
+}
+
 //Fix vanilla function
 void DrawLevelUpWindowPg2(u16 windowId, u16 *currStats, u8 bgColor, u8 fgColor, u8 shadowColor)
 {
@@ -3265,20 +3291,195 @@ static void Task_UseBlackWhiteFlute(u8 taskId)
 	}
 }
 
+// sPartyMenuInternal->data[0-11] hold the level up window stats and data[12] its window id
+#define tCandyQuantity data[13]
+#define tCandyMax      data[14]
+#define tCandyWindowId data[15]
+
+extern const u8 gText_RareCandyHowMany[];
+extern const u8 gText_RareCandyQuantity[];
+
+static const struct WindowTemplate sRareCandyQuantityWindowTemplate __attribute__((aligned(4))) =
+{
+	.bg = 2,
+	.tilemapLeft = 24,
+	.tilemapTop = 11,
+	.width = 4,
+	.height = 2,
+	.paletteNum = 14,
+	.baseBlock = 0x2BF, // Shared with the action and Yes/No menus, which are never open alongside this
+};
+
+static void CB2_ContinueMultiCandyEvolutionChain(void)
+{
+	struct Pokemon* mon = &gPlayerParty[gPartyMenu.slotId];
+	u16 species = GetMonData(mon, MON_DATA_SPECIES, NULL);
+	u16 targetSpecies = SPECIES_NONE;
+
+	// Cancelling skips the evolution chain and returns to the party menu so it doesn't prompt infinitely
+	if (species != gMultiCandyEvoSpecies)
+		targetSpecies = GetEvolutionTargetSpecies(mon, EVO_MODE_NORMAL, ITEM_NONE);
+
+	if (targetSpecies != SPECIES_NONE)
+	{
+		gMultiCandyEvoSpecies = species;
+		FreeAllWindowBuffers();
+		BeginEvolutionScene(mon, targetSpecies, TRUE, gPartyMenu.slotId);
+	}
+	else
+	{
+		gMultiCandyToLevel = 0;
+		SetMainCallback2(gPartyMenu.exitCallback);
+	}
+}
+
+void PartyMenuTryEvolution(u8 taskId)
+{
+	struct Pokemon* mon = &gPlayerParty[gPartyMenu.slotId];
+	u16 targetSpecies = GetEvolutionTargetSpecies(mon, EVO_MODE_NORMAL, ITEM_NONE);
+
+	gMultiCandyFromLevel = 0;
+
+	if (targetSpecies != SPECIES_NONE)
+	{
+		FreePartyPointers();
+
+		if (gMultiCandyToLevel != 0)
+		{
+			gMultiCandyEvoSpecies = GetMonData(mon, MON_DATA_SPECIES, NULL);
+			gCB2_AfterEvolution = CB2_ContinueMultiCandyEvolutionChain;
+		}
+		else
+			gCB2_AfterEvolution = gPartyMenu.exitCallback;
+
+		BeginEvolutionScene(mon, targetSpecies, TRUE, gPartyMenu.slotId);
+		DestroyTask(taskId);
+	}
+	else
+	{
+		gMultiCandyToLevel = 0;
+		gTasks[taskId].func = Task_ClosePartyMenuAfterText;
+	}
+}
+
+static void UseMultipleRareCandies(u8 taskId, u8 count)
+{
+	struct Pokemon* mon = &gPlayerParty[gPartyMenu.slotId];
+	u16 item = gSpecialVar_ItemId;
+	u16 startStats[NUM_STATS];
+	u32 i;
+
+	GetMonLevelUpWindowStats(mon, startStats);
+	gMultiCandyFromLevel = GetMonData(mon, MON_DATA_LEVEL, NULL);
+
+	// Going through the real item effect keeps Exp. and friendship identical to using them one by one
+	for (i = 1; i < count; ++i)
+		ExecuteTableBasedItemEffect_(gPartyMenu.slotId, item, 0);
+	RemoveBagItem(item, count - 1);
+
+	for (i = 0; i < count; ++i)
+		IncrementGameStat(GAME_STAT_RARE_CANDIES_USED);
+
+	ItemUseCB_RareCandyStep(taskId, NULL); // Uses the last candy and starts the vanilla level up flow
+	gMultiCandyToLevel = GetMonData(mon, MON_DATA_LEVEL, NULL);
+
+	// The level up window is drawn later from this, so it shows the gain across the whole jump
+	memcpy(sPartyMenuInternal->data, startStats, sizeof(startStats));
+}
+
+static void PrintRareCandyQuantity(void)
+{
+	u8 windowId = sPartyMenuInternal->tCandyWindowId;
+
+	ConvertIntToDecimalStringN(gStringVar1, sPartyMenuInternal->tCandyQuantity, STR_CONV_MODE_LEADING_ZEROS, 2);
+	StringExpandPlaceholders(gStringVar4, gText_RareCandyQuantity);
+	FillWindowPixelBuffer(windowId, PIXEL_FILL(1));
+	AddTextPrinterParameterized(windowId, 2, gStringVar4, 8, 1, 0, NULL);
+	CopyWindowToVram(windowId, COPYWIN_GFX);
+}
+
+static void RemoveRareCandyQuantityWindow(void)
+{
+	u8 windowId = sPartyMenuInternal->tCandyWindowId;
+
+	ClearStdWindowAndFrameToTransparent(windowId, FALSE);
+	ClearWindowTilemap(windowId);
+	RemoveWindow(windowId);
+	ScheduleBgCopyTilemapToVram(2);
+}
+
+static void Task_HandleRareCandyQuantityInput(u8 taskId)
+{
+	if (AdjustQuantityAccordingToDPadInput(&sPartyMenuInternal->tCandyQuantity, sPartyMenuInternal->tCandyMax))
+	{
+		PrintRareCandyQuantity();
+	}
+	else if (JOY_NEW(A_BUTTON))
+	{
+		PlaySE(SE_SELECT);
+		RemoveRareCandyQuantityWindow();
+		UseMultipleRareCandies(taskId, sPartyMenuInternal->tCandyQuantity);
+	}
+	else if (JOY_NEW(B_BUTTON))
+	{
+		PlaySE(SE_SELECT);
+		RemoveRareCandyQuantityWindow();
+		ClearStdWindowAndFrameToTransparent(6, 0); // Message box
+		ScheduleBgCopyTilemapToVram(2);
+		ReturnToUseOnWhichMon(taskId);
+	}
+}
+
+static void Task_ShowRareCandyQuantityWindow(u8 taskId)
+{
+	if (!IsPartyMenuTextPrinterActive())
+	{
+		u8 windowId = AddWindow(&sRareCandyQuantityWindowTemplate);
+
+		sPartyMenuInternal->tCandyWindowId = windowId;
+		DrawStdFrameWithCustomTileAndPalette(windowId, FALSE, 0x4F, 13);
+		PutWindowTilemap(windowId);
+		PrintRareCandyQuantity();
+		ScheduleBgCopyTilemapToVram(2);
+		gTasks[taskId].func = Task_HandleRareCandyQuantityInput;
+	}
+}
+
+static void StartRareCandyQuantityPrompt(u8 taskId, u16 maxCount)
+{
+	sPartyMenuInternal->tCandyQuantity = 1;
+	sPartyMenuInternal->tCandyMax = maxCount;
+
+	GetMonNickname(&gPlayerParty[gPartyMenu.slotId], gStringVar1);
+	StringExpandPlaceholders(gStringVar4, gText_RareCandyHowMany);
+	DisplayPartyMenuMessage(gStringVar4, TRUE);
+	ScheduleBgCopyTilemapToVram(2);
+	gTasks[taskId].func = Task_ShowRareCandyQuantityWindow;
+}
+
+static u8 GetRareCandyLevelCeiling(void)
+{
+	#ifdef FLAG_HARD_LEVEL_CAP
+	if (FlagGet(FLAG_HARD_LEVEL_CAP))
+		return MathMin(GetCurrentLevelCap(), MAX_LEVEL);
+	#endif
+
+	return MAX_LEVEL;
+}
+
 void ItemUseCB_RareCandy(u8 taskId, TaskFunc func)
 {
 	bool8 noEffect;
 	struct Pokemon *mon = &gPlayerParty[gPartyMenu.slotId];
 	u16 item = gSpecialVar_ItemId;
 	u8 level = GetMonData(mon, MON_DATA_LEVEL, NULL);
+	u8 ceiling = GetRareCandyLevelCeiling();
 
+	gMultiCandyFromLevel = 0;
+	gMultiCandyToLevel = 0;
 	PlaySE(SE_SELECT);
 
-	if (level >= MAX_LEVEL
-	#ifdef FLAG_HARD_LEVEL_CAP
-	|| (FlagGet(FLAG_HARD_LEVEL_CAP) && level >= GetCurrentLevelCap())
-	#endif
-	)
+	if (level >= ceiling)
 	{
 		if (GetEvolutionTargetSpecies(mon, EVO_MODE_NORMAL, 0) == SPECIES_NONE) //Can't use Rare Candy to evolve mon
 			noEffect = TRUE;
@@ -3305,6 +3506,14 @@ void ItemUseCB_RareCandy(u8 taskId, TaskFunc func)
 	}
 	else
 	{
+		u16 maxCount = MathMin(CountTotalItemQuantityInBag(item), ceiling - level);
+
+		if (maxCount > 1)
+		{
+			StartRareCandyQuantityPrompt(taskId, maxCount);
+			return;
+		}
+
 		IncrementGameStat(GAME_STAT_RARE_CANDIES_USED);
 		ItemUseCB_RareCandyStep(taskId, func);
 	}
