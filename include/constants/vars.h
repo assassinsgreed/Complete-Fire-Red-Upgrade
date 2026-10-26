@@ -15,10 +15,10 @@
 #define VAR_TEMP_7                          0x4007
 #define VAR_TEMP_8                          0x4008
 #define VAR_TEMP_9                          0x4009
-#define VAR_TEMP_A                          0x400A
-#define VAR_TEMP_B                          0x400B
-#define VAR_TEMP_C                          0x400C
-#define VAR_TEMP_D                          0x400D
+#define VAR_KONAMI_CODE_PROGRESS            0x400A
+#define VAR_PLAYERS_MAILBOX_CHECKS          0x400B
+#define VAR_RIVALS_MAILBOX_CHECKS           0x400C
+#define VAR_ROUTE_8_WEATHER_SET             0x400D
 #define VAR_WALKING_SCRIPT_CONTROL          0x400E
 #define VAR_DEX_NAV_SEARCH_TARGET           0x400F
 

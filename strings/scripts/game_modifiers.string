@@ -319,3 +319,6 @@ UPTOELEVEN
 
 #org @gText_GameModifiers_DivergentToggle_Password
 MIRRORMODE
+
+#org @gText_GameModifiers_KonamiCodeUnlockedAll
+[GREEN]All Game Modifiers have been\nunlocked![BLACK]\pThey can be toggled off and on at\nthe PC in this room.

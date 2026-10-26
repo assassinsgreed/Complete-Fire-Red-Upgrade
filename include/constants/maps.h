@@ -197,10 +197,10 @@
 #define MAP_ROUTE_15_SOUTH                       ((3 << 8) | 66)
 
 // Map Group 4
-#define MAP_PALLET_TOWN_PLAYERS_HOUSE_1F   (0 | (4 << 8))
-#define MAP_PALLET_TOWN_PLAYERS_HOUSE_2F   (1 | (4 << 8))
-#define MAP_PALLET_TOWN_RIVALS_HOUSE       (2 | (4 << 8))
-#define MAP_PALLET_TOWN_OLD_MANS_HOUSE     (3 | (4 << 8))
+#define MAP_ANTHRA_TOWN_PLAYERS_HOUSE_1F   (0 | (4 << 8))
+#define MAP_ANTHRA_TOWN_PLAYERS_HOUSE_2F   (1 | (4 << 8))
+#define MAP_ANTHRA_TOWN_RIVALS_HOUSE       (2 | (4 << 8))
+#define MAP_ANTHRA_TOWN_OLD_MANS_HOUSE     (3 | (4 << 8))
 
 // Map Group 5
 #define MAP_OLENIC_TOWN_HOUSE1            (0 | (5 << 8))

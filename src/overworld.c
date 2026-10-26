@@ -3523,6 +3523,9 @@ bool8 ProcessNewFieldPlayerInput(struct FieldInput* input)
 	if (IsDexNavHudActive())
 		return FALSE; //Can't force close this
 
+	if (TryStartKonamiCodeScript())
+		return TRUE;
+
 	if (input->pressedSelectButton && UseRegisteredKeyItemOnField())
     {
         gInputToStoreInQuestLogMaybe.pressedSelectButton = TRUE;

@@ -1128,10 +1128,10 @@ void ClearOutCalculationVars(void)
 	VarSet(VAR_TEMP_7, 0x0);
 	VarSet(VAR_TEMP_8, 0x0);
 	VarSet(VAR_TEMP_9, 0x0);
-	VarSet(VAR_TEMP_A, 0x0);
-	VarSet(VAR_TEMP_B, 0x0);
-	VarSet(VAR_TEMP_C, 0x0);
-	VarSet(VAR_TEMP_D, 0x0);
+	VarSet(VAR_KONAMI_CODE_PROGRESS, 0x0);
+	VarSet(VAR_PLAYERS_MAILBOX_CHECKS, 0x0);
+	VarSet(VAR_RIVALS_MAILBOX_CHECKS, 0x0);
+	VarSet(VAR_ROUTE_8_WEATHER_SET, 0x0);
 	VarSet(VAR_0x8000, 0x0);
 	VarSet(VAR_0x8001, 0x0);
 	VarSet(VAR_0x8002, 0x0);

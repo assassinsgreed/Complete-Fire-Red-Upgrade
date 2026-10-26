@@ -56,9 +56,19 @@ extern const u8 SystemScript_PartyMenuFromField[];
 extern const u8 SystemScript_ItemMenuFromField[];
 extern const u8 SystemScript_MiningScan[];
 extern const u8 SystemScript_DebugMenu[];
+extern const u8 SystemScript_KonamiCodeUnlockedGameModifiers[];
 
 static void CB2_PartyMenuFromField(void);
 static void CB2_ItemMenuFromField(void);
+static void TrackKonamiCode(void);
+
+static const u16 sKonamiCode[] =
+{
+	DPAD_UP, DPAD_UP, DPAD_DOWN, DPAD_DOWN, DPAD_LEFT, DPAD_RIGHT, DPAD_LEFT, DPAD_RIGHT, B_BUTTON, A_BUTTON,
+};
+
+//Fully entered; ReadKeys runs before the field callback, so the script is started from field input instead
+#define KONAMI_CODE_PENDING ARRAY_COUNT(sKonamiCode)
 #ifdef SAVE_BLOCK_EXPANSION
 static void TryForcedScript(u8 keyFlag, u16 currKeys);
 static u16 TryForcedKey(u8 keyFlag, u16 currKeys);
@@ -162,8 +172,80 @@ void ReadKeys(void)
 			gMain.heldKeys |= A_BUTTON;
 	}
 
+	TrackKonamiCode();
+
 	if (gMain.newKeys & gMain.watchedKeysMask)
 		gMain.watchedKeysPressed = TRUE;
+}
+
+static bool8 AllGameModifiersUnlocked(void)
+{
+	u32 flag;
+
+	for (flag = FLAG_GAMEMODIFIER_RANDOMIZERSPECIES_UNLOCKED; flag <= FLAG_GAMEMODIFIER_REPEATED_MEGA_EVOLUTION_UNLOCKED; ++flag)
+	{
+		if (!FlagGet(flag))
+			return FALSE;
+	}
+
+	return TRUE;
+}
+
+// Watched here rather than in FieldGetPlayerInput, which drops presses made while the player is turning in place
+static void TrackKonamiCode(void)
+{
+	u16 progress;
+	u16 keys = gMain.newKeys & (DPAD_ANY | A_BUTTON | B_BUTTON);
+
+	if (keys == 0
+	|| gMain.callback2 != CB2_Overworld
+	|| ScriptContext2_IsEnabled()
+	|| !MAP_IS(ANTHRA_TOWN_PLAYERS_HOUSE_2F))
+		return;
+
+	progress = VarGet(VAR_KONAMI_CODE_PROGRESS);
+	if (progress == KONAMI_CODE_PENDING)
+		return;
+	if (progress > KONAMI_CODE_PENDING)
+		progress = 0;
+
+	if (keys == sKonamiCode[progress])
+		++progress;
+	else if (keys == DPAD_UP)
+		progress = (progress == 2) ? 2 : 1; // 3+ Ups still recognizes the start of the sequence
+	else
+		progress = 0;
+
+	if (progress == KONAMI_CODE_PENDING)
+	{
+		if (AllGameModifiersUnlocked())
+			progress = 0; // Nothing to unlock, so the final A behaves normally
+		else
+		{
+			// Otherwise the final A would also talk to whatever the player is facing
+			gMain.newKeys &= ~A_BUTTON;
+			gMain.newAndRepeatedKeys &= ~A_BUTTON;
+		}
+	}
+
+	VarSet(VAR_KONAMI_CODE_PROGRESS, progress);
+}
+
+bool8 TryStartKonamiCodeScript(void)
+{
+	u32 flag;
+
+	if (VarGet(VAR_KONAMI_CODE_PROGRESS) != KONAMI_CODE_PENDING)
+		return FALSE;
+
+	VarSet(VAR_KONAMI_CODE_PROGRESS, 0);
+	for (flag = FLAG_GAMEMODIFIER_RANDOMIZERSPECIES_UNLOCKED; flag <= FLAG_GAMEMODIFIER_REPEATED_MEGA_EVOLUTION_UNLOCKED; ++flag)
+		FlagSet(flag);
+
+	ScriptContext2_Enable();
+	DismissMapNamePopup();
+	ScriptContext1_SetupScript(SystemScript_KonamiCodeUnlockedGameModifiers);
+	return TRUE;
 }
 
 bool8 StartLButtonFunc(void)

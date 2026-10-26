@@ -1112,3 +1112,11 @@ GameModifiers_DivergentToggle_SetModifier:
 GameModifiers_DivergentToggle_ClearModifier:
 	clearflag 0x946 @ Turn off Divergent Toggle option in the options menu
 	return
+
+.global SystemScript_KonamiCodeUnlockedGameModifiers
+SystemScript_KonamiCodeUnlockedGameModifiers:
+	lockall
+	playse 0x19 @ Correct
+	msgbox gText_GameModifiers_KonamiCodeUnlockedAll MSG_NORMAL
+	releaseall
+	end

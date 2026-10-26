@@ -11,6 +11,7 @@
 //Exported Functions
 bool8 StartLButtonFunc(void);
 bool8 StartRButtonFunc(void);
+bool8 TryStartKonamiCodeScript(void);
 
 //Functions Hooked In
 void ReadKeys(void);
