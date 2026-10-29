@@ -67,13 +67,8 @@ const u8* GetAbilityNameOverride(const u8 ability, const u16 species) //Bypasses
 	switch (ability)
 	{
 		case ABILITY_CLOUDNINE:
-			switch (dexNum)
-			{
-				#ifdef NATIONAL_DEX_RAYQUAZA
-				case NATIONAL_DEX_RAYQUAZA:
-					return gText_AbilityName_AirLock;
-				#endif
-			}
+			if (species == SPECIES_RAYQUAZA) //Divergent-only; see ABILITY_HUGEPOWER
+				return gText_AbilityName_AirLock;
 			break;
 		case ABILITY_INSOMNIA:
 			if (IsVitalSpiritAbility(ability, species))
@@ -84,6 +79,9 @@ const u8* GetAbilityNameOverride(const u8 ability, const u16 species) //Bypasses
 				return gText_AbilityName_WhiteSmoke;
 			break;
 		case ABILITY_HUGEPOWER:
+			//Divergent-only species have no NATIONAL_DEX_* constant, so the dex switch below can't match them
+			if (species == SPECIES_MEDITITE || species == SPECIES_MEDICHAM || species == SPECIES_MEDICHAM_MEGA)
+				return gText_AbilityName_PurePower;
 			switch (dexNum)
 			{
 				#if (defined NATIONAL_DEX_MEDITITE && defined NATIONAL_DEX_MEDICHAM)
@@ -189,6 +187,8 @@ const u8* GetAbilityNameOverride(const u8 ability, const u16 species) //Bypasses
 			}
 			break;
 		case ABILITY_GOOEY:
+			if (species == SPECIES_DIGLETT_A || species == SPECIES_DUGTRIO_A) //Divergent-only; see ABILITY_HUGEPOWER
+				return gText_AbilityName_TanglingHair;
 			switch (dexNum)
 			{
 				#if (defined NATIONAL_DEX_DIGLETT && defined NATIONAL_DEX_DUGTRIO)
@@ -222,6 +222,8 @@ const u8* GetAbilityNameOverride(const u8 ability, const u16 species) //Bypasses
 				return gText_AbilityName_SlipperyTail;
 			break;
 		case ABILITY_EMERGENCYEXIT:
+			if (species == SPECIES_WIMPOD) //Divergent-only; see ABILITY_HUGEPOWER
+				return gText_AbilityName_WimpOut;
 			switch (dexNum)
 			{
 				#ifdef NATIONAL_DEX_WIMPOD
@@ -231,6 +233,8 @@ const u8* GetAbilityNameOverride(const u8 ability, const u16 species) //Bypasses
 			}
 			break;
 		case ABILITY_DAZZLING:
+			if (species == SPECIES_TSAREENA) //Divergent-only; see ABILITY_HUGEPOWER
+				return gText_AbilityName_QueenlyMajesty;
 			switch (dexNum)
 			{
 				default:
@@ -788,13 +792,13 @@ bool8 IsWhiteSmokeAbility(u8 ability, u16 species)
 	if (!IsClearBodyAbility(ability))
 		return FALSE;
 
+	if (species == SPECIES_HEATMOR) //Divergent-only species have no NATIONAL_DEX_* constant for the switch below
+		return TRUE;
+
 	switch (SpeciesToNationalPokedexNum(species))
 	{
 		#ifdef NATIONAL_DEX_TORKOAL
 		case NATIONAL_DEX_TORKOAL:
-		#endif
-		#ifdef NATIONAL_DEX_HEATMOR
-		case NATIONAL_DEX_HEATMOR:
 		#endif
 		#ifdef NATIONAL_DEX_SIZZLIPEDE
 		case NATIONAL_DEX_SIZZLIPEDE:
@@ -813,6 +817,18 @@ bool8 IsVitalSpiritAbility(u8 ability, u16 species)
 	if (ability != ABILITY_INSOMNIA)
 		return FALSE;
 
+	switch (species) // Divergent-only species have no NATIONAL_DEX_* constant for the switch below
+	{
+		case SPECIES_ELEKID:
+		case SPECIES_ELECTABUZZ:
+		case SPECIES_ELECTIVIRE:
+		case SPECIES_MAGBY:
+		case SPECIES_MAGMAR:
+		case SPECIES_MAGMORTAR:
+		case SPECIES_TYROGUE:
+			return TRUE;
+	}
+
 	switch (SpeciesToNationalPokedexNum(species))
 	{
 		#ifdef NATIONAL_DEX_MANKEY
@@ -824,32 +840,11 @@ bool8 IsVitalSpiritAbility(u8 ability, u16 species)
 		#ifdef NATIONAL_DEX_MR_MIME
 		case NATIONAL_DEX_MR_MIME:
 		#endif
-		#ifdef NATIONAL_DEX_ELECTABUZZ
-		case NATIONAL_DEX_ELECTABUZZ:
-		#endif
-		#ifdef NATIONAL_DEX_ELECTABUZZ
-		case NATIONAL_DEX_MAGMAR:
-		#endif
 		#ifdef NATIONAL_DEX_DELIBIRD
 		case NATIONAL_DEX_DELIBIRD:
 		#endif
-		#ifdef NATIONAL_DEX_TYROGUE
-		case NATIONAL_DEX_TYROGUE:
-		#endif
-		#ifdef NATIONAL_DEX_ELEKID
-		case NATIONAL_DEX_ELEKID:
-		#endif
-		#ifdef NATIONAL_DEX_MAGBY
-		case NATIONAL_DEX_MAGBY:
-		#endif
 		#ifdef NATIONAL_DEX_VIGOROTH
 		case NATIONAL_DEX_VIGOROTH:
-		#endif
-		#ifdef NATIONAL_DEX_ELECTIVIRE
-		case NATIONAL_DEX_ELECTIVIRE:
-		#endif
-		#ifdef NATIONAL_DEX_MAGMORTAR
-		case NATIONAL_DEX_MAGMORTAR:
 		#endif
 		#ifdef NATIONAL_DEX_LILLIPUP
 		case NATIONAL_DEX_LILLIPUP:
