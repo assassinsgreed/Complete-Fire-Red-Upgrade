@@ -2719,7 +2719,7 @@ void GiveMonNatureAndAbility(struct Pokemon* mon, u8 nature, u8 abilityNum, bool
 	u8 gender = GetGenderFromSpeciesAndPersonality(species, personality);
 	u8 letter = GetUnownLetterFromPersonality(personality);
 	bool8 isMinior = IsMinior(species);
-	u8 miniorCore = GetMiniorCoreFromPersonality(personality);
+	species_t miniorCore = GetMiniorCoreFromPersonality(personality);
 
 	if (abilityNum == 0xFF) //Hidden Ability
 		mon->hiddenAbility = TRUE;
