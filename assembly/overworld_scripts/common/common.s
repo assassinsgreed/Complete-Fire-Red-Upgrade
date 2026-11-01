@@ -1621,7 +1621,6 @@ GameCustomization_LevelCaps:
 
 EnableSoftLevelCaps:
     clearflag 0x93B @ Soft caps
-    setvar 0x5155 0 @ Soft caps based on badges
     setvar 0x5156 0 @ Show soft caps in settings
     sound 0x30 @Save
     msgbox gText_GameCustomization_SoftLevelCapsTurnedOn MSG_NORMAL
@@ -1629,16 +1628,14 @@ EnableSoftLevelCaps:
 
 EnableHardLevelCaps:
     setflag 0x93B @ Hard caps turned on
-    setvar 0x5155 1 @ Hard cap (=)
-    setvar 0x5156 0x1 @ Show hard caps in settings
+    setvar 0x5156 0x1 @ Hard cap (=)
     sound 0x30 @Save
     msgbox gText_GameCustomization_HardLevelCapsTurnedOn MSG_NORMAL
     return
 
 EnableExtraHardLevelCaps:
     setflag 0x93B @ Hard caps turned on
-    setvar 0x5155 2 @ Hard cap (-2)
-    setvar 0x5156 0x2 @ Show hard caps in settings
+    setvar 0x5156 0x2 @ Hard cap (-2)
     sound 0x30 @Save
     msgbox gText_GameCustomization_ExtraHardLevelCapsTurnedOn MSG_NORMAL
     return
