@@ -259,7 +259,7 @@ I have 3 Pok\emon with me today. You\nmay both choose one to take as\lyour compa
 [BLACK]Hawthorne: [BLUE]The pleasure is all mine.
 
 #org @gText_Route17_HawthorneDeparts
-[BLACK]Hawthorne: [BLUE][PLAYER], [RIVAL], I'm\nsure you must be excited to start\lyour journeys.\pI'd like to ask you to first meet me\nat my lab in Olenic Town first. I\lhave a gift I'd like to give you.\pAnd with that, I must be off.
+[BLACK]Hawthorne: [BLUE][PLAYER], [RIVAL], I'm\nsure you must be excited to start\lyour journeys.\pI'd like to ask you to first meet me\nat my lab in Olenic Town. I have a\lgift I'd like to give you.\pAnd with that, I must be off.
 
 #org @gText_Route17_SeleneSuggestsBattle
 [BLACK]Selene: [RED]Why don't you two try a\nPok\emon battle to get used to your\lnew partners?
@@ -347,7 +347,7 @@ Flowers are growing here.\nPlease watch your step!
 Orichelle Garden ahead
 
 #org @gText_Route18_ShayminGirl_IntroductoryText
-Did you know? Legend has it that\nthis route used to be a swamp.\pNobody came here or lived here.\pThen, one day, and old woman came\nhere and offered her gratitude for\lthe land.\pFrom that day forth, grass and\nflowers began to grow all along\lthe route.\pIsn't that neat?\pI like to believe that was a\nPok\emon's doing, but my sister\ldoesn't believe me.\pBut[.] If there really was a Pok\emon\nthat could cause that to happen[.]\pWell, I'd like to meet them!
+Did you know? Legend has it that\nthis route used to be a swamp.\pNobody came here or lived here.\pThen, one day, an old woman came\nhere and offered her gratitude for\lthe land.\pFrom that day forth, grass and\nflowers began to grow all along\lthe route.\pIsn't that neat?\pI like to believe that was a\nPok\emon's doing, but my sister\ldoesn't believe me.\pBut[.] If there really was a Pok\emon\nthat could cause that to happen[.]\pWell, I'd like to meet them!
 
 #org @gText_Route18_ShayminGirl_ShayminRecognized
 Oh! That [GREEN]Shaymin[RED][.]\pThat must be the Pok\emon I've\nheard so much about!\pPlease, I'd like to offer my\ngratitude to it as well, with this\lgift.
@@ -445,7 +445,7 @@ Lookout Point\nPlease keep our beaches clean!
 [RED]Hmmm[.]\nI think you could do that, too[.]
 
 #org @gText_Route19_Selene_ExplainingBattleBond
-[RED]Oh! Sorry about that.\nI got a bit lost in thought.\pI was thinking[.]\pIf a [BLUE]Greninja[RED] trusts their trainer\nenough, they enter a sort of\ltrance in battle.\pIt's called "Battle Bond\", and it's\nnot unlike Mega Evolution.\pMost trainers can't achieve that\nlevel of synergy though.\pBut[.] I think you could do it!\pIf you have a Greninja you've grown\nclose with, bring it to me.\pI can help the two of you get in\nsync and unlock it's Battle Bond\lability.\pPretty sweet deal, right?\pAnyways! I'm going to keep relaxing\nhere in the meantime.\pI hope you and Victini enjoy\ntravelling together.\pBye for now!
+[RED]Oh! Sorry about that.\nI got a bit lost in thought.\pI was thinking[.]\pIf a [BLUE]Greninja[RED] trusts their trainer\nenough, they enter a sort of\ltrance in battle.\pIt's called "Battle Bond\", and it's\nnot unlike Mega Evolution.\pMost trainers can't achieve that\nlevel of synergy though.\pBut[.] I think you could do it!\pIf you have a Greninja you've grown\nclose with, bring it to me.\pI can help the two of you get in\nsync and unlock its Battle Bond\lability.\pPretty sweet deal, right?\pAnyways! I'm going to keep relaxing\nhere in the meantime.\pI hope you and Victini enjoy\ntravelling together.\pBye for now!
 
 #org @gText_Route19_Selene_AskingToTeachBattleBond
 [RED]Hey, [PLAYER]! Are you and Victini\nenjoying travelling together?\pIf you're interested, I can help you\nunlock your Greninja's Battle Bond\lability.\pWhat do you say?
@@ -491,7 +491,7 @@ It's tough having psychic powers, but\nsomeone has to do it.
 Oh, hello there! Are you here to\njoin me for a picnic?\pNo? How about a battle then!
 
 #org @gText_Route20_PicnickerWhitney_Defeat
-I would've rather had the picnic[.]
+I should've just had that picnic[.]
 
 #org @gText_Route20_PicnickerWhitney_Chat
 You're pretty strong. Have you been\na Pok\emon trainer for a long time?
@@ -566,7 +566,7 @@ I got assigned to Mimmett Jungle,\nbut it's awfully boring.\pWould you entertain
 Thank you!
 
 #org @gText_Route20_NurseJudy_Chat
-Our battle really livened things\nup around here.\pAs thank you, please allow me to\nheal your Pok\emon[.]
+Our battle really livened things\nup around here.\pTo show my appreciation, please\nallow me to heal your Pok\emon[.]
 
 #org @gText_Route20_NurseJudy_HealingComplete
 There, all better!
@@ -594,4 +594,4 @@ I'm going to get as much treasure\nas I can carry and strike it rich!
 There are so many people here in\nsearch of treasure[.]\pI'm thinking it would be best to go\nsomewhere else, if I want to enjoy\lthe ocean waves[.]
 
 #org @gText_Route20_TreasureBeach_Sign
-Welcome to Treasure Beach, one of\nKulure's natural wonders!\pVolunteers work tirelessly to keep\nthe beach free of Wild Pok\emon.\pSearch for buried treasure to your\nhearts content!
+Welcome to Treasure Beach, one of\nKulure's natural wonders!\pVolunteers work tirelessly to keep\nthe beach free of Wild Pok\emon.\pSearch for buried treasure to your\nheart's content!

@@ -6,7 +6,7 @@ Shhh! Don't tell anyone you found me\nhere.\pI lost it all at the Daimyn City\ng
 Isn't the Daimyn City garden\npretty?\pIt attracts a lot of interesting\nPok\emon.
 
 #org @gText_DaimynCityOverworld_Hiker
-I'm going to hike to Bruccie\nVillage soon.\pThe road there is difficult and\nrugged, and most people can't\lmanage it.\pIt's important to take the time to\nprepare before going on any\ldangerous journies.
+I'm going to hike to Bruccie\nVillage soon.\pThe road there is difficult and\nrugged, and most people can't\lmanage it.\pIt's important to take the time to\nprepare before going on any\ldangerous journeys.
 
 #org @gText_DaimynCityOverworld_SuperNerd
 Daimyn City is the largest city in\nKulure! It's quite the spectacle,\lisn't it?\pA lot of powerful trainers gather\nhere to challenge the Elite Four\land try to take the Champion's\ltitle.\pThey haven't succeeded since Selene\nbecame Champion, but that won't\lstop them from trying!
@@ -78,7 +78,7 @@ Daimyn City: The Hustling Metropolis
 [BLUE]I know all about this city, from\nthe stuff I've read about Champion\lSelene.\pI'll show you around a bit\non the way to the Pok\emon Center.\pAre you ready, [PLAYER]? Come on,\nit'll be fun!\pTo start, let's head to the Pok\emon\nRestaurant! It's just this way[.]
 
 #org @gText_DaimynCityOverworld_Story_RivalTour1
-[BLUE]Well, you probably already know\nthis, [PLAYER], but Daimyn City is\lthe capital city of Kulure!\pIt's in the middle of the region and\ncan be reached from most places.\pOver time, people just started\ngather here.\pAnd where people gather[.] Yup,\nthat's right!\pWith so many people here, the\nPok\emon battling scene exploded!\pStrong trainers from all over came\nhere to prove their skills.\pBefore long, a group of five trainers\nstood above the others in terms of\lbattling skills.\pThey were the first to fill the roles\nof Elite Four and Champion that we\lhave today.
+[BLUE]Well, you probably already know\nthis, [PLAYER], but Daimyn City is\lthe capital city of Kulure!\pIt's in the middle of the region and\ncan be reached from most places.\pOver time, people just started\ngathering here.\pAnd where people gather[.] Yup,\nthat's right!\pWith so many people here, the\nPok\emon battling scene exploded!\pStrong trainers from all over came\nhere to prove their skills.\pBefore long, a group of five trainers\nstood above the others in terms of\lbattling skills.\pThey were the first to fill the roles\nof Elite Four and Champion that we\lhave today.
 
 #org @gText_DaimynCityOverworld_Story_RivalTour2
 [BLUE]Whew, we're here! This is the world\nfamous Pok\emon Restaurant!\pIt's known for the extravagant dishes\nit prepares for Pok\emon.\pIt's said that the Pok\emon that eat\nhere perform better in battle for a\lwhile.
@@ -379,7 +379,7 @@ This reading is coming from[.]\nWithin the city?\pIf no one has seen it, perhaps
 This reading is coming from the ruins\nof a long lost civilization.
 
 #org @gText_DaimynCityFacilities_IRF_PCResearcher_UltraWormhole_Blacephalon
-This reading is coming from a mansion\nforgotten to time.
+This reading is coming from a mansion\nforgotten by time.
 
 #org @gText_DaimynCityFacilities_IRF_PCResearcher_ConversationConcluded
 Good luck on your mission.
@@ -590,7 +590,7 @@ Thank you for trading with me.\pI will take good care of your\nPok\emon. Please 
 Oh, hey! You're a trainer right?\nThat must mean you're using the PC\lsystem, right?
 
 #org @gText_DaimynCityNPCHouses_LanaIntroductionContinued
-I built the PC system in Kulure, you\nknow. The name's Lana!\pIn fact, any Pok\emon you catch get\nsent to my PC.\pHehe, don't worry! It's free of\ncharge and totally safe.\pI set the PC system up here with a\ngood buddy's help. He set up the\loriginal PC system in the Kanto\lregion.\pI improved his system and added a\nfew quality of life changes.
+I built the PC system in Kulure, you\nknow. The name's Lana!\pIn fact, any Pok\emon you catch gets\nsent to my PC.\pHehe, don't worry! It's free of\ncharge and totally safe.\pI set the PC system up here with a\ngood buddy's help. He set up the\loriginal PC system in the Kanto\lregion.\pI improved his system and added a\nfew quality of life changes.
 
 #org @gText_DaimynCityNPCHouses_LanaRevisited
 Oh hey trainer! Good to see you\nagain.\pYou caught me in the middle of some\ntweaks I've been making to the\lsystem.
@@ -599,10 +599,10 @@ Oh hey trainer! Good to see you\nagain.\pYou caught me in the middle of some\ntw
 Would you like to learn more about\nthe Kulure PC system?
 
 #org @gText_DaimynCityNPCHouses_LanaUsesPC
-Awe, super! That's great to hear.
+Aw, super! That's great to hear.
 
 #org @gText_DaimynCityNPCHouses_LanaDoesNotUsePC
-Awe, that's a bummer[.] It's very\nconvenient for trainers.
+Aw, that's a bummer[.] It's very\nconvenient for trainers.
 
 #org @gText_DaimynCityNPCHouses_DoNotWantToLearnAboutPC
 No sweat! Just swing on by if you\nchange your mind. The lab's always\lopen.
@@ -804,7 +804,7 @@ Neither
 [BLUE]Yer a real champ, mate.
 
 #org @gText_DaimynCityGym_Cutscene_ChanceExplainsTheGymRules
-[BLUE]If yer here to play the slots, then\nyou have everything you need.\pIf yer here for Gym Leader Chance's\nbadge, though, there are some\lrules you'd best keep in mind[.]\pChance only challenges those that\ncan prove they're saavy gamblers\land can amass a small fortune.\pHow do you do that? Well, there are\n3 ways[.]\p1. Make Your Own Luck - This means\nbuying them from my pal here with\lyour hard earned cash.\p2. Getting Lucky - With a little\nluck, you can win more coins from\lthe slots here. Rumor has it some\lmachines are luckier than others.\p3. Playing the Field - It may not\nlook it, but most people here are\lgym trainers. If you beat them in\lbattle, they'll give you some\lcoins.
+[BLUE]If yer here to play the slots, then\nyou have everything you need.\pIf yer here for Gym Leader Chance's\nbadge, though, there are some\lrules you'd best keep in mind[.]\pChance only challenges those that\ncan prove they're savvy gamblers\land can amass a small fortune.\pHow do you do that? Well, there are\n3 ways[.]\p1. Make Your Own Luck - This means\nbuying them from my pal here with\lyour hard earned cash.\p2. Getting Lucky - With a little\nluck, you can win more coins from\lthe slots here. Rumor has it some\lmachines are luckier than others.\p3. Playing the Field - It may not\nlook it, but most people here are\lgym trainers. If you beat them in\lbattle, they'll give you some\lcoins.
 
 #org @gText_DaimynCityGym_Cutscene_ChanceTakesHisLeave
 [BLUE]My, my, look at the time! I gotta\njet. T'was a pleasure, my friend.\pI'm sure we'll see each other around\nreal soon.
@@ -960,7 +960,7 @@ Some powerful Pok\emon are slow, but\nTrick Room can turn that around.
 My team takes their own strengths and\nmakes them even greater. Can you\lhandle it?
 
 #org @gText_DaimynCityGym_GamblerChuck_Defeat
-Perhaps your team had it's own\nstrengths, too.
+Perhaps your team had its own\nstrengths, too.
 
 #org @gText_DaimynCityGym_GamblerChuck_Chat
 Some moves are strengthened based\non the stat difference between\lopponents.\pMy team takes advantage of a high\nspeed stat and elevates it to make\lcertain moves even stronger!
@@ -1331,7 +1331,7 @@ Wonderful! I'll just put your\nname into the system[.]\pPerfect. Thank you for r
 Wonderful! Please, allow me to get\nthe gate for you.
 
 #org @gText_AscensionTower_EliteFourAttendant_WishingLuck
-You may proceed to the elevator at\nthe back of the room.\pIt will take you to your first\nchallenge.\pShould you succeed, you may return\nto the elevator to be\ldelievered to your next challenge.\pOn behalf of everyone at Ascension\nTower, I wish you the best of\lluck!
+You may proceed to the elevator at\nthe back of the room.\pIt will take you to your first\nchallenge.\pShould you succeed, you may return\nto the elevator to be\ldelivered to your next challenge.\pOn behalf of everyone at Ascension\nTower, I wish you the best of\lluck!
 
 #org @gText_AscensionTower_BattleTowerAttendant_GatheringFunding
 Welcome to Ascension Tower!\pI would normally be accepting\nregistrations for the Battle\lFrontier.\pWe're currently undergoing some\nmaintenance, however[.]\pWe can hopefully offer this service\nsomeday soon.\pUntil then, please continue to train\nyour Pok\emon and strive to be the\lbest you can be.
@@ -1538,7 +1538,7 @@ W-what? This is unprecedented[.]
 [RED][PLAYER], we are standing in the Hall\nof Fame.\pIt is a sacred place that only\nChampions may enter.
 
 #org @gText_AscensionTower_ChampionSelene_UrgingPlayerToEnterHallOfFame
-[RED]This machine will make a record of\nyou and your Pok\emon partners.\pIt will stand as a testiment to\neverything you have accomplished.\p[PLAYER], please place your Pok\e\nBalls into the machine when you\lare ready.\pI will then officially welcome you\nto the Kulure Hall of Fame!
+[RED]This machine will make a record of\nyou and your Pok\emon partners.\pIt will stand as a testament to\neverything you have accomplished.\p[PLAYER], please place your Pok\e\nBalls into the machine when you\lare ready.\pI will then officially welcome you\nto the Kulure Hall of Fame!
 
 #org @gText_AscensionTower_ChampionSelene_ReturningToAnthra
 [RED]Undoubtedly, your friends and family\nhave already seen your victory.\pI'm sure you're eager to return home\nto celebrate with them.\pAs for myself, I think it's time for a\nnice, long vacation[.]\pBut that can wait.\pCome! Let us return to Anthra Town\nto celebrate your accomplishments.
@@ -1590,7 +1590,7 @@ Excellent. You are indeed worthy of\nyour title.
 Aw, nuts!
 
 #org @gText_AscensionTower_TitleDefenseChallenger_Rival_Defeat
-[BLUE]Hahaha!\pAwe, man! You're just too strong for\nme, [PLAYER]!\pI'm glad we were able to go all\nout.\pI'm going to go train some more, and\nthen I'll become the next Champion\lfor sure!\pUntil then, [PLAYER]!
+[BLUE]Hahaha!\pAw, man! You're just too strong for\nme, [PLAYER]!\pI'm glad we were able to go all\nout.\pI'm going to go train some more, and\nthen I'll become the next Champion\lfor sure!\pUntil then, [PLAYER]!
 
 #org @gText_AscensionTower_TitleDefenseChallenger_Joey_Intro
 [BLUE]This is it[.] It's really it[.]\nThe Champion!\pOh[.] Focus up, Joey[.]\pY'know, they used to laugh at me and\nmy Pok\emon.\pBut look at me now. I'm at the top\nof the world!
@@ -1641,7 +1641,7 @@ Hohoho! That was quite something!
 [BLUE]Truly fantastic battling, [PLAYER]!\pI'm sure Selene enjoyed getting to\ngo all out against you, as well.\pWell, I should be returning to the\nlab soon.\pTake care, [PLAYER]. And do stop by\nto see the conservatory sometime!
 
 #org @gText_AscensionTower_TitleDefenseChallenger_Clancy_Intro
-[BLUE]Yo, [PLAYER]. It's been a while.\nIt's me, Clancy!\pEna and I have been working hard to\nget a fresh start.\pWhat better way to do that then to\nknock you off your throne and take\lit for myself?
+[BLUE]Yo, [PLAYER]. It's been a while.\nIt's me, Clancy!\pEna and I have been working hard to\nget a fresh start.\pWhat better way to do that than to\nknock you off your throne and take\lit for myself?
 
 #org @gText_AscensionTower_TitleDefenseChallenger_Clancy_PreBattle
 [BLUE]Alright, [PLAYER].\pWe've come a long ways since we last\nbattled. We'll prove it!
@@ -2006,7 +2006,7 @@ Yes, that was quite enjoyable.
 [RED]If you run out, you can get more\nfrom my colleague in the lab.\pUnfortunately, they're quite\nexpensive to make so we'll have to\lcharge you for them.
 
 #org @gText_UltraEpisode_Intro_Sakura_PreparingToStart
-[RED]Now, I'm not asking you to go right\naway, if you have things to do.\pBut[.] Once you have time, we'd really\nappeciate your help.\pTalk to me when you're ready, and we\ncan send you to Eclipse Village.\pAnd, thanks in advance, [PLAYER]!
+[RED]Now, I'm not asking you to go right\naway, if you have things to do.\pBut[.] Once you have time, we'd really\nappreciate your help.\pTalk to me when you're ready, and we\ncan send you to Eclipse Village.\pAnd, thanks in advance, [PLAYER]!
 
 #org @gText_UltraEpisode_PostCosmog_Sakura_WelcomeBack
 [RED]Welcome back, [PLAYER].
@@ -2021,7 +2021,7 @@ Yes, that was quite enjoyable.
 [RED]That lines up with our earlier\nfindings[.] Fascinating[.]
 
 #org @gText_UltraEpisode_PostCosmog_Sakura_AsksToSeeCosmog
-[RED]Now, about this Ultra Beast that you\nfound at the Altar[.]\pCan I review it's Pok\edex entry,\nplease?
+[RED]Now, about this Ultra Beast that you\nfound at the Altar[.]\pCan I review its Pok\edex entry,\nplease?
 
 #org @gText_UltraEpisode_PostCosmog_Sakura_DidNotCatchCosmog
 [RED]Oh[.] You failed to capture it.\pPlease, prepare yourself and return\nto the Altar of Eclipse.\pThe Ultra Beast must be drawn to it.\nI'm sure it will return.\pThen, once it's caught, we can\nexamine it and move forward with\lour investigation.\pJust come see me when you're ready\nto return to Eclipse Village.
@@ -2048,7 +2048,7 @@ Yes, that was quite enjoyable.
 [RED]Excellent work!\nKeep tracking those readings.
 
 #org @gText_UltraEpisode_PostCosmog_Sakura_CommentingOnObligations
-[RED]In all our time researching Ultra\nSpace, we have never seen an Ultra\lWormhole open on it's own.\pIt's unclear what is happening, but I\nhave a feeling it isn't good.\pI will stay here to continue\nresearching the wormholes.\p[PLAYER], I apologize, but I must ask\nanother favour of you.\pAs Kulure's Champion and a firsthand\nexplorer of Ultra Space, I feel\lyou are best equipped to\linvestigate the Ultra Wormholes\lthemselves.
+[RED]In all our time researching Ultra\nSpace, we have never seen an Ultra\lWormhole open on its own.\pIt's unclear what is happening, but I\nhave a feeling it isn't good.\pI will stay here to continue\nresearching the wormholes.\p[PLAYER], I apologize, but I must ask\nanother favour of you.\pAs Kulure's Champion and a firsthand\nexplorer of Ultra Space, I feel\lyou are best equipped to\linvestigate the Ultra Wormholes\lthemselves.
 
 #org @gText_UltraEpisode_PostCosmog_Sakura_RequestingWormholeClosure
 [RED]Ultra Wormholes draw the attention\nof Ultra Beasts.\pWe need you to find these\nwormholes and close them before\lany Ultra Beasts come through.\pPlease, will you do this?
@@ -2072,7 +2072,7 @@ Yes, that was quite enjoyable.
 [RED]Closing every Ultra Wormhole would\nbe ideal, of course.\pHowever, I am confident that closing\neven 5 of them would be enough.\pWe could handle the remaining Ultra\nWormholes, and also find the source\lof them.\pWith luck, we can ensure no harm\ncomes to the region.\pThank you once again, [PLAYER].\nWe are all in your debt.
 
 #org @gText_UltraEpisode_TypeNullResearcher_RequestPlayersSupport
-I've received word from Professor\nSakura about you.\pYou're here to take Type: Null to\ninvestigate the Ultra Wormholes,\lyes?\pType: Null has a reputation of\nbeing aggressive[.]\pIn reality, it's just scared of this\nplace and it's mission.\pIt needs a confident and caring\ntrainer to help it calm down.\pPlease[.] Assure me you will take\ngood care of Type: Null.
+I've received word from Professor\nSakura about you.\pYou're here to take Type: Null to\ninvestigate the Ultra Wormholes,\lyes?\pType: Null has a reputation of\nbeing aggressive[.]\pIn reality, it's just scared of this\nplace and its mission.\pIt needs a confident and caring\ntrainer to help it calm down.\pPlease[.] Assure me you will take\ngood care of Type: Null.
 
 #org @gText_UltraEpisode_TypeNullResearcher_RequestPlayerSupport_PlayerSaidNo
 Then I cannot give you Type: Null in\ngood faith.
@@ -2099,7 +2099,7 @@ Wh-what's this?\pType: Null has[.] Evolved?!\pThis is truly incredible!\pTyp - E
 [BLACK][PLAYER] obtained a set of Memory\ndiscs!
 
 #org @gText_UltraEpisode_TypeNullResearcher_MemoryDiscsExplained
-[BLUE]These Memory discs were designed to\nbring out Silvally's latent power.\pEach holds data on a powerful\nPok\emon of each respective type.\pSilvally has a special ability called\n[GREEN]RKS System[BLUE].\pBy holding one of these discs, it can\nchange it's own type, as well as\lthe type of it's Multi-Attack move,\lto match that disc.\pI'm certain someone like you can make\ngood use of it.
+[BLUE]These Memory discs were designed to\nbring out Silvally's latent power.\pEach holds data on a powerful\nPok\emon of each respective type.\pSilvally has a special ability called\n[GREEN]RKS System[BLUE].\pBy holding one of these discs, it can\nchange its own type, as well as\lthe type of its Multi-Attack move,\lto match that disc.\pI'm certain someone like you can make\ngood use of it.
 
 #org @gText_UltraEpisode_TypeNullResearcher_GivenSilvally
 [BLUE]Seeing how close you two are now[.]\pWell, it would feel wrong to take\nSilvally away from you.\pVery well!\pFrom this moment forth, Silvally is\nyours!
@@ -2156,7 +2156,7 @@ Nothing for now!
 [RED]You've done great work, [PLAYER].\pThanks to your efforts in closing the\nUltra Wormholes, we're starting to\lunderstand how they behave.\pI'm confident we can stabilize them\nlong enough for someone to travel\lthrough.
 
 #org @gText_UltraEpisode_PostUltraWormholes_Sakura_NoSolgaleoOrLunala
-[RED]Unfortunately, we would need to\nbetter understand the energy\lsource causing them to do so.\pHmm[.] I recall it being similar to the\nreadings coming from your Cosmog[.]\pIt stands to reason that it's energy\nwould grow stronger as it does,\lyes?\pI've read reports from our\ncolleagues in the Alola Region.\pThey tell of Pok\emon called [GREEN]Solgaleo\n[RED]and [GREEN]Lunala[RED], which could open Ultra\lWormholes at will.\pWhat's more, their papers imply\nthese Beasts evolved from a\lCosmog[.]\p[PLAYER], if your Cosmog ever\nevolves, please bring it here.
+[RED]Unfortunately, we would need to\nbetter understand the energy\lsource causing them to do so.\pHmm[.] I recall it being similar to the\nreadings coming from your Cosmog[.]\pIt stands to reason that its energy\nwould grow stronger as it does,\lyes?\pI've read reports from our\ncolleagues in the Alola Region.\pThey tell of Pok\emon called [GREEN]Solgaleo\n[RED]and [GREEN]Lunala[RED], which could open Ultra\lWormholes at will.\pWhat's more, their papers imply\nthese Beasts evolved from a\lCosmog[.]\p[PLAYER], if your Cosmog ever\nevolves, please bring it here.
 
 #org @gText_UltraEpisode_PostUltraWormholes_Sakura_HasCaughtSolgaleoOrLunala
 [RED]Furthermore, you were able to\nevolve your Cosmog into [BUFFER1]!\pThe energy coming from it is\nimmense.\pIt isn't a stretch to say it has\nresulted in a breakthrough in our\lresearch.\pAs a result of all your efforts, I\nam confident we can pinpoint the\lsource of the disturbances.\pPlease, be patient with us for a\nmoment as we confirm.

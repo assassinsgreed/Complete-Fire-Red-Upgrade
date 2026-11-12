@@ -1,5 +1,5 @@
 #org @gText_TsarvosaCity_Captain
-This is the entrance to the Tsarvosa\nCity Pier.\pI'm sorry, but we're not accepting\npassangers at this time.
+This is the entrance to the Tsarvosa\nCity Pier.\pI'm sorry, but we're not accepting\npassengers at this time.
 
 #org @gText_TsarvosaCity_Captain_BattleFrontierPrompt
 Oh, Champion [PLAYER]!\nIt is an honour.\pI've been informed to ferry you to\nthe Battle Frontier, if you wish?
@@ -14,7 +14,7 @@ Understood. Come see me if your mind\nchanges.
 We trade goods with Slateport City in\nthe Hoenn region quite often.\pI'm actually in the middle of\nreceiving a shipment now.\pAnd now, I must be getting back to\nwork.
 
 #org @gText_TsarvosaCity_StatsDojoFan
-My big bro works at the Fighting\nDojo.\pHe specializes in making Pok\emons'\nstats stronger.\pIsn't that cool? Much cooler than\nheld items, that's for sure!
+My big bro works at the Fighting\nDojo.\pHe specializes in making a Pok\emon's\nstats stronger.\pIsn't that cool? Much cooler than\nheld items, that's for sure!
 
 #org @gText_TsarvosaCity_DirectionsGirl
 You're not from around here, are\nyou?\pI could tell just by your\nexpression, tee-hee!\pDid you come from Emraldin Quay, or\nfrom the ocean to the east?\pMost trainers come from Emraldin\nQuay, even if it's a longer route.
@@ -89,10 +89,10 @@ Disgraceful[.]
 [BLUE]Your precious items have been\nreturned to your Pok\emon[.]\pI expect to see you on the field of\nbattle again someday.
 
 #org @gText_TsarvosaCity_StatsDojo_KaitoGivesStrength
-[BLUE]Congratulations on a well earned\nvictory.\pI see your items do not substitute\nyour talent, but enhance it!\pYour items have been returned to\nyour Pok\emon.\pYou have earned my respsect.\nMay I know your name?\p[PLAYER]?\p[PLAYER]! You and your Pok\emon\nbattled valiantly.\pIt is my honour to bestow upon you\nthis HM containing Strength.
+[BLUE]Congratulations on a well earned\nvictory.\pI see your items do not substitute\nyour talent, but enhance it!\pYour items have been returned to\nyour Pok\emon.\pYou have earned my respect.\nMay I know your name?\p[PLAYER]?\p[PLAYER]! You and your Pok\emon\nbattled valiantly.\pIt is my honour to bestow upon you\nthis HM containing Strength.
 
 #org @gText_TsarvosaCity_StatsDojo_KaitoCommentsOnBadge
-[BLUE]This will allow you to push aside\nboulders with relative ease.\pUnfortunately, you will need this\ncity's gym badge to use it[.]\pNevertheless[.] You have left an\nimpression on me, [PLAYER].\pMy Stats Dojo and it's facilities are\nyours to use at your leisure!
+[BLUE]This will allow you to push aside\nboulders with relative ease.\pUnfortunately, you will need this\ncity's gym badge to use it[.]\pNevertheless[.] You have left an\nimpression on me, [PLAYER].\pMy Stats Dojo and its facilities are\nyours to use at your leisure!
 
 #org @gText_TsarvosaCity_StatsDojo_KaitoAsksToExplainServices
 [BLUE]If I may, I would like to explain\nour facilities to you.
@@ -113,7 +113,7 @@ Disgraceful[.]
 [BLUE]Thanks to your contributions, our\nshelves are fully stocked again.
 
 #org @gText_TsarvosaCity_StatsDojo_KaitoExplainsIVMaxerAndPowerItems
-[BLUE]To our right is where the brainiacs\nstudy Pok\emons' innate potential.\pThey have two research projects\nthey focus on.
+[BLUE]To our right is where the brainiacs\nstudy a Pok\emon's innate potential.\pThey have two research projects\nthey focus on.
 
 #org @gText_TsarvosaCity_StatsDojo_KaitoExplainsPowerItems
 [BLUE]The first project is researching held\nitems that bolster a Pok\emon's\lEVs, or Effort Values.\pDo not get the wrong idea!\pThese held items are okay because\nthey serve to strengthen your\lPok\emon's natural power!
@@ -125,7 +125,7 @@ Disgraceful[.]
 [BLUE]Thanks to your donations, we have\ncompleted this research track!
 
 #org @gText_TsarvosaCity_StatsDojo_KaitoExplainsIVMaxer
-[BLUE]The next project is investigating\nhow to tap into a Pok\emon's natural\lpower.\pThis would see their innate strength\ngrow beyond it's original limits.\pIn other words, it would maximize\ntheir IVs, or Individual Values.
+[BLUE]The next project is investigating\nhow to tap into a Pok\emon's natural\lpower.\pThis would see their innate strength\ngrow beyond its original limits.\pIn other words, it would maximize\ntheir IVs, or Individual Values.
 
 #org @gText_TsarvosaCity_StatsDojo_KaitoExplainsIVMaxer_NotFunded
 [BLUE]We[.] are embarrassingly short on\nfunds, and so research is halted.
@@ -143,7 +143,7 @@ Disgraceful[.]
 [BLUE]Thanks to your funding, they have\namassed the finest Pok\emon they\lcould.\pI'm sure your Pok\emon will benefit\nfrom their efforts tremendously.
 
 #org @gText_TsarvosaCity_StatsDojo_KaitoExplainsHimself
-[BLUE]And finally, we arrive at me.\pAs this facility's sensei, it falls to\nme to oversee it's progress.\pYou may speak to me whenever you'd\nlike to hear this explaination\lagain.
+[BLUE]And finally, we arrive at me.\pAs this facility's sensei, it falls to\nme to oversee its progress.\pYou may speak to me whenever you'd\nlike to hear this explanation\lagain.
 
 #org @gText_TsarvosaCity_StatsDojo_KaitoExplainsHimself_FundingRemains
 [BLUE]And, if you are feeling charitable,\nyou may donate to any of the\lprojects we just discussed.\pBy doing so, they may offer more\nservices. It is truly win-win.
@@ -158,7 +158,7 @@ Disgraceful[.]
 Invest in shops
 
 #org @gText_TsarvosaCity_StatsDojo_KaitoOptions_InvestInPowerItems
-Invest in Power Items reserach
+Invest in Power Items research
 
 #org @gText_TsarvosaCity_StatsDojo_KaitoOptions_InvestInIVMaxer
 Invest in IV Maxing research
@@ -218,7 +218,7 @@ Research into IV, or Individual\nValue, maxing is at [GREEN]Lvl [BUFFER1][BLUE].
 This research project has been\nfunded!\pThe IV Maxing process is now at\n[GREEN]Lvl [BUFFER1][BLUE]. Congratulations.
 
 #org @gText_TsarvosaCity_StatsDojo_Kaito_IVMaxingLevel2Unlocked
-The brainiacs at the lab can now\nelevate any Pok\emon's stat to it's\lmaximum potential.\pThey'll require a Bottle Cap in\nexchange for their services.\pThey think they can do even better,\nbut will need \$[BUFFER2] to further\ltheir research.
+The brainiacs at the lab can now\nelevate any Pok\emon's stat to its\lmaximum potential.\pThey'll require a Bottle Cap in\nexchange for their services.\pThey think they can do even better,\nbut will need \$[BUFFER2] to further\ltheir research.
 
 #org @gText_TsarvosaCity_StatsDojo_Kaito_IVMaxingLevel3Unlocked
 The brainiacs have pulled out all\nthe stops.\pNot only can they improve a single\nstat with a Bottle Cap[.]\pNow they can improve all stats\nat once, in exchange for a Gold\lBottle Cap.
@@ -263,7 +263,7 @@ It's very difficult, without having\nPower Items available in our\lshops[.]
 Our research has elevated Power\nItems to [GREEN]Lvl [BUFFER1][BLUE].\pThis means that all EVs, or Effort\nValues, earned are [BUFFER1]x their\lusual rate.
 
 #org @gText_TsarvosaCity_StatsDojo_PowerItemsCanBeStrengthenedFurther
-With funding, I'm sure we could make\nthem even more efficient[.]\pOh, pretend you didn't hear that.\nNothing to concern yourself over.
+With funding, I'm sure we could make\nthem even more efficient[.]\pOh, pretend you didn't hear that.\nNothing to concern yourself with.
 
 #org @gText_TsarvosaCity_StatsDojo_PowerItemsAtMaxLevel
 We've researched everything we\npossibly could!
@@ -401,7 +401,7 @@ Sorry! I haven't been able to get\nPok\emon strong enough yet.\pIf you were to i
 Refinement through discipline[.]\nAchievement through consistency[.]
 
 #org @gText_TsarvosaCity_StatsDojo_GymPlacard
-The sign looks like it used to\ndisplay gym victors.\pThe names of past challengers have\nbeen aggressivly erased.
+The sign looks like it used to\ndisplay gym victors.\pThe names of past challengers have\nbeen aggressively erased.
 
 #org @gText_TsarvosaCityNPCHouses_TutorConfirmation
 I've devoted myself to studying\nfantastic Pok\emon moves.\pI can teach these moves, in exchange\nfor just 10 Pok\eChips.\pAre you interested?\n[BLACK](Held: [BUFFER1])
@@ -534,7 +534,7 @@ Stay in school kid!
 [BLUE]Oh, a new face!
 
 #org @gText_TsarvosaCity_GymTraineeCafe_AttendantExplainsServices
-[BLUE]Welcome to the Tsarvosa City Gym\nTrainee Caf\e!\pI see you are a Pok\emon trainer,\ntaking part in their gym challenge.\pPlease allow me to explain the\nservices we can offer you.\pOur clientelle are exclusively\naspiring gym leaders from other\lregions.\pThey come here not only to relax,\nbut to practice their skills.\pI'm sure if you were to speak with\none, they would be delighted to\lbattle you.\pShould you succeed, they may even\noffer you a reward!\pBe sure to return often, as our\nclientelle changes regularly.\pThere is just one catch - you cannot\nsave while in the building!
+[BLUE]Welcome to the Tsarvosa City Gym\nTrainee Caf\e!\pI see you are a Pok\emon trainer,\ntaking part in their gym challenge.\pPlease allow me to explain the\nservices we can offer you.\pOur clientele are exclusively\naspiring gym leaders from other\lregions.\pThey come here not only to relax,\nbut to practice their skills.\pI'm sure if you were to speak with\none, they would be delighted to\lbattle you.\pShould you succeed, they may even\noffer you a reward!\pBe sure to return often, as our\nclientele changes regularly.\pThere is just one catch - you cannot\nsave while in the building!
 
 #org @gText_TsarvosaCity_GymTraineeCafe_TraineeNoam
 Noam
@@ -723,7 +723,7 @@ Come back if you have more\nPok\eChips to crush.\pWe could really benefit from y
 My friends and I rented out this old\nhouse to pursue our research.\pIt has been hard, but all our\nstruggles are finally paying off!\pJust don't tell anyone about what\nwe're doing here, okay?\pWe don't need any copycats on our\ntails[.]
 
 #org @gText_TsarvosaCity_NPCHouses_MarketBoy
-Tsarvosa City is home to the second\nbiggest shopping center in Kulure.\pOf course, the biggest is in Daimyn\nCity on the mainland!\pBut, Tsarvosa City's sells things you\nwon't find in Daimyn City!\pI guess that's true of Daimyn\nCity's Mall too, though[.]
+Tsarvosa City is home to the second\nbiggest shopping center in Kulure.\pOf course, the biggest is in Daimyn\nCity on the mainland!\pBut, Tsarvosa City sells things you\nwon't find in Daimyn City!\pI guess that's true of Daimyn\nCity's Mall too, though[.]
 
 #org @gText_TsarvosaCity_NPCHouses_WildnernessGirl
 Not a lot of people live on this\nisland, compared to the mainland.\pAs a result, we're all closer to the\nwild Pok\emon that call this island\lhome.
@@ -759,7 +759,7 @@ We love to watch the Elite Four\nchallenges they broadcast on TV!\pIt's so cool 
 I know that no one will really be\nable to beat the Champion.\pIt's still fun to root for an\nunderdog, though!
 
 #org @gText_TsarvosaCity_Gym_Attendant
-Yo, superstar! Welcome to the\nTsarvosa City Gym!\pAn outdoor market is quite an\nunconventional place for a gym.\pBut don't be fooled!\pIt's the perfect battleground for it's\nleader, Iris!\pShe uses items to their full\neffect to turn the tide of battle.\pIf you want to suceed, you'll need\nto familiarize yourself with all\lsorts of items.\pYou can also use moves like Thief\nto turn their advantage into yours.\pOr, use abilities like Frisk to get\na heads up on what they're holding.\pBut don't sweat the small stuff[.]\nI know you've got this in the bag!
+Yo, superstar! Welcome to the\nTsarvosa City Gym!\pAn outdoor market is quite an\nunconventional place for a gym.\pBut don't be fooled!\pIt's the perfect battleground for its\nleader, Iris!\pShe uses items to their full\neffect to turn the tide of battle.\pIf you want to succeed, you'll need\nto familiarize yourself with all\lsorts of items.\pYou can also use moves like Thief\nto turn their advantage into yours.\pOr, use abilities like Frisk to get\na heads up on what they're holding.\pBut don't sweat the small stuff[.]\nI know you've got this in the bag!
 
 #org @gText_TsarvosaCity_Gym_AttendantPostVictory
 I recognize that shine anywhere;\nthat's the Support Badge!\pWay to go, superstar!\pYou're one step closer to completing\nyour journey.
@@ -957,7 +957,7 @@ Oh! Well done!
 [RED]Good luck with the rest of your gym\nchallenge, dearie.
 
 #org @gText_TsarvosaCity_Gym_Jamila_Intro
-[RED]Fufufufufu[.] My Pok\emon's item\naccounts for it's weaknesses.
+[RED]Fufufufufu[.] My Pok\emon's item\naccounts for its weaknesses.
 
 #org @gText_TsarvosaCity_Gym_Jamila_Defeat
 Unbelievable[.]

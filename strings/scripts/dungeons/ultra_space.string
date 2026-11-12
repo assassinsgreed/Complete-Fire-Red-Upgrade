@@ -1,5 +1,5 @@
 #org @gText_UltraSpace_IntroCutscene_Rival_SurprisedAtArrival
-[BLACK][RIVAL]: [BLUE]Did[.] Did we make it?\nIt this Ultra Space?
+[BLACK][RIVAL]: [BLUE]Did[.] Did we make it?\nIs this Ultra Space?
 
 #org @gText_UltraSpace_IntroCutscene_Rival_CommentsOnTimeOfDay
 [BLACK][RIVAL]: [BLUE]It's gotta be, right?\pIt isn't even the same time of day\nas when we left.\pIt feels a bit more lively here, too,\ndon't you think?
@@ -164,7 +164,7 @@ Pek-ak-a!
 [RIVAL]: [BLUE]Oh! I've got it!
 
 #org @gText_UltraSpace_Hoenn_FindingJirachi4
-[RIVAL]: [BLUE]When Alistair was\nresearching Jirachi, he said\lsomething interesting.\pApparently Jirachi sleeps for 1,000\nyears.\pIf a wish is written on any of the\nthree tags on it's head, they'll be\lgranted when it wakes up.
+[RIVAL]: [BLUE]When Alistair was\nresearching Jirachi, he said\lsomething interesting.\pApparently Jirachi sleeps for 1,000\nyears.\pIf a wish is written on any of the\nthree tags on its head, they'll be\lgranted when it wakes up.
 
 #org @gText_UltraSpace_Hoenn_FindingJirachi5
 [RIVAL]: [BLUE]Alistair could have had\nthree, but he only made one wish[.]\pI guess he felt really strongly\nabout it.
@@ -206,7 +206,7 @@ Okay! Come see me when you're ready\nto go home.
 Alright. Just close your eyes for a\nmoment.\pI'll contact the boys back home and\nthey'll open up a wormhole right\laway.\pJust sit tight[.]
 
 #org @gText_UltraSpace_PoipoleResearcher_IntroducesPoipole
-Oh, hello [PLAYER]!\pI heard you'll be helping us out\nwith our Ultra Space research.\pListen, I've learned something really\nexciting!\pThe locals here tend to depart on\njournies with a specific Ultra\lBeast at their side.\pHohoho! It sounds quite like how we\nset out with our starter Pok\emon,\lno?\pFurthermore, we've earned the trust\nof the locals here.\pAnd, guess what? They've gifted us a\nPoipole as a result!\pThe little fellow is quite feisty, and\nI'd feel bad keeping it here while\lwe do our research.\pSay[.] I think it would do well with\nyou actually.
+Oh, hello [PLAYER]!\pI heard you'll be helping us out\nwith our Ultra Space research.\pListen, I've learned something really\nexciting!\pThe locals here tend to depart on\njourneys with a specific Ultra\lBeast at their side.\pHohoho! It sounds quite like how we\nset out with our starter Pok\emon,\lno?\pFurthermore, we've earned the trust\nof the locals here.\pAnd, guess what? They've gifted us a\nPoipole as a result!\pThe little fellow is quite feisty, and\nI'd feel bad keeping it here while\lwe do our research.\pSay[.] I think it would do well with\nyou actually.
 
 #org @gText_UltraSpace_PoipoleResearcher_LeadingUpToPoipoleGift
 Ultra Beasts are quite different\nfrom Pok\emon.\pI think I'd only feel comfortable\ngiving this Poipole to you, if you\lcan prove your mastery over\lPok\emon.\pRegistering 150 caught Pok\emon in\nyour Pok\edex should do it.
@@ -270,19 +270,19 @@ The Ultra Beast fled[.]\pBetter report this to Professor\nSakura[.]
 [RED]These islands[.]\nThey're floating in the sky.\pUltra Space is truly an unusual\nplace.\pWe'd best watch our step. There's no\ntelling what could happen here.
 
 #org @gText_DaisOfLight_SakuraCommentsOnSourceOfEclipses
-[RED]The eclipse here is much stronger\nthan the ones back home.\pI recall seeing something in our\nAlolan colleagues' notes about a\lsimilar phenomenon occuring there.\pIt was the result of an Ultra Beast\nthat threatened the region.\pIf something similar is happening now,\nthen[.]\p[PLAYER], we'd better hurry. Surely\nwe must be close to the source.
+[RED]The eclipse here is much stronger\nthan the ones back home.\pI recall seeing something in our\nAlolan colleagues' notes about a\lsimilar phenomenon occurring there.\pIt was the result of an Ultra Beast\nthat threatened the region.\pIf something similar is happening now,\nthen[.]\p[PLAYER], we'd better hurry. Surely\nwe must be close to the source.
 
 #org @gText_DaisOfLight_Sakura_BeforeReachingDais
 [RED][PLAYER], let's continue on to the\npeak of the Dais of Light[.]
 
 #org @gText_DaisOfLight_Sakura_SeeingNecrozma
-[RED]So, it really is the same Ultra\nBeast[.] [GREEN]Necrozma[RED].\pExcept, this one doesn't look right.\pAnd, it's readings are off the charts.
+[RED]So, it really is the same Ultra\nBeast[.] [GREEN]Necrozma[RED].\pExcept, this one doesn't look right.\pAnd, its readings are off the charts.
 
 #org @gText_DaisOfLight_Sakura_BeforeDefeatingUltraNecrozma
 [RED][PLAYER], it's up to you to stop\nNecrozma.\pIf you don't, it might absorb all the\nlight here, and then move on to\lother dimensions.\pYou're the only one that can do it,\n[PLAYER]. I'm counting on you.
 
 #org @gText_DaisOfLight_Sakura_PreparingToFightNecrozma
-[RED][PLAYER], I don't have much time to\nexplain, so please listen carefully.\pYears ago, in the Alola Region, an\nUltra Beast called Necrozma\lwreaked havoc.\pIt forcibly took control over another\nUltra Beast, a being of light.\pAnd, when it did, it began to feed\nupon the limitless light they gave\loff.\pOnce it had it's fill, it transformed\ninto a terrible beast and began to\lrampage[.]\pIf not for a powerful trainer, the\nAlola region, and perhaps every\lother region and dimension, would\lhave been destroyed.\pI suspect it's done the same, now,\nwith the other Cosmog you saw[.]\pWe're short on time, [PLAYER], so\nI'll cut to the chase.\pCapture is not an option this time;\nit's power has grown too strong\lalready.\pIf you can't defeat it in battle,\nthen all may be lost.\pYou must have Type: Null battle it.\nIt is the very reason it was\lcreated.\pI am not a battler, and I'll only\nget in your way.\pI'll stay back, instead.\p[PLAYER], I'm counting on you.\nWe all are.\pGood luck.
+[RED][PLAYER], I don't have much time to\nexplain, so please listen carefully.\pYears ago, in the Alola Region, an\nUltra Beast called Necrozma\lwreaked havoc.\pIt forcibly took control over another\nUltra Beast, a being of light.\pAnd, when it did, it began to feed\nupon the limitless light they gave\loff.\pOnce it had its fill, it transformed\ninto a terrible beast and began to\lrampage[.]\pIf not for a powerful trainer, the\nAlola region, and perhaps every\lother region and dimension, would\lhave been destroyed.\pI suspect it's done the same, now,\nwith the other Cosmog you saw[.]\pWe're short on time, [PLAYER], so\nI'll cut to the chase.\pCapture is not an option this time;\nits power has grown too strong\lalready.\pIf you can't defeat it in battle,\nthen all may be lost.\pYou must have Type: Null battle it.\nIt is the very reason it was\lcreated.\pI am not a battler, and I'll only\nget in your way.\pI'll stay back, instead.\p[PLAYER], I'm counting on you.\nWe all are.\pGood luck.
 
 #org @gText_DaisOfLight_Sakura_UltraNecrozmaDefeated
 [RED][PLAYER], you've done it!\pYou've put a stop to Necrozma!
@@ -327,7 +327,7 @@ Yes! It's been def-
 Necrozma absorbed enough light to\ntransform!\pI was[.] too late[.]
 
 #org @gText_DaisOfLight_TypeNullEvolving
-Type: Null refuses to give up!\pA brilliant light covers it's body.\nIs it[.] Evolving?!
+Type: Null refuses to give up!\pA brilliant light covers its body.\nIs it[.] Evolving?!
 
 #org @gText_DaisOfLight_SilvallyEvolved
 Type: Null evolved into Silvally!

@@ -45,7 +45,7 @@ Hey, no fair!
 I brought my parasol so I could\nlook upon Victory Road's peak,\lwithout hurting my eyes.
 
 #org @gText_Route21_NinjaBoyIshan_Intro
-My Pok\emon have mastered the art of\nmimickry.\pPrepare to be confounded, you fool!
+My Pok\emon have mastered the art of\nmimicry.\pPrepare to be confounded, you fool!
 
 #org @gText_Route21_NinjaBoyIshan_Defeat
 Was I the fool after all?
@@ -72,7 +72,7 @@ Ngh[.] Interloper[.]
 This place is quiet and peaceful.\pPlease, do not disturb it if you\nintend to pass through.
 
 #org @gText_Route21_VictoryRoadGuard
-Hold, trainer.\pThis is Victory Road - a passage\nthat only the finest trainers may\lenter.\pThose that reach it's peak and obtain\nthe Victory Flag may challenge\lthe Elite Four and Champion.\pYou may only enter if you've\nobtained all 8 gym badges and\lhave been registered for the\lVictory Road Challenge.\pPlease, allow me to check your\ncredentials[.]
+Hold, trainer.\pThis is Victory Road - a passage\nthat only the finest trainers may\lenter.\pThose that reach its peak and obtain\nthe Victory Flag may challenge\lthe Elite Four and Champion.\pYou may only enter if you've\nobtained all 8 gym badges and\lhave been registered for the\lVictory Road Challenge.\pPlease, allow me to check your\ncredentials[.]
 
 #org @gText_Route21_VictoryRoadGuard_NotEnoughBadges
 I am sorry.\nYou are not permitted to pass.\pYou must be registered in the\nVictory Road Challenge.\pThis can only be done at Ascension\nTower, once you have all 8\lof Kulure's gym badges.\pPlease, continue your journey and\nreturn once you have been\lregistered.
@@ -112,7 +112,7 @@ Oh, you're tough too!
 No way, you're on the gym challenge\ntoo? That's so neat!\pNo wonder you're so tough!
 
 #org @gText_Route22_ScientistLarry_Intro
-I have a hypothesis that the spores\nin Mimmett Jungle have an affect on\lPok\emon.\pBattle me, so I may test it.
+I have a hypothesis that the spores\nin Mimmett Jungle have an effect on\lPok\emon.\pBattle me, so I may test it.
 
 #org @gText_Route22_ScientistLarry_Defeat
 Your Pok\emon are strong, but it isn't\ndue to the spores. Fascinating!
@@ -215,7 +215,7 @@ It isn't battling well either, it\nseems.
 I bought these cute Galarica\naccessories from a girl in Emraldin\lQuay.\pFor some reason, my Pok\emon can't\nget enough of it[.]
 
 #org @gText_Route23_BeautyMiranda_ChatDivergent
-I swear I just saw my Ponyta move\nsomething with it's mind[.]\pNo, I must be imagining things.
+I swear I just saw my Ponyta move\nsomething with its mind[.]\pNo, I must be imagining things.
 
 #org @gText_Route23_TsarvosaAnthraDirectionsSign
 West: Tsarvosa City\nEast: Anthra Town
@@ -245,7 +245,7 @@ I will ask you plainly: You like to\nfish, do you not?
 An answer as natural and confident as\nthe waves themselves.\pVery well. I understand my duty.\nPlease, take this Super Rod.
 
 #org @gText_Route23_FishermansHouse_Master_QuestionNo
-A peculiar response, surely.\pI must wonder what led my brothers\nto sharing their rods with you.
+A peculiar response, surely.\pI must wonder what led my brothers\nto share their rods with you.
 
 #org @gText_Route23_FishermansHouse_Master_SuperRodExplaination
 That Super Rod is the finest fishing\nrod there is.\pIt can be used to reel in the\nstrongest Pok\emon around.\pBut, I'm sure you do not need that\nexplained to you. Ohohoho!
@@ -261,7 +261,7 @@ I heard the Fishing Master was\namassing quite a following.\pI decided to check 
 
 // Route 24
 #org @gText_Route24_PsychicRaya_Intro
-Do you feel it? The waves of psychic\nenergy eminating from the north[.]
+Do you feel it? The waves of psychic\nenergy emanating from the north[.]
 
 #org @gText_Route24_PsychicRaya_Defeat
 Those waves could not empower us[.]

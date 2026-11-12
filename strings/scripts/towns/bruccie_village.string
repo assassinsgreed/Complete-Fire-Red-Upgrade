@@ -106,7 +106,7 @@ I sense it!\nYou caught it at [BUFFER2].
 It seems like it's used to the hustle\nand bustle of human civilization.
 
 #org @gText_BruccieVillageFacilities_PokemonCenter_CaughtLocationGirl_Desert
-It's endurance must be a testament to\nthe harsh desert it calls home.
+Its endurance must be a testament to\nthe harsh desert it calls home.
 
 #org @gText_BruccieVillageFacilities_PokemonCenter_CaughtLocationGirl_Hot
 To live in a place as hot as that[.]\nIt must have such a fierce\ltemperament.
@@ -118,7 +118,7 @@ Living in a place as cold as that\nmust've made it very patient.
 It must enjoy the peaceful\ncountryside!
 
 #org @gText_BruccieVillageFacilities_PokemonCenter_CaughtLocationGirl_Craggy
-It's determination is proof of the\ntime it's spent in such a place.
+Its determination is proof of the\ntime its spent in such a place.
 
 #org @gText_BruccieVillageFacilities_PokemonCenter_CaughtLocationGirl_Watery
 To have so much water available to\nit[.] It must've enjoyed that.
@@ -127,7 +127,7 @@ To have so much water available to\nit[.] It must've enjoyed that.
 It looks like it knows how to relax\nat the seaside quite well!
 
 #org @gText_BruccieVillageFacilities_PokemonCenter_CaughtLocationGirl_Cave
-It's calmness is a sign that it lived\nin an area not visited very often.
+Its calmness is a sign that it lived\nin an area not visited very often.
 
 #org @gText_BruccieVillageFacilities_PokemonCenter_CaughtLocationGirl_Sea
 It must find the crashing ocean\nwaves to be really peaceful.
@@ -136,7 +136,7 @@ It must find the crashing ocean\nwaves to be really peaceful.
 How spooky! If it could talk, I'm\nsure it would have great ghost\lstories to tell.
 
 #org @gText_BruccieVillageFacilities_PokemonCenter_CaughtLocationGirl_Marshy
-It looks like it knows how to blend\ninto it's environment quite well.
+It looks like it knows how to blend\ninto its environment quite well.
 
 #org @gText_BruccieVillageFacilities_PokemonCenter_CaughtLocationGirl_Forest
 It seems to be content with the\nsound of rustling leaves and singing\lbirds.
@@ -188,7 +188,7 @@ Alright. If you change your mind,\ncome see me.\pAnd remember - don't tell anyon
 Okay, which Pok\emon would you like\nto change the ball of?
 
 #org @gText_BruccieVillageNPCHouses_PokeballSwapper_TradedPokemon
-[BUFFER1] was given to you by another\ntrainer.\pIt would be rude of me to change\nit's Pok\e Ball.
+[BUFFER1] was given to you by another\ntrainer.\pIt would be rude of me to change\nits Pok\e Ball.
 
 #org @gText_BruccieVillageNPCHouses_PokeballSwapper_PokemonInCherishBall
 [BUFFER1] is in a Cherish Ball.\nIt's special; I cannot change it.
@@ -244,7 +244,7 @@ I want to go play outside, but mom\nsaid it's too cold out[.]
 
 // Gym
 #org @gText_BruccieVillageGym_ExpertTips
-Yo, superstar! I'm not surprised to\nsee you made it here.\pListen up.\pAbby is all about strength, and\nshe's built a capable team to\lprove it.\pBecause she values strength so much,\nher gym doesn't have any puzzles.\pYou'll have to work your way\nthrough each of her trainers to\learn the right to face her.\pNow, Abby's an expert at using\nPok\emon abilities to her advantage.\pTo counter her, you'll want to be\nprepared for what those abilities\lcan do.\pCertain moves, like Worry Seed or\nGastro Acid, can change or\lsuppress your opponents' abilities.\pBut that's not all!\pSome abilities, like Mold Breaker,\ncan also suppress your opponents'\labilities.\pGood luck, superstar! I'm sure you'll\ncome out on top yet again.
+Yo, superstar! I'm not surprised to\nsee you've made it here.\pListen up.\pAbby is all about strength, and\nshe's built a capable team to\lprove it.\pBecause she values strength so much,\nher gym doesn't have any puzzles.\pYou'll have to work your way\nthrough each of her trainers to\learn the right to face her.\pNow, Abby's an expert at using\nPok\emon abilities to her advantage.\pTo counter her, you'll want to be\nprepared for what those abilities\lcan do.\pCertain moves, like Worry Seed or\nGastro Acid, can change or\lsuppress your opponents' abilities.\pBut that's not all!\pSome abilities, like Mold Breaker,\ncan also suppress your opponents'\labilities.\pGood luck, superstar! I'm sure you'll\ncome out on top yet again.
 
 #org @gText_BruccieVillageGym_ExpertBadgeObtained
 Congratulations, superstar! I see you\nhave a shiny new Talent Badge.\pYou and your team worked hard to\novercome Abby and her team.\pThe next gym lies to the west, in\nTsarvosa City.\pYou'll need to be able to surf to\nreach it, but I'm sure you'll figure\lsomething out.\pCatch you there.

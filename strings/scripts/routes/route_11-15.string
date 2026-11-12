@@ -54,7 +54,7 @@ Don't think this changes anything.
 Ugh[.] Just scram, you brat.
 
 #org @gText_Route11South_LassTabitha_Intro
-I like, may be cute and all, but\ndon't underestimate me. I'm strong!
+I, like, may be cute and all, but\ndon't underestimate me. I'm strong!
 
 #org @gText_Route11South_LassTabitha_Defeat
 Like, so rude.
@@ -210,7 +210,7 @@ You should ask [RIVAL] or Alistair\nto join you before challenging\lTeam Pluto[.
 [BLACK]Clancy: [BLUE]Wait a minute[.] Something\nabout you looks familiar[.]
 
 #org @gText_Route11South_PlutoEvent_Clancy_EnaDoesRecognizePlayer
-[BLACK]Ena: [RED]Clancy[.] That's that kid from\nthe desert.\pY'know, the one that cause a lot of\ntrouble for us?
+[BLACK]Ena: [RED]Clancy[.] That's that kid from\nthe desert.\pY'know, the one that caused a lot of\ntrouble for us?
 
 #org @gText_Route11South_PlutoEvent_Clancy_ClancyFinallyRecognizesPlayer
 [BLACK]Clancy: [BLUE]Gah! You're totally right,\nEna!\pMan, you're good at recognizing\nfaces.
@@ -345,7 +345,7 @@ Heh, so you're the real deal[.]
 [BLUE]Alistair put you and your friend up\nto it?\pSo you're acquainted with him[.] I\nsee.\pTell me, what is your name?\p[PLAYER]?\p[PLAYER], please wait here a moment.
 
 #org @gText_Route11SouthHouse_PlutoEvent_RefinerGivesMegaRing
-[BLUE]Those thugs were trying to take my\nMega Stones and Mega Rings.\pI refused, of course. They would use\nthe potential the stones bring\lto harm others.\pYou and your friend are a kind\ntrainers.\pI am sure you can make good use of\nthese to help people instead.\pPlease, take this with my gratitude.\nOne for you, and one for your\lfriend.
+[BLUE]Those thugs were trying to take my\nMega Stones and Mega Rings.\pI refused, of course. They would use\nthe potential the stones bring\lto harm others.\pYou and your friend are kind\ntrainers.\pI am sure you can make good use of\nthese to help people instead.\pPlease, take this with my gratitude.\nOne for you, and one for your\lfriend.
 
 #org @gText_Route11SouthHouse_PlutoEvent_RefinerExplainsMegaRing
 [BLUE]That is a Mega Ring.\pIf your Pok\emon holds a suitable\nMega Stone, you can use this ring\lto help it Mega Evolve.\pAs for these stones[.] They can be\nfound all over the region.\pI have also perfected the art of\nmaking new stones, and will sell\lthem to you if you'd like.\pI don't mean to toot my own horn,\nbut I'm quite the gifted refiner.\lHohoho!\p[PLAYER], I trust you will use this\npower to bring out the best in your\lPok\emon.
@@ -595,7 +595,7 @@ My Pok\emon are fast, like really\nfast. Think you can keep up?
 Good job!
 
 #org @gText_Route12East_TriathleteTrixie_Chat
-Slow or fast, it doesn't matter.\nPlay to your Pok\emons' strengths.
+Slow or fast, it doesn't matter.\nPlay to your Pok\emon's strengths.
 
 #org @gText_Route12East_GentlemanGeoffrey_Intro
 Good day. Shall we battle?
@@ -676,7 +676,7 @@ You're riding a Pok\emon?\pDo you find the ocean around here\nuncomfortable?
 Battling while riding your Pok\emon[.]\nI see.
 
 #org @gText_Route12West_SwimmerGreg_Chat
-The ocean around here are freezing\ncold, but that's the way I like it.\pI wouldn't want to ride my Pok\emon\nhere, even if it was even colder.
+The ocean around here is freezing\ncold, but that's the way I like it.\pI wouldn't want to ride my Pok\emon\nhere, even if it was even colder.
 
 #org @gText_Route12West_TrainerTipsSign
 Trainer Tips!\pUsing repels deters weak Pok\emon\nfrom being encountered.\pA White Flute lowers the level\nof wild Pok\emon.\pBy using these items together,\nyou can avoid most encounters.
@@ -857,7 +857,7 @@ Hi there! My Pok\emon and I are\nhaving a picnic. Would you like to\ljoin us?
 Oh! You wanted to battle?
 
 #org @gText_Route13_CamperEtie_Chat
-That was fun, but we're going to go\nback to picknicking now.
+That was fun, but we're going to go\nback to picnicking now.
 
 #org @gText_Route13_BeautyCandice_Intro
 I'm out for a jog with my pet\nPok\emon.
@@ -914,7 +914,7 @@ Wow, there are so many names in this\nguest book!\lI had no idea so many people 
 Hello, trainer! Carnelidge Volcano is\nquite dangerous.\pWe've set up this Rest House to give\naspiring mountain climbers the\lopportunity to rest and refresh\lbefore tackling the mountain.\pNow that you've visited us, you'll\nbe able to return here by having\lyour Pok\emon use Fly. Provided you\lhave the necessary badge and HM,\lof course!\pPlease feel free to use any of\nthe amenities you find at the rest\lhouse!
 
 #org @gText_Route13_RestHouse_VolcanionHiker
-A good buddy of mine recently went\nfor a hike on Carnelidge Volcano.\pAnd, get this, he told me the most\nincredible story!\pWhile he was passing through a\nsteamy cave, he swore he saw a\lmassive Pok\emon.\pHe said it had a giant ring on it's\nback that steam poured out of.\pSurely he must've been seeing\nthings.\pWhy, a Pok\emon like that existing[.]
+A good buddy of mine recently went\nfor a hike on Carnelidge Volcano.\pAnd, get this, he told me the most\nincredible story!\pWhile he was passing through a\nsteamy cave, he swore he saw a\lmassive Pok\emon.\pHe said it had a giant ring on its\nback that steam poured out of.\pSurely he must've been seeing\nthings.\pWhy, a Pok\emon like that existing[.]
 
 #org @gText_Route13_HikerLeft
 Hm[.] It looks like our group hasn't\narrived yet.
@@ -1073,7 +1073,7 @@ I'm looking for rare Pok\emon, but\ninstead I've found a trainer.
 Oh, what a rare trainer!
 
 #org @gText_Route15North_SwimmerUrsula_Chat
-Route 15 is so long that we refer\nto it's northern and southern halves\lseparately.\pBut, Pok\emon don't care about that!\nThe same species can be found in\lboth halves.\pDid you know that already?
+Route 15 is so long that we refer\nto its northern and southern halves\lseparately.\pBut, Pok\emon don't care about that!\nThe same species can be found in\lboth halves.\pDid you know that already?
 
 #org @gText_Route15North_SwimmerQuincy_Intro
 I'm an exceptional swimmer, but an\neven more exceptional trainer.\pHere, I'll show you!
@@ -1109,7 +1109,7 @@ You[.] A curse hangs over you.\nUehehehe!
 That curse is now over me[.]
 
 #org @gText_Route15North_ChannelerLila_Chat
-The sea is soothing on it's surface.\pBut[.] It hides unspeakable horrors\nbeneath the waves. Uehehehe!
+The surface of the sea is soothing.\pBut[.] It hides unspeakable horrors\nbeneath the waves. Uehehehe!
 
 #org @gText_Route15North_RestStopAdvertisementSign
 Route 15 Rest Stop - Just a few\nminutes south of here!

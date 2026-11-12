@@ -509,7 +509,7 @@ The user attacks\nwith a song. Others\ncan join in, doing\nmore damage.
 The user attacks by\nhitting the target\nwith its hard tail.\nIt hits two to five\ntimes in a row.
 
 #org @DESC_GEARGRIND
-The user attacks by\nthrowing two steel\ngears at it target.\nThis attack hits\ntwice in a row.
+The user attacks by\nthrowing two steel\ngears at its target.\nThis attack hits\ntwice in a row.
 
 #org @DESC_NATURALGIFT
 The type and base\npower of this move\nis determined by\nthe user's Berry.
@@ -620,7 +620,7 @@ The user absorbs its\ntarget's HP. The\nuser's HP is restored\nby over half the\
 The user employs its\npsychic power to\nswitch stat changes\nwith the target.
 
 #org @DESC_CRUSHGRIP
-The foe's crushed\nwith great force. The\nmore HP the foe has,\nthe stronger the\npower.
+The foe is crushed\nwith great force. The\nmore HP the foe has,\nthe stronger the\npower.
 
 #org @DESC_SACREDSWORD
 The user attacks by\nslicing with a long\nhorn. The target's\nstat changes are\nignored.
@@ -797,7 +797,7 @@ Cloaking itself in\nhigh energy, the user\nslams into the foe.\nIts type depends
 The user hits the\ntarget with the\nforce of nature. It\nhalves the target's\nHP.
 
 #org @DESC_POLLENPUFF
-The user attacks the\nfoe with exploding\npollen puff. If\ntarget is an ally, it\nheals instead.
+The user attacks the\nfoe with exploding\npollen puff. If the\ntarget is an ally, it\nheals instead.
 
 #org @DESC_POWERTRIP
 The user boasts its\nstrength. The more\nthe user's stats are\nraised, the greater\nthe power.
@@ -1148,7 +1148,7 @@ In this two-turn move,\nthe user gathers\nspace power and\nincreases Sp. Atk.
 Inflicts the more\neffective of physical\nor special damage.\nMay poison the foe.
 
 #org @DESC_MISTY_EXPLOSION
-The user explodes\nand faints itself.\nIts power increases\non Misty Terrain.
+The user explodes\nand faints.\nIts power increases\non Misty Terrain.
 
 #org @DESC_GRASSY_GLIDE
 The user glides\non the ground to\nattack. Hits first\non Grassy Terrain.
@@ -1157,7 +1157,7 @@ The user glides\non the ground to\nattack. Hits first\non Grassy Terrain.
 The user attacks with\nearthly voltage. It\ndoubles in power on\nElectric Terrain.
 
 #org @DESC_TERRAIN_PULSE
-The move's type\nand power depends on\nthe terrain currently\nused in battle.
+The move's type\nand power depend on\nthe terrain currently\nused in battle.
 
 #org @DESC_SKITTER_SMACK
 The user skitters\nbehind the target to\nattack. It lowers the\nfoe's Sp.Atk stat.
@@ -1221,7 +1221,7 @@ A cage made of\nelectricity that traps\nthe target for four\nto five turns.
 The higher the\nuser's HP, the\nmore powerful this\nattack becomes.
 
 #org @DESC_ASTRAL_BARRAGE
-A frightful amount of\nsmall ghosts are sent\nto attack opposing\nPok\emon.
+A frightful number of\nsmall ghosts are sent\nto attack opposing\nPok\emon.
 
 #org @DESC_GLACIAL_LANCE
 The user attacks by\nhurling a blizzard-\ncloaked icicle lance\nat opposing Pok\emon.

@@ -186,7 +186,7 @@ Excellent! You're as capable a\ntrainer as ever, [PLAYER].
 Don't worry, I won't pressure you to\nsay yes.\pIf you change your mind though,\ncome say hi.
 
 #org @gText_RhodanziGym_LeaderTerrence_BeatenToday
-Battling with you is always so\nexhilerating, [PLAYER].\pI think my Pok\emon and I will take it\neasy for the rest of the day.\pCome see us tomorrow if you'd like to\nbattle again, okay?
+Battling with you is always so\nexhilarating, [PLAYER].\pI think my Pok\emon and I will take it\neasy for the rest of the day.\pCome see us tomorrow if you'd like to\nbattle again, okay?
 
 // Trainer School
 #org @gText_RhodanziTrainerSchool_MainRoom_Receptionist_GoToDesk
@@ -238,7 +238,7 @@ I understand. If you change your\nmind, I will be here later.
 Welcome to the Rhodanzi Trainer\nSchool's Basic Course.\pNew trainers can learn the basics\nbefore departing on their Pok\emon\ljourneys.
 
 #org @gText_RhodanziTrainerSchool_BasicCourse_AbilitiesStudent
-Abilities are passive effects a\nPok\emon can have that impacts how\lthey perform in battle or in the\lfield. All Pok\emon have an ability!
+Abilities are passive effects a\nPok\emon can have that impact how\lthey perform in battle or in the\lfield. All Pok\emon have an ability!
 
 #org @gText_RhodanziTrainerSchool_BasicCourse_KOStudent
 When a Pok\emon's HP reaches 0, it\ngets knocked out.\pIf all of a trainer's Pok\emon are\nknocked out, they'll black out and\llose money.\pBe careful not to let that happen\nto your Pok\emon!

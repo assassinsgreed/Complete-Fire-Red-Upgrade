@@ -27,13 +27,13 @@ Hmm? No? That is a shame.
 It does my heart good to pass on my\nexperience to the next generation.\pOhohoho!\pTreat your Pok\emon well, and they\nwill treat you well in turn.
 
 #org @gText_DaimynFactoryOverworld_StrongTrainersWarning
-Be careful, there are strong trainers\nahead.\pIf you haven't obtained Daimyn City's\ngym badge yet, you may have a\ltough time.\pBut[.] Maybe that's what you're looking\nfor? It could a good training\lopportunity too.
+Be careful, there are strong trainers\nahead.\pIf you haven't obtained Daimyn City's\ngym badge yet, you may have a\ltough time.\pBut[.] Maybe that's what you're looking\nfor?\pIt could be a good training\nopportunity too.
 
 #org @gText_DaimynFactoryOverworld_EntranceSign
 Daimyn Factory\nPowering Daimyn City since 1996
 
 #org @gText_DaimynFactoryOverworld_TrainerTipsStats
-Trainer Tips!\pA Pok\emon's stats are impacted by\nit's nature.\pIf a stat appears in [RED]red[BLACK], it\nis increased by 10%.\pIf it appears in [BLUE]blue[BLACK], it\nis decreased by 10%.\pNot all natures impact stats,\nbut every Pok\emon is unique!
+Trainer Tips!\pA Pok\emon's stats are impacted by\nits nature.\pIf a stat appears in [RED]red[BLACK], it\nis increased by 10%.\pIf it appears in [BLUE]blue[BLACK], it\nis decreased by 10%.\pNot all natures impact stats,\nbut every Pok\emon is unique!
 
 #org @gText_DaimynFactoryOverworld_DailyEvents
 Trainer Tips!\pCertain things can happen once per\nday.\pBe sure to revisit old locations to\nsee what's going on.
@@ -48,7 +48,7 @@ At least you're strong!
 Most trainers think bird Pok\emon are\nweak, but they're dead wrong.
 
 #org @gText_DaimynFactoryOverworld_RockerBenson_Intro
-This factory[.] It's got the same vibes\nthat my electric guitar produce!
+This factory[.] It's got the same vibes\nthat my electric guitar produces!
 
 #org @gText_DaimynFactoryOverworld_RockerBenson_Defeat
 Rock out!
@@ -126,7 +126,7 @@ Hey! Stay where you are. I dropped\nsomething important.
 Agh[.] What am I doing battling, at a\ntime like this? Bad habit, I\lsuppose.
 
 #org @gText_DaimynFactoryOverworld_EngineerKliff_Chat
-I could've swore I left that button\naround here somewhere[.]
+I could've sworn I left that button\naround here somewhere[.]
 
 // Interior
 #org @gText_DaimynFactory_BreakerNotice

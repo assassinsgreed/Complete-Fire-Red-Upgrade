@@ -146,10 +146,10 @@ The imposing Pok\emon left.\nWill it return later?
 [BLACK]Alistair: [BLUE][.] Of course.\nI should not be surprised, really.\pYou are an accomplished trainer,\nmuch like Selene.\pYou could never understand the\nposition the less fortunate are in.\pThen, I am unfortunately left with no\nchoice.\pForgive me, [PLAYER], but I must\nensure my wishes are granted.
 
 #org @gText_CarnelidgeVolcanoPeak_PlayerWillNotOpposeAlistair
-[BLACK]Alistair: [BLUE]I want to believe you,\n[PLAYER], but I find I cannot.\pYou, much like Selene, are an\naccomplished trainer.\pIt is your very nature to tower over\nthose that cannot compete against\lyou.\pAs such, I must take necessary\nprecations.\pYou see, my wishes must be granted,\nat any and all costs.
+[BLACK]Alistair: [BLUE]I want to believe you,\n[PLAYER], but I find I cannot.\pYou, much like Selene, are an\naccomplished trainer.\pIt is your very nature to tower over\nthose that cannot compete against\lyou.\pAs such, I must take necessary\nprecautions.\pYou see, my wishes must be granted,\nat any and all costs.
 
 #org @gText_CarnelidgeVolcanoPeak_AlistairCallsForRival
-[BLACK]Alistair: [BLUE]I am not a fool, [PLAYER].\pI accounted for every possibility.\nAnd so, I brought backup.\pSomeone else who's dreams have\nbeen left in the dust.\pHowever[.] This person's dreams weren't\ncrushed by Selene.\pThey were crushed by you,\n[PLAYER].\p[RIVAL]! Now is the time!\pStall [PLAYER] while I help Jirachi\nawaken!
+[BLACK]Alistair: [BLUE]I am not a fool, [PLAYER].\pI accounted for every possibility.\nAnd so, I brought backup.\pSomeone else whose dreams have\nbeen left in the dust.\pHowever[.] This person's dreams weren't\ncrushed by Selene.\pThey were crushed by you,\n[PLAYER].\p[RIVAL]! Now is the time!\pStall [PLAYER] while I help Jirachi\nawaken!
 
 #org @gText_CarnelidgeVolcanoPeak_RivalChallengesPlayer
 [BLACK][RIVAL]: [BLUE][PLAYER][.] I wish I could\nsay I was surprised to see you.\pBut[.] You just love to interfere\nwhere you don't belong, don't you?\pEver since I saw Selene battle for\nthe first time, I knew[.]\pI wanted to be up on that stage\nsomeday, as Kulure's Champion.\pI studied Pok\emon species and\nlearned battle strategies[.]\pI did everything right, but effort\nmeans nothing in this world[.]\pYou've always been better at\neverything related to Pok\emon.\pIt's clear as day that I could never\ncompete with you!\pAs long as you're around, my dreams\nwill never come true.\pAnd you won't stop.\nYou already know why.\pIt's because becoming the Champion is\nyour dream, too.\pThere can be only one, after all.\nSomeone must fail[.]\p[PLAYER]! I know I don't have\nwhat it takes to stop you.\pBut[.] Maybe I can stall you long\nenough for Jirachi to awaken.\pThen, my wish will come true and I'll\nhave the skill to rival you.\p[PLAYER], I've removed all the dead\nweight from my Pok\emon team.\pNow, we're the best we've ever been.\nI won't fail here. I can't!
@@ -224,7 +224,7 @@ No[.] No! This cannot be happening!
 [BLACK]Alistair: [BLUE]Why[.] Why must you two\noppose me?\pDo you really enjoy living in such\nan unjust world?
 
 #org @gText_CarnelidgeVolcanoPeak_Conclusion_RivalCommentsOnLoss
-[BLACK][RIVAL]: [BLUE]Alistair[.] You're right, the\nworld isn't fair.\pSometimes we just can't do what\nwe've always dreamed of, no matter\lhow hard we try.\pBut that doesn't mean that dreaming\nabout it is pointless!\pI have the same dream as you do, to\nbecome Kulure's Champion.\pIt's been a long and difficult\njourney, and I don't know how it'll\lend.\pBut[.] I'm okay with that now.
+[BLACK][RIVAL]: [BLUE]Alistair[.] You're right, the\nworld isn't fair.\pSometimes we just can't do what\nwe've always dreamed of, no matter\lhow hard we try.\pBut that doesn't mean that dreaming\nabout it is pointless!\pI have the same dream as you do, to\nbecome Kulure's Champion.\pIt has been a long and difficult\njourney, and I don't know how it'll\lend.\pBut[.] I'm okay with that now.
 
 #org @gText_CarnelidgeVolcanoPeak_Conclusion_RivalCommentsOnHisJourney
 [BLACK][RIVAL]: [BLUE]I got to set out on a once\nin a lifetime journey with my best\lfriend.\pI got to befriend so many Pok\emon\nand meet so many people.\pAnd I got to see the world we call\nhome!
@@ -260,7 +260,7 @@ No[.] No! This cannot be happening!
 [BLACK]Alistair: [BLUE]I will do whatever I can to\nachieve the dreams I gave up on.\pNot with Jirachi's power[.]\pBut with my own[.]
 
 #org @gText_CarnelidgeVolcanoPeak_Conclusion_AlistairAsksRivalAboutHisMotivations
-[BLACK]Alistair: [BLUE][RIVAL], I think I\nunderstand how you feel now.\pThat this imperfect world is[.]\nSomehow ideal.\pI can see it in your eyes - there's a\nspark that wasn't there before.\pSomething that has emboldened you\nand given you something I never\lcould.\pYes[.] Its the same spark she had in\nher eyes, all those years ago.\pA spark I think I've lost, too[.]
+[BLACK]Alistair: [BLUE][RIVAL], I think I\nunderstand how you feel now.\pThat this imperfect world is[.]\nSomehow ideal.\pI can see it in your eyes - there's a\nspark that wasn't there before.\pSomething that has emboldened you\nand given you something I never\lcould.\pYes[.] It's the same spark she had in\nher eyes, all those years ago.\pA spark I think I've lost, too[.]
 
 #org @gText_CarnelidgeVolcanoPeak_Conclusion_AlistairSharesHisNewMotivations
 [BLACK]Alistair: [BLUE][PLAYER], [RIVAL][.]\pI must admit, I am not sure this is\nthe answer I was looking for.\pBut[.] I'm willing to find out,\nalongside my Pok\emon.
@@ -296,7 +296,7 @@ No[.] No! This cannot be happening!
 [BLACK][RIVAL]: [BLUE]Thank you, Alistair.\pYou can be sure we'll put them to\ngood use.
 
 #org @gText_CarnelidgeVolcanoPeak_Conclusion_AlistairCommentsOnGoingBackToUltraSpace
-[BLACK]Alistair: [BLUE]And, one last thing.\pI am confident everything you told\nme about is true.\pIt seems you went through quite an\nordeal to set things right.\pI have friends at the\nInterdimensional Research Facility.\pI'll put in a good word for you.\pI understand if you never wish to\nreturn to other dimensions.\pBut, if your mind changes to\nsomeday, I'm sure they'll be willing\lto help you.
+[BLACK]Alistair: [BLUE]And, one last thing.\pI am confident everything you told\nme about is true.\pIt seems you went through quite an\nordeal to set things right.\pI have friends at the\nInterdimensional Research Facility.\pI'll put in a good word for you.\pI understand if you never wish to\nreturn to other dimensions.\pBut, if your mind changes, I'm sure\nthey'll be willing to help you.
 
 #org @gText_CarnelidgeVolcanoPeak_Conclusion_SeleneIsConfused
 [BLACK]Selene: [RED]Oookay, you're starting to\nlose me. What's going on?

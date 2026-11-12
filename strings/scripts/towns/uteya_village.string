@@ -189,13 +189,13 @@ It's already that nature, you goof.
 You sure that's the one?
 
 #org @gText_UteyaVillage_ClancyAndEnasHouse_Clancy_StartingNatureChange
-Alright, give us a bit of time.\pI'll need to understand your Pok\emon\nbetter to know how to shift it's\lnature properly.
+Alright, give us a bit of time.\pI'll need to understand your Pok\emon\nbetter to know how to shift its\lnature properly.
 
 #org @gText_UteyaVillage_ClancyAndEnasHouse_Clancy_ChangingNature
 Hey, [BUFFER1], let's get to know each\nother better.\pMmhm[.] Yep[.] I understand[.]\pOkay, let's try this instead[.]
 
 #org @gText_UteyaVillage_ClancyAndEnasHouse_Clancy_NatureChangeComplete
-Alright, we're done here.\pIt's nature has shifted to the one\nyou asked for.\pThat'll be 10 Pok\eChips.
+Alright, we're done here.\pIts nature has shifted to the one\nyou asked for.\pThat'll be 10 Pok\eChips.
 
 #org @gText_UteyaVillage_ClancyAndEnasHouse_Clancy_TransactionComplete
 Come back if you want another nature\nchanged.\pIt'll be 10 Pok\eChips as usual.
@@ -262,7 +262,7 @@ Do not be discouraged. You can\nsurely learn from my expertise.
 [BLUE]Hey, look at that!\pIt's your first time winning at this\nTrainer House.\pThat earns you the grand prize, the\nPok\eChip Charm!
 
 #org @gText_UteyaVillage_TrainerHouse_ChoseRuleset
-[BLUE]This Trainer House specializes in the\nBenjamin Butterfree battle style.\pThis unusual style was popularized in\nthe Borrius region.\pThe rules are the same as a normal\nbattle, but don't be fooled!\pUnlike normal battles, a Pok\emon\ndoesn't necessarily faint when it's\lHP hits 0.\pInstead, it'll devolve into it's\nprevious forms, if possible, and\lwill only faint when it's no longer\lpossible.\pDon't sweat it though, baby. The\neffect will be reversed when the\lbattle ends.\pThese battles are pretty unusual, so\nnaturally they come with a catch.\pYour Pok\emon will be fully healed\nwhen the battle ends.\pAs a trade-off, you won't gain any\nEXP for defeating your opponents.\pLife is full of ups and downs, isn't\nit?\pKeep a cool head, and keep knocking\n'em down till you win the fight!
+[BLUE]This Trainer House specializes in the\nBenjamin Butterfree battle style.\pThis unusual style was popularized in\nthe Borrius region.\pThe rules are the same as a normal\nbattle, but don't be fooled!\pUnlike normal battles, a Pok\emon\ndoesn't necessarily faint when its\lHP hits 0.\pInstead, it'll devolve into its\nprevious forms, if possible, and\lwill only faint when it's no longer\lpossible.\pDon't sweat it though, baby. The\neffect will be reversed when the\lbattle ends.\pThese battles are pretty unusual, so\nnaturally they come with a catch.\pYour Pok\emon will be fully healed\nwhen the battle ends.\pAs a trade-off, you won't gain any\nEXP for defeating your opponents.\pLife is full of ups and downs, isn't\nit?\pKeep a cool head, and keep knocking\n'em down till you win the fight!
 
 #org @gText_UteyaVillage_TrainerHouse_ChoseGrandPrize
 [BLUE]This Trainer House's grand prize is\nnone other than a Pok\eChip Charm!\pWith this bad boy, you can expect\nto find a lot more Pok\eChips from\lwild Pok\emon.\pTalk about rad, am I right?
@@ -313,7 +313,7 @@ Uteya Village Gym\nVictors: [RIVAL]
 Uteya Village Gym\nVictors: [RIVAL], [PLAYER]
 
 #org @gText_UteyaVillageGym_Michael_Intro
-[BLUE]I haven't known this guy long, but\nwe've gotten a feel for each\lothers' battle styles.
+[BLUE]I haven't known this guy long, but\nwe've gotten a feel for each\lother's battle styles.
 
 #org @gText_UteyaVillageGym_Michael_Defeat
 Oh yeah? Guess I have more to learn\nafter all.
@@ -367,7 +367,7 @@ Nope! Not worn down at all!
 Well, my job is done.\nGuess I'll take it easy now.
 
 #org @gText_UteyaVillageGym_Mike_Intro
-[BLUE]My partner and I can practically\nread each others' minds.
+[BLUE]My partner and I can practically\nread each other's minds.
 
 #org @gText_UteyaVillageGym_Mike_Defeat
 Did you read our minds, too?
@@ -403,7 +403,7 @@ Yes, as expected.
 You've attained quite a few skills.\nImpressive.
 
 #org @gText_UteyaVillageGym_LeaderDennis_NotEnoughPokemon
-[BLUE]Whoa, pump the breaks, buddy!\pYou're gonna need at least 2 Pok\emon\nif you want some of this action.
+[BLUE]Whoa, pump the brakes, buddy!\pYou're gonna need at least 2 Pok\emon\nif you want some of this action.
 
 #org @gText_UteyaVillageGym_LeaderDee_NotEnoughPokemon
 [RED]Hey, hey, hey, hold it!\pYou can't just waltz in here and\nexpect to battle us with just one\lPok\emon!

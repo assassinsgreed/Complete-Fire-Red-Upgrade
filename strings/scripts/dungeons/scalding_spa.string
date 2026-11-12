@@ -20,13 +20,13 @@
 Oh man, you're as tough as they said\nyou'd be!
 
 #org @gtext_ScaldingSpa_SpaRoom_GruntCommentsOnCalicinBayAgain
-[RED]Aw, wipe that grin off your face.\nYou won, big deal.\pMy job here is done anyways. It's\ntime go report to Clancy and Ena\lat Calicin Bay.
+[RED]Aw, wipe that grin off your face.\nYou won, big deal.\pMy job here is done anyways. It's\ntime to go report to Clancy and\lEna at Calicin Bay.
 
 #org @gtext_ScaldingSpa_SpaRoom_GruntLeavesForCalicinBay
 [RED]Nyehehe! There's the reaction I was\nlooking for!\pYou recognize those names, huh?\pThen you know to stay out of our\nbusiness.\pSmell ya later, chump!
 
 #org @gtext_ScaldingSpa_SpaRoom_OldManThanksPlayer
-[BLUE]Oooh, what a wretched lass. Extoring\nhonest folk like that[.]\pI must thank you for your\nassistance.\pPlease, have this. My wife baked\nthem.\pI'm sure your Pok\emon will enjoy\nthem.
+[BLUE]Oooh, what a wretched lass.\nExtorting honest folk like that[.]\pI must thank you for your\nassistance.\pPlease, have this. My wife baked\nthem.\pI'm sure your Pok\emon will enjoy\nthem.
 
 #org @gtext_ScaldingSpa_SpaRoom_OldManGoesToHotsprings
 [BLUE]That brat said they were going to\nCalicin Bay, did they not?\pThat's close to Bruccie Village[.]\pI hope they aren't causing trouble\nfor anyone else.\pNow[.] I need a good\nsoak in the hot springs to forget\lall this tomfoolery[.]
@@ -59,7 +59,7 @@ My friend said his Crabrawler evolved\non Route 12's snowy side.\pIt didn't work
 Did you know some Pok\emon can\nevolve in different ways?\pMy buddy said his Nosepass evolved\nwhen he was hiking in Hesson Pass!
 
 #org @gtext_ScaldingSpa_SpaRoom_HealingSpa
-The warmth of the hotspring has\nhealed your Pok\emon fully.
+The warmth of the hot spring has\nhealed your Pok\emon fully.
 
 #org @gtext_ScaldingSpa_HikerEugene_Intro
 Think you can handle a double battle\nwith two fierce dudes?

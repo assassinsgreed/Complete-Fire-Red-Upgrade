@@ -39,7 +39,7 @@ A lot of new trainers have trouble\nwith Route 8.\pIt's very long and is covered
 Wow! I can see coins at the bottom\nof this fountain.\pIf I can just find a way to reach\nthem, I'll be rich[.]
 
 #org @gText_HeleoCityOverworld_BigGuy
-For most trainers, Heleo City is their\nthird stop on their journies.\pSome like to come here after\nchallenging the Daimyn City and\lLaplaz Town gyms.\pI suppose they like the challenge?
+For most trainers, Heleo City is their\nthird stop on their journeys.\pSome like to come here after\nchallenging the Daimyn City and\lLaplaz Town gyms.\pI suppose they like the challenge?
 
 #org @gText_HeleoCityOverworld_TrainerHouseGirl
 The Trainer House is so cool! You\ncan battle it every day for\lexperience, money, and items!\pThe host is kind of mysterious too,\ndon't you think?
@@ -67,7 +67,7 @@ Trainer Tips!\pWhile cycling, you are less likely to\nencounter wild Pok\emon!\p
 I'm so bored[.] I just wanna go\nhome.
 
 #org @gText_HeleoCityFacilities_KidsMom
-My son and I from Daimyn City. We\ncame out this way to visit our\lrelatives.\pIt's nice here, but I think he's\ngetting a little homesick.
+My son and I are from Daimyn City.\nWe came out this way to visit our\lrelatives.\pIt's nice here, but I think he's\ngetting a little homesick.
 
 #org @gText_HeleoCityFacilities_CriticalCapture
 Have you ever seen a Pok\e Ball\nshake before a Pok\emon you're\ltrying to catch gets pulled into\lit?\pThat's a Critical Capture. When it\nhappens, you'll be more likely to\lcatch the Pok\emon than usual.\pI hear it's more likely to happen\nwhen you've caught more\lunique Pok\emon species[.]
@@ -181,7 +181,7 @@ Whew, I should take a break[.]\pGuard Houses like these are great\nplaces to tak
 Oh! It's a creepy, run-down\nbuilding in a secluded forest.
 
 #org @gText_HeleoCityFacilities_GuardHouse_DaimynCityBinocularsDay
-Oh! It's Daimyn City! The sun is\nshining off of it's towering\lskyscrapers.
+Oh! It's Daimyn City! The sun is\nshining off of its towering\lskyscrapers.
 
 #org @gText_HeleoCityFacilities_GuardHouse_DaimynCityBinocularsNight
 Oh! It's Daimyn City! It's all lit up!
@@ -248,7 +248,7 @@ What an exquisite [BUFFER1]!\pA Pok\emon that special deserves a\nreward. Here, 
 That may look like an ordinary bottle\ncap, but I hear there are people\lacross the sea that can make your\lPok\emon quite powerful with that!\pCome see me again, if you find more\nunusual Pok\emon.
 
 #org @gText_HeleoNPCHouses_SwamiResearcherRequestAlreadyShown
-That certainly is a great Pok\emon,\nbut[.] you've already shown me one\lalready.
+That certainly is a great Pok\emon,\nbut[.] you've shown me one before.
 
 #org @gText_HeleoNPCHouses_SwamiResearcherRequestAllSwarmPokemonShown
 I-incredible! With this, you've shown\nme every unusual Pok\emon we've\lbeen tracking.\pI have a special gift to share with\nsuch an incredible trainer!

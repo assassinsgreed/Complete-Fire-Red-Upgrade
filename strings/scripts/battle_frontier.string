@@ -157,7 +157,7 @@ Alright, let me just grab a Pok\e\nBall here[.]
 [BLUE]Congratulations!\nIt's battle-ready and raring to go.\pPlease return if you'd like to\nparticipate in another Wonder Pick.
 
 #org @gText_BattleFrontier_WonderPick_Declined
-Not feeling luck today?\nThat's no problem!
+Not feeling lucky today?\nThat's no problem!
 
 #org @gText_BattleFrontier_WonderPick_NotEnoughPokeChips
 This pick costs [BUFFER2] Pok\eChips,\nand you're a little short.\pWin a few more battles, then come\nback and see me.
@@ -211,7 +211,7 @@ What gives? You don't even have\nenough Pok\eChips! Your loss!
 Smart choice. Now, take this and\ndon't ask too many questions.
 
 #org @gText_BattleFrontier_RelicSellerLeavingForTheDay
-If you come back tomorrow, we might\nbe able to scratch each others'\lbacks again, capiche?
+If you come back tomorrow, we might\nbe able to scratch each other's\lbacks again, capiche?
 
 #org @gText_BattleFrontier_RelicSellerChoseNo
 Feh, I'm not running a charity!\nScram!
@@ -250,7 +250,7 @@ We work in this quarry when battles\naren't happening.\pWe don't mind though - w
 Battles at the Quarry disable 2 of\n4 moveslots each turn.\pI just lost a battle because all my\ndamaging moves were disabled.\pI guess I should've brought a more\ndiverse moveset[.]
 
 #org @gText_BattleFrontier_NWOldWoman
-I spend all day watching the\nbattles at the various facilities.\pBeing retired has it's perks!\nOhohoho!
+I spend all day watching the\nbattles at the various facilities.\pBeing retired has its perks!\nOhohoho!
 
 #org @gText_BattleFrontier_NWBoy
 Do you think the Pok\emon ever get\nconfused when deciding which move\lto use at the Battle Sands?
@@ -259,7 +259,7 @@ Do you think the Pok\emon ever get\nconfused when deciding which move\lto use at
 I feel really proud when I see my\nPok\emon performing well at the\lSands.\pIt's like I can see our training\npaying off, right before my eyes.
 
 #org @gText_BattleFrontier_NWFatGuy
-Oh, bother[.] This isn't the Battle\nMaz.\pI think I'll just wait for my friends\nto find me.
+Oh, bother[.] This isn't the Battle\nMaze.\pI think I'll just wait for my friends\nto find me.
 
 #org @gText_BattleFrontier_NEOldMan
 The battles here remind me of how\nthings used to be when I was a\lboy.\pIt's fun! The younger generation just\nneeds to open their minds to it.
@@ -277,7 +277,7 @@ The Battle Maze is interesting.\pYou can't prep anything beforehand,\nbut that a
 It's wonderful how many flowers can\ngrow here.\pI would have thought they'd die out,\nwith how much foot traffic there\lis.
 
 #org @gText_BattleFrontier_SEPsychic
-I lost at the Battle Factory, but\nthat's fine.\pI'll just use my psycic powers to\nsummon better options next time!
+I lost at the Battle Factory, but\nthat's fine.\pI'll just use my psychic powers to\nsummon better options next time!
 
 #org @gText_BattleFrontier_SEChanneler
 The spirit of battle is strong here.
@@ -292,10 +292,10 @@ Many trainers new to the Battle\nFrontier like to visit the Battle\lFactory and 
 The Battle Sim causes random effects\nto trigger in each battle.\pI heard that the higher your streak\nis, the more effects there are.\pThat'll make battles pretty tough,\nwon't it..?
 
 #org @gText_BattleFrontier_SimScientist
-The Battle Sim is the pride and joy\nof many researchers at the\lBattle Frontier.\pIt took years of hard work to build\nthe simulation systems you will see.\pOf course, the data we can extract\nfrom battlers is invaluable to us.\pPlease, enjoy the facility to it's\nfullest.
+The Battle Sim is the pride and joy\nof many researchers at the\lBattle Frontier.\pIt took years of hard work to build\nthe simulation systems you will see.\pOf course, the data we can extract\nfrom battlers is invaluable to us.\pPlease, enjoy the facility to its\nfullest.
 
 #org @gText_BattleFrontier_SimSuperNerd
-Ehehehe[.] The Battle Sim is so\ndynamic.\pPerfect for a Pok\emon battling\nprodigee like me!
+Ehehehe[.] The Battle Sim is so\ndynamic.\pPerfect for a Pok\emon battling\nprodigy like me!
 
 #org @gText_BattleFrontier_FactoryWorker
 You can swap one Pok\emon with your\nopponent after you win.\pThat helps you build the perfect\nteam as your streak grows.
@@ -544,7 +544,7 @@ Facility Rules
 At the Battle Frontier, you'll take\non challengers one after another.\pEvery Pok\emon battles at level 50\nand is healed before each fight.\pAs you win, your streak will grow\nand you'll face stronger trainers.\pYou'll earn Pok\e Chips for each win.\nJust remember you can only hold\lup to 999 Pok\e Chips at a time!\pIf you ever need a break, you can\nRest - we'll save your streak and\lhold it until you return.\pPlease make sure to complete a\nbattle before resting - otherwise\lyour streak will be lost!
 
 #org @gText_BattleFrontier_TowerRules
-The Battle Tower emphasizes\ntraditionl battles - no gimmicks.\pJust you, your team, and one\nchallenger after another.
+The Battle Tower emphasizes\ntraditional battles - no gimmicks.\pJust you, your team, and one\nchallenger after another.
 
 #org @gText_BattleFrontier_QuarryRules
 In the Battle Quarry, the rock face\nshifts before every turn.\pIt seals off two of the four move\nslots of every Pok\emon in the pit.\pBoth sides are sealed. If a Pok\emon\ncannot act, it must Struggle.
@@ -559,7 +559,7 @@ In the Battle Maze, you're handed a\nrandom team to battle with.\pThis team is b
 At the Battle Factory, you rent a\nteam to battle with from us.\pI'll lay out six Pok\emon, drawn from\nthe same pool as your opponents.\pYou choose which of them to enter,\nand they are yours for the run.\pAfter every win, you may trade one\nof yours for one you just faced.\pIf you choose to rest, the team you\nwere using is used when you return.
 
 #org @gText_BattleFrontier_IsleRules
-Battles at the Battle Isle are\nfought in the traditional way.\pHeld items and abilities do not\nactiavate.\pMega Evolution and Z-Moves have no\nplace here either.\pAll moves are physical or special\nbased on their type.
+Battles at the Battle Isle are\nfought in the traditional way.\pHeld items and abilities don't\nactivate.\pMega Evolution and Z-Moves have no\nplace here either.\pAll moves are physical or special\nbased on their type.
 
 #org @gText_BattleFrontier_ObservatoryRules
 The Battle Observatory hosts a\nseries of duels between battlers.\pYou and your opponent reveal every\nPok\emon you brought.\pStudy your opponent, then choose\nyour Pok\emon to duel with.\pDuels are 1v1 in singles, and 2v2\nin doubles.\pDuel with honour! Mega Evolution and\nZ- Moves are not permitted.
@@ -642,7 +642,7 @@ The [BUFFER2] format? I'll provide six\nPok\emon for you to choose from.\pYou'll
 Here are your options. Please choose\nthe ones you'd like to rent.
 
 #org @gText_BattleFrontier_FactorySwapPrompt
-You may swap one of your Pok\emon\nwith one your opponent had.\pWould you like to swap?
+You may swap one of your Pok\emon\nwith one that your opponent had.\pWould you like to swap?
 
 #org @gText_BattleFrontier_FactorySwapChooseOwn
 Which of your Pok\emon will you\ngive up?

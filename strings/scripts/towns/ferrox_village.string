@@ -101,7 +101,7 @@ That concludes our session. Come see\nme again if you'd like to learn new\lmoves
 Very well, come see me if you\nchange your mind.
 
 #org @gText_FerroxNPCHouses_NotEnoughPokeChips
-You don't have enough Pok\eChips for\nto pay for my services[.]
+You don't have enough Pok\eChips\nto pay for my services[.]
 
 #org @gText_FerroxNPCHouses_TutorsInTowns
 My husband is a move tutor! He told\nme that most cities and towns tend\lto have tutor enthusiasts in them.
@@ -213,10 +213,10 @@ While searching for mythical Pok\emon\nwithin the region, a group of\lscientists
 To further their research into\ninterdimensional spaces, the\l[GREEN]r[BLACK]esearchers founded the\lInterdimensional Research Facility,\llocated in Daimyn City.
 
 #org @gText_FerroxLibrary_ReadBookPrompt_A
-Interdimensional study has lead to\npromising results. Scientists can\lnow ascertain that interdimensional\lsp[GREEN]a[BLACK]ces do exist, though their\lcontents remain unknown.
+Interdimensional study has led to\npromising results. Scientists can\lnow ascertain that interdimensional\lsp[GREEN]a[BLACK]ces do exist, though their\lcontents remain unknown.
 
 #org @gText_FerroxLibrary_ReadBookPrompt_R2
-Researches have yet to find\nconclusive p[GREEN]r[BLACK]oof, but have reason\lto believe interdimensional space\lcould sustain human-like\lpopulations of people and Pok\emon-\llike species.
+Researchers have yet to find\nconclusive p[GREEN]r[BLACK]oof, but have reason\lto believe interdimensional space\lcould sustain human-like\lpopulations of people and Pok\emon-\llike species.
 
 #org @gText_FerroxLibrary_ReadBookPrompt_Y
 Due to interdimensional research\ngripping the region's interests, the\lm[GREEN]y[BLACK]stery of whether mythical\lPok\emon within the region actually\lexist has diminished significantly.
@@ -348,7 +348,7 @@ I'm pretty sure I didn't see anyone\nleave. They have to be here still.
 [BLACK]Alistair: [BLUE]I'm afraid not. Most myths\nhave led to dead ends.
 
 #org @gText_FerroxLibrary_Plot_AlistairDeadEnds_Volcanion
-Although, there is this interesting\nrumour about a Pok\emon that can\leject steam from it's cannons[.]
+Although, there is this interesting\nrumour about a Pok\emon that can\leject steam from its cannons[.]
 
 #org @gText_FerroxLibrary_Plot_AlistairDeadEnds_Heatran
 Although, there is this interesting\nrumour about a Pok\emon that can\lconsume magma[.]

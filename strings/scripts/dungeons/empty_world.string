@@ -13,7 +13,7 @@
 [BLACK]Alistair: [BLUE]Yes, that's correct,\nSelene.\pPok\emon are, or rather were,\nincredible creatures.\pAmazing things were achieved due\nto the bond between people and\lPok\emon.\pI will not deny this. However[.]\pTheir potential to divide people and\nbring pain was a far more likely\loutcome.
 
 #org @gText_EmptyWorld_AlistairJustifiesHimself2
-[BLACK]Alistair: [BLUE]We are selfish creatures,\nand that trait passed onto the\lPok\emon around us.\pLike Team Pluto, who wished to use\nPok\emon to rule with an iron fist.\pIn other regions, organizations\nattempt to use Pok\emon to\ldetabilize the world.\pThese are unusual occurences,\nsure.\pA more common reality is that those\nwho excel at battling have a\lhigher social status than their\lpeers.\pSurely you can see that Pok\emon only\nbring pain to those around them?
+[BLACK]Alistair: [BLUE]We are selfish creatures,\nand that trait passed onto the\lPok\emon around us.\pLike Team Pluto, who wished to use\nPok\emon to rule with an iron fist.\pIn other regions, organizations\nattempt to use Pok\emon to\ldestabilize the world.\pThese are unusual occurrences,\nsure.\pA more common reality is that those\nwho excel at battling have a\lhigher social status than their\lpeers.\pSurely you can see that Pok\emon only\nbring pain to those around them?
 
 #org @gText_EmptyWorld_AlistairJustifiesHimself3
 [BLACK]Alistair: [BLUE][RIVAL], I surely do not\nneed to explain this truth to you.
@@ -46,7 +46,7 @@
 [BLACK]Alistair: [BLUE]This is precisely why\nPok\emon needed to be eliminated.
 
 #org @gText_EmptyWorld_SeleneCondemnsAlistair
-[BLACK]Selene: [RED]You say Pok\emon only bring\npain, but that's just not true!\pSome rely upon Pok\emon to help\nthem live their day-to-day lives.\pOthers befriend them and turn to\nthem when they have no one else.\pAnd for some, their Pok\emons'\nstrength gives them the hope and\ldetermination they need to change.\pYou could say a Pok\emon's strength\ngives people a strength of their\lown.\pAnd now[.] These people have lost\nthat[.]\pAlistair[.] What you've done is truly\nterrible.
+[BLACK]Selene: [RED]You say Pok\emon only bring\npain, but that's just not true!\pSome rely upon Pok\emon to help\nthem live their day-to-day lives.\pOthers befriend them and turn to\nthem when they have no one else.\pAnd for some, their Pok\emon's\nstrength gives them the hope and\ldetermination they need to change.\pYou could say a Pok\emon's strength\ngives people a strength of their\lown.\pAnd now[.] These people have lost\nthat[.]\pAlistair[.] What you've done is truly\nterrible.
 
 #org @gText_EmptyWorld_AlistairRebukesSelene
 [BLACK]Alistair: [BLUE]No, Selene. Pok\emon have\nsimply become a crutch to those\lpeople.\pThey now have the opportunity to\nstand on their own two feet.
@@ -131,7 +131,7 @@ My Pok\emon used to cheer me on\nwhile I gambled[.]\pNow that they're gone, thou
 I was tracking a rare Pok\emon, then\nit suddenly vanished.\pIt wasn't your doing, was it?
 
 #org @gText_EmptyWorld_Route13_Hiker
-Do you know what's going on?\nMy Pok\emon just disppeared[.]\pSomething like this has never\nhappened before.\pWhat am I supposed to do?
+Do you know what's going on?\nMy Pok\emon just disappeared[.]\pSomething like this has never\nhappened before.\pWhat am I supposed to do?
 
 #org @gText_EmptyWorld_Route13_Blackbelt
 Wh-what happened?\pMy Pok\e Balls[.] They're totally\nempty!
@@ -239,7 +239,7 @@ The guys are acting tough, but I\ndunno, man.\pIsn't a world without Pok\emon ki
 My buddy is a cop.\pYeah, yeah, I know. Kinda unexpected\nfor a guy like me.\pHe asked us to help block the road\nso people stay put until they get\lto the bottom of things.
 
 #org @gText_EmptyWorld_FerroxVillage_NPCHouses_BerryMom
-Have you heard the news? They say\nPok\emon have stared disappearing!
+Have you heard the news? They say\nPok\emon have started disappearing!
 
 #org @gText_EmptyWorld_FerroxVillage_NPCHouses_BerryDaughter
 I can't find my darling Shuckle.\pWithout him, I don't know how I'll\ntend to my berries[.]
@@ -317,7 +317,7 @@ I feel a bit numb, not going to\nlie.\pWe've had Pok\emon as part of our\nlives 
 Is it just me, or does the library\nfeel even quieter than usual?
 
 #org @gText_EmptyWorld_FerroxVillage_Library_Lady
-Come on, come on, think!\pThere has to be a logical\nexplaination for everything that's\lhappening.
+Come on, come on, think!\pThere has to be a logical\nexplanation for everything that's\lhappening.
 
 #org @gText_EmptyWorld_FerroxVillage_Library_Psychic
 I was one of the gym trainers in\nFerrox Village[.]\pWhat am I going to do now?
@@ -377,7 +377,7 @@ I don't know what we'll do without\nour Pok\emon.\pI had mine for as long as I c
 Okay[.] If I was a Pok\emon[.] Where\nwould I go?\pCamping, probably.\pYeah, definitely.
 
 #org @gText_EmptyWorld_Route10_Rocker
-Hey! Do you know what happened to\neveryones' Pok\emon?\pNo? Shoot!
+Hey! Do you know what happened to\neveryone's Pok\emon?\pNo? Shoot!
 
 #org @gText_EmptyWorld_Route10Guardhouse_Guard
 We're asking everyone to make their\nway to Daimyn City.\pPlease, enter the city and await\nfurther instructions.
@@ -413,7 +413,7 @@ I'm sorry, but I can't let you pass\nthrough here.
 This was supposed to be a lazy\nday[.]\pWill things go back to normal?\nI wonder[.]
 
 #org @gText_EmptyWorld_Common_RivalTileEvent1
-[BLACK][RIVAL]: [BLUE]This is terrible[.]\pI had no idea this is what Alistair\nwas planning. I'm such an idiot!\pBut[.] I'm also responsible for this\nhappening, aren't I?\pI let myself get so upset that I\nmade a lot of bad decisions[.]\p[PLAYER], we should get going.
+[BLACK][RIVAL]: [BLUE]This is terrible[.]\pI had no idea this was what Alistair\nwas planning. I'm such an idiot!\pBut[.] I'm also responsible for this\nhappening, aren't I?\pI let myself get so upset that I\nmade a lot of bad decisions[.]\p[PLAYER], we should get going.
 
 #org @gText_EmptyWorld_Common_RivalTileEvent2
 [BLACK][RIVAL]: [BLUE]Those tremors on Carnelidge\nVolcano[.]\pYou don't think that's due to what\nhappened to this world's Pok\emon,\ldo you?\pMaybe those Pok\emon were helping\nkeep the region stable[.]\pAnd now that they're gone[.]
@@ -470,7 +470,7 @@ The ball feels empty[.]
 [BLACK][RIVAL]: [BLUE][PLAYER][.] You came after\nall. Thank you, really.\pOkay, we'd better find who's in\ncharge and ask for their help.
 
 #org @gText_EmptyWorld_InterdimensionalResearchFacility_Rival_PlayerTravelledWithRival
-[BLACK][RIVAL]: [BLUE]So this is the\nInterdimensional Reserach Facility[.]\pThere's no time to gawk!\pLet's find the person in charge and\nask for their help.
+[BLACK][RIVAL]: [BLUE]So this is the\nInterdimensional Research Facility[.]\pThere's no time to gawk!\pLet's find the person in charge and\nask for their help.
 
 #org @gText_EmptyWorld_InterdimensionalResearchFacility_Rival_RivalAsksWhoIsInCharge
 [BLACK][RIVAL]: [BLUE]Excuse me!\pI need to ask for help from the\nperson in charge of this facility.
@@ -494,7 +494,7 @@ The ball feels empty[.]
 [BLACK]Sakura: [RED]I cannot allow it.\pWe've just recently discovered\nhow to open stable portals to\lUltra Space.\pThere are still many unknowns we\nhaven't verified.\pFurthermore, we lost our ability to\npower the machine properly when\lour Pok\emon disappeared.\pWe only have enough power to open a\nportal once.\pIt would be a one way trip.\nIt's simply too dangerous.
 
 #org @gText_EmptyWorld_InterdimensionalResearchFacility_Rival_PleadsWithSakura
-[BLACK][RIVAL]: [BLUE]I understand it's dangrous,\nand I may not come back.\pBut[.] I have to try. Please, can you\nreconsider?
+[BLACK][RIVAL]: [BLUE]I understand it's dangerous,\nand I may not come back.\pBut[.] I have to try. Please, can you\nreconsider?
 
 #org @gText_EmptyWorld_InterdimensionalResearchFacility_Selene_EntranceComment
 [BLACK]???: [RED]Would you be convinced if I\nvouched for [RIVAL]?

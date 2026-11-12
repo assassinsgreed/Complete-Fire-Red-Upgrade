@@ -144,7 +144,7 @@ I'm developing handy tools that any\nserious Pok\emon Trainer dreams of.
 [.]You! You are Kulure's Champion.\pVery good! Let me share my tools\nwith you.
 
 #org @gText_OlenicLab_ToolDeveloper_ToolPurchasePrompt
-To creat this tool, I would require\n30 Pok\eChips from you.\pIs this acceptable?\n[BLACK](Held: [BUFFER1])[BLUE]
+To create this tool, I would require\n30 Pok\eChips from you.\pIs this acceptable?\n[BLACK](Held: [BUFFER1])[BLUE]
 
 #org @gText_OlenicLab_ToolDeveloper_ToolPurchaseNotEnoughChips
 Oh, that's no good!\pYou'd need more Pok\eChips before I\ncould make that for you.\pCome see me later, if you have\nenough Pok\eChips.

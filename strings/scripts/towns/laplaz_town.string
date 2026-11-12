@@ -3,13 +3,13 @@
 You aren't from around here, are\nyou? I have some advice, then[.]\pLaplaz Town is a very traditional\ntown. It is unlike other towns.\pIf you respect our customs, you will\nbe treated with kindness.
 
 #org @gText_LaplazTown_Overworld_OldMan_NotMetCaseyInGym
-A trainer, are you? Gyahahaha!\nChild, you'd better move on.\pThe Laplaz Town gym leader, Monty,\nis ill and isn't taking challengers.\p[.]What? Couldn't someone else lead\nthe gym in his place?\pGyahahaha! That is not our way,\nchild.\pThe gym leader position is passed\ndown through the leader's family.\pIf Monty's child does not wish to\nlead the gym, then there is nothing\lto be done. The gym will be\lclosed.\pIt it simply our way.
+A trainer, are you? Gyahahaha!\nChild, you'd better move on.\pThe Laplaz Town gym leader, Monty,\nis ill and isn't taking challengers.\p[.]What? Couldn't someone else lead\nthe gym in his place?\pGyahahaha! That is not our way,\nchild.\pThe gym leader position is passed\ndown through the leader's family.\pIf Monty's child does not wish to\nlead the gym, then there is nothing\lto be done. The gym will be\lclosed.\pIt is simply our way.
 
 #org @gText_LaplazTown_Overworld_OldMan_MetCaseyInGym
 Oh? Casey has decided to lead the\ngym, after all?\pThen, they have found their place in\nthe world and have carved out\ltheir own leadership style[.]\pVery good, very good. I am proud of\nyou, my grandchild.
 
 #org @gText_LaplazTown_Overworld_FatMan
-Laplaz Town is steeped in tradition.\pWe sell modern medicines and\nPok\e Balls, yes[.]\pHowever, our pride and joy will\nalways be our local Apricorn Balls.\pThey are unique Pok\e Ball crafted\nfrom fruits called Apricorns.\pThe berries themselves are pretty\ntasty, but we try not to eat them!
+Laplaz Town is steeped in tradition.\pWe sell modern medicines and\nPok\e Balls, yes[.]\pHowever, our pride and joy will\nalways be our local Apricorn Balls.\pThey are unique Pok\e Balls crafted\nfrom fruits called Apricorns.\pThe berries themselves are pretty\ntasty, but we try not to eat them!
 
 #org @gText_LaplazTown_Overworld_YoungBoy
 Hey, go away! I'm trying to hide\nfrom the village elders.\pYou're going to give my hiding place\naway!
@@ -167,7 +167,7 @@ Ngh[.] D-Dar[.]\p[BLACK]Monty is writhing in discomfort.\nCheck more closely?
 [BLACK]Monty has woken up peacefully.
 
 #org @gText_LaplazTownNPCHouses_MontyFogLifted
-Huh[.]? I feel like a fog has\nlifted from my mind.\pI haven't felt this clear-headed in\nweeks!\pI've been laying around for far too\nlong! Wahaha!\pExcuse me, I need to get outta this\nbed!
+Huh[.]? I feel like a fog has\nlifted from my mind.\pI haven't felt this clear-headed in\nweeks!\pI've been lying around for far too\nlong! Wahaha!\pExcuse me, I need to get outta this\nbed!
 
 #org @gText_LaplazTownNPCHouses_MontyRestlessSleep
 Ngh[.] D-Dar[.]\p[BLACK]Monty seemed to be sleeping\nrestlessly, mumbling something\lunder his breath.\pAfter a moment, though, he calmed\ndown again.
@@ -176,7 +176,7 @@ Ngh[.] D-Dar[.]\p[BLACK]Monty seemed to be sleeping\nrestlessly, mumbling someth
 I feel great these days!\nNo more aches, no more worries.\pI've decided[.] I'm retiring as gym\nleader, officially.\pCasey has done a great job running\nthe gym in my absence, and seems\lto really enjoy it, to boot!\pIt would be cruel to take it from\nthem.
 
 #org @gText_LaplazTownNPCHouses_CaseysMomHaventMetWithCasey
-My husband is ill, but refuses to\nrest as long as the gym is without\lit's leader.\pHe says that trainers can't complete\ntheir gym challenge as long as the\lLaplaz gym isn't accepting\lchallengers.\pHe's thoughtful, but he needs to\nfocus on his own health right now.
+My husband is ill, but refuses to\nrest as long as the gym is without\lits leader.\pHe says that trainers can't complete\ntheir gym challenge as long as the\lLaplaz gym isn't accepting\lchallengers.\pHe's thoughtful, but he needs to\nfocus on his own health right now.
 
 #org @gText_LaplazTownNPCHouses_CaseysMomMetWithCasey_Male
 Casey will lead the gym, after\nall? He was so unsure when he\lleft town.\pSomething - or someone - must've\nchanged his mind.\pI'm happy for him, though. It seems\nhe has found his calling.\pAnd, I'm sure my husband can rest,\nknowing the gym is in good hands.

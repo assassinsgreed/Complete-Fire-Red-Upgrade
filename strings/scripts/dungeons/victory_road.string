@@ -122,13 +122,13 @@ That was an enjoyable battle.\pPlease, allow me to heal your\nPok\emon for the r
 There you go! Right as rain.\pKeep pushing your limits and strive\nfor the peak. I believe in you!
 
 #org @gText_VictoryRoad_PuzzleTipsSign
-A tip to wise trainers: Victory\nRoad is a labrynth of passages.\pBy pushing boulders onto designated\nswitches, you may open shortcuts.\pUse these as needed to recuperate\nas needed, and strive for the peak!\p- Elite Four Committee
+A tip to wise trainers: Victory\nRoad is a labyrinth of passages.\pBy pushing boulders onto designated\nswitches, you may open shortcuts.\pUse these as needed to recuperate\nas needed, and strive for the peak!\p- Elite Four Committee
 
 #org @gText_VictoryRoad_RivalGreetsPlayer
 [BLUE]Hey, [PLAYER]! Looks like you\njust barely beat me here.\pI can't believe we're here, at the\npeak of Victory Road[.]\pThe air tastes a bit different here,\ndoesn't it?\pMaybe it's just because we've come\nsuch a long ways from home[.]\pAnyways, let's not waste any time.\pWe have to get our Victory Flags so\nwe can take the Elite Four\lChallenge.
 
 #org @gText_VictoryRoad_RivalSeesSingleFlag
-[BLUE]H-huh? Why is there only one flag?\pShoudn't there be two? We both\nsigned up at the same time[.]\pThere must be a mistake.
+[BLUE]H-huh? Why is there only one flag?\pShouldn't there be two? We both\nsigned up at the same time[.]\pThere must be a mistake.
 
 #org @gText_VictoryRoad_RivalUnderstandsSingleFlag
 [BLUE]No, actually[.] This is no mistake.
@@ -161,4 +161,4 @@ W-what? I[.] Lost?
 [BLUE]That's all there is to it.\pYou won fair and square, and the\nVictory Flag is yours.\pIt's funny. I thought I'd be really\nupset about this.\pBut[.] I'm actually happy for you,\n[PLAYER]!\pI'm grateful we were able to go all\nout like that.\p[PLAYER], you're going to challenge\nthe Elite Four and Champion Selene\lafter this, aren't you?\pThen, there's nothing else to it!\pI'll be in the crowd, cheering you on\nthe loudest out of everyone there.\pSo, get out there and show the\nregion - no, the whole world -\lwhat the little guys from Anthra\lcan do.\pAnd, when you win, make sure you\ndon't get too comfortable[.]\pBecause I'll be right there, ready\nto take your title!\pYou'd better believe it, [PLAYER]!\nHa ha ha!\pAnd until that happens, I'll train\nday in and day out so my Pok\emon\land I are stronger than ever.\pAlright, that's enough out of me.\pYou've got this, [PLAYER]!
 
 #org @gText_VictoryRoad_PlayerReceivesVictoryFlag
-[PLAYER] has earned the Victory Flag,\nsymbol of perseverence and skill!
+[PLAYER] has earned the Victory Flag,\nsymbol of perseverance and skill!
