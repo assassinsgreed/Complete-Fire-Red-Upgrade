@@ -119,6 +119,10 @@ EventScript_DaimynFactoryOverworld_ReminiscingOldMan:
     callasm CheckIfCaught
     compare LASTRESULT 0x1
     if equal _goto OldManTalksAboutSteelBeam
+    setvar LASTRESULT SPECIES_GENESECT @ Mode irrespective
+    callasm CheckIfCaught
+    compare LASTRESULT 0x1
+    if equal _goto OldManTalksAboutSteelBeam
     applymovement LASTTALKED m_LookUp
     end
 
