@@ -158,6 +158,7 @@ npc 30 0 5 EventScript_Common_RockSmash
 sign 30 0 0 SignScript_Route17Cave_DeadEndAheadSign
 npc 30 2 0 EventScript_Route17Cave_TM80_RockSlide
 npc 30 2 1 ItemScript_Common_Iron
+npc 30 2 2 EventScript_Common_RockSmash
 npc 30 2 3 EventScript_Common_RockSmash
 npc 30 2 4 EventScript_Common_RockSmash
 npc 30 2 5 EventScript_Common_RockSmash

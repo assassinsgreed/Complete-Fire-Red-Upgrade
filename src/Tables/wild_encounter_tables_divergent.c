@@ -2324,9 +2324,9 @@ const struct WildPokemon gDivergentRoute17Cave1f_RockMonsDefault[] =
 {
 	{35, 45, SPECIES_DWEBBLE}, // 60
 	{35, 45, SPECIES_GEODUDE_A}, // 30
-	{35, 45, SPECIES_GRAVELER}, // 5
-	{35, 45, SPECIES_GRAVELER}, // 4
-	{35, 45, SPECIES_GRAVELER}, // 1
+	{35, 45, SPECIES_GRAVELER_A}, // 5
+	{35, 45, SPECIES_GRAVELER_A}, // 4
+	{35, 45, SPECIES_GRAVELER_A}, // 1
 };
 
 const struct WildPokemon gDivergentRoute17Cave1f_WaterMonsDefault[] =
@@ -2387,7 +2387,7 @@ const struct WildPokemon gDivergentRoute17CaveB1f_LandMonsDefault[] =
 const struct WildPokemon gDivergentRoute17CaveB1f_RockMonsDefault[] =
 {
 	{38, 48, SPECIES_DWEBBLE}, // 60
-	{38, 48, SPECIES_GRAVELER}, // 30
+	{38, 48, SPECIES_GRAVELER_A}, // 30
 	{38, 48, SPECIES_CRUSTLE}, // 5
 	{38, 48, SPECIES_CRUSTLE}, // 4
 	{38, 48, SPECIES_CRUSTLE}, // 1
