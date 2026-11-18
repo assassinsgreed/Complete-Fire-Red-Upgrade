@@ -551,22 +551,6 @@ const struct WildPokemon gDivergentOrichelleGarden_LandMonsDefault[] =
 	{44, 46, SPECIES_BELLOSSOM}, // 1
 };
 
-const struct WildPokemon gDivergentSeppireCoveOverworld_LandMonsDefault[] =
-{
-	{50, 53, SPECIES_PIDGEOTTO}, // 20
-	{49, 52, SPECIES_GRAPPLOCT}, // 20
-	{50, 53, SPECIES_LINOONE_G}, // 10
-	{51, 53, SPECIES_ZANGOOSE}, // 10
-	{50, 53, SPECIES_SEVIPER}, // 10
-	{49, 52, SPECIES_DWEBBLE}, // 10
-	{50, 53, SPECIES_LINOONE_G}, // 5
-	{49, 52, SPECIES_EXEGGCUTE_A}, // 5
-	{49, 52, SPECIES_EXEGGCUTE_A}, // 4
-	{50, 53, SPECIES_EXEGGUTOR_A}, // 4
-	{51, 53, SPECIES_EXEGGCUTE_A}, // 1
-	{51, 53, SPECIES_EXEGGUTOR_A}, // 1
-};
-
 const struct WildPokemon gDivergentSeppireCoveOverworld_WaterMonsDefault[] =
 {
 	{45, 48, SPECIES_SKRELP}, // 60
@@ -2440,7 +2424,6 @@ const struct WildPokemonInfo gDivergentCarnelidgeVolcanoF2_LandMonsDefaultInfo =
 const struct WildPokemonInfo gDivergentCarnelidgeVolcanoF2_WaterMonsDefaultInfo = {13, gDivergentCarnelidgeVolcanoF2_WaterMonsDefault};
 const struct WildPokemonInfo gDivergentCarnelidgeVolcanoF3_LandMonsDefaultInfo = {3, gDivergentCarnelidgeVolcanoF3_LandMonsDefault};
 const struct WildPokemonInfo gDivergentOrichelleGarden_LandMonsDefaultInfo = {52, gDivergentOrichelleGarden_LandMonsDefault};
-const struct WildPokemonInfo gDivergentSeppireCoveOverworld_LandMonsDefaultInfo = {5, gDivergentSeppireCoveOverworld_LandMonsDefault};
 const struct WildPokemonInfo gDivergentSeppireCoveOverworld_WaterMonsDefaultInfo = {2, gDivergentSeppireCoveOverworld_WaterMonsDefault};
 const struct WildPokemonInfo gDivergentSeppireCoveOverworld_FishingMonsDefaultInfo = {20, gDivergentSeppireCoveOverworld_FishingMonsDefault};
 const struct WildPokemonInfo gDivergentSeppireCoveCommon_LandMonsDefaultInfo = {5, gDivergentSeppireCoveCommon_LandMonsDefault};
@@ -2777,7 +2760,7 @@ const struct WildPokemonHeader gDivergentWildMonDefaultHeaders[] =
 	{
 		.mapGroup = MAP_GROUP(SEPPIRE_COVE_OVERWORLD),
 		.mapNum = MAP_NUM(SEPPIRE_COVE_OVERWORLD),
-		.landMonsInfo = &gDivergentSeppireCoveOverworld_LandMonsDefaultInfo,
+		.landMonsInfo = &gDivergentEmpty,
 		.waterMonsInfo = &gDivergentSeppireCoveOverworld_WaterMonsDefaultInfo,
 		.rockSmashMonsInfo = &gDivergentEmpty,
 		.fishingMonsInfo = &gDivergentSeppireCoveOverworld_FishingMonsDefaultInfo,

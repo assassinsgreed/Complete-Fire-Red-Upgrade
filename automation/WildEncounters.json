@@ -705,23 +705,6 @@
         {
             "mapgroup": 1,
             "mapnum": 60,
-            "grass": {
-                "rate": 5,
-                "pokemon": [
-                    { "low": 50, "high": 53, "species": "SPECIES_SLOWPOKE" },
-                    { "low": 49, "high": 52, "species": "SPECIES_PINCURCHIN" },
-                    { "low": 50, "high": 53, "species": "SPECIES_PINCURCHIN" },
-                    { "low": 51, "high": 53, "species": "SPECIES_PINCURCHIN" },
-                    { "low": 50, "high": 53, "species": "SPECIES_SANDYGAST" },
-                    { "low": 49, "high": 52, "species": "SPECIES_SANDYGAST" },
-                    { "low": 50, "high": 53, "species": "SPECIES_TRUMBEAK" },
-                    { "low": 49, "high": 52, "species": "SPECIES_TOUCANNON" },
-                    { "low": 49, "high": 52, "species": "SPECIES_SLOWBRO" },
-                    { "low": 50, "high": 53, "species": "SPECIES_PALOSSAND" },
-                    { "low": 51, "high": 53, "species": "SPECIES_PALOSSAND" },
-                    { "low": 51, "high": 53, "species": "SPECIES_SLOWBRO" }
-                ]
-            },
             "surfing": {
                 "rate": 2,
                 "pokemon": [
