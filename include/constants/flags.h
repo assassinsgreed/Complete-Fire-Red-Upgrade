@@ -549,10 +549,10 @@
 #define FLAG_HIDE_ROUTE12_EAST_ICY_ROCK                         0x1EF
 #define FLAG_HIDE_ROUTE12_EAST_HYPER_POTION                     0x1F0
 #define FLAG_HIDE_ROUTE12_EAST_TM95_SNARL                       0x1F1
-#define FLAG_HIDE_SCALDING_SPA_TM35_FLAMETHROWER                0x1F2
 */
-#define FLAG_HIDE_SCALDING_SPA_BLAZIKENITE                      0x1F3
+#define FLAG_HIDE_SCALDING_SPA_BLAZIKENITE                      0x1F2
 /*
+#define FLAG_HIDE_SCALDING_SPA_TM35_FLAMETHROWER                0x1F3
 #define FLAG_HIDE_SCALDING_SPA_FIRE_STONE                       0x1F4
 #define FLAG_HIDE_TORMA_CAVE_TM79_FROST_BREATH                  0x1F5
 #define FLAG_HIDE_ROUTE_12_WEST_ULTRA_BALL                      0x1F6
