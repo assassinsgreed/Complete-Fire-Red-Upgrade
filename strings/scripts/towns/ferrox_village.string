@@ -203,23 +203,44 @@ Thank you for battling with me\ntoday.\pI need to get back to my usual\nduties n
 #org @gText_FerroxLibrary_ReadBookPrompt_L
 It is said that many mythical Pok\emon\ninhabit the Ku[GREEN]l[BLACK]ure Region, though\lthis has often been disputed by\lresearchers.
 
+#org @gText_FerroxLibrary_ReadBookPrompt_L_Plain
+It is said that many mythical Pok\emon\ninhabit the Ku(l)ure Region, though\lthis has often been disputed by\lresearchers.
+
 #org @gText_FerroxLibrary_ReadBookPrompt_I
 Experts agree there are traces of\nunknown Pok\emon with[GREEN]i[BLACK]n the region,\lthough their origins remain under\lscrutiny.
+
+#org @gText_FerroxLibrary_ReadBookPrompt_I_Plain
+Experts agree there are traces of\nunknown Pok\emon with(i)n the region,\lthough their origins remain under\lscrutiny.
 
 #org @gText_FerroxLibrary_ReadBookPrompt_B
 While searching for mythical Pok\emon\nwithin the region, a group of\lscientists made a [GREEN]b[BLACK]reakthrough into\la new field of study:\linterdimensional spaces.
 
+#org @gText_FerroxLibrary_ReadBookPrompt_B_Plain
+While searching for mythical Pok\emon\nwithin the region, a group of\lscientists made a (b)reakthrough into\la new field of study:\linterdimensional spaces.
+
 #org @gText_FerroxLibrary_ReadBookPrompt_R
 To further their research into\ninterdimensional spaces, the\l[GREEN]r[BLACK]esearchers founded the\lInterdimensional Research Facility,\llocated in Daimyn City.
+
+#org @gText_FerroxLibrary_ReadBookPrompt_R_Plain
+To further their research into\ninterdimensional spaces, the\l(r)esearchers founded the\lInterdimensional Research Facility,\llocated in Daimyn City.
 
 #org @gText_FerroxLibrary_ReadBookPrompt_A
 Interdimensional study has led to\npromising results. Scientists can\lnow ascertain that interdimensional\lsp[GREEN]a[BLACK]ces do exist, though their\lcontents remain unknown.
 
+#org @gText_FerroxLibrary_ReadBookPrompt_A_Plain
+Interdimensional study has led to\npromising results. Scientists can\lnow ascertain that interdimensional\lsp(a)ces do exist, though their\lcontents remain unknown.
+
 #org @gText_FerroxLibrary_ReadBookPrompt_R2
 Researchers have yet to find\nconclusive p[GREEN]r[BLACK]oof, but have reason\lto believe interdimensional space\lcould sustain human-like\lpopulations of people and Pok\emon-\llike species.
 
+#org @gText_FerroxLibrary_ReadBookPrompt_R2_Plain
+Researchers have yet to find\nconclusive p(r)oof, but have reason\lto believe interdimensional space\lcould sustain human-like\lpopulations of people and Pok\emon-\llike species.
+
 #org @gText_FerroxLibrary_ReadBookPrompt_Y
 Due to interdimensional research\ngripping the region's interests, the\lm[GREEN]y[BLACK]stery of whether mythical\lPok\emon within the region actually\lexist has diminished significantly.
+
+#org @gText_FerroxLibrary_ReadBookPrompt_Y_Plain
+Due to interdimensional research\ngripping the region's interests, the\lm(y)stery of whether mythical\lPok\emon within the region actually\lexist has diminished significantly.
 
 #org @gText_FerroxLibrary_Receptionist1
 Welcome to the Ferrox Village\nlibrary!\lYou're free to read any books in\lthe library, free of charge.\pSome visitors may seek a battle with\nyou. If you choose to do so,\lplease battle quietly to be\lrespectful to our other guests.

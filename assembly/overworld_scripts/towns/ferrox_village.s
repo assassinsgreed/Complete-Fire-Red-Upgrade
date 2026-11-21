@@ -530,49 +530,91 @@ StellaRematch_BeatenToday:
 EventScript_FerroxLibrary_ReadBookPromptL:
     msgbox gText_FerroxLibrary_ReadBookPrompt MSG_NORMAL
     msgboxsign
+    checkflag 0x94E @ Accessible text is on; need to show the letter another way since it is not highlighted green
+    if SET _goto EventScript_FerroxLibrary_ReadBookPromptL_Plain
     msgbox gText_FerroxLibrary_ReadBookPrompt_L MSG_SIGN
+    end
+
+EventScript_FerroxLibrary_ReadBookPromptL_Plain:
+    msgbox gText_FerroxLibrary_ReadBookPrompt_L_Plain MSG_SIGN
     end
 
 .global EventScript_FerroxLibrary_ReadBookPromptI
 EventScript_FerroxLibrary_ReadBookPromptI:
     msgbox gText_FerroxLibrary_ReadBookPrompt MSG_NORMAL
     msgboxsign
+    checkflag 0x94E @ Accessible text is on; need to show the letter another way since it is not highlighted green
+    if SET _goto EventScript_FerroxLibrary_ReadBookPromptI_Plain
     msgbox gText_FerroxLibrary_ReadBookPrompt_I MSG_SIGN
+    end
+
+EventScript_FerroxLibrary_ReadBookPromptI_Plain:
+    msgbox gText_FerroxLibrary_ReadBookPrompt_I_Plain MSG_SIGN
     end
 
 .global EventScript_FerroxLibrary_ReadBookPromptB
 EventScript_FerroxLibrary_ReadBookPromptB:
     msgbox gText_FerroxLibrary_ReadBookPrompt MSG_NORMAL
     msgboxsign
+    checkflag 0x94E @ Accessible text is on; need to show the letter another way since it is not highlighted green
+    if SET _goto EventScript_FerroxLibrary_ReadBookPromptB_Plain
     msgbox gText_FerroxLibrary_ReadBookPrompt_B MSG_SIGN
+    end
+
+EventScript_FerroxLibrary_ReadBookPromptB_Plain:
+    msgbox gText_FerroxLibrary_ReadBookPrompt_B_Plain MSG_SIGN
     end
 
 .global EventScript_FerroxLibrary_ReadBookPromptR
 EventScript_FerroxLibrary_ReadBookPromptR:
     msgbox gText_FerroxLibrary_ReadBookPrompt MSG_NORMAL
     msgboxsign
+    checkflag 0x94E @ Accessible text is on; need to show the letter another way since it is not highlighted green
+    if SET _goto EventScript_FerroxLibrary_ReadBookPromptR_Plain
     msgbox gText_FerroxLibrary_ReadBookPrompt_R MSG_SIGN
+    end
+
+EventScript_FerroxLibrary_ReadBookPromptR_Plain:
+    msgbox gText_FerroxLibrary_ReadBookPrompt_R_Plain MSG_SIGN
     end
 
 .global EventScript_FerroxLibrary_ReadBookPromptA
 EventScript_FerroxLibrary_ReadBookPromptA:
     msgbox gText_FerroxLibrary_ReadBookPrompt MSG_NORMAL
     msgboxsign
+    checkflag 0x94E @ Accessible text is on; need to show the letter another way since it is not highlighted green
+    if SET _goto EventScript_FerroxLibrary_ReadBookPromptA_Plain
     msgbox gText_FerroxLibrary_ReadBookPrompt_A MSG_SIGN
+    end
+
+EventScript_FerroxLibrary_ReadBookPromptA_Plain:
+    msgbox gText_FerroxLibrary_ReadBookPrompt_A_Plain MSG_SIGN
     end
 
 .global EventScript_FerroxLibrary_ReadBookPromptR2
 EventScript_FerroxLibrary_ReadBookPromptR2:
     msgbox gText_FerroxLibrary_ReadBookPrompt MSG_NORMAL
     msgboxsign
+    checkflag 0x94E @ Accessible text is on; need to show the letter another way since it is not highlighted green
+    if SET _goto EventScript_FerroxLibrary_ReadBookPromptR2_Plain
     msgbox gText_FerroxLibrary_ReadBookPrompt_R2 MSG_SIGN
+    end
+
+EventScript_FerroxLibrary_ReadBookPromptR2_Plain:
+    msgbox gText_FerroxLibrary_ReadBookPrompt_R2_Plain MSG_SIGN
     end
 
 .global EventScript_FerroxLibrary_ReadBookPromptY
 EventScript_FerroxLibrary_ReadBookPromptY:
     msgbox gText_FerroxLibrary_ReadBookPrompt MSG_NORMAL
     msgboxsign
+    checkflag 0x94E @ Accessible text is on; need to show the letter another way since it is not highlighted green
+    if SET _goto EventScript_FerroxLibrary_ReadBookPromptY_Plain
     msgbox gText_FerroxLibrary_ReadBookPrompt_Y MSG_SIGN
+    end
+
+EventScript_FerroxLibrary_ReadBookPromptY_Plain:
+    msgbox gText_FerroxLibrary_ReadBookPrompt_Y_Plain MSG_SIGN
     end
 
 .global EventScript_FerroxLibrary_Receptionist1
