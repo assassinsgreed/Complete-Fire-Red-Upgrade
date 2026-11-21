@@ -833,3 +833,6 @@ PrintAllOnTrainerCardBack 08089E40 0
 
 ##Fix for MPlayImmInit to not crash when called with a NULL pointer
 MPlayImmInitSafe 081DD314 1
+
+##Sprites under fog-covered metatile overrides (bridge, tree crowns): split when building OAM (OverworldBasic's BuildOamBuffer call)
+OverworldBasic_BuildOamBufferHook 805659A 0
