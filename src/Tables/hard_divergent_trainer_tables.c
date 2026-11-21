@@ -6306,7 +6306,7 @@ const struct Trainer gHardDivergentTrainers[] = {
         .party = {.ItemCustomMoves = sParty_Rival_PostgameExhibitionBattle_SecondaryTeam_Hard_Divergent}
     },
     // #endregion
-    // #region Postgame
+    // #region Heleo City (Postgame)
     [TRAINER_HELEO_CITY_NURSE_BRIANNE] = {
         .partyFlags = PARTY_FLAG_CUSTOM_MOVES,
         .trainerClass = CLASS_NURSE,
