@@ -6,14 +6,18 @@
 #include "../include/constants/maps.h"
 
 /*
-Per-map-coordinate and per-metatile overrides of a metatile's layer type, for when a
-shared metatile's attributes can't be edited but it needs to draw differently.
+Route 8 layer type overrides, for tiles whose shared metatile attributes can't be edited but that
+must draw differently under Route 8's fog. Nothing here runs on any other map.
 
 NORMAL puts the top layer on BG1 (priority 1), above the overworld fog sprites
 (OAM priority 2). COVERED moves it to BG2, where the fog draws over it, but a
 priority-2 sprite would then draw over it too. BuildOamBufferWithOcclusion puts the
 overlapping parts of those sprites back underneath, so overridden COVERED tiles
 still hide sprites the way they did as NORMAL.
+
+The overrides are positions, not metatile ids, so the per-tile checks are coordinate compares.
+They run for every metatile drawn while walking and for every priority-2 sprite every frame, and
+going through the map grid for them made walking visibly slow.
 */
 
 #define METATILE_ATTRIBUTE_LAYER_TYPE 6 // Attribute bits 28-30
@@ -28,59 +32,70 @@ still hide sprites the way they did as NORMAL.
 
 struct MetatileLayerOverride
 {
-	u8 mapGroup;
-	u8 mapNum;
 	u8 x, y, width, height;
 	u8 layerType;
 };
 
-static const struct MetatileLayerOverride sMetatileLayerOverrides[] =
+// Map coordinates. The tree crown and window rows are where metatiles 0FA/0FB/04F sit on Route 8;
+// moving those metatiles in the map editor means updating these.
+static const struct MetatileLayerOverride sRoute8LayerOverrides[] =
 {
-	{MAP_GROUP(ROUTE_8), MAP_NUM(ROUTE_8), 27, 94, 3, 11, METATILE_LAYER_TYPE_COVERED}, // Bridge planks
+	{27,  94, 3, 11, METATILE_LAYER_TYPE_COVERED}, // Bridge planks
 	// The white corner pillar above the doorway (31,158)-(31,159) stays on BG1: the player in the
 	// doorway overlaps it, and moving it under the fog would hide the player behind the fog too.
-	{MAP_GROUP(ROUTE_8), MAP_NUM(ROUTE_8), 32, 159, 1, 2, METATILE_LAYER_TYPE_COVERED}, // Southern building's tan brick column
+	{32, 159, 1,  2, METATILE_LAYER_TYPE_COVERED}, // Southern building's tan brick column
+	{33,  10, 7,  1, METATILE_LAYER_TYPE_COVERED}, // Northern building's window bottom edge (04F)
+	{33, 160, 7,  1, METATILE_LAYER_TYPE_COVERED}, // Southern building's window bottom edge (04F)
+	{36, 100, 4,  1, METATILE_LAYER_TYPE_COVERED}, // Tree crowns over the ledge (0FA/0FB)
+	{34, 101, 2,  1, METATILE_LAYER_TYPE_COVERED},
+	{32, 102, 2,  1, METATILE_LAYER_TYPE_COVERED},
+	{30, 103, 2,  1, METATILE_LAYER_TYPE_COVERED},
+	{23, 104, 4,  1, METATILE_LAYER_TYPE_COVERED},
 };
 
-struct MetatileIdLayerOverride
+static bool8 IsOnRoute8(void)
 {
-	u16 metatileId;
-	u8 layerType;
-};
+	return gSaveBlock1->location.mapGroup == MAP_GROUP(ROUTE_8)
+		&& gSaveBlock1->location.mapNum == MAP_NUM(ROUTE_8);
+}
 
-// Applied on every map.
-static const struct MetatileIdLayerOverride sMetatileIdLayerOverrides[] =
-{
-	{0x0FA, METATILE_LAYER_TYPE_COVERED}, // Tree crown over a ledge, left
-	{0x0FB, METATILE_LAYER_TYPE_COVERED}, // Tree crown over a ledge, right
-	{0x04F, METATILE_LAYER_TYPE_COVERED}, // Bottom edge of a building's windows
-};
-
+// x/y are map grid coordinates (map coordinates + MAP_OFFSET), as the engine passes them.
+// Callers must check IsOnRoute8.
 static u8 GetLayerTypeOverride(s16 x, s16 y)
 {
 	u32 i;
 	s32 mapX = x - MAP_OFFSET;
 	s32 mapY = y - MAP_OFFSET;
-	u32 metatileId = MapGridGetMetatileIdAt(x, y);
 
-	for (i = 0; i < ARRAY_COUNT(sMetatileIdLayerOverrides); ++i)
+	for (i = 0; i < ARRAY_COUNT(sRoute8LayerOverrides); ++i)
 	{
-		if (metatileId == sMetatileIdLayerOverrides[i].metatileId)
-			return sMetatileIdLayerOverrides[i].layerType;
-	}
+		const struct MetatileLayerOverride* override = &sRoute8LayerOverrides[i];
 
-	for (i = 0; i < ARRAY_COUNT(sMetatileLayerOverrides); ++i)
-	{
-		const struct MetatileLayerOverride* override = &sMetatileLayerOverrides[i];
-
-		if (gSaveBlock1->location.mapGroup == override->mapGroup
-		&& gSaveBlock1->location.mapNum == override->mapNum
-		&& mapX >= override->x && mapX < override->x + override->width
-		&& mapY >= override->y && mapY < override->y + override->height)
+		if (mapY >= override->y && mapY < override->y + override->height
+		&& mapX >= override->x && mapX < override->x + override->width)
 			return override->layerType;
 	}
 
 	return NO_LAYER_OVERRIDE;
+}
+
+// Callers must check IsOnRoute8.
+static bool8 DoesRegionHaveLayerOverride(s32 left, s32 top, s32 width, s32 height)
+{
+	u32 i;
+	s32 mapLeft = left - MAP_OFFSET;
+	s32 mapTop = top - MAP_OFFSET;
+
+	for (i = 0; i < ARRAY_COUNT(sRoute8LayerOverrides); ++i)
+	{
+		const struct MetatileLayerOverride* override = &sRoute8LayerOverrides[i];
+
+		if (mapTop < override->y + override->height && mapTop + height > override->y
+		&& mapLeft < override->x + override->width && mapLeft + width > override->x)
+			return TRUE;
+	}
+
+	return FALSE;
 }
 
 // A NORMAL metatile moved to COVERED: its top layer hid sprites from BG1 and must keep doing so.
@@ -109,7 +124,12 @@ static bool8 IsNextToSpriteOccluder(s16 x, s16 y)
 
 u8 MapGridGetMetatileLayerTypeAt(s16 x, s16 y)
 {
-	u8 layerType = GetLayerTypeOverride(x, y);
+	u8 layerType;
+
+	if (!IsOnRoute8() || !DoesRegionHaveLayerOverride(x - 1, y - 1, 3, 3)) // This tile and its neighbours
+		return MapGridGetMetatileField(x, y, METATILE_ATTRIBUTE_LAYER_TYPE);
+
+	layerType = GetLayerTypeOverride(x, y);
 
 	if (layerType != NO_LAYER_OVERRIDE)
 		return layerType;
@@ -212,6 +232,9 @@ static s32 SplitSpriteAroundOccluders(const struct Sprite* sprite, s32 gridOrigi
 	firstTileX = (centerX + sprite->centerToCornerVecX - gridOriginX) >> 4;
 	firstTileY = (centerY + sprite->centerToCornerVecY - gridOriginY) >> 4;
 
+	if (!DoesRegionHaveLayerOverride(firstTileX, firstTileY, MAX_SPAN_TILES, MAX_SPAN_TILES))
+		return -1;
+
 	for (ty = 0; ty < MAX_SPAN_TILES; ++ty)
 	{
 		for (tx = 0; tx < MAX_SPAN_TILES; ++tx)
@@ -302,6 +325,12 @@ void BuildOamBufferWithOcclusion(void)
 	u32 i, numSplit = 0;
 	s32 gridOriginX = 0, gridOriginY = 0;
 	bool8 oamLoadDisabled;
+
+	if (!IsOnRoute8())
+	{
+		BuildOamBuffer();
+		return;
+	}
 
 	// The engine function writes halfwords, so the upper halves must be discarded.
 	SetSpritePosToOffsetMapCoords(&gridOriginX, &gridOriginY, 0, 0);
